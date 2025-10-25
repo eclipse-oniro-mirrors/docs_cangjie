@@ -73,17 +73,19 @@ operator func |(rhs: PermissionValue): PermissionValue
 
 ```cangjie
 public class APILevel {
-    public let level: UInt8
+    public let since: String
     public let atomicservice: Bool
     public let crossplatform: Bool
-    public let deprecated: UInt8
+    public let deprecated: ?String
     public let form: Bool
-    public let permission:?PermissionValue
-    public let stagemodelonly: Bool
+    public let permission: ?PermissionValue
     public let syscap: String
-    public const init(level_val: UInt8, atomicservice!: Bool = false, crossplatform!: Bool = false,
-        deprecated!: UInt8 = 0, form!: Bool = false, permission!: ?PermissionValue= None,
-        stagemodelonly!: Bool = true, syscap!: String = "")
+    public let throwexception: Bool
+    public let workerthread: Bool
+    public let systemapi: Bool
+    public const init(since!: String, atomicservice!: Bool = false, crossplatform!: Bool = false,
+        deprecated!: ?String = None, form!: Bool = false, permission!: ?PermissionValue = None,
+        syscap!: String = "", throwexception!: Bool = false, workerthread!: Bool = false, systemapi!: Bool = false)
 }
 ```
 
@@ -122,12 +124,12 @@ public let crossplatform: Bool
 ### let deprecated
 
 ```cangjie
-public let deprecated: UInt8
+public let deprecated: ?String
 ```
 
 **Function:** The deprecated version of the current API, default value is 0, indicating not deprecated.
 
-**Type:** UInt8
+**Type:** ?String
 
 **Read/Write:** Read-only
 
@@ -147,20 +149,6 @@ public let form: Bool
 
 **Since:** 22
 
-### let level
-
-```cangjie
-public let level: UInt8
-```
-
-**Function:** API starting level.
-
-**Type:** UInt8
-
-**Read/Write:** Read-only
-
-**Since:** 22
-
 ### let permission
 
 ```cangjie
@@ -175,15 +163,15 @@ public let permission:?PermissionValue
 
 **Since:** 22
 
-### let stagemodelonly
+### let since
 
 ```cangjie
-public let stagemodelonly: Bool
+public let since: String
 ```
 
-**Function:** Whether the current API only supports the Stage model.
+**Function:** API starting level.
 
-**Type:** Bool
+**Type:** String
 
 **Read/Write:** Read-only
 
@@ -203,12 +191,56 @@ public let syscap: String
 
 **Since:** 22
 
-### init(UInt8, Bool, Bool, UInt8, Bool, ?PermissionValue, Bool, String)
+### let systemapi
 
 ```cangjie
-public const init(level_val: UInt8, atomicservice!: Bool = false, crossplatform!: Bool = false, deprecated!: UInt8 = 0, form!: Bool = false, permission!: ?PermissionValue= None,
-    stagemodelonly!: Bool = true, syscap!: String = "")
+public let systemapi: Bool
 ```
+
+**Function:** Whether the current API is for system applications only.
+
+**Type:** Bool
+
+**Read/Write:** Read-only
+
+**Since:** 22
+
+### let throwexception
+
+```cangjie
+public let throwexception: Bool
+```
+
+**Function:** Whether the current API throws exceptions.
+
+**Type:** Bool
+
+**Read/Write:** Read-only
+
+**Since:** 22
+
+### let workerthread
+
+```cangjie
+public let workerthread: Bool
+```
+
+**Function:** Whether the current API is recommended for concurrent execution.
+
+**Type:** Bool
+
+**Read/Write:** Read-only
+
+**Since:** 22
+
+### init(String, Bool, Bool, ?String, Bool, ?PermissionValue, String, Bool, Bool, Bool)
+
+```cangjie
+public const init(since!: String, atomicservice!: Bool = false, crossplatform!: Bool = false,
+    deprecated!: ?String = None, form!: Bool = false, permission!: ?PermissionValue = None,
+    syscap!: String = "", throwexception!: Bool = false, workerthread!: Bool = false, systemapi!: Bool = false)
+```
+
 **Function:** APILevel constructor.
 
 **Since:** 22

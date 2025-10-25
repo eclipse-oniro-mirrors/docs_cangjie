@@ -73,17 +73,19 @@ operator func |(rhs: PermissionValue): PermissionValue
 
 ```cangjie
 public class APILevel {
-    public let level: UInt8
+    public let since: String
     public let atomicservice: Bool
     public let crossplatform: Bool
-    public let deprecated: UInt8
+    public let deprecated: ?String
     public let form: Bool
-    public let permission:?PermissionValue
-    public let stagemodelonly: Bool
+    public let permission: ?PermissionValue
     public let syscap: String
-    public const init(level_val: UInt8, atomicservice!: Bool = false, crossplatform!: Bool = false,
-        deprecated!: UInt8 = 0, form!: Bool = false, permission!: ?PermissionValue= None,
-        stagemodelonly!: Bool = true, syscap!: String = "")
+    public let throwexception: Bool
+    public let workerthread: Bool
+    public let systemapi: Bool
+    public const init(since!: String, atomicservice!: Bool = false, crossplatform!: Bool = false,
+        deprecated!: ?String = None, form!: Bool = false, permission!: ?PermissionValue = None,
+        syscap!: String = "", throwexception!: Bool = false, workerthread!: Bool = false, systemapi!: Bool = false)
 }
 ```
 
@@ -122,12 +124,12 @@ public let crossplatform: Bool
 ### let deprecated
 
 ```cangjie
-public let deprecated: UInt8
+public let deprecated: ?String
 ```
 
-**功能：** 当前 API 的已弃用版本，默认值为 0，表示未弃用。
+**功能：** 当前 API 的已弃用版本，默认值为 None，表示未弃用。
 
-**类型：** UInt8
+**类型：** String
 
 **读写：** 只读
 
@@ -147,20 +149,6 @@ public let form: Bool
 
 **起始版本：** 22
 
-### let level
-
-```cangjie
-public let level: UInt8
-```
-
-**功能：** API 起始 level。
-
-**类型：** UInt8
-
-**读写：** 只读
-
-**起始版本：** 22
-
 ### let permission
 
 ```cangjie
@@ -175,15 +163,15 @@ public let permission:?PermissionValue
 
 **起始版本：** 22
 
-### let stagemodelonly
+### let since
 
 ```cangjie
-public let stagemodelonly: Bool
+public let since: String
 ```
 
-**功能：** 当前API是否只支持在Stage模型使用。
+**功能：** API 起始版本。
 
-**类型：** Bool
+**类型：** String
 
 **读写：** 只读
 
@@ -203,11 +191,54 @@ public let syscap: String
 
 **起始版本：** 22
 
-### init(UInt8, Bool, Bool, UInt8, Bool, ?PermissionValue, Bool, String)
+### let systemapi
 
 ```cangjie
-public const init(level_val: UInt8, atomicservice!: Bool = false, crossplatform!: Bool = false, deprecated!: UInt8 = 0, form!: Bool = false, permission!: ?PermissionValue= None,
-    stagemodelonly!: Bool = true, syscap!: String = "")
+public let systemapi: Bool
+```
+
+**功能：** 当前API是否仅供系统应用使用。
+
+**类型：** Bool
+
+**读写：** 只读
+
+**起始版本：** 22
+
+### let throwexception
+
+```cangjie
+public let throwexception: Bool
+```
+
+**功能：** 当前API是否抛出异常。
+
+**类型：** Bool
+
+**读写：** 只读
+
+**起始版本：** 22
+
+### let workerthread
+
+```cangjie
+public let workerthread: Bool
+```
+
+**功能：** 当前API是否建议并发执行。
+
+**类型：** Bool
+
+**读写：** 只读
+
+**起始版本：** 22
+
+### init(String, Bool, Bool, ?String, Bool, ?PermissionValue, String, Bool, Bool, Bool)
+
+```cangjie
+public const init(since!: String, atomicservice!: Bool = false, crossplatform!: Bool = false,
+    deprecated!: ?String = None, form!: Bool = false, permission!: ?PermissionValue = None,
+    syscap!: String = "", throwexception!: Bool = false, workerthread!: Bool = false, systemapi!: Bool = false)
 ```
 
 **功能：** APILevel 构造函数。
