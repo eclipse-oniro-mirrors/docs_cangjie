@@ -1,0 +1,34 @@
+# Crypto Architecture Kit (Cryptographic Algorithm Framework Service) (Beta Feature)
+
+- [Crypto Architecture Kit Introduction](./cj-crypto-architecture-kit-intro.md)
+- Key Generation and Conversion
+    - [Key Generation and Conversion Overview](./cj-crypto-key-generation-conversion-overview.md)
+- Key Generation and Conversion Specifications
+    - [Symmetric Key Generation and Conversion Specifications](./cj-crypto-sym-key-generation-conversion-spec.md)
+- Key Generation and Conversion Development Guide
+    - [Random Symmetric Key Generation (Cangjie)](./cj-crypto-generate-sym-key-randomly.md)
+    - [Binary Data to Symmetric Key Conversion (Cangjie)](./cj-crypto-convert-binary-data-to-sym-key.md)
+- Encryption/Decryption
+    - [Encryption/Decryption Overview](./cj-crypto-encryption-decryption-overview.md)
+    - Encryption/Decryption Algorithm Specifications
+        - [Symmetric Key Encryption/Decryption Algorithm Specifications](./cj-crypto-sym-encrypt-decrypt-spec.md)
+        - [Asymmetric Key Encryption/Decryption Algorithm Specifications](./cj-crypto-asym-encrypt-decrypt-spec.md)
+        - [Segmented Encryption/Decryption Instructions](./cj-crypto-encrypt-decrypt-by-segment.md)
+    - Encryption/Decryption Development Guide
+        - [AES Symmetric Key Encryption/Decryption (GCM Mode) (Cangjie)](./cj-crypto-aes-sym-encrypt-decrypt-gcm.md)
+        - [AES Symmetric Key Encryption/Decryption (CCM Mode) (Cangjie)](./cj-crypto-aes-sym-encrypt-decrypt-ccm.md)
+        - [AES Symmetric Key Encryption/Decryption (CBC Mode) (Cangjie)](./cj-crypto-aes-sym-encrypt-decrypt-cbc.md)
+        - [AES Symmetric Key Encryption/Decryption (ECB Mode) (Cangjie)](./cj-crypto-aes-sym-encrypt-decrypt-ecb.md)
+        - [AES Symmetric Key Segmented Encryption/Decryption (GCM Mode) (Cangjie)](./cj-crypto-aes-sym-encrypt-decrypt-gcm-by-segment.md)
+        - [3DES Symmetric Key Encryption/Decryption (ECB Mode) (Cangjie)](./cj-crypto-3des-sym-encrypt-decrypt-ecb.md)
+        - [SM4 Symmetric Key Encryption/Decryption (ECB Mode) (Cangjie)](./cj-crypto-sm4-sym-encrypt-decrypt-ecb.md)
+        - [SM4 Symmetric Key Encryption/Decryption (CBC Mode) (Cangjie)](./cj-crypto-sm4-sym-encrypt-decrypt-cbc.md)
+        - [SM4 Symmetric Key Encryption/Decryption (GCM Mode) (Cangjie)](./cj-crypto-sm4-sym-encrypt-decrypt-gcm.md)
+        - [SM4 Symmetric Key Segmented Encryption/Decryption (GCM Mode) (Cangjie)](./cj-crypto-sm4-sym-encrypt-decrypt-gcm-by-segment.md)
+- Message Digest Calculation
+    - [Message Digest Calculation Overview and Algorithm Specifications](./cj-crypto-generate-message-digest-overview.md)
+    - Message Digest Calculation Development Guide
+        - [SHA256 Message Digest Calculation (Cangjie)](./cj-crypto-generate-message-digest.md)
+        - [MD5 Message Digest Calculation (Cangjie)](./cj-crypto-generate-message-digest-md5.md)
+- [Message Authentication Code Calculation](./cj-crypto-compute-mac.md)
+- [Secure Random Number Generation](./cj-crypto-generate-random-number.md)
