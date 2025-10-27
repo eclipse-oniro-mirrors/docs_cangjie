@@ -47,9 +47,9 @@ public init(scroller!: ?Scroller = Option.None, child!: () -> Unit = {=>})
 
 ## 通用属性/通用事件
 
-通用属性：全部支持。
+通用属性：除了支持通用属性外，还支持[滚动组件通用属性](./cj-scroll-swipe-common.md#组件属性)。
 
-通用事件：全部支持。
+通用事件：除了支持通用事件外，还支持[滚动组件通用事件](./cj-scroll-swipe-common.md#组件事件)。
 
 ## 组件属性
 

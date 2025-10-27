@@ -56,7 +56,7 @@ public init(value!: ?PixelMap)
 
 ## 通用属性/通用事件
 
-通用属性：除了支持通用属性外，还支持[图形绘制通用属性](./cj-graphic-drawing-common.md)。
+通用属性：除了支持通用属性外，还支持[图形绘制通用属性](./cj-graphic-drawing-common.md#组件属性)。
 
 通用事件：全部支持。
 

@@ -78,6 +78,7 @@
         - [Swiper](cj-scroll-swipe-swiper.md)
         - [ScrollBar](cj-scroll-swipe-scrollbar.md)
         - [Refresh](cj-scroll-swipe-refresh.md)
+        - [滚动组件通用API](cj-scroll-swipe-common.md)
     - 导航与切换
         - [Navigation](cj-navigation-switching-navigation.md)
         - [NavDestination](cj-navigation-switching-navdestination.md)
