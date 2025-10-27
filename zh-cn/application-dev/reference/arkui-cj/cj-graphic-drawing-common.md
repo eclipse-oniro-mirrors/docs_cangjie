@@ -2,281 +2,16 @@
 
 图形绘制通用属性目前支持[Circle](./cj-graphic-drawing-circle.md)、[Ellipse](./cj-graphic-drawing-ellipse.md)、[Line](./cj-graphic-drawing-line.md)、[Polyline](./cj-graphic-drawing-polyline.md)、[Polygon](./cj-graphic-drawing-polygon.md)、[Path](./cj-graphic-drawing-path.md)、[Rect](./cj-graphic-drawing-rect.md)、[Shape](./cj-graphic-drawing-shape.md)等组件。
 
-
 ## 导入模块
 
 ```cangjie
 import kit.ArkUI.*
 ```
 
-## interface CommonShapeMethod
-
-```cangjie
-public interface CommonShapeMethod<T> <: CommonMethod<T> {
-	func fill(value: ?ResourceColor): T
-	func fillOpacity(value: ?Float64): T
-	func fillOpacity(value: ?AppResource): T
-	func stroke(value: ?ResourceColor): T
-	func strokeDashArray(value: ?Array<Length>): T
-	func strokeDashOffset(value: ?Length): T
-	func strokeLineCap(value: ?LineCapStyle): T
-	func strokeLineJoin(value: ?LineJoinStyle): T
-	func strokeMiterLimit(miterLimit: ?Float64): T
-	func strokeOpacity(value: ?Float64): T
-	func strokeOpacity(value: ?AppResource): T
-	func strokeWidth(value: ?Length): T
-	func antiAlias(value: ?Bool): T
-}
-```
-
-**功能：** 图形绘制通用方法接口。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**起始版本：** 22
-
-**父类型：**
-
-- CommonMethod\<T>
-
-### func fill(?ResourceColor)
-
-```cangjie
-func fill(value: ?ResourceColor): T
-```
-
-**功能：** 设置填充区域的颜色，异常值按照初始值处理。与通用属性[foregroundColor](./cj-universal-attribute-foregroundcolor.md#func-foregroundcolorcoloringstrategy)同时设置时，后设置的属性生效。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**起始版本：** 22
-
-**参数：**
-
-|参数名|类型|必填|默认值|说明|
-|:---|:---|:---|:---|:---|
-|value|?ResourceColor|是|-|填充颜色。初始值：Color.Black。|
-
-### func fillOpacity(?Float64)
-
-```cangjie
-func fillOpacity(value: ?Float64): T
-```
-
-**功能：** 设置填充区域透明度。取值范围是[0.0,1.0]，若给定值小于0.0，则取值为0.0；若给定值大于1.0，则取值为1.0，其余异常值按1.0处理。取值为1.0代表不透明，取值为0.0代表完全透明。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**起始版本：** 22
-
-**参数：**
-
-|参数名|类型|必填|默认值|说明|
-|:---|:---|:---|:---|:---|
-|value|?Float64|是|-|填充透明度。初始值：1.0。|
-
-### func fillOpacity(?AppResource)
-
-```cangjie
-func fillOpacity(value: ?AppResource): T
-```
-
-**功能：** 设置填充区域透明度。取值范围是[0, 1]，若给定值小于0，则取值为0；若给定值大于1，则取值为1，其余异常值按1处理。取值为1代表不透明，取值为0代表完全透明。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**起始版本：** 22
-
-**参数：**
-
-|参数名|类型|必填|默认值|说明|
-|:---|:---|:---|:---|:---|
-|value|?AppResource|是|-|填充透明度。初始值：1.0。|
-
-### func stroke(?ResourceColor)
-
-```cangjie
-func stroke(value: ?ResourceColor): T
-```
-
-**功能：** 设置边框颜色。默认没有边框。异常值不会绘制边框。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**起始版本：** 22
-
-**参数：**
-
-|参数名|类型|必填|默认值|说明|
-|:---|:---|:---|:---|:---|
-|value|?ResourceColor|是|-|边框颜色。初始值：Color.Transparent。|
-
-### func strokeDashArray(?Array\<Length>)
-
-```cangjie
-func strokeDashArray(value: ?Array<Length>): T
-```
-
-**功能：** 设置边框间隙。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**起始版本：** 22
-
-**参数：**
-
-|参数名|类型|必填|默认值|说明|
-|:---|:---|:---|:---|:---|
-|value|?Array\<Length>|是|-|边框虚线数组。初始值：[]。|
-
-### func strokeDashOffset(?Length)
-
-```cangjie
-func strokeDashOffset(value: ?Length): T
-```
-
-**功能：** 设置边框绘制起点的偏移量。异常值按照初始值处理。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**起始版本：** 22
-
-**参数：**
-
-|参数名|类型|必填|默认值|说明|
-|:---|:---|:---|:---|:---|
-|value|?Length|是|-|边框虚线偏移量。初始值：0.vp。|
-
-### func strokeLineCap(?LineCapStyle)
-
-```cangjie
-func strokeLineCap(value: ?LineCapStyle): T
-```
-
-**功能：** 设置边框端点绘制样式。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**起始版本：** 22
-
-**参数：**
-
-|参数名|类型|必填|默认值|说明|
-|:---|:---|:---|:---|:---|
-|value|?LineCapStyle|是|-|边框线帽样式。初始值：LineCapStyle.Butt。|
-
-### func strokeLineJoin(?LineJoinStyle)
-
-```cangjie
-func strokeLineJoin(value: ?LineJoinStyle): T
-```
-
-**功能：** 设置边框拐角绘制样式。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**起始版本：** 22
-
-**参数：**
-
-|参数名|类型|必填|默认值|说明|
-|:---|:---|:---|:---|:---|
-|value|?LineJoinStyle|是|-|边框连接点样式。初始值：LineJoinStyle.Miter。|
-
-### func strokeMiterLimit(?Float64)
-
-```cangjie
-func strokeMiterLimit(miterLimit: ?Float64): T
-```
-
-**功能：** 设置斜接长度与边框宽度比值的极限值。斜接长度表示外边框外边交点到内边交点的距离，边框宽度即strokeWidth属性的值。该属性取值需在strokeLineJoin属性取值LineJoinStyle.Miter时生效。<br>该属性的合法值范围应当大于等于1.0，当取值范围在[0,1)时按1.0处理，其余异常值按初始值处理。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**起始版本：** 22
-
-**参数：**
-
-|参数名|类型|必填|默认值|说明|
-|:---|:---|:---|:---|:---|
-|miterLimit|?Float64|是|-|斜接长度与边框宽度比值的极限值。<br>初始值：4.0。|
-
-### func strokeOpacity(?Float64)
-
-```cangjie
-func strokeOpacity(value: ?Float64): T
-```
-
-**功能：** 设置边框透明度。该属性的取值范围是[0.0, 1.0]，若给定值小于0.0，则取值为0.0；若给定值大于1.0，则取值为1.0，其余异常值按1.0处理。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**起始版本：** 22
-
-**参数：**
-
-|参数名|类型|必填|默认值|说明|
-|:---|:---|:---|:---|:---|
-|value|?Float64|是|-|边框透明度。初始值：1.0。|
-
-### func strokeOpacity(?AppResource)
-
-```cangjie
-func strokeOpacity(value: ?AppResource): T
-```
-
-**功能：** 设置边框透明度。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**起始版本：** 22
-
-**参数：**
-
-|参数名|类型|必填|默认值|说明|
-|:---|:---|:---|:---|:---|
-|value|?AppResource|是|-|边框透明度。初始值：1.0。|
-
-### func strokeWidth(?Length)
-
-```cangjie
-func strokeWidth(value: ?Length): T
-```
-
-**功能：** 设置边框宽度。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**起始版本：** 22
-
-**参数：**
-
-|参数名|类型|必填|默认值|说明|
-|:---|:---|:---|:---|:---|
-|value|?Length|是|-|边框宽度。初始值：1.vp。|
-
-### func antiAlias(?Bool)
-
-```cangjie
-func antiAlias(value: ?Bool): T
-```
-
-**功能：** 设置是否开启抗锯齿。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**起始版本：** 22
-
-**参数：**
-
-|参数名|类型|必填|默认值|说明|
-|:---|:---|:---|:---|:---|
-|value|?Bool|是|-|是否开启抗锯齿。初始值：true。|
-
 ## class CommonShapeMethodComponent
 
 ```cangjie
-public abstract class CommonShapeMethodComponent<T> <: CommonMethodComponent<T> & CommonShapeMethod<T> {
+public abstract class CommonShapeMethodComponent<T> {
 }
 ```
 
@@ -285,11 +20,6 @@ public abstract class CommonShapeMethodComponent<T> <: CommonMethodComponent<T> 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **起始版本：** 22
-
-**父类型：**
-
-- CommonMethodComponent\<T>
-- [CommonShapeMethod](#interface-commonshapemethod)\<T>
 
 ### public func fill(?ResourceColor)
 
@@ -307,7 +37,7 @@ public func fill(value: ?ResourceColor): T
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|value|?ResourceColor|是|-|填充颜色。初始值：Color.Black。|
+|value|?[ResourceColor](./cj-common-types.md#interface-resourcecolor)|是|-|填充颜色。初始值：Color.Black。|
 
 ### public func fillOpacity(?Float64)
 
@@ -343,7 +73,7 @@ public func fillOpacity(value: ?AppResource): T
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|value|?AppResource|是|-|填充透明度。初始值：1.0。|
+|value|?[AppResource](../LocalizationKit/cj-apis-resource.md#class-appresource)|是|-|填充透明度。初始值：1.0。|
 
 ### public func stroke(?ResourceColor)
 
@@ -361,7 +91,7 @@ public func stroke(value: ?ResourceColor): T
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|value|?ResourceColor|是|-|边框颜色。初始值：Color.Transparent。|
+|value|?[ResourceColor](./cj-common-types.md#interface-resourcecolor)|是|-|边框颜色。初始值：Color.Transparent。|
 
 ### public func strokeDashArray(?Array\<Length>)
 
@@ -379,7 +109,7 @@ public func strokeDashArray(value: ?Array<Length>): T
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|value|?Array\<Length>|是|-|边框虚线数组。初始值：[]。|
+|value|?Array\<[Length](./cj-common-types.md#interface-length)>|是|-|边框虚线数组。初始值：[]。|
 
 ### public func strokeDashOffset(?Length)
 
@@ -397,7 +127,7 @@ public func strokeDashOffset(value: ?Length): T
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|value|?Length|是|-|边框虚线偏移量。初始值：0.vp。|
+|value|?[Length](./cj-common-types.md#interface-length)|是|-|边框虚线偏移量。初始值：0.vp。|
 
 ### public func strokeLineCap(?LineCapStyle)
 
@@ -415,7 +145,7 @@ public func strokeLineCap(value: ?LineCapStyle): T
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|value|?LineCapStyle|是|-|边框线帽样式。初始值：LineCapStyle.Butt。|
+|value|?[LineCapStyle](./cj-common-types.md#enum-linecapstyle)|是|-|边框线帽样式。初始值：LineCapStyle.Butt。|
 
 ### public func strokeLineJoin(?LineJoinStyle)
 
@@ -433,7 +163,7 @@ public func strokeLineJoin(value: ?LineJoinStyle): T
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|value|?LineJoinStyle|是|-|边框连接点样式。初始值：LineJoinStyle.Miter。|
+|value|?[LineJoinStyle](./cj-common-types.md#enum-linejoinstyle)|是|-|边框连接点样式。初始值：LineJoinStyle.Miter。|
 
 ### public func strokeMiterLimit(?Float64)
 
@@ -487,7 +217,7 @@ public func strokeOpacity(value: ?AppResource): T
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|value|?AppResource|是|-|边框透明度。初始值：1.0。|
+|value|?[AppResource](../LocalizationKit/cj-apis-resource.md#class-appresource)|是|-|边框透明度。初始值：1.0。|
 
 ### public func strokeWidth(?Length)
 
@@ -505,7 +235,7 @@ public func strokeWidth(value: ?Length): T
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|value|?Length|是|-|边框宽度。初始值：1.vp。|
+|value|?[Length](./cj-common-types.md#interface-length)|是|-|边框宽度。初始值：1.vp。|
 
 ### public func antiAlias(?Bool)
 

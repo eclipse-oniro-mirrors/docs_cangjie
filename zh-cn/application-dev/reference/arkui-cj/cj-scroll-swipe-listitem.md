@@ -79,9 +79,9 @@ public func swipeAction(
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|start|?CustomBuilder|否|None| **命名参数。** ListItem向右划动时item左边的组件（List垂直布局时）或ListItem向下划动时item上方的组件（List水平布局时）。<br>初始值：{=>}。|
-|end|?CustomBuilder|否|None| **命名参数。** ListItem向左划动时item右边的组件（List垂直布局时）或ListItem向上划动时item下方的组件（List水平布局时）。<br>初始值：{=>}。|
-|edgeEffect|?SwipeEdgeEffect|否|Option.None| **命名参数。** 滑动效果。<br>初始值：SwipeEdgeEffect.Spring。|
+|start|?[CustomBuilder](./cj-common-types.md#type-custombuilder)|否|None| **命名参数。** ListItem向右划动时item左边的组件（List垂直布局时）或ListItem向下划动时item上方的组件（List水平布局时）。<br>初始值：{=>}。|
+|end|?[CustomBuilder](./cj-common-types.md#type-custombuilder)|否|None| **命名参数。** ListItem向左划动时item右边的组件（List垂直布局时）或ListItem向上划动时item下方的组件（List水平布局时）。<br>初始值：{=>}。|
+|edgeEffect|?[SwipeEdgeEffect](./cj-common-types.md#enum-swipeedgeeffect)|否|Option.None| **命名参数。** 滑动效果。<br>初始值：SwipeEdgeEffect.Spring。|
 |onOffsetChange|?(Float64) -> Unit|否|None| **命名参数。** 滑动操作偏移量更改时调用。<br>初始值：{_: Float64 =>}。|
 
 ## 组件事件

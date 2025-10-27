@@ -34,7 +34,7 @@ public init(value: ?ResourceStr)
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|value|?ResourceStr|是|-|二维码内容字符串。最大支持512个字符，若超出，则截取前512个字符。初始值："undefined"。|
+|value|?[ResourceStr](./cj-common-types.md#interface-resourcestr)|是|-|二维码内容字符串。最大支持512个字符，若超出，则截取前512个字符。初始值："undefined"。|
 
 ## 通用属性/通用事件
 
@@ -60,7 +60,7 @@ public func color(value: ?ResourceColor): This
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|value|?ResourceColor|是|-|二维码颜色。初始值：0xff000000，且不跟随系统深浅色模式切换而修改。|
+|value|?[ResourceColor](./cj-common-types.md#interface-resourcecolor)|是|-|二维码颜色。初始值：0xff000000，且不跟随系统深浅色模式切换而修改。|
 
 ### func contentOpacity(?Float64)
 
@@ -96,7 +96,7 @@ public func contentOpacity(value: ?AppResource): This
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|value|?AppResource|是|-|二维码内容颜色的不透明度。<br>初始值：1.0。|
+|value|?[AppResource](../LocalizationKit/cj-apis-resource.md#class-appresource)|是|-|二维码内容颜色的不透明度。<br>初始值：1.0。|
 
 ## 示例代码
 

@@ -81,7 +81,7 @@ public func tabBar(content: ?CustomBuilder): This
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|content|?[CustomBuilder](../cj-common-types.md#type-custombuilder)|是|-|TabBar上显示内容。初始值：{ => }。|
+|content|?[CustomBuilder](./cj-common-types.md#type-custombuilder)|是|-|TabBar上显示内容。初始值：{ => }。|
 
 > **说明：**
 >
@@ -103,7 +103,7 @@ public func tabBar(content: ?ResourceStr): This
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|content|?[ResourceStr](../cj-common-types.md#type-resourcestr)|是|-|TabBar上显示内容。初始值：""。|
+|content|?[ResourceStr](./cj-common-types.md#interface-resourcestr)|是|-|TabBar上显示内容。初始值：""。|
 
 > **说明：**
 >
@@ -125,8 +125,8 @@ public func tabBar(icon!: ?ResourceStr = None, text!: ?ResourceStr = None): This
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|icon|?[ResourceStr](../cj-common-types.md#type-resourcestr)|否|None| **命名参数。** TabBar图标。初始值：""。|
-|text|?[ResourceStr](../cj-common-types.md#type-resourcestr)|否|None| **命名参数。** TabBar文本。初始值：""。|
+|icon|?[ResourceStr](./cj-common-types.md#interface-resourcestr)|否|None| **命名参数。** TabBar图标。初始值：""。|
+|text|?[ResourceStr](./cj-common-types.md#interface-resourcestr)|否|None| **命名参数。** TabBar文本。初始值：""。|
 
 > **说明：**
 >

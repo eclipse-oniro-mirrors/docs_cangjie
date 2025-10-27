@@ -82,8 +82,8 @@ public func title(value: ?CustomBuilder, options!: ?NavigationTitleOptions = Non
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|value|?CustomBuilder|是|-|页面标题。初始值：{=>}。|
-|options|?NavigationTitleOptions|否|None|**命名参数** 标题栏选项。|
+|value|?[CustomBuilder](./cj-common-types.md#type-custombuilder)|是|-|页面标题。初始值：{=>}。|
+|options|?[NavigationTitleOptions](./cj-navigation-switching-navigation.md#class-navigationtitleoptions)|否|None|**命名参数** 标题栏选项。|
 
 ### func title(?ResourceStr, ?NavigationTitleOptions)
 
@@ -101,8 +101,8 @@ public func title(value: ?ResourceStr, options!: ?NavigationTitleOptions = None)
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|value|?ResourceStr|是|-|页面标题。<br>初始值：{=>}。|
-|options|?NavigationTitleOptions|否|None|**命名参数** 标题栏选项。|
+|value|?[ResourceStr](./cj-common-types.md#interface-resourcestr)|是|-|页面标题。<br>初始值：{=>}。|
+|options|?[NavigationTitleOptions](./cj-navigation-switching-navigation.md#class-navigationtitleoptions)|否|None|**命名参数** 标题栏选项。|
 
 ## 组件事件
 
@@ -140,7 +140,7 @@ public func onReady(callback: ?Callback<NavDestinationContext, Unit>): This
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|callback|?Callback\<NavDestinationContext, Unit>|是|-|回调函数，即将构建子组件之前会触发此回调。初始值：{ _ => }。|
+|callback|?[Callback](./cj-common-types.md#type-callbackt-v)\<[NavDestinationContext](#class-navdestinationcontext), Unit>|是|-|回调函数，即将构建子组件之前会触发此回调。初始值：{ _ => }。|
 
 ## 基础类型定义
 
@@ -184,7 +184,7 @@ public var pathInfo: ?NavPathInfo
 
 **功能：** 跳转NavDestination时指定的参数。
 
-**类型：** ?NavPathInfo
+**类型：** ?[NavPathInfo](./cj-navigation-switching-navigation.md#class-navpathinfo)
 
 **读写能力：** 可读写
 
@@ -200,7 +200,7 @@ public var pathStack: ?NavPathStack
 
 **功能：** 当前NavDestination所处的页面栈。
 
-**类型：** ?NavPathStack
+**类型：** ?[NavPathStack](./cj-navigation-switching-navigation.md#class-navpathstack)
 
 **读写能力：** 可读写
 

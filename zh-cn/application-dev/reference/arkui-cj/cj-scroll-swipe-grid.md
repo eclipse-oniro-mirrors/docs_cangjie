@@ -10,7 +10,7 @@ import kit.ArkUI.*
 
 ## 子组件
 
-仅支持[GridItem](cj-scroll-swipe-griditem.md)子组件，支持渲染控制类型（[if/else](../../arkui-cj/rendering_control/cj-rendering-control-ifelse.md)、[ForEach](../../arkui-cj/rendering_control/cj-rendering-control-foreach.md)、[LazyForEach](cj-state-rendering-lazyforeach.md)）。
+仅支持[GridItem](cj-scroll-swipe-griditem.md)子组件，支持渲染控制类型（[if/else](../../../application-dev/source_zh_cn/arkui-cj/rendering_control/cj-rendering-control-ifelse.md)、[ForEach](../../../application-dev/source_zh_cn/arkui-cj/rendering_control/cj-rendering-control-foreach.md)、[LazyForEach](cj-state-rendering-lazyforeach.md)）。
 
 > **说明：**
 >
@@ -18,7 +18,7 @@ import kit.ArkUI.*
 > - 按子组件的顺序依次递增。
 > - if/else语句中，只有条件成立分支内的子组件会参与索引值计算，条件不成立分支内的子组件不计算索引值。
 > - ForEach/LazyForEach语句中，会计算展开所有子节点索引值。
-> - [if/else](../../arkui-cj/rendering_control/cj-rendering-control-ifelse.md)、[ForEach](../../arkui-cj/rendering_control/cj-rendering-control-foreach.md)、[LazyForEach](cj-state-rendering-lazyforeach.md)发生变化以后，会更新子节点索引值。
+> - [if/else](../../../application-dev/source_zh_cn/arkui-cj/rendering_control/cj-rendering-control-ifelse.md)、[ForEach](../../../application-dev/source_zh_cn/arkui-cj/rendering_control/cj-rendering-control-foreach.md)、[LazyForEach](cj-state-rendering-lazyforeach.md)发生变化以后，会更新子节点索引值。
 > - Grid子组件的visibility属性设置为Hidden或None时依然会计算索引值。
 > - Grid子组件的visibility属性设置为None时不显示，但依然会占用子组件对应的网格。
 > - Grid子组件设置position属性，会占用子组件对应的网格，子组件将显示在相对Grid左上角偏移position的位置。该子组件不会随其对应网格滚动，在对应网格滑出Grid显示范围外后不显示。
@@ -42,7 +42,7 @@ public init(scroller!: ?Scroller = Option.None, child!: () -> Unit = {=>})
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|scroller|?Scroller|否|Option.None| **命名参数。** 可滚动组件的控制器，与可滚动组件绑定。<br> **说明：** <br>不允许和其他滚动类组件，如：[List](cj-scroll-swipe-list.md)、[Grid](cj-scroll-swipe-grid.md)、[Scroll](cj-scroll-swipe-scroll.md)等绑定同一个滚动控制对象。|
+|scroller|?[Scroller](./cj-scroll-swipe-scroll.md#class-scroller)|否|Option.None| **命名参数。** 可滚动组件的控制器，与可滚动组件绑定。<br> **说明：** <br>不允许和其他滚动类组件，如：[List](cj-scroll-swipe-list.md)、[Grid](cj-scroll-swipe-grid.md)、[Scroll](cj-scroll-swipe-scroll.md)等绑定同一个滚动控制对象。|
 |child|() -> Unit|否|{=>}| **命名参数。** 网格容器的子组件。|
 
 ## 通用属性/通用事件
@@ -112,7 +112,7 @@ public func columnsGap(value: ?Length): This
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|value|?Length|是|-|列与列的间距。初始值:  0.vp|
+|value|?[Length](./cj-common-types.md#interface-length)|是|-|列与列的间距。初始值:  0.vp|
 
 ### func columnsTemplate(?String)
 
@@ -163,7 +163,7 @@ public func rowsGap(value: ?Length): This
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|value|?Length|是|-|用于设置行与行的间距。初始值:  0.vp|
+|value|?[Length](./cj-common-types.md#interface-length)|是|-|用于设置行与行的间距。初始值:  0.vp|
 
 ### func rowsTemplate(?String)
 

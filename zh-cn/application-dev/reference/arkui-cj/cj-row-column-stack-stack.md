@@ -30,7 +30,7 @@ public init(alignContent!: ?Alignment = None, child!: () -> Unit = {=>})
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|alignContent|?Alignment|否|None| **命名参数。** 设置子组件在容器内的对齐方式。<br>初始值：Alignment.Center。|
+|alignContent|?[Alignment](./cj-common-types.md#enum-alignment)|否|None| **命名参数。** 设置子组件在容器内的对齐方式。<br>初始值：Alignment.Center。|
 |child|() -> Unit|否|{=>}| **命名参数。** 声明容器内的子组件。|
 
 ## 通用属性/通用事件
@@ -57,7 +57,7 @@ public func alignContent(value: ?Alignment): This
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|value|?Alignment|是|-|所有子组件在容器内的对齐方式。<br>初始值：Alignment.Center。|
+|value|?[Alignment](./cj-common-types.md#enum-alignment)|是|-|所有子组件在容器内的对齐方式。<br>初始值：Alignment.Center。|
 
 ## 示例代码
 

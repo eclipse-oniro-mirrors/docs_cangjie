@@ -30,7 +30,7 @@ public init(commands!: ?ResourceStr = None)
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|commands|?ResourceStr|否|None|**命名参数。** 路径绘制的命令字符串。|
+|commands|?[ResourceStr](./cj-common-types.md#interface-resourcestr)|否|None|**命名参数。** 路径绘制的命令字符串。|
 
 ### init(?Length, ?Length, ?ResourceStr)
 
@@ -48,9 +48,9 @@ public init(width!: ?Length, height!: ?Length, commands!: ?ResourceStr = None)
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|width|?Length|是|-|**命名参数。** 路径所在矩形的宽度，取值范围≥0。默认单位：vp。值为异常值或缺省时按照自身内容需要的宽度处理。|
-|height|?Length|是|-|**命名参数。** 路径所在矩形的高度，取值范围≥0。默认单位：vp。值为异常值或缺省时按照自身内容需要的高度处理。|
-|commands|?ResourceStr|否|None|**命名参数。** 路径绘制的命令字符串。|
+|width|?[Length](./cj-common-types.md#interface-length)|是|-|**命名参数。** 路径所在矩形的宽度，取值范围≥0。默认单位：vp。值为异常值或缺省时按照自身内容需要的宽度处理。|
+|height|?[Length](./cj-common-types.md#interface-length)|是|-|**命名参数。** 路径所在矩形的高度，取值范围≥0。默认单位：vp。值为异常值或缺省时按照自身内容需要的高度处理。|
+|commands|?[ResourceStr](./cj-common-types.md#interface-resourcestr)|否|None|**命名参数。** 路径绘制的命令字符串。|
 
 ## 通用属性/通用事件
 
@@ -76,7 +76,7 @@ public func commands(value: ?ResourceStr): This
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|value|?ResourceStr|是|-|路径绘制的命令字符串。初始值：""，异常值按照初始值处理。|
+|value|?[ResourceStr](./cj-common-types.md#interface-resourcestr)|是|-|路径绘制的命令字符串。初始值：""，异常值按照初始值处理。|
 
 ## SVG路径描述规范
 

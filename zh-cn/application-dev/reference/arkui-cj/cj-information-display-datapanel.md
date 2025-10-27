@@ -32,7 +32,7 @@ public init(values!: Array<Float64>, max!: ?Float64 = None, panelType!: ?DataPan
 |:---|:---|:---|:---|:---|
 |values|Array\<Float64>|是|-|**命名参数。** 数据值列表，最多包含9个数据，大于9个数据则取前9个数据。若数据值小于0则置为0。|
 |max|?Float64|否|None|**命名参数。** 初始值: 100.0 \- max大于0，表示数据的最大值。 <br> \- max小于等于0，max等于value数组各项的和，按比例显示。|
-|panelType|?DataPanelType|否|None|**命名参数。** 初始值: DataPanelType.Circle 数据面板的类型（不支持动态修改）。|
+|panelType|?[DataPanelType](./cj-common-types.md#enum-datapaneltype)|否|None|**命名参数。** 初始值: DataPanelType.Circle 数据面板的类型（不支持动态修改）。|
 
 ## 通用属性/通用事件
 
@@ -84,7 +84,7 @@ public func strokeWidth(value: ?Length): This
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|value|?Length|是|-|圆环粗细。初始值: 24.0.vp。<br>单位：vp。<br>设置小于0的值时，按默认值显示。|
+|value|?[Length](./cj-common-types.md#interface-length)|是|-|圆环粗细。初始值: 24.0.vp。<br>单位：vp。<br>设置小于0的值时，按默认值显示。|
 
 ### func trackBackgroundColor(?ResourceColor)
 
@@ -102,7 +102,7 @@ public func trackBackgroundColor(value: ?ResourceColor): This
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|value|?ResourceColor|是|-|底板颜色。初始值: 0x08182431|
+|value|?[ResourceColor](./cj-common-types.md#interface-resourcecolor)|是|-|底板颜色。初始值: 0x08182431|
 
 ### func trackShadow(?DataPanelShadowOptions)
 
@@ -120,7 +120,7 @@ public func trackShadow(value: ?DataPanelShadowOptions): This
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|value|?DataPanelShadowOptions|是|-|投影样式。<br>不设置时，默认不开启投影。<br>初始值：DataPanelShadowOptions()。|
+|value|?[DataPanelShadowOptions](#class-datapanelshadowoptions)|是|-|投影样式。<br>不设置时，默认不开启投影。<br>初始值：DataPanelShadowOptions()。|
 
 ### func valueColors(?Array\<LinearGradient>)
 
@@ -166,7 +166,7 @@ public var color: ResourceColor
 
 **功能：** 颜色值。
 
-**类型：** [ResourceColor](../apis/BasicServicesKit/cj-apis-base.md#interface-resourcecolor)
+**类型：** [ResourceColor](./cj-common-types.md#interface-resourcecolor)
 
 **读写能力：** 可读写
 
@@ -182,7 +182,7 @@ public var offset: Length
 
 **功能：** 渐变色断点（0~1之间的比例值，若数据值小于0则置为0，若数据值大于1则置为1）。
 
-**类型：** [Length](../apis/BasicServicesKit/cj-apis-base.md#interface-length)
+**类型：** [Length](./cj-common-types.md#interface-length)
 
 **读写能力：** 可读写
 
@@ -206,8 +206,8 @@ public init(color: ResourceColor, offset: Length)
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|color|[ResourceColor](../apis/BasicServicesKit/cj-apis-base.md#interface-resourcecolor)|是|-|颜色值。|
-|offset|[Length](../apis/BasicServicesKit/cj-apis-base.md#interface-length)|是|-|渐变色断点（0~1之间的比例值，若数据值小于0则置为0，若数据值大于1则置为1）。|
+|color|[ResourceColor](./cj-common-types.md#interface-resourcecolor)|是|-|颜色值。|
+|offset|[Length](./cj-common-types.md#interface-length)|是|-|渐变色断点（0~1之间的比例值，若数据值小于0则置为0，若数据值大于1则置为1）。|
 
 ### class DataPanelShadowOptions
 
@@ -226,7 +226,7 @@ public class DataPanelShadowOptions <: MultiShadowOptions {
 
 **父类型：**
 
-- [MultiShadowOptions](./cj-information-display-datapanel.md#class-multishadowoptions)
+- [MultiShadowOptions](./cj-common-types.md#class-multishadowoptions)
 
 #### var colors
 
@@ -265,10 +265,10 @@ public init(radius!: ?Length = None, colors!: ?Array<LinearGradient> = None, off
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|radius|?Length|否|None|**命名参数。** 初始值: 20.vp 投影模糊半径。|
+|radius|?[Length](./cj-common-types.md#interface-length)|否|None|**命名参数。** 初始值: 20.vp 投影模糊半径。|
 |colors|?Array\<[LinearGradient](#class-lineargradient)>|否|None|**命名参数。** 初始值: [] 各数据段投影的颜色。<br>若设置的投影颜色的个数少于数据段个数时，则显示的投影颜色的个数和设置的投影颜色个数一致。<br>若设置的投影颜色的个数多于数据段个数时，则显示的投影颜色的个数和数据段个数一致。|
-|offsetX|?Length|否|None|**命名参数。** 初始值: 5.vp X轴的偏移量。|
-|offsetY|?Length|否|None|**命名参数。** 初始值: 5.vp Y轴的偏移量。|
+|offsetX|?[Length](./cj-common-types.md#interface-length)|否|None|**命名参数。** 初始值: 5.vp X轴的偏移量。|
+|offsetY|?[Length](./cj-common-types.md#interface-length)|否|None|**命名参数。** 初始值: 5.vp Y轴的偏移量。|
 
 ### class LinearGradient
 
@@ -319,8 +319,7 @@ public init(color: ResourceColor)
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|color|[ResourceColor](../apis/BasicServicesKit/cj-apis-base.md#interface-resourcecolor)|是|-|单一渐变颜色。|
-
+|color|[ResourceColor](./cj-common-types.md#interface-resourcecolor)|是|-|单一渐变颜色。|
 
 ## 示例代码
 

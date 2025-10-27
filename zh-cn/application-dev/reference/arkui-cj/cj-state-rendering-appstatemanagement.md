@@ -693,7 +693,7 @@ public class PersistentStorage <: Observer {}
 
 **父类型：**
 
-- Observer
+- [Observer](./cj-ui-framework.md#interface-observer)
 
 ### static func deleteProp(String)
 
@@ -838,7 +838,7 @@ public func aboutToBeDeleted(): Unit
 ## enum ColorMode
 
 ```cangjie
-public enum ColorMode {
+public enum ColorMode <: Equatable<ColorMode> {
     Light
     |
     Dark
@@ -851,6 +851,10 @@ public enum ColorMode {
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **起始版本：** 22
+
+**父类型：**
+
+- Equatable\<[ColorMode](#enum-colormode)>
 
 ### Light
 
@@ -892,7 +896,7 @@ public operator func !=(other: ColorMode): Bool
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|other|ColorMode|是|-|要比较的另一个ColorMode实例。|
+|other|[ColorMode](#enum-colormode)|是|-|要比较的另一个ColorMode实例。|
 
 **返回值：**
 
@@ -916,7 +920,7 @@ public operator func ==(other: ColorMode): Bool
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|other|ColorMode|是|-|要比较的另一个ColorMode实例。|
+|other|[ColorMode](#enum-colormode)|是|-|要比较的另一个ColorMode实例。|
 
 **返回值：**
 
@@ -927,7 +931,7 @@ public operator func ==(other: ColorMode): Bool
 ## enum LayoutDirection
 
 ```cangjie
-public enum LayoutDirection {
+public enum LayoutDirection <: Equatable<LayoutDirection> {
     Ltr
     |
     Rtl
@@ -942,6 +946,10 @@ public enum LayoutDirection {
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **起始版本：** 22
+
+**父类型：**
+
+- Equatable\<[LayoutDirection](#enum-layoutdirection)>
 
 ### Ltr
 
@@ -995,7 +1003,7 @@ public operator func !=(other: LayoutDirection): Bool
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|other|LayoutDirection|是|-|要比较的另一个LayoutDirection实例。|
+|other|[LayoutDirection](#enum-layoutdirection)|是|-|要比较的另一个LayoutDirection实例。|
 
 **返回值：**
 
@@ -1019,7 +1027,7 @@ public operator func ==(other: LayoutDirection): Bool
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|other|LayoutDirection|是|-|要比较的另一个LayoutDirection实例。|
+|other|[LayoutDirection](#enum-layoutdirection)|是|-|要比较的另一个LayoutDirection实例。|
 
 **返回值：**
 

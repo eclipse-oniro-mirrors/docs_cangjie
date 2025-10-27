@@ -1237,7 +1237,7 @@ public var pixelMap: ?PixelMap
 
 **功能：** 设置拖拽过程中显示的图片。
 
-**类型：** ?[PixelMap](../ImageKit/cj-apis-image.md#class-pixelmap)
+**类型：** ?[PixelMap](../../source_zh_cn/ImageKit/cj-apis-image.md#class-pixelmap)
 
 **读写能力：** 可读写
 
@@ -1257,7 +1257,7 @@ public init(pixelMap: ?PixelMap, builder: ?CustomBuilder, extraInfo: ?String)
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|pixelMap|?[PixelMap](../ImageKit/cj-apis-image.md#class-pixelmap)|是|-|设置拖拽过程中显示的图片。|
+|pixelMap|?[PixelMap](../../source_zh_cn/ImageKit/cj-apis-image.md#class-pixelmap)|是|-|设置拖拽过程中显示的图片。|
 |builder|?[CustomBuilder](./cj-common-types.md#type-custombuilder)|是|-|使用自定义生成器进行绘图，如果设置了pixelMap，则忽略此值。|
 |extraInfo|?String|是|-|拖拽项的描述。|
 
@@ -19835,6 +19835,8 @@ public type VoidCallback = () -> Unit
 
 **功能：** [VoidCallback](#type-voidcallback)是[() -> Unit](#type-voidcallback)类型的别名。
 
+**类型：** () -> Unit
+
 ## type Callback\<T, V>
 
 ```cangjie
@@ -19843,16 +19845,44 @@ public type Callback<T, V> = (T) -> V
 
 **功能：** [Callback](#type-callback)是[(T) -> V](#type-callback)类型的别名。
 
+**类型：** (T) -> V
+
 ## type CustomBuilder
 
 ```cangjie
 public type CustomBuilder = () -> Unit
 ```
+
 **功能：** [CustomBuilder](#type-custombuilder)是() -> Unit类型的别名。
+
+**类型：** () -> Unit
 
 ## type TransitionFinishCallback
 
 ```cangjie
 public type TransitionFinishCallback = (Bool) -> Unit
 ```
+
 **功能：** [TransitionFinishCallback](#type-transitionfinishcallback)是(Bool) -> Unit类型的别名。
+
+**类型：** (Bool) -> Unit
+
+## type ItemGeneratorFunc
+
+```cangjie
+public type ItemGeneratorFunc<T> = (T, Int64) -> Unit
+```
+
+**功能：** 定义Item生成器函数。
+
+**类型：** (T, Int64) -> Unit
+
+## type KeyGeneratorFunc
+
+```cangjie
+public type KeyGeneratorFunc<T> = (T, Int64) -> String
+```
+
+**功能：** 定义键生成器函数。
+
+**类型：** (T, Int64) -> String

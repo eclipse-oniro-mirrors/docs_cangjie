@@ -94,7 +94,7 @@ public func onDec(event: ?VoidCallback): This
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|event|?VoidCallback|是|-|回调函数，Counter数值减少时触发。初始值: { => }|
+|event|?[VoidCallback](./cj-common-types.md#type-voidcallback)|是|-|回调函数，Counter数值减少时触发。初始值: { => }|
 
 ### func onInc(?VoidCallback)
 
@@ -112,7 +112,7 @@ public func onInc(event: ?VoidCallback): This
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|event|?VoidCallback|是|-|回调函数，Counter数值增加时触发。初始值: { => }|
+|event|?[VoidCallback](./cj-common-types.md#type-voidcallback)|是|-|回调函数，Counter数值增加时触发。初始值: { => }|
 
 ## 示例代码
 

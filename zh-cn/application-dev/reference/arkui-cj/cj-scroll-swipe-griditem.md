@@ -5,7 +5,7 @@
 > **说明：**
 >
 > - 仅支持作为[Grid](./cj-scroll-swipe-grid.md)组件的子组件使用。
-> - 当GridItem配合[LazyForEach](cj-state-rendering-lazyforeach.md)使用时，GridItem子组件在GridItem创建时创建。配合[if/else](../../arkui-cj/rendering_control/cj-rendering-control-ifelse.md)、[ForEach](../../arkui-cj/rendering_control/cj-rendering-control-foreach.md)使用时，或父组件为Grid时，GridItem子组件在GridItem布局时创建。
+> - 当GridItem配合[LazyForEach](cj-state-rendering-lazyforeach.md)使用时，GridItem子组件在GridItem创建时创建。配合[if/else](../../../Dev_Guide/source_zh_cn/arkui-cj/rendering_control/cj-rendering-control-ifelse.md)、[ForEach](../../../Dev_Guide/source_zh_cn/arkui-cj/rendering_control/cj-rendering-control-foreach.md)使用时，或父组件为Grid时，GridItem子组件在GridItem布局时创建。
 
 ## 导入模块
 

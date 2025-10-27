@@ -30,8 +30,8 @@ public init(header!: ?CustomBuilder, footer!: ?CustomBuilder, child!: () -> Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|header|?CustomBuilder|是|-|**命名参数。** 设置对应group的标题显示信息。初始值：{ => }。|
-|footer|?CustomBuilder|是|-|**命名参数。** 设置对应group的尾部显示信息。初始值：{ => }。|
+|header|?[CustomBuilder](./cj-common-types.md#type-custombuilder)|是|-|**命名参数。** 设置对应group的标题显示信息。初始值：{ => }。|
+|footer|?[CustomBuilder](./cj-common-types.md#type-custombuilder)|是|-|**命名参数。** 设置对应group的尾部显示信息。初始值：{ => }。|
 |child|() -> Unit|否|{=>}|**命名参数。** 声明容器内的子组件。|
 
 ### init(?ResourceStr, ?ResourceStr, () -> Unit)
@@ -50,8 +50,8 @@ public init(header!: ?ResourceStr = None, footer!: ?ResourceStr = None, child!: 
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|header|?ResourceStr|否|None|**命名参数。** 设置对应group的标题显示信息。初始值：""。|
-|footer|?ResourceStr|否|None|**命名参数。** 设置对应group的尾部显示信息。初始值：""。|
+|header|?[ResourceStr](./cj-common-types.md#interface-resourcestr)|否|None|**命名参数。** 设置对应group的标题显示信息。初始值：""。|
+|footer|?[ResourceStr](./cj-common-types.md#interface-resourcestr)|否|None|**命名参数。** 设置对应group的尾部显示信息。初始值：""。|
 |child|() -> Unit|否|{=>}|**命名参数。** 声明容器内的子组件。|
 
 ## 通用属性/通用事件

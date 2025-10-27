@@ -95,7 +95,7 @@ public func baselineOffset(value: ?Length): This
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|value|?Length|是|-|文本基线的偏移量。<br>初始值：0.0.px。|
+|value|?[Length](./cj-common-types.md#interface-length)|是|-|文本基线的偏移量。<br>初始值：0.0.px。|
 
 ### func decoration(?TextDecorationType, ?ResourceColor, ?TextDecorationStyle)
 

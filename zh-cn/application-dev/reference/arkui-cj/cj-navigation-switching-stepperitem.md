@@ -92,13 +92,12 @@ public func status(status!: ?ItemState = None): This
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|status|?ItemState|否|None| **命名参数。** 步骤导航器nextLabel的显示状态。<br>初始值：ItemState.Normal。|
+|status|?[ItemState](./cj-common-types.md#enum-itemstate)|否|None| **命名参数。** 步骤导航器nextLabel的显示状态。<br>初始值：ItemState.Normal。|
 
 > **说明：**
 >
 > - StepperItem组件不支持设置通用宽度属性，其宽度默认撑满Stepper父组件。
 > - StepperItem组件不支持设置通用高度属性，其高度由Stepper父组件高度减去label按钮组件高度。
-
 
 ## 示例代码
 

@@ -30,7 +30,7 @@ public init(space!: ?Length = None, child!: () -> Unit = {=>})
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|space|?Length|否|None|**命名参数。** 纵向布局元素垂直方向间距。初始值: 0.vp<br>space为负数或者[justifyContent](#func-justifycontentflexalign)设置为FlexAlign.SpaceBetween、FlexAlign.SpaceAround、FlexAlign.SpaceEvenly时不生效。|
+|space|?[Length](./cj-common-types.md#interface-length)|否|None|**命名参数。** 纵向布局元素垂直方向间距。初始值: 0.vp<br>space为负数或者[justifyContent](#func-justifycontentflexalign)设置为FlexAlign.SpaceBetween、FlexAlign.SpaceAround、FlexAlign.SpaceEvenly时不生效。|
 |child|() -> Unit|否|{ => }|Column 容器的子组件|
 
 ## 通用属性/通用事件
@@ -57,7 +57,7 @@ public func alignItems(value: ?HorizontalAlign): This
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|value|?HorizontalAlign|是|-|子组件在水平方向上的对齐格式。初始值: HorizontalAlign.Center|
+|value|?[HorizontalAlign](./cj-common-types.md#enum-horizontalalign)|是|-|子组件在水平方向上的对齐格式。初始值: HorizontalAlign.Center|
 
 ### func justifyContent(?FlexAlign)
 
@@ -75,7 +75,7 @@ public func justifyContent(value: ?FlexAlign): This
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|value|?FlexAlign|是|-|设置子组件在垂直方向上的对齐格式。初始值: FlexAlign.Start|
+|value|?[FlexAlign](./cj-common-types.md#enum-flexalign)|是|-|设置子组件在垂直方向上的对齐格式。初始值: FlexAlign.Start|
 
 ## 示例代码
 

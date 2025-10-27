@@ -4,7 +4,7 @@
 
 > **说明：**
 >
-> Menu组件需配合[bindMenu](cj-universal-attribute-menu.md#func-bindmenu---unit)或[bindContextMenu](cj-universal-attribute-menu.md#func-bindcontextmenu---unit-responsetype)方法使用，不支持作为普通组件单独使用。
+> Menu组件需配合[bindMenu](cj-universal-attribute-menu.md#func-bindmenuarraymenuelement)或[bindContextMenu](cj-universal-attribute-menu.md#func-bindcontextmenucustombuilder-responsetype-contextmenuoptions)方法使用，不支持作为普通组件单独使用。
 
 ## 导入模块
 
@@ -69,10 +69,10 @@ public func font(
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|size|?Length|否|None|**命名参数。** 设置文本尺寸，Length为Int64、Float64类型时，使用fp单位。不支持百分比设置。初始值：16.vp。|
-|weight|?FontWeight|否|None|**命名参数。** 设置文本的字体粗细。初始值：FontWeight.Normal。|
-|family|?ResourceStr|否|None|**命名参数。** 设置文本的字体列表。使用多个字体，使用','进行分割，优先级按顺序生效。例如：'Arial, HarmonyOS Sans'。当前支持'HarmonyOS Sans'字体和[注册自定义字体](./cj-apis-uicontext-font.md)。初始值："HarmonyOS Sans"。|
-|style|?FontStyle|否|None|**命名参数。** 设置文本的字体样式。初始值：FontStyle.Normal。|
+|size|?[Length](./cj-common-types.md#interface-length)|否|None|**命名参数。** 设置文本尺寸，Length为Int64、Float64类型时，使用fp单位。不支持百分比设置。初始值：16.vp。|
+|weight|?[FontWeight](./cj-common-types.md#enum-fontweight)|否|None|**命名参数。** 设置文本的字体粗细。初始值：FontWeight.Normal。|
+|family|?[ResourceStr](./cj-common-types.md#interface-resourcestr)|否|None|**命名参数。** 设置文本的字体列表。使用多个字体，使用','进行分割，优先级按顺序生效。例如：'Arial, HarmonyOS Sans'。当前支持'HarmonyOS Sans'字体和[注册自定义字体](./cj-apis-uicontext-font.md)。初始值："HarmonyOS Sans"。|
+|style|?[FontStyle](./cj-common-types.md#enum-fontstyle)|否|None|**命名参数。** 设置文本的字体样式。初始值：FontStyle.Normal。|
 
 ### func fontColor(?ResourceColor)
 
@@ -90,7 +90,7 @@ public func fontColor(value: ?ResourceColor): This
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|value|?ResourceColor|是|-|Menu中所有文本的颜色。初始值：0x99000000。|
+|value|?[ResourceColor](./cj-common-types.md#interface-resourcecolor)|是|-|Menu中所有文本的颜色。初始值：0x99000000。|
 
 ### func radius(?BorderRadiuses)
 
@@ -108,7 +108,7 @@ public func radius(value: ?BorderRadiuses): This
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|value|?BorderRadiuses|是|-|Menu边框圆角半径。|
+|value|?[BorderRadiuses](./cj-common-types.md#class-borderradiuses)|是|-|Menu边框圆角半径。|
 
 ### func radius(?Length)
 
@@ -130,7 +130,7 @@ public func radius(value: ?Length): This
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|value|?Length|是|-|Menu边框圆角半径。|
+|value|?[Length](./cj-common-types.md#interface-length)|是|-|Menu边框圆角半径。|
 
 ## 示例代码
 

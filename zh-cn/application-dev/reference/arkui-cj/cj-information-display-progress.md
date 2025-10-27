@@ -32,7 +32,7 @@ public init(value!: ?Float64, total!: ?Float64 = None, progressType!: ?ProgressT
 |:---|:---|:---|:---|:---|
 |value|?Float64|是|-|**命名参数。** 指定当前进度值。设置小于0的数值时置为0.0，设置大于total的数值时置为total。初始值：0.0|
 |total|?Float64|否|None|**命名参数。** 指定进度总长。设置小于等于0的数值时置为100.0。|
-|progressType|?ProgressType|否|None|**命名参数。** 指定进度条类型。|
+|progressType|?[ProgressType](./cj-common-types.md#enum-progresstype)|否|None|**命名参数。** 指定进度条类型。|
 
 ## 通用属性/通用事件
 
@@ -62,7 +62,7 @@ public func color(value: ?ResourceColor): This
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|value|?ResourceColor|是|-|进度条前景色。|
+|value|?[ResourceColor](./cj-common-types.md#interface-resourcecolor)|是|-|进度条前景色。|
 
 ### func style(?Length, ?Int32, ?Length)
 
@@ -80,9 +80,9 @@ public func style(strokeWidth!: ?Length = None, scaleCount!: ?Int32 = None, scal
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|strokeWidth|?Length|否|None|**命名参数。** 设置进度条宽度（不支持百分比设置）。初始值：10.vp。|
+|strokeWidth|?[Length](./cj-common-types.md#interface-length)|否|None|**命名参数。** 设置进度条宽度（不支持百分比设置）。初始值：10.vp。|
 |scaleCount|?Int32|否|None|**命名参数。** 设置环形进度条总刻度数。初始值：120。|
-|scaleWidth|?Length|否|None|**命名参数。** 设置环形进度条刻度粗细（不支持百分比设置），刻度粗细大于进度条宽度时，为系统默认粗细。初始值：2.vp。|
+|scaleWidth|?[Length](./cj-common-types.md#interface-length)|否|None|**命名参数。** 设置环形进度条刻度粗细（不支持百分比设置），刻度粗细大于进度条宽度时，为系统默认粗细。初始值：2.vp。|
 
 ### func style(?RingStyleOptions)
 
@@ -100,7 +100,7 @@ public func style(value: ?RingStyleOptions): This
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|value|?RingStyleOptions|是|-|设置Ring的样式。<br>初始值：RingStyleOptions()。|
+|value|?[RingStyleOptions](#class-ringstyleoptions)|是|-|设置Ring的样式。<br>初始值：RingStyleOptions()。|
 
 ### func value(?Float64)
 
@@ -121,6 +121,18 @@ public func value(value: ?Float64): This
 |value|?Float64|是|-|当前进度值。初始值：0.0。|
 
 ## 基础类型定义
+
+### interface CommonProgressStyleOptions
+
+```cangjie
+sealed interface CommonProgressStyleOptions {}
+```
+
+**功能：** 进度条通用样式选项。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
 
 ### class RingStyleOptions
 
@@ -201,7 +213,7 @@ public var status: ?ProgressStatus
 
 **功能：** 进度条状态，当设置为LOADING时会开启检查更新动效，此时设置进度值不生效。当从LOADING设置为PROGRESSING，检查更新动效会执行到终点再停止。
 
-**类型：** ?ProgressStatus
+**类型：** ?[ProgressStatus](#enum-progressstatus)
 
 **读写能力：** 可读写
 
@@ -217,7 +229,7 @@ public var strokeWidth: ?Length
 
 **功能：** 设置进度条宽度（不支持百分比设置）。
 
-**类型：** ?Length
+**类型：** ?[Length](./cj-common-types.md#interface-length)
 
 **读写能力：** 可读写
 
@@ -241,9 +253,9 @@ public init(strokeWidth!: ?Length = None, shadow!: ?Bool = None, status!: ?Progr
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|strokeWidth|?Length|否|None|**命名参数。** 设置进度条宽度（不支持百分比设置），宽度大于等于半径时，默认修改宽度至半径值的二分之一。初始值：4.0.vp。|
+|strokeWidth|?[Length](./cj-common-types.md#interface-length)|否|None|**命名参数。** 设置进度条宽度（不支持百分比设置），宽度大于等于半径时，默认修改宽度至半径值的二分之一。初始值：4.0.vp。|
 |shadow|?Bool|否|None|**命名参数。** 进度条阴影开关。初始值：false。|
-|status|?ProgressStatus|否|None|**命名参数。** 进度条状态，当设置为LOADING时会开启检查更新动效，此时设置进度值不生效。当从LOADING设置为PROGRESSING，检查更新动效会执行到终点再停止。初始值：ProgressStatus.Progressing。|
+|status|?[ProgressStatus](#enum-progressstatus)|否|None|**命名参数。** 进度条状态，当设置为LOADING时会开启检查更新动效，此时设置进度值不生效。当从LOADING设置为PROGRESSING，检查更新动效会执行到终点再停止。初始值：ProgressStatus.Progressing。|
 |enableSmoothEffect|?Bool|否|None|**命名参数。** 进度平滑动效的开关。开启平滑动效后设置进度，进度会从当前值渐变至设定值，否则进度从当前值突变至设定值。初始值：true。|
 |enableScanEffect|?Bool|否|None|**命名参数。** 扫光效果的开关。初始值：false。|
 
@@ -265,7 +277,7 @@ public enum ProgressStatus <: Equatable<ProgressStatus> {
 
 **父类型：**
 
-- Equatable\<ProgressStatus>
+- Equatable\<[ProgressStatus](#enum-progressstatus)>
 
 #### Loading
 

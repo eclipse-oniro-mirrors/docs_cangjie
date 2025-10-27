@@ -42,7 +42,6 @@ public func bindContextMenu(builder!: ?CustomBuilder, responseType!: ?ResponseTy
 |:---|:---|
 |T|返回调用此接口的组件实例本身。|
 
-
 ## func bindMenu(?Array\<MenuElement>)
 
 ```cangjie
@@ -66,7 +65,6 @@ public func bindMenu(content: ?Array<MenuElement>): T
 |类型|说明|
 |:---|:---|
 |T|返回调用此接口的组件实例本身。|
-
 
 ## func bindMenu(?CustomBuilder)
 

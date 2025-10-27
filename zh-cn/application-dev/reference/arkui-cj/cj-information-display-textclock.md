@@ -33,7 +33,7 @@ public init(timeZoneOffset!: ?Float32 = None, controller!: ?TextClockController 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |timeZoneOffset|?Float32|否|None| **命名参数。** 时区偏移。|
-|controller|?TextClockController|否|None| **命名参数。** TextClock组件的控制器。|
+|controller|?[TextClockController](#class-textclockcontroller)|否|None| **命名参数。** TextClock组件的控制器。|
 
 ## 通用属性/通用事件
 
@@ -59,7 +59,7 @@ public func fontColor(value: ?ResourceColor): This
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|value|?ResourceColor|是|-|文本的颜色。|
+|value|?[ResourceColor](./cj-common-types.md#interface-resourcecolor)|是|-|文本的颜色。|
 
 ### func fontFamily(?ResourceStr)
 
@@ -77,7 +77,7 @@ public func fontFamily(value: ?ResourceStr): This
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|value|?ResourceStr|是|-|文本的字体族。<br>初始值："HarmonyOS Sans"。|
+|value|?[ResourceStr](./cj-common-types.md#interface-resourcestr)|是|-|文本的字体族。<br>初始值："HarmonyOS Sans"。|
 
 ### func fontSize(?Length)
 
@@ -95,7 +95,7 @@ public func fontSize(value: ?Length): This
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|value|?Length|是|-|文本的字体大小。<br>初始值：16.0.fp。|
+|value|?[Length](./cj-common-types.md#interface-length)|是|-|文本的字体大小。<br>初始值：16.0.fp。|
 
 ### func fontStyle(?FontStyle)
 
@@ -113,7 +113,7 @@ public func fontStyle(value: ?FontStyle): This
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|value|?FontStyle|是|-|文本的字体样式。<br>初始值：FontStyle.Normal。|
+|value|?[FontStyle](./cj-common-types.md#enum-fontstyle)|是|-|文本的字体样式。<br>初始值：FontStyle.Normal。|
 
 ### func fontWeight(?FontWeight)
 
@@ -131,7 +131,7 @@ public func fontWeight(value: ?FontWeight): This
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|value|?FontWeight|是|-|文本的字体粗细。<br>初始值：FontWeight.Normal。|
+|value|?[FontWeight](./cj-common-types.md#enum-fontweight)|是|-|文本的字体粗细。<br>初始值：FontWeight.Normal。|
 
 ### func format(?ResourceStr)
 
@@ -149,7 +149,7 @@ public func format(value: ?ResourceStr): This
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|value|?ResourceStr|是|-|时间格式字符串。初始值：""。|
+|value|?[ResourceStr](./cj-common-types.md#interface-resourcestr)|是|-|时间格式字符串。初始值：""。|
 
 ### func textShadow(?Array\<ShadowOptions>)
 
@@ -167,7 +167,7 @@ public func textShadow(values: ?Array<ShadowOptions>): This
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|values|?Array\<ShadowOptions>|是|-|阴影选项数组。|
+|values|?Array\<[ShadowOptions](./cj-common-types.md#class-shadowoptions)>|是|-|阴影选项数组。|
 
 ### func textShadow(?ShadowOptions)
 
@@ -185,7 +185,7 @@ public func textShadow(value: ?ShadowOptions): This
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|value|?ShadowOptions|是|-|阴影选项。|
+|value|?[ShadowOptions](./cj-common-types.md#class-shadowoptions)|是|-|阴影选项。|
 
 ## 组件事件
 

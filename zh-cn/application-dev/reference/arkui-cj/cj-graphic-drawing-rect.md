@@ -30,8 +30,8 @@ public init(width!: ?Length = None, height!: ?Length = None)
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|width|?Length|否|None|**命名参数。** 矩形宽度，取值范围≥0。初始值：0。默认单位：vp。|
-|height|?Length|否|None|**命名参数。** 矩形高度，取值范围≥0。初始值：0。默认单位：vp。|
+|width|?[Length](./cj-common-types.md#interface-length)|否|None|**命名参数。** 矩形宽度，取值范围≥0。初始值：0。默认单位：vp。|
+|height|?[Length](./cj-common-types.md#interface-length)|否|None|**命名参数。** 矩形高度，取值范围≥0。初始值：0。默认单位：vp。|
 
 ## 通用属性/通用事件
 
@@ -57,7 +57,7 @@ public func radiusWidth(value: ?Length): This
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|value|?Length|是|-|圆角的宽度。初始值：0.vp|
+|value|?[Length](./cj-common-types.md#interface-length)|是|-|圆角的宽度。初始值：0.vp|
 
 ### func radiusHeight(?Length)
 
@@ -75,7 +75,7 @@ public func radiusHeight(value: ?Length): This
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|value|?Length|是|-|设置圆角的高度。初始值：0.vp。|
+|value|?[Length](./cj-common-types.md#interface-length)|是|-|设置圆角的高度。初始值：0.vp。|
 
 ### func radius(?Length)
 
@@ -93,7 +93,7 @@ public func radius(value: ?Length): This
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|value|?Length|是|-|圆角半径大小。初始值：0.vp。|
+|value|?[Length](./cj-common-types.md#interface-length)|是|-|圆角半径大小。初始值：0.vp。|
 
 ### func radius(?Array\<Length>)
 
@@ -111,7 +111,7 @@ public func radius(value: ?Array<Length>): This
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|value|?Array\<Length>|是|-|左上、右上、右下、左下圆角半径大小。<br>初始值：0.vp。|
+|value|?Array\<[Length](./cj-common-types.md#interface-length)>|是|-|左上、右上、右下、左下圆角半径大小。<br>初始值：0.vp。|
 
 ### func radius(?Array\<(Length, Length)>)
 
@@ -129,7 +129,7 @@ public func radius(radiusArray: ?Array<(Length, Length)>): This
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|radiusArray|?Array\<(Length, Length)>|是|-|左上、右上、右下、左下圆角宽、高大小。<br>初始值：0。<br>默认单位：vp。|
+|radiusArray|?Array\<([Length](./cj-common-types.md#interface-length), [Length](./cj-common-types.md#interface-length))>|是|-|左上、右上、右下、左下圆角宽、高大小。<br>初始值：0。<br>默认单位：vp。|
 
 ## 示例代码
 

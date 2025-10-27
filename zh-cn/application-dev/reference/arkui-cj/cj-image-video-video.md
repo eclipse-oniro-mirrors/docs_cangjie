@@ -45,10 +45,10 @@ public init(
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|src|?ResourceStr|否|None| **命名参数。** 视频的数据源，支持本地视频和网络视频。|
-|currentProgressRate|?PlaybackSpeed|否|Option.None| **命名参数。** 视频播放倍速。<br>初始值：SpeedForward100X。|
-|previewUri|?ResourceStr|否|None| **命名参数。** 视频未播放时的预览图片路径。|
-|controller|?VideoController|否|None| **命名参数。** 设置视频控制器，可以控制视频的播放状态。<br>初始值：VideoController()|
+|src|?[ResourceStr](./cj-common-types.md#interface-resourcestr)|否|None| **命名参数。** 视频的数据源，支持本地视频和网络视频。|
+|currentProgressRate|?[PlaybackSpeed](./cj-common-types.md#enum-playbackspeed)|否|Option.None| **命名参数。** 视频播放倍速。<br>初始值：SpeedForward100X。|
+|previewUri|?[ResourceStr](./cj-common-types.md#interface-resourcestr)|否|None| **命名参数。** 视频未播放时的预览图片路径。|
+|controller|?[VideoController](#class-videocontroller)|否|None| **命名参数。** 设置视频控制器，可以控制视频的播放状态。<br>初始值：VideoController()|
 
 ## 通用属性/通用事件
 
@@ -146,7 +146,7 @@ public func objectFit(value: ?ImageFit): This
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|value|?ImageFit|是|-|视频填充模式。<br>初始值：ImageFit.Cover。|
+|value|?[ImageFit](./cj-common-types.md#enum-imagefit)|是|-|视频填充模式。<br>初始值：ImageFit.Cover。|
 
 ## 组件事件
 
@@ -166,7 +166,7 @@ public func onError(event: ?VoidCallback): This
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|event|?VoidCallback|是|-|回调函数，播放失败时触发。<br>初始值：{ => }|
+|event|?[VoidCallback](./cj-common-types.md#type-voidcallback)|是|-|回调函数，播放失败时触发。<br>初始值：{ => }|
 
 ### func onFinish(?VoidCallback)
 
@@ -184,7 +184,7 @@ public func onFinish(event: ?VoidCallback): This
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|event|?VoidCallback|是|-|回调函数，播放结束时触发。<br>初始值：{ => }|
+|event|?[VoidCallback](./cj-common-types.md#type-voidcallback)|是|-|回调函数，播放结束时触发。<br>初始值：{ => }|
 
 ### func onPause(?VoidCallback)
 
@@ -202,7 +202,7 @@ public func onPause(event: ?VoidCallback): This
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|event|?VoidCallback|是|-|回调函数，暂停播放时触发。<br>初始值：{ => }|
+|event|?[VoidCallback](./cj-common-types.md#type-voidcallback)|是|-|回调函数，暂停播放时触发。<br>初始值：{ => }|
 
 ### func onPrepared(?Callback\<PreparedInfo, Unit>)
 
@@ -220,7 +220,7 @@ public func onPrepared(callback: ?Callback<PreparedInfo, Unit>): This
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|callback|?Callback\<PreparedInfo, Unit>|是|-|回调函数，视频准备完成时触发。<br>初始值：{ _ => }|
+|callback|?[Callback](./cj-common-types.md#type-callbackt-v)\<[PreparedInfo](#class-preparedinfo), Unit>|是|-|回调函数，视频准备完成时触发。<br>初始值：{ _ => }|
 
 ### func onSeeked(?Callback\<PlaybackInfo, Unit>)
 
@@ -238,7 +238,7 @@ public func onSeeked(callback: ?Callback<PlaybackInfo, Unit>): This
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|callback|?Callback\<PlaybackInfo, Unit>|是|-|回调函数，操作进度条完成后触发。<br>初始值：{ _ => }|
+|callback|?[Callback](./cj-common-types.md#type-callbackt-v)\<[PlaybackInfo](#class-playbackinfo), Unit>|是|-|回调函数，操作进度条完成后触发。<br>初始值：{ _ => }|
 
 ### func onSeeking(?Callback\<PlaybackInfo, Unit>)
 
@@ -256,7 +256,7 @@ public func onSeeking(callback: ?Callback<PlaybackInfo, Unit>): This
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|callback|?Callback\<PlaybackInfo, Unit>|是|-|回调函数，操作进度条过程时触发。<br>初始值：{ _ => }|
+|callback|?[Callback](./cj-common-types.md#type-callbackt-v)\<[PlaybackInfo](#class-playbackinfo), Unit>|是|-|回调函数，操作进度条过程时触发。<br>初始值：{ _ => }|
 
 ### func onStart(?VoidCallback)
 
@@ -274,7 +274,7 @@ public func onStart(event: ?VoidCallback): This
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|event|?VoidCallback|是|-|回调函数，播放时触发。<br>初始值：{ => }|
+|event|?[VoidCallback](./cj-common-types.md#type-voidcallback)|是|-|回调函数，播放时触发。<br>初始值：{ => }|
 
 ### func onUpdate(?Callback\<PlaybackInfo, Unit>)
 
@@ -292,7 +292,7 @@ public func onUpdate(callback: ?Callback<PlaybackInfo, Unit>): This
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|callback|?Callback\<PlaybackInfo, Unit>|是|-|回调函数，说明播放进度变化时触发。<br>初始值：{ _ => }|
+|callback|?[Callback](./cj-common-types.md#type-callbackt-v)\<[PlaybackInfo](#class-playbackinfo), Unit>|是|-|回调函数，说明播放进度变化时触发。<br>初始值：{ _ => }|
 
 ### func onFullscreenChange(?Callback\<FullscreenInfo, Unit>)
 
@@ -310,7 +310,7 @@ public func onFullscreenChange(callback: ?Callback<FullscreenInfo, Unit>): This
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|callback|?Callback\<FullscreenInfo, Unit>|是|-|视频进入和退出全屏时的回调函数。<br>初始值：{ _ => }|
+|callback|?[Callback](./cj-common-types.md#type-callbackt-v)\<[FullscreenInfo](#class-fullscreeninfo), Unit>|是|-|视频进入和退出全屏时的回调函数。<br>初始值：{ _ => }|
 
 ## 基础类型定义
 
@@ -465,7 +465,7 @@ public func setCurrentTime(value: Int32, seekMode: ?SeekMode): Unit
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |value|Int32|是|-|播放时间。|
-|seekMode|?SeekMode|是|-|搜索模式。|
+|seekMode|?[SeekMode](./cj-common-types.md#enum-seekmode)|是|-|搜索模式。|
 
 #### func start()
 

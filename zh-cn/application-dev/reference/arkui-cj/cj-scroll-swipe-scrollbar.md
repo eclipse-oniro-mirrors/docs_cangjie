@@ -39,9 +39,9 @@ public init(
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|scroller|?Scroller|是|-|**命名参数。** 可滚动组件的控制器。用于与可滚动组件进行绑定。|
-|direction|?ScrollBarDirection|否|None|**命名参数。** 滚动条的方向，控制可滚动组件对应方向的滚动。初始值：ScrollBarDirection.Vertical。|
-|state|?BarState|否|None|**命名参数。** 滚动条状态。初始值：BarState.Auto。|
+|scroller|?[Scroller](./cj-scroll-swipe-scroll.md#class-scroller)|是|-|**命名参数。** 可滚动组件的控制器。用于与可滚动组件进行绑定。|
+|direction|?[ScrollBarDirection](./cj-common-types.md#enum-scrollbardirection)|否|None|**命名参数。** 滚动条的方向，控制可滚动组件对应方向的滚动。初始值：ScrollBarDirection.Vertical。|
+|state|?[BarState](./cj-common-types.md#enum-barstate)|否|None|**命名参数。** 滚动条状态。初始值：BarState.Auto。|
 |child|() -> Unit|是|-|**命名参数。** 容器内的子组件。|
 
 ## 通用属性/通用事件

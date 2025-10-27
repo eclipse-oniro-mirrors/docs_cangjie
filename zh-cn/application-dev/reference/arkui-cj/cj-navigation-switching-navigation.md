@@ -117,7 +117,7 @@ public func title(value: ?CustomBuilder, options!: ?NavigationTitleOptions = Non
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|value|?[CustomBuilder](../cj-common-types.md#type-custombuilder)|是|-|页面标题。初始值：{ => }。|
+|value|?[CustomBuilder](./cj-common-types.md#type-custombuilder)|是|-|页面标题。初始值：{ => }。|
 |options|?[NavigationTitleOptions](#class-navigationtitleoptions)|否|None|**命名参数** 标题栏选项。|
 
 ### func title(?ResourceStr, ?NavigationTitleOptions)
@@ -136,7 +136,7 @@ public func title(value: ?ResourceStr, options!: ?NavigationTitleOptions = None)
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|value|?[ResourceStr](../cj-common-types.md#type-resourcestr)|是|-|页面标题。初始值：""。|
+|value|?[ResourceStr](./cj-common-types.md#interface-resourcestr)|是|-|页面标题。初始值：""。|
 |options|?[NavigationTitleOptions](#class-navigationtitleoptions)|否|None|**命名参数** 标题栏选项。|
 
 ## 基础类型定义
@@ -236,7 +236,7 @@ public var backgroundBlurStyle: ?BlurStyle
 
 **功能：** 标题栏的背景模糊样式。如果未设置此参数，则禁用背景模糊效果。
 
-**类型：** ?[BlurStyle](../cj-common-types.md#type-blurstyle)
+**类型：** ?[BlurStyle](./cj-common-types.md#enum-blurstyle)
 
 **读写能力：** 可读写
 
@@ -252,7 +252,7 @@ public var backgroundColor: ?ResourceColor
 
 **功能：** 标题栏的背景颜色。如果未设置此参数，则使用默认颜色。
 
-**类型：** ?[ResourceColor](../cj-common-types.md#type-resourcecolor)
+**类型：** ?[ResourceColor](./cj-common-types.md#interface-resourcecolor)
 
 **读写能力：** 可读写
 
@@ -284,7 +284,7 @@ public var paddingEnd: ?Length
 
 **功能：** 设置标题栏结束边距。
 
-**类型：** ?[Length](../cj-common-types.md#type-length)
+**类型：** ?[Length](./cj-common-types.md#interface-length)
 
 **读写能力：** 可读写
 
@@ -300,7 +300,7 @@ public var paddingStart: ?Length
 
 **功能：** 设置标题栏起始边距。
 
-**类型：** ?[Length](../cj-common-types.md#type-length)
+**类型：** ?[Length](./cj-common-types.md#interface-length)
 
 **读写能力：** 可读写
 
@@ -325,11 +325,11 @@ public init(backgroundColor: ?ResourceColor = None, backgroundBlurStyle: ?BlurSt
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|backgroundColor|?[ResourceColor](../cj-common-types.md#type-resourcecolor)|否|None|标题栏背景颜色。|
-|backgroundBlurStyle|?[BlurStyle](../cj-common-types.md#type-blurstyle)|否|None|标题栏背景模糊样式。|
+|backgroundColor|?[ResourceColor](./cj-common-types.md#interface-resourcecolor)|否|None|标题栏背景颜色。|
+|backgroundBlurStyle|?[BlurStyle](./cj-common-types.md#enum-blurstyle)|否|None|标题栏背景模糊样式。|
 |barStyle|?[BarStyle](#enum-barstyle)|否|None|标题栏布局样式。初始值：BarStyle.STANDARD。|
-|paddingStart|?[Length](../cj-common-types.md#type-length)|否|None|标题栏起始边距。|
-|paddingEnd|?[Length](../cj-common-types.md#type-length)|否|None|标题栏结束边距。|
+|paddingStart|?[Length](./cj-common-types.md#interface-length)|否|None|标题栏起始边距。|
+|paddingEnd|?[Length](./cj-common-types.md#interface-length)|否|None|标题栏结束边距。|
 
 ### class NavPathInfo
 
@@ -372,7 +372,7 @@ public var onPop: ?Callback<PopInfo, Unit> = None
 
 **功能：** 导航目标页面触发pop时的回调函数。
 
-**类型：** ?Callback\<[PopInfo](#class-popinfo), Unit>
+**类型：** ?[Callback](./cj-common-types.md#type-callbackt-v)\<[PopInfo](#class-popinfo), Unit>
 
 **读写能力：** 可读写
 
@@ -414,7 +414,7 @@ public init(name！: ?String, param！: ?String, onPop！: ?Callback<PopInfo, Un
 |:---|:---|:---|:---|:---|
 |name|?String|是|-|**命名参数** NavDestination的名称。初始值：""。|
 |param|?String|是|-|**命名参数** NavDestination的详细参数。初始值：""。|
-|onPop|?Callback\<[PopInfo](#class-popinfo), Unit>|否|None|**命名参数**  NavDestination页面触发pop时的回调函数。|
+|onPop|?[Callback](./cj-common-types.md#type-callbackt-v)\<[PopInfo](#class-popinfo), Unit>|否|None|**命名参数**  NavDestination页面触发pop时的回调函数。|
 
 ### class NavPathStack
 
@@ -570,7 +570,7 @@ public enum BarStyle <: Equatable<BarStyle> {
 
 **父类型：**
 
-- Equatable\<BarStyle>
+- Equatable\<[BarStyle](#enum-barstyle)>
 
 #### Stack
 
@@ -664,7 +664,7 @@ public enum LaunchMode <: Equatable<LaunchMode> {
 
 **父类型：**
 
-- Equatable\<LaunchMode>
+- Equatable\<[LaunchMode](#enum-launchmode)>
 
 #### MoveToTopSingleTon
 

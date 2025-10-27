@@ -52,7 +52,7 @@ public init(src: ?ResourceStr)
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|src|?ResourceStr|是|-|图片的数据源。<br>初始值：""|
+|src|?[ResourceStr](./cj-common-types.md#interface-resourcestr)|是|-|图片的数据源。<br>初始值：""|
 
 ### init(?PixelMap)
 
@@ -76,7 +76,7 @@ public init(src: ?PixelMap)
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|src|?PixelMap|是|-|图片的数据源。<br/>PixelMap格式为像素图，常用于图片编辑的场景。|
+|src|?[PixelMap](../../source_zh_cn/ImageKit/cj-apis-image.md#class-pixelmap)|是|-|图片的数据源。<br/>PixelMap格式为像素图，常用于图片编辑的场景。|
 
 ## 通用属性/通用事件
 
@@ -106,7 +106,7 @@ public func alt(src: ?ResourceStr): This
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|src|?ResourceStr|是|-|加载时显示的占位图，支持本地图片（png、jpg、bmp、svg、gif和heif类型），不支持网络图片。<br>初始值：""。|
+|src|?[ResourceStr](./cj-common-types.md#interface-resourcestr)|是|-|加载时显示的占位图，支持本地图片（png、jpg、bmp、svg、gif和heif类型），不支持网络图片。<br>初始值：""。|
 
 ### func autoResize(?Bool)
 
@@ -150,7 +150,7 @@ public func fillColor(value: ?ResourceColor): This
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|value|?ResourceColor|是|-|设置填充颜色。|
+|value|?[ResourceColor](./cj-common-types.md#interface-resourcecolor)|是|-|设置填充颜色。|
 
 ### func fitOriginalSize(?Bool)
 
@@ -191,7 +191,7 @@ public func interpolation(value: ?ImageInterpolation): This
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|value|?ImageInterpolation|是|-|图片的插值效果。<br>初始值：ImageInterpolation.Low。|
+|value|?[ImageInterpolation](./cj-common-types.md#enum-imageinterpolation)|是|-|图片的插值效果。<br>初始值：ImageInterpolation.Low。|
 
 ### func matchTextDirection(?Bool)
 
@@ -227,7 +227,7 @@ public func objectFit(value: ?ImageFit): This
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|value|?ImageFit|是|-|图片的填充效果。<br>初始值：ImageFit.Cover。|
+|value|?[ImageFit](./cj-common-types.md#enum-imagefit)|是|-|图片的填充效果。<br>初始值：ImageFit.Cover。|
 
 ### func objectRepeat(?ImageRepeat)
 
@@ -250,7 +250,7 @@ public func objectRepeat(value: ?ImageRepeat): This
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|value|?ImageRepeat|是|-|图片的重复样式。<br>初始值：ImageRepeat.NoRepeat。|
+|value|?[ImageRepeat](./cj-common-types.md#enum-imagerepeat)|是|-|图片的重复样式。<br>初始值：ImageRepeat.NoRepeat。|
 
 ### func renderMode(?ImageRenderMode)
 
@@ -273,7 +273,7 @@ public func renderMode(value: ?ImageRenderMode): This
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|value|?ImageRenderMode|是|-|设置图片的渲染模式。SVG类型图源不支持该属性。<br>初始值：ImageRenderMode.Original。|
+|value|?[ImageRenderMode](./cj-common-types.md#enum-imagerendermode)|是|-|设置图片的渲染模式。SVG类型图源不支持该属性。<br>初始值：ImageRenderMode.Original。|
 
 ### func sourceSize(?Length, ?Length)
 
@@ -291,8 +291,8 @@ public func sourceSize(width: ?Length, height: ?Length): This
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|width|?Length|是|-|图片解码后的宽度。<br>初始值：0.0.px。|
-|height|?Length|是|-|图片解码后的高度。<br>初始值：0.0.px。|
+|width|?[Length](./cj-common-types.md#interface-length)|是|-|图片解码后的宽度。<br>初始值：0.0.px。|
+|height|?[Length](./cj-common-types.md#interface-length)|是|-|图片解码后的高度。<br>初始值：0.0.px。|
 
 ### func syncLoad(?Bool)
 
@@ -334,7 +334,7 @@ public func onComplete(callback: ?ImageCompleteCallback): This
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|callback|?ImageCompleteCallback|是|-|回调函数，图片成功加载时触发。<br>初始值：{ _ => }。|
+|callback|?[ImageCompleteCallback](#type-imagecompletecallback)|是|-|回调函数，图片成功加载时触发。<br>初始值：{ _ => }。|
 
 ### func onError(?ImageErrorCallback)
 
@@ -352,7 +352,7 @@ public func onError(callback: ?ImageErrorCallback): This
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|callback|?ImageErrorCallback|是|-|回调函数，图片加载出现异常时触发。<br>初始值：{ _ => }。|
+|callback|?[ImageErrorCallback](#type-imageerrorcallback)|是|-|回调函数，图片加载出现异常时触发。<br>初始值：{ _ => }。|
 
 ### func onFinish(?() -> Unit)
 
@@ -388,8 +388,6 @@ public class ColorFilter {
 
 **起始版本：** 22
 
-**父类型：** 无
-
 #### init(?Array\<Float32>)
 
 ```cangjie
@@ -423,8 +421,6 @@ public class ImageError {
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **起始版本：** 22
-
-**父类型：** 无
 
 #### var componentHeight
 
@@ -495,8 +491,6 @@ public class ImageLoadResult {
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **起始版本：** 22
-
-**父类型：** 无
 
 #### var componentHeight
 

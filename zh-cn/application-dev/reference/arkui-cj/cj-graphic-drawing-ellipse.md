@@ -30,12 +30,12 @@ public init(width!: ?Length = None, height!: ?Length = None)
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|width|?Length|否|None|**命名参数。** 宽度，取值范围≥0。初始值: 0.vp|
-|height|?Length|否|None|**命名参数。** 高度，取值范围≥0。初始值: 0.vp|
+|width|?[Length](./cj-common-types.md#interface-length)|否|None|**命名参数。** 宽度，取值范围≥0。初始值: 0.vp|
+|height|?[Length](./cj-common-types.md#interface-length)|否|None|**命名参数。** 高度，取值范围≥0。初始值: 0.vp|
 
 ## 通用属性/通用事件
 
-通用属性：全部支持。
+通用属性：除了支持通用属性外，还支持[图形绘制通用属性](./cj-graphic-drawing-common.md)。
 
 通用事件：全部支持。
 

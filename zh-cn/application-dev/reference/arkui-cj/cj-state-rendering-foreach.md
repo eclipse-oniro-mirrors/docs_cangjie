@@ -12,8 +12,8 @@ import kit.ArkUI.*
 
 ```cangjie
 public class ForEach<T> <: UINodeBase {
-    public init(arr: CollectionEx<T>, itemGenerator!: ItemGenFuncType<T>,
-        keyGenerator!: ?KeyGenFuncType<T> = None) {}
+    public init(arr: CollectionEx<T>, itemGenerator!: ItemGeneratorFunc<T>,
+        keyGenerator!: ?KeyGeneratorFunc<T> = None) {}
     public init(subcomponent: () -> Unit)
 }
 ```
@@ -26,12 +26,12 @@ public class ForEach<T> <: UINodeBase {
 
 **父类型：**
 
-- UINodeBase
+- [UINodeBase](./cj-ui-framework.md#class-uinodebase)
 
-### init(CollectionEx\<T>, ItemGenFuncType\<T>, ?KeyGenFuncType\<T>)
+### init(CollectionEx\<T>, ItemGeneratorFunc\<T>, ?KeyGeneratorFunc\<T>)
 
 ```cangjie
-public init(arr: CollectionEx<T>, itemGenerator!: ItemGenFuncType<T>, keyGenerator!: ?KeyGenFuncType<T> = None)
+public init(arr: CollectionEx<T>, itemGenerator!: ItemGeneratorFunc<T>, keyGenerator!: ?KeyGeneratorFunc<T> = None)
 ```
 
 **功能：** 定义ForEach组件。
@@ -44,9 +44,9 @@ public init(arr: CollectionEx<T>, itemGenerator!: ItemGenFuncType<T>, keyGenerat
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|arr|CollectionEx\<T>|是|-|用于UI中的数组集合。|
-|itemGenerator|ItemGenFuncType\<T>|否|-|项目生成函数。|
-|keyGenerator|?KeyGenFuncType\<T>|否|None|键生成函数。|
+|arr|[CollectionEx](./cj-ui-framework.md#interface-collectionext)\<T>|是|-|用于UI中的数组集合。|
+|itemGenerator|[ItemGeneratorFunc](./cj-common-types.md#type-itemgeneratorfunc)\<T>|否|-|项目生成函数。|
+|keyGenerator|?[KeyGeneratorFunc](./cj-common-types.md#type-keygeneratorfunc)\<T>|否|None|键生成函数。|
 
 ### init(() -> Unit)
 

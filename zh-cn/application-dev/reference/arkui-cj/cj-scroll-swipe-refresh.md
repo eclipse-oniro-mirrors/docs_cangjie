@@ -30,7 +30,7 @@ public init(value: ?RefreshOptions, child: () -> Unit)
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|value|?RefreshOptions|是|-|设置组件刷新时的参数。|
+|value|?[RefreshOptions](#class-refreshoptions)|是|-|设置组件刷新时的参数。|
 |child|() -> Unit|是|-|声明容器子组件。|
 
 ## 通用属性/通用事件
@@ -59,7 +59,7 @@ public func onStateChange(callback: ?(RefreshStatus) -> Unit): This
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|callback|?(RefreshStatus)-> Unit|是|-|刷新状态。<br>初始值：{res: RefreshStatus =>}。|
+|callback|?([RefreshStatus](./cj-common-types.md#enum-refreshstatus))-> Unit|是|-|刷新状态。<br>初始值：{res: RefreshStatus =>}。|
 
 ### func onRefreshing(?() -> Unit)
 
@@ -97,10 +97,6 @@ public class RefreshOptions {
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **起始版本：** 22
-
-**父类型：**
-
-无
 
 #### var refreshing
 
@@ -168,8 +164,7 @@ public init(refreshing!: ?Bindable<Bool>)
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|refreshing|?[Bindable](./cj-common-types.md#class-bindable)\<Bool>|否|-| **命名参数。** 标识刷新组件当前是否正在刷新。|
-
+|refreshing|?[Bindable](./cj-common-types.md#class-bindablet)\<Bool>|否|-| **命名参数。** 标识刷新组件当前是否正在刷新。|
 
 ## 示例代码
 

@@ -36,8 +36,8 @@ public init(count!: Int32, style!: ?BadgeStyle, position!: ?BadgePosition = None
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |count|Int32|是|-|**命名参数。** 设置提醒消息数。小于等于0时不显示信息标记。|
-|style|?BadgeStyle|是|-|**命名参数。** Badge组件可设置的样式，支持设置文本颜色、尺寸、圆点颜色和尺寸。|
-|position|?BadgePosition|否|None|**命名参数。** 提示点显示位置。初始值：BadgePosition.RightTop|
+|style|?[BadgeStyle](#class-badgestyle)|是|-|**命名参数。** Badge组件可设置的样式，支持设置文本颜色、尺寸、圆点颜色和尺寸。|
+|position|?[BadgePosition](#enum-badgeposition)|否|None|**命名参数。** 提示点显示位置。初始值：BadgePosition.RightTop|
 |maxCount|?Int32|否|None|**命名参数。** 最大消息数，超过最大消息时仅显示 maxCount+。初始值：99|
 |child|() -> Unit|是|-|容器的子组件。|
 
@@ -58,8 +58,8 @@ public init(value!: String, style!: ?BadgeStyle, position!: ?BadgePosition = Non
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |value|String|是|-|**命名参数。** 文本标记组件参数。|
-|style|?BadgeStyle|是|-|**命名参数。** Badge组件可设置的样式，支持设置文本颜色、尺寸、圆点颜色和尺寸。|
-|position|?BadgePosition|否|None|**命名参数。** 提示点显示位置。初始值：BadgePosition.RightTop|
+|style|?[BadgeStyle](#class-badgestyle)|是|-|**命名参数。** Badge组件可设置的样式，支持设置文本颜色、尺寸、圆点颜色和尺寸。|
+|position|?[BadgePosition](#enum-badgeposition)|否|None|**命名参数。** 提示点显示位置。初始值：BadgePosition.RightTop|
 |child|() -> Unit|是|-|容器的子组件。|
 
 ## 通用属性/通用事件
@@ -101,7 +101,7 @@ public var badgeColor: ?ResourceColor
 
 **功能：** badge的颜色。
 
-**类型：** ?[ResourceColor](../apis/BasicServicesKit/cj-apis-base.md#interface-resourcecolor)
+**类型：** ?[ResourceColor](./cj-common-types.md#interface-resourcecolor)
 
 **读写能力：** 可读写
 
@@ -117,7 +117,7 @@ public var badgeSize: ?Length
 
 **功能：** badge的大小，单位为vp。
 
-**类型：** ?[Length](../apis/BasicServicesKit/cj-apis-base.md#interface-length)
+**类型：** ?[Length](./cj-common-types.md#interface-length)
 
 **读写能力：** 可读写
 
@@ -133,7 +133,7 @@ public var borderColor: ?ResourceColor
 
 **功能：** 底板描边颜色。
 
-**类型：** ?[ResourceColor](../apis/BasicServicesKit/cj-apis-base.md#interface-resourcecolor)
+**类型：** ?[ResourceColor](./cj-common-types.md#interface-resourcecolor)
 
 **读写能力：** 可读写
 
@@ -149,7 +149,7 @@ public var borderWidth: ?Length
 
 **功能：** 底板描边粗细。
 
-**类型：** ?[Length](../apis/BasicServicesKit/cj-apis-base.md#interface-length)
+**类型：** ?[Length](./cj-common-types.md#interface-length)
 
 **读写能力：** 可读写
 
@@ -165,7 +165,7 @@ public var color: ?ResourceColor
 
 **功能：** 文本颜色。
 
-**类型：** ?[ResourceColor](../apis/BasicServicesKit/cj-apis-base.md#interface-resourcecolor)
+**类型：** ?[ResourceColor](./cj-common-types.md#interface-resourcecolor)
 
 **读写能力：** 可读写
 
@@ -181,7 +181,7 @@ public var fontSize: ?Length
 
 **功能：** 文本大小，单位为fp。
 
-**类型：** ?[Length](../apis/BasicServicesKit/cj-apis-base.md#interface-length)
+**类型：** ?[Length](./cj-common-types.md#interface-length)
 
 **读写能力：** 可读写
 
@@ -223,13 +223,13 @@ public init(color!: ?ResourceColor = None, fontSize!: ?Length = None, badgeSize!
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|color|?ResourceColor|否|None|**命名参数。** 文本颜色。初始值：Color.White|
-|fontSize|?Length|否|None|**命名参数。** 文本大小。初始值：10.fp|
-|badgeSize|?Length|否|None|**命名参数。** badge的大小。初始值：16.vp|
-|badgeColor|?ResourceColor|否|None|**命名参数。** badge的颜色。初始值：Color.Red|
-|fontWeight|?FontWeight|否|None|**命名参数。** 设置文本的字体粗细。初始值：FontWeight.Normal|
-|borderColor|?ResourceColor|否|None|**命名参数。** 底板描边颜色。初始值：Color.Red|
-|borderWidth|?Length|否|None|**命名参数。** 底板描边粗细。初始值：1.vp|
+|color|?[ResourceColor](./cj-common-types.md#interface-resourcecolor)|否|None|**命名参数。** 文本颜色。初始值：Color.White|
+|fontSize|?[Length](./cj-common-types.md#interface-length)|否|None|**命名参数。** 文本大小。初始值：10.fp|
+|badgeSize|?[Length](./cj-common-types.md#interface-length)|否|None|**命名参数。** badge的大小。初始值：16.vp|
+|badgeColor|?[ResourceColor](./cj-common-types.md#interface-resourcecolor)|否|None|**命名参数。** badge的颜色。初始值：Color.Red|
+|fontWeight|?[FontWeight](./cj-common-types.md#enum-fontweight)|否|None|**命名参数。** 设置文本的字体粗细。初始值：FontWeight.Normal|
+|borderColor|?[ResourceColor](./cj-common-types.md#interface-resourcecolor)|否|None|**命名参数。** 底板描边颜色。初始值：Color.Red|
+|borderWidth|?[Length](./cj-common-types.md#interface-length)|否|None|**命名参数。** 底板描边粗细。初始值：1.vp|
 
 ### enum BadgePosition
 
@@ -250,7 +250,7 @@ public enum BadgePosition <: Equatable<BadgePosition> {
 
 **父类型：**
 
-- Equatable\<BadgePosition>
+- Equatable\<[BadgePosition](#enum-badgeposition)>
 
 #### Left
 

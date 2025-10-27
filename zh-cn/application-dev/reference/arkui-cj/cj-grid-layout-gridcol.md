@@ -56,9 +56,9 @@ public init(
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|span|?GridColOptions|是|-| **命名参数。** 占用列数。<br>初始值：GridColOptions(1)|
-|offset|?GridColOptions|是|-| **命名参数。** 相对于前一个栅格子组件偏移的列数。<br>初始值：GridColOptions(0)|
-|order|?GridColOptions|是|-| **命名参数。** 元素的序号，根据栅格子组件的序号，从小到大对栅格子组件做排序。<br>初始值：GridColOptions(0)|
+|span|?[GridColOptions](#class-gridcoloptions)|是|-| **命名参数。** 占用列数。<br>初始值：GridColOptions(1)|
+|offset|?[GridColOptions](#class-gridcoloptions)|是|-| **命名参数。** 相对于前一个栅格子组件偏移的列数。<br>初始值：GridColOptions(0)|
+|order|?[GridColOptions](#class-gridcoloptions)|是|-| **命名参数。** 元素的序号，根据栅格子组件的序号，从小到大对栅格子组件做排序。<br>初始值：GridColOptions(0)|
 |child|() -> Unit|否|{=>}| **命名参数。** GridCol 容器的子组件。|
 
 ## 通用属性/通用事件
@@ -103,7 +103,7 @@ public func gridColOffset(value: ?GridColOptions): This
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|value|?GridColOptions|是|-|相对于前一个栅格子组件偏移的列数。<br>初始值：GridColOptions()。|
+|value|?[GridColOptions](#class-gridcoloptions)|是|-|相对于前一个栅格子组件偏移的列数。<br>初始值：GridColOptions()。|
 
 ### func order(?Int32)
 
@@ -139,7 +139,7 @@ public func order(value: ?GridColOptions): This
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|value|?GridColOptions|是|-|元素的序号。<br>初始值：GridColOptions()。|
+|value|?[GridColOptions](#class-gridcoloptions)|是|-|元素的序号。<br>初始值：GridColOptions()。|
 
 ### func span(?Int32)
 
@@ -175,7 +175,7 @@ public func span(value: ?GridColOptions): This
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|value|?GridColOptions|是|-|占用列数。<br>span为0表示该元素不参与布局计算，即不会被渲染。<br>初始值：GridColOptions()。|
+|value|?[GridColOptions](#class-gridcoloptions)|是|-|占用列数。<br>span为0表示该元素不参与布局计算，即不会被渲染。<br>初始值：GridColOptions()。|
 
 ## 基础类型定义
 
@@ -206,8 +206,6 @@ public class GridColOptions {
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **起始版本：** 22
-
-**父类型：** 无
 
 #### var lg
 

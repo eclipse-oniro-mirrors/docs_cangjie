@@ -121,9 +121,9 @@ public var id: ?String
 public var direction: ?BarrierDirection
 ```
 
-**功能：** 指定barrier的方向。垂直方向（TOP，BOTTOM）的barrier仅能作为组件的水平方向锚点，用作垂直方向锚点时值为0；水平方向（LEFT，RIGHT）的barrier仅能作为组件的垂直方向锚点，用作水平方向锚点时值为0。
+**功能：** 指定barrier的方向。垂直方向（Top，Bottom）的barrier仅能作为组件的水平方向锚点，用作垂直方向锚点时值为0；水平方向（Left，Right）的barrier仅能作为组件的垂直方向锚点，用作水平方向锚点时值为0。
 
-**类型：** ?BarrierDirection
+**类型：** ?[BarrierDirection](./cj-common-types.md#enum-barrierdirection)
 
 **读写能力：** 可读写
 
@@ -164,7 +164,7 @@ public init(id: ?String, direction: ?BarrierDirection, referencedId: ?Array<Stri
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |id|?String|是|-|barrier的id，必须是唯一的并且不可与容器内组件重名。初始值：""。|
-|direction|?[BarrierDirection](cj-common-types.md#enum-barrierdirection)|是|-|指定barrier的方向。垂直方向（TOP，BOTTOM）的barrier仅能作为组件的水平方向锚点，用作垂直方向锚点时值为0；水平方向（LEFT，RIGHT）的barrier仅能作为组件的垂直方向锚点，用作水平方向锚点时值为0。初始值：BarrierDirection.LEFT。|
+|direction|?[BarrierDirection](./cj-common-types.md#enum-barrierdirection)|是|-|指定barrier的方向。垂直方向（TOP，BOTTOM）的barrier仅能作为组件的水平方向锚点，用作垂直方向锚点时值为0；水平方向（LEFT，RIGHT）的barrier仅能作为组件的垂直方向锚点，用作水平方向锚点时值为0。初始值：BarrierDirection.LEFT。|
 |referencedId|?Array\<String>|是|-|指定生成barrier所依赖的组件。初始值：[]。|
 
 ### class GuideLinePosition
@@ -191,7 +191,7 @@ public var start: ?Length
 
 **功能：** guideline距离容器左侧或者顶部的距离。
 
-**类型：** ?Length
+**类型：** ?[Length](./cj-common-types.md#interface-length)
 
 **读写能力：** 可读写
 
@@ -207,7 +207,7 @@ public var end: ?Length
 
 **功能：** guideline距离容器右侧或者底部的距离。
 
-**类型：** ?Length
+**类型：** ?[Length](./cj-common-types.md#interface-length)
 
 **读写能力：** 可读写
 
@@ -231,8 +231,8 @@ public init(start!: ?Length = None, end!: ?Length = None)
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|start|?Length|否|None|**命名参数。** guideline距离容器左侧或者顶部的距离。|
-|end|?Length|否|None|**命名参数。** guideline距离容器右侧或者底部的距离。|
+|start|?[Length](./cj-common-types.md#interface-length)|否|None|**命名参数。** guideline距离容器左侧或者顶部的距离。|
+|end|?[Length](./cj-common-types.md#interface-length)|否|None|**命名参数。** guideline距离容器右侧或者底部的距离。|
 
 ### class GuideLineStyle
 
@@ -275,7 +275,7 @@ public var direction: ?Axis
 
 **功能：** 指定guideline的方向。垂直方向的guideline仅能作为组件水平方向的锚点，作为垂直方向的锚点时值为0；水平方向的guideline仅能作为组件垂直方向的锚点，作为水平方向的锚点时值为0。
 
-**类型：** ?Axis
+**类型：** ?[Axis](./cj-common-types.md#enum-axis)
 
 **读写能力：** 可读写
 
@@ -291,7 +291,7 @@ public var position: ?GuideLinePosition
 
 **功能：** 指定guideline的位置。当未声明或声明异常值（如undefined）时，guideline的位置默认为start: 0。start和 end两种声明方式选择一种即可。若同时声明，仅start生效。若容器在某个方向的size被声明为"auto"，则该方向上guideline的位置只能使用start方式声明（不允许使用百分比）。
 
-**类型：** ?GuideLinePosition
+**类型：** ?[GuideLinePosition](./cj-common-types.md#enum-guidelineposition)
 
 **读写能力：** 可读写
 

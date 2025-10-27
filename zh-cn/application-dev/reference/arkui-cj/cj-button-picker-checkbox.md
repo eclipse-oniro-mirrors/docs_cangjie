@@ -32,7 +32,7 @@ public init(name!: ?String = None, group!: ?String = None, indicatorBuilder!: ?C
 |:---|:---|:---|:---|:---|
 |name|?String|否|None|**命名参数。** 多选框名称。|
 |group|?String|否|None|**命名参数。** 用于指定多选框所属群组的名称（即所属[CheckboxGroup](./cj-button-picker-checkboxgroup.md#checkboxgroup)的名称）。<br/>**说明**：<br/>未配合使用[CheckboxGroup](./cj-button-picker-checkboxgroup.md#checkboxgroup)组件时，此值无用。|
-|indicatorBuilder|?[CustomBuilder](./cj-common-types.md#type-custombuilder)|否|None|**命名参数。** 配置多选框的选中样式为自定义UI描述。自定义UI描述与Checkbox组件为中心点对齐显示。indicatorBuilder设置为None时，默认为indicatorBuilder未设置状态。使用时结合[@Builder](../../arkui-cj/paradigm/cj-macro-builder.md)和bind方法使用。|
+|indicatorBuilder|?[CustomBuilder](./cj-common-types.md#type-custombuilder)|否|None|**命名参数。** 配置多选框的选中样式为自定义UI描述。自定义UI描述与Checkbox组件为中心点对齐显示。indicatorBuilder设置为None时，默认为indicatorBuilder未设置状态。使用时结合[@Builder](../../../Dev_Guide/source_zh_cn/arkui-cj/paradigm/cj-macro-builder.md)和bind方法使用。|
 
 ## 通用属性/通用事件
 

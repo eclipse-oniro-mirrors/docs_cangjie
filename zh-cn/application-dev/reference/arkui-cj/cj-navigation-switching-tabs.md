@@ -10,12 +10,11 @@ import kit.ArkUI.*
 
 ## 子组件
 
-不支持自定义组件作为子组件，仅可包含子组件[TabContent](./cj-navigation-switching-tabcontent.md)，以及渲染控制类型[if/else](../../../Dev_Guide/arkui-cj/rendering_control/cj-rendering-control-ifelse.md)和[ForEach](cj-state-rendering-foreach.md)，并且if/else和ForEach下也仅支持TabContent，不支持自定义组件。
+不支持自定义组件作为子组件，仅可包含子组件[TabContent](./cj-navigation-switching-tabcontent.md)，以及渲染控制类型[if/else](../../../application-dev/source_zh_cn/arkui-cj/rendering_control/cj-rendering-control-ifelse.md)和[ForEach](cj-state-rendering-foreach.md)，并且if/else和ForEach下也仅支持TabContent，不支持自定义组件。
 
 > **说明：**
 >
 > - Tabs子组件的visibility属性设置为None，或者visibility属性设置为Hidden时，对应子组件不显示，但依然会在视窗内占位。
-> - Tabs子组件TabContent显示之后不会销毁，若需要页面懒加载和释放，请参见[示例12](#示例12页面懒加载和释放)。
 
 ## 创建组件
 
@@ -40,7 +39,7 @@ public init(
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|barPosition|?[BarPosition](#enum-barposition)|否|None|**命名参数** 设置Tabs的页签位置。<br> 初始值: BarPosition.Start|
+|barPosition|?[BarPosition](./cj-common-types.md#enum-barposition)|否|None|**命名参数** 设置Tabs的页签位置。<br> 初始值: BarPosition.Start|
 |controller|?[TabsController](#class-tabscontroller)|否|None|**命名参数** 设置Tabs控制器。<br> 初始值：TabsController()|
 |index|?Int32|否|None|**命名参数** 设置当前显示页签的索引。<br> 初始值：0 <br> **说明：**<br> 设置为小于0的值时按初始值显示。可选值为[0, TabContent子节点数量-1]。直接修改index跳页时，切换动效不生效。 使用TabController的changeIndex时，默认生效切换动效，可以设置animationDuration为0关闭动画。|
 |child|()->Unit|否|{=>}|**命名参数** 声明容器内的子组件。|
@@ -87,7 +86,7 @@ public func barHeight(value: ?Length): This
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|value|?[Length](../cj-common-types.md#interface-length)|是|-|页签栏高度。当页签栏为水平方向时，该参数为页签栏的高；当页签栏为垂直方向时，该参数为页签栏的宽。|
+|value|?[Length](./cj-common-types.md#interface-length)|是|-|页签栏高度。当页签栏为水平方向时，该参数为页签栏的高；当页签栏为垂直方向时，该参数为页签栏的宽。|
 
 ### func barMode(?BarMode)
 
@@ -105,7 +104,7 @@ public func barMode(value: ?BarMode): This
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|value|?[BarMode](#enum-barmode)|是|-|页签栏布局模式。初始值：BarMode.Fixed。|
+|value|?[BarMode](./cj-common-types.md#enum-barmode)|是|-|页签栏布局模式。初始值：BarMode.Fixed。|
 
 ### func barWidth(?Length)
 
@@ -123,7 +122,7 @@ public func barWidth(value: ?Length): This
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|value|?[Length](../cj-common-types.md#interface-length)|是|-|页签栏宽度。当页签栏为水平方向时，该参数为页签栏的宽；当页签栏为垂直方向时，该参数为页签栏的高。|
+|value|?[Length](./cj-common-types.md#interface-length)|是|-|页签栏宽度。当页签栏为水平方向时，该参数为页签栏的宽；当页签栏为垂直方向时，该参数为页签栏的高。|
 
 ### func scrollable(?Bool)
 
@@ -179,7 +178,7 @@ public func onChange(event: ?Callback<Int32, Unit>): This
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|event|?Callback\<Int32, Unit>|是|-|页签索引改变时触发的回调函数。初始值：{ _ => }。|
+|event|?[Callback](./cj-common-types.md#type-callbackt-v)\<Int32, Unit>|是|-|页签索引改变时触发的回调函数。初始值：{ _ => }。|
 
 ## 基础类型定义
 
