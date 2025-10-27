@@ -14,7 +14,7 @@ import kit.ArkUI.*
 
 > **说明：**
 >
-> 可内置系统组件和自定义组件，支持渲染控制类型（[if/else](../../../Dev_Guide/arkui-cj/rendering_control/cj-rendering-control-ifelse.md)、[ForEach](cj-state-rendering-foreach.md)和[LazyForEach](cj-state-rendering-lazyforeach.md)）。
+> 可内置系统组件和自定义组件，支持渲染控制类型（[if/else](../../arkui-cj/rendering_control/cj-rendering-control-ifelse.md)、[ForEach](cj-state-rendering-foreach.md)和[LazyForEach](cj-state-rendering-lazyforeach.md)）。
 
 ## 创建组件
 

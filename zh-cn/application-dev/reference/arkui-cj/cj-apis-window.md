@@ -1675,7 +1675,7 @@ public func snapshot(): PixelMap
 
 |类型|说明|
 |:----|:----|
-|[PixelMap](../../source_zh_cn/ImageKit/cj-apis-image.md#class-pixelmap)|返回不带值的Promise。|
+|[PixelMap](../ImageKit/cj-apis-image.md#class-pixelmap)|返回不带值的Promise。|
 
 **异常：**
 

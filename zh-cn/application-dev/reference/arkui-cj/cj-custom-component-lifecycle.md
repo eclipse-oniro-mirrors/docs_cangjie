@@ -69,7 +69,7 @@ protected open func aboutToDisappear(): Unit
 protected open func onPageShow(): Unit
 ```
 
-**功能：** router路由页面（仅[\@Entry](../../../application-dev/source_zh_cn/arkui-cj/paradigm/cj-create-custom-components.md#entry)装饰的自定义组件）每次显示时触发一次，包括路由跳转、应用进入前台等场景。
+**功能：** router路由页面（仅[\@Entry](../../arkui-cj/paradigm/cj-create-custom-components.md#entry)装饰的自定义组件）每次显示时触发一次，包括路由跳转、应用进入前台等场景。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 

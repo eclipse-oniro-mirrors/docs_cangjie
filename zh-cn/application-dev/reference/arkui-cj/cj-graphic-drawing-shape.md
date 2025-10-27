@@ -52,7 +52,7 @@ public init(value!: ?PixelMap)
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|value|?[PixelMap](../../source_zh_cn/ImageKit/cj-apis-image.md#class-pixelmap)|是|-|**命名参数。** 绘制目标，可将图形绘制在指定的PixelMap对象中，若未设置，则在当前绘制目标中进行绘制。|
+|value|?[PixelMap](../ImageKit/cj-apis-image.md#class-pixelmap)|是|-|**命名参数。** 绘制目标，可将图形绘制在指定的PixelMap对象中，若未设置，则在当前绘制目标中进行绘制。|
 
 ## 通用属性/通用事件
 

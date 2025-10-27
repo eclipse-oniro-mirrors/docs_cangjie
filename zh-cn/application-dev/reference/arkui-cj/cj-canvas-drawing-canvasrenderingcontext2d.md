@@ -1363,7 +1363,7 @@ public func drawImage(image: PixelMap, dx: ?Float64, dy: ?Float64): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|image|[PixelMap](../../source_zh_cn/ImageKit/cj-apis-image.md#class-pixelmap)|是|-|绘制到画布上的图片对象。|
+|image|[PixelMap](../ImageKit/cj-apis-image.md#class-pixelmap)|是|-|绘制到画布上的图片对象。|
 |dx|?Float64|否|-|绘制区域左上角在 x 轴的位置。<br>默认单位：vp。|
 |dy|?Float64|否|-|绘制区域左上角在 y 轴的位置。<br>默认单位：vp。|
 
@@ -1383,7 +1383,7 @@ public func drawImage(image: PixelMap, dx: ?Float64, dy: ?Float64, dw: ?Float64,
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|image|[PixelMap](../../source_zh_cn/ImageKit/cj-apis-image.md#class-pixelmap)|是|-|绘制到画布上的图片对象。|
+|image|[PixelMap](../ImageKit/cj-apis-image.md#class-pixelmap)|是|-|绘制到画布上的图片对象。|
 |dx|?Float64|否|-|绘制区域左上角在 x 轴的位置。<br>默认单位：vp。|
 |dy|?Float64|否|-|绘制区域左上角在 y 轴的位置。<br>默认单位：vp。|
 |dw|?Float64|否|-|绘制区域的宽度。当绘制区域的宽度和裁剪图像的宽度不一致时，将图像宽度拉伸或压缩为绘制区域的宽度。<br>默认单位：vp。|
@@ -1415,7 +1415,7 @@ public func drawImage(
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|image|[PixelMap](../../source_zh_cn/ImageKit/cj-apis-image.md#class-pixelmap)|是|-|绘制到画布上的图片对象。|
+|image|[PixelMap](../ImageKit/cj-apis-image.md#class-pixelmap)|是|-|绘制到画布上的图片对象。|
 |sx|?Float64|否|-|裁切源图像时距离源图像左上角的x坐标值。<br>单位：px。|
 |sy|?Float64|否|-|裁切源图像时距离源图像左上角的y坐标值。<br>单位：px。|
 |sw|?Float64|否|-|裁切源图像时需要裁切的宽度。<br>单位：px。|
@@ -1450,7 +1450,7 @@ public func getPixelMap(sx: ?Float64, sy: ?Float64, sw: ?Float64, sh: ?Float64):
 
 |类型|说明|
 |:---|:---|
-|[PixelMap](../../source_zh_cn/ImageKit/cj-apis-image.md#class-pixelmap)|PixelMap对象。|
+|[PixelMap](../ImageKit/cj-apis-image.md#class-pixelmap)|PixelMap对象。|
 
 ### func reset()
 
@@ -1552,7 +1552,7 @@ public func setPixelMap(value: ?PixelMap): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|value|?[PixelMap](../../source_zh_cn/ImageKit/cj-apis-image.md#class-pixelmap)|否|-|PixelMap对象。|
+|value|?[PixelMap](../ImageKit/cj-apis-image.md#class-pixelmap)|否|-|PixelMap对象。|
 
 ### func getLineDash()
 

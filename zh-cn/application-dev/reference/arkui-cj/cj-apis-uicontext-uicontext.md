@@ -175,7 +175,7 @@ public func getRouter(): Router
 
 |类型|说明|
 |:----|:----|
-|[Router](../../../reference/source_zh_cn/arkui-cj/cj-apis-router.md#class-router)|路由对象。|
+|[Router](cj-apis-router.md#class-router)|路由对象。|
 
 ### func lpx2px(Length)
 

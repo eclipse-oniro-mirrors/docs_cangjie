@@ -76,7 +76,7 @@ public init(src: ?PixelMap)
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|src|?[PixelMap](../../source_zh_cn/ImageKit/cj-apis-image.md#class-pixelmap)|是|-|图片的数据源。<br/>PixelMap格式为像素图，常用于图片编辑的场景。|
+|src|?[PixelMap](../ImageKit/cj-apis-image.md#class-pixelmap)|是|-|图片的数据源。<br/>PixelMap格式为像素图，常用于图片编辑的场景。|
 
 ## 通用属性/通用事件
 

@@ -4,7 +4,7 @@
 
 > **说明：**
 >
-> 为了实现更好的转场效果，推荐使用Navigation组件和[模态转场](../../../Dev_Guide/arkui-cj/cj-modal-transition.md)。
+> 为了实现更好的转场效果，推荐使用Navigation组件和[模态转场](../../arkui-cj/cj-modal-transition.md)。
 
 ## 导入模块
 

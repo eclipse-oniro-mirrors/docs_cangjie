@@ -72,7 +72,7 @@ public func bindSelectionMenu(
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |spantype|?[RichEditorSpanType](./cj-common-types.md#enum-richeditorspantype)|否|None|**命名参数。** 指定选择菜单的类型。<br>初始值：RichEditorSpanType.Text。|
-|content|?[CustomBuilder](./cj-common-types.md#type-custombuilder)|是|-|**命名参数。** 指定选择菜单的内容。使用时结合[@Builder](../../../Dev_Guide/arkui-cj/paradigm/cj-macro-builder.md)和bind方法使用。<br>初始值：{ => }。|
+|content|?[CustomBuilder](./cj-common-types.md#type-custombuilder)|是|-|**命名参数。** 指定选择菜单的内容。使用时结合[@Builder](../../arkui-cj/paradigm/cj-macro-builder.md)和bind方法使用。<br>初始值：{ => }。|
 |responseType|?[ResponseType](./cj-common-types.md#enum-responsetype)|否|None|**命名参数。** 指定选择菜单的响应类型。<br>初始值：ResponseType.LongPress。|
 |options|?[SelectionMenuOptions](#class-selectionmenuoptions)|是|-|**命名参数。** 指定选择菜单的选项。<br>初始值：SelectionMenuOptions()。|
 
@@ -124,7 +124,7 @@ public func customKeyboard(value!: ?CustomBuilder): This
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|value|?[CustomBuilder](./cj-common-types.md#type-custombuilder)|是|-|**命名参数。** 富文本编辑器的自定义键盘。使用时结合[@Builder](../../../Dev_Guide/arkui-cj/paradigm/cj-macro-builder.md)和bind方法使用。<br>初始值：{ => }。|
+|value|?[CustomBuilder](./cj-common-types.md#type-custombuilder)|是|-|**命名参数。** 富文本编辑器的自定义键盘。使用时结合[@Builder](../../arkui-cj/paradigm/cj-macro-builder.md)和bind方法使用。<br>初始值：{ => }。|
 
 ## 组件事件
 
@@ -767,7 +767,7 @@ public var valuePixelMap: Option<PixelMap>
 
 **功能：** 图像span的像素图。
 
-**类型：** Option\<[PixelMap](../../source_zh_cn/ImageKit/cj-apis-image.md#class-pixelmap)>
+**类型：** Option\<[PixelMap](../ImageKit/cj-apis-image.md#class-pixelmap)>
 
 **读写能力：** 可读写
 
@@ -846,7 +846,7 @@ public init(
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |spanPosition|?[RichEditorSpanPosition](#class-richeditorspanposition)|否|Option.None|**命名参数。** 图像span的位置。初始值：RichEditorSpanPosition(0, (0, 0))。|
-|valuePixelMap|Option\<[PixelMap](../../source_zh_cn/ImageKit/cj-apis-image.md#class-pixelmap)>|否|Option.None|**命名参数。** 图像span的像素图。|
+|valuePixelMap|Option\<[PixelMap](../ImageKit/cj-apis-image.md#class-pixelmap)>|否|Option.None|**命名参数。** 图像span的像素图。|
 |valueResourceStr|?String|否|None|**命名参数。** 图像span的资源字符串。初始值：""。|
 |imageStyle|?[RichEditorImageSpanStyleResult](#class-richeditorimagespanstyleresult)|否|None|**命名参数。** 图像属性。初始值：RichEditorImageSpanStyleResult()。|
 |offsetInSpan|?(Int32, Int32)|否|None|**命名参数。** span中的偏移量。初始值：(0, 0)。|
@@ -2022,7 +2022,7 @@ public var pixelMap: PixelMap
 
 **功能：** 占位符像素图。
 
-**类型：** [PixelMap](../../source_zh_cn/ImageKit/cj-apis-image.md#class-pixelmap)
+**类型：** [PixelMap](../ImageKit/cj-apis-image.md#class-pixelmap)
 
 **读写能力：** 可读写
 
@@ -2062,7 +2062,7 @@ public init(pixelMap!: PixelMap, size!: ?(Length, Length))
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|pixelMap|[PixelMap](../../source_zh_cn/ImageKit/cj-apis-image.md#class-pixelmap)|是|-|**命名参数。** 占位符像素图。|
+|pixelMap|[PixelMap](../ImageKit/cj-apis-image.md#class-pixelmap)|是|-|**命名参数。** 占位符像素图。|
 |size|?([Length](./cj-common-types.md#interface-length), [Length](./cj-common-types.md#interface-length))|是|-|**命名参数。** 占位符大小。初始值：(0.0.px, 0.0.px)。|
 
 ### class RichEditorBaseController

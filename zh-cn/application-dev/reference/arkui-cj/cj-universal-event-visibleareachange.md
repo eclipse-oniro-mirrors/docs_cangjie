@@ -30,7 +30,7 @@ func onVisibleAreaChange(ratios: ?Array<Float64>, event: ?(Bool, Float64) -> Uni
 > **说明：**
 >
 > - 仅提供自身节点相对于所有祖先节点（直到window边界）的相对裁切面积与自身面积的比值及其变化趋势。
-> - 不支持兄弟组件对自身节点的遮挡计算，不支持所有祖先的兄弟节点对自身节点的遮挡计算，如[Stack](../../../Dev_Guide/arkui-cj/cj-layout-development-stack-layout.md#层叠布局-stack)、[Z序控制](../../../Dev_Guide/arkui-cj/cj-layout-development-stack-layout.md#z序控制)等。
+> - 不支持兄弟组件对自身节点的遮挡计算，不支持所有祖先的兄弟节点对自身节点的遮挡计算，如[Stack](../../arkui-cj/cj-layout-development-stack-layout.md#层叠布局-stack)、[Z序控制](../../arkui-cj/cj-layout-development-stack-layout.md#z序控制)等。
 > - 不支持非挂树节点的可见面积变化计算。例如，预加载的节点、通过[overlay](./cj-universal-attribute-overlay.md#func-overlaystring-alignment-contentoffset)能力挂载的自定义节点。
 
 **返回值：**

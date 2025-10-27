@@ -74,7 +74,7 @@ func onDragStart(event: ?(DragInfo) -> CustomBuilder): T
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|event|?([DragInfo](./cj-common-types.md#class-draginfo)) -> [CustomBuilder](./cj-common-types.md#type-custombuilder)|是|-|回调函数，拖拽开始时触发。<br/>传入参数为拖拽事件信息，包括拖拽点坐标。<br/>返回参数为拖拽过程中显示的组件信息，使用时结合[@Builder](../../../Dev_Guide/arkui-cj/paradigm/cj-macro-builder.md)和bind方法使用。|
+|event|?([DragInfo](./cj-common-types.md#class-draginfo)) -> [CustomBuilder](./cj-common-types.md#type-custombuilder)|是|-|回调函数，拖拽开始时触发。<br/>传入参数为拖拽事件信息，包括拖拽点坐标。<br/>返回参数为拖拽过程中显示的组件信息，使用时结合[@Builder](../../arkui-cj/paradigm/cj-macro-builder.md)和bind方法使用。|
 
 **返回值：**
 

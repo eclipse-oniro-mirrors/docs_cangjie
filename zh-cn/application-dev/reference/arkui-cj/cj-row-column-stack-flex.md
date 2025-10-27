@@ -2,7 +2,7 @@
 
 Flex是以弹性方式布局子组件的容器组件，提供更加有效的方式对容器内的子元素进行排列、对齐和分配剩余空间。
 
-具体指南请参考[弹性布局](../../../application-dev/source_zh_cn/arkui-cj/cj-layout-development-flex-layout.md)。
+具体指南请参考[弹性布局](../../arkui-cj/cj-layout-development-flex-layout.md)。
 
 > **说明：**
 >
