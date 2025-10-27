@@ -1,6 +1,6 @@
 # 贡献文档
 
-[View English](./CONTRIBUTING.md)
+[View English](../en/CONTRIBUTING.md)
 
 欢迎参与仓颉文档贡献。您可以对现有文档进行评价、更改、反馈问题或贡献原创内容，我们鼓励开发者以各种方式参与文档反馈和贡献。
 

@@ -1,6 +1,6 @@
 # OpenHarmony Documentation (Cangjie)
 
-This repository stores a complete range of OpenHarmony documentation (Cangjie). The content outline is as follows:
+This directory is the developer documentation for creating OpenHarmony applications using Cangjie:
 
 - OpenHarmony Development (Cangjie)
     - [Application Development](application-dev/README.md)
