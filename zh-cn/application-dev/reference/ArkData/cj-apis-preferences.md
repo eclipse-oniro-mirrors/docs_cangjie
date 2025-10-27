@@ -217,7 +217,7 @@ public static func deletePreferences(context: UIAbilityContext, options: Prefere
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |context|[UIAbilityContext](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiabilitycontext)|是|-|应用上下文。|
-|options|[PreferencesOptions](#class-PreferencesOptions)|是|-|与Preferences实例相关的配置选项。|
+|options|[PreferencesOptions](#class-preferencesoptions)|是|-|与Preferences实例相关的配置选项。|
 
 **异常：**
 
@@ -343,7 +343,7 @@ public static func getPreferences(context: UIAbilityContext, options: Preference
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |context|[UIAbilityContext](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiabilitycontext)|是|-|应用上下文。|
-|options|[PreferencesOptions](#class-PreferencesOptions)|是|-|Preferences实例的名称。|
+|options|[PreferencesOptions](#class-preferencesoptions)|是|-|Preferences实例的名称。|
 
 **返回值：**
 
@@ -461,7 +461,7 @@ public static func removePreferencesFromCache(context: UIAbilityContext, options
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |context|[UIAbilityContext](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiabilitycontext)|是|-|应用上下文。|
-|options|[PreferencesOptions](#class-PreferencesOptions)|是|-|Preferences实例的名称。|
+|options|[PreferencesOptions](#class-preferencesoptions)|是|-|Preferences实例的名称。|
 
 **异常：**
 

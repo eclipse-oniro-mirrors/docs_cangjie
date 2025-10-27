@@ -830,7 +830,7 @@ public func getKVStore<T>(storeId: String, options: KVOptions): T where T <: Sin
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |storeId|String|是|-|数据库唯一标识符，长度不大于[MAX_STORE_ID_LENGTH](#static-let-max_store_id_length)。|
-|options|[KVOptions](#class-KVOptions)|是|-|创建分布式键值实例的配置信息。|
+|options|[KVOptions](#class-kvoptions)|是|-|创建分布式键值实例的配置信息。|
 
 **返回值：**
 
@@ -1173,7 +1173,7 @@ public class Schema {
 }
 ```
 
-**功能：** 表示数据库模式，可以在创建或打开数据库时创建Schema对象并将它们放入[KVOptions](#class-KVOptions)中。
+**功能：** 表示数据库模式，可以在创建或打开数据库时创建Schema对象并将它们放入[KVOptions](#class-kvoptions)中。
 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.DistributedKVStore
 
@@ -1250,7 +1250,7 @@ public var skip: Int32
 public init(root: FieldNode, indexes: Array<String>, mode: Int32, skip: Int32)
 ```
 
-**功能：** 表示数据库模式，可以在创建或打开数据库时创建Schema对象并将它们放入[KVOptions](#class-KVOptions)中。
+**功能：** 表示数据库模式，可以在创建或打开数据库时创建Schema对象并将它们放入[KVOptions](#class-kvoptions)中。
 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.DistributedKVStore
 
