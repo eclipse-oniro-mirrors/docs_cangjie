@@ -163,6 +163,138 @@ public init(
 |offset|Int64|否|0| **命名参数。** 资源偏移量，需要基于预置资源的信息输入，非法值会造成字幕频资源解析错误。|
 |length|Int64|否|-1| **命名参数。** 资源长度，默认值为文件中从偏移量开始的剩余字节，需要基于预置资源的信息输入，非法值会造成字幕频资源解析错误。|
 
+## class AVImageGenerator
+
+```cangjie
+public class AVImageGenerator {}
+```
+
+**功能：** 视频缩略图获取类，用于从视频资源中获取缩略图。在调用AVImageGenerator的方法前，需要先通过[createAVImageGenerator()](#func-createavimagegenerator)构建一个AVImageGenerator实例。
+
+**系统能力：** SystemCapability.Multimedia.Media.AVImageGenerator
+
+**起始版本：** 22
+
+### prop fdSrc
+
+```cangjie
+public mut prop fdSrc: AVFileDescriptor
+```
+
+**功能：** 媒体文件描述，通过该属性设置数据源。
+
+> **说明：**
+>
+> 将资源句柄（fd）传递给AVImageGenerator 实例之后，请不要通过该资源句柄做其他读写操作，包括但不限于将同一个资源句柄传递给多个AVPlayer / AVMetadataExtractor / AVImageGenerator / AVTranscoder。同一时间通过同一个资源句柄读写文件时存在竞争关系，将导致视频缩略图数据获取异常。
+
+**类型：** [AVFileDescriptor](#class-avfiledescriptor)
+
+**读写能力：** 可读写
+
+**系统能力：** SystemCapability.Multimedia.Media.AVImageGenerator
+
+**起始版本：** 22
+
+### func fetchFrameByTime(Int64, AVImageQueryOptions, PixelMapParams)
+
+```cangjie
+public func fetchFrameByTime(timeUs: Int64, options: AVImageQueryOptions, param: PixelMapParams): PixelMap
+```
+
+**功能：** 获取视频缩略图。
+
+**系统能力：** SystemCapability.Multimedia.Media.AVImageGenerator
+
+**起始版本：** 22
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|timeUs|Int64|是|-|需要获取的缩略图在视频中的时间点，单位为微秒（μs）。|
+|options|[AVImageQueryOptions](#enum-avimagequeryoptions)|是|-| 需要获取的缩略图时间点与视频帧的对应关系。|
+|param|[PixelMapParams](#class-pixelmapparams)|是|-|需要获取的缩略图的格式参数。|
+
+**返回值：**
+
+|类型|说明|
+|:----|:----|
+|[PixelMap](../ImageKit/cj-apis-image.md#class-pixelmap)|视频缩略图。|
+
+**异常：**
+
+- BusinessException：对应错误码如下表，详见[Media错误码](./cj-errorcode-multimedia-media.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 5400101 | No memory. Create AVImageGenerator failed. |
+
+**示例：**
+
+<!-- compile only -->
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.MediaKit.*
+
+let timeUs = 0
+let queryOption = AVImageQueryOptions.AvImageQueryNextSync
+let param = PixelMapParams(width: 300, height: 300)
+let generator = createAVImageGenerator()
+let abilityContext = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let rawFd = abilityContext.resourceManager.getRawFd("trailer.mp4")    // 请替换您的资源路径，获取文件路径参考本文使用说明
+generator.fdSrc = AVFileDescriptor(rawFd.fd, offset:rawFd.offset, length:rawFd.length)
+let pic = generator.fetchFrameByTime(timeUs, queryOption, param)
+generator.release()
+```
+
+### func release()
+
+```cangjie
+public func release(): Unit
+```
+
+**功能：** 释放资源。
+
+**系统能力：** SystemCapability.Multimedia.Media.AVImageGenerator
+
+**起始版本：** 22
+
+**异常：**
+
+- BusinessException：对应错误码如下表，详见[Media错误码](./cj-errorcode-multimedia-media.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 5400102 | Operation not allowed. |
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.MediaKit.*
+
+import ohos.business_exception.BusinessException
+
+try {
+    let timeUs = 0
+    let queryOption = AVImageQueryOptions.AvImageQueryNextSync
+    let param = PixelMapParams(width: 300, height: 300)
+    let generator = createAVImageGenerator()
+    let abilityContext = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+    let rawFd = abilityContext.resourceManager.getRawFd("trailer.mp4")
+    generator.fdSrc = AVFileDescriptor(rawFd.fd, offset:rawFd.offset, length:rawFd.length)
+    let pic = generator.fetchFrameByTime(timeUs, queryOption, param)
+    generator.release()
+} catch (e: BusinessException) {
+    Hilog.error(0, "AppLogCj", e.message)
+}
+```
 
 ## class PixelMapParams
 
