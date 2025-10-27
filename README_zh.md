@@ -18,10 +18,14 @@
 
 ```text
 .
-└── docs
-    ├── API_Refenrence           // 该目录存放仓颉应用API参考
-    ├── application-dev                // 该目录存放仓颉编程语言应用开发指南
-    └── cj-user-manual              // 该目录存放仓颉编程语言用户指南
+├── zh-cn                   // OpenHarmony 仓颉中文文档
+│    ├── application-dev    // 该目录存放仓颉编程语言应用开发指南
+│    │    ├── reference     // 该目录存放仓颉编程语言应用API参考
+│    │    ├── application-models
+│    │    ├── application-test
+│    │    ├── ...
+│    │    └── windowmanager
+└── en                      // OpenHarmony 仓颉英文文档
 ```
 
 ## 许可证

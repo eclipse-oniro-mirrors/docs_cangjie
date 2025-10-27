@@ -18,10 +18,14 @@ The repository directory is as follows:
 
 ```text
 .
-└── docs
-    ├── reference                      // This directory stores the Cangjie application API reference
-    ├── application-dev                          // This directory stores the Cangjie programming language application development guide
-    └── cj-user-manual                        // This directory stores the Cangjie programming language user guide
+├── en                      // OpenHarmony Cangjie English Documentation
+│    ├── application-dev    // This directory stores the Cangjie programming language application development guide
+│    │    ├── reference     // This directory stores the Cangjie application API reference
+│    │    ├── application-models
+│    │    ├── application-test
+│    │    ├── ...
+│    │    └── windowmanager
+└── zh-cn                   // OpenHarmony Cangjie Chinese Documentation
 ```
 
 ## License
