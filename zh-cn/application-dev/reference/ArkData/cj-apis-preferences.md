@@ -636,13 +636,13 @@ public func get(key: String, defValue: PreferencesValueType): PreferencesValueTy
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |key|String|是|-|要获取的存储Key名称。|
-|defValue|[PreferencesValueType](#enum-PreferencesValueType)|是|-|默认返回值。支持Int64、Float64、String、Bool、 Array\<Bool>、Array\<Float64>、Array\<String>。|
+|defValue|[PreferencesValueType](#enum-preferencesvaluetype)|是|-|默认返回值。支持Int64、Float64、String、Bool、 Array\<Bool>、Array\<Float64>、Array\<String>。|
 
 **返回值：**
 
 |类型|说明|
 |:----|:----|
-|[PreferencesValueType](#enum-PreferencesValueType)|返回键对应的值。|
+|[PreferencesValueType](#enum-preferencesvaluetype)|返回键对应的值。|
 
 **异常：**
 
@@ -692,7 +692,7 @@ public func getAll(): HashMap<String, PreferencesValueType>
 
 |类型|说明|
 |:----|:----|
-|HashMap\<String,[PreferencesValueType](#enum-PreferencesValueType)>|HashMap对象，返回含有所有键值数据。|
+|HashMap\<String,[PreferencesValueType](#enum-preferencesvaluetype)>|HashMap对象，返回含有所有键值数据。|
 
 **异常：**
 
@@ -911,7 +911,7 @@ public func put(key: String, value: PreferencesValueType): Unit
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |key|String|是|-|要修改的存储的Key，不能为空。|
-|value|[PreferencesValueType](#enum-PreferencesValueType)|是|-|存储的新值。支持Int64、Float64、String、Bool、 Array\<Bool>、Array\<Float64>、Array\<String>。|
+|value|[PreferencesValueType](#enum-preferencesvaluetype)|是|-|存储的新值。支持Int64、Float64、String、Bool、 Array\<Bool>、Array\<Float64>、Array\<String>。|
 
 **异常：**
 

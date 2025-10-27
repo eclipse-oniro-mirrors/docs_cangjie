@@ -554,7 +554,7 @@ public func inValues(field: String, value: Array<ValueType>): RdbPredicates
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |field|String|是|-|数据库表中的列名。|
-|value|Array\<[ValueType](#enum-RelationalStoreValueType)>|是|-|以RelationalStoreValueType数组形式指定的要匹配的值。|
+|value|Array\<[ValueType](#enum-relationalstorevaluetype)>|是|-|以RelationalStoreValueType数组形式指定的要匹配的值。|
 
 **返回值：**
 
@@ -724,8 +724,8 @@ public func between(field: String, low: ValueType, high: ValueType): RdbPredicat
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |field|String|是|-|数据库表中的列名。|
-|low|[ValueType](#enum-RelationalStoreValueType)|是|-|指示与谓词匹配的最小值。|
-|high|[ValueType](#enum-RelationalStoreValueType)|是|-|指示与谓词匹配的最大值。|
+|low|[ValueType](#enum-relationalstorevaluetype)|是|-|指示与谓词匹配的最小值。|
+|high|[ValueType](#enum-relationalstorevaluetype)|是|-|指示与谓词匹配的最大值。|
 
 **返回值：**
 
@@ -941,7 +941,7 @@ public func equalTo(field: String, value: RelationalStoreValueType): RdbPredicat
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |field|String|是|-|数据库表中的列名。|
-|value|[RelationalStoreValueType](#enum-RelationalStoreValueType)|是|-|指示要与谓词匹配的值。|
+|value|[RelationalStoreValueType](#enum-relationalstorevaluetype)|是|-|指示要与谓词匹配的值。|
 
 **返回值：**
 
@@ -1037,7 +1037,7 @@ public func greaterThan(field: String, value: RelationalStoreValueType): RdbPred
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |field|String|是|-|数据库表中的列名。|
-|value|[RelationalStoreValueType](#enum-RelationalStoreValueType)|是|-|指示要与谓词匹配的值。|
+|value|[RelationalStoreValueType](#enum-relationalstorevaluetype)|是|-|指示要与谓词匹配的值。|
 
 **返回值：**
 
@@ -1085,7 +1085,7 @@ public func greaterThanOrEqualTo(field: String, value: RelationalStoreValueType)
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |field|String|是|-|数据库表中的列名。|
-|value|[RelationalStoreValueType](#enum-RelationalStoreValueType)|是|-|指示要与谓词匹配的值。|
+|value|[RelationalStoreValueType](#enum-relationalstorevaluetype)|是|-|指示要与谓词匹配的值。|
 
 **返回值：**
 
@@ -1303,7 +1303,7 @@ public func lessThan(field: String, value: RelationalStoreValueType): RdbPredica
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |field|String|是|-|数据库表中的列名。|
-|value|[RelationalStoreValueType](#enum-RelationalStoreValueType)|是|-|指示要与谓词匹配的值。|
+|value|[RelationalStoreValueType](#enum-relationalstorevaluetype)|是|-|指示要与谓词匹配的值。|
 
 **返回值：**
 
@@ -1351,7 +1351,7 @@ public func lessThanOrEqualTo(field: String, value: RelationalStoreValueType): R
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |field|String|是|-|数据库表中的列名。|
-|value|[RelationalStoreValueType](#enum-RelationalStoreValueType)|是|-|指示要与谓词匹配的值。|
+|value|[RelationalStoreValueType](#enum-relationalstorevaluetype)|是|-|指示要与谓词匹配的值。|
 
 **返回值：**
 
@@ -1495,8 +1495,8 @@ public func notBetween(field: String, low: RelationalStoreValueType, high: Relat
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |field|String|是|-|数据库表中的列名。|
-|low|[RelationalStoreValueType](#enum-RelationalStoreValueType)|是|-|指示与谓词匹配的最小值。|
-|high|[RelationalStoreValueType](#enum-RelationalStoreValueType)|是|-|指示要与谓词匹配的最大值。|
+|low|[RelationalStoreValueType](#enum-relationalstorevaluetype)|是|-|指示与谓词匹配的最小值。|
+|high|[RelationalStoreValueType](#enum-relationalstorevaluetype)|是|-|指示要与谓词匹配的最大值。|
 
 **返回值：**
 
@@ -1544,7 +1544,7 @@ public func notEqualTo(field: String, value: RelationalStoreValueType): RdbPredi
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |field|String|是|-|数据库表中的列名。|
-|value|[RelationalStoreValueType](#enum-RelationalStoreValueType)|是|-|指示要与谓词匹配的值。|
+|value|[RelationalStoreValueType](#enum-relationalstorevaluetype)|是|-|指示要与谓词匹配的值。|
 
 **返回值：**
 
@@ -1592,7 +1592,7 @@ public func notInValues(field: String, value: Array<RelationalStoreValueType>): 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |field|String|是|-|数据库表中的列名。|
-|value|Array\<[RelationalStoreValueType](#enum-RelationalStoreValueType)>|是|-|以RelationalStoreValueType数组形式指定的要匹配的值。|
+|value|Array\<[RelationalStoreValueType](#enum-relationalstorevaluetype)>|是|-|以RelationalStoreValueType数组形式指定的要匹配的值。|
 
 **返回值：**
 
@@ -2206,7 +2206,7 @@ public func executeSql(sql: String, bindArgs!: Array<RelationalStoreValueType> =
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |sql|String|是|-|指定要执行的SQL语句。|
-|bindArgs|Array\<[RelationalStoreValueType](#enum-RelationalStoreValueType)>|否|[]|SQL语句中参数的值。该值与sql参数语句中的占位符相对应。当sql参数语句完整时，该参数不填。|
+|bindArgs|Array\<[RelationalStoreValueType](#enum-relationalstorevaluetype)>|否|[]|SQL语句中参数的值。该值与sql参数语句中的占位符相对应。当sql参数语句完整时，该参数不填。|
 
 **异常：**
 
@@ -2519,7 +2519,7 @@ public func querySql(sql: String, bindArgs!: Array<RelationalStoreValueType> = [
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |sql|String|是|-|指定要执行的SQL语句。|
-|bindArgs|Array\<[RelationalStoreValueType](#enum-RelationalStoreValueType)>|否|[]| **命名参数。** SQL语句中参数的值。该值与sql参数语句中的占位符相对应。当sql参数语句完整时，该参数不填。|
+|bindArgs|Array\<[RelationalStoreValueType](#enum-relationalstorevaluetype)>|否|[]| **命名参数。** SQL语句中参数的值。该值与sql参数语句中的占位符相对应。当sql参数语句完整时，该参数不填。|
 
 **返回值：**
 
@@ -4099,7 +4099,7 @@ public var securityLevel: RelationalStoreSecurityLevel
 
 **功能：** 设置数据库安全级别。
 
-**类型：** [RelationalStoreSecurityLevel](#enum-RelationalStoreSecurityLevel)
+**类型：** [RelationalStoreSecurityLevel](#enum-relationalstoresecuritylevel)
 
 **读写能力：** 可读写
 
@@ -4163,7 +4163,7 @@ public init(securityLevel: RelationalStoreSecurityLevel, name!: String = "",
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|securityLevel|[RelationalStoreSecurityLevel](#enum-RelationalStoreSecurityLevel)|是|-|设置数据库安全级别。<br/>**系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core|
+|securityLevel|[RelationalStoreSecurityLevel](#enum-relationalstoresecuritylevel)|是|-|设置数据库安全级别。<br/>**系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core|
 |name|String|否|""|数据库文件名。<br/>**系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core|
 |encrypt|Bool|否|false| **命名参数。** 指定数据库是否加密，默认不加密。<br/> true: 加密。<br/> false: 非加密。<br/>**系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core|
 |dataGroupId|String|否|""| **命名参数。** 应用组ID，需要向应用市场获取。<br/>**模型约束：** 此属性仅在Stage模型下可用。<br/>指定在此dataGroupId对应的沙箱路径下创建RdbStore实例，当此参数不填时，默认在本应用沙箱目录下创建RdbStore实例。<br/>**系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core|

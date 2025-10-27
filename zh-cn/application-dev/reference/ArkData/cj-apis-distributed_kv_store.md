@@ -177,7 +177,7 @@ public func get(key: String): KVValueType
 
 |类型|说明|
 |:----|:----|
-|[KVValueType](#enum-KVValueType)|返回查询获取的值。|
+|[KVValueType](#enum-kvvaluetype)|返回查询获取的值。|
 
 **异常：**
 
@@ -555,7 +555,7 @@ public var value: KVValueType
 
 **功能：** 值对象。
 
-**类型：** [KVValueType](#enum-KVValueType)
+**类型：** [KVValueType](#enum-kvvaluetype)
 
 **读写能力：** 可读写
 
@@ -581,7 +581,7 @@ public init(key: String, value: KVValueType)
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |key|String|是|-|键值。|
-|value|[KVValueType](#enum-KVValueType)|是|-|值对象。|
+|value|[KVValueType](#enum-kvvaluetype)|是|-|值对象。|
 
 ## class FieldNode
 
@@ -1099,7 +1099,7 @@ public var securityLevel: KVSecurityLevel
 
 **功能：** 设置数据库安全级别。
 
-**类型：** [KVSecurityLevel](#enum-KVSecurityLevel)
+**类型：** [KVSecurityLevel](#enum-kvsecuritylevel)
 
 **读写能力：** 可读写
 
@@ -1125,7 +1125,7 @@ public init(securityLevel: KVSecurityLevel, createIfMissing!: Bool = true, encry
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|securityLevel|[KVSecurityLevel](#enum-KVSecurityLevel)|是|-|设置数据库安全级别。<br>**系统能力：** SystemCapability.DistributedDataManager.KVStore.Core|
+|securityLevel|[KVSecurityLevel](#enum-kvsecuritylevel)|是|-|设置数据库安全级别。<br>**系统能力：** SystemCapability.DistributedDataManager.KVStore.Core|
 |createIfMissing|Bool|否|true|当数据库文件不存在时是否创建数据库，默认为true，即创建。<br>**系统能力：** SystemCapability.DistributedDataManager.KVStore.Core|
 |encrypt|Bool|否|false|设置数据库文件是否加密，默认为false，即不加密。<br>**系统能力：** SystemCapability.DistributedDataManager.KVStore.Core|
 |backup|Bool|否|true|设置数据库文件是否备份，默认为true，即备份。 <br>**系统能力：** SystemCapability.DistributedDataManager.KVStore.Core|
@@ -1554,7 +1554,7 @@ public open func get(key: String): KVValueType
 
 |类型|说明|
 |:----|:----|
-|[KVValueType](#enum-KVValueType)|返回获取查询的值。|
+|[KVValueType](#enum-kvvaluetype)|返回获取查询的值。|
 
 **异常：**
 
@@ -1610,7 +1610,7 @@ public open func put(key: String, value: KVValueType): Unit
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |key|String|是|-|要添加数据的key，不能为空且长度不大于[MAX_KEY_LENGTH](#static-let-max_key_length)。|
-|value|[KVValueType](#enum-KVValueType)|是|-|要添加数据的value，支持Array\<UInt8>、String、Int32、Bool、Float32、Float64 ，Array\<UInt8>、String 的长度不大于[MAX_VALUE_LENGTH](#static-let-max_value_length)。|
+|value|[KVValueType](#enum-kvvaluetype)|是|-|要添加数据的value，支持Array\<UInt8>、String、Int32、Bool、Float32、Float64 ，Array\<UInt8>、String 的长度不大于[MAX_VALUE_LENGTH](#static-let-max_value_length)。|
 
 **异常：**
 
@@ -1884,16 +1884,6 @@ let opt = KVOptions(
 )
 let singleKVStore = kvManager.getSingleKVStore("myStoreId", opt)
 singleKVStore.startTransaction()
-```
-
-## class Entry
-
-```cangjie
-public calss Entry {
-    public var key: String
-    public var value: KVValueType
-    public init (key: String, value: KVValueType)
-}
 ```
 
 ## enum KVSecurityLevel
