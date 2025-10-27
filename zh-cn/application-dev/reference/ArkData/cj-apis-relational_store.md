@@ -536,11 +536,11 @@ public init(name: String)
 |:---|:---|:---|:---|:---|
 |name|String|是|-|数据库表名。|
 
-### func inValues(String, Array\<ValueType>)
+### func inValues(String, Array\<RelationalStoreValueType>)
 
 ```cangjie
 
-public func inValues(field: String, value: Array<ValueType>): RdbPredicates
+public func inValues(field: String, value: Array<RelationalStoreValueType>): RdbPredicates
 ```
 
 **功能：** 配置谓词，以匹配数据表的field列中的值在给定范围内的字段。
@@ -554,7 +554,7 @@ public func inValues(field: String, value: Array<ValueType>): RdbPredicates
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |field|String|是|-|数据库表中的列名。|
-|value|Array\<[ValueType](#enum-relationalstorevaluetype)>|是|-|以RelationalStoreValueType数组形式指定的要匹配的值。|
+|value|Array\<[RelationalStoreValueType](#enum-relationalstorevaluetype)>|是|-|以RelationalStoreValueType数组形式指定的要匹配的值。|
 
 **返回值：**
 
@@ -706,11 +706,11 @@ let predicates = RdbPredicates("EMPLOYEE")
 predicates.beginsWith("NAME", "Li")
 ```
 
-### func between(String, ValueType, ValueType)
+### func between(String, RelationalStoreValueType, RelationalStoreValueType)
 
 ```cangjie
 
-public func between(field: String, low: ValueType, high: ValueType): RdbPredicates
+public func between(field: String, low: RelationalStoreValueType, high: RelationalStoreValueType): RdbPredicates
 ```
 
 **功能：** 配置谓词，以匹配数据表的field列中的值在给定范围内的字段（包含范围边界）。
@@ -724,8 +724,8 @@ public func between(field: String, low: ValueType, high: ValueType): RdbPredicat
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |field|String|是|-|数据库表中的列名。|
-|low|[ValueType](#enum-relationalstorevaluetype)|是|-|指示与谓词匹配的最小值。|
-|high|[ValueType](#enum-relationalstorevaluetype)|是|-|指示与谓词匹配的最大值。|
+|low|[RelationalStoreValueType](#enum-relationalstorevaluetype)|是|-|指示与谓词匹配的最小值。|
+|high|[RelationalStoreValueType](#enum-relationalstorevaluetype)|是|-|指示与谓词匹配的最大值。|
 
 **返回值：**
 
