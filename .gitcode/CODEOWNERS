@@ -1,0 +1,27 @@
+# 指定根目录下文件的Code Owner
+
+@xuanjz @amy_mayun
+
+# 指定流程配置的Code Owner
+
+/.gitcode/ @xuanjz
+
+# 指定en/目录下文件的Code Owner
+
+/en/ @guoyuqing
+
+# 指定各手册目录下文件的Code Owner
+
+/zh-cn/ @luojianing @guoyuqing
+
+/zh-cn/application-dev/ @guoyuqing @abc_qgy
+
+/zh-cn/application-dev/reference/ @luojianing @abc_qgy @luoming25
+
+/zh-cn/application-dev/reference/arkinterop @luojianing @gaoxiang @xuanjz @anancds123
+
+/zh-cn/application-dev/reference/arkui-cj @luojianing @Cangjie-liubinyu @hejuanjuan @Tyfiell
+
+/zh-cn/application-dev/arkui-cj/ @guoyuqing @Cangjie-liubinyu @hejuanjuan @Tyfiell
+
+/zh-cn/application-dev/cj-start/ @guoyuqing @wangshouqi @TimZhou @zhiczhao
