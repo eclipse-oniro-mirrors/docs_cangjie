@@ -196,7 +196,7 @@ public func getAssets(options: FetchOptions): PhotoAssetResult
 
 **功能：** 获取相册中的文件。
 
-**需要权限：** ohos.READ_IMAGEVIDEO
+**需要权限：** ohos.permission.READ_IMAGEVIDEO
 
 **系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
 
@@ -281,7 +281,7 @@ public func commitModify(): Unit
 
 **功能：** 更新相册属性修改到数据库中。
 
-**需要权限：** ohos.WRITE_IMAGEVIDEO
+**需要权限：** ohos.permission.WRITE_IMAGEVIDEO
 
 **系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
 
@@ -1868,7 +1868,7 @@ public func applyChanges(mediaChangeRequest: MediaChangeRequest): Unit
 
 **功能：** 提交媒体变更请求。
 
-**需要权限：** ohos.WRITE_IMAGEVIDEO
+**需要权限：** ohos.permission.WRITE_IMAGEVIDEO
 
 **系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
 
@@ -1899,7 +1899,7 @@ public func getAlbums(albumType: AlbumType, subtype: AlbumSubtype,
 
 **功能：** 根据检索选项和相册类型获取相册。获取相册前需先保证相册存在。
 
-**需要权限：** ohos.READ_IMAGEVIDEO
+**需要权限：** ohos.permission.READ_IMAGEVIDEO
 
 **系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
 
@@ -1956,7 +1956,7 @@ public func getAssets(options: FetchOptions): PhotoAssetResult
 
 **功能：** 获取图片和视频资源。
 
-**需要权限：** ohos.READ_IMAGEVIDEO
+**需要权限：** ohos.permission.READ_IMAGEVIDEO
 
 **系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
 
@@ -2009,7 +2009,7 @@ public func getBurstAssets(burstKey: String, options: FetchOptions): PhotoAssetR
 
 **功能：** 获取连拍照片资源。
 
-**需要权限：** ohos.READ_IMAGEVIDEO
+**需要权限：** ohos.permission.READ_IMAGEVIDEO
 
 **系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
 

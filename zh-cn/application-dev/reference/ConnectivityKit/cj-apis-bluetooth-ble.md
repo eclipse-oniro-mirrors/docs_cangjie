@@ -5438,7 +5438,7 @@ public enum BluetoothBleGattClientDeviceCallbackType <: Equatable<BluetoothBleGa
 
 **功能：** 客户端 on/off 事件的类型。
 
-**需要权限：** ohos.ACCESS_BLUETOOTH
+**需要权限：** ohos.permission.ACCESS_BLUETOOTH
 
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
@@ -5458,7 +5458,7 @@ BleCharacteristicChange
 
 **功能：** 表示特征值变化事件类型。
 
-**需要权限：** ohos.ACCESS_BLUETOOTH
+**需要权限：** ohos.permission.ACCESS_BLUETOOTH
 
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
@@ -5472,7 +5472,7 @@ BleConnectionStateChange
 
 **功能：** 表示连接状态变化事件类型。
 
-**需要权限：** ohos.ACCESS_BLUETOOTH
+**需要权限：** ohos.permission.ACCESS_BLUETOOTH
 
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
@@ -5486,7 +5486,7 @@ ClientBleMtuChange
 
 **功能：** 表示MTU状态变化事件类型。
 
-**需要权限：** ohos.ACCESS_BLUETOOTH
+**需要权限：** ohos.permission.ACCESS_BLUETOOTH
 
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
@@ -5576,7 +5576,7 @@ public enum BluetoothBleGattServerCallbackType <: Equatable<BluetoothBleGattServ
 
 **功能：** 服务端 on/off 事件的类型。
 
-**需要权限：** ohos.ACCESS_BLUETOOTH
+**需要权限：** ohos.permission.ACCESS_BLUETOOTH
 
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
@@ -5596,7 +5596,7 @@ CharacteristicRead
 
 **功能：** 表示特征值读请求事件类型。
 
-**需要权限：** ohos.ACCESS_BLUETOOTH
+**需要权限：** ohos.permission.ACCESS_BLUETOOTH
 
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
@@ -5610,7 +5610,7 @@ CharacteristicWrite
 
 **功能：** 表示特征值写请求事件类型。
 
-**需要权限：** ohos.ACCESS_BLUETOOTH
+**需要权限：** ohos.permission.ACCESS_BLUETOOTH
 
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
@@ -5624,7 +5624,7 @@ ConnectionStateChange
 
 **功能：** 表示BLE连接状态变化事件类型。
 
-**需要权限：** ohos.ACCESS_BLUETOOTH
+**需要权限：** ohos.permission.ACCESS_BLUETOOTH
 
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
@@ -5638,7 +5638,7 @@ DescriptorRead
 
 **功能：** 表示描述符读请求事件类型。
 
-**需要权限：** ohos.ACCESS_BLUETOOTH
+**需要权限：** ohos.permission.ACCESS_BLUETOOTH
 
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
@@ -5652,7 +5652,7 @@ DescriptorWrite
 
 **功能：** 表示描述符写请求事件类型。
 
-**需要权限：** ohos.ACCESS_BLUETOOTH
+**需要权限：** ohos.permission.ACCESS_BLUETOOTH
 
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
@@ -5666,7 +5666,7 @@ ServerBleMtuChange
 
 **功能：** 表示MTU状态变化事件类型。
 
-**需要权限：** ohos.ACCESS_BLUETOOTH
+**需要权限：** ohos.permission.ACCESS_BLUETOOTH
 
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
