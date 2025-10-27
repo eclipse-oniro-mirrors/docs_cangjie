@@ -66,7 +66,7 @@ public func inValues(field: String, value: Array<VBValueType>): DataSharePredica
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |field|String|是|-|数据库表中的列名。|
-|value|Array\<[VBValueType](cj-apis-values_bucket.md#enum-VBValueType)>|是|-|以VBValueType数组形式指定的要匹配的值。|
+|value|Array\<[VBValueType](cj-apis-values_bucket.md#enum-vbvaluetype)>|是|-|以VBValueType数组形式指定的要匹配的值。|
 
 **返回值：**
 
@@ -158,7 +158,7 @@ public func equalTo(field: String, value: VBValueType): DataSharePredicates
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |field|String|是|-|数据库表中的列名。|
-|value|[VBValueType](cj-apis-values_bucket.md#enum-VBValueType)|是|-|指示要与谓词匹配的值。|
+|value|[VBValueType](cj-apis-values_bucket.md#enum-vbvaluetype)|是|-|指示要与谓词匹配的值。|
 
 **返回值：**
 
