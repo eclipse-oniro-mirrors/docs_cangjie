@@ -57,10 +57,9 @@ public func create(colorSpaceName: ColorSpace): ColorSpaceManager
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.ArkGraphics2D.*
 
-let colorSpaceManager = create(ColorSpace.SRGB)
+let colorSpaceManager = create(ColorSpace.Srgb)
 ```
 
 ## func create(ColorSpacePrimaries, Float32)
@@ -104,18 +103,17 @@ public func create(primaries: ColorSpacePrimaries, gamma: Float32): ColorSpaceMa
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.ArkGraphics2D.*
 
 let primaries = ColorSpacePrimaries(
-    redX: 0.1,
-    redY: 0.1,
-    greenX: 0.2,
-    greenY: 0.2,
-    blueX: 0.3,
-    blueY: 0.3,
-    whitePointX: 0.4,
-    whitePointY: 0.4
+    0.1,
+    0.1,
+    0.2,
+    0.2,
+    0.3,
+    0.3,
+    0.4,
+    0.4
 )
 let gamma = 2.2f32
 let colorSpaceManager = create(primaries, gamma)
@@ -170,7 +168,6 @@ public func getColorSpaceName(): ColorSpace
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.ArkGraphics2D.*
 
 let colorSpaceManagerInstance = create(ColorSpace.Srgb)
@@ -210,7 +207,6 @@ public func getGamma(): Float32
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.ArkGraphics2D.*
 
 let colorSpaceManagerInstance = create(Srgb)
@@ -250,7 +246,6 @@ public func getWhitePoint(): Array<Float32>
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.ArkGraphics2D.*
 
 let colorSpaceManagerInstance = create(Srgb)
@@ -915,7 +910,6 @@ public func toString(): String
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.ArkGraphics2D.*
 
 let value: String = ColorSpace.DisplayP3.toString()

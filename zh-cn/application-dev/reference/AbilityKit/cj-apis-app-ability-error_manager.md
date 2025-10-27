@@ -72,6 +72,8 @@ public static func off(eventType: ErrorManagerEvent, observerId: Int32): Unit
 ```cangjie
 // index.cj
 import kit.AbilityKit.*
+import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
 
 try {
     let observerId: Int32 = 1

@@ -200,8 +200,8 @@ public func get(key: String): ValueType
 import kit.ArkData.*
 
 let manager = DistributedKVStore.createKVManager(KVManagerConfig(Global.getStageContext(), "test_kvstore")) // 需获取Context应用上下文，详见本文使用说明
-let store = manager.getDeviceKVStore("test", KVOptions(KVSecurityLevel.S1))
-store.put("key", KVValueType.STRING("value"))
+let store = (manager.getKVStore("test", KVOptions(KVSecurityLevel.S1)) as DeviceKVStore).getOrThrow()
+store.put("key", KVValueType.StringValue("value"))
 store.get("key")
 ```
 
@@ -250,8 +250,8 @@ public func getEntries(keyPrefix: String): Array<Entry>
 import kit.ArkData.*
 
 let manager = DistributedKVStore.createKVManager(KVManagerConfig(Global.getStageContext(), "test_kvstore")) // 需获取Context应用上下文，详见本文使用说明
-let store = manager.getDeviceKVStore("test", KVOptions(KVSecurityLevel.S1))
-store.put("key", KVValueType.STRING("value"))
+let store = (manager.getKVStore("test", KVOptions(KVSecurityLevel.S1)) as DeviceKVStore).getOrThrow()
+store.put("key", KVValueType.StringValue("value"))
 store.getEntries("key")
 ```
 
@@ -300,8 +300,8 @@ public func getEntries(query: Query): Array<Entry>
 import kit.ArkData.*
 
 let manager = DistributedKVStore.createKVManager(KVManagerConfig(Global.getStageContext(), "test_kvstore")) // 需获取Context应用上下文，详见本文使用说明
-let store = manager.getDeviceKVStore("test", KVOptions(KVSecurityLevel.S1))
-store.put("key", KVValueType.STRING("value"))
+let store = (manager.getKVStore("test", KVOptions(KVSecurityLevel.S1)) as DeviceKVStore).getOrThrow()
+store.put("key", KVValueType.StringValue("value"))
 store.getEntries(Query())
 ```
 
@@ -351,8 +351,8 @@ public func getResultSet(keyPrefix: String): KVStoreResultSet
 import kit.ArkData.*
 
 let manager = DistributedKVStore.createKVManager(KVManagerConfig(Global.getStageContext(), "test_kvstore")) // 需获取Context应用上下文，详见本文使用说明
-let store = manager.getDeviceKVStore("test", KVOptions(KVSecurityLevel.S1))
-store.put("key", KVValueType.STRING("value"))
+let store = (manager.getKVStore("test", KVOptions(KVSecurityLevel.S1)) as DeviceKVStore).getOrThrow()
+store.put("key", KVValueType.StringValue("value"))
 store.getResultSet("key")
 ```
 
@@ -402,8 +402,8 @@ public func getResultSet(query: Query): KVStoreResultSet
 import kit.ArkData.*
 
 let manager = DistributedKVStore.createKVManager(KVManagerConfig(Global.getStageContext(), "test_kvstore")) // 需获取Context应用上下文，详见本文使用说明
-let store = manager.getDeviceKVStore("test", KVOptions(KVSecurityLevel.S1))
-store.put("key", KVValueType.STRING("value"))
+let store = (manager.getKVStore("test", KVOptions(KVSecurityLevel.S1)) as DeviceKVStore).getOrThrow()
+store.put("key", KVValueType.StringValue("value"))
 store.getResultSet(Query())
 ```
 
@@ -452,8 +452,8 @@ public func getResultSize(query: Query): Int32
 import kit.ArkData.*
 
 let manager = DistributedKVStore.createKVManager(KVManagerConfig(Global.getStageContext(), "test_kvstore")) // 需获取Context应用上下文，详见本文使用说明
-let store = manager.getDeviceKVStore("test", KVOptions(KVSecurityLevel.S1))
-store.put("key", KVValueType.STRING("value"))
+let store = (manager.getKVStore("test", KVOptions(KVSecurityLevel.S1)) as DeviceKVStore).getOrThrow()
+store.put("key", KVValueType.StringValue("value"))
 store.getResultSize(Query())
 ```
 
@@ -983,8 +983,8 @@ public func getCount(): Int32
 import kit.ArkData.*
 
 let kvManager = DistributedKVStore.createKVManager(KVManagerConfig(Global.getStageContext(), "test_kvstore")) // 需获取Context应用上下文，详见本文使用说明
-let store = kvManager.getDeviceKVStore("test", KVOptions(KVSecurityLevel.S1))
-store.put("key", KVValueType.STRING("value"))
+let store = (kvManager.getKVStore("test", KVOptions(KVSecurityLevel.S1)) as DeviceKVStore).getOrThrow()
+store.put("key", KVValueType.StringValue("value"))
 var resultSet = store.getResultSet("key")
 resultSet.getCount()
 ```
@@ -1322,7 +1322,7 @@ let opt = KVOptions(
     backup: true,
     autoSync: false,
 )
-let singleKVStore = kvManager.getSingleKVStore("myStoreId", opt)
+let singleKVStore = kvManager.getKVStore("myStoreId", opt)
 singleKVStore.backup("myBackupfile")
 ```
 
@@ -1364,7 +1364,7 @@ let opt = KVOptions(
     backup: true,
     autoSync: false,
 )
-let singleKVStore = kvManager.getSingleKVStore("myStoreId", opt)
+let singleKVStore = kvManager.getKVStore("myStoreId", opt)
 singleKVStore.commit()
 ```
 
@@ -1415,7 +1415,7 @@ let opt = KVOptions(
     backup: true,
     autoSync: false,
 )
-let singleKVStore = kvManager.getSingleKVStore("myStoreId", opt)
+let singleKVStore = kvManager.getKVStore("myStoreId", opt)
 singleKVStore.delete("myKey")
 ```
 
@@ -1457,8 +1457,6 @@ public open func deleteBatch(keys: Array<String>): Unit
 // index.cj
 
 import kit.ArkData.*
-import ohos.base.*
-import std.collection.*
 
 let kvManager = DistributedKVStore.createKVManager(KVManagerConfig(Global.getStageContext(), "test_kvstore")) // 需获取Context应用上下文，详见本文使用说明
 let opt = KVOptions(
@@ -1468,11 +1466,8 @@ let opt = KVOptions(
     backup: true,
     autoSync: false,
 )
-let singleKVStore = kvManager.getSingleKVStore("myStoreId", opt)
-let results = singleKVStore.deleteBackup(ArrayList<String>(["myBackupfile", "BK002"]))
-for (result in results) {
-    AppLog.info("${result[0]}的删除结果是: ${result[1]}")
-}
+let deviceKVStore = (kvManager.getKVStore("myStoreId", opt) as DeviceKVStore).getOrThrow()
+deviceKVStore.deleteBatch(["myBackupfile", "BK002"])
 ```
 
 ### func enableSync(Bool)
@@ -1520,15 +1515,8 @@ let opt = KVOptions(
     backup: true,
     autoSync: false,
 )
-let singleKVStore = kvManager.getSingleKVStore("myStoreId", opt)
-let key = "batch_test_string_key"
-let entries = ArrayList<Entry>()
-for (i in 0..10) {
-    entries.add(Entry("${key}${i}", KVValueType.STRING("batch_test_string_value")))
-}
-singleKVStore.putBatch(entries)
-let query = Query().prefixKey("batch_test_string_key")
-let result = singleKVStore.getEntries(query)
+let singleKVStore = kvManager.getKVStore("myStoreId", opt)
+singleKVStore.enableSync(true)
 ```
 
 ### func get(String)
@@ -1575,20 +1563,21 @@ public open func get(key: String): ValueType
 // index.cj
 
 import kit.ArkData.*
-import ohos.base.*
+import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
 
 let kvManager = DistributedKVStore.createKVManager(KVManagerConfig(Global.getStageContext(), "test_kvstore")) // 需获取Context应用上下文，详见本文使用说明
-let kvStore = kvManager.getDeviceKVStore("test", KVOptions(KVSecurityLevel.S1))
+let kvStore = (kvManager.getKVStore("test", KVOptions(KVSecurityLevel.S1)) as DeviceKVStore).getOrThrow()
 try {
     let value = kvStore.get("myKey")
     match (value) {
-        case STRING(v) => AppLog.info("The obtained value is a String: ${v}")
-        case INTEGER(v) => AppLog.info("The obtained value is a Int32: ${v}")
-        case DOUBLE(v) => AppLog.info("The obtained value is a Float64: ${v}")
-        case _ => AppLog.info("The obtained value is of another type.")
+        case StringValue(v) => Hilog.info(0, "test", "The obtained value is a String: ${v}", "")
+        case Integer(v) => Hilog.info(0, "test", "The obtained value is a Int32: ${v}", "")
+        case Double(v) => Hilog.info(0, "test", "The obtained value is a Float64: ${v}", "")
+        case _ => Hilog.info(0, "test", "The obtained value is of another type.", "")
     }
 } catch (e: BusinessException) {
-    AppLog.info("get failed.")
+    Hilog.info(0, "test", "get failed.", "")
 }
 ```
 
@@ -1631,15 +1620,16 @@ public open func put(key: String, value: ValueType): Unit
 // index.cj
 
 import kit.ArkData.*
-import ohos.base.*
+import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
 
 let kvManager = DistributedKVStore.createKVManager(
     KVManagerConfig(Global.getStageContext(), "test_kvstore")) // 需获取Context应用上下文，详见本文使用说明
-let kvStore = kvManager.getDeviceKVStore("test", KVOptions(KVSecurityLevel.S1))
+let kvStore = (kvManager.getKVStore("test", KVOptions(KVSecurityLevel.S1)) as DeviceKVStore).getOrThrow()
 try {
-    kvStore.put("myKey", ValueType.STRING("myValue"))
+    kvStore.put("myKey", StringValue("myValue"))
 } catch (e: BusinessException) {
-    AppLog.info("put failed.")
+    Hilog.info(0, "test", "put failed.", "")
 }
 ```
 
@@ -1691,11 +1681,10 @@ let opt = KVOptions(
     backup: true,
     autoSync: false,
 )
-let singleKVStore = kvManager.getSingleKVStore("myStoreId", opt)
+let singleKVStore = kvManager.getKVStore("myStoreId", opt)
 let entries = ArrayList<Entry>()
 for (i in 0..10) {
-    let entry = Entry("batch_test_string_key${i}", KVValueType.("batch_test_string_value")
-    )
+    let entry = Entry("batch_test_string_key${i}", StringValue("batch_test_string_value"))
     entries.add(entry)
 }
 singleKVStore.putBatch(entries.toArray())
@@ -1747,7 +1736,7 @@ let opt = KVOptions(
     backup: true,
     autoSync: false,
 )
-let singleKVStore = kvManager.getSingleKVStore("myStoreId", opt)
+let singleKVStore = kvManager.getKVStore("myStoreId", opt)
 singleKVStore.restore("myBackupfile")
 ```
 
@@ -1790,7 +1779,7 @@ let opt = KVOptions(
     backup: true,
     autoSync: false,
 )
-let singleKVStore = kvManager.getSingleKVStore("myStoreId", opt)
+let singleKVStore = kvManager.getKVStore("myStoreId", opt)
 singleKVStore.rollback()
 ```
 
@@ -1839,7 +1828,7 @@ let opt = KVOptions(
     backup: true,
     autoSync: false,
 )
-let singleKVStore = kvManager.getSingleKVStore("myStoreId", opt)
+let singleKVStore = kvManager.getKVStore("myStoreId", opt)
 singleKVStore.setSyncParam(500)
 ```
 
@@ -1882,7 +1871,7 @@ let opt = KVOptions(
     backup: true,
     autoSync: false,
 )
-let singleKVStore = kvManager.getSingleKVStore("myStoreId", opt)
+let singleKVStore = kvManager.getKVStore("myStoreId", opt)
 singleKVStore.startTransaction()
 ```
 
@@ -1962,10 +1951,10 @@ S4
 
 **起始版本：** 22
 
-## enum ValueType
+## enum KVValueType
 
 ```cangjie
-public enum ValueType {
+public enum KVValueType {
     | StringValue(String)
     | Integer(Int32)
     | Float(Float32)

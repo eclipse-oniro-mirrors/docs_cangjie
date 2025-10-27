@@ -79,7 +79,6 @@ func getConnectedDevices(): Array<String>
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import ohos.business_exception.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -139,7 +138,6 @@ func getConnectionState(deviceId: String): ProfileConnectionState
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import ohos.business_exception.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -190,7 +188,6 @@ func off(eventType: ProfileCallbackType, callback: CallbackObject): Unit
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import ohos.callback_invoke.*
 import ohos.business_exception.*
 import kit.ConnectivityKit.*
@@ -251,7 +248,6 @@ func off(eventType: ProfileCallbackType): Unit
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import ohos.callback_invoke.*
 import ohos.business_exception.*
 import kit.ConnectivityKit.*
@@ -313,7 +309,6 @@ func on(eventType: ProfileCallbackType, callback: Callback1Argument<StateChangeP
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import ohos.callback_invoke.*
 import ohos.business_exception.*
 import kit.ConnectivityKit.*

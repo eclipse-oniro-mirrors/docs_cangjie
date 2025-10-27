@@ -46,7 +46,6 @@ public func createA2dpSrcProfile(): A2dpSourceProfile
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 import ohos.business_exception.*
@@ -114,7 +113,6 @@ public func getConnectedDevices(): Array<String>
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 import ohos.business_exception.*
@@ -174,7 +172,6 @@ public func getConnectionState(deviceId: String): ProfileConnectionState
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 import ohos.business_exception.*
@@ -234,7 +231,6 @@ public func getPlayingState(deviceId: String): PlayingState
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 import ohos.business_exception.*
@@ -285,7 +281,6 @@ public func off(eventType: ProfileCallbackType, callback: CallbackObject): Unit
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 import ohos.callback_invoke.*
@@ -346,7 +341,6 @@ public func off(eventType: ProfileCallbackType): Unit
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 import ohos.callback_invoke.*
@@ -408,7 +402,6 @@ public func on(eventType: ProfileCallbackType, callback: Callback1Argument<State
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 import ohos.callback_invoke.*

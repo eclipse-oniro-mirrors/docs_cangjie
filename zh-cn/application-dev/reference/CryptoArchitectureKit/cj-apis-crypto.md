@@ -1096,6 +1096,7 @@ public func clearMem(): Unit
 // index.cj
 
 import kit.CryptoArchitectureKit.*
+import kit.PerformanceAnalysisKit.*
 
 let generator = createSymKeyGenerator("3DES192")
 let key = generator.generateSymKey()
@@ -1142,6 +1143,7 @@ public func getEncoded(): DataBlob
 // index.cj
 
 import kit.CryptoArchitectureKit.*
+import kit.PerformanceAnalysisKit.*
 
 let generator = createSymKeyGenerator("3DES192")
 let key = generator.generateSymKey()

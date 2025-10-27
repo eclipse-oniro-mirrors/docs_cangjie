@@ -166,7 +166,7 @@ public func createImageSource(uri: String, options: SourceOptions): ImageSource
 
 import kit.ImageKit.*
 
-let sourceOptions: SourceOptions = SourceOptions(sourceDensity: 120)
+let sourceOptions: SourceOptions = SourceOptions(120)
 let imageSource: ImageSource = createImageSource("test.png", sourceOptions)
 ```
 
@@ -240,7 +240,7 @@ public func createImageSource(fd: Int32, options: SourceOptions): ImageSource
 
 import kit.ImageKit.*
 
-let sourceOptions: SourceOptions = SourceOptions(sourceDensity: 120)
+let sourceOptions: SourceOptions = SourceOptions(120)
 let imageSource: ImageSource = createImageSource(0, sourceOptions)
 ```
 
@@ -316,7 +316,7 @@ public func createImageSource(buf: Array<UInt8>, options: SourceOptions): ImageS
 import kit.ImageKit.*
 
 let data: Array<UInt8> = Array<UInt8>(112, repeat: 0)
-let sourceOptions: SourceOptions = SourceOptions(sourceDensity: 120)
+let sourceOptions: SourceOptions = SourceOptions(120)
 let imageSourceApi: ImageSource = createImageSource(data, sourceOptions)
 ```
 
@@ -353,17 +353,16 @@ public func createImageSource(rawfile: RawFileDescriptor, options!: SourceOption
 // index.cj
 
 import kit.ImageKit.*
+import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
 import ohos.resource_manager.ResourceManager
-import ohos.base.*
 
-let resourceManager = ResourceManager.getResourceManager(Global.getStageContext()) // 需获取Context应用上下文，详见本文使用说明
+let resourceManager = Global.getResourceManager() // 需获取Context应用上下文，详见本文使用说明
 try {
     let rawfd = resourceManager.getRawFd("test.png")
     createImageSource(rawfd)
 } catch (e: BusinessException) {
-    let code = e.code
-    let message = e.message
-    AppLog.info("getRawFd failed, error code: ${code}, message: ${message}.")
+    Hilog.info(0, "test", "error code: ${e.code}, message: ${e.message}.", "")
 }
 ```
 
@@ -410,8 +409,7 @@ public func createPixelMap(colors: Array<UInt8>, options: InitializationOptions)
 import kit.ImageKit.*
 
 let color: Array<UInt8> = Array<UInt8>(96, repeat: 0) //96为需要创建的像素buffer大小，取值为：height * width *4
-let opts: InitializationOptions = InitializationOptions(editable: true, pixelFormat: RGBA_8888,
-    size: Size(height: 4, width: 6))
+let opts: InitializationOptions = InitializationOptions(Size(4, 6))
 let pixelMap = createPixelMap(color, opts)
 ```
 
@@ -808,9 +806,10 @@ public func getComponent(componentType: ComponentType): Component
 
 import kit.ImageKit.*
 
-let imageCreator = createImageCreator(8192, 8, 4, 8)
-let img = imageCreator.dequeueImage()
-let component : Component = img.getComponent(ComponentType.JPEG)
+let size = Size(8, 8192)
+let receiver = createImageReceiver(size, ImageFormat.Jpeg, 8)
+let img = receiver.readNextImage()
+let component : Component = img.getComponent(ComponentType.Jpeg)
 ```
 
 ### func release()
@@ -834,8 +833,9 @@ public func release(): Unit
 
 import kit.ImageKit.*
 
-let imageCreator = createImageCreator(8192, 8, 4, 8)
-let img = imageCreator.dequeueImage()
+let size = Size(8, 8192)
+let receiver = createImageReceiver(size, ImageFormat.Jpeg, 8)
+let img = receiver.readNextImage()
 img.release()
 ```
 
@@ -2273,7 +2273,7 @@ let data: Array<UInt8> = Array<UInt8>(112, repeat: 0)
 let sourceOptions: SourceOptions = SourceOptions(120)
 let imageSourceApi: ImageSource = createImageSource(data, sourceOptions)  // 请替换为正确的图片源，参考本文使用说明。
 let pixelMap = imageSourceApi.createPixelMap()
-let colorSpaceManager = create(SRGB)
+let colorSpaceManager = create(Srgb)
 pixelMap.applyColorSpace(colorSpaceManager)
 ```
 
@@ -2782,6 +2782,7 @@ import kit.ImageKit.*
 let data: Array<UInt8> = Array<UInt8>(112, repeat: 0)
 let sourceOptions: SourceOptions = SourceOptions(120)
 let imageSourceApi: ImageSource = createImageSource(data, sourceOptions)  // 请替换为正确的图片源，参考本文使用说明。
+let pixelMap = imageSourceApi.createPixelMap()
 pixelMap.scale(1.0, 1.0)
 ```
 
@@ -2827,7 +2828,7 @@ let data: Array<UInt8> = Array<UInt8>(112, repeat: 0)
 let sourceOptions: SourceOptions = SourceOptions(120)
 let imageSourceApi: ImageSource = createImageSource(data, sourceOptions)  // 请替换为正确的图片源，参考本文使用说明。
 let pixelMap = imageSourceApi.createPixelMap()
-let colorSpaceManager = create(SRGB)
+let colorSpaceManager = create(Srgb)
 pixelMap.setColorSpace(colorSpaceManager)
 ```
 

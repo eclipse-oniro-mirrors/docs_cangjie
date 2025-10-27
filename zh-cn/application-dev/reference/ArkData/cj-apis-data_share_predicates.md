@@ -66,7 +66,7 @@ public func inValues(field: String, value: Array<ValueType>): DataSharePredicate
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |field|String|是|-|数据库表中的列名。|
-|value|Array\<[ValueType](cj-apis-preferences.md#enum-valuetype)>|是|-|以ValueType数组形式指定的要匹配的值。|
+|value|Array\<[ValueType](./cj-apis-values_bucket.md#enum-vbvaluetype)>|是|-|以ValueType数组形式指定的要匹配的值。|
 
 **返回值：**
 
@@ -90,9 +90,7 @@ public func inValues(field: String, value: Array<ValueType>): DataSharePredicate
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.ArkData.*
-import ohos.data.values_bucket.ValueType as VBValueType
 
 let predicates = DataSharePredicates()
 predicates.inValues("AGE", [VBValueType.Integer(18), VBValueType.Integer(20)])
@@ -131,9 +129,7 @@ public func and(): DataSharePredicates
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.ArkData.*
-import ohos.data.values_bucket.ValueType as VBValueType
 
 let predicates = DataSharePredicates()
 predicates.equalTo("NAME", VBValueType.StringValue("lisi"))
@@ -141,10 +137,10 @@ predicates.equalTo("NAME", VBValueType.StringValue("lisi"))
         .equalTo("SALARY", VBValueType.Double(200.5))
 ```
 
-### func equalTo(String, ValueType)
+### func equalTo(String, VBValueType)
 
 ```cangjie
-public func equalTo(field: String, value: ValueType): DataSharePredicates
+public func equalTo(field: String, value: VBValueType): DataSharePredicates
 ```
 
 **功能：** 用于配置谓词以匹配值等于指定值的字段。目前仅RDB及KVDB(schema)支持该谓词。
@@ -158,7 +154,7 @@ public func equalTo(field: String, value: ValueType): DataSharePredicates
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |field|String|是|-|数据库表中的列名。|
-|value|[ValueType](cj-apis-preferences.md#enum-valuetype)|是|-|指示要与谓词匹配的值。|
+|value|[VBValueType](./cj-apis-values_bucket.md#enum-vbvaluetype)|是|-|指示要与谓词匹配的值。|
 
 **返回值：**
 
@@ -182,9 +178,7 @@ public func equalTo(field: String, value: ValueType): DataSharePredicates
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.ArkData.*
-import ohos.data.values_bucket.ValueType as VBValueType
 
 let predicates = DataSharePredicates()
 predicates.equalTo("NAME", VBValueType.StringValue("Rose"))
@@ -231,9 +225,7 @@ public func limit(total: Int32, offset: Int32): DataSharePredicates
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.ArkData.*
-import ohos.data.values_bucket.ValueType as VBValueType
 
 let predicates = DataSharePredicates()
 predicates.equalTo("NAME", VBValueType.StringValue("Rose")).limit(10, 3)
@@ -279,7 +271,6 @@ public func orderByAsc(field: String): DataSharePredicates
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.ArkData.*
 
 let predicates = DataSharePredicates()
@@ -326,7 +317,6 @@ public func orderByDesc(field: String): DataSharePredicates
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.ArkData.*
 
 let predicates = DataSharePredicates()

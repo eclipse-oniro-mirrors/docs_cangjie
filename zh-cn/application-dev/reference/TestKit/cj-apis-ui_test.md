@@ -640,7 +640,6 @@ public static func create(): Driver
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.TestKit.*
 
 let driver: Driver = Driver.create()
@@ -680,7 +679,7 @@ public func assertComponentExist(on: On): Unit
 ```cangjie
 // index.cj
 
-import ohos.base.*
+import kit.PerformanceAnalysisKit.*
 import kit.TestKit.*
 import ohos.business_exception.BusinessException
 
@@ -726,7 +725,6 @@ public func click(x: Int32, y: Int32): Unit
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.TestKit.*
 
 let driver: Driver = Driver.create()
@@ -758,7 +756,6 @@ public func createUIEventObserver(): UIEventObserver
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.TestKit.*
 
 let driver: Driver = Driver.create()
@@ -798,7 +795,6 @@ public func delayMs(duration: Int32): Unit
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.TestKit.*
 
 let driver: Driver = Driver.create()
@@ -839,7 +835,6 @@ public func doubleClick(x: Int32, y: Int32): Unit
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.TestKit.*
 
 let driver: Driver = Driver.create()
@@ -889,7 +884,6 @@ public func drag(
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.TestKit.*
 
 let driver: Driver = Driver.create()
@@ -927,7 +921,6 @@ public func findComponent(on: On): ?Component
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.TestKit.*
 
 let driver: Driver = Driver.create()
@@ -973,7 +966,6 @@ public func findComponents(on: On): ?Array<Component>
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.TestKit.*
 
 let driver: Driver = Driver.create()
@@ -1019,7 +1011,6 @@ public func findWindow(filter: WindowFilter): ?UiWindow
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.TestKit.*
 
 let driver: Driver = Driver.create()
@@ -1062,7 +1053,6 @@ public func fling(from: Point, to: Point, stepLen: Int32, speed: Int32): Unit
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.TestKit.*
 
 let driver: Driver = Driver.create()
@@ -1103,7 +1093,6 @@ public func fling(direction: UiDirection, speed: Int32): Unit
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.TestKit.*
 
 let driver: Driver = Driver.create()
@@ -1135,7 +1124,6 @@ public func getDisplayDensity(): Point
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.TestKit.*
 
 let driver: Driver = Driver.create()
@@ -1167,7 +1155,6 @@ public func getDisplayRotation(): DisplayRotation
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.TestKit.*
 
 let driver: Driver = Driver.create()
@@ -1199,7 +1186,6 @@ public func getDisplaySize(): Point
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.TestKit.*
 
 let driver: Driver = Driver.create()
@@ -1295,8 +1281,8 @@ public func inputText(p: Point, text: String): Unit
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.TestKit.*
+import kit.PerformanceAnalysisKit.*
 import ohos.business_exception.BusinessException
 
 let driver: Driver = Driver.create()
@@ -1343,7 +1329,6 @@ public func longClick(x: Int32, y: Int32): Unit
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.TestKit.*
 
 let driver: Driver = Driver.create()
@@ -1667,7 +1652,6 @@ public func pressBack(): Unit
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.TestKit.*
 
 let driver: Driver = Driver.create()
@@ -1738,7 +1722,6 @@ public func screenCap(savePath: String): Bool
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.TestKit.*
 
 let driver: Driver = Driver.create()
@@ -1785,7 +1768,6 @@ public func screenCapture(savePath: String, rect!: Rect = Rect(0,0,0,0)): Bool
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.TestKit.*
 
 let driver: Driver = Driver.create()
@@ -1825,7 +1807,6 @@ public func setDisplayRotation(rotation: DisplayRotation): Unit
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.TestKit.*
 
 let driver: Driver = Driver.create()
@@ -1865,7 +1846,6 @@ public func setDisplayRotationEnabled(enabled: Bool): Unit
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.TestKit.*
 
 let driver: Driver = Driver.create()
@@ -1915,7 +1895,6 @@ public func swipe(
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.TestKit.*
 
 let driver: Driver = Driver.create()
@@ -1957,7 +1936,6 @@ public func triggerCombineKeys(key0: Int32, key1: Int32, key2!: Int32 = 0): Unit
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.TestKit.*
 
 let driver: Driver = Driver.create()
@@ -1997,7 +1975,6 @@ public func triggerKey(keyCode: Int32): Unit
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.TestKit.*
 
 let driver: Driver = Driver.create()
@@ -2044,7 +2021,6 @@ public func waitForComponent(on: On, time: Int32): ?Component
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.TestKit.*
 
 let driver: Driver = Driver.create()
@@ -2091,7 +2067,6 @@ public func waitForIdle(idleTime: Int32, timeout: Int32): Bool
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.TestKit.*
 
 let driver: Driver = Driver.create()
@@ -2117,7 +2092,6 @@ public func wakeUpDisplay(): Unit
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.TestKit.*
 
 let driver: Driver = Driver.create()
@@ -3148,7 +3122,6 @@ public static func create(fingers: Int32, steps: Int32): PointerMatrix
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.TestKit.*
 
 let pointerMatrix: PointerMatrix = PointerMatrix.create(2, 3)
@@ -3466,7 +3439,6 @@ public func close(): Unit
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.TestKit.*
 
 let driver: Driver = Driver.create()
@@ -3503,7 +3475,6 @@ public func focus(): Unit
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.TestKit.*
 
 let driver: Driver = Driver.create()
@@ -3544,7 +3515,6 @@ public func getBounds(): Rect
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.TestKit.*
 
 let driver: Driver = Driver.create()
@@ -3585,7 +3555,6 @@ public func getBundleName(): String
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.TestKit.*
 
 let driver: Driver = Driver.create()
@@ -3626,7 +3595,6 @@ public func getTitle(): String
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.TestKit.*
 
 let driver: Driver = Driver.create()
@@ -3667,7 +3635,6 @@ public func getWindowMode(): WindowMode
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.TestKit.*
 
 let driver: Driver = Driver.create()
@@ -3708,7 +3675,6 @@ public func isActive(): Bool
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.TestKit.*
 
 let driver: Driver = Driver.create()
@@ -3749,7 +3715,6 @@ public func isFocused(): Bool
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.TestKit.*
 
 let driver: Driver = Driver.create()
@@ -3788,7 +3753,6 @@ public func maximize(): Unit
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.TestKit.*
 
 let driver: Driver = Driver.create()
@@ -3827,7 +3791,6 @@ public func minimize(): Unit
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.TestKit.*
 
 let driver: Driver = Driver.create()
@@ -3873,7 +3836,6 @@ public func moveTo(x: Int32, y: Int32): Unit
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.TestKit.*
 
 let driver: Driver = Driver.create()
@@ -3919,7 +3881,6 @@ public func resize(wide: Int32, height: Int32, direction: ResizeDirection): Unit
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.TestKit.*
 
 let driver: Driver = Driver.create()
@@ -3958,7 +3919,6 @@ public func resume(): Unit
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.TestKit.*
 
 let driver: Driver = Driver.create()
@@ -3997,7 +3957,6 @@ public func split(): Unit
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.TestKit.*
 
 let driver: Driver = Driver.create()
