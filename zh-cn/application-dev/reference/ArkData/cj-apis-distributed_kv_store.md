@@ -158,7 +158,7 @@ public class DeviceKVStore <: SingleKVStore {}
 
 ```cangjie
 
-public func get(key: String): ValueType
+public func get(key: String): KVValueType
 ```
 
 **功能：** 获取本设备指定键的值。
@@ -177,7 +177,7 @@ public func get(key: String): ValueType
 
 |类型|说明|
 |:----|:----|
-|[ValueType](#enum-valuetype)|返回查询获取的值。|
+|[KVValueType](#enum-valuetype)|返回查询获取的值。|
 
 **异常：**
 
@@ -519,9 +519,9 @@ let kvManager = DistributedKVStore.createKVManager(KVManagerConfig(Global.getSta
 ```cangjie
 public class Entry {
     public var key: String
-    public var value: ValueType
+    public var value: KVValueType
 
-    public init(key: String, value: ValueType)
+    public init(key: String, value: KVValueType)
 }
 ```
 
@@ -550,12 +550,12 @@ public var key: String
 ### var value
 
 ```cangjie
-public var value: ValueType
+public var value: KVValueType
 ```
 
 **功能：** 值对象。
 
-**类型：** [ValueType](#enum-valuetype)
+**类型：** [KVValueType](#enum-valuetype)
 
 **读写能力：** 可读写
 
@@ -563,11 +563,11 @@ public var value: ValueType
 
 **起始版本：** 22
 
-### init(String, ValueType)
+### init(String, KVValueType)
 
 ```cangjie
 
-public init(key: String, value: ValueType)
+public init(key: String, value: KVValueType)
 ```
 
 **功能：** 用于创建Entry实例的构造函数。
@@ -581,7 +581,7 @@ public init(key: String, value: ValueType)
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |key|String|是|-|键值。|
-|value|[ValueType](#enum-valuetype)|是|-|值对象。|
+|value|[KVValueType](#enum-valuetype)|是|-|值对象。|
 
 ## class FieldNode
 
@@ -669,7 +669,7 @@ public init(name: String, nullable: Bool, default: String, nodeType: Int32)
 |name|String|是|-|FieldNode的值。|
 |nullable|Bool|是|-|表示数据库字段是否可以为空。true表示此节点数据可以为空，false表示此节点数据不能为空。|
 |default|String|是|-|表示FieldNode的默认值。|
-|nodeType|Int32|是|-|表示指定节点对应的数据类型，取值为ValueType对应的枚举值。暂不支持BYTE_ARRAY，使用此类型会导致getKVStore失败。|
+|nodeType|Int32|是|-|表示指定节点对应的数据类型，取值为KVValueType对应的枚举值。暂不支持BYTE_ARRAY，使用此类型会导致getKVStore失败。|
 
 ## class KVManager
 
@@ -812,11 +812,11 @@ let kvManager = DistributedKVStore.createKVManager(KVManagerConfig(Global.getSta
 kvManager.getAllKVStoreId("com.example.myapplication")
 ```
 
-### func getKVStore\<T>(String, Options) where T \<: SingleKVStore
+### func getKVStore\<T>(String, KVOptions) where T \<: SingleKVStore
 
 ```cangjie
 
-public func getKVStore<T>(storeId: String, options: Options): T where T <: SingleKVStore
+public func getKVStore<T>(storeId: String, options: KVOptions): T where T <: SingleKVStore
 ```
 
 **功能：** 通过指定Options和storeId，创建并获取分布式键值数据库。
@@ -830,7 +830,7 @@ public func getKVStore<T>(storeId: String, options: Options): T where T <: Singl
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |storeId|String|是|-|数据库唯一标识符，长度不大于[MAX_STORE_ID_LENGTH](#static-let-max_store_id_length)。|
-|options|[Options](#class-options)|是|-|创建分布式键值实例的配置信息。|
+|options|[KVOptions](#class-options)|是|-|创建分布式键值实例的配置信息。|
 
 **返回值：**
 
@@ -989,18 +989,18 @@ var resultSet = store.getResultSet("key")
 resultSet.getCount()
 ```
 
-## class Options
+## class KVOptions
 
 ```cangjie
-public class Options {
+public class KVOptions {
     public var createIfMissing: Bool
     public var encrypt: Bool
     public var backup: Bool
     public var autoSync: Bool
-    public var securityLevel: SecurityLevel
+    public var securityLevel: KVSecurityLevel
     public var schema:?Schema
 
-    public init(securityLevel: SecurityLevel, createIfMissing!: Bool = true, encrypt!: Bool = false,
+    public init(securityLevel: KVSecurityLevel, createIfMissing!: Bool = true, encrypt!: Bool = false,
         backup!: Bool = true, autoSync!: Bool = false, schema!: ?Schema = None)
 }
 ```
@@ -1094,12 +1094,12 @@ public var schema:?Schema
 ### var securityLevel
 
 ```cangjie
-public var securityLevel: SecurityLevel
+public var securityLevel: KVSecurityLevel
 ```
 
 **功能：** 设置数据库安全级别。
 
-**类型：** [SecurityLevel](#enum-securitylevel)
+**类型：** [KVSecurityLevel](#enum-securitylevel)
 
 **读写能力：** 可读写
 
@@ -1107,11 +1107,11 @@ public var securityLevel: SecurityLevel
 
 **起始版本：** 22
 
-### init(SecurityLevel, Bool, Bool, Bool, Bool, ?Schema)
+### init(KVSecurityLevel, Bool, Bool, Bool, Bool, ?Schema)
 
 ```cangjie
 
-public init(securityLevel: SecurityLevel, createIfMissing!: Bool = true, encrypt!: Bool = false,
+public init(securityLevel: KVSecurityLevel, createIfMissing!: Bool = true, encrypt!: Bool = false,
     backup!: Bool = true, autoSync!: Bool = false, schema!: ?Schema = None)
 ```
 
@@ -1125,7 +1125,7 @@ public init(securityLevel: SecurityLevel, createIfMissing!: Bool = true, encrypt
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|securityLevel|[SecurityLevel](#enum-securitylevel)|是|-|设置数据库安全级别。<br>**系统能力：** SystemCapability.DistributedDataManager.KVStore.Core|
+|securityLevel|[KVSecurityLevel](#enum-securitylevel)|是|-|设置数据库安全级别。<br>**系统能力：** SystemCapability.DistributedDataManager.KVStore.Core|
 |createIfMissing|Bool|否|true|当数据库文件不存在时是否创建数据库，默认为true，即创建。<br>**系统能力：** SystemCapability.DistributedDataManager.KVStore.Core|
 |encrypt|Bool|否|false|设置数据库文件是否加密，默认为false，即不加密。<br>**系统能力：** SystemCapability.DistributedDataManager.KVStore.Core|
 |backup|Bool|否|true|设置数据库文件是否备份，默认为true，即备份。 <br>**系统能力：** SystemCapability.DistributedDataManager.KVStore.Core|
@@ -1173,7 +1173,7 @@ public class Schema {
 }
 ```
 
-**功能：** 表示数据库模式，可以在创建或打开数据库时创建Schema对象并将它们放入[KVOptions](#class-options)中。
+**功能：** 表示数据库模式，可以在创建或打开数据库时创建Schema对象并将它们放入[KVOptions](#class-KVOptions)中。
 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.DistributedKVStore
 
@@ -1250,7 +1250,7 @@ public var skip: Int32
 public init(root: FieldNode, indexes: Array<String>, mode: Int32, skip: Int32)
 ```
 
-**功能：** 表示数据库模式，可以在创建或打开数据库时创建Schema对象并将它们放入[KVOptions](#class-options)中。
+**功能：** 表示数据库模式，可以在创建或打开数据库时创建Schema对象并将它们放入[KVOptions](#class-KVOptions)中。
 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.DistributedKVStore
 
@@ -1535,7 +1535,7 @@ let result = singleKVStore.getEntries(query)
 
 ```cangjie
 
-public open func get(key: String): ValueType
+public open func get(key: String): KVValueType
 ```
 
 **功能：** 获取指定键的值。
@@ -1554,7 +1554,7 @@ public open func get(key: String): ValueType
 
 |类型|说明|
 |:----|:----|
-|[ValueType](#enum-valuetype)|返回获取查询的值。|
+|[KVValueType](#enum-valuetype)|返回获取查询的值。|
 
 **异常：**
 
@@ -1592,11 +1592,11 @@ try {
 }
 ```
 
-### func put(String, ValueType)
+### func put(String, KVValueType)
 
 ```cangjie
 
-public open func put(key: String, value: ValueType): Unit
+public open func put(key: String, value: KVValueType): Unit
 ```
 
 **功能：** 添加指定类型键值对到数据库。
@@ -1610,7 +1610,7 @@ public open func put(key: String, value: ValueType): Unit
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |key|String|是|-|要添加数据的key，不能为空且长度不大于[MAX_KEY_LENGTH](#static-let-max_key_length)。|
-|value|[ValueType](#enum-valuetype)|是|-|要添加数据的value，支持Array\<UInt8>、String、Int32、Bool、Float32、Float64 ，Array\<UInt8>、String 的长度不大于[MAX_VALUE_LENGTH](#static-let-max_value_length)。|
+|value|[KVValueType](#enum-valuetype)|是|-|要添加数据的value，支持Array\<UInt8>、String、Int32、Bool、Float32、Float64 ，Array\<UInt8>、String 的长度不大于[MAX_VALUE_LENGTH](#static-let-max_value_length)。|
 
 **异常：**
 
@@ -1637,7 +1637,7 @@ let kvManager = DistributedKVStore.createKVManager(
     KVManagerConfig(Global.getStageContext(), "test_kvstore")) // 需获取Context应用上下文，详见本文使用说明
 let kvStore = kvManager.getDeviceKVStore("test", KVOptions(KVSecurityLevel.S1))
 try {
-    kvStore.put("myKey", ValueType.STRING("myValue"))
+    kvStore.put("myKey", KVValueType.STRING("myValue"))
 } catch (e: BusinessException) {
     AppLog.info("put failed.")
 }
@@ -1886,20 +1886,20 @@ let singleKVStore = kvManager.getSingleKVStore("myStoreId", opt)
 singleKVStore.startTransaction()
 ```
 
-## struct Entry
+## class Entry
 
 ```cangjie
-public struct Entry <: ToString {
+public calss Entry {
     public var key: String
     public var value: KVValueType
     public init (key: String, value: KVValueType)
 }
 ```
 
-## enum SecurityLevel
+## enum KVSecurityLevel
 
 ```cangjie
-public enum SecurityLevel {
+public enum KVSecurityLevel {
     | S1
     | S2
     | S3
@@ -1962,10 +1962,10 @@ S4
 
 **起始版本：** 22
 
-## enum ValueType
+## enum KVValueType
 
 ```cangjie
-public enum ValueType {
+public enum KVValueType {
     | StringValue(String)
     | Integer(Int32)
     | Float(Float32)

@@ -426,7 +426,7 @@ public class Config {
 
     public init(action: Action, url: String, title!: ?String = None, description!: String = "",
         mode!: Mode = Mode.Background, overwrite!: Bool = false, method!: ?String = None,
-        headers!: HashMap<String, String> = HashMap<String, String>(), data!: ?ConfigData = None, saveas!: ?String = None,
+        headers!: HashMap<String, String> = HashMap<String, String>(), data!: ?ConfigData = None,  saveas!: String = "./",
         network!: Network = Network.AnyType, metered!: Bool = false, roaming!: Bool = true, retry!: Bool = true,
         redirect!: Bool = true, index!: UInt32 = 0, begins!: Int64 = 0, ends!: Int64 = -1, gauge!: Bool = false,
         precise!: Bool = false, token!: String = "", priority!: UInt32 = 0,extras!: HashMap<String, String> = HashMap<String, String>()
@@ -970,6 +970,20 @@ public var mimeType:?String
 
 ### var path
 
+```cangjie
+public var path:String
+```
+
+**功能：** 文件的的路=。
+
+**类型：** ?String
+
+**读写能力：** 可读写
+
+**系统能力：** SystemCapability.Request.FileTransferAgent
+
+**起始版本：** 22
+
 ```
 
 ```
@@ -984,6 +998,47 @@ public enum Network <: Equatable<Network> & ToString {
     | ...
 }
 ```
+**功能：** 定义网络选项。网络不满足设置条件时，未执行的任务会等待执行，执行中的任务将失败或暂停。
+
+**系统能力：** SystemCapability.Request.FileTransferAgent
+
+**起始版本：** 22
+
+### AnyType
+
+```cangjie
+AnyType
+```
+
+**功能：** 表示不限网络类型。
+
+**系统能力：** SystemCapability.Request.FileTransferAgent
+
+**起始版本：** 22
+
+### WIFI	
+
+```cangjie
+WIFI	
+```
+
+**功能：** 表示无线网络。
+
+**系统能力：** SystemCapability.Request.FileTransferAgent
+
+**起始版本：** 22
+
+### CELLULAR		
+
+```cangjie
+CELLULAR	
+```
+
+**功能：** 表示蜂窝数据网络。
+
+**系统能力：** SystemCapability.Request.FileTransferAgent
+
+**起始版本：** 22
 
 ## enum Mode
 
@@ -1000,7 +1055,7 @@ public enum Mode <: Equatable<Mode> & ToString {
 
 **系统能力：** SystemCapability.Request.FileTransferAgent
 
-**起始版本：** 21
+**起始版本：** 22
 
 ### func toString()
 

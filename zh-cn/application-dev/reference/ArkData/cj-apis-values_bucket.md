@@ -8,10 +8,10 @@
 import kit.ArkData.*
 ```
 
-## enum ValueType
+## enum VBValueType
 
 ```cangjie
-public enum ValueType {
+public enum VBValueType {
     | Integer(Int64)
     | Double(Float64)
     | StringValue(String)
