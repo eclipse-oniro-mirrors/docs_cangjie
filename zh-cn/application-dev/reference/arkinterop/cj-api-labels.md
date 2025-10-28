@@ -140,7 +140,7 @@ public let deprecated: LevelValue
 
 **功能：** 当前 API 的已弃用版本，默认值为 0，表示未弃用。
 
-**类型：** LevelValue
+**类型：** [LevelValue](#interface-levelvalue)
 
 **读写：** 只读
 
@@ -168,7 +168,7 @@ public let since: LevelValue
 
 **功能：** API 起始 level。
 
-**类型：** LevelValue
+**类型：** [LevelValue](#interface-levelvalue)
 
 **读写：** 只读
 
@@ -275,10 +275,10 @@ public const init(since: LevelValue, atomicservice!: Bool = false, crossplatform
 
 |参数|类型|必填|默认值| 描述                 |
 |:---|:---|:---|:---|:-------------------|
-|since|LevelValue|是|-| API level。         |
+|since|[LevelValue](#interface-levelvalue)|是|-| API level。         |
 |atomicservice|Bool|否|false| 命名参数 是否支持原子服务。     |
 |crossplatform|Bool|否|false| 命名参数 是否支持跨平台。      |
-|deprecated|LevelValue|否|0| 命名参数 弃用版本。         |
+|deprecated|[LevelValue](#interface-levelvalue)|否|0| 命名参数 弃用版本。         |
 |form|Bool|否|false| 命名参数 是否支持forms。    |
 |permission|?[PermissionValue](#interface-permissionvalue)|否|None| 命名参数 是否支持所需权限。      |
 |stagemodelonly|Bool|否|true| 命名参数 是否只支持Stage模型。 |
