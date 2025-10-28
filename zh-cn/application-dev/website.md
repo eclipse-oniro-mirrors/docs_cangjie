@@ -532,12 +532,13 @@
                     - [ohos.shape（形状）](reference/arkui-cj/cj-apis-shape.md)
                     - [ohos.curves（插值计算）](reference/arkui-cj/cj-apis-curves.md)
                     - ohos.ui_context（UIContext）
-                        - [Class（AnimatorResult）](reference/arkui-cj/cj-apis-uicontext-animator.md)
-                        - [Class（ContextMenuController）](reference/arkui-cj/cj-apis-uicontext-contextmenucontroller.md)
-                        - [Class（Font）](reference/arkui-cj/cj-apis-uicontext-font.md)
-                        - [Class（MeasureUtils）](reference/arkui-cj/cj-apis-uicontext-measureutils.md)
-                        - [Class（PromptAction）](reference/arkui-cj/cj-apis-uicontext-promptaction.md)
-                        - [Class（UIContext）](reference/arkui-cj/cj-apis-uicontext-uicontext.md)
+                        - [AnimatorResult](reference/arkui-cj/cj-apis-uicontext-animator.md)
+                        - [ContextMenuController](reference/arkui-cj/cj-apis-uicontext-contextmenucontroller.md)
+                        - [Font](reference/arkui-cj/cj-apis-uicontext-font.md)
+                        - [MeasureUtils](reference/arkui-cj/cj-apis-uicontext-measureutils.md)
+                        - [PromptAction](reference/arkui-cj/cj-apis-uicontext-promptaction.md)
+                        - [Router](reference/arkui-cj/cj-apis-uicontext-router.md)
+                        - [UIContext](reference/arkui-cj/cj-apis-uicontext-uicontext.md)
                 - 窗口管理
                     - [ohos.window（窗口）](reference/arkui-cj/cj-apis-window.md)
                 - 屏幕管理

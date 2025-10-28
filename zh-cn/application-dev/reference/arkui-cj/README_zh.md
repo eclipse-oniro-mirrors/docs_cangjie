@@ -6,12 +6,13 @@
         - [ohos.shape（形状）](cj-apis-shape.md)
         - [ohos.curves（插值计算）](cj-apis-curves.md)
         - ohos.ui_context（UIContext）
-            - [Class（AnimatorResult）](cj-apis-uicontext-animator.md)
-            - [Class（ContextMenuController）](cj-apis-uicontext-contextmenucontroller.md)
-            - [Class（Font）](cj-apis-uicontext-font.md)
-            - [Class（MeasureUtils）](cj-apis-uicontext-measureutils.md)
-            - [Class（PromptAction）](cj-apis-uicontext-promptaction.md)
-            - [Class（UIContext）](cj-apis-uicontext-uicontext.md)
+            - [AnimatorResult](cj-apis-uicontext-animator.md)
+            - [ContextMenuController](cj-apis-uicontext-contextmenucontroller.md)
+            - [Font](cj-apis-uicontext-font.md)
+            - [MeasureUtils](cj-apis-uicontext-measureutils.md)
+            - [PromptAction](cj-apis-uicontext-promptaction.md)
+            - [Router](cj-apis-uicontext-router.md)
+            - [UIContext](cj-apis-uicontext-uicontext.md)
     - 窗口管理
         - [ohos.window（窗口）](cj-apis-window.md)
     - 屏幕管理

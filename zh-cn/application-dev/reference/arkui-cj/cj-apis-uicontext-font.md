@@ -1,6 +1,10 @@
-# Class（Font）
+# Font
 
 注册自定义字体的信息。
+
+> **说明：**
+>
+> 以下API需先使用[UIContext](./cj-apis-uicontext-uicontext.md#class-uicontext)中的[getFont()](./cj-apis-uicontext-uicontext.md#func-getfont)方法获取Font实例，再通过此实例调用对应方法。
 
 ## 导入模块
 
