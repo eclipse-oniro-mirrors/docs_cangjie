@@ -7,7 +7,7 @@
 ```cangjie
 public open class BusinessException <: Exception {
     public let code: Int32
-    public init(code: Int32, msg: String)
+    public init(code: Int32, msg: String, data!: ?Any = None)
 }
 ```
 
@@ -35,10 +35,24 @@ public let code: Int32
 
 **起始版本：** 22
 
-### init(Int32, String)
+### getData<T>()
 
 ```cangjie
-public init(code: Int32, msg: String)
+public func getData<T>(): ?T
+```
+
+**功能：** 额外补充异常信息。
+
+**类型：** T
+
+**读写能力：** 只读
+
+**起始版本：** 22
+
+### init(Int32, String, Any)
+
+```cangjie
+public init(code: Int32, msg: String, data!: ?Any = None)
 ```
 
 **功能：** 创建BusinessException类的实例。
@@ -49,10 +63,11 @@ public init(code: Int32, msg: String)
 
 **参数：**
 
-| 参数 | 类型 | 必填 | 说明    |
-|:---|:---|:---|:------|
+|参数名|类型|必填|说明|
+|:---|:---|:---|:---|
 | code | Int32 | 是 | 错误码。 |
 | msg | String | 是 | 错误信息。|
+|data| ?Any |否 | **命名参数。** 错误数据。|
 
 ### func toString()
 
@@ -71,59 +86,6 @@ public open func toString(): String
 | 类型 | 说明    |
 |:----|:------|
 | String | 错误信息。|
-
-## class BusinessError
-
-```cangjie
-public class BusinessError<T> <: BusinessException  {
-    public var data: T
-    public init (data: T, code: Int32, msg: String)
-}
-```
-
-**功能：** 业务错误类，继承自BusinessException。
-
-**系统能力：** SystemCapability.Base
-
-**起始版本：** 22
-
-**父类型：**
-
-- BusinessException
-
-### let data
-
-```cangjie
-public var data: T
-```
-
-**功能：** 定义错误的额外信息。
-
-**类型：** T
-
-**读写能力：** 读写
-
-**起始版本：** 22
-
-### init(T, Int32, String)
-
-```cangjie
-public init(data: T, code: Int32, msg: String)
-```
-
-**功能：** 创建一个BusinessError类的实例。
-
-**系统能力：** SystemCapability.Base
-
-**起始版本：** 22
-
-**参数：**
-
-| 参数 | 类型 | 必填 | 说明    |
-|:---|:---|:---|:------|
- | data | T | 是 | 额外信息  |
-| code | Int32 | 是 | 错误码。 |
-| msg | String | 是 | 错误信息。|
 
 ### getClassName()
 

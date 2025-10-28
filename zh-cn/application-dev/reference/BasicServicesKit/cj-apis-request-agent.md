@@ -984,8 +984,58 @@ public var path:String
 
 **起始版本：** 22
 
+### init(String, ?String, ?String, HashMap\<String,String>)
+
+```cangjie
+
+public init(
+    path: String,
+    mimeType!: ?String = None,
+    filename!: ?String = None,
+    extras!: HashMap<String, String> = HashMap<String, String>()
+)
 ```
 
+**功能：** 创建FileSpec对象。
+
+**系统能力：** SystemCapability.Request.FileTransferAgent
+
+**起始版本：** 22
+
+**参数：**
+
+
+| 参数名   | 类型                    | 必填 | 默认值                   | 说明                                                                                                                                             |
+| :------- | :---------------------- | :--- | :----------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------- |
+| path     | String                  | 是   | -                        | **命名参数。** 文件路径：<br>- 位于调用方的缓存文件夹下的相对路径。<br>- 用户公共文件，如"file://media/Photo/path/to/file.img"。仅支持前端任务。 |
+| mimeType | ?String                 | 否   | None                     | **命名参数。** 文件的mimetype通过文件名获取。                                                                                                    |
+| filename | ?String                 | 否   | None                     | **命名参数。** 文件名，默认值通过路径获取。                                                                                                      |
+| extras   | HashMap\<String,String> | 否   | HashMap<String,String>() | **命名参数。** 文件信息的附加内容。                                                                                                              |
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// main_ability.cj
+
+import kit.BasicServicesKit.*
+import kit.AbilityKit.*
+import kit.PerformanceAnalysisKit.Hilog
+
+func exampleFileSpecInit(): Unit {
+    try {
+        let fileSpec = FileSpec(
+            path = "./example.txt",
+            mimeType = "text/plain",
+            filename = "example.txt"
+        )
+        Hilog.info(0, "cangjie_ohos_test", "成功创建文件规范对象")
+    } catch (e: Exception) {
+        Hilog.info(0, "cangjie_ohos_test", "创建文件规范对象失败: ${e.toString()}")
+    }
+}
+```
 
 ## enum Network
 
@@ -1039,97 +1089,6 @@ CELLULAR
 **系统能力：** SystemCapability.Request.FileTransferAgent
 
 **起始版本：** 22
-
-## enum Mode
-
-```cangjie
-public enum Mode <: Equatable<Mode> & ToString {
-    | Background
-    | Foreground
-
-    public func toString(): String
-}
-```
-
-**功能：** 任务模式。
-
-**系统能力：** SystemCapability.Request.FileTransferAgent
-
-**起始版本：** 22
-
-### func toString()
-
-```cangjie
-public func toString(): String
-```
-
-```cangjie
-public var path: String
-```
-
-**功能：** 文件路径：位于调用方的缓存文件夹下的相对路径或用户公共文件，如"file://media/Photo/path/to/file.img"。
-仅支持前端任务。
-
-**类型：** String
-
-**读写能力：** 可读写
-
-**系统能力：** SystemCapability.Request.FileTransferAgent
-
-**起始版本：** 22
-
-### init(String, ?String, ?String, HashMap\<String,String>)
-
-```cangjie
-
-public init(
-    path: String,
-    mimeType!: ?String = None,
-    filename!: ?String = None,
-    extras!: HashMap<String, String> = HashMap<String, String>()
-)
-```
-
-**功能：** 创建FileSpec对象。
-
-**系统能力：** SystemCapability.Request.FileTransferAgent
-
-**起始版本：** 22
-
-**参数：**
-
-
-| 参数名   | 类型                    | 必填 | 默认值                   | 说明                                                                                                                                             |
-| :------- | :---------------------- | :--- | :----------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------- |
-| path     | String                  | 是   | -                        | **命名参数。** 文件路径：<br>- 位于调用方的缓存文件夹下的相对路径。<br>- 用户公共文件，如"file://media/Photo/path/to/file.img"。仅支持前端任务。 |
-| mimeType | ?String                 | 否   | None                     | **命名参数。** 文件的mimetype通过文件名获取。                                                                                                    |
-| filename | ?String                 | 否   | None                     | **命名参数。** 文件名，默认值通过路径获取。                                                                                                      |
-| extras   | HashMap\<String,String> | 否   | HashMap<String,String>() | **命名参数。** 文件信息的附加内容。                                                                                                              |
-
-**示例：**
-
-<!-- compile -->
-
-```cangjie
-// main_ability.cj
-
-import kit.BasicServicesKit.*
-import kit.AbilityKit.*
-import kit.PerformanceAnalysisKit.Hilog
-
-func exampleFileSpecInit(): Unit {
-    try {
-        let fileSpec = FileSpec(
-            path = "./example.txt",
-            mimeType = "text/plain",
-            filename = "example.txt"
-        )
-        Hilog.info(0, "cangjie_ohos_test", "成功创建文件规范对象")
-    } catch (e: Exception) {
-        Hilog.info(0, "cangjie_ohos_test", "创建文件规范对象失败: ${e.toString()}")
-    }
-}
-```
 
 ## class Filter
 
@@ -2796,7 +2755,8 @@ StringItem(String)
 public enum Mode <: Equatable<Mode> & ToString{
     | Background
     | Foreground
-    | ...
+    
+    public func toString(): String
 }
 ```
 

@@ -69,21 +69,34 @@ operator func |(rhs: PermissionValue): PermissionValue
 |:----|:------|
 |[PermissionValue](#interface-permissionvalue)| 运算结果。 |
 
+## interface LevelValue
+
+```cangjie
+public interface LevelValue {}
+```
+
+**功能：** 用于表示level标签的值。
+
+**起始版本：** 22
+
 ## class APILevel
 
 ```cangjie
 public class APILevel {
-    public let level: UInt8
+    public let since: LevelValue
     public let atomicservice: Bool
     public let crossplatform: Bool
-    public let deprecated: UInt8
+    public let deprecated: LevelValue
     public let form: Bool
     public let permission:?PermissionValue
     public let stagemodelonly: Bool
     public let syscap: String
-    public const init(level_val: UInt8, atomicservice!: Bool = false, crossplatform!: Bool = false,
-        deprecated!: UInt8 = 0, form!: Bool = false, permission!: ?PermissionValue= None,
-        stagemodelonly!: Bool = true, syscap!: String = "")
+    public let throwexception: Bool
+    public let workerthread: Bool
+    public let systemapi: Bool
+    public const init(since: LevelValue, atomicservice!: Bool = false, crossplatform!: Bool = false,
+        deprecated!: LevelValue = 0, form!: Bool = false, permission!: ?PermissionValue = None, stagemodelonly!: Bool = true,
+        syscap!: String = "", throwexception!: Bool = false, workerthread!: Bool = false, systemapi!: Bool = false) 
 }
 ```
 
@@ -122,12 +135,12 @@ public let crossplatform: Bool
 ### let deprecated
 
 ```cangjie
-public let deprecated: UInt8
+public let deprecated: LevelValue
 ```
 
 **功能：** 当前 API 的已弃用版本，默认值为 0，表示未弃用。
 
-**类型：** UInt8
+**类型：** LevelValue
 
 **读写：** 只读
 
@@ -147,15 +160,15 @@ public let form: Bool
 
 **起始版本：** 22
 
-### let level
+### let since
 
 ```cangjie
-public let level: UInt8
+public let since: LevelValue
 ```
 
 **功能：** API 起始 level。
 
-**类型：** UInt8
+**类型：** LevelValue
 
 **读写：** 只读
 
@@ -203,11 +216,55 @@ public let syscap: String
 
 **起始版本：** 22
 
-### init(UInt8, Bool, Bool, UInt8, Bool, ?PermissionValue, Bool, String)
+### let throwexception
 
 ```cangjie
-public const init(level_val: UInt8, atomicservice!: Bool = false, crossplatform!: Bool = false, deprecated!: UInt8 = 0, form!: Bool = false, permission!: ?PermissionValue= None,
-    stagemodelonly!: Bool = true, syscap!: String = "")
+public let throwexception: Bool
+```
+
+**功能：** 当前API是否有抛出异常能力。
+
+**类型：** Bool
+
+**读写：** 只读
+
+**起始版本：** 22
+
+### let workerthread
+
+```cangjie
+public let throwexception: Bool
+```
+
+**功能：** 当前API是否提供异步接口能力。
+
+**类型：** Bool
+
+**读写：** 只读
+
+**起始版本：** 22
+
+### let workerthread
+
+```cangjie
+public let systemapi: Bool
+```
+
+**功能：** 当前API是否是系统api。
+
+**类型：** Bool
+
+**读写：** 只读
+
+**起始版本：** 22
+
+
+### init(LevelValue, Bool, Bool, LevelValue, Bool, ?PermissionValue, Bool, String，Bool，Bool，Bool)
+
+```cangjie
+public const init(since: LevelValue, atomicservice!: Bool = false, crossplatform!: Bool = false,
+        deprecated!: LevelValue = 0, form!: Bool = false, permission!: ?PermissionValue = None, stagemodelonly!: Bool = true,
+        syscap!: String = "", throwexception!: Bool = false, workerthread!: Bool = false, systemapi!: Bool = false)
 ```
 
 **功能：** APILevel 构造函数。
@@ -218,14 +275,17 @@ public const init(level_val: UInt8, atomicservice!: Bool = false, crossplatform!
 
 |参数|类型|必填|默认值| 描述                 |
 |:---|:---|:---|:---|:-------------------|
-|level_val|UInt8|是|-| API level。         |
+|since|LevelValue|是|-| API level。         |
 |atomicservice|Bool|否|false| 命名参数 是否支持原子服务。     |
 |crossplatform|Bool|否|false| 命名参数 是否支持跨平台。      |
-|deprecated|UInt8|否|0| 命名参数 弃用版本。         |
+|deprecated|LevelValue|否|0| 命名参数 弃用版本。         |
 |form|Bool|否|false| 命名参数 是否支持forms。    |
-|permission|?[PermissionValue](#interface-permissionvalue)|否|None| 命名参数 必填 所需权限。      |
+|permission|?[PermissionValue](#interface-permissionvalue)|否|None| 命名参数 是否支持所需权限。      |
 |stagemodelonly|Bool|否|true| 命名参数 是否只支持Stage模型。 |
-|syscap|String|否|""| 命名参数 必填 系统能力。      |
+|syscap|String|否|""| 命名参数 是否支持 系统能力。      |
+|throwexception|Bool|否|""| 命名参数 是否支持 异常能力。      |
+|workerthread|Bool|否|""| 命名参数 是否支持 异步接口力。      |
+|systemapi|Bool|否|""| 命名参数 是否支持  系统api。      |
 
 ## class PermissionAnd
 
