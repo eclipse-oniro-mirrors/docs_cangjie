@@ -1,4 +1,4 @@
-# 用户指南（Beta特性）
+# 学习仓颉语言（Beta特性）
 
 - [初识仓颉语言](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/first_understanding/basic.md)
 - 基本概念
