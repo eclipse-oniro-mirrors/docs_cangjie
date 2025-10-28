@@ -9,7 +9,6 @@
     - 进程线程通信
         - [ohos.common_event_manager（公共事件模块）](cj-apis-common_event_manager.md)
     - 其他
-        - [ohos.base（公共回调信息）](cj-apis-base.md)
         - [ohos.settings（设置数据项名称）](cj-apis-settings.md)
         - [ohos.system_date_time（系统时间、时区）](cj-apis-system_date_time.md)
         - [ohos.common_event_subscriber](cj-apis-common_event_subscriber.md)

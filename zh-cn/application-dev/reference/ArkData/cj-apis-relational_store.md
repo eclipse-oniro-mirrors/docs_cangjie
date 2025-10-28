@@ -536,11 +536,11 @@ public init(name: String)
 |:---|:---|:---|:---|:---|
 |name|String|是|-|数据库表名。|
 
-### func inValues(String, Array\<ValueType>)
+### func inValues(String, Array\<RelationalStoreValueType>)
 
 ```cangjie
 
-public func inValues(field: String, value: Array<ValueType>): RdbPredicates
+public func inValues(field: String, value: Array<RelationalStoreValueType>): RdbPredicates
 ```
 
 **功能：** 配置谓词，以匹配数据表的field列中的值在给定范围内的字段。
@@ -554,7 +554,7 @@ public func inValues(field: String, value: Array<ValueType>): RdbPredicates
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |field|String|是|-|数据库表中的列名。|
-|value|Array\<[ValueType](#enum-valuetype)>|是|-|以RelationalStoreValueType数组形式指定的要匹配的值。|
+|value|Array\<[RelationalStoreValueType](#enum-relationalstorevaluetype)>|是|-|以RelationalStoreValueType数组形式指定的要匹配的值。|
 
 **返回值：**
 
@@ -706,11 +706,11 @@ let predicates = RdbPredicates("EMPLOYEE")
 predicates.beginsWith("NAME", "Li")
 ```
 
-### func between(String, ValueType, ValueType)
+### func between(String, RelationalStoreValueType, RelationalStoreValueType)
 
 ```cangjie
 
-public func between(field: String, low: ValueType, high: ValueType): RdbPredicates
+public func between(field: String, low: RelationalStoreValueType, high: RelationalStoreValueType): RdbPredicates
 ```
 
 **功能：** 配置谓词，以匹配数据表的field列中的值在给定范围内的字段（包含范围边界）。
@@ -724,8 +724,8 @@ public func between(field: String, low: ValueType, high: ValueType): RdbPredicat
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |field|String|是|-|数据库表中的列名。|
-|low|[ValueType](#enum-valuetype)|是|-|指示与谓词匹配的最小值。|
-|high|[ValueType](#enum-valuetype)|是|-|指示与谓词匹配的最大值。|
+|low|[RelationalStoreValueType](#enum-relationalstorevaluetype)|是|-|指示与谓词匹配的最小值。|
+|high|[RelationalStoreValueType](#enum-relationalstorevaluetype)|是|-|指示与谓词匹配的最大值。|
 
 **返回值：**
 
@@ -923,11 +923,11 @@ let predicates = RdbPredicates("EMPLOYEE")
 predicates.endsWith("NAME", "se")
 ```
 
-### func equalTo(String, ValueType)
+### func equalTo(String, RelationalStoreValueType)
 
 ```cangjie
 
-public func equalTo(field: String, value: ValueType): RdbPredicates
+public func equalTo(field: String, value: RelationalStoreValueType): RdbPredicates
 ```
 
 **功能：** 配置谓词，以匹配数据表的field列中的值为value的字段。
@@ -941,7 +941,7 @@ public func equalTo(field: String, value: ValueType): RdbPredicates
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |field|String|是|-|数据库表中的列名。|
-|value|[ValueType](#enum-valuetype)|是|-|指示要与谓词匹配的值。|
+|value|[RelationalStoreValueType](#enum-relationalstorevaluetype)|是|-|指示要与谓词匹配的值。|
 
 **返回值：**
 
@@ -1019,11 +1019,11 @@ let predicates = RdbPredicates("EMPLOYEE")
 predicates.glob("NAME", "?h*g")
 ``
 
-### func greaterThan(String, ValueType)
+### func greaterThan(String, RelationalStoreValueType)
 
 ```cangjie
 
-public func greaterThan(field: String, value: ValueType): RdbPredicates
+public func greaterThan(field: String, value: RelationalStoreValueType): RdbPredicates
 ```
 
 **功能：** 配置谓词，以匹配数据表的field列中的值大于value的字段。
@@ -1037,7 +1037,7 @@ public func greaterThan(field: String, value: ValueType): RdbPredicates
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |field|String|是|-|数据库表中的列名。|
-|value|[ValueType](#enum-valuetype)|是|-|指示要与谓词匹配的值。|
+|value|[RelationalStoreValueType](#enum-relationalstorevaluetype)|是|-|指示要与谓词匹配的值。|
 
 **返回值：**
 
@@ -1067,11 +1067,11 @@ let predicates = RdbPredicates("EMPLOYEE")
 predicates.greaterThan("AGE", RelationalStoreValueType.integer(18))
 ```
 
-### func greaterThanOrEqualTo(String, ValueType)
+### func greaterThanOrEqualTo(String, RelationalStoreValueType)
 
 ```cangjie
 
-public func greaterThanOrEqualTo(field: String, value: ValueType): RdbPredicates
+public func greaterThanOrEqualTo(field: String, value: RelationalStoreValueType): RdbPredicates
 ```
 
 **功能：** 配置谓词，以匹配数据表的field列中的值大于或者等于value的字段。
@@ -1085,7 +1085,7 @@ public func greaterThanOrEqualTo(field: String, value: ValueType): RdbPredicates
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |field|String|是|-|数据库表中的列名。|
-|value|[ValueType](#enum-valuetype)|是|-|指示要与谓词匹配的值。|
+|value|[RelationalStoreValueType](#enum-relationalstorevaluetype)|是|-|指示要与谓词匹配的值。|
 
 **返回值：**
 
@@ -1285,11 +1285,11 @@ let predicates = RdbPredicates("EMPLOYEE")
 predicates.isNull("NAME")
 ```
 
-### func lessThan(String, ValueType)
+### func lessThan(String, RelationalStoreValueType)
 
 ```cangjie
 
-public func lessThan(field: String, value: ValueType): RdbPredicates
+public func lessThan(field: String, value: RelationalStoreValueType): RdbPredicates
 ```
 
 **功能：** 配置谓词，以匹配数据表的field列中的值小于value的字段。
@@ -1303,7 +1303,7 @@ public func lessThan(field: String, value: ValueType): RdbPredicates
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |field|String|是|-|数据库表中的列名。|
-|value|[ValueType](#enum-valuetype)|是|-|指示要与谓词匹配的值。|
+|value|[RelationalStoreValueType](#enum-relationalstorevaluetype)|是|-|指示要与谓词匹配的值。|
 
 **返回值：**
 
@@ -1330,14 +1330,14 @@ import kit.ArkData.*
 
 // 匹配数据表的"AGE"列中小于20的值
 let predicates = RdbPredicates("EMPLOYEE")
-predicates.lessThan("AGE", ValueType.integer(20))
+predicates.lessThan("AGE", RelationalStoreValueType.integer(20))
 ```
 
-### func lessThanOrEqualTo(String, ValueType)
+### func lessThanOrEqualTo(String, RelationalStoreValueType)
 
 ```cangjie
 
-public func lessThanOrEqualTo(field: String, value: ValueType): RdbPredicates
+public func lessThanOrEqualTo(field: String, value: RelationalStoreValueType): RdbPredicates
 ```
 
 **功能：** 配置谓词，以匹配数据表的field列中的值小于或者等于value的字段。
@@ -1351,7 +1351,7 @@ public func lessThanOrEqualTo(field: String, value: ValueType): RdbPredicates
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |field|String|是|-|数据库表中的列名。|
-|value|[ValueType](#enum-valuetype)|是|-|指示要与谓词匹配的值。|
+|value|[RelationalStoreValueType](#enum-relationalstorevaluetype)|是|-|指示要与谓词匹配的值。|
 
 **返回值：**
 
@@ -1378,7 +1378,7 @@ import kit.ArkData.*
 
 // 匹配数据表的"AGE"列中小于等于20的值
 let predicates = RdbPredicates("EMPLOYEE")
-predicates.lessThanOrEqualTo("AGE", ValueType.integer(20))
+predicates.lessThanOrEqualTo("AGE", RelationalStoreValueType.integer(20))
 ```
 
 ### func like(String, String)
@@ -1477,11 +1477,11 @@ predicates
     .limitAs(3)
 ```
 
-### func notBetween(String, ValueType, ValueType)
+### func notBetween(String, RelationalStoreValueType, RelationalStoreValueType)
 
 ```cangjie
 
-public func notBetween(field: String, low: ValueType, high: ValueType): RdbPredicates
+public func notBetween(field: String, low: RelationalStoreValueType, high: RelationalStoreValueType): RdbPredicates
 ```
 
 **功能：** 配置谓词，以匹配数据表的field列中的值超出给定范围的字段（不包含范围边界）。
@@ -1495,8 +1495,8 @@ public func notBetween(field: String, low: ValueType, high: ValueType): RdbPredi
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |field|String|是|-|数据库表中的列名。|
-|low|[ValueType](#enum-valuetype)|是|-|指示与谓词匹配的最小值。|
-|high|[ValueType](#enum-valuetype)|是|-|指示要与谓词匹配的最大值。|
+|low|[RelationalStoreValueType](#enum-relationalstorevaluetype)|是|-|指示与谓词匹配的最小值。|
+|high|[RelationalStoreValueType](#enum-relationalstorevaluetype)|是|-|指示要与谓词匹配的最大值。|
 
 **返回值：**
 
@@ -1526,11 +1526,11 @@ let predicates = RdbPredicates("EMPLOYEE")
 predicates.notBetween("AGE", RelationalStoreValueType.integer(10), RelationalStoreValueType.integer(50))
 ```
 
-### func notEqualTo(String, ValueType)
+### func notEqualTo(String, RelationalStoreValueType)
 
 ```cangjie
 
-public func notEqualTo(field: String, value: ValueType): RdbPredicates
+public func notEqualTo(field: String, value: RelationalStoreValueType): RdbPredicates
 ```
 
 **功能：** 配置谓词，以匹配数据表的field列中的值不为value的字段。
@@ -1544,7 +1544,7 @@ public func notEqualTo(field: String, value: ValueType): RdbPredicates
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |field|String|是|-|数据库表中的列名。|
-|value|[ValueType](#enum-valuetype)|是|-|指示要与谓词匹配的值。|
+|value|[RelationalStoreValueType](#enum-relationalstorevaluetype)|是|-|指示要与谓词匹配的值。|
 
 **返回值：**
 
@@ -1574,14 +1574,14 @@ let predicates = RdbPredicates("EMPLOYEE")
 predicates.notEqualTo("NAME", RelationalStoreValueType.string("Lisa"))
 ```
 
-### func notInValues(String, Array\<ValueType>)
+### func notInValues(String, Array\<RelationalStoreValueType>)
 
 ```cangjie
 
-public func notInValues(field: String, value: Array<ValueType>): RdbPredicates
+public func notInValues(field: String, value: Array<RelationalStoreValueType>): RdbPredicates
 ```
 
-**功能：** 将谓词配置为匹配数据字段为ValueType且值超出给定范围的指定字段。
+**功能：** RelationalStoreValueType
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
 
@@ -1592,7 +1592,7 @@ public func notInValues(field: String, value: Array<ValueType>): RdbPredicates
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |field|String|是|-|数据库表中的列名。|
-|value|Array\<[ValueType](#enum-valuetype)>|是|-|以ValueType数组形式指定的要匹配的值。|
+|value|Array\<[RelationalStoreValueType](#enum-relationalstorevaluetype)>|是|-|以RelationalStoreValueType数组形式指定的要匹配的值。|
 
 **返回值：**
 
@@ -1619,7 +1619,7 @@ import kit.ArkData.*
 
 // 数据表的"NAME"列中不在["Lisa", "Rose"]中的值
 let predicates = RdbPredicates("EMPLOYEE")
-predicates.notInValues("NAME", [ValueType.string("Lisa"), ValueType.string("Rose")])
+predicates.notInValues("NAME", [RelationalStoreValueType.string("Lisa"), RelationalStoreValueType.string("Rose")])
 ```
 
 ### func offsetAs(Int32)
@@ -1925,7 +1925,7 @@ public func batchInsert(table: String, values: Array<ValuesBucket>): Int64
 
 import kit.ArkData.*
 import std.collection.HashMap
-import ohos.relational_store.ValueType as RValueType
+import ohos.relational_store.RelationalStoreValueType
 
 var rdbStore: RdbStore = getRdbStore(Global.getStageContext(), StoreConfig("RdbTest.db", RelationalStoreSecurityLevel.S1)) // 需获取Context应用上下文，详见本文使用说明
 var values1 = HashMap<String, RelationalStoreValueType>()
@@ -2188,11 +2188,11 @@ rdbStore.on("PRINT", false, testCallback)
 rdbStore.emit("PRINT")
 ```
 
-### func executeSql(String, Array\<ValueType>)
+### func executeSql(String, Array\<RelationalStoreValueType>)
 
 ```cangjie
 
-public func executeSql(sql: String, bindArgs!: Array<ValueType> = []): Unit
+public func executeSql(sql: String, bindArgs!: Array<RelationalStoreValueType> = []): Unit
 ```
 
 **功能：**  执行包含指定参数但不返回值的SQL语句。
@@ -2206,7 +2206,7 @@ public func executeSql(sql: String, bindArgs!: Array<ValueType> = []): Unit
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |sql|String|是|-|指定要执行的SQL语句。|
-|bindArgs|Array\<[ValueType](#enum-valuetype)>|否|[]|SQL语句中参数的值。该值与sql参数语句中的占位符相对应。当sql参数语句完整时，该参数不填。|
+|bindArgs|Array\<[RelationalStoreValueType](#enum-relationalstorevaluetype)>|否|[]|SQL语句中参数的值。该值与sql参数语句中的占位符相对应。当sql参数语句完整时，该参数不填。|
 
 **异常：**
 
@@ -2501,11 +2501,11 @@ let age = resultSet.getLong(resultSet.getColumnIndex("AGE"))
 let salary = resultSet.getDouble(resultSet.getColumnIndex("SALARY"))
 ```
 
-### func querySql(String, Array\<ValueType>)
+### func querySql(String, Array\<RelationalStoreValueType>)
 
 ```cangjie
 
-public func querySql(sql: String, bindArgs!: Array<ValueType> = []): ResultSet
+public func querySql(sql: String, bindArgs!: Array<RelationalStoreValueType> = []): ResultSet
 ```
 
 **功能：** 根据指定SQL语句查询数据库中的数据。
@@ -2519,7 +2519,7 @@ public func querySql(sql: String, bindArgs!: Array<ValueType> = []): ResultSet
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |sql|String|是|-|指定要执行的SQL语句。|
-|bindArgs|Array\<[ValueType](#enum-valuetype)>|否|[]| **命名参数。** SQL语句中参数的值。该值与sql参数语句中的占位符相对应。当sql参数语句完整时，该参数不填。|
+|bindArgs|Array\<[RelationalStoreValueType](#enum-relationalstorevaluetype)>|否|[]| **命名参数。** SQL语句中参数的值。该值与sql参数语句中的占位符相对应。当sql参数语句完整时，该参数不填。|
 
 **返回值：**
 
@@ -3867,7 +3867,7 @@ let isColumnNull = resultSet.isColumnNull(resultSet.getColumnIndex("CODES"))
 ```cangjie
 public class StoreConfig {
     public var name: String
-    public var securityLevel: SecurityLevel
+    public var securityLevel: RelationalStoreSecurityLevel
     public var encrypt: Bool
     public var dataGroupId: String
     public var customDir: String
@@ -3882,7 +3882,7 @@ public class StoreConfig {
     public var persist: Bool
     public var enableSemanticIndex: Bool
 
-    public init(securityLevel: SecurityLevel, name!: String = "",
+    public init(securityLevel: RelationalStoreSecurityLevel, name!: String = "",
         encrypt!: Bool = false, dataGroupId!: String = "",
         customDir!: String = "", rootDir!: String = "",
         autoCleanDirtyData!: Bool = true, allowRebuild!: Bool = false,
@@ -4094,12 +4094,12 @@ public var rootDir: String
 ### var securityLevel
 
 ```cangjie
-public var securityLevel: SecurityLevel
+public var securityLevel: RelationalStoreSecurityLevel
 ```
 
 **功能：** 设置数据库安全级别。
 
-**类型：** [SecurityLevel](#enum-securitylevel)
+**类型：** [RelationalStoreSecurityLevel](#enum-relationalstoresecuritylevel)
 
 **读写能力：** 可读写
 
@@ -4139,11 +4139,11 @@ public var vector: Bool
 
 **起始版本：** 22
 
-### init(SecurityLevel, String, Bool, String, String, String, Bool, Bool, Bool, Array\<String>, CryptoParam, Bool, Tokenizer, Bool, Bool)
+### init(RelationalStoreSecurityLevel, String, Bool, String, String, String, Bool, Bool, Bool, Array\<String>, CryptoParam, Bool, Tokenizer, Bool, Bool)
 
 ```cangjie
 
-public init(securityLevel: SecurityLevel, name!: String = "",
+public init(securityLevel: RelationalStoreSecurityLevel, name!: String = "",
     encrypt!: Bool = false, dataGroupId!: String = "",
     customDir!: String = "", rootDir!: String = "",
     autoCleanDirtyData!: Bool = true, allowRebuild!: Bool = false,
@@ -4163,7 +4163,7 @@ public init(securityLevel: SecurityLevel, name!: String = "",
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|securityLevel|[SecurityLevel](#enum-securitylevel)|是|-|设置数据库安全级别。<br/>**系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core|
+|securityLevel|[RelationalStoreSecurityLevel](#enum-relationalstoresecuritylevel)|是|-|设置数据库安全级别。<br/>**系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core|
 |name|String|否|""|数据库文件名。<br/>**系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core|
 |encrypt|Bool|否|false| **命名参数。** 指定数据库是否加密，默认不加密。<br/> true: 加密。<br/> false: 非加密。<br/>**系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core|
 |dataGroupId|String|否|""| **命名参数。** 应用组ID，需要向应用市场获取。<br/>**模型约束：** 此属性仅在Stage模型下可用。<br/>指定在此dataGroupId对应的沙箱路径下创建RdbStore实例，当此参数不填时，默认在本应用沙箱目录下创建RdbStore实例。<br/>**系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core|
@@ -4786,10 +4786,10 @@ SyncInProgress
 
 **起始版本：** 22
 
-## enum SecurityLevel
+## enum RelationalStoreSecurityLevel
 
 ```cangjie
-public enum SecurityLevel {
+public enum RelationalStoreSecurityLevel {
     | S1
     | S2
     | S3
@@ -5037,10 +5037,10 @@ NoneTokenizer
 
 **起始版本：** 22
 
-## enum ValueType
+## enum RelationalStoreValueType
 
 ```cangjie
-public enum ValueType {
+public enum RelationalStoreValueType {
     | Null
     | Integer(Int64)
     | Double(Float64)
@@ -5166,7 +5166,7 @@ public type Assets = Array<Asset>
 ## type ValuesBucket
 
 ```cangjie
-public type ValuesBucket = Map<String, ValueType>
+public type ValuesBucket = Map<String, RelationalStoreValueType>
 ```
 
-**功能：** [ValuesBucket](#type-valuesbucket)是[Map\<String,ValueType>](../../../../cj-user-manual/source_zh_cn/generic/generic_class.md#泛型类)类型的别名。
+**功能：** [ValuesBucket](#type-valuesbucket)是[Map\<String,RelationalStoreValueType>](../../../../cj-user-manual/source_zh_cn/generic/generic_class.md#泛型类)类型的别名。

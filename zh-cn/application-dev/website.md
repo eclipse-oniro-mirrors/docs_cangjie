@@ -769,7 +769,6 @@
                     - 进程线程通信
                         - [ohos.common_event_manager（公共事件模块）](reference/BasicServicesKit/cj-apis-common_event_manager.md)
                     - 其他
-                        - [ohos.base（公共回调信息）](reference/BasicServicesKit/cj-apis-base.md)
                         - [ohos.settings（设置数据项名称）](reference/BasicServicesKit/cj-apis-settings.md)
                         - [ohos.system_date_time（系统时间、时区）](reference/BasicServicesKit/cj-apis-system_date_time.md)
                         - [ohos.common_event_subscriber](reference/BasicServicesKit/cj-apis-common_event_subscriber.md)

@@ -1447,6 +1447,78 @@ let size = Size(8, 8192)
 var receiver = createImageReceiver(size, ImageFormat.Jpeg, 8)
 receiver.release()
 ```
+### func readLatestImage()
+
+```cangjie
+public func readLatestImage(): Image
+```
+
+**功能：** 从ImageReceiver读取最新的图片。
+
+**系统能力：** SystemCapability.Multimedia.Image.ImageReceiver
+
+**起始版本：** 22
+
+**返回值：**
+
+|类型|说明|
+|:----|:----|
+|[Image](#class-Image)|返回Image实例|
+
+### func readNextImage()
+
+```cangjie
+public func readNextImage(): Image
+```
+
+**功能：** 从ImageReceiver读取下一张图片。
+
+**系统能力：** SystemCapability.Multimedia.Image.ImageReceiver
+
+**起始版本：** 22
+
+**返回值：**
+
+|类型|说明|
+|:----|:----|
+|[Image](#class-Image)|返回Image实例|
+
+### func on(ReceiveType, Callback0Argument)
+
+```cangjie
+public func on(eventType: ReceiveType, callback: Callback0Argument): Unit
+```
+
+**功能：** 接收图片时注册回调。
+
+**系统能力：** SystemCapability.Multimedia.Image.ImageReceiver
+
+**起始版本：** 22
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|eventType|[ReceiveType](#enum-ReceiveType)|是|-|注册事件的类型。|
+|callback|[Callback0Argument](../arkinterop/cj-api-callback_invoke.md#class-callback0argument)|是|-|回调函数对象。|
+
+### func off(ReceiveType)
+
+```cangjie
+public func off(eventType: ReceiveType): Unit
+```
+
+**功能：** 释放buffer时移除注册回调。
+
+**系统能力：** SystemCapability.Multimedia.Image.ImageReceiver
+
+**起始版本：** 22
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|eventType|[ReceiveType](#enum-ReceiveType)|是|-|注册事件的类型。|
 
 ## class ImageSource
 
