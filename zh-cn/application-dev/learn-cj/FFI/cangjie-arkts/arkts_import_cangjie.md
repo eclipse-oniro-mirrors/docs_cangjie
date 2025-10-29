@@ -9,7 +9,7 @@
 
 > **说明：**
 >
-> - 此加载方式从 API version 18 开始支持。最低兼容版本：OpenHarmony 5.1.0(18)。如果加载仓颉模块的代码需要运行在 OpenHarmony 12 Release以上版本，请使用[requireCJLib 接口加载仓颉模块](#方式三使用-requirecjlib-接口加载仓颉模块)。
+> - 此加载方式从 API version 18 开始支持。最低兼容版本：OpenHarmony 5.1.0(18)。
 > - 使用 import 语法加载仓颉模块的方式和使用 import 语法加载 native 模块方式一致，详细介绍请参见：[静态方式加载 native 模块](https://docs.openharmony.cn/pages/v5.1/zh-cn/application-dev/arkts-utils/arkts-import-native-module.md)。
 
 下面为使用 import 语法加载仓颉 ohos_app_cangjie_entry 模块并调用 addNumber 接口的示例：
@@ -110,7 +110,7 @@
 
 > **说明：**
 >
-> - 此加载方式从 API version 18 开始支持。最低兼容版本：OpenHarmony 5.1.0(18)。如果加载仓颉模块的代码需要运行在 OpenHarmony 12 Release以上版本，请使用[requireCJLib 接口加载仓颉模块](#方式三使用-requirecjlib-接口加载仓颉模块)。
+> - 此加载方式从 API version 18 开始支持。最低兼容版本：OpenHarmony 5.1.0(18)。
 > - loadNativeModule 接口详细介绍请参考：[同步方式动态加载 native 模块](https://docs.openharmony.cn/pages/v5.1/zh-cn/application-dev/arkts-utils/js-apis-load-native-module.md)
 
 下面为使用 loadNativeModule 接口加载仓颉 ohos_app_cangjie_entry 模块并调用 addNumber 函数的示例：

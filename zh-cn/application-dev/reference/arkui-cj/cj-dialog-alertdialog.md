@@ -1419,7 +1419,7 @@ class EntryView {
 }
 ```
 
-![alertdialog1](./figures/alertdialog1.png)
+![alertdialog1](./figures/alertDialog1.png)
 
 ### 示例2（可在主窗外弹出的弹窗）
 

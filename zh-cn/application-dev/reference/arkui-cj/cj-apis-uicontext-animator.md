@@ -43,7 +43,7 @@ public mut prop onFrame: (Float64) -> Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码](../errorcodes/cj-errorcode-universal.md)。
+- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
 
   |错误码ID|错误信息|
   |:----|:---|
@@ -91,7 +91,7 @@ public mut prop onCancel: () -> Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码](../errorcodes/cj-errorcode-universal.md)。
+- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
 
   |错误码ID|错误信息|
   |:----|:---|

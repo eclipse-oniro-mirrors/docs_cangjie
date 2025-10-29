@@ -34,7 +34,7 @@ func test2(n!: Int64 = @sourceLine()) { /* at line 5 */
 - 调试支持：支持调试模式下编译相关代码，用于提高程序的性能和安全性。例如，在调试模式下编译调试信息或记录日志相关的代码，而在发布版本中将其排除。
 - 性能优化：支持根据预定义的条件选择性地编译代码，用于提高程序的性能。
 
-关于条件编译的具体内容，请参见[条件编译](../compile_and_build/conditional_compilation.md)章节，这里不再额外展开。
+关于条件编译的具体内容，请参见<!--RP02-->[条件编译](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/compile_and_build/conditional_compilation.md)<!--RP02End-->章节，这里不再额外展开。
 
 ## @FastNative
 
