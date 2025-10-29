@@ -1757,4 +1757,4 @@ class EntryView {
 
 ```
 
-![canvasRenderingContext2D](figures/canvasRenderingContext2D.png)
+![canvasRenderingContext2D](./figures/canvasRenderingContext2D.png)

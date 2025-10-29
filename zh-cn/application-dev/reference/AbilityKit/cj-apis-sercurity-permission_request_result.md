@@ -17,7 +17,7 @@ API示例代码使用说明：
 
 上述示例工程及配置模板详见[仓颉示例代码说明](../cj-development-intro.md#仓颉示例代码说明)。
 
-### class PermissionRequestResult(Array\<String>, Array\<Int32>, ?Array\<Bool>)
+## class PermissionRequestResult
 
 ```cangjie
 public class PermissionRequestResult {

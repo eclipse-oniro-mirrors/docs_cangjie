@@ -175,7 +175,7 @@ public func getRouter(): Router
 
 |类型|说明|
 |:----|:----|
-|[Router](cj-apis-router.md#class-router)|路由对象。|
+|[Router](./cj-apis-uicontext-router.md#class-router)|路由对象。|
 
 ### func lpx2px(Length)
 

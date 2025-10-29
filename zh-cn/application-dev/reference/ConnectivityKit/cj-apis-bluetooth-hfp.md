@@ -82,7 +82,7 @@ public func getConnectedDevices(): Array<String>
 
 **功能：** 获取已连接设备列表。
 
-**需要权限：** ohos.ACCESS_BLUETOOTH
+**需要权限：** ohos.permission.ACCESS_BLUETOOTH
 
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
@@ -139,7 +139,7 @@ public func getConnectionState(deviceId: String): ProfileConnectionState
 
 **功能：** 获取设备profile的连接状态。
 
-**需要权限：** ohos.ACCESS_BLUETOOTH
+**需要权限：** ohos.permission.ACCESS_BLUETOOTH
 
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
@@ -205,7 +205,7 @@ public func off(eventType: ProfileCallbackType, callback: CallbackObject): Unit
 
 **功能：** 取消订阅连接状态变化事件。
 
-**需要权限：** ohos.ACCESS_BLUETOOTH
+**需要权限：** ohos.permission.ACCESS_BLUETOOTH
 
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
@@ -272,7 +272,7 @@ public func off(eventType: ProfileCallbackType): Unit
 
 **功能：** 取消订阅连接状态变化事件。
 
-**需要权限：** ohos.ACCESS_BLUETOOTH
+**需要权限：** ohos.permission.ACCESS_BLUETOOTH
 
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
@@ -338,7 +338,7 @@ public func on(eventType: ProfileCallbackType, callback: Callback1Argument<State
 
 **功能：** 订阅连接状态变化事件。使用Callback异步回调。
 
-**需要权限：** ohos.ACCESS_BLUETOOTH
+**需要权限：** ohos.permission.ACCESS_BLUETOOTH
 
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 

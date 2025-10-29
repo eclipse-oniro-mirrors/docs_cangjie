@@ -69,6 +69,16 @@ operator func |(rhs: PermissionValue): PermissionValue
 |:----|:------|
 |[PermissionValue](#interface-permissionvalue)| 运算结果。 |
 
+## interface LevelValue
+
+```cangjie
+public interface LevelValue {}
+```
+
+**功能：** 用于表示level标签的值。
+
+**起始版本：** 22
+
 ## class APILevel
 
 ```cangjie
@@ -249,14 +259,17 @@ public const init(since!: String, atomicservice!: Bool = false, crossplatform!: 
 
 |参数|类型|必填|默认值| 描述                 |
 |:---|:---|:---|:---|:-------------------|
-|level_val|UInt8|是|-| API level。         |
+|since|[LevelValue](#interface-levelvalue)|是|-| API level。         |
 |atomicservice|Bool|否|false| 命名参数 是否支持原子服务。     |
 |crossplatform|Bool|否|false| 命名参数 是否支持跨平台。      |
-|deprecated|UInt8|否|0| 命名参数 弃用版本。         |
+|deprecated|[LevelValue](#interface-levelvalue)|否|0| 命名参数 弃用版本。         |
 |form|Bool|否|false| 命名参数 是否支持forms。    |
-|permission|?[PermissionValue](#interface-permissionvalue)|否|None| 命名参数 必填 所需权限。      |
+|permission|?[PermissionValue](#interface-permissionvalue)|否|None| 命名参数 是否支持所需权限。      |
 |stagemodelonly|Bool|否|true| 命名参数 是否只支持Stage模型。 |
-|syscap|String|否|""| 命名参数 必填 系统能力。      |
+|syscap|String|否|""| 命名参数 是否支持 系统能力。      |
+|throwexception|Bool|否|""| 命名参数 是否支持 异常能力。      |
+|workerthread|Bool|否|""| 命名参数 是否支持 异步接口力。      |
+|systemapi|Bool|否|""| 命名参数 是否支持  系统api。      |
 
 ## class PermissionAnd
 

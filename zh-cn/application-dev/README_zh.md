@@ -39,3 +39,4 @@
     - 应用服务
         - [Location Kit（位置服务）](location/README_zh.md)
 - [API参考](reference/README_zh.md)
+- [学习仓颉语言](learn-cj/README_zh.md)

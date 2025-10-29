@@ -509,7 +509,7 @@ let bleDeviceFindCallback = BLEDeviceFindCallback()
 try {
     on(BluetoothBleCallbackType.BleDeviceFind, bleDeviceFindCallback)
     var scanFilter = ScanFilter()
-    scanFilter.serviceUuid = "00001888-0000-1000-8000-00805f9b34fb"  // 请替换为您的 serviceUUid
+    scanFilter.serviceUUID = "00001888-0000-1000-8000-00805f9b34fb"  // 请替换为您的 serviceUUID
     let scanOptions = ScanOptions(interval: 0, dutyMode: ScanDuty.ScanModeLowPower, matchMode: MatchMode.MatchModeAggressive, phyType: PhyType.PhyLe1M)
     startBLEScan([scanFilter], options: scanOptions)
 } catch (e: BusinessException) {
@@ -689,12 +689,12 @@ try {
 
 ```cangjie
 public class AdvertiseData {
-    public var serviceUuids: Array<String>
+    public var serviceUUIDs: Array<String>
     public var manufactureData: Array<ManufactureData>
     public var serviceData: Array<ServiceData>
     public var includeDeviceName: Bool
     public init(
-        serviceUuids: Array<String>,
+        serviceUUIDs: Array<String>,
         manufactureData: Array<ManufactureData>,
         serviceData: Array<ServiceData>,
         includeDeviceName!: Bool = false,
@@ -757,10 +757,10 @@ public var serviceData: Array<ServiceData>
 
 **起始版本：** 22
 
-### var serviceUuids
+### var serviceUUIDs
 
 ```cangjie
-public var serviceUuids: Array<String>
+public var serviceUUIDs: Array<String>
 ```
 
 **功能：** 表示要广播的服务列表。
@@ -777,7 +777,7 @@ public var serviceUuids: Array<String>
 
 ```cangjie
 public init(
-    serviceUuids: Array<String>,
+    serviceUUIDs: Array<String>,
     manufactureData: Array<ManufactureData>,
     serviceData: Array<ServiceData>,
     includeDeviceName!: Bool = false,
@@ -795,7 +795,7 @@ public init(
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|serviceUuids|Array\<String>|是|-|表示要广播的服务 UUID 列表。|
+|serviceUUIDs|Array\<String>|是|-|表示要广播的服务 UUID 列表。|
 |manufactureData|Array\<[ManufactureData](#class-manufacturedata)>|是|-|表示要广播的广播的制造商信息列表。|
 |serviceData|Array\<[ServiceData](#class-servicedata)>|是|-|表示要广播的服务数据列表。|
 |includeDeviceName|Bool|否|false| **命名参数。**  表示是否携带设备名，可选参数。true表示携带，false或未设置此参数表示不携带。注意带上设备名时广播包长度不能超出31个字节。|
@@ -1050,14 +1050,14 @@ public var state: AdvertisingState
 
 ```cangjie
 public class BLECharacteristic {
-    public var serviceUuid: String
-    public var characteristicUuid: String
+    public var serviceUUID: String
+    public var CharacteristicUUID: String
     public var characteristicValue: Array<Byte>
     public var descriptors: Array<BLEDescriptor>
     public var properties: GattProperties
     public init(
-        serviceUuid: String,
-        characteristicUuid: String,
+        serviceUUID: String,
+        CharacteristicUUID: String,
         characteristicValue: Array<Byte>,
         descriptors: Array<BLEDescriptor>,
         properties!: GattProperties = GattProperties(),
@@ -1073,10 +1073,10 @@ public class BLECharacteristic {
 
 **起始版本：** 22
 
-### var characteristicUuid
+### var CharacteristicUUID
 
 ```cangjie
-public var characteristicUuid: String
+public var CharacteristicUUID: String
 ```
 
 **功能：** 特定特征（characteristic）的UUID，例如：00002a11-0000-1000-8000-00805f9b34fb。
@@ -1137,10 +1137,10 @@ public var properties: GattProperties
 
 **起始版本：** 22
 
-### var serviceUuid
+### var serviceUUID
 
 ```cangjie
-public var serviceUuid: String
+public var serviceUUID: String
 ```
 
 **功能：** 特定服务（service）的UUID，例如：00001888-0000-1000-8000-00805f9b34fb。
@@ -1157,8 +1157,8 @@ public var serviceUuid: String
 
 ```cangjie
 public init(
-    serviceUuid: String,
-    characteristicUuid: String,
+    serviceUUID: String,
+    CharacteristicUUID: String,
     characteristicValue: Array<Byte>,
     descriptors: Array<BLEDescriptor>,
     properties!: GattProperties = GattProperties(),
@@ -1177,8 +1177,8 @@ public init(
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|serviceUuid|String|是|-|特定服务（service）的UUID，例如：00001888-0000-1000-8000-00805f9b34fb。|
-|characteristicUuid|String|是|-|特定特征（characteristic）的UUID，例如：00002a11-0000-1000-8000-00805f9b34fb。|
+|serviceUUID|String|是|-|特定服务（service）的UUID，例如：00001888-0000-1000-8000-00805f9b34fb。|
+|CharacteristicUUID|String|是|-|特定特征（characteristic）的UUID，例如：00002a11-0000-1000-8000-00805f9b34fb。|
 |characteristicValue|Array\<Byte>|是|-|特征对应的二进制值。|
 |descriptors|Array\<[BLEDescriptor](#class-bledescriptor)>|是|-|特定特征的描述符列表。|
 |properties|[GattProperties](#class-gattproperties)|否|GattProperties()|**命名参数。**  特定特征的属性描述。|
@@ -1236,14 +1236,14 @@ public var state: ProfileConnectionState
 
 ```cangjie
 public class BLEDescriptor {
-    public var serviceUuid: String
-    public var characteristicUuid: String
-    public var descriptorUuid: String
+    public var serviceUUID: String
+    public var CharacteristicUUID: String
+    public var descriptorUUID: String
     public var descriptorValue: Array<Byte>
     public init(
-        serviceUuid: String,
-        characteristicUuid: String,
-        descriptorUuid: String,
+        serviceUUID: String,
+        CharacteristicUUID: String,
+        descriptorUUID: String,
         descriptorValue: Array<Byte>,
         descriptorHandle!: UInt32 = 0,
         permissions!: GattPermissions = GattPermissions()
@@ -1257,10 +1257,10 @@ public class BLEDescriptor {
 
 **起始版本：** 22
 
-### var characteristicUuid
+### var CharacteristicUUID
 
 ```cangjie
-public var characteristicUuid: String
+public var CharacteristicUUID: String
 ```
 
 **功能：** 特定特征（characteristic）的UUID，例如：00002a11-0000-1000-8000-00805f9b34fb。
@@ -1273,10 +1273,10 @@ public var characteristicUuid: String
 
 **起始版本：** 22
 
-### var descriptorUuid
+### var descriptorUUID
 
 ```cangjie
-public var descriptorUuid: String
+public var descriptorUUID: String
 ```
 
 **功能：** 描述符（descriptor）的UUID，例如：00002902-0000-1000-8000-00805f9b34fb。
@@ -1305,10 +1305,10 @@ public var descriptorValue: Array<Byte>
 
 **起始版本：** 22
 
-### var serviceUuid
+### var serviceUUID
 
 ```cangjie
-public var serviceUuid: String
+public var serviceUUID: String
 ```
 
 **功能：** 特定服务（service）的UUID，例如：00001888-0000-1000-8000-00805f9b34fb。
@@ -1325,9 +1325,9 @@ public var serviceUuid: String
 
 ```cangjie
 public init(
-    serviceUuid: String,
-    characteristicUuid: String,
-    descriptorUuid: String,
+    serviceUUID: String,
+    CharacteristicUUID: String,
+    descriptorUUID: String,
     descriptorValue: Array<Byte>,
     descriptorHandle!: UInt32 = 0,
     permissions!: GattPermissions = GattPermissions()
@@ -1344,9 +1344,9 @@ public init(
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|serviceUuid|String|是|-|特定服务（service）的UUID，例如：00001888-0000-1000-8000-00805f9b34fb。|
-|characteristicUuid|String|是|-|特定特征（characteristic）的UUID，例如：00002a11-0000-1000-8000-00805f9b34fb。|
-|descriptorUuid|String|是|-|描述符（descriptor）的UUID，例如：00002902-0000-1000-8000-00805f9b34fb。|
+|serviceUUID|String|是|-|特定服务（service）的UUID，例如：00001888-0000-1000-8000-00805f9b34fb。|
+|CharacteristicUUID|String|是|-|特定特征（characteristic）的UUID，例如：00002a11-0000-1000-8000-00805f9b34fb。|
+|descriptorUUID|String|是|-|描述符（descriptor）的UUID，例如：00002902-0000-1000-8000-00805f9b34fb。|
 |descriptorValue|Array\<Byte>|是|-|描述符对应的二进制值。|
 |descriptorHandle|UInt32|否|0|**命名参数。**  描述符的唯一标识句柄。当server端BLE蓝牙设备提供了多个相同UUID描述符时，可以通过此句柄区分不同的描述符。预留字段，本版本暂不支持。|
 |permissions|[GattPermissions](#class-gattpermissions)|否|GattPermissions()|**命名参数。**  描述符读写操作需要的权限。预留字段，本版本暂不支持。|
@@ -1358,8 +1358,8 @@ public class CharacteristicReadRequest {
     public var deviceId: String
     public var transId: Int32
     public var offset: Int32
-    public var characteristicUuid: String
-    public var serviceUuid: String
+    public var CharacteristicUUID: String
+    public var serviceUUID: String
 }
 ```
 
@@ -1369,10 +1369,10 @@ public class CharacteristicReadRequest {
 
 **起始版本：** 22
 
-### var characteristicUuid
+### var CharacteristicUUID
 
 ```cangjie
-public var characteristicUuid: String
+public var CharacteristicUUID: String
 ```
 
 **功能：** 特定特征（characteristic）的UUID，例如：00002a11-0000-1000-8000-00805f9b34fb。
@@ -1417,10 +1417,10 @@ public var offset: Int32
 
 **起始版本：** 22
 
-### var serviceUuid
+### var serviceUUID
 
 ```cangjie
-public var serviceUuid: String
+public var serviceUUID: String
 ```
 
 **功能：** 特定服务（service）的UUID，例如：00001888-0000-1000-8000-00805f9b34fb。
@@ -1459,8 +1459,8 @@ public class CharacteristicWriteRequest {
     public var isPrepared: Bool
     public var needRsp: Bool
     public var value: Array<Byte>
-    public var characteristicUuid: String
-    public var serviceUuid: String
+    public var CharacteristicUUID: String
+    public var serviceUUID: String
 }
 ```
 
@@ -1470,10 +1470,10 @@ public class CharacteristicWriteRequest {
 
 **起始版本：** 22
 
-### var characteristicUuid
+### var CharacteristicUUID
 
 ```cangjie
-public var characteristicUuid: String
+public var CharacteristicUUID: String
 ```
 
 **功能：** 特定特征（characteristic）的UUID，例如：00002a11-0000-1000-8000-00805f9b34fb。
@@ -1550,10 +1550,10 @@ public var offset: Int32
 
 **起始版本：** 22
 
-### var serviceUuid
+### var serviceUUID
 
 ```cangjie
-public var serviceUuid: String
+public var serviceUUID: String
 ```
 
 **功能：** 特定服务（service）的UUID，例如：00001888-0000-1000-8000-00805f9b34fb。
@@ -1605,9 +1605,9 @@ public class DescriptorReadRequest {
     public var deviceId: String
     public var transId: Int32
     public var offset: Int32
-    public var descriptorUuid: String
-    public var characteristicUuid: String
-    public var serviceUuid: String
+    public var descriptorUUID: String
+    public var CharacteristicUUID: String
+    public var serviceUUID: String
 }
 ```
 
@@ -1617,10 +1617,10 @@ public class DescriptorReadRequest {
 
 **起始版本：** 22
 
-### var characteristicUuid
+### var CharacteristicUUID
 
 ```cangjie
-public var characteristicUuid: String
+public var CharacteristicUUID: String
 ```
 
 **功能：** 特定特征（characteristic）的UUID，例如：00002a11-0000-1000-8000-00805f9b34fb。
@@ -1633,10 +1633,10 @@ public var characteristicUuid: String
 
 **起始版本：** 22
 
-### var descriptorUuid
+### var descriptorUUID
 
 ```cangjie
-public var descriptorUuid: String
+public var descriptorUUID: String
 ```
 
 **功能：** 表示描述符（descriptor）的UUID，例如：00002902-0000-1000-8000-00805f9b34fb。
@@ -1681,10 +1681,10 @@ public var offset: Int32
 
 **起始版本：** 22
 
-### var serviceUuid
+### var serviceUUID
 
 ```cangjie
-public var serviceUuid: String
+public var serviceUUID: String
 ```
 
 **功能：** 特定服务（service）的UUID，例如：00001888-0000-1000-8000-00805f9b34fb。
@@ -1723,9 +1723,9 @@ public class DescriptorWriteRequest {
     public var isPrepared: Bool
     public var needRsp: Bool
     public var value: Array<Byte>
-    public var descriptorUuid: String
-    public var characteristicUuid: String
-    public var serviceUuid: String
+    public var descriptorUUID: String
+    public var CharacteristicUUID: String
+    public var serviceUUID: String
 }
 ```
 
@@ -1735,10 +1735,10 @@ public class DescriptorWriteRequest {
 
 **起始版本：** 22
 
-### var characteristicUuid
+### var CharacteristicUUID
 
 ```cangjie
-public var characteristicUuid: String
+public var CharacteristicUUID: String
 ```
 
 **功能：** 特定特征（characteristic）的UUID，例如：00002a11-0000-1000-8000-00805f9b34fb。
@@ -1751,10 +1751,10 @@ public var characteristicUuid: String
 
 **起始版本：** 22
 
-### var descriptorUuid
+### var descriptorUUID
 
 ```cangjie
-public var descriptorUuid: String
+public var descriptorUUID: String
 ```
 
 **功能：** 表示描述符（descriptor）的UUID，例如：00002902-0000-1000-8000-00805f9b34fb。
@@ -1831,10 +1831,10 @@ public var offset: Int32
 
 **起始版本：** 22
 
-### var serviceUuid
+### var serviceUUID
 
 ```cangjie
-public var serviceUuid: String
+public var serviceUUID: String
 ```
 
 **功能：** 特定服务（service）的UUID，例如：00001888-0000-1000-8000-00805f9b34fb。
@@ -2194,7 +2194,7 @@ try {
     let services = gattClient.getServices{err: ?BusinessException, c: ?Array<GattService> =>
             let ss = c.getOrThrow()
             for (service in ss) {
-                Hilog.info(0, "Bluetooth", "find serviceUuid : ${service.serviceUuid}")
+                Hilog.info(0, "Bluetooth", "find serviceUUID : ${service.serviceUUID}")
             }
         }
     Hilog.info(0, "Bluetooth", "getServices success")
@@ -2317,7 +2317,7 @@ import kit.PerformanceAnalysisKit.Hilog
 // 此处代码可添加在依赖项定义中
 class BLECharacteristicChangeCallback <: Callback1Argument<BLECharacteristic> {
     public func invoke(err: ?BusinessException, characteristic: BLECharacteristic): Unit {
-        Hilog.info(0, "Bluetooth", "characteristic ${characteristic.serviceUuid} has change")
+        Hilog.info(0, "Bluetooth", "characteristic ${characteristic.serviceUUID} has change")
     }
 }
 
@@ -2540,7 +2540,7 @@ try {
             throw e
         }
         if (let Some(c) <- outData) {
-            Hilog.info(0, "Bluetooth", "read characteristic value uuid is ${c.characteristicUuid}")
+            Hilog.info(0, "Bluetooth", "read characteristic value uuid is ${c.CharacteristicUUID}")
             let message = StringBuilder("logCharacteristic value: ")
             for (i in 0..c.characteristicValue.size) {
                 message.append(c.characteristicValue[i])
@@ -2623,7 +2623,7 @@ try {
             throw e
         }
         if (let Some(d) <- outDescriptor) {
-            Hilog.info(0, "Bluetooth", "read descriptor value uuid is ${d.descriptorUuid}")
+            Hilog.info(0, "Bluetooth", "read descriptor value uuid is ${d.descriptorUUID}")
             let message = StringBuilder("logDescriptor value: ")
             for (i in 0..d.descriptorValue.size) {
                 message.append(d.descriptorValue[i])
@@ -4099,7 +4099,7 @@ try {
 ### func removeService(String)
 
 ```cangjie
-public func removeService(serviceUuid: String): Unit
+public func removeService(serviceUUID: String): Unit
 ```
 
 **功能：** 删除已添加的服务。
@@ -4114,7 +4114,7 @@ public func removeService(serviceUuid: String): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|serviceUuid|String|是|-|service的UUID，例如“00001810-0000-1000-8000-00805F9B34FB”。|
+|serviceUUID|String|是|-|service的UUID，例如“00001810-0000-1000-8000-00805F9B34FB”。|
 
 **异常：**
 
@@ -4212,12 +4212,12 @@ try {
 
 ```cangjie
 public class GattService {
-    public var serviceUuid: String
+    public var serviceUUID: String
     public var isPrimary: Bool
     public var characteristics: Array<BLECharacteristic>
     public var includeServices: Array<GattService>
     public init(
-        serviceUuid: String,
+        serviceUUID: String,
         isPrimary: Bool,
         characteristics: Array<BLECharacteristic>,
         includeServices!: Array<GattService> = []
@@ -4279,10 +4279,10 @@ public var isPrimary: Bool
 
 **起始版本：** 22
 
-### var serviceUuid
+### var serviceUUID
 
 ```cangjie
-public var serviceUuid: String
+public var serviceUUID: String
 ```
 
 **功能：** 特定服务（service）的UUID，例如：00001888-0000-1000-8000-00805f9b34fb。
@@ -4299,7 +4299,7 @@ public var serviceUuid: String
 
 ```cangjie
 public init(
-    serviceUuid: String,
+    serviceUUID: String,
     isPrimary: Bool,
     characteristics: Array<BLECharacteristic>,
     includeServices!: Array<GattService> = []
@@ -4316,7 +4316,7 @@ public init(
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|serviceUuid|String|是|-|特定服务（service）的UUID，例如：00001888-0000-1000-8000-00805f9b34fb。|
+|serviceUUID|String|是|-|特定服务（service）的UUID，例如：00001888-0000-1000-8000-00805f9b34fb。|
 |isPrimary|Bool|是|-|如果是主服务设置为true，否则设置为false。|
 |characteristics|Array\<[BLECharacteristic](#class-blecharacteristic)>|是|-|当前服务包含的特征列表。|
 |includeServices|Array\<[GattService](#class-gattservice)>|否|[]|当前服务依赖的其它服务。|
@@ -4398,13 +4398,13 @@ public init(
 
 ```cangjie
 public class NotifyCharacteristic {
-    public var serviceUuid: String
-    public var characteristicUuid: String
+    public var serviceUUID: String
+    public var CharacteristicUUID: String
     public var characteristicValue: Array<Byte>
     public var confirm: Bool
     public init(
-        serviceUuid: String,
-        characteristicUuid: String,
+        serviceUUID: String,
+        CharacteristicUUID: String,
         characteristicValue: Array<Byte>,
         confirm: Bool
     )
@@ -4417,10 +4417,10 @@ public class NotifyCharacteristic {
 
 **起始版本：** 22
 
-### var characteristicUuid
+### var CharacteristicUUID
 
 ```cangjie
-public var characteristicUuid: String
+public var CharacteristicUUID: String
 ```
 
 **功能：** 特定特征（characteristic）的UUID，例如：00002a11-0000-1000-8000-00805f9b34fb。
@@ -4465,10 +4465,10 @@ public var confirm: Bool
 
 **起始版本：** 22
 
-### var serviceUuid
+### var serviceUUID
 
 ```cangjie
-public var serviceUuid: String
+public var serviceUUID: String
 ```
 
 **功能：** 特定服务（service）的UUID，例如：00001888-0000-1000-8000-00805f9b34fb。
@@ -4485,8 +4485,8 @@ public var serviceUuid: String
 
 ```cangjie
 public init(
-    serviceUuid: String,
-    characteristicUuid: String,
+    serviceUUID: String,
+    CharacteristicUUID: String,
     characteristicValue: Array<Byte>,
     confirm: Bool
 )
@@ -4502,8 +4502,8 @@ public init(
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|serviceUuid|String|是|-|特定服务（service）的UUID，例如：00001888-0000-1000-8000-00805f9b34fb。|
-|characteristicUuid|String|是|-|特定特征（characteristic）的UUID，例如：00002a11-0000-1000-8000-00805f9b34fb。|
+|serviceUUID|String|是|-|特定服务（service）的UUID，例如：00001888-0000-1000-8000-00805f9b34fb。|
+|CharacteristicUUID|String|是|-|特定特征（characteristic）的UUID，例如：00002a11-0000-1000-8000-00805f9b34fb。|
 |characteristicValue|Array\<Byte>|是|-|特征对应的二进制值。|
 |confirm|Bool|是|-|如果是indication，对端需要回复确认，则设置为true；如果是notification，对端不需要回复确认，则设置为false。|
 
@@ -4513,10 +4513,10 @@ public init(
 public class ScanFilter {
     public var deviceId: String
     public var name: String
-    public var serviceUuid: String
-    public var serviceUuidMask: String
-    public var serviceSolicitationUuid: String
-    public var serviceSolicitationUuidMask: String
+    public var serviceUUID: String
+    public var serviceUUIDMask: String
+    public var serviceSolicitationUUID: String
+    public var serviceSolicitationUUIDMask: String
     public var serviceData: Array<Byte>
     public var serviceDataMask: Array<Byte>
     public var manufactureId: UInt16
@@ -4525,10 +4525,10 @@ public class ScanFilter {
     public init(
         deviceId!: String = "",
         name!: String = "",
-        serviceUuid!: String = "",
-        serviceUuidMask!: String = "",
-        serviceSolicitationUuid!: String = "",
-        serviceSolicitationUuidMask!: String = "",
+        serviceUUID!: String = "",
+        serviceUUIDMask!: String = "",
+        serviceSolicitationUUID!: String = "",
+        serviceSolicitationUUIDMask!: String = "",
         serviceData!: Array<Byte> = [],
         serviceDataMask!: Array<Byte> = [],
         manufactureId!: UInt16 = 0,
@@ -4656,10 +4656,10 @@ public var serviceDataMask: Array<Byte>
 
 **起始版本：** 22
 
-### var serviceSolicitationUuid
+### var serviceSolicitationUUID
 
 ```cangjie
-public var serviceSolicitationUuid: String
+public var serviceSolicitationUUID: String
 ```
 
 **功能：** 表示过滤包含该UUID服务请求的设备，例如：00001888-0000-1000-8000-00805F9B34FB。
@@ -4672,10 +4672,10 @@ public var serviceSolicitationUuid: String
 
 **起始版本：** 22
 
-### var serviceSolicitationUuidMask
+### var serviceSolicitationUUIDMask
 
 ```cangjie
-public var serviceSolicitationUuidMask: String
+public var serviceSolicitationUUIDMask: String
 ```
 
 **功能：** 表示过滤包含该UUID服务请求掩码的设备，例如：FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF。
@@ -4688,10 +4688,10 @@ public var serviceSolicitationUuidMask: String
 
 **起始版本：** 22
 
-### var serviceUuid
+### var serviceUUID
 
 ```cangjie
-public var serviceUuid: String
+public var serviceUUID: String
 ```
 
 **功能：** 表示过滤包含该UUID服务的设备，例如：00001888-0000-1000-8000-00805f9b34fb。
@@ -4704,10 +4704,10 @@ public var serviceUuid: String
 
 **起始版本：** 22
 
-### var serviceUuidMask
+### var serviceUUIDMask
 
 ```cangjie
-public var serviceUuidMask: String
+public var serviceUUIDMask: String
 ```
 
 **功能：** 表示过滤包含该UUID服务掩码的设备，例如：FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF。
@@ -4726,10 +4726,10 @@ public var serviceUuidMask: String
 public init(
     deviceId!: String = "",
     name!: String = "",
-    serviceUuid!: String = "",
-    serviceUuidMask!: String = "",
-    serviceSolicitationUuid!: String = "",
-    serviceSolicitationUuidMask!: String = "",
+    serviceUUID!: String = "",
+    serviceUUIDMask!: String = "",
+    serviceSolicitationUUID!: String = "",
+    serviceSolicitationUUIDMask!: String = "",
     serviceData!: Array<Byte> = [],
     serviceDataMask!: Array<Byte> = [],
     manufactureId!: UInt16 = 0,
@@ -4750,10 +4750,10 @@ public init(
 |:---|:---|:---|:---|:---|
 |deviceId|String|否|""| **命名参数。** 过滤该BLE设备地址的广播报文。例如："XX:XX:XX:XX:XX:XX"。预留字段，本版本暂不支持。|
 |name|String|否|""|**命名参数。** 过滤该BLE设备名称的广播报文。预留字段，本版本暂不支持。|
-|serviceUuid|String|否|""|**命名参数。** 过滤包含该服务UUID的广播报文。例如：00001888-0000-1000-8000-00805f9b34fb。预留字段，本版本暂不支持。|
-|serviceUuidMask|String|否|""|**命名参数。** 搭配serviceUuid过滤器使用，可设置过滤部分服务UUID。例如：FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF。预留字段，本版本暂不支持。|
-|serviceSolicitationUuid|String|否|""|**命名参数。** 过滤包含该服务请求UUID的广播报文。例如：00001888-0000-1000-8000-00805F9B34FB。预留字段，本版本暂不支持。|
-|serviceSolicitationUuidMask|String|否|""|**命名参数。** 搭配serviceSolicitationUuid过滤器使用，可设置过滤部分服务请求UUID。例如：FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF。预留字段，本版本暂不支持。|
+|serviceUUID|String|否|""|**命名参数。** 过滤包含该服务UUID的广播报文。例如：00001888-0000-1000-8000-00805f9b34fb。预留字段，本版本暂不支持。|
+|serviceUUIDMask|String|否|""|**命名参数。** 搭配serviceUUID过滤器使用，可设置过滤部分服务UUID。例如：FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF。预留字段，本版本暂不支持。|
+|serviceSolicitationUUID|String|否|""|**命名参数。** 过滤包含该服务请求UUID的广播报文。例如：00001888-0000-1000-8000-00805F9B34FB。预留字段，本版本暂不支持。|
+|serviceSolicitationUUIDMask|String|否|""|**命名参数。** 搭配serviceSolicitationUUID过滤器使用，可设置过滤部分服务请求UUID。例如：FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF。预留字段，本版本暂不支持。|
 |serviceData|Array\<Byte>|否|[]|**命名参数。** 过滤包含该服务数据的广播报文。例如：[0x90,0x00,0xF1,0xF2]。预留字段，本版本暂不支持。|
 |serviceDataMask|Array\<Byte>|否|[]|**命名参数。** 搭配serviceData过滤器使用，可设置过滤部分服务数据。例如：[0xFF,0xFF,0xFF,0xFF]。预留字段，本版本暂不支持。|
 |manufactureId|UInt16|否|0|**命名参数。** 过滤包含该制造商标识符的广播报文。例如：0x0006。预留字段，本版本暂不支持。|
@@ -5111,10 +5111,10 @@ public init(
 
 ```cangjie
 public class ServiceData {
-    public var serviceUuid: String
+    public var serviceUUID: String
     public var serviceValue: Array<Byte>
     public init(
-        serviceUuid: String,
+        serviceUUID: String,
         serviceValue: Array<Byte>
     )
 }
@@ -5126,10 +5126,10 @@ public class ServiceData {
 
 **起始版本：** 22
 
-### var serviceUuid
+### var serviceUUID
 
 ```cangjie
-public var serviceUuid: String
+public var serviceUUID: String
 ```
 
 **功能：** 表示服务的UUID。
@@ -5162,7 +5162,7 @@ public var serviceValue: Array<Byte>
 
 ```cangjie
 public init(
-    serviceUuid: String,
+    serviceUUID: String,
     serviceValue: Array<Byte>
 )
 ```
@@ -5177,7 +5177,7 @@ public init(
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|serviceUuid|String|是|-|表示服务的UUID。|
+|serviceUUID|String|是|-|表示服务的UUID。|
 |serviceValue|Array\<Byte>|是|-|表示服务数据。|
 
 ## enum AdvertisingState
@@ -5438,7 +5438,7 @@ public enum BluetoothBleGattClientDeviceCallbackType <: Equatable<BluetoothBleGa
 
 **功能：** 客户端 on/off 事件的类型。
 
-**需要权限：** ohos.ACCESS_BLUETOOTH
+**需要权限：** ohos.permission.ACCESS_BLUETOOTH
 
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
@@ -5458,7 +5458,7 @@ BleCharacteristicChange
 
 **功能：** 表示特征值变化事件类型。
 
-**需要权限：** ohos.ACCESS_BLUETOOTH
+**需要权限：** ohos.permission.ACCESS_BLUETOOTH
 
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
@@ -5472,7 +5472,7 @@ BleConnectionStateChange
 
 **功能：** 表示连接状态变化事件类型。
 
-**需要权限：** ohos.ACCESS_BLUETOOTH
+**需要权限：** ohos.permission.ACCESS_BLUETOOTH
 
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
@@ -5486,7 +5486,7 @@ ClientBleMtuChange
 
 **功能：** 表示MTU状态变化事件类型。
 
-**需要权限：** ohos.ACCESS_BLUETOOTH
+**需要权限：** ohos.permission.ACCESS_BLUETOOTH
 
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
@@ -5576,7 +5576,7 @@ public enum BluetoothBleGattServerCallbackType <: Equatable<BluetoothBleGattServ
 
 **功能：** 服务端 on/off 事件的类型。
 
-**需要权限：** ohos.ACCESS_BLUETOOTH
+**需要权限：** ohos.permission.ACCESS_BLUETOOTH
 
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
@@ -5596,7 +5596,7 @@ CharacteristicRead
 
 **功能：** 表示特征值读请求事件类型。
 
-**需要权限：** ohos.ACCESS_BLUETOOTH
+**需要权限：** ohos.permission.ACCESS_BLUETOOTH
 
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
@@ -5610,7 +5610,7 @@ CharacteristicWrite
 
 **功能：** 表示特征值写请求事件类型。
 
-**需要权限：** ohos.ACCESS_BLUETOOTH
+**需要权限：** ohos.permission.ACCESS_BLUETOOTH
 
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
@@ -5624,7 +5624,7 @@ ConnectionStateChange
 
 **功能：** 表示BLE连接状态变化事件类型。
 
-**需要权限：** ohos.ACCESS_BLUETOOTH
+**需要权限：** ohos.permission.ACCESS_BLUETOOTH
 
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
@@ -5638,7 +5638,7 @@ DescriptorRead
 
 **功能：** 表示描述符读请求事件类型。
 
-**需要权限：** ohos.ACCESS_BLUETOOTH
+**需要权限：** ohos.permission.ACCESS_BLUETOOTH
 
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
@@ -5652,7 +5652,7 @@ DescriptorWrite
 
 **功能：** 表示描述符写请求事件类型。
 
-**需要权限：** ohos.ACCESS_BLUETOOTH
+**需要权限：** ohos.permission.ACCESS_BLUETOOTH
 
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
@@ -5666,7 +5666,7 @@ ServerBleMtuChange
 
 **功能：** 表示MTU状态变化事件类型。
 
-**需要权限：** ohos.ACCESS_BLUETOOTH
+**需要权限：** ohos.permission.ACCESS_BLUETOOTH
 
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 

@@ -76,4 +76,4 @@ class EntryView {
 }
 ```
 
-![zorder](figures/zorder.png)
+![zorder](./figures/zorder.PNG)

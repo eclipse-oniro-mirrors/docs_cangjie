@@ -1,39 +1,70 @@
-# OpenHarmony 仓颉文档（Beta特性）
-
-仓颉编程语言是一种面向全场景应用开发的通用编程语言，可以兼顾开发效率和运行性能，并提供良好的编程体验。
-
-本仓库存放使用仓颉编程语言开发OpenHarmony应用相关的文档。欢迎阅读文档，参与仓颉开发者文档开源项目，共同完善开发者文档。
+# OpenHarmony仓颉文档
 
 ## 简介
 
-仓颉提供如下开发者文档：
+欢迎访问OpenHarmony仓颉文档仓库。
 
-- 仓颉应用API参考：提供了仓颉应用 API 参考，包括 API 功能、参数、返回值、示例等。
-- 仓颉编程语言应用开发指南：介绍涵盖应用开发准备、应用框架、系统、媒体、图形与应用服务的全面指导。
-- 仓颉编程语言用户指南：介绍仓颉语法、编译构建等内容。
+仓颉编程语言是一种面向全场景应用开发的通用编程语言，可以兼顾开发效率和运行性能，并提供良好的编程体验。
 
-## 目录
+本仓库存放使用仓颉编程语言开发OpenHarmony应用相关的指南、API参考等文档。欢迎阅读文档，参与OpenHarmony仓颉开发者文档开源项目，共同完善开发者文档。
 
-本仓库目录如下：
+## 文档架构
+
+OpenHarmony仓颉文档的总体架构如下图所示：
+
+**图1**：文档架构图
+
+![文档架构图](./zh-cn/figures/ohcj_doc_arch.png)
+
+如上图所示，应用开发者文档主要包含：
+
+1. **[入门](./zh-cn/application-dev/cj-start/README_zh.md)**：指导开发者使用仓颉编程语言构建第一个OpenHarmony应用、使用仓颉与ArkTS构建第一个混合应用等简单的Hello World示例。另外，该部分还介绍了开发基础知识，帮助开发者初步了解OpenHarmony应用开发。
+2. **[指南](./zh-cn/application-dev/README_zh.md)**：此部分介绍相关概念、原理机制，以及详细的开发步骤，包括如下内容：
+   - **应用框架**：包括Ability Kit（程序框架服务）、ArkData（方舟数据管理）、ArkUI（方舟UI框架）、窗口管理、屏幕管理、ArkWeb（方舟Web）、Core File Kit（文件基础服务）、IPC Kit（进程间通信服务）、Localization Kit（本地化开发服务）等。
+   - **系统**：包括安全（程序控制访问、加解密算法框架服务、密钥管理服务等）、网络（短距通信服务、网络服务、蜂窝通信服务等）、基础功能（进程线程通信、上传下载等基础服务）、硬件（传感器服务）、调测调优（性能分析服务、应用测试服务、调试命令等）。
+   - **媒体**：包括相机服务、图片处理服务、媒体文件管理服务等。
+   - **图形**：包括方舟2D图形服务。
+   - **应用服务**：包括位置服务。
+3. **[API参考](./zh-cn/application-dev/reference/README_zh.md)**：为开发者提供了API的功能描述、参数和返回值介绍、权限信息、示例代码等内容，帮助开发者理解和使用仓颉版OpenHarmony的API。
+
+## 文档目录
+
+OpenHarmony仓颉文档仓库的总体目录结构如下：
 
 ```text
 .
-├── zh-cn                   // OpenHarmony 仓颉中文文档
-│    ├── application-dev    // 该目录存放仓颉编程语言应用开发指南
-│    │    ├── reference     // 该目录存放仓颉编程语言应用API参考
-│    │    ├── application-models
-│    │    ├── application-test
-│    │    ├── ...
-│    │    └── windowmanager
-└── en                      // OpenHarmony 仓颉英文文档
+├── en                                   # 英文文档目录，子目录结构和zh-cn类似
+│   ├── application-dev
+│   ├── CONTRIBUTING.md
+│   ├── COPYRIGHT
+│   ├── figures
+│   ├── Overview-of-Cangjie-capabilities-in-OpenHarmony.md
+│   └── README.md
+├── zh-cn                                # 中文文档目录
+│   ├── application-dev                  # OpenHarmony-仓颉应用开发文档，包括指南和API参考等
+│   ├── CONTRIBUTING.md                  # 贡献指导
+│   ├── COPYRIGHT                        # 版权说明
+│   ├── figures                          # 存放同级文件引用的图片
+│   ├── Overview-of-Cangjie-capabilities-in-OpenHarmony.md # 仓颉在OpenHarmony中的能力概览
+│   └── README_zh.md                     # 开发者文档总览
+├── LICENSE                              # 许可证文件
+├── OAT.xml                              # OAT规则文件，用于该仓OAT开源检查
+├── README.md                            # OpenHarmony-仓颉文档仓总体说明（英文）
+└── README_zh.md                         # OpenHarmony-仓颉文档仓总体说明（中文）
 ```
 
-## 许可证
-
-仓颉开发者文档许可证请参见 [License](./LICENSE) 。
-
-## 贡献
+## 参与贡献
 
 欢迎您参与贡献，我们鼓励开发者以各种方式参与文档反馈和贡献。
 
-您可以对现有文档进行评价、简单更改、反馈文档质量问题、贡献您的原创内容等。
+您可以对现有文档进行评价、更改、反馈文档质量问题、贡献您的原创内容等。详情请参见[贡献文档](./zh-cn/CONTRIBUTING.md)。
+
+## 许可证
+
+仓颉开发者文档许可证请参见[License](./LICENSE) 。
+
+## 相关仓
+
+- [cangjie_docs](https://gitcode.com/Cangjie/cangjie_docs/blob/main/README_zh.md)
+- [cangjie_runtime](https://gitcode.com/Cangjie/cangjie_runtime/blob/main/stdlib/doc/libs/summary_cjnative.md)
+- [cangjie_stdx](https://gitcode.com/Cangjie/cangjie_stdx/blob/main/doc/summary_cjnative.md)

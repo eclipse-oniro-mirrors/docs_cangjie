@@ -95,7 +95,7 @@ public func placeholderFont(
 ): This
 ```
 
-**功能：** 设置placeHolder的样式，包括字体大小，字体粗细，字体族，字体风格。当前支持'HarmonyOS Sans'字体和[注册自定义字体](./cj-apis-font.md)。
+**功能：** 设置placeHolder的样式，包括字体大小，字体粗细，字体族，字体风格。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 

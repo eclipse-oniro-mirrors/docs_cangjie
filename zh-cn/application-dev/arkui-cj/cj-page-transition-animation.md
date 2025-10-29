@@ -135,7 +135,7 @@ protected func pageTransition(): Unit {
 
 ## 场景示例
 
-下面介绍利用[router.pushUrl](../../../zh-cn/application-dev/reference/arkui-cj/cj-apis-router.md#static-func-pushurlstring-string-optionint32---unit)跳转能力定义所有的4种页面转场样式的页面转场动画示例。
+下面介绍利用[router.pushUrl](../reference/arkui-cj/cj-apis-uicontext-router.md#func-pushurlstringstring)跳转能力定义所有的4种页面转场样式的页面转场动画示例。
 
  <!-- run -->
 

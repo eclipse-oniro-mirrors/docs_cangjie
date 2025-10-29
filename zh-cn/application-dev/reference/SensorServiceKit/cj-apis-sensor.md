@@ -1911,7 +1911,7 @@ public enum IntervalOption <: Equatable<IntervalOption> & ToString {
 
 **父类型：**
 
-- [Equatable\<IntervalOption>](../BasicServicesKit/cj-apis-base.md#class-equatable)
+- [Equatable\<IntervalOption>](../arkui-cj/cj-common-types.md#class-equatable)
 - ToString
 
 ### GameMode
@@ -2036,7 +2036,7 @@ public enum SensorAccuracy  <: Equatable<SensorAccuracy> & ToString {
 
 **父类型：**
 
-- [Equatable\<SensorAccuracy>](../BasicServicesKit/cj-apis-base.md#class-equatable)
+- [Equatable\<SensorAccuracy>](../arkui-cj/cj-common-types.md#class-equatable)
 - ToString
 
 ### AccuracyHigh
@@ -2178,7 +2178,7 @@ public enum SensorId <: Equatable<SensorId> & ToString {
 
 **父类型：**
 
-- [Equatable\<SensorId>](../BasicServicesKit/cj-apis-base.md#class-equatable)
+- [Equatable\<SensorId>](../arkui-cj/cj-common-types.md#class-equatable)
 - ToString
 
 ### Accelerometer
