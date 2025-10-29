@@ -136,7 +136,7 @@ public func onDateChange(callback: ?Callback<DateTime, Unit>): This
 
 | 参数名      | 类型                                                                                                                                       | 必填  | 默认值 | 说明                                      |
 |:-------- |:---------------------------------------------------------------------------------------------------------------------------------------- |:--- |:--- |:--------------------------------------- |
-| callback | ?[Callback](../arkinterop/cj-api-callback_invoke.md#type-callback)\<[DateTime](../apis/ImageKit/cj-apis-image.md#datetime),Unit> | 是   | -   | 返回选中的时间，年月日为选中的日期，时分取决于当前系统时间的时分，秒恒为00。<br>初始值: { _ => } |
+| callback | ?[Callback](../arkinterop/cj-api-callback_invoke.md#type-callback)\<[DateTime](../ImageKit/cj-apis-image.md#datetime),Unit> | 是   | -   | 返回选中的时间，年月日为选中的日期，时分取决于当前系统时间的时分，秒恒为00。<br>初始值: { _ => } |
 
 ## 基础类型定义
 

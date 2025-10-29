@@ -2,10 +2,6 @@
 
 滑块视图容器，提供子组件滑动轮播显示的能力。
 
-> **说明：**
->
-> Swiper组件内包含了[PanGesture](./cj-universal-gesture-pangesture.md)拖动手势事件，用于滑动轮播子组件。[disableSwipe](#func-disableswipebool)属性设为true会取消内部的PanGesture事件监听。
-
 ## 导入模块
 
 ```cangjie

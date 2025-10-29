@@ -494,7 +494,7 @@ class EntryView {
 }
 ```
 
-![relativecontainer4](figures/relativecontainer3.png)
+![relativecontainer4](./figures/relativecontainer3.png)
 
 ### 示例4（设置辅助线）
 
@@ -529,7 +529,7 @@ class EntryView {
 }
 ```
 
-![relativecontainer5](figures/relativecontainer4.png)
+![relativecontainer5](./figures/relativecontainer4.png)
 
 ### 示例5（设置屏障）
 
@@ -590,4 +590,4 @@ class EntryView {
 }
 ```
 
-![relativecontainer6](figures/relativecontainer5.png)
+![relativecontainer6](./figures/relativecontainer5.png)

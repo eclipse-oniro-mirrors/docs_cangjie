@@ -10,7 +10,7 @@ import kit.ArkUI.*
 
 ## 子组件
 
-可以包含[Span](./cj-text-input-span.md#span)、[ImageSpan](./cj-text-input-imagespan.md#imagespan)、[SymbolSpan](./cj-text-input-symbolspan.md#symbolspan)子组件。
+可以包含[Span](./cj-text-input-span.md#span)、[ImageSpan](./cj-text-input-imagespan.md#imagespan)子组件。
 
 ## 创建组件
 

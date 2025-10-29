@@ -267,7 +267,7 @@ class FuncAbilityA <: UIAbility {
     }
     ```
 
-2. 在短信应用UIAbility的[onNewWant()](../../../zh-cn/application-dev/reference/AbilityKit/cj-apis-app-ability-ui_ability.md#func-onnewwantwant-launchparam)回调中解析调用方传递过来的[Want](../../../zh-cn/application-dev/reference/AbilityKit/cj-apis-app-ability-want.md#class-want)参数，通过[Router](../../../zh-cn/application-dev/reference/arkui-cj/cj-apis-router.md#class-router)对象，并进行指定页面的跳转。此时再次启动该短信应用的UIAbility实例时，即可跳转到该短信应用的UIAbility实例的指定页面。
+2. 在短信应用UIAbility的[onNewWant()](../reference/AbilityKit/cj-apis-app-ability-ui_ability.md#func-onnewwantwant-launchparam)回调中解析调用方传递过来的[Want](../../../zh-cn/application-dev/reference/AbilityKit/cj-apis-app-ability-want.md#class-want)参数，通过[Router](../reference/arkui-cj/cj-apis-uicontext-router.md#class-router)对象，并进行指定页面的跳转。此时再次启动该短信应用的UIAbility实例时，即可跳转到该短信应用的UIAbility实例的指定页面。
 
     <!-- compile -->
 

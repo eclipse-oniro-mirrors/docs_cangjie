@@ -101,7 +101,7 @@ public func registerFont(familyName!: ResourceStr, familySrc!: ResourceStr): Uni
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码](../errorcodes/cj-errorcode-universal.md)。
+- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
 
   |错误码|说明|
   |:----|:----|
@@ -363,7 +363,7 @@ class EntryView {
 }
 ```
 
-![font2](figures/uicontextFont.png)
+![font2](figures/uicontextFont.PNG)
 
 ### 示例3（获取字体详细信息）
 
@@ -406,4 +406,4 @@ class EntryView {
 }
 ```
 
-![font2](figures/uicontextFont2.png)
+![font2](./figures/uicontextFont2.png)

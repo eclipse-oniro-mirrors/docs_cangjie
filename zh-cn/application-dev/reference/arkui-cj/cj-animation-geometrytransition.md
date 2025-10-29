@@ -18,7 +18,7 @@ public func geometryTransition(id: ?String, followWithoutTransition!: ?Bool = No
 
 > **说明：**
 >
-> geometryTransition必须配合[animateTo](cj-animation-animateto.md)使用才有动画效果，动效时长、曲线跟随[animateTo](cj-animation-animateto.md)中的配置，不支持[animation](cj-animation-animation.md)隐式动画。
+> geometryTransition必须配合[animateTo](./cj-apis-uicontext-uicontext.md#func-animatetoanimateparam-voidcallback)使用才有动画效果，动效时长、曲线跟随[animateTo](./cj-apis-uicontext-uicontext.md#func-animatetoanimateparam-voidcallback)中的配置，不支持[animation](./cj-animation-animation.md)隐式动画。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
