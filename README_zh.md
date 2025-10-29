@@ -18,14 +18,14 @@ OpenHarmony仓颉文档的总体架构如下图所示：
 
 如上图所示，应用开发者文档主要包含：
 
-1. **[入门](./zh-cn/application-dev/cj-start/README_zh.md)：**指导开发者使用仓颉构建第一个OpenHarmony应用、使用仓颉与ArkTS构建第一个混合应用等简单的Hello World示例。另外，该部分还介绍了开发基础知识，帮助开发者初步了解OpenHarmony应用开发。
-2. **[指南](./zh-cn/application-dev/README_zh.md)：**此部分介绍相关概念、原理机制，以及详细的开发步骤，包括如下内容：
-   - **应用框架：**包括Ability Kit（程序框架服务）、ArkData（方舟数据管理）、ArkUI（方舟UI框架）、窗口管理、屏幕管理、ArkWeb（方舟Web）、Core File Kit（文件基础服务）、IPC Kit（进程间通信服务）、Localization Kit（本地化开发服务）等。
-   - **系统：**包括安全（程序控制访问、加解密算法框架服务、密钥管理服务等）、网络（短距通信服务、网络服务、蜂窝通信服务等）、基础功能（进程线程通信、上传下载等基础服务）、硬件（传感器服务）、调测调优（性能分析服务、应用测试服务、调试命令等）。
-   - **媒体：**包括相机服务、图片处理服务、媒体文件管理服务等。
-   - **图形：**包括方舟2D图形服务。
-   - **应用服务：**包括位置服务。
-3. **[API参考](./zh-cn/application-dev/reference/README_zh.md)：**为开发者提供了API的功能描述、参数和返回值介绍、权限信息、示例代码等内容，帮助开发者理解和使用仓颉版OpenHarmony的API。
+1. **[入门](./zh-cn/application-dev/cj-start/README_zh.md)**：指导开发者使用仓颉编程语言构建第一个OpenHarmony应用、使用仓颉与ArkTS构建第一个混合应用等简单的Hello World示例。另外，该部分还介绍了开发基础知识，帮助开发者初步了解OpenHarmony应用开发。
+2. **[指南](./zh-cn/application-dev/README_zh.md)**：此部分介绍相关概念、原理机制，以及详细的开发步骤，包括如下内容：
+   - **应用框架**：包括Ability Kit（程序框架服务）、ArkData（方舟数据管理）、ArkUI（方舟UI框架）、窗口管理、屏幕管理、ArkWeb（方舟Web）、Core File Kit（文件基础服务）、IPC Kit（进程间通信服务）、Localization Kit（本地化开发服务）等。
+   - **系统**：包括安全（程序控制访问、加解密算法框架服务、密钥管理服务等）、网络（短距通信服务、网络服务、蜂窝通信服务等）、基础功能（进程线程通信、上传下载等基础服务）、硬件（传感器服务）、调测调优（性能分析服务、应用测试服务、调试命令等）。
+   - **媒体**：包括相机服务、图片处理服务、媒体文件管理服务等。
+   - **图形**：包括方舟2D图形服务。
+   - **应用服务**：包括位置服务。
+3. **[API参考](./zh-cn/application-dev/reference/README_zh.md)**：为开发者提供了API的功能描述、参数和返回值介绍、权限信息、示例代码等内容，帮助开发者理解和使用仓颉版OpenHarmony的API。
 
 ## 文档目录
 
@@ -65,6 +65,6 @@ OpenHarmony仓颉文档仓库的总体目录结构如下：
 
 ## 相关仓
 
-- [cangjie_docs](https://gitcode.com/Cangjie/cangjie_docs)
+- [cangjie_docs](https://gitcode.com/Cangjie/cangjie_docs/blob/main/README_zh.md)
 - [cangjie_runtime](https://gitcode.com/Cangjie/cangjie_runtime/blob/main/stdlib/doc/libs/summary_cjnative.md)
 - [cangjie_stdx](https://gitcode.com/Cangjie/cangjie_stdx/blob/main/doc/summary_cjnative.md)

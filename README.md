@@ -18,14 +18,14 @@ The overall architecture of OpenHarmony Cangjie documentation is illustrated bel
 
 As shown above, the application developer documentation primarily includes:
 
-1. **[Getting Started](./en/application-dev/cj-start/README.md):** Guides developers through building their first OpenHarmony application using Cangjie, creating their first hybrid application with Cangjie and ArkTS, and other simple "Hello World" examples. Additionally, this section introduces fundamental development knowledge to help developers gain a preliminary understanding of OpenHarmony application development.
-2. **[Guides](./en/application-dev/README.md):** This section explains relevant concepts, principles, mechanisms, and detailed development steps, covering:
-   - **Application Framework:** Includes Ability Kit (application framework services), ArkData (Ark data management), ArkUI (Ark UI framework), window management, screen management, ArkWeb (Ark Web), Core File Kit (basic file services), IPC Kit (inter-process communication services), Localization Kit (localization development services), etc.
-   - **System:** Includes security (application control access, cryptographic algorithm framework services, key management services, etc.), networking (short-range communication services, network services, cellular communication services, etc.), basic functionalities (process and thread communication, upload/download services, etc.), hardware (sensor services), and debugging/optimization (performance analysis services, application testing services, debugging commands, etc.).
-   - **Media:** Includes camera services, image processing services, media file management services, etc.
-   - **Graphics:** Includes Ark 2D graphics services.
-   - **Application Services:** Includes location services.
-3. **[API Reference](./en/application-dev/reference/README.md):** Provides developers with functional descriptions of APIs, parameter and return value explanations, permission information, sample code, and more to help them understand and use OpenHarmony APIs in the Cangjie version.
+1. **[Getting Started](./en/application-dev/cj-start/README.md)**: Guides developers through building their first OpenHarmony application using Cangjie, creating their first hybrid application with Cangjie and ArkTS, and other simple "Hello World" examples. Additionally, this section introduces fundamental development knowledge to help developers gain a preliminary understanding of OpenHarmony application development.
+2. **[Guides](./en/application-dev/README.md)**: This section explains relevant concepts, principles, mechanisms, and detailed development steps, covering:
+   - **Application Framework**: Includes Ability Kit (application framework services), ArkData (Ark data management), ArkUI (Ark UI framework), window management, screen management, ArkWeb (Ark Web), Core File Kit (basic file services), IPC Kit (inter-process communication services), Localization Kit (localization development services), etc.
+   - **System**: Includes security (application control access, cryptographic algorithm framework services, key management services, etc.), networking (short-range communication services, network services, cellular communication services, etc.), basic functionalities (process and thread communication, upload/download services, etc.), hardware (sensor services), and debugging/optimization (performance analysis services, application testing services, debugging commands, etc.).
+   - **Media**: Includes camera services, image processing services, media file management services, etc.
+   - **Graphics**: Includes Ark 2D graphics services.
+   - **Application Services**: Includes location services.
+3. **[API Reference](./en/application-dev/reference/README.md)**: Provides developers with functional descriptions of APIs, parameter and return value explanations, permission information, sample code, and more to help them understand and use OpenHarmony APIs in the Cangjie version.
 
 ## Documentation Directory
 
@@ -34,19 +34,19 @@ The overall directory structure of the OpenHarmony Cangjie Documentation reposit
 ```text
 .
 ├── en                                   # English documentation directory (subdirectory structure mirrors zh-cn)
-│   ├── application-dev
-│   ├── CONTRIBUTING.md
-│   ├── COPYRIGHT
-│   ├── figures
-│   ├── Overview-of-Cangjie-capabilities-in-OpenHarmony.md
-│   └── README.md
-├── zh-cn                                # Chinese documentation directory
 │   ├── application-dev                  # OpenHarmony-Cangjie application development documentation (guides, API references, etc.)
 │   ├── CONTRIBUTING.md                  # Contribution guidelines
 │   ├── COPYRIGHT                        # Copyright notice
 │   ├── figures                          # Directory for images referenced in sibling files
 │   ├── Overview-of-Cangjie-capabilities-in-OpenHarmony.md # Overview of Cangjie capabilities in OpenHarmony
-│   └── README_zh.md                     # Developer documentation overview
+│   └── README.md                        # Developer documentation overview
+├── zh-cn                                # Chinese documentation directory
+│   ├── application-dev
+│   ├── CONTRIBUTING.md
+│   ├── COPYRIGHT
+│   ├── figures
+│   ├── Overview-of-Cangjie-capabilities-in-OpenHarmony.md
+│   └── README_zh.md
 ├── LICENSE                              # License file
 ├── OAT.xml                              # OAT rules file for repository OAT open-source checks
 ├── README.md                            # OpenHarmony-Cangjie documentation repository overview (English)
