@@ -94,7 +94,6 @@
             - [模态转场](cj-modal-transition.md)
             - [共享元素转场（一镜到底）](cj-shared-element-transition.md)
             - [旋转屏动画](cj-rotation-transition-animation.md)
-            - [页面路由（不推荐）](cj-page-routing.md)
             - [页面转场动画（不推荐）](cj-page-transition-animation.md)
         - [组件动画](cj-component-animation.md)
         - 动画曲线

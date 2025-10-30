@@ -66,7 +66,7 @@ func height(value: Option<Length>): T
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码](../errorcodes/cj-errorcode-universal.md)。
+- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -99,7 +99,7 @@ func size(width!: ?Length, height!: ?Length): T
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码](../errorcodes/cj-errorcode-universal.md)。
+- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -131,7 +131,7 @@ func padding(value: ?Length): T
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码](../errorcodes/cj-errorcode-universal.md)。
+- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -166,7 +166,7 @@ func padding(top!: ?Length, right!: ?Length, bottom!: ?Length, left!: ?Length): 
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码](../errorcodes/cj-errorcode-universal.md)。
+- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -198,7 +198,7 @@ func margin(value: ?Length): T
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码](../errorcodes/cj-errorcode-universal.md)。
+- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -233,7 +233,7 @@ func margin(top!: ?Length, right!: ?Length, bottom!: ?Length, left!: ?Length): T
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码](../errorcodes/cj-errorcode-universal.md)。
+- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -265,7 +265,7 @@ func layoutWeight(value: ?Int32): T
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码](../errorcodes/cj-errorcode-universal.md)。
+- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -297,7 +297,7 @@ func aspectRatio(value: Float64): T
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码](../errorcodes/cj-errorcode-universal.md)。
+- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -329,7 +329,7 @@ func displayPriority(value: ?Int32): T
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码](../errorcodes/cj-errorcode-universal.md)。
+- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -361,7 +361,7 @@ func responseRegion(value: ?Rectangle): T
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码](../errorcodes/cj-errorcode-universal.md)。
+- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |

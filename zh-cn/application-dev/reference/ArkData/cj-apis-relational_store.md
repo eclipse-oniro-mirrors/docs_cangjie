@@ -5166,7 +5166,7 @@ Uint8Array(Array<UInt8>)
 public type Assets = Array<Asset>
 ```
 
-**功能：** [Assets](#type-assets)是[Array\<Asset>](../../../../cj-user-manual/source_zh_cn/basic_data_type/array.md#array)类型的别名。
+**功能：** [Assets](#type-assets)是[Array\<Asset>](#class-asset)类型的别名。
 
 ## type ValuesBucket
 
@@ -5174,4 +5174,4 @@ public type Assets = Array<Asset>
 public type ValuesBucket = Map<String, RelationalStoreValueType>
 ```
 
-**功能：** [ValuesBucket](#type-valuesbucket)是[Map\<String,RelationalStoreValueType>](../../../../cj-user-manual/source_zh_cn/generic/generic_class.md#泛型类)类型的别名。
+**功能：** [ValuesBucket](#type-valuesbucket)是<!--RP02-->[Map\<String,RelationalStoreValueType>](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/generic/generic_class.md)<!--RP02End-->类型的别名。

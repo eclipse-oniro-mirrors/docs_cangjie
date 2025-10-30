@@ -380,4 +380,4 @@ Image(@r(sys.media.ohos_app_icon))
 
 ## 限制与说明
 
-当前资源名称不能使用仓颉语言保留关键字，例如func和main等。仓颉保留关键字，参见[《仓颉编程语言开发指南》-附录-关键字](https://developer.huawei.com/consumer/cn/doc/cangjie-guides-V5/keyword-V5)章节。
+当前资源名称不能使用仓颉语言保留关键字，例如func和main等。仓颉保留关键字，参见<!--RP02-->[《仓颉编程语言开发指南》-附录-关键字](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/Appendix/keyword.md)<!--RP02End-->章节。

@@ -7,7 +7,6 @@
 ```cangjie
 public class BusinessException <: Exception {
     public let code: Int32
-    public init(code: Int32, msg: String, data!: ?Any = None)
 }
 ```
 

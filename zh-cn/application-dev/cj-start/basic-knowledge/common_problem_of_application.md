@@ -38,7 +38,7 @@
 
 ## 什么是appIdentifier
 
-appIdentifier是[Profile文件](https://developer.huawei.com/consumer/cn/doc/app/agc-help-add-releaseprofile-0000001914714796)中的一个字段，为应用的唯一标识，在应用签名时生成，其中：
+appIdentifier是<!--RP01-->[Profile文件](https://gitcode.com/openharmony/docs/blob/master/zh-cn/application-dev/security/app-provision-structure.md)<!--RP01End-->中的一个字段，为应用的唯一标识，在应用签名时生成，其中：
 
 1. 通过DevEco Studio工具[自动签名](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-signing#section18815157237)生成，此时的appIdentifier字段是随机生成的，在不同的设备上签名、或者重新签名均会导致appIdentifier字段不一致。
 

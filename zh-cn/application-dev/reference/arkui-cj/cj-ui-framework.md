@@ -144,7 +144,7 @@ func onStateUpdate(info: String, dependentElmtIds: ArrayList<Int64>): Unit
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |info|String|是|-|-|
-|dependentElmtIds|[ArrayList](../../../cj-user-manual/source_zh_cn/collections/collection_arraylist.md#arraylist)\<Int64>|是|-|-|
+|dependentElmtIds|<!--RP02-->[ArrayList](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/collections/collection_arraylist.md)<!--RP02End-->\<Int64>|是|-|-|
 
 ### func notifyRead(String)
 
@@ -819,7 +819,7 @@ public func onStateUpdate(stateInfo: String, dependentElmtIds: ArrayList<Int64>)
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |stateInfo|String|是|-|状态信息。|
-|dependentElmtIds|[ArrayList](../../../cj-user-manual/source_zh_cn/collections/collection_arraylist.md#arraylist)\<Int64>|是|-|依赖的元素ID列表。|
+|dependentElmtIds|<!--RP02-->[ArrayList](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/collections/collection_arraylist.md)<!--RP02End-->\<Int64>|是|-|依赖的元素ID列表。|
 
 ### func id()
 
