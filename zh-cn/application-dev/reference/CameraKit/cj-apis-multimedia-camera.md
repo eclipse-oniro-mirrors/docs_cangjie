@@ -4311,6 +4311,8 @@ public func enableMirror(enabled: Bool): Unit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
+  | 7400101 | Parameter missing or parameter type incorrect. |
+  | 7400103 | Session not config. |
   | 7400201 | Camera service fatal error. |
 
 **示例：**

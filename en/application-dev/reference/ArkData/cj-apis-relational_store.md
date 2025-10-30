@@ -55,8 +55,11 @@ public func deleteRdbStore(context: UIAbilityContext, name: String): Unit
   | Error Code ID | Error Message |
   | :--- | :--- |
   | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+  | 801 | Capability not supported. |
   | 14800000 | Inner error. |
   | 14800010 | Failed to open or delete the database by an invalid database path. |
+  | 14801001 | The operation is supported in the stage model only. |
+  | 14801002 | Invalid data group ID. |
 
 - IllegalArgumentException:
 
@@ -90,6 +93,7 @@ public func deleteRdbStore(context: UIAbilityContext, config: StoreConfig): Unit
   | Error Code ID | Error Message |
   | :--- | :--- |
   | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+  | 801 | Capability not supported. |
   | 14800000 | Inner error. |
   | 14800010 | Failed to open or delete the database by an invalid database path. |
   | 14801001 | The operation is supported in the stage model only. |
@@ -1419,7 +1423,9 @@ public func batchInsert(table: String, values: Array<ValuesBucket>): Int64
   | 14800000 | Inner error. |
   | 14800011 | Failed to open the database because it is corrupted. |
   | 14800014 | The RdbStore or ResultSet is already closed. |
+  | 14800015 | The database does not respond. |
   | 14800021 | SQLite: Generic error. Possible causes: Insert failed or the updated data does not exist. |
+  | 14800022 | SQLite: Callback routine requested an abort. |
   | 14800023 | SQLite: Access permission denied. |
   | 14800024 | SQLite: The database file is locked. |
   | 14800025 | SQLite: A table in the database is locked. |
@@ -1427,8 +1433,11 @@ public func batchInsert(table: String, values: Array<ValuesBucket>): Int64
   | 14800027 | SQLite: Attempt to write a readonly database. |
   | 14800028 | SQLite: Some kind of disk I/O error occurred. |
   | 14800029 | SQLite: The database is full. |
+  | 14800030 | SQLite: Unable to open the database file. |
   | 14800031 | SQLite: TEXT or BLOB exceeds size limit. |
+  | 14800032 | SQLite: Abort due to constraint violation. |
   | 14800033 | SQLite: Data type mismatch. |
+  | 14800034 | SQLite: Library used incorrectly. |
   | 14800047 | The WAL file size exceeds the default limit. |
 
 ### func beginTransaction()
@@ -2344,6 +2353,32 @@ public func goTo(offset: Int32): Bool
 |:----|:----|
 | Bool | Returns true if the result set is successfully moved; otherwise, returns false. |
 
+**Exceptions:**
+
+- BusinessException: Corresponding error codes are listed below. For details, see [Relational Database Error Codes](./cj-errorcode-data-rdb.md).
+
+  | Error Code ID | Error Message |
+  | :---- | :--- |
+  | 14800000 | Inner error. |
+  | 14800011 | Failed to open the database because it is corrupted. |
+  | 14800012 | ResultSet is empty or pointer index is out of bounds. |
+  | 14800014 | The RdbStore or ResultSet is already closed. |
+  | 14800019 | The SQL must be a query statement. |
+  | 14800021 | SQLite: Generic error. Possible causes: Insert failed or the updated data does not exist. |
+  | 14800022 | SQLite: Callback routine requested an abort. |
+  | 14800023 | SQLite: Access permission denied. |
+  | 14800024 | SQLite: The database file is locked. |
+  | 14800025 | SQLite: A table in the database is locked. |
+  | 14800026 | SQLite: The database is out of memory. |
+  | 14800027 | SQLite: Attempt to write a readonly database. |
+  | 14800028 | SQLite: Some kind of disk I/O error occurred. |
+  | 14800029 | SQLite: The database is full. |
+  | 14800030 | SQLite: Unable to open the database file. |
+  | 14800031 | SQLite: TEXT or BLOB exceeds size limit. |
+  | 14800032 | SQLite: Abort due to constraint violation. |
+  | 14800033 | SQLite: Data type mismatch. |
+  | 14800034 | SQLite: Library used incorrectly. |
+
 ### func goToFirstRow()
 
 ```cangjie
@@ -2427,6 +2462,32 @@ public func goToNextRow(): Bool
 |:----|:----|
 | Bool | Returns true if the result set is successfully moved; otherwise, returns false. |
 
+**Exceptions:**
+
+- BusinessException: Corresponding error codes are listed below. For details, see [Relational Database Error Codes](./cj-errorcode-data-rdb.md).
+
+  | Error Code ID | Error Message |
+  | :---- | :--- |
+  | 14800000 | Inner error. |
+  | 14800011 | Failed to open the database because it is corrupted. |
+  | 14800012 | ResultSet is empty or pointer index is out of bounds. |
+  | 14800014 | The RdbStore or ResultSet is already closed. |
+  | 14800019 | The SQL must be a query statement. |
+  | 14800021 | SQLite: Generic error. Possible causes: Insert failed or the updated data does not exist. |
+  | 14800022 | SQLite: Callback routine requested an abort. |
+  | 14800023 | SQLite: Access permission denied. |
+  | 14800024 | SQLite: The database file is locked. |
+  | 14800025 | SQLite: A table in the database is locked. |
+  | 14800026 | SQLite: The database is out of memory. |
+  | 14800027 | SQLite: Attempt to write a readonly database. |
+  | 14800028 | SQLite: Some kind of disk I/O error occurred. |
+  | 14800029 | SQLite: The database is full. |
+  | 14800030 | SQLite: Unable to open the database file. |
+  | 14800031 | SQLite: TEXT or BLOB exceeds size limit. |
+  | 14800032 | SQLite: Abort due to constraint violation. |
+  | 14800033 | SQLite: Data type mismatch. |
+  | 14800034 | SQLite: Library used incorrectly. |
+
 ### func goToPreviousRow()
 
 ```cangjie
@@ -2445,6 +2506,32 @@ public func goToPreviousRow(): Bool
 | Type | Description |
 |:----|:----|
 | Bool | Returns true if the result set is successfully moved; otherwise, returns false. |
+
+**Exceptions:**
+
+- BusinessException: Corresponding error codes are listed below. For details, see [Relational Database Error Codes](./cj-errorcode-data-rdb.md).
+
+  | Error Code ID | Error Message |
+  | :---- | :--- |
+  | 14800000 | Inner error. |
+  | 14800011 | Failed to open the database because it is corrupted. |
+  | 14800012 | ResultSet is empty or pointer index is out of bounds. |
+  | 14800014 | The RdbStore or ResultSet is already closed. |
+  | 14800019 | The SQL must be a query statement. |
+  | 14800021 | SQLite: Generic error. Possible causes: Insert failed or the updated data does not exist. |
+  | 14800022 | SQLite: Callback routine requested an abort. |
+  | 14800023 | SQLite: Access permission denied. |
+  | 14800024 | SQLite: The database file is locked. |
+  | 14800025 | SQLite: A table in the database is locked. |
+  | 14800026 | SQLite: The database is out of memory. |
+  | 14800027 | SQLite: Attempt to write a readonly database. |
+  | 14800028 | SQLite: Some kind of disk I/O error occurred. |
+  | 14800029 | SQLite: The database is full. |
+  | 14800030 | SQLite: Unable to open the database file. |
+  | 14800031 | SQLite: TEXT or BLOB exceeds size limit. |
+  | 14800032 | SQLite: Abort due to constraint violation. |
+  | 14800033 | SQLite: Data type mismatch. |
+  | 14800034 | SQLite: Library used incorrectly. |
 
 ### func goToRow(Int32)
 
@@ -2470,6 +2557,32 @@ public func goToRow(position: Int32): Bool
 | Type | Description |
 |:----|:----|
 | Bool | Returns true if the result set is successfully moved; otherwise, returns false. |
+
+**Exceptions:**
+
+- BusinessException: Corresponding error codes are listed below. For details, see [Relational Database Error Codes](./cj-errorcode-data-rdb.md).
+
+  | Error Code ID | Error Message |
+  | :---- | :--- |
+  | 14800000 | Inner error. |
+  | 14800011 | Failed to open the database because it is corrupted. |
+  | 14800012 | ResultSet is empty or pointer index is out of bounds. |
+  | 14800014 | The RdbStore or ResultSet is already closed. |
+  | 14800019 | The SQL must be a query statement. |
+  | 14800021 | SQLite: Generic error. Possible causes: Insert failed or the updated data does not exist. |
+  | 14800022 | SQLite: Callback routine requested an abort. |
+  | 14800023 | SQLite: Access permission denied. |
+  | 14800024 | SQLite: The database file is locked. |
+  | 14800025 | SQLite: A table in the database is locked. |
+  | 14800026 | SQLite: The database is out of memory. |
+  | 14800027 | SQLite: Attempt to write a readonly database. |
+  | 14800028 | SQLite: Some kind of disk I/O error occurred. |
+  | 14800029 | SQLite: The database is full. |
+  | 14800030 | SQLite: Unable to open the database file. |
+  | 14800031 | SQLite: TEXT or BLOB exceeds size limit. |
+  | 14800032 | SQLite: Abort due to constraint violation. |
+  | 14800033 | SQLite: Data type mismatch. |
+  | 14800034 | SQLite: Library used incorrectly. |
 
 ### func isColumnNull(Int32)
 

@@ -262,6 +262,7 @@ public func generateKeyItem(keyAlias: String, options: HuksOptions): Unit
   | 12000013 | Queried credential does not exist |
   | 12000014 | Memory is insufficient |
   | 12000015 | Call service failed |
+  | 12000017 | The key with same alias is already exist |
 
 ## func getKeyItemProperties(String, HuksOptions)
 
@@ -374,6 +375,7 @@ public func importWrappedKeyItem(keyAlias: String, wrappingKeyAlias: String, opt
 
   | Error Code ID | Error Message |
   | :---- | :--- |
+  | 201 | check permission failed |
   | 401 | Argument is invalid |
   | 801 | API is not supported |
   | 12000001 | Algorithm mode is not supported |
@@ -387,6 +389,7 @@ public func importWrappedKeyItem(keyAlias: String, wrappingKeyAlias: String, opt
   | 12000013 | Queried credential does not exist |
   | 12000014 | Memory is insufficient |
   | 12000015 | Call service failed |
+  | 12000017 | The key with same alias is already exist |
 
 ## func initSession(String, HuksOptions)
 
@@ -456,6 +459,7 @@ public func isKeyItemExist(keyAlias: String, options: HuksOptions): Bool
   | 12000006 | error occurred in crypto engine |
   | 12000012 | external error |
   | 12000014 | memory is insufficient |
+  | 12000018 | the input parameter is invalid |
 
 ## func updateSession(HuksHandleId, HuksOptions, Bytes)
 

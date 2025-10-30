@@ -62,6 +62,24 @@ The current platform does not support subscription services.
 
 Deploy subscription services on the current platform.
 
+## 15501001 Stage Model Required
+
+**Error Message**
+
+The operation is supported in stage mode only.
+
+**Error Description**
+
+This operation can be performed only on the stage model.
+
+**Possible Causes**
+
+The context is not a stage model.
+
+**Solution**
+
+Perform the operation on the stage model.
+
 ## 15501002 Invalid dataGroupId Parameter in Options
 
 **Error Message**

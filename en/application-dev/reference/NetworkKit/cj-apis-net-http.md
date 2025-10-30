@@ -581,6 +581,8 @@ public func request(url: String, options: HttpRequestOptions, callback: AsyncCal
   | 2300077 | Problem with the SSL CA cert (path? access rights?). |
   | 2300078 | Remote file not found. |
   | 2300094 | An authentication function returned an error. |
+  | 2300997 | Cleartext traffic not permitted. |
+  | 2300998 | It is not allowed to access this domain. |
   | 2300999 | Unknown Other Error. |
 
 **Example:**
@@ -669,6 +671,8 @@ public func request(url: String, callback: AsyncCallback<HttpResponse>): Unit
   | 2300077 | Problem with the SSL CA cert (path? access rights?). |
   | 2300078 | Remote file not found. |
   | 2300094 | An authentication function returned an error. |
+  | 2300997 | Cleartext traffic not permitted. |
+  | 2300998 | It is not allowed to access this domain. |
   | 2300999 | Unknown Other Error. |
 
 **Example:**
@@ -754,6 +758,8 @@ public func requestInStream(url: String, options: HttpRequestOptions, callback: 
   | 2300077 | Problem with the SSL CA cert (path? access rights?). |
   | 2300078 | Remote file not found. |
   | 2300094 | An authentication function returned an error. |
+  | 2300997 | Cleartext traffic not permitted. |
+  | 2300998 | It is not allowed to access this domain. |
   | 2300999 | Unknown Other Error. |
 
 **Example:**
@@ -799,7 +805,50 @@ public func requestInStream(url: String, callback: AsyncCallback<UInt32>): Unit
 | Parameter | Type | Required | Default Value | Description |
 |:---|:---|:---|:---|:---|
 | url | String | Yes | - | URL address for initiating the network request. |
-| callback | [AsyncCallback](../arkinterop/cj-api-business_ex## class HttpRequestOptions
+| callback | [AsyncCallback](../arkinterop/cj-api-business_exception.md#type-asynccallback)\<UInt32> | Yes | - | Callback function. |
+
+**Exceptions:**
+
+- BusinessException: Corresponding error codes are listed below, [HTTP Error Codes](./cj-errorcode-net-http.md) and [Universal Error Codes](../cj-errorcode-universal.md).
+- HTTP interface return error code mapping: 2300000 + curl error code. For more common error codes, refer to: [curl Error Codes](https://curl.se/libcurl/c/libcurl-errors.html).
+
+  | Error Code ID | Error Message |
+  | :---- | :--- |
+  | 401 | Parameter error. |
+  | 201 | Permission denied. |
+  | 2300001 | Unsupported protocol. |
+  | 2300003 | URL using bad/illegal format or missing URL. |
+  | 2300005 | Couldn't resolve proxy name. |
+  | 2300006 | Couldn't resolve host name. |
+  | 2300007 | Couldn't connect to server. |
+  | 2300008 | Weird server reply. |
+  | 2300009 | Access denied to remote resource. |
+  | 2300016 | Error in the HTTP2 framing layer. |
+  | 2300018 | Transferred a partial file. |
+  | 2300023 | Failed writing received data to disk/application. |
+  | 2300025 | Upload failed. |
+  | 2300026 | Failed to open/read local data from file/application. |
+  | 2300027 | Out of memory. |
+  | 2300028 | Timeout was reached. |
+  | 2300047 | Number of redirects hit maximum amount. |
+  | 2300052 | Server returned nothing (no headers, no data). |
+  | 2300055 | Failed sending data to the peer. |
+  | 2300056 | Failure when receiving data from the peer. |
+  | 2300058 | Problem with the local SSL certificate. |
+  | 2300059 | Couldn't use specified SSL cipher. |
+  | 2300060 | SSL peer certificate or SSH remote key was not OK. |
+  | 2300061 | Unrecognized or bad HTTP Content or Transfer-Encoding. |
+  | 2300063 | Maximum file size exceeded. |
+  | 2300070 | Disk full or allocation exceeded. |
+  | 2300073 | Remote file already exists. |
+  | 2300077 | Problem with the SSL CA cert (path? access rights?). |
+  | 2300078 | Remote file not found. |
+  | 2300094 | An authentication function returned an error. |
+  | 2300997 | Cleartext traffic not permitted. |
+  | 2300998 | It is not allowed to access this domain. |
+  | 2300999 | Unknown Other Error. |
+
+## class HttpRequestOptions
 
 ```cangjie
 public class HttpRequestOptions {

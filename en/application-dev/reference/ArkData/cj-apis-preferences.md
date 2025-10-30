@@ -227,6 +227,7 @@ After calling this interface, it is not recommended to continue using the old Pr
 | :---- | :--- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are missing; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 801 | Capability not supported. |
+| 15500000 | Inner error. |
 | 15500010 | Failed to delete the user preferences persistence file. |
 | 15501001 | The operation is supported in stage mode only. |
 | 15501002 | Invalid dataGroupId. |
@@ -293,7 +294,10 @@ After calling this interface, it is not recommended to continue using the old Pr
 | Error Code | Error Message |
 | :---- | :--- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are missing; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 801 | Capability not supported. |
 | 15500000 | Internal error. |
+| 15501001 | The operations is supported in stage mode only. |
+| 15501002 | Invalid dataGroupId. |
 
 - IllegalArgumentException:
 
@@ -861,6 +865,15 @@ public func on(event: PreferencesEvent, callback: Callback1Argument<String>): Un
 |:---|:---|:---|:---|:---|
 | event | [PreferencesEvent](#enum-preferencesevent) | Yes | - | Event type. <br> PreferencesChange: Subscribes to data changes. When the value of the subscribed key changes, the callback is triggered after the flush method is executed. <br> PreferencesMultiProcessChange: Subscribes to inter-process data changes. When multiple processes hold the same preferences file, the callback is triggered after the flush method is executed when the value of the subscribed key changes in any process. |
 | callback | [Callback1Argument](../arkinterop/cj-api-callback_invoke.md#class-callback1argument)\<String> | Yes | - | Callback function. <br> String: Type of the changed key. |
+
+**Exceptions:**
+
+- BusinessException: Corresponding error codes are listed below.
+
+| Error Code ID | Error Message |
+| :---- | :--- |
+| 15500000 | Inner error. |
+| 15500019 | Failed to obtain the subscription service. |
 
 **Example:**
 

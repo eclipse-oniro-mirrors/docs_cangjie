@@ -1654,13 +1654,14 @@ public open func putBatch(entries: Array<Entry>): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[分布式键值数据库错误码](./cj-errorcode-distributed_kv_store.md)。
+- BusinessException：对应错误码如下表，详见[分布式键值数据库错误码](./cj-errorcode-distributed_kv_store.md)和[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified; 2.Incorrect parameters types.|
   | 15100003 | Database corrupted.|
   | 15100005 | Database or result set already closed.|
+  | 14800047 | The WAL file size exceeds the default limit.|
 
 **示例：**
 
@@ -1847,11 +1848,12 @@ public open func startTransaction(): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[分布式键值数据库错误码](./cj-errorcode-distributed_kv_store.md)。
+- BusinessException：对应错误码如下表，详见[分布式键值数据库错误码](./cj-errorcode-distributed_kv_store.md)和[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 15100005 | Database or result set already closed.|
+  | 14800047 | The WAL file size exceeds the default limit.|
 
 **示例：**
 
