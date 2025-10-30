@@ -2247,11 +2247,12 @@ public func rewindRead(pos: UInt32): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
+- BusinessException：对应错误码如下表，详见[RPC错误码](./cj-errorcode-rpc.md)和[通用错误码](../cj-errorcode-universal.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 401 | Parameter error. Possible causes: 1.The number of parameters is incorrect; 2.The parameter type does not match.|
+  | 1900010 | Failed to read data from the message sequence.|
 
 **示例：**
 
@@ -2287,11 +2288,12 @@ public func rewindWrite(pos: UInt32): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
+- BusinessException：对应错误码如下表，详见[RPC错误码](./cj-errorcode-rpc.md)和[通用错误码](../cj-errorcode-universal.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 401 | Parameter error. Possible causes: 1.The number of parameters is incorrect; 2.The parameter type does not match.|
+  | 1900009 | Failed to write data to the message sequence.|
 
 **示例：**
 
@@ -2333,6 +2335,7 @@ public func setCapacity(size: UInt32): Unit
   | :---- | :--- |
   | 401 | Parameter error. Possible causes: 1.The number of parameters is incorrect; 2.The parameter type does not match.|
   | 1900011 | Memory allocation failed.|
+  | 1900009 | Failed to write data to the message sequence.|
 
 **示例：**
 
@@ -2368,11 +2371,12 @@ public func setSize(size: UInt32): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
+- BusinessException：对应错误码如下表，详见[RPC错误码](./cj-errorcode-rpc.md)和[通用错误码](../cj-errorcode-universal.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 401 | Parameter error. Possible causes: 1.The number of parameters is incorrect; 2.The parameter type does not match.|
+  | 1900009 | Failed to write data to the message sequence.|
 
 **示例：**
 

@@ -62,6 +62,24 @@ Failed to obtain subscription service.
 
 需要在当前平台部署订阅服务。
 
+## 15501001 上下文环境非Stage模型
+
+**错误信息**
+
+The operations is supported in stage mode only.
+
+**错误描述**
+
+该操作仅支持Stage模型。
+
+**可能原因**
+
+当前上下文环境非Stage模型。
+
+**处理步骤**
+
+请切换当前上下文环境，使用Stage模型。
+
 ## 15501002 Options中传入的dataGroupId参数非法
 
 **错误信息**

@@ -508,6 +508,42 @@ The provided authentication credentials do not match server records.
 
 Verify whether the authentication fields match server requirements.
 
+## 2300997 Plaintext HTTP Access Intercepted
+
+**Error Message**
+
+Cleartext traffic not permitted.
+
+**Error Description**
+
+This error code is reported if plaintext HTTP access is intercepted.
+
+**Possible Causes**
+
+The plaintext access is not allowed in the network_config.json file.
+
+**Resolution Steps**
+
+Check the setting of the cleartextTrafficPermitted field in the network_config.json file.
+
+## 2300998 Domain Access Denied
+
+**Error Message**
+
+It is not allowed to access this domain.
+
+**Error Description**
+
+This error code is reported if access to a certain domain is prohibited.
+
+**Possible Causes**
+
+An incorrect server domain name is configured for the atomic service.
+
+**Resolution Steps**
+
+Configure a correct server domain name for the atomic service.
+
 ## 2300999 Unknown Error
 
 **Error Message**

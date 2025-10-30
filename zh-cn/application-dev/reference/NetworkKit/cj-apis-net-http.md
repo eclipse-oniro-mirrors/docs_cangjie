@@ -581,6 +581,8 @@ public func request(url: String, options: HttpRequestOptions, callback: AsyncCal
   | 2300077 | Problem with the SSL CA cert (path? access rights?). |
   | 2300078 | Remote file not found. |
   | 2300094 | An authentication function returned an error. |
+  | 2300997 | Cleartext traffic not permitted. |
+  | 2300998 | It is not allowed to access this domain. |
   | 2300999 | Unknown Other Error. |
 
 **示例：**
@@ -669,6 +671,8 @@ public func request(url: String, callback: AsyncCallback<HttpResponse>): Unit
   | 2300077 | Problem with the SSL CA cert (path? access rights?). |
   | 2300078 | Remote file not found. |
   | 2300094 | An authentication function returned an error. |
+  | 2300997 | Cleartext traffic not permitted. |
+  | 2300998 | It is not allowed to access this domain. |
   | 2300999 | Unknown Other Error. |
 
 **示例：**
@@ -754,6 +758,8 @@ public func requestInStream(url: String, options: HttpRequestOptions, callback: 
   | 2300077 | Problem with the SSL CA cert (path? access rights?). |
   | 2300078 | Remote file not found. |
   | 2300094 | An authentication function returned an error. |
+  | 2300997 | Cleartext traffic not permitted. |
+  | 2300998 | It is not allowed to access this domain. |
   | 2300999 | Unknown Other Error. |
 
 **示例：**
@@ -838,6 +844,8 @@ public func requestInStream(url: String, callback: AsyncCallback<UInt32>): Unit
   | 2300077 | Problem with the SSL CA cert (path? access rights?). |
   | 2300078 | Remote file not found. |
   | 2300094 | An authentication function returned an error. |
+  | 2300997 | Cleartext traffic not permitted. |
+  | 2300998 | It is not allowed to access this domain. |
   | 2300999 | Unknown Other Error. |
 
 **示例：**

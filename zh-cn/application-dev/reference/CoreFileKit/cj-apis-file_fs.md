@@ -955,7 +955,8 @@ public static func createStream(path: String, mode: String): Stream
   | 13900034 | Operation would block |
   | 13900038 | Value too large for defined data type |
   | 13900041 | Quota exceeded |
-  | 13900042 | Network is unreachable |
+  | 13900042 | Unknown error |
+  | 13900044 | Network is unreachable |
 
 **示例：**
 

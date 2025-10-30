@@ -153,8 +153,8 @@ public var screenDensity: ScreenDensity
 
 ```cangjie
 public class DeviceCapability {
-    public let screenDensity: ScreenDensity
-    public let deviceType: DeviceType
+    public var screenDensity: ScreenDensity
+    public var deviceType: DeviceType
 }
 ```
 
@@ -164,33 +164,29 @@ public class DeviceCapability {
 
 **起始版本：** 22
 
-### let deviceType
+### var deviceType
 
 ```cangjie
-public let deviceType: DeviceType
+public var deviceType: DeviceType
 ```
 
 **功能：** 当前设备类型。
 
 **类型：** [DeviceType](#enum-devicetype)
 
-**读写能力：** 只读
-
 **系统能力：** SystemCapability.Global.ResourceManager
 
 **起始版本：** 22
 
-### let screenDensity
+### var screenDensity
 
 ```cangjie
-public let screenDensity: ScreenDensity
+public var screenDensity: ScreenDensity
 ```
 
 **功能：** 当前设备屏幕密度。
 
 **类型：** [ScreenDensity](#enum-screendensity)
-
-**读写能力：** 只读
 
 **系统能力：** SystemCapability.Global.ResourceManager
 

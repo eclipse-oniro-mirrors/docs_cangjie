@@ -1491,11 +1491,12 @@ public func rewindRead(pos: UInt32): Unit
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below. For details, see [Universal Error Codes](../cj-errorcode-universal.md).
+- BusinessException: Corresponding error codes are listed below. For details, see [RPC Error Codes](./cj-errorcode-rpc.md) and [Universal Error Codes](../cj-errorcode-universal.md).
 
   | Error Code ID | Error Message |
   | :---- | :--- |
   | 401 | Parameter error. Possible causes: 1. Incorrect number of parameters; 2. Parameter type mismatch. |
+  | 1900010 | Failed to read data from the message sequence. |
 
 ### func rewindWrite(UInt32)
 
@@ -1518,11 +1519,12 @@ public func rewindWrite(pos: UInt32): Unit
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below. For details, see [Universal Error Codes](../cj-errorcode-universal.md).
+- BusinessException: Corresponding error codes are listed below. For details, see [RPC Error Codes](./cj-errorcode-rpc.md) and [Universal Error Codes](../cj-errorcode-universal.md).
 
   | Error Code ID | Error Message |
   | :---- | :--- |
   | 401 | Parameter error. Possible causes: 1. Incorrect number of parameters; 2. Parameter type mismatch. |
+  | 1900009 | Failed to write data to the message sequence. |
 
 ### func setCapacity(UInt32)
 
@@ -1550,6 +1552,7 @@ public func setCapacity(size: UInt32): Unit
   | Error Code ID | Error Message |
   | :---- | :--- |
   | 401 | Parameter error. Possible causes: 1. Incorrect number of parameters; 2. Parameter type mismatch. |
+  | 1900009 | Failed to write data to the message sequence. |
   | 1900011 | Memory allocation failed. |
 
 ### func setSize(UInt32)
@@ -1573,11 +1576,12 @@ public func setSize(size: UInt32): Unit
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below. For details, see [Universal Error Codes](../cj-errorcode-universal.md).
+- BusinessException: Corresponding error codes are listed below. For details, see [RPC Error Codes](./cj-errorcode-rpc.md) and [Universal Error Codes](../cj-errorcode-universal.md).
 
   | Error Code ID | Error Message |
   | :---- | :--- |
   | 401 | Parameter error. Possible causes: 1. Incorrect number of parameters; 2. Parameter type mismatch. |
+  | 1900009 | Failed to write data to the message sequence. |
 
 ### func writeAshmem(Ashmem)
 

@@ -1301,13 +1301,14 @@ public open func putBatch(entries: Array<Entry>): Unit
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below. See [Distributed Key-Value Store Error Codes](./cj-errorcode-distributed_kv_store.md).
+- BusinessException: Corresponding error codes are listed below. See [Distributed Key-Value Store Error Codes](./cj-errorcode-distributed_kv_store.md) and [Relational Database Error Codes](./cj-errorcode-data-rdb.md).
 
   | Error Code ID | Error Message |
   | :---- | :--- |
   | 401 | Parameter error. Possible causes: 1. Mandatory parameters are unspecified; 2. Incorrect parameter types. |
   | 15100003 | Database corrupted. |
   | 15100005 | Database or result set already closed. |
+  | 14800047 | The WAL file size exceeds the default limit. |
 
 ### func restore(String)
 

@@ -4315,6 +4315,8 @@ public func enableMirror(enabled: Bool): Unit
 
   | Error Code ID | Error Message |
   | :---- | :--- |
+  | 7400101 | Parameter missing or parameter type incorrect. |
+  | 7400103 | Session not config. |
   | 7400201 | Camera service fatal error. |
 
 **Example:**

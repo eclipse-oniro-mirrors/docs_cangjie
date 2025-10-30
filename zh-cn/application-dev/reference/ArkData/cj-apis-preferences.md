@@ -227,6 +227,7 @@ public static func deletePreferences(context: UIAbilityContext, options: Prefere
 | :---- | :--- |
 | 401 | Parameter error. Possible causes:1. Mandatory parameters are left unspecified; 2. Incorrect parameter types;3. Parameter verification failed. |
 | 801 | Capability not supported. |
+| 15500000 | Inner error. |
 | 15500010 | Failed to delete the user preferences persistence file. |
 | 15501001 | The operations is supported in stage mode only. |
 | 15501002 | Invalid dataGroupId. |
@@ -357,7 +358,10 @@ public static func getPreferences(context: UIAbilityContext, options: Preference
 | 错误码ID | 错误信息 |
 | :---- | :--- |
 | 401 | Parameter error. Possible causes:1. Mandatory parameters are left unspecified; 2. Incorrect parameter types;3. Parameter verification failed. |
+| 801 | Capability not supported. |
 | 15500000 | Inner error. |
+| 15501001 | The operations is supported in stage mode only. |
+| 15501002 | Invalid dataGroupId. |
 
 - IllegalArgumentException：
 
@@ -847,6 +851,15 @@ public func on(event :PreferencesEvent, callback: Callback1Argument<String>): Un
 |:---|:---|:---|:---|:---|
 |event|[PreferencesEvent](#enum-preferencesevent)|是|-|事件类型。<br> PreferencesChange 时，表示订阅数据变更，订阅的Key的值发生变更后，在执行flush方法后，触发callback回调。<br> PreferencesMultiProcessChange 时，表示订阅进程间数据变更，多个进程持有同一个首选项文件时，订阅的Key的值在任意一个进程发生变更后，执行flush方法后，触发callback回调。|
 |callback|[Callback1Argument](../arkinterop/cj-api-callback_invoke.md#class-callback1argument)\<String>|是|-|回调函数。<br>String: 发生变化的Key的类型。|
+
+**异常：**
+
+- BusinessException：对应错误码如下表。
+
+| 错误码ID | 错误信息 |
+| :---- | :--- |
+| 15500000 | Inner error. |
+| 15500019 | Failed to obtain the subscription service. |
 
 **示例：**
 

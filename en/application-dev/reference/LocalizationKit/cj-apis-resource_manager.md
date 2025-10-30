@@ -153,8 +153,8 @@ public var screenDensity: ScreenDensity
 
 ```cangjie
 public class DeviceCapability {
-    public let screenDensity: ScreenDensity
-    public let deviceType: DeviceType
+    public var screenDensity: ScreenDensity
+    public var deviceType: DeviceType
 }
 ```
 
@@ -164,33 +164,29 @@ public class DeviceCapability {
 
 **Since:** 21
 
-### let deviceType
+### var deviceType
 
 ```cangjie
-public let deviceType: DeviceType
+public var deviceType: DeviceType
 ```
 
 **Description:** Current device type.
 
 **Type:** [DeviceType](#enum-devicetype)
 
-**Access:** Read-only
-
 **System Capability:** SystemCapability.Global.ResourceManager
 
 **Since:** 21
 
-### let screenDensity
+### var screenDensity
 
 ```cangjie
-public let screenDensity: ScreenDensity
+public var screenDensity: ScreenDensity
 ```
 
 **Description:** Current device screen density.
 
 **Type:** [ScreenDensity](#enum-screendensity)
-
-**Access:** Read-only
 
 **System Capability:** SystemCapability.Global.ResourceManager
 
