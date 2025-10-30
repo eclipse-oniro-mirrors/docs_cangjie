@@ -311,10 +311,10 @@ import kit.ArkData.*
 let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let phAccessHelper = getPhotoAccessHelper(ctx)
 let predicates = DataSharePredicates()
-predicates.equalTo('album_name', Str('test1'))
-let fetchOptions: FetchOptions = FetchOptions(fetchColumns: [], predicates: predicates)
-let fetchResult: FetchResult<Album> = phAccessHelper.getAlbums(AlbumType.USER,
-    AlbumSubtype.USER_GENERIC, options: fetchOptions)
+predicates.equalTo('album_name', StringValue('test1'))
+let fetchOptions: FetchOptions = FetchOptions([], predicates)
+let fetchResult = phAccessHelper.getAlbums(AlbumType.User,
+    AlbumSubtype.UserGeneric, options: fetchOptions)
 let firstAlbum = fetchResult.getFirstObject()
 firstAlbum.albumName = "test10086"
 firstAlbum.commitModify()
@@ -376,10 +376,10 @@ import kit.ArkData.*
 let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let phAccessHelper = getPhotoAccessHelper(ctx)
 let predicates = DataSharePredicates()
-predicates.equalTo('album_name', Str('test1'))
-let fetchOptions: FetchOptions = FetchOptions(fetchColumns: [], predicates: predicates)
-let fetchResult: FetchResult<Album> = phAccessHelper.getAlbums(AlbumType.USER,
-    AlbumSubtype.USER_GENERIC, options: fetchOptions)
+predicates.equalTo('album_name', StringValue('test1'))
+let fetchOptions: FetchOptions = FetchOptions([], predicates)
+let fetchResult = phAccessHelper.getAlbums(AlbumType.User,
+    AlbumSubtype.UserGeneric, options: fetchOptions)
 let albums = fetchResult.getAllObjects()
 ```  
 
@@ -423,10 +423,10 @@ import kit.ArkData.*
 let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let phAccessHelper = getPhotoAccessHelper(ctx)
 let predicates = DataSharePredicates()
-predicates.equalTo('album_name', Str('test1'))
-let fetchOptions: FetchOptions = FetchOptions(fetchColumns: [], predicates: predicates)
-let fetchResult: FetchResult<Album> = phAccessHelper.getAlbums(AlbumType.USER,
-    AlbumSubtype.USER_GENERIC, options: fetchOptions)
+predicates.equalTo('album_name', StringValue('test1'))
+let fetchOptions: FetchOptions = FetchOptions([], predicates)
+let fetchResult = phAccessHelper.getAlbums(AlbumType.User,
+    AlbumSubtype.UserGeneric, options: fetchOptions)
 let album = fetchResult.getFirstObject()
 ```  
 
@@ -470,10 +470,10 @@ import kit.ArkData.*
 let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let phAccessHelper = getPhotoAccessHelper(ctx)
 let predicates = DataSharePredicates()
-predicates.equalTo('album_name', Str('test1'))
-let fetchOptions: FetchOptions = FetchOptions(fetchColumns: [], predicates: predicates)
-let fetchResult: FetchResult<Album> = phAccessHelper.getAlbums(AlbumType.USER,
-    AlbumSubtype.USER_GENERIC, options: fetchOptions)
+predicates.equalTo('album_name', StringValue('test1'))
+let fetchOptions: FetchOptions = FetchOptions([], predicates)
+let fetchResult = phAccessHelper.getAlbums(AlbumType.User,
+    AlbumSubtype.UserGeneric, options: fetchOptions)
 let album = fetchResult.getLastObject()
 ```  
 
@@ -517,10 +517,10 @@ import kit.ArkData.*
 let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let phAccessHelper = getPhotoAccessHelper(ctx)
 let predicates = DataSharePredicates()
-predicates.equalTo('album_name', Str('test1'))
-let fetchOptions: FetchOptions = FetchOptions(fetchColumns: [], predicates: predicates)
-let fetchResult: FetchResult<Album> = phAccessHelper.getAlbums(AlbumType.USER,
-    AlbumSubtype.USER_GENERIC, options: fetchOptions)
+predicates.equalTo('album_name', StringValue('test1'))
+let fetchOptions: FetchOptions = FetchOptions([], predicates)
+let fetchResult = phAccessHelper.getAlbums(AlbumType.User,
+    AlbumSubtype.UserGeneric, options: fetchOptions)
 let album = fetchResult.getNextObject()
 ``` 
 
@@ -570,10 +570,10 @@ import kit.ArkData.*
 let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let phAccessHelper = getPhotoAccessHelper(ctx)
 let predicates = DataSharePredicates()
-predicates.equalTo('album_name', Str('test1'))
-let fetchOptions: FetchOptions = FetchOptions(fetchColumns: [], predicates: predicates)
-let fetchResult: FetchResult<Album> = phAccessHelper.getAlbums(AlbumType.USER,
-    AlbumSubtype.USER_GENERIC, options: fetchOptions)
+predicates.equalTo('album_name', StringValue('test1'))
+let fetchOptions: FetchOptions = FetchOptions([], predicates)
+let fetchResult = phAccessHelper.getAlbums(AlbumType.User,
+    AlbumSubtype.UserGeneric, options: fetchOptions)
 let album = fetchResult.getObjectByPosition(0)
 ``` 
 
@@ -824,11 +824,11 @@ public func close(): Unit
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let phAccessHelper = getPhotoAccessHelper(ctx)
 let predicates = DataSharePredicates()
 let fetchOptions: FetchOptions = FetchOptions([], predicates)
-let fetchResult: PhotoAccessResult = phAccessHelper.getAssets(fetchOptions)
+let fetchResult = phAccessHelper.getAssets(fetchOptions)
 fetchResult.close()
 ```
 
@@ -870,11 +870,11 @@ public func getCount(): Int32
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let phAccessHelper = getPhotoAccessHelper(ctx)
 let predicates = DataSharePredicates()
 let fetchOptions: FetchOptions = FetchOptions([], predicates)
-let fetchResult: PhotoAccessResult = phAccessHelper.getAssets(fetchOptions)
+let fetchResult = phAccessHelper.getAssets(fetchOptions)
 let count = fetchResult.getCount()
 ```
 
@@ -915,11 +915,11 @@ public func isAfterLast(): Bool
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let phAccessHelper = getPhotoAccessHelper(ctx)
 let predicates = DataSharePredicates()
 let fetchOptions: FetchOptions = FetchOptions([], predicates)
-let fetchResult: PhotoAccessResult = phAccessHelper.getAssets(fetchOptions)
+let fetchResult = phAccessHelper.getAssets(fetchOptions)
 let isAfterLast = fetchResult.isAfterLast()
 ```
 
@@ -977,7 +977,7 @@ public init(album: Album)
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let phAccessHelper = getPhotoAccessHelper(ctx)
 let predicates = DataSharePredicates()
 let fetchOptions: FetchOptions = FetchOptions([], predicates)
@@ -1025,7 +1025,7 @@ public func addAssets(assets: Array<PhotoAsset>): Unit
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let phAccessHelper = getPhotoAccessHelper(ctx)
 let predicates = DataSharePredicates()
 let fetchOptions: FetchOptions = FetchOptions([], predicates)
@@ -1074,7 +1074,7 @@ public func getAlbum(): Album
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let phAccessHelper = getPhotoAccessHelper(ctx)
 let predicates = DataSharePredicates()
 let fetchOptions: FetchOptions = FetchOptions([], predicates)
@@ -1123,7 +1123,7 @@ public func removeAssets(assets: Array<PhotoAsset>): Unit
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let phAccessHelper = getPhotoAccessHelper(ctx)
 let predicates = DataSharePredicates()
 let fetchOptions: FetchOptions = FetchOptions([], predicates)
@@ -1180,7 +1180,7 @@ public func setAlbumName(name: String): Unit
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let phAccessHelper = getPhotoAccessHelper(ctx)
 let predicates = DataSharePredicates()
 let fetchOptions: FetchOptions = FetchOptions([], predicates)
@@ -1247,7 +1247,7 @@ public init(asset: PhotoAsset)
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let phAccessHelper = getPhotoAccessHelper(ctx)
 let predicates = DataSharePredicates()
 let fetchOptions = FetchOptions([], predicates)
@@ -1302,7 +1302,7 @@ public static func createAssetRequest(context: UIAbilityContext, photoType: Phot
 
 import kit.MediaLibraryKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let photoType = PhotoType.Image
 let extension = "jpg"
 let options = CreateOptions(title: "testPhoto")
@@ -1356,7 +1356,7 @@ public static func createImageAssetRequest(context: UIAbilityContext, fileUri: S
 
 import kit.MediaLibraryKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let phAccessHelper = getPhotoAccessHelper(ctx)
 let fileUri = "file://com.example.xxx/data/storage/el2/base/haps/entry/files/test.jpg"
 let assetChangeRequest = MediaAssetChangeRequest.createImageAssetRequest(ctx,
@@ -1410,7 +1410,7 @@ public static func createVideoAssetRequest(context: UIAbilityContext, fileUri: S
 
 import kit.MediaLibraryKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let phAccessHelper = getPhotoAccessHelper(ctx)
 let fileUri = "file://com.example.xxx/data/storage/el2/base/haps/entry/files/test.mp4"
 let assetChangeRequest = MediaAssetChangeRequest.createVideoAssetRequest(ctx,
@@ -1459,7 +1459,7 @@ public static func deleteAssets(context: UIAbilityContext, assets: Array<PhotoAs
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let phAccessHelper = getPhotoAccessHelper(ctx)
 let predicates = DataSharePredicates()
 let fetchOptions: FetchOptions = FetchOptions([], predicates)
@@ -1510,7 +1510,7 @@ public static func deleteAssets(context: UIAbilityContext, assets: Array<String>
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let phAccessHelper = getPhotoAccessHelper(ctx)
 let predicates = DataSharePredicates()
 let fetchOptions: FetchOptions = FetchOptions([], predicates)
@@ -1558,7 +1558,7 @@ public func addResource(resourceType: ResourceType, fileUri: String): Unit
 
 import kit.MediaLibraryKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let phAccessHelper = getPhotoAccessHelper(ctx)
 let photoType = PhotoType.Image
 let extension = "jpg"
@@ -1607,7 +1607,7 @@ public func addResource(resourceType: ResourceType, data: Array<Byte>): Unit
 
 import kit.MediaLibraryKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let phAccessHelper = getPhotoAccessHelper(ctx)
 let photoType = PhotoType.Image
 let extension = "jpg"
@@ -1649,7 +1649,7 @@ public func discardCameraPhoto(): Unit
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let phAccessHelper = getPhotoAccessHelper(ctx)
 let predicates = DataSharePredicates()
 let fetchOptions = FetchOptions([], predicates)
@@ -1697,7 +1697,7 @@ public func getAsset(): PhotoAsset
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let phAccessHelper = getPhotoAccessHelper(ctx)
 let predicates = DataSharePredicates()
 let fetchOptions: FetchOptions = FetchOptions([], predicates)
@@ -1748,7 +1748,7 @@ public func getWriteCacheHandler(): Int32
 import kit.MediaLibraryKit.*
 import kit.CoreFileKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let phAccessHelper = getPhotoAccessHelper(ctx)
 let assetChangeRequest = MediaAssetChangeRequest.createAssetRequest(ctx,
     PhotoType.Video, "mp4")
@@ -1788,7 +1788,7 @@ public func saveCameraPhoto(): Unit
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let phAccessHelper = getPhotoAccessHelper(ctx)
 let predicates = DataSharePredicates()
 let fetchOptions = FetchOptions([], predicates)
@@ -1836,7 +1836,7 @@ public func setTitle(title: String): Unit
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let phAccessHelper = getPhotoAccessHelper(ctx)
 let predicates = DataSharePredicates()
 let fetchOptions: FetchOptions = FetchOptions([], predicates)
@@ -1940,7 +1940,7 @@ public func getAlbums(albumType: AlbumType, subtype: AlbumSubtype,
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let phAccessHelper = getPhotoAccessHelper(ctx)
 let predicates = DataSharePredicates()
 let fetchOptions: FetchOptions = FetchOptions([], predicates)
@@ -1994,7 +1994,7 @@ public func getAssets(options: FetchOptions): PhotoAssetResult
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let phAccessHelper = getPhotoAccessHelper(ctx)
 let predicates = DataSharePredicates()
 let fetchOptions: FetchOptions = FetchOptions([], predicates)
@@ -2047,11 +2047,11 @@ public func getBurstAssets(burstKey: String, options: FetchOptions): PhotoAssetR
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let phAccessHelper = getPhotoAccessHelper(ctx)
 let predicates = DataSharePredicates()
 let fetchOptions: FetchOptions = FetchOptions([], predicates)
-let burstKey = YOUR_UUID // 请输入uuid
+let burstKey = "YOUR_UUID" // 请输入uuid
 let fetchResult: PhotoAssetResult = phAccessHelper.getBurstAssets(burstKey, fetchOptions)
 ```
 
@@ -2095,7 +2095,7 @@ public func registerChange(uri: String, forChildUris: Bool, callback: Callback1A
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
 
-import ohos.base.*
+import kit.PerformanceAnalysisKit.*
 import ohos.business_exception.BusinessException
 import ohos.callback_invoke.*
 
@@ -2110,7 +2110,7 @@ class MyCallback<T> <: Callback1Argument<T> {
     }
 }
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let phAccessHelper = getPhotoAccessHelper(ctx)
 let callback1 = MyCallback<ChangeData>(
     {
@@ -2157,7 +2157,7 @@ public func release(): Unit
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let phAccessHelper = getPhotoAccessHelper(ctx)
 let predicates = DataSharePredicates()
 let fetchOptions: FetchOptions = FetchOptions([], predicates)
@@ -2206,7 +2206,7 @@ public func showAssetsCreationDialog(srcFileUris: Array<String>, photoCreationCo
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
 
-import ohos.base.*
+import kit.PerformanceAnalysisKit.*
 import ohos.business_exception.BusinessException
 import ohos.callback_invoke.*
 
@@ -2221,7 +2221,7 @@ class MyCallback<T> <: Callback1Argument<T> {
     }
 }
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let phAccessHelper = getPhotoAccessHelper(ctx)
 let callback3 = MyCallback<Array<String>>(
     {
@@ -2285,7 +2285,7 @@ public func unRegisterChange(uri: String, callback!: ?Callback1Argument<ChangeDa
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
 
-import ohos.base.*
+import kit.PerformanceAnalysisKit.*
 import ohos.callback_invoke.*
 import ohos.business_exception.BusinessException
 
@@ -2300,7 +2300,7 @@ class MyCallback<T> <: Callback1Argument<T> {
     }
 }
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let phAccessHelper = getPhotoAccessHelper(ctx)
 let callback1 = MyCallback<ChangeData>(
     {
@@ -2414,21 +2414,16 @@ public func commitModify(): Unit
 
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
-import ohos.base.*
+import kit.PerformanceAnalysisKit.*
 
 let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let phAccessHelper = getPhotoAccessHelper(ctx)
 let predicates = DataSharePredicates()
-let fetchColumns = [PhotoKeys
-    .TITLE
-    .toString()]
-let fetchOptions: FetchOptions = FetchOptions(fetchColumns: fetchColumns, predicates: predicates
-)
-let fetchResult: FetchResult<PhotoAsset> = phAccessHelper.getAssets(fetchOptions)
+let fetchColumns = [PhotoKeys.Title.toString()]
+let fetchOptions: FetchOptions = FetchOptions(fetchColumns, predicates)
+let fetchResult = phAccessHelper.getAssets(fetchOptions)
 let firstPhotoAsset = fetchResult.getFirstObject()
-let photoAssetTitle = firstPhotoAsset
-    .get('title')
-    .getString()
+let photoAssetTitle = firstPhotoAsset.get('title')
 let newTitle = "123456789"
 firstPhotoAsset.set('title', newTitle)
 firstPhotoAsset.commitModify()
@@ -2450,7 +2445,7 @@ public func get(member: String): MemberType
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|member|String|是|-|成员参数名称，在get时，除了'uri'、'media_type'、'subtype'和'display_name'四个属性之外，其他的属性都需要在fetchColumns中填入需要get的[PhotoKeys](./cj-apis-file-photo_access_helper.md#enum-photokeys)，例如：get title属性fetchColumns: ['title']。|
+|member|String|是|-|成员参数名称，在get时，除了'uri'、'media_type'、'subtype'和'display_name'四个属性之外，其他的属性都需要在fetchColumns中填入需要get的[PhotoKeys](./cj-apis-file-photo_access_helper.md#enum-photokeys)，例如：get title属性['title']。|
 
 **返回值：**
 
@@ -2477,21 +2472,16 @@ public func get(member: String): MemberType
 
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
-import ohos.base.*
+import kit.PerformanceAnalysisKit.*
 
 let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let phAccessHelper = getPhotoAccessHelper(ctx)
 let predicates = DataSharePredicates()
-let fetchColumns = [PhotoKeys
-    .TITLE
-    .toString()]
-let fetchOptions: FetchOptions = FetchOptions(fetchColumns: fetchColumns, predicates: predicates
-)
-let fetchResult: FetchResult<PhotoAsset> = phAccessHelper.getAssets(fetchOptions)
+let fetchColumns = [PhotoKeys.Title.toString()]
+let fetchOptions: FetchOptions = FetchOptions(fetchColumns, predicates)
+let fetchResult = phAccessHelper.getAssets(fetchOptions)
 let firstPhotoAsset = fetchResult.getFirstObject()
-let photoAssetTitle = firstPhotoAsset
-    .get('title')
-    .getString()
+let photoAssetTitle = firstPhotoAsset.get('title')
 ```
 
 ### func getThumbnail(?Size)
@@ -2541,17 +2531,14 @@ public func getThumbnail(size!: ?Size = Size(256, 256)): PixelMap
 
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
-import ohos.base.*
+import kit.PerformanceAnalysisKit.*
 
 let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let phAccessHelper = getPhotoAccessHelper(ctx)
 let predicates = DataSharePredicates()
-let fetchColumns = [PhotoKeys
-    .TITLE
-    .toString()]
-let fetchOptions: FetchOptions = FetchOptions(fetchColumns: fetchColumns, predicates: predicates
-)
-let fetchResult: FetchResult<PhotoAsset> = phAccessHelper.getAssets(fetchOptions)
+let fetchColumns = [PhotoKeys.Title.toString()]
+let fetchOptions: FetchOptions = FetchOptions(fetchColumns, predicates)
+let fetchResult = phAccessHelper.getAssets(fetchOptions)
 let firstPhotoAsset = fetchResult.getFirstObject()
 let pixm = firstPhotoAsset.getThumbnail()
 ```
@@ -2594,21 +2581,15 @@ public func set(member: String, value: String): Unit
 
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
-import ohos.base.*
+import kit.PerformanceAnalysisKit.*
 
 let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let phAccessHelper = getPhotoAccessHelper(ctx)
 let predicates = DataSharePredicates()
-let fetchColumns = [PhotoKeys
-    .TITLE
-    .toString()]
-let fetchOptions: FetchOptions = FetchOptions(fetchColumns: fetchColumns, predicates: predicates
-)
-let fetchResult: FetchResult<PhotoAsset> = phAccessHelper.getAssets(fetchOptions)
+let fetchColumns = [PhotoKeys.Title.toString()]
+let fetchOptions: FetchOptions = FetchOptions(fetchColumns, predicates)
+let fetchResult = phAccessHelper.getAssets(fetchOptions)
 let firstPhotoAsset = fetchResult.getFirstObject()
-let photoAssetTitle = firstPhotoAsset
-    .get('title')
-    .getString()
 let newTitle = "123456789"
 firstPhotoAsset.set('title', newTitle)
 ```

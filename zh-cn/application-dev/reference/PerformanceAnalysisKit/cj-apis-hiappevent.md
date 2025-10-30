@@ -405,18 +405,12 @@ public func setSize(size: Int32): Unit
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.PerformanceAnalysisKit.*
-import kit.PerformanceAnalysisKit.Hilog
 
 // 添加数据观察者“Watcher1”，订阅监听系统事件
 HiAppEvent.addWatcher(Watcher(
     "Watcher1",
-    appEventFilters: [
-        AppEventFilter(
-
-        )
-    ]
+    appEventFilters: [ AppEventFilter("button")]
 ))
 
 let holder = AppEventPackageHolder("watcher2")
@@ -448,16 +442,14 @@ public func takeNext(): Option<AppEventPackage>
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.PerformanceAnalysisKit.*
-import kit.PerformanceAnalysisKit.Hilog
 
 let holder = AppEventPackageHolder("watcher3")
 if (let Some(v) <- holder.takeNext()) {
     let eventPkg = v
-    Hilog.info(0, "AppLogCj", "HiAppEvent packageId=${eventPkg.packageId}")
-    Hilog.info(0, "AppLogCj", "HiAppEvent row=${eventPkg.row}")
-    Hilog.info(0, "AppLogCj", "HiAppEvent size=${eventPkg.size}")
+    Hilog.info(0, "AppLogCj", "HiAppEvent packageId=${eventPkg.packageId}", "")
+    Hilog.info(0, "AppLogCj", "HiAppEvent row=${eventPkg.row}", "")
+    Hilog.info(0, "AppLogCj", "HiAppEvent size=${eventPkg.size}", "")
 }
 ```
 
@@ -791,13 +783,11 @@ Processor的配置信息需要由数据处理者提供，目前设备内暂未�
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.PerformanceAnalysisKit.*
-import kit.PerformanceAnalysisKit.Hilog
 
 var processor : Processor = Processor("test_processor")
 let processorId = HiAppEvent.addProcessor(processor)
-Hilog.info(0, "AppLogCj", "HiAppEvent::processorId is ${processorId}.")
+Hilog.info(0, "AppLogCj", "HiAppEvent::processorId is ${processorId}.", "")
 ```
 
 ### static func addWatcher(Watcher)
@@ -844,9 +834,7 @@ public static func addWatcher(watcher: Watcher): Option<AppEventPackageHolder>
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.PerformanceAnalysisKit.*
-import kit.PerformanceAnalysisKit.Hilog
 
 func f1(){
     // 如果观察者传入了回调的相关参数，则可以选择在自动触发的回调函数中对订阅事件进行处理
@@ -854,14 +842,14 @@ func f1(){
     var appEventFilter = [AppEventFilter("button")]
     var watcher = Watcher("watcher1", triggerCondition: condition,
         onTrigger:  Some({ row, size, holder =>
-            Hilog.info(0, "AppLogCj", "HiAppEvent onTrigger: curRow=${row}, curSize=${size}")
+            Hilog.info(0, "AppLogCj", "HiAppEvent onTrigger: curRow=${row}, curSize=${size}", "")
             while (let Some(v) <- holder.takeNext()) {
                 let eventPkg = v
-                Hilog.info(0, "AppLogCj", "HiAppEvent packageId=${eventPkg.packageId}")
-                Hilog.info(0, "AppLogCj", "HiAppEvent row=${eventPkg.row}")
-                Hilog.info(0, "AppLogCj", "HiAppEvent size=${eventPkg.size}")
+                Hilog.info(0, "AppLogCj", "HiAppEvent packageId=${eventPkg.packageId}", "")
+                Hilog.info(0, "AppLogCj", "HiAppEvent row=${eventPkg.row}", "")
+                Hilog.info(0, "AppLogCj", "HiAppEvent size=${eventPkg.size}", "")
                 for (i in 0..eventPkg.data.size) {
-                    Hilog.info(0, "AppLogCj", "HiAppEvent info=${eventPkg.data[i]}")
+                    Hilog.info(0, "AppLogCj", "HiAppEvent info=${eventPkg.data[i]}", "")
                 }
              }
      }))
@@ -875,11 +863,11 @@ func f2(){
     if (let Some(v1) <- holder) {
        while (let Some(v2) <- v1.takeNext()) {
             let eventPkg = v2
-            Hilog.info(0, "test_hiAppEvent_addWatcher", "HiAppEvent packageId=${eventPkg.packageId}")
-            Hilog.info(0, "test_hiAppEvent_addWatcher", "HiAppEvent row=${eventPkg.row}")
-            Hilog.info(0, "test_hiAppEvent_addWatcher", "HiAppEvent size=${eventPkg.size}")
+            Hilog.info(0, "test_hiAppEvent_addWatcher", "HiAppEvent packageId=${eventPkg.packageId}", "")
+            Hilog.info(0, "test_hiAppEvent_addWatcher", "HiAppEvent row=${eventPkg.row}", "")
+            Hilog.info(0, "test_hiAppEvent_addWatcher", "HiAppEvent size=${eventPkg.size}", "")
             for (i in 0..eventPkg.data.size) {
-                Hilog.info(0, "test_hiAppEvent_addWatcher", "HiAppEvent info=${eventPkg.data[i]}")
+                Hilog.info(0, "test_hiAppEvent_addWatcher", "HiAppEvent info=${eventPkg.data[i]}", "")
             }
         }
      }
@@ -890,16 +878,16 @@ func f3(){
     var condition = TriggerCondition(row: 1, size: 100)
     let watcher= Watcher("watcher", triggerCondition: condition,
              onTrigger: {row, size, holder =>
-                Hilog.info(0, "AppLogCj", "HiAppEvent onTrigger: curRow=${row}, curSize=${size}")},
+                Hilog.info(0, "AppLogCj", "HiAppEvent onTrigger: curRow=${row}, curSize=${size}", "")},
              onReceive: {domain, AppEventGroups =>
                 Hilog.info(0, "AppLogCj", "domain =${domain}")
                 let groupSize = AppEventGroups.size
                 for (i in 0..groupSize) {
-                    Hilog.info(0, "AppLogCj", "name =${AppEventGroups[i].name}")
+                    Hilog.info(0, "AppLogCj", "name =${AppEventGroups[i].name}", "")
                     let appInfosize = AppEventGroups[i].appEventInfos.size
                     for (j in 0..appInfosize) {
-                        Hilog.info(0, "AppLogCj", "appEventInfo name=${AppEventGroups[i].appEventInfos[j].name}")
-                        Hilog.info(0, "AppLogCj", "appEventInfo domain=${AppEventGroups[i].appEventInfos[j].domain}")
+                        Hilog.info(0, "AppLogCj", "appEventInfo name=${AppEventGroups[i].appEventInfos[j].name}", "")
+                        Hilog.info(0, "AppLogCj", "appEventInfo domain=${AppEventGroups[i].appEventInfos[j].domain}", "")
                         Hilog.info(0, "AppLogCj", "appEventInfo event=${AppEventGroups[i].appEventInfos[j].eventType.getValue()}", "")
                         let paSize = AppEventGroups[i].appEventInfos[j].params.size
                         for ((k, v) in AppEventGroups[i].appEventInfos[j].params) {
@@ -938,10 +926,9 @@ public static func clearData(): Unit
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.PerformanceAnalysisKit.*
 import std.collection.ArrayList
-import std.collection.Map
+import std.collection.HashMap
 
 let params = HashMap<String, EventValueType>()
 params.add("cangjie", IntValue(1001))
@@ -976,7 +963,6 @@ public static func configure(config: ConfigOption): Unit
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.PerformanceAnalysisKit.*
 
 var config : ConfigOption = ConfigOption(maxStorage: "100M", disable: true)
@@ -1015,7 +1001,6 @@ public static func getUserId(name: String): String
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.PerformanceAnalysisKit.*
 
 HiAppEvent.setUserId("test_getUserId_name", "test_getUserId_value")
@@ -1054,7 +1039,6 @@ public static func getUserProperty(name: String): String
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.PerformanceAnalysisKit.*
 
 HiAppEvent.setUserProperty("test_setUserProperty_name", "test_setUserProperty_value")
@@ -1087,7 +1071,6 @@ public static func removeProcessor(id: Int64): Unit
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.PerformanceAnalysisKit.*
 
 var processor : Processor = Processor("test_processor")
@@ -1130,7 +1113,6 @@ public static func removeWatcher(watcher: Watcher): Unit
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.PerformanceAnalysisKit.*
 
 // 定义一个应用事件观察者

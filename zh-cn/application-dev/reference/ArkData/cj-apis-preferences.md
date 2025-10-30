@@ -186,13 +186,13 @@ public static func deletePreferences(context: UIAbilityContext, name: String): U
 // index.cj
 
 import kit.ArkData.*
-import ohos.base.*
+import kit.PerformanceAnalysisKit.*
 
 // 获取 Preferences 实例
-let preferences = Preferences.getPreferences(Global.abilityContext, "myStore")  // 需获取Context应用上下文，详见本文使用说明
+let preferences = Preferences.getPreferences(Global.getAbilityContext(), "myStore")  // 需获取Context应用上下文，详见本文使用说明
 try {
     // 删除 Preferences 实例
-    Preferences.deletePreferences(Global.abilityContext, "myStore")
+    Preferences.deletePreferences(Global.getAbilityContext(), "myStore")
 } catch (e: Exception) {
     Hilog.error(0, "AppLogCj", "delete Preferences failed")
 }
@@ -245,13 +245,13 @@ public static func deletePreferences(context: UIAbilityContext, options: Prefere
 // index.cj
 
 import kit.ArkData.*
-import ohos.base.*
+import kit.PerformanceAnalysisKit.*
 
 // 获取 Preferences 实例
-let preferences = Preferences.getPreferences(Global.abilityContext, "myStore")  // 需获取Context应用上下文，详见本文使用说明
+let preferences = Preferences.getPreferences(Global.getAbilityContext(), "myStore")  // 需获取Context应用上下文，详见本文使用说明
 try {
     // 删除 Preferences 实例
-    Preferences.deletePreferences(Global.abilityContext, "myStore")
+    Preferences.deletePreferences(Global.getAbilityContext(), "myStore")
 } catch (e: Exception) {
     Hilog.error(0, "AppLogCj", "delete Preferences failed")
 }
@@ -310,13 +310,12 @@ public static func getPreferences(context: UIAbilityContext, name: String): Pref
 // index.cj
 
 import kit.ArkData.*
-import ohos.data.preferences.PreferencesOptions
-import ohos.base.*
+import kit.PerformanceAnalysisKit.*
 
-let preferences = Preferences.getPreferences(Global.abilityContext, PreferencesOptions("mystore", dataGroupId:"myGroupID")) // 需获取Context应用上下文，详见本文使用说明
+let preferences = Preferences.getPreferences(Global.getAbilityContext(), PreferencesOptions("mystore", dataGroupId:"myGroupID")) // 需获取Context应用上下文，详见本文使用说明
 try {
     // 删除 Preferences 实例的缓存
-    Preferences.removePreferencesFromCache(Global.abilityContext, PreferencesOptions("mystore", dataGroupId:"myGroupID"))
+    Preferences.removePreferencesFromCache(Global.getAbilityContext(), PreferencesOptions("mystore", dataGroupId:"myGroupID"))
 } catch (e: Exception) {
     Hilog.error(0, "AppLogCj", "Failed to remove cache for preferences")
 }
@@ -375,13 +374,12 @@ public static func getPreferences(context: UIAbilityContext, options: Preference
 // index.cj
 
 import kit.ArkData.*
-import ohos.data.preferences.PreferencesOptions
-import ohos.base.*
+import kit.PerformanceAnalysisKit.*
 
-let preferences = Preferences.getPreferences(Global.abilityContext, PreferencesOptions("mystore", dataGroupId:"myGroupID")) // 需获取Context应用上下文，详见本文使用说明
+let preferences = Preferences.getPreferences(Global.getAbilityContext(), PreferencesOptions("mystore", dataGroupId:"myGroupID")) // 需获取Context应用上下文，详见本文使用说明
 try {
     // 删除 Preferences 实例的缓存
-    Preferences.removePreferencesFromCache(Global.abilityContext, PreferencesOptions("mystore", dataGroupId:"myGroupID"))
+    Preferences.removePreferencesFromCache(Global.getAbilityContext(), PreferencesOptions("mystore", dataGroupId:"myGroupID"))
 } catch (e: Exception) {
     Hilog.error(0, "AppLogCj", "Failed to remove cache for preferences")
 }
@@ -428,13 +426,12 @@ public static func removePreferencesFromCache(context: UIAbilityContext, name: S
 // index.cj
 
 import kit.ArkData.*
-import ohos.data.preferences.PreferencesOptions
-import ohos.base.*
+import kit.PerformanceAnalysisKit.*
 
-let preferences = Preferences.getPreferences(Global.abilityContext, PreferencesOptions("mystore", dataGroupId:"myGroupID")) // 需获取Context应用上下文，详见本文使用说明
+let preferences = Preferences.getPreferences(Global.getAbilityContext(), PreferencesOptions("mystore", dataGroupId:"myGroupID")) // 需获取Context应用上下文，详见本文使用说明
 try {
     // 删除 Preferences 实例的缓存
-    Preferences.removePreferencesFromCache(Global.abilityContext, PreferencesOptions("mystore", dataGroupId:"myGroupID"))
+    Preferences.removePreferencesFromCache(Global.getAbilityContext(), PreferencesOptions("mystore", dataGroupId:"myGroupID"))
 } catch (e: Exception) {
     Hilog.error(0, "AppLogCj", "Failed to remove cache for preferences")
 }
@@ -490,13 +487,12 @@ public static func removePreferencesFromCache(context: UIAbilityContext, options
 // index.cj
 
 import kit.ArkData.*
-import ohos.data.preferences.PreferencesOptions
-import ohos.base.*
+import kit.PerformanceAnalysisKit.*
 
-let preferences = Preferences.getPreferences(Global.abilityContext, PreferencesOptions("mystore", dataGroupId:"myGroupID")) // 需获取Context应用上下文，详见本文使用说明
+let preferences = Preferences.getPreferences(Global.getAbilityContext(), PreferencesOptions("mystore", dataGroupId:"myGroupID")) // 需获取Context应用上下文，详见本文使用说明
 try {
     // 删除 Preferences 实例的缓存
-    Preferences.removePreferencesFromCache(Global.abilityContext, PreferencesOptions("mystore", dataGroupId:"myGroupID"))
+    Preferences.removePreferencesFromCache(Global.getAbilityContext(), PreferencesOptions("mystore", dataGroupId:"myGroupID"))
 } catch (e: Exception) {
     Hilog.error(0, "AppLogCj", "Failed to remove cache for preferences")
 }
@@ -532,10 +528,8 @@ public func clear(): Unit
 // index.cj
 
 import kit.ArkData.*
-import ohos.data.preferences.PreferencesOptions
-import ohos.data.preferences.PreferencesValueType
 
-let preferences = Preferences.getPreferences(Global.abilityContext, PreferencesOptions("mystore", dataGroupId:"myGroupID")) // 需获取Context应用上下文，详见本文使用说明
+let preferences = Preferences.getPreferences(Global.getAbilityContext(), PreferencesOptions("mystore", dataGroupId:"myGroupID")) // 需获取Context应用上下文，详见本文使用说明
 preferences.put("myKey", PreferencesValueType.StringData("myValue"))
 preferences.clear()
 ```
@@ -577,7 +571,7 @@ public func delete(key: String): Unit
 import kit.ArkData.*
 
 // 获取 Preferences 实例
-let preferences = Preferences.getPreferences(Global.abilityContext, "myStore") // 需获取Context应用上下文，详见本文使用说明
+let preferences = Preferences.getPreferences(Global.getAbilityContext(), "myStore") // 需获取Context应用上下文，详见本文使用说明
 preferences.delete("startup")
 ```
 
@@ -611,10 +605,8 @@ public func flush(): Unit
 // index.cj
 
 import kit.ArkData.*
-import ohos.data.preferences.PreferencesOptions
-import ohos.data.preferences.PreferencesValueType
 
-let preferences = Preferences.getPreferences(Global.abilityContext, PreferencesOptions("mystore", dataGroupId:"myGroupID")) // 需获取Context应用上下文，详见本文使用说明
+let preferences = Preferences.getPreferences(Global.getAbilityContext(), PreferencesOptions("mystore", dataGroupId:"myGroupID")) // 需获取Context应用上下文，详见本文使用说明
 preferences.put("myKey", PreferencesValueType.StringData("myValue"))
 preferences.flush()
 ```
@@ -662,13 +654,11 @@ public func get(key: String, defValue: PreferencesValueType): PreferencesValueTy
 // index.cj
 
 import kit.ArkData.*
-import ohos.data.preferences.PreferencesOptions
-import ohos.data.preferences.PreferencesValueType
-import ohos.base.*
+import kit.PerformanceAnalysisKit.*
 
 import kit.PerformanceAnalysisKit.Hilog
 
-let preferences = Preferences.getPreferences(Global.abilityContext, PreferencesOptions("mystore", dataGroupId:"myGroupID")) // 需获取Context应用上下文，详见本文使用说明
+let preferences = Preferences.getPreferences(Global.getAbilityContext(), PreferencesOptions("mystore", dataGroupId:"myGroupID")) // 需获取Context应用上下文，详见本文使用说明
 var value = preferences.get("key", PreferencesValueType.Integer(0))
 match (value) {
     case PreferencesValueType.Integer(n) => Hilog.info(0, "AppLogCj", "获取到的值为${n}")
@@ -712,12 +702,11 @@ public func getAll(): HashMap<String, PreferencesValueType>
 // index.cj
 
 import kit.ArkData.*
-import ohos.data.preferences.PreferencesOptions
-import ohos.base.*
+import kit.PerformanceAnalysisKit.*
 
 import kit.PerformanceAnalysisKit.Hilog
 
-let preferences = Preferences.getPreferences(Global.abilityContext, PreferencesOptions("mystore", dataGroupId:"myGroupID")) // 需获取Context应用上下文，详见本文使用说明
+let preferences = Preferences.getPreferences(Global.getAbilityContext(), PreferencesOptions("mystore", dataGroupId:"myGroupID")) // 需获取Context应用上下文，详见本文使用说明
 var values = preferences.getAll()
 for ((k, v) in values) {
     match (v) {
@@ -771,12 +760,9 @@ public func has(key: String): Bool
 // index.cj
 
 import kit.ArkData.*
-import ohos.data.preferences.PreferencesOptions
-import ohos.base.*
+import kit.PerformanceAnalysisKit.*
 
-import kit.PerformanceAnalysisKit.Hilog
-
-let preferences = Preferences.getPreferences(Global.abilityContext, PreferencesOptions("mystore", dataGroupId:"myGroupID")) // 需获取Context应用上下文，详见本文使用说明
+let preferences = Preferences.getPreferences(Global.getAbilityContext(), PreferencesOptions("mystore", dataGroupId:"myGroupID")) // 需获取Context应用上下文，详见本文使用说明
 let hasKey = preferences.has("startup")
 if (hasKey) {
     Hilog.info(0, "AppLogCj", "The key 'startup' is contained.")
@@ -821,11 +807,9 @@ public func off(event :PreferencesEvent, callback!: ?Callback1Argument<String> =
 // index.cj
 
 import kit.ArkData.*
-import ohos.base.*
+import kit.PerformanceAnalysisKit.*
 import ohos.callback_invoke.*
 import ohos.business_exception.*
-import ohos.data.preferences.PreferencesValueType
-
 import kit.PerformanceAnalysisKit.Hilog
 
 // 此处代码可添加在依赖项定义中
@@ -837,7 +821,7 @@ class Callback <: Callback1Argument<String> {
 }
 
 var str = "container"
-var a = Preferences.getPreferences(Global.abilityContext, str) // 需获取Context应用上下文，详见本文使用说明
+var a = Preferences.getPreferences(Global.getAbilityContext(), str) // 需获取Context应用上下文，详见本文使用说明
 var c = Callback()
 a.on(PreferencesEvent.PreferencesChange, c)
 a.off(PreferencesEvent.PreferencesChange)
@@ -872,10 +856,9 @@ public func on(event :PreferencesEvent, callback: Callback1Argument<String>): Un
 // index.cj
 
 import kit.ArkData.*
-import ohos.base.*
+import kit.PerformanceAnalysisKit.*
 import ohos.callback_invoke.*
 import ohos.business_exception.*
-import ohos.data.preferences.PreferencesValueType
 
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -887,7 +870,7 @@ class Callback <: Callback1Argument<String> {
 }
 
 var str = "container"
-var a = Preferences.getPreferences(Global.abilityContext, str) // 需获取Context应用上下文，详见本文使用说明
+var a = Preferences.getPreferences(Global.getAbilityContext(), str) // 需获取Context应用上下文，详见本文使用说明
 var c = Callback()
 a.on(PreferencesEvent.PreferencesChange, c)
 a.put("kkk1", PreferencesValueType.StringData("vvv1"))
@@ -931,10 +914,8 @@ public func put(key: String, value: PreferencesValueType): Unit
 // index.cj
 
 import kit.ArkData.*
-import ohos.data.preferences.PreferencesOptions
-import ohos.data.preferences.PreferencesValueType
 
-var preferences = Preferences.getPreferences(Global.abilityContext, PreferencesOptions("mystore", dataGroupId:"myGroupID")) // 需获取Context应用上下文，详见本文使用说明
+var preferences = Preferences.getPreferences(Global.getAbilityContext(), PreferencesOptions("mystore", dataGroupId:"myGroupID")) // 需获取Context应用上下文，详见本文使用说明
 preferences.put("Monday", PreferencesValueType.StringData("今天天气真好"))
 ```
 

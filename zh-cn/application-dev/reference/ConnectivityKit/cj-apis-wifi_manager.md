@@ -60,7 +60,6 @@ public func getScanInfoList(): Array<WifiScanInfo>
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.ConnectivityKit.*
 
 let scanInfoList = getScanInfoList()
@@ -100,7 +99,6 @@ public func isWifiActive(): Bool
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.ConnectivityKit.*
 
 let isWifiActive = isWifiActive()
@@ -144,12 +142,18 @@ public func off(eventType: WifiCallbackType, callback!: ?CallbackObject = None):
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.ConnectivityKit.*
+import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
+import ohos.callback_invoke.*
 
-let callback = WifiCallback1<Int32>() {
-    i => AppLog.info("callback invoked")
+class WifiCallback <: Callback1Argument<Int32> {
+    public func invoke(err: ?BusinessException, arg: Int32) {
+        Hilog.info(0, "test", "invoke success", "")
+    }
 }
+
+let callback = WifiCallback()
 // Register event
 on(WifiScanStateChange, callback)
 // Unregister event
@@ -194,12 +198,18 @@ public func on(eventType: WifiCallbackType, callback: Callback1Argument<Int32>):
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.ConnectivityKit.*
+import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
+import ohos.callback_invoke.*
 
-let callback = WifiCallback1<Int32>() {
-    i => AppLog.info("callback invoked")
+class WifiCallback <: Callback1Argument<Int32> {
+    public func invoke(err: ?BusinessException, arg: Int32) {
+        Hilog.info(0, "test", "invoke success", "")
+    }
 }
+
+let callback = WifiCallback()
 // Register event
 on(WifiScanStateChange, callback)
 // Unregister event
@@ -238,7 +248,6 @@ public func p2pCancelConnect(): Unit
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.ConnectivityKit.*
 
 p2pCancelConnect()
@@ -282,51 +291,10 @@ public func p2pConnect(config: WifiP2PConfig): Unit
 ```cangjie
 // index.cj
 
-import std.sync.Timer
-import ohos.base.*
 import kit.ConnectivityKit.*
 
-let recvP2pConnectionChangeFunc = WifiCallback1<WifiP2pLinkedInfo>({ result =>
-    AppLog.info("p2p connection change receive event: ${result}")
-    let info = getP2pLinkedInfo()
-    AppLog.info(info.toString())
-})
-
-onP2pConnectionChange(recvP2pConnectionChangeFunc)
-
-let recvP2pDeviceChangeFunc = WifiCallback1<WifiP2pDevice>({ result =>
-    AppLog.info("p2p device change receive event: ${result}")
-})
-onP2pDeviceChange(recvP2pDeviceChangeFunc)
-
-let recvP2pPeerDeviceChangeFunc = WifiCallback1<Array<WifiP2pDevice>>({ result =>
-    AppLog.info("p2p peer device change receive event: ${result}")
-    let devices = getP2pPeerDevices()
-    AppLog.info("get peer devices: ${devices}")
-    for(device in devices) {
-        if (device.deviceName == "my_test_device") {
-            AppLog.info("p2p connect to test device: ${device.deviceAddress}")
-            let config = WifiP2PConfig(device.deviceAddress, -2, "", "", GroupOwnerBand.GO_BAND_AUTO)
-            p2pConnect(config)
-        }
-    }
-})
-onP2pPeerDeviceChange(recvP2pPeerDeviceChangeFunc)
-
-let recvP2pPersistentGroupChangeFunc = WifiCallback0({ =>
-    AppLog.info("p2p persistent group change receive event")
-    let group = getCurrentGroup()
-    AppLog.info("get current group: ${group}")
-})
-onP2pPersistentGroupChange(recvP2pPersistentGroupChangeFunc)
-
-Timer.once(Duration.second * 125, { => offP2pConnectionChange(callback: recvP2pConnectionChangeFunc) })
-Timer.once(Duration.second * 125, { => offP2pDeviceChange(callback: recvP2pDeviceChangeFunc) })
-Timer.once(Duration.second * 125, { => offP2pPeerDeviceChange(callback: recvP2pPeerDeviceChangeFunc) })
-Timer.once(Duration.second * 125, { => offP2pPersistentGroupChange(callback: recvP2pPersistentGroupChangeFunc) })
-
-AppLog.info("start discover devices")
-startDiscoverDevices()
+let config = WifiP2PConfig("xx:xx:xx:xx", -2, "", "", GroupOwnerBand.GoBandAuto)
+p2pConnect(config)
 ```
 
 ## func startDiscoverDevices()
@@ -361,9 +329,7 @@ public func startDiscoverDevices(): Unit
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.ConnectivityKit.*
-import std.sync.Timer
 
 startDiscoverDevices()
 ```
@@ -400,9 +366,7 @@ public func stopDiscoverDevices(): Unit
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.ConnectivityKit.*
-import std.sync.Timer
 
 stopDiscoverDevices()
 ```

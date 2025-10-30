@@ -627,7 +627,7 @@ import kit.IPCKit.*
 import kit.CoreFileKit.*
 
 let filePath = "path/to/file"
-let file = FileFs.open(filePath, mode: (OpenMode.CREATE.mode | OpenMode.READ_WRITE.mode))
+let file = FileIo.open(filePath, mode: (OpenMode.CREATE | OpenMode.READ_WRITE))
 MessageSequence.closeFileDescriptor(file.fd)
 ```
 
@@ -715,7 +715,7 @@ import kit.IPCKit.*
 import kit.CoreFileKit.*
 
 let filePath = "path/to/file"
-let file = FileFs.open(filePath, mode: (OpenMode.CREATE.mode | OpenMode.READ_WRITE.mode))
+let file = FileIo.open(filePath, mode: (OpenMode.CREATE | OpenMode.READ_WRITE))
 MessageSequence.dupFileDescriptor(file.fd)
 ```
 
@@ -2797,7 +2797,7 @@ import kit.CoreFileKit.*
 
 let data = MessageSequence.create()
 let filePath = "path/to/file"
-let file = FileFs.open(filePath, mode: (OpenMode.CREATE.mode | OpenMode.READ_WRITE.mode))
+let file = FileIo.open(filePath, mode: (OpenMode.CREATE | OpenMode.READ_WRITE))
 data.writeFileDescriptor(file.fd)
 ```
 
@@ -2880,7 +2880,7 @@ public func writeFloatArray(floatArray: Array<Float32>): Unit
 import kit.IPCKit.*
 
 let data = MessageSequence.create()
-data.writeFloat32Array([1.1])
+data.writeFloatArray([1.1])
 ```
 
 ### func writeInt(Int32)

@@ -63,7 +63,6 @@ public func addAbilityMonitor(monitor: AbilityMonitor): Unit
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.AbilityKit.*
 import kit.TestKit.*
 
@@ -109,7 +108,6 @@ public func addAbilityStageMonitor(monitor: AbilityStageMonitor): Unit
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.AbilityKit.*
 import kit.TestKit.*
 
@@ -152,7 +150,6 @@ public func doAbilityBackground(ability: UIAbility): Unit
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.AbilityKit.*
 import kit.TestKit.*
 
@@ -195,7 +192,6 @@ public func doAbilityForeground(ability: UIAbility): Unit
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.AbilityKit.*
 import kit.TestKit.*
 
@@ -236,13 +232,12 @@ public func executeShellCommand(cmd: String, timeoutSecs!: Int64 = 0): ShellCmdR
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.AbilityKit.*
 import kit.TestKit.*
 
 let delegator = AbilityDelegatorRegistry.getAbilityDelegator()
 let cmd = "cmd"
-delegator.executeShellCommand(cmd, 2)
+delegator.executeShellCommand(cmd, timeoutSecs: 2)
 ```
 
 ### func finishTest(String, Int64)
@@ -271,7 +266,6 @@ public func finishTest(msg: String, code: Int64): Unit
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.AbilityKit.*
 import kit.TestKit.*
 
@@ -319,7 +313,6 @@ public func getAbilityState(ability: UIAbility): AbilityLifecycleState
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.AbilityKit.*
 import kit.TestKit.*
 
@@ -353,7 +346,6 @@ public func getAppContext(): Context
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.AbilityKit.*
 import kit.TestKit.*
 
@@ -395,7 +387,6 @@ public func getCurrentTopAbility(): UIAbility
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.AbilityKit.*
 import kit.TestKit.*
 
@@ -437,7 +428,6 @@ public func print(msg: String): Unit
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.AbilityKit.*
 import kit.TestKit.*
 
@@ -480,7 +470,6 @@ public func removeAbilityMonitor(monitor: AbilityMonitor): Unit
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.AbilityKit.*
 import kit.TestKit.*
 
@@ -526,7 +515,6 @@ public func removeAbilityStageMonitor(monitor: AbilityStageMonitor): Unit
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.AbilityKit.*
 import kit.TestKit.*
 
@@ -538,7 +526,7 @@ delegator.removeAbilityStageMonitor(monitor)
 ### func startAbility(Want)
 
 ```cangjie
-public func startAbility(want: Want): Future<Unit>
+public func startAbility(want: Want): Unit
 ```
 
 **功能：** 启动指定[UIAbility](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiability)。
@@ -560,13 +548,12 @@ public func startAbility(want: Want): Future<Unit>
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.AbilityKit.*
 import kit.TestKit.*
 
 let delegator = AbilityDelegatorRegistry.getAbilityDelegator()
 let want = Want(bundleName: "com.example.myapplication", abilityName: "EntryAbility")
-delegator.startAbility(want).get()
+delegator.startAbility(want)
 ```
 
 ### func waitAbilityMonitor(AbilityMonitor, Int64)
@@ -610,7 +597,6 @@ public func waitAbilityMonitor(monitor: AbilityMonitor, timeout!: Int64 = 5000):
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.AbilityKit.*
 import kit.TestKit.*
 
@@ -664,14 +650,13 @@ public func waitAbilityStageMonitor(monitor: AbilityStageMonitor, timeout!: Int6
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.AbilityKit.*
 import kit.TestKit.*
 
 let delegator = AbilityDelegatorRegistry.getAbilityDelegator()
 let stageMonitor = AbilityStageMonitor("entry", "ohos_app_cangjie_entry.MyAbilityStage")
 spawn {
-    let abilityStage = delegator.waitAbilityStageMonitor(stageMonitor, 2000)
+    let abilityStage = delegator.waitAbilityStageMonitor(stageMonitor, timeout: 2000)
 }
 ```
 
@@ -806,14 +791,14 @@ public static func getArguments(): AbilityDelegatorArgs
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.TestKit.*
+import kit.PerformanceAnalysisKit.*
 
 let args = AbilityDelegatorRegistry.getArguments()
-AppLog.info("args is ${args.bundleName}")
-AppLog.info("args is ${args.testCaseNames}")
-AppLog.info("args is ${args.testRunnerClassName}")
-AppLog.info("args is ${args.parameters}")
+Hilog.info(0, "test", "args is ${args.bundleName}")
+Hilog.info(0, "test", "args is ${args.testCaseNames}")
+Hilog.info(0, "test", "args is ${args.testRunnerClassName}")
+Hilog.info(0, "test", "args is ${args.parameters}")
 ```
 
 ## class AbilityMonitor
@@ -1036,9 +1021,9 @@ public init(
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.TestKit.*
 
+let delegator = AbilityDelegatorRegistry.getAbilityDelegator()
 let monitor = AbilityMonitor(
     "EntryAbility", moduleName: "entry",
     onAbilityCreate: {ability => delegator.print("onAbilityCreate called, abilityName: ${ability.launchWant.abilityName}")}
@@ -1129,7 +1114,6 @@ public init(
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.AbilityKit.*
 import kit.TestKit.*
 

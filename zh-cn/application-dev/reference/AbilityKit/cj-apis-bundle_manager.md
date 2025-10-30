@@ -1459,7 +1459,6 @@ public static func canOpenLink(link: String): Bool
 // index.cj
 
 import kit.AbilityKit.*
-import kit.PerformanceAnalysisKit.Hilog
 
 let link = "app1Scheme://test.example.com/home"
 let canOpen = BundleManager.canOpenLink(link)
@@ -1498,7 +1497,7 @@ public static func getBundleInfoForSelf(bundleFlags: Int32): BundleInfo
 
 import kit.AbilityKit.*
 
-let bundleFlags = GET_BUNDLE_INFO_DEFAULT | GET_BUNDLE_INFO_WITH_APPLICATION | GET_BUNDLE_INFO_WITH_HAP_MODULE | GET_BUNDLE_INFO_WITH_ABILITY
+let bundleFlags = BundleFlag.GET_BUNDLE_INFO_DEFAULT | BundleFlag.GET_BUNDLE_INFO_WITH_APPLICATION | BundleFlag.GET_BUNDLE_INFO_WITH_HAP_MODULE | BundleFlag.GET_BUNDLE_INFO_WITH_ABILITY
 let res = BundleManager.getBundleInfoForSelf(bundleFlags)
 ```
 

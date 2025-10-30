@@ -59,15 +59,16 @@ public func getSensorList(): Array<Sensor>
 // index.cj
 
 import kit.SensorServiceKit.*
-import ohos.base.*
+import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
 
 try {
     let sensors = getSensorList()
     for (index in 0..sensors.size) {
-        AppLog.info("Succeeded in getting sensor${index}: ${sensors[index].sensorId} ")
+        Hilog.info(0, "test", "Succeeded in getting sensor${index}: ${sensors[index].sensorId}", "")
     }
 } catch (e: BusinessException) {
-    AppLog.error("Failed to get sensor list. Code: ${e.code}, message: ${e.message}")
+    Hilog.info(0, "test", "Failed to get sensor list. Code: ${e.code}, message: ${e.message}", "")
 }
 ```
 
@@ -112,13 +113,14 @@ public func getSingleSensor(sensorType: SensorId): Sensor
 // index.cj
 
 import kit.SensorServiceKit.*
-import ohos.base.*
+import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
 
 try {
-    let sensors = getSingleSensor(SensorId.ACCELEROMETER)
-    AppLog.info("Succeeded in getting sensor: ${sensors.sensorName} ")
+    let sensors = getSingleSensor(SensorId.Accelerometer)
+    Hilog.info(0, "test", "Succeeded in getting sensor: ${sensors.sensorName}", "")
 } catch (e: BusinessException) {
-    AppLog.error("Failed to get sensor. Code: ${e.code}, message: ${e.message}")
+    Hilog.error(0, "test", "Code: ${e.code}, message: ${e.message}", "")
 }
 ```
 
@@ -149,29 +151,28 @@ public func off(sensorType: SensorId, callback!: ?CallbackObject = None): Unit
 // index.cj
 
 import kit.SensorServiceKit.*
-import ohos.base.*
+import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
+import ohos.callback_invoke.*
 
 class SensorCallback <: Callback1Argument<OrientationResponse> {
     init() {}
-    public func invoke(arg: OrientationResponse): Unit {
-        AppLog.info(
-            "Succeeded in getting SensorCallback1 arg: steps: ${arg.timestamp}, alpha: ${arg.alpha},  beta: ${arg.beta},  gamma: ${arg.gamma}"
-        )
+    public func invoke(err: ?BusinessException, arg: OrientationResponse): Unit {
+        Hilog.info(0, "test", "Succeeded in getting SensorCallback1 arg: steps: ${arg.timestamp}, alpha: ${arg.alpha},  beta: ${arg.beta},  gamma: ${arg.gamma}", "")
     }
 }
 
 let callback1 = SensorCallback()
 let callback2 = SensorCallback()
 try {
-    on(SensorId.ORIENTATION, callback1)
-    on(SensorId.ORIENTATION, callback2)
+    on(SensorId.Orientation, callback1)
+    on(SensorId.Orientation, callback2)
     // 仅取消callback1的注册
-    off(SensorId
-        .ORIENTATION, callback: callback1)
+    off(SensorId.Orientation, callback: callback1)
     // 取消注册SensorId.ORIENTATION的所有回调
-    off(SensorId.ORIENTATION)
+    off(SensorId.Orientation)
 } catch (e: BusinessException) {
-    AppLog.error(e.toString())
+    Hilog.error(0, "test", "Code: ${e.code}, message: ${e.message}", "")
 }
 ```
 
@@ -203,23 +204,23 @@ public func on<T>(sensorType: SensorId, callback: Callback1Argument<T>, option!:
 // index.cj
 
 import kit.SensorServiceKit.*
-import ohos.base.*
+import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
+import ohos.callback_invoke.*
 
 class AccelerometerCallback <: Callback1Argument<AccelerometerResponse> {
     init() {}
-    public func invoke(arg: AccelerometerResponse): Unit {
-        AppLog.info(
-            "Succeeded in getting AccelerometerCallback arg: timestamp: ${arg.timestamp}, x: ${arg.x},  y: ${arg.y},  z: ${arg.z}"
-        )
+    public func invoke(err: ?BusinessException, arg: AccelerometerResponse): Unit {
+        Hilog.info(0, "test", "Succeeded in getting AccelerometerCallback arg: timestamp: ${arg.timestamp}, x: ${arg.x},  y: ${arg.y},  z: ${arg.z}", "")
     }
 }
 
 let callback = AccelerometerCallback()
-let options = Options(interval = IntervalOption.SensorNumber(100000000))
+let options = Options(interval: IntervalOption.SensorNumber(100000000))
 try {
-    on(SensorId.ACCELEROMETER, callback, option: options)
+    on(SensorId.Accelerometer, callback, option: options)
 } catch (e: BusinessException) {
-    AppLog.error(e.toString())
+    Hilog.error(0, "test", "Code: ${e.code}, message: ${e.message}", "")
 }
 ```
 
@@ -250,22 +251,22 @@ public func once<T>(sensorType: SensorId, callback: Callback1Argument<T>): Unit 
 // index.cj
 
 import kit.SensorServiceKit.*
-import ohos.base.*
+import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
+import ohos.callback_invoke.*
 
 class GyroscopeCallback <: Callback1Argument<GyroscopeResponse> {
     init() {}
-    public func invoke(arg: GyroscopeResponse): Unit {
-        AppLog.info(
-            "Succeeded in getting GyroscopeCallback arg: timestamp: ${arg.timestamp}, x: ${arg.x},  y: ${arg.y},  z: ${arg.z}"
-        )
+    public func invoke(err: ?BusinessException, arg: GyroscopeResponse): Unit {
+        Hilog.info(0, "test", "Succeeded in getting GyroscopeCallback arg: timestamp: ${arg.timestamp}, x: ${arg.x},  y: ${arg.y},  z: ${arg.z}", "")
     }
 }
 
 let callback = GyroscopeCallback()
 try {
-    once(SensorId.GYROSCOPE, callback)
+    once(SensorId.Gyroscope, callback)
 } catch (e: BusinessException) {
-    AppLog.error(e.toString())
+    Hilog.error(0, "test", "Code: ${e.code}, message: ${e.message}", "")
 }
 ```
 
@@ -2201,30 +2202,30 @@ Accelerometer
 // index.cj
 
 import kit.SensorServiceKit.*
-import ohos.base.*
+import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
+import ohos.callback_invoke.*
 
 class AccelerometerCallback <: Callback1Argument<AccelerometerResponse> {
     init() {}
-    public func invoke(arg: AccelerometerResponse): Unit {
-        AppLog.info(
-            "Accelerometer data: timestamp: ${arg.timestamp}, x: ${arg.x}, y: ${arg.y}, z: ${arg.z}"
-        )
+    public func invoke(err: ?BusinessException, arg: AccelerometerResponse): Unit {
+        Hilog.info(0, "test", "Accelerometer data: timestamp: ${arg.timestamp}, x: ${arg.x}, y: ${arg.y}, z: ${arg.z}", "")
     }
 }
 
 let callback = AccelerometerCallback()
-let options = Options(interval = IntervalOption.SensorNumber(100000000))
+let options = Options(interval: IntervalOption.SensorNumber(100000000))
 try {
     // 订阅传感器数据
-    on(SensorId.ACCELEROMETER, callback, option: options)
+    on(SensorId.Accelerometer, callback, option: options)
 
     // 获取一次传感器数据
-    once(SensorId.ACCELEROMETER, callback)
+    once(SensorId.Accelerometer, callback)
 
     // 取消订阅传感器数据
-    off(SensorId.ACCELEROMETER, callback: callback)
+    off(SensorId.Accelerometer, callback: callback)
 } catch (e: BusinessException) {
-    AppLog.error(e.toString())
+    Hilog.error(0, "test", "Code: ${e.code}, message: ${e.message}", "")
 }
 ```
 
@@ -2248,30 +2249,30 @@ AccelerometerUncalibrated
 // index.cj
 
 import kit.SensorServiceKit.*
-import ohos.base.*
+import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
+import ohos.callback_invoke.*
 
 class AccelerometerUncalibratedCallback <: Callback1Argument<AccelerometerUncalibratedResponse> {
     init() {}
-    public func invoke(arg: AccelerometerUncalibratedResponse): Unit {
-        AppLog.info(
-            "AccelerometerUncalibrated data: timestamp: ${arg.timestamp}, x: ${arg.x}, y: ${arg.y}, z: ${arg.z}, biasX: ${arg.biasX}, biasY: ${arg.biasY}, biasZ: ${arg.biasZ}"
-        )
+    public func invoke(err: ?BusinessException, arg: AccelerometerUncalibratedResponse): Unit {
+        Hilog.info(0, "test", "AccelerometerUncalibrated data: timestamp: ${arg.timestamp}, x: ${arg.x}, y: ${arg.y}, z: ${arg.z}, biasX: ${arg.biasX}, biasY: ${arg.biasY}, biasZ: ${arg.biasZ}", "")
     }
 }
 
 let callback = AccelerometerUncalibratedCallback()
-let options = Options(interval = IntervalOption.SensorNumber(100000000))
+let options = Options(interval: IntervalOption.SensorNumber(100000000))
 try {
     // 订阅传感器数据
-    on(SensorId.ACCELEROMETERUNCALIBRATED, callback, option: options)
+    on(SensorId.AccelerometerUncalibrated, callback, option: options)
 
     // 获取一次传感器数据
-    once(SensorId.ACCELEROMETERUNCALIBRATED, callback)
+    once(SensorId.AccelerometerUncalibrated, callback)
 
     // 取消订阅传感器数据
-    off(SensorId.ACCELEROMETERUNCALIBRATED, callback: callback)
+    off(SensorId.AccelerometerUncalibrated, callback: callback)
 } catch (e: BusinessException) {
-    AppLog.error(e.toString())
+    Hilog.error(0, "test", "Code: ${e.code}, message: ${e.message}", "")
 }
 ```
 
@@ -2295,30 +2296,30 @@ AmbientLight
 // index.cj
 
 import kit.SensorServiceKit.*
-import ohos.base.*
+import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
+import ohos.callback_invoke.*
 
 class LightCallback <: Callback1Argument<LightResponse> {
     init() {}
-    public func invoke(arg: LightResponse): Unit {
-        AppLog.info(
-            "Light data: timestamp: ${arg.timestamp}, intensity: ${arg.intensity}"
-        )
+    public func invoke(err: ?BusinessException, arg: LightResponse): Unit {
+        Hilog.info(0, "test", "Light data: timestamp: ${arg.timestamp}, intensity: ${arg.intensity}", "")
     }
 }
 
 let callback = LightCallback()
-let options = Options(interval = IntervalOption.SensorNumber(100000000))
+let options = Options(interval: IntervalOption.SensorNumber(100000000))
 try {
     // 订阅传感器数据
-    on(SensorId.AMBIENTLIGHT, callback, option: options)
+    on(SensorId.AmbientLight, callback, option: options)
 
     // 获取一次传感器数据
-    once(SensorId.AMBIENTLIGHT, callback)
+    once(SensorId.AmbientLight, callback)
 
     // 取消订阅传感器数据
-    off(SensorId.AMBIENTLIGHT, callback: callback)
+    off(SensorId.AmbientLight, callback: callback)
 } catch (e: BusinessException) {
-    AppLog.error(e.toString())
+    Hilog.error(0, "test", "Code: ${e.code}, message: ${e.message}", "")
 }
 ```
 
@@ -2342,30 +2343,30 @@ AmbientTemperature
 // index.cj
 
 import kit.SensorServiceKit.*
-import ohos.base.*
+import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
+import ohos.callback_invoke.*
 
 class AmbientTemperatureCallback <: Callback1Argument<AmbientTemperatureResponse> {
     init() {}
-    public func invoke(arg: AmbientTemperatureResponse): Unit {
-        AppLog.info(
-            "AmbientTemperature data: timestamp: ${arg.timestamp}, temperature: ${arg.temperature}"
-        )
+    public func invoke(err: ?BusinessException, arg: AmbientTemperatureResponse): Unit {
+        Hilog.info(0, "test", "AmbientTemperature data: timestamp: ${arg.timestamp}, temperature: ${arg.temperature}", "")
     }
 }
 
 let callback = AmbientTemperatureCallback()
-let options = Options(interval = IntervalOption.SensorNumber(100000000))
+let options = Options(interval: IntervalOption.SensorNumber(100000000))
 try {
     // 订阅传感器数据
-    on(SensorId.AMBIENTTEMPERATURE, callback, option: options)
+    on(SensorId.AmbientTemperature, callback, option: options)
 
     // 获取一次传感器数据
-    once(SensorId.AMBIENTTEMPERATURE, callback)
+    once(SensorId.AmbientTemperature, callback)
 
     // 取消订阅传感器数据
-    off(SensorId.AMBIENTTEMPERATURE, callback: callback)
+    off(SensorId.AmbientTemperature, callback: callback)
 } catch (e: BusinessException) {
-    AppLog.error(e.toString())
+    Hilog.error(0, "test", "Code: ${e.code}, message: ${e.message}", "")
 }
 ```
 
@@ -2389,30 +2390,30 @@ Barometer
 // index.cj
 
 import kit.SensorServiceKit.*
-import ohos.base.*
+import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
+import ohos.callback_invoke.*
 
 class BarometerCallback <: Callback1Argument<BarometerResponse> {
     init() {}
-    public func invoke(arg: BarometerResponse): Unit {
-        AppLog.info(
-            "Barometer data: timestamp: ${arg.timestamp}, pressure: ${arg.pressure}"
-        )
+    public func invoke(err: ?BusinessException, arg: BarometerResponse): Unit {
+        Hilog.info(0, "test", "Barometer data: timestamp: ${arg.timestamp}, pressure: ${arg.pressure}", "")
     }
 }
 
 let callback = BarometerCallback()
-let options = Options(interval = IntervalOption.SensorNumber(100000000))
+let options = Options(interval: IntervalOption.SensorNumber(100000000))
 try {
     // 订阅传感器数据
-    on(SensorId.BAROMETER, callback, option: options)
+    on(SensorId.Barometer, callback, option: options)
 
     // 获取一次传感器数据
-    once(SensorId.BAROMETER, callback)
+    once(SensorId.Barometer, callback)
 
     // 取消订阅传感器数据
-    off(SensorId.BAROMETER, callback: callback)
+    off(SensorId.Barometer, callback: callback)
 } catch (e: BusinessException) {
-    AppLog.error(e.toString())
+    Hilog.error(0, "test", "Code: ${e.code}, message: ${e.message}", "")
 }
 ```
 
@@ -2436,30 +2437,30 @@ Gravity
 // index.cj
 
 import kit.SensorServiceKit.*
-import ohos.base.*
+import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
+import ohos.callback_invoke.*
 
 class GravityCallback <: Callback1Argument<GravityResponse> {
     init() {}
-    public func invoke(arg: GravityResponse): Unit {
-        AppLog.info(
-            "Gravity data: timestamp: ${arg.timestamp}, x: ${arg.x}, y: ${arg.y}, z: ${arg.z}"
-        )
+    public func invoke(err: ?BusinessException, arg: GravityResponse): Unit {
+        Hilog.info(0, "test", "Gravity data: timestamp: ${arg.timestamp}, x: ${arg.x}, y: ${arg.y}, z: ${arg.z}", "")
     }
 }
 
 let callback = GravityCallback()
-let options = Options(interval = IntervalOption.SensorNumber(100000000))
+let options = Options(interval: IntervalOption.SensorNumber(100000000))
 try {
     // 订阅传感器数据
-    on(SensorId.GRAVITY, callback, option: options)
+    on(SensorId.Gravity, callback, option: options)
 
     // 获取一次传感器数据
-    once(SensorId.GRAVITY, callback)
+    once(SensorId.Gravity, callback)
 
     // 取消订阅传感器数据
-    off(SensorId.GRAVITY, callback: callback)
+    off(SensorId.Gravity, callback: callback)
 } catch (e: BusinessException) {
-    AppLog.error(e.toString())
+    Hilog.error(0, "test", "Code: ${e.code}, message: ${e.message}", "")
 }
 ```
 
@@ -2483,30 +2484,30 @@ Gyroscope
 // index.cj
 
 import kit.SensorServiceKit.*
-import ohos.base.*
+import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
+import ohos.callback_invoke.*
 
 class GyroscopeCallback <: Callback1Argument<GyroscopeResponse> {
     init() {}
-    public func invoke(arg: GyroscopeResponse): Unit {
-        AppLog.info(
-            "Gyroscope data: timestamp: ${arg.timestamp}, x: ${arg.x}, y: ${arg.y}, z: ${arg.z}"
-        )
+    public func invoke(err: ?BusinessException, arg: GyroscopeResponse): Unit {
+        Hilog.info(0, "test", "Gyroscope data: timestamp: ${arg.timestamp}, x: ${arg.x}, y: ${arg.y}, z: ${arg.z}", "")
     }
 }
 
 let callback = GyroscopeCallback()
-let options = Options(interval = IntervalOption.SensorNumber(100000000))
+let options = Options(interval: IntervalOption.SensorNumber(100000000))
 try {
     // 订阅传感器数据
-    on(SensorId.GYROSCOPE, callback, option: options)
+    on(SensorId.Gyroscope, callback, option: options)
 
     // 获取一次传感器数据
-    once(SensorId.GYROSCOPE, callback)
+    once(SensorId.Gyroscope, callback)
 
     // 取消订阅传感器数据
-    off(SensorId.GYROSCOPE, callback: callback)
+    off(SensorId.Gyroscope, callback: callback)
 } catch (e: BusinessException) {
-    AppLog.error(e.toString())
+    Hilog.error(0, "test", "Code: ${e.code}, message: ${e.message}", "")
 }
 ```
 
@@ -2530,30 +2531,30 @@ GyroscopeUncalibrated
 // index.cj
 
 import kit.SensorServiceKit.*
-import ohos.base.*
+import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
+import ohos.callback_invoke.*
 
 class GyroscopeUncalibratedCallback <: Callback1Argument<GyroscopeUncalibratedResponse> {
     init() {}
-    public func invoke(arg: GyroscopeUncalibratedResponse): Unit {
-        AppLog.info(
-            "GyroscopeUncalibrated data: timestamp: ${arg.timestamp}, x: ${arg.x}, y: ${arg.y}, z: ${arg.z}, biasX: ${arg.biasX}, biasY: ${arg.biasY}, biasZ: ${arg.biasZ}"
-        )
+    public func invoke(err: ?BusinessException, arg: GyroscopeUncalibratedResponse): Unit {
+        Hilog.info(0, "test", "GyroscopeUncalibrated data: timestamp: ${arg.timestamp}, x: ${arg.x}, y: ${arg.y}, z: ${arg.z}, biasX: ${arg.biasX}, biasY: ${arg.biasY}, biasZ: ${arg.biasZ}", "")
     }
 }
 
 let callback = GyroscopeUncalibratedCallback()
-let options = Options(interval = IntervalOption.SensorNumber(100000000))
+let options = Options(interval: IntervalOption.SensorNumber(100000000))
 try {
     // 订阅传感器数据
-    on(SensorId.GYROSCOPEUNCALIBRATED, callback, option: options)
+    on(SensorId.GyroscopeUncalibrated, callback, option: options)
 
     // 获取一次传感器数据
-    once(SensorId.GYROSCOPEUNCALIBRATED, callback)
+    once(SensorId.GyroscopeUncalibrated, callback)
 
     // 取消订阅传感器数据
-    off(SensorId.GYROSCOPEUNCALIBRATED, callback: callback)
+    off(SensorId.GyroscopeUncalibrated, callback: callback)
 } catch (e: BusinessException) {
-    AppLog.error(e.toString())
+    Hilog.error(0, "test", "Code: ${e.code}, message: ${e.message}", "")
 }
 ```
 
@@ -2577,30 +2578,30 @@ Hall
 // index.cj
 
 import kit.SensorServiceKit.*
-import ohos.base.*
+import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
+import ohos.callback_invoke.*
 
 class HallCallback <: Callback1Argument<HallResponse> {
     init() {}
-    public func invoke(arg: HallResponse): Unit {
-        AppLog.info(
-            "Hall data: timestamp: ${arg.timestamp}, status: ${arg.status}"
-        )
+    public func invoke(err: ?BusinessException, arg: HallResponse): Unit {
+        Hilog.info(0, "test", "Hall data: timestamp: ${arg.timestamp}, status: ${arg.status}", "")
     }
 }
 
 let callback = HallCallback()
-let options = Options(interval = IntervalOption.SensorNumber(100000000))
+let options = Options(interval: IntervalOption.SensorNumber(100000000))
 try {
     // 订阅传感器数据
-    on(SensorId.HALL, callback, option: options)
+    on(SensorId.Hall, callback, option: options)
 
     // 获取一次传感器数据
-    once(SensorId.HALL, callback)
+    once(SensorId.Hall, callback)
 
     // 取消订阅传感器数据
-    off(SensorId.HALL, callback: callback)
+    off(SensorId.Hall, callback: callback)
 } catch (e: BusinessException) {
-    AppLog.error(e.toString())
+    Hilog.error(0, "test", "Code: ${e.code}, message: ${e.message}", "")
 }
 ```
 
@@ -2624,30 +2625,30 @@ HeartRate
 // index.cj
 
 import kit.SensorServiceKit.*
-import ohos.base.*
+import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
+import ohos.callback_invoke.*
 
 class HeartRateCallback <: Callback1Argument<HeartRateResponse> {
     init() {}
-    public func invoke(arg: HeartRateResponse): Unit {
-        AppLog.info(
-            "HeartRate data: timestamp: ${arg.timestamp}, heartRate: ${arg.heartRate}"
-        )
+    public func invoke(err: ?BusinessException, arg: HeartRateResponse): Unit {
+        Hilog.info(0, "test", "HeartRate data: timestamp: ${arg.timestamp}, heartRate: ${arg.heartRate}", "")
     }
 }
 
 let callback = HeartRateCallback()
-let options = Options(interval = IntervalOption.SensorNumber(100000000))
+let options = Options(interval: IntervalOption.SensorNumber(100000000))
 try {
     // 订阅传感器数据
-    on(SensorId.HEARTRATE, callback, option: options)
+    on(SensorId.HeartRate, callback, option: options)
 
     // 获取一次传感器数据
-    once(SensorId.HEARTRATE, callback)
+    once(SensorId.HeartRate, callback)
 
     // 取消订阅传感器数据
-    off(SensorId.HEARTRATE, callback: callback)
+    off(SensorId.HeartRate, callback: callback)
 } catch (e: BusinessException) {
-    AppLog.error(e.toString())
+    Hilog.error(0, "test", "Code: ${e.code}, message: ${e.message}", "")
 }
 ```
 
@@ -2671,30 +2672,30 @@ Humidity
 // index.cj
 
 import kit.SensorServiceKit.*
-import ohos.base.*
+import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
+import ohos.callback_invoke.*
 
 class HumidityCallback <: Callback1Argument<HumidityResponse> {
     init() {}
-    public func invoke(arg: HumidityResponse): Unit {
-        AppLog.info(
-            "Humidity data: timestamp: ${arg.timestamp}, humidity: ${arg.humidity}"
-        )
+    public func invoke(err: ?BusinessException, arg: HumidityResponse): Unit {
+        Hilog.info(0, "test", "Humidity data: timestamp: ${arg.timestamp}, humidity: ${arg.humidity}", "")
     }
 }
 
 let callback = HumidityCallback()
-let options = Options(interval = IntervalOption.SensorNumber(100000000))
+let options = Options(interval: IntervalOption.SensorNumber(100000000))
 try {
     // 订阅传感器数据
-    on(SensorId.HUMIDITY, callback, option: options)
+    on(SensorId.Humidity, callback, option: options)
 
     // 获取一次传感器数据
-    once(SensorId.HUMIDITY, callback)
+    once(SensorId.Humidity, callback)
 
     // 取消订阅传感器数据
-    off(SensorId.HUMIDITY, callback: callback)
+    off(SensorId.Humidity, callback: callback)
 } catch (e: BusinessException) {
-    AppLog.error(e.toString())
+    Hilog.error(0, "test", "Code: ${e.code}, message: ${e.message}", "")
 }
 ```
 
@@ -2718,30 +2719,30 @@ LinearAccelerometer
 // index.cj
 
 import kit.SensorServiceKit.*
-import ohos.base.*
+import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
+import ohos.callback_invoke.*
 
 class LinearAccelerometerCallback <: Callback1Argument<LinearAccelerometerResponse> {
     init() {}
-    public func invoke(arg: LinearAccelerometerResponse): Unit {
-        AppLog.info(
-            "LinearAccelerometer data: timestamp: ${arg.timestamp}, x: ${arg.x}, y: ${arg.y}, z: ${arg.z}"
-        )
+    public func invoke(err: ?BusinessException, arg: LinearAccelerometerResponse): Unit {
+        Hilog.info(0, "test", "LinearAccelerometer data: timestamp: ${arg.timestamp}, x: ${arg.x}, y: ${arg.y}, z: ${arg.z}", "")
     }
 }
 
 let callback = LinearAccelerometerCallback()
-let options = Options(interval = IntervalOption.SensorNumber(100000000))
+let options = Options(interval: IntervalOption.SensorNumber(100000000))
 try {
     // 订阅传感器数据
-    on(SensorId.LINEARACCELEROMETER, callback, option: options)
+    on(SensorId.LinearAccelerometer, callback, option: options)
 
     // 获取一次传感器数据
-    once(SensorId.LINEARACCELEROMETER, callback)
+    once(SensorId.LinearAccelerometer, callback)
 
     // 取消订阅传感器数据
-    off(SensorId.LINEARACCELEROMETER, callback: callback)
+    off(SensorId.LinearAccelerometer, callback: callback)
 } catch (e: BusinessException) {
-    AppLog.error(e.toString())
+    Hilog.error(0, "test", "Code: ${e.code}, message: ${e.message}", "")
 }
 ```
 
@@ -2765,30 +2766,30 @@ MagneticField
 // index.cj
 
 import kit.SensorServiceKit.*
-import ohos.base.*
+import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
+import ohos.callback_invoke.*
 
 class MagneticFieldCallback <: Callback1Argument<MagneticFieldResponse> {
     init() {}
-    public func invoke(arg: MagneticFieldResponse): Unit {
-        AppLog.info(
-            "MagneticField data: timestamp: ${arg.timestamp}, x: ${arg.x}, y: ${arg.y}, z: ${arg.z}"
-        )
+    public func invoke(err: ?BusinessException, arg: MagneticFieldResponse): Unit {
+        Hilog.info(0, "test", "MagneticField data: timestamp: ${arg.timestamp}, x: ${arg.x}, y: ${arg.y}, z: ${arg.z}", "")
     }
 }
 
 let callback = MagneticFieldCallback()
-let options = Options(interval = IntervalOption.SensorNumber(100000000))
+let options = Options(interval: IntervalOption.SensorNumber(100000000))
 try {
     // 订阅传感器数据
-    on(SensorId.MAGNETICFIELD, callback, option: options)
+    on(SensorId.MagneticField, callback, option: options)
 
     // 获取一次传感器数据
-    once(SensorId.MAGNETICFIELD, callback)
+    once(SensorId.MagneticField, callback)
 
     // 取消订阅传感器数据
-    off(SensorId.MAGNETICFIELD, callback: callback)
+    off(SensorId.MagneticField, callback: callback)
 } catch (e: BusinessException) {
-    AppLog.error(e.toString())
+    Hilog.error(0, "test", "Code: ${e.code}, message: ${e.message}", "")
 }
 ```
 
@@ -2812,30 +2813,30 @@ MagneticFieldUncalibrated
 // index.cj
 
 import kit.SensorServiceKit.*
-import ohos.base.*
+import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
+import ohos.callback_invoke.*
 
 class MagneticFieldUncalibratedCallback <: Callback1Argument<MagneticFieldUncalibratedResponse> {
     init() {}
-    public func invoke(arg: MagneticFieldUncalibratedResponse): Unit {
-        AppLog.info(
-            "MagneticFieldUncalibrated data: timestamp: ${arg.timestamp}, x: ${arg.x}, y: ${arg.y}, z: ${arg.z}, biasX: ${arg.biasX}, biasY: ${arg.biasY}, biasZ: ${arg.biasZ}"
-        )
+    public func invoke(err: ?BusinessException, arg: MagneticFieldUncalibratedResponse): Unit {
+        Hilog.info(0, "test", "MagneticFieldUncalibrated data: timestamp: ${arg.timestamp}, x: ${arg.x}, y: ${arg.y}, z: ${arg.z}, biasX: ${arg.biasX}, biasY: ${arg.biasY}, biasZ: ${arg.biasZ}", "")
     }
 }
 
 let callback = MagneticFieldUncalibratedCallback()
-let options = Options(interval = IntervalOption.SensorNumber(100000000))
+let options = Options(interval: IntervalOption.SensorNumber(100000000))
 try {
     // 订阅传感器数据
-    on(SensorId.MAGNETICFIELDUNCALIBRATED, callback, option: options)
+    on(SensorId.MagneticFieldUncalibrated, callback, option: options)
 
     // 获取一次传感器数据
-    once(SensorId.MAGNETICFIELDUNCALIBRATED, callback)
+    once(SensorId.MagneticFieldUncalibrated, callback)
 
     // 取消订阅传感器数据
-    off(SensorId.MAGNETICFIELDUNCALIBRATED, callback: callback)
+    off(SensorId.MagneticFieldUncalibrated, callback: callback)
 } catch (e: BusinessException) {
-    AppLog.error(e.toString())
+    Hilog.error(0, "test", "Code: ${e.code}, message: ${e.message}", "")
 }
 ```
 
@@ -2859,30 +2860,30 @@ Orientation
 // index.cj
 
 import kit.SensorServiceKit.*
-import ohos.base.*
+import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
+import ohos.callback_invoke.*
 
 class OrientationCallback <: Callback1Argument<OrientationResponse> {
     init() {}
-    public func invoke(arg: OrientationResponse): Unit {
-        AppLog.info(
-            "Orientation data: timestamp: ${arg.timestamp}, alpha: ${arg.alpha}, beta: ${arg.beta}, gamma: ${arg.gamma}"
-        )
+    public func invoke(err: ?BusinessException, arg: OrientationResponse): Unit {
+        Hilog.info(0, "test", "Orientation data: timestamp: ${arg.timestamp}, alpha: ${arg.alpha}, beta: ${arg.beta}, gamma: ${arg.gamma}", "")
     }
 }
 
 let callback = OrientationCallback()
-let options = Options(interval = IntervalOption.SensorNumber(100000000))
+let options = Options(interval: IntervalOption.SensorNumber(100000000))
 try {
     // 订阅传感器数据
-    on(SensorId.ORIENTATION, callback, option: options)
+    on(SensorId.Orientation, callback, option: options)
 
     // 获取一次传感器数据
-    once(SensorId.ORIENTATION, callback)
+    once(SensorId.Orientation, callback)
 
     // 取消订阅传感器数据
-    off(SensorId.ORIENTATION, callback: callback)
+    off(SensorId.Orientation, callback: callback)
 } catch (e: BusinessException) {
-    AppLog.error(e.toString())
+    Hilog.error(0, "test", "Code: ${e.code}, message: ${e.message}", "")
 }
 ```
 
@@ -2906,30 +2907,30 @@ Pedometer
 // index.cj
 
 import kit.SensorServiceKit.*
-import ohos.base.*
+import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
+import ohos.callback_invoke.*
 
 class PedometerCallback <: Callback1Argument<PedometerResponse> {
     init() {}
-    public func invoke(arg: PedometerResponse): Unit {
-        AppLog.info(
-            "Pedometer data: timestamp: ${arg.timestamp}, steps: ${arg.steps}"
-        )
+    public func invoke(err: ?BusinessException, arg: PedometerResponse): Unit {
+        Hilog.info(0, "test", "Pedometer data: timestamp: ${arg.timestamp}, steps: ${arg.steps}", "")
     }
 }
 
 let callback = PedometerCallback()
-let options = Options(interval = IntervalOption.SensorNumber(100000000))
+let options = Options(interval: IntervalOption.SensorNumber(100000000))
 try {
     // 订阅传感器数据
-    on(SensorId.PEDOMETER, callback, option: options)
+    on(SensorId.Pedometer, callback, option: options)
 
     // 获取一次传感器数据
-    once(SensorId.PEDOMETER, callback)
+    once(SensorId.Pedometer, callback)
 
     // 取消订阅传感器数据
-    off(SensorId.PEDOMETER, callback: callback)
+    off(SensorId.Pedometer, callback: callback)
 } catch (e: BusinessException) {
-    AppLog.error(e.toString())
+    Hilog.error(0, "test", "Code: ${e.code}, message: ${e.message}", "")
 }
 ```
 
@@ -2953,30 +2954,30 @@ PedometerDetection
 // index.cj
 
 import kit.SensorServiceKit.*
-import ohos.base.*
+import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
+import ohos.callback_invoke.*
 
 class PedometerDetectionCallback <: Callback1Argument<PedometerDetectionResponse> {
     init() {}
-    public func invoke(arg: PedometerDetectionResponse): Unit {
-        AppLog.info(
-            "PedometerDetection data: timestamp: ${arg.timestamp}, scalar: ${arg.scalar}"
-        )
+    public func invoke(err: ?BusinessException, arg: PedometerDetectionResponse): Unit {
+        Hilog.info(0, "test", "PedometerDetection data: timestamp: ${arg.timestamp}, scalar: ${arg.scalar}", "")
     }
 }
 
 let callback = PedometerDetectionCallback()
-let options = Options(interval = IntervalOption.SensorNumber(100000000))
+let options = Options(interval: IntervalOption.SensorNumber(100000000))
 try {
     // 订阅传感器数据
-    on(SensorId.PEDOMETERDETECTION, callback, option: options)
+    on(SensorId.PedometerDetection, callback, option: options)
 
     // 获取一次传感器数据
-    once(SensorId.PEDOMETERDETECTION, callback)
+    once(SensorId.PedometerDetection, callback)
 
     // 取消订阅传感器数据
-    off(SensorId.PEDOMETERDETECTION, callback: callback)
+    off(SensorId.PedometerDetection, callback: callback)
 } catch (e: BusinessException) {
-    AppLog.error(e.toString())
+    Hilog.error(0, "test", "Code: ${e.code}, message: ${e.message}", "")
 }
 ```
 
@@ -3000,30 +3001,30 @@ Proximity
 // index.cj
 
 import kit.SensorServiceKit.*
-import ohos.base.*
+import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
+import ohos.callback_invoke.*
 
 class ProximityCallback <: Callback1Argument<ProximityResponse> {
     init() {}
-    public func invoke(arg: ProximityResponse): Unit {
-        AppLog.info(
-            "Proximity data: timestamp: ${arg.timestamp}, distance: ${arg.distance}"
-        )
+    public func invoke(err: ?BusinessException, arg: ProximityResponse): Unit {
+        Hilog.info(0, "test", "Proximity data: timestamp: ${arg.timestamp}, distance: ${arg.distance}", "")
     }
 }
 
 let callback = ProximityCallback()
-let options = Options(interval = IntervalOption.SensorNumber(100000000))
+let options = Options(interval: IntervalOption.SensorNumber(100000000))
 try {
     // 订阅传感器数据
-    on(SensorId.PROXIMITY, callback, option: options)
+    on(SensorId.Proximity, callback, option: options)
 
     // 获取一次传感器数据
-    once(SensorId.PROXIMITY, callback)
+    once(SensorId.Proximity, callback)
 
     // 取消订阅传感器数据
-    off(SensorId.PROXIMITY, callback: callback)
+    off(SensorId.Proximity, callback: callback)
 } catch (e: BusinessException) {
-    AppLog.error(e.toString())
+    Hilog.error(0, "test", "Code: ${e.code}, message: ${e.message}", "")
 }
 ```
 
@@ -3047,30 +3048,30 @@ RotationVector
 // index.cj
 
 import kit.SensorServiceKit.*
-import ohos.base.*
+import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
+import ohos.callback_invoke.*
 
 class RotationVectorCallback <: Callback1Argument<RotationVectorResponse> {
     init() {}
-    public func invoke(arg: RotationVectorResponse): Unit {
-        AppLog.info(
-            "RotationVector data: timestamp: ${arg.timestamp}, x: ${arg.x}, y: ${arg.y}, z: ${arg.z}, w: ${arg.w}"
-        )
+    public func invoke(err: ?BusinessException, arg: RotationVectorResponse): Unit {
+        Hilog.info(0, "test", "RotationVector data: timestamp: ${arg.timestamp}, x: ${arg.x}, y: ${arg.y}, z: ${arg.z}, w: ${arg.w}", "")
     }
 }
 
 let callback = RotationVectorCallback()
-let options = Options(interval = IntervalOption.SensorNumber(100000000))
+let options = Options(interval: IntervalOption.SensorNumber(100000000))
 try {
     // 订阅传感器数据
-    on(SensorId.ROTATIONVECTOR, callback, option: options)
+    on(SensorId.RotationVector, callback, option: options)
 
     // 获取一次传感器数据
-    once(SensorId.ROTATIONVECTOR, callback)
+    once(SensorId.RotationVector, callback)
 
     // 取消订阅传感器数据
-    off(SensorId.ROTATIONVECTOR, callback: callback)
+    off(SensorId.RotationVector, callback: callback)
 } catch (e: BusinessException) {
-    AppLog.error(e.toString())
+    Hilog.error(0, "test", "Code: ${e.code}, message: ${e.message}", "")
 }
 ```
 
@@ -3094,30 +3095,30 @@ SignificantMotion
 // index.cj
 
 import kit.SensorServiceKit.*
-import ohos.base.*
+import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
+import ohos.callback_invoke.*
 
 class SignificantMotionCallback <: Callback1Argument<SignificantMotionResponse> {
     init() {}
-    public func invoke(arg: SignificantMotionResponse): Unit {
-        AppLog.info(
-            "SignificantMotion data: timestamp: ${arg.timestamp}, scalar: ${arg.scalar}"
-        )
+    public func invoke(err: ?BusinessException, arg: SignificantMotionResponse): Unit {
+        Hilog.info(0, "test", "SignificantMotion data: timestamp: ${arg.timestamp}, scalar: ${arg.scalar}", "")
     }
 }
 
 let callback = SignificantMotionCallback()
-let options = Options(interval = IntervalOption.SensorNumber(100000000))
+let options = Options(interval: IntervalOption.SensorNumber(100000000))
 try {
     // 订阅传感器数据
-    on(SensorId.SIGNIFICANTMOTION, callback, option: options)
+    on(SensorId.SignificantMotion, callback, option: options)
 
     // 获取一次传感器数据
-    once(SensorId.SIGNIFICANTMOTION, callback)
+    once(SensorId.SignificantMotion, callback)
 
     // 取消订阅传感器数据
-    off(SensorId.SIGNIFICANTMOTION, callback: callback)
+    off(SensorId.SignificantMotion, callback: callback)
 } catch (e: BusinessException) {
-    AppLog.error(e.toString())
+    Hilog.error(0, "test", "Code: ${e.code}, message: ${e.message}", "")
 }
 ```
 
@@ -3141,30 +3142,30 @@ WearDetection
 // index.cj
 
 import kit.SensorServiceKit.*
-import ohos.base.*
+import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
+import ohos.callback_invoke.*
 
 class WearDetectionCallback <: Callback1Argument<WearDetectionResponse> {
     init() {}
-    public func invoke(arg: WearDetectionResponse): Unit {
-        AppLog.info(
-            "WearDetection data: timestamp: ${arg.timestamp}, value: ${arg.value}"
-        )
+    public func invoke(err: ?BusinessException, arg: WearDetectionResponse): Unit {
+        Hilog.info(0, "test", "WearDetection data: timestamp: ${arg.timestamp}, value: ${arg.value}", "")
     }
 }
 
 let callback = WearDetectionCallback()
-let options = Options(interval = IntervalOption.SensorNumber(100000000))
+let options = Options(interval: IntervalOption.SensorNumber(100000000))
 try {
     // 订阅传感器数据
-    on(SensorId.WEARDETECTION, callback, option: options)
+    on(SensorId.WearDetection, callback, option: options)
 
     // 获取一次传感器数据
-    once(SensorId.WEARDETECTION, callback)
+    once(SensorId.WearDetection, callback)
 
     // 取消订阅传感器数据
-    off(SensorId.WEARDETECTION, callback: callback)
+    off(SensorId.WearDetection, callback: callback)
 } catch (e: BusinessException) {
-    AppLog.error(e.toString())
+    Hilog.error(0, "test", "Code: ${e.code}, message: ${e.message}", "")
 }
 ```
 

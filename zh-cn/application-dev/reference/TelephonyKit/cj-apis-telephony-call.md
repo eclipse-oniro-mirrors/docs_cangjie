@@ -78,10 +78,9 @@ public static func formatPhoneNumber(
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.TelephonyKit.*
 
-let result = TelephonyCall.formatPhoneNumber("138xxxxxxxx", options: NumberFormatOptions("CN"))
+let result = Call.formatPhoneNumber("138xxxxxxxx", options: NumberFormatOptions(countryCode: "CN"))
 ```
 
 ### static func formatPhoneNumberToE164(String, String)
@@ -130,10 +129,9 @@ public static func formatPhoneNumberToE164(phoneNumber: String, countryCode: Str
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.TelephonyKit.*
 
-let result = TelephonyCall.formatPhoneNumberToE164("138xxxxxxxx", "CN")
+let result = Call.formatPhoneNumberToE164("138xxxxxxxx", "CN")
 ```
 
 ### static func getCallState()
@@ -161,10 +159,9 @@ public static func getCallState(): CallState
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.TelephonyKit.*
 
-let result: CallState = TelephonyCall.getCallState()
+let result: CallState = Call.getCallState()
 ```
 
 ### static func hasCall()
@@ -192,10 +189,9 @@ public static func hasCall(): Bool
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.TelephonyKit.*
 
-let result: Bool = TelephonyCall.hasCall()
+let result: Bool = Call.hasCall()
 ```
 
 ### static func hasVoiceCapability()
@@ -223,10 +219,9 @@ public static func hasVoiceCapability(): Bool
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.TelephonyKit.*
 
-let result: Bool = TelephonyCall.hasVoiceCapability()
+let result: Bool = Call.hasVoiceCapability()
 ```
 
 ### static func isEmergencyPhoneNumber(String, EmergencyNumberOptions)
@@ -273,10 +268,9 @@ public static func isEmergencyPhoneNumber(phoneNumber: String, options!: Emergen
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.TelephonyKit.*
 
-let result = TelephonyCall.isEmergencyPhoneNumber("138xxxxxxxx", EmergencyNumberOptions.SLOT_ID_ONE)
+let result = Call.isEmergencyPhoneNumber("138xxxxxxxx", options: EmergencyNumberOptions(slotId: 1))
 ```
 
 ### static func makeCall(String)
@@ -316,11 +310,9 @@ public static func makeCall(phoneNumber: String): Unit
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.TelephonyKit.*
-import ohos.ability.UIAbilityContext
 
-TelephonyCall.makeCall("138xxxxxxxx")
+Call.makeCall("138xxxxxxxx")
 ```
 
 ### static func makeCall(UIAbilityContext, String)
@@ -361,13 +353,12 @@ public static func makeCall(context: UIAbilityContext, phoneNumber: String): Uni
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.TelephonyKit.*
-import ohos.ability.UIAbilityContext
+import ohos.app.ability.ui_ability.UIAbilityContext
 
 var ctx = Option<UIAbilityContext>.None
 
-TelephonyCall.makeCall(ctx.getOrThrow(), "138xxxxxxxx")
+Call.makeCall(ctx.getOrThrow(), "138xxxxxxxx")
 ```
 
 ## class EmergencyNumberOptions
@@ -475,7 +466,6 @@ public init(countryCode!: String = "CN")
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.TelephonyKit.*
 
 let op = NumberFormatOptions(countryCode: "CN")

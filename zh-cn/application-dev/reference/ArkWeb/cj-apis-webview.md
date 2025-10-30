@@ -110,11 +110,10 @@ public func getItemAtIndex(index: Int32): HistoryItem
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.ArkWeb.*
 import kit.ArkUI.Web
 import ohos.arkui.component.button.Button
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.*
 
 @Entry
 @Component
@@ -456,7 +455,6 @@ public static func existCookie(incognito!: Bool = false): Bool
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.ArkWeb.*
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -505,9 +503,9 @@ public static func fetchCookie(url: String, incognito!: Bool = false): String
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.ArkWeb.*
 import kit.PerformanceAnalysisKit.Hilog
+import ohos.business_exception.BusinessException
 
 try {
     // 需要设置的cookie，其中cookie的格式为name=value，本例中name为ZFY，value为4Mvfh8V4iYFnDc8CGowMa3KE4m0dV
@@ -516,9 +514,9 @@ try {
     WebCookieManager.configCookie("https://www.example.com", cookie, incognito: false)
     // 设置完后获取指定url的cookie
     let value = WebCookieManager.fetchCookie("https://www.example.com")
-    Hilog.info(0, "AppLogCj",  "WebCookieManager,fetchCookie cookie = ${value}")
+    Hilog.info(0, "AppLogCj",  "WebCookieManager,fetchCookie cookie = ${value}", "")
 } catch (e: BusinessException) {
-    Hilog.error(0, "AppLogCj", "ErrorCode: ${e.code}, ErrorMessage: ${e.message}")
+    Hilog.error(0, "AppLogCj", "ErrorCode: ${e.code}, ErrorMessage: ${e.message}", "")
 }
 ```
 
@@ -547,7 +545,6 @@ public static func isCookieAllowed(): Bool
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.ArkWeb.*
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -580,7 +577,6 @@ public static func isThirdPartyCookieAllowed(): Bool
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.ArkWeb.*
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -613,7 +609,6 @@ public static func putAcceptCookieEnabled(accept: Bool): Unit
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.ArkWeb.*
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -645,7 +640,6 @@ public static func putAcceptThirdPartyCookieEnabled(accept: Bool): Unit
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.ArkWeb.*
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -784,7 +778,6 @@ public static func setWebDebuggingAccess(webDebuggingAccess: Bool): Unit
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.ArkWeb.*
 import kit.ArkUI.Web
 import kit.PerformanceAnalysisKit.Hilog
@@ -850,10 +843,9 @@ public func accessBackward(): Bool
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.ArkWeb.*
 import kit.ArkUI.Web
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.*
 import ohos.arkui.component.button.Button
 
 @Entry
@@ -922,11 +914,10 @@ public func accessStep(step: Int32): Bool
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.ArkWeb.*
 import kit.ArkUI.Web
 import ohos.arkui.component.button.Button
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.*
 
 @Entry
 @Component
@@ -991,11 +982,10 @@ public func backOrForward(step: Int32): Unit
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.ArkWeb.*
 import kit.ArkUI.Web
 import ohos.arkui.component.button.Button
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.*
 
 @Entry
 @Component
@@ -1050,10 +1040,9 @@ public func backward(): Unit
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.ArkWeb.*
 import kit.ArkUI.Web
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.*
 import ohos.arkui.component.button.Button
 
 @Entry
@@ -1109,10 +1098,9 @@ public func clearHistory(): Unit
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.ArkWeb.*
 import kit.ArkUI.Web
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.*
 import ohos.arkui.component.button.Button
 
 @Entry
@@ -1174,10 +1162,9 @@ public func enableSafeBrowsing(enable: Bool): Unit
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.ArkWeb.*
 import kit.ArkUI.Web
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.*
 import ohos.arkui.component.button.Button
 
 @Entry
@@ -1233,10 +1220,9 @@ public func forward(): Unit
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.ArkWeb.*
 import kit.ArkUI.Web
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.*
 import ohos.arkui.component.button.Button
 
 @Entry
@@ -1298,10 +1284,9 @@ public func getBackForwardEntries(): BackForwardList
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.ArkWeb.*
 import kit.ArkUI.Web
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.*
 import ohos.arkui.component.button.Button
 
 @Entry
@@ -1365,10 +1350,9 @@ public func getCustomUserAgent(): String
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.ArkWeb.*
 import kit.ArkUI.Web
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.*
 import ohos.arkui.component.button.Button
 
 @Entry
@@ -1432,10 +1416,9 @@ public func getHitTest(): WebHitTestType
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.ArkWeb.*
 import kit.ArkUI.Web
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.*
 import ohos.arkui.component.button.Button
 
 @Entry
@@ -1502,10 +1485,9 @@ public func getHitTestValue(): HitTestValue
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.ArkWeb.*
 import kit.ArkUI.Web
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.*
 import ohos.arkui.component.button.Button
 
 @Entry
@@ -1573,10 +1555,9 @@ public func getOriginalUrl(): String
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.ArkWeb.*
 import kit.ArkUI.Web
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.*
 import ohos.arkui.component.button.Button
 
 @Entry
@@ -1639,10 +1620,9 @@ public func getPageHeight(): Int32
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.ArkWeb.*
 import kit.ArkUI.Web
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.*
 import ohos.arkui.component.button.Button
 
 @Entry
@@ -1696,10 +1676,9 @@ public func getSecurityLevel(): SecurityLevel
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.ArkWeb.*
 import kit.ArkUI.Web
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.*
 import ohos.arkui.component.button.Button
 
 @Entry
@@ -1767,10 +1746,9 @@ public func getTitle(): String
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.ArkWeb.*
 import kit.ArkUI.Web
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.*
 import ohos.arkui.component.button.Button
 
 @Entry
@@ -1833,10 +1811,9 @@ public func getUrl(): String
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.ArkWeb.*
 import kit.ArkUI.Web
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.*
 import ohos.arkui.component.button.Button
 
 @Entry
@@ -1898,10 +1875,9 @@ public func getUserAgent(): String
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.ArkWeb.*
 import kit.ArkUI.Web
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.*
 import ohos.arkui.component.button.Button
 
 @Entry
@@ -1964,10 +1940,9 @@ public func isIncognitoMode(): Bool
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.ArkWeb.*
 import kit.ArkUI.Web
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.*
 import ohos.arkui.component.button.Button
 
 @Entry
@@ -2031,10 +2006,9 @@ public func isSafeBrowsingEnabled(): Bool
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.ArkWeb.*
 import kit.ArkUI.Web
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.*
 import ohos.arkui.component.button.Button
 
 @Entry
@@ -2096,10 +2070,9 @@ public func pageDown(bottom: Bool): Unit
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.ArkWeb.*
 import kit.ArkUI.Web
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.*
 import ohos.arkui.component.button.Button
 
 @Entry
@@ -2161,10 +2134,9 @@ public func pageUp(top: Bool): Unit
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.ArkWeb.*
 import kit.ArkUI.Web
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.*
 import ohos.arkui.component.button.Button
 
 @Entry
@@ -2220,10 +2192,9 @@ public func refresh(): Unit
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.ArkWeb.*
 import kit.ArkUI.Web
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.*
 import ohos.arkui.component.button.Button
 
 @Entry
@@ -2279,7 +2250,6 @@ public func registerJavaScriptProxy(funcs: Array<(String) -> String>, name: Stri
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.ArkWeb.*
 import kit.UIKit.Web
 
@@ -2437,7 +2407,6 @@ public func loadUrl<T>(url: T, headers!: Array<WebHeader> = Array<WebHeader>()):
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.ArkWeb.*
 import kit.LocalizationKit.*
 import kit.UIKit.Web
@@ -2502,7 +2471,6 @@ public func setCustomUserAgent(userAgent: String): Unit
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.ArkWeb.*
 import kit.UIKit.Web
 
@@ -2559,7 +2527,6 @@ public func stop(): Unit
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.ArkWeb.*
 import kit.UIKit.Web
 
@@ -2625,7 +2592,6 @@ public func storeWebArchive(baseName: String, autoName: Bool, callback: AsyncCal
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.ArkWeb.*
 import kit.UIKit.Web
 
@@ -2700,7 +2666,6 @@ public func zoom(factor: Float32): Unit
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.ArkWeb.*
 import kit.UIKit.Web
 
@@ -2757,7 +2722,6 @@ public func zoomIn(): Unit
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.ArkWeb.*
 import kit.UIKit.Web
 
@@ -2814,7 +2778,6 @@ public func zoomOut(): Unit
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.ArkWeb.*
 import kit.UIKit.Web
 
@@ -2878,7 +2841,6 @@ public func runJavaScript(script: String, callback: AsyncCallback<String>): Unit
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.ArkWeb.*
 import kit.UIKit.Web
 
@@ -2972,7 +2934,6 @@ public func scrollBy(deltaX: Float32, deltaY: Float32, duration!: ?Int32 = None)
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.ArkWeb.*
 import kit.UIKit.Web
 
@@ -3061,7 +3022,6 @@ public func scrollTo(x: Float32, y: Float32, duration!: ?Int32 = None): Unit
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.ArkWeb.*
 import kit.UIKit.Web
 
@@ -3147,7 +3107,6 @@ public func removeCache(clearRom: Bool): Unit
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.ArkWeb.*
 import kit.UIKit.Web
 

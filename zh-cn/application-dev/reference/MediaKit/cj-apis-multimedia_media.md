@@ -59,8 +59,8 @@ public func createAVImageGenerator(): AVImageGenerator
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.MediaKit.*
+import kit.PerformanceAnalysisKit.*
 import ohos.business_exception.BusinessException
 
 try {
@@ -238,14 +238,15 @@ public func fetchFrameByTime(timeUs: Int64, options: AVImageQueryOptions, param:
 // index.cj
 
 import kit.MediaKit.*
+import kit.LocalizationKit.*
 
 let timeUs = 0
 let queryOption = AVImageQueryOptions.AvImageQueryNextSync
 let param = PixelMapParams(width: 300, height: 300)
 let generator = createAVImageGenerator()
-let abilityContext = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
-let rawFd = abilityContext.resourceManager.getRawFd("trailer.mp4")    // 请替换您的资源路径，获取文件路径参考本文使用说明
-generator.fdSrc = AVFileDescriptor(rawFd.fd, offset:rawFd.offset, length:rawFd.length)
+let abilityContext = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+let rawFd = Global.getResourceManager().getRawFd("trailer.mp4")    // 请替换您的资源路径，获取文件路径参考本文使用说明
+generator.fdSrc = AVFileDescriptor(rawFd.fd, offset: rawFd.offset, length: rawFd.length)
 let pic = generator.fetchFrameByTime(timeUs, queryOption, param)
 generator.release()
 ```
@@ -278,7 +279,8 @@ public func release(): Unit
 // index.cj
 
 import kit.MediaKit.*
-
+import kit.LocalizationKit.*
+import kit.PerformanceAnalysisKit.*
 import ohos.business_exception.BusinessException
 
 try {
@@ -286,8 +288,8 @@ try {
     let queryOption = AVImageQueryOptions.AvImageQueryNextSync
     let param = PixelMapParams(width: 300, height: 300)
     let generator = createAVImageGenerator()
-    let abilityContext = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
-    let rawFd = abilityContext.resourceManager.getRawFd("trailer.mp4")
+    let abilityContext = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let rawFd = abilityContext.getResourceManager().getRawFd("trailer.mp4")
     generator.fdSrc = AVFileDescriptor(rawFd.fd, offset:rawFd.offset, length:rawFd.length)
     let pic = generator.fetchFrameByTime(timeUs, queryOption, param)
     generator.release()
