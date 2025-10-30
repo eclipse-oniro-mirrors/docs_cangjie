@@ -249,10 +249,8 @@ public func addResource(path: String): Unit
 // index.cj
 
 import kit.LocalizationKit.*
-import kit.AbilityKit.*
 
-let stageContext = getStageContext(MainAbility.abilityContext.getOrThrow())
-let resourceManager = ResourceManager.getResourceManager(stageContext)
+let resourceManager = Global.getResourceManager()
 let path = "/data/storage/el2/base/haps/entry/files/library-default-unsigned.hsp"
 resourceManager.addResource(path)
 ```
@@ -299,10 +297,8 @@ public func closeRawFd(path: String): Unit
 // index.cj
 
 import kit.LocalizationKit.*
-import kit.AbilityKit.*
 
-let stageContext = getStageContext(MainAbility.abilityContext.getOrThrow())
-let resourceManager = ResourceManager.getResourceManager(stageContext)
+let resourceManager = Global.getResourceManager()
 let rawfd = resourceManager.closeRawFd("test.txt")
 ```
 
@@ -356,12 +352,11 @@ public func getBoolean(resId: UInt32): Bool
 // index.cj
 
 import kit.LocalizationKit.*
-import kit.AbilityKit.*
+import ohos.arkui.state_macro_manage.*
 
-let stageContext = getStageContext(MainAbility.abilityContext.getOrThrow())
-let resourceManager = ResourceManager.getResourceManager(stageContext)
+let resourceManager = Global.getResourceManager()
 let res = @r(app.boolean.test)
-resourceManager.getBoolean(Int32(res.id))
+resourceManager.getBoolean(res.id)
 ```
 
 ### func getBoolean(AppResource)
@@ -414,12 +409,11 @@ public func getBoolean(resource: AppResource): Bool
 // index.cj
 
 import kit.LocalizationKit.*
-import kit.AbilityKit.*
+import ohos.arkui.state_macro_manage.*
 
-let stageContext = getStageContext(MainAbility.abilityContext.getOrThrow())
-let resourceManager = ResourceManager.getResourceManager(stageContext)
+let resourceManager = Global.getResourceManager()
 let res = @r(app.boolean.test)
-let resource = AppResource("com.example.myapplication", "entry", Int32(res.id))
+let resource = AppResource("com.example.myapplication", "entry", res.id)
 resourceManager.getBoolean(resource)
 ```
 
@@ -473,10 +467,8 @@ public func getBooleanByName(resName: String): Bool
 // index.cj
 
 import kit.LocalizationKit.*
-import kit.AbilityKit.*
 
-let stageContext = getStageContext(MainAbility.abilityContext.getOrThrow())
-let resourceManager = ResourceManager.getResourceManager(stageContext)
+let resourceManager = Global.getResourceManager()
 resourceManager.getBooleanByName("test")
 ```
 
@@ -530,12 +522,11 @@ public func getColor(resource: AppResource): UInt32
 // index.cj
 
 import kit.LocalizationKit.*
-import kit.AbilityKit.*
+import ohos.arkui.state_macro_manage.*
 
-let stageContext = getStageContext(MainAbility.abilityContext.getOrThrow())
-let resourceManager = ResourceManager.getResourceManager(stageContext)
+let resourceManager = Global.getResourceManager()
 let res = @r(app.color.test)
-let resource = AppResource("com.example.myapplication", "entry", Int32(res.id))
+let resource = AppResource("com.example.myapplication", "entry", res.id)
 resourceManager.getColor(resource)
 ```
 
@@ -589,12 +580,11 @@ public func getColor(resId: UInt32): UInt32
 // index.cj
 
 import kit.LocalizationKit.*
-import kit.AbilityKit.*
+import ohos.arkui.state_macro_manage.*
 
-let stageContext = getStageContext(MainAbility.abilityContext.getOrThrow())
-let resourceManager = ResourceManager.getResourceManager(stageContext)
+let resourceManager = Global.getResourceManager()
 let res = @r(app.color.test)
-resourceManager.getColor(Int32(res.id))
+resourceManager.getColor(res.id)
 ```
 
 ### func getColorByName(String)
@@ -647,10 +637,8 @@ public func getColorByName(resName: String): UInt32
 // index.cj
 
 import kit.LocalizationKit.*
-import kit.AbilityKit.*
 
-let stageContext = getStageContext(MainAbility.abilityContext.getOrThrow())
-let resourceManager = ResourceManager.getResourceManager(stageContext)
+let resourceManager = Global.getResourceManager()
 resourceManager.getColorByName("test")
 ```
 
@@ -689,13 +677,11 @@ public func getConfiguration(): Configuration
 // index.cj
 
 import kit.LocalizationKit.*
-import kit.AbilityKit.*
+import kit.PerformanceAnalysisKit.*
 
-let stageContext = getStageContext(MainAbility.abilityContext.getOrThrow())
-let resourceManager = ResourceManager.getResourceManager(stageContext)
+let resourceManager = Global.getResourceManager()
 let configuration = resourceManager.getConfiguration()
-AppLog.info(configuration.locale)
-AppLog.info(configuration.direction.getValue().toString())
+Hilog.info(0, "test", configuration.locale, "")
 ```
 
 ### func getDeviceCapability()
@@ -733,13 +719,10 @@ public func getDeviceCapability(): DeviceCapability
 // index.cj
 
 import kit.LocalizationKit.*
-import kit.AbilityKit.*
+import kit.PerformanceAnalysisKit.*
 
-let stageContext = getStageContext(MainAbility.abilityContext.getOrThrow())
-let resourceManager = ResourceManager.getResourceManager(stageContext)
+let resourceManager = Global.getResourceManager()
 let deviceCapability = resourceManager.getDeviceCapability()
-AppLog.info(deviceCapability.screenDensity.getValue().toString())
-AppLog.info(deviceCapability.deviceType.getValue().toString())
 ```
 
 ### func getLocales(Bool)
@@ -789,10 +772,8 @@ public func getLocales(includeSystem!: Bool = false): Array<String>
 // index.cj
 
 import kit.LocalizationKit.*
-import kit.AbilityKit.*
 
-let stageContext = getStageContext(MainAbility.abilityContext.getOrThrow())
-let resourceManager = ResourceManager.getResourceManager(stageContext)
+let resourceManager = Global.getResourceManager()
 resourceManager.getLocales()
 ```
 
@@ -852,10 +833,8 @@ public func getMediaBase64ByName(resName: String, density!: ?ScreenDensity = Non
 // index.cj
 
 import kit.LocalizationKit.*
-import kit.AbilityKit.*
 
-let stageContext = getStageContext(MainAbility.abilityContext.getOrThrow())
-let resourceManager = ResourceManager.getResourceManager(stageContext)
+let resourceManager = Global.getResourceManager()
 resourceManager.getMediaBase64ByName("test")
 ```
 
@@ -909,11 +888,9 @@ public func getMediaByName(resName: String, density!: ?ScreenDensity = None): Ar
 // index.cj
 
 import kit.LocalizationKit.*
-import kit.AbilityKit.*
 
-let stageContext = getStageContext(MainAbility.abilityContext.getOrThrow())
-let resourceManager = ResourceManager.getResourceManager(stageContext)
-resourceManager.getMediaByName("test", ScreenMdpi)
+let resourceManager = Global.getResourceManager()
+resourceManager.getMediaByName("test", density: ScreenMdpi)
 ```
 
 ### func getMediaContent(UInt32, ?ScreenDensity)
@@ -966,12 +943,11 @@ public func getMediaContent(resId: UInt32, density!: ?ScreenDensity = None): Arr
 // index.cj
 
 import kit.LocalizationKit.*
-import kit.AbilityKit.*
+import ohos.arkui.state_macro_manage.*
 
-let stageContext = getStageContext(MainAbility.abilityContext.getOrThrow())
-let resourceManager = ResourceManager.getResourceManager(stageContext)
+let resourceManager = Global.getResourceManager()
 let res = @r(app.media.test)
-resourceManager.getMediaContent(Int32(res.id), ScreenSdpi)
+resourceManager.getMediaContent(res.id, density: ScreenSdpi)
 ```
 
 ### func getMediaContent(AppResource, ?ScreenDensity)
@@ -1024,13 +1000,12 @@ public func getMediaContent(resource: AppResource, density!: ?ScreenDensity = No
 // index.cj
 
 import kit.LocalizationKit.*
-import kit.AbilityKit.*
+import ohos.arkui.state_macro_manage.*
 
-let stageContext = getStageContext(MainAbility.abilityContext.getOrThrow())
-let resourceManager = ResourceManager.getResourceManager(stageContext)
+let resourceManager = Global.getResourceManager()
 let res = @r(app.media.test)
-let resource = AppResource("com.example.myapplication", "entry", Int32(res.id))
-resourceManager.getMediaContent(resource, ScreenSdpi)
+let resource = AppResource("com.example.myapplication", "entry", res.id)
+resourceManager.getMediaContent(resource, density: ScreenSdpi)
 ```
 
 ### func getMediaContentBase64(UInt32, ?ScreenDensity)
@@ -1089,10 +1064,9 @@ public func getMediaContentBase64(resId: UInt32, density!: ?ScreenDensity = None
 // index.cj
 
 import kit.LocalizationKit.*
-import kit.AbilityKit.*
+import ohos.arkui.state_macro_manage.*
 
-let stageContext = getStageContext(MainAbility.abilityContext.getOrThrow())
-let resourceManager = ResourceManager.getResourceManager(stageContext)
+let resourceManager = Global.getResourceManager()
 let res = @r(app.media.test)
 resourceManager.getMediaContentBase64(res.id)
 ```
@@ -1153,12 +1127,11 @@ public func getMediaContentBase64(resource: AppResource, density!: ?ScreenDensit
 // index.cj
 
 import kit.LocalizationKit.*
-import kit.AbilityKit.*
+import ohos.arkui.state_macro_manage.*
 
-let stageContext = getStageContext(MainAbility.abilityContext.getOrThrow())
-let resourceManager = ResourceManager.getResourceManager(stageContext)
+let resourceManager = Global.getResourceManager()
 let res = @r(app.media.test)
-let resource = AppResource("com.example.myapplication", "entry", Int32(res.id))
+let resource = AppResource("com.example.myapplication", "entry", res.id)
 resourceManager.getMediaContentBase64(resource)
 ```
 
@@ -1212,15 +1185,15 @@ public func getNumber(resId: UInt32): NumberValueType
 // index.cj
 
 import kit.LocalizationKit.*
-import kit.AbilityKit.*
+import kit.PerformanceAnalysisKit.*
+import ohos.arkui.state_macro_manage.*
 
-let stageContext = getStageContext(MainAbility.abilityContext.getOrThrow())
-let resourceManager = ResourceManager.getResourceManager(stageContext)
+let resourceManager = Global.getResourceManager()
 let res = @r(app.integer.test)
 let number = resourceManager.getNumber(res.id)
 match (number) {
-    case INT(v) => AppLog.info(v.toString())
-    case FLOAT(v) => AppLog.info(v.toString())
+    case Int32Value(v) => Hilog.info(0, "test", v.toString(), "")
+    case Float32Value(v) => Hilog.info(0, "test", v.toString(), "")
     case _ => throw IllegalArgumentException("The type is not supported.")
 }
 ```
@@ -1275,16 +1248,16 @@ public func getNumber(resource: AppResource): NumberValueType
 // index.cj
 
 import kit.LocalizationKit.*
-import kit.AbilityKit.*
+import kit.PerformanceAnalysisKit.*
+import ohos.arkui.state_macro_manage.*
 
-let stageContext = getStageContext(MainAbility.abilityContext.getOrThrow())
-let resourceManager = ResourceManager.getResourceManager(stageContext)
+let resourceManager = Global.getResourceManager()
 let res = @r(app.integer.test)
-let resource = AppResource("com.example.myapplication", "entry", Int32(res.id))
+let resource = AppResource("com.example.myapplication", "entry", res.id)
 let number = resourceManager.getNumber(resource)
 match (number) {
-    case INT(v) => AppLog.info(v.toString())
-    case FLOAT(v) => AppLog.info(v.toString())
+    case Int32Value(v) => Hilog.info(0, "test", v.toString(), "")
+    case Float32Value(v) => Hilog.info(0, "test", v.toString(), "")
     case _ => throw IllegalArgumentException("The type is not supported.")
 }
 ```
@@ -1339,14 +1312,14 @@ public func getNumberByName(resName: String): NumberValueType
 // index.cj
 
 import kit.LocalizationKit.*
-import kit.AbilityKit.*
+import kit.PerformanceAnalysisKit.*
+import ohos.arkui.state_macro_manage.*
 
-let stageContext = getStageContext(MainAbility.abilityContext.getOrThrow())
-let resourceManager = ResourceManager.getResourceManager(stageContext)
+let resourceManager = Global.getResourceManager()
 let number = resourceManager.getNumberByName("test")
 match (number) {
-    case INT(v) => AppLog.info(v.toString())
-    case FLOAT(v) => AppLog.info(v.toString())
+    case Int32Value(v) => Hilog.info(0, "test", v.toString(), "")
+    case Float32Value(v) => Hilog.info(0, "test", v.toString(), "")
     case _ => throw IllegalArgumentException("The type is not supported.")
 }
 ```
@@ -1408,10 +1381,8 @@ public func getPluralStringByName(resName: String, num: Int64): String
 // index.cj
 
 import kit.LocalizationKit.*
-import kit.AbilityKit.*
 
-let stageContext = getStageContext(MainAbility.abilityContext.getOrThrow())
-let resourceManager = ResourceManager.getResourceManager(stageContext)
+let resourceManager = Global.getResourceManager()
 resourceManager.getPluralStringByName("test", 1)
 ```
 
@@ -1472,10 +1443,9 @@ public func getPluralStringValue(resId: UInt32, num: Int64): String
 // index.cj
 
 import kit.LocalizationKit.*
-import kit.AbilityKit.*
+import ohos.arkui.state_macro_manage.*
 
-let stageContext = getStageContext(MainAbility.abilityContext.getOrThrow())
-let resourceManager = ResourceManager.getResourceManager(stageContext)
+let resourceManager = Global.getResourceManager()
 let res = @r(app.plural.test)
 resourceManager.getPluralStringValue(res.id, 1)
 ```
@@ -1537,12 +1507,11 @@ public func getPluralStringValue(resource: AppResource, num: Int64): String
 // index.cj
 
 import kit.LocalizationKit.*
-import kit.AbilityKit.*
+import ohos.arkui.state_macro_manage.*
 
-let stageContext = getStageContext(MainAbility.abilityContext.getOrThrow())
-let resourceManager = ResourceManager.getResourceManager(stageContext)
+let resourceManager = Global.getResourceManager()
 let res = @r(app.plural.test)
-let resource = AppResource("com.example.myapplication", "entry", Int32(res.id))
+let resource = AppResource("com.example.myapplication", "entry", res.id)
 resourceManager.getPluralStringValue(resource, 1)
 ```
 
@@ -1594,13 +1563,11 @@ public func getRawFd(path: String): RawFileDescriptor
 // index.cj
 
 import kit.LocalizationKit.*
-import kit.AbilityKit.*
-import ohos.base.AppLog
+import kit.PerformanceAnalysisKit.*
 
-let stageContext = getStageContext(MainAbility.abilityContext.getOrThrow())
-let resourceManager = ResourceManager.getResourceManager(stageContext)
+let resourceManager = Global.getResourceManager()
 let rawfd = resourceManager.getRawFd("test.txt")
-AppLog.info("${rawfd.fd} ${rawfd.offset} ${rawfd.length}")
+Hilog.info(0, "test", "${rawfd.fd} ${rawfd.offset} ${rawfd.length}", "")
 ```
 
 ### func getRawFileContent(String)
@@ -1651,10 +1618,8 @@ public func getRawFileContent(path: String): Array<UInt8>
 // index.cj
 
 import kit.LocalizationKit.*
-import kit.AbilityKit.*
 
-let stageContext = getStageContext(MainAbility.abilityContext.getOrThrow())
-let resourceManager = ResourceManager.getResourceManager(stageContext)
+let resourceManager = Global.getResourceManager()
 resourceManager.getRawFileContent("test.txt")
 ```
 
@@ -1706,10 +1671,8 @@ public func getRawFileList(path: String): Array<String>
 // index.cj
 
 import kit.LocalizationKit.*
-import kit.AbilityKit.*
 
-let stageContext = getStageContext(MainAbility.abilityContext.getOrThrow())
-let resourceManager = ResourceManager.getResourceManager(stageContext)
+let resourceManager = Global.getResourceManager()
 resourceManager.getRawFileList("")
 ```
 
@@ -1765,12 +1728,11 @@ public func getString(resId: UInt32, args: Array<ArgsValueType>): String
 // index.cj
 
 import kit.LocalizationKit.*
-import kit.AbilityKit.*
+import ohos.arkui.state_macro_manage.*
 
-let stageContext = getStageContext(MainAbility.abilityContext.getOrThrow())
-let resourceManager = ResourceManager.getResourceManager(stageContext)
+let resourceManager = Global.getResourceManager()
 let resource = @r(app.string.test)
-resourceManager.getString(Int32(resource.id))
+resourceManager.getString(resource.id)
 ```
 
 ### func getString(AppResource, Array\<ArgsValueType>)
@@ -1825,12 +1787,11 @@ public func getString(resource: AppResource, args: Array<ArgsValueType>): String
 // index.cj
 
 import kit.LocalizationKit.*
-import kit.AbilityKit.*
+import ohos.arkui.state_macro_manage.*
 
-let stageContext = getStageContext(MainAbility.abilityContext.getOrThrow())
-let resourceManager = ResourceManager.getResourceManager(stageContext)
+let resourceManager = Global.getResourceManager()
 let resource = @r(app.string.test)
-resourceManager.getString(Int32(resource.id), FormatArgs.STRING("format string"), FormatArgs.INT(10), FormatArgs.FLOAT(98.78))
+resourceManager.getString(resource.id, ArgsValueType.StringValue("format string"), ArgsValueType.Int32Value(10), ArgsValueType.Float32Value(98.78))
 ```
 
 ### func getStringArrayByName(String)
@@ -1882,10 +1843,8 @@ public func getStringArrayByName(resName: String): Array<String>
 // index.cj
 
 import kit.LocalizationKit.*
-import kit.AbilityKit.*
 
-let stageContext = getStageContext(MainAbility.abilityContext.getOrThrow())
-let resourceManager = ResourceManager.getResourceManager(stageContext)
+let resourceManager = Global.getResourceManager()
 resourceManager.getStringArrayByName("test")
 ```
 
@@ -1939,11 +1898,10 @@ public func getStringArrayValue(resId: UInt32): Array<String>
 // index.cj
 
 import kit.LocalizationKit.*
-import kit.AbilityKit.*
+import ohos.arkui.state_macro_manage.*
 
-let stageContext = getStageContext(MainAbility.abilityContext.getOrThrow())
-let resourceManager = ResourceManager.getResourceManager(stageContext)
-let re = @r(app.strarray.test)
+let resourceManager = Global.getResourceManager()
+let res = @r(app.strarray.test)
 resourceManager.getStringArrayValue(res.id)
 ```
 
@@ -1997,12 +1955,11 @@ public func getStringArrayValue(resource: AppResource): Array<String>
 // index.cj
 
 import kit.LocalizationKit.*
-import kit.AbilityKit.*
+import ohos.arkui.state_macro_manage.*
 
-let stageContext = getStageContext(MainAbility.abilityContext.getOrThrow())
-let resourceManager = ResourceManager.getResourceManager(stageContext)
+let resourceManager = Global.getResourceManager()
 let res = @r(app.strarray.test)
-let resource = AppResource("com.example.myapplication", "entry", Int32(res.id))
+let resource = AppResource("com.example.myapplication", "entry", res.id)
 resourceManager.getStringArrayValue(resource)
 ```
 
@@ -2058,11 +2015,9 @@ public func getStringByName(resName: String, args: Array<ArgsValueType>): String
 // index.cj
 
 import kit.LocalizationKit.*
-import kit.AbilityKit.*
 
-let stageContext = getStageContext(MainAbility.abilityContext.getOrThrow())
-let resourceManager = ResourceManager.getResourceManager(stageContext)
-resourceManager.getStringByName("test", FormatArgs.STRING("format string"), FormatArgs.INT(10), FormatArgs.FLOAT(98.78))
+let resourceManager = Global.getResourceManager()
+resourceManager.getStringByName("test", ArgsValueType.StringValue("format string"), ArgsValueType.Int32Value(10), ArgsValueType.Float32Value(98.78))
 ```
 
 ### func removeResource(String)
@@ -2106,10 +2061,8 @@ public func removeResource(path: String): Unit
 // index.cj
 
 import kit.LocalizationKit.*
-import kit.AbilityKit.*
 
-let stageContext = getStageContext(MainAbility.abilityContext.getOrThrow())
-let resourceManager = ResourceManager.getResourceManager(stageContext)
+let resourceManager = Global.getResourceManager()
 let path = "/data/storage/el2/base/haps/entry/files/library-default-unsigned.hsp"
 resourceManager.removeResource(path)
 ```

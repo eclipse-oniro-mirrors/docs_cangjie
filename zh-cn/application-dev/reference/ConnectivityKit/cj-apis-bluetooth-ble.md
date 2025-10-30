@@ -63,7 +63,6 @@ public func createGattClientDevice(deviceId: String): GattClientDevice
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import ohos.business_exception.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -71,7 +70,7 @@ import kit.PerformanceAnalysisKit.Hilog
 try {
     let device: GattClientDevice = createGattClientDevice("XX:XX:XX:XX:XX:XX")  // 请替换为您的设备地址
 } catch (e: BusinessException) {
-    Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}")
+    Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}", "")
 }
 ```
 
@@ -100,7 +99,6 @@ public func createGattServer(): GattServer
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -146,7 +144,6 @@ public func off(eventType: BluetoothBleCallbackType, callback!: ?CallbackObject 
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import ohos.callback_invoke.*
 import ohos.business_exception.*
 import kit.ConnectivityKit.*
@@ -166,7 +163,7 @@ try {
     on(BluetoothBleCallbackType.BleDeviceFind, bleDeviceFindCallback)
     off(BluetoothBleCallbackType.BleDeviceFind, callback: bleDeviceFindCallback)
 } catch (e: BusinessException) {
-    Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}")
+    Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}", "")
 }
 ```
 
@@ -209,7 +206,6 @@ public func on(eventType: BluetoothBleCallbackType, callback: Callback1Argument<
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import ohos.callback_invoke.*
 import ohos.business_exception.*
 import kit.ConnectivityKit.*
@@ -226,7 +222,7 @@ let advertisingStateChange = AdvertisingStateChange()
 try {
     on(BluetoothBleCallbackType.AdvertisingStateChange, advertisingStateChange)
 } catch (e: BusinessException) {
-    Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}")
+    Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}", "")
 }
 ```
 
@@ -269,7 +265,6 @@ public func on(eventType: BluetoothBleCallbackType, callback: Callback1Argument<
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import ohos.callback_invoke.*
 import ohos.business_exception.*
 import kit.ConnectivityKit.*
@@ -288,7 +283,7 @@ let bleDeviceFindCallback = BLEDeviceFindCallback()
 try {
     on(BluetoothBleCallbackType.BleDeviceFind, bleDeviceFindCallback)
 } catch (e: BusinessException) {
-    Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}")
+    Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}", "")
 }
 ```
 
@@ -334,11 +329,11 @@ public func startAdvertising(setting: AdvertiseSetting, advData: AdvertiseData, 
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.ConnectivityKit.*
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
 
-let advertisingSettings = AdvertiseSetting(32, 0, true)
+let advertisingSettings = AdvertiseSetting()
 let manufactureDataUnit = ManufactureData(
     4567u16,
     [1, 2, 3, 4]
@@ -361,7 +356,7 @@ let advertisingResponse = AdvertiseData(
 try {
     startAdvertising(advertisingSettings, advertisingData, advResponse: advertisingResponse)
 } catch (e: BusinessException) {
-    Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}")
+    Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}", "")
 }
 ```
 
@@ -411,11 +406,11 @@ public func startAdvertising(advertisingParams: AdvertisingParams): UInt32
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.ConnectivityKit.*
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
 
-let advertisingSettings = AdvertiseSetting(32, 0, true)
+let advertisingSettings = AdvertiseSetting()
 let manufactureDataUnit = ManufactureData(
     4567u16,
     [1, 2, 3, 4]
@@ -438,13 +433,13 @@ let advertisingResponse = AdvertiseData(
 let advertisingParams = AdvertisingParams(
     advertisingSettings,
     advertisingData,
-    advertisingResponse,
+    advertisingResponse: advertisingResponse,
     duration: 300
 )
 try {
     let advHandle = startAdvertising(advertisingParams)
 } catch (e: BusinessException) {
-    Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}")
+    Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}", "")
 }
 ```
 
@@ -490,7 +485,6 @@ public func startBLEScan(filters: Array<ScanFilter>, options!: ?ScanOptions = No
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import ohos.callback_invoke.*
 import ohos.business_exception.*
 import kit.ConnectivityKit.*
@@ -509,11 +503,11 @@ let bleDeviceFindCallback = BLEDeviceFindCallback()
 try {
     on(BluetoothBleCallbackType.BleDeviceFind, bleDeviceFindCallback)
     var scanFilter = ScanFilter()
-    scanFilter.serviceUUID = "00001888-0000-1000-8000-00805f9b34fb"  // 请替换为您的 serviceUUID
+    scanFilter.serviceUUID = "00001888-0000-1000-8000-00805f9b34fb"  // 请替换为您的 serviceUUid
     let scanOptions = ScanOptions(interval: 0, dutyMode: ScanDuty.ScanModeLowPower, matchMode: MatchMode.MatchModeAggressive, phyType: PhyType.PhyLe1M)
     startBLEScan([scanFilter], options: scanOptions)
 } catch (e: BusinessException) {
-    Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}")
+    Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}", "")
 }
 ```
 
@@ -550,14 +544,14 @@ public func stopAdvertising(): Unit
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.ConnectivityKit.*
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
 
 try {
     stopAdvertising()
 } catch (e: BusinessException) {
-    Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}")
+    Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}", "")
 }
 ```
 
@@ -601,11 +595,11 @@ public func stopAdvertising(advertisingId: UInt32): Unit
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.ConnectivityKit.*
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
 
-let advertisingSettings = AdvertiseSetting(32, 0, true)
+let advertisingSettings = AdvertiseSetting()
 let manufactureDataUnit = ManufactureData(
     4567u16,
     [1, 2, 3, 4]
@@ -628,7 +622,7 @@ let advertisingResponse = AdvertiseData(
 let advertisingParams = AdvertisingParams(
     advertisingSettings,
     advertisingData,
-    advertisingResponse,
+    advertisingResponse: advertisingResponse,
     duration: 300
 )
 var advHandle: UInt32 = 0xFF
@@ -636,7 +630,7 @@ try {
     advHandle = startAdvertising(advertisingParams)
     stopAdvertising(advHandle)
 } catch (e: BusinessException) {
-    Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}")
+    Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}", "")
 }
 ```
 
@@ -673,7 +667,6 @@ public func stopBLEScan(): Unit
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import ohos.business_exception.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -681,7 +674,7 @@ import kit.PerformanceAnalysisKit.Hilog
 try {
     stopBLEScan()
 } catch (e: BusinessException) {
-    Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}")
+    Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}", "")
 }
 ```
 
@@ -1051,13 +1044,13 @@ public var state: AdvertisingState
 ```cangjie
 public class BLECharacteristic {
     public var serviceUUID: String
-    public var CharacteristicUUID: String
+    public var characteristicUUID: String
     public var characteristicValue: Array<Byte>
     public var descriptors: Array<BLEDescriptor>
     public var properties: GattProperties
     public init(
         serviceUUID: String,
-        CharacteristicUUID: String,
+        characteristicUUID: String,
         characteristicValue: Array<Byte>,
         descriptors: Array<BLEDescriptor>,
         properties!: GattProperties = GattProperties(),
@@ -1073,10 +1066,10 @@ public class BLECharacteristic {
 
 **起始版本：** 22
 
-### var CharacteristicUUID
+### var characteristicUUID
 
 ```cangjie
-public var CharacteristicUUID: String
+public var characteristicUUID: String
 ```
 
 **功能：** 特定特征（characteristic）的UUID，例如：00002a11-0000-1000-8000-00805f9b34fb。
@@ -1158,7 +1151,7 @@ public var serviceUUID: String
 ```cangjie
 public init(
     serviceUUID: String,
-    CharacteristicUUID: String,
+    characteristicUUID: String,
     characteristicValue: Array<Byte>,
     descriptors: Array<BLEDescriptor>,
     properties!: GattProperties = GattProperties(),
@@ -1178,7 +1171,7 @@ public init(
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |serviceUUID|String|是|-|特定服务（service）的UUID，例如：00001888-0000-1000-8000-00805f9b34fb。|
-|CharacteristicUUID|String|是|-|特定特征（characteristic）的UUID，例如：00002a11-0000-1000-8000-00805f9b34fb。|
+|characteristicUUID|String|是|-|特定特征（characteristic）的UUID，例如：00002a11-0000-1000-8000-00805f9b34fb。|
 |characteristicValue|Array\<Byte>|是|-|特征对应的二进制值。|
 |descriptors|Array\<[BLEDescriptor](#class-bledescriptor)>|是|-|特定特征的描述符列表。|
 |properties|[GattProperties](#class-gattproperties)|否|GattProperties()|**命名参数。**  特定特征的属性描述。|
@@ -1237,12 +1230,12 @@ public var state: ProfileConnectionState
 ```cangjie
 public class BLEDescriptor {
     public var serviceUUID: String
-    public var CharacteristicUUID: String
+    public var characteristicUUID: String
     public var descriptorUUID: String
     public var descriptorValue: Array<Byte>
     public init(
         serviceUUID: String,
-        CharacteristicUUID: String,
+        characteristicUUID: String,
         descriptorUUID: String,
         descriptorValue: Array<Byte>,
         descriptorHandle!: UInt32 = 0,
@@ -1257,10 +1250,10 @@ public class BLEDescriptor {
 
 **起始版本：** 22
 
-### var CharacteristicUUID
+### var characteristicUUID
 
 ```cangjie
-public var CharacteristicUUID: String
+public var characteristicUUID: String
 ```
 
 **功能：** 特定特征（characteristic）的UUID，例如：00002a11-0000-1000-8000-00805f9b34fb。
@@ -1326,7 +1319,7 @@ public var serviceUUID: String
 ```cangjie
 public init(
     serviceUUID: String,
-    CharacteristicUUID: String,
+    characteristicUUID: String,
     descriptorUUID: String,
     descriptorValue: Array<Byte>,
     descriptorHandle!: UInt32 = 0,
@@ -1345,7 +1338,7 @@ public init(
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |serviceUUID|String|是|-|特定服务（service）的UUID，例如：00001888-0000-1000-8000-00805f9b34fb。|
-|CharacteristicUUID|String|是|-|特定特征（characteristic）的UUID，例如：00002a11-0000-1000-8000-00805f9b34fb。|
+|characteristicUUID|String|是|-|特定特征（characteristic）的UUID，例如：00002a11-0000-1000-8000-00805f9b34fb。|
 |descriptorUUID|String|是|-|描述符（descriptor）的UUID，例如：00002902-0000-1000-8000-00805f9b34fb。|
 |descriptorValue|Array\<Byte>|是|-|描述符对应的二进制值。|
 |descriptorHandle|UInt32|否|0|**命名参数。**  描述符的唯一标识句柄。当server端BLE蓝牙设备提供了多个相同UUID描述符时，可以通过此句柄区分不同的描述符。预留字段，本版本暂不支持。|
@@ -1358,7 +1351,7 @@ public class CharacteristicReadRequest {
     public var deviceId: String
     public var transId: Int32
     public var offset: Int32
-    public var CharacteristicUUID: String
+    public var characteristicUUID: String
     public var serviceUUID: String
 }
 ```
@@ -1369,10 +1362,10 @@ public class CharacteristicReadRequest {
 
 **起始版本：** 22
 
-### var CharacteristicUUID
+### var characteristicUUID
 
 ```cangjie
-public var CharacteristicUUID: String
+public var characteristicUUID: String
 ```
 
 **功能：** 特定特征（characteristic）的UUID，例如：00002a11-0000-1000-8000-00805f9b34fb。
@@ -1459,7 +1452,7 @@ public class CharacteristicWriteRequest {
     public var isPrepared: Bool
     public var needRsp: Bool
     public var value: Array<Byte>
-    public var CharacteristicUUID: String
+    public var characteristicUUID: String
     public var serviceUUID: String
 }
 ```
@@ -1470,10 +1463,10 @@ public class CharacteristicWriteRequest {
 
 **起始版本：** 22
 
-### var CharacteristicUUID
+### var characteristicUUID
 
 ```cangjie
-public var CharacteristicUUID: String
+public var characteristicUUID: String
 ```
 
 **功能：** 特定特征（characteristic）的UUID，例如：00002a11-0000-1000-8000-00805f9b34fb。
@@ -1606,7 +1599,7 @@ public class DescriptorReadRequest {
     public var transId: Int32
     public var offset: Int32
     public var descriptorUUID: String
-    public var CharacteristicUUID: String
+    public var characteristicUUID: String
     public var serviceUUID: String
 }
 ```
@@ -1617,10 +1610,10 @@ public class DescriptorReadRequest {
 
 **起始版本：** 22
 
-### var CharacteristicUUID
+### var characteristicUUID
 
 ```cangjie
-public var CharacteristicUUID: String
+public var characteristicUUID: String
 ```
 
 **功能：** 特定特征（characteristic）的UUID，例如：00002a11-0000-1000-8000-00805f9b34fb。
@@ -1724,7 +1717,7 @@ public class DescriptorWriteRequest {
     public var needRsp: Bool
     public var value: Array<Byte>
     public var descriptorUUID: String
-    public var CharacteristicUUID: String
+    public var characteristicUUID: String
     public var serviceUUID: String
 }
 ```
@@ -1735,10 +1728,10 @@ public class DescriptorWriteRequest {
 
 **起始版本：** 22
 
-### var CharacteristicUUID
+### var characteristicUUID
 
 ```cangjie
-public var CharacteristicUUID: String
+public var characteristicUUID: String
 ```
 
 **功能：** 特定特征（characteristic）的UUID，例如：00002a11-0000-1000-8000-00805f9b34fb。
@@ -1925,7 +1918,6 @@ public func close(): Unit
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import ohos.business_exception.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -1934,7 +1926,7 @@ let gattClient = createGattClientDevice("XX:XX:XX:XX:XX:XX")  // 请替换为您
 try {
     gattClient.close()
 } catch (e: BusinessException) {
-    Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}")
+    Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}", "")
 }
 ```
 
@@ -1972,7 +1964,6 @@ public func connect(): Unit
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import ohos.business_exception.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -1981,7 +1972,7 @@ let gattClient = createGattClientDevice("XX:XX:XX:XX:XX:XX")  // 请替换为您
 try {
     gattClient.connect()
 } catch (e: BusinessException) {
-    Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}")
+    Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}", "")
 }
 ```
 
@@ -2019,7 +2010,6 @@ public func disconnect(): Unit
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import ohos.business_exception.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -2028,7 +2018,7 @@ let gattClient = createGattClientDevice("XX:XX:XX:XX:XX:XX")  // 请替换为您
 try {
     gattClient.disconnect()
 } catch (e: BusinessException) {
-    Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}")
+    Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}", "")
 }
 ```
 
@@ -2072,7 +2062,6 @@ public func getDeviceName(): String
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import ohos.business_exception.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -2082,7 +2071,7 @@ try {
     let server = gattClient.getDeviceName()
     Hilog.info(0, "Bluetooth", "device name " + server)
 } catch (e: BusinessException) {
-    Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}")
+    Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}", "")
 }
 ```
 
@@ -2125,7 +2114,6 @@ public func getRssiValue(callback: AsyncCallback<Int32>): Unit
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import ohos.business_exception.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -2140,7 +2128,7 @@ try {
         Hilog.info(0, "Bluetooth", "the rssi value is " + rssi.getOrThrow().toString())
     }
 } catch (e: BusinessException) {
-    Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}")
+    Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}", "")
 }
 ```
 
@@ -2184,7 +2172,6 @@ public func getServices(callback: AsyncCallback<Array<GattService>>): Unit
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import ohos.business_exception.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -2199,7 +2186,7 @@ try {
         }
     Hilog.info(0, "Bluetooth", "getServices success")
 } catch (e: BusinessException) {
-    Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}")
+    Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}", "")
 }
 ```
 
@@ -2242,7 +2229,6 @@ public func off(eventType: BluetoothBleGattClientDeviceCallbackType, callback!: 
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import ohos.callback_invoke.*
 import ohos.business_exception.*
 import kit.ConnectivityKit.*
@@ -2265,7 +2251,7 @@ try {
     gattClient.on(BluetoothBleGattClientDeviceCallbackType.BleConnectionStateChange, bleConnectionStateChangeCallback)
     gattClient.off(BluetoothBleGattClientDeviceCallbackType.BleConnectionStateChange, callback: bleConnectionStateChangeCallback)
 } catch (e: BusinessException) {
-    Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}")
+    Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}", "")
 }
 ```
 
@@ -2308,7 +2294,6 @@ public func on(eventType: BluetoothBleGattClientDeviceCallbackType, callback: Ca
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import ohos.callback_invoke.*
 import ohos.business_exception.*
 import kit.ConnectivityKit.*
@@ -2326,7 +2311,7 @@ let bleCharacteristicChangeCallback = BLECharacteristicChangeCallback()
 try {
     gattClient.on(BluetoothBleGattClientDeviceCallbackType.ClientBleMtuChange, bleCharacteristicChangeCallback)
 } catch (e: BusinessException) {
-    Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}")
+    Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}", "")
 }
 ```
 
@@ -2372,7 +2357,6 @@ public func on(
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import ohos.callback_invoke.*
 import ohos.business_exception.*
 import kit.ConnectivityKit.*
@@ -2395,7 +2379,7 @@ let bleConnectionStateChangeCallback = BLEConnectionStateChangeCallback()
 try {
     gattClient.on(BluetoothBleGattClientDeviceCallbackType.BleConnectionStateChange, bleConnectionStateChangeCallback)
 } catch (e: BusinessException) {
-    Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}")
+    Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}", "")
 }
 ```
 
@@ -2438,7 +2422,6 @@ public func on(eventType: BluetoothBleGattClientDeviceCallbackType, callback: Ca
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import ohos.callback_invoke.*
 import ohos.business_exception.*
 import kit.ConnectivityKit.*
@@ -2456,7 +2439,7 @@ let bleMtuChangeCallback = BLEMtuChangeCallback()
 try {
     gattClient.on(BluetoothBleGattClientDeviceCallbackType.ClientBleMtuChange, bleMtuChangeCallback)
 } catch (e: BusinessException) {
-    Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}")
+    Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}", "")
 }
 ```
 
@@ -2505,7 +2488,6 @@ public func readCharacteristicValue(
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import ohos.business_exception.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -2540,7 +2522,7 @@ try {
             throw e
         }
         if (let Some(c) <- outData) {
-            Hilog.info(0, "Bluetooth", "read characteristic value uuid is ${c.CharacteristicUUID}")
+            Hilog.info(0, "Bluetooth", "read characteristic value uuid is ${c.characteristicUUID}", "")
             let message = StringBuilder("logCharacteristic value: ")
             for (i in 0..c.characteristicValue.size) {
                 message.append(c.characteristicValue[i])
@@ -2549,7 +2531,7 @@ try {
         }
     }
 } catch (e: BusinessException) {
-    Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}")
+    Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}", "")
 }
 ```
 
@@ -2601,7 +2583,6 @@ public func readDescriptorValue(descriptor: BLEDescriptor, callback: AsyncCallba
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import ohos.business_exception.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -2632,7 +2613,7 @@ try {
         }
     }
 } catch (e: BusinessException) {
-    Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}")
+    Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}", "")
 }
 ```
 
@@ -2676,7 +2657,6 @@ public func setBLEMtuSize(mtu: Int32): Unit
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import ohos.business_exception.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -2685,7 +2665,7 @@ let gattClient = createGattClientDevice("XX:XX:XX:XX:XX:XX")  // 请替换为您
 try {
     gattClient.setBLEMtuSize(100)
 } catch (e: BusinessException) {
-    Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}")
+    Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}", "")
 }
 ```
 
@@ -2731,7 +2711,6 @@ public func setCharacteristicChangeIndication(characteristic: BLECharacteristic,
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import ohos.business_exception.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -2766,7 +2745,7 @@ try {
         }
     }
 } catch (e: BusinessException) {
-    Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}")
+    Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}", "")
 }
 ```
 
@@ -2812,7 +2791,6 @@ public func setCharacteristicChangeNotification(characteristic: BLECharacteristi
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import ohos.business_exception.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -2847,7 +2825,7 @@ try {
         }
     }
 } catch (e: BusinessException) {
-    Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}")
+    Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}", "")
 }
 ```
 
@@ -2895,7 +2873,6 @@ public func writeCharacteristicValue(characteristic: BLECharacteristic, writeTyp
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import ohos.business_exception.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -2931,7 +2908,7 @@ try {
         }
     }
 } catch (e: BusinessException) {
-    Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}")
+    Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}", "")
 }
 ```
 
@@ -2978,7 +2955,6 @@ public func writeDescriptorValue(descriptor: BLEDescriptor, callback: AsyncCallb
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import ohos.business_exception.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -3003,7 +2979,7 @@ try {
         }
     }
 } catch (e: BusinessException) {
-    Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}")
+    Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}", "")
 }
 ```
 
@@ -3437,7 +3413,6 @@ public func addService(service: GattService): Unit
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import ohos.business_exception.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -3520,7 +3495,6 @@ public func close(): Unit
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import ohos.business_exception.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -3529,7 +3503,7 @@ let gattServer = createGattServer()
 try {
     gattServer.close()
 } catch (e: BusinessException) {
-    Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}")
+    Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}", "")
 }
 ```
 
@@ -3575,7 +3549,6 @@ public func notifyCharacteristicChanged(deviceId: String, notifyCharacteristic: 
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import ohos.business_exception.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -3591,7 +3564,7 @@ try {
     )
     gattServer.notifyCharacteristicChanged("XX:XX:XX:XX:XX:XX", notifyCharacteristic)  // 请替换为您的 deviceId
 } catch (e: BusinessException) {
-    Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}")
+    Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}", "")
 }
 ```
 
@@ -3633,7 +3606,6 @@ public func off(eventType: BluetoothBleGattServerCallbackType, callback!: ?Callb
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import ohos.callback_invoke.*
 import ohos.business_exception.*
 import kit.ConnectivityKit.*
@@ -3652,7 +3624,7 @@ try {
     gattServer.on(BluetoothBleGattServerCallbackType.ConnectionStateChange, stateChangeCallback)
     gattServer.off(BluetoothBleGattServerCallbackType.ConnectionStateChange, callback: stateChangeCallback)
 } catch (e: BusinessException) {
-    Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}")
+    Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}", "")
 }
 ```
 
@@ -3694,7 +3666,6 @@ public func on(eventType: BluetoothBleGattServerCallbackType, callback: Callback
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import ohos.callback_invoke.*
 import ohos.business_exception.*
 import kit.ConnectivityKit.*
@@ -3729,7 +3700,7 @@ let characteristicReadCallback = CharacteristicReadCallback()
 try {
     gattServer.on(BluetoothBleGattServerCallbackType.CharacteristicRead, characteristicReadCallback)
 } catch (e: BusinessException) {
-    Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}")
+    Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}", "")
 }
 ```
 
@@ -3771,7 +3742,6 @@ public func on(eventType: BluetoothBleGattServerCallbackType, callback: Callback
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import ohos.callback_invoke.*
 import ohos.business_exception.*
 import kit.ConnectivityKit.*
@@ -3813,7 +3783,7 @@ let characteristicWriteCallback = CharacteristicWriteCallback()
 try {
     gattServer.on(BluetoothBleGattServerCallbackType.CharacteristicWrite, characteristicWriteCallback)
 } catch (e: BusinessException) {
-    Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}")
+    Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}", "")
 }
 ```
 
@@ -3855,7 +3825,6 @@ public func on(eventType: BluetoothBleGattServerCallbackType, callback: Callback
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import ohos.callback_invoke.*
 import ohos.business_exception.*
 import kit.ConnectivityKit.*
@@ -3890,7 +3859,7 @@ let descriptorReadCallback = DescriptorReadCallback()
 try {
     gattServer.on(BluetoothBleGattServerCallbackType.DescriptorRead, descriptorReadCallback)
 } catch (e: BusinessException) {
-    Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}")
+    Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}", "")
 }
 ```
 
@@ -3932,7 +3901,6 @@ public func on(eventType: BluetoothBleGattServerCallbackType, callback: Callback
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import ohos.callback_invoke.*
 import ohos.business_exception.*
 import kit.ConnectivityKit.*
@@ -3971,7 +3939,7 @@ let descriptorWriteCallback = DescriptorWriteCallback()
 try {
     gattServer.on(BluetoothBleGattServerCallbackType.DescriptorWrite, descriptorWriteCallback)
 } catch (e: BusinessException) {
-    Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}")
+    Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}", "")
 }
 ```
 
@@ -4013,7 +3981,6 @@ public func on(eventType: BluetoothBleGattServerCallbackType, callback: Callback
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import ohos.callback_invoke.*
 import ohos.business_exception.*
 import kit.ConnectivityKit.*
@@ -4032,7 +3999,7 @@ let stateChangeCallback = StateChangeCallback()
 try {
     gattServer.on(BluetoothBleGattServerCallbackType.ConnectionStateChange, stateChangeCallback)
 } catch (e: BusinessException) {
-    Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}")
+    Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}", "")
 }
 ```
 
@@ -4074,7 +4041,6 @@ public func on(eventType: BluetoothBleGattServerCallbackType, callback: Callback
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import ohos.callback_invoke.*
 import ohos.business_exception.*
 import kit.ConnectivityKit.*
@@ -4092,7 +4058,7 @@ let bleMtuChangeCallback = BLEMtuChangeCallback()
 try {
     gattServer.on(BluetoothBleGattServerCallbackType.ServerBleMtuChange, bleMtuChangeCallback)
 } catch (e: BusinessException) {
-    Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}")
+    Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}", "")
 }
 ```
 
@@ -4137,7 +4103,6 @@ public func removeService(serviceUUID: String): Unit
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import ohos.business_exception.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -4146,7 +4111,7 @@ let gattServer = createGattServer()
 try {
     gattServer.removeService("00001810-0000-1000-8000-00805F9B34FB")
 } catch (e: BusinessException) {
-    Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}")
+    Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}", "")
 }
 ```
 
@@ -4190,7 +4155,6 @@ public func sendResponse(serverResponse: ServerResponse): Unit
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import ohos.business_exception.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -4204,7 +4168,7 @@ try {
     )
     gattServer.sendResponse(serverResponse)
 } catch (e: BusinessException) {
-    Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}")
+    Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}", "")
 }
 ```
 
@@ -4399,12 +4363,12 @@ public init(
 ```cangjie
 public class NotifyCharacteristic {
     public var serviceUUID: String
-    public var CharacteristicUUID: String
+    public var characteristicUUID: String
     public var characteristicValue: Array<Byte>
     public var confirm: Bool
     public init(
         serviceUUID: String,
-        CharacteristicUUID: String,
+        characteristicUUID: String,
         characteristicValue: Array<Byte>,
         confirm: Bool
     )
@@ -4417,10 +4381,10 @@ public class NotifyCharacteristic {
 
 **起始版本：** 22
 
-### var CharacteristicUUID
+### var characteristicUUID
 
 ```cangjie
-public var CharacteristicUUID: String
+public var characteristicUUID: String
 ```
 
 **功能：** 特定特征（characteristic）的UUID，例如：00002a11-0000-1000-8000-00805f9b34fb。
@@ -4486,7 +4450,7 @@ public var serviceUUID: String
 ```cangjie
 public init(
     serviceUUID: String,
-    CharacteristicUUID: String,
+    characteristicUUID: String,
     characteristicValue: Array<Byte>,
     confirm: Bool
 )
@@ -4503,7 +4467,7 @@ public init(
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |serviceUUID|String|是|-|特定服务（service）的UUID，例如：00001888-0000-1000-8000-00805f9b34fb。|
-|CharacteristicUUID|String|是|-|特定特征（characteristic）的UUID，例如：00002a11-0000-1000-8000-00805f9b34fb。|
+|characteristicUUID|String|是|-|特定特征（characteristic）的UUID，例如：00002a11-0000-1000-8000-00805f9b34fb。|
 |characteristicValue|Array\<Byte>|是|-|特征对应的二进制值。|
 |confirm|Bool|是|-|如果是indication，对端需要回复确认，则设置为true；如果是notification，对端不需要回复确认，则设置为false。|
 
@@ -4514,9 +4478,9 @@ public class ScanFilter {
     public var deviceId: String
     public var name: String
     public var serviceUUID: String
-    public var serviceUUIDMask: String
-    public var serviceSolicitationUUID: String
-    public var serviceSolicitationUUIDMask: String
+    public var serviceUuidMask: String
+    public var serviceSolicitationUuid: String
+    public var serviceSolicitationUuidMask: String
     public var serviceData: Array<Byte>
     public var serviceDataMask: Array<Byte>
     public var manufactureId: UInt16
@@ -4526,9 +4490,9 @@ public class ScanFilter {
         deviceId!: String = "",
         name!: String = "",
         serviceUUID!: String = "",
-        serviceUUIDMask!: String = "",
-        serviceSolicitationUUID!: String = "",
-        serviceSolicitationUUIDMask!: String = "",
+        serviceUuidMask!: String = "",
+        serviceSolicitationUuid!: String = "",
+        serviceSolicitationUuidMask!: String = "",
         serviceData!: Array<Byte> = [],
         serviceDataMask!: Array<Byte> = [],
         manufactureId!: UInt16 = 0,
@@ -4727,9 +4691,9 @@ public init(
     deviceId!: String = "",
     name!: String = "",
     serviceUUID!: String = "",
-    serviceUUIDMask!: String = "",
-    serviceSolicitationUUID!: String = "",
-    serviceSolicitationUUIDMask!: String = "",
+    serviceUuidMask!: String = "",
+    serviceSolicitationUuid!: String = "",
+    serviceSolicitationUuidMask!: String = "",
     serviceData!: Array<Byte> = [],
     serviceDataMask!: Array<Byte> = [],
     manufactureId!: UInt16 = 0,
@@ -4751,9 +4715,9 @@ public init(
 |deviceId|String|否|""| **命名参数。** 过滤该BLE设备地址的广播报文。例如："XX:XX:XX:XX:XX:XX"。预留字段，本版本暂不支持。|
 |name|String|否|""|**命名参数。** 过滤该BLE设备名称的广播报文。预留字段，本版本暂不支持。|
 |serviceUUID|String|否|""|**命名参数。** 过滤包含该服务UUID的广播报文。例如：00001888-0000-1000-8000-00805f9b34fb。预留字段，本版本暂不支持。|
-|serviceUUIDMask|String|否|""|**命名参数。** 搭配serviceUUID过滤器使用，可设置过滤部分服务UUID。例如：FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF。预留字段，本版本暂不支持。|
-|serviceSolicitationUUID|String|否|""|**命名参数。** 过滤包含该服务请求UUID的广播报文。例如：00001888-0000-1000-8000-00805F9B34FB。预留字段，本版本暂不支持。|
-|serviceSolicitationUUIDMask|String|否|""|**命名参数。** 搭配serviceSolicitationUUID过滤器使用，可设置过滤部分服务请求UUID。例如：FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF。预留字段，本版本暂不支持。|
+|serviceUuidMask|String|否|""|**命名参数。** 搭配serviceUuid过滤器使用，可设置过滤部分服务UUID。例如：FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF。预留字段，本版本暂不支持。|
+|serviceSolicitationUuid|String|否|""|**命名参数。** 过滤包含该服务请求UUID的广播报文。例如：00001888-0000-1000-8000-00805F9B34FB。预留字段，本版本暂不支持。|
+|serviceSolicitationUuidMask|String|否|""|**命名参数。** 搭配serviceSolicitationUuid过滤器使用，可设置过滤部分服务请求UUID。例如：FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF。预留字段，本版本暂不支持。|
 |serviceData|Array\<Byte>|否|[]|**命名参数。** 过滤包含该服务数据的广播报文。例如：[0x90,0x00,0xF1,0xF2]。预留字段，本版本暂不支持。|
 |serviceDataMask|Array\<Byte>|否|[]|**命名参数。** 搭配serviceData过滤器使用，可设置过滤部分服务数据。例如：[0xFF,0xFF,0xFF,0xFF]。预留字段，本版本暂不支持。|
 |manufactureId|UInt16|否|0|**命名参数。** 过滤包含该制造商标识符的广播报文。例如：0x0006。预留字段，本版本暂不支持。|

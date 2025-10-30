@@ -80,18 +80,16 @@ import kit.BasicServicesKit.*
 import kit.AbilityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
-func exampleCreate(): Unit {
-    try {
-        let context = Global.abilityContext
-        let config = Config(
-            action = Action.Download,
-            url = "https://example.com/file.txt"
-        )
-        let task = create(context, config)
-        Hilog.info(0, "cangjie_ohos_test", "成功创建任务，任务ID: ${task.tid}")
-    } catch (e: Exception) {
-        Hilog.info(0, "cangjie_ohos_test", "创建任务失败: ${e.toString()}")
-    }
+try {
+    let context = Global.abilityContext
+    let config = Config(
+        action = Action.Download,
+        url = "https://example.com/file.txt"
+    )
+    let task = create(context, config)
+    Hilog.info(0, "cangjie_ohos_test", "成功创建任务，任务ID: ${task.tid}")
+} catch (e: Exception) {
+    Hilog.info(0, "cangjie_ohos_test", "创建任务失败: ${e.toString()}")
 }
 ```
 
@@ -145,15 +143,13 @@ import kit.BasicServicesKit.*
 import kit.AbilityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
-func exampleGetTask(): Unit {
-    try {
-        let context = Global.abilityContext
-        let taskId = "example_task_id"
-        let task = getTask(context, taskId)
-        Hilog.info(0, "cangjie_ohos_test", "成功获取任务，任务ID: ${task.tid}")
-    } catch (e: Exception) {
-        Hilog.info(0, "cangjie_ohos_test", "获取任务失败: ${e.toString()}")
-    }
+try {
+    let context = Global.abilityContext
+    let taskId = "example_task_id"
+    let task = getTask(context, taskId)
+    Hilog.info(0, "cangjie_ohos_test", "成功获取任务，任务ID: ${task.tid}")
+} catch (e: Exception) {
+    Hilog.info(0, "cangjie_ohos_test", "获取任务失败: ${e.toString()}")
 }
 ```
 
@@ -204,14 +200,12 @@ import kit.BasicServicesKit.*
 import kit.AbilityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
-func exampleRemove(): Unit {
-    try {
-        let taskId = "example_task_id"
-        remove(taskId)
-        Hilog.info(0, "cangjie_ohos_test", "成功移除任务，任务ID: ${taskId}")
-    } catch (e: Exception) {
-        Hilog.info(0, "cangjie_ohos_test", "移除任务失败: ${e.toString()}")
-    }
+try {
+    let taskId = "example_task_id"
+    remove(taskId)
+    Hilog.info(0, "cangjie_ohos_test", "成功移除任务，任务ID: ${taskId}")
+} catch (e: Exception) {
+    Hilog.info(0, "cangjie_ohos_test", "移除任务失败: ${e.toString()}")
 }
 ```
 
@@ -262,17 +256,15 @@ import kit.BasicServicesKit.*
 import kit.AbilityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
-func exampleSearch(): Unit {
-    try {
-        let filter = Filter()
-        let taskIds = search(filter)
-        Hilog.info(0, "cangjie_ohos_test", "搜索到任务数量: ${taskIds.length}")
-        for (id in taskIds) {
-            Hilog.info(0, "cangjie_ohos_test", "任务ID: ${id}")
-        }
-    } catch (e: Exception) {
-        Hilog.info(0, "cangjie_ohos_test", "搜索任务失败: ${e.toString()}")
+try {
+    let filter = Filter()
+    let taskIds = search(filter)
+    Hilog.info(0, "cangjie_ohos_test", "搜索到任务数量: ${taskIds.length}")
+    for (id in taskIds) {
+        Hilog.info(0, "cangjie_ohos_test", "任务ID: ${id}")
     }
+} catch (e: Exception) {
+    Hilog.info(0, "cangjie_ohos_test", "搜索任务失败: ${e.toString()}")
 }
 ```
 
@@ -324,14 +316,12 @@ import kit.BasicServicesKit.*
 import kit.AbilityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
-func exampleShow(): Unit {
-    try {
-        let taskId = "example_task_id"
-        let taskInfo = show(taskId)
-        Hilog.info(0, "cangjie_ohos_test", "任务信息: ${taskInfo.toString()}")
-    } catch (e: Exception) {
-        Hilog.info(0, "cangjie_ohos_test", "查询任务信息失败: ${e.toString()}")
-    }
+try {
+    let taskId = "example_task_id"
+    let taskInfo = show(taskId)
+    Hilog.info(0, "cangjie_ohos_test", "任务信息: ${taskInfo.toString()}")
+} catch (e: Exception) {
+    Hilog.info(0, "cangjie_ohos_test", "查询任务信息失败: ${e.toString()}")
 }
 ```
 
@@ -384,15 +374,13 @@ import kit.BasicServicesKit.*
 import kit.AbilityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
-func exampleTouch(): Unit {
-    try {
-        let taskId = "example_task_id"
-        let token = "example_token"
-        let taskInfo = touch(taskId, token)
-        Hilog.info(0, "cangjie_ohos_test", "任务信息: ${taskInfo.toString()}")
-    } catch (e: Exception) {
-        Hilog.info(0, "cangjie_ohos_test", "查询任务信息失败: ${e.toString()}")
-    }
+try {
+    let taskId = "example_task_id"
+    let token = "example_token"
+    let taskInfo = touch(taskId, token)
+    Hilog.info(0, "cangjie_ohos_test", "任务信息: ${taskInfo.toString()}")
+} catch (e: Exception) {
+    Hilog.info(0, "cangjie_ohos_test", "查询任务信息失败: ${e.toString()}")
 }
 ```
 
@@ -871,28 +859,26 @@ import kit.BasicServicesKit.*
 import kit.AbilityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
-func exampleConfigInit(): Unit {
-    try {
-        let config = Config(
-            action = Action.Download,
-            url = "https://example.com/file.txt",
-            title = "示例下载任务",
-            description = "这是一个示例下载任务",
-            mode = Mode.Background,
-            overwrite = true,
-            network = Network.Wifi,
-            metered = false,
-            roaming = true,
-            retry = true,
-            redirect = true,
-            gauge = false,
-            precise = false,
-            priority = 0
-        )
-        Hilog.info(0, "cangjie_ohos_test", "成功创建配置对象")
-    } catch (e: Exception) {
-        Hilog.info(0, "cangjie_ohos_test", "创建配置对象失败: ${e.toString()}")
-    }
+try {
+    let config = Config(
+        action = Action.Download,
+        url = "https://example.com/file.txt",
+        title = "示例下载任务",
+        description = "这是一个示例下载任务",
+        mode = Mode.Background,
+        overwrite = true,
+        network = Network.Wifi,
+        metered = false,
+        roaming = true,
+        retry = true,
+        redirect = true,
+        gauge = false,
+        precise = false,
+        priority = 0
+    )
+    Hilog.info(0, "cangjie_ohos_test", "成功创建配置对象")
+} catch (e: Exception) {
+    Hilog.info(0, "cangjie_ohos_test", "创建配置对象失败: ${e.toString()}")
 }
 ```
 
@@ -1023,17 +1009,15 @@ import kit.BasicServicesKit.*
 import kit.AbilityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
-func exampleFileSpecInit(): Unit {
-    try {
-        let fileSpec = FileSpec(
-            path = "./example.txt",
-            mimeType = "text/plain",
-            filename = "example.txt"
-        )
-        Hilog.info(0, "cangjie_ohos_test", "成功创建文件规范对象")
-    } catch (e: Exception) {
-        Hilog.info(0, "cangjie_ohos_test", "创建文件规范对象失败: ${e.toString()}")
-    }
+try {
+    let fileSpec = FileSpec(
+        path = "./example.txt",
+        mimeType = "text/plain",
+        filename = "example.txt"
+    )
+    Hilog.info(0, "cangjie_ohos_test", "成功创建文件规范对象")
+} catch (e: Exception) {
+    Hilog.info(0, "cangjie_ohos_test", "创建文件规范对象失败: ${e.toString()}")
 }
 ```
 
@@ -1229,19 +1213,17 @@ import kit.BasicServicesKit.*
 import kit.AbilityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
-func exampleFilterInit(): Unit {
-    try {
-        let filter = Filter(
-            before = None,
-            after = None,
-            state = State.Running,
-            action = Action.Download,
-            mode = Mode.Background
-        )
-        Hilog.info(0, "cangjie_ohos_test", "成功创建过滤器对象")
-    } catch (e: Exception) {
-        Hilog.info(0, "cangjie_ohos_test", "创建过滤器对象失败: ${e.toString()}")
-    }
+try {
+    let filter = Filter(
+        before = None,
+        after = None,
+        state = State.Running,
+        action = Action.Download,
+        mode = Mode.Background
+    )
+    Hilog.info(0, "cangjie_ohos_test", "成功创建过滤器对象")
+} catch (e: Exception) {
+    Hilog.info(0, "cangjie_ohos_test", "创建过滤器对象失败: ${e.toString()}")
 }
 ```
 
@@ -1326,16 +1308,14 @@ import kit.BasicServicesKit.*
 import kit.AbilityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
-func exampleFormItemInit(): Unit {
-    try {
-        let formItem = FormItem(
-            name = "exampleField",
-            value = FormItemValue.StringItem("exampleValue")
-        )
-        Hilog.info(0, "cangjie_ohos_test", "成功创建表单项对象")
-    } catch (e: Exception) {
-        Hilog.info(0, "cangjie_ohos_test", "创建表单项对象失败: ${e.toString()}")
-    }
+try {
+    let formItem = FormItem(
+        name = "exampleField",
+        value = FormItemValue.StringItem("exampleValue")
+    )
+    Hilog.info(0, "cangjie_ohos_test", "成功创建表单项对象")
+} catch (e: Exception) {
+    Hilog.info(0, "cangjie_ohos_test", "创建表单项对象失败: ${e.toString()}")
 }
 ```
 
@@ -1599,19 +1579,17 @@ import kit.BasicServicesKit.*
 import kit.AbilityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
-func exampleTaskInit(): Unit {
-    try {
-        let context = Global.abilityContext
-        let taskId = "example_task_id"
-        let config = Config(
-            action = Action.Download,
-            url = "https://example.com/file.txt"
-        )
-        let task = Task(taskId, config)
-        Hilog.info(0, "cangjie_ohos_test", "成功初始化任务，任务ID: ${task.tid}")
-    } catch (e: Exception) {
-        Hilog.info(0, "cangjie_ohos_test", "初始化任务失败: ${e.toString()}")
-    }
+try {
+    let context = Global.abilityContext
+    let taskId = "example_task_id"
+    let config = Config(
+        action = Action.Download,
+        url = "https://example.com/file.txt"
+    )
+    let task = Task(taskId, config)
+    Hilog.info(0, "cangjie_ohos_test", "成功初始化任务，任务ID: ${task.tid}")
+} catch (e: Exception) {
+    Hilog.info(0, "cangjie_ohos_test", "初始化任务失败: ${e.toString()}")
 }
 ```
 
@@ -1647,27 +1625,25 @@ import kit.BasicServicesKit.*
 import kit.AbilityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
-func exampleTaskOff(): Unit {
-    try {
-        let context = Global.abilityContext
-        let taskId = "example_task_id"
-        let config = Config(
-            action = Action.Download,
-            url = "https://example.com/file.txt"
-        )
-        let task = Task(taskId, config)
+try {
+    let context = Global.abilityContext
+    let taskId = "example_task_id"
+    let config = Config(
+        action = Action.Download,
+        url = "https://example.com/file.txt"
+    )
+    let task = Task(taskId, config)
 
-        // 先订阅事件
-        task.on(EventCallbackType.Progress, (progress) => {
-            Hilog.info(0, "cangjie_ohos_test", "下载进度: ${progress.progress}%")
-        })
+    // 先订阅事件
+    task.on(EventCallbackType.Progress, (progress) => {
+        Hilog.info(0, "cangjie_ohos_test", "下载进度: ${progress.progress}%")
+    })
 
-        // 取消订阅事件
-        task.off(EventCallbackType.Progress)
-        Hilog.info(0, "cangjie_ohos_test", "成功取消订阅进度事件")
-    } catch (e: Exception) {
-        Hilog.info(0, "cangjie_ohos_test", "取消订阅事件失败: ${e.toString()}")
-    }
+    // 取消订阅事件
+    task.off(EventCallbackType.Progress)
+    Hilog.info(0, "cangjie_ohos_test", "成功取消订阅进度事件")
+} catch (e: Exception) {
+    Hilog.info(0, "cangjie_ohos_test", "取消订阅事件失败: ${e.toString()}")
 }
 ```
 
@@ -1814,20 +1790,18 @@ import kit.BasicServicesKit.*
 import kit.AbilityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
-func exampleTaskStart(): Unit {
-    try {
-        let context = Global.abilityContext
-        let config = Config(
-            action = Action.Download,
-            url = "https://example.com/file.txt"
-        )
-        let task = create(context, config)
+try {
+    let context = Global.abilityContext
+    let config = Config(
+        action = Action.Download,
+        url = "https://example.com/file.txt"
+    )
+    let task = create(context, config)
 
-        task.start()
-        Hilog.info(0, "cangjie_ohos_test", "成功启动任务")
-    } catch (e: Exception) {
-        Hilog.info(0, "cangjie_ohos_test", "启动任务失败: ${e.toString()}")
-    }
+    task.start()
+    Hilog.info(0, "cangjie_ohos_test", "成功启动任务")
+} catch (e: Exception) {
+    Hilog.info(0, "cangjie_ohos_test", "启动任务失败: ${e.toString()}")
 }
 ```
 
@@ -1864,21 +1838,19 @@ import kit.BasicServicesKit.*
 import kit.AbilityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
-func exampleTaskStop(): Unit {
-    try {
-        let context = Global.abilityContext
-        let config = Config(
-            action = Action.Download,
-            url = "https://example.com/largefile.zip"
-        )
-        let task = create(context, config)
+try {
+    let context = Global.abilityContext
+    let config = Config(
+        action = Action.Download,
+        url = "https://example.com/largefile.zip"
+    )
+    let task = create(context, config)
 
-        task.start()
-        task.stop()
-        Hilog.info(0, "cangjie_ohos_test", "成功停止任务")
-    } catch (e: Exception) {
-        Hilog.info(0, "cangjie_ohos_test", "停止任务失败: ${e.toString()}")
-    }
+    task.start()
+    task.stop()
+    Hilog.info(0, "cangjie_ohos_test", "成功停止任务")
+} catch (e: Exception) {
+    Hilog.info(0, "cangjie_ohos_test", "停止任务失败: ${e.toString()}")
 }
 ```
 

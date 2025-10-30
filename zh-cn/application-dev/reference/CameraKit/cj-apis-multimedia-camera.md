@@ -65,7 +65,7 @@ public func getCameraManager(context: UIAbilityContext): CameraManager
 
 import kit.CameraKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 ```
 
@@ -126,11 +126,9 @@ func getExposureMode(): ExposureMode
 // index.cj
 
 import kit.CameraKit.*
-import ohos.base.*
-
 import kit.PerformanceAnalysisKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let session = cameraManager.createSession(SceneMode.NormalPhoto)
 let photoSession = session as PhotoSession
@@ -171,9 +169,9 @@ func getExposureValue(): Float64
 // index.cj
 
 import kit.CameraKit.*
-import ohos.base.*
+import kit.PerformanceAnalysisKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let session = cameraManager.createSession(SceneMode.NormalPhoto)
 let photoSession = session as PhotoSession
@@ -215,7 +213,7 @@ func getMeteringPoint(): Point
 
 import kit.CameraKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let session = cameraManager.createSession(SceneMode.NormalPhoto)
 let photoSession = session as PhotoSession
@@ -258,7 +256,7 @@ func setExposureBias(exposureBias: Float64): Unit
 
 import kit.CameraKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let session = cameraManager.createSession(SceneMode.NormalPhoto)
 var photoSessionOption = session as PhotoSession
@@ -303,7 +301,7 @@ func setExposureMode(aeMode: ExposureMode): Unit
 
 import kit.CameraKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let session = cameraManager.createSession(SceneMode.NormalPhoto)
 var photoSessionOption = session as PhotoSession
@@ -348,7 +346,7 @@ func setMeteringPoint(point: Point): Unit
 import kit.CameraKit.*
 import kit.CameraKit.Point as ImagePoint
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let session = cameraManager.createSession(SceneMode.NormalPhoto)
 var photoSessionOption = session as PhotoSession
@@ -407,7 +405,7 @@ func getExposureBiasRange(): Array<Float64>
 
 import kit.CameraKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let session = cameraManager.createSession(SceneMode.NormalPhoto)
 var photoSessionOption = session as PhotoSession
@@ -455,9 +453,9 @@ func isExposureModeSupported(aeMode: ExposureMode): Bool
 // index.cj
 
 import kit.CameraKit.*
-import ohos.base.*
+import kit.PerformanceAnalysisKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let session = cameraManager.createSession(SceneMode.NormalPhoto)
 var photoSessionOption = session as PhotoSession
@@ -512,7 +510,7 @@ import kit.ImageKit.createImageReceiver
 import kit.ImageKit.Size as ImageSize
 import kit.ImageKit.ImageFormat
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let device = cameraManager.getSupportedCameras()[0]
 let mode = cameraManager.getSupportedSceneModes(device)[0]
@@ -578,7 +576,7 @@ func getActiveColorSpace(): ColorSpace
 
 import kit.CameraKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let session = cameraManager.createSession(SceneMode.NormalPhoto)
 var photoSessionOption = session as PhotoSession
@@ -646,7 +644,7 @@ func setColorSpace(colorSpace: ColorSpace): Unit
 
 import kit.CameraKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let session = cameraManager.createSession(SceneMode.NormalPhoto)
 var photoSessionOption = session as PhotoSession
@@ -704,7 +702,7 @@ func getSupportedColorSpaces(): Array<ColorSpace>
 
 import kit.CameraKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let session = cameraManager.createSession(SceneMode.NormalPhoto)
 var photoSessionOption = session as PhotoSession
@@ -766,7 +764,7 @@ func getFlashMode(): FlashMode
 
 import kit.CameraKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let session = cameraManager.createSession(SceneMode.NormalPhoto)
 var photoSessionOption = session as PhotoSession
@@ -814,7 +812,7 @@ func setFlashMode(flashMode: FlashMode): Unit
 
 import kit.CameraKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let session = cameraManager.createSession(SceneMode.NormalPhoto)
 var photoSessionOption = session as PhotoSession
@@ -872,9 +870,9 @@ func hasFlash(): Bool
 // index.cj
 
 import kit.CameraKit.*
-import ohos.base.*
+import kit.PerformanceAnalysisKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let session = cameraManager.createSession(SceneMode.NormalPhoto)
 var photoSessionOption = session as PhotoSession
@@ -923,7 +921,7 @@ func isFlashModeSupported(flashMode: FlashMode): Bool
 
 import kit.CameraKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let session = cameraManager.createSession(SceneMode.NormalPhoto)
 var photoSessionOption = session as PhotoSession
@@ -987,9 +985,9 @@ func getFocalLength(): Float64
 // index.cj
 
 import kit.CameraKit.*
-import ohos.base.*
+import kit.PerformanceAnalysisKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let session = cameraManager.createSession(SceneMode.NormalPhoto)
 var photoSessionOption = session as PhotoSession
@@ -1031,9 +1029,9 @@ func getFocusMode(): FocusMode
 // index.cj
 
 import kit.CameraKit.*
-import ohos.base.*
+import kit.PerformanceAnalysisKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let session = cameraManager.createSession(SceneMode.NormalPhoto)
 var photoSessionOption = session as PhotoSession
@@ -1076,7 +1074,7 @@ func getFocusPoint(): Point
 
 import kit.CameraKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let session = cameraManager.createSession(SceneMode.NormalPhoto)
 var photoSessionOption = session as PhotoSession
@@ -1121,7 +1119,7 @@ func setFocusMode(afMode: FocusMode): Unit
 
 import kit.CameraKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let session = cameraManager.createSession(SceneMode.NormalPhoto)
 var photoSessionOption = session as PhotoSession
@@ -1168,7 +1166,7 @@ func setFocusPoint(point: Point): Unit
 import kit.CameraKit.*
 import kit.CameraKit.Point as ImagePoint
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let session = cameraManager.createSession(SceneMode.NormalPhoto)
 var photoSessionOption = session as PhotoSession
@@ -1230,9 +1228,9 @@ func isFocusModeSupported(afMode: FocusMode): Bool
 // index.cj
 
 import kit.CameraKit.*
-import ohos.base.*
+import kit.PerformanceAnalysisKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let session = cameraManager.createSession(SceneMode.NormalPhoto)
 var photoSessionOption = session as PhotoSession
@@ -1302,7 +1300,7 @@ func addInput(cameraInput: CameraInput): Unit
 
 import kit.CameraKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let session = cameraManager.createSession(SceneMode.NormalPhoto)
 let cameraDevice = cameraManager.getSupportedCameras()[0]
@@ -1347,7 +1345,7 @@ func addOutput(cameraOutput: CameraOutput): Unit
 
 import kit.CameraKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let session = cameraManager.createSession(SceneMode.NormalPhoto)
 let cameraDevice = cameraManager.getSupportedCameras()[0]
@@ -1387,7 +1385,7 @@ func beginConfig(): Unit
 
 import kit.CameraKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let session = cameraManager.createSession(SceneMode.NormalPhoto)
 session.beginConfig()
@@ -1427,9 +1425,9 @@ func canAddInput(cameraInput: CameraInput): Bool
 // index.cj
 
 import kit.CameraKit.*
-import ohos.base.*
+import kit.PerformanceAnalysisKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let session = cameraManager.createSession(SceneMode.NormalPhoto)
 let cameraDevice = cameraManager.getSupportedCameras()[0]
@@ -1471,9 +1469,9 @@ func canAddOutput(cameraOutput: CameraOutput): Bool
 // index.cj
 
 import kit.CameraKit.*
-import ohos.base.*
+import kit.PerformanceAnalysisKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let session = cameraManager.createSession(SceneMode.NormalPhoto)
 let cameraDevice = cameraManager.getSupportedCameras()[0]
@@ -1513,7 +1511,7 @@ func commitConfig(): Unit
 
 import kit.CameraKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let session = cameraManager.createSession(SceneMode.NormalPhoto)
 session.commitConfig()
@@ -1548,7 +1546,7 @@ func release(): Unit
 
 import kit.CameraKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let session = cameraManager.createSession(SceneMode.NormalPhoto)
 session.release()
@@ -1593,7 +1591,7 @@ func removeInput(cameraInput: CameraInput): Unit
 
 import kit.CameraKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let session = cameraManager.createSession(SceneMode.NormalPhoto)
 let cameraDevice = cameraManager.getSupportedCameras()[0]
@@ -1641,7 +1639,7 @@ import kit.ImageKit.createImageReceiver
 import kit.ImageKit.Size as ImageSize
 import kit.ImageKit.ImageFormat
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let session = cameraManager.createSession(SceneMode.NormalPhoto)
 let cameraDevice = cameraManager.getSupportedCameras()[0]
@@ -1685,7 +1683,7 @@ func start(): Unit
 
 import kit.CameraKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let session = cameraManager.createSession(SceneMode.NormalPhoto)
 session.start()
@@ -1720,7 +1718,7 @@ func stop(): Unit
 
 import kit.CameraKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let session = cameraManager.createSession(SceneMode.NormalPhoto)
 session.stop()
@@ -1779,9 +1777,9 @@ func getActiveVideoStabilizationMode(): VideoStabilizationMode
 // index.cj
 
 import kit.CameraKit.*
-import ohos.base.*
+import kit.PerformanceAnalysisKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let session = cameraManager.createSession(SceneMode.NormalVideo)
 var videoSessionOption = session as VideoSession
@@ -1824,7 +1822,7 @@ func setVideoStabilizationMode(mode: VideoStabilizationMode): Unit
 
 import kit.CameraKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let session = cameraManager.createSession(SceneMode.NormalVideo)
 var videoSessionOption = session as VideoSession
@@ -1888,7 +1886,7 @@ func isVideoStabilizationModeSupported(vsMode: VideoStabilizationMode): Bool
 
 import kit.CameraKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let session = cameraManager.createSession(SceneMode.NormalVideo)
 var videoSessionOption = session as VideoSession
@@ -1953,9 +1951,9 @@ func getZoomRatio(): Float64
 // index.cj
 
 import kit.CameraKit.*
-import ohos.base.*
+import kit.PerformanceAnalysisKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let session = cameraManager.createSession(SceneMode.NormalPhoto)
 var photoSessionOption = session as PhotoSession
@@ -1991,7 +1989,7 @@ func setSmoothZoom(targetRatio: Float64, mode: SmoothZoomMode): Unit
 
 import kit.CameraKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let session = cameraManager.createSession(SceneMode.NormalPhoto)
 var photoSessionOption = session as PhotoSession
@@ -2027,7 +2025,7 @@ func setSmoothZoom(targetRatio: Float64): Unit
 
 import kit.CameraKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let session = cameraManager.createSession(SceneMode.NormalPhoto)
 var photoSessionOption = session as PhotoSession
@@ -2071,7 +2069,7 @@ func setZoomRatio(zoomRatio: Float64): Unit
 
 import kit.CameraKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let session = cameraManager.createSession(SceneMode.NormalPhoto)
 var photoSessionOption = session as PhotoSession
@@ -2128,9 +2126,9 @@ func getZoomRatioRange(): Array<Float64>
 // index.cj
 
 import kit.CameraKit.*
-import ohos.base.*
+import kit.PerformanceAnalysisKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let session = cameraManager.createSession(SceneMode.NormalPhoto)
 var photoSessionOption = session as PhotoSession
@@ -2278,7 +2276,7 @@ public func close(): Unit
 
 import kit.CameraKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let cameraDevice = cameraManager.getSupportedCameras()[0]
 let cameraInput = cameraManager.createCameraInput(cameraDevice)
@@ -2323,7 +2321,7 @@ public func off(eventType: CameraEvents, camera: CameraDevice, callback: Callbac
 
 import kit.CameraKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let cameraDevice = cameraManager.getSupportedCameras()[0]
 let cameraInput = cameraManager.createCameraInput(cameraDevice)
@@ -2367,7 +2365,7 @@ public func off(eventType: CameraEvents, camera: CameraDevice): Unit
 
 import kit.CameraKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let cameraDevice = cameraManager.getSupportedCameras()[0]
 let cameraInput = cameraManager.createCameraInput(cameraDevice)
@@ -2415,14 +2413,9 @@ public func on(eventType: CameraEvents, camera: CameraDevice, callback: Callback
 // index.cj
 
 import kit.CameraKit.*
-import ohos.base.*
 import kit.PerformanceAnalysisKit.*
-
 import ohos.callback_invoke.Callback0Argument
 import ohos.business_exception.BusinessException
-//// check redundant import
-
-//// end
 
 // 此处代码可添加在依赖项定义中
 class TestCallbackError <: Callback0Argument {
@@ -2432,12 +2425,12 @@ class TestCallbackError <: Callback0Argument {
     }
 }
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let cameraDevice = cameraManager.getSupportedCameras()[0]
 let cameraInput = cameraManager.createCameraInput(cameraDevice)
 let testCallbackError = TestCallbackError()
-return cameraInput.on(CameraEvents.CameraError, cameraDevice, testCallbackError)
+cameraInput.on(CameraEvents.CameraError, cameraDevice, testCallbackError)
 ```
 
 ### func open()
@@ -2472,7 +2465,7 @@ public func open(): Unit
 
 import kit.CameraKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let cameraDevice = cameraManager.getSupportedCameras()[0]
 let cameraInput = cameraManager.createCameraInput(cameraDevice)
@@ -2522,7 +2515,7 @@ public func open(isSecureEnabled: Bool): UInt64
 
 import kit.CameraKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let cameraDevice = cameraManager.getSupportedCameras()[0]
 let cameraInput = cameraManager.createCameraInput(cameraDevice)
@@ -2587,13 +2580,13 @@ public func createCameraInput(camera: CameraDevice): CameraInput
 
 import kit.CameraKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let cameraDevices = cameraManager.getSupportedCameras()
 let cameraDevice0 = cameraDevices[0]
 let position = cameraDevice0.cameraPosition
-let `type` = cameraDevice0.cameraType
-let cameraInput = cameraManager.createCameraInput(position , `type`)
+let cameraType = cameraDevice0.cameraType
+let cameraInput = cameraManager.createCameraInput(position , cameraType)
 ```
 
 ### func createCameraInput(CameraPosition, CameraType)
@@ -2642,13 +2635,13 @@ public func createCameraInput(position: CameraPosition, cameraType: CameraType):
 
 import kit.CameraKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let cameraDevices = cameraManager.getSupportedCameras()
 let cameraDevice0 = cameraDevices[0]
 let position = cameraDevice0.cameraPosition
-let `type` = cameraDevice0.cameraType
-let cameraInput = cameraManager.createCameraInput(position , `type`)
+let cameraType = cameraDevice0.cameraType
+let cameraInput = cameraManager.createCameraInput(position , cameraType)
 ```
 
 ### func createPhotoOutput(?Profile)
@@ -2693,7 +2686,7 @@ public func createPhotoOutput(?Profile = None): PhotoOutput
 
 import kit.CameraKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let cameraDevices = cameraManager.getSupportedCameras()
 let camera = cameraDevices[0]
@@ -2749,7 +2742,7 @@ import kit.ImageKit.createImageReceiver
 import kit.ImageKit.Size as ImageSize
 import kit.ImageKit.ImageFormat
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let size = ImageSize(8, 8192)
 let receiver = createImageReceiver(size, ImageFormat.Jpeg, 8)
@@ -2802,7 +2795,7 @@ import kit.ImageKit.createImageReceiver
 import kit.ImageKit.Size as ImageSize
 import kit.ImageKit.ImageFormat
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let size = ImageSize(8, 8192)
 let receiver = createImageReceiver(size, ImageFormat.Jpeg, 8)
@@ -2852,7 +2845,7 @@ public func createSession(mode: SceneMode): Session
 
 import kit.CameraKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let cameraDevices = cameraManager.getSupportedCameras()
 let camera = cameraDevices[0]
@@ -2906,7 +2899,7 @@ import kit.ImageKit.createImageReceiver
 import kit.ImageKit.Size as ImageSize
 import kit.ImageKit.ImageFormat
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let size = ImageSize(8, 8192)
 let receiver = createImageReceiver(size, ImageFormat.Jpeg, 8)
@@ -2959,7 +2952,7 @@ import kit.ImageKit.createImageReceiver
 import kit.ImageKit.Size as ImageSize
 import kit.ImageKit.ImageFormat
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let size = ImageSize(8, 8192)
 let receiver = createImageReceiver(size, ImageFormat.Jpeg, 8)
@@ -2994,7 +2987,7 @@ public func getSupportedCameras(): Array<CameraDevice>
 
 import kit.CameraKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let cameraDevices = cameraManager.getSupportedCameras()
 ```
@@ -3033,7 +3026,7 @@ public func getSupportedOutputCapability(camera: CameraDevice, mode: SceneMode):
 
 import kit.CameraKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let cameraDevices = cameraManager.getSupportedCameras()
 let camera = cameraDevices[0]
@@ -3074,7 +3067,7 @@ public func getSupportedSceneModes(camera: CameraDevice): Array<SceneMode>
 
 import kit.CameraKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let cameraDevices = cameraManager.getSupportedCameras()
 let camera = cameraDevices[0]
@@ -3108,7 +3101,7 @@ public func getTorchMode(): TorchMode
 
 import kit.CameraKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let torchMode = cameraManager.getTorchMode()
 ```
@@ -3139,9 +3132,9 @@ public func isCameraMuted(): Bool
 // index.cj
 
 import kit.CameraKit.*
-import ohos.base.*
+import kit.PerformanceAnalysisKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 Hilog.info(0, "AppLogCj", cameraManager.isCameraMuted().toString())
 ```
@@ -3178,9 +3171,9 @@ public func isTorchModeSupported(mode: TorchMode): Bool
 // index.cj
 
 import kit.CameraKit.*
-import ohos.base.*
+import kit.PerformanceAnalysisKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let torchMode = cameraManager.getTorchMode()
 Hilog.info(0, "AppLogCj", cameraManager.isTorchModeSupported(torchMode).toString())
@@ -3212,9 +3205,9 @@ public func isTorchSupported(): Bool
 // index.cj
 
 import kit.CameraKit.*
-import ohos.base.*
+import kit.PerformanceAnalysisKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 Hilog.info(0, "AppLogCj", cameraManager.isTorchSupported().toString())
 ```
@@ -3256,7 +3249,7 @@ public func off(eventType: CameraEvents, callback: Callback1Argument<CameraStatu
 
 import kit.CameraKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 cameraManager.off(CameraEvents.TorchStatusChange)
 ```
@@ -3298,7 +3291,7 @@ public func off(eventType: CameraEvents, callback: Callback1Argument<FoldStatusI
 
 import kit.CameraKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 cameraManager.off(CameraEvents.TorchStatusChange)
 ```
@@ -3340,7 +3333,7 @@ public func off(eventType: CameraEvents, callback: Callback1Argument<TorchStatus
 
 import kit.CameraKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 cameraManager.off(CameraEvents.TorchStatusChange)
 ```
@@ -3381,7 +3374,7 @@ public func off(eventType: CameraEvents): Unit
 
 import kit.CameraKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 cameraManager.off(CameraEvents.TorchStatusChange)
 ```
@@ -3427,13 +3420,8 @@ public func on(eventType: CameraEvents, callback: Callback1Argument<CameraStatus
 
 import kit.CameraKit.*
 import kit.PerformanceAnalysisKit.*
-import ohos.base.*
-
 import ohos.business_exception.BusinessException
 import ohos.callback_invoke.Callback1Argument
-//// check redundant import
-
-//// end
 
 // 此处代码可添加在依赖项定义中
 class TestCallbackTorchStatusChange <: Callback1Argument<TorchStatusInfo> {
@@ -3443,7 +3431,7 @@ class TestCallbackTorchStatusChange <: Callback1Argument<TorchStatusInfo> {
     }
 }
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let testCallbackTorchStatusChange = TestCallbackTorchStatusChange()
 cameraManager.on(CameraEvents.TorchStatusChange, testCallbackTorchStatusChange)
@@ -3490,13 +3478,8 @@ public func on(eventType: CameraEvents, callback: Callback1Argument<FoldStatusIn
 
 import kit.CameraKit.*
 import kit.PerformanceAnalysisKit.*
-import ohos.base.*
-
 import ohos.business_exception.BusinessException
 import ohos.callback_invoke.Callback1Argument
-//// check redundant import
-
-//// end
 
 // 此处代码可添加在依赖项定义中
 class TestCallbackTorchStatusChange <: Callback1Argument<TorchStatusInfo> {
@@ -3506,7 +3489,7 @@ class TestCallbackTorchStatusChange <: Callback1Argument<TorchStatusInfo> {
     }
 }
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let testCallbackTorchStatusChange = TestCallbackTorchStatusChange()
 cameraManager.on(CameraEvents.TorchStatusChange, testCallbackTorchStatusChange)
@@ -3553,13 +3536,8 @@ public func on(eventType: CameraEvents, callback: Callback1Argument<TorchStatusI
 
 import kit.CameraKit.*
 import kit.PerformanceAnalysisKit.*
-import ohos.base.*
-
 import ohos.business_exception.BusinessException
 import ohos.callback_invoke.Callback1Argument
-//// check redundant import
-
-//// end
 
 // 此处代码可添加在依赖项定义中
 class TestCallbackTorchStatusChange <: Callback1Argument<TorchStatusInfo> {
@@ -3569,7 +3547,7 @@ class TestCallbackTorchStatusChange <: Callback1Argument<TorchStatusInfo> {
     }
 }
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let testCallbackTorchStatusChange = TestCallbackTorchStatusChange()
 cameraManager.on(CameraEvents.TorchStatusChange, testCallbackTorchStatusChange)
@@ -3611,7 +3589,7 @@ public func setTorchMode(mode: TorchMode): Unit
 
 import kit.CameraKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 cameraManager.setTorchMode(TorchMode.On)
 cameraManager.setTorchMode(TorchMode.Off)
@@ -4254,7 +4232,7 @@ public func capture(): Unit
 
 import kit.CameraKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let device = cameraManager.getSupportedCameras()[0]
 let mode = cameraManager.getSupportedSceneModes(device)[0]
@@ -4300,7 +4278,7 @@ public func capture(setting: PhotoCaptureSetting): Unit
 
 import kit.CameraKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let device = cameraManager.getSupportedCameras()[0]
 let mode = cameraManager.getSupportedSceneModes(device)[0]
@@ -4344,7 +4322,7 @@ public func enableMirror(enabled: Bool): Unit
 
 import kit.CameraKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let device = cameraManager.getSupportedCameras()[0]
 let mode = cameraManager.getSupportedSceneModes(device)[0]
@@ -4393,7 +4371,7 @@ public func enableMovingPhoto(enabled: Bool): Unit
 
 import kit.CameraKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let device = cameraManager.getSupportedCameras()[0]
 let mode = cameraManager.getSupportedSceneModes(device)[0]
@@ -4438,7 +4416,7 @@ public func getActiveProfile(): Profile
 
 import kit.CameraKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let device = cameraManager.getSupportedCameras()[0]
 let mode = cameraManager.getSupportedSceneModes(device)[0]
@@ -4493,7 +4471,7 @@ public func getPhotoRotation(deviceDegree: Int32): ImageRotation
 
 import kit.CameraKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let device = cameraManager.getSupportedCameras()[0]
 let mode = cameraManager.getSupportedSceneModes(device)[0]
@@ -4530,7 +4508,7 @@ public func getSupportedMovingPhotoVideoCodecTypes(): Array<VideoCodecType>
 
 import kit.CameraKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let device = cameraManager.getSupportedCameras()[0]
 let mode = cameraManager.getSupportedSceneModes(device)[0]
@@ -4573,9 +4551,9 @@ public func isMirrorSupported(): Bool
 // index.cj
 
 import kit.CameraKit.*
-import ohos.base.*
+import kit.PerformanceAnalysisKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let device = cameraManager.getSupportedCameras()[0]
 let mode = cameraManager.getSupportedSceneModes(device)[0]
@@ -4618,9 +4596,9 @@ public func isMovingPhotoSupported(): Bool
 // index.cj
 
 import kit.CameraKit.*
-import ohos.base.*
+import kit.PerformanceAnalysisKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let device = cameraManager.getSupportedCameras()[0]
 let mode = cameraManager.getSupportedSceneModes(device)[0]
@@ -4666,7 +4644,7 @@ public func off(eventType: CameraEvents, callback: Callback1Argument<CaptureStar
 
 import kit.CameraKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let device = cameraManager.getSupportedCameras()[0]
 let mode = cameraManager.getSupportedSceneModes(device)[0]
@@ -4712,7 +4690,7 @@ public func off(eventType: CameraEvents, callback: Callback1Argument<FrameShutte
 
 import kit.CameraKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let device = cameraManager.getSupportedCameras()[0]
 let mode = cameraManager.getSupportedSceneModes(device)[0]
@@ -4758,7 +4736,7 @@ public func off(eventType: CameraEvents, callback: Callback1Argument<CaptureEndI
 
 import kit.CameraKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let device = cameraManager.getSupportedCameras()[0]
 let mode = cameraManager.getSupportedSceneModes(device)[0]
@@ -4804,7 +4782,7 @@ public func off(eventType: CameraEvents, callback: Callback1Argument<FrameShutte
 
 import kit.CameraKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let device = cameraManager.getSupportedCameras()[0]
 let mode = cameraManager.getSupportedSceneModes(device)[0]
@@ -4850,7 +4828,7 @@ public func off(eventType: CameraEvents, callback: Callback0Argument): Unit
 
 import kit.CameraKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let device = cameraManager.getSupportedCameras()[0]
 let mode = cameraManager.getSupportedSceneModes(device)[0]
@@ -4896,7 +4874,7 @@ public func off(eventType: CameraEvents, callback: Callback1Argument<Float64>): 
 
 import kit.CameraKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let device = cameraManager.getSupportedCameras()[0]
 let mode = cameraManager.getSupportedSceneModes(device)[0]
@@ -4941,7 +4919,7 @@ public func off(eventType: CameraEvents): Unit
 
 import kit.CameraKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let device = cameraManager.getSupportedCameras()[0]
 let mode = cameraManager.getSupportedSceneModes(device)[0]
@@ -4991,13 +4969,8 @@ public func on(eventType: CameraEvents, callback: Callback1Argument<CaptureStart
 
 import kit.CameraKit.*
 import kit.PerformanceAnalysisKit.*
-import ohos.base.*
-
 import ohos.callback_invoke.Callback0Argument
 import ohos.business_exception.BusinessException
-//// check redundant import
-
-//// end
 
 // 此处代码可添加在依赖项定义中
 class TestCallbackError <: Callback0Argument {
@@ -5007,7 +4980,7 @@ class TestCallbackError <: Callback0Argument {
     }
 }
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let device = cameraManager.getSupportedCameras()[0]
 let mode = cameraManager.getSupportedSceneModes(device)[0]
@@ -5058,13 +5031,8 @@ public func on(eventType: CameraEvents, callback: Callback1Argument<FrameShutter
 
 import kit.CameraKit.*
 import kit.PerformanceAnalysisKit.*
-import ohos.base.*
-
 import ohos.callback_invoke.Callback0Argument
 import ohos.business_exception.BusinessException
-//// check redundant import
-
-//// end
 
 // 此处代码可添加在依赖项定义中
 class TestCallbackError <: Callback0Argument {
@@ -5074,7 +5042,7 @@ class TestCallbackError <: Callback0Argument {
     }
 }
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let device = cameraManager.getSupportedCameras()[0]
 let mode = cameraManager.getSupportedSceneModes(device)[0]
@@ -5125,13 +5093,8 @@ public func on(eventType: CameraEvents, callback: Callback1Argument<CaptureEndIn
 
 import kit.CameraKit.*
 import kit.PerformanceAnalysisKit.*
-import ohos.base.*
-
 import ohos.callback_invoke.Callback0Argument
 import ohos.business_exception.BusinessException
-//// check redundant import
-
-//// end
 
 // 此处代码可添加在依赖项定义中
 class TestCallbackError <: Callback0Argument {
@@ -5141,7 +5104,7 @@ class TestCallbackError <: Callback0Argument {
     }
 }
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let device = cameraManager.getSupportedCameras()[0]
 let mode = cameraManager.getSupportedSceneModes(device)[0]
@@ -5192,13 +5155,8 @@ public func on(eventType: CameraEvents, callback: Callback1Argument<FrameShutter
 
 import kit.CameraKit.*
 import kit.PerformanceAnalysisKit.*
-import ohos.base.*
-
 import ohos.callback_invoke.Callback0Argument
 import ohos.business_exception.BusinessException
-//// check redundant import
-
-//// end
 
 // 此处代码可添加在依赖项定义中
 class TestCallbackError <: Callback0Argument {
@@ -5208,7 +5166,7 @@ class TestCallbackError <: Callback0Argument {
     }
 }
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let device = cameraManager.getSupportedCameras()[0]
 let mode = cameraManager.getSupportedSceneModes(device)[0]
@@ -5259,13 +5217,8 @@ public func on(eventType: CameraEvents, callback: Callback0Argument): Unit
 
 import kit.CameraKit.*
 import kit.PerformanceAnalysisKit.*
-import ohos.base.*
-
 import ohos.callback_invoke.Callback0Argument
 import ohos.business_exception.BusinessException
-//// check redundant import
-
-//// end
 
 // 此处代码可添加在依赖项定义中
 class TestCallbackError <: Callback0Argument {
@@ -5275,7 +5228,7 @@ class TestCallbackError <: Callback0Argument {
     }
 }
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let device = cameraManager.getSupportedCameras()[0]
 let mode = cameraManager.getSupportedSceneModes(device)[0]
@@ -5326,13 +5279,8 @@ public func on(eventType: CameraEvents, callback: Callback1Argument<Float64>): U
 
 import kit.CameraKit.*
 import kit.PerformanceAnalysisKit.*
-import ohos.base.*
-
 import ohos.callback_invoke.Callback0Argument
 import ohos.business_exception.BusinessException
-//// check redundant import
-
-//// end
 
 // 此处代码可添加在依赖项定义中
 class TestCallbackError <: Callback0Argument {
@@ -5342,7 +5290,7 @@ class TestCallbackError <: Callback0Argument {
     }
 }
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let device = cameraManager.getSupportedCameras()[0]
 let mode = cameraManager.getSupportedSceneModes(device)[0]
@@ -5381,7 +5329,7 @@ public func release(): Unit
 
 import kit.CameraKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let device = cameraManager.getSupportedCameras()[0]
 let mode = cameraManager.getSupportedSceneModes(device)[0]
@@ -5425,7 +5373,7 @@ public func setMovingPhotoVideoCodecType(codecType: VideoCodecType): Unit
 
 import kit.CameraKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let device = cameraManager.getSupportedCameras()[0]
 let mode = cameraManager.getSupportedSceneModes(device)[0]
@@ -5496,9 +5444,9 @@ public func canPreconfig(preconfigType: PreconfigType, preconfigRatio!: Preconfi
 // index.cj
 
 import kit.CameraKit.*
-import ohos.base.*
+import kit.PerformanceAnalysisKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let photoSession = cameraManager.createSession(SceneMode.NormalPhoto) as PhotoSession
 let session = photoSession.getOrThrow()
@@ -5533,7 +5481,7 @@ public func off(eventType: CameraEvents, callback: Callback0Argument): Unit
 
 import kit.CameraKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let photoSession = cameraManager.createSession(SceneMode.NormalPhoto) as PhotoSession
 let session = photoSession.getOrThrow()
@@ -5568,7 +5516,7 @@ public func off(eventType: CameraEvents, callback: Callback1Argument<FocusState>
 
 import kit.CameraKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let photoSession = cameraManager.createSession(SceneMode.NormalPhoto) as PhotoSession
 let session = photoSession.getOrThrow()
@@ -5603,7 +5551,7 @@ public func off(eventType: CameraEvents, callback: Callback1Argument<SmoothZoomI
 
 import kit.CameraKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let photoSession = cameraManager.createSession(SceneMode.NormalPhoto) as PhotoSession
 let session = photoSession.getOrThrow()
@@ -5645,7 +5593,7 @@ public func off(eventType: CameraEvents): Unit
 
 import kit.CameraKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let photoSession = cameraManager.createSession(SceneMode.NormalPhoto) as PhotoSession
 let session = photoSession.getOrThrow()
@@ -5683,7 +5631,7 @@ public func on(eventType: CameraEvents, callback: Callback0Argument): Unit
 // index.cj
 
 import kit.CameraKit.*
-import ohos.base.*
+import kit.PerformanceAnalysisKit.*
 import ohos.callback_invoke.*
 import ohos.business_exception.*
 
@@ -5698,7 +5646,7 @@ class SmoothZoomInfoAvailableCallback <: Callback1Argument<SmoothZoomInfo> {
     }
 }
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let photoSession = cameraManager.createSession(SceneMode.NormalPhoto) as PhotoSession
 let session = photoSession.getOrThrow()
@@ -5737,7 +5685,7 @@ public func on(eventType: CameraEvents, callback: Callback1Argument<FocusState>)
 // index.cj
 
 import kit.CameraKit.*
-import ohos.base.*
+import kit.PerformanceAnalysisKit.*
 import ohos.callback_invoke.*
 import ohos.business_exception.*
 
@@ -5752,7 +5700,7 @@ class SmoothZoomInfoAvailableCallback <: Callback1Argument<SmoothZoomInfo> {
     }
 }
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let photoSession = cameraManager.createSession(SceneMode.NormalPhoto) as PhotoSession
 let session = photoSession.getOrThrow()
@@ -5791,7 +5739,7 @@ public func on(eventType: CameraEvents, callback: Callback1Argument<SmoothZoomIn
 // index.cj
 
 import kit.CameraKit.*
-import ohos.base.*
+import kit.PerformanceAnalysisKit.*
 import ohos.callback_invoke.*
 import ohos.business_exception.*
 
@@ -5806,7 +5754,7 @@ class SmoothZoomInfoAvailableCallback <: Callback1Argument<SmoothZoomInfo> {
     }
 }
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let photoSession = cameraManager.createSession(SceneMode.NormalPhoto) as PhotoSession
 let session = photoSession.getOrThrow()
@@ -5853,7 +5801,7 @@ public func preconfig(
 
 import kit.CameraKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let photoSession = cameraManager.createSession(SceneMode.NormalPhoto) as PhotoSession
 let session = photoSession.getOrThrow()
@@ -5981,7 +5929,7 @@ import kit.ImageKit.createImageReceiver
 import kit.ImageKit.Size as ImageSize
 import kit.ImageKit.ImageFormat
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let device = cameraManager.getSupportedCameras()[0]
 let mode = cameraManager.getSupportedSceneModes(device)[0]
@@ -6031,7 +5979,7 @@ import kit.ImageKit.createImageReceiver
 import kit.ImageKit.Size as ImageSize
 import kit.ImageKit.ImageFormat
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let device = cameraManager.getSupportedCameras()[0]
 let mode = cameraManager.getSupportedSceneModes(device)[0]
@@ -6092,7 +6040,7 @@ import kit.ImageKit.createImageReceiver
 import kit.ImageKit.Size as ImageSize
 import kit.ImageKit.ImageFormat
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let device = cameraManager.getSupportedCameras()[0]
 let mode = cameraManager.getSupportedSceneModes(device)[0]
@@ -6142,7 +6090,7 @@ import kit.ImageKit.createImageReceiver
 import kit.ImageKit.Size as ImageSize
 import kit.ImageKit.ImageFormat
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let device = cameraManager.getSupportedCameras()[0]
 let mode = cameraManager.getSupportedSceneModes(device)[0]
@@ -6194,7 +6142,7 @@ import kit.ImageKit.createImageReceiver
 import kit.ImageKit.Size as ImageSize
 import kit.ImageKit.ImageFormat
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let device = cameraManager.getSupportedCameras()[0]
 let mode = cameraManager.getSupportedSceneModes(device)[0]
@@ -6245,7 +6193,7 @@ import kit.ImageKit.createImageReceiver
 import kit.ImageKit.Size as ImageSize
 import kit.ImageKit.ImageFormat
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let device = cameraManager.getSupportedCameras()[0]
 let mode = cameraManager.getSupportedSceneModes(device)[0]
@@ -6301,13 +6249,8 @@ import kit.ImageKit.createImageReceiver
 import kit.ImageKit.Size as ImageSize
 import kit.ImageKit.ImageFormat
 import kit.PerformanceAnalysisKit.*
-import ohos.base.*
-
 import ohos.callback_invoke.Callback0Argument
 import ohos.business_exception.BusinessException
-//// check redundant import
-
-//// end
 
 // 此处代码可添加在依赖项定义中
 class TestCallbackError <: Callback0Argument {
@@ -6317,7 +6260,7 @@ class TestCallbackError <: Callback0Argument {
     }
 }
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let device = cameraManager.getSupportedCameras()[0]
 let mode = cameraManager.getSupportedSceneModes(device)[0]
@@ -6362,7 +6305,7 @@ import kit.ImageKit.createImageReceiver
 import kit.ImageKit.Size as ImageSize
 import kit.ImageKit.ImageFormat
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let device = cameraManager.getSupportedCameras()[0]
 let mode = cameraManager.getSupportedSceneModes(device)[0]
@@ -6418,7 +6361,7 @@ import kit.ImageKit.createImageReceiver
 import kit.ImageKit.Size as ImageSize
 import kit.ImageKit.ImageFormat
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let device = cameraManager.getSupportedCameras()[0]
 let mode = cameraManager.getSupportedSceneModes(device)[0]
@@ -6470,7 +6413,7 @@ import kit.ImageKit.createImageReceiver
 import kit.ImageKit.Size as ImageSize
 import kit.ImageKit.ImageFormat
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let device = cameraManager.getSupportedCameras()[0]
 let mode = cameraManager.getSupportedSceneModes(device)[0]
@@ -6805,7 +6748,7 @@ import kit.ImageKit.createImageReceiver
 import kit.ImageKit.Size as ImageSize
 import kit.ImageKit.ImageFormat
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let device = cameraManager.getSupportedCameras()[0]
 let mode = cameraManager.getSupportedSceneModes(device)[1]
@@ -6855,7 +6798,7 @@ import kit.ImageKit.createImageReceiver
 import kit.ImageKit.Size as ImageSize
 import kit.ImageKit.ImageFormat
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let device = cameraManager.getSupportedCameras()[0]
 let mode = cameraManager.getSupportedSceneModes(device)[1]
@@ -6905,7 +6848,7 @@ import kit.ImageKit.createImageReceiver
 import kit.ImageKit.Size as ImageSize
 import kit.ImageKit.ImageFormat
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let device = cameraManager.getSupportedCameras()[0]
 let mode = cameraManager.getSupportedSceneModes(device)[1]
@@ -6966,7 +6909,7 @@ import kit.ImageKit.createImageReceiver
 import kit.ImageKit.Size as ImageSize
 import kit.ImageKit.ImageFormat
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let device = cameraManager.getSupportedCameras()[0]
 let mode = cameraManager.getSupportedSceneModes(device)[1]
@@ -7018,7 +6961,7 @@ import kit.ImageKit.createImageReceiver
 import kit.ImageKit.Size as ImageSize
 import kit.ImageKit.ImageFormat
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let device = cameraManager.getSupportedCameras()[0]
 let mode = cameraManager.getSupportedSceneModes(device)[1]
@@ -7069,7 +7012,7 @@ import kit.ImageKit.createImageReceiver
 import kit.ImageKit.Size as ImageSize
 import kit.ImageKit.ImageFormat
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let device = cameraManager.getSupportedCameras()[0]
 let mode = cameraManager.getSupportedSceneModes(device)[1]
@@ -7125,8 +7068,6 @@ import kit.ImageKit.createImageReceiver
 import kit.ImageKit.Size as ImageSize
 import kit.ImageKit.ImageFormat
 import kit.PerformanceAnalysisKit.*
-import ohos.base.*
-
 import ohos.callback_invoke.Callback0Argument
 import ohos.business_exception.BusinessException
 //// check redundant import
@@ -7141,7 +7082,7 @@ class TestCallbackError <: Callback0Argument {
     }
 }
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let device = cameraManager.getSupportedCameras()[0]
 let mode = cameraManager.getSupportedSceneModes(device)[1]
@@ -7186,7 +7127,7 @@ import kit.ImageKit.createImageReceiver
 import kit.ImageKit.Size as ImageSize
 import kit.ImageKit.ImageFormat
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let device = cameraManager.getSupportedCameras()[0]
 let mode = cameraManager.getSupportedSceneModes(device)[1]
@@ -7242,7 +7183,7 @@ import kit.ImageKit.createImageReceiver
 import kit.ImageKit.Size as ImageSize
 import kit.ImageKit.ImageFormat
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let device = cameraManager.getSupportedCameras()[0]
 let mode = cameraManager.getSupportedSceneModes(device)[1]
@@ -7287,7 +7228,7 @@ import kit.ImageKit.createImageReceiver
 import kit.ImageKit.Size as ImageSize
 import kit.ImageKit.ImageFormat
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let device = cameraManager.getSupportedCameras()[0]
 let mode = cameraManager.getSupportedSceneModes(device)[1]
@@ -7331,7 +7272,7 @@ import kit.ImageKit.createImageReceiver
 import kit.ImageKit.Size as ImageSize
 import kit.ImageKit.ImageFormat
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let device = cameraManager.getSupportedCameras()[0]
 let mode = cameraManager.getSupportedSceneModes(device)[1]
@@ -7445,7 +7386,7 @@ public func canPreconfig(preconfigType: PreconfigType, preconfigRatio!: Preconfi
 
 import kit.CameraKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let videoSession = cameraManager.createSession(SceneMode.NormalVideo) as VideoSession
 let session = videoSession.getOrThrow()
@@ -7489,7 +7430,7 @@ public func off(eventType: CameraEvents, callback: Callback0Argument): Unit
 
 import kit.CameraKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let videoSession = cameraManager.createSession(SceneMode.NormalVideo) as VideoSession
 let session = videoSession.getOrThrow()
@@ -7533,7 +7474,7 @@ public func off(eventType: CameraEvents, callback: Callback1Argument<FocusState>
 
 import kit.CameraKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let videoSession = cameraManager.createSession(SceneMode.NormalVideo) as VideoSession
 let session = videoSession.getOrThrow()
@@ -7577,7 +7518,7 @@ public func off(eventType: CameraEvents, callback: Callback1Argument<SmoothZoomI
 
 import kit.CameraKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let videoSession = cameraManager.createSession(SceneMode.NormalVideo) as VideoSession
 let session = videoSession.getOrThrow()
@@ -7620,7 +7561,7 @@ public func off(eventType: CameraEvents): Unit
 
 import kit.CameraKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let videoSession = cameraManager.createSession(SceneMode.NormalVideo) as VideoSession
 let session = videoSession.getOrThrow()
@@ -7667,7 +7608,7 @@ public func on(eventType: CameraEvents, callback: Callback0Argument): Unit
 // index.cj
 
 import kit.CameraKit.*
-import ohos.base.*
+import kit.PerformanceAnalysisKit.*
 import ohos.callback_invoke.*
 import ohos.business_exception.*
 
@@ -7682,7 +7623,7 @@ class SmoothZoomInfoAvailableCallback <: Callback1Argument<SmoothZoomInfo> {
     }
 }
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let videoSession = cameraManager.createSession(SceneMode.NormalVideo) as VideoSession
 let session = videoSession.getOrThrow()
@@ -7730,7 +7671,7 @@ public func on(eventType: CameraEvents, callback: Callback1Argument<FocusState>)
 // index.cj
 
 import kit.CameraKit.*
-import ohos.base.*
+import kit.PerformanceAnalysisKit.*
 import ohos.callback_invoke.*
 import ohos.business_exception.*
 
@@ -7745,7 +7686,7 @@ class SmoothZoomInfoAvailableCallback <: Callback1Argument<SmoothZoomInfo> {
     }
 }
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let videoSession = cameraManager.createSession(SceneMode.NormalVideo) as VideoSession
 let session = videoSession.getOrThrow()
@@ -7793,7 +7734,7 @@ public func on(eventType: CameraEvents, callback: Callback1Argument<SmoothZoomIn
 // index.cj
 
 import kit.CameraKit.*
-import ohos.base.*
+import kit.PerformanceAnalysisKit.*
 import ohos.callback_invoke.*
 import ohos.business_exception.*
 
@@ -7808,7 +7749,7 @@ class SmoothZoomInfoAvailableCallback <: Callback1Argument<SmoothZoomInfo> {
     }
 }
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let videoSession = cameraManager.createSession(SceneMode.NormalVideo) as VideoSession
 let session = videoSession.getOrThrow()
@@ -7855,7 +7796,7 @@ public func preconfig(
 
 import kit.CameraKit.*
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
 let cameraManager = getCameraManager(ctx)
 let videoSession = cameraManager.createSession(SceneMode.NormalVideo) as VideoSession
 let session = videoSession.getOrThrow()

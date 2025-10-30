@@ -74,7 +74,7 @@ public func deleteRdbStore(context: UIAbilityContext, name: String): Unit
 
 import kit.ArkData.*
 
-var rdbStore: RdbStore = getRdbStore(Global.getStageContext(), StoreConfig("RdbTest.db", RelationalStoreSecurityLevel.S1)) // 需获取Context应用上下文，详见本文使用说明
+var rdbStore: RdbStore = getRdbStore(Global.getStageContext(), StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db")) // 需获取Context应用上下文，详见本文使用说明
 deleteRdbStore(Global.getStageContext(), "RdbTest.db")
 ```
 
@@ -125,8 +125,8 @@ public func deleteRdbStore(context: UIAbilityContext, config: StoreConfig): Unit
 
 import kit.ArkData.*
 
-var rdbStore: RdbStore = getRdbStore(Global.getStageContext(), StoreConfig("RdbTest.db", RelationalStoreSecurityLevel.S1)) // 需获取Context应用上下文，详见本文使用说明
-deleteRdbStore(Global.getStageContext(), StoreConfig("RdbTest.db", RelationalStoreSecurityLevel.S1))
+var rdbStore: RdbStore = getRdbStore(Global.getStageContext(), StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db")) // 需获取Context应用上下文，详见本文使用说明
+deleteRdbStore(Global.getStageContext(), StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db"))
 ```
 
 ## func getRdbStore(UIAbilityContext, StoreConfig)
@@ -192,7 +192,7 @@ public func getRdbStore(context: UIAbilityContext, config: StoreConfig): RdbStor
 
 import kit.ArkData.*
 
-var rdbStore: RdbStore = getRdbStore(Global.getStageContext(), StoreConfig("RdbTest.db", RelationalStoreSecurityLevel.S1)) // 需获取Context应用上下文，详见本文使用说明
+var rdbStore: RdbStore = getRdbStore(Global.getStageContext(), StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db")) // 需获取Context应用上下文，详见本文使用说明
 ```
 
 ## class Asset
@@ -581,7 +581,7 @@ import kit.ArkData.*
 
 // 数据表的"NAME"列中在["Lisa", "Rose"]中的值
 let predicates = RdbPredicates("EMPLOYEE")
-predicates.inValues("NAME", [ValueType.string("Lisa"), ValueType.string("Rose")])
+predicates.inValues("NAME", [RelationalStoreValueType.StringValue("Lisa"), RelationalStoreValueType.StringValue("Rose")])
 ```
 
 ### func and()
@@ -615,9 +615,9 @@ import kit.ArkData.*
 // 匹配数据表的"NAME"列中的值为"Lisa"且"SALARY"列中的值为"200.5"的字段
 let predicates = RdbPredicates("EMPLOYEE")
 predicates
-    .equalTo("NAME", RelationalStoreValueType.string("Lisa"))
+    .equalTo("NAME", RelationalStoreValueType.StringValue("Lisa"))
     .and()
-    .equalTo("SALARY", RelationalStoreValueType.double(200.5))
+    .equalTo("SALARY", RelationalStoreValueType.Double(200.5))
 ```
 
 ### func beginWrap()
@@ -650,11 +650,11 @@ import kit.ArkData.*
 
 let predicates = RdbPredicates("EMPLOYEE")
 predicates
-    .equalTo("NAME", RelationalStoreValueType.string("Lisa"))
+    .equalTo("NAME", RelationalStoreValueType.StringValue("Lisa"))
     .beginWrap()
-    .equalTo("AGE", RelationalStoreValueType.integer(18))
+    .equalTo("AGE", RelationalStoreValueType.Integer(18))
     .or()
-    .equalTo("SALARY", RelationalStoreValueType.double(200.5))
+    .equalTo("SALARY", RelationalStoreValueType.Double(200.5))
     .endWrap()
 ```
 
@@ -752,7 +752,7 @@ import kit.ArkData.*
 
 // 匹配数据表的"AGE"列中大于等于10且小于等于50的值
 let predicates = RdbPredicates("EMPLOYEE")
-predicates.between("AGE", RelationalStoreValueType.integer(10), RelationalStoreValueType.integer(50))
+predicates.between("AGE", RelationalStoreValueType.Integer(10), RelationalStoreValueType.Integer(50))
 ```
 
 ### func contains(String, String)
@@ -833,7 +833,7 @@ import kit.ArkData.*
 
 let predicates = RdbPredicates("EMPLOYEE")
 predicates
-    .equalTo("NAME", RelationalStoreValueType.string("Rose"))
+    .equalTo("NAME", RelationalStoreValueType.StringValue("Rose"))
     .distinct()
 ```
 
@@ -867,11 +867,11 @@ import kit.ArkData.*
 
 let predicates = RdbPredicates("EMPLOYEE")
 predicates
-    .equalTo("NAME", RelationalStoreValueType.string("Lisa"))
+    .equalTo("NAME", RelationalStoreValueType.StringValue("Lisa"))
     .beginWrap()
-    .equalTo("AGE", RelationalStoreValueType.integer(18))
+    .equalTo("AGE", RelationalStoreValueType.Integer(18))
     .or()
-    .equalTo("SALARY", RelationalStoreValueType.double(200.5))
+    .equalTo("SALARY", RelationalStoreValueType.Double(200.5))
     .endWrap()
 ```
 
@@ -968,7 +968,7 @@ import kit.ArkData.*
 
 // 匹配数据表的"NAME"列中的值为"Lisa"的字段
 let predicates = RdbPredicates("EMPLOYEE")
-predicates.equalTo("NAME", RelationalStoreValueType.string("Lisa"))
+predicates.equalTo("NAME", RelationalStoreValueType.StringValue("Lisa"))
 ```
 
 ### func glob(String, String)
@@ -1017,7 +1017,7 @@ import kit.ArkData.*
 // 匹配数据表的"NAME"列中类型为string且值为"?h*g"的字段
 let predicates = RdbPredicates("EMPLOYEE")
 predicates.glob("NAME", "?h*g")
-``
+```
 
 ### func greaterThan(String, RelationalStoreValueType)
 
@@ -1064,7 +1064,7 @@ import kit.ArkData.*
 
 // 匹配数据表的"AGE"列中大于18的值
 let predicates = RdbPredicates("EMPLOYEE")
-predicates.greaterThan("AGE", RelationalStoreValueType.integer(18))
+predicates.greaterThan("AGE", RelationalStoreValueType.Integer(18))
 ```
 
 ### func greaterThanOrEqualTo(String, RelationalStoreValueType)
@@ -1112,7 +1112,7 @@ import kit.ArkData.*
 
 // 匹配数据表的"AGE"列中大于18的值
 let predicates = RdbPredicates("EMPLOYEE")
-predicates.greaterThanOrEqualTo("AGE", RelationalStoreValueType.integer(18))
+predicates.greaterThanOrEqualTo("AGE", RelationalStoreValueType.Integer(18))
 ```
 
 ### func groupBy(Array\<String>)
@@ -1330,7 +1330,7 @@ import kit.ArkData.*
 
 // 匹配数据表的"AGE"列中小于20的值
 let predicates = RdbPredicates("EMPLOYEE")
-predicates.lessThan("AGE", RelationalStoreValueType.integer(20))
+predicates.lessThan("AGE", RelationalStoreValueType.Integer(20))
 ```
 
 ### func lessThanOrEqualTo(String, RelationalStoreValueType)
@@ -1378,7 +1378,7 @@ import kit.ArkData.*
 
 // 匹配数据表的"AGE"列中小于等于20的值
 let predicates = RdbPredicates("EMPLOYEE")
-predicates.lessThanOrEqualTo("AGE", RelationalStoreValueType.integer(20))
+predicates.lessThanOrEqualTo("AGE", RelationalStoreValueType.Integer(20))
 ```
 
 ### func like(String, String)
@@ -1473,7 +1473,7 @@ import kit.ArkData.*
 
 let predicates = RdbPredicates("EMPLOYEE")
 predicates
-    .equalTo("NAME", RelationalStoreValueType.string("Rose"))
+    .equalTo("NAME", RelationalStoreValueType.StringValue("Rose"))
     .limitAs(3)
 ```
 
@@ -1523,7 +1523,7 @@ import kit.ArkData.*
 
 // 数据表的"AGE"列中小于10或大于50的值
 let predicates = RdbPredicates("EMPLOYEE")
-predicates.notBetween("AGE", RelationalStoreValueType.integer(10), RelationalStoreValueType.integer(50))
+predicates.notBetween("AGE", RelationalStoreValueType.Integer(10), RelationalStoreValueType.Integer(50))
 ```
 
 ### func notEqualTo(String, RelationalStoreValueType)
@@ -1571,7 +1571,7 @@ import kit.ArkData.*
 
 // 数据表的"NAME"列中的值不为"Lisa"的字段
 let predicates = RdbPredicates("EMPLOYEE")
-predicates.notEqualTo("NAME", RelationalStoreValueType.string("Lisa"))
+predicates.notEqualTo("NAME", RelationalStoreValueType.StringValue("Lisa"))
 ```
 
 ### func notInValues(String, Array\<RelationalStoreValueType>)
@@ -1619,7 +1619,7 @@ import kit.ArkData.*
 
 // 数据表的"NAME"列中不在["Lisa", "Rose"]中的值
 let predicates = RdbPredicates("EMPLOYEE")
-predicates.notInValues("NAME", [RelationalStoreValueType.string("Lisa"), RelationalStoreValueType.string("Rose")])
+predicates.notInValues("NAME", [RelationalStoreValueType.StringValue("Lisa"), RelationalStoreValueType.StringValue("Rose")])
 ```
 
 ### func offsetAs(Int32)
@@ -1666,7 +1666,7 @@ import kit.ArkData.*
 
 let predicates = RdbPredicates("EMPLOYEE")
 predicates
-    .equalTo("NAME", RelationalStoreValueType.string("Rose"))
+    .equalTo("NAME", RelationalStoreValueType.StringValue("Rose"))
     .offsetAs(3)
 ```
 
@@ -1701,9 +1701,9 @@ import kit.ArkData.*
 // 数据表的"NAME"列中的值为"Lisa"或"Rose"的字段
 let predicates = RdbPredicates("EMPLOYEE")
 predicates
-    .equalTo("NAME", RelationalStoreValueType.string("Lisa"))
+    .equalTo("NAME", RelationalStoreValueType.StringValue("Lisa"))
     .or()
-    .equalTo("NAME", RelationalStoreValueType.string("Rose"))
+    .equalTo("NAME", RelationalStoreValueType.StringValue("Rose"))
 ```
 
 ### func orderByAsc(String)
@@ -1864,7 +1864,7 @@ public func backup(destName: String): Unit
 
 import kit.ArkData.*
 
-var rdbStore: RdbStore = getRdbStore(Global.getStageContext(), StoreConfig("RdbTest.db", RelationalStoreSecurityLevel.S1)) // 需获取Context应用上下文，详见本文使用说明
+var rdbStore: RdbStore = getRdbStore(Global.getStageContext(), StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db")) // 需获取Context应用上下文，详见本文使用说明
 rdbStore.backup("dbBackup.db")
 ```
 
@@ -1925,25 +1925,24 @@ public func batchInsert(table: String, values: Array<ValuesBucket>): Int64
 
 import kit.ArkData.*
 import std.collection.HashMap
-import ohos.relational_store.RelationalStoreValueType
 
-var rdbStore: RdbStore = getRdbStore(Global.getStageContext(), StoreConfig("RdbTest.db", RelationalStoreSecurityLevel.S1)) // 需获取Context应用上下文，详见本文使用说明
+var rdbStore: RdbStore = getRdbStore(Global.getStageContext(), StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db")) // 需获取Context应用上下文，详见本文使用说明
 var values1 = HashMap<String, RelationalStoreValueType>()
-values1.add("ID", RelationalStoreValueType.integer(1))
-values1.add("NAME", RelationalStoreValueType.string("Lisa"))
-values1.add("AGE", RelationalStoreValueType.integer(18))
-values1.add("SALARY", RelationalStoreValueType.double(100.5))
+values1.add("ID", RelationalStoreValueType.Integer(1))
+values1.add("NAME", RelationalStoreValueType.StringValue("Lisa"))
+values1.add("AGE", RelationalStoreValueType.Integer(18))
+values1.add("SALARY", RelationalStoreValueType.Double(100.5))
 var values2 = HashMap<String, RelationalStoreValueType>()
-values2.add("ID", RelationalStoreValueType.integer(2))
-values2.add("NAME", RelationalStoreValueType.string("Jack"))
-values2.add("AGE", RelationalStoreValueType.integer(19))
-values2.add("SALARY", RelationalStoreValueType.double(101.5))
+values2.add("ID", RelationalStoreValueType.Integer(2))
+values2.add("NAME", RelationalStoreValueType.StringValue("Jack"))
+values2.add("AGE", RelationalStoreValueType.Integer(19))
+values2.add("SALARY", RelationalStoreValueType.Double(101.5))
 var values3 = HashMap<String, RelationalStoreValueType>()
-values3.add("ID", RelationalStoreValueType.integer(3))
-values3.add("NAME", RelationalStoreValueType.string("Tom"))
-values3.add("AGE", RelationalStoreValueType.integer(20))
-values3.add("SALARY", RelationalStoreValueType.double(102.5))
-let valueBuckets: Array<Map<String, RValueType>>= [values1, values2, values3]
+values3.add("ID", RelationalStoreValueType.Integer(3))
+values3.add("NAME", RelationalStoreValueType.StringValue("Tom"))
+values3.add("AGE", RelationalStoreValueType.Integer(20))
+values3.add("SALARY", RelationalStoreValueType.Double(102.5))
+let valueBuckets: Array<Map<String, RelationalStoreValueType>>= [values1, values2, values3]
 rdbStore.batchInsert("EMPLOYEE", valueBuckets)
 ```
 
@@ -1997,11 +1996,11 @@ public func beginTransaction(): Unit
 import kit.ArkData.*
 import std.collection.HashMap
 
-var rdbStore: RdbStore = getRdbStore(Global.getStageContext(), StoreConfig("RdbTest.db", RelationalStoreSecurityLevel.S1)) // 需获取Context应用上下文，详见本文使用说明
+var rdbStore: RdbStore = getRdbStore(Global.getStageContext(), StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db")) // 需获取Context应用上下文，详见本文使用说明
 var values = HashMap<String, RelationalStoreValueType>()
 rdbStore.beginTransaction()
-values.add("ID", RelationalStoreValueType.integer(2))
-values.add("NAME", RelationalStoreValueType.string("Sun"))
+values.add("ID", RelationalStoreValueType.Integer(2))
+values.add("NAME", RelationalStoreValueType.StringValue("Sun"))
 rdbStore.insert("THING", values)
 rdbStore.commit()
 ```
@@ -2055,12 +2054,12 @@ public func commit(): Unit
 import kit.ArkData.*
 import std.collection.HashMap
 
-var rdbStore: RdbStore = getRdbStore(Global.getStageContext(), StoreConfig("RdbTest.db", RelationalStoreSecurityLevel.S1)) // 需获取Context应用上下文，详见本文使用说明
+var rdbStore: RdbStore = getRdbStore(Global.getStageContext(), StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db")) // 需获取Context应用上下文，详见本文使用说明
 rdbStore.executeSql("CREATE TABLE THING(ID int NOT NULL, NAME varchar(255) NOT NULL, PRIMARY KEY (Id))")
 rdbStore.beginTransaction()
 var values = HashMap<String, RelationalStoreValueType>()
-values.add("ID", RelationalStoreValueType.integer(2))
-values.add("NAME", RelationalStoreValueType.string("Sun"))
+values.add("ID", RelationalStoreValueType.Integer(2))
+values.add("NAME", RelationalStoreValueType.StringValue("Sun"))
 rdbStore.insert("THING", values)
 rdbStore.commit()
 ```
@@ -2127,9 +2126,9 @@ public func delete(predicates: RdbPredicates): Int64
 import kit.ArkData.*
 import std.collection.HashMap
 
-var rdbStore: RdbStore = getRdbStore(Global.getStageContext(), StoreConfig("RdbTest.db", RelationalStoreSecurityLevel.S1)) // 需获取Context应用上下文，详见本文使用说明
+var rdbStore: RdbStore = getRdbStore(Global.getStageContext(), StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db")) // 需获取Context应用上下文，详见本文使用说明
 let predicates = RdbPredicates("EMPLOYEE")
-predicates.equalTo("NAME", RelationalStoreValueType.string("Lisa"))
+predicates.equalTo("NAME", RelationalStoreValueType.StringValue("Lisa"))
 rdbStore.delete(predicates)
 ```
 
@@ -2172,17 +2171,19 @@ public func emit(event: String): Unit
 // index.cj
 
 import kit.ArkData.*
-import ohos.base.*
+import kit.PerformanceAnalysisKit.*
+import ohos.callback_invoke.*
+import ohos.business_exception.BusinessException
 
 // 此处代码可添加在依赖项定义中
 class TestCallback <: Callback0Argument {
     public init() {}
-    public open func invoke(): Unit {
-        AppLog.info("Call invoke.")
+    public open func invoke(err: ?BusinessException): Unit {
+        Hilog.info(0, "test", "Call invoke.", "")
     }
 }
 
-var rdbStore: RdbStore = getRdbStore(Global.getStageContext(), StoreConfig("RdbTest.db", RelationalStoreSecurityLevel.S1)) // 需获取Context应用上下文，详见本文使用说明
+var rdbStore: RdbStore = getRdbStore(Global.getStageContext(), StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db")) // 需获取Context应用上下文，详见本文使用说明
 let testCallback = TestCallback()
 rdbStore.on("PRINT", false, testCallback)
 rdbStore.emit("PRINT")
@@ -2245,8 +2246,8 @@ public func executeSql(sql: String, bindArgs!: Array<RelationalStoreValueType> =
 
 import kit.ArkData.*
 
-var rdbStore: RdbStore = getRdbStore(Global.getStageContext(), StoreConfig("RdbTest.db", RelationalStoreSecurityLevel.S1)) // 需获取Context应用上下文，详见本文使用说明
-rdbStore.executeSql("DELETE FROM EMPLOYEE WHERE ID = ?", [RelationalStoreValueType.integer(3)])
+var rdbStore: RdbStore = getRdbStore(Global.getStageContext(), StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db")) // 需获取Context应用上下文，详见本文使用说明
+rdbStore.executeSql("DELETE FROM EMPLOYEE WHERE ID = ?", bindArgs: [RelationalStoreValueType.Integer(3)])
 ```
 
 ### func insert(String, ValuesBucket, ConflictResolution)
@@ -2315,17 +2316,17 @@ import kit.ArkData.*
 import std.collection.HashMap
 
 var rdbStore: RdbStore = getRdbStore(Global.getStageContext(),
-    StoreConfig("RdbTest.db", RelationalStoreSecurityLevel.S1)) // 需获取Context应用上下文，详见本文使用说明
+    StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db")) // 需获取Context应用上下文，详见本文使用说明
 rdbStore.executeSql(
     "CREATE TABLE EMPLOYEE(ID int NOT NULL, NAME varchar(255) NOT NULL, AGE int, SALARY float NOT NULL, CODES Bit NOT NULL, PRIMARY KEY (Id))"
 )
 var values = HashMap<String, RelationalStoreValueType>()
-values.add("ID", RelationalStoreValueType.integer(1))
-values.add("NAME", RelationalStoreValueType.string("Lisa"))
-values.add("AGE", RelationalStoreValueType.integer(18))
-values.add("SALARY", RelationalStoreValueType.double(100.5))
-values.add("CODES", RelationalStoreValueType.boolean(true))
-rdbStore.insert("EMPLOYEE", values, ON_CONFLICT_REPLACE)
+values.add("ID", RelationalStoreValueType.Integer(1))
+values.add("NAME", RelationalStoreValueType.StringValue("Lisa"))
+values.add("AGE", RelationalStoreValueType.Integer(18))
+values.add("SALARY", RelationalStoreValueType.Double(100.5))
+values.add("CODES", RelationalStoreValueType.Boolean(true))
+rdbStore.insert("EMPLOYEE", values, conflict: OnConflictReplace)
 ```
 
 ### func off(String, Bool, ?Callback0Argument)
@@ -2369,20 +2370,22 @@ public func off(event: String, interProcess: Bool, observer!: ?Callback0Argument
 // index.cj
 
 import kit.ArkData.*
-import ohos.base.*
+import kit.PerformanceAnalysisKit.*
+import ohos.callback_invoke.*
+import ohos.business_exception.BusinessException
 
 // 此处代码可添加在依赖项定义中
 class TestCallback <: Callback0Argument {
     public init() {}
     public open func invoke(): Unit {
-        AppLog.info("Call invoke.")
+        Hilog.info(0, "test", "Call invoke.", "")
     }
 }
 
-var rdbStore: RdbStore = getRdbStore(Global.getStageContext(), StoreConfig("RdbTest.db", RelationalStoreSecurityLevel.S1)) // 需获取Context应用上下文，详见本文使用说明
+var rdbStore: RdbStore = getRdbStore(Global.getStageContext(), StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db")) // 需获取Context应用上下文，详见本文使用说明
 let testCallback = TestCallback()
 rdbStore.on("PRINT", false, testCallback)
-rdbStore.off("PRINT", false, testCallback)
+rdbStore.off("PRINT", false, observer: testCallback)
 ```
 
 ### func on(String, Bool, Callback0Argument)
@@ -2426,18 +2429,20 @@ public func on(event: String, interProcess: Bool, observer: Callback0Argument): 
 // index.cj
 
 import kit.ArkData.*
-import ohos.base.*
+import kit.PerformanceAnalysisKit.*
+import ohos.callback_invoke.*
+import ohos.business_exception.BusinessException
 
 // 此处代码可添加在依赖项定义中
 class TestCallback <: Callback0Argument {
     public init() {}
     public open func invoke(): Unit {
-        AppLog.info("Call invoke.")
+        Hilog.info(0, "test", "Call invoke.", "")
     }
 }
 
 var rdbStore: RdbStore = getRdbStore(Global.getStageContext(),
-    StoreConfig("RdbTest.db", RelationalStoreSecurityLevel.S1)) // 需获取Context应用上下文，详见本文使用说明
+    StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db")) // 需获取Context应用上下文，详见本文使用说明
 let testCallback = TestCallback()
 rdbStore.on("PRINT", false, testCallback)
 ```
@@ -2489,11 +2494,11 @@ public func query(predicates: RdbPredicates, columns!: Array<String> = []): Resu
 import kit.ArkData.*
 
 var rdbStore: RdbStore = getRdbStore(Global.getStageContext(),
-    StoreConfig("RdbTest.db", RelationalStoreSecurityLevel.S1)) // 需获取Context应用上下文，详见本文使用说明
+    StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db")) // 需获取Context应用上下文，详见本文使用说明
 let predicates = RdbPredicates("EMPLOYEE")
-predicates.equalTo("NAME", RelationalStoreValueType.string("Rose"))
+predicates.equalTo("NAME", RelationalStoreValueType.StringValue("Rose"))
 let columns = ["ID", "NAME", "AGE", "SALARY", "CODES"]
-let resultSet = rdbStore.query(predicates, columns)
+let resultSet = rdbStore.query(predicates, columns: columns)
 resultSet.goToNextRow()
 let id = resultSet.getLong(resultSet.getColumnIndex("ID"))
 let name = resultSet.getString(resultSet.getColumnIndex("NAME"))
@@ -2548,7 +2553,7 @@ public func querySql(sql: String, bindArgs!: Array<RelationalStoreValueType> = [
 import kit.ArkData.*
 
 var rdbStore: RdbStore = getRdbStore(Global.getStageContext(),
-    StoreConfig("RdbTest.db", RelationalStoreSecurityLevel.S1)) // 需获取Context应用上下文，详见本文使用说明
+    StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db")) // 需获取Context应用上下文，详见本文使用说明
 let resultSet = rdbStore.querySql("SELECT * FROM EMPLOYEE WHERE NAME = 'Peter'")
 resultSet.goToNextRow()
 let id = resultSet.getLong(resultSet.getColumnIndex("ID"))
@@ -2612,7 +2617,7 @@ public func restore(srcName: String): Unit
 import kit.ArkData.*
 
 var rdbStore: RdbStore = getRdbStore(Global.getStageContext(),
-    StoreConfig("RdbTest.db", RelationalStoreSecurityLevel.S1)) // 需获取Context应用上下文，详见本文使用说明
+    StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db")) // 需获取Context应用上下文，详见本文使用说明
 rdbStore.restore("dbBackup.db")
 ```
 
@@ -2666,16 +2671,16 @@ import kit.ArkData.*
 import std.collection.HashMap
 
 var rdbStore: RdbStore = getRdbStore(Global.getStageContext(),
-    StoreConfig("RdbTest.db", RelationalStoreSecurityLevel.S1)) // 需获取Context应用上下文，详见本文使用说明
+    StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db")) // 需获取Context应用上下文，详见本文使用说明
 let predicates = RdbPredicates("THING")
 var values = HashMap<String, RelationalStoreValueType>()
 try {
     rdbStore.beginTransaction()
-    values.add("ID", RelationalStoreValueType.integer(3))
-    values.add("NAME", RelationalStoreValueType.string("Tom"))
+    values.add("ID", RelationalStoreValueType.Integer(3))
+    values.add("NAME", RelationalStoreValueType.StringValue("Tom"))
     rdbStore.insert("THING", values)
-    values.add("ID", RelationalStoreValueType.integer(4))
-    values.add("NAME", RelationalStoreValueType.string("Wind"))
+    values.add("ID", RelationalStoreValueType.Integer(4))
+    values.add("NAME", RelationalStoreValueType.StringValue("Wind"))
     rdbStore.insert("THING", values)
     rdbStore.commit()
 } catch (e: Exception) {
@@ -2749,14 +2754,14 @@ import kit.ArkData.*
 import std.collection.HashMap
 
 var rdbStore: RdbStore = getRdbStore(Global.getStageContext(),
-    StoreConfig("RdbTest.db", RelationalStoreSecurityLevel.S1)) // 需获取Context应用上下文，详见本文使用说明
+    StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db")) // 需获取Context应用上下文，详见本文使用说明
 let predicates = RdbPredicates("EMPLOYEE")
-predicates.equalTo("NAME", RelationalStoreValueType.string("TOM"))
+predicates.equalTo("NAME", RelationalStoreValueType.StringValue("TOM"))
 var values = HashMap<String, RelationalStoreValueType>()
-values.add("NAME", RelationalStoreValueType.string("TOM"))
-values.add("AGE", RelationalStoreValueType.integer(88))
-values.add("SALARY", RelationalStoreValueType.double(9999.513))
-rdbStore.update(values, predicates, ON_CONFLICT_REPLACE)
+values.add("NAME", RelationalStoreValueType.StringValue("TOM"))
+values.add("AGE", RelationalStoreValueType.Integer(88))
+values.add("SALARY", RelationalStoreValueType.Double(9999.513))
+rdbStore.update(values, predicates, conflict: OnConflictReplace)
 ```
 
 ## class ResultSet
@@ -2947,7 +2952,7 @@ public func close(): Unit
 import kit.ArkData.*
 
 var rdbStore: RdbStore = getRdbStore(Global.getStageContext(),
-    StoreConfig("RdbTest.db", RelationalStoreSecurityLevel.S1)) // 需获取Context应用上下文，详见本文使用说明
+    StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db")) // 需获取Context应用上下文，详见本文使用说明
 let resultSet = rdbStore.querySql("SELECT * FROM EMPLOYEE WHERE NAME = 'Peter'")
 resultSet.close()
 ```
@@ -3014,7 +3019,7 @@ public func getAsset(columnIndex: Int32): Asset
 import kit.ArkData.*
 
 var rdbStore: RdbStore = getRdbStore(Global.getStageContext(),
-    StoreConfig("RdbTest.db", RelationalStoreSecurityLevel.S1)) // 需获取Context应用上下文，详见本文使用说明
+    StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db")) // 需获取Context应用上下文，详见本文使用说明
 let resultSet = rdbStore.querySql("SELECT * FROM EMPLOYEE WHERE NAME = 'Peter'")
 let doc = resultSet.getAsset(resultSet.getColumnIndex("DOC"))
 ```
@@ -3081,7 +3086,7 @@ public func getAssets(columnIndex: Int32): Assets
 import kit.ArkData.*
 
 var rdbStore: RdbStore = getRdbStore(Global.getStageContext(),
-    StoreConfig("RdbTest.db", RelationalStoreSecurityLevel.S1)) // 需获取Context应用上下文，详见本文使用说明
+    StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db")) // 需获取Context应用上下文，详见本文使用说明
 let resultSet = rdbStore.querySql("SELECT * FROM EMPLOYEE WHERE NAME = 'Peter'")
 let docs = resultSet.getAssets(resultSet.getColumnIndex("DOCS"))
 ```
@@ -3148,7 +3153,7 @@ public func getBlob(columnIndex: Int32): Array<UInt8>
 import kit.ArkData.*
 
 var rdbStore: RdbStore = getRdbStore(Global.getStageContext(),
-     StoreConfig("RdbTest.db", RelationalStoreSecurityLevel.S1)) // 需获取Context应用上下文，详见本文使用说明
+     StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db")) // 需获取Context应用上下文，详见本文使用说明
 let resultSet = rdbStore.querySql("SELECT * FROM EMPLOYEE WHERE NAME = 'Peter'")
 let codes = resultSet.getBlob(resultSet.getColumnIndex("CODES"))
 ```
@@ -3215,7 +3220,7 @@ public func getColumnIndex(columnName: String): Int32
 import kit.ArkData.*
 
 var rdbStore: RdbStore = getRdbStore(Global.getStageContext(),
-    StoreConfig("RdbTest.db", RelationalStoreSecurityLevel.S1)) // 需获取Context应用上下文，详见本文使用说明
+    StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db")) // 需获取Context应用上下文，详见本文使用说明
 let resultSet = rdbStore.querySql("SELECT * FROM EMPLOYEE WHERE NAME = 'Peter'")
 let id = resultSet.getLong(resultSet.getColumnIndex("ID"))
 let name = resultSet.getString(resultSet.getColumnIndex("NAME"))
@@ -3285,7 +3290,7 @@ public func getColumnName(columnIndex: Int32): String
 import kit.ArkData.*
 
 var rdbStore: RdbStore = getRdbStore(Global.getStageContext(),
-    StoreConfig("RdbTest.db", RelationalStoreSecurityLevel.S1)) // 需获取Context应用上下文，详见本文使用说明
+    StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db")) // 需获取Context应用上下文，详见本文使用说明
 let resultSet = rdbStore.querySql("SELECT * FROM EMPLOYEE WHERE NAME = 'Peter'")
 let id = resultSet.getColumnName(0)
 let name = resultSet.getColumnName(1)
@@ -3354,7 +3359,7 @@ public func getDouble(columnIndex: Int32): Float64
 import kit.ArkData.*
 
 var rdbStore: RdbStore = getRdbStore(Global.getStageContext(),
-    StoreConfig("RdbTest.db", RelationalStoreSecurityLevel.S1)) // 需获取Context应用上下文，详见本文使用说明
+    StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db")) // 需获取Context应用上下文，详见本文使用说明
 let resultSet = rdbStore.querySql("SELECT * FROM EMPLOYEE WHERE NAME = 'Peter'")
 let salary = resultSet.getDouble(resultSet.getColumnIndex("SALARY"))
 ```
@@ -3421,7 +3426,7 @@ public func getLong(columnIndex: Int32): Int64
 import kit.ArkData.*
 
 var rdbStore: RdbStore = getRdbStore(Global.getStageContext(),
-    StoreConfig("RdbTest.db", RelationalStoreSecurityLevel.S1)) // 需获取Context应用上下文，详见本文使用说明
+    StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db")) // 需获取Context应用上下文，详见本文使用说明
 let resultSet = rdbStore.querySql("SELECT * FROM EMPLOYEE WHERE NAME = 'Peter'")
 let age = resultSet.getLong(resultSet.getColumnIndex("AGE"))
 ```
@@ -3481,7 +3486,7 @@ public func getRow(): ValuesBucket
 import kit.ArkData.*
 
 var rdbStore: RdbStore = getRdbStore(Global.getStageContext(),
-    StoreConfig("RdbTest.db", RelationalStoreSecurityLevel.S1)) // 需获取Context应用上下文，详见本文使用说明
+    StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db")) // 需获取Context应用上下文，详见本文使用说明
 let resultSet = rdbStore.querySql("SELECT * FROM EMPLOYEE WHERE NAME = 'Peter'")
 let value = resultSet.getRow()
 ```
@@ -3548,7 +3553,7 @@ public func getString(columnIndex: Int32): String
 import kit.ArkData.*
 
 var rdbStore: RdbStore = getRdbStore(Global.getStageContext(),
-    StoreConfig("RdbTest.db", RelationalStoreSecurityLevel.S1)) // 需获取Context应用上下文，详见本文使用说明
+    StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db")) // 需获取Context应用上下文，详见本文使用说明
 let resultSet = rdbStore.querySql("SELECT * FROM EMPLOYEE WHERE NAME = 'Peter'")
 let name = resultSet.getString(resultSet.getColumnIndex("NAME"))
 ```
@@ -3588,7 +3593,7 @@ public func goTo(offset: Int32): Bool
 import kit.ArkData.*
 
 var rdbStore: RdbStore = getRdbStore(Global.getStageContext(),
-    StoreConfig("RdbTest.db", RelationalStoreSecurityLevel.S1)) // 需获取Context应用上下文，详见本文使用说明
+    StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db")) // 需获取Context应用上下文，详见本文使用说明
 let resultSet = rdbStore.querySql("SELECT * FROM EMPLOYEE WHERE NAME = 'Peter'")
 resultSet.goTo(1)
 ```
@@ -3622,7 +3627,7 @@ public func goToFirstRow(): Bool
 import kit.ArkData.*
 
 var rdbStore: RdbStore = getRdbStore(Global.getStageContext(),
-    StoreConfig("RdbTest.db", RelationalStoreSecurityLevel.S1)) // 需获取Context应用上下文，详见本文使用说明
+    StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db")) // 需获取Context应用上下文，详见本文使用说明
 let resultSet = rdbStore.querySql("SELECT * FROM EMPLOYEE WHERE NAME = 'Peter'")
 resultSet.goToFirstRow()
 ```
@@ -3682,7 +3687,7 @@ public func goToLastRow(): Bool
 import kit.ArkData.*
 
 var rdbStore: RdbStore = getRdbStore(Global.getStageContext(),
-    StoreConfig("RdbTest.db", RelationalStoreSecurityLevel.S1)) // 需获取Context应用上下文，详见本文使用说明
+    StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db")) // 需获取Context应用上下文，详见本文使用说明
 let resultSet = rdbStore.querySql("SELECT * FROM EMPLOYEE WHERE NAME = 'Peter'")
 resultSet.goToLastRow()
 ```
@@ -3716,7 +3721,7 @@ public func goToNextRow(): Bool
 import kit.ArkData.*
 
 var rdbStore: RdbStore = getRdbStore(Global.getStageContext(),
-    StoreConfig("RdbTest.db", RelationalStoreSecurityLevel.S1)) // 需获取Context应用上下文，详见本文使用说明
+    StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db")) // 需获取Context应用上下文，详见本文使用说明
 let resultSet = rdbStore.querySql("SELECT * FROM EMPLOYEE WHERE NAME = 'Peter'")
 resultSet.goToNextRow()
 ```
@@ -3750,7 +3755,7 @@ public func goToPreviousRow(): Bool
 import kit.ArkData.*
 
 var rdbStore: RdbStore = getRdbStore(Global.getStageContext(),
-    StoreConfig("RdbTest.db", RelationalStoreSecurityLevel.S1)) // 需获取Context应用上下文，详见本文使用说明
+    StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db")) // 需获取Context应用上下文，详见本文使用说明
 let resultSet = rdbStore.querySql("SELECT * FROM EMPLOYEE WHERE NAME = 'Peter'")
 resultSet.goToPreviousRow()
 ```
@@ -3790,7 +3795,7 @@ public func goToRow(position: Int32): Bool
 import kit.ArkData.*
 
 var rdbStore: RdbStore = getRdbStore(Global.getStageContext(),
-    StoreConfig("RdbTest.db", RelationalStoreSecurityLevel.S1)) // 需获取Context应用上下文，详见本文使用说明
+    StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db")) // 需获取Context应用上下文，详见本文使用说明
 let resultSet = rdbStore.querySql("SELECT * FROM EMPLOYEE WHERE NAME = 'Peter'")
 resultSet.goToRow(5)
 ```
@@ -3857,7 +3862,7 @@ public func isColumnNull(columnIndex: Int32): Bool
 import kit.ArkData.*
 
 var rdbStore: RdbStore = getRdbStore(Global.getStageContext(),
-    StoreConfig("RdbTest.db", RelationalStoreSecurityLevel.S1)) // 需获取Context应用上下文，详见本文使用说明
+    StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db")) // 需获取Context应用上下文，详见本文使用说明
 let resultSet = rdbStore.querySql("SELECT * FROM EMPLOYEE WHERE NAME = 'Peter'")
 let isColumnNull = resultSet.isColumnNull(resultSet.getColumnIndex("CODES"))
 ```

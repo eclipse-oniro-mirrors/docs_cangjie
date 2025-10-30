@@ -255,10 +255,10 @@ import kit.CoreFileKit.*
 
 let pathDir = "path/to/file"
 let filePath = pathDir + "/test.txt"
-let file = FileFs.open(filePath, mode: (READ_WRITE.mode | CREATE.mode))
+let file = FileIo.open(filePath, mode: (OpenMode.READ_WRITE | OpenMode.CREATE))
 file.tryLock(exclusive: true)
-file.unLock()
-FileFs.close(file)
+file.unlock()
+FileIo.close(file)
 ```
 
 ## class FileIo
@@ -328,19 +328,19 @@ public static func access(path: String, mode!: AccessModeType = AccessModeType.E
 
 import kit.CoreFileKit.*
 import kit.PerformanceAnalysisKit.*
-import kit.UIKit.BusinessException
+import ohos.business_exception.BusinessException
 
 let pathDir = "path/to/file"
 let filePath = pathDir + "/test.txt"
 try {
-    let res = FileFs.access(filePath, AccessModeType.WRITE, AccessFlagType.Local)
+    let res = FileIo.access(filePath, mode: AccessModeType.Write, flag: AccessFlagType.Local)
     if (res) {
-        Applog.info("file exists")
+        Hilog.info(0, "test", "file exists", "")
     } else {
-        Applog.info("file not exists")
+        Hilog.info(0, "test", "file not exists", "")
     }
 } catch (e: BusinessException) {
-    AppLog.error("access failed with error message: ${e.message}, error code: ${e.code}")
+    Hilog.error(0, "test", "access failed with error message: ${e.message}, error code: ${e.code}", "")
 }
 ```
 
@@ -386,8 +386,8 @@ import kit.CoreFileKit.*
 
 let pathDir = "path/to/file"
 let filePath = pathDir + "/test.txt"
-let file = FileFs.open(filePath)
-FileFs.close(file.fd)
+let file = FileIo.open(filePath)
+FileIo.close(file.fd)
 ```
 
 ### static func close(File)
@@ -432,8 +432,8 @@ import kit.CoreFileKit.*
 
 let pathDir = "path/to/file"
 let filePath = pathDir + "/test.txt"
-let file = FileFs.open(filePath)
-FileFs.close(file)
+let file = FileIo.open(filePath)
+FileIo.close(file)
 ```
 
 ### static func copyDir(String, String, Int32)
@@ -494,7 +494,7 @@ import kit.CoreFileKit.*
 let pathDir = "path/to/file"
 let srcPath = pathDir + "/srcDir/"
 let destPath = pathDir + "/destDir/"
-FileFs.copyDir(srcPath, destPath, mode: 0)
+FileIo.copyDir(srcPath, destPath, mode: 0)
 ```
 
 ### static func copyFile(String, String, Int32)
@@ -554,7 +554,7 @@ import kit.CoreFileKit.*
 let pathDir = "path/to/file"
 let srcPath = pathDir + "/srcDir/test.txt"
 let dstPath = pathDir + "/dstDir/test.txt"
-FileFs.copyFile(srcPath, dstPath, mode: 0)
+FileIo.copyFile(srcPath, dstPath, mode: 0)
 ```
 
 ### static func copyFile(String, Int32, Int32)
@@ -614,8 +614,8 @@ import kit.CoreFileKit.*
 let pathDir = "path/to/file"
 let srcPath = pathDir + "/srcDir/test.txt"
 let dstPath = pathDir + "/dstDir/test.txt"
-let dstFile = FileFs.open(dstPath)
-FileFs.copyFile(srcPath, dstFile.fd, mode: 0)
+let dstFile = FileIo.open(dstPath)
+FileIo.copyFile(srcPath, dstFile.fd, mode: 0)
 ```
 
 ### static func copyFile(Int32, String, Int32)
@@ -675,8 +675,8 @@ import kit.CoreFileKit.*
 let pathDir = "path/to/file"
 let srcPath = pathDir + "/srcDir/test.txt"
 let dstPath = pathDir + "/dstDir/test.txt"
-let srcFile = FileFs.open(srcPath)
-FileFs.copyFile(srcFile.fd, dstPath, mode: 0)
+let srcFile = FileIo.open(srcPath)
+FileIo.copyFile(srcFile.fd, dstPath, mode: 0)
 ```
 
 ### static func copyFile(Int32, Int32, Int32)
@@ -736,9 +736,9 @@ import kit.CoreFileKit.*
 let pathDir = "path/to/file"
 let srcPath = pathDir + "/srcDir/test.txt"
 let dstPath = pathDir + "/dstDir/test.txt"
-let srcFile = FileFs.open(srcPath)
-let dstFile = FileFs.open(dstPath)
-FileFs.copyFile(srcFile.fd, dstFile.fd, mode: 0)
+let srcFile = FileIo.open(srcPath)
+let dstFile = FileIo.open(dstPath)
+FileIo.copyFile(srcFile.fd, dstFile.fd, mode: 0)
 ```
 
 ### static func createRandomAccessFile(String, Int64, RandomAccessFileOptions)
@@ -813,10 +813,10 @@ import kit.CoreFileKit.*
 
 let pathDir = "path/to/file"
 let filePath = pathDir + "/test.txt"
-let file = FileFs.open(filePath, mode: (OpenMode.CREATE.mode | READ_WRITE.mode))
-FileFs.write(file.fd, "hello world")
-FileFs.fdatasync(file.fd)
-let randomAccessFile = FileFs.createRandomAccessFile(filePath)
+let file = FileIo.open(filePath, mode: (OpenMode.CREATE | OpenMode.READ_WRITE))
+FileIo.write(file.fd, "hello world")
+FileIo.fdatasync(file.fd)
+let randomAccessFile = FileIo.createRandomAccessFile(filePath)
 randomAccessFile.close()
 ```
 
@@ -892,10 +892,10 @@ import kit.CoreFileKit.*
 
 let pathDir = "path/to/file"
 let filePath = pathDir + "/test.txt"
-let file = FileFs.open(filePath, mode: (OpenMode.CREATE.mode | READ_WRITE.mode))
-FileFs.write(file.fd, "hello world")
-FileFs.fdatasync(file.fd)
-let randomAccessFile = FileFs.createRandomAccessFile(file)
+let file = FileIo.open(filePath, mode: (OpenMode.CREATE | OpenMode.READ_WRITE))
+FileIo.write(file.fd, "hello world")
+FileIo.fdatasync(file.fd)
+let randomAccessFile = FileIo.createRandomAccessFile(file)
 randomAccessFile.close()
 ```
 
@@ -969,8 +969,8 @@ import kit.PerformanceAnalysisKit.*
 
 let pathDir = "path/to/file"
 let filePath = pathDir + "/test.txt"
-let stream = FileFs.createStream(filePath, "r+")
-Applog.info("createStream succeed")
+let stream = FileIo.createStream(filePath, "r+")
+Hilog.info(0, "test", "createStream succeed", "")
 stream.close()
 ```
 
@@ -1024,12 +1024,12 @@ import kit.PerformanceAnalysisKit.*
 
 let pathDir = "path/to/file"
 let filePath = pathDir + "/test.txt"
-let file1 = FileFs.open(filePath, mode: (READ_WRITE.mode | CREATE.mode))
+let file1 = FileIo.open(filePath, mode: (OpenMode.READ_WRITE | OpenMode.CREATE))
 let fd = file1.fd
-let file2 = FileFs.dup(fd)
-Applog.info("The name of the file2 is " + file2.name)
-FileFs.close(file1)
-FileFs.close(file2)
+let file2 = FileIo.dup(fd)
+Hilog.info(0, "test", "The name of the file2 is ${file2.name}", "")
+FileIo.close(file1)
+FileIo.close(file2)
 ```
 
 ### static func fdatasync(Int32)
@@ -1075,9 +1075,9 @@ import kit.CoreFileKit.*
 
 let pathDir = "path/to/file"
 let filePath = pathDir + "/test.txt"
-let file = FileFs.open(filePath)
-FileFs.fdatasync(file.fd)
-FileFs.close(file)
+let file = FileIo.open(filePath)
+FileIo.fdatasync(file.fd)
+FileIo.close(file)
 ```
 
 ### static func fdopenStream(Int32, String)
@@ -1150,9 +1150,9 @@ import kit.CoreFileKit.*
 
 let pathDir = "path/to/file"
 let filePath = pathDir + "/test.txt"
-let file = FileFs.open(filePath, mode: (READ_ONLY.mode | CREATE.mode))
-let stream = FileFs.fdopenStream(file.fd, "r+")
-FileFs.close(file)
+let file = FileIo.open(filePath, mode: (OpenMode.READ_ONLY | OpenMode.CREATE))
+let stream = FileIo.fdopenStream(file.fd, "r+")
+FileIo.close(file)
 stream.close()
 ```
 
@@ -1199,9 +1199,9 @@ import kit.CoreFileKit.*
 
 let pathDir = "path/to/file"
 let filePath = pathDir + "/test.txt"
-let file = FileFs.open(filePath)
-FileFs.fsync(file.fd)
-FileFs.close(file)
+let file = FileIo.open(filePath)
+FileIo.fsync(file.fd)
+FileIo.close(file)
 ```
 
 ### static func listFile(String, ListFileOptions)
@@ -1254,9 +1254,9 @@ import kit.PerformanceAnalysisKit.*
 let pathDir = "path/to/file"
 let filter = Filter(suffix: [".png", ".jpg", ".jpeg"], displayName: ["*abc", "efg*"])
 let listFileOptions = ListFileOptions(recursion: false, listNum: 0, filter: filter)
-let filenames = FileFs.listFile(pathDir, options: listFileOptions)
+let filenames = FileIo.listFile(pathDir, options: listFileOptions)
 for (name in filenames) {
-  Applog.info(name)
+    Hilog.info(0, "test", name, "")
 }
 ```
 
@@ -1310,10 +1310,10 @@ import kit.PerformanceAnalysisKit.*
 
 let pathDir = "path/to/file"
 let filePath = pathDir + "/test.txt"
-let file = FileFs.open(filePath, mode: CREATE.mode)
-let offset = FileFs.lseek(file.fd, 5, whence: WhenceType.SEEK_SET)
-Applog.info("The current offset is at " + offset.toString())
-FileFs.close(file)
+let file = FileIo.open(filePath, mode: OpenMode.CREATE)
+let offset = FileIo.lseek(file.fd, 5, whence: WhenceType.SeekSet)
+Hilog.info(0, "test", "The current offset is at ${offset.toString()}", "")
+FileIo.close(file)
 ```
 
 ### static func lstat(String)
@@ -1368,7 +1368,7 @@ import kit.CoreFileKit.*
 
 let pathDir = "path/to/file"
 let filePath = pathDir + "/linkToFile"
-let fileStat = FileFs.lstat(filePath)
+let fileStat = FileIo.lstat(filePath)
 ```
 
 ### static func mkdir(String)
@@ -1422,7 +1422,7 @@ import kit.CoreFileKit.*
 
 let pathDir = "path/to/file"
 let dirPath = pathDir + "/testDir1/testDir2/testDir3"
-FileFs.mkdir(dirPath)
+FileIo.mkdir(dirPath)
 ```
 
 ### static func mkdir(String, Bool)
@@ -1477,7 +1477,7 @@ import kit.CoreFileKit.*
 
 let pathDir = "path/to/file"
 let dirPath = pathDir + "/testDir1/testDir2/testDir3"
-FileFs.mkdir(dirPath, true)
+FileIo.mkdir(dirPath, true)
 ```
 
 ### static func mkdtemp(String)
@@ -1536,7 +1536,7 @@ public static func mkdtemp(prefix: String): String
 import kit.CoreFileKit.*
 
 let pathDir = "path/to/file"
-let res = FileFs.mkdtemp(pathDir + "/XXXXXX")
+let res = FileIo.mkdtemp(pathDir + "/XXXXXX")
 ```
 
 ### static func moveDir(String, String, Int32)
@@ -1598,7 +1598,7 @@ let pathDir = "path/to/file"
 // move directory from srcPath to destPath
 let srcPath = pathDir + "/srcDir/"
 let destPath = pathDir + "/destDir/"
-FileFs.moveDir(srcPath, destPath, mode: 1)
+FileIo.moveDir(srcPath, destPath, mode: 1)
 ```
 
 ### static func moveFile(String, String, Int32)
@@ -1660,8 +1660,8 @@ import kit.PerformanceAnalysisKit.*
 let pathDir = "path/to/file"
 let srcPath = pathDir + "/srcDir/"
 let destPath = pathDir + "/destDir/"
-FileFs.moveFile(srcPath, destPath, mode: 0)
-Applog.info("move file succeed")
+FileIo.moveFile(srcPath, destPath, mode: 0)
+Hilog.info(0, "test", "move file succeed", "")
 ```
 
 ### static func open(String, Int64)
@@ -1735,9 +1735,9 @@ import kit.PerformanceAnalysisKit.*
 
 let pathDir = "path/to/file"
 let filePath = pathDir + "/test.txt"
-let file = FileFs.open(filePath, mode: (READ_WRITE.mode | CREATE.mode))
-Applog.info("open file success, file fd: " + file.fd.toString())
-FileFs.close(file)
+let file = FileIo.open(filePath, mode: (OpenMode.READ_WRITE | OpenMode.CREATE))
+Hilog.info(0, "test", "open file success, file fd: ${file.fd.toString()}", "")
+FileIo.close(file)
 ```
 
 ### static func read(Int32, Array\<Byte>, ReadOptions)
@@ -1794,10 +1794,10 @@ import kit.CoreFileKit.*
 
 let pathDir = "path/to/file"
 let filePath = pathDir + "/test.txt"
-let file = FileFs.open(filePath, mode: (READ_WRITE.mode | CREATE.mode))
+let file = FileIo.open(filePath, mode: (OpenMode.READ_WRITE | OpenMode.CREATE))
 let buf = Array<Byte>(4096, repeat: 0)
-FileFs.read(file.fd, buf)
-FileFs.close(file)
+FileIo.read(file.fd, buf)
+FileIo.close(file)
 ```
 
 ### static func readLines(String, Options)
@@ -1858,11 +1858,11 @@ import kit.PerformanceAnalysisKit.*
 let pathDir = "path/to/file"
 let filePath = pathDir + "/test.txt"
 let options: Options = Options(encoding: "utf-8")
-let readerIterator = FileFs.readLines(filePath, options: options)
+let readerIterator = FileIo.readLines(filePath, options: options)
 var result = readerIterator.next()
 while (!result.done) {
-  Applog.info("content: " + result.value)
-  result = readerIterator.next()
+    Hilog.info(0, "test", "content: ${result.value}", "")
+    result = readerIterator.next()
 }
 ```
 
@@ -1923,7 +1923,7 @@ import kit.CoreFileKit.*
 
 let pathDir = "path/to/file"
 let filePath = pathDir + "/test.txt"
-let str = FileFs.readText(filePath)
+let str = FileIo.readText(filePath)
 ```
 
 ### static func rename(String, String)
@@ -1983,7 +1983,7 @@ import kit.CoreFileKit.*
 let pathDir = "path/to/file"
 let srcFile = pathDir + "/test.txt"
 let dstFile = pathDir + "/new.txt"
-FileFs.rename(srcFile, dstFile)
+FileIo.rename(srcFile, dstFile)
 ```
 
 ### static func rmdir(String)
@@ -2034,7 +2034,7 @@ import kit.CoreFileKit.*
 
 let pathDir = "path/to/file"
 let dirPath = pathDir + "/testDir"
-FileFs.rmdir(dirPath)
+FileIo.rmdir(dirPath)
 ```
 
 ### static func stat(Int32)
@@ -2092,8 +2092,8 @@ import kit.CoreFileKit.*
 
 let pathDir = "path/to/file"
 let dirPath = pathDir + "/testDir"
-let file = FileFs.open(dirPath)
-FileFs.stat(file.fd)
+let file = FileIo.open(dirPath)
+FileIo.stat(file.fd)
 ```
 
 ### static func stat(String)
@@ -2151,7 +2151,7 @@ import kit.CoreFileKit.*
 
 let pathDir = "path/to/file"
 let dirPath = pathDir + "/testDir"
-FileFs.stat(dirPath)
+FileIo.stat(dirPath)
 ```
 
 ### static func truncate(String, Int64)
@@ -2208,7 +2208,7 @@ import kit.CoreFileKit.*
 let pathDir = "path/to/file"
 let filePath = pathDir + "/test.txt"
 let len: Int64 = 5
-FileFs.truncate(filePath, len: len)
+FileIo.truncate(filePath, len: len)
 ```
 
 ### static func truncate(Int32, Int64)
@@ -2265,8 +2265,8 @@ import kit.CoreFileKit.*
 let pathDir = "path/to/file"
 let filePath = pathDir + "/test.txt"
 let len: Int64 = 5
-let file  = FileFs.open(filePath, mode: READ_WRITE.mode)
-FileFs.truncate(file.fd, len: len)
+let file  = FileIo.open(filePath, mode: OpenMode.READ_WRITE)
+FileIo.truncate(file.fd, len: len)
 ```
 
 ### static func unlink(String)
@@ -2320,7 +2320,7 @@ import kit.CoreFileKit.*
 
 let pathDir = "path/to/file"
 let filePath = pathDir + "/test.txt"
-FileFs.unlink(filePath)
+FileIo.unlink(filePath)
 ```
 
 ### static func utimes(String, Float64)
@@ -2367,10 +2367,10 @@ import std.time.DateTime
 
 let pathDir = "path/to/file"
 let filePath = pathDir + "/test.txt"
-let file = FileFs.open(filePath, mode: (CREATE.mode | READ_WRITE.mode))
-FileFs.write(file.fd, "test data")
-FileFs.close(file)
-FileFs.utimes(filePath, Float64(DateTime.UnixEpoch.second))
+let file = FileIo.open(filePath, mode: (OpenMode.CREATE | OpenMode.READ_WRITE))
+FileIo.write(file.fd, "test data")
+FileIo.close(file)
+FileIo.utimes(filePath, Float64(DateTime.UnixEpoch.second))
 ```
 
 ### static func write(Int32, Array\<Byte>, WriteOptions)
@@ -2429,10 +2429,10 @@ import kit.CoreFileKit.*
 
 let pathDir = "path/to/file"
 let filePath = pathDir + "/test.txt"
-let file = FileFs.open(filePath, mode: (CREATE.mode | READ_WRITE.mode))
+let file = FileIo.open(filePath, mode: (OpenMode.CREATE | OpenMode.READ_WRITE))
 let str = "hello, world"
-let writeLen = FileFs.write(file.fd, str.toArray())
-FileFs.close(file)
+let writeLen = FileIo.write(file.fd, str.toArray())
+FileIo.close(file)
 ```
 
 ### static func write(Int32, String, WriteOptions)
@@ -2491,10 +2491,10 @@ import kit.CoreFileKit.*
 
 let pathDir = "path/to/file"
 let filePath = pathDir + "/test.txt"
-let file = FileFs.open(filePath, mode: (CREATE.mode | READ_WRITE.mode))
+let file = FileIo.open(filePath, mode: (OpenMode.CREATE | OpenMode.READ_WRITE))
 let str = "hello, world"
-let writeLen = FileFs.write(file.fd, str)
-FileFs.close(file)
+let writeLen = FileIo.write(file.fd, str)
+FileIo.close(file)
 ```
 
 ## class Filter

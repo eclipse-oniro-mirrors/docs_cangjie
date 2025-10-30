@@ -61,7 +61,7 @@ public static func getTime(isNanoseconds!: Bool = false): Int64
 // index.cj
 
 import kit.BasicServicesKit.*
-import ohos.base.*
+import kit.PerformanceAnalysisKit.*
 
 try {
     let time = SystemDateTime.getTime()
@@ -97,7 +97,7 @@ public static func getTimezone(): String
 // index.cj
 
 import kit.BasicServicesKit.*
-import ohos.base.*
+import kit.PerformanceAnalysisKit.*
 
 try {
     let time = SystemDateTime.getTimezone()
@@ -140,7 +140,7 @@ public static func getUptime(timeType: TimeType, isNanoseconds!: Bool = false): 
 // index.cj
 
 import kit.BasicServicesKit.*
-import ohos.base.*
+import kit.PerformanceAnalysisKit.*
 
 try {
     let time = SystemDateTime.getUptime(TimeType.Active)
