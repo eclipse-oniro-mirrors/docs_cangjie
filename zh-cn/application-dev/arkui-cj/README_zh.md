@@ -61,6 +61,8 @@
         - [视频播放（Video）](cj-common-components-video-player.md)
     - 设置组件导航和页面路由
         - [组件导航和页面路由概述](cj-navigation-introduction.md)
+        - [组件导航（Navigation）（推荐）](cj-navigation-navigation.md)
+        - [导航转场](cj-navigation-transition.md)
     - 使用文本
         - [文本概述](cj-text-introduction.md)
         - [文本显示（Text/Span）](cj-common-components-text-display.md)

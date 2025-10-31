@@ -406,4 +406,4 @@ class EntryView {
 }
 ```
 
-![font2](./figures/uicontextFont2.png)
+![font2](./figures/uicontextFont2.PNG)

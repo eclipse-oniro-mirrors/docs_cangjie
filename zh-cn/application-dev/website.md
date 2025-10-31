@@ -129,6 +129,8 @@
                     - [视频播放（Video）](arkui-cj/cj-common-components-video-player.md)
                 - 设置组件导航和页面路由
                     - [组件导航和页面路由概述](arkui-cj/cj-navigation-introduction.md)
+                    - [组件导航（Navigation）（推荐）](arkui-cj/cj-navigation-navigation.md)
+                    - [导航转场](arkui-cj/cj-navigation-transition.md)
                 - 使用文本
                     - [文本概述](arkui-cj/cj-text-introduction.md)
                     - [文本显示（Text/Span）](arkui-cj/cj-common-components-text-display.md)
@@ -543,7 +545,7 @@
                 - 屏幕管理
                     - [ohos.display（屏幕属性）](reference/arkui-cj/cj-apis-display.md)
             - 仓颉组件
-                - 通用事件
+                - [通用事件](reference/arkui-cj/cj-universal-events.md)
                     - [点击事件](reference/arkui-cj/cj-universal-event-click.md)
                     - [触摸事件](reference/arkui-cj/cj-universal-event-touch.md)
                     - [挂载卸载事件](reference/arkui-cj/cj-universal-event-appear.md)
@@ -555,7 +557,7 @@
                     - [组件区域变化事件](reference/arkui-cj/cj-universal-event-areachange.md)
                     - [组件可见区域变化事件](reference/arkui-cj/cj-universal-event-visibleareachange.md)
                     - [组件快捷键事件](reference/arkui-cj/cj-universal-event-keyboardshortcut.md)
-                - 通用属性
+                - [通用属性](reference/arkui-cj/cj-universal-attributes.md)
                     - [尺寸设置](reference/arkui-cj/cj-universal-attribute-size.md)
                     - [位置设置](reference/arkui-cj/cj-universal-attribute-location.md)
                     - [布局约束](reference/arkui-cj/cj-universal-attribute-layoutconstraints.md)

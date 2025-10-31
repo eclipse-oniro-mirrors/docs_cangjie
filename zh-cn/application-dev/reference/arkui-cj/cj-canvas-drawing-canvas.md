@@ -228,4 +228,4 @@ class EntryView {
 }
 ```
 
-![canvas](./figures/drawingCanvas.png)
+![canvas](./figures/drawingCanvas.PNG)

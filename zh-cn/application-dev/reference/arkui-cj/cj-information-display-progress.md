@@ -437,7 +437,7 @@ class EntryView {
 }
 ```
 
-![progress1](./figures/progress1.png)
+![progress1](./figures/progress1.PNG)
 
 ### 示例2（设置环形进度条属性）
 
@@ -474,7 +474,7 @@ class EntryView {
 }
 ```
 
-![progress2](./figures/progress2.png)
+![progress2](./figures/progress2.PNG)
 
 ### 示例3（设置环形进度条动画）
 
