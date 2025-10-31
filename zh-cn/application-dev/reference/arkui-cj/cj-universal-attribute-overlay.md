@@ -88,4 +88,4 @@ class EntryView {
 }
 ```
 
-![overlay](./figures/overlay.png)
+![overlay](./figures/overlay.PNG)

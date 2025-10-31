@@ -18,7 +18,7 @@
     - 屏幕管理
         - [ohos.display（屏幕属性）](cj-apis-display.md)
 - 仓颉组件
-    - 通用事件
+    - [通用事件](cj-universal-events.md)
         - [点击事件](cj-universal-event-click.md)
         - [触摸事件](cj-universal-event-touch.md)
         - [挂载卸载事件](cj-universal-event-appear.md)
@@ -30,7 +30,7 @@
         - [组件区域变化事件](cj-universal-event-areachange.md)
         - [组件可见区域变化事件](cj-universal-event-visibleareachange.md)
         - [组件快捷键事件](cj-universal-event-keyboardshortcut.md)
-    - 通用属性
+    - [通用属性](cj-universal-attributes.md)
         - [尺寸设置](cj-universal-attribute-size.md)
         - [位置设置](cj-universal-attribute-location.md)
         - [布局约束](cj-universal-attribute-layoutconstraints.md)

@@ -160,4 +160,4 @@ class EntryView {
 }
 ```
 
-![transform](./figures/transform.png)
+![transform](./figures/transform.PNG)
