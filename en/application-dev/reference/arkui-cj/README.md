@@ -3,10 +3,16 @@
 - Cangjie APIs
     - UI Interface
         - [ohos.component_utils (ComponentUtils)](cj-apis-componentutils.md)
+        - [ohos.shape (Shape)](cj-apis-shape.md)
         - [ohos.curves (Interpolation Calculation)](cj-apis-curves.md)
-        - [ohos.font (Custom Font)](cj-apis-font.md)
-        - [ohos.router (Page Routing)](cj-apis-router.md)
-        - [ohos.ui_context (UIContext)](cj-apis-arkui-ui_context.md)
+        - ohos.ui_context（UIContext）
+            - [AnimatorResult](cj-apis-uicontext-animator.md)
+            - [ContextMenuController](cj-apis-uicontext-contextmenucontroller.md)
+            - [Font](cj-apis-uicontext-font.md)
+            - [MeasureUtils](cj-apis-uicontext-measureutils.md)
+            - [PromptAction](cj-apis-uicontext-promptaction.md)
+            - [Router](cj-apis-uicontext-router.md)
+            - [UIContext](cj-apis-uicontext-uicontext.md)
     - Window Management
         - [ohos.window (Window)](cj-apis-window.md)
     - Screen Management
@@ -15,9 +21,13 @@
     - Universal Events
         - [Click Event](cj-universal-event-click.md)
         - [Touch Event](cj-universal-event-touch.md)
+        - [Mount&Unmout Event](cj-universal-event-appear.md)
         - [Drag Event](cj-universal-event-drag.md)
         - [Key Event](cj-universal-event-key.md)
+        - [Focus Event](cj-universal-event-focus.md)
         - [Mouse Event](cj-universal-event-mouse.md)
+        - [Suspended Event](cj-universal-event-hover.md)
+        - [Component Area Change Event](cj-universal-event-areachange.md)
         - [Component Visible Area Change Event](cj-universal-event-visibleareachange.md)
         - [Component Shortcut Key Event](cj-universal-event-keyboardshortcut.md)
     - Universal Attributes
@@ -43,18 +53,11 @@
         - [Foreground Color Setting](cj-universal-attribute-foregroundcolor.md)
         - [Component Content Blur](cj-universal-attribute-foregroundblurstyle.md)
         - Touch Interaction Control
-            - [Touch Hotspot Setting](cj-universal-attribute-touchtarget.md)
-        - Modal Transition Setting
             - [Full-Screen Modal Transition](cj-universal-attribute-bindcontentcover.md)
             - [Half-Modal Transition](cj-universal-attribute-sheettransition.md)
         - [Drag Control](cj-universal-attribute-dragcontrol.md)
         - [Safe Area](cj-universal-attribute-expandsafearea.md)
         - [Component Content Filling Methods](cj-universal-attribute-renderfit.md)
-    - Gesture Handling
-        - [Gesture Binding Methods](cj-universal-gesture-bind.md)
-        - [PanGesture](cj-universal-gesture-pangesture.md)
-        - [SwipeGesture](cj-universal-gesture-swipegesture.md)
-        - [Combined Gestures](cj-universal-gesture-groupgesture.md)
     - Rows, Columns & Stacks
         - [Flex](cj-row-column-stack-flex.md)
         - [Column](cj-row-column-stack-column.md)
@@ -76,11 +79,14 @@
         - [Swiper](cj-scroll-swipe-swiper.md)
         - [ScrollBar](cj-scroll-swipe-scrollbar.md)
         - [Refresh](cj-scroll-swipe-refresh.md)
+        - [General API for Scroll Components](cj-scroll-swipe-common.md)
     - Navigation & Switching
         - [Navigation](cj-navigation-switching-navigation.md)
+        - [NavDestination](cj-navigation-switching-navdestination.md)
         - [Stepper](cj-navigation-switching-stepper.md)
         - [StepperItem](cj-navigation-switching-stepperitem.md)
         - [Tabs](cj-navigation-switching-tabs.md)
+        - [TabContent](cj-navigation-switching-tabcontent.md)
     - Buttons & Pickers
         - [Button](cj-button-picker-button.md)
         - [Toggle](cj-button-picker-toggle.md)
@@ -101,8 +107,6 @@
         - [Span](cj-text-input-span.md)
         - [ImageSpan](cj-text-input-imagespan.md)
         - [RichText](cj-text-input-richtext.md)
-        - [PromptAction](cj-apis-prompt_action.md)
-        - [AlertDialog](cj-dialog-alertdialog.md)
     - Images & Videos
         - [Image](cj-image-video-image.md)
         - [Video](cj-image-video-video.md)
@@ -129,7 +133,6 @@
         - [ImageBitmap](cj-canvas-drawing-imagebitmap.md)
         - [ImageData](cj-canvas-drawing-imagedata.md)
         - [CanvasPattern](cj-canvas-drawing-canvaspattern.md)
-        - [Recycle](cj-apis-recycle.md)
     - Graphic Drawing
         - [Circle](cj-graphic-drawing-circle.md)
         - [Ellipse](cj-graphic-drawing-ellipse.md)
@@ -137,31 +140,34 @@
         - [Path](cj-graphic-drawing-path.md)
         - [Rect](cj-graphic-drawing-rect.md)
         - [Shape](cj-graphic-drawing-shape.md)
+        - [General Properties for Grapical Drawing](cj-graphic-drawing-common.md)
     - Menus
         - [Menu](cj-menu-menu.md)
         - [MenuItem](cj-menu-menuitem.md)
         - [MenuItemGroup](cj-menu-menuitemgroup.md)
     - Animations
         - [Property Animation (animation)](cj-animation-animation.md)
-        - [Animation (animator)](cj-apis-animator.md)
-        - [Explicit Animation (animateTo)](cj-animation-animateto.md)
         - [Page Transition (pageTransition)](cj-animation-pagetransition.md)
         - [Component Transition (transition)](cj-animation-transition.md)
         - [Shared Element Transition (sharedTransition)](cj-animation-sharedtransition.md)
         - [Implicit Shared Element Transition within Components (geometryTransition)](cj-animation-geometrytransition.md)
-        - [Path Animation (motionPath)](cj-animation-motionpath.md)
     - Dialog
+        - [Alert Dialog（AlertDialog）](cj-dialog-alertdialog.md)
         - [List Selection Dialog (ActionSheet)](cj-dialog-actionsheet.md)
         - [Custom Dialog (CustomDialog)](cj-dialog-customdialog.md)
     - Web
         - [Web](cj-web-web.md)
+    - Custom Components
+        - [Lifecycle of Custom Components](cj-custom-component-lifecycle.md)
     - State Management and Rendering Control
+        - [ForEach](cj-state-rendering-foreach.md)
         - [LazyForEach](cj-state-rendering-lazyforeach.md)
-        - [Component-Level Variable State Management](cj-state-rendering-componentstatemanagement.md)
-        - [Application-Level Variable State Management](cj-state-rendering-appstatemanagement.md)
+        - [State Management of Component-Level Variables](cj-state-rendering-componentstatemanagement.md)
+        - [State Management of Application-Level Variables](cj-state-rendering-appstatemanagement.md)
     - Common Definitions
         - [Basic Type Definitions](cj-common-types.md)
         - [Pixel Units](cj-common-pixelunits.md)
+    - [Thread Control](cj-appendix-thread.md)
     - [Framework Interfaces](cj-ui-framework.md)
 - Error Codes
     - UI Interface

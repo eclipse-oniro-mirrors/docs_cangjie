@@ -1,0 +1,3 @@
+# Using Cangjie in ArkTS Applications
+
+In ArkTS applications, cross-language interoperability is employed to invoke Cangjie code, leveraging Cangjie's high-performance and high-concurrency advantages to enhance application performance. ArkTS applications support loading both Cangjie modules and Cangjie pages. A Cangjie module corresponds to a Cangjie package, which may contain elements such as pages, components, and state management. The following sections describe how to add Cangjie pages and Cangjie modules in DevEco Studio.

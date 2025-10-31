@@ -1,0 +1,3 @@
+# Using ArkTS in Cangjie Applications
+
+Cangjie applications do not support adding ArkTS pages or ArkTS modules. When developing Cangjie applications, developers can leverage ArkTS's rich library ecosystem by calling existing ArkTS libraries. ArkTS libraries are categorized into NAPI (Node.js API) modules and third-party library modules. Currently, Cangjie supports calling NAPI modules but does not support third-party library modules. For methods on calling NAPI modules, please refer to [Cangjie Calling ArkTS](./using_arkts_module.md).

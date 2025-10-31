@@ -61,6 +61,8 @@
         - [Video Player (Video)](cj-common-components-video-player.md)
     - Setting Component Navigation & Page Routing
         - [Component Navigation & Page Routing Overview](cj-navigation-introduction.md)
+        - [Component Navigation (Navigation) (Recommended)](cj-navigation-navigation.md)
+        - [Navigation Transition](cj-navigation-transition.md)
     - Using Text
         - [Text Overview](cj-text-introduction.md)
         - [Text Display (Text/Span)](cj-common-components-text-display.md)
@@ -94,7 +96,6 @@
             - [Modal Transition](cj-modal-transition.md)
             - [Shared Element Transition (One-Shot Effect)](cj-shared-element-transition.md)
             - [Screen Rotation Animation](cj-rotation-transition-animation.md)
-            - [Page Routing (Not Recommended)](cj-page-routing.md)
             - [Page Transition Animation (Not Recommended)](cj-page-transition-animation.md)
         - [Component Animation](cj-component-animation.md)
         - Animation Curves

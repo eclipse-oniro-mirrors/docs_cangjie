@@ -39,3 +39,4 @@
     - Application Services
         - [Location Kit (Location Service)](location/README.md)
 - [API References](reference/README.md)
+- [Learning Cangjie](learn-cj/README.md)

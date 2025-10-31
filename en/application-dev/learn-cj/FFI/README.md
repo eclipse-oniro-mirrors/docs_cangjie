@@ -1,0 +1,25 @@
+# FFI (Beta Feature)
+
+- [Cangjie and C Interoperability](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/FFI/cangjie-c.md)
+- Cangjie-ArkTS Interoperability
+    - [Overview](cangjie-arkts/cangjie_arkts_overview.md)
+    - [Scenarios](cangjie-arkts/interoperability_senario.md)
+        - [Using Cangjie in ArkTS Applications](cangjie-arkts/using_cangjie.md)
+            - [Adding Cangjie Pages](cangjie-arkts/add_cangjie_page.md)
+            - [Adding Cangjie Modules](cangjie-arkts/add_cangjie_module.md)
+        - [Using ArkTS in Cangjie Applications](cangjie-arkts/using_arkts.md)
+    - Interoperability Methods
+        - [ArkTS Calling Cangjie](cangjie-arkts/method_of_ArkTS_calling_cangjie.md)
+            - Implementing Interoperability Code on Cangjie Side
+                - [Declarative Interoperability Macros](cangjie-arkts/interoperability_macro.md)
+                - [Interoperability Library](cangjie-arkts/interoperability_lib.md)
+            - [Using Interoperability Code on ArkTS Side](cangjie-arkts/arkts_import_cangjie.md)
+        - Cangjie Calling ArkTS
+            - [Preparing Interoperability on ArkTS Side](cangjie-arkts/prepare_arkts_module.md)
+            - [Calling Interoperability Code on Cangjie Side](cangjie-arkts/using_arkts_module.md)
+    - [Interoperability Use Cases](cangjie-arkts/using_example.md)
+        - [Cangjie Accessing ArkTS Data](cangjie-arkts/operating_ArkTS_data.md)
+        - [ArkTS Accessing Cangjie Data](cangjie-arkts/operating_cangjie_objects.md)
+        - [Using Interoperability in Cangjie Multithreading](cangjie-arkts/using_interoperability_lib_multithread.md)
+    - [Cangjie-ArkTS Interoperability Auxiliary Library](cangjie-arkts/auxiliary_lib.md)
+    - [Cangjie-ArkTS Interoperability Development Guidelines](cangjie-arkts/interop_guidelines.md)

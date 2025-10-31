@@ -1,38 +1,38 @@
-# OpenHarmony Documentation (Cangjie)
+# OpenHarmony Developer Documentation (Cangjie)
 
 - Getting Started
     - [Application Development Guide](cj-start/start/cj-start-application-development-overview.md)
     - Quick Start
-        - [Development Preparation](cj-start/start/quick-start/cj-quick-start-preparations.md)
+        - [Development Preparations](cj-start/start/quick-start/cj-quick-start-preparations.md)
         - [Building Your First Cangjie Application](cj-start/start/quick-start/cj-quick-start-first-cangjie-app.md)
-        - [Building Your First Cangjie & ArkTS Hybrid Application](cj-start/start/quick-start/cj-quick-start-first-cangjie-hybrid-app.md)
-        - [Incrementally Using Cangjie in Existing ArkTS Projects](cj-start/start/quick-start/cj-quick-start-first-cangjie-hybrid-module.md)
+        - [Building Your First Cangjie-ArkTS Hybrid Application](cj-start/start/quick-start/cj-quick-start-first-cangjie-hybrid-app.md)
+        - [Incremental Cangjie Usage in Existing ArkTS Projects](cj-start/start/quick-start/cj-quick-start-first-cangjie-hybrid-module.md)
         - [Cangjie Calling ArkTS Third-Party Modules](cj-start/start/quick-start/cj-quick-start-dts2cj-plugin-usage.md)
-        - [Cangjie Calling Module-Internal cpp Files](cj-start/start/quick-start/cj-quick-start-cangjie-module-cpp.md)
+        - [Cangjie Calling CPP Files Within Modules](cj-start/start/quick-start/cj-quick-start-cangjie-module-cpp.md)
     - [Using Cangjie Modules in ArkTS Applications](cj-start/arkts-cj/cj-cangjie-in-arkts.md)
     - [Using ArkTS APIs in Cangjie Applications](cj-start/arkts-cj/cj-arktsapi-in-cangjie.md)
-    - Basic Development Knowledge
+    - Development Fundamentals
         - Application Package Basics
             - [Application Package Overview](cj-start/basic-knowledge/application-package-overview.md)
         - Application Package Structure
             - [Stage Model Application Package Structure](cj-start/basic-knowledge/application-package-structure-stage.md)
-        - Application Package Development & Usage
+        - Application Package Development and Usage
             - [HAP](cj-start/basic-knowledge/hap-package.md)
             - [HAR](cj-start/basic-knowledge/har-package.md)
-        - Application Package Installation/Uninstallation & Updates
-            - [Application Installation/Uninstallation & Update Development Guide](cj-start/basic-knowledge/application-package-install-uninstall.md)
-            - [Application Installation & Update Consistency Verification](cj-start/basic-knowledge/multi_module_installation_update_consistency_verification.md)
-        - Application Configuration File (Stage Model)
+        - Application Package Installation, Uninstallation, and Updates
+            - [Application Installation/Uninstallation and Update Development Guide](cj-start/basic-knowledge/application-package-install-uninstall.md)
+            - [Application Installation and Update Consistency Verification](cj-start/basic-knowledge/multi_module_installation_update_consistency_verification.md)
+        - Application Configuration Files (Stage Model)
             - [Application Configuration File Overview (Stage Model)](cj-start/basic-knowledge/application-configuration-file-overview-stage.md)
             - [app.json5 Configuration File](cj-start/basic-knowledge/app-configuration-file.md)
             - [module.json5 Configuration File](cj-start/basic-knowledge/module-configuration-file.md)
         - [Application Package FAQs](cj-start/basic-knowledge/common_problem_of_application.md)
-        - [Application Package Glossary](cj-start/basic-knowledge/application-package-glossary.md)
-    - [Resource Classification & Access](cj-start/start/ide-resource-categories-and-access.md)
+        - [Application Package Terminology](cj-start/basic-knowledge/application-package-glossary.md)
+    - [Resource Classification and Access](cj-start/start/ide-resource-categories-and-access.md)
 
 - Development
     - Application Framework
-        - Ability Kit (Application Framework Service)
+        - Ability Kit (Program Framework Services)
             - [Ability Kit Introduction](application-models/cj-abilitykit-overview.md)
             - [Application Models](application-models/cj-application-models.md)
             - Stage Model Development Guide
@@ -41,16 +41,16 @@
                     - UIAbility Component
                         - [UIAbility Component Overview](application-models/cj-uiability-overview.md)
                         - [UIAbility Component Lifecycle](application-models/cj-uiability-lifecycle.md)
-                        - [UIAbility Component Launch Mode](application-models/cj-uiability-launch-type.md)
+                        - [UIAbility Component Launch Modes](application-models/cj-uiability-launch-type.md)
                         - [UIAbility Component Basic Usage](application-models/cj-uiability-usage.md)
                         - [Launching UIAbility Components Within an Application](application-models/cj-uiability-intra-device-interaction.md)
                     - Information Carrier Want
                         - [Want Overview](application-models/cj-want-overview.md)
-                        - [Explicit & Implicit Want Matching Rules](application-models/cj-explicit-implicit-want-mappings.md)
-                        - [Common Actions & Entities (Deprecated)](application-models/cj-actions-entities.md)
+                        - [Explicit Want vs Implicit Want Matching Rules](application-models/cj-explicit-implicit-want-mappings.md)
+                        - [Common Actions and Entities (Deprecated)](application-models/cj-actions-entities.md)
                 - Cross-Application Navigation
-                    - Launching Specified Application Types
-                        - [Launching File Processing Applications (startAbility)](application-models/cj-file-processing-apps-startup.md)
+                    - Launching Specific Types of Applications
+                        - [Launching File Handling Applications (startAbility)](application-models/cj-file-processing-apps-startup.md)
                 - [Stage Model Application Configuration File](application-models/cj-config-file-stage.md)
         - ArkData (Ark Data Management)
             - [ArkData Introduction](database/cj-data-mgmt-overview.md)
@@ -59,37 +59,37 @@
                 - [Data Persistence via User Preferences](database/cj-data-persistence-by-preferences.md)
                 - [Data Persistence via Key-Value Database](database/cj-data-persistence-by-kv-store.md)
                 - [Data Persistence via Relational Database](database/cj-data-persistence-by-rdb-store.md)
-            - Cross-Device Data Sync for Same Application (Distributed)
-                - [Cross-Device Data Sync Overview](database/cj-sync-app-data-across-devices-overview.md)
-                - [Relational Database Cross-Device Data Sync](database/cj-data-sync-of-rdb-store.md)
-            - Data Reliability & Security
-                - [Data Reliability & Security Overview](database/cj-data-reliability-security-overview.md)
-                - [Database Backup & Recovery](database/cj-data-backup-and-restore.md)
+            - Cross-Device Data Synchronization for Same Application (Distributed)
+                - [Cross-Device Data Synchronization Overview](database/cj-sync-app-data-across-devices-overview.md)
+                - [Relational Database Cross-Device Data Synchronization](database/cj-data-sync-of-rdb-store.md)
+            - Data Reliability and Security
+                - [Data Reliability and Security Overview](database/cj-data-reliability-security-overview.md)
+                - [Database Backup and Recovery](database/cj-data-backup-and-restore.md)
                 - [Database Encryption](database/cj-data-encryption.md)
-                - [Access Control Based on Device Classification & Data Level](database/cj-access-control-by-device-and-data-level.md)
+                - [Access Control Based on Device Classification and Data Level](database/cj-access-control-by-device-and-data-level.md)
         - ArkUI (Ark UI Framework)
             - [ArkUI Introduction](arkui-cj/cj-overview.md)
             - UI Development (Cangjie Declarative Development Paradigm)
                 - [UI Development (Cangjie Declarative Paradigm) Overview](arkui-cj/cj-ui-development-overview.md)
-                - Learning Basic Syntax
+                - Learning Basic UI Paradigm Syntax
                     - [Basic Syntax Overview](arkui-cj/paradigm/cj-basic-syntax-overview.md)
                     - [Declarative UI Description](arkui-cj/paradigm/cj-declarative-ui-description.md)
                     - Custom Components
                         - [Creating Custom Components](arkui-cj/paradigm/cj-create-custom-components.md)
-                        - [Page & Custom Component Lifecycle](arkui-cj/paradigm/cj-page-custom-components-lifecycle.md)
-                        - [Custom Component Member Property Access Qualifier Restrictions](arkui-cj/paradigm/cj-custom-components-access-restrictions.md)
-                    - [@Builder Macro: Custom Build Function](arkui-cj/paradigm/cj-macro-builder.md)
+                        - [Page and Custom Component Lifecycle](arkui-cj/paradigm/cj-page-custom-components-lifecycle.md)
+                        - [Custom Component Member Property Access Modifier Restrictions](arkui-cj/paradigm/cj-custom-components-access-restrictions.md)
+                    - [@Builder Macro: Custom Build Functions](arkui-cj/paradigm/cj-macro-builder.md)
                     - [@BuilderParam Macro: Referencing @Builder Functions](arkui-cj/paradigm/cj-macro-builderparam.md)
                     - [@Reusable Macro: Component Reuse](arkui-cj/paradigm/cj-macro-reusable.md)
-                - Learning State Management
+                - Learning UI Paradigm State Management
                     - [State Management Overview](arkui-cj/state_management/cj-state-management-overview.md)
                     - State Management (V1)
                         - Managing Component-Owned States
                             - [@State Macro: Component-Internal State](arkui-cj/state_management/cj-macro-state.md)
                             - [@Prop Macro: Parent-to-Child Unidirectional Sync](arkui-cj/state_management/cj-macro-prop.md)
                             - [@Link Macro: Parent-Child Bidirectional Sync](arkui-cj/state_management/cj-macro-link.md)
-                            - [@Provide & @Consume Macros: Bidirectional Sync with Descendant Components](arkui-cj/state_management/cj-macro-provide-and-consume.md)
-                            - [@Observed & @Publish Macros: Nested Class Object Property Changes](arkui-cj/state_management/cj-macro-observed-and-publish.md)
+                            - [@Provide and @Consume Macros: Bidirectional Sync with Descendant Components](arkui-cj/state_management/cj-macro-provide-and-consume.md)
+                            - [@Observed and @Publish Macros: Nested Class Object Property Changes](arkui-cj/state_management/cj-macro-observed-and-publish.md)
                         - Managing Application-Owned States
                             - [Application-Owned State Management Overview](arkui-cj/state_management/cj-application-state-management-overview.md)
                             - [LocalStorage: Page-Level UI State Storage](arkui-cj/state_management/cj-localstorage.md)
@@ -101,12 +101,12 @@
                             - [@Watch Macro: State Variable Change Notification](arkui-cj/state_management/cj-macro-watch.md)
                         - [MVVM Pattern](arkui-cj/state_management/cj-mvvm.md)
                         - [State Management Best Practices](arkui-cj/state_management/cj-state-management-best-practices.md)
-                        - [State Management Proper Usage Guide](arkui-cj/state_management/cj-properly-use-state-management-to-develope.md)
-                - Learning Rendering Control
+                        - [State Management Proper Usage Development Guide](arkui-cj/state_management/cj-properly-use-state-management-to-develope.md)
+                - Learning UI Paradigm Rendering Control
                     - [Rendering Control Overview](arkui-cj/rendering_control/cj-rendering-control-overview.md)
                     - [if/else: Conditional Rendering](arkui-cj/rendering_control/cj-rendering-control-ifelse.md)
                     - [ForEach: Loop Rendering](arkui-cj/rendering_control/cj-rendering-control-foreach.md)
-                    - [LazyForEach: Data Lazy Loading](arkui-cj/rendering_control/cj-rendering-control-lazyforeach.md)
+                    - [LazyForEach: Lazy Data Loading](arkui-cj/rendering_control/cj-rendering-control-lazyforeach.md)
                 - Layout Development
                     - [Layout Overview](arkui-cj/cj-layout-development-overview.md)
                     - Building Layouts
@@ -117,32 +117,34 @@
                         - [Grid Layout (GridRow/GridCol)](arkui-cj/cj-layout-development-grid-layout.md)
                         - [Creating Lists (List)](arkui-cj/cj-layout-development-create-list.md)
                         - [Creating Grids (Grid/GridItem)](arkui-cj/cj-layout-development-create-grid.md)
-                        - [Creating Carousel (Swiper)](arkui-cj/cj-layout-development-create-looping.md)
+                        - [Creating Carousels (Swiper)](arkui-cj/cj-layout-development-create-looping.md)
                         - [Tabs](arkui-cj/cj-layout-development-tabs.md)
                     <!--RP2--><!--RP2End-->
                 - Adding Components
                     - [Button](arkui-cj/cj-common-components-button.md)
                     - [Radio Button](arkui-cj/cj-common-components-radio-button.md)
                     - [Toggle Button](arkui-cj/cj-common-components-switch.md)
-                    - [Progress Indicator](arkui-cj/cj-common-components-progress-indicator.md)
+                    - [Progress Bar](arkui-cj/cj-common-components-progress-indicator.md)
                     - [Displaying Images (Image)](arkui-cj/cj-graphics-display.md)
-                    - [Video Player (Video)](arkui-cj/cj-common-components-video-player.md)
-                - Setting Component Navigation & Page Routing
-                    - [Component Navigation & Page Routing Overview](arkui-cj/cj-navigation-introduction.md)
-                - Using Text
+                    - [Video Player](arkui-cj/cj-common-components-video-player.md)
+                - Setting Up Component Navigation and Page Routing
+                    - [Component Navigation and Page Routing Overview](arkui-cj/cj-navigation-introduction.md)
+                    - [Component Navigation (Navigation) (Recommended)](arkui-cj/cj-navigation-navigation.md)
+                    - [Navigation Transition](arkui-cj/cj-navigation-transition.md)
+                - Working with Text
                     - [Text Overview](arkui-cj/cj-text-introduction.md)
                     - [Text Display (Text/Span)](arkui-cj/cj-common-components-text-display.md)
                     - [Text Input (TextInput/TextArea)](arkui-cj/cj-common-components-text-input.md)
                     - [Rich Text (RichEditor)](arkui-cj/cj-common-components-richeditor.md)
                 - Using Dialogs
                     - [Dialog Overview](arkui-cj/cj-dialog-overview.md)
-                    - Using Dialogs
-                        - [Dialog Overview](arkui-cj/cj-dialog-base-overview.md)
+                    - Using Dialog Boxes
+                        - [Dialog Box Overview](arkui-cj/cj-dialog-base-overview.md)
                         - [Global Custom Dialog Independent of UI Components (openCustomDialog)](arkui-cj/cj-uicontext-custom-dialog.md)
                         - [Basic Custom Dialog (CustomDialog) (Deprecated)](arkui-cj/cj-common-components-custom-dialog.md)
-                        - [Fixed-Style Dialogs](arkui-cj/cj-fixes-style-dialog.md)
-                    - [Menu Control (Menu)](arkui-cj/cj-popup-and-menu-components-menu.md)
-                    - [Popup Tips (Popup)](arkui-cj/cj-popup-and-menu-components-popup.md)
+                        - [Fixed-Style Dialog Boxes](arkui-cj/cj-fixes-style-dialog.md)
+                    - [Menu Control](arkui-cj/cj-popup-and-menu-components-menu.md)
+                    - [Popup Tips](arkui-cj/cj-popup-and-menu-components-popup.md)
                     - Binding Modal Pages
                         - [Modal Page Binding Overview](arkui-cj/cj-modal-overview.md)
                         - [Binding Half-Modal Pages (bindSheet)](arkui-cj/cj-sheet-page.md)
@@ -150,7 +152,7 @@
                     - [Instant Feedback (Toast)](arkui-cj/cj-create-toast.md)
                 - Displaying Graphics
                     - [Drawing Geometric Shapes (Shape)](arkui-cj/cj-shape-drawing.md)
-                    - [Custom Graphics Drawing with Canvas](arkui-cj/cj-drawing-customization-on-canvas.md)
+                    - [Drawing Custom Graphics Using Canvas](arkui-cj/cj-drawing-customization-on-canvas.md)
                 - Using Animations
                     - [Animation Overview](arkui-cj/cj-animation.md)
                     - Property Animation
@@ -158,15 +160,14 @@
                         - [Implementing Property Animation](arkui-cj/cj-attribute-animation-apis.md)
                     - Transition Animation
                         - [Transition Animation Overview](arkui-cj/cj-transition-overview.md)
-                        - [Appear/Disappear Transition](arkui-cj/cj-enter-exit-transition.md)
+                        - [Enter/Exit Transition](arkui-cj/cj-enter-exit-transition.md)
                         - [Modal Transition](arkui-cj/cj-modal-transition.md)
-                        - [Shared Element Transition (One-Shot Effect)](arkui-cj/cj-shared-element-transition.md)
+                        - [Shared Element Transition (One-Shot)](arkui-cj/cj-shared-element-transition.md)
                         - [Screen Rotation Animation](arkui-cj/cj-rotation-transition-animation.md)
-                        - [Page Routing (Not Recommended)](arkui-cj/cj-page-routing.md)
-                        - [Page Transition Animation (Not Recommended)](arkui-cj/cj-page-transition-animation.md)
+                        - [Page Transition Animation (Deprecated)](arkui-cj/cj-page-transition-animation.md)
                     - [Component Animation](arkui-cj/cj-component-animation.md)
                     - Animation Curves
-                        - [Animation Curves Overview](arkui-cj/cj-curve-overview.md)
+                        - [Animation Curve Overview](arkui-cj/cj-curve-overview.md)
                         - [Traditional Curves](arkui-cj/cj-traditional-curve.md)
                         - [Spring Curves](arkui-cj/cj-spring-curve.md)
                     - [Animation Smoothing](arkui-cj/cj-animation-smoothing.md)
@@ -182,29 +183,33 @@
                         - [Touch Screen Events](arkui-cj/cj-common-events-touch-screen-event.md)
                         - [Keyboard/Mouse Events](arkui-cj/cj-common-events-device-input-event.md)
                         - [Focus Events](arkui-cj/cj-common-events-focus-event.md)
-                - [Using Mirroring Capability](arkui-cj/cj-mirroring-display.md)
+                - [Using Mirroring Capabilities](arkui-cj/cj-mirroring-display.md)
                 <!--RP1--><!--RP1End-->
                 - Theme Settings
-                    - [Dark/Light Mode Adaptation](arkui-cj/cj-ui-dark-light-color-adaptation.md)
+                    - [Application Dark/Light Mode Adaptation](arkui-cj/cj-ui-dark-light-color-adaptation.md)
+        - Window Management
+            - [Managing Application Windows](windowmanager/application-window-stage.md)
+        - Screen Management
+            - [Using Display to Obtain Screen Properties and State Monitoring](displaymanager/screenProperty-guideline.md)
         - ArkWeb (Ark Web)
             - [ArkWeb Introduction](web/cj-web-component-overview.md)
             - Setting Basic Properties and Events
                 - [User-Agent Development Guide](web/cj-web-default-userAgent.md)
                 - [Setting Dark Mode](web/cj-web-set-dark-mode.md)
-            - Managing Webpage Interactions
+            - Managing Web Page Interactions
                 - [Web Component Nested Scrolling](web/cj-web-nested-scrolling.md)
-                - [Webpage Content Scrolling](web/cj-web-content-scrolling.md)
-            - Managing Web Component Security and Privacy
+                - [Web Page Content Scrolling](web/cj-web-content-scrolling.md)
+            - Managing Web Component Network Security and Privacy
                 - [Secure Shield Mode](web/cj-web-secure-shield-mode.md)
-            - Managing Webpage Loading and Browsing History
-                - [Loading Pages with Web Components](web/cj-web-page-loading-with-web-components.md)
-            - Handling Webpage Content
-                - [PDF Document Preview with Web Components](web/cj-web-pdf-preview.md)
-                - [Safe Area Calculation and Avoidance Adaptation](web/cj-web-safe-area-insets.md)
+            - Managing Web Page Loading and Browsing History
+                - [Loading Pages Using Web Components](web/cj-web-page-loading-with-web-components.md)
+            - Processing Web Content
+                - [Using Web Component PDF Preview Capability](web/cj-web-pdf-preview.md)
+                - [Safe Area Calculation and Avoidance Adaptation in Web Pages](web/cj-web-safe-area-insets.md)
             - Web Debugging and Maintenance
-                - [Debugging Frontend Pages with DevTools](web/cj-web-debugging-with-devtools.md)
-                - [Collecting Web Component Crash Information with crashpad](web/cj-web-crashpad.md)
-        - Core File Kit (Basic File Service)
+                - [Debugging Frontend Pages Using DevTools](web/cj-web-debugging-with-devtools.md)
+                - [Collecting Web Component Crash Information Using Crashpad](web/cj-web-crashpad.md)
+        - Core File Kit (File Basic Services)
             - [Core File Kit Introduction](file-management/cj-core-file-kit-intro.md)
             - Application Files
                 - [Application Files Overview](file-management/cj-app-file-overview.md)
@@ -218,10 +223,10 @@
             - User Files
                 - [User Files Overview](file-management/cj-user-file-overview.md)
         - IPC Kit (Inter-Process Communication Service)
-            - [IPC Kit Introduction](ipc/cj-ipc-rpc-overview.md)
+            - [Introduction to IPC Kit](ipc/cj-ipc-rpc-overview.md)
             - [IPC and RPC Communication Development Guide](ipc/cj-ipc-rpc-guidelines.md)
-        - Localization Kit
-            - [Localization Kit Introduction](internationalization/cj-i18n-l10n.md)
+        - Localization Kit (Localization Development Service)
+            - [Introduction to Localization Kit](internationalization/cj-i18n-l10n.md)
             - Application Internationalization
                 - [International UI Design](internationalization/cj-i18n-ui-design.md)
                 - [Setting Calendar and Almanac](internationalization/cj-i18n-calendar.md)
@@ -234,15 +239,15 @@
                     - [Providing Translation Context](internationalization/cj-l10n-translation-scene.md)
                     - [Supporting Singular/Plural Forms](internationalization/cj-l10n-singular-plural.md)
             - Localization Testing
-                - [Linguistic Testing](internationalization/cj-linguistic-testing.md)
+                - [Language Testing](internationalization/cj-linguistic-testing.md)
     - System
         - Security
-            - Program Access Control
+            - Application Access Control
                 - [Access Control Overview](security/AccessToken/cj-access-token-overview.md)
                 - Application Permission Management
                     - [Application Permission Management Overview](security/AccessToken/cj-app-permission-mgmt-overview.md)
                     - Requesting Application Permissions
-                        - [Selecting Permission Request Methods](security/AccessToken/cj-determine-application-mode.md)
+                        - [Selecting Permission Request Method](security/AccessToken/cj-determine-application-mode.md)
                         - [Declaring Permissions](security/AccessToken/cj-declare-permissions.md)
                         - [Requesting User Authorization](security/AccessToken/cj-request-user-authorization.md)
                         - [Requesting One-Time Authorization](security/AccessToken/cj-one-time-authorization.md)
@@ -262,7 +267,7 @@
                         - [MDM-Application-Only Permissions](security/AccessToken/cj-permissions-for-mdm-apps.md)
                     - [Application Permission Group List](security/AccessToken/cj-app-permission-group-list.md)
             - Crypto Architecture Kit (Cryptographic Algorithm Framework Service)
-                - [Crypto Architecture Kit Introduction](security/CryptoArchitectureKit/cj-crypto-architecture-kit-intro.md)
+                - [Introduction to Crypto Architecture Kit](security/CryptoArchitectureKit/cj-crypto-architecture-kit-intro.md)
                 - Key Generation and Conversion
                     - [Key Generation and Conversion Overview](security/CryptoArchitectureKit/cj-crypto-key-generation-conversion-overview.md)
                     - Key Generation and Conversion Specifications
@@ -273,87 +278,87 @@
                 - Encryption/Decryption
                     - [Encryption/Decryption Overview](security/CryptoArchitectureKit/cj-crypto-encryption-decryption-overview.md)
                     - Encryption/Decryption Algorithm Specifications
-                        - [Symmetric Key Encryption/Decryption Algorithm Specifications](security/CryptoArchitectureKit/cj-crypto-sym-encrypt-decrypt-spec.md)
-                        - [Asymmetric Key Encryption/Decryption Algorithm Specifications](security/CryptoArchitectureKit/cj-crypto-asym-encrypt-decrypt-spec.md)
+                        - [Symmetric Key Encryption/Decryption Specifications](security/CryptoArchitectureKit/cj-crypto-sym-encrypt-decrypt-spec.md)
+                        - [Asymmetric Key Encryption/Decryption Specifications](security/CryptoArchitectureKit/cj-crypto-asym-encrypt-decrypt-spec.md)
                         - [Segmented Encryption/Decryption Instructions](security/CryptoArchitectureKit/cj-crypto-encrypt-decrypt-by-segment.md)
                     - Encryption/Decryption Development Guide
-                        - [AES Symmetric Key Encryption/Decryption (GCM Mode) (Cangjie)](security/CryptoArchitectureKit/cj-crypto-aes-sym-encrypt-decrypt-gcm.md)
-                        - [AES Symmetric Key Encryption/Decryption (CCM Mode) (Cangjie)](security/CryptoArchitectureKit/cj-crypto-aes-sym-encrypt-decrypt-ccm.md)
-                        - [AES Symmetric Key Encryption/Decryption (CBC Mode) (Cangjie)](security/CryptoArchitectureKit/cj-crypto-aes-sym-encrypt-decrypt-cbc.md)
-                        - [AES Symmetric Key Encryption/Decryption (ECB Mode) (Cangjie)](security/CryptoArchitectureKit/cj-crypto-aes-sym-encrypt-decrypt-ecb.md)
-                        - [AES Symmetric Key Segmented Encryption/Decryption (GCM Mode) (Cangjie)](security/CryptoArchitectureKit/cj-crypto-aes-sym-encrypt-decrypt-gcm-by-segment.md)
-                        - [3DES Symmetric Key Encryption/Decryption (ECB Mode) (Cangjie)](security/CryptoArchitectureKit/cj-crypto-3des-sym-encrypt-decrypt-ecb.md)
-                        - [SM4 Symmetric Key Encryption/Decryption (ECB Mode) (Cangjie)](security/CryptoArchitectureKit/cj-crypto-sm4-sym-encrypt-decrypt-ecb.md)
-                        - [SM4 Symmetric Key Encryption/Decryption (CBC Mode) (Cangjie)](security/CryptoArchitectureKit/cj-crypto-sm4-sym-encrypt-decrypt-cbc.md)
-                        - [SM4 Symmetric Key Encryption/Decryption (GCM Mode) (Cangjie)](security/CryptoArchitectureKit/cj-crypto-sm4-sym-encrypt-decrypt-gcm.md)
-                        - [SM4 Symmetric Key Segmented Encryption/Decryption (GCM Mode) (Cangjie)](security/CryptoArchitectureKit/cj-crypto-sm4-sym-encrypt-decrypt-gcm-by-segment.md)
+                        - [AES Symmetric Key (GCM Mode) Encryption/Decryption (Cangjie)](security/CryptoArchitectureKit/cj-crypto-aes-sym-encrypt-decrypt-gcm.md)
+                        - [AES Symmetric Key (CCM Mode) Encryption/Decryption (Cangjie)](security/CryptoArchitectureKit/cj-crypto-aes-sym-encrypt-decrypt-ccm.md)
+                        - [AES Symmetric Key (CBC Mode) Encryption/Decryption (Cangjie)](security/CryptoArchitectureKit/cj-crypto-aes-sym-encrypt-decrypt-cbc.md)
+                        - [AES Symmetric Key (ECB Mode) Encryption/Decryption (Cangjie)](security/CryptoArchitectureKit/cj-crypto-aes-sym-encrypt-decrypt-ecb.md)
+                        - [AES Symmetric Key (GCM Mode) Segmented Encryption/Decryption (Cangjie)](security/CryptoArchitectureKit/cj-crypto-aes-sym-encrypt-decrypt-gcm-by-segment.md)
+                        - [3DES Symmetric Key (ECB Mode) Encryption/Decryption (Cangjie)](security/CryptoArchitectureKit/cj-crypto-3des-sym-encrypt-decrypt-ecb.md)
+                        - [SM4 Symmetric Key (ECB Mode) Encryption/Decryption (Cangjie)](security/CryptoArchitectureKit/cj-crypto-sm4-sym-encrypt-decrypt-ecb.md)
+                        - [SM4 Symmetric Key (CBC Mode) Encryption/Decryption (Cangjie)](security/CryptoArchitectureKit/cj-crypto-sm4-sym-encrypt-decrypt-cbc.md)
+                        - [SM4 Symmetric Key (GCM Mode) Encryption/Decryption (Cangjie)](security/CryptoArchitectureKit/cj-crypto-sm4-sym-encrypt-decrypt-gcm.md)
+                        - [SM4 Symmetric Key (GCM Mode) Segmented Encryption/Decryption (Cangjie)](security/CryptoArchitectureKit/cj-crypto-sm4-sym-encrypt-decrypt-gcm-by-segment.md)
                 - Message Digest Calculation
-                    - [Message Digest Calculation Overview and Algorithm Specifications](security/CryptoArchitectureKit/cj-crypto-generate-message-digest-overview.md)
+                    - [Message Digest Calculation Overview and Specifications](security/CryptoArchitectureKit/cj-crypto-generate-message-digest-overview.md)
                     - Message Digest Calculation Development Guide
                         - [SHA256 Message Digest Calculation (Cangjie)](security/CryptoArchitectureKit/cj-crypto-generate-message-digest.md)
                         - [MD5 Message Digest Calculation (Cangjie)](security/CryptoArchitectureKit/cj-crypto-generate-message-digest-md5.md)
                 - [Message Authentication Code Calculation](security/CryptoArchitectureKit/cj-crypto-compute-mac.md)
                 - [Secure Random Number Generation](security/CryptoArchitectureKit/cj-crypto-generate-random-number.md)
             - Universal Keystore Kit (Key Management Service)
-                - [Universal Keystore Kit Introduction](security/UniversalKeystoreKit/cj-huks-overview.md)
+                - [Introduction to Universal Keystore Kit](security/UniversalKeystoreKit/cj-huks-overview.md)
                 - [Universal Keystore Basic Concepts](security/UniversalKeystoreKit/cj-huks-concepts.md)
                 - Key Generation/Import
                     - Key Generation
-                        - [Key Generation Overview and Algorithm Specifications](security/UniversalKeystoreKit/cj-huks-key-generation-overview.md)
+                        - [Key Generation Overview and Specifications](security/UniversalKeystoreKit/cj-huks-key-generation-overview.md)
                         - Development Guide
                             - [Key Generation (Cangjie)](security/UniversalKeystoreKit/cj-huks-key-generation.md)
                     - Key Import
-                        - [Key Import Overview and Algorithm Specifications](security/UniversalKeystoreKit/cj-huks-key-import-overview.md)
+                        - [Key Import Overview and Specifications](security/UniversalKeystoreKit/cj-huks-key-import-overview.md)
                         - Development Guide
                             - [Plaintext Key Import (Cangjie)](security/UniversalKeystoreKit/cj-huks-import-key-in-plaintext.md)
                             - [Encrypted Key Import (Cangjie)](security/UniversalKeystoreKit/cj-huks-import-wrapped-key.md)
                 - Key Usage
                     - [Key Usage Overview and General Process](security/UniversalKeystoreKit/cj-huks-key-use-overview.md)
                     - Encryption/Decryption
-                        - [Encryption/Decryption Overview and Algorithm Specifications](security/UniversalKeystoreKit/cj-huks-encryption-decryption-overview.md)
+                        - [Encryption/Decryption Overview and Specifications](security/UniversalKeystoreKit/cj-huks-encryption-decryption-overview.md)
                         - Development Guide
                             - [Encryption/Decryption (Cangjie)](security/UniversalKeystoreKit/cj-huks-encryption-decryption.md)
-                    - Signature/Verification
-                        - [Signature/Verification Overview and Algorithm Specifications](security/UniversalKeystoreKit/cj-huks-signing-signature-verification-overview.md)
+                    - Signing/Verification
+                        - [Signing/Verification Overview and Specifications](security/UniversalKeystoreKit/cj-huks-signing-signature-verification-overview.md)
                         - Development Guide
-                            - [Signature/Verification (Cangjie)](security/UniversalKeystoreKit/cj-huks-signing-signature-verification.md)
+                            - [Signing/Verification (Cangjie)](security/UniversalKeystoreKit/cj-huks-signing-signature-verification.md)
                     - Key Agreement
-                        - [Key Agreement Overview and Algorithm Specifications](security/UniversalKeystoreKit/cj-huks-key-agreement-overview.md)
+                        - [Key Agreement Overview and Specifications](security/UniversalKeystoreKit/cj-huks-key-agreement-overview.md)
                         - Development Guide
                             - [Key Agreement (Cangjie)](security/UniversalKeystoreKit/cj-huks-key-agreement.md)
                     - Key Derivation
-                        - [Key Derivation Overview and Algorithm Specifications](security/UniversalKeystoreKit/cj-huks-key-derivation-overview.md)
+                        - [Key Derivation Overview and Specifications](security/UniversalKeystoreKit/cj-huks-key-derivation-overview.md)
                         - Development Guide
                             - [Key Derivation (Cangjie)](security/UniversalKeystoreKit/cj-huks-key-derivation.md)
                     - HMAC
-                        - [HMAC Overview and Algorithm Specifications](security/UniversalKeystoreKit/cj-huks-hmac-overview.md)
+                        - [HMAC Overview and Specifications](security/UniversalKeystoreKit/cj-huks-hmac-overview.md)
                         - Development Guide
                             - [HMAC (Cangjie)](security/UniversalKeystoreKit/cj-huks-hmac.md)
                 - Key Deletion
                     - [Key Deletion (Cangjie)](security/UniversalKeystoreKit/cj-huks-delete-key.md)
                 - Key Attestation
-                    - [Key Attestation Overview and Algorithm Specifications](security/UniversalKeystoreKit/cj-huks-key-attestation-overview.md)
+                    - [Key Attestation Overview and Specifications](security/UniversalKeystoreKit/cj-huks-key-attestation-overview.md)
                     - Development Guide
                         - [Anonymous Key Attestation (Cangjie)](security/UniversalKeystoreKit/cj-huks-key-anon-attestation.md)
                         <!--Del-->
-                        - [Non-Anonymous Key Attestation(Cangjie)](security/UniversalKeystoreKit/cj-huks-key-attestation-arkts.md)
+                        - [Non-Anonymous Key Attestation (Cangjie)](security/UniversalKeystoreKit/cj-huks-key-attestation-arkts.md)
                         <!--DelEnd-->
                 - Other Operations
-                    - Checking Key Existence
-                        - [Checking Key Existence (Cangjie)](security/UniversalKeystoreKit/cj-huks-check-key.md)
-                    - Obtaining Key Properties
-                        - [Obtaining Key Properties (Cangjie)](security/UniversalKeystoreKit/cj-huks-obtain-key-properties.md)
+                    - Key Existence Check
+                        - [Key Existence Check (Cangjie)](security/UniversalKeystoreKit/cj-huks-check-key.md)
+                    - Key Property Retrieval
+                        - [Key Property Retrieval (Cangjie)](security/UniversalKeystoreKit/cj-huks-obtain-key-properties.md)
                     - Key Export
                         - [Key Export (Cangjie)](security/UniversalKeystoreKit/cj-huks-export-key.md)
         - Network
             - Connectivity Kit (Short-Range Communication Service)
-                - [Connectivity Kit Introduction](connectivity/cj-connectivity-kit-intro.md)
+                - [Introduction to Connectivity Kit](connectivity/cj-connectivity-kit-intro.md)
                 - Bluetooth
                     - [Bluetooth Service Development Overview](connectivity/bluetooth/cj-bluetooth-overview.md)
                     - [Advertising and Scanning](connectivity/bluetooth/cj-ble-development-guide.md)
                     - [Generic Attribute Profile](connectivity/bluetooth/cj-gatt-development-guide.md)
             - Network Kit (Network Service)
-                - [Network Kit Introduction](network/cj-net-mgmt-overview.md)
+                - [Introduction to Network Kit](network/cj-net-mgmt-overview.md)
                 - Network Kit Data Transmission Capabilities
                     - [HTTP Data Request](network/cj-http-request.md)
                 - Network Kit Network Management Capabilities
@@ -362,24 +367,24 @@
                 - [Making Phone Calls](telephony/cj-telephony-call.md)
         - Basic Features
             - Basic Services Kit (Basic Services)
-                - [Basic Services Kit Introduction](basic-services/cj-basic-services-kit-overview.md)
+                - [Introduction to Basic Services Kit](basic-services/cj-basic-services-kit-overview.md)
                 - Process/Thread Communication
                     - Inter-Process Communication Using Common Events
-                        - [Common Events Introduction](basic-services/common-event/cj-common-event-overview.md)
+                        - [Common Event Overview](basic-services/common-event/cj-common-event-overview.md)
                         - [Dynamic Common Event Subscription](basic-services/common-event/cj-common-event-subscription.md)
-                        - [Canceling Dynamic Common Event Subscription](basic-services/common-event/cj-common-event-unsubscription.md)
+                        - [Dynamic Common Event Unsubscription](basic-services/common-event/cj-common-event-unsubscription.md)
                         - [Publishing Common Events](basic-services/common-event/cj-common-event-publish.md)
                 - Upload/Download
                     - [Application File Upload/Download](basic-services/request/cj-app-file-upload-download.md)
         - Hardware
             - Sensor Service Kit (Sensor Service)
-                - [Sensor Service Kit Development Introduction](device/sensor/cj-sensorservice-kit-intro.md)
+                - [Introduction to Sensor Service Kit Development](device/sensor/cj-sensorservice-kit-intro.md)
                 - Sensors
                     - [Sensor Development Overview](device/sensor/cj-sensor-overview.md)
                     - [Sensor Development Guide (Cangjie)](device/sensor/cj-sensor-guidelines.md)
         - Debugging and Optimization
             - Performance Analysis Kit (Performance Analysis Service)
-                - [Performance Analysis Kit Introduction](dfx/cj-performance-analysis-kit-overview.md)
+                - [Introduction to Performance Analysis Kit](dfx/cj-performance-analysis-kit-overview.md)
                 - HiLog Usage Guide
                     - [Logging with HiLog (Cangjie)](dfx/cj-hilog-guidelines.md)
                 - HiAppEvent Usage Guide
@@ -389,11 +394,11 @@
                             - [Subscribing to Application Events (Cangjie)](dfx/cj-hiappevent-watcher-app-events.md)
                         - System Events
                             - Crash Events
-                                - [Crash Events Introduction](dfx/cj-hiappevent-watcher-crash-events.md)
+                                - [Crash Event Introduction](dfx/cj-hiappevent-watcher-crash-events.md)
                                 - [Subscribing to Crash Events (Cangjie)](dfx/cj-hiappevent-watcher-crash-events-cangjie.md)
-                            - AppFreeze Events
-                                - [AppFreeze Events Introduction](dfx/cj-hiappevent-watcher-freeze-events.md)
-                                - [Subscribing to AppFreeze Events (Cangjie)](dfx/cj-hiappevent-watcher-freeze-events-cangjie.md)
+                            - Appfreeze Events
+                                - [Appfreeze Event Introduction](dfx/cj-hiappevent-watcher-freeze-events.md)
+                                - [Subscribing to Appfreeze Events (Cangjie)](dfx/cj-hiappevent-watcher-freeze-events-cangjie.md)
                     <!--Del-->
                     - [Event Reporting](dfx/cj-hiappevent-event-reporting.md)
                     <!--DelEnd-->
@@ -404,7 +409,7 @@
                 - Fault Analysis
                     - [Analyzing Cangjie Crash (Process Crash)](dfx/cj-cangjiecrash-guidelines.md)
                     - [Analyzing AppFreeze (Application Not Responding)](dfx/cj-appfreeze-guidelines.md)
-                - Command Line Utilities<!--perform-command-line-utilities-->
+                - Command Line Tools <!--perform-command-line-utilities-->
                     - [hdc](tools/cj-hdc.md)
                     - [hilog](tools/cj-hilog.md)
                     - [hidumper](tools/cj-hidumper.md)
@@ -416,9 +421,9 @@
             - Debugging Commands
                 - [aa Tool](tools/cj-aa-tool.md)
                 - [bm Tool](tools/cj-bm-tool.md)
-                - Packaging/Unpackaging Tools
-                    - [Packaging Tool](tools/cj-packing-tool.md)
-                    - [Unpackaging Tool](tools/cj-unpacking-tool.md)
+                - Packing/Unpacking Tools
+                    - [Packing Tool](tools/cj-packing-tool.md)
+                    - [Unpacking Tool](tools/cj-unpacking-tool.md)
                 - [Scanning Tool](tools/cj-app-check-tool.md)
                 - [cem Tool](tools/cj-cem-tool.md)
                 - [anm Tool](tools/cj-anm-tool.md)
@@ -429,7 +434,7 @@
                 <!--Del-->
                 - [acm Tool](tools/cj-acm-tool.md)
                 <!--DelEnd-->
-                - Command Line Utilities
+                - Command Line Tools
                     - [toybox](tools/cj-toybox.md)
                     - [mediatool Tool](tools/cj-mediatool.md)
                     - [devicedebug Tool](tools/cj-devicedebug-tool.md)
@@ -443,7 +448,7 @@
                 - [Session Management](media/camera/cj-camera-session-management.md)
                 - [Preview](media/camera/cj-camera-preview.md)
                 - [Flashlight Usage](media/camera/cj-camera-torch-use.md)
-                - [Camera Startup/Recovery Practice (Cangjie)](media/camera/cj-camera-background-recovery.md)
+                - [Camera Startup Recovery Practice (Cangjie)](media/camera/cj-camera-background-recovery.md)
         - Image Kit (Image Processing Service)
             - [Image Kit Overview](media/image/cj-image-overview.md)
             - Image Development Guide
@@ -463,8 +468,8 @@
                 - [System Album Resource Usage Guide](media/medialibrary/cj-photoAccessHelper-systemAlbum-guidelines.md)
     - Graphics
         - ArkGraphics 2D (Ark 2D Graphics Service)
-            - [ArkGraphics 2D Overview](graphics/cj-arkgraphics2D-introduction.md)
-            - Using Variable Frame Rate Capability to Customize Drawing Frame Rates for Different Content
+            - [ArkGraphics 2D Introduction](graphics/cj-arkgraphics2D-introduction.md)
+            - Customizing Drawing Frame Rates for Different Content Using Variable Frame Rate Capability
                 - [Variable Frame Rate Overview](graphics/cj-displaysync-overview.md)
                 - [Requesting Animation Drawing Frame Rate](graphics/cj-displaysync-animation.md)
     - Application Services
@@ -473,22 +478,22 @@
             - [Location Permission Application Development Guide](location/cj-location-permission-guidelines.md)
             - [Device Location Information Acquisition Development Guide](location/cj-location-guidelines.md)
 
-- API References
+- API Reference
     - API Reference Overview
-        - [Development Guide](reference/cj-development-intro.md)
+        - [Development Instructions](reference/cj-development-intro.md)
         - [SystemCapability Usage Guide](reference/cj-syscap.md)
         - SystemCapability List
-            - [Smartphones](reference/cj-phone-syscap-list.md)
-            - [Tablets](reference/cj-tablet-syscap-list.md)
-        - [API Tag-based Management](reference/cj-ifavailable.md)
+            - [Phone](reference/cj-phone-syscap-list.md)
+            - [Tablet](reference/cj-tablet-syscap-list.md)
+        - [API Tagging Control](reference/cj-ifavailable.md)
         - [Universal Error Codes](reference/cj-errorcode-universal.md)
     - Application Framework
-        - Ability Kit (Application Framework Services)
-            - Cangjie APIs
+        - Ability Kit (Application Framework Service)
+            - Cangjie API
                 - [ohos.app.ability.ui_ability](reference/AbilityKit/cj-apis-app-ability-ui_ability.md)
                 - [ohos.app.ability.want](reference/AbilityKit/cj-apis-app-ability-want.md)
                 - [ohos.ability_access_ctrl (Application Access Control Management)](reference/AbilityKit/cj-apis-ability_access_ctrl.md)
-                - [ohos.bundle.bundle_manager (Bundle Manager)](reference/AbilityKit/cj-apis-bundle_manager.md)
+                - [ohos.bundle.bundle_manager (bundleManager Management)](reference/AbilityKit/cj-apis-bundle_manager.md)
                 - [ohos.app.ability.ability_stage](reference/AbilityKit/cj-apis-app-ability-ability_stage.md)
                 - [ohos.app.ability.ability_result](reference/AbilityKit/cj-apis-ability-ability_result.md)
                 - [ohos.app.ability.app_recovery](reference/AbilityKit/cj-apis-app-ability-app_recovery.md)
@@ -511,7 +516,7 @@
                 - [Access Control Error Codes](reference/AbilityKit/cj-errorcode-access-token.md)
                 - [Screen Lock Sensitive Data Management Error Codes](reference/AbilityKit/cj-errorcode-screen_lock_file_manager.md)
         - ArkData (Ark Data Management)
-            - Cangjie APIs
+            - Cangjie API
                 - [ohos.data_share_predicates (Data Share Predicates)](reference/ArkData/cj-apis-data_share_predicates.md)
                 - [ohos.distributed_kv_store (Distributed Key-Value Database)](reference/ArkData/cj-apis-distributed_kv_store.md)
                 - [ohos.preferences (User Preferences)](reference/ArkData/cj-apis-preferences.md)
@@ -522,62 +527,64 @@
                 - [Distributed Key-Value Database Error Codes](reference/ArkData/cj-errorcode-distributed_kv_store.md)
                 - [User Preferences Error Codes](reference/ArkData/cj-errorcode-preferences.md)
         - ArkUI (Ark UI Framework)
-            - Cangjie APIs
+            - Cangjie API
                 - UI Interface
                     - [ohos.component_utils (ComponentUtils)](reference/arkui-cj/cj-apis-componentutils.md)
+                    - [ohos.shape (Shape)](reference/arkui-cj/cj-apis-shape.md)
                     - [ohos.curves (Interpolation Calculation)](reference/arkui-cj/cj-apis-curves.md)
-                    - [ohos.font (Custom Font)](reference/arkui-cj/cj-apis-font.md)
-                    - [ohos.router (Page Routing)](reference/arkui-cj/cj-apis-router.md)
-                    - [ohos.ui_context (UIContext)](reference/arkui-cj/cj-apis-arkui-ui_context.md)
+                    - ohos.ui_context (UIContext)
+                        - [AnimatorResult](reference/arkui-cj/cj-apis-uicontext-animator.md)
+                        - [ContextMenuController](reference/arkui-cj/cj-apis-uicontext-contextmenucontroller.md)
+                        - [Font](reference/arkui-cj/cj-apis-uicontext-font.md)
+                        - [MeasureUtils](reference/arkui-cj/cj-apis-uicontext-measureutils.md)
+                        - [PromptAction](reference/arkui-cj/cj-apis-uicontext-promptaction.md)
+                        - [Router](reference/arkui-cj/cj-apis-uicontext-router.md)
+                        - [UIContext](reference/arkui-cj/cj-apis-uicontext-uicontext.md)
                 - Window Management
                     - [ohos.window (Window)](reference/arkui-cj/cj-apis-window.md)
                 - Screen Management
                     - [ohos.display (Screen Properties)](reference/arkui-cj/cj-apis-display.md)
             - Cangjie Components
-                - Component General Information
-                    - Universal Events
-                        - [Click Event](reference/arkui-cj/cj-universal-event-click.md)
-                        - [Touch Event](reference/arkui-cj/cj-universal-event-touch.md)
-                        - [Drag Event](reference/arkui-cj/cj-universal-event-drag.md)
-                        - [Key Event](reference/arkui-cj/cj-universal-event-key.md)
-                        - [Mouse Event](reference/arkui-cj/cj-universal-event-mouse.md)
-                        - [Component Visible Area Change Event](reference/arkui-cj/cj-universal-event-visibleareachange.md)
-                        - [Component Shortcut Key Event](reference/arkui-cj/cj-universal-event-keyboardshortcut.md)
-                    - Universal Attributes
-                        - [Size Setting](reference/arkui-cj/cj-universal-attribute-size.md)
-                        - [Position Setting](reference/arkui-cj/cj-universal-attribute-location.md)
-                        - [Layout Constraints](reference/arkui-cj/cj-universal-attribute-layoutconstraints.md)
-                        - [Flex Layout](reference/arkui-cj/cj-universal-attribute-flexlayout.md)
-                        - [Border Setting](reference/arkui-cj/cj-universal-attribute-border.md)
-                        - [Background Setting](reference/arkui-cj/cj-universal-attribute-background.md)
-                        - [Opacity Setting](reference/arkui-cj/cj-universal-attribute-opacity.md)
-                        - [Visibility Control](reference/arkui-cj/cj-universal-attribute-visibility.md)
-                        - [Disable Control](reference/arkui-cj/cj-universal-attribute-enable.md)
-                        - [Overlay](reference/arkui-cj/cj-universal-attribute-overlay.md)
-                        - [Z-Order Control](reference/arkui-cj/cj-universal-attribute-zorder.md)
-                        - [Graphic Transformation](reference/arkui-cj/cj-universal-attribute-transform.md)
-                        - [Image Effect](reference/arkui-cj/cj-universal-attribute-imageeffect.md)
-                        - [Shape Clipping](reference/arkui-cj/cj-universal-attribute-shapclip.md)
-                        - [Color Gradient](reference/arkui-cj/cj-universal-attribute-gradientcolor.md)
-                        - [Popup Control](reference/arkui-cj/cj-universal-attribute-popup.md)
-                        - [Menu Control](reference/arkui-cj/cj-universal-attribute-menu.md)
-                        - [Focus Control](reference/arkui-cj/cj-universal-attribute-focus.md)
-                        - [Component Identifier](reference/arkui-cj/cj-universal-attribute-componentid.md)
-                        - [Foreground Color Setting](reference/arkui-cj/cj-universal-attribute-foregroundcolor.md)
-                        - [Component Content Blur](reference/arkui-cj/cj-universal-attribute-foregroundblurstyle.md)
-                        - Touch Interaction Control
-                            - [Touch Hotspot Setting](reference/arkui-cj/cj-universal-attribute-touchtarget.md)
-                        - Modal Transition Setting
-                            - [Full-Screen Modal Transition](reference/arkui-cj/cj-universal-attribute-bindcontentcover.md)
-                            - [Half-Modal Transition](reference/arkui-cj/cj-universal-attribute-sheettransition.md)
-                        - [Drag Control](reference/arkui-cj/cj-universal-attribute-dragcontrol.md)
-                        - [Safe Area](reference/arkui-cj/cj-universal-attribute-expandsafearea.md)
-                        - [Component Content Filling Methods](reference/arkui-cj/cj-universal-attribute-renderfit.md)
-                    - Gesture Handling
-                        - [Gesture Binding Methods](reference/arkui-cj/cj-universal-gesture-bind.md)
-                        - [PanGesture](reference/arkui-cj/cj-universal-gesture-pangesture.md)
-                        - [SwipeGesture](reference/arkui-cj/cj-universal-gesture-swipegesture.md)
-                        - [Combined Gestures](reference/arkui-cj/cj-universal-gesture-groupgesture.md)
+                - [Universal Events](reference/arkui-cj/cj-universal-events.md)
+                    - [Click Event](reference/arkui-cj/cj-universal-event-click.md)
+                    - [Touch Event](reference/arkui-cj/cj-universal-event-touch.md)
+                    - [Mount/Unmount Event](reference/arkui-cj/cj-universal-event-appear.md)
+                    - [Drag Event](reference/arkui-cj/cj-universal-event-drag.md)
+                    - [Key Event](reference/arkui-cj/cj-universal-event-key.md)
+                    - [Focus Event](reference/arkui-cj/cj-universal-event-focus.md)
+                    - [Mouse Event](reference/arkui-cj/cj-universal-event-mouse.md)
+                    - [Hover Event](reference/arkui-cj/cj-universal-event-hover.md)
+                    - [Component Area Change Event](reference/arkui-cj/cj-universal-event-areachange.md)
+                    - [Component Visible Area Change Event](reference/arkui-cj/cj-universal-event-visibleareachange.md)
+                    - [Component Shortcut Event](reference/arkui-cj/cj-universal-event-keyboardshortcut.md)
+                - [Universal Attributes](reference/arkui-cj/cj-universal-attributes.md)
+                    - [Size Setting](reference/arkui-cj/cj-universal-attribute-size.md)
+                    - [Position Setting](reference/arkui-cj/cj-universal-attribute-location.md)
+                    - [Layout Constraints](reference/arkui-cj/cj-universal-attribute-layoutconstraints.md)
+                    - [Flex Layout](reference/arkui-cj/cj-universal-attribute-flexlayout.md)
+                    - [Border Setting](reference/arkui-cj/cj-universal-attribute-border.md)
+                    - [Background Setting](reference/arkui-cj/cj-universal-attribute-background.md)
+                    - [Opacity Setting](reference/arkui-cj/cj-universal-attribute-opacity.md)
+                    - [Visibility Control](reference/arkui-cj/cj-universal-attribute-visibility.md)
+                    - [Disable Control](reference/arkui-cj/cj-universal-attribute-enable.md)
+                    - [Overlay](reference/arkui-cj/cj-universal-attribute-overlay.md)
+                    - [Z-Order Control](reference/arkui-cj/cj-universal-attribute-zorder.md)
+                    - [Graphic Transformation](reference/arkui-cj/cj-universal-attribute-transform.md)
+                    - [Image Effect](reference/arkui-cj/cj-universal-attribute-imageeffect.md)
+                    - [Shape Clipping](reference/arkui-cj/cj-universal-attribute-shapclip.md)
+                    - [Color Gradient](reference/arkui-cj/cj-universal-attribute-gradientcolor.md)
+                    - [Popup Control](reference/arkui-cj/cj-universal-attribute-popup.md)
+                    - [Menu Control](reference/arkui-cj/cj-universal-attribute-menu.md)
+                    - [Focus Control](reference/arkui-cj/cj-universal-attribute-focus.md)
+                    - [Component Identifier](reference/arkui-cj/cj-universal-attribute-componentid.md)
+                    - [Foreground Color Setting](reference/arkui-cj/cj-universal-attribute-foregroundcolor.md)
+                    - [Component Content Blur](reference/arkui-cj/cj-universal-attribute-foregroundblurstyle.md)
+                    - Modal Transition Setting
+                        - [Full-Screen Modal Transition](reference/arkui-cj/cj-universal-attribute-bindcontentcover.md)
+                        - [Half-Modal Transition](reference/arkui-cj/cj-universal-attribute-sheettransition.md)
+                    - [Drag Control](reference/arkui-cj/cj-universal-attribute-dragcontrol.md)
+                    - [Safe Area](reference/arkui-cj/cj-universal-attribute-expandsafearea.md)
+                    - [Component Content Filling Method](reference/arkui-cj/cj-universal-attribute-renderfit.md)
                 - Rows, Columns & Stacks
                     - [Flex](reference/arkui-cj/cj-row-column-stack-flex.md)
                     - [Column](reference/arkui-cj/cj-row-column-stack-column.md)
@@ -599,11 +606,14 @@
                     - [Swiper](reference/arkui-cj/cj-scroll-swipe-swiper.md)
                     - [ScrollBar](reference/arkui-cj/cj-scroll-swipe-scrollbar.md)
                     - [Refresh](reference/arkui-cj/cj-scroll-swipe-refresh.md)
+                    - [Common Scroll Component APIs](reference/arkui-cj/cj-scroll-swipe-common.md)
                 - Navigation & Switching
                     - [Navigation](reference/arkui-cj/cj-navigation-switching-navigation.md)
+                    - [NavDestination](reference/arkui-cj/cj-navigation-switching-navdestination.md)
                     - [Stepper](reference/arkui-cj/cj-navigation-switching-stepper.md)
                     - [StepperItem](reference/arkui-cj/cj-navigation-switching-stepperitem.md)
                     - [Tabs](reference/arkui-cj/cj-navigation-switching-tabs.md)
+                    - [TabContent](reference/arkui-cj/cj-navigation-switching-tabcontent.md)
                 - Buttons & Pickers
                     - [Button](reference/arkui-cj/cj-button-picker-button.md)
                     - [Toggle](reference/arkui-cj/cj-button-picker-toggle.md)
@@ -615,7 +625,7 @@
                     - [Rating](reference/arkui-cj/cj-button-picker-rating.md)
                     - [Select](reference/arkui-cj/cj-button-picker-select.md)
                     - [Slider](reference/arkui-cj/cj-button-picker-slider.md)
-                - Text & Input
+                - Text and Input
                     - [Text](reference/arkui-cj/cj-text-input-text.md)
                     - [TextArea](reference/arkui-cj/cj-text-input-textarea.md)
                     - [TextInput](reference/arkui-cj/cj-text-input-textinput.md)
@@ -624,9 +634,7 @@
                     - [Span](reference/arkui-cj/cj-text-input-span.md)
                     - [ImageSpan](reference/arkui-cj/cj-text-input-imagespan.md)
                     - [RichText](reference/arkui-cj/cj-text-input-richtext.md)
-                    - [PromptAction](reference/arkui-cj/cj-apis-prompt_action.md)
-                    - [AlertDialog](reference/arkui-cj/cj-dialog-alertdialog.md)
-                - Images & Videos
+                - Image and Video
                     - [Image](reference/arkui-cj/cj-image-video-image.md)
                     - [Video](reference/arkui-cj/cj-image-video-video.md)
                 - Information Display
@@ -641,7 +649,7 @@
                     - [TextClock](reference/arkui-cj/cj-information-display-textclock.md)
                     - [TextTimer](reference/arkui-cj/cj-information-display-texttimer.md)
                     - [Counter](reference/arkui-cj/cj-information-display-counter.md)
-                - Spacing & Dividers
+                - Blank and Divider
                     - [Blank](reference/arkui-cj/cj-blank-divider-blank.md)
                     - [Divider](reference/arkui-cj/cj-blank-divider-divider.md)
                 - Canvas Drawing
@@ -652,7 +660,6 @@
                     - [ImageBitmap](reference/arkui-cj/cj-canvas-drawing-imagebitmap.md)
                     - [ImageData](reference/arkui-cj/cj-canvas-drawing-imagedata.md)
                     - [CanvasPattern](reference/arkui-cj/cj-canvas-drawing-canvaspattern.md)
-                    - [Recycle](reference/arkui-cj/cj-apis-recycle.md)
                 - Graphic Drawing
                     - [Circle](reference/arkui-cj/cj-graphic-drawing-circle.md)
                     - [Ellipse](reference/arkui-cj/cj-graphic-drawing-ellipse.md)
@@ -660,56 +667,59 @@
                     - [Path](reference/arkui-cj/cj-graphic-drawing-path.md)
                     - [Rect](reference/arkui-cj/cj-graphic-drawing-rect.md)
                     - [Shape](reference/arkui-cj/cj-graphic-drawing-shape.md)
-                - Menus
+                    - [Common Attributes for Graphic Drawing](reference/arkui-cj/cj-graphic-drawing-common.md)
+                - Menu
                     - [Menu](reference/arkui-cj/cj-menu-menu.md)
                     - [MenuItem](reference/arkui-cj/cj-menu-menuitem.md)
                     - [MenuItemGroup](reference/arkui-cj/cj-menu-menuitemgroup.md)
-                - Animations
+                - Animation
                     - [Property Animation (animation)](reference/arkui-cj/cj-animation-animation.md)
-                    - [Animation (animator)](reference/arkui-cj/cj-apis-animator.md)
-                    - [Explicit Animation (animateTo)](reference/arkui-cj/cj-animation-animateto.md)
                     - [Page Transition (pageTransition)](reference/arkui-cj/cj-animation-pagetransition.md)
                     - [Component Transition (transition)](reference/arkui-cj/cj-animation-transition.md)
                     - [Shared Element Transition (sharedTransition)](reference/arkui-cj/cj-animation-sharedtransition.md)
                     - [Implicit Shared Element Transition within Components (geometryTransition)](reference/arkui-cj/cj-animation-geometrytransition.md)
-                    - [Path Animation (motionPath)](reference/arkui-cj/cj-animation-motionpath.md)
                 - Dialog
-                    - [List Selection Dialog (ActionSheet)](reference/arkui-cj/cj-dialog-actionsheet.md)
+                    - [Alert Dialog (AlertDialog)](reference/arkui-cj/cj-dialog-alertdialog.md)
+                    - [Action Sheet (ActionSheet)](reference/arkui-cj/cj-dialog-actionsheet.md)
                     - [Custom Dialog (CustomDialog)](reference/arkui-cj/cj-dialog-customdialog.md)
                 - Web
                     - [Web](reference/arkui-cj/cj-web-web.md)
+                - Custom Components
+                    - [Lifecycle of Custom Components](reference/arkui-cj/cj-custom-component-lifecycle.md)
                 - State Management and Rendering Control
+                    - [ForEach](reference/arkui-cj/cj-state-rendering-foreach.md)
                     - [LazyForEach](reference/arkui-cj/cj-state-rendering-lazyforeach.md)
-                    - [Component-Level Variable State Management](reference/arkui-cj/cj-state-rendering-componentstatemanagement.md)
-                    - [Application-Level Variable State Management](reference/arkui-cj/cj-state-rendering-appstatemanagement.md)
+                    - [State Management for Component-Level Variables](reference/arkui-cj/cj-state-rendering-componentstatemanagement.md)
+                    - [State Management for Application-Level Variables](reference/arkui-cj/cj-state-rendering-appstatemanagement.md)
                 - Common Definitions
                     - [Basic Type Definitions](reference/arkui-cj/cj-common-types.md)
                     - [Pixel Units](reference/arkui-cj/cj-common-pixelunits.md)
+                - [Thread Control](reference/arkui-cj/cj-appendix-thread.md)
                 - [Framework Interfaces](reference/arkui-cj/cj-ui-framework.md)
             - Error Codes
                 - UI Interface
                     - [Animation Error Codes](reference/arkui-cj/cj-errorcode-animator.md)
                 - Graphics
-                    - [Screen Error Codes](reference/arkui-cj/cj-errorcode-display.md)
+                    - [Display Error Codes](reference/arkui-cj/cj-errorcode-display.md)
                     - [Window Error Codes](reference/arkui-cj/cj-errorcode-window.md)
-        - ArkWeb
-            - Cangjie API
+        - ArkWeb (Ark Web)
+            - Cangjie APIs
                 - [ohos.webview (Webview)](reference/ArkWeb/cj-apis-webview.md)
             - Error Codes
                 - [Webview Error Codes](reference/ArkWeb/cj-errorcode-webview.md)
-        - Core File Kit
-            - Cangjie API
+        - Core File Kit (Basic File Services)
+            - Cangjie APIs
                 - [ohos.file_fileuri (File URI)](reference/CoreFileKit/cj-apis-file_fileuri.md)
                 - [ohos.file_fs (File Management)](reference/CoreFileKit/cj-apis-file_fs.md)
             - Error Codes
                 - [File Management Error Codes](reference/CoreFileKit/cj-errorcode-filemanagement.md)
-        - IPC Kit
-            - Cangjie API
+        - IPC Kit (Inter-Process Communication Services)
+            - Cangjie APIs
                 - [ohos.rpc (RPC Communication)](reference/IPCKit/cj-apis-rpc.md)
             - Error Codes
                 - [IPC Error Codes](reference/IPCKit/cj-errorcode-rpc.md)
-        - Localization Kit
-            - Cangjie API
+        - Localization Kit (Localization Development Services)
+            - Cangjie APIs
                 - [ohos.i18n (Internationalization-I18n)](reference/LocalizationKit/cj-apis-i18n.md)
                 - [ohos.resource_manager (Resource Management)](reference/LocalizationKit/cj-apis-resource_manager.md)
                 - [ohos.raw_file_descriptor](reference/LocalizationKit/cj-apis-raw_file_descriptor.md)
@@ -719,22 +729,22 @@
                 - [Resource Management Error Codes](reference/LocalizationKit/cj-errorcode-resource-manager.md)
     - System
         - Security
-            - Crypto Architecture Kit
+            - Crypto Architecture Kit (Cryptographic Algorithm Framework Service)
                 - Cangjie API
-                    - [ohos.crypto (Cryptography Algorithm Framework)](reference/CryptoArchitectureKit/cj-apis-crypto.md)
+                    - [ohos.crypto (Cryptographic Algorithm Library Framework)](reference/CryptoArchitectureKit/cj-apis-crypto.md)
                 - Error Codes
-                    - [Crypto Framework Error Codes](reference/CryptoArchitectureKit/cj-errorcode-crypto.md)
-            - Universal Keystore Kit
+                    - [crypto framework Error Codes](reference/CryptoArchitectureKit/cj-errorcode-crypto.md)
+            - Universal Keystore Kit (Key Management Service)
                 - Cangjie API
-                    - [ohos.security_huks (Universal Keystore System)](reference/UniversalKeystoreKit/cj-apis-security_huks.md)
+                    - [ohos.security_huks (Universal Key Store System)](reference/UniversalKeystoreKit/cj-apis-security_huks.md)
                 - Error Codes
-                    - [HUKS Error Codes](reference/UniversalKeystoreKit/cj-errorcode-huks.md)
+                    - [huks Error Codes](reference/UniversalKeystoreKit/cj-errorcode-huks.md)
         - Network
-            - Connectivity Kit
+            - Connectivity Kit (Short-Range Communication Service)
                 - Cangjie API
                     - [ohos.bluetooth.a2dp (Bluetooth A2DP Module)](reference/ConnectivityKit/cj-apis-bluetooth-a2dp.md)
                     - [ohos.bluetooth.ble (Bluetooth BLE Module)](reference/ConnectivityKit/cj-apis-bluetooth-ble.md)
-                    - [ohos.bluetooth.baseProfile (Bluetooth Base Profile Module)](reference/ConnectivityKit/cj-apis-bluetooth-base_profile.md)
+                    - [ohos.bluetooth.baseProfile (Bluetooth BaseProfile Module)](reference/ConnectivityKit/cj-apis-bluetooth-base_profile.md)
                     - [ohos.bluetooth.constant (Bluetooth Constant Module)](reference/ConnectivityKit/cj-apis-bluetooth-constant.md)
                     - [ohos.bluetooth.hfp (Bluetooth HFP Module)](reference/ConnectivityKit/cj-apis-bluetooth-hfp.md)
                     - [ohos.wifi_manager (WLAN)](reference/ConnectivityKit/cj-apis-wifi_manager.md)
@@ -742,8 +752,8 @@
                     - [Bluetooth Service Subsystem Error Codes](reference/ConnectivityKit/cj-errorcode-bluetooth_manager.md)
                     - [WIFI Error Codes](reference/ConnectivityKit/cj-errorcode-wifi-manager.md)
                     - [NFC Error Codes](reference/ConnectivityKit/cj-errorcode-nfc.md)
-                    - [SE (Secure Element) Error Codes](reference/ConnectivityKit/cj-errorcode-secure_element.md)
-            - Network Kit
+                    - [SE (SecureElement) Error Codes](reference/ConnectivityKit/cj-errorcode-secure_element.md)
+            - Network Kit (Network Service)
                 - Cangjie API
                     - [ohos.net.connection (Network Connection Management)](reference/NetworkKit/cj-apis-net-connection.md)
                     - [ohos.net.http (Data Request)](reference/NetworkKit/cj-apis-net-http.md)
@@ -751,7 +761,7 @@
                     - [HTTP Error Codes](reference/NetworkKit/cj-errorcode-net-http.md)
                     - [Network Connection Management Error Codes](reference/NetworkKit/cj-errorcode-net-connection.md)
         - Basic Features
-            - Basic Services Kit
+            - Basic Services Kit (Basic Services)
                 - Cangjie API
                     - Device Management
                         - [ohos.battery_info (Battery Information)](reference/BasicServicesKit/cj-apis-battery_info.md)
@@ -761,8 +771,7 @@
                     - Process/Thread Communication
                         - [ohos.common_event_manager (Common Event Module)](reference/BasicServicesKit/cj-apis-common_event_manager.md)
                     - Others
-                        - [ohos.base (Common Callback Information)](reference/BasicServicesKit/cj-apis-base.md)
-                        - [ohos.settings (Setting Data Item Names)](reference/BasicServicesKit/cj-apis-settings.md)
+                        - [ohos.settings (Settings Data Item Names)](reference/BasicServicesKit/cj-apis-settings.md)
                         - [ohos.system_date_time (System Time/Timezone)](reference/BasicServicesKit/cj-apis-system_date_time.md)
                         - [ohos.common_event_subscriber](reference/BasicServicesKit/cj-apis-common_event_subscriber.md)
                         - [ohos.common_event_subscribe_info](reference/BasicServicesKit/cj-apis-common_event_subscribe_info.md)
@@ -771,12 +780,12 @@
                         - [ohos.value_type](reference/BasicServicesKit/cj-apis-value_type.md)
                 - Error Codes
                     - [Upload/Download Error Codes](reference/BasicServicesKit/cj-errorcode-request.md)
-    - [Time and Timezone Error Codes](reference/BasicServicesKit/cj-errorcode-time.md)
-    - [Event Error Codes](reference/BasicServicesKit/cj-errorcode-common_event_service.md)
-    - [System Power Management Error Codes](reference/BasicServicesKit/cj-errorcode-power.md)
-    - [Account Management Error Codes](reference/BasicServicesKit/cj-errorcode-basic-account.md)
+                    - [Time/Timezone Error Codes](reference/BasicServicesKit/cj-errorcode-time.md)
+                    - [Event Error Codes](reference/BasicServicesKit/cj-errorcode-common_event_service.md)
+                    - [System Power Management Error Codes](reference/BasicServicesKit/cj-errorcode-power.md)
+                    - [Account Management Error Codes](reference/BasicServicesKit/cj-errorcode-basic-account.md)
         - Hardware
-            - Sensor Service Kit
+            - Sensor Service Kit (Sensor Service)
                 - Cangjie API
                     - [ohos.sensor (Sensors)](reference/SensorServiceKit/cj-apis-sensor.md)
                 - Error Codes
@@ -784,8 +793,8 @@
             - Telephony Kit
                 - Cangjie API
                     - [ohos.telephony.call](reference/TelephonyKit/cj-apis-telephony-call.md)
-        - Debugging and Optimization
-            - Performance Analysis Kit
+        - Debugging & Optimization
+            - Performance Analysis Kit (Performance Analysis Service)
                 - Cangjie API
                     - [ohos.hiviewdfx.hi_app_event (Application Event Logging)](reference/PerformanceAnalysisKit/cj-apis-hiappevent.md)
                     - [ohos.hilog (HiLog Logging)](reference/PerformanceAnalysisKit/cj-apis-hilog.md)
@@ -793,44 +802,43 @@
                 - Error Codes
                     - [Application Event Logging Error Codes](reference/PerformanceAnalysisKit/cj-errorcode-hiappevent.md)
                     - [Hidebug CpuUsage Error Codes](reference/PerformanceAnalysisKit/cj-errorcode-hidebug-cpuusage.md)
-            - Test Kit
+            - Test Kit (Application Testing Service)
                 - Cangjie API
                     - [ohos.ability_delegator_registry (AbilityDelegatorRegistry)](reference/TestKit/cj-apis-ability_delegator_registry.md)
                     - [ohos.ui_test (UI Testing)](reference/TestKit/cj-apis-ui_test.md)
                 - Error Codes
-                    - [UITest Error Codes](reference/TestKit/cj-errorcode-uitest.md)
+                    - [uitest Error Codes](reference/TestKit/cj-errorcode-uitest.md)
     - Media
-        - Camera Kit
-            - Cangjie API
+        - Camera Kit (Camera Service)
+            - Cangjie APIs
                 - [ohos.multimedia.camera (Camera Management)](reference/CameraKit/cj-apis-multimedia-camera.md)
             - Error Codes
                 - [Camera Error Codes](reference/CameraKit/cj-errorcode-multimedia-camera.md)
-        - Image Kit
-            - Cangjie API
+        - Image Kit (Image Processing Service)
+            - Cangjie APIs
                 - [ohos.multimedia.image (Image Processing)](reference/ImageKit/cj-apis-image.md)
             - Error Codes
                 - [Image Error Codes](reference/ImageKit/cj-errorcode-image.md)
-        - Media Kit
-            - Cangjie API
-                - [ohos.multimedia.media (Media Services)](reference/MediaKit/cj-apis-multimedia_media.md)
-                - [ohos.multimedia.image](reference/MediaKit/cj-apis-multimedia-image.md)
+        - Media Kit (Media Service)
+            - Cangjie APIs
+                - [ohos.multimedia.media (Media Service)](reference/MediaKit/cj-apis-multimedia_media.md)
             - Error Codes
                 - [Media Error Codes](reference/MediaKit/cj-errorcode-multimedia-media.md)
-        - Media Library Kit
-            - Cangjie API
+        - Media Library Kit (Media File Management Service)
+            - Cangjie APIs
                 - [ohos.file.photo_access_helper (Photo Album Management Module)](reference/MediaLibraryKit/cj-apis-file-photo_access_helper.md)
     - Graphics
-        - ArkGraphics2D
-            - Cangjie API
+        - ArkGraphics2D (Ark 2D Graphics Service)
+            - Cangjie APIs
                 - [ohos.color_manager (Color Management)](reference/ArkGraphics2D/cj-apis-color_manager.md)
             - Error Codes
                 - [Color Management Error Codes](reference/ArkGraphics2D/cj-errorcode-colorspace-manager.md)
     - Application Services
-        - Location Kit
-            - Cangjie API
-                - [ohos.geo_location_manager (Location Services)](reference/LocationKit/cj-apis-geo_location_manager.md)
+        - Location Kit (Location Service)
+            - Cangjie APIs
+                - [ohos.geo_location_manager (Location Service)](reference/LocationKit/cj-apis-geo_location_manager.md)
             - Error Codes
-                - [Location Services Error Codes](reference/LocationKit/cj-errorcode-geo_location_manager.md)
+                - [Location Service Error Codes](reference/LocationKit/cj-errorcode-geo_location_manager.md)
     - Cangjie and ArkTS Interoperability Library
         - [ohos.ark_interop (ArkTS Interoperability Library)](reference/arkinterop/cj-apis-ark_interop.md)
             - Error Codes
@@ -839,4 +847,149 @@
         - [ohos.business_exception (Common Exception Information)](reference/arkinterop/cj-api-business_exception.md)
         - [ohos.callback_invoke (Common Callback Information)](reference/arkinterop/cj-api-callback_invoke.md)
         - [ohos.labels (Common Interface Labels)](reference/arkinterop/cj-api-labels.md)
+    - Basic Capabilities
+        - Cangjie APIs
+            - [sysCap (System Capabilities)](reference/arkui-cj/cj-syscap.md)
     - [Cangjie Programming Language Library API](reference/cj-libs-api.md)
+
+- Learning Cangjie Language
+    - [First Look at Cangjie Language](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/first_understanding/basic.md)
+    - Basic Concepts
+        - [Identifiers](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/basic_programming_concepts/identifier.md)
+        - [Program Structure](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/basic_programming_concepts/program_structure.md)
+        - [Expressions](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/basic_programming_concepts/expression.md)
+        - [Functions](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/basic_programming_concepts/function.md)
+    - Basic Data Types
+        - [Basic Operators](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/basic_data_type/basic_operators.md)
+        - [Integer Types](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/basic_data_type/integer.md)
+        - [Floating-Point Types](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/basic_data_type/float.md)
+        - [Boolean Type](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/basic_data_type/bool.md)
+        - [Character Type](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/basic_data_type/characters.md)
+        - [String Type](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/basic_data_type/strings.md)
+        - [Tuple Type](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/basic_data_type/tuple.md)
+        - [Array Type](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/basic_data_type/array.md)
+        - [Range Type](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/basic_data_type/range.md)
+        - [Unit Type](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/basic_data_type/unit.md)
+        - [Nothing Type](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/basic_data_type/nothing.md)
+    - Functions
+        - [Defining Functions](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/function/define_functions.md)
+        - [Calling Functions](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/function/call_functions.md)
+        - [Function Types](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/function/first_class_citizen.md)
+        - [Nested Functions](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/function/nested_functions.md)
+        - [Lambda Expressions](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/function/lambda.md)
+        - [Closures](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/function/closure.md)
+        - [Function Call Syntactic Sugar](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/function/function_call_desugar.md)
+        - [Function Overloading](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/function/function_overloading.md)
+        - [Operator Overloading](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/function/operator_overloading.md)
+        - [const Functions and Constant Evaluation](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/function/const_func_and_eval.md)
+    - Struct Types
+        - [Defining struct Types](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/struct/define_struct.md)
+        - [Creating struct Instances](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/struct/create_instance.md)
+        - [mut Functions](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/struct/mut.md)
+    - Enum Types and Pattern Matching
+        - [Enum Types](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/enum_and_pattern_match/enum.md)
+        - [Option Type](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/enum_and_pattern_match/option_type.md)
+        - [Pattern Overview](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/enum_and_pattern_match/pattern_overview.md)
+        - [Pattern Refutability](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/enum_and_pattern_match/pattern_refutability.md)
+        - [match Expressions](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/enum_and_pattern_match/match.md)
+        - [Other Pattern Usage Scenarios](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/enum_and_pattern_match/other.md)
+    - Classes and Interfaces
+        - [Classes](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/class_and_interface/class.md)
+        - [Interfaces](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/class_and_interface/interface.md)
+        - [Properties](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/class_and_interface/prop.md)
+        - [Subtype Relationships](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/class_and_interface/subtype.md)
+        - [Type Casting](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/class_and_interface/typecast.md)
+    - Generics
+        - [Generics Overview](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/generic/generic_overview.md)
+        - [Generic Functions](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/generic/generic_function.md)
+        - [Generic Interfaces](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/generic/generic_interface.md)
+        - [Generic Classes](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/generic/generic_class.md)
+        - [Generic Structs](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/generic/generic_struct.md)
+        - [Generic Enums](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_极客时间/cangjie_docs/blob/main/docs/dev-guide/source_en/generic/generic_enum.md)
+        - [Subtype Relationships of Generic Types](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/generic/generic_subtype.md)
+        - [Type Aliases](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/generic/typealias.md)
+        - [Generic Constraints](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/gener极客时间/cangjie_docs/blob/main/docs/dev-guide/source_en/generic/generic_constraint.md)
+    - Extensions
+        - [Extensions Overview](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/extension/extend_overview.md)
+        - [Direct Extensions](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/extension/direct_extension.md)
+        - [Interface Extensions](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/extension/interface_extension.md)
+        - [Access Rules](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/extension/access_rules.md)
+    - Collection Types
+        - [Basic Collection Types Overview](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/collections/collection_overview.md)
+        - [ArrayList](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/collections/collection_arraylist.md)
+        - [HashSet](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/collections/collection_hashset.md)
+        - [HashMap](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/collections/collection_hashmap.md)
+        - [Iterable and Collections](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/collections/collection_iterable_collections.md)
+    - Packages
+        - [Packages Overview](https极客时间/cangjie_docs/blob/main/docs/dev-guide/source_en/package/package_overview.md)
+        - [Package Declaration](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/package/package_name.md)
+        - [Top-Level Declaration Visibility](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/package/toplevel_access.md)
+        - [Package Import](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/package/import.md)
+        - [Program Entry](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/package/entry.md)
+    - Exception Handling
+        - [Defining Exceptions](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/error_handle/exception_overview.md)
+        - [throw and Handling Exceptions](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/error_handle/handle.md)
+        - [Common Runtime Exceptions](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/error_handle/common_runtime_exceptions.md)
+        - [Using Option](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/error_handle/use_option.md)
+    - Concurrency Programming
+        - [Concurrency Overview](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/concurrency/concurrency_overview.md)
+        - [Creating Threads](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/concurrency/create_thread.md)
+        - [Accessing Threads](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/concurrency/use_thread.md)
+        - [Terminating Threads](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/concurrency/terminal_thread.md)
+        - [Synchronization Mechanisms](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/concurrency/sync.md)
+        - [Thread Sleep for Specified Duration sleep](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/concurrency/sleep.md)
+    - Basic I/O Operations
+        - [I/O Stream Overview](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/Basic_IO/basic_IO_overview.md)
+        - [I/O Node Streams](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/Basic_IO/basic_IO_source_stream.md)
+        - [I/O Processing Streams](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/Basic_IO/basic_IO_process_stream.md)
+    - Network Programming
+        - [Network Programming Overview](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/Net/net_overview.md)
+        - [Socket Programming](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/Net/net_socket.md)
+        - [HTTP Programming](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/Net/net_http.md)
+        - [WebSocket Programming](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/Net/net_websocket.md)
+    - Macros
+        - [Introduction to Macros](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/Macro/macro_introduction.md)
+        - [Token Types and Quote Expressions](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/Macro/Tokens_types_and_quote_expressions.md)
+        - [Syntax Nodes](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/Macro/syntax_node.md)
+        - [Macro Implementation](learn-cj/Macro/implementation_of_macros_ohos.md)
+        - [Compilation, Error Reporting and Debugging](learn-cj/Macro/compiling_error_reporting_and_debugging_ohos.md)
+        - [Macro Package Definition and Import](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/Macro/defining_and_importing_macro_package.md)
+        - [Built-in Compilation Flags](learn-cj/Macro/builtin_compilation_flags.md)
+        - [Practical Cases](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/Macro/practical_case.md)
+    - Reflection and Annotations
+        - [Dynamic Features](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/reflect_and_annotation/dynamic_feature.md)
+        - [Annotations](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/reflect_and_annotation/anno.md)
+    - Cross-language Interoperability
+        - [Cangjie-C Interoperability](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/FFI/cangjie-c.md)
+        - Cangjie-ArkTS Interoperability
+            - [Overview](learn-cj/FFI/cangjie-arkts/cangjie_arkts_overview.md)
+            - [Scenarios](learn-cj/FFI/cangjie-arkts/interoperability_senario.md)
+                - [Using Cangjie in ArkTS Applications](learn-cj/FFI/cangjie-arkts/using_cangjie.md)
+                    - [Adding Cangjie Pages](learn-cj/FFI/cangjie-arkts/add_cangjie_page.md)
+                    - [Adding Cangjie Modules](learn-cj/FFI/cangjie-arkts/add_cangjie_module.md)
+                - [Using ArkTS in Cangjie Applications](learn-cj/FFI/cangjie-arkts/using_arkts.md)
+            - Interoperability Methods
+                - [ArkTS Calling Cangjie](learn-cj/FFI/cangjie-arkts/method_of_ArkTS_calling_cangjie.md)
+                    - Implementing Interoperability Code on Cangjie Side
+                        - [Declarative Interoperability Macros](learn-cj/FFI/cangjie-arkts/interoperability_macro.md)
+                        - [Interoperability Library](learn-cj/FFI/cangjie-arkts/interoperability_lib.md)
+                    - [Using Interoperability Code on ArkTS Side](learn-cj/FFI/cangjie-arkts/arkts_import_cangjie.md)
+                - Cangjie Calling ArkTS
+                    - [Preparing ArkTS Modules for Interoperability](learn-cj/FFI/cangjie-arkts/prepare_arkts_module.md)
+                    - [Calling Interoperability Code on Cangjie Side](learn-cj/FFI/cangjie-arkts/using_arkts_module.md)
+            - [Interoperability Usage Examples](learn-cj/FFI/cangjie-arkts/using_example.md)
+                - [Cangjie Accessing ArkTS Data](learn-cj/FFI/cangjie-arkts/operating_ArkTS_data.md)
+                - [ArkTS Accessing Cangjie Data](learn-cj/FFI/cangjie-arkts/operating_cangjie_objects.md)
+                - [Using Interoperability in Cangjie Multithreading](learn-cj/FFI/cangjie-arkts/using_interoperability_lib_multithread.md)
+            - [Cangjie-ArkTS Interoperability Auxiliary Library](learn-cj/FFI/cangjie-arkts/auxiliary_lib.md)
+            - [Cangjie-ArkTS Interoperability Development Guidelines](learn-cj/FFI/cangjie-arkts/interop_guidelines.md)
+    - Compilation and Build
+        - [cjc Usage](learn-cj/compile_and_build/cjc_usage_ohos.md)
+        - [cjpm Introduction](learn-cj/compile_and_build/cjpm_usage_ohos.md)
+        - [Conditional Compilation](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/compile_and_build/conditional_compilation.md)
+    - Appendix
+        - [cjc Compilation Options](learn-cj/Appendix/compile_options_ohos.md)
+        - [Keywords](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/Appendix/keyword.md)
+        - [Operators](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/Appendix/operator.md)
+        - [Operator Functions](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/Appendix/operator_function.md)
+        - [TokenKind Type](learn-cj/Appendix/tokenkind_type.md)

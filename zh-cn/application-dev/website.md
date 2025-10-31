@@ -981,8 +981,6 @@
                 - [仓颉访问 ArkTS 数据](learn-cj/FFI/cangjie-arkts/operating_ArkTS_data.md)
                 - [ArkTS 访问仓颉数据](learn-cj/FFI/cangjie-arkts/operating_cangjie_objects.md)
                 - [仓颉多线程中使用互操作](learn-cj/FFI/cangjie-arkts/using_interoperability_lib_multithread.md)
-
-
             - [仓颉与 ArkTS 互操作辅助库](learn-cj/FFI/cangjie-arkts/auxiliary_lib.md)
             - [仓颉-ArkTS 互操作开发规范](learn-cj/FFI/cangjie-arkts/interop_guidelines.md)
     - 编译和构建
@@ -994,4 +992,4 @@
         - [关键字](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/Appendix/keyword.md)
         - [操作符](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/Appendix/operator.md)
         - [操作符函数](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/Appendix/operator_function.md)
-        - [TokenKind 类型](learn-cj/Appendix/tokenkind_type.md)    
+        - [TokenKind 类型](learn-cj/Appendix/tokenkind_type.md)
