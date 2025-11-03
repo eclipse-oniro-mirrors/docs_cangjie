@@ -18,7 +18,7 @@ Usage steps:
         ./minidump_stackwalk b678e0b5-894b-4794-9ab3-fb5d6dda06a3.dmp > parsed_stacktrace.txt
         ```
 
-        The `minidump_stackwalk` tool is compiled from the Breakpad project source code. For compilation methods, refer to the project repository: [Breakpad Repository](https://chromium.googlesource.com/breakpad/breakpad).
+        The `minidump_stackwalk` tool is compiled from the Breakpad project source code. For compilation methods, refer to the Breakpad project repository.
 
     * View the parsed file. The following example shows partial content:
 
