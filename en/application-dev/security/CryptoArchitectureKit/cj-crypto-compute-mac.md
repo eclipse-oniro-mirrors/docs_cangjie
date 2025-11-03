@@ -58,7 +58,7 @@ func genSymKeyByData(symKeyData: Array<UInt8>) {
 
 func doHmacBySync() {
     // Decode string as Uint8Array using UTF-8, using a fixed 128-bit key (16 bytes)
-    let keyData = "12345678abcdefgh".toArray()
+    let keyData = Array<UInt8>(16, repeat:0)
     let key = genSymKeyByData(keyData)
     let macAlgName = 'SHA256' // Digest algorithm name
     let message = 'hmacTestMessgae' // Data for HMAC calculation
@@ -105,7 +105,7 @@ func genSymKeyByData(symKeyData: Array<UInt8>) {
 
 func doHmacBySync() {
     // Decode string as Uint8Array using UTF-8, using a fixed 128-bit key (16 bytes)
-    let keyData = "12345678abcdefgh".toArray()
+    let keyData = Array<UInt8>(16, repeat:0)
     let key = genSymKeyByData(keyData)
     let macAlgName = 'SHA256' // Digest algorithm name
     let message = 'aaaaa.....bbbbb.....ccccc.....ddddd.....eee'.toArray() // Data for HMAC calculation

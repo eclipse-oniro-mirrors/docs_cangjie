@@ -38,9 +38,9 @@ import kit.AbilityKit.*
 import kit.UniversalKeystoreKit.*
 import std.collection.*
 
-let IV = '0000000000000000'
-let AAD = "abababababababab"
-let NONCE = "hahahahahaha"
+let IV = "TEST_IV" // 此处为样例代码，实际使用需采用随机值
+let AAD = "TEST_ADD" // 此处为样例代码，实际使用需采用随机值
+let NONCE = "TEST_NONCE" // 此处为样例代码，实际使用需采用随机值
 let TAG_SIZE = 16
 let FIELD_LENGTH = 4
 let importedAes192PlainKey = "The aes192 key to import"

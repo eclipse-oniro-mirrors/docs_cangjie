@@ -751,7 +751,7 @@ let firstPhotoAsset = fetchResult.getFirstObject()
 let photoAssetTitle = firstPhotoAsset
     .get('title')
     .getString()
-let newTitle = "123456789"
+let newTitle = "NEW_TITLE" // New title, name it as needed in practice
 firstPhotoAsset.set('title', newTitle)
 firstPhotoAsset.commitModify()
 ```
@@ -930,7 +930,7 @@ let firstPhotoAsset = fetchResult.getFirstObject()
 let photoAssetTitle = firstPhotoAsset
     .get('title')
     .getString()
-let newTitle = "123456789"
+let newTitle = "NEW_TITLE" // New title, name it as needed in practice
 firstPhotoAsset.set('title', newTitle)
 ```## class PhotoAssetResult
 

@@ -1843,7 +1843,7 @@ let fetchOptions: FetchOptions = FetchOptions([], predicates)
 let fetchResult = phAccessHelper.getAssets(fetchOptions)
 let photoAsset = fetchResult.getFirstObject()
 let assetChangeRequest = MediaAssetChangeRequest(photoAsset)
-let newTitle = "newTitle"
+let newTitle = "NEW_TITLE" // 新标题，实际使用按需取名
 assetChangeRequest.setTitle(newTitle)
 phAccessHelper.applyChanges(assetChangeRequest)
 ```
@@ -2424,7 +2424,7 @@ let fetchOptions: FetchOptions = FetchOptions(fetchColumns, predicates)
 let fetchResult = phAccessHelper.getAssets(fetchOptions)
 let firstPhotoAsset = fetchResult.getFirstObject()
 let photoAssetTitle = firstPhotoAsset.get('title')
-let newTitle = "123456789"
+let newTitle = "NEW_TITLE" // 新标题，实际使用按需取名
 firstPhotoAsset.set('title', newTitle)
 firstPhotoAsset.commitModify()
 ```
@@ -2590,7 +2590,7 @@ let fetchColumns = [PhotoKeys.Title.toString()]
 let fetchOptions: FetchOptions = FetchOptions(fetchColumns, predicates)
 let fetchResult = phAccessHelper.getAssets(fetchOptions)
 let firstPhotoAsset = fetchResult.getFirstObject()
-let newTitle = "123456789"
+let newTitle = "NEW_TITLE" // 新标题，实际使用按需取名
 firstPhotoAsset.set('title', newTitle)
 ```
 

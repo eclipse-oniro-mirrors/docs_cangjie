@@ -62,9 +62,7 @@ public func abortSession(handle: HuksHandleId, options: HuksOptions): Unit
 
 import kit.UniversalKeystoreKit.*
 
-let keyAlias = "test_abort"
-let plainText = "123456"
-let iv = "0011223344556677"
+let keyAlias = "KEY_ALIAS" // 密钥别名，在生成密钥时指定，在加密、解密和删除密钥时使用
 let options = HuksOptions(properties:
     [
         HuksParam(HuksTag.HUKS_TAG_ALGORITHM, Uint32Value(HuksKeyAlg.HUKS_ALG_AES)),
@@ -75,24 +73,13 @@ let options = HuksOptions(properties:
         )
     ]
 )
-let encOptions = HuksOptions(properties:
-    [
-        HuksParam(HuksTag.HUKS_TAG_ALGORITHM, Uint32Value(HuksKeyAlg.HUKS_ALG_AES)),
-        HuksParam(HuksTag.HUKS_TAG_KEY_SIZE, Uint32Value(HuksKeySize.HUKS_AES_KEY_SIZE_128)),
-        HuksParam(HuksTag.HUKS_TAG_PURPOSE, Uint32Value(HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT)),
-        HuksParam(HuksTag.HUKS_TAG_PADDING, Uint32Value(HuksKeyPadding.HUKS_PADDING_PKCS7)),
-        HuksParam(HuksTag.HUKS_TAG_BLOCK_MODE, Uint32Value(HuksCipherMode.HUKS_MODE_CBC)),
-        HuksParam(HuksTag.HUKS_TAG_IV, HuksParamValue.BytesValue(iv.toArray()))
-    ],
-    inData: plainText.toArray()
-)
 
 generateKeyItem(keyAlias, options)
 
 // encrypt and abort
-let handle = initSession(keyAlias, encOptions).handle
+let handle = initSession(keyAlias, options).handle
 
-abortSession(handle, encOptions)
+abortSession(handle, options)
 ```
 
 ## func anonAttestKeyItem(String, HuksOptions)
@@ -149,7 +136,7 @@ public func anonAttestKeyItem(keyAlias: String, options: HuksOptions): Array<Str
 
 import kit.UniversalKeystoreKit.*
 
-let keyAlias = "test_rsa_anno"
+let keyAlias = "KEY_ALIAS" // 密钥别名，在生成密钥时指定，在加密、解密和删除密钥时使用
 // generate key
 generateKeyItem(
     keyAlias,
@@ -236,7 +223,7 @@ func generateSimpleKey(keyAlias: String) {
 }
 
 func test_delete_key() {
-    let keyAlias = "test_delete_key"
+    let keyAlias = "KEY_ALIAS" // 密钥别名，在生成密钥时指定，在加密、解密和删除密钥时使用
     generateSimpleKey(keyAlias)
     // delete
     deleteKeyItem(keyAlias, HuksOptions())
@@ -297,7 +284,7 @@ public func exportKeyItem(keyAlias: String, _: HuksOptions): Bytes
 
 import kit.UniversalKeystoreKit.*
 
-let keyAlias = "test_export_key"
+let keyAlias = "KEY_ALIAS" // 密钥别名，在生成密钥时指定，在加密、解密和删除密钥时使用
 /* 1. Generate Key */
 generateKeyItem(
     keyAlias,
@@ -375,9 +362,7 @@ public func finishSession(handle: HuksHandleId, options: HuksOptions, token!: By
 import kit.PerformanceAnalysisKit.*
 import kit.UniversalKeystoreKit.*
 
-let keyAlias = "test_encrypt_decrypt_cbc_pkcs7"
-let plainText = "123456"
-let iv = "1122334455667788"
+let keyAlias = "KEY_ALIAS" // 密钥别名，在生成密钥时指定，在加密、解密和删除密钥时使用
 let options = HuksOptions(properties:
     [
         HuksParam(HuksTag.HUKS_TAG_ALGORITHM, Uint32Value(HuksKeyAlg.HUKS_ALG_AES)),
@@ -387,43 +372,13 @@ let options = HuksOptions(properties:
             Uint32Value(HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT | HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT)
         ),
         HuksParam(HuksTag.HUKS_TAG_PADDING, Uint32Value(HuksKeyPadding.HUKS_PADDING_PKCS7)),
-        HuksParam(HuksTag.HUKS_TAG_BLOCK_MODE, Uint32Value(HuksCipherMode.HUKS_MODE_CBC)),
-        HuksParam(HuksTag.HUKS_TAG_IV, HuksParamValue.BytesValue(iv.toArray()))
+        HuksParam(HuksTag.HUKS_TAG_BLOCK_MODE, Uint32Value(HuksCipherMode.HUKS_MODE_CBC))
     ]
-)
-let encOptions = HuksOptions(properties:
-    [
-        HuksParam(HuksTag.HUKS_TAG_ALGORITHM, Uint32Value(HuksKeyAlg.HUKS_ALG_AES)),
-        HuksParam(HuksTag.HUKS_TAG_KEY_SIZE, Uint32Value(HuksKeySize.HUKS_AES_KEY_SIZE_128)),
-        HuksParam(HuksTag.HUKS_TAG_PURPOSE, Uint32Value(HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT)),
-        HuksParam(HuksTag.HUKS_TAG_PADDING, Uint32Value(HuksKeyPadding.HUKS_PADDING_PKCS7)),
-        HuksParam(HuksTag.HUKS_TAG_BLOCK_MODE, Uint32Value(HuksCipherMode.HUKS_MODE_CBC)),
-        HuksParam(HuksTag.HUKS_TAG_IV, HuksParamValue.BytesValue(iv.toArray()))
-    ],
-    inData: plainText.toArray()
 )
 generateKeyItem(keyAlias, options)
 // encrypt
-let handle1 = initSession(keyAlias, encOptions).handle
-let cipherData = finishSession(handle1, encOptions)
-let decOptions = HuksOptions(properties:
-    [
-        HuksParam(HuksTag.HUKS_TAG_ALGORITHM, Uint32Value(HuksKeyAlg.HUKS_ALG_AES)),
-        HuksParam(HuksTag.HUKS_TAG_KEY_SIZE, Uint32Value(HuksKeySize.HUKS_AES_KEY_SIZE_128)),
-        HuksParam(HuksTag.HUKS_TAG_PURPOSE, Uint32Value(HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT)),
-        HuksParam(HuksTag.HUKS_TAG_PADDING, Uint32Value(HuksKeyPadding.HUKS_PADDING_PKCS7)),
-        HuksParam(HuksTag.HUKS_TAG_BLOCK_MODE, Uint32Value(HuksCipherMode.HUKS_MODE_CBC)),
-        HuksParam(HuksTag.HUKS_TAG_IV, HuksParamValue.BytesValue(iv.toArray()))
-    ],
-    inData: cipherData.getOrThrow()
-)
-// decrypt
-let handle2 = initSession(keyAlias, decOptions).handle
-let decData = finishSession(handle2, decOptions)
-let dec = String.fromUtf8(decData.getOrThrow())
-Hilog.info(0, "Hks testEntry", "${plainText == dec}", "")
-abortSession(handle1, HuksOptions(properties:[]))
-abortSession(handle2, HuksOptions(properties:[]))
+let handle = initSession(keyAlias, options).handle
+let cipherData = finishSession(handle, options)
 ```
 
 ## func generateKeyItem(String, HuksOptions)
@@ -475,7 +430,7 @@ public func generateKeyItem(keyAlias: String, options: HuksOptions): Unit
 
 import kit.UniversalKeystoreKit.*
 
-let keyAlias = "test_generate_key"
+let keyAlias = "KEY_ALIAS" // 密钥别名，在生成密钥时指定，在加密、解密和删除密钥时使用
 let options = HuksOptions(properties:
     [
         HuksParam(HuksTag.HUKS_TAG_ALGORITHM, Uint32Value(HuksKeyAlg.HUKS_ALG_AES)),
@@ -542,7 +497,7 @@ public func getKeyItemProperties(keyAlias: String, _: HuksOptions): Array<HuksPa
 
 import kit.UniversalKeystoreKit.*
 
-let keyAlias = "test_get_key_item_properties"
+let keyAlias = "KEY_ALIAS" // 密钥别名，在生成密钥时指定，在加密、解密和删除密钥时使用
 let options = HuksOptions(properties:
     [
         HuksParam(HuksTag.HUKS_TAG_ALGORITHM, Uint32Value(HuksKeyAlg.HUKS_ALG_AES)),
@@ -605,7 +560,7 @@ public func importKeyItem(keyAlias: String, options: HuksOptions): Unit
 
 import kit.UniversalKeystoreKit.*
 
-let keyAlias = "test_import_aes"
+let keyAlias = "KEY_ALIAS" // 密钥别名，在生成密钥时指定，在加密、解密和删除密钥时使用
 let key = Array<UInt8>(Int64(HuksKeySize.HUKS_AES_KEY_SIZE_256 / 8), 
 
 
@@ -722,12 +677,9 @@ public func initSession(keyAlias: String, options: HuksOptions): HuksSessionHand
 ```cangjie
 // index.cj
 
-import kit.PerformanceAnalysisKit.*
 import kit.UniversalKeystoreKit.*
 
-let keyAlias = "test_encrypt_decrypt_cbc_pkcs7"
-let plainText = "123456"
-let iv = "1122334455667788"
+let keyAlias = "KEY_ALIAS" // 密钥别名，在生成密钥时指定，在加密、解密和删除密钥时使用
 let options = HuksOptions(properties:
     [
         HuksParam(HuksTag.HUKS_TAG_ALGORITHM, Uint32Value(HuksKeyAlg.HUKS_ALG_AES)),
@@ -737,43 +689,12 @@ let options = HuksOptions(properties:
             Uint32Value(HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT | HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT)
         ),
         HuksParam(HuksTag.HUKS_TAG_PADDING, Uint32Value(HuksKeyPadding.HUKS_PADDING_PKCS7)),
-        HuksParam(HuksTag.HUKS_TAG_BLOCK_MODE, Uint32Value(HuksCipherMode.HUKS_MODE_CBC)),
-        HuksParam(HuksTag.HUKS_TAG_IV, HuksParamValue.BytesValue(iv.toArray()))
+        HuksParam(HuksTag.HUKS_TAG_BLOCK_MODE, Uint32Value(HuksCipherMode.HUKS_MODE_CBC))
     ]
-)
-let encOptions = HuksOptions(properties:
-    [
-        HuksParam(HuksTag.HUKS_TAG_ALGORITHM, Uint32Value(HuksKeyAlg.HUKS_ALG_AES)),
-        HuksParam(HuksTag.HUKS_TAG_KEY_SIZE, Uint32Value(HuksKeySize.HUKS_AES_KEY_SIZE_128)),
-        HuksParam(HuksTag.HUKS_TAG_PURPOSE, Uint32Value(HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT)),
-        HuksParam(HuksTag.HUKS_TAG_PADDING, Uint32Value(HuksKeyPadding.HUKS_PADDING_PKCS7)),
-        HuksParam(HuksTag.HUKS_TAG_BLOCK_MODE, Uint32Value(HuksCipherMode.HUKS_MODE_CBC)),
-        HuksParam(HuksTag.HUKS_TAG_IV, HuksParamValue.BytesValue(iv.toArray()))
-    ],
-    inData: plainText.toArray()
 )
 generateKeyItem(keyAlias, options)
 // encrypt
-let handle1 = initSession(keyAlias, encOptions).handle
-let cipherData = finishSession(handle1, encOptions)
-let decOptions = HuksOptions(properties:
-    [
-        HuksParam(HuksTag.HUKS_TAG_ALGORITHM, Uint32Value(HuksKeyAlg.HUKS_ALG_AES)),
-        HuksParam(HuksTag.HUKS_TAG_KEY_SIZE, Uint32Value(HuksKeySize.HUKS_AES_KEY_SIZE_128)),
-        HuksParam(HuksTag.HUKS_TAG_PURPOSE,  Uint32Value(HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT)),
-        HuksParam(HuksTag.HUKS_TAG_PADDING, Uint32Value(HuksKeyPadding.HUKS_PADDING_PKCS7)),
-        HuksParam(HuksTag.HUKS_TAG_BLOCK_MODE, Uint32Value(HuksCipherMode.HUKS_MODE_CBC)),
-        HuksParam(HuksTag.HUKS_TAG_IV, HuksParamValue.BytesValue(iv.toArray()))
-    ],
-    inData: cipherData.getOrThrow()
-)
-// decrypt
-let handle2 = initSession(keyAlias, decOptions).handle
-let decData = finishSession(handle2, decOptions)
-let dec = String.fromUtf8(decData.getOrThrow())
-Hilog.info(0, "Hks testEntry", "${plainText == dec}", "")
-abortSession(handle1, HuksOptions(properties:[]))
-abortSession(handle2, HuksOptions(properties:[]))
+let handle = initSession(keyAlias, encOptions).handle
 ```
 
 ## func isKeyItemExist(String, HuksOptions)
@@ -842,7 +763,7 @@ func generateSimpleKey(keyAlias: String) {
     generateKeyItem(keyAlias, options)
 }
 
-let keyAlias = "test_is_key_item_exist"
+let keyAlias = "KEY_ALIAS" // 密钥别名，在生成密钥时指定，在加密、解密和删除密钥时使用
 isKeyItemExist(keyAlias, HuksOptions()) // false
 generateSimpleKey(keyAlias)
 isKeyItemExist(keyAlias, HuksOptions()) // true

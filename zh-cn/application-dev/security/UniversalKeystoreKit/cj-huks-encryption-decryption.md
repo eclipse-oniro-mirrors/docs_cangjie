@@ -76,8 +76,8 @@ import kit.UniversalKeystoreKit.*
 
 let aesKeyAlias = 'test_aesKeyAlias'  // 密钥别名，在生成密钥时指定，在加密、解密和删除密钥时使用
 var handle: ?HuksHandleId = None
-let plainText = '123456'  // 待加密的明文
-let IV = '001122334455' // 此处为样例代码，实际使用需采用随机值
+let plainText = 'PLAIN_TEXT'  // 待加密的明文
+let IV = 'TEST_IV' // 此处为样例代码，实际使用需采用随机值
 var cipherData: ?Array<UInt8> = [] // 加密后的密文数据
 
 func StringToUint8Array(str: String) {
@@ -237,10 +237,10 @@ import kit.UniversalKeystoreKit.*
 
 let aesKeyAlias = 'test_aesKeyAlias' // 密钥别名，在生成密钥时指定，在加密、解密和删除密钥时使用
 var handle: ?HuksHandleId = None
-let plainText = '123456'  // 待加密的明文数据
-var cipherData: ?Array<UInt8> = []  // 加密后的密文数据
-let AAD = '1234567890123456'
-let NONCE = '001122334455' // 此处为样例代码，实际使用需采用随机值
+let plainText = 'PLAIN_TEXT' // 待加密的明文数据
+var cipherData: ?Array<UInt8> = [] // 加密后的密文数据
+let AAD = 'TEST_AAD' // 此处为样例代码，实际使用需采用随机值
+let NONCE = 'TEST_NONCE' // 此处为样例代码，实际使用需采用随机值
 
 func StringToUint8Array(str: String) {
     return str.toArray()
@@ -413,7 +413,7 @@ import kit.UniversalKeystoreKit.*
 
 let rsaKeyAlias = 'test_rsaKeyAlias'  // 密钥别名，在生成密钥时指定，在加密、解密和删除密钥时使用
 var handle: ?HuksHandleId = None
-let plainText = '123456' // 待加密的明文
+let plainText = 'PLAIN_TEXT' // 待加密的明文
 var cipherData: ?Array<UInt8> = [] // 加密后的密文数据
 
 func StringToUint8Array(str: String) {
@@ -571,7 +571,7 @@ import kit.UniversalKeystoreKit.*
 
 let rsaKeyAlias = 'test_rsaKeyAlias' // 密钥别名，在生成密钥时指定，在加密、解密和删除密钥时使用
 var handle: ?HuksHandleId = None
-let plainText = '123456' // 待加密的明文
+let plainText = 'PLAIN_TEXT' // 待加密的明文
 var cipherData: ?Array<UInt8> = [] // 加密后的密文数据
 
 func StringToUint8Array(str: String) {
@@ -729,7 +729,7 @@ import kit.UniversalKeystoreKit.*
 
 let sm2KeyAlias = 'test_sm2KeyAlias' // 密钥别名，在生成密钥时指定，在加密、解密和删除密钥时使用
 var handle: ?HuksHandleId = None
-let plainText = '123456' // 待加密的明文
+let plainText = 'PLAIN_TEXT' // 待加密的明文
 var cipherData: ?Array<UInt8> = [] // 加密后的密文数据
 
 func StringToUint8Array(str: String) {

@@ -76,8 +76,8 @@ import kit.UniversalKeystoreKit.*
 
 let aesKeyAlias = 'test_aesKeyAlias'  // Key alias specified during key generation, used for encryption, decryption, and key deletion.
 var handle: ?HuksHandleId = None
-let plainText = '123456'  // Plaintext to be encrypted.
-let IV = '001122334455' // Sample code; use random values in practice.
+let plainText = 'PLAIN_TEXT'  // Plaintext to be encrypted.
+let IV = 'TEST_IV' // Sample code; use random values in practice.
 var cipherData: ?Array<UInt8> = [] // Encrypted ciphertext data.
 
 func StringToUint8Array(str: String) {
@@ -237,7 +237,7 @@ import kit.UniversalKeystoreKit.*
 
 let aesKeyAlias = 'test_aesKeyAlias' // Key alias specified during key generation, used for encryption, decryption, and key deletion.
 var handle: ?HuksHandleId = None
-let plainText = '123456'  // Plaintext to be encrypted.
+let plainText = 'PLAIN_TEXT'   // Plaintext to be encrypted.
 var cipherData: ?Array<UInt8> = []  // Encrypted ciphertext data.
 let AAD = '1234567890123456'
 let NONCE = '001122334455' // Sample code; use random values in practice.
@@ -413,7 +413,7 @@ import kit.UniversalKeystoreKit.*
 
 let rsaKeyAlias = 'test_rsaKeyAlias'  // Key alias specified during key generation, used for encryption, decryption, and key deletion.
 var handle: ?HuksHandleId = None
-let plainText = '123456' // Plaintext to be encrypted.
+let plainText = 'PLAIN_TEXT'  // Plaintext to be encrypted.
 var cipherData: ?Array<UInt8> = [] // Encrypted ciphertext data.
 
 func StringToUint8Array(str: String) {
@@ -477,7 +477,7 @@ import kit.UniversalKeystoreKit.*
 
 let rsaKeyAlias = 'test_rsaKeyAlias' // Key alias, specified during key generation, used for encryption, decryption, and key deletion
 var handle: ?HuksHandleId = None
-let plainText = '123456' // Plaintext to be encrypted
+let plainText = 'PLAIN_TEXT'  // Plaintext to be encrypted
 var cipherData: ?Array<UInt8> = [] // Encrypted ciphertext data
 
 func StringToUint8Array(str: String) {
@@ -635,7 +635,7 @@ import kit.UniversalKeystoreKit.*
 
 let sm2KeyAlias = 'test_sm2KeyAlias' // Key alias, specified during key generation, used for encryption, decryption, and key deletion
 var handle: ?HuksHandleId = None
-let plainText = '123456' // Plaintext to be encrypted
+let plainText = 'PLAIN_TEXT'  // Plaintext to be encrypted
 var cipherData: ?Array<UInt8> = [] // Encrypted ciphertext data
 
 func StringToUint8Array(str: String) {

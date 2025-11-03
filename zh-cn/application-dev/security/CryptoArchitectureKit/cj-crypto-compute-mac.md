@@ -59,7 +59,7 @@ func genSymKeyByData(symKeyData: Array<UInt8>) {
 
 func doHmacBySync() {
     // 把字符串按utf-8解码为Uint8Array，使用固定的128位的密钥，即16字节
-    let keyData = "12345678abcdefgh".toArray()
+    let keyData = Array<UInt8>(16, repeat:0)
     let key = genSymKeyByData(keyData)
     let macAlgName = 'SHA256' // 摘要算法名
     let message = 'hmacTestMessgae' // 待进行HMAC的数据
@@ -107,7 +107,7 @@ func genSymKeyByData(symKeyData: Array<UInt8>) {
 
 func doHmacBySync() {
     // 把字符串按utf-8解码为Uint8Array，使用固定的128位的密钥，即16字节
-    let keyData = "12345678abcdefgh".toArray()
+    let keyData = Array<UInt8>(16, repeat:0)
     let key = genSymKeyByData(keyData)
     let macAlgName = 'SHA256' // 摘要算法名
     let message = 'aaaaa.....bbbbb.....ccccc.....ddddd.....eee'.toArray() // 待进行HMAC的数据
