@@ -101,7 +101,6 @@ public func getAddressesByName(host: String): Array<NetAddress>
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 201 | Permission denied. |
-  | 401 | Parameter error. |
   | 2100001 | Invalid parameter value. |
   | 2100002 | Operation failed. Cannot connect to service. |
   | 2100003 | System internal error. |
@@ -146,7 +145,6 @@ public func getAllNets(): Array<NetHandle>
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 201 | Permission denied. |
-  | 401 | Parameter error. |
   | 2100002 | Operation failed. Cannot connect to service. |
   | 2100003 | System internal error. |
 
@@ -183,11 +181,10 @@ public func getAppNet(): NetHandle
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[网络连接管理错误码](./cj-errorcode-net-connection.md)和[通用错误码](../cj-errorcode-universal.md)。
+- BusinessException：对应错误码如下表，详见[网络连接管理错误码](./cj-errorcode-net-connection.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. |
   | 2100002 | Operation failed. Cannot connect to service. |
   | 2100003 | System internal error. |
 
@@ -237,7 +234,6 @@ public func getConnectionProperties(netHandle: NetHandle): ConnectionProperties
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 201 | Permission denied. |
-  | 401 | Parameter error. |
   | 2100001 | Invalid parameter value. |
   | 2100002 | Operation failed. Cannot connect to service. |
   | 2100003 | System internal error. |
@@ -336,7 +332,6 @@ public func getDefaultNet(): NetHandle
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 201 | Permission denied. |
-  | 401 | Parameter error. |
   | 2100002 | Operation failed. Cannot connect to service. |
   | 2100003 | System internal error. |
 
@@ -386,7 +381,6 @@ public func getNetCapabilities(netHandle: NetHandle): NetCapabilities
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 201 | Permission denied. |
-  | 401 | Parameter error. |
   | 2100001 | Invalid parameter value. |
   | 2100002 | Operation failed. Cannot connect to service. |
   | 2100003 | System internal error. |
@@ -438,7 +432,6 @@ public func hasDefaultNet(): Bool
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 201 | Permission denied. |
-  | 401 | Parameter error. |
   | 2100002 | Operation failed. Cannot connect to service. |
   | 2100003 | System internal error. |
 
@@ -482,7 +475,6 @@ public func isDefaultNetMetered(): Bool
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 201 | Permission denied. |
-  | 401 | Parameter error. |
   | 2100002 | Operation failed. Cannot connect to service. |
   | 2100003 | System internal error. |
 
@@ -526,7 +518,6 @@ public func reportNetConnected(netHandle: NetHandle): Unit
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 201 | Permission denied. |
-  | 401 | Parameter error. |
   | 2100001 | Invalid parameter value. |
   | 2100002 | Operation failed. Cannot connect to service. |
   | 2100003 | System internal error. |
@@ -572,7 +563,6 @@ public func reportNetDisconnected(netHandle: NetHandle): Unit
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 201 | Permission denied. |
-  | 401 | Parameter error. |
   | 2100001 | Invalid parameter value. |
   | 2100002 | Operation failed. Cannot connect to service. |
   | 2100003 | System internal error. |
@@ -618,7 +608,6 @@ public func setAppNet(netHandle: NetHandle): Unit
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 201 | Permission denied. |
-  | 401 | Parameter error. |
   | 2100001 | Invalid parameter value. |
   | 2100002 | Operation failed. Cannot connect to service. |
   | 2100003 | System internal error. |
@@ -1408,7 +1397,6 @@ public func register(): Unit
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 201 | Permission denied. |
-  | 401 | Parameter error. |
   | 2100002 | Failed to connect to the service. |
   | 2100003 | System internal error. |
   | 2101008 | The callback already exists. |
@@ -1442,11 +1430,10 @@ public func unregister(): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[网络连接管理错误码](./cj-errorcode-net-connection.md)和[通用错误码](../cj-errorcode-universal.md)。
+- BusinessException：对应错误码如下表，详见[网络连接管理错误码](./cj-errorcode-net-connection.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. |
   | 2100002 | Failed to connect to the service. |
   | 2100003 | System internal error. |
   | 2101007 | The callback does not exist. |
@@ -1576,7 +1563,6 @@ public func getAddressByName(host: String): NetAddress
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 201 | Permission denied. |
-  | 401 | Parameter error. |
   | 2100001 | Invalid parameter value. |
   | 2100002 | Operation failed. Cannot connect to service. |
   | 2100003 | System internal error. |
@@ -1629,7 +1615,6 @@ public func getAddressesByName(host: String): Array<NetAddress>
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 201 | Permission denied. |
-  | 401 | Parameter error. |
   | 2100001 | Invalid parameter value. |
   | 2100002 | Operation failed. Cannot connect to service. |
   | 2100003 | System internal error. |

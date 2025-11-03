@@ -49,11 +49,10 @@ public func addAbilityMonitor(monitor: AbilityMonitor): Unit
 
 **异常：**
 
-以下错误码详细介绍请参见[通用错误码](../cj-errorcode-universal.md)和[元能力子系统错误码](../AbilityKit/cj-errorcode-ability.md)。
+以下错误码详细介绍请参见[元能力子系统错误码](../AbilityKit/cj-errorcode-ability.md)。
 
   | 错误码ID | 错误信息 |
   | :--- | :--- |
-  | 401| Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
   | 16000100 | AddAbilityMonitor failed. |
 
 **示例：**
@@ -94,11 +93,10 @@ public func addAbilityStageMonitor(monitor: AbilityStageMonitor): Unit
 
 **异常：**
 
-以下错误码详细介绍请参见[通用错误码](../cj-errorcode-universal.md)和[元能力子系统错误码](../AbilityKit/cj-errorcode-ability.md)。
+以下错误码详细介绍请参见[元能力子系统错误码](../AbilityKit/cj-errorcode-ability.md)。
 
   | 错误码ID | 错误信息 |
   | :--- | :--- |
-  | 401| Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
   | 16000100 | AddAbilityStageMonitor failed. |
 
 **示例：**
@@ -136,11 +134,10 @@ public func doAbilityBackground(ability: UIAbility): Unit
 
 **异常：**
 
-以下错误码详细介绍请参见[通用错误码](../cj-errorcode-universal.md)和[元能力子系统错误码](../AbilityKit/cj-errorcode-ability.md)。
+以下错误码详细介绍请参见[元能力子系统错误码](../AbilityKit/cj-errorcode-ability.md)。
 
   | 错误码ID | 错误信息 |
   | :--- | :--- |
-  | 401| Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
   | 16000100 | DoAbilityBackground failed. |
 
 **示例：**
@@ -178,11 +175,10 @@ public func doAbilityForeground(ability: UIAbility): Unit
 
 **异常：**
 
-以下错误码详细介绍请参见[通用错误码](../cj-errorcode-universal.md)和[元能力子系统错误码](../AbilityKit/cj-errorcode-ability.md)。
+以下错误码详细介绍请参见[元能力子系统错误码](../AbilityKit/cj-errorcode-ability.md)。
 
   | 错误码ID | 错误信息 |
   | :--- | :--- |
-  | 401| Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
   | 16000100 | DoAbilityForeground failed. |
 
 **示例：**
@@ -373,11 +369,10 @@ public func getCurrentTopAbility(): UIAbility
 
 **异常：**
 
-以下错误码详细介绍请参见[通用错误码](../cj-errorcode-universal.md)和[元能力子系统错误码](../AbilityKit/cj-errorcode-ability.md)。
+以下错误码详细介绍请参见[元能力子系统错误码](../AbilityKit/cj-errorcode-ability.md)。
 
   | 错误码ID | 错误信息 |
   | :--- | :--- |
-  | 401| Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
   | 16000100 | GetCurrentTopAbility failed. |
 
 **示例：**
@@ -456,11 +451,10 @@ public func removeAbilityMonitor(monitor: AbilityMonitor): Unit
 
 **异常：**
 
-以下错误码详细介绍请参见[通用错误码](../cj-errorcode-universal.md)和[元能力子系统错误码](../AbilityKit/cj-errorcode-ability.md)。
+以下错误码详细介绍请参见[元能力子系统错误码](../AbilityKit/cj-errorcode-ability.md)。
 
   | 错误码ID | 错误信息 |
   | :--- | :--- |
-  | 401| Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
   | 16000100 | RemoveAbilityMonitor failed. |
 
 **示例：**
@@ -501,11 +495,10 @@ public func removeAbilityStageMonitor(monitor: AbilityStageMonitor): Unit
 
 **异常：**
 
-以下错误码详细介绍请参见[通用错误码](../cj-errorcode-universal.md)和[元能力子系统错误码](../AbilityKit/cj-errorcode-ability.md)。
+以下错误码详细介绍请参见[元能力子系统错误码](../AbilityKit/cj-errorcode-ability.md)。
 
   | 错误码ID | 错误信息 |
   | :--- | :--- |
-  | 401| Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
   | 16000100 | RemoveAbilityStageMonitor failed. |
 
 **示例：**
@@ -583,11 +576,10 @@ public func waitAbilityMonitor(monitor: AbilityMonitor, timeout!: Int64 = 5000):
 
 **异常：**
 
-以下错误码详细介绍请参见[通用错误码](../cj-errorcode-universal.md)和[元能力子系统错误码](../AbilityKit/cj-errorcode-ability.md)。
+以下错误码详细介绍请参见[元能力子系统错误码](../AbilityKit/cj-errorcode-ability.md)。
 
   | 错误码ID | 错误信息 |
   | :--- | :--- |
-  | 401| Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
   | 16000100 | WaitAbilityMonitor failed. |
 
 **示例：**
@@ -636,11 +628,10 @@ public func waitAbilityStageMonitor(monitor: AbilityStageMonitor, timeout!: Int6
 
 **异常：**
 
-以下错误码详细介绍请参见[通用错误码](../cj-errorcode-universal.md)和[元能力子系统错误码](../AbilityKit/cj-errorcode-ability.md)。
+以下错误码详细介绍请参见[元能力子系统错误码](../AbilityKit/cj-errorcode-ability.md)。
 
   | 错误码ID | 错误信息 |
   | :--- | :--- |
-  | 401| Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
   | 16000100 | WaitAbilityStageMonitor failed. |
 
 **示例：**

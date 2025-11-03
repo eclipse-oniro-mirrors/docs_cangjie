@@ -551,7 +551,6 @@ public func request(url: String, options: HttpRequestOptions, callback: AsyncCal
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. |
   | 201 | Permission denied. |
   | 2300001 | Unsupported protocol. |
   | 2300003 | URL using bad/illegal format or missing URL. |
@@ -641,7 +640,6 @@ public func request(url: String, callback: AsyncCallback<HttpResponse>): Unit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. |
   | 201 | Permission denied. |
   | 2300001 | Unsupported protocol. |
   | 2300003 | URL using bad/illegal format or missing URL. |
@@ -728,7 +726,6 @@ public func requestInStream(url: String, options: HttpRequestOptions, callback: 
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. |
   | 201 | Permission denied. |
   | 2300001 | Unsupported protocol. |
   | 2300003 | URL using bad/illegal format or missing URL. |
@@ -814,7 +811,6 @@ public func requestInStream(url: String, callback: AsyncCallback<UInt32>): Unit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. |
   | 201 | Permission denied. |
   | 2300001 | Unsupported protocol. |
   | 2300003 | URL using bad/illegal format or missing URL. |

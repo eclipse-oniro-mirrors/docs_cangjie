@@ -37,7 +37,6 @@ public interface Parcelable {
 ### func marshalling(MessageSequence)
 
 ```cangjie
-
 func marshalling(dataOut: MessageSequence): Bool
 ```
 
@@ -62,7 +61,6 @@ func marshalling(dataOut: MessageSequence): Bool
 ### func unmarshalling(MessageSequence)
 
 ```cangjie
-
 func unmarshalling(dataIn: MessageSequence): Bool
 ```
 
@@ -162,7 +160,6 @@ public static const PROT_WRITE: UInt32 = 2
 ### static func create(String, Int32)
 
 ```cangjie
-
 public static func create(name: String, size: Int32): Ashmem
 ```
 
@@ -208,7 +205,6 @@ let ashmem = Ashmem.create("ashmem", 1024*1024)
 ### static func create(Ashmem)
 
 ```cangjie
-
 public static func create(ashmem: Ashmem): Ashmem
 ```
 
@@ -254,7 +250,6 @@ let ashmem2 = Ashmem.create(ashmem) //static func create(Ashmem)
 ### func closeAshmem()
 
 ```cangjie
-
 public func closeAshmem(): Unit
 ```
 
@@ -280,7 +275,6 @@ ashmem.closeAshmem()
 ### func getAshmemSize()
 
 ```cangjie
-
 public func getAshmemSize(): Int32
 ```
 
@@ -312,7 +306,6 @@ ashmem.getAshmemSize()
 ### func mapReadWriteAshmem()
 
 ```cangjie
-
 public func mapReadWriteAshmem(): Unit
 ```
 
@@ -324,11 +317,10 @@ public func mapReadWriteAshmem(): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[RPC错误码](./cj-errorcode-rpc.md)和[通用错误码](../cj-errorcode-universal.md)。
+- BusinessException：对应错误码如下表，详见[RPC错误码](./cj-errorcode-rpc.md)。
 
   |错误码ID|错误信息|
   |:---|:---|
-  |401|Parameter error. Possible causes:<br>1.The number of parameters is incorrect;<br>2.The parameter is not an instance of the Ashmem object.|
   |1900001|Failed to call mmap.|
 
 **示例：**
@@ -347,7 +339,6 @@ ashmem.mapReadWriteAshmem()
 ### func mapReadonlyAshmem()
 
 ```cangjie
-
 public func mapReadonlyAshmem(): Unit
 ```
 
@@ -381,7 +372,6 @@ ashmem.mapReadonlyAshmem()
 ### func mapTypedAshmem(UInt32)
 
 ```cangjie
-
 public func mapTypedAshmem(mapType: UInt32): Unit
 ```
 
@@ -399,11 +389,10 @@ public func mapTypedAshmem(mapType: UInt32): Unit
 
 **异常：**
 
-- BusinessException：对应错误码的详细介绍请参见[RPC错误码](./cj-errorcode-rpc.md)和[通用错误码](../cj-errorcode-universal.md)。
+- BusinessException：对应错误码的详细介绍请参见[RPC错误码](./cj-errorcode-rpc.md)。
 
   |错误码ID|错误信息|
   |:---|:---|
-  |401|Parameter error. Possible causes:<br>1.The number of parameters is incorrect;<br>2.The parameter type does not match;<br>3.The passed mapType exceeds the maximum protection level.|
   |1900001|Failed to call mmap.|
 
 **示例：**
@@ -422,7 +411,6 @@ ashmem.mapTypedAshmem(Ashmem.PROT_READ | Ashmem.PROT_WRITE)
 ### func readDataFromAshmem(Int64, Int64)
 
 ```cangjie
-
 public func readDataFromAshmem(size: Int64, offset: Int64): Array<Byte>
 ```
 
@@ -447,11 +435,10 @@ public func readDataFromAshmem(size: Int64, offset: Int64): Array<Byte>
 
 **异常：**
 
-- BusinessException：对应错误码的详细介绍请参见[RPC错误码](./cj-errorcode-rpc.md)和[通用错误码](../cj-errorcode-universal.md)。
+- BusinessException：对应错误码的详细介绍请参见[RPC错误码](./cj-errorcode-rpc.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1.The number of parameters is incorrect; 2.The parameter type does not match.|
   | 1900004 | Failed to read data from the shared memory.|
 
 **示例：**
@@ -470,7 +457,6 @@ ashmem.readDataFromAshmem(1, 0)
 ### func setProtectionType(UInt32)
 
 ```cangjie
-
 public func setProtectionType(protectionType: UInt32): Unit
 ```
 
@@ -488,11 +474,10 @@ public func setProtectionType(protectionType: UInt32): Unit
 
 **异常：**
 
-- BusinessException：对应错误码的详细介绍请参见[RPC错误码](./cj-errorcode-rpc.md)和[通用错误码](../cj-errorcode-universal.md)。
+- BusinessException：对应错误码的详细介绍请参见[RPC错误码](./cj-errorcode-rpc.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1.The number of parameters is incorrect; 2.The parameter type does not match.|
   | 1900002 | Failed to call ioctl.|
 
 **示例：**
@@ -511,7 +496,6 @@ ashmem.setProtectionType(Ashmem.PROT_READ)
 ### func unmapAshmem()
 
 ```cangjie
-
 public func unmapAshmem(): Unit
 ```
 
@@ -537,7 +521,6 @@ ashmem.unmapAshmem()
 ### func writeDataToAshmem(Array\<Byte>, Int64, Int64)
 
 ```cangjie
-
 public func writeDataToAshmem(buf: Array<Byte>, size: Int64, offset: Int64): Unit
 ```
 
@@ -557,11 +540,10 @@ public func writeDataToAshmem(buf: Array<Byte>, size: Int64, offset: Int64): Uni
 
 **异常：**
 
-- BusinessException：对应错误码的详细介绍请参见[RPC错误码](./cj-errorcode-rpc.md)和[通用错误码](../cj-errorcode-universal.md)。
+- BusinessException：对应错误码的详细介绍请参见[RPC错误码](./cj-errorcode-rpc.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1.The number of parameters is incorrect; 2.The parameter type does not match; 3.Failed to obtain arrayBuffer information.|
   | 1900003 | Failed to write data to the shared memory.|
 
 **示例：**
@@ -592,7 +574,6 @@ public class MessageSequence {}
 ### static func closeFileDescriptor(Int32)
 
 ```cangjie
-
 public static func closeFileDescriptor(fd: Int32): Unit
 ```
 
@@ -634,7 +615,6 @@ MessageSequence.closeFileDescriptor(file.fd)
 ### static func create()
 
 ```cangjie
-
 public static func create(): MessageSequence
 ```
 
@@ -673,7 +653,6 @@ let data = MessageSequence.create()
 ### static func dupFileDescriptor(Int32)
 
 ```cangjie
-
 public static func dupFileDescriptor(fd: Int32): Int32
 ```
 
@@ -697,11 +676,10 @@ public static func dupFileDescriptor(fd: Int32): Int32
 
 **异常：**
 
-- BusinessException：对应错误码的详细介绍请参见[RPC错误码](./cj-errorcode-rpc.md)和[通用错误码](../cj-errorcode-universal.md)。
+- BusinessException：对应错误码的详细介绍请参见[RPC错误码](./cj-errorcode-rpc.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1.The number of parameters is incorrect; 2.The parameter type does not match.|
   | 1900013 | Failed to call dup.|
 
 **示例：**
@@ -722,7 +700,6 @@ MessageSequence.dupFileDescriptor(file.fd)
 ### func containFileDescriptors()
 
 ```cangjie
-
 public func containFileDescriptors(): Bool
 ```
 
@@ -754,7 +731,6 @@ data.containFileDescriptors()
 ### func getCapacity()
 
 ```cangjie
-
 public func getCapacity(): UInt32
 ```
 
@@ -786,7 +762,6 @@ let result = data.getCapacity()
 ### func getRawDataCapacity()
 
 ```cangjie
-
 public func getRawDataCapacity(): UInt32
 ```
 
@@ -818,7 +793,6 @@ data.getRawDataCapacity()
 ### func getReadPosition()
 
 ```cangjie
-
 public func getReadPosition(): UInt32
 ```
 
@@ -850,7 +824,6 @@ let pos = data.getReadPosition()
 ### func getReadableBytes()
 
 ```cangjie
-
 public func getReadableBytes(): UInt32
 ```
 
@@ -882,7 +855,6 @@ let bytes = data.getReadableBytes()
 ### func getSize()
 
 ```cangjie
-
 public func getSize(): UInt32
 ```
 
@@ -914,7 +886,6 @@ let size = data.getSize()
 ### func getWritableBytes()
 
 ```cangjie
-
 public func getWritableBytes(): UInt32
 ```
 
@@ -946,7 +917,6 @@ let bytes = data.getWritableBytes()
 ### func getWritePosition()
 
 ```cangjie
-
 public func getWritePosition(): UInt32
 ```
 
@@ -978,7 +948,6 @@ let pos = data.getWritePosition()
 ### func readAshmem()
 
 ```cangjie
-
 public func readAshmem(): Ashmem
 ```
 
@@ -996,11 +965,10 @@ public func readAshmem(): Ashmem
 
 **异常：**
 
-- BusinessException：对应错误码的详细介绍请参见[RPC错误码](./cj-errorcode-rpc.md)和[通用错误码](../cj-errorcode-universal.md)。
+- BusinessException：对应错误码的详细介绍请参见[RPC错误码](./cj-errorcode-rpc.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | check param failed |
   | 1900004 | Failed to read data from the shared memory.|
 
 **示例：**
@@ -1019,7 +987,6 @@ let ashMem = data.readAshmem()
 ### func readBoolean()
 
 ```cangjie
-
 public func readBoolean(): Bool
 ```
 
@@ -1059,7 +1026,6 @@ data.readBoolean()
 ### func readBooleanArray()
 
 ```cangjie
-
 public func readBooleanArray(): Array<Bool>
 ```
 
@@ -1099,7 +1065,6 @@ data.readBooleanArray()
 ### func readByte()
 
 ```cangjie
-
 public func readByte(): Int8
 ```
 
@@ -1139,7 +1104,6 @@ data.readByte()
 ### func readByteArray()
 
 ```cangjie
-
 public func readByteArray(): Array<Int8>
 ```
 
@@ -1153,7 +1117,7 @@ public func readByteArray(): Array<Int8>
 
 |类型|说明|
 |:----|:----|
-|Array\<Int8>|返回字节数组。>|
+|Array\<Int8>|返回字节数组。|
 
 **异常：**
 
@@ -1179,7 +1143,6 @@ data.readByteArray()
 ### func readChar()
 
 ```cangjie
-
 public func readChar(): UInt8
 ```
 
@@ -1193,7 +1156,7 @@ public func readChar(): UInt8
 
 |类型|说明|
 |:----|:----|
-|UInt8|返回单个字符数组。|
+|UInt8|返回单个字符值。|
 
 **异常：**
 
@@ -1219,7 +1182,6 @@ data.readChar()
 ### func readCharArray()
 
 ```cangjie
-
 public func readCharArray(): Array<UInt8>
 ```
 
@@ -1259,7 +1221,6 @@ data.readCharArray()
 ### func readDouble()
 
 ```cangjie
-
 public func readDouble(): Float64
 ```
 
@@ -1299,7 +1260,6 @@ data.readDouble()
 ### func readDoubleArray()
 
 ```cangjie
-
 public func readDoubleArray(): Array<Float64>
 ```
 
@@ -1340,7 +1300,6 @@ data.readDoubleArray()
 ### func readException()
 
 ```cangjie
-
 public func readException(): Unit
 ```
 
@@ -1374,7 +1333,6 @@ data.readException()
 ### func readFileDescriptor()
 
 ```cangjie
-
 public func readFileDescriptor(): Int32
 ```
 
@@ -1414,7 +1372,6 @@ data.readFileDescriptor()
 ### func readFloat()
 
 ```cangjie
-
 public func readFloat(): Float32
 ```
 
@@ -1454,7 +1411,6 @@ data.readFloat()
 ### func readFloatArray()
 
 ```cangjie
-
 public func readFloatArray(): Array<Float32>
 ```
 
@@ -1494,7 +1450,6 @@ data.readFloatArray()
 ### func readInt()
 
 ```cangjie
-
 public func readInt(): Int32
 ```
 
@@ -1508,7 +1463,7 @@ public func readInt(): Int32
 
 |类型|说明|
 |:----|:----|
-|Int32|返回整数值。>|
+|Int32|返回整数值。|
 
 **异常：**
 
@@ -1534,7 +1489,6 @@ data.readInt()
 ### func readIntArray()
 
 ```cangjie
-
 public func readIntArray(): Array<Int32>
 ```
 
@@ -1574,7 +1528,6 @@ data.readIntArray()
 ### func readInterfaceToken()
 
 ```cangjie
-
 public func readInterfaceToken(): String
 ```
 
@@ -1614,7 +1567,6 @@ data.readInterfaceToken()
 ### func readLong()
 
 ```cangjie
-
 public func readLong(): Int64
 ```
 
@@ -1654,7 +1606,6 @@ data.readLong()
 ### func readLongArray()
 
 ```cangjie
-
 public func readLongArray(): Array<Int64>
 ```
 
@@ -1694,7 +1645,6 @@ data.readLongArray()
 ### func readParcelable\<T>(T) where T \<: Parcelable
 
 ```cangjie
-
 public func readParcelable<T>(dataIn: T): Unit where T <: Parcelable
 ```
 
@@ -1712,11 +1662,10 @@ public func readParcelable<T>(dataIn: T): Unit where T <: Parcelable
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[RPC错误码](./cj-errorcode-rpc.md)和[通用错误码](../cj-errorcode-universal.md)。
+- BusinessException：对应错误码如下表，详见[RPC错误码](./cj-errorcode-rpc.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1.The number of parameters is incorrect.|
   | 1900010 | Failed to read data from the message sequence.|
   | 1900012 | Failed to call the JS callback function.|
 
@@ -1762,7 +1711,6 @@ data.readParcelable(ret)
 ### func readParcelableArray\<T>(Array\<T>) where T \<: Parcelable
 
 ```cangjie
-
 public func readParcelableArray<T>(parcelableArray: Array<T>): Unit where T <: Parcelable
 ```
 
@@ -1780,11 +1728,10 @@ public func readParcelableArray<T>(parcelableArray: Array<T>): Unit where T <: P
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[RPC错误码](./cj-errorcode-rpc.md)和[通用错误码](../cj-errorcode-universal.md)。
+- BusinessException：对应错误码如下表，详见[RPC错误码](./cj-errorcode-rpc.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1.The parameter is an empty array; 2.The number of parameters is incorrect; 3.The parameter type does not match; 4.The length of the array passed when reading is not equal to the length passed when writing to the array; 5.The element does not exist in the array.|
   | 1900010 | Failed to read data from the message sequence.|
   | 1900012 | Failed to call the JS callback function.|
 
@@ -1832,7 +1779,6 @@ data.readParcelableArray(ret)
 ### func readRawDataBuffer(Int64)
 
 ```cangjie
-
 public func readRawDataBuffer(size: Int64): Array<Byte>
 ```
 
@@ -1856,11 +1802,10 @@ public func readRawDataBuffer(size: Int64): Array<Byte>
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[RPC错误码](./cj-errorcode-rpc.md)和[通用错误码](../cj-errorcode-universal.md)。
+- BusinessException：对应错误码如下表，详见[RPC错误码](./cj-errorcode-rpc.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1.The number of parameters is incorrect; 2.The parameter type does not match.|
   | 1900010 | Failed to read data from the message sequence.|
 
 **示例：**
@@ -1879,7 +1824,6 @@ data.readRawDataBuffer(1)
 ### func readShort()
 
 ```cangjie
-
 public func readShort(): Int16
 ```
 
@@ -1919,7 +1863,6 @@ data.readShort()
 ### func readShortArray()
 
 ```cangjie
-
 public func readShortArray(): Array<Int16>
 ```
 
@@ -1959,7 +1902,6 @@ data.readShortArray()
 ### func readString()
 
 ```cangjie
-
 public func readString(): String
 ```
 
@@ -1999,7 +1941,6 @@ data.readString()
 ### func readStringArray()
 
 ```cangjie
-
 public func readStringArray(): Array<String>
 ```
 
@@ -2039,7 +1980,6 @@ data.readStringArray()
 ### func readUInt16Array()
 
 ```cangjie
-
 public func readUInt16Array(): Array<UInt16>
 ```
 
@@ -2057,11 +1997,10 @@ public func readUInt16Array(): Array<UInt16>
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[RPC错误码](./cj-errorcode-rpc.md)和[通用错误码](../cj-errorcode-universal.md)。
+- BusinessException：对应错误码如下表，详见[RPC错误码](./cj-errorcode-rpc.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1.The number of parameters is incorrect; 2.The parameter type does not match; 3.The obtained value of typeCode is incorrect; |
   | 1900010 | Failed to read data from the message sequence.|
 
 **示例：**
@@ -2080,7 +2019,6 @@ data.readUInt16Array()
 ### func readUInt32Array()
 
 ```cangjie
-
 public func readUInt32Array(): Array<UInt32>
 ```
 
@@ -2098,11 +2036,10 @@ public func readUInt32Array(): Array<UInt32>
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[RPC错误码](./cj-errorcode-rpc.md)和[通用错误码](../cj-errorcode-universal.md)。
+- BusinessException：对应错误码如下表，详见[RPC错误码](./cj-errorcode-rpc.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1.The number of parameters is incorrect; 2.The parameter type does not match; 3.The obtained value of typeCode is incorrect; |
   | 1900010 | Failed to read data from the message sequence.|
 
 **示例：**
@@ -2121,7 +2058,6 @@ data.readUInt32Array()
 ### func readUInt64Array()
 
 ```cangjie
-
 public func readUInt64Array(): Array<UInt64>
 ```
 
@@ -2139,11 +2075,10 @@ public func readUInt64Array(): Array<UInt64>
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[RPC错误码](./cj-errorcode-rpc.md)和[通用错误码](../cj-errorcode-universal.md)。
+- BusinessException：对应错误码如下表，详见[RPC错误码](./cj-errorcode-rpc.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1.The number of parameters is incorrect; 2.The parameter type does not match; 3.The obtained value of typeCode is incorrect; |
   | 1900010 | Failed to read data from the message sequence.|
 
 **示例：**
@@ -2162,7 +2097,6 @@ data.readUInt64Array()
 ### func readUInt8Array()
 
 ```cangjie
-
 public func readUInt8Array(): Array<UInt8>
 ```
 
@@ -2180,11 +2114,10 @@ public func readUInt8Array(): Array<UInt8>
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[RPC错误码](./cj-errorcode-rpc.md)和[通用错误码](../cj-errorcode-universal.md)。
+- BusinessException：对应错误码如下表，详见[RPC错误码](./cj-errorcode-rpc.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1.The number of parameters is incorrect; 2.The parameter type does not match; 3.The obtained value of typeCode is incorrect; |
   | 1900010 | Failed to read data from the message sequence.|
 
 **示例：**
@@ -2203,7 +2136,6 @@ data.readUInt8Array()
 ### func reclaim()
 
 ```cangjie
-
 public func reclaim(): Unit
 ```
 
@@ -2229,7 +2161,6 @@ data.reclaim()
 ### func rewindRead(UInt32)
 
 ```cangjie
-
 public func rewindRead(pos: UInt32): Unit
 ```
 
@@ -2247,11 +2178,10 @@ public func rewindRead(pos: UInt32): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[RPC错误码](./cj-errorcode-rpc.md)和[通用错误码](../cj-errorcode-universal.md)。
+- BusinessException：对应错误码如下表，详见[RPC错误码](./cj-errorcode-rpc.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1.The number of parameters is incorrect; 2.The parameter type does not match.|
   | 1900010 | Failed to read data from the message sequence.|
 
 **示例：**
@@ -2270,7 +2200,6 @@ data.rewindRead(0)
 ### func rewindWrite(UInt32)
 
 ```cangjie
-
 public func rewindWrite(pos: UInt32): Unit
 ```
 
@@ -2288,11 +2217,10 @@ public func rewindWrite(pos: UInt32): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[RPC错误码](./cj-errorcode-rpc.md)和[通用错误码](../cj-errorcode-universal.md)。
+- BusinessException：对应错误码如下表，详见[RPC错误码](./cj-errorcode-rpc.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1.The number of parameters is incorrect; 2.The parameter type does not match.|
   | 1900009 | Failed to write data to the message sequence.|
 
 **示例：**
@@ -2311,7 +2239,6 @@ data.rewindWrite(0)
 ### func setCapacity(UInt32)
 
 ```cangjie
-
 public func setCapacity(size: UInt32): Unit
 ```
 
@@ -2329,11 +2256,10 @@ public func setCapacity(size: UInt32): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[RPC错误码](./cj-errorcode-rpc.md)和[通用错误码](../cj-errorcode-universal.md)。
+- BusinessException：对应错误码如下表，详见[RPC错误码](./cj-errorcode-rpc.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1.The number of parameters is incorrect; 2.The parameter type does not match.|
   | 1900011 | Memory allocation failed.|
   | 1900009 | Failed to write data to the message sequence.|
 
@@ -2353,7 +2279,6 @@ data.setCapacity(100)
 ### func setSize(UInt32)
 
 ```cangjie
-
 public func setSize(size: UInt32): Unit
 ```
 
@@ -2371,11 +2296,10 @@ public func setSize(size: UInt32): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[RPC错误码](./cj-errorcode-rpc.md)和[通用错误码](../cj-errorcode-universal.md)。
+- BusinessException：对应错误码如下表，详见[RPC错误码](./cj-errorcode-rpc.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1.The number of parameters is incorrect; 2.The parameter type does not match.|
   | 1900009 | Failed to write data to the message sequence.|
 
 **示例：**
@@ -2394,7 +2318,6 @@ data.setSize(16)
 ### func writeAshmem(Ashmem)
 
 ```cangjie
-
 public func writeAshmem(ashmem: Ashmem): Unit
 ```
 
@@ -2412,11 +2335,10 @@ public func writeAshmem(ashmem: Ashmem): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[RPC错误码](./cj-errorcode-rpc.md)和[通用错误码](../cj-errorcode-universal.md)。
+- BusinessException：对应错误码如下表，详见[RPC错误码](./cj-errorcode-rpc.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1.The number of parameters is incorrect; 2.The parameter is not an instance of the Ashmem object.|
   | 1900003 | Failed to write data to the shared memory.|
 
 **示例：**
@@ -2436,7 +2358,6 @@ data.writeAshmem(ashmem)
 ### func writeBoolean(Bool)
 
 ```cangjie
-
 public func writeBoolean(val: Bool): Unit
 ```
 
@@ -2454,11 +2375,10 @@ public func writeBoolean(val: Bool): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[RPC错误码](./cj-errorcode-rpc.md)和[通用错误码](../cj-errorcode-universal.md)。
+- BusinessException：对应错误码如下表，详见[RPC错误码](./cj-errorcode-rpc.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1.The number of parameters is incorrect; 2.The parameter type does not match.|
   | 1900009 | Failed to write data to the message sequence.|
 
 **示例：**
@@ -2477,7 +2397,6 @@ data.writeBoolean(false)
 ### func writeBooleanArray(Array\<Bool>)
 
 ```cangjie
-
 public func writeBooleanArray(booleanArray: Array<Bool>): Unit
 ```
 
@@ -2495,11 +2414,10 @@ public func writeBooleanArray(booleanArray: Array<Bool>): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[RPC错误码](./cj-errorcode-rpc.md)和[通用错误码](../cj-errorcode-universal.md)。
+- BusinessException：对应错误码如下表，详见[RPC错误码](./cj-errorcode-rpc.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1.The parameter is an empty array; 2.The number of parameters is incorrect; 3.The parameter type does not match; 4.The element does not exist in the array.|
   | 1900009 | Failed to write data to the message sequence.|
 
 **示例：**
@@ -2518,7 +2436,6 @@ data.writeBooleanArray([false, true, false])
 ### func writeByte(Int8)
 
 ```cangjie
-
 public func writeByte(val: Int8): Unit
 ```
 
@@ -2536,11 +2453,10 @@ public func writeByte(val: Int8): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[RPC错误码](./cj-errorcode-rpc.md)和[通用错误码](../cj-errorcode-universal.md)。
+- BusinessException：对应错误码如下表，详见[RPC错误码](./cj-errorcode-rpc.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1.The number of parameters is incorrect; 2.The parameter type does not match.|
   | 1900009 | Failed to write data to the message sequence.|
 
 **示例：**
@@ -2559,7 +2475,6 @@ data.writeByte(2)
 ### func writeByteArray(Array\<Int8>)
 
 ```cangjie
-
 public func writeByteArray(byteArray: Array<Int8>): Unit
 ```
 
@@ -2577,11 +2492,10 @@ public func writeByteArray(byteArray: Array<Int8>): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[RPC错误码](./cj-errorcode-rpc.md)和[通用错误码](../cj-errorcode-universal.md)。
+- BusinessException：对应错误码如下表，详见[RPC错误码](./cj-errorcode-rpc.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1.The parameter is an empty array; 2.The number of parameters is incorrect; 3.The parameter type does not match; 4.The element does not exist in the array. 5.The type of the element in the array is incorrect.|
   | 1900009 | Failed to write data to the message sequence.|
 
 **示例：**
@@ -2600,7 +2514,6 @@ data.writeByteArray([1])
 ### func writeChar(UInt8)
 
 ```cangjie
-
 public func writeChar(val: UInt8): Unit
 ```
 
@@ -2618,11 +2531,10 @@ public func writeChar(val: UInt8): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[RPC错误码](./cj-errorcode-rpc.md)和[通用错误码](../cj-errorcode-universal.md)。
+- BusinessException：对应错误码如下表，详见[RPC错误码](./cj-errorcode-rpc.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1.The number of parameters is incorrect; 2.The parameter type does not match.|
   | 1900009 | Failed to write data to the message sequence.|
 
 **示例：**
@@ -2641,7 +2553,6 @@ data.writeChar(97)
 ### func writeCharArray(Array\<UInt8>)
 
 ```cangjie
-
 public func writeCharArray(charArray: Array<UInt8>): Unit
 ```
 
@@ -2659,11 +2570,10 @@ public func writeCharArray(charArray: Array<UInt8>): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
+- BusinessException：对应错误码如下表，详见[RPC错误码](./cj-errorcode-rpc.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1.The parameter is an empty array; 2.The number of parameters is incorrect; 3.The parameter type does not match; 4.The element does not exist in the array.|
   | 1900009 | Failed to write data to the message sequence.|
 
 **示例：**
@@ -2682,7 +2592,6 @@ data.writeCharArray([97, 98, 88])
 ### func writeDouble(Float64)
 
 ```cangjie
-
 public func writeDouble(val: Float64): Unit
 ```
 
@@ -2700,11 +2609,10 @@ public func writeDouble(val: Float64): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[RPC错误码](./cj-errorcode-rpc.md)和[通用错误码](../cj-errorcode-universal.md)。
+- BusinessException：对应错误码如下表，详见[RPC错误码](./cj-errorcode-rpc.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1.The number of parameters is incorrect; 2.The parameter type does not match.|
   | 1900009 | Failed to write data to the message sequence.|
 
 **示例：**
@@ -2723,7 +2631,6 @@ data.writeDouble(10.2)
 ### func writeDoubleArray(Array\<Float64>)
 
 ```cangjie
-
 public func writeDoubleArray(doubleArray: Array<Float64>): Unit
 ```
 
@@ -2741,11 +2648,10 @@ public func writeDoubleArray(doubleArray: Array<Float64>): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[RPC错误码](./cj-errorcode-rpc.md)和[通用错误码](../cj-errorcode-universal.md)。
+- BusinessException：对应错误码如下表，详见[RPC错误码](./cj-errorcode-rpc.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1.The parameter is an empty array; 2.The number of parameters is incorrect; 3.The parameter type does not match; 4.The element does not exist in the array; 5.The type of the element in the array is incorrect.|
   | 1900009 | Failed to write data to the message sequence.|
 
 **示例：**
@@ -2764,7 +2670,6 @@ data.writeDoubleArray([1.1])
 ### func writeFileDescriptor(Int32)
 
 ```cangjie
-
 public func writeFileDescriptor(fd: Int32): Unit
 ```
 
@@ -2782,11 +2687,10 @@ public func writeFileDescriptor(fd: Int32): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[RPC错误码](./cj-errorcode-rpc.md)和[通用错误码](../cj-errorcode-universal.md)。
+- BusinessException：对应错误码如下表，详见[RPC错误码](./cj-errorcode-rpc.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1.The number of parameters is incorrect; 2.The parameter type does not match.|
   | 1900009 | Failed to write data to the message sequence.|
 
 **示例：**
@@ -2808,7 +2712,6 @@ data.writeFileDescriptor(file.fd)
 ### func writeFloat(Float32)
 
 ```cangjie
-
 public func writeFloat(val: Float32): Unit
 ```
 
@@ -2826,11 +2729,10 @@ public func writeFloat(val: Float32): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[RPC错误码](./cj-errorcode-rpc.md)和[通用错误码](../cj-errorcode-universal.md)。
+- BusinessException：对应错误码如下表，详见[RPC错误码](./cj-errorcode-rpc.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1.The number of parameters is incorrect; 2.The parameter type does not match.|
   | 1900009 | Failed to write data to the message sequence.|
 
 **示例：**
@@ -2849,11 +2751,10 @@ data.writeFloat(1.2)
 ### func writeFloatArray(Array\<Float32>)
 
 ```cangjie
-
 public func writeFloatArray(floatArray: Array<Float32>): Unit
 ```
 
-**功能：** 将Array\<Float32>类型数据写入MessageSequence对象。
+**功能：** 将浮点数组类型数据写入MessageSequence对象。
 
 **系统能力：** SystemCapability.Communication.IPC.Core
 
@@ -2867,11 +2768,10 @@ public func writeFloatArray(floatArray: Array<Float32>): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[RPC错误码](./cj-errorcode-rpc.md)和[通用错误码](../cj-errorcode-universal.md)。
+- BusinessException：对应错误码如下表，详见[RPC错误码](./cj-errorcode-rpc.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1.The parameter is an empty array; 2.The number of parameters is incorrect; 3.The parameter type does not match; 4.The element does not exist in the array; 5.The type of the element in the array is incorrect.|
   | 1900009 | Failed to write data to the message sequence.|
 
 **示例：**
@@ -2890,7 +2790,6 @@ data.writeFloatArray([1.1])
 ### func writeInt(Int32)
 
 ```cangjie
-
 public func writeInt(val: Int32): Unit
 ```
 
@@ -2908,11 +2807,10 @@ public func writeInt(val: Int32): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[RPC错误码](./cj-errorcode-rpc.md)和[通用错误码](../cj-errorcode-universal.md)。。
+- BusinessException：对应错误码如下表，详见[RPC错误码](./cj-errorcode-rpc.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1.The number of parameters is incorrect; 2.The parameter type does not match.|
   | 1900009 | Failed to write data to the message sequence.|
 
 **示例：**
@@ -2931,7 +2829,6 @@ data.writeInt(10)
 ### func writeIntArray(Array\<Int32>)
 
 ```cangjie
-
 public func writeIntArray(intArray: Array<Int32>): Unit
 ```
 
@@ -2949,11 +2846,10 @@ public func writeIntArray(intArray: Array<Int32>): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[RPC错误码](./cj-errorcode-rpc.md)和[通用错误码](../cj-errorcode-universal.md)。
+- BusinessException：对应错误码如下表，详见[RPC错误码](./cj-errorcode-rpc.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1.The parameter is an empty array; 2.The number of parameters is incorrect; 3.The parameter type does not match; 4.The element does not exist in the array; 5.The type of the element in the array is incorrect.|
   | 1900009 | Failed to write data to the message sequence.|
 
 **示例：**
@@ -2972,7 +2868,6 @@ data.writeIntArray([1])
 ### func writeInterfaceToken(String)
 
 ```cangjie
-
 public func writeInterfaceToken(token: String): Unit
 ```
 
@@ -2990,11 +2885,10 @@ public func writeInterfaceToken(token: String): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[RPC错误码](./cj-errorcode-rpc.md)和[通用错误码](../cj-errorcode-universal.md)。
+- BusinessException：对应错误码如下表，详见[RPC错误码](./cj-errorcode-rpc.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1.The number of parameters is incorrect; 2.The parameter type does not match; 3.The String length exceeds 40960 bytes; 4.The number of bytes copied to the buffer is different from the length of the obtained String.|
   | 1900009 | Failed to write data to the message sequence.|
 
 **示例：**
@@ -3013,7 +2907,6 @@ data.writeInterfaceToken("aaa")
 ### func writeLong(Int64)
 
 ```cangjie
-
 public func writeLong(val: Int64): Unit
 ```
 
@@ -3031,11 +2924,10 @@ public func writeLong(val: Int64): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[RPC错误码](./cj-errorcode-rpc.md)和[通用错误码](../cj-errorcode-universal.md)。
+- BusinessException：对应错误码如下表，详见[RPC错误码](./cj-errorcode-rpc.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1.The number of parameters is incorrect; 2.The parameter type does not match.|
   | 1900009 | Failed to write data to the message sequence.|
 
 **示例：**
@@ -3054,7 +2946,6 @@ data.writeLong(10000)
 ### func writeLongArray(Array\<Int64>)
 
 ```cangjie
-
 public func writeLongArray(longArray: Array<Int64>): Unit
 ```
 
@@ -3072,11 +2963,10 @@ public func writeLongArray(longArray: Array<Int64>): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[RPC错误码](./cj-errorcode-rpc.md)和[通用错误码](../cj-errorcode-universal.md)。
+- BusinessException：对应错误码如下表，详见[RPC错误码](./cj-errorcode-rpc.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1.The parameter is an empty array; 2.The number of parameters is incorrect; 3.The parameter type does not match; 4.The element does not exist in the array; 5.The type of the element in the array is incorrect.|
   | 1900009 | Failed to write data to the message sequence.|
 
 **示例：**
@@ -3095,7 +2985,6 @@ data.writeLongArray([1])
 ### func writeNoException()
 
 ```cangjie
-
 public func writeNoException(): Unit
 ```
 
@@ -3129,7 +3018,6 @@ data.writeNoException()
 ### func writeParcelable\<T>(T) where T \<: Parcelable
 
 ```cangjie
-
 public func writeParcelable<T>(val: T): Unit where T <: Parcelable
 ```
 
@@ -3147,11 +3035,10 @@ public func writeParcelable<T>(val: T): Unit where T <: Parcelable
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[RPC错误码](./cj-errorcode-rpc.md)和[通用错误码](../cj-errorcode-universal.md)。
+- BusinessException：对应错误码如下表，详见[RPC错误码](./cj-errorcode-rpc.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1.The number of parameters is incorrect; 2.The parameter type does not match.|
   | 1900009 | Failed to write data to the message sequence.|
 
 **示例：**
@@ -3196,7 +3083,6 @@ data.readParcelable(ret)
 ### func writeParcelableArray\<T>(Array\<T>) where T \<: Parcelable
 
 ```cangjie
-
 public func writeParcelableArray<T>(parcelableArray: Array<T>): Unit where T <: Parcelable
 ```
 
@@ -3214,11 +3100,10 @@ public func writeParcelableArray<T>(parcelableArray: Array<T>): Unit where T <: 
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[RPC错误码](./cj-errorcode-rpc.md)和[通用错误码](../cj-errorcode-universal.md)。
+- BusinessException：对应错误码如下表，详见[RPC错误码](./cj-errorcode-rpc.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1.The parameter is an empty array; 2.The number of parameters is incorrect; 3.The parameter type does not match; 4.The element does not exist in the array.|
   | 1900009 | Failed to write data to the message sequence.|
 
 **示例：**
@@ -3265,7 +3150,6 @@ data.readParcelableArray(ret)
 ### func writeRawDataBuffer(Array\<Byte>, Int64)
 
 ```cangjie
-
 public func writeRawDataBuffer(rawData: Array<Byte>, size: Int64): Unit
 ```
 
@@ -3284,11 +3168,10 @@ public func writeRawDataBuffer(rawData: Array<Byte>, size: Int64): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[RPC错误码](./cj-errorcode-rpc.md)和[通用错误码](../cj-errorcode-universal.md)。
+- BusinessException：对应错误码如下表，详见[RPC错误码](./cj-errorcode-rpc.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1.The number of parameters is incorrect; 2.The parameter type does not match; 3.Failed to obtain array information; 4.The transferred size cannot be obtained; 5.The transferred size is less than or equal to 0; 6.The transferred size is greater than the byte length of rawData.|
   | 1900009 | Failed to write data to the message sequence.|
 
 **示例：**
@@ -3307,7 +3190,6 @@ data.writeRawDataBuffer([1], 1)
 ### func writeShort(Int16)
 
 ```cangjie
-
 public func writeShort(val: Int16): Unit
 ```
 
@@ -3325,11 +3207,10 @@ public func writeShort(val: Int16): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[RPC错误码](./cj-errorcode-rpc.md)和[通用错误码](../cj-errorcode-universal.md)。
+- BusinessException：对应错误码如下表，详见[RPC错误码](./cj-errorcode-rpc.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1.The number of parameters is incorrect; 2.The parameter type does not match.|
   | 1900009 | Failed to write data to the message sequence.|
 
 **示例：**
@@ -3348,7 +3229,6 @@ data.writeShort(8)
 ### func writeShortArray(Array\<Int16>)
 
 ```cangjie
-
 public func writeShortArray(shortArray: Array<Int16>): Unit
 ```
 
@@ -3366,11 +3246,10 @@ public func writeShortArray(shortArray: Array<Int16>): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[RPC错误码](./cj-errorcode-rpc.md)和[通用错误码](../cj-errorcode-universal.md)。
+- BusinessException：对应错误码如下表，详见[RPC错误码](./cj-errorcode-rpc.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1.The parameter is an empty array; 2.The number of parameters is incorrect; 3.The parameter type does not match; 4.The element does not exist in the array; 5.The type of the element in the array is incorrect.|
   | 1900009 | Failed to write data to the message sequence.|
 
 **示例：**
@@ -3389,7 +3268,6 @@ data.writeShortArray([1])
 ### func writeString(String)
 
 ```cangjie
-
 public func writeString(val: String): Unit
 ```
 
@@ -3407,11 +3285,10 @@ public func writeString(val: String): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[RPC错误码](./cj-errorcode-rpc.md)和[通用错误码](../cj-errorcode-universal.md)。
+- BusinessException：对应错误码如下表，详见[RPC错误码](./cj-errorcode-rpc.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1.The number of parameters is incorrect; 2.The parameter type does not match; 3.The String length exceeds 40960 bytes; 4.The number of bytes copied to the buffer is different from the length of the obtained String.|
   | 1900009 | Failed to write data to the message sequence.|
 
 **示例：**
@@ -3430,7 +3307,6 @@ data.writeString('abc')
 ### func writeStringArray(Array\<String>)
 
 ```cangjie
-
 public func writeStringArray(stringArray: Array<String>): Unit
 ```
 
@@ -3448,11 +3324,10 @@ public func writeStringArray(stringArray: Array<String>): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[RPC错误码](./cj-errorcode-rpc.md)和[通用错误码](../cj-errorcode-universal.md)。
+- BusinessException：对应错误码如下表，详见[RPC错误码](./cj-errorcode-rpc.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1.The parameter is an empty array; 2.The number of parameters is incorrect; 3.The parameter type does not match; 4.The String length exceeds 40960 bytes; 5.The number of bytes copied to the buffer is different from the length of the obtained String.|
   | 1900009 | Failed to write data to the message sequence.|
 
 **示例：**
@@ -3471,7 +3346,6 @@ data.writeStringArray(["abc", "def"])
 ### func writeUInt16Array(Array\<UInt16>)
 
 ```cangjie
-
 public func writeUInt16Array(buf: Array<UInt16>): Unit
 ```
 
@@ -3489,11 +3363,10 @@ public func writeUInt16Array(buf: Array<UInt16>): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[RPC错误码](./cj-errorcode-rpc.md)和[通用错误码](../cj-errorcode-universal.md)。
+- BusinessException：对应错误码如下表，详见[RPC错误码](./cj-errorcode-rpc.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1.The parameter is an empty array; 2.The number of parameters is incorrect; 3.The parameter type does not match; 4.The obtained value of typeCode is incorrect; 5.Failed to obtain array information.|
   | 1900009 | Failed to write data to the message sequence.|
 
 **示例：**
@@ -3512,7 +3385,6 @@ data.writeUInt16Array([1])
 ### func writeUInt32Array(Array\<UInt32>)
 
 ```cangjie
-
 public func writeUInt32Array(buf: Array<UInt32>): Unit
 ```
 
@@ -3530,11 +3402,10 @@ public func writeUInt32Array(buf: Array<UInt32>): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[RPC错误码](./cj-errorcode-rpc.md)和[通用错误码](../cj-errorcode-universal.md)。
+- BusinessException：对应错误码如下表，详见[RPC错误码](./cj-errorcode-rpc.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1.The parameter is an empty array; 2.The number of parameters is incorrect; 3.The parameter type does not match; 4.The obtained value of typeCode is incorrect; 5.Failed to obtain array information.|
   | 1900009 | Failed to write data to the message sequence.|
 
 **示例：**
@@ -3553,7 +3424,6 @@ data.writeUInt32Array([1])
 ### func writeUInt64Array(Array\<UInt64>)
 
 ```cangjie
-
 public func writeUInt64Array(buf: Array<UInt64>): Unit
 ```
 
@@ -3571,11 +3441,10 @@ public func writeUInt64Array(buf: Array<UInt64>): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[RPC错误码](./cj-errorcode-rpc.md)和[通用错误码](../cj-errorcode-universal.md)。
+- BusinessException：对应错误码如下表，详见[RPC错误码](./cj-errorcode-rpc.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1.The parameter is an empty array; 2.The number of parameters is incorrect; 3.The parameter type does not match; 4.The obtained value of typeCode is incorrect; 5.Failed to obtain array information.|
   | 1900009 | Failed to write data to the message sequence.|
 
 **示例：**
@@ -3594,7 +3463,6 @@ data.writeUInt64Array([1])
 ### func writeUInt8Array(Array\<UInt8>)
 
 ```cangjie
-
 public func writeUInt8Array(buf: Array<UInt8>): Unit
 ```
 
@@ -3612,11 +3480,10 @@ public func writeUInt8Array(buf: Array<UInt8>): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[RPC错误码](./cj-errorcode-rpc.md)和[通用错误码](../cj-errorcode-universal.md)。
+- BusinessException：对应错误码如下表，详见[RPC错误码](./cj-errorcode-rpc.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1.The parameter is an empty array; 2.The number of parameters is incorrect; 3.The parameter type does not match; 4.The obtained value of typeCode is incorrect; 5.Failed to obtain array information.|
   | 1900009 | Failed to write data to the message sequence.|
 
 **示例：**

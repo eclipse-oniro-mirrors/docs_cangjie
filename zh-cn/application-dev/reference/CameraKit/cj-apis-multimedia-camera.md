@@ -2310,7 +2310,6 @@ public func off(eventType: CameraEvents, camera: CameraDevice, callback: Callbac
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | The parameter check failed. |
   | 7400201 | Camera service fatal error. |
 
 **示例：**
@@ -2354,7 +2353,6 @@ public func off(eventType: CameraEvents, camera: CameraDevice): Unit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | The parameter check failed. |
   | 7400201 | Camera service fatal error. |
 
 **示例：**
@@ -2403,7 +2401,6 @@ public func on(eventType: CameraEvents, camera: CameraDevice, callback: Callback
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | The parameter check failed. |
   | 7400201 | Camera service fatal error. |
 
 **示例：**
@@ -3238,7 +3235,6 @@ public func off(eventType: CameraEvents, callback: Callback1Argument<CameraStatu
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | The parameter check failed. |
   | 7400201 | Camera service fatal error. |
 
 **示例：**
@@ -3280,7 +3276,6 @@ public func off(eventType: CameraEvents, callback: Callback1Argument<FoldStatusI
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | The parameter check failed. |
   | 7400201 | Camera service fatal error. |
 
 **示例：**
@@ -3322,7 +3317,6 @@ public func off(eventType: CameraEvents, callback: Callback1Argument<TorchStatus
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | The parameter check failed. |
   | 7400201 | Camera service fatal error. |
 
 **示例：**
@@ -3363,7 +3357,6 @@ public func off(eventType: CameraEvents): Unit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | The parameter check failed. |
   | 7400201 | Camera service fatal error. |
 
 **示例：**
@@ -3409,7 +3402,6 @@ public func on(eventType: CameraEvents, callback: Callback1Argument<CameraStatus
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | The parameter check failed. |
   | 7400201 | Camera service fatal error. |
 
 **示例：**
@@ -3467,7 +3459,6 @@ public func on(eventType: CameraEvents, callback: Callback1Argument<FoldStatusIn
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | The parameter check failed. |
   | 7400201 | Camera service fatal error. |
 
 **示例：**
@@ -3525,7 +3516,6 @@ public func on(eventType: CameraEvents, callback: Callback1Argument<TorchStatusI
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | The parameter check failed. |
   | 7400201 | Camera service fatal error. |
 
 **示例：**
@@ -4635,7 +4625,6 @@ public func off(eventType: CameraEvents, callback: Callback1Argument<CaptureStar
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | The parameter check failed. |
   | 7400201 | Camera service fatal error. |
 
 **示例：**
@@ -4681,7 +4670,6 @@ public func off(eventType: CameraEvents, callback: Callback1Argument<FrameShutte
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | The parameter check failed. |
   | 7400201 | Camera service fatal error. |
 
 **示例：**
@@ -4727,7 +4715,6 @@ public func off(eventType: CameraEvents, callback: Callback1Argument<CaptureEndI
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | The parameter check failed. |
   | 7400201 | Camera service fatal error. |
 
 **示例：**
@@ -4773,7 +4760,6 @@ public func off(eventType: CameraEvents, callback: Callback1Argument<FrameShutte
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | The parameter check failed. |
   | 7400201 | Camera service fatal error. |
 
 **示例：**
@@ -4819,7 +4805,6 @@ public func off(eventType: CameraEvents, callback: Callback0Argument): Unit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | The parameter check failed. |
   | 7400201 | Camera service fatal error. |
 
 **示例：**
@@ -4865,7 +4850,6 @@ public func off(eventType: CameraEvents, callback: Callback1Argument<Float64>): 
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | The parameter check failed. |
   | 7400201 | Camera service fatal error. |
 
 **示例：**
@@ -4910,7 +4894,6 @@ public func off(eventType: CameraEvents): Unit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | The parameter check failed. |
   | 7400201 | Camera service fatal error. |
 
 **示例：**
@@ -4960,7 +4943,6 @@ public func on(eventType: CameraEvents, callback: Callback1Argument<CaptureStart
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | The parameter check failed. |
   | 7400201 | Camera service fatal error. |
 
 **示例：**
@@ -5022,7 +5004,6 @@ public func on(eventType: CameraEvents, callback: Callback1Argument<FrameShutter
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | The parameter check failed. |
   | 7400201 | Camera service fatal error. |
 
 **示例：**
@@ -5084,7 +5065,6 @@ public func on(eventType: CameraEvents, callback: Callback1Argument<CaptureEndIn
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | The parameter check failed. |
   | 7400201 | Camera service fatal error. |
 
 **示例：**
@@ -5146,7 +5126,6 @@ public func on(eventType: CameraEvents, callback: Callback1Argument<FrameShutter
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | The parameter check failed. |
   | 7400201 | Camera service fatal error. |
 
 **示例：**
@@ -5208,7 +5187,6 @@ public func on(eventType: CameraEvents, callback: Callback0Argument): Unit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | The parameter check failed. |
   | 7400201 | Camera service fatal error. |
 
 **示例：**
@@ -5270,7 +5248,6 @@ public func on(eventType: CameraEvents, callback: Callback1Argument<Float64>): U
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | The parameter check failed. |
   | 7400201 | Camera service fatal error. |
 
 **示例：**
@@ -5585,7 +5562,6 @@ public func off(eventType: CameraEvents): Unit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | The parameter check failed. |
 
 **示例：**
 
@@ -6130,7 +6106,6 @@ public func off(eventType: CameraEvents, callback: Callback0Argument): Unit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | The parameter check failed. |
   | 7400201 | Camera service fatal error. |
 
 **示例：**
@@ -6181,7 +6156,7 @@ public func off(eventType: CameraEvents): Unit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | The parameter check failed. |
+  
   | 7400201 | Camera service fatal error. |
 
 **示例：**
@@ -6237,7 +6212,6 @@ public func on(eventType: CameraEvents, callback: Callback0Argument): Unit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | The parameter check failed. |
   | 7400201 | Camera service fatal error. |
 
 **示例：**
@@ -6949,7 +6923,7 @@ public func off(eventType: CameraEvents, callback: Callback0Argument): Unit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | The parameter check failed. |
+  
   | 7400201 | Camera service fatal error. |
 
 **示例：**
@@ -7000,7 +6974,6 @@ public func off(eventType: CameraEvents): Unit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | The parameter check failed. |
   | 7400201 | Camera service fatal error. |
 
 **示例：**
@@ -7056,7 +7029,6 @@ public func on(eventType: CameraEvents, callback: Callback0Argument): Unit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | The parameter check failed. |
   | 7400201 | Camera service fatal error. |
 
 **示例：**
@@ -7421,7 +7393,6 @@ public func off(eventType: CameraEvents, callback: Callback0Argument): Unit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | The parameter check failed. |
   | 7400201 | Camera service fatal error. |
 
 **示例：**
@@ -7465,7 +7436,6 @@ public func off(eventType: CameraEvents, callback: Callback1Argument<FocusState>
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | The parameter check failed. |
   | 7400201 | Camera service fatal error. |
 
 **示例：**
@@ -7509,7 +7479,6 @@ public func off(eventType: CameraEvents, callback: Callback1Argument<SmoothZoomI
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | The parameter check failed. |
   | 7400201 | Camera service fatal error. |
 
 **示例：**
@@ -7552,7 +7521,7 @@ public func off(eventType: CameraEvents): Unit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | The parameter check failed. |
+  
   | 7400201 | Camera service fatal error. |
 
 **示例：**
@@ -7600,7 +7569,6 @@ public func on(eventType: CameraEvents, callback: Callback0Argument): Unit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | The parameter check failed. |
   | 7400201 | Camera service fatal error. |
 
 **示例：**
@@ -7663,7 +7631,6 @@ public func on(eventType: CameraEvents, callback: Callback1Argument<FocusState>)
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | The parameter check failed. |
   | 7400201 | Camera service fatal error. |
 
 **示例：**
@@ -7726,7 +7693,6 @@ public func on(eventType: CameraEvents, callback: Callback1Argument<SmoothZoomIn
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | The parameter check failed. |
   | 7400201 | Camera service fatal error. |
 
 **示例：**

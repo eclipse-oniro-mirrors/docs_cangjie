@@ -1443,11 +1443,10 @@ public static func canOpenLink(link: String): Bool
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)和[包管理子系统通用错误码](./cj-errorcode-bundle.md)。
+- BusinessException：对应错误码如下表，详见[包管理子系统通用错误码](./cj-errorcode-bundle.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
   | 17700055 | The specified link is invalid. |
   | 17700056 | The scheme of the specified link is not in the querySchemes. |
 
@@ -1539,11 +1538,10 @@ public static func getProfileByAbility(moduleName: String, abilityName: String, 
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)和[包管理子系统通用错误码](./cj-errorcode-bundle.md)。
+- BusinessException：对应错误码如下表，详见[包管理子系统通用错误码](./cj-errorcode-bundle.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Input parameters check failed. |
   | 17700002 | The specified moduleName is not existed. |
   | 17700003 | The specified abilityName is not existed. |
   | 17700024 | Failed to get the profile because there is no profile in the HAP. |
@@ -1603,11 +1601,10 @@ public static func getProfileByExtensionAbility(moduleName: String, extensionAbi
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)和[包管理子系统通用错误码](./cj-errorcode-bundle.md)。
+- BusinessException：对应错误码如下表，详见[包管理子系统通用错误码](./cj-errorcode-bundle.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Input parameters check failed. |
   | 17700002 | The specified moduleName is not existed. |
   | 17700003 | The specified extensionAbilityName not existed. |
   | 17700024 | Failed to get the profile because there is no profile in the HAP. |
@@ -1713,11 +1710,10 @@ public static func isDefaultApplication(appType: String): Bool
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)和[包管理子系统通用错误码](./cj-errorcode-bundle.md)。
+- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
   | 801 | Capability not supported. |
 
 **示例：**

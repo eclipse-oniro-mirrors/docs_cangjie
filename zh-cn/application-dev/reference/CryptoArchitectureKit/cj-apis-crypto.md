@@ -50,7 +50,6 @@ public func createCipher(transformation: String): Cipher
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | invalid parameters. |
   | 801 | this operation is not supported. |
   | 17620001 | memory error. |
 
@@ -137,11 +136,10 @@ public func createMd(algName: String): Md
 
 **异常：**
 
-- BusinessException：对应错误码如下表，请参见[通用错误码](../cj-errorcode-universal.md)和[crypto framework错误码](./cj-errorcode-crypto.md)。
+- BusinessException：对应错误码如下表，请参见[crypto framework错误码](./cj-errorcode-crypto.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | invalid parameters. |
   | 17620001 | memory error. |
 
 **示例：**
@@ -224,7 +222,6 @@ public func createSymKeyGenerator(algName: String): SymKeyGenerator
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | invalid parameters. |
   | 801 | this operation is not supported. |
 
 **示例：**
@@ -419,11 +416,10 @@ public func initialize(opMode: CryptoMode, key: Key, params: ?ParamsSpec): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，请参见[通用错误码](../cj-errorcode-universal.md)和[crypto framework错误码](./cj-errorcode-crypto.md)。
+- BusinessException：对应错误码如下表，请参见[crypto framework错误码](./cj-errorcode-crypto.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | invalid parameters. |
   | 17620001 | memory error. |
   | 17620002 | runtime error. |
   | 17630001 | crypto operation error. |
@@ -492,11 +488,10 @@ public func doFinal(data: ?DataBlob): DataBlob
 
 **异常：**
 
-- BusinessException：对应错误码如下表，请参见[通用错误码](../cj-errorcode-universal.md)和[crypto framework错误码](./cj-errorcode-crypto.md)。
+- BusinessException：对应错误码如下表，请参见[crypto framework错误码](./cj-errorcode-crypto.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | invalid parameters. |
   | 17620001 | memory error. |
   | 17620002 | runtime error. |
   | 17630001 | crypto operation error. |
@@ -562,11 +557,10 @@ public func update(data: DataBlob): DataBlob
 
 **异常：**
 
-- BusinessException：对应错误码如下表，请参见[通用错误码](../cj-errorcode-universal.md)和[crypto framework错误码](./cj-errorcode-crypto.md)。
+- BusinessException：对应错误码如下表，请参见[crypto framework错误码](./cj-errorcode-crypto.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | invalid parameters. |
   | 17620001 | memory error. |
   | 17620002 | runtime error. |
   | 17630001 | crypto operation error. |
@@ -891,11 +885,11 @@ public func update(input: DataBlob): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，请参见[通用错误码](../cj-errorcode-universal.md)和[crypto framework错误码](./cj-errorcode-crypto.md)。
+- BusinessException：对应错误码如下表，请参见[crypto framework错误码](./cj-errorcode-crypto.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | invalid parameters. |
+  | 17620001 | memory operation failed. |
   | 17630001 | crypto operation error. |
 
 **示例：**
@@ -966,11 +960,10 @@ public func generateRandom(len: Int32): DataBlob
 
 **异常：**
 
-- BusinessException：对应错误码如下表，请参见[通用错误码](../cj-errorcode-universal.md)和[crypto framework错误码](./cj-errorcode-crypto.md)。
+- BusinessException：对应错误码如下表，请参见[crypto framework错误码](./cj-errorcode-crypto.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | invalid parameters. |
   | 17620001 | memory error. |
   | 17630001 | crypto operation error. |
 
@@ -1214,11 +1207,10 @@ public func convertKey(key: DataBlob): SymKey
 
 **异常：**
 
-- BusinessException：对应错误码如下表，请参见[通用错误码](../cj-errorcode-universal.md)和[crypto framework错误码](./cj-errorcode-crypto.md)。
+- BusinessException：对应错误码如下表，请参见[crypto framework错误码](./cj-errorcode-crypto.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | invalid parameters. |
   | 17620001 | memory error. |
 
 **示例：**

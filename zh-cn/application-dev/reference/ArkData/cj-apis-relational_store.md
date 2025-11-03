@@ -32,7 +32,6 @@ API示例代码使用说明：
 ## func deleteRdbStore(UIAbilityContext, String)
 
 ```cangjie
-
 public func deleteRdbStore(context: UIAbilityContext, name: String): Unit
 ```
 
@@ -55,7 +54,6 @@ public func deleteRdbStore(context: UIAbilityContext, name: String): Unit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.|
   | 801 | Capability not supported.|
   | 14800000 | Inner error.|
   | 14800010 | Failed to open or delete the database by an invalid database path.|
@@ -84,7 +82,6 @@ deleteRdbStore(Global.getStageContext(), "RdbTest.db")
 ## func deleteRdbStore(UIAbilityContext, StoreConfig)
 
 ```cangjie
-
 public func deleteRdbStore(context: UIAbilityContext, config: StoreConfig): Unit
 ```
 
@@ -107,7 +104,6 @@ public func deleteRdbStore(context: UIAbilityContext, config: StoreConfig): Unit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.|
   | 801 | Capability not supported.|
   | 14800000 | Inner error.|
   | 14800010 | Failed to open or delete the database by an invalid database path.|
@@ -136,7 +132,6 @@ deleteRdbStore(Global.getStageContext(), StoreConfig(RelationalStoreSecurityLeve
 ## func getRdbStore(UIAbilityContext, StoreConfig)
 
 ```cangjie
-
 public func getRdbStore(context: UIAbilityContext, config: StoreConfig): RdbStore
 ```
 
@@ -161,11 +156,10 @@ public func getRdbStore(context: UIAbilityContext, config: StoreConfig): RdbStor
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)和[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
+- BusinessException：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.|
   | 14800000 | Inner error.|
   | 14800010 | Failed to open or delete the database by an invalid database path.|
   | 14800011 | Failed to open the database because it is corrupted.|
@@ -337,7 +331,6 @@ public var uri: String
 ### init(String, String, String, String, String, String, AssetStatus)
 
 ```cangjie
-
 public init(name: String, uri: String, path: String, createTime: String, modifyTime: String, size: String,
     status!: AssetStatus = AssetStatus.AssetNormal)
 ```
@@ -483,7 +476,6 @@ public var kdfAlgo:?KdfAlgo
 ### init(Array\<UInt8>, Int32, EncryptionAlgo, HmacAlgo, ?KdfAlgo, UInt32)
 
 ```cangjie
-
 public init(encryptionKey: Array<UInt8>, iterationCount!: Int32 = 10000,
     encryptionAlgo!: EncryptionAlgo = EncryptionAlgo.Aes256Gcm,
     hmacAlgo!: HmacAlgo = HmacAlgo.Sha256, kdfAlgo!: ?KdfAlgo = None,
@@ -524,7 +516,6 @@ public class RdbPredicates {
 ### init(String)
 
 ```cangjie
-
 public init(name: String)
 ```
 
@@ -543,7 +534,6 @@ public init(name: String)
 ### func inValues(String, Array\<RelationalStoreValueType>)
 
 ```cangjie
-
 public func inValues(field: String, value: Array<RelationalStoreValueType>): RdbPredicates
 ```
 
@@ -566,14 +556,6 @@ public func inValues(field: String, value: Array<RelationalStoreValueType>): Rdb
 |:----|:----|
 |[RdbPredicates](#class-rdbpredicates)|返回与指定字段匹配的谓词。|
 
-**异常：**
-
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
-
-  | 错误码ID | 错误信息 |
-  | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;<br>2. Incorrect parameter types.|
-
 **示例：**
 
 <!-- compile -->
@@ -591,7 +573,6 @@ predicates.inValues("NAME", [RelationalStoreValueType.StringValue("Lisa"), Relat
 ### func and()
 
 ```cangjie
-
 public func and(): RdbPredicates
 ```
 
@@ -627,7 +608,6 @@ predicates
 ### func beginWrap()
 
 ```cangjie
-
 public func beginWrap(): RdbPredicates
 ```
 
@@ -665,7 +645,6 @@ predicates
 ### func beginsWith(String, String)
 
 ```cangjie
-
 public func beginsWith(field: String, value: String): RdbPredicates
 ```
 
@@ -688,14 +667,6 @@ public func beginsWith(field: String, value: String): RdbPredicates
 |:----|:----|
 |[RdbPredicates](#class-rdbpredicates)|返回与指定字段匹配的谓词。|
 
-**异常：**
-
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
-
-  | 错误码ID | 错误信息 |
-  | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;<br>2. Incorrect parameter types.|
-
 **示例：**
 
 <!-- compile -->
@@ -713,7 +684,6 @@ predicates.beginsWith("NAME", "Li")
 ### func between(String, RelationalStoreValueType, RelationalStoreValueType)
 
 ```cangjie
-
 public func between(field: String, low: RelationalStoreValueType, high: RelationalStoreValueType): RdbPredicates
 ```
 
@@ -737,14 +707,6 @@ public func between(field: String, low: RelationalStoreValueType, high: Relation
 |:----|:----|
 |[RdbPredicates](#class-rdbpredicates)|返回与指定字段匹配的谓词。|
 
-**异常：**
-
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
-
-  | 错误码ID | 错误信息 |
-  | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;<br>2. Incorrect parameter types.|
-
 **示例：**
 
 <!-- compile -->
@@ -762,7 +724,6 @@ predicates.between("AGE", RelationalStoreValueType.Integer(10), RelationalStoreV
 ### func contains(String, String)
 
 ```cangjie
-
 public func contains(field: String, value: String): RdbPredicates
 ```
 
@@ -785,14 +746,6 @@ public func contains(field: String, value: String): RdbPredicates
 |:----|:----|
 |[RdbPredicates](#class-rdbpredicates)|返回与指定字段匹配的谓词。|
 
-**异常：**
-
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
-
-  | 错误码ID | 错误信息 |
-  | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;<br>2. Incorrect parameter types.|
-
 **示例：**
 
 <!-- compile -->
@@ -810,7 +763,6 @@ predicates.contains("NAME", "os")
 ### func distinct()
 
 ```cangjie
-
 public func distinct(): RdbPredicates
 ```
 
@@ -844,7 +796,6 @@ predicates
 ### func endWrap()
 
 ```cangjie
-
 public func endWrap(): RdbPredicates
 ```
 
@@ -882,7 +833,6 @@ predicates
 ### func endsWith(String, String)
 
 ```cangjie
-
 public func endsWith(field: String, value: String): RdbPredicates
 ```
 
@@ -905,14 +855,6 @@ public func endsWith(field: String, value: String): RdbPredicates
 |:----|:----|
 |[RdbPredicates](#class-rdbpredicates)|返回与指定字段匹配的谓词。|
 
-**异常：**
-
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
-
-  | 错误码ID | 错误信息 |
-  | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;<br>2. Incorrect parameter types.|
-
 **示例：**
 
 <!-- compile -->
@@ -930,7 +872,6 @@ predicates.endsWith("NAME", "se")
 ### func equalTo(String, RelationalStoreValueType)
 
 ```cangjie
-
 public func equalTo(field: String, value: RelationalStoreValueType): RdbPredicates
 ```
 
@@ -953,14 +894,6 @@ public func equalTo(field: String, value: RelationalStoreValueType): RdbPredicat
 |:----|:----|
 |[RdbPredicates](#class-rdbpredicates)|返回与指定字段匹配的谓词。|
 
-**异常：**
-
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
-
-  | 错误码ID | 错误信息 |
-  | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;<br>2. Incorrect parameter types.|
-
 **示例：**
 
 <!-- compile -->
@@ -978,7 +911,6 @@ predicates.equalTo("NAME", RelationalStoreValueType.StringValue("Lisa"))
 ### func glob(String, String)
 
 ```cangjie
-
 public func glob(field: String, value: String): RdbPredicates
 ```
 
@@ -1001,14 +933,6 @@ public func glob(field: String, value: String): RdbPredicates
 |:----|:----|
 |[RdbPredicates](#class-rdbpredicates)|返回与指定字段匹配的谓词。|
 
-**异常：**
-
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
-
-  | 错误码ID | 错误信息 |
-  | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;<br>2. Incorrect parameter types.|
-
 **示例：**
 
 <!-- compile -->
@@ -1026,7 +950,6 @@ predicates.glob("NAME", "?h*g")
 ### func greaterThan(String, RelationalStoreValueType)
 
 ```cangjie
-
 public func greaterThan(field: String, value: RelationalStoreValueType): RdbPredicates
 ```
 
@@ -1049,14 +972,6 @@ public func greaterThan(field: String, value: RelationalStoreValueType): RdbPred
 |:----|:----|
 |[RdbPredicates](#class-rdbpredicates)|返回与指定字段匹配的谓词。|
 
-**异常：**
-
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
-
-  | 错误码ID | 错误信息 |
-  | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;<br>2. Incorrect parameter types.|
-
 **示例：**
 
 <!-- compile -->
@@ -1074,7 +989,6 @@ predicates.greaterThan("AGE", RelationalStoreValueType.Integer(18))
 ### func greaterThanOrEqualTo(String, RelationalStoreValueType)
 
 ```cangjie
-
 public func greaterThanOrEqualTo(field: String, value: RelationalStoreValueType): RdbPredicates
 ```
 
@@ -1097,14 +1011,6 @@ public func greaterThanOrEqualTo(field: String, value: RelationalStoreValueType)
 |:----|:----|
 |[RdbPredicates](#class-rdbpredicates)|返回与指定字段匹配的谓词。|
 
-**异常：**
-
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
-
-  | 错误码ID | 错误信息 |
-  | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;<br>2. Incorrect parameter types.|
-
 **示例：**
 
 <!-- compile -->
@@ -1122,7 +1028,6 @@ predicates.greaterThanOrEqualTo("AGE", RelationalStoreValueType.Integer(18))
 ### func groupBy(Array\<String>)
 
 ```cangjie
-
 public func groupBy(fields: Array<String>): RdbPredicates
 ```
 
@@ -1144,14 +1049,6 @@ public func groupBy(fields: Array<String>): RdbPredicates
 |:----|:----|
 |[RdbPredicates](#class-rdbpredicates)|返回分组查询列的谓词。|
 
-**异常：**
-
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
-
-  | 错误码ID | 错误信息 |
-  | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;<br>2. Incorrect parameter types.|
-
 **示例：**
 
 <!-- compile -->
@@ -1168,7 +1065,6 @@ predicates.groupBy(["AGE", "NAME"])
 ### func inAllDevices()
 
 ```cangjie
-
 public func inAllDevices(): RdbPredicates
 ```
 
@@ -1200,7 +1096,6 @@ predicates.inAllDevices()
 ### func isNotNull(String)
 
 ```cangjie
-
 public func isNotNull(field: String): RdbPredicates
 ```
 
@@ -1222,14 +1117,6 @@ public func isNotNull(field: String): RdbPredicates
 |:----|:----|
 |[RdbPredicates](#class-rdbpredicates)|<返回与指定字段匹配的谓词。|
 
-**异常：**
-
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
-
-  | 错误码ID | 错误信息 |
-  | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;<br>2. Incorrect parameter types.|
-
 **示例：**
 
 <!-- compile -->
@@ -1246,7 +1133,6 @@ predicates.isNotNull("NAME")
 ### func isNull(String)
 
 ```cangjie
-
 public func isNull(field: String): RdbPredicates
 ```
 
@@ -1268,14 +1154,6 @@ public func isNull(field: String): RdbPredicates
 |:----|:----|
 |[RdbPredicates](#class-rdbpredicates)|返回与指定字段匹配的谓词。|
 
-**异常：**
-
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
-
-  | 错误码ID | 错误信息 |
-  | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;<br>2. Incorrect parameter types.|
-
 **示例：**
 
 <!-- compile -->
@@ -1292,7 +1170,6 @@ predicates.isNull("NAME")
 ### func lessThan(String, RelationalStoreValueType)
 
 ```cangjie
-
 public func lessThan(field: String, value: RelationalStoreValueType): RdbPredicates
 ```
 
@@ -1315,14 +1192,6 @@ public func lessThan(field: String, value: RelationalStoreValueType): RdbPredica
 |:----|:----|
 |[RdbPredicates](#class-rdbpredicates)|返回与指定字段匹配的谓词。|
 
-**异常：**
-
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
-
-  | 错误码ID | 错误信息 |
-  | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;<br>2. Incorrect parameter types.|
-
 **示例：**
 
 <!-- compile -->
@@ -1340,7 +1209,6 @@ predicates.lessThan("AGE", RelationalStoreValueType.Integer(20))
 ### func lessThanOrEqualTo(String, RelationalStoreValueType)
 
 ```cangjie
-
 public func lessThanOrEqualTo(field: String, value: RelationalStoreValueType): RdbPredicates
 ```
 
@@ -1363,14 +1231,6 @@ public func lessThanOrEqualTo(field: String, value: RelationalStoreValueType): R
 |:----|:----|
 |[RdbPredicates](#class-rdbpredicates)|返回与指定字段匹配的谓词。|
 
-**异常：**
-
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
-
-  | 错误码ID | 错误信息 |
-  | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;<br>2. Incorrect parameter types.|
-
 **示例：**
 
 <!-- compile -->
@@ -1388,7 +1248,6 @@ predicates.lessThanOrEqualTo("AGE", RelationalStoreValueType.Integer(20))
 ### func like(String, String)
 
 ```cangjie
-
 public func like(field: String, value: String): RdbPredicates
 ```
 
@@ -1411,14 +1270,6 @@ public func like(field: String, value: String): RdbPredicates
 |:----|:----|
 |[RdbPredicates](#class-rdbpredicates)|返回与指定字段匹配的谓词。|
 
-**异常：**
-
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
-
-  | 错误码ID | 错误信息 |
-  | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;<br>2. Incorrect parameter types.|
-
 **示例：**
 
 <!-- compile -->
@@ -1436,7 +1287,6 @@ predicates.like("NAME", "%os%")
 ### func limitAs(Int32)
 
 ```cangjie
-
 public func limitAs(value: Int32): RdbPredicates
 ```
 
@@ -1458,14 +1308,6 @@ public func limitAs(value: Int32): RdbPredicates
 |:----|:----|
 |[RdbPredicates](#class-rdbpredicates)|返回可用于设置最大数据记录数的谓词。|
 
-**异常：**
-
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
-
-  | 错误码ID | 错误信息 |
-  | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;<br>2. Incorrect parameter types.|
-
 **示例：**
 
 <!-- compile -->
@@ -1484,7 +1326,6 @@ predicates
 ### func notBetween(String, RelationalStoreValueType, RelationalStoreValueType)
 
 ```cangjie
-
 public func notBetween(field: String, low: RelationalStoreValueType, high: RelationalStoreValueType): RdbPredicates
 ```
 
@@ -1508,14 +1349,6 @@ public func notBetween(field: String, low: RelationalStoreValueType, high: Relat
 |:----|:----|
 |[RdbPredicates](#class-rdbpredicates)|返回与指定字段匹配的谓词。|
 
-**异常：**
-
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
-
-  | 错误码ID | 错误信息 |
-  | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;<br>2. Incorrect parameter types.|
-
 **示例：**
 
 <!-- compile -->
@@ -1533,7 +1366,6 @@ predicates.notBetween("AGE", RelationalStoreValueType.Integer(10), RelationalSto
 ### func notEqualTo(String, RelationalStoreValueType)
 
 ```cangjie
-
 public func notEqualTo(field: String, value: RelationalStoreValueType): RdbPredicates
 ```
 
@@ -1556,14 +1388,6 @@ public func notEqualTo(field: String, value: RelationalStoreValueType): RdbPredi
 |:----|:----|
 |[RdbPredicates](#class-rdbpredicates)|返回与指定字段匹配的谓词。|
 
-**异常：**
-
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
-
-  | 错误码ID | 错误信息 |
-  | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;<br>2. Incorrect parameter types.|
-
 **示例：**
 
 <!-- compile -->
@@ -1581,7 +1405,6 @@ predicates.notEqualTo("NAME", RelationalStoreValueType.StringValue("Lisa"))
 ### func notInValues(String, Array\<RelationalStoreValueType>)
 
 ```cangjie
-
 public func notInValues(field: String, value: Array<RelationalStoreValueType>): RdbPredicates
 ```
 
@@ -1604,14 +1427,6 @@ public func notInValues(field: String, value: Array<RelationalStoreValueType>): 
 |:----|:----|
 |[RdbPredicates](#class-rdbpredicates)|返回与指定字段匹配的谓词。|
 
-**异常：**
-
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
-
-  | 错误码ID | 错误信息 |
-  | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;<br>2. Incorrect parameter types.|
-
 **示例：**
 
 <!-- compile -->
@@ -1629,7 +1444,6 @@ predicates.notInValues("NAME", [RelationalStoreValueType.StringValue("Lisa"), Re
 ### func offsetAs(Int32)
 
 ```cangjie
-
 public func offsetAs(rowOffset: Int32): RdbPredicates
 ```
 
@@ -1651,14 +1465,6 @@ public func offsetAs(rowOffset: Int32): RdbPredicates
 |:----|:----|
 |[RdbPredicates](#class-rdbpredicates)|返回具有指定返回结果起始位置的谓词。|
 
-**异常：**
-
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
-
-  | 错误码ID | 错误信息 |
-  | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;<br>2. Incorrect parameter types.|
-
 **示例：**
 
 <!-- compile -->
@@ -1677,7 +1483,6 @@ predicates
 ### func or()
 
 ```cangjie
-
 public func or(): RdbPredicates
 ```
 
@@ -1713,7 +1518,6 @@ predicates
 ### func orderByAsc(String)
 
 ```cangjie
-
 public func orderByAsc(field: String): RdbPredicates
 ```
 
@@ -1735,14 +1539,6 @@ public func orderByAsc(field: String): RdbPredicates
 |:----|:----|
 |[RdbPredicates](#class-rdbpredicates)|返回与指定字段匹配的谓词。|
 
-**异常：**
-
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
-
-  | 错误码ID | 错误信息 |
-  | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;<br>2. Incorrect parameter types.|
-
 **示例：**
 
 <!-- compile -->
@@ -1759,7 +1555,6 @@ predicates.orderByAsc("NAME")
 ### func orderByDesc(String)
 
 ```cangjie
-
 public func orderByDesc(field: String): RdbPredicates
 ```
 
@@ -1780,14 +1575,6 @@ public func orderByDesc(field: String): RdbPredicates
 |类型|说明|
 |:----|:----|
 |[RdbPredicates](#class-rdbpredicates)|数据库表中的列名。|
-
-**异常：**
-
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
-
-  | 错误码ID | 错误信息 |
-  | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;<br>2. Incorrect parameter types.|
 
 **示例：**
 
@@ -1817,7 +1604,6 @@ public class RdbStore {}
 ### func backup(String)
 
 ```cangjie
-
 public func backup(destName: String): Unit
 ```
 
@@ -1835,11 +1621,10 @@ public func backup(destName: String): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)和[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
+- BusinessException：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.|
   | 14800000 | Inner error.|
   | 14800011 | Failed to open the database because it is corrupted.|
   | 14800014 | The RdbStore or ResultSet is already closed.|
@@ -1875,7 +1660,6 @@ rdbStore.backup("dbBackup.db")
 ### func batchInsert(String, Array\<ValuesBucket>)
 
 ```cangjie
-
 public func batchInsert(table: String, values: Array<ValuesBucket>): Int64
 ```
 
@@ -1900,11 +1684,10 @@ public func batchInsert(table: String, values: Array<ValuesBucket>): Int64
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
+- BusinessException：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.|
   | 14800000 | Inner error.|
   | 14800011 | Failed to open the database because it is corrupted.|
   | 14800014 | The RdbStore or ResultSet is already closed.|
@@ -1958,7 +1741,6 @@ rdbStore.batchInsert("EMPLOYEE", valueBuckets)
 ### func beginTransaction()
 
 ```cangjie
-
 public func beginTransaction(): Unit
 ```
 
@@ -1970,11 +1752,10 @@ public func beginTransaction(): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
+- BusinessException：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. The store must not be nullptr.|
   | 14800000 | Inner error.|
   | 14800011 | Failed to open the database because it is corrupted.|
   | 14800014 | The RdbStore or ResultSet is already closed.|
@@ -2017,7 +1798,6 @@ rdbStore.commit()
 ### func commit()
 
 ```cangjie
-
 public func commit(): Unit
 ```
 
@@ -2029,11 +1809,10 @@ public func commit(): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
+- BusinessException：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. The store must not be nullptr.|
   | 14800000 | Inner error.|
   | 14800011 | Failed to open the database because it is corrupted.|
   | 14800014 | The RdbStore or ResultSet is already closed.|
@@ -2076,7 +1855,6 @@ rdbStore.commit()
 ### func delete(RdbPredicates)
 
 ```cangjie
-
 public func delete(predicates: RdbPredicates): Int64
 ```
 
@@ -2100,11 +1878,10 @@ public func delete(predicates: RdbPredicates): Int64
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
+- BusinessException：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.|
   | 14800000 | Inner error.|
   | 14800011 | Failed to open the database because it is corrupted.|
   | 14800014 | The RdbStore or ResultSet is already closed.|
@@ -2144,7 +1921,6 @@ rdbStore.delete(predicates)
 ### func emit(String)
 
 ```cangjie
-
 public func emit(event: String): Unit
 ```
 
@@ -2166,7 +1942,6 @@ public func emit(event: String): Unit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.|
   | 801 | Capability not supported.|
   | 14800000 | Inner error.|
   | 14800014 | The RdbStore or ResultSet is already closed.|
@@ -2201,7 +1976,6 @@ rdbStore.emit("PRINT")
 ### func executeSql(String, Array\<RelationalStoreValueType>)
 
 ```cangjie
-
 public func executeSql(sql: String, bindArgs!: Array<RelationalStoreValueType> = []): Unit
 ```
 
@@ -2224,7 +1998,6 @@ public func executeSql(sql: String, bindArgs!: Array<RelationalStoreValueType> =
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.|
   | 801 | Capability not supported the sql(attach,begin,commit,rollback etc.).|
   | 14800000 | Inner error.|
   | 14800011 | Failed to open the database because it is corrupted.|
@@ -2262,7 +2035,6 @@ rdbStore.executeSql("DELETE FROM EMPLOYEE WHERE ID = ?", bindArgs: [RelationalSt
 ### func insert(String, ValuesBucket, ConflictResolution)
 
 ```cangjie
-
 public func insert(table: String, values: ValuesBucket,
     conflict!: ConflictResolution = ConflictResolution.OnConflictNone): Int64
 ```
@@ -2289,11 +2061,10 @@ public func insert(table: String, values: ValuesBucket,
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
+- BusinessException：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.|
   | 14800000 | Inner error.|
   | 14800011 | Failed to open the database because it is corrupted.|
   | 14800014 | The RdbStore or ResultSet is already closed.|
@@ -2341,7 +2112,6 @@ rdbStore.insert("EMPLOYEE", values, conflict: OnConflictReplace)
 ### func off(String, Bool, ?Callback0Argument)
 
 ```cangjie
-
 public func off(event: String, interProcess: Bool, observer!: ?Callback0Argument = None): Unit
 ```
 
@@ -2361,11 +2131,10 @@ public func off(event: String, interProcess: Bool, observer!: ?Callback0Argument
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
+- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)和[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.|
   | 801 | Capability not supported.|
   | 14800000 | Inner error.|
   | 14800014 | The RdbStore or ResultSet is already closed.|
@@ -2400,7 +2169,6 @@ rdbStore.off("PRINT", false, observer: testCallback)
 ### func on(String, Bool, Callback0Argument)
 
 ```cangjie
-
 public func on(event: String, interProcess: Bool, observer: Callback0Argument): Unit
 ```
 
@@ -2420,11 +2188,10 @@ public func on(event: String, interProcess: Bool, observer: Callback0Argument): 
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
+- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)和[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.|
   | 801 | Capability not supported.|
   | 14800000 | Inner error.|
   | 14800014 | The RdbStore or ResultSet is already closed.|
@@ -2459,7 +2226,6 @@ rdbStore.on("PRINT", false, testCallback)
 ### func query(RdbPredicates, Array\<String>)
 
 ```cangjie
-
 public func query(predicates: RdbPredicates, columns!: Array<String> = []): ResultSet
 ```
 
@@ -2484,11 +2250,10 @@ public func query(predicates: RdbPredicates, columns!: Array<String> = []): Resu
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
+- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)和[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.|
   | 14800000 | Inner error.|
   | 14800014 | The RdbStore or ResultSet is already closed.|
   | 14800015 | The database does not respond.|
@@ -2518,7 +2283,6 @@ let salary = resultSet.getDouble(resultSet.getColumnIndex("SALARY"))
 ### func querySql(String, Array\<RelationalStoreValueType>)
 
 ```cangjie
-
 public func querySql(sql: String, bindArgs!: Array<RelationalStoreValueType> = []): ResultSet
 ```
 
@@ -2543,11 +2307,10 @@ public func querySql(sql: String, bindArgs!: Array<RelationalStoreValueType> = [
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)和[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
+- BusinessException：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.|
   | 14800000 | Inner error.|
   | 14800014 | The RdbStore or ResultSet is already closed.|
   | 14800015 | The database does not respond.|
@@ -2574,7 +2337,6 @@ let salary = resultSet.getDouble(resultSet.getColumnIndex("SALARY"))
 ### func restore(String)
 
 ```cangjie
-
 public func restore(srcName: String): Unit
 ```
 
@@ -2592,11 +2354,10 @@ public func restore(srcName: String): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)和[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
+- BusinessException：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.|
   | 14800000 | Inner error.|
   | 14800011 | Failed to open the database because it is corrupted.|
   | 14800014 | The RdbStore or ResultSet is already closed.|
@@ -2633,7 +2394,6 @@ rdbStore.restore("dbBackup.db")
 ### func rollBack()
 
 ```cangjie
-
 public func rollBack(): Unit
 ```
 
@@ -2645,11 +2405,10 @@ public func rollBack(): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)和[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
+- BusinessException：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. The store must not be nullptr.|
   | 14800000 | Inner error.|
   | 14800011 | Failed to open the database because it is corrupted.|
   | 14800014 | The RdbStore or ResultSet is already closed.|
@@ -2700,7 +2459,6 @@ try {
 ### func update(ValuesBucket, RdbPredicates, ConflictResolution)
 
 ```cangjie
-
 public func update(values: ValuesBucket, predicates: RdbPredicates,
     conflict!: ConflictResolution = ConflictResolution.OnConflictNone): Int64
 ```
@@ -2727,11 +2485,10 @@ public func update(values: ValuesBucket, predicates: RdbPredicates,
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)和[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
+- BusinessException：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.|
   | 14800000 | Inner error.|
   | 14800011 | Failed to open the database because it is corrupted.|
   | 14800014 | The RdbStore or ResultSet is already closed.|
@@ -2932,7 +2689,6 @@ public prop rowIndex: Int32
 ### func close()
 
 ```cangjie
-
 public func close(): Unit
 ```
 
@@ -2969,7 +2725,6 @@ resultSet.close()
 ### func getAsset(Int32)
 
 ```cangjie
-
 public func getAsset(columnIndex: Int32): Asset
 ```
 
@@ -2993,11 +2748,10 @@ public func getAsset(columnIndex: Int32): Asset
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)和[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
+- BusinessException：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.|
   | 14800000 | Inner error.|
   | 14800011 | Failed to open the database because it is corrupted.|
   | 14800012 | ResultSet is empty or pointer index is out of bounds.|
@@ -3036,7 +2790,6 @@ let doc = resultSet.getAsset(resultSet.getColumnIndex("DOC"))
 ### func getAssets(Int32)
 
 ```cangjie
-
 public func getAssets(columnIndex: Int32): Assets
 ```
 
@@ -3060,11 +2813,10 @@ public func getAssets(columnIndex: Int32): Assets
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)和[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
+- BusinessException：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.|
   | 14800000 | Inner error.|
   | 14800011 | Failed to open the database because it is corrupted.|
   | 14800012 | ResultSet is empty or pointer index is out of bounds.|
@@ -3103,7 +2855,6 @@ let docs = resultSet.getAssets(resultSet.getColumnIndex("DOCS"))
 ### func getBlob(Int32)
 
 ```cangjie
-
 public func getBlob(columnIndex: Int32): Array<UInt8>
 ```
 
@@ -3127,11 +2878,10 @@ public func getBlob(columnIndex: Int32): Array<UInt8>
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)和[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
+- BusinessException：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.|
   | 14800000 | Inner error.|
   | 14800011 | Failed to open the database because it is corrupted.|
   | 14800012 | ResultSet is empty or pointer index is out of bounds.|
@@ -3170,7 +2920,6 @@ let codes = resultSet.getBlob(resultSet.getColumnIndex("CODES"))
 ### func getColumnIndex(String)
 
 ```cangjie
-
 public func getColumnIndex(columnName: String): Int32
 ```
 
@@ -3194,11 +2943,10 @@ public func getColumnIndex(columnName: String): Int32
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)和[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
+- BusinessException：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.|
   | 14800000 | Inner error.|
   | 14800011 | Failed to open the database because it is corrupted.|
   | 14800013 | Resultset is empty or column index is out of bounds.|
@@ -3240,7 +2988,6 @@ let salary = resultSet.getDouble(resultSet.getColumnIndex("SALARY"))
 ### func getColumnName(Int32)
 
 ```cangjie
-
 public func getColumnName(columnIndex: Int32): String
 ```
 
@@ -3264,11 +3011,10 @@ public func getColumnName(columnIndex: Int32): String
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)和[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
+- BusinessException：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.|
   | 14800000 | Inner error.|
   | 14800011 | Failed to open the database because it is corrupted.|
   | 14800013 | Resultset is empty or column index is out of bounds.|
@@ -3309,7 +3055,6 @@ let age = resultSet.getColumnName(2)
 ### func getDouble(Int32)
 
 ```cangjie
-
 public func getDouble(columnIndex: Int32): Float64
 ```
 
@@ -3333,11 +3078,10 @@ public func getDouble(columnIndex: Int32): Float64
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)和[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
+- BusinessException：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.|
   | 14800000 | Inner error.|
   | 14800011 | Failed to open the database because it is corrupted.|
   | 14800012 | ResultSet is empty or pointer index is out of bounds.|
@@ -3376,7 +3120,6 @@ let salary = resultSet.getDouble(resultSet.getColumnIndex("SALARY"))
 ### func getLong(Int32)
 
 ```cangjie
-
 public func getLong(columnIndex: Int32): Int64
 ```
 
@@ -3400,11 +3143,10 @@ public func getLong(columnIndex: Int32): Int64
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)和[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
+- BusinessException：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.|
   | 14800000 | Inner error.|
   | 14800011 | Failed to open the database because it is corrupted.|
   | 14800012 | ResultSet is empty or pointer index is out of bounds.|
@@ -3443,7 +3185,6 @@ let age = resultSet.getLong(resultSet.getColumnIndex("AGE"))
 ### func getRow()
 
 ```cangjie
-
 public func getRow(): ValuesBucket
 ```
 
@@ -3503,7 +3244,6 @@ let value = resultSet.getRow()
 ### func getString(Int32)
 
 ```cangjie
-
 public func getString(columnIndex: Int32): String
 ```
 
@@ -3527,11 +3267,10 @@ public func getString(columnIndex: Int32): String
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)和[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
+- BusinessException：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.|
   | 14800000 | Inner error.|
   | 14800011 | Failed to open the database because it is corrupted.|
   | 14800012 | ResultSet is empty or pointer index is out of bounds.|
@@ -3570,7 +3309,6 @@ let name = resultSet.getString(resultSet.getColumnIndex("NAME"))
 ### func goTo(Int32)
 
 ```cangjie
-
 public func goTo(offset: Int32): Bool
 ```
 
@@ -3594,11 +3332,10 @@ public func goTo(offset: Int32): Bool
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)和[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
+- BusinessException：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.|
   | 14800000 | Inner error.|
   | 14800011 | Failed to open the database because it is corrupted.|
   | 14800012 | ResultSet is empty or pointer index is out of bounds.|
@@ -3637,7 +3374,6 @@ resultSet.goTo(1)
 ### func goToFirstRow()
 
 ```cangjie
-
 public func goToFirstRow(): Bool
 ```
 
@@ -3655,11 +3391,10 @@ public func goToFirstRow(): Bool
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)和[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
+- BusinessException：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.|
   | 14800000 | Inner error.|
   | 14800011 | Failed to open the database because it is corrupted.|
   | 14800012 | ResultSet is empty or pointer index is out of bounds.|
@@ -3698,7 +3433,6 @@ resultSet.goToFirstRow()
 ### func goToLastRow()
 
 ```cangjie
-
 public func goToLastRow(): Bool
 ```
 
@@ -3758,7 +3492,6 @@ resultSet.goToLastRow()
 ### func goToNextRow()
 
 ```cangjie
-
 public func goToNextRow(): Bool
 ```
 
@@ -3818,7 +3551,6 @@ resultSet.goToNextRow()
 ### func goToPreviousRow()
 
 ```cangjie
-
 public func goToPreviousRow(): Bool
 ```
 
@@ -3878,7 +3610,6 @@ resultSet.goToPreviousRow()
 ### func goToRow(Int32)
 
 ```cangjie
-
 public func goToRow(position: Int32): Bool
 ```
 
@@ -3944,7 +3675,6 @@ resultSet.goToRow(5)
 ### func isColumnNull(Int32)
 
 ```cangjie
-
 public func isColumnNull(columnIndex: Int32): Bool
 ```
 
@@ -3968,11 +3698,10 @@ public func isColumnNull(columnIndex: Int32): Bool
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)和[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
+- BusinessException：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.|
   | 14800000 | Inner error.|
   | 14800011 | Failed to open the database because it is corrupted.|
   | 14800012 | ResultSet is empty or pointer index is out of bounds.|
@@ -4288,7 +4017,6 @@ public var vector: Bool
 ### init(RelationalStoreSecurityLevel, String, Bool, String, String, String, Bool, Bool, Bool, Array\<String>, CryptoParam, Bool, Tokenizer, Bool, Bool)
 
 ```cangjie
-
 public init(securityLevel: RelationalStoreSecurityLevel, name!: String = "",
     encrypt!: Bool = false, dataGroupId!: String = "",
     customDir!: String = "", rootDir!: String = "",

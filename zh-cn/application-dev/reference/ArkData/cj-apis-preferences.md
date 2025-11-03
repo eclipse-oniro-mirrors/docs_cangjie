@@ -170,11 +170,10 @@ public static func deletePreferences(context: UIAbilityContext, name: String): U
 
 **异常：**
 
-- BusinessException：对应错误码如下表。
+- BusinessException：对应错误码如下表，详见[用户首选项错误码](./cj-errorcode-preferences.md)。
 
 | 错误码ID | 错误信息 |
 | :---- | :--- |
-| 401 | Parameter error. Possible causes:1. Mandatory parameters are left unspecified; 2. Incorrect parameter types;3. Parameter verification failed. |
 | 15500000 | Inner error. |
 | 15500010 | Failed to delete the user preferences persistence file. |
 
@@ -221,11 +220,10 @@ public static func deletePreferences(context: UIAbilityContext, options: Prefere
 
 **异常：**
 
-- BusinessException：对应错误码如下表。
+- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)和[用户首选项错误码](./cj-errorcode-preferences.md)。
 
 | 错误码ID | 错误信息 |
 | :---- | :--- |
-| 401 | Parameter error. Possible causes:1. Mandatory parameters are left unspecified; 2. Incorrect parameter types;3. Parameter verification failed. |
 | 801 | Capability not supported. |
 | 15500000 | Inner error. |
 | 15500010 | Failed to delete the user preferences persistence file. |
@@ -289,11 +287,10 @@ public static func getPreferences(context: UIAbilityContext, name: String): Pref
 
 **异常：**
 
-- BusinessException：对应错误码如下表。
+- BusinessException：对应错误码如下表，详见[用户首选项错误码](./cj-errorcode-preferences.md)。
 
 | 错误码ID | 错误信息 |
 | :---- | :--- |
-| 401 | Parameter error. Possible causes:1. Mandatory parameters are left unspecified; 2. Incorrect parameter types;3. Parameter verification failed. |
 | 15500000 | Inner error. |
 
 - IllegalArgumentException：
@@ -353,11 +350,10 @@ public static func getPreferences(context: UIAbilityContext, options: Preference
 
 **异常：**
 
-- BusinessException：对应错误码如下表。
+- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)和[事件错误码](./cj-errorcode-preferences.md)。
 
 | 错误码ID | 错误信息 |
 | :---- | :--- |
-| 401 | Parameter error. Possible causes:1. Mandatory parameters are left unspecified; 2. Incorrect parameter types;3. Parameter verification failed. |
 | 801 | Capability not supported. |
 | 15500000 | Inner error. |
 | 15501001 | The operations is supported in stage mode only. |
@@ -414,11 +410,10 @@ public static func removePreferencesFromCache(context: UIAbilityContext, name: S
 
 **异常：**
 
-- BusinessException：对应错误码如下表。
+- BusinessException：对应错误码如下表，详见[用户首选项错误码](./cj-errorcode-preferences.md)。
 
 | 错误码ID | 错误信息 |
 | :---- | :--- |
-| 401 | Parameter error. Possible causes:1. Mandatory parameters are left unspecified; 2. Incorrect parameter types;3. Parameter verification failed. |
 | 15500000 | Inner error. |
 
 **示例：**
@@ -466,11 +461,10 @@ public static func removePreferencesFromCache(context: UIAbilityContext, options
 
 **异常：**
 
-- BusinessException：对应错误码如下表。
+- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)和[事件错误码](./cj-errorcode-preferences.md)。
 
 | 错误码ID | 错误信息 |
 | :---- | :--- |
-| 401 | Parameter error. Possible causes:1. Mandatory parameters are left unspecified; 2. Incorrect parameter types;3. Parameter verification failed. |
 | 801 | Capability not supported. |
 | 15500000 | Inner error. |
 | 15501001 | The operations is supported in stage mode only. |
@@ -516,11 +510,10 @@ public func clear(): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表。
+- BusinessException：对应错误码如下表，详见[用户首选项错误码](./cj-errorcode-preferences.md)。
 
 | 错误码ID | 错误信息 |
 | :---- | :--- |
-| 401 | Parameter error. Mandatory parameters are left unspecified. |
 | 15500000 | Inner error. |
 
 **示例：**
@@ -558,11 +551,10 @@ public func delete(key: String): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表。
+- BusinessException：对应错误码如下表，详见[用户首选项错误码](./cj-errorcode-preferences.md)。
 
 | 错误码ID | 错误信息 |
 | :---- | :--- |
-| 401 | Parameter error. Possible causes:1. Mandatory parameters are left unspecified; 2. Incorrect parameter types;3. Parameter verification failed. |
 | 15500000 | Inner error. |
 
 **示例：**
@@ -593,11 +585,10 @@ public func flush(): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表。
+- BusinessException：对应错误码如下表，详见[用户首选项错误码](./cj-errorcode-preferences.md)。
 
 | 错误码ID | 错误信息 |
 | :---- | :--- |
-| 401 | Parameter error. Mandatory parameters are left unspecified. |
 | 15500000 | Inner error. |
 
 **示例：**
@@ -642,11 +633,10 @@ public func get(key: String, defValue: PreferencesValueType): PreferencesValueTy
 
 **异常：**
 
-- BusinessException：对应错误码如下表。
+- BusinessException：对应错误码如下表，详见[用户首选项错误码](./cj-errorcode-preferences.md)。
 
 | 错误码ID | 错误信息 |
 | :---- | :--- |
-| 401 | Parameter error. Possible causes:1. Mandatory parameters are left unspecified; 2. Incorrect parameter types;3. Parameter verification failed. |
 | 15500000 | Inner error. |
 
 **示例：**
@@ -690,11 +680,10 @@ public func getAll(): HashMap<String, PreferencesValueType>
 
 **异常：**
 
-- BusinessException：对应错误码如下表。
+- BusinessException：对应错误码如下表，详见[用户首选项错误码](./cj-errorcode-preferences.md)。
 
 | 错误码ID | 错误信息 |
 | :---- | :--- |
-| 401 | Parameter error. Mandatory parameters are left unspecified. |
 | 15500000 | Inner error. |
 
 **示例：**
@@ -748,11 +737,10 @@ public func has(key: String): Bool
 
 **异常：**
 
-- BusinessException：对应错误码如下表。
+- BusinessException：对应错误码如下表，详见[用户首选项错误码](./cj-errorcode-preferences.md)。
 
 | 错误码ID | 错误信息 |
 | :---- | :--- |
-| 401 | Parameter error. Possible causes:1. Mandatory parameters are left unspecified; 2. Incorrect parameter types;3. Parameter verification failed. |
 | 15500000 | Inner error. |
 
 **示例：**
@@ -796,11 +784,10 @@ public func off(event :PreferencesEvent, callback!: ?Callback1Argument<String> =
 
 **异常：**
 
-- BusinessException：对应错误码如下表。
+- BusinessException：对应错误码如下表，详见[用户首选项错误码](./cj-errorcode-preferences.md)。
 
 | 错误码ID | 错误信息 |
 | :---- | :--- |
-| 401 | Parameter error. Possible causes:1. Mandatory parameters are left unspecified; 2. Incorrect parameter types;3. Parameter verification failed. |
 | 15500000 | Inner error. |
 
 **示例：**
@@ -854,7 +841,7 @@ public func on(event :PreferencesEvent, callback: Callback1Argument<String>): Un
 
 **异常：**
 
-- BusinessException：对应错误码如下表。
+- BusinessException：对应错误码如下表，详见[用户首选项错误码](./cj-errorcode-preferences.md)。
 
 | 错误码ID | 错误信息 |
 | :---- | :--- |
@@ -911,11 +898,10 @@ public func put(key: String, value: PreferencesValueType): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表。
+- BusinessException：对应错误码如下表，详见[用户首选项错误码](./cj-errorcode-preferences.md)。
 
 | 错误码ID | 错误信息 |
 | :---- | :--- |
-| 401 | Parameter error. Possible causes:1. Mandatory parameters are left unspecified; 2. Incorrect parameter types;3. Parameter verification failed. |
 | 15500000 | Inner error. |
 
 **示例：**

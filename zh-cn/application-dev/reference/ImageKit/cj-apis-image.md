@@ -76,11 +76,12 @@ public func createImageReceiver(size: Size, format: ImageFormat, capacity: Int32
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
+- BusinessException：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error.Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types; |
+  | 62980104 | Failed to initialize the internal object. |
+  | 62980115 | Parameter error.Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
 
 **示例：**
 
@@ -393,11 +394,11 @@ public func createPixelMap(colors: Array<UInt8>, options: InitializationOptions)
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
+- BusinessException：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified.2.Incorrect parameter types. 3.Parameter verification failed. |
+  | 62980104 | Failed to initialize the internal object. |
 
 **示例：**
 
@@ -1026,11 +1027,10 @@ public func packToData(source: ImageSource, options: PackingOption): Array<UInt8
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)和[Image错误码](./cj-errorcode-image.md)。
+- BusinessException：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | If the parameter is invalid. |
   | 62980096 | The operation failed. Possible cause: 1.Image upload exception.2. Decoding process exception. 3. Insufficient memory. |
   | 62980101 | The image data is abnormal. |
   | 62980106 | The image data is too large. This status code is thrown when an error occurs during the process of checking size. |
@@ -1086,11 +1086,10 @@ public func packToData(source: PixelMap, options: PackingOption): Array<UInt8>
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)和[Image错误码](./cj-errorcode-image.md)。
+- BusinessException：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | If the parameter is invalid. |
   | 62980096 | The operation failed. Possible cause: 1.Image upload exception.2. Decoding process exception. 3. Insufficient memory. |
   | 62980101 | The image data is abnormal. |
   | 62980106 | The image data is too large. This status code is thrown when an error occurs during the process of checking size. |
@@ -1834,11 +1833,10 @@ public func getImageProperty(key: PropertyKey, options!: ImagePropertyOptions = 
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)和[Image错误码](./cj-errorcode-image.md)。
+- BusinessException：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error.Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types;3.Parameter verification failed; |
   | 62980096 | The operation failed. Possible cause: 1.Image upload exception.2. Decoding process exception. 3. Insufficient memory. |
   | 62980103 | The image data is not supported. |
   | 62980110 | The image source data is incorrect. |
@@ -1888,11 +1886,10 @@ public func modifyImageProperty(key: PropertyKey, value: String): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)和[Image错误码](./cj-errorcode-image.md)。
+- BusinessException：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error.Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types; |
   | 62980123 | The image does not support EXIF decoding. |
   | 62980133 | The EXIF data is out of range. |
   | 62980135 | The EXIF value is invalid. |
@@ -2321,11 +2318,10 @@ public func applyColorSpace(targetColorSpace: ColorSpaceManager): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)和[Image错误码](./cj-errorcode-image.md)。
+- BusinessException：对应错误码如下表，[Image错误码](./cj-errorcode-image.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | The parameter check failed. |
   | 62980104 | Failed to initialize the internal object. |
   | 62980108 | Failed to convert the color space. |
   | 62980115 | Invalid image parameter. |

@@ -807,7 +807,7 @@ public func isTerminating(): Bool
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码说明文档](../cj-errorcode-universal.md)。
+- BusinessException：对应错误码如下表，详见[元能力子系统错误码](./cj-errorcode-ability.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -847,12 +847,11 @@ public func requestDialogService(want: Want, result: AsyncCallback<RequestResult
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码说明文档](../cj-errorcode-universal.md)。
+- BusinessException：对应错误码如下表，详见[通用错误码说明文档](../cj-errorcode-universal.md)和[元能力子系统错误码](./cj-errorcode-ability.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 201 | The application does not have permission to call the interface. |
-  | 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
   | 16000001 | The specified ability does not exist. |
   | 16000002 | Incorrect ability type. |
   | 16000004 | Cannot start an invisible component. |
@@ -903,12 +902,11 @@ public func startAbility(want: Want, options!: ?StartOptions = None): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码说明文档](../cj-errorcode-universal.md)。
+- BusinessException：对应错误码如下表，详见[通用错误码说明文档](../cj-errorcode-universal.md)和[元能力子系统错误码](./cj-errorcode-ability.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 201 | The application does not have permission to call the interface. |
-  | 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
   | 801 | Capability not support. |
   | 16000001 | The specified ability does not exist. |
   | 16000002 | Incorrect ability type. |
@@ -973,12 +971,11 @@ public func startAbilityForResult(want: Want, callback: AsyncCallback<AbilityRes
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码说明文档](../cj-errorcode-universal.md)。
+- BusinessException：对应错误码如下表，详见[通用错误码说明文档](../cj-errorcode-universal.md)和[元能力子系统错误码](./cj-errorcode-ability.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 201 | The application does not have permission to call the interface. |
-  | 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
   | 16000001 | The specified ability does not exist. |
   | 16000002 | Incorrect ability type. |
   | 16000004 | Cannot start an invisible component. |
@@ -1042,12 +1039,11 @@ public func startAbilityForResult(want: Want, options: StartOptions, callback: A
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码说明文档](../cj-errorcode-universal.md)。
+- BusinessException：对应错误码如下表，详见[通用错误码说明文档](../cj-errorcode-universal.md)和[元能力子系统错误码](./cj-errorcode-ability.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 201 | The application does not have permission to call the interface. |
-  | 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
   | 16000001 | The specified ability does not exist. |
   | 16000004 | Cannot start an invisible component. |
   | 16000005 | The specified process does not have the permission. |
@@ -1101,7 +1097,7 @@ public func terminateSelf(): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码说明文档](../cj-errorcode-universal.md)。
+- BusinessException：对应错误码如下表，详见[元能力子系统错误码](./cj-errorcode-ability.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -1142,11 +1138,10 @@ public func terminateSelfWithResult(parameter: AbilityResult): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码说明文档](../cj-errorcode-universal.md)。
+- BusinessException：对应错误码如下表，详见[元能力子系统错误码](./cj-errorcode-ability.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
   | 16000009 | An ability cannot be started or stopped in Wukong mode. |
   | 16000011 | The context does not exist. |
   | 16000050 | Internal error. |

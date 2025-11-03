@@ -94,7 +94,7 @@ public static func publish(event: String, options!: CommonEventPublishData =  Co
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |event|String|是|-|表示要发送的公共事件。|
-|options|[CommonEventPublishData](./cj-apis-common_event_publish_data.md#class-commoneventpublishdata)|否|CommonEventPublishData()|**命名参数。**表示发布公共事件的属性。|
+|options|[CommonEventPublishData](./cj-apis-common_event_publish_data.md#class-commoneventpublishdata)|否|CommonEventPublishData()|**命名参数。** 表示发布公共事件的属性。|
 
 **异常：**
 
@@ -103,9 +103,9 @@ public static func publish(event: String, options!: CommonEventPublishData =  Co
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 1500003 | The common event sending frequency too high. |
-  | 1500007 | If error sending message to Common Event Service. |
-  | 1500008 | If Common Event Service does not complete initialization. |
-  | 1500009 | If error obtaining system parameters. |
+  | 1500007 | Failed to send the message to the common event service. |
+  | 1500008 | Failed to initialize the common event service. |
+  | 1500009 | Failed to obtain system parameters. |
 
 **示例：**
 
@@ -152,7 +152,7 @@ public static func subscribe(subscriber: CommonEventSubscriber, callback: AsyncC
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[事件错误码](./cj-errorcode-common_event_service.md)。
+- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)和[事件错误码](./cj-errorcode-common_event_service.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -208,7 +208,7 @@ public static func unsubscribe(subscriber: CommonEventSubscriber): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[事件错误码](./cj-errorcode-common_event_service.md)。
+- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)和[事件错误码](./cj-errorcode-common_event_service.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -427,7 +427,7 @@ public class Support {
 public static const COMMON_EVENT_ABILITY_ADDED: String = "common.event.ABILITY_ADDED"
 ```
 
-**功能：** 预留事件，暂未支持）表示已添加能力的公共事件。
+**功能：** （预留事件，暂未支持）表示已添加能力的公共事件。
 
 **类型：** String
 

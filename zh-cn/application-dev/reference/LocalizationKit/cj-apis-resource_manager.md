@@ -207,7 +207,6 @@ public class ResourceManager {}
 ### func addResource(String)
 
 ```cangjie
-
 public func addResource(path: String): Unit
 ```
 
@@ -254,7 +253,6 @@ resourceManager.addResource(path)
 ### func closeRawFd(String)
 
 ```cangjie
-
 public func closeRawFd(path: String): Unit
 ```
 
@@ -276,7 +274,6 @@ public func closeRawFd(path: String): Unit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | If the input parameter invalid. Possible causes: Incorrect parameter types.|
   | 9001005 |The resource not found by path.|
 
 - IllegalStateException：
@@ -301,7 +298,6 @@ let rawfd = resourceManager.closeRawFd("test.txt")
 ### func getBoolean(UInt32)
 
 ```cangjie
-
 public func getBoolean(resId: UInt32): Bool
 ```
 
@@ -329,7 +325,6 @@ public func getBoolean(resId: UInt32): Bool
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | If the input parameter invalid. Possible causes: Incorrect parameter types.|
   | 9001001 | Invalid resource ID.|
   | 9001002 | No matching resource is found based on the resource ID.|
   | 9001006 | The resource is referenced cyclically.|
@@ -358,7 +353,6 @@ resourceManager.getBoolean(res.id)
 ### func getBoolean(AppResource)
 
 ```cangjie
-
 public func getBoolean(resource: AppResource): Bool
 ```
 
@@ -386,7 +380,6 @@ public func getBoolean(resource: AppResource): Bool
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | If the input parameter invalid. Possible causes: Incorrect parameter types.|
   | 9001001 | Invalid resource ID.|
   | 9001002 | No matching resource is found based on the resource ID.|
   | 9001006 | The resource is referenced cyclically.|
@@ -416,7 +409,6 @@ resourceManager.getBoolean(resource)
 ### func getBooleanByName(String)
 
 ```cangjie
-
 public func getBooleanByName(resName: String): Bool
 ```
 
@@ -444,7 +436,6 @@ public func getBooleanByName(resName: String): Bool
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | If the input parameter invalid. Possible causes: Incorrect parameter types.|
   | 9001003 | Invalid resource name.|
   | 9001004 | No matching resource is found based on the resource name.|
   | 9001006 | The resource is referenced cyclically.|
@@ -471,7 +462,6 @@ resourceManager.getBooleanByName("test")
 ### func getColor(AppResource)
 
 ```cangjie
-
 public func getColor(resource: AppResource): UInt32
 ```
 
@@ -499,7 +489,6 @@ public func getColor(resource: AppResource): UInt32
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | If the input parameter invalid. Possible causes: Incorrect parameter types.|
   | 9001001 | Invalid resource ID.|
   | 9001002 | No matching resource is found based on the resource ID.|
   | 9001006 | The resource is referenced cyclically.|
@@ -529,7 +518,6 @@ resourceManager.getColor(resource)
 ### func getColor(UInt32)
 
 ```cangjie
-
 public func getColor(resId: UInt32): UInt32
 ```
 
@@ -557,7 +545,6 @@ public func getColor(resId: UInt32): UInt32
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | If the input parameter invalid. Possible causes: Incorrect parameter types.|
   | 9001001 | Invalid resource ID.|
   | 9001002 | No matching resource is found based on the resource ID.|
   | 9001006 | The resource is referenced cyclically.|
@@ -586,7 +573,6 @@ resourceManager.getColor(res.id)
 ### func getColorByName(String)
 
 ```cangjie
-
 public func getColorByName(resName: String): UInt32
 ```
 
@@ -614,7 +600,6 @@ public func getColorByName(resName: String): UInt32
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | If the input parameter invalid. Possible causes: Incorrect parameter types.|
   | 9001003 | Invalid resource name.|
   | 9001004 | No matching resource is found based on the resource name.|
   | 9001006 | The resource is referenced cyclically.|
@@ -641,7 +626,6 @@ resourceManager.getColorByName("test")
 ### func getConfiguration()
 
 ```cangjie
-
 public func getConfiguration(): Configuration
 ```
 
@@ -683,7 +667,6 @@ Hilog.info(0, "test", configuration.locale, "")
 ### func getDeviceCapability()
 
 ```cangjie
-
 public func getDeviceCapability(): DeviceCapability
 ```
 
@@ -724,7 +707,6 @@ let deviceCapability = resourceManager.getDeviceCapability()
 ### func getLocales(Bool)
 
 ```cangjie
-
 public func getLocales(includeSystem!: Bool = false): Array<String>
 ```
 
@@ -776,7 +758,6 @@ resourceManager.getLocales()
 ### func getMediaBase64ByName(String, ?ScreenDensity)
 
 ```cangjie
-
 public func getMediaBase64ByName(resName: String, density!: ?ScreenDensity = None): String
 ```
 
@@ -805,7 +786,6 @@ public func getMediaBase64ByName(resName: String, density!: ?ScreenDensity = Non
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | If the input parameter invalid. Possible causes: 1.Incorrect parameter types; 2.Parameter verification failed.|
   | 9001003 | Invalid resource name.|
   | 9001004 | No matching resource is found based on the resource name.|
 
@@ -837,7 +817,6 @@ resourceManager.getMediaBase64ByName("test")
 ### func getMediaByName(String, ?ScreenDensity)
 
 ```cangjie
-
 public func getMediaByName(resName: String, density!: ?ScreenDensity = None): Array<UInt8>
 ```
 
@@ -866,7 +845,6 @@ public func getMediaByName(resName: String, density!: ?ScreenDensity = None): Ar
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | If the input parameter invalid. Possible causes: 1.Incorrect parameter types; 2.Parameter verification failed.|
   | 9001003 | Invalid resource name.|
   | 9001004 | No matching resource is found based on the resource name.|
 
@@ -892,7 +870,6 @@ resourceManager.getMediaByName("test", density: ScreenMdpi)
 ### func getMediaContent(UInt32, ?ScreenDensity)
 
 ```cangjie
-
 public func getMediaContent(resId: UInt32, density!: ?ScreenDensity = None): Array<UInt8>
 ```
 
@@ -921,7 +898,6 @@ public func getMediaContent(resId: UInt32, density!: ?ScreenDensity = None): Arr
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | If the input parameter invalid. Possible causes: 1.Incorrect parameter types; 2.Parameter verification failed.|
   | 9001001 | Invalid resource ID.|
   | 9001002 | No matching resource is found based on the resource ID.|
 
@@ -949,7 +925,6 @@ resourceManager.getMediaContent(res.id, density: ScreenSdpi)
 ### func getMediaContent(AppResource, ?ScreenDensity)
 
 ```cangjie
-
 public func getMediaContent(resource: AppResource, density!: ?ScreenDensity = None): Array<UInt8>
 ```
 
@@ -978,7 +953,6 @@ public func getMediaContent(resource: AppResource, density!: ?ScreenDensity = No
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | If the input parameter invalid. Possible causes: 1.Incorrect parameter types; 2.Parameter verification failed.|
   | 9001001 | Invalid resource ID.|
   | 9001002 | No matching resource is found based on the resource ID.|
 
@@ -1007,7 +981,6 @@ resourceManager.getMediaContent(resource, density: ScreenSdpi)
 ### func getMediaContentBase64(UInt32, ?ScreenDensity)
 
 ```cangjie
-
 public func getMediaContentBase64(resId: UInt32, density!: ?ScreenDensity = None): String
 ```
 
@@ -1036,7 +1009,6 @@ public func getMediaContentBase64(resId: UInt32, density!: ?ScreenDensity = None
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | If the input parameter invalid. Possible causes: 1.Incorrect parameter types; 2.Parameter verification failed.|
   | 9001001 | Invalid resource ID.|
   | 9001002 | No matching resource is found based on the resource ID.|
 
@@ -1070,7 +1042,6 @@ resourceManager.getMediaContentBase64(res.id)
 ### func getMediaContentBase64(AppResource, ?ScreenDensity)
 
 ```cangjie
-
 public func getMediaContentBase64(resource: AppResource, density!: ?ScreenDensity = None): String
 ```
 
@@ -1099,7 +1070,6 @@ public func getMediaContentBase64(resource: AppResource, density!: ?ScreenDensit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | If the input parameter invalid. Possible causes: 1.Incorrect parameter types; 2.Parameter verification failed.|
   | 9001001 | Invalid resource ID.|
   | 9001002 | No matching resource is found based on the resource ID.|
 
@@ -1134,7 +1104,6 @@ resourceManager.getMediaContentBase64(resource)
 ### func getNumber(UInt32)
 
 ```cangjie
-
 public func getNumber(resId: UInt32): NumberValueType
 ```
 
@@ -1162,7 +1131,6 @@ public func getNumber(resId: UInt32): NumberValueType
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | If the input parameter invalid. Possible causes: Incorrect parameter types.|
   | 9001001 | Invalid resource ID.|
   | 9001002 | No matching resource is found based on the resource ID.|
   | 9001006 | The resource is referenced cyclically.|
@@ -1197,7 +1165,6 @@ match (number) {
 ### func getNumber(AppResource)
 
 ```cangjie
-
 public func getNumber(resource: AppResource): NumberValueType
 ```
 
@@ -1225,7 +1192,6 @@ public func getNumber(resource: AppResource): NumberValueType
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | If the input parameter invalid. Possible causes: Incorrect parameter types.|
   | 9001001 | Invalid resource ID.|
   | 9001002 | No matching resource is found based on the resource ID.|
   | 9001006 | The resource is referenced cyclically.|
@@ -1261,7 +1227,6 @@ match (number) {
 ### func getNumberByName(String)
 
 ```cangjie
-
 public func getNumberByName(resName: String): NumberValueType
 ```
 
@@ -1289,7 +1254,6 @@ public func getNumberByName(resName: String): NumberValueType
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | If the input parameter invalid. Possible causes: Incorrect parameter types.|
   | 9001003 | Invalid resource name.|
   | 9001004 | No matching resource is found based on the resource name.|
   | 9001006 | The resource is referenced cyclically.|
@@ -1323,7 +1287,6 @@ match (number) {
 ### func getPluralStringByName(String, Int64)
 
 ```cangjie
-
 public func getPluralStringByName(resName: String, num: Int64): String
 ```
 
@@ -1352,7 +1315,6 @@ public func getPluralStringByName(resName: String, num: Int64): String
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | If the input parameter invalid. Possible causes: Incorrect parameter types.|
   | 9001003 | Invalid resource name.|
   | 9001004 | No matching resource is found based on the resource name.|
   | 9001006 | The resource is referenced cyclically.|
@@ -1385,7 +1347,6 @@ resourceManager.getPluralStringByName("test", 1)
 ### func getPluralStringValue(UInt32, Int64)
 
 ```cangjie
-
 public func getPluralStringValue(resId: UInt32, num: Int64): String
 ```
 
@@ -1414,7 +1375,6 @@ public func getPluralStringValue(resId: UInt32, num: Int64): String
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | If the input parameter invalid. Possible causes: Incorrect parameter types.|
   | 9001001 | Invalid resource ID.|
   | 9001002 | No matching resource is found based on the resource ID.|
   | 9001006 | The resource is referenced cyclically.|
@@ -1449,7 +1409,6 @@ resourceManager.getPluralStringValue(res.id, 1)
 ### func getPluralStringValue(AppResource, Int64)
 
 ```cangjie
-
 public func getPluralStringValue(resource: AppResource, num: Int64): String
 ```
 
@@ -1478,7 +1437,6 @@ public func getPluralStringValue(resource: AppResource, num: Int64): String
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | If the input parameter invalid. Possible causes: Incorrect parameter types.|
   | 9001001 | Invalid resource ID.|
   | 9001002 | No matching resource is found based on the resource ID.|
   | 9001006 | The resource is referenced cyclically.|
@@ -1514,7 +1472,6 @@ resourceManager.getPluralStringValue(resource, 1)
 ### func getRawFd(String)
 
 ```cangjie
-
 public func getRawFd(path: String): RawFileDescriptor
 ```
 
@@ -1542,7 +1499,6 @@ public func getRawFd(path: String): RawFileDescriptor
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | If the input parameter invalid. Possible causes: Incorrect parameter types.|
   | 9001005 | Invalid relative path.|
 
 - IllegalStateException：
@@ -1569,7 +1525,6 @@ Hilog.info(0, "test", "${rawfd.fd} ${rawfd.offset} ${rawfd.length}", "")
 ### func getRawFileContent(String)
 
 ```cangjie
-
 public func getRawFileContent(path: String): Array<UInt8>
 ```
 
@@ -1597,7 +1552,6 @@ public func getRawFileContent(path: String): Array<UInt8>
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | If the input parameter invalid. Possible causes: Incorrect parameter types.|
   | 9001005 | Invalid relative path.|
 
 - IllegalStateException：
@@ -1622,7 +1576,6 @@ resourceManager.getRawFileContent("test.txt")
 ### func getRawFileList(String)
 
 ```cangjie
-
 public func getRawFileList(path: String): Array<String>
 ```
 
@@ -1650,7 +1603,6 @@ public func getRawFileList(path: String): Array<String>
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | If the input parameter invalid. Possible causes: Incorrect parameter types.|
   | 9001005 | Invalid relative path.|
 
 - IllegalStateException：
@@ -1675,7 +1627,6 @@ resourceManager.getRawFileList("")
 ### func getString(UInt32, Array\<ArgsValueType>)
 
 ```cangjie
-
 public func getString(resId: UInt32, args: Array<ArgsValueType>): String
 ```
 
@@ -1704,7 +1655,6 @@ public func getString(resId: UInt32, args: Array<ArgsValueType>): String
 
 | 错误码ID | 错误信息 |
 | :---- | :--- |
-| 401 | If the input parameter invalid.|
 | 9001001 | Invalid resource ID.|
 | 9001002 | No matching resource is found based on the resource ID.|
 | 9001006 | The resource is referenced cyclically.|
@@ -1734,7 +1684,6 @@ resourceManager.getString(resource.id)
 ### func getString(AppResource, Array\<ArgsValueType>)
 
 ```cangjie
-
 public func getString(resource: AppResource, args: Array<ArgsValueType>): String
 ```
 
@@ -1763,7 +1712,6 @@ public func getString(resource: AppResource, args: Array<ArgsValueType>): String
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | If the input parameter invalid. Possible causes: Incorrect parameter types.|
   | 9001001 | Invalid resource ID.|
   | 9001002 | No matching resource is found based on the resource ID.|
   | 9001006 | The resource is referenced cyclically.|
@@ -1820,7 +1768,6 @@ public func getStringArrayByName(resName: String): Array<String>
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | If the input parameter invalid. Possible causes: Incorrect parameter types. |
   | 9001003 | Invalid resource name. |
   | 9001004 | No matching resource is found based on the resource name. |
   | 9001006 | The resource is referenced cyclically. |
@@ -1847,7 +1794,6 @@ resourceManager.getStringArrayByName("test")
 ### func getStringArrayValue(UInt32)
 
 ```cangjie
-
 public func getStringArrayValue(resId: UInt32): Array<String>
 ```
 
@@ -1875,7 +1821,6 @@ public func getStringArrayValue(resId: UInt32): Array<String>
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | If the input parameter invalid. Possible causes: Incorrect parameter types.|
   | 9001001 | Invalid resource ID.|
   | 9001002 | No matching resource is found based on the resource ID.|
   | 9001006 | The resource is referenced cyclically.|
@@ -1904,7 +1849,6 @@ resourceManager.getStringArrayValue(res.id)
 ### func getStringArrayValue(AppResource)
 
 ```cangjie
-
 public func getStringArrayValue(resource: AppResource): Array<String>
 ```
 
@@ -1932,7 +1876,6 @@ public func getStringArrayValue(resource: AppResource): Array<String>
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | If the input parameter invalid. Possible causes: Incorrect parameter types.|
   | 9001001 | Invalid resource ID.|
   | 9001002 | No matching resource is found based on the resource ID.|
   | 9001006 | The resource is referenced cyclically.|
@@ -1962,7 +1905,6 @@ resourceManager.getStringArrayValue(resource)
 ### func getStringByName(String, Array\<ArgsValueType>)
 
 ```cangjie
-
 public func getStringByName(resName: String, args: Array<ArgsValueType>): String
 ```
 
@@ -1991,7 +1933,6 @@ public func getStringByName(resName: String, args: Array<ArgsValueType>): String
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | If the input parameter invalid. Possible causes: Incorrect parameter types.|
   | 9001003 | Invalid resource name.|
   | 9001004 | No matching resource is found based on the resource name.|
   | 9001006 | The resource is referenced cyclically.|
@@ -2019,7 +1960,6 @@ resourceManager.getStringByName("test", ArgsValueType.StringValue("format string
 ### func removeResource(String)
 
 ```cangjie
-
 public func removeResource(path: String): Unit
 ```
 

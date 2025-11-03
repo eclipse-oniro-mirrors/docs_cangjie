@@ -52,7 +52,6 @@ public func createGattClientDevice(deviceId: String): GattClientDevice
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified.2. Incorrect parameter types. 3. Parameter verification failed. |
   | 801 | Capability not supported. |
 
 **示例：**
@@ -133,7 +132,6 @@ public func off(eventType: BluetoothBleCallbackType, callback!: ?CallbackObject 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 201 | Permission denied. |
-  | 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified.2. Incorrect parameter types. 3. Parameter verification failed. |
   | 801 | Capability not supported. |
   | 2900099 | Operation failed. |
 
@@ -195,7 +193,6 @@ public func on(eventType: BluetoothBleCallbackType, callback: Callback1Argument<
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 201 | Permission denied. |
-  | 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified.2. Incorrect parameter types. 3. Parameter verification failed. |
   | 801 | Capability not supported. |
   | 2900099 | Operation failed. |
 
@@ -254,7 +251,6 @@ public func on(eventType: BluetoothBleCallbackType, callback: Callback1Argument<
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 201 | Permission denied. |
-  | 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified.2. Incorrect parameter types. 3. Parameter verification failed. |
   | 801 | Capability not supported. |
   | 2900099 | Operation failed. |
 
@@ -316,7 +312,6 @@ public func startAdvertising(setting: AdvertiseSetting, advData: AdvertiseData, 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 201 | Permission denied. |
-  | 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified.2. Incorrect parameter types. 3. Parameter verification failed. |
   | 801 | Capability not supported. |
   | 2900001 | Service stopped. |
   | 2900003 | Bluetooth disabled. |
@@ -393,11 +388,12 @@ public func startAdvertising(advertisingParams: AdvertisingParams): UInt32
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 201 | Permission denied. |
-  | 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified.2. Incorrect parameter types. 3. Parameter verification failed. |
   | 801 | Capability not supported. |
   | 2900001 | Service stopped. |
   | 2900003 | Bluetooth disabled. |
   | 2900099 | Operation failed. |
+  | 2900010 | The numeber of advertising resources reaches the upper limit. |
+  | 2902054 | The length of the advertising data exceeds the upper limit. |
 
 **示例：**
 
@@ -471,7 +467,6 @@ public func startBLEScan(filters: Array<ScanFilter>, options!: ?ScanOptions = No
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 201 | Permission denied. |
-  | 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified.2. Incorrect parameter types. 3. Parameter verification failed. |
   | 801 | Capability not supported. |
   | 2900001 | Service stopped. |
   | 2900003 | Bluetooth disabled. |
@@ -582,11 +577,11 @@ public func stopAdvertising(advertisingId: UInt32): Unit
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 201 | Permission denied. |
-  | 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified.2. Incorrect parameter types.3. Parameter verification failed. |
   | 801 | Capability not supported. |
   | 2900001 | Service stopped. |
   | 2900003 | Bluetooth disabled. |
   | 2900099 | Operation failed. |
+  | 2902055 | Invalid advertising id. |
 
 **示例：**
 
@@ -2049,7 +2044,6 @@ public func getDeviceName(): String
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 201 | Permission denied. |
-  | 401 | Invalid parameter.Possible causes: 1. Mandatory parameters are left unspecified.2. Incorrect parameter types. |
   | 801 | Capability not supported. |
   | 2900001 | Service stopped. |
   | 2900099 | Operation failed. |
@@ -2102,9 +2096,10 @@ public func getRssiValue(callback: AsyncCallback<Int32>): Unit
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 201 | Permission denied. |
-  | 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified.2. Incorrect parameter types. |
   | 801 | Capability not supported. |
   | 2900099 | Operation failed. |
+  | 2900011 | The operation is busy. The last operation is not completed. |
+  | 2901003 | The connection is not established. |
 
 **示例：**
 
@@ -2159,7 +2154,6 @@ public func getServices(callback: AsyncCallback<Array<GattService>>): Unit
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 201 | Permission denied. |
-  | 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified.2. Incorrect parameter types. 3. Parameter verification failed. |
   | 801 | Capability not supported. |
   | 2900001 | Service stopped. |
   | 2900099 | Operation failed. |
@@ -2213,12 +2207,11 @@ public func off(eventType: BluetoothBleGattClientDeviceCallbackType, callback!: 
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)和[蓝牙服务子系统错误码](./cj-errorcode-bluetooth_manager.md)。
+- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 201 | Permission denied. |
-  | 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified.2. Incorrect parameter types. 3. Parameter verification failed. |
   | 801 | Capability not supported. |
 
 **示例：**
@@ -2278,12 +2271,11 @@ public func on(eventType: BluetoothBleGattClientDeviceCallbackType, callback: Ca
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)和[蓝牙服务子系统错误码](./cj-errorcode-bluetooth_manager.md)。
+- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 201 | Permission denied. |
-  | 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified.2. Incorrect parameter types. 3. Parameter verification failed. |
   | 801 | Capability not supported. |
 
 **示例：**
@@ -2341,12 +2333,11 @@ public func on(
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)和[蓝牙服务子系统错误码](./cj-errorcode-bluetooth_manager.md)。
+- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 201 | Permission denied. |
-  | 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified.2. Incorrect parameter types. 3. Parameter verification failed. |
   | 801 | Capability not supported. |
 
 **示例：**
@@ -2406,12 +2397,11 @@ public func on(eventType: BluetoothBleGattClientDeviceCallbackType, callback: Ca
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)和[蓝牙服务子系统错误码](./cj-errorcode-bluetooth_manager.md)。
+- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 201 | Permission denied. |
-  | 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified.2. Incorrect parameter types. 3. Parameter verification failed. |
   | 801 | Capability not supported. |
 
 **示例：**
@@ -2474,11 +2464,16 @@ public func readCharacteristicValue(
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 201 | Permission denied. |
-  | 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified.2. Incorrect parameter types. 3. Parameter verification failed. |
   | 801 | Capability not supported. |
   | 2900001 | Service stopped. |
+  | 2900011 | The operation is busy. The last operation is not completed. |
   | 2901000 | Read forbidden. |
   | 2900099 | Operation failed. |
+  | 2901003 | The connection is not established. |
+  | 2901004 | The connection is congested. |
+  | 2901005 | The connection is not encrypted. |
+  | 2901006 | The connection is not authenticated. |
+  | 2901007 | The connection is not authorized. |
 
 **示例：**
 
@@ -2563,7 +2558,6 @@ public func readDescriptorValue(descriptor: BLEDescriptor, callback: AsyncCallba
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 201 | Permission denied. |
-  | 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified.2. Incorrect parameter types. 3. Parameter verification failed. |
   | 801 | Capability not supported. |
   | 2900001 | Service stopped. |
   | 2900011 | The operation is busy. The last operation is not complete. |
@@ -2644,7 +2638,6 @@ public func setBLEMtuSize(mtu: Int32): Unit
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 201 | Permission denied. |
-  | 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified.2. Incorrect parameter types. 3. Parameter verification failed. |
   | 801 | Capability not supported. |
   | 2900001 | Service stopped. |
   | 2900099 | Operation failed. |
@@ -2698,10 +2691,11 @@ public func setCharacteristicChangeIndication(characteristic: BLECharacteristic,
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 201 | Permission denied. |
-  | 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified.2. Incorrect parameter types. 3. Parameter verification failed. |
   | 801 | Capability not supported. |
   | 2900001 | Service stopped. |
+  | 2900011 | The operation is busy. The last operation is not completed. |
   | 2900099 | Operation failed. |
+  | 2901003 | The connection is not established. |
 
 **示例：**
 
@@ -2778,10 +2772,11 @@ public func setCharacteristicChangeNotification(characteristic: BLECharacteristi
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 201 | Permission denied. |
-  | 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified.2. Incorrect parameter types. 3. Parameter verification failed. |
   | 801 | Capability not supported. |
   | 2900001 | Service stopped. |
+  | 2900011 | The operation is busy. The last operation is not completed. |
   | 2900099 | Operation failed. |
+  | 2901003 | The connection is not established. |
 
 **示例：**
 
@@ -2859,11 +2854,16 @@ public func writeCharacteristicValue(characteristic: BLECharacteristic, writeTyp
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 201 | Permission denied. |
-  | 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified.2. Incorrect parameter types. 3. Parameter verification failed. |
   | 801 | Capability not supported. |
   | 2900001 | Service stopped. |
+  | 2900011 | The operation is busy. The last operation is not completed. |
   | 2901001 | Write forbidden. |
   | 2900099 | Operation failed. |
+  | 2901003 | The connection is not established. |
+  | 2901004 | The connection is congested. |
+  | 2901005 | The connection is not encrypted. |
+  | 2901006 | The connection is not authenticated. |
+  | 2901007 | The connection is not authorized. |
 
 **示例：**
 
@@ -2941,11 +2941,16 @@ public func writeDescriptorValue(descriptor: BLEDescriptor, callback: AsyncCallb
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 201 | Permission denied. |
-  | 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified.2. Incorrect parameter types. 3. Parameter verification failed. |
   | 801 | Capability not supported. |
   | 2900001 | Service stopped. |
+  | 2900011 | The operation is busy. The last operation is not completed. |
   | 2901001 | Write forbidden. |
   | 2900099 | Operation failed. |
+  | 2901003 | The connection is not established. |
+  | 2901004 | The connection is congested. |
+  | 2901005 | The connection is not encrypted. |
+  | 2901006 | The connection is not authenticated. |
+  | 2901007 | The connection is not authorized. |
 
 **示例：**
 
@@ -3400,7 +3405,6 @@ public func addService(service: GattService): Unit
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 201 | Permission denied. |
-  | 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified.2. Incorrect parameter types. 3. Parameter verification failed. |
   | 801 | Capability not supported. |
   | 2900001 | Service stopped. |
   | 2900003 | Bluetooth disabled. |
@@ -3535,7 +3539,6 @@ public func notifyCharacteristicChanged(deviceId: String, notifyCharacteristic: 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 201 | Permission denied. |
-  | 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified.2. Incorrect parameter types. 3. Parameter verification failed. |
   | 801 | Capability not supported. |
   | 2900001 | Service stopped. |
   | 2900003 | Bluetooth disabled. |
@@ -3596,7 +3599,6 @@ public func off(eventType: BluetoothBleGattServerCallbackType, callback!: ?Callb
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 201 | Permission denied. |
-  | 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified.2. Incorrect parameter types. 3. Parameter verification failed. |
   | 801 | Capability not supported. |
 
 **示例：**
@@ -3656,7 +3658,6 @@ public func on(eventType: BluetoothBleGattServerCallbackType, callback: Callback
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 201 | Permission denied. |
-  | 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified.2. Incorrect parameter types. 3. Parameter verification failed. |
   | 801 | Capability not supported. |
 
 **示例：**
@@ -3732,7 +3733,6 @@ public func on(eventType: BluetoothBleGattServerCallbackType, callback: Callback
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 201 | Permission denied. |
-  | 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified.2. Incorrect parameter types. 3. Parameter verification failed. |
   | 801 | Capability not supported. |
 
 **示例：**
@@ -3815,7 +3815,6 @@ public func on(eventType: BluetoothBleGattServerCallbackType, callback: Callback
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 201 | Permission denied. |
-  | 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified.2. Incorrect parameter types. 3. Parameter verification failed. |
   | 801 | Capability not supported. |
 
 **示例：**
@@ -3891,7 +3890,6 @@ public func on(eventType: BluetoothBleGattServerCallbackType, callback: Callback
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 201 | Permission denied. |
-  | 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified.2. Incorrect parameter types. 3. Parameter verification failed. |
   | 801 | Capability not supported. |
 
 **示例：**
@@ -3971,7 +3969,6 @@ public func on(eventType: BluetoothBleGattServerCallbackType, callback: Callback
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 201 | Permission denied. |
-  | 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified.2. Incorrect parameter types. 3. Parameter verification failed. |
   | 801 | Capability not supported. |
 
 **示例：**
@@ -4031,7 +4028,6 @@ public func on(eventType: BluetoothBleGattServerCallbackType, callback: Callback
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 201 | Permission denied. |
-  | 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified.2. Incorrect parameter types. 3. Parameter verification failed. |
   | 801 | Capability not supported. |
 
 **示例：**
@@ -4089,7 +4085,6 @@ public func removeService(serviceUUID: String): Unit
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 201 | Permission denied. |
-  | 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified.2. Incorrect parameter types. 3. Parameter verification failed. |
   | 801 | Capability not supported. |
   | 2900001 | Service stopped. |
   | 2900003 | Bluetooth disabled. |
@@ -4142,7 +4137,6 @@ public func sendResponse(serverResponse: ServerResponse): Unit
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 201 | Permission denied. |
-  | 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified.2. Incorrect parameter types. 3. Parameter verification failed. |
   | 801 | Capability not supported. |
   | 2900001 | Service stopped. |
   | 2900003 | Bluetooth disabled. |

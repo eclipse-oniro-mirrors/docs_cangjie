@@ -43,7 +43,7 @@ public static func getUriFromPath(path: String): String
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
+- BusinessException：对应错误码如下表，详见[文件管理错误码](./cj-errorcode-filemanagement.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |

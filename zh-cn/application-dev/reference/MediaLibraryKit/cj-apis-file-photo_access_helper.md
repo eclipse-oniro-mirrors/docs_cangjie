@@ -216,11 +216,10 @@ public func getAssets(options: FetchOptions): PhotoAssetResult
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)和[文件管理错误码](../CoreFileKit/cj-errorcode-filemanagement.md)。
+- BusinessException：对应错误码如下表，详见[文件管理错误码](../CoreFileKit/cj-errorcode-filemanagement.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed. |
   | 201 | Permission denied |
   | 13900020 | Invalid argument |
   | 14000011 | System inner fail |
@@ -293,7 +292,6 @@ public func commitModify(): Unit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types. |
   | 201 | Permission denied |
   | 13900020 | Invalid argument |
   | 14000011 | System inner fail |
@@ -631,7 +629,7 @@ public var notifyType: NotifyType
 public var uris: Array<String>
 ```
 
-**功能：** 相同[NotifyType](#enum-notifytype)的所有uri，可以是PhotoAsset或Album。。
+**功能：** 相同[NotifyType](#enum-notifytype)的所有uri，可以是PhotoAsset或Album。
 
 **类型：** Array\<String>
 
@@ -852,11 +850,10 @@ public func getCount(): Int32
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)和[文件管理错误码](../CoreFileKit/cj-errorcode-filemanagement.md)。
+- BusinessException：对应错误码如下表，详见[文件管理错误码](../CoreFileKit/cj-errorcode-filemanagement.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
   | 13900020 | Invalid argument |
   | 14000011 | System inner fail |
 
@@ -944,14 +941,6 @@ public class MediaAlbumChangeRequest <: MediaChangeRequest {
 ### init(Album)
 
 ```cangjie
-/**
- * The constructor to create a MediaAlbumChangeRequest instance.
- *
- * @throws { BusinessException } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;
- * <br>2. Incorrect parameter types; 3. Parameter verification failed.
- * @throws { BusinessException } 14000011 - System inner fail
- * @relation constructor(album: Album)
- */
 public init(album: Album)
 ```
 
@@ -1007,11 +996,10 @@ public func addAssets(assets: Array<PhotoAsset>): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)和[文件管理错误码](../CoreFileKit/cj-errorcode-filemanagement.md)。
+- BusinessException：对应错误码如下表，详见[文件管理错误码](../CoreFileKit/cj-errorcode-filemanagement.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
   | 14000011 | System inner fail |
   | 14000016 | Operation Not Support |
 
@@ -1057,11 +1045,10 @@ public func getAlbum(): Album
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)和[文件管理错误码](../CoreFileKit/cj-errorcode-filemanagement.md)。
+- BusinessException：对应错误码如下表，详见[文件管理错误码](../CoreFileKit/cj-errorcode-filemanagement.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
   | 14000011 | System inner fail |
 
 **示例：**
@@ -1105,11 +1092,10 @@ public func removeAssets(assets: Array<PhotoAsset>): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)和[文件管理错误码](../CoreFileKit/cj-errorcode-filemanagement.md)。
+- BusinessException：对应错误码如下表，详见[文件管理错误码](../CoreFileKit/cj-errorcode-filemanagement.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
   | 14000011 | System inner fail |
   | 14000016 | Operation Not Support |
 
@@ -1163,11 +1149,10 @@ public func setAlbumName(name: String): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)和[文件管理错误码](../CoreFileKit/cj-errorcode-filemanagement.md)。
+- BusinessException：对应错误码如下表，详见[文件管理错误码](../CoreFileKit/cj-errorcode-filemanagement.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
   | 14000011 | System inner fail |
 
 **示例：**
@@ -1230,11 +1215,10 @@ public init(asset: PhotoAsset)
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)和[文件管理错误码](../CoreFileKit/cj-errorcode-filemanagement.md)。
+- BusinessException：对应错误码如下表，详见[文件管理错误码](../CoreFileKit/cj-errorcode-filemanagement.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
   | 14000011 | System inner fail |
 
 **示例：**
@@ -1286,11 +1270,10 @@ public static func createAssetRequest(context: UIAbilityContext, photoType: Phot
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)和[文件管理错误码](../CoreFileKit/cj-errorcode-filemanagement.md)。
+- BusinessException：对应错误码如下表，详见[文件管理错误码](../CoreFileKit/cj-errorcode-filemanagement.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
   | 14000011 | System inner fail |
 
 **示例：**
@@ -1339,11 +1322,10 @@ public static func createImageAssetRequest(context: UIAbilityContext, fileUri: S
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)和[文件管理错误码](../CoreFileKit/cj-errorcode-filemanagement.md)。
+- BusinessException：对应错误码如下表，详见[文件管理错误码](../CoreFileKit/cj-errorcode-filemanagement.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
   | 13900002 | The file corresponding to the URI is not in the app sandbox. |
   | 14000011 | System inner fail |
 
@@ -1393,11 +1375,10 @@ public static func createVideoAssetRequest(context: UIAbilityContext, fileUri: S
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)和[文件管理错误码](../CoreFileKit/cj-errorcode-filemanagement.md)。
+- BusinessException：对应错误码如下表，详见[文件管理错误码](../CoreFileKit/cj-errorcode-filemanagement.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
   | 13900002 | The file corresponding to the URI is not in the app sandbox. |
   | 14000011 | System inner fail |
 
@@ -1446,7 +1427,6 @@ public static func deleteAssets(context: UIAbilityContext, assets: Array<PhotoAs
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 201 | Permission denied |
-  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
   | 14000011 | System inner fail |
 
 **示例：**
@@ -1496,7 +1476,6 @@ public static func deleteAssets(context: UIAbilityContext, assets: Array<String>
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 201 | Permission denied |
-  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
   | 14000002 | The uri format is incorrect or does not exist. |
   | 14000011 | System inner fail |
 
@@ -1544,7 +1523,6 @@ public func addResource(resourceType: ResourceType, fileUri: String): Unit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
   | 13900002 | The file corresponding to the URI is not in the app sandbox. |
   | 14000011 | System inner fail |
   | 14000016 | Operation Not Support |
@@ -1594,7 +1572,6 @@ public func addResource(resourceType: ResourceType, data: Array<Byte>): Unit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
   | 14000011 | System inner fail |
   | 14000016 | Operation Not Support |
 
@@ -1680,11 +1657,10 @@ public func getAsset(): PhotoAsset
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)和[文件管理错误码](../CoreFileKit/cj-errorcode-filemanagement.md)。
+- BusinessException：对应错误码如下表，详见[文件管理错误码](../CoreFileKit/cj-errorcode-filemanagement.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
   | 14000011 | System inner fail |
 
 **示例：**
@@ -1734,7 +1710,6 @@ public func getWriteCacheHandler(): Int32
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 201 | Permission denied |
-  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
   | 14000011 | System inner fail |
   | 14000016 | Operation Not Support |
 
@@ -1819,11 +1794,10 @@ public func setTitle(title: String): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)和[文件管理错误码](../CoreFileKit/cj-errorcode-filemanagement.md)。
+- BusinessException：对应错误码如下表，详见[文件管理错误码](../CoreFileKit/cj-errorcode-filemanagement.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
   | 14000011 | System inner fail |
 
 **示例：**
@@ -1887,7 +1861,6 @@ public func applyChanges(mediaChangeRequest: MediaChangeRequest): Unit
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 201 | Permission denied |
-  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
   | 14000011 | System inner fail |
 
 ### func getAlbums(AlbumType, AlbumSubtype, FetchOptions)
@@ -1925,7 +1898,6 @@ public func getAlbums(albumType: AlbumType, subtype: AlbumSubtype,
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
   | 201 | Permission denied |
   | 13900020 | Invalid argument |
   | 14000011 | System inner fail |
@@ -2081,7 +2053,6 @@ public func registerChange(uri: String, forChildUris: Bool, callback: Callback1A
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
   | 13900012 | Permission denied |
   | 13900020 | Invalid argument |
 
@@ -2139,11 +2110,10 @@ public func release(): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)和[文件管理错误码](../CoreFileKit/cj-errorcode-filemanagement.md)。
+- BusinessException：对应错误码如下表，详见[文件管理错误码](../CoreFileKit/cj-errorcode-filemanagement.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
   | 13900020 | Invalid argument |
   | 14000011 | System inner fail |
 
@@ -2189,11 +2159,10 @@ public func showAssetsCreationDialog(srcFileUris: Array<String>, photoCreationCo
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)和[文件管理错误码](../CoreFileKit/cj-errorcode-filemanagement.md)。
+- BusinessException：对应错误码如下表，详见[文件管理错误码](../CoreFileKit/cj-errorcode-filemanagement.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
   | 14000011 | Internal system error |
 
 **示例：**
@@ -2267,11 +2236,10 @@ public func unRegisterChange(uri: String, callback!: ?Callback1Argument<ChangeDa
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)和[文件管理错误码](../CoreFileKit/cj-errorcode-filemanagement.md)。
+- BusinessException：对应错误码如下表，详见[文件管理错误码](../CoreFileKit/cj-errorcode-filemanagement.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
   | 13900012 | Permission denied |
   | 13900020 | Invalid argument |
 
@@ -2399,7 +2367,6 @@ public func commitModify(): Unit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types. |
   | 201 | Permission denied |
   | 13900020 | Invalid argument |
   | 14000001 | Invalid display name |
@@ -2455,11 +2422,10 @@ public func get(member: String): MemberType
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)和[文件管理错误码](../CoreFileKit/cj-errorcode-filemanagement.md)。
+- BusinessException：对应错误码如下表，详见[文件管理错误码](../CoreFileKit/cj-errorcode-filemanagement.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed. |
   | 13900020 | Invalid argument |
   | 14000014 | The provided member must be a property name of PhotoKey. |
 
@@ -2513,11 +2479,10 @@ public func getThumbnail(size!: ?Size = Size(256, 256)): PixelMap
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)和[文件管理错误码](../CoreFileKit/cj-errorcode-filemanagement.md)。
+- BusinessException：对应错误码如下表，详见[文件管理错误码](../CoreFileKit/cj-errorcode-filemanagement.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed. |
   | 13900012 | Permission denied |
   | 13900020 | Invalid argument |
   | 14000011 | System inner fail |
@@ -2568,7 +2533,6 @@ public func set(member: String, value: String): Unit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed. |
   | 13900020 | Invalid argument |
   | 14000014 | The provided member must be a property name of PhotoKey. |
 

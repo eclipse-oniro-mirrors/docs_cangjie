@@ -80,7 +80,6 @@ public func inValues(field: String, value: Array<VBValueType>): DataSharePredica
 
 | 错误码ID | 错误信息 |
 | :---- | :--- |
-| 401 | Parameter error. |
 | 1 | Instance invalid. |
 
 **示例：**
@@ -168,7 +167,6 @@ public func equalTo(field: String, value: VBValueType): DataSharePredicates
 
 | 错误码ID | 错误信息 |
 | :---- | :--- |
-| 401 | Parameter error. |
 | 1 | Instance invalid. |
 
 **示例：**
@@ -215,7 +213,6 @@ public func limit(total: Int32, offset: Int32): DataSharePredicates
 
 | 错误码ID | 错误信息 |
 | :---- | :--- |
-| 401 | Parameter error. |
 | 1 | Instance invalid. |
 
 **示例：**
@@ -261,7 +258,6 @@ public func orderByAsc(field: String): DataSharePredicates
 
 | 错误码ID | 错误信息 |
 | :---- | :--- |
-| 401 | Parameter error. |
 | 1 | Instance invalid. |
 
 **示例：**
@@ -307,7 +303,6 @@ public func orderByDesc(field: String): DataSharePredicates
 
 | 错误码ID | 错误信息 |
 | :---- | :--- |
-| 401 | Parameter error. |
 | 1 | Instance invalid. |
 
 **示例：**

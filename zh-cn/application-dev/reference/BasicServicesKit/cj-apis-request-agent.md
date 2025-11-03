@@ -24,7 +24,6 @@ API示例代码使用说明：
 ## func create(UIAbilityContext, Config)
 
 ```cangjie
-
 public func create(context: UIAbilityContext, config: Config): Task
 ```
 
@@ -58,7 +57,6 @@ public func create(context: UIAbilityContext, config: Config): Task
   | 错误码ID | 错误信息                                                                                                                          |
   | :------- | :-------------------------------------------------------------------------------------------------------------------------------- |
   | 201      | Permission denied.                                                                                                                |
-  | 401      | Parameter error. Possible causes: 1. Missing mandatory parameters. 2. Incorrect parameter type. 3. Parameter verification failed. |
   | 13400001 | Invalid file or file system error.                                                                                                |
   | 13400003 | Task service ability error.                                                                                                       |
   | 21900004 | the application task queue is full.                                                                                               |
@@ -96,7 +94,6 @@ try {
 ## func getTask(UIAbilityContext, String, ?String)
 
 ```cangjie
-
 public func getTask(context: UIAbilityContext, id: String, token!: ?String = None): Task
 ```
 
@@ -124,11 +121,11 @@ public func getTask(context: UIAbilityContext, id: String, token!: ?String = Non
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[上传下载错误码](./cj-errorcode-request.md)与[通用错误码说明文档](../cj-errorcode-universal.md)。
+- BusinessException：对应错误码如下表，详见[上传下载错误码](./cj-errorcode-request.md)。
 
   | 错误码ID | 错误信息                                                                                                                          |
   | :------- | :-------------------------------------------------------------------------------------------------------------------------------- |
-  | 401      | Parameter error. Possible causes: 1. Missing mandatory parameters. 2. Incorrect parameter type. 3. Parameter verification failed. |
+  | 13499999 | Other error.                                                                                                                      |
   | 13400003 | Task service ability error.                                                                                                       |
   | 21900006 | Task removed or not found.                                                                                                        |
 
@@ -162,7 +159,6 @@ try {
 ## func remove(String)
 
 ```cangjie
-
 public func remove(id: String): Unit
 ```
 
@@ -185,7 +181,6 @@ public func remove(id: String): Unit
 
   | 错误码ID | 错误信息                                                                                        |
   | :------- | :---------------------------------------------------------------------------------------------- |
-  | 401      | Parameter error. Possible causes: 1. Missing mandatory parameters. 2. Incorrect parameter type. |
   | 13400003 | Task service ability error.                                                                     |
   | 21900006 | Task removed or not found.                                                                      |
 
@@ -212,7 +207,6 @@ try {
 ## func search(Filter)
 
 ```cangjie
-
 public func search(filter!: Filter = Filter()): Array<String>
 ```
 
@@ -238,11 +232,10 @@ public func search(filter!: Filter = Filter()): Array<String>
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[上传下载错误码](./cj-errorcode-request.md)与[通用错误码说明文档](../cj-errorcode-universal.md)
+- BusinessException：对应错误码如下表，详见[上传下载错误码](./cj-errorcode-request.md)。
 
   | 错误码ID | 错误信息                                                                                        |
   | :------- | :---------------------------------------------------------------------------------------------- |
-  | 401      | Parameter error. Possible causes: 1. Missing mandatory parameters. 2. Incorrect parameter type. |
   | 13400003 | Task service ability error.                                                                     |
 
 **示例：**
@@ -271,7 +264,6 @@ try {
 ## func show(String)
 
 ```cangjie
-
 public func show(id: String): TaskInfo
 ```
 
@@ -297,11 +289,10 @@ public func show(id: String): TaskInfo
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[上传下载错误码](./cj-errorcode-request.md)与[通用错误码说明文档](../cj-errorcode-universal.md)。
+- BusinessException：对应错误码如下表，详见[上传下载错误码](./cj-errorcode-request.md)。
 
   | 错误码ID | 错误信息                                                                                        |
   | :------- | :---------------------------------------------------------------------------------------------- |
-  | 401      | Parameter error. Possible causes: 1. Missing mandatory parameters. 2. Incorrect parameter type. |
   | 13400003 | Task service ability error.                                                                     |
   | 21900006 | Task removed or not found.                                                                      |
 
@@ -328,7 +319,6 @@ try {
 ## func touch(String, String)
 
 ```cangjie
-
 public func touch(id: String, token: String): TaskInfo
 ```
 
@@ -355,11 +345,10 @@ public func touch(id: String, token: String): TaskInfo
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[上传下载错误码](./cj-errorcode-request.md)与[通用错误码说明文档](../cj-errorcode-universal.md)
+- BusinessException：对应错误码如下表，详见[上传下载错误码](./cj-errorcode-request.md)。
 
   | 错误码ID | 错误信息                                                                                        |
   | :------- | :---------------------------------------------------------------------------------------------- |
-  | 401      | Parameter error. Possible causes: 1. Missing mandatory parameters. 2. Incorrect parameter type. |
   | 13400003 | Task service ability error.                                                                     |
   | 21900006 | Task removed or not found.                                                                      |
 
@@ -803,7 +792,6 @@ public var url: String
 ### init(Action, String, ?String, String, Mode, Bool, ?String, HashMap\<String,String>, ?ConfigData, String, Network, Bool, Bool, Bool, Bool, UInt32, Int64, Int64, Bool, Bool, ?String, UInt32, HashMap\<String,String>)
 
 ```cangjie
-
 public init(action: Action, url: String, title!: ?String = None, description!: String = "",
     mode!: Mode = Mode.Background, overwrite!: Bool = false, method!: ?String = None,
     headers!: HashMap<String, String> = HashMap<String, String>(), data!: ?ConfigData = None, saveas!: ?String = "./",
@@ -973,7 +961,6 @@ public var path:String
 ### init(String, ?String, ?String, HashMap\<String,String>)
 
 ```cangjie
-
 public init(
     path: String,
     mimeType!: ?String = None,
@@ -1179,7 +1166,6 @@ public var state:?State
 ### init(?Int64, ?Int64, ?State, ?Action, ?Mode)
 
 ```cangjie
-
 public init(before!: ?Int64 = None, after!: ?Int64 = None, state!: ?State = None,
     action!: ?Action = None, mode!: ?Mode = None
 )
@@ -1279,7 +1265,6 @@ public var value: FormItemValue
 ### init(String, FormItemValue)
 
 ```cangjie
-
 public init(name: String, value: FormItemValue)
 ```
 
@@ -1550,7 +1535,6 @@ public let tid: String
 ### init(String, Config)
 
 ```cangjie
-
 public init(tid: String, config: Config)
 ```
 
@@ -1596,7 +1580,6 @@ try {
 ### func off(EventCallbackType, ?CallbackObject)
 
 ```cangjie
-
 public func off(event: EventCallbackType, callback!: ?CallbackObject = None): Unit
 ```
 
@@ -1650,7 +1633,6 @@ try {
 ### func on(EventCallbackType, Callback1Argument<HttpResponse>)
 
 ```cangjie
-
 public func on(event: EventCallbackType, callback: Callback1Argument<HttpResponse>): Unit
 ```
 
@@ -1668,18 +1650,9 @@ public func on(event: EventCallbackType, callback: Callback1Argument<HttpRespons
 | event    | [EventCallbackType](#enum-eventcallbacktype)                                                           | 是   | -      | 订阅的事件类型。<br>- 取值为'response'，表示任务响应。     |
 | callback | [Callback1Argument](../arkinterop/cj-api-callback_invoke.md#class-callback1argument)\<HttpResponse> | 是   | -      | 发生相关的事件时触发该回调方法，返回任务响应头的数据结构。 |
 
-**异常：**
-
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)
-
-  | 错误码ID | 错误信息                       |
-  | :------- | :----------------------------- |
-  | 401      | Parameter verification failed. |
-
 ### func on(EventCallbackType, Callback1Argument\<Progress>)
 
 ```cangjie
-
 public func on(event: EventCallbackType, callback: Callback1Argument<Progress>): Unit
 ```
 
@@ -1697,18 +1670,9 @@ public func on(event: EventCallbackType, callback: Callback1Argument<Progress>):
 | event    | [EventCallbackType](#enum-eventcallbacktype)                                                                          | 是   | -      | 订阅的事件类型。<br>- 取值为'progress'，表示任务进度。<br>- 取值为'completed'，表示任务完成。<br>- 取值为'failed'，表示任务失败。<br>- 取值为'pause'，表示任务暂停。<br>- 取值为'resume'，表示任务恢复。<br>- 取值为'remove'，表示任务删除。 |
 | callback | [Callback1Argument](../arkinterop/cj-api-callback_invoke.md#class-callback1argument)\<[Progress](#class-progress)> | 是   | -      | 发生相关的事件时触发该回调方法，返回任务信息的数据结构。                                                                                                                                                                                     |
 
-**异常：**
-
-- BusinessException：对应错误码如下表，详见[上传下载错误码](./cj-errorcode-request.md)。
-
-  | 错误码ID | 错误信息                       |
-  | :------- | :----------------------------- |
-  | 401      | Parameter verification failed. |
-
 ### func pause()
 
 ```cangjie
-
 public func pause(): Unit
 ```
 
@@ -1731,7 +1695,6 @@ public func pause(): Unit
 ### func resume()
 
 ```cangjie
-
 public func resume(): Unit
 ```
 
@@ -1757,7 +1720,6 @@ public func resume(): Unit
 ### func start()
 
 ```cangjie
-
 public func start(): Unit
 ```
 
@@ -1808,7 +1770,6 @@ try {
 ### func stop()
 
 ```cangjie
-
 public func stop(): Unit
 ```
 
@@ -2328,7 +2289,6 @@ Complete
 ### func toString()
 
 ```cangjie
-
 public func toString(): String
 ```
 

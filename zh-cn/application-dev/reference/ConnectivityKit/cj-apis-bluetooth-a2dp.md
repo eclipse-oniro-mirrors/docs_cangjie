@@ -158,7 +158,6 @@ public func getConnectionState(deviceId: String): ProfileConnectionState
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 201 | Permission denied. |
-  | 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified.2. Incorrect parameter types. 3. Parameter verification failed. |
   | 801 | Capability not supported. |
   | 2900001 | Service stopped. |
   | 2900003 | Bluetooth disabled. |
@@ -217,7 +216,6 @@ public func getPlayingState(deviceId: String): PlayingState
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 201 | Permission denied. |
-  | 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified.2. Incorrect parameter types. 3. Parameter verification failed. |
   | 801 | Capability not supported. |
   | 2900001 | Service stopped. |
   | 2900003 | Bluetooth disabled. |
@@ -271,7 +269,6 @@ public func off(eventType: ProfileCallbackType, callback: CallbackObject): Unit
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 201 | Permission denied. |
-  | 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified.2. Incorrect parameter types. 3. Parameter verification failed. |
   | 801 | Capability not supported. |
 
 **示例：**
@@ -331,7 +328,6 @@ public func off(eventType: ProfileCallbackType): Unit
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 201 | Permission denied. |
-  | 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified.2. Incorrect parameter types. 3. Parameter verification failed. |
   | 801 | Capability not supported. |
 
 **示例：**
@@ -392,7 +388,6 @@ public func on(eventType: ProfileCallbackType, callback: Callback1Argument<State
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 201 | Permission denied. |
-  | 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified.2. Incorrect parameter types. 3. Parameter verification failed. |
   | 801 | Capability not supported. |
 
 **示例：**

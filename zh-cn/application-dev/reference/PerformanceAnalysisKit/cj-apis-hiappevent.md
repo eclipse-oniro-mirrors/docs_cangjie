@@ -391,11 +391,10 @@ public func setSize(size: Int32): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[应用事件打点错误码](./cj-errorcode-hiappevent.md)和[通用错误码](../cj-errorcode-universal.md)。
+- BusinessException：对应错误码如下表，详见[应用事件打点错误码](./cj-errorcode-hiappevent.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. |
   | 11104001 | Invalid size value. |
 
 **示例：**
@@ -816,11 +815,10 @@ public static func addWatcher(watcher: Watcher): Option<AppEventPackageHolder>
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[应用事件打点错误码](./cj-errorcode-hiappevent.md)和[通用错误码](../cj-errorcode-universal.md)。
+- BusinessException：对应错误码如下表，详见[应用事件打点错误码](./cj-errorcode-hiappevent.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. |
   | 11102001 | Invalid watcher name. |
   | 11102002 | Invalid filtering event domain. |
   | 11102003 | Invalid row value. |
@@ -1099,11 +1097,10 @@ public static func removeWatcher(watcher: Watcher): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[应用事件打点错误码](./cj-errorcode-hiappevent.md)和[通用错误码](../cj-errorcode-universal.md)。
+- BusinessException：对应错误码如下表，详见[应用事件打点错误码](./cj-errorcode-hiappevent.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 401 | Parameter error. |
   | 11102001 | Invalid watcher name. |
 
 **示例：**
