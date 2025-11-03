@@ -56,9 +56,9 @@
         // 1 订阅广播状态
         public func onAdvertisingStateChange() {
             try {
-                on(BluetoothBleCallbackType.ADVERTISING_STATE_CHANGE, StateChangeInfoCb())
+                on(BluetoothBleCallbackType.AdvertisingStateChange, StateChangeInfoCb())
             } catch (e: BusinessException) {
-                HiLog.error(0x0000, 'Tag', 'errCode: ${e.code}, errMessage: ' + e.message)
+                Hilog.error(0x0000, 'Tag', 'errCode: ${e.code}, errMessage: ' + e.message)
             }
         }
 
@@ -80,7 +80,7 @@
             let advertisingParams: AdvertisingParams = AdvertisingParams(
                 setting,
                 advData,
-                advResponse,
+                advertisingResponse: advResponse,
                 duration: 0 // 可选参数，若大于0，则广播发送一段时间后，则会临时停止，可重新启动发送
             )
 
@@ -89,7 +89,7 @@
                 this.onAdvertisingStateChange()
                 this.advHandle = startAdvertising(advertisingParams)
             } catch (e: BusinessException) {
-                HiLog.error(0x0000, 'Tag', 'errCode: ${e.code}, errMessage: ' + e.message)
+                Hilog.error(0x0000, 'Tag', 'errCode: ${e.code}, errMessage: ' + e.message)
             }
         }
 
@@ -97,16 +97,16 @@
         public func stopAdvertising() {
             try {
                 stopAdvertising(this.advHandle)
-                off(BluetoothBleCallbackType.ADVERTISING_STATE_CHANGE)
+                off(BluetoothBleCallbackType.AdvertisingStateChange)
             } catch (e: BusinessException) {
-                HiLog.error(0x0000, 'Tag', 'errCode: ${e.code}, errMessage: ' + e.message)
+                Hilog.error(0x0000, 'Tag', 'errCode: ${e.code}, errMessage: ' + e.message)
             }
         }
     }
 
     class StateChangeInfoCb <: Callback1Argument<AdvertisingStateChangeInfo> {
         public func invoke(err: ?BusinessException, info: AdvertisingStateChangeInfo): Unit {
-            HiLog.info(0xFF00, 'Tag', "advertisingId: ${info.advertisingId}, AdvertisingState: ${info.state}")
+            Hilog.info(0xFF00, 'Tag', "advertisingId: ${info.advertisingId}, AdvertisingState: ${info.state}")
         }
     }
 
@@ -159,7 +159,7 @@
     class BleScanManager {
         // 1 订阅扫描结果
         public func onScanResult() {
-            on(BluetoothBleCallbackType.BLE_DEVICE_FIND, ScanResultCb())
+            on(BluetoothBleCallbackType.BleDeviceFind, ScanResultCb())
         }
 
         // 2 开启扫描
@@ -183,20 +183,20 @@
             try {
                 this.onScanResult() // 订阅扫描结果
                 startBLEScan([scanFilter], options: scanOptions)
-                HiLog.info(0xFF00, 'Tag', 'startBleScan success')
+                Hilog.info(0xFF00, 'Tag', 'startBleScan success')
             } catch (e: BusinessException) {
-                HiLog.error(0x0000, 'Tag', 'errCode: ${e.code}, errMessage: ' + e.message)
+                Hilog.error(0x0000, 'Tag', 'errCode: ${e.code}, errMessage: ' + e.message)
             }
         }
 
         // 3 关闭扫描
         public func stopScan() {
             try {
-                off(BluetoothBleCallbackType.BLE_DEVICE_FIND) // 取消订阅扫描结果
+                off(BluetoothBleCallbackType.BleDeviceFind) // 取消订阅扫描结果
                 stopBLEScan()
-                HiLog.info(0xFF00, 'Tag', 'stopBleScan success')
+                Hilog.info(0xFF00, 'Tag', 'stopBleScan success')
             } catch (e: BusinessException) {
-                HiLog.error(0x0000, 'Tag', 'errCode: ${e.code}, errMessage: ' + e.message)
+                Hilog.error(0x0000, 'Tag', 'errCode: ${e.code}, errMessage: ' + e.message)
             }
         }
     }

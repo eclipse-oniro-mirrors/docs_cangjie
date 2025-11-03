@@ -47,7 +47,7 @@ import ohos.hilog.Hilog
 // 加密消息。
 func encryptMessage(symKey: SymKey, plainText: DataBlob) {
     let cipher = createCipher('3DES192|ECB|PKCS7')
-    cipher.initialize(CryptoMode.EncryptMode, symKey, None)
+    cipher.initialize(CryptoMode.EncryptMode, symKey, Option<ParamsSpec>.None)
     let encryptData = cipher.doFinal(plainText)
     return encryptData
 }
@@ -55,7 +55,7 @@ func encryptMessage(symKey: SymKey, plainText: DataBlob) {
 // 解密消息。
 func decryptMessage(symKey: SymKey, cipherText: DataBlob) {
     let decoder = createCipher('3DES192|ECB|PKCS7')
-    decoder.initialize(CryptoMode.DecryptMode, symKey, None)
+    decoder.initialize(CryptoMode.DecryptMode, symKey, Option<ParamsSpec>.None)
     let decryptData = decoder.doFinal(cipherText)
     return decryptData
 }

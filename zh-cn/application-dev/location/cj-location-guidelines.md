@@ -45,32 +45,14 @@
     try {
         let locationEnabled = GeoLocationManager.isLocationEnabled()
     } catch (err: BusinessException) {
-        AppLog.error("errCode: ${err.code}, message: ${err.message}")
+        Hilog.error(1, "info", "errCode: ${err.code}, message: ${err.message}")
     }
     ```
 
     如果位置开关未开启，可以拉起全局开关设置弹框，引导用户打开位置开关，具体可参考[拉起全局开关设置弹框](../../../zh-cn/application-dev/reference/AbilityKit/cj-apis-ability_access_ctrl.md#func-requestglobalswitchcontext-switchtype-asynccallbackbool)。
 
 4. 单次获取当前设备位置。多用于查看当前位置、签到打卡、服务推荐等场景。
-    - 方式一：获取系统缓存的最新位置。<br/>
-        如果系统当前没有缓存位置，会返回错误码。<br/>
-        推荐优先使用该接口获取位置，可以减少系统功耗。<br/>
-        如果对位置的新鲜度比较敏感，可以先获取缓存位置，将位置中的时间戳与当前时间对比，若新鲜度不满足预期可以使用方式二获取位置。<br/>
-
-        <!-- run -->
-
-        ```cangjie
-        import kit.LocationKit.*
-        import ohos.base.*
-
-        try {
-            let location = GeoLocationManager.getLastLocation()
-        } catch (err: BusinessException) {
-            AppLog.error("errCode: ${err.code}, message: ${err.message}")
-        }
-        ```
-
-    - 方式二：获取当前位置。<br/>
+    - 获取当前位置。<br/>
 
         首先要实例化[SingleLocationRequest](../../../zh-cn/application-dev/reference/LocationKit/cj-apis-geo_location_manager.md#class-singlelocationrequest)对象，用于告知系统该向应用提供何种类型的位置服务，以及单次定位超时时间。<br/>
 
@@ -93,52 +75,12 @@
         try {
             // 调用getCurrentLocation获取当前设备位置
             let result = GeoLocationManager.getCurrentLocation(request)
-            AppLog.info("current location: (${result.latitude}, ${result.longitude})")
+            Hilog.info(1, "info", "current location: (${result.latitude}, ${result.longitude})")
         } catch (err: BusinessException) {
-            AppLog.error("errCode: ${err.code}, message: ${err.message}")
+            Hilog.info(1, "info", "errCode: ${err.code}, message: ${err.message}")
         }
         ```
 
     通过本模块获取到的坐标均为WGS-84坐标系坐标点，如需使用其他坐标系类型的坐标点，请进行坐标系转换后再使用。
     <!--Del-->
     可使用三方地图提供的SDK能力进行坐标系转换。<!--DelEnd-->
-
-5. 持续定位。多用于导航、运动轨迹、出行等场景。</br>
-    首先要实例化[ContinuousLocationRequest](../../../zh-cn/application-dev/reference/LocationKit/cj-apis-geo_location_manager.md#class-continuouslocationrequest)对象，用于告知系统该向应用提供何种类型的位置服务，以及位置结果上报的频率。<br/>
-    - 设置locationScenario：<br/>
-        建议locationScenario参数优先根据应用的使用场景进行设置，该参数枚举值定义参见[UserActivityScenario](../../../zh-cn/application-dev/reference/LocationKit/cj-apis-geo_location_manager.md#enum-useractivityscenario)，例如地图在导航时使用NAVIGATION参数，可以持续在室内和室外场景获取位置用于导航。</br>
-    - 设置interval：<br/>
-        表示上报位置信息的时间间隔，单位是秒，默认值为1秒。如果对位置上报时间间隔无特殊要求，可以不填写该字段。
-
-    以地图导航场景为例，调用方式如下：
-
-    <!-- run -->
-
-    ```cangjie
-    import kit.LocationKit.*
-    import ohos.base.*
-
-    class LocationCallback <: Callback1Argument<Location> {
-        init() {}
-        public open func invoke(info: Location): Unit {
-            AppLog.info("location change.")
-        }
-    }
-
-    let request: ContinuousLocationRequest = ContinuousLocationRequest(1, UserActivityScenario.NAVIGATION)
-    let locationCallback = LocationCallback()
-    try {
-        GeoLocationManager.on(CallbackType.LocationChange, request, locationCallback)
-    } catch (err: BusinessException) {
-        AppLog.error("errCode: ${err.code}, message: ${err.message}")
-    }
-    ```
-
-    如果不主动结束定位可能导致设备功耗高，耗电快；建议在不需要获取定位信息时及时结束定位。
-
-    <!-- compile -->
-
-    ```cangjie
-    // 该回调函数需要与on接口传入的回调函数保持一致。
-    GeoLocationManager.off(CallbackType.LocationChange, locationCallback)
-    ```

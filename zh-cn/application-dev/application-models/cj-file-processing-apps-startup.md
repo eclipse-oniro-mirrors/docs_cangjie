@@ -45,10 +45,11 @@
 
     ```cangjie
 
-    import kit.AbilityKit.{UIAbility, Want, LaunchParam, Flags}
+    import kit.AbilityKit.{UIAbility, Want, LaunchParam, Flags, WantValueType}
     import kit.ArkUI.WindowStage
     import kit.CoreFileKit.FileUri
     import ohos.business_exception.BusinessException
+    import std.collection.HashMap
     ```
 
 2. 获取应用文件路径。
@@ -63,9 +64,9 @@
             // 获取文件沙箱路径
             let filePath = this
             .context
-            .filesDirectory + '/test1.txt'
+            .filesDir + '/test1.txt'
             // 将沙箱路径转换为uri
-            let uri = FileUri.getUriFromPath(filePath)
+            let uri = FileUri(filePath).toString()
             // 获取的uri为"file://com.example.demo/data/storage/el2/base/files/test.txt"
         }
         // ...
@@ -84,16 +85,23 @@
             // 获取文件沙箱路径
             let filePath = this
             .context
-            .filesDirectory + '/test1.txt'
+            .filesDir + '/test1.txt'
             // 将沙箱路径转换为uri
-            let uri = FileUri.getUriFromPath(filePath)
+            let uri = FileUri(filePath).toString()
             // 构造请求数据
             let want = Want(
-                action: "ohos.want.action.viewData", // 表示查看数据的操作，文件打开场景固定为此值
-                uri: uri,
-                `type`: 'general.plain-text', // 表示待打开文件的类型
+                deviceId: "",
+                bundleName: "",
+                abilityName: "",
+                moduleName: "",
                 // 配置被分享文件的读写权限，例如对文件打开应用进行读写授权
-                flags: Flags.FlagAuthWriteUriPermission.getValue() | Flags.FlagAuthReadUriPermission.getValue()
+                flags: Flags.FlagAuthWriteUriPermission.getValue() | Flags.FlagAuthReadUriPermission.getValue(),
+                uri: uri,
+                action: "ohos.want.action.viewData", // 表示查看数据的操作，文件打开场景固定为此值
+                entities: [],
+                wantType: 'general.plain-text', // 表示待打开文件的类型
+                parameters: HashMap<String, WantValueType>(),
+                fds: HashMap<String, Int32>()
             )
         }
         // ...
@@ -108,28 +116,35 @@
 
     class MainAbility <: UIAbility {
         public override func onWindowStageCreate(windowStage: WindowStage): Unit {
-            AppLog.info("MainAbility onWindowStageCreate.")
+            Hilog.info(1, "info", "MainAbility onWindowStageCreate.")
             // 获取文件沙箱路径
             let filePath = this
                 .context
-                .filesDirectory + '/test1.txt'
+                .filesDir + '/test1.txt'
             // 将沙箱路径转换为uri
-            let uri = FileUri.getUriFromPath(filePath)
+            let uri = FileUri(filePath).toString()
             // 获取的uri为"file://com.example.demo/data/storage/el2/base/files/test1.txt"
             // 构造请求数据
             let want = Want(
-                action: "ohos.want.action.viewData", // 表示查看数据的操作，文件打开场景固定为此值
-                uri: uri,
-                `type`: 'general.plain-text', // 表示待打开文件的类型
+                deviceId: "",
+                bundleName: "",
+                abilityName: "",
+                moduleName: "",
                 // 配置被分享文件的读写权限，例如对文件打开应用进行读写授权
-                flags: Flags.FlagAuthWriteUriPermission.getValue() | Flags.FlagAuthReadUriPermission.getValue()
+                flags: Flags.FlagAuthWriteUriPermission.getValue() | Flags.FlagAuthReadUriPermission.getValue(),
+                uri: uri,
+                action: "ohos.want.action.viewData", // 表示查看数据的操作，文件打开场景固定为此值
+                entities: [],
+                wantType: 'general.plain-text', // 表示待打开文件的类型
+                parameters: HashMap<String, WantValueType>(),
+                fds: HashMap<String, Int32>()
             )
             try {
                 this
                     .context
                     .startAbility(want)
             } catch (e: BusinessException) {
-                AppLog.error("Failed to invoke startAbility, code: ${e.code}, message: ${e.message}")
+                Hilog.error(1, "info", "Failed to invoke startAbility, code: ${e.code}, message: ${e.message}")
             }
         }
     }
@@ -179,7 +194,7 @@
 
     import kit.AbilityKit.{UIAbility, Want, LaunchParam}
     import kit.ArkUI.{WindowStage}
-    import kit.CoreFileKit.{FileFs, OpenMode}
+    import kit.CoreFileKit.{FileIo, OpenMode}
     import kit.ArkUI.BusinessException
 
     class MainAbility <: UIAbility {
@@ -187,17 +202,15 @@
             // 从want信息中获取uri字段
             let uri = want.uri
             if (uri == "") {
-                AppLog.error('uri is invalid')
+                Hilog.error(1, "info", 'uri is invalid')
                 return
             }
             try {
                 // 根据待打开文件的URI进行相应操作。例如同步读写的方式打开URI获取file对象
-                let file = FileFs.open(uri, mode: OpenMode
-                    .READ_WRITE
-                    .mode)
-                AppLog.info("Succeed to open file.")
+                let file = FileIo.open(uri, mode: OpenMode.READ_WRITE)
+                Hilog.info(1, "info", "Succeed to open file.")
             } catch (e: BusinessException) {
-                AppLog.error("Failed to open file openSync, code: ${e.code}, message: ${e.message}")
+                Hilog.error(1, "info", "Failed to open file openSync, code: ${e.code}, message: ${e.message}")
             }
         }
     }

@@ -30,11 +30,11 @@ class EntryView {
         Row {
             Column {
                 Text(this.message)
+                    .animationStart(animateOpt1)
                     .fontSize(50)
                     .fontWeight(FontWeight.Bold)
-                    .onClick { evt => this.message = "Hello Cangjie"
-                    }
-                    .animation(animateOpt1)
+                    .onClick ({ evt => this.message = "Hello Cangjie"
+                    })
             }.width(100.percent)
         }.height(100.percent)
     }
@@ -64,7 +64,7 @@ class EntryView {
                 Text(this.message)
                     .fontSize(50)
                     .fontWeight(FontWeight.Bold)
-                    .onClick {
+                    .onClick ({
                         evt => getUIContext().animateTo(
                             AnimateParam(
                                 duration: 1200,
@@ -77,7 +77,7 @@ class EntryView {
                             ),
                             {=> this.rotateAngle = 90.0}
                         )
-                    }
+                    })
             }.width(100.percent)
         }.height(100.percent)
     }
@@ -150,7 +150,7 @@ class EntryView {
                     .width(80)
                     .height(80)
                     .translate(x: translateX3)
-                    .animation(animateOpt1)
+                    .animationStart(animateOpt1)
             }.height(20.percent)
             Row() {
                 Button('Start')
@@ -191,17 +191,17 @@ class EntryView {
                     )
                     .width(40.percent)
                     .height(40)
-                    .shadow(radius: 10, color: Color(0x909399), offsetX: 1, offsetY: 1)
+                    .shadow(radius: 10.0, color: Color(0x909399), offsetX: 1.0, offsetY: 1.0)
             }
                 .width(100.percent)
                 .justifyContent(FlexAlign.Center)
-                .shadow(radius: 10, color: Color(0x909399), offsetX: 1, offsetY: 1)
+                .shadow(radius: 10.0, color: Color(0x909399), offsetX: 1.0, offsetY: 1.0)
                 .alignItems(VerticalAlign.Bottom)
                 .layoutWeight(1)
         }
             .width(100.percent)
             .justifyContent(FlexAlign.Center)
-            .shadow(radius: 10, color: Color(0x909399), offsetX: 1, offsetY: 1)
+            .shadow(radius: 10.0, color: Color(0x909399), offsetX: 1.0, offsetY: 1.0)
             .layoutWeight(1)
     }
 }

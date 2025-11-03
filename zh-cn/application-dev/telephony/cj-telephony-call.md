@@ -41,17 +41,15 @@
 1. 导入call和observer模块。
 2. 调用hasVoiceCapability，确认当前设备是否支持拨号。
 3. 调用makeCall接口，跳转到拨号界面并显示待拨号的号码。
-4. （可选）订阅通话业务状态变化。
 
 <!-- compile -->
 
 ```cangjie
 // import需要的模块
 import kit.TelephonyKit.*
-import ohos.base.Callback1Argument
 import kit.AbilityKit.*
 
-var ctx = None<UIAbilityContext>
+var ctx = Option<UIAbilityContext>.None
 
 @Entry
 @Component
@@ -67,23 +65,14 @@ class EntryView {
                     .fontWeight(FontWeight.Bold)
                     .onClick {
                         evt =>
-                        let isSupport = TelephonyCall.hasVoiceCapability()
+                        let isSupport = Call.hasVoiceCapability()
                         if (isSupport) {
                             // 如果设备支持呼叫能力，则继续跳转到拨号界面，并显示拨号的号码
-                            TelephonyCall.makeCall(ctx.getOrThrow(), "130xxxx")
-                            // 订阅通话业务状态变化（可选）
-                            TelephonyObserver.on(ObserverEventType.CallStateChange, StateInfoCb(),
-                                options: ObserverOptions(slotId: 0))
+                            Call.makeCall(ctx.getOrThrow(), "130xxxx")                  
                         }
                     }
             }.width(100.percent)
         }.height(100.percent)
-    }
-}
-
-class StateInfoCb <: Callback1Argument<CallStateInfo> {
-    public func invoke(data: CallStateInfo): Unit {
-        AppLog.info("call state change, data is: ${data.state.getValue()}, ${data.number}")
     }
 }
 ```
@@ -92,7 +81,6 @@ class StateInfoCb <: Callback1Argument<CallStateInfo> {
 
 ```cangjie
 // main_ability.cj
-import ohos.base.AppLog
 import ohos.ability.AbilityStage
 import ohos.ability.LaunchReason
 
@@ -103,15 +91,15 @@ class MainAbility <: UIAbility {
     }
 
     public override func onCreate(want: Want, launchParam: LaunchParam): Unit {
-        AppLog.info("MainAbility OnCreated.${want.abilityName}")
+        Hilog.info(1, "info", "MainAbility OnCreated.${want.abilityName}")
         match (launchParam.launchReason) {
-            case LaunchReason.START_ABILITY => AppLog.info("START_ABILITY")
+            case LaunchReason.START_ABILITY => Hilog.info(1, "info", "START_ABILITY")
             case _ => ()
         }
     }
 
     public override func onWindowStageCreate(windowStage: WindowStage): Unit {
-        AppLog.info("MainAbility onWindowStageCreate.")
+        Hilog.info(1, "info", "MainAbility onWindowStageCreate.")
         windowStage.loadContent("EntryView")
         // declared in index.cj
         ctx = this.context

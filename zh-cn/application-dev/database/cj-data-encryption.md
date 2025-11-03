@@ -52,9 +52,9 @@
     // xxx.cj
     import kit.ArkData.{DistributedKVStore, KVManagerConfig}
     import ohos.business_exception.BusinessException
-    import kit.AbilityKit.getStageContext
-    import ohos.data.distributed_kv_store.Options as KVOptions
-    import ohos.data.distributed_kv_store.SecurityLevel as KVSecurityLevel
+    import kit.AbilityKit.*
+    import ohos.data.distributed_kv_store.KVOptions
+    import ohos.data.distributed_kv_store.KVSecurityLevel
 
     try {
         let context = globalAbilityContext.getOrThrow()

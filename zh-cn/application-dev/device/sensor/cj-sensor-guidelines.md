@@ -24,8 +24,10 @@
     <!-- compile -->
 
     ```cangjie
-    import kit.ArkUI.{BusinessException, Callback1Argument}
+    import kit.ArkUI.*
     import kit.SensorServiceKit.*
+    import ohos.business_exception.BusinessException
+    import ohos.callback_invoke.Callback1Argument
     ```
 
 2. 查询设备支持的所有传感器的参数。
@@ -36,10 +38,12 @@
     try {
         let sensors = getSensorList()
         for (index in 0..sensors.size) {
-            AppLog.info("{sensorName: ${sensors[index].sensorName}, vendorName: ${sensors[index].vendorName}, firmwareVersion: ${sensors[index].firmwareVersion}, \n hardwareVersion: ${sensors[index].hardwareVersion}, sensorId: ${sensors[index].sensorId}, \n minSamplePeriod: ${sensors[index].minSamplePeriod}, maxSamplePeriod: ${sensors[index].maxSamplePeriod}}")
+            Hilog.info(1, "info", "{sensorName: ${sensors[index].sensorName}, vendorName: ${sensors[index].vendorName},
+             firmwareVersion: ${sensors[index].firmwareVersion}, \n hardwareVersion: ${sensors[index].hardwareVersion}, 
+             sensorId: ${sensors[index].sensorId}, \n minSamplePeriod: ${sensors[index].minSamplePeriod}, maxSamplePeriod: ${sensors[index].maxSamplePeriod}}")
         }
     } catch (e: BusinessException) {
-        AppLog.error("Failed to get sensor list. Code: ${e.code}, message: ${e.message}")
+        Hilog.info(1, "info", "Failed to get sensor list. Code: ${e.code}, message: ${e.message}")
     }
     ```
 
@@ -60,8 +64,8 @@
     class SensorCallback <: Callback1Argument<AccelerometerResponse>
     {
         init() {}
-        public func invoke(arg: AccelerometerResponse): Unit {
-            AppLog.info("Succeeded in getting SensorCallback arg: x: ${arg.x}, y: ${arg.y}, z: ${arg.z}")
+        public func invoke(err: ?BusinessException, arg: AccelerometerResponse): Unit {
+            Hilog.info(1, "info", "Succeeded in getting SensorCallback arg: x: ${arg.x}, y: ${arg.y}, z: ${arg.z}")
         }
     }
 
@@ -70,9 +74,9 @@
         try {
             //周期传感器与瞬时传感器开发步骤相同。
             //区别是周期传感器按设定的固定时间间隔option采集并输出数据,瞬时传感器受特定触发事件影响采集并输出数据,不受option约束。
-            on(SensorId.ACCELEROMETER, callback, option: SensorOptions(SensorNumber(100000000)))
+            on(SensorId.Accelerometer, callback, option: Options(interval: SensorNumber(100000000)))
         } catch (e: BusinessException) {
-            AppLog.error("Sensor on error code: ${e.code}, message: ${e.message}")
+            Hilog.error(1, "info", "Sensor on error code: ${e.code}, message: ${e.message}")
         }
     }
     ```
@@ -88,17 +92,17 @@
     class SensorCallback <: Callback1Argument<AccelerometerResponse>
     {
         init() {}
-        public func invoke(arg: AccelerometerResponse): Unit {
-            AppLog.info("Succeeded in getting SensorCallback arg: x: ${arg.x}, y: ${arg.y}, z: ${arg.z}")
+        public func invoke(err: ?BusinessException, arg: AccelerometerResponse): Unit {
+            Hilog.info(1, "info", "Succeeded in getting SensorCallback arg: x: ${arg.x}, y: ${arg.y}, z: ${arg.z}")
         }
     }
 
     func onceExample() {
         try {
             let callback = SensorCallback()
-            once(SensorId.ACCELEROMETER, callback)
+            once(SensorId.Accelerometer, callback)
         } catch (e: BusinessException) {
-            AppLog.error("Sensor once error code: ${e.code}, message: ${e.message}")
+            Hilog.error(1, "info", "Sensor once error code: ${e.code}, message: ${e.message}")
         }
     }
     ```
@@ -113,9 +117,9 @@
     func offExample() {
         try {
             // 取消注册SensorId.ORIENTATION的所有回调
-            off(SensorId.ACCELEROMETER)
+            off(SensorId.Accelerometer)
         } catch (e: BusinessException) {
-            AppLog.error("Sensor off error code: ${e.code}, message: ${e.message}")
+            Hilog.error(1, "info", "Sensor off error code: ${e.code}, message: ${e.message}")
         }
     }
     ```

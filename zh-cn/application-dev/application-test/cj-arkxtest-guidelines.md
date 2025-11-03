@@ -81,16 +81,14 @@ DevEco Studio可参考其官网介绍进行[下载](https://developer.harmonyos.
             let bundleName = AbilityDelegatorRegistry
                 .getArguments()
                 .bundleName
-            AppLog.info("uitest: TestUiExample begin")
+            Hilog.info(1, "info", "uitest: TestUiExample begin")
             //start tested ability
             let want = Want(bundleName: bundleName, abilityName: 'EntryAbility')
-            delegator
-                .startAbility(want)
-                .get()
+            delegator.startAbility(want)
             sleep(Duration.second * 5)
             //check top display ability
             let ability = delegator.getCurrentTopAbility()
-            AppLog.info("get top ability")
+            Hilog.info(1, "info", "get top ability")
             @Expect(ability.context.abilityInfo.name, 'EntryAbility')
         }
     }
@@ -159,7 +157,7 @@ UI测试基于单元测试，UI测试脚本在单元测试脚本上增加了对U
             let bundleName = AbilityDelegatorRegistry
                 .getArguments()
                 .bundleName
-            AppLog.info("uitest: TestUiExample begin")
+            Hilog.info(1, "info", "uitest: TestUiExample begin")
             //start tested ability
             let want = Want(bundleName: bundleName, abilityName: 'EntryAbility')
             delegator
@@ -168,7 +166,7 @@ UI测试基于单元测试，UI测试脚本在单元测试脚本上增加了对U
             sleep(Duration.second * 5)
             //check top display ability
             let ability = delegator.getCurrentTopAbility()
-            AppLog.info("get top ability")
+            Hilog.info(1, "info", "get top ability")
             @Expect(ability.context.abilityInfo.name, 'EntryAbility')
             // ui test code
             // init driver

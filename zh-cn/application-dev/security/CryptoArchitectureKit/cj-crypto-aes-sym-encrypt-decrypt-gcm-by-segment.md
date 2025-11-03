@@ -85,7 +85,7 @@ func encryptMessage(symKey: SymKey, plainText: DataBlob) {
         // 把update的结果拼接起来，得到密文（有些情况下还需拼接doFinal的结果，这取决于分组模式和填充模式，本例中GCM模式的doFinal结果只包含authTag而不含密文，所以不需要拼接）。
         cipherText.add(all: updateOutput.data)
     }
-    gcmParams.authTag = cipher.doFinal(None)
+    gcmParams.authTag = cipher.doFinal(Option<DataBlob>.None)
     let cipherBlob: DataBlob = DataBlob(cipherText.toArray())
     return cipherBlob
 }
@@ -110,7 +110,7 @@ func decryptMessage(symKey: SymKey, cipherText: DataBlob) {
         // 把update的结果拼接起来，得到明文。
         decryptText.add(all: updateOutput.data)
     }
-    decoder.doFinal(None)
+    decoder.doFinal(Option<DataBlob>.None)
     let decryptBlob: DataBlob = DataBlob(decryptText.toArray())
     return decryptBlob
 }

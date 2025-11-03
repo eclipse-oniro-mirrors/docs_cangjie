@@ -62,7 +62,7 @@ func encryptMessage(symKey: SymKey, plainText: DataBlob) {
     cipher.initialize(CryptoMode.EncryptMode, symKey, ccmParams)
     let encryptUpdate = cipher.update(plainText);
     // ccm模式加密doFinal时传入空，获得tag数据，并更新至ccmParams对象中。
-    ccmParams.authTag = cipher.doFinal(None);
+    ccmParams.authTag = cipher.doFinal(Option<DataBlob>.None);
     return encryptUpdate
 }
 

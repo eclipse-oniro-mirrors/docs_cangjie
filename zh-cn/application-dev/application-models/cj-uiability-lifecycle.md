@@ -54,23 +54,24 @@ class MainAbility <: UIAbility {
 import kit.AbilityKit.UIAbilityContext
 import kit.AbilityKit.UIAbility
 import kit.ArkUI.{WindowStage, WindowCallbackType, WindowStageEventType}
-import ohos.base.{AppLog, Callback1Argument, BusinessException}
+import ohos.callback_invoke.Callback1Argument
+import ohos.business_exception.BusinessException
 
 class WindowStageCallback <: Callback1Argument<WindowStageEventType> {
-    public override func invoke(arg: WindowStageEventType) {
+    public override func invoke(err: ?BusinessException, arg: WindowStageEventType) {
         match (arg) {
-            case WindowStageEventType.SHOWN => // 切到前台
-                AppLog.info("windowStage foreground.")
-            case WindowStageEventType.ACTIVE => // 获焦状态
-                AppLog.info("windowStage active.")
-            case WindowStageEventType.INACTIVE => // 失焦状态
-                AppLog.info("windowStage inactive.")
-            case WindowStageEventType.HIDDEN => // 切到后台
-                AppLog.info("windowStage background.")
-            case WindowStageEventType.RESUMED => // 前台可交互状态
-                AppLog.info("windowStage resumed.")
-            case WindowStageEventType.PAUSED => // 前台不可交互状态
-                AppLog.info("windowStage paused.")
+            case WindowStageEventType.Shown => // 切到前台
+                Hilog.info(1, "info", "windowStage foreground.")
+            case WindowStageEventType.Active => // 获焦状态
+                Hilog.info(1, "info", "windowStage active.")
+            case WindowStageEventType.Inactive => // 失焦状态
+                Hilog.info(1, "info", "windowStage inactive.")
+            case WindowStageEventType.Hidden => // 切到后台
+                Hilog.info(1, "info", "windowStage background.")
+            case WindowStageEventType.Resumed => // 前台可交互状态
+                Hilog.info(1, "info", "windowStage resumed.")
+            case WindowStageEventType.Paused => // 前台不可交互状态
+                Hilog.info(1, "info", "windowStage paused.")
             case _ => ()
         }
     }

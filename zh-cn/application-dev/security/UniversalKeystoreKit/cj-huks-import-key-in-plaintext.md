@@ -44,15 +44,15 @@ let keyAlias = 'AES256Alias_sample'
 /* 2.封装密钥属性集和密钥材料 */
 let properties: Array<HuksParam> = [
     HuksParam(
-        HuksTag.HuksTagAlgorithm,
-        HuksKeyAlg.HUKS_ALG_AES
+        HuksTag.HUKS_TAG_ALGORITHM,
+        HuksParamValue.Uint32Value(HuksKeyAlg.HUKS_ALG_AES)
     ),
     HuksParam(
-        HuksTag.HuksTagKeySize,
-        HuksKeySize.HUKS_AES_KEY_SIZE_256
+        HuksTag.HUKS_TAG_KEY_SIZE,
+        HuksParamValue.Uint32Value(HuksKeySize.HUKS_AES_KEY_SIZE_256)
     ),
     HuksParam(
-        HuksTag.HuksTagPurpose,
+        HuksTag.HUKS_TAG_PURPOSE,
         HuksParamValue.Uint32Value(1 | 2)
     )
 ]
@@ -91,27 +91,27 @@ let keyAlias = 'X25519_Pub_import_sample'
 let properties: Array<HuksParam> = [
     HuksParam(
         HuksTag.HUKS_TAG_ALGORITHM,
-        HuksKeyAlg.HUKS_ALG_X25519
+        HuksParamValue.Uint32Value(HuksKeyAlg.HUKS_ALG_X25519)
     ),
     HuksParam(
         HuksTag.HUKS_TAG_KEY_SIZE,
-        HuksKeySize.HUKS_CURVE25519_KEY_SIZE_256
+        HuksParamValue.Uint32Value(HuksKeySize.HUKS_CURVE25519_KEY_SIZE_256)
     ),
     HuksParam(
         // 此 tag表示密钥导入后的用途，导入后将不可更改。
         HuksTag.HUKS_TAG_PURPOSE,
-        HuksKeyPurpose.HUKS_KEY_PURPOSE_VERIFY
+        HuksParamValue.Uint32Value(HuksKeyPurpose.HUKS_KEY_PURPOSE_VERIFY)
     ),
     HuksParam(
         // 此 tag表示需导入的密钥类型。
         HuksTag.HUKS_TAG_IMPORT_KEY_TYPE,
         // 此 value表示导入密钥的公钥，若改为HUKS_KEY_TYPE_KEY_PAIR时表示导入密钥对。
-        HuksImportKeyType.HUKS_KEY_TYPE_PUBLIC_KEY
+        HuksParamValue.Uint32Value(HuksImportKeyType.HUKS_KEY_TYPE_PUBLIC_KEY)
     )
 ]
 let options: HuksOptions = HuksOptions(
-    properties,
-    x25519KeyPubMaterial
+    properties: properties,
+    inData: x25519KeyPubMaterial
 )
 
 /* 3. 明文导入密钥 */
@@ -119,7 +119,7 @@ func importKeyFunc(): Unit {
     try {
         importKeyItem(keyAlias, options)
     } catch (e: Exception) {
-        AppLog.error("callback: importKeyItem input arg invalid ${e}")
+        Hilog.error(1, "info", "callback: importKeyItem input arg invalid ${e}")
     }
 }
 ```
@@ -138,12 +138,12 @@ let isKeyExist = false
 let keyProperties: Array<HuksParam> = [
     HuksParam(
         HuksTag.HUKS_TAG_ALGORITHM,
-        HuksKeyAlg.HUKS_ALG_AES
+        HuksParamValue.Uint32Value(HuksKeyAlg.HUKS_ALG_AES)
     )
 ]
 let huksOptions: HuksOptions = HuksOptions(
-    keyProperties, // 非空填充。
-    None // 非空填充。
+    properties: keyProperties, // 非空填充。
+    inData: None // 非空填充。
 )
 
 @Entry
@@ -158,14 +158,13 @@ class EntryView {
                 Text(this.message)
                     .fontSize(50)
                     .fontWeight(FontWeight.Bold)
-                    .onClick {
+                    .onClick ({
                         evt => try {
                             isKeyItemExist(keyAlias, huksOptions)
                         } catch (e: Exception) {
-                            AppLog.error(e)
                             throw e
                         }
-                    }
+                    })
             }.width(100.percent)
         }.height(100.percent)
     }

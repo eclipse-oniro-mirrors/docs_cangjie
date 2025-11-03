@@ -26,7 +26,7 @@ import kit.UniversalKeystoreKit.*
 let keyAlias = "test_Key"
 
 /* 2.构造空对象 */
-let huksOptions: HuksOptions = HuksOptions.NONE
+let huksOptions: HuksOptions = HuksOptions()
 
 class throwObject {
     var isThrow: Bool = false
@@ -47,12 +47,12 @@ func deleteKeyItem(keyAlias: String, huksOptions: HuksOptions, throwObject: thro
 
 /* 3.删除密钥*/
 func publicDeleteKeyFunc(keyAlias: String, huksOptions: HuksOptions) {
-    AppLog.info("enter deleteKeyItem")
+    Hilog.info(1, "info", "enter deleteKeyItem")
     let throwObject: throwObject = throwObject(false)
     try {
         deleteKeyItem(keyAlias, huksOptions, throwObject)
     } catch (e: Exception) {
-        AppLog.error("deleteKeyItem input arg invalid, ${e}")
+        Hilog.error(1, "info", "deleteKeyItem input arg invalid, ${e}")
     }
 }
 

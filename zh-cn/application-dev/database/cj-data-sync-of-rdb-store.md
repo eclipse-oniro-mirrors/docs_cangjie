@@ -42,7 +42,6 @@
 
 | 接口名称 | 描述 |
 | -------- | -------- |
-| setDistributedTables(tables: Array\<String>): Unit | 设置分布式同步表。 |
 | sync(mode: SyncMode, predicates: RdbPredicates): Array\<(String, Int32)> | 分布式数据同步。 |
 | onDataChange(`type`: SubscribeType, callback: Callback1Argument\<Array\<String>>): Unit | 订阅分布式数据变化。 |
 | offDataChange(`type`: SubscribeType, callback: Callback1Argument\<Array\<String>>): Unit | 取消订阅分布式数据变化。 |
@@ -58,7 +57,7 @@
     <!-- compile -->
 
     ```cangjie
-    import ohos.data.relational_store.SecurityLevel as RelationalStoreSecurityLevel
+    import ohos.data.relational_store.RelationalStoreSecurityLevel
     import ohos.business_exception.BusinessException
     ```
 
@@ -68,7 +67,7 @@
 
    (2) 同时需要在应用首次启动时弹窗向用户申请授权，使用方式请参见[向用户申请授权](../security/AccessToken/cj-request-user-authorization.md)。
 
-3. 创建关系型数据库，设置将需要进行分布式同步的表。
+3. 创建关系型数据库。
 
     <!-- compile -->
 
@@ -77,7 +76,7 @@
     import kit.AbilityKit.{UIAbility, AbilityStage, Want, LaunchParam, LaunchReason, UIAbilityContext}
     import ohos.data.relational_store.RdbStore
     import kit.ArkData.{StoreConfig, getRdbStore, RdbPredicates}
-    import kit.ArkUI.{WindowStage}
+    import kit.ArkUI.WindowStage
 
     var rdbStore: Option<RdbStore> = Option<RdbStore>.None
 
@@ -107,7 +106,6 @@
             try {
                 let store = getRdbStore(this.context, storeConfig)
                 store.executeSql("CREATE TABLE EMPLOYEE(ID int NOT NULL, NAME varchar(255) NOT NULL, AGE int, SALARY float NOT NULL, CODES Bit NOT NULL, PRIMARY KEY (Id))")
-                store.setDistributedTables(['EMPLOYEE'])
                 rdbStore = store
                 // 后续可进行数据的相关操作
             } catch (e: BusinessException) {

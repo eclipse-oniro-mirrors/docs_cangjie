@@ -37,14 +37,14 @@ class EntryView {
 
     func build() {
         Column {
-            Button("loadUrl").onClick { evt =>
+            Button("loadUrl").onClick ({ evt =>
                 try {
                     // 点击按钮时，通过loadUrl，跳转到www.example1.com
                     webController.loadUrl('www.example1.com')
                 } catch (e: BusinessException) {
                     loggerError("loadUrl ErrorCode: ${e.code},  Message: ${e.message}")
                 }
-            }
+            })
             // 组件创建时，加载www.example.com
             Web(src: 'www.example.com', controller: webController)
         }
@@ -93,14 +93,14 @@ class EntryView {
 
         func build() {
             Column {
-                Button("loadUrl").onClick { evt =>
+                Button("loadUrl").onClick ({ evt =>
                     try {
                         // 点击按钮时，通过loadUrl，跳转到local1.html
                         webController.loadUrl(@rawfile("local1.html"))
                     } catch (e: BusinessException) {
                         loggerError("loadUrl ErrorCode: ${e.code},  Message: ${e.message}")
                     }
-                }
+                })
                 // 组件创建时，通过$rawfile加载本地文件local.html
                 Web(src: @rawfile("local.html"), controller: webController)
             }

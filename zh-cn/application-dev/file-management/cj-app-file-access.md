@@ -51,14 +51,14 @@ import ohos.base.*
 // 见获取UIAbility的上下文信息章节
 let context = getContext()
 // 获取应用文件路径
-let filesDir = context.filesDirectory
+let filesDir = context.filesDir
 
 func createFile(): Unit {
     // 文件不存在时创建并打开文件，文件存在时打开文件
-    let file = FileFs.open(filesDir + '/test.txt', mode: OpenMode.READ_WRITE.mode | OpenMode.CREATE.mode)
+    let file = FileIo.open(filesDir + '/test.txt', mode: OpenMode.READ_WRITE | OpenMode.CREATE)
     // 写入一段内容至文件
-    let writeLen = FileFs.write(file.fd, "Try to write str.")
-    AppLog.info("The length of str is: ${writeLen}")
+    let writeLen = FileIo.write(file.fd, "Try to write str.")
+    Hilog.info(1, "info", "The length of str is: ${writeLen}")
     let bufSize = 4096
     var readSize = 0
     // 创建一个大小为1024字节的Array<Byte>对象，用于存储从文件中读取的数据
@@ -69,10 +69,10 @@ func createFile(): Unit {
         length: UIntNative(bufSize)
     )
     // 读取文件内容到ArrayBuffer对象中，并返回实际读取的字节数
-    let readLen = FileFs.read(file.fd, array, options: readOptions)
-    AppLog.info("the content of file: ${String.fromUtf8(array[..readLen])}")
+    let readLen = FileIo.read(file.fd, array, options: readOptions)
+    Hilog.info(1, "info", "the content of file: ${String.fromUtf8(array[..readLen])}")
     // 关闭文件
-    FileFs.close(file)
+    FileIo.close(file)
 }
 ```
 
@@ -91,12 +91,12 @@ import ohos.base.*
 // 见获取UIAbility的上下文信息章节
 let context = getContext()
 // 获取应用文件路径
-let filesDir = context.filesDirectory
+let filesDir = context.filesDir
 
 func readWriteFile() {
     // 打开文件
-    let srcFile = FileFs.open(filesDir + '/test.txt', mode: OpenMode.READ_WRITE.mode | OpenMode.CREATE.mode)
-    let destFile = FileFs.open(filesDir + '/destFile.txt', mode: OpenMode.READ_WRITE.mode | OpenMode.CREATE.mode)
+    let srcFile = FileIo.open(filesDir + '/test.txt', mode: OpenMode.READ_WRITE | OpenMode.CREATE)
+    let destFile = FileIo.open(filesDir + '/destFile.txt', mode: OpenMode.READ_WRITE | OpenMode.CREATE)
     // 读取源文件内容并写入至目的文件
     let bufSize = 4096
     var readSize = 0
@@ -105,19 +105,19 @@ func readWriteFile() {
         offset: readSize,
         length: UIntNative(bufSize)
     )
-    var readLen = FileFs.read(srcFile.fd, buf, options: readOptions)
+    var readLen = FileIo.read(srcFile.fd, buf, options: readOptions)
     while (readLen > 0) {
         readSize += readLen
         let writeOptions = WriteOptions(
             length: UIntNative(readLen)
         )
-        FileFs.write(destFile.fd, buf, options: writeOptions)
+        FileIo.write(destFile.fd, buf, options: writeOptions)
         readOptions.offset = readSize
-        readLen = FileFs.read(srcFile.fd, buf, options: readOptions)
+        readLen = FileIo.read(srcFile.fd, buf, options: readOptions)
     }
     // 关闭文件
-    FileFs.close(srcFile)
-    FileFs.close(destFile)
+    FileIo.close(srcFile)
+    FileIo.close(destFile)
 }
 ```
 
@@ -140,13 +140,13 @@ import ohos.base.*
 // 见获取UIAbility的上下文信息章节
 let context = getContext()
 // 获取应用文件路径
-let filesDir = context.filesDirectory
+let filesDir = context.filesDir
 
 func readWriteFileWithStream() {
     // 创建并打开输入文件流
-    let inputStream = FileFs.createStream(filesDir + '/test.txt', 'r+')
+    let inputStream = FileIo.createStream(filesDir + '/test.txt', 'r+')
     // 创建并打开输出文件流
-    let outputStream = FileFs.createStream(filesDir + '/destFile.txt', "w+")
+    let outputStream = FileIo.createStream(filesDir + '/destFile.txt', "w+")
 
     let bufSize = 4096
     var readSize = 0
@@ -189,7 +189,7 @@ import ohos.base.*
 // 见获取UIAbility的上下文信息章节
 let context = getContext()
 // 获取应用文件路径
-let filesDir = context.filesDirectory
+let filesDir = context.filesDir
 
 // 查看文件列表
 func getListFile() {
@@ -203,9 +203,9 @@ func getListFile() {
             lastModifiedAfter: 10000.0
         )
     )
-    let files = FileFs.listFile(filesDir, options: listFileOption)
+    let files = FileIo.listFile(filesDir, options: listFileOption)
     for (item in files) {
-        AppLog.info("The name of file: ${item}")
+        Hilog.info(1, "info", "The name of file: ${item}")
     }
 }
 ```

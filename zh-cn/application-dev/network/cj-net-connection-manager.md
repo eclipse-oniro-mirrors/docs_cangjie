@@ -79,6 +79,7 @@ import kit.CoreFileKit.*
 import kit.AbilityKit.*
 import kit.NetworkKit.*
 import ohos.base.*
+import ohos.callback_invoke.*
 
 func loggerInfo(str: String) {
     Hilog.info(0, "CangjieTest", str)
@@ -155,6 +156,7 @@ import kit.CoreFileKit.*
 import kit.AbilityKit.*
 import kit.NetworkKit.*
 import ohos.base.*
+import ohos.callback_invoke.*
 
 func loggerInfo(str: String) {
     Hilog.info(0, "CangjieTest", str)

@@ -230,11 +230,11 @@
                 func build() {
                     Row {
                         Column {
-                            Button("requestPermissons").onClick {
+                            Button("requestPermissons").onClick ({
                                 evt => Hilog.info(0,"","Hello Cangjie")
                                 // 点击按钮进行权限申请
                                 requestPermissons()
-                            }.fontSize(30).height(50)
+                            }).fontSize(30).height(50)
 
                         }.width(100.percent)
                     }.height(100.percent)

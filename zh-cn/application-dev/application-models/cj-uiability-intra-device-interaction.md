@@ -25,7 +25,7 @@
     ```cangjie
     import kit.ArkUI.Button
     import ohos.business_exception.*
-    import kit.AbilityKit.{Want, UIAbilityContext}
+    import kit.AbilityKit.{Want, UIAbilityContext, WantValueType}
     import std.collection.HashMap
 
     var globalContext:?UIAbilityContext = None
@@ -41,7 +41,7 @@
         func build() {
             Row {
                 Column {
-                    Button().onClick {
+                    Button().onClick ({
                         evt =>
                         // context为调用方Ability的AbilityContext
                         let context = getContext()
@@ -56,13 +56,11 @@
                             parameters: parametersMap
                         )
                         try {
-                            context
-                                .startAbility(want)
-                                .get()
+                            context.startAbility(want)
                         } catch (e: BusinessException) {
-                            HILog.info(0, "device_interaction", "Failed to start FuncAbility. Code is ${e.code}, message is ${e.message}")
+                            Hilog.info(0, "device_interaction", "Failed to start FuncAbility. Code is ${e.code}, message is ${e.message}")
                         }
-                    }
+                    })
                 }.width(100.percent)
             }.height(100.percent)
         }
@@ -112,15 +110,15 @@
         func build() {
             Row {
                 Column {
-                    Button("FuncAbility").onClick {
+                    Button("FuncAbility").onClick ({
                         evt =>
                         let context = getFuncAbilityAContext()
                         try {
-                            context.terminateSelf().get()
+                            context.terminateSelf()
                         } catch (e: BusinessException) {
-                            HiLog.Info(0, "device_interaction", "Failed to start terminate self. Code is ${e.code}, message is ${e.message}")
+                            Hilog.info(0, "device_interaction", "Failed to start terminate self. Code is ${e.code}, message is ${e.message}")
                         }
-                    }
+                    })
                     // ...
                 }.width(100.percent)
             }.height(100.percent)
@@ -154,7 +152,7 @@ UIAbility的启动分为两种情况：UIAbility冷启动和UIAbility热启动�
 ```cangjie
 import kit.ArkUI.Button
 import ohos.business_exception.*
-import kit.AbilityKit.{Want, UIAbilityContext, AbilityResult}
+import kit.AbilityKit.{Want, UIAbilityContext, AbilityResult, WantValueType}
 import std.collection.HashMap
 
 // 见获取UIAbility的上下文信息章节
@@ -168,7 +166,7 @@ class PageAbilityComponentsInteractive {
     func build() {
         Row {
             Column {
-                Button().onClick {
+                Button().onClick ({
                     evt =>
                     // context为调用方Ability的AbilityContext
                     let context = getContext()
@@ -187,7 +185,7 @@ class PageAbilityComponentsInteractive {
                     } catch (e: BusinessException) {
                         Hilog.info(0, "device_interaction", "Failed to start FuncAbility. Code is ${e.code}, message is ${e.message}")
                     }
-                }
+                })
             }.width(100.percent)
         }.height(100.percent)
     }
@@ -243,7 +241,6 @@ class FuncAbilityA <: UIAbility {
 
     ```cangjie
     import std.collection.HashMap
-    import ohos.base.{AppLog, BusinessException}
     import kit.AbilityKit.{UIAbility, LaunchParam, Want}
 
     var globalFuncAbilityAContext:?UIAbilityContext = None
@@ -260,7 +257,7 @@ class FuncAbilityA <: UIAbility {
         }
 
         public override func onWindowStageCreate(windowStage: WindowStage): Unit {
-            HiLog.info(0, "device_interaction", "FuncAbilityA onWindowStageCreate.")
+            Hilog.info(0, "device_interaction", "FuncAbilityA onWindowStageCreate.")
             globalFuncAbilityAContext = this.context
             windowStage.loadContent(url)
         }
@@ -273,7 +270,6 @@ class FuncAbilityA <: UIAbility {
 
     ```cangjie
     import std.collection.HashMap
-    import ohos.base.{AppLog, BusinessException}
     import kit.AbilityKit.{UIAbility, LaunchParam, Want}
     import kit.ArkUI.{launch, Router}
 
@@ -288,7 +284,7 @@ class FuncAbilityA <: UIAbility {
                 url = "PageHotStartUp"
             }
             launch {
-                Router.pushUrl(url: "PageHotStartUp", callback: {code => AppLog.error("Failed to push url. Code is ${code}")})
+                Router.pushUrl(url: "PageHotStartUp", callback: {code => Hilog.error(1, "info", "Failed to push url. Code is ${code}")})
             }
         }
     }

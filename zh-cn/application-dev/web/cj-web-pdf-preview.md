@@ -88,13 +88,13 @@ Web().domStorageAccess(true)
             }
 
             public override func onCreate(want: Want, launchParam: LaunchParam): Unit {
-                AppLog.info("MainAbility OnCreated.${want.abilityName}")
+                Hilog.info(1, "info", "MainAbility OnCreated.${want.abilityName}")
 
                 // 获取context
                 globalAbilityContext = Option<UIAbilityContext>.Some(this.context)
 
                 match (launchParam.launchReason) {
-                    case LaunchReason.StartAbility => AppLog.info("StartAbility")
+                    case LaunchReason.StartAbility => Hilog.info(1, "info", "StartAbility")
                     case _ => ()
                 }
             }

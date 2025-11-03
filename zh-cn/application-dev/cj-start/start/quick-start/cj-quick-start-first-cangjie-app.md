@@ -114,9 +114,9 @@ Project_name
                    Text(this.message)
                        .fontSize(50)
                        .fontWeight(FontWeight.Bold)
-                       .onClick {
+                       .onClick ({
                            evt => this.message = "Hello Cangjie"
-                       }
+                       })
                }.width(100.percent)
            }.height(100.percent)
        }
@@ -153,9 +153,9 @@ Project_name
                     }
                    // 添加按钮，以响应用户点击
                    Button("Next")
-                   .onClick {
-                       evt => AppLog.info("Hello Cangjie")
-                   }
+                   .onClick ({
+                       evt => Hilog.info(1, "info", "Hello Cangjie")
+                   })
                    .fontSize(30)
                    .width(180)
                    .height(50)
@@ -214,9 +214,9 @@ Project_name
                        .fontSize(50)
                        .fontWeight(FontWeight.Bold)
                    Button("Back")
-                       .onClick {
-                           evt => AppLog.info("Hi there")
-                       }
+                       .onClick ({
+                           evt => Hilog.info(1, "info", "Hi there")
+                       })
                        .fontSize(30)
                        .width(180)
                        .height(50)
@@ -261,9 +261,9 @@ Project_name
                     }
                    // 添加按钮，以响应用户点击
                    Button("Next")
-                   .onClick {
+                   .onClick ({
                        evt => getUIContext().getRouter().pushUrl(url: "Second") // 实现到第二页的跳转
-                   }
+                   })
                    .fontSize(30)
                    .width(180)
                    .height(50)
@@ -304,9 +304,9 @@ Project_name
                        .fontSize(50)
                        .fontWeight(FontWeight.Bold)
                    Button("Back")
-                       .onClick {
+                       .onClick ({
                            evt => Router.back(url: "EntryView") // 实现返回第一页
-                       }
+                       })
                        .fontSize(30)
                        .width(180)
                        .height(50)

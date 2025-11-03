@@ -30,18 +30,18 @@ photoAccessHelper仅提供开发者对收藏夹、视频相册、截屏和录屏
 ```cangjie
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
-import ohos.base.BusinessException
+import ohos.business_exception.*
 
 func example() {
   try {
     let context = ctx.getOrThrow()
     let phAccessHelper = getPhotoAccessHelper(context)
-    let fetchResult: AlbumResult = phAccessHelper.getAlbums(AlbumType.SYSTEM, AlbumSubtype.FAVORITE)
+    let fetchResult: AlbumResult = phAccessHelper.getAlbums(AlbumType.System, AlbumSubtype.Favorite)
     let album: Album = fetchResult.getFirstObject()
-    AppLog.info('get favorite album successfully, albumUri: ' + album.albumUri)
+    Hilog.info(1, "info", 'get favorite album successfully, albumUri: ' + album.albumUri)
     fetchResult.close()
   } catch (e: BusinessException) {
-    AppLog.error('get favorite album failed with err: ' + e.toString())
+    Hilog.info(1, "info", 'get favorite album failed with err: ' + e.toString())
   }
 }
 ```
@@ -50,7 +50,7 @@ func example() {
 
 ```cangjie
 // main_ability.cj
-import ohos.base.AppLog
+import ohos.hilog.*
 import ohos.ability.AbilityStage
 import ohos.ability.LaunchReason
 
@@ -61,15 +61,15 @@ class MainAbility <: UIAbility {
     }
 
     public override func onCreate(want: Want, launchParam: LaunchParam): Unit {
-        AppLog.info("MainAbility OnCreated.${want.abilityName}")
+        Hilog.info(1, "info", "MainAbility OnCreated.${want.abilityName}")
         match (launchParam.launchReason) {
-            case LaunchReason.START_ABILITY => AppLog.info("START_ABILITY")
+            case LaunchReason.START_ABILITY => Hilog.info(1, "info", "START_ABILITY")
             case _ => ()
         }
     }
 
     public override func onWindowStageCreate(windowStage: WindowStage): Unit {
-        AppLog.info("MainAbility onWindowStageCreate.")
+        Hilog.info(1, "info", "MainAbility onWindowStageCreate.")
         windowStage.loadContent("EntryView")
         // declared in index.cj
         ctx = this.context
@@ -99,30 +99,27 @@ class MainAbility <: UIAbility {
 ```cangjie
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
-import ohos.base.BusinessException
+import ohos.business_exception.*
 
 func example() {
     let context = ctx.getOrThrow()
     let phAccessHelper = getPhotoAccessHelper(context)
     let predicates: DataSharePredicates = DataSharePredicates()
     predicates.equalTo('album_name', StringValue('test1'))
-    let fetchOptions: FetchOptions = FetchOptions(
-        fetchColumns: [],
-        predicates: predicates
-    )
+    let fetchOptions: FetchOptions = FetchOptions([], predicates)
 
   try {
-    let albumFetchResult: AlbumResult = phAccessHelper.getAlbums(AlbumType.SYSTEM, AlbumSubtype.FAVORITE)
+    let albumFetchResult: AlbumResult = phAccessHelper.getAlbums(AlbumType.System, AlbumSubtype.Favorite)
     let album: Album = albumFetchResult.getFirstObject()
-    AppLog.info('get favorite album successfully, albumUri: ' + album.albumUri)
+    Hilog.info(1, "info", 'get favorite album successfully, albumUri: ' + album.albumUri)
 
     let photoFetchResult: PhotoAssetResult = album.getAssets(fetchOptions)
     let photoAsset: PhotoAsset = photoFetchResult.getFirstObject()
-    AppLog.info('favorite album getAssets successfully, photoAsset displayName: ' + photoAsset.displayName)
+    Hilog.info(1, "info", 'favorite album getAssets successfully, photoAsset displayName: ' + photoAsset.displayName)
     photoFetchResult.close()
     albumFetchResult.close()
   } catch (e: BusinessException) {
-    AppLog.error('favorite failed with err: ' + e.toString())
+    Hilog.error(1, "info", 'favorite failed with err: ' + e.toString())
   }
 }
 ```
@@ -131,7 +128,7 @@ func example() {
 
 ```cangjie
 // main_ability.cj
-import ohos.base.AppLog
+import ohos.hilog.*
 import ohos.ability.AbilityStage
 import ohos.ability.LaunchReason
 
@@ -142,15 +139,15 @@ class MainAbility <: UIAbility {
     }
 
     public override func onCreate(want: Want, launchParam: LaunchParam): Unit {
-        AppLog.info("MainAbility OnCreated.${want.abilityName}")
+        Hilog.info(1, "info", "MainAbility OnCreated.${want.abilityName}")
         match (launchParam.launchReason) {
-            case LaunchReason.START_ABILITY => AppLog.info("START_ABILITY")
+            case LaunchReason.START_ABILITY => Hilog.info(1, "info", "START_ABILITY")
             case _ => ()
         }
     }
 
     public override func onWindowStageCreate(windowStage: WindowStage): Unit {
-        AppLog.info("MainAbility onWindowStageCreate.")
+        Hilog.info(1, "info", "MainAbility onWindowStageCreate.")
         windowStage.loadContent("EntryView")
         // declared in index.cj
         ctx = this.context
@@ -180,18 +177,18 @@ class MainAbility <: UIAbility {
 ```cangjie
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
-import ohos.base.BusinessException
+import ohos.business_exception.*
 
 func example() {
   try {
     let context = ctx.getOrThrow()
     let phAccessHelper = getPhotoAccessHelper(context)
-    let fetchResult: AlbumResult = phAccessHelper.getAlbums(AlbumType.SYSTEM, AlbumSubtype.VIDEO)
+    let fetchResult: AlbumResult = phAccessHelper.getAlbums(AlbumType.System, AlbumSubtype.Video)
     let album: Album = fetchResult.getFirstObject()
-    AppLog.info('get video album successfully, albumUri: ' + album.albumUri)
+    Hilog.info(1, "info", 'get video album successfully, albumUri: ' + album.albumUri)
     fetchResult.close()
   } catch (e: BusinessException) {
-    AppLog.error('get video album failed with err: ' + e.toString())
+    Hilog.info(1, "info", 'get video album failed with err: ' + e.toString())
   }
 }
 ```
@@ -200,7 +197,7 @@ func example() {
 
 ```cangjie
 // main_ability.cj
-import ohos.base.AppLog
+import ohos.hilog.*
 import ohos.ability.AbilityStage
 import ohos.ability.LaunchReason
 
@@ -211,15 +208,15 @@ class MainAbility <: UIAbility {
     }
 
     public override func onCreate(want: Want, launchParam: LaunchParam): Unit {
-        AppLog.info("MainAbility OnCreated.${want.abilityName}")
+        Hilog.info(1, "info", "MainAbility OnCreated.${want.abilityName}")
         match (launchParam.launchReason) {
-            case LaunchReason.START_ABILITY => AppLog.info("START_ABILITY")
+            case LaunchReason.START_ABILITY => Hilog.info(1, "info", "START_ABILITY")
             case _ => ()
         }
     }
 
     public override func onWindowStageCreate(windowStage: WindowStage): Unit {
-        AppLog.info("MainAbility onWindowStageCreate.")
+        Hilog.info(1, "info", "MainAbility onWindowStageCreate.")
         windowStage.loadContent("EntryView")
         // declared in index.cj
         ctx = this.context
@@ -249,30 +246,27 @@ class MainAbility <: UIAbility {
 ```cangjie
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
-import ohos.base.BusinessException
+import ohos.business_exception.*
 
 func example() {
     let context = ctx.getOrThrow()
     let phAccessHelper = getPhotoAccessHelper(context)
     let predicates: DataSharePredicates = DataSharePredicates()
     predicates.equalTo('display_name', StringValue('test2'))
-    let fetchOptions: FetchOptions = FetchOptions(
-        fetchColumns: [],
-        predicates: predicates
-    )
+    let fetchOptions: FetchOptions = FetchOptions([],predicates)
 
   try {
-    let albumFetchResult: AlbumResult = phAccessHelper.getAlbums(AlbumType.SYSTEM, AlbumSubtype.VIDEO)
+    let albumFetchResult: AlbumResult = phAccessHelper.getAlbums(AlbumType.System, AlbumSubtype.Video)
     let album: Album = albumFetchResult.getFirstObject()
-    AppLog.info('get video album successfully, albumUri: ' + album.albumUri)
+    Hilog.info(1, "info", 'get video album successfully, albumUri: ' + album.albumUri)
 
     let videoFetchResult: PhotoAssetResult = album.getAssets(fetchOptions)
     let photoAsset: PhotoAsset = videoFetchResult.getFirstObject()
-    AppLog.info('video album getAssets successfully, photoAsset displayName: ' + photoAsset.displayName)
+    Hilog.info(1, "info", 'video album getAssets successfully, photoAsset displayName: ' + photoAsset.displayName)
     videoFetchResult.close()
     albumFetchResult.close()
   } catch (e: BusinessException) {
-    AppLog.error('video failed with err: ' + e.toString())
+    Hilog.error(1, "info", 'video failed with err: ' + e.toString())
   }
 }
 ```
@@ -281,7 +275,7 @@ func example() {
 
 ```cangjie
 // main_ability.cj
-import ohos.base.AppLog
+import ohos.hilog.*
 import ohos.ability.AbilityStage
 import ohos.ability.LaunchReason
 
@@ -292,15 +286,15 @@ class MainAbility <: UIAbility {
     }
 
     public override func onCreate(want: Want, launchParam: LaunchParam): Unit {
-        AppLog.info("MainAbility OnCreated.${want.abilityName}")
+        Hilog.info(1, "info", "MainAbility OnCreated.${want.abilityName}")
         match (launchParam.launchReason) {
-            case LaunchReason.START_ABILITY => AppLog.info("START_ABILITY")
+            case LaunchReason.START_ABILITY => Hilog.info(1, "info", "START_ABILITY")
             case _ => ()
         }
     }
 
     public override func onWindowStageCreate(windowStage: WindowStage): Unit {
-        AppLog.info("MainAbility onWindowStageCreate.")
+        Hilog.info(1, "info", "MainAbility onWindowStageCreate.")
         windowStage.loadContent("EntryView")
         // declared in index.cj
         ctx = this.context

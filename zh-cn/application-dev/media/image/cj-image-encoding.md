@@ -38,7 +38,7 @@
         <!-- compile -->
 
         ```cangjie
-        packOpts.desiredDynamicRange = image.PackingDynamicRange.Auto;
+        packOpts.desiredDynamicRange = PackingDynamicRange.Auto
         ```
 
 3. [创建PixelMap对象或创建ImageSource对象](./cj-image-decoding.md)。
@@ -51,7 +51,8 @@
 
     ```cangjie
     // data 为打包获取到的文件流，写入文件保存即可得到一张图片。
-    let data = imagePackerApi.packToData(pixelMap, packOpts)
+    let imagePacker = createImagePacker()
+    let data = imagePacker.packToData(pixelMap, packOpts)
     ```
 
     方法二：通过imageSource进行编码。
@@ -60,7 +61,8 @@
 
     ```cangjie
     // data 为打包获取到的文件流，写入文件保存即可得到一张图片。
-    let data = imagePackerApi.packToData(imageSource, packOpts)
+    let imagePacker = createImagePacker()
+    let data = imagePacker.packToData(imageSource, packOpts)
     ```
 
 ### 图片编码进文件
@@ -83,10 +85,11 @@ let imageSource = createImageSource(img)
 let cacheDir = "/data/storage/el2/base/haps/entry/cache"
 let filePath = cacheDir + '/test.jpg'
 
-let file = FileIo.open(path, mode: OpenMode.CREATE | OpenMode.READ_WRITE)
+let file = FileIo.open(filePath, mode: OpenMode.CREATE | OpenMode.READ_WRITE)
 // 直接打包进文件。
-imagePackerApi.packToFile(pixelMap, Int32(file.fd), packOpts)
-FileFs.close(file.fd)
+let imagePacker = createImagePacker()
+imagePacker.packToFile(imageSource, Int32(file.fd), PackingOption("image/jpeg", 100))
+FileIo.close(file.fd)
 ```
 
 方法二：通过imageSource编码进文件。
@@ -107,6 +110,7 @@ let filePath = cacheDir + '/test.jpg'
 
 let file = FileIo.open(path, mode: OpenMode.CREATE | OpenMode.READ_WRITE)
 // 直接打包进文件。
-imagePackerApi.packToFile(imageSource, Int32(file.fd), packOpts)
-FileFs.close(file.fd)
+let imagePacker = createImagePacker()
+imagePacker.packToFile(imageSource, Int32(file.fd), PackingOption("image/jpeg", 100))
+FileIo.close(file.fd)
 ```

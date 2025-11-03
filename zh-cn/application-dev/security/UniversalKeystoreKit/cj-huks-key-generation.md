@@ -44,16 +44,16 @@ let keyAlias = 'dh_key'
 /* 2.初始化密钥属性集 */
 let properties1: Array<HuksParam> = [
   HuksParam(
-    HuksTag.HuksTagAlgorithm,
-    HuksKeyAlg.HUKS_ALG_DH
+    HuksTag.HUKS_TAG_ALGORITHM,
+    HuksParamValue.Uint32Value(HuksKeyAlg.HUKS_ALG_DH)
   ),
   HuksParam(
-    HuksTag.HuksTagPurpose,
-    HuksKeyPurpose.HUKS_KEY_PURPOSE_AGREE
+    HuksTag.HUKS_TAG_PURPOSE,
+    HuksParamValue.Uint32Value(HuksKeyPurpose.HUKS_KEY_PURPOSE_AGREE)
   ),
   HuksParam(
-    HuksTag.HuksTagKeySize,
-    HuksKeySize.HUKS_DH_KEY_SIZE_2048
+    HuksTag.HUKS_TAG_KEY_SIZE,
+    HuksParamValue.Uint32Value(HuksKeySize.HUKS_DH_KEY_SIZE_2048)
   )
 ]
 let huksOptions: HuksOptions = HuksOptions(

@@ -56,7 +56,7 @@
     import ohos.business_exception.BusinessException
     import ohos.data.distributed_kv_store.KVManager
     import ohos.data.distributed_kv_store.SingleKVStore
-    import ohos.data.relational_store.SecurityLevel as RelationalStoreSecurityLevel
+    import ohos.data.relational_store.*
 
     var kvManager: Option<KVManager> = Option<KVManager>.None
     var kvStore: Option<SingleKVStore> = Option<SingleKVStore>.None
@@ -85,7 +85,7 @@
     <!-- compile -->
 
     ```cangjie
-    import ohos.data.distributed_kv_store.ValueType as KVValueType
+    import ohos.data.distributed_kv_store.*
 
     const KEY_TEST_STRING_ELEMENT: String = "key_test_string"
     const VALUE_TEST_STRING_ELEMENT: String = "value_test_string"
@@ -148,8 +148,7 @@
 ```cangjie
 import kit.ArkData.*
 import ohos.business_exception.BusinessException
-import ohos.data.relational_store.RdbStore
-import ohos.data.relational_store.SecurityLevel as RelationalStoreSecurityLevel
+import ohos.data.relational_store.*
 
 var rdbStore_: Option<RdbStore> = Option<RdbStore>.None
 let storeConfig_ = StoreConfig(
@@ -193,7 +192,7 @@ try {
     try {
         let predicates = RdbPredicates("EMPLOYEE")
         let columns = ["ID", "NAME", "AGE", "SALARY", "CODES"]
-        let resultSet = rdbStore.getOrThrow().query(predicates, columns)
+        let resultSet = rdbStore_.getOrThrow().query(predicates, columns)
         /*
          * 业务的增删改逻辑
          * ...
@@ -204,7 +203,7 @@ try {
         }
         // resultSet.goToFirstRow(), resultSet.count等其它接口也会抛异常
         while (resultSet.goToNextRow()) {
-            AppLog.info("${resultSet.getRow().size}")
+            Hilog.info(0, "info", "${resultSet.getRow().size}")
         }
         resultSet.close()
     } catch (e: BusinessException) {
@@ -249,12 +248,12 @@ try {
          * 如在备份时指定了绝对路径："/data/storage/el2/database/Backup.db", 需要传入绝对路径。
          */
         let backup = '/data/storage/el2/database/Backup.db' + '/entry/rdb/Backup.db'
-        if (!FileFs.access(backup)) {
-            AppLog.info("no backup file")
+        if (!FileIo.access(backup)) {
+            Hilog.info(0, "info", "no backup file")
         }
         // 调用restore接口恢复数据
-        rdbStore.getOrThrow().restore("Backup.db")
-        AppLog.info("Succeeded in backup data.")
+        rdbStore_.getOrThrow().restore("Backup.db")
+        Hilog.info(0, "info","Succeeded in backup data.")
     } catch (e: BusinessException) {
         Hilog.error(0, "ErrorCode: ${e.code}", e.message)
     }

@@ -146,6 +146,7 @@ import kit.NetworkKit.*
 import std.collection.*
 import ohos.base.*
 import ohos.net.http.*
+import ohos.callback_invoke.*
 
 func loggerInfo(str: String) {
     Hilog.info(0, "CangjieTest", str)

@@ -96,20 +96,20 @@ func assignData(data: Array<UInt8>, arrayBuf: Array<UInt8>, startIndex: Int64) {
 let genWrappingKeyParams: HuksOptions = HuksOptions(
     properties: [
         HuksParam(
-            HuksTag.HuksTagAlgorithm,
-            HuksKeyAlg.HUKS_ALG_ECC
+            HuksTag.HUKS_TAG_ALGORITHM,
+            HuksParamValue.Uint32Value(HuksKeyAlg.HUKS_ALG_ECC)
         ),
         HuksParam(
-            HuksTag.HuksTagPurpose,
-            HuksKeyPurpose.HUKS_KEY_PURPOSE_UNWRAP
+            HuksTag.HUKS_TAG_PURPOSE,
+            HuksParamValue.Uint32Value(HuksKeyPurpose.HUKS_KEY_PURPOSE_UNWRAP)
         ),
         HuksParam(
-            HuksTag.HuksTagKeySize,
-            HuksKeySize.HUKS_CURVE25519_KEY_SIZE_256
+            HuksTag.HUKS_TAG_KEY_SIZE,
+            HuksParamValue.Uint32Value(HuksKeySize.HUKS_CURVE25519_KEY_SIZE_256)
         ),
         HuksParam(
-            HuksTag.HuksTagPadding,
-            HuksKeyPadding.HUKS_PADDING_NONE
+            HuksTag.HUKS_TAG_PADDING,
+            HuksParamValue.Uint32Value(HuksKeyPadding.HUKS_PADDING_NONE)
         )
     ],
     inData: Bytes()
@@ -117,16 +117,16 @@ let genWrappingKeyParams: HuksOptions = HuksOptions(
 let genCallerEcdhParams: HuksOptions = HuksOptions(
     properties: [
         HuksParam(
-            HuksTag.HuksTagAlgorithm,
-            HuksKeyAlg.HUKS_ALG_ECC
+            HuksTag.HUKS_TAG_ALGORITHM,
+            HuksParamValue.Uint32Value(HuksKeyAlg.HUKS_ALG_ECC)
         ),
         HuksParam(
-            HuksTag.HuksTagPurpose,
-            HuksKeyPurpose.HUKS_KEY_PURPOSE_AGREE
+            HuksTag.HUKS_TAG_PURPOSE,
+            HuksParamValue.Uint32Value(HuksKeyPurpose.HUKS_KEY_PURPOSE_AGREE)
         ),
         HuksParam(
-            HuksTag.HuksTagKeySize,
-            HuksKeySize.HUKS_CURVE25519_KEY_SIZE_256
+            HuksTag.HUKS_TAG_KEY_SIZE,
+            HuksParamValue.Uint32Value(HuksKeySize.HUKS_CURVE25519_KEY_SIZE_256)
         )
     ],
     inData: Bytes()
@@ -134,31 +134,31 @@ let genCallerEcdhParams: HuksOptions = HuksOptions(
 let importParamsCallerKek: HuksOptions = HuksOptions(
     properties: [
         HuksParam(
-            HuksTag.HuksTagAlgorithm,
-            HuksKeyAlg.HUKS_ALG_AES
+            HuksTag.HUKS_TAG_ALGORITHM,
+            HuksParamValue.Uint32Value(HuksKeyAlg.HUKS_ALG_AES)
         ),
         HuksParam(
-            HuksTag.HuksTagPurpose,
-            HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT
+            HuksTag.HUKS_TAG_PURPOSE,
+            HuksParamValue.Uint32Value(HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT)
         ),
         HuksParam(
-            HuksTag.HuksTagKeySize,
-            HuksKeySize.HUKS_AES_KEY_SIZE_256
+            HuksTag.HUKS_TAG_KEY_SIZE,
+            HuksParamValue.Uint32Value(HuksKeySize.HUKS_AES_KEY_SIZE_256)
         ),
         HuksParam(
-            HuksTag.HuksTagPadding,
-            HuksKeyPadding.HUKS_PADDING_NONE
+            HuksTag.HUKS_TAG_PADDING,
+            HuksParamValue.Uint32Value(HuksKeyPadding.HUKS_PADDING_NONE)
         ),
         HuksParam(
-            HuksTag.HuksTagBlockMode,
-            HuksCipherMode.HUKS_MODE_GCM
+            HuksTag.HUKS_TAG_BLOCK_MODE,
+            HuksParamValue.Uint32Value(HuksCipherMode.HUKS_MODE_GCM)
         ),
         HuksParam(
-            HuksTag.HuksTagDigest,
-            HuksKeyDigest.HUKS_DIGEST_NONE
+            HuksTag.HUKS_TAG_DIGEST,
+            HuksParamValue.Uint32Value(HuksKeyDigest.HUKS_DIGEST_NONE)
         ),
         HuksParam(
-            HuksTag.HuksTagIv,
+            HuksTag.HUKS_TAG_IV,
             HuksParamValue.BytesValue(IV.toArray())
         )
     ],
@@ -167,31 +167,31 @@ let importParamsCallerKek: HuksOptions = HuksOptions(
 var importParamsAgreeKey: HuksOptions = HuksOptions(
     properties: [
         HuksParam(
-            HuksTag.HuksTagAlgorithm,
-            HuksKeyAlg.HUKS_ALG_AES
+            HuksTag.HUKS_TAG_ALGORITHM,
+            HuksParamValue.Uint32Value(HuksKeyAlg.HUKS_ALG_AES)
         ),
         HuksParam(
-            HuksTag.HuksTagPurpose,
-            HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT
+            HuksTag.HUKS_TAG_PURPOSE,
+            HuksParamValue.Uint32Value(HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT)
         ),
         HuksParam(
-            HuksTag.HuksTagKeySize,
-            HuksKeySize.HUKS_AES_KEY_SIZE_256
+            HuksTag.HUKS_TAG_KEY_SIZE,
+            HuksParamValue.Uint32Value(HuksKeySize.HUKS_AES_KEY_SIZE_256)
         ),
         HuksParam(
-            HuksTag.HuksTagPadding,
-            HuksKeyPadding.HUKS_PADDING_NONE
+            HuksTag.HUKS_TAG_PADDING,
+            HuksParamValue.Uint32Value(HuksKeyPadding.HUKS_PADDING_NONE)
         ),
         HuksParam(
-            HuksTag.HuksTagBlockMode,
-            HuksCipherMode.HUKS_MODE_GCM
+            HuksTag.HUKS_TAG_BLOCK_MODE,
+            HuksParamValue.Uint32Value(HuksCipherMode.HUKS_MODE_GCM)
         ),
         HuksParam(
-            HuksTag.HuksTagDigest,
-            HuksKeyDigest.HUKS_DIGEST_NONE
+            HuksTag.HUKS_TAG_DIGEST,
+            HuksParamValue.Uint32Value(HuksKeyDigest.HUKS_DIGEST_NONE)
         ),
         HuksParam(
-            HuksTag.HuksTagIv,
+            HuksTag.HUKS_TAG_IV,
             HuksParamValue.BytesValue(IV.toArray())
         )
     ],
@@ -200,16 +200,16 @@ var importParamsAgreeKey: HuksOptions = HuksOptions(
 let callerAgreeParams: HuksOptions = HuksOptions(
     properties: [
         HuksParam(
-            HuksTag.HuksTagAlgorithm,
-            HuksKeyAlg.HUKS_ALG_ECDH
+            HuksTag.HUKS_TAG_ALGORITHM,
+            HuksParamValue.Uint32Value(HuksKeyAlg.HUKS_ALG_ECDH)
         ),
         HuksParam(
-            HuksTag.HuksTagPurpose,
-            HuksKeyPurpose.HUKS_KEY_PURPOSE_AGREE
+            HuksTag.HUKS_TAG_PURPOSE,
+            HuksParamValue.Uint32Value(HuksKeyPurpose.HUKS_KEY_PURPOSE_AGREE)
         ),
         HuksParam(
-            HuksTag.HuksTagKeySize,
-            HuksKeySize.HUKS_CURVE25519_KEY_SIZE_256
+            HuksTag.HUKS_TAG_KEY_SIZE,
+            HuksParamValue.Uint32Value(HuksKeySize.HUKS_CURVE25519_KEY_SIZE_256)
         )
     ],
     inData: Bytes()
@@ -217,31 +217,31 @@ let callerAgreeParams: HuksOptions = HuksOptions(
 var encryptKeyCommonParams: HuksOptions = HuksOptions(
     properties: [
         HuksParam(
-            HuksTag.HuksTagAlgorithm,
-            HuksKeyAlg.HUKS_ALG_AES
+            HuksTag.HUKS_TAG_ALGORITHM,
+            HuksParamValue.Uint32Value(HuksKeyAlg.HUKS_ALG_AES)
         ),
         HuksParam(
-            HuksTag.HuksTagPurpose,
-            HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT
+            HuksTag.HUKS_TAG_PURPOSE,
+            HuksParamValue.Uint32Value(HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT)
         ),
         HuksParam(
-            HuksTag.HuksTagKeySize,
-            HuksKeySize.HUKS_AES_KEY_SIZE_256
+            HuksTag.HUKS_TAG_KEY_SIZE,
+            HuksParamValue.Uint32Value(HuksKeySize.HUKS_AES_KEY_SIZE_256)
         ),
         HuksParam(
-            HuksTag.HuksTagPadding,
-            HuksKeyPadding.HUKS_PADDING_NONE
+            HuksTag.HUKS_TAG_PADDING,
+            HuksParamValue.Uint32Value(HuksKeyPadding.HUKS_PADDING_NONE)
         ),
         HuksParam(
-            HuksTag.HuksTagBlockMode,
-            HuksCipherMode.HUKS_MODE_GCM
+            HuksTag.HUKS_TAG_BLOCK_MODE,
+            HuksParamValue.Uint32Value(HuksCipherMode.HUKS_MODE_GCM)
         ),
         HuksParam(
-            HuksTag.HuksTagNonce,
+            HuksTag.HUKS_TAG_NONCE,
             HuksParamValue.BytesValue(NONCE.toArray())
         ),
         HuksParam(
-            HuksTag.HuksTagAssociatedData,
+            HuksTag.HUKS_TAG_ASSOCIATED_DATA,
             HuksParamValue.BytesValue(AAD.toArray())
         )
     ],
@@ -250,35 +250,35 @@ var encryptKeyCommonParams: HuksOptions = HuksOptions(
 var importWrappedAes192Params: HuksOptions = HuksOptions(
     properties: [
         HuksParam(
-            HuksTag.HuksTagAlgorithm,
-            HuksKeyAlg.HUKS_ALG_AES
+            HuksTag.HUKS_TAG_ALGORITHM,
+            HuksParamValue.Uint32Value(HuksKeyAlg.HUKS_ALG_AES)
         ),
         HuksParam(
-            HuksTag.HuksTagPurpose,
+            HuksTag.HUKS_TAG_PURPOSE,
             HuksParamValue.Uint32Value(1 | 2)
         ),
         HuksParam(
-            HuksTag.HuksTagKeySize,
-            HuksKeySize.HUKS_AES_KEY_SIZE_192
+            HuksTag.HUKS_TAG_KEY_SIZE,
+            HuksParamValue.Uint32Value(HuksKeySize.HUKS_AES_KEY_SIZE_192)
         ),
         HuksParam(
-            HuksTag.HuksTagPadding,
-            HuksKeyPadding.HUKS_PADDING_NONE
+            HuksTag.HUKS_TAG_PADDING,
+            HuksParamValue.Uint32Value(HuksKeyPadding.HUKS_PADDING_NONE)
         ),
         HuksParam(
-            HuksTag.HuksTagBlockMode,
-            HuksCipherMode.HUKS_MODE_CBC
+            HuksTag.HUKS_TAG_BLOCK_MODE,
+            HuksParamValue.Uint32Value(HuksCipherMode.HUKS_MODE_CBC)
         ),
         HuksParam(
-            HuksTag.HuksTagDigest,
-            HuksKeyDigest.HUKS_DIGEST_NONE
+            HuksTag.HUKS_TAG_DIGEST,
+            HuksParamValue.Uint32Value(HuksKeyDigest.HUKS_DIGEST_NONE)
         ),
         HuksParam(
-            HuksTag.HuksTagUnwrapAlgorithmSuite,
-            HuksUnwrapSuite.HUKS_UNWRAP_SUITE_ECDH_AES_256_GCM_NOPADDING
+            HuksTag.HUKS_TAG_UNWRAP_ALGORITHM_SUITE,
+            HuksParamValue.Uint32Value(HuksUnwrapSuite.HUKS_UNWRAP_SUITE_ECDH_AES_256_GCM_NOPADDING)
         ),
         HuksParam(
-            HuksTag.HuksTagIv,
+            HuksTag.HUKS_TAG_IV,
             HuksParamValue.BytesValue(IV.toArray())
         )
     ],

@@ -67,7 +67,7 @@ func encryptMessage(symKey: SymKey, plainText: DataBlob) {
     cipher.initialize(CryptoMode.EncryptMode, symKey, gcmParams)
     let encryptUpdate = cipher.update(plainText)
     // GCM模式加密doFinal时传入空，获得tag数据，并更新至gcmParams对象中。
-    gcmParams.authTag = cipher.doFinal(None)
+    gcmParams.authTag = cipher.doFinal(Option<DataBlob>.None)
     return encryptUpdate
 }
 
@@ -76,7 +76,7 @@ func decryptMessage(symKey: SymKey, cipherText: DataBlob) {
     let decoder = createCipher('AES128|GCM|PKCS7')
     decoder.initialize(CryptoMode.DecryptMode, symKey, gcmParams)
     let decryptUpdate = decoder.update(cipherText)
-    decoder.doFinal(None)
+    decoder.doFinal(Option<DataBlob>.None)
     return decryptUpdate
 }
 

@@ -392,7 +392,7 @@ Project_name
    public func registerJSFunc(name: String, fn: ()->Unit): Unit {
        // 如果已经注册过，则打印错误信息，并直接返回
        if (globalJSFunction.contains(name)) {
-           AppLog.error("registerJSFunc failed(err: func ${name} already exists)")
+           Hilog.error(1, "info", "registerJSFunc failed(err: func ${name} already exists)")
            return
        }
        // 保存到 HashMap 中
@@ -543,15 +543,15 @@ Project_name
                    .width(40.percent)
                    .height(5.percent)
                    // 返回按钮绑定onClick事件，单击按钮时返回到第一页
-                   .onClick {
-                       AppLog.info("Succeeded in clicking the 'Back' button.")
+                   .onClick ({
+                       Hilog.info(1, "info", "Succeeded in clicking the 'Back' button.")
                        let optFn = globalJSFunction.get("SecondPageRouterBack")
                        if (let Some(fn) <- optFn) {
                            fn() //调用 ArkTS 回调函数
                        } else {
-                           AppLog.error("Failed to return to the first page. callback not exists")
+                           Hilog.error(1, "info", "Failed to return to the first page. callback not exists")
                        }
-                   }
+                   })
                }
                .width(100.percent)
            }

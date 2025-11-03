@@ -37,6 +37,7 @@
     ```cangjie
     // 场景一：读取并修改整张图片数据。
     // 按照PixelMap的像素格式，读取PixelMap的图像像素数据，并写入缓冲区中。
+    let pixelBytesNumber = 100000
     let buffer = Array<UInt8>(Int64(pixelBytesNumber), repeat: 0)
     pixelMap.readPixelsToBuffer(buffer)
 

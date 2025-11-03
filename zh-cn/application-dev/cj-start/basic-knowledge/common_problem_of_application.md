@@ -16,9 +16,9 @@
     try {
         let res = BundleManager.getBundleInfoForSelf(bundleFlags)
         let fingerprint = res.signatureInfo.fingerprint
-        AppLog.info("getBundleInfoForSelf successfully, fingerprint: ${fingerprint}")
+        Hilog.info(1, "info", "getBundleInfoForSelf successfully, fingerprint: ${fingerprint}")
     } catch (e: BusinessException)  {
-        AppLog.error("Failed to getBundleInfoForSelf. Code is ${e.code}, message is ${e.message}")
+        Hilog.error(1, "info", "Failed to getBundleInfoForSelf. Code is ${e.code}, message is ${e.message}")
     }
     ```
 
@@ -60,9 +60,9 @@ appIdentifier是<!--RP01-->[Profile文件](https://gitcode.com/openharmony/docs/
     try {
         let res = BundleManager.getBundleInfoForSelf(bundleFlags)
         let appIdentifier = res.signatureInfo.appIdentifier
-        AppLog.info("getBundleInfoForSelf successfully, appIdentifier: ${appIdentifier}")
+        Hilog.info(1, "info", "getBundleInfoForSelf successfully, appIdentifier: ${appIdentifier}")
     } catch (e: BusinessException)  {
-        AppLog.error("Failed to getBundleInfoForSelf. Code is ${e.code}, message is ${e.message}")
+        Hilog.error(1, "info", "Failed to getBundleInfoForSelf. Code is ${e.code}, message is ${e.message}")
     }
     ```
 

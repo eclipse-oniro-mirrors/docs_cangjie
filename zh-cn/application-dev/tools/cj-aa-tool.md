@@ -160,13 +160,13 @@ aa start [-d <deviceId>] [-U <URI>] [-t <type>] [-A <action>] [-e <entity>] [-D]
         import ohos.base.*
         import ohos.ability.*
 
-        class TargetAbility <:  Ability {
+        class TargetAbility <: UIAbility {
           public override func onCreate(want:Want, launchParam: LaunchParam): Unit {
-            hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
-            let paramNumber = want.parameters.paramNumber
-            let paramBoolean = want.parameters.paramBoolean
-            let paramString = want.parameters.paramString
-            let paramNullString = want.parameters.paramNullString
+            Hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
+            let paramNumber = want.parameters.get("paramNumber")
+            let paramBoolean = want.parameters.get("paramBoolean")
+            let paramString = want.parameters.get("paramString")
+            let paramNullString = want.parameters.get("paramNullString")
           }
         }
         ```

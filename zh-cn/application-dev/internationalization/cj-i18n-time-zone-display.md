@@ -21,6 +21,7 @@
    <!-- compile -->
 
    ```cangjie
-    let timezone: TimeZone = getTimeZone(zoneID: 'America/Sao_Paulo')
-    let timeZoneName: String = timezone.getDisplayName(locale:'zh-Hans', isDST: true) // timeZoneName = '巴西利亚标准时间'
+    let calendar: Calendar = getCalendar('America/Sao_Paulo')
+    let timezone = calendar.getTimeZone()
+    let timeZoneName: String = calendar.getDisplayName(timezone)
    ```

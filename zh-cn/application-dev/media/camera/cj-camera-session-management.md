@@ -95,29 +95,28 @@
 
     ```cangjie
     func switchOutput(photoSession: PhotoSession, videoOutput: VideoOutput, photoOutput: PhotoOutput): Unit {
-    try {
-        photoSession.stop()
-    } catch (error: BusinessException) {
-        Hilog.error(0,"","Failed to stop. error: ${error.message}")
-    }
+        try {
+            photoSession.stop()
+        } catch (error: BusinessException) {
+            Hilog.error(0,"","Failed to stop. error: ${error.message}")
+        }
 
-    try {
-        photoSession.beginConfig()
-    } catch (error: BusinessException) {
-        Hilog.error(0,"","Failed to beginConfig. error: ${error.message}")
+        try {
+            photoSession.beginConfig()
+        } catch (error: BusinessException) {
+            Hilog.error(0,"","Failed to beginConfig. error: ${error.message}")
+        }
+        // 从会话中移除拍照输出流。
+        try {
+            photoSession.removeOutput(photoOutput)
+        } catch (error: BusinessException) {
+            Hilog.error(0,"","Failed to remove photoOutput. error: ${error.message}")
+        }
+        // 向会话中添加视频输出流。
+        try {
+            photoSession.addOutput(videoOutput)
+        } catch (error: BusinessException) {
+            Hilog.error(0,"","Failed to add videoOutput. error: ${error.message}")
+        }
     }
-    // 从会话中移除拍照输出流。
-    try {
-        photoSession.removeOutput(photoOutput)
-    } catch (error: BusinessException) {
-        Hilog.error(0,"","Failed to remove photoOutput. error: ${error.message}")
-    }
-    // 向会话中添加视频输出流。
-    try {
-        photoSession.addOutput(videoOutput)
-    } catch (error: BusinessException) {
-        Hilog.error(0,"","Failed to add videoOutput. error: ${error.message}")
-    }
-
-}
     ```

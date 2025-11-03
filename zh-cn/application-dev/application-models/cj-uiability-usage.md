@@ -129,7 +129,7 @@ class MainAbility <: UIAbility {
                   Text("")
                       .fontSize(50)
                       .fontWeight(FontWeight.Bold)
-                      .onClick {
+                      .onClick ({
                           evt =>
                           let context = getContext()
                           try {
@@ -139,7 +139,7 @@ class MainAbility <: UIAbility {
                               // 处理业务逻辑错误
                               Hilog.error(0, "terminateSelf failed", " message is ${e.toString()}")
                           }
-                      }
+                      })
               }.width(100.percent)
           }.height(100.percent)
       }

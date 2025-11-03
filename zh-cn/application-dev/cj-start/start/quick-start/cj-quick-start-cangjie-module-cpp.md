@@ -56,11 +56,11 @@
                       Text(this.message)
                           .fontSize(50)
                           .fontWeight(FontWeight.Bold)
-                          .onClick {
+                          .onClick ({
                               evt => unsafe {
                                   this.message = "result: ${sum(1, 2)}"
                               }
-                          }
+                          })
                   }.width(100.percent)
               }.height(100.percent)
           }

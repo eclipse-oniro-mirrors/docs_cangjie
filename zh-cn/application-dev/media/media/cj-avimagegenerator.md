@@ -35,18 +35,20 @@
 ```cangjie
 // index.cj
 import kit.MediaKit.*
-import kit.ImageKit.*
+import kit.ImageKit.PixelMap
 import kit.AbilityKit.*
 
-var ctx = None<UIAbilityContext>
+var ctx = Option<UIAbilityContext>.None
 
 @Entry
 @Component
 class EntryView {
-    @State message: String = 'Hello World'
+    @State 
+    var message: String = 'Hello World'
 
     // pixelMap对象声明，用于图片显示
-    @State pixelMap: ?PixelMap = None
+    @State 
+    var pixelMap: ?PixelMap = Option<PixelMap>.None
 
     func build() {
         Row() {
@@ -57,16 +59,15 @@ class EntryView {
                         .fontSize(30)
                         .fontWeight(FontWeight.Bold)
                 }
-                .type(ButtonType.Capsule)
                 .margin(top: 20.px)
                 .backgroundColor(0x0D9FFB)
                 .width(60.percent)
                 .height(5.percent)
-                .onClick {
+                .onClick ({
                     evt =>
                     // 设置fdSrc, 获取视频的缩略图
                     testFetchFrameByTime()
-                }
+                })
                 Image(this.pixelMap).width(300).height(300)
                 .margin(top: 20.px)
             }
@@ -81,7 +82,7 @@ class EntryView {
         // 创建AVImageGenerator对象
         let avImageGenerator = createAVImageGenerator()
         // 设置fdSrc
-        avImageGenerator.fdSrc = ctx.getOrThrow().resourceManager.getRawFd('demo.mp4')
+        avImageGenerator.fdSrc = AVFileDescriptor(ctx.getOrThrow().resourceManager.getRawFd('demo.mp4').fd)
 
         // 初始化入参
         let timeUs = 0
@@ -96,7 +97,7 @@ class EntryView {
 
         // 释放资源
         avImageGenerator.release()
-        AppLog.info("release success.")
+        Hilog.info(1, "info", "release success.")
     }
 }
 ```
@@ -105,7 +106,6 @@ class EntryView {
 
 ```cangjie
 // main_ability.cj
-import ohos.base.AppLog
 import ohos.ability.AbilityStage
 import ohos.ability.LaunchReason
 
@@ -116,15 +116,15 @@ class MainAbility <: UIAbility {
     }
 
     public override func onCreate(want: Want, launchParam: LaunchParam): Unit {
-        AppLog.info("MainAbility OnCreated.${want.abilityName}")
+        Hilog.info(1, "info", "MainAbility OnCreated.${want.abilityName}")
         match (launchParam.launchReason) {
-            case LaunchReason.START_ABILITY => AppLog.info("START_ABILITY")
+            case LaunchReason.START_ABILITY => Hilog.info(1, "info", "START_ABILITY")
             case _ => ()
         }
     }
 
     public override func onWindowStageCreate(windowStage: WindowStage): Unit {
-        AppLog.info("MainAbility onWindowStageCreate.")
+        Hilog.info(1, "info", "MainAbility onWindowStageCreate.")
         windowStage.loadContent("EntryView")
         // declared in index.cj
         ctx = this.context

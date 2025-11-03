@@ -59,10 +59,9 @@
 
    ```cangjie
       // 订阅公共事件回调
-   func callback(c: CommonEventData): Unit {
+   let callback = {
+      a: ?BusinessException, b: ?CommonEventData =>
          Hilog.info(0, "TestCEM", "=======================================")
-         Hilog.info(0, "TestCEM", "event of p is = ${c.event}")
-         Hilog.info(0, "TestCEM", "p of p is = ${c .parameters .size}")
          Hilog.info(0, "TestCEM", "callback excute success!")
    }
    CommonEventManager.subscribe(subscriber, callback)

@@ -57,7 +57,15 @@
 
    ```cangjie
    // 公共事件相关信息
-    let pData = CommonEventPublishData("com.example.myapplication", "newbee", 123321)
+    let pData = CommonEventPublishData(
+      bundleName: "com.example.myapplication", 
+      data: "newbee", 
+      code: 123321,
+      subscriberPermissions: Array<String>(),
+      isOrdered: false,
+      isSticky: false,
+      parameters: HashMap<String, ValueType>()
+   )
    ```
 
 3. 传入需要发布的事件名称、需要发布的指定信息和回调函数，发布事件。
@@ -67,5 +75,5 @@
    ```cangjie
    // 发布公共事件，其中的event字段需要替换为实际的事件名称
    let support1 = Support.COMMON_EVENT_SCREEN_ON
-   CommonEventManager.publish(support1, pData)
+   CommonEventManager.publish(support1, options: pData)
    ```

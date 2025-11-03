@@ -83,10 +83,10 @@ class EntryView {
     func build() {
         Row {
             Column {
-                Button(message).onClick {
-                    evt => AppLog.info("Hello Cangjie")
+                Button(message).onClick ({
+                    evt => Hilog.info(1, "info", "Hello Cangjie")
                     foo()
-                }.fontSize(40).height(80)
+                }).fontSize(40).height(80)
             }.width(100.percent)
         }.height(100.percent)
     }
@@ -176,10 +176,10 @@ class EntryView {
     func build() {
         Row {
             Column {
-                Button(message).onClick {
-                    evt => AppLog.info("Hello Cangjie")
+                Button(message).onClick ({
+                    evt => Hilog.info(1, "info","Hello Cangjie")
                     foo()
-                }.fontSize(40).height(80)
+                }).fontSize(40).height(80)
             }.width(100.percent)
         }.height(100.percent)
     }

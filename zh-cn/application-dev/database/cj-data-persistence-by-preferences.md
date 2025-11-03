@@ -48,7 +48,7 @@
 
     ```cangjie
     // xxx.cj
-    import kit.ArkData.{ Preferences, PreferencesValueType }
+    import kit.ArkData.{ Preferences, PreferencesValueType, PreferencesEvent }
     import kit.ArkUI.Callback1Argument
     ```
 
@@ -61,7 +61,7 @@
     import kit.PerformanceAnalysisKit.Hilog
     import kit.AbilityKit.{UIAbility, AbilityStage, Want, LaunchParam, LaunchReason, UIAbilityContext}
     import kit.ArkData.{ Preferences}
-    import ohos.data.preferences.Option as PreferencesOptions
+    import ohos.data.preferences.PreferencesOptions
 
     var globalAbilityContext: Option<UIAbilityContext> = Option<UIAbilityContext>.None
     var dataPreferences: Option<Preferences> = Option<Preferences>.None
@@ -108,7 +108,7 @@
 
     ```cangjie
     // xxx.cj
-    import ohos.data.preferences.ValueType as PreferencesValueType
+    import ohos.data.preferences.PreferencesValueType
 
     if (dataPreferences.getOrThrow().has("startup")) {
         Hilog.info(0, "cangjie", "The key 'startup' is contained.")
@@ -168,13 +168,13 @@
     // xxx.cj
     // 自定义回调函数
     class Callback <: Callback1Argument<String> {
-        public func invoke(arg: String): Unit {
-            AppLog.info("callback： ${arg.toString()}")
+        public func invoke(err: ?BusinessException, arg: String): Unit {
+            Hilog.info(1, "info", "callback： ${arg.toString()}")
         }
     }
 
     let preferenceCallback = Callback()
-    dataPreferences.getOrThrow().on("change", preferenceCallback)
+    dataPreferences.getOrThrow().on(PreferencesEvent.PreferencesChange, preferenceCallback)
     // 数据产生变更，由“auto”变为“manual”
     dataPreferences.getOrThrow().put("startup", PreferencesValueType.StringData("manual"))
     Hilog.info(0, "cangjie", "Succeeded in putting the value of 'startup'.")

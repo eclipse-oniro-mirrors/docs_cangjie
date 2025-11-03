@@ -53,7 +53,7 @@
             // 获取context
             globalAbilityContext = this.context
 
-            let kvManagerConfig = KVManagerConfig(globalAbilityContext.getOrThrow, "com.example.datamanagertest")
+            let kvManagerConfig = KVManagerConfig(globalAbilityContext.getOrThrow(), "com.example.datamanagertest")
             try {
                 // 创建KVManager实例
                 kvManager = DistributedKVStore.createKVManager(kvManagerConfig)
@@ -103,7 +103,7 @@
 
     ```cangjie
     // xxx.cj
-    import ohos.data.distributed_kv_store.ValueType as KVValueType
+    import ohos.data.distributed_kv_store.KVValueType
 
     const KEY_TEST_STRING_ELEMENT: String = "key_test_string"
     const VALUE_TEST_STRING_ELEMENT: String = "value_test_string"

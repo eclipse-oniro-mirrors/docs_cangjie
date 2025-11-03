@@ -472,9 +472,9 @@ Project_name
                    .width(80.percent)
                    .height(40)
                    .margin(20)
-                   .onClick {
+                   .onClick ({
                        msg = "Okay, Cangjie clicked"
-                   }
+                   })
            }
            .width(100.percent)
            .height(100.percent)

@@ -72,7 +72,8 @@
 
     ```cangjie
     import kit.ConnectivityKit.*
-    import ohos.base.{BusinessException,Callback1Argument}
+    import ohos.business_exception.BusinessException
+    import ohos.callback_invoke.Callback1Argument
 
     const TAG: String = 'GattClientManager'
 
@@ -119,7 +120,7 @@
             for (i in 0..value.size) {
                 message += value[i].toString() + ' '
             }
-            AppLog.info(message)
+            Hilog.info(1, "info", message)
         }
 
         private func logDescriptor(des: BLEDescriptor) {
@@ -129,7 +130,7 @@
             for (i in 0..value.size) {
                 message += value[i].toString() + ' '
             }
-            AppLog.info(message)
+            Hilog.info(1, "info", message)
         }
 
         private func checkService(services: Array<GattService>): Bool {
@@ -143,36 +144,36 @@
                     }
                     for (k in 0..services[i].characteristics[j].descriptors.size) {
                         if (services[i].characteristics[j].descriptors[k].descriptorUuid == this.myFirstDescriptorUuid) {
-                            AppLog.info('find expected service from server')
+                            Hilog.info(1, "info", 'find expected service from server')
                             return true
                         }
                     }
                 }
             }
-            AppLog.error('no expected service from server')
+            Hilog.error(1, "info", 'no expected service from server')
             return false
         }
 
         // 1. 订阅连接状态变化事件
         public func onGattClientStateChange() {
             if (this.gattClient.isNone()) {
-                AppLog.error('no gattClient')
+                Hilog.error(1, "info", 'no gattClient')
                 return
             }
             try {
                 this.gattClient?.on(BluetoothBleGattClientDeviceCallbackType.BLE_CONNECTION_STATE_CHANGE, ChangeStateCb())
             } catch (e: BusinessException) {
-                AppLog.error('errCode: ${e.code}, errMessage: ' + e.message)
+                Hilog.error(1, "info", 'errCode: ${e.code}, errMessage: ' + e.message)
             }
         }
 
         // 2. client端主动连接时调用
         public func startConnect(peerDevice: String) { // 对端设备一般通过ble scan获取到
             if (this.connectState != ProfileConnectionState.StateDisconnected) {
-                AppLog.error('startConnect failed')
+                Hilog.error(1, "info", 'startConnect failed')
                 return
             }
-            AppLog.info('startConnect ' + peerDevice)
+            Hilog.info(1, "info", 'startConnect ' + peerDevice)
             this.device = peerDevice
             // 2.1 使用device构造gattClient，后续的交互都需要使用该实例
             this.gattClient = createGattClientDevice(peerDevice)
@@ -180,145 +181,145 @@
                 this.onGattClientStateChange() // 2.2 订阅连接状态
                 this.gattClient?.connect() // 2.3 发起连接
             } catch (e: BusinessException) {
-                AppLog.error('errCode: ${e.code}, errMessage: ' + e.message)
+                Hilog.error(1, "info", 'errCode: ${e.code}, errMessage: ' + e.message)
             }
         }
 
         // 3. client端连接成功后，需要进行服务发现
         public func discoverServices() {
             if (this.gattClient.isNone()) {
-                AppLog.info('no gattClient')
+                Hilog.info(1, "info", 'no gattClient')
                 return
             }
-            AppLog.info('discoverServices')
+            Hilog.info(1, "info", 'discoverServices')
             try {
                 let result = this.gattClient?.getServices()
                 this.found = this.checkService(result.getOrThrow()) // 要确保server端的服务内容有业务所需要的服务
             } catch (e: BusinessException) {
-                AppLog.error('errCode: ${e.code}, errMessage: ' + e.message)
+                Hilog.error(1, "info", 'errCode: ${e.code}, errMessage: ' + e.message)
             }
         }
 
         // 4. 在确保拿到了server端的服务结果后，读取server端特定服务的特征值时调用
         public func readCharacteristicValue() {
             if (this.gattClient.isNone() || this.connectState != ProfileConnectionState.STATE_CONNECTED) {
-                AppLog.error('no gattClient or not connected')
+                Hilog.error(1, "info", 'no gattClient or not connected')
                 return
             }
             if (!this.found) { // 要确保server端有对应的characteristic
-                AppLog.error('no characteristic from server')
+                Hilog.error(1, "info", 'no characteristic from server')
                 return
             }
 
             let characteristic = this.initCharacteristic()
-            AppLog.info('readCharacteristicValue')
+            Hilog.info(1, "info", 'readCharacteristicValue')
             try {
                 this.gattClient?.readCharacteristicValue(characteristic) {
                         e, outData => this.logCharacteristic(outData.getOrThrow())
                     }
             } catch (e: BusinessException) {
-                AppLog.error('errCode: ${e.code}, errMessage: ' + e.message)
+                Hilog.error(1, "info", 'errCode: ${e.code}, errMessage: ' + e.message)
             }
         }
 
         // 5. 在确保拿到了server端的服务结果后，写入server端特定服务的特征值时调用
         public func writeCharacteristicValue() {
             if (this.gattClient.isNone() || this.connectState != ProfileConnectionState.STATE_CONNECTED) {
-                AppLog.error('no gattClient or not connected')
+                Hilog.error(1, "info", 'no gattClient or not connected')
                 return
             }
             if (!this.found) { // 要确保server端有对应的characteristic
-                AppLog.error('no characteristic from server')
+                Hilog.error(1, "info", 'no characteristic from server')
                 return
             }
 
             let characteristic = this.initCharacteristic()
-            AppLog.info('writeCharacteristicValue')
+            Hilog.info(1, "info", 'writeCharacteristicValue')
             try {
                 this.gattClient?.writeCharacteristicValue(characteristic, GattWriteType.WRITE) {
                         err =>
                         if (let Some(e) <- err) {
-                            AppLog.error('errCode: ${e.code}, errMessage: ' + e.message)
+                            Hilog.error(1, "info", 'errCode: ${e.code}, errMessage: ' + e.message)
                             return
                         }
-                        AppLog.info('writeCharacteristicValue success')
+                        Hilog.info(1, "info", 'writeCharacteristicValue success')
                     }
             } catch (e: BusinessException) {
-                AppLog.error('errCode: ${e.code}, errMessage: ' + e.message)
+                Hilog.error(1, "info", 'errCode: ${e.code}, errMessage: ' + e.message)
             }
         }
 
         // 6. 在确保拿到了server端的服务结果后，读取server端特定服务的描述符时调用
         public func readDescriptorValue() {
             if (this.gattClient.isNone() || this.connectState != ProfileConnectionState.STATE_CONNECTED) {
-                AppLog.error('no gattClient or not connected')
+                Hilog.error(1, "info", 'no gattClient or not connected')
                 return
             }
             if (!this.found) { // 要确保server端有对应的descriptor
-                AppLog.error('no descriptor from server')
+                Hilog.error(1, "info", 'no descriptor from server')
                 return
             }
 
             let descBuffer = Array<Byte>()
             let descriptor = this.initDescriptor(this.mySecondDescriptorUuid, descBuffer)
-            AppLog.info('readDescriptorValue')
+            Hilog.info(1, "info", 'readDescriptorValue')
             try {
                 this.gattClient?.readDescriptorValue(descriptor) {
                     e, outData => this.logDescriptor(outData.getOrThrow())
                 }
             } catch (e: BusinessException) {
-                AppLog.error('errCode: ${e.code}, errMessage: ' + e.message)
+                Hilog.error(1, "info", 'errCode: ${e.code}, errMessage: ' + e.message)
             }
         }
 
         // 7. 在确保拿到了server端的服务结果后，写入server端特定服务的描述符时调用
         public func writeDescriptorValue() {
             if (this.gattClient.isNone() || this.connectState != ProfileConnectionState.STATE_CONNECTED) {
-                AppLog.error('no gattClient or not connected')
+                Hilog.error(1, "info", 'no gattClient or not connected')
                 return
             }
             if (!this.found) { // 要确保server端有对应的descriptor
-                AppLog.error('no descriptor from server')
+                Hilog.error(1, "info", 'no descriptor from server')
                 return
             }
 
             let descBuffer: Array<UInt8> = [11, 12]
             let descriptor = this.initDescriptor(this.mySecondDescriptorUuid, descBuffer)
-            AppLog.info('writeDescriptorValue')
+            Hilog.info(1, "info", 'writeDescriptorValue')
             try {
                 this.gattClient?.writeDescriptorValue(descriptor) {
                         err =>
                         if (let Some(e) <- err) {
-                            AppLog.error('errCode: ${e.code}, errMessage: ' + e.message)
+                            Hilog.error(1, "info", 'errCode: ${e.code}, errMessage: ' + e.message)
                             return
                         }
-                        AppLog.info('writeDescriptorValue success')
+                        Hilog.info(1, "info", 'writeDescriptorValue success')
                     }
             } catch (e: BusinessException) {
-                AppLog.error('errCode: ${e.code}, errMessage: ' + e.message)
+                Hilog.error(1, "info", 'errCode: ${e.code}, errMessage: ' + e.message)
             }
         }
 
         // 8.client端主动断开时调用
         public func stopConnect() {
             if (this.gattClient.isNone() || this.connectState != ProfileConnectionState.STATE_CONNECTED) {
-                AppLog.error('no gattClient or not connected')
+                Hilog.error(1, "info", 'no gattClient or not connected')
                 return
             }
 
-            AppLog.info('stopConnect ' + this.device.getOrThrow())
+            Hilog.info(1, "info", 'stopConnect ' + this.device.getOrThrow())
             try {
                 this.gattClient?.disconnect() // 8.1 断开连接
                 this.gattClient?.off(BluetoothBleGattClientDeviceCallbackType.BLE_CONNECTION_STATE_CHANGE)
                 this.gattClient?.close() // 8.2 如果不再使用此gattClient，则需要close
             } catch (e: BusinessException) {
-                AppLog.error('errCode: ${e.code}, errMessage: ' + e.message)
+                Hilog.error(1, "info", 'errCode: ${e.code}, errMessage: ' + e.message)
             }
         }
     }
 
     class ChangeStateCb <: Callback1Argument<BLEConnectionChangeState> {
-        public func invoke(stateInfo: BLEConnectionChangeState) {
+        public func invoke(err: ?BusinessException, stateInfo: BLEConnectionChangeState) {
             let state = match (stateInfo.state) {
                 case STATE_DISCONNECTED => 'DISCONNECTED'
 
@@ -330,7 +331,7 @@
 
                 case _ => 'undefined'
             }
-            AppLog.info('onGattClientStateChange: device=' + stateInfo.deviceId + ', state=' + state)
+            Hilog.info(1, "info", 'onGattClientStateChange: device=' + stateInfo.deviceId + ', state=' + state)
         }
     }
 
@@ -353,7 +354,8 @@
 
     ```cangjie
     import kit.ConnectivityKit.*
-    import ohos.base.{BusinessException,Callback1Argument}
+    import ohos.business_exception.BusinessException
+    import ohos.callback_invoke.Callback1Argument
     import std.collection.ArrayList
 
     const TAG: String = 'GattServerManager'
@@ -396,13 +398,13 @@
         // 1. 订阅连接状态变化事件
         public func onGattServerStateChange() {
             if (this.gattServer.isNone()) {
-                AppLog.error('no gattServer')
+                Hilog.error(1, "info", 'no gattServer')
                 return
             }
             try {
                 this.gattServer?.on(BluetoothBleGattServerCallbackType.CONNECTION_STATE_CHANGE, ChangeStateCb())
             } catch (e: BusinessException) {
-                AppLog.error('errCode: ${e.code}, errMessage: ' + e.message)
+                Hilog.error(1, "info", 'errCode: ${e.code}, errMessage: ' + e.message)
             }
         }
 
@@ -417,95 +419,95 @@
                 characteristics.toArray(),
                 Array<GattService>()
             )
-            AppLog.info('registerServer ' + this.myServiceUuid)
+            Hilog.info(1, "info", 'registerServer ' + this.myServiceUuid)
             try {
                 this.gattServer = createGattServer() // 2.1 构造gattServer，后续的交互都需要使用该实例
                 this.onGattServerStateChange() // 2.2 订阅连接状态
                 this.gattServer?.addService(gattService)
             } catch (e: BusinessException) {
-                AppLog.error('errCode: ${e.code}, errMessage: ' + e.message)
+                Hilog.error(1, "info", 'errCode: ${e.code}, errMessage: ' + e.message)
             }
         }
 
         // 3. 订阅来自gattClient的读取特征值请求时调用
         public func onCharacteristicRead() {
             if (this.gattServer.isNone()) {
-                AppLog.info('no gattServer')
+                Hilog.info(1, "info", 'no gattServer')
                 return
             }
-            AppLog.info('onCharacteristicRead')
+            Hilog.info(1, "info", 'onCharacteristicRead')
             try {
                 this.gattServer?.on(BluetoothBleGattServerCallbackType.CHARACTERISTIC_READ, ReadRequestCb())
             } catch (e: BusinessException) {
-                AppLog.error('errCode: ${e.code}, errMessage: ' + e.message)
+                Hilog.error(1, "info", 'errCode: ${e.code}, errMessage: ' + e.message)
             }
         }
 
         // 4. 订阅来自gattClient的写入特征值请求时调用
         public func onCharacteristicWrite() {
             if (this.gattServer.isNone()) {
-                AppLog.error('no gattServer')
+                Hilog.error(1, "info", 'no gattServer')
                 return
             }
 
-            AppLog.info('onCharacteristicWrite')
+            Hilog.info(1, "info", 'onCharacteristicWrite')
             try {
                 this.gattServer?.on(BluetoothBleGattServerCallbackType.CHARACTERISTIC_WRITE, WriteRequestCb())
             } catch (e: BusinessException) {
-                AppLog.error('errCode: ${e.code}, errMessage: ' + e.message)
+                Hilog.error(1, "info", 'errCode: ${e.code}, errMessage: ' + e.message)
             }
         }
 
         // 5. 订阅来自gattClient的读取描述符请求时调用
         public func onDescriptorRead() {
             if (this.gattServer.isNone()) {
-                AppLog.error('no gattServer')
+                Hilog.error(1, "info", 'no gattServer')
                 return
             }
 
-            AppLog.info('onDescriptorRead')
+            Hilog.info(1, "info", 'onDescriptorRead')
             try {
                 this.gattServer?.on(BluetoothBleGattServerCallbackType.DESCRIPTOR_READ, DescriptorReadRequestCb())
             } catch (e: BusinessException) {
-                AppLog.error('errCode: ${e.code}, errMessage: ' + e.message)
+                Hilog.error(1, "info", 'errCode: ${e.code}, errMessage: ' + e.message)
             }
         }
 
         // 6. 订阅来自gattClient的写入描述符请求时调用
         public func onDescriptorWrite() {
             if (this.gattServer.isNone()) {
-                AppLog.error('no gattServer')
+                Hilog.error(1, "info", 'no gattServer')
                 return
             }
 
-            AppLog.info('onDescriptorWrite')
+            Hilog.info(1, "info", 'onDescriptorWrite')
             try {
                 this.gattServer?.on(BluetoothBleGattServerCallbackType.DESCRIPTOR_WRITE, DescriptorWriteRequestCb())
             } catch (e: BusinessException) {
-                AppLog.error('errCode: ${e.code}, errMessage: ' + e.message)
+                Hilog.error(1, "info", 'errCode: ${e.code}, errMessage: ' + e.message)
             }
         }
 
         // 7. server端删除服务，不再使用时调用
         public func unRegisterServer() {
             if (this.gattServer.isNone()) {
-                AppLog.error('no gattServer')
+                Hilog.error(1, "info", 'no gattServer')
                 return
             }
 
-            AppLog.info('unRegisterServer ' + this.myServiceUuid)
+            Hilog.info(1, "info", 'unRegisterServer ' + this.myServiceUuid)
             try {
                 this.gattServer?.removeService(this.myServiceUuid) // 7.1 删除服务
                 this.gattServer?.off(BluetoothBleGattServerCallbackType.CONNECTION_STATE_CHANGE)
                 this.gattServer?.close() // 7.3 如果不再使用此gattServer，则需要close
             } catch (e: BusinessException) {
-                AppLog.error('errCode: ${e.code}, errMessage: ' + e.message)
+                Hilog.error(1, "info", 'errCode: ${e.code}, errMessage: ' + e.message)
             }
         }
     }
 
     class ChangeStateCb <: Callback1Argument<BLEConnectionChangeState> {
-        public func invoke(stateInfo: BLEConnectionChangeState) {
+        public func invoke(err: ?BusinessException, stateInfo: BLEConnectionChangeState) {
             let state = match (stateInfo.state) {
                 case STATE_DISCONNECTED => 'DISCONNECTED'
                 case STATE_CONNECTING => 'CONNECTING'
@@ -513,18 +515,18 @@
                 case STATE_DISCONNECTING => 'DISCONNECTING'
                 case _ => 'undefined'
             }
-            AppLog.info('onGattClientStateChange: device=' + stateInfo.deviceId + ', state=' + state)
+            Hilog.info(1, "info", 'onGattClientStateChange: device=' + stateInfo.deviceId + ', state=' + state)
         }
     }
 
     let gattServerManager = GattServerManager()
 
     class ReadRequestCb <: Callback1Argument<CharacteristicReadRequest> {
-        public func invoke(charReq: CharacteristicReadRequest): Unit {
+        public func invoke(err: ?BusinessException, charReq: CharacteristicReadRequest): Unit {
             let deviceId: String = charReq.deviceId
             let transId: Int32 = charReq.transId
             let offset: Int32 = charReq.offset
-            AppLog.info('receive characteristicRead')
+            Hilog.info(1, "info", 'receive characteristicRead')
             let rspBuffer: Array<UInt8> = [21, 22]
             let serverResponse: ServerResponse = ServerResponse(
                 deviceId,
@@ -537,17 +539,17 @@
             try {
                 gattServerManager.gattServer?.sendResponse(serverResponse)
             } catch (e: BusinessException) {
-                AppLog.error('errCode: ${e.code}, errMessage: ' + e.message)
+                Hilog.error(1, "info", 'errCode: ${e.code}, errMessage: ' + e.message)
             }
         }
     }
 
     class WriteRequestCb <: Callback1Argument<CharacteristicWriteRequest> {
-        public func invoke(charReq: CharacteristicWriteRequest): Unit {
+        public func invoke(err: ?BusinessException, charReq: CharacteristicWriteRequest): Unit {
             let deviceId: String = charReq.deviceId
             let transId: Int32 = charReq.transId
             let offset: Int32 = charReq.offset
-            AppLog.info('receive characteristicWrite: needRsp=${charReq.needRsp}')
+            Hilog.info(1, "info", 'receive characteristicWrite: needRsp=${charReq.needRsp}')
             if (!charReq.needRsp) {
                 return
             }
@@ -563,17 +565,17 @@
             try {
                 gattServerManager.gattServer?.sendResponse(serverResponse)
             } catch (e: BusinessException) {
-                AppLog.error('errCode: ${e.code}, errMessage: ' + e.message)
+                Hilog.error(1, "info", 'errCode: ${e.code}, errMessage: ' + e.message)
             }
         }
     }
 
     class DescriptorReadRequestCb <: Callback1Argument<DescriptorReadRequest> {
-        public func invoke(desReq: DescriptorReadRequest): Unit {
+        public func invoke(err: ?BusinessException, desReq: DescriptorReadRequest): Unit {
             let deviceId: String = desReq.deviceId
             let transId: Int32 = desReq.transId
             let offset: Int32 = desReq.offset
-            AppLog.info('receive descriptorRead')
+            Hilog.info(1, "info", 'receive descriptorRead')
             let rspBuffer: Array<UInt8> = [31, 32]
             let serverResponse: ServerResponse = ServerResponse(
                 deviceId,
@@ -586,17 +588,17 @@
             try {
                 gattServerManager.gattServer?.sendResponse(serverResponse)
             } catch (e: BusinessException) {
-                AppLog.error('errCode: ${e.code}, errMessage: ' + e.message)
+                Hilog.error(1, "info", 'errCode: ${e.code}, errMessage: ' + e.message)
             }
         }
     }
 
     class DescriptorWriteRequestCb <: Callback1Argument<DescriptorWriteRequest> {
-        public func invoke(desReq: DescriptorWriteRequest): Unit {
+        public func invoke(err: ?BusinessException, desReq: DescriptorWriteRequest): Unit {
             let deviceId: String = desReq.deviceId
             let transId: Int32 = desReq.transId
             let offset: Int32 = desReq.offset
-            AppLog.info('receive descriptorWrite: needRsp=${desReq.needRsp}')
+            Hilog.info(1, "info", 'receive descriptorWrite: needRsp=${desReq.needRsp}')
             if (!desReq.needRsp) {
                 return
             }
@@ -612,7 +614,7 @@
             try {
                 gattServerManager.gattServer?.sendResponse(serverResponse)
             } catch (e: BusinessException) {
-                AppLog.error('errCode: ${e.code}, errMessage: ' + e.message)
+                Hilog.error(1, "info", 'errCode: ${e.code}, errMessage: ' + e.message)
             }
         }
     }

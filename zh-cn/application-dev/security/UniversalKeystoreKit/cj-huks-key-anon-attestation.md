@@ -51,32 +51,32 @@ class throwObject {
 /* 封装生成时的密钥参数集 */
 let genKeyProperties: Array<HuksParam> = [
     HuksParam(
-        HuksTag.HuksTagAlgorithm,
-        HuksKeyAlg.HUKS_ALG_RSA
+        HuksTag.HUKS_TAG_ALGORITHM,
+        HuksParamValue.Uint32Value(HuksKeyAlg.HUKS_ALG_RSA)
     ),
     HuksParam(
-        HuksTag.HuksTagKeySize,
-        HuksKeySize.HUKS_RSA_KEY_SIZE_2048
+        HuksTag.HUKS_TAG_KEY_SIZE,
+        HuksParamValue.Uint32Value(HuksKeySize.HUKS_RSA_KEY_SIZE_2048)
     ),
     HuksParam(
-        HuksTag.HuksTagPurpose,
-        HuksKeyPurpose.HUKS_KEY_PURPOSE_VERIFY
+        HuksTag.HUKS_TAG_PURPOSE,
+        HuksParamValue.Uint32Value(HuksKeyPurpose.HUKS_KEY_PURPOSE_VERIFY)
     ),
     HuksParam(
-        HuksTag.HuksTagDigest,
-        HuksKeyDigest.HUKS_DIGEST_SHA256
+        HuksTag.HUKS_TAG_DIGEST,
+        HuksParamValue.Uint32Value(HuksKeyDigest.HUKS_DIGEST_SHA256)
     ),
     HuksParam(
-        HuksTag.HuksTagPadding,
-        HuksKeyPadding.HUKS_PADDING_PSS
+        HuksTag.HUKS_TAG_PADDING,
+        HuksParamValue.Uint32Value(HuksKeyPadding.HUKS_PADDING_PSS)
     ),
     HuksParam(
-        HuksTag.HuksTagKeyGenerateType,
-        HuksKeyGenerateType.HUKS_KEY_GENERATE_TYPE_DEFAULT
+        HuksTag.HUKS_TAG_KEY_GENERATE_TYPE,
+        HuksParamValue.Uint32Value(HuksKeyGenerateType.HUKS_KEY_GENERATE_TYPE_DEFAULT)
     ),
     HuksParam(
-        HuksTag.HuksTagBlockMode,
-        HuksCipherMode.HUKS_MODE_ECB
+        HuksTag.HUKS_TAG_BLOCK_MODE,
+        HuksParamValue.Uint32Value(HuksCipherMode.HUKS_MODE_ECB)
     )
 ]
 let genOptions: HuksOptions = HuksOptions(properties: genKeyProperties, inData: Option<Array<UInt8>>.None.getOrThrow())
@@ -84,16 +84,8 @@ let genOptions: HuksOptions = HuksOptions(properties: genKeyProperties, inData: 
 /* 2.封装证明密钥的参数集 */
 let anonAttestKeyProperties: Array<HuksParam> = [
     HuksParam(
-        HuksTag.HuksTagAttestationIdSecLevelInfo,
-        HuksParamValue.BytesValue(securityLevel.toArray())
-    ),
-    HuksParam(
-        HuksTag.HuksTagAttestationChallenge,
+        HuksTag.HUKS_TAG_ATTESTATION_CHALLENGE,
         HuksParamValue.BytesValue(challenge.toArray())
-    ),
-    HuksParam(
-        HuksTag.HuksTagAttestationIdVersionInfo,
-        HuksParamValue.BytesValue(versionInfo.toArray())
     )
 ]
 let huksOptions: HuksOptions = HuksOptions(properties: anonAttestKeyProperties, inData: Option<Array<UInt8>>.None.getOrThrow())

@@ -57,7 +57,7 @@
     func setTorchModeSupported(cameraManager: CameraManager, torchMode: TorchMode): Unit {
         cameraManager.setTorchMode(torchMode)
         let isTorchMode = cameraManager.getTorchMode()
-        AppLog.info("Returned with the torch mode supportd mode: ${isTorchMode}")
+        Hilog.info(0,"", "Returned with the torch mode supportd mode: ${isTorchMode}")
     }
     ```
 

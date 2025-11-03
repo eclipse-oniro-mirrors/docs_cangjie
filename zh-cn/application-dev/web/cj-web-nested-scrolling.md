@@ -53,33 +53,33 @@ class EntryView {
                 Column(space: 5) {
                     Row() {
                         Text('切换前滚动模式').fontSize(5)
-                        Button("SelfOnly").onClick { evt =>
+                        Button("SelfOnly").onClick ({ evt =>
                             this.nestedScrollModeF = this.nestedScrollMode0
-                        }.fontSize(5)
-                        Button("SelfFirst").onClick { evt =>
+                        }).fontSize(5)
+                        Button("SelfFirst").onClick ({ evt =>
                             this.nestedScrollModeF = this.nestedScrollMode1
-                        }.fontSize(5)
-                        Button("ParentFirst").onClick { evt =>
+                        }).fontSize(5)
+                        Button("ParentFirst").onClick ({ evt =>
                             this.nestedScrollModeF = this.nestedScrollMode2
-                        }.fontSize(5)
-                        Button("Parallel").onClick { evt =>
+                        }).fontSize(5)
+                        Button("Parallel").onClick ({ evt =>
                             this.nestedScrollModeF = this.nestedScrollMode3
-                        }.fontSize(5)
+                        }).fontSize(5)
                     }
                     Row() {
                         Text('切换后滚动模式').fontSize(5)
-                        Button("SelfOnly").onClick { evt =>
+                        Button("SelfOnly").onClick ({ evt =>
                             this.nestedScrollModeB = this.nestedScrollMode0
-                        }.fontSize(5)
-                        Button("SelfFirst").onClick { evt =>
+                        }).fontSize(5)
+                        Button("SelfFirst").onClick ({ evt =>
                             this.nestedScrollModeB = this.nestedScrollMode1
-                        }.fontSize(5)
-                        Button("ParentFirst").onClick { evt =>
+                        }).fontSize(5)
+                        Button("ParentFirst").onClick ({ evt =>
                             this.nestedScrollModeB = this.nestedScrollMode2
-                        }.fontSize(5)
-                        Button("Parallel").onClick { evt =>
+                        }).fontSize(5)
+                        Button("Parallel").onClick ({ evt =>
                             this.nestedScrollModeB = this.nestedScrollMode3
-                        }.fontSize(5)
+                        }).fontSize(5)
                     }
                     Text('当前内嵌前滚动模式 scrollForward ---nestedScrollModeF').fontSize(10)
                     Text('当前内嵌后滚动模式  scrollBackward ---nestedScrollModeB').fontSize(10)

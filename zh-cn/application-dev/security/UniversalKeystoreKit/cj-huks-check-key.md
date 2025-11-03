@@ -29,10 +29,14 @@ var a = isKeyItemExist(keyAlias, HuksOptions())
 
 let options = HuksOptions(
     properties: [
-        HuksParam(HuksTag.HuksTagAlgorithm, HuksKeyAlg.HUKS_ALG_AES),
-        HuksParam(HuksTag.HuksTagKeySize, HuksKeySize.HUKS_AES_KEY_SIZE_128),
+        
+        (HuksTag.HUKS_TAG_ALGORITHM, HuksParamValue.Uint32Value(HuksKeyAlg.HUKS_ALG_AES)),
         HuksParam(
-            HuksTag.HuksTagPurpose,
+            HuksTag.HUKS_TAG_KEY_SIZE, 
+            HuksParamValue.Uint32Value(HuksKeySize.HUKS_AES_KEY_SIZE_128)
+        ),
+        HuksParam(
+            HuksTag.HUKS_TAG_PURPOSE,
             HuksParamValue.Uint32Value(1 | 2)
         )
     ],

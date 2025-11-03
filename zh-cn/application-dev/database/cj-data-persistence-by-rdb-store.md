@@ -62,21 +62,14 @@
     import kit.AbilityKit.{UIAbility, AbilityStage, Want, LaunchParam, LaunchReason, UIAbilityContext}
     import ohos.data.relational_store.RdbStore
     import kit.ArkData.{StoreConfig, getRdbStore, RdbPredicates, deleteRdbStore}
-    import ohos.data.relational_store.SecurityLevel as RelationalStoreSecurityLevel
+    import ohos.data.relational_store.RelationalStoreSecurityLevel
     import kit.ArkUI.{WindowStage}
 
-    let storeConfig_ = StoreConfig(
+    let storeConfig = StoreConfig(
     RelationalStoreSecurityLevel.S3,// 数据库安全级别
     name: "RdbTest.db", // 数据库文件名
     encrypt: false, // 可选参数，指定数据库是否加密，默认不加密
     customDir: "customDir/subCustomDir", // 可选参数，数据库自定义路径。数据库将在如下的目录结构中被创建：context.databaseDir + '/rdb/' + customDir，其中context.databaseDir是应用沙箱对应的路径，'/rdb/'表示创建的是关系型数据库，customDir表示自定义的路径。当此参数不填时，默认在本应用沙箱目录下创建RdbStore实例。
-    )
-
-    let storeConfig = StoreConfig(
-        "RdbTest.db", // 数据库文件名
-        RelationalStoreSecurityLevel.S3, // 数据库安全级别
-        encrypt: false, // 可选参数，指定数据库是否加密，默认不加密
-        customDir: "customDir/subCustomDir", // 可选参数，数据库自定义路径。数据库将在如下的目录结构中被创建：context.databaseDir + '/rdb/' + customDir，其中context.databaseDir是应用沙箱对应的路径，'/rdb/'表示创建的是关系型数据库，customDir表示自定义的路径。当此参数不填时，默认在本应用沙箱目录下创建RdbStore实例。
     )
 
     // 判断数据库版本，如果不匹配则需进行升降级操作
@@ -124,7 +117,7 @@
     <!-- compile -->
 
     ```cangjie
-    import ohos.data.relational_store.ValueType as RelationalStoreValueType 
+    import ohos.data.relational_store.RelationalStoreValueType 
 
     var values = HashMap<String, RelationalStoreValueType>()
     values.add("ID", RelationalStoreValueType.Integer(1))
