@@ -550,6 +550,14 @@ public func inValues(field: String, value: Array<RelationalStoreValueType>): Rdb
 |field|String|是|-|数据库表中的列名。|
 |value|Array\<[RelationalStoreValueType](#enum-relationalstorevaluetype)>|是|-|以RelationalStoreValueType数组形式指定的要匹配的值。|
 
+**异常：**
+
+- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;<br>2. Incorrect parameter types.|
+
 **返回值：**
 
 |类型|说明|
@@ -667,6 +675,14 @@ public func beginsWith(field: String, value: String): RdbPredicates
 |:----|:----|
 |[RdbPredicates](#class-rdbpredicates)|返回与指定字段匹配的谓词。|
 
+**异常：**
+
+- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;<br>2. Incorrect parameter types.|
+
 **示例：**
 
 <!-- compile -->
@@ -707,6 +723,14 @@ public func between(field: String, low: RelationalStoreValueType, high: Relation
 |:----|:----|
 |[RdbPredicates](#class-rdbpredicates)|返回与指定字段匹配的谓词。|
 
+**异常：**
+
+- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;<br>2. Incorrect parameter types.|
+
 **示例：**
 
 <!-- compile -->
@@ -745,6 +769,14 @@ public func contains(field: String, value: String): RdbPredicates
 |类型|说明|
 |:----|:----|
 |[RdbPredicates](#class-rdbpredicates)|返回与指定字段匹配的谓词。|
+
+**异常：**
+
+- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;<br>2. Incorrect parameter types.|
 
 **示例：**
 
@@ -855,6 +887,14 @@ public func endsWith(field: String, value: String): RdbPredicates
 |:----|:----|
 |[RdbPredicates](#class-rdbpredicates)|返回与指定字段匹配的谓词。|
 
+**异常：**
+
+- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;<br>2. Incorrect parameter types.|
+
 **示例：**
 
 <!-- compile -->
@@ -893,6 +933,14 @@ public func equalTo(field: String, value: RelationalStoreValueType): RdbPredicat
 |类型|说明|
 |:----|:----|
 |[RdbPredicates](#class-rdbpredicates)|返回与指定字段匹配的谓词。|
+
+**异常：**
+
+- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;<br>2. Incorrect parameter types.|
 
 **示例：**
 
@@ -933,6 +981,14 @@ public func glob(field: String, value: String): RdbPredicates
 |:----|:----|
 |[RdbPredicates](#class-rdbpredicates)|返回与指定字段匹配的谓词。|
 
+**异常：**
+
+- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;<br>2. Incorrect parameter types.|
+
 **示例：**
 
 <!-- compile -->
@@ -971,6 +1027,15 @@ public func greaterThan(field: String, value: RelationalStoreValueType): RdbPred
 |类型|说明|
 |:----|:----|
 |[RdbPredicates](#class-rdbpredicates)|返回与指定字段匹配的谓词。|
+
+**异常：**
+
+- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;<br>2. Incorrect parameter types.|
+
 
 **示例：**
 
@@ -1011,6 +1076,15 @@ public func greaterThanOrEqualTo(field: String, value: RelationalStoreValueType)
 |:----|:----|
 |[RdbPredicates](#class-rdbpredicates)|返回与指定字段匹配的谓词。|
 
+**异常：**
+
+- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;<br>2. Incorrect parameter types.|
+
+
 **示例：**
 
 <!-- compile -->
@@ -1048,6 +1122,14 @@ public func groupBy(fields: Array<String>): RdbPredicates
 |类型|说明|
 |:----|:----|
 |[RdbPredicates](#class-rdbpredicates)|返回分组查询列的谓词。|
+
+**异常：**
+
+- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;<br>2. Incorrect parameter types.|
 
 **示例：**
 
@@ -1117,6 +1199,14 @@ public func isNotNull(field: String): RdbPredicates
 |:----|:----|
 |[RdbPredicates](#class-rdbpredicates)|<返回与指定字段匹配的谓词。|
 
+**异常：**
+
+- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;<br>2. Incorrect parameter types.|
+
 **示例：**
 
 <!-- compile -->
@@ -1153,6 +1243,14 @@ public func isNull(field: String): RdbPredicates
 |类型|说明|
 |:----|:----|
 |[RdbPredicates](#class-rdbpredicates)|返回与指定字段匹配的谓词。|
+
+**异常：**
+
+- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;<br>2. Incorrect parameter types.|
 
 **示例：**
 
@@ -1191,6 +1289,14 @@ public func lessThan(field: String, value: RelationalStoreValueType): RdbPredica
 |类型|说明|
 |:----|:----|
 |[RdbPredicates](#class-rdbpredicates)|返回与指定字段匹配的谓词。|
+
+**异常：**
+
+- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;<br>2. Incorrect parameter types.|
 
 **示例：**
 
@@ -1231,6 +1337,14 @@ public func lessThanOrEqualTo(field: String, value: RelationalStoreValueType): R
 |:----|:----|
 |[RdbPredicates](#class-rdbpredicates)|返回与指定字段匹配的谓词。|
 
+**异常：**
+
+- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;<br>2. Incorrect parameter types.|
+
 **示例：**
 
 <!-- compile -->
@@ -1270,6 +1384,14 @@ public func like(field: String, value: String): RdbPredicates
 |:----|:----|
 |[RdbPredicates](#class-rdbpredicates)|返回与指定字段匹配的谓词。|
 
+**异常：**
+
+- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;<br>2. Incorrect parameter types.|
+
 **示例：**
 
 <!-- compile -->
@@ -1307,6 +1429,14 @@ public func limitAs(value: Int32): RdbPredicates
 |类型|说明|
 |:----|:----|
 |[RdbPredicates](#class-rdbpredicates)|返回可用于设置最大数据记录数的谓词。|
+
+**异常：**
+
+- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;<br>2. Incorrect parameter types.|
 
 **示例：**
 
@@ -1349,6 +1479,14 @@ public func notBetween(field: String, low: RelationalStoreValueType, high: Relat
 |:----|:----|
 |[RdbPredicates](#class-rdbpredicates)|返回与指定字段匹配的谓词。|
 
+**异常：**
+
+- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;<br>2. Incorrect parameter types.|
+
 **示例：**
 
 <!-- compile -->
@@ -1387,6 +1525,14 @@ public func notEqualTo(field: String, value: RelationalStoreValueType): RdbPredi
 |类型|说明|
 |:----|:----|
 |[RdbPredicates](#class-rdbpredicates)|返回与指定字段匹配的谓词。|
+
+**异常：**
+
+- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;<br>2. Incorrect parameter types.|
 
 **示例：**
 
@@ -1427,6 +1573,14 @@ public func notInValues(field: String, value: Array<RelationalStoreValueType>): 
 |:----|:----|
 |[RdbPredicates](#class-rdbpredicates)|返回与指定字段匹配的谓词。|
 
+**异常：**
+
+- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;<br>2. Incorrect parameter types.|
+
 **示例：**
 
 <!-- compile -->
@@ -1464,6 +1618,14 @@ public func offsetAs(rowOffset: Int32): RdbPredicates
 |类型|说明|
 |:----|:----|
 |[RdbPredicates](#class-rdbpredicates)|返回具有指定返回结果起始位置的谓词。|
+
+**异常：**
+
+- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;<br>2. Incorrect parameter types.|
 
 **示例：**
 
@@ -1539,6 +1701,14 @@ public func orderByAsc(field: String): RdbPredicates
 |:----|:----|
 |[RdbPredicates](#class-rdbpredicates)|返回与指定字段匹配的谓词。|
 
+**异常：**
+
+- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;<br>2. Incorrect parameter types.|
+
 **示例：**
 
 <!-- compile -->
@@ -1575,6 +1745,14 @@ public func orderByDesc(field: String): RdbPredicates
 |类型|说明|
 |:----|:----|
 |[RdbPredicates](#class-rdbpredicates)|数据库表中的列名。|
+
+**异常：**
+
+- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;<br>2. Incorrect parameter types.|
 
 **示例：**
 

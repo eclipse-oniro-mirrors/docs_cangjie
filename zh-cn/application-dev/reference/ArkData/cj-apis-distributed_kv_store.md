@@ -679,6 +679,13 @@ public func closeKVStore(appId: String, storeId: String): Unit
 |appId|String|是|-|所调用数据库方的包名。|
 |storeId|String|是|-|要关闭的数据库唯一标识符，长度不大于[MAX_STORE_ID_LENGTH](#static-let-max_store_id_length)。|
 
+**异常：**
+
+- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;<br>2.Parameter verification failed.|
 
 **示例：**
 
@@ -757,6 +764,13 @@ public func getAllKVStoreId(appId: String): Array<String>
 |:----|:----|
 |Array\<String>|返回所有创建的分布式键值数据库的storeId。|
 
+**异常：**
+
+- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;<br>2.Parameter verification failed.|
 
 **示例：**
 
@@ -1433,6 +1447,14 @@ public open func enableSync(enabled: Bool): Unit
 |:---|:---|:---|:---|:---|
 |enabled|Bool|是|-|设定是否开启同步，true表示开启同步，false表示不启用同步。|
 
+**异常：**
+
+- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;<br>2.Incorrect parameters types.|
+
 **示例：**
 
 <!-- compile -->
@@ -1728,6 +1750,14 @@ public open func setSyncParam(defaultAllowedDelayMs: UInt32): Unit
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |defaultAllowedDelayMs|UInt32|是|-|表示数据库同步允许的默认延迟，以毫秒为单位。|
+
+**异常：**
+
+- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;<br>2.Incorrect parameters types.|
 
 **示例：**
 

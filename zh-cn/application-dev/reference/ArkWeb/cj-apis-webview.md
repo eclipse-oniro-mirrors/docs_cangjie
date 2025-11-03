@@ -95,6 +95,14 @@ public func getItemAtIndex(index: Int32): HistoryItem
 |:----|:----|
 |[HistoryItem](#class-historyitem)|历史记录项。|
 
+**异常：**
+
+- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)和[Webview错误码](./cj-errorcode-webview.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 401 | Invalid input parameter. |
+
 **示例：**
 
 <!-- compile -->
@@ -750,6 +758,14 @@ public static func setWebDebuggingAccess(webDebuggingAccess: Bool): Unit
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |webDebuggingAccess|Bool|是|-|设置是否启用网页调试功能。|
+
+**异常：**
+
+- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 401 | Invalid input parameter. |
 
 **示例：**
 
