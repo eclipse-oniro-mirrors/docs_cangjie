@@ -68,6 +68,7 @@ class MyTestRunner <: TestRunner {
     public override func onPrepare(): Unit {
     }
 }
+```
 
 ### func onPrepare()
 
@@ -93,6 +94,7 @@ class MyTestRunner <: TestRunner {
     public override func onPrepare(): Unit {
     }
 }
+```
 
 ### func onRun()
 

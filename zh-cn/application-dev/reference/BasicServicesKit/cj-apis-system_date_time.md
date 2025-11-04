@@ -61,13 +61,14 @@ public static func getTime(isNanoseconds!: Bool = false): Int64
 // index.cj
 
 import kit.BasicServicesKit.*
-import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
 try {
     let time = SystemDateTime.getTime()
     Hilog.info(0, "cangjie_ohos_test", "Succeeded in getting time : ${time}")
-} catch (e: Exception) {
-    Hilog.info(0, "cangjie_ohos_test", "Failed to get time: ${e.toString()}")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -97,13 +98,14 @@ public static func getTimezone(): String
 // index.cj
 
 import kit.BasicServicesKit.*
-import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
 try {
     let time = SystemDateTime.getTimezone()
     Hilog.info(0, "cangjie_ohos_test", "Succeeded to getTimezone, getTimezone is ${time} ")
-} catch (e: Exception) {
-    Hilog.info(0, "cangjie_ohos_test", "Failed to getTimezone: ${e.toString()}")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -140,13 +142,14 @@ public static func getUptime(timeType: TimeType, isNanoseconds!: Bool = false): 
 // index.cj
 
 import kit.BasicServicesKit.*
-import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
 try {
     let time = SystemDateTime.getUptime(TimeType.Active)
     Hilog.info(0, "cangjie_ohos_test", "Succeeded to getUptime : ${time}")
-} catch (e: Exception) {
-    Hilog.info(0, "cangjie_ohos_test", "Failed to getUptime: ${e.toString()}")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
 }
 ```
 

@@ -188,8 +188,14 @@ public static func getCurrentLocation(): Location
 // index.cj
 
 import kit.LocationKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let location = GeoLocationManager.getCurrentLocation(SingleLocationRequest(LocatingPriority.PriorityLocatingSpeed, 1000))
+try {
+    let location = GeoLocationManager.getCurrentLocation(SingleLocationRequest(LocatingPriority.PriorityLocatingSpeed, 1000))
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### static func getCurrentLocation(CurrentLocationRequest)
@@ -226,8 +232,14 @@ public static func getCurrentLocation(request: CurrentLocationRequest): Location
 // index.cj
 
 import kit.LocationKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let location = GeoLocationManager.getCurrentLocation(SingleLocationRequest(LocatingPriority.PriorityLocatingSpeed, 1000))
+try {
+    let location = GeoLocationManager.getCurrentLocation(SingleLocationRequest(LocatingPriority.PriorityLocatingSpeed, 1000))
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### static func getCurrentLocation(SingleLocationRequest)
@@ -264,8 +276,14 @@ public static func getCurrentLocation(request: SingleLocationRequest): Location
 // index.cj
 
 import kit.LocationKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let location = GeoLocationManager.getCurrentLocation(SingleLocationRequest(LocatingPriority.PriorityLocatingSpeed, 1000))
+try {
+    let location = GeoLocationManager.getCurrentLocation(SingleLocationRequest(LocatingPriority.PriorityLocatingSpeed, 1000))
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### static func isLocationEnabled()
@@ -294,8 +312,14 @@ public static func isLocationEnabled(): Bool
 // index.cj
 
 import kit.LocationKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let res = GeoLocationManager.isLocationEnabled()
+try {
+    let res = GeoLocationManager.isLocationEnabled()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## class Location

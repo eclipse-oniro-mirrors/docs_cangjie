@@ -244,10 +244,16 @@ public func addResource(path: String): Unit
 // index.cj
 
 import kit.LocalizationKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let resourceManager = Global.getResourceManager()
-let path = "/data/storage/el2/base/haps/entry/files/library-default-unsigned.hsp"
-resourceManager.addResource(path)
+try {
+    let resourceManager = Global.getResourceManager()
+    let path = "/data/storage/el2/base/haps/entry/files/library-default-unsigned.hsp"
+    resourceManager.addResource(path)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func closeRawFd(String)
@@ -290,9 +296,15 @@ public func closeRawFd(path: String): Unit
 // index.cj
 
 import kit.LocalizationKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let resourceManager = Global.getResourceManager()
-let rawfd = resourceManager.closeRawFd("test.txt")
+try {
+    let resourceManager = Global.getResourceManager()
+    let rawfd = resourceManager.closeRawFd("test.txt")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getBoolean(UInt32)
@@ -344,10 +356,16 @@ public func getBoolean(resId: UInt32): Bool
 
 import kit.LocalizationKit.*
 import ohos.arkui.state_macro_manage.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let resourceManager = Global.getResourceManager()
-let res = @r(app.boolean.test)
-resourceManager.getBoolean(res.id)
+try {
+    let resourceManager = Global.getResourceManager()
+    let res = @r(app.boolean.test)
+    resourceManager.getBoolean(res.id)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getBoolean(AppResource)
@@ -399,11 +417,17 @@ public func getBoolean(resource: AppResource): Bool
 
 import kit.LocalizationKit.*
 import ohos.arkui.state_macro_manage.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let resourceManager = Global.getResourceManager()
-let res = @r(app.boolean.test)
-let resource = AppResource("com.example.myapplication", "entry", res.id)
-resourceManager.getBoolean(resource)
+try {
+    let resourceManager = Global.getResourceManager()
+    let res = @r(app.boolean.test)
+    let resource = AppResource("com.example.myapplication", "entry", res.id)
+    resourceManager.getBoolean(resource)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getBooleanByName(String)
@@ -454,9 +478,15 @@ public func getBooleanByName(resName: String): Bool
 // index.cj
 
 import kit.LocalizationKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let resourceManager = Global.getResourceManager()
-resourceManager.getBooleanByName("test")
+try {
+    let resourceManager = Global.getResourceManager()
+    resourceManager.getBooleanByName("test")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getColor(AppResource)
@@ -508,11 +538,17 @@ public func getColor(resource: AppResource): UInt32
 
 import kit.LocalizationKit.*
 import ohos.arkui.state_macro_manage.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let resourceManager = Global.getResourceManager()
-let res = @r(app.color.test)
-let resource = AppResource("com.example.myapplication", "entry", res.id)
-resourceManager.getColor(resource)
+try {
+    let resourceManager = Global.getResourceManager()
+    let res = @r(app.color.test)
+    let resource = AppResource("com.example.myapplication", "entry", res.id)
+    resourceManager.getColor(resource)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getColor(UInt32)
@@ -564,10 +600,16 @@ public func getColor(resId: UInt32): UInt32
 
 import kit.LocalizationKit.*
 import ohos.arkui.state_macro_manage.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let resourceManager = Global.getResourceManager()
-let res = @r(app.color.test)
-resourceManager.getColor(res.id)
+try {
+    let resourceManager = Global.getResourceManager()
+    let res = @r(app.color.test)
+    resourceManager.getColor(res.id)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getColorByName(String)
@@ -618,9 +660,15 @@ public func getColorByName(resName: String): UInt32
 // index.cj
 
 import kit.LocalizationKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let resourceManager = Global.getResourceManager()
-resourceManager.getColorByName("test")
+try {
+    let resourceManager = Global.getResourceManager()
+    resourceManager.getColorByName("test")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getConfiguration()
@@ -658,10 +706,16 @@ public func getConfiguration(): Configuration
 
 import kit.LocalizationKit.*
 import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let resourceManager = Global.getResourceManager()
-let configuration = resourceManager.getConfiguration()
-Hilog.info(0, "test", configuration.locale, "")
+try {
+    let resourceManager = Global.getResourceManager()
+    let configuration = resourceManager.getConfiguration()
+    Hilog.info(0, "test", configuration.locale, "")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getDeviceCapability()
@@ -699,9 +753,15 @@ public func getDeviceCapability(): DeviceCapability
 
 import kit.LocalizationKit.*
 import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let resourceManager = Global.getResourceManager()
-let deviceCapability = resourceManager.getDeviceCapability()
+try {
+    let resourceManager = Global.getResourceManager()
+    let deviceCapability = resourceManager.getDeviceCapability()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getLocales(Bool)
@@ -750,9 +810,15 @@ public func getLocales(includeSystem!: Bool = false): Array<String>
 // index.cj
 
 import kit.LocalizationKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let resourceManager = Global.getResourceManager()
-resourceManager.getLocales()
+try {
+    let resourceManager = Global.getResourceManager()
+    resourceManager.getLocales()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getMediaBase64ByName(String, ?ScreenDensity)
@@ -809,9 +875,15 @@ public func getMediaBase64ByName(resName: String, density!: ?ScreenDensity = Non
 // index.cj
 
 import kit.LocalizationKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let resourceManager = Global.getResourceManager()
-resourceManager.getMediaBase64ByName("test")
+try {
+    let resourceManager = Global.getResourceManager()
+    resourceManager.getMediaBase64ByName("test")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getMediaByName(String, ?ScreenDensity)
@@ -862,9 +934,15 @@ public func getMediaByName(resName: String, density!: ?ScreenDensity = None): Ar
 // index.cj
 
 import kit.LocalizationKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let resourceManager = Global.getResourceManager()
-resourceManager.getMediaByName("test", density: ScreenMdpi)
+try {
+    let resourceManager = Global.getResourceManager()
+    resourceManager.getMediaByName("test", density: ScreenMdpi)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getMediaContent(UInt32, ?ScreenDensity)
@@ -916,10 +994,16 @@ public func getMediaContent(resId: UInt32, density!: ?ScreenDensity = None): Arr
 
 import kit.LocalizationKit.*
 import ohos.arkui.state_macro_manage.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let resourceManager = Global.getResourceManager()
-let res = @r(app.media.test)
-resourceManager.getMediaContent(res.id, density: ScreenSdpi)
+try {
+    let resourceManager = Global.getResourceManager()
+    let res = @r(app.media.test)
+    resourceManager.getMediaContent(res.id, density: ScreenSdpi)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getMediaContent(AppResource, ?ScreenDensity)
@@ -971,11 +1055,17 @@ public func getMediaContent(resource: AppResource, density!: ?ScreenDensity = No
 
 import kit.LocalizationKit.*
 import ohos.arkui.state_macro_manage.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let resourceManager = Global.getResourceManager()
-let res = @r(app.media.test)
-let resource = AppResource("com.example.myapplication", "entry", res.id)
-resourceManager.getMediaContent(resource, density: ScreenSdpi)
+try {
+    let resourceManager = Global.getResourceManager()
+    let res = @r(app.media.test)
+    let resource = AppResource("com.example.myapplication", "entry", res.id)
+    resourceManager.getMediaContent(resource, density: ScreenSdpi)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getMediaContentBase64(UInt32, ?ScreenDensity)
@@ -1033,10 +1123,16 @@ public func getMediaContentBase64(resId: UInt32, density!: ?ScreenDensity = None
 
 import kit.LocalizationKit.*
 import ohos.arkui.state_macro_manage.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let resourceManager = Global.getResourceManager()
-let res = @r(app.media.test)
-resourceManager.getMediaContentBase64(res.id)
+try {
+    let resourceManager = Global.getResourceManager()
+    let res = @r(app.media.test)
+    resourceManager.getMediaContentBase64(res.id)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getMediaContentBase64(AppResource, ?ScreenDensity)
@@ -1094,11 +1190,17 @@ public func getMediaContentBase64(resource: AppResource, density!: ?ScreenDensit
 
 import kit.LocalizationKit.*
 import ohos.arkui.state_macro_manage.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let resourceManager = Global.getResourceManager()
-let res = @r(app.media.test)
-let resource = AppResource("com.example.myapplication", "entry", res.id)
-resourceManager.getMediaContentBase64(resource)
+try {
+    let resourceManager = Global.getResourceManager()
+    let res = @r(app.media.test)
+    let resource = AppResource("com.example.myapplication", "entry", res.id)
+    resourceManager.getMediaContentBase64(resource)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getNumber(UInt32)
@@ -1151,14 +1253,20 @@ public func getNumber(resId: UInt32): NumberValueType
 import kit.LocalizationKit.*
 import kit.PerformanceAnalysisKit.*
 import ohos.arkui.state_macro_manage.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let resourceManager = Global.getResourceManager()
-let res = @r(app.integer.test)
-let number = resourceManager.getNumber(res.id)
-match (number) {
-    case Int32Value(v) => Hilog.info(0, "test", v.toString(), "")
-    case Float32Value(v) => Hilog.info(0, "test", v.toString(), "")
-    case _ => throw IllegalArgumentException("The type is not supported.")
+try {
+    let resourceManager = Global.getResourceManager()
+    let res = @r(app.integer.test)
+    let number = resourceManager.getNumber(res.id)
+    match (number) {
+        case Int32Value(v) => Hilog.info(0, "test", v.toString(), "")
+        case Float32Value(v) => Hilog.info(0, "test", v.toString(), "")
+        case _ => throw IllegalArgumentException("The type is not supported.")
+    }
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -1212,15 +1320,21 @@ public func getNumber(resource: AppResource): NumberValueType
 import kit.LocalizationKit.*
 import kit.PerformanceAnalysisKit.*
 import ohos.arkui.state_macro_manage.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let resourceManager = Global.getResourceManager()
-let res = @r(app.integer.test)
-let resource = AppResource("com.example.myapplication", "entry", res.id)
-let number = resourceManager.getNumber(resource)
-match (number) {
-    case Int32Value(v) => Hilog.info(0, "test", v.toString(), "")
-    case Float32Value(v) => Hilog.info(0, "test", v.toString(), "")
-    case _ => throw IllegalArgumentException("The type is not supported.")
+try {
+    let resourceManager = Global.getResourceManager()
+    let res = @r(app.integer.test)
+    let resource = AppResource("com.example.myapplication", "entry", res.id)
+    let number = resourceManager.getNumber(resource)
+    match (number) {
+        case Int32Value(v) => Hilog.info(0, "test", v.toString(), "")
+        case Float32Value(v) => Hilog.info(0, "test", v.toString(), "")
+        case _ => throw IllegalArgumentException("The type is not supported.")
+    }
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -1274,13 +1388,19 @@ public func getNumberByName(resName: String): NumberValueType
 import kit.LocalizationKit.*
 import kit.PerformanceAnalysisKit.*
 import ohos.arkui.state_macro_manage.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let resourceManager = Global.getResourceManager()
-let number = resourceManager.getNumberByName("test")
-match (number) {
-    case Int32Value(v) => Hilog.info(0, "test", v.toString(), "")
-    case Float32Value(v) => Hilog.info(0, "test", v.toString(), "")
-    case _ => throw IllegalArgumentException("The type is not supported.")
+try {
+    let resourceManager = Global.getResourceManager()
+    let number = resourceManager.getNumberByName("test")
+    match (number) {
+        case Int32Value(v) => Hilog.info(0, "test", v.toString(), "")
+        case Float32Value(v) => Hilog.info(0, "test", v.toString(), "")
+        case _ => throw IllegalArgumentException("The type is not supported.")
+    }
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -1339,9 +1459,15 @@ public func getPluralStringByName(resName: String, num: Int64): String
 // index.cj
 
 import kit.LocalizationKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let resourceManager = Global.getResourceManager()
-resourceManager.getPluralStringByName("test", 1)
+try {
+    let resourceManager = Global.getResourceManager()
+    resourceManager.getPluralStringByName("test", 1)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getPluralStringValue(UInt32, Int64)
@@ -1400,10 +1526,16 @@ public func getPluralStringValue(resId: UInt32, num: Int64): String
 
 import kit.LocalizationKit.*
 import ohos.arkui.state_macro_manage.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let resourceManager = Global.getResourceManager()
-let res = @r(app.plural.test)
-resourceManager.getPluralStringValue(res.id, 1)
+try {
+    let resourceManager = Global.getResourceManager()
+    let res = @r(app.plural.test)
+    resourceManager.getPluralStringValue(res.id, 1)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getPluralStringValue(AppResource, Int64)
@@ -1462,11 +1594,17 @@ public func getPluralStringValue(resource: AppResource, num: Int64): String
 
 import kit.LocalizationKit.*
 import ohos.arkui.state_macro_manage.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let resourceManager = Global.getResourceManager()
-let res = @r(app.plural.test)
-let resource = AppResource("com.example.myapplication", "entry", res.id)
-resourceManager.getPluralStringValue(resource, 1)
+try {
+    let resourceManager = Global.getResourceManager()
+    let res = @r(app.plural.test)
+    let resource = AppResource("com.example.myapplication", "entry", res.id)
+    resourceManager.getPluralStringValue(resource, 1)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getRawFd(String)
@@ -1516,10 +1654,16 @@ public func getRawFd(path: String): RawFileDescriptor
 
 import kit.LocalizationKit.*
 import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let resourceManager = Global.getResourceManager()
-let rawfd = resourceManager.getRawFd("test.txt")
-Hilog.info(0, "test", "${rawfd.fd} ${rawfd.offset} ${rawfd.length}", "")
+try {
+    let resourceManager = Global.getResourceManager()
+    let rawfd = resourceManager.getRawFd("test.txt")
+    Hilog.info(0, "test", "${rawfd.fd} ${rawfd.offset} ${rawfd.length}", "")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getRawFileContent(String)
@@ -1568,9 +1712,15 @@ public func getRawFileContent(path: String): Array<UInt8>
 // index.cj
 
 import kit.LocalizationKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let resourceManager = Global.getResourceManager()
-resourceManager.getRawFileContent("test.txt")
+try {
+    let resourceManager = Global.getResourceManager()
+    resourceManager.getRawFileContent("test.txt")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getRawFileList(String)
@@ -1619,9 +1769,15 @@ public func getRawFileList(path: String): Array<String>
 // index.cj
 
 import kit.LocalizationKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let resourceManager = Global.getResourceManager()
-resourceManager.getRawFileList("")
+try {
+    let resourceManager = Global.getResourceManager()
+    resourceManager.getRawFileList("")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getString(UInt32, Array\<ArgsValueType>)
@@ -1675,10 +1831,16 @@ public func getString(resId: UInt32, args: Array<ArgsValueType>): String
 
 import kit.LocalizationKit.*
 import ohos.arkui.state_macro_manage.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let resourceManager = Global.getResourceManager()
-let resource = @r(app.string.test)
-resourceManager.getString(resource.id)
+try {
+    let resourceManager = Global.getResourceManager()
+    let resource = @r(app.string.test)
+    resourceManager.getString(resource.id)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getString(AppResource, Array\<ArgsValueType>)
@@ -1732,10 +1894,16 @@ public func getString(resource: AppResource, args: Array<ArgsValueType>): String
 
 import kit.LocalizationKit.*
 import ohos.arkui.state_macro_manage.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let resourceManager = Global.getResourceManager()
-let resource = @r(app.string.test)
-resourceManager.getString(resource.id, ArgsValueType.StringValue("format string"), ArgsValueType.Int32Value(10), ArgsValueType.Float32Value(98.78))
+try {
+    let resourceManager = Global.getResourceManager()
+    let resource = @r(app.string.test)
+    resourceManager.getString(resource.id, ArgsValueType.StringValue("format string"), ArgsValueType.Int32Value(10), ArgsValueType.Float32Value(98.78))
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getStringArrayByName(String)
@@ -1786,9 +1954,15 @@ public func getStringArrayByName(resName: String): Array<String>
 // index.cj
 
 import kit.LocalizationKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let resourceManager = Global.getResourceManager()
-resourceManager.getStringArrayByName("test")
+try {
+    let resourceManager = Global.getResourceManager()
+    resourceManager.getStringArrayByName("test")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getStringArrayValue(UInt32)
@@ -1840,10 +2014,16 @@ public func getStringArrayValue(resId: UInt32): Array<String>
 
 import kit.LocalizationKit.*
 import ohos.arkui.state_macro_manage.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let resourceManager = Global.getResourceManager()
-let res = @r(app.strarray.test)
-resourceManager.getStringArrayValue(res.id)
+try {
+    let resourceManager = Global.getResourceManager()
+    let res = @r(app.strarray.test)
+    resourceManager.getStringArrayValue(res.id)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getStringArrayValue(AppResource)
@@ -1895,11 +2075,17 @@ public func getStringArrayValue(resource: AppResource): Array<String>
 
 import kit.LocalizationKit.*
 import ohos.arkui.state_macro_manage.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let resourceManager = Global.getResourceManager()
-let res = @r(app.strarray.test)
-let resource = AppResource("com.example.myapplication", "entry", res.id)
-resourceManager.getStringArrayValue(resource)
+try {
+    let resourceManager = Global.getResourceManager()
+    let res = @r(app.strarray.test)
+    let resource = AppResource("com.example.myapplication", "entry", res.id)
+    resourceManager.getStringArrayValue(resource)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getStringByName(String, Array\<ArgsValueType>)
@@ -1952,9 +2138,15 @@ public func getStringByName(resName: String, args: Array<ArgsValueType>): String
 // index.cj
 
 import kit.LocalizationKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let resourceManager = Global.getResourceManager()
-resourceManager.getStringByName("test", ArgsValueType.StringValue("format string"), ArgsValueType.Int32Value(10), ArgsValueType.Float32Value(98.78))
+try {
+    let resourceManager = Global.getResourceManager()
+    resourceManager.getStringByName("test", ArgsValueType.StringValue("format string"), ArgsValueType.Int32Value(10), ArgsValueType.Float32Value(98.78))
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func removeResource(String)
@@ -1997,10 +2189,16 @@ public func removeResource(path: String): Unit
 // index.cj
 
 import kit.LocalizationKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let resourceManager = Global.getResourceManager()
-let path = "/data/storage/el2/base/haps/entry/files/library-default-unsigned.hsp"
-resourceManager.removeResource(path)
+try {
+    let resourceManager = Global.getResourceManager()
+    let path = "/data/storage/el2/base/haps/entry/files/library-default-unsigned.hsp"
+    resourceManager.removeResource(path)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## enum ArgsValueType

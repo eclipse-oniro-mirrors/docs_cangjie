@@ -198,8 +198,14 @@ public static func create(name: String, size: Int32): Ashmem
 // index.cj
 
 import kit.IPCKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ashmem = Ashmem.create("ashmem", 1024*1024)
+try {
+    let ashmem = Ashmem.create("ashmem", 1024*1024)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### static func create(Ashmem)
@@ -242,9 +248,15 @@ public static func create(ashmem: Ashmem): Ashmem
 // index.cj
 
 import kit.IPCKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ashmem = Ashmem.create("ashmem", 1024*1024) //static func create(String, Int32)
-let ashmem2 = Ashmem.create(ashmem) //static func create(Ashmem)
+try {
+    let ashmem = Ashmem.create("ashmem", 1024*1024) //static func create(String, Int32)
+    let ashmem2 = Ashmem.create(ashmem) //static func create(Ashmem)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func closeAshmem()
@@ -267,9 +279,15 @@ public func closeAshmem(): Unit
 // index.cj
 
 import kit.IPCKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ashmem = Ashmem.create("ashmem", 1024*1024)
-ashmem.closeAshmem()
+try {
+    let ashmem = Ashmem.create("ashmem", 1024*1024)
+    ashmem.closeAshmem()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getAshmemSize()
@@ -298,9 +316,15 @@ public func getAshmemSize(): Int32
 // index.cj
 
 import kit.IPCKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ashmem = Ashmem.create("ashmem", 1024*1024)
-ashmem.getAshmemSize()
+try {
+    let ashmem = Ashmem.create("ashmem", 1024*1024)
+    ashmem.getAshmemSize()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func mapReadWriteAshmem()
@@ -331,9 +355,15 @@ public func mapReadWriteAshmem(): Unit
 // index.cj
 
 import kit.IPCKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ashmem = Ashmem.create("ashmem", 1024*1024)
-ashmem.mapReadWriteAshmem()
+try {
+    let ashmem = Ashmem.create("ashmem", 1024*1024)
+    ashmem.mapReadWriteAshmem()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func mapReadonlyAshmem()
@@ -364,9 +394,15 @@ public func mapReadonlyAshmem(): Unit
 // index.cj
 
 import kit.IPCKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ashmem = Ashmem.create("ashmem", 1024*1024)
-ashmem.mapReadonlyAshmem()
+try {
+    let ashmem = Ashmem.create("ashmem", 1024*1024)
+    ashmem.mapReadonlyAshmem()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func mapTypedAshmem(UInt32)
@@ -403,9 +439,15 @@ public func mapTypedAshmem(mapType: UInt32): Unit
 // index.cj
 
 import kit.IPCKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ashmem = Ashmem.create("ashmem", 1024*1024)
-ashmem.mapTypedAshmem(Ashmem.PROT_READ | Ashmem.PROT_WRITE)
+try {
+    let ashmem = Ashmem.create("ashmem", 1024*1024)
+    ashmem.mapTypedAshmem(Ashmem.PROT_READ | Ashmem.PROT_WRITE)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func readDataFromAshmem(Int64, Int64)
@@ -449,9 +491,15 @@ public func readDataFromAshmem(size: Int64, offset: Int64): Array<Byte>
 // index.cj
 
 import kit.IPCKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ashmem = Ashmem.create("ashmem", 1024*1024)
-ashmem.readDataFromAshmem(1, 0)
+try {
+    let ashmem = Ashmem.create("ashmem", 1024*1024)
+    ashmem.readDataFromAshmem(1, 0)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func setProtectionType(UInt32)
@@ -488,9 +536,15 @@ public func setProtectionType(protectionType: UInt32): Unit
 // index.cj
 
 import kit.IPCKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ashmem = Ashmem.create("ashmem", 1024*1024)
-ashmem.setProtectionType(Ashmem.PROT_READ)
+try {
+    let ashmem = Ashmem.create("ashmem", 1024*1024)
+    ashmem.setProtectionType(Ashmem.PROT_READ)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func unmapAshmem()
@@ -513,9 +567,15 @@ public func unmapAshmem(): Unit
 // index.cj
 
 import kit.IPCKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ashmem = Ashmem.create("ashmem", 1024*1024)
-ashmem.unmapAshmem()
+try {
+    let ashmem = Ashmem.create("ashmem", 1024*1024)
+    ashmem.unmapAshmem()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func writeDataToAshmem(Array\<Byte>, Int64, Int64)
@@ -554,9 +614,15 @@ public func writeDataToAshmem(buf: Array<Byte>, size: Int64, offset: Int64): Uni
 // index.cj
 
 import kit.IPCKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ashmem = Ashmem.create("ashmem", 1024*1024)
-ashmem.writeDataToAshmem([1], 1, 0)
+try {
+    let ashmem = Ashmem.create("ashmem", 1024*1024)
+    ashmem.writeDataToAshmem([1], 1, 0)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## class MessageSequence
@@ -606,10 +672,16 @@ public static func closeFileDescriptor(fd: Int32): Unit
 
 import kit.IPCKit.*
 import kit.CoreFileKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let filePath = "path/to/file"
-let file = FileIo.open(filePath, mode: (OpenMode.CREATE | OpenMode.READ_WRITE))
-MessageSequence.closeFileDescriptor(file.fd)
+try {
+    let filePath = "path/to/file"
+    let file = FileIo.open(filePath, mode: (OpenMode.CREATE | OpenMode.READ_WRITE))
+    MessageSequence.closeFileDescriptor(file.fd)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### static func create()
@@ -646,8 +718,14 @@ public static func create(): MessageSequence
 // index.cj
 
 import kit.IPCKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data = MessageSequence.create()
+try {
+    let data = MessageSequence.create()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### static func dupFileDescriptor(Int32)
@@ -691,10 +769,16 @@ public static func dupFileDescriptor(fd: Int32): Int32
 
 import kit.IPCKit.*
 import kit.CoreFileKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let filePath = "path/to/file"
-let file = FileIo.open(filePath, mode: (OpenMode.CREATE | OpenMode.READ_WRITE))
-MessageSequence.dupFileDescriptor(file.fd)
+try {
+    let filePath = "path/to/file"
+    let file = FileIo.open(filePath, mode: (OpenMode.CREATE | OpenMode.READ_WRITE))
+    MessageSequence.dupFileDescriptor(file.fd)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func containFileDescriptors()
@@ -723,9 +807,15 @@ public func containFileDescriptors(): Bool
 // index.cj
 
 import kit.IPCKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data = MessageSequence.create()
-data.containFileDescriptors()
+try {
+    let data = MessageSequence.create()
+    data.containFileDescriptors()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getCapacity()
@@ -754,9 +844,15 @@ public func getCapacity(): UInt32
 // index.cj
 
 import kit.IPCKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data = MessageSequence.create()
-let result = data.getCapacity()
+try {
+    let data = MessageSequence.create()
+    let result = data.getCapacity()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getRawDataCapacity()
@@ -785,9 +881,15 @@ public func getRawDataCapacity(): UInt32
 // index.cj
 
 import kit.IPCKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data = MessageSequence.create()
-data.getRawDataCapacity()
+try {
+    let data = MessageSequence.create()
+    data.getRawDataCapacity()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getReadPosition()
@@ -816,9 +918,15 @@ public func getReadPosition(): UInt32
 // index.cj
 
 import kit.IPCKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data = MessageSequence.create()
-let pos = data.getReadPosition()
+try {
+    let data = MessageSequence.create()
+    let pos = data.getReadPosition()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getReadableBytes()
@@ -847,9 +955,15 @@ public func getReadableBytes(): UInt32
 // index.cj
 
 import kit.IPCKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data = MessageSequence.create()
-let bytes = data.getReadableBytes()
+try {
+    let data = MessageSequence.create()
+    let bytes = data.getReadableBytes()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getSize()
@@ -878,9 +992,15 @@ public func getSize(): UInt32
 // index.cj
 
 import kit.IPCKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data = MessageSequence.create()
-let size = data.getSize()
+try {
+    let data = MessageSequence.create()
+    let size = data.getSize()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getWritableBytes()
@@ -909,9 +1029,15 @@ public func getWritableBytes(): UInt32
 // index.cj
 
 import kit.IPCKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data = MessageSequence.create()
-let bytes = data.getWritableBytes()
+try {
+    let data = MessageSequence.create()
+    let bytes = data.getWritableBytes()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getWritePosition()
@@ -940,9 +1066,15 @@ public func getWritePosition(): UInt32
 // index.cj
 
 import kit.IPCKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data = MessageSequence.create()
-let pos = data.getWritePosition()
+try {
+    let data = MessageSequence.create()
+    let pos = data.getWritePosition()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func readAshmem()
@@ -979,9 +1111,15 @@ public func readAshmem(): Ashmem
 // index.cj
 
 import kit.IPCKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data = MessageSequence.create()
-let ashMem = data.readAshmem()
+try {
+    let data = MessageSequence.create()
+    let ashMem = data.readAshmem()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func readBoolean()
@@ -1018,9 +1156,15 @@ public func readBoolean(): Bool
 // index.cj
 
 import kit.IPCKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data = MessageSequence.create()
-data.readBoolean()
+try {
+    let data = MessageSequence.create()
+    data.readBoolean()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func readBooleanArray()
@@ -1057,9 +1201,15 @@ public func readBooleanArray(): Array<Bool>
 // index.cj
 
 import kit.IPCKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data = MessageSequence.create()
-data.readBooleanArray()
+try {
+    let data = MessageSequence.create()
+    data.readBooleanArray()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func readByte()
@@ -1096,9 +1246,15 @@ public func readByte(): Int8
 // index.cj
 
 import kit.IPCKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data = MessageSequence.create()
-data.readByte()
+try {
+    let data = MessageSequence.create()
+    data.readByte()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func readByteArray()
@@ -1135,9 +1291,15 @@ public func readByteArray(): Array<Int8>
 // index.cj
 
 import kit.IPCKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data = MessageSequence.create()
-data.readByteArray()
+try {
+    let data = MessageSequence.create()
+    data.readByteArray()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func readChar()
@@ -1174,9 +1336,15 @@ public func readChar(): UInt8
 // index.cj
 
 import kit.IPCKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data = MessageSequence.create()
-data.readChar()
+try {
+    let data = MessageSequence.create()
+    data.readChar()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func readCharArray()
@@ -1213,9 +1381,15 @@ public func readCharArray(): Array<UInt8>
 // index.cj
 
 import kit.IPCKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data = MessageSequence.create()
-data.readCharArray()
+try {
+    let data = MessageSequence.create()
+    data.readCharArray()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func readDouble()
@@ -1252,9 +1426,15 @@ public func readDouble(): Float64
 // index.cj
 
 import kit.IPCKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data = MessageSequence.create()
-data.readDouble()
+try {
+    let data = MessageSequence.create()
+    data.readDouble()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func readDoubleArray()
@@ -1292,9 +1472,15 @@ public func readDoubleArray(): Array<Float64>
 
 import kit.IPCKit.*
 import std.collection.ArrayList
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data = MessageSequence.create()
-data.readDoubleArray()
+try {
+    let data = MessageSequence.create()
+    data.readDoubleArray()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func readException()
@@ -1325,9 +1511,15 @@ public func readException(): Unit
 // index.cj
 
 import kit.IPCKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data = MessageSequence.create()
-data.readException()
+try {
+    let data = MessageSequence.create()
+    data.readException()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func readFileDescriptor()
@@ -1364,9 +1556,15 @@ public func readFileDescriptor(): Int32
 // index.cj
 
 import kit.IPCKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data = MessageSequence.create()
-data.readFileDescriptor()
+try {
+    let data = MessageSequence.create()
+    data.readFileDescriptor()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func readFloat()
@@ -1403,9 +1601,15 @@ public func readFloat(): Float32
 // index.cj
 
 import kit.IPCKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data = MessageSequence.create()
-data.readFloat()
+try {
+    let data = MessageSequence.create()
+    data.readFloat()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func readFloatArray()
@@ -1442,9 +1646,15 @@ public func readFloatArray(): Array<Float32>
 // index.cj
 
 import kit.IPCKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data = MessageSequence.create()
-data.readFloatArray()
+try {
+    let data = MessageSequence.create()
+    data.readFloatArray()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func readInt()
@@ -1481,9 +1691,15 @@ public func readInt(): Int32
 // index.cj
 
 import kit.IPCKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data = MessageSequence.create()
-data.readInt()
+try {
+    let data = MessageSequence.create()
+    data.readInt()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func readIntArray()
@@ -1520,9 +1736,15 @@ public func readIntArray(): Array<Int32>
 // index.cj
 
 import kit.IPCKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data = MessageSequence.create()
-data.readIntArray()
+try {
+    let data = MessageSequence.create()
+    data.readIntArray()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func readInterfaceToken()
@@ -1559,9 +1781,15 @@ public func readInterfaceToken(): String
 // index.cj
 
 import kit.IPCKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data = MessageSequence.create()
-data.readInterfaceToken()
+try {
+    let data = MessageSequence.create()
+    data.readInterfaceToken()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func readLong()
@@ -1598,9 +1826,15 @@ public func readLong(): Int64
 // index.cj
 
 import kit.IPCKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data = MessageSequence.create()
-data.readLong()
+try {
+    let data = MessageSequence.create()
+    data.readLong()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func readLongArray()
@@ -1637,9 +1871,15 @@ public func readLongArray(): Array<Int64>
 // index.cj
 
 import kit.IPCKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data = MessageSequence.create()
-data.readLongArray()
+try {
+    let data = MessageSequence.create()
+    data.readLongArray()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func readParcelable\<T>(T) where T \<: Parcelable
@@ -1677,35 +1917,41 @@ public func readParcelable<T>(dataIn: T): Unit where T <: Parcelable
 // index.cj
 
 import kit.IPCKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-// 此处代码可添加在依赖项定义中
-class MyParcelable <: Parcelable {
-    var num: Int32 = 0
-    var str: String = ''
+try {
+    // 此处代码可添加在依赖项定义中
+    class MyParcelable <: Parcelable {
+        var num: Int32 = 0
+        var str: String = ''
 
-    init() {}
+        init() {}
 
-    init(num: Int32, str: String) {
-        this.num = num
-        this.str = str
+        init(num: Int32, str: String) {
+            this.num = num
+            this.str = str
+        }
+        public func marshalling(messageSequence: MessageSequence): Bool {
+            messageSequence.writeInt(this.num)
+            messageSequence.writeString(this.str)
+            return true
+        }
+        public func unmarshalling(messageSequence: MessageSequence): Bool {
+            this.num = messageSequence.readInt()
+            this.str = messageSequence.readString()
+            return true
+        }
     }
-    public func marshalling(messageSequence: MessageSequence): Bool {
-        messageSequence.writeInt(this.num)
-        messageSequence.writeString(this.str)
-        return true
-    }
-    public func unmarshalling(messageSequence: MessageSequence): Bool {
-        this.num = messageSequence.readInt()
-        this.str = messageSequence.readString()
-        return true
-    }
+
+    let parcelable = MyParcelable(1, "aaa")
+    let data = MessageSequence.create()
+    data.writeParcelable(parcelable)
+    let ret = MyParcelable()
+    data.readParcelable(ret)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
 }
-
-let parcelable = MyParcelable(1, "aaa")
-let data = MessageSequence.create()
-data.writeParcelable(parcelable)
-let ret = MyParcelable()
-data.readParcelable(ret)
 ```
 
 ### func readParcelableArray\<T>(Array\<T>) where T \<: Parcelable
@@ -1743,37 +1989,43 @@ public func readParcelableArray<T>(parcelableArray: Array<T>): Unit where T <: P
 // index.cj
 
 import kit.IPCKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-// 此处代码可添加在依赖项定义中
-class MyParcelable <: Parcelable {
-    var num: Int32 = 0
-    var str: String = ''
+try {
+    // 此处代码可添加在依赖项定义中
+    class MyParcelable <: Parcelable {
+        var num: Int32 = 0
+        var str: String = ''
 
-    init() {}
+        init() {}
 
-    init(num: Int32, str: String) {
-        this.num = num
-        this.str = str
+        init(num: Int32, str: String) {
+            this.num = num
+            this.str = str
+        }
+        public func marshalling(messageSequence: MessageSequence): Bool {
+            messageSequence.writeInt(this.num)
+            messageSequence.writeString(this.str)
+            return true
+        }
+        public func unmarshalling(messageSequence: MessageSequence): Bool {
+            this.num = messageSequence.readInt()
+            this.str = messageSequence.readString()
+            return true
+        }
     }
-    public func marshalling(messageSequence: MessageSequence): Bool {
-        messageSequence.writeInt(this.num)
-        messageSequence.writeString(this.str)
-        return true
-    }
-    public func unmarshalling(messageSequence: MessageSequence): Bool {
-        this.num = messageSequence.readInt()
-        this.str = messageSequence.readString()
-        return true
-    }
+
+    let parcelable = MyParcelable(1, "aaa")
+    let parcelable2 = MyParcelable(2, "bbb")
+    let parcelable3 = MyParcelable(3, "ccc")
+    let data = MessageSequence.create()
+    data.writeParcelableArray(parcelable,parcelable2,parcelable3)
+    let ret: Array<Parcelable> = [MyParcelable(0, ""), MyParcelable(0, ""), MyParcelable(0, "")]
+    data.readParcelableArray(ret)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
 }
-
-let parcelable = MyParcelable(1, "aaa")
-let parcelable2 = MyParcelable(2, "bbb")
-let parcelable3 = MyParcelable(3, "ccc")
-let data = MessageSequence.create()
-data.writeParcelableArray(parcelable,parcelable2,parcelable3)
-let ret: Array<Parcelable> = [MyParcelable(0, ""), MyParcelable(0, ""), MyParcelable(0, "")]
-data.readParcelableArray(ret)
 ```
 
 ### func readRawDataBuffer(Int64)
@@ -1816,9 +2068,15 @@ public func readRawDataBuffer(size: Int64): Array<Byte>
 // index.cj
 
 import kit.IPCKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data = MessageSequence.create()
-data.readRawDataBuffer(1)
+try {
+    let data = MessageSequence.create()
+    data.readRawDataBuffer(1)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func readShort()
@@ -1855,9 +2113,15 @@ public func readShort(): Int16
 // index.cj
 
 import kit.IPCKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data = MessageSequence.create()
-data.readShort()
+try {
+    let data = MessageSequence.create()
+    data.readShort()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func readShortArray()
@@ -1894,9 +2158,15 @@ public func readShortArray(): Array<Int16>
 // index.cj
 
 import kit.IPCKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data = MessageSequence.create()
-data.readShortArray()
+try {
+    let data = MessageSequence.create()
+    data.readShortArray()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func readString()
@@ -1933,9 +2203,15 @@ public func readString(): String
 // index.cj
 
 import kit.IPCKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data = MessageSequence.create()
-data.readString()
+try {
+    let data = MessageSequence.create()
+    data.readString()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func readStringArray()
@@ -1972,9 +2248,15 @@ public func readStringArray(): Array<String>
 // index.cj
 
 import kit.IPCKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data = MessageSequence.create()
-data.readStringArray()
+try {
+    let data = MessageSequence.create()
+    data.readStringArray()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func readUInt16Array()
@@ -2011,9 +2293,15 @@ public func readUInt16Array(): Array<UInt16>
 // index.cj
 
 import kit.IPCKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data = MessageSequence.create()
-data.readUInt16Array()
+try {
+    let data = MessageSequence.create()
+    data.readUInt16Array()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func readUInt32Array()
@@ -2050,9 +2338,15 @@ public func readUInt32Array(): Array<UInt32>
 // index.cj
 
 import kit.IPCKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data = MessageSequence.create()
-data.readUInt32Array()
+try {
+    let data = MessageSequence.create()
+    data.readUInt32Array()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func readUInt64Array()
@@ -2089,9 +2383,15 @@ public func readUInt64Array(): Array<UInt64>
 // index.cj
 
 import kit.IPCKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data = MessageSequence.create()
-data.readUInt64Array()
+try {
+    let data = MessageSequence.create()
+    data.readUInt64Array()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func readUInt8Array()
@@ -2128,9 +2428,15 @@ public func readUInt8Array(): Array<UInt8>
 // index.cj
 
 import kit.IPCKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data = MessageSequence.create()
-data.readUInt8Array()
+try {
+    let data = MessageSequence.create()
+    data.readUInt8Array()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func reclaim()
@@ -2153,9 +2459,15 @@ public func reclaim(): Unit
 // index.cj
 
 import kit.IPCKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data = MessageSequence.create()
-data.reclaim()
+try {
+    let data = MessageSequence.create()
+    data.reclaim()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func rewindRead(UInt32)
@@ -2192,9 +2504,15 @@ public func rewindRead(pos: UInt32): Unit
 // index.cj
 
 import kit.IPCKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data = MessageSequence.create()
-data.rewindRead(0)
+try {
+    let data = MessageSequence.create()
+    data.rewindRead(0)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func rewindWrite(UInt32)
@@ -2231,9 +2549,15 @@ public func rewindWrite(pos: UInt32): Unit
 // index.cj
 
 import kit.IPCKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data = MessageSequence.create()
-data.rewindWrite(0)
+try {
+    let data = MessageSequence.create()
+    data.rewindWrite(0)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func setCapacity(UInt32)
@@ -2271,9 +2595,15 @@ public func setCapacity(size: UInt32): Unit
 // index.cj
 
 import kit.IPCKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data = MessageSequence.create()
-data.setCapacity(100)
+try {
+    let data = MessageSequence.create()
+    data.setCapacity(100)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func setSize(UInt32)
@@ -2310,9 +2640,15 @@ public func setSize(size: UInt32): Unit
 // index.cj
 
 import kit.IPCKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data = MessageSequence.create()
-data.setSize(16)
+try {
+    let data = MessageSequence.create()
+    data.setSize(16)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func writeAshmem(Ashmem)
@@ -2349,10 +2685,16 @@ public func writeAshmem(ashmem: Ashmem): Unit
 // index.cj
 
 import kit.IPCKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data = MessageSequence.create()
-let ashmem = Ashmem.create("ashmem", 1024)
-data.writeAshmem(ashmem)
+try {
+    let data = MessageSequence.create()
+    let ashmem = Ashmem.create("ashmem", 1024)
+    data.writeAshmem(ashmem)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func writeBoolean(Bool)
@@ -2389,9 +2731,15 @@ public func writeBoolean(val: Bool): Unit
 // index.cj
 
 import kit.IPCKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data = MessageSequence.create()
-data.writeBoolean(false)
+try {
+    let data = MessageSequence.create()
+    data.writeBoolean(false)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func writeBooleanArray(Array\<Bool>)
@@ -2428,9 +2776,15 @@ public func writeBooleanArray(booleanArray: Array<Bool>): Unit
 // index.cj
 
 import kit.IPCKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data = MessageSequence.create()
-data.writeBooleanArray([false, true, false])
+try {
+    let data = MessageSequence.create()
+    data.writeBooleanArray([false, true, false])
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func writeByte(Int8)
@@ -2467,9 +2821,15 @@ public func writeByte(val: Int8): Unit
 // index.cj
 
 import kit.IPCKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data = MessageSequence.create()
-data.writeByte(2)
+try {
+    let data = MessageSequence.create()
+    data.writeByte(2)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func writeByteArray(Array\<Int8>)
@@ -2506,9 +2866,15 @@ public func writeByteArray(byteArray: Array<Int8>): Unit
 // index.cj
 
 import kit.IPCKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data = MessageSequence.create()
-data.writeByteArray([1])
+try {
+    let data = MessageSequence.create()
+    data.writeByteArray([1])
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func writeChar(UInt8)
@@ -2545,9 +2911,15 @@ public func writeChar(val: UInt8): Unit
 // index.cj
 
 import kit.IPCKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data = MessageSequence.create()
-data.writeChar(97)
+try {
+    let data = MessageSequence.create()
+    data.writeChar(97)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func writeCharArray(Array\<UInt8>)
@@ -2584,9 +2956,15 @@ public func writeCharArray(charArray: Array<UInt8>): Unit
 // index.cj
 
 import kit.IPCKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data = MessageSequence.create()
-data.writeCharArray([97, 98, 88])
+try {
+    let data = MessageSequence.create()
+    data.writeCharArray([97, 98, 88])
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func writeDouble(Float64)
@@ -2623,9 +3001,15 @@ public func writeDouble(val: Float64): Unit
 // index.cj
 
 import kit.IPCKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data = MessageSequence.create()
-data.writeDouble(10.2)
+try {
+    let data = MessageSequence.create()
+    data.writeDouble(10.2)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func writeDoubleArray(Array\<Float64>)
@@ -2662,9 +3046,15 @@ public func writeDoubleArray(doubleArray: Array<Float64>): Unit
 // index.cj
 
 import kit.IPCKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data = MessageSequence.create()
-data.writeDoubleArray([1.1])
+try {
+    let data = MessageSequence.create()
+    data.writeDoubleArray([1.1])
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func writeFileDescriptor(Int32)
@@ -2702,11 +3092,17 @@ public func writeFileDescriptor(fd: Int32): Unit
 
 import kit.IPCKit.*
 import kit.CoreFileKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data = MessageSequence.create()
-let filePath = "path/to/file"
-let file = FileIo.open(filePath, mode: (OpenMode.CREATE | OpenMode.READ_WRITE))
-data.writeFileDescriptor(file.fd)
+try {
+    let data = MessageSequence.create()
+    let filePath = "path/to/file"
+    let file = FileIo.open(filePath, mode: (OpenMode.CREATE | OpenMode.READ_WRITE))
+    data.writeFileDescriptor(file.fd)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func writeFloat(Float32)
@@ -2743,9 +3139,15 @@ public func writeFloat(val: Float32): Unit
 // index.cj
 
 import kit.IPCKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data = MessageSequence.create()
-data.writeFloat(1.2)
+try {
+    let data = MessageSequence.create()
+    data.writeFloat(1.2)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func writeFloatArray(Array\<Float32>)
@@ -2782,9 +3184,15 @@ public func writeFloatArray(floatArray: Array<Float32>): Unit
 // index.cj
 
 import kit.IPCKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data = MessageSequence.create()
-data.writeFloatArray([1.1])
+try {
+    let data = MessageSequence.create()
+    data.writeFloatArray([1.1])
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func writeInt(Int32)
@@ -2821,9 +3229,15 @@ public func writeInt(val: Int32): Unit
 // index.cj
 
 import kit.IPCKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data = MessageSequence.create()
-data.writeInt(10)
+try {
+    let data = MessageSequence.create()
+    data.writeInt(10)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func writeIntArray(Array\<Int32>)
@@ -2860,9 +3274,15 @@ public func writeIntArray(intArray: Array<Int32>): Unit
 // index.cj
 
 import kit.IPCKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data = MessageSequence.create()
-data.writeIntArray([1])
+try {
+    let data = MessageSequence.create()
+    data.writeIntArray([1])
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func writeInterfaceToken(String)
@@ -2899,9 +3319,15 @@ public func writeInterfaceToken(token: String): Unit
 // index.cj
 
 import kit.IPCKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data = MessageSequence.create()
-data.writeInterfaceToken("aaa")
+try {
+    let data = MessageSequence.create()
+    data.writeInterfaceToken("aaa")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func writeLong(Int64)
@@ -2938,9 +3364,15 @@ public func writeLong(val: Int64): Unit
 // index.cj
 
 import kit.IPCKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data = MessageSequence.create()
-data.writeLong(10000)
+try {
+    let data = MessageSequence.create()
+    data.writeLong(10000)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func writeLongArray(Array\<Int64>)
@@ -2977,9 +3409,15 @@ public func writeLongArray(longArray: Array<Int64>): Unit
 // index.cj
 
 import kit.IPCKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data = MessageSequence.create()
-data.writeLongArray([1])
+try {
+    let data = MessageSequence.create()
+    data.writeLongArray([1])
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func writeNoException()
@@ -3010,9 +3448,15 @@ public func writeNoException(): Unit
 // index.cj
 
 import kit.IPCKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data = MessageSequence.create()
-data.writeNoException()
+try {
+    let data = MessageSequence.create()
+    data.writeNoException()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func writeParcelable\<T>(T) where T \<: Parcelable
@@ -3049,35 +3493,41 @@ public func writeParcelable<T>(val: T): Unit where T <: Parcelable
 // index.cj
 
 import kit.IPCKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-// 此处代码可添加在依赖项定义中
-class MyParcelable <: Parcelable {
-    var num: Int32 = 0
-    var str: String = ''
+try {
+    // 此处代码可添加在依赖项定义中
+    class MyParcelable <: Parcelable {
+        var num: Int32 = 0
+        var str: String = ''
 
-    init() {}
+        init() {}
 
-    init(num: Int32, str: String) {
-        this.num = num
-        this.str = str
+        init(num: Int32, str: String) {
+            this.num = num
+            this.str = str
+        }
+        public func marshalling(messageSequence: MessageSequence): Bool {
+            messageSequence.writeInt(this.num)
+            messageSequence.writeString(this.str)
+            return true
+        }
+        public func unmarshalling(messageSequence: MessageSequence): Bool {
+            this.num = messageSequence.readInt()
+            this.str = messageSequence.readString()
+            return true
+        }
     }
-    public func marshalling(messageSequence: MessageSequence): Bool {
-        messageSequence.writeInt(this.num)
-        messageSequence.writeString(this.str)
-        return true
-    }
-    public func unmarshalling(messageSequence: MessageSequence): Bool {
-        this.num = messageSequence.readInt()
-        this.str = messageSequence.readString()
-        return true
-    }
+
+    let parcelable = MyParcelable(1, "aaa")
+    let data = MessageSequence.create()
+    data.writeParcelable(parcelable)
+    let ret = MyParcelable()
+    data.readParcelable(ret)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
 }
-
-let parcelable = MyParcelable(1, "aaa")
-let data = MessageSequence.create()
-data.writeParcelable(parcelable)
-let ret = MyParcelable()
-data.readParcelable(ret)
 ```
 
 ### func writeParcelableArray\<T>(Array\<T>) where T \<: Parcelable
@@ -3114,37 +3564,43 @@ public func writeParcelableArray<T>(parcelableArray: Array<T>): Unit where T <: 
 // index.cj
 
 import kit.IPCKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-// 此处代码可添加在依赖项定义中
-class MyParcelable <: Parcelable {
-    var num: Int32 = 0
-    var str: String = ''
+try {
+    // 此处代码可添加在依赖项定义中
+    class MyParcelable <: Parcelable {
+        var num: Int32 = 0
+        var str: String = ''
 
-    init() {}
+        init() {}
 
-    init(num: Int32, str: String) {
-        this.num = num
-        this.str = str
+        init(num: Int32, str: String) {
+            this.num = num
+            this.str = str
+        }
+        public func marshalling(messageSequence: MessageSequence): Bool {
+            messageSequence.writeInt(this.num)
+            messageSequence.writeString(this.str)
+            return true
+        }
+        public func unmarshalling(messageSequence: MessageSequence): Bool {
+            this.num = messageSequence.readInt()
+            this.str = messageSequence.readString()
+            return true
+        }
     }
-    public func marshalling(messageSequence: MessageSequence): Bool {
-        messageSequence.writeInt(this.num)
-        messageSequence.writeString(this.str)
-        return true
-    }
-    public func unmarshalling(messageSequence: MessageSequence): Bool {
-        this.num = messageSequence.readInt()
-        this.str = messageSequence.readString()
-        return true
-    }
+
+    let parcelable = MyParcelable(1, "aaa")
+    let parcelable2 = MyParcelable(2, "bbb")
+    let parcelable3 = MyParcelable(3, "ccc")
+    let data = MessageSequence.create()
+    data.writeParcelableArray(parcelable,parcelable2,parcelable3)
+    let ret: Array<Parcelable> = [MyParcelable(0, ""), MyParcelable(0, ""), MyParcelable(0, "")]
+    data.readParcelableArray(ret)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
 }
-
-let parcelable = MyParcelable(1, "aaa")
-let parcelable2 = MyParcelable(2, "bbb")
-let parcelable3 = MyParcelable(3, "ccc")
-let data = MessageSequence.create()
-data.writeParcelableArray(parcelable,parcelable2,parcelable3)
-let ret: Array<Parcelable> = [MyParcelable(0, ""), MyParcelable(0, ""), MyParcelable(0, "")]
-data.readParcelableArray(ret)
 ```
 
 ### func writeRawDataBuffer(Array\<Byte>, Int64)
@@ -3182,9 +3638,15 @@ public func writeRawDataBuffer(rawData: Array<Byte>, size: Int64): Unit
 // index.cj
 
 import kit.IPCKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data = MessageSequence.create()
-data.writeRawDataBuffer([1], 1)
+try {
+    let data = MessageSequence.create()
+    data.writeRawDataBuffer([1], 1)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func writeShort(Int16)
@@ -3221,9 +3683,15 @@ public func writeShort(val: Int16): Unit
 // index.cj
 
 import kit.IPCKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data = MessageSequence.create()
-data.writeShort(8)
+try {
+    let data = MessageSequence.create()
+    data.writeShort(8)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func writeShortArray(Array\<Int16>)
@@ -3260,9 +3728,15 @@ public func writeShortArray(shortArray: Array<Int16>): Unit
 // index.cj
 
 import kit.IPCKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data = MessageSequence.create()
-data.writeShortArray([1])
+try {
+    let data = MessageSequence.create()
+    data.writeShortArray([1])
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func writeString(String)
@@ -3299,9 +3773,15 @@ public func writeString(val: String): Unit
 // index.cj
 
 import kit.IPCKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data = MessageSequence.create()
-data.writeString('abc')
+try {
+    let data = MessageSequence.create()
+    data.writeString('abc')
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func writeStringArray(Array\<String>)
@@ -3338,9 +3818,15 @@ public func writeStringArray(stringArray: Array<String>): Unit
 // index.cj
 
 import kit.IPCKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data = MessageSequence.create()
-data.writeStringArray(["abc", "def"])
+try {
+    let data = MessageSequence.create()
+    data.writeStringArray(["abc", "def"])
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func writeUInt16Array(Array\<UInt16>)
@@ -3377,9 +3863,15 @@ public func writeUInt16Array(buf: Array<UInt16>): Unit
 // index.cj
 
 import kit.IPCKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data = MessageSequence.create()
-data.writeUInt16Array([1])
+try {
+    let data = MessageSequence.create()
+    data.writeUInt16Array([1])
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func writeUInt32Array(Array\<UInt32>)
@@ -3416,9 +3908,15 @@ public func writeUInt32Array(buf: Array<UInt32>): Unit
 // index.cj
 
 import kit.IPCKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data = MessageSequence.create()
-data.writeUInt32Array([1])
+try {
+    let data = MessageSequence.create()
+    data.writeUInt32Array([1])
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func writeUInt64Array(Array\<UInt64>)
@@ -3455,9 +3953,15 @@ public func writeUInt64Array(buf: Array<UInt64>): Unit
 // index.cj
 
 import kit.IPCKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data = MessageSequence.create()
-data.writeUInt64Array([1])
+try {
+    let data = MessageSequence.create()
+    data.writeUInt64Array([1])
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func writeUInt8Array(Array\<UInt8>)
@@ -3494,7 +3998,13 @@ public func writeUInt8Array(buf: Array<UInt8>): Unit
 // index.cj
 
 import kit.IPCKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data = MessageSequence.create()
-data.writeUInt8Array([1])
+try {
+    let data = MessageSequence.create()
+    data.writeUInt8Array([1])
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```

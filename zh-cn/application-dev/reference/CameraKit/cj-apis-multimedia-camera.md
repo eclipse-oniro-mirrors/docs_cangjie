@@ -64,9 +64,15 @@ public func getCameraManager(context: UIAbilityContext): CameraManager
 // index.cj
 
 import kit.CameraKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## interface AutoExposure
@@ -126,13 +132,18 @@ func getExposureMode(): ExposureMode
 // index.cj
 
 import kit.CameraKit.*
-import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let session = cameraManager.createSession(SceneMode.NormalPhoto)
-let photoSession = session as PhotoSession
-Hilog.info(0, "AppLogCj", photoSession.getOrThrow().getExposureMode().toString())
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let session = cameraManager.createSession(SceneMode.NormalPhoto)
+    let photoSession = session as PhotoSession
+    Hilog.info(0, "AppLogCj", photoSession.getOrThrow().getExposureMode().toString())
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getExposureValue()
@@ -169,13 +180,18 @@ func getExposureValue(): Float64
 // index.cj
 
 import kit.CameraKit.*
-import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let session = cameraManager.createSession(SceneMode.NormalPhoto)
-let photoSession = session as PhotoSession
-Hilog.info(0, "AppLogCj", photoSession.getOrThrow().getExposureValue().toString())
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let session = cameraManager.createSession(SceneMode.NormalPhoto)
+    let photoSession = session as PhotoSession
+    Hilog.info(0, "AppLogCj", photoSession.getOrThrow().getExposureValue().toString())
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getMeteringPoint()
@@ -212,12 +228,18 @@ func getMeteringPoint(): Point
 // index.cj
 
 import kit.CameraKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let session = cameraManager.createSession(SceneMode.NormalPhoto)
-let photoSession = session as PhotoSession
-let point = photoSession.getOrThrow().getMeteringPoint()
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let session = cameraManager.createSession(SceneMode.NormalPhoto)
+    let photoSession = session as PhotoSession
+    let point = photoSession.getOrThrow().getMeteringPoint()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func setExposureBias(Float64)
@@ -255,14 +277,20 @@ func setExposureBias(exposureBias: Float64): Unit
 // index.cj
 
 import kit.CameraKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let session = cameraManager.createSession(SceneMode.NormalPhoto)
-var photoSessionOption = session as PhotoSession
-let photoSession = photoSessionOption.getOrThrow()
-let exposureBias = 1.2
-photoSession.setExposureBias(exposureBias)
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let session = cameraManager.createSession(SceneMode.NormalPhoto)
+    var photoSessionOption = session as PhotoSession
+    let photoSession = photoSessionOption.getOrThrow()
+    let exposureBias = 1.2
+    photoSession.setExposureBias(exposureBias)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func setExposureMode(ExposureMode)
@@ -300,14 +328,20 @@ func setExposureMode(aeMode: ExposureMode): Unit
 // index.cj
 
 import kit.CameraKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let session = cameraManager.createSession(SceneMode.NormalPhoto)
-var photoSessionOption = session as PhotoSession
-let photoSession = photoSessionOption.getOrThrow()
-let aeMode = ExposureMode.ExposureModeAuto
-photoSession.setExposureMode(aeMode)
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let session = cameraManager.createSession(SceneMode.NormalPhoto)
+    var photoSessionOption = session as PhotoSession
+    let photoSession = photoSessionOption.getOrThrow()
+    let aeMode = ExposureMode.ExposureModeAuto
+    photoSession.setExposureMode(aeMode)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func setMeteringPoint(Point)
@@ -345,14 +379,20 @@ func setMeteringPoint(point: Point): Unit
 
 import kit.CameraKit.*
 import kit.CameraKit.Point as ImagePoint
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let session = cameraManager.createSession(SceneMode.NormalPhoto)
-var photoSessionOption = session as PhotoSession
-let photoSession = photoSessionOption.getOrThrow()
-let point = ImagePoint(1.0, 1.0)
-photoSession.setMeteringPoint(point)
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let session = cameraManager.createSession(SceneMode.NormalPhoto)
+    var photoSessionOption = session as PhotoSession
+    let photoSession = photoSessionOption.getOrThrow()
+    let point = ImagePoint(1.0, 1.0)
+    photoSession.setMeteringPoint(point)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## interface AutoExposureQuery
@@ -404,13 +444,19 @@ func getExposureBiasRange(): Array<Float64>
 // index.cj
 
 import kit.CameraKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let session = cameraManager.createSession(SceneMode.NormalPhoto)
-var photoSessionOption = session as PhotoSession
-let photoSession = photoSessionOption.getOrThrow()
-let range = photoSession.getExposureBiasRange()
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let session = cameraManager.createSession(SceneMode.NormalPhoto)
+    var photoSessionOption = session as PhotoSession
+    let photoSession = photoSessionOption.getOrThrow()
+    let range = photoSession.getExposureBiasRange()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func isExposureModeSupported(ExposureMode)
@@ -453,15 +499,20 @@ func isExposureModeSupported(aeMode: ExposureMode): Bool
 // index.cj
 
 import kit.CameraKit.*
-import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let session = cameraManager.createSession(SceneMode.NormalPhoto)
-var photoSessionOption = session as PhotoSession
-let photoSession = photoSessionOption.getOrThrow()
-let aeMode = ExposureMode.ExposureModeAuto
-Hilog.info(0, "AppLogCj", photoSession.isExposureModeSupported(aeMode).toString())
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let session = cameraManager.createSession(SceneMode.NormalPhoto)
+    var photoSessionOption = session as PhotoSession
+    let photoSession = photoSessionOption.getOrThrow()
+    let aeMode = ExposureMode.ExposureModeAuto
+    Hilog.info(0, "AppLogCj", photoSession.isExposureModeSupported(aeMode).toString())
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## interface CameraOutput
@@ -509,17 +560,23 @@ import kit.CameraKit.*
 import kit.ImageKit.createImageReceiver
 import kit.ImageKit.Size as ImageSize
 import kit.ImageKit.ImageFormat
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let device = cameraManager.getSupportedCameras()[0]
-let mode = cameraManager.getSupportedSceneModes(device)[0]
-let ability = cameraManager.getSupportedOutputCapability(device, mode)
-let size = ImageSize(8, 8192)
-let receiver = createImageReceiver(size, ImageFormat.Jpeg, 8)
-let surfaceId: String = receiver.getReceivingSurfaceId()
-let previewOutput = cameraManager.createPreviewOutput(ability.previewProfiles[0], surfaceId)
-previewOutput.release()
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let device = cameraManager.getSupportedCameras()[0]
+    let mode = cameraManager.getSupportedSceneModes(device)[0]
+    let ability = cameraManager.getSupportedOutputCapability(device, mode)
+    let size = ImageSize(8, 8192)
+    let receiver = createImageReceiver(size, ImageFormat.Jpeg, 8)
+    let surfaceId: String = receiver.getReceivingSurfaceId()
+    let previewOutput = cameraManager.createPreviewOutput(ability.previewProfiles[0], surfaceId)
+    previewOutput.release()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## interface ColorManagement
@@ -575,13 +632,19 @@ func getActiveColorSpace(): ColorSpace
 // index.cj
 
 import kit.CameraKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let session = cameraManager.createSession(SceneMode.NormalPhoto)
-var photoSessionOption = session as PhotoSession
-let photoSession = photoSessionOption.getOrThrow()
-let colorSpace = photoSession.getActiveColorSpace()
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let session = cameraManager.createSession(SceneMode.NormalPhoto)
+    var photoSessionOption = session as PhotoSession
+    let photoSession = photoSessionOption.getOrThrow()
+    let colorSpace = photoSession.getActiveColorSpace()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func setColorSpace(ColorSpace)
@@ -643,14 +706,20 @@ func setColorSpace(colorSpace: ColorSpace): Unit
 // index.cj
 
 import kit.CameraKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let session = cameraManager.createSession(SceneMode.NormalPhoto)
-var photoSessionOption = session as PhotoSession
-let photoSession = photoSessionOption.getOrThrow()
-let colorSpace = photoSession.getSupportedColorSpaces()[0]
-photoSession.setColorSpace(colorSpace)
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let session = cameraManager.createSession(SceneMode.NormalPhoto)
+    var photoSessionOption = session as PhotoSession
+    let photoSession = photoSessionOption.getOrThrow()
+    let colorSpace = photoSession.getSupportedColorSpaces()[0]
+    photoSession.setColorSpace(colorSpace)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## interface ColorManagementQuery
@@ -701,13 +770,19 @@ func getSupportedColorSpaces(): Array<ColorSpace>
 // index.cj
 
 import kit.CameraKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let session = cameraManager.createSession(SceneMode.NormalPhoto)
-var photoSessionOption = session as PhotoSession
-let photoSession = photoSessionOption.getOrThrow()
-let colorSpaces = photoSession.getSupportedColorSpaces()
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let session = cameraManager.createSession(SceneMode.NormalPhoto)
+    var photoSessionOption = session as PhotoSession
+    let photoSession = photoSessionOption.getOrThrow()
+    let colorSpaces = photoSession.getSupportedColorSpaces()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## interface Flash
@@ -763,13 +838,19 @@ func getFlashMode(): FlashMode
 // index.cj
 
 import kit.CameraKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let session = cameraManager.createSession(SceneMode.NormalPhoto)
-var photoSessionOption = session as PhotoSession
-let photoSession = photoSessionOption.getOrThrow()
-let flashMode = photoSession.getFlashMode()
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let session = cameraManager.createSession(SceneMode.NormalPhoto)
+    var photoSessionOption = session as PhotoSession
+    let photoSession = photoSessionOption.getOrThrow()
+    let flashMode = photoSession.getFlashMode()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func setFlashMode(FlashMode)
@@ -811,14 +892,20 @@ func setFlashMode(flashMode: FlashMode): Unit
 // index.cj
 
 import kit.CameraKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let session = cameraManager.createSession(SceneMode.NormalPhoto)
-var photoSessionOption = session as PhotoSession
-let photoSession = photoSessionOption.getOrThrow()
-let flashMode = FlashMode.FlashModeAlwaysOpen
-photoSession.setFlashMode(flashMode)
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let session = cameraManager.createSession(SceneMode.NormalPhoto)
+    var photoSessionOption = session as PhotoSession
+    let photoSession = photoSessionOption.getOrThrow()
+    let flashMode = FlashMode.FlashModeAlwaysOpen
+    photoSession.setFlashMode(flashMode)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## interface FlashQuery
@@ -870,14 +957,19 @@ func hasFlash(): Bool
 // index.cj
 
 import kit.CameraKit.*
-import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let session = cameraManager.createSession(SceneMode.NormalPhoto)
-var photoSessionOption = session as PhotoSession
-let photoSession = photoSessionOption.getOrThrow()
-Hilog.info(0, "AppLogCj", photoSession.hasFlash().toString())
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let session = cameraManager.createSession(SceneMode.NormalPhoto)
+    var photoSessionOption = session as PhotoSession
+    let photoSession = photoSessionOption.getOrThrow()
+    Hilog.info(0, "AppLogCj", photoSession.hasFlash().toString())
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func isFlashModeSupported(FlashMode)
@@ -920,13 +1012,19 @@ func isFlashModeSupported(flashMode: FlashMode): Bool
 // index.cj
 
 import kit.CameraKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let session = cameraManager.createSession(SceneMode.NormalPhoto)
-var photoSessionOption = session as PhotoSession
-let photoSession = photoSessionOption.getOrThrow()
-photoSession.isFlashModeSupported(FlashMode.FlashModeAlwaysOpen)
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let session = cameraManager.createSession(SceneMode.NormalPhoto)
+    var photoSessionOption = session as PhotoSession
+    let photoSession = photoSessionOption.getOrThrow()
+    photoSession.isFlashModeSupported(FlashMode.FlashModeAlwaysOpen)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## interface Focus
@@ -985,14 +1083,19 @@ func getFocalLength(): Float64
 // index.cj
 
 import kit.CameraKit.*
-import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let session = cameraManager.createSession(SceneMode.NormalPhoto)
-var photoSessionOption = session as PhotoSession
-let photoSession = photoSessionOption.getOrThrow()
-Hilog.info(0, "AppLogCj", photoSession.getFocalLength().toString())
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let session = cameraManager.createSession(SceneMode.NormalPhoto)
+    var photoSessionOption = session as PhotoSession
+    let photoSession = photoSessionOption.getOrThrow()
+    Hilog.info(0, "AppLogCj", photoSession.getFocalLength().toString())
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getFocusMode()
@@ -1029,14 +1132,19 @@ func getFocusMode(): FocusMode
 // index.cj
 
 import kit.CameraKit.*
-import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let session = cameraManager.createSession(SceneMode.NormalPhoto)
-var photoSessionOption = session as PhotoSession
-let photoSession = photoSessionOption.getOrThrow()
-Hilog.info(0, "AppLogCj", photoSession.getFocusMode().toString())
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let session = cameraManager.createSession(SceneMode.NormalPhoto)
+    var photoSessionOption = session as PhotoSession
+    let photoSession = photoSessionOption.getOrThrow()
+    Hilog.info(0, "AppLogCj", photoSession.getFocusMode().toString())
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getFocusPoint()
@@ -1073,13 +1181,19 @@ func getFocusPoint(): Point
 // index.cj
 
 import kit.CameraKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let session = cameraManager.createSession(SceneMode.NormalPhoto)
-var photoSessionOption = session as PhotoSession
-let photoSession = photoSessionOption.getOrThrow()
-let point = photoSession.getFocusPoint()
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let session = cameraManager.createSession(SceneMode.NormalPhoto)
+    var photoSessionOption = session as PhotoSession
+    let photoSession = photoSessionOption.getOrThrow()
+    let point = photoSession.getFocusPoint()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func setFocusMode(FocusMode)
@@ -1118,14 +1232,20 @@ func setFocusMode(afMode: FocusMode): Unit
 // index.cj
 
 import kit.CameraKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let session = cameraManager.createSession(SceneMode.NormalPhoto)
-var photoSessionOption = session as PhotoSession
-let photoSession = photoSessionOption.getOrThrow()
-let afMode = FocusMode.FocusModeManual
-photoSession.setFocusMode(afMode)
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let session = cameraManager.createSession(SceneMode.NormalPhoto)
+    var photoSessionOption = session as PhotoSession
+    let photoSession = photoSessionOption.getOrThrow()
+    let afMode = FocusMode.FocusModeManual
+    photoSession.setFocusMode(afMode)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func setFocusPoint(Point)
@@ -1165,13 +1285,19 @@ func setFocusPoint(point: Point): Unit
 
 import kit.CameraKit.*
 import kit.CameraKit.Point as ImagePoint
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let session = cameraManager.createSession(SceneMode.NormalPhoto)
-var photoSessionOption = session as PhotoSession
-let photoSession = photoSessionOption.getOrThrow()
-photoSession.setFocusPoint(ImagePoint(0.5, 0.5))
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let session = cameraManager.createSession(SceneMode.NormalPhoto)
+    var photoSessionOption = session as PhotoSession
+    let photoSession = photoSessionOption.getOrThrow()
+    photoSession.setFocusPoint(ImagePoint(0.5, 0.5))
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## interface FocusQuery
@@ -1228,15 +1354,20 @@ func isFocusModeSupported(afMode: FocusMode): Bool
 // index.cj
 
 import kit.CameraKit.*
-import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let session = cameraManager.createSession(SceneMode.NormalPhoto)
-var photoSessionOption = session as PhotoSession
-let photoSession = photoSessionOption.getOrThrow()
-let afMode = FocusMode.FocusModeManual
-Hilog.info(0, "AppLogCj", photoSession.isFocusModeSupported(afMode).toString())
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let session = cameraManager.createSession(SceneMode.NormalPhoto)
+    var photoSessionOption = session as PhotoSession
+    let photoSession = photoSessionOption.getOrThrow()
+    let afMode = FocusMode.FocusModeManual
+    Hilog.info(0, "AppLogCj", photoSession.isFocusModeSupported(afMode).toString())
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## interface Session
@@ -1299,13 +1430,19 @@ func addInput(cameraInput: CameraInput): Unit
 // index.cj
 
 import kit.CameraKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let session = cameraManager.createSession(SceneMode.NormalPhoto)
-let cameraDevice = cameraManager.getSupportedCameras()[0]
-let cameraInput = cameraManager.createCameraInput(cameraDevice)
-session.addInput(cameraInput)
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let session = cameraManager.createSession(SceneMode.NormalPhoto)
+    let cameraDevice = cameraManager.getSupportedCameras()[0]
+    let cameraInput = cameraManager.createCameraInput(cameraDevice)
+    session.addInput(cameraInput)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func addOutput(CameraOutput)
@@ -1344,15 +1481,21 @@ func addOutput(cameraOutput: CameraOutput): Unit
 // index.cj
 
 import kit.CameraKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let session = cameraManager.createSession(SceneMode.NormalPhoto)
-let cameraDevice = cameraManager.getSupportedCameras()[0]
-let mode = cameraManager.getSupportedSceneModes(cameraDevice)[0]
-let ability = cameraManager.getSupportedOutputCapability(cameraDevice, mode)
-let cameraOutput = cameraManager.createPhotoOutput(profile:ability.photoProfiles[0])
-session.addOutput(cameraOutput)
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let session = cameraManager.createSession(SceneMode.NormalPhoto)
+    let cameraDevice = cameraManager.getSupportedCameras()[0]
+    let mode = cameraManager.getSupportedSceneModes(cameraDevice)[0]
+    let ability = cameraManager.getSupportedOutputCapability(cameraDevice, mode)
+    let cameraOutput = cameraManager.createPhotoOutput(profile:ability.photoProfiles[0])
+    session.addOutput(cameraOutput)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func beginConfig()
@@ -1384,11 +1527,17 @@ func beginConfig(): Unit
 // index.cj
 
 import kit.CameraKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let session = cameraManager.createSession(SceneMode.NormalPhoto)
-session.beginConfig()
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let session = cameraManager.createSession(SceneMode.NormalPhoto)
+    session.beginConfig()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func canAddInput(CameraInput)
@@ -1425,14 +1574,19 @@ func canAddInput(cameraInput: CameraInput): Bool
 // index.cj
 
 import kit.CameraKit.*
-import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let session = cameraManager.createSession(SceneMode.NormalPhoto)
-let cameraDevice = cameraManager.getSupportedCameras()[0]
-let cameraInput = cameraManager.createCameraInput(cameraDevice)
-Hilog.info(0, "AppLogCj", session.canAddInput(cameraInput).toString())
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let session = cameraManager.createSession(SceneMode.NormalPhoto)
+    let cameraDevice = cameraManager.getSupportedCameras()[0]
+    let cameraInput = cameraManager.createCameraInput(cameraDevice)
+    Hilog.info(0, "AppLogCj", session.canAddInput(cameraInput).toString())
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func canAddOutput(CameraOutput)
@@ -1469,16 +1623,21 @@ func canAddOutput(cameraOutput: CameraOutput): Bool
 // index.cj
 
 import kit.CameraKit.*
-import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let session = cameraManager.createSession(SceneMode.NormalPhoto)
-let cameraDevice = cameraManager.getSupportedCameras()[0]
-let mode = cameraManager.getSupportedSceneModes(cameraDevice)[0]
-let ability = cameraManager.getSupportedOutputCapability(cameraDevice, mode)
-let cameraOutput = cameraManager.createPhotoOutput(profile:ability.photoProfiles[0])
-Hilog.info(0, "AppLogCj", session.canAddOutput(cameraOutput).toString())
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let session = cameraManager.createSession(SceneMode.NormalPhoto)
+    let cameraDevice = cameraManager.getSupportedCameras()[0]
+    let mode = cameraManager.getSupportedSceneModes(cameraDevice)[0]
+    let ability = cameraManager.getSupportedOutputCapability(cameraDevice, mode)
+    let cameraOutput = cameraManager.createPhotoOutput(profile:ability.photoProfiles[0])
+    Hilog.info(0, "AppLogCj", session.canAddOutput(cameraOutput).toString())
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func commitConfig()
@@ -1511,11 +1670,17 @@ func commitConfig(): Unit
 // index.cj
 
 import kit.CameraKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let session = cameraManager.createSession(SceneMode.NormalPhoto)
-session.commitConfig()
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let session = cameraManager.createSession(SceneMode.NormalPhoto)
+    session.commitConfig()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func release()
@@ -1546,11 +1711,17 @@ func release(): Unit
 // index.cj
 
 import kit.CameraKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let session = cameraManager.createSession(SceneMode.NormalPhoto)
-session.release()
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let session = cameraManager.createSession(SceneMode.NormalPhoto)
+    session.release()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func removeInput(CameraInput)
@@ -1591,13 +1762,19 @@ func removeInput(cameraInput: CameraInput): Unit
 // index.cj
 
 import kit.CameraKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let session = cameraManager.createSession(SceneMode.NormalPhoto)
-let cameraDevice = cameraManager.getSupportedCameras()[0]
-let cameraInput = cameraManager.createCameraInput(cameraDevice)
-session.removeInput(cameraInput)
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let session = cameraManager.createSession(SceneMode.NormalPhoto)
+    let cameraDevice = cameraManager.getSupportedCameras()[0]
+    let cameraInput = cameraManager.createCameraInput(cameraDevice)
+    session.removeInput(cameraInput)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func removeOutput(CameraOutput)
@@ -1639,18 +1816,24 @@ import kit.CameraKit.*
 import kit.ImageKit.createImageReceiver
 import kit.ImageKit.Size as ImageSize
 import kit.ImageKit.ImageFormat
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let session = cameraManager.createSession(SceneMode.NormalPhoto)
-let cameraDevice = cameraManager.getSupportedCameras()[0]
-let mode = cameraManager.getSupportedSceneModes(cameraDevice)[0]
-let ability = cameraManager.getSupportedOutputCapability(cameraDevice, mode)
-let size = ImageSize(8, 8192)
-let receiver = createImageReceiver(size, ImageFormat.Jpeg, 8)
-let surfaceId: String = receiver.getReceivingSurfaceId()
-let previewOutput = cameraManager.createPreviewOutput(ability.previewProfiles[0], surfaceId)
-session.removeOutput(previewOutput)
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let session = cameraManager.createSession(SceneMode.NormalPhoto)
+    let cameraDevice = cameraManager.getSupportedCameras()[0]
+    let mode = cameraManager.getSupportedSceneModes(cameraDevice)[0]
+    let ability = cameraManager.getSupportedOutputCapability(cameraDevice, mode)
+    let size = ImageSize(8, 8192)
+    let receiver = createImageReceiver(size, ImageFormat.Jpeg, 8)
+    let surfaceId: String = receiver.getReceivingSurfaceId()
+    let previewOutput = cameraManager.createPreviewOutput(ability.previewProfiles[0], surfaceId)
+    session.removeOutput(previewOutput)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func start()
@@ -1683,11 +1866,17 @@ func start(): Unit
 // index.cj
 
 import kit.CameraKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let session = cameraManager.createSession(SceneMode.NormalPhoto)
-session.start()
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let session = cameraManager.createSession(SceneMode.NormalPhoto)
+    session.start()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func stop()
@@ -1718,11 +1907,17 @@ func stop(): Unit
 // index.cj
 
 import kit.CameraKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let session = cameraManager.createSession(SceneMode.NormalPhoto)
-session.stop()
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let session = cameraManager.createSession(SceneMode.NormalPhoto)
+    session.stop()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## interface Stabilization
@@ -1778,14 +1973,19 @@ func getActiveVideoStabilizationMode(): VideoStabilizationMode
 // index.cj
 
 import kit.CameraKit.*
-import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let session = cameraManager.createSession(SceneMode.NormalVideo)
-var videoSessionOption = session as VideoSession
-let videoSession = videoSessionOption.getOrThrow()
-Hilog.info(0, "AppLogCj", videoSession.getActiveVideoStabilizationMode().toString())
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let session = cameraManager.createSession(SceneMode.NormalVideo)
+    var videoSessionOption = session as VideoSession
+    let videoSession = videoSessionOption.getOrThrow()
+    Hilog.info(0, "AppLogCj", videoSession.getActiveVideoStabilizationMode().toString())
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func setVideoStabilizationMode(VideoStabilizationMode)
@@ -1822,14 +2022,20 @@ func setVideoStabilizationMode(mode: VideoStabilizationMode): Unit
 // index.cj
 
 import kit.CameraKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let session = cameraManager.createSession(SceneMode.NormalVideo)
-var videoSessionOption = session as VideoSession
-let videoSession = videoSessionOption.getOrThrow()
-let vsMode = VideoStabilizationMode.Off
-videoSession.setVideoStabilizationMode(vsMode)
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let session = cameraManager.createSession(SceneMode.NormalVideo)
+    var videoSessionOption = session as VideoSession
+    let videoSession = videoSessionOption.getOrThrow()
+    let vsMode = VideoStabilizationMode.Off
+    videoSession.setVideoStabilizationMode(vsMode)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## interface StabilizationQuery
@@ -1886,14 +2092,20 @@ func isVideoStabilizationModeSupported(vsMode: VideoStabilizationMode): Bool
 // index.cj
 
 import kit.CameraKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let session = cameraManager.createSession(SceneMode.NormalVideo)
-var videoSessionOption = session as VideoSession
-let videoSession = videoSessionOption.getOrThrow()
-let vsMode = VideoStabilizationMode.Off
-videoSession.isVideoStabilizationModeSupported(vsMode)
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let session = cameraManager.createSession(SceneMode.NormalVideo)
+    var videoSessionOption = session as VideoSession
+    let videoSession = videoSessionOption.getOrThrow()
+    let vsMode = VideoStabilizationMode.Off
+    videoSession.isVideoStabilizationModeSupported(vsMode)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## interface Zoom
@@ -1952,14 +2164,19 @@ func getZoomRatio(): Float64
 // index.cj
 
 import kit.CameraKit.*
-import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let session = cameraManager.createSession(SceneMode.NormalPhoto)
-var photoSessionOption = session as PhotoSession
-let photoSession = photoSessionOption.getOrThrow()
-Hilog.info(0, "AppLogCj", photoSession.getZoomRatio().toString())
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let session = cameraManager.createSession(SceneMode.NormalPhoto)
+    var photoSessionOption = session as PhotoSession
+    let photoSession = photoSessionOption.getOrThrow()
+    Hilog.info(0, "AppLogCj", photoSession.getZoomRatio().toString())
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func setSmoothZoom(Float64, SmoothZoomMode)
@@ -1989,14 +2206,20 @@ func setSmoothZoom(targetRatio: Float64, mode: SmoothZoomMode): Unit
 // index.cj
 
 import kit.CameraKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let session = cameraManager.createSession(SceneMode.NormalPhoto)
-var photoSessionOption = session as PhotoSession
-let photoSession = photoSessionOption.getOrThrow()
-let targetRatio: Float64 = 0.3
-photoSession.setSmoothZoom(targetRatio, SmoothZoomMode.Normal)
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let session = cameraManager.createSession(SceneMode.NormalPhoto)
+    var photoSessionOption = session as PhotoSession
+    let photoSession = photoSessionOption.getOrThrow()
+    let targetRatio: Float64 = 0.3
+    photoSession.setSmoothZoom(targetRatio, SmoothZoomMode.Normal)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func setSmoothZoom(Float64)
@@ -2025,14 +2248,20 @@ func setSmoothZoom(targetRatio: Float64): Unit
 // index.cj
 
 import kit.CameraKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let session = cameraManager.createSession(SceneMode.NormalPhoto)
-var photoSessionOption = session as PhotoSession
-let photoSession = photoSessionOption.getOrThrow()
-let targetRatio: Float64 = 0.3
-photoSession.setSmoothZoom(targetRatio)
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let session = cameraManager.createSession(SceneMode.NormalPhoto)
+    var photoSessionOption = session as PhotoSession
+    let photoSession = photoSessionOption.getOrThrow()
+    let targetRatio: Float64 = 0.3
+    photoSession.setSmoothZoom(targetRatio)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func setZoomRatio(Float64)
@@ -2069,14 +2298,20 @@ func setZoomRatio(zoomRatio: Float64): Unit
 // index.cj
 
 import kit.CameraKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let session = cameraManager.createSession(SceneMode.NormalPhoto)
-var photoSessionOption = session as PhotoSession
-let photoSession = photoSessionOption.getOrThrow()
-let zoomRatio: Float64 = 0.5
-photoSession.setZoomRatio(zoomRatio)
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let session = cameraManager.createSession(SceneMode.NormalPhoto)
+    var photoSessionOption = session as PhotoSession
+    let photoSession = photoSessionOption.getOrThrow()
+    let zoomRatio: Float64 = 0.5
+    photoSession.setZoomRatio(zoomRatio)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## interface ZoomQuery
@@ -2127,15 +2362,20 @@ func getZoomRatioRange(): Array<Float64>
 // index.cj
 
 import kit.CameraKit.*
-import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let session = cameraManager.createSession(SceneMode.NormalPhoto)
-var photoSessionOption = session as PhotoSession
-let photoSession = photoSessionOption.getOrThrow()
-let zoomRatio: Float64 = 0.5
-Hilog.info(0, "AppLogCj", photoSession.getZoomRatioRange().toString())
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let session = cameraManager.createSession(SceneMode.NormalPhoto)
+    var photoSessionOption = session as PhotoSession
+    let photoSession = photoSessionOption.getOrThrow()
+    let zoomRatio: Float64 = 0.5
+    Hilog.info(0, "AppLogCj", photoSession.getZoomRatioRange().toString())
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## class CameraDevice
@@ -2276,12 +2516,18 @@ public func close(): Unit
 // index.cj
 
 import kit.CameraKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let cameraDevice = cameraManager.getSupportedCameras()[0]
-let cameraInput = cameraManager.createCameraInput(cameraDevice)
-cameraInput.close()
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let cameraDevice = cameraManager.getSupportedCameras()[0]
+    let cameraInput = cameraManager.createCameraInput(cameraDevice)
+    cameraInput.close()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func off(CameraEvents, CameraDevice, Callback0Argument)
@@ -2320,12 +2566,18 @@ public func off(eventType: CameraEvents, camera: CameraDevice, callback: Callbac
 // index.cj
 
 import kit.CameraKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let cameraDevice = cameraManager.getSupportedCameras()[0]
-let cameraInput = cameraManager.createCameraInput(cameraDevice)
-cameraInput.off(CameraEvents.CameraError, cameraDevice)
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let cameraDevice = cameraManager.getSupportedCameras()[0]
+    let cameraInput = cameraManager.createCameraInput(cameraDevice)
+    cameraInput.off(CameraEvents.CameraError, cameraDevice)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func off(CameraEvents, CameraDevice)
@@ -2363,12 +2615,18 @@ public func off(eventType: CameraEvents, camera: CameraDevice): Unit
 // index.cj
 
 import kit.CameraKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let cameraDevice = cameraManager.getSupportedCameras()[0]
-let cameraInput = cameraManager.createCameraInput(cameraDevice)
-cameraInput.off(CameraEvents.CameraError, cameraDevice)
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let cameraDevice = cameraManager.getSupportedCameras()[0]
+    let cameraInput = cameraManager.createCameraInput(cameraDevice)
+    cameraInput.off(CameraEvents.CameraError, cameraDevice)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func on(CameraEvents, CameraDevice, Callback0Argument)
@@ -2411,24 +2669,28 @@ public func on(eventType: CameraEvents, camera: CameraDevice, callback: Callback
 // index.cj
 
 import kit.CameraKit.*
-import kit.PerformanceAnalysisKit.*
 import ohos.callback_invoke.Callback0Argument
 import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-// 此处代码可添加在依赖项定义中
-class TestCallbackError <: Callback0Argument {
-    public init() {}
-    public open func invoke(res: ?BusinessException): Unit {
-        Hilog.info(0, "Camera", "Call invoke error. code: ${res?.code}, msg: ${res?.message}")
+try {
+    // 此处代码可添加在依赖项定义中
+    class TestCallbackError <: Callback0Argument {
+        public init() {}
+        public open func invoke(res: ?BusinessException): Unit {
+            Hilog.info(0, "Camera", "Call invoke error. code: ${res?.code}, msg: ${res?.message}")
+        }
     }
-}
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let cameraDevice = cameraManager.getSupportedCameras()[0]
-let cameraInput = cameraManager.createCameraInput(cameraDevice)
-let testCallbackError = TestCallbackError()
-cameraInput.on(CameraEvents.CameraError, cameraDevice, testCallbackError)
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let cameraDevice = cameraManager.getSupportedCameras()[0]
+    let cameraInput = cameraManager.createCameraInput(cameraDevice)
+    let testCallbackError = TestCallbackError()
+    cameraInput.on(CameraEvents.CameraError, cameraDevice, testCallbackError)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func open()
@@ -2462,12 +2724,18 @@ public func open(): Unit
 // index.cj
 
 import kit.CameraKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let cameraDevice = cameraManager.getSupportedCameras()[0]
-let cameraInput = cameraManager.createCameraInput(cameraDevice)
-cameraInput.open()
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let cameraDevice = cameraManager.getSupportedCameras()[0]
+    let cameraInput = cameraManager.createCameraInput(cameraDevice)
+    cameraInput.open()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func open(Bool)
@@ -2512,13 +2780,19 @@ public func open(isSecureEnabled: Bool): UInt64
 // index.cj
 
 import kit.CameraKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let cameraDevice = cameraManager.getSupportedCameras()[0]
-let cameraInput = cameraManager.createCameraInput(cameraDevice)
-let isSecureEnabled = false
-let handle = cameraInput.open(isSecureEnabled)
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let cameraDevice = cameraManager.getSupportedCameras()[0]
+    let cameraInput = cameraManager.createCameraInput(cameraDevice)
+    let isSecureEnabled = false
+    let handle = cameraInput.open(isSecureEnabled)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## class CameraManager
@@ -2577,14 +2851,20 @@ public func createCameraInput(camera: CameraDevice): CameraInput
 // index.cj
 
 import kit.CameraKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let cameraDevices = cameraManager.getSupportedCameras()
-let cameraDevice0 = cameraDevices[0]
-let position = cameraDevice0.cameraPosition
-let cameraType = cameraDevice0.cameraType
-let cameraInput = cameraManager.createCameraInput(position , cameraType)
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let cameraDevices = cameraManager.getSupportedCameras()
+    let cameraDevice0 = cameraDevices[0]
+    let position = cameraDevice0.cameraPosition
+    let cameraType = cameraDevice0.cameraType
+    let cameraInput = cameraManager.createCameraInput(position , cameraType)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func createCameraInput(CameraPosition, CameraType)
@@ -2632,14 +2912,20 @@ public func createCameraInput(position: CameraPosition, cameraType: CameraType):
 // index.cj
 
 import kit.CameraKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let cameraDevices = cameraManager.getSupportedCameras()
-let cameraDevice0 = cameraDevices[0]
-let position = cameraDevice0.cameraPosition
-let cameraType = cameraDevice0.cameraType
-let cameraInput = cameraManager.createCameraInput(position , cameraType)
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let cameraDevices = cameraManager.getSupportedCameras()
+    let cameraDevice0 = cameraDevices[0]
+    let position = cameraDevice0.cameraPosition
+    let cameraType = cameraDevice0.cameraType
+    let cameraInput = cameraManager.createCameraInput(position , cameraType)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func createPhotoOutput(?Profile)
@@ -2683,15 +2969,21 @@ public func createPhotoOutput(?Profile = None): PhotoOutput
 // index.cj
 
 import kit.CameraKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let cameraDevices = cameraManager.getSupportedCameras()
-let camera = cameraDevices[0]
-let mode = cameraManager.getSupportedSceneModes(camera)[0]
-let cameraOutputCapability = cameraManager.getSupportedOutputCapability(camera, mode)
-let profile = cameraOutputCapability.photoProfiles[0]
-let photoOutput  = cameraManager.createPhotoOutput(profile:profile)
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let cameraDevices = cameraManager.getSupportedCameras()
+    let camera = cameraDevices[0]
+    let mode = cameraManager.getSupportedSceneModes(camera)[0]
+    let cameraOutputCapability = cameraManager.getSupportedOutputCapability(camera, mode)
+    let profile = cameraOutputCapability.photoProfiles[0]
+    let photoOutput  = cameraManager.createPhotoOutput(profile:profile)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func createPreviewOutput(Profile, String)
@@ -2739,13 +3031,19 @@ import kit.CameraKit.*
 import kit.ImageKit.createImageReceiver
 import kit.ImageKit.Size as ImageSize
 import kit.ImageKit.ImageFormat
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let size = ImageSize(8, 8192)
-let receiver = createImageReceiver(size, ImageFormat.Jpeg, 8)
-let surfaceId: String = receiver.getReceivingSurfaceId()
-let previewOutput = cameraManager.createPreviewOutput(surfaceId)
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let size = ImageSize(8, 8192)
+    let receiver = createImageReceiver(size, ImageFormat.Jpeg, 8)
+    let surfaceId: String = receiver.getReceivingSurfaceId()
+    let previewOutput = cameraManager.createPreviewOutput(surfaceId)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func createPreviewOutput(String)
@@ -2792,13 +3090,19 @@ import kit.CameraKit.*
 import kit.ImageKit.createImageReceiver
 import kit.ImageKit.Size as ImageSize
 import kit.ImageKit.ImageFormat
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let size = ImageSize(8, 8192)
-let receiver = createImageReceiver(size, ImageFormat.Jpeg, 8)
-let surfaceId: String = receiver.getReceivingSurfaceId()
-let previewOutput = cameraManager.createPreviewOutput(surfaceId)
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let size = ImageSize(8, 8192)
+    let receiver = createImageReceiver(size, ImageFormat.Jpeg, 8)
+    let surfaceId: String = receiver.getReceivingSurfaceId()
+    let previewOutput = cameraManager.createPreviewOutput(surfaceId)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func createSession(SceneMode)
@@ -2842,13 +3146,19 @@ public func createSession(mode: SceneMode): Session
 // index.cj
 
 import kit.CameraKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let cameraDevices = cameraManager.getSupportedCameras()
-let camera = cameraDevices[0]
-let mode = cameraManager.getSupportedSceneModes(camera)[0]
-let session = cameraManager.createSession(mode)
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let cameraDevices = cameraManager.getSupportedCameras()
+    let camera = cameraDevices[0]
+    let mode = cameraManager.getSupportedSceneModes(camera)[0]
+    let session = cameraManager.createSession(mode)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func createVideoOutput(VideoProfile, String)
@@ -2896,13 +3206,19 @@ import kit.CameraKit.*
 import kit.ImageKit.createImageReceiver
 import kit.ImageKit.Size as ImageSize
 import kit.ImageKit.ImageFormat
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let size = ImageSize(8, 8192)
-let receiver = createImageReceiver(size, ImageFormat.Jpeg, 8)
-let surfaceId: String = receiver.getReceivingSurfaceId()
-let videoOutput = cameraManager.createVideoOutput(surfaceId)
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let size = ImageSize(8, 8192)
+    let receiver = createImageReceiver(size, ImageFormat.Jpeg, 8)
+    let surfaceId: String = receiver.getReceivingSurfaceId()
+    let videoOutput = cameraManager.createVideoOutput(surfaceId)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func createVideoOutput(String)
@@ -2949,13 +3265,19 @@ import kit.CameraKit.*
 import kit.ImageKit.createImageReceiver
 import kit.ImageKit.Size as ImageSize
 import kit.ImageKit.ImageFormat
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let size = ImageSize(8, 8192)
-let receiver = createImageReceiver(size, ImageFormat.Jpeg, 8)
-let surfaceId: String = receiver.getReceivingSurfaceId()
-let videoOutput = cameraManager.createVideoOutput(surfaceId)
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let size = ImageSize(8, 8192)
+    let receiver = createImageReceiver(size, ImageFormat.Jpeg, 8)
+    let surfaceId: String = receiver.getReceivingSurfaceId()
+    let videoOutput = cameraManager.createVideoOutput(surfaceId)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getSupportedCameras()
@@ -2984,10 +3306,16 @@ public func getSupportedCameras(): Array<CameraDevice>
 // index.cj
 
 import kit.CameraKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let cameraDevices = cameraManager.getSupportedCameras()
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let cameraDevices = cameraManager.getSupportedCameras()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getSupportedOutputCapability(CameraDevice, SceneMode)
@@ -3023,13 +3351,19 @@ public func getSupportedOutputCapability(camera: CameraDevice, mode: SceneMode):
 // index.cj
 
 import kit.CameraKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let cameraDevices = cameraManager.getSupportedCameras()
-let camera = cameraDevices[0]
-let mode = cameraManager.getSupportedSceneModes(camera)[0]
-let cameraOutputCapability = cameraManager.getSupportedOutputCapability(camera, mode)
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let cameraDevices = cameraManager.getSupportedCameras()
+    let camera = cameraDevices[0]
+    let mode = cameraManager.getSupportedSceneModes(camera)[0]
+    let cameraOutputCapability = cameraManager.getSupportedOutputCapability(camera, mode)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getSupportedSceneModes(CameraDevice)
@@ -3064,12 +3398,18 @@ public func getSupportedSceneModes(camera: CameraDevice): Array<SceneMode>
 // index.cj
 
 import kit.CameraKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let cameraDevices = cameraManager.getSupportedCameras()
-let camera = cameraDevices[0]
-let mode = cameraManager.getSupportedSceneModes(camera)
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let cameraDevices = cameraManager.getSupportedCameras()
+    let camera = cameraDevices[0]
+    let mode = cameraManager.getSupportedSceneModes(camera)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getTorchMode()
@@ -3098,10 +3438,16 @@ public func getTorchMode(): TorchMode
 // index.cj
 
 import kit.CameraKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let torchMode = cameraManager.getTorchMode()
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let torchMode = cameraManager.getTorchMode()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func isCameraMuted()
@@ -3130,11 +3476,16 @@ public func isCameraMuted(): Bool
 // index.cj
 
 import kit.CameraKit.*
-import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-Hilog.info(0, "AppLogCj", cameraManager.isCameraMuted().toString())
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    Hilog.info(0, "AppLogCj", cameraManager.isCameraMuted().toString())
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func isTorchModeSupported(TorchMode)
@@ -3169,12 +3520,17 @@ public func isTorchModeSupported(mode: TorchMode): Bool
 // index.cj
 
 import kit.CameraKit.*
-import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let torchMode = cameraManager.getTorchMode()
-Hilog.info(0, "AppLogCj", cameraManager.isTorchModeSupported(torchMode).toString())
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let torchMode = cameraManager.getTorchMode()
+    Hilog.info(0, "AppLogCj", cameraManager.isTorchModeSupported(torchMode).toString())
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func isTorchSupported()
@@ -3203,11 +3559,16 @@ public func isTorchSupported(): Bool
 // index.cj
 
 import kit.CameraKit.*
-import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-Hilog.info(0, "AppLogCj", cameraManager.isTorchSupported().toString())
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    Hilog.info(0, "AppLogCj", cameraManager.isTorchSupported().toString())
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func off(CameraEvents, Callback1Argument\<CameraStatusInfo>)
@@ -3245,10 +3606,16 @@ public func off(eventType: CameraEvents, callback: Callback1Argument<CameraStatu
 // index.cj
 
 import kit.CameraKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-cameraManager.off(CameraEvents.TorchStatusChange)
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    cameraManager.off(CameraEvents.TorchStatusChange)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func off(CameraEvents, Callback1Argument\<FoldStatusInfo>)
@@ -3286,10 +3653,16 @@ public func off(eventType: CameraEvents, callback: Callback1Argument<FoldStatusI
 // index.cj
 
 import kit.CameraKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-cameraManager.off(CameraEvents.TorchStatusChange)
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    cameraManager.off(CameraEvents.TorchStatusChange)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func off(CameraEvents, Callback1Argument\<TorchStatusInfo>)
@@ -3327,10 +3700,16 @@ public func off(eventType: CameraEvents, callback: Callback1Argument<TorchStatus
 // index.cj
 
 import kit.CameraKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-cameraManager.off(CameraEvents.TorchStatusChange)
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    cameraManager.off(CameraEvents.TorchStatusChange)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func off(CameraEvents)
@@ -3367,10 +3746,16 @@ public func off(eventType: CameraEvents): Unit
 // index.cj
 
 import kit.CameraKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-cameraManager.off(CameraEvents.TorchStatusChange)
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    cameraManager.off(CameraEvents.TorchStatusChange)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func on(CameraEvents, Callback1Argument\<CameraStatusInfo>)
@@ -3412,22 +3797,26 @@ public func on(eventType: CameraEvents, callback: Callback1Argument<CameraStatus
 // index.cj
 
 import kit.CameraKit.*
-import kit.PerformanceAnalysisKit.*
 import ohos.business_exception.BusinessException
 import ohos.callback_invoke.Callback1Argument
+import kit.PerformanceAnalysisKit.Hilog
 
-// 此处代码可添加在依赖项定义中
-class TestCallbackTorchStatusChange <: Callback1Argument<TorchStatusInfo> {
-    public init() {}
-    public open func invoke(err: ?BusinessException, res: TorchStatusInfo): Unit {
-        Hilog.info(0, "Camera", "Call invoke TorchStatusChange. isTorchAvailable: ${res.isTorchAvailable}, isTorchActive: ${res.isTorchActive}, torchLevel:${res.torchLevel}")
+try {
+    // 此处代码可添加在依赖项定义中
+    class TestCallbackTorchStatusChange <: Callback1Argument<TorchStatusInfo> {
+        public init() {}
+        public open func invoke(err: ?BusinessException, res: TorchStatusInfo): Unit {
+            Hilog.info(0, "Camera", "Call invoke TorchStatusChange. isTorchAvailable: ${res.isTorchAvailable}, isTorchActive: ${res.isTorchActive}, torchLevel:${res.torchLevel}")
+        }
     }
-}
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let testCallbackTorchStatusChange = TestCallbackTorchStatusChange()
-cameraManager.on(CameraEvents.TorchStatusChange, testCallbackTorchStatusChange)
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let testCallbackTorchStatusChange = TestCallbackTorchStatusChange()
+    cameraManager.on(CameraEvents.TorchStatusChange, testCallbackTorchStatusChange)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func on(CameraEvents, Callback1Argument\<FoldStatusInfo>)
@@ -3469,22 +3858,26 @@ public func on(eventType: CameraEvents, callback: Callback1Argument<FoldStatusIn
 // index.cj
 
 import kit.CameraKit.*
-import kit.PerformanceAnalysisKit.*
 import ohos.business_exception.BusinessException
 import ohos.callback_invoke.Callback1Argument
+import kit.PerformanceAnalysisKit.Hilog
 
-// 此处代码可添加在依赖项定义中
-class TestCallbackTorchStatusChange <: Callback1Argument<TorchStatusInfo> {
-    public init() {}
-    public open func invoke(err: ?BusinessException, res: TorchStatusInfo): Unit {
-        Hilog.info(0, "Camera", "Call invoke TorchStatusChange. isTorchAvailable: ${res.isTorchAvailable}, isTorchActive: ${res.isTorchActive}, torchLevel:${res.torchLevel}")
+try {
+    // 此处代码可添加在依赖项定义中
+    class TestCallbackTorchStatusChange <: Callback1Argument<TorchStatusInfo> {
+        public init() {}
+        public open func invoke(err: ?BusinessException, res: TorchStatusInfo): Unit {
+            Hilog.info(0, "Camera", "Call invoke TorchStatusChange. isTorchAvailable: ${res.isTorchAvailable}, isTorchActive: ${res.isTorchActive}, torchLevel:${res.torchLevel}")
+        }
     }
-}
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let testCallbackTorchStatusChange = TestCallbackTorchStatusChange()
-cameraManager.on(CameraEvents.TorchStatusChange, testCallbackTorchStatusChange)
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let testCallbackTorchStatusChange = TestCallbackTorchStatusChange()
+    cameraManager.on(CameraEvents.TorchStatusChange, testCallbackTorchStatusChange)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func on(CameraEvents, Callback1Argument\<TorchStatusInfo>)
@@ -3526,22 +3919,26 @@ public func on(eventType: CameraEvents, callback: Callback1Argument<TorchStatusI
 // index.cj
 
 import kit.CameraKit.*
-import kit.PerformanceAnalysisKit.*
 import ohos.business_exception.BusinessException
 import ohos.callback_invoke.Callback1Argument
+import kit.PerformanceAnalysisKit.Hilog
 
-// 此处代码可添加在依赖项定义中
-class TestCallbackTorchStatusChange <: Callback1Argument<TorchStatusInfo> {
-    public init() {}
-    public open func invoke(err: ?BusinessException, res: TorchStatusInfo): Unit {
-        Hilog.info(0, "Camera", "Call invoke TorchStatusChange. isTorchAvailable: ${res.isTorchAvailable}, isTorchActive: ${res.isTorchActive}, torchLevel:${res.torchLevel}")
+try {
+    // 此处代码可添加在依赖项定义中
+    class TestCallbackTorchStatusChange <: Callback1Argument<TorchStatusInfo> {
+        public init() {}
+        public open func invoke(err: ?BusinessException, res: TorchStatusInfo): Unit {
+            Hilog.info(0, "Camera", "Call invoke TorchStatusChange. isTorchAvailable: ${res.isTorchAvailable}, isTorchActive: ${res.isTorchActive}, torchLevel:${res.torchLevel}")
+        }
     }
-}
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let testCallbackTorchStatusChange = TestCallbackTorchStatusChange()
-cameraManager.on(CameraEvents.TorchStatusChange, testCallbackTorchStatusChange)
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let testCallbackTorchStatusChange = TestCallbackTorchStatusChange()
+    cameraManager.on(CameraEvents.TorchStatusChange, testCallbackTorchStatusChange)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func setTorchMode(TorchMode)
@@ -3579,11 +3976,17 @@ public func setTorchMode(mode: TorchMode): Unit
 // index.cj
 
 import kit.CameraKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-cameraManager.setTorchMode(TorchMode.On)
-cameraManager.setTorchMode(TorchMode.Off)
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    cameraManager.setTorchMode(TorchMode.On)
+    cameraManager.setTorchMode(TorchMode.Off)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## class CameraOutputCapability
@@ -4222,14 +4625,20 @@ public func capture(): Unit
 // index.cj
 
 import kit.CameraKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let device = cameraManager.getSupportedCameras()[0]
-let mode = cameraManager.getSupportedSceneModes(device)[0]
-let ability = cameraManager.getSupportedOutputCapability(device, mode)
-let output = cameraManager.createPhotoOutput(profile:ability.photoProfiles[0])
-output.capture(PhotoCaptureSetting())
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let device = cameraManager.getSupportedCameras()[0]
+    let mode = cameraManager.getSupportedSceneModes(device)[0]
+    let ability = cameraManager.getSupportedOutputCapability(device, mode)
+    let output = cameraManager.createPhotoOutput(profile:ability.photoProfiles[0])
+    output.capture(PhotoCaptureSetting())
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func capture(PhotoCaptureSetting)
@@ -4268,14 +4677,20 @@ public func capture(setting: PhotoCaptureSetting): Unit
 // index.cj
 
 import kit.CameraKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let device = cameraManager.getSupportedCameras()[0]
-let mode = cameraManager.getSupportedSceneModes(device)[0]
-let ability = cameraManager.getSupportedOutputCapability(device, mode)
-let output = cameraManager.createPhotoOutput(profile:ability.photoProfiles[0])
-output.capture(PhotoCaptureSetting())
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let device = cameraManager.getSupportedCameras()[0]
+    let mode = cameraManager.getSupportedSceneModes(device)[0]
+    let ability = cameraManager.getSupportedOutputCapability(device, mode)
+    let output = cameraManager.createPhotoOutput(profile:ability.photoProfiles[0])
+    output.capture(PhotoCaptureSetting())
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func enableMirror(Bool)
@@ -4314,15 +4729,21 @@ public func enableMirror(enabled: Bool): Unit
 // index.cj
 
 import kit.CameraKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let device = cameraManager.getSupportedCameras()[0]
-let mode = cameraManager.getSupportedSceneModes(device)[0]
-let ability = cameraManager.getSupportedOutputCapability(device, mode)
-let output = cameraManager.createPhotoOutput(profile:ability.photoProfiles[0])
-let enabled = true
-output.enableMirror(enabled)
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let device = cameraManager.getSupportedCameras()[0]
+    let mode = cameraManager.getSupportedSceneModes(device)[0]
+    let ability = cameraManager.getSupportedOutputCapability(device, mode)
+    let output = cameraManager.createPhotoOutput(profile:ability.photoProfiles[0])
+    let enabled = true
+    output.enableMirror(enabled)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func enableMovingPhoto(Bool)
@@ -4363,15 +4784,21 @@ public func enableMovingPhoto(enabled: Bool): Unit
 // index.cj
 
 import kit.CameraKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let device = cameraManager.getSupportedCameras()[0]
-let mode = cameraManager.getSupportedSceneModes(device)[0]
-let ability = cameraManager.getSupportedOutputCapability(device, mode)
-let output = cameraManager.createPhotoOutput(profile:ability.photoProfiles[0])
-let enabled = true
-output.enableMovingPhoto(enabled)
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let device = cameraManager.getSupportedCameras()[0]
+    let mode = cameraManager.getSupportedSceneModes(device)[0]
+    let ability = cameraManager.getSupportedOutputCapability(device, mode)
+    let output = cameraManager.createPhotoOutput(profile:ability.photoProfiles[0])
+    let enabled = true
+    output.enableMovingPhoto(enabled)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getActiveProfile()
@@ -4408,14 +4835,20 @@ public func getActiveProfile(): Profile
 // index.cj
 
 import kit.CameraKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let device = cameraManager.getSupportedCameras()[0]
-let mode = cameraManager.getSupportedSceneModes(device)[0]
-let ability = cameraManager.getSupportedOutputCapability(device, mode)
-let output = cameraManager.createPhotoOutput(profile:ability.photoProfiles[0])
-let profile = output.getActiveProfile()
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let device = cameraManager.getSupportedCameras()[0]
+    let mode = cameraManager.getSupportedSceneModes(device)[0]
+    let ability = cameraManager.getSupportedOutputCapability(device, mode)
+    let output = cameraManager.createPhotoOutput(profile:ability.photoProfiles[0])
+    let profile = output.getActiveProfile()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getPhotoRotation(Int32)
@@ -4463,15 +4896,21 @@ public func getPhotoRotation(deviceDegree: Int32): ImageRotation
 // index.cj
 
 import kit.CameraKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let device = cameraManager.getSupportedCameras()[0]
-let mode = cameraManager.getSupportedSceneModes(device)[0]
-let ability = cameraManager.getSupportedOutputCapability(device, mode)
-let output = cameraManager.createPhotoOutput(profile:ability.photoProfiles[0])
-let deviceDegree: Int32 = 0
-let imageRotation = output.getPhotoRotation(deviceDegree)
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let device = cameraManager.getSupportedCameras()[0]
+    let mode = cameraManager.getSupportedSceneModes(device)[0]
+    let ability = cameraManager.getSupportedOutputCapability(device, mode)
+    let output = cameraManager.createPhotoOutput(profile:ability.photoProfiles[0])
+    let deviceDegree: Int32 = 0
+    let imageRotation = output.getPhotoRotation(deviceDegree)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getSupportedMovingPhotoVideoCodecTypes()
@@ -4500,14 +4939,20 @@ public func getSupportedMovingPhotoVideoCodecTypes(): Array<VideoCodecType>
 // index.cj
 
 import kit.CameraKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let device = cameraManager.getSupportedCameras()[0]
-let mode = cameraManager.getSupportedSceneModes(device)[0]
-let ability = cameraManager.getSupportedOutputCapability(device, mode)
-let output = cameraManager.createPhotoOutput(profile:ability.photoProfiles[0])
-let videoCodecTypes = output.getSupportedMovingPhotoVideoCodecTypes()
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let device = cameraManager.getSupportedCameras()[0]
+    let mode = cameraManager.getSupportedSceneModes(device)[0]
+    let ability = cameraManager.getSupportedOutputCapability(device, mode)
+    let output = cameraManager.createPhotoOutput(profile:ability.photoProfiles[0])
+    let videoCodecTypes = output.getSupportedMovingPhotoVideoCodecTypes()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func isMirrorSupported()
@@ -4544,15 +4989,20 @@ public func isMirrorSupported(): Bool
 // index.cj
 
 import kit.CameraKit.*
-import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let device = cameraManager.getSupportedCameras()[0]
-let mode = cameraManager.getSupportedSceneModes(device)[0]
-let ability = cameraManager.getSupportedOutputCapability(device, mode)
-let output = cameraManager.createPhotoOutput(profile:ability.photoProfiles[0])
-Hilog.info(0, "AppLogCj", output.isMirrorSupported().toString())
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let device = cameraManager.getSupportedCameras()[0]
+    let mode = cameraManager.getSupportedSceneModes(device)[0]
+    let ability = cameraManager.getSupportedOutputCapability(device, mode)
+    let output = cameraManager.createPhotoOutput(profile:ability.photoProfiles[0])
+    Hilog.info(0, "AppLogCj", output.isMirrorSupported().toString())
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func isMovingPhotoSupported()
@@ -4589,15 +5039,20 @@ public func isMovingPhotoSupported(): Bool
 // index.cj
 
 import kit.CameraKit.*
-import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let device = cameraManager.getSupportedCameras()[0]
-let mode = cameraManager.getSupportedSceneModes(device)[0]
-let ability = cameraManager.getSupportedOutputCapability(device, mode)
-let output = cameraManager.createPhotoOutput(profile:ability.photoProfiles[0])
-Hilog.info(0, "AppLogCj", output.isMovingPhotoSupported().toString())
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let device = cameraManager.getSupportedCameras()[0]
+    let mode = cameraManager.getSupportedSceneModes(device)[0]
+    let ability = cameraManager.getSupportedOutputCapability(device, mode)
+    let output = cameraManager.createPhotoOutput(profile:ability.photoProfiles[0])
+    Hilog.info(0, "AppLogCj", output.isMovingPhotoSupported().toString())
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func off(CameraEvents, Callback1Argument\<CaptureStartInfo>)
@@ -4635,14 +5090,20 @@ public func off(eventType: CameraEvents, callback: Callback1Argument<CaptureStar
 // index.cj
 
 import kit.CameraKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let device = cameraManager.getSupportedCameras()[0]
-let mode = cameraManager.getSupportedSceneModes(device)[0]
-let ability = cameraManager.getSupportedOutputCapability(device, mode)
-let output = cameraManager.createPhotoOutput(profile:ability.photoProfiles[0])
-output.off(CameraEvents.CaptureStartWithInfo)
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let device = cameraManager.getSupportedCameras()[0]
+    let mode = cameraManager.getSupportedSceneModes(device)[0]
+    let ability = cameraManager.getSupportedOutputCapability(device, mode)
+    let output = cameraManager.createPhotoOutput(profile:ability.photoProfiles[0])
+    output.off(CameraEvents.CaptureStartWithInfo)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func off(CameraEvents, Callback1Argument\<FrameShutterInfo>)
@@ -4680,14 +5141,20 @@ public func off(eventType: CameraEvents, callback: Callback1Argument<FrameShutte
 // index.cj
 
 import kit.CameraKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let device = cameraManager.getSupportedCameras()[0]
-let mode = cameraManager.getSupportedSceneModes(device)[0]
-let ability = cameraManager.getSupportedOutputCapability(device, mode)
-let output = cameraManager.createPhotoOutput(profile:ability.photoProfiles[0])
-output.off(CameraEvents.CaptureStartWithInfo)
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let device = cameraManager.getSupportedCameras()[0]
+    let mode = cameraManager.getSupportedSceneModes(device)[0]
+    let ability = cameraManager.getSupportedOutputCapability(device, mode)
+    let output = cameraManager.createPhotoOutput(profile:ability.photoProfiles[0])
+    output.off(CameraEvents.CaptureStartWithInfo)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func off(CameraEvents, Callback1Argument\<CaptureEndInfo>)
@@ -4725,14 +5192,20 @@ public func off(eventType: CameraEvents, callback: Callback1Argument<CaptureEndI
 // index.cj
 
 import kit.CameraKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let device = cameraManager.getSupportedCameras()[0]
-let mode = cameraManager.getSupportedSceneModes(device)[0]
-let ability = cameraManager.getSupportedOutputCapability(device, mode)
-let output = cameraManager.createPhotoOutput(profile:ability.photoProfiles[0])
-output.off(CameraEvents.CaptureStartWithInfo)
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let device = cameraManager.getSupportedCameras()[0]
+    let mode = cameraManager.getSupportedSceneModes(device)[0]
+    let ability = cameraManager.getSupportedOutputCapability(device, mode)
+    let output = cameraManager.createPhotoOutput(profile:ability.photoProfiles[0])
+    output.off(CameraEvents.CaptureStartWithInfo)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func off(CameraEvents, Callback1Argument\<FrameShutterEndInfo>)
@@ -4770,14 +5243,20 @@ public func off(eventType: CameraEvents, callback: Callback1Argument<FrameShutte
 // index.cj
 
 import kit.CameraKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let device = cameraManager.getSupportedCameras()[0]
-let mode = cameraManager.getSupportedSceneModes(device)[0]
-let ability = cameraManager.getSupportedOutputCapability(device, mode)
-let output = cameraManager.createPhotoOutput(profile:ability.photoProfiles[0])
-output.off(CameraEvents.CaptureStartWithInfo)
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let device = cameraManager.getSupportedCameras()[0]
+    let mode = cameraManager.getSupportedSceneModes(device)[0]
+    let ability = cameraManager.getSupportedOutputCapability(device, mode)
+    let output = cameraManager.createPhotoOutput(profile:ability.photoProfiles[0])
+    output.off(CameraEvents.CaptureStartWithInfo)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func off(CameraEvents, Callback0Argument)
@@ -4815,14 +5294,20 @@ public func off(eventType: CameraEvents, callback: Callback0Argument): Unit
 // index.cj
 
 import kit.CameraKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let device = cameraManager.getSupportedCameras()[0]
-let mode = cameraManager.getSupportedSceneModes(device)[0]
-let ability = cameraManager.getSupportedOutputCapability(device, mode)
-let output = cameraManager.createPhotoOutput(profile:ability.photoProfiles[0])
-output.off(CameraEvents.CaptureStartWithInfo)
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let device = cameraManager.getSupportedCameras()[0]
+    let mode = cameraManager.getSupportedSceneModes(device)[0]
+    let ability = cameraManager.getSupportedOutputCapability(device, mode)
+    let output = cameraManager.createPhotoOutput(profile:ability.photoProfiles[0])
+    output.off(CameraEvents.CaptureStartWithInfo)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func off(CameraEvents, Callback1Argument\<Float64>)
@@ -4860,14 +5345,20 @@ public func off(eventType: CameraEvents, callback: Callback1Argument<Float64>): 
 // index.cj
 
 import kit.CameraKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let device = cameraManager.getSupportedCameras()[0]
-let mode = cameraManager.getSupportedSceneModes(device)[0]
-let ability = cameraManager.getSupportedOutputCapability(device, mode)
-let output = cameraManager.createPhotoOutput(profile:ability.photoProfiles[0])
-output.off(CameraEvents.CaptureStartWithInfo)
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let device = cameraManager.getSupportedCameras()[0]
+    let mode = cameraManager.getSupportedSceneModes(device)[0]
+    let ability = cameraManager.getSupportedOutputCapability(device, mode)
+    let output = cameraManager.createPhotoOutput(profile:ability.photoProfiles[0])
+    output.off(CameraEvents.CaptureStartWithInfo)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func off(CameraEvents)
@@ -4904,14 +5395,20 @@ public func off(eventType: CameraEvents): Unit
 // index.cj
 
 import kit.CameraKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let device = cameraManager.getSupportedCameras()[0]
-let mode = cameraManager.getSupportedSceneModes(device)[0]
-let ability = cameraManager.getSupportedOutputCapability(device, mode)
-let output = cameraManager.createPhotoOutput(profile:ability.photoProfiles[0])
-output.off(CameraEvents.CaptureStartWithInfo)
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let device = cameraManager.getSupportedCameras()[0]
+    let mode = cameraManager.getSupportedSceneModes(device)[0]
+    let ability = cameraManager.getSupportedOutputCapability(device, mode)
+    let output = cameraManager.createPhotoOutput(profile:ability.photoProfiles[0])
+    output.off(CameraEvents.CaptureStartWithInfo)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func on(CameraEvents, Callback1Argument\<CaptureStartInfo>)
@@ -4953,26 +5450,30 @@ public func on(eventType: CameraEvents, callback: Callback1Argument<CaptureStart
 // index.cj
 
 import kit.CameraKit.*
-import kit.PerformanceAnalysisKit.*
 import ohos.callback_invoke.Callback0Argument
 import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-// 此处代码可添加在依赖项定义中
-class TestCallbackError <: Callback0Argument {
-    public init() {}
-    public open func invoke(res: ?BusinessException): Unit {
-        Hilog.info(0, "Camera", "Call invoke error. code: ${res?.code}, msg: ${res?.message}")
+try {
+    // 此处代码可添加在依赖项定义中
+    class TestCallbackError <: Callback0Argument {
+        public init() {}
+        public open func invoke(res: ?BusinessException): Unit {
+            Hilog.info(0, "Camera", "Call invoke error. code: ${res?.code}, msg: ${res?.message}")
+        }
     }
-}
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let device = cameraManager.getSupportedCameras()[0]
-let mode = cameraManager.getSupportedSceneModes(device)[0]
-let ability = cameraManager.getSupportedOutputCapability(device, mode)
-let output = cameraManager.createPhotoOutput(profile:ability.photoProfiles[0])
-let testCallbackError = TestCallbackError()
-output.on(CameraEvents.CameraError, testCallbackError)
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let device = cameraManager.getSupportedCameras()[0]
+    let mode = cameraManager.getSupportedSceneModes(device)[0]
+    let ability = cameraManager.getSupportedOutputCapability(device, mode)
+    let output = cameraManager.createPhotoOutput(profile:ability.photoProfiles[0])
+    let testCallbackError = TestCallbackError()
+    output.on(CameraEvents.CameraError, testCallbackError)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func on(CameraEvents, Callback1Argument\<FrameShutterInfo>)
@@ -5014,26 +5515,30 @@ public func on(eventType: CameraEvents, callback: Callback1Argument<FrameShutter
 // index.cj
 
 import kit.CameraKit.*
-import kit.PerformanceAnalysisKit.*
 import ohos.callback_invoke.Callback0Argument
 import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-// 此处代码可添加在依赖项定义中
-class TestCallbackError <: Callback0Argument {
-    public init() {}
-    public open func invoke(res: ?BusinessException): Unit {
-        Hilog.info(0, "Camera", "Call invoke error. code: ${res?.code}, msg: ${res?.message}")
+try {
+    // 此处代码可添加在依赖项定义中
+    class TestCallbackError <: Callback0Argument {
+        public init() {}
+        public open func invoke(res: ?BusinessException): Unit {
+            Hilog.info(0, "Camera", "Call invoke error. code: ${res?.code}, msg: ${res?.message}")
+        }
     }
-}
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let device = cameraManager.getSupportedCameras()[0]
-let mode = cameraManager.getSupportedSceneModes(device)[0]
-let ability = cameraManager.getSupportedOutputCapability(device, mode)
-let output = cameraManager.createPhotoOutput(profile:ability.photoProfiles[0])
-let testCallbackError = TestCallbackError()
-output.on(CameraEvents.CameraError, testCallbackError)
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let device = cameraManager.getSupportedCameras()[0]
+    let mode = cameraManager.getSupportedSceneModes(device)[0]
+    let ability = cameraManager.getSupportedOutputCapability(device, mode)
+    let output = cameraManager.createPhotoOutput(profile:ability.photoProfiles[0])
+    let testCallbackError = TestCallbackError()
+    output.on(CameraEvents.CameraError, testCallbackError)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func on(CameraEvents, Callback1Argument\<CaptureEndInfo>)
@@ -5075,26 +5580,30 @@ public func on(eventType: CameraEvents, callback: Callback1Argument<CaptureEndIn
 // index.cj
 
 import kit.CameraKit.*
-import kit.PerformanceAnalysisKit.*
 import ohos.callback_invoke.Callback0Argument
 import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-// 此处代码可添加在依赖项定义中
-class TestCallbackError <: Callback0Argument {
-    public init() {}
-    public open func invoke(res: ?BusinessException): Unit {
-        Hilog.info(0, "Camera", "Call invoke error. code: ${res?.code}, msg: ${res?.message}")
+try {
+    // 此处代码可添加在依赖项定义中
+    class TestCallbackError <: Callback0Argument {
+        public init() {}
+        public open func invoke(res: ?BusinessException): Unit {
+            Hilog.info(0, "Camera", "Call invoke error. code: ${res?.code}, msg: ${res?.message}")
+        }
     }
-}
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let device = cameraManager.getSupportedCameras()[0]
-let mode = cameraManager.getSupportedSceneModes(device)[0]
-let ability = cameraManager.getSupportedOutputCapability(device, mode)
-let output = cameraManager.createPhotoOutput(profile:ability.photoProfiles[0])
-let testCallbackError = TestCallbackError()
-output.on(CameraEvents.CameraError, testCallbackError)
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let device = cameraManager.getSupportedCameras()[0]
+    let mode = cameraManager.getSupportedSceneModes(device)[0]
+    let ability = cameraManager.getSupportedOutputCapability(device, mode)
+    let output = cameraManager.createPhotoOutput(profile:ability.photoProfiles[0])
+    let testCallbackError = TestCallbackError()
+    output.on(CameraEvents.CameraError, testCallbackError)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func on(CameraEvents, Callback1Argument\<FrameShutterEndInfo>)
@@ -5136,26 +5645,30 @@ public func on(eventType: CameraEvents, callback: Callback1Argument<FrameShutter
 // index.cj
 
 import kit.CameraKit.*
-import kit.PerformanceAnalysisKit.*
 import ohos.callback_invoke.Callback0Argument
 import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-// 此处代码可添加在依赖项定义中
-class TestCallbackError <: Callback0Argument {
-    public init() {}
-    public open func invoke(res: ?BusinessException): Unit {
-        Hilog.info(0, "Camera", "Call invoke error. code: ${res?.code}, msg: ${res?.message}")
+try {
+    // 此处代码可添加在依赖项定义中
+    class TestCallbackError <: Callback0Argument {
+        public init() {}
+        public open func invoke(res: ?BusinessException): Unit {
+            Hilog.info(0, "Camera", "Call invoke error. code: ${res?.code}, msg: ${res?.message}")
+        }
     }
-}
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let device = cameraManager.getSupportedCameras()[0]
-let mode = cameraManager.getSupportedSceneModes(device)[0]
-let ability = cameraManager.getSupportedOutputCapability(device, mode)
-let output = cameraManager.createPhotoOutput(profile:ability.photoProfiles[0])
-let testCallbackError = TestCallbackError()
-output.on(CameraEvents.CameraError, testCallbackError)
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let device = cameraManager.getSupportedCameras()[0]
+    let mode = cameraManager.getSupportedSceneModes(device)[0]
+    let ability = cameraManager.getSupportedOutputCapability(device, mode)
+    let output = cameraManager.createPhotoOutput(profile:ability.photoProfiles[0])
+    let testCallbackError = TestCallbackError()
+    output.on(CameraEvents.CameraError, testCallbackError)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func on(CameraEvents, Callback0Argument)
@@ -5197,26 +5710,30 @@ public func on(eventType: CameraEvents, callback: Callback0Argument): Unit
 // index.cj
 
 import kit.CameraKit.*
-import kit.PerformanceAnalysisKit.*
 import ohos.callback_invoke.Callback0Argument
 import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-// 此处代码可添加在依赖项定义中
-class TestCallbackError <: Callback0Argument {
-    public init() {}
-    public open func invoke(res: ?BusinessException): Unit {
-        Hilog.info(0, "Camera", "Call invoke error. code: ${res?.code}, msg: ${res?.message}")
+try {
+    // 此处代码可添加在依赖项定义中
+    class TestCallbackError <: Callback0Argument {
+        public init() {}
+        public open func invoke(res: ?BusinessException): Unit {
+            Hilog.info(0, "Camera", "Call invoke error. code: ${res?.code}, msg: ${res?.message}")
+        }
     }
-}
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let device = cameraManager.getSupportedCameras()[0]
-let mode = cameraManager.getSupportedSceneModes(device)[0]
-let ability = cameraManager.getSupportedOutputCapability(device, mode)
-let output = cameraManager.createPhotoOutput(profile:ability.photoProfiles[0])
-let testCallbackError = TestCallbackError()
-output.on(CameraEvents.CameraError, testCallbackError)
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let device = cameraManager.getSupportedCameras()[0]
+    let mode = cameraManager.getSupportedSceneModes(device)[0]
+    let ability = cameraManager.getSupportedOutputCapability(device, mode)
+    let output = cameraManager.createPhotoOutput(profile:ability.photoProfiles[0])
+    let testCallbackError = TestCallbackError()
+    output.on(CameraEvents.CameraError, testCallbackError)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func on(CameraEvents, Callback1Argument\<Float64>)
@@ -5258,26 +5775,30 @@ public func on(eventType: CameraEvents, callback: Callback1Argument<Float64>): U
 // index.cj
 
 import kit.CameraKit.*
-import kit.PerformanceAnalysisKit.*
 import ohos.callback_invoke.Callback0Argument
 import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-// 此处代码可添加在依赖项定义中
-class TestCallbackError <: Callback0Argument {
-    public init() {}
-    public open func invoke(res: ?BusinessException): Unit {
-        Hilog.info(0, "Camera", "Call invoke error. code: ${res?.code}, msg: ${res?.message}")
+try {
+    // 此处代码可添加在依赖项定义中
+    class TestCallbackError <: Callback0Argument {
+        public init() {}
+        public open func invoke(res: ?BusinessException): Unit {
+            Hilog.info(0, "Camera", "Call invoke error. code: ${res?.code}, msg: ${res?.message}")
+        }
     }
-}
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let device = cameraManager.getSupportedCameras()[0]
-let mode = cameraManager.getSupportedSceneModes(device)[0]
-let ability = cameraManager.getSupportedOutputCapability(device, mode)
-let output = cameraManager.createPhotoOutput(profile:ability.photoProfiles[0])
-let testCallbackError = TestCallbackError()
-output.on(CameraEvents.CameraError, testCallbackError)
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let device = cameraManager.getSupportedCameras()[0]
+    let mode = cameraManager.getSupportedSceneModes(device)[0]
+    let ability = cameraManager.getSupportedOutputCapability(device, mode)
+    let output = cameraManager.createPhotoOutput(profile:ability.photoProfiles[0])
+    let testCallbackError = TestCallbackError()
+    output.on(CameraEvents.CameraError, testCallbackError)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func release()
@@ -5308,14 +5829,20 @@ public func release(): Unit
 // index.cj
 
 import kit.CameraKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let device = cameraManager.getSupportedCameras()[0]
-let mode = cameraManager.getSupportedSceneModes(device)[0]
-let ability = cameraManager.getSupportedOutputCapability(device, mode)
-let output = cameraManager.createPhotoOutput(profile:ability.photoProfiles[0])
-output.release()
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let device = cameraManager.getSupportedCameras()[0]
+    let mode = cameraManager.getSupportedSceneModes(device)[0]
+    let ability = cameraManager.getSupportedOutputCapability(device, mode)
+    let output = cameraManager.createPhotoOutput(profile:ability.photoProfiles[0])
+    output.release()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func setMovingPhotoVideoCodecType(VideoCodecType)
@@ -5352,14 +5879,20 @@ public func setMovingPhotoVideoCodecType(codecType: VideoCodecType): Unit
 // index.cj
 
 import kit.CameraKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let device = cameraManager.getSupportedCameras()[0]
-let mode = cameraManager.getSupportedSceneModes(device)[0]
-let ability = cameraManager.getSupportedOutputCapability(device, mode)
-let output = cameraManager.createPhotoOutput(profile:ability.photoProfiles[0])
-output.setMovingPhotoVideoCodecType(VideoCodecType.Avc)
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let device = cameraManager.getSupportedCameras()[0]
+    let mode = cameraManager.getSupportedSceneModes(device)[0]
+    let ability = cameraManager.getSupportedOutputCapability(device, mode)
+    let output = cameraManager.createPhotoOutput(profile:ability.photoProfiles[0])
+    output.setMovingPhotoVideoCodecType(VideoCodecType.Avc)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## class PhotoSession
@@ -5424,13 +5957,18 @@ public func canPreconfig(preconfigType: PreconfigType, preconfigRatio!: Preconfi
 // index.cj
 
 import kit.CameraKit.*
-import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let photoSession = cameraManager.createSession(SceneMode.NormalPhoto) as PhotoSession
-let session = photoSession.getOrThrow()
-Hilog.info(0, "AppLogCj", session.canPreconfig(Preconfig1080p, preconfigRatio: PreconfigRatio_16_9).toString())
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let photoSession = cameraManager.createSession(SceneMode.NormalPhoto) as PhotoSession
+    let session = photoSession.getOrThrow()
+    Hilog.info(0, "AppLogCj", session.canPreconfig(Preconfig1080p, preconfigRatio: PreconfigRatio_16_9).toString())
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func off(CameraEvents, Callback0Argument)
@@ -5460,12 +5998,18 @@ public func off(eventType: CameraEvents, callback: Callback0Argument): Unit
 // index.cj
 
 import kit.CameraKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let photoSession = cameraManager.createSession(SceneMode.NormalPhoto) as PhotoSession
-let session = photoSession.getOrThrow()
-session.off(CameraEvents.FocusStateChange)
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let photoSession = cameraManager.createSession(SceneMode.NormalPhoto) as PhotoSession
+    let session = photoSession.getOrThrow()
+    session.off(CameraEvents.FocusStateChange)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func off(CameraEvents, Callback1Argument\<FocusState>)
@@ -5495,12 +6039,18 @@ public func off(eventType: CameraEvents, callback: Callback1Argument<FocusState>
 // index.cj
 
 import kit.CameraKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let photoSession = cameraManager.createSession(SceneMode.NormalPhoto) as PhotoSession
-let session = photoSession.getOrThrow()
-session.off(CameraEvents.FocusStateChange)
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let photoSession = cameraManager.createSession(SceneMode.NormalPhoto) as PhotoSession
+    let session = photoSession.getOrThrow()
+    session.off(CameraEvents.FocusStateChange)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func off(CameraEvents, Callback1Argument\<SmoothZoomInfo>)
@@ -5530,12 +6080,18 @@ public func off(eventType: CameraEvents, callback: Callback1Argument<SmoothZoomI
 // index.cj
 
 import kit.CameraKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let photoSession = cameraManager.createSession(SceneMode.NormalPhoto) as PhotoSession
-let session = photoSession.getOrThrow()
-session.off(CameraEvents.FocusStateChange)
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let photoSession = cameraManager.createSession(SceneMode.NormalPhoto) as PhotoSession
+    let session = photoSession.getOrThrow()
+    session.off(CameraEvents.FocusStateChange)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func off(CameraEvents)
@@ -5571,12 +6127,18 @@ public func off(eventType: CameraEvents): Unit
 // index.cj
 
 import kit.CameraKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let photoSession = cameraManager.createSession(SceneMode.NormalPhoto) as PhotoSession
-let session = photoSession.getOrThrow()
-session.off(CameraEvents.FocusStateChange)
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let photoSession = cameraManager.createSession(SceneMode.NormalPhoto) as PhotoSession
+    let session = photoSession.getOrThrow()
+    session.off(CameraEvents.FocusStateChange)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func on(CameraEvents, Callback0Argument)
@@ -5610,27 +6172,32 @@ public func on(eventType: CameraEvents, callback: Callback0Argument): Unit
 // index.cj
 
 import kit.CameraKit.*
-import kit.PerformanceAnalysisKit.*
 import ohos.callback_invoke.*
 import ohos.business_exception.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-// 此处代码可添加在依赖项定义中
-class SmoothZoomInfoAvailableCallback <: Callback1Argument<SmoothZoomInfo> {
-    public static var invoked = false
+try {
+    // 此处代码可添加在依赖项定义中
+    class SmoothZoomInfoAvailableCallback <: Callback1Argument<SmoothZoomInfo> {
+        public static var invoked = false
 
-    public func invoke(err: ?BusinessException, info: SmoothZoomInfo) {
-        Hilog.info(0, "AppLogCj", "[multimedia_camera | SmoothZoomInfoAvailable Callback]: info: ${info.duration}")
+        public func invoke(err: ?BusinessException, info: SmoothZoomInfo) {
+            Hilog.info(0, "AppLogCj", "[multimedia_camera | SmoothZoomInfoAvailable Callback]: info: ${info.duration}")
 
-        invoked = true
+            invoked = true
+        }
     }
-}
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let photoSession = cameraManager.createSession(SceneMode.NormalPhoto) as PhotoSession
-let session = photoSession.getOrThrow()
-let callback = SmoothZoomInfoAvailableCallback()
-session.on(CameraEvents.SmoothZoomInfoAvailable, callback)
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let photoSession = cameraManager.createSession(SceneMode.NormalPhoto) as PhotoSession
+    let session = photoSession.getOrThrow()
+    let callback = SmoothZoomInfoAvailableCallback()
+    session.on(CameraEvents.SmoothZoomInfoAvailable, callback)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func on(CameraEvents, Callback1Argument\<FocusState>)
@@ -5664,27 +6231,32 @@ public func on(eventType: CameraEvents, callback: Callback1Argument<FocusState>)
 // index.cj
 
 import kit.CameraKit.*
-import kit.PerformanceAnalysisKit.*
 import ohos.callback_invoke.*
 import ohos.business_exception.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-// 此处代码可添加在依赖项定义中
-class SmoothZoomInfoAvailableCallback <: Callback1Argument<SmoothZoomInfo> {
-    public static var invoked = false
+try {
+    // 此处代码可添加在依赖项定义中
+    class SmoothZoomInfoAvailableCallback <: Callback1Argument<SmoothZoomInfo> {
+        public static var invoked = false
 
-    public func invoke(err: ?BusinessException, info: SmoothZoomInfo) {
-        Hilog.info(0, "AppLogCj", "[multimedia_camera | SmoothZoomInfoAvailable Callback]: info: ${info.duration}")
+        public func invoke(err: ?BusinessException, info: SmoothZoomInfo) {
+            Hilog.info(0, "AppLogCj", "[multimedia_camera | SmoothZoomInfoAvailable Callback]: info: ${info.duration}")
 
-        invoked = true
+            invoked = true
+        }
     }
-}
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let photoSession = cameraManager.createSession(SceneMode.NormalPhoto) as PhotoSession
-let session = photoSession.getOrThrow()
-let callback = SmoothZoomInfoAvailableCallback()
-session.on(CameraEvents.SmoothZoomInfoAvailable, callback)
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let photoSession = cameraManager.createSession(SceneMode.NormalPhoto) as PhotoSession
+    let session = photoSession.getOrThrow()
+    let callback = SmoothZoomInfoAvailableCallback()
+    session.on(CameraEvents.SmoothZoomInfoAvailable, callback)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func on(CameraEvents, Callback1Argument\<SmoothZoomInfo>)
@@ -5718,27 +6290,32 @@ public func on(eventType: CameraEvents, callback: Callback1Argument<SmoothZoomIn
 // index.cj
 
 import kit.CameraKit.*
-import kit.PerformanceAnalysisKit.*
 import ohos.callback_invoke.*
 import ohos.business_exception.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-// 此处代码可添加在依赖项定义中
-class SmoothZoomInfoAvailableCallback <: Callback1Argument<SmoothZoomInfo> {
-    public static var invoked = false
+try {
+    // 此处代码可添加在依赖项定义中
+    class SmoothZoomInfoAvailableCallback <: Callback1Argument<SmoothZoomInfo> {
+        public static var invoked = false
 
-    public func invoke(err: ?BusinessException, info: SmoothZoomInfo) {
-        Hilog.info(0, "AppLogCj", "[multimedia_camera | SmoothZoomInfoAvailable Callback]: info: ${info.duration}")
+        public func invoke(err: ?BusinessException, info: SmoothZoomInfo) {
+            Hilog.info(0, "AppLogCj", "[multimedia_camera | SmoothZoomInfoAvailable Callback]: info: ${info.duration}")
 
-        invoked = true
+            invoked = true
+        }
     }
-}
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let photoSession = cameraManager.createSession(SceneMode.NormalPhoto) as PhotoSession
-let session = photoSession.getOrThrow()
-let callback = SmoothZoomInfoAvailableCallback()
-session.on(CameraEvents.SmoothZoomInfoAvailable, callback)
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let photoSession = cameraManager.createSession(SceneMode.NormalPhoto) as PhotoSession
+    let session = photoSession.getOrThrow()
+    let callback = SmoothZoomInfoAvailableCallback()
+    session.on(CameraEvents.SmoothZoomInfoAvailable, callback)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func preconfig(PreconfigType, PreconfigRatio)
@@ -5779,12 +6356,18 @@ public func preconfig(
 // index.cj
 
 import kit.CameraKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let photoSession = cameraManager.createSession(SceneMode.NormalPhoto) as PhotoSession
-let session = photoSession.getOrThrow()
-session.preconfig(Preconfig1080p, preconfigRatio: PreconfigRatio_16_9)
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let photoSession = cameraManager.createSession(SceneMode.NormalPhoto) as PhotoSession
+    let session = photoSession.getOrThrow()
+    session.preconfig(Preconfig1080p, preconfigRatio: PreconfigRatio_16_9)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## class Point
@@ -5907,17 +6490,23 @@ import kit.CameraKit.*
 import kit.ImageKit.createImageReceiver
 import kit.ImageKit.Size as ImageSize
 import kit.ImageKit.ImageFormat
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let device = cameraManager.getSupportedCameras()[0]
-let mode = cameraManager.getSupportedSceneModes(device)[0]
-let ability = cameraManager.getSupportedOutputCapability(device, mode)
-let size = ImageSize(8, 8192)
-let receiver = createImageReceiver(size, ImageFormat.Jpeg, 8)
-let surfaceId: String = receiver.getReceivingSurfaceId()
-let output = cameraManager.createPreviewOutput(ability.previewProfiles[0], surfaceId)
-let range = output.getActiveFrameRate()
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let device = cameraManager.getSupportedCameras()[0]
+    let mode = cameraManager.getSupportedSceneModes(device)[0]
+    let ability = cameraManager.getSupportedOutputCapability(device, mode)
+    let size = ImageSize(8, 8192)
+    let receiver = createImageReceiver(size, ImageFormat.Jpeg, 8)
+    let surfaceId: String = receiver.getReceivingSurfaceId()
+    let output = cameraManager.createPreviewOutput(ability.previewProfiles[0], surfaceId)
+    let range = output.getActiveFrameRate()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getActiveProfile()
@@ -5957,17 +6546,23 @@ import kit.CameraKit.*
 import kit.ImageKit.createImageReceiver
 import kit.ImageKit.Size as ImageSize
 import kit.ImageKit.ImageFormat
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let device = cameraManager.getSupportedCameras()[0]
-let mode = cameraManager.getSupportedSceneModes(device)[0]
-let ability = cameraManager.getSupportedOutputCapability(device, mode)
-let size = ImageSize(8, 8192)
-let receiver = createImageReceiver(size, ImageFormat.Jpeg, 8)
-let surfaceId: String = receiver.getReceivingSurfaceId()
-let output = cameraManager.createPreviewOutput(ability.previewProfiles[0], surfaceId)
-let profile = output.getActiveProfile()
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let device = cameraManager.getSupportedCameras()[0]
+    let mode = cameraManager.getSupportedSceneModes(device)[0]
+    let ability = cameraManager.getSupportedOutputCapability(device, mode)
+    let size = ImageSize(8, 8192)
+    let receiver = createImageReceiver(size, ImageFormat.Jpeg, 8)
+    let surfaceId: String = receiver.getReceivingSurfaceId()
+    let output = cameraManager.createPreviewOutput(ability.previewProfiles[0], surfaceId)
+    let profile = output.getActiveProfile()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getPreviewRotation(Int32)
@@ -6018,17 +6613,23 @@ import kit.CameraKit.*
 import kit.ImageKit.createImageReceiver
 import kit.ImageKit.Size as ImageSize
 import kit.ImageKit.ImageFormat
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let device = cameraManager.getSupportedCameras()[0]
-let mode = cameraManager.getSupportedSceneModes(device)[0]
-let ability = cameraManager.getSupportedOutputCapability(device, mode)
-let size = ImageSize(8, 8192)
-let receiver = createImageReceiver(size, ImageFormat.Jpeg, 8)
-let surfaceId: String = receiver.getReceivingSurfaceId()
-let output = cameraManager.createPreviewOutput(ability.previewProfiles[0], surfaceId)
-let imageRotation = output.getPreviewRotation(0)
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let device = cameraManager.getSupportedCameras()[0]
+    let mode = cameraManager.getSupportedSceneModes(device)[0]
+    let ability = cameraManager.getSupportedOutputCapability(device, mode)
+    let size = ImageSize(8, 8192)
+    let receiver = createImageReceiver(size, ImageFormat.Jpeg, 8)
+    let surfaceId: String = receiver.getReceivingSurfaceId()
+    let output = cameraManager.createPreviewOutput(ability.previewProfiles[0], surfaceId)
+    let imageRotation = output.getPreviewRotation(0)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getSupportedFrameRates()
@@ -6068,17 +6669,23 @@ import kit.CameraKit.*
 import kit.ImageKit.createImageReceiver
 import kit.ImageKit.Size as ImageSize
 import kit.ImageKit.ImageFormat
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let device = cameraManager.getSupportedCameras()[0]
-let mode = cameraManager.getSupportedSceneModes(device)[0]
-let ability = cameraManager.getSupportedOutputCapability(device, mode)
-let size = ImageSize(8, 8192)
-let receiver = createImageReceiver(size, ImageFormat.Jpeg, 8)
-let surfaceId: String = receiver.getReceivingSurfaceId()
-let output = cameraManager.createPreviewOutput(ability.previewProfiles[0], surfaceId)
-let frameRateRanges = output.getSupportedFrameRates()
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let device = cameraManager.getSupportedCameras()[0]
+    let mode = cameraManager.getSupportedSceneModes(device)[0]
+    let ability = cameraManager.getSupportedOutputCapability(device, mode)
+    let size = ImageSize(8, 8192)
+    let receiver = createImageReceiver(size, ImageFormat.Jpeg, 8)
+    let surfaceId: String = receiver.getReceivingSurfaceId()
+    let output = cameraManager.createPreviewOutput(ability.previewProfiles[0], surfaceId)
+    let frameRateRanges = output.getSupportedFrameRates()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func off(CameraEvents, Callback0Argument)
@@ -6119,17 +6726,23 @@ import kit.CameraKit.*
 import kit.ImageKit.createImageReceiver
 import kit.ImageKit.Size as ImageSize
 import kit.ImageKit.ImageFormat
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let device = cameraManager.getSupportedCameras()[0]
-let mode = cameraManager.getSupportedSceneModes(device)[0]
-let ability = cameraManager.getSupportedOutputCapability(device, mode)
-let size = ImageSize(8, 8192)
-let receiver = createImageReceiver(size, ImageFormat.Jpeg, 8)
-let surfaceId: String = receiver.getReceivingSurfaceId()
-let output = cameraManager.createPreviewOutput(ability.previewProfiles[0], surfaceId)
-output.off(CameraEvents.CameraError)
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let device = cameraManager.getSupportedCameras()[0]
+    let mode = cameraManager.getSupportedSceneModes(device)[0]
+    let ability = cameraManager.getSupportedOutputCapability(device, mode)
+    let size = ImageSize(8, 8192)
+    let receiver = createImageReceiver(size, ImageFormat.Jpeg, 8)
+    let surfaceId: String = receiver.getReceivingSurfaceId()
+    let output = cameraManager.createPreviewOutput(ability.previewProfiles[0], surfaceId)
+    output.off(CameraEvents.CameraError)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func off(CameraEvents)
@@ -6170,17 +6783,23 @@ import kit.CameraKit.*
 import kit.ImageKit.createImageReceiver
 import kit.ImageKit.Size as ImageSize
 import kit.ImageKit.ImageFormat
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let device = cameraManager.getSupportedCameras()[0]
-let mode = cameraManager.getSupportedSceneModes(device)[0]
-let ability = cameraManager.getSupportedOutputCapability(device, mode)
-let size = ImageSize(8, 8192)
-let receiver = createImageReceiver(size, ImageFormat.Jpeg, 8)
-let surfaceId: String = receiver.getReceivingSurfaceId()
-let output = cameraManager.createPreviewOutput(ability.previewProfiles[0], surfaceId)
-output.off(CameraEvents.CameraError)
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let device = cameraManager.getSupportedCameras()[0]
+    let mode = cameraManager.getSupportedSceneModes(device)[0]
+    let ability = cameraManager.getSupportedOutputCapability(device, mode)
+    let size = ImageSize(8, 8192)
+    let receiver = createImageReceiver(size, ImageFormat.Jpeg, 8)
+    let surfaceId: String = receiver.getReceivingSurfaceId()
+    let output = cameraManager.createPreviewOutput(ability.previewProfiles[0], surfaceId)
+    output.off(CameraEvents.CameraError)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func on(CameraEvents, Callback0Argument)
@@ -6225,29 +6844,33 @@ import kit.CameraKit.*
 import kit.ImageKit.createImageReceiver
 import kit.ImageKit.Size as ImageSize
 import kit.ImageKit.ImageFormat
-import kit.PerformanceAnalysisKit.*
 import ohos.callback_invoke.Callback0Argument
 import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-// 此处代码可添加在依赖项定义中
-class TestCallbackError <: Callback0Argument {
-    public init() {}
-    public open func invoke(res: ?BusinessException): Unit {
-        Hilog.info(0, "Camera", "Call invoke error. code: ${res?.code}, msg: ${res?.message}")
+try {
+    // 此处代码可添加在依赖项定义中
+    class TestCallbackError <: Callback0Argument {
+        public init() {}
+        public open func invoke(res: ?BusinessException): Unit {
+            Hilog.info(0, "Camera", "Call invoke error. code: ${res?.code}, msg: ${res?.message}")
+        }
     }
-}
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let device = cameraManager.getSupportedCameras()[0]
-let mode = cameraManager.getSupportedSceneModes(device)[0]
-let ability = cameraManager.getSupportedOutputCapability(device, mode)
-let size = ImageSize(8, 8192)
-let receiver = createImageReceiver(size, ImageFormat.Jpeg, 8)
-let surfaceId: String = receiver.getReceivingSurfaceId()
-let output = cameraManager.createPreviewOutput(ability.previewProfiles[0], surfaceId)
-let testCallbackError = TestCallbackError()
-output.on(CameraEvents.CameraError, testCallbackError)
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let device = cameraManager.getSupportedCameras()[0]
+    let mode = cameraManager.getSupportedSceneModes(device)[0]
+    let ability = cameraManager.getSupportedOutputCapability(device, mode)
+    let size = ImageSize(8, 8192)
+    let receiver = createImageReceiver(size, ImageFormat.Jpeg, 8)
+    let surfaceId: String = receiver.getReceivingSurfaceId()
+    let output = cameraManager.createPreviewOutput(ability.previewProfiles[0], surfaceId)
+    let testCallbackError = TestCallbackError()
+    output.on(CameraEvents.CameraError, testCallbackError)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func release()
@@ -6281,17 +6904,23 @@ import kit.CameraKit.*
 import kit.ImageKit.createImageReceiver
 import kit.ImageKit.Size as ImageSize
 import kit.ImageKit.ImageFormat
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let device = cameraManager.getSupportedCameras()[0]
-let mode = cameraManager.getSupportedSceneModes(device)[0]
-let ability = cameraManager.getSupportedOutputCapability(device, mode)
-let size = ImageSize(8, 8192)
-let receiver = createImageReceiver(size, ImageFormat.Jpeg, 8)
-let surfaceId: String = receiver.getReceivingSurfaceId()
-let output = cameraManager.createPreviewOutput(ability.previewProfiles[0], surfaceId)
-output.release()
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let device = cameraManager.getSupportedCameras()[0]
+    let mode = cameraManager.getSupportedSceneModes(device)[0]
+    let ability = cameraManager.getSupportedOutputCapability(device, mode)
+    let size = ImageSize(8, 8192)
+    let receiver = createImageReceiver(size, ImageFormat.Jpeg, 8)
+    let surfaceId: String = receiver.getReceivingSurfaceId()
+    let output = cameraManager.createPreviewOutput(ability.previewProfiles[0], surfaceId)
+    output.release()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func setFrameRate(Int32, Int32)
@@ -6337,17 +6966,23 @@ import kit.CameraKit.*
 import kit.ImageKit.createImageReceiver
 import kit.ImageKit.Size as ImageSize
 import kit.ImageKit.ImageFormat
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let device = cameraManager.getSupportedCameras()[0]
-let mode = cameraManager.getSupportedSceneModes(device)[0]
-let ability = cameraManager.getSupportedOutputCapability(device, mode)
-let size = ImageSize(8, 8192)
-let receiver = createImageReceiver(size, ImageFormat.Jpeg, 8)
-let surfaceId: String = receiver.getReceivingSurfaceId()
-let output = cameraManager.createPreviewOutput(ability.previewProfiles[0], surfaceId)
-output.setFrameRate(30, 60)
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let device = cameraManager.getSupportedCameras()[0]
+    let mode = cameraManager.getSupportedSceneModes(device)[0]
+    let ability = cameraManager.getSupportedOutputCapability(device, mode)
+    let size = ImageSize(8, 8192)
+    let receiver = createImageReceiver(size, ImageFormat.Jpeg, 8)
+    let surfaceId: String = receiver.getReceivingSurfaceId()
+    let output = cameraManager.createPreviewOutput(ability.previewProfiles[0], surfaceId)
+    output.setFrameRate(30, 60)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func setPreviewRotation(ImageRotation, Bool)
@@ -6389,17 +7024,23 @@ import kit.CameraKit.*
 import kit.ImageKit.createImageReceiver
 import kit.ImageKit.Size as ImageSize
 import kit.ImageKit.ImageFormat
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let device = cameraManager.getSupportedCameras()[0]
-let mode = cameraManager.getSupportedSceneModes(device)[0]
-let ability = cameraManager.getSupportedOutputCapability(device, mode)
-let size = ImageSize(8, 8192)
-let receiver = createImageReceiver(size, ImageFormat.Jpeg, 8)
-let surfaceId: String = receiver.getReceivingSurfaceId()
-let output = cameraManager.createPreviewOutput(ability.previewProfiles[0], surfaceId)
-output.setPreviewRotation(ImageRotation.Rotation90)
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let device = cameraManager.getSupportedCameras()[0]
+    let mode = cameraManager.getSupportedSceneModes(device)[0]
+    let ability = cameraManager.getSupportedOutputCapability(device, mode)
+    let size = ImageSize(8, 8192)
+    let receiver = createImageReceiver(size, ImageFormat.Jpeg, 8)
+    let surfaceId: String = receiver.getReceivingSurfaceId()
+    let output = cameraManager.createPreviewOutput(ability.previewProfiles[0], surfaceId)
+    output.setPreviewRotation(ImageRotation.Rotation90)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## class Profile
@@ -6724,17 +7365,23 @@ import kit.CameraKit.*
 import kit.ImageKit.createImageReceiver
 import kit.ImageKit.Size as ImageSize
 import kit.ImageKit.ImageFormat
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let device = cameraManager.getSupportedCameras()[0]
-let mode = cameraManager.getSupportedSceneModes(device)[1]
-let ability = cameraManager.getSupportedOutputCapability(device, mode)
-let size = ImageSize(8, 8192)
-let receiver = createImageReceiver(size, ImageFormat.Jpeg, 8)
-let surfaceId: String = receiver.getReceivingSurfaceId()
-let output = cameraManager.createVideoOutput(ability.videoProfiles[0], surfaceId)
-let frameRateRange = output.getActiveFrameRate()
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let device = cameraManager.getSupportedCameras()[0]
+    let mode = cameraManager.getSupportedSceneModes(device)[1]
+    let ability = cameraManager.getSupportedOutputCapability(device, mode)
+    let size = ImageSize(8, 8192)
+    let receiver = createImageReceiver(size, ImageFormat.Jpeg, 8)
+    let surfaceId: String = receiver.getReceivingSurfaceId()
+    let output = cameraManager.createVideoOutput(ability.videoProfiles[0], surfaceId)
+    let frameRateRange = output.getActiveFrameRate()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getActiveProfile()
@@ -6774,17 +7421,23 @@ import kit.CameraKit.*
 import kit.ImageKit.createImageReceiver
 import kit.ImageKit.Size as ImageSize
 import kit.ImageKit.ImageFormat
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let device = cameraManager.getSupportedCameras()[0]
-let mode = cameraManager.getSupportedSceneModes(device)[1]
-let ability = cameraManager.getSupportedOutputCapability(device, mode)
-let size = ImageSize(8, 8192)
-let receiver = createImageReceiver(size, ImageFormat.Jpeg, 8)
-let surfaceId: String = receiver.getReceivingSurfaceId()
-let output = cameraManager.createVideoOutput(ability.videoProfiles[0], surfaceId)
-let videoProfile = output.getActiveProfile()
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let device = cameraManager.getSupportedCameras()[0]
+    let mode = cameraManager.getSupportedSceneModes(device)[1]
+    let ability = cameraManager.getSupportedOutputCapability(device, mode)
+    let size = ImageSize(8, 8192)
+    let receiver = createImageReceiver(size, ImageFormat.Jpeg, 8)
+    let surfaceId: String = receiver.getReceivingSurfaceId()
+    let output = cameraManager.createVideoOutput(ability.videoProfiles[0], surfaceId)
+    let videoProfile = output.getActiveProfile()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getSupportedFrameRates()
@@ -6824,17 +7477,23 @@ import kit.CameraKit.*
 import kit.ImageKit.createImageReceiver
 import kit.ImageKit.Size as ImageSize
 import kit.ImageKit.ImageFormat
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let device = cameraManager.getSupportedCameras()[0]
-let mode = cameraManager.getSupportedSceneModes(device)[1]
-let ability = cameraManager.getSupportedOutputCapability(device, mode)
-let size = ImageSize(8, 8192)
-let receiver = createImageReceiver(size, ImageFormat.Jpeg, 8)
-let surfaceId: String = receiver.getReceivingSurfaceId()
-let output = cameraManager.createVideoOutput(ability.videoProfiles[0], surfaceId)
-let frameRateRanges = output.getSupportedFrameRates()
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let device = cameraManager.getSupportedCameras()[0]
+    let mode = cameraManager.getSupportedSceneModes(device)[1]
+    let ability = cameraManager.getSupportedOutputCapability(device, mode)
+    let size = ImageSize(8, 8192)
+    let receiver = createImageReceiver(size, ImageFormat.Jpeg, 8)
+    let surfaceId: String = receiver.getReceivingSurfaceId()
+    let output = cameraManager.createVideoOutput(ability.videoProfiles[0], surfaceId)
+    let frameRateRanges = output.getSupportedFrameRates()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getVideoRotation(Int32)
@@ -6885,17 +7544,23 @@ import kit.CameraKit.*
 import kit.ImageKit.createImageReceiver
 import kit.ImageKit.Size as ImageSize
 import kit.ImageKit.ImageFormat
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let device = cameraManager.getSupportedCameras()[0]
-let mode = cameraManager.getSupportedSceneModes(device)[1]
-let ability = cameraManager.getSupportedOutputCapability(device, mode)
-let size = ImageSize(8, 8192)
-let receiver = createImageReceiver(size, ImageFormat.Jpeg, 8)
-let surfaceId: String = receiver.getReceivingSurfaceId()
-let output = cameraManager.createVideoOutput(ability.videoProfiles[0], surfaceId)
-let imageRotation = output.getVideoRotation(0)
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let device = cameraManager.getSupportedCameras()[0]
+    let mode = cameraManager.getSupportedSceneModes(device)[1]
+    let ability = cameraManager.getSupportedOutputCapability(device, mode)
+    let size = ImageSize(8, 8192)
+    let receiver = createImageReceiver(size, ImageFormat.Jpeg, 8)
+    let surfaceId: String = receiver.getReceivingSurfaceId()
+    let output = cameraManager.createVideoOutput(ability.videoProfiles[0], surfaceId)
+    let imageRotation = output.getVideoRotation(0)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func off(CameraEvents, Callback0Argument)
@@ -6937,17 +7602,23 @@ import kit.CameraKit.*
 import kit.ImageKit.createImageReceiver
 import kit.ImageKit.Size as ImageSize
 import kit.ImageKit.ImageFormat
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let device = cameraManager.getSupportedCameras()[0]
-let mode = cameraManager.getSupportedSceneModes(device)[1]
-let ability = cameraManager.getSupportedOutputCapability(device, mode)
-let size = ImageSize(8, 8192)
-let receiver = createImageReceiver(size, ImageFormat.Jpeg, 8)
-let surfaceId: String = receiver.getReceivingSurfaceId()
-let output = cameraManager.createVideoOutput(ability.videoProfiles[0], surfaceId)
-output.off(CameraEvents.CameraError)
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let device = cameraManager.getSupportedCameras()[0]
+    let mode = cameraManager.getSupportedSceneModes(device)[1]
+    let ability = cameraManager.getSupportedOutputCapability(device, mode)
+    let size = ImageSize(8, 8192)
+    let receiver = createImageReceiver(size, ImageFormat.Jpeg, 8)
+    let surfaceId: String = receiver.getReceivingSurfaceId()
+    let output = cameraManager.createVideoOutput(ability.videoProfiles[0], surfaceId)
+    output.off(CameraEvents.CameraError)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func off(CameraEvents)
@@ -6987,17 +7658,23 @@ import kit.CameraKit.*
 import kit.ImageKit.createImageReceiver
 import kit.ImageKit.Size as ImageSize
 import kit.ImageKit.ImageFormat
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let device = cameraManager.getSupportedCameras()[0]
-let mode = cameraManager.getSupportedSceneModes(device)[1]
-let ability = cameraManager.getSupportedOutputCapability(device, mode)
-let size = ImageSize(8, 8192)
-let receiver = createImageReceiver(size, ImageFormat.Jpeg, 8)
-let surfaceId: String = receiver.getReceivingSurfaceId()
-let output = cameraManager.createVideoOutput(ability.videoProfiles[0], surfaceId)
-output.off(CameraEvents.CameraError)
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let device = cameraManager.getSupportedCameras()[0]
+    let mode = cameraManager.getSupportedSceneModes(device)[1]
+    let ability = cameraManager.getSupportedOutputCapability(device, mode)
+    let size = ImageSize(8, 8192)
+    let receiver = createImageReceiver(size, ImageFormat.Jpeg, 8)
+    let surfaceId: String = receiver.getReceivingSurfaceId()
+    let output = cameraManager.createVideoOutput(ability.videoProfiles[0], surfaceId)
+    output.off(CameraEvents.CameraError)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func on(CameraEvents, Callback0Argument)
@@ -7042,32 +7719,37 @@ import kit.CameraKit.*
 import kit.ImageKit.createImageReceiver
 import kit.ImageKit.Size as ImageSize
 import kit.ImageKit.ImageFormat
-import kit.PerformanceAnalysisKit.*
 import ohos.callback_invoke.Callback0Argument
 import ohos.business_exception.BusinessException
-//// check redundant import
+import kit.PerformanceAnalysisKit.Hilog
 
-//// end
+try {
+    //// check redundant import
 
-// 此处代码可添加在依赖项定义中
-class TestCallbackError <: Callback0Argument {
-    public init() {}
-    public open func invoke(res: ?BusinessException): Unit {
-        Hilog.info(0, "Camera", "Call invoke error. code: ${res?.code}, msg: ${res?.message}")
+    //// end
+
+    // 此处代码可添加在依赖项定义中
+    class TestCallbackError <: Callback0Argument {
+        public init() {}
+        public open func invoke(res: ?BusinessException): Unit {
+            Hilog.info(0, "Camera", "Call invoke error. code: ${res?.code}, msg: ${res?.message}")
+        }
     }
-}
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let device = cameraManager.getSupportedCameras()[0]
-let mode = cameraManager.getSupportedSceneModes(device)[1]
-let ability = cameraManager.getSupportedOutputCapability(device, mode)
-let size = ImageSize(8, 8192)
-let receiver = createImageReceiver(size, ImageFormat.Jpeg, 8)
-let surfaceId: String = receiver.getReceivingSurfaceId()
-let output = cameraManager.createVideoOutput(ability.videoProfiles[0], surfaceId)
-let testCallbackError = TestCallbackError()
-output.on(CameraEvents.CameraError, testCallbackError)
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let device = cameraManager.getSupportedCameras()[0]
+    let mode = cameraManager.getSupportedSceneModes(device)[1]
+    let ability = cameraManager.getSupportedOutputCapability(device, mode)
+    let size = ImageSize(8, 8192)
+    let receiver = createImageReceiver(size, ImageFormat.Jpeg, 8)
+    let surfaceId: String = receiver.getReceivingSurfaceId()
+    let output = cameraManager.createVideoOutput(ability.videoProfiles[0], surfaceId)
+    let testCallbackError = TestCallbackError()
+    output.on(CameraEvents.CameraError, testCallbackError)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func release()
@@ -7101,17 +7783,23 @@ import kit.CameraKit.*
 import kit.ImageKit.createImageReceiver
 import kit.ImageKit.Size as ImageSize
 import kit.ImageKit.ImageFormat
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let device = cameraManager.getSupportedCameras()[0]
-let mode = cameraManager.getSupportedSceneModes(device)[1]
-let ability = cameraManager.getSupportedOutputCapability(device, mode)
-let size = ImageSize(8, 8192)
-let receiver = createImageReceiver(size, ImageFormat.Jpeg, 8)
-let surfaceId: String = receiver.getReceivingSurfaceId()
-let output = cameraManager.createVideoOutput(ability.videoProfiles[0], surfaceId)
-output.release()
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let device = cameraManager.getSupportedCameras()[0]
+    let mode = cameraManager.getSupportedSceneModes(device)[1]
+    let ability = cameraManager.getSupportedOutputCapability(device, mode)
+    let size = ImageSize(8, 8192)
+    let receiver = createImageReceiver(size, ImageFormat.Jpeg, 8)
+    let surfaceId: String = receiver.getReceivingSurfaceId()
+    let output = cameraManager.createVideoOutput(ability.videoProfiles[0], surfaceId)
+    output.release()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func setFrameRate(Int32, Int32)
@@ -7157,17 +7845,23 @@ import kit.CameraKit.*
 import kit.ImageKit.createImageReceiver
 import kit.ImageKit.Size as ImageSize
 import kit.ImageKit.ImageFormat
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let device = cameraManager.getSupportedCameras()[0]
-let mode = cameraManager.getSupportedSceneModes(device)[1]
-let ability = cameraManager.getSupportedOutputCapability(device, mode)
-let size = ImageSize(8, 8192)
-let receiver = createImageReceiver(size, ImageFormat.Jpeg, 8)
-let surfaceId: String = receiver.getReceivingSurfaceId()
-let output = cameraManager.createVideoOutput(ability.videoProfiles[0], surfaceId)
-output.setFrameRate(30, 60)
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let device = cameraManager.getSupportedCameras()[0]
+    let mode = cameraManager.getSupportedSceneModes(device)[1]
+    let ability = cameraManager.getSupportedOutputCapability(device, mode)
+    let size = ImageSize(8, 8192)
+    let receiver = createImageReceiver(size, ImageFormat.Jpeg, 8)
+    let surfaceId: String = receiver.getReceivingSurfaceId()
+    let output = cameraManager.createVideoOutput(ability.videoProfiles[0], surfaceId)
+    output.setFrameRate(30, 60)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func start()
@@ -7202,17 +7896,23 @@ import kit.CameraKit.*
 import kit.ImageKit.createImageReceiver
 import kit.ImageKit.Size as ImageSize
 import kit.ImageKit.ImageFormat
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let device = cameraManager.getSupportedCameras()[0]
-let mode = cameraManager.getSupportedSceneModes(device)[1]
-let ability = cameraManager.getSupportedOutputCapability(device, mode)
-let size = ImageSize(8, 8192)
-let receiver = createImageReceiver(size, ImageFormat.Jpeg, 8)
-let surfaceId: String = receiver.getReceivingSurfaceId()
-let output = cameraManager.createVideoOutput(ability.videoProfiles[0], surfaceId)
-output.start()
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let device = cameraManager.getSupportedCameras()[0]
+    let mode = cameraManager.getSupportedSceneModes(device)[1]
+    let ability = cameraManager.getSupportedOutputCapability(device, mode)
+    let size = ImageSize(8, 8192)
+    let receiver = createImageReceiver(size, ImageFormat.Jpeg, 8)
+    let surfaceId: String = receiver.getReceivingSurfaceId()
+    let output = cameraManager.createVideoOutput(ability.videoProfiles[0], surfaceId)
+    output.start()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func stop()
@@ -7246,17 +7946,23 @@ import kit.CameraKit.*
 import kit.ImageKit.createImageReceiver
 import kit.ImageKit.Size as ImageSize
 import kit.ImageKit.ImageFormat
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let device = cameraManager.getSupportedCameras()[0]
-let mode = cameraManager.getSupportedSceneModes(device)[1]
-let ability = cameraManager.getSupportedOutputCapability(device, mode)
-let size = ImageSize(8, 8192)
-let receiver = createImageReceiver(size, ImageFormat.Jpeg, 8)
-let surfaceId: String = receiver.getReceivingSurfaceId()
-let output = cameraManager.createVideoOutput(ability.videoProfiles[0], surfaceId)
-output.stop()
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let device = cameraManager.getSupportedCameras()[0]
+    let mode = cameraManager.getSupportedSceneModes(device)[1]
+    let ability = cameraManager.getSupportedOutputCapability(device, mode)
+    let size = ImageSize(8, 8192)
+    let receiver = createImageReceiver(size, ImageFormat.Jpeg, 8)
+    let surfaceId: String = receiver.getReceivingSurfaceId()
+    let output = cameraManager.createVideoOutput(ability.videoProfiles[0], surfaceId)
+    output.stop()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## class VideoProfile
@@ -7360,12 +8066,18 @@ public func canPreconfig(preconfigType: PreconfigType, preconfigRatio!: Preconfi
 // index.cj
 
 import kit.CameraKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let videoSession = cameraManager.createSession(SceneMode.NormalVideo) as VideoSession
-let session = videoSession.getOrThrow()
-session.canPreconfig(Preconfig1080p, preconfigRatio: PreconfigRatio_16_9)
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let videoSession = cameraManager.createSession(SceneMode.NormalVideo) as VideoSession
+    let session = videoSession.getOrThrow()
+    session.canPreconfig(Preconfig1080p, preconfigRatio: PreconfigRatio_16_9)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func off(CameraEvents, Callback0Argument)
@@ -7403,12 +8115,18 @@ public func off(eventType: CameraEvents, callback: Callback0Argument): Unit
 // index.cj
 
 import kit.CameraKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let videoSession = cameraManager.createSession(SceneMode.NormalVideo) as VideoSession
-let session = videoSession.getOrThrow()
-session.off(CameraEvents.SmoothZoomInfoAvailable)
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let videoSession = cameraManager.createSession(SceneMode.NormalVideo) as VideoSession
+    let session = videoSession.getOrThrow()
+    session.off(CameraEvents.SmoothZoomInfoAvailable)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func off(CameraEvents, Callback1Argument\<FocusState>)
@@ -7446,12 +8164,18 @@ public func off(eventType: CameraEvents, callback: Callback1Argument<FocusState>
 // index.cj
 
 import kit.CameraKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let videoSession = cameraManager.createSession(SceneMode.NormalVideo) as VideoSession
-let session = videoSession.getOrThrow()
-session.off(CameraEvents.SmoothZoomInfoAvailable)
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let videoSession = cameraManager.createSession(SceneMode.NormalVideo) as VideoSession
+    let session = videoSession.getOrThrow()
+    session.off(CameraEvents.SmoothZoomInfoAvailable)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func off(CameraEvents, Callback1Argument\<SmoothZoomInfo>)
@@ -7489,12 +8213,18 @@ public func off(eventType: CameraEvents, callback: Callback1Argument<SmoothZoomI
 // index.cj
 
 import kit.CameraKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let videoSession = cameraManager.createSession(SceneMode.NormalVideo) as VideoSession
-let session = videoSession.getOrThrow()
-session.off(CameraEvents.SmoothZoomInfoAvailable)
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let videoSession = cameraManager.createSession(SceneMode.NormalVideo) as VideoSession
+    let session = videoSession.getOrThrow()
+    session.off(CameraEvents.SmoothZoomInfoAvailable)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func off(CameraEvents)
@@ -7532,12 +8262,18 @@ public func off(eventType: CameraEvents): Unit
 // index.cj
 
 import kit.CameraKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let videoSession = cameraManager.createSession(SceneMode.NormalVideo) as VideoSession
-let session = videoSession.getOrThrow()
-session.off(CameraEvents.SmoothZoomInfoAvailable)
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let videoSession = cameraManager.createSession(SceneMode.NormalVideo) as VideoSession
+    let session = videoSession.getOrThrow()
+    session.off(CameraEvents.SmoothZoomInfoAvailable)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func on(CameraEvents, Callback0Argument)
@@ -7579,27 +8315,32 @@ public func on(eventType: CameraEvents, callback: Callback0Argument): Unit
 // index.cj
 
 import kit.CameraKit.*
-import kit.PerformanceAnalysisKit.*
 import ohos.callback_invoke.*
 import ohos.business_exception.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-// 此处代码可添加在依赖项定义中
-class SmoothZoomInfoAvailableCallback <: Callback1Argument<SmoothZoomInfo> {
-    public static var invoked = false
+try {
+    // 此处代码可添加在依赖项定义中
+    class SmoothZoomInfoAvailableCallback <: Callback1Argument<SmoothZoomInfo> {
+        public static var invoked = false
 
-    public func invoke(err: ?BusinessException, info: SmoothZoomInfo) {
-        Hilog.info(0, "AppLogCj", "[multimedia_camera | SmoothZoomInfoAvailable Callback]: info: ${info.duration}")
+        public func invoke(err: ?BusinessException, info: SmoothZoomInfo) {
+            Hilog.info(0, "AppLogCj", "[multimedia_camera | SmoothZoomInfoAvailable Callback]: info: ${info.duration}")
 
-        invoked = true
+            invoked = true
+        }
     }
-}
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let videoSession = cameraManager.createSession(SceneMode.NormalVideo) as VideoSession
-let session = videoSession.getOrThrow()
-let callback = SmoothZoomInfoAvailableCallback()
-session.on(CameraEvents.SmoothZoomInfoAvailable, callback)
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let videoSession = cameraManager.createSession(SceneMode.NormalVideo) as VideoSession
+    let session = videoSession.getOrThrow()
+    let callback = SmoothZoomInfoAvailableCallback()
+    session.on(CameraEvents.SmoothZoomInfoAvailable, callback)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func on(CameraEvents, Callback1Argument\<FocusState>)
@@ -7641,27 +8382,32 @@ public func on(eventType: CameraEvents, callback: Callback1Argument<FocusState>)
 // index.cj
 
 import kit.CameraKit.*
-import kit.PerformanceAnalysisKit.*
 import ohos.callback_invoke.*
 import ohos.business_exception.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-// 此处代码可添加在依赖项定义中
-class SmoothZoomInfoAvailableCallback <: Callback1Argument<SmoothZoomInfo> {
-    public static var invoked = false
+try {
+    // 此处代码可添加在依赖项定义中
+    class SmoothZoomInfoAvailableCallback <: Callback1Argument<SmoothZoomInfo> {
+        public static var invoked = false
 
-    public func invoke(err: ?BusinessException, info: SmoothZoomInfo) {
-        Hilog.info(0, "AppLogCj", "[multimedia_camera | SmoothZoomInfoAvailable Callback]: info: ${info.duration}")
+        public func invoke(err: ?BusinessException, info: SmoothZoomInfo) {
+            Hilog.info(0, "AppLogCj", "[multimedia_camera | SmoothZoomInfoAvailable Callback]: info: ${info.duration}")
 
-        invoked = true
+            invoked = true
+        }
     }
-}
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let videoSession = cameraManager.createSession(SceneMode.NormalVideo) as VideoSession
-let session = videoSession.getOrThrow()
-let callback = SmoothZoomInfoAvailableCallback()
-session.on(CameraEvents.SmoothZoomInfoAvailable, callback)
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let videoSession = cameraManager.createSession(SceneMode.NormalVideo) as VideoSession
+    let session = videoSession.getOrThrow()
+    let callback = SmoothZoomInfoAvailableCallback()
+    session.on(CameraEvents.SmoothZoomInfoAvailable, callback)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func on(CameraEvents, Callback1Argument\<SmoothZoomInfo>)
@@ -7703,27 +8449,32 @@ public func on(eventType: CameraEvents, callback: Callback1Argument<SmoothZoomIn
 // index.cj
 
 import kit.CameraKit.*
-import kit.PerformanceAnalysisKit.*
 import ohos.callback_invoke.*
 import ohos.business_exception.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-// 此处代码可添加在依赖项定义中
-class SmoothZoomInfoAvailableCallback <: Callback1Argument<SmoothZoomInfo> {
-    public static var invoked = false
+try {
+    // 此处代码可添加在依赖项定义中
+    class SmoothZoomInfoAvailableCallback <: Callback1Argument<SmoothZoomInfo> {
+        public static var invoked = false
 
-    public func invoke(err: ?BusinessException, info: SmoothZoomInfo) {
-        Hilog.info(0, "AppLogCj", "[multimedia_camera | SmoothZoomInfoAvailable Callback]: info: ${info.duration}")
+        public func invoke(err: ?BusinessException, info: SmoothZoomInfo) {
+            Hilog.info(0, "AppLogCj", "[multimedia_camera | SmoothZoomInfoAvailable Callback]: info: ${info.duration}")
 
-        invoked = true
+            invoked = true
+        }
     }
-}
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let videoSession = cameraManager.createSession(SceneMode.NormalVideo) as VideoSession
-let session = videoSession.getOrThrow()
-let callback = SmoothZoomInfoAvailableCallback()
-session.on(CameraEvents.SmoothZoomInfoAvailable, callback)
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let videoSession = cameraManager.createSession(SceneMode.NormalVideo) as VideoSession
+    let session = videoSession.getOrThrow()
+    let callback = SmoothZoomInfoAvailableCallback()
+    session.on(CameraEvents.SmoothZoomInfoAvailable, callback)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func preconfig(PreconfigType, PreconfigRatio)
@@ -7764,12 +8515,18 @@ public func preconfig(
 // index.cj
 
 import kit.CameraKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let cameraManager = getCameraManager(ctx)
-let videoSession = cameraManager.createSession(SceneMode.NormalVideo) as VideoSession
-let session = videoSession.getOrThrow()
-session.preconfig(Preconfig1080p, preconfigRatio: PreconfigRatio_16_9)
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let cameraManager = getCameraManager(ctx)
+    let videoSession = cameraManager.createSession(SceneMode.NormalVideo) as VideoSession
+    let session = videoSession.getOrThrow()
+    session.preconfig(Preconfig1080p, preconfigRatio: PreconfigRatio_16_9)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## enum CameraEvents

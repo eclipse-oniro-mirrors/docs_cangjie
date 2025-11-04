@@ -61,8 +61,14 @@ public func getScanInfoList(): Array<WifiScanInfo>
 // index.cj
 
 import kit.ConnectivityKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let scanInfoList = getScanInfoList()
+try {
+    let scanInfoList = getScanInfoList()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## func isWifiActive()
@@ -100,8 +106,14 @@ public func isWifiActive(): Bool
 // index.cj
 
 import kit.ConnectivityKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let isWifiActive = isWifiActive()
+try {
+    let isWifiActive = isWifiActive()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## func off(WifiCallbackType, ?CallbackObject)
@@ -146,18 +158,23 @@ import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.*
 import ohos.business_exception.BusinessException
 import ohos.callback_invoke.*
+import kit.PerformanceAnalysisKit.Hilog
 
-class WifiCallback <: Callback1Argument<Int32> {
-    public func invoke(err: ?BusinessException, arg: Int32) {
-        Hilog.info(0, "test", "invoke success", "")
+try {
+    class WifiCallback <: Callback1Argument<Int32> {
+        public func invoke(err: ?BusinessException, arg: Int32) {
+            Hilog.info(0, "test", "invoke success", "")
+        }
     }
-}
 
-let callback = WifiCallback()
-// Register event
-on(WifiScanStateChange, callback)
-// Unregister event
-off(WifiScanStateChange, callback: callback)
+    let callback = WifiCallback()
+    // Register event
+    on(WifiScanStateChange, callback)
+    // Unregister event
+    off(WifiScanStateChange, callback: callback)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## func on(WifiCallbackType, Callback1Argument\<Int32>)
@@ -202,18 +219,23 @@ import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.*
 import ohos.business_exception.BusinessException
 import ohos.callback_invoke.*
+import kit.PerformanceAnalysisKit.Hilog
 
-class WifiCallback <: Callback1Argument<Int32> {
-    public func invoke(err: ?BusinessException, arg: Int32) {
-        Hilog.info(0, "test", "invoke success", "")
+try {
+    class WifiCallback <: Callback1Argument<Int32> {
+        public func invoke(err: ?BusinessException, arg: Int32) {
+            Hilog.info(0, "test", "invoke success", "")
+        }
     }
-}
 
-let callback = WifiCallback()
-// Register event
-on(WifiScanStateChange, callback)
-// Unregister event
-off(WifiScanStateChange, callback: callback)
+    let callback = WifiCallback()
+    // Register event
+    on(WifiScanStateChange, callback)
+    // Unregister event
+    off(WifiScanStateChange, callback: callback)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## func p2pCancelConnect()
@@ -249,8 +271,14 @@ public func p2pCancelConnect(): Unit
 // index.cj
 
 import kit.ConnectivityKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-p2pCancelConnect()
+try {
+    p2pCancelConnect()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## func p2pConnect(WifiP2PConfig)
@@ -292,9 +320,15 @@ public func p2pConnect(config: WifiP2PConfig): Unit
 // index.cj
 
 import kit.ConnectivityKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let config = WifiP2PConfig("xx:xx:xx:xx", -2, "", "", GroupOwnerBand.GoBandAuto)
-p2pConnect(config)
+try {
+    let config = WifiP2PConfig("xx:xx:xx:xx", -2, "", "", GroupOwnerBand.GoBandAuto)
+    p2pConnect(config)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## func startDiscoverDevices()
@@ -330,8 +364,14 @@ public func startDiscoverDevices(): Unit
 // index.cj
 
 import kit.ConnectivityKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-startDiscoverDevices()
+try {
+    startDiscoverDevices()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## func stopDiscoverDevices()
@@ -367,8 +407,14 @@ public func stopDiscoverDevices(): Unit
 // index.cj
 
 import kit.ConnectivityKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-stopDiscoverDevices()
+try {
+    stopDiscoverDevices()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## class WifiInfoElem

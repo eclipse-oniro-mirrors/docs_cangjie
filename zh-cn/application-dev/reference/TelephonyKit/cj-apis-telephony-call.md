@@ -79,8 +79,14 @@ public static func formatPhoneNumber(
 // index.cj
 
 import kit.TelephonyKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let result = Call.formatPhoneNumber("138xxxxxxxx", options: NumberFormatOptions(countryCode: "CN"))
+try {
+    let result = Call.formatPhoneNumber("138xxxxxxxx", options: NumberFormatOptions(countryCode: "CN"))
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### static func formatPhoneNumberToE164(String, String)
@@ -130,8 +136,14 @@ public static func formatPhoneNumberToE164(phoneNumber: String, countryCode: Str
 // index.cj
 
 import kit.TelephonyKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let result = Call.formatPhoneNumberToE164("138xxxxxxxx", "CN")
+try {
+    let result = Call.formatPhoneNumberToE164("138xxxxxxxx", "CN")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### static func getCallState()
@@ -160,8 +172,14 @@ public static func getCallState(): CallState
 // index.cj
 
 import kit.TelephonyKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let result: CallState = Call.getCallState()
+try {
+    let result: CallState = Call.getCallState()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### static func hasCall()
@@ -190,8 +208,14 @@ public static func hasCall(): Bool
 // index.cj
 
 import kit.TelephonyKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let result: Bool = Call.hasCall()
+try {
+    let result: Bool = Call.hasCall()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### static func hasVoiceCapability()
@@ -220,8 +244,14 @@ public static func hasVoiceCapability(): Bool
 // index.cj
 
 import kit.TelephonyKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let result: Bool = Call.hasVoiceCapability()
+try {
+    let result: Bool = Call.hasVoiceCapability()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### static func isEmergencyPhoneNumber(String, EmergencyNumberOptions)
@@ -269,8 +299,14 @@ public static func isEmergencyPhoneNumber(phoneNumber: String, options!: Emergen
 // index.cj
 
 import kit.TelephonyKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let result = Call.isEmergencyPhoneNumber("138xxxxxxxx", options: EmergencyNumberOptions(slotId: 1))
+try {
+    let result = Call.isEmergencyPhoneNumber("138xxxxxxxx", options: EmergencyNumberOptions(slotId: 1))
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### static func makeCall(String)
@@ -311,8 +347,14 @@ public static func makeCall(phoneNumber: String): Unit
 // index.cj
 
 import kit.TelephonyKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-Call.makeCall("138xxxxxxxx")
+try {
+    Call.makeCall("138xxxxxxxx")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### static func makeCall(UIAbilityContext, String)
@@ -355,10 +397,16 @@ public static func makeCall(context: UIAbilityContext, phoneNumber: String): Uni
 
 import kit.TelephonyKit.*
 import ohos.app.ability.ui_ability.UIAbilityContext
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-var ctx = Option<UIAbilityContext>.None
+try {
+    var ctx = Option<UIAbilityContext>.None
 
-Call.makeCall(ctx.getOrThrow(), "138xxxxxxxx")
+    Call.makeCall(ctx.getOrThrow(), "138xxxxxxxx")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## class EmergencyNumberOptions
@@ -467,8 +515,14 @@ public init(countryCode!: String = "CN")
 // index.cj
 
 import kit.TelephonyKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let op = NumberFormatOptions(countryCode: "CN")
+try {
+    let op = NumberFormatOptions(countryCode: "CN")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## enum CallState

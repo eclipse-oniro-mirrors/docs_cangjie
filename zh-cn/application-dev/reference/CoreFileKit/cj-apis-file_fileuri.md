@@ -57,8 +57,14 @@ public static func getUriFromPath(path: String): String
 // index.cj
 
 import kit.CoreFileKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let uri = getUriFromPath("test.txt")
+try {
+    let uri = getUriFromPath("test.txt")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## class FileUri

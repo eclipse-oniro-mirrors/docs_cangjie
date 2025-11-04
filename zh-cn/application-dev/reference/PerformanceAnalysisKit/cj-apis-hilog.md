@@ -61,8 +61,13 @@ DEBUG级别的日志在正式发布版本中默认不被打印，只有在调试
 
 import ohos.base.*
 import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
 
-Hilog.debug(0, "testTag", "Debug: Hello world!")
+try {
+    Hilog.debug(0, "testTag", "Debug: Hello world!")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### static func error(UInt32, String, String, Array\<String>)
@@ -95,8 +100,13 @@ public static func error(domain: UInt32, tag: String, format: String, args: Arra
 
 import ohos.base.*
 import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
 
-Hilog.error(0, "testTag", "Error: Hello world!")
+try {
+    Hilog.error(0, "testTag", "Error: Hello world!")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### static func fatal(UInt32, String, String, Array\<String>)
@@ -129,8 +139,13 @@ public static func fatal(domain: UInt32, tag: String, format: String, args: Arra
 
 import ohos.base.*
 import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
 
-Hilog.fatal(0, "testTag", "Fatal: Hello world!")
+try {
+    Hilog.fatal(0, "testTag", "Fatal: Hello world!")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### static func info(UInt32, String, String, Array\<String>)
@@ -163,8 +178,13 @@ public static func info(domain: UInt32, tag: String, format: String, args: Array
 
 import ohos.base.*
 import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
 
-Hilog.info(0, "testTag", "Info: Hello world!")
+try {
+    Hilog.info(0, "testTag", "Info: Hello world!")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### static func isLoggable(UInt32, String, LogLevel)
@@ -202,8 +222,13 @@ public static func isLoggable(domain: UInt32, tag: String, level: LogLevel): Boo
 
 import ohos.base.*
 import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
 
-Hilog.isLoggable(0, "testTag", LogLevel.Debug)
+try {
+    Hilog.isLoggable(0, "testTag", LogLevel.Debug)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### static func warn(UInt32, String, String, Array\<String>)
@@ -236,8 +261,13 @@ public static func warn(domain: UInt32, tag: String, format: String, args: Array
 
 import ohos.base.*
 import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
 
-Hilog.warn(0, "testTag", "Warn: Hello world!")
+try {
+    Hilog.warn(0, "testTag", "Warn: Hello world!")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## enum LogLevel

@@ -44,8 +44,14 @@ public func createImagePacker(): ImagePacker
 // index.cj
 
 import kit.ImageKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let imagePacker : ImagePacker = createImagePacker()
+try {
+    let imagePacker : ImagePacker = createImagePacker()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## func createImageReceiver(Size, ImageFormat, Int32)
@@ -91,9 +97,15 @@ public func createImageReceiver(size: Size, format: ImageFormat, capacity: Int32
 // index.cj
 
 import kit.ImageKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let size = Size(8, 8192)
-let receiver:ImageReceiver = createImageReceiver(size, ImageFormat.Jpeg, 8)
+try {
+    let size = Size(8, 8192)
+    let receiver:ImageReceiver = createImageReceiver(size, ImageFormat.Jpeg, 8)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## func createImageSource(String)
@@ -128,9 +140,15 @@ public func createImageSource(uri: String): ImageSource
 // index.cj
 
 import kit.ImageKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let path: String = "../test.jpg"
-let imageSourceApi: ImageSource = createImageSource(path)
+try {
+    let path: String = "../test.jpg"
+    let imageSourceApi: ImageSource = createImageSource(path)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## func createImageSource(String, SourceOptions)
@@ -166,9 +184,15 @@ public func createImageSource(uri: String, options: SourceOptions): ImageSource
 // index.cj
 
 import kit.ImageKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let sourceOptions: SourceOptions = SourceOptions(120)
-let imageSource: ImageSource = createImageSource("test.png", sourceOptions)
+try {
+    let sourceOptions: SourceOptions = SourceOptions(120)
+    let imageSource: ImageSource = createImageSource("test.png", sourceOptions)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## func createImageSource(Int32)
@@ -203,8 +227,14 @@ public func createImageSource(fd: Int32): ImageSource
 // index.cj
 
 import kit.ImageKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let imageSourceApi : ImageSource = createImageSource(0)
+try {
+    let imageSourceApi : ImageSource = createImageSource(0)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## func createImageSource(Int32, SourceOptions)
@@ -240,9 +270,15 @@ public func createImageSource(fd: Int32, options: SourceOptions): ImageSource
 // index.cj
 
 import kit.ImageKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let sourceOptions: SourceOptions = SourceOptions(120)
-let imageSource: ImageSource = createImageSource(0, sourceOptions)
+try {
+    let sourceOptions: SourceOptions = SourceOptions(120)
+    let imageSource: ImageSource = createImageSource(0, sourceOptions)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## func createImageSource(Array\<UInt8>)
@@ -277,9 +313,15 @@ public func createImageSource(buf: Array<UInt8>): ImageSource
 // index.cj
 
 import kit.ImageKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let buf: Array<UInt8> = Array<UInt8>(96, repeat: 0) //96为需要创建的像素buffer大小，取值为：height * width *4
-let imageSourceApi: ImageSource = createImageSource(buf)
+try {
+    let buf: Array<UInt8> = Array<UInt8>(96, repeat: 0) //96为需要创建的像素buffer大小，取值为：height * width *4
+    let imageSourceApi: ImageSource = createImageSource(buf)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## func createImageSource(Array\<UInt8>, SourceOptions)
@@ -315,10 +357,16 @@ public func createImageSource(buf: Array<UInt8>, options: SourceOptions): ImageS
 // index.cj
 
 import kit.ImageKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data: Array<UInt8> = Array<UInt8>(112, repeat: 0)
-let sourceOptions: SourceOptions = SourceOptions(120)
-let imageSourceApi: ImageSource = createImageSource(data, sourceOptions)
+try {
+    let data: Array<UInt8> = Array<UInt8>(112, repeat: 0)
+    let sourceOptions: SourceOptions = SourceOptions(120)
+    let imageSourceApi: ImageSource = createImageSource(data, sourceOptions)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## func createImageSource(RawFileDescriptor, SourceOptions)
@@ -408,10 +456,16 @@ public func createPixelMap(colors: Array<UInt8>, options: InitializationOptions)
 // index.cj
 
 import kit.ImageKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let color: Array<UInt8> = Array<UInt8>(96, repeat: 0) //96为需要创建的像素buffer大小，取值为：height * width *4
-let opts: InitializationOptions = InitializationOptions(Size(4, 6))
-let pixelMap = createPixelMap(color, opts)
+try {
+    let color: Array<UInt8> = Array<UInt8>(96, repeat: 0) //96为需要创建的像素buffer大小，取值为：height * width *4
+    let opts: InitializationOptions = InitializationOptions(Size(4, 6))
+    let pixelMap = createPixelMap(color, opts)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## class Component
@@ -806,11 +860,17 @@ public func getComponent(componentType: ComponentType): Component
 // index.cj
 
 import kit.ImageKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let size = Size(8, 8192)
-let receiver = createImageReceiver(size, ImageFormat.Jpeg, 8)
-let img = receiver.readNextImage()
-let component : Component = img.getComponent(ComponentType.Jpeg)
+try {
+    let size = Size(8, 8192)
+    let receiver = createImageReceiver(size, ImageFormat.Jpeg, 8)
+    let img = receiver.readNextImage()
+    let component : Component = img.getComponent(ComponentType.Jpeg)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func release()
@@ -833,11 +893,17 @@ public func release(): Unit
 // index.cj
 
 import kit.ImageKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let size = Size(8, 8192)
-let receiver = createImageReceiver(size, ImageFormat.Jpeg, 8)
-let img = receiver.readNextImage()
-img.release()
+try {
+    let size = Size(8, 8192)
+    let receiver = createImageReceiver(size, ImageFormat.Jpeg, 8)
+    let img = receiver.readNextImage()
+    img.release()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## class ImageInfo
@@ -1049,14 +1115,20 @@ public func packToData(source: ImageSource, options: PackingOption): Array<UInt8
 // index.cj
 
 import kit.ImageKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data: Array<UInt8> = Array<UInt8>(112, repeat: 0)
-let sourceOptions: SourceOptions = SourceOptions(120)
-let imageSource: ImageSource = createImageSource(data, sourceOptions)  // 请替换为正确的图片源，参考本文使用说明。
-var imagePacker = createImagePacker()
-let supportedFormats = imagePacker.supportedFormats
-let packingOption = PackingOption("image/jpeg", 98)
-let packRes = imagePacker.packToData(imageSource, packingOption)
+try {
+    let data: Array<UInt8> = Array<UInt8>(112, repeat: 0)
+    let sourceOptions: SourceOptions = SourceOptions(120)
+    let imageSource: ImageSource = createImageSource(data, sourceOptions)  // 请替换为正确的图片源，参考本文使用说明。
+    var imagePacker = createImagePacker()
+    let supportedFormats = imagePacker.supportedFormats
+    let packingOption = PackingOption("image/jpeg", 98)
+    let packRes = imagePacker.packToData(imageSource, packingOption)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func packToData(PixelMap, PackingOption)
@@ -1107,14 +1179,20 @@ public func packToData(source: PixelMap, options: PackingOption): Array<UInt8>
 // index.cj
 
 import kit.ImageKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-var colors: Array<UInt8> = [80, 2, 4, 8, 40, 2, 4, 8]
-var pm = createPixelMap(colors,
-    InitializationOptions(Size(2, 1), scaleMode: ScaleMode.CenterCrop))
-var imagePacker = createImagePacker()
-let supportedFormats = imagePacker.supportedFormats
-let packingOption = PackingOption("image/jpeg", 98)
-let packRes = imagePacker.packToData(pm, packingOption)
+try {
+    var colors: Array<UInt8> = [80, 2, 4, 8, 40, 2, 4, 8]
+    var pm = createPixelMap(colors,
+        InitializationOptions(Size(2, 1), scaleMode: ScaleMode.CenterCrop))
+    var imagePacker = createImagePacker()
+    let supportedFormats = imagePacker.supportedFormats
+    let packingOption = PackingOption("image/jpeg", 98)
+    let packRes = imagePacker.packToData(pm, packingOption)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func packToFile(ImageSource, Int32, PackingOption)
@@ -1163,16 +1241,22 @@ public func packToFile(source: ImageSource, fd: Int32, options: PackingOption): 
 
 import kit.ImageKit.*
 import kit.CoreFileKit.{FileIo, OpenMode}
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data: Array<UInt8> = Array<UInt8>(112, repeat: 0)
-let sourceOptions: SourceOptions = SourceOptions(120)
-let imageSource: ImageSource = createImageSource(data, sourceOptions)  // 请替换为正确的图片源，参考本文使用说明。
-var fd: Int32 = 0
-let filePath = "data/storage/el1/base/xxx.txt"
-let file = FileIo.open(filePath,mode: (OpenMode.CREATE | OpenMode.READ_WRITE))
-let packingOption = PackingOption("image/jpeg", 98)
-let imagePacker = createImagePacker()
-imagePacker.packToFile(imageSource, fd, packingOption)
+try {
+    let data: Array<UInt8> = Array<UInt8>(112, repeat: 0)
+    let sourceOptions: SourceOptions = SourceOptions(120)
+    let imageSource: ImageSource = createImageSource(data, sourceOptions)  // 请替换为正确的图片源，参考本文使用说明。
+    var fd: Int32 = 0
+    let filePath = "data/storage/el1/base/xxx.txt"
+    let file = FileIo.open(filePath,mode: (OpenMode.CREATE | OpenMode.READ_WRITE))
+    let packingOption = PackingOption("image/jpeg", 98)
+    let imagePacker = createImagePacker()
+    imagePacker.packToFile(imageSource, fd, packingOption)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func packToFile(PixelMap, Int32, PackingOption)
@@ -1220,19 +1304,25 @@ public func packToFile(source: PixelMap, fd: Int32, options: PackingOption): Uni
 
 import kit.ImageKit.*
 import kit.CoreFileKit.{FileIo, OpenMode}
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let color: Array<UInt8> = Array<UInt8>(96, repeat: 0) //96为需要创建的像素buffer大小，取值为：height * width *4
-let opts: InitializationOptions = InitializationOptions(
-    Size(4, 6),
-    editable: true,
-    pixelFormat: PixelMapFormat.Rgba8888)
-let pixelMap = createPixelMap(color, opts)
-var fd: Int32 = 0
-let filePath = "data/storage/el1/base/xxx.txt"
-let file = FileIo.open(filePath,mode: (OpenMode.CREATE | OpenMode.READ_WRITE))
-let packingOption = PackingOption("image/jpeg", 98)
-let imagePacker = createImagePacker()
-imagePacker.packToFile(pixelMap, fd, packingOption)
+try {
+    let color: Array<UInt8> = Array<UInt8>(96, repeat: 0) //96为需要创建的像素buffer大小，取值为：height * width *4
+    let opts: InitializationOptions = InitializationOptions(
+        Size(4, 6),
+        editable: true,
+        pixelFormat: PixelMapFormat.Rgba8888)
+    let pixelMap = createPixelMap(color, opts)
+    var fd: Int32 = 0
+    let filePath = "data/storage/el1/base/xxx.txt"
+    let file = FileIo.open(filePath,mode: (OpenMode.CREATE | OpenMode.READ_WRITE))
+    let packingOption = PackingOption("image/jpeg", 98)
+    let imagePacker = createImagePacker()
+    imagePacker.packToFile(pixelMap, fd, packingOption)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func release()
@@ -1255,9 +1345,15 @@ public func release(): Unit
 // index.cj
 
 import kit.ImageKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let imagePacker = createImagePacker()
-imagePacker.release()
+try {
+    let imagePacker = createImagePacker()
+    imagePacker.release()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## class ImagePropertyOptions
@@ -1415,10 +1511,16 @@ public func getReceivingSurfaceId(): String
 // index.cj
 
 import kit.ImageKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let size = Size(8, 8192)
-var receiver = createImageReceiver(size, ImageFormat.Jpeg, 8)
-let id: String = receiver.getReceivingSurfaceId()
+try {
+    let size = Size(8, 8192)
+    var receiver = createImageReceiver(size, ImageFormat.Jpeg, 8)
+    let id: String = receiver.getReceivingSurfaceId()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func release()
@@ -1441,10 +1543,16 @@ public func release(): Unit
 // index.cj
 
 import kit.ImageKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let size = Size(8, 8192)
-var receiver = createImageReceiver(size, ImageFormat.Jpeg, 8)
-receiver.release()
+try {
+    let size = Size(8, 8192)
+    var receiver = createImageReceiver(size, ImageFormat.Jpeg, 8)
+    receiver.release()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 ### func readLatestImage()
 
@@ -1580,21 +1688,27 @@ public func createPixelMap(options!: DecodingOptions = DecodingOptions()): Pixel
 // index.cj
 
 import kit.ImageKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data: Array<UInt8> = Array<UInt8>(112, repeat: 0)
-let sourceOptions: SourceOptions = SourceOptions(120)
-let imageSourceApi: ImageSource = createImageSource(data, sourceOptions)  // 请替换为正确的图片源，参考本文使用说明。
-let option = DecodingOptions(
-    sampleSize: 1,
-    rotate: 10,
-    editable: true,
-    desiredSize: Size(3, 4),
-    desiredRegion: Region(Size(3, 4), 0, 0),
-    desiredPixelFormat: PixelMapFormat.Rgba8888,
-    index: 0,
-    fitDensity: 20
-)
-let pixelMap = imageSourceApi.createPixelMap(options: option)
+try {
+    let data: Array<UInt8> = Array<UInt8>(112, repeat: 0)
+    let sourceOptions: SourceOptions = SourceOptions(120)
+    let imageSourceApi: ImageSource = createImageSource(data, sourceOptions)  // 请替换为正确的图片源，参考本文使用说明。
+    let option = DecodingOptions(
+        sampleSize: 1,
+        rotate: 10,
+        editable: true,
+        desiredSize: Size(3, 4),
+        desiredRegion: Region(Size(3, 4), 0, 0),
+        desiredPixelFormat: PixelMapFormat.Rgba8888,
+        index: 0,
+        fitDensity: 20
+    )
+    let pixelMap = imageSourceApi.createPixelMap(options: option)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func createPixelMapList(DecodingOptions)
@@ -1650,21 +1764,27 @@ public func createPixelMapList(options!: DecodingOptions = DecodingOptions()): A
 // index.cj
 
 import kit.ImageKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data: Array<UInt8> = Array<UInt8>(112, repeat: 0)
-let sourceOptions: SourceOptions = SourceOptions(120)
-let imageSourceApi: ImageSource = createImageSource(data, sourceOptions)  // 请替换为正确的图片源，参考本文使用说明。
-let option = DecodingOptions(
-    sampleSize: 1,
-    rotate: 10,
-    editable: true,
-    desiredSize: Size(3, 4),
-    desiredRegion: Region(Size(3, 4), 0, 0),
-    desiredPixelFormat: PixelMapFormat.Rgba8888,
-    index: 0,
-    fitDensity: 20
-)
-let pixelMap = imageSourceApi.createPixelMapList(options: option)
+try {
+    let data: Array<UInt8> = Array<UInt8>(112, repeat: 0)
+    let sourceOptions: SourceOptions = SourceOptions(120)
+    let imageSourceApi: ImageSource = createImageSource(data, sourceOptions)  // 请替换为正确的图片源，参考本文使用说明。
+    let option = DecodingOptions(
+        sampleSize: 1,
+        rotate: 10,
+        editable: true,
+        desiredSize: Size(3, 4),
+        desiredRegion: Region(Size(3, 4), 0, 0),
+        desiredPixelFormat: PixelMapFormat.Rgba8888,
+        index: 0,
+        fitDensity: 20
+    )
+    let pixelMap = imageSourceApi.createPixelMapList(options: option)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getDelayTimeList()
@@ -1709,11 +1829,17 @@ public func getDelayTimeList(): Array<Int32>
 // index.cj
 
 import kit.ImageKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data: Array<UInt8> = Array<UInt8>(112, repeat: 0)
-let sourceOptions: SourceOptions = SourceOptions(120)
-let imageSourceApi: ImageSource = createImageSource(data, sourceOptions)  // 请替换为正确的图片源，参考本文使用说明。
-let list = imageSourceApi.getDelayTimeList()
+try {
+    let data: Array<UInt8> = Array<UInt8>(112, repeat: 0)
+    let sourceOptions: SourceOptions = SourceOptions(120)
+    let imageSourceApi: ImageSource = createImageSource(data, sourceOptions)  // 请替换为正确的图片源，参考本文使用说明。
+    let list = imageSourceApi.getDelayTimeList()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getFrameCount()
@@ -1759,11 +1885,17 @@ public func getFrameCount(): UInt32
 // index.cj
 
 import kit.ImageKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data: Array<UInt8> = Array<UInt8>(112, repeat: 0)
-let sourceOptions: SourceOptions = SourceOptions(120)
-let imageSourceApi: ImageSource = createImageSource(data, sourceOptions)  // 请替换为正确的图片源，参考本文使用说明。
-let count = imageSourceApi.getFrameCount()
+try {
+    let data: Array<UInt8> = Array<UInt8>(112, repeat: 0)
+    let sourceOptions: SourceOptions = SourceOptions(120)
+    let imageSourceApi: ImageSource = createImageSource(data, sourceOptions)  // 请替换为正确的图片源，参考本文使用说明。
+    let count = imageSourceApi.getFrameCount()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getImageInfo(UInt32)
@@ -1799,11 +1931,17 @@ public func getImageInfo(index!: UInt32 = 0): ImageInfo
 // index.cj
 
 import kit.ImageKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data: Array<UInt8> = Array<UInt8>(112, repeat: 0)
-let sourceOptions: SourceOptions = SourceOptions(120)
-let imageSourceApi: ImageSource = createImageSource(data, sourceOptions)  // 请替换为正确的图片源，参考本文使用说明。
-imageSourceApi.getImageInfo(index : 0)
+try {
+    let data: Array<UInt8> = Array<UInt8>(112, repeat: 0)
+    let sourceOptions: SourceOptions = SourceOptions(120)
+    let imageSourceApi: ImageSource = createImageSource(data, sourceOptions)  // 请替换为正确的图片源，参考本文使用说明。
+    imageSourceApi.getImageInfo(index : 0)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getImageProperty(PropertyKey, ImagePropertyOptions)
@@ -1858,11 +1996,17 @@ public func getImageProperty(key: PropertyKey, options!: ImagePropertyOptions = 
 // index.cj
 
 import kit.ImageKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data: Array<UInt8> = Array<UInt8>(112, repeat: 0)
-let sourceOptions: SourceOptions = SourceOptions(120)
-let imageSourceApi: ImageSource = createImageSource(data, sourceOptions)  // 请替换为正确的图片源，参考本文使用说明。
-imageSourceApi.getImageProperty(PropertyKey.ImageLength)
+try {
+    let data: Array<UInt8> = Array<UInt8>(112, repeat: 0)
+    let sourceOptions: SourceOptions = SourceOptions(120)
+    let imageSourceApi: ImageSource = createImageSource(data, sourceOptions)  // 请替换为正确的图片源，参考本文使用说明。
+    imageSourceApi.getImageProperty(PropertyKey.ImageLength)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func modifyImageProperty(PropertyKey, String)
@@ -1904,11 +2048,17 @@ public func modifyImageProperty(key: PropertyKey, value: String): Unit
 // index.cj
 
 import kit.ImageKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data: Array<UInt8> = Array<UInt8>(112, repeat: 0)
-let sourceOptions: SourceOptions = SourceOptions(120)
-let imageSourceApi: ImageSource = createImageSource(data, sourceOptions)  // 请替换为正确的图片源，参考本文使用说明。
-imageSourceApi.modifyImageProperty(PropertyKey.ImageLength, "200")
+try {
+    let data: Array<UInt8> = Array<UInt8>(112, repeat: 0)
+    let sourceOptions: SourceOptions = SourceOptions(120)
+    let imageSourceApi: ImageSource = createImageSource(data, sourceOptions)  // 请替换为正确的图片源，参考本文使用说明。
+    imageSourceApi.modifyImageProperty(PropertyKey.ImageLength, "200")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func release()
@@ -1931,11 +2081,17 @@ public func release(): Unit
 // index.cj
 
 import kit.ImageKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data: Array<UInt8> = Array<UInt8>(112, repeat: 0)
-let sourceOptions: SourceOptions = SourceOptions(120)
-let imageSourceApi: ImageSource = createImageSource(data, sourceOptions)  // 请替换为正确的图片源，参考本文使用说明。
-imageSourceApi.release()
+try {
+    let data: Array<UInt8> = Array<UInt8>(112, repeat: 0)
+    let sourceOptions: SourceOptions = SourceOptions(120)
+    let imageSourceApi: ImageSource = createImageSource(data, sourceOptions)  // 请替换为正确的图片源，参考本文使用说明。
+    imageSourceApi.release()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func updateData(Array\<UInt8>, Bool, UInt32, UInt32)
@@ -1968,21 +2124,27 @@ public func updateData(buf: Array<UInt8>, isFinished: Bool, offset: UInt32, leng
 // index.cj
 
 import kit.ImageKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data: Array<UInt8> = Array<UInt8>(112, repeat: 0)
-let sourceOptions: SourceOptions = SourceOptions(120)
-let imageSourceApi: ImageSource = createImageSource(data, sourceOptions)  // 请替换为正确的图片源，参考本文使用说明。
-let testPng = Array<UInt8>(16500, repeat: 0)
-let bufferSize = 5000
-var offset = 0
-var isFinished = false
-while (offset < testPng.size) {
-    var oneStep = testPng.slice(offset, min(bufferSize, testPng.size - offset))
-    if (oneStep.size < bufferSize) {
-        isFinished = true
+try {
+    let data: Array<UInt8> = Array<UInt8>(112, repeat: 0)
+    let sourceOptions: SourceOptions = SourceOptions(120)
+    let imageSourceApi: ImageSource = createImageSource(data, sourceOptions)  // 请替换为正确的图片源，参考本文使用说明。
+    let testPng = Array<UInt8>(16500, repeat: 0)
+    let bufferSize = 5000
+    var offset = 0
+    var isFinished = false
+    while (offset < testPng.size) {
+        var oneStep = testPng.slice(offset, min(bufferSize, testPng.size - offset))
+        if (oneStep.size < bufferSize) {
+            isFinished = true
+        }
+        imageSourceApi.updateData(oneStep, isFinished, 0, UInt32(oneStep.size))
+        offset = offset + oneStep.size
     }
-    imageSourceApi.updateData(oneStep, isFinished, 0, UInt32(oneStep.size))
-    offset = offset + oneStep.size
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -2336,13 +2498,19 @@ public func applyColorSpace(targetColorSpace: ColorSpaceManager): Unit
 
 import kit.ImageKit.*
 import kit.ArkGraphics2D.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data: Array<UInt8> = Array<UInt8>(112, repeat: 0)
-let sourceOptions: SourceOptions = SourceOptions(120)
-let imageSourceApi: ImageSource = createImageSource(data, sourceOptions)  // 请替换为正确的图片源，参考本文使用说明。
-let pixelMap = imageSourceApi.createPixelMap()
-let colorSpaceManager = create(Srgb)
-pixelMap.applyColorSpace(colorSpaceManager)
+try {
+    let data: Array<UInt8> = Array<UInt8>(112, repeat: 0)
+    let sourceOptions: SourceOptions = SourceOptions(120)
+    let imageSourceApi: ImageSource = createImageSource(data, sourceOptions)  // 请替换为正确的图片源，参考本文使用说明。
+    let pixelMap = imageSourceApi.createPixelMap()
+    let colorSpaceManager = create(Srgb)
+    pixelMap.applyColorSpace(colorSpaceManager)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func createAlphaPixelmap()
@@ -2372,12 +2540,18 @@ public func createAlphaPixelmap(): PixelMap
 // index.cj
 
 import kit.ImageKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data: Array<UInt8> = Array<UInt8>(112, repeat: 0)
-let sourceOptions: SourceOptions = SourceOptions(120)
-let imageSourceApi: ImageSource = createImageSource(data, sourceOptions)  // 请替换为正确的图片源，参考本文使用说明。
-let pixelMap = imageSourceApi.createPixelMap()
-let alphaPixelmap = pixelMap.createAlphaPixelmap()
+try {
+    let data: Array<UInt8> = Array<UInt8>(112, repeat: 0)
+    let sourceOptions: SourceOptions = SourceOptions(120)
+    let imageSourceApi: ImageSource = createImageSource(data, sourceOptions)  // 请替换为正确的图片源，参考本文使用说明。
+    let pixelMap = imageSourceApi.createPixelMap()
+    let alphaPixelmap = pixelMap.createAlphaPixelmap()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func crop(Region)
@@ -2407,13 +2581,19 @@ public func crop(region: Region): Unit
 // index.cj
 
 import kit.ImageKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data: Array<UInt8> = Array<UInt8>(112, repeat: 0)
-let sourceOptions: SourceOptions = SourceOptions(120)
-let imageSourceApi: ImageSource = createImageSource(data, sourceOptions)  // 请替换为正确的图片源，参考本文使用说明。
-let pixelMap = imageSourceApi.createPixelMap()
-let region: Region = Region(Size(100, 100), 0, 0)
-pixelMap.crop(region)
+try {
+    let data: Array<UInt8> = Array<UInt8>(112, repeat: 0)
+    let sourceOptions: SourceOptions = SourceOptions(120)
+    let imageSourceApi: ImageSource = createImageSource(data, sourceOptions)  // 请替换为正确的图片源，参考本文使用说明。
+    let pixelMap = imageSourceApi.createPixelMap()
+    let region: Region = Region(Size(100, 100), 0, 0)
+    pixelMap.crop(region)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func flip(Bool, Bool)
@@ -2444,14 +2624,20 @@ public func flip(horizontal: Bool, vertical: Bool): Unit
 // index.cj
 
 import kit.ImageKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data: Array<UInt8> = Array<UInt8>(112, repeat: 0)
-let sourceOptions: SourceOptions = SourceOptions(120)
-let imageSourceApi: ImageSource = createImageSource(data, sourceOptions)  // 请替换为正确的图片源，参考本文使用说明。
-let pixelMap = imageSourceApi.createPixelMap()
-let horizontal: Bool = true
-let vertical: Bool = false
-pixelMap.flip(horizontal, vertical)
+try {
+    let data: Array<UInt8> = Array<UInt8>(112, repeat: 0)
+    let sourceOptions: SourceOptions = SourceOptions(120)
+    let imageSourceApi: ImageSource = createImageSource(data, sourceOptions)  // 请替换为正确的图片源，参考本文使用说明。
+    let pixelMap = imageSourceApi.createPixelMap()
+    let horizontal: Bool = true
+    let vertical: Bool = false
+    pixelMap.flip(horizontal, vertical)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getBytesNumberPerRow()
@@ -2481,12 +2667,18 @@ public func getBytesNumberPerRow(): UInt32
 // index.cj
 
 import kit.ImageKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data: Array<UInt8> = Array<UInt8>(112, repeat: 0)
-let sourceOptions: SourceOptions = SourceOptions(120)
-let imageSourceApi: ImageSource = createImageSource(data, sourceOptions)  // 请替换为正确的图片源，参考本文使用说明。
-let pixelMap = imageSourceApi.createPixelMap()
-let rowCount : UInt32 = pixelMap.getBytesNumberPerRow()
+try {
+    let data: Array<UInt8> = Array<UInt8>(112, repeat: 0)
+    let sourceOptions: SourceOptions = SourceOptions(120)
+    let imageSourceApi: ImageSource = createImageSource(data, sourceOptions)  // 请替换为正确的图片源，参考本文使用说明。
+    let pixelMap = imageSourceApi.createPixelMap()
+    let rowCount : UInt32 = pixelMap.getBytesNumberPerRow()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getColorSpace()
@@ -2527,12 +2719,18 @@ public func getColorSpace(): ColorSpaceManager
 
 import kit.ImageKit.*
 import kit.ArkGraphics2D.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data: Array<UInt8> = Array<UInt8>(112, repeat: 0)
-let sourceOptions: SourceOptions = SourceOptions(120)
-let imageSourceApi: ImageSource = createImageSource(data, sourceOptions)  // 请替换为正确的图片源，参考本文使用说明。
-let pixelMap = imageSourceApi.createPixelMap()
-let colorSpaceManager = pixelMap.getColorSpace()
+try {
+    let data: Array<UInt8> = Array<UInt8>(112, repeat: 0)
+    let sourceOptions: SourceOptions = SourceOptions(120)
+    let imageSourceApi: ImageSource = createImageSource(data, sourceOptions)  // 请替换为正确的图片源，参考本文使用说明。
+    let pixelMap = imageSourceApi.createPixelMap()
+    let colorSpaceManager = pixelMap.getColorSpace()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getDensity()
@@ -2562,12 +2760,18 @@ public func getDensity(): Int32
 // index.cj
 
 import kit.ImageKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data: Array<UInt8> = Array<UInt8>(112, repeat: 0)
-let sourceOptions: SourceOptions = SourceOptions(120)
-let imageSourceApi: ImageSource = createImageSource(data, sourceOptions)  // 请替换为正确的图片源，参考本文使用说明。
-let pixelMap = imageSourceApi.createPixelMap()
-let getDensity : Int32 = pixelMap.getDensity()
+try {
+    let data: Array<UInt8> = Array<UInt8>(112, repeat: 0)
+    let sourceOptions: SourceOptions = SourceOptions(120)
+    let imageSourceApi: ImageSource = createImageSource(data, sourceOptions)  // 请替换为正确的图片源，参考本文使用说明。
+    let pixelMap = imageSourceApi.createPixelMap()
+    let getDensity : Int32 = pixelMap.getDensity()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getImageInfo()
@@ -2597,12 +2801,18 @@ public func getImageInfo(): ImageInfo
 // index.cj
 
 import kit.ImageKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data: Array<UInt8> = Array<UInt8>(112, repeat: 0)
-let sourceOptions: SourceOptions = SourceOptions(120)
-let imageSourceApi: ImageSource = createImageSource(data, sourceOptions)  // 请替换为正确的图片源，参考本文使用说明。
-let pixelMap = imageSourceApi.createPixelMap()
-pixelMap.getImageInfo()
+try {
+    let data: Array<UInt8> = Array<UInt8>(112, repeat: 0)
+    let sourceOptions: SourceOptions = SourceOptions(120)
+    let imageSourceApi: ImageSource = createImageSource(data, sourceOptions)  // 请替换为正确的图片源，参考本文使用说明。
+    let pixelMap = imageSourceApi.createPixelMap()
+    pixelMap.getImageInfo()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getPixelBytesNumber()
@@ -2632,12 +2842,18 @@ public func getPixelBytesNumber(): UInt32
 // index.cj
 
 import kit.ImageKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data: Array<UInt8> = Array<UInt8>(112, repeat: 0)
-let sourceOptions: SourceOptions = SourceOptions(120)
-let imageSourceApi: ImageSource = createImageSource(data, sourceOptions)  // 请替换为正确的图片源，参考本文使用说明。
-let pixelMap = imageSourceApi.createPixelMap()
-let pixelBytesNumber : UInt32 = pixelMap.getPixelBytesNumber()
+try {
+    let data: Array<UInt8> = Array<UInt8>(112, repeat: 0)
+    let sourceOptions: SourceOptions = SourceOptions(120)
+    let imageSourceApi: ImageSource = createImageSource(data, sourceOptions)  // 请替换为正确的图片源，参考本文使用说明。
+    let pixelMap = imageSourceApi.createPixelMap()
+    let pixelBytesNumber : UInt32 = pixelMap.getPixelBytesNumber()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func opacity(Float32)
@@ -2667,13 +2883,19 @@ public func opacity(rate: Float32): Unit
 // index.cj
 
 import kit.ImageKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data: Array<UInt8> = Array<UInt8>(112, repeat: 0)
-let sourceOptions: SourceOptions = SourceOptions(120)
-let imageSourceApi: ImageSource = createImageSource(data, sourceOptions)  // 请替换为正确的图片源，参考本文使用说明。
-let pixelMap = imageSourceApi.createPixelMap()
-let rate: Float32 = 0.5
-pixelMap.opacity(rate)
+try {
+    let data: Array<UInt8> = Array<UInt8>(112, repeat: 0)
+    let sourceOptions: SourceOptions = SourceOptions(120)
+    let imageSourceApi: ImageSource = createImageSource(data, sourceOptions)  // 请替换为正确的图片源，参考本文使用说明。
+    let pixelMap = imageSourceApi.createPixelMap()
+    let rate: Float32 = 0.5
+    pixelMap.opacity(rate)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func readPixels(PositionArea)
@@ -2703,18 +2925,24 @@ public func readPixels(area: PositionArea): Unit
 // index.cj
 
 import kit.ImageKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data: Array<UInt8> = Array<UInt8>(112, repeat: 0)
-let sourceOptions: SourceOptions = SourceOptions(120)
-let imageSourceApi: ImageSource = createImageSource(data, sourceOptions)  // 请替换为正确的图片源，参考本文使用说明。
-let pixelMap = imageSourceApi.createPixelMap()
-let area: PositionArea = PositionArea(
-    Array<UInt8>(8, repeat: 0),
-    0,
-    8,
-    Region(Size(1, 2), 0, 0)
-)
-pixelMap.readPixels(area)
+try {
+    let data: Array<UInt8> = Array<UInt8>(112, repeat: 0)
+    let sourceOptions: SourceOptions = SourceOptions(120)
+    let imageSourceApi: ImageSource = createImageSource(data, sourceOptions)  // 请替换为正确的图片源，参考本文使用说明。
+    let pixelMap = imageSourceApi.createPixelMap()
+    let area: PositionArea = PositionArea(
+        Array<UInt8>(8, repeat: 0),
+        0,
+        8,
+        Region(Size(1, 2), 0, 0)
+    )
+    pixelMap.readPixels(area)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func readPixelsToBuffer(Array\<UInt8>)
@@ -2744,13 +2972,19 @@ public func readPixelsToBuffer(dst: Array<UInt8>): Unit
 // index.cj
 
 import kit.ImageKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data: Array<UInt8> = Array<UInt8>(112, repeat: 0)
-let sourceOptions: SourceOptions = SourceOptions(120)
-let imageSourceApi: ImageSource = createImageSource(data, sourceOptions)  // 请替换为正确的图片源，参考本文使用说明。
-let pixelMap = imageSourceApi.createPixelMap()
-let readBuffer: Array<UInt8> = Array<UInt8>(96, repeat: 0) //96为需要创建的像素buffer大小，取值为：height * width *4
-pixelMap.readPixelsToBuffer(readBuffer)
+try {
+    let data: Array<UInt8> = Array<UInt8>(112, repeat: 0)
+    let sourceOptions: SourceOptions = SourceOptions(120)
+    let imageSourceApi: ImageSource = createImageSource(data, sourceOptions)  // 请替换为正确的图片源，参考本文使用说明。
+    let pixelMap = imageSourceApi.createPixelMap()
+    let readBuffer: Array<UInt8> = Array<UInt8>(96, repeat: 0) //96为需要创建的像素buffer大小，取值为：height * width *4
+    pixelMap.readPixelsToBuffer(readBuffer)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func release()
@@ -2774,12 +3008,18 @@ public func release(): Unit
 // index.cj
 
 import kit.ImageKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data: Array<UInt8> = Array<UInt8>(112, repeat: 0)
-let sourceOptions: SourceOptions = SourceOptions(120)
-let imageSourceApi: ImageSource = createImageSource(data, sourceOptions)  // 请替换为正确的图片源，参考本文使用说明。
-let pixelMap = imageSourceApi.createPixelMap()
-pixelMap.release()
+try {
+    let data: Array<UInt8> = Array<UInt8>(112, repeat: 0)
+    let sourceOptions: SourceOptions = SourceOptions(120)
+    let imageSourceApi: ImageSource = createImageSource(data, sourceOptions)  // 请替换为正确的图片源，参考本文使用说明。
+    let pixelMap = imageSourceApi.createPixelMap()
+    pixelMap.release()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func rotate(Float32)
@@ -2809,13 +3049,19 @@ public func rotate(angle: Float32): Unit
 // index.cj
 
 import kit.ImageKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data: Array<UInt8> = Array<UInt8>(112, repeat: 0)
-let sourceOptions: SourceOptions = SourceOptions(120)
-let imageSourceApi: ImageSource = createImageSource(data, sourceOptions)  // 请替换为正确的图片源，参考本文使用说明。
-let pixelMap = imageSourceApi.createPixelMap()
-let angle: Float32 = 90.0
-pixelMap.rotate(angle)
+try {
+    let data: Array<UInt8> = Array<UInt8>(112, repeat: 0)
+    let sourceOptions: SourceOptions = SourceOptions(120)
+    let imageSourceApi: ImageSource = createImageSource(data, sourceOptions)  // 请替换为正确的图片源，参考本文使用说明。
+    let pixelMap = imageSourceApi.createPixelMap()
+    let angle: Float32 = 90.0
+    pixelMap.rotate(angle)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func scale(Float32, Float32)
@@ -2846,12 +3092,18 @@ public func scale(x: Float32, y: Float32): Unit
 // index.cj
 
 import kit.ImageKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data: Array<UInt8> = Array<UInt8>(112, repeat: 0)
-let sourceOptions: SourceOptions = SourceOptions(120)
-let imageSourceApi: ImageSource = createImageSource(data, sourceOptions)  // 请替换为正确的图片源，参考本文使用说明。
-let pixelMap = imageSourceApi.createPixelMap()
-pixelMap.scale(1.0, 1.0)
+try {
+    let data: Array<UInt8> = Array<UInt8>(112, repeat: 0)
+    let sourceOptions: SourceOptions = SourceOptions(120)
+    let imageSourceApi: ImageSource = createImageSource(data, sourceOptions)  // 请替换为正确的图片源，参考本文使用说明。
+    let pixelMap = imageSourceApi.createPixelMap()
+    pixelMap.scale(1.0, 1.0)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func setColorSpace(ColorSpaceManager)
@@ -2891,13 +3143,19 @@ public func setColorSpace(colorSpace: ColorSpaceManager): Unit
 
 import kit.ImageKit.*
 import kit.ArkGraphics2D.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data: Array<UInt8> = Array<UInt8>(112, repeat: 0)
-let sourceOptions: SourceOptions = SourceOptions(120)
-let imageSourceApi: ImageSource = createImageSource(data, sourceOptions)  // 请替换为正确的图片源，参考本文使用说明。
-let pixelMap = imageSourceApi.createPixelMap()
-let colorSpaceManager = create(Srgb)
-pixelMap.setColorSpace(colorSpaceManager)
+try {
+    let data: Array<UInt8> = Array<UInt8>(112, repeat: 0)
+    let sourceOptions: SourceOptions = SourceOptions(120)
+    let imageSourceApi: ImageSource = createImageSource(data, sourceOptions)  // 请替换为正确的图片源，参考本文使用说明。
+    let pixelMap = imageSourceApi.createPixelMap()
+    let colorSpaceManager = create(Srgb)
+    pixelMap.setColorSpace(colorSpaceManager)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func translate(Float32, Float32)
@@ -2928,14 +3186,20 @@ public func translate(x: Float32, y: Float32): Unit
 // index.cj
 
 import kit.ImageKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data: Array<UInt8> = Array<UInt8>(112, repeat: 0)
-let sourceOptions: SourceOptions = SourceOptions(120)
-let imageSourceApi: ImageSource = createImageSource(data, sourceOptions)  // 请替换为正确的图片源，参考本文使用说明。
-let pixelMap = imageSourceApi.createPixelMap()
-let translateX: Float32 = 50.0
-let translateY: Float32 = 10.0
-pixelMap.translate(translateX, translateY)
+try {
+    let data: Array<UInt8> = Array<UInt8>(112, repeat: 0)
+    let sourceOptions: SourceOptions = SourceOptions(120)
+    let imageSourceApi: ImageSource = createImageSource(data, sourceOptions)  // 请替换为正确的图片源，参考本文使用说明。
+    let pixelMap = imageSourceApi.createPixelMap()
+    let translateX: Float32 = 50.0
+    let translateY: Float32 = 10.0
+    pixelMap.translate(translateX, translateY)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func writeBufferToPixels(Array\<UInt8>)
@@ -2965,13 +3229,19 @@ public func writeBufferToPixels(src: Array<UInt8>): Unit
 // index.cj
 
 import kit.ImageKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data: Array<UInt8> = Array<UInt8>(112, repeat: 0)
-let sourceOptions: SourceOptions = SourceOptions(120)
-let imageSourceApi: ImageSource = createImageSource(data, sourceOptions)  // 请替换为正确的图片源，参考本文使用说明。
-let pixelMap = imageSourceApi.createPixelMap()
-let color: Array<UInt8> = Array<UInt8>(96, {i => UInt8(i)}) //96为需要创建的像素buffer大小，取值为：height * width *4
-pixelMap.writeBufferToPixels(color)
+try {
+    let data: Array<UInt8> = Array<UInt8>(112, repeat: 0)
+    let sourceOptions: SourceOptions = SourceOptions(120)
+    let imageSourceApi: ImageSource = createImageSource(data, sourceOptions)  // 请替换为正确的图片源，参考本文使用说明。
+    let pixelMap = imageSourceApi.createPixelMap()
+    let color: Array<UInt8> = Array<UInt8>(96, {i => UInt8(i)}) //96为需要创建的像素buffer大小，取值为：height * width *4
+    pixelMap.writeBufferToPixels(color)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func writePixels(PositionArea)
@@ -3001,18 +3271,24 @@ public func writePixels(area: PositionArea): Unit
 // index.cj
 
 import kit.ImageKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let data: Array<UInt8> = Array<UInt8>(112, repeat: 0)
-let sourceOptions: SourceOptions = SourceOptions(120)
-let imageSourceApi: ImageSource = createImageSource(data, sourceOptions)  // 请替换为正确的图片源，参考本文使用说明。
-let pixelMap = imageSourceApi.createPixelMap()
-let area: PositionArea = PositionArea(
-    Array<UInt8>(8, {i => UInt8(i)}),
-    0,
-    8,
-    Region(Size(1, 2), 0, 0)
-)
-pixelMap.writePixels(area)
+try {
+    let data: Array<UInt8> = Array<UInt8>(112, repeat: 0)
+    let sourceOptions: SourceOptions = SourceOptions(120)
+    let imageSourceApi: ImageSource = createImageSource(data, sourceOptions)  // 请替换为正确的图片源，参考本文使用说明。
+    let pixelMap = imageSourceApi.createPixelMap()
+    let area: PositionArea = PositionArea(
+        Array<UInt8>(8, {i => UInt8(i)}),
+        0,
+        8,
+        Region(Size(1, 2), 0, 0)
+    )
+    pixelMap.writePixels(area)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## class PositionArea

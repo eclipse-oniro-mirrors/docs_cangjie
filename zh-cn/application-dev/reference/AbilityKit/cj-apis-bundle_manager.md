@@ -1458,9 +1458,15 @@ public static func canOpenLink(link: String): Bool
 // index.cj
 
 import kit.AbilityKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let link = "app1Scheme://test.example.com/home"
-let canOpen = BundleManager.canOpenLink(link)
+try {
+    let link = "app1Scheme://test.example.com/home"
+    let canOpen = BundleManager.canOpenLink(link)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### static func getBundleInfoForSelf(Int32)
@@ -1495,9 +1501,15 @@ public static func getBundleInfoForSelf(bundleFlags: Int32): BundleInfo
 // index.cj
 
 import kit.AbilityKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let bundleFlags = BundleFlag.GET_BUNDLE_INFO_DEFAULT | BundleFlag.GET_BUNDLE_INFO_WITH_APPLICATION | BundleFlag.GET_BUNDLE_INFO_WITH_HAP_MODULE | BundleFlag.GET_BUNDLE_INFO_WITH_ABILITY
-let res = BundleManager.getBundleInfoForSelf(bundleFlags)
+try {
+    let bundleFlags = BundleFlag.GET_BUNDLE_INFO_DEFAULT | BundleFlag.GET_BUNDLE_INFO_WITH_APPLICATION | BundleFlag.GET_BUNDLE_INFO_WITH_HAP_MODULE | BundleFlag.GET_BUNDLE_INFO_WITH_ABILITY
+    let res = BundleManager.getBundleInfoForSelf(bundleFlags)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### static func getProfileByAbility(String, String, String)
@@ -1556,10 +1568,16 @@ public static func getProfileByAbility(moduleName: String, abilityName: String, 
 // index.cj
 
 import kit.AbilityKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let moduleName = "entry"
-let abilityName = "EntryAbility"
-let infoList = BundleManager.getProfileByAbility(moduleName, abilityName)
+try {
+    let moduleName = "entry"
+    let abilityName = "EntryAbility"
+    let infoList = BundleManager.getProfileByAbility(moduleName, abilityName)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### static func getProfileByExtensionAbility(String, String, String)
@@ -1618,11 +1636,17 @@ public static func getProfileByExtensionAbility(moduleName: String, extensionAbi
 // index.cj
 
 import kit.AbilityKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let moduleName = "entry"
-let extensionAbilityName = "EntryFormAbility"
-let metadataName = "ohos.extension.form"
-let info = BundleManager.getProfileByExtensionAbility(moduleName, extensionAbilityName, metadataName: metadataName)
+try {
+    let moduleName = "entry"
+    let extensionAbilityName = "EntryFormAbility"
+    let metadataName = "ohos.extension.form"
+    let info = BundleManager.getProfileByExtensionAbility(moduleName, extensionAbilityName, metadataName: metadataName)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## class DataItem
@@ -1724,8 +1748,14 @@ public static func isDefaultApplication(appType: String): Bool
 // index.cj
 
 import kit.AbilityKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let tag = DefaultAppManager.isDefaultApplication(ApplicationType.Image.getValue())
+try {
+    let tag = DefaultAppManager.isDefaultApplication(ApplicationType.Image.getValue())
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## class Dependency

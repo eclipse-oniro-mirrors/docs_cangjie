@@ -57,13 +57,18 @@ public mut prop context: AbilityStageContext
 
 <!-- compile -->
 ```cangjie
-import ohos.base.*
 import kit.AbilityKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-class MyAbilityStage <: AbilityStage {
-    public override func onCreate(): Unit {
-        let context = this.context
+try {
+    class MyAbilityStage <: AbilityStage {
+        public override func onCreate(): Unit {
+            let context = this.context
+        }
     }
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -90,15 +95,20 @@ public static func registerCreator(moduleName: String, creator: () -> AbilitySta
 
 <!-- compile -->
 ```cangjie
-import ohos.base.*
 import kit.AbilityKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ENTRY_STAGE_REGISTER_RESULT = AbilityStage.registerCreator("entry", () -> MyAbilityStage)
+try {
+    let ENTRY_STAGE_REGISTER_RESULT = AbilityStage.registerCreator("entry", () -> MyAbilityStage)
 
-class MyAbilityStage <: AbilityStage {
-    public override func onCreate(): Unit {
-        let context = this.context
+    class MyAbilityStage <: AbilityStage {
+        public override func onCreate(): Unit {
+            let context = this.context
+        }
     }
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -118,12 +128,17 @@ public open func onCreate(): Unit
 
 <!-- compile -->
 ```cangjie
-import ohos.base.*
 import kit.AbilityKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-class MyAbilityStage <: AbilityStage {
-    public override func onCreate(): Unit {
-        let context = this.context
+try {
+    class MyAbilityStage <: AbilityStage {
+        public override func onCreate(): Unit {
+            let context = this.context
+        }
     }
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
 }
 ```

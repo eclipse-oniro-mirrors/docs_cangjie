@@ -100,8 +100,13 @@ public func createGattServer(): GattServer
 
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
+import ohos.business_exception.BusinessException
 
-let gattServer: GattServer = createGattServer()
+try {
+    let gattServer: GattServer = createGattServer()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## func off(BluetoothBleCallbackType, ?CallbackObject)

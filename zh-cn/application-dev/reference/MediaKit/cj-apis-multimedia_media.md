@@ -239,16 +239,22 @@ public func fetchFrameByTime(timeUs: Int64, options: AVImageQueryOptions, param:
 
 import kit.MediaKit.*
 import kit.LocalizationKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let timeUs = 0
-let queryOption = AVImageQueryOptions.AvImageQueryNextSync
-let param = PixelMapParams(width: 300, height: 300)
-let generator = createAVImageGenerator()
-let abilityContext = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let rawFd = Global.getResourceManager().getRawFd("trailer.mp4")    // 请替换您的资源路径，获取文件路径参考本文使用说明
-generator.fdSrc = AVFileDescriptor(rawFd.fd, offset: rawFd.offset, length: rawFd.length)
-let pic = generator.fetchFrameByTime(timeUs, queryOption, param)
-generator.release()
+try {
+    let timeUs = 0
+    let queryOption = AVImageQueryOptions.AvImageQueryNextSync
+    let param = PixelMapParams(width: 300, height: 300)
+    let generator = createAVImageGenerator()
+    let abilityContext = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let rawFd = Global.getResourceManager().getRawFd("trailer.mp4")    // 请替换您的资源路径，获取文件路径参考本文使用说明
+    generator.fdSrc = AVFileDescriptor(rawFd.fd, offset: rawFd.offset, length: rawFd.length)
+    let pic = generator.fetchFrameByTime(timeUs, queryOption, param)
+    generator.release()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func release()

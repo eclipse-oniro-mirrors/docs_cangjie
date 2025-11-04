@@ -55,8 +55,14 @@ public static func createAtManager(): AtManager
 // index.cj
 
 import kit.AbilityKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let atManager: AtManager = AbilityAccessCtrl.createAtManager()
+try {
+    let atManager: AtManager = AbilityAccessCtrl.createAtManager()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## class AtManager
@@ -112,10 +118,16 @@ public func checkAccessToken(tokenID: UInt32, permissionName: Permissions): Gran
 // index.cj
 
 import kit.AbilityKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let atManager = AbilityAccessCtrl.createAtManager()
-let tokenID : UInt32 = 1 // tokenID系统应用可以通过bundleManager.getApplicationInfo获取，普通应用可以通过bundleManager.getBundleInfoForSelf获取
-let status = atManager.checkAccessToken(tokenID, "ohos.permission.READ_CONTACTS")
+try {
+    let atManager = AbilityAccessCtrl.createAtManager()
+    let tokenID : UInt32 = 1 // tokenID系统应用可以通过bundleManager.getApplicationInfo获取，普通应用可以通过bundleManager.getBundleInfoForSelf获取
+    let status = atManager.checkAccessToken(tokenID, "ohos.permission.READ_CONTACTS")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func requestPermissionsFromUser(UIAbilityContext, Array\<Permissions>, AsyncCallback\<PermissionRequestResult>)
@@ -165,26 +177,31 @@ public func requestPermissionsFromUser(context: UIAbilityContext, permissionList
 import kit.AbilityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 import ohos.business_exception.*
+import ohos.business_exception.BusinessException
 
-// 此处代码可添加在依赖项定义中
-var resultCallback = {
-    errorCode: Option<BusinessException>, data: Option<PermissionRequestResult> => match (errorCode) {
-        case Some(e) => Hilog.error(0, "AppLogCj", "permissionResultCallBack request error: errcode is ${e.code}")
-        case _ =>
-            match (data) {
-                case Some(value) =>
-                    for (i in (0..value.permissions.size)) {
-                        Hilog.info(0, "AppLogCj", "CallBack: ${value.permissions[i]} - ${value.authResults[i]}")
-                    }
-                case _ => Hilog.error(0, "AppLogCj", "permissionResultCallBack request error: data is null")
-            }
+try {
+    // 此处代码可添加在依赖项定义中
+    var resultCallback = {
+        errorCode: Option<BusinessException>, data: Option<PermissionRequestResult> => match (errorCode) {
+            case Some(e) => Hilog.error(0, "AppLogCj", "permissionResultCallBack request error: errcode is ${e.code}")
+            case _ =>
+                match (data) {
+                    case Some(value) =>
+                        for (i in (0..value.permissions.size)) {
+                            Hilog.info(0, "AppLogCj", "CallBack: ${value.permissions[i]} - ${value.authResults[i]}")
+                        }
+                    case _ => Hilog.error(0, "AppLogCj", "permissionResultCallBack request error: data is null")
+                }
+        }
     }
-}
 
-let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
-let atManager = AbilityAccessCtrl.createAtManager()
-let permissionList = ["ohos.permission.READ_CONTACTS", "ohos.permission.CAMERA"]
-atManager.requestPermissionsFromUser(ctx.getOrThrow(), permissionList, resultCallback)
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+    let atManager = AbilityAccessCtrl.createAtManager()
+    let permissionList = ["ohos.permission.READ_CONTACTS", "ohos.permission.CAMERA"]
+    atManager.requestPermissionsFromUser(ctx.getOrThrow(), permissionList, resultCallback)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## enum GrantStatus
