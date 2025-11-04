@@ -123,22 +123,27 @@ public static func on(eventType: ErrorManagerEvent, observer: ErrorObserver): In
 // index.cj
 
 import kit.AbilityKit.*
-import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let observer = ErrorObserver(
-    {
-        errorMsg =>
-            Hilog.info(0, "test_errorManager", "onUnhandledException, errorMsg:  =${errorMsg}")
-    },
-    onException: Some({ errorObj =>
-        Hilog.info(0, "test_errorManager", "onException, name:   =${errorObj.name}")
-        Hilog.info(0, "test_errorManager", "onException, message:   =${errorObj.message}")
-        if (let Some(v) <-errorObj.stack) {
-            Hilog.info(0, "test_errorManager", "onException, stack:    =${v}")
-        }
-    })
-)
-ErrorManager.on(ErrorManagerEvent.Error, observer)
+try {
+    let observer = ErrorObserver(
+        {
+            errorMsg =>
+                Hilog.info(0, "test_errorManager", "onUnhandledException, errorMsg:  =${errorMsg}")
+        },
+        onException: Some({ errorObj =>
+            Hilog.info(0, "test_errorManager", "onException, name:   =${errorObj.name}")
+            Hilog.info(0, "test_errorManager", "onException, message:   =${errorObj.message}")
+            if (let Some(v) <-errorObj.stack) {
+                Hilog.info(0, "test_errorManager", "onException, stack:    =${v}")
+            }
+        })
+    )
+    ErrorManager.on(ErrorManagerEvent.Error, observer)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## enum ErrorManagerEvent

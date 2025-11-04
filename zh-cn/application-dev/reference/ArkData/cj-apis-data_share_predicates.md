@@ -90,9 +90,15 @@ public func inValues(field: String, value: Array<VBValueType>): DataSharePredica
 // index.cj
 
 import kit.ArkData.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let predicates = DataSharePredicates()
-predicates.inValues("AGE", [VBValueType.Integer(18), VBValueType.Integer(20)])
+try {
+    let predicates = DataSharePredicates()
+    predicates.inValues("AGE", [VBValueType.Integer(18), VBValueType.Integer(20)])
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func and()
@@ -129,11 +135,17 @@ public func and(): DataSharePredicates
 // index.cj
 
 import kit.ArkData.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let predicates = DataSharePredicates()
-predicates.equalTo("NAME", VBValueType.StringValue("lisi"))
-        .and()
-        .equalTo("SALARY", VBValueType.Double(200.5))
+try {
+    let predicates = DataSharePredicates()
+    predicates.equalTo("NAME", VBValueType.StringValue("lisi"))
+            .and()
+            .equalTo("SALARY", VBValueType.Double(200.5))
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func equalTo(String, VBValueType)
@@ -177,9 +189,15 @@ public func equalTo(field: String, value: VBValueType): DataSharePredicates
 // index.cj
 
 import kit.ArkData.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let predicates = DataSharePredicates()
-predicates.equalTo("NAME", VBValueType.StringValue("Rose"))
+try {
+    let predicates = DataSharePredicates()
+    predicates.equalTo("NAME", VBValueType.StringValue("Rose"))
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func limit(Int32, Int32)
@@ -223,9 +241,15 @@ public func limit(total: Int32, offset: Int32): DataSharePredicates
 // index.cj
 
 import kit.ArkData.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let predicates = DataSharePredicates()
-predicates.equalTo("NAME", VBValueType.StringValue("Rose")).limit(10, 3)
+try {
+    let predicates = DataSharePredicates()
+    predicates.equalTo("NAME", VBValueType.StringValue("Rose")).limit(10, 3)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func orderByAsc(String)
@@ -268,9 +292,15 @@ public func orderByAsc(field: String): DataSharePredicates
 // index.cj
 
 import kit.ArkData.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let predicates = DataSharePredicates()
-predicates.orderByAsc("AGE")
+try {
+    let predicates = DataSharePredicates()
+    predicates.orderByAsc("AGE")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func orderByDesc(String)
@@ -313,7 +343,13 @@ public func orderByDesc(field: String): DataSharePredicates
 // index.cj
 
 import kit.ArkData.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let predicates = DataSharePredicates()
-predicates.orderByDesc("AGE")
+try {
+    let predicates = DataSharePredicates()
+    predicates.orderByDesc("AGE")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```

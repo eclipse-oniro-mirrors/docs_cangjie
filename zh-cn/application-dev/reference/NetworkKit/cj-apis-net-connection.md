@@ -59,13 +59,19 @@ public func createNetConnection(netSpecifier!: ?NetSpecifier = None, timeout!: U
 
 import ohos.base.*
 import kit.NetworkKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-// 关注默认网络, 不需要传参
-let netConnection = createNetConnection()
+try {
+    // 关注默认网络, 不需要传参
+    let netConnection = createNetConnection()
 
-// 关注蜂窝网络，需要传入相关网络特征，timeout参数未传入说明未使用超时时间，此时timeout为0
-let netspecifier = NetSpecifier(NetCapabilities([NetBearType.BearerCellular]))
-let netConnectionCellular = createNetConnection(netSpecifier: netspecifier)
+    // 关注蜂窝网络，需要传入相关网络特征，timeout参数未传入说明未使用超时时间，此时timeout为0
+    let netspecifier = NetSpecifier(NetCapabilities([NetBearType.BearerCellular]))
+    let netConnectionCellular = createNetConnection(netSpecifier: netspecifier)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## func getAddressesByName(String)
@@ -114,8 +120,14 @@ public func getAddressesByName(host: String): Array<NetAddress>
 
 import ohos.base.*
 import kit.NetworkKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let addresses = getAddressesByName("localhost")
+try {
+    let addresses = getAddressesByName("localhost")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## func getAllNets()
@@ -157,8 +169,14 @@ public func getAllNets(): Array<NetHandle>
 
 import ohos.base.*
 import kit.NetworkKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let netHandles = getAllNets()
+try {
+    let netHandles = getAllNets()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## func getAppNet()
@@ -197,8 +215,14 @@ public func getAppNet(): NetHandle
 
 import ohos.base.*
 import kit.NetworkKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let netHandle = getAppNet()
+try {
+    let netHandle = getAppNet()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## func getConnectionProperties(NetHandle)
@@ -344,8 +368,14 @@ public func getDefaultNet(): NetHandle
 
 import ohos.base.*
 import kit.NetworkKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let netHandle = getDefaultNet()
+try {
+    let netHandle = getDefaultNet()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## func getNetCapabilities(NetHandle)
@@ -444,8 +474,14 @@ public func hasDefaultNet(): Bool
 
 import ohos.base.*
 import kit.NetworkKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let hasDefault = hasDefaultNet()
+try {
+    let hasDefault = hasDefaultNet()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## func isDefaultNetMetered()
@@ -487,8 +523,14 @@ public func isDefaultNetMetered(): Bool
 
 import ohos.base.*
 import kit.NetworkKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let isMetered = isDefaultNetMetered()
+try {
+    let isMetered = isDefaultNetMetered()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## func reportNetConnected(NetHandle)
@@ -531,9 +573,15 @@ public func reportNetConnected(netHandle: NetHandle): Unit
 
 import ohos.base.*
 import kit.NetworkKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let handle = getDefaultNet()
-reportNetConnected(handle)
+try {
+    let handle = getDefaultNet()
+    reportNetConnected(handle)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## func reportNetDisconnected(NetHandle)
@@ -576,9 +624,15 @@ public func reportNetDisconnected(netHandle: NetHandle): Unit
 
 import ohos.base.*
 import kit.NetworkKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let handle = getDefaultNet()
-reportNetDisconnected(handle)
+try {
+    let handle = getDefaultNet()
+    reportNetDisconnected(handle)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## func setAppNet(NetHandle)
@@ -1411,9 +1465,15 @@ public func register(): Unit
 
 import ohos.base.*
 import kit.NetworkKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let netCon: NetConnection = createNetConnection()
-netCon.register()
+try {
+    let netCon: NetConnection = createNetConnection()
+    netCon.register()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func unregister()
@@ -1447,10 +1507,16 @@ public func unregister(): Unit
 
 import ohos.base.*
 import kit.NetworkKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let netCon: NetConnection = createNetConnection()
-netCon.register()
-netCon.unregister()
+try {
+    let netCon: NetConnection = createNetConnection()
+    netCon.register()
+    netCon.unregister()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## class NetConnectionPropertyInfo
@@ -1576,10 +1642,16 @@ public func getAddressByName(host: String): NetAddress
 
 import ohos.base.*
 import kit.NetworkKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let handle = getDefaultNet()
+try {
+    let handle = getDefaultNet()
 
-let address = handle.getAddressByName("localhost")
+    let address = handle.getAddressByName("localhost")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getAddressesByName(String)
@@ -1628,10 +1700,16 @@ public func getAddressesByName(host: String): Array<NetAddress>
 
 import ohos.base.*
 import kit.NetworkKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let handle = getDefaultNet()
+try {
+    let handle = getDefaultNet()
 
-let addresses = handle.getAddressesByName("localhost")
+    let addresses = handle.getAddressesByName("localhost")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## class NetSpecifier

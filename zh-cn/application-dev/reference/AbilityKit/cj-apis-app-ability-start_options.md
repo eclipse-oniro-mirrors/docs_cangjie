@@ -103,6 +103,12 @@ public init(
 <!-- compile -->
 ```cangjie
 import kit.AbilityKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let startOptions = StartOptions(WindowMode.FullScreen, 0)
+try {
+    let startOptions = StartOptions(WindowMode.FullScreen, 0)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```

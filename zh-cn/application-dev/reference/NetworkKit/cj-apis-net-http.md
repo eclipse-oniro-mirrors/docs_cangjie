@@ -52,8 +52,14 @@ public func createHttp(): HttpRequest
 
 import ohos.base.*
 import kit.NetworkKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let httpRequest = createHttp()
+try {
+    let httpRequest = createHttp()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## func createHttpResponseCache(UInt32)
@@ -89,8 +95,14 @@ public func createHttpResponseCache(cacheSize!: UInt32 = MAX_CACHE_SIZE): HttpRe
 
 import ohos.base.*
 import kit.NetworkKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let httpResponseCache = createHttpResponseCache()
+try {
+    let httpResponseCache = createHttpResponseCache()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## class ClientCert
@@ -323,10 +335,16 @@ public func destroy(): Unit
 
 import ohos.base.*
 import kit.NetworkKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let httpRequest = createHttp()
+try {
+    let httpRequest = createHttp()
 
-httpRequest.destroy()
+    httpRequest.destroy()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func off(HttpRequestEvent, ?CallbackObject)
@@ -594,18 +612,23 @@ public func request(url: String, options: HttpRequestOptions, callback: AsyncCal
 import ohos.base.*
 import kit.NetworkKit.*
 import kit.PerformanceAnalysisKit.Hilog
+import ohos.business_exception.BusinessException
 
-let httpRequest = createHttp()
-httpRequest.request("http://www.example.com", {err, resp =>
-    if (let Some(e) <- err) {
-        Hilog.error(0, "AppLogCj","exception: ${e.message}")
-    }
-    if (let Some(r) <- resp) {
-        Hilog.info(0, "http_test", "resp: ${r.responseCode}")
-    } else {
-        Hilog.error(0, "AppLogCj", "response is none")
-    }
-})
+try {
+    let httpRequest = createHttp()
+    httpRequest.request("http://www.example.com", {err, resp =>
+        if (let Some(e) <- err) {
+            Hilog.error(0, "AppLogCj","exception: ${e.message}")
+        }
+        if (let Some(r) <- resp) {
+            Hilog.info(0, "http_test", "resp: ${r.responseCode}")
+        } else {
+            Hilog.error(0, "AppLogCj", "response is none")
+        }
+    })
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func request(String, AsyncCallback\<HttpResponse>)
@@ -683,18 +706,23 @@ public func request(url: String, callback: AsyncCallback<HttpResponse>): Unit
 import ohos.base.*
 import kit.NetworkKit.*
 import kit.PerformanceAnalysisKit.Hilog
+import ohos.business_exception.BusinessException
 
-let httpRequest = createHttp()
-httpRequest.request("http://www.example.com", {err, resp =>
-    if (let Some(e) <- err) {
-        Hilog.error(0, "AppLogCj","exception: ${e.message}")
-    }
-    if (let Some(r) <- resp) {
-        Hilog.info(0, "http_test", "resp: ${r.responseCode}")
-    } else {
-        Hilog.error(0, "AppLogCj", "response is none")
-    }
-})
+try {
+    let httpRequest = createHttp()
+    httpRequest.request("http://www.example.com", {err, resp =>
+        if (let Some(e) <- err) {
+            Hilog.error(0, "AppLogCj","exception: ${e.message}")
+        }
+        if (let Some(r) <- resp) {
+            Hilog.info(0, "http_test", "resp: ${r.responseCode}")
+        } else {
+            Hilog.error(0, "AppLogCj", "response is none")
+        }
+    })
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func requestInStream(String, HttpRequestOptions, AsyncCallback\<UInt32>)
@@ -769,18 +797,23 @@ public func requestInStream(url: String, options: HttpRequestOptions, callback: 
 import ohos.base.*
 import kit.NetworkKit.*
 import kit.PerformanceAnalysisKit.Hilog
+import ohos.business_exception.BusinessException
 
-let httpRequest = createHttp()
-httpRequest.requestInStream("http://www.example.com", {err, code =>
-    if (let Some(e) <- err) {
-        Hilog.error(0, "AppLogCj","exception: ${e.message}")
-    }
-    if (let Some(respCode) <- code) {
-        Hilog.info(0, "AppLogCj", "resp: ${respCode}")
-    } else {
-        Hilog.error(0, "AppLogCj", "response is none")
-    }
-})
+try {
+    let httpRequest = createHttp()
+    httpRequest.requestInStream("http://www.example.com", {err, code =>
+        if (let Some(e) <- err) {
+            Hilog.error(0, "AppLogCj","exception: ${e.message}")
+        }
+        if (let Some(respCode) <- code) {
+            Hilog.info(0, "AppLogCj", "resp: ${respCode}")
+        } else {
+            Hilog.error(0, "AppLogCj", "response is none")
+        }
+    })
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func requestInStream(String, AsyncCallback\<UInt32>)
@@ -854,18 +887,23 @@ public func requestInStream(url: String, callback: AsyncCallback<UInt32>): Unit
 import ohos.base.*
 import kit.NetworkKit.*
 import kit.PerformanceAnalysisKit.Hilog
+import ohos.business_exception.BusinessException
 
-let httpRequest = createHttp()
-httpRequest.requestInStream("http://www.example.com", {err, code =>
-    if (let Some(e) <- err) {
-        Hilog.error(0, "AppLogCj","exception: ${e.message}")
-    }
-    if (let Some(respCode) <- code) {
-        Hilog.info(0, "AppLogCj", "resp: ${respCode}")
-    } else {
-        Hilog.error(0, "AppLogCj", "response is none")
-    }
-})
+try {
+    let httpRequest = createHttp()
+    httpRequest.requestInStream("http://www.example.com", {err, code =>
+        if (let Some(e) <- err) {
+            Hilog.error(0, "AppLogCj","exception: ${e.message}")
+        }
+        if (let Some(respCode) <- code) {
+            Hilog.info(0, "AppLogCj", "resp: ${respCode}")
+        } else {
+            Hilog.error(0, "AppLogCj", "response is none")
+        }
+    })
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## class HttpRequestOptions

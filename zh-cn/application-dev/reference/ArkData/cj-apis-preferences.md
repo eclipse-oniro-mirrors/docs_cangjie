@@ -185,15 +185,16 @@ public static func deletePreferences(context: UIAbilityContext, name: String): U
 // index.cj
 
 import kit.ArkData.*
-import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-// 获取 Preferences 实例
-let preferences = Preferences.getPreferences(Global.getAbilityContext(), "myStore")  // 需获取Context应用上下文，详见本文使用说明
 try {
+    // 获取 Preferences 实例
+    let preferences = Preferences.getPreferences(Global.getAbilityContext(), "myStore")  // 需获取Context应用上下文，详见本文使用说明
     // 删除 Preferences 实例
     Preferences.deletePreferences(Global.getAbilityContext(), "myStore")
-} catch (e: Exception) {
-    Hilog.error(0, "AppLogCj", "delete Preferences failed")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -244,15 +245,16 @@ public static func deletePreferences(context: UIAbilityContext, options: Prefere
 // index.cj
 
 import kit.ArkData.*
-import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-// 获取 Preferences 实例
-let preferences = Preferences.getPreferences(Global.getAbilityContext(), "myStore")  // 需获取Context应用上下文，详见本文使用说明
 try {
+    // 获取 Preferences 实例
+    let preferences = Preferences.getPreferences(Global.getAbilityContext(), "myStore")  // 需获取Context应用上下文，详见本文使用说明
     // 删除 Preferences 实例
     Preferences.deletePreferences(Global.getAbilityContext(), "myStore")
-} catch (e: Exception) {
-    Hilog.error(0, "AppLogCj", "delete Preferences failed")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -308,14 +310,15 @@ public static func getPreferences(context: UIAbilityContext, name: String): Pref
 // index.cj
 
 import kit.ArkData.*
-import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let preferences = Preferences.getPreferences(Global.getAbilityContext(), PreferencesOptions("mystore", dataGroupId:"myGroupID")) // 需获取Context应用上下文，详见本文使用说明
 try {
+    let preferences = Preferences.getPreferences(Global.getAbilityContext(), PreferencesOptions("mystore", dataGroupId:"myGroupID")) // 需获取Context应用上下文，详见本文使用说明
     // 删除 Preferences 实例的缓存
     Preferences.removePreferencesFromCache(Global.getAbilityContext(), PreferencesOptions("mystore", dataGroupId:"myGroupID"))
-} catch (e: Exception) {
-    Hilog.error(0, "AppLogCj", "Failed to remove cache for preferences")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -374,14 +377,15 @@ public static func getPreferences(context: UIAbilityContext, options: Preference
 // index.cj
 
 import kit.ArkData.*
-import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let preferences = Preferences.getPreferences(Global.getAbilityContext(), PreferencesOptions("mystore", dataGroupId:"myGroupID")) // 需获取Context应用上下文，详见本文使用说明
 try {
+    let preferences = Preferences.getPreferences(Global.getAbilityContext(), PreferencesOptions("mystore", dataGroupId:"myGroupID")) // 需获取Context应用上下文，详见本文使用说明
     // 删除 Preferences 实例的缓存
     Preferences.removePreferencesFromCache(Global.getAbilityContext(), PreferencesOptions("mystore", dataGroupId:"myGroupID"))
-} catch (e: Exception) {
-    Hilog.error(0, "AppLogCj", "Failed to remove cache for preferences")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -425,14 +429,15 @@ public static func removePreferencesFromCache(context: UIAbilityContext, name: S
 // index.cj
 
 import kit.ArkData.*
-import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let preferences = Preferences.getPreferences(Global.getAbilityContext(), PreferencesOptions("mystore", dataGroupId:"myGroupID")) // 需获取Context应用上下文，详见本文使用说明
 try {
+    let preferences = Preferences.getPreferences(Global.getAbilityContext(), PreferencesOptions("mystore", dataGroupId:"myGroupID")) // 需获取Context应用上下文，详见本文使用说明
     // 删除 Preferences 实例的缓存
     Preferences.removePreferencesFromCache(Global.getAbilityContext(), PreferencesOptions("mystore", dataGroupId:"myGroupID"))
-} catch (e: Exception) {
-    Hilog.error(0, "AppLogCj", "Failed to remove cache for preferences")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -485,14 +490,15 @@ public static func removePreferencesFromCache(context: UIAbilityContext, options
 // index.cj
 
 import kit.ArkData.*
-import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let preferences = Preferences.getPreferences(Global.getAbilityContext(), PreferencesOptions("mystore", dataGroupId:"myGroupID")) // 需获取Context应用上下文，详见本文使用说明
 try {
+    let preferences = Preferences.getPreferences(Global.getAbilityContext(), PreferencesOptions("mystore", dataGroupId:"myGroupID")) // 需获取Context应用上下文，详见本文使用说明
     // 删除 Preferences 实例的缓存
     Preferences.removePreferencesFromCache(Global.getAbilityContext(), PreferencesOptions("mystore", dataGroupId:"myGroupID"))
-} catch (e: Exception) {
-    Hilog.error(0, "AppLogCj", "Failed to remove cache for preferences")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -525,10 +531,16 @@ public func clear(): Unit
 // index.cj
 
 import kit.ArkData.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let preferences = Preferences.getPreferences(Global.getAbilityContext(), PreferencesOptions("mystore", dataGroupId:"myGroupID")) // 需获取Context应用上下文，详见本文使用说明
-preferences.put("myKey", PreferencesValueType.StringData("myValue"))
-preferences.clear()
+try {
+    let preferences = Preferences.getPreferences(Global.getAbilityContext(), PreferencesOptions("mystore", dataGroupId:"myGroupID")) // 需获取Context应用上下文，详见本文使用说明
+    preferences.put("myKey", PreferencesValueType.StringData("myValue"))
+    preferences.clear()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func delete(String)
@@ -565,10 +577,16 @@ public func delete(key: String): Unit
 // index.cj
 
 import kit.ArkData.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-// 获取 Preferences 实例
-let preferences = Preferences.getPreferences(Global.getAbilityContext(), "myStore") // 需获取Context应用上下文，详见本文使用说明
-preferences.delete("startup")
+try {
+    // 获取 Preferences 实例
+    let preferences = Preferences.getPreferences(Global.getAbilityContext(), "myStore") // 需获取Context应用上下文，详见本文使用说明
+    preferences.delete("startup")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func flush()
@@ -600,10 +618,16 @@ public func flush(): Unit
 // index.cj
 
 import kit.ArkData.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let preferences = Preferences.getPreferences(Global.getAbilityContext(), PreferencesOptions("mystore", dataGroupId:"myGroupID")) // 需获取Context应用上下文，详见本文使用说明
-preferences.put("myKey", PreferencesValueType.StringData("myValue"))
-preferences.flush()
+try {
+    let preferences = Preferences.getPreferences(Global.getAbilityContext(), PreferencesOptions("mystore", dataGroupId:"myGroupID")) // 需获取Context应用上下文，详见本文使用说明
+    preferences.put("myKey", PreferencesValueType.StringData("myValue"))
+    preferences.flush()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func get(String, PreferencesValueType)
@@ -648,15 +672,18 @@ public func get(key: String, defValue: PreferencesValueType): PreferencesValueTy
 // index.cj
 
 import kit.ArkData.*
-import kit.PerformanceAnalysisKit.*
-
 import kit.PerformanceAnalysisKit.Hilog
+import ohos.business_exception.BusinessException
 
-let preferences = Preferences.getPreferences(Global.getAbilityContext(), PreferencesOptions("mystore", dataGroupId:"myGroupID")) // 需获取Context应用上下文，详见本文使用说明
-var value = preferences.get("key", PreferencesValueType.Integer(0))
-match (value) {
-    case PreferencesValueType.Integer(n) => Hilog.info(0, "AppLogCj", "获取到的值为${n}")
-    case _ => Hilog.info(0, "AppLogCj", "获取到的值并不是 Int")
+try {
+    let preferences = Preferences.getPreferences(Global.getAbilityContext(), PreferencesOptions("mystore", dataGroupId:"myGroupID")) // 需获取Context应用上下文，详见本文使用说明
+    var value = preferences.get("key", PreferencesValueType.Integer(0))
+    match (value) {
+        case PreferencesValueType.Integer(n) => Hilog.info(0, "AppLogCj", "获取到的值为${n}")
+        case _ => Hilog.info(0, "AppLogCj", "获取到的值并不是 Int")
+    }
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -695,19 +722,22 @@ public func getAll(): HashMap<String, PreferencesValueType>
 // index.cj
 
 import kit.ArkData.*
-import kit.PerformanceAnalysisKit.*
-
 import kit.PerformanceAnalysisKit.Hilog
+import ohos.business_exception.BusinessException
 
-let preferences = Preferences.getPreferences(Global.getAbilityContext(), PreferencesOptions("mystore", dataGroupId:"myGroupID")) // 需获取Context应用上下文，详见本文使用说明
-var values = preferences.getAll()
-for ((k, v) in values) {
-    match (v) {
-        case Integer(n) => Hilog.info(0, "AppLogCj", "获得到的键值对key: ${k} value: ${n}")
-        case Double(n) => Hilog.info(0, "AppLogCj", "获得到的键值对key: ${k} value: ${n}")
-        case StringData(n) => Hilog.info(0, "AppLogCj", "获得到的键值对key: ${k} value: ${n}")
-        case _ => Hilog.info(0, "AppLogCj", "其他值")
+try {
+    let preferences = Preferences.getPreferences(Global.getAbilityContext(), PreferencesOptions("mystore", dataGroupId:"myGroupID")) // 需获取Context应用上下文，详见本文使用说明
+    var values = preferences.getAll()
+    for ((k, v) in values) {
+        match (v) {
+            case Integer(n) => Hilog.info(0, "AppLogCj", "获得到的键值对key: ${k} value: ${n}")
+            case Double(n) => Hilog.info(0, "AppLogCj", "获得到的键值对key: ${k} value: ${n}")
+            case StringData(n) => Hilog.info(0, "AppLogCj", "获得到的键值对key: ${k} value: ${n}")
+            case _ => Hilog.info(0, "AppLogCj", "其他值")
+        }
     }
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -752,14 +782,19 @@ public func has(key: String): Bool
 // index.cj
 
 import kit.ArkData.*
-import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let preferences = Preferences.getPreferences(Global.getAbilityContext(), PreferencesOptions("mystore", dataGroupId:"myGroupID")) // 需获取Context应用上下文，详见本文使用说明
-let hasKey = preferences.has("startup")
-if (hasKey) {
-    Hilog.info(0, "AppLogCj", "The key 'startup' is contained.")
-} else {
-    Hilog.info(0, "AppLogCj", "The key 'startup' dose not contain.")
+try {
+    let preferences = Preferences.getPreferences(Global.getAbilityContext(), PreferencesOptions("mystore", dataGroupId:"myGroupID")) // 需获取Context应用上下文，详见本文使用说明
+    let hasKey = preferences.has("startup")
+    if (hasKey) {
+        Hilog.info(0, "AppLogCj", "The key 'startup' is contained.")
+    } else {
+        Hilog.info(0, "AppLogCj", "The key 'startup' dose not contain.")
+    }
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -798,26 +833,30 @@ public func off(event :PreferencesEvent, callback!: ?Callback1Argument<String> =
 // index.cj
 
 import kit.ArkData.*
-import kit.PerformanceAnalysisKit.*
 import ohos.callback_invoke.*
 import ohos.business_exception.*
 import kit.PerformanceAnalysisKit.Hilog
+import ohos.business_exception.BusinessException
 
-// 此处代码可添加在依赖项定义中
-// 回调函数
-class Callback <: Callback1Argument<String> {
-    public func invoke(err: ?BusinessException, arg: String): Unit {
-        Hilog.info(0, "AppLogCj", "=========callback========= ${arg.toString()}======================")
+try {
+    // 此处代码可添加在依赖项定义中
+    // 回调函数
+    class Callback <: Callback1Argument<String> {
+        public func invoke(err: ?BusinessException, arg: String): Unit {
+            Hilog.info(0, "AppLogCj", "=========callback========= ${arg.toString()}======================")
+        }
     }
-}
 
-var str = "container"
-var a = Preferences.getPreferences(Global.getAbilityContext(), str) // 需获取Context应用上下文，详见本文使用说明
-var c = Callback()
-a.on(PreferencesEvent.PreferencesChange, c)
-a.off(PreferencesEvent.PreferencesChange)
-a.put("kkk1", PreferencesValueType.StringData("vvv1"))
-a.flush()
+    var str = "container"
+    var a = Preferences.getPreferences(Global.getAbilityContext(), str) // 需获取Context应用上下文，详见本文使用说明
+    var c = Callback()
+    a.on(PreferencesEvent.PreferencesChange, c)
+    a.off(PreferencesEvent.PreferencesChange)
+    a.put("kkk1", PreferencesValueType.StringData("vvv1"))
+    a.flush()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func on(PreferencesEvent, Callback1Argument\<String>)
@@ -856,25 +895,28 @@ public func on(event :PreferencesEvent, callback: Callback1Argument<String>): Un
 // index.cj
 
 import kit.ArkData.*
-import kit.PerformanceAnalysisKit.*
 import ohos.callback_invoke.*
 import ohos.business_exception.*
-
 import kit.PerformanceAnalysisKit.Hilog
+import ohos.business_exception.BusinessException
 
-// 回调函数
-class Callback <: Callback1Argument<String> {
-    public func invoke(err: ?BusinessException, arg: String): Unit {
-        Hilog.info(0, "AppLogCj", "=========callback========= ${arg.toString()}======================")
+try {
+    // 回调函数
+    class Callback <: Callback1Argument<String> {
+        public func invoke(err: ?BusinessException, arg: String): Unit {
+            Hilog.info(0, "AppLogCj", "=========callback========= ${arg.toString()}======================")
+        }
     }
-}
 
-var str = "container"
-var a = Preferences.getPreferences(Global.getAbilityContext(), str) // 需获取Context应用上下文，详见本文使用说明
-var c = Callback()
-a.on(PreferencesEvent.PreferencesChange, c)
-a.put("kkk1", PreferencesValueType.StringData("vvv1"))
-a.flush()
+    var str = "container"
+    var a = Preferences.getPreferences(Global.getAbilityContext(), str) // 需获取Context应用上下文，详见本文使用说明
+    var c = Callback()
+    a.on(PreferencesEvent.PreferencesChange, c)
+    a.put("kkk1", PreferencesValueType.StringData("vvv1"))
+    a.flush()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func put(String, PreferencesValueType)
@@ -913,9 +955,15 @@ public func put(key: String, value: PreferencesValueType): Unit
 // index.cj
 
 import kit.ArkData.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-var preferences = Preferences.getPreferences(Global.getAbilityContext(), PreferencesOptions("mystore", dataGroupId:"myGroupID")) // 需获取Context应用上下文，详见本文使用说明
-preferences.put("Monday", PreferencesValueType.StringData("今天天气真好"))
+try {
+    var preferences = Preferences.getPreferences(Global.getAbilityContext(), PreferencesOptions("mystore", dataGroupId:"myGroupID")) // 需获取Context应用上下文，详见本文使用说明
+    preferences.put("Monday", PreferencesValueType.StringData("今天天气真好"))
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## enum PreferencesEvent

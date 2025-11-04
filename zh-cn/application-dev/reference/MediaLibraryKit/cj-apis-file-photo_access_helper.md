@@ -63,9 +63,15 @@ public func getPhotoAccessHelper(context: UIAbilityContext): PhotoAccessHelper
 // index.cj
 
 import kit.MediaLibraryKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let phAccessHelper = getPhotoAccessHelper(ctx)
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let phAccessHelper = getPhotoAccessHelper(ctx)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## interface MediaChangeRequest
@@ -305,17 +311,23 @@ public func commitModify(): Unit
 
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let phAccessHelper = getPhotoAccessHelper(ctx)
-let predicates = DataSharePredicates()
-predicates.equalTo('album_name', StringValue('test1'))
-let fetchOptions: FetchOptions = FetchOptions([], predicates)
-let fetchResult = phAccessHelper.getAlbums(AlbumType.User,
-    AlbumSubtype.UserGeneric, options: fetchOptions)
-let firstAlbum = fetchResult.getFirstObject()
-firstAlbum.albumName = "test10086"
-firstAlbum.commitModify()
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let phAccessHelper = getPhotoAccessHelper(ctx)
+    let predicates = DataSharePredicates()
+    predicates.equalTo('album_name', StringValue('test1'))
+    let fetchOptions: FetchOptions = FetchOptions([], predicates)
+    let fetchResult = phAccessHelper.getAlbums(AlbumType.User,
+        AlbumSubtype.UserGeneric, options: fetchOptions)
+    let firstAlbum = fetchResult.getFirstObject()
+    firstAlbum.albumName = "test10086"
+    firstAlbum.commitModify()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```  
 
 ## class AlbumResult
@@ -370,15 +382,21 @@ public func getAllObjects(): Array<Album>
 
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let phAccessHelper = getPhotoAccessHelper(ctx)
-let predicates = DataSharePredicates()
-predicates.equalTo('album_name', StringValue('test1'))
-let fetchOptions: FetchOptions = FetchOptions([], predicates)
-let fetchResult = phAccessHelper.getAlbums(AlbumType.User,
-    AlbumSubtype.UserGeneric, options: fetchOptions)
-let albums = fetchResult.getAllObjects()
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let phAccessHelper = getPhotoAccessHelper(ctx)
+    let predicates = DataSharePredicates()
+    predicates.equalTo('album_name', StringValue('test1'))
+    let fetchOptions: FetchOptions = FetchOptions([], predicates)
+    let fetchResult = phAccessHelper.getAlbums(AlbumType.User,
+        AlbumSubtype.UserGeneric, options: fetchOptions)
+    let albums = fetchResult.getAllObjects()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```  
 
 ### func getFirstObject()
@@ -417,15 +435,21 @@ public func getFirstObject(): Album
 
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let phAccessHelper = getPhotoAccessHelper(ctx)
-let predicates = DataSharePredicates()
-predicates.equalTo('album_name', StringValue('test1'))
-let fetchOptions: FetchOptions = FetchOptions([], predicates)
-let fetchResult = phAccessHelper.getAlbums(AlbumType.User,
-    AlbumSubtype.UserGeneric, options: fetchOptions)
-let album = fetchResult.getFirstObject()
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let phAccessHelper = getPhotoAccessHelper(ctx)
+    let predicates = DataSharePredicates()
+    predicates.equalTo('album_name', StringValue('test1'))
+    let fetchOptions: FetchOptions = FetchOptions([], predicates)
+    let fetchResult = phAccessHelper.getAlbums(AlbumType.User,
+        AlbumSubtype.UserGeneric, options: fetchOptions)
+    let album = fetchResult.getFirstObject()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```  
 
 ### func getLastObject()
@@ -464,15 +488,21 @@ public func getLastObject(): Album
 
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let phAccessHelper = getPhotoAccessHelper(ctx)
-let predicates = DataSharePredicates()
-predicates.equalTo('album_name', StringValue('test1'))
-let fetchOptions: FetchOptions = FetchOptions([], predicates)
-let fetchResult = phAccessHelper.getAlbums(AlbumType.User,
-    AlbumSubtype.UserGeneric, options: fetchOptions)
-let album = fetchResult.getLastObject()
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let phAccessHelper = getPhotoAccessHelper(ctx)
+    let predicates = DataSharePredicates()
+    predicates.equalTo('album_name', StringValue('test1'))
+    let fetchOptions: FetchOptions = FetchOptions([], predicates)
+    let fetchResult = phAccessHelper.getAlbums(AlbumType.User,
+        AlbumSubtype.UserGeneric, options: fetchOptions)
+    let album = fetchResult.getLastObject()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```  
 
 ### func getNextObject()
@@ -511,15 +541,21 @@ public func getNextObject(): Album
 
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let phAccessHelper = getPhotoAccessHelper(ctx)
-let predicates = DataSharePredicates()
-predicates.equalTo('album_name', StringValue('test1'))
-let fetchOptions: FetchOptions = FetchOptions([], predicates)
-let fetchResult = phAccessHelper.getAlbums(AlbumType.User,
-    AlbumSubtype.UserGeneric, options: fetchOptions)
-let album = fetchResult.getNextObject()
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let phAccessHelper = getPhotoAccessHelper(ctx)
+    let predicates = DataSharePredicates()
+    predicates.equalTo('album_name', StringValue('test1'))
+    let fetchOptions: FetchOptions = FetchOptions([], predicates)
+    let fetchResult = phAccessHelper.getAlbums(AlbumType.User,
+        AlbumSubtype.UserGeneric, options: fetchOptions)
+    let album = fetchResult.getNextObject()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ``` 
 
 ### func getObjectByPosition(Int32)
@@ -564,15 +600,21 @@ public func getObjectByPosition(index: Int32): Album
 
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let phAccessHelper = getPhotoAccessHelper(ctx)
-let predicates = DataSharePredicates()
-predicates.equalTo('album_name', StringValue('test1'))
-let fetchOptions: FetchOptions = FetchOptions([], predicates)
-let fetchResult = phAccessHelper.getAlbums(AlbumType.User,
-    AlbumSubtype.UserGeneric, options: fetchOptions)
-let album = fetchResult.getObjectByPosition(0)
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let phAccessHelper = getPhotoAccessHelper(ctx)
+    let predicates = DataSharePredicates()
+    predicates.equalTo('album_name', StringValue('test1'))
+    let fetchOptions: FetchOptions = FetchOptions([], predicates)
+    let fetchResult = phAccessHelper.getAlbums(AlbumType.User,
+        AlbumSubtype.UserGeneric, options: fetchOptions)
+    let album = fetchResult.getObjectByPosition(0)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ``` 
 
 ## class ChangeData
@@ -821,13 +863,19 @@ public func close(): Unit
 
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let phAccessHelper = getPhotoAccessHelper(ctx)
-let predicates = DataSharePredicates()
-let fetchOptions: FetchOptions = FetchOptions([], predicates)
-let fetchResult = phAccessHelper.getAssets(fetchOptions)
-fetchResult.close()
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let phAccessHelper = getPhotoAccessHelper(ctx)
+    let predicates = DataSharePredicates()
+    let fetchOptions: FetchOptions = FetchOptions([], predicates)
+    let fetchResult = phAccessHelper.getAssets(fetchOptions)
+    fetchResult.close()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getCount()
@@ -866,13 +914,19 @@ public func getCount(): Int32
 
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let phAccessHelper = getPhotoAccessHelper(ctx)
-let predicates = DataSharePredicates()
-let fetchOptions: FetchOptions = FetchOptions([], predicates)
-let fetchResult = phAccessHelper.getAssets(fetchOptions)
-let count = fetchResult.getCount()
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let phAccessHelper = getPhotoAccessHelper(ctx)
+    let predicates = DataSharePredicates()
+    let fetchOptions: FetchOptions = FetchOptions([], predicates)
+    let fetchResult = phAccessHelper.getAssets(fetchOptions)
+    let count = fetchResult.getCount()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func isAfterLast()
@@ -911,13 +965,19 @@ public func isAfterLast(): Bool
 
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let phAccessHelper = getPhotoAccessHelper(ctx)
-let predicates = DataSharePredicates()
-let fetchOptions: FetchOptions = FetchOptions([], predicates)
-let fetchResult = phAccessHelper.getAssets(fetchOptions)
-let isAfterLast = fetchResult.isAfterLast()
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let phAccessHelper = getPhotoAccessHelper(ctx)
+    let predicates = DataSharePredicates()
+    let fetchOptions: FetchOptions = FetchOptions([], predicates)
+    let fetchResult = phAccessHelper.getAssets(fetchOptions)
+    let isAfterLast = fetchResult.isAfterLast()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## class MediaAlbumChangeRequest
@@ -965,15 +1025,21 @@ public init(album: Album)
 
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let phAccessHelper = getPhotoAccessHelper(ctx)
-let predicates = DataSharePredicates()
-let fetchOptions: FetchOptions = FetchOptions([], predicates)
-let fetchResult = phAccessHelper.getAlbums(AlbumType.User, AlbumSubtype.UserGeneric,
-    options: fetchOptions)
-let album = fetchResult.getFirstObject()
-let albumChangeRequest = MediaAlbumChangeRequest(album)
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let phAccessHelper = getPhotoAccessHelper(ctx)
+    let predicates = DataSharePredicates()
+    let fetchOptions: FetchOptions = FetchOptions([], predicates)
+    let fetchResult = phAccessHelper.getAlbums(AlbumType.User, AlbumSubtype.UserGeneric,
+        options: fetchOptions)
+    let album = fetchResult.getFirstObject()
+    let albumChangeRequest = MediaAlbumChangeRequest(album)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func addAssets(Array\<PhotoAsset>)
@@ -1012,17 +1078,23 @@ public func addAssets(assets: Array<PhotoAsset>): Unit
 
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let phAccessHelper = getPhotoAccessHelper(ctx)
-let predicates = DataSharePredicates()
-let fetchOptions: FetchOptions = FetchOptions([], predicates)
-let fetchResult = phAccessHelper.getAssets(fetchOptions)
-let asset = fetchResult.getFirstObject()
-let albumFetchResult = phAccessHelper.getAlbums(AlbumType.User, AlbumSubtype.UserGeneric)
-let album = albumFetchResult.getFirstObject()
-let albumChangeRequest = MediaAlbumChangeRequest(album)
-albumChangeRequest.addAssets([asset, asset])
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let phAccessHelper = getPhotoAccessHelper(ctx)
+    let predicates = DataSharePredicates()
+    let fetchOptions: FetchOptions = FetchOptions([], predicates)
+    let fetchResult = phAccessHelper.getAssets(fetchOptions)
+    let asset = fetchResult.getFirstObject()
+    let albumFetchResult = phAccessHelper.getAlbums(AlbumType.User, AlbumSubtype.UserGeneric)
+    let album = albumFetchResult.getFirstObject()
+    let albumChangeRequest = MediaAlbumChangeRequest(album)
+    albumChangeRequest.addAssets([asset, asset])
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getAlbum()
@@ -1060,16 +1132,22 @@ public func getAlbum(): Album
 
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let phAccessHelper = getPhotoAccessHelper(ctx)
-let predicates = DataSharePredicates()
-let fetchOptions: FetchOptions = FetchOptions([], predicates)
-let fetchResult = phAccessHelper.getAlbums(AlbumType.User, AlbumSubtype.UserGeneric,
-    options: fetchOptions)
-let album = fetchResult.getFirstObject()
-let albumChangeRequest = MediaAlbumChangeRequest(album)
-var changeRequestAlbum = albumChangeRequest.getAlbum()
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let phAccessHelper = getPhotoAccessHelper(ctx)
+    let predicates = DataSharePredicates()
+    let fetchOptions: FetchOptions = FetchOptions([], predicates)
+    let fetchResult = phAccessHelper.getAlbums(AlbumType.User, AlbumSubtype.UserGeneric,
+        options: fetchOptions)
+    let album = fetchResult.getFirstObject()
+    let albumChangeRequest = MediaAlbumChangeRequest(album)
+    var changeRequestAlbum = albumChangeRequest.getAlbum()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func removeAssets(Array\<PhotoAsset>)
@@ -1108,18 +1186,24 @@ public func removeAssets(assets: Array<PhotoAsset>): Unit
 
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let phAccessHelper = getPhotoAccessHelper(ctx)
-let predicates = DataSharePredicates()
-let fetchOptions: FetchOptions = FetchOptions([], predicates)
-let albumFetchResult = phAccessHelper.getAlbums(AlbumType.User, AlbumSubtype.UserGeneric)
-let album = albumFetchResult.getFirstObject()
-let fetchResult = phAccessHelper.getAssets(fetchOptions)
-let asset = fetchResult.getFirstObject()
-let albumChangeRequest = MediaAlbumChangeRequest(album)
-albumChangeRequest.removeAssets([asset])
-phAccessHelper.applyChanges(albumChangeRequest)
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let phAccessHelper = getPhotoAccessHelper(ctx)
+    let predicates = DataSharePredicates()
+    let fetchOptions: FetchOptions = FetchOptions([], predicates)
+    let albumFetchResult = phAccessHelper.getAlbums(AlbumType.User, AlbumSubtype.UserGeneric)
+    let album = albumFetchResult.getFirstObject()
+    let fetchResult = phAccessHelper.getAssets(fetchOptions)
+    let asset = fetchResult.getFirstObject()
+    let albumChangeRequest = MediaAlbumChangeRequest(album)
+    albumChangeRequest.removeAssets([asset])
+    phAccessHelper.applyChanges(albumChangeRequest)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func setAlbumName(String)
@@ -1164,17 +1248,23 @@ public func setAlbumName(name: String): Unit
 
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let phAccessHelper = getPhotoAccessHelper(ctx)
-let predicates = DataSharePredicates()
-let fetchOptions: FetchOptions = FetchOptions([], predicates)
-let fetchResult = phAccessHelper.getAlbums(AlbumType.User, AlbumSubtype.UserGeneric,
-    options: fetchOptions)
-let album = fetchResult.getFirstObject()
-let albumChangeRequest = MediaAlbumChangeRequest(album)
-let newAlbumName = "newAAA"
-albumChangeRequest.setAlbumName(newAlbumName)
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let phAccessHelper = getPhotoAccessHelper(ctx)
+    let predicates = DataSharePredicates()
+    let fetchOptions: FetchOptions = FetchOptions([], predicates)
+    let fetchResult = phAccessHelper.getAlbums(AlbumType.User, AlbumSubtype.UserGeneric,
+        options: fetchOptions)
+    let album = fetchResult.getFirstObject()
+    let albumChangeRequest = MediaAlbumChangeRequest(album)
+    let newAlbumName = "newAAA"
+    albumChangeRequest.setAlbumName(newAlbumName)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## class MediaAssetChangeRequest
@@ -1230,14 +1320,20 @@ public init(asset: PhotoAsset)
 
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let phAccessHelper = getPhotoAccessHelper(ctx)
-let predicates = DataSharePredicates()
-let fetchOptions = FetchOptions([], predicates)
-let fetchResult = phAccessHelper.getAssets(fetchOptions)
-let photoAsset = fetchResult.getFirstObject()
-let assetChangeRequest = MediaAssetChangeRequest(photoAsset)
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let phAccessHelper = getPhotoAccessHelper(ctx)
+    let predicates = DataSharePredicates()
+    let fetchOptions = FetchOptions([], predicates)
+    let fetchResult = phAccessHelper.getAssets(fetchOptions)
+    let photoAsset = fetchResult.getFirstObject()
+    let assetChangeRequest = MediaAssetChangeRequest(photoAsset)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### static func createAssetRequest(UIAbilityContext, PhotoType, String, CreateOptions)
@@ -1284,13 +1380,19 @@ public static func createAssetRequest(context: UIAbilityContext, photoType: Phot
 // index.cj
 
 import kit.MediaLibraryKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let photoType = PhotoType.Image
-let extension = "jpg"
-let options = CreateOptions(title: "testPhoto")
-let assetChangeRequest = MediaAssetChangeRequest.createAssetRequest(ctx, photoType,
-    extension, options: options)
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let photoType = PhotoType.Image
+    let extension = "jpg"
+    let options = CreateOptions(title: "testPhoto")
+    let assetChangeRequest = MediaAssetChangeRequest.createAssetRequest(ctx, photoType,
+        extension, options: options)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### static func createImageAssetRequest(UIAbilityContext, String)
@@ -1337,13 +1439,19 @@ public static func createImageAssetRequest(context: UIAbilityContext, fileUri: S
 // index.cj
 
 import kit.MediaLibraryKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let phAccessHelper = getPhotoAccessHelper(ctx)
-let fileUri = "file://com.example.xxx/data/storage/el2/base/haps/entry/files/test.jpg"
-let assetChangeRequest = MediaAssetChangeRequest.createImageAssetRequest(ctx,
-    fileUri)
-phAccessHelper.applyChanges(assetChangeRequest)
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let phAccessHelper = getPhotoAccessHelper(ctx)
+    let fileUri = "file://com.example.xxx/data/storage/el2/base/haps/entry/files/test.jpg"
+    let assetChangeRequest = MediaAssetChangeRequest.createImageAssetRequest(ctx,
+        fileUri)
+    phAccessHelper.applyChanges(assetChangeRequest)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### static func createVideoAssetRequest(UIAbilityContext, String)
@@ -1390,13 +1498,19 @@ public static func createVideoAssetRequest(context: UIAbilityContext, fileUri: S
 // index.cj
 
 import kit.MediaLibraryKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let phAccessHelper = getPhotoAccessHelper(ctx)
-let fileUri = "file://com.example.xxx/data/storage/el2/base/haps/entry/files/test.mp4"
-let assetChangeRequest = MediaAssetChangeRequest.createVideoAssetRequest(ctx,
-    fileUri)
-phAccessHelper.applyChanges(assetChangeRequest)
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let phAccessHelper = getPhotoAccessHelper(ctx)
+    let fileUri = "file://com.example.xxx/data/storage/el2/base/haps/entry/files/test.mp4"
+    let assetChangeRequest = MediaAssetChangeRequest.createVideoAssetRequest(ctx,
+        fileUri)
+    phAccessHelper.applyChanges(assetChangeRequest)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### static func deleteAssets(UIAbilityContext, Array\<PhotoAsset>)
@@ -1438,14 +1552,20 @@ public static func deleteAssets(context: UIAbilityContext, assets: Array<PhotoAs
 
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let phAccessHelper = getPhotoAccessHelper(ctx)
-let predicates = DataSharePredicates()
-let fetchOptions: FetchOptions = FetchOptions([], predicates)
-let fetchResult = phAccessHelper.getAssets(fetchOptions)
-let asset = fetchResult.getFirstObject()
-MediaAssetChangeRequest.deleteAssets(ctx, asset.uri)
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let phAccessHelper = getPhotoAccessHelper(ctx)
+    let predicates = DataSharePredicates()
+    let fetchOptions: FetchOptions = FetchOptions([], predicates)
+    let fetchResult = phAccessHelper.getAssets(fetchOptions)
+    let asset = fetchResult.getFirstObject()
+    MediaAssetChangeRequest.deleteAssets(ctx, asset.uri)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### static func deleteAssets(UIAbilityContext, Array\<String>)
@@ -1488,14 +1608,20 @@ public static func deleteAssets(context: UIAbilityContext, assets: Array<String>
 
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let phAccessHelper = getPhotoAccessHelper(ctx)
-let predicates = DataSharePredicates()
-let fetchOptions: FetchOptions = FetchOptions([], predicates)
-let fetchResult = phAccessHelper.getAssets(fetchOptions)
-let asset = fetchResult.getFirstObject()
-MediaAssetChangeRequest.deleteAssets(ctx, asset.uri)
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let phAccessHelper = getPhotoAccessHelper(ctx)
+    let predicates = DataSharePredicates()
+    let fetchOptions: FetchOptions = FetchOptions([], predicates)
+    let fetchResult = phAccessHelper.getAssets(fetchOptions)
+    let asset = fetchResult.getFirstObject()
+    MediaAssetChangeRequest.deleteAssets(ctx, asset.uri)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func addResource(ResourceType, String)
@@ -1535,16 +1661,22 @@ public func addResource(resourceType: ResourceType, fileUri: String): Unit
 // index.cj
 
 import kit.MediaLibraryKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let phAccessHelper = getPhotoAccessHelper(ctx)
-let photoType = PhotoType.Image
-let extension = "jpg"
-let assetChangeRequest = MediaAssetChangeRequest.createAssetRequest(ctx, photoType,
-    extension)
-let buffer = Array<Byte>(2048, repeat: 0)
-assetChangeRequest.addResource(ResourceType.ImageResource, buffer)
-phAccessHelper.applyChanges(assetChangeRequest)
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let phAccessHelper = getPhotoAccessHelper(ctx)
+    let photoType = PhotoType.Image
+    let extension = "jpg"
+    let assetChangeRequest = MediaAssetChangeRequest.createAssetRequest(ctx, photoType,
+        extension)
+    let buffer = Array<Byte>(2048, repeat: 0)
+    assetChangeRequest.addResource(ResourceType.ImageResource, buffer)
+    phAccessHelper.applyChanges(assetChangeRequest)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func addResource(ResourceType, Array\<Byte>)
@@ -1583,16 +1715,22 @@ public func addResource(resourceType: ResourceType, data: Array<Byte>): Unit
 // index.cj
 
 import kit.MediaLibraryKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let phAccessHelper = getPhotoAccessHelper(ctx)
-let photoType = PhotoType.Image
-let extension = "jpg"
-let assetChangeRequest = MediaAssetChangeRequest.createAssetRequest(ctx, photoType,
-    extension)
-let buffer = Array<Byte>(2048, repeat: 0)
-assetChangeRequest.addResource(ResourceType.ImageResource, buffer)
-phAccessHelper.applyChanges(assetChangeRequest)
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let phAccessHelper = getPhotoAccessHelper(ctx)
+    let photoType = PhotoType.Image
+    let extension = "jpg"
+    let assetChangeRequest = MediaAssetChangeRequest.createAssetRequest(ctx, photoType,
+        extension)
+    let buffer = Array<Byte>(2048, repeat: 0)
+    assetChangeRequest.addResource(ResourceType.ImageResource, buffer)
+    phAccessHelper.applyChanges(assetChangeRequest)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func discardCameraPhoto()
@@ -1625,16 +1763,22 @@ public func discardCameraPhoto(): Unit
 
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let phAccessHelper = getPhotoAccessHelper(ctx)
-let predicates = DataSharePredicates()
-let fetchOptions = FetchOptions([], predicates)
-let fetchResult = phAccessHelper.getAssets(fetchOptions)
-let photoAsset = fetchResult.getFirstObject()
-let assetChangeRequest = MediaAssetChangeRequest(photoAsset)
-assetChangeRequest.discardCameraPhoto()
-phAccessHelper.applyChanges(assetChangeRequest)
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let phAccessHelper = getPhotoAccessHelper(ctx)
+    let predicates = DataSharePredicates()
+    let fetchOptions = FetchOptions([], predicates)
+    let fetchResult = phAccessHelper.getAssets(fetchOptions)
+    let photoAsset = fetchResult.getFirstObject()
+    let assetChangeRequest = MediaAssetChangeRequest(photoAsset)
+    assetChangeRequest.discardCameraPhoto()
+    phAccessHelper.applyChanges(assetChangeRequest)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getAsset()
@@ -1672,15 +1816,21 @@ public func getAsset(): PhotoAsset
 
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let phAccessHelper = getPhotoAccessHelper(ctx)
-let predicates = DataSharePredicates()
-let fetchOptions: FetchOptions = FetchOptions([], predicates)
-let fetchResult = phAccessHelper.getAssets(fetchOptions)
-let photoAsset = fetchResult.getFirstObject()
-let assetChangeRequest = MediaAssetChangeRequest(photoAsset)
-let asset = assetChangeRequest.getAsset()
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let phAccessHelper = getPhotoAccessHelper(ctx)
+    let predicates = DataSharePredicates()
+    let fetchOptions: FetchOptions = FetchOptions([], predicates)
+    let fetchResult = phAccessHelper.getAssets(fetchOptions)
+    let photoAsset = fetchResult.getFirstObject()
+    let assetChangeRequest = MediaAssetChangeRequest(photoAsset)
+    let asset = assetChangeRequest.getAsset()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getWriteCacheHandler()
@@ -1722,14 +1872,20 @@ public func getWriteCacheHandler(): Int32
 
 import kit.MediaLibraryKit.*
 import kit.CoreFileKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let phAccessHelper = getPhotoAccessHelper(ctx)
-let assetChangeRequest = MediaAssetChangeRequest.createAssetRequest(ctx,
-    PhotoType.Video, "mp4")
-let fd = assetChangeRequest.getWriteCacheHandler()
-FileIo.close(fd)
-phAccessHelper.applyChanges(assetChangeRequest)
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let phAccessHelper = getPhotoAccessHelper(ctx)
+    let assetChangeRequest = MediaAssetChangeRequest.createAssetRequest(ctx,
+        PhotoType.Video, "mp4")
+    let fd = assetChangeRequest.getWriteCacheHandler()
+    FileIo.close(fd)
+    phAccessHelper.applyChanges(assetChangeRequest)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func saveCameraPhoto()
@@ -1762,16 +1918,22 @@ public func saveCameraPhoto(): Unit
 
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let phAccessHelper = getPhotoAccessHelper(ctx)
-let predicates = DataSharePredicates()
-let fetchOptions = FetchOptions([], predicates)
-let fetchResult = phAccessHelper.getAssets(fetchOptions)
-let photoAsset = fetchResult.getFirstObject()
-let assetChangeRequest = MediaAssetChangeRequest(photoAsset)
-assetChangeRequest.saveCameraPhoto()
-phAccessHelper.applyChanges(assetChangeRequest)
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let phAccessHelper = getPhotoAccessHelper(ctx)
+    let predicates = DataSharePredicates()
+    let fetchOptions = FetchOptions([], predicates)
+    let fetchResult = phAccessHelper.getAssets(fetchOptions)
+    let photoAsset = fetchResult.getFirstObject()
+    let assetChangeRequest = MediaAssetChangeRequest(photoAsset)
+    assetChangeRequest.saveCameraPhoto()
+    phAccessHelper.applyChanges(assetChangeRequest)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func setTitle(String)
@@ -1809,17 +1971,23 @@ public func setTitle(title: String): Unit
 
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let phAccessHelper = getPhotoAccessHelper(ctx)
-let predicates = DataSharePredicates()
-let fetchOptions: FetchOptions = FetchOptions([], predicates)
-let fetchResult = phAccessHelper.getAssets(fetchOptions)
-let photoAsset = fetchResult.getFirstObject()
-let assetChangeRequest = MediaAssetChangeRequest(photoAsset)
-let newTitle = "NEW_TITLE" // 新标题，实际使用按需取名
-assetChangeRequest.setTitle(newTitle)
-phAccessHelper.applyChanges(assetChangeRequest)
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let phAccessHelper = getPhotoAccessHelper(ctx)
+    let predicates = DataSharePredicates()
+    let fetchOptions: FetchOptions = FetchOptions([], predicates)
+    let fetchResult = phAccessHelper.getAssets(fetchOptions)
+    let photoAsset = fetchResult.getFirstObject()
+    let assetChangeRequest = MediaAssetChangeRequest(photoAsset)
+    let newTitle = "NEW_TITLE" // 新标题，实际使用按需取名
+    assetChangeRequest.setTitle(newTitle)
+    phAccessHelper.applyChanges(assetChangeRequest)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## class PhotoAccessHelper
@@ -1911,13 +2079,19 @@ public func getAlbums(albumType: AlbumType, subtype: AlbumSubtype,
 
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let phAccessHelper = getPhotoAccessHelper(ctx)
-let predicates = DataSharePredicates()
-let fetchOptions: FetchOptions = FetchOptions([], predicates)
-let fetchResult: AlbumResult = phAccessHelper.getAlbums(AlbumType.User,
-    AlbumSubtype.UserGeneric, options: fetchOptions)
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let phAccessHelper = getPhotoAccessHelper(ctx)
+    let predicates = DataSharePredicates()
+    let fetchOptions: FetchOptions = FetchOptions([], predicates)
+    let fetchResult: AlbumResult = phAccessHelper.getAlbums(AlbumType.User,
+        AlbumSubtype.UserGeneric, options: fetchOptions)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getAssets(FetchOptions)
@@ -1965,12 +2139,18 @@ public func getAssets(options: FetchOptions): PhotoAssetResult
 
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let phAccessHelper = getPhotoAccessHelper(ctx)
-let predicates = DataSharePredicates()
-let fetchOptions: FetchOptions = FetchOptions([], predicates)
-let fetchResult: PhotoAssetResult = phAccessHelper.getAssets(fetchOptions)
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let phAccessHelper = getPhotoAccessHelper(ctx)
+    let predicates = DataSharePredicates()
+    let fetchOptions: FetchOptions = FetchOptions([], predicates)
+    let fetchResult: PhotoAssetResult = phAccessHelper.getAssets(fetchOptions)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getBurstAssets(String, FetchOptions)
@@ -2018,13 +2198,19 @@ public func getBurstAssets(burstKey: String, options: FetchOptions): PhotoAssetR
 
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let phAccessHelper = getPhotoAccessHelper(ctx)
-let predicates = DataSharePredicates()
-let fetchOptions: FetchOptions = FetchOptions([], predicates)
-let burstKey = "YOUR_UUID" // 请输入uuid
-let fetchResult: PhotoAssetResult = phAccessHelper.getBurstAssets(burstKey, fetchOptions)
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let phAccessHelper = getPhotoAccessHelper(ctx)
+    let predicates = DataSharePredicates()
+    let fetchOptions: FetchOptions = FetchOptions([], predicates)
+    let burstKey = "YOUR_UUID" // 请输入uuid
+    let fetchResult: PhotoAssetResult = phAccessHelper.getBurstAssets(burstKey, fetchOptions)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func registerChange(String, Bool, Callback1Argument\<ChangeData>)
@@ -2065,35 +2251,38 @@ public func registerChange(uri: String, forChildUris: Bool, callback: Callback1A
 
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
-
-import kit.PerformanceAnalysisKit.*
 import ohos.business_exception.BusinessException
 import ohos.callback_invoke.*
+import kit.PerformanceAnalysisKit.Hilog
 
-// 此处代码可添加在依赖项定义中
-class MyCallback<T> <: Callback1Argument<T> {
-    public let callabck_: (T) -> Unit
-    public init(callabck: (T) -> Unit) {
-        callabck_ = callabck
+try {
+    // 此处代码可添加在依赖项定义中
+    class MyCallback<T> <: Callback1Argument<T> {
+        public let callabck_: (T) -> Unit
+        public init(callabck: (T) -> Unit) {
+            callabck_ = callabck
+        }
+        public open func invoke(err: ?BusinessException, arg: T): Unit {
+            callabck_(arg)
+        }
     }
-    public open func invoke(err: ?BusinessException, arg: T): Unit {
-        callabck_(arg)
-    }
+
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let phAccessHelper = getPhotoAccessHelper(ctx)
+    let callback1 = MyCallback<ChangeData>(
+        {
+            arg: ChangeData => Hilog.info(0, "AppLogCj",
+                "onCallback1. ChangeData: type = ${arg.notifyType.toString()}, uris.size: ${arg.uris.size}, extraUris.size = ${arg.extraUris.size}"
+            )
+        })
+    let predicates = DataSharePredicates()
+    let fetchOptions: FetchOptions = FetchOptions(['title'], predicates)
+    let fetchResult: PhotoAssetResult = phAccessHelper.getAssets(fetchOptions)
+    let firstPhotoAsset = fetchResult.getFirstObject()
+    phAccessHelper.registerChange(firstPhotoAsset.uri, false, callback1)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
 }
-
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let phAccessHelper = getPhotoAccessHelper(ctx)
-let callback1 = MyCallback<ChangeData>(
-    {
-        arg: ChangeData => Hilog.info(0, "AppLogCj",
-            "onCallback1. ChangeData: type = ${arg.notifyType.toString()}, uris.size: ${arg.uris.size}, extraUris.size = ${arg.extraUris.size}"
-        )
-    })
-let predicates = DataSharePredicates()
-let fetchOptions: FetchOptions = FetchOptions(['title'], predicates)
-let fetchResult: PhotoAssetResult = phAccessHelper.getAssets(fetchOptions)
-let firstPhotoAsset = fetchResult.getFirstObject()
-phAccessHelper.registerChange(firstPhotoAsset.uri, false, callback1)
 ```
 
 ### func release()
@@ -2126,14 +2315,20 @@ public func release(): Unit
 
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let phAccessHelper = getPhotoAccessHelper(ctx)
-let predicates = DataSharePredicates()
-let fetchOptions: FetchOptions = FetchOptions([], predicates)
-let fetchResult: PhotoAssetResult = phAccessHelper.getAssets(fetchOptions)
-fetchResult.close()
-phAccessHelper.release()
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let phAccessHelper = getPhotoAccessHelper(ctx)
+    let predicates = DataSharePredicates()
+    let fetchOptions: FetchOptions = FetchOptions([], predicates)
+    let fetchResult: PhotoAssetResult = phAccessHelper.getAssets(fetchOptions)
+    fetchResult.close()
+    phAccessHelper.release()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func showAssetsCreationDialog(Array\<String>, Array\<PhotoCreationConfig>, Callback1Argument\<Array\<String>>)
@@ -2174,45 +2369,48 @@ public func showAssetsCreationDialog(srcFileUris: Array<String>, photoCreationCo
 
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
-
-import kit.PerformanceAnalysisKit.*
 import ohos.business_exception.BusinessException
 import ohos.callback_invoke.*
+import kit.PerformanceAnalysisKit.Hilog
 
-// 此处代码可添加在依赖项定义中
-class MyCallback<T> <: Callback1Argument<T> {
-    public let callabck_: (T) -> Unit
-    public init(callabck: (T) -> Unit) {
-        callabck_ = callabck
-    }
-    public open func invoke(err: ?BusinessException, arg: T): Unit {
-        callabck_(arg)
-    }
-}
-
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let phAccessHelper = getPhotoAccessHelper(ctx)
-let callback3 = MyCallback<Array<String>>(
-    {
-        arg: Array<String> =>
-        Hilog.info(0, "AppLogCj", "oncallback3: Array.size: ${arg.size}")
-        for (str in arg) {
-            Hilog.info(0, "AppLogCj", "oncallback3: uri: ${str}")
+try {
+    // 此处代码可添加在依赖项定义中
+    class MyCallback<T> <: Callback1Argument<T> {
+        public let callabck_: (T) -> Unit
+        public init(callabck: (T) -> Unit) {
+            callabck_ = callabck
+        }
+        public open func invoke(err: ?BusinessException, arg: T): Unit {
+            callabck_(arg)
         }
     }
-)
-// 获取需要保存到媒体库的位于应用沙箱的图片/视频uri
-// 实际场景请使用真实的uri
-let srcFileUris: Array<String> = ["file://media/Photo/37/IMG_1731463495_028/IMG_20241113_100315.jpg"]
-let photoCreationConfigs: Array<PhotoCreationConfig> = [
-    PhotoCreationConfig(
-        'jpg',
-        PhotoType.Image,
-        title: "test4",
-        subtype: PhotoSubtype.Default
+
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let phAccessHelper = getPhotoAccessHelper(ctx)
+    let callback3 = MyCallback<Array<String>>(
+        {
+            arg: Array<String> =>
+            Hilog.info(0, "AppLogCj", "oncallback3: Array.size: ${arg.size}")
+            for (str in arg) {
+                Hilog.info(0, "AppLogCj", "oncallback3: uri: ${str}")
+            }
+        }
     )
-]
-phAccessHelper.showAssetsCreationDialog(srcFileUris, photoCreationConfigs, callback3)
+    // 获取需要保存到媒体库的位于应用沙箱的图片/视频uri
+    // 实际场景请使用真实的uri
+    let srcFileUris: Array<String> = ["file://media/Photo/37/IMG_1731463495_028/IMG_20241113_100315.jpg"]
+    let photoCreationConfigs: Array<PhotoCreationConfig> = [
+        PhotoCreationConfig(
+            'jpg',
+            PhotoType.Image,
+            title: "test4",
+            subtype: PhotoSubtype.Default
+        )
+    ]
+    phAccessHelper.showAssetsCreationDialog(srcFileUris, photoCreationConfigs, callback3)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func unRegisterChange(String, ?Callback1Argument\<ChangeData>)
@@ -2252,39 +2450,42 @@ public func unRegisterChange(uri: String, callback!: ?Callback1Argument<ChangeDa
 
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
-
-import kit.PerformanceAnalysisKit.*
 import ohos.callback_invoke.*
 import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-// 此处代码可添加在依赖项定义中
-class MyCallback<T> <: Callback1Argument<T> {
-    public let callabck_: (T) -> Unit
-    public init(callabck: (T) -> Unit) {
-        callabck_ = callabck
+try {
+    // 此处代码可添加在依赖项定义中
+    class MyCallback<T> <: Callback1Argument<T> {
+        public let callabck_: (T) -> Unit
+        public init(callabck: (T) -> Unit) {
+            callabck_ = callabck
+        }
+        public open func invoke(err: ?BusinessException, arg: T): Unit {
+            callabck_(arg)
+        }
     }
-    public open func invoke(err: ?BusinessException, arg: T): Unit {
-        callabck_(arg)
-    }
+
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let phAccessHelper = getPhotoAccessHelper(ctx)
+    let callback1 = MyCallback<ChangeData>(
+        {
+            arg: ChangeData => Hilog.info(0, "AppLogCj",
+                "onCallback1. ChangeData: type = ${arg.notifyType.toString()}, uris.size: ${arg.uris.size}, extraUris.size = ${arg.extraUris.size}"
+            )
+        })
+
+    let predicates = DataSharePredicates()
+    let fetchOptions: FetchOptions = FetchOptions(['title'], predicates)
+    let fetchResult: PhotoAssetResult = phAccessHelper.getAssets(fetchOptions)
+    let firstPhotoAsset = fetchResult.getFirstObject()
+
+    phAccessHelper.registerChange(firstPhotoAsset.uri, false, callback1)
+    phAccessHelper.unRegisterChange(firstPhotoAsset.uri, callback: callback1)
+    phAccessHelper.unRegisterChange(firstPhotoAsset.uri)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
 }
-
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let phAccessHelper = getPhotoAccessHelper(ctx)
-let callback1 = MyCallback<ChangeData>(
-    {
-        arg: ChangeData => Hilog.info(0, "AppLogCj",
-            "onCallback1. ChangeData: type = ${arg.notifyType.toString()}, uris.size: ${arg.uris.size}, extraUris.size = ${arg.extraUris.size}"
-        )
-    })
-
-let predicates = DataSharePredicates()
-let fetchOptions: FetchOptions = FetchOptions(['title'], predicates)
-let fetchResult: PhotoAssetResult = phAccessHelper.getAssets(fetchOptions)
-let firstPhotoAsset = fetchResult.getFirstObject()
-
-phAccessHelper.registerChange(firstPhotoAsset.uri, false, callback1)
-phAccessHelper.unRegisterChange(firstPhotoAsset.uri, callback: callback1)
-phAccessHelper.unRegisterChange(firstPhotoAsset.uri)
 ```
 
 ## class PhotoAsset
@@ -2381,19 +2582,24 @@ public func commitModify(): Unit
 
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
-import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let phAccessHelper = getPhotoAccessHelper(ctx)
-let predicates = DataSharePredicates()
-let fetchColumns = [PhotoKeys.Title.toString()]
-let fetchOptions: FetchOptions = FetchOptions(fetchColumns, predicates)
-let fetchResult = phAccessHelper.getAssets(fetchOptions)
-let firstPhotoAsset = fetchResult.getFirstObject()
-let photoAssetTitle = firstPhotoAsset.get('title')
-let newTitle = "NEW_TITLE" // 新标题，实际使用按需取名
-firstPhotoAsset.set('title', newTitle)
-firstPhotoAsset.commitModify()
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let phAccessHelper = getPhotoAccessHelper(ctx)
+    let predicates = DataSharePredicates()
+    let fetchColumns = [PhotoKeys.Title.toString()]
+    let fetchOptions: FetchOptions = FetchOptions(fetchColumns, predicates)
+    let fetchResult = phAccessHelper.getAssets(fetchOptions)
+    let firstPhotoAsset = fetchResult.getFirstObject()
+    let photoAssetTitle = firstPhotoAsset.get('title')
+    let newTitle = "NEW_TITLE" // 新标题，实际使用按需取名
+    firstPhotoAsset.set('title', newTitle)
+    firstPhotoAsset.commitModify()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func get(String)
@@ -2438,16 +2644,21 @@ public func get(member: String): MemberType
 
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
-import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let phAccessHelper = getPhotoAccessHelper(ctx)
-let predicates = DataSharePredicates()
-let fetchColumns = [PhotoKeys.Title.toString()]
-let fetchOptions: FetchOptions = FetchOptions(fetchColumns, predicates)
-let fetchResult = phAccessHelper.getAssets(fetchOptions)
-let firstPhotoAsset = fetchResult.getFirstObject()
-let photoAssetTitle = firstPhotoAsset.get('title')
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let phAccessHelper = getPhotoAccessHelper(ctx)
+    let predicates = DataSharePredicates()
+    let fetchColumns = [PhotoKeys.Title.toString()]
+    let fetchOptions: FetchOptions = FetchOptions(fetchColumns, predicates)
+    let fetchResult = phAccessHelper.getAssets(fetchOptions)
+    let firstPhotoAsset = fetchResult.getFirstObject()
+    let photoAssetTitle = firstPhotoAsset.get('title')
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getThumbnail(?Size)
@@ -2496,16 +2707,21 @@ public func getThumbnail(size!: ?Size = Size(256, 256)): PixelMap
 
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
-import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let phAccessHelper = getPhotoAccessHelper(ctx)
-let predicates = DataSharePredicates()
-let fetchColumns = [PhotoKeys.Title.toString()]
-let fetchOptions: FetchOptions = FetchOptions(fetchColumns, predicates)
-let fetchResult = phAccessHelper.getAssets(fetchOptions)
-let firstPhotoAsset = fetchResult.getFirstObject()
-let pixm = firstPhotoAsset.getThumbnail()
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let phAccessHelper = getPhotoAccessHelper(ctx)
+    let predicates = DataSharePredicates()
+    let fetchColumns = [PhotoKeys.Title.toString()]
+    let fetchOptions: FetchOptions = FetchOptions(fetchColumns, predicates)
+    let fetchResult = phAccessHelper.getAssets(fetchOptions)
+    let firstPhotoAsset = fetchResult.getFirstObject()
+    let pixm = firstPhotoAsset.getThumbnail()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func set(String, String)
@@ -2545,17 +2761,22 @@ public func set(member: String, value: String): Unit
 
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
-import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-let phAccessHelper = getPhotoAccessHelper(ctx)
-let predicates = DataSharePredicates()
-let fetchColumns = [PhotoKeys.Title.toString()]
-let fetchOptions: FetchOptions = FetchOptions(fetchColumns, predicates)
-let fetchResult = phAccessHelper.getAssets(fetchOptions)
-let firstPhotoAsset = fetchResult.getFirstObject()
-let newTitle = "NEW_TITLE" // 新标题，实际使用按需取名
-firstPhotoAsset.set('title', newTitle)
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let phAccessHelper = getPhotoAccessHelper(ctx)
+    let predicates = DataSharePredicates()
+    let fetchColumns = [PhotoKeys.Title.toString()]
+    let fetchOptions: FetchOptions = FetchOptions(fetchColumns, predicates)
+    let fetchResult = phAccessHelper.getAssets(fetchOptions)
+    let firstPhotoAsset = fetchResult.getFirstObject()
+    let newTitle = "NEW_TITLE" // 新标题，实际使用按需取名
+    firstPhotoAsset.set('title', newTitle)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## class PhotoAssetResult

@@ -77,6 +77,7 @@ public func create(context: UIAbilityContext, config: Config): Task
 import kit.BasicServicesKit.*
 import kit.AbilityKit.*
 import kit.PerformanceAnalysisKit.Hilog
+import ohos.business_exception.BusinessException
 
 try {
     let context = Global.abilityContext
@@ -86,8 +87,8 @@ try {
     )
     let task = create(context, config)
     Hilog.info(0, "cangjie_ohos_test", "成功创建任务，任务ID: ${task.tid}")
-} catch (e: Exception) {
-    Hilog.info(0, "cangjie_ohos_test", "创建任务失败: ${e.toString()}")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -139,14 +140,15 @@ public func getTask(context: UIAbilityContext, id: String, token!: ?String = Non
 import kit.BasicServicesKit.*
 import kit.AbilityKit.*
 import kit.PerformanceAnalysisKit.Hilog
+import ohos.business_exception.BusinessException
 
 try {
     let context = Global.abilityContext
     let taskId = "example_task_id"
     let task = getTask(context, taskId)
     Hilog.info(0, "cangjie_ohos_test", "成功获取任务，任务ID: ${task.tid}")
-} catch (e: Exception) {
-    Hilog.info(0, "cangjie_ohos_test", "获取任务失败: ${e.toString()}")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -194,13 +196,14 @@ public func remove(id: String): Unit
 import kit.BasicServicesKit.*
 import kit.AbilityKit.*
 import kit.PerformanceAnalysisKit.Hilog
+import ohos.business_exception.BusinessException
 
 try {
     let taskId = "example_task_id"
     remove(taskId)
     Hilog.info(0, "cangjie_ohos_test", "成功移除任务，任务ID: ${taskId}")
-} catch (e: Exception) {
-    Hilog.info(0, "cangjie_ohos_test", "移除任务失败: ${e.toString()}")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -248,6 +251,7 @@ public func search(filter!: Filter = Filter()): Array<String>
 import kit.BasicServicesKit.*
 import kit.AbilityKit.*
 import kit.PerformanceAnalysisKit.Hilog
+import ohos.business_exception.BusinessException
 
 try {
     let filter = Filter()
@@ -256,8 +260,8 @@ try {
     for (id in taskIds) {
         Hilog.info(0, "cangjie_ohos_test", "任务ID: ${id}")
     }
-} catch (e: Exception) {
-    Hilog.info(0, "cangjie_ohos_test", "搜索任务失败: ${e.toString()}")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -306,13 +310,14 @@ public func show(id: String): TaskInfo
 import kit.BasicServicesKit.*
 import kit.AbilityKit.*
 import kit.PerformanceAnalysisKit.Hilog
+import ohos.business_exception.BusinessException
 
 try {
     let taskId = "example_task_id"
     let taskInfo = show(taskId)
     Hilog.info(0, "cangjie_ohos_test", "任务信息: ${taskInfo.toString()}")
-} catch (e: Exception) {
-    Hilog.info(0, "cangjie_ohos_test", "查询任务信息失败: ${e.toString()}")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -362,14 +367,19 @@ public func touch(id: String, token: String): TaskInfo
 import kit.BasicServicesKit.*
 import kit.AbilityKit.*
 import kit.PerformanceAnalysisKit.Hilog
+import ohos.business_exception.BusinessException
 
 try {
-    let taskId = "example_task_id"
-    let token = "example_token"
-    let taskInfo = touch(taskId, token)
-    Hilog.info(0, "cangjie_ohos_test", "任务信息: ${taskInfo.toString()}")
-} catch (e: Exception) {
-    Hilog.info(0, "cangjie_ohos_test", "查询任务信息失败: ${e.toString()}")
+    try {
+        let taskId = "example_task_id"
+        let token = "example_token"
+        let taskInfo = touch(taskId, token)
+        Hilog.info(0, "cangjie_ohos_test", "任务信息: ${taskInfo.toString()}")
+    } catch (e: Exception) {
+        Hilog.info(0, "cangjie_ohos_test", "查询任务信息失败: ${e.toString()}")
+    }
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -846,6 +856,7 @@ public init(action: Action, url: String, title!: ?String = None, description!: S
 import kit.BasicServicesKit.*
 import kit.AbilityKit.*
 import kit.PerformanceAnalysisKit.Hilog
+import ohos.business_exception.BusinessException
 
 try {
     let config = Config(
@@ -865,8 +876,8 @@ try {
         priority = 0
     )
     Hilog.info(0, "cangjie_ohos_test", "成功创建配置对象")
-} catch (e: Exception) {
-    Hilog.info(0, "cangjie_ohos_test", "创建配置对象失败: ${e.toString()}")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -995,6 +1006,7 @@ public init(
 import kit.BasicServicesKit.*
 import kit.AbilityKit.*
 import kit.PerformanceAnalysisKit.Hilog
+import ohos.business_exception.BusinessException
 
 try {
     let fileSpec = FileSpec(
@@ -1003,8 +1015,8 @@ try {
         filename = "example.txt"
     )
     Hilog.info(0, "cangjie_ohos_test", "成功创建文件规范对象")
-} catch (e: Exception) {
-    Hilog.info(0, "cangjie_ohos_test", "创建文件规范对象失败: ${e.toString()}")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -1198,6 +1210,7 @@ public init(before!: ?Int64 = None, after!: ?Int64 = None, state!: ?State = None
 import kit.BasicServicesKit.*
 import kit.AbilityKit.*
 import kit.PerformanceAnalysisKit.Hilog
+import ohos.business_exception.BusinessException
 
 try {
     let filter = Filter(
@@ -1208,8 +1221,8 @@ try {
         mode = Mode.Background
     )
     Hilog.info(0, "cangjie_ohos_test", "成功创建过滤器对象")
-} catch (e: Exception) {
-    Hilog.info(0, "cangjie_ohos_test", "创建过滤器对象失败: ${e.toString()}")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -1292,6 +1305,7 @@ public init(name: String, value: FormItemValue)
 import kit.BasicServicesKit.*
 import kit.AbilityKit.*
 import kit.PerformanceAnalysisKit.Hilog
+import ohos.business_exception.BusinessException
 
 try {
     let formItem = FormItem(
@@ -1299,8 +1313,8 @@ try {
         value = FormItemValue.StringItem("exampleValue")
     )
     Hilog.info(0, "cangjie_ohos_test", "成功创建表单项对象")
-} catch (e: Exception) {
-    Hilog.info(0, "cangjie_ohos_test", "创建表单项对象失败: ${e.toString()}")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -1562,6 +1576,7 @@ public init(tid: String, config: Config)
 import kit.BasicServicesKit.*
 import kit.AbilityKit.*
 import kit.PerformanceAnalysisKit.Hilog
+import ohos.business_exception.BusinessException
 
 try {
     let context = Global.abilityContext
@@ -1572,8 +1587,8 @@ try {
     )
     let task = Task(taskId, config)
     Hilog.info(0, "cangjie_ohos_test", "成功初始化任务，任务ID: ${task.tid}")
-} catch (e: Exception) {
-    Hilog.info(0, "cangjie_ohos_test", "初始化任务失败: ${e.toString()}")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -1607,6 +1622,7 @@ public func off(event: EventCallbackType, callback!: ?CallbackObject = None): Un
 import kit.BasicServicesKit.*
 import kit.AbilityKit.*
 import kit.PerformanceAnalysisKit.Hilog
+import ohos.business_exception.BusinessException
 
 try {
     let context = Global.abilityContext
@@ -1625,8 +1641,8 @@ try {
     // 取消订阅事件
     task.off(EventCallbackType.Progress)
     Hilog.info(0, "cangjie_ohos_test", "成功取消订阅进度事件")
-} catch (e: Exception) {
-    Hilog.info(0, "cangjie_ohos_test", "取消订阅事件失败: ${e.toString()}")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -1767,6 +1783,7 @@ public func start(): Unit
 import kit.BasicServicesKit.*
 import kit.AbilityKit.*
 import kit.PerformanceAnalysisKit.Hilog
+import ohos.business_exception.BusinessException
 
 try {
     let context = Global.abilityContext
@@ -1778,8 +1795,8 @@ try {
 
     task.start()
     Hilog.info(0, "cangjie_ohos_test", "成功启动任务")
-} catch (e: Exception) {
-    Hilog.info(0, "cangjie_ohos_test", "启动任务失败: ${e.toString()}")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -1814,6 +1831,7 @@ public func stop(): Unit
 import kit.BasicServicesKit.*
 import kit.AbilityKit.*
 import kit.PerformanceAnalysisKit.Hilog
+import ohos.business_exception.BusinessException
 
 try {
     let context = Global.abilityContext
@@ -1826,8 +1844,8 @@ try {
     task.start()
     task.stop()
     Hilog.info(0, "cangjie_ohos_test", "成功停止任务")
-} catch (e: Exception) {
-    Hilog.info(0, "cangjie_ohos_test", "停止任务失败: ${e.toString()}")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
 }
 ```
 

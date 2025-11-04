@@ -57,8 +57,14 @@ public func create(colorSpaceName: ColorSpace): ColorSpaceManager
 // index.cj
 
 import kit.ArkGraphics2D.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let colorSpaceManager = create(ColorSpace.Srgb)
+try {
+    let colorSpaceManager = create(ColorSpace.Srgb)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## func create(ColorSpacePrimaries, Float32)
@@ -102,19 +108,25 @@ public func create(primaries: ColorSpacePrimaries, gamma: Float32): ColorSpaceMa
 // index.cj
 
 import kit.ArkGraphics2D.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let primaries = ColorSpacePrimaries(
-    0.1,
-    0.1,
-    0.2,
-    0.2,
-    0.3,
-    0.3,
-    0.4,
-    0.4
-)
-let gamma = 2.2f32
-let colorSpaceManager = create(primaries, gamma)
+try {
+    let primaries = ColorSpacePrimaries(
+        0.1,
+        0.1,
+        0.2,
+        0.2,
+        0.3,
+        0.3,
+        0.4,
+        0.4
+    )
+    let gamma = 2.2f32
+    let colorSpaceManager = create(primaries, gamma)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## class ColorSpaceManager
@@ -167,9 +179,15 @@ public func getColorSpaceName(): ColorSpace
 // index.cj
 
 import kit.ArkGraphics2D.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let colorSpaceManagerInstance = create(ColorSpace.Srgb)
-let colorSpace: ColorSpace = colorSpaceManagerInstance.getColorSpaceName()
+try {
+    let colorSpaceManagerInstance = create(ColorSpace.Srgb)
+    let colorSpace: ColorSpace = colorSpaceManagerInstance.getColorSpaceName()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getGamma()
@@ -206,9 +224,15 @@ public func getGamma(): Float32
 // index.cj
 
 import kit.ArkGraphics2D.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let colorSpaceManagerInstance = create(Srgb)
-let colorSpace = colorSpaceManagerInstance.getGamma()
+try {
+    let colorSpaceManagerInstance = create(Srgb)
+    let colorSpace = colorSpaceManagerInstance.getGamma()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getWhitePoint()
@@ -245,9 +269,15 @@ public func getWhitePoint(): Array<Float32>
 // index.cj
 
 import kit.ArkGraphics2D.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let colorSpaceManagerInstance = create(Srgb)
-let colorSpace = colorSpaceManagerInstance.getWhitePoint()
+try {
+    let colorSpaceManagerInstance = create(Srgb)
+    let colorSpace = colorSpaceManagerInstance.getWhitePoint()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## class ColorSpacePrimaries

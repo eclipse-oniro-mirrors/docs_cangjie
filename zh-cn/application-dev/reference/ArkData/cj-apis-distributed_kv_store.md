@@ -196,11 +196,17 @@ public func get(key: String): KVValueType
 // index.cj
 
 import kit.ArkData.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let manager = DistributedKVStore.createKVManager(KVManagerConfig(Global.getStageContext(), "test_kvstore")) // 需获取Context应用上下文，详见本文使用说明
-let store = (manager.getKVStore("test", KVOptions(KVSecurityLevel.S1)) as DeviceKVStore).getOrThrow()
-store.put("key", KVValueType.StringValue("value"))
-store.get("key")
+try {
+    let manager = DistributedKVStore.createKVManager(KVManagerConfig(Global.getStageContext(), "test_kvstore")) // 需获取Context应用上下文，详见本文使用说明
+    let store = (manager.getKVStore("test", KVOptions(KVSecurityLevel.S1)) as DeviceKVStore).getOrThrow()
+    store.put("key", KVValueType.StringValue("value"))
+    store.get("key")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getEntries(String)
@@ -244,11 +250,17 @@ public func getEntries(keyPrefix: String): Array<Entry>
 // index.cj
 
 import kit.ArkData.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let manager = DistributedKVStore.createKVManager(KVManagerConfig(Global.getStageContext(), "test_kvstore")) // 需获取Context应用上下文，详见本文使用说明
-let store = (manager.getKVStore("test", KVOptions(KVSecurityLevel.S1)) as DeviceKVStore).getOrThrow()
-store.put("key", KVValueType.StringValue("value"))
-store.getEntries("key")
+try {
+    let manager = DistributedKVStore.createKVManager(KVManagerConfig(Global.getStageContext(), "test_kvstore")) // 需获取Context应用上下文，详见本文使用说明
+    let store = (manager.getKVStore("test", KVOptions(KVSecurityLevel.S1)) as DeviceKVStore).getOrThrow()
+    store.put("key", KVValueType.StringValue("value"))
+    store.getEntries("key")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getEntries(Query)
@@ -292,11 +304,17 @@ public func getEntries(query: Query): Array<Entry>
 // index.cj
 
 import kit.ArkData.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let manager = DistributedKVStore.createKVManager(KVManagerConfig(Global.getStageContext(), "test_kvstore")) // 需获取Context应用上下文，详见本文使用说明
-let store = (manager.getKVStore("test", KVOptions(KVSecurityLevel.S1)) as DeviceKVStore).getOrThrow()
-store.put("key", KVValueType.StringValue("value"))
-store.getEntries(Query())
+try {
+    let manager = DistributedKVStore.createKVManager(KVManagerConfig(Global.getStageContext(), "test_kvstore")) // 需获取Context应用上下文，详见本文使用说明
+    let store = (manager.getKVStore("test", KVOptions(KVSecurityLevel.S1)) as DeviceKVStore).getOrThrow()
+    store.put("key", KVValueType.StringValue("value"))
+    store.getEntries(Query())
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getResultSet(String)
@@ -341,11 +359,17 @@ public func getResultSet(keyPrefix: String): KVStoreResultSet
 // index.cj
 
 import kit.ArkData.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let manager = DistributedKVStore.createKVManager(KVManagerConfig(Global.getStageContext(), "test_kvstore")) // 需获取Context应用上下文，详见本文使用说明
-let store = (manager.getKVStore("test", KVOptions(KVSecurityLevel.S1)) as DeviceKVStore).getOrThrow()
-store.put("key", KVValueType.StringValue("value"))
-store.getResultSet("key")
+try {
+    let manager = DistributedKVStore.createKVManager(KVManagerConfig(Global.getStageContext(), "test_kvstore")) // 需获取Context应用上下文，详见本文使用说明
+    let store = (manager.getKVStore("test", KVOptions(KVSecurityLevel.S1)) as DeviceKVStore).getOrThrow()
+    store.put("key", KVValueType.StringValue("value"))
+    store.getResultSet("key")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getResultSet(Query)
@@ -390,11 +414,17 @@ public func getResultSet(query: Query): KVStoreResultSet
 // index.cj
 
 import kit.ArkData.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let manager = DistributedKVStore.createKVManager(KVManagerConfig(Global.getStageContext(), "test_kvstore")) // 需获取Context应用上下文，详见本文使用说明
-let store = (manager.getKVStore("test", KVOptions(KVSecurityLevel.S1)) as DeviceKVStore).getOrThrow()
-store.put("key", KVValueType.StringValue("value"))
-store.getResultSet(Query())
+try {
+    let manager = DistributedKVStore.createKVManager(KVManagerConfig(Global.getStageContext(), "test_kvstore")) // 需获取Context应用上下文，详见本文使用说明
+    let store = (manager.getKVStore("test", KVOptions(KVSecurityLevel.S1)) as DeviceKVStore).getOrThrow()
+    store.put("key", KVValueType.StringValue("value"))
+    store.getResultSet(Query())
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getResultSize(Query)
@@ -438,11 +468,17 @@ public func getResultSize(query: Query): Int32
 // index.cj
 
 import kit.ArkData.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let manager = DistributedKVStore.createKVManager(KVManagerConfig(Global.getStageContext(), "test_kvstore")) // 需获取Context应用上下文，详见本文使用说明
-let store = (manager.getKVStore("test", KVOptions(KVSecurityLevel.S1)) as DeviceKVStore).getOrThrow()
-store.put("key", KVValueType.StringValue("value"))
-store.getResultSize(Query())
+try {
+    let manager = DistributedKVStore.createKVManager(KVManagerConfig(Global.getStageContext(), "test_kvstore")) // 需获取Context应用上下文，详见本文使用说明
+    let store = (manager.getKVStore("test", KVOptions(KVSecurityLevel.S1)) as DeviceKVStore).getOrThrow()
+    store.put("key", KVValueType.StringValue("value"))
+    store.getResultSize(Query())
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## class DistributedKVStore
@@ -489,8 +525,14 @@ public static func createKVManager(config: KVManagerConfig): KVManager
 // index.cj
 
 import kit.ArkData.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let kvManager = DistributedKVStore.createKVManager(KVManagerConfig(Global.getStageContext(), "com.example.myapplication")) // 需获取Context应用上下文，详见本文使用说明
+try {
+    let kvManager = DistributedKVStore.createKVManager(KVManagerConfig(Global.getStageContext(), "com.example.myapplication")) // 需获取Context应用上下文，详见本文使用说明
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## class Entry
@@ -695,9 +737,15 @@ public func closeKVStore(appId: String, storeId: String): Unit
 // index.cj
 
 import kit.ArkData.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let kvManager = DistributedKVStore.createKVManager(KVManagerConfig(Global.getStageContext(), "com.example.myapplication")) // 需获取Context应用上下文，详见本文使用说明
-kvManager.closeKVStore("com.example.myapplication", "myStore")
+try {
+    let kvManager = DistributedKVStore.createKVManager(KVManagerConfig(Global.getStageContext(), "com.example.myapplication")) // 需获取Context应用上下文，详见本文使用说明
+    kvManager.closeKVStore("com.example.myapplication", "myStore")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func deleteKVStore(String, String)
@@ -735,9 +783,15 @@ public func deleteKVStore(appId: String, storeId: String): Unit
 // index.cj
 
 import kit.ArkData.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let kvManager = DistributedKVStore.createKVManager(KVManagerConfig(Global.getStageContext(), "com.example.myapplication")) // 需获取Context应用上下文，详见本文使用说明
-kvManager.deleteKVStore("com.example.myapplication", "myStore")
+try {
+    let kvManager = DistributedKVStore.createKVManager(KVManagerConfig(Global.getStageContext(), "com.example.myapplication")) // 需获取Context应用上下文，详见本文使用说明
+    kvManager.deleteKVStore("com.example.myapplication", "myStore")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getAllKVStoreId(String)
@@ -780,9 +834,15 @@ public func getAllKVStoreId(appId: String): Array<String>
 // index.cj
 
 import kit.ArkData.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let kvManager = DistributedKVStore.createKVManager(KVManagerConfig(Global.getStageContext(), "com.example.myapplication")) // 需获取Context应用上下文，详见本文使用说明
-kvManager.getAllKVStoreId("com.example.myapplication")
+try {
+    let kvManager = DistributedKVStore.createKVManager(KVManagerConfig(Global.getStageContext(), "com.example.myapplication")) // 需获取Context应用上下文，详见本文使用说明
+    kvManager.getAllKVStoreId("com.example.myapplication")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getKVStore\<T>(String, KVOptions) where T \<: SingleKVStore
@@ -833,16 +893,22 @@ public func getKVStore<T>(storeId: String, options: KVOptions): T where T <: Sin
 // index.cj
 
 import kit.ArkData.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let kvManager = DistributedKVStore.createKVManager(KVManagerConfig(Global.getStageContext(), "com.example.myapplication")) // 需获取Context应用上下文，详见本文使用说明
-let opt = KVOptions(
-    KVSecurityLevel.S4,
-    createIfMissing: true,
-    encrypt: false,
-    backup: true,
-    autoSync: false,
-)
-let kvStore = kvManager.getKVStore("myStoreId", opt)
+try {
+    let kvManager = DistributedKVStore.createKVManager(KVManagerConfig(Global.getStageContext(), "com.example.myapplication")) // 需获取Context应用上下文，详见本文使用说明
+    let opt = KVOptions(
+        KVSecurityLevel.S4,
+        createIfMissing: true,
+        encrypt: false,
+        backup: true,
+        autoSync: false,
+    )
+    let kvStore = kvManager.getKVStore("myStoreId", opt)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 ## class KVManagerConfig
 
@@ -950,12 +1016,18 @@ public func getCount(): Int32
 // index.cj
 
 import kit.ArkData.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let kvManager = DistributedKVStore.createKVManager(KVManagerConfig(Global.getStageContext(), "test_kvstore")) // 需获取Context应用上下文，详见本文使用说明
-let store = (kvManager.getKVStore("test", KVOptions(KVSecurityLevel.S1)) as DeviceKVStore).getOrThrow()
-store.put("key", KVValueType.StringValue("value"))
-var resultSet = store.getResultSet("key")
-resultSet.getCount()
+try {
+    let kvManager = DistributedKVStore.createKVManager(KVManagerConfig(Global.getStageContext(), "test_kvstore")) // 需获取Context应用上下文，详见本文使用说明
+    let store = (kvManager.getKVStore("test", KVOptions(KVSecurityLevel.S1)) as DeviceKVStore).getOrThrow()
+    store.put("key", KVValueType.StringValue("value"))
+    var resultSet = store.getResultSet("key")
+    resultSet.getCount()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## class KVOptions
@@ -1277,17 +1349,23 @@ public open func backup(file: String): Unit
 // index.cj
 
 import kit.ArkData.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let kvManager = DistributedKVStore.createKVManager(KVManagerConfig(Global.getStageContext(), "test_kvstore")) // 需获取Context应用上下文，详见本文使用说明
-let opt = KVOptions(
-    KVSecurityLevel.S4,
-    createIfMissing: true,
-    encrypt: false,
-    backup: true,
-    autoSync: false,
-)
-let singleKVStore = kvManager.getKVStore("myStoreId", opt)
-singleKVStore.backup("myBackupfile")
+try {
+    let kvManager = DistributedKVStore.createKVManager(KVManagerConfig(Global.getStageContext(), "test_kvstore")) // 需获取Context应用上下文，详见本文使用说明
+    let opt = KVOptions(
+        KVSecurityLevel.S4,
+        createIfMissing: true,
+        encrypt: false,
+        backup: true,
+        autoSync: false,
+    )
+    let singleKVStore = kvManager.getKVStore("myStoreId", opt)
+    singleKVStore.backup("myBackupfile")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func commit()
@@ -1318,17 +1396,23 @@ public open func commit(): Unit
 // index.cj
 
 import kit.ArkData.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let kvManager = DistributedKVStore.createKVManager(KVManagerConfig(Global.getStageContext(), "test_kvstore")) // 需获取Context应用上下文，详见本文使用说明
-let opt = KVOptions(
-    KVSecurityLevel.S4,
-    createIfMissing: true,
-    encrypt: false,
-    backup: true,
-    autoSync: false,
-)
-let singleKVStore = kvManager.getKVStore("myStoreId", opt)
-singleKVStore.commit()
+try {
+    let kvManager = DistributedKVStore.createKVManager(KVManagerConfig(Global.getStageContext(), "test_kvstore")) // 需获取Context应用上下文，详见本文使用说明
+    let opt = KVOptions(
+        KVSecurityLevel.S4,
+        createIfMissing: true,
+        encrypt: false,
+        backup: true,
+        autoSync: false,
+    )
+    let singleKVStore = kvManager.getKVStore("myStoreId", opt)
+    singleKVStore.commit()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func delete(String)
@@ -1367,17 +1451,23 @@ public open func delete(key: String): Unit
 // index.cj
 
 import kit.ArkData.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let kvManager = DistributedKVStore.createKVManager(KVManagerConfig(Global.getStageContext(), "test_kvstore")) // 需获取Context应用上下文，详见本文使用说明
-let opt = KVOptions(
-    KVSecurityLevel.S4,
-    createIfMissing: true,
-    encrypt: false,
-    backup: true,
-    autoSync: false,
-)
-let singleKVStore = kvManager.getKVStore("myStoreId", opt)
-singleKVStore.delete("myKey")
+try {
+    let kvManager = DistributedKVStore.createKVManager(KVManagerConfig(Global.getStageContext(), "test_kvstore")) // 需获取Context应用上下文，详见本文使用说明
+    let opt = KVOptions(
+        KVSecurityLevel.S4,
+        createIfMissing: true,
+        encrypt: false,
+        backup: true,
+        autoSync: false,
+    )
+    let singleKVStore = kvManager.getKVStore("myStoreId", opt)
+    singleKVStore.delete("myKey")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func deleteBatch(Array\<String>)
@@ -1416,17 +1506,23 @@ public open func deleteBatch(keys: Array<String>): Unit
 // index.cj
 
 import kit.ArkData.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let kvManager = DistributedKVStore.createKVManager(KVManagerConfig(Global.getStageContext(), "test_kvstore")) // 需获取Context应用上下文，详见本文使用说明
-let opt = KVOptions(
-    KVSecurityLevel.S4,
-    createIfMissing: true,
-    encrypt: false,
-    backup: true,
-    autoSync: false,
-)
-let deviceKVStore = (kvManager.getKVStore("myStoreId", opt) as DeviceKVStore).getOrThrow()
-deviceKVStore.deleteBatch(["myBackupfile", "BK002"])
+try {
+    let kvManager = DistributedKVStore.createKVManager(KVManagerConfig(Global.getStageContext(), "test_kvstore")) // 需获取Context应用上下文，详见本文使用说明
+    let opt = KVOptions(
+        KVSecurityLevel.S4,
+        createIfMissing: true,
+        encrypt: false,
+        backup: true,
+        autoSync: false,
+    )
+    let deviceKVStore = (kvManager.getKVStore("myStoreId", opt) as DeviceKVStore).getOrThrow()
+    deviceKVStore.deleteBatch(["myBackupfile", "BK002"])
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func enableSync(Bool)
@@ -1464,17 +1560,23 @@ public open func enableSync(enabled: Bool): Unit
 
 import kit.ArkData.*
 import std.collection.ArrayList
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let kvManager = DistributedKVStore.createKVManager(KVManagerConfig(Global.getStageContext(), "test_kvstore")) // 需获取Context应用上下文，详见本文使用说明
-let opt = KVOptions(
-    KVSecurityLevel.S4,
-    createIfMissing: true,
-    encrypt: false,
-    backup: true,
-    autoSync: false,
-)
-let singleKVStore = kvManager.getKVStore("myStoreId", opt)
-singleKVStore.enableSync(true)
+try {
+    let kvManager = DistributedKVStore.createKVManager(KVManagerConfig(Global.getStageContext(), "test_kvstore")) // 需获取Context应用上下文，详见本文使用说明
+    let opt = KVOptions(
+        KVSecurityLevel.S4,
+        createIfMissing: true,
+        encrypt: false,
+        backup: true,
+        autoSync: false,
+    )
+    let singleKVStore = kvManager.getKVStore("myStoreId", opt)
+    singleKVStore.enableSync(true)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func get(String)
@@ -1624,23 +1726,29 @@ public open func putBatch(entries: Array<Entry>): Unit
 
 import kit.ArkData.*
 import std.collection.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let kvManager = DistributedKVStore.createKVManager(
-    KVManagerConfig(Global.getStageContext(), "test_kvstore")) // 需获取Context应用上下文，详见本文使用说明
-let opt = KVOptions(
-    KVSecurityLevel.S4,
-    createIfMissing: true,
-    encrypt: false,
-    backup: true,
-    autoSync: false,
-)
-let singleKVStore = kvManager.getKVStore("myStoreId", opt)
-let entries = ArrayList<Entry>()
-for (i in 0..10) {
-    let entry = Entry("batch_test_string_key${i}", StringValue("batch_test_string_value"))
-    entries.add(entry)
+try {
+    let kvManager = DistributedKVStore.createKVManager(
+        KVManagerConfig(Global.getStageContext(), "test_kvstore")) // 需获取Context应用上下文，详见本文使用说明
+    let opt = KVOptions(
+        KVSecurityLevel.S4,
+        createIfMissing: true,
+        encrypt: false,
+        backup: true,
+        autoSync: false,
+    )
+    let singleKVStore = kvManager.getKVStore("myStoreId", opt)
+    let entries = ArrayList<Entry>()
+    for (i in 0..10) {
+        let entry = Entry("batch_test_string_key${i}", StringValue("batch_test_string_value"))
+        entries.add(entry)
+    }
+    singleKVStore.putBatch(entries.toArray())
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
 }
-singleKVStore.putBatch(entries.toArray())
 ```
 
 ### func restore(String)
@@ -1677,18 +1785,24 @@ public open func restore(file: String): Unit
 // index.cj
 
 import kit.ArkData.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let kvManager = DistributedKVStore.createKVManager(
-    KVManagerConfig(Global.getStageContext(), "test_kvstore")) // 需获取Context应用上下文，详见本文使用说明
-let opt = KVOptions(
-    KVSecurityLevel.S4,
-    createIfMissing: true,
-    encrypt: false,
-    backup: true,
-    autoSync: false,
-)
-let singleKVStore = kvManager.getKVStore("myStoreId", opt)
-singleKVStore.restore("myBackupfile")
+try {
+    let kvManager = DistributedKVStore.createKVManager(
+        KVManagerConfig(Global.getStageContext(), "test_kvstore")) // 需获取Context应用上下文，详见本文使用说明
+    let opt = KVOptions(
+        KVSecurityLevel.S4,
+        createIfMissing: true,
+        encrypt: false,
+        backup: true,
+        autoSync: false,
+    )
+    let singleKVStore = kvManager.getKVStore("myStoreId", opt)
+    singleKVStore.restore("myBackupfile")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func rollback()
@@ -1719,18 +1833,24 @@ public open func rollback(): Unit
 // index.cj
 
 import kit.ArkData.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let kvManager = DistributedKVStore.createKVManager(
-    KVManagerConfig(Global.getStageContext(), "test_kvstore")) // 需获取Context应用上下文，详见本文使用说明
-let opt = KVOptions(
-    KVSecurityLevel.S4,
-    createIfMissing: true,
-    encrypt: false,
-    backup: true,
-    autoSync: false,
-)
-let singleKVStore = kvManager.getKVStore("myStoreId", opt)
-singleKVStore.rollback()
+try {
+    let kvManager = DistributedKVStore.createKVManager(
+        KVManagerConfig(Global.getStageContext(), "test_kvstore")) // 需获取Context应用上下文，详见本文使用说明
+    let opt = KVOptions(
+        KVSecurityLevel.S4,
+        createIfMissing: true,
+        encrypt: false,
+        backup: true,
+        autoSync: false,
+    )
+    let singleKVStore = kvManager.getKVStore("myStoreId", opt)
+    singleKVStore.rollback()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func setSyncParam(UInt32)
@@ -1767,18 +1887,24 @@ public open func setSyncParam(defaultAllowedDelayMs: UInt32): Unit
 // index.cj
 
 import kit.ArkData.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let kvManager = DistributedKVStore.createKVManager(
-    KVManagerConfig(Global.getStageContext(), "test_kvstore")) // 需获取Context应用上下文，详见本文使用说明
-let opt = KVOptions(
-    KVSecurityLevel.S4,
-    createIfMissing: true,
-    encrypt: false,
-    backup: true,
-    autoSync: false,
-)
-let singleKVStore = kvManager.getKVStore("myStoreId", opt)
-singleKVStore.setSyncParam(500)
+try {
+    let kvManager = DistributedKVStore.createKVManager(
+        KVManagerConfig(Global.getStageContext(), "test_kvstore")) // 需获取Context应用上下文，详见本文使用说明
+    let opt = KVOptions(
+        KVSecurityLevel.S4,
+        createIfMissing: true,
+        encrypt: false,
+        backup: true,
+        autoSync: false,
+    )
+    let singleKVStore = kvManager.getKVStore("myStoreId", opt)
+    singleKVStore.setSyncParam(500)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func startTransaction()
@@ -1810,18 +1936,24 @@ public open func startTransaction(): Unit
 // index.cj
 
 import kit.ArkData.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let kvManager = DistributedKVStore.createKVManager(
-    KVManagerConfig(Global.getStageContext(), "test_kvstore")) // 需获取Context应用上下文，详见本文使用说明
-let opt = KVOptions(
-    KVSecurityLevel.S4,
-    createIfMissing: true,
-    encrypt: false,
-    backup: true,
-    autoSync: false,
-)
-let singleKVStore = kvManager.getKVStore("myStoreId", opt)
-singleKVStore.startTransaction()
+try {
+    let kvManager = DistributedKVStore.createKVManager(
+        KVManagerConfig(Global.getStageContext(), "test_kvstore")) // 需获取Context应用上下文，详见本文使用说明
+    let opt = KVOptions(
+        KVSecurityLevel.S4,
+        createIfMissing: true,
+        encrypt: false,
+        backup: true,
+        autoSync: false,
+    )
+    let singleKVStore = kvManager.getKVStore("myStoreId", opt)
+    singleKVStore.startTransaction()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## enum KVSecurityLevel

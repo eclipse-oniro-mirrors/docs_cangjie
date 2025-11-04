@@ -67,36 +67,41 @@ public static func finishTrace(name: String, taskId: Int32): Unit
 
 import ohos.base.*
 import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
 
-func f1(){
-    HiTraceMeter.finishTrace("myTestFunc", 1)
+try {
+    func f1(){
+        HiTraceMeter.finishTrace("myTestFunc", 1)
+    }
+
+    func f2(){
+        // 跟踪并行执行的同名任务
+        HiTraceMeter.startTrace("myTestFunc", 1)
+        // 业务流程代码
+        HiTraceMeter.startTrace("myTestFunc", 2)  // 第二个跟踪的任务开始，同时第一个跟踪的同名任务还没结束，出现了并行执行，对应接口的taskId需要不同。
+        // 业务流程代码
+        HiTraceMeter.finishTrace("myTestFunc", 1)
+        // 业务流程代码
+        HiTraceMeter.finishTrace("myTestFunc", 2)
+    }
+
+    func f3(){
+        // 跟踪串行执行的同名任务
+        HiTraceMeter.startTrace("myTestFunc", 1)
+        // 业务流程代码
+        HiTraceMeter.finishTrace("myTestFunc", 1)  // 第一个跟踪的任务结束
+        // 业务流程代码
+        HiTraceMeter.startTrace("myTestFunc", 1)   // 第二个跟踪的同名任务开始，同名的待跟踪任务串行执行。
+        // 业务流程代码
+        HiTraceMeter.finishTrace("myTestFunc", 1)
+    }
+
+    f1()
+    f2()
+    f3()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
 }
-
-func f2(){
-    // 跟踪并行执行的同名任务
-    HiTraceMeter.startTrace("myTestFunc", 1)
-    // 业务流程代码
-    HiTraceMeter.startTrace("myTestFunc", 2)  // 第二个跟踪的任务开始，同时第一个跟踪的同名任务还没结束，出现了并行执行，对应接口的taskId需要不同。
-    // 业务流程代码
-    HiTraceMeter.finishTrace("myTestFunc", 1)
-    // 业务流程代码
-    HiTraceMeter.finishTrace("myTestFunc", 2)
-}
-
-func f3(){
-    // 跟踪串行执行的同名任务
-    HiTraceMeter.startTrace("myTestFunc", 1)
-    // 业务流程代码
-    HiTraceMeter.finishTrace("myTestFunc", 1)  // 第一个跟踪的任务结束
-    // 业务流程代码
-    HiTraceMeter.startTrace("myTestFunc", 1)   // 第二个跟踪的同名任务开始，同名的待跟踪任务串行执行。
-    // 业务流程代码
-    HiTraceMeter.finishTrace("myTestFunc", 1)
-}
-
-f1()
-f2()
-f3()
 ```
 
 ### static func startTrace(String, Int32)
@@ -131,6 +136,11 @@ public static func startTrace(name: String, taskId: Int32): Unit
 
 import ohos.base.*
 import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
 
-HiTraceMeter.startTrace("myTestFunc", 1)
+try {
+    HiTraceMeter.startTrace("myTestFunc", 1)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```

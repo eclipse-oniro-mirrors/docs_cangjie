@@ -116,6 +116,12 @@ public init(bundleName: String, abilityName: String, deviceId!: String = "", mod
 <!-- compile -->
 ```cangjie
 import kit.AbilityKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let elementName = ElementName("com.ohos.example", "com.ohos.example.MainAbility");
+try {
+    let elementName = ElementName("com.ohos.example", "com.ohos.example.MainAbility");
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```

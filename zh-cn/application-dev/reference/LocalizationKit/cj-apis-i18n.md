@@ -49,8 +49,14 @@ public func getCalendar(locale: String, calendarType!: ?CalendarType = None): Ca
 // index.cj
 
 import ohos.i18n.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let calendar = getCalendar("en-US", calendarType: CalendarType.Buddhist)// 获得一个基于 en-US 区域设置的佛教日历对象
+try {
+    let calendar = getCalendar("en-US", calendarType: CalendarType.Buddhist)// 获得一个基于 en-US 区域设置的佛教日历对象
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## class Calendar
@@ -92,11 +98,17 @@ public func add(field: String, amount: Int32): Unit
 // index.cj
 
 import kit.LocalizationKit.getCalendar
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let calendar = getCalendar("zh-Hans")
-calendar.set(2021,11,11) // set time to 2021.12.11
-calendar.add("year", 3)
-let res = calendar.get("year") // res = 2024
+try {
+    let calendar = getCalendar("zh-Hans")
+    calendar.set(2021,11,11) // set time to 2021.12.11
+    calendar.add("year", 3)
+    let res = calendar.get("year") // res = 2024
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func get(String)
@@ -131,15 +143,21 @@ public func get(field: String): Int32
 // index.cj
 
 import kit.LocalizationKit.getCalendar
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let calendar = getCalendar("en-US")
-calendar.set(2024, 1, 1, hour: 12, minute: 30, second: 30)
-let year = calendar.get("year") // 2024
-let month = calendar.get("month") // 1
-let date = calendar.get("date") // 1
-let hour = calendar.get("hour_of_day") // 12
-let minute = calendar.get("minute") // 30
-let second = calendar.get("second") // 30
+try {
+    let calendar = getCalendar("en-US")
+    calendar.set(2024, 1, 1, hour: 12, minute: 30, second: 30)
+    let year = calendar.get("year") // 2024
+    let month = calendar.get("month") // 1
+    let date = calendar.get("date") // 1
+    let hour = calendar.get("hour_of_day") // 12
+    let minute = calendar.get("minute") // 30
+    let second = calendar.get("second") // 30
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getDisplayName(String)
@@ -175,9 +193,15 @@ public func getDisplayName(locale: String): String
 
 import kit.LocalizationKit.getCalendar
 import ohos.i18n.CalendarType
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let calendar = getCalendar("en-US", calendarType: CalendarType.Buddhist)
-let res = calendar.getDisplayName("zh") // res = "佛历"
+try {
+    let calendar = getCalendar("en-US", calendarType: CalendarType.Buddhist)
+    let res = calendar.getDisplayName("zh") // res = "佛历"
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getFirstDayOfWeek()
@@ -206,9 +230,15 @@ public func getFirstDayOfWeek(): Int32
 // index.cj
 
 import kit.LocalizationKit.getCalendar
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let calendar = getCalendar("en-US")
-let res = calendar.getFirstDayOfWeek() // res = 1
+try {
+    let calendar = getCalendar("en-US")
+    let res = calendar.getFirstDayOfWeek() // res = 1
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getMinimalDaysInFirstWeek()
@@ -237,9 +267,15 @@ public func getMinimalDaysInFirstWeek(): Int32
 // index.cj
 
 import kit.LocalizationKit.getCalendar
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let calendar = getCalendar("zh-Hans")
-let res = calendar.getMinimalDaysInFirstWeek() // res = 1
+try {
+    let calendar = getCalendar("zh-Hans")
+    let res = calendar.getMinimalDaysInFirstWeek() // res = 1
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getTimeInMillis()
@@ -268,10 +304,16 @@ public func getTimeInMillis(): Float64
 // index.cj
 
 import kit.LocalizationKit.getCalendar
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let calendar = getCalendar("en-US")
-calendar.setTime(5000.0)
-let millis = calendar.getTimeInMillis() // millis = 5000
+try {
+    let calendar = getCalendar("en-US")
+    calendar.setTime(5000.0)
+    let millis = calendar.getTimeInMillis() // millis = 5000
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getTimeZone()
@@ -301,10 +343,16 @@ public func getTimeZone(): String
 
 import kit.LocalizationKit.getCalendar
 import ohos.i18n.CalendarType
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let calendar = getCalendar("zh-Hans", calendarType: CalendarType.Chinese)
-calendar.setTimeZone("Asia/Shanghai")
-let timeZone = calendar.getTimeZone() // timeZone = "Asia/Shanghai"
+try {
+    let calendar = getCalendar("zh-Hans", calendarType: CalendarType.Chinese)
+    calendar.setTimeZone("Asia/Shanghai")
+    let timeZone = calendar.getTimeZone() // timeZone = "Asia/Shanghai"
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func set(Int32, Int32, Int32, ?Int32, ?Int32, ?Int32)
@@ -338,9 +386,15 @@ public func set(year: Int32, month: Int32, date: Int32, hour!: ?Int32 = None, mi
 // index.cj
 
 import kit.LocalizationKit.getCalendar
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let calendar = getCalendar("zh-Hans")
-calendar.set(2021,11,11)  // set time to 2021.12.11
+try {
+    let calendar = getCalendar("zh-Hans")
+    calendar.set(2021,11,11)  // set time to 2021.12.11
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func setFirstDayOfWeek(Int32)
@@ -369,10 +423,16 @@ public func setFirstDayOfWeek(value: Int32): Unit
 // index.cj
 
 import kit.LocalizationKit.getCalendar
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let calendar = getCalendar("zh-Hans")
-calendar.setFirstDayOfWeek(3)
-let firstDayOfWeek = calendar.getFirstDayOfWeek() // firstDayOfWeek = 3
+try {
+    let calendar = getCalendar("zh-Hans")
+    calendar.setFirstDayOfWeek(3)
+    let firstDayOfWeek = calendar.getFirstDayOfWeek() // firstDayOfWeek = 3
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func setMinimalDaysInFirstWeek(Int32)
@@ -401,10 +461,16 @@ public func setMinimalDaysInFirstWeek(value: Int32): Unit
 // index.cj
 
 import kit.LocalizationKit.getCalendar
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let calendar = getCalendar("zh-Hans")
-calendar.setMinimalDaysInFirstWeek(3)
-let minimalDaysInFirstWeek = calendar.getMinimalDaysInFirstWeek() // minimalDaysInFirstWeek = 3
+try {
+    let calendar = getCalendar("zh-Hans")
+    calendar.setMinimalDaysInFirstWeek(3)
+    let minimalDaysInFirstWeek = calendar.getMinimalDaysInFirstWeek() // minimalDaysInFirstWeek = 3
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func setTime(Float64)
@@ -433,9 +499,15 @@ public func setTime(time: Float64): Unit
 // index.cj
 
 import kit.LocalizationKit.getCalendar
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let calendar = getCalendar("en-US")
-calendar.setTime(10540800000.0)
+try {
+    let calendar = getCalendar("en-US")
+    calendar.setTime(10540800000.0)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func setTimeZone(String)
@@ -464,9 +536,15 @@ public func setTimeZone(timeZone: String): Unit
 // index.cj
 
 import kit.LocalizationKit.getCalendar
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let calendar = getCalendar("en-US")
-calendar.setTimeZone("Asia/Shanghai")
+try {
+    let calendar = getCalendar("en-US")
+    calendar.setTimeZone("Asia/Shanghai")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## class System
@@ -505,10 +583,17 @@ public static func getAppPreferredLanguage(): String
 
 ```cangjie
 // index.cj
+
 import ohos.i18n.*
 import kit.LocalizationKit.getCalendar
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let appPreferredLanguage = System.getAppPreferredLanguage() // 获取应用偏好语言
+try {
+    let appPreferredLanguage = System.getAppPreferredLanguage() // 获取应用偏好语言
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## enum CalendarType

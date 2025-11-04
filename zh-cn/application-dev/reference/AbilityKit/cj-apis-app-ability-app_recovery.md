@@ -54,8 +54,13 @@ public func restartApp(): Unit
 ```cangjie
 // index.cj
 
-import ohos.base.*
 import kit.AbilityKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-restartApp()
+try {
+    restartApp()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```

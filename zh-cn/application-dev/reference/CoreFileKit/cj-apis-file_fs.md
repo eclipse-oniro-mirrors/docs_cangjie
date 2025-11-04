@@ -162,13 +162,18 @@ public func getParent(): String
 // index.cj
 
 import kit.CoreFileKit.*
-import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let pathDir = "path/to/file"
-let filePath = pathDir + "/test.txt"  // 请替换正确的文件路径，获取文件路径参考本文使用说明
-let file = FileIo.open(filePath, mode: (OpenMode.READ_WRITE | OpenMode.CREATE))
-Hilog.info(0, "", "The parent path is: " + file.getParent())
-FileIo.close(file)
+try {
+    let pathDir = "path/to/file"
+    let filePath = pathDir + "/test.txt"  // 请替换正确的文件路径，获取文件路径参考本文使用说明
+    let file = FileIo.open(filePath, mode: (OpenMode.READ_WRITE | OpenMode.CREATE))
+    Hilog.info(0, "", "The parent path is: " + file.getParent())
+    FileIo.close(file)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func tryLock(Bool)
@@ -211,12 +216,18 @@ public func tryLock(exclusive!: Bool = false): Unit
 // index.cj
 
 import kit.CoreFileKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let pathDir = "path/to/file"
-let filePath = pathDir + "/test.txt"  // 请替换正确的文件路径，获取文件路径参考本文使用说明
-let file = FileIo.open(filePath, mode:(OpenMode.READ_WRITE | OpenMode.CREATE))
-file.tryLock(exclusive: true)
-FileIo.close(file)
+try {
+    let pathDir = "path/to/file"
+    let filePath = pathDir + "/test.txt"  // 请替换正确的文件路径，获取文件路径参考本文使用说明
+    let file = FileIo.open(filePath, mode:(OpenMode.READ_WRITE | OpenMode.CREATE))
+    file.tryLock(exclusive: true)
+    FileIo.close(file)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func unlock()
@@ -252,13 +263,19 @@ public func unlock(): Unit
 // index.cj
 
 import kit.CoreFileKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let pathDir = "path/to/file"
-let filePath = pathDir + "/test.txt"
-let file = FileIo.open(filePath, mode: (OpenMode.READ_WRITE | OpenMode.CREATE))
-file.tryLock(exclusive: true)
-file.unlock()
-FileIo.close(file)
+try {
+    let pathDir = "path/to/file"
+    let filePath = pathDir + "/test.txt"
+    let file = FileIo.open(filePath, mode: (OpenMode.READ_WRITE | OpenMode.CREATE))
+    file.tryLock(exclusive: true)
+    file.unlock()
+    FileIo.close(file)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## class FileIo
@@ -327,7 +344,6 @@ public static func access(path: String, mode!: AccessModeType = AccessModeType.E
 // index.cj
 
 import kit.CoreFileKit.*
-import kit.PerformanceAnalysisKit.*
 import ohos.business_exception.BusinessException
 
 let pathDir = "path/to/file"
@@ -383,11 +399,17 @@ public static func close(file: Int32): Unit
 // index.cj
 
 import kit.CoreFileKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let pathDir = "path/to/file"
-let filePath = pathDir + "/test.txt"
-let file = FileIo.open(filePath)
-FileIo.close(file.fd)
+try {
+    let pathDir = "path/to/file"
+    let filePath = pathDir + "/test.txt"
+    let file = FileIo.open(filePath)
+    FileIo.close(file.fd)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### static func close(File)
@@ -429,11 +451,17 @@ public static func close(file: File): Unit
 // index.cj
 
 import kit.CoreFileKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let pathDir = "path/to/file"
-let filePath = pathDir + "/test.txt"
-let file = FileIo.open(filePath)
-FileIo.close(file)
+try {
+    let pathDir = "path/to/file"
+    let filePath = pathDir + "/test.txt"
+    let file = FileIo.open(filePath)
+    FileIo.close(file)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### static func copyDir(String, String, Int32)
@@ -490,11 +518,17 @@ public static func copyDir(src: String, dest: String, mode!: Int32 = 0): Unit
 // index.cj
 
 import kit.CoreFileKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let pathDir = "path/to/file"
-let srcPath = pathDir + "/srcDir/"
-let destPath = pathDir + "/destDir/"
-FileIo.copyDir(srcPath, destPath, mode: 0)
+try {
+    let pathDir = "path/to/file"
+    let srcPath = pathDir + "/srcDir/"
+    let destPath = pathDir + "/destDir/"
+    FileIo.copyDir(srcPath, destPath, mode: 0)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### static func copyFile(String, String, Int32)
@@ -550,11 +584,17 @@ public static func copyFile(src: String, dest: String, mode!: Int32 = 0): Unit
 // index.cj
 
 import kit.CoreFileKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let pathDir = "path/to/file"
-let srcPath = pathDir + "/srcDir/test.txt"
-let dstPath = pathDir + "/dstDir/test.txt"
-FileIo.copyFile(srcPath, dstPath, mode: 0)
+try {
+    let pathDir = "path/to/file"
+    let srcPath = pathDir + "/srcDir/test.txt"
+    let dstPath = pathDir + "/dstDir/test.txt"
+    FileIo.copyFile(srcPath, dstPath, mode: 0)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### static func copyFile(String, Int32, Int32)
@@ -610,12 +650,18 @@ public static func copyFile(src: String, dest: Int32, mode!: Int32 = 0): Unit
 // index.cj
 
 import kit.CoreFileKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let pathDir = "path/to/file"
-let srcPath = pathDir + "/srcDir/test.txt"
-let dstPath = pathDir + "/dstDir/test.txt"
-let dstFile = FileIo.open(dstPath)
-FileIo.copyFile(srcPath, dstFile.fd, mode: 0)
+try {
+    let pathDir = "path/to/file"
+    let srcPath = pathDir + "/srcDir/test.txt"
+    let dstPath = pathDir + "/dstDir/test.txt"
+    let dstFile = FileIo.open(dstPath)
+    FileIo.copyFile(srcPath, dstFile.fd, mode: 0)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### static func copyFile(Int32, String, Int32)
@@ -671,12 +717,18 @@ public static func copyFile(src: Int32, dest: String, mode!: Int32 = 0): Unit
 // index.cj
 
 import kit.CoreFileKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let pathDir = "path/to/file"
-let srcPath = pathDir + "/srcDir/test.txt"
-let dstPath = pathDir + "/dstDir/test.txt"
-let srcFile = FileIo.open(srcPath)
-FileIo.copyFile(srcFile.fd, dstPath, mode: 0)
+try {
+    let pathDir = "path/to/file"
+    let srcPath = pathDir + "/srcDir/test.txt"
+    let dstPath = pathDir + "/dstDir/test.txt"
+    let srcFile = FileIo.open(srcPath)
+    FileIo.copyFile(srcFile.fd, dstPath, mode: 0)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### static func copyFile(Int32, Int32, Int32)
@@ -732,13 +784,19 @@ public static func copyFile(src: Int32, dest: Int32, mode!: Int32 = 0): Unit
 // index.cj
 
 import kit.CoreFileKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let pathDir = "path/to/file"
-let srcPath = pathDir + "/srcDir/test.txt"
-let dstPath = pathDir + "/dstDir/test.txt"
-let srcFile = FileIo.open(srcPath)
-let dstFile = FileIo.open(dstPath)
-FileIo.copyFile(srcFile.fd, dstFile.fd, mode: 0)
+try {
+    let pathDir = "path/to/file"
+    let srcPath = pathDir + "/srcDir/test.txt"
+    let dstPath = pathDir + "/dstDir/test.txt"
+    let srcFile = FileIo.open(srcPath)
+    let dstFile = FileIo.open(dstPath)
+    FileIo.copyFile(srcFile.fd, dstFile.fd, mode: 0)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### static func createRandomAccessFile(String, Int64, RandomAccessFileOptions)
@@ -810,14 +868,20 @@ public static func createRandomAccessFile(file: String, mode!: Int64 = OpenMode.
 // index.cj
 
 import kit.CoreFileKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let pathDir = "path/to/file"
-let filePath = pathDir + "/test.txt"
-let file = FileIo.open(filePath, mode: (OpenMode.CREATE | OpenMode.READ_WRITE))
-FileIo.write(file.fd, "hello world")
-FileIo.fdatasync(file.fd)
-let randomAccessFile = FileIo.createRandomAccessFile(filePath)
-randomAccessFile.close()
+try {
+    let pathDir = "path/to/file"
+    let filePath = pathDir + "/test.txt"
+    let file = FileIo.open(filePath, mode: (OpenMode.CREATE | OpenMode.READ_WRITE))
+    FileIo.write(file.fd, "hello world")
+    FileIo.fdatasync(file.fd)
+    let randomAccessFile = FileIo.createRandomAccessFile(filePath)
+    randomAccessFile.close()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### static func createRandomAccessFile(File, Int64, RandomAccessFileOptions)
@@ -889,14 +953,20 @@ public static func createRandomAccessFile(file: File, mode!: Int64 = OpenMode.RE
 // index.cj
 
 import kit.CoreFileKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let pathDir = "path/to/file"
-let filePath = pathDir + "/test.txt"
-let file = FileIo.open(filePath, mode: (OpenMode.CREATE | OpenMode.READ_WRITE))
-FileIo.write(file.fd, "hello world")
-FileIo.fdatasync(file.fd)
-let randomAccessFile = FileIo.createRandomAccessFile(file)
-randomAccessFile.close()
+try {
+    let pathDir = "path/to/file"
+    let filePath = pathDir + "/test.txt"
+    let file = FileIo.open(filePath, mode: (OpenMode.CREATE | OpenMode.READ_WRITE))
+    FileIo.write(file.fd, "hello world")
+    FileIo.fdatasync(file.fd)
+    let randomAccessFile = FileIo.createRandomAccessFile(file)
+    randomAccessFile.close()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### static func createStream(String, String)
@@ -966,13 +1036,18 @@ public static func createStream(path: String, mode: String): Stream
 // index.cj
 
 import kit.CoreFileKit.*
-import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let pathDir = "path/to/file"
-let filePath = pathDir + "/test.txt"
-let stream = FileIo.createStream(filePath, "r+")
-Hilog.info(0, "test", "createStream succeed", "")
-stream.close()
+try {
+    let pathDir = "path/to/file"
+    let filePath = pathDir + "/test.txt"
+    let stream = FileIo.createStream(filePath, "r+")
+    Hilog.info(0, "test", "createStream succeed", "")
+    stream.close()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### static func dup(Int32)
@@ -1021,16 +1096,21 @@ public static func dup(fd: Int32): File
 // index.cj
 
 import kit.CoreFileKit.*
-import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let pathDir = "path/to/file"
-let filePath = pathDir + "/test.txt"
-let file1 = FileIo.open(filePath, mode: (OpenMode.READ_WRITE | OpenMode.CREATE))
-let fd = file1.fd
-let file2 = FileIo.dup(fd)
-Hilog.info(0, "test", "The name of the file2 is ${file2.name}", "")
-FileIo.close(file1)
-FileIo.close(file2)
+try {
+    let pathDir = "path/to/file"
+    let filePath = pathDir + "/test.txt"
+    let file1 = FileIo.open(filePath, mode: (OpenMode.READ_WRITE | OpenMode.CREATE))
+    let fd = file1.fd
+    let file2 = FileIo.dup(fd)
+    Hilog.info(0, "test", "The name of the file2 is ${file2.name}", "")
+    FileIo.close(file1)
+    FileIo.close(file2)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### static func fdatasync(Int32)
@@ -1073,12 +1153,18 @@ public static func fdatasync(fd: Int32): Unit
 // index.cj
 
 import kit.CoreFileKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let pathDir = "path/to/file"
-let filePath = pathDir + "/test.txt"
-let file = FileIo.open(filePath)
-FileIo.fdatasync(file.fd)
-FileIo.close(file)
+try {
+    let pathDir = "path/to/file"
+    let filePath = pathDir + "/test.txt"
+    let file = FileIo.open(filePath)
+    FileIo.fdatasync(file.fd)
+    FileIo.close(file)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### static func fdopenStream(Int32, String)
@@ -1148,13 +1234,19 @@ public static func fdopenStream(fd: Int32, mode: String): Stream
 // index.cj
 
 import kit.CoreFileKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let pathDir = "path/to/file"
-let filePath = pathDir + "/test.txt"
-let file = FileIo.open(filePath, mode: (OpenMode.READ_ONLY | OpenMode.CREATE))
-let stream = FileIo.fdopenStream(file.fd, "r+")
-FileIo.close(file)
-stream.close()
+try {
+    let pathDir = "path/to/file"
+    let filePath = pathDir + "/test.txt"
+    let file = FileIo.open(filePath, mode: (OpenMode.READ_ONLY | OpenMode.CREATE))
+    let stream = FileIo.fdopenStream(file.fd, "r+")
+    FileIo.close(file)
+    stream.close()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### static func fsync(Int32)
@@ -1197,12 +1289,18 @@ public static func fsync(fd: Int32): Unit
 // index.cj
 
 import kit.CoreFileKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let pathDir = "path/to/file"
-let filePath = pathDir + "/test.txt"
-let file = FileIo.open(filePath)
-FileIo.fsync(file.fd)
-FileIo.close(file)
+try {
+    let pathDir = "path/to/file"
+    let filePath = pathDir + "/test.txt"
+    let file = FileIo.open(filePath)
+    FileIo.fsync(file.fd)
+    FileIo.close(file)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### static func listFile(String, ListFileOptions)
@@ -1250,14 +1348,19 @@ public static func listFile(path: String, options!: ListFileOptions = ListFileOp
 // index.cj
 
 import kit.CoreFileKit.*
-import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let pathDir = "path/to/file"
-let filter = Filter(suffix: [".png", ".jpg", ".jpeg"], displayName: ["*abc", "efg*"])
-let listFileOptions = ListFileOptions(recursion: false, listNum: 0, filter: filter)
-let filenames = FileIo.listFile(pathDir, options: listFileOptions)
-for (name in filenames) {
-    Hilog.info(0, "test", name, "")
+try {
+    let pathDir = "path/to/file"
+    let filter = Filter(suffix: [".png", ".jpg", ".jpeg"], displayName: ["*abc", "efg*"])
+    let listFileOptions = ListFileOptions(recursion: false, listNum: 0, filter: filter)
+    let filenames = FileIo.listFile(pathDir, options: listFileOptions)
+    for (name in filenames) {
+        Hilog.info(0, "test", name, "")
+    }
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -1307,14 +1410,19 @@ public static func lseek(fd: Int32, offset: Int64, whence!: WhenceType = SeekSet
 // index.cj
 
 import kit.CoreFileKit.*
-import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let pathDir = "path/to/file"
-let filePath = pathDir + "/test.txt"
-let file = FileIo.open(filePath, mode: OpenMode.CREATE)
-let offset = FileIo.lseek(file.fd, 5, whence: WhenceType.SeekSet)
-Hilog.info(0, "test", "The current offset is at ${offset.toString()}", "")
-FileIo.close(file)
+try {
+    let pathDir = "path/to/file"
+    let filePath = pathDir + "/test.txt"
+    let file = FileIo.open(filePath, mode: OpenMode.CREATE)
+    let offset = FileIo.lseek(file.fd, 5, whence: WhenceType.SeekSet)
+    Hilog.info(0, "test", "The current offset is at ${offset.toString()}", "")
+    FileIo.close(file)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### static func lstat(String)
@@ -1366,10 +1474,16 @@ public static func lstat(path: String): Stat
 // index.cj
 
 import kit.CoreFileKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let pathDir = "path/to/file"
-let filePath = pathDir + "/linkToFile"
-let fileStat = FileIo.lstat(filePath)
+try {
+    let pathDir = "path/to/file"
+    let filePath = pathDir + "/linkToFile"
+    let fileStat = FileIo.lstat(filePath)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### static func mkdir(String)
@@ -1420,10 +1534,16 @@ public static func mkdir(path: String): Unit
 // index.cj
 
 import kit.CoreFileKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let pathDir = "path/to/file"
-let dirPath = pathDir + "/testDir1/testDir2/testDir3"
-FileIo.mkdir(dirPath)
+try {
+    let pathDir = "path/to/file"
+    let dirPath = pathDir + "/testDir1/testDir2/testDir3"
+    FileIo.mkdir(dirPath)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### static func mkdir(String, Bool)
@@ -1475,10 +1595,16 @@ public static func mkdir(path: String, recursion: Bool): Unit
 // index.cj
 
 import kit.CoreFileKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let pathDir = "path/to/file"
-let dirPath = pathDir + "/testDir1/testDir2/testDir3"
-FileIo.mkdir(dirPath, true)
+try {
+    let pathDir = "path/to/file"
+    let dirPath = pathDir + "/testDir1/testDir2/testDir3"
+    FileIo.mkdir(dirPath, true)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### static func mkdtemp(String)
@@ -1535,9 +1661,15 @@ public static func mkdtemp(prefix: String): String
 // index.cj
 
 import kit.CoreFileKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let pathDir = "path/to/file"
-let res = FileIo.mkdtemp(pathDir + "/XXXXXX")
+try {
+    let pathDir = "path/to/file"
+    let res = FileIo.mkdtemp(pathDir + "/XXXXXX")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### static func moveDir(String, String, Int32)
@@ -1594,12 +1726,18 @@ public static func moveDir(src: String, dest: String, mode!: Int32 = 0): Unit
 // index.cj
 
 import kit.CoreFileKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let pathDir = "path/to/file"
-// move directory from srcPath to destPath
-let srcPath = pathDir + "/srcDir/"
-let destPath = pathDir + "/destDir/"
-FileIo.moveDir(srcPath, destPath, mode: 1)
+try {
+    let pathDir = "path/to/file"
+    // move directory from srcPath to destPath
+    let srcPath = pathDir + "/srcDir/"
+    let destPath = pathDir + "/destDir/"
+    FileIo.moveDir(srcPath, destPath, mode: 1)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### static func moveFile(String, String, Int32)
@@ -1656,13 +1794,18 @@ public static func moveFile(src: String, dest: String, mode!: Int32 = 0): Unit
 // index.cj
 
 import kit.CoreFileKit.*
-import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let pathDir = "path/to/file"
-let srcPath = pathDir + "/srcDir/"
-let destPath = pathDir + "/destDir/"
-FileIo.moveFile(srcPath, destPath, mode: 0)
-Hilog.info(0, "test", "move file succeed", "")
+try {
+    let pathDir = "path/to/file"
+    let srcPath = pathDir + "/srcDir/"
+    let destPath = pathDir + "/destDir/"
+    FileIo.moveFile(srcPath, destPath, mode: 0)
+    Hilog.info(0, "test", "move file succeed", "")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### static func open(String, Int64)
@@ -1732,13 +1875,18 @@ public static func open(path: String, mode!: Int64 = OpenMode.READ_ONLY): File
 // index.cj
 
 import kit.CoreFileKit.*
-import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let pathDir = "path/to/file"
-let filePath = pathDir + "/test.txt"
-let file = FileIo.open(filePath, mode: (OpenMode.READ_WRITE | OpenMode.CREATE))
-Hilog.info(0, "test", "open file success, file fd: ${file.fd.toString()}", "")
-FileIo.close(file)
+try {
+    let pathDir = "path/to/file"
+    let filePath = pathDir + "/test.txt"
+    let file = FileIo.open(filePath, mode: (OpenMode.READ_WRITE | OpenMode.CREATE))
+    Hilog.info(0, "test", "open file success, file fd: ${file.fd.toString()}", "")
+    FileIo.close(file)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### static func read(Int32, Array\<Byte>, ReadOptions)
@@ -1792,13 +1940,19 @@ public static func read(fd: Int32, buffer: Array<Byte>, options!: ReadOptions = 
 // index.cj
 
 import kit.CoreFileKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let pathDir = "path/to/file"
-let filePath = pathDir + "/test.txt"
-let file = FileIo.open(filePath, mode: (OpenMode.READ_WRITE | OpenMode.CREATE))
-let buf = Array<Byte>(4096, repeat: 0)
-FileIo.read(file.fd, buf)
-FileIo.close(file)
+try {
+    let pathDir = "path/to/file"
+    let filePath = pathDir + "/test.txt"
+    let file = FileIo.open(filePath, mode: (OpenMode.READ_WRITE | OpenMode.CREATE))
+    let buf = Array<Byte>(4096, repeat: 0)
+    FileIo.read(file.fd, buf)
+    FileIo.close(file)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### static func readLines(String, Options)
@@ -1854,16 +2008,21 @@ public static func readLines(filePath: String, options!: Options = Options()): R
 // index.cj
 
 import kit.CoreFileKit.*
-import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let pathDir = "path/to/file"
-let filePath = pathDir + "/test.txt"
-let options: Options = Options(encoding: "utf-8")
-let readerIterator = FileIo.readLines(filePath, options: options)
-var result = readerIterator.next()
-while (!result.done) {
-    Hilog.info(0, "test", "content: ${result.value}", "")
-    result = readerIterator.next()
+try {
+    let pathDir = "path/to/file"
+    let filePath = pathDir + "/test.txt"
+    let options: Options = Options(encoding: "utf-8")
+    let readerIterator = FileIo.readLines(filePath, options: options)
+    var result = readerIterator.next()
+    while (!result.done) {
+        Hilog.info(0, "test", "content: ${result.value}", "")
+        result = readerIterator.next()
+    }
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -1921,10 +2080,16 @@ public static func readText(filePath: String, options!: ReadTextOptions = ReadTe
 // index.cj
 
 import kit.CoreFileKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let pathDir = "path/to/file"
-let filePath = pathDir + "/test.txt"
-let str = FileIo.readText(filePath)
+try {
+    let pathDir = "path/to/file"
+    let filePath = pathDir + "/test.txt"
+    let str = FileIo.readText(filePath)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### static func rename(String, String)
@@ -1980,11 +2145,17 @@ public static func rename(oldPath: String, newPath: String): Unit
 // index.cj
 
 import kit.CoreFileKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let pathDir = "path/to/file"
-let srcFile = pathDir + "/test.txt"
-let dstFile = pathDir + "/new.txt"
-FileIo.rename(srcFile, dstFile)
+try {
+    let pathDir = "path/to/file"
+    let srcFile = pathDir + "/test.txt"
+    let dstFile = pathDir + "/new.txt"
+    FileIo.rename(srcFile, dstFile)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### static func rmdir(String)
@@ -2032,10 +2203,16 @@ public static func rmdir(path: String): Unit
 // index.cj
 
 import kit.CoreFileKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let pathDir = "path/to/file"
-let dirPath = pathDir + "/testDir"
-FileIo.rmdir(dirPath)
+try {
+    let pathDir = "path/to/file"
+    let dirPath = pathDir + "/testDir"
+    FileIo.rmdir(dirPath)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### static func stat(Int32)
@@ -2090,11 +2267,17 @@ public static func stat(file: Int32): Stat
 // index.cj
 
 import kit.CoreFileKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let pathDir = "path/to/file"
-let dirPath = pathDir + "/testDir"
-let file = FileIo.open(dirPath)
-FileIo.stat(file.fd)
+try {
+    let pathDir = "path/to/file"
+    let dirPath = pathDir + "/testDir"
+    let file = FileIo.open(dirPath)
+    FileIo.stat(file.fd)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### static func stat(String)
@@ -2149,10 +2332,16 @@ public static func stat(file: String): Stat
 // index.cj
 
 import kit.CoreFileKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let pathDir = "path/to/file"
-let dirPath = pathDir + "/testDir"
-FileIo.stat(dirPath)
+try {
+    let pathDir = "path/to/file"
+    let dirPath = pathDir + "/testDir"
+    FileIo.stat(dirPath)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### static func truncate(String, Int64)
@@ -2205,11 +2394,17 @@ public static func truncate(file: String, len!: Int64 = 0): Unit
 // index.cj
 
 import kit.CoreFileKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let pathDir = "path/to/file"
-let filePath = pathDir + "/test.txt"
-let len: Int64 = 5
-FileIo.truncate(filePath, len: len)
+try {
+    let pathDir = "path/to/file"
+    let filePath = pathDir + "/test.txt"
+    let len: Int64 = 5
+    FileIo.truncate(filePath, len: len)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### static func truncate(Int32, Int64)
@@ -2262,12 +2457,18 @@ public static func truncate(file: Int32, len!: Int64 = 0): Unit
 // index.cj
 
 import kit.CoreFileKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let pathDir = "path/to/file"
-let filePath = pathDir + "/test.txt"
-let len: Int64 = 5
-let file  = FileIo.open(filePath, mode: OpenMode.READ_WRITE)
-FileIo.truncate(file.fd, len: len)
+try {
+    let pathDir = "path/to/file"
+    let filePath = pathDir + "/test.txt"
+    let len: Int64 = 5
+    let file  = FileIo.open(filePath, mode: OpenMode.READ_WRITE)
+    FileIo.truncate(file.fd, len: len)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### static func unlink(String)
@@ -2318,10 +2519,16 @@ public static func unlink(path: String): Unit
 // index.cj
 
 import kit.CoreFileKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let pathDir = "path/to/file"
-let filePath = pathDir + "/test.txt"
-FileIo.unlink(filePath)
+try {
+    let pathDir = "path/to/file"
+    let filePath = pathDir + "/test.txt"
+    FileIo.unlink(filePath)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### static func utimes(String, Float64)
@@ -2365,13 +2572,19 @@ public static func utimes(path: String, mtime: Float64): Unit
 
 import kit.CoreFileKit.*
 import std.time.DateTime
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let pathDir = "path/to/file"
-let filePath = pathDir + "/test.txt"
-let file = FileIo.open(filePath, mode: (OpenMode.CREATE | OpenMode.READ_WRITE))
-FileIo.write(file.fd, "test data")
-FileIo.close(file)
-FileIo.utimes(filePath, Float64(DateTime.UnixEpoch.second))
+try {
+    let pathDir = "path/to/file"
+    let filePath = pathDir + "/test.txt"
+    let file = FileIo.open(filePath, mode: (OpenMode.CREATE | OpenMode.READ_WRITE))
+    FileIo.write(file.fd, "test data")
+    FileIo.close(file)
+    FileIo.utimes(filePath, Float64(DateTime.UnixEpoch.second))
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### static func write(Int32, Array\<Byte>, WriteOptions)
@@ -2427,13 +2640,19 @@ public static func write(fd: Int32, buffer: Array<Byte>, options!: WriteOptions 
 // index.cj
 
 import kit.CoreFileKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let pathDir = "path/to/file"
-let filePath = pathDir + "/test.txt"
-let file = FileIo.open(filePath, mode: (OpenMode.CREATE | OpenMode.READ_WRITE))
-let str = "hello, world"
-let writeLen = FileIo.write(file.fd, str.toArray())
-FileIo.close(file)
+try {
+    let pathDir = "path/to/file"
+    let filePath = pathDir + "/test.txt"
+    let file = FileIo.open(filePath, mode: (OpenMode.CREATE | OpenMode.READ_WRITE))
+    let str = "hello, world"
+    let writeLen = FileIo.write(file.fd, str.toArray())
+    FileIo.close(file)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### static func write(Int32, String, WriteOptions)
@@ -2489,13 +2708,19 @@ public static func write(fd: Int32, buffer: String, options!: WriteOptions = Wri
 // index.cj
 
 import kit.CoreFileKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let pathDir = "path/to/file"
-let filePath = pathDir + "/test.txt"
-let file = FileIo.open(filePath, mode: (OpenMode.CREATE | OpenMode.READ_WRITE))
-let str = "hello, world"
-let writeLen = FileIo.write(file.fd, str)
-FileIo.close(file)
+try {
+    let pathDir = "path/to/file"
+    let filePath = pathDir + "/test.txt"
+    let file = FileIo.open(filePath, mode: (OpenMode.CREATE | OpenMode.READ_WRITE))
+    let str = "hello, world"
+    let writeLen = FileIo.write(file.fd, str)
+    FileIo.close(file)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## class Filter
@@ -3033,11 +3258,17 @@ public func close(): Unit
 // index.cj
 
 import kit.CoreFileKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let pathDir = "path/to/file"
-let filePath = pathDir + "/test.txt"  // 请替换正确的文件路径，获取文件路径参考本文使用说明
-let randomAccessFile = FileIo.createRandomAccessFile(filePath, mode: (OpenMode.CREATE | OpenMode.READ_WRITE))
-randomAccessFile.close()
+try {
+    let pathDir = "path/to/file"
+    let filePath = pathDir + "/test.txt"  // 请替换正确的文件路径，获取文件路径参考本文使用说明
+    let randomAccessFile = FileIo.createRandomAccessFile(filePath, mode: (OpenMode.CREATE | OpenMode.READ_WRITE))
+    randomAccessFile.close()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func read(Array\<Byte>, ReadOptions)
@@ -3091,16 +3322,22 @@ public func read(buffer: Array<Byte>, options!: ReadOptions = ReadOptions()): In
 // index.cj
 
 import kit.CoreFileKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let pathDir = "path/to/file"
-let filePath = pathDir + "/test.txt"  // 请替换正确的文件路径，获取文件路径参考本文使用说明
-let file = FileIo.open(filePath, mode: (OpenMode.CREATE | OpenMode.READ_WRITE))
-let randomAccessFile = FileIo.createRandomAccessFile(file)
-let length: Int64 = 4096
-let arrayBuffer = Array<Byte>(length, repeat: 0)
-let readLength = randomAccessFile.read(arrayBuffer)
-randomAccessFile.close()
-FileIo.close(file)
+try {
+    let pathDir = "path/to/file"
+    let filePath = pathDir + "/test.txt"  // 请替换正确的文件路径，获取文件路径参考本文使用说明
+    let file = FileIo.open(filePath, mode: (OpenMode.CREATE | OpenMode.READ_WRITE))
+    let randomAccessFile = FileIo.createRandomAccessFile(file)
+    let length: Int64 = 4096
+    let arrayBuffer = Array<Byte>(length, repeat: 0)
+    let readLength = randomAccessFile.read(arrayBuffer)
+    randomAccessFile.close()
+    FileIo.close(file)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func setFilePointer(Int64)
@@ -3130,12 +3367,18 @@ public func setFilePointer(filePointer: Int64): Unit
 // index.cj
 
 import kit.CoreFileKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let pathDir = "path/to/file"
-let filePath = pathDir + "/test.txt"  // 请替换正确的文件路径，获取文件路径参考本文使用说明
-let randomAccessFile = FileIo.createRandomAccessFile(filePath, mode: (OpenMode.CREATE | OpenMode.READ_WRITE))
-randomAccessFile.setFilePointer(1)
-randomAccessFile.close()
+try {
+    let pathDir = "path/to/file"
+    let filePath = pathDir + "/test.txt"  // 请替换正确的文件路径，获取文件路径参考本文使用说明
+    let randomAccessFile = FileIo.createRandomAccessFile(filePath, mode: (OpenMode.CREATE | OpenMode.READ_WRITE))
+    randomAccessFile.setFilePointer(1)
+    randomAccessFile.close()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func write(String, WriteOptions)
@@ -3191,13 +3434,19 @@ public func write(buffer: String, options!: WriteOptions = WriteOptions()): Int6
 // index.cj
 
 import kit.CoreFileKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let pathDir = "path/to/file"
-let filePath = pathDir + "/test.txt"  // 请替换正确的文件路径，获取文件路径参考本文使用说明
-let randomAccessFile = FileIo.createRandomAccessFile(filePath, mode: (OpenMode.CREATE | OpenMode.READ_WRITE))
-let option = WriteOptions(length: 5, offset: 5)
-let bytesWritten = randomAccessFile.write("hello, world", options: option)
-randomAccessFile.close()
+try {
+    let pathDir = "path/to/file"
+    let filePath = pathDir + "/test.txt"  // 请替换正确的文件路径，获取文件路径参考本文使用说明
+    let randomAccessFile = FileIo.createRandomAccessFile(filePath, mode: (OpenMode.CREATE | OpenMode.READ_WRITE))
+    let option = WriteOptions(length: 5, offset: 5)
+    let bytesWritten = randomAccessFile.write("hello, world", options: option)
+    randomAccessFile.close()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func write(Array\<Byte>, WriteOptions)
@@ -3253,14 +3502,20 @@ public func write(buffer: Array<Byte>, options!: WriteOptions = WriteOptions()):
 // index.cj
 
 import kit.CoreFileKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let pathDir = "path/to/file"
-let filePath = pathDir + "/test.txt"  // 请替换正确的文件路径，获取文件路径参考本文使用说明
-let randomAccessFile = FileIo.createRandomAccessFile(filePath, mode: (OpenMode.CREATE | OpenMode.READ_WRITE))
-let option = WriteOptions(length: 5, offset: 5)
-let arr: Array<UInt8> = [104, 101, 108, 108, 111, 32, 119, 111, 114, 108, 100]
-let bytesWritten = randomAccessFile.write(arr, options: option)
-randomAccessFile.close()
+try {
+    let pathDir = "path/to/file"
+    let filePath = pathDir + "/test.txt"  // 请替换正确的文件路径，获取文件路径参考本文使用说明
+    let randomAccessFile = FileIo.createRandomAccessFile(filePath, mode: (OpenMode.CREATE | OpenMode.READ_WRITE))
+    let option = WriteOptions(length: 5, offset: 5)
+    let arr: Array<UInt8> = [104, 101, 108, 108, 111, 32, 119, 111, 114, 108, 100]
+    let bytesWritten = randomAccessFile.write(arr, options: option)
+    randomAccessFile.close()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## class RandomAccessFileOptions
@@ -3730,10 +3985,16 @@ public func isBlockDevice(): Bool
 // index.cj
 
 import kit.CoreFileKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let pathDir = "path/to/file"
-let filePath = pathDir + "/test.txt"  // 请替换正确的文件路径，获取文件路径参考本文使用说明
-let isBLockDevice = FileIo.stat(filePath).isBlockDevice()
+try {
+    let pathDir = "path/to/file"
+    let filePath = pathDir + "/test.txt"  // 请替换正确的文件路径，获取文件路径参考本文使用说明
+    let isBLockDevice = FileIo.stat(filePath).isBlockDevice()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func isCharacterDevice()
@@ -3763,10 +4024,16 @@ public func isCharacterDevice(): Bool
 // index.cj
 
 import kit.CoreFileKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let pathDir = "path/to/file"
-let filePath = pathDir + "/test.txt"  // 请替换正确的文件路径，获取文件路径参考本文使用说明
-let isCharacterDevice = FileIo.stat(filePath).isCharacterDevice()
+try {
+    let pathDir = "path/to/file"
+    let filePath = pathDir + "/test.txt"  // 请替换正确的文件路径，获取文件路径参考本文使用说明
+    let isCharacterDevice = FileIo.stat(filePath).isCharacterDevice()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func isDirectory()
@@ -3796,10 +4063,16 @@ public func isDirectory(): Bool
 // index.cj
 
 import kit.CoreFileKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let pathDir = "path/to/file"
-let dirPath = pathDir + "/test"
-let isDirectory = FileIo.stat(dirPath).isDirectory()
+try {
+    let pathDir = "path/to/file"
+    let dirPath = pathDir + "/test"
+    let isDirectory = FileIo.stat(dirPath).isDirectory()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func isFIFO()
@@ -3829,10 +4102,16 @@ public func isFIFO(): Bool
 // index.cj
 
 import kit.CoreFileKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let pathDir = "path/to/file"
-let filePath = pathDir + "/test.txt"  // 请替换正确的文件路径，获取文件路径参考本文使用说明
-let isFIFO = FileIo.stat(filePath).isFIFO()
+try {
+    let pathDir = "path/to/file"
+    let filePath = pathDir + "/test.txt"  // 请替换正确的文件路径，获取文件路径参考本文使用说明
+    let isFIFO = FileIo.stat(filePath).isFIFO()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func isFile()
@@ -3862,10 +4141,16 @@ public func isFile(): Bool
 // index.cj
 
 import kit.CoreFileKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let pathDir = "path/to/file"
-let filePath = pathDir + "/test.txt"  // 请替换正确的文件路径，获取文件路径参考本文使用说明
-let isFile = FileIo.stat(filePath).isFile()
+try {
+    let pathDir = "path/to/file"
+    let filePath = pathDir + "/test.txt"  // 请替换正确的文件路径，获取文件路径参考本文使用说明
+    let isFile = FileIo.stat(filePath).isFile()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func isSocket()
@@ -3895,10 +4180,16 @@ public func isSocket(): Bool
 // index.cj
 
 import kit.CoreFileKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let pathDir = "path/to/file"
-let filePath = pathDir + "/test.txt"  // 请替换正确的文件路径，获取文件路径参考本文使用说明
-let isSocket = FileIo.stat(filePath).isSocket()
+try {
+    let pathDir = "path/to/file"
+    let filePath = pathDir + "/test.txt"  // 请替换正确的文件路径，获取文件路径参考本文使用说明
+    let isSocket = FileIo.stat(filePath).isSocket()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func isSymbolicLink()
@@ -3928,10 +4219,16 @@ public func isSymbolicLink(): Bool
 // index.cj
 
 import kit.CoreFileKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let pathDir = "path/to/file"
-let filePath = pathDir + "/test.txt"  // 请替换正确的文件路径，获取文件路径参考本文使用说明
-let isSymbolicLink = FileIo.stat(filePath).isSymbolicLink()
+try {
+    let pathDir = "path/to/file"
+    let filePath = pathDir + "/test.txt"  // 请替换正确的文件路径，获取文件路径参考本文使用说明
+    let isSymbolicLink = FileIo.stat(filePath).isSymbolicLink()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## class Stream
@@ -3980,11 +4277,17 @@ public func close(): Unit
 // index.cj
 
 import kit.CoreFileKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let pathDir = "path/to/file"
-let filePath = pathDir + "/test.txt"  // 请替换正确的文件路径，获取文件路径参考本文使用说明
-let stream = FileIo.createStream(filePath, "r+")
-stream.close()
+try {
+    let pathDir = "path/to/file"
+    let filePath = pathDir + "/test.txt"  // 请替换正确的文件路径，获取文件路径参考本文使用说明
+    let stream = FileIo.createStream(filePath, "r+")
+    stream.close()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func flush()
@@ -4027,12 +4330,18 @@ public func flush(): Unit
 // index.cj
 
 import kit.CoreFileKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let pathDir = "path/to/file"
-let filePath = pathDir + "/test.txt"  // 请替换正确的文件路径，获取文件路径参考本文使用说明
-let stream = FileIo.createStream(filePath, "r+")
-stream.flush()
-stream.close()
+try {
+    let pathDir = "path/to/file"
+    let filePath = pathDir + "/test.txt"  // 请替换正确的文件路径，获取文件路径参考本文使用说明
+    let stream = FileIo.createStream(filePath, "r+")
+    stream.flush()
+    stream.close()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func read(Array\<Byte>, ReadOptions)
@@ -4086,13 +4395,19 @@ public func read(buffer: Array<Byte>, options!: ReadOptions = ReadOptions()): In
 // index.cj
 
 import kit.CoreFileKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let pathDir = "path/to/file"
-let filePath = pathDir + "/test.txt"  // 请替换正确的文件路径，获取文件路径参考本文使用说明
-let stream = FileIo.createStream(filePath, "r+")
-let buf = Array<Byte>(4096, repeat: 0)
-let num = stream.read(buf)
-stream.close()
+try {
+    let pathDir = "path/to/file"
+    let filePath = pathDir + "/test.txt"  // 请替换正确的文件路径，获取文件路径参考本文使用说明
+    let stream = FileIo.createStream(filePath, "r+")
+    let buf = Array<Byte>(4096, repeat: 0)
+    let num = stream.read(buf)
+    stream.close()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func write(String, WriteOptions)
@@ -4148,13 +4463,19 @@ public func write(buffer: String, options!: WriteOptions = WriteOptions()): Int6
 // index.cj
 
 import kit.CoreFileKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let pathDir = "path/to/file"
-let filePath = pathDir + "/test.txt"  // 请替换正确的文件路径，获取文件路径参考本文使用说明
-let stream = FileIo.createStream(filePath, "r+")
-let arr: Array<UInt8> = [104, 101, 108, 108, 111, 32, 119, 111, 114, 108, 100]
-let num = stream.write(arr)
-stream.close()
+try {
+    let pathDir = "path/to/file"
+    let filePath = pathDir + "/test.txt"  // 请替换正确的文件路径，获取文件路径参考本文使用说明
+    let stream = FileIo.createStream(filePath, "r+")
+    let arr: Array<UInt8> = [104, 101, 108, 108, 111, 32, 119, 111, 114, 108, 100]
+    let num = stream.write(arr)
+    stream.close()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func write(Array\<Byte>, WriteOptions)
@@ -4210,13 +4531,19 @@ public func write(buffer: Array<Byte>, options!: WriteOptions = WriteOptions()):
 // index.cj
 
 import kit.CoreFileKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let pathDir = "path/to/file"
-let filePath = pathDir + "/test.txt"  // 请替换正确的文件路径，获取文件路径参考本文使用说明
-let stream = FileIo.createStream(filePath, "r+")
-let arr: Array<UInt8> = [104, 101, 108, 108, 111, 32, 119, 111, 114, 108, 100]
-let num = stream.write(arr)
-stream.close()
+try {
+    let pathDir = "path/to/file"
+    let filePath = pathDir + "/test.txt"  // 请替换正确的文件路径，获取文件路径参考本文使用说明
+    let stream = FileIo.createStream(filePath, "r+")
+    let arr: Array<UInt8> = [104, 101, 108, 108, 111, 32, 119, 111, 114, 108, 100]
+    let num = stream.write(arr)
+    stream.close()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## class WriteOptions
