@@ -4,7 +4,7 @@
 
 网格布局是由“行”和“列”分割的单元格所组成，通过指定“项目”所在的单元格做出各种各样的布局。网格布局具有较强的页面均分能力，子组件占比控制能力，是一种重要自适应布局，其使用场景有九宫格图片展示、日历、计算器等。
 
-ArkUI提供了[Grid](../../../zh-cn/application-dev/reference/arkui-cj/cj-scroll-swipe-grid.md)容器组件和子组件[GridItem](../../../zh-cn/application-dev/reference/arkui-cj/cj-scroll-swipe-griditem.md)，用于构建网格布局。Grid用于设置网格布局相关参数，GridItem定义子组件相关特征。Grid组件支持使用[条件渲染](./rendering_control/cj-rendering-control-ifelse.md)、[循环渲染](./rendering_control/cj-rendering-control-foreach.md)、[懒加载](./rendering_control/cj-rendering-control-lazyforeach.md)等方式生成子组件。
+ArkUI提供了[Grid](../reference/arkui-cj/cj-scroll-swipe-grid.md)容器组件和子组件[GridItem](../reference/arkui-cj/cj-scroll-swipe-griditem.md)，用于构建网格布局。Grid用于设置网格布局相关参数，GridItem定义子组件相关特征。Grid组件支持使用[条件渲染](./rendering_control/cj-rendering-control-ifelse.md)、[循环渲染](./rendering_control/cj-rendering-control-foreach.md)、[懒加载](./rendering_control/cj-rendering-control-lazyforeach.md)等方式生成子组件。
 
 ## 布局与约束
 
@@ -60,7 +60,7 @@ Grid() {
 
 > **说明：**
 >
-> 当Grid组件设置了rowsTemplate或columnsTemplate时，Grid的layoutDirection、cellLength属性不生效，属性说明可参考[Grid-属性](../../../zh-cn/application-dev/reference/arkui-cj/cj-scroll-swipe-grid.md#组件属性)。
+> 当Grid组件设置了rowsTemplate或columnsTemplate时，Grid的layoutDirection、cellLength属性不生效，属性说明可参考[Grid-属性](../reference/arkui-cj/cj-scroll-swipe-grid.md#组件属性)。
 
 ## 在网格布局中显示数据
 
@@ -194,7 +194,7 @@ class EntryView {
 
 ![GridItem7](figures/GridItem7.gif)
 
-Grid组件初始化时，可以绑定一个[Scroller](../../../zh-cn/application-dev/reference/arkui-cj/cj-scroll-swipe-scroll.md#scroll)对象，用于进行滚动控制，例如通过Scroller对象的[scrollPage](../../../zh-cn/application-dev/reference/arkui-cj/cj-scroll-swipe-scroll.md#func-scrollpagebool)方法进行翻页。
+Grid组件初始化时，可以绑定一个[Scroller](../reference/arkui-cj/cj-scroll-swipe-scroll.md#scroll)对象，用于进行滚动控制，例如通过Scroller对象的[scrollPage](../reference/arkui-cj/cj-scroll-swipe-scroll.md#func-scrollpagebool)方法进行翻页。
 
 ```cangjie
 var scroller: Scroller = Scroller()

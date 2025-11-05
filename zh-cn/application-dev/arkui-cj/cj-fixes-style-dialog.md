@@ -82,7 +82,7 @@ class EntryView {
 
 列表选择器弹窗适用于呈现多个操作选项，尤其当界面中仅需展示操作列表而无其他内容时。
 
-列表选择器弹窗通过ActionSheet中的[show](../../../zh-cn/application-dev/reference/arkui-cj/cj-dialog-actionsheet.md#static-func-showactionsheetoptions)接口实现。
+列表选择器弹窗通过ActionSheet中的[show](../reference/arkui-cj/cj-dialog-actionsheet.md#static-func-showactionsheetoptions)接口实现。
 
 该示例通过配置width、height、transition等接口定义了弹窗的样式以及弹出动效。
 

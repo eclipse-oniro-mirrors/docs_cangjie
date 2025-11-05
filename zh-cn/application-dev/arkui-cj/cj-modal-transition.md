@@ -6,18 +6,18 @@
 
 | 接口                                       | 说明                | 使用场景                                     |
 |:---------------------------------------- |:----------------- |:---------------------------------------- |
-| [bindContentCover](../../../zh-cn/application-dev/reference/arkui-cj/cj-universal-attribute-bindcontentcover.md#func-bindcontentcoverbool-custombuilder-contentcoveroptions) | 弹出全屏的模态组件。        | 用于自定义全屏的模态展示界面，结合转场动画和共享元素动画可实现复杂转场动画效果，如缩略图片点击后查看大图。 |
-| [bindSheet](../../../zh-cn/application-dev/reference/arkui-cj/cj-universal-attribute-sheettransition.md#func-bindsheetbool----unit-sheetoptions) | 弹出半模态组件。          | 用于半模态展示界面，如分享框。                          |
-| [bindMenu](../../../zh-cn/application-dev/reference/arkui-cj/cj-universal-attribute-menu.md#func-bindmenu---unit) | 弹出菜单，点击组件后弹出。     | 需要Menu菜单的场景，如一般应用的“+”号键。                 |
-| [bindContextMenu](../../../zh-cn/application-dev/reference/arkui-cj/cj-universal-attribute-menu.md#func-bindcontextmenu---unit-responsetype) | 弹出菜单，长按或者右键点击后弹出。 | 长按浮起效果，一般结合拖拽框架使用，如桌面图标长按浮起。             |
-| [bindPopup](../../../zh-cn/application-dev/reference/arkui-cj/cj-universal-attribute-popup.md#func-bindpopupbool-custompopupoptions) | 弹出Popup弹框。        | Popup弹框场景，如点击后对某个组件进行临时说明。               |
+| [bindContentCover](../reference/arkui-cj/cj-universal-attribute-bindcontentcover.md#func-bindcontentcoverbool-custombuilder-contentcoveroptions) | 弹出全屏的模态组件。        | 用于自定义全屏的模态展示界面，结合转场动画和共享元素动画可实现复杂转场动画效果，如缩略图片点击后查看大图。 |
+| [bindSheet](../reference/arkui-cj/cj-universal-attribute-sheettransition.md#func-bindsheetbool----unit-sheetoptions) | 弹出半模态组件。          | 用于半模态展示界面，如分享框。                          |
+| [bindMenu](../reference/arkui-cj/cj-universal-attribute-menu.md#func-bindmenu---unit) | 弹出菜单，点击组件后弹出。     | 需要Menu菜单的场景，如一般应用的“+”号键。                 |
+| [bindContextMenu](../reference/arkui-cj/cj-universal-attribute-menu.md#func-bindcontextmenu---unit-responsetype) | 弹出菜单，长按或者右键点击后弹出。 | 长按浮起效果，一般结合拖拽框架使用，如桌面图标长按浮起。             |
+| [bindPopup](../reference/arkui-cj/cj-universal-attribute-popup.md#func-bindpopupbool-custompopupoptions) | 弹出Popup弹框。        | Popup弹框场景，如点击后对某个组件进行临时说明。               |
 | [if](./rendering_control/cj-rendering-control-ifelse.md)                                       | 通过if新增或删除组件。      | 用来在某个状态下临时显示一个界面，这种方式的返回导航需要由开发者监听接口实现。  |
 
 ## 使用bindContentCover构建全屏模态转场效果
 
-[bindContentCover](../../../zh-cn/application-dev/reference/arkui-cj/cj-universal-attribute-bindcontentcover.md#func-bindcontentcoverbool-custombuilder-contentcoveroptions)接口用于为组件绑定全屏模态页面，在组件出现和消失时可通过设置转场参数ModalTransition添加过渡动效。使用bindContentCover构建全屏模态转场效果步骤示例如下：
+[bindContentCover](../reference/arkui-cj/cj-universal-attribute-bindcontentcover.md#func-bindcontentcoverbool-custombuilder-contentcoveroptions)接口用于为组件绑定全屏模态页面，在组件出现和消失时可通过设置转场参数ModalTransition添加过渡动效。使用bindContentCover构建全屏模态转场效果步骤示例如下：
 
-- 定义全屏模态转场效果[bindContentCover](../../../zh-cn/application-dev/reference/arkui-cj/cj-universal-attribute-bindcontentcover.md#func-bindcontentcoverbool-custombuilder-contentcoveroptions)。
+- 定义全屏模态转场效果[bindContentCover](../reference/arkui-cj/cj-universal-attribute-bindcontentcover.md#func-bindcontentcoverbool-custombuilder-contentcoveroptions)。
 
 - 定义模态展示界面。
 
@@ -247,7 +247,7 @@ class EntryView {
 
 ## 使用bindSheet构建半模态转场效果
 
-[bindSheet](../../../zh-cn/application-dev/reference/arkui-cj/cj-universal-attribute-sheettransition.md#func-bindsheetbool-custombuilder-sheetoptions)属性可为组件绑定半模态页面，在组件出现时可通过设置自定义或默认的内置高度确定半模态大小。构建半模态转场动效的步骤基本与使用[bindContentCover](../../../zh-cn/application-dev/reference/arkui-cj/cj-universal-attribute-bindcontentcover.md#func-bindcontentcoverbool-custombuilder-contentcoveroptions)构建全屏模态转场动效相同。
+[bindSheet](../reference/arkui-cj/cj-universal-attribute-sheettransition.md#func-bindsheetbool-custombuilder-sheetoptions)属性可为组件绑定半模态页面，在组件出现时可通过设置自定义或默认的内置高度确定半模态大小。构建半模态转场动效的步骤基本与使用[bindContentCover](../reference/arkui-cj/cj-universal-attribute-bindcontentcover.md#func-bindcontentcoverbool-custombuilder-contentcoveroptions)构建全屏模态转场动效相同。
 
 完整示例和效果如下。
 
@@ -351,7 +351,7 @@ class EntryView {
 
 ## 使用bindMenu实现菜单弹出效果
 
-[bindMenu](../../../zh-cn/application-dev/reference/arkui-cj/cj-universal-attribute-menu.md#func-bindmenuarraymenuelement-menuoptions)为组件绑定弹出式菜单，通过点击触发。完整示例和效果如下。
+[bindMenu](../reference/arkui-cj/cj-universal-attribute-menu.md#func-bindmenuarraymenuelement-menuoptions)为组件绑定弹出式菜单，通过点击触发。完整示例和效果如下。
 
  <!-- run -->
 
@@ -389,7 +389,7 @@ class EntryView {
 
 ## 使用bindContextMenu实现菜单弹出效果
 
-[bindContextMenu](../../../zh-cn/application-dev/reference/arkui-cj/cj-universal-attribute-menu.md#func-bindcontextmenu---unit-responsetype-contextmenuoptions)为组件绑定弹出式菜单，通过长按或右键点击触发。完整示例和效果如下。
+[bindContextMenu](../reference/arkui-cj/cj-universal-attribute-menu.md#func-bindcontextmenu---unit-responsetype-contextmenuoptions)为组件绑定弹出式菜单，通过长按或右键点击触发。完整示例和效果如下。
 
 完整示例和效果如下。
 
@@ -465,7 +465,7 @@ class EntryView {
 
 ## 使用bindPopUp实现气泡弹窗效果
 
-[bindpopup](../../../zh-cn/application-dev/reference/arkui-cj/cj-universal-attribute-popup.md)属性可为组件绑定弹窗，并设置弹窗内容，交互逻辑和显示状态。
+[bindpopup](../reference/arkui-cj/cj-universal-attribute-popup.md)属性可为组件绑定弹窗，并设置弹窗内容，交互逻辑和显示状态。
 
 完整示例和代码如下。
 

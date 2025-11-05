@@ -18,7 +18,7 @@
 
 ## 不新建组件并直接变化原组件
 
-该方法不新建容器，通过在已有容器上增删组件触发[transition](../../../zh-cn/application-dev/reference/arkui-cj/cj-animation-transition.md#func-transition)，搭配组件[属性动画](./cj-attribute-animation-apis.md)实现一镜到底效果。
+该方法不新建容器，通过在已有容器上增删组件触发[transition](../reference/arkui-cj/cj-animation-transition.md#func-transition)，搭配组件[属性动画](./cj-attribute-animation-apis.md)实现一镜到底效果。
 
 对于同一个容器展开，容器内兄弟组件消失或者出现的场景，可通过对同一个容器展开前后进行宽高位置变化并配置属性动画，对兄弟组件配置出现消失转场动画实现一镜到底效果。基本步骤为：
 
@@ -178,7 +178,7 @@ class Post{
 
 ## 使用geometryTransition共享元素转场
 
-[geometryTransition](../../../zh-cn/application-dev/reference/arkui-cj/cj-animation-geometrytransition.md)用于组件内隐式共享元素转场，在视图状态切换过程中提供丝滑的上下文继承过渡体验。
+[geometryTransition](../reference/arkui-cj/cj-animation-geometrytransition.md)用于组件内隐式共享元素转场，在视图状态切换过程中提供丝滑的上下文继承过渡体验。
 
 geometryTransition的使用方式为对需要添加一镜到底动效的两个组件使用geometryTransition接口绑定同一id，这样在其中一个组件消失同时另一个组件创建出现的时候，系统会对二者添加一镜到底动效。
 

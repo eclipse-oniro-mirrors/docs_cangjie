@@ -4,7 +4,7 @@
 
 当设备需要获取传感器数据时，可以使用sensor模块，例如：通过订阅方向传感器数据感知用户设备当前的朝向，通过订阅计步传感器数据统计用户的步数等。
 
-详细的API介绍请参见[Sensor API](../../../../zh-cn/application-dev/reference/SensorServiceKit/cj-apis-sensor.md)。
+详细的API介绍请参见[Sensor API](../../reference/SensorServiceKit/cj-apis-sensor.md)。
 
 ## 接口说明
 

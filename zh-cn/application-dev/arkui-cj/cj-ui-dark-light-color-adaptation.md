@@ -67,4 +67,4 @@
 
 3. Web组件适配
 
-    Web组件支持对前端页面进行深色模式配置，可参见[Web组件深色模式](../../../zh-cn/application-dev/web/cj-web-set-dark-mode.md)进行相关配置。
+    Web组件支持对前端页面进行深色模式配置，可参见[Web组件深色模式](../web/cj-web-set-dark-mode.md)进行相关配置。

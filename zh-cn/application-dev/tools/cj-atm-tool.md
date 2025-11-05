@@ -123,9 +123,9 @@ atm dump [-h] [-t [-i <token-id>] [-b <bundle-name>] [-n <process-name>]] [-r [-
 | ----- | ----- |
 | -h   | 帮助信息。        |
 | -t  | 必选参数，查询系统中所有应用进程信息。  |
-| -t&nbsp;-i \<token-id>  | 可选参数，通过应用进程的tokenid，查询该应用的基本信息以及对应的[权限信息](../../../zh-cn/application-dev/reference/AbilityKit/cj-apis-ability_access_ctrl.md#enum-grantstatus)。 |
-| -t&nbsp;-b \<bundle-name>   |  可选参数，通过应用进程的包名bundle-name，查询该应用的基本信息以及对应的[权限信息](../../../zh-cn/application-dev/reference/AbilityKit/cj-apis-ability_access_ctrl.md#enum-grantstatus)。    |
-| -t&nbsp;-n \<process-name>    |  可选参数，通过应用进程的进程名process-name，查询该应用的基本信息以及对应的[权限信息](../../../zh-cn/application-dev/reference/AbilityKit/cj-apis-ability_access_ctrl.md#enum-grantstatus)。  |
+| -t&nbsp;-i \<token-id>  | 可选参数，通过应用进程的tokenid，查询该应用的基本信息以及对应的[权限信息](../reference/AbilityKit/cj-apis-ability_access_ctrl.md#enum-grantstatus)。 |
+| -t&nbsp;-b \<bundle-name>   |  可选参数，通过应用进程的包名bundle-name，查询该应用的基本信息以及对应的[权限信息](../reference/AbilityKit/cj-apis-ability_access_ctrl.md#enum-grantstatus)。    |
+| -t&nbsp;-n \<process-name>    |  可选参数，通过应用进程的进程名process-name，查询该应用的基本信息以及对应的[权限信息](../reference/AbilityKit/cj-apis-ability_access_ctrl.md#enum-grantstatus)。  |
 | <!--DelRow-->-r                        |  必选参数，查询系统内的所有权限使用记录 |
 | <!--DelRow-->-r&nbsp;-i \<token-id>        | 可选参数，通过应用进程的tokenid，查询该应用的权限使用记录 |
 | <!--DelRow-->-r&nbsp;-p \<permission-name> | 可选参数，通过权限名，查询该权限的使用记录  |

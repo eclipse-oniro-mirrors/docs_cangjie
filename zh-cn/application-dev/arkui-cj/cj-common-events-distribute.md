@@ -60,15 +60,15 @@
 
 ### 禁用控制
 
-设置了[禁用控制](../../../zh-cn/application-dev/reference/arkui-cj/cj-universal-attribute-enable.md)的组件，组件自身和其子组件不会发起触摸测试过程，会直接返回组件的父组件继续触摸测试。
+设置了[禁用控制](../reference/arkui-cj/cj-universal-attribute-enable.md)的组件，组件自身和其子组件不会发起触摸测试过程，会直接返回组件的父组件继续触摸测试。
 
 ### 触摸热区设置
 
-[触摸热区设置](../../../zh-cn/application-dev/reference/arkui-cj/cj-universal-attribute-touchtarget.md)会影响触屏/鼠标类的触摸测试。根据[触摸测试的基本流程](#触摸测试基本流程)，仅当事件的坐标命中组件的触摸热区时，该组件绑定的手势和事件才会被收集并进入事件响应链。开发者可以通过调整组件的触摸热区来控制触摸测试流程。若触摸热区被设置为0，或定义为不可触控区域，事件将直接回传给父节点，以进行后续的触摸测试。
+[触摸热区设置](../reference/arkui-cj/cj-universal-attribute-touchtarget.md)会影响触屏/鼠标类的触摸测试。根据[触摸测试的基本流程](#触摸测试基本流程)，仅当事件的坐标命中组件的触摸热区时，该组件绑定的手势和事件才会被收集并进入事件响应链。开发者可以通过调整组件的触摸热区来控制触摸测试流程。若触摸热区被设置为0，或定义为不可触控区域，事件将直接回传给父节点，以进行后续的触摸测试。
 
 ### 安全组件
 
-安全组件当前对触摸测试影响：如果有组件的[z序](../../../zh-cn/application-dev/arkui-cj/cj-layout-development-stack-layout.md#z序控制)比安全组件的z序靠前，且遮盖安全组件，则安全组件事件直接返回到父节点继续触摸测试。
+安全组件当前对触摸测试影响：如果有组件的[z序](../arkui-cj/cj-layout-development-stack-layout.md#z序控制)比安全组件的z序靠前，且遮盖安全组件，则安全组件事件直接返回到父节点继续触摸测试。
 
 ## 事件响应链的收集
 

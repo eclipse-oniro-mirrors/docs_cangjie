@@ -6,7 +6,7 @@
 
 ## 开发步骤
 
-详细的API说明请参见[Camera API参考](../../../../zh-cn/application-dev/reference/CameraKit/cj-apis-multimedia-camera.md)。
+详细的API说明请参见[Camera API参考](../../reference/CameraKit/cj-apis-multimedia-camera.md)。
 
 1. 导入camera接口，接口中提供了相机相关的属性和方法，导入方法如下。
 
@@ -23,7 +23,7 @@
     >
     > 在相机设备输入之前需要先完成相机管理，详细开发步骤请参见[相机管理](./cj-camera-device-management.md)。
 
-2. 通过[CameraManager](../../../../zh-cn/application-dev/reference/CameraKit/cj-apis-multimedia-camera.md#class-cameramanager)类中的[createCameraInput](../../../../zh-cn/application-dev/reference/CameraKit/cj-apis-multimedia-camera.md#func-createcamerainputcameradevice)方法创建相机输入流。
+2. 通过[CameraManager](../../reference/CameraKit/cj-apis-multimedia-camera.md#class-cameramanager)类中的[createCameraInput](../../reference/CameraKit/cj-apis-multimedia-camera.md#func-createcamerainputcameradevice)方法创建相机输入流。
 
     <!-- compile -->
 
@@ -48,7 +48,7 @@
     }
     ```
 
-3. 通过[getSupportedSceneModes](../../../../zh-cn/application-dev/reference/CameraKit/cj-apis-multimedia-camera.md#func-getsupportedscenemodescameradevice)方法，获取当前相机设备支持的模式列表，列表中存储了相机设备支持的所有模式[SceneMode](../../../../zh-cn/application-dev/reference/CameraKit/cj-apis-multimedia-camera.md#enum-scenemode)。
+3. 通过[getSupportedSceneModes](../../reference/CameraKit/cj-apis-multimedia-camera.md#func-getsupportedscenemodescameradevice)方法，获取当前相机设备支持的模式列表，列表中存储了相机设备支持的所有模式[SceneMode](../../reference/CameraKit/cj-apis-multimedia-camera.md#enum-scenemode)。
 
     <!-- compile -->
 
@@ -68,7 +68,7 @@
     }
     ```
 
-4. 通过[getSupportedOutputCapability](../../../../zh-cn/application-dev/reference/CameraKit/cj-apis-multimedia-camera.md#func-getsupportedoutputcapabilitycameradevice-scenemode)方法，获取当前相机设备支持的所有输出流，如预览流、拍照流、录像流等。输出流在[CameraOutputCapability](../../../../zh-cn/application-dev/reference/CameraKit/cj-apis-multimedia-camera.md#class-cameraoutputcapability)中的各个profile字段中，根据相机设备指定模式[SceneMode](../../../../zh-cn/application-dev/reference/CameraKit/cj-apis-multimedia-camera.md#enum-scenemode)的不同，需要添加不同类型的输出流。
+4. 通过[getSupportedOutputCapability](../../reference/CameraKit/cj-apis-multimedia-camera.md#func-getsupportedoutputcapabilitycameradevice-scenemode)方法，获取当前相机设备支持的所有输出流，如预览流、拍照流、录像流等。输出流在[CameraOutputCapability](../../reference/CameraKit/cj-apis-multimedia-camera.md#class-cameraoutputcapability)中的各个profile字段中，根据相机设备指定模式[SceneMode](../../reference/CameraKit/cj-apis-multimedia-camera.md#enum-scenemode)的不同，需要添加不同类型的输出流。
 
     <!-- compile -->
 

@@ -38,7 +38,7 @@
 
 ## 接口说明
 
-以下是关系型设备协同分布式数据库跨设备数据同步功能的相关接口，更多接口及使用方式请参见[关系型数据库](../../../zh-cn/application-dev/reference/ArkData/cj-apis-relational_store.md)。
+以下是关系型设备协同分布式数据库跨设备数据同步功能的相关接口，更多接口及使用方式请参见[关系型数据库](../reference/ArkData/cj-apis-relational_store.md)。
 
 | 接口名称 | 描述 |
 | -------- | -------- |

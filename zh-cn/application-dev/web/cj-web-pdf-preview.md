@@ -1,6 +1,6 @@
 # 使用Web组件的PDF文档预览能力
 
-Web组件提供了在网页中预览PDF的能力。应用可以通过Web组件的[src](../../../zh-cn/application-dev/reference/arkui-cj/cj-web-web.md#web)参数接口中传入PDF文件，来加载PDF文档。根据PDF文档来源不同，可以分为三种常用场景：加载网络PDF文档、加载本地PDF文档、加载应用内resource资源PDF文档。
+Web组件提供了在网页中预览PDF的能力。应用可以通过Web组件的[src](../reference/arkui-cj/cj-web-web.md#web)参数接口中传入PDF文件，来加载PDF文档。根据PDF文档来源不同，可以分为三种常用场景：加载网络PDF文档、加载本地PDF文档、加载应用内resource资源PDF文档。
 
 PDF文档预览加载过程中，若涉及网络文档获取，请在module.json5中配置网络访问权限，添加方法请参见[在配置文件中声明权限](../security/AccessToken/cj-declare-permissions.md)。
 
@@ -43,7 +43,7 @@ class EntryView {
 }
 ```
 
-上述示例中，由于PDF预览页面对于侧边导航栏是否展开会根据用户操作使用`window.localStorage`进行持久化记录，所以需开启文档对象模型存储[domStorageAccess](../../../zh-cn/application-dev/reference/arkui-cj/cj-web-web.md#func-domstorageaccessbool)权限:
+上述示例中，由于PDF预览页面对于侧边导航栏是否展开会根据用户操作使用`window.localStorage`进行持久化记录，所以需开启文档对象模型存储[domStorageAccess](../reference/arkui-cj/cj-web-web.md#func-domstorageaccessbool)权限:
 
 <!-- compile -->
 
@@ -51,7 +51,7 @@ class EntryView {
 Web().domStorageAccess(true)
 ```
 
-在Web组件创建时，指定默认加载的PDF文档。[Web组件](../../../zh-cn/application-dev/reference/arkui-cj/cj-web-web.md#web)的第一个参数变量src不能通过状态变量（例如：@State）动态更改地址。
+在Web组件创建时，指定默认加载的PDF文档。[Web组件](../reference/arkui-cj/cj-web-web.md#web)的第一个参数变量src不能通过状态变量（例如：@State）动态更改地址。
 
 同时包含三种PDF文档加载预览场景:
 
@@ -64,7 +64,7 @@ Web().domStorageAccess(true)
         .domStorageAccess(true)
     ```
 
-- 预览加载应用沙箱内PDF文件，需要开启应用中文件系统的访问[fileAccess](../../../zh-cn/application-dev/reference/arkui-cj/cj-web-web.md#func-fileaccessbool)权限。
+- 预览加载应用沙箱内PDF文件，需要开启应用中文件系统的访问[fileAccess](../reference/arkui-cj/cj-web-web.md#func-fileaccessbool)权限。
 
     1. 获取context
 

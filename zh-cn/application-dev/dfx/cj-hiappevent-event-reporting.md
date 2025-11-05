@@ -4,7 +4,7 @@ HiAppEvent提供用于处理并上报事件的接口。
 
 ## 接口说明
 
-API接口的具体使用说明（参数使用限制、具体取值范围等）请参见[应用事件打点API文档](../../../zh-cn/application-dev/reference/PerformanceAnalysisKit/cj-apis-hiappevent.md)。
+API接口的具体使用说明（参数使用限制、具体取值范围等）请参见[应用事件打点API文档](../reference/PerformanceAnalysisKit/cj-apis-hiappevent.md)。
 
 **数据处理者接口功能介绍：**
 

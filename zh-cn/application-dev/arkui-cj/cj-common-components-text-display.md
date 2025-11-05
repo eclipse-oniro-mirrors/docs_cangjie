@@ -1,6 +1,6 @@
 # 文本显示 (Text/Span)
 
-Text是文本组件，通常用于展示用户视图，如显示文章的文字内容，支持绑定自定义文本选择菜单，用户可根据需要选择不同功能，同时还可以扩展自定义菜单，丰富可用选项，进一步提升用户体验。Span则用于呈现显示行内文本。具体用法请参见[Text](../../../zh-cn/application-dev/reference/arkui-cj/cj-text-input-text.md)和[Span](../../../zh-cn/application-dev/reference/arkui-cj/cj-text-input-span.md)组件的使用说明。
+Text是文本组件，通常用于展示用户视图，如显示文章的文字内容，支持绑定自定义文本选择菜单，用户可根据需要选择不同功能，同时还可以扩展自定义菜单，丰富可用选项，进一步提升用户体验。Span则用于呈现显示行内文本。具体用法请参见[Text](../reference/arkui-cj/cj-text-input-text.md)和[Span](../reference/arkui-cj/cj-text-input-span.md)组件的使用说明。
 
 ## 创建文本
 
@@ -42,7 +42,7 @@ Text可通过以下两种方式来创建：
 
 ## 添加子组件
 
-[Span](../../../zh-cn/application-dev/reference/arkui-cj/cj-text-input-span.md)只能作为[Text](../../../zh-cn/application-dev/reference/arkui-cj/cj-text-input-text.md)和[RichEditor](../../../zh-cn/application-dev/reference/arkui-cj/cj-text-input-richeditor.md)组件的子组件显示文本内容。可以在一个Text内添加多个Span来显示一段信息，例如产品说明书、承诺书等。
+[Span](../reference/arkui-cj/cj-text-input-span.md)只能作为[Text](../reference/arkui-cj/cj-text-input-text.md)和[RichEditor](../reference/arkui-cj/cj-text-input-richeditor.md)组件的子组件显示文本内容。可以在一个Text内添加多个Span来显示一段信息，例如产品说明书、承诺书等。
 
 - 创建Span。
 
@@ -75,7 +75,7 @@ Text可通过以下两种方式来创建：
 
 - 设置文本装饰线及颜色。
 
-  通过[decoration](../../../zh-cn/application-dev/reference/arkui-cj/cj-text-input-span.md#func-decorationtextdecorationtype-resourcecolor)设置文本装饰线及颜色。
+  通过[decoration](../reference/arkui-cj/cj-text-input-span.md#func-decorationtextdecorationtype-resourcecolor)设置文本装饰线及颜色。
 
      <!-- run -->
 
@@ -111,7 +111,7 @@ Text可通过以下两种方式来创建：
 
   ![Textdisply3](figures/Textdisply3.png)
 
-- 通过[textCase](../../../zh-cn/application-dev/reference/arkui-cj/cj-text-input-span.md#func-textcasetextcase)设置文字一直保持大写或者小写状态。
+- 通过[textCase](../reference/arkui-cj/cj-text-input-span.md#func-textcasetextcase)设置文字一直保持大写或者小写状态。
 
      <!-- run -->
 
@@ -144,7 +144,7 @@ Text可通过以下两种方式来创建：
 
 - 添加事件。
 
-  由于Span组件无尺寸信息，事件仅支持添加点击事件[onClick](../../../zh-cn/application-dev/reference/arkui-cj/cj-universal-event-click.md#func-onclickclickevent---unit)。
+  由于Span组件无尺寸信息，事件仅支持添加点击事件[onClick](../reference/arkui-cj/cj-universal-event-click.md#func-onclickclickevent---unit)。
 
      <!-- run -->
 
@@ -176,7 +176,7 @@ Text可通过以下两种方式来创建：
 
 ## 自定义文本样式
 
-- 通过[textAlign](../../../zh-cn/application-dev/reference/arkui-cj/cj-text-input-text.md#textaligntextalign)属性设置文本对齐样式。
+- 通过[textAlign](../reference/arkui-cj/cj-text-input-text.md#textaligntextalign)属性设置文本对齐样式。
 
      <!-- run -->
 
@@ -216,7 +216,7 @@ Text可通过以下两种方式来创建：
 
   ![Textdisply5](figures/Textdisply5.png)
 
-- 通过[textOverflow](../../../zh-cn/application-dev/reference/arkui-cj/cj-text-input-text.md#textoverflowtextoverflow)属性控制文本超长处理，textOverflow需配合[maxLines](../../../zh-cn/application-dev/reference/arkui-cj/cj-text-input-text.md#maxlinesint32)一起使用（默认情况下文本自动折行）。
+- 通过[textOverflow](../reference/arkui-cj/cj-text-input-text.md#textoverflowtextoverflow)属性控制文本超长处理，textOverflow需配合[maxLines](../reference/arkui-cj/cj-text-input-text.md#maxlinesint32)一起使用（默认情况下文本自动折行）。
 
      <!-- run -->
 
@@ -255,7 +255,7 @@ Text可通过以下两种方式来创建：
 
   ![Textdisply6](figures/Textdisply6.gif)
 
-- 通过[lineHeight](../../../zh-cn/application-dev/reference/arkui-cj/cj-text-input-text.md#func-lineheightlength)属性设置文本行高。
+- 通过[lineHeight](../reference/arkui-cj/cj-text-input-text.md#func-lineheightlength)属性设置文本行高。
 
      <!-- run -->
 
@@ -285,7 +285,7 @@ Text可通过以下两种方式来创建：
 
   ![Textdisply7](figures/Textdisply7.png)
 
-- 通过[decoration](../../../zh-cn/application-dev/reference/arkui-cj/cj-text-input-text.md#decorationtextdecorationtype-color-textdecorationstyle)属性设置文本装饰线样式及其颜色。
+- 通过[decoration](../reference/arkui-cj/cj-text-input-text.md#decorationtextdecorationtype-color-textdecorationstyle)属性设置文本装饰线样式及其颜色。
 
      <!-- run -->
 
@@ -328,7 +328,7 @@ Text可通过以下两种方式来创建：
 
   ![Textdisply8](figures/Textdisply8.png)
 
-- 通过[baselineOffset](../../../zh-cn/application-dev/reference/arkui-cj/cj-text-input-text.md#baselineoffsetlength)属性设置文本基线的偏移量。
+- 通过[baselineOffset](../reference/arkui-cj/cj-text-input-text.md#baselineoffsetlength)属性设置文本基线的偏移量。
 
      <!-- run -->
 
@@ -374,9 +374,9 @@ Text可通过以下两种方式来创建：
 
   ![Textdisply9](figures/Textdisply9.png)
 
-- 通过[minFontSize](../../../zh-cn/application-dev/reference/arkui-cj/cj-text-input-text.md#minfontsizelength)与[maxFontSize](../../../zh-cn/application-dev/reference/arkui-cj/cj-text-input-text.md#maxfontsizelength)自适应字体大小。
+- 通过[minFontSize](../reference/arkui-cj/cj-text-input-text.md#minfontsizelength)与[maxFontSize](../reference/arkui-cj/cj-text-input-text.md#maxfontsizelength)自适应字体大小。
 
-  minFontSize用于设置文本的最小显示字号，maxFontSize用于设置文本的最大显示字号。这两个属性必须同时设置才能生效，并且需要与[maxLines](../../../zh-cn/application-dev/reference/arkui-cj/cj-text-input-text.md#maxlinesint32)属性或布局大小限制配合使用，单独设置任一属性将不会产生效果。
+  minFontSize用于设置文本的最小显示字号，maxFontSize用于设置文本的最大显示字号。这两个属性必须同时设置才能生效，并且需要与[maxLines](../reference/arkui-cj/cj-text-input-text.md#maxlinesint32)属性或布局大小限制配合使用，单独设置任一属性将不会产生效果。
 
      <!-- run -->
 
@@ -433,7 +433,7 @@ Text可通过以下两种方式来创建：
 
   ![Textdisply11](figures/Textdisply11.png)
 
-- 通过[textCase](../../../zh-cn/application-dev/reference/arkui-cj/cj-text-input-text.md#textcasetextcase)属性设置文本大小写。
+- 通过[textCase](../reference/arkui-cj/cj-text-input-text.md#textcasetextcase)属性设置文本大小写。
 
      <!-- run -->
 
@@ -478,7 +478,7 @@ Text可通过以下两种方式来创建：
 
 ## 添加事件
 
-Text组件可以添加通用事件，可以绑定[onClick](../../../zh-cn/application-dev/reference/arkui-cj/cj-universal-event-click.md#func-onclickclickevent---unit)、[onTouch](../../../zh-cn/application-dev/reference/arkui-cj/cj-universal-event-touch.md#func-ontouchtouchevent-unit)等事件来响应操作。
+Text组件可以添加通用事件，可以绑定[onClick](../reference/arkui-cj/cj-universal-event-click.md#func-onclickclickevent---unit)、[onTouch](../reference/arkui-cj/cj-universal-event-touch.md#func-ontouchtouchevent-unit)等事件来响应操作。
 
  <!-- run -->
 

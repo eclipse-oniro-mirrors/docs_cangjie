@@ -115,7 +115,7 @@ Unsupported format.
 
 当前使用的格式规格不支持，用户需要切换为支持的规格。
 
-支持的规格请根据实际使用的模块功能，参考[Media Kit简介](../../../zh-cn/application-dev/media/media/cj-media-kit-intro.md)中对应模块的规格介绍。
+支持的规格请根据实际使用的模块功能，参考[Media Kit简介](../media/media/cj-media-kit-intro.md)中对应模块的规格介绍。
 
 ## 5400107 音频焦点冲突
 

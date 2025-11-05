@@ -2,7 +2,7 @@
 
 ## 场景介绍
 
-当需要发布某个自定义公共事件时，可以通过[publish()](../../../../zh-cn/application-dev/reference/BasicServicesKit/cj-apis-common_event_manager.md#static-func-publishstring)方法发布事件。发布的公共事件可以携带数据，供订阅者解析并进行下一步处理。
+当需要发布某个自定义公共事件时，可以通过[publish()](../../reference/BasicServicesKit/cj-apis-common_event_manager.md#static-func-publishstring)方法发布事件。发布的公共事件可以携带数据，供订阅者解析并进行下一步处理。
 
 > **说明：**
 >
@@ -10,12 +10,12 @@
 
 ## 接口说明
 
-详细接口请参见[接口文档](../../../../zh-cn/application-dev/reference/BasicServicesKit/cj-apis-common_event_manager.md#static-func-publishstring)。
+详细接口请参见[接口文档](../../reference/BasicServicesKit/cj-apis-common_event_manager.md#static-func-publishstring)。
 
 | 接口名                                                       | 接口描述                     |
 | ------------------------------------------------------------ | ---------------------------- |
 | publish(event:&nbsp;String): Unit | 发布公共事件。               |
-| publish(event:&nbsp;String,&nbsp;options:&nbsp;[CommonEventPublishData](../../../../zh-cn/application-dev/reference/BasicServicesKit/cj-apis-common_event_manager.md#struct-commoneventpublishdata)): Unit | 指定发布信息并发布公共事件。 |
+| publish(event:&nbsp;String,&nbsp;options:&nbsp;[CommonEventPublishData](../../reference/BasicServicesKit/cj-apis-common_event_manager.md#struct-commoneventpublishdata)): Unit | 指定发布信息并发布公共事件。 |
 
 ## 发布不携带信息的公共事件
 
@@ -41,7 +41,7 @@
 
 ## 发布携带信息的公共事件
 
-携带信息的公共事件，可以发布为无序公共事件、有序公共事件和粘性事件，可以通过参数[CommonEventPublishData](../../../../zh-cn/application-dev/reference/BasicServicesKit/cj-apis-common_event_manager.md#struct-commoneventpublishdata)的isOrdered、isSticky的字段进行设置。
+携带信息的公共事件，可以发布为无序公共事件、有序公共事件和粘性事件，可以通过参数[CommonEventPublishData](../../reference/BasicServicesKit/cj-apis-common_event_manager.md#struct-commoneventpublishdata)的isOrdered、isSticky的字段进行设置。
 
 1. 导入模块。
 

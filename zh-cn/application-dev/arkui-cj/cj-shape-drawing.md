@@ -1,6 +1,6 @@
 # 绘制几何图形 (Shape)
 
-绘制组件用于在页面绘制图形，Shape组件是绘制组件的父组件，父组件中会描述所有绘制组件均支持的通用属性。具体用法请参考[Shape](../../../zh-cn/application-dev/reference/arkui-cj/cj-graphic-drawing-shape.md)。
+绘制组件用于在页面绘制图形，Shape组件是绘制组件的父组件，父组件中会描述所有绘制组件均支持的通用属性。具体用法请参考[Shape](../reference/arkui-cj/cj-graphic-drawing-shape.md)。
 
 ## 创建绘制组件
 
@@ -22,7 +22,7 @@
   }
   ```
 
-- 绘制组件单独使用，用于在页面上绘制指定的图形。有7种绘制类型，分别为[Circle](../../../zh-cn/application-dev/reference/arkui-cj/cj-graphic-drawing-circle.md)（圆形）、[Ellipse](../../../zh-cn/application-dev/reference/arkui-cj/cj-graphic-drawing-ellipse.md)（椭圆形）、[Line](../../../zh-cn/application-dev/reference/arkui-cj/cj-graphic-drawing-line.md)（直线）、[Path](../../../zh-cn/application-dev/reference/arkui-cj/cj-graphic-drawing-path.md)（路径）、[Rect](../../../zh-cn/application-dev/reference/arkui-cj/cj-graphic-drawing-rect.md)（矩形）。以Circle的接口调用为例：
+- 绘制组件单独使用，用于在页面上绘制指定的图形。有7种绘制类型，分别为[Circle](../reference/arkui-cj/cj-graphic-drawing-circle.md)（圆形）、[Ellipse](../reference/arkui-cj/cj-graphic-drawing-ellipse.md)（椭圆形）、[Line](../reference/arkui-cj/cj-graphic-drawing-line.md)（直线）、[Path](../reference/arkui-cj/cj-graphic-drawing-path.md)（路径）、[Rect](../reference/arkui-cj/cj-graphic-drawing-rect.md)（矩形）。以Circle的接口调用为例：
 
   ```cangjie
   Circle()
@@ -175,7 +175,7 @@ viewPort(x!: Length, y!: Length, width!: Length, height!: Length)
 
 绘制组件支持通过各种属性对组件样式进行更改。
 
-- 通过[fill](../../../zh-cn/application-dev/reference/arkui-cj/cj-graphic-drawing-common.md#func-fillresourcecolor)可以设置组件填充区域颜色。
+- 通过[fill](../reference/arkui-cj/cj-graphic-drawing-common.md#func-fillresourcecolor)可以设置组件填充区域颜色。
 
   ```cangjie
   Path()
@@ -188,7 +188,7 @@ viewPort(x!: Length, y!: Length, width!: Length, height!: Length)
 
   ![drawing3](figures/drawing3.jpg)
 
-- 通过[stroke](../../../zh-cn/application-dev/reference/arkui-cj/cj-graphic-drawing-common.md#func-strokeresourcecolor)可以设置组件边框颜色。
+- 通过[stroke](../reference/arkui-cj/cj-graphic-drawing-common.md#func-strokeresourcecolor)可以设置组件边框颜色。
 
   ```cangjie
   Path()
@@ -201,7 +201,7 @@ viewPort(x!: Length, y!: Length, width!: Length, height!: Length)
 
   ![stroke](figures/stroke.png)
 
-- 通过[strokeOpacity](../../../zh-cn/application-dev/reference/arkui-cj/cj-graphic-drawing-common.md#func-strokeopacityappresource)可以设置边框透明度。
+- 通过[strokeOpacity](../reference/arkui-cj/cj-graphic-drawing-common.md#func-strokeopacityappresource)可以设置边框透明度。
 
   ```cangjie
   Path()
@@ -216,7 +216,7 @@ viewPort(x!: Length, y!: Length, width!: Length, height!: Length)
 
   ![strokeopacity](figures/strokeopacity.jpg)
 
-- 通过[antiAlias](../../../zh-cn/application-dev/reference/arkui-cj/cj-graphic-drawing-common.md#func-antialiasbool)设置是否开启抗锯齿，默认值为true（开启抗锯齿）。
+- 通过[antiAlias](../reference/arkui-cj/cj-graphic-drawing-common.md#func-antialiasbool)设置是否开启抗锯齿，默认值为true（开启抗锯齿）。
 
   ```cangjie
   // 开启抗锯齿

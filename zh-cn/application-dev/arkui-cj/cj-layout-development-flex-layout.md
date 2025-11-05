@@ -2,7 +2,7 @@
 
 ## 概述
 
-弹性布局（[Flex](../../../zh-cn/application-dev/reference/arkui-cj/cj-row-column-stack-flex.md)）提供更加有效的方式对容器中的子元素进行排列、对齐和分配剩余空间。常用于页面头部导航栏的均匀分布、页面框架的搭建、多行数据的排列等。
+弹性布局（[Flex](../reference/arkui-cj/cj-row-column-stack-flex.md)）提供更加有效的方式对容器中的子元素进行排列、对齐和分配剩余空间。常用于页面头部导航栏的均匀分布、页面框架的搭建、多行数据的排列等。
 
 容器默认存在主轴与交叉轴，子元素默认沿主轴排列，子元素在主轴方向的尺寸称为主轴尺寸，在交叉轴方向的尺寸称为交叉轴尺寸。
 
@@ -729,7 +729,7 @@
 
 ### 子元素设置交叉轴对齐
 
-子元素的[alignSelf](../../../zh-cn/application-dev/reference/arkui-cj/cj-universal-attribute-flexlayout.md#func-alignselfitemalign)属性也可以设置子元素在父容器交叉轴的对齐格式，且会覆盖Flex布局容器中alignItems配置。如下例所示：
+子元素的[alignSelf](../reference/arkui-cj/cj-universal-attribute-flexlayout.md#func-alignselfitemalign)属性也可以设置子元素在父容器交叉轴的对齐格式，且会覆盖Flex布局容器中alignItems配置。如下例所示：
 
  <!-- run -->
 
@@ -780,7 +780,7 @@ class EntryView {
 
 ### 内容对齐
 
-可以通过[alignContent](../../../zh-cn/application-dev/reference/arkui-cj/cj-row-column-stack-flex.md#var-aligncontent)参数设置子元素各行在交叉轴剩余空间内的对齐方式，只在多行的Flex布局中生效，可选值有：
+可以通过[alignContent](../reference/arkui-cj/cj-row-column-stack-flex.md#var-aligncontent)参数设置子元素各行在交叉轴剩余空间内的对齐方式，只在多行的Flex布局中生效，可选值有：
 
 - FlexAlign.Start：子元素各行与交叉轴起点对齐。
 
@@ -1050,7 +1050,7 @@ class EntryView {
 
 在弹性布局父组件尺寸过小时，通过子元素的以下属性设置其在父容器的占比，达到自适应布局。
 
-- [flexBasis](../../../zh-cn/application-dev/reference/arkui-cj/cj-universal-attribute-flexlayout.md#func-flexbasislength)：设置子元素在父容器主轴方向上的基准尺寸。如果设置了该属性，则子项占用的空间为该属性所设置的值；如果没设置该属性，那子项的空间为width/height的值。
+- [flexBasis](../reference/arkui-cj/cj-universal-attribute-flexlayout.md#func-flexbasislength)：设置子元素在父容器主轴方向上的基准尺寸。如果设置了该属性，则子项占用的空间为该属性所设置的值；如果没设置该属性，那子项的空间为width/height的值。
 
     <!-- run -->
 
@@ -1095,7 +1095,7 @@ class EntryView {
 
     ![Flex26](figures/Flex26.png)
 
-- [flexGrow](../../../zh-cn/application-dev/reference/arkui-cj/cj-universal-attribute-flexlayout.md#func-flexgrowfloat64)：设置父容器的剩余空间分配给此属性所在组件的比例。用于分配父组件的剩余空间。
+- [flexGrow](../reference/arkui-cj/cj-universal-attribute-flexlayout.md#func-flexgrowfloat64)：设置父容器的剩余空间分配给此属性所在组件的比例。用于分配父组件的剩余空间。
 
     <!-- run -->
 
@@ -1139,7 +1139,7 @@ class EntryView {
 
     第一个元素以及第二个元素以2:3分配剩下的100.vp。第一个元素为100.vp+100.vp * 2/5=140.vp，第个元素为100.vp+100.vp* 3/5=160.vp。
 
-- [flexShrink](../../../zh-cn/application-dev/reference/arkui-cj/cj-universal-attribute-flexlayout.md#func-flexshrinkfloat64): 当父容器空间不足时，子元素的压缩比例。
+- [flexShrink](../reference/arkui-cj/cj-universal-attribute-flexlayout.md#func-flexshrinkfloat64): 当父容器空间不足时，子元素的压缩比例。
 
     <!-- run -->
 

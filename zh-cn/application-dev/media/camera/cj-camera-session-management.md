@@ -7,7 +7,7 @@
 - 配置相机的输入流和输出流。相机在拍摄前，必须完成输入输出流的配置。
   配置输入流即添加设备输入，对用户而言，相当于选择设备的某一摄像头拍摄；配置输出流，即选择数据将以什么形式输出。当应用需要实现拍照时，输出流应配置为预览流和拍照流，预览流的数据将显示在XComponent组件上，拍照流的数据将通过ImageReceiver接口的能力保存到相册中。
 
-- 添加闪光灯、调整焦距等配置。具体支持的配置及接口说明请参见[Camera API参考](../../../../zh-cn/application-dev/reference/CameraKit/cj-apis-multimedia-camera.md)。
+- 添加闪光灯、调整焦距等配置。具体支持的配置及接口说明请参见[Camera API参考](../../reference/CameraKit/cj-apis-multimedia-camera.md)。
 
 - 会话切换控制。应用可以通过移除和添加输出流的方式，切换相机模式。如当前会话的输出流为拍照流，应用可以将拍照流移除，然后添加视频流作为输出流，即完成了拍照到录像的切换。
 
@@ -26,7 +26,7 @@
 
     ```
 
-2. 调用cameraManager类中的[createSession](../../../../zh-cn/application-dev/reference/CameraKit/cj-apis-multimedia-camera.md#func-createsessionscenemode)方法创建一个会话。
+2. 调用cameraManager类中的[createSession](../../reference/CameraKit/cj-apis-multimedia-camera.md#func-createsessionscenemode)方法创建一个会话。
 
     <!-- compile -->
 
@@ -37,7 +37,7 @@
     }
     ```
 
-3. 调用PhotoSession类中的[beginConfig](../../../../zh-cn/application-dev/reference/CameraKit/cj-apis-multimedia-camera.md#func-beginconfig)方法配置会话。
+3. 调用PhotoSession类中的[beginConfig](../../reference/CameraKit/cj-apis-multimedia-camera.md#func-beginconfig)方法配置会话。
 
     <!-- compile -->
 
@@ -52,9 +52,9 @@
 
     ```
 
-4. 使能。向会话中添加相机的输入流和输出流，调用[addInput](../../../../zh-cn/application-dev/reference/CameraKit/cj-apis-multimedia-camera.md#func-addinputcamerainput)添加相机的输入流；调用[addOutput](../../../../zh-cn/application-dev/reference/CameraKit/cj-apis-multimedia-camera.md#func-addoutputcameraoutput)添加相机的输出流。以下示例代码以添加预览流previewOutput和拍照流photoOutput为例，即当前模式支持拍照和预览。
+4. 使能。向会话中添加相机的输入流和输出流，调用[addInput](../../reference/CameraKit/cj-apis-multimedia-camera.md#func-addinputcamerainput)添加相机的输入流；调用[addOutput](../../reference/CameraKit/cj-apis-multimedia-camera.md#func-addoutputcameraoutput)添加相机的输出流。以下示例代码以添加预览流previewOutput和拍照流photoOutput为例，即当前模式支持拍照和预览。
 
-    调用PhotoSession类中的[commitConfig](../../../../zh-cn/application-dev/reference/CameraKit/cj-apis-multimedia-camera.md#func-commitconfig)和[start](../../../../zh-cn/application-dev/reference/CameraKit/cj-apis-multimedia-camera.md#func-start)方法提交相关配置，并启动会话。
+    调用PhotoSession类中的[commitConfig](../../reference/CameraKit/cj-apis-multimedia-camera.md#func-commitconfig)和[start](../../reference/CameraKit/cj-apis-multimedia-camera.md#func-start)方法提交相关配置，并启动会话。
 
     <!-- compile -->
 
@@ -89,7 +89,7 @@
     }
     ```
 
-5. 会话控制。调用PhotoSession类中的[stop](../../../../zh-cn/application-dev/reference/CameraKit/cj-apis-multimedia-camera.md#func-stop)方法可以停止当前会话。调用[removeOutput](../../../../zh-cn/application-dev/reference/CameraKit/cj-apis-multimedia-camera.md#func-removeoutputcameraoutput)和[addOutput](../../../../zh-cn/application-dev/reference/CameraKit/cj-apis-multimedia-camera.md#func-addoutputcameraoutput)方法可以完成会话切换控制。以下示例代码以移除拍照流photoOutput，添加视频流videoOutput为例，完成了拍照到录像的切换。
+5. 会话控制。调用PhotoSession类中的[stop](../../reference/CameraKit/cj-apis-multimedia-camera.md#func-stop)方法可以停止当前会话。调用[removeOutput](../../reference/CameraKit/cj-apis-multimedia-camera.md#func-removeoutputcameraoutput)和[addOutput](../../reference/CameraKit/cj-apis-multimedia-camera.md#func-addoutputcameraoutput)方法可以完成会话切换控制。以下示例代码以移除拍照流photoOutput，添加视频流videoOutput为例，完成了拍照到录像的切换。
 
     <!-- compile -->
 

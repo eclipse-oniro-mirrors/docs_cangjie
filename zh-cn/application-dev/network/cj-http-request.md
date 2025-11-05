@@ -12,7 +12,7 @@ HTTP数据请求功能主要由http模块提供。
 
 权限申请请参见[声明权限](../security/AccessToken/cj-declare-permissions.md)。
 
-涉及的接口如下表，具体的接口说明请参见[API文档](../../../zh-cn/application-dev/reference/NetworkKit/cj-apis-net-http.md)。
+涉及的接口如下表，具体的接口说明请参见[API文档](../reference/NetworkKit/cj-apis-net-http.md)。
 
 | 接口名                   | 描述                                            |
 | ------------------------ | ----------------------------------------------- |

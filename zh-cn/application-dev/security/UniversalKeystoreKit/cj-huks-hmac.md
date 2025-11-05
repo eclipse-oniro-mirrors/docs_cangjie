@@ -10,7 +10,7 @@ HMAC是密钥相关的哈希运算消息认证码（Hash-based Message Authentic
 
 2. 初始化密钥属性集。
 
-3. 调用[generateKeyItem](../../../../zh-cn/application-dev/reference/UniversalKeystoreKit/cj-apis-security_huks.md#func-generatekeyitemstring-huksoptions)生成密钥，HMAC支持的规格请参见[密钥生成](./cj-huks-key-generation-overview.md#支持的算法)。
+3. 调用[generateKeyItem](../../reference/UniversalKeystoreKit/cj-apis-security_huks.md#func-generatekeyitemstring-huksoptions)生成密钥，HMAC支持的规格请参见[密钥生成](./cj-huks-key-generation-overview.md#支持的算法)。
 
 除此之外，开发者也可以参考[密钥导入](./cj-huks-key-import-overview.md#支持的算法)的规格介绍，导入已有的密钥。
 
@@ -20,9 +20,9 @@ HMAC是密钥相关的哈希运算消息认证码（Hash-based Message Authentic
 
 2. 获取待运算的数据。
 
-3. 调用[initSession](../../../../zh-cn/application-dev/reference/UniversalKeystoreKit/cj-apis-security_huks.md#func-initsessionstring-huksoptions)初始化密钥会话，并获取会话的句柄handle。
+3. 调用[initSession](../../reference/UniversalKeystoreKit/cj-apis-security_huks.md#func-initsessionstring-huksoptions)初始化密钥会话，并获取会话的句柄handle。
 
-4. 调用[finishSession](../../../../zh-cn/application-dev/reference/UniversalKeystoreKit/cj-apis-security_huks.md#func-finishsessionhukshandleid-huksoptions-bytes)结束密钥会话，获取HMAC结果。
+4. 调用[finishSession](../../reference/UniversalKeystoreKit/cj-apis-security_huks.md#func-finishsessionhukshandleid-huksoptions-bytes)结束密钥会话，获取HMAC结果。
 
 ## 示例
 

@@ -98,7 +98,7 @@ DevEco Studio可参考其官网介绍进行[下载](https://developer.harmonyos.
 
 本章节主要介绍UI测试框架支持能力，以及对应能力API的使用方法。
 
-UI测试基于单元测试，UI测试脚本在单元测试脚本上增加了对UiTest接口，具体请参考[API文档](../../../zh-cn/application-dev/reference/TestKit/cj-apis-ui_test.md)。
+UI测试基于单元测试，UI测试脚本在单元测试脚本上增加了对UiTest接口，具体请参考[API文档](../reference/TestKit/cj-apis-ui_test.md)。
 
 如下的示例代码是在上面的单元测试脚本基础上增量编写，实现的场景是：在启动的应用页面上进行点击操作，然后检测当前页面变化是否为预期变化。
 
@@ -467,7 +467,7 @@ hdc shell uitest uiInput inputText 100 100 hello
 
 > **说明：**
 >
-> 最多支持传入是三个键值，键值的具体取值请参考[KeyCode](../../../zh-cn/application-dev/reference/arkui-cj/cj-universal-event-key.md#var-keycode)。
+> 最多支持传入是三个键值，键值的具体取值请参考[KeyCode](../reference/arkui-cj/cj-universal-event-key.md#var-keycode)。
 
 ```shell
 # 返回主页。

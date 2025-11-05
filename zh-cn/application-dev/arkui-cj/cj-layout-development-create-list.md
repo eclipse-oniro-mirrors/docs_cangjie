@@ -4,7 +4,7 @@
 
 列表是一种复杂的容器，当列表项达到一定数量，内容超过屏幕大小时，可以自动提供滚动功能。它适合用于呈现同类数据类型或数据类型集，例如图片和文本。在列表中显示数据集合是许多应用程序中的常见要求（如通讯录、音乐列表、购物清单等）。
 
-使用列表可以轻松高效地显示结构化、可滚动的信息。通过在[List](../../../zh-cn/application-dev/reference/arkui-cj/cj-scroll-swipe-list.md)组件中按垂直或者水平方向线性排列子组件[ListItemGroup](../../../zh-cn/application-dev/reference/arkui-cj/cj-scroll-swipe-listgroup.md)或[ListItem](../../../zh-cn/application-dev/reference/arkui-cj/cj-scroll-swipe-listitem.md)，为列表中的行或列提供单个视图，或使用[循环渲染](./rendering_control/cj-rendering-control-foreach.md)迭代一组行或列，或混合任意数量的单个视图和ForEach结构，构建一个列表。List组件支持使用条件渲染、循环渲染、懒加载等渲染控制方式生成子组件。
+使用列表可以轻松高效地显示结构化、可滚动的信息。通过在[List](../reference/arkui-cj/cj-scroll-swipe-list.md)组件中按垂直或者水平方向线性排列子组件[ListItemGroup](../reference/arkui-cj/cj-scroll-swipe-listgroup.md)或[ListItem](../reference/arkui-cj/cj-scroll-swipe-listitem.md)，为列表中的行或列提供单个视图，或使用[循环渲染](./rendering_control/cj-rendering-control-foreach.md)迭代一组行或列，或混合任意数量的单个视图和ForEach结构，构建一个列表。List组件支持使用条件渲染、循环渲染、懒加载等渲染控制方式生成子组件。
 
 ## 布局与约束
 
@@ -89,7 +89,7 @@ List() {
 
 List组件的交叉轴布局可以通过lanes和alignListItem属性进行设置，lanes属性用于确定交叉轴排列的列表项数量，alignListItem用于设置子组件在交叉轴方向的对齐方式。
 
-List组件的lanes属性通常用于在不同尺寸的设备自适应构建不同行数或列数的列表，即一次开发、多端部署的场景。lanes属性的声明方式见[声明方式](../../../zh-cn/application-dev/reference/arkui-cj/cj-scroll-swipe-list.md#func-lanesint32)。以垂直列表为例，如果将lanes属性设为2，表示构建的是一个两列的垂直列表，如图2中右图所示。lanes的默认值为1，即默认情况下，垂直列表的列数是1。
+List组件的lanes属性通常用于在不同尺寸的设备自适应构建不同行数或列数的列表，即一次开发、多端部署的场景。lanes属性的声明方式见[声明方式](../reference/arkui-cj/cj-scroll-swipe-list.md#func-lanesint32)。以垂直列表为例，如果将lanes属性设为2，表示构建的是一个两列的垂直列表，如图2中右图所示。lanes的默认值为1，即默认情况下，垂直列表的列数是1。
 
 ```cangjie
 List() {
@@ -243,7 +243,7 @@ public class EntryView {
 }
 ```
 
-在List组件中，ForEach除了可以用来循环渲染ListItem，也可以用来循环渲染ListItemGroup。ListItemGroup的循环渲染详细使用请参见[ListItemGroup](../../../zh-cn/application-dev/arkui-cj/cj-layout-development-create-list.md#支持分组列表)
+在List组件中，ForEach除了可以用来循环渲染ListItem，也可以用来循环渲染ListItemGroup。ListItemGroup的循环渲染详细使用请参见[ListItemGroup](../arkui-cj/cj-layout-development-create-list.md#支持分组列表)
 
 ## 自定义列表样式
 
@@ -294,7 +294,7 @@ List() {
 
 ![List9](figures/List9.gif)
 
-在使用List组件时，可通过scrollBar属性控制列表滚动条的显示。scrollBar的取值类型为[BarState](../../../zh-cn/application-dev/reference/arkui-cj/cj-common-types.md#enum-barstate)，当取值为BarState.Auto表示按需显示滚动条。此时，当触摸到滚动条区域时显示控件，可上下拖拽滚动条快速浏览内容，拖拽时会变粗。若不进行任何操作，2秒后滚动条自动消失。
+在使用List组件时，可通过scrollBar属性控制列表滚动条的显示。scrollBar的取值类型为[BarState](../reference/arkui-cj/cj-common-types.md#enum-barstate)，当取值为BarState.Auto表示按需显示滚动条。此时，当触摸到滚动条区域时显示控件，可上下拖拽滚动条快速浏览内容，拖拽时会变粗。若不进行任何操作，2秒后滚动条自动消失。
 
 ```cangjie
 List() {
@@ -451,7 +451,7 @@ public class EntryView {
 
 ![List12](figures/List12.gif)
 
-List组件初始化时，可以通过scroller参数绑定一个[Scroller](../../../zh-cn/application-dev/reference/arkui-cj/cj-scroll-swipe-scroll.md)对象，进行列表的滚动控制。例如，用户在新闻应用中，点击新闻页面底部的返回顶部按钮时，就可以通过Scroller对象的scrollToIndex方法使列表滚动到指定的列表项索引位置。
+List组件初始化时，可以通过scroller参数绑定一个[Scroller](../reference/arkui-cj/cj-scroll-swipe-scroll.md)对象，进行列表的滚动控制。例如，用户在新闻应用中，点击新闻页面底部的返回顶部按钮时，就可以通过Scroller对象的scrollToIndex方法使列表滚动到指定的列表项索引位置。
 
 首先，需要创建一个Scroller的对象listScroller。
 
@@ -486,7 +486,7 @@ Button() {
 
 ![List13](figures/List13.gif)
 
-如上图14所示，当联系人列表从A滚动到B时，右侧索引栏也需要同步从选中A状态变成选中B状态。此场景可以通过监听List组件的onScrollIndex事件来实现，右侧索引栏需要使用字母表索引组件[AlphabetIndexer](../../../zh-cn/application-dev/reference/arkui-cj/cj-information-display-alphabetindexer.md)。
+如上图14所示，当联系人列表从A滚动到B时，右侧索引栏也需要同步从选中A状态变成选中B状态。此场景可以通过监听List组件的onScrollIndex事件来实现，右侧索引栏需要使用字母表索引组件[AlphabetIndexer](../reference/arkui-cj/cj-information-display-alphabetindexer.md)。
 
 在列表滚动时，根据列表此时所在的索引值位置firstIndex，重新计算字母索引栏对应字母的位置selectedIndex。由于AlphabetIndexer组件通过selected属性设置了选中项索引值，当selectedIndex变化时会触发AlphabetIndexer组件重新渲染，从而显示为选中对应字母的状态。
 
@@ -533,7 +533,7 @@ public class EntryView {
 
 ![List14](figures/List14.gif)
 
-ListItem的[swipeAction属性](../../../zh-cn/application-dev/reference/arkui-cj/cj-scroll-swipe-listitem.md#func-swipeaction---unit----unit-swipeedgeeffect-float64---unit)可用于实现列表项的左右滑动功能。swipeAction属性方法初始化时有必填参数SwipeActionOptions，其中，start参数表示设置列表项右滑时起始端滑出的组件，end参数表示设置列表项左滑时尾端滑出的组件。
+ListItem的[swipeAction属性](../reference/arkui-cj/cj-scroll-swipe-listitem.md#func-swipeaction---unit----unit-swipeedgeeffect-float64---unit)可用于实现列表项的左右滑动功能。swipeAction属性方法初始化时有必填参数SwipeActionOptions，其中，start参数表示设置列表项右滑时起始端滑出的组件，end参数表示设置列表项左滑时尾端滑出的组件。
 
 在消息列表中，end参数表示设置ListItem左滑时尾端划出自定义组件，即删除按钮。在初始化end方法时，将滑动列表项的索引传入删除按钮组件，当用户点击删除按钮时，可以根据索引值来删除列表项对应的数据，从而实现侧滑删除功能。
 
@@ -573,7 +573,7 @@ ListItem的[swipeAction属性](../../../zh-cn/application-dev/reference/arkui-cj
 
 ![List15](figures/List15.png)
 
-在ListItem中使用[Badge](../../../zh-cn/application-dev/reference/arkui-cj/cj-information-display-badge.md)组件可实现给列表项添加标记功能。Badge是可以附加在单个组件上用于信息标记的容器组件。
+在ListItem中使用[Badge](../reference/arkui-cj/cj-information-display-badge.md)组件可实现给列表项添加标记功能。Badge是可以附加在单个组件上用于信息标记的容器组件。
 
 在消息列表中，若希望在联系人头像右上角添加标记，可在实现消息列表项ListItem的联系人头像时，将头像Image组件作为Badge的子组件。
 
@@ -593,7 +593,7 @@ ListItem(){
 
 ## 下拉刷新与上拉加载
 
-页面的下拉刷新与上拉加载功能在移动应用中十分常见，例如，新闻页面的内容刷新和加载。这两种操作的原理都是通过响应用户的[触摸事件](../../../zh-cn/application-dev/reference/arkui-cj/cj-universal-event-touch.md)，在顶部或者底部显示一个刷新或加载视图，完成后再将此视图隐藏。
+页面的下拉刷新与上拉加载功能在移动应用中十分常见，例如，新闻页面的内容刷新和加载。这两种操作的原理都是通过响应用户的[触摸事件](../reference/arkui-cj/cj-universal-event-touch.md)，在顶部或者底部显示一个刷新或加载视图，完成后再将此视图隐藏。
 
 以下拉刷新为例，其实现主要分成三步：
 
@@ -605,7 +605,7 @@ ListItem(){
 
 > **说明：**
 >
-> 页面的下拉刷新操作推荐使用[Refresh](../../../zh-cn/application-dev/reference/arkui-cj/cj-scroll-swipe-refresh.md)组件实现。
+> 页面的下拉刷新操作推荐使用[Refresh](../reference/arkui-cj/cj-scroll-swipe-refresh.md)组件实现。
 
 ## 编辑列表
 

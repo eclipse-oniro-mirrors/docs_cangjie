@@ -12,7 +12,7 @@
 
 键值型数据库，通过options中encrypt参数来设置是否加密，默认为false，表示不加密。encrypt参数为true时表示加密。
 
-具体接口及功能，请参见[分布式键值数据库](../../../zh-cn/application-dev/reference/ArkData/cj-apis-distributed_kv_store.md)。
+具体接口及功能，请参见[分布式键值数据库](../reference/ArkData/cj-apis-distributed_kv_store.md)。
 
 1. 获取context。
 
@@ -83,7 +83,7 @@
 
 关系型数据库，通过StoreConfig中encrypt属性来设置是否加密，默认为false，表示不加密。encrypt参数为true时表示加密。
 
-具体接口及功能，请参见[关系型数据库](../../../zh-cn/application-dev/reference/ArkData/cj-apis-relational_store.md)。
+具体接口及功能，请参见[关系型数据库](../reference/ArkData/cj-apis-relational_store.md)。
 
 1. 获取context。
 

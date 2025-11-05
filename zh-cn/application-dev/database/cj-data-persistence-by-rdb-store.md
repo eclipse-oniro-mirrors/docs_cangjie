@@ -34,7 +34,7 @@
 
 ## 接口说明
 
-以下是关系型数据库持久化功能的相关接口，更多接口及使用方式请参见[关系型数据库](../../../zh-cn/application-dev/reference/ArkData/cj-apis-relational_store.md)。
+以下是关系型数据库持久化功能的相关接口，更多接口及使用方式请参见[关系型数据库](../reference/ArkData/cj-apis-relational_store.md)。
 
 | 接口名称 | 描述 |
 | -------- | -------- |
@@ -110,7 +110,7 @@
     >
     > - 应用创建的数据库与其上下文（Context）有关，即使使用同样的数据库名称，但不同的应用上下文，会产生多个数据库，例如每个Ability都有各自的上下文。
     > - 当应用首次获取数据库（调用getRdbStore）后，在应用沙箱内会产生对应的数据库文件。使用数据库的过程中，在与数据库文件相同的目录下可能会产生以-wal和-shm结尾的临时文件。此时若开发者希望移动数据库文件到其它地方使用查看，则需要同时移动这些临时文件，当应用被卸载完成后，其在设备上产生的数据库文件及临时文件也会被移除。
-    > - 错误码的详细介绍请参见[通用错误码](../../../zh-cn/application-dev/reference/cj-errorcode-universal.md)和[关系型数据库错误码](../../../zh-cn/application-dev/reference/ArkData/cj-errorcode-data-rdb.md)。
+    > - 错误码的详细介绍请参见[通用错误码](../reference/cj-errorcode-universal.md)和[关系型数据库错误码](../reference/ArkData/cj-errorcode-data-rdb.md)。
 
 2. 获取到RdbStore后，调用insert()接口插入数据。示例代码如下所示：
 
@@ -214,7 +214,7 @@
 
 6. 从备份数据库中恢复数据。关系型数据库支持两种方式：恢复手动备份数据和恢复自动备份数据（仅系统应用可用），详情请参见[关系型数据库数据恢复](cj-data-backup-and-restore.md#关系型数据库数据恢复)。
 
-    此处以调用[restore](../../../zh-cn/application-dev/reference/ArkData/cj-apis-relational_store.md#func-restorestring)接口恢复手动备份数据为例：
+    此处以调用[restore](../reference/ArkData/cj-apis-relational_store.md#func-restorestring)接口恢复手动备份数据为例：
 
     <!-- compile -->
 

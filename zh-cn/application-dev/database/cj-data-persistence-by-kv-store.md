@@ -13,7 +13,7 @@
 
 ## 接口说明
 
-以下是键值型数据库持久化功能的相关接口，大部分为异步接口。异步接口均有callback和Promise两种返回形式，下表均以callback形式为例，更多接口及使用方式请参见[分布式键值数据库](../../../zh-cn/application-dev/reference/ArkData/cj-apis-distributed_kv_store.md)。
+以下是键值型数据库持久化功能的相关接口，大部分为异步接口。异步接口均有callback和Promise两种返回形式，下表均以callback形式为例，更多接口及使用方式请参见[分布式键值数据库](../reference/ArkData/cj-apis-distributed_kv_store.md)。
 
 | 接口名称 | 描述 |
 | -------- | -------- |

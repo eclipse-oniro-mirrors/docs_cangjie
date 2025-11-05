@@ -4,7 +4,7 @@
 
 ## 开发步骤
 
-图像变换相关API的详细介绍请参见[API参考](../../../../zh-cn/application-dev/reference/ImageKit/cj-apis-image.md#class-pixelmap)。
+图像变换相关API的详细介绍请参见[API参考](../../reference/ImageKit/cj-apis-image.md#class-pixelmap)。
 
 1. 完成[图片解码](./cj-image-decoding.md)，获取PixelMap对象。
 

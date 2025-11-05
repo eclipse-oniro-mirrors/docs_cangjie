@@ -9,9 +9,9 @@
 ![file-open](figures/file-open.jpeg)
 
 ## 接口关键参数说明
-开发者通过调用[startAbility](../../../zh-cn/application-dev/reference/AbilityKit/cj-apis-app-ability.md#func-startabilitywant)接口即可实现由已安装的垂域应用来打开文件。
+开发者通过调用[startAbility](../reference/AbilityKit/cj-apis-app-ability.md#func-startabilitywant)接口即可实现由已安装的垂域应用来打开文件。
 
-**表1** startAbility请求中[Want](../../../zh-cn/application-dev/reference/AbilityKit/cj-apis-app-ability.md#class-want)相关参数说明
+**表1** startAbility请求中[Want](../reference/AbilityKit/cj-apis-app-ability.md#class-want)相关参数说明
 
 | 参数名称 | 类型   | 是否必填 | 说明       |
 |----------|--------|----------|----------|
@@ -20,7 +20,7 @@
 | parameters | String      | 否         | 表示由系统定义，由开发者按需赋值的自定义参数，文件打开场景请参见表2。                                                                                                                                                                                       |
 | flags | UInt32 | 否 | 表示处理方式，文件打开场景请参见表3。                                                                                                                                                                                       |
 
-**表2** [parameters](../../../zh-cn/application-dev/reference/AbilityKit/cj-apis-app-ability.md#enum-params)相关参数说明
+**表2** [parameters](../reference/AbilityKit/cj-apis-app-ability.md#enum-params)相关参数说明
 
 | 参数名称                              | 类型    | 说明                                                                                                                                                                |
 |---------------------------------------|---------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -28,7 +28,7 @@
 | ohos.ability.params.showDefaultPicker | Bool | 表示是否强制展示文件打开方式的选择弹框，缺省为false。<br/>- false：表示由系统策略或默认应用设置决定直接拉起文件打开应用还是展示弹框。<br/>- true：表示始终展示弹框。                                                                            |
 | showCaller                            | Bool | 表示调用方本身是否作为目标方应用之一参与匹配，缺省为false。<br/>- false：不参与匹配。<br/>- true：参与匹配。                                                                            |
 
-**表3** [flags](../../../zh-cn/application-dev/reference/AbilityKit/cj-apis-app-ability.md#enum-flags)相关参数说明
+**表3** [flags](../reference/AbilityKit/cj-apis-app-ability.md#enum-flags)相关参数说明
 
 | 参数名称                       | 值         | 说明                       |
 |--------------------------------|------------|----------------------------|

@@ -1,10 +1,10 @@
 # 显式Want与隐式Want匹配规则
 
-在启动目标应用组件时，会通过显式[Want](../../../zh-cn/application-dev/reference/AbilityKit/cj-apis-app-ability-want.md#class-want)或者隐式[Want](../../../zh-cn/application-dev/reference/AbilityKit/cj-apis-app-ability-want.md#class-want)进行目标应用组件的匹配。本章所述的匹配规则是：调用方传入的[Want](../../../zh-cn/application-dev/reference/AbilityKit/cj-apis-app-ability-want.md#class-want)参数中设置的参数如何与目标应用组件声明的配置文件进行匹配。
+在启动目标应用组件时，会通过显式[Want](../reference/AbilityKit/cj-apis-app-ability-want.md#class-want)或者隐式[Want](../reference/AbilityKit/cj-apis-app-ability-want.md#class-want)进行目标应用组件的匹配。本章所述的匹配规则是：调用方传入的[Want](../reference/AbilityKit/cj-apis-app-ability-want.md#class-want)参数中设置的参数如何与目标应用组件声明的配置文件进行匹配。
 
 ## 显式Want匹配原理
 
-显式[Want](../../../zh-cn/application-dev/reference/AbilityKit/cj-apis-app-ability-want.md#class-want)匹配原理如下表所示。
+显式[Want](../reference/AbilityKit/cj-apis-app-ability-want.md#class-want)匹配原理如下表所示。
 
 | 名称 | 类型 | 匹配项 | 必选 | 规则 |
 | -------- | -------- | -------- | -------- | -------- |
@@ -21,7 +21,7 @@
 
 ## 隐式Want匹配原理
 
-隐式[Want](../../../zh-cn/application-dev/reference/AbilityKit/cj-apis-app-ability-want.md#class-want)匹配原理如下表所示。
+隐式[Want](../reference/AbilityKit/cj-apis-app-ability-want.md#class-want)匹配原理如下表所示。
 
 | 名称        | 类型                           | 匹配项 | 必选 | 规则                                                         |
 | ----------- | ------------------------------ | ------ | ---- | ------------------------------------------------------------ |

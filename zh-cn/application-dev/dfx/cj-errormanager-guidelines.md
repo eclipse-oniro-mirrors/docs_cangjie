@@ -8,7 +8,7 @@
 
 ## 接口说明
 
-应用错误管理接口由[errorManager](../../../zh-cn/application-dev/reference/AbilityKit/cj-apis-app-ability-error_manager.md#class-errormanager)模块提供，开发者可以通过import引入，详情请参见[开发示例](#开发示例)。
+应用错误管理接口由[errorManager](../reference/AbilityKit/cj-apis-app-ability-error_manager.md#class-errormanager)模块提供，开发者可以通过import引入，详情请参见[开发示例](#开发示例)。
 
 **错误管理接口功能介绍：**
 

@@ -4,7 +4,7 @@
 
 ## 开发步骤
 
-图片编码相关API的详细介绍请参见：[图片编码接口说明](../../../../zh-cn/application-dev/reference/ImageKit/cj-apis-image.md#class-imagepacker)。
+图片编码相关API的详细介绍请参见：[图片编码接口说明](../../reference/ImageKit/cj-apis-image.md#class-imagepacker)。
 
 ### 图片编码进文件流
 

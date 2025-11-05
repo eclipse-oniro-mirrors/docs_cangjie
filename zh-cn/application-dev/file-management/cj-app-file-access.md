@@ -4,7 +4,7 @@
 
 ## 接口说明
 
-开发者通过基础文件操作接口（[ohos.file_fs](../../../zh-cn/application-dev/reference/CoreFileKit/cj-apis-file_fs.md)）实现应用文件访问能力，主要功能如下表所示。
+开发者通过基础文件操作接口（[ohos.file_fs](../reference/CoreFileKit/cj-apis-file_fs.md)）实现应用文件访问能力，主要功能如下表所示。
 
 | 接口名       | 功能                   | 接口类型 |
 | ------------ | ---------------------- | -------- |

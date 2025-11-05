@@ -14,7 +14,7 @@
 
 ## 加载网络页面
 
-开发者可以在Web组件创建时，指定默认加载的网络页面 。[Web组件](../../../zh-cn/application-dev/reference/arkui-cj/cj-web-web.md#web)的第一个参数变量src不能通过状态变量（例如：@State）动态更改地址。
+开发者可以在Web组件创建时，指定默认加载的网络页面 。[Web组件](../reference/arkui-cj/cj-web-web.md#web)的第一个参数变量src不能通过状态变量（例如：@State）动态更改地址。
 
 在下面的示例中，在Web组件加载完“www.example.com”页面后，开发者可通过loadUrl接口将此Web组件显示页面变更为“www.example1.com”。
 
@@ -134,7 +134,7 @@ class EntryView {
 
 加载沙箱路径下的本地页面文件示例如下：
 
-1. 通过构造的单例对象GlobalContext获取沙箱路径，需要开启应用中文件系统的访问[fileAccess](../../../zh-cn/application-dev/reference/arkui-cj/cj-web-web.md#func-fileaccessbool)权限。
+1. 通过构造的单例对象GlobalContext获取沙箱路径，需要开启应用中文件系统的访问[fileAccess](../reference/arkui-cj/cj-web-web.md#func-fileaccessbool)权限。
 
     <!-- compile -->
 

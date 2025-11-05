@@ -24,9 +24,9 @@
 
 - 系统组件：ArkUI框架中默认内置的基础和容器组件，可直接被开发者调用，比如示例中的Column、Text、Divider、Button。
 
-- [属性方法](../../../../zh-cn/application-dev/reference/arkui-cj/cj-universal-attributes.md)：组件可以通过链式调用配置多项属性，如fontSize()、width()、height()、backgroundColor()等。
+- [属性方法](../../reference/arkui-cj/cj-universal-attributes.md)：组件可以通过链式调用配置多项属性，如fontSize()、width()、height()、backgroundColor()等。
 
-- [事件方法](../../../../zh-cn/application-dev/reference/arkui-cj/cj-universal-events.md)：组件可以通过链式调用设置多个事件的响应逻辑，如跟随在Button后面的onClick()。
+- [事件方法](../../reference/arkui-cj/cj-universal-events.md)：组件可以通过链式调用设置多个事件的响应逻辑，如跟随在Button后面的onClick()。
 
 除此之外，仓颉扩展了多种语法范式来使开发更加便捷：
 

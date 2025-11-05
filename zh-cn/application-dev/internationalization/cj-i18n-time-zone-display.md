@@ -6,7 +6,7 @@
 
 ## 开发步骤
 
-接口具体使用方法和说明请参见[getDisplayName](../../../zh-cn/application-dev/reference/LocalizationKit/cj-apis-i18n.md#func-getdisplaynamestring)的API接口文档。
+接口具体使用方法和说明请参见[getDisplayName](../reference/LocalizationKit/cj-apis-i18n.md#func-getdisplaynamestring)的API接口文档。
 
 1. 导入模块。
 

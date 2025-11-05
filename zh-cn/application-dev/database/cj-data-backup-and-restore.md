@@ -12,7 +12,7 @@
 
 ## 键值型数据库备份、恢复与删除
 
-键值型数据库，通过backup接口实现数据库备份，通过restore接口实现数据库恢复，通过deletebackup接口删除数据库备份。具体接口及功能，请参见[分布式键值数据库](../../../zh-cn/application-dev/reference/ArkData/cj-apis-distributed_kv_store.md)。
+键值型数据库，通过backup接口实现数据库备份，通过restore接口实现数据库恢复，通过deletebackup接口删除数据库备份。具体接口及功能，请参见[分布式键值数据库](../reference/ArkData/cj-apis-distributed_kv_store.md)。
 
 1. 创建数据库。
 
@@ -141,7 +141,7 @@
 
 ### 手动备份
 
-手动备份：通过调用[backup](../../../zh-cn/application-dev/reference/ArkData/cj-apis-relational_store.md#func-backupstring)接口实现数据库手动备份。示例如下：
+手动备份：通过调用[backup](../reference/ArkData/cj-apis-relational_store.md#func-backupstring)接口实现数据库手动备份。示例如下：
 
 <!-- compile -->
 

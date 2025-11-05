@@ -6,11 +6,11 @@
 
 1. 确定密钥别名keyAlias，密钥别名最大长度为128字节。
 
-2. 初始化参数集。[HuksOptions](../../../../zh-cn/application-dev/reference/UniversalKeystoreKit/cj-apis-security_huks.md#class-huksoptions)中的properties字段中的参数必须包含[HUKS_TAG_ATTESTATION_CHALLENGE](../../../../zh-cn/application-dev/reference/UniversalKeystoreKit/cj-apis-security_huks.md#enum-hukstag)属性，可选参数包含[HUKS_TAG_ATTESTATION_ID_VERSION_INFO](../../../../zh-cn/application-dev/reference/UniversalKeystoreKit/cj-apis-security_huks.md#enum-hukstag)，[HUKS_TAG_ATTESTATION_ID_ALIAS](../../../../zh-cn/application-dev/reference/UniversalKeystoreKit/cj-apis-security_huks.md#enum-hukstag)属性。
+2. 初始化参数集。[HuksOptions](../../reference/UniversalKeystoreKit/cj-apis-security_huks.md#class-huksoptions)中的properties字段中的参数必须包含[HUKS_TAG_ATTESTATION_CHALLENGE](../../reference/UniversalKeystoreKit/cj-apis-security_huks.md#enum-hukstag)属性，可选参数包含[HUKS_TAG_ATTESTATION_ID_VERSION_INFO](../../reference/UniversalKeystoreKit/cj-apis-security_huks.md#enum-hukstag)，[HUKS_TAG_ATTESTATION_ID_ALIAS](../../reference/UniversalKeystoreKit/cj-apis-security_huks.md#enum-hukstag)属性。
 
 3. 生成非对称密钥，具体请参考[密钥生成](./cj-huks-key-generation-overview.md)。
 
-4. 将密钥别名与参数集作为参数传入[huks.attestKeyItem](../../../../zh-cn/application-dev/reference/UniversalKeystoreKit/cj-apis-security_huks.md#func-attestkeyitemstring-huksoptions)方法中，即可证明密钥。
+4. 将密钥别名与参数集作为参数传入[huks.attestKeyItem](../../reference/UniversalKeystoreKit/cj-apis-security_huks.md#func-attestkeyitemstring-huksoptions)方法中，即可证明密钥。
 
 <!-- compile -->
 

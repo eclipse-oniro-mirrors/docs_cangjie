@@ -14,7 +14,7 @@
 
 - 每个分支内部的构建函数必须遵循构建函数的规则，并创建一个或多个组件。无法创建组件的空构建函数会产生语法错误。
 
-- 某些容器组件限制子组件的类型或数量，将条件渲染语句用于这些组件内时，这些限制将同样应用于条件渲染语句内创建的组件。例如，[Grid](../../../../zh-cn/application-dev/reference/arkui-cj/cj-scroll-swipe-grid.md)容器组件的子组件仅支持[GridItem](../../../../zh-cn/application-dev/reference/arkui-cj/cj-scroll-swipe-griditem.md)组件，在Grid内使用条件渲染语句时，条件渲染语句内仅允许使用GridItem组件。
+- 某些容器组件限制子组件的类型或数量，将条件渲染语句用于这些组件内时，这些限制将同样应用于条件渲染语句内创建的组件。例如，[Grid](../../reference/arkui-cj/cj-scroll-swipe-grid.md)容器组件的子组件仅支持[GridItem](../../reference/arkui-cj/cj-scroll-swipe-griditem.md)组件，在Grid内使用条件渲染语句时，条件渲染语句内仅允许使用GridItem组件。
 
 ## 更新机制
 

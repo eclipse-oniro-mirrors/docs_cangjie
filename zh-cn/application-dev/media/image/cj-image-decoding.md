@@ -4,7 +4,7 @@
 
 ## 开发步骤
 
-图片解码相关API的详细介绍请参见：[图片解码API说明](../../../../zh-cn/application-dev/reference/ImageKit/cj-apis-image.md#class-imagesource)。
+图片解码相关API的详细介绍请参见：[图片解码API说明](../../reference/ImageKit/cj-apis-image.md#class-imagesource)。
 
 1. 全局导入Image模块。
 
@@ -15,7 +15,7 @@
     ```
 
 2. 获取图片。
-    - 方法一：通过沙箱路径获取图片的文件描述符。具体请参考[file.fs API参考文档](../../../../zh-cn/application-dev/reference/CoreFileKit/cj-apis-file_fs.md)。
+    - 方法一：通过沙箱路径获取图片的文件描述符。具体请参考[file.fs API参考文档](../../reference/CoreFileKit/cj-apis-file_fs.md)。
       该方法需要先导入kit.CoreFileKit模块和kit.AbilityKit模块。
 
         <!-- compile -->
@@ -36,7 +36,7 @@
         let fd = file.fd 
         ```
 
-    - 方法二：通过资源管理器获取资源文件的Array\<UInt8>。具体请参考[ResourceManager API参考文档](../../../../zh-cn/application-dev/reference/LocalizationKit/cj-apis-resource_manager.md#func-getrawfilecontentstring)。
+    - 方法二：通过资源管理器获取资源文件的Array\<UInt8>。具体请参考[ResourceManager API参考文档](../../reference/LocalizationKit/cj-apis-resource_manager.md#func-getrawfilecontentstring)。
 
         <!-- compile -->
 
@@ -62,7 +62,7 @@
         }
         ```
 
-    - 方法四：通过资源管理器获取资源文件的RawFileDescriptor。具体请参考[ResourceManager API参考文档](../../../../zh-cn/application-dev/reference/LocalizationKit/cj-apis-resource_manager.md#func-getrawfdstring)。
+    - 方法四：通过资源管理器获取资源文件的RawFileDescriptor。具体请参考[ResourceManager API参考文档](../../reference/LocalizationKit/cj-apis-resource_manager.md#func-getrawfdstring)。
 
         <!-- compile -->
 

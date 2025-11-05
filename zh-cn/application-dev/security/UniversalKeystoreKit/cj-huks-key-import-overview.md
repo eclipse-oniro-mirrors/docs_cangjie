@@ -38,7 +38,7 @@
 
 > **说明：**
 >
-> 加密导入密钥时，协商算法支持ECDH和X25519，协商后的Shared_Key使用AES-GCM算法加密Caller_Kek。对应算法套件定义见[HuksUnwrapSuite](../../../../zh-cn/application-dev/reference/UniversalKeystoreKit/cj-apis-security_huks.md#class-huksunwrapsuite)。
+> 加密导入密钥时，协商算法支持ECDH和X25519，协商后的Shared_Key使用AES-GCM算法加密Caller_Kek。对应算法套件定义见[HuksUnwrapSuite](../../reference/UniversalKeystoreKit/cj-apis-security_huks.md#class-huksunwrapsuite)。
 
 ### 加密导入密钥材料格式
 

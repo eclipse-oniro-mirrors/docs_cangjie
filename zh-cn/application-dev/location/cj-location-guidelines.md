@@ -8,19 +8,19 @@
 
 ## 接口说明
 
-获取设备的位置信息所使用的接口如下，详细说明参见：[Location Kit](../../../zh-cn/application-dev/reference/LocationKit/cj-apis-geo_location_manager.md)。
+获取设备的位置信息所使用的接口如下，详细说明参见：[Location Kit](../reference/LocationKit/cj-apis-geo_location_manager.md)。
 
 本模块能力仅支持WGS-84坐标系。
 
 | 接口名 | 功能描述 |
 | -------- | -------- |
-| [on(CallbackType, LocationRequest, Callback1Argument\<Location>)](../../../zh-cn/application-dev/reference/LocationKit/cj-apis-geo_location_manager.md#static-func-oncallbacktype-locationrequest-callback1argumentlocation) | 开启位置变化订阅，并发起定位请求。 |
-| [off(CallbackType, Callback1Argument\<Location>)](../../../zh-cn/application-dev/reference/LocationKit/cj-apis-geo_location_manager.md#static-func-offcallbacktype-callback1argumentlocation) | 关闭位置变化订阅，并删除对应的定位请求。 |
-| [getCurrentLocation()](../../../zh-cn/application-dev/reference/LocationKit/cj-apis-geo_location_manager.md#static-func-getcurrentlocation) | 获取当前位置。|
-| [getCurrentLocation(CurrentLocationRequest)](../../../zh-cn/application-dev/reference/LocationKit/cj-apis-geo_location_manager.md#static-func-getcurrentlocationcurrentlocationrequest) | 获取当前位置。|
-| [getCurrentLocation(SingleLocationRequest)](../../../zh-cn/application-dev/reference/LocationKit/cj-apis-geo_location_manager.md#static-func-getcurrentlocationsinglelocationrequest) | 获取当前位置。|
-| [getLastLocation()](../../../zh-cn/application-dev/reference/LocationKit/cj-apis-geo_location_manager.md#static-func-getlastlocation) | 获取最近一次定位结果。 |
-| [isLocationEnabled()](../../../zh-cn/application-dev/reference/LocationKit/cj-apis-geo_location_manager.md#static-func-islocationenabled) | 判断位置服务是否已经开启。 |
+| [on(CallbackType, LocationRequest, Callback1Argument\<Location>)](../reference/LocationKit/cj-apis-geo_location_manager.md#static-func-oncallbacktype-locationrequest-callback1argumentlocation) | 开启位置变化订阅，并发起定位请求。 |
+| [off(CallbackType, Callback1Argument\<Location>)](../reference/LocationKit/cj-apis-geo_location_manager.md#static-func-offcallbacktype-callback1argumentlocation) | 关闭位置变化订阅，并删除对应的定位请求。 |
+| [getCurrentLocation()](../reference/LocationKit/cj-apis-geo_location_manager.md#static-func-getcurrentlocation) | 获取当前位置。|
+| [getCurrentLocation(CurrentLocationRequest)](../reference/LocationKit/cj-apis-geo_location_manager.md#static-func-getcurrentlocationcurrentlocationrequest) | 获取当前位置。|
+| [getCurrentLocation(SingleLocationRequest)](../reference/LocationKit/cj-apis-geo_location_manager.md#static-func-getcurrentlocationsinglelocationrequest) | 获取当前位置。|
+| [getLastLocation()](../reference/LocationKit/cj-apis-geo_location_manager.md#static-func-getlastlocation) | 获取最近一次定位结果。 |
+| [isLocationEnabled()](../reference/LocationKit/cj-apis-geo_location_manager.md#static-func-islocationenabled) | 判断位置服务是否已经开启。 |
 
 ## 开发步骤
 
@@ -49,12 +49,12 @@
     }
     ```
 
-    如果位置开关未开启，可以拉起全局开关设置弹框，引导用户打开位置开关，具体可参考[拉起全局开关设置弹框](../../../zh-cn/application-dev/reference/AbilityKit/cj-apis-ability_access_ctrl.md#func-requestglobalswitchcontext-switchtype-asynccallbackbool)。
+    如果位置开关未开启，可以拉起全局开关设置弹框，引导用户打开位置开关，具体可参考[拉起全局开关设置弹框](../reference/AbilityKit/cj-apis-ability_access_ctrl.md#func-requestglobalswitchcontext-switchtype-asynccallbackbool)。
 
 4. 单次获取当前设备位置。多用于查看当前位置、签到打卡、服务推荐等场景。
     - 获取当前位置。<br/>
 
-        首先要实例化[SingleLocationRequest](../../../zh-cn/application-dev/reference/LocationKit/cj-apis-geo_location_manager.md#class-singlelocationrequest)对象，用于告知系统该向应用提供何种类型的位置服务，以及单次定位超时时间。<br/>
+        首先要实例化[SingleLocationRequest](../reference/LocationKit/cj-apis-geo_location_manager.md#class-singlelocationrequest)对象，用于告知系统该向应用提供何种类型的位置服务，以及单次定位超时时间。<br/>
 
         - 设置LocatingPriority：<br/>
             如果对位置的返回精度要求较高，建议LocatingPriority参数优先选择PRIORITY_ACCURACY，会将一段时间内精度较好的结果返回给应用。<br/>

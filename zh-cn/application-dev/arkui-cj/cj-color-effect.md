@@ -6,9 +6,9 @@
 
 | 接口 | 说明 |
 | :-------- | :-------- |
-| [linearGradient](../../../zh-cn/application-dev/reference/arkui-cj/cj-universal-attribute-gradientcolor.md#func-lineargradientoptionfloat64-gradientdirection-arraycolorfloat64-bool) | 为当前组件添加线性渐变的颜色渐变效果。 |
-| [sweepGradient](../../../zh-cn/application-dev/reference/arkui-cj/cj-universal-attribute-gradientcolor.md#func-sweepgradientlengthlength-float64-float64-float64-arraycolorfloat64-bool) | 为当前组件添加角度渐变的颜色渐变效果。 |
-| [radialGradient](../../../zh-cn/application-dev/reference/arkui-cj/cj-universal-attribute-gradientcolor.md#func-radialgradientlengthlength-float64-arraycolorfloat64-bool) | 为当前组件添加径向渐变的颜色渐变效果。 |
+| [linearGradient](../reference/arkui-cj/cj-universal-attribute-gradientcolor.md#func-lineargradientoptionfloat64-gradientdirection-arraycolorfloat64-bool) | 为当前组件添加线性渐变的颜色渐变效果。 |
+| [sweepGradient](../reference/arkui-cj/cj-universal-attribute-gradientcolor.md#func-sweepgradientlengthlength-float64-float64-float64-arraycolorfloat64-bool) | 为当前组件添加角度渐变的颜色渐变效果。 |
+| [radialGradient](../reference/arkui-cj/cj-universal-attribute-gradientcolor.md#func-radialgradientlengthlength-float64-arraycolorfloat64-bool) | 为当前组件添加径向渐变的颜色渐变效果。 |
 
 ## 为组件添加线性渐变效果
 

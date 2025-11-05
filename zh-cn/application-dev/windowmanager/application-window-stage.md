@@ -27,7 +27,7 @@
 
 ## 接口说明
 
-上述场景涉及的常用接口如下表所示。更多API说明请参见[API参考](../../../zh-cn/application-dev/reference/arkui-cj/cj-apis-window.md)。
+上述场景涉及的常用接口如下表所示。更多API说明请参见[API参考](../reference/arkui-cj/cj-apis-window.md)。
 
 | 实例名         | 接口名                                                       | 描述                                                         |
 | -------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -48,7 +48,7 @@
 
 ## 设置应用主窗口
 
-在`Stage`模型下，应用主窗口由`UIAbility`创建并维护生命周期。在`UIAbility`的`onWindowStageCreate`回调中，通过`WindowStage`获取应用主窗口，即可对其进行属性设置等操作。还可以在应用配置文件中设置应用主窗口的属性，如最大窗口宽度maxWindowWidth等，详见[module.json5配置文件中的abilities标签](../../../zh-cn/application-dev/cj-start/basic-knowledge/module-configuration-file.md#abilities标签)。
+在`Stage`模型下，应用主窗口由`UIAbility`创建并维护生命周期。在`UIAbility`的`onWindowStageCreate`回调中，通过`WindowStage`获取应用主窗口，即可对其进行属性设置等操作。还可以在应用配置文件中设置应用主窗口的属性，如最大窗口宽度maxWindowWidth等，详见[module.json5配置文件中的abilities标签](../cj-start/basic-knowledge/module-configuration-file.md#abilities标签)。
 
 ### 开发步骤
 
@@ -87,7 +87,7 @@ class MainAbility <: UIAbility {
 开发者可以按需创建应用子窗口，如弹窗等，并对其进行属性设置等操作。
 
 > **说明：**  
-> 以下几种场景不建议使用子窗口，建议优先考虑使用控件[overlay](../../../zh-cn/application-dev/reference/arkui-cj/cj-universal-attribute-overlay.md)能力实现。  
+> 以下几种场景不建议使用子窗口，建议优先考虑使用控件[overlay](../reference/arkui-cj/cj-universal-attribute-overlay.md)能力实现。  
 > - 移动设备（手机）场景下子窗不能超出处于悬浮窗、分屏状态的主窗口范围，与控件一致。  
 > - 分屏窗口与自由窗口模式下，主窗口位置大小发生改变时控件实时跟随变化能力优于子窗。  
 > - 部分设备平台下根据实际的系统配置限制，子窗只有系统默认的动效和圆角阴影，应用无法设置，自由度低。
@@ -305,7 +305,7 @@ class MainAbility <: UIAbility {
 
 ### 开发步骤
 
-**前提条件：** 创建`WindowType.TypeFloat`即悬浮窗类型的窗口，需要申请`ohos.permission.SYSTEM_FLOAT_WINDOW`权限，配置方式请参见[system_basic等级应用申请权限的方式](../../../zh-cn/application-dev/security/AccessToken/cj-determine-application-mode.md#system_basic等级应用申请权限的方式)。
+**前提条件：** 创建`WindowType.TypeFloat`即悬浮窗类型的窗口，需要申请`ohos.permission.SYSTEM_FLOAT_WINDOW`权限，配置方式请参见[system_basic等级应用申请权限的方式](../security/AccessToken/cj-determine-application-mode.md#system_basic等级应用申请权限的方式)。
 
 1. 创建悬浮窗。
 

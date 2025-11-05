@@ -6,7 +6,7 @@
 
 ## 开发步骤及注意事项
 
-详细的API说明请参见[AVImageGenerator API参考](../../../../zh-cn/application-dev/reference/MediaKit/cj-apis-multimedia_media.md#class-avimagegenerator)。
+详细的API说明请参见[AVImageGenerator API参考](../../reference/MediaKit/cj-apis-multimedia_media.md#class-avimagegenerator)。
 
 1. 使用createAVImageGenerator()创建实例。
 
@@ -16,11 +16,11 @@
    >
    > 开发者需根据实际情况，确认资源有效性并设置fdSrc：
    >
-   > - 可以使用ResourceManager.getRawFd打开HAP资源文件描述符，使用方法请参见[ResourceManager API参考](../../../../zh-cn/application-dev/reference/LocalizationKit/cj-apis-resource_manager.md#func-getrawfdstring)。
+   > - 可以使用ResourceManager.getRawFd打开HAP资源文件描述符，使用方法请参见[ResourceManager API参考](../../reference/LocalizationKit/cj-apis-resource_manager.md#func-getrawfdstring)。
    >
    > - 也可以使用应用沙箱路径访问对应资源（必须确认资源文件可用），请参见[获取应用文件路径](../../file-management/cj-app-sandbox-directory.md#应用文件目录与应用文件路径)。应用沙箱的介绍及如何向应用沙箱推送文件，请参见[文件管理](../../file-management/cj-app-sandbox-directory.md)。
    >
-   > - 不同AVImageGenerator或者[AVMetadataExtractor](../../../../zh-cn/application-dev/reference/MediaKit/cj-apis-multimedia_media.md#class-avmetadataextractor)，如果需要操作同一资源，需要多次打开文件描述符，不要共用同一文件描述符。
+   > - 不同AVImageGenerator或者[AVMetadataExtractor](../../reference/MediaKit/cj-apis-multimedia_media.md#class-avmetadataextractor)，如果需要操作同一资源，需要多次打开文件描述符，不要共用同一文件描述符。
 
 3. 获取指定时间图像：调用fetchFrameByTime()，可以获取到一个PixelMap对象，该对象可用于图片显示。
 

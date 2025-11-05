@@ -1,10 +1,10 @@
 # UIAbility组件基本用法
 
-[UIAbility](../../../zh-cn/application-dev/reference/AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiability)组件的基本用法包括：指定UIAbility的启动页面以及获取uiability的上下文信息[UIAbilityContext](../../../zh-cn/application-dev/reference/AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiabilitycontext)。
+[UIAbility](../reference/AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiability)组件的基本用法包括：指定UIAbility的启动页面以及获取uiability的上下文信息[UIAbilityContext](../reference/AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiabilitycontext)。
 
 ## 指定UIAbility的启动页面
 
-应用中的[UIAbility](../../../zh-cn/application-dev/reference/AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiability)在启动过程中，需要指定启动页面，否则应用启动后会因为没有默认加载页面而导致白屏。可以在UIAbility的[onWindowStageCreate()](../../../zh-cn/application-dev/reference/AbilityKit/cj-apis-app-ability-ui_ability.md#func-onwindowstagecreatewindowstage)生命周期回调中，通过[WindowStage](../../../zh-cn/application-dev/reference/arkui-cj/cj-apis-window.md#class-windowstage)对象的[loadContent()](../../../zh-cn/application-dev/reference/arkui-cj/cj-apis-window.md#class-windowstage)方法设置启动页面。
+应用中的[UIAbility](../reference/AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiability)在启动过程中，需要指定启动页面，否则应用启动后会因为没有默认加载页面而导致白屏。可以在UIAbility的[onWindowStageCreate()](../reference/AbilityKit/cj-apis-app-ability-ui_ability.md#func-onwindowstagecreatewindowstage)生命周期回调中，通过[WindowStage](../reference/arkui-cj/cj-apis-window.md#class-windowstage)对象的[loadContent()](../reference/arkui-cj/cj-apis-window.md#class-windowstage)方法设置启动页面。
 
 <!-- compile -->
 
@@ -27,7 +27,7 @@ class MainAbility <: UIAbility {
 
 ## 获取UIAbility的上下文信息
 
-[UIAbility](../../../zh-cn/application-dev/reference/AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiability)类拥有自身的上下文信息，该信息为[UIAbilityContext](../../../zh-cn/application-dev/reference/AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiabilitycontext)类的实例，[UIAbilityContext](../../../zh-cn/application-dev/reference/AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiabilitycontext)类拥有abilityInfo、currentHapModuleInfo等属性。通过AbilityContext可以获取Ability的相关配置信息，如包代码路径、Bundle名称、Ability名称和应用程序需要的环境状态等属性信息，以及可以获取操作Ability实例的方法（如[startAbility()](../../../zh-cn/application-dev/reference/AbilityKit/cj-apis-app-ability-ui_ability.md#func-startabilitywant)、[terminateSelf()](../../../zh-cn/application-dev/reference/AbilityKit/cj-apis-app-ability-ui_ability.md#func-terminateself)等）。
+[UIAbility](../reference/AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiability)类拥有自身的上下文信息，该信息为[UIAbilityContext](../reference/AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiabilitycontext)类的实例，[UIAbilityContext](../reference/AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiabilitycontext)类拥有abilityInfo、currentHapModuleInfo等属性。通过AbilityContext可以获取Ability的相关配置信息，如包代码路径、Bundle名称、Ability名称和应用程序需要的环境状态等属性信息，以及可以获取操作Ability实例的方法（如[startAbility()](../reference/AbilityKit/cj-apis-app-ability-ui_ability.md#func-startabilitywant)、[terminateSelf()](../reference/AbilityKit/cj-apis-app-ability-ui_ability.md#func-terminateself)等）。
 
 - 在UIAbility中可以通过`this.context`获取UIAbility实例的上下文信息。
 
@@ -79,7 +79,7 @@ class MainAbility <: UIAbility {
   }
   ```
 
-  也可以在导入依赖资源context模块后，再使用[UIAbilityContext](../../../zh-cn/application-dev/reference/AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiabilitycontext)前进行变量定义。
+  也可以在导入依赖资源context模块后，再使用[UIAbilityContext](../reference/AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiabilitycontext)前进行变量定义。
   
   <!-- compile -->
 
@@ -108,7 +108,7 @@ class MainAbility <: UIAbility {
   }
   ```
 
-- 当业务完成后，开发者如果想要终止当前[UIAbility](../../../zh-cn/application-dev/reference/AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiability)实例，可以通过调用[terminateSelf()](../../../zh-cn/application-dev/reference/AbilityKit/cj-apis-app-ability-ui_ability.md#func-terminateself)方法实现。
+- 当业务完成后，开发者如果想要终止当前[UIAbility](../reference/AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiability)实例，可以通过调用[terminateSelf()](../reference/AbilityKit/cj-apis-app-ability-ui_ability.md#func-terminateself)方法实现。
 
   <!-- compile -->
 

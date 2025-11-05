@@ -1,6 +1,6 @@
 # 实现属性动画
 
-通过可动画属性改变引起UI上产生的连续视觉效果，即为属性动画。属性动画是最基础易懂的动画，ArkUI提供两种属性动画接口[animateTo](../../../zh-cn/application-dev/reference/arkui-cj/cj-animation-animateto.md)、[animation](../../../zh-cn/application-dev/reference/arkui-cj/cj-animation-animation.md)驱动组件属性按照动画曲线等动画参数进行连续的变化，产生属性动画。
+通过可动画属性改变引起UI上产生的连续视觉效果，即为属性动画。属性动画是最基础易懂的动画，ArkUI提供两种属性动画接口[animateTo](../reference/arkui-cj/cj-animation-animateto.md)、[animation](../reference/arkui-cj/cj-animation-animation.md)驱动组件属性按照动画曲线等动画参数进行连续的变化，产生属性动画。
 
 |属性动画接口|作用域|原理|使用场景|
 |:---|:---|:---|:---|
@@ -13,7 +13,7 @@
 public func animateTo(value: AnimateParam, event: VoidCallback): Unit
 ```
 
-[animateTo](../../../zh-cn/application-dev/reference/arkui-cj/cj-animation-animateto.md)接口参数中，animation指定[AnimateParam对象](../../../zh-cn/application-dev/reference/arkui-cj/cj-animation-animateto.md#struct-animateparam)（包括时长、[Curve](../../../zh-cn/application-dev/reference/arkui-cj/cj-common-types.md#enum-curve)等）callback为动画的闭包函数，闭包内变量改变产生的属性动画将遵循相同的动画参数。
+[animateTo](../reference/arkui-cj/cj-animation-animateto.md)接口参数中，animation指定[AnimateParam对象](../reference/arkui-cj/cj-animation-animateto.md#struct-animateparam)（包括时长、[Curve](../reference/arkui-cj/cj-common-types.md#enum-curve)等）callback为动画的闭包函数，闭包内变量改变产生的属性动画将遵循相同的动画参数。
 
  <!-- run -->
 
@@ -164,7 +164,7 @@ class EntryView {
 
 > **说明：**
 >
-> - 在对组件的位置大小的变化做动画的时候，由于布局属性的改变会触发测量布局，性能开销大。[scale](../../../zh-cn/application-dev/reference/arkui-cj/cj-universal-attribute-transform.md#func-scalefloat32-float32-float32-length-length)属性的改变不会触发测量布局，性能开销小。因此，在组件位置大小持续发生变化的场景，如跟手触发组件大小变化的场景，推荐适用scale。
+> - 在对组件的位置大小的变化做动画的时候，由于布局属性的改变会触发测量布局，性能开销大。[scale](../reference/arkui-cj/cj-universal-attribute-transform.md#func-scalefloat32-float32-float32-length-length)属性的改变不会触发测量布局，性能开销小。因此，在组件位置大小持续发生变化的场景，如跟手触发组件大小变化的场景，推荐适用scale。
 >
 > - 属性动画应该作用于始终存在的组件，对于将要出现或者将要消失的组件的动画应该使用[转场动画](./cj-transition-overview.md)。
 >

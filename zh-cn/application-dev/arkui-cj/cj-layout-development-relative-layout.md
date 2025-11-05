@@ -38,7 +38,7 @@ RelativeContainer是一种采用相对布局的容器，支持容器内部的子
 
 锚点设置涉及子元素相对于其父元素或兄弟元素的位置依赖关系。具体而言，子元素可以将其位置锚定到相对布局容器（RelativeContainer）、辅助线（guideline）、屏障（barrier）或其他子元素上。
 
-为了准确定义锚点，RelativeContainer的子元素必须拥有唯一的组件标识（id），用于指定锚点信息。父元素RelativeContainer的标识默认为“\__container__”，其他子元素的组件标识（id）则通过[id](../../../zh-cn/application-dev/reference/arkui-cj/cj-universal-attribute-componentid.md)属性设置。
+为了准确定义锚点，RelativeContainer的子元素必须拥有唯一的组件标识（id），用于指定锚点信息。父元素RelativeContainer的标识默认为“\__container__”，其他子元素的组件标识（id）则通过[id](../reference/arkui-cj/cj-universal-attribute-componentid.md)属性设置。
 
 > **说明:**
 >
@@ -229,7 +229,7 @@ RelativeContainer是一种采用相对布局的容器，支持容器内部的子
 
 ### 设置相对于锚点的对齐位置
 
-设置了锚点之后，可以通过[alignRules](../../../zh-cn/application-dev/reference/arkui-cj/cj-universal-attribute-location.md#func-alignrulesalignruleoption)属性设置相对于锚点的对齐位置。
+设置了锚点之后，可以通过[alignRules](../reference/arkui-cj/cj-universal-attribute-location.md#func-alignrulesalignruleoption)属性设置相对于锚点的对齐位置。
 
 在水平方向上，对齐位置可以设置为HorizontalAlign.Start、HorizontalAlign.Center、HorizontalAlign.End。
 
@@ -241,7 +241,7 @@ RelativeContainer是一种采用相对布局的容器，支持容器内部的子
 
 ### 子组件位置偏移
 
-子组件经过相对位置对齐后，位置可能还不是目标位置，开发者可根据需要进行额外偏移设置额外偏移（offset）。当使用offset调整位置的组件作为锚点时，对齐位置为设置offset之前的位置。建议使用[bias](../../../zh-cn/application-dev/reference/arkui-cj/cj-universal-attribute-location.md#class-bias)来设置额外偏移。
+子组件经过相对位置对齐后，位置可能还不是目标位置，开发者可根据需要进行额外偏移设置额外偏移（offset）。当使用offset调整位置的组件作为锚点时，对齐位置为设置offset之前的位置。建议使用[bias](../reference/arkui-cj/cj-universal-attribute-location.md#class-bias)来设置额外偏移。
 
  <!-- run -->
 
@@ -469,7 +469,7 @@ class EntryView {
 
 ## 组件尺寸
 
-当同时存在前端页面设置的子组件尺寸和相对布局规则时，子组件的绘制尺寸依据约束规则确定。子组件自身设置的尺寸优先级高于相对布局规则中的对齐锚点尺寸。因此，若要使子组件与锚点严格对齐，应仅使用alignRules，避免使用[尺寸设置](../../../zh-cn/application-dev/reference/arkui-cj/cj-universal-attribute-size.md)。
+当同时存在前端页面设置的子组件尺寸和相对布局规则时，子组件的绘制尺寸依据约束规则确定。子组件自身设置的尺寸优先级高于相对布局规则中的对齐锚点尺寸。因此，若要使子组件与锚点严格对齐，应仅使用alignRules，避免使用[尺寸设置](../reference/arkui-cj/cj-universal-attribute-size.md)。
 
 > **说明:**
 >

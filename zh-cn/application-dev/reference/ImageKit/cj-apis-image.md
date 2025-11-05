@@ -1570,7 +1570,7 @@ public func readLatestImage(): Image
 
 |类型|说明|
 |:----|:----|
-|[Image](#class-Image)|返回Image实例|
+|[Image](#class-image)|返回Image实例|
 
 ### func readNextImage()
 
@@ -1588,7 +1588,7 @@ public func readNextImage(): Image
 
 |类型|说明|
 |:----|:----|
-|[Image](#class-Image)|返回Image实例|
+|[Image](#class-image)|返回Image实例|
 
 ### func on(ReceiveType, Callback0Argument)
 
@@ -1606,7 +1606,7 @@ public func on(eventType: ReceiveType, callback: Callback0Argument): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|eventType|[ReceiveType](#enum-ReceiveType)|是|-|注册事件的类型。|
+|eventType|[ReceiveType](#enum-receivetype)|是|-|注册事件的类型。|
 |callback|[Callback0Argument](../arkinterop/cj-api-callback_invoke.md#class-callback0argument)|是|-|回调函数对象。|
 
 ### func off(ReceiveType)
@@ -1625,7 +1625,7 @@ public func off(eventType: ReceiveType): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|eventType|[ReceiveType](#enum-ReceiveType)|是|-|注册事件的类型。|
+|eventType|[ReceiveType](#enum-receivetype)|是|-|注册事件的类型。|
 
 ## class ImageSource
 

@@ -48,7 +48,7 @@ HAR需要导出的接口等，可以使用`public`修饰。
 
 > **说明：**
 >
-> HAR在和宿主应用一起编译时，会把HAR的代码直接编译到宿主应用中，HAR包是一个编译中间态产物，不是最终的运行实体。运行时，HAR运行的身份信息是其宿主应用，系统会以宿主应用的版本做行为区分。如果需要在HAR中区分宿主应用的版本做不同的行为区分，可以调用[getBundleInfoForSelf](../../../../zh-cn/application-dev/reference/AbilityKit/cj-apis-bundle_manager.md#static-func-getbundleinfoforselfint32)接口，获取宿主应用的targetVersion，然后根据不同的targetVersion，做不同的逻辑处理。
+> HAR在和宿主应用一起编译时，会把HAR的代码直接编译到宿主应用中，HAR包是一个编译中间态产物，不是最终的运行实体。运行时，HAR运行的身份信息是其宿主应用，系统会以宿主应用的版本做行为区分。如果需要在HAR中区分宿主应用的版本做不同的行为区分，可以调用[getBundleInfoForSelf](../../reference/AbilityKit/cj-apis-bundle_manager.md#static-func-getbundleinfoforselfint32)接口，获取宿主应用的targetVersion，然后根据不同的targetVersion，做不同的逻辑处理。
 
 ### 导出仓颉组件
 

@@ -1,10 +1,10 @@
 # 菜单控制（Menu）
 
-Menu是菜单接口，一般用于鼠标右键弹窗、点击弹窗等。具体用法请参见[菜单控制](../../../zh-cn/application-dev/reference/arkui-cj/cj-universal-attribute-menu.md)。
+Menu是菜单接口，一般用于鼠标右键弹窗、点击弹窗等。具体用法请参见[菜单控制](../reference/arkui-cj/cj-universal-attribute-menu.md)。
 
-使用[bindContextMenu](../../../zh-cn/application-dev/reference/arkui-cj/cj-universal-attribute-menu.md#func-bindcontextmenu---unit-responsetype)并设置预览图，菜单弹出时有蒙层，此时为模态。
+使用[bindContextMenu](../reference/arkui-cj/cj-universal-attribute-menu.md#func-bindcontextmenu---unit-responsetype)并设置预览图，菜单弹出时有蒙层，此时为模态。
 
-使用[bindMenu](../../../zh-cn/application-dev/reference/arkui-cj/cj-universal-attribute-menu.md#func-bindmenu---unit)或bindContextMenu未设置预览图时，菜单弹出无蒙层，此时为非模态。
+使用[bindMenu](../reference/arkui-cj/cj-universal-attribute-menu.md#func-bindmenu---unit)或bindContextMenu未设置预览图时，菜单弹出无蒙层，此时为非模态。
 
 ## 生命周期
 

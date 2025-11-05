@@ -28,7 +28,7 @@
 
 ## 接口说明
 
-完整的Cangjie API说明以及实例代码请参见[网络连接管理](../../../zh-cn/application-dev/reference/NetworkKit/cj-apis-net-connection.md)。
+完整的Cangjie API说明以及实例代码请参见[网络连接管理](../reference/NetworkKit/cj-apis-net-connection.md)。
 
 | 接口名                                                                                        | 描述                                                                                                                                                            |
 | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -61,13 +61,13 @@
 
 2. 从@kit.NetworkKit中导入connection。
 
-3. 调用[createNetConnection](../../../zh-cn/application-dev/reference/NetworkKit/cj-apis-net-connection.md#func-createnetconnectionnetspecifier-uint32)方法，指定网络能力、网络类型和超时时间（可选，如不传入代表默认网络；创建不同于默认网络时可通过指定这些参数完成），创建一个NetConnection对象。
+3. 调用[createNetConnection](../reference/NetworkKit/cj-apis-net-connection.md#func-createnetconnectionnetspecifier-uint32)方法，指定网络能力、网络类型和超时时间（可选，如不传入代表默认网络；创建不同于默认网络时可通过指定这些参数完成），创建一个NetConnection对象。
 
-4. 调用该对象的[register()](../../../zh-cn/application-dev/reference/NetworkKit/cj-apis-net-connection.md#func-register)方法，订阅指定网络状态变化的通知。
+4. 调用该对象的[register()](../reference/NetworkKit/cj-apis-net-connection.md#func-register)方法，订阅指定网络状态变化的通知。
 
 5. 当网络可用时，会收到netAvailable事件的回调；当网络不可用时，会收到netUnavailable事件的回调。
 
-6. 当不使用该网络时，可以调用该对象的[unregister()](../../../zh-cn/application-dev/reference/NetworkKit/cj-apis-net-connection.md#func-unregister)方法，取消订阅。
+6. 当不使用该网络时，可以调用该对象的[unregister()](../reference/NetworkKit/cj-apis-net-connection.md#func-unregister)方法，取消订阅。
 
 <!-- compile -->
 
@@ -185,7 +185,7 @@ func test() {
 
 2. 从kit.NetworkKit中导入connection。
 
-3. 调用[getAllNets](../../../zh-cn/application-dev/reference/NetworkKit/cj-apis-net-connection.md#func-getallnets)方法，获取所有处于连接状态的网络列表。
+3. 调用[getAllNets](../reference/NetworkKit/cj-apis-net-connection.md#func-getallnets)方法，获取所有处于连接状态的网络列表。
 
 <!-- compile -->
 
@@ -204,11 +204,11 @@ let nets = getAllNets()
 
 2. 从kit.NetworkKit中导入connection。
 
-3. 通过调用[getDefaultNet](../../../zh-cn/application-dev/reference/NetworkKit/cj-apis-net-connection.md#func-getdefaultnet)方法，获取默认的数据网络(NetHandle)；或者通过调用[getAllNets](../../../zh-cn/application-dev/reference/NetworkKit/cj-apis-net-connection.md#func-getallnets)方法，获取所有处于连接状态的网络列表(Array\<NetHandle>)。
+3. 通过调用[getDefaultNet](../reference/NetworkKit/cj-apis-net-connection.md#func-getdefaultnet)方法，获取默认的数据网络(NetHandle)；或者通过调用[getAllNets](../reference/NetworkKit/cj-apis-net-connection.md#func-getallnets)方法，获取所有处于连接状态的网络列表(Array\<NetHandle>)。
 
-4. 调用[getNetCapabilities](../../../zh-cn/application-dev/reference/NetworkKit/cj-apis-net-connection.md#func-getnetcapabilitiesnethandle)方法，获取NetHandle对应网络的能力信息。能力信息包含了网络类型(蜂窝网络、Wi-Fi网络、以太网网络等)、网络具体能力等网络信息。
+4. 调用[getNetCapabilities](../reference/NetworkKit/cj-apis-net-connection.md#func-getnetcapabilitiesnethandle)方法，获取NetHandle对应网络的能力信息。能力信息包含了网络类型(蜂窝网络、Wi-Fi网络、以太网网络等)、网络具体能力等网络信息。
 
-5. 调用[getConnectionProperties](../../../zh-cn/application-dev/reference/NetworkKit/cj-apis-net-connection.md#func-getconnectionpropertiesnethandle)方法，获取NetHandle对应网络的连接信息。
+5. 调用[getConnectionProperties](../reference/NetworkKit/cj-apis-net-connection.md#func-getconnectionpropertiesnethandle)方法，获取NetHandle对应网络的连接信息。
 
 <!-- compile -->
 
@@ -314,7 +314,7 @@ func test() {
 
 2. 从kit.NetworkKit中导入connection。
 
-3. 调用[getAddressesByName](../../../zh-cn/application-dev/reference/NetworkKit/cj-apis-net-connection.md#func-getaddressesbynamestring)方法，使用默认网络解析主机名以获取所有IP地址。
+3. 调用[getAddressesByName](../reference/NetworkKit/cj-apis-net-connection.md#func-getaddressesbynamestring)方法，使用默认网络解析主机名以获取所有IP地址。
 
 <!-- compile -->
 

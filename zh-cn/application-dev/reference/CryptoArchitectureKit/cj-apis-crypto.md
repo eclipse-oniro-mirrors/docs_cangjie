@@ -26,7 +26,7 @@ public func createCipher(transformation: String): Cipher
 **功能：** 通过指定算法名称，获取相应的[Cipher](#class-cipher)实例。
 
 <!-- 支持的规格详见[对称密钥加解密算法规格](../cj-development-intro.md#对称密钥加解密算法规格)和[非对称密钥加解密算法规格](../cj-development-intro.md#非对称密钥加解密算法规格)。 -->
-支持的规格详见[对称密钥加解密算法规格](../../../zh-cn/application-dev/security/CryptoArchitectureKit/cj-crypto-sym-encrypt-decrypt-spec.md#对称密钥加解密算法规格)和[非对称密钥加解密算法规格](../../../zh-cn/application-dev/security/CryptoArchitectureKit/cj-crypto-asym-encrypt-decrypt-spec.md#非对称密钥加解密算法规格)。
+支持的规格详见[对称密钥加解密算法规格](../security/CryptoArchitectureKit/cj-crypto-sym-encrypt-decrypt-spec.md#对称密钥加解密算法规格)和[非对称密钥加解密算法规格](../security/CryptoArchitectureKit/cj-crypto-asym-encrypt-decrypt-spec.md#非对称密钥加解密算法规格)。
 
 **系统能力：** SystemCapability.Security.CryptoFramework.Cipher
 
@@ -225,7 +225,7 @@ public func createSymKeyGenerator(algName: String): SymKeyGenerator
 
 **功能：** 通过指定算法名称的字符串，获取相应的对称密钥生成器实例。
 
-支持的规格详见[对称密钥生成和转换规格](../../../zh-cn/application-dev/security/CryptoArchitectureKit/cj-crypto-sym-key-generation-conversion-spec.md)。
+支持的规格详见[对称密钥生成和转换规格](../security/CryptoArchitectureKit/cj-crypto-sym-key-generation-conversion-spec.md)。
 
 **系统能力：** SystemCapability.Security.CryptoFramework.Key.SymKey
 
@@ -235,7 +235,7 @@ public func createSymKeyGenerator(algName: String): SymKeyGenerator
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|algName|String|是|-|待生成对称密钥生成器的算法名称。具体取值详见[对称密钥生成和转换规格](../../../zh-cn/application-dev/security/CryptoArchitectureKit/cj-crypto-sym-key-generation-conversion-spec.md)一节中的“字符串参数”。|
+|algName|String|是|-|待生成对称密钥生成器的算法名称。具体取值详见[对称密钥生成和转换规格](../security/CryptoArchitectureKit/cj-crypto-sym-key-generation-conversion-spec.md)一节中的“字符串参数”。|
 
 **返回值：**
 

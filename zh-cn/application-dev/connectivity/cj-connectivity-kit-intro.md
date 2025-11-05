@@ -17,13 +17,13 @@
 
   BLE是Bluetooth Low Energy的缩写，意为“低功耗蓝牙”。它是一种能够在低功耗情况下进行通信的蓝牙技术，与传统蓝牙相比，BLE的功耗更低，适用于需要长时间运行的低功耗设备，如智能手表、健康监测设备、智能家居等。
 
-  详情请参见[ohos.bluetooth.ble API参考](../../../zh-cn/application-dev/reference/ConnectivityKit/cj-apis-bluetooth-ble.md)。
+  详情请参见[ohos.bluetooth.ble API参考](../reference/ConnectivityKit/cj-apis-bluetooth-ble.md)。
 
 - **A2DP模块（高级音频分发配置文件）**
 
   A2DP是Advanced Audio Distribution Profile的缩写，即高级音频分发配置文件。它是一种蓝牙协议，允许无线传输高品质音频流，例如音乐或语音通话，同时支持双向通信，因此可以用于耳机、扬声器、汽车音响等设备。
 
-  详情请参见[ohos.bluetooth.a2dp API参考](../../../zh-cn/application-dev/reference/ConnectivityKit/cj-apis-bluetooth-a2dp.md)。
+  详情请参见[ohos.bluetooth.a2dp API参考](../reference/ConnectivityKit/cj-apis-bluetooth-a2dp.md)。
 
 相关开发指南请参见：[蓝牙开发指南](./bluetooth/cj-bluetooth-overview.md)。
 
@@ -36,17 +36,17 @@ WLAN系统为用户提供接入WLAN网络功能（STA模式）、点对点的数
 - **STA模式**
   STA模式即工作站模式，可以理解为某网络中的一个工作站即客户端。当某设备具备该功能时，它可以连到另外的一个路由网络中，如家用路由器，通常用于提供网络的数据上行服务。
 
-  详情请参见[ohos.wifiManager API参考](../../../zh-cn/application-dev/reference/ConnectivityKit/cj-apis-wifi_manager.md)。
+  详情请参见[ohos.wifiManager API参考](../reference/ConnectivityKit/cj-apis-wifi_manager.md)。
 
 - **P2P模式**
   P2P模式即为Wi-Fi Direct；Wi-Fi Direct 是一种点对点连接技术，它可以在两台 STA 之间直接建立 TCP/IP 链接，并不需要AP的参与；其中一台STA会起到传统意义上的AP的作用，称为Group Owner(GO)，另外一台station则称为Group Client(GC)，像连接AP一样连接到GO。
 
-  详情请参见[ohos.wifiManager API参考](../../../zh-cn/application-dev/reference/ConnectivityKit/cj-apis-wifi_manager.md)。
+  详情请参见[ohos.wifiManager API参考](../reference/ConnectivityKit/cj-apis-wifi_manager.md)。
 
 - **AP模式**
   AP模式为加入无线局域网的成员设备（即客户端）提供下行数据业务，它提供以无线方式组建无线局域网WLAN，相当于WLAN的中心设备。
 
-  详情请参见[ohos.wifiManager API参考](../../../zh-cn/application-dev/reference/ConnectivityKit/cj-apis-wifi_manager.md)。
+  详情请参见[ohos.wifiManager API参考](../reference/ConnectivityKit/cj-apis-wifi_manager.md)。
 
 ### NFC简介
 

@@ -66,7 +66,7 @@
 | 使用弹窗 | 介绍了弹窗的应用场景与使用方法。 | - [弹窗](cj-dialog-overview.md)<br/>- [弹出框](cj-dialog-base-overview.md)<br> - [菜单控制](./cj-popup-and-menu-components-menu.md)<br/>- [不依赖UI组件的全局自定义弹出框](cj-uicontext-custom-dialog.md)<br/>- [固定样式弹出框](cj-fixes-style-dialog.md)<br/>- [气泡提示](cj-popup-and-menu-components-popup.md)<br> - [绑定模态页面](./cj-modal-overview.md)<br> - [即时反馈](./cj-create-toast.md)|
 | 显示图形| 介绍了如何显示图片、绘制自定义几何图形以及使用画布绘制自定义图形。| - [几何图形](cj-shape-drawing.md)<br/>- [画布](cj-drawing-customization-on-canvas.md) |
 | 使用动画| 介绍了组件和页面使用动画的典型场景。| - [动画](cj-animation.md)<br>- [属性动画](cj-attribute-animation-overview.md)<br>- [实现属性动画](cj-attribute-animation-apis.md)<br>- [转场动画](cj-transition-overview.md)<br>- [出现/消失转场](cj-enter-exit-transition.md)<br>- [模态转场](cj-modal-transition.md)<br>- [组件动画](cj-component-animation.md)<br>- [动画曲线](cj-curve-overview.md)<br>- [传统曲线](cj-traditional-curve.md)<br>- [动画衔接](cj-animation-smoothing.md)<br>- [模糊](cj-blur-effect.md)<br>- [阴影](cj-shadow-effect.md)<br>- [色彩](cj-color-effect.md)<br> - [帧动画](cj-animator.md)|
-|绑定事件| 介绍了事件的基本概念和如何使用通用事件和手势事件。| - [交互事件](cj-event-overview.md)<br/>- [事件分发](cj-common-events-distribute.md)<br/>-&nbsp;[触屏事件](cj-common-events-touch-screen-event.md)<br/>- [键鼠事件](cj-common-events-device-input-event.md)<br/>- [焦点事件](cj-common-events-focus-event.md)<br/>- [拖拽事件](../../../zh-cn/application-dev/reference/arkui-cj/cj-universal-event-drag.md)|
+|绑定事件| 介绍了事件的基本概念和如何使用通用事件和手势事件。| - [交互事件](cj-event-overview.md)<br/>- [事件分发](cj-common-events-distribute.md)<br/>-&nbsp;[触屏事件](cj-common-events-touch-screen-event.md)<br/>- [键鼠事件](cj-common-events-device-input-event.md)<br/>- [焦点事件](cj-common-events-focus-event.md)<br/>- [拖拽事件](../reference/arkui-cj/cj-universal-event-drag.md)|
 |使用镜像能力|介绍了镜像能力的基本概念和如何使用镜像能力。| - [使用镜像能力](./cj-mirroring-display.md)|
 |支持适老化|介绍了适老化的使用场景和使用方法。| - 支持适老化 |
 |主题设置|介绍了应用级和页面级的主题设置能力。| - [应用深浅色适配](./cj-ui-dark-light-color-adaptation.md)|
@@ -75,7 +75,7 @@
 
 - **默认单位**
 
-  表示长度的入参单位默认为vp，即入参为Int32类型、以及[Length](../../../zh-cn/application-dev/reference/arkui-cj/cj-common-types.md#interface-length)类型中的Int64、Float64单位为vp。
+  表示长度的入参单位默认为vp，即入参为Int32类型、以及[Length](../reference/arkui-cj/cj-common-types.md#interface-length)类型中的Int64、Float64单位为vp。
 
 - **异常值处理**
 

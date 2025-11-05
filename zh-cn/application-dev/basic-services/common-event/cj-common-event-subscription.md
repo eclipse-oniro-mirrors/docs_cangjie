@@ -14,12 +14,12 @@
 
 ## 接口说明
 
-详细接口见[接口文档](../../../../zh-cn/application-dev/reference/BasicServicesKit/cj-apis-common_event_manager.md)。
+详细接口见[接口文档](../../reference/BasicServicesKit/cj-apis-common_event_manager.md)。
 
 | 接口名 | 接口描述 |
 | -------- | -------- |
-| createSubscriber(subscribeInfo:&nbsp;[CommonEventSubscribeInfo](../../../../zh-cn/application-dev/reference/BasicServicesKit/cj-apis-common_event_manager.md#class-commoneventsubscribeinfo)): [CommonEventSubscriber](../../../../zh-cn/application-dev/reference/BasicServicesKit/cj-apis-common_event_manager.md#class-commoneventsubscriber)| 创建订阅者对象。 |
-| subscribe(subscriber:&nbsp;[CommonEventSubscriber](../../../../zh-cn/application-dev/reference/BasicServicesKit/cj-apis-common_event_manager.md#class-commoneventsubscriber),&nbsp;callback: ([CommonEventData](../../../../zh-cn/application-dev/reference/BasicServicesKit/cj-apis-common_event_manager.md#struct-commoneventdata)) -> Unit): Unit | 订阅公共事件。 |
+| createSubscriber(subscribeInfo:&nbsp;[CommonEventSubscribeInfo](../../reference/BasicServicesKit/cj-apis-common_event_manager.md#class-commoneventsubscribeinfo)): [CommonEventSubscriber](../../reference/BasicServicesKit/cj-apis-common_event_manager.md#class-commoneventsubscriber)| 创建订阅者对象。 |
+| subscribe(subscriber:&nbsp;[CommonEventSubscriber](../../reference/BasicServicesKit/cj-apis-common_event_manager.md#class-commoneventsubscriber),&nbsp;callback: ([CommonEventData](../../reference/BasicServicesKit/cj-apis-common_event_manager.md#struct-commoneventdata)) -> Unit): Unit | 订阅公共事件。 |
 
 ## 开发步骤
 
@@ -31,7 +31,7 @@
    import kit.BasicServicesKit.*
    ```
 
-2. 创建订阅者信息，详细的订阅者信息数据类型及包含的参数请见[CommonEventSubscribeInfo](../../../../zh-cn/application-dev/reference/BasicServicesKit/cj-apis-common_event_manager.md#class-commoneventsubscribeinfo)文档介绍。
+2. 创建订阅者信息，详细的订阅者信息数据类型及包含的参数请见[CommonEventSubscribeInfo](../../reference/BasicServicesKit/cj-apis-common_event_manager.md#class-commoneventsubscribeinfo)文档介绍。
 
    <!-- compile -->
 
@@ -53,7 +53,7 @@
    subscriber = CommonEventManager.createSubscriber(subscribeInfo)
    ```
 
-4. 创建订阅回调函数，订阅回调函数会在接收到事件时触发。订阅回调函数返回的data内包含了公共事件的名称、发布者携带的数据等信息，公共事件数据的详细参数和数据类型请见[CommonEventData](../../../../zh-cn/application-dev/reference/BasicServicesKit/cj-apis-common_event_manager.md#struct-commoneventdata)文档介绍。
+4. 创建订阅回调函数，订阅回调函数会在接收到事件时触发。订阅回调函数返回的data内包含了公共事件的名称、发布者携带的数据等信息，公共事件数据的详细参数和数据类型请见[CommonEventData](../../reference/BasicServicesKit/cj-apis-common_event_manager.md#struct-commoneventdata)文档介绍。
 
    <!-- compile -->
 

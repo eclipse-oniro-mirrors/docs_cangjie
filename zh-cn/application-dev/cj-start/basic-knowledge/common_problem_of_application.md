@@ -4,7 +4,7 @@
 
 1. 通过调用接口获取。
 
-    可以调用[bundleManager.getBundleInfoForSelf](../../../../zh-cn/application-dev/reference/AbilityKit/cj-apis-bundle_manager.md#static-func-getbundleinfoforselfint32)获取自身的BundleInfo应用包信息，应用包信息中包含signatureInfo签名信息，签名信息中包含fingerprint指纹信息。
+    可以调用[bundleManager.getBundleInfoForSelf](../../reference/AbilityKit/cj-apis-bundle_manager.md#static-func-getbundleinfoforselfint32)获取自身的BundleInfo应用包信息，应用包信息中包含signatureInfo签名信息，签名信息中包含fingerprint指纹信息。
 
     <!-- compile -->
 
@@ -48,7 +48,7 @@ appIdentifier是<!--RP1-->[Profile签名文件](https://gitcode.com/openharmony/
 
 ## 如何获取应用信息中appIdentifier
 
-1. 可以调用[bundleManager.getBundleInfoForSelf](../../../../zh-cn/application-dev/reference/AbilityKit/cj-apis-bundle_manager.md#static-func-getbundleinfoforselfint32)获取自身的BundleInfo应用包信息，应用包信息中包含signatureInfo签名信息，签名信息中包含appIdentifier信息。
+1. 可以调用[bundleManager.getBundleInfoForSelf](../../reference/AbilityKit/cj-apis-bundle_manager.md#static-func-getbundleinfoforselfint32)获取自身的BundleInfo应用包信息，应用包信息中包含signatureInfo签名信息，签名信息中包含appIdentifier信息。
 
     <!-- compile -->
 

@@ -1,6 +1,6 @@
 # 进度条 (Progress)
 
-Progress是进度条显示组件，显示内容通常为目标操作的当前进度。具体用法请参见[Progress](../../../zh-cn/application-dev/reference/arkui-cj/cj-information-display-progress.md)。
+Progress是进度条显示组件，显示内容通常为目标操作的当前进度。具体用法请参见[Progress](../reference/arkui-cj/cj-information-display-progress.md)。
 
 ## 创建进度条
 
