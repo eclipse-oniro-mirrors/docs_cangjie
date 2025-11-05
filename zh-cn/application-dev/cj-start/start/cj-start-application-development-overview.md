@@ -1,6 +1,6 @@
 # 应用开发导读
 
-应用开发文档用于指导开发者通过OpenHarmony SDK提供的开放能力完成应用开发。在使用应用开发文档前，推荐您通过[知识地图](https://developer.huawei.com/consumer/cn/app/knowledge-map/)了解OpenHarmony应用开发完整旅程。
+应用开发文档用于指导开发者通过OpenHarmony SDK提供的开放能力完成应用开发。
 
 在应用开发的文档中，您可以获取到如下内容。
 

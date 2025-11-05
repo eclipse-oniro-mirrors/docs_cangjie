@@ -944,35 +944,35 @@ error: signature verification failed due to not trusted app source.
 
 **可能原因：**
 
-- 场景一：签名中未包含该调试设备的UDID。
-- 场景二：签名时使用了[发布证书和发布profile文件](https://developer.huawei.com/consumer/cn/doc/app/agc-help-releaseharmony-0000001933963166)。发布证书签名的应用不能启动调试或运行。
+<!--RP4-->
+<!--RP4End-->签名中未包含该调试设备的UDID。
 
 **处理步骤：**
 
-- 场景一：
+<!--RP5-->
+<!--RP5End-->
+<!--Del-->
+1. 使用[自动签名](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-signing#section18815157237)。在连接设备后，重新为应用进行签名。
+2. 如果使用的是手动签名，对于OpenHarmony应用，请参考<!--RP2-->[OpenHarmony应用手动签名](https://docs.openharmony.cn/pages/v4.1/zh-cn/application-dev/security/hapsigntool-guidelines.md)<!--RP2End-->，在UnsgnedDebugProfileTemplate.json文件中添加该调试设备的**UDID**。
 
-    1. 使用[自动签名](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-signing#section18815157237)。在连接设备后，重新为应用进行签名。
-    2. 如果使用的是手动签名，对于OpenHarmony应用，请参考<!--RP2-->[OpenHarmony应用手动签名](https://docs.openharmony.cn/pages/v4.1/zh-cn/application-dev/security/hapsigntool-guidelines.md)<!--RP2End-->，在UnsgnedDebugProfileTemplate.json文件中添加该调试设备的**UDID**。
+    a. 获取当前设备的UDID。
 
-        a. 获取当前设备的UDID。
-
-        ```bash
-        // UDID获取命令
-        hdc shell bm get -u
-          ```
-
-        b. 打开IDE安装路径，在sdk目录下找到UnsgnedDebugProfileTemplate.json配置文件。
-
-        ```bash
-        IDE安装路径\sdk\版本号或者default\openharmony\toolchains\lib\
-
-        例如：xxxx\Huawei\DevEco Studio\sdk\HarmonyOS-NEXT-DB1\openharmony\toolchains\lib\
-        例如：xxxx\Huawei\DevEco Studio\sdk\default\openharmony\toolchains\lib\
+    ```bash
+    // UDID获取命令
+    hdc shell bm get -u
         ```
 
-        c. 在UnsgnedDebugProfileTemplate.json文件的device-ids字段中，添加当前设备的UDID。
+    b. 打开IDE安装路径，在sdk目录下找到UnsgnedDebugProfileTemplate.json配置文件。
 
-- 场景二：使用[调试证书和调试profile文件](https://developer.huawei.com/consumer/cn/doc/app/agc-help-debug-app-0000001914423098)重新签名应用。
+    ```bash
+    IDE安装路径\sdk\版本号或者default\openharmony\toolchains\lib\
+
+    例如：xxxx\Huawei\DevEco Studio\sdk\HarmonyOS-NEXT-DB1\openharmony\toolchains\lib\
+    例如：xxxx\Huawei\DevEco Studio\sdk\default\openharmony\toolchains\lib\
+    ```
+
+    c. 在UnsgnedDebugProfileTemplate.json文件的device-ids字段中，添加当前设备的UDID。
+<!--DelEnd-->
 
 ### 9568286 安装应用的签名证书profile文件中的类型与已安装应用的不相同
 
@@ -982,7 +982,7 @@ error: install provision type not same.
 
 **错误描述：**
 
-在启动调试或运行应用/服务时，由于安装应用的[签名证书profile文件](https://developer.huawei.com/consumer/cn/doc/app/agc-help-add-releaseprofile-0000001914714796)中的类型与已安装应用的不相同，导致安装HAP出现错误。
+在启动调试或运行应用/服务时，由于安装应用的<!--RP6-->[Profile签名文件](https://gitcode.com/openharmony/docs/blob/master/zh-cn/application-dev/security/app-provision-structure.md)<!--RP6End-->中的类型与已安装应用的不相同，导致安装HAP出现错误。
 
 **可能原因：**
 
@@ -2273,7 +2273,7 @@ error: Check pluginDistributionID between plugin and host application failed.
 
 **处理步骤**
 
-重新配置应用或者插件[签名证书profile文件](https://developer.huawei.com/consumer/cn/doc/app/agc-help-add-releaseprofile-0000001914714796)中的 pluginDistributionIDs。
+重新配置应用或者插件<!--RP7-->[签名证书profile文件](https://gitcode.com/openharmony/docs/blob/master/zh-cn/application-dev/security/app-provision-structure.md)<!--RP7End-->中的 pluginDistributionIDs。
 
 ### 9568433 应用缺少ohos.permission.SUPPORT_PLUGIN权限
 
@@ -2452,7 +2452,7 @@ error: install parse native so failed.
     param get const.product.cpu.abilist
     ```
 
-3. 根据查询返回结果，检查[模块级build-profile.json5](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-build-profile)文件中的[“abiFilters”参数](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ohos-abi#%E5%9C%A8%E7%BC%96%E8%AF%91%E6%9E%B6%E6%9E%84%E4%B8%AD%E6%8C%87%E5%AE%9Aabi)中的配置，规则如下：
+3. 根据查询返回结果，检查[模块级build-profile.json5](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-build-profile)文件中的<!--RP8-->[“abiFilters”参数](https://gitcode.com/openharmony/docs/blob/master/zh-cn/application-dev/napi/ohos-abi.md#在编译架构中指定abi)<!--RP8End-->中的配置，规则如下：
 
     - 若返回结果为default，请执行如下命令，查询是否存在lib64文件夹。
 
@@ -2637,7 +2637,7 @@ error: install failed due to U1Enabled can not change.
 
 **可能原因**
 
-应用[Profile签名文件](https://developer.huawei.com/consumer/cn/doc/app/agc-help-add-debugprofile-0000001914423102)中allowed-acls字段的U1Enabled配置发生变更，例如：
+应用<!--RP9-->[Profile签名文件](https://gitcode.com/openharmony/docs/blob/master/zh-cn/application-dev/security/app-provision-structure.md)<!--RP9End-->中allowed-acls字段的U1Enabled配置发生变更，例如：
 
 1. 已安装应用在allowed-acls中配置了U1Enabled，待安装应用在allowed-acls中没有配置U1Enabled。
 2. 已安装应用在allowed-acls中没有配置U1Enabled，待安装应用在allowed-acls中配置了U1Enabled。
@@ -2660,7 +2660,7 @@ error: Install failed due to the U1Enabled is not same in all haps.
 
 **可能原因**
 
-多HAP包签名时使用的[Profile签名文件](https://developer.huawei.com/consumer/cn/doc/app/agc-help-add-debugprofile-0000001914423102)不一致导致签名信息中allowed-acls的U1Enabled配置不一致。
+多HAP包签名时使用的<!--RP10-->[Profile签名文件](https://gitcode.com/openharmony/docs/blob/master/zh-cn/application-dev/security/app-provision-structure.md)<!--RP10End-->不一致导致签名信息中allowed-acls的U1Enabled配置不一致。
 
 **处理步骤**
 
