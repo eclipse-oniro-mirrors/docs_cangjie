@@ -65,6 +65,7 @@ The Cangjie developer documentation license can be found at [License](./LICENSE)
 
 ## Related Repositories
 
-- [cangjie_docs](https://gitcode.com/Cangjie/cangjie_docs/blob/main/README.md)
-- [cangjie_runtime](https://gitcode.com/Cangjie/cangjie_runtime/blob/main/stdlib/doc/libs/summary_cjnative_EN.md)
-- [cangjie_stdx](https://gitcode.com/Cangjie/cangjie_stdx/blob/main/doc/summary_cjnative_EN.md)
+- [openharmony docs](https://gitcode.com/openharmony/docs/blob/master/README.md): OpenHarmony community documentation repository, containing application development documentation for OpenHarmony based on ArkTS language, as well as device development documentation and other developer resources.
+- [cangjie_docs](https://gitcode.com/Cangjie/cangjie_docs/blob/main/README.md): Cangjie community documentation repository, storing Cangjie language syntax, command-line tools, and other Cangjie-related knowledge.
+- [cangjie_runtime](https://gitcode.com/Cangjie/cangjie_runtime/blob/main/stdlib/doc/libs/summary_cjnative_EN.md): Cangjie runtime and Cangjie programming language standard library. You can view the standard library API reference here.
+- [cangjie_stdx](https://gitcode.com/Cangjie/cangjie_stdx/blob/main/doc/summary_cjnative_EN.md): Cangjie programming language stdx extension module repository. You can view the extension library API reference in this repository.

@@ -2,7 +2,7 @@
 
 仓颉UI提供了一种轻量的UI元素复用机制@Builder，其内部UI结构固定，仅与使用方进行数据传递，开发者可以将重复使用的UI元素抽象成一个方法，在build方法里调用。
 
-为了简化语言，我们将@Builder修饰的函数也称为“自定义构建函数”。
+为了简化语言，将@Builder修饰的函数也称为“自定义构建函数”。
 
 在阅读本文档前，建议提前阅读：[基本语法概述](./cj-basic-syntax-overview.md)，[声明式UI描述](./cj-declarative-ui-description.md)，[自定义组件-创建自定义组件](./cj-create-custom-components.md)。
 

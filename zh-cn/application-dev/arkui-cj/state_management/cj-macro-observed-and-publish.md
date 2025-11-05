@@ -1,6 +1,6 @@
 # \@Observed宏 和 \@Publish宏：嵌套类对象属性变化
 
-上文所述的宏（包括 [\@State](./cj-macro-state.md)、[\@Prop](./cj-macro-prop.md)、[\@Link](./cj-macro-link.md)、[\@Provide和\@Consume](./cj-macro-provide-and-consume.md)宏）仅能观察到简单类型的变化，但是在实际应用开发中，应用会根据开发需要，使用数组或是封装自己的数据模型。对于这种情况，如数组、自定义类类型或者自定义类类型的数组，他们的成员变量的属性变化是无法观察到的。这就引出了 \@Observed宏 和 \@Publish宏。
+上文所述的宏（包括 [\@State](./cj-macro-state.md)、[\@Prop](./cj-macro-prop.md)、[\@Link](./cj-macro-link.md)、[\@Provide和\@Consume](./cj-macro-provide-and-consume.md)宏）仅能观察到简单类型的变化，但是在实际应用开发中，应用会根据开发需要，使用数组或是封装自己的数据模型。对于这种情况，如数组、自定义类类型或者自定义类类型的数组，其成员变量的属性变化是无法观察到的。这就引出了 \@Observed宏 和 \@Publish宏。
 
 \@Observed 和 \@Publish 配套使用是用于类类型属性变化的观察，主要是为了弥补其他宏仅能观察一层的能力限制。建议开发者提前阅读 [\@State](./cj-macro-state.md) 的基本用法，对宏的基本观察能力有一定的了解，再对比阅读本文档。
 

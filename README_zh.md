@@ -65,6 +65,7 @@ OpenHarmony仓颉文档仓库的总体目录结构如下：
 
 ## 相关仓
 
-- [cangjie_docs](https://gitcode.com/Cangjie/cangjie_docs/blob/main/README_zh.md)
-- [cangjie_runtime](https://gitcode.com/Cangjie/cangjie_runtime/blob/main/stdlib/doc/libs/summary_cjnative.md)
-- [cangjie_stdx](https://gitcode.com/Cangjie/cangjie_stdx/blob/main/doc/summary_cjnative.md)
+- [openharmony docs](https://gitcode.com/openharmony/docs/blob/master/README_zh.md)：OpenHarmony社区资料仓库，存放基于ArkTS语言开发OpenHarmony的应用开发文档，以及设备开发文档等开发者文档。
+- [cangjie_docs](https://gitcode.com/Cangjie/cangjie_docs/blob/main/README_zh.md)：仓颉社区资料仓库，存放仓颉语言语法、命令行工具等仓颉知识。
+- [cangjie_runtime](https://gitcode.com/Cangjie/cangjie_runtime/blob/main/stdlib/doc/libs/summary_cjnative.md)：仓颉运行时与仓颉编程语言标准库，可在此处查看标准库API参考。
+- [cangjie_stdx](https://gitcode.com/Cangjie/cangjie_stdx/blob/main/doc/summary_cjnative.md)：仓颉编程语言stdx扩展模块仓库，可在此仓库查看扩展库API参考。
