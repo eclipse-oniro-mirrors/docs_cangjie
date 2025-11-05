@@ -1869,7 +1869,7 @@ class EntryView {
 
 ![scroll5](figures/scroll5.gif)
 
-## 示例代码6（设置边缘渐隐）
+### 示例代码6（设置边缘渐隐）
 
 该示例实现了Scroll组件开启边缘渐隐效果并设置边缘渐隐长度。
 

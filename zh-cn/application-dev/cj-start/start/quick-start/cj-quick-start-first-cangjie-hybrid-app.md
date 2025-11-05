@@ -182,7 +182,7 @@ Project_name
 >
 > 在仓颉与ArkTS混合开发场景中，仓颉页面不是一个真正意义上具有完整生命周期的页面，只能以组件的形式嵌入到ArkTS页面中，因此需要在ArkTS侧提供一个@Entry的页面作为容器，来加载仓颉页面组件。
 >
-> 仓颉与ArkTS混合UI的详细内容请参见 [混合开发V2](https://developer.huawei.com/consumer/cn/doc/cangjie-references-V5/cj_appendix-hybrid-v2-V5)。
+> 仓颉与ArkTS混合UI的详细内容请参见 [混合开发](../../../arkui-cj/cj-appendix-hybrid.md)。
 
 1. 创建仓颉页面。
 

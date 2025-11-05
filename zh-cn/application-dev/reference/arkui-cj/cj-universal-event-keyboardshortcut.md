@@ -133,7 +133,7 @@ func keyboardShortcut(value: ?String, keys: ?Array<ModifierKey>, action: ?() -> 
 |disable状态组件|不响应快捷键|无|
 |1\. 组件的组合键(包括系统预定义快捷键)相同时。<br>2\. 接口参数value有多个字符时。<br>3\. 接口参数keys有重复的控制键时。|这几种情况不绑定组合键, 先前绑定的组合键仍然有效|Button("button1").keyboardShortcut("c",\[ModifierKey.CTRL])<br>Button("button2").keyboardShortcut("ab",\[ModifierKey.CTRL])<br>Button("button3").keyboardShortcut("ab",\[ModifierKey.CTRL,ModifierKey.CTRL])|
 
-## 禁止绑定的系统快捷键
+### 禁止绑定的系统快捷键
 
 以下组合键绑定为快捷键不生效。
 
@@ -143,7 +143,7 @@ func keyboardShortcut(value: ?String, keys: ?Array<ModifierKey>, action: ?() -> 
 - Alt + Shift + TAB
 - Ctrl + Shift + ESC
 
-## 系统已存在的按键事件
+### 系统已存在的按键事件
 
 已存在如下系统响应的按键事件，具体规格如下表。
 

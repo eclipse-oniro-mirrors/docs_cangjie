@@ -14,7 +14,7 @@ Image为图片组件，常用于在应用中显示图片。支持png、jpg、jpe
 import kit.ArkUI.*
 ```
 
-## 需要权限
+## 权限列表
 
 使用网络图片时，需要在 module.json5 对应的"requestPermissions"中添加网络使用权限ohos.permission.INTERNET。
 
