@@ -31,7 +31,7 @@ public init(space!: ?Length = None, child!: () -> Unit = {=>})
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |space|?[Length](./cj-common-types.md#interface-length)|否|None|**命名参数。** 纵向布局元素垂直方向间距。初始值: 0.vp<br>space为负数或者[justifyContent](#func-justifycontentflexalign)设置为FlexAlign.SpaceBetween、FlexAlign.SpaceAround、FlexAlign.SpaceEvenly时不生效。|
-|child|() -> Unit|否|{ => }|Column 容器的子组件|
+|child|() -> Unit|否|{ => }|**命名参数。** Column 容器的子组件|
 
 ## 通用属性/通用事件
 
