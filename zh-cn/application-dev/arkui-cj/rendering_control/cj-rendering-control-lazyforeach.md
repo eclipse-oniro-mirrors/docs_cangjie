@@ -190,7 +190,7 @@ public class EntryView {
 }
 ```
 
-当我们点击“add Data”按钮时，首先会调用数据源dataSource的pushData方法，该方法会在数据源末尾添加数据并调用notifyDataAdd方法。在notifyDataAdd方法内又会调用listenerItem.onDataAdd方法，该方法会通知LazyForeach在该处有数据添加，LazyForeach便会在该索引处新建子组件。
+当单击“add Data”按钮时，首先会调用数据源dataSource的pushData方法，该方法会在数据源末尾添加数据并调用notifyDataAdd方法。在notifyDataAdd方法内又会调用listenerItem.onDataAdd方法，该方法会通知LazyForeach在该处有数据添加，LazyForeach便会在该索引处新建子组件。
 
 运行效果如下图所示。
 
@@ -263,7 +263,7 @@ public class EntryView {
 }
 ```
 
-当我们点击ListItem元素时，首先会调用数据源dataSource的deleteData方法，该方法会在数据源末尾添加数据并调用notifyDataDelete方法。在notifyDataDelete方法内又会调用listenerItem.onDataDelete方法，该方法会通知LazyForeach在该处有数据添加，LazyForeach便会在该索引处删除子组件。
+当单击ListItem元素时，首先会调用数据源dataSource的deleteData方法，该方法会在数据源末尾添加数据并调用notifyDataDelete方法。在notifyDataDelete方法内又会调用listenerItem.onDataDelete方法，该方法会通知LazyForeach在该处有数据添加，LazyForeach便会在该索引处删除子组件。
 
 运行效果如下图所示。
 
@@ -348,7 +348,7 @@ public class EntryView {
 }
 ```
 
-当我们首次点击LazyForEach的子组件时，在moved成员变量内存入要移动的数据索引，再次点击LazyForEach另一个子组件时，我们将首次点击的子组件移到此处。调用数据源dataSource的moveData方法，该方法会将数据源对应数据移动到预期的位置并调用notifyDataMove方法。在notifyDataMove方法内会又调用listenerItem.onDataMove方法，该方法通知LazyForEach在该处有数据需要移动，LazyForEach便会将from和to索引处的子组件进行位置调换。
+当首次点击LazyForEach的子组件时，在moved成员变量内存入要移动的数据索引，再次点击LazyForEach另一个子组件时，将首次点击的子组件移到此处。调用数据源dataSource的moveData方法，该方法会将数据源对应数据移动到预期的位置并调用notifyDataMove方法。在notifyDataMove方法内会又调用listenerItem.onDataMove方法，该方法通知LazyForEach在该处有数据需要移动，LazyForEach便会将from和to索引处的子组件进行位置调换。
 
 运行效果如下图所示。
 
@@ -432,7 +432,7 @@ public class EntryView {
 }
 ```
 
-当我们点击LazyForEach的子组件时，首先改变当前数据，然后调用数据源dataSource的changeData方法，在该方法内会调用notifyDataChange方法。在notifyDataChange方法内会又调用listenerItem.onDataChange方法，该方法通知LazyForEach组件该处有数据发生变化，LazyForEach便会在对应索引处重建子组件。
+当单击LazyForEach的子组件时，首先改变当前数据，然后调用数据源dataSource的changeData方法，在该方法内会调用notifyDataChange方法。在notifyDataChange方法内会又调用listenerItem.onDataChange方法，该方法通知LazyForEach组件该处有数据发生变化，LazyForEach便会在对应索引处重建子组件。
 
 运行效果如下图所示。
 
@@ -505,7 +505,7 @@ public class EntryView {
 }
 ```
 
-当我们点击LazyForEach的子组件时，首先调用dataSource的modifyAllData方法改变了数据源中的所有数据，然后调用数据源的reloadData方法，在该方法内会调用notifyDataReload方法。在notifyDataReload方法内会又调用listenerItem.onDataReloaded方法，通知LazyForEach需要重建所有子节点。LazyForEach会将原所有数据项和新所有数据项一一做键值比对，若有相同键值则使用缓存，若键值不同则重新构建。
+当单击LazyForEach的子组件时，首先调用dataSource的modifyAllData方法改变了数据源中的所有数据，然后调用数据源的reloadData方法，在该方法内会调用notifyDataReload方法。在notifyDataReload方法内会又调用listenerItem.onDataReloaded方法，通知LazyForEach需要重建所有子节点。LazyForEach会将原所有数据项和新所有数据项一一做键值比对，若有相同键值则使用缓存，若键值不同则重新构建。
 
 运行效果如下图所示。
 
@@ -578,7 +578,7 @@ public class EntryView {
 }
 ```
 
-当我们点击LazyForEach的子组件时，首先调用dataSource的modifyAllData方法改变了数据源中的所有数据，然后调用数据源的reloadData方法，在该方法内会调用notifyDataReload方法。在notifyDataReload方法内会又调用listener.onDataReloaded方法，通知LazyForEach需要重建所有子节点。LazyForEach会将原所有数据项和新所有数据项一一做键值比对，若有相同键值则使用缓存，若键值不同则重新构建。
+当单击LazyForEach的子组件时，首先调用dataSource的modifyAllData方法改变了数据源中的所有数据，然后调用数据源的reloadData方法，在该方法内会调用notifyDataReload方法。在notifyDataReload方法内会又调用listener.onDataReloaded方法，通知LazyForEach需要重建所有子节点。LazyForEach会将原所有数据项和新所有数据项一一做键值比对，若有相同键值则使用缓存，若键值不同则重新构建。
 
 运行效果如下图所示。
 
@@ -788,7 +788,7 @@ public class EntryView {
 
 ![lazyforeach-11](figures/lazyforeach-11.gif)
 
-当我们多次点击子组件时，会发现删除的并不一定是我们点击的那个子组件。原因是当我们删除了某一个子组件后，位于该子组件对应的数据项之后的各数据项，其index均应减1，但实际上后续的数据项对应的子组件仍然使用的是最初分配的index，其itemGenerator中的index并没有发生变化，所以删除结果和预期不符。
+当多次点击子组件时，会发现删除的并不一定是单击的那个子组件。原因是当删除了某一个子组件后，位于该子组件对应的数据项之后的各数据项，其index均应减1，但实际上后续的数据项对应的子组件仍然使用的是最初分配的index，其itemGenerator中的index并没有发生变化，所以删除结果和预期不符。
 
 修复代码如下所示。
 
