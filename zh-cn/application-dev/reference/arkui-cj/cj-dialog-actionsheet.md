@@ -238,8 +238,8 @@ public init(
 
 ```cangjie
 public class DismissDialogAction {
-    public var reason: ?DismissReason
-    public init(reason: ?DismissReason)
+    public var reason: DismissReason
+    public init(reason: DismissReason)
     public func dismiss(): Unit
 }
 ```
@@ -253,12 +253,12 @@ public class DismissDialogAction {
 ### var reason
 
 ```cangjie
-public var reason: ?DismissReason
+public var reason: DismissReason
 ```
 
 **功能：** Dialog无法关闭原因。根据开发者需要选择不同操作下，Dialog是否需要关闭。
 
-**类型：** ?[DismissReason](./cj-common-types.md#enum-dismissreason)
+**类型：** [DismissReason](./cj-common-types.md#enum-dismissreason)
 
 **读写能力：** 可读写
 
@@ -266,10 +266,10 @@ public var reason: ?DismissReason
 
 **起始版本：** 22
 
-### init(?DismissReason)
+### init(DismissReason)
 
 ```cangjie
-public init(reason: ?DismissReason)
+public init(reason: DismissReason)
 ```
 
 **功能：** DismissDialogAction类的构造函数。
@@ -282,7 +282,7 @@ public init(reason: ?DismissReason)
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|reason|?[DismissReason](./cj-common-types.md#enum-dismissreason)|是|-|Dialog无法关闭原因。根据开发者需要选择不同操作下，Dialog是否需要关闭。|
+|reason|[DismissReason](./cj-common-types.md#enum-dismissreason)|是|-|Dialog无法关闭原因。根据开发者需要选择不同操作下，Dialog是否需要关闭。|
 
 ### func dismiss()
 

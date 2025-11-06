@@ -1228,8 +1228,8 @@ public var y: Float64
 
 ```cangjie
 public class DragInfo {
-    public var extraParams: ?String
-    public var touchPoint: ?Position
+    public var extraParams: String
+    public var touchPoint: Position
 }
 ```
 
@@ -1242,7 +1242,7 @@ public class DragInfo {
 ### var extraParams
 
 ```cangjie
-public var extraParams: ?String
+public var extraParams: String
 ```
 
 **功能：** 存储拖拽事件额外信息。
@@ -1258,7 +1258,7 @@ public var extraParams: ?String
 ### var touchPoint
 
 ```cangjie
-public var touchPoint: ?Position
+public var touchPoint: Position
 ```
 
 **功能：** 存储拖拽点坐标信息。
@@ -5643,7 +5643,7 @@ public init(scale!: ?VArray<Float64, $2> = None, transition!: ?TransitionEffect 
 
 ```cangjie
 public class DismissSheetAction {
-    public var reason: ?DismissReason
+    public var reason: DismissReason
 }
 ```
 
@@ -5656,12 +5656,12 @@ public class DismissSheetAction {
 ### var reason
 
 ```cangjie
-public var reason: ?DismissReason
+public var reason: DismissReason
 ```
 
 **功能：** 半模态页面关闭原因。
 
-**类型：** ?[DismissReason](#enum-dismissreason)
+**类型：** [DismissReason](#enum-dismissreason)
 
 **读写能力：** 可读写
 

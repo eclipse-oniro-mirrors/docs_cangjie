@@ -410,9 +410,9 @@ public init(value: ?Array<Float32>)
 
 ```cangjie
 public class ImageError {
-    public var componentWidth: ?Float64
-    public var componentHeight: ?Float64
-    public var message: ?String
+    public var componentWidth: Float64
+    public var componentHeight: Float64
+    public var message: String
 }
 ```
 
@@ -425,12 +425,12 @@ public class ImageError {
 #### var componentHeight
 
 ```cangjie
-public var componentHeight: ?Float64
+public var componentHeight: Float64
 ```
 
 **功能：** 组件的高度，单位为px。
 
-**类型：** ?Float64
+**类型：** Float64
 
 **读写能力：** 可读写
 
@@ -441,12 +441,12 @@ public var componentHeight: ?Float64
 #### var componentWidth
 
 ```cangjie
-public var componentWidth: ?Float64
+public var componentWidth: Float64
 ```
 
 **功能：** 组件的宽度，单位为px。
 
-**类型：** ?Float64
+**类型：** Float64
 
 **读写能力：** 可读写
 
@@ -457,12 +457,12 @@ public var componentWidth: ?Float64
 #### var message
 
 ```cangjie
-public var message: ?String
+public var message: String
 ```
 
 **功能：** 错误信息。
 
-**类型：** ?String
+**类型：** String
 
 **读写能力：** 可读写
 
@@ -474,15 +474,15 @@ public var message: ?String
 
 ```cangjie
 public class ImageLoadResult {
-    public var width: ?Float64
-    public var height: ?Float64
-    public var componentWidth: ?Float64
-    public var componentHeight: ?Float64
-    public var loadingStatus: ?Int32
-    public var contentWidth: ?Float64
-    public var contentHeight: ?Float64
-    public var contentOffsetX: ?Float64
-    public var contentOffsetY: ?Float64
+    public var width: Float64
+    public var height: Float64
+    public var componentWidth: Float64
+    public var componentHeight: Float64
+    public var loadingStatus: Int32
+    public var contentWidth: Float64
+    public var contentHeight: Float64
+    public var contentOffsetX: Float64
+    public var contentOffsetY: Float64
 }
 ```
 
@@ -495,12 +495,12 @@ public class ImageLoadResult {
 #### var componentHeight
 
 ```cangjie
-public var componentHeight: ?Float64
+public var componentHeight: Float64
 ```
 
 **功能：** 组件的高度，单位为px。
 
-**类型：** ?Float64
+**类型：** Float64
 
 **读写能力：** 可读写
 
@@ -511,12 +511,12 @@ public var componentHeight: ?Float64
 #### var componentWidth
 
 ```cangjie
-public var componentWidth: ?Float64
+public var componentWidth: Float64
 ```
 
 **功能：** 组件的宽度，单位为px。
 
-**类型：** ?Float64
+**类型：** Float64
 
 **读写能力：** 可读写
 
@@ -527,7 +527,7 @@ public var componentWidth: ?Float64
 #### var contentHeight
 
 ```cangjie
-public var contentHeight: ?Float64
+public var contentHeight: Float64
 ```
 
 **功能：** 图片实际绘制的高度，单位为px。
@@ -536,7 +536,7 @@ public var contentHeight: ?Float64
 >
 > 仅在loadingStatus返回1时有效。
 
-**类型：** ?Float64
+**类型：** Float64
 
 **读写能力：** 可读写
 
@@ -556,7 +556,7 @@ public var contentOffsetX: ?Float64
 >
 > 仅在loadingStatus返回1时有效。
 
-**类型：** ?Float64
+**类型：** Float64
 
 **读写能力：** 可读写
 
@@ -567,7 +567,7 @@ public var contentOffsetX: ?Float64
 #### var contentOffsetY
 
 ```cangjie
-public var contentOffsetY: ?Float64
+public var contentOffsetY: Float64
 ```
 
 **功能：** 实际绘制内容相对于组件自身的y轴偏移，单位为px。
@@ -576,7 +576,7 @@ public var contentOffsetY: ?Float64
 >
 > 仅在loadingStatus返回1时有效。
 
-**类型：** ?Float64
+**类型：** Float64
 
 **读写能力：** 可读写
 
@@ -587,7 +587,7 @@ public var contentOffsetY: ?Float64
 #### var contentWidth
 
 ```cangjie
-public var contentWidth: ?Float64
+public var contentWidth: Float64
 ```
 
 **功能：** 图片实际绘制的宽度，单位为px。
@@ -596,7 +596,7 @@ public var contentWidth: ?Float64
 >
 > 仅在loadingStatus返回1时有效。
 
-**类型：** ?Float64
+**类型：** Float64
 
 **读写能力：** 可读写
 
@@ -607,12 +607,12 @@ public var contentWidth: ?Float64
 #### var height
 
 ```cangjie
-public var height: ?Float64
+public var height: Float64
 ```
 
 **功能：** 图片的高度，单位为px。
 
-**类型：** ?Float64
+**类型：** Float64
 
 **读写能力：** 可读写
 
@@ -623,12 +623,12 @@ public var height: ?Float64
 #### var loadingStatus
 
 ```cangjie
-public var loadingStatus: ?Int32
+public var loadingStatus: Int32
 ```
 
 **功能：** 图片加载成功的状态。
 
-**类型：** ?Int32
+**类型：** Int32
 
 **读写能力：** 可读写
 
@@ -639,12 +639,12 @@ public var loadingStatus: ?Int32
 #### var width
 
 ```cangjie
-public var width: ?Float64
+public var width: Float64
 ```
 
 **功能：** 图片的宽度，单位为px。
 
-**类型：** ?Float64
+**类型：** Float64
 
 **读写能力：** 可读写
 

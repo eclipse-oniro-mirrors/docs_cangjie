@@ -855,8 +855,8 @@ public init(
 
 ```cangjie
 public class RichEditorSelection {
-    public var selection: ?(Int32, Int32)
-    public var spans: ?ArrayList<RichEditorSpanResult>
+    public var selection: (Int32, Int32)
+    public var spans: ArrayList<RichEditorSpanResult>
     public init(selection: ?(Int32, Int32), spans: ?ArrayList<RichEditorSpanResult>)
 }
 ```
@@ -870,12 +870,12 @@ public class RichEditorSelection {
 #### var selection
 
 ```cangjie
-public var selection: ?(Int32, Int32)
+public var selection: (Int32, Int32)
 ```
 
 **功能：** 位置信息。
 
-**类型：** ?(Int32, Int32)
+**类型：** (Int32, Int32)
 
 **读写能力：** 可读写
 
@@ -886,12 +886,12 @@ public var selection: ?(Int32, Int32)
 #### var spans
 
 ```cangjie
-public var spans: ?ArrayList<RichEditorSpanResult>
+public var spans: ArrayList<RichEditorSpanResult>
 ```
 
 **功能：** 选中的文本内容。
 
-**类型：** ?ArrayList\<[RichEditorSpanResult](#interface-richeditorspanresult)>
+**类型：** ArrayList\<[RichEditorSpanResult](#interface-richeditorspanresult)>
 
 **读写能力：** 可读写
 
@@ -1126,8 +1126,8 @@ public func preventDefault(): Unit
 
 ```cangjie
 public class RichEditorInsertValue {
-    public var insertOffset: ?Int32
-    public var insertValue: ?String
+    public var insertOffset: Int32
+    public var insertValue: String
     public init(
         insertOffset: ?Int32,
         insertValue: ?String
@@ -1144,12 +1144,12 @@ public class RichEditorInsertValue {
 #### var insertOffset
 
 ```cangjie
-public var insertOffset: ?Int32
+public var insertOffset: Int32
 ```
 
 **功能：** 插入偏移量。
 
-**类型：** ?Int32
+**类型：** Int32
 
 **读写能力：** 可读写
 
@@ -1160,12 +1160,12 @@ public var insertOffset: ?Int32
 #### var insertValue
 
 ```cangjie
-public var insertValue: ?String
+public var insertValue: String
 ```
 
 **功能：** 插入值。
 
-**类型：** ?String
+**类型：** String
 
 **读写能力：** 可读写
 

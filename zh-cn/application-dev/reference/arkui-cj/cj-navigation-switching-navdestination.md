@@ -148,9 +148,9 @@ public func onReady(callback: ?Callback<NavDestinationContext, Unit>): This
 
 ```cangjie
 public class NavDestinationContext {
-    public var pathInfo: ?NavPathInfo
-    public var pathStack: ?NavPathStack
-    public var navDestinationId: ?String
+    public var pathInfo: NavPathInfo
+    public var pathStack: NavPathStack
+    public var navDestinationId: String
 }
 ```
 
@@ -163,12 +163,12 @@ public class NavDestinationContext {
 #### var navDestinationId
 
 ```cangjie
-public var navDestinationId: ?String
+public var navDestinationId: String
 ```
 
 **功能：** 当前NavDestination的唯一ID，由系统自动生成，和组件通用属性id无关。
 
-**类型：** ?String
+**类型：** String
 
 **读写能力：** 可读写
 
@@ -179,12 +179,12 @@ public var navDestinationId: ?String
 #### var pathInfo
 
 ```cangjie
-public var pathInfo: ?NavPathInfo
+public var pathInfo: NavPathInfo
 ```
 
 **功能：** 跳转NavDestination时指定的参数。
 
-**类型：** ?[NavPathInfo](./cj-navigation-switching-navigation.md#class-navpathinfo)
+**类型：** [NavPathInfo](./cj-navigation-switching-navigation.md#class-navpathinfo)
 
 **读写能力：** 可读写
 
@@ -195,12 +195,12 @@ public var pathInfo: ?NavPathInfo
 #### var pathStack
 
 ```cangjie
-public var pathStack: ?NavPathStack
+public var pathStack: NavPathStack
 ```
 
 **功能：** 当前NavDestination所处的页面栈。
 
-**类型：** ?[NavPathStack](./cj-navigation-switching-navigation.md#class-navpathstack)
+**类型：** [NavPathStack](./cj-navigation-switching-navigation.md#class-navpathstack)
 
 **读写能力：** 可读写
 
