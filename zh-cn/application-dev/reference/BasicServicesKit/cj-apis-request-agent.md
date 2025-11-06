@@ -37,9 +37,8 @@ public func create(context: UIAbilityContext, config: Config): Task
 
 **参数：**
 
-
-| 参数名  | 类型                                                                                       | 必填 | 默认值 | 说明                       |
-| :------ | :----------------------------------------------------------------------------------------- | :--- | :----- | :------------------------- |
+| 参数名  | 类型 | 必填 | 默认值 | 说明 |
+| :------ | :------ | :------| :------ | :------ |
 | context | [UIAbilityContext](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiabilitycontext) | 是   | -      | 基于应用程序的上下文。     |
 | config  | [Config](#class-config)                                                                    | 是   | -      | <上传/下载任务的配置信息。 |
 
@@ -76,13 +75,13 @@ import kit.PerformanceAnalysisKit.Hilog
 import ohos.business_exception.BusinessException
 
 try {
-    let context = Global.abilityContext
+    let context = Global.getAbilityContext()
     let config = Config(
         action = Action.Download,
         url = "https://example.com/file.txt"
     )
     let task = create(context, config)
-    Hilog.info(0, "cangjie_ohos_test", "成功创建任务，任务ID: ${task.tid}")
+    Hilog.info(0, "test", "成功创建任务，任务ID: ${task.tid}")
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -139,10 +138,10 @@ import kit.PerformanceAnalysisKit.Hilog
 import ohos.business_exception.BusinessException
 
 try {
-    let context = Global.abilityContext
+    let context = Global.getAbilityContext()
     let taskId = "example_task_id"
     let task = getTask(context, taskId)
-    Hilog.info(0, "cangjie_ohos_test", "成功获取任务，任务ID: ${task.tid}")
+    Hilog.info(0, "test", "成功获取任务，任务ID: ${task.tid}")
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -191,7 +190,7 @@ import ohos.business_exception.BusinessException
 try {
     let taskId = "example_task_id"
     remove(taskId)
-    Hilog.info(0, "cangjie_ohos_test", "成功移除任务，任务ID: ${taskId}")
+    Hilog.info(0, "test", "成功移除任务，任务ID: ${taskId}")
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -246,9 +245,9 @@ import ohos.business_exception.BusinessException
 try {
     let filter = Filter()
     let taskIds = search(filter)
-    Hilog.info(0, "cangjie_ohos_test", "搜索到任务数量: ${taskIds.length}")
+    Hilog.info(0, "test", "搜索到任务数量: ${taskIds.length}")
     for (id in taskIds) {
-        Hilog.info(0, "cangjie_ohos_test", "任务ID: ${id}")
+        Hilog.info(0, "test", "任务ID: ${id}")
     }
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
@@ -305,7 +304,7 @@ import ohos.business_exception.BusinessException
 try {
     let taskId = "example_task_id"
     let taskInfo = show(taskId)
-    Hilog.info(0, "cangjie_ohos_test", "任务信息: ${taskInfo.toString()}")
+    Hilog.info(0, "test", "任务信息: ${taskInfo.toString()}")
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -360,14 +359,10 @@ import kit.PerformanceAnalysisKit.Hilog
 import ohos.business_exception.BusinessException
 
 try {
-    try {
-        let taskId = "example_task_id"
-        let token = "example_token"
-        let taskInfo = touch(taskId, token)
-        Hilog.info(0, "cangjie_ohos_test", "任务信息: ${taskInfo.toString()}")
-    } catch (e: Exception) {
-        Hilog.info(0, "cangjie_ohos_test", "查询任务信息失败: ${e.toString()}")
-    }
+    let taskId = "example_task_id"
+    let token = "example_token"
+    let taskInfo = touch(taskId, token)
+    Hilog.info(0, "test", "任务信息: ${taskInfo.toString()}")
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -865,7 +860,7 @@ try {
         precise = false,
         priority = 0
     )
-    Hilog.info(0, "cangjie_ohos_test", "成功创建配置对象")
+    Hilog.info(0, "test", "成功创建配置对象")
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -1004,7 +999,7 @@ try {
         mimeType = "text/plain",
         filename = "example.txt"
     )
-    Hilog.info(0, "cangjie_ohos_test", "成功创建文件规范对象")
+    Hilog.info(0, "test", "成功创建文件规范对象")
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -1210,7 +1205,7 @@ try {
         action = Action.Download,
         mode = Mode.Background
     )
-    Hilog.info(0, "cangjie_ohos_test", "成功创建过滤器对象")
+    Hilog.info(0, "test", "成功创建过滤器对象")
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -1302,7 +1297,7 @@ try {
         name = "exampleField",
         value = FormItemValue.StringItem("exampleValue")
     )
-    Hilog.info(0, "cangjie_ohos_test", "成功创建表单项对象")
+    Hilog.info(0, "test", "成功创建表单项对象")
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -1569,14 +1564,14 @@ import kit.PerformanceAnalysisKit.Hilog
 import ohos.business_exception.BusinessException
 
 try {
-    let context = Global.abilityContext
+    let context = Global.getAbilityContext()
     let taskId = "example_task_id"
     let config = Config(
         action = Action.Download,
         url = "https://example.com/file.txt"
     )
     let task = Task(taskId, config)
-    Hilog.info(0, "cangjie_ohos_test", "成功初始化任务，任务ID: ${task.tid}")
+    Hilog.info(0, "test", "成功初始化任务，任务ID: ${task.tid}")
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -1596,11 +1591,10 @@ public func off(event: EventCallbackType, callback!: ?CallbackObject = None): Un
 
 **参数：**
 
-
-| 参数名   | 类型                                                                               | 必填 | 默认值 | 说明                                                                                                                                                                                                                                                                               |
-| :------- | :--------------------------------------------------------------------------------- | :--- | :----- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 参数名   | 类型  | 必填 | 默认值 | 说明 |
+| :------- | :-----  | :--- | :----- | :----- |
 | event    | [EventCallbackType](#enum-eventcallbacktype)                                       | 是   | -      | 订阅的事件类型。<br>- 取值为'progress'，表示任务进度。<br>- 取值为'completed'，表示任务完成。<br>- 取值为'failed'，表示任务失败。<br>- 取值为'pause'，表示任务暂停。<br>- 取值为'resume'，表示任务恢复。<br>- 取值为'remove'，表示任务删除。<br>- 取值为'response'，表示任务响应。 |
-| callback | ?[CallbackObject](../arkinterop/cj-api-callback_invoke.md#class-callbackobject) | 否   | None   | **命名参数。** 需要取消订阅的回调函数。若无此参数，则取消订阅当前类型的所有回调函数。                                                                                                                                                                                              |
+| callback | ?[CallbackObject](../arkinterop/cj-api-callback_invoke.md#class-callbackobject) | 否   | None   | **命名参数。** 需要取消订阅的回调函数。若无此参数，则取消订阅当前类型的所有回调函数。|
 
 **示例：**
 
@@ -1610,29 +1604,29 @@ public func off(event: EventCallbackType, callback!: ?CallbackObject = None): Un
 // main_ability.cj
 
 import kit.BasicServicesKit.*
-import kit.AbilityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 import ohos.business_exception.BusinessException
+import ohos.callback_invoke.*
+
+public class ProgressCallback <: Callback1Argument<Progress> {
+    public ProgressCallback(let f: (Progress) -> Unit) {}
+
+    public open func invoke(err: ?BusinessException, arg: Progress): Unit {
+        f(arg)
+    }
+}
 
 try {
-    let context = Global.abilityContext
-    let taskId = "example_task_id"
     let config = Config(
-        action = Action.Download,
-        url = "https://example.com/file.txt"
+        RAction.Download,
+        zipURL
     )
-    let task = Task(taskId, config)
-
-    // 先订阅事件
-    task.on(EventCallbackType.Progress, (progress) => {
-        Hilog.info(0, "cangjie_ohos_test", "下载进度: ${progress.progress}%")
-    })
-
-    // 取消订阅事件
-    task.off(EventCallbackType.Progress)
-    Hilog.info(0, "cangjie_ohos_test", "成功取消订阅进度事件")
+    let task = create(getAbilityContext(), config)
+    let callback = ProgressCallback({(progress) => Hilog.info(0, "test", "invoke success")})
+    task.on(EventCallbackType.Pause, callback)
+    task.off(EventCallbackType.Pause, callback: callback)
 } catch (e: BusinessException) {
-    Hilog.info(0, "test", "${e.message}")
+    Hilog.info(0, "test", "${e.toString()}")
 }
 ```
 
@@ -1650,11 +1644,42 @@ public func on(event: EventCallbackType, callback: Callback1Argument<HttpRespons
 
 **参数：**
 
-
-| 参数名   | 类型                                                                                                   | 必填 | 默认值 | 说明                                                       |
-| :------- | :----------------------------------------------------------------------------------------------------- | :--- | :----- | :--------------------------------------------------------- |
-| event    | [EventCallbackType](#enum-eventcallbacktype)                                                           | 是   | -      | 订阅的事件类型。<br>- 取值为'response'，表示任务响应。     |
+| 参数名   | 类型  | 必填 | 默认值 | 说明  |
+| :------- | :----  | :--- | :----- | :----  |
+| event    | [EventCallbackType](#enum-eventcallbacktype)  | 是   | -      | 订阅的事件类型。<br>- 取值为'response'，表示任务响应。     |
 | callback | [Callback1Argument](../arkinterop/cj-api-callback_invoke.md#class-callback1argument)\<HttpResponse> | 是   | -      | 发生相关的事件时触发该回调方法，返回任务响应头的数据结构。 |
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// main_ability.cj
+
+import kit.BasicServicesKit.*
+import kit.PerformanceAnalysisKit.Hilog
+import ohos.callback_invoke.*
+
+public class ProgressCallback <: Callback1Argument<HttpResponse> {
+    public ProgressCallback(let f: (HttpResponse) -> Unit) {}
+
+    public open func invoke(err: ?BusinessException, arg: HttpResponse): Unit {
+        f(arg)
+    }
+}
+
+try {
+    let config = Config(
+        RAction.Download,
+        zipURL
+    )
+    let task = create(getAbilityContext(), config)
+    let callback = ProgressCallback({(response) => Hilog.info(0, "test", "invoke success")})
+    task.on(EventCallbackType.Response, callback)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.toString()}")
+}
+```
 
 ### func on(EventCallbackType, Callback1Argument\<Progress>)
 
@@ -1670,11 +1695,44 @@ public func on(event: EventCallbackType, callback: Callback1Argument<Progress>):
 
 **参数：**
 
-
 | 参数名   | 类型 | 必填 | 默认值 | 说明 |
 | :------- | :---  | :--- | :----- | :----  |
-| event    | [EventCallbackType](#enum-eventcallbacktype)                                                                          | 是   | -      | 订阅的事件类型。<br>- 取值为'progress'，表示任务进度。<br>- 取值为'completed'，表示任务完成。<br>- 取值为'failed'，表示任务失败。<br>- 取值为'pause'，表示任务暂停。<br>- 取值为'resume'，表示任务恢复。<br>- 取值为'remove'，表示任务删除。 |
+| event    | [EventCallbackType](#enum-eventcallbacktype) | 是   | -      | 订阅的事件类型。<br>- 取值为'progress'，表示任务进度。<br>- 取值为'completed'，表示任务完成。<br>- 取值为'failed'，表示任务失败。<br>- 取值为'pause'，表示任务暂停。<br>- 取值为'resume'，表示任务恢复。<br>- 取值为'remove'，表示任务删除。 |
 | callback | [Callback1Argument](../arkinterop/cj-api-callback_invoke.md#class-callback1argument)\<[Progress](#class-progress)> | 是   | -      | 发生相关的事件时触发该回调方法，返回任务信息的数据结构。 |
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// main_ability.cj
+
+import kit.BasicServicesKit.*
+import kit.PerformanceAnalysisKit.Hilog
+import ohos.business_exception.BusinessException
+import ohos.callback_invoke.*
+
+public class ProgressCallback <: Callback1Argument<Progress> {
+    public ProgressCallback(let f: (Progress) -> Unit) {}
+
+    public open func invoke(err: ?BusinessException, arg: Progress): Unit {
+        f(arg)
+    }
+}
+
+try {
+    let config = Config(
+        RAction.Download,
+        zipURL
+    )
+    let task = create(getAbilityContext(), config)
+    let callback = ProgressCallback({(progress) => Hilog.info(0, "test", "invoke success")})
+    task.on(EventCallbackType.Pause, callback)
+    task.off(EventCallbackType.Pause, callback: callback)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.toString()}")
+}
+```
 
 ### func pause()
 
@@ -1696,6 +1754,28 @@ public func pause(): Unit
   | :---- | :--- |
   | 13400003 | Task service ability error. |
   | 21900007 | Operation with wrong task state. |
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// main_ability.cj
+
+import kit.BasicServicesKit.*
+import kit.PerformanceAnalysisKit.Hilog
+
+try {
+    let config = Config(
+        RAction.Download,
+        zipURL
+    )
+    let task = create(getAbilityContext(), config)
+    task.pause()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.toString()}")
+}
+```
 
 ### func resume()
 
@@ -1720,6 +1800,28 @@ public func resume(): Unit
   | 201 | Permission denied. |
   | 13400003 | Task service ability error. |
   | 21900007 | Operation with wrong task state. |
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// main_ability.cj
+
+import kit.BasicServicesKit.*
+import kit.PerformanceAnalysisKit.Hilog
+
+try {
+    let config = Config(
+        RAction.Download,
+        zipURL
+    )
+    let task = create(getAbilityContext(), config)
+    task.resume()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.toString()}")
+}
+```
 
 ### func start()
 
@@ -1758,7 +1860,7 @@ import kit.PerformanceAnalysisKit.Hilog
 import ohos.business_exception.BusinessException
 
 try {
-    let context = Global.abilityContext
+    let context = Global.getAbilityContext()
     let config = Config(
         action = Action.Download,
         url = "https://example.com/file.txt"
@@ -1766,7 +1868,7 @@ try {
     let task = create(context, config)
 
     task.start()
-    Hilog.info(0, "cangjie_ohos_test", "成功启动任务")
+    Hilog.info(0, "test", "成功启动任务")
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -1806,7 +1908,7 @@ import kit.PerformanceAnalysisKit.Hilog
 import ohos.business_exception.BusinessException
 
 try {
-    let context = Global.abilityContext
+    let context = Global.getAbilityContext()
     let config = Config(
         action = Action.Download,
         url = "https://example.com/largefile.zip"
@@ -1815,7 +1917,7 @@ try {
 
     task.start()
     task.stop()
-    Hilog.info(0, "cangjie_ohos_test", "成功停止任务")
+    Hilog.info(0, "test", "成功停止任务")
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }

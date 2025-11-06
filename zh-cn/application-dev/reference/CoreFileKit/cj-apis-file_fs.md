@@ -3631,6 +3631,27 @@ public func next(): ReaderIteratorResult
   | 13900037 | No data available |
   | 13900042 | Unknown error |
 
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.CoreFileKit.*
+import kit.PerformanceAnalysisKit.*
+
+let pathDir = "path/to/file"
+let filePath = pathDir + "/test.txt"
+let options: Options = Options(encoding: "utf-8")
+let readerIterator = FileIo.readLines(filePath, options: options)
+var result = readerIterator.next()
+while (!result.done) {
+    Hilog.info(0, "test", "content: ${result.value}", "")
+    result = readerIterator.next()
+}
+```
+
 ## class ReaderIteratorResult
 
 ```cangjie

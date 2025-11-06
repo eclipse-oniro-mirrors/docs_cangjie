@@ -73,6 +73,20 @@ public func clearText(): Unit
   | :---- | :--- |
   | 17000004 | The window or component is invisible or destroyed. |
 
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.TestKit.*
+
+let driver: Driver = Driver.create()
+let txt: Component = driver.findComponent(On().text("cangjie")).getOrThrow()
+txt.clearText()
+```
+
 ### func click()
 
 ```cangjie
@@ -93,6 +107,20 @@ public func click(): Unit
   | :---- | :--- |
   | 17000004 | The window or component is invisible or destroyed. |
 
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.TestKit.*
+
+let driver: Driver = Driver.create()
+let button: Component = driver.findComponent(On().id("button")).getOrThrow()
+button.click()
+```
+
 ### func doubleClick()
 
 ```cangjie
@@ -112,6 +140,20 @@ public func doubleClick(): Unit
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 17000004 | The window or component is invisible or destroyed. |
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.TestKit.*
+
+let driver: Driver = Driver.create()
+let button: Component = driver.findComponent(On().id("button")).getOrThrow()
+button.doubleClick()
+```
 
 ### func dragTo(Component)
 
@@ -139,6 +181,21 @@ public func dragTo(target: Component): Unit
   | :---- | :--- |
   | 17000004 | The window or component is invisible or destroyed. |
 
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.TestKit.*
+
+let driver: Driver = Driver.create()
+let button: Component = driver.findComponent(On().id("button")).getOrThrow()
+let drag: Component = driver.findComponent(On().text("ohos")).getOrThrow()
+button.dragTo(drag)
+```
+
 ### func getBounds()
 
 ```cangjie
@@ -164,6 +221,20 @@ public func getBounds(): Rect
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 17000004 | The window or component is invisible or destroyed. |
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.TestKit.*
+
+let driver: Driver = Driver.create()
+let button: Component = driver.findComponent(On().id("button")).getOrThrow()
+let rect: Rect = button.getBounds()
+```
 
 ### func getBoundsCenter()
 
@@ -191,6 +262,20 @@ public func getBoundsCenter(): Point
   | :---- | :--- |
   | 17000004 | The window or component is invisible or destroyed. |
 
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.TestKit.*
+
+let driver: Driver = Driver.create()
+let button: Component = driver.findComponent(On().id("button")).getOrThrow()
+let point: Point = button.getBoundsCenter()
+```
+
 ### func getDescription()
 
 ```cangjie
@@ -216,6 +301,20 @@ public func getDescription(): String
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 17000004 | The window or component is invisible or destroyed. |
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.TestKit.*
+
+let driver: Driver = Driver.create()
+let button: Component = driver.findComponent(On().id("button")).getOrThrow()
+let des: String = button.getDescription()
+```
 
 ### func getId()
 
@@ -243,6 +342,20 @@ public func getId(): String
   | :---- | :--- |
   | 17000004 | The window or component is invisible or destroyed. |
 
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.TestKit.*
+
+let driver: Driver = Driver.create()
+let button: Component = driver.findComponent(On().id("button")).getOrThrow()
+let id: String = button.getId()
+```
+
 ### func getText()
 
 ```cangjie
@@ -268,6 +381,20 @@ public func getText(): String
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 17000004 | The window or component is invisible or destroyed. |
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.TestKit.*
+
+let driver: Driver = Driver.create()
+let button: Component = driver.findComponent(On().id("button")).getOrThrow()
+let text: String = button.getText()
+```
 
 ### func getType()
 
@@ -295,6 +422,20 @@ public func getType(): String
   | :---- | :--- |
   | 17000004 | The window or component is invisible or destroyed. |
 
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.TestKit.*
+
+let driver: Driver = Driver.create()
+let button: Component = driver.findComponent(On().id("button")).getOrThrow()
+let btype: String = button.getType()
+```
+
 ### func inputText(String)
 
 ```cangjie
@@ -320,6 +461,20 @@ public func inputText(text: String): Unit
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 17000004 | The window or component is invisible or destroyed. |
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.TestKit.*
+
+let driver: Driver = Driver.create()
+let txt: Component = driver.findComponent(On().text("cangjie")).getOrThrow()
+txt.inputText("111")
+```
 
 ### func isCheckable()
 
@@ -347,6 +502,20 @@ public func isCheckable(): Bool
   | :---- | :--- |
   | 17000004 | The window or component is invisible or destroyed. |
 
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.TestKit.*
+
+let driver: Driver = Driver.create()
+let button: Component = driver.findComponent(On().id("button")).getOrThrow()
+let c: Bool = button.isCheckable()
+```
+
 ### func isChecked()
 
 ```cangjie
@@ -372,6 +541,20 @@ public func isChecked(): Bool
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 17000004 | The window or component is invisible or destroyed. |
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.TestKit.*
+
+let driver: Driver = Driver.create()
+let button: Component = driver.findComponent(On().id("button")).getOrThrow()
+let c2: Bool = button.isChecked()
+```
 
 ### func isClickable()
 
@@ -399,6 +582,20 @@ public func isClickable(): Bool
   | :---- | :--- |
   | 17000004 | The window or component is invisible or destroyed. |
 
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.TestKit.*
+
+let driver: Driver = Driver.create()
+let button: Component = driver.findComponent(On().id("button")).getOrThrow()
+let c: Bool = button.isClickable()
+```
+
 ### func isEnabled()
 
 ```cangjie
@@ -424,6 +621,20 @@ public func isEnabled(): Bool
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 17000004 | The window or component is invisible or destroyed. |
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.TestKit.*
+
+let driver: Driver = Driver.create()
+let button: Component = driver.findComponent(On().id("button")).getOrThrow()
+let e: Bool = button.isEnabled()
+```
 
 ### func isFocused()
 
@@ -451,6 +662,20 @@ public func isFocused(): Bool
   | :---- | :--- |
   | 17000004 | The window or component is invisible or destroyed. |
 
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.TestKit.*
+
+let driver: Driver = Driver.create()
+let button: Component = driver.findComponent(On().id("button")).getOrThrow()
+let f: Bool = button.isFocused()
+```
+
 ### func isLongClickable()
 
 ```cangjie
@@ -476,6 +701,20 @@ public func isLongClickable(): Bool
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 17000004 | The window or component is invisible or destroyed. |
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.TestKit.*
+
+let driver: Driver = Driver.create()
+let button: Component = driver.findComponent(On().id("button")).getOrThrow()
+let c1: Bool = button.isLongClickable()
+```
 
 ### func isScrollable()
 
@@ -503,6 +742,20 @@ public func isScrollable(): Bool
   | :---- | :--- |
   | 17000004 | The window or component is invisible or destroyed. |
 
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.TestKit.*
+
+let driver: Driver = Driver.create()
+let button: Component = driver.findComponent(On().id("button")).getOrThrow()
+let s: Bool = button.isScrollable()
+```
+
 ### func isSelected()
 
 ```cangjie
@@ -529,6 +782,20 @@ public func isSelected(): Bool
   | :---- | :--- |
   | 17000004 | The window or component is invisible or destroyed. |
 
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.TestKit.*
+
+let driver: Driver = Driver.create()
+let button: Component = driver.findComponent(On().id("button")).getOrThrow()
+let s1: Bool = button.isSelected()
+```
+
 ### func longClick()
 
 ```cangjie
@@ -548,6 +815,20 @@ public func longClick(): Unit
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 17000004 | The window or component is invisible or destroyed. |
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.TestKit.*
+
+let driver: Driver = Driver.create()
+let button: Component = driver.findComponent(On().id("button")).getOrThrow()
+button.longClick()
+```
 
 ### func pinchIn(Float32)
 
@@ -575,6 +856,20 @@ public func pinchIn(scale: Float32): Unit
   | :---- | :--- |
   | 17000004 | The window or component is invisible or destroyed. |
 
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.TestKit.*
+
+let driver: Driver = Driver.create()
+let image: Component = driver.findComponent(On().id("icon")).getOrThrow()
+image.pinchIn(0.5)
+```
+
 ### func pinchOut(Float32)
 
 ```cangjie
@@ -600,6 +895,20 @@ public func pinchOut(scale: Float32): Unit
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 17000004 | The window or component is invisible or destroyed. |
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.TestKit.*
+
+let driver: Driver = Driver.create()
+let image: Component = driver.findComponent(On().id("icon")).getOrThrow()
+image.pinchOut(2.5)
+```
 
 ### func scrollSearch(On)
 
@@ -633,6 +942,20 @@ public func scrollSearch(on: On): ?Component
   | :---- | :--- |
   | 17000004 | The window or component is invisible or destroyed. |
 
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.TestKit.*
+
+let driver: Driver = Driver.create()
+let scrollBar: Component = driver.findComponent(On().onType("Scroll")).getOrThrow()
+let button: Option<Component> = scrollBar.scrollSearch(On().text("1"))
+```
+
 ### func scrollToBottom(Int64)
 
 ```cangjie
@@ -659,6 +982,20 @@ public func scrollToBottom(speed!: Int64 = 600): Unit
   | :---- | :--- |
   | 17000004 | The window or component is invisible or destroyed. |
 
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.TestKit.*
+
+let driver: Driver = Driver.create()
+let scrollBar: Component = driver.findComponent(On().onType("Scroll")).getOrThrow()
+scrollBar.scrollToBottom()
+```
+
 ### func scrollToTop(Int64)
 
 ```cangjie
@@ -684,6 +1021,20 @@ public func scrollToTop(speed!: Int64 = 600): Unit
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 17000004 | The window or component is invisible or destroyed. |
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.TestKit.*
+
+let driver: Driver = Driver.create()
+let scrollBar: Component = driver.findComponent(On().onType("Scroll")).getOrThrow()
+scrollBar.scrollToTop()
+```
 
 ## class Driver
 
@@ -799,6 +1150,14 @@ public func click(x: Int32, y: Int32): Unit
 |x|Int32|是|-|以Int32的形式传入目标点的横坐标信息。|
 |y|Int32|是|-|以Int32的形式传入目标点的纵坐标信息。|
 
+**异常：**
+
+- BusinessException：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)和[通用错误码](../cj-errorcode-universal.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+
 **示例：**
 
 <!-- compile -->
@@ -861,6 +1220,14 @@ public func delayMs(duration: Int32): Unit
 |:---|:---|:---|:---|:---|
 |duration|Int32|是|-|给定的时间，单位：ms。|
 
+**异常：**
+
+- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+
 **示例：**
 
 <!-- compile -->
@@ -892,6 +1259,14 @@ public func doubleClick(x: Int32, y: Int32): Unit
 |:---|:---|:---|:---|:---|
 |x|Int32|是|-|以Int32的形式传入目标点的横坐标信息。|
 |y|Int32|是|-|以Int32的形式传入目标点的纵坐标信息。|
+
+**异常：**
+
+- BusinessException：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)和[通用错误码](../cj-errorcode-universal.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -933,6 +1308,14 @@ public func drag(
 |endx|Int32|是|-|以Int32的形式传入目的点的横坐标信息。|
 |endy|Int32|是|-|以Int32的形式传入目的点的纵坐标信息。|
 |speed|Int32|否|600|**命名参数。** 滑动速率，范围：200-15000，不在范围内设为默认值为600，单位：像素点/秒。|
+
+**异常：**
+
+- BusinessException：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)和[通用错误码](../cj-errorcode-universal.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -1008,6 +1391,14 @@ public func findComponents(on: On): ?Array<Component>
 |:----|:----|
 |?Array\<[Component](#class-component)>|目标控件的属性要求。|
 
+**异常：**
+
+- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+
 **示例：**
 
 <!-- compile -->
@@ -1045,6 +1436,14 @@ public func findWindow(filter: WindowFilter): ?UiWindow
 |:----|:----|
 |?[UiWindow](#class-uiwindow)|找到的目标窗口对象。|
 
+**异常：**
+
+- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+
 **示例：**
 
 <!-- compile -->
@@ -1079,6 +1478,14 @@ public func fling(from: Point, to: Point, stepLen: Int32, speed: Int32): Unit
 |stepLen|Int32|是|-|间隔距离，单位：像素点。|
 |speed|Int32|是|-|滑动速率，范围：200-40000，不在范围内设为默认值为600，单位：像素点/秒。|
 
+**异常：**
+
+- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+
 **示例：**
 
 <!-- compile -->
@@ -1110,6 +1517,14 @@ public func fling(direction: UiDirection, speed: Int32): Unit
 |:---|:---|:---|:---|:---|
 |direction|[UiDirection](#enum-uidirection)|是|-|进行抛滑的方向。|
 |speed|Int32|是|-|滑动速率，范围：200-40000，不在范围内设为默认值为600，单位：像素点/秒。|
+
+**异常：**
+
+- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -1242,6 +1657,14 @@ public func injectMultiPointerAction(pointers: PointerMatrix, speed!: Int32 = 60
 |:----|:----|
 |Bool|返回操作是否成功完成。成功返回true，否则返回false。|
 
+**异常：**
+
+- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+
 **示例：**
 
 <!-- compile -->
@@ -1283,6 +1706,14 @@ public func inputText(p: Point, text: String): Unit
 |p|[Point](#class-point)|是|-|输入文本的坐标点。|
 |text|String|是|-|输入的文本信息。|
 
+**异常：**
+
+- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+
 **示例：**
 
 <!-- compile -->
@@ -1323,6 +1754,14 @@ public func longClick(x: Int32, y: Int32): Unit
 |x|Int32|是|-|以Int32的形式传入目标点的横坐标信息。|
 |y|Int32|是|-|以Int32的形式传入目标点的纵坐标信息。|
 
+**异常：**
+
+- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+
 **示例：**
 
 <!-- compile -->
@@ -1356,6 +1795,14 @@ public func mouseClick(p: Point, btnId: MouseButton, key1!: Int32 = 0, key2!: In
 |btnId|[MouseButton](#enum-mousebutton)|是|-|按下的鼠标按钮。|
 |key1|Int32|否|0|**命名参数。** 指定的第一个key值。|
 |key2|Int32|否|0|**命名参数。** 指定的第二个key值。|
+
+**异常：**
+
+- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -1392,6 +1839,14 @@ public func mouseDoubleClick(p: Point, btnId: MouseButton, key1!: Int32 = 0, key
 |key1|Int32|否|0|**命名参数。** 指定的第一个key值。|
 |key2|Int32|否|0|**命名参数。** 指定的第二个key值。|
 
+**异常：**
+
+- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+
 **示例：**
 
 <!-- compile -->
@@ -1425,6 +1880,14 @@ public func mouseDrag(from: Point, to: Point, speed!: Int32 = 600): Unit
 |from|[Point](#class-point)|是|-|起始点坐标。|
 |to|[Point](#class-point)|是|-|终点坐标。|
 |speed|Int32|否|600|**命名参数。** 滑动速率，范围：200-15000，不在范围内设为默认值为600，单位：像素点/秒。|
+
+**异常：**
+
+- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -1461,6 +1924,14 @@ public func mouseLongClick(p: Point, btnId: MouseButton, key1!: Int32 = 0, key2!
 |key1|Int32|否|0|**命名参数。** 指定的第一个key值。|
 |key2|Int32|否|0|**命名参数。** 指定的第二个key值。|
 
+**异常：**
+
+- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+
 **示例：**
 
 <!-- compile -->
@@ -1492,6 +1963,14 @@ public func mouseMoveTo(p: Point): Unit
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |p|[Point](#class-point)|是|-|目标点的坐标。|
+
+**异常：**
+
+- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -1526,6 +2005,14 @@ public func mouseMoveWithTrack(from: Point, to: Point, speed!: Int32 = 600): Uni
 |from|[Point](#class-point)|是|-|起始点坐标。|
 |to|[Point](#class-point)|是|-|终点坐标。|
 |speed|Int32|否|600|**命名参数。** 滑动速率，范围：200-15000，不在范围内设为默认值为600，单位：像素点/秒。|
+
+**异常：**
+
+- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -1563,6 +2050,14 @@ public func mouseScroll(p: Point, down: Bool, d: Int32, key1!: Int32 = 0, key2!:
 |key1|Int32|否|0|**命名参数。** 指定的第一个key值。|
 |key2|Int32|否|0|**命名参数。** 指定的第二个key值。|
 |speed|Int32|否|20|**命名参数。** 鼠标滚轮滑动的速度，范围：1-500，不在范围内设为默认值为20，单位：格/秒。|
+
+**异常：**
+
+- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -1652,6 +2147,14 @@ public func screenCap(savePath: String): Bool
 |:----|:----|
 |Bool|截图操作是否成功完成。成功完成为true，否则为false。|
 
+**异常：**
+
+- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+
 **示例：**
 
 <!-- compile -->
@@ -1690,6 +2193,14 @@ public func screenCapture(savePath: String, rect!: Rect = Rect(0,0,0,0)): Bool
 |:----|:----|
 |Bool|截图操作是否成功完成。成功完成为true，否则为false。|
 
+**异常：**
+
+- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+
 **示例：**
 
 <!-- compile -->
@@ -1721,6 +2232,14 @@ public func setDisplayRotation(rotation: DisplayRotation): Unit
 |:---|:---|:---|:---|:---|
 |rotation|[DisplayRotation](#enum-displayrotation)|是|-|设备的显示方向。|
 
+**异常：**
+
+- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+
 **示例：**
 
 <!-- compile -->
@@ -1751,6 +2270,14 @@ public func setDisplayRotationEnabled(enabled: Bool): Unit
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |enabled|Bool|是|-|能否旋转屏幕的标识，true：可以旋转，false：不可以旋转。|
+
+**异常：**
+
+- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -1793,6 +2320,14 @@ public func swipe(
 |endy|Int32|是|-|以Int32的形式传入目的点的纵坐标信息。|
 |speed|Int32|否|600|**命名参数。** 滑动速率，范围：200-15000，不在范围内设为默认值为600，单位：像素点/秒。|
 
+**异常：**
+
+- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+
 **示例：**
 
 <!-- compile -->
@@ -1826,6 +2361,14 @@ public func triggerCombineKeys(key0: Int32, key1: Int32, key2!: Int32 = 0): Unit
 |key1|Int32|是|-|指定的第二个key值。|
 |key2|Int32|否|0|**命名参数。** 指定的第三个key值。|
 
+**异常：**
+
+- BusinessException：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)和[通用错误码](../cj-errorcode-universal.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+
 **示例：**
 
 <!-- compile -->
@@ -1856,6 +2399,14 @@ public func triggerKey(keyCode: Int32): Unit
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |keyCode|Int32|是|-|指定的key值。|
+
+**异常：**
+
+- BusinessException：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)和[通用错误码](../cj-errorcode-universal.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -1895,6 +2446,14 @@ public func waitForComponent(on: On, time: Int32): ?Component
 |:----|:----|
 |?[Component](#class-component)|找到的控件对象。|
 
+**异常：**
+
+- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+
 **示例：**
 
 <!-- compile -->
@@ -1932,6 +2491,14 @@ public func waitForIdle(idleTime: Int32, timeout: Int32): Bool
 |类型|说明|
 |:----|:----|
 |Bool|返回当前界面的所有控件是否已经空闲。|
+
+**异常：**
+
+- BusinessException：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)和[通用错误码](../cj-errorcode-universal.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -2029,6 +2596,14 @@ public func checkable(b!: Bool = true): On
 |:----|:----|
 |[On](#class-on)|返回指定目标控件能否被勾选状态属性的[On](#class-on)对象。|
 
+**异常：**
+
+- BusinessException：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)和[通用错误码](../cj-errorcode-universal.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 401 | Parameter error. 1. Incorrect parameter types; 2. Parameter verification failed. |
+
 **示例：**
 
 <!-- compile -->
@@ -2074,6 +2649,14 @@ public func checked(b!: Bool = true): On
 |类型|说明|
 |:----|:----|
 |[On](#class-on)|返回指定目标控件的被勾选状态属性的[On](#class-on)对象。|
+
+**异常：**
+
+- BusinessException：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)和[通用错误码](../cj-errorcode-universal.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 401 | Parameter error. Possible causes: 1. Incorrect parameter types; 2. Parameter verification failed. |
 
 **示例：**
 
@@ -2168,6 +2751,14 @@ public func description(val: String, pattern!: MatchPattern = MatchPattern.Equal
 |:----|:----|
 |[On](#class-on)|返回指定目标控件的控件类型属性的[On](#class-on)对象。|
 
+**异常：**
+
+- BusinessException：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)和[通用错误码](../cj-errorcode-universal.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 401 | if the input parameters are invalid. |
+
 **示例：**
 
 <!-- compile -->
@@ -2213,6 +2804,14 @@ public func enabled(b!: Bool = true): On
 |类型|说明|
 |:----|:----|
 |[On](#class-on)|返回指定目标控件的使能状态属性的[On](#class-on)对象。|
+
+**异常：**
+
+- BusinessException：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)和[通用错误码](../cj-errorcode-universal.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 401 | Parameter error. Possible causes: 1. Incorrect parameter types; 2. Parameter verification failed. |
 
 **示例：**
 
@@ -2260,6 +2859,14 @@ public func focused(b!: Bool = true): On
 |:----|:----|
 |[On](#class-on)|返回指定目标控件的获焦状态属性的[On](#class-on)对象。|
 
+**异常：**
+
+- BusinessException：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)和[通用错误码](../cj-errorcode-universal.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 401 | Parameter error. Possible causes: 1. Incorrect parameter types; 2. Parameter verification failed. |
+
 **示例：**
 
 <!-- compile -->
@@ -2305,6 +2912,14 @@ public func id(id: String): On
 |类型|说明|
 |:----|:----|
 |[On](#class-on)|返回指定目标控件id属性的[On](#class-on)对象。|
+
+**异常：**
+
+- BusinessException：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)和[通用错误码](../cj-errorcode-universal.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -2352,6 +2967,14 @@ public func inWindow(bundleName: String): On
 |:----|:----|
 |[On](#class-on)|返回指定目标控件位于给出的应用窗口内的[On](#class-on)对象。|
 
+**异常：**
+
+- BusinessException：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)和[通用错误码](../cj-errorcode-universal.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+
 **示例：**
 
 <!-- compile -->
@@ -2397,6 +3020,14 @@ public func isAfter(on: On): On
 |类型|说明|
 |:----|:----|
 |[On](#class-on)|返回指定目标控件位于给出的特征属性控件之后的[On](#class-on)对象。|
+
+**异常：**
+
+- BusinessException：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)和[通用错误码](../cj-errorcode-universal.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -2445,6 +3076,14 @@ public func isBefore(on: On): On
 |:----|:----|
 |[On](#class-on)|返回指定目标控件位于给出的特征属性控件之前的[On](#class-on)对象。|
 
+**异常：**
+
+- BusinessException：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)和[通用错误码](../cj-errorcode-universal.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+
 **示例：**
 
 <!-- compile -->
@@ -2492,6 +3131,14 @@ public func longClickable(b!: Bool = true): On
 |:----|:----|
 |[On](#class-on)|返回指定目标控件的可长按点击状态属性的[On](#class-on)对象。|
 
+**异常：**
+
+- BusinessException：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)和[通用错误码](../cj-errorcode-universal.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 401 | Parameter error. Possible causes: 1. Incorrect parameter types; 2. Parameter verification failed. |
+
 **示例：**
 
 <!-- compile -->
@@ -2537,6 +3184,14 @@ public func onType(tp: String): On
 |类型|说明|
 |:----|:----|
 |[On](#class-on)|返回指定目标控件的控件类型属性的[On](#class-on)对象。|
+
+**异常：**
+
+- BusinessException：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)和[通用错误码](../cj-errorcode-universal.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -2584,6 +3239,14 @@ public func scrollable(b!: Bool = true): On
 |:----|:----|
 |[On](#class-on)|返回指定目标控件的可滑动状态属性的[On](#class-on)对象。|
 
+**异常：**
+
+- BusinessException：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)和[通用错误码](../cj-errorcode-universal.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 401 | Parameter error. Possible causes: 1. Incorrect parameter types; 2. Parameter verification failed. |
+
 **示例：**
 
 <!-- compile -->
@@ -2629,6 +3292,14 @@ public func selected(b!: Bool = true): On
 |类型|说明|
 |:----|:----|
 |[On](#class-on)|返回指定目标控件的被选中状态属性的[On](#class-on)对象。|
+
+**异常：**
+
+- BusinessException：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)和[通用错误码](../cj-errorcode-universal.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 401 | Parameter error. Possible causes: 1. Incorrect parameter types; 2. Parameter verification failed. |
 
 **示例：**
 
@@ -2722,6 +3393,14 @@ public func within(on: On): On
 |类型|说明|
 |:----|:----|
 |[On](#class-on)|返回指定目标控件位于给出的特征属性控件内的[On](#class-on)对象。|
+
+**异常：**
+
+- BusinessException：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)和[通用错误码](../cj-errorcode-universal.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -2868,6 +3547,14 @@ public static func create(fingers: Int32, steps: Int32): PointerMatrix
 |:----|:----|
 |[PointerMatrix](#class-pointermatrix)|返回构造的[PointerMatrix](#class-pointermatrix)对象。|
 
+**异常：**
+
+- BusinessException：对应错误码如下表，[通用错误码](../cj-errorcode-universal.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+
 **示例：**
 
 <!-- compile -->
@@ -2899,6 +3586,14 @@ public func setPoint(finger: Int32, step: Int32, point: Point): Unit
 |finger|Int32|是|-|手指的序号。|
 |step|Int32|是|-|步骤的序号。|
 |point|[Point](#class-point)|是|-|该行为的坐标点。|
+
+**异常：**
+
+- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -3134,6 +3829,38 @@ public func once(onceType: OnceType, callback: Callback<UIElementInfo>): Unit
 |:---|:---|:---|:---|:---|
 |onceType|[OnceType](#enum-oncetype)|是|-|控件类型。|
 |callback|[Callback](./../arkui-cj/cj-common-types.md#type-callback)\<[UIElementInfo](#class-uielementinfo)>|是|-|事件发生时执行的回调函数。|
+
+**异常：**
+
+- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.TestKit.*
+import kit.PerformanceAnalysisKit.Hilog
+
+let driver: Driver = Driver.create()
+let observer: UIEventObserver = driver.createUIEventObserver()
+observer.once(
+    OnceType.DialogShow,
+    {
+        element =>
+        Hilog.info(0, "", "onceDialogShow")
+        Hilog.info(0, "", element.bundleName)
+        Hilog.info(0, "", element.componentType)
+        Hilog.info(0, "", element.text)
+    }
+)
+```
 
 ## class UiWindow
 
@@ -3562,6 +4289,7 @@ public func moveTo(x: Int32, y: Int32): Unit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
+  | 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
   | 17000004 | The window or component is invisible or destroyed. |
   | 17000005 | This operation is not supported. |
 

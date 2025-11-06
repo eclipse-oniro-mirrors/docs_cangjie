@@ -766,6 +766,18 @@ public static func getAbilityDelegator(): AbilityDelegator
 |:----|:----|
 |[AbilityDelegator](#class-abilitydelegator)|[AbilityDelegator](#class-abilitydelegator)对象。可以用来调度测试框架相关功能。|
 
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.TestKit.*
+
+let delegator = AbilityDelegatorRegistry.getAbilityDelegator()
+```
+
 ### static func getArguments()
 
 ```cangjie

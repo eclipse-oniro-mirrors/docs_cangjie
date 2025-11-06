@@ -230,6 +230,31 @@ public func getAssets(options: FetchOptions): PhotoAssetResult
   | 13900020 | Invalid argument |
   | 14000011 | System inner fail |
 
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.MediaLibraryKit.*
+import kit.ArkData.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
+
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let phAccessHelper = getPhotoAccessHelper(ctx)
+    let predicates = DataSharePredicates()
+    let fetchOptions: FetchOptions = FetchOptions([], predicates)
+    let albumFetchResult = phAccessHelper.getAlbums(AlbumType.User, AlbumSubtype.UserGeneric)
+    let album = albumFetchResult.getFirstObject()
+    let fetchResult = album.getAssets(fetchOptions)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
 ## class Album
 
 ```cangjie
@@ -2039,6 +2064,33 @@ public func applyChanges(mediaChangeRequest: MediaChangeRequest): Unit
   | 201 | Permission denied |
   | 14000011 | System inner fail |
 
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.MediaLibraryKit.*
+import kit.ArkData.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
+
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let phAccessHelper = getPhotoAccessHelper(ctx)
+    let predicates = DataSharePredicates()
+    let fetchOptions = FetchOptions([], predicates)
+    let fetchResult = phAccessHelper.getAssets(fetchOptions)
+    let photoAsset = fetchResult.getFirstObject()
+    let assetChangeRequest = MediaAssetChangeRequest(photoAsset)
+    assetChangeRequest.setTitle("newTitle")
+    phAccessHelper.applyChanges(assetChangeRequest)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
 ### func getAlbums(AlbumType, AlbumSubtype, FetchOptions)
 
 ```cangjie
@@ -2830,6 +2882,30 @@ public func getAllObjects(): Array<PhotoAsset>
   | 13900020 | Invalid argument |
   | 14000011 | System inner fail |
 
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.MediaLibraryKit.*
+import kit.ArkData.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
+
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let phAccessHelper = getPhotoAccessHelper(ctx)
+    let predicates = DataSharePredicates()
+    let fetchOptions: FetchOptions = FetchOptions([], predicates)
+    let fetchResult: PhotoAssetResult = phAccessHelper.getAssets(fetchOptions)
+    let photoAssets = fetchResult.getAllObjects()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
 ### func getFirstObject()
 
 ```cangjie
@@ -2856,6 +2932,30 @@ public func getFirstObject(): PhotoAsset
   | :---- | :--- |
   | 13900020 | Invalid argument |
   | 14000011 | System inner fail |
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.MediaLibraryKit.*
+import kit.ArkData.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
+
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let phAccessHelper = getPhotoAccessHelper(ctx)
+    let predicates = DataSharePredicates()
+    let fetchOptions: FetchOptions = FetchOptions([], predicates)
+    let fetchResult: PhotoAssetResult = phAccessHelper.getAssets(fetchOptions)
+    let photoAsset = fetchResult.getFirstObject()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
 
 ### func getLastObject()
 
@@ -2884,6 +2984,30 @@ public func getLastObject(): PhotoAsset
   | 13900020 | Invalid argument |
   | 14000011 | System inner fail |
 
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.MediaLibraryKit.*
+import kit.ArkData.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
+
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let phAccessHelper = getPhotoAccessHelper(ctx)
+    let predicates = DataSharePredicates()
+    let fetchOptions: FetchOptions = FetchOptions([], predicates)
+    let fetchResult: PhotoAssetResult = phAccessHelper.getAssets(fetchOptions)
+    let photoAsset = fetchResult.getLastObject()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
 ### func getNextObject()
 
 ```cangjie
@@ -2910,6 +3034,30 @@ public func getNextObject(): PhotoAsset
   | :---- | :--- |
   | 13900020 | Invalid argument |
   | 14000011 | System inner fail |
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.MediaLibraryKit.*
+import kit.ArkData.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
+
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let phAccessHelper = getPhotoAccessHelper(ctx)
+    let predicates = DataSharePredicates()
+    let fetchOptions: FetchOptions = FetchOptions([], predicates)
+    let fetchResult: PhotoAssetResult = phAccessHelper.getAssets(fetchOptions)
+    let photoAsset = fetchResult.getNextObject()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
 
 ### func getObjectByPosition(Int32)
 
@@ -2943,6 +3091,30 @@ public func getObjectByPosition(index: Int32): PhotoAsset
   | :---- | :--- |
   | 13900020 | Invalid argument |
   | 14000011 | System inner fail |
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.MediaLibraryKit.*
+import kit.ArkData.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
+
+try {
+    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let phAccessHelper = getPhotoAccessHelper(ctx)
+    let predicates = DataSharePredicates()
+    let fetchOptions: FetchOptions = FetchOptions([], predicates)
+    let fetchResult: PhotoAssetResult = phAccessHelper.getAssets(fetchOptions)
+    let photoAsset = fetchResult.getObjectByPosition(0)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
 
 ## class PhotoCreationConfig
 

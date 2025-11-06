@@ -22,7 +22,6 @@ API示例代码使用说明：
 ## func abortSession(HuksHandleId, HuksOptions)
 
 ```cangjie
-
 public func abortSession(handle: HuksHandleId, options: HuksOptions): Unit
 ```
 
@@ -90,7 +89,6 @@ try {
 ## func anonAttestKeyItem(String, HuksOptions)
 
 ```cangjie
-
 public func anonAttestKeyItem(keyAlias: String, options: HuksOptions): Array<String>
 ```
 
@@ -175,7 +173,6 @@ try {
 ## func deleteKeyItem(String, HuksOptions)
 
 ```cangjie
-
 public func deleteKeyItem(keyAlias: String, options: HuksOptions): Unit
 ```
 
@@ -323,7 +320,6 @@ try {
 ## func finishSession(HuksHandleId, HuksOptions, Bytes)
 
 ```cangjie
-
 public func finishSession(handle: HuksHandleId, options: HuksOptions, token!: Bytes): Option<Bytes>
 ```
 
@@ -404,7 +400,6 @@ try {
 ## func generateKeyItem(String, HuksOptions)
 
 ```cangjie
-
 public func generateKeyItem(keyAlias: String, options: HuksOptions): Unit
 ```
 
@@ -472,7 +467,6 @@ try {
 ## func getKeyItemProperties(String, HuksOptions)
 
 ```cangjie
-
 public func getKeyItemProperties(keyAlias: String, _: HuksOptions): Array<HuksParam>
 ```
 
@@ -542,7 +536,6 @@ try {
 ## func importKeyItem(String, HuksOptions)
 
 ```cangjie
-
 public func importKeyItem(keyAlias: String, options: HuksOptions): Unit
 ```
 
@@ -592,11 +585,7 @@ import kit.PerformanceAnalysisKit.Hilog
 
 try {
     let keyAlias = "KEY_ALIAS" // 密钥别名，在生成密钥时指定，在加密、解密和删除密钥时使用
-    let key = Array<UInt8>(Int64(HuksKeySize.HUKS_AES_KEY_SIZE_256 / 8), 
-
-
-
-    {i => UInt8(i & 0xFF)})
+    let key = Array<UInt8>(Int64(HuksKeySize.HUKS_AES_KEY_SIZE_256 / 8), {i => UInt8(i & 0xFF)})
     importKeyItem(
         keyAlias,
         HuksOptions(properties:
@@ -657,10 +646,43 @@ public func importWrappedKeyItem(keyAlias: String, wrappingKeyAlias: String, opt
   | 12000015 | Failed to obtain the security information via UserIAM |
   | 12000017 | The key with same alias is already exist |
 
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.UniversalKeystoreKit.*
+import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
+
+let keyAlias = "KEY_ALIAS" // 密钥别名，在生成密钥时指定，在加密、解密和删除密钥时使用
+let wrappingKeyAlias = "test_import_wrapped_wrong_wrapping_key"
+
+try {
+    importWrappedKeyItem(
+        keyAlias,
+        wrappingKeyAlias,
+        HuksOptions(
+            properties:  [
+                HuksParam(HuksTag.HUKS_TAG_ALGORITHM, HuksParamValue.Uint32Value(HuksKeyAlg.HUKS_ALG_AES)),
+                HuksParam(HuksTag.HUKS_TAG_KEY_SIZE, HuksParamValue.Uint32Value( HuksKeySize.HUKS_AES_KEY_SIZE_256)),
+                HuksParam(
+                    HuksTag.HUKS_TAG_PURPOSE,
+                    HuksParamValue.Uint32Value(HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT | HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT)
+                )
+            ],
+            inData: Bytes()
+        )
+    )} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
 ## func initSession(String, HuksOptions)
 
 ```cangjie
-
 public func initSession(keyAlias: String, options: HuksOptions): HuksSessionHandle
 ```
 
@@ -738,7 +760,6 @@ try {
 ## func isKeyItemExist(String, HuksOptions)
 
 ```cangjie
-
 public func isKeyItemExist(keyAlias: String, options: HuksOptions): Bool
 ```
 
@@ -814,7 +835,6 @@ try {
 ## func updateSession(HuksHandleId, HuksOptions, Bytes)
 
 ```cangjie
-
 public func updateSession(handle: HuksHandleId, options: HuksOptions, token!: Bytes): Option<Bytes>
 ```
 
@@ -857,6 +877,54 @@ public func updateSession(handle: HuksHandleId, options: HuksOptions, token!: By
   | 12000011 | queried entity does not exist |
   | 12000012 | Device environment or input parameter abnormal |
   | 12000014 | memory is insufficient |
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.PerformanceAnalysisKit.*
+import kit.UniversalKeystoreKit.*
+import ohos.business_exception.BusinessException
+
+let keyAlias = "KEY_ALIAS" // 密钥别名，在生成密钥时指定，在加密、解密和删除密钥时使用
+try {
+    let plainText = 'PLAIN_TEXT'  // 待加密的明文
+    let IV = 'TEST_IV' // 此处为样例代码，实际使用需采用随机值
+    let options = HuksOptions(
+        properties:  [
+            HuksParam(HuksTag.HUKS_TAG_ALGORITHM, HuksParamValue.Uint32Value(HuksKeyAlg.HUKS_ALG_AES)),
+            HuksParam(HuksTag.HUKS_TAG_KEY_SIZE, HuksParamValue.Uint32Value(HuksKeySize.HUKS_AES_KEY_SIZE_128)),
+            HuksParam(
+                HuksTag.HUKS_TAG_PURPOSE,
+                HuksParamValue.Uint32Value(HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT | HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT)
+            )
+        ],
+        inData: Bytes()
+    )
+    let encOptions = HuksOptions(
+        properties: [
+            HuksParam(HuksTag.HUKS_TAG_ALGORITHM, HuksParamValue.Uint32Value(HuksKeyAlg.HUKS_ALG_AES)),
+            HuksParam(HuksTag.HUKS_TAG_KEY_SIZE, HuksParamValue.Uint32Value(HuksKeySize.HUKS_AES_KEY_SIZE_128)),
+            HuksParam(HuksTag.HUKS_TAG_PURPOSE, HuksParamValue.Uint32Value(HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT)),
+            HuksParam(HuksTag.HUKS_TAG_PADDING, HuksParamValue.Uint32Value(HuksKeyPadding.HUKS_PADDING_PKCS7)),
+            HuksParam(HuksTag.HUKS_TAG_BLOCK_MODE, HuksParamValue.Uint32Value(HuksCipherMode.HUKS_MODE_CBC)),
+            HuksParam(HuksTag.HUKS_TAG_IV, HuksParamValue.BytesValue(iv.toArray()))
+        ],
+        inData: plainText.toArray()
+    )
+
+    generateKeyItem(keyAlias, options)
+
+    let handle = initSession(keyAlias, encOptions).handle
+    let bytes: Array<UInt8> = []
+    updateSession(handle, HuksOptions(), token: bytes) 
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
 
 ## class HuksAuthAccessType
 
@@ -2393,7 +2461,6 @@ public var properties: Array<HuksParam>
 ### init(Array\<HuksParam>, Bytes)
 
 ```cangjie
-
 public init(properties!: Array<HuksParam> = Array<HuksParam>(), inData!: Bytes = Bytes())
 ```
 
@@ -2462,7 +2529,6 @@ public var value: HuksParamValue
 ### init(UInt32, HuksParamValue)
 
 ```cangjie
-
 public init(tag: UInt32, value: HuksParamValue)
 ```
 

@@ -1314,6 +1314,38 @@ public func on(event: NetConnectionEvent, callback: Callback1Argument<NetHandle>
   | :---- | :--- |
   | 2100001 | Invalid parameter value. |
 
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.NetworkKit.*
+import kit.PerformanceAnalysisKit.Hilog
+import ohos.business_exception.BusinessException
+import ohos.callback_invoke.*
+
+// 定义NetAvailableCb类
+class NetAvailableCb <: Callback1Argument<NetHandle> {
+    let callback_: (NetHandle)->Unit
+    public init(callback: (NetHandle)->Unit) {callback_ = callback}
+    public open func invoke(err: ?BusinessException, val: NetHandle): Unit {
+        callback_(val)
+    }
+}
+
+try {
+    let netConn = createNetConnection()
+    netConn.register()
+
+    let netAvailableCallBack = NetAvailableCb({handle => Hilog.info(0, "net_connection test", "onNetAvailable handle is ${handle.netId}")})
+    netConn.on(NetConnectionEvent.NetAvailable, netAvailableCallBack)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
 ### func on(NetConnectionEvent, Callback1Argument\<NetBlockStatusInfo>)
 
 ```cangjie
@@ -1342,6 +1374,42 @@ public func on(event: NetConnectionEvent, callback: Callback1Argument<NetBlockSt
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 2100001 | Invalid parameter value. |
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.NetworkKit.*
+import kit.PerformanceAnalysisKit.Hilog
+import ohos.business_exception.BusinessException
+import ohos.callback_invoke.*
+
+// 定义NetBlockStatusChangeCb类
+class NetBlockStatusChangeCb <: Callback1Argument<NetBlockStatusInfo> {
+    let callback_: (NetBlockStatusInfo)->Unit
+    public init(callback: (NetBlockStatusInfo)->Unit) {callback_ = callback}
+    public open func invoke(err: ?BusinessException, val: NetBlockStatusInfo): Unit {
+        callback_(val)
+    }
+}
+
+try {
+    let netConn = createNetConnection()
+    netConn.register()
+
+    let netBlockStatusChangeCallBack = NetBlockStatusChangeCb(
+        {
+            info => Hilog.info(0, "net_connection test",
+                "onNetBlockStatusChange handle is ${info.netHandle.netId}, block is ${info.blocked}")
+        })
+    netConn.on(NetConnectionEvent.NetBlockStatusChange, netBlockStatusChangeCallBack)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
 
 ### func on(NetConnectionEvent, Callback1Argument\<NetCapabilityInfo>)
 
@@ -1372,6 +1440,42 @@ public func on(event: NetConnectionEvent, callback: Callback1Argument<NetCapabil
   | :---- | :--- |
   | 2100001 | Invalid parameter value. |
 
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.NetworkKit.*
+import kit.PerformanceAnalysisKit.Hilog
+import ohos.business_exception.BusinessException
+import ohos.callback_invoke.*
+
+// 定义NetCapabilitiesChangeCb类
+class NetCapabilitiesChangeCb <: Callback1Argument<NetCapabilityInfo> {
+    let callback_: (NetCapabilityInfo)->Unit
+    public init(callback: (NetCapabilityInfo)->Unit) {callback_ = callback}
+    public open func invoke(err: ?BusinessException, val: NetCapabilityInfo): Unit {
+        callback_(val)
+    }
+}
+
+try {
+    let netConn = createNetConnection()
+    netConn.register()
+
+    let netCapabilitiesChangeCallBack = NetCapabilitiesChangeCb(
+        {
+            info => Hilog.info(0, "net_connection test",
+                "onNetCapabilitiesChange handle is ${info.netHandle.netId}, props is ")
+        })
+    netConn.on(NetConnectionEvent.NetCapabilitiesChange, netCapabilitiesChangeCallBack)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
 ### func on(NetConnectionEvent, Callback1Argument\<NetConnectionPropertyInfo>)
 
 ```cangjie
@@ -1395,13 +1499,47 @@ public func on(event: NetConnectionEvent, callback: Callback1Argument<NetConnect
 
 **异常：**
 
-**异常：**
-
 - BusinessException：对应错误码如下表，详见[网络连接管理错误码](./cj-errorcode-net-connection.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 2100001 | Invalid parameter value. |
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.NetworkKit.*
+import kit.PerformanceAnalysisKit.Hilog
+import ohos.business_exception.BusinessException
+import ohos.callback_invoke.*
+
+// 定义NetConnectionPropertiesChangeCb类
+class NetConnectionPropertiesChangeCb <: Callback1Argument<NetConnectionPropertyInfo> {
+    let callback_: (NetConnectionPropertyInfo)->Unit
+    public init(callback: (NetConnectionPropertyInfo)->Unit) {callback_ = callback}
+    public open func invoke(err: ?BusinessException, val: NetConnectionPropertyInfo): Unit {
+        callback_(val)
+    }
+}
+
+try {
+    let netConn = createNetConnection()
+    netConn.register()
+
+    let netConnectionPropertiesChangeCallBack = NetConnectionPropertiesChangeCb(
+        {
+            info => Hilog.info(0, "net_connection test",
+                "onNetConnectionPropertiesChange handle is ${info.netHandle.netId}, props is ")
+        })
+    netConn.on(NetConnectionEvent.NetConnectionPropertiesChange, netConnectionPropertiesChangeCallBack)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
 
 ### func on(NetConnectionEvent, Callback0Argument)
 
@@ -1431,6 +1569,38 @@ public func on(event: NetConnectionEvent, callback: Callback0Argument): Unit
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 2100001 | Invalid parameter value. |
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.NetworkKit.*
+import kit.PerformanceAnalysisKit.Hilog
+import ohos.business_exception.BusinessException
+import ohos.callback_invoke.*
+
+// 定义NetUnavailableCb类
+class NetUnavailableCb <: Callback0Argument {
+    let callback_: ()->Unit
+    public init(callback: ()->Unit) {callback_ = callback}
+    public open func invoke(err: ?BusinessException): Unit {
+        callback_()
+    }
+}
+
+try {
+    let netConn = createNetConnection()
+    netConn.register()
+
+    let netUnAvailableCallBack = NetUnavailableCb({=> Hilog.info(0, "net_connection test", "onNetUnavailable")})
+    netConn.on(NetConnectionEvent.NetUnavailable, netUnAvailableCallBack)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
 
 ### func register()
 

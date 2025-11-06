@@ -1690,6 +1690,7 @@ try {
     Hilog.info(0, "test", "${e.message}")
 }
 ```
+
 ### func readLatestImage()
 
 ```cangjie
@@ -1715,6 +1716,26 @@ public func readLatestImage(): Image
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 62980104 | Failed to initialize the internal object. |
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.ImageKit.*
+import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
+
+try {
+    let size = Size(8, 8192)
+    let receiver = createImageReceiver(size, ImageFormat.Jpeg, 8)
+    let image = receiver.readLatestImage()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
 
 ### func readNextImage()
 
@@ -1742,6 +1763,26 @@ public func readNextImage(): Image
   | :---- | :--- |
   | 62980104 | Failed to initialize the internal object. |
 
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.ImageKit.*
+import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
+
+try {
+    let size = Size(8, 8192)
+    let receiver = createImageReceiver(size, ImageFormat.Jpeg, 8)
+    let image = receiver.readNextImage()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
 ### func on(ReceiveType, Callback0Argument)
 
 ```cangjie
@@ -1761,6 +1802,34 @@ public func on(eventType: ReceiveType, callback: Callback0Argument): Unit
 |eventType|[ReceiveType](#enum-receivetype)|是|-|注册事件的类型。|
 |callback|[Callback0Argument](../arkinterop/cj-api-callback_invoke.md#class-callback0argument)|是|-|回调函数对象。|
 
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.ImageKit.*
+import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
+import ohos.callback_invoke.*
+
+class Callback <: Callback0Argument {
+    public open func invoke(res: ?BusinessException): Unit {
+        Hilog.info(0, "test", "invoke success")
+    }
+}
+
+try {
+    let size = Size(8, 8192)
+    let receiver = createImageReceiver(size, ImageFormat.Jpeg, 8)
+    let callback = Callback()
+    receiver.on(ImageArrival, callback)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+``
+
 ### func off(ReceiveType)
 
 ```cangjie
@@ -1778,6 +1847,34 @@ public func off(eventType: ReceiveType): Unit
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |eventType|[ReceiveType](#enum-receivetype)|是|-|注册事件的类型。|
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.ImageKit.*
+import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
+
+class Callback <: Callback0Argument {
+    public open func invoke(res: ?BusinessException): Unit {
+        Hilog.info(0, "test", "invoke success")
+    }
+}
+
+try {
+    let size = Size(8, 8192)
+    let receiver = createImageReceiver(size, ImageFormat.Jpeg, 8)
+    let callback = Callback()
+    receiver.on(ImageArrival, callback)
+    receiver.off(ImageArrival)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
 
 ## class ImageSource
 

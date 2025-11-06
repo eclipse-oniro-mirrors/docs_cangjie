@@ -58,6 +58,47 @@ func marshalling(dataOut: MessageSequence): Bool
 |:----|:----|
 |Bool|true：封送成功，false：封送失败。|
 
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.IPCKit.*
+
+// 此处代码可添加在依赖项定义中
+class MyParcelable <: Parcelable {
+    var num: Int32 = 0
+    var str: String = ''
+
+    init() {}
+
+    init(num: Int32, str: String) {
+        this.num = num
+        this.str = str
+    }
+    public func marshalling(messageSequence: MessageSequence): Bool {
+        messageSequence.writeInt(this.num)
+        messageSequence.writeString(this.str)
+        return true
+    }
+    public func unmarshalling(messageSequence: MessageSequence): Bool {
+        this.num = messageSequence.readInt()
+        this.str = messageSequence.readString()
+        return true
+    }
+}
+
+let parcelable = MyParcelable(1, "aaa")
+let parcelable2 = MyParcelable(2, "bbb")
+let parcelable3 = MyParcelable(3, "ccc")
+let data = MessageSequence.create()
+data.writeParcelableArray(parcelable,parcelable2,parcelable3)
+let ret: Array<Parcelable> = [MyParcelable(0, ""), MyParcelable(0, ""), MyParcelable(0, "")]
+data.readParcelableArray(ret)
+```
+
 ### func unmarshalling(MessageSequence)
 
 ```cangjie
@@ -81,6 +122,47 @@ func unmarshalling(dataIn: MessageSequence): Bool
 |类型|说明|
 |:----|:----|
 |Bool|true：反序列化成功，false：反序列化失败。|
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.IPCKit.*
+
+// 此处代码可添加在依赖项定义中
+class MyParcelable <: Parcelable {
+    var num: Int32 = 0
+    var str: String = ''
+
+    init() {}
+
+    init(num: Int32, str: String) {
+        this.num = num
+        this.str = str
+    }
+    public func marshalling(messageSequence: MessageSequence): Bool {
+        messageSequence.writeInt(this.num)
+        messageSequence.writeString(this.str)
+        return true
+    }
+    public func unmarshalling(messageSequence: MessageSequence): Bool {
+        this.num = messageSequence.readInt()
+        this.str = messageSequence.readString()
+        return true
+    }
+}
+
+let parcelable = MyParcelable(1, "aaa")
+let parcelable2 = MyParcelable(2, "bbb")
+let parcelable3 = MyParcelable(3, "ccc")
+let data = MessageSequence.create()
+data.writeParcelableArray(parcelable,parcelable2,parcelable3)
+let ret: Array<Parcelable> = [MyParcelable(0, ""), MyParcelable(0, ""), MyParcelable(0, "")]
+data.readParcelableArray(ret)
+```
 
 ## class Ashmem
 

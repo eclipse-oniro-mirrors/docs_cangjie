@@ -129,7 +129,6 @@ public override prop path: String
 ### init(String)
 
 ```cangjie
-
 public init(uriOrPath: String)
 ```
 
@@ -160,7 +159,6 @@ public init(uriOrPath: String)
 ### func toString()
 
 ```cangjie
-
 public override func toString(): String
 ```
 

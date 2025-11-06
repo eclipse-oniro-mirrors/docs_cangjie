@@ -1205,6 +1205,23 @@ public static func setUserId(name: String, value: String): Unit
 |name|String|是|-|用户ID的key。只能包含大小写字母、数字、下划线和$，不能以数字开头，长度非空且不超过256个字符。|
 |value|String|是|-|用户ID的值。长度不超过256，当值为null或空字符串时，则清除用户ID。|
 
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
+
+try {
+    HiAppEvent.setUserId("test_getUserId_name", "test_getUserId_value")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
 ### static func setUserProperty(String, String)
 
 ```cangjie
@@ -1223,6 +1240,23 @@ public static func setUserProperty(name: String, value: String): Unit
 |:---|:---|:---|:---|:---|
 |name|String|是|-|用户属性的key。只能包含大小写字母、数字、下划线和$，不能以数字开头，长度非空且不超过256个字符。|
 |value|String|是|-|用户属性的值。长度不超过1024，当值为null或空字符串时，则清除用户属性。|
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
+
+try {
+    HiAppEvent.setUserProperty("test_setUserProperty_name", "test_setUserProperty_value")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
 
 ### static func write(AppEventInfo)
 
@@ -1255,6 +1289,29 @@ public static func write(info: AppEventInfo): Unit
   | 11101004 | Invalid string length of the event parameter. |
   | 11101005 | Invalid event parameter name. Possible causes: 1. Contain invalid characters; 2. Length is invalid. |
   | 11101006 | Invalid array length of a event parameter. |
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
+import std.collection.HashMap
+
+try {
+    let params = HashMap<String, EventValueType>()
+    params.add("cangjie", IntValue(1001))
+    params.add("cangjie2", StringValue("1001"))
+    var appInfo: AppEventInfo = AppEventInfo("cangjie1", "test_event", EventType.Fault, params)
+    HiAppEvent.write(appInfo)
+    HiAppEvent.clearData()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
 
 ## class Param
 

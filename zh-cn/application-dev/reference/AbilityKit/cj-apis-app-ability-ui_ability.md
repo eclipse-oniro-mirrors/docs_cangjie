@@ -57,19 +57,13 @@ public func createAbilityStageContextFromJSValue(context: JSContext, input: JSVa
 import ohos.ark_interop.*
 import ohos.ark_interop_helper.*
 import kit.AbilityKit.*
-import ohos.business_exception.BusinessException
-import kit.PerformanceAnalysisKit.Hilog
 
-try {
-    class MyAbilityStage <: AbilityStage {
-        public override func onCreate(): Unit {
-            let jsContext = JSRuntime.getCurrentContext()
-            let input = this.context.toJSValue(jsContext)
-            let ctx = createAbilityStageContextFromJSValue(JjsContext, input)
-        }
+class MyAbilityStage <: AbilityStage {
+    public override func onCreate(): Unit {
+        let jsContext = JSRuntime.getCurrentContext()
+        let input = this.context.toJSValue(jsContext)
+        let ctx = createAbilityStageContextFromJSValue(JjsContext, input)
     }
-} catch (e: BusinessException) {
-    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -106,19 +100,13 @@ import ohos.ark_interop.*
 import ohos.ark_interop_helper.*
 import kit.AbilityKit.*
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
-import kit.PerformanceAnalysisKit.Hilog
 
-try {
-    class MyAbilityStage <: AbilityStage {
-        public override func onCreate(): Unit {
-            let jsContext = JSRuntime.getCurrentContext()
-            let input = AbilityDelegatorRegistry.getAbilityDelegator().getAppContext().toJSValue(jsContext)
-            let ctx = createApplicationContextFromJSValue(JjsContext, input)
-        }
+class MyAbilityStage <: AbilityStage {
+    public override func onCreate(): Unit {
+        let jsContext = JSRuntime.getCurrentContext()
+        let input = AbilityDelegatorRegistry.getAbilityDelegator().getAppContext().toJSValue(jsContext)
+        let ctx = createApplicationContextFromJSValue(JjsContext, input)
     }
-} catch (e: BusinessException) {
-    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -155,19 +143,13 @@ import ohos.ark_interop.*
 import ohos.ark_interop_helper.*
 import kit.AbilityKit.*
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
-import kit.PerformanceAnalysisKit.Hilog
 
-try {
-    class MyAbilityStage <: AbilityStage {
-        public override func onCreate(): Unit {
-            let jsContext = JSRuntime.getCurrentContext()
-            let input = this.context.toJSValue(jsContext)
-            let ctx = createContextFromJSValue(JjsContext, input)
-        }
+class MyAbilityStage <: AbilityStage {
+    public override func onCreate(): Unit {
+        let jsContext = JSRuntime.getCurrentContext()
+        let input = this.context.toJSValue(jsContext)
+        let ctx = createContextFromJSValue(JjsContext, input)
     }
-} catch (e: BusinessException) {
-    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -204,19 +186,13 @@ import ohos.ark_interop.*
 import ohos.ark_interop_helper.*
 import kit.AbilityKit.*
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
-import kit.PerformanceAnalysisKit.Hilog
 
-try {
-    class MyUIAbility <: UIAbility {
-        public override func onCreate(want: Want, launchParam: LaunchParam): Unit {
-            let jsContext = JSRuntime.getCurrentContext()
-            let input = this.context.toJSValue(jsContext)
-            let ctx = createContextFromJSValue(JjsContext, input)
-        }
+class MyUIAbility <: UIAbility {
+    public override func onCreate(want: Want, launchParam: LaunchParam): Unit {
+        let jsContext = JSRuntime.getCurrentContext()
+        let input = this.context.toJSValue(jsContext)
+        let ctx = createContextFromJSValue(JjsContext, input)
     }
-} catch (e: BusinessException) {
-    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -258,6 +234,22 @@ func toJSValue(context: JSContext): JSValue
 |:----|:----|
 |[JSValue](../arkinterop/cj-apis-ark_interop.md#struct-jsvalue)|ArkTS统一类型。|
 
+<!-- compile -->
+```cangjie
+import ohos.ark_interop.*
+import ohos.ark_interop_helper.*
+import kit.AbilityKit.*
+import kit.TestKit.*
+
+class MyAbilityStage <: AbilityStage {
+    public override func onCreate(): Unit {
+        let jsContext = JSRuntime.getCurrentContext()
+        let input = this.context.toJSValue(jsContext)
+        let ctx = createContextFromJSValue(JjsContext, input)
+    }
+}
+```
+
 ## class Ability
 
 ```cangjie
@@ -294,18 +286,12 @@ public static func registerCreator(name: String, creator: () -> Ability): Unit
 <!-- compile -->
 ```cangjie
 import kit.AbilityKit.*
-import ohos.business_exception.BusinessException
-import kit.PerformanceAnalysisKit.Hilog
 
-try {
-    let ENTRY_ABILITY_REGISTER_RESULT = Ability.registerCreator("entry", () -> MyUIAbility)
+let ENTRY_ABILITY_REGISTER_RESULT = Ability.registerCreator("entry", () -> MyUIAbility)
 
-    class MyUIAbility <: UIAbility {
-        public override func onCreate(want: Want, launchParam: LaunchParam): Unit {
-        }
+class MyUIAbility <: UIAbility {
+    public override func onCreate(want: Want, launchParam: LaunchParam): Unit {
     }
-} catch (e: BusinessException) {
-    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -348,17 +334,11 @@ public var currentHapModuleInfo: HapModuleInfo
 <!-- compile -->
 ```cangjie
 import kit.AbilityKit.*
-import ohos.business_exception.BusinessException
-import kit.PerformanceAnalysisKit.Hilog
 
-try {
-    class MyAbilityStage <: AbilityStage {
-        public override func onCreate(): Unit {
-            let info = this.context.currentHapModuleInfo
-        }
+class MyAbilityStage <: AbilityStage {
+    public override func onCreate(): Unit {
+        let info = this.context.currentHapModuleInfo
     }
-} catch (e: BusinessException) {
-    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -415,17 +395,11 @@ public prop applicationInfo: ApplicationInfo
 <!-- compile -->
 ```cangjie
 import kit.AbilityKit.*
-import ohos.business_exception.BusinessException
-import kit.PerformanceAnalysisKit.Hilog
 
-try {
-    class MyUIAbility <: UIAbility {
-        public override func onCreate(want: Want, launchParam: LaunchParam): Unit {
-            let info = this.context.applicationInfo
-        }
+class MyUIAbility <: UIAbility {
+    public override func onCreate(want: Want, launchParam: LaunchParam): Unit {
+        let info = this.context.applicationInfo
     }
-} catch (e: BusinessException) {
-    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -450,17 +424,11 @@ public mut prop area: AreaMode
 <!-- compile -->
 ```cangjie
 import kit.AbilityKit.*
-import ohos.business_exception.BusinessException
-import kit.PerformanceAnalysisKit.Hilog
 
-try {
-    class MyUIAbility <: UIAbility {
-        public override func onCreate(want: Want, launchParam: LaunchParam): Unit {
-            let area = this.context.area
-        }
+class MyUIAbility <: UIAbility {
+    public override func onCreate(want: Want, launchParam: LaunchParam): Unit {
+        let area = this.context.area
     }
-} catch (e: BusinessException) {
-    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -485,17 +453,11 @@ public prop filesDir: String
 <!-- compile -->
 ```cangjie
 import kit.AbilityKit.*
-import ohos.business_exception.BusinessException
-import kit.PerformanceAnalysisKit.Hilog
 
-try {
-    class MyUIAbility <: UIAbility {
-        public override func onCreate(want: Want, launchParam: LaunchParam): Unit {
-            let filesDir = this.context.filesDir
-        }
+class MyUIAbility <: UIAbility {
+    public override func onCreate(want: Want, launchParam: LaunchParam): Unit {
+        let filesDir = this.context.filesDir
     }
-} catch (e: BusinessException) {
-    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -520,17 +482,11 @@ public prop resourceManager: ResourceManager
 <!-- compile -->
 ```cangjie
 import kit.AbilityKit.*
-import ohos.business_exception.BusinessException
-import kit.PerformanceAnalysisKit.Hilog
 
-try {
-    class MyUIAbility <: UIAbility {
-        public override func onCreate(want: Want, launchParam: LaunchParam): Unit {
-            let resourceManager = this.context.resourceManager
-        }
+class MyUIAbility <: UIAbility {
+    public override func onCreate(want: Want, launchParam: LaunchParam): Unit {
+        let resourceManager = this.context.resourceManager
     }
-} catch (e: BusinessException) {
-    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -575,17 +531,11 @@ public mut prop context: UIAbilityContext
 <!-- compile -->
 ```cangjie
 import kit.AbilityKit.*
-import ohos.business_exception.BusinessException
-import kit.PerformanceAnalysisKit.Hilog
 
-try {
-    class MyUIAbility <: UIAbility {
-        public override func onCreate(want: Want, launchParam: LaunchParam): Unit {
-            let context = this.context
-        }
+class MyUIAbility <: UIAbility {
+    public override func onCreate(want: Want, launchParam: LaunchParam): Unit {
+        let context = this.context
     }
-} catch (e: BusinessException) {
-    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -610,17 +560,11 @@ public mut prop lastRequestWant: Want
 <!-- compile -->
 ```cangjie
 import kit.AbilityKit.*
-import ohos.business_exception.BusinessException
-import kit.PerformanceAnalysisKit.Hilog
 
-try {
-    class MyUIAbility <: UIAbility {
-        public override func onCreate(want: Want, launchParam: LaunchParam): Unit {
-            let lastRequestWant = this.lastRequestWant
-        }
+class MyUIAbility <: UIAbility {
+    public override func onCreate(want: Want, launchParam: LaunchParam): Unit {
+        let lastRequestWant = this.lastRequestWant
     }
-} catch (e: BusinessException) {
-    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -645,17 +589,11 @@ public mut prop launchWant: Want
 <!-- compile -->
 ```cangjie
 import kit.AbilityKit.*
-import ohos.business_exception.BusinessException
-import kit.PerformanceAnalysisKit.Hilog
 
-try {
-    class MyUIAbility <: UIAbility {
-        public override func onCreate(want: Want, launchParam: LaunchParam): Unit {
-            let launchWant = this.launchWant
-        }
+class MyUIAbility <: UIAbility {
+    public override func onCreate(want: Want, launchParam: LaunchParam): Unit {
+        let launchWant = this.launchWant
     }
-} catch (e: BusinessException) {
-    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -676,17 +614,11 @@ public open func onBackground(): Unit
 <!-- compile -->
 ```cangjie
 import kit.AbilityKit.*
-import ohos.business_exception.BusinessException
-import kit.PerformanceAnalysisKit.Hilog
 
-try {
-    class MyUIAbility <: UIAbility {
-        public override onBackground() {
-            let launchWant = this.launchWant
-        }
+class MyUIAbility <: UIAbility {
+    public override onBackground() {
+        let launchWant = this.launchWant
     }
-} catch (e: BusinessException) {
-    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -714,17 +646,11 @@ public open func onCreate(want: Want, launchParam: LaunchParam): Unit
 <!-- compile -->
 ```cangjie
 import kit.AbilityKit.*
-import ohos.business_exception.BusinessException
-import kit.PerformanceAnalysisKit.Hilog
 
-try {
-    class MyUIAbility <: UIAbility {
-        public override func onCreate(want: Want, launchParam: LaunchParam): Unit {
-            let launchWant = this.launchWant
-        }
+class MyUIAbility <: UIAbility {
+    public override func onCreate(want: Want, launchParam: LaunchParam): Unit {
+        let launchWant = this.launchWant
     }
-} catch (e: BusinessException) {
-    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -745,16 +671,10 @@ public open func onDestroy(): Unit
 <!-- compile -->
 ```cangjie
 import kit.AbilityKit.*
-import ohos.business_exception.BusinessException
-import kit.PerformanceAnalysisKit.Hilog
 
-try {
-    class MyUIAbility <: UIAbility {
-        public override func onDestroy(): Unit {
-        }
+class MyUIAbility <: UIAbility {
+    public override func onDestroy(): Unit {
     }
-} catch (e: BusinessException) {
-    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -775,16 +695,10 @@ public open func onForeground(): Unit
 <!-- compile -->
 ```cangjie
 import kit.AbilityKit.*
-import ohos.business_exception.BusinessException
-import kit.PerformanceAnalysisKit.Hilog
 
-try {
-    class MyUIAbility <: UIAbility {
-        public override func onForeground(): Unit {
-        }
+class MyUIAbility <: UIAbility {
+    public override func onForeground(): Unit {
     }
-} catch (e: BusinessException) {
-    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -812,16 +726,10 @@ public open func onNewWant(want: Want, launchParam: LaunchParam): Unit
 <!-- compile -->
 ```cangjie
 import kit.AbilityKit.*
-import ohos.business_exception.BusinessException
-import kit.PerformanceAnalysisKit.Hilog
 
-try {
-    class MyUIAbility <: UIAbility {
-        public override func onNewWant(want: Want, launchParam: LaunchParam): Unit {
-        }
+class MyUIAbility <: UIAbility {
+    public override func onNewWant(want: Want, launchParam: LaunchParam): Unit {
     }
-} catch (e: BusinessException) {
-    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -848,16 +756,10 @@ public open func onWindowStageCreate(windowStage: WindowStage): Unit
 <!-- compile -->
 ```cangjie
 import kit.AbilityKit.*
-import ohos.business_exception.BusinessException
-import kit.PerformanceAnalysisKit.Hilog
 
-try {
-    class MyUIAbility <: UIAbility {
-        public override func onWindowStageCreate(windowStage: WindowStage): Unit {
-        }
+class MyUIAbility <: UIAbility {
+    public override func onWindowStageCreate(windowStage: WindowStage): Unit {
     }
-} catch (e: BusinessException) {
-    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -878,16 +780,10 @@ public open func onWindowStageDestroy(): Unit
 <!-- compile -->
 ```cangjie
 import kit.AbilityKit.*
-import ohos.business_exception.BusinessException
-import kit.PerformanceAnalysisKit.Hilog
 
-try {
-    class MyUIAbility <: UIAbility {
-        public override func onWindowStageDestroy(): Unit {
-        }
+class MyUIAbility <: UIAbility {
+    public override func onWindowStageDestroy(): Unit {
     }
-} catch (e: BusinessException) {
-    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -938,17 +834,11 @@ public func isTerminating(): Bool
 <!-- compile -->
 ```cangjie
 import kit.AbilityKit.*
-import ohos.business_exception.BusinessException
-import kit.PerformanceAnalysisKit.Hilog
 
-try {
-    class MyUIAbility <: UIAbility {
-        public override func onWindowStageCreate(windowStage: WindowStage): Unit {
-            let isTerminating = this.context.isTerminating()
-        }
+class MyUIAbility <: UIAbility {
+    public override func onWindowStageCreate(windowStage: WindowStage): Unit {
+        let isTerminating = this.context.isTerminating()
     }
-} catch (e: BusinessException) {
-    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -999,17 +889,11 @@ public func requestDialogService(want: Want, result: AsyncCallback<RequestResult
 <!-- compile -->
 ```cangjie
 import kit.AbilityKit.*
-import ohos.business_exception.BusinessException
-import kit.PerformanceAnalysisKit.Hilog
 
-try {
-    class MyUIAbility <: UIAbility {
-        public override func onWindowStageCreate(windowStage: WindowStage): Unit {
-            this.context.requestDialogService(Want(), (err: ?BusinessException, data: ?RequestResult) => {})
-        }
+class MyUIAbility <: UIAbility {
+    public override func onWindowStageCreate(windowStage: WindowStage): Unit {
+        this.context.requestDialogService(Want(), (err: ?BusinessException, data: ?RequestResult) => {})
     }
-} catch (e: BusinessException) {
-    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -1074,17 +958,11 @@ public func startAbility(want: Want, options!: ?StartOptions = None): Unit
 <!-- compile -->
 ```cangjie
 import kit.AbilityKit.*
-import ohos.business_exception.BusinessException
-import kit.PerformanceAnalysisKit.Hilog
 
-try {
-    class MyUIAbility <: UIAbility {
-        public override func onWindowStageCreate(windowStage: WindowStage): Unit {
-              this.context.startAbility(Want(bundleName: "com.example.cangjieinsight", abilityName: "testAbility"))
-        }
+class MyUIAbility <: UIAbility {
+    public override func onWindowStageCreate(windowStage: WindowStage): Unit {
+            this.context.startAbility(Want(bundleName: "com.example.cangjieinsight", abilityName: "testAbility"))
     }
-} catch (e: BusinessException) {
-    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -1145,19 +1023,13 @@ public func startAbilityForResult(want: Want, callback: AsyncCallback<AbilityRes
 <!-- compile -->
 ```cangjie
 import kit.AbilityKit.*
-import ohos.business_exception.BusinessException
-import kit.PerformanceAnalysisKit.Hilog
 
-try {
-    class MyUIAbility <: UIAbility {
-        public override func onWindowStageCreate(windowStage: WindowStage): Unit {
-              this.context.startAbilityForResult(
-                  Want(bundleName: "com.example.cangjieinsight", abilityName: "testAbility"),
-                  (err: ?BusinessException, data: ?AbilityResult) => {})
-        }
+class MyUIAbility <: UIAbility {
+    public override func onWindowStageCreate(windowStage: WindowStage): Unit {
+            this.context.startAbilityForResult(
+                Want(bundleName: "com.example.cangjieinsight", abilityName: "testAbility"),
+                (err: ?BusinessException, data: ?AbilityResult) => {})
     }
-} catch (e: BusinessException) {
-    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -1217,19 +1089,13 @@ public func startAbilityForResult(want: Want, options: StartOptions, callback: A
 <!-- compile -->
 ```cangjie
 import kit.AbilityKit.*
-import ohos.business_exception.BusinessException
-import kit.PerformanceAnalysisKit.Hilog
 
-try {
-    class MyUIAbility <: UIAbility {
-        public override func onWindowStageCreate(windowStage: WindowStage): Unit {
-              this.context.startAbilityForResult(
-                  Want(bundleName: "com.example.cangjieinsight", abilityName: "testAbility"), StartOptions(),
-                  (err: ?BusinessException, data: ?AbilityResult) => {})
-        }
+class MyUIAbility <: UIAbility {
+    public override func onWindowStageCreate(windowStage: WindowStage): Unit {
+            this.context.startAbilityForResult(
+                Want(bundleName: "com.example.cangjieinsight", abilityName: "testAbility"), StartOptions(),
+                (err: ?BusinessException, data: ?AbilityResult) => {})
     }
-} catch (e: BusinessException) {
-    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -1260,17 +1126,11 @@ public func terminateSelf(): Unit
 <!-- compile -->
 ```cangjie
 import kit.AbilityKit.*
-import ohos.business_exception.BusinessException
-import kit.PerformanceAnalysisKit.Hilog
 
-try {
-    class MyUIAbility <: UIAbility {
-        public override func onWindowStageCreate(windowStage: WindowStage): Unit {
-              this.context.terminateSelf()
-        }
+class MyUIAbility <: UIAbility {
+    public override func onWindowStageCreate(windowStage: WindowStage): Unit {
+            this.context.terminateSelf()
     }
-} catch (e: BusinessException) {
-    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -1307,16 +1167,10 @@ public func terminateSelfWithResult(parameter: AbilityResult): Unit
 <!-- compile -->
 ```cangjie
 import kit.AbilityKit.*
-import ohos.business_exception.BusinessException
-import kit.PerformanceAnalysisKit.Hilog
 
-try {
-    class MyUIAbility <: UIAbility {
-        public override func onWindowStageCreate(windowStage: WindowStage): Unit {
-              this.context.terminateSelfWithResult(AbilityResult(0))
-        }
+class MyUIAbility <: UIAbility {
+    public override func onWindowStageCreate(windowStage: WindowStage): Unit {
+            this.context.terminateSelfWithResult(AbilityResult(0))
     }
-} catch (e: BusinessException) {
-    Hilog.info(0, "test", "${e.message}")
 }
 ```

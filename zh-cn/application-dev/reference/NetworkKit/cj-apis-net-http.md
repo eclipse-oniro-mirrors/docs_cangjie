@@ -374,6 +374,39 @@ public func off(event: HttpRequestEvent, callback!: ?CallbackObject = None): Uni
   | :---- | :--- |
   | 2100001 | Invalid parameter value. |
 
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.NetworkKit.*
+import kit.PerformanceAnalysisKit.Hilog
+import ohos.business_exception.BusinessException
+import ohos.callback_invoke.*
+
+// 定义HeadersReceiveCb类
+class HeadersReceiveCb <: Callback1Argument<HashMap<String, String>> {
+    let callback_: (HashMap<String, String>)->Unit
+    public init(callback: (HashMap<String, String>)->Unit) {callback_ = callback}
+    public open func invoke(err: ?BusinessException, val: HashMap<String, String>): Unit {
+        callback_(val)
+    }
+}
+
+try {
+    let client = createHttp()
+
+    let headersReceiveCallBack = HeadersReceiveCb({ map => Hilog.info(0, "test", "header info: ${map}") })
+    client.on(HttpRequestEvent.HeadersReceive, headersReceiveCallBack)
+
+    client.off(HttpRequestEvent.HeadersReceive)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
 ### func on(HttpRequestEvent, Callback1Argument\<HashMap\<String,String>>)
 
 ```cangjie
@@ -400,6 +433,38 @@ public func on(event: HttpRequestEvent, callback: Callback1Argument<HashMap<Stri
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 2100001 | Invalid parameter value. |
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.NetworkKit.*
+import kit.PerformanceAnalysisKit.Hilog
+import ohos.business_exception.BusinessException
+import ohos.callback_invoke.*
+import std.collection.HashMap
+
+// 定义HeadersReceiveCb类
+class HeadersReceiveCb <: Callback1Argument<HashMap<String, String>> {
+    let callback_: (HashMap<String, String>)->Unit
+    public init(callback: (HashMap<String, String>)->Unit) {callback_ = callback}
+    public open func invoke(err: ?BusinessException, val: HashMap<String, String>): Unit {
+        callback_(val)
+    }
+}
+
+try {
+    let client = createHttp()
+
+    let headersReceiveCallBack = HeadersReceiveCb({ map => Hilog.info(0, "test", "header info: ${map}") })
+    client.on(HttpRequestEvent.HeadersReceive, headersReceiveCallBack)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
 
 ### func on(HttpRequestEvent, Callback1Argument\<Array\<Byte>>)
 
@@ -428,6 +493,37 @@ public func on(event: HttpRequestEvent, callback: Callback1Argument<Array<Byte>>
   | :---- | :--- |
   | 2100001 | Invalid parameter value. |
 
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.NetworkKit.*
+import kit.PerformanceAnalysisKit.Hilog
+import ohos.business_exception.BusinessException
+import ohos.callback_invoke.*
+
+// 定义DataReceiveCb类
+class DataReceiveCb <: Callback1Argument<Array<Byte>> {
+    let callback_: (Array<Byte>)->Unit
+    public init(callback: (Array<Byte>)->Unit) {callback_ = callback}
+    public open func invoke(err: ?BusinessException, val: Array<Byte>): Unit {
+        callback_(val)
+    }
+}
+
+try {
+    let client = createHttp()
+
+    let dataReceiveCallBack = DataReceiveCb({ bytes => Hilog.info(0, "test", "data info : ${bytes}") })
+    client.on(HttpRequestEvent.DataReceive, dataReceiveCallBack)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
 ### func on(HttpRequestEvent, Callback0Argument)
 
 ```cangjie
@@ -454,6 +550,38 @@ public func on(event: HttpRequestEvent, callback: Callback0Argument): Unit
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 2100001 | Invalid parameter value. |
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.NetworkKit.*
+import kit.PerformanceAnalysisKit.Hilog
+import ohos.business_exception.BusinessException
+import ohos.callback_invoke.*
+
+// 定义DataEndCb类
+class DataEndCb <: Callback0Argument {
+    let callback_: ()->Unit
+    public init(callback: ()->Unit) {callback_ = callback}
+    public open func invoke(err: ?BusinessException): Unit {
+        callback_()
+    }
+}
+
+try {
+    let client = createHttp()
+
+    let dataEndCallBack = DataEndCb({ => Hilog.info(0, "test", "data end") })
+    client.on(HttpRequestEvent.DataEnd, dataEndCallBack)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
 
 ### func on(HttpRequestEvent, Callback1Argument\<DataReceiveProgressInfo>)
 
@@ -482,6 +610,37 @@ public func on(event: HttpRequestEvent, callback: Callback1Argument<DataReceiveP
   | :---- | :--- |
   | 2100001 | Invalid parameter value. |
 
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.NetworkKit.*
+import kit.PerformanceAnalysisKit.Hilog
+import ohos.business_exception.BusinessException
+import ohos.callback_invoke.*
+
+// 定义DataReceiveProgressCb类
+class DataReceiveProgressCb <: Callback1Argument<DataReceiveProgressInfo> {
+    let callback_: (DataReceiveProgressInfo)->Unit
+    public init(callback: (DataReceiveProgressInfo)->Unit) {callback_ = callback}
+    public open func invoke(err: ?BusinessException, val: DataReceiveProgressInfo): Unit {
+        callback_(val)
+    }
+}
+
+try {
+    let client = createHttp()
+
+    let dataReceiveProgressCallBack = DataReceiveProgressCb({ info => Hilog.info(0, "test", "receive progress ${info.receiveSize} ${info.totalSize} ") })
+    client.on(HttpRequestEvent.DataReceiveProgress, dataReceiveProgressCallBack)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
 ### func on(HttpRequestEvent, Callback1Argument\<DataSendProgressInfo>)
 
 ```cangjie
@@ -508,6 +667,38 @@ public func on(event: HttpRequestEvent, callback: Callback1Argument<DataSendProg
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 2100001 | Invalid parameter value. |
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.NetworkKit.*
+import kit.PerformanceAnalysisKit.Hilog
+import ohos.business_exception.BusinessException
+import std.collection.HashMap
+import ohos.callback_invoke.*
+
+// 定义HeadersReceiveCb类
+class HeadersReceiveCb <: Callback1Argument<HashMap<String, String>> {
+    let callback_: (HashMap<String, String>)->Unit
+    public init(callback: (HashMap<String, String>)->Unit) {callback_ = callback}
+    public open func invoke(err: ?BusinessException, val: HashMap<String, String>): Unit {
+        callback_(val)
+    }
+}
+
+try {
+    let client = createHttp()
+
+    let onceHeadersReceiveCallBack = HeadersReceiveCb({ map => Hilog.info(0, "test", "header info once: ${map}") })
+    client.once(HttpRequestEvent.HeadersReceive, onceHeadersReceiveCallBack)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
 
 ### func once(HttpRequestEvent, Callback1Argument\<HashMap\<String,String>>)
 
