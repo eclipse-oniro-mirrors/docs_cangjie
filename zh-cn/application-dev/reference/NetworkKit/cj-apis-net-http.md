@@ -2282,6 +2282,8 @@ UseSpecified(HttpProxy)
 
 ## 完整示例
 
+<!-- compile -->
+
 ```cangjie
 import kit.NetworkKit.*
 import ohos.base.*

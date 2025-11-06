@@ -22,6 +22,8 @@ Function is disabled.
 
 调用配置接口开启打点功能。
 
+   <!-- compile -->
+
    ```cangjie
    import ohos.hiappevent.*
 

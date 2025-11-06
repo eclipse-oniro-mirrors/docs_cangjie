@@ -8,6 +8,8 @@
 
 - 定义服务端
 
+<!-- compile -->
+
 ```cangjie
 class Stub <: RemoteObject {
     public init(descriptor: String) {
@@ -66,6 +68,8 @@ class MyParcelable <: Parcelable {
 ```
 
 - 定义客户端
+
+<!-- compile -->
 
 ```cangjie
 import kit.IPCKit.*
