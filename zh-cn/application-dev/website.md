@@ -183,6 +183,7 @@
                         - [触屏事件](arkui-cj/cj-common-events-touch-screen-event.md)
                         - [键鼠事件](arkui-cj/cj-common-events-device-input-event.md)
                         - [焦点事件](arkui-cj/cj-common-events-focus-event.md)
+                - [混合开发](arkui-cj/cj-appendix-hybrid.md)
                 - [使用镜像能力](arkui-cj/cj-mirroring-display.md)
                 <!--RP1--><!--RP1End-->
                 - 主题设置
