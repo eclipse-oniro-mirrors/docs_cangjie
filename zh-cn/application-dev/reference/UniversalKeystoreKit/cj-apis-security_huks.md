@@ -757,10 +757,10 @@ try {
 }
 ```
 
-## func isKeyItemExist(String, HuksOptions)
+## func hasKeyItemExist(String, HuksOptions)
 
 ```cangjie
-public func isKeyItemExist(keyAlias: String, options: HuksOptions): Bool
+public func hasKeyItemExist(keyAlias: String, options: HuksOptions): Bool
 ```
 
 **功能：** 判断密钥是否存在。
@@ -824,9 +824,9 @@ try {
     }
 
     let keyAlias = "KEY_ALIAS" // 密钥别名，在生成密钥时指定，在加密、解密和删除密钥时使用
-    isKeyItemExist(keyAlias, HuksOptions()) // false
+    hasKeyItemExist(keyAlias, HuksOptions()) // false
     generateSimpleKey(keyAlias)
-    isKeyItemExist(keyAlias, HuksOptions()) // true
+    hasKeyItemExist(keyAlias, HuksOptions()) // true
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -1148,6 +1148,7 @@ public static const HUKS_CHALLENGE_TYPE_NONE: UInt32 = 2
 
 ```cangjie
 public static const HUKS_CHALLENGE_TYPE_NORMAL: UInt32 = 0
+```
 
 **功能：** 表示challenge为普通类型，默认32字节。
 
@@ -1759,10 +1760,10 @@ public static const HUKS_KEY_FLAG_IMPORT_KEY: UInt32 = 1
 
 **起始版本：** 22
 
-## class HuksKeyGenerateType
+## class HuksKeyGeneraterationType
 
 ```cangjie
-public class HuksKeyGenerateType {
+public class HuksKeyGeneraterationType {
     public static const HUKS_KEY_GENERATE_TYPE_DEFAULT: UInt32 = 0
     public static const HUKS_KEY_GENERATE_TYPE_DERIVE: UInt32 = 1
     public static const HUKS_KEY_GENERATE_TYPE_AGREE: UInt32 = 2
@@ -2592,7 +2593,7 @@ public static const HUKS_RSA_PSS_SALT_LEN_MAX: UInt32 = 1
 
 ```cangjie
 public class HuksSecureSignType {
-    public static const HUKS_SECURE_SIGN_WITH_AUTHINFO: UInt32 = 1
+    public static const HUKS_SECURE_SIGN_WITH_AUTH_INFO: UInt32 = 1
 }
 ```
 
@@ -2602,10 +2603,10 @@ public class HuksSecureSignType {
 
 **起始版本：** 22
 
-### static const HUKS_SECURE_SIGN_WITH_AUTHINFO
+### static const HUKS_SECURE_SIGN_WITH_AUTH_INFO
 
 ```cangjie
-public static const HUKS_SECURE_SIGN_WITH_AUTHINFO: UInt32 = 1
+public static const HUKS_SECURE_SIGN_WITH_AUTH_INFO: UInt32 = 1
 ```
 
 **功能：** 表示签名类型为携带认证信息。生成或导入密钥时指定该字段，则在使用密钥进行签名时，对待签名的数据添加认证信息后进行签名。
@@ -2680,10 +2681,10 @@ public class HuksTag {
     public static const HUKS_TAG_INFO: UInt32 = HuksTagType.HUKS_TAG_TYPE_BYTES | 11
     public static const HUKS_TAG_SALT: UInt32 = HuksTagType.HUKS_TAG_TYPE_BYTES | 12
     public static const HUKS_TAG_ITERATION: UInt32 = HuksTagType.HUKS_TAG_TYPE_UINT | 14
-    public static const HUKS_TAG_KEY_GENERATE_TYPE: UInt32 = HuksTagType.HUKS_TAG_TYPE_UINT | 15
-    public static const HUKS_TAG_AGREE_ALG: UInt32 = HuksTagType.HUKS_TAG_TYPE_UINT | 19
+    public static const HUKS_TAG_KEY_GENERATION_TYPE: UInt32 = HuksTagType.HUKS_TAG_TYPE_UINT | 15
+    public static const HUKS_TAG_ALG_FOR_AGREEMENT: UInt32 = HuksTagType.HUKS_TAG_TYPE_UINT | 19
     public static const HUKS_TAG_AGREE_PUBLIC_KEY_IS_KEY_ALIAS: UInt32 = HuksTagType.HUKS_TAG_TYPE_BOOL | 20
-    public static const HUKS_TAG_AGREE_PRIVATE_KEY_ALIAS: UInt32 = HuksTagType.HUKS_TAG_TYPE_BYTES | 21
+    public static const HUKS_TAG_PRIVATE_KEY_ALIAS_FOR_AGREEMENT: UInt32 = HuksTagType.HUKS_TAG_TYPE_BYTES | 21
     public static const HUKS_TAG_AGREE_PUBLIC_KEY: UInt32 = HuksTagType.HUKS_TAG_TYPE_BYTES | 22
     public static const HUKS_TAG_KEY_ALIAS: UInt32 = HuksTagType.HUKS_TAG_TYPE_BYTES | 23
     public static const HUKS_TAG_DERIVE_KEY_SIZE: UInt32 = HuksTagType.HUKS_TAG_TYPE_UINT | 24
@@ -2734,10 +2735,10 @@ public static const HUKS_TAG_AE_TAG: UInt32 = HuksTagType.HUKS_TAG_TYPE_BYTES | 
 
 **起始版本：** 22
 
-### static const HUKS_TAG_AGREE_ALG
+### static const HUKS_TAG_ALG_FOR_AGREEMENT
 
 ```cangjie
-public static const HUKS_TAG_AGREE_ALG: UInt32 = HuksTagType.HUKS_TAG_TYPE_UINT | 19
+public static const HUKS_TAG_ALG_FOR_AGREEMENT: UInt32 = HuksTagType.HUKS_TAG_TYPE_UINT | 19
 ```
 
 **功能：** 表示密钥协商时的算法类型。
@@ -2748,10 +2749,10 @@ public static const HUKS_TAG_AGREE_ALG: UInt32 = HuksTagType.HUKS_TAG_TYPE_UINT 
 
 **起始版本：** 22
 
-### static const HUKS_TAG_AGREE_PRIVATE_KEY_ALIAS
+### static const HUKS_TAG_PRIVATE_KEY_ALIAS_FOR_AGREEMENT
 
 ```cangjie
-public static const HUKS_TAG_AGREE_PRIVATE_KEY_ALIAS: UInt32 = HuksTagType.HUKS_TAG_TYPE_BYTES | 21
+public static const HUKS_TAG_PRIVATE_KEY_ALIAS_FOR_AGREEMENT: UInt32 = HuksTagType.HUKS_TAG_TYPE_BYTES | 21
 ```
 
 **功能：** 表示密钥协商时的私钥别名。
@@ -2814,7 +2815,7 @@ public static const HUKS_TAG_ASSOCIATED_DATA: UInt32 = HuksTagType.HUKS_TAG_TYPE
 
 **类型：** UInt32
 
-**系统能力：** SystemCapability.Security.Huks.Extension
+**系统能力：** SystemCapability.Security.Huks.Core
 
 **起始版本：** 22
 
@@ -3112,10 +3113,10 @@ public static const HUKS_TAG_KEY_FLAG: UInt32 = HuksTagType.HUKS_TAG_TYPE_UINT |
 
 **起始版本：** 22
 
-### static const HUKS_TAG_KEY_GENERATE_TYPE
+### static const HUKS_TAG_KEY_GENERATION_TYPE
 
 ```cangjie
-public static const HUKS_TAG_KEY_GENERATE_TYPE: UInt32 = HuksTagType.HUKS_TAG_TYPE_UINT | 15
+public static const HUKS_TAG_KEY_GENERATION_TYPE: UInt32 = HuksTagType.HUKS_TAG_TYPE_UINT | 15
 ```
 
 **功能：** 表示生成密钥类型的Tag。
@@ -3443,8 +3444,8 @@ public static const HUKS_TAG_TYPE_ULONG: UInt32 = 3 << 28
 
 ```cangjie
 public class HuksUnwrapSuite {
-    public static const HUKS_UNWRAP_SUITE_X25519_AES_256_GCM_NOPADDING: UInt32 = 1
-    public static const HUKS_UNWRAP_SUITE_ECDH_AES_256_GCM_NOPADDING: UInt32 = 2
+    public static const HUKS_UNWRAP_SUITE_X25519_AES_256_GCM_NO_PADDING: UInt32 = 1
+    public static const HUKS_UNWRAP_SUITE_ECDH_AES_256_GCM_NO_PADDING: UInt32 = 2
 }
 ```
 
@@ -3454,10 +3455,10 @@ public class HuksUnwrapSuite {
 
 **起始版本：** 22
 
-### static const HUKS_UNWRAP_SUITE_ECDH_AES_256_GCM_NOPADDING
+### static const HUKS_UNWRAP_SUITE_ECDH_AES_256_GCM_NO_PADDING
 
 ```cangjie
-public static const HUKS_UNWRAP_SUITE_ECDH_AES_256_GCM_NOPADDING: UInt32 = 2
+public static const HUKS_UNWRAP_SUITE_ECDH_AES_256_GCM_NO_PADDING: UInt32 = 2
 ```
 
 **功能：** 导入加密密钥时，ECDH密钥协商后使用AES-256 GCM加密。
@@ -3468,10 +3469,10 @@ public static const HUKS_UNWRAP_SUITE_ECDH_AES_256_GCM_NOPADDING: UInt32 = 2
 
 **起始版本：** 22
 
-### static const HUKS_UNWRAP_SUITE_X25519_AES_256_GCM_NOPADDING
+### static const HUKS_UNWRAP_SUITE_X25519_AES_256_GCM_NO_PADDING
 
 ```cangjie
-public static const HUKS_UNWRAP_SUITE_X25519_AES_256_GCM_NOPADDING: UInt32 = 1
+public static const HUKS_UNWRAP_SUITE_X25519_AES_256_GCM_NO_PADDING: UInt32 = 1
 ```
 
 **功能：** 导入加密密钥时，X25519密钥协商后使用AES-256 GCM加密。
