@@ -1,4 +1,6 @@
-# I. Cangjie Features and Supported Scenarios
+# Overview of Cangjie Capabilities in OpenHarmony
+
+## I. Cangjie Features and Supported Scenarios
 
 Cangjie is positioned as a modern programming language for OpenHarmony application development. It is a statically typed, statically compiled programming language that integrates modern language features, comprehensive compilation optimizations, runtime implementations, and out-of-the-box toolchain support to provide OpenHarmony application developers with a friendly development experience and exceptional program performance.
 
@@ -28,11 +30,11 @@ Current Cangjie capabilities have been validated in the following scenarios:
 | Knowledge Social (e.g., LeetCode) | Personal information module, displaying and editing personal information, including name, avatar, etc. | Core File Kit (file basic services), Image Kit (image processing services), etc. |
 | Emerging AI (e.g., Nano AI, Kimi) | Chat interface, similar to instant messaging, supporting user text input, file uploads, displaying AI responses, and real-time interaction between AI and users. | ArkUI (Ark UI framework), Core File Kit (file basic services), Network Kit (networking services), etc. |
 
-# II. Supported Capabilities
+## II. Supported Capabilities
 
-Below are the capabilities Cangjie provides for OpenHarmony. For detailed descriptions, refer to the [Cangjie Development Documentation](https://gitcode.com/openharmony-sig/arkcompiler_cangjie_ark_interop/tree/master/doc).
+Below are the capabilities Cangjie provides for OpenHarmony. For detailed descriptions, refer to the [Cangjie Development Documentation](https://gitcode.com/openharmony-sig/docs_cangjie/blob/master/README.md).
 
-## 1. ArkUI
+### 1. ArkUI
 
 The Cangjie version of the ArkUI framework provides a declarative development paradigm (referred to as the "declarative paradigm") based on the Cangjie language, suitable for different application scenarios and technical backgrounds. It is a minimalist, high-performance, cross-device UI development framework that offers essential capabilities for building application UIs, including:
 
@@ -44,7 +46,7 @@ The Cangjie version of the ArkUI framework provides a declarative development pa
 - **Interaction Events**: Interaction events are necessary for UI and user interaction. The Ark development framework provides various interaction events, including touch, mouse, keyboard, and focus events, as well as gesture events derived from these.
 - **Customization**: Customization capabilities allow developers to tailor the UI interface, including custom combinations and extensions.
 
-## 2. API
+### 2. API
 
 Cangjie APIs are a series of APIs provided to support OpenHarmony application development using the Cangjie language, accompanied by comprehensive documentation and sample code. Currently, Cangjie APIs cover part of the OpenHarmony SDK's open capabilities. Over time, more open capabilities will be added.
 
@@ -85,7 +87,7 @@ Cangjie APIs were first released with OpenHarmony 6.x and will continue to expan
 
 For APIs not currently supported by Cangjie, users can call ArkTS APIs or NDK APIs via Cangjie-ArkTS or Cangjie-C cross-language interoperability.
 
-## 3. Interoperability with ArkTS
+### 3. Interoperability with ArkTS
 
 In OpenHarmony application development, there are scenarios requiring mixed development with Cangjie and ArkTS, such as:
 
@@ -104,7 +106,7 @@ To address these scenarios, Cangjie provides the **ark_interop** interoperabilit
 
 To reduce the complexity of interoperability development, Cangjie provides the declarative interoperability macro **ark_interop_macro**, allowing developers to annotate functions or types in Cangjie code that need to be exported to ArkTS with "@Interop[ArkTS]". This automatically generates interoperability "glue" code and ArkTS interface declarations during compilation, reducing manual coding efforts.
 
-### Typical Scenario 1: ArkTS Calls Cangjie
+#### Typical Scenario 1: ArkTS Calls Cangjie
 
 For Scenario 1, use the interoperability library to implement interfaces in Cangjie that can be called from ArkTS. Example:
 
@@ -153,7 +155,7 @@ public func addNumber(a: Float64, b: Float64): Float64 {
 }
 ```
 
-### Typical Scenario 2: Cangjie Calls ArkTS
+#### Typical Scenario 2: Cangjie Calls ArkTS
 
 For Scenario 2, use the interoperability library to load ArkTS modules and call interfaces. Example:
 
@@ -173,7 +175,7 @@ func callInterop(x: Float64, y: Float64): Float64 {
 }
 ```
 
-## 4. IDE Features
+### 4. IDE Features
 
 Provides the DevEco Studio Cangjie development plugin, supporting OpenHarmony application development with Cangjie (pure Cangjie or mixed Cangjie-ArkTS). It supports developing Cangjie static libraries and offers basic project management, compilation, language services, and debugging capabilities. Dynamic libraries, UI previews, static checks, performance tuning, and testing services are not yet supported.
 
@@ -357,7 +359,7 @@ Right-click **entry > New > Cangjie(Interop)** in the project interface to enabl
   
   ![image](./figures/capability/debugInfo.png)
 
-# III. Next Steps
+## III. Next Steps
 
 Cangjie will continue to focus on high-efficiency development, high performance, and robust security, enhancing the development experience while delivering default high performance and security. It will further explore cross-platform capabilities, enabling OpenHarmony developers to achieve "write once, run on three platforms" and establish Cangjie as the preferred static programming language for OpenHarmony ecosystem development. Future directions include:
 
