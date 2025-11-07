@@ -3231,7 +3231,6 @@ public open class MultiShadowOptions {
     public var radius: ?Length
     public var offsetX: ?Length
     public var offsetY: ?Length
-    protected init(radius: ?Length, offsetX: ?Length, offsetY: ?Length)
 }
 ```
 
@@ -3294,26 +3293,6 @@ public var offsetY: ?Length
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **起始版本：** 22
-
-### init(?Length, ?Length, ?Length)
-
-```cangjie
-protected init(radius: ?Length, offsetX: ?Length, offsetY: ?Length)
-```
-
-**功能：** 构造一个MultiShadowOptions对象。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**起始版本：** 22
-
-**参数：**
-
-|参数名|类型|必填|默认值|说明|
-|:---|:---|:---|:---|:---|
-|radius|?[Length](./cj-common-types.md#interface-length)|是|-|-|
-|offsetX|?[Length](./cj-common-types.md#interface-length)|是|-|-|
-|offsetY|?[Length](./cj-common-types.md#interface-length)|是|-|-|
 
 ## class PickerTextStyle
 

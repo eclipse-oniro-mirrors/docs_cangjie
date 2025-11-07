@@ -375,24 +375,6 @@ public init()
 
 **起始版本：** 22
 
-### func aboutToBeDeleted()
-
-```cangjie
-public func aboutToBeDeleted(): Bool
-```
-
-**功能：** 清除LocalStorage中的所有属性。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**起始版本：** 22
-
-**返回值：**
-
-|类型|说明|
-|:----|:----|
-|Bool|如果LocalStorage中的属性已经没有任何订阅者，则删除成功，并返回true。否则返回false。|
-
 ### func clear()
 
 ```cangjie

@@ -1077,7 +1077,6 @@ public open class ShowDialogOptions {
     public var backgroundColor: ResourceColor
     public var backgroundBlurStyle: BlurStyle
     public var buttons: Array<ButtonInfo>
-    public var buttonsSize: UInt32
     public var enableHoverMode: Bool
     public var hoverModeArea: HoverModeAreaType
     public var isModal: Bool
@@ -1168,22 +1167,6 @@ public var buttons: Array<ButtonInfo>
 **功能：** 对话框中的按钮数组。支持多个按钮。
 
 **类型：** Array\<[ButtonInfo](#class-buttoninfo)>
-
-**读写能力：** 可读写
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**起始版本：** 22
-
-### var buttonsSize
-
-```cangjie
-public var buttonsSize: UInt32
-```
-
-**功能：** 按钮数量。
-
-**类型：** UInt32
 
 **读写能力：** 可读写
 

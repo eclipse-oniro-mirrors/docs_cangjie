@@ -1,6 +1,6 @@
 # 组件级变量的状态管理
 
-提供ObservedArray和ObservedArrayList作为状态管理的数组类型，当其中数组发生变化时，如修改其中一项的值，删除或添加一项，就会触发UI更新。
+提供ObservedArrayList作为状态管理的数组类型，当其中数组发生变化时，如修改其中一项的值，删除或添加一项，就会触发UI更新。
 
 ## 导入模块
 
@@ -8,11 +8,7 @@
 import kit.ArkUI.*
 ```
 
-## ObservedProperty
-
-用于进行状态管理的属性类型。
-
-### class ObservedProperty
+## class ObservedProperty
 
 ```cangjie
 public open class ObservedProperty<T> {
@@ -25,11 +21,7 @@ public open class ObservedProperty<T> {
 
 **起始版本：** 22
 
-## ObservedArrayList
-
-用于进行状态管理的数组列表类型。
-
-### class ObservedArrayList
+## class ObservedArrayList
 
 ```cangjie
 public class ObservedArrayList<T> <:  CollectionEx<T> {
@@ -48,7 +40,7 @@ public class ObservedArrayList<T> <:  CollectionEx<T> {
 
 - [CollectionEx](./cj-common-types.md#interface-collectionext)\<T>
 
-#### prop size
+### prop size
 
 ```cangjie
 public prop size: Int64
@@ -62,7 +54,7 @@ public prop size: Int64
 
 **起始版本：** 22
 
-#### init(ArrayList\<T>)
+### init(ArrayList\<T>)
 
 ```cangjie
 public init(initValue: ArrayList<T>)
@@ -80,7 +72,7 @@ public init(initValue: ArrayList<T>)
 |:---|:---|:---|:---|:---|
 |initValue|ArrayList\<T>|是|-|状态管理数组列表类型的初始化值。|
 
-#### init(Array\<T>)
+### init(Array\<T>)
 
 ```cangjie
 public init(initValue: Array<T>)
@@ -98,7 +90,7 @@ public init(initValue: Array<T>)
 |:---|:---|:---|:---|:---|
 |initValue|Array\<T>|是|-|状态管理数组列表类型的初始化值。|
 
-#### operator func [](Int64)
+### operator func [](Int64)
 
 ```cangjie
 public operator func [](index: Int64): T
@@ -122,7 +114,7 @@ public operator func [](index: Int64): T
 |:----|:----|
 |T|指定索引位置的元素。|
 
-#### operator func [](Int64, T)
+### operator func [](Int64, T)
 
 ```cangjie
 public operator func [](index: Int64, value!: T): Unit
@@ -141,7 +133,7 @@ public operator func [](index: Int64, value!: T): Unit
 |index|Int64|是|-|元素索引。|
 |value|T|否|-| **命名参数。** 要设置的元素值。|
 
-#### func isEmpty()
+### func isEmpty()
 
 ```cangjie
 public func isEmpty(): Bool
@@ -159,7 +151,7 @@ public func isEmpty(): Bool
 |:----|:----|
 |Bool|状态管理数组列表是否为空。|
 
-#### func clone()
+### func clone()
 
 ```cangjie
 public func clone(): ObservedArrayList<T>
@@ -177,7 +169,7 @@ public func clone(): ObservedArrayList<T>
 |:----|:----|
 |[ObservedArrayList](#class-observedarraylist)\<T>|克隆的状态管理数组列表。|
 
-#### func clear()
+### func clear()
 
 ```cangjie
 public func clear(): Unit
@@ -189,7 +181,7 @@ public func clear(): Unit
 
 **起始版本：** 22
 
-#### func append(T)
+### func append(T)
 
 ```cangjie
 public func append(element: T): Unit
@@ -207,7 +199,7 @@ public func append(element: T): Unit
 |:---|:---|:---|:---|:---|
 |element|T|是|-|要添加的元素。|
 
-#### func appendAll(Collection\<T>)
+### func appendAll(Collection\<T>)
 
 ```cangjie
 public func appendAll(elements: Collection<T>): Unit
@@ -225,7 +217,7 @@ public func appendAll(elements: Collection<T>): Unit
 |:---|:---|:---|:---|:---|
 |elements|Collection\<T>|是|-|要添加的元素集合。|
 
-#### func insert(Int64, T)
+### func insert(Int64, T)
 
 ```cangjie
 public func insert(index: Int64, element: T): Unit
@@ -244,7 +236,7 @@ public func insert(index: Int64, element: T): Unit
 |index|Int64|是|-|插入位置的索引。|
 |element|T|是|-|要插入的元素。|
 
-#### func insertAll(Int64, Collection\<T>)
+### func insertAll(Int64, Collection\<T>)
 
 ```cangjie
 public func insertAll(index: Int64, elements: Collection<T>): Unit
@@ -263,7 +255,7 @@ public func insertAll(index: Int64, elements: Collection<T>): Unit
 |index|Int64|是|-|插入位置的索引。|
 |elements|Collection\<T>|是|-|要插入的元素集合。|
 
-#### func prepend(T)
+### func prepend(T)
 
 ```cangjie
 public func prepend(element: T): Unit
@@ -281,7 +273,7 @@ public func prepend(element: T): Unit
 |:---|:---|:---|:---|:---|
 |element|T|是|-|要添加的元素。|
 
-#### func prependAll(Collection\<T>)
+### func prependAll(Collection\<T>)
 
 ```cangjie
 public func prependAll(elements: Collection<T>): Unit
@@ -299,7 +291,7 @@ public func prependAll(elements: Collection<T>): Unit
 |:---|:---|:---|:---|:---|
 |elements|Collection\<T>|是|-|要添加的元素集合。|
 
-#### func remove(Int64)
+### func remove(Int64)
 
 ```cangjie
 public func remove(index: Int64): T
@@ -323,7 +315,7 @@ public func remove(index: Int64): T
 |:----|:----|
 |T|被删除的元素。|
 
-#### func remove(Range\<Int64>)
+### func remove(Range\<Int64>)
 
 ```cangjie
 public func remove(range: Range<Int64>): Unit
@@ -341,7 +333,7 @@ public func remove(range: Range<Int64>): Unit
 |:---|:---|:---|:---|:---|
 |range|Range\<Int64>|是|-|要删除元素的范围。|
 
-#### func removeIf((T) -> Bool)
+### func removeIf((T) -> Bool)
 
 ```cangjie
 public func removeIf(predicate: (T) -> Bool): Unit

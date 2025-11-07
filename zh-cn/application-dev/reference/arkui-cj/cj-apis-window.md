@@ -1561,32 +1561,6 @@ public func setWindowPrivacyMode(isPrivacyMode: Bool): Unit
   |:----|:----|
   |1300002|This window state is abnormal.|
 
-### func setWindowSystemBarEnable(Array<SystemBarType>)
-
-```cangjie
-public func setWindowSystemBarEnable(names: Array<SystemBarType>): Unit
-```
-
-**功能：** 设置是否显示主窗口的系统栏。
-
-**系统能力：** SystemCapability.WindowManager.WindowManager.Core
-
-**起始版本：** 22
-
-**参数：**
-
-|参数名|类型|必填|默认值|说明|
-|:---|:---|:---|:---|:---|
-|names|Array\<[SystemBarType](#enum-systembartype)>|是|-|系统栏类型集合。|
-
-**异常：**
-
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)和[窗口错误码](./cj-errorcode-window.md)。
-
-  |错误码|说明|
-  |:----|:----|
-  |1300002|This window state is abnormal.|
-
 ### func setWindowSystemBarProperties(SystemBarProperties)
 
 ```cangjie
