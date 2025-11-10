@@ -12,15 +12,17 @@ Through learning and initial practice of this section, developers can quickly bu
 
 ## Development
 
-Starting from API version 18, the OpenHarmony SDK provides rich and comprehensive open capabilities categorized by Kit, covering five major domains: application framework, system, media, graphics, and application services. For example:
+The OpenHarmony SDK provides rich open capabilities categorized by Kit dimensions, covering application frameworks, systems, media, graphics, application services, and other domains. It also offers development guides for key open capabilities to assist developers in efficient development.
 
 - Application framework-related Kit open capabilities: Ability Kit (program framework services), ArkUI (Ark UI framework), etc.
 - System-related Kit open capabilities: Universal Keystore Kit (key management services), Network Kit (network services), etc.
-- Media-related Kit open capabilities: Audio Kit (audio services), Media Library Kit (media file management services), etc.
+- Media-related Kit open capabilities: Camera Kit (camera services), Media Library Kit (media file management services), etc.
 - Graphics-related Kit open capabilities: ArkGraphics 2D (Ark 2D graphics services).
-- Application service-related Kit open capabilities: Contacts Kit (contact services), Location Kit (location services), etc.
+- Application service-related Kit open capabilities: Location Kit (location services), etc.
 
-We provide development guidance for key open capabilities to assist developers in efficient development. For details, please refer to the relevant content under the **Development** directory on the left side of this page.
+## Tools
+
+DevEco Studio is the recommended IDE tool for OpenHarmony application development.
 
 ## API Reference
 
