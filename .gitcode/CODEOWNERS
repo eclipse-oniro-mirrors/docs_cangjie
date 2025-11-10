@@ -1,27 +1,656 @@
-# 指定根目录下文件的Code Owner
-
+# 根目录
 @xuanjz @amy_mayun
-
-# 指定流程配置的Code Owner
-
+# 流程配置
 /.gitcode/ @xuanjz
+# 英文文档
+/en/ @guoyuqing @luojianing @amy_mayun
+# 中文文档
+/zh-cn/ @luojianing @guoyuqing @amy_mayun
+# 用户指南
+/zh-cn/application-dev/learn-cj/ @Augus_Jan @wyq1213 @Timi3 @wuying21
+/zh-cn/application-dev/learn-cj/FFI @gaoxiang @xuanjz @anancds123 @wuying21
+# 应用开发
+# 入门
+/zh-cn/application-dev/cj-start/ @wangshouqi @TimZhou @zhiczhao @guoyuqing
+# 开发
+# 应用框架
+# Ability Kit（程序框架服务）
+/zh-cn/application-dev/application-models/ @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/application-models/cj-abilitykit-overview.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/application-models/cj-application-models.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/application-models/cj-application-component-configuration-stage.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/application-models/cj-uiability-overview.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/application-models/cj-uiability-lifecycle.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/application-models/cj-uiability-launch-type.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/application-models/cj-uiability-usage.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/application-models/cj-uiability-intra-device-interaction.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/application-models/cj-want-overview.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/application-models/cj-explicit-implicit-want-mappings.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/application-models/cj-actions-entities.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/application-models/cj-file-processing-apps-startup.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/application-models/cj-config-file-stage.md @luoming25 @abc_qgy @gxmm @guoyuqing
+# ArkData（方舟数据管理）
+/zh-cn/application-dev/database/ @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/database/cj-data-mgmt-overview.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/database/cj-app-data-persistence-overview.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/database/cj-data-persistence-by-preferences.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/database/cj-data-persistence-by-kv-store.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/database/cj-data-persistence-by-rdb-store.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/database/cj-sync-app-data-across-devices-overview.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/database/cj-data-sync-of-rdb-store.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/database/cj-data-reliability-security-overview.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/database/cj-data-backup-and-restore.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/database/cj-data-encryption.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/database/cj-access-control-by-device-and-data-level.md @luoming25 @abc_qgy @gxmm @guoyuqing
+# ArkUI（方舟UI框架）
+/zh-cn/application-dev/arkui-cj/ @Tyfiell @persisting @hejuanjuan @guoyuqing
+/zh-cn/application-dev/arkui-cj/cj-overview.md @Tyfiell @persisting @hejuanjuan @guoyuqing
+/zh-cn/application-dev/arkui-cj/cj-ui-development-overview.md @Tyfiell @persisting @hejuanjuan @guoyuqing
+/zh-cn/application-dev/arkui-cj/paradigm/cj-basic-syntax-overview.md @Tyfiell @persisting @hejuanjuan @guoyuqing
+/zh-cn/application-dev/arkui-cj/paradigm/cj-declarative-ui-description.md @Tyfiell @persisting @hejuanjuan @guoyuqing
+/zh-cn/application-dev/arkui-cj/paradigm/cj-create-custom-components.md @Tyfiell @persisting @hejuanjuan @guoyuqing
+/zh-cn/application-dev/arkui-cj/paradigm/cj-page-custom-components-lifecycle.md @Tyfiell @persisting @hejuanjuan @guoyuqing
+/zh-cn/application-dev/arkui-cj/paradigm/cj-custom-components-access-restrictions.md @Tyfiell @persisting @hejuanjuan @guoyuqing
+/zh-cn/application-dev/arkui-cj/paradigm/cj-macro-builder.md @Tyfiell @persisting @hejuanjuan @guoyuqing
+/zh-cn/application-dev/arkui-cj/paradigm/cj-macro-builderparam.md @Tyfiell @persisting @hejuanjuan @guoyuqing
+/zh-cn/application-dev/arkui-cj/paradigm/cj-macro-reusable.md @Tyfiell @persisting @hejuanjuan @guoyuqing
+/zh-cn/application-dev/arkui-cj/state_management/cj-state-management-overview.md @Tyfiell @persisting @hejuanjuan @guoyuqing
+/zh-cn/application-dev/arkui-cj/state_management/cj-macro-state.md @Tyfiell @persisting @hejuanjuan @guoyuqing
+/zh-cn/application-dev/arkui-cj/state_management/cj-macro-prop.md @Tyfiell @persisting @hejuanjuan @guoyuqing
+/zh-cn/application-dev/arkui-cj/state_management/cj-macro-link.md @Tyfiell @persisting @hejuanjuan @guoyuqing
+/zh-cn/application-dev/arkui-cj/state_management/cj-macro-provide-and-consume.md @Tyfiell @persisting @hejuanjuan @guoyuqing
+/zh-cn/application-dev/arkui-cj/state_management/cj-macro-observed-and-publish.md @Tyfiell @persisting @hejuanjuan @guoyuqing
+/zh-cn/application-dev/arkui-cj/state_management/cj-application-state-management-overview.md @Tyfiell @persisting @hejuanjuan @guoyuqing
+/zh-cn/application-dev/arkui-cj/state_management/cj-localstorage.md @Tyfiell @persisting @hejuanjuan @guoyuqing
+/zh-cn/application-dev/arkui-cj/state_management/cj-appstorage.md @Tyfiell @persisting @hejuanjuan @guoyuqing
+/zh-cn/application-dev/arkui-cj/state_management/cj-persiststorage.md @Tyfiell @persisting @hejuanjuan @guoyuqing
+/zh-cn/application-dev/arkui-cj/state_management/cj-environment.md @Tyfiell @persisting @hejuanjuan @guoyuqing
+/zh-cn/application-dev/arkui-cj/state_management/cj-other-state-mgmt-functions-overview.md @Tyfiell @persisting @hejuanjuan @guoyuqing
+/zh-cn/application-dev/arkui-cj/state_management/cj-macro-watch.md @Tyfiell @persisting @hejuanjuan @guoyuqing
+/zh-cn/application-dev/arkui-cj/state_management/cj-mvvm.md @Tyfiell @persisting @hejuanjuan @guoyuqing
+/zh-cn/application-dev/arkui-cj/state_management/cj-state-management-best-practices.md @Tyfiell @persisting @hejuanjuan @guoyuqing
+/zh-cn/application-dev/arkui-cj/state_management/cj-properly-use-state-management-to-develope.md @Tyfiell @persisting @hejuanjuan @guoyuqing
+/zh-cn/application-dev/arkui-cj/rendering_control/cj-rendering-control-overview.md @Tyfiell @persisting @hejuanjuan @guoyuqing
+/zh-cn/application-dev/arkui-cj/rendering_control/cj-rendering-control-ifelse.md @Tyfiell @persisting @hejuanjuan @guoyuqing
+/zh-cn/application-dev/arkui-cj/rendering_control/cj-rendering-control-foreach.md @Tyfiell @persisting @hejuanjuan @guoyuqing
+/zh-cn/application-dev/arkui-cj/rendering_control/cj-rendering-control-lazyforeach.md @Tyfiell @persisting @hejuanjuan @guoyuqing
+/zh-cn/application-dev/arkui-cj/cj-layout-development-overview.md @Tyfiell @persisting @hejuanjuan @guoyuqing
+/zh-cn/application-dev/arkui-cj/cj-layout-development-linear.md @Tyfiell @persisting @hejuanjuan @guoyuqing
+/zh-cn/application-dev/arkui-cj/cj-layout-development-stack-layout.md @Tyfiell @persisting @hejuanjuan @guoyuqing
+/zh-cn/application-dev/arkui-cj/cj-layout-development-flex-layout.md @Tyfiell @persisting @hejuanjuan @guoyuqing
+/zh-cn/application-dev/arkui-cj/cj-layout-development-relative-layout.md @Tyfiell @persisting @hejuanjuan @guoyuqing
+/zh-cn/application-dev/arkui-cj/cj-layout-development-grid-layout.md @Tyfiell @persisting @hejuanjuan @guoyuqing
+/zh-cn/application-dev/arkui-cj/cj-layout-development-create-list.md @Tyfiell @persisting @hejuanjuan @guoyuqing
+/zh-cn/application-dev/arkui-cj/cj-layout-development-create-grid.md @Tyfiell @persisting @hejuanjuan @guoyuqing
+/zh-cn/application-dev/arkui-cj/cj-layout-development-create-looping.md @Tyfiell @persisting @hejuanjuan @guoyuqing
+/zh-cn/application-dev/arkui-cj/cj-layout-development-tabs.md @Tyfiell @persisting @hejuanjuan @guoyuqing
+/zh-cn/application-dev/arkui-cj/cj-common-components-button.md @Tyfiell @persisting @hejuanjuan @guoyuqing
+/zh-cn/application-dev/arkui-cj/cj-common-components-radio-button.md @Tyfiell @persisting @hejuanjuan @guoyuqing
+/zh-cn/application-dev/arkui-cj/cj-common-components-switch.md @Tyfiell @persisting @hejuanjuan @guoyuqing
+/zh-cn/application-dev/arkui-cj/cj-common-components-progress-indicator.md @Tyfiell @persisting @hejuanjuan @guoyuqing
+/zh-cn/application-dev/arkui-cj/cj-graphics-display.md @Tyfiell @persisting @hejuanjuan @guoyuqing
+/zh-cn/application-dev/arkui-cj/cj-common-components-video-player.md @Tyfiell @persisting @hejuanjuan @guoyuqing
+/zh-cn/application-dev/arkui-cj/cj-navigation-introduction.md @Tyfiell @persisting @hejuanjuan @guoyuqing
+/zh-cn/application-dev/arkui-cj/cj-text-introduction.md @Tyfiell @persisting @hejuanjuan @guoyuqing
+/zh-cn/application-dev/arkui-cj/cj-common-components-text-display.md @Tyfiell @persisting @hejuanjuan @guoyuqing
+/zh-cn/application-dev/arkui-cj/cj-common-components-text-input.md @Tyfiell @persisting @hejuanjuan @guoyuqing
+/zh-cn/application-dev/arkui-cj/cj-common-components-richeditor.md @Tyfiell @persisting @hejuanjuan @guoyuqing
+/zh-cn/application-dev/arkui-cj/cj-dialog-overview.md @Tyfiell @persisting @hejuanjuan @guoyuqing
+/zh-cn/application-dev/arkui-cj/cj-dialog-base-overview.md @Tyfiell @persisting @hejuanjuan @guoyuqing
+/zh-cn/application-dev/arkui-cj/cj-uicontext-custom-dialog.md @Tyfiell @persisting @hejuanjuan @guoyuqing
+/zh-cn/application-dev/arkui-cj/cj-common-components-custom-dialog.md @Tyfiell @persisting @hejuanjuan @guoyuqing
+/zh-cn/application-dev/arkui-cj/cj-fixes-style-dialog.md @Tyfiell @persisting @hejuanjuan @guoyuqing
+/zh-cn/application-dev/arkui-cj/cj-popup-and-menu-components-menu.md @Tyfiell @persisting @hejuanjuan @guoyuqing
+/zh-cn/application-dev/arkui-cj/cj-popup-and-menu-components-popup.md @Tyfiell @persisting @hejuanjuan @guoyuqing
+/zh-cn/application-dev/arkui-cj/cj-modal-overview.md @Tyfiell @persisting @hejuanjuan @guoyuqing
+/zh-cn/application-dev/arkui-cj/cj-sheet-page.md @Tyfiell @persisting @hejuanjuan @guoyuqing
+/zh-cn/application-dev/arkui-cj/cj-contentcover-page.md @Tyfiell @persisting @hejuanjuan @guoyuqing
+/zh-cn/application-dev/arkui-cj/cj-create-toast.md @Tyfiell @persisting @hejuanjuan @guoyuqing
+/zh-cn/application-dev/arkui-cj/cj-shape-drawing.md @Tyfiell @persisting @hejuanjuan @guoyuqing
+/zh-cn/application-dev/arkui-cj/cj-drawing-customization-on-canvas.md @Tyfiell @persisting @hejuanjuan @guoyuqing
+/zh-cn/application-dev/arkui-cj/cj-animation.md @Tyfiell @persisting @hejuanjuan @guoyuqing
+/zh-cn/application-dev/arkui-cj/cj-attribute-animation-overview.md @Tyfiell @persisting @hejuanjuan @guoyuqing
+/zh-cn/application-dev/arkui-cj/cj-attribute-animation-apis.md @Tyfiell @persisting @hejuanjuan @guoyuqing
+/zh-cn/application-dev/arkui-cj/cj-transition-overview.md @Tyfiell @persisting @hejuanjuan @guoyuqing
+/zh-cn/application-dev/arkui-cj/cj-enter-exit-transition.md @Tyfiell @persisting @hejuanjuan @guoyuqing
+/zh-cn/application-dev/arkui-cj/cj-modal-transition.md @Tyfiell @persisting @hejuanjuan @guoyuqing
+/zh-cn/application-dev/arkui-cj/cj-shared-element-transition.md @Tyfiell @persisting @hejuanjuan @guoyuqing
+/zh-cn/application-dev/arkui-cj/cj-rotation-transition-animation.md @Tyfiell @persisting @hejuanjuan @guoyuqing
+/zh-cn/application-dev/arkui-cj/cj-page-routing.md @Tyfiell @persisting @hejuanjuan @guoyuqing
+/zh-cn/application-dev/arkui-cj/cj-page-transition-animation.md @Tyfiell @persisting @hejuanjuan @guoyuqing
+/zh-cn/application-dev/arkui-cj/cj-component-animation.md @Tyfiell @persisting @hejuanjuan @guoyuqing
+/zh-cn/application-dev/arkui-cj/cj-curve-overview.md @Tyfiell @persisting @hejuanjuan @guoyuqing
+/zh-cn/application-dev/arkui-cj/cj-traditional-curve.md @Tyfiell @persisting @hejuanjuan @guoyuqing
+/zh-cn/application-dev/arkui-cj/cj-spring-curve.md @Tyfiell @persisting @hejuanjuan @guoyuqing
+/zh-cn/application-dev/arkui-cj/cj-animation-smoothing.md @Tyfiell @persisting @hejuanjuan @guoyuqing
+/zh-cn/application-dev/arkui-cj/cj-blur-effect.md @Tyfiell @persisting @hejuanjuan @guoyuqing
+/zh-cn/application-dev/arkui-cj/cj-shadow-effect.md @Tyfiell @persisting @hejuanjuan @guoyuqing
+/zh-cn/application-dev/arkui-cj/cj-color-effect.md @Tyfiell @persisting @hejuanjuan @guoyuqing
+/zh-cn/application-dev/arkui-cj/cj-animator.md @Tyfiell @persisting @hejuanjuan @guoyuqing
+/zh-cn/application-dev/arkui-cj/cj-event-overview.md @Tyfiell @persisting @hejuanjuan @guoyuqing
+/zh-cn/application-dev/arkui-cj/cj-common-events-distribute.md @Tyfiell @persisting @hejuanjuan @guoyuqing
+/zh-cn/application-dev/arkui-cj/cj-common-events-touch-screen-event.md @Tyfiell @persisting @hejuanjuan @guoyuqing
+/zh-cn/application-dev/arkui-cj/cj-common-events-device-input-event.md @Tyfiell @persisting @hejuanjuan @guoyuqing
+/zh-cn/application-dev/arkui-cj/cj-common-events-focus-event.md @Tyfiell @persisting @hejuanjuan @guoyuqing
+/zh-cn/application-dev/arkui-cj/cj-mirroring-display.md @Tyfiell @persisting @hejuanjuan @guoyuqing
+/zh-cn/application-dev/arkui-cj/cj-ui-dark-light-color-adaptation.md @Tyfiell @persisting @hejuanjuan @guoyuqing
+# 窗口管理 
+/zh-cn/application-dev/windowmanager/ @Tyfiell @persisting @hejuanjuan @guoyuqing
+/zh-cn/application-dev/windowmanager/application-window-stage.md @Tyfiell @persisting @hejuanjuan @guoyuqing
+# 屏幕管理
+/zh-cn/application-dev/displaymanager/ @Tyfiell @persisting @hejuanjuan @guoyuqing
+/zh-cn/application-dev/displaymanager/screenProperty-guideline.md @Tyfiell @persisting @hejuanjuan @guoyuqing
+# ArkWeb（方舟Web）
+/zh-cn/application-dev/web/ @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/web/cj-web-component-overview.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/web/cj-web-default-userAgent.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/web/cj-web-set-dark-mode.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/web/cj-web-nested-scrolling.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/web/cj-web-content-scrolling.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/web/cj-web-secure-shield-mode.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/web/cj-web-page-loading-with-web-components.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/web/cj-web-pdf-preview.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/web/cj-web-safe-area-insets.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/web/cj-web-debugging-with-devtools.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/web/cj-web-crashpad.md @luoming25 @abc_qgy @gxmm @guoyuqing
+# Core File Kit（文件基础服务）
+/zh-cn/application-dev/file-management/ @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/file-management/cj-core-file-kit-intro.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/file-management/cj-app-file-overview.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/file-management/cj-app-sandbox-directory.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/file-management/cj-app-file-access.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/file-management/cj-share-app-file.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/file-management/cj-send-file-to-app-sandbox.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/file-management/cj-user-file-overview.md @luoming25 @abc_qgy @gxmm @guoyuqing
+# IPC Kit（进程间通信服务）
+/zh-cn/application-dev/ipc/ @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/ipc/cj-ipc-rpc-overview.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/ipc/cj-ipc-rpc-guidelines.md @luoming25 @abc_qgy @gxmm @guoyuqing
+# Localization Kit（本地化开发服务）
+/zh-cn/application-dev/internationalization/ @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/internationalization/cj-i18n-l10n.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/internationalization/cj-i18n-ui-design.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/internationalization/cj-i18n-calendar.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/internationalization/cj-i18n-dst-transition.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/internationalization/cj-i18n-time-zone-display.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/internationalization/cj-l10n-translation-scene.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/internationalization/cj-l10n-singular-plural.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/internationalization/cj-linguistic-testing.md @luoming25 @abc_qgy @gxmm @guoyuqing
+# 安全 
+/zh-cn/application-dev/security/ @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/security/AccessToken/cj-access-token-overview.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/security/AccessToken/cj-app-permission-mgmt-overview.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/security/AccessToken/cj-determine-application-mode.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/security/AccessToken/cj-declare-permissions.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/security/AccessToken/cj-request-user-authorization.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/security/AccessToken/cj-one-time-authorization.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/security/AccessToken/cj-declare-permissions-in-acl.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/security/AccessToken/cj-app-permissions.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/security/AccessToken/cj-permissions-for-all.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/security/AccessToken/cj-permissions-for-all-user.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/security/AccessToken/cj-restricted-permissions.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/security/AccessToken/cj-permissions-for-system-apps.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/security/AccessToken/cj-permissions-for-system-apps-no-acl.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/security/AccessToken/cj-permissions-for-system-apps-user.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/security/AccessToken/cj-permissions-for-enterprise-apps.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/security/AccessToken/cj-permissions-for-mdm-apps.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/security/AccessToken/cj-app-permission-group-list.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/security/CryptoArchitectureKit/cj-crypto-architecture-kit-intro.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/security/CryptoArchitectureKit/cj-crypto-key-generation-conversion-overview.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/security/CryptoArchitectureKit/cj-crypto-sym-key-generation-conversion-spec.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/security/CryptoArchitectureKit/cj-crypto-generate-sym-key-randomly.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/security/CryptoArchitectureKit/cj-crypto-convert-binary-data-to-sym-key.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/security/CryptoArchitectureKit/cj-crypto-encryption-decryption-overview.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/security/CryptoArchitectureKit/cj-crypto-sym-encrypt-decrypt-spec.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/security/CryptoArchitectureKit/cj-crypto-asym-encrypt-decrypt-spec.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/security/CryptoArchitectureKit/cj-crypto-encrypt-decrypt-by-segment.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/security/CryptoArchitectureKit/cj-crypto-aes-sym-encrypt-decrypt-gcm.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/security/CryptoArchitectureKit/cj-crypto-aes-sym-encrypt-decrypt-ccm.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/security/CryptoArchitectureKit/cj-crypto-aes-sym-encrypt-decrypt-cbc.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/security/CryptoArchitectureKit/cj-crypto-aes-sym-encrypt-decrypt-ecb.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/security/CryptoArchitectureKit/cj-crypto-aes-sym-encrypt-decrypt-gcm-by-segment.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/security/CryptoArchitectureKit/cj-crypto-3des-sym-encrypt-decrypt-ecb.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/security/CryptoArchitectureKit/cj-crypto-sm4-sym-encrypt-decrypt-ecb.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/security/CryptoArchitectureKit/cj-crypto-sm4-sym-encrypt-decrypt-cbc.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/security/CryptoArchitectureKit/cj-crypto-sm4-sym-encrypt-decrypt-gcm.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/security/CryptoArchitectureKit/cj-crypto-sm4-sym-encrypt-decrypt-gcm-by-segment.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/security/CryptoArchitectureKit/cj-crypto-generate-message-digest-overview.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/security/CryptoArchitectureKit/cj-crypto-generate-message-digest.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/security/CryptoArchitectureKit/cj-crypto-generate-message-digest-md5.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/security/CryptoArchitectureKit/cj-crypto-compute-mac.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/security/CryptoArchitectureKit/cj-crypto-generate-random-number.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/security/UniversalKeystoreKit/cj-huks-overview.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/security/UniversalKeystoreKit/cj-huks-concepts.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/security/UniversalKeystoreKit/cj-huks-key-generation-overview.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/security/UniversalKeystoreKit/cj-huks-key-generation.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/security/UniversalKeystoreKit/cj-huks-key-import-overview.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/security/UniversalKeystoreKit/cj-huks-import-key-in-plaintext.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/security/UniversalKeystoreKit/cj-huks-import-wrapped-key.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/security/UniversalKeystoreKit/cj-huks-key-use-overview.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/security/UniversalKeystoreKit/cj-huks-encryption-decryption-overview.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/security/UniversalKeystoreKit/cj-huks-encryption-decryption.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/security/UniversalKeystoreKit/cj-huks-signing-signature-verification-overview.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/security/UniversalKeystoreKit/cj-huks-signing-signature-verification.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/security/UniversalKeystoreKit/cj-huks-key-agreement-overview.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/security/UniversalKeystoreKit/cj-huks-key-agreement.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/security/UniversalKeystoreKit/cj-huks-key-derivation-overview.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/security/UniversalKeystoreKit/cj-huks-key-derivation.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/security/UniversalKeystoreKit/cj-huks-hmac-overview.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/security/UniversalKeystoreKit/cj-huks-hmac.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/security/UniversalKeystoreKit/cj-huks-delete-key.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/security/UniversalKeystoreKit/cj-huks-key-attestation-overview.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/security/UniversalKeystoreKit/cj-huks-key-anon-attestation.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/security/UniversalKeystoreKit/cj-huks-key-attestation-arkts.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/security/UniversalKeystoreKit/cj-huks-check-key.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/security/UniversalKeystoreKit/cj-huks-obtain-key-properties.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/security/UniversalKeystoreKit/cj-huks-export-key.md @luoming25 @abc_qgy @gxmm @guoyuqing
+# 网络
+/zh-cn/application-dev/connectivity/ @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/connectivity/cj-connectivity-kit-intro.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/connectivity/bluetooth/cj-bluetooth-overview.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/connectivity/bluetooth/cj-ble-development-guide.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/connectivity/bluetooth/cj-gatt-development-guide.md @luoming25 @abc_qgy @gxmm @guoyuqing
+# Network Kit（网络服务）
+/zh-cn/application-dev/network/ @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/network/cj-net-mgmt-overview.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/network/cj-http-request.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/network/cj-net-connection-manager.md @luoming25 @abc_qgy @gxmm @guoyuqing
+# Telephony Kit（蜂窝通信服务）
+/zh-cn/application-dev/telephony/ @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/telephony/cj-telephony-call.md @luoming25 @abc_qgy @gxmm @guoyuqing
+# 基础功能
+# Basic Services Kit（基础服务）
+/zh-cn/application-dev/basic-services/ @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/basic-services/cj-basic-services-kit-overview.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/basic-services/common-event/cj-common-event-overview.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/basic-services/common-event/cj-common-event-subscription.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/basic-services/common-event/cj-common-event-unsubscription.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/basic-services/common-event/cj-common-event-publish.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/basic-services/request/cj-app-file-upload-download.md @luoming25 @abc_qgy @gxmm @guoyuqing
+# 硬件
+/zh-cn/application-dev/device/ @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/device/sensor/cj-sensorservice-kit-intro.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/device/sensor/cj-sensor-overview.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/device/sensor/cj-sensor-guidelines.md @luoming25 @abc_qgy @gxmm @guoyuqing
+# 调测调优
+/zh-cn/application-dev/dfx/ @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/dfx/cj-performance-analysis-kit-overview.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/dfx/cj-hilog-guidelines.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/dfx/cj-hiappevent-intro.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/dfx/cj-hiappevent-watcher-app-events.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/dfx/cj-hiappevent-watcher-crash-events.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/dfx/cj-hiappevent-watcher-crash-events-cangjie.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/dfx/cj-hiappevent-watcher-freeze-events.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/dfx/cj-hiappevent-watcher-freeze-events-cangjie.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/dfx/cj-hiappevent-event-reporting.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/dfx/cj-hitracemeter-view.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/dfx/cj-errormanager-guidelines.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/dfx/cj-cangjiecrash-guidelines.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/dfx/cj-appfreeze-guidelines.md @luoming25 @abc_qgy @gxmm @guoyuqing
+# 命令行工具
+/zh-cn/application-dev/tools/ @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/tools/cj-hdc.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/tools/cj-hilog.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/tools/cj-hidumper.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/tools/cj-hitrace.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/tools/cj-hiperf.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/tools/cj-aa-tool.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/tools/cj-bm-tool.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/tools/cj-packing-tool.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/tools/cj-unpacking-tool.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/tools/cj-app-check-tool.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/tools/cj-cem-tool.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/tools/cj-anm-tool.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/tools/cj-restool.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/tools/cj-param-tool.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/tools/cj-power-shell.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/tools/cj-atm-tool.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/tools/cj-acm-tool.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/tools/cj-toybox.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/tools/cj-mediatool.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/tools/cj-devicedebug-tool.md @luoming25 @abc_qgy @gxmm @guoyuqing
+# Test Kit（应用测试服务）
+/zh-cn/application-dev/application-test/ @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/application-test/cj-test-kit-overview.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/application-test/cj-arkxtest-guidelines.md @luoming25 @abc_qgy @gxmm @guoyuqing
+# 媒体
+/zh-cn/application-dev/media/ @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/media/camera/cj-camera-overview.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/media/camera/cj-camera-preparation.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/media/camera/cj-camera-device-management.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/media/camera/cj-camera-device-input.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/media/camera/cj-camera-session-management.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/media/camera/cj-camera-preview.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/media/camera/cj-camera-torch-use.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/media/camera/cj-camera-background-recovery.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/media/image/cj-image-overview.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/media/image/cj-image-decoding.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/media/image/cj-image-transformation.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/media/image/cj-image-pixelmap-operation.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/media/image/cj-image-encoding.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/media/image/cj-image-tool.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/media/media/cj-media-kit-intro.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/media/media/cj-avimagegenerator.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/media/media/cj-avcodec-support-formats.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/media/medialibrary/cj-photoAccessHelper-systemAlbum-guidelines.md @luoming25 @abc_qgy @gxmm @guoyuqing
+# 图形
+/zh-cn/application-dev/graphics/ @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/graphics/cj-arkgraphics2D-introduction.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/graphics/cj-displaysync-overview.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/graphics/cj-displaysync-animation.md @luoming25 @abc_qgy @gxmm @guoyuqing
+# 应用服务
+# Location Kit（位置服务）
+/zh-cn/application-dev/location/ @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/location/cj-location-kit-intro.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/location/cj-location-permission-guidelines.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/location/cj-location-guidelines.md @luoming25 @abc_qgy @gxmm @guoyuqing
 
-# 指定en/目录下文件的Code Owner
-
-/en/ @guoyuqing
-
-# 指定各手册目录下文件的Code Owner
-
-/zh-cn/ @luojianing @guoyuqing
-
-/zh-cn/application-dev/ @guoyuqing @abc_qgy
-
-/zh-cn/application-dev/reference/ @luojianing @abc_qgy @luoming25
-
-/zh-cn/application-dev/reference/arkinterop @luojianing @gaoxiang @xuanjz @anancds123
-
-/zh-cn/application-dev/reference/arkui-cj @luojianing @Cangjie-liubinyu @hejuanjuan @Tyfiell
-
-/zh-cn/application-dev/arkui-cj/ @guoyuqing @Cangjie-liubinyu @hejuanjuan @Tyfiell
-
-/zh-cn/application-dev/cj-start/ @guoyuqing @wangshouqi @TimZhou @zhiczhao
+# API参考概述
+/zh-cn/application-dev/reference/cj-development-intro.md @luoming25 @abc_qgy @kirby @luojianing
+/zh-cn/application-dev/reference/cj-syscap.md @luoming25 @abc_qgy @kirby @luojianing
+# 系统能力SystemCapability列表
+/zh-cn/application-dev/reference/cj-phone-syscap-list.md @luoming25 @abc_qgy @kirby @luojianing
+/zh-cn/application-dev/reference/cj-tablet-syscap-list.md @luoming25 @abc_qgy @kirby @luojianing
+/zh-cn/application-dev/reference/cj-ifavailable.md @luoming25 @abc_qgy @kirby @luojianing
+/zh-cn/application-dev/reference/cj-errorcode-universal.md @luoming25 @abc_qgy @kirby @luojianing
+# 应用框架
+# AbilityKit
+/zh-cn/application-dev/reference/AbilityKit/ @luoming25 @abc_qgy @kirby @luojianing
+/zh-cn/application-dev/reference/AbilityKit/cj-apis-app-ability-ui_ability.md @luoming25 @abc_qgy @kirby @luojianing
+/zh-cn/application-dev/reference/AbilityKit/cj-apis-app-ability-want.md @luoming25 @abc_qgy @kirby @luojianing
+/zh-cn/application-dev/reference/AbilityKit/cj-apis-ability_access_ctrl.md @luoming25 @abc_qgy @kirby @luojianing
+/zh-cn/application-dev/reference/AbilityKit/cj-apis-bundle_manager.md @luoming25 @abc_qgy @kirby @luojianing
+/zh-cn/application-dev/reference/AbilityKit/cj-apis-app-ability-ability_stage.md @luoming25 @abc_qgy @kirby @luojianing
+/zh-cn/application-dev/reference/AbilityKit/cj-apis-ability-ability_result.md @luoming25 @abc_qgy @kirby @luojianing
+/zh-cn/application-dev/reference/AbilityKit/cj-apis-app-ability-app_recovery.md @luoming25 @abc_qgy @kirby @luojianing
+/zh-cn/application-dev/reference/AbilityKit/cj-apis-app-ability-ability_constant.md @luoming25 @abc_qgy @kirby @luojianing
+/zh-cn/application-dev/reference/AbilityKit/cj-apis-app-ability-context_constant.md @luoming25 @abc_qgy @kirby @luojianing
+/zh-cn/application-dev/reference/AbilityKit/cj-apis-app-ability-dialog_request.md @luoming25 @abc_qgy @kirby @luojianing
+/zh-cn/application-dev/reference/AbilityKit/cj-apis-app-ability-start_options.md @luoming25 @abc_qgy @kirby @luojianing
+/zh-cn/application-dev/reference/AbilityKit/cj-apis-app-ability-want_constant.md @luoming25 @abc_qgy @kirby @luojianing
+/zh-cn/application-dev/reference/AbilityKit/cj-apis-app-ability.md @luoming25 @abc_qgy @kirby @luojianing
+/zh-cn/application-dev/reference/AbilityKit/cj-apis-application-error_observer.md @luoming25 @abc_qgy @kirby @luojianing
+/zh-cn/application-dev/reference/AbilityKit/cj-apis-application-test_runner.md @luoming25 @abc_qgy @kirby @luojianing
+/zh-cn/application-dev/reference/AbilityKit/cj-apis-element_name.md @luoming25 @abc_qgy @kirby @luojianing
+/zh-cn/application-dev/reference/AbilityKit/cj-apis-metadata.md @luoming25 @abc_qgy @kirby @luojianing
+/zh-cn/application-dev/reference/AbilityKit/cj-apis-sercurity-permission_request_result.md @luoming25 @abc_qgy @kirby @luojianing
+/zh-cn/application-dev/reference/AbilityKit/cj-apis-skill.md @luoming25 @abc_qgy @kirby @luojianing
+/zh-cn/application-dev/reference/AbilityKit/cj-apis-app-ability-error_manager.md @luoming25 @abc_qgy @kirby @luojianing
+/zh-cn/application-dev/reference/AbilityKit/cj-errorcode-ability.md @luoming25 @abc_qgy @kirby @luojianing
+/zh-cn/application-dev/reference/AbilityKit/cj-errorcode-bundle.md @luoming25 @abc_qgy @kirby @luojianing
+/zh-cn/application-dev/reference/AbilityKit/cj-errorcode-access-token.md @luoming25 @abc_qgy @kirby @luojianing
+/zh-cn/application-dev/reference/AbilityKit/cj-errorcode-screen_lock_file_manager.md @luoming25 @abc_qgy @kirby @luojianing
+# ArkData
+/zh-cn/application-dev/reference/ArkData/ @luoming25 @abc_qgy @goukun @luojianing
+/zh-cn/application-dev/reference/ArkData/cj-apis-data_share_predicates.md @luoming25 @abc_qgy @goukun @luojianing
+/zh-cn/application-dev/reference/ArkData/cj-apis-distributed_kv_store.md @luoming25 @abc_qgy @goukun @luojianing
+/zh-cn/application-dev/reference/ArkData/cj-apis-preferences.md @luoming25 @abc_qgy @goukun @luojianing
+/zh-cn/application-dev/reference/ArkData/cj-apis-relational_store.md @luoming25 @abc_qgy @goukun @luojianing
+/zh-cn/application-dev/reference/ArkData/cj-apis-values_bucket.md @luoming25 @abc_qgy @goukun @luojianing
+/zh-cn/application-dev/reference/ArkData/cj-errorcode-data-rdb.md @luoming25 @abc_qgy @goukun @luojianing
+/zh-cn/application-dev/reference/ArkData/cj-errorcode-distributed_kv_store.md @luoming25 @abc_qgy @goukun @luojianing
+/zh-cn/application-dev/reference/ArkData/cj-errorcode-preferences.md @luoming25 @abc_qgy @goukun @luojianing
+# ArkUI（方舟UI框架）
+/zh-cn/application-dev/reference/arkui-cj/ @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-apis-componentutils.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-apis-shape.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-apis-curves.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-apis-uicontext-animator.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-apis-uicontext-contextmenucontroller.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-apis-uicontext-font.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-apis-uicontext-measureutils.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-apis-uicontext-promptaction.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-apis-uicontext-uicontext.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-apis-window.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-apis-display.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-universal-event-click.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-universal-event-touch.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-universal-event-appear.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-universal-event-drag.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-universal-event-key.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-universal-event-focus.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-universal-event-mouse.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-universal-event-hover.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-universal-event-areachange.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-universal-event-visibleareachange.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-universal-event-keyboardshortcut.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-universal-attribute-size.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-universal-attribute-location.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-universal-attribute-layoutconstraints.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-universal-attribute-flexlayout.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-universal-attribute-border.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-universal-attribute-background.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-universal-attribute-opacity.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-universal-attribute-visibility.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-universal-attribute-enable.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-universal-attribute-overlay.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-universal-attribute-zorder.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-universal-attribute-transform.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-universal-attribute-imageeffect.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-universal-attribute-shapclip.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-universal-attribute-gradientcolor.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-universal-attribute-popup.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-universal-attribute-menu.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-universal-attribute-focus.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-universal-attribute-componentid.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-universal-attribute-foregroundcolor.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-universal-attribute-foregroundblurstyle.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-universal-attribute-bindcontentcover.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-universal-attribute-sheettransition.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-universal-attribute-dragcontrol.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-universal-attribute-expandsafearea.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-universal-attribute-renderfit.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-row-column-stack-flex.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-row-column-stack-column.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-row-column-stack-row.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-row-column-stack-stack.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-row-column-stack-relativecontainer.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-grid-layout-gridrow.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-grid-layout-gridcol.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-grid-layout-rowsplit.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-grid-layout-sidebar.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-scroll-swipe-list.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-scroll-swipe-listitem.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-scroll-swipe-listgroup.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-scroll-swipe-grid.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-scroll-swipe-griditem.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-scroll-swipe-scroll.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-scroll-swipe-swiper.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-scroll-swipe-scrollbar.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-scroll-swipe-refresh.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-navigation-switching-navigation.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-navigation-switching-navdestination.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-navigation-switching-stepper.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-navigation-switching-stepperitem.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-navigation-switching-tabs.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-navigation-switching-tabcontent.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-button-picker-button.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-button-picker-toggle.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-button-picker-checkbox.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-button-picker-checkboxgroup.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-button-picker-datepicker.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-button-picker-textpicker.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-button-picker-radio.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-button-picker-rating.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-button-picker-select.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-button-picker-slider.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-text-input-text.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-text-input-textarea.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-text-input-textinput.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-text-input-richeditor.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-text-input-search.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-text-input-span.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-text-input-imagespan.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-text-input-richtext.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-image-video-image.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-image-video-video.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-information-display-alphabetindexer.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-information-display-badge.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-information-display-datapanel.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-information-display-gauge.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-information-display-loadingprogress.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-information-display-patternlock.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-information-display-progress.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-information-display-qrcode.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-information-display-textclock.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-information-display-texttimer.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-information-display-counter.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-blank-divider-blank.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-blank-divider-divider.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-canvas-drawing-canvas.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-canvas-drawing-canvasrenderingcontext2d.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-canvas-drawing-matrix2d.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-canvas-drawing-path2d.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-canvas-drawing-imagebitmap.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-canvas-drawing-imagedata.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-canvas-drawing-canvaspattern.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-graphic-drawing-circle.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-graphic-drawing-ellipse.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-graphic-drawing-line.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-graphic-drawing-path.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-graphic-drawing-rect.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-graphic-drawing-shape.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-graphic-drawing-common.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-menu-menu.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-menu-menuitem.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-menu-menuitemgroup.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-animation-animation.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-animation-pagetransition.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-animation-transition.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-animation-sharedtransition.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-animation-geometrytransition.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-dialog-alertdialog.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-dialog-actionsheet.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-dialog-customdialog.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-web-web.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-custom-component-lifecycle.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-state-rendering-foreach.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-state-rendering-lazyforeach.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-state-rendering-componentstatemanagement.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-state-rendering-appstatemanagement.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-common-types.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-common-pixelunits.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-appendix-thread.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-ui-framework.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-errorcode-animator.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-errorcode-display.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/arkui-cj/cj-errorcode-window.md @Tyfiell @persisting @hejuanjuan @luojianing
+# ArkWeb（方舟Web）
+/zh-cn/application-dev/reference/ArkWeb/ @luoming25 @abc_qgy @gxmm @luojianing
+/zh-cn/application-dev/reference/ArkWeb/cj-apis-webview.md @luoming25 @abc_qgy @gxmm @luojianing
+/zh-cn/application-dev/reference/ArkWeb/cj-errorcode-webview.md @luoming25 @abc_qgy @gxmm @luojianing
+# Core File Kit（文件基础服务）
+/zh-cn/application-dev/reference/CoreFileKit/ @luoming25 @abc_qgy @ding_hong_4 @luojianing
+/zh-cn/application-dev/reference/CoreFileKit/cj-apis-file_fileuri.md @luoming25 @abc_qgy @ding_hong_4 @luojianing
+/zh-cn/application-dev/reference/CoreFileKit/cj-apis-file_fs.md @luoming25 @abc_qgy @ding_hong_4 @luojianing
+/zh-cn/application-dev/reference/CoreFileKit/cj-errorcode-filemanagement.md @luoming25 @abc_qgy @ding_hong_4 @luojianing
+# IPC Kit（进程间通信服务）
+/zh-cn/application-dev/reference/IPCKit/ @luoming25 @abc_qgy @miushuxin @luojianing
+/zh-cn/application-dev/reference/IPCKit/cj-apis-rpc.md @luoming25 @abc_qgy @miushuxin @luojianing
+/zh-cn/application-dev/reference/IPCKit/cj-errorcode-rpc.md @luoming25 @abc_qgy @miushuxin @luojianing
+# Localization Kit（本地化开发服务）
+/zh-cn/application-dev/reference/LocalizationKit/ @luoming25 @abc_qgy @PipixiaSummer @luojianing
+/zh-cn/application-dev/reference/LocalizationKit/cj-apis-i18n.md @luoming25 @abc_qgy @PipixiaSummer @luojianing
+/zh-cn/application-dev/reference/LocalizationKit/cj-apis-resource_manager.md @luoming25 @abc_qgy @PipixiaSummer @luojianing
+/zh-cn/application-dev/reference/LocalizationKit/cj-apis-raw_file_descriptor.md @luoming25 @abc_qgy @PipixiaSummer @luojianing
+/zh-cn/application-dev/reference/LocalizationKit/cj-apis-resource.md @luoming25 @abc_qgy @PipixiaSummer @luojianing
+/zh-cn/application-dev/reference/LocalizationKit/cj-errorcode-i18n.md @luoming25 @abc_qgy @PipixiaSummer @luojianing
+/zh-cn/application-dev/reference/LocalizationKit/cj-errorcode-resource-manager.md @luoming25 @abc_qgy @PipixiaSummer @luojianing
+# Crypto Architecture Kit（加解密算法框架服务）
+/zh-cn/application-dev/reference/CryptoArchitectureKit/ @luoming25 @abc_qgy @qq_35037212 @luojianing
+/zh-cn/application-dev/reference/CryptoArchitectureKit/cj-apis-crypto.md @luoming25 @abc_qgy @qq_35037212 @luojianing
+/zh-cn/application-dev/reference/CryptoArchitectureKit/cj-errorcode-crypto.md @luoming25 @abc_qgy @qq_35037212 @luojianing
+# Universal Keystore Kit（密钥管理服务）
+/zh-cn/application-dev/reference/UniversalKeystoreKit/ @luoming25 @abc_qgy @qq_35037212 @luojianing
+/zh-cn/application-dev/reference/UniversalKeystoreKit/cj-apis-security_huks.md @luoming25 @abc_qgy @qq_35037212 @luojianing
+/zh-cn/application-dev/reference/UniversalKeystoreKit/cj-errorcode-huks.md @luoming25 @abc_qgy @qq_35037212 @luojianing
+# Connectivity Kit（短距通信服务）
+/zh-cn/application-dev/reference/ConnectivityKit/ @luoming25 @abc_qgy @pupuHan @luojianing
+/zh-cn/application-dev/reference/ConnectivityKit/cj-apis-bluetooth-a2dp.md @luoming25 @abc_qgy @pupuHan @luojianing
+/zh-cn/application-dev/reference/ConnectivityKit/cj-apis-bluetooth-ble.md @luoming25 @abc_qgy @pupuHan @luojianing
+/zh-cn/application-dev/reference/ConnectivityKit/cj-apis-bluetooth-base_profile.md @luoming25 @abc_qgy @pupuHan @luojianing
+/zh-cn/application-dev/reference/ConnectivityKit/cj-apis-bluetooth-constant.md @luoming25 @abc_qgy @pupuHan @luojianing
+/zh-cn/application-dev/reference/ConnectivityKit/cj-apis-bluetooth-hfp.md @luoming25 @abc_qgy @pupuHan @luojianing
+/zh-cn/application-dev/reference/ConnectivityKit/cj-apis-wifi_manager.md @luoming25 @abc_qgy @pupuHan @luojianing
+/zh-cn/application-dev/reference/ConnectivityKit/cj-errorcode-bluetooth_manager.md @luoming25 @abc_qgy @pupuHan @luojianing
+/zh-cn/application-dev/reference/ConnectivityKit/cj-errorcode-wifi-manager.md @luoming25 @abc_qgy @pupuHan @luojianing
+/zh-cn/application-dev/reference/ConnectivityKit/cj-errorcode-nfc.md @luoming25 @abc_qgy @pupuHan @luojianing
+/zh-cn/application-dev/reference/ConnectivityKit/cj-errorcode-secure_element.md @luoming25 @abc_qgy @pupuHan @luojianing
+# Network Kit（网络服务）
+/zh-cn/application-dev/reference/NetworkKit/ @luoming25 @abc_qgy @goukun @luojianing
+/zh-cn/application-dev/reference/NetworkKit/cj-apis-net-connection.md @luoming25 @abc_qgy @goukun @luojianing
+/zh-cn/application-dev/reference/NetworkKit/cj-apis-net-http.md @luoming25 @abc_qgy @goukun @luojianing
+/zh-cn/application-dev/reference/NetworkKit/cj-errorcode-net-http.md @luoming25 @abc_qgy @goukun @luojianing
+/zh-cn/application-dev/reference/NetworkKit/cj-errorcode-net-connection.md @luoming25 @abc_qgy @goukun @luojianing
+# Basic Services Kit（基础服务）
+/zh-cn/application-dev/reference/BasicServicesKit/ @luoming25 @abc_qgy @PipixiaSummer @luojianing
+/zh-cn/application-dev/reference/BasicServicesKit/cj-apis-battery_info.md @luoming25 @abc_qgy @PipixiaSummer @luojianing
+/zh-cn/application-dev/reference/BasicServicesKit/cj-apis-device_info.md @luoming25 @abc_qgy @PipixiaSummer @luojianing
+/zh-cn/application-dev/reference/BasicServicesKit/cj-apis-request-agent.md @luoming25 @abc_qgy @PipixiaSummer @luojianing
+/zh-cn/application-dev/reference/BasicServicesKit/cj-apis-common_event_manager.md @luoming25 @abc_qgy @PipixiaSummer @luojianing
+/zh-cn/application-dev/reference/BasicServicesKit/cj-apis-base.md @luoming25 @abc_qgy @PipixiaSummer @luojianing
+/zh-cn/application-dev/reference/BasicServicesKit/cj-apis-settings.md @luoming25 @abc_qgy @PipixiaSummer @luojianing
+/zh-cn/application-dev/reference/BasicServicesKit/cj-apis-system_date_time.md @luoming25 @abc_qgy @PipixiaSummer @luojianing
+/zh-cn/application-dev/reference/BasicServicesKit/cj-apis-common_event_subscriber.md @luoming25 @abc_qgy @PipixiaSummer @luojianing
+/zh-cn/application-dev/reference/BasicServicesKit/cj-apis-common_event_subscribe_info.md @luoming25 @abc_qgy @PipixiaSummer @luojianing
+/zh-cn/application-dev/reference/BasicServicesKit/cj-apis-common_event_data.md @luoming25 @abc_qgy @PipixiaSummer @luojianing
+/zh-cn/application-dev/reference/BasicServicesKit/cj-apis-common_event_publish_data.md @luoming25 @abc_qgy @PipixiaSummer @luojianing
+/zh-cn/application-dev/reference/BasicServicesKit/cj-apis-value_type.md @luoming25 @abc_qgy @PipixiaSummer @luojianing
+/zh-cn/application-dev/reference/BasicServicesKit/cj-errorcode-request.md @luoming25 @abc_qgy @PipixiaSummer @luojianing
+/zh-cn/application-dev/reference/BasicServicesKit/cj-errorcode-time.md @luoming25 @abc_qgy @PipixiaSummer @luojianing
+/zh-cn/application-dev/reference/BasicServicesKit/cj-errorcode-common_event_service.md @luoming25 @abc_qgy @PipixiaSummer @luojianing
+/zh-cn/application-dev/reference/BasicServicesKit/cj-errorcode-power.md @luoming25 @abc_qgy @PipixiaSummer @luojianing
+/zh-cn/application-dev/reference/BasicServicesKit/cj-errorcode-basic-account.md @luoming25 @abc_qgy @PipixiaSummer @luojianing
+# Sensor Service Kit（传感器服务）
+/zh-cn/application-dev/reference/SensorServiceKit/ @luoming25 @abc_qgy @Cangjie-hcwww @luojianing
+/zh-cn/application-dev/reference/SensorServiceKit/cj-apis-sensor.md @luoming25 @abc_qgy @Cangjie-hcwww @luojianing
+/zh-cn/application-dev/reference/SensorServiceKit/cj-errorcode-sensor.md @luoming25 @abc_qgy @Cangjie-hcwww @luojianing
+# Telephony Kit
+/zh-cn/application-dev/reference/TelephonyKit/ @luoming25 @abc_qgy @Cangjie-hcwww @luojianing
+/zh-cn/application-dev/reference/TelephonyKit/cj-apis-telephony-call.md @luoming25 @abc_qgy @Cangjie-hcwww @luojianing
+# Performance Analysis Kit（性能分析服务）
+/zh-cn/application-dev/reference/PerformanceAnalysisKit/ @luoming25 @abc_qgy @atreeof_wind @luojianing
+/zh-cn/application-dev/reference/PerformanceAnalysisKit/cj-apis-hiappevent.md @luoming25 @abc_qgy @atreeof_wind @luojianing
+/zh-cn/application-dev/reference/PerformanceAnalysisKit/cj-apis-hilog.md @luoming25 @abc_qgy @atreeof_wind @luojianing
+/zh-cn/application-dev/reference/PerformanceAnalysisKit/cj-apis-hi_tracemeter.md @luoming25 @abc_qgy @atreeof_wind @luojianing
+/zh-cn/application-dev/reference/PerformanceAnalysisKit/cj-errorcode-hiappevent.md @luoming25 @abc_qgy @atreeof_wind @luojianing
+/zh-cn/application-dev/reference/PerformanceAnalysisKit/cj-errorcode-hidebug-cpuusage.md @luoming25 @abc_qgy @atreeof_wind @luojianing
+# Test Kit（应用测试服务）
+/zh-cn/application-dev/reference/TestKit/ @luoming25 @abc_qgy @jiao_yang @luojianing
+/zh-cn/application-dev/reference/TestKit/cj-apis-ability_delegator_registry.md @luoming25 @abc_qgy @jiao_yang @luojianing
+/zh-cn/application-dev/reference/TestKit/cj-apis-ui_test.md @luoming25 @abc_qgy @jiao_yang @luojianing
+/zh-cn/application-dev/reference/TestKit/cj-errorcode-uitest.md @luoming25 @abc_qgy @jiao_yang @luojianing
+# Camera Kit（相机服务）
+/zh-cn/application-dev/reference/CameraKit/ @luoming25 @abc_qgy @Cangjie-hcwww @luojianing
+/zh-cn/application-dev/reference/CameraKit/cj-apis-multimedia-camera.md @luoming25 @abc_qgy @Cangjie-hcwww @luojianing
+/zh-cn/application-dev/reference/CameraKit/cj-errorcode-multimedia-camera.md @luoming25 @abc_qgy @Cangjie-hcwww @luojianing
+# Image Kit（图片处理服务）
+/zh-cn/application-dev/reference/ImageKit/ @luoming25 @abc_qgy @miushuxin @luojianing
+/zh-cn/application-dev/reference/ImageKit/cj-apis-image.md @luoming25 @abc_qgy @miushuxin @luojianing
+/zh-cn/application-dev/reference/ImageKit/cj-errorcode-image.md @luoming25 @abc_qgy @miushuxin @luojianing
+# Media Kit（媒体服务）
+/zh-cn/application-dev/reference/MediaKit/ @luoming25 @abc_qgy @atreeof_wind @luojianing
+/zh-cn/application-dev/reference/MediaKit/cj-apis-multimedia_media.md @luoming25 @abc_qgy @atreeof_wind @luojianing
+/zh-cn/application-dev/reference/MediaKit/cj-errorcode-multimedia-media.md @luoming25 @abc_qgy @atreeof_wind @luojianing
+# Media Library Kit（媒体文件管理服务）
+/zh-cn/application-dev/reference/MediaLibraryKit/ @luoming25 @abc_qgy @guorunzhi @luojianing
+/zh-cn/application-dev/reference/MediaLibraryKit/cj-apis-file-photo_access_helper.md @luoming25 @abc_qgy @guorunzhi @luojianing
+# ArkGraphics2D（方舟2D图形服务）
+/zh-cn/application-dev/reference/ArkGraphics2D/ @luoming25 @abc_qgy @ding_hong_4 @luojianing
+/zh-cn/application-dev/reference/ArkGraphics2D/cj-apis-color_manager.md @luoming25 @abc_qgy @ding_hong_4 @luojianing
+/zh-cn/application-dev/reference/ArkGraphics2D/cj-errorcode-colorspace-manager.md @luoming25 @abc_qgy @ding_hong_4 @luojianing
+# Location Kit（位置服务）
+/zh-cn/application-dev/reference/LocationKit/ @luoming25 @abc_qgy @guorunzhi @luojianing
+/zh-cn/application-dev/reference/LocationKit/cj-apis-geo_location_manager.md @luoming25 @abc_qgy @guorunzhi @luojianing
+/zh-cn/application-dev/reference/LocationKit/cj-errorcode-geo_location_manager.md @luoming25 @abc_qgy @guorunzhi @luojianing
+# 互操作
+/zh-cn/application-dev/reference/arkinterop/ @gaoxiang @xuanjz @anancds123 @luojianing
+/zh-cn/application-dev/reference/arkinterop/cj-apis-ark_interop.md @gaoxiang @xuanjz @anancds123 @luojianing
+/zh-cn/application-dev/reference/arkinterop/cj-errorcode-ark_interop.md @gaoxiang @xuanjz @anancds123 @luojianing
+/zh-cn/application-dev/reference/arkinterop/cj-apis-ark_interop_helper.md @gaoxiang @xuanjz @anancds123 @luojianing
+/zh-cn/application-dev/reference/arkinterop/cj-api-business_exception.md @gaoxiang @xuanjz @anancds123 @luojianing
+/zh-cn/application-dev/reference/arkinterop/cj-api-callback_invoke.md @gaoxiang @xuanjz @anancds123 @luojianing
+/zh-cn/application-dev/reference/arkinterop/cj-api-labels.md @gaoxiang @xuanjz @anancds123 @luojianing
+# 公共基础能力
+/zh-cn/application-dev/reference/arkui-cj/cj-syscap.md @Tyfiell @persisting @hejuanjuan @luojianing
+/zh-cn/application-dev/reference/cj-libs-api.md @luojianing @xuanjz @amy_mayun 
