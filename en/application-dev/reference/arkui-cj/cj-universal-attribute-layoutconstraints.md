@@ -85,14 +85,13 @@ func direction(value: ?Direction): T
 |:---|:---|
 | T | Returns generic method interface type |
 
-
 ## func alignRules(?AlignRuleOptions)
 
 ```cangjie
 func alignRules(value: ?AlignRuleOptions): T
 ```
 
-**Function:** Sets component alignment rules.
+**Function:** Sets the alignment rules for the component, which take effect only when the parent container is a RelativeContainer.
 
 **System Capability:** SystemCapability.ArkUI.ArkUI.Full
 

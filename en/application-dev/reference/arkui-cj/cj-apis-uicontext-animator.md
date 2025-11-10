@@ -41,14 +41,6 @@ public mut prop onFrame: (Float64) -> Unit
 
 **Since:** 22
 
-**Exceptions:**
-
-- BusinessException: Corresponding error codes are listed below. For details, see [Universal Error Codes](../cj-errorcode-universal.md).
-
-  |Error Code ID|Error Message|
-  |:----|:---|
-  |100001|Internal error. Possible causes: The specified page is not found or the object property list is not obtained.|
-
 ### prop onFinish
 
 ```cangjie
@@ -64,14 +56,6 @@ public mut prop onFinish: () -> Unit
 **System Capability:** SystemCapability.ArkUI.ArkUI.Full
 
 **Since:** 22
-
-**Exceptions:**
-
-- BusinessException: Corresponding error codes are listed below. For details, see [Universal Error Codes](../cj-errorcode-universal.md).
-
-  |Error Code ID|Error Message|
-  |:----|:---|
-  |100001|Internal error. Possible causes: The specified page is not found or the object property list is not obtained.|
 
 ### prop onCancel
 
@@ -89,14 +73,6 @@ public mut prop onCancel: () -> Unit
 
 **Since:** 22
 
-**Exceptions:**
-
-- BusinessException: Corresponding error codes are listed below. For details, see [Universal Error Codes](../cj-errorcode-universal.md).
-
-  |Error Code ID|Error Message|
-  |:----|:---|
-  |100001|Internal error. Possible causes: The specified page is not found or the object property list is not obtained.|
-
 ### prop onRepeat
 
 ```cangjie
@@ -112,14 +88,6 @@ public mut prop onRepeat: () -> Unit
 **System Capability:** SystemCapability.ArkUI.ArkUI.Full
 
 **Since:** 22
-
-**Exceptions:**
-
-- BusinessException: Corresponding error codes are listed below. For details, see [Universal Error Codes](../cj-errorcode-universal.md).
-
-  |Error Code ID|Error Message|
-  |:----|:---|
-  |100001|Internal error. Possible causes: The specified page is not found or the object property list is not obtained.|
 
 ### func reset(AnimatorOptions)
 
@@ -139,14 +107,6 @@ public func reset(options: AnimatorOptions): Unit
 |:---|:---|:---|:---|:---|
 |options|[AnimatorOptions](#class-animatoroptions)|Yes|-|Animation options.|
 
-**Exceptions:**
-
-- BusinessException: Corresponding error codes are listed below. For details, see [Universal Error Codes](../cj-errorcode-universal.md).
-
-  |Error Code ID|Error Message|
-  |:----|:---|
-  |100001|Internal error. Possible causes: The specified page is not found or the object property list is not obtained.|
-
 ### func play()
 
 ```cangjie
@@ -158,14 +118,6 @@ public func play(): Unit
 **System Capability:** SystemCapability.ArkUI.ArkUI.Full
 
 **Since:** 22
-
-**Exceptions:**
-
-- BusinessException: Corresponding error codes are listed below. For details, see [Universal Error Codes](../cj-errorcode-universal.md).
-
-  |Error Code ID|Error Message|
-  |:----|:---|
-  |100001|Internal error. Possible causes: The specified page is not found or the object property list is not obtained.|
 
 ### func finish()
 
@@ -179,14 +131,6 @@ public func finish(): Unit
 
 **Since:** 22
 
-**Exceptions:**
-
-- BusinessException: Corresponding error codes are listed below. For details, see [Universal Error Codes](../cj-errorcode-universal.md).
-
-  |Error Code ID|Error Message|
-  |:----|:---|
-  |100001|Internal error. Possible causes: The specified page is not found or the object property list is not obtained.|
-
 ### func pause()
 
 ```cangjie
@@ -198,14 +142,6 @@ public func pause(): Unit
 **System Capability:** SystemCapability.ArkUI.ArkUI.Full
 
 **Since:** 22
-
-**Exceptions:**
-
-- BusinessException: Corresponding error codes are listed below. For details, see [Universal Error Codes](../cj-errorcode-universal.md).
-
-  |Error Code ID|Error Message|
-  |:----|:---|
-  |100001|Internal error. Possible causes: The specified page is not found or the object property list is not obtained.|
 
 ### func cancel()
 
@@ -219,14 +155,6 @@ public func cancel(): Unit
 
 **Since:** 22
 
-**Exceptions:**
-
-- BusinessException: Corresponding error codes are listed below. For details, see [Universal Error Codes](../cj-errorcode-universal.md).
-
-  |Error Code ID|Error Message|
-  |:----|:---|
-  |100001|Internal error. Possible causes: The specified page is not found or the object property list is not obtained.|
-
 ### func reverse()
 
 ```cangjie
@@ -238,14 +166,6 @@ public func reverse(): Unit
 **System Capability:** SystemCapability.ArkUI.ArkUI.Full
 
 **Since:** 22
-
-**Exceptions:**
-
-- BusinessException: Corresponding error codes are listed below. For details, see [Universal Error Codes](../cj-errorcode-universal.md).
-
-  |Error Code ID|Error Message|
-  |:----|:---|
-  |100001|Internal error. Possible causes: The specified page is not found or the object property list is not obtained.|
 
 ### func setExpectedFrameRateRange(ExpectedFrameRateRange)
 
@@ -264,14 +184,6 @@ public func setExpectedFrameRateRange(rateRange: ExpectedFrameRateRange): Unit
 |Parameter|Type|Mandatory|Default Value|Description|
 |:---|:---|:---|:---|:---|
 |rateRange|[ExpectedFrameRateRange](./cj-common-types.md#class-expectedframeraterange)|Yes|-|Frame rate range.|
-
-**Exceptions:**
-
-- BusinessException: Corresponding error codes are listed below. For details, see [Universal Error Codes](../cj-errorcode-universal.md).
-
-  |Error Code ID|Error Message|
-  |:----|:---|
-  |100001|Internal error. Possible causes: The specified page is not found or the object property list is not obtained.|
 
 ## class AnimatorOptions
 

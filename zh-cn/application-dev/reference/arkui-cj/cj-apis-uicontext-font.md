@@ -99,15 +99,6 @@ public func registerFont(familyName!: ResourceStr, familySrc!: ResourceStr): Uni
 |familyName|[ResourceStr](./cj-common-types.md#interface-resourcestr)|是|-| **命名参数。** 字体名称。|
 |familySrc|[ResourceStr](./cj-common-types.md#interface-resourcestr)|是|-| **命名参数。** 字体资源路径。|
 
-**异常：**
-
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
-
-  |错误码|说明|
-  |:----|:----|
-  |401|Invalid input parameter|
-  |100001|Internal error.|
-
 **示例：**
 
 ```cangjie

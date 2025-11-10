@@ -41,14 +41,6 @@ public mut prop onFrame: (Float64) -> Unit
 
 **起始版本：** 22
 
-**异常：**
-
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
-
-  |错误码ID|错误信息|
-  |:----|:---|
-  |100001|Internal error. Possible causes: The specified page is not found or the object property list is not obtained.|
-
 ### prop onFinish
 
 ```cangjie
@@ -64,14 +56,6 @@ public mut prop onFinish: () -> Unit
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **起始版本：** 22
-
-**异常：**
-
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
-
-  |错误码ID|错误信息|
-  |:----|:---|
-  |100001|Internal error. Possible causes: The specified page is not found or the object property list is not obtained.|
 
 ### prop onCancel
 
@@ -89,14 +73,6 @@ public mut prop onCancel: () -> Unit
 
 **起始版本：** 22
 
-**异常：**
-
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
-
-  |错误码ID|错误信息|
-  |:----|:---|
-  |100001|Internal error. Possible causes: The specified page is not found or the object property list is not obtained.|
-
 ### prop onRepeat
 
 ```cangjie
@@ -112,14 +88,6 @@ public mut prop onRepeat: () -> Unit
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **起始版本：** 22
-
-**异常：**
-
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
-
-  |错误码ID|错误信息|
-  |:----|:---|
-  |100001|Internal error. Possible causes: The specified page is not found or the object property list is not obtained.|
 
 ### func reset(AnimatorOptions)
 
@@ -139,14 +107,6 @@ public func reset(options: AnimatorOptions): Unit
 |:---|:---|:---|:---|:---|
 |options|[AnimatorOptions](#class-animatoroptions)|是|-|动画选项。|
 
-**异常：**
-
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
-
-  |错误码ID|错误信息|
-  |:----|:---|
-  |100001|Internal error. Possible causes: The specified page is not found or the object property list is not obtained.|
-
 ### func play()
 
 ```cangjie
@@ -158,14 +118,6 @@ public func play(): Unit
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **起始版本：** 22
-
-**异常：**
-
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
-
-  |错误码ID|错误信息|
-  |:----|:---|
-  |100001|Internal error. Possible causes: The specified page is not found or the object property list is not obtained.|
 
 ### func finish()
 
@@ -179,14 +131,6 @@ public func finish(): Unit
 
 **起始版本：** 22
 
-**异常：**
-
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
-
-  |错误码ID|错误信息|
-  |:----|:---|
-  |100001|Internal error. Possible causes: The specified page is not found or the object property list is not obtained.|
-
 ### func pause()
 
 ```cangjie
@@ -198,14 +142,6 @@ public func pause(): Unit
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **起始版本：** 22
-
-**异常：**
-
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
-
-  |错误码ID|错误信息|
-  |:----|:---|
-  |100001|Internal error. Possible causes: The specified page is not found or the object property list is not obtained.|
 
 ### func cancel()
 
@@ -219,14 +155,6 @@ public func cancel(): Unit
 
 **起始版本：** 22
 
-**异常：**
-
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
-
-  |错误码ID|错误信息|
-  |:----|:---|
-  |100001|AInternal error. Possible causes: The specified page is not found or the object property list is not obtained.|
-
 ### func reverse()
 
 ```cangjie
@@ -238,14 +166,6 @@ public func reverse(): Unit
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **起始版本：** 22
-
-**异常：**
-
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
-
-  |错误码ID|错误信息|
-  |:----|:---|
-  |100001|Internal error. Possible causes: The specified page is not found or the object property list is not obtained.|
 
 ### func setExpectedFrameRateRange(ExpectedFrameRateRange)
 
@@ -264,14 +184,6 @@ public func setExpectedFrameRateRange(rateRange: ExpectedFrameRateRange): Unit
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |rateRange|[ExpectedFrameRateRange](./cj-common-types.md#class-expectedframeraterange)|是|-|帧率范围。|
-
-**异常：**
-
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
-
-  |错误码ID|错误信息|
-  |:----|:---|
-  |100001|Internal error. Possible causes: The specified page is not found or the object property list is not obtained.|
 
 ## class AnimatorOptions
 

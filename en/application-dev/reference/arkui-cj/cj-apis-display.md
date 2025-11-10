@@ -26,15 +26,6 @@ public func getAllDisplays(): Array<Display>
 |:----|:----|
 |Array\<[Display](#class-display)>|Returns the result of all displays.|
 
-**Exceptions:**
-
-- BusinessException: Corresponding error codes are shown in the table below. For details, see [Universal Error Codes](../cj-errorcode-universal.md) and [Window Error Codes](./cj-errorcode-window.md).
-
-  |Error Code|Description|
-  |:----|:----|
-  |1400001|Invalid display or screen.|
-  |1400003|This display manager service works abnormally.|
-
 **Example:**
 
 ```cangjie
@@ -70,14 +61,6 @@ public func getCurrentFoldCreaseRegion(): FoldCreaseRegion
 |:----|:----|
 |[FoldCreaseRegion](#class-foldcreaseregion)|Returns the fold crease region in the current display mode.|
 
-**Exceptions:**
-
-- BusinessException: Corresponding error codes are shown in the table below. For details, see [Universal Error Codes](../cj-errorcode-universal.md) and [Window Error Codes](./cj-errorcode-window.md).
-
-  |Error Code|Description|
-  |:----|:----|
-  |1400003|This display manager service works abnormally.|
-
 **Example:**
 
 ```cangjie
@@ -109,15 +92,6 @@ public func getDefaultDisplaySync(): Display
 |Type|Description|
 |:----|:----|
 |[Display](#class-display)|Returns the result of the display.|
-
-**Exceptions:**
-
-- BusinessException: Corresponding error codes are shown in the table below. For details, see [Universal Error Codes](../cj-errorcode-universal.md) and [Window Error Codes](./cj-errorcode-window.md).
-
-  |Error Code|Description|
-  |:----|:----|
-  |1400001|Invalid display or screen.|
-  |1400003|This display manager service works abnormally.|
 
 **Example:**
 
@@ -224,15 +198,6 @@ public func off(listenerType: ListenerType, callback: Callback1Argument<FoldDisp
 |listenerType|[ListenerType](#enum-listenertype)|Yes|-|Event for fold display mode changes.|
 |callback|Callback1Argument\<[FoldDisplayMode](#enum-folddisplaymode)>|Yes|-|Callback for returning the current fold display mode.|
 
-**Exceptions:**
-
-- BusinessException: Corresponding error codes are shown in the table below. For details, see [Universal Error Codes](../cj-errorcode-universal.md) and [Window Error Codes](./cj-errorcode-window.md).
-
-  |Error Code|Description|
-  |:----|:----|
-  |401|Parameter error. Possible causes:<br> 1. Mandatory parameters are left unspecified. <br>2. Incorrect parameter types. |
-  |1400003|This display manager service works abnormally.|
-
 **Example:**
 
 ```cangjie
@@ -277,15 +242,6 @@ public func off(listenerType: ListenerType, callback: Callback1Argument<FoldStat
 |:---|:---|:---|:---|:---|
 |listenerType|[ListenerType](#enum-listenertype)|Yes|-|Event for fold status changes.|
 |callback|Callback1Argument\<[FoldStatus](#enum-foldstatus)>|Yes|-|Callback for returning the current fold status of the device.|
-
-**Exceptions:**
-
-- BusinessException: Corresponding error codes are shown in the table below. For details, see [Universal Error Codes](../cj-errorcode-universal.md) and [Window Error Codes](./cj-errorcode-window.md).
-
-  |Error Code|Description|
-  |:----|:----|
-  |401|Parameter error. Possible causes:<br> 1. Mandatory parameters are left unspecified. <br>2. Incorrect parameter types. |
-  |1400003|This display manager service works abnormally.|
 
 **Example:**
 
@@ -332,15 +288,6 @@ public func on(listenerType: ListenerType, callback: Callback1Argument<FoldDispl
 |listenerType|[ListenerType](#enum-listenertype)|Yes|-|Event for fold display mode changes.|
 |callback|Callback1Argument\<[FoldDisplayMode](#enum-folddisplaymode)>|Yes|-|Callback for returning the current fold display mode.|
 
-**Exceptions:**
-
-- BusinessException: Corresponding error codes are shown in the table below. For details, see [Universal Error Codes](../cj-errorcode-universal.md) and [Window Error Codes](./cj-errorcode-window.md).
-
-  |Error Code|Description|
-  |:----|:----|
-  |401|Parameter error. Possible causes:<br> 1. Mandatory parameters are left unspecified. <br>2. Incorrect parameter types. |
-  |1400003|This display manager service works abnormally.|
-
 **Example:**
 
 ```cangjie
@@ -385,15 +332,6 @@ public func on(listenerType: ListenerType, callback: Callback1Argument<FoldStatu
 |:---|:---|:---|:---|:---|
 |listenerType|[ListenerType](#enum-listenertype)|Yes|-|Event for fold status changes.|
 |callback|Callback1Argument\<[FoldStatus](#enum-foldstatus)>|Yes|-|Callback for returning the current fold status of the device.|
-
-**Exceptions:**
-
-- BusinessException: Corresponding error codes are shown in the table below. For details, see [Universal Error Codes](../cj-errorcode-universal.md) and [Window Error Codes](./cj-errorcode-window.md).
-
-  |Error Code|Description|
-  |:----|:----|
-  |401|Parameter error. Possible causes:<br> 1. Mandatory parameters are left unspecified. <br>2. Incorrect parameter types. |
-  |1400003|This display manager service works abnormally.|
 
 **Example:**
 
@@ -750,15 +688,6 @@ public func getCutoutInfo(): CutoutInfo
 | Type | Description |
 |:----|:----|
 | [CutoutInfo](#class-cutoutinfo) | Returns the notch information of the display. |
-
-**Exceptions:**
-
-- BusinessException: Corresponding error codes are listed below. For details, see [Universal Error Codes](../cj-errorcode-universal.md) and [Window Error Codes](./cj-errorcode-window.md).
-
-  | Error Code | Description |
-  |:----|:----|
-  | 1400001 | Invalid display or screen. |
-  | 1400003 | This display manager service works abnormally. |
 
 **Example:**
 

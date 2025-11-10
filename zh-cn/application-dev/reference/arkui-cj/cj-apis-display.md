@@ -26,15 +26,6 @@ public func getAllDisplays(): Array<Display>
 |:----|:----|
 |Array\<[Display](#class-display)>|返回所有显示屏的结果。|
 
-**异常：**
-
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)和[窗口错误码](./cj-errorcode-window.md)。
-
-  |错误码|说明|
-  |:----|:----|
-  |1400001|Invalid display or screen.|
-  |1400003|This display manager service works abnormally.|
-
 **示例：**
 
 ```cangjie
@@ -70,14 +61,6 @@ public func getCurrentFoldCreaseRegion(): FoldCreaseRegion
 |:----|:----|
 |[FoldCreaseRegion](#class-foldcreaseregion)|返回当前显示模式下的折叠 crease 区域。|
 
-**异常：**
-
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)和[窗口错误码](./cj-errorcode-window.md)。
-
-  |错误码|说明|
-  |:----|:----|
-  |1400003|This display manager service works abnormally.|
-
 **示例：**
 
 ```cangjie
@@ -109,15 +92,6 @@ public func getDefaultDisplaySync(): Display
 |类型|说明|
 |:----|:----|
 |[Display](#class-display)|返回显示屏的结果。|
-
-**异常：**
-
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)和[窗口错误码](./cj-errorcode-window.md)。
-
-  |错误码|说明|
-  |:----|:----|
-  |1400001|Invalid display or screen.|
-  |1400003|This display manager service works abnormally.|
 
 **示例：**
 
@@ -224,15 +198,6 @@ public func off(listenerType: ListenerType, callback: Callback1Argument<FoldDisp
 |listenerType|[ListenerType](#enum-listenertype)|是|-|折叠显示模式变化的事件。|
 |callback|Callback1Argument\<[FoldDisplayMode](#enum-folddisplaymode)>|是|-|用于返回当前折叠显示模式的回调。|
 
-**异常：**
-
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)和[窗口错误码](./cj-errorcode-window.md)。
-
-  |错误码|说明|
-  |:----|:----|
-  |401|Parameter error. Possible causes:<br> 1. Mandatory parameters are left unspecified. <br>2. Incorrect parameter types. |
-  |1400003|This display manager service works abnormally.|
-
 **示例：**
 
 ```cangjie
@@ -277,15 +242,6 @@ public func off(listenerType: ListenerType, callback: Callback1Argument<FoldStat
 |:---|:---|:---|:---|:---|
 |listenerType|[ListenerType](#enum-listenertype)|是|-|折叠状态变化的事件。|
 |callback|Callback1Argument\<[FoldStatus](#enum-foldstatus)>|是|-|用于返回设备当前折叠状态的回调。|
-
-**异常：**
-
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)和[窗口错误码](./cj-errorcode-window.md)。
-
-  |错误码|说明|
-  |:----|:----|
-  |401|Parameter error. Possible causes:<br> 1. Mandatory parameters are left unspecified. <br>2. Incorrect parameter types. |
-  |1400003|This display manager service works abnormally.|
 
 **示例：**
 
@@ -332,15 +288,6 @@ public func on(listenerType: ListenerType, callback: Callback1Argument<FoldDispl
 |listenerType|[ListenerType](#enum-listenertype)|是|-|折叠显示模式变化的事件。|
 |callback|Callback1Argument\<[FoldDisplayMode](#enum-folddisplaymode)>|是|-|用于返回当前折叠显示模式的回调。|
 
-**异常：**
-
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)和[窗口错误码](./cj-errorcode-window.md)。
-
-  |错误码|说明|
-  |:----|:----|
-  |401|Parameter error. Possible causes:<br> 1. Mandatory parameters are left unspecified. <br>2. Incorrect parameter types. |
-  |1400003|This display manager service works abnormally.|
-
 **示例：**
 
 ```cangjie
@@ -385,15 +332,6 @@ public func on(listenerType: ListenerType, callback: Callback1Argument<FoldStatu
 |:---|:---|:---|:---|:---|
 |listenerType|[ListenerType](#enum-listenertype)|是|-|折叠状态变化的事件。|
 |callback|Callback1Argument\<[FoldStatus](#enum-foldstatus)>|是|-|用于返回设备当前折叠状态的回调。|
-
-**异常：**
-
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)和[窗口错误码](./cj-errorcode-window.md)。
-
-  |错误码|说明|
-  |:----|:----|
-  |401|Parameter error. Possible causes:<br> 1. Mandatory parameters are left unspecified. <br>2. Incorrect parameter types. |
-  |1400003|This display manager service works abnormally.|
 
 **示例：**
 
@@ -752,15 +690,6 @@ public func getCutoutInfo(): CutoutInfo
 |类型|说明|
 |:----|:----|
 |[CutoutInfo](#class-cutoutinfo)|返回显示屏的刘海信息。|
-
-**异常：**
-
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)和[窗口错误码](./cj-errorcode-window.md)。
-
-  |错误码|说明|
-  |:----|:----|
-  |1400001|Invalid display or screen.|
-  |1400003|This display manager service works abnormally.|
 
 **示例：**
 

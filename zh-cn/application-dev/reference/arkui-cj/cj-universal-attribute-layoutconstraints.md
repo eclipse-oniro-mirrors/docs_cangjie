@@ -85,14 +85,13 @@ func direction(value: ?Direction): T
 |:---|:---|
 |T|返回通用方法接口类型|
 
-
 ## func alignRules(?AlignRuleOptions)
 
 ```cangjie
 func alignRules(value: ?AlignRuleOptions): T
 ```
 
-**功能：** 设置组件的对齐规则。
+**功能：** 设置组件的对齐规则，仅当父容器为RelativeContainer时生效。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 

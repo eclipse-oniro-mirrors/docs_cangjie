@@ -99,15 +99,6 @@ public func registerFont(familyName!: ResourceStr, familySrc!: ResourceStr): Uni
 | familyName | [ResourceStr](./cj-common-types.md#interface-resourcestr) | Yes | - | **Named parameter.** Font name. |
 | familySrc | [ResourceStr](./cj-common-types.md#interface-resourcestr) | Yes | - | **Named parameter.** Font resource path. |
 
-**Exceptions:**
-
-- BusinessException: Error codes as shown below, refer to [Universal Error Codes](../cj-errorcode-universal.md).
-
-  | Error Code | Description |
-  |:----|:----|
-  | 401 | Invalid input parameter |
-  | 100001 | Internal error. |
-
 **Example:**
 
 ```cangjie

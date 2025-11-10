@@ -39,8 +39,6 @@ public init(value: ?RefreshOptions, child: () -> Unit)
 
 通用事件：全部支持。
 
-
-
 ## 组件事件
 
 ### func onStateChange(?(RefreshStatus) -> Unit)

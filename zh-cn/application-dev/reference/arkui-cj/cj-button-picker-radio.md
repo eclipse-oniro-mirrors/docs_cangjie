@@ -79,7 +79,6 @@ public func onChange(callback: ?(Bool) -> Unit): This
 |:---|:---|:---|:---|:---|
 |callback|?(Bool)->Unit|是|-|单选框的状态。<br>初始值：{ _ => }。|
 
-
 ## 示例代码
 
 该示例通过配置checkedBackgroundColor实现自定义单选框的底板颜色。
@@ -117,4 +116,3 @@ class EntryView {
 ```
 
 ![radio](figures/radio.gif)
-
