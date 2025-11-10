@@ -20,6 +20,9 @@ root_path
 
 宏定义放在 _macros_ 子目录下：
 
+<!-- run -macro1 -->
+<!-- cfg="--compile-macro" -->
+
 ```cangjie
 // macros/m.cj
 // In this file, we define the macro Inner, Outer.
@@ -37,6 +40,9 @@ public macro Outer(input: Tokens) {
 ```
 
 宏调用放在 _src_ 子目录下：
+
+<!-- run -macro1 -->
+<!-- cfg="--debug-macro" -->
 
 ```cangjie
 // src/demo.cj
@@ -89,6 +95,9 @@ cjc src/demo.cj -o demo.exe --import-path ./target --output-dir ./target
 > **注意：**
 >
 > 如果宏函数依赖一些全局变量，使用并行宏展开会存在风险。
+
+<!-- compile -->
+<!-- cfg="--compile-macro" -->
 
 ```cangjie
 macro package define
@@ -143,6 +152,9 @@ public func diagReport(level: DiagReportLevel, tokens: Tokens, message: String, 
 
 宏定义文件：
 
+<!-- compile.error -macro2 -->
+<!-- cfg="--compile-macro" -->
+
 ```cangjie
 // macro_definition.cj
 macro package macro_definition
@@ -162,6 +174,9 @@ public macro testDef(input: Tokens): Tokens {
 ```
 
 宏调用文件：
+
+<!-- compile.error -macro2 -->
+<!-- cfg="--debug-macro" -->
 
 ```cangjie
 // macro_call.cj
@@ -206,6 +221,9 @@ error: This expression is not allowed to contain identifier
 
 宏定义文件：
 
+<!-- compile -macro3 -->
+<!-- cfg="--compile-macro" -->
+
 ```cangjie
 macro package define
 
@@ -240,6 +258,9 @@ public macro Inner(input: Tokens): Tokens {
 ```
 
 宏调用文件 `demo.cj`：
+
+<!-- compile -macro3 -->
+<!-- cfg="--debug-macro" -->
 
 ```cangjie
 import define.*

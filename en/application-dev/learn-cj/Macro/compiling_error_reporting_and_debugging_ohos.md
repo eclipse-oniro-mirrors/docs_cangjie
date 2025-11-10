@@ -20,6 +20,9 @@ root_path
 
 Macro definitions are placed in the _macros_ subdirectory:
 
+<!-- run -macro1 -->
+<!-- cfg="--compile-macro" -->
+
 ```cangjie
 // macros/m.cj
 // In this file, we define the macro Inner, Outer.
@@ -36,6 +39,9 @@ public macro Outer(input: Tokens) {
 ```
 
 Macro calls are placed in the _src_ subdirectory:
+
+<!-- run -macro1 -->
+<!-- cfg="--debug-macro" -->
 
 ```cangjie
 // src/demo.cj
@@ -88,6 +94,9 @@ The `--parallel-macro-expansion` option can be added when compiling the macro-ca
 > **Note:**
 >
 > If macro functions depend on global variables, using parallel macro expansion may introduce risks.
+
+<!-- compile -->
+<!-- cfg="--compile-macro" -->
 
 ```cangjie
 macro package define
@@ -142,6 +151,9 @@ Example usage:
 
 Macro definition file:
 
+<!-- compile.error -macro2 -->
+<!-- cfg="--compile-macro" -->
+
 ```cangjie
 // macro_definition.cj
 macro package macro_definition
@@ -161,6 +173,9 @@ public macro testDef(input: Tokens): Tokens {
 ```
 
 Macro-calling file:
+
+<!-- compile.error -macro2 -->
+<!-- cfg="--debug-macro" -->
 
 ```cangjie
 // macro_call.cj
@@ -205,6 +220,9 @@ To address this, Cangjie macros provide a debug mode. In this mode, developers c
 
 Macro definition file:
 
+<!-- compile -macro3 -->
+<!-- cfg="--compile-macro" -->
+
 ```cangjie
 macro package define
 
@@ -239,6 +257,9 @@ public macro Inner(input: Tokens): Tokens {
 ```
 
 Macro-calling file `demo.cj`:
+
+<!-- compile -macro3 -->
+<!-- cfg="--debug-macro" -->
 
 ```cangjie
 import define.*
