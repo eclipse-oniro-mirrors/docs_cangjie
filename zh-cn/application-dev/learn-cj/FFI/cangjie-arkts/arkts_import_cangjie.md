@@ -20,6 +20,7 @@
 
     - 实现互操作接口 addNumber：
 
+        <!--compile-->
         ```cangjie
         // entry/src/main/cangjie/index.cj
 
@@ -100,7 +101,7 @@
     ```typescript
     // 导入仓颉动态库，该动态库名称为仓颉包名的名称，该名称需要和互操作接口所在的包名一致
     import { addNumber } from "libohos_app_cangjie_entry.so";
-    
+
     // 调用仓颉接口
     let result = addNumber(1, 2);
     console.log(`1 + 2 = ${result}`);
@@ -121,6 +122,7 @@
 
     - 实现互操作接口 addNumber：
 
+        <!--compile-->
         ```cangjie
         // entry/src/main/cangjie/index.cj
 
@@ -201,7 +203,7 @@
     ```typescript
     // 使用 loadNativeModule 接口加载仓颉动态库
     let module: ESObject = loadNativeModule("libohos_app_cangjie_entry.so");
-    
+
     // 调用仓颉接口
     let result: number = module.addNumber(1, 2);
     console.log(`1 + 2 = ${result}`);

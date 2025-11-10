@@ -45,6 +45,7 @@
 
 1. 仓颉函数实现：
 
+    <!--compile-->
     ```cangjie
     // 定义包名，该包名需要和 cjpm.toml 的 package name 保持一致
     package ohos_app_cangjie_entry
@@ -92,7 +93,7 @@
     ```typescript
     // 导入仓颉动态库，该动态库名称为仓颉包名的名称，该名称需要和互操作接口所在的包名一致
     import { addByObject } from "libohos_app_cangjie_entry.so";
-    
+
     // 调用仓颉接口
     let result = addByObject({a: 1, b: 2});
     console.log("result = " + result);
@@ -114,6 +115,7 @@
 
 2. 对于一个未知对象，可以枚举出该对象的可枚举属性：
 
+   <!--compile-->
    ```cangjie
    func handleUnknownObject(context: JSContext, target: JSObject): Unit {
        // keys接口枚举对象的可枚举属性
@@ -152,6 +154,7 @@ class SendableTestClass {
 
 在仓颉侧操作 sendable 对象：
 
+<!--compile-->
 ```cangjie
 // 定义包名，该包名需要和 cjpm.toml 的 package name 保持一致
 package ohos_app_cangjie_entry
@@ -208,6 +211,7 @@ console.log("result = " + result);
 
 仓颉侧实现：
 
+<!--compile-->
 ```cangjie
 // 定义包名，该包名需要和 cjpm.toml 的 package name 保持一致
 package ohos_app_cangjie_entry
@@ -402,14 +406,15 @@ startTestWorker();
 
 2. 仓颉代码中回调 ArkTS 函数：
 
+    <!--compile-->
     ```cangjie
     package ohos_app_cangjie_entry
-    
+
     internal import ohos.ark_interop.JSModule
     internal import ohos.ark_interop.JSContext
     internal import ohos.ark_interop.JSCallInfo
     internal import ohos.ark_interop.JSValue
-    
+
     func addByCallback(context: JSContext, callInfo: JSCallInfo): JSValue {
         // 获取第1、2个参数，并转换为Float64
         let a = callInfo[0].toNumber()
@@ -423,7 +428,7 @@ startTestWorker();
         // 调用回调函数
         callback.call(retJSValue)
     }
-    
+
     let EXPORT_MODULE = JSModule.registerModule {
         runtime, exports =>
             exports["addByCallback"] = runtime.function(addByCallback).toJSValue()
@@ -434,6 +439,7 @@ startTestWorker();
 
 这个用例里的函数是不带 this 指针的，针对需要 this 指针的方法调用，可以通过命名参数 `thisArg` 来指定。
 
+<!--compile-->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let callback = callInfo[0].asFunction(context)
@@ -465,6 +471,7 @@ doSth.call();
 
 在仓颉里，对应的写法如下：
 
+<!--compile.error-->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let object = callInfo[0].asObject(context)

@@ -14,6 +14,7 @@ DevEco Studio 的配置可参考[在 ArkTS 工程中添加仓颉模块](./add_ca
 
 1. 用户实现一个名为 addF64 的仓颉函数，并使用 `@Interop[ArkTS]` 修饰，标注该函数为互操作使用的函数。假设下述文件名为 demo.cj，其内容如下所示：
 
+   <!--compile-->
    ```cangjie
    // 定义包名，该包名需要和 cjpm.toml 的 package name 保持一致
    package ohos_app_cangjie_entry
@@ -35,13 +36,13 @@ DevEco Studio 的配置可参考[在 ArkTS 工程中添加仓颉模块](./add_ca
 
    types->libohos_app_cangjie_entry 目录下的 Index.d.ts 内容如下所示：
 
-   ```cangjie
+   ```typescript
    export declare function addF64(a: number, b: number): number
    ```
 
    types->libohos_app_cangjie_entry 目录下的 oh_package.json5 如下所示：
 
-   ```cangjie
+   ```json
    {
      "name": "libohos_app_cangjie_entry.so",
      "types": "./Index.d.ts",
@@ -52,7 +53,7 @@ DevEco Studio 的配置可参考[在 ArkTS 工程中添加仓颉模块](./add_ca
 
    ark_interop 目录下的 ark_interop_api.d.ts 内容如下所示：
 
-   ```cangjie
+   ```typescript
    export declare interface CustomLib {
        addF64(a: number, b: number): number
    }
@@ -60,7 +61,7 @@ DevEco Studio 的配置可参考[在 ArkTS 工程中添加仓颉模块](./add_ca
 
    ark_interop 目录下的 oh_package.json5 如下所示：
 
-   ```cangjie
+   ```json
    {
      "name": "libark_interop_api.so",
      "types": "./ark_interop_api.d.ts",
@@ -71,7 +72,7 @@ DevEco Studio 的配置可参考[在 ArkTS 工程中添加仓颉模块](./add_ca
 
    并在 entry 的 oh-package.json5 文件中自动添加依赖：
 
-   ```cangjie
+   ```json
    "dependencies": {
      // ...
      "libohos_app_cangjie_entry.so": "file:./src/main/cangjie/types/libohos_app_cangjie_entry",
@@ -158,6 +159,7 @@ console.log("result " + addF64(1, 2))
 
 异步函数互操作使用示例：
 
+<!--compile-->
 ```cangjie
 // 仓颉侧创建互操作函数
 package ohos_app_cangjie_entry
@@ -202,6 +204,7 @@ doAsync(1, 2).then(result => {
 
 接口互操作使用示例：
 
+<!--compile-->
 ```cangjie
 // 仓颉侧创建互操作函数
 package ohos_app_cangjie_entry
@@ -266,6 +269,7 @@ console.log("result " + doInterface(inter));
 
 类互操作使用示例：
 
+<!--compile-->
 ```cangjie
 // 仓颉侧创建互操作函数
 package ohos_app_cangjie_entry

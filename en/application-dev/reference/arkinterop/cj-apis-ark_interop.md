@@ -50,7 +50,7 @@ The following types extend this interface:
 class MyCustomClass {
     public let name: String   // String implements JSInteropType<String>, so it can be used here.
     public let age: Int64     // Int64 implements JSInteropType<Int64>, so it can be used here.
-    
+
     public init(name: String, age: Int64) {
         this.name = name
         this.age = age
@@ -134,7 +134,7 @@ sealed interface JSKeyable <: ToString & ToJSValue {
 
 - ToString
 - ToJSValue
-  
+
 **Example:**
 
 <!--compile-->
@@ -5613,19 +5613,19 @@ func convertJSValueToStringHashMapEx(context: JSContext, callInfo: JSCallInfo): 
     source["key1"] = "value1"
     // Convert to JSValue
     let jsValue = source.toJSValue(context)
-    
+
     // Convert from JSValue to JSHashMapEx<String, String>
     let received = JSHashMapEx<String, String>.fromJSValue(context, jsValue)
-    
+
     // Get all keys
     let keys = received.keys()
-    
+
     // Iterate all key-value pairs
     for (key in keys) {
         let value = jsHashMapEx[key]
         Hilog.info(0, "test", "Key: ${key}, Value: ${value!}")
     }
-    
+
     return jsValue
 }
 ```### static func toArktsType()
@@ -6305,6 +6305,7 @@ public static func registerClass(name: String, register: ClassRegister): Unit
 
 **Example:**
 
+<!--compile-->
 ```cangjie
 class Main {
     static init() {
@@ -6337,6 +6338,7 @@ public static func registerFunc(name: String, register: FuncRegister): Unit
 
 **Example:**
 
+<!--compile-->
 ```cangjie
 class Main {
     static init() {
@@ -6366,6 +6368,7 @@ public static func registerFunc(name: String, lambda: JSLambda): Unit
 
 **Example:**
 
+<!--compile-->
 ```cangjie
 class Main {
     static init() {
@@ -6394,6 +6397,7 @@ public static func registerModule(register: ModuleRegister): Unit
 
 **Example:**
 
+<!--compile-->
 ```cangjie
 class Main {
     static init() {
@@ -6425,20 +6429,20 @@ public class JSObject <: JSObjectBase {}
 ```cangjie
 func setObjectProperties(context: JSContext): JSValue {
     let jsObject = context.object()
-    
+
     // Set properties of different types
     jsObject.setProperty("name", context.string("John").toJSValue())
     jsObject.setProperty("age", context.number(30).toJSValue())
     jsObject.setProperty("isActive", context.boolean(true).toJSValue())
-    
+
     // Set nested object
     let address = context.object()
     address.setProperty("city", context.string("Beijing").toJSValue())
     address.setProperty("country", context.string("China").toJSValue())
     jsObject.setProperty("address", address.toJSValue())
-    
+
     Hilog.info(0, "test", "Set object properties")
-    
+
     return jsObject.toJSValue()
 }
 ```
@@ -7276,9 +7280,9 @@ func getJSRuntimeInstance(): Unit {
     let runtime = JSRuntime()
     // Get JSContext instance
     let context = runtime.mainContext
-    
+
     Hilog.info(0, "test", "Got JSRuntime instance")
-    
+
     let jsValue = context.string("JSRuntime instance obtained").toJSValue()
 }
 ```
@@ -7466,9 +7470,9 @@ func createJSStringEx(context: JSContext): JSValue {
     // Create a JSStringEx object
     let sourceString: String = "Hello, World!"
     let jsStringEx = JSStringEx(sourceString)
-    
+
     Hilog.info(0, "test", "Created JSStringEx with content: ${jsStringEx.toString()}")
-    
+
     return jsStringEx.toJSValue(context)
 }
 ```
@@ -9988,7 +9992,7 @@ public prop accessible: Bool
 ```cangjie
 func checkStringAccessibility(context: JSContext): JSValue {
     let utf16Str = Utf16String("Test String")
-    
+
     if (utf16Str.accessible) {
         Hilog.info(0, "test", "String content is accessible")
         // Safely use the string content
@@ -9997,7 +10001,7 @@ func checkStringAccessibility(context: JSContext): JSValue {
     } else {
         Hilog.info(0, "test", "String content is not accessible")
     }
-    
+
     return context.boolean(utf16Str.accessible).toJSValue()
 }
 ```
@@ -10031,9 +10035,9 @@ public prop size: Int64
 func getStringSize(context: JSContext): JSValue {
     let utf16Str = Utf16String("Hello 世界")  // Contains mixed Chinese and English characters
     let size = utf16Str.size  // Total length of UTF-16 code units
-    
+
     Hilog.info(0, "test", "UTF-16 string size: ${size}")
-    
+
     return context.number(Float64(size)).toJSValue()
 }
 ```
@@ -10067,9 +10071,9 @@ public prop totalChars: Int64
 func getStringTotalChars(context: JSContext): JSValue {
     let utf16Str = Utf16String("Hello 世界")  // Contains mixed Chinese and English characters
     let totalChars = utf16Str.totalChars  // Total number of characters
-    
+
     Hilog.info(0, "test", "Total characters: ${totalChars}")
-    
+
     return context.number(Float64(totalChars)).toJSValue()
 }
 ```
@@ -10120,12 +10124,12 @@ func createUtf16String(context: JSContext): JSValue {
     // Create Utf16String from a string
     let utf16Str = Utf16String("Hello World")
     Hilog.info(0, "test", "Created Utf16String with content: ${utf16Str.toString()}")
-    
+
     // Create Utf16String from JSValue
     let jsString = context.string("Test String")
     let utf16Str2 = Utf16String(jsString.toJSValue())
     Hilog.info(0, "test", "Created Utf16String from JSValue: ${utf16Str2.toString()}")
-    
+
     return context.string(utf16Str.toString()).toJSValue()
 }
 ```
@@ -10170,12 +10174,12 @@ public static func fromJSValue(_: JSContext, value: JSValue): Utf16String
 func createFromJSValue(context: JSContext): JSValue {
     let jsString = context.string("Hello from JS")
     let jsValue = jsString.toJSValue()
-    
+
     // Create Utf16String from JSValue
     let utf16Str = Utf16String.fromJSValue(context, jsValue)
-    
+
     Hilog.info(0, "test", "Created from JSValue: ${utf16Str.toString()}")
-    
+
     return context.string(utf16Str.toString()).toJSValue()
 }
 ```
@@ -10293,11 +10297,11 @@ public func count(src: Utf16String): Int64
 func countSubstring(context: JSContext): JSValue {
     let utf16Str = Utf16String("Hello World Hello Hello")
     let target = Utf16String("Hello")
-    
+
     let count = utf16Str.count(target)
-    
+
     Hilog.info(0, "test", "Count of 'Hello': ${count}")
-    
+
     return context.number(Float64(count)).toJSValue()
 }
 ```### func dispose()
@@ -10316,17 +10320,17 @@ public func dispose(): Unit
 ```cangjie
 func disposeString(context: JSContext): JSValue {
     let utf16Str = Utf16String("Test String")
-    
+
     // Using string content
     let content = utf16Str.toString()
     Hilog.info(0, "test", "String content before dispose: ${content}")
-    
+
     // Manually release string content memory
     utf16Str.dispose()
-    
+
     // Access after dispose will throw exception
     // let contentAfterDispose = utf16Str.toString() // This line will throw exception
-    
+
     return context.string("String disposed").toJSValue()
 }
 ```
@@ -10368,11 +10372,11 @@ public func endsWith(target: Utf16String): Bool
 func checkEndsWith(context: JSContext): JSValue {
     let utf16Str = Utf16String("Hello World")
     let target = Utf16String("World")
-    
+
     let endsWithResult = utf16Str.endsWith(target)
-    
+
     Hilog.info(0, "test", "String ends with 'World': ${endsWithResult}")
-    
+
     return context.boolean(endsWithResult).toJSValue()
 }
 ```
@@ -10408,9 +10412,9 @@ public func hashCode(): Int64
 func getStringHashCode(context: JSContext): JSValue {
     let utf16Str = Utf16String("Hello World")
     let hashCode = utf16Str.hashCode()
-    
+
     Hilog.info(0, "test", "String hash code: ${hashCode}")
-    
+
     return context.number(Float64(hashCode)).toJSValue()
 }
 ```
@@ -10452,15 +10456,15 @@ public func indexOf(target: Utf16String): ?Int64
 func findSubstring(context: JSContext): JSValue {
     let utf16Str = Utf16String("Hello World Hello")
     let target = Utf16String("World")
-    
+
     let index = utf16Str.indexOf(target)
-    
+
     if (index != None) {
         Hilog.info(0, "test", "Found 'World' at index: ${index!}")
     } else {
         Hilog.info(0, "test", "Substring not found")
     }
-    
+
     return context.number(Float64(index.getOrElse(-1))).toJSValue()
 }
 ```
@@ -10527,13 +10531,13 @@ public func isEmpty(): Bool
 func checkIsEmpty(context: JSContext): JSValue {
     let emptyStr = Utf16String("")
     let nonEmptyStr = Utf16String("Hello")
-    
+
     let isEmpty1 = emptyStr.isEmpty()
     let isEmpty2 = nonEmptyStr.isEmpty()
-    
+
     Hilog.info(0, "test", "Empty string is empty: ${isEmpty1}")
     Hilog.info(0, "test", "Non-empty string is empty: ${isEmpty2}")
-    
+
     return context.boolean(isEmpty1).toJSValue()
 }
 ```
@@ -10568,11 +10572,11 @@ public func isCompressed(): Bool
 ```cangjie
 func checkIsCompressed(context: JSContext): JSValue {
     let utf16Str = Utf16String("Hello World")
-    
+
     let isCompressed = utf16Str.isCompressed()
-    
+
     Hilog.info(0, "test", "String is compressed: ${isCompressed}")
-    
+
     return context.boolean(isCompressed).toJSValue()
 }
 ```
@@ -10614,15 +10618,15 @@ public func lastIndexOf(target: Utf16String): ?Int64
 func findLastSubstring(context: JSContext): JSValue {
     let utf16Str = Utf16String("Hello World Hello")
     let target = Utf16String("Hello")
-    
+
     let index = utf16Str.lastIndexOf(target)
-    
+
     if (index != None) {
         Hilog.info(0, "test", "Last 'Hello' found at index: ${index!}")
     } else {
         Hilog.info(0, "test", "Substring not found")
     }
-    
+
     return context.number(Float64(index.getOrElse(-1))).toJSValue()
 }
 ```
@@ -10665,16 +10669,16 @@ public func lastIndexOf(target: Utf16String, fromIndex: Int64): ?Int64
 func findLastSubstringFromIndex(context: JSContext): JSValue {
     let utf16Str = Utf16String("Hello World Hello")
     let target = Utf16String("Hello")
-    
+
     // Search forward starting from index 10
     let index = utf16Str.lastIndexOf(target, 10)
-    
+
     if (index != None) {
         Hilog.info(0, "test", "Last 'Hello' found at index: ${index!}")
     } else {
         Hilog.info(0, "test", "Substring not found")
     }
-    
+
     return context.number(Float64(index.getOrElse(-1))).toJSValue()
 }
 ```
@@ -10717,16 +10721,16 @@ public func lazySplit(separator: Utf16String, remoteEmpty!: Bool = false): Itera
 func lazySplitString(context: JSContext): JSValue {
     let utf16Str = Utf16String("Hello,World,Test,Example")
     let separator = Utf16String(",")
-    
+
     // Lazily split the string, removing empty elements
     let splitIterator = utf16Str.lazySplit(separator, true)
-    
+
     let count = 0
     for (part in splitIterator) {
         Hilog.info(0, "test", "Lazy split part ${count}: ${part.toString()}")
         count = count + 1
     }
-    
+
     return context.number(Float64(count)).toJSValue()
 }
 ```### func lazySplit(Utf16String, Int64, Bool)
@@ -10791,16 +10795,16 @@ public func lines(): Iterator<Utf16String>
 ```cangjie
 func getLines(context: JSContext): JSValue {
     let utf16Str = Utf16String("Line 1\nLine 2\nLine 3")
-    
+
     // Get line iterator
     let lineIterator = utf16Str.lines()
-    
+
     let count = 0
     for (line in lineIterator) {
         Hilog.info(0, "test", "Line ${count}: ${line.toString()}")
         count = count + 1
     }
-    
+
     return context.number(Float64(count)).toJSValue()
 }
 ```
@@ -10845,13 +10849,13 @@ func replaceString(context: JSContext): JSValue {
     let utf16Str = Utf16String("Hello World Hello")
     let target = Utf16String("Hello")
     let replacement = Utf16String("Hi")
-    
+
     // Replace at most once
     let replacedStr = utf16Str.replace(target, replacement, 1)
-    
+
     Hilog.info(0, "test", "Original string: ${utf16Str.toString()}")
     Hilog.info(0, "test", "Replaced string: ${replacedStr.toString()}")
-    
+
     return context.string(replacedStr.toString()).toJSValue()
 }
 ```
@@ -10918,16 +10922,16 @@ public func split(separator: Utf16String, remoteEmpty!: Bool = false): Array<Utf
 func splitString(context: JSContext): JSValue {
     let utf16Str = Utf16String("Hello,World,Test")
     let separator = Utf16String(",")
-    
+
     // Split string into max 3 parts, keeping empty elements
     let splitResult = utf16Str.split(separator, 3, false)
-    
+
     Hilog.info(0, "test", "Split result size: ${splitResult.size}")
-    
+
     for (i in 0..splitResult.size) {
         Hilog.info(0, "test", "Part ${i}: ${splitResult[i].toString()}")
     }
-    
+
     return context.number(Float64(splitResult.size)).toJSValue()
 }
 ```
@@ -11002,11 +11006,11 @@ public func startsWith(target: Utf16String): Bool
 func checkStartsWith(context: JSContext): JSValue {
     let utf16Str = Utf16String("Hello World")
     let target = Utf16String("Hello")
-    
+
     let startsWithResult = utf16Str.startsWith(target)
-    
+
     Hilog.info(0, "test", "String starts with 'Hello': ${startsWithResult}")
-    
+
     return context.boolean(startsWithResult).toJSValue()
 }
 ```
@@ -11048,12 +11052,12 @@ public func toJSValue(context: JSContext): JSValue
 ```cangjie
 func convertToJSValue(context: JSContext): JSValue {
     let utf16Str = Utf16String("Hello from Utf16String")
-    
+
     // Convert to JSValue
     let jsValue = utf16Str.toJSValue(context)
-    
+
     Hilog.info(0, "test", "Converted to JSValue")
-    
+
     return jsValue
 }
 ```
@@ -11089,9 +11093,9 @@ public func toString(): String
 func convertToString(context: JSContext): JSValue {
     let utf16Str = Utf16String("Hello Utf16String")
     let stringResult = utf16Str.toString()
-    
+
     Hilog.info(0, "test", "Converted to string: ${stringResult}")
-    
+
     return context.string(stringResult).toJSValue()
 }
 ```

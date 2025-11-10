@@ -12,6 +12,7 @@
 
 仓颉代码：
 
+<!--compile.error-->
 ```cangjie
 // 导入互操作库
 import ohos.ark_interop.*
@@ -45,6 +46,7 @@ let EXPORT_MODULE = JSModule.registerModule {
 
 仓颉代码：
 
+<!--compile-->
 ```cangjie
 // 导入互操作库
 import ohos.ark_interop.*
@@ -84,6 +86,7 @@ let EXPORT_MODULE = JSModule.registerModule {
 
 仓颉侧代码：
 
+<!--compile-->
 ```cangjie
 // 导入互操作库
 import ohos.ark_interop.*
@@ -121,6 +124,7 @@ function doSth(lib: CJLib): void {
 
 仓颉侧代码：
 
+<!--compile-->
 ```cangjie
 // 导入互操作库
 import ohos.ark_interop.*
@@ -164,6 +168,7 @@ function doSth(lib: CJLib): void {
 
 仓颉侧代码：
 
+<!--compile.error-->
 ```cangjie
 // 导入互操作库
 import ohos.ark_interop.*
@@ -254,6 +259,7 @@ console.log("id is " + id);
 
 仓颉侧代码：
 
+<!--compile-->
 ```cangjie
 // 导入互操作库
 import ohos.ark_interop.*
@@ -362,6 +368,7 @@ console.log("id is " + id);
 
 仓颉侧代码：
 
+<!--compile.error-->
 ```cangjie
 import ohos.ark_interop.*
 
@@ -427,6 +434,7 @@ data.callback = () => {
 
 假设上述场景为业务场景需要，那么开发者需要在 data.callback 执行完成之后及时将 data.callback 置空，既可解除环形引用。示例如下：
 
+<!--code_no_check-->
 ```cangjie
 // ...
 data.callback()
@@ -447,6 +455,7 @@ ArkTS 主线程中调用的仓颉接口时，仓颉代码中可能会通过 spaw
 
 仓颉侧代码：
 
+<!--compile.error-->
 ```cangjie
 import ohos.ark_interop.*
 import ohos.ark_interop_macro.*
@@ -492,6 +501,7 @@ struct Index {
 
 仓颉代码：
 
+<!--compile.error-->
 ```cangjie
 import ohos.ark_interop.*
 
@@ -529,6 +539,7 @@ let EXPORT_MODULE = JSModule.registerModule {
 
 仓颉代码：
 
+<!--compile-->
 ```cangjie
 import ohos.ark_interop.*
 
@@ -575,6 +586,7 @@ let EXPORT_MODULE = JSModule.registerModule {
 
 仓颉代码：
 
+<!--compile-->
 ```cangjie
 import ohos.ark_interop.*
 import ohos.base.UIThread
@@ -621,6 +633,7 @@ let EXPORT_MODULE = JSModule.registerModule {
 
 仓颉代码：
 
+<!--compile.error-->
 ```cangjie
 import ohos.ark_interop.*
 

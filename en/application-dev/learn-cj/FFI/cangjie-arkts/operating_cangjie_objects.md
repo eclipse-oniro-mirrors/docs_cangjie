@@ -12,6 +12,7 @@ This example demonstrates sharing Cangjie objects to the ArkTS runtime, using Ar
 
 1. Define Cangjie functions:
 
+    <!--compile-->
     ```cangjie
     // Import interoperability libraries
     import ohos.ark_interop.*
@@ -90,13 +91,13 @@ This example demonstrates sharing Cangjie objects to the ArkTS runtime, using Ar
     ```typescript
     // Import Cangjie dynamic library (library name should match the package name containing interoperability interfaces)
     import cjLib from "libohos_app_cangjie_entry.so";
-    
+
     // Create shared object
     let data = cjLib.createData();
     // Manipulate object properties
     cjLib.setDataId(data, 3);
     let id = cjLib.getDataId(data);
-    
+
     console.log("id is " + id);
     ```
 
@@ -120,6 +121,7 @@ Example implementation:
 
 ### Define Cangjie functions
 
+<!--compile-->
 ```cangjie
 // Import interoperability libraries
 import ohos.ark_interop.*
@@ -224,6 +226,7 @@ Attaching all object operation methods directly to objects consumes more memory 
 
 1. Define Cangjie functions:
 
+    <!--compile-->
     ```cangjie
     // Import interoperability libraries
     import ohos.ark_interop.*
@@ -315,12 +318,12 @@ Attaching all object operation methods directly to objects consumes more memory 
     ```typescript
     // Import Cangjie dynamic library
     import cjLib from "libohos_app_cangjie_entry.so";
-    
+
     // Create shared object
     let data = new cjLib.Data();
     // Manipulate object properties
     data.setId(3);
     let id = data.getId();
-    
+
     console.log("id is " + id);
     ```

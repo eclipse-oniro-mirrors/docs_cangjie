@@ -14,6 +14,7 @@ After successfully inserting a Cangjie interop module into an ArkTS project, cus
 
 1. Implement a Cangjie function named `addF64` and annotate it with `@Interop[ArkTS]` to mark it as an interop function. Assume the file is named demo.cj, with the following content:
 
+   <!--compile-->
    ```cangjie
    // Define the package name, which must match the package name in cjpm.toml
    package ohos_app_cangjie_entry
@@ -35,13 +36,13 @@ After successfully inserting a Cangjie interop module into an ArkTS project, cus
 
    The content of Index.d.ts in the types->libohos_app_cangjie_entry directory is as follows:
 
-   ```cangjie
+   ```typescript
    export declare function addF64(a: number, b: number): number
    ```
 
    The oh_package.json5 in the types->libohos_app_cangjie_entry directory is as follows:
 
-   ```cangjie
+   ```json
    {
      "name": "libohos_app_cangjie_entry.so",
      "types": "./Index.d.ts",
@@ -52,7 +53,7 @@ After successfully inserting a Cangjie interop module into an ArkTS project, cus
 
    The content of ark_interop_api.d.ts in the ark_interop directory is as follows:
 
-   ```cangjie
+   ```typescript
    export declare interface CustomLib {
        addF64(a: number, b: number): number
    }
@@ -60,7 +61,7 @@ After successfully inserting a Cangjie interop module into an ArkTS project, cus
 
    The oh_package.json5 in the ark_interop directory is as follows:
 
-   ```cangjie
+   ```json
    {
      "name": "libark_interop_api.so",
      "types": "./ark_interop_api.d.ts",
@@ -71,7 +72,7 @@ After successfully inserting a Cangjie interop module into an ArkTS project, cus
 
    Dependencies are automatically added to the oh-package.json5 file in the entry:
 
-   ```cangjie
+   ```json
    "dependencies": {
      // ...
      "libohos_app_cangjie_entry.so": "file:./src/main/cangjie/types/libohos_app_cangjie_entry",
@@ -158,6 +159,7 @@ Asynchronous functions annotated with declarative interop macros must meet the f
 
 Example of asynchronous function interop:
 
+<!--compile-->
 ```cangjie
 // Create an interop function on the Cangjie side
 package ohos_app_cangjie_entry
@@ -202,6 +204,7 @@ Interfaces annotated with declarative interop macros must meet the following con
 
 Example of interface interop:
 
+<!--compile-->
 ```cangjie
 // Create an interop function on the Cangjie side
 package ohos_app_cangjie_entry
@@ -266,6 +269,7 @@ Classes annotated with declarative interop macros must meet the following condit
 
 Example of class interop:
 
+<!--compile-->
 ```cangjie
 // Create an interop function on the Cangjie side
 package ohos_app_cangjie_entry
