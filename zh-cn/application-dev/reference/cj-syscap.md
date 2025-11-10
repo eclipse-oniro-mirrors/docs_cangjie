@@ -114,22 +114,21 @@ if(canIUse("SystemCapability.ArkUI.ArkUI.Full")){
 
 即使是相同的系统能力，在不同的设备下，也会有能力的差异。比如同是摄像头的能力，平板设备优于智能穿戴设备。
 
+以下示例通过获取蓝牙已连接设备进行举例：
+
 <!-- compile -->
 
 ```cangjie
-import ohos.base.*
-import kit.UserAuthenticationKit.*
+import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
+import ohos.business_exception.BusinessException
 
+// 在使用接口时可通过try..catch捕获异常。如果接口的SysCap不支持当前设备，将返回801错误码。
 try {
-    let userAuthInstance = getUserAuthInstance(
-        AuthParam([], [UserAuthType.PIN], AuthTrustLevel.ATL1),
-        WidgetParam("TEST PIN_ATL1", "")
-    )
-    userAuthInstance.on("result", {u => userAuthInstance.off("result")})
-    userAuthInstance.start()
-} catch (e: Exception) {
-    Hilog.error(0, "AppLogCj", "auth catch error: ${e.toString()}")
+    let hdfProfile = createHfpAgProfile()
+    let retArray = hdfProfile.getConnectedDevices()
+} catch (e: BusinessException) {
+    Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}")
 }
 ```
 

@@ -25,9 +25,9 @@ Function is disabled.
    <!-- compile -->
 
    ```cangjie
-   import ohos.hiappevent.*
+   import kit.PerformanceAnalysisKit.*
 
-   var config : ConfigOption = ConfigOption("100M", disable: false)
+   var config : ConfigOption = ConfigOption(maxStorage: "100M", disable: false)
    HiAppEvent.configure(config)
    ```
 

@@ -52,14 +52,14 @@ Openharmony-仓颉 SDK提供的开放能力（接口）需要在导入声明后�
         func build() {
             Row {
                 Column {
-                    Text("Hello Cangjie").onClick {
+                    Text("Hello Cangjie").onClick ({
                         evt =>
                         try {
                             // 此处添加API示例
-                        } (e: Exception) {
+                        } catch (e: Exception) {
                             Hilog.info(0, "AppLogCj", e.toString())
                         }
-                    }
+                    })
                 }.width(100.percent)
             }.height(100.percent)
         }
@@ -84,9 +84,9 @@ Openharmony-仓颉 SDK提供的开放能力（接口）需要在导入声明后�
         }
 
         public override func onCreate(want: Want, launchParam: LaunchParam): Unit {
-            HiLog.info(0, "system", "MainAbility OnCreated.${want.abilityName}")
+            Hilog.info(0, "system", "MainAbility OnCreated.${want.abilityName}")
             match (launchParam.launchReason) {
-                case LaunchReason.START_ABILITY => Hilog.info(0, "AppLogCj", "START_ABILITY")
+                case LaunchReason.StartAbility => Hilog.info(0, "AppLogCj", "START_ABILITY")
                 case _ => ()
             }
         }
@@ -94,7 +94,7 @@ Openharmony-仓颉 SDK提供的开放能力（接口）需要在导入声明后�
         public override func onWindowStageCreate(windowStage: WindowStage): Unit {
             Hilog.info(0, "system", "MainAbility onWindowStageCreate.")
             Global._abilityContext = Some(this.context)
-            Global._windowStage_ = Some(windowStage)
+            Global._windowStage = Some(windowStage)
             windowStage.loadContent("EntryView")
         }
     }
@@ -105,7 +105,7 @@ Openharmony-仓颉 SDK提供的开放能力（接口）需要在导入声明后�
         public static var _windowStage: Option<WindowStage> = None
         public static prop abilityContext: UIAbilityContext {
             get() {
-                match (this._abilityContext) {
+                match (_abilityContext) {
                     case Some(context) => context
                     case None => throw Exception("Global.abilityContext is not set")
                 }
@@ -113,7 +113,7 @@ Openharmony-仓颉 SDK提供的开放能力（接口）需要在导入声明后�
         }
         public static prop windowStage: WindowStage {
             get() {
-                match (this._windowStage) {
+                match (_windowStage) {
                     case Some(stage) => stage
                     case None => throw Exception("Global.windowStage is not set")
                 }
