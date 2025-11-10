@@ -284,16 +284,16 @@ public init(x!: ?Float32 = None, y!: ?Float32 = None, z!: ?Float32 = None, cente
 
 ```cangjie
 public class RotateOptions {
-    public var angle: ?Float32
-    public var x: ?Float32
-    public var y: ?Float32
-    public var z: ?Float32
+    public var angle: ?Float64
+    public var x: ?Float64
+    public var y: ?Float64
+    public var z: ?Float64
     public var centerX: ?Length
     public var centerY: ?Length
     public var centerZ: ?Length
-    public var perspective: ?Float32
-    public init(angle: ?Float32, x!: ?Float32 = None, y!: ?Float32 = None, z!: ?Float32 = None, centerX!: ?Length = None,
-        centerY!: ?Length = None, centerZ!: ?Length = None, perspective!: ?Float32 = None)
+    public var perspective: ?Float64
+    public init(angle: ?Float64, x!: ?Float64 = None, y!: ?Float64 = None, z!: ?Float64 = None, centerX!: ?Length = None,
+        centerY!: ?Length = None, centerZ!: ?Length = None, perspective!: ?Float64 = None)
 }
 ```
 
@@ -306,12 +306,12 @@ public class RotateOptions {
 ### var angle
 
 ```cangjie
-public var angle: ?Float32
+public var angle: ?Float64
 ```
 
 **功能：** 旋转角度。取值为正时相对于旋转轴方向顺时针转动，取值为负时相对于旋转轴方向逆时针转动。
 
-**类型：** ?Float32
+**类型：** ?Float64
 
 **读写能力：** 可读写
 
@@ -322,12 +322,12 @@ public var angle: ?Float32
 ### var x
 
 ```cangjie
-public var x: ?Float32
+public var x: ?Float64
 ```
 
 **功能：** 旋转轴向量的X坐标。
 
-**类型：** ?Float32
+**类型：** ?Float64
 
 **读写能力：** 可读写
 
@@ -338,12 +338,12 @@ public var x: ?Float32
 ### var y
 
 ```cangjie
-public var y: ?Float32
+public var y: ?Float64
 ```
 
 **功能：** 旋转轴向量的Y坐标。
 
-**类型：** ?Float32
+**类型：** ?Float64
 
 **读写能力：** 可读写
 
@@ -354,12 +354,12 @@ public var y: ?Float32
 ### var z
 
 ```cangjie
-public var z: ?Float32
+public var z: ?Float64
 ```
 
 **功能：** 旋转轴向量的Z坐标。
 
-**类型：** ?Float32
+**类型：** ?Float64
 
 **读写能力：** 可读写
 
@@ -418,12 +418,12 @@ public var centerZ: ?Length
 ### var perspective
 
 ```cangjie
-public var perspective: ?Float32
+public var perspective: ?Float64
 ```
 
 **功能：** 相机放置的z轴坐标。数值大小表示视距，即相机到z=0平面的距离。取值的正负决定了相机观察的方向。当perspective=0，系统会自动计算适合的相机z轴位置，取值为负数。旋转轴和旋转中心点都基于坐标系设定，组件发生位移时，坐标系不会随之移动。
 
-**类型：** ?Float32
+**类型：** ?Float64
 
 **读写能力：** 可读写
 
@@ -431,11 +431,11 @@ public var perspective: ?Float32
 
 **起始版本：** 22
 
-### init(?Float32, ?Float32, ?Float32, ?Length, ?Length, ?Length, ?Float32)
+### init(?Float64, ?Float64, ?Float64, ?Float64, ?Length, ?Length, ?Length, ?Float64)
 
 ```cangjie
-public init(angle: ?Float32, x!: ?Float32 = None, y!: ?Float32 = None, z!: ?Float32 = None, centerX!: ?Length = None,
-        centerY!: ?Length = None, centerZ!: ?Length = None, perspective!: ?Float32 = None)
+public init(angle: ?Float64, x!: ?Float64 = None, y!: ?Float64 = None, z!: ?Float64 = None, centerX!: ?Length = None,
+        centerY!: ?Length = None, centerZ!: ?Length = None, perspective!: ?Float64 = None)
 ```
 
 **功能：** RotateOptions构造函数。
@@ -448,14 +448,14 @@ public init(angle: ?Float32, x!: ?Float32 = None, y!: ?Float32 = None, z!: ?Floa
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|angle|?Float32|是|-|角度参数。|
-|x|?Float32|否|None|**命名参数。** 旋转轴向量的X坐标。初始值：0.0|
-|y|?Float32|否|None|**命名参数。** 旋转轴向量的Y坐标。初始值：0.0|
-|z|?Float32|否|None|**命名参数。** 旋转轴向量的Z坐标。初始值：0.0|
+|angle|?Float64|是|-|角度参数。|
+|x|?Float64|否|None|**命名参数。** 旋转轴向量的X坐标。初始值：0.0|
+|y|?Float64|否|None|**命名参数。** 旋转轴向量的Y坐标。初始值：0.0|
+|z|?Float64|否|None|**命名参数。** 旋转轴向量的Z坐标。初始值：0.0|
 |centerX|?[Length](./cj-common-types.md#interface-length)|否|None|**命名参数。** 变换中心点（锚点）的X坐标。单位为vp。初始值：50.percent|
 |centerY|?[Length](./cj-common-types.md#interface-length)|否|None|**命名参数。** 变换中心点（锚点）的Y坐标。单位为vp。初始值：50.percent|
 |centerZ|?[Length](./cj-common-types.md#interface-length)|否|None|**命名参数。** Z轴锚点，即3D旋转中心点的z分量。初始值：0|
-|perspective|?Float32|否|None|**命名参数。** 用户到z=0平面的距离。轴和旋转中心是基于坐标系设置的，当组件移动时坐标系保持不变。初始值：0.0|
+|perspective|?Float64|否|None|**命名参数。** 用户到z=0平面的距离。轴和旋转中心是基于坐标系设置的，当组件移动时坐标系保持不变。初始值：0.0|
 
 ## class TransitionEffect
 
@@ -689,7 +689,7 @@ public static func asymmetric(appear: TransitionEffect, disappear: TransitionEff
 ### func animation(?AnimateParam)
 
 ```cangjie
-public func animation(param: ?AnimateParam): TransitionEffect
+public func animation(value: ?AnimateParam): TransitionEffect
 ```
 
 **功能：** 指定该TransitionEffect的动画参数。
@@ -706,7 +706,7 @@ public func animation(param: ?AnimateParam): TransitionEffect
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|param|?[AnimateParam](./cj-common-types.md#class-animateparam)|是|-|动画效果参数。|
+|value|?[AnimateParam](./cj-common-types.md#class-animateparam)|是|-|动画效果参数。|
 
 **返回值：**
 

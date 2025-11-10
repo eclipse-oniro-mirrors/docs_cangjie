@@ -940,24 +940,6 @@ public func fling(velocity: Float64): Unit
 |:---|:---|:---|:---|:---|
 |velocity|Float64|是|-|惯性滚动的初始速度值。如果值为0，则视为无效值，不会生效。正值表示向顶部滚动，负值表示向底部滚动。|
 
-#### func scrollPage(Bool)
-
-```cangjie
-public func scrollPage(value: Bool): Unit
-```
-
-**功能：** 设置翻页模式。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**起始版本：** 22
-
-**参数：**
-
-|参数名|类型|必填|默认值|说明|
-|:---|:---|:---|:---|:---|
-|value|Bool|是|-|是否翻页。|
-
 #### func scrollPage(Bool, ?Bool)
 
 ```cangjie

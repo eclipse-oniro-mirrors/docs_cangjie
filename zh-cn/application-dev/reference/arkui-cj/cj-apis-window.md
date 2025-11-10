@@ -562,6 +562,8 @@ public var height: UInt32
 
 **读写能力：** 可读写
 
+**系统能力：** SystemCapability.WindowManager.WindowManager.Core
+
 **起始版本：** 22
 
 ### var width
@@ -575,6 +577,8 @@ public var width: UInt32
 **类型：** UInt32
 
 **读写能力：** 可读写
+
+**系统能力：** SystemCapability.WindowManager.WindowManager.Core
 
 **起始版本：** 22
 

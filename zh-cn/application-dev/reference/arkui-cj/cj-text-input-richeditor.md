@@ -2352,6 +2352,8 @@ LengthType(Length)
 
 **功能：** 长度类型。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 **起始版本：** 22
 
 #### PlaceholderType(LeadingMarginPlaceholder)
@@ -2362,6 +2364,8 @@ PlaceholderType(LeadingMarginPlaceholder)
 
 **功能：** 占位符类型。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 **起始版本：** 22
 
 #### None
@@ -2371,6 +2375,8 @@ None
 ```
 
 **功能：** 无。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **起始版本：** 22
 

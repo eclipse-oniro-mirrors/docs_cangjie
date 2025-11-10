@@ -882,10 +882,10 @@ public func finishAnimation(): Unit
 
 **起始版本：** 22
 
-#### func finishAnimation(?() -> Unit)
+#### func finishAnimation(?VoidCallback)
 
 ```cangjie
-public func finishAnimation(callback: ?() -> Unit): Unit
+public func finishAnimation(callback: ?VoidCallback): Unit
 ```
 
 **功能：** 停止播放动画。
@@ -898,7 +898,7 @@ public func finishAnimation(callback: ?() -> Unit): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|callback|?() -> Unit|是|-|回调函数，动画结束时触发。<br>初始值：{ => }。|
+|callback|?[VoidCallback](./cj-common-types.md#type-voidcallback)|是|-|回调函数，动画结束时触发。<br>初始值：{ => }。|
 
 #### func showNext()
 

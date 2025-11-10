@@ -678,7 +678,7 @@ public init(text!: ResourceStr, color!: ResourceColor, primary!: Bool = false)
 public class CustomDialogOptions <: BaseDialogOptions {
     public var backgroundColor: ResourceColor
     public var borderColor: EdgeColors
-    public var borderRadius: BorderRadiuses
+    public var cornerRadius: BorderRadiuses
     public var borderStyle: EdgeStyles
     public var borderWidth: EdgeWidths
     public var builder: () -> Unit
@@ -759,10 +759,10 @@ public var borderColor: EdgeColors
 
 **起始版本：** 22
 
-### var borderRadius
+### var cornerRadius
 
 ```cangjie
-public var borderRadius: BorderRadiuses
+public var cornerRadius: BorderRadiuses
 ```
 
 **功能：** 自定义对话框的圆角半径。

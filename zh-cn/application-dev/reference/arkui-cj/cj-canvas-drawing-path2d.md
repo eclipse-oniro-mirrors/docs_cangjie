@@ -51,7 +51,7 @@ public init(d: ?String)
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|d|?String|否|-|符合 SVG 路径描述规范的路径字符串，格式参考Path中SVG路径描述规范说明。|
+|d|?String|是|-|符合 SVG 路径描述规范的路径字符串，格式参考Path中SVG路径描述规范说明。|
 
 ### func addPath(?Path2D)
 

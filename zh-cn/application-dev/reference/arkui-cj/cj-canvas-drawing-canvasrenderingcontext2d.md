@@ -187,7 +187,7 @@ public init(settings: ?RenderingContextSettings)
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|settings|?[RenderingContextSettings](./cj-canvas-drawing-canvas.md#class-renderingcontextsettings)|否|-|初始化设置。|
+|settings|?[RenderingContextSettings](./cj-canvas-drawing-canvas.md#class-renderingcontextsettings)|是|-|初始化设置。|
 
 ### prop fillStyle
 
@@ -680,7 +680,7 @@ public func measureText(text: ?String): TextMetrics
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|text|?String|否|-|需要进行测量的文本。|
+|text|?String|是|-|需要进行测量的文本。|
 
 **返回值：**
 
@@ -1142,7 +1142,7 @@ public func setTransform(matrix: ?Matrix2D): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|matrix|?Matrix2D|否|-|变换矩阵。|
+|matrix|?Matrix2D|是|-|变换矩阵。|
 
 ### func translate(Float64, Float64)
 
@@ -1534,7 +1534,7 @@ public func transferFromImageBitmap(bitmap: ?ImageBitmap): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|bitmap|?ImageBitmap|否|-|待显示的ImageBitmap对象。|
+|bitmap|?ImageBitmap|是|-|待显示的ImageBitmap对象。|
 
 ### func setPixelMap(?PixelMap)
 
@@ -1552,7 +1552,7 @@ public func setPixelMap(value: ?PixelMap): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|value|?[PixelMap](../ImageKit/cj-apis-image.md#class-pixelmap)|否|-|PixelMap对象。|
+|value|?[PixelMap](../ImageKit/cj-apis-image.md#class-pixelmap)|是|-|PixelMap对象。|
 
 ### func getLineDash()
 
@@ -1638,7 +1638,7 @@ public func createImageData(imageData: ?ImageData): ImageData
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|imageData|?ImageData|否|-|现有的ImageData对象。|
+|imageData|?ImageData|是|-|现有的ImageData对象。|
 
 **返回值：**
 

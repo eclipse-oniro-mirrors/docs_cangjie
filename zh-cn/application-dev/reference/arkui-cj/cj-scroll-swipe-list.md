@@ -246,10 +246,10 @@ public func sticky(value: ?StickyStyle): This
 
 ## 组件事件
 
-### func onScrollFrameBegin(?(Float64, ScrollState) -> onScrollFrameBeginHandleResult)
+### func onScrollFrameBegin(?(Float64, ScrollState) -> OnScrollFrameBeginHandlerResult)
 
 ```cangjie
-public func onScrollFrameBegin(event: ?(Float64, ScrollState) -> onScrollFrameBeginHandleResult): This
+public func onScrollFrameBegin(event: ?(Float64, ScrollState) -> OnScrollFrameBeginHandlerResult): This
 ```
 
 **功能：** 每帧滚动开始时触发。

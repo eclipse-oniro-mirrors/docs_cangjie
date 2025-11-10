@@ -1073,6 +1073,8 @@ public var target: ?EventTarget
 
 **读写能力：** 可读写
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 **起始版本：** 22
 
 ### var timestamp
@@ -1086,6 +1088,8 @@ public var timestamp: Int64
 **类型：** Int64
 
 **读写能力：** 可读写
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **起始版本：** 22
 
@@ -1101,6 +1105,8 @@ public var source: ?SourceType
 
 **读写能力：** 可读写
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 **起始版本：** 22
 
 ### var deviceId
@@ -1114,6 +1120,8 @@ public var deviceId: ?Int64
 **类型：** ?Int64
 
 **读写能力：** 可读写
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **起始版本：** 22
 
@@ -1152,6 +1160,8 @@ public var displayX: Float64
 
 **读写能力：** 可读写
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 **起始版本：** 22
 
 ### var displayY
@@ -1165,6 +1175,8 @@ public var displayY: Float64
 **类型：** Float64
 
 **读写能力：** 可读写
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **起始版本：** 22
 
@@ -1180,6 +1192,8 @@ public var windowX: Float64
 
 **读写能力：** 可读写
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 **起始版本：** 22
 
 ### var windowY
@@ -1193,6 +1207,8 @@ public var windowY: Float64
 **类型：** Float64
 
 **读写能力：** 可读写
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **起始版本：** 22
 
@@ -1208,6 +1224,8 @@ public var x: Float64
 
 **读写能力：** 可读写
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 **起始版本：** 22
 
 ### var y
@@ -1221,6 +1239,8 @@ public var y: Float64
 **类型：** Float64
 
 **读写能力：** 可读写
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **起始版本：** 22
 
@@ -1336,7 +1356,7 @@ public var pixelMap: ?PixelMap
 
 **起始版本：** 22
 
-### init(PixelMap, CustomBuilder, String)
+### init(?PixelMap, ?CustomBuilder, ?String)
 
 ```cangjie
 public init(pixelMap: ?PixelMap, builder: ?CustomBuilder, extraInfo: ?String)
@@ -1565,7 +1585,7 @@ public var changedTouches: ArrayList<TouchObject>
 
 **起始版本：** 22
 
-### func stopPropagation
+### func stopPropagation()
 
 ```cangjie
 public func stopPropagation(): Unit
@@ -3495,7 +3515,7 @@ public var grayscale: ?VArray<Float32, $2>
 
 **起始版本：** 22
 
-### init(VArray\<Float32, $2>)
+### init(?VArray\<Float32, \$2>)
 
 ```cangjie
 public init(grayscale: ?VArray<Float32, $2>)
@@ -3726,7 +3746,32 @@ public class PopupOptions {
     public var transition: ?TransitionEffect
     public var onWillDismiss: ?(DismissPopupAction) -> Unit
     public var followTransformOfTarget: ?Bool
-    public init(message!: ?String, primaryButton!: ?PopupButton = None, secondaryButton!: ?PopupButton = None, onStateChange!: Option<(PopupStateChangeParam) -> Unit> = Option.None, arrowOffset!: ?Length = None, showInSubWindow!: ?Bool = None, messageOptions!: ?PopupMessageOptions = None, mask!: ?Color = None, targetSpace!: ?Length = None, placement!: ?Placement = Option.None, offset!: ?Position = None, enableArrow!: ?Bool = None, popupColor!: ?Color = None, autoCancel!: ?Bool = None, width!: ?Length = None, arrowPointPosition!: ?ArrowPointPosition = None, arrowWidth!: ?Length = None, arrowHeight!: ?Length = None, radius!: ?Length = None, shadow!: ?ShadowStyle = None, backgroundBlurStyle!: ?BlurStyle = Option.None, transition!: ?TransitionEffect = Option.None, onWillDismiss!: Option<(DismissPopupAction) -> Unit> = None, followTransformOfTarget!: ?Bool = None)
+    public init(
+        message!: ?String,
+        primaryButton!: ?PopupButton = None,
+        secondaryButton!: ?PopupButton = None,
+        onStateChange!: Option<(PopupStateChangeParam) -> Unit> = Option.None,
+        arrowOffset!: ?Length = None,
+        showInSubWindow!: ?Bool = None,
+        messageOptions!: ?PopupMessageOptions = None,
+        mask!: ?Color = None,
+        targetSpace!: ?Length = None,
+        placement!: ?Placement = Option.None,
+        offset!: ?Position = None,
+        enableArrow!: ?Bool = None,
+        popupColor!: ?Color = None,
+        autoCancel!: ?Bool = None,
+        width!: ?Length = None,
+        arrowPointPosition!: ?ArrowPointPosition = None,
+        arrowWidth!: ?Length = None,
+        arrowHeight!: ?Length = None,
+        radius!: ?Length = None,
+        shadow!: ?ShadowStyle = None,
+        backgroundBlurStyle!: ?BlurStyle = Option.None,
+        transition!: ?TransitionEffect = Option.None,
+        onWillDismiss!: Option<(DismissPopupAction) -> Unit> = None,
+        followTransformOfTarget!: ?Bool = None
+    )
 }
 ```
 
@@ -4130,10 +4175,35 @@ public var followTransformOfTarget: ?Bool
 
 **起始版本：** 22
 
-### init(?String, ?PopupButton, ?PopupButton, Option\<(PopupStateChangeParam) -> Unit>, ?Length, ?Bool, ?PopupMessageOptions, ?Color, ?Length, Option\<Placement>, ?Position, ?Bool, ?Color, ?Bool, ?Length, ?ArrowPointPosition, ?Length, ?Length, ?Length, ?ShadowStyle, Option\<BlurStyle>, Option\<TransitionEffect>, Option\<(DismissPopupAction) -> Unit>, ?Bool)
+### init(?String, ?PopupButton, ?PopupButton, Option\<(PopupStateChangeParam) -> Unit>, ?Length, ?Bool, ?PopupMessageOptions, ?Color, ?Length, ?Placement, ?Position, ?Bool, ?Color, ?Bool, ?Length, ?ArrowPointPosition, ?Length, ?Length, ?Length, ?ShadowStyle, ?BlurStyle, ?TransitionEffect, Option\<(DismissPopupAction) -> Unit>, ?Bool)
 
 ```cangjie
-public init(message!: ?String, primaryButton!: ?PopupButton = None, secondaryButton!: ?PopupButton = None, onStateChange!: Option<(PopupStateChangeParam) -> Unit> = Option.None, arrowOffset!: ?Length = None, showInSubWindow!: ?Bool = None, messageOptions!: ?PopupMessageOptions = None, mask!: ?Color = None, targetSpace!: ?Length = None, placement!: ?Placement = Option.None, offset!: ?Position = None, enableArrow!: ?Bool = None, popupColor!: ?Color = None, autoCancel!: ?Bool = None, width!: ?Length = None, arrowPointPosition!: ?ArrowPointPosition = None, arrowWidth!: ?Length = None, arrowHeight!: ?Length = None, radius!: ?Length = None, shadow!: ?ShadowStyle = None, backgroundBlurStyle!: ?BlurStyle = Option.None, transition!: ?TransitionEffect = Option.None, onWillDismiss!: Option<(DismissPopupAction) -> Unit> = None, followTransformOfTarget!: ?Bool = None)
+public init(
+    message!: ?String,
+    primaryButton!: ?PopupButton = None,
+    secondaryButton!: ?PopupButton = None,
+    onStateChange!: Option<(PopupStateChangeParam) -> Unit> = Option.None,
+    arrowOffset!: ?Length = None,
+    showInSubWindow!: ?Bool = None,
+    messageOptions!: ?PopupMessageOptions = None,
+    mask!: ?Color = None,
+    targetSpace!: ?Length = None,
+    placement!: ?Placement = Option.None,
+    offset!: ?Position = None,
+    enableArrow!: ?Bool = None,
+    popupColor!: ?Color = None,
+    autoCancel!: ?Bool = None,
+    width!: ?Length = None,
+    arrowPointPosition!: ?ArrowPointPosition = None,
+    arrowWidth!: ?Length = None,
+    arrowHeight!: ?Length = None,
+    radius!: ?Length = None,
+    shadow!: ?ShadowStyle = None,
+    backgroundBlurStyle!: ?BlurStyle = Option.None,
+    transition!: ?TransitionEffect = Option.None,
+    onWillDismiss!: Option<(DismissPopupAction) -> Unit> = None,
+    followTransformOfTarget!: ?Bool = None
+)
 ```
 
 **功能：** 构造函数。
@@ -4155,7 +4225,7 @@ public init(message!: ?String, primaryButton!: ?PopupButton = None, secondaryBut
 |messageOptions|?[PopupMessageOptions](#class-popupmessageoptions)|否|None|**命名参数。** 设置弹窗信息文本参数。初始值为PopupMessageOptions()。|
 |mask|?[Color](./cj-common-types.md#class-color)|否|None|**命名参数。** 设置遮罩层的颜色。初始值为Color(0x1000000)。|
 |targetSpace|?[Length](./cj-common-types.md#interface-length)|否|None|**命名参数。** 设置popup与目标的间隙。初始值为0.vp。|
-|placement|Option<[Placement](#enum-placement)>|否|Option.None|**命名参数。** 设置popup组件相对于目标的显示位置。|
+|placement|?[Placement](#enum-placement)|否|Option.None|**命名参数。** 设置popup组件相对于目标的显示位置。|
 |offset|?[Position](#class-position)|否|None|**命名参数。** 设置popup组件相对于placement设置的显示位置的偏移。初始值为Position(x:0.0, y: 0.0)。|
 |enableArrow|?Bool|否|None|**命名参数。** 是否启用箭头，初始值为true。|
 |popupColor|?[Color](./cj-common-types.md#class-color)|否|None|**命名参数。** 设置提示气泡的颜色。初始值为Color(0x1000000)。|
@@ -4166,8 +4236,8 @@ public init(message!: ?String, primaryButton!: ?PopupButton = None, secondaryBut
 |arrowHeight|?[Length](./cj-common-types.md#interface-length)|否|None|**命名参数。** 箭头高度。初始值为8.vp。|
 |radius|?[Length](./cj-common-types.md#interface-length)|否|None|**命名参数。** 设置气泡圆角半径。初始值为20.vp。|
 |shadow|?[ShadowStyle](./cj-common-types.md#enum-shadowstyle)|否|None|**命名参数。** 设置气泡阴影。初始值为ShadowStyle.OuterDefaultMD。|
-|backgroundBlurStyle|Option\<[BlurStyle](#enum-blurstyle)>|否|Option.None|**命名参数。** 设置气泡模糊背景参数。初始值为BlurStyle.ComponentUltraThick。|
-|transition|Option\<[TransitionEffect](./cj-animation-transition.md#class-transitioneffect)>|否|Option.None|**命名参数。** 自定义设置popup弹窗显示和退出的动画效果。|
+|backgroundBlurStyle|?[BlurStyle](#enum-blurstyle)|否|Option.None|**命名参数。** 设置气泡模糊背景参数。初始值为BlurStyle.ComponentUltraThick。|
+|transition|?[TransitionEffect](./cj-animation-transition.md#class-transitioneffect)|否|Option.None|**命名参数。** 自定义设置popup弹窗显示和退出的动画效果。|
 |onWillDismiss|Option\<([DismissPopupAction](#class-dismisspopupaction)) -> Unit>|否|None|**命名参数。**设置拦截退出事件且执行回调函数。|
 |followTransformOfTarget|?Bool|否|None|**命名参数。** 气泡绑定的宿主组件或其宿主组件的父容器添加了旋转、缩放等变换时，设置气泡是否能显示在对应变化后的位置上。|
 
@@ -4231,7 +4301,31 @@ public class CustomPopupOptions {
     public var transition: Option<TransitionEffect>
     public var onWillDismiss: Option<(DismissPopupAction) -> Unit>
     public var followTransformOfTarget: ?Bool
-    public init(builder!: () -> Unit, placement!: ?Placement = Option.None, popupColor!: ?Color = None, enableArrow!: ?Bool = None, autoCancel!: ?Bool = None, onStateChange!: Option<(PopupStateChangeParam) -> Unit> = Option.None, showInSubWindow!: ?Bool = None, backgroundColor!: ?Color = None, arrowOffset!: ?Length = None, mask!: ?Color = None, targetSpace!: ?Length = None, offset!: ?Position = None, width!: ?Length = None, arrowPointPosition!: ?ArrowPointPosition = None, arrowWidth!: ?Length = None, arrowHeight!: ?Length = None, radius!: ?Length = None, shadow!: ?ShadowStyle = None, backgroundBlurStyle!: ?BlurStyle = Option.None, focusable!: ?Bool = None, transition!: Option<TransitionEffect> = Option.None, onWillDismiss!: Option<(DismissPopupAction) -> Unit> = None, followTransformOfTarget!: ?Bool = None)
+    public init(
+        builder!: () -> Unit,
+        placement!: ?Placement = Option.None,
+        popupColor!: ?Color = None,
+        enableArrow!: ?Bool = None,
+        autoCancel!: ?Bool = None,
+        onStateChange!: Option<(PopupStateChangeParam) -> Unit> = Option.None,
+        showInSubWindow!: ?Bool = None,
+        backgroundColor!: ?Color = None,
+        arrowOffset!: ?Length = None,
+        mask!: ?Color = None,
+        targetSpace!: ?Length = None,
+        offset!: ?Position = None,
+        width!: ?Length = None,
+        arrowPointPosition!: ?ArrowPointPosition = None,
+        arrowWidth!: ?Length = None,
+        arrowHeight!: ?Length = None,
+        radius!: ?Length = None,
+        shadow!: ?ShadowStyle = None,
+        backgroundBlurStyle!: ?BlurStyle = Option.None,
+        focusable!: ?Bool = None,
+        transition!: Option<TransitionEffect> = Option.None,
+        onWillDismiss!: Option<(DismissPopupAction) -> Unit> = None,
+        followTransformOfTarget!: ?Bool = None
+    )
 }
 ```
 
@@ -4617,10 +4711,34 @@ public var followTransformOfTarget: ?Bool
 
 **起始版本：** 22
 
-### init(() -> Unit, Option\<Placement>, ?Color, ?Bool, ?Bool, Option\<(PopupStateChangeParam) -> Unit>, ?Bool, ?Color, ?Length, ?Color, ?Length, ?Position, ?Length, ?ArrowPointPosition, ?Length, ?Length, ?Length, ?ShadowStyle, Option\<BlurStyle>, ?Bool, Option\<TransitionEffect>, Option\<(DismissPopupAction) -> Unit>, ?Bool)
+### init(() -> Unit, ?Placement, ?Color, ?Bool, ?Bool, Option\<(PopupStateChangeParam) -> Unit>, ?Bool, ?Color, ?Length, ?Color, ?Length, ?Position, ?Length, ?ArrowPointPosition, ?Length, ?Length, ?Length, ?ShadowStyle, ?BlurStyle, ?Bool, Option\<TransitionEffect>, Option\<(DismissPopupAction) -> Unit>, ?Bool)
 
 ```cangjie
-public init(builder!: () -> Unit, placement!: ?Placement = Option.None, popupColor!: ?Color = None, enableArrow!: ?Bool = None, autoCancel!: ?Bool = None, onStateChange!: Option<(PopupStateChangeParam) -> Unit> = Option.None, showInSubWindow!: ?Bool = None, backgroundColor!: ?Color = None, arrowOffset!: ?Length = None, mask!: ?Color = None, targetSpace!: ?Length = None, offset!: ?Position = None, width!: ?Length = None, arrowPointPosition!: ?ArrowPointPosition = None, arrowWidth!: ?Length = None, arrowHeight!: ?Length = None, radius!: ?Length = None, shadow!: ?ShadowStyle = None, backgroundBlurStyle!: ?BlurStyle = Option.None, focusable!: ?Bool = None, transition!: Option<TransitionEffect> = Option.None, onWillDismiss!: Option<(DismissPopupAction) -> Unit> = None, followTransformOfTarget!: ?Bool = None)
+public init(
+    builder!: () -> Unit,
+    placement!: ?Placement = Option.None,
+    popupColor!: ?Color = None,
+    enableArrow!: ?Bool = None,
+    autoCancel!: ?Bool = None,
+    onStateChange!: Option<(PopupStateChangeParam) -> Unit> = Option.None,
+    showInSubWindow!: ?Bool = None,
+    backgroundColor!: ?Color = None,
+    arrowOffset!: ?Length = None,
+    mask!: ?Color = None,
+    targetSpace!: ?Length = None,
+    offset!: ?Position = None,
+    width!: ?Length = None,
+    arrowPointPosition!: ?ArrowPointPosition = None,
+    arrowWidth!: ?Length = None,
+    arrowHeight!: ?Length = None,
+    radius!: ?Length = None,
+    shadow!: ?ShadowStyle = None,
+    backgroundBlurStyle!: ?BlurStyle = Option.None,
+    focusable!: ?Bool = None,
+    transition!: Option<TransitionEffect> = Option.None,
+    onWillDismiss!: Option<(DismissPopupAction) -> Unit> = None,
+    followTransformOfTarget!: ?Bool = None
+)
 ```
 
 **功能：** 构造函数。
@@ -4634,7 +4752,7 @@ public init(builder!: () -> Unit, placement!: ?Placement = Option.None, popupCol
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |builder|() -> Unit|是|-|**命名参数。** 提示气泡内容的构造器。|
-|placement|Option<[Placement](#enum-placement)>|否|Option.None|**命名参数。** 气泡组件优先显示的位置。<br>**说明：** 当前位置显示不下时，会自动调整位置。初始值为Placement.Bottom。|
+|placement|?[Placement](#enum-placement)|否|Option.None|**命名参数。** 气泡组件优先显示的位置。<br>**说明：** 当前位置显示不下时，会自动调整位置。初始值为Placement.Bottom。|
 |popupColor|?[Color](./cj-common-types.md#class-color)|否|None|**命名参数。** 提示气泡的背景颜色。初始值为Color(0x1000000)。|
 |enableArrow|?Bool|否|None|**命名参数。** 是否显示箭头。<br>**说明：** 如果箭头所在方位侧的气泡长度不足以显示下箭头，则会默认不显示箭头。比如：placement设置为Left，但气泡高度小于箭头的宽度（32vp），则实际不会显示箭头。初始值为true。|
 |autoCancel|?Bool|否|None|**命名参数。** 页面有操作时，是否自动关闭气泡。初始值为true。|
@@ -4990,7 +5108,16 @@ public init(backgroundColor!: ?ResourceColor = None, onAppear!: ?() -> Unit = No
 
 ```cangjie
 public class ContentCoverOptions <: BindOptions {
-    public init(modalTransition!: ?ModalTransition = Option.None, onWillDismiss!: ?(DismissContentCoverAction) -> Unit = Option.None, transition!: ?TransitionEffect = Option.None, backgroundColor!: ?ResourceColor = Option.None, onAppear!: ?() -> Unit = Option.None, onDisappear!: ?() -> Unit = Option.None, onWillAppear!: ?() -> Unit = Option.None, onWillDisappear!: ?() -> Unit = Option.None)
+    public init(
+        modalTransition!: ?ModalTransition = Option.None,
+        onWillDismiss!: ?(DismissContentCoverAction) -> Unit = Option.None,
+        transition!: ?TransitionEffect = Option.None,
+        backgroundColor!: ?ResourceColor = Option.None,
+        onAppear!: ?() -> Unit = Option.None,
+        onDisappear!: ?() -> Unit = Option.None,
+        onWillAppear!: ?() -> Unit = Option.None,
+        onWillDisappear!: ?() -> Unit = Option.None
+    )
 }
 ```
 
@@ -5004,10 +5131,19 @@ public class ContentCoverOptions <: BindOptions {
 
 - [BindOptions](#class-bindoptions)
 
-### init(?ModalTransition, ?(DismissContentCoverAction) -> Unit, ?TransitionEffect, Option\<ResourceColor>, Option\<() -> Unit>, Option\<() -> Unit>, Option\<() -> Unit>, Option\<() -> Unit)
+### init(?ModalTransition, ?(DismissContentCoverAction) -> Unit, ?TransitionEffect, ?ResourceColor, ?() -> Unit, ?() -> Unit, ?() -> Unit, ?() -> Unit)
 
 ```cangjie
-public init(modalTransition!: ?ModalTransition = Option.None, onWillDismiss!: ?(DismissContentCoverAction) -> Unit = Option.None, transition!: ?TransitionEffect = Option.None, backgroundColor!: ?ResourceColor = Option.None, onAppear!: ?() -> Unit = Option.None, onDisappear!: ?() -> Unit = Option.None, onWillAppear!: ?() -> Unit = Option.None, onWillDisappear!: ?() -> Unit = Option.None)
+public init(
+    modalTransition!: ?ModalTransition = Option.None,
+    onWillDismiss!: ?(DismissContentCoverAction) -> Unit = Option.None,
+    transition!: ?TransitionEffect = Option.None,
+    backgroundColor!: ?ResourceColor = Option.None,
+    onAppear!: ?() -> Unit = Option.None,
+    onDisappear!: ?() -> Unit = Option.None,
+    onWillAppear!: ?() -> Unit = Option.None,
+    onWillDisappear!: ?() -> Unit = Option.None
+)
 ```
 
 **功能：** 构造一个ContentCoverOptions类型的对象。
@@ -5023,11 +5159,11 @@ public init(modalTransition!: ?ModalTransition = Option.None, onWillDismiss!: ?(
 |modalTransition|?[ModalTransition](./cj-common-types.md#enum-modaltransition)|否|Option.None|**命名参数。** 全屏模态页面的转场方式。|
 |onWillDismiss|?(([DismissContentCoverAction](#class-dismisscontentcoveraction)) -> Unit)|否|Option.None|**命名参数。** 内容覆盖交互式关闭时的回调函数。|
 |transition|?[TransitionEffect](./cj-animation-transition.md#class-transitioneffect)|否|Option.None|**命名参数。** 全屏模态页面交互式关闭回调函数。|
-|backgroundColor|Option<[ResourceColor](./cj-common-types.md#interface-resourcecolor)>|否|Option.None|**命名参数。** sheet的背景色。默认值：**Color.White**。|
-|onAppear|Option\<() -> Unit>|否|Option.None|**命名参数。** 全模态页面显示（动画结束后）回调函数。|
-|onDisappear|Option\<() -> Unit>|否|Option.None|**命名参数。** 全模态页面回退（动画结束后）回调函数。|
-|onWillAppear|Option\<() -> Unit>|否|Option.None|**命名参数。** 全模态页面显示（动画开始前）回调函数。|
-|onWillDisappear|Option\<() -> Unit>|否|Option.None|**命名参数。** 全模态页面回退（动画开始前）回调函数。|
+|backgroundColor|?[ResourceColor](./cj-common-types.md#interface-resourcecolor)|否|Option.None|**命名参数。** sheet的背景色。默认值：**Color.White**。|
+|onAppear|?() -> Unit|否|Option.None|**命名参数。** 全模态页面显示（动画结束后）回调函数。|
+|onDisappear|?() -> Unit|否|Option.None|**命名参数。** 全模态页面回退（动画结束后）回调函数。|
+|onWillAppear|?() -> Unit|否|Option.None|**命名参数。** 全模态页面显示（动画开始前）回调函数。|
+|onWillDisappear|?() -> Unit|否|Option.None|**命名参数。** 全模态页面回退（动画开始前）回调函数。|
 
 ## class SheetDismiss
 
@@ -5241,7 +5377,23 @@ public class ContextMenuOptions {
     public var transition: ?TransitionEffect
     public var borderRadius: ?BorderRadiuses = None
     public var layoutRegionMargin: ?Margin = None
-    public init(offset!: ?Position = None, placement!: Option<Placement> = Option.None, enableArrow!: ?Bool = None, arrowOffset!: ?Length = None, preview!: Option<() -> Unit> = Option.None, previewAnimationOptions!: ?ContextMenuAnimationOptions = None, onAppear!: ?() -> Unit = None, onDisappear!: ?() -> Unit = None, aboutToAppear!: ?() -> Unit = None, aboutToDisappear!: ?() -> Unit = None, backgroundColor!: ?ResourceColor = None, backgroundBlurStyle!: ?BlurStyle = Option.None, transition!: ?TransitionEffect = None, borderRadius!: ?BorderRadiuses = None, layoutRegionMargin!: ?Margin = None)
+    public init(
+        offset!: ?Position = None,
+        placement!: Option<Placement> = Option.None,
+        enableArrow!: ?Bool = None,
+        arrowOffset!: ?Length = None,
+        preview!: Option<() -> Unit> = Option.None,
+        previewAnimationOptions!: ?ContextMenuAnimationOptions = None,
+        onAppear!: ?() -> Unit = None,
+        onDisappear!: ?() -> Unit = None,
+        aboutToAppear!: ?() -> Unit = None,
+        aboutToDisappear!: ?() -> Unit = None,
+        backgroundColor!: ?ResourceColor = None,
+        backgroundBlurStyle!: ?BlurStyle = Option.None,
+        transition!: ?TransitionEffect = None,
+        borderRadius!: ?BorderRadiuses = None,
+        layoutRegionMargin!: ?Margin = None
+    )
 }
 ```
 
@@ -5459,10 +5611,26 @@ public var transition: ?TransitionEffect
 
 **起始版本：** 22
 
-### init(?Position, Option\<Placement>, ?Bool, ?Length, Option\<() -> Unit>, ?ContextMenuAnimationOptions, ?() -> Unit, ?() -> Unit, ?() -> Unit, ?() -> Unit, ?ResourceColor, Option\<BlurStyle>, ?TransitionEffect, ?BorderRadiuses, ?Margin)
+### init(?Position, Option\<Placement>, ?Bool, ?Length, Option\<() -> Unit>, ?ContextMenuAnimationOptions, ?() -> Unit, ?() -> Unit, ?() -> Unit, ?() -> Unit, ?ResourceColor, ?BlurStyle, ?TransitionEffect, ?BorderRadiuses, ?Margin)
 
 ```cangjie
-public init(offset!: ?Position = None, placement!: Option<Placement> = Option.None, enableArrow!: ?Bool = None, arrowOffset!: ?Length = None, preview!: Option<() -> Unit> = Option.None, previewAnimationOptions!: ?ContextMenuAnimationOptions = None, onAppear!: ?() -> Unit = None, onDisappear!: ?() -> Unit = None, aboutToAppear!: ?() -> Unit = None, aboutToDisappear!: ?() -> Unit = None, backgroundColor!: ?ResourceColor = None, backgroundBlurStyle!: ?BlurStyle = Option.None, transition!: ?TransitionEffect = None, borderRadius!: ?BorderRadiuses = None, layoutRegionMargin!: ?Margin = None)
+public init(
+    offset!: ?Position = None,
+    placement!: Option<Placement> = Option.None,
+    enableArrow!: ?Bool = None,
+    arrowOffset!: ?Length = None,
+    preview!: Option<() -> Unit> = Option.None,
+    previewAnimationOptions!: ?ContextMenuAnimationOptions = None,
+    onAppear!: ?() -> Unit = None,
+    onDisappear!: ?() -> Unit = None,
+    aboutToAppear!: ?() -> Unit = None,
+    aboutToDisappear!: ?() -> Unit = None,
+    backgroundColor!: ?ResourceColor = None,
+    backgroundBlurStyle!: ?BlurStyle = Option.None,
+    transition!: ?TransitionEffect = None,
+    borderRadius!: ?BorderRadiuses = None,
+    layoutRegionMargin!: ?Margin = None
+)
 ```
 
 **功能：** 创建ContextMenuOptions对象。
@@ -5486,7 +5654,7 @@ public init(offset!: ?Position = None, placement!: Option<Placement> = Option.No
 |aboutToAppear|?() -> Unit|否|None| **命名参数。** 菜单显示动效前的事件回调。|
 |aboutToDisappear|?() -> Unit|否|None| **命名参数。** 菜单退出动效前的事件回调。|
 |backgroundColor|?[ResourceColor](./cj-common-types.md#interface-resourcecolor)|否|None|**命名参数。** 弹窗背板颜色。初始值为Color.Transparent。|
-|backgroundBlurStyle|Option\<[BlurStyle](#enum-blurstyle)>|否|Option.None| **命名参数。** 弹窗背板模糊材质。|
+|backgroundBlurStyle|?[BlurStyle](#enum-blurstyle)|否|Option.None| **命名参数。** 弹窗背板模糊材质。|
 |transition|?[TransitionEffect](./cj-animation-transition.md#class-transitioneffect)|否|None| **命名参数。** 菜单显示和退出的过渡效果。<br> **说明：**<br> 菜单退出动效过程中，进行横竖屏切换，菜单会避让。二级菜单不继承自定义动效。弹出过程可以点击二级菜单，退出动效执行过程不允许点击二级菜单。<br> 详细描述见TransitionEffect对象说明。|
 |borderRadius|?[BorderRadiuses](#class-borderradiuses)|否|None| **命名参数。** 设置菜单显示区域的圆角。|
 |layoutRegionMargin|?[Margin](#class-margin)|否|None| **命名参数。** 设置菜单的布局区域的边距。|
@@ -5919,6 +6087,10 @@ public operator func !=(other: ModalTransition): Bool
 ```
 
 **功能：** 判断两个枚举值是否不相等。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
 
 **参数：**
 
@@ -6860,6 +7032,10 @@ public operator func !=(other: FunctionKey): Bool
 
 **功能：** 判断两个FunctionKey枚举是否不相等。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -6947,6 +7123,10 @@ public operator func !=(other: DataPanelType): Bool
 ```
 
 **功能：** 判断两个DataPanelType枚举是否不相等。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
 
 **参数：**
 
@@ -7061,6 +7241,10 @@ public operator func !=(other: ItemState): Bool
 ```
 
 **功能：** 判断两个ItemState枚举是否不相等。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
 
 **参数：**
 
@@ -7189,6 +7373,10 @@ public operator func !=(other: RefreshStatus): Bool
 
 **功能：** 判断两个RefreshStatus枚举是否不相等。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -7302,6 +7490,10 @@ public operator func !=(other: SeekMode): Bool
 ```
 
 **功能：** 判断两个SeekMode枚举是否不相等。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
 
 **参数：**
 
@@ -7430,6 +7622,10 @@ public operator func !=(other: PlaybackSpeed): Bool
 
 **功能：** 判断两个PlaybackSpeed枚举是否不相等。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -7530,6 +7726,10 @@ public operator func !=(other: SelectStatus): Bool
 ```
 
 **功能：** 判断两个SelectStatus枚举是否不相等。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
 
 **参数：**
 
@@ -7645,6 +7845,10 @@ public operator func !=(other: AnimationStatus): Bool
 
 **功能：** 判断两个AnimationStatus枚举是否不相等。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -7759,6 +7963,10 @@ public operator func !=(other: FillMode): Bool
 
 **功能：** 判断两个FillMode枚举是否不相等。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -7847,6 +8055,10 @@ public operator func !=(other: SwipeEdgeEffect): Bool
 
 **功能：** 判断两个SwipeEdgeEffect枚举是否不相等。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -7934,6 +8146,10 @@ public operator func !=(other: SharedTransitionEffectType): Bool
 ```
 
 **功能：** 判断两个SharedTransitionEffectType枚举是否不相等。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
 
 **参数：**
 
@@ -8036,6 +8252,10 @@ public operator func !=(other: ScrollState): Bool
 
 **功能：** 判断两个ScrollState枚举是否不相等。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -8137,6 +8357,10 @@ public operator func !=(other: ImageSmoothingQuality): Bool
 
 **功能：** 判断两个ImageSmoothingQuality枚举是否不相等。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -8224,6 +8448,10 @@ public operator func !=(other: GestureMask): Bool
 ```
 
 **功能：** 判断两个GestureMask枚举是否不相等。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
 
 **参数：**
 
@@ -8325,6 +8553,10 @@ public operator func !=(other: SwipeDirection): Bool
 ```
 
 **功能：** 判断两个SwipeDirection枚举是否不相等。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
 
 **参数：**
 
@@ -8505,6 +8737,10 @@ public operator func !=(other: PanDirection): Bool
 
 **功能：** 判断两个PanDirection枚举是否不相等。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -8525,6 +8761,10 @@ public operator func |(right: PanDirection): PanDirection
 
 **功能：** 对PanDirection执行逻辑或(|)运算。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -8544,6 +8784,10 @@ public operator func &(right: PanDirection): PanDirection
 ```
 
 **功能：** 对PanDirection执行逻辑与(&)运算。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
 
 **参数：**
 
@@ -8646,6 +8890,10 @@ public operator func !=(other: GestureMode): Bool
 
 **功能：** 判断两个GestureMode枚举是否不相等。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -8734,6 +8982,10 @@ public operator func !=(other: Axis): Bool
 
 **功能：** 判断两个Axis枚举是否不相等。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -8821,6 +9073,10 @@ public operator func !=(other: ResponseType): Bool
 ```
 
 **功能：** 判断两个ResponseType枚举是否不相等。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
 
 **参数：**
 
@@ -8922,6 +9178,10 @@ public operator func !=(other: CopyOptions): Bool
 ```
 
 **功能：** 判断两个CopyOptions枚举是否不相等。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
 
 **参数：**
 
@@ -9050,6 +9310,10 @@ public operator func !=(other: TouchType): Bool
 
 **功能：** 判断两个TouchType枚举是否不相等。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -9151,6 +9415,10 @@ public operator func !=(other: SideBarContainerType): Bool
 
 **功能：** 判断两个SideBarContainerType枚举是否不相等。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -9238,6 +9506,10 @@ public operator func !=(other: SideBarPosition): Bool
 ```
 
 **功能：** 判断两个SideBarPosition枚举是否不相等。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
 
 **参数：**
 
@@ -9339,6 +9611,10 @@ public operator func !=(other: SourceType): Bool
 ```
 
 **功能：** 判断两个SourceType枚举是否不相等。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
 
 **参数：**
 
@@ -9480,6 +9756,10 @@ public operator func !=(other: MouseButton): Bool
 
 **功能：** 判断两个MouseButton枚举是否不相等。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -9607,6 +9887,10 @@ public operator func !=(other: MouseAction): Bool
 
 **功能：** 判断两个MouseAction枚举是否不相等。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -9694,6 +9978,10 @@ public operator func !=(other: SliderStyle): Bool
 ```
 
 **功能：** 判断两个SliderStyle枚举是否不相等。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
 
 **参数：**
 
@@ -9809,6 +10097,10 @@ public operator func !=(other: ImageInterpolation): Bool
 
 **功能：** 判断两个ImageInterpolation枚举是否不相等。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -9909,6 +10201,10 @@ public operator func !=(other: BarState): Bool
 ```
 
 **功能：** 判断两个BarState枚举是否不相等。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
 
 **参数：**
 
@@ -10011,6 +10307,10 @@ public operator func !=(other: Visibility): Bool
 
 **功能：** 判断两个Visibility枚举是否不相等。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -10111,6 +10411,10 @@ public operator func !=(other: LineCapStyle): Bool
 ```
 
 **功能：** 判断两个LineCapStyle枚举是否不相等。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
 
 **参数：**
 
@@ -10239,6 +10543,10 @@ public operator func !=(other: ProgressType): Bool
 
 **功能：** 判断两个ProgressType枚举是否不相等。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -10326,6 +10634,10 @@ public operator func !=(other: ImageRenderMode): Bool
 ```
 
 **功能：** 判断两个ImageRenderMode枚举是否不相等。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
 
 **参数：**
 
@@ -10428,6 +10740,10 @@ public operator func !=(other: NavigationType): Bool
 
 **功能：** 判断两个NavigationType枚举是否不相等。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -10502,6 +10818,10 @@ public operator func !=(other: SwiperDisplayMode): Bool
 ```
 
 **功能：** 判断两个SwiperDisplayMode枚举是否不相等。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
 
 **参数：**
 
@@ -10734,6 +11054,10 @@ public operator func !=(other: Curve): Bool
 
 **功能：** 判断两个Curve枚举是否不相等。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -10834,6 +11158,10 @@ public operator func !=(other: EdgeEffect): Bool
 ```
 
 **功能：** 判断两个EdgeEffect枚举是否不相等。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
 
 **参数：**
 
@@ -10948,6 +11276,10 @@ public operator func !=(other: Edge): Bool
 ```
 
 **功能：** 判断两个Edge枚举是否不相等。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
 
 **参数：**
 
@@ -11180,6 +11512,10 @@ public operator func !=(other: Placement): Bool
 
 **功能：** 判断两个Placement枚举是否不相等。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -11281,6 +11617,10 @@ public operator func !=(other: LineJoinStyle): Bool
 
 **功能：** 判断两个LineJoinStyle枚举是否不相等。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -11368,6 +11708,10 @@ public operator func !=(other: BarPosition): Bool
 ```
 
 **功能：** 判断两个BarPosition枚举是否不相等。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
 
 **参数：**
 
@@ -11457,6 +11801,10 @@ public operator func !=(other: BarMode): Bool
 
 **功能：** 判断两个BarMode枚举是否不相等。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -11544,6 +11892,10 @@ public operator func !=(other: ShadowType): Bool
 ```
 
 **功能：** 判断两个ShadowType枚举是否不相等。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
 
 **参数：**
 
@@ -11659,6 +12011,10 @@ public operator func !=(other: TextDecorationType): Bool
 
 **功能：** 判断两个TextDecorationType枚举是否不相等。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -11759,6 +12115,10 @@ public operator func !=(other: TextAlign): Bool
 ```
 
 **功能：** 判断两个TextAlign枚举是否不相等。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
 
 **参数：**
 
@@ -11861,6 +12221,10 @@ public operator func !=(other: TextOverflow): Bool
 
 **功能：** 判断两个TextOverflow枚举是否不相等。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -11961,6 +12325,10 @@ public operator func !=(other: WordBreak): Bool
 ```
 
 **功能：** 判断两个WordBreak枚举是否不相等。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
 
 **参数：**
 
@@ -12076,6 +12444,10 @@ public operator func !=(other: ImageRepeat): Bool
 
 **功能：** 判断两个ImageRepeat枚举是否不相等。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -12176,6 +12548,10 @@ public operator func !=(other: ImageSize): Bool
 ```
 
 **功能：** 判断两个ImageSize枚举是否不相等。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
 
 **参数：**
 
@@ -12317,6 +12693,10 @@ public operator func !=(other: ShadowStyle): Bool
 
 **功能：** 判断两个ShadowStyle枚举是否不相等。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -12418,6 +12798,10 @@ public operator func !=(other: TextCase): Bool
 
 **功能：** 判断两个TextCase枚举是否不相等。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -12518,6 +12902,10 @@ public operator func !=(other: BorderStyle): Bool
 ```
 
 **功能：** 判断两个BorderStyle枚举是否不相等。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
 
 **参数：**
 
@@ -12659,6 +13047,10 @@ public operator func !=(other: ImageFit): Bool
 
 **功能：** 判断两个ImageFit枚举是否不相等。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -12760,6 +13152,10 @@ public operator func !=(other: Direction): Bool
 
 **功能：** 判断两个Direction枚举是否不相等。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -12848,6 +13244,10 @@ public operator func !=(other: ScrollDirection): Bool
 
 **功能：** 判断两个ScrollDirection枚举是否不相等。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -12935,6 +13335,10 @@ public operator func !=(other: ScrollBarDirection): Bool
 ```
 
 **功能：** 判断两个ScrollBarDirection枚举是否不相等。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
 
 **参数：**
 
@@ -13050,6 +13454,10 @@ public operator func !=(other: SliderChangeMode): Bool
 
 **功能：** 判断两个SliderChangeMode枚举是否不相等。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -13137,6 +13545,10 @@ public operator func !=(other: IndexerAlign): Bool
 ```
 
 **功能：** 判断两个IndexerAlign枚举是否不相等。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
 
 **参数：**
 
@@ -13264,6 +13676,10 @@ public operator func !=(other: InputType): Bool
 ```
 
 **功能：** 判断两个InputType枚举是否不相等。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
 
 **参数：**
 
@@ -13418,6 +13834,10 @@ public operator func !=(other: EnterKeyType): Bool
 
 **功能：** 判断两个EnterKeyType枚举是否不相等。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -13532,6 +13952,10 @@ public operator func !=(other: FlexDirection): Bool
 
 **功能：** 判断两个FlexDirection枚举是否不相等。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -13632,6 +14056,10 @@ public operator func !=(other: FlexWrap): Bool
 ```
 
 **功能：** 判断两个FlexWrap枚举是否不相等。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
 
 **参数：**
 
@@ -13773,6 +14201,10 @@ public operator func !=(other: FlexAlign): Bool
 
 **功能：** 判断两个FlexAlign枚举是否不相等。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -13913,6 +14345,10 @@ public operator func !=(other: ItemAlign): Bool
 
 **功能：** 判断两个ItemAlign枚举是否不相等。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -14020,6 +14456,10 @@ public operator func !=(other: ToggleType): Bool
 
 **功能：** 判断两个ToggleType枚举是否不相等。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -14107,6 +14547,10 @@ public operator func !=(other: FontStyle): Bool
 ```
 
 **功能：** 判断两个FontStyle枚举是否不相等。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
 
 **参数：**
 
@@ -14287,6 +14731,10 @@ public operator func !=(other: Alignment): Bool
 
 **功能：** 判断两个Alignment枚举是否不相等。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -14388,6 +14836,10 @@ public operator func !=(other: HorizontalAlign): Bool
 
 **功能：** 判断两个HorizontalAlign枚举是否不相等。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -14488,6 +14940,10 @@ public operator func !=(other: VerticalAlign): Bool
 ```
 
 **功能：** 判断两个VerticalAlign枚举是否不相等。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
 
 **参数：**
 
@@ -14746,6 +15202,10 @@ public operator func !=(other: FontWeight): Bool
 
 **功能：** 判断两个FontWeight枚举是否不相等。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -14846,6 +15306,10 @@ public operator func !=(other: ListItemAlign): Bool
 ```
 
 **功能：** 判断两个ListItemAlign枚举是否不相等。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
 
 **参数：**
 
@@ -14948,6 +15412,10 @@ public operator func !=(other: StickyStyle): Bool
 
 **功能：** 判断两个StickyStyle枚举是否不相等。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -15048,6 +15516,10 @@ public operator func !=(other: RichEditorSpanType): Bool
 ```
 
 **功能：** 判断两个RichEditorSpanType枚举是否不相等。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
 
 **参数：**
 
@@ -15163,6 +15635,10 @@ public operator func !=(other: ImageSpanAlignment): Bool
 
 **功能：** 判断两个ImageSpanAlignment枚举是否不相等。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -15250,6 +15726,10 @@ public operator func !=(other: RichEditorDeleteDirection): Bool
 ```
 
 **功能：** 判断两个RichEditorDeleteDirection枚举是否不相等。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
 
 **参数：**
 
@@ -15351,6 +15831,10 @@ public operator func !=(other: MixedMode): Bool
 ```
 
 **功能：** 判断两个MixedMode枚举是否不相等。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
 
 **参数：**
 
@@ -15465,6 +15949,10 @@ public operator func !=(other: PlayMode): Bool
 ```
 
 **功能：** 判断两个PlayMode枚举是否不相等。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
 
 **参数：**
 
@@ -15644,6 +16132,10 @@ public operator func !=(other: GradientDirection): Bool
 ```
 
 **功能：** 判断两个GradientDirection枚举是否不相等。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
 
 **参数：**
 
@@ -15915,6 +16407,10 @@ public operator func !=(other: RenderFit): Bool
 
 **功能：** 判断两个RenderFit枚举是否不相等。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -16107,6 +16603,10 @@ public operator func !=(other: DialogAlignment): Bool
 
 **功能：** 判断两个DialogAlignment枚举是否不相等。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -16221,6 +16721,10 @@ public operator func !=(other: BarrierDirection): Bool
 
 **功能：** 判断两个BarrierDirection枚举是否不相等。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -16321,6 +16825,10 @@ public operator func !=(other: SafeAreaType): Bool
 ```
 
 **功能：** 判断两个SafeAreaType枚举是否不相等。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
 
 **参数：**
 
@@ -16436,6 +16944,10 @@ public operator func !=(other: SafeAreaEdge): Bool
 
 **功能：** 判断两个SafeAreaEdge枚举是否不相等。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -16510,6 +17022,10 @@ public operator func !=(other: ColoringStrategy): Bool
 ```
 
 **功能：** 判断两个ColoringStrategy枚举是否不相等。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
 
 **参数：**
 
@@ -16625,6 +17141,10 @@ public operator func !=(other: NestedScrollMode): Bool
 
 **功能：** 判断两个NestedScrollMode枚举是否不相等。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -16726,6 +17246,10 @@ public operator func !=(other: ThemeColorMode): Bool
 
 **功能：** 判断两个ThemeColorMode枚举是否不相等。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -16813,6 +17337,10 @@ public operator func !=(other: AdaptiveColor): Bool
 ```
 
 **功能：** 判断两个AdaptiveColor枚举是否不相等。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
 
 **参数：**
 
@@ -16902,6 +17430,10 @@ public operator func !=(other: ControlSize): Bool
 
 **功能：** 判断两个ControlSize枚举是否不相等。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -16990,6 +17522,10 @@ public operator func !=(other: OptionWidthMode): Bool
 
 **功能：** 判断两个OptionWidthMode枚举是否不相等。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -17077,6 +17613,10 @@ public operator func !=(other: ArrowPosition): Bool
 ```
 
 **功能：** 判断两个ArrowPosition枚举是否不相等。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
 
 **参数：**
 
@@ -17179,6 +17719,10 @@ public operator func !=(other: MenuAlignType): Bool
 
 **功能：** 判断两个MenuAlignType枚举是否不相等。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -17279,6 +17823,10 @@ public operator func !=(other: WebDarkMode): Bool
 ```
 
 **功能：** 判断两个WebDarkMode枚举是否不相等。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
 
 **参数：**
 
@@ -17420,6 +17968,10 @@ public operator func !=(other: SourceTool): Bool
 
 **功能：** 判断两个SourceTool枚举是否不相等。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -17559,6 +18111,10 @@ public operator func !=(other: Repetition): Bool
 ```
 
 **功能：** 判断两个Repetition枚举是否不相等。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
 
 **参数：**
 
@@ -17725,6 +18281,10 @@ public operator func !=(other: ScrollSource): Bool
 ```
 
 **功能：** 判断两个ScrollSource枚举是否不相等。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
 
 **参数：**
 
@@ -18061,6 +18621,10 @@ public operator func !=(other: ContentType): Bool
 
 **功能：** 判断两个ContentType枚举是否不相等。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -18161,6 +18725,10 @@ public operator func !=(other: MenuPolicy): Bool
 ```
 
 **功能：** 判断两个MenuPolicy枚举是否不相等。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
 
 **参数：**
 
@@ -18289,6 +18857,10 @@ public operator func !=(other: TextDecorationStyle): Bool
 
 **功能：** 判断两个TextDecorationStyle枚举是否不相等。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -18390,6 +18962,10 @@ public operator func !=(other: LineBreakStrategy): Bool
 
 **功能：** 判断两个LineBreakStrategy枚举是否不相等。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -18481,6 +19057,10 @@ public operator func !=(other: TextContentStyle): Bool
 
 **功能：** 判断两个TextContentStyle枚举是否不相等。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -18568,6 +19148,10 @@ public operator func !=(other: CheckBoxShape): Bool
 ```
 
 **功能：** 判断两个CheckBoxShape枚举是否不相等。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
 
 **参数：**
 
@@ -18670,6 +19254,10 @@ public operator func !=(other: TextHeightAdaptivePolicy): Bool
 
 **功能：** 判断两个TextHeightAdaptivePolicy枚举是否不相等。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -18771,6 +19359,10 @@ public operator func !=(other: ArrowPointPosition): Bool
 
 **功能：** 判断两个ArrowPointPosition枚举是否不相等。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -18858,6 +19450,10 @@ public operator func !=(other: TitleHeight): Bool
 ```
 
 **功能：** 判断两个TitleHeight枚举是否不相等。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
 
 **参数：**
 
@@ -18947,6 +19543,10 @@ public operator func !=(other: DialogButtonStyle): Bool
 
 **功能：** 判断两个DialogButtonStyle枚举是否不相等。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -19034,6 +19634,10 @@ public operator func !=(other: LengthMetricsUnit): Bool
 ```
 
 **功能：** 判断两个LengthMetricsUnit枚举是否不相等。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
 
 **参数：**
 
@@ -19136,6 +19740,10 @@ public operator func !=(other: CanvasDirection): Bool
 
 **功能：** 判断两个CanvasDirection枚举是否不相等。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -19224,6 +19832,10 @@ public operator func !=(other: CanvasFillRule): Bool
 
 **功能：** 判断两个CanvasFillRule枚举是否不相等。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -19311,6 +19923,10 @@ public operator func !=(other: FinishCallbackType): Bool
 ```
 
 **功能：** 判断两个FinishCallbackType枚举是否不相等。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
 
 **参数：**
 
@@ -19543,6 +20159,10 @@ public operator func !=(other: BlurStyle): Bool
 
 **功能：** 判断两个BlurStyle枚举是否不相等。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -19657,6 +20277,10 @@ public operator func !=(other: DismissReason): Bool
 
 **功能：** 判断两个DismissReason枚举是否不相等。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -19744,6 +20368,10 @@ public operator func !=(other: TextInputStyle): Bool
 ```
 
 **功能：** 判断两个TextInputStyle枚举是否不相等。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
 
 **参数：**
 
@@ -19885,6 +20513,10 @@ public operator func !=(other: TextAreaType): Bool
 
 **功能：** 判断两个TextAreaType枚举是否不相等。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -19937,7 +20569,7 @@ public type TransitionFinishCallback = (Bool) -> Unit
 
 **类型：** (Bool) -> Unit
 
-## type ItemGeneratorFunc
+## type ItemGeneratorFunc\<T>
 
 ```cangjie
 public type ItemGeneratorFunc<T> = (T, Int64) -> Unit
@@ -19947,7 +20579,7 @@ public type ItemGeneratorFunc<T> = (T, Int64) -> Unit
 
 **类型：** (T, Int64) -> Unit
 
-## type KeyGeneratorFunc
+## type KeyGeneratorFunc\<T>
 
 ```cangjie
 public type KeyGeneratorFunc<T> = (T, Int64) -> String

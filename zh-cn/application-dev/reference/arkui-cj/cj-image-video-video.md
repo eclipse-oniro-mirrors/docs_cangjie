@@ -328,7 +328,7 @@ public class FullscreenInfo {
 
 **起始版本：** 22
 
-#### var fullscreen: ?Bool
+#### var fullscreen
 
 **功能：** 当前视频是否进入全屏播放状态。
 
@@ -348,7 +348,7 @@ public class PlaybackInfo {
 
 **起始版本：** 22
 
-#### var time: ?Int32
+#### var time
 
 **功能：** 当前视频播放的进度。单位：秒。
 
@@ -368,7 +368,7 @@ public class PreparedInfo {
 
 **起始版本：** 22
 
-#### var duration: ?Int32
+#### var duration
 
 **功能：** 当前视频的时长。单位：秒。
 

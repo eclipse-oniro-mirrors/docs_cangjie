@@ -391,7 +391,7 @@ public var locale: ?String
 
 **起始版本：** 22
 
-#### var localeMatcher: ?String
+#### var localeMatcher
 
 ```cangjie
 public var localeMatcher
@@ -455,7 +455,7 @@ public var numberingSystem: ?String
 
 **起始版本：** 22
 
-#### var second: ?String
+#### var second
 
 ```cangjie
 public var second
@@ -551,7 +551,7 @@ public var year: ?String
 
 **起始版本：** 22
 
-#### init(?String, ?String, ?String, ?String, ?String, ?String, ?Bool, ?String, ?String, ?String, ?String, ?String, ?String, ?String, ?String, ?String, ?String)
+#### init(?String, ?String, ?String, ?String, ?String, ?String, ?Bool, ?String, ?String, ?String, ?String, ?String, ?String, ?String, ?String, ?String, ?String, ?String, ?String)
 
 ```cangjie
 public init(locale!: ?String = None, dateStyle!: ?String = None, timeStyle!: ?String = None,

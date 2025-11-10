@@ -40,7 +40,7 @@ func width(value: Option<Length>): T
   | :---- | :--- |
   | 100001 | Internal error. |
 
-## func height(?Length)
+## func height(Option\<Length>)
 
 ```cangjie
 func height(value: Option<Length>): T

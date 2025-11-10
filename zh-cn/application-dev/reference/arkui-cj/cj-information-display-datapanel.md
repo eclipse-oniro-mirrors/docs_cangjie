@@ -285,7 +285,7 @@ public class LinearGradient {
 
 **起始版本：** 22
 
-#### init(Array\<ColorStop)
+#### init(Array\<ColorStop>)
 
 ```cangjie
 public init(colorStops: Array<ColorStop>)

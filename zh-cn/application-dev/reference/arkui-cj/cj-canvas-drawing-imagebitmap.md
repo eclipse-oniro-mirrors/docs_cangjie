@@ -70,12 +70,4 @@ public init(src: ?String)
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|src|?String|否|-|图像对象的路径。|
-
-## 示例代码
-
-```cangjie
-public class ImageBitmap {
-    public init(src: String)
-}
-```
+|src|?String|是|-|图像对象的路径。|

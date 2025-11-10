@@ -688,7 +688,7 @@ public var width: ?Length
 
 **起始版本：** 22
 
-### init(?ResourceStr, ?ResourceStr, ?ResourceStr, ?Bool, ?VoidCallback, ?DialogAlignment, ?Offset, ?UInt32, ?Rectangle, ?Bool, ?Bool, ?ResourceColor, ?BlurStyle, ?Callback\<DismissDialogAction, Unit>, ?BorderRadiuses, ?TransitionEffect, ?Length, ?Length, ?Length, ?ResourceColor, ?EdgeStyles, ?ShadowOptions, ?WordBreak)
+### init(?ResourceStr, ?ResourceStr, ?ResourceStr, ?Bool, ?VoidCallback, ?DialogAlignment, ?Offset, ?UInt32, ?Rectangle, ?Bool, ?Bool, ?ResourceColor, ?BlurStyle, ?Callback\<DismissDialogAction, Unit>, ?BorderRadiuses, ?TransitionEffect, ?Length, ?Length, ?Length, ?BorderColor, ?EdgeStyles, ?ShadowOptions, ?WordBreak)
 
 ```cangjie
 public init(
@@ -830,7 +830,7 @@ public var secondaryButton: ?AlertDialogButtonBaseOptions
 
 **起始版本：** 22
 
-### init(?ResourceStr, ?ResourceStr, ?ResourceStr, ?Bool, ?VoidCallback, ?DialogAlignment, ?Offset, ?UInt32, ?Rectangle, ?Bool, ?Bool, ?ResourceColor, ?BlurStyle, ?Callback\<DismissDialogAction, Unit>, ?BorderRadiuses, ?TransitionEffect, ?Length, ?Length, ?Length, ?ResourceColor, ?EdgeStyles, ?ShadowOptions, ?WordBreak, ?AlertDialogButtonBaseOptions, ?AlertDialogButtonBaseOptions)
+### init(?ResourceStr, ?ResourceStr, ?ResourceStr, ?Bool, ?VoidCallback, ?DialogAlignment, ?Offset, ?UInt32, ?Rectangle, ?Bool, ?Bool, ?ResourceColor, ?BlurStyle, ?Callback\<DismissDialogAction, Unit>, ?BorderRadiuses, ?TransitionEffect, ?Length, ?Length, ?Length, ?BorderColor, ?EdgeStyles, ?ShadowOptions, ?WordBreak, ?AlertDialogButtonBaseOptions, ?AlertDialogButtonBaseOptions)
 
 ```cangjie
 public init(
@@ -958,7 +958,7 @@ public var confirm: ?AlertDialogButtonBaseOptions
 
 **起始版本：** 22
 
-### init(?ResourceStr, ?ResourceStr, ?ResourceStr, ?Bool, ?VoidCallback, ?DialogAlignment, ?Offset, ?UInt32, ?Rectangle, ?Bool, ?Bool, ?ResourceColor, ?BlurStyle, ?Callback\<DismissDialogAction, Unit>, ?BorderRadiuses, ?TransitionEffect, ?Length, ?Length, ?Length, ?ResourceColor, ?EdgeStyles, ?ShadowOptions, ?WordBreak, ?AlertDialogButtonBaseOptions)
+### init(?ResourceStr, ?ResourceStr, ?ResourceStr, ?Bool, ?VoidCallback, ?DialogAlignment, ?Offset, ?UInt32, ?Rectangle, ?Bool, ?Bool, ?ResourceColor, ?BlurStyle, ?Callback\<DismissDialogAction, Unit>, ?BorderRadiuses, ?TransitionEffect, ?Length, ?Length, ?Length, ?BorderColor, ?EdgeStyles, ?ShadowOptions, ?WordBreak, ?AlertDialogButtonBaseOptions)
 
 ```cangjie
 public init(
@@ -1102,7 +1102,7 @@ public var buttons: ?Array<AlertDialogButtonOptions>
 
 **起始版本：** 22
 
-### init(?ResourceStr, ?ResourceStr, ?ResourceStr, ?Bool, ?VoidCallback, ?DialogAlignment, ?Offset, ?UInt32, ?Rectangle, ?Bool, ?Bool, ?ResourceColor, ?BlurStyle, ?Callback\<DismissDialogAction, Unit>, ?BorderRadiuses, ?TransitionEffect, ?Length, ?Length, ?Length, ?ResourceColor, ?EdgeStyles, ?ShadowOptions, ?WordBreak, ?Array\<AlertDialogButtonOptions>, ?DialogButtonDirection)
+### init(?ResourceStr, ?ResourceStr, ?ResourceStr, ?Bool, ?VoidCallback, ?DialogAlignment, ?Offset, ?UInt32, ?Rectangle, ?Bool, ?Bool, ?ResourceColor, ?BlurStyle, ?Callback\<DismissDialogAction, Unit>, ?BorderRadiuses, ?TransitionEffect, ?Length, ?Length, ?Length, ?BorderColor, ?EdgeStyles, ?ShadowOptions, ?WordBreak, ?Array\<AlertDialogButtonOptions>, ?DialogButtonDirection)
 
 ```cangjie
 public init(
@@ -1217,7 +1217,7 @@ public init(color!: ?ResourceColor = Color.Black)
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|title|?[ResourceColor](./cj-common-types.md#interface-resourcecolor)|否|Color.Black| **命名参数。** 边框颜色。初始值: Color.Black。|
+|color|?[ResourceColor](./cj-common-types.md#interface-resourcecolor)|否|Color.Black| **命名参数。** 边框颜色。初始值: Color.Black。|
 
 ## enum DialogButtonDirection
 

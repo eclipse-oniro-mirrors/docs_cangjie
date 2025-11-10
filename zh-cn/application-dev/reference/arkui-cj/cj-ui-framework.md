@@ -127,7 +127,7 @@ public func build(): Unit
 ### func purgeVariableDependenciesOnElmtId(Int64)
 
 ```cangjie
-public func purgeVariableDependenciesOnElmtId(rmElmtId: Int64): Unit
+public func purgeVariableDependenciesOnElmtId(_: Int64): Unit
 ```
 
 **功能：** UI框架使用。
@@ -140,7 +140,7 @@ public func purgeVariableDependenciesOnElmtId(rmElmtId: Int64): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|rmElmtId|Int64|是|-|-|
+|_|Int64|是|-|-|
 
 ### func forceCompleteRerender(Bool)
 
