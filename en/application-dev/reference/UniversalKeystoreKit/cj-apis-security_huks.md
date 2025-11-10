@@ -738,10 +738,10 @@ try {
 }
 ```
 
-## func isKeyItemExist(String, HuksOptions)
+## func hasKeyItemExist(String, HuksOptions)
 
 ```cangjie
-public func isKeyItemExist(keyAlias: String, options: HuksOptions): Bool
+public func hasKeyItemExist(keyAlias: String, options: HuksOptions): Bool
 ```
 
 **Function:** Check if a key exists.
@@ -807,9 +807,9 @@ try {
     }
 
     let keyAlias = "KEY_ALIAS" // Key alias specified during key generation, used for encryption, decryption, and key deletion
-    isKeyItemExist(keyAlias, HuksOptions()) // false
+    hasKeyItemExist(keyAlias, HuksOptions()) // false
     generateSimpleKey(keyAlias)
-    isKeyItemExist(keyAlias, HuksOptions()) // true
+    hasKeyItemExist(keyAlias, HuksOptions()) // true
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -1692,10 +1692,10 @@ public static const HUKS_KEY_FLAG_IMPORT_KEY: UInt32 = 1
 
 **System Capability:** SystemCapability.Security.Huks.Core
 
-**Since:** 22## class HuksKeyGenerateType
+**Since:** 22## class HuksKeyGeneraterationType
 
 ```cangjie
-public class HuksKeyGenerateType {
+public class HuksKeyGeneraterationType {
     public static const HUKS_KEY_GENERATE_TYPE_DEFAULT: UInt32 = 0
     public static const HUKS_KEY_GENERATE_TYPE_DERIVE: UInt32 = 1
     public static const HUKS_KEY_GENERATE_TYPE_AGREE: UInt32 = 2
@@ -2525,7 +2525,7 @@ public static const HUKS_RSA_PSS_SALT_LEN_MAX: UInt32 = 1
 
 ```cangjie
 public class HuksSecureSignType {
-    public static const HUKS_SECURE_SIGN_WITH_AUTHINFO: UInt32 = 1
+    public static const HUKS_SECURE_SIGN_WITH_AUTH_INFO: UInt32 = 1
 }
 ```
 
@@ -2535,10 +2535,10 @@ public class HuksSecureSignType {
 
 **Since:** 22
 
-### static const HUKS_SECURE_SIGN_WITH_AUTHINFO
+### static const HUKS_SECURE_SIGN_WITH_AUTH_INFO
 
 ```cangjie
-public static const HUKS_SECURE_SIGN_WITH_AUTHINFO: UInt32 = 1
+public static const HUKS_SECURE_SIGN_WITH_AUTH_INFO: UInt32 = 1
 ```
 
 **Description:** Indicates the signature type carries authentication information. If this field is specified when generating or importing a key, authentication information will be added to the data to be signed before signing when using the key for signing.
@@ -2613,10 +2613,10 @@ public class HuksTag {
     public static const HUKS_TAG_INFO: UInt32 = HuksTagType.HUKS_TAG_TYPE_BYTES | 11
     public static const HUKS_TAG_SALT: UInt32 = HuksTagType.HUKS_TAG_TYPE_BYTES | 12
     public static const HUKS_TAG_ITERATION: UInt32 = HuksTagType.HUKS_TAG_TYPE_UINT | 14
-    public static const HUKS_TAG_KEY_GENERATE_TYPE: UInt32 = HuksTagType.HUKS_TAG_TYPE_UINT | 15
-    public static const HUKS_TAG_AGREE_ALG: UInt32 = HuksTagType.HUKS_TAG_TYPE_UINT | 19
+    public static const HUKS_TAG_KEY_GENERATION_TYPE: UInt32 = HuksTagType.HUKS_TAG_TYPE_UINT | 15
+    public static const HUKS_TAG_ALG_FOR_AGREEMENT: UInt32 = HuksTagType.HUKS_TAG_TYPE_UINT | 19
     public static const HUKS_TAG_AGREE_PUBLIC_KEY_IS_KEY_ALIAS: UInt32 = HuksTagType.HUKS_TAG_TYPE_BOOL | 20
-    public static const HUKS_TAG_AGREE_PRIVATE_KEY_ALIAS: UInt32 = HuksTagType.HUKS_TAG_TYPE_BYTES | 21
+    public static const HUKS_TAG_PRIVATE_KEY_ALIAS_FOR_AGREEMENT: UInt32 = HuksTagType.HUKS_TAG_TYPE_BYTES | 21
     public static const HUKS_TAG_AGREE_PUBLIC_KEY: UInt32 = HuksTagType.HUKS_TAG_TYPE_BYTES | 22
     public static const HUKS_TAG_KEY_ALIAS: UInt32 = HuksTagType.HUKS_TAG_TYPE_BYTES | 23
     public static const HUKS_TAG_DERIVE_KEY_SIZE: UInt32 = HuksTagType.HUKS_TAG_TYPE_UINT | 24
@@ -2667,10 +2667,10 @@ public static const HUKS_TAG_AE_TAG: UInt32 = HuksTagType.HUKS_TAG_TYPE_BYTES | 
 
 **Since:** 22
 
-### static const HUKS_TAG_AGREE_ALG
+### static const HUKS_TAG_ALG_FOR_AGREEMENT
 
 ```cangjie
-public static const HUKS_TAG_AGREE_ALG: UInt32 = HuksTagType.HUKS_TAG_TYPE_UINT | 19
+public static const HUKS_TAG_ALG_FOR_AGREEMENT: UInt32 = HuksTagType.HUKS_TAG_TYPE_UINT | 19
 ```
 
 **Description:** Represents the algorithm type for key agreement.
@@ -2681,10 +2681,10 @@ public static const HUKS_TAG_AGREE_ALG: UInt32 = HuksTagType.HUKS_TAG_TYPE_UINT 
 
 **Since:** 22
 
-### static const HUKS_TAG_AGREE_PRIVATE_KEY_ALIAS
+### static const HUKS_TAG_PRIVATE_KEY_ALIAS_FOR_AGREEMENT
 
 ```cangjie
-public static const HUKS_TAG_AGREE_PRIVATE_KEY_ALIAS: UInt32 = HuksTagType.HUKS_TAG_TYPE_BYTES | 21
+public static const HUKS_TAG_PRIVATE_KEY_ALIAS_FOR_AGREEMENT: UInt32 = HuksTagType.HUKS_TAG_TYPE_BYTES | 21
 ```
 
 **Description:** Represents the private key alias for key agreement.
@@ -2745,7 +2745,7 @@ public static const HUKS_TAG_ASSOCIATED_DATA: UInt32 = HuksTagType.HUKS_TAG_TYPE
 
 **Type:** UInt32
 
-**System Capability:** SystemCapability.Security.Huks.Extension
+**System Capability:**  SystemCapability.Security.Huks.Core
 
 **Since:** 22
 
@@ -2787,7 +2787,7 @@ public static const HUKS_TAG_AUTH_TOKEN: UInt32 = HuksTagType.HUKS_TAG_TYPE_BYTE
 
 **Type:** UInt32
 
-**System Capability:** SystemCapability.Security.Huks.Core
+**System Capability:** SystemCapability.Security.Huks.Extension
 
 **Since:** 22
 
@@ -2801,7 +2801,7 @@ public static const HUKS_TAG_BLOCK_MODE: UInt32 = HuksTagType.HUKS_TAG_TYPE_UINT
 
 **Type:** UInt32
 
-**System Capability:** SystemCapability.Security.Huks.Extension
+**System Capability:** SystemCapability.Security.Huks.Core
 
 **Since:** 22
 
@@ -2829,7 +2829,7 @@ public static const HUKS_TAG_CHALLENGE_TYPE: UInt32 = HuksTagType.HUKS_TAG_TYPE_
 
 **Type:** UInt32
 
-**System Capability:** SystemCapability.Security.Huks.Core
+**System Capability:** SystemCapability.Security.Huks.Extension
 
 **Since:** 22
 
@@ -2983,7 +2983,7 @@ public static const HUKS_TAG_KEY_ALIAS: UInt32 = HuksTagType.HUKS_TAG_TYPE_BYTES
 
 **Type:** UInt32
 
-**System Capability:** SystemCapability.Security.Huks.Extension
+**System Capability:** SystemCapability.Security.Huks.Core
 
 **Since:** 22
 
@@ -3025,7 +3025,7 @@ public static const HUKS_TAG_KEY_AUTH_PURPOSE: UInt32 = HuksTagType.HUKS_TAG_TYP
 
 **Type:** UInt32
 
-**System Capability:** SystemCapability.Security.Huks.Core
+**System Capability:** SystemCapability.Security.Huks.Extension
 
 **Since:** 22
 
@@ -3043,17 +3043,17 @@ public static const HUKS_TAG_KEY_FLAG: UInt32 = HuksTagType.HUKS_TAG_TYPE_UINT |
 
 **Since:** 22
 
-### static const HUKS_TAG_KEY_GENERATE_TYPE
+### static const HUKS_TAG_KEY_GENERATION_TYPE
 
 ```cangjie
-public static const HUKS_TAG_KEY_GENERATE_TYPE: UInt32 = HuksTagType.HUKS_TAG_TYPE_UINT | 15
+public static const HUKS_TAG_KEY_GENERATION_TYPE: UInt32 = HuksTagType.HUKS_TAG_TYPE_UINT | 15
 ```
 
 **Description:** Represents the tag for key generation type.
 
 **Type:** UInt32
 
-**System Capability:** SystemCapability.Security.Huks.Extension
+**System Capability:** SystemCapability.Security.Huks.Core
 
 **Since:** 22
 
@@ -3067,7 +3067,7 @@ public static const HUKS_TAG_KEY_SECURE_SIGN_TYPE: UInt32 = HuksTagType.HUKS_TAG
 
 **Type:** UInt32
 
-**System Capability:** SystemCapability.Security.Huks.Core
+**System Capability:** SystemCapability.Security.Huks.Extension
 
 **Since:** 22
 
@@ -3221,7 +3221,7 @@ public static const HUKS_TAG_UNWRAP_ALGORITHM_SUITE: UInt32 = HuksTagType.HUKS_T
 
 **Type:** UInt32
 
-**System Capability:** SystemCapability.Security.Huks.Extension
+**System Capability:** SystemCapability.Security.Huks.Core
 
 **Since:** 22
 
@@ -3235,7 +3235,7 @@ public static const HUKS_TAG_USER_AUTH_TYPE: UInt32 = HuksTagType.HUKS_TAG_TYPE_
 
 **Type:** UInt32
 
-**System Capability:** SystemCapability.Security.Huks.Core
+**System Capability:** SystemCapability.Security.Huks.Extension
 
 **Since:** 22
 
@@ -3249,7 +3249,7 @@ public static const HUKS_TAG_USER_ID: UInt32 = HuksTagType.HUKS_TAG_TYPE_UINT | 
 
 **Type:** UInt32
 
-**System Capability:** SystemCapability.Security.Huks.Extension
+**System Capability:** SystemCapability.Security.Huks.Core
 
 **Since:** 22
 
@@ -3263,7 +3263,7 @@ public static const HUKS_TAG_AUTH_STORAGE_LEVEL: UInt32 = HuksTagType.HUKS_TAG_T
 
 **Type:** UInt32
 
-**System Capability:** SystemCapability.Security.Huks.Core
+**System Capability:** SystemCapability.Security.Huks.Extension
 
 **Since:** 22## class HuksTagType
 
@@ -3372,8 +3372,8 @@ public static const HUKS_TAG_TYPE_ULONG: UInt32 = 3 << 28
 
 ```cangjie
 public class HuksUnwrapSuite {
-    public static const HUKS_UNWRAP_SUITE_X25519_AES_256_GCM_NOPADDING: UInt32 = 1
-    public static const HUKS_UNWRAP_SUITE_ECDH_AES_256_GCM_NOPADDING: UInt32 = 2
+    public static const HUKS_UNWRAP_SUITE_X25519_AES_256_GCM_NO_PADDING: UInt32 = 1
+    public static const HUKS_UNWRAP_SUITE_ECDH_AES_256_GCM_NO_PADDING: UInt32 = 2
 }
 ```
 
@@ -3383,10 +3383,10 @@ public class HuksUnwrapSuite {
 
 **Since:** 22
 
-### static const HUKS_UNWRAP_SUITE_ECDH_AES_256_GCM_NOPADDING
+### static const HUKS_UNWRAP_SUITE_ECDH_AES_256_GCM_NO_PADDING
 
 ```cangjie
-public static const HUKS_UNWRAP_SUITE_ECDH_AES_256_GCM_NOPADDING: UInt32 = 2
+public static const HUKS_UNWRAP_SUITE_ECDH_AES_256_GCM_NO_PADDING: UInt32 = 2
 ```
 
 **Description:** When importing an encrypted key, uses AES-256 GCM encryption after ECDH key agreement.
@@ -3397,10 +3397,10 @@ public static const HUKS_UNWRAP_SUITE_ECDH_AES_256_GCM_NOPADDING: UInt32 = 2
 
 **Since:** 22
 
-### static const HUKS_UNWRAP_SUITE_X25519_AES_256_GCM_NOPADDING
+### static const HUKS_UNWRAP_SUITE_X25519_AES_256_GCM_NO_PADDING
 
 ```cangjie
-public static const HUKS_UNWRAP_SUITE_X25519_AES_256_GCM_NOPADDING: UInt32 = 1
+public static const HUKS_UNWRAP_SUITE_X25519_AES_256_GCM_NO_PADDING: UInt32 = 1
 ```
 
 **Description:** When importing an encrypted key, uses AES-256 GCM encryption after X25519 key agreement.
