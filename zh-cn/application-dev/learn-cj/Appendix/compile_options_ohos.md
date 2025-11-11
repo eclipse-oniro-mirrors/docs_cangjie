@@ -75,43 +75,7 @@ $ cjc main.cj liblog.a
 
 ### `--module-name <value>` <sup>[frontend]</sup>
 
-指定要编译的模块的名称。
-
-假如有文件 `MyModule/src/log/printer.cj`：
-
-```cangjie
-package log
-
-public func printLog(message: String) {
-    println("[Log]: ${message}")
-}
-```
-
-与文件 `main.cj`:
-
-```cangjie
-import MyModule.log.*
-
-main() {
-    printLog("Everything is great")
-}
-```
-
-可以使用
-
-```shell
-$ cjc -p MyModule/src/log --module-name MyModule --output-type=staticlib -o MyModule/liblog.a
-```
-
-来编译 `log` 包并指定其模块名为 `MyModule`，`cjc` 会在 `MyModule` 目录下生成一个 `MyModule/liblog.a` 文件。
-
-然后可以使用 `liblog.a` 文件来编译导入了 `log` 包的 `main.cj` ，编译命令如下：
-
-```shell
-$ cjc main.cj MyModule/liblog.a
-```
-
-`cjc` 会将 `main.cj` 与 `liblog.a` 一同编译成一个可执行文件 `main` 。
+该选项已废弃，并会在未来版本被移除。当前版本使用该选项没有功能性作用。
 
 ### `--output <value>`, `-o <value>`, `-o<value>` <sup>[frontend]</sup>
 
@@ -262,6 +226,7 @@ Hello World
 ```
 
 且有代码如下的 `main.cj` 文件：
+<!-- code_check_manual -->
 
 ```cangjie
 import myModule.log.printLog
@@ -278,6 +243,7 @@ main() {
 ### `--scan-dependency` <sup>[frontend]</sup>
 
 通过 `--scan-dependency` 指令可以获得指定包源码或者一个包的 `cjo` 文件对于其他包的直接依赖以及其他信息，以 `json` 格式输出。
+<!-- code_check_manual -->
 
 ```cangjie
 // this file is placed under directory pkgA
@@ -419,15 +385,11 @@ cjc --scan-dependency pkgA.cjo
 
 ### `--static-libs`
 
-静态链接仓颉库非 std 的其他模块。
-
-此选项仅在编译动态链接库或可执行文件时生效。`cjc` 默认静态链接仓颉库中除 std 及运行时模块外的其他模块。
+该选项已废弃，并会在未来版本被移除。当前版本使用该选项没有功能性作用。
 
 ### `--dy-libs`
 
-动态链接仓颉库非 std 的其他模块。
-
-此选项仅在编译动态链接库或可执行文件时生效。
+该选项已废弃，并会在未来版本被移除。当前版本使用该选项没有功能性作用。
 
 **值得注意的是：**
 
@@ -820,6 +782,7 @@ cjc --target=arch-os-env --sysroot /usr/sdk/arch-os-env hello.cj -o hello
 
 对于 `pkgc` 目录下仓颉文件 `a.cj`:
 <!-- run -->
+<!-- cfg="--test" -->
 
 ```cangjie
 import std.unittest.*
@@ -845,7 +808,6 @@ cjc a.cj --test
 > **注意：**
 >
 > 不保证用例每次执行的用时都相同。
-
 ```text
 case1
 --------------------------------------------------------------------------------------------------
@@ -876,6 +838,7 @@ cjc pkgc --test -p
 ```
 
 来编译整个 `pkgc` 包下的测试用例 `a1.cj` 和 `a2.cj`。
+<!-- code_check_manual -->
 
 ```cangjie
 /*a1.cj*/
@@ -892,7 +855,7 @@ public class TestA {
     }
 }
 ```
-
+<!-- code_check_manual -->
 ```cangjie
 /*a2.cj*/
 package a
@@ -949,6 +912,8 @@ Summary: TOTAL: 2
 > 使用此选项时，应单独以常规模式编译相同的包，然后通过 `-L`/`-l` 链接选项添加依赖，或在使用 `LTO` 选项时添加依赖的 `.bc` 文件。否则，编译器将报缺少依赖的符号的错误。
 
 示例：
+<!-- run -my_pkg -->
+<!-- cfg="-p my_pkg --output-type=staticlib -o=output/libmain.a" -->
 
 ```cangjie
 /*main.cj*/
@@ -963,6 +928,8 @@ main() {
     0
 }
 ```
+<!-- run -my_pkg-->
+<!-- cfg="-p my_pkg --test-only -L output -lmain --import-path output" -->
 
 ```cangjie
 /*main_test.cj*/
@@ -1283,6 +1250,7 @@ obf_func2 name2
 `field` 之间用分隔符 `'.'` 分隔。如果 `field` 是函数名，则需要将函数的参数类型用括号 `'()'` 修饰并附加在函数名后面。对于无参函数括号内的内容为空。
 
 例如，假设在包 `packA` 中有以下代码：
+<!-- compile -->
 
 ```cangjie
 package packA
