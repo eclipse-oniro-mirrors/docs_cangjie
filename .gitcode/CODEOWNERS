@@ -4,8 +4,6 @@
 /.gitcode/ @xuanjz
 # 英文文档
 /en/ @guoyuqing @luojianing @amy_mayun
-# 中文文档
-/zh-cn/ @luojianing @guoyuqing @amy_mayun
 # 用户指南
 /zh-cn/application-dev/learn-cj/ @Augus_Jan @wyq1213 @Timi3 @wuying21
 /zh-cn/application-dev/learn-cj/FFI @gaoxiang @xuanjz @anancds123 @wuying21
