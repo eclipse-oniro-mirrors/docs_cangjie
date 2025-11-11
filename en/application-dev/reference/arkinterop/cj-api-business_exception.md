@@ -34,7 +34,7 @@ public let code: Int32
 
 **Since:** 22
 
-### getData<T>()
+### func getData<T>()
 
 ```cangjie
 public func getData<T>(): ?T
@@ -66,7 +66,7 @@ public open func toString(): String
 |:----|:-----------|
 | String | Error message. |
 
-### getClassName()
+### func getClassName()
 
 ```cangjie
 protected override func getClassName(): String

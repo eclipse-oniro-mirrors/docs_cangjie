@@ -32,6 +32,7 @@
 
 4. 在 **cangjielib->src->main->cangjie->index.cj** 文件中，添加互操作代码，以如下代码为例：
 
+   <!--compile-->
    ```cangjie
    // 包名
    package ohos_app_cangjie_cangjielib

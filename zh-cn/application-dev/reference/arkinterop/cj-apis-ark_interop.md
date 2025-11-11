@@ -50,7 +50,7 @@ public interface JSInteropType<T> {
 class MyCustomClass {
     public let name: String   // String实现了JSInteropType<String>，所以可以在这里使用。
     public let age: Int64     // Int64实现了JSInteropType<Int64>，所以可以在这里使用。
-    
+
     public init(name: String, age: Int64) {
         this.name = name
         this.age = age
@@ -134,16 +134,17 @@ sealed interface JSKeyable <: ToString & ToJSValue {
 
 - ToString
 - ToJSValue
-  
+
 **示例：**
 
 <!--compile-->
 ```cangjie
+import ohos.hilog.Hilog
+
 func keyableUsage(context: JSContext): Unit {
     // 创建可作为 JSObject 键的数组
     let keys: Array<JSKeyable> = [
-        1,                   // Int64
-        "2",                 // String
+        "1",                 // String
         context.string("a"), // JSString
         context.symbol()     // JSSymbol
     ]
@@ -201,6 +202,8 @@ func toJSValue(context: JSContext): JSValue
 
 <!--compile-->
 ```cangjie
+import ohos.hilog.Hilog
+
 func int8Translate(context: JSContext): Unit {
     let source: Int8 = 123
     let value = source.toJSValue(context)
@@ -300,6 +303,8 @@ func toJSValue(context: JSContext): JSValue
 
 <!--compile-->
 ```cangjie
+import ohos.hilog.Hilog
+
 func int16Translate(context: JSContext): Unit {
     let source: Int16 = 123
     let value = source.toJSValue(context)
@@ -399,6 +404,8 @@ func toJSValue(context: JSContext): JSValue
 
 <!--compile-->
 ```cangjie
+import ohos.hilog.Hilog
+
 func int32Translate(context: JSContext): Unit {
     let source: Int32 = 123
     let value = source.toJSValue(context)
@@ -498,6 +505,8 @@ func toJSValue(context: JSContext): JSValue
 
 <!--compile-->
 ```cangjie
+import ohos.hilog.Hilog
+
 func int64Translate(context: JSContext): Unit {
     let source: Int64 = 123
     let value = source.toJSValue(context)
@@ -598,6 +607,8 @@ func toJSValue(context: JSContext): JSValue
 
 <!--compile-->
 ```cangjie
+import ohos.hilog.Hilog
+
 func uint8Translate(context: JSContext): Unit {
     let source: UInt8 = 123
     let value = source.toJSValue(context)
@@ -688,6 +699,8 @@ func toJSValue(context: JSContext): JSValue
 
 <!--compile-->
 ```cangjie
+import ohos.hilog.Hilog
+
 func uint16Translate(context: JSContext): Unit {
     let source: UInt16 = 123
     let value = source.toJSValue(context)
@@ -788,6 +801,8 @@ func toJSValue(context: JSContext): JSValue
 
 <!--compile-->
 ```cangjie
+import ohos.hilog.Hilog
+
 func uint32Translate(context: JSContext): Unit {
     let source: UInt32 = 123
     let value = source.toJSValue(context)
@@ -887,6 +902,8 @@ func toJSValue(context: JSContext): JSValue
 
 <!--compile-->
 ```cangjie
+import ohos.hilog.Hilog
+
 func uint64Translate(context: JSContext): Unit {
     let source: UInt64 = 123
     let value = source.toJSValue(context)
@@ -987,6 +1004,8 @@ func toJSValue(context: JSContext): JSValue
 
 <!--compile-->
 ```cangjie
+import ohos.hilog.Hilog
+
 func float16Translate(context: JSContext): Unit {
     let source: Float16 = 123.0
     let value = source.toJSValue(context)
@@ -1086,6 +1105,8 @@ func toJSValue(context: JSContext): JSValue
 
 <!--compile-->
 ```cangjie
+import ohos.hilog.Hilog
+
 func float32Translate(context: JSContext): Unit {
     let source: Float32 = 123.0
     let value = source.toJSValue(context)
@@ -1185,6 +1206,8 @@ func toJSValue(context: JSContext): JSValue
 
 <!--compile-->
 ```cangjie
+import ohos.hilog.Hilog
+
 func float64Translate(context: JSContext): Unit {
     let source: Float64 = 123.0
     let value = source.toJSValue(context)
@@ -1283,6 +1306,8 @@ func toJSValue(context: JSContext): JSValue
 
 <!--compile-->
 ```cangjie
+import ohos.hilog.Hilog
+
 func boolTranslate(context: JSContext): Unit {
     let source: Bool = true
     let value = source.toJSValue(context)
@@ -1381,6 +1406,8 @@ func toJSValue(context: JSContext): JSValue
 
 <!--compile-->
 ```cangjie
+import ohos.hilog.Hilog
+
 func stringTranslate(context: JSContext): Unit {
     let source: String = "123.0"
     let value = source.toJSValue(context)
@@ -1448,6 +1475,8 @@ static func toArktsType(): String
 
 <!--compile-->
 ```cangjie
+import ohos.hilog.Hilog
+
 func stringTranslate(context: JSContext): Unit {
     let source: String = "123.0"
     let value = source.toJSValue(context)
@@ -1585,6 +1614,8 @@ func toJSValue(context: JSContext): JSValue
 
 <!--compile-->
 ```cangjie
+import ohos.hilog.Hilog
+
 func optionTranslate(context: JSContext): Unit {
     let sources: Array<?String> = ["abc", None, "123"]
     for (v in sources) {
@@ -1684,6 +1715,8 @@ func toJSValue(context: JSContext): JSValue
 
 <!--compile-->
 ```cangjie
+import ohos.hilog.Hilog
+
 func arrayTranslate(context: JSContext): Unit {
     let sources: Array<Byte> = [1, 4, 5]
     let value = sources.toJSValue(context)
@@ -1971,6 +2004,8 @@ public prop byteLength: Int32
 
 <!--compile-->
 ```cangjie
+import ohos.hilog.Hilog
+
 func getBufferLength(context: JSContext, callInfo: JSCallInfo): JSValue {
     let arrayBuffer = callInfo[0].asArrayBuffer()
     let length = arrayBuffer.byteLength
@@ -2008,6 +2043,8 @@ public func readBytes(): Array<Byte>
 
 <!--compile-->
 ```cangjie
+import ohos.hilog.Hilog
+
 func readBufferBytes(context: JSContext, callInfo: JSCallInfo): JSValue {
     let arrayBuffer = callInfo[0].asArrayBuffer()
     let bytes = arrayBuffer.readBytes()
@@ -2084,6 +2121,8 @@ public func toFloat32Array(): Array<Float32>
 
 <!--compile-->
 ```cangjie
+import ohos.hilog.Hilog
+
 func createFloat32Array(context: JSContext): Unit {
     let data: Array<Float32> = [1.0, 2.0, 3.0, 4.0]
     let arrayBuffer = context.arrayBuffer(data)
@@ -2122,6 +2161,8 @@ public func toFloat32ArrayJSValue(): JSValue
 
 <!--compile-->
 ```cangjie
+import ohos.hilog.Hilog
+
 func convertToFloat32Array(context: JSContext, callInfo: JSCallInfo): JSValue {
     let arrayBuffer = callInfo[0].asArrayBuffer()
     let float32Array = arrayBuffer.toFloat32Array()
@@ -2160,6 +2201,8 @@ public func toFloat64Array(): Array<Float64>
 
 <!--compile-->
 ```cangjie
+import ohos.hilog.Hilog
+
 func convertToFloat64Array(context: JSContext, callInfo: JSCallInfo): JSValue {
     let arrayBuffer = callInfo[0].asArrayBuffer()
     let float64Array = arrayBuffer.toFloat64Array()
@@ -2235,6 +2278,8 @@ public func toInt16Array(): Array<Int16>
 
 <!--compile-->
 ```cangjie
+import ohos.hilog.Hilog
+
 func convertToInt16Array(context: JSContext, callInfo: JSCallInfo): JSValue {
     let arrayBuffer = callInfo[0].asArrayBuffer()
     let int16Array = arrayBuffer.toInt16Array()
@@ -2310,6 +2355,8 @@ public func toInt32Array(): Array<Int32>
 
 <!--compile-->
 ```cangjie
+import ohos.hilog.Hilog
+
 func convertToInt32Array(context: JSContext, callInfo: JSCallInfo): JSValue {
     let arrayBuffer = callInfo[0].asArrayBuffer()
     let int32Array = arrayBuffer.toInt32Array()
@@ -2385,6 +2432,8 @@ public func toInt64Array(): Array<Int64>
 
 <!--compile-->
 ```cangjie
+import ohos.hilog.Hilog
+
 func convertToInt64Array(context: JSContext, callInfo: JSCallInfo): JSValue {
     let arrayBuffer = callInfo[0].asArrayBuffer()
     let int64Array = arrayBuffer.toInt64Array()
@@ -2459,6 +2508,8 @@ public func toInt8Array(): Array<Int8>
 
 <!--compile-->
 ```cangjie
+import ohos.hilog.Hilog
+
 func convertToInt8Array(context: JSContext, callInfo: JSCallInfo): JSValue {
     let arrayBuffer = callInfo[0].asArrayBuffer()
     let int8Array = arrayBuffer.toInt8Array()
@@ -2534,6 +2585,8 @@ public func toUInt16Array(): Array<UInt16>
 
 <!--compile-->
 ```cangjie
+import ohos.hilog.Hilog
+
 func convertToUInt16Array(context: JSContext, callInfo: JSCallInfo): JSValue {
     let arrayBuffer = callInfo[0].asArrayBuffer()
     let uint16Array = arrayBuffer.toUInt16Array()
@@ -2609,6 +2662,8 @@ public func toUInt32Array(): Array<UInt32>
 
 <!--compile-->
 ```cangjie
+import ohos.hilog.Hilog
+
 func convertToUInt32Array(context: JSContext, callInfo: JSCallInfo): JSValue {
     let arrayBuffer = callInfo[0].asArrayBuffer()
     let uint32Array = arrayBuffer.toUInt32Array()
@@ -2684,6 +2739,8 @@ public func toUInt64Array(): Array<UInt64>
 
 <!--compile-->
 ```cangjie
+import ohos.hilog.Hilog
+
 func convertToUInt64Array(context: JSContext, callInfo: JSCallInfo): JSValue {
     let arrayBuffer = callInfo[0].asArrayBuffer()
     let uint64Array = arrayBuffer.toUInt64Array()
@@ -2758,6 +2815,8 @@ public func toUInt8Array(): Array<UInt8>
 
 <!--compile-->
 ```cangjie
+import ohos.hilog.Hilog
+
 func convertToUInt8Array(context: JSContext, callInfo: JSCallInfo): JSValue {
     let arrayBuffer = callInfo[0].asArrayBuffer()
     let uint8Array = arrayBuffer.toUInt8Array()
@@ -2973,6 +3032,8 @@ public func clone(): JSArrayEx<T>
 
 <!--compile-->
 ```cangjie
+import ohos.hilog.Hilog
+
 func cloneArrayEx(context: JSContext): JSValue {
     let originalArray: Array<Int64> = [1, 2, 3, 4, 5]
     let jsArrayEx = JSArrayEx<Int64>(originalArray)
@@ -3020,6 +3081,8 @@ public func concat(other: JSArrayEx<T>): JSArrayEx<T>
 
 <!--compile-->
 ```cangjie
+import ohos.hilog.Hilog
+
 func concatArrayEx(context: JSContext): JSValue {
     let array1: Array<Int64> = [1, 2, 3]
     let array2: Array<Int64> = [4, 5, 6]
@@ -3069,13 +3132,15 @@ public func get(index: Int64): Option<T>
 
 <!--compile-->
 ```cangjie
+import ohos.hilog.Hilog
+
 func getElementFromArrayEx(context: JSContext, callInfo: JSCallInfo): JSValue {
     let array: Array<String> = ["apple", "banana", "cherry"]
     let jsArrayEx = JSArrayEx<String>(array)
 
     let element = jsArrayEx.get(1)  // 获取索引为1的元素
     if (element != None) {
-        Hilog.info(0, "test", "Element at index 1: ${element!}")
+        Hilog.info(0, "test", "Element at index 1: ${element}")
     }
 
     return jsArrayEx.toJSValue(context)
@@ -3111,6 +3176,8 @@ public func isEmpty(): Bool
 
 <!--compile-->
 ```cangjie
+import ohos.hilog.Hilog
+
 func checkArrayExEmpty(context: JSContext): JSValue {
     let emptyArray: Array<Int64> = []
     let nonEmptyArray: Array<Int64> = [1, 2, 3]
@@ -3156,6 +3223,8 @@ public func set(index: Int64, element: T): Unit
 
 <!--compile-->
 ```cangjie
+import ohos.hilog.Hilog
+
 func setElementInArrayEx(context: JSContext): JSValue {
     let array: Array<Int64> = [1, 2, 3, 4, 5]
     let jsArrayEx = JSArrayEx<Int64>(array)
@@ -3197,6 +3266,8 @@ public func toArray(): Array<T>
 
 <!--compile-->
 ```cangjie
+import ohos.hilog.Hilog
+
 func convertArrayExToArray(context: JSContext): JSValue {
     let array: Array<String> = ["hello", "world", "cangjie"]
     let jsArrayEx = JSArrayEx<String>(array)
@@ -3276,6 +3347,8 @@ public operator func[](index: Int64): T
 
 <!--compile-->
 ```cangjie
+import ohos.hilog.Hilog
+
 func getIndexOperator(context: JSContext): JSValue {
     let array: Array<Int64> = [10, 20, 30, 40]
     let jsArrayEx = JSArrayEx<Int64>(array)
@@ -3318,6 +3391,8 @@ public operator func[](index: Int64, value!: T)
 
 <!--compile-->
 ```cangjie
+import ohos.hilog.Hilog
+
 func setIndexOperator(context: JSContext): JSValue {
     let array: Array<Int64> = [1, 2, 3, 4]
     let jsArrayEx = JSArrayEx<Int64>(array)
@@ -3373,6 +3448,8 @@ public func toBigInt(): BigInt
 
 <!--compile-->
 ```cangjie
+import ohos.hilog.Hilog
+
 func convertToBigInt(context: JSContext, callInfo: JSCallInfo): JSValue {
     let jsBigInt = callInfo[0].asBigInt()
     let bigIntValue = jsBigInt.toBigInt()
@@ -3423,6 +3500,8 @@ public prop prototype: JSObject
 
 <!--compile-->
 ```cangjie
+import ohos.hilog.Hilog
+
 func accessClassPrototype(context: JSContext): JSValue {
     let ctor: JSLambda = { _, callInfo =>
         return callInfo.thisArg
@@ -3854,6 +3933,8 @@ public prop env: JSEnv
 
 <!--compile-->
 ```cangjie
+import ohos.hilog.Hilog
+
 func accessContextEnv(context: JSContext): JSValue {
     let env = context.env
     Hilog.info(0, "test", "Context env accessed")
@@ -3889,6 +3970,8 @@ public prop global: JSObject
 
 <!--compile-->
 ```cangjie
+import ohos.hilog.Hilog
+
 func accessGlobalObject(context: JSContext): JSValue {
     let globalObj = context.global
     let globalKeys = globalObj.keys()
@@ -4063,6 +4146,8 @@ public func arrayBuffer(data: Array<Int8>): JSArrayBuffer
 
 <!--compile-->
 ```cangjie
+import ohos.hilog.Hilog
+
 func createArrayBufferFromInt8(context: JSContext): JSValue {
     let int8Array: Array<Int8> = [1, 2, 3]
     let arrayBuffer = context.arrayBuffer(int8Array)
@@ -4109,6 +4194,8 @@ public func arrayBuffer(data: Array<Int16>): JSArrayBuffer
 
 <!--compile-->
 ```cangjie
+import ohos.hilog.Hilog
+
 func createArrayBufferFromInt16(context: JSContext): JSValue {
     let int16Array: Array<Int16> = [1, 2, 3]
     let arrayBuffer = context.arrayBuffer(int16Array)
@@ -4155,6 +4242,8 @@ public func arrayBuffer(data: Array<UInt16>): JSArrayBuffer
 
 <!--compile-->
 ```cangjie
+import ohos.hilog.Hilog
+
 func createArrayBufferFromUInt16(context: JSContext): JSValue {
     let uint16Array: Array<UInt16> = [1, 2, 3]
     let arrayBuffer = context.arrayBuffer(uint16Array)
@@ -4201,6 +4290,8 @@ public func arrayBuffer(data: Array<UInt32>): JSArrayBuffer
 
 <!--compile-->
 ```cangjie
+import ohos.hilog.Hilog
+
 func createArrayBufferFromUInt32(context: JSContext): JSValue {
     let uint32Array: Array<UInt32> = [1, 2, 3]
     let arrayBuffer = context.arrayBuffer(uint32Array)
@@ -4247,6 +4338,8 @@ public func arrayBuffer(data: Array<Int32>): JSArrayBuffer
 
 <!--compile-->
 ```cangjie
+import ohos.hilog.Hilog
+
 func createArrayBufferFromInt32(context: JSContext): JSValue {
     let int32Array: Array<Int32> = [1, 2, 3]
     let arrayBuffer = context.arrayBuffer(int32Array)
@@ -4293,6 +4386,8 @@ public func arrayBuffer(data: Array<Float32>): JSArrayBuffer
 
 <!--compile-->
 ```cangjie
+import ohos.hilog.Hilog
+
 func createArrayBufferFromFloat32(context: JSContext): JSValue {
     let float32Array: Array<Float32> = [1.0, 2.0, 3.0]
     let arrayBuffer = context.arrayBuffer(float32Array)
@@ -4339,6 +4434,8 @@ public func arrayBuffer(data: Array<Int64>): JSArrayBuffer
 
 <!--compile-->
 ```cangjie
+import ohos.hilog.Hilog
+
 func createArrayBufferFromInt64(context: JSContext): JSValue {
     let int64Array: Array<Int64> = [1, 2, 3]
     let arrayBuffer = context.arrayBuffer(int64Array)
@@ -4385,8 +4482,10 @@ public func arrayBuffer(data: Array<UInt64>): JSArrayBuffer
 
 <!--compile-->
 ```cangjie
+import ohos.hilog.Hilog
+
 func createArrayBufferFromUInt64(context: JSContext): JSValue {
-    let uint64Array: Array<UInt64> = [1.u64, 2.u64, 3.u64]
+    let uint64Array: Array<UInt64> = [1u64, 2u64, 3u64]
     let arrayBuffer = context.arrayBuffer(uint64Array)
 
     Hilog.info(0, "test", "Created ArrayBuffer from UInt64 array")
@@ -4431,6 +4530,8 @@ public func arrayBuffer(data: Array<Float64>): JSArrayBuffer
 
 <!--compile-->
 ```cangjie
+import ohos.hilog.Hilog
+
 func createArrayBufferFromFloat64(context: JSContext): JSValue {
     let float64Array: Array<Float64> = [1.0, 2.0, 3.0]
     let arrayBuffer = context.arrayBuffer(float64Array)
@@ -4784,6 +4885,8 @@ public func getNapiEnv(): napi_env
 
 <!--compile-->
 ```cangjie
+import ohos.hilog.Hilog
+
 func getNapiEnvironment(context: JSContext): JSValue {
     let napiEnv = context.getNapiEnv()
     Hilog.info(0, "test", "Got napi environment")
@@ -5558,6 +5661,10 @@ public init(map: HashMap<K, V>)
 
 <!--compile-->
 ```cangjie
+import ohos.hilog.Hilog
+
+import std.collection.HashMap
+
 func createHashMapExFromHashMap(context: JSContext): JSValue {
     let hashMap = HashMap<String, Int64>()
     hashMap["key1"] = 1
@@ -5584,6 +5691,8 @@ public init()
 
 <!--compile-->
 ```cangjie
+import ohos.hilog.Hilog
+
 func createEmptyHashMapEx(context: JSContext): JSValue {
     let jsHashMapEx = JSHashMapEx<String, Int64>()
     Hilog.info(0, "test", "Created empty JSHashMapEx")
@@ -5629,6 +5738,8 @@ public static func fromJSValue(context: JSContext, input: JSValue): JSHashMapEx<
 
 <!--compile-->
 ```cangjie
+import ohos.hilog.Hilog
+
 func convertJSValueToStringHashMapEx(context: JSContext, callInfo: JSCallInfo): JSValue {
     // 创建一个 JSHashMapEx<String, String>
     let source = JSHashMapEx<String, String>()
@@ -5636,19 +5747,19 @@ func convertJSValueToStringHashMapEx(context: JSContext, callInfo: JSCallInfo): 
     source["key1"] = "value1"
     // 转换为 JSValue
     let jsValue = source.toJSValue(context)
-    
+
     // 从 JSValue 转换为 JSHashMapEx<String, String>
     let received = JSHashMapEx<String, String>.fromJSValue(context, jsValue)
-    
+
     // 获取所有键
     let keys = received.keys()
-    
+
     // 遍历所有键值对
     for (key in keys) {
         let value = jsHashMapEx[key]
-        Hilog.info(0, "test", "Key: ${key}, Value: ${value!}")
+        Hilog.info(0, "test", "Key: ${key}, Value: ${value}")
     }
-    
+
     return jsValue
 }
 ```
@@ -5920,6 +6031,8 @@ public func isEmpty(): Bool
 
 <!--compile-->
 ```cangjie
+import ohos.hilog.Hilog
+
 func checkHashMapExEmpty(context: JSContext): JSValue {
     let emptyMap = JSHashMapEx<String, Int64>()
     let nonEmptyMap = JSHashMapEx<String, Int64>()
@@ -5961,6 +6074,8 @@ public func keys(): EquatableCollection<K>
 
 <!--compile-->
 ```cangjie
+import ohos.hilog.Hilog
+
 func getHashMapExKeys(context: JSContext): JSValue {
     let jsHashMapEx = JSHashMapEx<String, Int64>()
     jsHashMapEx.set("key1", 1)
@@ -6004,6 +6119,8 @@ public func set(key: K, value: V): Unit
 
 <!--compile-->
 ```cangjie
+import ohos.hilog.Hilog
+
 func setHashMapExValue(context: JSContext): JSValue {
     let jsHashMapEx = JSHashMapEx<String, Int64>()
     jsHashMapEx.set("myKey", 42)
@@ -6043,6 +6160,8 @@ public func setAll(elements: Collection<(K, V)>): Unit
 
 <!--compile-->
 ```cangjie
+import ohos.hilog.Hilog
+
 func setAllHashMapExValues(context: JSContext): JSValue {
     let jsHashMapEx = JSHashMapEx<String, Int64>()
     let elements: Array<(String, Int64)> = [("key1", 1), ("key2", 2), ("key3", 3)]
@@ -6203,6 +6322,8 @@ public operator func [](key: K): V
 
 <!--compile-->
 ```cangjie
+import ohos.hilog.Hilog
+
 func getIndexOperatorHashMapEx(context: JSContext): JSValue {
     let jsHashMapEx = JSHashMapEx<String, Int64>()
     jsHashMapEx.set("myKey", 100)
@@ -6244,9 +6365,11 @@ public operator func [](key: K, value!: V): Unit
 
 <!--compile-->
 ```cangjie
+import ohos.hilog.Hilog
+
 func setIndexOperatorHashMapEx(context: JSContext): JSValue {
     let jsHashMapEx = JSHashMapEx<String, Int64>()
-    jsHashMapEx["newKey"] = context.number(200).toJSValue()
+    jsHashMapEx["newKey"] = 200
 
     Hilog.info(0, "test", "Set value using index operator")
 
@@ -6293,10 +6416,11 @@ public func toJSValue(): JSValue
 
 **示例：**
 
+<!--compile-->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
-    let external = context.external(123)
-    let jsValue = external.toJSValue()
+    let number = context.number(123)
+    let jsValue = number.toJSValue()
     return jsValue
 }
 ```
@@ -6332,6 +6456,7 @@ public static func registerClass(name: String, register: ClassRegister): Unit
 
 **示例：**
 
+<!--compile-->
 ```cangjie
 class Main {
     static init() {
@@ -6364,6 +6489,7 @@ public static func registerFunc(name: String, register: FuncRegister): Unit
 
 **示例：**
 
+<!--compile-->
 ```cangjie
 class Main {
     static init() {
@@ -6393,6 +6519,7 @@ public static func registerFunc(name: String, lambda: JSLambda): Unit
 
 **示例：**
 
+<!--compile-->
 ```cangjie
 class Main {
     static init() {
@@ -6421,6 +6548,7 @@ public static func registerModule(register: ModuleRegister): Unit
 
 **示例：**
 
+<!--compile-->
 ```cangjie
 class Main {
     static init() {
@@ -6449,23 +6577,26 @@ public class JSObject <: JSObjectBase {}
 
 **示例：**
 
+<!--compile-->
 ```cangjie
+import ohos.hilog.Hilog
+
 func setObjectProperties(context: JSContext): JSValue {
     let jsObject = context.object()
-    
+
     // 设置不同类型的属性
     jsObject.setProperty("name", context.string("John").toJSValue())
     jsObject.setProperty("age", context.number(30).toJSValue())
     jsObject.setProperty("isActive", context.boolean(true).toJSValue())
-    
+
     // 设置嵌套对象
     let address = context.object()
     address.setProperty("city", context.string("Beijing").toJSValue())
     address.setProperty("country", context.string("China").toJSValue())
     jsObject.setProperty("address", address.toJSValue())
-    
+
     Hilog.info(0, "test", "Set object properties")
-    
+
     return jsObject.toJSValue()
 }
 ```
@@ -7302,14 +7433,16 @@ public class JSRuntime {
 
 <!--compile-->
 ```cangjie
+import ohos.hilog.Hilog
+
 func getJSRuntimeInstance(): Unit {
     // 创建 JSRuntime 实例
     let runtime = JSRuntime()
     // 获取 JSContext 实例
     let context = runtime.mainContext
-    
+
     Hilog.info(0, "test", "Got JSRuntime instance")
-    
+
     let jsValue = context.string("JSRuntime instance obtained").toJSValue()
 }
 ```
@@ -7493,13 +7626,15 @@ public class JSStringEx <: JSInteropType<JSStringEx> & Equatable<JSStringEx> & T
 
 <!--compile-->
 ```cangjie
+import ohos.hilog.Hilog
+
 func createJSStringEx(context: JSContext): JSValue {
     // 创建一个 JSStringEx 对象
     let sourceString: String = "Hello, World!"
     let jsStringEx = JSStringEx(sourceString)
-    
+
     Hilog.info(0, "test", "Created JSStringEx with content: ${jsStringEx.toString()}")
-    
+
     return jsStringEx.toJSValue(context)
 }
 ```
@@ -7714,10 +7849,10 @@ func createSymbol(context: JSContext): JSValue {
     // 使用symbol作为键保存一个隐藏属性
     object[symbol] = context.string("123").toJSValue()
     // 创建一个对外可见函数，在这个函数中，通过symbol访问对象属性
-    object["name"] = context.function {　context, callInfo =>
+    object["name"] = context.function { context, callInfo =>
         return object[symbol]
     }.toJSValue()
-    return jsStringEx.toJSValue(context)
+    return object.toJSValue(context)
 }
 ```
 
@@ -7834,10 +7969,10 @@ func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     object["name"] = context.function { context, callInfo =>
         // 获取 this 对象
         let object = callInfo.thisArg.asObject()
-        // 从　object 中获取绑定的 MyObject 实例
-        let data = object.getAttachInfo<MyObject>().getOrThrow()
+        // 从 object 中获取绑定的 MyObject 实例
+        let external = object.getAttachInfo().getOrThrow()
         // 把 data.name 转换为 JSString
-        let name = context.string(data.name)
+        let name = context.string(external.cast<MyObject>().getOrThrow().name)
         return name.toJSValue()
     }.toJSValue()
     return object.toJSValue()
@@ -8178,6 +8313,8 @@ public struct JSType {
 
 <!--compile-->
 ```cangjie
+import ohos.hilog.Hilog
+
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     // 获取首个参数
     let firstArg = callInfo[0]
@@ -10027,9 +10164,11 @@ public prop accessible: Bool
 
 <!--compile-->
 ```cangjie
+import ohos.hilog.Hilog
+
 func checkStringAccessibility(context: JSContext): JSValue {
     let utf16Str = Utf16String("Test String")
-    
+
     if (utf16Str.accessible) {
         Hilog.info(0, "test", "String content is accessible")
         // 安全地使用字符串内容
@@ -10038,7 +10177,7 @@ func checkStringAccessibility(context: JSContext): JSValue {
     } else {
         Hilog.info(0, "test", "String content is not accessible")
     }
-    
+
     return context.boolean(utf16Str.accessible).toJSValue()
 }
 ```
@@ -10069,12 +10208,14 @@ public prop size: Int64
 
 <!--compile-->
 ```cangjie
+import ohos.hilog.Hilog
+
 func getStringSize(context: JSContext): JSValue {
     let utf16Str = Utf16String("Hello 世界")  // 包含中英文混合字符串
     let size = utf16Str.size  // UTF-16编码单元的总长度
-    
+
     Hilog.info(0, "test", "UTF-16 string size: ${size}")
-    
+
     return context.number(Float64(size)).toJSValue()
 }
 ```
@@ -10105,12 +10246,14 @@ public prop totalChars: Int64
 
 <!--compile-->
 ```cangjie
+import ohos.hilog.Hilog
+
 func getStringTotalChars(context: JSContext): JSValue {
     let utf16Str = Utf16String("Hello 世界")  // 包含中英文混合字符串
     let totalChars = utf16Str.totalChars  // 字符总数
-    
+
     Hilog.info(0, "test", "Total characters: ${totalChars}")
-    
+
     return context.number(Float64(totalChars)).toJSValue()
 }
 ```
@@ -10157,16 +10300,18 @@ public init(src: String)
 
 <!--compile-->
 ```cangjie
+import ohos.hilog.Hilog
+
 func createUtf16String(context: JSContext): JSValue {
     // 从字符串创建 Utf16String
     let utf16Str = Utf16String("Hello World")
     Hilog.info(0, "test", "Created Utf16String with content: ${utf16Str.toString()}")
-    
+
     // 从 JSValue 创建 Utf16String
     let jsString = context.string("Test String")
-    let utf16Str2 = Utf16String(jsString.toJSValue())
+    let utf16Str2 = Utf16String(jsString.toString())
     Hilog.info(0, "test", "Created Utf16String from JSValue: ${utf16Str2.toString()}")
-    
+
     return context.string(utf16Str.toString()).toJSValue()
 }
 ```
@@ -10208,15 +10353,17 @@ public static func fromJSValue(_: JSContext, value: JSValue): Utf16String
 
 <!--compile-->
 ```cangjie
+import ohos.hilog.Hilog
+
 func createFromJSValue(context: JSContext): JSValue {
     let jsString = context.string("Hello from JS")
     let jsValue = jsString.toJSValue()
-    
+
     // 从 JSValue 创建 Utf16String
     let utf16Str = Utf16String.fromJSValue(context, jsValue)
-    
+
     Hilog.info(0, "test", "Created from JSValue: ${utf16Str.toString()}")
-    
+
     return context.string(utf16Str.toString()).toJSValue()
 }
 ```
@@ -10331,14 +10478,16 @@ public func count(src: Utf16String): Int64
 
 <!--compile-->
 ```cangjie
+import ohos.hilog.Hilog
+
 func countSubstring(context: JSContext): JSValue {
     let utf16Str = Utf16String("Hello World Hello Hello")
     let target = Utf16String("Hello")
-    
+
     let count = utf16Str.count(target)
-    
+
     Hilog.info(0, "test", "Count of 'Hello': ${count}")
-    
+
     return context.number(Float64(count)).toJSValue()
 }
 ```
@@ -10357,19 +10506,21 @@ public func dispose(): Unit
 
 <!--compile-->
 ```cangjie
+import ohos.hilog.Hilog
+
 func disposeString(context: JSContext): JSValue {
     let utf16Str = Utf16String("Test String")
-    
+
     // 使用字符串内容
     let content = utf16Str.toString()
     Hilog.info(0, "test", "String content before dispose: ${content}")
-    
+
     // 手动释放字符串内容内存
     utf16Str.dispose()
-    
+
     // dispose 后继续访问会抛出异常
     // let contentAfterDispose = utf16Str.toString() // 这行会抛出异常
-    
+
     return context.string("String disposed").toJSValue()
 }
 ```
@@ -10408,14 +10559,16 @@ public func endsWith(target: Utf16String): Bool
 
 <!--compile-->
 ```cangjie
+import ohos.hilog.Hilog
+
 func checkEndsWith(context: JSContext): JSValue {
     let utf16Str = Utf16String("Hello World")
     let target = Utf16String("World")
-    
+
     let endsWithResult = utf16Str.endsWith(target)
-    
+
     Hilog.info(0, "test", "String ends with 'World': ${endsWithResult}")
-    
+
     return context.boolean(endsWithResult).toJSValue()
 }
 ```
@@ -10448,12 +10601,14 @@ public func hashCode(): Int64
 
 <!--compile-->
 ```cangjie
+import ohos.hilog.Hilog
+
 func getStringHashCode(context: JSContext): JSValue {
     let utf16Str = Utf16String("Hello World")
     let hashCode = utf16Str.hashCode()
-    
+
     Hilog.info(0, "test", "String hash code: ${hashCode}")
-    
+
     return context.number(Float64(hashCode)).toJSValue()
 }
 ```
@@ -10492,19 +10647,21 @@ public func indexOf(target: Utf16String): ?Int64
 
 <!--compile-->
 ```cangjie
+import ohos.hilog.Hilog
+
 func findSubstring(context: JSContext): JSValue {
     let utf16Str = Utf16String("Hello World Hello")
     let target = Utf16String("World")
-    
+
     let index = utf16Str.indexOf(target)
-    
+
     if (index != None) {
-        Hilog.info(0, "test", "Found 'World' at index: ${index!}")
+        Hilog.info(0, "test", "Found 'World' at index: ${index}")
     } else {
         Hilog.info(0, "test", "Substring not found")
     }
-    
-    return context.number(Float64(index.getOrElse(-1))).toJSValue()
+
+    return context.number(Float64(index.getOrDefault({=> -1}))).toJSValue()
 }
 ```
 
@@ -10567,16 +10724,18 @@ public func isEmpty(): Bool
 
 <!--compile-->
 ```cangjie
+import ohos.hilog.Hilog
+
 func checkIsEmpty(context: JSContext): JSValue {
     let emptyStr = Utf16String("")
     let nonEmptyStr = Utf16String("Hello")
-    
+
     let isEmpty1 = emptyStr.isEmpty()
     let isEmpty2 = nonEmptyStr.isEmpty()
-    
+
     Hilog.info(0, "test", "Empty string is empty: ${isEmpty1}")
     Hilog.info(0, "test", "Non-empty string is empty: ${isEmpty2}")
-    
+
     return context.boolean(isEmpty1).toJSValue()
 }
 ```
@@ -10609,13 +10768,15 @@ public func isCompressed(): Bool
 
 <!--compile-->
 ```cangjie
+import ohos.hilog.Hilog
+
 func checkIsCompressed(context: JSContext): JSValue {
     let utf16Str = Utf16String("Hello World")
-    
+
     let isCompressed = utf16Str.isCompressed()
-    
+
     Hilog.info(0, "test", "String is compressed: ${isCompressed}")
-    
+
     return context.boolean(isCompressed).toJSValue()
 }
 ```
@@ -10654,19 +10815,21 @@ public func lastIndexOf(target: Utf16String): ?Int64
 
 <!--compile-->
 ```cangjie
+import ohos.hilog.Hilog
+
 func findLastSubstring(context: JSContext): JSValue {
     let utf16Str = Utf16String("Hello World Hello")
     let target = Utf16String("Hello")
-    
+
     let index = utf16Str.lastIndexOf(target)
-    
+
     if (index != None) {
-        Hilog.info(0, "test", "Last 'Hello' found at index: ${index!}")
+        Hilog.info(0, "test", "Last 'Hello' found at index: ${index}")
     } else {
         Hilog.info(0, "test", "Substring not found")
     }
-    
-    return context.number(Float64(index.getOrElse(-1))).toJSValue()
+
+    return context.number(Float64(index.getOrDefault({=> -1}))).toJSValue()
 }
 ```
 
@@ -10705,20 +10868,22 @@ public func lastIndexOf(target: Utf16String, fromIndex: Int64): ?Int64
 
 <!--compile-->
 ```cangjie
+import ohos.hilog.Hilog
+
 func findLastSubstringFromIndex(context: JSContext): JSValue {
     let utf16Str = Utf16String("Hello World Hello")
     let target = Utf16String("Hello")
-    
+
     // 从索引10开始向前查找
     let index = utf16Str.lastIndexOf(target, 10)
-    
+
     if (index != None) {
-        Hilog.info(0, "test", "Last 'Hello' found at index: ${index!}")
+        Hilog.info(0, "test", "Last 'Hello' found at index: ${index}")
     } else {
         Hilog.info(0, "test", "Substring not found")
     }
-    
-    return context.number(Float64(index.getOrElse(-1))).toJSValue()
+
+    return context.number(Float64(index.getOrDefault({=> -1}))).toJSValue()
 }
 ```
 
@@ -10757,19 +10922,21 @@ public func lazySplit(separator: Utf16String, remoteEmpty!: Bool = false): Itera
 
 <!--compile-->
 ```cangjie
+import ohos.hilog.Hilog
+
 func lazySplitString(context: JSContext): JSValue {
     let utf16Str = Utf16String("Hello,World,Test,Example")
     let separator = Utf16String(",")
-    
+
     // 懒分割字符串，移除空元素
-    let splitIterator = utf16Str.lazySplit(separator, true)
-    
-    let count = 0
+    let splitIterator = utf16Str.lazySplit(separator, remoteEmpty: true)
+
+    var count = 0
     for (part in splitIterator) {
         Hilog.info(0, "test", "Lazy split part ${count}: ${part.toString()}")
         count = count + 1
     }
-    
+
     return context.number(Float64(count)).toJSValue()
 }
 ```
@@ -10834,18 +11001,20 @@ public func lines(): Iterator<Utf16String>
 
 <!--compile-->
 ```cangjie
+import ohos.hilog.Hilog
+
 func getLines(context: JSContext): JSValue {
     let utf16Str = Utf16String("Line 1\nLine 2\nLine 3")
-    
+
     // 获取行迭代器
     let lineIterator = utf16Str.lines()
-    
-    let count = 0
+
+    var count = 0
     for (line in lineIterator) {
         Hilog.info(0, "test", "Line ${count}: ${line.toString()}")
         count = count + 1
     }
-    
+
     return context.number(Float64(count)).toJSValue()
 }
 ```
@@ -10886,17 +11055,19 @@ public func replace(old: Utf16String, new: Utf16String, count!: Int64 = Int64.Ma
 
 <!--compile-->
 ```cangjie
+import ohos.hilog.Hilog
+
 func replaceString(context: JSContext): JSValue {
     let utf16Str = Utf16String("Hello World Hello")
     let target = Utf16String("Hello")
     let replacement = Utf16String("Hi")
-    
+
     // 替换最多1次
-    let replacedStr = utf16Str.replace(target, replacement, 1)
-    
+    let replacedStr = utf16Str.replace(target, replacement, count: 1)
+
     Hilog.info(0, "test", "Original string: ${utf16Str.toString()}")
     Hilog.info(0, "test", "Replaced string: ${replacedStr.toString()}")
-    
+
     return context.string(replacedStr.toString()).toJSValue()
 }
 ```
@@ -10960,19 +11131,21 @@ public func split(separator: Utf16String, remoteEmpty!: Bool = false): Array<Utf
 
 <!--compile-->
 ```cangjie
+import ohos.hilog.Hilog
+
 func splitString(context: JSContext): JSValue {
     let utf16Str = Utf16String("Hello,World,Test")
     let separator = Utf16String(",")
-    
+
     // 分割字符串，最多分割成3个部分，不移除空元素
-    let splitResult = utf16Str.split(separator, 3, false)
-    
+    let splitResult = utf16Str.split(separator, 3, remoteEmpty: false)
+
     Hilog.info(0, "test", "Split result size: ${splitResult.size}")
-    
+
     for (i in 0..splitResult.size) {
         Hilog.info(0, "test", "Part ${i}: ${splitResult[i].toString()}")
     }
-    
+
     return context.number(Float64(splitResult.size)).toJSValue()
 }
 ```
@@ -11044,14 +11217,16 @@ public func startsWith(target: Utf16String): Bool
 
 <!--compile-->
 ```cangjie
+import ohos.hilog.Hilog
+
 func checkStartsWith(context: JSContext): JSValue {
     let utf16Str = Utf16String("Hello World")
     let target = Utf16String("Hello")
-    
+
     let startsWithResult = utf16Str.startsWith(target)
-    
+
     Hilog.info(0, "test", "String starts with 'Hello': ${startsWithResult}")
-    
+
     return context.boolean(startsWithResult).toJSValue()
 }
 ```
@@ -11091,14 +11266,16 @@ public func toJSValue(context: JSContext): JSValue
 
 <!--compile-->
 ```cangjie
+import ohos.hilog.Hilog
+
 func convertToJSValue(context: JSContext): JSValue {
     let utf16Str = Utf16String("Hello from Utf16String")
-    
+
     // 转换为 JSValue
     let jsValue = utf16Str.toJSValue(context)
-    
+
     Hilog.info(0, "test", "Converted to JSValue")
-    
+
     return jsValue
 }
 ```
@@ -11131,12 +11308,14 @@ public func toString(): String
 
 <!--compile-->
 ```cangjie
+import ohos.hilog.Hilog
+
 func convertToString(context: JSContext): JSValue {
     let utf16Str = Utf16String("Hello Utf16String")
     let stringResult = utf16Str.toString()
-    
+
     Hilog.info(0, "test", "Converted to string: ${stringResult}")
-    
+
     return context.string(stringResult).toJSValue()
 }
 ```

@@ -1,438 +1,448 @@
-# Cangjie-ArkTS Interoperability Development Specifications  
+# Cangjie-ArkTS Interoperability Development Specifications
 
-## Context Sensitivity in Multi-Engine Instances  
+## Context Sensitivity in Multi-Engine Instances
 
-**【Rule】** Cross-engine instance access to JS objects is prohibited.  
+**【Rule】** Cross-engine instance access to JS objects is prohibited.
 
-In multi-engine instance scenarios, each JS object (e.g., instances of `JSValue` and its subclasses) is bound to the engine instance (`JSContext`) that created it. Different engine instances operate independently and cannot share JS objects. Accessing a JS object from a non-owning engine may cause program crashes.  
+In multi-engine instance scenarios, each JS object (e.g., instances of `JSValue` and its subclasses) is bound to the engine instance (`JSContext`) that created it. Different engine instances operate independently and cannot share JS objects. Accessing a JS object from a non-owning engine may cause program crashes.
 
-In the Cangjie-ArkTS interoperability library, early interfaces for accessing JS objects required developers to manually pass a `JSContext`. When calling these interfaces, ensure the correct instance is passed. Such interfaces are now marked as "deprecated." It is recommended to use the newer interfaces without `JSContext` parameters, which automatically select the correct engine instance.  
+In the Cangjie-ArkTS interoperability library, early interfaces for accessing JS objects required developers to manually pass a `JSContext`. When calling these interfaces, ensure the correct instance is passed. Such interfaces are now marked as "deprecated." It is recommended to use the newer interfaces without `JSContext` parameters, which automatically select the correct engine instance.
 
-**Incorrect Example:**  
+**Incorrect Example:**
 
-Cangjie code:  
+Cangjie code:
 
+<!--compile.error-->
 ```cangjie
-// Import interoperability library  
-import ohos.ark_interop.*  
+// Import interoperability library
+import ohos.ark_interop.*
 
-func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {  
-    // Create a new runtime instance  
-    let newRuntime = JSRuntime()  
-    let newContext = newRuntime.mainContext  
+func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
+    // Create a new runtime instance
+    let newRuntime = JSRuntime()
+    let newContext = newRuntime.mainContext
 
-    // Create a new object on the new runtime  
-    let newObjValue = newContext.object().toJSValue()  
+    // Create a new object on the new runtime
+    let newObjValue = newContext.object().toJSValue()
 
-    // Error: Converting the new object's JSValue using the old runtime instance  
-    let newObj = newObjValue.asObject(context)  
+    // Error: Converting the new object's JSValue using the old runtime instance
+    let newObj = newObjValue.asObject(context)
 
-    // Error: Using the old runtime instance as a parameter when setting a property on the new object  
-    newObjValue.setProperty(context, newContext.string("a"), newContext.boolean(false).toJSValue())  
+    // Error: Using the old runtime instance as a parameter when setting a property on the new object
+    newObjValue.setProperty(context, newContext.string("a"), newContext.boolean(false).toJSValue())
 
-    // Error: Using a string key created by the old runtime when getting a property from the object  
-    newObjValue.getProperty(newContext, context.string("a"))  
+    // Error: Using a string key created by the old runtime when getting a property from the object
+    newObjValue.getProperty(newContext, context.string("a"))
 
-    return newObjValue  
-}  
+    return newObjValue
+}
 
-let EXPORT_MODULE = JSModule.registerModule {  
-    runtime, exports => exports["doSth"] = runtime.function(doSth).toJSValue()  
-}  
-```  
+let EXPORT_MODULE = JSModule.registerModule {
+    runtime, exports => exports["doSth"] = runtime.function(doSth).toJSValue()
+}
+```
 
-**Correct Example:**  
+**Correct Example:**
 
-Cangjie code:  
+Cangjie code:
 
+<!--compile-->
 ```cangjie
-// Import interoperability library  
-import ohos.ark_interop.*  
+// Import interoperability library
+import ohos.ark_interop.*
 
-func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {  
-    // Create a new runtime instance  
-    let newRuntime = JSRuntime()  
-    let newContext = newRuntime.mainContext  
+func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
+    // Create a new runtime instance
+    let newRuntime = JSRuntime()
+    let newContext = newRuntime.mainContext
 
-    // Create a new object on the new runtime  
-    let newObjValue = newContext.object().toJSValue()  
+    // Create a new object on the new runtime
+    let newObjValue = newContext.object().toJSValue()
 
-    // Correct: Converting the new object's JSValue using the new runtime instance  
-    let newObj = newObjValue.asObject()  
+    // Correct: Converting the new object's JSValue using the new runtime instance
+    let newObj = newObjValue.asObject()
 
-    // Correct: Using the non-deprecated interface (no explicit context passing) when setting a property  
-    newObjValue.setProperty(newContext.string("a"), newContext.boolean(false).toJSValue())  
+    // Correct: Using the non-deprecated interface (no explicit context passing) when setting a property
+    newObjValue.setProperty(newContext.string("a"), newContext.boolean(false).toJSValue())
 
-    // Correct: Using a string key created by the new runtime when getting a property  
-    newObjValue.getProperty(newContext.string("a"))  
+    // Correct: Using a string key created by the new runtime when getting a property
+    newObjValue.getProperty(newContext.string("a"))
 
-    return newObjValue  
-}  
+    return newObjValue
+}
 
-let EXPORT_MODULE = JSModule.registerModule {  
-    runtime, exports => exports["doSth"] = runtime.function(doSth).toJSValue()  
-}  
-```  
+let EXPORT_MODULE = JSModule.registerModule {
+    runtime, exports => exports["doSth"] = runtime.function(doSth).toJSValue()
+}
+```
 
-## Exception Handling  
+## Exception Handling
 
-**【Rule】** Use `try` statements to catch and handle cross-language call exceptions.  
+**【Rule】** Use `try` statements to catch and handle cross-language call exceptions.
 
-In cross-language function calls, exceptions thrown by the callee are automatically converted into exceptions catchable by the caller through the interoperability library. The caller should use `try` statements to catch and handle exceptions to prevent program errors or crashes.  
+In cross-language function calls, exceptions thrown by the callee are automatically converted into exceptions catchable by the caller through the interoperability library. The caller should use `try` statements to catch and handle exceptions to prevent program errors or crashes.
 
-**Correct Example (Catching Cangjie Exceptions on the ArkTS Side):**  
+**Correct Example (Catching Cangjie Exceptions on the ArkTS Side):**
 
-Cangjie-side code:  
+Cangjie-side code:
 
+<!--compile-->
 ```cangjie
-// Import interoperability library  
-import ohos.ark_interop.*  
+// Import interoperability library
+import ohos.ark_interop.*
 
-func doSthWithException(context: JSContext, callInfo: JSCallInfo): JSValue {  
-    if (callInfo.count > 0) {  
-        throw Exception("should not pass any argument")  
-    }  
-    context.undefined().toJSValue()  
-}  
+func doSthWithException(context: JSContext, callInfo: JSCallInfo): JSValue {
+    if (callInfo.count > 0) {
+        throw Exception("should not pass any argument")
+    }
+    context.undefined().toJSValue()
+}
 
-let EXPORT_MODULE = JSModule.registerModule {  
-    runtime, exports => exports["doSthWithException"] = runtime.function(doSthWithException).toJSValue()  
-}  
-```  
+let EXPORT_MODULE = JSModule.registerModule {
+    runtime, exports => exports["doSthWithException"] = runtime.function(doSthWithException).toJSValue()
+}
+```
 
-ArkTS-side code:  
+ArkTS-side code:
 
 ```javascript
-interface CJLib {  
-    doSthWithException(src?: string): void  
-}  
+interface CJLib {
+    doSthWithException(src?: string): void
+}
 
-function doSth(lib: CJLib): void {  
-    // Use try...catch to catch cross-language exceptions when calling cross-language interfaces  
-    try {  
-        lib.doSthWithException("xxx")  
-    } catch (err) {  
-        // ...  
-    }  
-}  
-```  
+function doSth(lib: CJLib): void {
+    // Use try...catch to catch cross-language exceptions when calling cross-language interfaces
+    try {
+        lib.doSthWithException("xxx")
+    } catch (err) {
+        // ...
+    }
+}
+```
 
-**Correct Example (Catching ArkTS Exceptions on the Cangjie Side):**  
+**Correct Example (Catching ArkTS Exceptions on the Cangjie Side):**
 
-Cangjie-side code:  
+Cangjie-side code:
 
+<!--compile-->
 ```cangjie
-// Import interoperability library  
-import ohos.ark_interop.*  
+// Import interoperability library
+import ohos.ark_interop.*
 
-func callArktsWithExp(context: JSContext, callInfo: JSCallInfo): JSValue {  
-    // Use try...catch to catch cross-language exceptions when calling cross-language interfaces  
-    try {  
-        callInfo[0].asFunction().call()  
-    } catch (err: JSCodeError) {  
-        // ...  
-    }  
-    context.undefined().toJSValue()  
-}  
+func callArktsWithExp(context: JSContext, callInfo: JSCallInfo): JSValue {
+    // Use try...catch to catch cross-language exceptions when calling cross-language interfaces
+    try {
+        callInfo[0].asFunction().call()
+    } catch (err: JSCodeError) {
+        // ...
+    }
+    context.undefined().toJSValue()
+}
 
-let EXPORT_MODULE = JSModule.registerModule {  
-    runtime, exports => exports["callArktsWithExp"] = runtime.function(callArktsWithExp).toJSValue()  
-}  
-```  
+let EXPORT_MODULE = JSModule.registerModule {
+    runtime, exports => exports["callArktsWithExp"] = runtime.function(callArktsWithExp).toJSValue()
+}
+```
 
-ArkTS-side code:  
+ArkTS-side code:
 
 ```javascript
-interface CJLib {  
-    callArkTSWithExp(callback: () => void): void  
-}  
+interface CJLib {
+    callArkTSWithExp(callback: () => void): void
+}
 
-function doSth(lib: CJLib): void {  
-    lib.callArkTSWithExp(() => {  
-        throw new Error("this is an error")  
-    })  
-}  
-```  
+function doSth(lib: CJLib): void {
+    lib.callArkTSWithExp(() => {
+        throw new Error("this is an error")
+    })
+}
+```
 
-## Proper Usage of JS Objects Created via `JSContext.external`  
+## Proper Usage of JS Objects Created via `JSContext.external`
 
-**【Rule】** Properly use JS objects created via the `JSContext.external` interface.  
+**【Rule】** Properly use JS objects created via the `JSContext.external` interface.
 
-JS objects created via `JSContext.external` (`JSExternal` objects) are of type `undefined` on the ArkTS side and should not be directly used as interface parameters. It is recommended to bind `JSExternal` objects to a `JSObject` to encapsulate internal data, improving interface security and maintainability.  
+JS objects created via `JSContext.external` (`JSExternal` objects) are of type `undefined` on the ArkTS side and should not be directly used as interface parameters. It is recommended to bind `JSExternal` objects to a `JSObject` to encapsulate internal data, improving interface security and maintainability.
 
-**Incorrect Example:**  
+**Incorrect Example:**
 
-Cangjie-side code:  
+Cangjie-side code:
 
+<!--compile.error-->
 ```cangjie
-// Import interoperability library  
-import ohos.ark_interop.*  
+// Import interoperability library
+import ohos.ark_interop.*
 
-// Define shared class (SharedObject is a class from the interoperability library)  
-class Data <: SharedObject {  
-    Data(  
-        // Define two properties  
-        var id: Int64,  
-        let name: String  
-    ) {}  
+// Define shared class (SharedObject is a class from the interoperability library)
+class Data <: SharedObject {
+    Data(
+        // Define two properties
+        var id: Int64,
+        let name: String
+    ) {}
 
-    static init() {  
-        // Register functions to export to ArkTS  
-        JSModule.registerFunc("createData", createData)  
-        JSModule.registerFunc("setDataId", setDataId)  
-        JSModule.registerFunc("getDataId", getDataId)  
-    }  
+    static init() {
+        // Register functions to export to ArkTS
+        JSModule.registerFunc("createData", createData)
+        JSModule.registerFunc("setDataId", setDataId)
+        JSModule.registerFunc("getDataId", getDataId)
+    }
 
-    // Create shared object  
-    static func createData(context: JSContext, _: JSCallInfo): JSValue {  
-        // Create Cangjie object  
-        let data = Data(1, "abc")  
-        // Create JS reference to the Cangjie object  
-        let jsExternal = context.external(data)  
-        // Return JS reference to the Cangjie object  
-        return jsExternal.toJSValue()  
-    }  
+    // Create shared object
+    static func createData(context: JSContext, _: JSCallInfo): JSValue {
+        // Create Cangjie object
+        let data = Data(1, "abc")
+        // Create JS reference to the Cangjie object
+        let jsExternal = context.external(data)
+        // Return JS reference to the Cangjie object
+        return jsExternal.toJSValue()
+    }
 
-    // Set object's ID  
-    static func setDataId(context: JSContext, callInfo: JSCallInfo): JSValue {  
-        // Read arguments  
-        let arg0 = callInfo[0]  
-        let arg1 = callInfo[1]  
+    // Set object's ID
+    static func setDataId(context: JSContext, callInfo: JSCallInfo): JSValue {
+        // Read arguments
+        let arg0 = callInfo[0]
+        let arg1 = callInfo[1]
 
-        // Convert argument 0 to a JS reference to the Cangjie object  
-        let jsExternal = arg0.asExternal(context)  
-        // Get the Cangjie object  
-        let data: Data = jsExternal.cast<Data>().getOrThrow()  
-        // Convert argument 1 to Float64  
-        let value = arg1.toNumber()  
+        // Convert argument 0 to a JS reference to the Cangjie object
+        let jsExternal = arg0.asExternal(context)
+        // Get the Cangjie object
+        let data: Data = jsExternal.cast<Data>().getOrThrow()
+        // Convert argument 1 to Float64
+        let value = arg1.toNumber()
 
-        // Modify the Cangjie object's property  
-        data.id = Int64(value)  
+        // Modify the Cangjie object's property
+        data.id = Int64(value)
 
-        // Return undefined  
-        let result = context.undefined().toJSValue()  
-        return result  
-    }  
+        // Return undefined
+        let result = context.undefined().toJSValue()
+        return result
+    }
 
-    // Get object's ID  
-    static func getDataId(context: JSContext, callInfo: JSCallInfo): JSValue {  
-        let arg0 = callInfo[0]  
+    // Get object's ID
+    static func getDataId(context: JSContext, callInfo: JSCallInfo): JSValue {
+        let arg0 = callInfo[0]
 
-        let jsExternal = arg0.asExternal(context)  
+        let jsExternal = arg0.asExternal(context)
 
-        let data: Data = jsExternal.cast<Data>().getOrThrow()  
+        let data: Data = jsExternal.cast<Data>().getOrThrow()
 
-        let result = context.number(Float64(data.id)).toJSValue()  
-        return result  
-    }  
-}  
-```  
+        let result = context.number(Float64(data.id)).toJSValue()
+        return result
+    }
+}
+```
 
-ArkTS interface declaration corresponding to Cangjie-side code:  
-
-```javascript
-export declare function createData(): undefined;  
-export declare function setDataId(data: undefined, value: number): void;  
-export declare function getDataId(data: undefined): number;  
-```  
-
-ArkTS-side code:  
+ArkTS interface declaration corresponding to Cangjie-side code:
 
 ```javascript
-import { createData, setDatId, getDataId } from "libohos_app_cangjie_entry.so";  
+export declare function createData(): undefined;
+export declare function setDataId(data: undefined, value: number): void;
+export declare function getDataId(data: undefined): number;
+```
 
-// Create shared object  
-let data = createData();  
-// Modify object property  
-setDataId(data, 3);  
-let id = getDataId(data);  
+ArkTS-side code:
 
-console.log("id is " + id);  
-```  
+```javascript
+import { createData, setDatId, getDataId } from "libohos_app_cangjie_entry.so";
 
-**Correct Example:**  
+// Create shared object
+let data = createData();
+// Modify object property
+setDataId(data, 3);
+let id = getDataId(data);
 
-Cangjie-side code:  
+console.log("id is " + id);
+```
 
+**Correct Example:**
+
+Cangjie-side code:
+
+<!--compile-->
 ```cangjie
-// Import interoperability library  
-import ohos.ark_interop.*  
+// Import interoperability library
+import ohos.ark_interop.*
 
-// Define shared class  
-class Data <: SharedObject {  
-    Data(  
-        // Define two properties  
-        var id: Int64,  
-        let name: String  
-    ) {}  
+// Define shared class
+class Data <: SharedObject {
+    Data(
+        // Define two properties
+        var id: Int64,
+        let name: String
+    ) {}
 
-    static init() {  
-        // Register function to export to ArkTS  
-        JSModule.registerFunc("createData", createData)  
-    }  
+    static init() {
+        // Register function to export to ArkTS
+        JSModule.registerFunc("createData", createData)
+    }
 
-    // Create shared object  
-    static func createData(context: JSContext, _: JSCallInfo): JSValue {  
-        let data = Data(1, "abc")  
-        let jsExternal = context.external(data)  
+    // Create shared object
+    static func createData(context: JSContext, _: JSCallInfo): JSValue {
+        let data = Data(1, "abc")
+        let jsExternal = context.external(data)
 
-        // Create empty JSObject  
-        let object = context.object()  
-        // Attach JS reference to the Cangjie object as a hidden property of the JSObject  
-        object.attachCJObject(jsExternal)  
+        // Create empty JSObject
+        let object = context.object()
+        // Attach JS reference to the Cangjie object as a hidden property of the JSObject
+        object.attachCJObject(jsExternal)
 
-        // Add two methods to the JS object  
-        object["setId"] = context.function(setDataId).toJSValue()  
-        object["getId"] = context.function(getDataId).toJSValue()  
+        // Add two methods to the JS object
+        object["setId"] = context.function(setDataId).toJSValue()
+        object["getId"] = context.function(getDataId).toJSValue()
 
-        return object.toJSValue()  
-    }  
+        return object.toJSValue()
+    }
 
-    // Set object's ID  
-    static func setDataId(context: JSContext, callInfo: JSCallInfo): JSValue {  
-        // Get this pointer  
-        let thisArg = callInfo.thisArg  
-        let arg0 = callInfo[0]  
+    // Set object's ID
+    static func setDataId(context: JSContext, callInfo: JSCallInfo): JSValue {
+        // Get this pointer
+        let thisArg = callInfo.thisArg
+        let arg0 = callInfo[0]
 
-        // Convert this pointer to JSObject  
-        let thisObject = thisArg.asObject(context)  
-        // Get hidden property from JSObject  
-        let jsExternal = thisObject.getAttachInfo().getOrThrow()  
-        // Get Cangjie object from JS reference  
-        let data = jsExternal.cast<Data>().getOrThrow()  
-        // Convert argument 0 to Float64  
-        let value = arg0.toNumber()  
+        // Convert this pointer to JSObject
+        let thisObject = thisArg.asObject(context)
+        // Get hidden property from JSObject
+        let jsExternal = thisObject.getAttachInfo().getOrThrow()
+        // Get Cangjie object from JS reference
+        let data = jsExternal.cast<Data>().getOrThrow()
+        // Convert argument 0 to Float64
+        let value = arg0.toNumber()
 
-        // Modify Cangjie object's property  
-        data.id = Int64(value)  
+        // Modify Cangjie object's property
+        data.id = Int64(value)
 
-        let result = context.undefined()  
-        return result.toJSValue()  
-    }  
+        let result = context.undefined()
+        return result.toJSValue()
+    }
 
-    // Get object's ID  
-    static func getDataId(context: JSContext, callInfo: JSCallInfo): JSValue {  
-        let thisArg = callInfo.thisArg  
-        let thisObject = thisArg.asObject(context)  
-        let jsExternal = thisObject.getAttachInfo().getOrThrow()  
-        let data = jsExternal.cast<Data>().getOrThrow()  
+    // Get object's ID
+    static func getDataId(context: JSContext, callInfo: JSCallInfo): JSValue {
+        let thisArg = callInfo.thisArg
+        let thisObject = thisArg.asObject(context)
+        let jsExternal = thisObject.getAttachInfo().getOrThrow()
+        let data = jsExternal.cast<Data>().getOrThrow()
 
-        let result = context.number(Float64(data.id)).toJSValue()  
-        return result  
-    }  
-}  
-```  
+        let result = context.number(Float64(data.id)).toJSValue()
+        return result
+    }
+}
+```
 
-ArkTS interface declaration corresponding to Cangjie-side code:  
-
-```javascript
-export declare interface Data {  
-    setId(value: number): void;  
-    getId(): number;  
-}  
-
-export declare function createData(): Data;  
-```  
-
-ArkTS-side code:  
+ArkTS interface declaration corresponding to Cangjie-side code:
 
 ```javascript
-import { createData } from "libohos_app_cangjie_entry.so";  
+export declare interface Data {
+    setId(value: number): void;
+    getId(): number;
+}
 
-// Create shared object  
-let data = createData();  
-// Modify object property  
-data.setId(3);  
-let id = data.getId();  
+export declare function createData(): Data;
+```
 
-console.log("id is " + id);  
-```  
+ArkTS-side code:
 
-## Cross-Language Object References  
+```javascript
+import { createData } from "libohos_app_cangjie_entry.so";
 
-**【Rule】** When passing objects across languages, developers should avoid having local proxy objects hold references to native objects or ensure such references are nullified after use to prevent memory leaks.  
+// Create shared object
+let data = createData();
+// Modify object property
+data.setId(3);
+let id = data.getId();
 
-During cross-language interoperability, circular references between cross-language objects may occur, preventing related objects from being released and causing memory leaks. The root cause of circular references lies in the ring-shaped dependency between proxy objects (typically parameters or return values of cross-language methods) and native objects. Since their respective garbage collection (GC) mechanisms cannot automatically identify and handle such cross-runtime references, developers must manage them manually.  
+console.log("id is " + id);
+```
 
-![interop-circle](../../figures/interop-circle.png)  
+## Cross-Language Object References
 
-As shown above, to avoid such issues, it is recommended that developers avoid having proxy objects directly reference native objects during design. If the business scenario requires proxy objects to hold references to native objects, ensure the references are released after use to break the circular dependency.  
+**【Rule】** When passing objects across languages, developers should avoid having local proxy objects hold references to native objects or ensure such references are nullified after use to prevent memory leaks.
 
-**Circular Reference Incorrect Example:**  
+During cross-language interoperability, circular references between cross-language objects may occur, preventing related objects from being released and causing memory leaks. The root cause of circular references lies in the ring-shaped dependency between proxy objects (typically parameters or return values of cross-language methods) and native objects. Since their respective garbage collection (GC) mechanisms cannot automatically identify and handle such cross-runtime references, developers must manage them manually.
 
-Cangjie-side code:  
+![interop-circle](../../figures/interop-circle.png)
 
+As shown above, to avoid such issues, it is recommended that developers avoid having proxy objects directly reference native objects during design. If the business scenario requires proxy objects to hold references to native objects, ensure the references are released after use to break the circular dependency.
+
+**Circular Reference Incorrect Example:**
+
+Cangjie-side code:
+
+<!--compile.error-->
 ```cangjie
-import ohos.ark_interop.*  
+import ohos.ark_interop.*
 
-class CJData <: SharedObject {  
-    let name: String  
-    var callback: ?()->Unit = None  
-    init(name: String) {  
-        this.name = name  
-    }  
-}  
+class CJData <: SharedObject {
+    let name: String
+    var callback: ?()->Unit = None
+    init(name: String) {
+        this.name = name
+    }
+}
 
-func createCJData(context: JSContext, callInfo: JSCallInfo): JSValue {  
-    let object = context.object()  
-    let data = CJData(callInfo[0].toString())  
-    object.attachCJObject(context.external(data))  
-    object.defineOwnAccessor("name", getter: { context, callInfo =>  
-        context.string(data.name).toJSValue()  
-    })  
-    object.defineOwnAccessor("callback", setter: {context, callInfo =>  
-        let callback = callInfo[0].asFunction()  
-        data.callback = { =>  
-            callback.call()  
-        }  
-        context.undefined().toJSValue()  
-    })  
+func createCJData(context: JSContext, callInfo: JSCallInfo): JSValue {
+    let object = context.object()
+    let data = CJData(callInfo[0].toString())
+    object.attachCJObject(context.external(data))
+    object.defineOwnAccessor("name", getter: { context, callInfo =>
+        context.string(data.name).toJSValue()
+    })
+    object.defineOwnAccessor("callback", setter: {context, callInfo =>
+        let callback = callInfo[0].asFunction()
+        data.callback = { =>
+            callback.call()
+        }
+        context.undefined().toJSValue()
+    })
 
-    object.toJSValue()  
-}  
+    object.toJSValue()
+}
 
-let EXPORT_MODULE = JSModule.registerModule {  
-    runtime, exports => exports["createCJData"] = runtime.function(createCJData).toJSValue()  
-}  
-```  
+let EXPORT_MODULE = JSModule.registerModule {
+    runtime, exports => exports["createCJData"] = runtime.function(createCJData).toJSValue()
+}
+```
 
-ArkTS interface declaration corresponding to Cangjie-side code:  
-
-```javascript
-export declare interface CJData {  
-    name: string;  
-    callback: () => void;  
-}  
-
-export declare function createCJData(): CJData;  
-```  
-
-ArkTS-side code:  
+ArkTS interface declaration corresponding to Cangjie-side code:
 
 ```javascript
-import { createCJData, CJData } from "libohos_app_cangjie_entry.so"  
+export declare interface CJData {
+    name: string;
+    callback: () => void;
+}
 
-const data: CJData = createCJData("123")  
-data.callback = () => {  
-    console.log(data.name)  
-}  
-```  
+export declare function createCJData(): CJData;
+```
 
-The circular reference in the above example occurs as follows:  
+ArkTS-side code:
 
-1. The `CJData` object **data** created on the ArkTS side holds a reference to the Cangjie object via `external`.  
-2. The Cangjie object (of type `CJData`) holds the **callback** variable.  
-3. **callback** captures the ArkTS-side callback function.  
-4. The ArkTS-side callback function captures the ArkTS-side `CJData` object **data**.  
+```javascript
+import { createCJData, CJData } from "libohos_app_cangjie_entry.so"
 
-If this scenario is necessary for the business, developers should nullify `data.callback` after execution to break the circular reference. Example:  
+const data: CJData = createCJData("123")
+data.callback = () => {
+    console.log(data.name)
+}
+```
 
+The circular reference in the above example occurs as follows:
+
+1. The `CJData` object **data** created on the ArkTS side holds a reference to the Cangjie object via `external`.
+2. The Cangjie object (of type `CJData`) holds the **callback** variable.
+3. **callback** captures the ArkTS-side callback function.
+4. The ArkTS-side callback function captures the ArkTS-side `CJData` object **data**.
+
+If this scenario is necessary for the business, developers should nullify `data.callback` after execution to break the circular reference. Example:
+
+<!--code_no_check-->
 ```cangjie
-// ...  
-data.callback()  
-data.callback = () => {}  
-// ...  
-```## In ArkTS Main Thread, Do Not Block Waiting for Execution Results of spawn(UIThread) in Cangjie Interfaces
+// ...
+data.callback()
+data.callback = () => {}
+// ...
+```
+
+## In ArkTS Main Thread, Do Not Block Waiting for Execution Results of spawn(UIThread) in Cangjie Interfaces
 
 **【Rule】** In Cangjie interfaces called from the ArkTS main thread, do not block waiting for the execution results of `spawn(UIThread)`. Otherwise, it will cause a deadlock and trigger an App Freeze failure.
 
@@ -445,6 +455,7 @@ When Cangjie interfaces are called from the ArkTS main thread, the Cangjie code 
 
 Cangjie-side code:
 
+<!--compile.error-->
 ```cangjie
 import ohos.ark_interop.*
 import ohos.ark_interop_macro.*
@@ -488,6 +499,7 @@ Cangjie threads are user-mode threads, and the runtime schedules Cangjie threads
 
 **Incorrect Example:**
 
+<!--compile.error-->
 Cangjie code:
 
 ```cangjie
@@ -527,6 +539,7 @@ let EXPORT_MODULE = JSModule.registerModule {
 
 Cangjie code:
 
+<!--compile-->
 ```cangjie
 import ohos.ark_interop.*
 
@@ -573,6 +586,7 @@ let EXPORT_MODULE = JSModule.registerModule {
 
 Cangjie code:
 
+<!--compile-->
 ```cangjie
 import ohos.ark_interop.*
 import ohos.base.UIThread
@@ -619,6 +633,7 @@ Thread environment requirements dictate that `JSRuntime` must be bound to a syst
 
 Cangjie code:
 
+<!--compile.error-->
 ```cangjie
 import ohos.ark_interop.*
 

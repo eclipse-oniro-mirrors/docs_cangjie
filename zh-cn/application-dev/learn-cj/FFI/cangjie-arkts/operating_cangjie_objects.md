@@ -12,6 +12,7 @@
 
 1. 定义仓颉函数：
 
+    <!--compile-->
     ```cangjie
     // 导入互操作库
     import ohos.ark_interop.*
@@ -90,13 +91,13 @@
     ```typescript
     // 导入仓颉动态库，该动态库名称为仓颉包名的名称，该名称需要和互操作接口所在的包名一致
     import cjLib from "libohos_app_cangjie_entry.so";
-    
+
     // 创建共享对象
     let data = cjLib.createData();
     // 操作对象属性
     cjLib.setDataId(data, 3);
     let id = cjLib.getDataId(data);
-    
+
     console.log("id is " + id);
     ```
 
@@ -120,6 +121,7 @@ let id = cjLib.getDataId(data);
 
 ### 定义仓颉函数
 
+<!--compile-->
 ```cangjie
 // 导入互操作库
 import ohos.ark_interop.*
@@ -224,6 +226,7 @@ console.log("id is " + id);
 
 1. 定义仓颉函数：
 
+    <!--compile-->
     ```cangjie
     // 导入互操作库
     import ohos.ark_interop.*
@@ -315,12 +318,12 @@ console.log("id is " + id);
     ```typescript
     // 导入仓颉动态库，该动态库名称为仓颉包名的名称，该名称需要和互操作接口所在的包名一致
     import cjLib from "libohos_app_cangjie_entry.so";
-    
+
     // 创建共享对象
     let data = new cjLib.Data();
     // 操作对象属性
     data.setId(3);
     let id = data.getId();
-    
+
     console.log("id is " + id);
     ```

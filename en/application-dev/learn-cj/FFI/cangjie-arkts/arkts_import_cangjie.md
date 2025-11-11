@@ -20,6 +20,7 @@ Below is an example of loading the Cangjie module `ohos_app_cangjie_entry` using
 
     - Implement the interoperability interface `addNumber`:
 
+        <!--compile-->
         ```cangjie
         // entry/src/main/cangjie/index.cj
 
@@ -100,7 +101,7 @@ Below is an example of loading the Cangjie module `ohos_app_cangjie_entry` using
     ```typescript
     // Import the Cangjie dynamic library. The library name must match the package name of the interoperability interface
     import { addNumber } from "libohos_app_cangjie_entry.so";
-    
+
     // Call the Cangjie interface
     let result = addNumber(1, 2);
     console.log(`1 + 2 = ${result}`);
@@ -121,6 +122,7 @@ Below is an example of loading the Cangjie module `ohos_app_cangjie_entry` using
 
     - Implement the interoperability interface `addNumber`:
 
+        <!--compile-->
         ```cangjie
         // entry/src/main/cangjie/index.cj
 
@@ -201,7 +203,7 @@ Below is an example of loading the Cangjie module `ohos_app_cangjie_entry` using
     ```typescript
     // Load the Cangjie dynamic library using the loadNativeModule interface
     let module: ESObject = loadNativeModule("libohos_app_cangjie_entry.so");
-    
+
     // Call the Cangjie interface
     let result: number = module.addNumber(1, 2);
     console.log(`1 + 2 = ${result}`);

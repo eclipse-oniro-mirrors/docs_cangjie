@@ -18,6 +18,7 @@
 
    生成的 second.cj 文件内容如下：
 
+   <!--code_no_check-->
    ```cangjie
    package ohos_app_cangjie_entry   // 包名
 
@@ -48,8 +49,9 @@
 
    ![image-20250415105651058](../../figures/add_cangjie_page_3.png)
 
-3. 在  **entry->src->main->ets->pages** 中创建一个 ArkTS 文件，该文件作为容器加载仓颉页面组件（见本章节开头的说明），将其命名为 second.ets，文件内容如下：
+3. 在 **entry->src->main->ets->pages** 中会生成一个 ArkTS 文件，该文件作为容器加载仓颉页面组件（见本章节开头的说明），其名为 second.ets，文件内容如下：
 
+   <!--code_no_check-->
    ```ts
    // 在 ArkTS 页面中嵌入仓颉页面组件
    // 导入接口函数

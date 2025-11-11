@@ -45,6 +45,7 @@ An example from an interoperability function implementation:
 
 1. Cangjie function implementation:
 
+    <!--compile-->
     ```cangjie
     // Define the package name, which must match the package name in cjpm.toml
     package ohos_app_cangjie_entry
@@ -92,7 +93,7 @@ An example from an interoperability function implementation:
     ```typescript
     // Import the Cangjie dynamic library. The library name is the Cangjie package name, which must match the package name of the interoperability interface.
     import { addByObject } from "libohos_app_cangjie_entry.so";
-    
+
     // Call the Cangjie interface
     let result = addByObject({a: 1, b: 2});
     console.log("result = " + result);
@@ -114,6 +115,7 @@ In addition to reading properties from objects, you can also assign values to pr
 
 2. For an unknown object, you can enumerate its enumerable properties:
 
+   <!--compile-->
    ```cangjie
    func handleUnknownObject(context: JSContext, target: JSObject): Unit {
        // Enumerate the object's enumerable properties using the keys interface
@@ -152,6 +154,7 @@ class SendableTestClass {
 
 Manipulate the sendable object in Cangjie:
 
+<!--compile-->
 ```cangjie
 // Define the package name, which must match the package name in cjpm.toml
 package ohos_app_cangjie_entry
@@ -208,6 +211,7 @@ To address data race issues between concurrent instances, ArkTS introduces async
 
 Cangjie implementation:
 
+<!--compile-->
 ```cangjie
 // Define the package name, which must match the package name in cjpm.toml
 package ohos_app_cangjie_entry
@@ -399,16 +403,19 @@ This example first calls a Cangjie function from ArkTS, then calls back an ArkTS
     addByCallback(1, 2, (result) => {
         console.log(`1 + 2 = ${result}`);
     });
-    ```2. Calling Back ArkTS Functions in Cangjie Code:
+    ```
 
+2. Calling Back ArkTS Functions in Cangjie Code:
+
+    <!--compile-->
     ```cangjie
     package ohos_app_cangjie_entry
-    
+
     internal import ohos.ark_interop.JSModule
     internal import ohos.ark_interop.JSContext
     internal import ohos.ark_interop.JSCallInfo
     internal import ohos.ark_interop.JSValue
-    
+
     func addByCallback(context: JSContext, callInfo: JSCallInfo): JSValue {
         // Get the 1st and 2nd parameters and convert them to Float64
         let a = callInfo[0].toNumber()
@@ -422,7 +429,7 @@ This example first calls a Cangjie function from ArkTS, then calls back an ArkTS
         // Invoke the callback function
         callback.call(retJSValue)
     }
-    
+
     let EXPORT_MODULE = JSModule.registerModule {
         runtime, exports =>
             exports["addByCallback"] = runtime.function(addByCallback).toJSValue()
@@ -433,6 +440,7 @@ This example first calls a Cangjie function from ArkTS, then calls back an ArkTS
 
 The function in this example doesn't have a `this` pointer. For method calls requiring a `this` pointer, you can specify it using the named parameter `thisArg`.
 
+<!--compile-->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let callback = callInfo[0].asFunction(context)
@@ -464,6 +472,7 @@ doSth.call();
 
 The corresponding implementation in Cangjie is as follows:
 
+<!--compile.error-->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let object = callInfo[0].asObject(context)

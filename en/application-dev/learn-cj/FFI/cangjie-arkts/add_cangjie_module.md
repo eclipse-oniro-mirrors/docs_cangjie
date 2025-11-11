@@ -32,6 +32,7 @@ This section explains how to add the Cangjie module to an ArkTS project in DevEc
 
 4. In the **cangjielib->src->main->cangjie->index.cj** file, add interoperability code. The following is an example:
 
+   <!--compile-->
    ```cangjie
    // Package name
    package ohos_app_cangjie_cangjielib
