@@ -2174,14 +2174,6 @@ public func addTextSpan(content!: ?ResourceStr, options!: ?RichEditorTextSpanOpt
 |:---|:---|
 |Int32|添加完成的TextSpan所在的位置。|
 
-**异常：**
-
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
-
-	|错误码|说明|
-	|:---|:---|
-	|100001|Internal error: failed to allocate memory.|
-
 #### func addImageSpan(?ResourceStr, ?RichEditorImageSpanOptions)
 
 ```cangjie

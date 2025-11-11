@@ -32,14 +32,6 @@ func width(value: Option<Length>): T
 |:---|:---|
 |T|返回通用方法接口类型|
 
-**异常：**
-
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
-
-  | 错误码ID | 错误信息 |
-  | :---- | :--- |
-  | 100001 | Internal error. |
-
 ## func height(Option\<Length>)
 
 ```cangjie
@@ -63,14 +55,6 @@ func height(value: Option<Length>): T
 |类型|说明|
 |:---|:---|
 |T|返回通用方法接口类型|
-
-**异常：**
-
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
-
-  | 错误码ID | 错误信息 |
-  | :---- | :--- |
-  | 100001 | Internal error. |
 
 ## func size(?Length, ?Length)
 
@@ -97,14 +81,6 @@ func size(width!: ?Length, height!: ?Length): T
 |:---|:---|
 |T|返回通用方法接口类型|
 
-**异常：**
-
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
-
-  | 错误码ID | 错误信息 |
-  | :---- | :--- |
-  | 100001 | Internal error. |
-
 ## func padding(?Length)
 
 ```cangjie
@@ -128,14 +104,6 @@ func padding(value: ?Length): T
 |类型|说明|
 |:---|:---|
 |T|返回通用方法接口类型|
-
-**异常：**
-
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
-
-  | 错误码ID | 错误信息 |
-  | :---- | :--- |
-  | 100001 | Internal error. |
 
 ## func padding(?Length, ?Length, ?Length, ?Length)
 
@@ -164,14 +132,6 @@ func padding(top!: ?Length, right!: ?Length, bottom!: ?Length, left!: ?Length): 
 |:---|:---|
 |T|返回通用方法接口类型|
 
-**异常：**
-
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
-
-  | 错误码ID | 错误信息 |
-  | :---- | :--- |
-  | 100001 | Internal error. |
-
 ## func margin(?Length)
 
 ```cangjie
@@ -195,14 +155,6 @@ func margin(value: ?Length): T
 |类型|说明|
 |:---|:---|
 |T|返回通用方法接口类型|
-
-**异常：**
-
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
-
-  | 错误码ID | 错误信息 |
-  | :---- | :--- |
-  | 100001 | Internal error. |
 
 ## func margin(?Length, ?Length, ?Length, ?Length)
 
@@ -231,14 +183,6 @@ func margin(top!: ?Length, right!: ?Length, bottom!: ?Length, left!: ?Length): T
 |:---|:---|
 |T|返回通用方法接口类型|
 
-**异常：**
-
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
-
-  | 错误码ID | 错误信息 |
-  | :---- | :--- |
-  | 100001 | Internal error. |
-
 ## func layoutWeight(?Int32)
 
 ```cangjie
@@ -262,14 +206,6 @@ func layoutWeight(value: ?Int32): T
 |类型|说明|
 |:---|:---|
 |T|返回通用方法接口类型|
-
-**异常：**
-
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
-
-  | 错误码ID | 错误信息 |
-  | :---- | :--- |
-  | 100001 | Internal error. |
 
 ## func aspectRatio(Float64)
 
@@ -295,14 +231,6 @@ func aspectRatio(value: Float64): T
 |:---|:---|
 |T|返回通用方法接口类型|
 
-**异常：**
-
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
-
-  | 错误码ID | 错误信息 |
-  | :---- | :--- |
-  | 100001 | Internal error. |
-
 ## func displayPriority(?Int32)
 
 ```cangjie
@@ -327,14 +255,6 @@ func displayPriority(value: ?Int32): T
 |:---|:---|
 |T|返回通用方法接口类型|
 
-**异常：**
-
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
-
-  | 错误码ID | 错误信息 |
-  | :---- | :--- |
-  | 100001 | Internal error. |
-
 ## func responseRegion(?Rectangle)
 
 ```cangjie
@@ -358,14 +278,6 @@ func responseRegion(value: ?Rectangle): T
 |类型|说明|
 |:---|:---|
 |T|返回通用方法接口类型|
-
-**异常：**
-
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
-
-  | 错误码ID | 错误信息 |
-  | :---- | :--- |
-  | 100001 | Internal error. |
 
 ## func responseRegion(?Array\<Rectangle>)
 
