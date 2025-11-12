@@ -511,6 +511,7 @@ import ohos.arkui.state_macro_manage.*
 import ohos.i18n.*
 import ohos.resource_manager.*
 import ohos.hilog.*
+import ohos.arkui.component.common.Offset as CommonOffset
 
 
 @Entry
@@ -538,7 +539,7 @@ class EntryView {
             .selectedOptionFont(size: 16.vp, weight: FontWeight.W400)
             .space(this.space)
             .arrowPosition(this.arrow)
-            .menuAlign(alignType: MenuAlignType.Start, offset: Offset(0, 0))
+            .menuAlign(alignType: MenuAlignType.Start, offset: CommonOffset(0, 0))
             .optionWidth(200)
             .optionHeight(300)
             .onSelect({ index: Int32, text: String =>

@@ -28,7 +28,7 @@ import ohos.arkui.state_macro_manage.*
 class EntryView {
     @State var animate: Bool = false
     //第一步：声明相关状态变量
-    @State var rotateValue: Float32 = 0.0
+    @State var rotateValue: Float64 = 0.0
     @State var translateX: Float32 = 0.0
     @State var opacityValue: Float32 = 1.0
 
@@ -107,7 +107,7 @@ import ohos.arkui.state_macro_manage.*
 class EntryView {
     @State var animate: Bool = false
     //第一步：声明相关状态变量
-    @State var rotateValue: Float32 = 0.0
+    @State var rotateValue: Float64 = 0.0
     @State var translateX: Float32 = 0.0
     @State var opacityValue: Float32 = 1.0
 

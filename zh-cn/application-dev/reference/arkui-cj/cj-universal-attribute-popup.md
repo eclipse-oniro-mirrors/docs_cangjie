@@ -76,6 +76,7 @@ import kit.ArkUI.*
 import ohos.arkui.state_management.*
 import ohos.arkui.state_macro_manage.*
 import ohos.base.*
+import ohos.arkui.component.common.Font as CommonFont
 
 @Builder
 func popupBuilder() {
@@ -142,7 +143,7 @@ class EntryView {
                         arrowPointPosition: ArrowPointPosition.Center,
                         mask: Color(0x33000000),
                         popupColor: Color.Green,
-                        messageOptions: PopupMessageOptions(textColor: Color.Blue, font: Font(size: 20.vp)),
+                        messageOptions: PopupMessageOptions(textColor: Color.Blue, font: CommonFont(size: 20.vp)),
                         transition: TransitionEffect.SLIDE_SWITCH,
                         onWillDismiss: {
                             dismissPopupAction: DismissPopupAction =>

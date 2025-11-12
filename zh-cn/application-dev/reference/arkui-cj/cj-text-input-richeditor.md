@@ -2513,7 +2513,7 @@ class EntryView {
             .onReady({ => Hilog.info(0, "AppLogCj", "RichEditor onReady!!")})
             .onDeleteComplete({ => Hilog.info(0, "AppLogCj", "RichEditor onDeleteComplete!!")})
             .onSelect({ value =>
-                Hilog.info(0, "AppLogCj", "RichEditor onSelect. ${value.selection.getOrThrow()[0]} ~ ${value.selection.getOrThrow()[1]}")
+                Hilog.info(0, "AppLogCj", "RichEditor onSelect. ${value.selection[0]} ~ ${value.selection[1]}")
             })
         }
     }

@@ -769,20 +769,22 @@ Navigation组件是路由导航的根视图容器。
 <!-- run -->
 
 ```cangjie
+package ohos_app_cangjie_entry
 import kit.ArkUI.*
+import ohos.arkui.state_macro_manage.*
 
 @Entry
 @Component
-struct NavigationExample {
-    build() {
+class NavigationExample {
+    func build() {
         Navigation() {
             Text("Home")
-                .width("100%")
-                .height("100%")
+                .width(100.percent)
+                .height(100.percent)
         }
         .title("Home")
-        .width("100%")
-        .height("100%")
+        .width(100.percent)
+        .height(100.percent)
     }
 }
 ```

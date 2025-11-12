@@ -566,7 +566,7 @@ class Model {
         this.callback = callback
     }
     func delete() {
-        this.callback = Option<() -> Unit>.None.getOrThrow()
+        this.callback = {=>}
     }
     func call() {
         if (true) {

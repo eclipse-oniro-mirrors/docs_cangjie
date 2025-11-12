@@ -1041,6 +1041,7 @@ package ohos_app_cangjie_entry
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
 import std.collection.ArrayList
+import ohos.arkui.component.common.Font as CommonFont
 
 class MyDataSource<T> <: IDataSource<T> {
     private var list: ArrayList<T> = ArrayList<T>([])
@@ -1105,7 +1106,7 @@ class EntryView {
                         .top(200)
                         .fontColor(Color.Gray)
                         .selectedFontColor(Color.Gray)
-                        .digitFont(Font(size: 20, weight: FontWeight.Bold)))
+                        .digitFont(CommonFont(size: 20, weight: FontWeight.Bold)))
                 .loop(true)
                 .duration(1000)
                 .itemSpace(0)

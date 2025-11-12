@@ -478,10 +478,10 @@ class EntryView {
                     .height(150)
                     .margin(15)
                     .onComplete({msg: ImageLoadResult =>
-                        this.widthValue = msg.width.getOrThrow()
-                        this.heightValue = msg.height.getOrThrow()
-                        this.componentWidth = msg.componentWidth.getOrThrow()
-                        this.componentHeight = msg.componentHeight.getOrThrow()
+                        this.widthValue = msg.width
+                        this.heightValue = msg.height
+                        this.componentWidth = msg.componentWidth
+                        this.componentHeight = msg.componentHeight
                     })
                     .onError({evt =>
                         Hilog.info(0, "cangjie", "load image fail")

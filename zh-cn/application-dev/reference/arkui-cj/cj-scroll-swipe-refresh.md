@@ -195,62 +195,96 @@ class MyDataSource <: IDataSource<Int64> {
     public func unregisterDataChangeListener(listener: DataChangeListener): Unit {
         listenerOp = None
     }
-    
-    public func refresh(): Unit {
-        data_.clear()
-        let now = Date.now()
-        for (_, index) in data_.indices() {
-            data_.insertAt(0, now + index)
-        }
-        match (listenerOp) {
-            case Some(listener) => listener.onDataReloaded()
-            case None => ()
-        }
+
+    public func totalCount(): Int64 {
+        return data_.size
     }
 }
 
 @Entry
 @Component
 class EntryView {
-    @State @Bind var refreshing: Bool = false
-    let data_ = ArrayList<Int64>()
-    let dataSrc: MyDataSource
-    
-    public init() {
-        for (index in 0..10) {
-            data_.pushBack(Date.now() + index)
-        }
-        dataSrc = MyDataSource(data_)
-    }
-    
+    @State
+    var isRefreshing: Bool = false
+    let myDataSource: MyDataSource = MyDataSource(ArrayList<Int64>(10, {i => i}))
+    @State
+    var status: String = "Inactive"
+    @State
+    var onRefreshStatus: String = "noRefresh"
+    @State
+    var ratio: Float64 = 1.0
+    @State
+    var maxRefreshingHeight: Float64 = 100.0
+
     func build() {
         Column() {
-            Refresh(value: RefreshOptions(refreshing: $refreshing), {
-                Scroll() {
-                    LazyForEach(this.dataSrc, itemGeneratorFunc: {item: Int64, _: Int64 =>
-                        Column() {
-                            Text("${Date(item).toLocaleString()}")
-                                .fontSize(20)
-                                .width(100.percent)
-                                .height(50)
-                                .textAlign(TextAlign.Center)
+            Text(status)
+                    .size(width: 50.percent, height: 50.vp)
+                    .borderWidth(1)
+                    .borderColor(Color.Black)
+                    .backgroundColor(0xFFFFFF)
+                    .borderRadius(15)
+                    .textAlign(TextAlign.Center)
+                    .fontSize(30)
+                    .margin(top: 20.vp)
+                    .id("StatusText")
+            Text(onRefreshStatus)
+                    .size(width: 50.percent, height: 50.vp)
+                    .borderWidth(1)
+                    .borderColor(Color.Black)
+                    .backgroundColor(0xFFFFFF)
+                    .borderRadius(15)
+                    .textAlign(TextAlign.Center)
+                    .fontSize(30)
+                    .margin(top: 20.vp)
+                    .id("OnRefreshText")
+
+            Refresh(RefreshOptions(refreshing: @Binder(isRefreshing))) {
+                Column {
+                    LazyForEach(
+                            myDataSource,
+                            itemGeneratorFunc: {
+                                element: Int64, index: Int64 => Text(element.toString())
+                            .size(width: 50.percent, height: 50.vp)
+                            .borderWidth(1)
+                            .borderColor(Color.Black)
+                            .backgroundColor(0xFFFFFF)
+                            .borderRadius(15)
+                            .textAlign(TextAlign.Center)
+                            .fontSize(30)
+                            .margin(top: 20.vp)
+                            }
+                    )
+                }.width(100.percent).backgroundColor(0x89CFF0)
+            }
+                    .width(100.percent)
+                    .height(100.percent)
+                    .id("refresh")
+                    .onRefreshing(
+                            {
+                                =>
+                                onRefreshStatus = "Refresh"
+                                Timer.once(2000 * Duration.millisecond) {
+                                    => launch {
+                                    this.isRefreshing = false
+                                    onRefreshStatus = "NoRefresh"
+                                }
+                                }
+                            }
+                    )
+                    .onStateChange({
+                        refreshStatus: RefreshStatus =>
+                        var status = match (refreshStatus) {
+                            case Inactive => "Inactive"
+                            case Drag => "Drag"
+                            case OverDrag => "OverDrag"
+                            case Refresh => "Refresh"
+                            case Done => "Done"
+                            case _ => ""
                         }
-                        .backgroundColor(0xFFFFFF)
-                        .margin(5)
-                        .borderRadius(5)
                     })
-                }
-                .edgeEffect(EdgeEffect.Spring)
-            })
-            .onRefreshing({=>
-                TaskRunner.delay({=>
-                    this.dataSrc.refresh()
-                    this.refreshing = false
-                }, 2000)
-            })
+                    .backgroundColor(0x89CFF0)
         }
-        .padding(10)
-        .backgroundColor(0xDCDCDC)
     }
 }
 ```

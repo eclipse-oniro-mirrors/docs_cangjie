@@ -1337,6 +1337,7 @@ package ohos_app_cangjie_entry
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
 import ohos.hilog.*
+import ohos.arkui.component.common.Offset as CommonOffset
 
 @Entry
 @Component
@@ -1350,7 +1351,7 @@ class EntryView {
                             subtitle: "subtitle",
                             autoCancel: true,
                             cancel: {=> Hilog.info(0, "AppLogCj", "Closed callbacks")}, alignment: DialogAlignment.Center,
-                            offset: Offset(0, -20), gridCount: 4,
+                            offset: CommonOffset(0, -20), gridCount: 4,
                             onWillDismiss: {
                                 dismissDialogAction: DismissDialogAction => match (dismissDialogAction.reason) {
                                     case PRESS_BACK => dismissDialogAction.dismiss()
@@ -1370,7 +1371,7 @@ class EntryView {
                             autoCancel: true,
                             cancel: {=> Hilog.info(0, "AppLogCj", "Closed callbacks")},
                             alignment: DialogAlignment.Center,
-                            offset: Offset(0, -20), gridCount: 4,
+                            offset: CommonOffset(0, -20), gridCount: 4,
                             onWillDismiss: {
                                 dismissDialogAction: DismissDialogAction => match (dismissDialogAction.reason) {
                                     case PRESS_BACK => dismissDialogAction.dismiss()
@@ -1394,7 +1395,7 @@ class EntryView {
                             autoCancel: true,
                             cancel: {=> Hilog.info(0, "AppLogCj", "Callback when third button is clicked")},
                             alignment: DialogAlignment.Center,
-                            offset: Offset(0, -20),
+                            offset: CommonOffset(0, -20),
                             gridCount: 4,
                             onWillDismiss: {
                                 dismissDialogAction: DismissDialogAction => match (dismissDialogAction.reason) {
@@ -1432,6 +1433,7 @@ package ohos_app_cangjie_entry
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
 import ohos.hilog.*
+import ohos.arkui.component.common.Offset as CommonOffset
 
 @Entry
 @Component
@@ -1447,7 +1449,7 @@ class EntryView {
                             autoCancel: true,
                             cancel: {=> Hilog.info(0, "AppLogCj", "Closed callbacks")},
                             alignment: DialogAlignment.Center,
-                            offset: Offset(0, -20),
+                            offset: CommonOffset(0, -20),
                             showInSubWindow: true,
                             buttonDirection: DialogButtonDirection.Horizontal,
                             gridCount: 4,

@@ -38,7 +38,7 @@ let myCurves: Array<MyCurve> = [
 @Entry
 @Component
 class EntryView {
-    @State var dRotate: Float32 = 0.0
+    @State var dRotate: Float64 = 0.0
 
     func build() {
         Column() {
