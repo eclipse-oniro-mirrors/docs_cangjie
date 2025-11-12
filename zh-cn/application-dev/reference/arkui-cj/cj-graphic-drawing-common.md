@@ -10,7 +10,7 @@ import kit.ArkUI.*
 
 ## 组件属性
 
-### public func fill(?ResourceColor)
+### func fill(?ResourceColor)
 
 ```cangjie
 public func fill(value: ?ResourceColor): T
@@ -28,7 +28,7 @@ public func fill(value: ?ResourceColor): T
 |:---|:---|:---|:---|:---|
 |value|?[ResourceColor](./cj-common-types.md#interface-resourcecolor)|是|-|填充颜色。初始值：Color.Black。|
 
-### public func fillOpacity(?Float64)
+### func fillOpacity(?Float64)
 
 ```cangjie
 public func fillOpacity(value: ?Float64): T
@@ -46,7 +46,7 @@ public func fillOpacity(value: ?Float64): T
 |:---|:---|:---|:---|:---|
 |value|?Float64|是|-|填充透明度。初始值：1.0。|
 
-### public func fillOpacity(?AppResource)
+### func fillOpacity(?AppResource)
 
 ```cangjie
 public func fillOpacity(value: ?AppResource): T
@@ -64,7 +64,7 @@ public func fillOpacity(value: ?AppResource): T
 |:---|:---|:---|:---|:---|
 |value|?[AppResource](../LocalizationKit/cj-apis-resource.md#class-appresource)|是|-|填充透明度。初始值：1.0。|
 
-### public func stroke(?ResourceColor)
+### func stroke(?ResourceColor)
 
 ```cangjie
 public func stroke(value: ?ResourceColor): T
@@ -82,7 +82,7 @@ public func stroke(value: ?ResourceColor): T
 |:---|:---|:---|:---|:---|
 |value|?[ResourceColor](./cj-common-types.md#interface-resourcecolor)|是|-|边框颜色。初始值：Color.Transparent。|
 
-### public func strokeDashArray(?Array\<Length>)
+### func strokeDashArray(?Array\<Length>)
 
 ```cangjie
 public func strokeDashArray(value: ?Array<Length>): T
@@ -100,7 +100,7 @@ public func strokeDashArray(value: ?Array<Length>): T
 |:---|:---|:---|:---|:---|
 |value|?Array\<[Length](./cj-common-types.md#interface-length)>|是|-|边框虚线数组。初始值：[]。|
 
-### public func strokeDashOffset(?Length)
+### func strokeDashOffset(?Length)
 
 ```cangjie
 public func strokeDashOffset(value: ?Length): T
@@ -118,7 +118,7 @@ public func strokeDashOffset(value: ?Length): T
 |:---|:---|:---|:---|:---|
 |value|?[Length](./cj-common-types.md#interface-length)|是|-|边框虚线偏移量。初始值：0.vp。|
 
-### public func strokeLineCap(?LineCapStyle)
+### func strokeLineCap(?LineCapStyle)
 
 ```cangjie
 public func strokeLineCap(value: ?LineCapStyle): T
@@ -136,7 +136,7 @@ public func strokeLineCap(value: ?LineCapStyle): T
 |:---|:---|:---|:---|:---|
 |value|?[LineCapStyle](./cj-common-types.md#enum-linecapstyle)|是|-|边框线帽样式。初始值：LineCapStyle.Butt。|
 
-### public func strokeLineJoin(?LineJoinStyle)
+### func strokeLineJoin(?LineJoinStyle)
 
 ```cangjie
 public func strokeLineJoin(value: ?LineJoinStyle): T
@@ -154,7 +154,7 @@ public func strokeLineJoin(value: ?LineJoinStyle): T
 |:---|:---|:---|:---|:---|
 |value|?[LineJoinStyle](./cj-common-types.md#enum-linejoinstyle)|是|-|边框连接点样式。初始值：LineJoinStyle.Miter。|
 
-### public func strokeMiterLimit(?Float64)
+### func strokeMiterLimit(?Float64)
 
 ```cangjie
 public func strokeMiterLimit(miterLimit: ?Float64): T
@@ -172,7 +172,7 @@ public func strokeMiterLimit(miterLimit: ?Float64): T
 |:---|:---|:---|:---|:---|
 |miterLimit|?Float64|是|-|斜接长度与边框宽度比值的极限值。<br>初始值：4.0。|
 
-### public func strokeOpacity(?Float64)
+### func strokeOpacity(?Float64)
 
 ```cangjie
 public func strokeOpacity(value: ?Float64): T
@@ -190,7 +190,7 @@ public func strokeOpacity(value: ?Float64): T
 |:---|:---|:---|:---|:---|
 |value|?Float64|是|-|边框透明度。初始值：1.0。|
 
-### public func strokeOpacity(?AppResource)
+### func strokeOpacity(?AppResource)
 
 ```cangjie
 public func strokeOpacity(value: ?AppResource): T
@@ -208,7 +208,7 @@ public func strokeOpacity(value: ?AppResource): T
 |:---|:---|:---|:---|:---|
 |value|?[AppResource](../LocalizationKit/cj-apis-resource.md#class-appresource)|是|-|边框透明度。初始值：1.0。|
 
-### public func strokeWidth(?Length)
+### func strokeWidth(?Length)
 
 ```cangjie
 public func strokeWidth(value: ?Length): T
@@ -226,7 +226,7 @@ public func strokeWidth(value: ?Length): T
 |:---|:---|:---|:---|:---|
 |value|?[Length](./cj-common-types.md#interface-length)|是|-|边框宽度。初始值：1.vp。|
 
-### public func antiAlias(?Bool)
+### func antiAlias(?Bool)
 
 ```cangjie
 public func antiAlias(value: ?Bool): T
