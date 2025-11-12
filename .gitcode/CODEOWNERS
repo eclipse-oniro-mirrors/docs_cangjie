@@ -1,9 +1,9 @@
 # 根目录
-@xuanjz @amy_mayun
+@xuanjz
 # 流程配置
 /.gitcode/ @xuanjz
 # 英文文档
-/en/ @guoyuqing @luojianing @amy_mayun
+/en/ @guoyuqing
 # 用户指南
 /zh-cn/application-dev/learn-cj/ @Augus_Jan @wyq1213 @Timi3 @wuying21
 /zh-cn/application-dev/learn-cj/FFI @gaoxiang @xuanjz @anancds123 @wuying21
@@ -651,4 +651,4 @@
 /zh-cn/application-dev/reference/arkinterop/cj-api-labels.md @gaoxiang @xuanjz @anancds123 @luojianing
 # 公共基础能力
 /zh-cn/application-dev/reference/arkui-cj/cj-syscap.md @Tyfiell @persisting @hejuanjuan @luojianing
-/zh-cn/application-dev/reference/cj-libs-api.md @luojianing @xuanjz @amy_mayun 
+/zh-cn/application-dev/reference/cj-libs-api.md @luojianing @xuanjz @guoyuqing
