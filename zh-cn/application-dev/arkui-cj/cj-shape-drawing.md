@@ -177,6 +177,8 @@ viewPort(x!: Length, y!: Length, width!: Length, height!: Length)
 
 - 通过[fill](../reference/arkui-cj/cj-graphic-drawing-common.md#func-fillresourcecolor)可以设置组件填充区域颜色。
 
+  <!-- code_check_manual -->
+
   ```cangjie
   Path()
       .width(100)
@@ -190,6 +192,8 @@ viewPort(x!: Length, y!: Length, width!: Length, height!: Length)
 
 - 通过[stroke](../reference/arkui-cj/cj-graphic-drawing-common.md#func-strokeresourcecolor)可以设置组件边框颜色。
 
+  <!-- code_check_manual -->
+
   ```cangjie
   Path()
       .width(100)
@@ -202,6 +206,8 @@ viewPort(x!: Length, y!: Length, width!: Length, height!: Length)
   ![stroke](figures/stroke.png)
 
 - 通过[strokeOpacity](../reference/arkui-cj/cj-graphic-drawing-common.md#func-strokeopacityappresource)可以设置边框透明度。
+
+  <!-- code_check_manual -->
 
   ```cangjie
   Path()
@@ -218,6 +224,8 @@ viewPort(x!: Length, y!: Length, width!: Length, height!: Length)
 
 - 通过[antiAlias](../reference/arkui-cj/cj-graphic-drawing-common.md#func-antialiasbool)设置是否开启抗锯齿，默认值为true（开启抗锯齿）。
 
+  <!-- code_check_manual -->
+
   ```cangjie
   // 开启抗锯齿
   Circle()
@@ -229,6 +237,8 @@ viewPort(x!: Length, y!: Length, width!: Length, height!: Length)
   ```
 
   ![antiAliasTrue](figures/antiAliasTrue.png)
+
+  <!-- code_check_manual -->
 
   ```cangjie
   // 关闭抗锯齿

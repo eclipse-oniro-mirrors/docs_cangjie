@@ -37,6 +37,8 @@ public func getAllDisplays(): Array<Display>
 
 **示例：**
 
+<!-- code_check_manual -->
+
 ```cangjie
 import ohos.display.*
 
@@ -80,6 +82,8 @@ public func getCurrentFoldCreaseRegion(): FoldCreaseRegion
 
 **示例：**
 
+<!-- code_check_manual -->
+
 ```cangjie
 import ohos.display.*
 func getCurrentFoldCreaseRegionExample() {
@@ -120,6 +124,8 @@ public func getDefaultDisplaySync(): Display
   |1400003|This display manager service works abnormally.|
 
 **示例：**
+
+<!-- code_check_manual -->
 
 ```cangjie
 import ohos.display.*
@@ -235,6 +241,8 @@ public func off(listenerType: ListenerType, callback: Callback1Argument<FoldDisp
 
 **示例：**
 
+<!-- code_check_manual -->
+
 ```cangjie
 import ohos.display.*
 class TestCallback <: Callback1Argument<FoldDisplayMode> {
@@ -288,6 +296,8 @@ public func off(listenerType: ListenerType, callback: Callback1Argument<FoldStat
   |1400003|This display manager service works abnormally.|
 
 **示例：**
+
+<!-- code_check_manual -->
 
 ```cangjie
 import ohos.display.*
@@ -343,6 +353,8 @@ public func on(listenerType: ListenerType, callback: Callback1Argument<FoldDispl
 
 **示例：**
 
+<!-- code_check_manual -->
+
 ```cangjie
 import ohos.display.*
 class TestCallback <: Callback1Argument<FoldDisplayMode> {
@@ -396,6 +408,8 @@ public func on(listenerType: ListenerType, callback: Callback1Argument<FoldStatu
   |1400003|This display manager service works abnormally.|
 
 **示例：**
+
+<!-- code_check_manual -->
 
 ```cangjie
 import ohos.display.*
@@ -763,6 +777,8 @@ public func getCutoutInfo(): CutoutInfo
   |1400003|This display manager service works abnormally.|
 
 **示例：**
+
+<!-- code_check_manual -->
 
 ```cangjie
 import ohos.display.*

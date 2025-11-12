@@ -285,6 +285,8 @@ class Child{
 
     【反例】
 
+    <!-- code_no_check -->
+
     ```cangjie
     // 父组件
     @Entry
@@ -314,6 +316,8 @@ class Child{
     ```
 
     【正例】
+
+    <!-- code_check_manual -->
 
     ```cangjie
     @Component
@@ -368,6 +372,8 @@ class Child{
 
     【反例】
 
+    <!-- code_no_check -->
+
     ```cangjie
     @Component
     class Child{
@@ -398,6 +404,8 @@ class Child{
     ```
 
     【正例】
+
+    <!-- code_check_manual -->
 
     ```cangjie
     @Component

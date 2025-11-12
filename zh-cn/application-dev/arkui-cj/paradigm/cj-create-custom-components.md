@@ -14,6 +14,8 @@
 
 以下示例展示了自定义组件的基本用法。
 
+<!-- code_check_manual -->
+
 ```cangjie
 @Component
 class HelloComponent {
@@ -30,6 +32,8 @@ class HelloComponent {
 ```
 
 HelloComponent可以在其他自定义组件中的build()函数中多次创建，实现自定义组件的重用。
+
+<!-- code_check_manual -->
 
 ```cangjie
 @Entry
@@ -269,6 +273,8 @@ class Child {
 
 - 不允许调用没有用@Builder装饰的方法，允许系统组件的参数是CJ方法的返回值。
 
+  <!-- code_check_manual -->
+
   ```cangjie
   @Component
   class EntryView {
@@ -319,6 +325,8 @@ class Child {
 
 - 不允许直接改变状态变量，反例如下。详细分析见[@State常见问题：不允许在build里改状态变量](../state_management/cj-macro-state.md#不允许在build里改状态变量)。
 
+  <!-- code_check_manual -->
+
   ```cangjie
   @Component
   class EntryView {
@@ -344,6 +352,8 @@ class Child {
 ## 自定义组件通用样式
 
 自定义组件通过“.”链式调用设置通用样式。
+
+<!-- code_check_manual -->
 
 ```cangjie
 @Component

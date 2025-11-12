@@ -20,6 +20,8 @@ Video组件支持加载本地视频和网络视频。
 
 再使用资源访问符@rawfile()引用视频资源。
 
+<!-- code_check_manual -->
+
 ```cangjie
 @Component
 class VideoPlayer {
@@ -39,6 +41,8 @@ class VideoPlayer {
 
 支持file://路径前缀的字符串，用于读取应用沙箱路径内的资源，需要保证应用沙箱目录路径下的文件存在并且有可读权限。
 
+<!-- code_check_manual -->
+
 ```cangjie
 @Component
 class VideoPlayer {
@@ -56,6 +60,8 @@ class VideoPlayer {
 ### 加载网络视频
 
 加载网络视频时，需要申请权限ohos.permission.INTERNET，具体申请方式请参考[声明权限](../security/AccessToken/cj-declare-permissions.md)。此时，Video的src属性为网络视频的链接。
+
+<!-- code_check_manual -->
 
 ```cangjie
 @Component
@@ -75,6 +81,8 @@ class VideoPlayer {
 ## 添加属性
 
 Video组件[属性](../reference/arkui-cj/cj-image-video-video.md#组件属性)主要用于设置视频的播放形式。例如设置视频播放是否静音、播放是否显示控制条等。
+
+<!-- code_check_manual -->
 
 ```cangjie
 @Component
@@ -97,6 +105,8 @@ class VideoPlayer {
 ## 事件调用
 
 Video组件回调事件主要为播放开始、暂停结束、播放失败、播放停止、视频准备和操作进度条等事件，除此之外，Video组件也支持通用事件的调用，如点击、触摸等事件的调用。详情请参见[事件说明](../reference/arkui-cj/cj-image-video-video.md#组件事件)。
+
+<!-- code_check_manual -->
 
 ```cangjie
 @Component

@@ -776,6 +776,8 @@ public init(request: PermissionRequest)
 
 ## 示例代码
 
+<!-- run -->
+
 ```cangjie
 package ohos_app_cangjie_entry
 import kit.ArkUI.*

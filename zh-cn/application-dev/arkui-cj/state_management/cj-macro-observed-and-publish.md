@@ -37,6 +37,8 @@
 
 \@Observed装饰的类，如果其成员为非简单类型，比如class或数组，class类型需要被\@Observed装饰，数组类型建议使用ObservedArrayList，否则将观察不到其属性的变化。
 
+<!-- code_check_manual -->
+
 ```cangjie
 class Child{
     var num: Int64 = 0
@@ -202,6 +204,8 @@ class EntryView{
 
 【反例】
 
+<!-- code_no_check -->
+
 ```cangjie
 
 @Observed
@@ -215,6 +219,8 @@ class Info1{
 ```
 
 【正例】
+
+<!-- code_check_manual -->
 
 ```cangjie
 
@@ -240,6 +246,8 @@ class Test{
 ### \@Publish 装饰成员变量未触发UI更新
 
 如果需要观察到自定义类型的成员变化，触发UI重新渲染。\@Publish 装饰的变量需要是自定义类型中的成员变量，且该自定义类型需要被 \@Observed 装饰，否则缺少任意条件，其内容更新都不会触发UI更新。
+
+<!-- code_check_manual -->
 
 ```cangjie
 @Observed
@@ -272,6 +280,8 @@ class Page{
 【反例】
 
 以下示例创建了一个Parent类，包含一个自定义类型Child。
+
+<!-- code_check_manual -->
 
 ```cangjie
 package ohos_app_cangjie_entry

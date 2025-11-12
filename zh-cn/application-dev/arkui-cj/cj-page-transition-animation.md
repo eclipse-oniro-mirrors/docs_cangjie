@@ -72,6 +72,8 @@ protected func pageTransition(): Unit {
 
 type为RouteType.Push表示仅对页面栈的push操作生效，type为RouteType.Pop表示仅对页面栈的pop操作生效。
 
+<!-- code_check_manual -->
+
 ```cangjie
 // page A
 protected func pageTransition(): Unit {

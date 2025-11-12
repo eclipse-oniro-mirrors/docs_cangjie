@@ -766,6 +766,8 @@ public operator func ==(other: LaunchMode): Bool
 
 Navigation组件是路由导航的根视图容器。
 
+<!-- run -->
+
 ```cangjie
 import kit.ArkUI.*
 

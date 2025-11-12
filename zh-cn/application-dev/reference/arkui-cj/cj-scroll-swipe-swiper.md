@@ -930,6 +930,8 @@ public func showPrevious(): Unit
 
 该示例通过changeIndex接口设置SwiperAnimationMode动效模式，实现了Swiper组件翻页至指定页面。
 
+<!-- run -->
+
 ```cangjie
 package ohos_app_cangjie_entry
 
@@ -1030,6 +1032,8 @@ class EntryView {
 ### 示例代码2（设置数字指示器）
 
 该示例通过DigitIndicator接口，实现了数字指示器的效果和功能。
+
+<!-- run -->
 
 ```cangjie
 package ohos_app_cangjie_entry
@@ -1132,6 +1136,8 @@ class EntryView {
 
 该示例通过displayCount属性实现了按组翻页效果。
 
+<!-- run -->
+
 ```cangjie
 package ohos_app_cangjie_entry
 
@@ -1231,6 +1237,8 @@ class EntryView {
 ### 示例代码4（设置圆点导航点超长显示）
 
 该示例通过DotIndicator接口的maxDisplayCount属性，实现了圆点导航点超长显示动画效果。
+
+<!-- run -->
 
 ```cangjie
 package ohos_app_cangjie_entry
