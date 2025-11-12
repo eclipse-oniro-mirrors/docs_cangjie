@@ -22,7 +22,7 @@ Applications can request permissions based on the target permission's scope of a
 > **Note:**
 >
 > - If the ACL enablement (`ACL使能`) of a `system_basic`-level permission is set to `false`, normal-level applications cannot request this permission.
-> - Currently, [cross-level permission requests via ACL](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-signing) can be completed using DevEco Studio. However, this method is only for application debugging and cannot be used for publishing applications to app markets. For commercial applications, apply for release certificates and Profile files in the corresponding app market.
+> - Currently, [cross-level permission requests via ACL](https://developer.huawei.com/consumer/en/doc/harmonyos-guides/ide-signing) can be completed using DevEco Studio. However, this method is only for application debugging and cannot be used for publishing applications to app markets. For commercial applications, apply for release certificates and Profile files in the corresponding app market.
 
 ## System_basic-Level Application Permission Request Methods
 

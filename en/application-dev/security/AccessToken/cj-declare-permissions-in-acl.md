@@ -9,7 +9,7 @@ In these scenarios, a `normal`-level application must request permissions across
 
 This section provides two methods for application debugging purposes. **Neither method should be used for commercial releases or app store submissions**. For commercial versions, developers must apply for release certificates and signing files through the respective app store.  
 
-- **Method 1**: Use DevEco Studio to [request cross-level permissions via ACL](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-signing).  
+- **Method 1**: Use DevEco Studio to [request cross-level permissions via ACL](https://developer.huawei.com/consumer/en/doc/harmonyos-guides/ide-signing).  
 - **Method 2**: Directly modify the HarmonyAppProvision configuration file.  
 
     1. Open the HarmonyAppProvision configuration file, located at:  

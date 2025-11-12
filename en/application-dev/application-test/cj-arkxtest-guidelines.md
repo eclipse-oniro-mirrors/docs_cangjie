@@ -41,7 +41,7 @@ The UI testing framework primarily exposes UiTest APIs for developers to invoke 
 
 ### Environment Setup
 
-Download and configure DevEco Studio as described on its [official website](https://developer.harmonyos.com/cn/develop/deveco-studio#download).
+Download and configure DevEco Studio as described on its [official website](https://developer.huawei.com/consumer/en/deveco-studio/#download).
 
 ### Creating and Writing Test Scripts
 

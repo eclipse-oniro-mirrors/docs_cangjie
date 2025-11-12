@@ -32,19 +32,19 @@
 
     ![alt text](figures/get_fingerprint.png)
 
-3. Obtain via .cer certificate file. Refer to [APP Filing FAQ](https://developer.huawei.com/consumer/cn/doc/app/50130) for how to obtain public key and signature information for OpenHarmony applications/services.
+3. Obtain via .cer certificate file. Refer to [APP Filing FAQ](https://developer.huawei.com/consumer/en/doc/app/50111) for how to obtain public key and signature information for OpenHarmony applications/services.
 
-4. Obtain via keytool. For details, refer to [Generating Signature Certificate Fingerprint](https://developer.huawei.com/consumer/cn/doc/AppGallery-connect-Guides/appgallerykit-preparation-game-0000001055356911#section147011294331).
+4. Obtain via keytool. For details, refer to [Generating Signature Certificate Fingerprint](https://developer.huawei.com/consumer/en/doc/AppGallery-connect-Guides/appgallerykit-preparation-game-0000001055356911#section147011294331).
 
 ## What is appIdentifier
 
-appIdentifier is a field in the <!--RP1-->[Profile Signature File](https://gitcode.com/openharmony/docs/blob/master/zh-cn/application-dev/security/app-provision-structure.md)<!--RP1End-->, serving as the unique identifier for an application. It is generated during application signing, where:
+appIdentifier is a field in the <!--RP1-->[Profile Signature File](https://gitcode.com/openharmony/docs/blob/master/en/application-dev/security/app-provision-structure.md)<!--RP1End-->, serving as the unique identifier for an application. It is generated during application signing, where:
 
-1. When generated via DevEco Studio's [Auto-Signing](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-signing#section18815157237), the appIdentifier field is randomly generated. Signing on different devices or re-signing will result in different appIdentifier values.
+1. When generated via DevEco Studio's [Auto-Signing](https://developer.huawei.com/consumer/en/doc/harmonyos-guides/ide-signing#section18815157237), the appIdentifier field is randomly generated. Signing on different devices or re-signing will result in different appIdentifier values.
 
-2. <!--RP2-->For manual signing configuration, refer to [Application Package Signing Tool Guide](https://gitcode.com/openharmony/docs/blob/master/zh-cn/application-dev/security/hapsigntool-guidelines.md). In this case, the appIdentifier field takes the value from the app-identifier field in the [HarmonyAppProvision Configuration File](https://gitcode.com/openharmony/docs/blob/master/zh-cn/application-dev/security/app-provision-structure.md).<!--RP2End-->
+2. <!--RP2-->For manual signing configuration, refer to [Application Package Signing Tool Guide](https://gitcode.com/openharmony/docs/blob/master/en/application-dev/security/hapsigntool-guidelines.md). In this case, the appIdentifier field takes the value from the app-identifier field in the [HarmonyAppProvision Configuration File](https://gitcode.com/openharmony/docs/blob/master/en/application-dev/security/app-provision-structure.md).<!--RP2End-->
 
-Therefore, for scenarios requiring consistent appIdentifier across devices (e.g., cross-device debugging, cross-application interaction debugging, or multi-user collaborative development with shared keys), manual signing is recommended. For specific scenarios, refer to [Usage Scenario Description](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-signing#section54361623194519).
+Therefore, for scenarios requiring consistent appIdentifier across devices (e.g., cross-device debugging, cross-application interaction debugging, or multi-user collaborative development with shared keys), manual signing is recommended. For specific scenarios, refer to [Usage Scenario Description](https://developer.huawei.com/consumer/en/doc/harmonyos-guides/ide-signing#section54361623194519).
 
 ## How to Obtain appIdentifier from Application Information
 

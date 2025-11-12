@@ -347,4 +347,4 @@ When accessing resources, the system prioritizes qualifier directories matching 
 
 ## Limitations and Notes
 
-Resource names cannot use Cangjie language reserved keywords (e.g., `func`, `main`). For a full list, see <!--RP02-->[Cangjie Programming Language Guide - Appendix - Keywords](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/Appendix/keyword.md)<!--RP02End-->.
+Resource names cannot use Cangjie language reserved keywords (e.g., `func`, `main`). For a full list, see <!-- RP1 -->[Cangjie Programming Language Guide - Appendix - Keywords](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/Appendix/keyword.md)<!-- RP1End -->.

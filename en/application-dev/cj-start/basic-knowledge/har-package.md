@@ -6,7 +6,7 @@ HAR (Harmony Archive) is a static shared package that can contain code, C++ libr
 
 - Supports intra-application sharing and can also be published as a second-party library (SDK) or third-party library (SDK) for use by other applications.  
 
-- As a second-party library (SDK), it can be published to the [OHPM Private Repository](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-repo) for use by other applications within the company.  
+- As a second-party library (SDK), it can be published to the [OHPM Private Repository](https://developer.huawei.com/consumer/en/doc/harmonyos-guides/ide-ohpm-repo) for use by other applications within the company.  
 
 - As a third-party library (SDK), it can be published to the [OHPM Central Repository](https://ohpm.openharmony.cn/) for use by other applications.  
 
@@ -138,7 +138,7 @@ When compiling and building a HAP, DevEco Studio collects resource files from th
 
 This section explains how to configure HAR dependencies and reference Cangjie components, interfaces, and resources from a HAR.  
 
-Before referencing a HAR, you must configure its dependency. For details, refer to [Referencing HAR Files and Resources](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-har-import).  
+Before referencing a HAR, you must configure its dependency. For details, refer to [Referencing HAR Files and Resources](https://developer.huawei.com/consumer/en/doc/harmonyos-guides/ide-har-import).  
 
 ### Referencing Cangjie Components from a HAR  
 
@@ -253,4 +253,4 @@ HARs can be provided to other applications as second-party or third-party librar
 
 ## Publishing  
 
-For details, refer to [Publishing a HAR](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-har-publish).
+For details, refer to [Publishing a HAR](https://developer.huawei.com/consumer/en/doc/harmonyos-guides/ide-har-publish).

@@ -2,7 +2,7 @@
 
 > **Note:**
 >
-> To ensure the operational effect, this document uses **DevEco Studio 5.0.2 Release** and **DevEco Studio-Cangjie Plugin 5.0.7.100 Beta1** as examples. Click [here](https://developer.huawei.com/consumer/cn/download/) to download the latest version.
+> To ensure the operational effect, this document uses **DevEco Studio 5.0.2 Release** and **DevEco Studio-Cangjie Plugin 5.0.7.100 Beta1** as examples. Click [here](https://developer.huawei.com/consumer/en/download/) to download the latest version.
 
 This document is intended for OpenHarmony application developers who have a basic understanding of the Cangjie language, ArkTS language, and UI frameworks. Based on a simple, purely ArkTS-developed application that supports page navigation/return functionality, this guide demonstrates how to introduce Cangjie to develop incremental features (e.g., Cangjie providing a synchronous interface for ArkTS to call, an asynchronous interface for ArkTS to call, and embedding a Cangjie component in the original ArkTS page). This helps developers quickly understand how to introduce Cangjie into existing ArkTS projects and familiarize themselves with the hybrid application development process.
 

@@ -5384,4 +5384,4 @@ public type Assets = Array<Asset>
 public type ValuesBucket = Map<String, RelationalStoreValueType>
 ```
 
-**Function:** [ValuesBucket](#type-valuesbucket) is a type alias for <!--RP02-->[Map\<String,RelationalStoreValueType>](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/generic/generic_class.md)<!--RP02End-->.
+**Function:** [ValuesBucket](#type-valuesbucket) is a type alias for <!-- RP1 -->[Map\<String,RelationalStoreValueType>](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/generic/generic_class.md)<!-- RP1End -->.

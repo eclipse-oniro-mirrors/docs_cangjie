@@ -13,7 +13,7 @@ The packaging tool supports generating:
 >
 > Currently, Cangjie only supports developing HAR and HAP packages and does not support HSP packages. Therefore, HSP-related features in this tool are unavailable in Cangjie programs.
 
-The files in packaging commands are sourced from [DevEco Studio compilation build artifacts](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-compile-build). The file path can be checked as follows:
+The files in packaging commands are sourced from [DevEco Studio compilation build artifacts](https://developer.huawei.com/consumer/en/doc/harmonyos-guides/ide-compile-build). The file path can be checked as follows:
 
 1. In the `/hvigor/hvigor-config.json5` file under the DevEco Studio project root directory, modify the `"level"` field under `"logging"` to `"debug"`.
 2. In the DevEco Studio menu bar, select **Build > Clean Project**.
@@ -53,8 +53,8 @@ Developers can use the JAR package of the packaging tool to package modules by p
 | `--ets-path` | No | NA | Directory path for storing ETS files. | Only effective for Stage models. |
 | `--out-path` | Yes | NA | Target file path. The filename must end with `.hap`. | NA |
 | `--force` | No | `true` or `false` | Default is `false`. If `true`, forces deletion if the target file exists. | NA |
-| `--an-path` | No | NA | Path for storing [AN files](https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs-V5/faqs-arkts-52-V5). | Only effective for Stage models. |
-| `--ap-path` | No | NA | Path for storing [AP files](https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs-V5/faqs-arkts-52-V5). | Only effective for Stage models. |
+| `--an-path` | No | NA | Path for storing [AN files](https://developer.huawei.com/consumer/en/doc/harmonyos-faqs-V5/faqs-arkts-52-V5). | Only effective for Stage models. |
+| `--ap-path` | No | NA | Path for storing [AP files](https://developer.huawei.com/consumer/en/doc/harmonyos-faqs-V5/faqs-arkts-52-V5). | Only effective for Stage models. |
 | `--dir-list` | No | NA | Specifies a list of target directories to include in the HAP package. | NA |
 | `--compress-level` | No | `number` | Compression level, default is `1`. Valid levels: `1-9`. Takes effect when `compressNativeLibs` is set to `true`. Higher values yield better compression but slower speeds. | NA |
 | `--pkg-context-path` | No | NA | Path to the context information table file. The filename must be `pkgContextInfo.json`. | Only effective for Stage models. |

@@ -60,7 +60,7 @@ env(safe-area-inset-bottom);
 env(safe-area-inset-left);
 
 /* Using fallback values with safe-area-inset-* for avoidance in all directions */
-/* For length units, refer to: https://developer.mozilla.org/zh-CN/docs/Web/CSS/length */
+/* For length units, refer to: https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/length */
 env(safe-area-inset-top, 20px);
 env(safe-area-inset-right, 1em);
 env(safe-area-inset-bottom, 0.5vh);

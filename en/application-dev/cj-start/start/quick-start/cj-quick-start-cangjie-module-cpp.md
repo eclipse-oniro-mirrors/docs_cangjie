@@ -2,7 +2,7 @@
 
 > **Note:**
 >
-> To ensure optimal performance, this document uses **DevEco Studio 5.0.2 Release** and **DevEco Studio-Cangjie Plugin 5.0.9.100 Beta1** as examples. Click [here](https://developer.huawei.com/consumer/cn/download/) to download the latest version.
+> To ensure optimal performance, this document uses **DevEco Studio 5.0.2 Release** and **DevEco Studio-Cangjie Plugin 5.0.9.100 Beta1** as examples. Click [here](https://developer.huawei.com/consumer/en/download/) to download the latest version.
 
 This document explains how to use the DevEco Studio Cangjie plugin to call C++ files within a Cangjie module.
 

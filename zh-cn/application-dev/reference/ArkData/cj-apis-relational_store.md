@@ -5402,4 +5402,4 @@ public type Assets = Array<Asset>
 public type ValuesBucket = Map<String, RelationalStoreValueType>
 ```
 
-**功能：** [ValuesBucket](#type-valuesbucket)是<!--RP02-->[Map\<String,RelationalStoreValueType>](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/generic/generic_class.md)<!--RP02End-->类型的别名。
+**功能：** [ValuesBucket](#type-valuesbucket)是<!-- RP1 -->[Map\<String,RelationalStoreValueType>](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/generic/generic_class.md)<!-- RP1End -->类型的别名。

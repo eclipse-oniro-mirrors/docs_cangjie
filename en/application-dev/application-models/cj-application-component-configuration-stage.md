@@ -77,7 +77,7 @@ The effect is illustrated below:
 
 The system strictly regulates applications without icons to prevent malicious apps from intentionally hiding their desktop icons, which could make it difficult for users to locate and uninstall the software, thereby ensuring device security to some extent.
 
-If a pre-installed application requires hiding its desktop icon, it must configure the `AllowAppDesktopIconHide` application privilege<!--Del-->. For specific configuration details, refer to the [Application Privilege Configuration Guide](https://docs.openharmony.cn/pages/v5.1/zh-cn/device-dev/subsystems/subsys-app-privilege-config-guide.md)<!--DelEnd-->. After obtaining this privilege, the application will not appear on the desktop. Non-pre-installed applications cannot hide their desktop icons.
+If a pre-installed application requires hiding its desktop icon, it must configure the `AllowAppDesktopIconHide` application privilege<!--Del-->. For specific configuration details, refer to the [Application Privilege Configuration Guide](https://docs.openharmony.cn/pages/v5.1/en/device-dev/subsystems/subsys-app-privilege-config-guide.md)<!--DelEnd-->. After obtaining this privilege, the application will not appear on the desktop. Non-pre-installed applications cannot hide their desktop icons.
 
 ## Application Version Declaration Configuration
 

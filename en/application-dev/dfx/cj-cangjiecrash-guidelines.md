@@ -26,7 +26,7 @@ In Cangjie, exception classes include `Error` and `Exception`:
 
 - The `Error` class describes internal system errors and resource exhaustion errors during Cangjie runtime. Applications should not throw this type of error. If an internal error occurs, the user should be notified, and the program should terminate safely.  
 
-- The `Exception` class describes logical errors or I/O errors during program execution, such as array out-of-bounds or attempting to open a non-existent file. These exceptions need to be caught and handled in the program. For common exception types, refer to <!--RP02-->[Common Runtime Exceptions](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/error_handle/common_runtime_exceptions.md)<!--RP02End-->.  
+- The `Exception` class describes logical errors or I/O errors during program execution, such as array out-of-bounds or attempting to open a non-existent file. These exceptions need to be caught and handled in the program. For common exception types, refer to <!-- RP1 -->[Common Runtime Exceptions](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/error_handle/common_runtime_exceptions.md)<!-- RP1End -->.  
 
 ## Problem Diagnosis Approach  
 
@@ -36,7 +36,7 @@ Process crash logs are a type of fault log managed by the `FaultLogger` module, 
 
 1. **Via DevEco Studio**  
 
-    `DevEco Studio` collects process crash logs from the device path `/data/log/faultlog/faultlogger/` and archives them under `FaultLog`. Cangjie process crash logs are archived under the `cjerror` type in `FaultLog`. For details on obtaining logs, refer to [FaultLog](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-fault-log).  
+    `DevEco Studio` collects process crash logs from the device path `/data/log/faultlog/faultlogger/` and archives them under `FaultLog`. Cangjie process crash logs are archived under the `cjerror` type in `FaultLog`. For details on obtaining logs, refer to [FaultLog](https://developer.huawei.com/consumer/en/doc/harmonyos-guides/ide-fault-log).  
 
 2. **Via the `hiAppEvent` Interface Subscription**  
 
@@ -140,7 +140,7 @@ Developers can throw Cangjie exceptions using the following code:
 throw Exception("throwing exception")  
 ```  
 
-Alternatively, inherit from the built-in `Exception` or its subclasses to define custom exceptions. For custom exception implementation, refer to <!--RP02-->[Defining Exceptions](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/error_handle/exception_overview.md)<!--RP02End-->.  
+Alternatively, inherit from the built-in `Exception` or its subclasses to define custom exceptions. For custom exception implementation, refer to <!-- RP2 -->[Defining Exceptions](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/error_handle/exception_overview.md)<!-- RP2End -->.  
 
 For such issues, the fault log's call stack can directly locate the specific code line.  
 

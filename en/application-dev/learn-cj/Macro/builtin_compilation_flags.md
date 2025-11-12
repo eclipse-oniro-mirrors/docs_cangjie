@@ -34,7 +34,7 @@ Conditional compilation uses the `@When` tag, which is a technique for selective
 - Debugging Support: Facilitates compiling debugging-related code in debug mode to enhance program performance and security. For example, compiling debug information or logging-related code in debug mode while excluding it from release builds.
 - Performance Optimization: Allows selective compilation of code based on predefined conditions to improve program performance.
 
-For detailed information about conditional compilation, please refer to the <!--RP02-->[Conditional Compilation](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/compile_and_build/conditional_compilation.md)<!--RP02End--> chapter, which will not be further elaborated here.
+For detailed information about conditional compilation, please refer to the <!-- RP1 -->[Conditional Compilation](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/compile_and_build/conditional_compilation.md)<!-- RP1End --> chapter, which will not be further elaborated here.
 
 ## @FastNative
 

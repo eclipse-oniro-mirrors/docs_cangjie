@@ -2,7 +2,7 @@
 
 To assist developers in writing Cangjie-ArkTS interoperability code more conveniently, Cangjie provides an interoperability helper library. This library offers a richer set of APIs for developers to call. For example, in scenarios where a Cangjie application needs to use existing ArkTS libraries, when the interface in the ArkTS module that the developer wants to call requires a `context` parameter, the `getJSContext` function provided by the helper library can be used to obtain it.
 
-For instance, the following shows the declaration of the `pick` method in the ArkTS [Camera Picker](https://docs.openharmony.cn/pages/v5.1/zh-cn/application-dev/reference/apis-camera-kit/js-apis-cameraPicker.md) module, where the first parameter type is `common.Context`.
+For instance, the following shows the declaration of the `pick` method in the ArkTS [Camera Picker](https://docs.openharmony.cn/pages/v5.1/en/application-dev/reference/apis-camera-kit/js-apis-cameraPicker.md) module, where the first parameter type is `common.Context`.
 
 ```typescript
 declare namespace cameraPicker {

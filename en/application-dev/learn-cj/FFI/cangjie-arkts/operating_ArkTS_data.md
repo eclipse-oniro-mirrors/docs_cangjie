@@ -104,7 +104,7 @@ In addition to reading properties from objects, you can also assign values to pr
 > **Note:**
 >
 > When defining properties via `JSObject[key] = value`, the property is writable, enumerable, and configurable.
-> For more details, see [JavaScript Standard Built-in Objects](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object).
+> For more details, see [JavaScript Standard Built-in Objects](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object).
 
 **Important Notes:**
 
@@ -207,7 +207,7 @@ console.log("result = " + result);
 
 ### ArkTS Asynchronous Lock
 
-To address data race issues between concurrent instances, ArkTS introduces asynchronous locks. For developer efficiency, AsyncLock objects support cross-instance reference passing. For details, refer to [Asynchronous Lock](https://docs.openharmony.cn/pages/v5.1/zh-cn/application-dev/arkts-utils/arkts-async-lock-introduction.md). This section focuses on asynchronous locks combined with sendable objects.
+To address data race issues between concurrent instances, ArkTS introduces asynchronous locks. For developer efficiency, AsyncLock objects support cross-instance reference passing. For details, refer to [Asynchronous Lock](https://docs.openharmony.cn/pages/v5.1/en/application-dev/arkts-utils/arkts-async-lock-introduction.md). This section focuses on asynchronous locks combined with sendable objects.
 
 Cangjie implementation:
 

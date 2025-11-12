@@ -2,13 +2,13 @@
 
 > **Note:**
 >
-> To ensure operational effectiveness, this document uses **DevEco Studio 5.0.2 Release** and **DevEco Studio-Cangjie Plugin 5.0.9.100 Beta1** as examples. Click [here](https://developer.huawei.com/consumer/cn/download/) to obtain download links for the latest versions.
+> To ensure operational effectiveness, this document uses **DevEco Studio 5.0.2 Release** and **DevEco Studio-Cangjie Plugin 5.0.9.100 Beta1** as examples. Click [here](https://developer.huawei.com/consumer/en/download/) to obtain download links for the latest versions.
 
 This document explains how to use the DevEco Studio Cangjie Plugin to invoke ArkTS third-party libraries in Cangjie code.
 
 ## Usage Example
 
-The following demonstrates detailed steps for invoking the [lz4js](https://ohpm.openharmony.cn/#/cn/detail/lz4js) third-party library in Cangjie code.
+The following demonstrates detailed steps for invoking the [lz4js](https://ohpm.openharmony.cn/#/en/detail/lz4js) third-party library in Cangjie code.
 
 1. Create a "[Cangjie] Hybrid Ability" project
 

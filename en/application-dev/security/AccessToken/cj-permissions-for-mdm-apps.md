@@ -4,7 +4,7 @@ The following permissions are exclusively available for MDM (Mobile Device Manag
 
 > **Note:**
 >
-> The following permissions do not support automatic signing. Therefore, during both debugging and release phases, you must follow the steps outlined in [Manual Signing](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-signing#section297715173233) to complete manual signing.
+> The following permissions do not support automatic signing. Therefore, during both debugging and release phases, you must follow the steps outlined in [Manual Signing](https://developer.huawei.com/consumer/en/doc/harmonyos-guides/ide-signing#section297715173233) to complete manual signing.
 
 ## ohos.permission.ENTERPRISE_GET_DEVICE_INFO
 

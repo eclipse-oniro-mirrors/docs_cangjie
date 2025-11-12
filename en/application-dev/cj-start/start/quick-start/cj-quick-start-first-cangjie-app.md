@@ -2,7 +2,7 @@
 
 > **Note:**
 >
-> To ensure optimal performance, this guide uses the **latest DevEco Studio version** as an example. Click [here](https://developer.huawei.com/consumer/cn/download/) to download.
+> To ensure optimal performance, this guide uses the **latest DevEco Studio version** as an example. Click [here](https://developer.huawei.com/consumer/en/download/) to download.
 
 ## Creating a Cangjie Project
 

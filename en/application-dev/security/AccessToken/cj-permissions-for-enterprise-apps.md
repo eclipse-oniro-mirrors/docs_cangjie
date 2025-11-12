@@ -14,7 +14,7 @@ For enterprise applications, refer to [Declaring Permissions](./cj-declare-permi
 
 > **Note:**
 >
-> The following permissions do not support automatic signing. Therefore, during both debugging and release phases, manual signing must be completed by following the steps in [Manual Signing](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-signing#section297715173233).
+> The following permissions do not support automatic signing. Therefore, during both debugging and release phases, manual signing must be completed by following the steps in [Manual Signing](https://developer.huawei.com/consumer/en/doc/harmonyos-guides/ide-signing#section297715173233).
 
 ## ohos.permission.SET_FILE_GUARD_POLICY
 

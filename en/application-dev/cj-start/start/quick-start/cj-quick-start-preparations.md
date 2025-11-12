@@ -43,6 +43,6 @@ Additionally, the Cangjie language supports interoperability with the ArkTS lang
 
 ## Tool Preparation
 
-Please install the [latest version of DevEco Studio](https://developer.huawei.com/consumer/cn/download).
+Please install the [latest version of DevEco Studio](https://developer.huawei.com/consumer/en/download).
 
 After completing the above steps and understanding the basic concepts, you can proceed to the next step for hands-on experience and learning.

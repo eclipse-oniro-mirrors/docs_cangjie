@@ -983,7 +983,7 @@ If `on` is passed, the package will enable mock compilation, allowing classes in
 
 ## Macro Options
 
-`cjc` supports the following macro options. For more details on macros, refer to the <!--RP02-->[Macros](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/Macro/macro_introduction.md)<!--RP02End--> section.
+`cjc` supports the following macro options. For more details on macros, refer to the <!-- RP1 -->[Macros](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/Macro/macro_introduction.md)<!-- RP1End --> section.
 
 ### `--compile-macro` <sup>[frontend]</sup>
 
@@ -999,7 +999,7 @@ Enable parallel macro expansion. This option can reduce macro expansion compilat
 
 ## Conditional Compilation Options
 
-`cjc` supports the following conditional compilation options. For more details on conditional compilation, refer to <!--RP02-->[Conditional Compilation](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/compile_and_build/conditional_compilation.md)<!--RP02End-->.
+`cjc` supports the following conditional compilation options. For more details on conditional compilation, refer to <!-- RP2 -->[Conditional Compilation](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/compile_and_build/conditional_compilation.md)<!-- RP2End -->.
 
 ### `--cfg <value>` <sup>[frontend]</sup>
 

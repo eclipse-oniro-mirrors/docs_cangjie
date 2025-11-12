@@ -1,3 +1,3 @@
 # Cangjie Programming Language Library API
 
-The Cangjie programming language library includes the std module (standard library module) and some commonly used extension modules. Each module contains several packages that provide functionality related to that module. For this category of APIs, please refer to <!--RP03-->[《Cangjie Programming Language Library API》](https://gitcode.com/openharmony/third_party_cangjie_runtime/tree/master/stdlib/doc/libs/std)<!--RP03End-->.
+The Cangjie programming language library includes the std module (standard library module) and some commonly used extension modules. Each module contains several packages that provide functionality related to that module. For this category of APIs, please refer to <!-- RP1 -->[《Cangjie Programming Language Library API》](https://gitcode.com/openharmony/third_party_cangjie_runtime/tree/master/stdlib/doc/libs/std)<!-- RP1End -->.

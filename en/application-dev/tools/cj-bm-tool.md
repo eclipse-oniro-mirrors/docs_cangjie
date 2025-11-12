@@ -465,7 +465,7 @@ The system account ID does not exist when installing the application.
 **Resolution Steps:**
 
 1. Restart the phone and attempt to install the application again.
-2. If the installation still fails after repeating the above steps 3 to 5 times, export the log file and submit an [online ticket](https://developer.huawei.com/consumer/cn/support/feedback/#/) for assistance.
+2. If the installation still fails after repeating the above steps 3 to 5 times, export the log file and submit an [online ticket](https://developer.huawei.com/consumer/en/support/feedback/#/) for assistance.
 
 ```bash
 hdc file recv /data/log/hilog/
@@ -505,8 +505,8 @@ The HAP package's signature file is abnormal.
 
 **Resolution Steps:**
 
-1. Use [automatic signing](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-signing#section18815157237). Re-sign the application after connecting the device.
-2. For manual signing, refer to [manual signing](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-signing#section297715173233).
+1. Use [automatic signing](https://developer.huawei.com/consumer/en/doc/harmonyos-guides/ide-signing#section18815157237). Re-sign the application after connecting the device.
+2. For manual signing, refer to [manual signing](https://developer.huawei.com/consumer/en/doc/harmonyos-guides/ide-signing#section297715173233).
 
 ### 9568320 Signature File Does Not Exist
 
@@ -524,8 +524,8 @@ The HAP package is not signed.
 
 **Resolution Steps:**
 
-1. Use [automatic signing](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-signing#section18815157237). Re-sign the application after connecting the device.
-2. For manual signing, refer to [manual signing](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-signing#section297715173233).
+1. Use [automatic signing](https://developer.huawei.com/consumer/en/doc/harmonyos-guides/ide-signing#section18815157237). Re-sign the application after connecting the device.
+2. For manual signing, refer to [manual signing](https://developer.huawei.com/consumer/en/doc/harmonyos-guides/ide-signing#section297715173233).
 
 ### 9568321 Signature File Parsing Failed
 
@@ -543,8 +543,8 @@ The HAP package's signature file is abnormal.
 
 **Resolution Steps:**
 
-1. Use [automatic signing](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-signing#section18815157237). Re-sign the application after connecting the device.
-2. For manual signing, refer to [manual signing](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-signing#section297715173233).
+1. Use [automatic signing](https://developer.huawei.com/consumer/en/doc/harmonyos-guides/ide-signing#section18815157237). Re-sign the application after connecting the device.
+2. For manual signing, refer to [manual signing](https://developer.huawei.com/consumer/en/doc/harmonyos-guides/ide-signing#section297715173233).
 
 ### 9568323 Signature Digest Verification Failed
 
@@ -562,8 +562,8 @@ The HAP package's signature is incorrect.
 
 **Resolution Steps:**
 
-1. Use [automatic signing](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-signing#section18815157237). Re-sign the application after connecting the device.
-2. For manual signing, refer to [manual signing](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-signing#section297715173233).
+1. Use [automatic signing](https://developer.huawei.com/consumer/en/doc/harmonyos-guides/ide-signing#section18815157237). Re-sign the application after connecting the device.
+2. For manual signing, refer to [manual signing](https://developer.huawei.com/consumer/en/doc/harmonyos-guides/ide-signing#section297715173233).
 
 ### 9568324 Signature Integrity Check Failed
 
@@ -581,8 +581,8 @@ The HAP package's signature is incorrect.
 
 **Resolution Steps:**
 
-1. Use [automatic signing](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-signing#section18815157237). Re-sign the application after connecting the device.
-2. For manual signing, refer to [manual signing](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-signing#section297715173233).
+1. Use [automatic signing](https://developer.huawei.com/consumer/en/doc/harmonyos-guides/ide-signing#section18815157237). Re-sign the application after connecting the device.
+2. For manual signing, refer to [manual signing](https://developer.huawei.com/consumer/en/doc/harmonyos-guides/ide-signing#section297715173233).
 
 ### 9568326 Signature Public Key Exception
 
@@ -600,8 +600,8 @@ The HAP package's signature is incorrect.
 
 **Resolution Steps:**
 
-1. Use [automatic signing](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-signing#section18815157237). Re-sign the application after connecting the device.
-2. For manual signing, refer to [manual signing](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-signing#section297715173233).
+1. Use [automatic signing](https://developer.huawei.com/consumer/en/doc/harmonyos-guides/ide-signing#section18815157237). Re-sign the application after connecting the device.
+2. For manual signing, refer to [manual signing](https://developer.huawei.com/consumer/en/doc/harmonyos-guides/ide-signing#section297715173233).
 
 ### 9568327 Signature Retrieval Exception
 
@@ -619,8 +619,8 @@ The HAP package's signature is incorrect.
 
 **Resolution Steps:**
 
-1. Use [automatic signing](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-signing#section18815157237). Re-sign the application after connecting the device.
-2. For manual signing, refer to [manual signing](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-signing#section297715173233).
+1. Use [automatic signing](https://developer.huawei.com/consumer/en/doc/harmonyos-guides/ide-signing#section18815157237). Re-sign the application after connecting the device.
+2. For manual signing, refer to [manual signing](https://developer.huawei.com/consumer/en/doc/harmonyos-guides/ide-signing#section297715173233).
 
 ### 9568328 Profile Block Not Found
 
@@ -638,8 +638,8 @@ The HAP package's signature is incorrect.
 
 **Resolution Steps:**
 
-1. Use [automatic signing](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-signing#section18815157237). Re-sign the application after connecting the device.
-2. For manual signing, refer to [manual signing](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-signing#section297715173233).
+1. Use [automatic signing](https://developer.huawei.com/consumer/en/doc/harmonyos-guides/ide-signing#section18815157237). Re-sign the application after connecting the device.
+2. For manual signing, refer to [manual signing](https://developer.huawei.com/consumer/en/doc/harmonyos-guides/ide-signing#section297715173233).
 
 ### 9568330 Signature Source Initialization Failed
 
@@ -657,8 +657,8 @@ The HAP package's signature is incorrect.
 
 **Resolution Steps:**
 
-1. Use [automatic signing](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-signing#section18815157237). Re-sign the application after connecting the device.
-2. For manual signing, refer to [manual signing](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-signing#section297715173233).
+1. Use [automatic signing](https://developer.huawei.com/consumer/en/doc/harmonyos-guides/ide-signing#section18815157237). Re-sign the application after connecting the device.
+2. For manual signing, refer to [manual signing](https://developer.huawei.com/consumer/en/doc/harmonyos-guides/ide-signing#section297715173233).
 
 ### 9568257 Pkcs7 Signature File Verification Failed
 
@@ -680,8 +680,8 @@ Pkcs7 verification failed during application installation.
 
 **Resolution Steps:**
 
-1. Use [automatic signing](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-signing#section18815157237). Re-sign the application after connecting the device.
-2. For manual signing, refer to [manual signing](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-signing#section297715173233).
+1. Use [automatic signing](https://developer.huawei.com/consumer/en/doc/harmonyos-guides/ide-signing#section18815157237). Re-sign the application after connecting the device.
+2. For manual signing, refer to [manual signing](https://developer.huawei.com/consumer/en/doc/harmonyos-guides/ide-signing#section297715173233).
 
 ### 9568344 Profile Parsing Failed
 
@@ -707,7 +707,7 @@ During debugging or running the application/service, an error occurred while ins
 
 1. Adjust the bundleName in the app.json5 configuration file and the name field in the module.json5 file according to naming rules. <!--Del-->
 
-2. If the type field in extensionAbilities is configured as service or dataShare, the application needs to configure the [allowAppUsePrivilegeExtension privilege](https://docs.openharmony.cn/pages/v5.1/zh-cn/device-dev/subsystems/subsys-app-privilege-config-guide.md). The configuration steps are as follows:
+2. If the type field in extensionAbilities is configured as service or dataShare, the application needs to configure the [allowAppUsePrivilegeExtension privilege](https://docs.openharmony.cn/pages/v5.1/en/device-dev/subsystems/subsys-app-privilege-config-guide.md). The configuration steps are as follows:
 
     1. Obtain a new signature fingerprint.
 
@@ -948,8 +948,8 @@ When launching debugging or running an application/service, an error occurs duri
 <!--RP5-->
 <!--RP5End-->
 <!--Del-->
-1. Use [automatic signing](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-signing#section18815157237). After connecting the device, re-sign the application.
-2. For manual signing of OpenHarmony applications, refer to <!--RP2-->[OpenHarmony Application Manual Signing](https://docs.openharmony.cn/pages/v4.1/zh-cn/application-dev/security/hapsigntool-guidelines.md)<!--RP2End--> and add the **UDID** of the debugging device to the UnsgnedDebugProfileTemplate.json file.
+1. Use [automatic signing](https://developer.huawei.com/consumer/en/doc/harmonyos-guides/ide-signing#section18815157237). After connecting the device, re-sign the application.
+2. For manual signing of OpenHarmony applications, refer to <!--RP2-->[OpenHarmony Application Manual Signing](https://docs.openharmony.cn/pages/v4.1/en/application-dev/security/hapsigntool-guidelines.md)<!--RP2End--> and add the **UDID** of the debugging device to the UnsgnedDebugProfileTemplate.json file.
 
     a. Obtain the UDID of the current device.
 
@@ -978,7 +978,7 @@ error: install provision type not same.
 
 **Error Description:**
 
-When launching debugging or running an application/service, an error occurs during HAP installation because the <!--RP6-->[Profile signature file](https://gitcode.com/openharmony/docs/blob/master/zh-cn/application-dev/security/app-provision-structure.md)<!--RP6End--> type of the application to be installed does not match that of the already installed application.
+When launching debugging or running an application/service, an error occurs during HAP installation because the <!--RP6-->[Profile signature file](https://gitcode.com/openharmony/docs/blob/master/en/application-dev/security/app-provision-structure.md)<!--RP6End--> type of the application to be installed does not match that of the already installed application.
 
 **Possible Causes:**
 
@@ -1031,7 +1031,7 @@ By default, applications at the "normal" level can only use "normal"-level permi
 
 **Resolution Steps:**
 
-Apply for restricted ACL permissions for the application as per the [ACL Signing Guide](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-signing#section157591551175916).
+Apply for restricted ACL permissions for the application as per the [ACL Signing Guide](https://developer.huawei.com/consumer/en/doc/harmonyos-guides/ide-signing#section157591551175916).
 
 ### 9568290 Installation Failed Due to HAP Token Update Failure
 
@@ -1050,7 +1050,7 @@ When installing or updating an application, the token update interface of the me
 **Resolution Steps:**
 
 1. Restart the device and retry the installation.
-2. If the installation still fails after 3-5 attempts, export the log files and submit an [online ticket](https://developer.huawei.com/consumer/cn/support/feedback/#/) for assistance.
+2. If the installation still fails after 3-5 attempts, export the log files and submit an [online ticket](https://developer.huawei.com/consumer/en/support/feedback/#/) for assistance.
 
 ```bash
 hdc file recv /data/log/hilog/
@@ -1086,7 +1086,7 @@ error: install failed due to apptype not same.
 
 **Error Description**
 
-During application installation, the [app-feature](https://docs.openharmony.cn/pages/v4.1/zh-cn/application-dev/security/app-provision-structure.md) configuration in the signature file of the installed HAP package differs from that of the package to be installed, causing installation failure.
+During application installation, the [app-feature](https://docs.openharmony.cn/pages/v4.1/en/application-dev/security/app-provision-structure.md) configuration in the signature file of the installed HAP package differs from that of the package to be installed, causing installation failure.
 
 **Possible Causes**
 
@@ -1095,7 +1095,7 @@ The installed and to-be-installed HAP packages have the same bundle name but inc
 **Resolution Steps**
 
 - Option 1: Uninstall the installed HAP package before installing the new one.
-- Option 2: Modify the app-feature field in the signature file of the to-be-installed HAP package to match the installed package, then repackage, [sign](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-signing), and retry installation.<!--DelEnd-->
+- Option 2: Modify the app-feature field in the signature file of the to-be-installed HAP package to match the installed package, then repackage, [sign](https://developer.huawei.com/consumer/en/doc/harmonyos-guides/ide-signing), and retry installation.<!--DelEnd-->
 
 ### 9568297 Installation Failed Due to Older SDK Version on Device
 
@@ -1163,7 +1163,7 @@ When launching debugging or running an application/service, an error occurs duri
 **Resolution Steps:**
 
 1. Uninstall the installed application or uncheck "Keep Application Data" before reinstalling.
-2. For HSPs provided by different teams with inconsistent signatures, use [integrated HSPs](https://docs.openharmony.cn/pages/v5.1/zh-cn/application-dev/quick-start/integrated-hsp.md) to unify HSP provisioning. For multi-HAP packages, ensure all HAPs have consistent signatures.
+2. For HSPs provided by different teams with inconsistent signatures, use [integrated HSPs](https://docs.openharmony.cn/pages/v5.1/en/application-dev/quick-start/integrated-hsp.md) to unify HSP provisioning. For multi-HAP packages, ensure all HAPs have consistent signatures.
 3. If an application was uninstalled but its data was retained, installing another application with the same bundle name but different signature will fail. In this case, reinstall the previously uninstalled application, then uninstall it without retaining data to allow installation of the new application.
 
 ### 9568329 Signature Verification Failed
@@ -1180,13 +1180,13 @@ The bundle name in the signature does not match the application's bundle name.
 
 **Possible Causes:**
 
-- Scenario 1: A third-party HSP module was imported, which is neither an [integrated HSP](https://docs.openharmony.cn/pages/v5.1/zh-cn/application-dev/quick-start/integrated-hsp.md) nor an HSP with the same bundle name, causing a bundle name mismatch.
+- Scenario 1: A third-party HSP module was imported, which is neither an [integrated HSP](https://docs.openharmony.cn/pages/v5.1/en/application-dev/quick-start/integrated-hsp.md) nor an HSP with the same bundle name, causing a bundle name mismatch.
 - Scenario 2: An incorrect signature file (with a .p7b extension) was used for signing, causing a bundle name mismatch.
 
 **Resolution Steps:**
 
 - Scenario 1: HSPs can only be used by applications with the same bundle name, except for integrated HSPs. Confirm with the third-party developer to provide either an integrated HSP or an HSP with the same bundle name.
-- Scenario 2: Review the signing process and certificates, referring to [Debug Signing Configuration](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-signing).
+- Scenario 2: Review the signing process and certificates, referring to [Debug Signing Configuration](https://developer.huawei.com/consumer/en/doc/harmonyos-guides/ide-signing).
 
 ### 9568266 Installation Permission Denied
 
@@ -1413,7 +1413,7 @@ Application control policies are in place.
 
 **Resolution Steps:**
 
-No immediate solution is available due to enterprise restrictions. Submit an [online ticket](https://developer.huawei.com/consumer/cn/support/feedback/#/) for assistance.
+No immediate solution is available due to enterprise restrictions. Submit an [online ticket](https://developer.huawei.com/consumer/en/support/feedback/#/) for assistance.
 
 ---
 
@@ -1473,7 +1473,7 @@ The required privilege for installing an inter-application HSP is missing.
 
 **Resolution Steps:**
 
-Verify that the application has the `AllowAppShareLibrary` privilege in the device's `install_list_capability.json`. Refer to the [Application Privilege Configuration Guide](https://docs.openharmony.cn/pages/v5.1/zh-cn/device-dev/subsystems/subsys-app-privilege-config-guide.md).
+Verify that the application has the `AllowAppShareLibrary` privilege in the device's `install_list_capability.json`. Refer to the [Application Privilege Configuration Guide](https://docs.openharmony.cn/pages/v5.1/en/device-dev/subsystems/subsys-app-privilege-config-guide.md).
 
 ---
 
@@ -1621,7 +1621,7 @@ An unknown system exception caused the bundle manager service to stop or exit ab
     cd /data/log/faultlog/faultlogger/
     ls -ls
     ```
-3. Export the crash and log files and submit an [online ticket](https://developer.huawei.com/consumer/cn/support/feedback/#/) for assistance.
+3. Export the crash and log files and submit an [online ticket](https://developer.huawei.com/consumer/en/support/feedback/#/) for assistance.
 
     ```bash
     hdc file recv /data/log/faultlog/faultlogger/
@@ -1673,11 +1673,13 @@ File copy failed during application installation.
 **Resolution Steps:**
 
 1. Restart the device and attempt installation again.
-2. If installation fails after 3–5 attempts, export the log files and submit an [online ticket](https://developer.huawei.com/consumer/cn/support/feedback/#/) for assistance.
+2. If installation fails after 3–5 attempts, export the log files and submit an [online ticket](https://developer.huawei.com/consumer/en/support/feedback/#/) for assistance.
 
 ```bash
 hdc file recv /data/log/hilog/
-```### 9568401 Debug Bundle Only Supports Devices in Developer Mode
+```
+
+### 9568401 Debug Bundle Only Supports Devices in Developer Mode
 
 **Error Message:**
 
@@ -1719,7 +1721,7 @@ An exception occurred during the delivery of the code signing profile, resulting
 **Resolution Steps:**
 
 1. Restart the device and attempt to install the application again.
-2. If the installation still fails after repeating steps 3–5, export the log file and submit an [online ticket](https://developer.huawei.com/consumer/cn/support/feedback/#/) for assistance.
+2. If the installation still fails after repeating steps 3–5, export the log file and submit an [online ticket](https://developer.huawei.com/consumer/en/support/feedback/#/) for assistance.
 
 ```bash
 hdc file recv /data/log/hilog/
@@ -1744,7 +1746,7 @@ An exception occurred while deleting the signature profile during application un
 **Resolution Steps:**
 
 1. Restart the device and attempt to uninstall the application again.
-2. If the uninstallation still fails after repeating steps 3–5, export the log file and submit an [online ticket](https://developer.huawei.com/consumer/cn/support/feedback/#/) for assistance.
+2. If the uninstallation still fails after repeating steps 3–5, export the log file and submit an [online ticket](https://developer.huawei.com/consumer/en/support/feedback/#/) for assistance.
 
     ```bash
     hdc file recv /data/log/hilog/
@@ -2025,7 +2027,7 @@ Invalid parameters or an empty directory path was passed during installation.
 **Resolution Steps:**
 
 1. Restart the device and attempt to install the application again.
-2. If the installation still fails after repeating steps 3–5, export the log file and submit an [online ticket](https://developer.huawei.com/consumer/cn/support/feedback/#/) for assistance.
+2. If the installation still fails after repeating steps 3–5, export the log file and submit an [online ticket](https://developer.huawei.com/consumer/en/support/feedback/#/) for assistance.
 
 ```bash
 # Export log file
@@ -2049,7 +2051,7 @@ Lack of write permissions when creating the directory.
 **Resolution Steps:**
 
 1. Restart the device and attempt to install the application again.
-2. If the installation still fails after repeating steps 3–5, export the log file and submit an [online ticket](https://developer.huawei.com/consumer/cn/support/feedback/#/) for assistance.
+2. If the installation still fails after repeating steps 3–5, export the log file and submit an [online ticket](https://developer.huawei.com/consumer/en/support/feedback/#/) for assistance.
 
 ```bash
 # Export log file
@@ -2073,12 +2075,14 @@ The directory does not exist or lacks write permissions.
 **Resolution Steps:**
 
 1. Restart the device and attempt to install the application again.
-2. If the installation still fails after repeating steps 3–5, export the log file and submit an [online ticket](https://developer.huawei.com/consumer/cn/support/feedback/#/) for assistance.
+2. If the installation still fails after repeating steps 3–5, export the log file and submit an [online ticket](https://developer.huawei.com/consumer/en/support/feedback/#/) for assistance.
 
 ```bash
 # Export log file
 hdc file recv /data/log/hilog/
-```### 9568355 Failed to Extract Files from Installation Package
+```
+
+### 9568355 Failed to Extract Files from Installation Package
 
 **Error Message:**
 
@@ -2095,7 +2099,7 @@ During installation, the directory for extracting SO files failed to be created,
 **Resolution Steps:**
 
 1. Restart the phone and attempt to install the application again.
-2. If the installation still fails after repeating the above steps 3 to 5 times, export the log file and submit an [online ticket](https://developer.huawei.com/consumer/cn/support/feedback/#/) for assistance.
+2. If the installation still fails after repeating the above steps 3 to 5 times, export the log file and submit an [online ticket](https://developer.huawei.com/consumer/en/support/feedback/#/) for assistance.
 
 ```bash
 # Export log file
@@ -2119,7 +2123,7 @@ During installation, the directory name exceeds 260 characters, or the current d
 **Resolution Steps:**
 
 1. Restart the phone and attempt to install the application again.
-2. If the installation still fails after repeating the above steps 3 to 5 times, export the log file and submit an [online ticket](https://developer.huawei.com/consumer/cn/support/feedback/#/) for assistance.
+2. If the installation still fails after repeating the above steps 3 to 5 times, export the log file and submit an [online ticket](https://developer.huawei.com/consumer/en/support/feedback/#/) for assistance.
 
 ```bash
 # Export log file
@@ -2143,7 +2147,7 @@ During installation, the files to be cleaned lack write permissions, causing the
 **Resolution Steps:**
 
 1. Restart the phone and attempt to install the application again.
-2. If the installation still fails after repeating the above steps 3 to 5 times, export the log file and submit an [online ticket](https://developer.huawei.com/consumer/cn/support/feedback/#/) for assistance.
+2. If the installation still fails after repeating the above steps 3 to 5 times, export the log file and submit an [online ticket](https://developer.huawei.com/consumer/en/support/feedback/#/) for assistance.
 
 ```bash
 # Export log file
@@ -2297,7 +2301,7 @@ The pluginDistributionIDs of the application and plugin have no common values, c
 
 **Resolution Steps:**
 
-Reconfigure the pluginDistributionIDs in the [signing certificate profile file](https://gitcode.com/openharmony/docs/blob/master/zh-cn/application-dev/security/app-provision-structure.md) for the application or plugin.
+Reconfigure the pluginDistributionIDs in the [signing certificate profile file](https://gitcode.com/openharmony/docs/blob/master/en/application-dev/security/app-provision-structure.md) for the application or plugin.
 
 ### 9568433 Application Lacks ohos.permission.SUPPORT_PLUGIN Permission
 
@@ -2352,7 +2356,7 @@ When installing a multi-HAP application, the signature information of the HAP pa
 
 **Resolution Steps:**
 
-Re-[sign](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-signing) to ensure consistent signature information across multiple HAP packages.
+Re-[sign](https://developer.huawei.com/consumer/en/doc/harmonyos-guides/ide-signing) to ensure consistent signature information across multiple HAP packages.
 
 ### 9568334 Duplicate Module Name
 
@@ -2473,7 +2477,7 @@ The ABI types supported by the device do not match those configured in the C++ p
     param get const.product.cpu.abilist
     ```
 
-3. Based on the query results, check the configuration of the ["abiFilters" parameter](https://gitcode.com/openharmony/docs/blob/master/zh-cn/application-dev/napi/ohos-abi.md#specifying-abi-in-compilation-architecture) in the [module-level build-profile.json5](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-build-profile) file, following these rules:
+3. Based on the query results, check the configuration of the ["abiFilters" parameter](https://gitcode.com/openharmony/docs/blob/master/en/application-dev/napi/ohos-abi.md#specifying-abi-in-compilation-architecture) in the [module-level build-profile.json5](https://developer.huawei.com/consumer/en/doc/harmonyos-guides/ide-hvigor-build-profile) file, following these rules:
 
     - If the result is "default," execute the following command to check if the lib64 folder exists.
 
@@ -2523,7 +2527,7 @@ Package management or other services are abnormal, causing the proxy acquisition
 **Resolution Steps:**
 
 1. Restart the phone and attempt to install the application again.
-2. If the installation still fails after repeating the above steps 3 to 5 times, export the log file and submit an [online ticket](https://developer.huawei.com/consumer/cn/support/feedback/#/) for assistance.
+2. If the installation still fails after repeating the above steps 3 to 5 times, export the log file and submit an [online ticket](https://developer.huawei.com/consumer/en/support/feedback/#/) for assistance.
 
 ```bash
 # Export log file
@@ -2658,14 +2662,14 @@ Installation failed due to a change in the U1Enabled field in the signing inform
 
 **Possible Causes:**
 
-The U1Enabled configuration in the allowed-acls field of the application's [Profile signing file](https://gitcode.com/openharmony/docs/blob/master/zh-cn/application-dev/security/app-provision-structure.md) has changed, for example:
+The U1Enabled configuration in the allowed-acls field of the application's [Profile signing file](https://gitcode.com/openharmony/docs/blob/master/en/application-dev/security/app-provision-structure.md) has changed, for example:
 
 1. The installed application has U1Enabled configured in allowed-acls, but the installation package does not.
 2. The installed application does not have U1Enabled configured in allowed-acls, but the installation package does.
 
 **Resolution Steps:**
 
-Option 1: Re-sign the package. During signing, refer to the [automatic signing](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-signing#section9786111152213) guide for ACL permissions or the [manual signing](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-signing#section157591551175916) guide for ACL configuration to ensure consistency between the installation package and the installed application.
+Option 1: Re-sign the package. During signing, refer to the [automatic signing](https://developer.huawei.com/consumer/en/doc/harmonyos-guides/ide-signing#section9786111152213) guide for ACL permissions or the [manual signing](https://developer.huawei.com/consumer/en/doc/harmonyos-guides/ide-signing#section157591551175916) guide for ACL configuration to ensure consistency between the installation package and the installed application.
 
 Option 2: Uninstall the installed application on the device before attempting to install the new one.
 
@@ -2681,11 +2685,11 @@ Installation failed due to inconsistent U1Enabled configurations in the signing 
 
 **Possible Causes:**
 
-Different [Profile signing files](https://gitcode.com/openharmony/docs/blob/master/zh-cn/application-dev/security/app-provision-structure.md) were used for signing multiple HAP packages, resulting in inconsistent U1Enabled configurations in allowed-acls.
+Different [Profile signing files](https://gitcode.com/openharmony/docs/blob/master/en/application-dev/security/app-provision-structure.md) were used for signing multiple HAP packages, resulting in inconsistent U1Enabled configurations in allowed-acls.
 
 **Resolution Steps:**
 
-Re-sign the packages. During signing, refer to the [automatic signing](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-signing#section9786111152213) guide for ACL permissions or the [manual signing](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-signing#section157591551175916) guide for ACL configuration to ensure consistent U1Enabled configurations in allowed-acls across multiple HAP packages.## Frequently Asked Questions
+Re-sign the packages. During signing, refer to the [automatic signing](https://developer.huawei.com/consumer/en/doc/harmonyos-guides/ide-signing#section9786111152213) guide for ACL permissions or the [manual signing](https://developer.huawei.com/consumer/en/doc/harmonyos-guides/ide-signing#section157591551175916) guide for ACL configuration to ensure consistent U1Enabled configurations in allowed-acls across multiple HAP packages.## Frequently Asked Questions
 
 ### 1. Preinstalled System App Already Uninstalled: Errors Occur During Reinstallation in Specific Scenarios (Downgrade Installation or Signature Mismatch)
 

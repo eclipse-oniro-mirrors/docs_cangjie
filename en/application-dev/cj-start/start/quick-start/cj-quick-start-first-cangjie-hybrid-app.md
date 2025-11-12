@@ -2,7 +2,7 @@
 
 > **Note:**
 >
-> To ensure optimal performance, this document uses **DevEco Studio 5.0.2 Release** and **DevEco Studio-Cangjie Plugin 5.0.7.100 Beta1** as examples. Click [here](https://developer.huawei.com/consumer/cn/download/) to download the latest versions.
+> To ensure optimal performance, this document uses **DevEco Studio 5.0.2 Release** and **DevEco Studio-Cangjie Plugin 5.0.7.100 Beta1** as examples. Click [here](https://developer.huawei.com/consumer/en/download/) to download the latest versions.
 
 This documentation is intended for OpenHarmony application developers with basic knowledge of Cangjie language, ArkTS language, and UI frameworks. By building a simple hybrid application with page navigation/return functionality (as shown below), you'll quickly understand the main files in the project directory and familiarize yourself with the hybrid application development workflow.
 
@@ -182,7 +182,7 @@ Key files include:
 >
 > In hybrid development, Cangjie pages aren't full lifecycle pages but are embedded as components within ArkTS pages. An ArkTS @Entry page serves as the container.
 >
-> For detailed hybrid UI development, see [Hybrid Development V2](https://developer.huawei.com/consumer/cn/doc/cangjie-references-V5/cj_appendix-hybrid-v2-V5).
+> For detailed hybrid UI development, see [Hybrid Development](../../../arkui-cj/cj-appendix-hybrid.md).
 
 1. Creating a Cangjie Page
 

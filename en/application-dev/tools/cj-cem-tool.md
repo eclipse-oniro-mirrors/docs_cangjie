@@ -4,7 +4,7 @@ The Common Event Manager (abbreviated as CEM) is a tool designed to implement fu
 
 ## Environment Requirements
 
-Before using this tool, developers need to obtain the [HDC tool](https://docs.openharmony.cn/pages/v5.1/zh-cn/device-dev/subsystems/subsys-toolchain-hdc-guide.md) and execute the `hdc shell` command.
+Before using this tool, developers need to obtain the [HDC tool](https://docs.openharmony.cn/pages/v5.1/en/device-dev/subsystems/subsys-toolchain-hdc-guide.md) and execute the `hdc shell` command.
 
 ## CEM Tool Command List
 

@@ -22,7 +22,7 @@ The relationship is illustrated below:
 
 ## Environment Setup  
 
-Download and install [DevEco Studio](https://developer.huawei.com/consumer/cn/deveco-studio/). The hdc executable can be found in: `DevEco Studio\sdk\default\openharmony\toolchains`.  
+Download and install [DevEco Studio](https://developer.huawei.com/consumer/en/deveco-studio/). The hdc executable can be found in: `DevEco Studio\sdk\default\openharmony\toolchains`.  
 
 ### (Optional) Direct Command-Line Execution  
 
@@ -398,7 +398,7 @@ hdc shell -b com.example.myapplication ls data/storage/el2/base/
 
 > **Note:**
 >
-> When using the `[-b bundlename]` parameter to specify a package name, the following condition must be met: The installed application with the specified package name must be "signed with a debug certificate." For details on applying for a debug certificate and signing, refer to: [Apply for Debug Certificate](https://developer.huawei.com/consumer/cn/doc/app/agc-help-add-debugcert-0000001914263178).
+> When using the `[-b bundlename]` parameter to specify a package name, the following condition must be met: The installed application with the specified package name must be "signed with a debug certificate." For details on applying for a debug certificate and signing, refer to: [Apply for Debug Certificate](https://developer.huawei.com/consumer/en/doc/app/agc-help-add-debugcert-0000001914263178).
 
 ## Application Management
 
@@ -506,7 +506,7 @@ hdc shell -b com.example.myapplication ls data/storage/el2/base/
    >
    > In the example `hdc file send -b com.example.myapplication a.txt data/storage/el2/base/b.txt`, the `-b` parameter specifies transferring file `a.txt` from the local current directory to the relative path `data/storage/el2/base/` within the application data directory of `com.example.myapplication`, renaming it to `b.txt`.
    >
-   > When using the `[-b bundlename]` parameter, the specified package name must meet the condition: The installed application must be "signed with a debug certificate." For details, refer to: [Apply for Debug Certificate](https://developer.huawei.com/consumer/cn/doc/app/agc-help-add-debugcert-0000001914263178).
+   > When using the `[-b bundlename]` parameter, the specified package name must meet the condition: The installed application must be "signed with a debug certificate." For details, refer to: [Apply for Debug Certificate](https://developer.huawei.com/consumer/en/doc/app/agc-help-add-debugcert-0000001914263178).
 
 2. Receive a file from remote device to local. Command format:
 
@@ -542,7 +542,7 @@ hdc shell -b com.example.myapplication ls data/storage/el2/base/
    >
    > In the example `hdc file recv -b com.example.myapplication data/storage/el2/base/b.txt a.txt`, the `-b` parameter specifies transferring file `b.txt` from the relative path `data/storage/el2/base/` within the application data directory of `com.example.myapplication` to the local current directory, renaming it to `a.txt`.
    >
-   > When using the `[-b bundlename]` parameter, the specified package name must meet the condition: The installed application must be "signed with a debug certificate." For details, refer to: [Apply for Debug Certificate](https://developer.huawei.com/consumer/cn/doc/app/agc-help-add-debugcert-0000001914263178).
+   > When using the `[-b bundlename]` parameter, the specified package name must meet the condition: The installed application must be "signed with a debug certificate." For details, refer to: [Apply for Debug Certificate](https://developer.huawei.com/consumer/en/doc/app/agc-help-add-debugcert-0000001914263178).
 
 ## Port Forwarding
 

@@ -21,7 +21,7 @@ An application package may consist solely of a basic entry package or include on
 
 - In multi-HAP scenarios, all HAPs within the same application must have identical configurations for `bundleName`, `versionCode`, `versionName`, `minCompatibleVersionCode`, `debug`, `minAPIVersion`, `targetAPIVersion`, and `apiReleaseType` in their configuration files. Additionally, the `moduleName` tag must be unique across all HAPs for the same device type. When packaging HAPs into an App Pack, these parameters are validated.
 
-- In multi-HAP scenarios, all HAPs of the same application must maintain consistent signing certificates. When publishing to app stores in the form of an App Pack, the store will split out all HAPs from the App Pack and re-sign them to ensure certificate consistency. During debugging, developers must ensure all HAPs installed via command line or DevEco Studio share the same signing certificate; otherwise, installation may fail. For signing operations, refer to [Application/Meta Service Signing](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-signing).
+- In multi-HAP scenarios, all HAPs of the same application must maintain consistent signing certificates. When publishing to app stores in the form of an App Pack, the store will split out all HAPs from the App Pack and re-sign them to ensure certificate consistency. During debugging, developers must ensure all HAPs installed via command line or DevEco Studio share the same signing certificate; otherwise, installation may fail. For signing operations, refer to [Application/Meta Service Signing](https://developer.huawei.com/consumer/en/doc/harmonyos-guides/ide-signing).
 
 ## Creation
 
@@ -43,7 +43,7 @@ Below is a brief guide on creating a new HAP module via DevEco Studio.
 
 ## Debugging
 
-Compile and package via DevEco Studio to generate single or multiple HAPs for debugging. To customize compile the same HAP into different versions based on deployment environments, target audiences, or runtime conditions, refer to [Customized Compilation Guide](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-customized-multi-targets-and-products-guides#section1011341611469).
+Compile and package via DevEco Studio to generate single or multiple HAPs for debugging. To customize compile the same HAP into different versions based on deployment environments, target audiences, or runtime conditions, refer to [Customized Compilation Guide](https://developer.huawei.com/consumer/en/doc/harmonyos-guides/ide-customized-multi-targets-and-products-guides#section1011341611469).
 
 Developers can debug using DevEco Studio or the hdc tool:
 
