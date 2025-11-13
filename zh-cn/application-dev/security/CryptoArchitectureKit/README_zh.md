@@ -30,5 +30,7 @@
         - 消息摘要计算开发指导
             - [消息摘要计算SHA256（仓颉）](cj-crypto-generate-message-digest.md)
             - [消息摘要计算MD5（仓颉）](cj-crypto-generate-message-digest-md5.md)
-    - [消息认证码计算](cj-crypto-compute-mac.md)
-    - [安全随机数生成](cj-crypto-generate-random-number.md)
+    - 消息认证码
+        - [消息认证码计算](cj-crypto-compute-mac.md)
+    - 随机数
+        - [安全随机数生成](cj-crypto-generate-random-number.md)

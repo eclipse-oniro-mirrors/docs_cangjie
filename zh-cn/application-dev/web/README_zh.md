@@ -5,7 +5,7 @@
      - [User-Agent开发指导](cj-web-default-userAgent.md)
      - [设置深色模式](cj-web-set-dark-mode.md)
 - 管理网页交互
-     - [Web组件嵌套滚动](j-web-nested-scrolling.md)
+     - [Web组件嵌套滚动](cj-web-nested-scrolling.md)
      - [Web页面显示内容滚动](cj-web-content-scrolling.md)
 - 管理Web组件的网络安全与隐私
      - [坚盾守护模式](cj-web-secure-shield-mode.md)

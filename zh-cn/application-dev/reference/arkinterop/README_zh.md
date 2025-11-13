@@ -1,4 +1,4 @@
-# 仓颉与ArkTS互操作库（Beta特性）
+# ArkInterop（仓颉与ArkTS互操作库）（Beta特性）
 
 - 仓颉与ArkTS互操作库
     - [ohos.ark_interop（ArkTS互操作库）](cj-apis-ark_interop.md)

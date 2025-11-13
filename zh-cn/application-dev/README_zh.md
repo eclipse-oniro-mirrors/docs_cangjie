@@ -1,13 +1,12 @@
 # 开发指南（Beta特性）
 
+- [应用开发导读](cj-start/start/cj-start-application-development-overview.md)
 - [入门](cj-start/README_zh.md)
 - 开发
     - 应用框架
         - [Ability Kit（程序框架服务）](application-models/README_zh.md)
         - [ArkData（方舟数据管理）](database/README_zh.md)
         - [ArkUI（方舟UI框架）](arkui-cj/README_zh.md)
-        - [窗口管理](windowmanager/README_zh.md)
-        - [屏幕管理](displaymanager/README_zh.md)
         - [ArkWeb（方舟Web）](web/README_zh.md)
         - [Core File Kit（文件基础服务）](file-management/README_zh.md)
         - [IPC Kit（进程间通信服务）](ipc/README_zh.md)
@@ -39,4 +38,3 @@
     - 应用服务
         - [Location Kit（位置服务）](location/README_zh.md)
 - [API参考](reference/README_zh.md)
-- [学习仓颉语言](learn-cj/README_zh.md)

@@ -21,5 +21,5 @@
         - [系统应用可用权限（用户授权）](./cj-permissions-for-system-apps-user.md)
         <!--DelEnd-->
         - [企业类应用可用权限](./cj-permissions-for-enterprise-apps.md)
-        - [仅对MDM应用开放](./cj-permissions-for-mdm-apps.md)
+        - [仅MDM应用可用权限](./cj-permissions-for-mdm-apps.md)
     - [应用权限组列表](./cj-app-permission-group-list.md)

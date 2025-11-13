@@ -1,7 +1,8 @@
-# 开发参考（Beta特性）
+# API参考（Beta特性）
 
-- [开发说明](cj-development-intro.md)
-- [系统能力SystemCapability使用指南](cj-syscap.md)
+- API参考概述
+    - [开发说明](cj-development-intro.md)
+    - [系统能力SystemCapability使用指南](cj-syscap.md)
 - 系统能力SystemCapability列表
     - [Phone](cj-phone-syscap-list.md)
     - [Tablet](cj-tablet-syscap-list.md)
@@ -30,4 +31,6 @@
 - [Telephony Kit API参考](TelephonyKit/README_zh.md)
 - [Test Kit API参考](TestKit/README_zh.md)
 - [Universal Keystore Kit API参考](UniversalKeystoreKit/README_zh.md)
+- 公共基础能力
+    - [Syscap（系统能力）](arkui-cj/cj-syscap.md)
 - [仓颉编程语言库API](cj-libs-api.md)
