@@ -75,6 +75,8 @@
 
     【反例】
 
+    <!-- code_check_manual -->
+
     ```cangjie
     class Info {
         var info: String = 'Hello'
@@ -110,6 +112,8 @@
 
     【正例】
 
+    <!-- code_check_manual -->
+
     ```cangjie
     class Info {
         var info: String = 'Hello'
@@ -144,6 +148,8 @@
 
     【反例】
 
+    <!-- code_check_manual -->
+
     ```cangjie
     class Info {
         var info: String = 'Hello'
@@ -175,6 +181,8 @@
     ```
 
     【正例】
+
+    <!-- code_check_manual -->
 
     ```cangjie
     class Info {

@@ -82,7 +82,7 @@ class EntryView {
     // 使用Environment.EnvProp将设备运行languageCode存入AppStorage中；
     let SysLanguageCode = Environment.envProp<String>("languageCode", "en")
     // 从AppStorage获取单向绑定的languageCode的变量
-    let lang: ObservedProperty<String> = AppStorage.`prop`<String>('languageCode').getOrThrow()
+    let lang: ObservedProperty<String> = AppStorage.property<String>('languageCode').getOrThrow()
     func build() {
         Row() {
             Column() {

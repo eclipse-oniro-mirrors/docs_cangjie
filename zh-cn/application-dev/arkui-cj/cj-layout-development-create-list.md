@@ -169,6 +169,8 @@ public class EntryView {
 
 如上图8所示，联系人列表的列表项中，每个联系人都有头像和名称。此时，需要将Image和Text封装到一个Row容器内。
 
+<!-- code_check_manual -->
+
 ```cangjie
 List() {
     ListItem() {
@@ -539,6 +541,8 @@ ListItem的[swipeAction属性](../reference/arkui-cj/cj-scroll-swipe-listitem.md
 
 - 实现尾端滑出组件的构建。
 
+    <!-- code_check_manual -->
+
     ```cangjie
     @Builder
     func itemEnd(index: Int64) {
@@ -556,6 +560,8 @@ ListItem的[swipeAction属性](../reference/arkui-cj/cj-scroll-swipe-listitem.md
     ```
 
 - 绑定swipeAction属性到可左滑的ListItem上。
+
+    <!-- code_check_manual -->
 
     ```cangjie
     // 构建List时，通过ForEach基于数据源this.messages循环渲染ListItem。
@@ -578,6 +584,8 @@ ListItem的[swipeAction属性](../reference/arkui-cj/cj-scroll-swipe-listitem.md
 在消息列表中，若希望在联系人头像右上角添加标记，可在实现消息列表项ListItem的联系人头像时，将头像Image组件作为Badge的子组件。
 
 在Badge组件中，count和position参数用于设置需要展示的消息数量和提示点显示位置，还可以通过style参数灵活设置标记的样式。
+
+<!-- code_check_manual -->
 
 ```cangjie
 ListItem(){
@@ -649,6 +657,8 @@ List() {
 
 1. 定义列表项数据结构。
 
+    <!-- code_check_manual -->
+
     ```cangjie
     open class ItemInfo {
         var index: Int64
@@ -675,6 +685,8 @@ List() {
     ```
 
 2. 构造列表结构。
+
+    <!-- code_check_manual -->
 
     ```cangjie
     @State var routes: Array<ItemGroupInfo> = [
@@ -743,6 +755,8 @@ List() {
     ```
 
 3. 通过改变ListItem的状态，来控制每个列表项是否展开，并通过animation和animateTo来实现展开与折叠过程中的动效效果。
+
+    <!-- code_check_manual -->
 
     ```cangjie
     @Builder

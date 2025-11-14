@@ -27,6 +27,8 @@
 
 2. 创建执行动画的对象。
 
+    <!-- code_check_manual -->
+
     ```cangjie
     // 创建动画的初始参数
     this.backAnimator = getUIContext.createAnimator(AnimatorOptions(
@@ -71,6 +73,8 @@
 
 2. 定义要做动画的组件。
 
+    <!-- code_check_manual -->
+
     ```cangjie
     Button()
     .borderRadius(45.vp)
@@ -80,6 +84,8 @@
     ```
 
 3. 在onPageShow中创建AnimatorResult对象。
+
+    <!-- code_check_manual -->
 
     ```cangjie
     // 创建animatorResult对象
@@ -117,6 +123,8 @@
 
 4. 定义动画播放，重置，暂停的按钮。
 
+    <!-- code_check_manual -->
+
     ```cangjie
     Button('播放').onClick({ =>
       this.backAnimator?.play()
@@ -133,6 +141,8 @@
     ```
 
 5. 在页面隐藏或销毁的生命周期中释放动画对象，避免内存泄漏。
+
+    <!-- code_check_manual -->
 
     ```cangjie
     protected override func onPageHide() {

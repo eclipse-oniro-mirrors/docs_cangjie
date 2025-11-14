@@ -776,11 +776,14 @@ public init(request: PermissionRequest)
 
 ## 示例代码
 
+<!-- run -->
+
 ```cangjie
 package ohos_app_cangjie_entry
 import kit.ArkUI.*
-import ohos.state_macro_manage.*
-import ohos.webview.*
+import ohos.arkui.state_macro_manage.*
+import ohos.web.webview.*
+import ohos.hilog.Hilog
 
 @Entry
 @Component
@@ -788,26 +791,26 @@ class EntryView {
     let webController = WebviewController()
     @State var url: String = "www.example.com"
     func build() {
-        Column(10) {
+        Column(space: 10) {
             Button("refresh")
-            .onClick {
+            .onClick({
                 evt =>
-                AppLog.info("refresh")
+                Hilog.info(0, "AppLogCj", "refresh")
                 webController.refresh()
-            }.width(400.px).height(150.px)
+            }).width(400.px).height(150.px)
             Button("loadUrl")
-            .onClick {
+            .onClick({
                 evt =>
-                AppLog.info("loadUrl")
+                Hilog.info(0, "AppLogCj", "loadUrl")
                 webController.loadUrl(this.url)
 
-            }.width(400.px).height(150.px)
+            }).width(400.px).height(150.px)
             Web(src: "www.example.com", controller: webController)
             .onPageBegin({evt =>
-                AppLog.info("page begin url: ${evt.url}")
+                Hilog.info(0, "AppLogCj", "page begin url: ${evt.url}")
             })
             .onPageEnd({evt =>
-                AppLog.info("page end url: ${evt.url}")
+                Hilog.info(0, "AppLogCj", "page end url: ${evt.url}")
             })
         }
     }

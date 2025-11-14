@@ -91,6 +91,8 @@ TextArea( text: '这是一段文本，用来展示选中菜单')
 
 键盘抬起后，具有滚动能力的容器组件在横竖屏切换时，才会生效键盘避让，若希望无滚动能力的容器组件也生效键盘避让，建议在组件外嵌套一层具有滚动能力的容器组件，比如[Scroll](../reference/arkui-cj/cj-scroll-swipe-scroll.md)、[List](../reference/arkui-cj/cj-scroll-swipe-list.md)、[Grid](../reference/arkui-cj/cj-scroll-swipe-grid.md)。
 
+<!-- run -->
+
 ```cangjie
 package ohos_app_cangjie_entry
 import kit.ArkUI.*

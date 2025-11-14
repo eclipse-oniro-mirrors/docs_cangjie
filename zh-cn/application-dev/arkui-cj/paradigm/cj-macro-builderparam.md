@@ -12,6 +12,8 @@
 
 使用全局的自定义构建函数，在本地初始化@BuilderParam。
 
+<!-- code_check_manual -->
+
 ```cangjie
 package ohos_app_cangjie_entry
 import kit.ArkUI.*
@@ -192,6 +194,8 @@ class EntryView{
 使用@State宏修饰的变量，给子组件@BuilderParam和ChildBuilder变量进行初始化，在编译时会输出报错信息。
 
 【反例】
+
+<!-- code_no_check -->
 
 ```cangjie
 package ohos_app_cangjie_entry

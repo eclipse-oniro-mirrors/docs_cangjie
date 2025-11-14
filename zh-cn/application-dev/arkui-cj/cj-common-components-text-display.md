@@ -8,6 +8,8 @@ Text可通过以下两种方式来创建：
 
 - string字符串。
 
+  <!-- code_check_manual -->
+
   ```cangjie
   Text('我是一段文本')
   ```
@@ -28,6 +30,8 @@ Text可通过以下两种方式来创建：
     ]
   }
   ```
+
+  <!-- code_check_manual -->
 
   ```cangjie
   Text(@r(app.string.module_desc))

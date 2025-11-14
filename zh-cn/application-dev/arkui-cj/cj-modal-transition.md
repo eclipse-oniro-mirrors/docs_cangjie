@@ -21,6 +21,8 @@
 
 - 定义模态展示界面。
 
+   <!-- code_check_manual -->
+
    ```cangjie
    // 通过@Builder构建模态展示界面
    @Builder
@@ -34,6 +36,8 @@
    ```
 
 - 通过模态接口调起模态展示界面，通过转场动画或者共享元素动画实现对应的动画效果。
+
+   <!-- code_check_manual -->
 
    ```cangjie
    // 模态转场控制变量

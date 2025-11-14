@@ -494,6 +494,8 @@ class EntryView {
 
     d. Text最终渲染。
 
+<!-- code_check_manual -->
+
 ```cangjie
 @Entry
 @Component
@@ -513,6 +515,8 @@ class EntryView {
 在上面的例子中，这个错误行为不会造成很严重的后果。
 
 但这个行为是严重错误的，会随着工程的复杂度升级，隐患越来越大。见下一个例子。
+
+<!-- code_check_manual -->
 
 ```cangjie
 @Entry
@@ -562,7 +566,7 @@ class Model {
         this.callback = callback
     }
     func delete() {
-        this.callback = Option<() -> Unit>.None.getOrThrow()
+        this.callback = {=>}
     }
     func call() {
         if (true) {

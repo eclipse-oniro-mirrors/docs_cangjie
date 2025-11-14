@@ -20,6 +20,8 @@
 
     【反例】
 
+    <!-- code_check_manual -->
+
     ```cangjie
     package ohos_app_cangjie_entry
 
@@ -121,6 +123,8 @@
 
     【反例】
 
+    <!-- code_check_manual -->
+
     ```cangjie
     package ohos_app_cangjie_entry
 
@@ -211,6 +215,8 @@
 3. 当成员变量被private访问限定符和@Link宏同时修饰，仓颉会进行校验并产生报错。
 
     【反例】
+
+    <!-- code_check_manual -->
 
     ```cangjie
     package ohos_app_cangjie_entry

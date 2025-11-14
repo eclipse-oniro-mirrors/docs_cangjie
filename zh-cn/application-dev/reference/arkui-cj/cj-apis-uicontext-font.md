@@ -50,6 +50,8 @@ public func getFontByName(fontName: String): ?FontInfo
 
 **示例：**
 
+<!-- code_check_manual -->
+
 ```cangjie
 let font = Font()
 let fontInfo = font.getFontByName("Arial")
@@ -74,6 +76,8 @@ public func getSystemFontList(): Array<String>
 |Array\<String>|系统字体名称列表。|
 
 **示例：**
+
+<!-- code_check_manual -->
 
 ```cangjie
 let font = Font()
@@ -109,6 +113,8 @@ public func registerFont(familyName!: ResourceStr, familySrc!: ResourceStr): Uni
   |100001|Internal error.|
 
 **示例：**
+
+<!-- code_check_manual -->
 
 ```cangjie
 let font = Font()

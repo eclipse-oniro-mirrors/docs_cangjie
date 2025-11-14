@@ -187,6 +187,8 @@ Tabs(barPosition: BarPosition.Start) {
 
 设置自定义导航栏需要使用tabBar的参数，以其支持的CustomBuilder的方式传入自定义的函数组件样式。例如这里声明tabBuilder的自定义函数组件，传入参数包括页签文字title，对应位置index，以及选中状态和未选中状态的图片资源。通过当前活跃的currentIndex和页签对应的targetIndex匹配与否，决定UI显示的样式。
 
+<!-- code_check_manual -->
+
 ```cangjie
 @State var currentIndex: Int32 = 0
 
@@ -209,6 +211,8 @@ func tabBuilder(title: String, targetIndex: Int32, imgs: Array<AppResource>) {
 
 在TabContent对应tabBar属性中传入自定义函数组件，并传递相应的参数。
 
+<!-- code_check_manual -->
+
 ```cangjie
 TabContent(){
   Text("我的内容").fontSize(30)
@@ -226,6 +230,8 @@ TabContent(){
 ![tab-10](figures/tab-10.gif)
 
 此时需要使用Tabs提供的onChange事件方法，监听索引index的变化，并将当前活跃的index值传递给currentIndex，实现页签的切换。
+
+<!-- run -->
 
 ```cangjie
 package ohos_app_cangjie_entry

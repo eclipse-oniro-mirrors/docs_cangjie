@@ -50,6 +50,8 @@ rowsTemplate和columnsTemplate属性值是一个由多个空格和'数字+fr'间
 
 只要将rowsTemplate的值为"1fr 1fr 1fr"，同时将columnsTemplate的值为"1fr 2fr 1fr"，即可实现上述网格布局。
 
+<!-- code_no_check -->
+
 ```cangjie
 Grid() {
   // ...
@@ -71,6 +73,8 @@ Grid() {
 ![GridItem4](figures/GridItem4.png)
 
 Grid组件可以通过二维布局的方式显示一组GridItem子组件。
+
+<!-- code_no_check -->
 
 ```cangjie
 Grid() {
@@ -138,6 +142,8 @@ class EntryView {
 
 通过Grid的rowsGap和columnsGap可以设置网格布局的行列间距。在图5所示的计算器中，行间距为15.vp，列间距为10.vp。
 
+<!-- code_no_check -->
+
 ```cangjie
 Grid() {
   // ...
@@ -157,6 +163,8 @@ Grid() {
 如果设置的是columnsTemplate，Grid的滚动方向为垂直方向；如果设置的是rowsTemplate，Grid的滚动方向为水平方向。
 
 如上图7所示的横向可滚动网格布局，只要设置rowsTemplate属性的值且不设置columnsTemplate属性，当内容超出Grid组件宽度时，Grid可横向滚动进行内容展示。
+
+<!-- run -->
 
 ```cangjie
 package ohos_app_cangjie_entry
@@ -201,6 +209,8 @@ var scroller: Scroller = Scroller()
 ```
 
 在日历页面中，用户在点击“下一页”按钮时，应用响应点击事件，通过指定scrollPage方法的参数next为true，滚动到下一页。
+
+<!-- run -->
 
 ```cangjie
 package ohos_app_cangjie_entry
@@ -252,6 +262,8 @@ class EntryView {
 当使用懒加载方式渲染网格时，为了更好的滚动体验，减少滑动时出现白块，Grid组件中也可通过cachedCount属性设置GridItem的预加载数量，只在懒加载LazyForEach中生效。
 
 设置预加载数量后，会在Grid显示区域前后各缓存cachedCount\*列数个GridItem，超出显示和缓存范围的GridItem会被释放。
+
+<!-- code_no_check -->
 
 ```cangjie
 Grid() {
