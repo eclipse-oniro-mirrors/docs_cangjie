@@ -109,6 +109,9 @@
 - 跨语言互操作
     - [仓颉-C 互操作](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/FFI/cangjie-c.md)
     - 仓颉-ArkTS 互操作
+        - 入门
+            - [构建第一个仓颉与ArkTS混合应用](FFI/cangjie-arkts/cj-quick-start-first-cangjie-hybrid-app.md)
+            - [在已有ArkTS工程中增量使用仓颉](FFI/cangjie-arkts/cj-quick-start-first-cangjie-hybrid-module.md)
         - [概述](FFI/cangjie-arkts/cangjie_arkts_overview.md)
         - [场景](FFI/cangjie-arkts/interoperability_senario.md)
             - [ArkTS 应用中使用仓颉](FFI/cangjie-arkts/using_cangjie.md)
@@ -128,6 +131,7 @@
             - [仓颉访问 ArkTS 数据](FFI/cangjie-arkts/operating_ArkTS_data.md)
             - [ArkTS 访问仓颉数据](FFI/cangjie-arkts/operating_cangjie_objects.md)
             - [仓颉多线程中使用互操作](FFI/cangjie-arkts/using_interoperability_lib_multithread.md)
+            - [仓颉调用ArkTS三方模块](FFI/cangjie-arkts/cj-quick-start-dts2cj-plugin-usage.md)
         - [仓颉与 ArkTS 互操作辅助库](FFI/cangjie-arkts/auxiliary_lib.md)
         - [仓颉-ArkTS 互操作开发规范](FFI/cangjie-arkts/interop_guidelines.md)
 - 编译和构建

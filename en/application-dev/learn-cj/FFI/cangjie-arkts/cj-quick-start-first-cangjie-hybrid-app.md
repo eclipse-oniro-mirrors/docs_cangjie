@@ -92,7 +92,7 @@ Key files include:
     - **src > main > ets > entryability**: Application/service entry point.
     - **src > main > ets > entrybackupability**: Backup and recovery capabilities.
     - **src > main > ets > pages**: Application/service pages.
-    - **src > main > resources**: Resource files (graphics, multimedia, strings, layouts). See [Resource Classification and Access](../ide-resource-categories-and-access.md#资源分类与访问).
+    - **src > main > resources**: Resource files (graphics, multimedia, strings, layouts).
     - **src > main > module.json5**: Module configuration, including HAP settings and device-specific configurations.
     - **build-profile.json5**: Module build configuration (build options, targets).
     - **cjpm.toml**: Cangjie package management configuration (build options, dependencies).
@@ -181,8 +181,6 @@ Key files include:
 > **Note:**
 >
 > In hybrid development, Cangjie pages aren't full lifecycle pages but are embedded as components within ArkTS pages. An ArkTS @Entry page serves as the container.
->
-> For detailed hybrid UI development, see [Hybrid Development](../../../arkui-cj/cj-appendix-hybrid.md).
 
 1. Creating a Cangjie Page
 

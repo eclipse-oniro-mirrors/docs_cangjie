@@ -5,9 +5,6 @@
     - Quick Start
         - [Development Preparations](cj-start/start/quick-start/cj-quick-start-preparations.md)
         - [Building Your First Cangjie Application](cj-start/start/quick-start/cj-quick-start-first-cangjie-app.md)
-        - [Building Your First Cangjie-ArkTS Hybrid Application](cj-start/start/quick-start/cj-quick-start-first-cangjie-hybrid-app.md)
-        - [Incremental Cangjie Usage in Existing ArkTS Projects](cj-start/start/quick-start/cj-quick-start-first-cangjie-hybrid-module.md)
-        - [Cangjie Calling ArkTS Third-Party Modules](cj-start/start/quick-start/cj-quick-start-dts2cj-plugin-usage.md)
         - [Cangjie Calling CPP Files Within Modules](cj-start/start/quick-start/cj-quick-start-cangjie-module-cpp.md)
     - [Using Cangjie Modules in ArkTS Applications](cj-start/arkts-cj/cj-cangjie-in-arkts.md)
     - [Using ArkTS APIs in Cangjie Applications](cj-start/arkts-cj/cj-arktsapi-in-cangjie.md)
@@ -962,6 +959,9 @@
     - Cross-language Interoperability
         - [Cangjie-C Interoperability](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/FFI/cangjie-c.md)
         - Cangjie-ArkTS Interoperability
+            - Introduction to Interoperability
+                - [Building Your First Cangjie-ArkTS Hybrid Application](learn-cj/FFI/cangjie-arkts/cj-quick-start-first-cangjie-hybrid-app.md)
+                - [Incremental Cangjie Usage in Existing ArkTS Projects](learn-cj/FFI/cangjie-arkts/cj-quick-start-first-cangjie-hybrid-module.md)
             - [Overview](learn-cj/FFI/cangjie-arkts/cangjie_arkts_overview.md)
             - [Scenarios](learn-cj/FFI/cangjie-arkts/interoperability_senario.md)
                 - [Using Cangjie in ArkTS Applications](learn-cj/FFI/cangjie-arkts/using_cangjie.md)
@@ -981,6 +981,7 @@
                 - [Cangjie Accessing ArkTS Data](learn-cj/FFI/cangjie-arkts/operating_ArkTS_data.md)
                 - [ArkTS Accessing Cangjie Data](learn-cj/FFI/cangjie-arkts/operating_cangjie_objects.md)
                 - [Using Interoperability in Cangjie Multithreading](learn-cj/FFI/cangjie-arkts/using_interoperability_lib_multithread.md)
+                - [Cangjie Calling ArkTS Third-Party Modules](learn-cj/FFI/cangjie-arkts/cj-quick-start-dts2cj-plugin-usage.md)
             - [Cangjie-ArkTS Interoperability Auxiliary Library](learn-cj/FFI/cangjie-arkts/auxiliary_lib.md)
             - [Cangjie-ArkTS Interoperability Development Guidelines](learn-cj/FFI/cangjie-arkts/interop_guidelines.md)
     - Compilation and Build

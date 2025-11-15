@@ -563,8 +563,4 @@ Project_name
 
    ![HybridExample2_ArkTSCallCangjieUIDemo](../../figures/HybridExample2_ArkTSCallCangjieUIDemo.png)
 
-   > **说明：**
-   >
-   > 使用真机或模拟器运行应用的具体步骤请参见[构建第一个仓颉应用](./cj-quick-start-first-cangjie-app.md#构建第一个仓颉应用)。
-
 恭喜您已经在ArkTS应用中成功使用仓颉完成业务模块开发。

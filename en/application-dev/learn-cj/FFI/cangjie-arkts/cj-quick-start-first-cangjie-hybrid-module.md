@@ -562,6 +562,6 @@ Here, **my_module** becomes a Cangjie-ArkTS hybrid module.
 
    > **Note:**
    >
-   > For detailed steps on running the application on a real device or emulator, refer to [Building Your First Cangjie Application](./cj-quick-start-first-cangjie-app.md#building-your-first-cangjie-application).
+   > For detailed steps on running the application on a real device or emulator, refer to [Building Your First Cangjie Application](..\..\..\cj-start\start\quick-start\cj-quick-start-first-cangjie-app.md#building-your-first-cangjie-application).
 
 Congratulations! You have successfully used Cangjie to develop a business module in an ArkTS application.
