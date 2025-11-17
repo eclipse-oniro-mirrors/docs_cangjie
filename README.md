@@ -18,14 +18,19 @@ The overall architecture of OpenHarmony Cangjie documentation is illustrated bel
 
 As shown above, the application developer documentation primarily includes:
 
-1. **[Getting Started](./en/application-dev/cj-start/README.md)**: Guides developers through building their first OpenHarmony application using Cangjie, creating their first hybrid application with Cangjie and ArkTS, and other simple "Hello World" examples. Additionally, this section introduces fundamental development knowledge to help developers gain a preliminary understanding of OpenHarmony application development.
-2. **[Guides](./en/application-dev/README.md)**: This section explains relevant concepts, principles, mechanisms, and detailed development steps, covering:
+1. **[Application Development Guide](./en/application-dev/cj-start/start/cj-start-application-development-overview.md)**: Provides an overview of application development documentation to help developers understand the full picture.
+2. **[Getting Started](./en/application-dev/cj-start/README.md)**:
+   - **[Quick Start](./en/application-dev/cj-start/start/quick-start/README.md)**: Introduces development preparations (basic concepts and tool setup) and guides developers through building their first OpenHarmony application using the Cangjie programming language, offering a preliminary understanding of OpenHarmony application development through a simple example.
+   - **[Development Fundamentals](./en/application-dev/cj-start/basic-knowledge/README.md)**: Covers foundational knowledge for OpenHarmony application development, including application package basics and configuration files.
+   - **[Resource Classification and Access](./en/application-dev/cj-start/start/ide-resource-categories-and-access.md)**: Explains resource types such as strings, colors, fonts, spacing, and icons used in OpenHarmony application development.
+   - **[Learning Cangjie Language](./en/application-dev/learn-cj/README.md)**: Introduces the features and syntax of the Cangjie programming language to help developers better understand and utilize it for OpenHarmony application development.
+3. **[Development](./en/application-dev/README.md)**: Introduces related concepts, principles, and detailed development steps, including the following:
    - **Application Framework**: Includes Ability Kit (application framework services), ArkData (Ark data management), ArkUI (Ark UI framework), window management, screen management, ArkWeb (Ark Web), Core File Kit (basic file services), IPC Kit (inter-process communication services), Localization Kit (localization development services), etc.
-   - **System**: Includes security (application control access, cryptographic algorithm framework services, key management services, etc.), networking (short-range communication services, network services, cellular communication services, etc.), basic functionalities (process and thread communication, upload/download services, etc.), hardware (sensor services), and debugging/optimization (performance analysis services, application testing services, debugging commands, etc.).
+   - **System**: Covers security (application access control, cryptographic algorithm framework services, key management services, etc.), networking (short-range communication services, network services, cellular communication services, etc.), basic functionalities (process/thread communication, upload/download services, etc.), hardware (sensor services), and debugging/optimization (performance analysis services, application testing services, debugging commands, etc.).
    - **Media**: Includes camera services, image processing services, media file management services, etc.
    - **Graphics**: Includes Ark 2D graphics services.
    - **Application Services**: Includes location services.
-3. **[API Reference](./en/application-dev/reference/README.md)**: Provides developers with functional descriptions of APIs, parameter and return value explanations, permission information, sample code, and more to help them understand and use OpenHarmony APIs in the Cangjie version.
+4. **[API Reference](./en/application-dev/reference/README.md)**: Provides Cangjie language APIs for OpenHarmony application development, including functional descriptions, parameters, return values, permission details, and sample code to assist developers in understanding and using the Cangjie language for OpenHarmony application development.
 
 ## Documentation Directory
 
