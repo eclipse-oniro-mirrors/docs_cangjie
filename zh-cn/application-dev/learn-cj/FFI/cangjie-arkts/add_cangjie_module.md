@@ -16,24 +16,20 @@
 
       ![image-20250222181831627](../../figures/generate-dependency.png)
 
-3. 仓颉互操作模块实现后，在ArkTS代码中导入仓颉ohos_app_cangjie_entry模块，即可加载自定义的仓颉互操作模块，并调用相关的接口。
-
-> **说明：**
->
-> 此加载方式从API version 18开始支持。最低兼容版本：OpenHarmony 5.1.0(18)。
+3. 仓颉互操作模块实现后，在 ArkTS 代码中导入仓颉 ohos_app_cangjie_entry 模块，即可加载自定义的仓颉互操作模块，并调用相关的接口。
 
 ```typescript
 // 加载自定义的仓颉互操作模块
-import cjLib from "libohos_app_cangjie_entry.so"
+import testCJ from "libohos_app_cangjie_entry.so"
 ```
 
-4.自定义的仓颉互操作模块加载成功后，即可在ArkTS工程中调用仓颉互操作模块提供的接口。
+4. 自定义的仓颉互操作模块加载成功后，即可在 ArkTS 工程中调用仓颉互操作模块提供的接口。
 
-在ArkTS应用中调用仓颉互操作模块提供的addF64函数示例如下：
+在 ArkTS 应用中调用仓颉互操作模块提供的 testCJ 函数示例如下：
 
 ```typescript
 // 调用仓颉接口
-console.log("result " + cjLib.addF64(1, 2))
+console.log(testCJ("Cangjie"))
 ```
 
 ## 添加仓颉静态库模块

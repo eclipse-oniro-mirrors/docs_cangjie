@@ -78,10 +78,6 @@ After successfully inserting the Cangjie interoperation module into the ArkTS pr
 
 After implementing the Cangjie interoperation module, import the `ohos_app_cangjie_entry` module in ArkTS code to load the custom Cangjie interoperation module and call its interfaces.
 
-> **Note:**
->
-> This loading method is supported starting from API version 18. Minimum compatible version: OpenHarmony 5.1.0(18).
-
 ```typescript
 // Load the custom Cangjie interoperation module
 import cjLib from "libohos_app_cangjie_entry.so"

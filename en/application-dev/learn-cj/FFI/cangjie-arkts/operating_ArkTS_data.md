@@ -207,7 +207,7 @@ console.log("result = " + result);
 
 ### ArkTS Asynchronous Lock
 
-To address data race issues between concurrent instances, ArkTS introduces asynchronous locks. For developer efficiency, AsyncLock objects support cross-instance reference passing. For details, refer to [Asynchronous Lock](https://docs.openharmony.cn/pages/v5.1/en/application-dev/arkts-utils/arkts-async-lock-introduction.md). This section focuses on asynchronous locks combined with sendable objects.
+To address data race issues between concurrent instances, ArkTS introduces asynchronous locks. For developer efficiency, AsyncLock objects support cross-instance reference passing. For details, refer to [Asynchronous Lock](https://docs.openharmony.cn/pages/v6.0/en/application-dev/arkts-utils/arkts-async-lock-introduction.md). This section focuses on asynchronous locks combined with sendable objects.
 
 Cangjie implementation:
 

@@ -16,6 +16,22 @@ This section explains how to add the Cangjie module to an ArkTS project in DevEc
 
       ![image-20250222181831627](../../figures/generate-dependency.png)
 
+3. When the Cangjie interoperability module has been implemented, you can import the Cangjie `ohos_app_cangjie_entry` module in the ArkTS to load the custom Cangjie interoperability module and call the related interfaces.
+
+```typescript
+// Load the custom Cangjie interop module
+import testCJ from "libohos_app_cangjie_entry.so"
+```
+
+4. Once the custom Cangjie interoperability module has been successfully loaded, you can call the interfaces provided by the Cangjie interoperability module in the ArkTS project.
+
+An example of calling the `testCJ` function provided by the Cangjie interoperability module in the ArkTS application is as follows:
+
+```typescript
+// Call the Cangjie interface
+console.log(console.log(testCJ("Cangjie")))
+```
+
 ## Adding a Cangjie Static Library Module
 
 1. Right-click the project name, then select **New -> Module** to add a Cangjie static library module.
