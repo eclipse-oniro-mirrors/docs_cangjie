@@ -5,7 +5,6 @@
     - Quick Start
         - [Development Preparations](cj-start/start/quick-start/cj-quick-start-preparations.md)
         - [Building Your First Cangjie Application](cj-start/start/quick-start/cj-quick-start-first-cangjie-app.md)
-        - [Cangjie Calling CPP Files Within Modules](cj-start/start/quick-start/cj-quick-start-cangjie-module-cpp.md)
     - [Using Cangjie Modules in ArkTS Applications](cj-start/arkts-cj/cj-cangjie-in-arkts.md)
     - [Using ArkTS APIs in Cangjie Applications](cj-start/arkts-cj/cj-arktsapi-in-cangjie.md)
     - Development Fundamentals
