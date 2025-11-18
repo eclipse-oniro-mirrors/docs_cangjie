@@ -5,7 +5,6 @@
     - 快速入门
         - [开发准备](cj-start/start/quick-start/cj-quick-start-preparations.md)
         - [构建第一个仓颉应用](cj-start/start/quick-start/cj-quick-start-first-cangjie-app.md)
-        - [仓颉调用模块内cpp文件](cj-start/start/quick-start/cj-quick-start-cangjie-module-cpp.md)
     - 开发基础知识
         - 应用程序包基础知识
             - [应用程序包概述](cj-start/basic-knowledge/application-package-overview.md)
