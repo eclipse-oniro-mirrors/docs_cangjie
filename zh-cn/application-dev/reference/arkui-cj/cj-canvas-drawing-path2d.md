@@ -69,7 +69,7 @@ public func addPath(path2D: ?Path2D): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|path2D|?[Path2D](./cj-canvas-drawing-path2d.md#class-path2d)|否|-||需要添加到当前路径的路径对象，路径单位：px。|
+|path2D|?[Path2D](./cj-canvas-drawing-path2d.md#class-path2d)|是|-|需要添加到当前路径的路径对象，路径单位：px。|
 
 ### func setTransform(?Float64, ?Float64, ?Float64, ?Float64, ?Float64, ?Float64)
 
@@ -94,12 +94,12 @@ public func setTransform(
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|scaleX|?Float64|否|-|x轴方向上缩放值。|
-|skewX|?Float64|否|-|x轴方向上倾斜值。|
-|skewY|?Float64|否|-|y轴方向上倾斜值。|
-|scaleY|?Float64|否|-|y轴方向上缩放值。|
-|translateX|?Float64|否|-|x轴方向上平移值。|
-|translateY|?Float64|否|-|y轴方向上平移值。|
+|scaleX|?Float64|是|-|x轴方向上缩放值。|
+|skewX|?Float64|是|-|x轴方向上倾斜值。|
+|skewY|?Float64|是|-|y轴方向上倾斜值。|
+|scaleY|?Float64|是|-|y轴方向上缩放值。|
+|translateX|?Float64|是|-|x轴方向上平移值。|
+|translateY|?Float64|是|-|y轴方向上平移值。|
 
 ### func moveTo(Float64, Float64)
 
@@ -167,7 +167,7 @@ public func arc(
 |radius|Float64|是|-|弧线的圆半径。<br>默认单位：vp。|
 |startAngle|Float64|是|-|弧线的起始弧度。<br>单位：弧度。|
 |endAngle|Float64|是|-|弧线的终止弧度。<br>单位：弧度。|
-|counterclockwise|Bool|否|false| **命名参数。** 是否逆时针绘制圆弧。<br>true:逆时针方向绘制椭圆。<br>false:顺时针方向绘制椭圆。|
+|counterclockwise|?Bool|否|false| **命名参数。** 是否逆时针绘制圆弧。<br>true:逆时针方向绘制椭圆。<br>false:顺时针方向绘制椭圆。|
 
 ### func arcTo(Float64, Float64, Float64, Float64, Float64)
 
@@ -285,7 +285,7 @@ public func ellipse(
 |rotation|Float64|是|-|椭圆的旋转角度。<br>单位：弧度。|
 |startAngle|Float64|是|-|椭圆绘制的起始点角度。<br>单位：弧度。|
 |endAngle|Float64|是|-|椭圆绘制的结束点角度。<br>单位：弧度。|
-|counterclockwise|Bool|否|false| **命名参数。** 是否以逆时针方向绘制椭圆。<br>true:逆时针方向绘制椭圆。<br>false:顺时针方向绘制椭圆。|
+|counterclockwise|?Bool|否|false| **命名参数。** 是否以逆时针方向绘制椭圆。<br>true:逆时针方向绘制椭圆。<br>false:顺时针方向绘制椭圆。|
 
 ### func rect(Float64, Float64, Float64, Float64)
 

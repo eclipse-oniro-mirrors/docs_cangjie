@@ -40,7 +40,7 @@ public init(arr: CollectionEx<T>, itemGenerator!: ItemGeneratorFunc<T>, keyGener
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |arr|[CollectionEx](./cj-common-types.md#interface-collectionext)\<T>|是|-|用于UI中的数组集合。|
-|itemGenerator|[ItemGeneratorFunc](./cj-common-types.md#type-itemgeneratorfunc)\<T>|否|-|项目生成函数。|
+|itemGenerator|[ItemGeneratorFunc](./cj-common-types.md#type-itemgeneratorfunc)\<T>|是|-|项目生成函数。|
 |keyGenerator|?[KeyGeneratorFunc](./cj-common-types.md#type-keygeneratorfunc)\<T>|否|None|键生成函数。|
 
 ### func pop()

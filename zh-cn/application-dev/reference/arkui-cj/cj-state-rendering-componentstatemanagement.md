@@ -52,6 +52,8 @@ public prop size: Int64
 
 **读写能力：** 只读
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 **起始版本：** 22
 
 ### init(ArrayList\<T>)
@@ -131,7 +133,7 @@ public operator func [](index: Int64, value!: T): Unit
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |index|Int64|是|-|元素索引。|
-|value|T|否|-| **命名参数。** 要设置的元素值。|
+|value|T|是|-| **命名参数。** 要设置的元素值。|
 
 ### func isEmpty()
 

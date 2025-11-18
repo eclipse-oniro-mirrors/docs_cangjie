@@ -404,7 +404,7 @@ public init(value: ?Array<Float32>)
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|value|?Array\<Float32>|否|-|4x5的滤镜矩阵。<br>初始值：[]|
+|value|?Array\<Float32>|是|-|4x5的滤镜矩阵。<br>初始值：[]|
 
 ### class ImageError
 

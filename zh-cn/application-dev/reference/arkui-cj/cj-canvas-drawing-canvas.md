@@ -58,12 +58,6 @@ public func onReady(callback: ?() -> Unit): This
 |:---|:---|:---|:---|:---|
 |callback|?() -> Unit|是|-|事件回调。<br>初始值：{ => }。|
 
-**返回值：**
-
-|类型|说明|
-|:---|:---|
-|This|返回当前组件实例。|
-
 ## 基础类型定义
 
 ### class RenderingContextSettings

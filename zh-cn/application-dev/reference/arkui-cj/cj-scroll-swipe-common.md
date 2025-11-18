@@ -22,6 +22,12 @@ public func scrollBar(barState: ?BarState): T
 |:---|:---|:---|:---|:---|
 |barState|?[BarState](./cj-common-types.md#enum-barstate)|是|-|滚动条状态。<br>初始值：<br>List、Grid、Scroll组件初始值为：BarState.Auto。|
 
+**返回值：**
+
+|类型|说明|
+|:----|:----|
+|T|返回组件实例。|
+
 ### func scrollBarColor(?ResourceColor)
 
 ```cangjie
@@ -39,6 +45,12 @@ public func scrollBarColor(color: ?ResourceColor): T
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |color|?[ResourceColor](./cj-common-types.md#interface-resourcecolor)|是|-|滚动条的颜色。<br> 初始值：0x182431（40%不透明度）。为HEX格式颜色，支持rgb或者argb，示例：0xffffff。|
+
+**返回值：**
+
+|类型|说明|
+|:----|:----|
+|T|返回组件实例。|
 
 ### func scrollBarWidth(?Length)
 
@@ -58,6 +70,12 @@ public func scrollBarWidth(value: ?Length): T
 |:---|:---|:---|:---|:---|
 |value|?[Length](./cj-common-types.md#interface-length)|是|-|滚动条的宽度。<br> 初始值：4 <br> 单位：vp <br> 取值范围：设置为小于0的值时，按初始值处理。设置为0时，不显示滚动条。|
 
+**返回值：**
+
+|类型|说明|
+|:----|:----|
+|T|返回组件实例。|
+
 ### func clipContent(?ContentClipMode)
 
 ```cangjie
@@ -75,6 +93,12 @@ public func clipContent(clip: ?ContentClipMode): T
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |clip|?[ContentClipMode](./cj-scroll-swipe-scroll.md#enum-contentclipmode)|是|-|裁剪只针对滚动容器的内容，即其子节点，背景不受影响。<br>初始值：Grid、Scroll的初始值为ContentClipMode.Boundary，List的初始值为ContentClipMode.ContentOnly。|
+
+**返回值：**
+
+|类型|说明|
+|:----|:----|
+|T|返回组件实例。|
 
 ### func clipContent(?RectShape)
 
@@ -94,6 +118,12 @@ public func clipContent(clip: ?RectShape): T
 |:---|:---|:---|:---|:---|
 |clip|?[RectShape](./cj-apis-shape.md#class-rectshape)|是|-|裁剪只针对滚动容器的内容，即其子节点，背景不受影响。通过RectShape传入自定义矩形区域时仅支持设置宽高和相对于组件左上角的[offset](./cj-universal-attribute-location.md#func-offsetlength-length)，不支持圆角。|
 
+**返回值：**
+
+|类型|说明|
+|:----|:----|
+|T|返回组件实例。|
+
 ### func enableScrollInteraction(?Bool)
 
 ```cangjie
@@ -112,6 +142,12 @@ public func enableScrollInteraction(value: ?Bool): T
 |:---|:---|:---|:---|:---|
 |value|?Bool|是|-|是否支持滚动手势，当设置为false时，无法通过手指或者鼠标滚动，但不影响控制器[Scroller](./cj-scroll-swipe-scroll.md#class-scroller)的滚动接口。<br>初始值：true。|
 
+**返回值：**
+
+|类型|说明|
+|:----|:----|
+|T|返回组件实例。|
+
 ### func fadingEdge(Option\<Bool>)
 
 ```cangjie
@@ -129,6 +165,12 @@ public func fadingEdge(enabled: Option<Bool>): T
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |enabled|Option\<Bool>|是|-|fadingEdge生效时，会覆盖原组件的.overlay()属性。<br/>fadingEdge生效时，建议不在该组件上设置background相关属性，会影响渐隐的显示效果。<br>fadingEdge生效时，组件会裁剪到边界，设置组件的clip属性为false不生效。<br/>初始值：false，不开启边缘渐隐效果。|
+
+**返回值：**
+
+|类型|说明|
+|:----|:----|
+|T|返回组件实例。|
 
 ### func fadingEdge(Option\<Bool>,?FadingEdgeOptions)
 
@@ -149,6 +191,12 @@ public func fadingEdge(enabled: Option<Bool>, options: ?FadingEdgeOptions): T
 |enabled|Option\<Bool>|是|-|fadingEdge生效时，会覆盖原组件的.overlay()属性。<br/>fadingEdge生效时，建议不在该组件上设置background相关属性，会影响渐隐的显示效果。<br>fadingEdge生效时，组件会裁剪到边界，设置组件的clip属性为false不生效。<br/>初始值：false，不开启边缘渐隐效果。|
 |options|?[FadingEdgeOptions](./cj-scroll-swipe-scroll.md#class-fadingedgeoptions)|是|-|边缘渐隐参数对象。可以通过该对象定义边缘渐隐效果属性，比如设置渐隐长度。|
 
+**返回值：**
+
+|类型|说明|
+|:----|:----|
+|T|返回组件实例。|
+
 ### func flingSpeedLimit(?Float64)
 
 ```cangjie
@@ -166,6 +214,12 @@ public func flingSpeedLimit(speedLimit: ?Float64): T
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |speedLimit|?Float64|是|-|Fling动效开始时的最大初始速度。<br> 初始值：9000.0 <br> 单位：vp/s <br> 取值范围：(0, +∞)，设置为小于等于0的值时，按初始值处理。|
+
+**返回值：**
+
+|类型|说明|
+|:----|:----|
+|T|返回组件实例。|
 
 ### func friction(?Float64)
 
@@ -185,6 +239,12 @@ public func friction(value: ?Float64): T
 |:---|:---|:---|:---|:---|
 |value|?Float64|是|-|摩擦系数。<br>初始值：非可穿戴设备为0.75，可穿戴设备为0.9。<br> 取值范围：(0, +∞)，设置为小于等于0的值时，按初始值处理。|
 
+**返回值：**
+
+|类型|说明|
+|:----|:----|
+|T|返回组件实例。|
+
 ### func friction(?AppResource)
 
 ```cangjie
@@ -203,6 +263,12 @@ public func friction(value: ?AppResource): T
 |:---|:---|:---|:---|:---|
 |value|?[AppResource](../LocalizationKit/cj-apis-resource.md#class-appresource)|是|-|摩擦系数。<br>初始值：非可穿戴设备为0.75，可穿戴设备为0.9。<br> 取值范围：(0, +∞)，设置为小于等于0的值时，按初始值处理。|
 
+**返回值：**
+
+|类型|说明|
+|:----|:----|
+|T|返回组件实例。|
+
 ### func nestedScroll(?NestedScrollOptions)
 
 ```cangjie
@@ -220,6 +286,12 @@ public func nestedScroll(value: ?NestedScrollOptions): T
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |value|?[NestedScrollOptions](./cj-scroll-swipe-scroll.md#class-nestedscrolloptions)|是|-|嵌套滚动选项。|
+
+**返回值：**
+
+|类型|说明|
+|:----|:----|
+|T|返回组件实例。|
 
 ## 组件事件
 
@@ -241,6 +313,12 @@ public func onDidScroll(handler: ?OnScrollCallBack): T
 |:---|:---|:---|:---|:---|
 |handler|?[OnScrollCallBack](./cj-scroll-swipe-scroll.md#type-onscrollcallback)|是|-|滚动组件滑动时触发的回调。<br> 参数一：每帧滚动的偏移量，滚动组件的内容向上滚动时偏移量为正，向下滚动时偏移量为负。单位vp。 <br> 参数二：当前滑动状态。|
 
+**返回值：**
+
+|类型|说明|
+|:----|:----|
+|T|返回组件实例。|
+
 ### func onReachEnd(?() -> Unit)
 
 ```cangjie
@@ -259,6 +337,12 @@ public func onReachEnd(event: ?() -> Unit): T
 |:---|:---|:---|:---|:---|
 |event|?() -> Unit|是|-|回调函数，滚动组件到达末尾位置时触发。|
 
+**返回值：**
+
+|类型|说明|
+|:----|:----|
+|T|返回组件实例。|
+
 ### func onReachStart(?() -> Unit)
 
 ```cangjie
@@ -276,6 +360,12 @@ public func onReachStart(event: ?() -> Unit): T
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |event|?() -> Unit|是|-|回调函数，滚动组件到达起始位置时触发。|
+
+**返回值：**
+
+|类型|说明|
+|:----|:----|
+|T|返回组件实例。|
 
 ### func onScrollStart(?() -> Unit)
 
@@ -301,6 +391,12 @@ public func onScrollStart(event: ?() -> Unit): T
 |:---|:---|:---|:---|:---|
 |event|?() -> Unit|是|-|回调函数，滚动开始时触发。|
 
+**返回值：**
+
+|类型|说明|
+|:----|:----|
+|T|返回组件实例。|
+
 ### func onScrollStop(?() -> Unit)
 
 ```cangjie
@@ -325,6 +421,12 @@ public func onScrollStop(event: ?() -> Unit): T
 |:---|:---|:---|:---|:---|
 |event|?() -> Unit|是|-|回调函数，滚动停止时触发。|
 
+**返回值：**
+
+|类型|说明|
+|:----|:----|
+|T|返回组件实例。|
+
 ### func onWillScroll(Option\<(Float64,ScrollState,ScrollSource) -> ScrollResult>)
 
 ```cangjie
@@ -347,6 +449,12 @@ public func onWillScroll(handler: Option<(Float64, ScrollState, ScrollSource) ->
 >
 > 调用scrollEdge和不带动画的scrollToIndex时，不触发onWillScroll。
 
+**返回值：**
+
+|类型|说明|
+|:----|:----|
+|T|返回组件实例。|
+
 ### func onWillScroll(Option\<(Float64,ScrollState,ScrollSource) -> Unit>)
 
 ```cangjie
@@ -368,3 +476,9 @@ public func onWillScroll(handler: Option<(Float64, ScrollState, ScrollSource) ->
 > **说明：**
 >
 > 调用scrollEdge和不带动画的scrollToIndex时，不触发onWillScroll。
+
+**返回值：**
+
+|类型|说明|
+|:----|:----|
+|T|返回组件实例。|

@@ -176,7 +176,7 @@ public func rotate(degree: ?Float64, rx!: ?Float64 = None, ry!: ?Float64 = None)
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|degree|?Float64|否|-|旋转角度。顺时针方向为正角度，可以通过 degree * Math.PI / 180 将角度转换为弧度值。默认单位：弧度。|
+|degree|?Float64|是|-|旋转角度。顺时针方向为正角度，可以通过 degree * Math.PI / 180 将角度转换为弧度值。默认单位：弧度。|
 |rx|?Float64|否|None|**命名参数。** 旋转点的水平方向坐标。默认单位：vp。|
 |ry|?Float64|否|None|**命名参数。** 旋转点的垂直方向坐标。默认单位：vp。|
 

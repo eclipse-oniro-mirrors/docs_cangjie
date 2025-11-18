@@ -289,9 +289,9 @@ public init(
 ```cangjie
 public class Configuration {
     public var ctx: BaseContext
-    public var displayID: Int64
+    public var displayId: Int64
     public var name: String
-    public var parentID: Int64
+    public var parentId: Int64
     public var windowType: WindowType
     public init(
       name!: String,
@@ -325,10 +325,10 @@ public var ctx: BaseContext
 
 **起始版本：** 22
 
-### var displayID
+### var displayId
 
 ```cangjie
-public var displayID: Int64
+public var displayId: Int64
 ```
 
 **功能：** 当前物理屏幕ID。
@@ -357,10 +357,10 @@ public var name: String
 
 **起始版本：** 22
 
-### var parentID
+### var parentId
 
 ```cangjie
-public var parentID: Int64
+public var parentId: Int64
 ```
 
 **功能：** 父窗口ID。
@@ -396,8 +396,8 @@ public init(
     name!: String,
     windowType!: WindowType,
     ctx!: BaseContext,
-    displayID!: Int64 = -1,
-    parentID!: Int64 = -1
+    displayId!: Int64 = -1,
+    parentId!: Int64 = -1
 )
 ```
 
@@ -414,8 +414,8 @@ public init(
 |name|String|是|-| **命名参数。** 窗口名称。|
 |windowType|[WindowType](#enum-windowtype)|是|-| **命名参数。** 窗口类型。|
 |ctx|[BaseContext](../AbilityKit/cj-apis-app-ability.md#class-basecontext)|是|-| **命名参数。** 当前应用上下文信息。|
-|displayID|Int64|否|-1| **命名参数。** 当前物理屏幕ID。|
-|parentID|Int64|否|-1| **命名参数。** 父窗口ID。|
+|displayId|Int64|否|-1| **命名参数。** 当前物理屏幕ID。|
+|parentId|Int64|否|-1| **命名参数。** 父窗口ID。|
 
 ## class Rect
 

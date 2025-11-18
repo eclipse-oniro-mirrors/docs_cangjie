@@ -330,7 +330,17 @@ public class FullscreenInfo {
 
 #### var fullscreen
 
+```cangjie
+public var fullscreen: ?Bool
+```
+
 **功能：** 当前视频是否进入全屏播放状态。
+
+**类型：** ?Bool
+
+**读写能力：** 可读写
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **起始版本：** 22
 
@@ -350,7 +360,17 @@ public class PlaybackInfo {
 
 #### var time
 
+```cangjie
+public var time: ?Int32
+```
+
 **功能：** 当前视频播放的进度。单位：秒。
+
+**类型：** ?Int32
+
+**读写能力：** 可读写
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **起始版本：** 22
 
@@ -370,7 +390,17 @@ public class PreparedInfo {
 
 #### var duration
 
+```cangjie
+public var duration: ?Int32
+```
+
 **功能：** 当前视频的时长。单位：秒。
+
+**类型：** ?Int32
+
+**读写能力：** 可读写
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **起始版本：** 22
 

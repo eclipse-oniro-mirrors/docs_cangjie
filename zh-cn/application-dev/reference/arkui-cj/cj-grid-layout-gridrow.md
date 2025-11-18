@@ -468,8 +468,8 @@ public init(x!: ?GridRowSizeOptions, y!: ?GridRowSizeOptions)
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|x|?[GridRowSizeOptions](#class-gridrowsizeoptions)|否|None| **命名参数。** 栅格子组件x方向的间距。<br>初始值：GridRowSizeOptions()|
-|y|?[GridRowSizeOptions](#class-gridrowsizeoptions)|否|None| **命名参数。** 栅格子组件y方向的间距。<br>初始值：GridRowSizeOptions()|
+|x|?[GridRowSizeOptions](#class-gridrowsizeoptions)|是|-| **命名参数。** 栅格子组件x方向的间距。<br>初始值：GridRowSizeOptions()|
+|y|?[GridRowSizeOptions](#class-gridrowsizeoptions)|是|-| **命名参数。** 栅格子组件y方向的间距。<br>初始值：GridRowSizeOptions()|
 
 ### class GridRowOptions
 
