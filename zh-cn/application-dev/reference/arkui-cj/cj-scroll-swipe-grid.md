@@ -137,6 +137,10 @@ auto-stretch模式只支持track-size为一个有效列宽值，并且track-size
 
 设置为'0fr'时，该列的列宽为0，不显示GridItem。设置为其他非法值时，GridItem显示为固定1列。
 
+> **说明：**
+>
+> - 设置包含单位的track-size时，需按照数字+单位的格式，如'16vp'、'20%'，与填写Length类型的格式不同。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **起始版本：** 22
@@ -185,6 +189,7 @@ public func rowsTemplate(value: ?String): This
 >
 > - auto-stretch模式下只支持track-size为一个有效行高值，并且track-size只支持px、vp和有效数字，不支持%。
 > - value设置为'0fr'时，这一行的行宽为0，这一行GridItem不显示。设置为其他非法值时，按固定1行处理。
+> - 设置包含单位的track-size时，需按照数字+单位的格式，如'16vp'、'20%'，与填写Length类型的格式不同。
 
 Grid组件根据rowsTemplate、columnsTemplate属性的设置情况，可分为以下三种布局模式：
 
