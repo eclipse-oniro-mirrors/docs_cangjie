@@ -63,6 +63,23 @@ Universal Events: All supported.
 
 ## Component Attributes
 
+### func divider(Option\<ListDividerOptions>)
+
+```cangjie
+public func divider(value: Option<ListDividerOptions>): This
+```
+
+**Function:** Set the ListItem divider style. By default, there is no divider. strokeWidth, startMargin and endMargin do not support setting percentages.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Initial Version:** 22
+
+**Parameters:**
+
+|Parameter|Type|Required|Default|Description|
+|:---|:---|:---|:---|:---|
+|value|Option<[ListDividerOptions](#class-listdivideroptions)>|Yes|None|ListItem divider line style. When set to Option.None, it indicates no divider.|
 
 ## Basic Type Definitions
 

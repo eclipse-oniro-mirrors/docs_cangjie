@@ -124,6 +124,18 @@ public func build(): Unit
 
 **Since:** 22
 
+### func rerender()
+
+```cangjie
+public open func rerender(): Unit
+```
+
+**Function:** For UI framework use.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 22
+
 ### func purgeVariableDependenciesOnElmtId(Int64)
 
 ```cangjie

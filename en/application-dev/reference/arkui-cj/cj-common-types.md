@@ -244,6 +244,254 @@ prop lpx: Length
 
 **Since Version:** 22
 
+## Float64
+
+**Functionality:** The description of the Float64 type definition.
+
+### extend Float64 <: LengthProp & Length
+
+```cangjie
+extend Float64 <: LengthProp & Length {}
+```
+
+**Functionality:** Extend `Float64` as a subclass of `LengthProp` and `Length`.
+
+#### prop px
+
+```cangjie
+public prop px: Length
+```
+
+**Functionality:** Length properties in pixels (px).
+
+**Type:**  [Length](#interface-length)
+
+**Read-Write Capability:** Read-only
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since Version:** 22
+
+#### prop vp
+
+```cangjie
+public prop vp: Length
+```
+
+**Functionality:** The length attribute in units of vp.
+
+**Type:**  [Length](#interface-length)
+
+**Read-Write Capability:** Read-only
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since Version:** 22
+
+#### prop fp
+
+```cangjie
+public prop fp: Length
+```
+
+**Functionality:** The length attribute in units of fp.
+
+**Type:**  [Length](#interface-length)
+
+**Read-Write Capability:** Read-only
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since Version:** 22
+
+#### prop percent
+
+```cangjie
+public prop percent: Length
+```
+
+**Functionality:** Length attribute in percentage.
+
+**Type:**  [Length](#interface-length)
+
+**Read-Write Capability:** Read-only
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since Version:** 22
+
+#### prop lpx
+
+```cangjie
+public prop lpx: Length
+```
+
+**Functionality:** The length attribute in units of lpx.
+
+**Type:**  [Length](#interface-length)
+
+**Read-Write Capability:** Read-only
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since Version:** 22
+
+#### prop value
+
+```cangjie
+public prop value: Float64
+```
+
+**Functionality:** The value of the length attribute.
+
+**Type:**  Float64
+
+**Read-Write Capability:** Read-only
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since Version:** 22
+
+#### prop unitType
+
+```cangjie
+public prop unitType: LengthUnit
+```
+
+**Functionality:** The unit of the length attribute.
+
+**Type:**  [LengthUnit](#enum-lengthunit)
+
+**Read-Write Capability:** Read-only
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since Version:** 22
+
+## Int64
+
+**Functionality:** Description of the Int64 type definition.
+
+### extend Int64 <: LengthProp & Length
+
+```cangjie
+extend Int64 <: LengthProp & Length {}
+```
+
+**Functionality:** Extend Int64 as a subclass of LengthProp and Length.
+
+#### prop px
+
+```cangjie
+public prop px: Length
+```
+
+**Functionality:** The length attribute in units of px.
+
+**Type:**  [Length](#interface-length)
+
+**Read-Write Capability:** Read-only
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since Version:** 22
+
+#### prop vp
+
+```cangjie
+public prop vp: Length
+```
+
+**Functionality:** The length attribute in units of vp.
+
+**Type:**  [Length](#interface-length)
+
+**Read-Write Capability:** Read-only
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since Version:** 22
+
+#### prop fp
+
+```cangjie
+public prop fp: Length
+```
+
+**Functionality:** The length attribute in units of fp.
+
+**Type:**  [Length](#interface-length)
+
+**Read-Write Capability:** Read-only
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since Version:** 22
+
+#### prop percent
+
+```cangjie
+public prop percent: Length
+```
+
+**Functionality:** Length attribute in percentage.
+
+**Type:**  [Length](#interface-length)
+
+**Read-Write Capability:** Read-only
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since Version:** 22
+
+#### prop lpx
+
+```cangjie
+public prop lpx: Length
+```
+
+**Functionality:** The length attribute in units of lpx.
+
+**Type:**  [Length](#interface-length)
+
+**Read-Write Capability:** Read-only
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since Version:** 22
+
+#### prop value
+
+```cangjie
+public prop value: Float64
+```
+
+**Functionality:** The value of the length attribute.
+
+**Type:**  Float64
+
+**Read-Write Capability:** Read-only
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since Version:** 22
+
+#### prop unitType
+
+```cangjie
+public prop unitType: LengthUnit
+```
+
+**Functionality:** The unit of the length attribute.
+
+**Type:**  [LengthUnit](#enum-lengthunit)
+
+**Read-Write Capability:** Read-only
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since Version:** 22
+
 ## interface ResourceColor
 
 ```cangjie
