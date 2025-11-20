@@ -35,7 +35,7 @@ public class AbilityResult {
 }
 ```
 
-**功能：** 定义Ability被拉起并退出后返回的结果码和数据。
+**功能：** 定义UIAbility被拉起并退出后返回给调用方的结果码和数据。
 
 **系统能力：** SystemCapability.Ability.AbilityBase
 
@@ -47,7 +47,7 @@ public class AbilityResult {
 public var resultCode: Int32
 ```
 
-**功能：** 定义返回的结果码。
+**功能：** 目标方的UIAbility被拉起并退出后，目标方返回给拉起方的结果码。<br/>-&nbsp;正常情况下，返回目标方传递的结果码。<br/>-&nbsp;异常情况下，返回-1。
 
 **类型：** Int32
 
@@ -63,7 +63,7 @@ public var resultCode: Int32
 public var want: Want
 ```
 
-**功能：** 表示Want类型信息，如ability名称，包名等。
+**功能：** 表示UIAbility被拉起并退出后返回的数据。
 
 **类型：** [Want](cj-apis-app-ability-want.md#class-want)
 
@@ -99,3 +99,4 @@ public init(resultCode: Int32, want!: Want = Want())
 import kit.AbilityKit.*
 
 let abilityResult = AbilityResult(0)
+```

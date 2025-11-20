@@ -1,6 +1,6 @@
 # ohos.app.ability.start_options
 
-StartOptions提供Ability启动选项的能力，包括窗口模式、显示ID等配置。
+StartOptions可以作为启动UIAbility接口（例如[startAbility()](./cj-apis-app-ability-ui_ability.md#func-startabilitywant-startoptions)）的入参，用于指定目标UIAbility启动时的选项，包括但不局限于窗口模式、目标UIAbility启动时所在的屏幕等。
 
 ## 导入模块
 
@@ -38,7 +38,7 @@ public open class StartOptions {
 }
 ```
 
-**功能：** 启动选项，包含窗口模式和显示ID等配置。
+**功能：** StartOptions用于指定启动目标UIAbility时的选项。
 
 **系统能力：** SystemCapability.Ability.AbilityRuntime.Core
 
@@ -50,7 +50,7 @@ public open class StartOptions {
 public var displayId: Int32
 ```
 
-**功能：** 显示ID。
+**功能：** 屏幕ID，取值为大于等于-1的整数。<br>- 取值为-1，表示当前屏幕。<br>- 取值为0，表示主屏幕。<br>- 取值为正整数，表示指定ID的屏幕。
 
 **类型：** Int32
 
@@ -66,7 +66,7 @@ public var displayId: Int32
 public var windowMode:?WindowMode
 ```
 
-**功能：** 窗口模式。
+**功能：** 启动UIAbility时的窗口模式，详见[WindowMode](./cj-apis-app-ability-ability_constant.md#enum-windowmode)。
 
 **类型：** ?[WindowMode](cj-apis-app-ability-ability_constant.md#enum-windowmode)
 
@@ -95,8 +95,8 @@ public init(
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|windowMode|?[WindowMode](cj-apis-app-ability-ability_constant.md#enum-windowmode)|否|None|窗口模式。|
-|displayId|Int32|否|0|显示ID。|
+|windowMode|?[WindowMode](cj-apis-app-ability-ability_constant.md#enum-windowmode)|否|None|启动UIAbility时的窗口模式，详见[WindowMode](./cj-apis-app-ability-ability_constant.md#enum-windowmode)。|
+|displayId|Int32|否|0|屏幕ID，取值为大于等于-1的整数。<br>- 取值为-1，表示当前屏幕。<br>- 取值为0，表示主屏幕。<br>- 取值为正整数，表示指定ID的屏幕。|
 
 **示例：**
 

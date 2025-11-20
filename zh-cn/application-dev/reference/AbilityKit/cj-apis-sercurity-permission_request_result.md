@@ -39,7 +39,7 @@ public class PermissionRequestResult {
 public var authResults: Array<Int32>
 ```
 
-**功能：** 相应请求权限的结果。-1：未授权。0：已授权。 2：未授权，表示请求无效。可能原因有：未在设置文件中声明目标权限；权限名非法；部分权限存在特殊申请条件，在申请对应权限时未满足其指定的条件。
+**功能：** 相应请求权限的结果：<br>- -1：未授权。①dialogShownResults返回为true，表示用户首次申请；②dialogShownResults返回为false，表示权限已设置，无需弹窗，需要用户在"设置"中修改。<br>- 0：已授权。<br>- 2：未授权，表示请求无效。可能原因有：①未在设置文件中声明目标权限；②权限名非法；③部分权限存在特殊申请条件，在申请对应权限时未满足其指定的条件。
 
 **类型：** Array<\Int32>
 
@@ -55,7 +55,7 @@ public var authResults: Array<Int32>
 public var dialogShownResults = Array<Bool>()
 ```
 
-**功能：** 此权限申请是否有弹窗：true：有弹窗。false：无弹窗。
+**功能：** 此权限申请是否有弹窗：<br>- true：有弹窗。<br>- false：无弹窗。
 
 **类型：** Array<\Bool>
 

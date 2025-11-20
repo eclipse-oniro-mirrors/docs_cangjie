@@ -67,7 +67,7 @@ public static prop batterySOC: Int32
 public static prop batteryTemperature: Int32
 ```
 
-**功能：** 表示当前设备电池的温度。
+**功能：** 表示当前设备电池的温度，单位0.1摄氏度。
 
 **类型：** Int32
 
@@ -115,7 +115,7 @@ public static prop healthStatus: BatteryHealthState
 public static prop isBatteryPresent: Bool
 ```
 
-**功能：** 表示当前设备是否支持电池或者电池是否在位。
+**功能：** 表示当前设备是否支持电池或者电池是否在位。true表示支持电池或电池在位，false表示不支持电池或电池不在位，默认为false。
 
 **类型：** Bool
 
@@ -179,7 +179,7 @@ public static prop technology: String
 public static prop voltage: Int32
 ```
 
-**功能：** 表示当前设备电池的电压。
+**功能：** 表示当前设备电池的电压，单位微伏。
 
 **类型：** Int32
 
@@ -204,7 +204,7 @@ public enum BatteryCapacityLevel <: Equatable<BatteryCapacityLevel> & ToString {
 }
 ```
 
-**功能：** 表示电池电量等级。
+**功能：** 表示电池电量等级的枚举。
 
 **系统能力：** SystemCapability.PowerManager.BatteryManager.Core
 
@@ -365,7 +365,7 @@ public enum BatteryChargeState <: Equatable<BatteryChargeState> & ToString {
 }
 ```
 
-**功能：** 表示电池充电状态。
+**功能：** 表示电池充电状态的枚举。
 
 **系统能力：** SystemCapability.PowerManager.BatteryManager.Core
 
@@ -492,7 +492,7 @@ public enum BatteryHealthState <: Equatable<BatteryHealthState> & ToString {
 }
 ```
 
-**功能：** 表示电池健康状态。
+**功能：** 表示电池健康状态的枚举。
 
 **系统能力：** SystemCapability.PowerManager.BatteryManager.Core
 
@@ -641,7 +641,7 @@ public enum BatteryPluggedType <: Equatable<BatteryPluggedType> & ToString {
 }
 ```
 
-**功能：** 表示连接的充电器类型。
+**功能：** 表示连接的充电器类型的枚举。
 
 **系统能力：** SystemCapability.PowerManager.BatteryManager.Core
 

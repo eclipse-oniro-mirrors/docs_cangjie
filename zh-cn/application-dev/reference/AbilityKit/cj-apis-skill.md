@@ -37,7 +37,7 @@ public class Skill {
 }
 ```
 
-**功能：** skill标签对象，三方应用可以通过[getBundleInfoForSelf](./cj-apis-bundle_manager.md#static-func-getbundleinfoforselfint32)获取skill信息，其中入参bundleFlags至少包含 GET_BUNDLE_INFO_WITH_HAP_MODULE、GET_BUNDLE_INFO_WITH_ABILITY 和 GET_BUNDLE_INFO_WITH_SKILL。
+**功能：** skill标签对象，可以通过[getBundleInfoForSelf](./cj-apis-bundle_manager.md#static-func-getbundleinfoforselfint32)获取skill信息，其中入参bundleFlags至少包含 GET_BUNDLE_INFO_WITH_HAP_MODULE、GET_BUNDLE_INFO_WITH_ABILITY 和 GET_BUNDLE_INFO_WITH_SKILL。
 
 **系统能力：** SystemCapability.BundleManager.BundleFramework.Core
 
@@ -65,7 +65,7 @@ public let actions: Array<String>
 public let domainVerify: Bool
 ```
 
-**功能：** Skill接收的DomainVerify值，仅在AbilityInfo中存在。
+**功能：** Skill接收的DomainVerify值，仅在AbilityInfo中存在，表示是否开启域名校验，取值为true表示开启域名校验，取值为false表示未开启域名校验。
 
 **类型：** Bool
 
@@ -136,7 +136,7 @@ public class SkillUri {
 public let host: String
 ```
 
-**功能：** 标识URI主机地址部分，仅当scheme存在时有意义。
+**功能：** 标识 URI 主机地址部分，仅当 scheme 存在时才生效。
 
 **类型：** String
 
@@ -152,7 +152,7 @@ public let host: String
 public let linkFeature: String
 ```
 
-**功能：** 标识URI提供的功能类型，用于实现应用间跳转，仅在AbilityInfo中存在。
+**功能：** 标识 URI 提供的功能类型，用于实现应用间跳转，仅在AbilityInfo中存在。
 
 **类型：** String
 
@@ -168,7 +168,7 @@ public let linkFeature: String
 public let maxFileSupported: Int32
 ```
 
-**功能：** 对于指定类型的文件，标识一次能接收或打开的最大数量。
+**功能：** 对于指定类型的文件，标识一次能接收或打开的最大数量。取值范围：不小于0的整数。
 
 **类型：** Int32
 
@@ -184,7 +184,7 @@ public let maxFileSupported: Int32
 public let path: String
 ```
 
-**功能：** 标识URI路径部分，仅当scheme和host同时存在时有意义。
+**功能：** 标识 URI 路径部分，仅当 scheme 和 host 同时存在时才生效。
 
 **类型：** String
 
@@ -200,7 +200,7 @@ public let path: String
 public let pathRegex: String
 ```
 
-**功能：** 标识URI路径部分，用于正则匹配，仅当scheme和host同时存在时有意义。
+**功能：** 标识 URI 路径部分，用于正则匹配，仅当 scheme 和 host 同时存在时才生效。
 
 **类型：** String
 
@@ -216,7 +216,7 @@ public let pathRegex: String
 public let pathStartWith: String
 ```
 
-**功能：** 标识URI路径部分，用于前缀匹配，仅当scheme和host同时存在时有意义。
+**功能：** 标识 URI 路径部分，用于前缀匹配，仅当 scheme 和 host 同时存在时才生效。
 
 **类型：** String
 
@@ -232,7 +232,7 @@ public let pathStartWith: String
 public let port: Int32
 ```
 
-**功能：** 标识URI端口部分，仅当scheme和host同时存在时有意义。
+**功能：** 标识 URI 端口，仅当 scheme 和 host 同时存在时才生效。
 
 **类型：** Int32
 
@@ -248,7 +248,7 @@ public let port: Int32
 public let scheme: String
 ```
 
-**功能：** 标识URI协议名，常见的有http、https、file、ftp等。
+**功能：** 标识 URI 协议名，常见的有http、https、file、ftp等。
 
 **类型：** String
 
@@ -264,7 +264,7 @@ public let scheme: String
 public let uriType: String
 ```
 
-**功能：** 标识与Want相匹配的数据类型，使用MIME（Multipurpose Internet Mail Extensions）类型规范。
+**功能：** 标识与Want相匹配的数据类型，使用MIME（Multipurpose&nbsp;Internet&nbsp;Mail&nbsp;Extensions）类型规范和UniformDataType类型规范。
 
 **类型：** String
 
@@ -280,7 +280,7 @@ public let uriType: String
 public let utd: String
 ```
 
-**功能：** 标识与Want相匹配的URI的标准化数据类型，适用于分享等场景。
+**功能：** 标识与 Want 相匹配的 URI 的标准化数据类型，适用于分享等场景。
 
 **类型：** String
 

@@ -27,11 +27,11 @@ API示例代码使用说明：
 public func createHttp(): HttpRequest
 ```
 
-**功能：** 创建一个HTTP请求，请求对象功能包括发起请求、中断请求、订阅/取消订阅HTTP Response Header事件。每一个HttpRequest对象对应一个HTTP请求。如需发起多个HTTP请求，须为每个HTTP请求创建对应HttpRequest对象。
+**功能：** 创建一个HTTP请求，里面包括发起请求、中断请求、订阅/取消订阅HTTP Response Header事件。当发起多个HTTP请求时，需为每个HTTP请求创建对应HttpRequest对象。每一个HttpRequest对象对应一个HTTP请求。
 
 > **说明：**
 >
-> 当该请求使用完毕时，须调用destroy方法主动销毁HttpRequest对象。
+> 当该请求使用完毕时，需调用destroy方法主动销毁HttpRequest对象，否则会出现资源泄露问题。
 
 **系统能力：** SystemCapability.Communication.NetStack
 
@@ -68,7 +68,7 @@ try {
 public func createHttpResponseCache(cacheSize!: UInt32 = MAX_CACHE_SIZE): HttpResponseCache
 ```
 
-**功能：** 创建一个默认的对象来存储HTTP访问请求的响应。
+**功能：** 创建一个HttpResponseCache对象，可用于存储HTTP请求的响应数据。对象中可调用[flush](#func-flush)与[delete](#delete)方法，cacheSize指定缓存大小。
 
 **系统能力：** SystemCapability.Communication.NetStack
 
@@ -78,7 +78,7 @@ public func createHttpResponseCache(cacheSize!: UInt32 = MAX_CACHE_SIZE): HttpRe
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|cacheSize|UInt32|否|MAX_CACHE_SIZE|**命名参数。** 缓存大小最大为10\*1024\*1024（10MB），默认最大。|
+|cacheSize|UInt32|否|MAX_CACHE_SIZE|**命名参数。** 缓存大小。最大为10\*1024\*1024（10MB），默认最大。|
 
 **返回值：**
 
@@ -161,7 +161,7 @@ public var certType: CertType
 public var keyPassword: String
 ```
 
-**功能：** 证书秘钥的密码。
+**功能：** 证书密钥的密码。默认值为空字符串。
 
 **类型：** String
 
@@ -206,7 +206,7 @@ public init(certPath: String, keyPath: String, certType!: CertType = CertType.Pe
 |certPath|String|是|-|证书路径。|
 |keyPath|String|是|-|证书秘钥的路径。|
 |certType|[CertType](#enum-certtype)|否|CertType.Pem|**命名参数。** 证书类型，默认是PEM。|
-|keyPassword|String|否|""|**命名参数。** 证书秘钥的密码。|
+|keyPassword|String|否|""|**命名参数。** 证书密钥的密码。默认值为空字符串。|
 
 ## class DataReceiveProgressInfo
 
@@ -229,7 +229,7 @@ public class DataReceiveProgressInfo {
 public var receiveSize: Int64
 ```
 
-**功能：** 已接收的数据量单位为字节。
+**功能：** 已接收的数据量（单位：字节）。
 
 **类型：** Int64
 
@@ -245,7 +245,7 @@ public var receiveSize: Int64
 public var totalSize: Int64
 ```
 
-**功能：** 总共要接收的数据量单位为字节。
+**功能：** 总共要接收的数据量（单位：字节）。
 
 **类型：** Int64
 
@@ -276,7 +276,7 @@ public class DataSendProgressInfo {
 public var sendSize: Int64
 ```
 
-**功能：** 每次发送的数据量单位为字节。
+**功能：** 每次发送的数据量(单位：字节)。
 
 **类型：** Int64
 
@@ -292,7 +292,7 @@ public var sendSize: Int64
 public var totalSize: Int64
 ```
 
-**功能：** 总共要发送的数据量单位为字节。
+**功能：** 总共要发送的数据量(单位：字节)。
 
 **类型：** Int64
 
@@ -308,7 +308,8 @@ public var totalSize: Int64
 public class HttpRequest {}
 ```
 
-**功能：** HTTP请求任务。在调用HttpRequest的方法前，需要先通过[createHttp](../NetworkKit/cj-apis-net-http.md#func-createhttp)创建一个任务。
+**功能：** HTTP请求任务。在调用HttpRequest的方法前，需要先通过[createHttp()](#func-createhttp)创建一个任务。
+
 
 **系统能力：** SystemCapability.Communication.NetStack
 
@@ -733,11 +734,13 @@ public func once(event: HttpRequestEvent, callback: Callback1Argument<HashMap<St
 public func request(url: String, options: HttpRequestOptions, callback: AsyncCallback<HttpResponse>): Unit
 ```
 
-**功能：** 根据URL地址，发起HTTP网络请求，在callback回调函数中返回响应。
+**功能：** 根据URL地址，发起HTTP网络请求，使用callback方式作为异步方法。
 
 > **说明：**
 >
-> 此接口仅支持数据大小为5MB以内的数据接收。
+>(1) 此接口仅支持接收5MB以内的数据，如果需要接收超过5MB的数据，则需主动在[HttpRequestOptions](#class-httprequestoptions)的maxLimit中进行设置，或者使用[requestInStream](#func-requestinstreamstring-asynccallbackuint32)接口发起流式请求。<br>
+>(2) 如需传入cookies，请开发者自行在参数options中添加。<br>
+>(3) 若URL包含中文或其他语言，需先调用encodeURL(URL)编码，再发起请求。
 
 **需要权限：** ohos.permission.INTERNET
 
@@ -827,11 +830,13 @@ try {
 public func request(url: String, callback: AsyncCallback<HttpResponse>): Unit
 ```
 
-**功能：** 根据URL地址，发起HTTP网络请求，在callback回调函数中返回响应。
+**功能：** 根据URL地址，发起HTTP网络请求，使用callback方式作为异步方法。
 
 > **说明：**
 >
-> 此接口仅支持数据大小为5MB以内的数据接收。
+>(1) 此接口仅支持接收5MB以内的数据，如果需要接收超过5MB的数据。<br>
+>(2) 如需传入cookies，请开发者自行在参数options中添加。<br>
+>(3) 若URL包含中文或其他语言，需先调用encodeURL(URL)编码，再发起请求。
 
 **需要权限：** ohos.permission.INTERNET
 
@@ -921,7 +926,7 @@ try {
 public func requestInStream(url: String, options: HttpRequestOptions, callback: AsyncCallback<UInt32>): Unit
 ```
 
-**功能：** 根据URL地址和相关配置项，发起HTTP网络请求并返回流式响应，在callback回调函数中返回响应。
+**功能：** 根据URL地址和相关配置项，发起HTTP网络请求并返回流式响应，使用callback方式作为异步方法。
 
 **需要权限：** ohos.permission.INTERNET
 
@@ -1011,7 +1016,7 @@ try {
 public func requestInStream(url: String, callback: AsyncCallback<UInt32>): Unit
 ```
 
-**功能：** 根据URL地址和相关配置项，发起HTTP网络请求并返回流式响应，在callback回调函数中返回响应。
+**功能：** 根据URL地址，发起HTTP网络请求并返回流式响应，使用callback方式作为异步方法。
 
 **需要权限：** ohos.permission.INTERNET
 
@@ -1128,7 +1133,7 @@ public class HttpRequestOptions {
 }
 ```
 
-**功能：** 发起请求可选参数的类型和取值范围。
+**功能：** 发起HTTP请求时，可选配置信息。
 
 **系统能力：** SystemCapability.Communication.NetStack
 
@@ -1140,7 +1145,7 @@ public class HttpRequestOptions {
 public var caPath: String
 ```
 
-**功能：** 如果设置了此参数，系统将使用用户指定路径的CA证书，(开发者需保证该路径下CA证书的可访问性)，否则将使用系统预设CA证书，系统预设CA证书位置：/etc/ssl/certs/cacert.pem。证书路径为沙箱映射路径（开发者可通过Global.getContext().filesDir获取应用沙箱路径）。目前仅支持后缀名为.pem的文本格式证书。
+**功能：** 如果设置了此参数，系统将使用用户指定路径的CA证书（开发者需保证该路径下CA证书的可访问性），否则将使用系统预设CA证书。<br />系统预设CA证书位置：/etc/ssl/certs/cacert.pem。证书路径为沙箱映射路径（开发者可通过UIAbilityContext提供的能力获取应用沙箱路径）。目前仅支持后缀名为.pem的文本格式证书。
 
 **类型：** String
 
@@ -1172,7 +1177,7 @@ public var clientCert: ClientCert
 public var connectTimeout: UInt32
 ```
 
-**功能：** 连接超时时间。单位为毫秒（ms），默认为60000ms。
+**功能：** 连接超时时间。单位为毫秒（ms），默认为60000ms。传入值需为uint32_t范围内的整数。
 
 **类型：** UInt32
 
@@ -1188,7 +1193,7 @@ public var connectTimeout: UInt32
 public var dnsOverHttps: String
 ```
 
-**功能：** 设置使用HTTPS协议的服务器进行DNS解析。<br />参数必须以以下格式进行URL编码："https:// host:port/path"。
+**功能：** 设置使用HTTPS协议的服务器进行DNS解析。<br />- 参数必须根据以下格式进行URL编码："https:// host:port/path"。
 
 **类型：** String
 
@@ -1204,7 +1209,7 @@ public var dnsOverHttps: String
 public var dnsServers: Array<String>
 ```
 
-**功能：** 设置指定的DNS服务器进行DNS解析。<br />可以设置多个DNS解析服务器，最多3个服务器。如果有3个以上，只取前3个。<br />服务器必须是IPv4或者IPv6地址。
+**功能：** 设置指定的DNS服务器进行DNS解析。<br />- 最多可以设置3个DNS解析服务器。如果有3个以上，只取前3个。<br />- 服务器必须是IPV4或者IPV6地址。
 
 **类型：** Array\<String>
 
@@ -1220,7 +1225,7 @@ public var dnsServers: Array<String>
 public var expectDataType:?HttpDataType
 ```
 
-**功能：** 指定返回数据的类型，默认无此字段。如果设置了此参数，系统将优先返回指定的类型。
+**功能：** 指定返回数据的类型，默认无此字段。如果设置了此参数，系统将优先返回指定的类型。当指定其类型为Object时，最大长度为65536字符数。
 
 **类型：** ?[HttpDataType](#enum-httpdatatype)
 
@@ -1236,17 +1241,7 @@ public var expectDataType:?HttpDataType
 public var extraData: HttpData
 ```
 
-**功能：** 发送请求的额外数据，默认无此字段。
-
-- 当HTTP请求为POST、PUT等方法时，此字段为HTTP请求的content，以UTF-8编码形式作为请求体。
-  - 当'content-Type'为'application/x-www-form-urlencoded'时，请求提交的信息主体数据应在key和value进行URL转码后按照键值对"key1=value1&key2=value2&key3=value3"的方式进行编码，该字段对应的类型通常为String。
-  - 当'content-Type'为'text/xml'时，该字段对应的类型通常为String。
-  - 当'content-Type'为'application/json'时，该字段对应的类型通常为Object。
-  - 当'content-Type'为'application/octet-stream'时，该字段对应的类型通常为ArrayBuffer。
-  - 当'content-Type'为'multipart/form-data'且需上传的字段为文件时，该字段对应的类型通常为ArrayBuffer。
-- 当HTTP请求为GET、OPTIONS、DELETE、TRACE、CONNECT等方法时，此字段为HTTP请求参数的补充。开发者需传入Encode编码后的string类型参数，Object类型的参数无需预编码，参数内容会拼接到URL中进行发送；ArrayBuffer类型的参数不会做拼接处理。
-
-以上信息仅供参考，并可能根据具体情况有所不同。
+**功能：** 发送请求的额外数据，默认无此字段。<br />**说明：** 没有额外数据时，避免添加该参数；若必须添加，请填写undefined或者null，避免直接传入"。<br />1. 当HTTP请求为POST、PUT、DELETE等方法时，此字段为HTTP请求的content，以UTF-8编码形式作为请求体。<br />示例如下：<br />  (1) 当'content-Type'为'application/x-www-form-urlencoded'时，请求提交的信息主体数据必须在key和value进行URL转码后（encodeURIComponent/encodeURI），按照键值对"key1=value1&key2=value2&key3=value3"的方式进行编码，该字段对应的类型通常为String。<br />(2) 当'content-Type'为'text/xml'时，该字段对应的类型通常为String。<br />(3) 当'content-Type'为'application/json'时，该字段对应的类型通常为Object。<br />(4) 当'content-Type'为'application/octet-stream'时，该字段对应的类型通常为ArrayBuffer。<br />(5) 当'content-Type'为'multipart/form-data'且需上传的字段为文件时，该字段对应的类型通常为ArrayBuffer。<br>以上信息仅供参考，并可能根据具体情况有所不同。<br />2. 当HTTP请求为GET、OPTIONS、TRACE、CONNECT等方法时，此字段为HTTP请求参数的补充。开发者需传入Encode编码后的string类型参数，Object类型的参数无需预编码，参数内容会拼接到URL中进行发送。ArrayBuffer类型的参数不会做拼接处理。
 
 **类型：** [HttpData](#enum-httpdata)
 
@@ -1262,7 +1257,7 @@ public var extraData: HttpData
 public var header: HashMap<String, String>
 ```
 
-**功能：** HTTP请求头字段。默认{'content-Type': 'application/json'}。
+**功能：** HTTP请求头字段。当请求方式为"POST" "PUT" "DELETE" 或者""时，默认{'content-Type': 'application/json'}， 否则默认{'content-Type': 'application/x-www-form-urlencoded'}。<br />如果head中包含number类型的字段，最大支持int64的整数。
 
 **类型：** HashMap\<String,String>
 
@@ -1278,7 +1273,7 @@ public var header: HashMap<String, String>
 public var maxLimit: UInt32
 ```
 
-**功能：** 响应消息的最大字节限制，默认值为5MB，以字节为单位。最大值为10MB，以字节为单位。
+**功能：** 响应消息的最大字节限制。<br />默认值为5\*1024\*1024，以字节为单位。最大值为100\*1024\*1024，以字节为单位。
 
 **类型：** UInt32
 
@@ -1326,7 +1321,7 @@ public var multiFormDataList: Array<MultiFormData>
 public var priority: UInt32
 ```
 
-**功能：** 优先级，范围[1,1000]，默认是1。若传参超出范围则使用默认值1。
+**功能：** HTTP/HTTPS请求并发优先级，值越大优先级越高，范围[1,1000]，默认为1。
 
 **类型：** UInt32
 
@@ -1342,7 +1337,7 @@ public var priority: UInt32
 public var readTimeout: UInt32
 ```
 
-**功能：** 读取超时时间。单位为毫秒（ms），默认为60000ms。<br />设置为0表示不会出现超时情况。
+**功能：** 读取超时时间。单位为毫秒（ms），默认为60000ms。传入值需为uint32_t范围内的整数。<br />设置为0表示不会出现超时情况。
 
 **类型：** UInt32
 
@@ -1358,7 +1353,7 @@ public var readTimeout: UInt32
 public var resumeFrom: Int64
 ```
 
-**功能：** 用于设置上传或下载起始位置。HTTP标准（RFC 7233第3.1节）允许服务器忽略范围请求。<br />使用HTTP PUT时设置此参数，可能出现未知问题。<br />取值范围是:1~4294967296(4GB)，超出范围则不生效。无默认值。
+**功能：** 用于设置下载起始位置，该参数只能用于GET方法，不能用于其他。HTTP标准（RFC 7233第3.1节）允许服务器忽略范围请求。<br />- 使用HTTP PUT时，不能使用该选项，因为该选项可能与其他选项冲突。<br />- 取值范围是：[1，4294967296（4GB）]，超出范围则不生效。
 
 **类型：** Int64
 
@@ -1374,7 +1369,7 @@ public var resumeFrom: Int64
 public var resumeTo: Int64
 ```
 
-**功能：** 用于设置上传或下载结束位置。HTTP标准（RFC 7233第3.1节）允许服务器忽略范围请求。<br />使用HTTP PUT时设置此参数，可能出现未知问题。<br />取值范围是:1~4294967296(4GB)，超出范围则不生效。无默认值。
+**功能：** 用于设置下载结束位置，该参数只能用于GET方法，不能用于其他。HTTP标准（RFC 7233第3.1节）允许服务器忽略范围请求。<br />- 使用HTTP PUT时，不能使用该选项，因为该选项可能与其他选项冲突。<br />- 取值范围是：[1，4294967296（4GB）]，超出范围则不生效。
 
 **类型：** Int64
 
@@ -1390,7 +1385,7 @@ public var resumeTo: Int64
 public var usingCache: Bool
 ```
 
-**功能：** 是否使用缓存，默认为true，请求时优先读取缓存。 缓存跟随当前进程生效。新缓存会替换旧缓存。
+**功能：** 是否使用缓存，true表示请求时优先读取缓存，false表示不使用缓存；默认为true，请求时优先读取缓存。缓存跟随当前进程生效，新缓存会替换旧缓存。
 
 **类型：** Bool
 
@@ -1422,7 +1417,7 @@ public var usingProtocol:?HttpProtocol
 public var usingProxy: UsingProxy
 ```
 
-**功能：** 是否使用HTTP代理，默认为USE_DEFAULT，使用默认代理。<br /> 当usingProxy为NOT_USE时，不使用网络代理。<br /> 当usingProxy为USE_SPECIFIED类型时，使用指定网络代理。
+**功能：** HTTP代理配置，该项不配置时表示不使用代理。<br />- 当usingProxy为布尔类型true时，使用默认网络代理，为false时，不使用代理。<br />- 当usingProxy为HttpProxy类型时，使用指定网络代理。当前HttpProxy不支持指定username和password字段。
 
 **类型：** [UsingProxy](#enum-usingproxy)
 
@@ -1456,22 +1451,22 @@ public init(method!: RequestMethod = RequestMethod.Get, extraData!: HttpData = H
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |method|[RequestMethod](#enum-requestmethod)|否|RequestMethod.Get|**命名参数。** 请求方式，默认为GET。|
-|extraData|[HttpData](#enum-httpdata)|否|HttpData.StringData("")|**命名参数。** 发送请求的额外数据，默认无此字段。|
-|expectDataType|?[HttpDataType](#enum-httpdatatype)|否|None|**命名参数。** 指定返回数据的类型，默认无此字段。|
-|usingCache|Bool|否|true|**命名参数。** 是否使用缓存，默认为true。|
-|priority|UInt32|否|1|**命名参数。** 优先级，范围[1,1000]，默认是1。|
-|header|HashMap\<String,String>|否|HashMap<String,String>()|**命名参数。** HTTP请求头字段。|
-|readTimeout|UInt32|否|60000|**命名参数。** 读取超时时间，单位为毫秒。|
-|connectTimeout|UInt32|否|60000|**命名参数。** 连接超时时间，单位为毫秒。|
+|extraData|[HttpData](#enum-httpdata)|否|HttpData.StringData("")|**命名参数。** 发送请求的额外数据，默认无此字段。<br />**说明：** 没有额外数据时，避免添加该参数；若必须添加，请填写undefined或者null，避免直接传入"。<br />1. 当HTTP请求为POST、PUT、DELETE等方法时，此字段为HTTP请求的content，以UTF-8编码形式作为请求体。<br />示例如下：<br />  (1) 当'content-Type'为'application/x-www-form-urlencoded'时，请求提交的信息主体数据必须在key和value进行URL转码后（encodeURIComponent/encodeURI），按照键值对"key1=value1&key2=value2&key3=value3"的方式进行编码，该字段对应的类型通常为String。<br />(2) 当'content-Type'为'text/xml'时，该字段对应的类型通常为String。<br />(3) 当'content-Type'为'application/json'时，该字段对应的类型通常为Object。<br />(4) 当'content-Type'为'application/octet-stream'时，该字段对应的类型通常为ArrayBuffer。<br />(5) 当'content-Type'为'multipart/form-data'且需上传的字段为文件时，该字段对应的类型通常为ArrayBuffer。<br>以上信息仅供参考，并可能根据具体情况有所不同。<br />2. 当HTTP请求为GET、OPTIONS、TRACE、CONNECT等方法时，此字段为HTTP请求参数的补充。开发者需传入Encode编码后的string类型参数，Object类型的参数无需预编码，参数内容会拼接到URL中进行发送。ArrayBuffer类型的参数不会做拼接处理。|
+|expectDataType|?[HttpDataType](#enum-httpdatatype)|否|None|**命名参数。** 指定返回数据的类型，默认无此字段。如果设置了此参数，系统将优先返回指定的类型。当指定其类型为Object时，最大长度为65536字符数。|
+|usingCache|Bool|否|true|**命名参数。** 是否使用缓存，true表示请求时优先读取缓存，false表示不使用缓存；默认为true，请求时优先读取缓存。缓存跟随当前进程生效，新缓存会替换旧缓存。|
+|priority|UInt32|否|1|**命名参数。** HTTP/HTTPS请求并发优先级，值越大优先级越高，范围[1,1000]，默认为1。|
+|header|HashMap\<String,String>|否|HashMap<String,String>()|**命名参数。** HTTP请求头字段。当请求方式为"POST" "PUT" "DELETE" 或者""时，默认{'content-Type': 'application/json'}， 否则默认{'content-Type': 'application/x-www-form-urlencoded'}。<br />如果head中包含number类型的字段，最大支持int64的整数。|
+|readTimeout|UInt32|否|60000|**命名参数。** 读取超时时间。单位为毫秒（ms），默认为60000ms。传入值需为uint32_t范围内的整数。<br />设置为0表示不会出现超时情况。|
+|connectTimeout|UInt32|否|60000|**命名参数。** 连接超时时间。单位为毫秒（ms），默认为60000ms。传入值需为uint32_t范围内的整数。|
 |usingProtocol|?[HttpProtocol](#enum-httpprotocol)|否|None|**命名参数。** 使用协议，默认值由系统自动指定。|
-|usingProxy|[UsingProxy](#enum-usingproxy)|否|UsingProxy.UseDefault|**命名参数。** 是否使用HTTP代理，默认为USE_DEFAULT。|
-|caPath|String|否|""|**命名参数。** CA证书路径，如果设置了此参数，系统将使用用户指定路径的CA证书。|
-|resumeFrom|Int64|否|0|**命名参数。** 用于设置上传或下载起始位置。|
-|resumeTo|Int64|否|0|**命名参数。** 用于设置上传或下载结束位置。|
+|usingProxy|[UsingProxy](#enum-usingproxy)|否|UsingProxy.UseDefault|**命名参数。** HTTP代理配置，该项不配置时表示不使用代理。<br />- 当usingProxy为布尔类型true时，使用默认网络代理，为false时，不使用代理。<br />- 当usingProxy为HttpProxy类型时，使用指定网络代理。当前HttpProxy不支持指定username和password字段。|
+|caPath|String|否|""|**命名参数。** 如果设置了此参数，系统将使用用户指定路径的CA证书（开发者需保证该路径下CA证书的可访问性），否则将使用系统预设CA证书。<br />系统预设CA证书位置：/etc/ssl/certs/cacert.pem。证书路径为沙箱映射路径（开发者可通过UIAbilityContext提供的能力获取应用沙箱路径）。目前仅支持后缀名为.pem的文本格式证书。|
+|resumeFrom|Int64|否|0|**命名参数。** 用于设置下载起始位置，该参数只能用于GET方法，不能用于其他。HTTP标准（RFC 7233第3.1节）允许服务器忽略范围请求。<br />- 使用HTTP PUT时，不能使用该选项，因为该选项可能与其他选项冲突。<br />- 取值范围是：[1，4294967296（4GB）]，超出范围则不生效。|
+|resumeTo|Int64|否|0|**命名参数。** 用于设置下载结束位置，该参数只能用于GET方法，不能用于其他。HTTP标准（RFC 7233第3.1节）允许服务器忽略范围请求。<br />- 使用HTTP PUT时，不能使用该选项，因为该选项可能与其他选项冲突。<br />- 取值范围是：[1，4294967296（4GB）]，超出范围则不生效。|
 |clientCert|[ClientCert](#class-clientcert)|否|ClientCert("", "")|**命名参数。** 支持传输客户端证书。|
-|dnsOverHttps|String|否|""|**命名参数。** 设置使用HTTPS协议的服务器进行DNS解析。|
-|dnsServers|Array\<String>|否|Array<String>()|**命名参数。** 设置指定的DNS服务器进行DNS解析。|
-|maxLimit|UInt32|否|5 * 1024 * 1024|**命名参数。** 响应消息的最大字节限制，默认值为5MB。|
+|dnsOverHttps|String|否|""|**命名参数。** 设置使用HTTPS协议的服务器进行DNS解析。<br />- 参数必须根据以下格式进行URL编码："https:// host:port/path"。|
+|dnsServers|Array\<String>|否|Array<String>()|**命名参数。** 设置指定的DNS服务器进行DNS解析。<br />- 最多可以设置3个DNS解析服务器。如果有3个以上，只取前3个。<br />- 服务器必须是IPV4或者IPV6地址。|
+|maxLimit|UInt32|否|5 * 1024 * 1024|**命名参数。** 响应消息的最大字节限制。<br />默认值为5\*1024\*1024，以字节为单位。最大值为100\*1024\*1024，以字节为单位。|
 |multiFormDataList|Array\<[MultiFormData](#class-multiformdata)>|否|Array<MultiFormData>()|**命名参数。** 当'content-Type'为'multipart/form-data'时，则上传该字段定义的数据字段表单列表。|
 
 ## class HttpResponse
@@ -1499,7 +1494,7 @@ public class HttpResponse {
 public var cookies: String
 ```
 
-**功能：** 服务器返回的cookies。
+**功能：** 服务器返回的原始cookies。开发者可自行处理。
 
 **类型：** String
 
@@ -1515,7 +1510,7 @@ public var cookies: String
 public var header: HashMap<String, String>
 ```
 
-**功能：** 发起HTTP请求返回来的响应头。
+**功能：** 发起HTTP请求返回来的响应头。当前返回的是JSON格式字符串，如需具体字段内容，需开发者自行解析。常见字段及解析方式如下：<br/>- content-type：header['content-type']。<br />- status-line：header['status-line']。<br />- date：header.date/header['date']。<br />- server：header.server/header['server']。
 
 **类型：** HashMap\<String,String>
 
@@ -1547,7 +1542,7 @@ public var performanceTiming: PerformanceTiming
 public var responseCode: UInt32
 ```
 
-**功能：** 响应的状态码。
+**功能：** 回调函数执行成功时，此字段为[ResponseCode](#var-responsecode)。
 
 **类型：** UInt32
 
@@ -1563,7 +1558,7 @@ public var responseCode: UInt32
 public var result: HttpData
 ```
 
-**功能：** HTTP请求根据响应头中content-type类型返回对应的响应格式内容。
+**功能：** HTTP请求根据响应头中content-type类型返回对应的响应格式内容，若HttpRequestOptions无expectDataType字段，按如下规则返回：<br />- application/json：返回JSON格式的字符串。<br />- application/octet-stream：ArrayBuffer。<br />- image：ArrayBuffer。<br />- 其他：string。<br /> 若HttpRequestOption有expectDataType字段，开发者需传入与服务器返回类型相同的数据类型。
 
 **类型：** [HttpData](#enum-httpdata)
 
@@ -1595,7 +1590,43 @@ public var resultType: HttpDataType
 public class HttpResponseCache {}
 ```
 
-**功能：** 存储HTTP访问请求响应的对象。在调用HttpResponseCache的方法前，需要先通过[createHttpResponseCache](#func-createhttpresponsecacheuint32)创建一个任务。
+**功能：** 存储HTTP访问请求响应的对象。在调用HttpResponseCache的方法前，需要先通过[createHttpResponseCache()](#func-createhttpresponsecacheuint32)创建一个任务。
+
+**响应头中的相应关键字使用**
+
+- **`Cache-Control`**：用于指定缓存策略，如`no-cache`, `no-store`, `max-age`, `public`, `private`等。
+
+- **`Expires`**：指定资源的过期时间，格式为GMT时间。
+
+- **`ETag`**：用于资源版本标识，客户端可以使用`If-None-Match`请求头来验证资源是否已更改。
+
+- **`Last-Modified`**：指定资源最后修改时间，客户端可以使用`If-Modified-Since`请求头来验证资源是否已更改。
+
+- **`Vary`**：指定哪些请求头的值会影响缓存的响应，用于区分不同的缓存版本。
+
+使用这些关键字时，服务器端需要正确配置响应头，客户端则需要根据这些响应头来决定是否使用缓存的资源，以及如何验证资源是否是最新的。正确的缓存策略可以显著提高应用的性能和用户体验。
+
+**如何设置Cache-Control头**
+
+`Cache-Control`为通用报头，但通常是在服务器端进行的，允许定义一个响应资源应该何时、如何被缓存以及缓存多长时间。以下是一些常用的`Cache-Control`指令及其含义：
+
+- **`no-cache`**：表示在使用缓存前，必须先去源服务器校验资源的有效性。如果资源未变更，则响应状态码为304(Not Modified)，不发送资源内容，使用缓存中的资源。如果资源已经过期，则响应状态码为200(OK)，并发送资源内容。
+
+- **`no-store`**：表示不允许缓存资源，每次请求都必须从服务器获取资源。
+
+- **`max-age`**：指定缓存的最大时间(以秒为单位)。例如，`Cache-Control: max-age=3600`表示缓存的有效期为1小时。
+
+- **`public`**：表明响应可以被任何对象(包括：发送请求的客户端，代理服务器等)缓存。
+
+- **`private`**：表明响应只能被单个用户缓存，不能作为共享缓存(即代理服务器不能缓存)。
+
+- **`must-revalidate`**：表示必须在使用缓存前验证旧资源的状态，并且在缓存过期后，需要重新验证资源。
+
+- **`no-transform`**：表示不允许代理服务器修改响应内容。
+
+- **`proxy-revalidate`**：与`must-revalidate`类似，但仅适用于共享缓存。
+
+- **`s-maxage`**：类似于`max-age`，但仅适用于共享缓存。
 
 **系统能力：** SystemCapability.Communication.NetStack
 
@@ -1723,7 +1754,7 @@ public var data: HttpData
 public var filePath: String
 ```
 
-**功能：** 此参数根据文件的内容设置mime部件的正文内容。用于代替data将文件数据设置为数据内容，如果data为空，则必须设置filePath。如果data有值，则filePath不会生效。
+**功能：** 此参数将文件路径指向的文件内容设置为表单数据，如果未指定data内容，则必须设置filePath。<br>**说明**：需传入文件管理模块支持的格式，可以通过文件管理的[access](../CoreFileKit/cj-apis-file_fs.md#static-func-accessstring-accessmodetype-accessflagtype)接口，验证文件是否存在且可访问。
 
 **类型：** String
 
@@ -1755,7 +1786,7 @@ public var name: String
 public var remoteFileName: String
 ```
 
-**功能：** 上传到服务器保存为文件的名称。
+**功能：** 上传到服务器保存为文件的名称。<br>**说明**：指定该字段后，请求头中会添加filename字段，表示上传到服务器文件的名称。<br>（1）当上传数据为文件时，若通过data字段指定文件内容，通常需要设置remoteFileName字段，用以指定上传到服务器文件的名称（实际结果与服务器具体行为有关）；若通过filePath字段指定文件路径，请求头中会自动添加filename字段，其默认值为filePath中的文件名称，如需特殊指定，也可通过本字段对filename重新设置。<br>（2）当上传数据为二进制格式时，则必须设置remoteFileName字段。
 
 **类型：** String
 
@@ -1784,9 +1815,9 @@ public init(name: String, contentType: String,  remoteFileName!: String = "",
 |:---|:---|:---|:---|:---|
 |name|String|是|-|数据名称。|
 |contentType|String|是|-|数据类型，如'text/plain'，'image/png', 'image/jpeg', 'audio/mpeg', 'video/mp4'等。|
-|remoteFileName|String|否|""|**命名参数。** 上传到服务器保存为文件的名称。|
+|remoteFileName|String|否|""|**命名参数。** 上传到服务器保存为文件的名称。<br>**说明**：指定该字段后，请求头中会添加filename字段，表示上传到服务器文件的名称。<br>（1）当上传数据为文件时，若通过data字段指定文件内容，通常需要设置remoteFileName字段，用以指定上传到服务器文件的名称（实际结果与服务器具体行为有关）；若通过filePath字段指定文件路径，请求头中会自动添加filename字段，其默认值为filePath中的文件名称，如需特殊指定，也可通过本字段对filename重新设置。<br>（2）当上传数据为二进制格式时，则必须设置remoteFileName字段。|
 |data|[HttpData](#enum-httpdata)|否|HttpData.StringData("")|**命名参数。** 表单数据内容。|
-|filePath|String|否|""|**命名参数。** 此参数根据文件的内容设置mime部件的正文内容。用于代替data将文件数据设置为数据内容，如果data为空，则必须设置filePath。如果data有值，则filePath不会生效。|
+|filePath|String|否|""|**命名参数。** 此参数将文件路径指向的文件内容设置为表单数据，如果未指定data内容，则必须设置filePath。<br>**说明**：需传入文件管理模块支持的格式，可以通过文件管理的[access](../CoreFileKit/cj-apis-file_fs.md#static-func-accessstring-accessmodetype-accessflagtype)接口，验证文件是否存在且可访问。|
 
 ## class PerformanceTiming
 
@@ -1805,7 +1836,7 @@ public class PerformanceTiming {
 }
 ```
 
-**功能：** 性能打点数据，单位为毫秒。
+**功能：** 性能打点(单位：毫秒)。
 
 **系统能力：** SystemCapability.Communication.NetStack
 
@@ -1982,7 +2013,7 @@ public enum CertType {
 }
 ```
 
-**功能：** 证书类型。
+**功能：** 枚举，证书类型。
 
 **系统能力：** SystemCapability.Communication.NetStack
 
@@ -2127,7 +2158,7 @@ public enum HttpProtocol {
 Http1_1
 ```
 
-**功能：** 协议HTTP/1.1。
+**功能：** 协议HTTP1.1。
 
 **系统能力：** SystemCapability.Communication.NetStack
 
@@ -2139,7 +2170,7 @@ Http1_1
 Http2
 ```
 
-**功能：** 协议HTTP/2。
+**功能：** 协议HTTP2。
 
 **系统能力：** SystemCapability.Communication.NetStack
 
@@ -2151,7 +2182,7 @@ Http2
 Http3
 ```
 
-**功能：** 协议HTTP/3，若系统或服务器不支持，则使用低版本的HTTP协议请求。仅对HTTPS的URL生效，HTTP则会请求失败。
+**功能：** 协议HTTP3，若系统或服务器不支持，则使用低版本的HTTP协议请求。<br />**注意：** 仅对HTTPS的URL生效，HTTP则会请求失败。
 
 **系统能力：** SystemCapability.Communication.NetStack
 
@@ -2328,7 +2359,7 @@ public enum RequestMethod {
 Connect
 ```
 
-**功能：** HTTP请求CONNECT。
+**功能：** CONNECT方法建立到由目标资源标识的服务器的隧道。
 
 **系统能力：** SystemCapability.Communication.NetStack
 
@@ -2340,7 +2371,7 @@ Connect
 Delete
 ```
 
-**功能：** HTTP请求DELETE。
+**功能：** DELETE方法用于删除指定的资源。
 
 **系统能力：** SystemCapability.Communication.NetStack
 
@@ -2352,7 +2383,7 @@ Delete
 Get
 ```
 
-**功能：** HTTP请求GET。
+**功能：** GET方法请求指定资源的表示。使用GET的请求应该只检索数据，不应该包含请求内容。
 
 **系统能力：** SystemCapability.Communication.NetStack
 
@@ -2364,7 +2395,7 @@ Get
 Head
 ```
 
-**功能：** HTTP请求HEAD。
+**功能：** HEAD方法请求与GET请求相同的响应，但没有响应主体。
 
 **系统能力：** SystemCapability.Communication.NetStack
 
@@ -2376,7 +2407,7 @@ Head
 Options
 ```
 
-**功能：** HTTP请求OPTIONS。
+**功能：** OPTIONS方法描述了目标资源的通信选项。
 
 **系统能力：** SystemCapability.Communication.NetStack
 
@@ -2388,7 +2419,7 @@ Options
 Post
 ```
 
-**功能：** HTTP请求POST。
+**功能：** POST方法将实体提交给指定的资源，通常会导致服务器上的状态更改。
 
 **系统能力：** SystemCapability.Communication.NetStack
 
@@ -2400,7 +2431,7 @@ Post
 Put
 ```
 
-**功能：** HTTP请求PUT。
+**功能：** PUT方法将目标资源的所有当前表示替换为请求内容。
 
 **系统能力：** SystemCapability.Communication.NetStack
 
@@ -2412,7 +2443,7 @@ Put
 Trace
 ```
 
-**功能：** HTTP请求TRACE。
+**功能：** TRACE方法沿到达目标资源的路径执行消息环回测试。
 
 **系统能力：** SystemCapability.Communication.NetStack
 

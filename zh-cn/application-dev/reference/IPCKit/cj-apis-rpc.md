@@ -21,9 +21,7 @@ API示例代码使用说明：
 
 ```cangjie
 public interface Parcelable {
-
     func marshalling(dataOut: MessageSequence): Bool
-
     func unmarshalling(dataIn: MessageSequence): Bool
 }
 ```
@@ -189,7 +187,7 @@ public class Ashmem {
 public static const PROT_EXEC: UInt32 = 4
 ```
 
-**功能：** 映射的内存可执行。
+**功能：** 映射内存保护类型，代表映射的内存可执行。
 
 **类型：** UInt32
 
@@ -203,7 +201,7 @@ public static const PROT_EXEC: UInt32 = 4
 public static const PROT_NONE: UInt32 = 0
 ```
 
-**功能：** 映射的内存不可访问。
+**功能：** 映射内存保护类型，代表映射的内存不可访问。
 
 **类型：** UInt32
 
@@ -217,7 +215,7 @@ public static const PROT_NONE: UInt32 = 0
 public static const PROT_READ: UInt32 = 1
 ```
 
-**功能：** 映射的内存可读。
+**功能：** 映射内存保护类型，代表映射的内存可读。
 
 **类型：** UInt32
 
@@ -231,7 +229,7 @@ public static const PROT_READ: UInt32 = 1
 public static const PROT_WRITE: UInt32 = 2
 ```
 
-**功能：** 映射的内存可写。
+**功能：** 映射内存保护类型，代表映射的内存可写。
 
 **类型：** UInt32
 
@@ -245,7 +243,7 @@ public static const PROT_WRITE: UInt32 = 2
 public static func create(name: String, size: Int32): Ashmem
 ```
 
-**功能：** 静态方法，通过复制现有Ashmem对象的文件描述符（fd）来创建Ashmem对象。两个Ashmem对象指向同一个共享内存区域。
+**功能：** 静态方法，根据指定的名称和大小创建Ashmem对象。
 
 **系统能力：** SystemCapability.Communication.IPC.Core
 
@@ -255,8 +253,8 @@ public static func create(name: String, size: Int32): Ashmem
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|name|String|是|-|名称，用于查询Ashmem信息。|
-|size|Int32|是|-|Ashmem的大小，以字节为单位。|
+|name|String|是|-|Ashmem名称，用于查询Ashmem信息，其长度不能为0。|
+|size|Int32|是|-|Ashmem的大小，其大小应大于0，以字节为单位。|
 
 **返回值：**
 
@@ -288,7 +286,7 @@ try {
 public static func create(ashmem: Ashmem): Ashmem
 ```
 
-**功能：** 静态方法，通过复制现有Ashmem对象的文件描述符（fd）来创建Ashmem对象。两个Ashmem对象指向同一个共享内存区域。
+**功能：** 静态方法，通过复制现有Ashmem对象的文件描述符(fd)来创建Ashmem对象。两个Ashmem对象指向同一个共享内存区域。
 
 **系统能力：** SystemCapability.Communication.IPC.Core
 
@@ -332,6 +330,10 @@ public func closeAshmem(): Unit
 ```
 
 **功能：** 关闭这个Ashmem。
+
+> **说明：**
+>
+> 关闭Ashmem对象前需要先解除地址映射。
 
 **系统能力：** SystemCapability.Communication.IPC.Core
 
@@ -651,6 +653,10 @@ public func writeDataToAshmem(buf: Array<Byte>, size: Int64, offset: Int64): Uni
 ```
 
 **功能：** 将数据写入此Ashmem对象关联的共享文件。
+
+> **说明：**
+>
+> 对Ashmem对象进行写操作时，需要先调用[mapReadWriteAshmem](#func-mapreadwriteashmem)进行映射。
 
 **系统能力：** SystemCapability.Communication.IPC.Core
 
@@ -1623,7 +1629,7 @@ try {
 public func readFloat(): Float32
 ```
 
-**功能：** 从MessageSequence实例中读取浮点值。
+**功能：** 从MessageSequence实例中读取单精度浮点值。
 
 **系统能力：** SystemCapability.Communication.IPC.Core
 
@@ -1633,7 +1639,7 @@ public func readFloat(): Float32
 
 |类型|说明|
 |:----|:----|
-|Float32|返回浮点值。|
+|Float32|返回单精度浮点值。|
 
 **异常：**
 
@@ -1668,7 +1674,7 @@ try {
 public func readFloatArray(): Array<Float32>
 ```
 
-**功能：** 从MessageSequence实例中读取浮点数组。
+**功能：** 从MessageSequence实例中读取单精度浮点数组。
 
 **系统能力：** SystemCapability.Communication.IPC.Core
 
@@ -1678,7 +1684,7 @@ public func readFloatArray(): Array<Float32>
 
 |类型|说明|
 |:----|:----|
-|Array\<Float32>|返回浮点数组。|
+|Array\<Float32>|返回单精度浮点数组。|
 
 **异常：**
 
@@ -1903,7 +1909,7 @@ public func readLongArray(): Array<Int64>
 
 |类型|说明|
 |:----|:----|
-|Array\<Int64>|返回整数数组。|
+|Array\<Int64>|返回长整数数组。|
 
 **异常：**
 
@@ -2190,7 +2196,7 @@ public func readShortArray(): Array<Int16>
 
 |类型|说明|
 |:----|:----|
-|Array\<Int16>|要读取的短整数数组。|
+|Array\<Int16>|返回短整数数组。|
 
 **异常：**
 
@@ -2325,7 +2331,7 @@ public func readUInt16Array(): Array<UInt16>
 
 |类型|说明|
 |:----|:----|
-|Array\<UInt16>|读取的数据。|
+|Array\<UInt16>|返回Array\<UInt16>类型数据（以字节为单位）。|
 
 **异常：**
 
@@ -2370,7 +2376,7 @@ public func readUInt32Array(): Array<UInt32>
 
 |类型|说明|
 |:----|:----|
-|Array\<UInt32>|读取的数据。|
+|Array\<UInt32>|返回Array\<UInt32>类型数据（以字节为单位）|
 
 **异常：**
 
@@ -2415,7 +2421,7 @@ public func readUInt64Array(): Array<UInt64>
 
 |类型|说明|
 |:----|:----|
-|Array\<UInt64>|读取的数据。|
+|Array\<UInt64>|返回Array\<UInt64>类型数据（以字节为单位）。|
 
 **异常：**
 
@@ -2460,7 +2466,7 @@ public func readUInt8Array(): Array<UInt8>
 
 |类型|说明|
 |:----|:----|
-|Array\<UInt8>|读取的数据。|
+|Array\<UInt8>|返回Array\<UInt8>类型数据（以字节为单位）|
 
 **异常：**
 
@@ -3161,7 +3167,7 @@ try {
 public func writeFloat(val: Float32): Unit
 ```
 
-**功能：** 将浮点值写入MessageSequence实例。
+**功能：** 将单精度浮点值写入MessageSequence实例。
 
 **系统能力：** SystemCapability.Communication.IPC.Core
 
@@ -3171,7 +3177,7 @@ public func writeFloat(val: Float32): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|val|Float32|是|-|要写入的浮点值。|
+|val|Float32|是|-|要写入的单精度浮点值。|
 
 **异常：**
 
@@ -3206,7 +3212,7 @@ try {
 public func writeFloatArray(floatArray: Array<Float32>): Unit
 ```
 
-**功能：** 将浮点数组类型数据写入MessageSequence对象。
+**功能：** 将单精度浮点数组写入MessageSequence对象。
 
 **系统能力：** SystemCapability.Communication.IPC.Core
 
@@ -3216,7 +3222,7 @@ public func writeFloatArray(floatArray: Array<Float32>): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|floatArray|Array\<Float32>|是|-|要写入的数据。|
+|floatArray|Array\<Float32>|是|-|要写入的单精度浮点数组。|
 
 **异常：**
 
@@ -3351,7 +3357,7 @@ public func writeInterfaceToken(token: String): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|token|String|是|-|字符串类型描述符。|
+|token|String|是|-|字符串类型描述符，其长度应小于40960字节。|
 
 **异常：**
 
@@ -3661,6 +3667,11 @@ public func writeRawDataBuffer(rawData: Array<Byte>, size: Int64): Unit
 
 **功能：** 将原始数据写入MessageSequence对象
 
+> **说明：**
+>
+> 该接口是一次性接口，不允许在一次parcel通信中多次调用该接口。
+> 该接口在传输数据时，当数据量较大时（超过32KB），会使用共享内存传输数据，此时需注意selinux配置。
+
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **起始版本：** 22
@@ -3669,7 +3680,7 @@ public func writeRawDataBuffer(rawData: Array<Byte>, size: Int64): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|rawData|Array\<Byte>|是|-|要写入的原始数据。|
+|rawData|Array\<Byte>|是|-|要写入的原始数据，大小不能超过128MB。|
 |size|Int64|是|-|发送的原始数据大小，以字节为单位。|
 
 **异常：**
@@ -3895,7 +3906,7 @@ public func writeUInt16Array(buf: Array<UInt16>): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|buf|Array\<UInt16>|是|-|要写入的数据。|
+|buf|Array\<UInt16>|是|-|要写入的Array\<UInt16>数据。|
 
 **异常：**
 
@@ -3940,7 +3951,7 @@ public func writeUInt32Array(buf: Array<UInt32>): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|buf|Array\<UInt32>|是|-|要写入的数据。|
+|buf|Array\<UInt32>|是|-|要写入的Array\<UInt32>数据。|
 
 **异常：**
 
@@ -3985,7 +3996,7 @@ public func writeUInt64Array(buf: Array<UInt64>): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|buf|Array\<UInt64>|是|-|要写入的数据。|
+|buf|Array\<UInt64>|是|-|要写入的Array\<UInt64>数据。|
 
 **异常：**
 
@@ -4030,7 +4041,7 @@ public func writeUInt8Array(buf: Array<UInt8>): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|buf|Array\<UInt8>|是|-|要写入的数据。|
+|buf|Array\<UInt8>|是|-|要写入的Array\<UInt8>数据。|
 
 **异常：**
 

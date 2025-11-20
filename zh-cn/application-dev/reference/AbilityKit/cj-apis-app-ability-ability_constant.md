@@ -34,7 +34,7 @@ public class LaunchParam {
 }
 ```
 
-**功能：** 启动参数，包含启动原因和上次退出原因。
+**功能：** 启动参数，主要包括Ability启动原因以及上次退出原因。Ability启动时由系统自动传入，开发者无需修改。
 
 **系统能力：** SystemCapability.Ability.AbilityRuntime.Core
 
@@ -46,7 +46,7 @@ public class LaunchParam {
 public var lastExitReason: LastExitReason
 ```
 
-**功能：** 上次退出原因。
+**功能：** 枚举类型，表示Ability上次退出原因。
 
 **类型：** [LastExitReason](#enum-lastexitreason)
 
@@ -62,7 +62,7 @@ public var lastExitReason: LastExitReason
 public var launchReason: LaunchReason
 ```
 
-**功能：** 启动原因。
+**功能：** 枚举类型，表示Ability启动原因（如故障恢复拉起、意图调用拉起、原子化服务分享拉起等），详见[LaunchReason](#enum-launchreason)。
 
 **类型：** [LaunchReason](#enum-launchreason)
 
@@ -84,7 +84,7 @@ public enum LastExitReason {
 }
 ```
 
-**功能：** 上次退出原因。
+**功能：** Ability上次退出原因，该类型为枚举，可配合UIAbility的[onCreate(want, launchParam)](./cj-apis-app-ability-ui_ability.md#func-oncreatewant-launchparam)方法根据launchParam.lastExitReason的不同类型执行相应操作。
 
 **系统能力：** SystemCapability.Ability.AbilityRuntime.Core
 
@@ -96,7 +96,7 @@ public enum LastExitReason {
 AppFreeze
 ```
 
-**功能：** 应用冻结。
+**功能：** 应用冻屏导致的应用程序退出。
 
 **系统能力：** SystemCapability.Ability.AbilityRuntime.Core
 
@@ -108,7 +108,7 @@ AppFreeze
 CppCrash
 ```
 
-**功能：** C++崩溃。
+**功能：** 进程崩溃导致的应用程序退出
 
 **系统能力：** SystemCapability.Ability.AbilityRuntime.Core
 
@@ -120,7 +120,7 @@ CppCrash
 Normal
 ```
 
-**功能：** 正常退出。
+**功能：** 用户主动关闭，应用程序正常退出。<br>**说明**：当开发者直接调用内核kill命令等非Ability Kit提供的能力强制退出应用进程时，也会返回NORMAL。
 
 **系统能力：** SystemCapability.Ability.AbilityRuntime.Core
 
@@ -151,7 +151,7 @@ public enum LaunchReason {
 }
 ```
 
-**功能：** 启动原因。
+**功能：** Ability启动原因，该类型为枚举，可配合UIAbility的[onCreate(want, launchParam)](./cj-apis-app-ability-ui_ability.md#func-oncreatewant-launchparam)方法根据launchParam.launchReason的不同类型执行相应操作。
 
 **系统能力：** SystemCapability.Ability.AbilityRuntime.Core
 
@@ -163,7 +163,7 @@ public enum LaunchReason {
 AppRecovery
 ```
 
-**功能：** 应用恢复。
+**功能：** 设置应用恢复后，应用故障时自动恢复启动Ability。
 
 **系统能力：** SystemCapability.Ability.AbilityRuntime.Core
 
@@ -187,7 +187,7 @@ Call
 Continuation
 ```
 
-**功能：** 跨端迁移。
+**功能：** 跨端迁移启动Ability。
 
 **系统能力：** SystemCapability.Ability.AbilityRuntime.Core
 
@@ -199,7 +199,7 @@ Continuation
 StartAbility
 ```
 
-**功能：** 启动Ability。
+**功能：** 通过[startAbility](./cj-apis-app-ability-ui_ability.md#func-startabilitywant-startoptions)接口启动Ability。
 
 **系统能力：** SystemCapability.Ability.AbilityRuntime.Core
 
@@ -228,7 +228,7 @@ public enum MemoryLevel <: Equatable<MemoryLevel> & ToString {
 }
 ```
 
-**功能：** 内存级别。
+**功能：** 整机可用内存级别，该类型为枚举。
 
 **系统能力：** SystemCapability.Ability.AbilityRuntime.Core
 
@@ -245,7 +245,7 @@ public enum MemoryLevel <: Equatable<MemoryLevel> & ToString {
 MemoryLevelCritical
 ```
 
-**功能：** 内存严重不足。
+**功能：** 整机可用内存极低。
 
 **系统能力：** SystemCapability.Ability.AbilityRuntime.Core
 
@@ -257,7 +257,7 @@ MemoryLevelCritical
 MemoryLevelLow
 ```
 
-**功能：** 内存不足。
+**功能：** 整机可用内存低。
 
 **系统能力：** SystemCapability.Ability.AbilityRuntime.Core
 
@@ -269,7 +269,7 @@ MemoryLevelLow
 MemoryLevelModerate
 ```
 
-**功能：** 内存适中。
+**功能：** 整机可用内存适中。
 
 **系统能力：** SystemCapability.Ability.AbilityRuntime.Core
 
@@ -340,7 +340,7 @@ public enum OnContinueResult {
 }
 ```
 
-**功能：** 跨端迁移结果。
+**功能：** Ability迁移结果，该类型为枚举。
 
 **系统能力：** SystemCapability.Ability.AbilityRuntime.Core
 
@@ -352,7 +352,7 @@ public enum OnContinueResult {
 Agree
 ```
 
-**功能：** 同意迁移。
+**功能：** 表示同意。
 
 **系统能力：** SystemCapability.Ability.AbilityRuntime.Core
 
@@ -364,7 +364,7 @@ Agree
 Mismatch
 ```
 
-**功能：** 迁移不匹配。
+**功能：** 表示版本不匹配。
 
 **系统能力：** SystemCapability.Ability.AbilityRuntime.Core
 
@@ -376,7 +376,7 @@ Mismatch
 Reject
 ```
 
-**功能：** 拒绝迁移。
+**功能：** 表示拒绝。
 
 **系统能力：** SystemCapability.Ability.AbilityRuntime.Core
 
@@ -393,7 +393,7 @@ public enum WindowMode {
 }
 ```
 
-**功能：** 窗口模式。
+**功能：** 启动UIAbility时窗口的创建模式，类型为枚举。可配合[startAbility](./cj-apis-app-ability-ui_ability.md#func-startabilitywant-startoptions)方法使用。
 
 **系统能力：** SystemCapability.Ability.AbilityRuntime.Core
 
@@ -405,7 +405,7 @@ public enum WindowMode {
 WindowModeFullscreen
 ```
 
-**功能：** 全屏模式。
+**功能：** 全屏模式。仅在2in1和Tablet设备上生效。
 
 **系统能力：** SystemCapability.Ability.AbilityRuntime.Core
 
@@ -417,7 +417,7 @@ WindowModeFullscreen
 WindowModeSplitPrimary
 ```
 
-**功能：** 分屏主窗口。
+**功能：** 支持应用内拉起Ability时设置为分屏，左侧分屏。仅在折叠屏和Tablet设备上生效。
 
 **系统能力：** SystemCapability.Ability.AbilityRuntime.Core
 
@@ -429,7 +429,7 @@ WindowModeSplitPrimary
 WindowModeSplitSecondary
 ```
 
-**功能：** 分屏次窗口。
+**功能：** 支持应用内拉起Ability时设置为分屏，右侧分屏。仅在折叠屏和Tablet设备上生效。
 
 **系统能力：** SystemCapability.Ability.AbilityRuntime.Core
 

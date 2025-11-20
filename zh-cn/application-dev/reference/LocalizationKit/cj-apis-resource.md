@@ -36,7 +36,7 @@ public class AppResource <: Length & ResourceColor & ResourceStr {
 }
 ```
 
-**功能：** 表示资源类型。
+**功能：** 提供资源相关信息，包括应用包名、应用模块名、资源id等。
 
 **系统能力：** SystemCapability.Global.ResourceManager
 
@@ -54,7 +54,7 @@ public class AppResource <: Length & ResourceColor & ResourceStr {
 public var bundleName: String
 ```
 
-**功能：** 应用的包名称。
+**功能：** 应用的bundle名称。
 
 **类型：** String
 
@@ -68,7 +68,7 @@ public var bundleName: String
 public var id: UInt32
 ```
 
-**功能：** 资源id。
+**功能：** 资源的id值。
 
 **类型：** UInt32
 
@@ -82,7 +82,7 @@ public var id: UInt32
 public var moduleName: String
 ```
 
-**功能：** 应用的模块名称。
+**功能：** 应用的module名称。
 
 **类型：** String
 
@@ -96,7 +96,7 @@ public var moduleName: String
 public var params:?Array<Any>
 ```
 
-**功能：** 其他资源参数（可选）。
+**功能：** 其他资源参数，包括资源名、格式化接口的替换值、复数接口的量词。
 
 **类型：** ?Array\<Any>
 
@@ -110,7 +110,7 @@ public var params:?Array<Any>
 public var resType:?Int32
 ```
 
-**功能：** 资源的类型（可选）。
+**功能：** 资源的类型。
 
 **类型：** ?Int32
 
@@ -140,8 +140,8 @@ public init(
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|bundleName|String|是|-|应用的包名称。|
-|moduleName|String|是|-|应用的模块名称。|
-|id|UInt32|是|-|资源id。|
-|params|?Array\<Any>|否|None| **命名参数。** 其他资源参数。|
+|bundleName|String|是|-|应用的bundle名称。|
+|moduleName|String|是|-|应用的module名称。|
+|id|UInt32|是|-|资源的id值。|
+|params|?Array\<Any>|否|None| **命名参数。** 其他资源参数，包括资源名、格式化接口的替换值、复数接口的量词。|
 |resType|?Int32|否|None| **命名参数。** 资源的类型。|

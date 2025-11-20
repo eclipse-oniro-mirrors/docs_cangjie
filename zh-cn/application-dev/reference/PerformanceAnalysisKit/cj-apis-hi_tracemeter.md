@@ -45,7 +45,7 @@ public static func finishTrace(name: String, taskId: Int32): Unit
 
 **功能：** 标记一个预跟踪耗时任务的结束。
 
-[finishTrace](#static-func-finishtracestring-int32)的name和taskId必须与流程开始的[startTrace](#static-func-starttracestring-int32)对应参数值一致。
+finishTrace的name和taskId必须与流程开始的[startTrace()](#static-func-starttracestring-int32)对应参数值一致。
 
 **系统能力：** SystemCapability.HiviewDFX.HiTrace
 
@@ -110,11 +110,11 @@ try {
 public static func startTrace(name: String, taskId: Int32): Unit
 ```
 
-**功能：** 标记一个预跟踪耗时任务的开始。
+**功能：** 标记一个异步跟踪耗时任务的开始。
 
-如果有多个相同name的任务需要跟踪或者对同一个任务要跟踪多次，并且任务同时被执行，则每次调用[startTrace](#static-func-starttracestring-int32)的taskId不相同。
+如果有多个相同name的任务需要跟踪或者对同一个任务要跟踪多次，并且任务同时被执行，则开发者每次调用startTrace传入的taskId需不同。
 
-如果具有相同name的任务是串行执行的，则taskId可以相同。具体示例可参考[HiTraceMeter.finishTrace](#static-func-finishtracestring-int32)中的示例。
+如果具有相同name的任务是串行执行的，则taskId可以相同。具体示例可参考[finishTrace()](#static-func-finishtracestring-int32)中的示例。
 
 **系统能力：** SystemCapability.HiviewDFX.HiTrace
 

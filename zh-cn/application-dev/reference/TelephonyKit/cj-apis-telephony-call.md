@@ -240,7 +240,7 @@ public static func hasVoiceCapability(): Bool
 
 |类型|说明|
 |:----|:----|
-|Bool|返回判断是否具备语音通话能力。返回true表示设备具备语音通话能力，返回false表示设备不具备语音通话能力。|
+|Bool|返回true表示设备具备语音通话能力，返回false表示设备不具备语音通话能力。|
 
 **示例：**
 
@@ -433,7 +433,7 @@ public class EmergencyNumberOptions {
 public var slotId: Int32
 ```
 
-**功能：** 表示卡槽ID。
+**功能：** 卡槽ID：<br/>- 卡槽1：`0`。<br/>- 卡槽2：`1`。
 
 **类型：** Int32
 
@@ -459,7 +459,7 @@ public init(slotId!: Int32 = 0)
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|slotId|Int32|否|0|卡槽ID：卡槽1：0。卡槽2：1。|
+|slotId|Int32|否|0|卡槽ID：<br/>- 卡槽1：`0`。<br/>- 卡槽2：`1`。。|
 
 ## class NumberFormatOptions
 

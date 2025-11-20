@@ -55,7 +55,7 @@ public init()
 public func inValues(field: String, value: Array<VBValueType>): DataSharePredicates
 ```
 
-**功能：** 用于配置谓词以匹配值在指范围内的字段。目前仅RDB及KVDB(schema)支持该谓词。
+**功能：** 该接口用于配置谓词以匹配值在指定范围内的字段。目前仅关系型数据库及键值型数据库支持该谓词。
 
 **系统能力：** SystemCapability.DistributedDataManager.DataShare.Core
 
@@ -65,7 +65,7 @@ public func inValues(field: String, value: Array<VBValueType>): DataSharePredica
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|field|String|是|-|数据库表中的列名。|
+|field|String|是|-|数据库表中的列名。</br>field为""时，此次调用接口配置的谓词无效。|
 |value|Array\<[VBValueType](cj-apis-values_bucket.md#enum-vbvaluetype)>|是|-|以VBValueType数组形式指定的要匹配的值。|
 
 **返回值：**
@@ -76,11 +76,11 @@ public func inValues(field: String, value: Array<VBValueType>): DataSharePredica
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[错误码](./cj-errorcode.md)。
+- BusinessException：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 16000050 | Internal error. |
+  | 14800000 | Internal error. |
 
 **示例：**
 
@@ -107,7 +107,7 @@ try {
 public func and(): DataSharePredicates
 ```
 
-**功能：** 用于将和条件添加到谓词中。目前仅RDB及KVDB(schema)支持该谓词。
+**功能：** 该接口用于将和条件添加到谓词中。目前仅关系型数据库及键值型数据库支持该谓词。
 
 **系统能力：** SystemCapability.DistributedDataManager.DataShare.Core
 
@@ -121,11 +121,11 @@ public func and(): DataSharePredicates
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[错误码](./cj-errorcode.md)。
+- BusinessException：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 16000050 | Internal error. |
+  | 14800000 | Internal error. |
 
 **示例：**
 
@@ -154,7 +154,7 @@ try {
 public func equalTo(field: String, value: VBValueType): DataSharePredicates
 ```
 
-**功能：** 用于配置谓词以匹配值等于指定值的字段。目前仅RDB及KVDB(schema)支持该谓词。
+**功能：** 该接口用于配置谓词以匹配值等于指定值的字段。目前仅关系型数据库及键值型数据库支持该谓词。
 
 **系统能力：** SystemCapability.DistributedDataManager.DataShare.Core
 
@@ -164,8 +164,8 @@ public func equalTo(field: String, value: VBValueType): DataSharePredicates
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|field|String|是|-|数据库表中的列名。|
-|value|[VBValueType](./cj-apis-values_bucket.md#enum-vbvaluetype)|是|-|指示要与谓词匹配的值。|
+|field|String|是|-|数据库表中的列名。</br>field为""时，此次调用接口配置的谓词无效。|
+|value|[VBValueType](./cj-apis-values_bucket.md#enum-vbvaluetype)|是|-|指示要与谓词匹配的值。</br>value为undefined或者null时，此次调用接口配置的谓词无效。|
 
 **返回值：**
 
@@ -175,11 +175,11 @@ public func equalTo(field: String, value: VBValueType): DataSharePredicates
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[错误码](./cj-errorcode.md)。
+- BusinessException：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 16000050 | Internal error. |
+  | 14800000 | Internal error. |
 
 **示例：**
 
@@ -206,7 +206,7 @@ try {
 public func limit(total: Int32, offset: Int32): DataSharePredicates
 ```
 
-**功能：** 用于配置谓词以指定结果数和起始位置。目前仅RDB及KVDB(schema)支持该谓词。
+**功能：** 该接口用于配置谓词以指定结果数和起始位置。目前仅关系型数据库及键值型数据库支持该谓词。
 
 **系统能力：** SystemCapability.DistributedDataManager.DataShare.Core
 
@@ -216,8 +216,8 @@ public func limit(total: Int32, offset: Int32): DataSharePredicates
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|total|Int32|是|-|指定结果数。|
-|offset|Int32|是|-|指示起始位置。|
+|total|Int32|是|-|最大数据记录数。</br>当使用关系型数据库时，取值范围参考[关系型数据库limitAs接口](./cj-apis-relational_store.md#func-limitasint32)中的value参数说明。|
+|offset|Int32|是|-|指定查询结果的起始位置。</br>当使用关系型数据库时，取值范围参考[关系型数据库offsetAs接口](./cj-apis-relational_store.md#func-offsetasint32)中的rowOffset参数说明。|
 
 **返回值：**
 
@@ -227,11 +227,11 @@ public func limit(total: Int32, offset: Int32): DataSharePredicates
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[错误码](./cj-errorcode.md)。
+- BusinessException：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 16000050 | Internal error. |
+  | 14800000 | Internal error. |
 
 **示例：**
 
@@ -258,7 +258,7 @@ try {
 public func orderByAsc(field: String): DataSharePredicates
 ```
 
-**功能：** 用于配置谓词以匹配其值按升序排序的列。目前仅RDB及KVDB(schema)支持该谓词。
+**功能：** 该接口用于配置谓词以匹配其值按升序排序的列。目前仅关系型数据库及键值型数据库支持该谓词。
 
 **系统能力：** SystemCapability.DistributedDataManager.DataShare.Core
 
@@ -268,7 +268,7 @@ public func orderByAsc(field: String): DataSharePredicates
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|field|String|是|-|数据库表中的列名。|
+|field|String|是|-|数据库表中的列名。 </br>field为""时，此次调用接口配置的谓词无效。。|
 
 **返回值：**
 
@@ -278,11 +278,11 @@ public func orderByAsc(field: String): DataSharePredicates
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[错误码](./cj-errorcode.md)。
+- BusinessException：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 16000050 | Internal error. |
+  | 14800000 | Internal error. |
 
 **示例：**
 
@@ -309,7 +309,7 @@ try {
 public func orderByDesc(field: String): DataSharePredicates
 ```
 
-**功能：** 用于配置谓词以匹配其值按降序排序的列。目前仅RDB及KVDB(schema)支持该谓词。
+**功能：** 该接口用于配置谓词以匹配其值按降序排序的列。目前仅关系型数据库及键值型数据库支持该谓词。
 
 **系统能力：** SystemCapability.DistributedDataManager.DataShare.Core
 
@@ -319,7 +319,7 @@ public func orderByDesc(field: String): DataSharePredicates
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|field|String|是|-|数据库表中的列名。|
+|field|String|是|-|数据库表中的列名。</br>field为""时，此次调用接口配置的谓词无效|
 
 **返回值：**
 
@@ -329,11 +329,11 @@ public func orderByDesc(field: String): DataSharePredicates
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[错误码](./cj-errorcode.md)。
+- BusinessException：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 16000050 | Internal error. |
+  | 14800000 | Internal error. |
 
 **示例：**
 

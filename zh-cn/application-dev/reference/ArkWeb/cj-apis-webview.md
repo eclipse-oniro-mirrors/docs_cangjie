@@ -35,6 +35,10 @@ public class BackForwardList {}
 
 **功能：** 当前Webview的历史信息列表。
 
+> **说明：**
+>
+> - 示例效果请以真机运行为准，当前DevEco Studio预览器不支持。
+
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **起始版本：** 22
@@ -238,7 +242,7 @@ public class HitTestValue {
 public var extra: String
 ```
 
-**功能：** 点击区域的附加参数信息。若被点击区域为图片或链接，则附加参数信息为其URL地址。
+**功能：** 点击区域的附加参数信息。若被点击区域为图片或链接，则附加参数信息为其url地址。
 
 **类型：** String
 
@@ -292,7 +296,7 @@ public static func clearAllCookies(incognito!: Bool = false): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|incognito|Bool|否|false|**命名参数。** true表示清除隐私模式下webview的所有内存cookies，false表示清除正常非隐私模式下的所有cookies。|
+|incognito|Bool|否|false|**命名参数。** true表示清除隐私模式下Webview的所有内存cookies，false表示清除正常非隐私模式下的持久化cookies。<br>默认值：false。|
 
 **示例：**
 
@@ -366,6 +370,22 @@ public static func configCookie(url: String, value: String, incognito!: Bool = f
 
 **功能：** 为指定URL设置cookie的值。
 
+> **说明：**
+>
+> configCookie中的url，可以指定域名的方式来使得页面内请求也附带上cookie。
+>
+> 同步cookie的时机建议在Web组件加载之前完成。
+>
+> 若通过configCookie进行两次或多次设置cookie，则每次设置的cookie之间会通过"; "进行分隔。
+>
+> cookie每30s周期性保存到磁盘中。
+> 
+> 若存在相同host、path和名称的cookie，将被新cookie替换。若设置的cookie已过期，则不会存储该cookie。如需设置多个cookie，应多次调用此方法。
+>
+> value参数必须遵循Set-Cookie HTTP响应头的格式。形式为"key=value"的键值对，后面可跟随以分号分隔的cookie属性列表（例如"key=value;Max-Age=100"）。
+>
+> 如果指定的值包含"Secure"属性，则url必须使用"https://"协议。
+
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **起始版本：** 22
@@ -374,9 +394,9 @@ public static func configCookie(url: String, value: String, incognito!: Bool = f
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|url|String|是|-|要设置的cookie所属的URL，建议使用完整的URL。|
+|url|String|是|-|要设置的cookie所属的url，建议使用完整的url。|
 |value|String|是|-|要设置的cookie的值。|
-|incognito|Bool|否|false|true表示设置隐私模式下对应URL的cookies，false表示设置正常非隐私模式下对应URL的cookies。|
+|incognito|Bool|否|false|**命名参数。** true表示设置隐私模式下对应url的cookies，false表示设置正常非隐私模式下对应url的cookies。<br>默认值：false。|
 
 **异常：**
 
@@ -419,7 +439,7 @@ try {
 public static func existCookie(incognito!: Bool = false): Bool
 ```
 
-**功能：** WebCookieManager是否存在cookie。
+**功能：** 获取是否存在cookie。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -429,7 +449,7 @@ public static func existCookie(incognito!: Bool = false): Bool
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|incognito|Bool|否|false|**命名参数。** true表示查询隐私模式下是否存在cookies，false表示查询正常非隐私模式下是否存在cookies。|
+|incognito|Bool|否|false|**命名参数。** true表示隐私模式下查询是否存在cookies，false表示正常非隐私模式下查询是否存在cookies。<br>默认值：false。|
 
 **返回值：**
 
@@ -459,6 +479,14 @@ public static func fetchCookie(url: String, incognito!: Bool = false): String
 
 **功能：** 获取指定url对应cookie的值。
 
+> **说明：**
+>
+> 系统会自动清理过期的cookie，对于同名key的数据，新数据将会覆盖前一个数据。
+> 
+> 为了获取可正常使用的cookie值，fetchCookie需传入完整链接。
+> 
+> fetchCookie用于获取所有的cookie值，每条cookie值之间会通过"; "进行分隔，但无法单独获取某一条特定的cookie值。
+
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **起始版本：** 22
@@ -467,14 +495,14 @@ public static func fetchCookie(url: String, incognito!: Bool = false): String
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|url|String|是|-|要获取的cookie所属的URL，建议使用完整的URL。|
-|incognito|Bool|否|false|**命名参数。** true表示获取隐私模式下webview的内存cookies，false表示获取正常非隐私模式下的cookies。|
+|url|String|是|-|要获取的cookie所属的url，建议使用完整的url。|
+|incognito|Bool|否|false|**命名参数。** true表示获取隐私模式下webview的内存cookies，false表示正常非隐私模式下的cookies。<br>默认值：false。|
 
 **返回值：**
 
 |类型|说明|
 |:----|:----|
-|String|指定URL对应的cookie的值。|
+|String|指定url对应的cookie的值。|
 
 **异常：**
 
@@ -514,7 +542,7 @@ try {
 public static func isCookieAllowed(): Bool
 ```
 
-**功能：** WebCookieManager实例是否拥有发送和接收cookie的权限。
+**功能：** 获取WebCookieManager实例是否拥有发送和接收cookie的权限。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -524,7 +552,7 @@ public static func isCookieAllowed(): Bool
 
 |类型|说明|
 |:----|:----|
-|Bool|是否拥有发送和接收cookie的权限。true表示拥有发送和接收cookie的权限，false表示无发送和接收cookie的权限。默认为true。|
+|Bool|是否拥有发送和接收cookie的权限。<br>true表示拥有发送和接收cookie的权限，false表示无发送和接收cookie的权限。<br>默认值：true。|
 
 **示例：**
 
@@ -546,7 +574,7 @@ Hilog.info(0, "AppLogCj",  "WebCookieManager, result: ${result}")
 public static func isThirdPartyCookieAllowed(): Bool
 ```
 
-**功能：** WebCookieManager实例是否拥有发送和接收第三方cookie的权限。
+**功能：** 获取WebCookieManager实例是否拥有发送和接收第三方cookie的权限。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -556,7 +584,7 @@ public static func isThirdPartyCookieAllowed(): Bool
 
 |类型|说明|
 |:----|:----|
-|Bool|是否拥有发送和接收第三方cookie的权限。true表示拥有发送和接收第三方cookie的权限，false表示无发送和接收第三方cookie的权限。默认为false。|
+|Bool|是否拥有发送和接收第三方cookie的权限。<br>true表示拥有发送和接收第三方cookie的权限，false表示无发送和接收第三方cookie的权限。<br>默认值：false。|
 
 **示例：**
 
@@ -588,7 +616,7 @@ public static func putAcceptCookieEnabled(accept: Bool): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|accept|Bool|是|-|设置是否拥有发送和接收cookie的权限。默认为true，表示拥有发送和接收cookie的权限。|
+|accept|Bool|是|-|设置是否拥有发送和接收cookie的权限，默认为true，表示拥有发送和接收cookie的权限。|
 
 **示例：**
 
@@ -619,7 +647,7 @@ public static func putAcceptThirdPartyCookieEnabled(accept: Bool): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|accept|Bool|是|-|设置是否拥有发送和接收第三方cookie的权限。true表示设置拥有发送和接收第三方cookie的权限，false表示设置无发送和接收第三方cookie的权限。默认为false。|
+|accept|Bool|是|-|是否允许设置、获取第三方cookie。<br>true表示允许设置、获取第三方cookie，false表示不允许设置、获取第三方cookie。|
 
 **示例：**
 
@@ -709,7 +737,11 @@ public class WebviewController {
 }
 ```
 
-**功能：** 清除主名称所拥有的的IP地址。
+**功能：** 通过WebviewController可以控制Web组件各种行为（包括页面导航、生命周期状态、JavaScript交互等行为）。一个WebviewController对象只能控制一个Web组件，且必须在Web组件和WebviewController绑定后，才能调用WebviewController上的方法（静态方法除外）。
+
+> **说明：**
+>
+> - 示例效果请以真机运行为准，当前DevEco Studio预览器不支持。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -721,7 +753,11 @@ public class WebviewController {
 public init(webTag!: ?String = None)
 ```
 
-**功能：** 创建WebviewController对象。
+**功能：** 用于创建 WebviewController 对象的构造函数。
+
+> **说明：**
+>
+> Web组件销毁后会解绑WebViewController，之后调用WebviewController的非静态方法会抛出17100001异常，应注意调用时机和捕获异常，防止进程异常退出。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -731,7 +767,7 @@ public init(webTag!: ?String = None)
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|webTag|?String|否|None|指定Web组件的名称。|
+|webTag|?String|否|None|指定了 Web 组件的名称。|
 
 ### static func setWebDebuggingAccess(Bool)
 
@@ -740,6 +776,8 @@ public static func setWebDebuggingAccess(webDebuggingAccess: Bool): Unit
 ```
 
 **功能：** 设置是否启用网页调试功能。
+
+安全提示：启用网页调试功能可以让用户检查修改Web页面内部状态，存在安全隐患，不建议在应用正式发布版本中启用。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -797,6 +835,14 @@ public func accessBackward(): Bool
 
 **功能：** 当前页面是否可后退，即当前页面是否有返回历史记录。
 
+可以结合使用[getBackForwardEntries](#func-getbackforwardentries)来获取当前WebView的历史信息列表，以及使用[accessStep](#func-accessstepint32)来判断是否可以按照给定的步数前进或后退。
+
+> **说明：**
+>
+> 在Web组件首次加载过程中调用[setCustomUserAgent](#func-setcustomuseragentstring)，可能会导致在当前存在多个历史节点的情况下，获取的accessBackward实际为false，即没有后退节点。建议先调用setCustomUserAgent方法设置UserAgent，再通过loadUrl加载具体页面。
+>
+> 该现象是由于在Web组件首次加载时，调用[setCustomUserAgent](#func-setcustomuseragentstring)会导致组件重新加载并保持初始历史节点的状态。随后新增的节点将替换初始历史节点，不会生成新的历史节点，导致accessBackward为false。
+
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **起始版本：** 22
@@ -805,7 +851,7 @@ public func accessBackward(): Bool
 
 |类型|说明|
 |:----|:----|
-|Bool|可以后退返回true，否则返回false。|
+|Bool|当前页面可以后退返回true,否则返回false。|
 
 **异常：**
 
@@ -875,7 +921,7 @@ public func accessStep(step: Int32): Bool
 
 |类型|说明|
 |:----|:----|
-|Bool|页面是否前进或后退。|
+|Bool|页面是否前进或后退。<br>返回true表示可以前进或者后退，返回false表示不可以前进或后退。|
 
 **异常：**
 
@@ -995,7 +1041,7 @@ class EntryView {
 public func backward(): Unit
 ```
 
-**功能：** 按照历史栈，后退一个页面。一般结合accessBackward一起使用。
+**功能：** 按照历史栈，后退一个页面。一般结合[accessBackward](#func-accessbackward)一起使用。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -1052,7 +1098,7 @@ class EntryView {
 public func clearHistory(): Unit
 ```
 
-**功能：** 删除所有前进后退记录。
+**功能：** 删除所有前进后退记录，不建议在onErrorReceive与onPageBegin中调用clearHistory，会造成异常退出。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -1110,6 +1156,7 @@ public func enableSafeBrowsing(enable: Bool): Unit
 ```
 
 **功能：** 启用检查网站安全风险的功能，非法和欺诈网站是强制启用的，不能通过此功能禁用。
+本功能默认不生效，OpenHarmony只提供恶意网址拦截页WebUI，网址风险检测以及显示WebUI的功能由Vendor实现。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -1172,7 +1219,7 @@ class EntryView {
 public func forward(): Unit
 ```
 
-**功能：** 按照历史栈，前进一个页面。
+**功能：** 按照历史栈，前进一个页面。一般结合accessForward一起使用。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -1748,7 +1795,7 @@ class EntryView {
 public func getUrl(): String
 ```
 
-**功能：** 获取当前页面的URL地址。
+**功能：** 获取当前页面的url地址。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -1758,7 +1805,7 @@ public func getUrl(): String
 
 |类型|说明|
 |:----|:----|
-|String|当前页面的URL地址。|
+|String|当前页面的url地址。|
 
 **异常：**
 
@@ -1885,7 +1932,7 @@ public func isIncognitoMode(): Bool
 
 |类型|说明|
 |:----|:----|
-|Bool|返回是否是隐私模式的Webview。|
+|Bool|返回是否是隐私模式的Webview。<br>true表示是隐私模式，false表示不是隐私模式。<br>默认为false。|
 
 **异常：**
 
@@ -1950,7 +1997,7 @@ public func isSafeBrowsingEnabled(): Bool
 
 |类型|说明|
 |:----|:----|
-|Bool|当前网页是否启用了检查网站安全风险的功能，默认为false。|
+|Bool|当前网页是否启用了检查网站安全风险的功能。<br>true表示启用了检查网站安全风险的功能，false表示未启用检查网站安全风险的功能。<br>默认值：false。|
 
 **异常：**
 
@@ -2013,7 +2060,7 @@ public func pageDown(bottom: Bool): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|bottom|Bool|是|-|是否跳转到页面最底部，设置为false时将页面内容向下滚动半个视框大小，设置为true时跳转到页面最底部。|
+|bottom|Bool|是|-|是否跳转到页面最底部。<br>false时表示将页面内容向下滚动半个视框大小，true表示跳转到页面最底部。+|
 
 **异常：**
 
@@ -2076,7 +2123,7 @@ public func pageUp(top: Bool): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|top|Bool|是|-|是否跳转到页面最顶部，设置为false时将页面内容向上滚动半个视框大小，设置为true时跳转到页面最顶部。|
+|top|Bool|是|-|是否跳转到页面最顶部。<br>false表示将页面内容向上滚动半个视框大小，true表示跳转到页面最顶部。|
 
 **异常：**
 
@@ -2354,7 +2401,7 @@ public func loadUrl<T>(url: T, headers!: Array<WebHeader> = Array<WebHeader>()):
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |url|T|是|-|需要加载的URL。|
-|headers|Array\<[WebHeader](#class-webheader)>|否|Array\<WebHeader >()|URL的附加HTTP请求头。|
+|headers|Array\<[WebHeader](#class-webheader)>|否|Array\<WebHeader >()|URL的附加HTTP请求头。<br>默认值： []|
 
 **异常：**
 
@@ -2410,6 +2457,14 @@ public func setCustomUserAgent(userAgent: String): Unit
 ```
 
 **功能：** 设置自定义用户代理，会覆盖系统的用户代理。
+
+当Web组件src设置了url时，建议在onControllerAttached回调事件中设置User-Agent，设置方式请参考示例。不建议将User-Agent设置在onLoadIntercept回调事件中，会概率性出现设置失败。
+
+当Web组件src设置为空字符串时，建议先调用setCustomUserAgent方法设置User-Agent，再通过loadUrl加载具体页面。
+
+> **说明：**
+>
+>当Web组件src设置了url，且未在onControllerAttached回调事件中设置User-Agent。再调用setCustomUserAgent方法时，可能会出现加载的页面与实际设置User-Agent不符的异常现象。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -2538,7 +2593,7 @@ public func storeWebArchive(baseName: String, autoName: Bool, callback: AsyncCal
 |:---|:---|:---|:---|:---|
 |baseName|String|是|-|生成的离线网页存储位置，该值不能为空。|
 |autoName|Bool|是|-|决定是否自动生成文件名。如果为false，则按baseName的文件名存储；如果为true，则根据当前Url自动生成文件名，并按baseName的文件目录存储。|
-|callback|[AsyncCallback](../arkinterop/cj-api-business_exception.md#type-asynccallback)\<String>|是|-|返回文件存储路径。|
+|callback|[AsyncCallback](../arkinterop/cj-api-business_exception.md#type-asynccallback)\<String>|是|-|返回文件存储路径，保存网页失败会返回null。|
 
 **异常：**
 
@@ -2611,7 +2666,7 @@ public func zoom(factor: Float32): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|factor|Float32|是|-|基于当前网页所需调整的相对缩放比例，入参要求大于0，当入参为1时为默认加载网页的缩放比例，入参小于1为缩小，入参大于1为放大。|
+|factor|Float32|是|-|基于当前网页所需调整的相对缩放比例，入参要求大于0，当入参为1时为默认加载网页的缩放比例，入参小于1为缩小，入参大于1为放大。<br>取值范围：(0，100]。|
 
 **异常：**
 
@@ -2663,7 +2718,7 @@ class EntryView {
 public func zoomIn(): Unit
 ```
 
-**功能：** 调用此接口将当前网页进行放大，比例为20%。
+**功能：** 调用此接口将当前网页进行放大，比例为25%。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -2775,7 +2830,15 @@ class EntryView {
 public func runJavaScript(script: String, callback: AsyncCallback<String>): Unit
 ```
 
-**功能：** 异步执行JavaScript脚本，并通过回调方式返回脚本执行的结果。runJavaScript需要在loadUrl完成后，比如onPageEnd中调用。
+**功能：** 在当前显示页面的上下文中异步执行JavaScript脚本，脚本执行的结果将通过异步回调方式返回。此方法必须在用户界面（UI）线程上使用 ，并且回调也将在用户界面（UI）线程上调用。
+
+> **说明：**
+>
+> - 跨导航操作（如loadUrl）时，JavaScript状态将不再保留。例如，调用loadUrl前定义的全局变量和函数在加载的页面中将不存在。
+> - 建议应用程序使用registerJavaScriptProxy来确保JavaScript状态能够在页面导航间保持。
+> - 目前不支持传递对象，支持传递结构体。
+> - 执行异步方法无法获取返回值，需要根据具体情境判断是否使用同步或异步方式。
+> - 前端页面传到Native的string数据类型会被视为json格式的数据，需要调用JSON.parse反序列化。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -2867,7 +2930,7 @@ class EntryView {
 public func scrollBy(deltaX: Float32, deltaY: Float32, duration!: ?Int32 = None): Unit
 ```
 
-**功能：** 将页面滚动指定的偏移量。
+**功能：** 在指定时间内将页面滚动指定的偏移量。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -2877,8 +2940,8 @@ public func scrollBy(deltaX: Float32, deltaY: Float32, duration!: ?Int32 = None)
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|deltaX|Float32|是|-|水平偏移量，其中水平向右为正方向。|
-|deltaY|Float32|是|-|垂直偏移量，其中垂直向下为正方向。|
+|deltaX|Float32|是|-|水平偏移量，其中水平向右为正方向。<br>单位：vp。|
+|deltaY|Float32|是|-|垂直偏移量，其中垂直向下为正方向。<br>单位：vp。|
 |duration|?Int32|否|None|**命名参数。** 滚动动画时间。<br>单位：ms。<br>不传入为无动画，当传入数值为负数或传入0时，按照不传入处理。|
 
 **异常：**
@@ -2954,7 +3017,7 @@ Scroll Test
 public func scrollTo(x: Float32, y: Float32, duration!: ?Int32 = None): Unit
 ```
 
-**功能：** 将页面滚动到指定的绝对位置。
+**功能：** 在指定时间内，将页面滚动到指定的绝对位置。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -2964,8 +3027,8 @@ public func scrollTo(x: Float32, y: Float32, duration!: ?Int32 = None): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|x|Float32|是|-|绝对位置的水平坐标，当传入数值为负数时，按照传入0处理。|
-|y|Float32|是|-|绝对位置的垂直坐标，当传入数值为负数时，按照传入0处理。|
+|x|Float32|是|-|绝对位置的水平坐标，当传入数值为负数时，按照传入0处理。<br>单位：vp。|
+|y|Float32|是|-|绝对位置的垂直坐标，当传入数值为负数时，按照传入0处理。<br>单位：vp。|
 |duration|?Int32|否|None|**命名参数。** 滚动动画时间。<br>单位：ms。<br>不传入为无动画，当传入数值为负数或传入0时，按照不传入处理。|
 
 **异常：**
@@ -3041,7 +3104,11 @@ Scroll Test
 public func removeCache(clearRom: Bool): Unit
 ```
 
-**功能：** 清除应用中的资源缓存文件，此方法将会清除同一应用中所有webview的缓存文件。
+**功能：** 清除应用中的资源缓存文件，此方法将会清除同一应用中所有Webview的缓存文件。
+
+> **说明：**
+>
+> 可以通过在data/storage/el2/base/cache/web/Cache目录下查看Webview的缓存。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -3051,7 +3118,7 @@ public func removeCache(clearRom: Bool): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|clearRom|Bool|是|-|设置为true时同时清除rom和ram中的缓存，设置为false时只清除ram中的缓存。|
+|clearRom|Bool|是|-|设置为true时同时清除ROM和RAM中的缓存，设置为false时只清除RAM中的缓存。|
 
 **异常：**
 

@@ -33,7 +33,7 @@ public abstract class BaseContext {
 }
 ```
 
-**功能：** 提供ability或application的上下文的能力。
+**功能：** 所有Context类型的父类。
 
 **系统能力：** SystemCapability.Ability.AbilityRuntime.Core
 

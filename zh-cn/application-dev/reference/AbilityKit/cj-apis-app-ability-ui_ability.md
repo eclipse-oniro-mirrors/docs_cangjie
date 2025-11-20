@@ -303,7 +303,9 @@ public class AbilityStageContext <: Context {
 }
 ```
 
-**功能：** [AbilityStageContext](#class-abilitystagecontext)提供允许访问特定于`abilityStage`的资源的能力，包括获取AbilityStage对应的`hapModuleInfo`对象、环境变化对象。
+**功能：** AbilityStageContext是AbilityStage的上下文环境。
+
+AbilityStageContext提供允许访问特定于abilityStage的资源的能力，包括获取AbilityStage对应的ModuleInfo对象、环境变化对象。
 
 **系统能力：** SystemCapability.Ability.AbilityRuntime.Core
 
@@ -319,7 +321,7 @@ public class AbilityStageContext <: Context {
 public var currentHapModuleInfo: HapModuleInfo
 ```
 
-**功能：** AbilityStage对应的`hapModuleInfo`对象。
+**功能：** AbilityStage对应的ModuleInfo对象。
 
 **类型：** [HapModuleInfo](./cj-apis-bundle_manager.md#class-hapmoduleinfo)
 
@@ -348,7 +350,7 @@ class MyAbilityStage <: AbilityStage {
 public class ApplicationContext <: Context {}
 ```
 
-**功能：** 提供应用级别的的上下文的能力。
+**功能：** ApplicationContext作为应用上下文，提供了应用生命周期监听、进程管理、应用环境设置等应用级别的管控能力。
 
 **系统能力：** SystemCapability.Ability.AbilityRuntime.Core
 
@@ -364,7 +366,7 @@ public class ApplicationContext <: Context {}
 public open class Context <: BaseContext {}
 ```
 
-**功能：** 提供ability或application的上下文的能力。
+**功能：** Context提供了ability或application的上下文的能力，包括访问特定应用程序的资源等。
 
 **系统能力：** SystemCapability.Ability.AbilityRuntime.Core
 
@@ -409,7 +411,7 @@ class MyUIAbility <: UIAbility {
 public mut prop area: AreaMode
 ```
 
-**功能：** 文件分区信息。
+**功能：** 文件分区信息，按加密等级[AreaMode](./cj-apis-app-ability-context_constant.md#enum-areamode) 进行分区。
 
 **类型：** [AreaMode](./cj-apis-app-ability-context_constant.md#enum-areamode)
 
@@ -496,7 +498,7 @@ class MyUIAbility <: UIAbility {
 public open class UIAbility <: Ability {}
 ```
 
-**功能：** UIAbility是包含UI界面的应用组件，继承自BaseAbility，提供组件创建、销毁、前后台切换等生命周期回调，同时也具备组件协同的能力。组件协同主要提供如下常用功能：
+**功能：** 表示包含UI界面的应用组件，提供组件创建、销毁、前后台切换等生命周期回调，同时也具备后台通信能力。
 
 - Caller：由startAbilityByCall接口返回，CallerAbility(调用者)可使用Caller与CalleeAbility(被调用者)进行通信。
 
@@ -516,7 +518,7 @@ public open class UIAbility <: Ability {}
 public mut prop context: UIAbilityContext
 ```
 
-**功能：** 上下文。
+**功能：** UIAbility的上下文。
 
 **类型：** [UIAbilityContext](#class-uiabilitycontext)
 
@@ -545,7 +547,7 @@ class MyUIAbility <: UIAbility {
 public mut prop lastRequestWant: Want
 ```
 
-**功能：** UIAbility最后请求时的参数。
+**功能：** 最近一次拉起UIAbility请求的Want参数。<br>- 首次拉起UIAbility时，取值为[onCreate](#func-oncreatewant-launchparam)接收到的Want参数。<br>- 重复拉起UIAbility时，取值为[onNewWant](#func-onnewwantwant-launchparam)最近一次接收到的Want参数。
 
 **类型：** [Want](./cj-apis-app-ability-want.md#class-want)
 
@@ -574,7 +576,7 @@ class MyUIAbility <: UIAbility {
 public mut prop launchWant: Want
 ```
 
-**功能：** UIAbility启动时的参数。
+**功能：** UIAbility冷启动时接收到的Want参数，取值为[onCreate](#func-oncreatewant-launchparam)接收到的Want参数。
 
 **类型：** [Want](./cj-apis-app-ability-want.md#class-want)
 
@@ -603,7 +605,7 @@ class MyUIAbility <: UIAbility {
 public open func onBackground(): Unit
 ```
 
-**功能：** UIAbility生命周期回调，当应用从前台转到后台时触发。
+**功能：** 当应用从前台转入到后台时，系统触发该回调。开发者可在该回调中实现UI不可见时的资源释放操作，如停止定位功能等。
 
 **系统能力：** SystemCapability.Ability.AbilityRuntime.AbilityCore
 
@@ -628,7 +630,7 @@ class MyUIAbility <: UIAbility {
 public open func onCreate(want: Want, launchParam: LaunchParam): Unit
 ```
 
-**功能：** UIAbility创建时回调，执行初始化业务逻辑操作。
+**功能：** 当UIAbility实例创建完成时，系统会触发该回调，开发者可在该回调中执行初始化逻辑（如定义变量、加载资源等）。该回调仅会在UIAbility冷启动时触发。
 
 **系统能力：** SystemCapability.Ability.AbilityRuntime.AbilityCore
 
@@ -660,7 +662,12 @@ class MyUIAbility <: UIAbility {
 public open func onDestroy(): Unit
 ```
 
-**功能：** UIAbility销毁时回调，执行资源清理等操作。
+**功能：** 当UIAbility被销毁时，系统触发该回调。开发者可以在该生命周期中执行资源清理、数据保存等相关操作。
+
+> **说明：**
+>
+> - 该回调仅在UIAbility正常退出时触发，当UIAbility异常退出（例如低内存终止进程）时，该回调将不被触发。
+
 
 **系统能力：** SystemCapability.Ability.AbilityRuntime.AbilityCore
 
@@ -673,8 +680,7 @@ public open func onDestroy(): Unit
 import kit.AbilityKit.*
 
 class MyUIAbility <: UIAbility {
-    public override func onDestroy(): Unit {
-    }
+    public override func onDestroy(): Unit
 }
 ```
 
@@ -684,7 +690,7 @@ class MyUIAbility <: UIAbility {
 public open func onForeground(): Unit
 ```
 
-**功能：** UIAbility生命周期回调，当应用从后台转到前台时触发。
+**功能：** 当应用首次启动到前台或者从后台转入到前台时，系统触发该回调。开发者可在该回调中实现系统所需资源的申请，如应用转到前台时申请定位服务等。
 
 **系统能力：** SystemCapability.Ability.AbilityRuntime.AbilityCore
 
@@ -697,8 +703,7 @@ public open func onForeground(): Unit
 import kit.AbilityKit.*
 
 class MyUIAbility <: UIAbility {
-    public override func onForeground(): Unit {
-    }
+    public override func onForeground(): Unit
 }
 ```
 
@@ -708,7 +713,7 @@ class MyUIAbility <: UIAbility {
 public open func onNewWant(want: Want, launchParam: LaunchParam): Unit
 ```
 
-**功能：** UIAbility实例已经启动并在前台运行过，由于某些原因切换到后台，再次启动该UIAbility实例时会回调执行该方法。即UIAbility实例热启动时进入该生命周期回调。
+**功能：** 当已经启动的UIAbility实例再次被拉起时，系统会触发该回调。
 
 **系统能力：** SystemCapability.Ability.AbilityRuntime.AbilityCore
 
@@ -718,8 +723,8 @@ public open func onNewWant(want: Want, launchParam: LaunchParam): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|want|[Want](./cj-apis-app-ability-want.md#class-want)|是|-|当前UIAbility的Want类型信息，包括ability名称、bundle名称等。|
-|launchParam|[LaunchParam](./cj-apis-app-ability-ability_constant.md#class-launchparam)|是|-|Ability启动的原因、上次异常退出的原因信息。|
+|want|[Want](./cj-apis-app-ability-want.md#class-want)|是|-|调用方再次拉起该UIAbility时传递的数据。|
+|launchParam|[LaunchParam](./cj-apis-app-ability-ability_constant.md#class-launchparam)|是|-|UIAbility启动参数，包含启动原因等。|
 
 **示例：**
 
@@ -728,8 +733,7 @@ public open func onNewWant(want: Want, launchParam: LaunchParam): Unit
 import kit.AbilityKit.*
 
 class MyUIAbility <: UIAbility {
-    public override func onNewWant(want: Want, launchParam: LaunchParam): Unit {
-    }
+    public override func onNewWant(want: Want, launchParam: LaunchParam): Unit
 }
 ```
 
@@ -739,7 +743,7 @@ class MyUIAbility <: UIAbility {
 public open func onWindowStageCreate(windowStage: WindowStage): Unit
 ```
 
-**功能：** 当WindowStage创建后调用。
+**功能：** 当[WindowStage](../arkui-cj/cj-apis-window.md)实例创建完成后，系统会触发该回调。开发者可以在该回调中通过WindowStage加载页面。
 
 **系统能力：** SystemCapability.Ability.AbilityRuntime.AbilityCore
 
@@ -749,7 +753,7 @@ public open func onWindowStageCreate(windowStage: WindowStage): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|windowStage|WindowStage|是|-|WindowStage相关信息。|
+|windowStage|WindowStage|是|-|WindowStage实例对象。|
 
 **示例：**
 
@@ -758,8 +762,7 @@ public open func onWindowStageCreate(windowStage: WindowStage): Unit
 import kit.AbilityKit.*
 
 class MyUIAbility <: UIAbility {
-    public override func onWindowStageCreate(windowStage: WindowStage): Unit {
-    }
+    public override func onWindowStageCreate(windowStage: WindowStage): Unit
 }
 ```
 
@@ -769,7 +772,7 @@ class MyUIAbility <: UIAbility {
 public open func onWindowStageDestroy(): Unit
 ```
 
-**功能：** 当WindowStage销毁后调用。
+**功能：** 当WindowStage销毁后，系统触发该回调。该回调用于通知开发者WindowStage对象已被销毁，不能再继续使用。
 
 **系统能力：** SystemCapability.Ability.AbilityRuntime.AbilityCore
 
@@ -782,8 +785,7 @@ public open func onWindowStageDestroy(): Unit
 import kit.AbilityKit.*
 
 class MyUIAbility <: UIAbility {
-    public override func onWindowStageDestroy(): Unit {
-    }
+    public override func onWindowStageDestroy(): Unit
 }
 ```
 
@@ -793,7 +795,9 @@ class MyUIAbility <: UIAbility {
 public open class UIAbilityContext <: Context {}
 ```
 
-**功能：** 提供允许访问特定UIAbility的资源的能力。
+**功能：** UIAbilityContext是[UIAbility](#class-uiability)组件的上下文。
+
+每个UIAbility组件实例化时，系统都会自动创建对应的UIAbilityContext。开发者可以通过UIAbilityContext获取组件信息AbilityInfo、获取应用信息ApplicationInfo、拉起其他UIAbility、连接系统服务、销毁UIAbility等。
 
 **系统能力：** SystemCapability.Ability.AbilityRuntime.Core
 
@@ -809,7 +813,7 @@ public open class UIAbilityContext <: Context {}
 public func isTerminating(): Bool
 ```
 
-**功能：** 查询ability是否在terminating状态。
+**功能：** 查询UIAbility是否处于消亡中状态。
 
 **系统能力：** SystemCapability.Ability.AbilityRuntime.Core
 
@@ -819,7 +823,7 @@ public func isTerminating(): Bool
 
 |类型|说明|
 |:----|:----|
-|Bool|true：ability当前处于terminating状态；false：不处于terminating状态。|
+|Bool|表示是否处于消亡中状态。true表示处于消亡中状态，false表示不处于消亡中状态。|
 
 **异常：**
 
@@ -848,7 +852,7 @@ class MyUIAbility <: UIAbility {
 public func requestDialogService(want: Want, result: AsyncCallback<RequestResult>): Unit
 ```
 
-**功能：** 启动支持模式对话框的ServiceExtensionAbility，并使用回调返回结果。
+**功能：** 启动一个支持模态弹框的ServiceExtensionAbility。ServiceExtensionAbility被启动后，应用弹出模态弹框。使用callback异步回调。仅支持在主线程调用。
 
 **系统能力：** SystemCapability.Ability.AbilityRuntime.Core
 
@@ -858,8 +862,8 @@ public func requestDialogService(want: Want, result: AsyncCallback<RequestResult
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|want|[Want](./cj-apis-app-ability-want.md#class-want)|是|-|需要启动的目标ServiceExtensionAbility的want信息。|
-|result|[AsyncCallback](../arkinterop/cj-api-business_exception.md#type-asynccallback)\<[RequestResult](./cj-apis-app-ability-dialog_request.md#class-requestresult)>|是|-| 用于返回结果的回调。|
+|want|[Want](./cj-apis-app-ability-want.md#class-want)|是|-|启动ServiceExtensionAbility的Want信息。|
+|result|[AsyncCallback](../arkinterop/cj-api-business_exception.md#type-asynccallback)\<[RequestResult](./cj-apis-app-ability-dialog_request.md#class-requestresult)>|是|-| 回调函数，当启动一个支持模态弹框的ServiceExtensionAbility成功，err中code为0，data为模态弹框请求结果；否则err会返回对应的错误码和错误信息。|
 
 **异常：**
 
@@ -903,7 +907,7 @@ class MyUIAbility <: UIAbility {
 public func startAbility(want: Want, options!: ?StartOptions = None): Unit
 ```
 
-**功能：** 携带启动参数，启动Ability。
+**功能：** 启动一个UIAbility。仅支持在主线程调用。
 
 **系统能力：** SystemCapability.Ability.AbilityRuntime.Core
 
@@ -913,8 +917,8 @@ public func startAbility(want: Want, options!: ?StartOptions = None): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|want|[Want](./cj-apis-app-ability-want.md#class-want)|是|-|启动Ability的want信息。|
-|options|?[StartOptions](./cj-apis-app-ability-start_options.md#class-startoptions)|否|None|启动Ability所携带的参数。|
+|want|[Want](./cj-apis-app-ability-want.md#class-want)|是|-|启动UIAbility的必要信息。|
+|options|?[StartOptions](./cj-apis-app-ability-start_options.md#class-startoptions)|否|None|启动UIAbility所携带的参数。|
 
 **异常：**
 
@@ -972,7 +976,11 @@ class MyUIAbility <: UIAbility {
 public func startAbilityForResult(want: Want, callback: AsyncCallback<AbilityResult>): Unit
 ```
 
-**功能：** 启动Ability并在该Ability退出的时候返回执行结果（callback形式）。
+**功能：** 启动一个UIAbility，并通过回调函数接收被拉起的UIAbility退出时的返回结果。使用callback异步回调。仅支持在主线程调用。
+
+UIAbility被启动后，有如下情况：
+ - 正常情况下可以通过调用[terminateSelfWithResult](#func-terminateselfwithresultabilityresult)接口销毁自身，并将结果返回给调用方。	
+ - 异常情况下比如杀死UIAbility会将异常结果返回给调用方，异常结果中resultCode为-1。	
 
 **系统能力：** SystemCapability.Ability.AbilityRuntime.Core
 
@@ -982,7 +990,7 @@ public func startAbilityForResult(want: Want, callback: AsyncCallback<AbilityRes
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|want|[Want](./cj-apis-app-ability-want.md#class-want)|是|-|启动Ability的want信息。|
+|want|[Want](./cj-apis-app-ability-want.md#class-want)|是|-|启动Ability的必要信息。|
 |callback|[AsyncCallback](../arkinterop/cj-api-business_exception.md#type-asynccallback)\<[AbilityResult](./cj-apis-ability-ability_result.md#class-abilityresult)>|是|-| 执行结果回调函数。|
 
 **异常：**
@@ -1039,7 +1047,11 @@ class MyUIAbility <: UIAbility {
 public func startAbilityForResult(want: Want, options: StartOptions, callback: AsyncCallback<AbilityResult>): Unit
 ```
 
-**功能：** 启动Ability并在该Ability退出的时候返回执行结果（callback形式）。
+**功能：** 启动一个UIAbility，并通过回调函数接收被拉起的UIAbility退出时的返回结果。使用callback异步回调。仅支持在主线程调用。
+
+UIAbility被启动后，有如下情况：
+ - 正常情况下可以通过调用[terminateSelfWithResult](#func-terminateselfwithresultabilityresult)接口销毁自身，并将结果返回给调用方。	
+ - 异常情况下比如杀死UIAbility会将异常结果返回给调用方，异常结果中resultCode为-1。	
 
 **系统能力：** SystemCapability.Ability.AbilityRuntime.Core
 
@@ -1049,7 +1061,7 @@ public func startAbilityForResult(want: Want, options: StartOptions, callback: A
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|want|[Want](./cj-apis-app-ability-want.md#class-want)|是|-|启动Ability的want信息。|
+|want|[Want](./cj-apis-app-ability-want.md#class-want)|是|-|启动Ability的必要信息。|
 |options|StartOptions|是|-|启动Ability所携带的参数。|
 |callback|[AsyncCallback](../arkinterop/cj-api-business_exception.md#type-asynccallback)\<AbilityResult>|是|-|执行结果回调函数。|
 
@@ -1105,7 +1117,11 @@ class MyUIAbility <: UIAbility {
 public func terminateSelf(): Unit
 ```
 
-**功能：** 停止UIAbility自身。
+**功能：** 销毁UIAbility自身。仅支持在主线程调用。
+
+> **说明：**
+>
+> 调用该接口后，任务中心的任务默认不会清理。
 
 **系统能力：** SystemCapability.Ability.AbilityRuntime.Core
 
@@ -1140,7 +1156,13 @@ class MyUIAbility <: UIAbility {
 public func terminateSelfWithResult(parameter: AbilityResult): Unit
 ```
 
-**功能：** 停止UIAbility，配合startAbilityForResult使用，返回给接口调用方AbilityResult信息。
+**功能：** 销毁UIAbility自身。使用callback异步回调。仅支持在主线程调用。
+
+仅当UIAbility通过[startAbilityForResult](#func-startabilityforresultwant-asynccallbackabilityresult)接口拉起时，调用terminateSelfWithResult接口销毁UIAbility，才会返回结果给调用方。
+
+> **说明：**
+>
+> 调用该接口后，任务中心的任务默认不会清理，如需清理，需要配置
 
 **系统能力：** SystemCapability.Ability.AbilityRuntime.Core
 
@@ -1150,7 +1172,7 @@ public func terminateSelfWithResult(parameter: AbilityResult): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|parameter|[AbilityResult](./cj-apis-ability-ability_result.md#class-abilityresult)|是|-|停止Ability，配合startAbilityForResult使用，返回给接口调用方AbilityResult信息。|
+|parameter|[AbilityResult](./cj-apis-ability-ability_result.md#class-abilityresult)|是|-|返回给startAbilityForResult&nbsp;接口调用方的相关信息。|
 
 **异常：**
 

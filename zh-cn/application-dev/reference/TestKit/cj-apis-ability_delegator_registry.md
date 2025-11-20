@@ -130,7 +130,7 @@ public func doAbilityBackground(ability: UIAbility): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|ability|[UIAbility](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiability)|是|-|[UIAbility](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiability)对象。|
+|ability|[UIAbility](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiability)|是|-|指定[UIAbility](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiability)对象。|
 
 **异常：**
 
@@ -171,7 +171,7 @@ public func doAbilityForeground(ability: UIAbility): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|ability|[UIAbility](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiability)|是|-|[UIAbility](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiability)对象。|
+|ability|[UIAbility](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiability)|是|-|指定[UIAbility](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiability)对象。|
 
 **异常：**
 
@@ -202,7 +202,7 @@ delegator.doAbilityForeground(ability)
 public func executeShellCommand(cmd: String, timeoutSecs!: Int64 = 0): ShellCmdResult
 ```
 
-**功能：** 执行指定的Shell命令。
+**功能：** 指定超时时间，并执行指定的shell命令。
 
 **系统能力：** SystemCapability.Ability.AbilityRuntime.Core
 
@@ -422,7 +422,7 @@ delegator.print(msg)
 public func removeAbilityMonitor(monitor: AbilityMonitor): Unit
 ```
 
-**功能：** 删除已经添加的[AbilityMonitor](#class-abilitymonitor)对象。
+**功能：** 删除已经添加的[AbilityMonitor](#class-abilitymonitor)实例。
 
 **系统能力：** SystemCapability.Ability.AbilityRuntime.Core
 
@@ -466,7 +466,7 @@ delegator.removeAbilityMonitor(monitor)
 public func removeAbilityStageMonitor(monitor: AbilityStageMonitor): Unit
 ```
 
-**功能：** 删除已经添加的[AbilityStageMonitor](#class-abilitystagemonitor)对象。
+**功能：** 从应用程序内存中删除指定的AbilityStageMonitor对象。
 
 **系统能力：** SystemCapability.Ability.AbilityRuntime.Core
 
@@ -573,7 +573,7 @@ public func waitAbilityMonitor(monitor: AbilityMonitor, timeout!: Int64 = 5000):
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |monitor|[AbilityMonitor](#class-abilitymonitor)|是|-|[AbilityMonitor](#class-abilitymonitor)实例。|
-|timeout|Int64|否|5000|最大等待时间，单位毫秒（ms）。|
+|timeout|Int64|否|5000|最大等待时间，单位毫秒（ms），默认值为5000毫秒。   |
 
 **返回值：**
 
@@ -615,7 +615,7 @@ spawn {
 public func waitAbilityStageMonitor(monitor: AbilityStageMonitor, timeout!: Int64 = 5000): AbilityStage
 ```
 
-**功能：** 等待并返回与给定[AbilityStageMonitor](#class-abilitystagemonitor)中设置的条件匹配的[AbilityStage](../AbilityKit/cj-apis-app-ability-ability_stage.md#class-abilitystage)对象。
+**功能：** 在指定的超时最大等待时间内，等待并返回与给定[AbilityStageMonitor](#class-abilitystagemonitor)中设置的条件匹配的[AbilityStage](../AbilityKit/cj-apis-app-ability-ability_stage.md#class-abilitystage)对象。
 
 **系统能力：** SystemCapability.Ability.AbilityRuntime.Core
 
@@ -626,7 +626,7 @@ public func waitAbilityStageMonitor(monitor: AbilityStageMonitor, timeout!: Int6
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |monitor|[AbilityStageMonitor](#class-abilitystagemonitor)|是|-|[AbilityStageMonitor](#class-abilitystagemonitor)实例。|
-|timeout|Int64|否|5000|超时最大等待时间，以毫秒（ms）为单位。|
+|timeout|Int64|否|5000|超时最大等待时间，单位毫秒（ms），默认值为5000毫秒。|
 
 **返回值：**
 
@@ -852,7 +852,7 @@ public class AbilityMonitor {
 public var abilityName: String
 ```
 
-**功能：** 当前[AbilityMonitor](#class-abilitymonitor)绑定的ability名称。
+**功能：** 被监听的UIAbility对象名称。
 
 **类型：** String
 
@@ -868,7 +868,7 @@ public var abilityName: String
 public var moduleName: String
 ```
 
-**功能：** 当前[AbilityMonitor](#class-abilitymonitor)绑定的模块名称。
+**功能：** 被监听的UIAbility对象所属模块名称。
 
 **类型：** String
 
@@ -884,7 +884,7 @@ public var moduleName: String
 public var onAbilityBackground:?(UIAbility) -> Unit
 ```
 
-**功能：** ability状态变成后台时的回调函数。不设置该属性则不能收到该生命周期回调。
+**功能：** UIAbility对象状态变成后台时，触发该回调函数。
 
 **类型：** ?([UIAbility](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiability))->Unit
 
@@ -900,7 +900,7 @@ public var onAbilityBackground:?(UIAbility) -> Unit
 public var onAbilityCreate:?(UIAbility) -> Unit
 ```
 
-**功能：** ability被启动初始化时的回调函数。不设置该属性则不能收到该生命周期回调。
+**功能：** UIAbility对象被创建时，触发该回调函数。
 
 **类型：** ?([UIAbility](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiability))->Unit
 
@@ -916,7 +916,7 @@ public var onAbilityCreate:?(UIAbility) -> Unit
 public var onAbilityDestroy:?(UIAbility) -> Unit
 ```
 
-**功能：** ability被销毁前的回调函数。不设置该属性则不能收到该生命周期回调。
+**功能：** UIAbility对象被销毁前，触发该回调函数。
 
 **类型：** ?([UIAbility](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiability))->Unit
 
@@ -932,7 +932,7 @@ public var onAbilityDestroy:?(UIAbility) -> Unit
 public var onAbilityForeground:?(UIAbility) -> Unit
 ```
 
-**功能：** ability状态变成前台时的回调函数。不设置该属性则不能收到该生命周期回调。
+**功能：** UIAbility对象状态变成前台时，触发该回调函数。
 
 **类型：** ?([UIAbility](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiability))->Unit
 
@@ -948,7 +948,7 @@ public var onAbilityForeground:?(UIAbility) -> Unit
 public var onWindowStageCreate:?(UIAbility) -> Unit
 ```
 
-**功能：** window stage被创建时的回调函数。不设置该属性则不能收到该生命周期回调。
+**功能：** 当WindowStage实例被创建时，触发该回调函数。
 
 **类型：** ?([UIAbility](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiability))->Unit
 
@@ -964,7 +964,7 @@ public var onWindowStageCreate:?(UIAbility) -> Unit
 public var onWindowStageDestroy:?(UIAbility) -> Unit
 ```
 
-**功能：** window stage被销毁前的回调函数。不设置该属性则不能收到该生命周期回调。
+**功能：** 当WindowStage被销毁前，触发该回调函数。
 
 **类型：** ?([UIAbility](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiability))->Unit
 
@@ -980,7 +980,7 @@ public var onWindowStageDestroy:?(UIAbility) -> Unit
 public var onWindowStageRestore:?(UIAbility) -> Unit
 ```
 
-**功能：** window stage被重载时的回调函数。不设置该属性则不能收到该生命周期回调。
+**功能：** 当UIAbility跨端迁移时，目标端UIAbility恢复页面栈时，触发该回调函数。
 
 **类型：** ?([UIAbility](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiability))->Unit
 
@@ -1016,15 +1016,15 @@ public init(
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|abilityName|String|是|-|当前[AbilityMonitor](#class-abilitymonitor)绑定的ability名称。|
-|moduleName|String|否|""| **命名参数。** 当前[AbilityMonitor](#class-abilitymonitor)绑定的模块名称。|
-|onAbilityCreate|?([UIAbility](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiability)) -> Unit|否|None| **命名参数。** ability被启动初始化时的回调函数。None即不设置该属性，则不能收到该生命周期回调。|
-|onAbilityForeground|?([UIAbility](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiability)) -> Unit|否|None| **命名参数。** ability状态变成前台时的回调函数。None即不设置该属性，则不能收到该生命周期回调。|
-|onAbilityBackground|?([UIAbility](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiability)) -> Unit|否|None| **命名参数。** ability状态变成后台时的回调函数。None即不设置该属性，则不能收到该生命周期回调。|
-|onAbilityDestroy|?([UIAbility](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiability)) -> Unit|否|None| **命名参数。** ability被销毁前的回调函数。None即不设置该属性，则不能收到该生命周期回调。|
-|onWindowStageCreate|?([UIAbility](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiability)) -> Unit|否|None| **命名参数。** windowStage被创建时的回调函数。None即不设置该属性，则不能收到该生命周期回调。|
-|onWindowStageRestore|?([UIAbility](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiability)) -> Unit|否|None| **命名参数。** windowStage被重载时的回调函数。None即不设置该属性，则不能收到该生命周期回调。|
-|onWindowStageDestroy|?([UIAbility](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiability)) -> Unit|否|None| **命名参数。** windowStage销毁前调用的回调函数。None即不设置该属性，则不能收到该生命周期回调。|
+|abilityName|String|是|-|被监听的UIAbility对象名称。|
+|moduleName|String|否|""| **命名参数。** 被监听的UIAbility对象所属模块名称。|
+|onAbilityCreate|?([UIAbility](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiability)) -> Unit|否|None| **命名参数。** UIAbility对象被创建时，触发该回调函数。|
+|onAbilityForeground|?([UIAbility](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiability)) -> Unit|否|None| **命名参数。** UIAbility对象状态变成前台时，触发该回调函数。|
+|onAbilityBackground|?([UIAbility](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiability)) -> Unit|否|None| **命名参数。** UIAbility对象状态变成后台时，触发该回调函数。|
+|onAbilityDestroy|?([UIAbility](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiability)) -> Unit|否|None| **命名参数。** UIAbility对象被销毁前，触发该回调函数。|
+|onWindowStageCreate|?([UIAbility](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiability)) -> Unit|否|None| **命名参数。** 当WindowStage实例被创建时，触发该回调函数。|
+|onWindowStageRestore|?([UIAbility](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiability)) -> Unit|否|None| **命名参数。** 当UIAbility跨端迁移时，目标端UIAbility恢复页面栈时，触发该回调函数。|
+|onWindowStageDestroy|?([UIAbility](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiability)) -> Unit|否|None| **命名参数。**当WindowStage被销毁前，触发该回调函数。|
 
 **示例：**
 
@@ -1152,7 +1152,7 @@ public class ShellCmdResult {}
 public mut prop exitCode: Int32
 ```
 
-**功能：** 结果码。
+**功能：** Shell命令的结果码。
 
 **类型：** Int32
 
@@ -1168,7 +1168,7 @@ public mut prop exitCode: Int32
 public mut prop stdResult: String
 ```
 
-**功能：** 标准输出内容。
+**功能：** Shell命令的标准输出内容。
 
 **类型：** String
 

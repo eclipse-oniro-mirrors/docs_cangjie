@@ -31,7 +31,7 @@ public class Configuration {
 }
 ```
 
-**功能：** 表示当前设备的配置。
+**功能：** 表示当前设备的状态。
 
 **系统能力：** SystemCapability.Global.ResourceManager
 
@@ -198,7 +198,7 @@ public var screenDensity: ScreenDensity
 public class ResourceManager {}
 ```
 
-**功能：** 提供访问应用资源的能力。
+**功能：** 提供访问应用资源和系统资源的能力。
 
 **系统能力：** SystemCapability.Global.ResourceManager
 
@@ -210,7 +210,11 @@ public class ResourceManager {}
 public func addResource(path: String): Unit
 ```
 
-**功能：** 应用运行时，加载指定的资源路径，实现资源覆盖。
+**功能：** 应用运行时加载指定的资源路径，实现资源覆盖。
+
+> **说明**
+>
+> rawfile和resfile目录不支持资源覆盖。
 
 **系统能力：** SystemCapability.Global.ResourceManager
 
@@ -256,7 +260,7 @@ try {
 public func closeRawFd(path: String): Unit
 ```
 
-**功能：** 关闭resources/rawfile目录下rawfile文件。
+**功能：** 关闭resources/rawfile目录下rawfile文件所在HAP的文件描述符（fd）+。
 
 **系统能力：** SystemCapability.Global.ResourceManager
 
@@ -301,7 +305,7 @@ try {
 public func getBoolean(resId: UInt32): Bool
 ```
 
-**功能：** 获取资源ID对应的布尔结果。
+**功能：** 获取指定资源ID值对应的布尔值。
 
 **系统能力：** SystemCapability.Global.ResourceManager
 
@@ -311,13 +315,13 @@ public func getBoolean(resId: UInt32): Bool
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|resId|UInt32|是|-|资源ID。|
+|resId|UInt32|是|-|资源ID值。|
 
 **返回值：**
 
 |类型|说明|
 |:----|:----|
-|Bool|资源对象对应的布尔结果。|
+|Bool|资源ID值对应的布尔值。|
 
 **异常：**
 
@@ -356,7 +360,7 @@ try {
 public func getBoolean(resource: AppResource): Bool
 ```
 
-**功能：** 获取资源对象对应的布尔结果。此接口用于多工程应用内跨包访问。
+**功能：** 获取指定resource对象对应的布尔值，。
 
 **系统能力：** SystemCapability.Global.ResourceManager
 
@@ -366,13 +370,13 @@ public func getBoolean(resource: AppResource): Bool
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|resource|[AppResource](../LocalizationKit/cj-apis-resource.md#class-appresource)|是|-|资源对象。|
+|resource|[AppResource](../LocalizationKit/cj-apis-resource.md#class-appresource)|是|-|资源信息。|
 
 **返回值：**
 
 |类型|说明|
 |:----|:----|
-|Bool|资源对象对应的布尔结果。|
+|Bool|resource对象对应的布尔值。|
 
 **异常：**
 
@@ -412,7 +416,7 @@ try {
 public func getBooleanByName(resName: String): Bool
 ```
 
-**功能：** 获取资源名对应的布尔结果。
+**功能：** 获取指定资源名称对应的布尔值。
 
 **系统能力：** SystemCapability.Global.ResourceManager
 
@@ -422,13 +426,13 @@ public func getBooleanByName(resName: String): Bool
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|resName|String|是|-|资源名。|
+|resName|String|是|-|资源名称。|
 
 **返回值：**
 
 |类型|说明|
 |:----|:----|
-|Bool|资源名对应的布尔结果。|
+|Bool|资源名称对应的布尔值。|
 
 **异常：**
 
@@ -465,7 +469,7 @@ try {
 public func getColor(resource: AppResource): UInt32
 ```
 
-**功能：** 获取资源对象对应颜色资源的值。此接口用于多工程应用内跨包访问。
+**功能：** 获取指定resource对象对应的颜色值。
 
 **系统能力：** SystemCapability.Global.ResourceManager
 
@@ -475,13 +479,13 @@ public func getColor(resource: AppResource): UInt32
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|resource|[AppResource](../LocalizationKit/cj-apis-resource.md#class-appresource)|是|-|资源对象。|
+|resource|[AppResource](../LocalizationKit/cj-apis-resource.md#class-appresource)|是|-|资源信息。|
 
 **返回值：**
 
 |类型|说明|
 |:----|:----|
-|UInt32|资源对象对应颜色资源的值（十进制）。|
+|UInt32|resource对象对应的颜色值（十进制）。|
 
 **异常：**
 
@@ -521,7 +525,7 @@ try {
 public func getColor(resId: UInt32): UInt32
 ```
 
-**功能：** 获取资源ID对应颜色资源的值。
+**功能：** 获取指定资源ID对应的颜色值。
 
 **系统能力：** SystemCapability.Global.ResourceManager
 
@@ -531,13 +535,13 @@ public func getColor(resId: UInt32): UInt32
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|resId|UInt32|是|-|资源ID。|
+|resId|UInt32|是|-|资源ID值。|
 
 **返回值：**
 
 |类型|说明|
 |:----|:----|
-|UInt32|资源对象对应颜色资源的值（十进制）。|
+|UInt32|返回资源ID值对应的颜色值（十进制）。|
 
 **异常：**
 
@@ -576,7 +580,7 @@ try {
 public func getColorByName(resName: String): UInt32
 ```
 
-**功能：** 获取资源名对应颜色资源的值。
+**功能：** 获取指定资源名称对应的颜色值。
 
 **系统能力：** SystemCapability.Global.ResourceManager
 
@@ -586,13 +590,13 @@ public func getColorByName(resName: String): UInt32
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|resName|String|是|-|资源名。|
+|resName|String|是|-|资源名称。|
 
 **返回值：**
 
 |类型|说明|
 |:----|:----|
-|UInt32|资源名对应颜色资源的值（十进制）。|
+|UInt32|返回资源名称对应的颜色值（十进制）。|
 
 **异常：**
 
@@ -629,7 +633,7 @@ try {
 public func getConfiguration(): Configuration
 ```
 
-**功能：** 获取设备的配置信息，返回[Configuration](#class-configuration)对象。
+**功能：** 获取设备的Configuration。
 
 **系统能力：** SystemCapability.Global.ResourceManager
 
@@ -639,7 +643,7 @@ public func getConfiguration(): Configuration
 
 |类型|说明|
 |:----|:----|
-|[Configuration](#class-configuration)|设备的配置信息。|
+|[Configuration](#class-configuration)|设备的Configuration。|
 
 **示例：**
 
@@ -668,7 +672,7 @@ try {
 public func getDeviceCapability(): DeviceCapability
 ```
 
-**功能：** 获取设备的设备能力，返回[DeviceCapability](#class-devicecapability)对象。
+**功能：** 获取设备的DeviceCapability。
 
 **系统能力：** SystemCapability.Global.ResourceManager
 
@@ -678,7 +682,7 @@ public func getDeviceCapability(): DeviceCapability
 
 |类型|说明|
 |:----|:----|
-|[DeviceCapability](#class-devicecapability)|设备能力。|
+|[DeviceCapability](#class-devicecapability)|设备的DeviceCapability。|
 
 **示例：**
 
@@ -716,13 +720,13 @@ public func getLocales(includeSystem!: Bool = false): Array<String>
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|includeSystem|Bool|否|false| **命名参数。** 是否包含系统资源，默认值为false。 <br> false：表示仅获取应用资源的语言列表。 <br>true：表示获取系统资源和应用资源的语言列表。 <br>当系统资源管理对象获取语言列表时，includeSystem值无效，返回获取系统资源语言列表。|
+|includeSystem|Bool|否|false| **命名参数。** 是否包含系统资源，默认值为false。 <br> - false：表示仅获取应用资源的语言列表。 <br> - true：表示获取系统资源和应用资源的语言列表。 <br>当使用系统资源管理对象获取语言列表时，includeSystem值无效，始终返回系统资源语言列表|
 
 **返回值：**
 
 |类型|说明|
 |:----|:----|
-|Array\<String>|返回获取的语言列表，列表中的字符串由语言、脚本（可选）、地区（可选），按照顺序使用中划线"-"连接组成。|
+|Array\<String>|返回获取的语言列表，列表中的字符串由语言、脚本（可选）、地区（可选），按照顺序使用中划线“-”连接组成|
 
 **示例：**
 
@@ -749,7 +753,7 @@ try {
 public func getMediaBase64ByName(resName: String, density!: ?ScreenDensity = None): String
 ```
 
-**功能：** 获取资源名对应指定屏幕密度的图片资源，返回图片资源的Base64编码。
+**功能：** 获取指定资源名称对应的默认或指定的屏幕密度图片资源Base64编码。
 
 **系统能力：** SystemCapability.Global.ResourceManager
 
@@ -766,7 +770,7 @@ public func getMediaBase64ByName(resName: String, density!: ?ScreenDensity = Non
 
 |类型|说明|
 |:----|:----|
-|String|资源名对应图片资源的Base64编码。|
+|String|资源名称对应的图片资源Base64编码。|
 
 **异常：**
 
@@ -802,7 +806,7 @@ try {
 public func getMediaByName(resName: String, density!: ?ScreenDensity = None): Array<UInt8>
 ```
 
-**功能：** 获取资源名对应指定屏幕密度的媒体文件内容。
+**功能：** 获取指定资源名称对应的默认或指定的屏幕密度媒体文件内容。
 
 **系统能力：** SystemCapability.Global.ResourceManager
 
@@ -812,14 +816,14 @@ public func getMediaByName(resName: String, density!: ?ScreenDensity = None): Ar
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|resName|String|是|-|资源名。|
-|density|?[ScreenDensity](#enum-screendensity)|否|None|资源获取需要的屏幕密度，0表示默认屏幕密度。|
+|resName|String|是|-|资源名称。|
+|density|?[ScreenDensity](#enum-screendensity)|否|None|资源获取需要的屏幕密度，0或缺省表示默认屏幕密度。|
 
 **返回值：**
 
 |类型|说明|
 |:----|:----|
-|Array\<UInt8>|资源名对应的媒体资源。|
+|Array\<UInt8>|资源名称对应的媒体文件内容。|
 
 **异常：**
 
@@ -855,7 +859,7 @@ try {
 public func getMediaContent(resId: UInt32, density!: ?ScreenDensity = None): Array<UInt8>
 ```
 
-**功能：** 获取资源ID对应指定屏幕密度的媒体文件内容。
+**功能：** 获取指定资源ID对应的默认或指定的屏幕密度媒体文件内容。
 
 **系统能力：** SystemCapability.Global.ResourceManager
 
@@ -865,14 +869,14 @@ public func getMediaContent(resId: UInt32, density!: ?ScreenDensity = None): Arr
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|resId|UInt32|是|-|资源ID。|
-|density|?[ScreenDensity](#enum-screendensity)|否|None|资源获取需要的屏幕密度，0表示默认屏幕密度。|
+|resId|UInt32|是|-|资源ID值。|
+|density|?[ScreenDensity](#enum-screendensity)|否|None|资源获取需要的屏幕密度，0或缺省表示默认屏幕密度。|
 
 **返回值：**
 
 |类型|说明|
 |:----|:----|
-|Array\<UInt8>|资源ID对应的媒体资源。|
+|Array\<UInt8>|资源ID对应的媒体文件内容。|
 
 **异常：**
 
@@ -910,7 +914,7 @@ try {
 public func getMediaContent(resource: AppResource, density!: ?ScreenDensity = None): Array<UInt8>
 ```
 
-**功能：** 获取资源对象对应指定的屏幕密度媒体文件内容。此接口用于多工程应用内跨包访问源。
+**功能：** 获取指定resource对象对应的默认或指定的屏幕密度媒体文件内容。
 
 **系统能力：** SystemCapability.Global.ResourceManager
 
@@ -920,14 +924,14 @@ public func getMediaContent(resource: AppResource, density!: ?ScreenDensity = No
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|resource|[AppResource](../LocalizationKit/cj-apis-resource.md#class-appresource)|是|-|资源对象。|
-|density|?[ScreenDensity](#enum-screendensity)|否|None|资源获取需要的屏幕密度，0表示默认屏幕密度。|
+|resource|[AppResource](../LocalizationKit/cj-apis-resource.md#class-appresource)|是|-|资源信息。|
+|density|?[ScreenDensity](#enum-screendensity)|否|None|资源获取需要的屏幕密度，0或缺省表示默认屏幕密度。|
 
 **返回值：**
 
 |类型|说明|
 |:----|:----|
-|Array\<UInt8>|资源对象对应的媒体资源。|
+|Array\<UInt8>|resource对象对应的媒体文件内容。|
 
 **异常：**
 
@@ -966,7 +970,7 @@ try {
 public func getMediaContentBase64(resId: UInt32, density!: ?ScreenDensity = None): String
 ```
 
-**功能：** 获取资源ID对应指定屏幕密度的图片资源，返回图片资源的Base64编码。
+**功能：** 获取指定资源ID对应的默认或指定的屏幕密度图片资源Base64编码。
 
 **系统能力：** SystemCapability.Global.ResourceManager
 
@@ -976,14 +980,14 @@ public func getMediaContentBase64(resId: UInt32, density!: ?ScreenDensity = None
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|resId|UInt32|是|-|资源ID。|
+|resId|UInt32|是|-|资源ID值。|
 |density|?[ScreenDensity](#enum-screendensity)|否|None| **命名参数。** 资源获取需要的屏幕密度，0或缺省表示默认屏幕密度。|
 
 **返回值：**
 
 |类型|说明|
 |:----|:----|
-|String|资源ID对应图片资源的Base64编码。|
+|String|资源ID对应的图片资源Base64编码。|
 
 **异常：**
 
@@ -1021,7 +1025,7 @@ try {
 public func getMediaContentBase64(resource: AppResource, density!: ?ScreenDensity = None): String
 ```
 
-**功能：** 获取资源对象对应指定屏幕密度的图片资源，返回图片资源的Base64编码。此接口用于多工程应用内跨包访问。
+**功能：** 获取指定resource对象对应的默认或指定的屏幕密度图片资源Base64编码。
 
 **系统能力：** SystemCapability.Global.ResourceManager
 
@@ -1031,14 +1035,14 @@ public func getMediaContentBase64(resource: AppResource, density!: ?ScreenDensit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|resource|[AppResource](../LocalizationKit/cj-apis-resource.md#class-appresource)|是|-|资源对象。|
+|resource|[AppResource](../LocalizationKit/cj-apis-resource.md#class-appresource)|是|-|资源信息。|
 |density|?[ScreenDensity](#enum-screendensity)|否|None| **命名参数。** 资源获取需要的屏幕密度，0或缺省表示默认屏幕密度。|
 
 **返回值：**
 
 |类型|说明|
 |:----|:----|
-|String|资源对象对应图片资源的Base64编码。|
+|String|resource对象对应的图片资源Base64编码。|
 
 **异常：**
 
@@ -1077,7 +1081,7 @@ try {
 public func getNumber(resId: UInt32): NumberValueType
 ```
 
-**功能：** 获取资源ID对应的数字资源。
+**功能：** 获取指定资源ID对应的integer数值或者float数值。
 
 **系统能力：** SystemCapability.Global.ResourceManager
 
@@ -1093,7 +1097,7 @@ public func getNumber(resId: UInt32): NumberValueType
 
 |类型|说明|
 |:----|:----|
-|[NumberValueType](#enum-numbervaluetype)|资源对象对应的数字资源。|
+|[NumberValueType](#enum-numbervaluetype)|资源ID值对应的数值。<br>integer对应的是原数值，float不带单位时对应的是原数值，带"vp","fp"单位时对应的是px值，具体参考示例代码。|
 
 **异常：**
 
@@ -1138,7 +1142,7 @@ try {
 public func getNumber(resource: AppResource): NumberValueType
 ```
 
-**功能：** 获取资源对象的数字资源。此接口用于多工程应用内跨包访问。
+**功能：** 获取指定resource对象对应的integer数值或者float数值。
 
 **系统能力：** SystemCapability.Global.ResourceManager
 
@@ -1148,13 +1152,13 @@ public func getNumber(resource: AppResource): NumberValueType
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|resource|[AppResource](../LocalizationKit/cj-apis-resource.md#class-appresource)|是|-|资源对象。|
+|resource|[AppResource](../LocalizationKit/cj-apis-resource.md#class-appresource)|是|-|资源信息。|
 
 **返回值：**
 
 |类型|说明|
 |:----|:----|
-|[NumberValueType](#enum-numbervaluetype)|资源对象对应的数字资源。|
+|[NumberValueType](#enum-numbervaluetype)|resource对象对应的数值。<br>integer对应的是原数值，float不带单位时对应的是原数值，带"vp","fp"单位时对应的是px值。|
 
 **异常：**
 
@@ -1200,7 +1204,7 @@ try {
 public func getNumberByName(resName: String): NumberValueType
 ```
 
-**功能：** 获取资源名的数字资源。若integer资源和float资源中有相同的`resName`，优先返回integer资源的数值。
+**功能：** 获取指定资源名称对应的integer数值或者float数值。
 
 **系统能力：** SystemCapability.Global.ResourceManager
 
@@ -1210,13 +1214,13 @@ public func getNumberByName(resName: String): NumberValueType
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|resName|String|是|-|资源名。|
+|resName|String|是|-|资源名称。|
 
 **返回值：**
 
 |类型|说明|
 |:----|:----|
-|[NumberValueType](#enum-numbervaluetype)|资源名对应的数字资源。|
+|[NumberValueType](#enum-numbervaluetype)|资源名称对应的数值。<br>integer对应的是原数值，float不带单位时对应的是原数值，带"vp","fp"单位时对应的是px值。|
 
 **异常：**
 
@@ -1260,7 +1264,11 @@ try {
 public func getPluralStringByName(resName: String, num: Int64): String
 ```
 
-**功能：** 获取资源名的单复数字符串资源，并根据指定数量格式化字符串。
+**功能：** 获取指定资源名称，指定资源数量的单复数字符串，使用同步方式返回。
+
+> **说明**
+>
+> 中文环境下，字符串不区分单复数；其他语言环境下，字符串区分单复数，具体规则参考[语言单复数规则](https://www.unicode.org/cldr/charts/45/supplemental/language_plural_rules.html)。
 
 **系统能力：** SystemCapability.Global.ResourceManager
 
@@ -1270,14 +1278,14 @@ public func getPluralStringByName(resName: String, num: Int64): String
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|resName|String|是|-|资源名。|
-|num|Int64|是|-|数量值。|
+|resName|String|是|-|资源名称。|
+|num|Int64|是|-|数量值。根据当前语言的复数规则获取该数量值对应的字符串数字，语言的复数规则参见[语言单复数规则](https://www.unicode.org/cldr/charts/45/supplemental/language_plural_rules.html)。|
 
 **返回值：**
 
 |类型|说明|
 |:----|:----|
-|String|指定资源名的单复数字符串资源。|
+|String|根据指定数量获取指定资源名称表示的单复数字符串。|
 
 **异常：**
 
@@ -1314,7 +1322,11 @@ try {
 public func getPluralStringValue(resId: UInt32, num: Int64): String
 ```
 
-**功能：** 获取资源ID的单复数字符串资源，并根据指定数量格式化字符串。
+**功能：** 获取指定资源ID，指定资源数量的单复数字符串。
+
+> **说明**
+>
+> 中文环境下，字符串不区分单复数；其他语言环境下，字符串区分单复数，具体规则参考[语言单复数规则](https://www.unicode.org/cldr/charts/45/supplemental/language_plural_rules.html)。
 
 **系统能力：** SystemCapability.Global.ResourceManager
 
@@ -1324,14 +1336,14 @@ public func getPluralStringValue(resId: UInt32, num: Int64): String
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|resId|UInt32|是|-|资源ID。|
-|num|Int64|是|-|数量值。|
+|resId|UInt32|是|-|资源ID值。|
+|num|Int64|是|-|数量值。根据当前语言的复数规则获取该数量值对应的字符串数字，语言的复数规则参见[语言单复数规则](https://www.unicode.org/cldr/charts/45/supplemental/language_plural_rules.html)。|
 
 **返回值：**
 
 |类型|说明|
 |:----|:----|
-|String|指定资源对象的单复数字符串资源。|
+|String|根据指定数量获取指定ID字符串表示的单复数字符串。|
 
 **异常：**
 
@@ -1370,7 +1382,11 @@ try {
 public func getPluralStringValue(resource: AppResource, num: Int64): String
 ```
 
-**功能：** 获取资源对象的单复数字符串资源，并根据指定数量格式化字符串。此接口用于多工程应用内跨包访问。
+**功能：** 获取指定资源信息，指定资源数量的单复数字符串。
+
+> **说明**
+>
+> 中文环境下，字符串不区分单复数；其他语言环境下，字符串区分单复数，具体规则参考[语言单复数规则](https://www.unicode.org/cldr/charts/45/supplemental/language_plural_rules.html)。
 
 **系统能力：** SystemCapability.Global.ResourceManager
 
@@ -1380,14 +1396,14 @@ public func getPluralStringValue(resource: AppResource, num: Int64): String
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|resource|[AppResource](../LocalizationKit/cj-apis-resource.md#class-appresource)|是|-|资源对象。|
-|num|Int64|是|-|数量值。|
+|resource|[AppResource](../LocalizationKit/cj-apis-resource.md#class-appresource)|是|-|资源信息。|
+|num|Int64|是|-|数量值。根据当前语言的复数规则获取该数量值对应的字符串数字，语言的复数规则参见[语言单复数规则](https://www.unicode.org/cldr/charts/45/supplemental/language_plural_rules.html)。|
 
 **返回值：**
 
 |类型|说明|
 |:----|:----|
-|String|指定资源对象的单复数字符串资源。|
+|String|根据指定数量获取指定resource对象表示的单复数字符串。|
 
 **异常：**
 
@@ -1427,7 +1443,11 @@ try {
 public func getRawFd(path: String): RawFileDescriptor
 ```
 
-**功能：** 获取resources/rawfile目录下对应rawfile文件的descriptor。
+**功能：** 获取resources/rawfile目录下rawfile文件所在HAP的文件描述符（fd）。
+
+> **说明**
+>
+> 文件描述符（fd）使用完毕后需调用[closeRawFd](#func-closerawfdstring)关闭fd，避免资源泄露。
 
 **系统能力：** SystemCapability.Global.ResourceManager
 
@@ -1443,7 +1463,7 @@ public func getRawFd(path: String): RawFileDescriptor
 
 |类型|说明|
 |:----|:----|
-|[RawFileDescriptor](./cj-apis-raw_file_descriptor.md#class-rawfiledescriptor)|rawfile文件的descriptor。|
+|[RawFileDescriptor](./cj-apis-raw_file_descriptor.md#class-rawfiledescriptor)|rawfile文件所在HAP的文件描述符（fd）。|
 
 **异常：**
 
@@ -1480,7 +1500,7 @@ try {
 public func getRawFileContent(path: String): Array<UInt8>
 ```
 
-**功能：** 获取resources/rawfile目录下对应的rawfile文件内容，返回字节数组。
+**功能：** 获取resources/rawfile目录下对应的rawfile文件内容。
 
 **系统能力：** SystemCapability.Global.ResourceManager
 
@@ -1496,7 +1516,7 @@ public func getRawFileContent(path: String): Array<UInt8>
 
 |类型|说明|
 |:----|:----|
-|Array\<UInt8>|rawfile文件的内容。|
+|Array\<UInt8>|返回获取的rawfile文件内容。|
 
 **异常：**
 
@@ -1531,7 +1551,11 @@ try {
 public func getRawFileList(path: String): Array<String>
 ```
 
-**功能：** 获取resources/rawfile目录下文件夹及文件列表，返回文件列表的字符串数组。
+**功能：** 获取resources/rawfile目录下文件夹及文件列表。
+
+>**说明**
+>
+> 若文件夹中无文件，则抛出异常；若文件夹中有文件，则返回文件夹及文件列表。
 
 **系统能力：** SystemCapability.Global.ResourceManager
 
@@ -1547,7 +1571,7 @@ public func getRawFileList(path: String): Array<String>
 
 |类型|说明|
 |:----|:----|
-|Array\<String>|rawfile文件夹下的列表（包含子文件夹和文件）。|
+|Array\<String>|rawfile文件目录下的文件夹及文件列表。|
 
 **异常：**
 
@@ -1582,7 +1606,7 @@ try {
 public func getString(resId: UInt32, args: Array<ArgsValueType>): String
 ```
 
-**功能：** 获取资源ID对应的字符串资源，并根据args参数进行格式化。
+**功能：** 获取指定资源ID对应的字符串，并根据args参数对字符串进行格式化。
 
 **系统能力：** SystemCapability.Global.ResourceManager
 
@@ -1592,14 +1616,14 @@ public func getString(resId: UInt32, args: Array<ArgsValueType>): String
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|resId|UInt32|是|-|资源对象。|
-|args|Array\<[ArgsValueType](#enum-argsvaluetype)>|是|-|格式化字符串资源参数。 <br>支持参数类型：<br /> %d、%f、%s、%%。 <br>说明：%%转译符，转译%。<br>举例：%%d格式化后为%d字符串。|
+|resId|UInt32|是|-|资源ID值。|
+|args|Array\<[ArgsValueType](#enum-argsvaluetype)>|是|-|格式化字符串资源参数。<br>支持参数类型：`%d`、`%f`、`%s`、`%%`、`%数字$d`、`%数字$f`、`%数字$s`。<br>说明：`%%`转义为`%`; `%数字$d`中的数字表示使用args中的第几个参数。<br>举例：`%%d`格式化后为`%d`字符串; `%1$d`表示使用第一个参数。|
 
 **返回值：**
 
 |类型|说明|
 |:----|:----|
-|String|资源名对应的格式化字符串。|
+|String|资源ID值对应的格式化字符串。|
 
 **异常：**
 
@@ -1639,7 +1663,7 @@ try {
 public func getString(resource: AppResource, args: Array<ArgsValueType>): String
 ```
 
-**功能：** 获取资源对象对应的字符串资源，根据args参数进行格式化。
+**功能：** 获取指定resource对象对应的字符串，并根据args参数对字符串进行格式化。
 
 **系统能力：** SystemCapability.Global.ResourceManager
 
@@ -1649,14 +1673,14 @@ public func getString(resource: AppResource, args: Array<ArgsValueType>): String
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|resource|[AppResource](../LocalizationKit/cj-apis-resource.md#class-appresource)|是|-|资源对象。|
-|args|Array\<[ArgsValueType](#enum-argsvaluetype)>|是|-|格式化字符串资源参数。 <br>支持参数类型：<br /> %d、%f、%s、%%。 <br>说明：%%转译符，转译%。<br>举例：%%d格式化后为%d字符串。|
+|resource|[AppResource](../LocalizationKit/cj-apis-resource.md#class-appresource)|是|-|资源信息。|
+|args|Array\<[ArgsValueType](#enum-argsvaluetype)>|是|-|格式化字符串资源参数。<br>支持参数类型：`%d`、`%f`、`%s`、`%%`、`%数字$d`、`%数字$f`、`%数字$s`。<br>说明：`%%`转义为`%`; `%数字$d`中的数字表示使用args中的第几个参数。<br>举例：`%%d`格式化后为`%d`字符串; `%1$d`表示使用第一个参数。|
 
 **返回值：**
 
 |类型|说明|
 |:----|:----|
-|String|资源名对应的格式化字符串。|
+|String|resource对象对应的格式化字符串。|
 
 **异常：**
 
@@ -1696,7 +1720,7 @@ try {
 public func getStringArrayByName(resName: String): Array<String>
 ```
 
-**功能：** 获取资源名对应的字符串数组资源。
+**功能：** 获取指定资源名称对应的字符串数组。
 
 **系统能力：** SystemCapability.Global.ResourceManager
 
@@ -1706,13 +1730,13 @@ public func getStringArrayByName(resName: String): Array<String>
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|resName|String|是|-|资源名。|
+|resName|String|是|-|资源名称。|
 
 **返回值：**
 
 |类型|说明|
 |:----|:----|
-|Array\<String>|资源名对应的字符串数组资源。|
+|Array\<String>|对应资源名称的字符串数组。|
 
 **异常：**
 
@@ -1749,7 +1773,7 @@ try {
 public func getStringArrayValue(resId: UInt32): Array<String>
 ```
 
-**功能：** 获取资源ID对应的字符串数组资源。
+**功能：** 获取指定资源ID对应的字符串数组。
 
 **系统能力：** SystemCapability.Global.ResourceManager
 
@@ -1759,13 +1783,13 @@ public func getStringArrayValue(resId: UInt32): Array<String>
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|resId|UInt32|是|-|资源ID。|
+|resId|UInt32|是|-|资源ID值。|
 
 **返回值：**
 
 |类型|说明|
 |:----|:----|
-|Array\<String>|资源ID对应的字符串数组。|
+|Array\<String>|资源ID值对应的字符串数组。|
 
 **异常：**
 
@@ -1804,7 +1828,7 @@ try {
 public func getStringArrayValue(resource: AppResource): Array<String>
 ```
 
-**功能：** 获取资源对象对应的字符串数组资源。此接口用于多工程应用内跨包访问。
+**功能：** 获取指定resource对象对应的字符串数组。
 
 **系统能力：** SystemCapability.Global.ResourceManager
 
@@ -1814,13 +1838,13 @@ public func getStringArrayValue(resource: AppResource): Array<String>
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|resource|[AppResource](../LocalizationKit/cj-apis-resource.md#class-appresource)|是|-|资源对象。|
+|resource|[AppResource](../LocalizationKit/cj-apis-resource.md#class-appresource)|是|-|资源信息。|
 
 **返回值：**
 
 |类型|说明|
 |:----|:----|
-|Array\<String>|资源对象对应的字符串数组。|
+|Array\<String>|resource对象对应的字符串数组。|
 
 **异常：**
 
@@ -1860,7 +1884,7 @@ try {
 public func getStringByName(resName: String, args: Array<ArgsValueType>): String
 ```
 
-**功能：** 获取资源名对应的字符串资源，根据args参数进行格式化。
+**功能：** 获取指定资源名称对应的字符串，并根据args参数对字符串进行格式化。
 
 **系统能力：** SystemCapability.Global.ResourceManager
 
@@ -1870,8 +1894,8 @@ public func getStringByName(resName: String, args: Array<ArgsValueType>): String
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|resName|String|是|-|资源名。|
-|args|Array\<[ArgsValueType](#enum-argsvaluetype)>|是|-|格式化字符串资源参数。 <br>支持参数类型：<br /> %d、%f、%s、%%。 <br>说明：%%转译符，转译%。<br>举例：%%d格式化后为%d字符串。|
+|resName|String|是|-|资源名称。|
+|args|Array\<[ArgsValueType](#enum-argsvaluetype)>|是|-|格式化字符串资源参数。<br>支持参数类型：`%d`、`%f`、`%s`、`%%`、`%数字$d`、`%数字$f`、`%数字$s`。<br>说明：`%%`转义为`%`; `%数字$d`中的数字表示使用args中的第几个参数。<br>举例：`%%d`格式化后为`%d`字符串; `%1$d`表示使用第一个参数。|
 
 **返回值：**
 
@@ -1915,7 +1939,11 @@ try {
 public func removeResource(path: String): Unit
 ```
 
-**功能：** 用户运行时，移除指定的资源路径，还原被覆盖前的资源。
+**功能：** 应用运行时移除指定的资源路径，还原被覆盖前的资源。
+
+> **说明**
+>
+> rawfile和resfile目录不支持资源覆盖。
 
 **系统能力：** SystemCapability.Global.ResourceManager
 
@@ -2075,7 +2103,7 @@ public enum DeviceType {
 DeviceType2In1
 ```
 
-**功能：** 二合一设备。
+**功能：** 2in1设备。
 
 **系统能力：** SystemCapability.Global.ResourceManager
 
@@ -2259,7 +2287,7 @@ public enum ScreenDensity {
 ScreenLdpi
 ```
 
-**功能：** 大规模的屏幕密度。
+**功能：** 高屏幕密度。
 
 **系统能力：** SystemCapability.Global.ResourceManager
 
@@ -2271,7 +2299,7 @@ ScreenLdpi
 ScreenMdpi
 ```
 
-**功能：** 中规模的屏幕密度。
+**功能：** 中屏幕密度。
 
 **系统能力：** SystemCapability.Global.ResourceManager
 
@@ -2283,7 +2311,7 @@ ScreenMdpi
 ScreenSdpi
 ```
 
-**功能：** 小规模的屏幕密度。
+**功能：** 低屏幕密度。
 
 **系统能力：** SystemCapability.Global.ResourceManager
 
@@ -2295,7 +2323,7 @@ ScreenSdpi
 ScreenXldpi
 ```
 
-**功能：** 特大规模的屏幕密度。
+**功能：** 特高屏幕密度。
 
 **系统能力：** SystemCapability.Global.ResourceManager
 
@@ -2307,7 +2335,7 @@ ScreenXldpi
 ScreenXxldpi
 ```
 
-**功能：** 超大规模的屏幕密度。
+**功能：** 超高屏幕密度。
 
 **系统能力：** SystemCapability.Global.ResourceManager
 
@@ -2319,7 +2347,7 @@ ScreenXxldpi
 ScreenXxxldpi
 ```
 
-**功能：** 超特大规模的屏幕密度。
+**功能：** 超特高屏幕密度。
 
 **系统能力：** SystemCapability.Global.ResourceManager
 

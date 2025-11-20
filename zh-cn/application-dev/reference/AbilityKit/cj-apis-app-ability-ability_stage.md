@@ -118,7 +118,9 @@ try {
 public open func onCreate(): Unit
 ```
 
-**功能：** AbilityStage创建时回调，执行初始化业务逻辑操作。
+**功能：** 在加载Module的第一个Ability实例前，系统会先创建对应的AbilityStage实例，并在AbilityStage创建完成后，自动触发该回调。
+
+开发者可以在该回调中执行Module的初始化操作（如资源预加载、线程创建等）。同步接口，不支持异步回调。
 
 **系统能力：** SystemCapability.Ability.AbilityRuntime.Core
 

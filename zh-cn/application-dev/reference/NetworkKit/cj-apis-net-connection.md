@@ -31,7 +31,9 @@ API示例代码使用说明：
 public func createNetConnection(netSpecifier!: ?NetSpecifier = None, timeout!: UInt32 = 0): NetConnection
 ```
 
-**功能：** 创建一个NetConnection对象，netSpecifier指定关注的网络的各项特征；timeout是超时时间(单位是毫秒)；netSpecifier是timeout的必要条件，两者都没有则表示关注默认网络。
+**功能：** 创建一个NetConnection对象，[netSpecifier](#class-netspecifier)指定关注的网络的各项特征；timeout是超时时间(单位是毫秒)；netSpecifier是timeout的必要条件，两者都没有则表示关注默认网络。
+
+**注意：** createNetConnection注册回调函数的数量不能超过2000（个），否则无法继续注册网络监听。
 
 **系统能力：** SystemCapability.Communication.NetManager.Core
 
@@ -41,8 +43,8 @@ public func createNetConnection(netSpecifier!: ?NetSpecifier = None, timeout!: U
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|netSpecifier|?[NetSpecifier](#class-netspecifier)|否|None|**命名参数。** 指定网络的各项特征，为None时关注默认网络。|
-|timeout|UInt32|否|0|**命名参数。** 获取netSpecifier指定的网络时的超时时间，仅netSpecifier存在时生效，默认值为0。|
+|netSpecifier|?[NetSpecifier](#class-netspecifier)|否|None|**命名参数。** 指定待关注网络的特征，缺省表示关注默认网络。|
+|timeout|UInt32|否|0|**命名参数。** 获取netSpecifier指定网络时的超时时间，传入值需为UInt32范围内的整数，仅netSpecifier存在时生效，默认值为0。|
 
 **返回值：**
 
@@ -92,7 +94,7 @@ public func getAddressesByName(host: String): Array<NetAddress>
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|host|String|是|-|需要解析的主机名。|
+|host|String|是|-|需要解析的主机名。例如："www.example.com"。|
 
 **返回值：**
 
@@ -148,7 +150,7 @@ public func getAllNets(): Array<NetHandle>
 
 |类型|说明|
 |:----|:----|
-|Array\<[NetHandle](#class-nethandle)>|返回激活的数据网络列表。|
+|Array\<[NetHandle](#class-nethandle)>|返回处于激活状态的数据网络列表。|
 
 **异常：**
 
@@ -185,7 +187,7 @@ try {
 public func getAppNet(): NetHandle
 ```
 
-**功能：** 绑定App到指定网络，绑定后的App只能通过指定网络访问外网。
+**功能：** 获取App绑定的网络信息。
 
 **系统能力：** SystemCapability.Communication.NetManager.Core
 
@@ -195,7 +197,7 @@ public func getAppNet(): NetHandle
 
 |类型|说明|
 |:----|:----|
-|[NetHandle](#class-nethandle)|返回APP绑定的数据网络。|
+|[NetHandle](#class-nethandle)|返回App绑定的网络信息。|
 
 **异常：**
 
@@ -288,7 +290,7 @@ try {
 public func getDefaultHttpProxy(): HttpProxy
 ```
 
-**功能：** 获取网络默认的代理配置信息。 如果设置了全局代理，则会返回全局代理配置信息。如果进程使用setAppNet绑定到指定NetHandle对应的网络，则返回NetHandle对应网络的代理配置信息。在其它情况下，将返回默认网络的代理配置信息。
+**功能：** 获取网络默认的代理配置信息。如果设置了全局代理，则会返回全局代理配置信息。如果进程使用[setAppNet](#func-setappnetnethandle)绑定到指定[NetHandle](#class-nethandle)对应的网络，则返回[NetHandle](#class-nethandle)对应网络的代理配置信息。在其它情况下，将返回默认网络的代理配置信息。
 
 **系统能力：** SystemCapability.Communication.NetManager.Core
 
@@ -335,7 +337,7 @@ try {
 public func getDefaultNet(): NetHandle
 ```
 
-**功能：** 获取默认激活的数据网络。可以使用getNetCapabilities去获取网络的类型、拥有的能力等信息。
+**功能：** 获取默认激活的数据网络。可以使用[getNetCapabilities](#func-getnetcapabilitiesnethandle)去获取网络的类型、拥有的能力等信息。
 
 **需要权限：** ohos.permission.GET_NETWORK_INFO
 
@@ -490,7 +492,7 @@ try {
 public func isDefaultNetMetered(): Bool
 ```
 
-**功能：** 检查当前网络上的数据流量使用是否被计量。
+**功能：** 检查默认数据网络是否被激活。如果有默认数据网络，可以使用[getDefaultNet](#func-getdefaultnet)去获取。
 
 **需要权限：** ohos.permission.GET_NETWORK_INFO
 
@@ -502,7 +504,7 @@ public func isDefaultNetMetered(): Bool
 
 |类型|说明|
 |:----|:----|
-|Bool|当前网络上的数据流量使用被计量，则返回true，否则返回false。|
+|Bool|返回true表示默认数据网络被激活，返回false表示没有被激活。|
 
 **异常：**
 
@@ -590,7 +592,7 @@ try {
 public func reportNetDisconnected(netHandle: NetHandle): Unit
 ```
 
-**功能：** 向网络管理报告网络处于不可用状态。
+**功能：** 向网络管理上报网络处于不可用状态。
 
 **需要权限：** ohos.permission.GET_NETWORK_INFO & ohos.permission.INTERNET
 
@@ -641,7 +643,7 @@ try {
 public func setAppNet(netHandle: NetHandle): Unit
 ```
 
-**功能：** 绑定App到指定网络，绑定后的App只能通过指定网络访问外网。
+**功能：** 将App绑定到特定的网络，绑定后App只能通过netHandle对应的网络访问网络。
 
 **需要权限：** ohos.permission.INTERNET
 
@@ -727,7 +729,7 @@ public var dnses: Array<NetAddress>
 public var domains: String
 ```
 
-**功能：** 所属域，默认""。
+**功能：** 域名。
 
 **类型：** String
 
@@ -827,25 +829,7 @@ public class HttpProxy {
 public var exclusionList: Array<String>
 ```
 
-**功能：** 不使用代理的主机名列表，主机名支持域名、IP地址以及通配符形式，详细匹配规则如下：
-
-1. 域名匹配规则：
-
-    （1）完全匹配：代理服务器主机名只要与列表中的任意一个主机名完全相同，就可以匹配。
-
-    （2）包含匹配：代理服务器主机名只要包含列表中的任意一个主机名，就可以匹配。
-
-    例如，如果在主机名列表中设置了“ample.com”，则“ample.com”、“www.ample.com”、“ample.com:80”都会被匹配，而“www.example.com”、“ample.com.org”则不会被匹配。
-
-2. IP地址匹配规则：代理服务器主机名只要与列表中的任意一个IP地址完全相同，就可以匹配。
-
-3. 域名跟IP地址可以同时添加到列表中进行匹配。
-
-4. 单个“*”是唯一有效的通配符，当列表中只有通配符时，将与所有代理服务器主机名匹配，表示禁用代理。通配符只能单独添加，不可以与其他域名、IP地址一起添加到列表中，否则通配符将不生效。
-
-5. 匹配规则不区分主机名大小写。
-
-6. 匹配主机名时，不考虑http和https等协议前缀。
+**功能：** 不使用代理的主机名列表，主机名支持域名、IP地址以及通配符形式，详细匹配规则如下：<br/>1、域名匹配规则：<br/>（1）完全匹配：代理服务器主机名只要与列表中的任意一个主机名完全相同，就可以匹配。<br/>（2）包含匹配：代理服务器主机名只要包含列表中的任意一个主机名，就可以匹配。<br/>例如，如果在主机名列表中设置了 “ample.com”，则  “ample.com”、“www.ample.com”、“ample.com:80”都会被匹配，而 “www.example.com”、“ample.com.org”则不会被匹配。<br/>2、IP地址匹配规则：代理服务器主机名只要与列表中的任意一个IP地址完全相同，就可以匹配。<br/>3、域名跟IP地址可以同时添加到列表中进行匹配。<br/>4、单个“\*”是唯一有效的通配符，当列表中只有通配符时，将与所有代理服务器主机名匹配，表示禁用代理。通配符只能单独添加，不可以与其他域名、IP地址一起添加到列表中，否则通配符将不生效。<br/>5、匹配规则不区分主机名大小写。<br/>6、匹配主机名时，不考虑http和https等协议前缀。
 
 **类型：** Array\<String>
 
@@ -877,7 +861,7 @@ public var host: String
 public var password: String
 ```
 
-**功能：** 代理认证密码。
+**功能：** 使用代理的用户密码。
 
 **类型：** String
 
@@ -893,7 +877,7 @@ public var password: String
 public var port: UInt32
 ```
 
-**功能：** 主机端口。
+**功能：** 主机端口。取值范围[0,65535]。
 
 **类型：** UInt32
 
@@ -909,7 +893,7 @@ public var port: UInt32
 public var username: String
 ```
 
-**功能：** 代理认证用户名。
+**功能：** 使用代理的用户名。
 
 **类型：** String
 
@@ -937,10 +921,10 @@ public init(host: String,  port: UInt32, exclusionList: Array<String>,
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |host|String|是|-|代理服务器主机名。|
-|port|UInt32|是|-|主机端口。|
-|exclusionList|Array\<String>|是|-|不使用代理的主机名列表，主机名支持域名、IP地址以及通配符形式，详细匹配规则如下：<br>1、域名匹配规则：<br>（1）完全匹配：代理服务器主机名只要与列表中的任意一个主机名完全相同，就可以匹配。<br>（2）包含匹配：代理服务器主机名只要包含列表中的任意一个主机名，就可以匹配。<br>例如，如果在主机名列表中设置了 “ample.com”，则 “ample.com”、“www.ample.com”、“ample.com:80”都会被匹配，而 “www.example.com”、“ample.com.org”则不会被匹配。<br>2、IP地址匹配规则：代理服务器主机名只要与列表中的任意一个IP地址完全相同，就可以匹配。<br>3、域名跟IP地址可以同时添加到列表中进行匹配。<br>4、单个“*”是唯一有效的通配符，当列表中只有通配符时，将与所有代理服务器主机名匹配，表示禁用代理。通配符只能单独添加，不可以与其他域名、IP地址一起添加到列表中，否则通配符将不生效。<br>5、匹配规则不区分主机名大小写。<br>6、匹配主机名时，不考虑http和https等协议前缀。|
-|username|String|否|""|代理认证用户名。|
-|password|String|否|""|代理认证密码。|
+|port|UInt32|是|-|主机端口。取值范围[0,65535]。|
+|exclusionList|Array\<String>|是|-|不使用代理的主机名列表，主机名支持域名、IP地址以及通配符形式，详细匹配规则如下：<br/>1、域名匹配规则：<br/>（1）完全匹配：代理服务器主机名只要与列表中的任意一个主机名完全相同，就可以匹配。<br/>（2）包含匹配：代理服务器主机名只要包含列表中的任意一个主机名，就可以匹配。<br/>例如，如果在主机名列表中设置了 “ample.com”，则  “ample.com”、“www.ample.com”、“ample.com:80”都会被匹配，而 “www.example.com”、“ample.com.org”则不会被匹配。<br/>2、IP地址匹配规则：代理服务器主机名只要与列表中的任意一个IP地址完全相同，就可以匹配。<br/>3、域名跟IP地址可以同时添加到列表中进行匹配。<br/>4、单个“\*”是唯一有效的通配符，当列表中只有通配符时，将与所有代理服务器主机名匹配，表示禁用代理。通配符只能单独添加，不可以与其他域名、IP地址一起添加到列表中，否则通配符将不生效。<br/>5、匹配规则不区分主机名大小写。<br/>6、匹配主机名时，不考虑http和https等协议前缀。|
+|username|String|否|""|使用代理的用户名。|
+|password|String|否|""|使用代理的用户密码。|
 
 ## class LinkAddress
 
@@ -1044,7 +1028,7 @@ public var family: UInt32
 public var port: UInt32
 ```
 
-**功能：** 端口，取值范围[0, 65535]。
+**功能：** 端口，取值范围\[0, 65535]，默认值为0。
 
 **类型：** UInt32
 
@@ -1072,7 +1056,7 @@ public init(address: String, family!: UInt32 = 1, port!: UInt32 = 0)
 |:---|:---|:---|:---|:---|
 |address|String|是|-|地址。|
 |family|UInt32|否|1|IPv4 = 1，IPv6 = 2，默认IPv4。|
-|port|UInt32|否|0|端口，取值范围[0, 65535]。|
+|port|UInt32|否|0|端口，取值范围\[0, 65535]，默认值为0。|
 
 ## class NetBlockStatusInfo
 
@@ -1083,7 +1067,7 @@ public class NetBlockStatusInfo {
 }
 ```
 
-**功能：** 网络阻塞状态信息。
+**功能：** 获取网络状态信息。
 
 **系统能力：** SystemCapability.Communication.NetManager.Core
 
@@ -1095,7 +1079,7 @@ public class NetBlockStatusInfo {
 public var blocked: Bool
 ```
 
-**功能：** 网络是否被阻塞。
+**功能：** 标识当前网络是否是堵塞状态。true：标识当前网络是堵塞状态；false：标识当前网络不是堵塞状态。
 
 **类型：** Bool
 
@@ -1111,7 +1095,7 @@ public var blocked: Bool
 public var netHandle: NetHandle
 ```
 
-**功能：** 数据网络句柄。
+**功能：** 数据网络句柄(netHandle)。
 
 **类型：** [NetHandle](#class-nethandle)
 
@@ -1146,7 +1130,7 @@ public class NetCapabilities {
 public var bearerTypes: Array<NetBearType>
 ```
 
-**功能：** 网络类型。
+**功能：** 网络类型。数组里面只包含了一种网络类型。
 
 **类型：** Array\<[NetBearType](#enum-netbeartype)>
 
@@ -1162,7 +1146,7 @@ public var bearerTypes: Array<NetBearType>
 public var linkDownBandwidthKbps: UInt32
 ```
 
-**功能：** 下行（网络到设备）带宽，0表示无法评估当前网络带宽。
+**功能：** 下行（网络到设备）带宽，单位(kb/s)。0表示无法评估当前网络带宽。
 
 **类型：** UInt32
 
@@ -1178,7 +1162,7 @@ public var linkDownBandwidthKbps: UInt32
 public var linkUpBandwidthKbps: UInt32
 ```
 
-**功能：** 上行（设备到网络）带宽，0表示无法评估当前网络带宽。
+**功能：** 上行（设备到网络）带宽，单位(kb/s)。0表示无法评估当前网络带宽。
 
 **类型：** UInt32
 
@@ -1221,9 +1205,9 @@ public init(bearerTypes: Array<NetBearType>, linkUpBandwidthKbps!: UInt32 = 0, l
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|bearerTypes|Array\<[NetBearType](#enum-netbeartype)>|是|-|网络类型。|
-|linkUpBandwidthKbps|UInt32|否|0|**命名参数。** 上行（设备到网络）带宽，0表示无法评估当前网络带宽。|
-|linkDownBandwidthKbps|UInt32|否|0|**命名参数。** 下行（网络到设备）带宽，0表示无法评估当前网络带宽。|
+|bearerTypes|Array\<[NetBearType](#enum-netbeartype)>|是|-|网络类型。数组里面只包含了一种网络类型。|
+|linkUpBandwidthKbps|UInt32|否|0|**命名参数。** 上行（设备到网络）带宽，单位(kb/s)。0表示无法评估当前网络带宽。|
+|linkDownBandwidthKbps|UInt32|否|0|**命名参数。** **功能：** 下行（网络到设备）带宽，单位(kb/s)。0表示无法评估当前网络带宽。|
 |networkCap|Array\<[NetCap](#enum-netcap)>|否|Array<NetCap>()|网络具体能力。|
 
 ## class NetCapabilityInfo
@@ -1279,7 +1263,17 @@ public var netHandle: NetHandle
 public class NetConnection {}
 ```
 
-**功能：** 网络连接的句柄；设备从无网络到有网络会触发netAvailable事件、netCapabilitiesChange事件和netConnectionPropertiesChange事件； 设备从有网络到无网络状态会触发netLost事件； 设备从WiFi到蜂窝会触发netLost事件（WiFi丢失）之后触发 netAvaliable事件（蜂窝可用）。
+**功能：** 网络连接的句柄。
+
+> **说明：**
+>
+>（1）设备从无网络状态转变为有网络状态时，将触发netAvailable事件、netCapabilitiesChange事件和netConnectionPropertiesChange事件；
+>
+>（2）接收到netAvailable事件后，若设备从有网络状态转变为无网络状态，将触发netLost事件；
+>
+>（3）若未接收到netAvailable事件，则将直接接收到netUnavailable事件；
+>
+>（4）设备从WiFi网络切换至蜂窝网络时，将先触发netLost事件（WiFi丢失），随后触发netAvailable事件（蜂窝可用）。
 
 **系统能力：** SystemCapability.Communication.NetManager.Core
 
@@ -1291,9 +1285,7 @@ public class NetConnection {}
 public func on(event: NetConnectionEvent, callback: Callback1Argument<NetHandle>): Unit
 ```
 
-**功能：** 订阅网络可用和网络丢失事件。
-
-**模型约束：** 此接口调用之前需要先调用register接口，使用unregister取消订阅默认网络状态变化的通知。
+**功能：** 订阅网络可用事件。此接口需在调用register接口之前调用。若无需接收网络状态变化的回调通知，应使用unregister取消订阅默认的网络状态变化通知。
 
 **系统能力：** SystemCapability.Communication.NetManager.Core
 
@@ -1352,9 +1344,7 @@ try {
 public func on(event: NetConnectionEvent, callback: Callback1Argument<NetBlockStatusInfo>): Unit
 ```
 
-**功能：** 订阅网络阻塞状态事件。
-
-**模型约束：** 此接口调用之前需要先调用register接口，使用unregister取消订阅默认网络状态变化的通知。
+**功能：** 订阅网络阻塞状态事件。此接口需要在调用register接口之前调用。若无需接收网络状态变化的回调通知，应使用unregister取消订阅默认的网络状态变化通知。
 
 **系统能力：** SystemCapability.Communication.NetManager.Core
 
@@ -1365,7 +1355,7 @@ public func on(event: NetConnectionEvent, callback: Callback1Argument<NetBlockSt
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |event|[NetConnectionEvent](#enum-netconnectionevent)|是|-|网络连接事件类型，仅支持NetBlockStatusChange事件。|
-|callback|[Callback1Argument](../arkinterop/cj-api-callback_invoke.md#class-callback1argument)\<[NetBlockStatusInfo](#class-netblockstatusinfo)>|是|-|回调函数，返回数据网络句柄（netHandle）,及网络堵塞状态（blocked）。|
+|callback|[Callback1Argument](../arkinterop/cj-api-callback_invoke.md#class-callback1argument)\<[NetBlockStatusInfo](#class-netblockstatusinfo)>|是|-|回调函数，获取网络阻塞状态信息。|
 
 **异常：**
 
@@ -1417,9 +1407,7 @@ try {
 public func on(event: NetConnectionEvent, callback: Callback1Argument<NetCapabilityInfo>): Unit
 ```
 
-**功能：** 订阅网络能力变化事件。
-
-**模型约束：** 此接口调用之前需要先调用register接口，使用unregister取消订阅默认网络状态变化的通知。
+**功能：** 订阅网络能力变化事件。此接口要在register接口调用前调用，不需要网络状态变化回调通知时，使用unregister取消订阅默认网络状态变化的通知。
 
 **系统能力：** SystemCapability.Communication.NetManager.Core
 
@@ -1482,9 +1470,7 @@ try {
 public func on(event: NetConnectionEvent, callback: Callback1Argument<NetConnectionPropertyInfo>): Unit
 ```
 
-**功能：** 订阅网络连接信息变化事件。
-
-**模型约束：** 此接口调用之前需要先调用register接口，使用unregister取消订阅默认网络状态变化的通知。
+**功能：** 订阅网络连接信息变化事件。此接口要在register接口调用前调用，不需要网络状态变化回调通知时，使用unregister取消订阅默认网络状态变化的通知。
 
 **系统能力：** SystemCapability.Communication.NetManager.Core
 
@@ -1495,7 +1481,7 @@ public func on(event: NetConnectionEvent, callback: Callback1Argument<NetConnect
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |event|[NetConnectionEvent](#enum-netconnectionevent)|是|-|网络连接事件类型，仅支持NetConnectionPropertiesChange事件。|
-|callback|[Callback1Argument](../arkinterop/cj-api-callback_invoke.md#class-callback1argument)\<[NetConnectionPropertyInfo](#class-netconnectionpropertyinfo)>|是|-|回调函数，返回数据网络句柄（netHandle）和网络的连接信息（connectionProperties）。|
+|callback|[Callback1Argument](../arkinterop/cj-api-callback_invoke.md#class-callback1argument)\<[NetConnectionPropertyInfo](#class-netconnectionpropertyinfo)>|是|-|回调函数，获取网络连接属性信息。|
 
 **异常：**
 
@@ -1547,9 +1533,7 @@ try {
 public func on(event: NetConnectionEvent, callback: Callback0Argument): Unit
 ```
 
-**功能：** 订阅网络不可用事件。
-
-**模型约束：** 此接口调用之前需要先调用register接口，使用unregister取消订阅默认网络状态变化的通知。
+**功能：** 订阅网络不可用事件。此接口要在register接口调用前调用，不需要网络状态变化回调通知时，使用unregister取消订阅默认网络状态变化的通知。
 
 **系统能力：** SystemCapability.Communication.NetManager.Core
 
@@ -1608,7 +1592,7 @@ try {
 public func register(): Unit
 ```
 
-**功能：** 订阅指定网络状态变化的通知。
+**功能：** 订阅指定网络状态变化的通知。如需监听特定事件，确保调用on监听事件后再调用register进行注册。
 
 **需要权限：** ohos.permission.GET_NETWORK_INFO
 
@@ -1700,7 +1684,7 @@ public class NetConnectionPropertyInfo {
 }
 ```
 
-**功能：** 网络连接信息变化事件的数据。
+**功能：** 网络连接信息。
 
 **系统能力：** SystemCapability.Communication.NetManager.Core
 
@@ -1712,7 +1696,7 @@ public class NetConnectionPropertyInfo {
 public var connectionProperties: ConnectionProperties
 ```
 
-**功能：** 网络的连接信息。
+**功能：** 网络连接属性。
 
 **类型：** [ConnectionProperties](#class-connectionproperties)
 
@@ -1728,7 +1712,7 @@ public var connectionProperties: ConnectionProperties
 public var netHandle: NetHandle
 ```
 
-**功能：** 数据网络句柄。
+**功能：** 数据网络句柄(netHandle)。
 
 **类型：** [NetHandle](#class-nethandle)
 
@@ -1746,7 +1730,9 @@ public class NetHandle {
 }
 ```
 
-**功能：** 数据网络的句柄。在调用NetHandle的方法之前，需要先获取NetHandle对象。
+**功能：** 数据网络的句柄。
+
+在调用NetHandle的方法之前，需要先获取NetHandle对象。
 
 **系统能力：** SystemCapability.Communication.NetManager.Core
 
@@ -1774,7 +1760,7 @@ public var netId: Int32
 public func getAddressByName(host: String): NetAddress
 ```
 
-**功能：** 使用对应网络解析主机名以获取第一个IP地址。
+**功能：** 使用当前NetHandle对应的网络解析主机名获取到的第一个IP地址。
 
 **需要权限：** ohos.permission.INTERNET
 
@@ -1786,7 +1772,7 @@ public func getAddressByName(host: String): NetAddress
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|host|String|是|-|需要解析的主机名。|
+|host|String|是|-|需要解析的主机名。例如："www.example.com"。|
 
 **返回值：**
 
@@ -1832,7 +1818,7 @@ try {
 public func getAddressesByName(host: String): Array<NetAddress>
 ```
 
-**功能：** 使用对应网络解析主机名以获取所有IP地址。
+**功能：** 使用当前NetHandle对应的网络解析主机名获取到的所有IP地址。
 
 **需要权限：** ohos.permission.INTERNET
 
@@ -1850,7 +1836,7 @@ public func getAddressesByName(host: String): Array<NetAddress>
 
 |类型|说明|
 |:----|:----|
-|Array\<[NetAddress](#class-netaddress)>|返回所有IP地址。|
+|Array\<[NetAddress](#class-netaddress)>|需要解析的主机名。例如："www.example.com"。|
 
 **异常：**
 
@@ -1906,7 +1892,7 @@ public class NetSpecifier {
 public var bearerPrivateIdentifier: String
 ```
 
-**功能：** 网络标识符，Wi-Fi网络的标识符是"wifi"，蜂窝网络的标识符是"slot0"（对应SIM卡1）。
+**功能：** 网络标识符，蜂窝网络的标识符是"slot0"（对应SIM卡1）、"slot1"（对应SIM卡2）。可以通过传递注册的WLAN热点信息表示应用希望激活的指定的WLAN网络。
 
 **类型：** String
 
@@ -1949,7 +1935,7 @@ public init(netCapabilities: NetCapabilities, bearerPrivateIdentifier!: String =
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |netCapabilities|[NetCapabilities](#class-netcapabilities)|是|-|存储数据网络的传输能力和承载类型。|
-|bearerPrivateIdentifier|String|否|""|**命名参数。** 网络标识符，Wi-Fi网络的标识符是"wifi"，蜂窝网络的标识符是"slot0"（对应SIM卡1）。|
+|bearerPrivateIdentifier|String|否|""|**命名参数。** 网络标识符，蜂窝网络的标识符是"slot0"（对应SIM卡1）、"slot1"（对应SIM卡2）。可以通过传递注册的WLAN热点信息表示应用希望激活的指定的WLAN网络。|
 
 ## class RouteInfo
 
@@ -2007,7 +1993,7 @@ public var gateway: NetAddress
 public var hasGateway: Bool
 ```
 
-**功能：** 是否有网关。
+**功能：** 是否有网关。true：有网关；false：无网关。
 
 **类型：** Bool
 
@@ -2039,7 +2025,7 @@ public var interfaceName: String
 public var isDefaultRoute: Bool
 ```
 
-**功能：** 是否为默认路由。
+**功能：** 是否为默认路由。true：默认路由；false：非默认路由。
 
 **类型：** Bool
 
@@ -2127,7 +2113,7 @@ public enum NetCap {
 NetCapabilityInternet
 ```
 
-**功能：** 表示该网络应具有访问Internet的能力，该能力由网络提供者设置。
+**功能：** 表示该网络应具有访问Internet的能力，此能力由网络提供者设置，但该网络访问Internet的连通性并未被网络管理成功验证。网络连通性可以通过NET_CAPABILITY_VALIDATED和NET_CAPABILITY_CHECKING_CONNECTIVITY判断。
 
 **系统能力：** SystemCapability.Communication.NetManager.Core
 
@@ -2175,7 +2161,7 @@ NetCapabilityNotVpn
 NetCapabilityValidated
 ```
 
-**功能：** 表示该网络访问Internet的能力被网络管理成功验证，该能力由网络管理模块设置。
+**功能：** 表示网络管理通过该网络与华为云地址成功建立连接，此能力由网络管理模块设置。<br>**注意：** 网络管理可能会与华为云地址建立连接失败，导致网络能力不具备此标记位，但不完全代表该网络无法访问互联网。另外，对于新完成连接的网络，由于网络正在进行连通性验证，此值可能无法反映真实的验证结果。对此，应用可以通过NET_CAPABILITY_CHECKING_CONNECTIVITY检查网络是否正在检测连通性。
 
 **系统能力：** SystemCapability.Communication.NetManager.Core
 

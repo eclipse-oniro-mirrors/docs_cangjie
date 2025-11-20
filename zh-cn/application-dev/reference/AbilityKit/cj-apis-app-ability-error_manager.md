@@ -1,6 +1,6 @@
 # ohos.app.ability.error_manager
 
-ErrorManager提供Ability错误管理的能力，包括错误事件的监听和取消监听。
+ErrorManager模块提供对错误观测器的注册和注销的能力，主要是观测应用发生cj crash和appfreeze等错误。
 
 ## 导入模块
 

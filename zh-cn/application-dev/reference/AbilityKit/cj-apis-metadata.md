@@ -2,6 +2,10 @@
 
 本模块描述元数据信息。
 
+> **说明：**
+>
+> 描述的module、uiAbility、extensionAbility配置信息，标签值为数组类型，该标签下的配置只对当前module、uiAbility或者extensionAbility生效。
+
 ## 导入模块
 
 ```cangjie
@@ -55,7 +59,7 @@ public var name: String
 public var resource: String
 ```
 
-**功能：** 元数据资源。
+**功能：** 元数据资源描述符，参考示例$profile:config_file，表示profile目录下配置了config_file.json文件。
 
 **类型：** String
 
