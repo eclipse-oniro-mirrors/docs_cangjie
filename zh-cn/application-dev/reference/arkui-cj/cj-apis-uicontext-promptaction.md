@@ -1348,7 +1348,7 @@ public init(
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|title|[ResourceStr](./cj-common-types.md#interface-resourcestr)否|''| **命名参数。** 标题文本。|
+|title|[ResourceStr](./cj-common-types.md#interface-resourcestr)|否|''| **命名参数。** 标题文本。|
 |message|[ResourceStr](./cj-common-types.md#interface-resourcestr)|否|''| **命名参数。** 文本主体。|
 |buttons|Array\<[ButtonInfo](#class-buttoninfo)>|否|[]| **命名参数。** 对话框中的按钮数组。|
 |alignment|[DialogAlignment](./cj-common-types.md#enum-dialogalignment)|否|DialogAlignment.Default| **命名参数。** 对话框在屏幕上的对齐方式。|

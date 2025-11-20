@@ -94,12 +94,6 @@ public func size(width!: ?Length, height!: ?Length): This
 |width|?[Length](./cj-common-types.md#interface-length)|是|-| **命名参数。** 图形宽度。<br>初始值：0.0.vp。|
 |height|?[Length](./cj-common-types.md#interface-length)|是|-| **命名参数。** 图形高度。<br>初始值：0.0.vp。|
 
-**返回值：**
-
-|类型|说明|
-|:----|:----|
-|This|返回当前对象。|
-
 ### func width(?Length)
 
 ```cangjie

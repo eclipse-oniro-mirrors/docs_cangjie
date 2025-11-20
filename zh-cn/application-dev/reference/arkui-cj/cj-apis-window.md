@@ -297,8 +297,8 @@ public class Configuration {
       name!: String,
       windowType!: WindowType,
       ctx!: BaseContext,
-      displayID!: Int64 = -1,
-      parentID!: Int64 = -1
+      displayId!: Int64 = -1,
+      parentId!: Int64 = -1
     )
 }
 ```

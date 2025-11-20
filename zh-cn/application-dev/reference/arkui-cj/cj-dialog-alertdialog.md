@@ -231,7 +231,7 @@ public var primary: ?Bool
 public init(
     enabled!: ?Bool = None,
     defaultFocus!: ?Bool = None,
-    style!: ?DialogButtonStyle = None,
+    style!: ?DialogButtonStyle = Option.None,
     value!: ?ResourceStr,
     fontColor!: ?ResourceColor = None,
     backgroundColor!: ?ResourceColor = None,
@@ -252,7 +252,7 @@ public init(
 |:---|:---|:---|:---|:---|
 |enabled|?Bool|否|None| **命名参数。** 点击Button是否响应。初始值: true |
 |defaultFocus|?Bool|否|None| **命名参数。** 设置Button是否是默认焦点。初始值: false |
-|style|?[DialogButtonStyle](./cj-common-types.md#enum-dialogbuttonstyle)|否|None| **命名参数。** 设置Button的风格样式。初始值: DialogButtonStyle.Default |
+|style|?[DialogButtonStyle](./cj-common-types.md#enum-dialogbuttonstyle)|否|Option.None| **命名参数。** 设置Button的风格样式。初始值: DialogButtonStyle.Default |
 |value|?[ResourceStr](./cj-common-types.md#interface-resourcestr)|是|-| **命名参数。** Button的文本内容。 |
 |fontColor|?[ResourceColor](./cj-common-types.md#interface-resourcecolor)|否|None| **命名参数。** Button的文本颜色。 |
 |backgroundColor|?[ResourceColor](./cj-common-types.md#interface-resourcecolor)|否|None| **命名参数。** Button背景颜色。 |
