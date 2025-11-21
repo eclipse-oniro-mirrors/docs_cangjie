@@ -48,7 +48,7 @@ The example demonstrates a custom transition effect for a shared element image w
 package ohos_app_cangjie_entry
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
-import ohos.resource_manager.AppResource
+import ohos.resource.__GenerateResource__
 
 @Entry
 @Component
@@ -60,7 +60,7 @@ class EntryView {
                 .width(50)
                 .height(50)
                 .onClick({
-                    e => getUIContext().getRouter()
+                    e => getUIContext().getRouter().pushUrl(url:"Page1")
                 })
                 .sharedTransition("sharedImage",
                     options: SharedTransitionOptions(duration: 800, curve: Curve.Linear, delay: 100))
@@ -76,7 +76,7 @@ class EntryView {
 package ohos_app_cangjie_entry
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
-import ohos.resource_manager.AppResource
+import ohos.resource.__GenerateResource__
 
 @Entry
 @Component
