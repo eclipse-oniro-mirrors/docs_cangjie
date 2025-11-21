@@ -170,7 +170,6 @@ public class CanvasGradient {
 
 **起始版本：** 22
 
-
 #### func addColorStop(Float64, ?ResourceColor)
 
 ```cangjie

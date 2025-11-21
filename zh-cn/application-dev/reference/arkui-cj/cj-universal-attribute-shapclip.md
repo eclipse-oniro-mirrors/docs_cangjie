@@ -32,7 +32,6 @@ public func clip(value: ?Bool): T
 |:---|:---|
 |T|返回调用此接口的组件实例本身。|
 
-
 ## func clipShape(?BaseShape)
 
 ```cangjie
@@ -57,7 +56,6 @@ public func clipShape(value: ?BaseShape): T
 |:---|:---|
 |T|返回调用此接口的组件实例本身。|
 
-
 ## func maskShape(BaseShape)
 
 ```cangjie
@@ -81,4 +79,3 @@ public func maskShape(value: BaseShape): T
 |类型|说明|
 |:---|:---|
 |T|返回调用此接口的组件实例本身。|
-

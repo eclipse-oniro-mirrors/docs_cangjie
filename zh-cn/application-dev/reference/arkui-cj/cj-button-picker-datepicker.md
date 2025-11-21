@@ -209,7 +209,6 @@ public var day: Int64
 
 **起始版本：** 22
 
-
 #### init(Int64, Int64, Int64)
 
 ```cangjie
@@ -233,7 +232,6 @@ public init(
 | year  | Int64 | 是   | -   | 选中日期的年。                      |
 | month | Int64 | 是   | -   | 选中日期的月。(0~11)，0表示1月，11表示12月。 |
 | day   | Int64 | 是   | -   | 选中日期的日。                      |
-
 
 ## 示例代码
 

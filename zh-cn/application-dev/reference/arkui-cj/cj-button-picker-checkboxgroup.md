@@ -315,4 +315,3 @@ class EntryView {
 ```
 
 ![checkbox_group2](figures/checkbox_group2.gif)
-

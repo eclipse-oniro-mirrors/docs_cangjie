@@ -39,7 +39,6 @@ public func overlay(value!: ?String, align!: ?Alignment = None,
 |:---|:---|
 |T|返回调用此接口的组件实例本身。|
 
-
 ## 示例代码
 
 ### 示例1（浮层效果）

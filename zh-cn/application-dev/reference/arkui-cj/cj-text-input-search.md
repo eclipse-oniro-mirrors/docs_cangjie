@@ -301,7 +301,6 @@ public func caretPosition(value: ?Int32): Unit
 |:---|:---|:---|:---|:---|
 |value|?Int32|是|-|从字符串开始到光标所在位置的字符长度。初始值：0。|
 
-
 ## 示例代码
 
 <!--run-->

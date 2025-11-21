@@ -542,6 +542,7 @@ extend UInt32 <: ResourceColor {
     public func toUInt32(): UInt32
 }
 ```
+
 **功能：** 扩展UInt32为ResourceColor子类型。
 
 #### func toUInt32()

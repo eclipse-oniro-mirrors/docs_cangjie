@@ -260,4 +260,5 @@ class EntryView {
     }
 }
 ```
+
 ![matrix2D_1](./figures/matrix2D_1.png)

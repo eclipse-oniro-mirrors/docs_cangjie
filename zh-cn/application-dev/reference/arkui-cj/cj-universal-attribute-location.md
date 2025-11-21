@@ -33,7 +33,6 @@ func position(x!: ?Length, y!: ?Length): T
 |:---|:---|
 |T|返回通用方法接口类型|
 
-
 ## func markAnchor(?Length, ?Length)
 
 ```cangjie

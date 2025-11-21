@@ -43,7 +43,6 @@ public init(controller: ?RichEditorController)
 
 通用事件：全部支持。
 
-
 ## 组件属性
 
 ### func bindSelectionMenu(?RichEditorSpanType, ?CustomBuilder, ?ResponseType, ?SelectionMenuOptions)

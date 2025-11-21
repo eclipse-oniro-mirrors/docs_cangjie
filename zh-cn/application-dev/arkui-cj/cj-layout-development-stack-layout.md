@@ -57,7 +57,7 @@ class EntryView {
 
 Stack组件通过[alignContent参数](../reference/arkui-cj/cj-row-column-stack-stack.md#func-aligncontentalignment)实现位置的相对移动。如图2所示，支持九种对齐方式。
 
-**图2** Stack容器内元素的对齐方式  
+**图2** Stack容器内元素的对齐方式
 
 ![alignContent1](figures/alignContent.png)
 

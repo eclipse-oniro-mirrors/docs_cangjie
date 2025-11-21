@@ -32,8 +32,6 @@ public func foregroundColor(value: ?ColoringStrategy): T
 |:---|:---|
 |T|返回当前组件。|
 
-
-
 ## func foregroundColor(?ResourceColor)
 
 ```cangjie
@@ -57,7 +55,6 @@ public func foregroundColor(value: ?ResourceColor): T
 |类型|说明|
 |:---|:---|
 |T|返回当前组件。|
-
 
 ## 示例代码
 
