@@ -90,9 +90,9 @@ public func translate(x!: ?Length = None, y!: ?Length = None, z!: ?Length = None
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|x|?[Length](./cj-common-types.md#interface-length)|否|None|**命名参数。** X轴平移距离。初始值:  0.vp|
-|y|?[Length](./cj-common-types.md#interface-length)|否|None|**命名参数。** Y轴平移距离。初始值:  0.vp|
-|z|?[Length](./cj-common-types.md#interface-length)|否|None|**命名参数。** Z轴平移距离。初始值:  0.vp|
+|x|?[Length](./cj-common-types.md#interface-length)|否|None|**命名参数。** X轴平移距离。初始值:  0.px|
+|y|?[Length](./cj-common-types.md#interface-length)|否|None|**命名参数。** Y轴平移距离。初始值:  0.px|
+|z|?[Length](./cj-common-types.md#interface-length)|否|None|**命名参数。** Z轴平移距离。初始值:  0.px|
 
 **返回值：**
 

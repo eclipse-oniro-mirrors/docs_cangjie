@@ -92,9 +92,9 @@ public func translate(x!: ?Length = None, y!: ?Length = None, z!: ?Length = None
 
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
-| x | ?[Length](./cj-common-types.md#interface-length) | No | None | **Named parameter.** X-axis translation distance. Initial value: 0.vp |
-| y | ?[Length](./cj-common-types.md#interface-length) | No | None | **Named parameter.** Y-axis translation distance. Initial value: 0.vp |
-| z | ?[Length](./cj-common-types.md#interface-length) | No | None | **Named parameter.** Z-axis translation distance. Initial value: 0.vp |
+| x | ?[Length](./cj-common-types.md#interface-length) | No | None | **Named parameter.** X-axis translation distance. Initial value: 0.px |
+| y | ?[Length](./cj-common-types.md#interface-length) | No | None | **Named parameter.** Y-axis translation distance. Initial value: 0.px |
+| z | ?[Length](./cj-common-types.md#interface-length) | No | None | **Named parameter.** Z-axis translation distance. Initial value: 0.px |
 
 **Return Value:**
 
