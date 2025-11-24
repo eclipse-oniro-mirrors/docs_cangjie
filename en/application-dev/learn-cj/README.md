@@ -127,6 +127,7 @@
             - Cangjie Calling ArkTS
                 - [ArkTS-side Interoperability Preparation](FFI/cangjie-arkts/prepare_arkts_module.md)
                 - [Cangjie-side Calling Interoperability Code](FFI/cangjie-arkts/using_arkts_module.md)
+                - [Import ArkTS Modules in Cangjie](FFI/cangjie-arkts/cangjie-load-arkts.md)
         - [Interoperability Use Cases](FFI/cangjie-arkts/using_example.md)
             - [Cangjie Accessing ArkTS Data](FFI/cangjie-arkts/operating_ArkTS_data.md)
             - [ArkTS Accessing Cangjie Data](FFI/cangjie-arkts/operating_cangjie_objects.md)

@@ -112,6 +112,7 @@
         - 入门
             - [构建第一个仓颉与ArkTS混合应用](FFI/cangjie-arkts/cj-quick-start-first-cangjie-hybrid-app.md)
             - [在已有ArkTS工程中增量使用仓颉](FFI/cangjie-arkts/cj-quick-start-first-cangjie-hybrid-module.md)
+            - [在仓颉代码里导入ArkTS模块](FFI/cangjie-arkts/cangjie-load-arkts.md)
         - [概述](FFI/cangjie-arkts/cangjie_arkts_overview.md)
         - [场景](FFI/cangjie-arkts/interoperability_senario.md)
             - [ArkTS 应用中使用仓颉](FFI/cangjie-arkts/using_cangjie.md)

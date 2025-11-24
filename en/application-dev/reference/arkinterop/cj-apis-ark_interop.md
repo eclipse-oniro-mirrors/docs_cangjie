@@ -3796,7 +3796,9 @@ func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let obj = clazz.new([id.toJSValue(), name.toJSValue()])
     return obj
 }
-```## class JSContext
+```
+
+## class JSContext
 
 ```cangjie
 public class JSContext {}
@@ -5327,6 +5329,55 @@ func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
      }
 
     context.undefined().toJSValue()
+}
+```
+
+### func requireArkModule(String)
+
+```cangjie
+public func requireArkModule(src: String): JSValue
+```
+
+**Function:** Import an ArkTS module.
+
+**Initial Version:** 23
+
+**Parameters:**
+
+| Parameter | Type | Required | Default | Description           |
+|:----|:-------|:---------|:----|:----------------------|
+| src | String | Yes      | -   | The module specifier. |
+
+**Return Value:**
+
+| 类型                         | 说明                |
+|:---------------------------|:------------------|
+| [JSValue](#struct-jsvalue) | The module value. |
+
+**Exceptions:**
+
+- BusinessException: Corresponding error codes are listed below.
+
+| Error Code ID | Error Message                                                             |
+|:------|:--------------------------------------------------------------------------|
+| 2     | Module initialize fail.                                                   |
+| 4     | Thread mismatch.                                                          |
+| 6     | Target module not exist.                                                  |
+| 7     | Can not requireArkModule during initializing cangjie module.              |
+| 8     | Current application have not support requireArkModule of the url.         |
+
+**Example:**
+
+<!--compile-->
+```cangjie
+func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
+    let hilog = context.requireArkModule("@ohos.hilog").asObject()
+    hilog.callMethod("info", [
+        context.number(0).toJSValue(),
+        context.string("test").toJSValue(),
+        context.string("call hilog success").toJSValue()
+    ])
+    return context.undefined().toJSValue()
 }
 ```
 

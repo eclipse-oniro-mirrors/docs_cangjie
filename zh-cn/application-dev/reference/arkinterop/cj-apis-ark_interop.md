@@ -5348,6 +5348,55 @@ func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
 }
 ```
 
+### func requireArkModule(String)
+
+```cangjie
+public func requireArkModule(src: String): JSValue
+```
+
+**功能：** 导入一个ArkTS模块。
+
+**起始版本：** 23
+
+**参数：**
+
+| 参数名 | 类型     | 必填 | 默认值 | 说明     |
+|:----|:-------|:---|:----|:-------|
+| src | String | 是  | -   | 模块标识符。 |
+
+**返回值：**
+
+| 类型                         | 说明           |
+|:---------------------------|:-------------|
+| [JSValue](#struct-jsvalue) | 返回 ArkTS 模块。 |
+
+**异常：**
+
+- BusinessException：对应错误码如下表。
+
+| 错误码ID | 错误信息                                                              |
+|:------|:------------------------------------------------------------------|
+| 2     | Module initialize fail.                                           |
+| 4     | Thread mismatch.                                                  |
+| 6     | Target module not exist.                                          |
+| 7     | Can not requireArkModule during initializing cangjie module.      |
+| 8     | Current application have not support requireArkModule of the url. |
+
+**示例：**
+
+<!--compile-->
+```cangjie
+func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
+    let hilog = context.requireArkModule("@ohos.hilog").asObject()
+    hilog.callMethod("info", [
+        context.number(0).toJSValue(),
+        context.string("test").toJSValue(),
+        context.string("call hilog success").toJSValue()
+    ])
+    return context.undefined().toJSValue()
+}
+```
+
 ## class JSExternal
 
 ```cangjie
