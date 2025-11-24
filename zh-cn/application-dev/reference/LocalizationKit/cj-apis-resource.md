@@ -1,6 +1,6 @@
 # ohos.resource
 
-本模块描述资源类型。
+resource模块描述资源类型。
 
 ## 导入模块
 

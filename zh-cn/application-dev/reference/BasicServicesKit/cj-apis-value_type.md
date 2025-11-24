@@ -1,6 +1,6 @@
 # ohos.value_type
 
-本模块含公共事件附加信息。
+value_type模块含公共事件附加信息。
 
 ## 导入模块
 

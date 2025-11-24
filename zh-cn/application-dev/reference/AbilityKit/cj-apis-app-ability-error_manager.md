@@ -1,6 +1,6 @@
 # ohos.app.ability.error_manager
 
-ErrorManager模块提供对错误观测器的注册和注销的能力，主要是观测应用发生cj crash和appfreeze等错误。
+error_manager模块提供对错误观测器的注册和注销的能力，主要是观测应用发生cj crash和appfreeze等错误。
 
 ## 导入模块
 

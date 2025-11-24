@@ -72,7 +72,9 @@ public class PreferencesOptions {
 public var dataGroupId: String
 ```
 
-**功能：** 应用组ID，<!--RP1-->暂不支持指定dataGroupId在对应共享沙箱路径下创建Preferences实例。<!--RP1End--><br/>为可选参数。指定在此dataGroupId对应的沙箱路径下创建Preferences实例。当此参数不填时，默认在本应用沙箱目录下创建Preferences实例。
+**功能：** 应用组ID，<!--RP1-->暂不支持指定dataGroupId在对应共享沙箱路径下创建Preferences实例。<!--RP1End-->
+
+为可选参数。指定在此dataGroupId对应的沙箱路径下创建Preferences实例。当此参数不填时，默认在本应用沙箱目录下创建Preferences实例。
 
 **类型：** String
 
@@ -132,7 +134,7 @@ public init(name: String, dataGroupId!: String = String.empty,
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |name|String|是|-|Preferences实例的名称。名称长度需大于零且小于等于255字节，名称中不能包含'/'且不能以'/'结尾。|
-|dataGroupId|String|否|String.empty|应用组ID，<!--RP1-->暂不支持指定dataGroupId在对应共享沙箱路径下创建Preferences实例。<!--RP1End--><br/>为可选参数。指定在此dataGroupId对应的沙箱路径下创建Preferences实例。当此参数不填时，默认在本应用沙箱目录下创建Preferences实例。|
+|dataGroupId|String|否|String.empty|应用组ID，为可选参数。|
 |storageType|[StorageType](#enum-storagetype)|否|StorageType.Xml|存储模式，为可选参数。表示当前Preferences实例需要使用的存储模式。当此参数不填时，默认使用XML存储模式。当选择某种存储模式创建Preferences后，不支持中途切换存储模式。|
 
 ## class Preferences
@@ -573,9 +575,9 @@ public func flush(): Unit
 
 > **说明：**
 >
-> 当数据未修改或修改后的数据与缓存数据一致时，不会刷新持久化文件。
+> - 当数据未修改或修改后的数据与缓存数据一致时，不会刷新持久化文件。
 >
-> 只在XML存储模式下使用。
+> - 只在XML存储模式下使用。
 
 **系统能力：** SystemCapability.DistributedDataManager.Preferences.Core
 
@@ -997,10 +999,14 @@ public enum StorageType {
 **功能：** Preferences的存储模式枚举。
 
 > **说明：**
->   - 在选择存储模式前，建议调用isStorageTypeSupported检查当前平台是否支持对应存储模式。
->   - 当选择某一模式通过getPreferences接口获取实例后，不允许中途切换模式。
->   - 首选项不支持不同模式间数据的迁移，若需将数据从一种模式切换至另一种模式，需通过读写首选项的形式进行数据迁移。
->   - 若需要变更首选项的存储路径，不能通过移动或覆盖文件的方式进行，需通过读写首选项的形式进行数据迁移。
+>
+> - 在选择存储模式前，建议调用isStorageTypeSupported检查当前平台是否支持对应存储模式。
+>
+> - 当选择某一模式通过getPreferences接口获取实例后，不允许中途切换模式。
+>
+> - 首选项不支持不同模式间数据的迁移，若需将数据从一种模式切换至另一种模式，需通过读写首选项的形式进行数据迁移。
+>
+> - 若需要变更首选项的存储路径，不能通过移动或覆盖文件的方式进行，需通过读写首选项的形式进行数据迁移。
 
 **系统能力：** SystemCapability.DistributedDataManager.Preferences.Core
 

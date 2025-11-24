@@ -1,6 +1,6 @@
 # ohos.app.ability.want_constant
 
-AbilityConstant提供Ability相关的枚举，包括应用启动原因LaunchReason、上次退出原因LastExitReason、迁移结果OnContinueResult等。
+want_constant模块提供Ability相关的枚举，包括应用启动原因LaunchReason、上次退出原因LastExitReason、迁移结果OnContinueResult等。
 
 ## 导入模块
 
@@ -91,7 +91,11 @@ public static const FLAG_AUTH_WRITE_URI_PERMISSION: UInt32 = 0x00000002
 public static const FLAG_INSTALL_ON_DEMAND: UInt32 = 0x00000800
 ```
 
-**功能：** 表示拉起原子化服务时开启免安装功能。<br>- 如果开启了免安装功能，当系统检测到被拉起的原子化服务未安装时，会自动安装原子化服务，再进行拉起。<br>- 如果未开启免安装功能，当原子化服务未安装时，将拉起失败。
+**功能：** 表示拉起原子化服务时开启免安装功能。
+
+- 如果开启了免安装功能，当系统检测到被拉起的原子化服务未安装时，会自动安装原子化服务，再进行拉起。
+
+- 如果未开启免安装功能，当原子化服务未安装时，将拉起失败。
 
 **类型：** UInt32
 
@@ -105,7 +109,9 @@ public static const FLAG_INSTALL_ON_DEMAND: UInt32 = 0x00000800
 public static const FLAG_START_WITHOUT_TIPS: UInt32 = 0x40000000
 ```
 
-**功能：** 表示是否关闭匹配失败弹窗功能。<br>通过隐式方式拉起应用时，如果没有能够匹配的应用，默认会弹出提示弹窗“暂无可用打开方式”。开发者可以通过该字段屏蔽该弹窗。
+**功能：** 表示是否关闭匹配失败弹窗功能。
+
+通过隐式方式拉起应用时，如果没有能够匹配的应用，默认会弹出提示弹窗“暂无可用打开方式”。开发者可以通过该字段屏蔽该弹窗。
 
 **类型：** UInt32
 
@@ -139,7 +145,9 @@ public class Params {
 public static const ABILITY_BACK_TO_OTHER_MISSION_STACK: String = "ability.params.backToOtherMissionStack"
 ```
 
-**功能：** 表示是否支持跨任务链返回。<br>该参数用于控制跨应用的UIAbility返回逻辑，其核心作用是改变用户执行返回键时的应用跳转行为。例如现有UIAbility A和UIAbility B，当前前台显示的是UIAbility A，随后系统服务又拉起UIAbility B（同时在Want的Params字段配置该参数为true），那么，当UIAbility B退出时，会返回到UIAbility A（即返回到最近一次的访问任务）。如果未配置该参数，则默认直接返回桌面。需要注意的是，该字段仅支持系统设置，三方应用传入该字段不生效。
+**功能：** 表示是否支持跨任务链返回。
+
+该参数用于控制跨应用的UIAbility返回逻辑，其核心作用是改变用户执行返回键时的应用跳转行为。例如现有UIAbility A和UIAbility B，当前前台显示的是UIAbility A，随后系统服务又拉起UIAbility B（同时在Want的Params字段配置该参数为true），那么，当UIAbility B退出时，会返回到UIAbility A（即返回到最近一次的访问任务）。如果未配置该参数，则默认直接返回桌面。需要注意的是，该字段仅支持系统设置，三方应用传入该字段不生效。
 
 **类型：** String
 
@@ -167,7 +175,9 @@ public static const ABILITY_RECOVERY_RESTART: String = "ohos.ability.params.abil
 public static const CONTENT_TITLE_KEY: String = "ohos.extra.param.key.contentTitle"
 ```
 
-**功能：** 表示原子化服务分享的标题。<br>在跨端分享的onShare回调中，开发者可通过该字段设置分享的标题。
+**功能：** 表示原子化服务分享的标题。
+
+在跨端分享的onShare回调中，开发者可通过该字段设置分享的标题。
 
 **类型：** String
 
@@ -181,7 +191,9 @@ public static const CONTENT_TITLE_KEY: String = "ohos.extra.param.key.contentTit
 public static const SHARE_ABSTRACT_KEY: String = "ohos.extra.param.key.shareAbstract"
 ```
 
-**功能：** 表示原子化服务分享的内容摘要。<br>在跨端分享的onShare回调中，开发者可通过该字段设置分享的摘要。
+**功能：** 表示原子化服务分享的内容摘要。
+
+在跨端分享的onShare回调中，开发者可通过该字段设置分享的摘要。
 
 **类型：** String
 
@@ -195,7 +207,9 @@ public static const SHARE_ABSTRACT_KEY: String = "ohos.extra.param.key.shareAbst
 public static const SHARE_URL_KEY: String = "ohos.extra.param.key.shareUrl"
 ```
 
-**功能：** 表示原子化服务分享的URL链接。<br>在跨端分享的onShare回调中，开发者可通过该字段设置分享的URL链接。
+**功能：** 表示原子化服务分享的URL链接。
+
+在跨端分享的onShare回调中，开发者可通过该字段设置分享的URL链接。
 
 **类型：** String
 

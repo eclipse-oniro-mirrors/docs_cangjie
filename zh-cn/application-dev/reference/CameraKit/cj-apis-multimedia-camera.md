@@ -1,6 +1,6 @@
 # ohos.multimedia.camera（相机管理）
 
-本模块为开发者提供一套简单且易于理解的相机服务接口，开发者通过调用接口可以开发相机应用。应用通过访问和操作相机硬件，实现基础操作，如预览、拍照和录像；还可以通过接口组合完成更多操作，如控制闪光灯和曝光时间、对焦或调焦等。
+camera模块为开发者提供一套简单且易于理解的相机服务接口，开发者通过调用接口可以开发相机应用。应用通过访问和操作相机硬件，实现基础操作，如预览、拍照和录像；还可以通过接口组合完成更多操作，如控制闪光灯和曝光时间、对焦或调焦等。
 
 ## 导入模块
 
@@ -108,7 +108,7 @@ func getExposureMode(): ExposureMode
 
 > **说明：**
 >
-> 若未通过[setExposureMode](#func-setexposuremodeexposuremode)接口进行设置，直接调用该接口查询当前曝光模式，会返回无效值。
+> - 若未通过[setExposureMode](#func-setexposuremodeexposuremode)接口进行设置，直接调用该接口查询当前曝光模式，会返回无效值。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -1937,8 +1937,9 @@ public interface Stabilization <: StabilizationQuery {
 
  > **说明：**
  >
- > 需要会话中有录像流（[VideoOutput](#class-videooutput)）的前提下，才可以对视频进行防抖设置，
- > 其中[VideoStabilizationMode](#enum-videostabilizationmode)中的枚举HIGH需要在[Profile](#class-profile)的分辨率为1920*1080的场景下生效。
+ > - 需要会话中有录像流（[VideoOutput](#class-videooutput)）的前提下，才可以对视频进行防抖设置，
+ >
+ > - 其中[VideoStabilizationMode](#enum-videostabilizationmode)中的枚举HIGH需要在[Profile](#class-profile)的分辨率为1920*1080的场景下生效。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -2650,7 +2651,7 @@ public func on(eventType: CameraEvents, camera: CameraDevice, callback: Callback
 
 > **说明：**
 >
-> 当前注册监听接口，不支持在on监听的回调方法里，调用off注销回调。
+> - 当前注册监听接口，不支持在on监听的回调方法里，调用off注销回调。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -3782,7 +3783,7 @@ public func on(eventType: CameraEvents, callback: Callback1Argument<CameraStatus
 
 > **说明：**
 >
-> 当前注册监听接口，不支持在on监听的回调方法里，调用off注销回调。
+> - 当前注册监听接口，不支持在on监听的回调方法里，调用off注销回调。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -3843,7 +3844,7 @@ public func on(eventType: CameraEvents, callback: Callback1Argument<FoldStatusIn
 
 > **说明：**
 >
-> 当前注册监听接口，不支持在on监听的回调方法里，调用off注销回调。
+> - 当前注册监听接口，不支持在on监听的回调方法里，调用off注销回调。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -3904,7 +3905,7 @@ public func on(eventType: CameraEvents, callback: Callback1Argument<TorchStatusI
 
 > **说明：**
 >
-> 当前注册监听接口，不支持在on监听的回调方法里，调用off注销回调。
+> - 当前注册监听接口，不支持在on监听的回调方法里，调用off注销回调。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -5438,7 +5439,7 @@ public func on(eventType: CameraEvents, callback: Callback1Argument<CaptureStart
 
 > **说明：**
 >
-> 当前注册监听接口，不支持在on监听的回调方法里，调用off注销回调。
+> - 当前注册监听接口，不支持在on监听的回调方法里，调用off注销回调。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -5564,7 +5565,7 @@ public func on(eventType: CameraEvents, callback: Callback1Argument<CaptureEndIn
 
 > **说明：**
 >
-> 当前注册监听接口，不支持在on监听的回调方法里，调用off注销回调。
+> - 当前注册监听接口，不支持在on监听的回调方法里，调用off注销回调。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -5629,7 +5630,7 @@ public func on(eventType: CameraEvents, callback: Callback1Argument<FrameShutter
 
 > **说明：**
 >
-> 当前注册监听接口，不支持在on监听的回调方法里，调用off注销回调。
+> - 当前注册监听接口，不支持在on监听的回调方法里，调用off注销回调。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -5694,7 +5695,7 @@ public func on(eventType: CameraEvents, callback: Callback0Argument): Unit
 
 > **说明：**
 >
-> 当前注册监听接口，不支持在on监听的回调方法里，调用off注销回调。
+> - 当前注册监听接口，不支持在on监听的回调方法里，调用off注销回调。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -5759,7 +5760,7 @@ public func on(eventType: CameraEvents, callback: Callback1Argument<Float64>): U
 
 > **说明：**
 >
-> 当前注册监听接口，不支持在on监听的回调方法里，调用off注销回调。
+> - 当前注册监听接口，不支持在on监听的回调方法里，调用off注销回调。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -6164,7 +6165,7 @@ public func on(eventType: CameraEvents, callback: Callback0Argument): Unit
 
 > **说明：**
 >
-> 当前注册监听接口，不支持在on监听的回调方法里，调用off注销回调。
+> - 当前注册监听接口，不支持在on监听的回调方法里，调用off注销回调。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -6223,7 +6224,7 @@ public func on(eventType: CameraEvents, callback: Callback1Argument<FocusState>)
 
 > **说明：**
 >
-> 当前注册监听接口，不支持在on监听的回调方法里，调用off注销回调。
+> - 当前注册监听接口，不支持在on监听的回调方法里，调用off注销回调。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -6282,7 +6283,7 @@ public func on(eventType: CameraEvents, callback: Callback1Argument<SmoothZoomIn
 
 > **说明：**
 >
-> 当前注册监听接口，不支持在on监听的回调方法里，调用off注销回调。
+> - 当前注册监听接口，不支持在on监听的回调方法里，调用off注销回调。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -6827,7 +6828,7 @@ public func on(eventType: CameraEvents, callback: Callback0Argument): Unit
 
 > **说明：**
 >
-> 不支持在on监听的回调方法里调用off注销回调。
+> - 不支持在on监听的回调方法里调用off注销回调。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -6949,7 +6950,7 @@ public func setFrameRate(minFps: Int32, maxFps: Int32): Unit
 
 > **说明：**
 >
-> 仅在[PhotoSession](#class-photosession)或[VideoSession](#class-videosession)模式下支持。
+> - 仅在[PhotoSession](#class-photosession)或[VideoSession](#class-videosession)模式下支持。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -7096,7 +7097,9 @@ public let format: CameraFormat
 public let size: Size
 ```
 
-**功能：** 分辨率。<br>设置的是相机的分辨率宽度和高度，而非实际输出图像的宽度和高度。
+**功能：** 分辨率。
+
+设置的是相机的分辨率宽度和高度，而非实际输出图像的宽度和高度。
 
 **类型：** [Size](#class-size)
 
@@ -7704,7 +7707,7 @@ public func on(eventType: CameraEvents, callback: Callback0Argument): Unit
 
 > **说明：**
 >
-> 当前注册监听接口，不支持在on监听的回调方法里，调用off注销回调。
+> - 当前注册监听接口，不支持在on监听的回调方法里，调用off注销回调。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -7831,9 +7834,9 @@ public func setFrameRate(minFps: Int32, maxFps: Int32): Unit
 
 > **说明：**
 >
-> 仅在[PhotoSession](#class-photosession)或[VideoSession](#class-videosession)模式下支持。
+> - 仅在[PhotoSession](#class-photosession)或[VideoSession](#class-videosession)模式下支持。
 >
-> 接口调用前，先调用[getActiveFrameRate](#func-getactiveframerate)接口查询当前VideoSession的帧率，若下发的帧率与当前帧率相等，则下发的帧率不会生效。
+> - 接口调用前，先调用[getActiveFrameRate](#func-getactiveframerate)接口查询当前VideoSession的帧率，若下发的帧率与当前帧率相等，则下发的帧率不会生效。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -8030,7 +8033,7 @@ public class VideoSession  Session & Flash & AutoExposure & Focus & Zoom & Stabi
 
 > **说明：**
 >
-> 默认的视频录制模式，适用于一般场景。支持720P、1080p等多种分辨率的录制，可选择不同帧率（如30fps、60fps）。
+> - 默认的视频录制模式，适用于一般场景。支持720P、1080p等多种分辨率的录制，可选择不同帧率（如30fps、60fps）。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -8307,7 +8310,7 @@ public func on(eventType: CameraEvents, callback: Callback0Argument): Unit
 
 > **说明：**
 >
-> 当前注册监听接口，不支持在on监听的回调方法里，调用off注销回调。
+> - 当前注册监听接口，不支持在on监听的回调方法里，调用off注销回调。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -8374,7 +8377,7 @@ public func on(eventType: CameraEvents, callback: Callback1Argument<FocusState>)
 
 > **说明：**
 >
-> 当前注册监听接口，不支持在on监听的回调方法里，调用off注销回调。
+> - 当前注册监听接口，不支持在on监听的回调方法里，调用off注销回调。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -8441,7 +8444,7 @@ public func on(eventType: CameraEvents, callback: Callback1Argument<SmoothZoomIn
 
 > **说明：**
 >
-> 当前注册监听接口，不支持在on监听的回调方法里，调用off注销回调。
+> - 当前注册监听接口，不支持在on监听的回调方法里，调用off注销回调。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -8781,7 +8784,7 @@ public operator func !=(other: CameraEvents): Bool
 
 |类型|说明|
 |:----|:----|
-|Bool|true表示相等，false表示不相等。|
+|Bool|true表示不相等，false表示相等。|
 
 ### func ==(CameraEvents)
 
@@ -8789,7 +8792,7 @@ public operator func !=(other: CameraEvents): Bool
 public operator func ==(other: CameraEvents): Bool
 ```
 
-**功能：** 判断两个枚举值是否不相等。
+**功能：** 判断两个枚举值是否相等。
 
 **参数：**
 
@@ -8801,7 +8804,7 @@ public operator func ==(other: CameraEvents): Bool
 
 |类型|说明|
 |:----|:----|
-|Bool|true表示不相等，false表示相等。|
+|Bool|true表示相等，false表示不相等。|
 
 ## enum CameraFormat
 
@@ -8926,7 +8929,7 @@ public operator func !=(other: CameraFormat): Bool
 public operator func ==(other: CameraFormat): Bool
 ```
 
-**功能：** 判断两个枚举值是否不相等。
+**功能：** 判断两个枚举值是否相等。
 
 **参数：**
 
@@ -8938,7 +8941,7 @@ public operator func ==(other: CameraFormat): Bool
 
 |类型|说明|
 |:----|:----|
-|Bool|两个枚举值不相等返回true，否则返回false。|
+|Bool|两个枚举值相等返回true，否则返回false。|
 
 ### func toString()
 
@@ -9042,7 +9045,7 @@ public operator func !=(other: CameraPosition): Bool
 public operator func ==(other: CameraPosition): Bool
 ```
 
-**功能：** 判断两个枚举值是否不相等。
+**功能：** 判断两个枚举值是否相等。
 
 **参数：**
 
@@ -9054,7 +9057,7 @@ public operator func ==(other: CameraPosition): Bool
 
 |类型|说明|
 |:----|:----|
-|Bool|两个枚举值不相等返回true，否则返回false。|
+|Bool|两个枚举值相等返回true，否则返回false。|
 
 ### func toString()
 
@@ -9171,7 +9174,7 @@ public operator func !=(other: CameraStatus): Bool
 public operator func ==(other: CameraStatus): Bool
 ```
 
-**功能：** 判断两个枚举值是否不相等。
+**功能：** 判断两个枚举值是否相等。
 
 **参数：**
 

@@ -1,6 +1,6 @@
 # ohos.telephony.call
 
-该模块提供呼叫管理功能，包括拨打电话、跳转到拨号界面、获取通话状态、格式化电话号码等。
+call模块提供呼叫管理功能，包括拨打电话、跳转到拨号界面、获取通话状态、格式化电话号码等。
 
 ## 导入模块
 
@@ -433,7 +433,11 @@ public class EmergencyNumberOptions {
 public var slotId: Int32
 ```
 
-**功能：** 卡槽ID：<br/>- 卡槽1：`0`。<br/>- 卡槽2：`1`。
+**功能：** 卡槽ID：
+
+- 卡槽1：`0`。
+
+- 卡槽2：`1`。
 
 **类型：** Int32
 
@@ -459,7 +463,7 @@ public init(slotId!: Int32 = 0)
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|slotId|Int32|否|0|卡槽ID：<br/>- 卡槽1：`0`。<br/>- 卡槽2：`1`。。|
+|slotId|Int32|否|0|卡槽ID。|
 
 ## class NumberFormatOptions
 

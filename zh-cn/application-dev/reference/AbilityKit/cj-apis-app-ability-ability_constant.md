@@ -1,6 +1,6 @@
 # ohos.app.ability.ability_constant
 
-AbilityConstant提供Ability相关的枚举，包括应用启动原因LaunchReason、上次退出原因LastExitReason、迁移结果OnContinueResult等。
+ability_constant模块提供Ability相关的枚举，包括应用启动原因LaunchReason、上次退出原因LastExitReason、迁移结果OnContinueResult等。
 
 ## 导入模块
 
@@ -120,7 +120,11 @@ CppCrash
 Normal
 ```
 
-**功能：** 用户主动关闭，应用程序正常退出。<br>**说明**：当开发者直接调用内核kill命令等非Ability Kit提供的能力强制退出应用进程时，也会返回NORMAL。
+**功能：** 用户主动关闭，应用程序正常退出。
+
+> **说明：**
+>
+> - 当开发者直接调用内核kill命令等非Ability Kit提供的能力强制退出应用进程时，也会返回NORMAL。
 
 **系统能力：** SystemCapability.Ability.AbilityRuntime.Core
 

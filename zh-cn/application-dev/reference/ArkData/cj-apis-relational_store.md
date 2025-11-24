@@ -402,7 +402,9 @@ public class CryptoParam {
 public var cryptoPageSize: UInt32
 ```
 
-**功能：** 整数类型，指定数据库加解密使用的页大小。如不指定，默认值为1024字节。<br/>用户指定的页大小应为1024到65536范围内的整数，并且为2<sup>n</sup>。若指定值非整数，则向下取整。
+**功能：** 整数类型，指定数据库加解密使用的页大小。如不指定，默认值为1024字节。
+
+用户指定的页大小应为1024到65536范围内的整数，并且为2<sup>n</sup>。若指定值非整数，则向下取整。
 
 **类型：** UInt32
 
@@ -434,7 +436,11 @@ public var encryptionAlgo: EncryptionAlgo
 public var encryptionKey: Array<UInt8>
 ```
 
-**功能：** 指定数据库加/解密使用的密钥。<br/>如传入密钥为空，则由数据库负责生成并保存密钥，并使用生成的密钥打开数据库文件。<br/>使用完后用户需要将密钥内容全部置为零。
+**功能：** 指定数据库加/解密使用的密钥。
+
+如传入密钥为空，则由数据库负责生成并保存密钥，并使用生成的密钥打开数据库文件。
+
+使用完后用户需要将密钥内容全部置为零。
 
 **类型：** Array\<UInt8>
 
@@ -466,7 +472,11 @@ public var hmacAlgo: HmacAlgo
 public var iterationCount: Int32
 ```
 
-**功能：** 整数类型，指定数据库PBKDF2算法的迭代次数，默认值为10000。<br/>迭代次数应当为大于零的整数。<br/>不指定此参数或指定为零时，使用默认值10000，并使用默认加密算法Aes256Gcm。
+**功能：** 整数类型，指定数据库PBKDF2算法的迭代次数，默认值为10000。
+
+迭代次数应当为大于零的整数。
+
+不指定此参数或指定为零时，使用默认值10000，并使用默认加密算法Aes256Gcm。
 
 **类型：** Int32
 
@@ -511,8 +521,8 @@ public init(encryptionKey: Array<UInt8>, iterationCount!: Int32 = 10000,
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|encryptionKey|Array\<UInt8>|是|-|指定数据库加/解密使用的密钥。<br>如传入密钥为空，则由数据库负责生成并保存密钥，并使用生成的密钥打开数据库文件。<br>使用完后用户需要将密钥内容全部置为零。|
-|iterationCount|Int32|否|10000|整数类型，指定数据库PBKDF2算法的迭代次数，默认值为10000。<br>迭代次数应当为大于零的整数。<br>不指定此参数或指定为零时，使用默认值10000，并使用默认加密算法Aes256Gcm。|
+|encryptionKey|Array\<UInt8>|是|-|指定数据库加/解密使用的密钥。|
+|iterationCount|Int32|否|10000|整数类型，指定数据库PBKDF2算法的迭代次数，默认值为10000。|
 |encryptionAlgo|[EncryptionAlgo](#enum-encryptionalgo)|否|EncryptionAlgo.Aes256Gcm|指定数据库加解密使用的加密算法。如不指定，默认值为Aes256Gcm。|
 |hmacAlgo|[HmacAlgo](#enum-hmacalgo)|否|HmacAlgo.Sha256|指定数据库加解密使用的HMAC算法。如不指定，默认值为Sha256。|
 |kdfAlgo|?[KdfAlgo](#enum-kdfalgo)|否|None|指定数据库加解密使用的PBKDF2算法。如不指定，默认使用和HMAC算法相等的算法。|
@@ -559,7 +569,7 @@ public func inValues(field: String, value: Array<RelationalStoreValueType>): Rdb
 
 > **说明：**
 >
-> `value`集合不能为空。如果传入空集，此条件将失效，导致操作针对所有数据（如全量查询、更新或删除）。请在调用前判断`value`是否为空集，避免误操作。
+> - `value`集合不能为空。如果传入空集，此条件将失效，导致操作针对所有数据（如全量查询、更新或删除）。请在调用前判断`value`是否为空集，避免误操作。
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
 
@@ -3465,7 +3475,7 @@ try {
 public func getLong(columnIndex: Int32): Int64
 ```
 
-**功能：** 以Int64形式获取当前行中指定列的值，如果当前列的数据类型为INTEGER、DOUBLE、TEXT、BLOB类型，会转成Int64类型返回指定值，如果该列内容为空时，会返回0，其他类型则返回14800000。如果当前列的数据类型为INTEGER，值大于 Number.MAX_SAFE_INTEGER 或小于 Number.MIN_SAFE_INTEGER 且不希望丢失精度，建议使用[getString](#func-getstringint32)接口获取。如果当前列的数据类型为DOUBLE且不希望丢失精度，建议使用[getDouble](#func-getdoubleint32)接口获取。
+**功能：** 以Int64形式获取当前行中指定列的值，如果当前列的数据类型为INTEGER、DOUBLE、TEXT、BLOB类型，会转成Int64类型返回指定值，如果该列内容为空时，会返回0，其他类型则返回14800000。如果当前列的数据类型为INTEGER，值大于 2^53 - 1 或小于 -(2^53 - 1) 且不希望丢失精度，建议使用[getString](#func-getstringint32)接口获取。如果当前列的数据类型为DOUBLE且不希望丢失精度，建议使用[getDouble](#func-getdoubleint32)接口获取。
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
 
@@ -3481,7 +3491,7 @@ public func getLong(columnIndex: Int32): Int64
 
 |类型|说明|
 |:----|:----|
-|Int64|以Int64形式返回指定列的值。<br>该接口支持的数据范围是：Number.MIN_SAFE_INTEGER ~ Number.MAX_SAFE_INTEGER，若超出该范围，，建议对于DOUBLE类型的值使用[getDouble](#func-getdoubleint32)，对于INTEGER类型的值使用[getString](#func-getstringint32)。|
+|Int64|以Int64形式返回指定列的值。<br>该接口支持的数据范围是：-(2^53 - 1)~2^53 - 1，若超出该范围，，建议对于DOUBLE类型的值使用[getDouble](#func-getdoubleint32)，对于INTEGER类型的值使用[getString](#func-getstringint32)。|
 
 **异常：**
 
@@ -4182,7 +4192,11 @@ public class StoreConfig {
 public var allowRebuild: Bool
 ```
 
-**功能：** 指定数据库是否支持异常时自动删除，并重建一个空库空表，默认不删除。<br/>true：自动删除。<br/>false：不自动删除。
+**功能：** 指定数据库是否支持异常时自动删除，并重建一个空库空表，默认不删除。
+
+true：自动删除。
+
+false：不自动删除。
 
 **类型：** Bool
 
@@ -4198,7 +4212,9 @@ public var allowRebuild: Bool
 public var autoCleanDirtyData: Bool
 ```
 
-**功能：** 指定是否自动清理云端删除后同步到本地的数据，true表示自动清理，false表示手动清理，默认自动清理。<br/>对于端云协同的数据库，当云端删除的数据同步到设备端时，可通过该参数设置设备端是否自动清理。
+**功能：** 指定是否自动清理云端删除后同步到本地的数据，true表示自动清理，false表示手动清理，默认自动清理。
+
+对于端云协同的数据库，当云端删除的数据同步到设备端时，可通过该参数设置设备端是否自动清理。
 
 **类型：** Bool
 
@@ -4214,7 +4230,11 @@ public var autoCleanDirtyData: Bool
 public var cryptoParam: CryptoParam
 ```
 
-**功能：** 指定用户自定义的加密参数。<br/>当此参数不填时，使用默认的加密参数，见[CryptoParam](#class-cryptoparam)各参数默认值。<br/>此配置只有在encrypt选项设置为真或密钥非空时才有效。
+**功能：** 指定用户自定义的加密参数。
+
+当此参数不填时，使用默认的加密参数，见[CryptoParam](#class-cryptoparam)各参数默认值。
+
+此配置只有在encrypt选项设置为真或密钥非空时才有效。
 
 **类型：** [CryptoParam](#class-cryptoparam)
 
@@ -4230,7 +4250,11 @@ public var cryptoParam: CryptoParam
 public var customDir: String
 ```
 
-**功能：** 数据库自定义路径。<br/>**使用约束：** 数据库路径大小限制为128字节，如果超过该大小会开库失败，返回错误。<br/>数据库将在如下的目录结构中被创建：context.databaseDir + "/rdb/" + customDir，其中context.databaseDir是应用沙箱对应的路径，"/rdb/"表示创建的是关系型数据库，customDir表示自定义的路径。当此参数不填时，默认在本应用沙箱目录下创建RdbStore实例。如果同时配置了rootDir参数，将打开或删除如下路径数据库：rootDir + "/" + customDir + "/" + name。
+**功能：** 数据库自定义路径。
+
+使用约束：数据库路径大小限制为128字节，如果超过该大小会开库失败，返回错误。
+
+数据库将在如下的目录结构中被创建：context.databaseDir + "/rdb/" + customDir，其中context.databaseDir是应用沙箱对应的路径，"/rdb/"表示创建的是关系型数据库，customDir表示自定义的路径。当此参数不填时，默认在本应用沙箱目录下创建RdbStore实例。如果同时配置了rootDir参数，将打开或删除如下路径数据库：rootDir + "/" + customDir + "/" + name。
 
 **类型：** String
 
@@ -4246,7 +4270,9 @@ public var customDir: String
 public var dataGroupId: String
 ```
 
-**功能：** 应用组ID，<!--RP1-->暂不支持指定dataGroupId在对应的沙箱路径下创建RdbStore实例。<!--RP1End--><br/>dataGroupId共享沙箱的方式不支持多进程访问加密数据库，当此参数不填时，默认在本应用沙箱目录下创建RdbStore实例。
+**功能：** 应用组ID，<!--RP1-->暂不支持指定dataGroupId在对应的沙箱路径下创建RdbStore实例。<!--RP1End-->
+
+dataGroupId共享沙箱的方式不支持多进程访问加密数据库，当此参数不填时，默认在本应用沙箱目录下创建RdbStore实例。
 
 **类型：** String
 
@@ -4278,7 +4304,11 @@ public var enableSemanticIndex: Bool
 public var encrypt: Bool
 ```
 
-**功能：**  指定数据库是否加密，默认不加密。<br/> true：加密。<br/> false：非加密。
+**功能：**  指定数据库是否加密，默认不加密。
+
+true：加密。
+
+false：非加密。
 
 **类型：** Bool
 
@@ -4294,7 +4324,11 @@ public var encrypt: Bool
 public var isReadOnly: Bool
 ```
 
-**功能：** 指定数据库是否只读，默认为数据库可读写。<br/>true：只允许从数据库读取数据，不允许对数据库进行写操作，否则会返回错误码801。<br/>false：允许对数据库进行读写操作。
+**功能：** 指定数据库是否只读，默认为数据库可读写。
+
+true：只允许从数据库读取数据，不允许对数据库进行写操作，否则会返回错误码801。
+
+false：允许对数据库进行读写操作。
 
 **类型：** Bool
 
@@ -4326,7 +4360,9 @@ public var name: String
 public var persist: Bool
 ```
 
-**功能：** 指定数据库是否需要持久化。true表示持久化，false表示不持久化，即内存数据库。默认为true。<br/>内存数据库不支持加密、backup、restore、跨进程访问及分布式能力，securityLevel属性会被忽略。
+**功能：** 指定数据库是否需要持久化。true表示持久化，false表示不持久化，即内存数据库。默认为true。
+
+内存数据库不支持加密、backup、restore、跨进程访问及分布式能力，securityLevel属性会被忽略。
 
 **类型：** Bool
 
@@ -4344,6 +4380,20 @@ public var pluginLibs: Array<String>
 
 **功能：** 表示包含有fts（Full-Text Search，即全文搜索引擎）等能力的动态库名的数组。
 
+使用约束：
+
+1. 动态库名的数量限制最多为16个，如果超过该数量会开库失败，返回错误。
+
+2. 动态库名需为本应用沙箱路径下或系统路径下的动态库，如果动态库无法加载会开库失败，返回错误。
+
+3. 动态库名需为完整路径，用于被sqlite加载。
+
+样例：[context.bundleCodeDir+ "/libs/arm64/" + libtokenizer.so]，其中context.bundleCodeDir是应用沙箱对应的路径，"/libs/arm64/"表示子目录，libtokenizer.so表示动态库的文件名。当此参数不填时，默认不加载动态库。
+
+4. 动态库需要包含其全部依赖，避免依赖项丢失导致无法运行。
+
+例如：在ndk工程中，使用默认编译参数构建libtokenizer.so，此动态库依赖c++标准库。在加载此动态库时，由于namespace与编译时不一致，链接到了错误的libc++_shared.so，导致__emutls_get_address符号找不到。要解决此问题，需在编译时静态链接c++标准库，具体请参见NDK工程构建概述。
+
 **类型：** Array\<String>
 
 **读写能力：** 可读写
@@ -4359,6 +4409,8 @@ public var rootDir: String
 ```
 
 **功能：** 指定数据库根路径。
+
+将从如下目录打开或删除数据库：rootDir + "/" + customDir。通过设置此参数打开的数据库为只读模式，不允许对数据库进行写操作，否则返回错误码801。配置此参数打开或删除数据库时，应确保对应路径下数据库文件存在，并且有读取权限，否则返回错误码14800010。
 
 **类型：** String
 
@@ -4392,6 +4444,8 @@ public var tokenizer: Tokenizer
 
 **功能：** 指定用户在fts场景下使用哪种分词器。
 
+当此参数不填时，则在fts下不支持中文以及多国语言分词，但仍可支持英文分词。
+
 **类型：** [Tokenizer](#enum-tokenizer)
 
 **读写能力：** 可读写
@@ -4407,6 +4461,10 @@ public var vector: Bool
 ```
 
 **功能：** 指定数据库是否是向量数据库，true表示向量数据库，false表示关系型数据库，默认为false。
+
+向量数据库适用于存储和处理高维向量数据，关系型数据库适用于存储和处理结构化数据。
+
+当使用向量数据库时，在调用deleteRdbStore接口前，应当确保向量数据库已打开的RdbStore和ResultSet均已成功关闭。
 
 **类型：** Bool
 
@@ -4441,18 +4499,18 @@ public init(securityLevel: RelationalStoreSecurityLevel, name!: String = "",
 |:---|:---|:---|:---|:---|
 |securityLevel|[RelationalStoreSecurityLevel](#enum-relationalstoresecuritylevel)|是|-|设置数据库安全级别。|
 |name|String|否|""|数据库文件名，也是数据库唯一标识符。|
-|encrypt|Bool|否|false|指定数据库是否加密，默认不加密。<br/> true: 加密。<br/> false: 非加密。|
-|dataGroupId|String|否|""|应用组ID，<!--RP1-->暂不支持指定dataGroupId在对应的沙箱路径下创建RdbStore实例。<!--RP1End--><br/>dataGroupId共享沙箱的方式不支持多进程访问加密数据库，当此参数不填时，默认在本应用沙箱目录下创建RdbStore实例。|
-|customDir|String|否|""|数据库自定义路径。<br/>**使用约束：** 数据库路径大小限制为128字节，如果超过该大小会开库失败，返回错误。<br/>数据库将在如下的目录结构中被创建：context.databaseDir + "/rdb/" + customDir，其中context.databaseDir是应用沙箱对应的路径，"/rdb/"表示创建的是关系型数据库，customDir表示自定义的路径。当此参数不填时，默认在本应用沙箱目录下创建RdbStore实例。如果同时配置了rootDir参数，将打开或删除如下路径数据库：rootDir + "/" + customDir + "/" + name。|
-|rootDir|String|否|""|指定数据库根路径。<br>将从如下目录打开或删除数据库：rootDir + "/" + customDir。通过设置此参数打开的数据库为只读模式，不允许对数据库进行写操作，否则返回错误码801。配置此参数打开或删除数据库时，应确保对应路径下数据库文件存在，并且有读取权限，否则返回错误码14800010。|
-|autoCleanDirtyData|Bool|否|true|指定是否自动清理云端删除后同步到本地的数据，true表示自动清理，false表示手动清理，默认自动清理。<br/>对于端云协同的数据库，当云端删除的数据同步到设备端时，可通过该参数设置设备端是否自动清理。|
-|allowRebuild|Bool|否|false|指定数据库是否支持异常时自动删除，并重建一个空库空表，默认不删除。<br/>true：自动删除。<br/>false：不自动删除。|
-|isReadOnly|Bool|否|false|指定数据库是否只读，默认为数据库可读写。<br/>true：只允许从数据库读取数据，不允许对数据库进行写操作，否则会返回错误码801。<br/>false：允许对数据库进行读写操作。|
-|pluginLibs|Array\<String>|否|Array<String>()|表示包含有fts（Full-Text Search，即全文搜索引擎）等能力的动态库名的数组。<br>使用约束：<br>1. 动态库名的数量限制最多为16个，如果超过该数量会开库失败，返回错误。<br>2. 动态库名需为本应用沙箱路径下或系统路径下的动态库，如果动态库无法加载会开库失败，返回错误。<br>3. 动态库名需为完整路径，用于被sqlite加载。<br>样例：[context.bundleCodeDir+ "/libs/arm64/" + libtokenizer.so]，其中context.bundleCodeDir是应用沙箱对应的路径，"/libs/arm64/"表示子目录，libtokenizer.so表示动态库的文件名。当此参数不填时，默认不加载动态库。<br>4. 动态库需要包含其全部依赖，避免依赖项丢失导致无法运行。<br>例如：在ndk工程中，使用默认编译参数构建libtokenizer.so，此动态库依赖c++标准库。在加载此动态库时，由于namespace与编译时不一致，链接到了错误的libc++_shared.so，导致__emutls_get_address符号找不到。要解决此问题，需在编译时静态链接c++标准库，具体请参见NDK工程构建概述。|
-|cryptoParam|[CryptoParam](#class-cryptoparam)|否|CryptoParam([])|指定用户自定义的加密参数。<br/>当此参数不填时，使用默认的加密参数，见[CryptoParam](#class-cryptoparam)各参数默认值。<br/>此配置只有在encrypt选项设置为真或密钥非空时才有效。|
-|vector|Bool|否|false|指定数据库是否是向量数据库，true表示向量数据库，false表示关系型数据库，默认为false。<br>向量数据库适用于存储和处理高维向量数据，关系型数据库适用于存储和处理结构化数据。<br>当使用向量数据库时，在调用deleteRdbStore接口前，应当确保向量数据库已打开的RdbStore和ResultSet均已成功关闭。|
-|tokenizer|[Tokenizer](#enum-tokenizer)|否|Tokenizer.NoneTokenizer|指定用户在fts场景下使用哪种分词器。<br>当此参数不填时，则在fts下不支持中文以及多国语言分词，但仍可支持英文分词。|
-|persist|Bool|否|true|指定数据库是否需要持久化。true表示持久化，false表示不持久化，即内存数据库。默认为true。<br/>内存数据库不支持加密、backup、restore、跨进程访问及分布式能力，securityLevel属性会被忽略。|
+|encrypt|Bool|否|false|指定数据库是否加密，默认不加密。|
+|dataGroupId|String|否|""|应用组ID，<!--RP1-->暂不支持指定dataGroupId在对应的沙箱路径下创建RdbStore实例。<!--RP1End-->|
+|customDir|String|否|""|数据库自定义路径。|
+|rootDir|String|否|""|指定数据库根路径。|
+|autoCleanDirtyData|Bool|否|true|指定是否自动清理云端删除后同步到本地的数据，true表示自动清理，false表示手动清理，默认自动清理。|
+|allowRebuild|Bool|否|false|指定数据库是否支持异常时自动删除，并重建一个空库空表，默认不删除。|
+|isReadOnly|Bool|否|false|指定数据库是否只读，默认为数据库可读写。|
+|pluginLibs|Array\<String>|否|Array<String>()|表示包含有fts（Full-Text Search，即全文搜索引擎）等能力的动态库名的数组。|
+|cryptoParam|[CryptoParam](#class-cryptoparam)|否|CryptoParam([])|指定用户自定义的加密参数。|
+|vector|Bool|否|false|指定数据库是否是向量数据库，true表示向量数据库，false表示关系型数据库，默认为false。|
+|tokenizer|[Tokenizer](#enum-tokenizer)|否|Tokenizer.NoneTokenizer|指定用户在fts场景下使用哪种分词器。|
+|persist|Bool|否|true|指定数据库是否需要持久化。true表示持久化，false表示不持久化，即内存数据库。默认为true。|
 |enableSemanticIndex|Bool|否|false|指定数据库是否启用语义索引处理功能。true表示启用语义索引处理功能，false表示不启用。默认为false。|
 
 ## enum AssetStatus
@@ -4797,7 +4855,9 @@ CursorField
 DeletedFlagField
 ```
 
-**功能：** 用于cursor查找的结果集返回时填充的字段，表示云端删除的数据同步到本地后数据是否清理。<br>返回的结果集中，该字段对应的value为false表示数据未清理，true表示数据已清理。
+**功能：** 用于cursor查找的结果集返回时填充的字段，表示云端删除的数据同步到本地后数据是否清理。
+
+返回的结果集中，该字段对应的value为false表示数据未清理，true表示数据已清理。
 
 **系统能力：** SystemCapability.DistributedDataManager.CloudSync.Client
 

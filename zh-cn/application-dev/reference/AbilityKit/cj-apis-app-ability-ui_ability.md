@@ -1,6 +1,6 @@
 # ohos.app.ability.ui_ability
 
-AbilityConstant提供Ability相关的枚举，包括应用启动原因LaunchReason、上次退出原因LastExitReason、迁移结果OnContinueResult等。
+ui_ability模块提供Ability相关的枚举，包括应用启动原因LaunchReason、上次退出原因LastExitReason、迁移结果OnContinueResult等。
 
 ## 导入模块
 
@@ -547,7 +547,11 @@ class MyUIAbility <: UIAbility {
 public mut prop lastRequestWant: Want
 ```
 
-**功能：** 最近一次拉起UIAbility请求的Want参数。<br>- 首次拉起UIAbility时，取值为[onCreate](#func-oncreatewant-launchparam)接收到的Want参数。<br>- 重复拉起UIAbility时，取值为[onNewWant](#func-onnewwantwant-launchparam)最近一次接收到的Want参数。
+**功能：** 最近一次拉起UIAbility请求的Want参数。
+
+首次拉起UIAbility时，取值为[onCreate](#func-oncreatewant-launchparam)接收到的Want参数。
+
+重复拉起UIAbility时，取值为[onNewWant](#func-onnewwantwant-launchparam)最近一次接收到的Want参数。
 
 **类型：** [Want](./cj-apis-app-ability-want.md#class-want)
 
@@ -979,7 +983,9 @@ public func startAbilityForResult(want: Want, callback: AsyncCallback<AbilityRes
 **功能：** 启动一个UIAbility，并通过回调函数接收被拉起的UIAbility退出时的返回结果。使用callback异步回调。仅支持在主线程调用。
 
 UIAbility被启动后，有如下情况：
- - 正常情况下可以通过调用[terminateSelfWithResult](#func-terminateselfwithresultabilityresult)接口销毁自身，并将结果返回给调用方。	
+
+ - 正常情况下可以通过调用[terminateSelfWithResult](#func-terminateselfwithresultabilityresult)接口销毁自身，并将结果返回给调用方。
+
  - 异常情况下比如杀死UIAbility会将异常结果返回给调用方，异常结果中resultCode为-1。	
 
 **系统能力：** SystemCapability.Ability.AbilityRuntime.Core
@@ -1050,7 +1056,9 @@ public func startAbilityForResult(want: Want, options: StartOptions, callback: A
 **功能：** 启动一个UIAbility，并通过回调函数接收被拉起的UIAbility退出时的返回结果。使用callback异步回调。仅支持在主线程调用。
 
 UIAbility被启动后，有如下情况：
- - 正常情况下可以通过调用[terminateSelfWithResult](#func-terminateselfwithresultabilityresult)接口销毁自身，并将结果返回给调用方。	
+
+ - 正常情况下可以通过调用[terminateSelfWithResult](#func-terminateselfwithresultabilityresult)接口销毁自身，并将结果返回给调用方。
+
  - 异常情况下比如杀死UIAbility会将异常结果返回给调用方，异常结果中resultCode为-1。	
 
 **系统能力：** SystemCapability.Ability.AbilityRuntime.Core
@@ -1121,7 +1129,7 @@ public func terminateSelf(): Unit
 
 > **说明：**
 >
-> 调用该接口后，任务中心的任务默认不会清理。
+> - 调用该接口后，任务中心的任务默认不会清理。
 
 **系统能力：** SystemCapability.Ability.AbilityRuntime.Core
 
@@ -1162,7 +1170,7 @@ public func terminateSelfWithResult(parameter: AbilityResult): Unit
 
 > **说明：**
 >
-> 调用该接口后，任务中心的任务默认不会清理，如需清理，需要配置
+> - 调用该接口后，任务中心的任务默认不会清理，如需清理，需要配置
 
 **系统能力：** SystemCapability.Ability.AbilityRuntime.Core
 

@@ -1,6 +1,6 @@
 # ohos.hiviewdfx.hi_app_event（应用事件打点）
 
-本模块提供应用打点和事件订阅能力，包括事件存储、事件订阅、事件清理、打点配置等功能。HiAppEvent将应用运行过程中触发的事件信息统一归纳到[AppEventInfo](#class-appeventinfo)中，并将事件分为系统事件和应用事件两类。
+hi_app_event模块提供应用打点和事件订阅能力，包括事件存储、事件订阅、事件清理、打点配置等功能。HiAppEvent将应用运行过程中触发的事件信息统一归纳到[AppEventInfo](#class-appeventinfo)中，并将事件分为系统事件和应用事件两类。
 
 系统事件来源于系统服务，是系统预先定义的事件，这类事件信息中的事件参数对象params包含的字段已由各系统事件定义，具体字段含义在各系统事件指南的介绍中。
 
@@ -225,7 +225,13 @@ public var name: String
 public var params: HashMap<String, EventValueType>
 ```
 
-**功能：** 事件参数对象，包含每个事件参数的参数名和参数值。 针对应用事件，[Write](#static-func-writeappeventinfo)打点写入的参数由开发者定义，其规格如下：<br>- 参数名为string类型，首字符必须为字母字符或`$`字符，中间字符必须为数字字符、字母字符或下划线字符，结尾字符必须为数字字符或字母字符，长度非空且不超过32个字符。如testName、\$123_name等。<br>- 参数值支持string、number、boolean、数组类型。string类型参数长度需在8*1024个字符以内，超出后会和对应的参数名一同被丢弃；number类型参数取值需在Number.MIN_SAFE_INTEGER~Number.MAX_SAFE_INTEGER范围内，超出可能会产生不确定值；数组类型参数中的元素类型只能全为string、number、boolean中的一种，且元素个数需在100以内，超出部分即从第101个元素开始会被丢弃。<br>- 参数个数需在32个以内，超出的参数会做丢弃处理。
+**功能：** 事件参数对象，包含每个事件参数的参数名和参数值。针对应用事件，[Write](#static-func-writeappeventinfo)打点写入的参数由开发者定义，其规格如下：
+
+- 参数名为StringValue类型，首字符必须为字母字符或`$`字符，中间字符必须为数字字符、字母字符或下划线字符，结尾字符必须为数字字符或字母字符，长度非空且不超过32个字符。如testName、\$123_name等。
+
+- 参数值支持StringValue、IntValue、FloatValue、BoolValue、数组类型。StringValue类型参数长度需在8*1024个字符以内，超出后会和对应的参数名一同被丢弃；IntValue、FloatValue类型参数取值需在-(2^53 - 1)~2^53 - 1范围内，超出可能会产生不确定值；数组类型参数中的元素类型只能全为StringValue、IntValue、FloatValue、BoolValue中的一种，且元素个数需在100以内，超出部分即从第101个元素开始会被丢弃。
+
+- 参数个数需在32个以内，超出的参数会做丢弃处理。
 
 **类型：** HashMap\<String,[EventValueType](#enum-eventvaluetype)>
 
@@ -254,7 +260,7 @@ public init(domain: String, name: String, event: EventType, params: HashMap<Stri
 |domain|String|是|-|事件领域。事件领域名称支持数字、字母、下划线字符，需要以字母开头且不能以下划线结尾，长度非空且不超过32个字符。|
 |name|String|是|-|事件名称。首字符必须为字母字符或$字符，中间字符必须为数字字符、字母字符或下划线字符，结尾字符必须为数字字符或字母字符，长度非空且不超过48个字符。|
 |event|[EventType](#enum-eventtype)|是|-|事件类型。|
-|params|HashMap\<String,[EventValueType](#enum-eventvaluetype)>|是|-|事件参数对象，包含每个事件参数的参数名和参数值。 针对应用事件，[Write](#static-func-writeappeventinfo)打点写入的参数由开发者定义，其规格如下：<br>- 参数名为string类型，首字符必须为字母字符或`$`字符，中间字符必须为数字字符、字母字符或下划线字符，结尾字符必须为数字字符或字母字符，长度非空且不超过32个字符。如testName、\$123_name等。<br>- 参数值支持string、number、boolean、数组类型。string类型参数长度需在8*1024个字符以内，超出后会和对应的参数名一同被丢弃；number类型参数取值需在Number.MIN_SAFE_INTEGER~Number.MAX_SAFE_INTEGER范围内，超出可能会产生不确定值；数组类型参数中的元素类型只能全为string、number、boolean中的一种，且元素个数需在100以内，超出部分即从第101个元素开始会被丢弃。<br>- 参数个数需在32个以内，超出的参数会做丢弃处理。|
+|params|HashMap\<String,[EventValueType](#enum-eventvaluetype)>|是|-|事件参数对象，包含每个事件参数的参数名和参数值。|
 
 ## class AppEventPackage
 
@@ -595,7 +601,15 @@ public var disable: Bool
 public var maxStorage: String
 ```
 
-**功能：** 打点数据存放目录的配额大小，默认值为“10M”。建议配额大小不超过10M，配额过大可能会影响接口效率。<br>在目录大小超出配额后，下次打点会触发对目录的清理操作：按从旧到新的顺序逐个删除打点数据文件，直到目录大小不超出配额时结束。<br>配额值字符串规格如下：<br>- 配额值字符串只由数字字符和大小单位字符（单位字符支持[b\|k\|kb\|m\|mb\|g\|gb\|t\|tb]，不区分大小写）构成。<br>- 配额值字符串必须以数字开头，后面可以选择不传单位字符（默认使用byte作为单位），或者以单位字符结尾。
+**功能：** 打点数据存放目录的配额大小，默认值为“10M”。建议配额大小不超过10M，配额过大可能会影响接口效率。
+
+在目录大小超出配额后，下次打点会触发对目录的清理操作：按从旧到新的顺序逐个删除打点数据文件，直到目录大小不超出配额时结束。
+
+配额值字符串规格如下：
+
+- 配额值字符串只由数字字符和大小单位字符（单位字符支持[b\|k\|kb\|m\|mb\|g\|gb\|t\|tb]，不区分大小写）构成。
+
+- 配额值字符串必须以数字开头，后面可以选择不传单位字符（默认使用byte作为单位），或者以单位字符结尾。
 
 **类型：** String
 
@@ -622,7 +636,7 @@ public init(disable!: Bool = false, maxStorage!: String = "10M")
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |disable|Bool|否|false|打点功能开关|
-|maxStorage|String|否|"10M"|打点数据存放目录的配额大小，默认值为“10M”。建议配额大小不超过10M，配额过大可能会影响接口效率。<br>在目录大小超出配额后，下次打点会触发对目录的清理操作：按从旧到新的顺序逐个删除打点数据文件，直到目录大小不超出配额时结束。<br>配额值字符串规格如下：<br>- 配额值字符串只由数字字符和大小单位字符（单位字符支持[b\|k\|kb\|m\|mb\|g\|gb\|t\|tb]，不区分大小写）构成。<br>- 配额值字符串必须以数字开头，后面可以选择不传单位字符（默认使用byte作为单位），或者以单位字符结尾。|
+|maxStorage|String|否|"10M"|打点数据存放目录的配额大小，默认值为“10M”。建议配额大小不超过10M，配额过大可能会影响接口效率。|
 
 ## class Domain
 
@@ -1750,7 +1764,11 @@ public var name: String
 public var onReceive: Option <(String, Array<AppEventGroup>) -> Unit>
 ```
 
-**功能：** 订阅实时回调函数，与回调函数onTrigger同时存在时，只触发此回调，函数入参说明如下：<br>domain：回调事件的领域名称； <br>appEventGroups：回调事件集合。
+**功能：** 订阅实时回调函数，与回调函数onTrigger同时存在时，只触发此回调，函数入参说明如下：
+
+domain：回调事件的领域名称； 
+
+appEventGroups：回调事件集合。
 
 **类型：** [AppEventGroup](#class-appeventgroup)->Unit
 
@@ -1766,7 +1784,13 @@ public var onReceive: Option <(String, Array<AppEventGroup>) -> Unit>
 public var onTrigger: Option <(Int32, Int32, AppEventPackageHolder) -> Unit>
 ```
 
-**功能：** 订阅回调函数，需要与回调触发条件triggerCondition一同传入才会生效，函数入参说明如下：<br>curRow：在本次回调触发时的订阅事件总数量； <br>curSize：在本次回调触发时的订阅事件总大小，单位为byte；  <br/>holder：订阅数据持有者对象，可以通过其对订阅事件进行处理。
+**功能：** 订阅回调函数，需要与回调触发条件triggerCondition一同传入才会生效，函数入参说明如下：
+
+curRow：在本次回调触发时的订阅事件总数量；
+
+curSize：在本次回调触发时的订阅事件总大小，单位为byte；
+
+holder：订阅数据持有者对象，可以通过其对订阅事件进行处理。
 
 **类型：** (Int32,Int32,[AppEventPackageHolder](#class-appeventpackageholder))->Unit
 
@@ -1814,8 +1838,8 @@ public init(name: String, triggerCondition!: TriggerCondition = TriggerCondition
 |name|String|是|-|观察者名称，用于唯一标识观察者。首字符必须为字母字符，中间字符必须为数字字符、字母字符或下划线字符，结尾字符必须为数字字符或字母字符，长度非空且不超过32个字符。如testName1、crash_Watcher等。|
 |triggerCondition|[TriggerCondition](#class-triggercondition)|否|TriggerCondition()|**命名参数。** 订阅回调触发条件，需要与回调函数onTrigger一同传入才会生效。默认不触发。|
 |appEventFilters|Array\<[AppEventFilter](#class-appeventfilter)>|否|[]|**命名参数。** 订阅过滤条件，在需要对订阅事件进行过滤时传入。默认不过滤事件。|
-|onTrigger|Option\<(Int32,Int32,[AppEventPackageHolder](#class-appeventpackageholder))->Unit>|否|None|**命名参数。** 订阅回调函数，需要与回调触发条件triggerCondition一同传入才会生效，函数入参说明如下：<br>curRow：在本次回调触发时的订阅事件总数量； <br>curSize：在本次回调触发时的订阅事件总大小，单位为byte；  <br/>holder：订阅数据持有者对象，可以通过其对订阅事件进行处理。|
-|onReceive|Option\<(String,Array\<[AppEventGroup](#class-appeventgroup)>)->Unit>|否|None|**命名参数。** 订阅实时回调函数，与回调函数onTrigger同时存在时，只触发此回调，函数入参说明如下：<br>domain：回调事件的领域名称； <br>appEventGroups：回调事件集合。|
+|onTrigger|Option\<(Int32,Int32,[AppEventPackageHolder](#class-appeventpackageholder))->Unit>|否|None|**命名参数。** 订阅回调函数，需要与回调触发条件triggerCondition一同传入才会生效。|
+|onReceive|Option\<(String,Array\<[AppEventGroup](#class-appeventgroup)>)->Unit>|否|None|**命名参数。** 订阅实时回调函数，与回调函数onTrigger同时存在时，只触发此回调。|
 
 ## enum EventType
 

@@ -1,6 +1,6 @@
 # ohos.bluetooth.ble（蓝牙ble模块）
 
-ble模块提供了对蓝牙操作和管理的方法。
+本模块提供了基于低功耗蓝牙（Bluetooth Low Energy，BLE）技术的蓝牙能力，支持发起BLE扫描、发送BLE广播报文、以及基于通用属性协议（Generic Attribute Profile，GATT）的连接和传输数据。
 
 ## 导入模块
 
@@ -28,7 +28,10 @@ API示例代码使用说明：
 public func createGattClientDevice(deviceId: String): GattClientDevice
 ```
 
-**功能：** 创建一个可使用的GattClientDevice实例。
+**功能：** 创建[GattClientDevice](#class-gattclientdevice)实例，表示GATT连接中的client端。
+
+- 通过该实例可以操作client端行为，如调用[connect](#func-connect)向对端设备发起连接，调用[getServices](#func-getrssivalueasynccallbackint32)获取对端设备支持的所有服务能力。
+- 创建该实例所需要的设备地址表示server端设备。可以通过[startBLEScan](#func-startblescanarrayscanfilter-scanoptions)接口获取server端设备地址，且需保证server端设备的BLE广播是可连接的。
 
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
@@ -38,7 +41,7 @@ public func createGattClientDevice(deviceId: String): GattClientDevice
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|deviceId|String|是|-|对端设备地址，例如："XX:XX:XX:XX:XX:XX"。|
+|deviceId|String|是|-|对端设备地址，&nbsp;例如："XX:XX:XX:XX:XX:XX"。|
 
 **返回值：**
 
@@ -79,7 +82,8 @@ try {
 public func createGattServer(): GattServer
 ```
 
-**功能：** 创建一个可使用的GattServer实例。
+**功能：** 创建[GattServer](#class-gattserver)实例，表示GATT连接中的server端。
+- 通过该实例可以操作server端的行为，如添加服务[addService](#func-addservicegattservice)、通知特征值变化[notifyCharacteristicChanged](#func-notifycharacteristicchangedstring-notifycharacteristic)等。
 
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
@@ -188,8 +192,8 @@ public func on(eventType: BluetoothBleCallbackType, callback: Callback1Argument<
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|eventType|[BluetoothBleCallbackType](#enum-bluetoothblecallbacktype)|是|-|填写 AdvertisingStateChange，表示广播状态事件。|
-|callback|[Callback1Argument](../arkinterop/cj-api-callback_invoke.md#class-callback1argument)\<[AdvertisingStateChangeInfo](#class-advertisingstatechangeinfo)>|是|-|表示回调函数的入参，广播状态。回调函数由用户创建通过该接口注册。|
+|eventType|[BluetoothBleCallbackType](#enum-bluetoothblecallbacktype)|是|-|事件回调类型，支持的事件为AdvertisingStateChange，表示广播状态事件。<br>当调用[startAdvertising](#func-startadvertisingadvertisingparams)、[stopAdvertising](#func-stopadvertisinguint32)，广播状态改变时，均会触发该事件。|
+|callback|[Callback1Argument](../arkinterop/cj-api-callback_invoke.md#class-callback1argument)\<[AdvertisingStateChangeInfo](#class-advertisingstatechangeinfo)>|是|-|指定订阅的回调函数，会携带广播状态信息。|
 
 **异常：**
 
@@ -234,7 +238,7 @@ try {
 public func on(eventType: BluetoothBleCallbackType, callback: Callback1Argument<Array<ScanResult>>): Unit
 ```
 
-**功能：** 订阅BLE设备发现上报事件。
+**功能：** 订阅BLE设备扫描结果上报事件。
 
 **需要权限：** ohos.permission.ACCESS_BLUETOOTH
 
@@ -246,8 +250,8 @@ public func on(eventType: BluetoothBleCallbackType, callback: Callback1Argument<
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|eventType|[BluetoothBleCallbackType](#enum-bluetoothblecallbacktype)|是|-|填写BleDeviceFind，表示BLE设备发现事件。|
-|callback|[Callback1Argument](../arkinterop/cj-api-callback_invoke.md#class-callback1argument)\<Array\<[ScanResult](#class-scanresult)>>|是|-|表示回调函数的入参，发现的设备集合。回调函数由用户创建通过该接口注册。|
+|eventType|[BluetoothBleCallbackType](#enum-bluetoothblecallbacktype)|是|-|事件回调类型，支持的事件为BleDeviceFind，表示BLE设备扫描结果上报事件。<br>当调用[startAdvertising](#func-startadvertisingadvertisingparams) 后，开始BLE扫描，若扫描到BLE设备，触发该事件。|
+|callback|[Callback1Argument](../arkinterop/cj-api-callback_invoke.md#class-callback1argument)\<Array\<[ScanResult](#class-scanresult)>>|是|-|指定订阅的回调函数，会携带扫描结果的集合。|
 
 **异常：**
 
@@ -294,7 +298,9 @@ try {
 public func startAdvertising(setting: AdvertiseSetting, advData: AdvertiseData, advResponse!: ?AdvertiseData = None): Unit
 ```
 
-**功能：** 开始发送BLE广播。
+**功能：** 开始发送BLE广播报文。
+
+- 当应用不再需要发送BLE广播报文时，需主动调用[stopAdvertising](#func-stopadvertisinguint32)停止发送。
 
 **需要权限：** ohos.permission.ACCESS_BLUETOOTH
 
@@ -308,7 +314,7 @@ public func startAdvertising(setting: AdvertiseSetting, advData: AdvertiseData, 
 |:---|:---|:---|:---|:---|
 |setting|[AdvertiseSetting](#class-advertisesetting)|是|-|BLE广播的相关参数。|
 |advData|[AdvertiseData](#class-advertisedata)|是|-|BLE广播包内容。|
-|advResponse|?[AdvertiseData](#class-advertisedata)|否|None|**命名参数。**  BLE回复扫描请求回复响应。|
+|advResponse|?[AdvertiseData](#class-advertisedata)|否|None|**命名参数。** BLE扫描回复广播报文。|
 
 **异常：**
 
@@ -368,7 +374,15 @@ try {
 public func startAdvertising(advertisingParams: AdvertisingParams): UInt32
 ```
 
-**功能：** 开始发送BLE广播。
+**功能：** 首次启动发送BLE广播报文。
+
+- 启动成功后，蓝牙子系统会分配相关资源，并返回该广播的标识。
+
+- 若携带了发送广播持续时间，则一定时间后，广播会停止发送，但分配的广播资源还存在。
+
+- 应用可多次调用，支持发起多路广播，每一路广播通过不同的ID标识管理。
+
+- 当应用不再需要该广播时，需调用[stopAdvertising](#func-stopadvertisinguint32)完全停止该广播，不要[stopAdvertising](#func-stopadvertising)混用。
 
 **需要权限：** ohos.permission.ACCESS_BLUETOOTH
 
@@ -454,6 +468,10 @@ public func startBLEScan(filters: Array<ScanFilter>, options!: ?ScanOptions = No
 
 **功能：** 发起BLE扫描流程。
 
+- 扫描结果会通过[on(BleDeviceFind)](#func-onbluetoothblecallbacktype-callback1argumentarrayscanresult)的回调函数获取到。只能扫描BLE设备，调用[stopBLEScan](#func-stopblescan)可以停止该方法开启的扫描流程。
+
+- 该接口只支持单路扫描，即应用同时只能调用一次，下一次调用前，需要先调用[stopBLEScan](#func-stopblescan)停止上一次的扫描流程。
+
 **需要权限：** ohos.permission.ACCESS_BLUETOOTH
 
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
@@ -464,8 +482,8 @@ public func startBLEScan(filters: Array<ScanFilter>, options!: ?ScanOptions = No
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|filters|Array\<[ScanFilter](#class-scanfilter)>|是|-|表示扫描结果过滤策略集合，符合过滤条件的设备发现会保留。|
-|options|?[ScanOptions](#class-scanoptions)|否|None|**命名参数。**  表示扫描的参数配置，可选参数。|
+|filters|Array\<[ScanFilter](#class-scanfilter)>|是|-|表示扫描结果过滤策略集合，符合过滤条件的设备发现会保留。<br>-若该参数设置为[]，将扫描所有可发现的周边BLE设备，但是不建议使用此方式，可能扫描到非预期设备，并增加功耗。|
+|options|?[ScanOptions](#class-scanoptions)|否|None|**命名参数。** 表示扫描的参数配置，可选参数。|
 
 **异常：**
 
@@ -519,7 +537,11 @@ try {
 public func stopAdvertising(): Unit
 ```
 
-**功能：** 停止发送BLE广播。
+**功能：** 停止发送BLE广播报文。
+
+- 停止的BLE广播是由[startAdvertising](#func-startadvertisingadvertisesetting-advertisedata-advertisedata)触发的。
+- 不可以和[startAdvertising](#func-startadvertisingadvertisingparams)搭配使用。
+- 当应用不再需要发送BLE广播报文时，需主动调用该方法停止发送。
 
 **需要权限：** ohos.permission.ACCESS_BLUETOOTH
 
@@ -564,7 +586,12 @@ try {
 public func stopAdvertising(advertisingId: UInt32): Unit
 ```
 
-**功能：** 停止发送BLE广播。
+**功能：** 完全停止发送BLE广播。
+
+- 与[startAdvertising](#func-startadvertisingadvertisingparams)搭配使用，会释放已经申请的广播资源。
+- [startAdvertising](#func-startadvertisingadvertisingparams)首次启动广播时分配的广播标识也将失效。
+- 不可以和[startAdvertising](#func-startadvertisingadvertisesetting-advertisedata-advertisedata)接口搭配使用。
+- 通过[on(AdvertisingStateChange)](#func-onbluetoothblecallbacktype-callback1argumentadvertisingstatechangeinfo)回调获取完全停止广播结果。
 
 **需要权限：** ohos.permission.ACCESS_BLUETOOTH
 
@@ -645,6 +672,12 @@ public func stopBLEScan(): Unit
 
 **功能：** 停止BLE扫描流程。
 
+- 停止的BLE扫描由[startBLEScan](#func-startblescanarrayscanfilter-scanoptions)触发。
+
+- 当应用不再需要扫描BLE设备时，需主动调用该方法停止扫描。
+
+- 调用此接口后将不再收到扫描结果上报，重新开启BLE扫描即可再次扫到BLE设备。
+
 **需要权限：** ohos.permission.ACCESS_BLUETOOTH
 
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
@@ -699,7 +732,7 @@ public class AdvertiseData {
 }
 ```
 
-**功能：** 描述BLE广播数据包的内容，广播包数据长度为31个字节。
+**功能：** 描述BLE广播报文数据内容，也可以用作回复扫描请求的广播报文数据内容。当前只支持传统广播，因此报文最大长度为31个字节。若超出最大长度（31个字节）限制，会导致启动广播失败。若携带了所有参数，尤其是携带了蓝牙设备名称，需要注意广播报文长度。
 
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
@@ -711,7 +744,7 @@ public class AdvertiseData {
 public var includeDeviceName: Bool
 ```
 
-**功能：** 表示是否携带设备名，可选参数。true表示携带，false或未设置此参数表示不携带。注意带上设备名时广播包长度不能超出31个字节。
+**功能：** 是否携带蓝牙设备名称。true表示携带，false表示不携带，默认值为false。
 
 **类型：** Bool
 
@@ -727,7 +760,7 @@ public var includeDeviceName: Bool
 public var manufactureData: Array<ManufactureData>
 ```
 
-**功能：** 表示要广播的广播的制造商信息列表。
+**功能：** 要携带的制造商数据内容。
 
 **类型：** Array\<[ManufactureData](#class-manufacturedata)>
 
@@ -743,7 +776,7 @@ public var manufactureData: Array<ManufactureData>
 public var serviceData: Array<ServiceData>
 ```
 
-**功能：** 表示要广播的服务数据列表。
+**功能：** 要携带的服务数据内容。
 
 **类型：** Array\<[ServiceData](#class-servicedata)>
 
@@ -759,7 +792,7 @@ public var serviceData: Array<ServiceData>
 public var serviceUUIDs: Array<String>
 ```
 
-**功能：** 表示要广播的服务列表。
+**功能：** 要携带的服务UUID。
 
 **类型：** Array\<String>
 
@@ -791,11 +824,11 @@ public init(
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|serviceUUIDs|Array\<String>|是|-|表示要广播的服务 UUID 列表。|
-|manufactureData|Array\<[ManufactureData](#class-manufacturedata)>|是|-|表示要广播的广播的制造商信息列表。|
-|serviceData|Array\<[ServiceData](#class-servicedata)>|是|-|表示要广播的服务数据列表。|
-|includeDeviceName|Bool|否|false| **命名参数。**  表示是否携带设备名，可选参数。true表示携带，false或未设置此参数表示不携带。注意带上设备名时广播包长度不能超出31个字节。|
-|includeTxPower|Bool|否|false| **命名参数。**  表示是否携带广播发送功率。true表示携带广播发送功率，false表示不携带广播发送功率，默认值为false。携带该值后，广播报文长度将多占3个字节。预留字段，本版本暂不支持。|
+|serviceUUIDs|Array\<String>|是|-|要携带的服务UUID。|
+|manufactureData|Array\<[ManufactureData](#class-manufacturedata)>|是|-|要携带的制造商数据内容。|
+|serviceData|Array\<[ServiceData](#class-servicedata)>|是|-|要携带的服务数据内容。|
+|includeDeviceName|Bool|否|false| **命名参数。** 是否携带蓝牙设备名称。true表示携带，false表示不携带，默认值为false。|
+|includeTxPower|Bool|否|false| **命名参数。** 是否携带广播发送功率。<br>true表示携带广播发送功率，false表示不携带广播发送功率，默认值为false。<br>携带该值后，广播报文长度将多占用3个字节。|
 
 ## class AdvertiseSetting
 
@@ -808,7 +841,7 @@ public class AdvertiseSetting {
 }
 ```
 
-**功能：** 描述蓝牙低功耗设备发送广播的参数。
+**功能：** 描述BLE广播的发送参数。
 
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
@@ -820,7 +853,7 @@ public class AdvertiseSetting {
 public var connectable: Bool
 ```
 
-**功能：** 表示是否是可连接广播，默认值设置为true，表示可连接，false表示不可连接。
+**功能：** 是否是可连接广播。true表示发送可连接广播，false表示发送不可连接广播，默认值为true。
 
 **类型：** Bool
 
@@ -836,7 +869,11 @@ public var connectable: Bool
 public var interval: UInt16
 ```
 
-**功能：** 表示广播间隔，最小值设置160个slot表示100ms，最大值设置16384个slot，默认值设置为1600个slot表示1s。
+**功能：** 广播发送间隔。
+
+取值范围：[32, 16777215]，单位：slot（时间槽），一个slot代表0.625毫秒，默认值为1600。
+
+其中传统广播的最大值是16384。
 
 **类型：** UInt16
 
@@ -852,7 +889,9 @@ public var interval: UInt16
 public var txPower: Int8
 ```
 
-**功能：** 表示发送功率，最小值设置-127，最大值设置1，默认值设置-7，单位dbm。推荐值：高档（1），中档（-7），低档（-15）。
+**功能：** 广播发送功率。取值范围：[-127, 1]，单位：dBm，默认值为-7。
+
+考虑到发送广播的性能和功耗，建议高档取值为1，中档取为-7，低档取值为-15。
 
 **类型：** Int8
 
@@ -878,9 +917,9 @@ public init(interval!: UInt16 = BLE_ADV_DEFAULT_INTERVAL, txPower!: Int8 = BLE_A
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|interval|UInt16|否|BLE_ADV_DEFAULT_INTERVAL|表示广播间隔，最小值设置160个slot表示100ms，最大值设置16384个slot，默认值设置为1600个slot表示1s。|
-|txPower|Int8|否|BLE_ADV_TX_POWER_MEDIUM_VALUE|表示发送功率，最小值设置-127，最大值设置1，默认值设置-7，单位dbm。推荐值：高档（1），中档（-7），低档（-15）。|
-|connectable|Bool|否|true|表示是否是可连接广播，默认值设置为true，表示可连接，false表示不可连接。|
+|interval|UInt16|否|BLE_ADV_DEFAULT_INTERVAL|广播发送间隔。|
+|txPower|Int8|否|BLE_ADV_TX_POWER_MEDIUM_VALUE|广播发送功率。取值范围：[-127, 1]，单位：dBm，默认值为-7。|
+|connectable|Bool|否|true|是否是可连接广播。true表示发送可连接广播，false表示发送不可连接广播，默认值为true。|
 
 ## class AdvertisingParams
 
@@ -899,7 +938,7 @@ public class AdvertisingParams {
 }
 ```
 
-**功能：** 描述首次启动广播设置的参数。
+**功能：** 首次启动BLE广播时设置的参数。
 
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
@@ -911,7 +950,7 @@ public class AdvertisingParams {
 public var advertisingData: AdvertiseData
 ```
 
-**功能：** 表示广播的数据包内容。
+**功能：** 需要发送的广播报文数据内容。
 
 **类型：** [AdvertiseData](#class-advertisedata)
 
@@ -927,7 +966,7 @@ public var advertisingData: AdvertiseData
 public var advertisingResponse: AdvertiseData
 ```
 
-**功能：** 表示回复扫描请求的响应内容。
+**功能：** 回复扫描请求的广播报文数据内容。
 
 **类型：** [AdvertiseData](#class-advertisedata)
 
@@ -943,7 +982,7 @@ public var advertisingResponse: AdvertiseData
 public var advertisingSettings: AdvertiseSetting
 ```
 
-**功能：** 表示发送广播的相关参数。
+**功能：** 广播的发送参数。
 
 **类型：** [AdvertiseSetting](#class-advertisesetting)
 
@@ -959,7 +998,9 @@ public var advertisingSettings: AdvertiseSetting
 public var duration: UInt16
 ```
 
-**功能：** 表示发送广播持续的时间。单位为10ms，有效范围为1(10ms)到65535(655350ms)，如果未指定此参数或者将其设置为0，则会连续发送广播。
+**功能：** 发送广播的持续时间。取值范围：[1, 65535]，单位：10ms。
+
+如果未指定此参数或者将其设置为0，则会持续发送广播。
 
 **类型：** UInt16
 
@@ -990,10 +1031,10 @@ public init(
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|advertisingSettings|[AdvertiseSetting](#class-advertisesetting)|是|-|表示发送广播的相关参数。|
-|advertisingData|[AdvertiseData](#class-advertisedata)|是|-|表示广播的数据包内容。|
-|advertisingResponse|[AdvertiseData](#class-advertisedata)|否|AdvertiseData([],[],[])|表示回复扫描请求的响应内容。|
-|duration|UInt16|否|0| **命名参数。**  表示发送广播持续的时间。单位为10ms，有效范围为1(10ms)到65535(655350ms)，如果未指定此参数或者将其设置为0，则会连续发送广播。|
+|advertisingSettings|[AdvertiseSetting](#class-advertisesetting)|是|-|广播的发送参数。|
+|advertisingData|[AdvertiseData](#class-advertisedata)|是|-|需要发送的广播报文数据内容。|
+|advertisingResponse|[AdvertiseData](#class-advertisedata)|否|AdvertiseData([],[],[])|回复扫描请求的广播报文数据内容。|
+|duration|UInt16|否|0| **命名参数。** 发送广播的持续时间。取值范围：[1, 65535]，单位：10ms。|
 
 ## class AdvertisingStateChangeInfo
 
@@ -1004,7 +1045,7 @@ public class AdvertisingStateChangeInfo {
 }
 ```
 
-**功能：** 描述广播启动、停止等状态信息。
+**功能：** 描述BLE广播启动、停止的状态信息。
 
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
@@ -1016,7 +1057,7 @@ public class AdvertisingStateChangeInfo {
 public var advertisingId: Int32
 ```
 
-**功能：** 表示广播ID标识。
+**功能：** 首次启动广播时会分配该值，后续用于标识当前操作的广播。
 
 **类型：** Int32
 
@@ -1032,7 +1073,7 @@ public var advertisingId: Int32
 public var state: AdvertisingState
 ```
 
-**功能：** 表示广播状态。
+**功能：** 操作广播后，收到的BLE广播状态。
 
 **类型：** [AdvertisingState](#enum-advertisingstate)
 
@@ -1063,7 +1104,7 @@ public class BLECharacteristic {
 }
 ```
 
-**功能：** 描述characteristic的接口参数定义。
+**功能：** GATT特征值结构定义，是服务[GattService](#class-gattservice)的核心数据单元。
 
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
@@ -1075,7 +1116,7 @@ public class BLECharacteristic {
 public var characteristicUUID: String
 ```
 
-**功能：** 特定特征（characteristic）的UUID，例如：00002a11-0000-1000-8000-00805f9b34fb。
+**功能：** 特征值UUID。例如：00002a11-0000-1000-8000-00805f9b34fb。
 
 **类型：** String
 
@@ -1091,7 +1132,7 @@ public var characteristicUUID: String
 public var characteristicValue: Array<Byte>
 ```
 
-**功能：** 特征对应的二进制值。
+**功能：** 特征值的数据内容。
 
 **类型：** Array\<Byte>
 
@@ -1107,7 +1148,7 @@ public var characteristicValue: Array<Byte>
 public var descriptors: Array<BLEDescriptor>
 ```
 
-**功能：** 特定特征的描述符列表。
+**功能：** 特征值包含的描述符列表。
 
 **类型：** Array\<[BLEDescriptor](#class-bledescriptor)>
 
@@ -1123,7 +1164,7 @@ public var descriptors: Array<BLEDescriptor>
 public var properties: GattProperties
 ```
 
-**功能：** 特定特征的属性描述。
+**功能：** 特征值支持的属性。
 
 **类型：** [GattProperties](#class-gattproperties)
 
@@ -1139,7 +1180,7 @@ public var properties: GattProperties
 public var serviceUUID: String
 ```
 
-**功能：** 特定服务（service）的UUID，例如：00001888-0000-1000-8000-00805f9b34fb。
+**功能：** 特征值所属的服务UUID。例如：00001888-0000-1000-8000-00805f9b34fb。
 
 **类型：** String
 
@@ -1173,11 +1214,11 @@ public init(
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|serviceUUID|String|是|-|特定服务（service）的UUID，例如：00001888-0000-1000-8000-00805f9b34fb。|
-|characteristicUUID|String|是|-|特定特征（characteristic）的UUID，例如：00002a11-0000-1000-8000-00805f9b34fb。|
-|characteristicValue|Array\<Byte>|是|-|特征对应的二进制值。|
-|descriptors|Array\<[BLEDescriptor](#class-bledescriptor)>|是|-|特定特征的描述符列表。|
-|properties|[GattProperties](#class-gattproperties)|否|GattProperties()|**命名参数。**  特定特征的属性描述。|
+|serviceUUID|String|是|-|特征值所属的服务UUID。例如：00001888-0000-1000-8000-00805f9b34fb。|
+|characteristicUUID|String|是|-|特征值UUID。例如：00002a11-0000-1000-8000-00805f9b34fb。|
+|characteristicValue|Array\<Byte>|是|-|特征值的数据内容。|
+|descriptors|Array\<[BLEDescriptor](#class-bledescriptor)>|是|-|特征值包含的描述符列表。|
+|properties|[GattProperties](#class-gattproperties)|否|GattProperties()|**命名参数。** 特征值支持的属性。|
 |permissions|[GattPermissions](#class-gattpermissions)|否|GattPermissions()|**命名参数。** 特征值读写操作需要的权限。预留字段，本版本暂不支持。|
 |characteristicValueHandle|UInt32|否|0|**命名参数。** 特征值的唯一标识句柄。当server端BLE蓝牙设备提供了多个相同UUID特征值时，可以通过此句柄区分不同的特征值。预留字段，本版本暂不支持。|
 
@@ -1190,7 +1231,7 @@ public class BLEConnectionChangeState {
 }
 ```
 
-**功能：** 描述Gatt profile连接状态。
+**功能：** 描述GATT profile协议连接状态。
 
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
@@ -1202,7 +1243,7 @@ public class BLEConnectionChangeState {
 public var deviceId: String
 ```
 
-**功能：** 表示远端设备地址，例如："XX:XX:XX:XX:XX:XX"。
+**功能：** 对端蓝牙设备地址。例如："XX:XX:XX:XX:XX:XX"。
 
 **类型：** String
 
@@ -1218,7 +1259,7 @@ public var deviceId: String
 public var state: ProfileConnectionState
 ```
 
-**功能：** 表示BLE连接状态的枚举。
+**功能：** GATT profile连接状态。
 
 **类型：** [ProfileConnectionState](cj-apis-bluetooth-constant.md#enum-profileconnectionstate)
 
@@ -1247,7 +1288,7 @@ public class BLEDescriptor {
 }
 ```
 
-**功能：** 描述descriptor的接口参数定义。
+**功能：** GATT描述符结构定义，是特征值[BLECharacteristic](#class-blecharacteristic)的数据单元，用于描述特征值的附加信息和属性。
 
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
@@ -1259,7 +1300,7 @@ public class BLEDescriptor {
 public var characteristicUUID: String
 ```
 
-**功能：** 特定特征（characteristic）的UUID，例如：00002a11-0000-1000-8000-00805f9b34fb。
+**功能：** 描述符所属的特征值UUID。例如：00002a11-0000-1000-8000-00805f9b34fb。
 
 **类型：** String
 
@@ -1275,7 +1316,7 @@ public var characteristicUUID: String
 public var descriptorUUID: String
 ```
 
-**功能：** 描述符（descriptor）的UUID，例如：00002902-0000-1000-8000-00805f9b34fb。
+**功能：** 描述符UUID。例如：00002902-0000-1000-8000-00805f9b34fb。
 
 **类型：** String
 
@@ -1291,7 +1332,7 @@ public var descriptorUUID: String
 public var descriptorValue: Array<Byte>
 ```
 
-**功能：** 描述符对应的二进制值。
+**功能：** 描述符的数据内容。
 
 **类型：** Array\<Byte>
 
@@ -1307,7 +1348,7 @@ public var descriptorValue: Array<Byte>
 public var serviceUUID: String
 ```
 
-**功能：** 特定服务（service）的UUID，例如：00001888-0000-1000-8000-00805f9b34fb。
+**功能：** 特征值所属的服务UUID。例如：00001888-0000-1000-8000-00805f9b34fb。
 
 **类型：** String
 
@@ -1340,10 +1381,10 @@ public init(
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|serviceUUID|String|是|-|特定服务（service）的UUID，例如：00001888-0000-1000-8000-00805f9b34fb。|
-|characteristicUUID|String|是|-|特定特征（characteristic）的UUID，例如：00002a11-0000-1000-8000-00805f9b34fb。|
-|descriptorUUID|String|是|-|描述符（descriptor）的UUID，例如：00002902-0000-1000-8000-00805f9b34fb。|
-|descriptorValue|Array\<Byte>|是|-|描述符对应的二进制值。|
+|serviceUUID|String|是|-|特征值所属的服务UUID。例如：00001888-0000-1000-8000-00805f9b34fb。|
+|characteristicUUID|String|是|-|描述符所属的特征值UUID。例如：00002a11-0000-1000-8000-00805f9b34fb。|
+|descriptorUUID|String|是|-|描述符UUID。例如：00002902-0000-1000-8000-00805f9b34fb。|
+|descriptorValue|Array\<Byte>|是|-|描述符的数据内容。|
 |descriptorHandle|UInt32|否|0|**命名参数。**  描述符的唯一标识句柄。当server端BLE蓝牙设备提供了多个相同UUID描述符时，可以通过此句柄区分不同的描述符。预留字段，本版本暂不支持。|
 |permissions|[GattPermissions](#class-gattpermissions)|否|GattPermissions()|**命名参数。**  描述符读写操作需要的权限。预留字段，本版本暂不支持。|
 
@@ -1359,7 +1400,7 @@ public class CharacteristicReadRequest {
 }
 ```
 
-**功能：** 描述server端订阅后收到的特征值读请求事件参数类。
+**功能：** 描述server端订阅client端读特征值请求事件后，接收到的事件参数结构。
 
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
@@ -1371,7 +1412,7 @@ public class CharacteristicReadRequest {
 public var characteristicUUID: String
 ```
 
-**功能：** 特定特征（characteristic）的UUID，例如：00002a11-0000-1000-8000-00805f9b34fb。
+**功能：** client端需要读取的特征值UUID。例如：00002a11-0000-1000-8000-00805f9b34fb。
 
 **类型：** String
 
@@ -1387,7 +1428,7 @@ public var characteristicUUID: String
 public var deviceId: String
 ```
 
-**功能：** 表示发送特征值读请求的远端设备地址，例如："XX:XX:XX:XX:XX:XX"。
+**功能：** client端蓝牙设备地址。例如："XX:XX:XX:XX:XX:XX"。
 
 **类型：** String
 
@@ -1403,7 +1444,7 @@ public var deviceId: String
 public var offset: Int32
 ```
 
-**功能：** 表示读特征值数据的起始位置。例如：k表示从第k个字节开始读，server端回复响应时需填写相同的offset。
+**功能：** client端读数据的偏移值。例如：k表示从第k个字节开始读。<br>server端回复响应时需填写相同的offset。
 
 **类型：** Int32
 
@@ -1419,7 +1460,7 @@ public var offset: Int32
 public var serviceUUID: String
 ```
 
-**功能：** 特定服务（service）的UUID，例如：00001888-0000-1000-8000-00805f9b34fb。
+**功能：** 特征值所属的服务UUID。例如：00001888-0000-1000-8000-00805f9b34fb。
 
 **类型：** String
 
@@ -1435,7 +1476,7 @@ public var serviceUUID: String
 public var transId: Int32
 ```
 
-**功能：** 表示写请求的传输ID，server端回复响应时需填写相同的传输ID。
+**功能：** client端读请求的标识符，server端回复时需填写相同的transId。
 
 **类型：** Int32
 
@@ -1460,7 +1501,7 @@ public class CharacteristicWriteRequest {
 }
 ```
 
-**功能：** 描述server端订阅后收到的特征值写请求事件参数类。
+**功能：** 描述server端订阅client端写特征值请求事件后，接收到的事件参数结构。
 
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
@@ -1472,7 +1513,7 @@ public class CharacteristicWriteRequest {
 public var characteristicUUID: String
 ```
 
-**功能：** 特定特征（characteristic）的UUID，例如：00002a11-0000-1000-8000-00805f9b34fb。
+**功能：** client端需要写入的特征值UUID。例如：00002a11-0000-1000-8000-00805f9b34fb。
 
 **类型：** String
 
@@ -1488,7 +1529,7 @@ public var characteristicUUID: String
 public var deviceId: String
 ```
 
-**功能：** 表示扫描到的设备地址，例如："XX:XX:XX:XX:XX:XX"。
+**功能：** client端蓝牙设备地址。例如："XX:XX:XX:XX:XX:XX"。
 
 **类型：** String
 
@@ -1504,7 +1545,9 @@ public var deviceId: String
 public var isPrepared: Bool
 ```
 
-**功能：** 表示写请求是否立即执行。true表示立即执行。
+**功能：** 收到client端写请求后，是否立即回复。
+
+true表示稍后回复，false表示立即回复。
 
 **类型：** Bool
 
@@ -1520,7 +1563,9 @@ public var isPrepared: Bool
 public var needRsp: Bool
 ```
 
-**功能：** 表示是否要给client端回复响应。
+**功能：** 是否需要回复client端。
+
+true表示需要回复，false表示不需要回复。
 
 **类型：** Bool
 
@@ -1536,7 +1581,9 @@ public var needRsp: Bool
 public var offset: Int32
 ```
 
-**功能：** 表示写描述符数据的起始位置。例如：k表示从第k个字节开始写，server端回复响应时需填写相同的offset。
+**功能：** client端写数据的偏移值。例如：k表示从第k个字节开始写。
+
+server端回复时需填写相同的offset。
 
 **类型：** Int32
 
@@ -1552,7 +1599,7 @@ public var offset: Int32
 public var serviceUUID: String
 ```
 
-**功能：** 特定服务（service）的UUID，例如：00001888-0000-1000-8000-00805f9b34fb。
+**功能：** 特征值所属的服务UUID。例如：00001888-0000-1000-8000-00805f9b34fb。
 
 **类型：** String
 
@@ -1568,7 +1615,7 @@ public var serviceUUID: String
 public var transId: Int32
 ```
 
-**功能：** 表示写请求的传输ID，server端回复响应时需填写相同的传输ID。
+**功能：** client端写请求的标识符，server端回复时需填写相同的transId。
 
 **类型：** Int32
 
@@ -1584,7 +1631,7 @@ public var transId: Int32
 public var value: Array<Byte>
 ```
 
-**功能：** 表示写入的描述符二进制数据。
+**功能：** client端需要给特征值写入的数据。
 
 **类型：** Array\<Byte>
 
@@ -1607,7 +1654,7 @@ public class DescriptorReadRequest {
 }
 ```
 
-**功能：** 描述server端订阅后收到的描述符读请求事件参数类。
+**功能：** 描述server端订阅client端读描述符请求事件后，接收到的事件参数结构。
 
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
@@ -1619,7 +1666,7 @@ public class DescriptorReadRequest {
 public var characteristicUUID: String
 ```
 
-**功能：** 特定特征（characteristic）的UUID，例如：00002a11-0000-1000-8000-00805f9b34fb。
+**功能：** 描述符所属的特征值UUID。例如：00002a11-0000-1000-8000-00805f9b34fb。
 
 **类型：** String
 
@@ -1635,7 +1682,7 @@ public var characteristicUUID: String
 public var descriptorUUID: String
 ```
 
-**功能：** 表示描述符（descriptor）的UUID，例如：00002902-0000-1000-8000-00805f9b34fb。
+**功能：** client端需要读取的描述符UUID。例如：00002902-0000-1000-8000-00805f9b34fb。
 
 **类型：** String
 
@@ -1651,7 +1698,7 @@ public var descriptorUUID: String
 public var deviceId: String
 ```
 
-**功能：** 表示发送描述符读请求的远端设备地址，例如："XX:XX:XX:XX:XX:XX"。
+**功能：** client端蓝牙设备地址。例如："XX:XX:XX:XX:XX:XX"。
 
 **类型：** String
 
@@ -1667,7 +1714,9 @@ public var deviceId: String
 public var offset: Int32
 ```
 
-**功能：** 表示读描述符数据的起始位置。例如：k表示从第k个字节开始读，server端回复响应时需填写相同的offset。
+**功能：** client端读数据的偏移值。例如：k表示从第k个字节开始读。
+
+server端回复响应时需填写相同的offset。
 
 **类型：** Int32
 
@@ -1683,7 +1732,7 @@ public var offset: Int32
 public var serviceUUID: String
 ```
 
-**功能：** 特定服务（service）的UUID，例如：00001888-0000-1000-8000-00805f9b34fb。
+**功能：** 特征值所属的服务UUID。例如：00001888-0000-1000-8000-00805f9b34fb。
 
 **类型：** String
 
@@ -1699,7 +1748,7 @@ public var serviceUUID: String
 public var transId: Int32
 ```
 
-**功能：** 表示读请求的传输ID，server端回复响应时需填写相同的传输ID。
+**功能：** client端读请求的标识符，server端回复时需填写相同的transId。
 
 **类型：** Int32
 
@@ -1725,7 +1774,7 @@ public class DescriptorWriteRequest {
 }
 ```
 
-**功能：** 描述server端订阅后收到的描述符写请求事件参数类。
+**功能：** 描述server端订阅client端写描述符请求事件后，接收到的事件参数结构。
 
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
@@ -1737,7 +1786,7 @@ public class DescriptorWriteRequest {
 public var characteristicUUID: String
 ```
 
-**功能：** 特定特征（characteristic）的UUID，例如：00002a11-0000-1000-8000-00805f9b34fb。
+**功能：** 描述符所属的特征值UUID。例如：00002a11-0000-1000-8000-00805f9b34fb。
 
 **类型：** String
 
@@ -1753,7 +1802,7 @@ public var characteristicUUID: String
 public var descriptorUUID: String
 ```
 
-**功能：** 表示描述符（descriptor）的UUID，例如：00002902-0000-1000-8000-00805f9b34fb。
+**功能：** client端需要写入的描述符UUID。例如：00002902-0000-1000-8000-00805f9b34fb。
 
 **类型：** String
 
@@ -1769,7 +1818,7 @@ public var descriptorUUID: String
 public var deviceId: String
 ```
 
-**功能：** 表示发送描述符写请求的远端设备地址，例如："XX:XX:XX:XX:XX:XX"。
+**功能：** client端蓝牙设备地址。例如："XX:XX:XX:XX:XX:XX"。
 
 **类型：** String
 
@@ -1785,7 +1834,9 @@ public var deviceId: String
 public var isPrepared: Bool
 ```
 
-**功能：** 表示写请求是否立即执行。
+**功能：** 收到client端写请求后，是否立即回复。
+
+true表示稍后回复，false表示立即回复。
 
 **类型：** Bool
 
@@ -1801,7 +1852,9 @@ public var isPrepared: Bool
 public var needRsp: Bool
 ```
 
-**功能：** 表示是否要给client端回复响应。
+**功能：** 是否需要回复client端。
+
+true表示需要回复，false表示不需要回复。
 
 **类型：** Bool
 
@@ -1817,7 +1870,9 @@ public var needRsp: Bool
 public var offset: Int32
 ```
 
-**功能：** 表示写描述符数据的起始位置。例如：k表示从第k个字节开始写，server端回复响应时需填写相同的offset。
+**功能：** client端写数据的偏移值。例如：k表示从第k个字节开始写。
+
+server端回复时需填写相同的offset。
 
 **类型：** Int32
 
@@ -1833,7 +1888,7 @@ public var offset: Int32
 public var serviceUUID: String
 ```
 
-**功能：** 特定服务（service）的UUID，例如：00001888-0000-1000-8000-00805f9b34fb。
+**功能：** 特征值所属的服务UUID。例如：00001888-0000-1000-8000-00805f9b34fb。
 
 **类型：** String
 
@@ -1849,7 +1904,7 @@ public var serviceUUID: String
 public var transId: Int32
 ```
 
-**功能：** 表示写请求的传输ID，server端回复响应时需填写相同的传输ID。
+**功能：** client端写请求的标识符，server端回复时需填写相同的transId。
 
 **类型：** Int32
 
@@ -1865,7 +1920,7 @@ public var transId: Int32
 public var value: Array<Byte>
 ```
 
-**功能：** 表示写入的描述符二进制数据。
+**功能：** client端需要给描述符写入的数据。
 
 **类型：** Array\<Byte>
 
@@ -1881,7 +1936,11 @@ public var value: Array<Byte>
 public class GattClientDevice {}
 ```
 
-**功能：** client端类。使用client端方法之前需要创建该类的实例进行操作，通过[createGattClientDevice(String)](#func-creategattclientdevicestring)方法构造此实例。
+**功能：** GATT客户端类，提供了和服务端进行连接和数据传输等操作方法。
+
+- 使用该类的方法前，需通过[createGattClientDevice](#func-creategattclientdevicestring)方法构造该类的实例。
+
+- 通过创建不同的该类实例，可以管理多路GATT连接。
 
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
@@ -1893,7 +1952,7 @@ public class GattClientDevice {}
 public func close(): Unit
 ```
 
-**功能：** 关闭客户端功能，注销client在协议栈的注册，调用该接口后[GattClientDevice](#class-gattclientdevice)实例将不能再使用。
+**功能：** 销毁client端实例。销毁后，通过[GattClientDevice](#class-gattclientdevice)创建的实例将不可用。
 
 **需要权限：** ohos.permission.ACCESS_BLUETOOTH
 
@@ -1939,7 +1998,10 @@ try {
 public func connect(): Unit
 ```
 
-**功能：** client端发起连接远端蓝牙低功耗设备。
+**功能：** client端主动发起和server蓝牙设备的GATT协议连接。
+
+- 远端设备地址已通过[createGattClientDevice](#func-creategattclientdevicestring)方法中的deviceId参数指定。
+- client可通过订阅[on(AdvertisingStateChange)](#func-onbluetoothblecallbacktype-callback1argumentadvertisingstatechangeinfo)事件来感知连接是否成功。
 
 **需要权限：** ohos.permission.ACCESS_BLUETOOTH
 
@@ -1985,7 +2047,9 @@ try {
 public func disconnect(): Unit
 ```
 
-**功能：** client端断开与远端蓝牙低功耗设备的连接。
+**功能：** client断开与远端蓝牙低功耗设备的连接。
+
+- client可通过订阅[on(AdvertisingStateChange)](#func-onbluetoothblecallbacktype-callback1argumentadvertisingstatechangeinfo)事件来感知连接是否成功。
 
 **需要权限：** ohos.permission.ACCESS_BLUETOOTH
 
@@ -2031,7 +2095,7 @@ try {
 public func getDeviceName(): String
 ```
 
-**功能：** client获取远端蓝牙低功耗设备名。
+**功能：** client获取远端蓝牙低功耗设备的名称。
 
 **需要权限：** ohos.permission.ACCESS_BLUETOOTH
 
@@ -2043,7 +2107,7 @@ public func getDeviceName(): String
 
 |类型|说明|
 |:----|:----|
-|String|client获取对端server设备名。|
+|String|携带server端设备名称。|
 
 **异常：**
 
@@ -2083,7 +2147,9 @@ try {
 public func getRssiValue(callback: AsyncCallback<Int32>): Unit
 ```
 
-**功能：** client获取远端蓝牙低功耗设备的信号强度（Received Signal Strength Indication, RSSI），调用[connect](#func-connect)接口连接成功后才能使用。
+**功能：** client端获取GATT连接链路信号强度 (Received Signal Strength Indication, RSSI)。使用Promise异步回调。
+
+- 需先调用[connect](#func-connect)方法，等GATT profile连接成功后才能使用。
 
 **需要权限：** ohos.permission.ACCESS_BLUETOOTH
 
@@ -2095,7 +2161,7 @@ public func getRssiValue(callback: AsyncCallback<Int32>): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|callback|[AsyncCallback](../arkinterop/cj-api-business_exception.md#type-asynccallback)\<Int32>|是|-|返回信号强度，单位&nbsp;dBm，通过注册回调函数获取。|
+|callback|[AsyncCallback](../arkinterop/cj-api-business_exception.md#type-asynccallback)\<Int32>|是|-|返回链路的信号强度，单位：dBm。|
 
 **异常：**
 
@@ -2153,7 +2219,7 @@ public func getServices(callback: AsyncCallback<Array<GattService>>): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|callback|[AsyncCallback](../arkinterop/cj-api-business_exception.md#type-asynccallback)\<Array\<[GattService](#class-gattservice)>>|是|-|client进行服务发现。|
+|callback|[AsyncCallback](../arkinterop/cj-api-business_exception.md#type-asynccallback)\<Array\<[GattService](#class-gattservice)>>|是|-|返回获取到的server端服务列表。|
 
 **异常：**
 
@@ -2262,7 +2328,9 @@ try {
 public func on(eventType: BluetoothBleGattClientDeviceCallbackType, callback: Callback1Argument<BLECharacteristic>): Unit
 ```
 
-**功能：** client端订阅MTU状态变化事件。
+**功能：** client端订阅server端特征值变化事件。使用Callback异步回调。
+
+-  需调用[setCharacteristicChangeNotification](#func-setcharacteristicchangenotificationblecharacteristic-bool-asynccallbackunit)或者[setCharacteristicChangeIndication](#func-setcharacteristicchangeindicationblecharacteristic-bool-asynccallbackunit)，且启用通知或者指示能力后，才能接收到server端的特征值内容变更通知或者指示。
 
 **需要权限：** ohos.permission.ACCESS_BLUETOOTH
 
@@ -2274,8 +2342,8 @@ public func on(eventType: BluetoothBleGattClientDeviceCallbackType, callback: Ca
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|eventType|[BluetoothBleGattClientDeviceCallbackType](#enum-bluetoothblegattclientdevicecallbacktype)|是|-|必须填写ClientBleMtuChange，表示MTU状态变化事件。填写不正确将导致回调无法注册。|
-|callback|[Callback1Argument](../arkinterop/cj-api-callback_invoke.md#class-callback1argument)\<[BLECharacteristic](#class-blecharacteristic)>|是|-|返回MTU字节数的值，通过注册回调函数获取。|
+|eventType|[BluetoothBleGattClientDeviceCallbackType](#enum-bluetoothblegattclientdevicecallbacktype)|是|-|事件回调类型，支持的事件为BleCharacteristicChange，表示server端特征值变化事件。<br>当client端收到server端特征值内容变更的通知或者指示时，触发该事件。|
+|callback|[Callback1Argument](../arkinterop/cj-api-callback_invoke.md#class-callback1argument)\<[BLECharacteristic](#class-blecharacteristic)>|是|-|指定订阅的回调函数，会携带server端变化后的特征值内容。|
 
 **异常：**
 
@@ -2309,7 +2377,7 @@ class BLECharacteristicChangeCallback <: Callback1Argument<BLECharacteristic> {
 let gattClient = createGattClientDevice("XX:XX:XX:XX:XX:XX")  // 请替换为您的设备地址
 let bleCharacteristicChangeCallback = BLECharacteristicChangeCallback()
 try {
-    gattClient.on(BluetoothBleGattClientDeviceCallbackType.ClientBleMtuChange, bleCharacteristicChangeCallback)
+    gattClient.on(BluetoothBleGattClientDeviceCallbackType.BleCharacteristicChange, bleCharacteristicChangeCallback)
 } catch (e: BusinessException) {
     Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}", "")
 }
@@ -2324,7 +2392,7 @@ public func on(
 ): Unit
 ```
 
-**功能：** client端订阅MTU状态变化事件。
+**功能：** client端订阅GATT profile协议的连接状态变化事件。
 
 **需要权限：** ohos.permission.ACCESS_BLUETOOTH
 
@@ -2336,8 +2404,8 @@ public func on(
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|eventType|[BluetoothBleGattClientDeviceCallbackType](#enum-bluetoothblegattclientdevicecallbacktype)|是|-|填写BleConnectionStateChange，表示连接状态变化事件。|
-|callback|[Callback1Argument](../arkinterop/cj-api-callback_invoke.md#class-callback1argument)\<[BLEConnectionChangeState](#class-bleconnectionchangestate)>|是|-|返回MTU字节数的值，通过注册回调函数获取。|
+|eventType|[BluetoothBleGattClientDeviceCallbackType](#enum-bluetoothblegattclientdevicecallbacktype)|是|-|事件回调类型，支持的事件为BleConnectionStateChange，表示连接状态变化事件。<br>client和server端之间的连接状态发生变化时，触发该事件。<br>当client端调用[connect](#func-connect)或[disconnect](#func-disconnect)时，可能引起连接状态生变化。|
+|callback|[Callback1Argument](../arkinterop/cj-api-callback_invoke.md#class-callback1argument)\<[BLEConnectionChangeState](#class-bleconnectionchangestate)>|是|-|指定订阅的回调函数，会携带连接状态信息。|
 
 **异常：**
 
@@ -2388,7 +2456,7 @@ try {
 public func on(eventType: BluetoothBleGattClientDeviceCallbackType, callback: Callback1Argument<Int32>): Unit
 ```
 
-**功能：** client端订阅MTU状态变化事件。
+**功能：** client端订阅MTU（最大传输单元）大小变更事件。
 
 **需要权限：** ohos.permission.ACCESS_BLUETOOTH
 
@@ -2400,8 +2468,8 @@ public func on(eventType: BluetoothBleGattClientDeviceCallbackType, callback: Ca
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|eventType|[BluetoothBleGattClientDeviceCallbackType](#enum-bluetoothblegattclientdevicecallbacktype)|是|-|必须填写ClientBleMtuChange，表示MTU状态变化事件。填写不正确将导致回调无法注册。|
-|callback|[Callback1Argument](../arkinterop/cj-api-callback_invoke.md#class-callback1argument)\<Int32>|是|-|返回MTU字节数的值，通过注册回调函数获取。|
+|eventType|[BluetoothBleGattClientDeviceCallbackType](#enum-bluetoothblegattclientdevicecallbacktype)|是|-|事件回调类型，支持的事件为ClientBleMtuChange，表示MTU大小变更事件。<br>当调用[setBLEMtuSize](#func-setblemtusizeint32)方法，client端发起MTU大小协商后，会触发该事件。|
+|callback|[Callback1Argument](../arkinterop/cj-api-callback_invoke.md#class-callback1argument)\<Int32>|是|-|指定订阅的回调函数，会携带协商后的MTU大小。单位：Byte。|
 
 **异常：**
 
@@ -2450,7 +2518,13 @@ public func readCharacteristicValue(
 ): Unit
 ```
 
-**功能：** client端读取蓝牙低功耗设备特定服务的特征值。
+**功能：** client端从指定的server端特征值读取数据。
+
+- 需要先调用[getServices](#func-getservicesasynccallbackarraygattservice)，获取到server端所有支持的能力，且包含指定的入参特征值UUID；否则会读取失败。
+
+- 异步回调结果返回后，才能调用下一次读取或者写入操作，如[readCharacteristicValue](#func-readcharacteristicvalueblecharacteristic-asynccallbackblecharacteristic)、[readDescriptorValue](#func-readdescriptorvaluebledescriptor-asynccallbackbledescriptor)、[writeCharacteristicValue](#func-writecharacteristicvalueblecharacteristic-gattwritetype-asynccallbackunit)、[writeDescriptorValue](#func-writedescriptorvaluebledescriptor-asynccallbackunit)、[setCharacteristicChangeNotification](#func-setcharacteristicchangenotificationblecharacteristic-bool-asynccallbackunit)和[setCharacteristicChangeIndication](#func-setcharacteristicchangeindicationblecharacteristic-bool-asynccallbackunit)。
+
+- 读取特征值过程中，需确保[BLECharacteristic](#class-blecharacteristic)入参特征值的serviceUuid、characteristicUuid准确。characteristicValue表示的数据内容长度可由用户任意指定，不会影响实际读取到的特征值数据内容。
 
 **需要权限：** ohos.permission.ACCESS_BLUETOOTH
 
@@ -2462,8 +2536,8 @@ public func readCharacteristicValue(
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|characteristic|[BLECharacteristic](#class-blecharacteristic)|是|-|待读取的特征值。|
-|callback|[AsyncCallback](../arkinterop/cj-api-business_exception.md#type-asynccallback)\<[BLECharacteristic](#class-blecharacteristic)>|是|-|client读取特征值，通过注册回调函数获取。|
+|characteristic|[BLECharacteristic](#class-blecharacteristic)|是|-|需要读取的特征值。|
+|callback|[AsyncCallback](../arkinterop/cj-api-business_exception.md#type-asynccallback)\<[BLECharacteristic](#class-blecharacteristic)>|是|-|回调函数。当读取成功，获取到的特征值对象，包含读取到的数据内容。|
 
 **异常：**
 
@@ -2544,7 +2618,13 @@ try {
 public func readDescriptorValue(descriptor: BLEDescriptor, callback: AsyncCallback<BLEDescriptor>): Unit
 ```
 
-**功能：** client端读取蓝牙低功耗设备特定的特征包含的描述符。
+**功能：** client端从指定的server端描述符读取数据。
+
+- 需要先调用[getServices](#func-getservicesasynccallbackarraygattservice)，获取到server端所有支持的能力，且包含指定的入参特征值UUID；否则会读取失败。
+
+- 异步回调结果返回后，才能调用下一次读取或者写入操作，如[readCharacteristicValue](#func-readcharacteristicvalueblecharacteristic-asynccallbackblecharacteristic)、[readDescriptorValue](#func-readdescriptorvaluebledescriptor-asynccallbackbledescriptor)、[writeCharacteristicValue](#func-writecharacteristicvalueblecharacteristic-gattwritetype-asynccallbackunit)、[writeDescriptorValue](#func-writedescriptorvaluebledescriptor-asynccallbackunit)、[setCharacteristicChangeNotification](#func-setcharacteristicchangenotificationblecharacteristic-bool-asynccallbackunit)和[setCharacteristicChangeIndication](#func-setcharacteristicchangeindicationblecharacteristic-bool-asynccallbackunit)。
+
+- 读取描述符过程中，需确保[BLEDescriptor](#class-bledescriptor)入参描述符的serviceUuid、characteristicUuid、descriptorUuid准确。descriptorValue表示的数据内容长度可由用户任意指定，不会影响实际读取到的描述符数据内容。
 
 **需要权限：** ohos.permission.ACCESS_BLUETOOTH
 
@@ -2556,8 +2636,8 @@ public func readDescriptorValue(descriptor: BLEDescriptor, callback: AsyncCallba
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|descriptor|[BLEDescriptor](#class-bledescriptor)|是|-|待读取的描述符。|
-|callback|[AsyncCallback](../arkinterop/cj-api-business_exception.md#type-asynccallback)\<[BLEDescriptor](#class-bledescriptor)>|是|-|client读取描述符，通过注册回调函数获取。|
+|descriptor|[BLEDescriptor](#class-bledescriptor)|是|-|需要读取的描述符。|
+|callback|[AsyncCallback](../arkinterop/cj-api-business_exception.md#type-asynccallback)\<[BLEDescriptor](#class-bledescriptor)>|是|-|回调函数。当读取成功，data为获取到的描述符对象，包含读取到的数据内容。|
 
 **异常：**
 
@@ -2625,7 +2705,13 @@ try {
 public func setBLEMtuSize(mtu: Int32): Unit
 ```
 
-**功能：** client协商远端蓝牙低功耗设备的最大传输单元（Maximum Transmission Unit, MTU），调用[connect](#func-connect)接口连接成功后才能使用。
+**功能：** client端同server端协商[MTU](../../connectivity/terminology.md#mtu)（最大传输单元）大小。
+
+- 需先调用[connect](#func-connect)方法，等GATT profile连接成功后才能使用。
+
+- 通过[on(ClientBleMtuChange)](#func-onbluetoothblegattservercallbacktype-callback1argumentint32)，订阅MTU协商结果。
+
+- 如果未协商，MTU大小默认为23字节。
 
 **需要权限：** ohos.permission.ACCESS_BLUETOOTH
 
@@ -2637,7 +2723,7 @@ public func setBLEMtuSize(mtu: Int32): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|mtu|Int32|是|-|设置范围为22~512字节。|
+|mtu|Int32|是|-|需要协商的mtu大小，取值范围：[23, 517]，单位：Byte。|
 
 **异常：**
 
@@ -2676,7 +2762,22 @@ try {
 public func setCharacteristicChangeIndication(characteristic: BLECharacteristic, enable: Bool, callback: AsyncCallback<Unit>): Unit
 ```
 
-**功能：** 向服务端发送设置通知此特征值请求，需要对端设备的回复。
+**功能：** client端启用或者禁用接收server端特征值内容变更指示的能力。
+
+- 需要先调用[getServices](#func-getservicesasynccallbackarraygattservice)，获取到server端所有支持的能力，且需包含指定的入参特征值UUID。
+
+- server端对应的特征值需包含标准协议定义的Client Characteristic Configuration描述符UUID（00002902-0000-1000-8000-00805f9b34fb），server端才能支持发送变更指示。
+
+- 若启用该能力，系统蓝牙服务会自动往server端写Client Characteristic Configuration描述符，启用server端的指示能力。
+
+- 若禁用该能力，系统蓝牙服务会自动往server端写Client Characteristic Configuration描述符，禁用server端的指示能力。
+
+- 通过[on(BleCharacteristicChange)](#func-onbluetoothblegattclientdevicecallbacktype-callback1argumentblecharacteristic)接收server端特征值内容变更指示。
+
+- 若client端收到server端特征值内容变更指示后，系统蓝牙服务会主动回复确认，应用无需关注。
+
+- 异步回调结果返回后，才能调用下一次读取或者写入操作，如[readCharacteristicValue](#func-readcharacteristicvalueblecharacteristic-asynccallbackblecharacteristic)、[readDescriptorValue](#func-readdescriptorvaluebledescriptor-asynccallbackbledescriptor)、[writeCharacteristicValue](#func-writecharacteristicvalueblecharacteristic-gattwritetype-asynccallbackunit)、[writeDescriptorValue](#func-writedescriptorvaluebledescriptor-asynccallbackunit)、[setCharacteristicChangeNotification](#func-setcharacteristicchangenotificationblecharacteristic-bool-asynccallbackunit)和[setCharacteristicChangeIndication](#func-setcharacteristicchangeindicationblecharacteristic-bool-asynccallbackunit)。
+
 
 **需要权限：** ohos.permission.ACCESS_BLUETOOTH
 
@@ -2688,7 +2789,7 @@ public func setCharacteristicChangeIndication(characteristic: BLECharacteristic,
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|characteristic|[BLECharacteristic](#class-blecharacteristic)|是|-|蓝牙设备特征对应的二进制值及其它参数。|
+|characteristic|[BLECharacteristic](#class-blecharacteristic)|是|-|需要管理的server端特征值。|
 |enable|Bool|是|-|蓝牙设备特征的写入类型。|
 |callback|[AsyncCallback](../arkinterop/cj-api-business_exception.md#type-asynccallback)\<Unit>|是|-|回调函数。|
 
@@ -2757,7 +2858,21 @@ try {
 public func setCharacteristicChangeNotification(characteristic: BLECharacteristic, enable: Bool, callback: AsyncCallback<Unit>): Unit
 ```
 
-**功能：** 向服务端发送设置通知此特征值请求。
+**功能：** client端启用或者禁用接收server端特征值内容变更通知的能力。
+
+- 需要先调用[getServices](#func-getservicesasynccallbackarraygattservice)，获取到server端所有支持的能力，且需包含指定的入参特征值UUID。
+
+- server端对应的特征值需包含标准协议定义的Client Characteristic Configuration描述符UUID（00002902-0000-1000-8000-00805f9b34fb），server端才能支持发送变更通知。
+
+- 若启用该能力，系统蓝牙服务会自动往server端写Client Characteristic Configuration描述符，启用server端的通知能力。
+
+- 若禁用该能力，系统蓝牙服务会自动往server端写Client Characteristic Configuration描述符，禁用server端的通知能力。
+
+- 通过[on(BleCharacteristicChange)](#func-onbluetoothblegattclientdevicecallbacktype-callback1argumentblecharacteristic)接收server端特征值内容变更指示。
+
+- 若client端收到server端特征值内容变更通知后，无需回复确认。
+
+- 异步回调结果返回后，才能调用下一次读取或者写入操作，如[readCharacteristicValue](#func-readcharacteristicvalueblecharacteristic-asynccallbackblecharacteristic)、[readDescriptorValue](#func-readdescriptorvaluebledescriptor-asynccallbackbledescriptor)、[writeCharacteristicValue](#func-writecharacteristicvalueblecharacteristic-gattwritetype-asynccallbackunit)、[writeDescriptorValue](#func-writedescriptorvaluebledescriptor-asynccallbackunit)、[setCharacteristicChangeNotification](#func-setcharacteristicchangenotificationblecharacteristic-bool-asynccallbackunit)和[setCharacteristicChangeIndication](#func-setcharacteristicchangeindicationblecharacteristic-bool-asynccallbackunit)。
 
 **需要权限：** ohos.permission.ACCESS_BLUETOOTH
 
@@ -2769,8 +2884,8 @@ public func setCharacteristicChangeNotification(characteristic: BLECharacteristi
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|characteristic|[BLECharacteristic](#class-blecharacteristic)|是|-|蓝牙低功耗特征。|
-|enable|Bool|是|-|启用接收notify设置为true，否则设置为false。|
+|characteristic|[BLECharacteristic](#class-blecharacteristic)|是|-|需要管理的server端特征值。|
+|enable|Bool|是|-|是否启用接收server端特征值通知的能力。<br>true表示启用，false表示禁用。|
 |callback|[AsyncCallback](../arkinterop/cj-api-business_exception.md#type-asynccallback)\<Unit>|是|-|回调函数。|
 
 **异常：**
@@ -2839,7 +2954,13 @@ public func writeCharacteristicValue(characteristic: BLECharacteristic, writeTyp
     callback: AsyncCallback<Unit>): Unit
 ```
 
-**功能：** client端向低功耗蓝牙设备写入特定的特征值。
+**功能：** client端向指定的server端特征值写入数据。使用Callback异步回调。
+
+- 需要先调用[getServices](#func-getservicesasynccallbackarraygattservice)，获取到server端所有支持的能力，且包含指定的入参特征值UUID；否则会写入失败。
+
+- 异步回调结果返回后，才能调用下一次读取或者写入操作，如[readCharacteristicValue](#func-readcharacteristicvalueblecharacteristic-asynccallbackblecharacteristic)、[readDescriptorValue](#func-readdescriptorvaluebledescriptor-asynccallbackbledescriptor)、[writeCharacteristicValue](#func-writecharacteristicvalueblecharacteristic-gattwritetype-asynccallbackunit)、[writeDescriptorValue](#func-writedescriptorvaluebledescriptor-asynccallbackunit)、[setCharacteristicChangeNotification](#func-setcharacteristicchangenotificationblecharacteristic-bool-asynccallbackunit)和[setCharacteristicChangeIndication](#func-setcharacteristicchangeindicationblecharacteristic-bool-asynccallbackunit)。
+
+- 应用单次可写入的特征值数据长度默认限制为（MTU-3）字节，MTU大小可由[setBLEMtuSize](#func-setblemtusizeint32)接口指定。
 
 **需要权限：** ohos.permission.ACCESS_BLUETOOTH
 
@@ -2851,8 +2972,8 @@ public func writeCharacteristicValue(characteristic: BLECharacteristic, writeTyp
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|characteristic|[BLECharacteristic](#class-blecharacteristic)|是|-|蓝牙设备特征对应的二进制值及其它参数。|
-|writeType|[GattWriteType](#enum-gattwritetype)|是|-|蓝牙设备特征的写入类型。|
+|characteristic|[BLECharacteristic](#class-blecharacteristic)|是|-|需要写入的特征值，包含写入的数据内容。|
+|writeType|[GattWriteType](#enum-gattwritetype)|是|-|写入特征值的方式。|
 |callback|[AsyncCallback](../arkinterop/cj-api-business_exception.md#type-asynccallback)\<Unit>|是|-|回调函数。|
 
 **异常：**
@@ -2926,7 +3047,15 @@ try {
 public func writeDescriptorValue(descriptor: BLEDescriptor, callback: AsyncCallback<Unit>): Unit
 ```
 
-**功能：** client端向低功耗蓝牙设备特定的描述符写入二进制数据。
+**功能：** client端向指定的server端描述符写入数据。使用Callback异步回调。
+
+- 需要先调用[getServices](#func-getservicesasynccallbackarraygattservice)，获取到server端所有支持的能力，且包含指定的入参描述符UUID；否则会写入失败。
+
+- 异步回调结果返回后，才能调用下一次读取或者写入操作，如[readCharacteristicValue](#func-readcharacteristicvalueblecharacteristic-asynccallbackblecharacteristic)、[readDescriptorValue](#func-readdescriptorvaluebledescriptor-asynccallbackbledescriptor)、[writeCharacteristicValue](#func-writecharacteristicvalueblecharacteristic-gattwritetype-asynccallbackunit)、[writeDescriptorValue](#func-writedescriptorvaluebledescriptor-asynccallbackunit)、[setCharacteristicChangeNotification](#func-setcharacteristicchangenotificationblecharacteristic-bool-asynccallbackunit)和[setCharacteristicChangeIndication](#func-setcharacteristicchangeindicationblecharacteristic-bool-asynccallbackunit)。
+
+- 应用单次可写入的描述符数据长度默认限制为（MTU-3）字节，MTU大小可由[setBLEMtuSize](#func-setblemtusizeint32)接口指定。
+
+- Client Characteristic Configuration描述符（UUID：00002902-0000-1000-8000-00805f9b34fb）和 Server Characteristic Configuration描述符（UUID：00002903-0000-1000-8000-00805f9b34fb）较为特殊，蓝牙标准协议规定内容长度为2字节，写入内容长度应设置为2字节。
 
 **需要权限：** ohos.permission.ACCESS_BLUETOOTH
 
@@ -2938,7 +3067,7 @@ public func writeDescriptorValue(descriptor: BLEDescriptor, callback: AsyncCallb
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|descriptor|[BLEDescriptor](#class-bledescriptor)|是|-|蓝牙设备描述符的二进制值及其它参数。|
+|descriptor|[BLEDescriptor](#class-bledescriptor)|是|-|需要写入的描述符，包含写入的数据内容。|
 |callback|[AsyncCallback](../arkinterop/cj-api-business_exception.md#type-asynccallback)\<Unit>|是|-|回调函数。|
 
 **异常：**
@@ -3036,7 +3165,9 @@ public class GattPermissions <: Equatable<GattPermissions> {
 public var read: Bool
 ```
 
-**功能：** 表示是否允许读取该特征值或描述符内容。
+**功能：** 是否允许读取该特征值或描述符内容。
+
+true表示允许，false表示不允许。默认值为true。
 
 **类型：** Bool
 
@@ -3052,7 +3183,9 @@ public var read: Bool
 public var readEncrypted: Bool
 ```
 
-**功能：** 表示读取该特征值或描述符内容是否需要加密。
+**功能：** 读取该特征值或描述符内容是否需要加密。
+
+true表示需要加密后，方可读取内容，false表示不需要普通方式加密。默认值为false。
 
 **类型：** Bool
 
@@ -3068,7 +3201,9 @@ public var readEncrypted: Bool
 public var readEncryptedMitm: Bool
 ```
 
-**功能：** 表示读取该特征值或描述符内容是否需要防中间人攻击的加密。
+**功能：** 读取该特征值或描述符内容是否需要防中间人攻击的加密。
+
+防中间人攻击表示操作需要经过认证，防止数据被第三方篡改。true表示需要防中间人攻击的加密后才能读取内容，false表示不需要防中间人攻击的加密。默认值为false。
 
 **类型：** Bool
 
@@ -3084,7 +3219,9 @@ public var readEncryptedMitm: Bool
 public var write: Bool
 ```
 
-**功能：** 表示是否允许写入该特征值或描述符内容。
+**功能：** 是否允许写入该特征值或描述符内容。
+
+true表示允许，false表示不允许。默认值为true。
 
 **类型：** Bool
 
@@ -3100,7 +3237,9 @@ public var write: Bool
 public var writeEncrypted: Bool
 ```
 
-**功能：** 表示写入该特征值或描述符内容是否需要加密。
+**功能：** 写入该特征值或描述符内容是否需要加密。
+
+true表示需要加密后，方可写入内容，false表示不需要普通方式加密。默认值为false。
 
 **类型：** Bool
 
@@ -3116,7 +3255,9 @@ public var writeEncrypted: Bool
 public var writeEncryptedMitm: Bool
 ```
 
-**功能：** 表示写入该特征值或描述符内容是否需要防中间人攻击的加密。
+**功能：** 写入该特征值或描述符内容是否需要防中间人攻击的加密。
+
+true表示需要防中间人攻击的加密后才能写入内容，false表示不需要防中间人攻击的加密。默认值为false。
 
 **类型：** Bool
 
@@ -3132,7 +3273,9 @@ public var writeEncryptedMitm: Bool
 public var writeSigned: Bool
 ```
 
-**功能：** 表示写入该特征值或描述符内容是否需要经过签名处理。
+**功能：** 写入该特征值或描述符内容是否需要经过签名处理。
+
+true表示内容需要签名处理后方可写入，false表示不需要签名处理。默认值为false。
 
 **类型：** Bool
 
@@ -3148,7 +3291,9 @@ public var writeSigned: Bool
 public var writeSignedMitm: Bool
 ```
 
-**功能：** 表示写入该特征值或描述符内容是否需要经过防中间人攻击方式的签名处理。
+**功能：** 写入该特征值或描述符内容是否需要经过防中间人攻击方式的签名处理。
+
+true表示需要防中间人攻击方式的签名处理后方可写入，false表示不需要以防中间人攻击方式签名处理。默认值为false。
 
 **类型：** Bool
 
@@ -3183,14 +3328,14 @@ public init (
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|read|Bool|否|true|是否允许读取该特征值或描述符内容。<br>true表示允许，false表示不允许。默认值为true。|
-|readEncrypted|Bool|否|false|读取该特征值或描述符内容是否需要加密。<br>true表示需要加密后，方可读取内容，false表示不需要普通方式加密。默认值为false。|
-|readEncryptedMitm|Bool|否|false|读取该特征值或描述符内容是否需要防中间人攻击的加密。<br>防中间人攻击表示操作需要经过认证，防止数据被第三方篡改。true表示需要防中间人攻击的加密后才能读取内容，false表示不需要防中间人攻击的加密。默认值为false。|
-|write|Bool|否|true|是否允许写入该特征值或描述符内容。<br>true表示允许，false表示不允许。默认值为true。|
-|writeEncrypted|Bool|否|false|写入该特征值或描述符内容是否需要加密。<br>true表示需要加密后，方可写入内容，false表示不需要普通方式加密。默认值为false。|
-|writeEncryptedMitm|Bool|否|false|写入该特征值或描述符内容是否需要防中间人攻击的加密。<br>true表示需要防中间人攻击的加密后才能写入内容，false表示不需要防中间人攻击的加密。默认值为false。|
-|writeSigned|Bool|否|false|写入该特征值或描述符内容是否需要经过签名处理。<br>true表示内容需要签名处理后方可写入，false表示不需要签名处理。默认值为false。|
-|writeSignedMitm|Bool|否|false|写入该特征值或描述符内容是否需要经过防中间人攻击方式的签名处理。<br>true表示需要防中间人攻击方式的签名处理后方可写入，false表示不需要以防中间人攻击方式签名处理。默认值为false。|
+|read|Bool|否|true|是否允许读取该特征值或描述符内容。|
+|readEncrypted|Bool|否|false|读取该特征值或描述符内容是否需要加密。|
+|readEncryptedMitm|Bool|否|false|读取该特征值或描述符内容是否需要防中间人攻击的加密。|
+|write|Bool|否|true|是否允许写入该特征值或描述符内容。|
+|writeEncrypted|Bool|否|false|写入该特征值或描述符内容是否需要加密。|
+|writeEncryptedMitm|Bool|否|false|写入该特征值或描述符内容是否需要防中间人攻击的加密。|
+|writeSigned|Bool|否|false|写入该特征值或描述符内容是否需要经过签名处理。|
+|writeSignedMitm|Bool|否|false|写入该特征值或描述符内容是否需要经过防中间人攻击方式的签名处理。|
 
 ### func !=(GattPermissions)
 
@@ -3253,7 +3398,7 @@ public class GattProperties {
 }
 ```
 
-**功能：** 描述gatt characteristic的属性。
+**功能：** 描述GATT特征值支持的属性。决定了特征值内容和描述符如何被使用和访问。
 
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
@@ -3265,7 +3410,9 @@ public class GattProperties {
 public var indicate: Bool
 ```
 
-**功能：** **命名参数。**  true表示该特征可通知对端设备，需要对端设备的回复。
+**功能：** 该特征值是否支持向对端设备指示特征值内容。
+
+true表示支持，对端设备需要回复确认，false表示不支持。默认值为false。
 
 **类型：** Bool
 
@@ -3281,7 +3428,9 @@ public var indicate: Bool
 public var notify: Bool
 ```
 
-**功能：** **命名参数。**  true表示该特征可通知对端设备。
+**功能：** 该特征值是否支持主动向对端设备通知特征值内容。
+
+true表示支持，且对端设备不需要回复确认，false表示不支持。默认值为false
 
 **类型：** Bool
 
@@ -3297,7 +3446,9 @@ public var notify: Bool
 public var read: Bool
 ```
 
-**功能：** **命名参数。**  true表示该特征支持读操作。
+**功能：** 该特征值是否支持读取操作。
+
+true表示支持，false表示不支持。默认值为true。
 
 **类型：** Bool
 
@@ -3313,7 +3464,9 @@ public var read: Bool
 public var write: Bool
 ```
 
-**功能：** **命名参数。**  表示该特征支持写操作，true表示需要对端设备的回复。
+**功能：** 该特征值是否支持写入操作。
+
+true表示支持，且被写入时需要回复对端设备，false表示不支持。默认值为true。
 
 **类型：** Bool
 
@@ -3329,7 +3482,9 @@ public var write: Bool
 public var writeNoResponse: Bool
 ```
 
-**功能：** **命名参数。**  true表示该特征支持写操作，无需对端设备回复。
+**功能：** 该特征值是否支持写入操作。
+
+true表示支持，且被写入时无需回复对端设备，false表示不支持。默认值为true。
 
 **类型：** Bool
 
@@ -3364,14 +3519,14 @@ public init(
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|write|Bool|否|true| **命名参数。**  表示该特征支持写操作，true表示需要对端设备的回复。|
-|writeNoResponse|Bool|否|true| **命名参数。**  true表示该特征支持写操作，无需对端设备回复。|
-|read|Bool|否|true| **命名参数。**  true表示该特征支持读操作。|
-|notify|Bool|否|false| **命名参数。**  true表示该特征可通知对端设备。|
-|indicate|Bool|否|false| **命名参数。**  true表示该特征可通知对端设备，需要对端设备的回复。|
-|broadcast|Bool|否|false|**命名参数。**  该特征值是否支持作为广播内容由server端发送。<br>true表示支持，server端可将特征值内容以ServiceData类型在广播报文中携带，false表示不支持。默认值为false。预留字段，本版本暂不支持。|
-|authenticatedSignedWrite|Bool|否|false|**命名参数。**  该特征值是否支持签名写入操作，通过对写入内容进行签名校验替代加密流程。<br>true表示支持，且该特征值权限GattPermissions中的writeSigned或writeSignedMitm需设置为true，否则该属性不生效，false表示不支持。默认值为false。预留字段，本版本暂不支持。|
-|extendedProperties|Bool|否|false|**命名参数。**  该特征值是否存在扩展属性。<br>true表示存在扩展属性，false表示不存在。默认值为false。预留字段，本版本暂不支持。|
+|write|Bool|否|true| **命名参数。** 该特征值是否支持写入操作。|
+|writeNoResponse|Bool|否|true| **命名参数。** 该特征值是否支持写入操作。|
+|read|Bool|否|true| **命名参数。** 该特征值是否支持读取操作。|
+|notify|Bool|否|false| **命名参数。** 该特征值是否支持主动向对端设备通知特征值内容。|
+|indicate|Bool|否|false| **命名参数。** 该特征值是否支持向对端设备指示特征值内容。|
+|broadcast|Bool|否|false|**命名参数。** 该特征值是否支持作为广播内容由server端发送。<br>true表示支持，server端可将特征值内容以[ServiceData](#class-servicedata)类型在广播报文中携带，false表示不支持。默认值为false。预留字段，本版本暂不支持。|
+|authenticatedSignedWrite|Bool|否|false|**命名参数。** 该特征值是否支持签名写入操作，通过对写入内容进行签名校验替代加密流程。<br>true表示支持，且该特征值权限[GattPermissions](#class-gattpermissions)中的writeSigned或writeSignedMitm需设置为true，否则该属性不生效，false表示不支持。默认值为false。预留字段，本版本暂不支持。|
+|extendedProperties|Bool|否|false|**命名参数。** 该特征值是否存在扩展属性。<br>true表示存在扩展属性，false表示不存在。默认值为false。预留字段，本版本暂不支持。|
 
 ## class GattServer
 
@@ -3379,7 +3534,11 @@ public init(
 public class GattServer {}
 ```
 
-**功能：** server端类。使用server端方法之前需要创建该类的实例进行操作，通过[createGattServer()](#func-creategattserver)方法构造此实例。
+**功能：** GATT通信中的服务端类。
+
+- 通过[createGattServer](#func-creategattserver)方法可以构造server实例。
+
+- 通过该实例可以操作server端的行为，如添加服务[addService](#func-addservicegattservice)、通知特征值变化[notifyCharacteristicChanged](#func-notifycharacteristicchangedstring-notifycharacteristic)等。
 
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
@@ -3391,7 +3550,7 @@ public class GattServer {}
 public func addService(service: GattService): Unit
 ```
 
-**功能：** server端添加服务。
+**功能：** server端添加服务。该操作会在蓝牙子系统中注册该服务，表示server端支持的能力。
 
 **需要权限：** ohos.permission.ACCESS_BLUETOOTH
 
@@ -3403,7 +3562,7 @@ public func addService(service: GattService): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|service|[GattService](#class-gattservice)|是|-|服务端的service数据。BLE广播的相关参数。|
+|service|[GattService](#class-gattservice)|是|-|server端的service数据。表示支持的特定功能。<br>例如：00001800-0000-1000-8000-00805f9b34fb表示通用访问服务；00001801-0000-1000-8000-00805f9b34fb表示通用属性服务等。|
 
 **异常：**
 
@@ -3479,7 +3638,7 @@ try {
 public func close(): Unit
 ```
 
-**功能：** 关闭服务端功能，去掉server在协议栈的注册。调用该接口后[GattServer](#class-gattserver)实例将不能再使用。
+**功能：** 销毁server端实例。销毁后，通过[createGattServer](#func-creategattserver)创建的实例将不可用。
 
 **需要权限：** ohos.permission.ACCESS_BLUETOOTH
 
@@ -3524,7 +3683,13 @@ try {
 public func notifyCharacteristicChanged(deviceId: String, notifyCharacteristic: NotifyCharacteristic): Unit
 ```
 
-**功能：** server端特征值发生变化时，主动通知已连接的client设备。
+**功能：** server端发送特征值变化通知或者指示给对端设备。
+
+- 建议该特征值的Client Characteristic Configuration描述符notification（通知）或indication（指示）能力已被使能。
+
+- 蓝牙标准协议规定Client Characteristic Configuration描述符的数据内容长度为2字节，bit0和bit1分别表示notification（通知）和indication（指示）能力是否使能，例如bit0 = 1表示notification enabled。
+
+- 该特征值数据内容变化时调用。
 
 **需要权限：** ohos.permission.ACCESS_BLUETOOTH
 
@@ -3536,8 +3701,8 @@ public func notifyCharacteristicChanged(deviceId: String, notifyCharacteristic: 
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|deviceId|String|是|-|接收通知的client端设备地址，例如“XX:XX:XX:XX:XX:XX”。|
-|notifyCharacteristic|[NotifyCharacteristic](#class-notifycharacteristic)|是|-|通知的特征值数据。|
+|deviceId|String|是|-|接收通知的client设备地址。例如：“XX:XX:XX:XX:XX:XX”。|
+|notifyCharacteristic|[NotifyCharacteristic](#class-notifycharacteristic)|是|-|通知给client的特征值数据对象。|
 
 **异常：**
 
@@ -3643,7 +3808,7 @@ try {
 public func on(eventType: BluetoothBleGattServerCallbackType, callback: Callback1Argument<CharacteristicReadRequest>): Unit
 ```
 
-**功能：** server端订阅MTU状态变化事件。
+**功能：** server端订阅client的特征值读请求事件，server端收到该事件后需要调用[sendResponse](#func-sendresponseserverresponse)接口回复client。
 
 **需要权限：** ohos.permission.ACCESS_BLUETOOTH
 
@@ -3655,8 +3820,8 @@ public func on(eventType: BluetoothBleGattServerCallbackType, callback: Callback
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|eventType|[BluetoothBleGattServerCallbackType](#enum-bluetoothblegattservercallbacktype)|是|-|填CharacteristicRead，表示特征值读请求事件。|
-|callback|[Callback1Argument](../arkinterop/cj-api-callback_invoke.md#class-callback1argument)\<[CharacteristicReadRequest](#class-characteristicreadrequest)>|是|-|返回MTU字节数的值，通过注册回调函数获取。|
+|eventType|[BluetoothBleGattServerCallbackType](#enum-bluetoothblegattservercallbacktype)|是|-|事件回调类型，支持的事件为CharacteristicRead，表示特征值读请求事件。<br>当收到client端设备的读取特征值请求时，触发该事件。|
+|callback|[Callback1Argument](../arkinterop/cj-api-callback_invoke.md#class-callback1argument)\<[CharacteristicReadRequest](#class-characteristicreadrequest)>|是|-|指定订阅的回调函数，会携带client端发送的读请求数据。|
 
 **异常：**
 
@@ -3718,7 +3883,7 @@ try {
 public func on(eventType: BluetoothBleGattServerCallbackType, callback: Callback1Argument<CharacteristicWriteRequest>): Unit
 ```
 
-**功能：** server端订阅MTU状态变化事件。
+**功能：** server端订阅client的特征值写请求事件，server端收到该事件后需要根据[CharacteristicWriteRequest](#class-characteristicwriterequest)中的needRsp决定是否调用[sendResponse](#func-sendresponseserverresponse)接口回复client。
 
 **需要权限：** ohos.permission.ACCESS_BLUETOOTH
 
@@ -3730,8 +3895,8 @@ public func on(eventType: BluetoothBleGattServerCallbackType, callback: Callback
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|eventType|[BluetoothBleGattServerCallbackType](#enum-bluetoothblegattservercallbacktype)|是|-|填写CharacteristicWrite，表示特征值写请求事件。|
-|callback|[Callback1Argument](../arkinterop/cj-api-callback_invoke.md#class-callback1argument)\<[CharacteristicWriteRequest](#class-characteristicwriterequest)>|是|-|返回MTU字节数的值，通过注册回调函数获取。|
+|eventType|[BluetoothBleGattServerCallbackType](#enum-bluetoothblegattservercallbacktype)|是|-|事件回调类型，支持的事件为CharacteristicWrite，表示特征值写请求事件。<br>当收到client端设备的写特征值请求时，触发该事件。|
+|callback|[Callback1Argument](../arkinterop/cj-api-callback_invoke.md#class-callback1argument)\<[CharacteristicWriteRequest](#class-characteristicwriterequest)>|是|-|指定订阅的回调函数，会携带client端发送的写请求数据。|
 
 **异常：**
 
@@ -3800,7 +3965,7 @@ try {
 public func on(eventType: BluetoothBleGattServerCallbackType, callback: Callback1Argument<DescriptorReadRequest>): Unit
 ```
 
-**功能：** server端订阅MTU状态变化事件。
+**功能：** server端订阅client的描述符读请求事件，server端收到该事件后需要调用[sendResponse](#func-sendresponseserverresponse)接口回复client。
 
 **需要权限：** ohos.permission.ACCESS_BLUETOOTH
 
@@ -3812,8 +3977,8 @@ public func on(eventType: BluetoothBleGattServerCallbackType, callback: Callback
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|eventType|[BluetoothBleGattServerCallbackType](#enum-bluetoothblegattservercallbacktype)|是|-|填写DescriptorRead，表示描述符读请求事件。|
-|callback|[Callback1Argument](../arkinterop/cj-api-callback_invoke.md#class-callback1argument)\<[DescriptorReadRequest](#class-descriptorreadrequest)>|是|-|返回MTU字节数的值，通过注册回调函数获取。|
+|eventType|[BluetoothBleGattServerCallbackType](#enum-bluetoothblegattservercallbacktype)|是|-|事件回调类型，支持的事件为DescriptorRead，表示描述符读请求事件。<br>当收到client端设备的读取描述符请求时，触发该事件。|
+|callback|[Callback1Argument](../arkinterop/cj-api-callback_invoke.md#class-callback1argument)\<[DescriptorReadRequest](#class-descriptorreadrequest)>|是|-|指定订阅的回调函数，会携带client端发送的读请求数据。|
 
 **异常：**
 
@@ -3875,7 +4040,7 @@ try {
 public func on(eventType: BluetoothBleGattServerCallbackType, callback: Callback1Argument<DescriptorWriteRequest>): Unit
 ```
 
-**功能：** server端订阅MTU状态变化事件。
+**功能：** server端订阅client的描述符写请求事件，server端收到该事件后需要根据[DescriptorWriteRequest](#descriptorwrite)里的needRsp决定是否调用[sendResponse](#func-sendresponseserverresponse)接口回复client。
 
 **需要权限：** ohos.permission.ACCESS_BLUETOOTH
 
@@ -3887,8 +4052,8 @@ public func on(eventType: BluetoothBleGattServerCallbackType, callback: Callback
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|eventType|[BluetoothBleGattServerCallbackType](#enum-bluetoothblegattservercallbacktype)|是|-|填写DescriptorWrite，表示描述符写请求事件。|
-|callback|[Callback1Argument](../arkinterop/cj-api-callback_invoke.md#class-callback1argument)\<[DescriptorWriteRequest](#class-descriptorwriterequest)>|是|-|返回MTU字节数的值，通过注册回调函数获取。|
+|eventType|[BluetoothBleGattServerCallbackType](#enum-bluetoothblegattservercallbacktype)|是|-| 事件回调类型，支持的事件为DescriptorWrite，表示描述符写请求事件。<br>当收到client端设备的写描述符请求时，触发该事件。|
+|callback|[Callback1Argument](../arkinterop/cj-api-callback_invoke.md#class-callback1argument)\<[DescriptorWriteRequest](#class-descriptorwriterequest)>|是|-|指定订阅的回调函数，会携带client端发送的写请求数据。|
 
 **异常：**
 
@@ -3954,7 +4119,7 @@ try {
 public func on(eventType: BluetoothBleGattServerCallbackType, callback: Callback1Argument<BLEConnectionChangeState>): Unit
 ```
 
-**功能：** server端订阅MTU状态变化事件。
+**功能：** server端订阅GATT profile协议的连接状态变化事件。
 
 **需要权限：** ohos.permission.ACCESS_BLUETOOTH
 
@@ -3966,8 +4131,8 @@ public func on(eventType: BluetoothBleGattServerCallbackType, callback: Callback
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|eventType|[BluetoothBleGattServerCallbackType](#enum-bluetoothblegattservercallbacktype)|是|-|填ConnectionStateChange，表示BLE连接状态变化事件。|
-|callback|[Callback1Argument](../arkinterop/cj-api-callback_invoke.md#class-callback1argument)\<[BLEConnectionChangeState](#class-bleconnectionchangestate)>|是|-|返回MTU字节数的值，通过注册回调函数获取。|
+|eventType|[BluetoothBleGattServerCallbackType](#enum-bluetoothblegattservercallbacktype)|是|-|事件回调类型，支持的事件为ConnectionStateChange，表示GATT profile连接状态发生变化的事件。<br>当client和server端之间的连接状态发生变化时，触发该事件。<br>例如：收到连接请求或者断连请求时，可能引起连接状态生变化。|
+|callback|[Callback1Argument](../arkinterop/cj-api-callback_invoke.md#class-callback1argument)\<[BLEConnectionChangeState](#class-bleconnectionchangestate)>|是|-|指定订阅的回调函数，会携带连接状态。|
 
 **异常：**
 
@@ -4013,7 +4178,7 @@ try {
 public func on(eventType: BluetoothBleGattServerCallbackType, callback: Callback1Argument<Int32>): Unit
 ```
 
-**功能：** server端订阅MTU状态变化事件。
+**功能：** server端订阅MTU（最大传输单元）大小变更事件。
 
 **需要权限：** ohos.permission.ACCESS_BLUETOOTH
 
@@ -4025,8 +4190,8 @@ public func on(eventType: BluetoothBleGattServerCallbackType, callback: Callback
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|eventType|[BluetoothBleGattServerCallbackType](#enum-bluetoothblegattservercallbacktype)|是|-|必须填写BLE_MTU_CHANGE，表示MTU状态变化事件。填写不正确将导致回调无法注册。|
-|callback|[Callback1Argument](../arkinterop/cj-api-callback_invoke.md#class-callback1argument)\<Int32>|是|-|返回MTU字节数的值，通过注册回调函数获取。|
+|eventType|[BluetoothBleGattServerCallbackType](#enum-bluetoothblegattservercallbacktype)|是|-|事件回调类型，支持的事件为ServerBleMtuChange，表示MTU状态变化事件。<br>当收到了client端发起了MTU协商请求时，触发该事件。|
+|callback|[Callback1Argument](../arkinterop/cj-api-callback_invoke.md#class-callback1argument)\<Int32>|是|-|指定订阅的回调函数，会携带协商后的MTU大小。单位：Byte。|
 
 **异常：**
 
@@ -4071,7 +4236,9 @@ try {
 public func removeService(serviceUUID: String): Unit
 ```
 
-**功能：** 删除已添加的服务。
+**功能：** 删除server端已添加的服务。
+
+- 该服务曾通过[addService](#func-addservicegattservice)添加。
 
 **需要权限：** ohos.permission.ACCESS_BLUETOOTH
 
@@ -4083,7 +4250,7 @@ public func removeService(serviceUUID: String): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|serviceUUID|String|是|-|service的UUID，例如“00001810-0000-1000-8000-00805F9B34FB”。|
+|serviceUUID|String|是|-|即将删除的服务的UUID。例如：00001810-0000-1000-8000-00805F9B34FB。|
 
 **异常：**
 
@@ -4123,7 +4290,14 @@ try {
 public func sendResponse(serverResponse: ServerResponse): Unit
 ```
 
-**功能：** server端回复client端的读写请求。
+**功能：** server端收到client的请求操作后，需要调用此接口回复client，否则可能导致链路异常，超时后断连。
+
+client请求是指通过下述接口订阅回调收到的请求消息：
+
+- [on(CharacteristicRead)](#func-onbluetoothblegattservercallbacktype-callback1argumentcharacteristicreadrequest)
+- [on(CharacteristicWrite)](#func-onbluetoothblegattservercallbacktype-callback1argumentcharacteristicwriterequest)，需根据[CharacteristicWriteRequest](#class-characteristicwriterequest)中的needRsp决定是否需要回复。
+- [on(DescriptorRead)](#func-onbluetoothblegattservercallbacktype-callback1argumentdescriptorreadrequest)
+- [on(DescriptorWrite)](#ondescriptorwrite)，需根据[DescriptorWriteRequest](#class-descriptorwriterequest)中的needRsp决定是否需要回复。
 
 **需要权限：** ohos.permission.ACCESS_BLUETOOTH
 
@@ -4135,7 +4309,7 @@ public func sendResponse(serverResponse: ServerResponse): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|serverResponse|ServerResponse|是|-|client进行服务发现。|
+|serverResponse|ServerResponse|是|-|server端回复client的响应数据。|
 
 **异常：**
 
@@ -4190,7 +4364,7 @@ public class GattService {
 }
 ```
 
-**功能：** 描述service的接口参数定义。
+**功能：** GATT服务结构定义，可包含多个特征值[BLECharacteristic](#class-blecharacteristic)和依赖的其他服务。
 
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
@@ -4202,7 +4376,7 @@ public class GattService {
 public var characteristics: Array<BLECharacteristic>
 ```
 
-**功能：** 当前服务包含的特征列表。
+**功能：** 当前服务包含的特征值列表。
 
 **类型：** Array\<[BLECharacteristic](#class-blecharacteristic)>
 
@@ -4234,7 +4408,7 @@ public var includeServices: Array<GattService>
 public var isPrimary: Bool
 ```
 
-**功能：** 特如果是主服务设置为true，否则设置为false。
+**功能：** 是否是主服务。true表示是主服务，false表示是次要服务。
 
 **类型：** Bool
 
@@ -4250,7 +4424,7 @@ public var isPrimary: Bool
 public var serviceUUID: String
 ```
 
-**功能：** 特定服务（service）的UUID，例如：00001888-0000-1000-8000-00805f9b34fb。
+**功能：** 服务UUID，标识一个GATT服务。例如：00001888-0000-1000-8000-00805f9b34fb。
 
 **类型：** String
 
@@ -4281,9 +4455,9 @@ public init(
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|serviceUUID|String|是|-|特定服务（service）的UUID，例如：00001888-0000-1000-8000-00805f9b34fb。|
-|isPrimary|Bool|是|-|如果是主服务设置为true，否则设置为false。|
-|characteristics|Array\<[BLECharacteristic](#class-blecharacteristic)>|是|-|当前服务包含的特征列表。|
+|serviceUUID|String|是|-|服务UUID，标识一个GATT服务。例如：00001888-0000-1000-8000-00805f9b34fb。|
+|isPrimary|Bool|是|-|是否是主服务。true表示是主服务，false表示是次要服务。|
+|characteristics|Array\<[BLECharacteristic](#class-blecharacteristic)>|是|-|当前服务包含的特征值列表。|
 |includeServices|Array\<[GattService](#class-gattservice)>|否|[]|当前服务依赖的其它服务。|
 
 ## class ManufactureData
@@ -4299,7 +4473,7 @@ public class ManufactureData {
 }
 ```
 
-**功能：** 描述BLE广播数据包的内容。
+**功能：** 描述BLE广播报文中制造商数据内容。
 
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
@@ -4311,7 +4485,7 @@ public class ManufactureData {
 public var manufactureId: UInt16
 ```
 
-**功能：** 表示制造商的ID，由蓝牙SIG分配。
+**功能：** 制造商的标识，由蓝牙技术联盟分配。
 
 **类型：** UInt16
 
@@ -4327,7 +4501,7 @@ public var manufactureId: UInt16
 public var manufactureValue: Array<Byte>
 ```
 
-**功能：** 表示制造商发送的制造商数据。
+**功能：** 制造商特定的数据。
 
 **类型：** Array\<Byte>
 
@@ -4356,8 +4530,8 @@ public init(
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|manufactureId|UInt16|是|-|表示制造商的ID，由蓝牙SIG分配。|
-|manufactureValue|Array\<Byte>|是|-|表示制造商发送的制造商数据。|
+|manufactureId|UInt16|是|-|制造商的标识，由蓝牙技术联盟分配。|
+|manufactureValue|Array\<Byte>|是|-|制造商特定的数据。|
 
 ## class NotifyCharacteristic
 
@@ -4376,7 +4550,7 @@ public class NotifyCharacteristic {
 }
 ```
 
-**功能：** 描述server端特征值变化时发送的特征通知参数定义。
+**功能：** 描述server端特征值发生变化时，server端发送特征值通知的参数结构。
 
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
@@ -4388,7 +4562,7 @@ public class NotifyCharacteristic {
 public var characteristicUUID: String
 ```
 
-**功能：** 特定特征（characteristic）的UUID，例如：00002a11-0000-1000-8000-00805f9b34fb。
+**功能：** 内容发生变化的特征值UUID。例如：00002a11-0000-1000-8000-00805f9b34fb。
 
 **类型：** String
 
@@ -4404,7 +4578,7 @@ public var characteristicUUID: String
 public var characteristicValue: Array<Byte>
 ```
 
-**功能：** 特征对应的二进制值。
+**功能：** 特征值对应的数据内容。
 
 **类型：** Array\<Byte>
 
@@ -4420,7 +4594,7 @@ public var characteristicValue: Array<Byte>
 public var confirm: Bool
 ```
 
-**功能：** 如果是indication，对端需要回复确认，则设置为true；如果是notification，对端不需要回复确认，则设置为false。
+**功能：** true表示发送的是指示，需要client端回复确认。false表示发送的是通知，不需要client端回复确认。
 
 **类型：** Bool
 
@@ -4436,7 +4610,7 @@ public var confirm: Bool
 public var serviceUUID: String
 ```
 
-**功能：** 特定服务（service）的UUID，例如：00001888-0000-1000-8000-00805f9b34fb。
+**功能：** 特征值所属的服务UUID。例如：00001888-0000-1000-8000-00805f9b34fb。
 
 **类型：** String
 
@@ -4467,10 +4641,10 @@ public init(
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|serviceUUID|String|是|-|特定服务（service）的UUID，例如：00001888-0000-1000-8000-00805f9b34fb。|
-|characteristicUUID|String|是|-|特定特征（characteristic）的UUID，例如：00002a11-0000-1000-8000-00805f9b34fb。|
-|characteristicValue|Array\<Byte>|是|-|特征对应的二进制值。|
-|confirm|Bool|是|-|如果是indication，对端需要回复确认，则设置为true；如果是notification，对端不需要回复确认，则设置为false。|
+|serviceUUID|String|是|-|特征值所属的服务UUID。例如：00001888-0000-1000-8000-00805f9b34fb。|
+|characteristicUUID|String|是|-|内容发生变化的特征值UUID。例如：00002a11-0000-1000-8000-00805f9b34fb。|
+|characteristicValue|Array\<Byte>|是|-|特征值对应的数据内容。|
+|confirm|Bool|是|-|true表示发送的是指示，需要client端回复确认。false表示发送的是通知，不需要client端回复确认。|
 
 ## class ScanFilter
 
@@ -4503,7 +4677,7 @@ public class ScanFilter {
 }
 ```
 
-**功能：** 扫描过滤参数。
+**功能：** 扫描BLE广播的过滤条件，只有符合该条件的广播报文才会上报。
 
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
@@ -4515,7 +4689,7 @@ public class ScanFilter {
 public var deviceId: String
 ```
 
-**功能：** 表示过滤的BLE设备地址，例如："XX:XX:XX:XX:XX:XX"。
+**功能：** 过滤该BLE设备地址的广播报文。例如："XX:XX:XX:XX:XX:XX"。
 
 **类型：** String
 
@@ -4531,7 +4705,7 @@ public var deviceId: String
 public var manufactureData: Array<Byte>
 ```
 
-**功能：** 表示过滤包含该制造商相关数据的设备，例如：[0x1F,0x2F,0x3F]。
+**功能：** 过滤包含该制造商标识符的广播报文。例如：0x0006。
 
 **类型：** Array\<Byte>
 
@@ -4547,7 +4721,7 @@ public var manufactureData: Array<Byte>
 public var manufactureDataMask: Array<Byte>
 ```
 
-**功能：** 表示过滤包含该制造商相关数据掩码的设备，例如：[0xFF,0xFF,0xFF]。
+**功能：** 搭配manufactureId过滤器使用，过滤包含该制造商数据的广播报文。例如：[0x1F,0x2F,0x3F]。
 
 **类型：** Array\<Byte>
 
@@ -4579,7 +4753,7 @@ public var manufactureId: UInt16
 public var name: String
 ```
 
-**功能：** 表示过滤的BLE设备名。
+**功能：** 过滤该BLE设备名称的广播报文。
 
 **类型：** String
 
@@ -4595,7 +4769,7 @@ public var name: String
 public var serviceData: Array<Byte>
 ```
 
-**功能：** 表示过滤包含该服务相关数据的设备，例如：[0x90,0x00,0xF1,0xF2]。
+**功能：** 过滤包含该服务数据的广播报文。例如：[0x90,0x00,0xF1,0xF2]。
 
 **类型：** Array\<Byte>
 
@@ -4611,7 +4785,7 @@ public var serviceData: Array<Byte>
 public var serviceDataMask: Array<Byte>
 ```
 
-**功能：** 表示过滤包含该服务相关数据掩码的设备，例如：[0xFF,0xFF,0xFF,0xFF]。
+**功能：** 搭配serviceData过滤器使用，可设置过滤部分服务数据。例如：[0xFF,0xFF,0xFF,0xFF]。
 
 **类型：** Array\<Byte>
 
@@ -4627,7 +4801,7 @@ public var serviceDataMask: Array<Byte>
 public var serviceSolicitationUUID: String
 ```
 
-**功能：** 表示过滤包含该UUID服务请求的设备，例如：00001888-0000-1000-8000-00805F9B34FB。
+**功能：** 过滤包含该服务请求UUID的广播报文。例如：00001888-0000-1000-8000-00805F9B34FB。
 
 **类型：** String
 
@@ -4643,7 +4817,7 @@ public var serviceSolicitationUUID: String
 public var serviceSolicitationUUIDMask: String
 ```
 
-**功能：** 表示过滤包含该UUID服务请求掩码的设备，例如：FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF。
+**功能：** 搭配serviceSolicitationUuid过滤器使用，可设置过滤部分服务请求UUID。例如：FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF。
 
 **类型：** String
 
@@ -4659,7 +4833,7 @@ public var serviceSolicitationUUIDMask: String
 public var serviceUUID: String
 ```
 
-**功能：** 表示过滤包含该UUID服务的设备，例如：00001888-0000-1000-8000-00805f9b34fb。
+**功能：** 过滤包含该服务UUID的广播报文。例如：00001888-0000-1000-8000-00805f9b34fb。
 
 **类型：** String
 
@@ -4675,7 +4849,7 @@ public var serviceUUID: String
 public var serviceUUIDMask: String
 ```
 
-**功能：** 表示过滤包含该UUID服务掩码的设备，例如：FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF。
+**功能：** 搭配serviceUuid过滤器使用，可设置过滤部分服务UUID。例如：FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF。
 
 **类型：** String
 
@@ -4714,7 +4888,7 @@ public init(
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |deviceId|String|否|""| **命名参数。** 过滤该BLE设备地址的广播报文。例如："XX:XX:XX:XX:XX:XX"。预留字段，本版本暂不支持。|
-|name|String|否|""|**命名参数。** 过滤该BLE设备名称的广播报文。预留字段，本版本暂不支持。|
+|name|String|否|""|**命名参数。** 过滤该BLE设备名称的广播报文。。预留字段，本版本暂不支持。|
 |serviceUUID|String|否|""|**命名参数。** 过滤包含该服务UUID的广播报文。例如：00001888-0000-1000-8000-00805f9b34fb。预留字段，本版本暂不支持。|
 |serviceUuidMask|String|否|""|**命名参数。** 搭配serviceUuid过滤器使用，可设置过滤部分服务UUID。例如：FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF。预留字段，本版本暂不支持。|
 |serviceSolicitationUuid|String|否|""|**命名参数。** 过滤包含该服务请求UUID的广播报文。例如：00001888-0000-1000-8000-00805F9B34FB。预留字段，本版本暂不支持。|
@@ -4722,7 +4896,7 @@ public init(
 |serviceData|Array\<Byte>|否|[]|**命名参数。** 过滤包含该服务数据的广播报文。例如：[0x90,0x00,0xF1,0xF2]。预留字段，本版本暂不支持。|
 |serviceDataMask|Array\<Byte>|否|[]|**命名参数。** 搭配serviceData过滤器使用，可设置过滤部分服务数据。例如：[0xFF,0xFF,0xFF,0xFF]。预留字段，本版本暂不支持。|
 |manufactureId|UInt16|否|0|**命名参数。** 过滤包含该制造商标识符的广播报文。例如：0x0006。预留字段，本版本暂不支持。|
-|manufactureData|Array\<Byte>|否|[]|**命名参数。**  搭配manufactureId过滤器使用，过滤包含该制造商数据的广播报文。例如：[0x1F,0x2F,0x3F]。预留字段，本版本暂不支持。|
+|manufactureData|Array\<Byte>|否|[]|**命名参数。** 搭配manufactureId过滤器使用，过滤包含该制造商数据的广播报文。例如：[0x1F,0x2F,0x3F]。预留字段，本版本暂不支持。|
 |manufactureDataMask|Array\<Byte>|否|[]|**命名参数。** 搭配manufactureData过滤器使用，可设置过滤部分制造商数据。例如：[0xFF,0xFF,0xFF]。预留字段，本版本暂不支持。|
 
 ## class ScanOptions
@@ -4743,7 +4917,7 @@ public class ScanOptions {
 }
 ```
 
-**功能：** 扫描的配置参数。
+**功能：** BLE扫描的配置参数。
 
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
@@ -4755,7 +4929,7 @@ public class ScanOptions {
 public var dutyMode: ScanDuty
 ```
 
-**功能：** 表示扫描模式，默认值为ScanDuty.ScanModeLowPower。
+**功能：** 扫描模式，默认值为ScanModeLowPower。
 
 **类型：** [ScanDuty](#enum-scanduty)
 
@@ -4771,7 +4945,11 @@ public var dutyMode: ScanDuty
 public var interval: Int32
 ```
 
-**功能：** 表示扫描结果上报延迟时间，默认值为0。
+**功能：** 扫描结果上报的延迟时间，单位：ms，默认值为0。搭配[ScanReportMode](#enum-scanreportmode)使用。
+
+- 在常规或围栏扫描上报模式下，该值不生效，扫描到符合过滤条件的广播报文后立即上报。
+
+- 在批量扫描上报模式下，该值生效，扫描到符合过滤条件的广播报文后，会存入缓存队列，延迟上报。若不设置该值或设置在[0, 5000)范围内，蓝牙子系统会默认设置延迟时间为5000ms。延迟时间内，若符合过滤条件的广播报文数量超过硬件缓存能力，蓝牙子系统会提前上报扫描结果。
 
 **类型：** Int32
 
@@ -4787,7 +4965,7 @@ public var interval: Int32
 public var matchMode: MatchMode
 ```
 
-**功能：** 表示硬件的过滤匹配模式，默认值为MatchMode.MatchModeAggressive。
+**功能：** 硬件的过滤匹配模式，默认值为MatchModeAggressive。
 
 **类型：** [MatchMode](#enum-matchmode)
 
@@ -4803,7 +4981,7 @@ public var matchMode: MatchMode
 public var phyType: PhyType
 ```
 
-**功能：** 表示扫描中使用的PHY类型。
+**功能：** 扫描中使用的物理通道类型，默认值为PhyLe1M。
 
 **类型：** [PhyType](#enum-phytype)
 
@@ -4835,10 +5013,10 @@ public init(
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|interval|Int32|否|0|**命名参数。**  表示扫描结果上报延迟时间，初始值为0。|
-|dutyMode|[ScanDuty](#enum-scanduty)|否|ScanModeLowPower|**命名参数。** 表示扫描模式，初始值为ScanDuty.ScanModeLowPower。|
-|matchMode|[MatchMode](#enum-matchmode)|否|MatchModeAggressive|**命名参数。** 表示硬件的过滤匹配模式，初始值为MatchMode.MatchModeAggressive。|
-|phyType|[PhyType](#enum-phytype)|否|PhyLe1M|**命名参数。** 表示扫描中使用的PHY类型。|
+|interval|Int32|否|0|**命名参数。** 扫描结果上报的延迟时间，单位：ms，默认值为0。搭配[ScanReportMode](#enum-scanreportmode)使用。|
+|dutyMode|[ScanDuty](#enum-scanduty)|否|ScanModeLowPower|**命名参数。** 扫描模式，默认值为ScanModeLowPower。|
+|matchMode|[MatchMode](#enum-matchmode)|否|MatchModeAggressive|**命名参数。** 硬件的过滤匹配模式，默认值为MatchModeAggressive。|
+|phyType|[PhyType](#enum-phytype)|否|PhyLe1M|**命名参数。** 扫描中使用的物理通道类型，默认值为PhyLe1M。|
 |reportMode|[ScanReportMode](#enum-scanreportmode)|否|Normal|**命名参数。** 扫描结果数据上报模式，默认值为NORMAL。|
 
 ## class ScanResult
@@ -4853,7 +5031,7 @@ public class ScanResult {
 }
 ```
 
-**功能：** 扫描结果上报数据。
+**功能：** 扫描到符合过滤条件的广播报文后，上报的扫描数据。
 
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
@@ -4865,7 +5043,7 @@ public class ScanResult {
 public var connectable: Bool
 ```
 
-**功能：** 表示扫描到的设备是否可连接。true表示可连接，false表示不可连接。
+**功能：** 扫描到的设备是否可连接。true表示可连接，false表示不可连接。
 
 **类型：** Bool
 
@@ -4881,7 +5059,7 @@ public var connectable: Bool
 public var data: Array<Byte>
 ```
 
-**功能：** 表示扫描到的设备发送的广播包。
+**功能：** 扫描到的设备发送的广播报文内容。
 
 **类型：** Array\<Byte>
 
@@ -4897,7 +5075,15 @@ public var data: Array<Byte>
 public var deviceId: String
 ```
 
-**功能：** 表示扫描到的设备地址，例如："XX:XX:XX:XX:XX:XX"。基于信息安全考虑，此处获取的设备地址为随机MAC地址。配对成功后，该地址不会变更；已配对设备取消配对后重新扫描或蓝牙服务下电时，该随机地址会变更。
+**功能：** 扫描到的蓝牙设备地址。例如："XX:XX:XX:XX:XX:XX"。
+
+基于信息安全考虑，此处获取的设备地址为虚拟MAC地址。
+
+- 若和该设备地址配对成功后，该地址不会变更。
+
+- 若该设备重启蓝牙开关，重新获取到的虚拟地址会立即变更。
+
+- 若取消配对，蓝牙子系统会根据该地址的实际使用情况，决策后续变更时机；若其他应用正在使用该地址，则不会立刻变更。
 
 **类型：** String
 
@@ -4913,7 +5099,7 @@ public var deviceId: String
 public var deviceName: String
 ```
 
-**功能：** 表示扫描到的设备名称。
+**功能：** 扫描到的设备名称。
 
 **类型：** String
 
@@ -4929,7 +5115,7 @@ public var deviceName: String
 public var rssi: Int32
 ```
 
-**功能：** 表示扫描到的设备的rssi值。
+**功能：** 扫描到的设备信号强度，单位：dBm。
 
 **类型：** Int32
 
@@ -4958,7 +5144,7 @@ public class ServerResponse {
 }
 ```
 
-**功能：** 描述server端回复client端读/写请求的响应参数类。
+**功能：** 描述server端回复client端读或者写请求的响应参数结构。
 
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
@@ -4970,7 +5156,7 @@ public class ServerResponse {
 public var deviceId: String
 ```
 
-**功能：** 表示远端设备地址，例如："XX:XX:XX:XX:XX:XX"。
+**功能：** client端蓝牙设备地址。例如："XX:XX:XX:XX:XX:XX"。
 
 **类型：** String
 
@@ -4986,7 +5172,7 @@ public var deviceId: String
 public var offset: Int32
 ```
 
-**功能：** 表示请求的读/写起始位置，与订阅的读/写请求事件携带的offset保持一致。
+**功能：** client端读或者写请求的数据偏移值，与订阅client端读或者写请求事件携带的offset保持一致。
 
 **类型：** Int32
 
@@ -5002,7 +5188,7 @@ public var offset: Int32
 public var status: Int32
 ```
 
-**功能：** 表示响应的状态，设置为0即可，表示正常。
+**功能：** 响应的状态，设置为0即可，表示正常。
 
 **类型：** Int32
 
@@ -5018,7 +5204,7 @@ public var status: Int32
 public var transId: Int32
 ```
 
-**功能：** 表示请求的传输ID，与订阅的读/写请求事件携带的ID保持一致。
+**功能：** 收到client端请求的标识符，与订阅client端读或者写请求事件携带的transId保持一致。
 
 **类型：** Int32
 
@@ -5034,7 +5220,7 @@ public var transId: Int32
 public var value: Array<Byte>
 ```
 
-**功能：** 表示回复响应的二进制数据。
+**功能：** 回复的数据。
 
 **类型：** Array\<Byte>
 
@@ -5066,11 +5252,11 @@ public init(
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|deviceId|String|是|-|表示远端设备地址，例如："XX:XX:XX:XX:XX:XX"。|
-|transId|Int32|是|-|表示请求的传输ID，与订阅的读/写请求事件携带的ID保持一致。|
-|status|Int32|是|-|表示响应的状态，设置为0即可，表示正常。|
-|offset|Int32|是|-|表示请求的读/写起始位置，与订阅的读/写请求事件携带的offset保持一致。|
-|value|Array\<Byte>|是|-|表示回复响应的二进制数据。|
+|deviceId|String|是|-|client端蓝牙设备地址。例如："XX:XX:XX:XX:XX:XX"。|
+|transId|Int32|是|-|收到client端请求的标识符，与订阅client端读或者写请求事件携带的transId保持一致。|
+|status|Int32|是|-|响应的状态，设置为0即可，表示正常。|
+|offset|Int32|是|-|client端读或者写请求的数据偏移值，与订阅client端读或者写请求事件携带的offset保持一致。|
+|value|Array\<Byte>|是|-|回复的数据。|
 
 ## class ServiceData
 
@@ -5085,7 +5271,7 @@ public class ServiceData {
 }
 ```
 
-**功能：** 描述广播包中服务数据内容。
+**功能：** 描述BLE广播报文中的服务数据内容。
 
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
@@ -5097,7 +5283,7 @@ public class ServiceData {
 public var serviceUUID: String
 ```
 
-**功能：** 表示服务的UUID。
+**功能：** 服务UUID。
 
 **类型：** String
 
@@ -5113,7 +5299,7 @@ public var serviceUUID: String
 public var serviceValue: Array<Byte>
 ```
 
-**功能：** 表示服务数据。
+**功能：** 服务数据。
 
 **类型：** Array\<Byte>
 
@@ -5142,8 +5328,8 @@ public init(
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|serviceUUID|String|是|-|表示服务的UUID。|
-|serviceValue|Array\<Byte>|是|-|表示服务数据。|
+|serviceUUID|String|是|-|服务UUID。|
+|serviceValue|Array\<Byte>|是|-|服务数据。|
 
 ## enum AdvertisingState
 
@@ -5157,7 +5343,7 @@ public enum AdvertisingState <: Equatable<AdvertisingState> & ToString {
 }
 ```
 
-**功能：** 广播状态。
+**功能：** 枚举，不同操作对应的BLE广播状态。
 
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
@@ -5174,7 +5360,7 @@ public enum AdvertisingState <: Equatable<AdvertisingState> & ToString {
 Disabled
 ```
 
-**功能：** 表示临时停止广播后的状态。
+**功能：** 广播停止成功。
 
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
@@ -5186,7 +5372,7 @@ Disabled
 Enabled
 ```
 
-**功能：** 表示临时启动广播后的状态。
+**功能：** 广播启动成功。
 
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
@@ -5198,7 +5384,7 @@ Enabled
 Started
 ```
 
-**功能：** 表示首次启动广播后的状态。
+**功能：** 调用[startAdvertising](#func-startadvertisingadvertisingparams)方法后，广播首次启动成功，且会分配相关资源。
 
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
@@ -5210,7 +5396,7 @@ Started
 Stopped
 ```
 
-**功能：** 表示完全停止广播后的状态。
+**功能：**调用[stopAdvertising](#func-stopadvertisinguint32)方法后，广播停止成功，且会释放首次启动广播时分配的相关资源。
 
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
@@ -5715,7 +5901,7 @@ public enum GattWriteType <: Equatable<GattWriteType> & ToString {
 }
 ```
 
-**功能：** 表示gatt写入类型。
+**功能：** 枚举，写入特征值的方式（不同的取值，对端蓝牙设备的表现不一样）。
 
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
@@ -5732,7 +5918,7 @@ public enum GattWriteType <: Equatable<GattWriteType> & ToString {
 Write
 ```
 
-**功能：** 表示写入特征值，需要对端设备的回复。
+**功能：** 写入特征值后，对端蓝牙设备需要回复确认。
 
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
@@ -5744,7 +5930,7 @@ Write
 WriteNoResponse
 ```
 
-**功能：** 表示写入特征值，不需要对端设备的回复。
+**功能：** 写入特征值后，对端蓝牙设备不需要回复。
 
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
@@ -5814,7 +6000,7 @@ public enum MatchMode <: Equatable<MatchMode> & ToString {
 }
 ```
 
-**功能：** 硬件过滤匹配模式。
+**功能：** 枚举，硬件过滤匹配模式。
 
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
@@ -5831,7 +6017,7 @@ public enum MatchMode <: Equatable<MatchMode> & ToString {
 MatchModeAggressive
 ```
 
-**功能：** 表示硬件上报扫描结果门限较低，比如扫描到的功率较低或者一段时间扫描到的次数较少也触发上报，默认值。
+**功能：** 当广播报文信号强度较低或者短时间内广播报文的发送次数较少时，可以更快地上报。
 
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
@@ -5843,7 +6029,7 @@ MatchModeAggressive
 MatchModeSticky
 ```
 
-**功能：** 表示硬件上报扫描结果门限较高，更高的功率门限以及扫描到多次才会上报。
+**功能：** 广播报文信号强度较高或者短时间内广播报文的发送次数较多时，才会上报。
 
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
@@ -5913,7 +6099,7 @@ public enum PhyType <: Equatable<PhyType> & ToString {
 }
 ```
 
-**功能：** 广播状态。
+**功能：** 枚举，指定扫描过程中接收BLE广播报文的物理通道。
 
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
@@ -5930,7 +6116,7 @@ public enum PhyType <: Equatable<PhyType> & ToString {
 PhyLe1M
 ```
 
-**功能：** 广播状态。
+**功能：** 使用1M PHY类型扫描。
 
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
@@ -5942,7 +6128,7 @@ PhyLe1M
 PhyLeAllSupported
 ```
 
-**功能：** 表示扫描中使用蓝牙协议支持的PHY模式。
+**功能：** 使用所有支持的PHY类型扫描。
 
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
@@ -6013,7 +6199,7 @@ public enum ScanDuty <: Equatable<ScanDuty> & ToString {
 }
 ```
 
-**功能：** 扫描模式。
+**功能：** 枚举，扫描模式，表示不同的扫描性能和功耗情况。
 
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
@@ -6030,7 +6216,7 @@ public enum ScanDuty <: Equatable<ScanDuty> & ToString {
 ScanModeBalanced
 ```
 
-**功能：** 表示均衡模式。
+**功能：** 均衡模式，平衡扫描性能和功耗。
 
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
@@ -6042,7 +6228,7 @@ ScanModeBalanced
 ScanModeLowLatency
 ```
 
-**功能：** 表示低延迟模式。
+**功能：** 低延迟模式，扫描性能较高，但功耗也较高。
 
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
@@ -6054,7 +6240,7 @@ ScanModeLowLatency
 ScanModeLowPower
 ```
 
-**功能：** 表示低功耗模式，默认值。
+**功能：** 低功耗模式，扫描性能较低，功耗也较低。
 
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
@@ -6126,11 +6312,7 @@ public enum ScanReportMode <: Equatable<ScanReportMode> & ToString {
 }
 ```
 
-**功能：** 上报的扫描数据。
-
-- 该模式可通过降低蓝牙芯片上报扫描结果频率，使系统更长时间地保持在休眠状态，从而降低整机功耗。
-
-- 该模式下，扫描到符合过滤条件的BLE广播报文后不会立刻上报，需要缓存一段时间（ScanOptions中的interval字段）后上报。
+**功能：** 枚举，扫描结果上报模式。
 
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
@@ -6148,6 +6330,10 @@ Batch
 ```
 
 **功能：** 批量扫描上报模式。
+
+- 该模式可通过降低蓝牙芯片上报扫描结果频率，使系统更长时间地保持在休眠状态，从而降低整机功耗。
+
+- 该模式下，扫描到符合过滤条件的BLE广播报文后不会立刻上报，需要缓存一段时间（[ScanOptions](#class-scanoptions)中的interval字段）后上报。
 
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 

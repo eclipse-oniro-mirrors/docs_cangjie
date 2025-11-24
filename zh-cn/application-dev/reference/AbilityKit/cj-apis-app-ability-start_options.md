@@ -1,6 +1,6 @@
 # ohos.app.ability.start_options
 
-StartOptions可以作为启动UIAbility接口（例如[startAbility()](./cj-apis-app-ability-ui_ability.md#func-startabilitywant-startoptions)）的入参，用于指定目标UIAbility启动时的选项，包括但不局限于窗口模式、目标UIAbility启动时所在的屏幕等。
+start_options模块提供StartOptions可以作为启动UIAbility接口（例如[startAbility()](./cj-apis-app-ability-ui_ability.md#func-startabilitywant-startoptions)）的入参，用于指定目标UIAbility启动时的选项，包括但不局限于窗口模式、目标UIAbility启动时所在的屏幕等。
 
 ## 导入模块
 
@@ -50,7 +50,13 @@ public open class StartOptions {
 public var displayId: Int32
 ```
 
-**功能：** 屏幕ID，取值为大于等于-1的整数。<br>- 取值为-1，表示当前屏幕。<br>- 取值为0，表示主屏幕。<br>- 取值为正整数，表示指定ID的屏幕。
+**功能：** 屏幕ID，取值为大于等于-1的整数。
+
+- 取值为-1，表示当前屏幕。
+
+- 取值为0，表示主屏幕。
+
+- 取值为正整数，表示指定ID的屏幕。
 
 **类型：** Int32
 
@@ -96,7 +102,7 @@ public init(
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |windowMode|?[WindowMode](cj-apis-app-ability-ability_constant.md#enum-windowmode)|否|None|启动UIAbility时的窗口模式，详见[WindowMode](./cj-apis-app-ability-ability_constant.md#enum-windowmode)。|
-|displayId|Int32|否|0|屏幕ID，取值为大于等于-1的整数。<br>- 取值为-1，表示当前屏幕。<br>- 取值为0，表示主屏幕。<br>- 取值为正整数，表示指定ID的屏幕。|
+|displayId|Int32|否|0|屏幕ID，取值为大于等于-1的整数。|
 
 **示例：**
 

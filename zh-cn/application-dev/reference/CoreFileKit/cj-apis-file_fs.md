@@ -1,6 +1,6 @@
 # ohos.file.fs（文件管理）
 
-该模块为基础文件操作API，提供基础文件操作能力，包括文件基本管理、文件目录管理、文件信息统计、文件流式读写等常用功能。
+fs模块为基础文件操作API，提供基础文件操作能力，包括文件基本管理、文件目录管理、文件信息统计、文件流式读写等常用功能。
 
 ## 导入模块
 
@@ -297,7 +297,9 @@ public static func access(path: String, mode!: AccessModeType = AccessModeType.E
     flag!: AccessFlagType = AccessFlagType.Local): Bool
 ```
 
-**功能：**  检查文件或目录是否在本地，或校验操作权限。<br>校验读、写或读写权限不通过会抛出13900012（Permission denied）错误码。
+**功能：**  检查文件或目录是否在本地，或校验操作权限。
+
+校验读、写或读写权限不通过会抛出13900012（Permission denied）错误码。
 
 **系统能力：** SystemCapability.FileManagement.File.FileIO
 
@@ -818,7 +820,7 @@ public static func createRandomAccessFile(file: String, mode!: Int64 = OpenMode.
 |:---|:---|:---|:---|:---|
 |file|String|是|-|文件的应用沙箱路径。|
 |mode|Int64|否|OpenMode.READ_ONLY|**命名参数。** 创建文件RandomAccessFile对象的[选项](#class-openmode)，仅当传入文件沙箱路径时生效，必须指定如下选项中的一个，默认以只读方式创建：<br/>-&nbsp;OpenMode.READ_ONLY(0o0)：只读创建。<br/>-&nbsp;OpenMode.WRITE_ONLY(0o1)：只写创建。<br/>-&nbsp;OpenMode.READ_WRITE(0o2)：读写创建。<br/>给定如下功能选项，以按位或的方式追加，默认不给定任何额外选项：<br/>-&nbsp;OpenMode.CREATE(0o100)：若文件不存在，则创建文件。<br/>-&nbsp;OpenMode.TRUNC(0o1000)：如果RandomAccessFile对象存在且文件具有写权限，则将其长度裁剪为零。<br/>-&nbsp;OpenMode.APPEND(0o2000)：以追加方式打开，后续写将追加到RandomAccessFile对象末尾。<br/>-&nbsp;OpenMode.NONBLOCK(0o4000)：如果path指向FIFO、块特殊文件或字符特殊文件，则本次打开及后续&nbsp;IO&nbsp;进行非阻塞操作。<br/>-&nbsp;OpenMode.DIR(0o200000)：如果path不指向目录，则出错。不允许附加写权限。<br/>-&nbsp;OpenMode.NOFOLLOW(0o400000)：如果path指向符号链接，则出错。<br/>-&nbsp;OpenMode.SYNC(0o4010000)：以同步IO的方式创建RandomAccessFile对象。|
-|options|[RandomAccessFileOptions](#class-randomaccessfileoptions)|否|RandomAccessFileOptions()|支持如下选项：<br/>- start，number类型，表示期望读取文件的位置。可选，默认从当前位置开始读。<br/>- end，number类型，表示期望读取结束的位置。可选，默认文件末尾。|
+|options|[RandomAccessFileOptions](#class-randomaccessfileoptions)|否|RandomAccessFileOptions()|支持如下选项：<br/>- start，Option<Int64>类型，表示期望读取文件的位置。可选，默认从当前位置开始读。<br/>- end，Option<Int64>类型，表示期望读取结束的位置。可选，默认文件末尾。|
 
 **返回值：**
 
@@ -903,7 +905,7 @@ public static func createRandomAccessFile(file: File, mode!: Int64 = OpenMode.RE
 |:---|:---|:---|:---|:---|
 |file|[File](#class-file)|是|-|已打开的File对象。|
 |mode|Int64|否|OpenMode.READ_ONLY|创建文件RandomAccessFile对象的选项，仅当传入文件沙箱路径时生效，必须指定如下选项中的一个，默认以只读方式创建：<br/>-&nbsp;OpenMode.READ_ONLY(0o0)：只读创建。<br/>-&nbsp;OpenMode.WRITE_ONLY(0o1)：只写创建。<br/>-&nbsp;OpenMode.READ_WRITE(0o2)：读写创建。<br/>给定如下功能选项，以按位或的方式追加，默认不给定任何额外选项：<br/>-&nbsp;OpenMode.CREATE(0o100)：若文件不存在，则创建文件。<br/>-&nbsp;OpenMode.TRUNC(0o1000)：如果RandomAccessFile对象存在且文件具有写权限，则将其长度裁剪为零。<br/>-&nbsp;OpenMode.APPEND(0o2000)：以追加方式打开，后续写将追加到RandomAccessFile对象末尾。<br/>-&nbsp;OpenMode.NONBLOCK(0o4000)：如果path指向FIFO、块特殊文件或字符特殊文件，则本次打开及后续&nbsp;IO&nbsp;进行非阻塞操作。<br/>-&nbsp;OpenMode.DIR(0o200000)：如果path不指向目录，则出错。不允许附加写权限。<br/>-&nbsp;OpenMode.NOFOLLOW(0o400000)：如果path指向符号链接，则出错。<br/>-&nbsp;OpenMode.SYNC(0o4010000)：以同步IO的方式创建RandomAccessFile对象。|
-|options|[RandomAccessFileOptions](#class-randomaccessfileoptions)|否|RandomAccessFileOptions()|支持如下选项：<br/>- start，number类型，表示期望读取文件的位置。可选，默认从当前位置开始读。<br/>- end，number类型，表示期望读取结束的位置。可选，默认文件末尾。|
+|options|[RandomAccessFileOptions](#class-randomaccessfileoptions)|否|RandomAccessFileOptions()|支持如下选项：<br/>- start，Option<Int64>类型，表示期望读取文件的位置。可选，默认从当前位置开始读。<br/>- end，Option<Int64>类型，表示期望读取结束的位置。可选，默认文件末尾。|
 
 **返回值：**
 
@@ -1684,7 +1686,7 @@ public static func moveDir(src: String, dest: String, mode!: Int32 = 0): Unit
 
 > **说明：**
 >
-> 该接口不支持在分布式文件路径下操作。
+> - 该接口不支持在分布式文件路径下操作。
 
 **系统能力：** SystemCapability.FileManagement.File.FileIO
 
@@ -1756,7 +1758,7 @@ public static func moveFile(src: String, dest: String, mode!: Int32 = 0): Unit
 
 > **说明：**
 >
-> 该接口不支持在分布式文件路径下操作。
+> - 该接口不支持在分布式文件路径下操作。
 
 **系统能力：** SystemCapability.FileManagement.File.FileIO
 
@@ -2112,7 +2114,7 @@ public static func rename(oldPath: String, newPath: String): Unit
 
 > **说明：**
 >
-> 该接口不支持在分布式文件路径下操作。
+> - 该接口不支持在分布式文件路径下操作。
 
 **系统能力：** SystemCapability.FileManagement.File.FileIO
 
@@ -3867,7 +3869,9 @@ public class Stat {}
 public prop atime: Int64
 ```
 
-**功能：** 上次访问该文件的时间，表示距1970年1月1日0时0分0秒的秒数。<br>**注意**：目前用户数据分区默认以“noatime”方式挂载，atime更新被禁用。
+**功能：** 上次访问该文件的时间，表示距1970年1月1日0时0分0秒的秒数。
+
+注意：目前用户数据分区默认以“noatime”方式挂载，atime更新被禁用。
 
 **类型：** Int64
 
@@ -3931,7 +3935,29 @@ public prop ino: Int64
 public prop mode: Int64
 ```
 
-**功能：** 表示文件权限，各特征位的含义如下：<br/>**说明**：以下值为八进制，取得的返回值为十进制，请换算后查看。<br/>-&nbsp;0o400：用户读。对于普通文件，所有者可读取文件；对于目录，所有者可读取目录项。<br/>-&nbsp;0o200：用户写。对于普通文件，所有者可写入文件；对于目录，所有者可创建/删除目录项。<br/>-&nbsp;0o100：用户执行。对于普通文件，所有者可执行文件；对于目录，所有者可在目录中搜索给定路径名。<br/>-&nbsp;0o040：用户组读。对于普通文件，所有用户组可读取文件；对于目录，所有用户组可读取目录项。<br/>-&nbsp;0o020：用户组写。对于普通文件，所有用户组可写入文件；对于目录，所有用户组可创建/删除目录项。<br/>-&nbsp;0o010：用户组执行。对于普通文件，所有用户组可执行文件；对于目录，所有用户组是否可在目录中搜索给定路径名。<br/>-&nbsp;0o004：其他读。对于普通文件，其余用户可读取文件；对于目录，其他用户组可读取目录项。<br/>-&nbsp;0o002：其他写。对于普通文件，其余用户可写入文件；对于目录，其他用户组可创建/删除目录项。<br/>-&nbsp;0o001：其他执行。对于普通文件，其余用户可执行文件；对于目录，其他用户组可在目录中搜索给定路径名。<br>**原子化服务API**：从API version 11开始，该接口支持在原子化服务中使用。
+**功能：** 表示文件权限，各特征位的含义如下：
+
+> **说明：**
+>
+> - 以下值为八进制，取得的返回值为十进制，请换算后查看。
+>
+> - 0o400：用户读。对于普通文件，所有者可读取文件；对于目录，所有者可读取目录项。
+>
+> - 0o200：用户写。对于普通文件，所有者可写入文件；对于目录，所有者可创建/删除目录项。
+>
+> - 0o100：用户执行。对于普通文件，所有者可执行文件；对于目录，所有者可在目录中搜索给定路径名。
+>
+> - 0o040：用户组读。对于普通文件，所有用户组可读取文件；对于目录，所有用户组可读取目录项。
+>
+> - 0o020：用户组写。对于普通文件，所有用户组可写入文件；对于目录，所有用户组可创建/删除目录项。
+>
+> - 0o010：用户组执行。对于普通文件，所有用户组可执行文件；对于目录，所有用户组是否可在目录中搜索给定路径名。
+>
+> - 0o004：其他读。对于普通文件，其余用户可读取文件；对于目录，其他用户组可读取目录项。
+>
+> - 0o002：其他写。对于普通文件，其余用户可写入文件；对于目录，其他用户组可创建/删除目录项。
+>
+> - 0o001：其他执行。对于普通文件，其余用户可执行文件；对于目录，其他用户组可在目录中搜索给定路径名。
 
 **类型：** Int64
 

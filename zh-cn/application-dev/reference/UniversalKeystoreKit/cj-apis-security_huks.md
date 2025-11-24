@@ -1,6 +1,6 @@
 # ohos.security.huks
 
-向应用提供密钥库能力，包括密钥管理及密钥的密码学操作等功能。
+huks模块向应用提供密钥库能力，包括密钥管理及密钥的密码学操作等功能。
 
 HUKS所管理的密钥可以由应用导入或者由应用调用HUKS接口生成。
 
@@ -1765,7 +1765,7 @@ public static const HUKS_KEY_FLAG_IMPORT_KEY: UInt32 = 1
 ## class HuksKeyGenerateType
 
 ```cangjie
-public class HuksKeyGeneraterationType {
+public class HuksKeyGenerateType {
     public static const HUKS_KEY_GENERATE_TYPE_DEFAULT: UInt32 = 0
     public static const HUKS_KEY_GENERATE_TYPE_DERIVE: UInt32 = 1
     public static const HUKS_KEY_GENERATE_TYPE_AGREE: UInt32 = 2
@@ -2613,7 +2613,9 @@ public class HuksSecureSignType {
 public static const HUKS_SECURE_SIGN_WITH_AUTH_INFO: UInt32 = 1
 ```
 
-**功能：** 表示签名类型为携带认证信息。生成或导入密钥时指定该字段，则在使用密钥进行签名时，对待签名的数据添加认证信息后进行签名。<br>**注意**：携带的认证信息包含身份信息，开发者需在其隐私声明中对此身份信息的使用目的、存留策略和销毁方式进行说明。
+**功能：** 表示签名类型为携带认证信息。生成或导入密钥时指定该字段，则在使用密钥进行签名时，对待签名的数据添加认证信息后进行签名。
+
+注意：携带的认证信息包含身份信息，开发者需在其隐私声明中对此身份信息的使用目的、存留策略和销毁方式进行说明。
 
 **类型：** UInt32
 
@@ -2686,7 +2688,7 @@ public class HuksTag {
     public static const HUKS_TAG_SALT: UInt32 = HuksTagType.HUKS_TAG_TYPE_BYTES | 12
     public static const HUKS_TAG_ITERATION: UInt32 = HuksTagType.HUKS_TAG_TYPE_UINT | 14
     public static const HUKS_TAG_KEY_GENERATION_TYPE: UInt32 = HuksTagType.HUKS_TAG_TYPE_UINT | 15
-    public static const HUKS_TAG_ALG_FOR_AGREEMENT: UInt32 = HuksTagType.HUKS_TAG_TYPE_UINT | 19
+    public static const HUKS_TAG_AGREE_ALG: UInt32 = HuksTagType.HUKS_TAG_TYPE_UINT | 19
     public static const HUKS_TAG_AGREE_PUBLIC_KEY_IS_KEY_ALIAS: UInt32 = HuksTagType.HUKS_TAG_TYPE_BOOL | 20
     public static const HUKS_TAG_PRIVATE_KEY_ALIAS_FOR_AGREEMENT: UInt32 = HuksTagType.HUKS_TAG_TYPE_BYTES | 21
     public static const HUKS_TAG_AGREE_PUBLIC_KEY: UInt32 = HuksTagType.HUKS_TAG_TYPE_BYTES | 22

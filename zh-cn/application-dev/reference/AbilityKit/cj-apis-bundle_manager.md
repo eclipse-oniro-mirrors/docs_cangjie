@@ -1,6 +1,6 @@
 # ohos.bundle.bundle_manager（bundleManager管理）
 
-本模块提供应用信息的查询能力，支持应用包信息[BundleInfo](#class-bundleinfo)、应用程序信息[ApplicationInfo](#class-applicationinfo)、UIAbility组件信息[AbilityInfo](#class-abilityinfo)、ExtensionAbility组件信息[ExtensionAbilityInfo](#class-extensionabilityinfo)等信息的查询。
+bundle_manager模块提供应用信息的查询能力，支持应用包信息[BundleInfo](#class-bundleinfo)、应用程序信息[ApplicationInfo](#class-applicationinfo)、UIAbility组件信息[AbilityInfo](#class-abilityinfo)、ExtensionAbility组件信息[ExtensionAbilityInfo](#class-extensionabilityinfo)等信息的查询。
 
 ## 导入模块
 
@@ -726,7 +726,17 @@ public let iconResource: AppResource
 public let installSource: String
 ```
 
-**功能：** 应用程序的安装来源，支持的取值如下：<br/> - pre-installed表示应用为第一次开机时安装的预置应用。<br/> - ota表示应用为系统升级时新增的预置应用。<br/> - recovery表示卸载后再恢复的预置应用。<br/> - bundleName表示应用由此包名对应的应用安装。<br/> - unknown表示应用安装来源未知。
+**功能：** 应用程序的安装来源，支持的取值如下：
+
+- pre-installed表示应用为第一次开机时安装的预置应用。
+
+- ota表示应用为系统升级时新增的预置应用。
+
+- recovery表示卸载后再恢复的预置应用。
+
+- bundleName表示应用由此包名对应的应用安装。
+
+- unknown表示应用安装来源未知。
 
 **类型：** String
 
@@ -1073,7 +1083,17 @@ public static const GET_BUNDLE_INFO_WITH_MENU: Int32 = 0x00000100
 public static const GET_BUNDLE_INFO_WITH_METADATA: Int32 = 0x00000020
 ```
 
-**功能：** 用于获取applicationInfo、moduleInfo、abilityInfo和extensionAbilityInfo中包含的metadata。单独使用不生效，它需要与GET_BUNDLE_INFO_WITH_APPLICATION、GET_BUNDLE_INFO_WITH_HAP_MODULE、GET_BUNDLE_INFO_WITH_ABILITY、GET_BUNDLE_INFO_WITH_EXTENSION_ABILITY配合使用，其中：<br/>-&nbsp;获取applicationInfo中包含的metadata，需要与GET_BUNDLE_INFO_WITH_APPLICATION一起使用。<br/>-&nbsp;获取moduleInfo中包含的metadata，需要与GET_BUNDLE_INFO_WITH_HAP_MODULE一起使用。<br/>-&nbsp;获取abilityInfo中包含的metadata，需要与GET_BUNDLE_INFO_WITH_HAP_MODULE、GET_BUNDLE_INFO_WITH_ABILITY一起使用。<br/>-&nbsp;获取extensionAbilityInfo中包含的metadata，需要与GET_BUNDLE_INFO_WITH_HAP_MODULE、GET_BUNDLE_INFO_WITH_EXTENSION_ABILITY一起使用。
+**功能：** 用于获取applicationInfo、moduleInfo、abilityInfo和extensionAbilityInfo中包含的metadata。
+
+单独使用不生效，它需要与GET_BUNDLE_INFO_WITH_APPLICATION、GET_BUNDLE_INFO_WITH_HAP_MODULE、GET_BUNDLE_INFO_WITH_ABILITY、GET_BUNDLE_INFO_WITH_EXTENSION_ABILITY配合使用，其中：
+
+获取applicationInfo中包含的metadata，需要与GET_BUNDLE_INFO_WITH_APPLICATION一起使用。
+
+获取moduleInfo中包含的metadata，需要与GET_BUNDLE_INFO_WITH_HAP_MODULE一起使用。
+
+获取abilityInfo中包含的metadata，需要与GET_BUNDLE_INFO_WITH_HAP_MODULE、GET_BUNDLE_INFO_WITH_ABILITY一起使用。
+
+获取extensionAbilityInfo中包含的metadata，需要与GET_BUNDLE_INFO_WITH_HAP_MODULE、GET_BUNDLE_INFO_WITH_EXTENSION_ABILITY一起使用。
 
 **类型：** Int32
 
@@ -1219,7 +1239,11 @@ public let hapModulesInfo: Array<HapModuleInfo>
 public let installTime: Int64
 ```
 
-**功能：** 应用包安装时间戳，表示从1970-01-01 08:00:00 UTC+8逝去的毫秒数，单位毫秒。<br/> **说明：** <br/> 设备出厂首次开机时，如果未获取到当前时间，会以Unix时间戳基准（1970-01-01 08:00:00 UTC+8）作为当前系统的起始时间。例如，开机后未获取到时间，等待32s之后安装成功，则应用包安装时间戳为32000。
+**功能：** 应用包安装时间戳，表示从1970-01-01 08:00:00 UTC+8逝去的毫秒数，单位毫秒。
+
+> **说明：**
+>
+> - 设备出厂首次开机时，如果未获取到当前时间，会以Unix时间戳基准（1970-01-01 08:00:00 UTC+8）作为当前系统的起始时间。例如，开机后未获取到时间，等待32s之后安装成功，则应用包安装时间戳为32000。
 
 **类型：** Int64
 
@@ -2554,7 +2578,9 @@ public class ReqPermissionDetail {
 ```
 
 **功能：** 应用运行时需向系统申请的权限集合的详细信息。
+
 > **说明：**
+>
 > - 如果应用内多包申请的权限名称一样，但是权限申请理由不一致，系统只会返回一个权限申请理由，优先级从高到低顺序为entry类型HAP、feature类型HAP、应用内HSP。
 
 **系统能力：** SystemCapability.BundleManager.BundleFramework.Core

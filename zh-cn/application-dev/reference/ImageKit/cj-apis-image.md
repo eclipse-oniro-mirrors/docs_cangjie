@@ -1,6 +1,6 @@
 # ohos.multimedia.image（图片处理）
 
-本模块提供图片处理效果，包括通过属性创建PixelMap、读取图像像素数据、读取区域内的图片数据等。
+image模块提供图片处理效果，包括通过属性创建PixelMap、读取图像像素数据、读取区域内的图片数据等。
 
 ## 导入模块
 
@@ -689,7 +689,9 @@ public var desiredPixelFormat: PixelMapFormat
 public var desiredRegion: Region
 ```
 
-**功能：** 解码图像中由Region指定的矩形区域，当原始图像很大而只需要解码图像的一部分时，可以设置该参数，有助于提升性能，默认为原始大小。<br>注意：若解码接口同时传入了desiredSize参数与desiredRegion参数，需进一步传入cropAndScaleStrategy参数指定缩放与裁剪的先后顺序，推荐设置CROP_FIRST。
+**功能：** 解码图像中由Region指定的矩形区域，当原始图像很大而只需要解码图像的一部分时，可以设置该参数，有助于提升性能，默认为原始大小。
+
+注意：若解码接口同时传入了desiredSize参数与desiredRegion参数，需进一步传入cropAndScaleStrategy参数指定缩放与裁剪的先后顺序，推荐设置CROP_FIRST。
 
 **类型：** [Region](#class-region)
 
@@ -705,7 +707,9 @@ public var desiredRegion: Region
 public var desiredSize: Size
 ```
 
-**功能：** 期望输出大小，必须为正整数，若与原尺寸比例不一致，则会进行拉伸/缩放到指定尺寸，默认为原始尺寸。<br>注意：若解码接口同时传入了desiredSize参数与desiredRegion参数，需进一步传入cropAndScaleStrategy参数指定缩放与裁剪的先后顺序，推荐设置CROP_FIRST。
+**功能：** 期望输出大小，必须为正整数，若与原尺寸比例不一致，则会进行拉伸/缩放到指定尺寸，默认为原始尺寸。
+
+注意：若解码接口同时传入了desiredSize参数与desiredRegion参数，需进一步传入cropAndScaleStrategy参数指定缩放与裁剪的先后顺序，推荐设置CROP_FIRST。
 
 **类型：** [Size](#class-size)
 
@@ -2324,7 +2328,7 @@ public func modifyImageProperty(key: PropertyKey, value: String): Unit
 
 > **说明：**
 >
-> 调用modifyImageProperty修改属性会改变属性字节长度，使用buffer创建的ImageSource调用modifyImageProperty会导致buffer内容覆盖，目前buffer创建的ImageSource不支持调用此接口，请改用fd或path创建的ImageSource。
+> - 调用modifyImageProperty修改属性会改变属性字节长度，使用buffer创建的ImageSource调用modifyImageProperty会导致buffer内容覆盖，目前buffer创建的ImageSource不支持调用此接口，请改用fd或path创建的ImageSource。
 
 **系统能力：** SystemCapability.Multimedia.Image.ImageSource
 
@@ -2676,7 +2680,11 @@ public var desiredDynamicRange: PackingDynamicRange
 public var format: String
 ```
 
-**功能：** 目标格式。</br>当前只支持"image/jpeg"、"image/webp"、"image/png"和"image/heic(或者image/heif)"<sup>12+</sup>、"image/sdr_astc_4x4"、"image/sdr_sut_superfast_4x4"（不同硬件设备支持情况不同）、"image/hdr_astc_4x4"。<br>**说明：** 因为jpeg不支持透明通道，若使用带透明通道的数据编码jpeg格式，透明色将变为黑色。
+**功能：** 目标格式。</br>当前只支持"image/jpeg"、"image/webp"、"image/png"和"image/heic(或者image/heif)"、"image/sdr_astc_4x4"、"image/sdr_sut_superfast_4x4"（不同硬件设备支持情况不同）、"image/hdr_astc_4x4"。
+
+> **说明：**
+>
+> - 因为jpeg不支持透明通道，若使用带透明通道的数据编码jpeg格式，透明色将变为黑色。
 
 **类型：** String
 
@@ -2708,7 +2716,13 @@ public var needsPackProperties: Bool
 public var quality: UInt8
 ```
 
-**功能：** 1. 编码中设定输出图片质量的参数，该参数仅对JPEG图片和HEIF图片生效。取值范围：[0, 100]。0质量最低，100质量最高，质量越高生成图片所占空间越大。WebP、PNG等图片均为无损编码。<br> 2.sdr_astc_4x4编码中，可以设定输出图片质量的参数，可选参数：92、85。<br>3. sut编码中，设定输出图片质量可选参数：92。<br>4. hdr_astc_4x4编码中，可以设定输出图片质量的参数，可选参数：85。
+**功能：** 1. 编码中设定输出图片质量的参数，该参数仅对JPEG图片和HEIF图片生效。取值范围：[0, 100]。0质量最低，100质量最高，质量越高生成图片所占空间越大。WebP、PNG等图片均为无损编码。
+
+2. sdr_astc_4x4编码中，可以设定输出图片质量的参数，可选参数：92、85。
+
+3. sut编码中，设定输出图片质量可选参数：92。
+
+4. hdr_astc_4x4编码中，可以设定输出图片质量的参数，可选参数：85。
 
 **类型：** UInt8
 
@@ -2735,7 +2749,7 @@ public init(format: String, quality: UInt8, bufferSize!: UInt64 = 0,
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|format|String|是|-|目标格式。</br>当前只支持"image/jpeg"、"image/webp"、"image/png"和"image/heic(或者image/heif)"<sup>12+</sup>、"image/sdr_astc_4x4"、"image/sdr_sut_superfast_4x4"（不同硬件设备支持情况不同）、"image/hdr_astc_4x4"。<br>**说明：** 因为jpeg不支持透明通道，若使用带透明通道的数据编码jpeg格式，透明色将变为黑色。|
+|format|String|是|-|目标格式。|
 |quality|UInt8|是|-|1. 编码中设定输出图片质量的参数，该参数仅对JPEG图片和HEIF图片生效。取值范围：[0, 100]。0质量最低，100质量最高，质量越高生成图片所占空间越大。WebP、PNG等图片均为无损编码。<br> 2.sdr_astc_4x4编码中，可以设定输出图片质量的参数，可选参数：92、85。<br>3. sut编码中，设定输出图片质量可选参数：92。<br>4. hdr_astc_4x4编码中，可以设定输出图片质量的参数，可选参数：85。|
 |bufferSize|UInt64|否|0|**命名参数。** 接收编码数据的缓冲区大小，单位为Byte。如果不设置大小，默认为25M。如果编码图片超过25M，需要指定大小。bufferSize需大于编码后图片大小。使用[packToFile](#func-packtofileimagesource-int32-packingoption)不受此参数限制。|
 |desiredDynamicRange|[PackingDynamicRange](#enum-packingdynamicrange)|否|Sdr|**命名参数。** 目标动态范围。默认值为Sdr。|
@@ -4066,7 +4080,11 @@ public class SourceOptions {
 public var sourceDensity: Int32
 ```
 
-**功能：** 图片资源像素密度，单位为ppi。<br>在解码参数[DecodingOptions](#class-decodingoptions)未设置desiredSize的前提下，当前参数SourceOptions.sourceDensity与DecodingOptions.fitDensity非零时将对解码输出的pixelmap进行缩放。<br>缩放后宽计算公式如下(高同理)：(width * fitDensity + (sourceDensity >> 1)) / sourceDensity。
+**功能：** 图片资源像素密度，单位为ppi。
+
+在解码参数[DecodingOptions](#class-decodingoptions)未设置desiredSize的前提下，当前参数SourceOptions.sourceDensity与DecodingOptions.fitDensity非零时将对解码输出的pixelmap进行缩放。
+
+缩放后宽计算公式如下(高同理)：(width * fitDensity + (sourceDensity >> 1)) / sourceDensity。
 
 **类型：** Int32
 
@@ -4124,7 +4142,7 @@ public init(sourceDensity: Int32, sourcePixelFormat!: PixelMapFormat = PixelMapF
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|sourceDensity|Int32|是|-|图片资源像素密度，单位为ppi。<br>在解码参数[DecodingOptions](#class-decodingoptions)未设置desiredSize的前提下，当前参数SourceOptions.sourceDensity与DecodingOptions.fitDensity非零时将对解码输出的pixelmap进行缩放。<br>缩放后宽计算公式如下(高同理)：(width * fitDensity + (sourceDensity >> 1)) / sourceDensity。|
+|sourceDensity|Int32|是|-|图片资源像素密度，单位为ppi。|
 |sourcePixelFormat|[PixelMapFormat](#enum-pixelmapformat)|否|PixelMapFormat.Unknown|**命名参数** 图片像素格式，默认值为UNKNOWN。|
 |sourceSize|[Size](#class-size)|否|Size(0, 0)|**命名参数** 图像像素大小，默认值为空。|
 
@@ -4978,6 +4996,10 @@ public enum PropertyKey <: ToString & Equatable<PropertyKey> {
 
 **功能：** 枚举，Exif（Exchangeable image file format）图像信息。
 
+- 格式示例中的key为：PropertyKey.XXX（XXX为枚举的名称，如：.PropertyKey.ImageWidth）。
+
+- 格式示例仅用于说明修改传值和读取结果的格式。具体接口使用方法请参考：[modifyImageProperty](#func-modifyimagepropertypropertykey-string)（修改单个Exif字段）、[getImageProperty](#func-getimagepropertypropertykey-imagepropertyoptions)（读取单个Exif字段）。
+
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
 **起始版本：** 22
@@ -4993,7 +5015,13 @@ public enum PropertyKey <: ToString & Equatable<PropertyKey> {
 ApertureValue
 ```
 
-**功能：** 光圈值。格式如4/1。<br/>**读写能力：** 可读写。<br> | **修改传参格式说明：** 非负有理数字符串。<br />**修改示例：**`imageSource.modifyImageProperty(key,'5.6');`<br />**读取结果示例：** "5.60 EV (f/7.0)"
+**功能：** 光圈值。格式如4/1。
+
+修改传参格式说明：非负有理数字符串。
+
+修改示例：`imageSource.modifyImageProperty(key,'5.6');`
+
+读取结果示例："5.60 EV (f/7.0)"
 
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
@@ -5005,7 +5033,13 @@ ApertureValue
 BitsPerSample
 ```
 
-**功能：** 每个像素比特数。
+**功能：** 像素各分量的位数，如RGB，3分量，格式是8,8,8。
+
+修改传参格式说明：三个非负整数字符串，空格或者英文逗号隔开。
+
+修改示例：`imageSource.modifyImageProperty(key,'8 8 8');`或`imageSource.modifyImageProperty(key,'8,8,8');`
+
+读取结果示例："8,8,8
 
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
@@ -5041,7 +5075,13 @@ DateTime
 DateTimeOriginal
 ```
 
-**功能：** 拍摄时间，例如2022:09:06 15:48:00。
+**功能：** 日期时间。
+
+修改传参格式说明：有两种格式，YYYY:MM:DD或者YYYY:MM:DD HH:MM:SS
+
+修改示例：`imageSource.modifyImageProperty(key,'2024:07:07 13:45:59');`<br />或`imageSource.modifyImageProperty(key,'2024:07:07');`
+
+读取结果示例："2024:07:07 13:45:59"或"2024:07:07"
 
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
@@ -5055,6 +5095,12 @@ ExposureBiasValue
 
 **功能：** 曝光偏差值。
 
+修改传参格式说明：非负有理数字符串。
+
+修改示例：`imageSource.modifyImageProperty(key,'1');`
+
+读取结果示例：1.00 EV
+
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
 **起始版本：** 22
@@ -5067,6 +5113,12 @@ ExposureTime
 
 **功能：** 曝光时间，例如1/33 sec。
 
+修改传参格式说明：非负有理数字符串。
+
+修改示例：`imageSource.modifyImageProperty(key,'1');`或`imageSource.modifyImageProperty(key,'1/2');`
+
+读取结果示例："1/33 sec."
+
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
 **起始版本：** 22
@@ -5078,6 +5130,12 @@ FNumber
 ```
 
 **功能：** 光圈值，例如f/1.8。
+
+修改传参格式说明：非负有理数字符串。
+
+修改示例：`imageSource.modifyImageProperty(key,'1');`或`imageSource.modifyImageProperty(key,'1/2');`
+
+读取结果示例："f/1.0"
 
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
@@ -5101,7 +5159,13 @@ FaceCount
 Flash
 ```
 
-**功能：** 闪光灯,记录闪光灯状态。
+**功能：** 闪光灯，记录闪光灯状态。
+
+修改传参格式说明：修改时传入相应的数字或者字符串。
+
+修改示例：`imageSource.modifyImageProperty(key,'0x00');`或`imageSource.modifyImageProperty(key,'Flash did not fire');`
+
+读取结果示例："Flash did not fire"
 
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
@@ -5115,6 +5179,12 @@ FocalLength
 
 **功能：** 焦距。
 
+修改传参格式说明：非负有理数字符串。
+
+修改示例：`imageSource.modifyImageProperty(key,'50');`或`imageSource.modifyImageProperty(key,'50/1');`
+
+读取结果示例："50.0 mm"
+
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
 **起始版本：** 22
@@ -5126,6 +5196,12 @@ FocalLengthIn35mmFilm
 ```
 
 **功能：** 焦距35毫米胶片。
+
+修改传参格式说明：非负整数字符串。
+
+修改示例：`imageSource.modifyImageProperty(key,'50');`
+
+读取结果示例：*"50"
 
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
@@ -5151,6 +5227,12 @@ GpsDateStamp
 
 **功能：** GPS日期戳。
 
+修改传参格式说明：格式为“YY:MM:DD”。
+
+修改示例：`imageSource.modifyImageProperty(key,'2020:07:07');`
+
+读取结果示例："2020:07:07"
+
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
 **起始版本：** 22
@@ -5161,7 +5243,13 @@ GpsDateStamp
 GpsLatitude
 ```
 
-**功能：** 图片纬度。修改时应按"度,分,秒"格式传入，如"39,54,7.542"。
+**功能：** 图片纬度。修改时应按"度，分，秒"格式传入，如"39，54，7.542"
+
+修改传参格式说明：三个非负有理数字符串，逗号隔开。
+
+修改示例：`imageSource.modifyImageProperty(key,'39,54,7.542');`
+
+读取结果示例："39,54,7.542"
 
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
@@ -5173,7 +5261,17 @@ GpsLatitude
 GpsLatitudeRef
 ```
 
-**功能：** 纬度引用，例如N或S。
+**功能：** 用于标识图像拍摄地点的纬度方向（北半球或南半球）。
+
+78："North"。
+
+83："South"。
+
+修改传参格式说明： 修改时传入相应的数字或者字符串。
+
+修改示例：`imageSource.modifyImageProperty(key,'78');`或`imageSource.modifyImageProperty(key,'North');`
+
+读取结果示例："N"或"78"
 
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
@@ -5185,7 +5283,13 @@ GpsLatitudeRef
 GpsLongitude
 ```
 
-**功能：** 图片经度。修改时应按"度,分,秒"格式传入，如"116,19,42.16"。
+**功能：** 图片经度。修改时应按"度，分，秒"格式传入，如"116，19，42.16"
+
+修改传参格式说明：三个非负有理数字符串，逗号隔开。
+
+修改示例：`imageSource.modifyImageProperty(key,'116,19,42.16');`
+
+读取结果示例："116,19,42.16"
 
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
@@ -5197,7 +5301,17 @@ GpsLongitude
 GpsLongitudeRef
 ```
 
-**功能：** 经度引用，例如W或E。
+**功能：** 经度引用，例如W或E， 用于标识图像拍摄地点的经度方向（东半球或西半球）。
+
+69："East"。
+
+87："West"。
+
+修改传参格式说明：修改时传入相应的数字或者字符串。
+
+修改示例：`imageSource.modifyImageProperty(key,'69');`或`imageSource.modifyImageProperty(key,'East');`
+
+读取结果示例："69"或"E"
 
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
@@ -5211,6 +5325,12 @@ GpsTimeStamp
 
 **功能：** GPS时间戳。
 
+修改传参格式说明：格式为"HH:mm:ss.ddd"。
+
+修改示例：`imageSource.modifyImageProperty(key,'12:30:30.123');`
+
+读取结果示例："12:30:30.123"
+
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
 **起始版本：** 22
@@ -5222,6 +5342,12 @@ IsoSpeed
 ```
 
 **功能：** ISO速度等级。
+
+修改传参格式说明：非负整数字符串。
+
+修改示例：`imageSource.modifyImageProperty(key,'3200');`
+
+读取结果示例："3200"
 
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
@@ -5235,6 +5361,12 @@ IsoSpeedRatings
 
 **功能：** ISO感光度，例如400。
 
+修改传参格式说明：非负整数字符串。
+
+修改示例：`imageSource.modifyImageProperty(key,'3200');`
+
+读取结果示例："3200"
+
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
 **起始版本：** 22
@@ -5246,6 +5378,12 @@ ImageDescription
 ```
 
 **功能：** 图像信息描述。
+
+修改传参格式说明：字符串。
+
+修改示例：`imageSource.modifyImageProperty(key,'Image description info');`
+
+读取结果示例："Image description info"
 
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
@@ -5259,6 +5397,12 @@ ImageLength
 
 **功能：** 图片长度。
 
+修改传参格式说明：非负整数字符串。
+
+修改示例：`imageSource.modifyImageProperty(key,'3072');`
+
+读取结果示例："3072"
+
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
 **起始版本：** 22
@@ -5271,6 +5415,12 @@ ImageWidth
 
 **功能：** 图片宽度。
 
+修改传参格式说明：非负整数字符串。
+
+修改示例：`imageSource.modifyImageProperty(key,'4096');`
+
+读取结果示例："4096"
+
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
 **起始版本：** 22
@@ -5281,7 +5431,13 @@ ImageWidth
 LightSource
 ```
 
-**功能：** 光源。
+**功能：** 光源。例如Fluorescent。
+
+修改传参格式说明：修改时传入相应的数字或者字符串。
+
+修改示例：`imageSource.modifyImageProperty(key,'1');`或`imageSource.modifyImageProperty(key,'Daylight');`
+
+读取结果示例："Daylight"
 
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
@@ -5295,6 +5451,12 @@ Make
 
 **功能：** 生产商。
 
+修改传参格式说明：字符串。
+
+修改示例：`imageSource.modifyImageProperty(key,'Make');`
+
+读取结果示例："Make"
+
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
 **起始版本：** 22
@@ -5306,6 +5468,12 @@ MeteringMode
 ```
 
 **功能：** 测光模式。
+
+修改传参格式说明：修改时传入相应的数字或者字符串。
+
+修改示例：`imageSource.modifyImageProperty(key,'1');`或`imageSource.modifyImageProperty(key,'Average');`
+
+读取结果示例："Average"
 
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
@@ -5319,6 +5487,12 @@ Model
 
 **功能：** 设备型号。
 
+修改传参格式说明：字符串。
+
+修改示例：`imageSource.modifyImageProperty(key,'Model');`
+
+读取结果示例："Model"
+
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
 **起始版本：** 22
@@ -5329,7 +5503,31 @@ Model
 Orientation
 ```
 
-**功能：** 图片方向。<br/>- 1：Top-left，图像未旋转。<br/>- 2：Top-right，镜像水平翻转。<br/>- 3：Bottom-right，图像旋转180°。<br/>- 4：Bottom-left，镜像垂直翻转。<br/>- 5：Left-top，镜像水平翻转再顺时针旋转270°。<br/>- 6：Right-top，顺时针旋转90°。<br/>- 7：Right-bottom，镜像水平翻转再顺时针旋转90°。<br/>- 8：Left-bottom，顺时针旋转270°。<br/>- 未定义值返回Unknown Value。
+**功能：** 图片方向。
+
+1："Top-left"，图像未旋转。
+
+2："Top-right"，镜像水平翻转。
+
+3："Bottom-right"，图像旋转180°。
+
+4："Bottom-left"，镜像垂直翻转。
+
+5："Left-top"，镜像水平翻转再顺时针旋转270°。
+
+6："Right-top"，顺时针旋转90°。
+
+7："Right-bottom"，镜像水平翻转再顺时针旋转90°。
+
+8："Left-bottom"，顺时针旋转270°。
+
+如果读到未定义值会返回"Unknown Value 0"。获取该属性时会以字符串的形式返回。修改该属性时既可以以数字形式指定，也可以以字符串形式指定。
+
+修改传参格式说明：修改时传入相应的数字或者字符串。
+
+修改示例：`imageSource.modifyImageProperty(key,'1');`或`imageSource.modifyImageProperty(key,'Top-left');`
+
+读取结果示例："Top-left"
 
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
@@ -5342,6 +5540,12 @@ PhotoMode
 ```
 
 **功能：** 拍照模式。
+
+修改传参格式说明：非负整数字符串。
+
+修改示例：`imageSource.modifyImageProperty(key,'1');`
+
+读取结果示例："1"
 
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
@@ -5377,7 +5581,13 @@ PitchAngle
 PixelXDimension
 ```
 
-**功能：** 像素X尺寸。
+**功能：** 像素X尺寸。<
+
+修改传参格式说明：非负整数字符串。
+
+修改示例：`imageSource.modifyImageProperty(key,'4096');`
+
+读取结果示例："4096"
 
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
@@ -5391,6 +5601,12 @@ PixelYDimension
 
 **功能：** 像素Y尺寸。
 
+修改传参格式说明：非负整数字符串。
+
+修改示例：`imageSource.modifyImageProperty(key,'3072');`
+
+读取结果示例："3072"
+
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
 **起始版本：** 22
@@ -5402,6 +5618,12 @@ RecommendedExposureIndex
 ```
 
 **功能：** 推荐曝光指数。
+
+修改传参格式说明：非负整数字符串。
+
+修改示例：`imageSource.modifyImageProperty(key,'3200');`
+
+读取结果示例："3200"
 
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
@@ -5547,6 +5769,14 @@ SceneType
 
 **功能：** 拍摄场景模式，例如人像、风光、运动、夜景等。
 
+1："Directly photographed"，图像传感器直接拍摄。
+
+修改传参格式说明：修改时传入相应的数字或者字符串。
+
+修改示例：`imageSource.modifyImageProperty(key,'1');`或`imageSource.modifyImageProperty(key,'Directly photographed');`
+
+读取结果示例："Directly photographed"
+
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
 **起始版本：** 22
@@ -5558,6 +5788,12 @@ SensitivityType
 ```
 
 **功能：** 灵敏度类型。
+
+修改传参格式说明：修改时传入相应的数字或者字符串。
+
+修改示例：`imageSource.modifyImageProperty(key,'1');`或`imageSource.modifyImageProperty(key,'Standard output sensitivity (SOS)');`
+
+读取结果示例："Standard output sensitivity (SOS)"
 
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
@@ -5571,6 +5807,12 @@ StandardOutputSensitivity
 
 **功能：** 标准输出灵敏度。
 
+修改传参格式说明：非负整数字符串。
+
+修改示例：`imageSource.modifyImageProperty(key,'400');`
+
+读取结果示例："400"
+
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
 **起始版本：** 22
@@ -5583,6 +5825,12 @@ UserComment
 
 **功能：** 用户注释。
 
+修改传参格式说明：字符串。
+
+修改示例：`imageSource.modifyImageProperty(key,'User Comment');`
+
+读取结果示例："User Comment"
+
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
 **起始版本：** 22
@@ -5594,6 +5842,16 @@ WhiteBalance
 ```
 
 **功能：** 白平衡。
+
+0："Auto white balance"，自动白平衡。
+
+1："Manual white balance"，手动白平衡。
+
+修改传参格式说明：修改时传入相应的数字或者字符串。
+
+修改示例：`imageSource.modifyImageProperty(key,'0');`或`imageSource.modifyImageProperty(key,'Auto white balance');`
+
+读取结果示例："Auto white balance"
 
 **系统能力：** SystemCapability.Multimedia.Image.Core
 

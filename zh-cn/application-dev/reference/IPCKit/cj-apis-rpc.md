@@ -1,6 +1,6 @@
 # ohos.rpc
 
-本模块提供进程间通信能力，包括设备内的进程间通信（IPC）和设备间的进程间通信（RPC），前者基于Binder驱动，后者基于软总线驱动。
+rpc模块提供进程间通信能力，包括设备内的进程间通信（IPC）和设备间的进程间通信（RPC），前者基于Binder驱动，后者基于软总线驱动。
 
 ## 导入模块
 
@@ -333,7 +333,7 @@ public func closeAshmem(): Unit
 
 > **说明：**
 >
-> 关闭Ashmem对象前需要先解除地址映射。
+> - 关闭Ashmem对象前需要先解除地址映射。
 
 **系统能力：** SystemCapability.Communication.IPC.Core
 
@@ -656,7 +656,7 @@ public func writeDataToAshmem(buf: Array<Byte>, size: Int64, offset: Int64): Uni
 
 > **说明：**
 >
-> 对Ashmem对象进行写操作时，需要先调用[mapReadWriteAshmem](#func-mapreadwriteashmem)进行映射。
+> - 对Ashmem对象进行写操作时，需要先调用[mapReadWriteAshmem](#func-mapreadwriteashmem)进行映射。
 
 **系统能力：** SystemCapability.Communication.IPC.Core
 
@@ -3669,8 +3669,8 @@ public func writeRawDataBuffer(rawData: Array<Byte>, size: Int64): Unit
 
 > **说明：**
 >
-> 该接口是一次性接口，不允许在一次parcel通信中多次调用该接口。
-> 该接口在传输数据时，当数据量较大时（超过32KB），会使用共享内存传输数据，此时需注意selinux配置。
+> - 该接口是一次性接口，不允许在一次parcel通信中多次调用该接口。
+> - 该接口在传输数据时，当数据量较大时（超过32KB），会使用共享内存传输数据，此时需注意selinux配置。
 
 **系统能力：** SystemCapability.Communication.IPC.Core
 

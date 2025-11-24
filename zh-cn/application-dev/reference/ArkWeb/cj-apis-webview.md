@@ -1,6 +1,6 @@
 # ohos.web.webview
 
-提供web控制能力，组件提供网页显示的能力。
+webview模块提供web控制能力，组件提供网页显示的能力。
 
 ## 导入模块
 
@@ -372,19 +372,19 @@ public static func configCookie(url: String, value: String, incognito!: Bool = f
 
 > **说明：**
 >
-> configCookie中的url，可以指定域名的方式来使得页面内请求也附带上cookie。
+> - configCookie中的url，可以指定域名的方式来使得页面内请求也附带上cookie。
 >
-> 同步cookie的时机建议在Web组件加载之前完成。
+> - 同步cookie的时机建议在Web组件加载之前完成。
 >
-> 若通过configCookie进行两次或多次设置cookie，则每次设置的cookie之间会通过"; "进行分隔。
+> - 若通过configCookie进行两次或多次设置cookie，则每次设置的cookie之间会通过"; "进行分隔。
 >
-> cookie每30s周期性保存到磁盘中。
+> - cookie每30s周期性保存到磁盘中。
 > 
-> 若存在相同host、path和名称的cookie，将被新cookie替换。若设置的cookie已过期，则不会存储该cookie。如需设置多个cookie，应多次调用此方法。
+> - 若存在相同host、path和名称的cookie，将被新cookie替换。若设置的cookie已过期，则不会存储该cookie。如需设置多个cookie，应多次调用此方法。
 >
-> value参数必须遵循Set-Cookie HTTP响应头的格式。形式为"key=value"的键值对，后面可跟随以分号分隔的cookie属性列表（例如"key=value;Max-Age=100"）。
+> - value参数必须遵循Set-Cookie HTTP响应头的格式。形式为"key=value"的键值对，后面可跟随以分号分隔的cookie属性列表（例如"key=value;Max-Age=100"）。
 >
-> 如果指定的值包含"Secure"属性，则url必须使用"https://"协议。
+> - 如果指定的值包含"Secure"属性，则url必须使用"https://"协议。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -481,11 +481,11 @@ public static func fetchCookie(url: String, incognito!: Bool = false): String
 
 > **说明：**
 >
-> 系统会自动清理过期的cookie，对于同名key的数据，新数据将会覆盖前一个数据。
+> - 系统会自动清理过期的cookie，对于同名key的数据，新数据将会覆盖前一个数据。
 > 
-> 为了获取可正常使用的cookie值，fetchCookie需传入完整链接。
+> - 为了获取可正常使用的cookie值，fetchCookie需传入完整链接。
 > 
-> fetchCookie用于获取所有的cookie值，每条cookie值之间会通过"; "进行分隔，但无法单独获取某一条特定的cookie值。
+> - fetchCookie用于获取所有的cookie值，每条cookie值之间会通过"; "进行分隔，但无法单独获取某一条特定的cookie值。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -757,7 +757,7 @@ public init(webTag!: ?String = None)
 
 > **说明：**
 >
-> Web组件销毁后会解绑WebViewController，之后调用WebviewController的非静态方法会抛出17100001异常，应注意调用时机和捕获异常，防止进程异常退出。
+> - Web组件销毁后会解绑WebViewController，之后调用WebviewController的非静态方法会抛出17100001异常，应注意调用时机和捕获异常，防止进程异常退出。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -839,9 +839,9 @@ public func accessBackward(): Bool
 
 > **说明：**
 >
-> 在Web组件首次加载过程中调用[setCustomUserAgent](#func-setcustomuseragentstring)，可能会导致在当前存在多个历史节点的情况下，获取的accessBackward实际为false，即没有后退节点。建议先调用setCustomUserAgent方法设置UserAgent，再通过loadUrl加载具体页面。
+> - 在Web组件首次加载过程中调用[setCustomUserAgent](#func-setcustomuseragentstring)，可能会导致在当前存在多个历史节点的情况下，获取的accessBackward实际为false，即没有后退节点。建议先调用setCustomUserAgent方法设置UserAgent，再通过loadUrl加载具体页面。
 >
-> 该现象是由于在Web组件首次加载时，调用[setCustomUserAgent](#func-setcustomuseragentstring)会导致组件重新加载并保持初始历史节点的状态。随后新增的节点将替换初始历史节点，不会生成新的历史节点，导致accessBackward为false。
+> - 该现象是由于在Web组件首次加载时，调用[setCustomUserAgent](#func-setcustomuseragentstring)会导致组件重新加载并保持初始历史节点的状态。随后新增的节点将替换初始历史节点，不会生成新的历史节点，导致accessBackward为false。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -2464,7 +2464,7 @@ public func setCustomUserAgent(userAgent: String): Unit
 
 > **说明：**
 >
->当Web组件src设置了url，且未在onControllerAttached回调事件中设置User-Agent。再调用setCustomUserAgent方法时，可能会出现加载的页面与实际设置User-Agent不符的异常现象。
+> - 当Web组件src设置了url，且未在onControllerAttached回调事件中设置User-Agent。再调用setCustomUserAgent方法时，可能会出现加载的页面与实际设置User-Agent不符的异常现象。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -3108,7 +3108,7 @@ public func removeCache(clearRom: Bool): Unit
 
 > **说明：**
 >
-> 可以通过在data/storage/el2/base/cache/web/Cache目录下查看Webview的缓存。
+> - 可以通过在data/storage/el2/base/cache/web/Cache目录下查看Webview的缓存。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 

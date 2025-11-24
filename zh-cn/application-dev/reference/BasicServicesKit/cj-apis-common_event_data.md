@@ -1,6 +1,6 @@
 # ohos.common_event_data
 
-本模块描述公共事件的数据。
+common_event_data模块描述公共事件的数据。
 
 ## 导入模块
 

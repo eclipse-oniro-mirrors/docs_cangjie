@@ -1,6 +1,6 @@
 # ohos.app.ability
 
-Ability模块提供了包含BaseContext类的定义。
+ability模块提供了包含BaseContext类的定义。
 
 ## 导入模块
 

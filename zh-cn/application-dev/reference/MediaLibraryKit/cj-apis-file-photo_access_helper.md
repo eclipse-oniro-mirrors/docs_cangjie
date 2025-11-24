@@ -1,6 +1,6 @@
 # ohos.file.photo_access_helper
 
-该模块提供相册管理模块能力，包括创建相册以及访问、修改相册中的媒体数据信息等。
+photo_access_helper模块提供相册管理模块能力，包括创建相册以及访问、修改相册中的媒体数据信息等。
 
 ## 导入模块
 
@@ -801,7 +801,11 @@ public class FetchOptions {
 public var fetchColumns: Array<String>
 ```
 
-**功能：** 检索条件，指定列名查询。<br>对于照片，如果该参数为空，默认查询'uri'、'media_type'、'subtype'和'display_name'，使用[get](#func-getstring)接口获取当前对象的其他属性时将会报错。示例：fetchColumns: ['uri', 'title']。<br>对于相册，如果该参数为空，默认查询'uri'和'album_name'。
+**功能：** 检索条件，指定列名查询。
+
+对于照片，如果该参数为空，默认查询'uri'、'media_type'、'subtype'和'display_name'，使用[get](#func-getstring)接口获取当前对象的其他属性时将会报错。示例：fetchColumns: ['uri', 'title']。
+
+对于相册，如果该参数为空，默认查询'uri'和'album_name'。
 
 **类型：** Array\<String>
 
@@ -843,7 +847,7 @@ public init(fetchColumns: Array<String>, predicates: DataSharePredicates)
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|fetchColumns|Array\<String>|是|-| 检索条件，指定列名查询。<br>对于照片，如果该参数为空，默认查询'uri'、'media_type'、'subtype'和'display_name'，使用[get](#func-getstring)接口获取当前对象的其他属性时将会报错。示例：fetchColumns: ['uri', 'title']。<br>对于相册，如果该参数为空，默认查询'uri'和'album_name'。|
+|fetchColumns|Array\<String>|是|-| 检索条件，指定列名查询。|
 |predicates|[DataSharePredicates](../ArkData/cj-apis-data_share_predicates.md#class-datasharepredicates)|是|-| 谓词查询，显示过滤条件。|
 
 ## class FetchResult
@@ -1251,7 +1255,7 @@ public func setAlbumName(name: String): Unit
 
 相册名参数规格：
 - 相册名字符串长度为1~255。
-- 不允许出现的非法英文字符，包括：<br> . \ / : * ? " ' ` < > | { } [ ]
+- 不允许出现的非法英文字符，包括：. \ / : * ? " ' ` < > | { } [ ]
 - 英文字符大小写不敏感。
 - 相册名不允许重名。
 
@@ -1999,7 +2003,7 @@ public func setTitle(title: String): Unit
 title参数规格为：
 - 不应包含扩展名。
 - 文件名字符串长度为1~255。
-- 不允许出现的非法英文字符，包括：<br> . \ / : * ? " ' ` < > | { } [ ]
+- 不允许出现的非法英文字符，包括：. \ / : * ? " ' ` < > | { } [ ]
 
 **异常：**
 
@@ -2418,7 +2422,8 @@ public func showAssetsCreationDialog(srcFileUris: Array<String>, photoCreationCo
 **功能：** 调用接口拉起保存确认弹窗。用户同意保存后，返回已创建并授予保存权限的uri列表，该列表永久生效，应用可使用该uri写入图片/视频。如果用户拒绝保存，将返回空列表。弹框需要显示应用名称，无法直接获取应用名称，依赖于配置项的label和icon，因此调用此接口时请确保module.json5文件中的abilities标签中配置了label和icon项。
 
 > **说明：**
-> 当传入uri为沙箱路径时，可正常保存图片/视频，但无界面预览。
+>
+> - 当传入uri为沙箱路径时，可正常保存图片/视频，但无界面预览。
 
 **系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
 
@@ -3209,7 +3214,13 @@ public var subtype: PhotoSubtype
 public var title: String
 ```
 
-**功能：** 图片或者视频的标题，不传入时由系统生成。参数规格为：<br>- 不应包含扩展名。<br>- 文件名字符串长度为1~255（资产文件名为标题+扩展名）。<br>- 不允许出现的非法英文字符，包括：. \ / : * ? " ' ` < > \| { } [ ]
+**功能：** 图片或者视频的标题，不传入时由系统生成。参数规格为：
+
+- 不应包含扩展名。
+
+- 文件名字符串长度为1~255（资产文件名为标题+扩展名）。
+
+- 不允许出现的非法英文字符，包括：. \ / : * ? " ' ` < > \| { } [ ]
 
 **类型：** String
 
@@ -3237,7 +3248,7 @@ public init(fileNameExtension: String, photoType: PhotoType, title!: String = ""
 |:---|:---|:---|:---|:---|
 |fileNameExtension|String|是|-|文件扩展名，例如'jpg'。|
 |photoType|[PhotoType](#enum-phototype)|是|-|创建的文件类型[PhotoType](#phototype)，IMAGE或者VIDEO。|
-|title|String|否|""| **命名参数。** 图片或者视频的标题，不传入时由系统生成。参数规格为：<br>- 不应包含扩展名。<br>- 文件名字符串长度为1~255（资产文件名为标题+扩展名）。<br>- 不允许出现的非法英文字符，包括：. \ / : * ? " ' ` < > \| { } [ ]|
+|title|String|否|""| **命名参数。** 图片或者视频的标题，不传入时由系统生成。|
 |subtype|[PhotoSubtype](#enum-photosubtype)|否|Default| **命名参数。** 图片或者视频的文件子类型[PhotoSubtype](#enum-photosubtype)，不传入时默认为DEFAULT。|
 
 ## class RequestOptions
@@ -4196,7 +4207,9 @@ DateAdded
 DateAddedMs
 ```
 
-**功能：** 文件创建时的Unix时间戳（单位：毫秒）。<br>**注意：**查询照片时，不支持基于该字段排序。
+**功能：** 文件创建时的Unix时间戳（单位：毫秒）。
+
+注意：查询照片时，不支持基于该字段排序。
 
 **系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
 
@@ -4220,7 +4233,9 @@ DateModified
 DateModifiedMs
 ```
 
-**功能：** 文件修改时的Unix时间戳（单位：毫秒）。修改文件名不会改变此值，当文件内容发生修改时才会更新。<br>**注意：**查询照片时，不支持基于该字段排序。
+**功能：** 文件修改时的Unix时间戳（单位：毫秒）。修改文件名不会改变此值，当文件内容发生修改时才会更新。
+
+注意：查询照片时，不支持基于该字段排序。
 
 **系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
 
@@ -4244,7 +4259,13 @@ DateTaken
 DisplayName
 ```
 
-**功能：** 显示名字。规格为：<br>- 应包含有效文件主名和图片或视频扩展名。<br>- 文件名字符串长度为1~255。<br>- 文件主名中不允许出现的非法英文字符，包括：. .. \ / : * ? " ' ` < > \| { } [ ]。
+**功能：** 显示名字。规格为：
+
+- 应包含有效文件主名和图片或视频扩展名。
+
+- 文件名字符串长度为1~255。
+
+- 文件主名中不允许出现的非法英文字符，包括：. .. \ / : * ? " ' ` < > \| { } [ ]。
 
 **系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
 

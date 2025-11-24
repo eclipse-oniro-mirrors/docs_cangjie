@@ -1,6 +1,6 @@
 # ohos.ability.ability_result
 
-本模块定义了Ability被拉起并退出后返回的结果码和数据。
+ability_result模块定义了Ability被拉起并退出后返回的结果码和数据。
 
 ## 导入模块
 
@@ -47,7 +47,11 @@ public class AbilityResult {
 public var resultCode: Int32
 ```
 
-**功能：** 目标方的UIAbility被拉起并退出后，目标方返回给拉起方的结果码。<br/>-&nbsp;正常情况下，返回目标方传递的结果码。<br/>-&nbsp;异常情况下，返回-1。
+**功能：** 目标方的UIAbility被拉起并退出后，目标方返回给拉起方的结果码。
+
+正常情况下，返回目标方传递的结果码。
+
+异常情况下，返回-1。
 
 **类型：** Int32
 

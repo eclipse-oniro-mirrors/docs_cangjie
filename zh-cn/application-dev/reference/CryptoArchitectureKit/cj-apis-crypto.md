@@ -1,6 +1,6 @@
 # ohos.security.crypto_framework（加解密算法库框架）
 
-为屏蔽底层硬件和算法库，向上提供统一的密码算法库加解密相关接口。
+crypto_framework模块为屏蔽底层硬件和算法库，向上提供统一的密码算法库加解密相关接口。
 
 ## 导入模块
 
@@ -41,7 +41,8 @@ public func createCipher(transformation: String): Cipher
 > **说明：**
 >
 > 1. 目前对称加解密中，PKCS5和PKCS7的实现相同，其padding长度和分组长度保持一致。在3DES中均按8字节填充，在AES中均按16字节填充。另有NoPadding表示不填充。
-> <br/>开发者需要自行了解密码学不同分组模式的差异，以便选择合适的参数规格。例如选择ECB和CBC模式时，建议启用填充，否则必须确保明文长度是分组大小的整数倍；选择其他模式时，可以不启用填充，此时密文长度和明文长度一致（即可能不是分组大小的整数倍）。
+> 
+> 开发者需要自行了解密码学不同分组模式的差异，以便选择合适的参数规格。例如选择ECB和CBC模式时，建议启用填充，否则必须确保明文长度是分组大小的整数倍；选择其他模式时，可以不启用填充，此时密文长度和明文长度一致（即可能不是分组大小的整数倍）。
 > 2. 使用RSA或SM2进行非对称加解密时，必须创建两个Cipher对象，分别进行加密和解密操作，不能对同一个Cipher对象进行加解密。对称加解密没有此要求，只要算法规格一致，可以对同一个Cipher对象进行加解密操作。
 
 **返回值：**
@@ -334,7 +335,7 @@ func getEncoded(): DataBlob
 
 > **说明：**
 >
-> RSA算法使用密钥参数生成私钥时，私钥对象支持getEncoded。
+> - RSA算法使用密钥参数生成私钥时，私钥对象支持getEncoded。
 
 **系统能力：** SystemCapability.Security.CryptoFramework.Key
 
@@ -399,7 +400,13 @@ public class ParamsSpec {
 mut var algName: String
 ```
 
-**功能：** 指明对称加解密参数的算法模式。可选值如下：<br/> - "IvParamsSpec"：适用于CBC\|CTR\|OFB\|CFB模式。<br/> - "GcmParamsSpec"：适用于GCM模式。<br/> - "CcmParamsSpec"：适用于CCM模式。
+**功能：** 指明对称加解密参数的算法模式。可选值如下：
+
+"IvParamsSpec"：适用于CBC\|CTR\|OFB\|CFB模式。
+
+"GcmParamsSpec"：适用于GCM模式。
+
+"CcmParamsSpec"：适用于CCM模式。
 
 **类型：** String
 
@@ -523,11 +530,14 @@ public func doFinal(data: ?DataBlob): DataBlob
 
 > **说明：**
 >
->  1. 对称加解密中，调用doFinal标志着一次加解密流程已经完成，即[Cipher](#class-cipher)实例的状态被清除，因此当后续开启新一轮加解密流程时，需要重新调用initialize()并传入完整的参数列表进行初始化<br/>（比如即使是对同一个Cipher实例，采用同样的对称密钥，进行加密然后解密，则解密中调用initialize的时候仍需填写params参数，而不能直接省略为None）。
+>  1. 对称加解密中，调用doFinal标志着一次加解密流程已经完成，即[Cipher](#class-cipher)实例的状态被清除，因此当后续开启新一轮加解密流程时，需要重新调用initialize()并传入完整的参数列表进行初始化
+> （比如即使是对同一个Cipher实例，采用同样的对称密钥，进行加密然后解密，则解密中调用initialize的时候仍需填写params参数，而不能直接省略为None）。
 >  2. 如果遇到解密失败，需检查加解密数据和initialize时的参数是否匹配，包括GCM模式下加密得到的authTag是否填入解密时的GcmParamsSpec等。
->  3. doFinal的结果可能为null，因此使用.data字段访问doFinal结果的具体数据前，请记得先判断结果是否为null，避免产生异常。<br/>
->    对于加密，CFB、OFB和CTR模式，如果doFinal传None, 则返回结果为空。<br/>
->    对于解密，GCM、CCM、CFB、OFB和CTR模式，如果doFinal传None，则返回结果为空；对于解密，其他模式，如果明文是加密块大小的整倍数，调用update传入所有密文，调用doFinal传None, 则返回结果为空。<br/>
+>  3. doFinal的结果可能为null，因此使用.data字段访问doFinal结果的具体数据前，请记得先判断结果是否为null，避免产生异常。
+>
+>    对于加密，CFB、OFB和CTR模式，如果doFinal传None, 则返回结果为空。
+>
+>    对于解密，GCM、CCM、CFB、OFB和CTR模式，如果doFinal传None，则返回结果为空；对于解密，其他模式，如果明文是加密块大小的整倍数，调用update传入所有密文，调用doFinal传None, 则返回结果为空。
 
 **系统能力：** SystemCapability.Security.CryptoFramework.Cipher
 
@@ -596,9 +606,15 @@ public func update(data: DataBlob): DataBlob
 > **说明：**
 >
 > 1. 在进行对称加解密操作时，如果开发者对各分组模式不够熟悉，建议每次调用update和doFinal后，都判断结果是否为空。如果结果不为空，则取出其中的数据进行拼接，以形成完整的密文或明文。这是因为选择的分组模式等各项规格可能会影响update和doFinal的结果。
-> <br/>（例如对于ECB和CBC模式，不论update传入的数据是否为分组长度的整数倍，都会以分组作为基本单位进行加/解密，并输出本次update新产生的加/解密分组结果。<br/>可以理解为，update只要凑满一个新的分组就会有输出，如果没有凑满则此次update输出为null，把当前还没被加/解密的数据留着，等下一次update/doFinal传入数据的时候，拼接起来继续凑分组。<br/>最后doFinal的时候，会把剩下的还没加/解密的数据，根据[createCipher](#func-createcipherstring)时设置的padding模式进行填充，补齐到分组的整数倍长度，再输出剩余加解密结果。<br/>而对于可以将分组密码转化为流模式实现的模式，还可能出现密文长度和明文长度相同的情况等。）
-> 2. 根据数据量，可以不调用update（即initialize完成后直接调用doFinal）或多次调用update。<br/>
->    算法库目前没有对update（单次或累计）的数据量设置大小限制，建议对于大数据量的对称加解密，可以采用多次update的方式传入数据。<br/>
+> 
+>（例如对于ECB和CBC模式，不论update传入的数据是否为分组长度的整数倍，都会以分组作为基本单位进行加/解密，并输出本次update新产生的加/解密分组结果。
+> 可以理解为，update只要凑满一个新的分组就会有输出，如果没有凑满则此次update输出为null，把当前还没被加/解密的数据留着，等下一次update/doFinal传入数据的时候，拼接起来继续凑分组。
+> 最后doFinal的时候，会把剩下的还没加/解密的数据，根据[createCipher](#func-createcipherstring)时设置的padding模式进行填充，补齐到分组的整数倍长度，再输出剩余加解密结果。
+> 而对于可以将分组密码转化为流模式实现的模式，还可能出现密文长度和明文长度相同的情况等。）
+> 2. 根据数据量，可以不调用update（即initialize完成后直接调用doFinal）或多次调用update。
+>
+>    算法库目前没有对update（单次或累计）的数据量设置大小限制，建议对于大数据量的对称加解密，可以采用多次update的方式传入数据。
+>
 >    AES使用多次update操作的示例代码详见[使用AES对称密钥分段加解密](../../security/CryptoArchitectureKit/cj-crypto-aes-sym-encrypt-decrypt-gcm-by-segment.md)
 > 3. RSA、SM2非对称加解密不支持update操作。
 > 4. 对于CCM模式的对称加解密算法，加密时只能调用1次update接口加密数据并调用doFinal接口获取tag，或直接调用doFinal接口加密数据并获取tag，解密时只能调用1次update接口或调用1次doFinal接口解密数据并验证tag。
@@ -694,7 +710,8 @@ public func initialize(key: SymKey): Unit
 
 > **说明：**
 >
-> 建议通过[HMAC密钥生成规格](../../security/CryptoArchitectureKit/cj-crypto-sym-key-generation-conversion-spec.md#hmac)创建对称密钥生成器，调用[generateSymKey](#func-createsymkeygeneratorstring)随机生成对称密钥或调用[convertKey](#func-convertkeydatablob)传入与密钥规格长度一致的二进制密钥数据生成密钥。<br/>当指定“HMAC”生成对称密钥生成器时，仅支持调用[convertKey](#func-convertkeydatablob)传入长度在[1,4096]范围内（单位为byte）的任意二进制密钥数据生成密钥。
+> - 建议通过[HMAC密钥生成规格](../../security/CryptoArchitectureKit/cj-crypto-sym-key-generation-conversion-spec.md#hmac)创建对称密钥生成器，调用[generateSymKey](#func-createsymkeygeneratorstring)随机生成对称密钥或调用[convertKey](#func-convertkeydatablob)传入与密钥规格长度一致的二进制密钥数据生成密钥。
+> - 当指定“HMAC”生成对称密钥生成器时，仅支持调用[convertKey](#func-convertkeydatablob)传入长度在[1,4096]范围内（单位为byte）的任意二进制密钥数据生成密钥。
 
 **系统能力：** SystemCapability.Security.CryptoFramework.Mac
 
@@ -1363,7 +1380,7 @@ public func convertKey(key: DataBlob): SymKey
 
 > **说明：**
 >
-> 对于HMAC算法的对称密钥，如果在创建对称密钥生成器时指定了具体哈希算法（如“HMAC|SHA256”），则需要传入与哈希长度一致的二进制密钥数据（如SHA256对应的256位密钥数据）。如果在创建对称密钥生成器时未指定具体哈希算法，如仅指定“HMAC”，则支持传入长度在1到4096字节范围内的任意二进制密钥数据。
+> - 对于HMAC算法的对称密钥，如果在创建对称密钥生成器时指定了具体哈希算法（如“HMAC|SHA256”），则需要传入与哈希长度一致的二进制密钥数据（如SHA256对应的256位密钥数据）。如果在创建对称密钥生成器时未指定具体哈希算法，如仅指定“HMAC”，则支持传入长度在1到4096字节范围内的任意二进制密钥数据。
 
 **系统能力：** SystemCapability.Security.CryptoFramework.Key.SymKey
 
@@ -1425,7 +1442,8 @@ public func generateSymKey(): SymKey
 
 > **说明：**
 >
-> 对于HMAC算法的对称密钥，如果已经在创建对称密钥生成器时指定了具体哈希算法（如指定“HMAC|SHA256”），则会随机生成与哈希长度一致的二进制密钥数据（如指定“HMAC|SHA256”会随机生成256位的密钥数据）。<br/>如果在创建对称密钥生成器时没有指定具体哈希算法，如仅指定“HMAC”，则不支持随机生成对称密钥数据，可通过[convertKeySync](#func-convertkeydatablob)方式生成对称密钥数据。
+> - 对于HMAC算法的对称密钥，如果已经在创建对称密钥生成器时指定了具体哈希算法（如指定“HMAC|SHA256”），则会随机生成与哈希长度一致的二进制密钥数据（如指定“HMAC|SHA256”会随机生成256位的密钥数据）。
+> - 如果在创建对称密钥生成器时没有指定具体哈希算法，如仅指定“HMAC”，则不支持随机生成对称密钥数据，可通过[convertKeySync](#func-convertkeydatablob)方式生成对称密钥数据。
 
 **系统能力：** SystemCapability.Security.CryptoFramework.Key.SymKey
 
@@ -1479,7 +1497,7 @@ public class CcmParamsSpec <: ParamsSpec {
 
 > **说明：**
 >
-> 传入[initialize()](#func-initializecryptomode-key-paramsspec)方法前需要指定其algName属性（来源于父类[ParamsSpec](#paramsspec)）。
+> - 传入[initialize()](#func-initializecryptomode-key-paramsspec)方法前需要指定其algName属性（来源于父类[ParamsSpec](#paramsspec)）。
 
 **系统能力：** SystemCapability.Security.CryptoFramework.Cipher
 
@@ -1511,7 +1529,9 @@ public mut prop aad: DataBlob
 public mut prop authTag: DataBlob
 ```
 
-**功能：** 指定加解密参数authTag，长度为12字节。<br/>在CCM模式加密时，需从[doFinal()](#func-dofinaldatablob)输出的[DataBlob](#datablob)末尾提取12字节，作为[initialize()](#func-initializecryptomode-key-paramsspec)方法的参数[CcmParamsSpec](#class-ccmparamsspec)中的authTag。
+**功能：** 指定加解密参数authTag，长度为12字节。
+
+在CCM模式加密时，需从[doFinal()](#func-dofinaldatablob)输出的[DataBlob](#datablob)末尾提取12字节，作为[initialize()](#func-initializecryptomode-key-paramsspec)方法的参数[CcmParamsSpec](#class-ccmparamsspec)中的authTag。
 
 **类型：** [DataBlob](#class-datablob)
 
@@ -1673,7 +1693,9 @@ public mut prop aad: DataBlob
 public mut prop authTag: DataBlob
 ```
 
-**功能：** 指明加解密参数authTag，长度为16字节。<br/>采用GCM模式加密时，需从[doFinal()](#func-dofinaldatablob)输出的[DataBlob](#datablob)中提取末尾16字节，作为[initialize()](#func-initializecryptomode-key-paramsspec)方法中GcmParamsSpec的authTag。
+**功能：** 指明加解密参数authTag，长度为16字节。
+
+采用GCM模式加密时，需从[doFinal()](#func-dofinaldatablob)输出的[DataBlob](#datablob)中提取末尾16字节，作为[initialize()](#func-initializecryptomode-key-paramsspec)方法中GcmParamsSpec的authTag。
 
 **类型：** [DataBlob](#class-datablob)
 
@@ -1752,7 +1774,7 @@ public struct IvParamsSpec <: ParamsSpec {
 
 > **说明：**
 >
-> 传入[initialize()](#func-initializecryptomode-key-paramsspec)方法前需要指定其algName属性（来源于父类[ParamsSpec](#paramsspec)）。
+> - 传入[initialize()](#func-initializecryptomode-key-paramsspec)方法前需要指定其algName属性（来源于父类[ParamsSpec](#paramsspec)）。
 
 **系统能力：** SystemCapability.Security.CryptoFramework.Cipher
 
@@ -1768,7 +1790,13 @@ public struct IvParamsSpec <: ParamsSpec {
 public mut prop iv: DataBlob
 ```
 
-**功能：** 指明加解密参数iv。常见取值如下：<br/>- AES的CBC\|CTR\|OFB\|CFB模式：iv长度为16字节。<br/>- 3DES的CBC\|OFB\|CFB模式：iv长度为8字节。<br/>- SM4<sup>10+</sup>的CBC\|CTR\|OFB\|CFB模式：iv长度为16字节。
+**功能：** 指明加解密参数iv。常见取值如下：
+
+AES的CBC\|CTR\|OFB\|CFB模式：iv长度为16字节。
+
+3DES的CBC\|OFB\|CFB模式：iv长度为8字节。
+
+SM4的CBC\|CTR\|OFB\|CFB模式：iv长度为16字节。
 
 **类型：** [DataBlob](#class-datablob)
 

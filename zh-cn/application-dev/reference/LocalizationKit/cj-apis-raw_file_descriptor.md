@@ -1,6 +1,6 @@
 # ohos.raw_file_descriptor
 
-本模块表示rawfile的描述符信息。
+raw_file_descriptor模块表示rawfile的描述符信息。
 
 ## 导入模块
 

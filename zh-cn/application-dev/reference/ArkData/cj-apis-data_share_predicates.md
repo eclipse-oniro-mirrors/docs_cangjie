@@ -31,7 +31,7 @@ public class DataSharePredicates {
 
 > **说明：**
 >
-> 该类不是多线程安全的，如果应用中存在多线程同时操作该类派生出的实例，注意加锁保护。
+> - 该类不是多线程安全的，如果应用中存在多线程同时操作该类派生出的实例，注意加锁保护。
 
 **系统能力：** SystemCapability.DistributedDataManager.DataShare.Core
 

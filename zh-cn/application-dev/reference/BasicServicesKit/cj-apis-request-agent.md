@@ -408,7 +408,11 @@ public class Config {
 public var action: Action
 ```
 
-**功能：** 任务操作选项。<br/>- UPLOAD表示上传任务。<br/>- DOWNLOAD表示下载任务。
+**功能：** 任务操作选项。
+
+UPLOAD表示上传任务。
+
+DOWNLOAD表示下载任务。
 
 **类型：** [Action](#enum-action)
 
@@ -424,7 +428,11 @@ public var action: Action
 public var begins: Int64
 ```
 
-**功能：** 文件起点，通常情况下用于断点续传。默认值为0，取值为闭区间，表示从头开始传输。<br/>- 下载时，请求读取服务器开始下载文件时的起点位置（HTTP协议中设置"Range"选项）。<br/>- 上传时，读取需上传的文件的起点位置。
+**功能：** 文件起点，通常情况下用于断点续传。默认值为0，取值为闭区间，表示从头开始传输。
+
+下载时，请求读取服务器开始下载文件时的起点位置（HTTP协议中设置"Range"选项）。
+
+上传时，读取需上传的文件的起点位置。
 
 **类型：** Int64
 
@@ -440,7 +448,9 @@ public var begins: Int64
 public var data:?ConfigData
 ```
 
-**功能：** - 下载时，data为字符串类型，通常情况下使用json格式（object将被转换为json文本），默认为空。<br/>- 上传时，data是表单项数组Array&lt;[FormItem](#class-formitem)&gt;。创建单个任务可以上传最多100个文件。默认为空
+**功能：** - 下载时，data为字符串类型，通常情况下使用json格式（object将被转换为json文本），默认为空。
+
+上传时，data是表单项数组Array&lt;[FormItem](#class-formitem)&gt;。创建单个任务可以上传最多100个文件。默认为空
 
 **类型：** ?[ConfigData](#enum-configdata)
 
@@ -472,7 +482,11 @@ public var description: String
 public var ends: Int64
 ```
 
-**功能：** 文件终点，通常情况下用于断点续传。默认值为-1，取值为闭区间，表示传输到整个文件末尾结束。<br/>- 下载时，请求读取服务器开始下载文件时的结束位置（HTTP协议中设置"Range"选项）。<br/>- 上传时，读取需上传的文件的结束位置。
+**功能：** 文件终点，通常情况下用于断点续传。默认值为-1，取值为闭区间，表示传输到整个文件末尾结束。
+
+下载时，请求读取服务器开始下载文件时的结束位置（HTTP协议中设置"Range"选项）。
+
+上传时，读取需上传的文件的结束位置。
 
 **类型：** Int64
 
@@ -504,7 +518,11 @@ public var extras: HashMap<String, String>
 public var gauge: Bool
 ```
 
-**功能：** 后台任务的过程进度通知策略，仅应用于后台任务，默认值为false。<br/>- false：代表仅完成或失败的通知。<br/>- true：发出每个进度已完成或失败的通知。
+**功能：** 后台任务的过程进度通知策略，仅应用于后台任务，默认值为false。
+
+false：代表仅完成或失败的通知。
+
+true：发出每个进度已完成或失败的通知。
 
 **类型：** Bool
 
@@ -520,7 +538,11 @@ public var gauge: Bool
 public var headers: HashMap<String, String>
 ```
 
-**功能：** 添加要包含在任务中的HTTP协议标志头。<br/>- 上传请求，默认的Content-Type为"multipart/form-data"。<br/>- 下载请求，默认的Content-Type为"application/json"。
+**功能：** 添加要包含在任务中的HTTP协议标志头。
+
+上传请求，默认的Content-Type为"multipart/form-data"。
+
+下载请求，默认的Content-Type为"application/json"。
 
 **类型：** HashMap
 
@@ -552,7 +574,11 @@ public var index: UInt32
 public var metered: Bool
 ```
 
-**功能：** 是否允许在按流量计费的网络中工作，默认为false。<br/>- true：是 <br/>- false：否
+**功能：** 是否允许在按流量计费的网络中工作，默认为false。
+
+true：是 
+
+false：否
 
 **类型：** Bool
 
@@ -568,7 +594,11 @@ public var metered: Bool
 public var method:?String
 ```
 
-**功能：** 上传或下载HTTP的标准方法，包括GET、POST和PUT，不区分大小写。<br/>- 上传时，使用PUT或POST，默认值为PUT。<br/>- 下载时，使用GET或POST，默认值为GET。
+**功能：** 上传或下载HTTP的标准方法，包括GET、POST和PUT，不区分大小写。
+
+上传时，使用PUT或POST，默认值为PUT。
+
+下载时，使用GET或POST，默认值为GET。
 
 **类型：** ?String
 
@@ -616,7 +646,15 @@ public var network: Network
 public var overwrite: Bool
 ```
 
-**功能：** 下载过程中路径已存在时的解决方案选择，默认为false。<br/>- true，覆盖已存在的文件。<br/>- false，下载失败。<br/>下载到用户文件场景必须为true。<br/>设置为 `true` 时，不建议创建多个任务同时往同一个文件下载内容，会导致文件内容混乱。
+**功能：** 下载过程中路径已存在时的解决方案选择，默认为false。
+
+true，覆盖已存在的文件。
+
+false，下载失败。
+
+下载到用户文件场景必须为true。
+
+设置为 `true` 时，不建议创建多个任务同时往同一个文件下载内容，会导致文件内容混乱。
 
 **类型：** Bool
 
@@ -632,7 +670,11 @@ public var overwrite: Bool
 public var precise: Bool
 ```
 
-**功能：** - 如果设置为true，在上传/下载无法获取文件大小时任务失败。<br/>- 如果设置为false，将文件大小设置为-1时任务继续。<br/>默认值为false。
+**功能：** - 如果设置为true，在上传/下载无法获取文件大小时任务失败。
+
+如果设置为false，将文件大小设置为-1时任务继续。
+
+默认值为false。
 
 **类型：** Bool
 
@@ -664,7 +706,11 @@ public var priority: UInt32
 public var redirect: Bool
 ```
 
-**功能：** 是否允许重定向，默认为true。<br/>- true：是 <br/>- false：否
+**功能：** 是否允许重定向，默认为true。
+
+true：是 
+
+false：否
 
 **类型：** Bool
 
@@ -680,7 +726,11 @@ public var redirect: Bool
 public var retry: Bool
 ```
 
-**功能：** 是否为后台任务启用自动重试，仅应用于后台任务，默认为true。<br/>- true：是 <br/>- false：否
+**功能：** 是否为后台任务启用自动重试，仅应用于后台任务，默认为true。
+
+true：是
+
+false：否
 
 **类型：** Bool
 
@@ -696,7 +746,11 @@ public var retry: Bool
 public var roaming: Bool
 ```
 
-**功能：** 是否允许在漫游网络中工作，默认为true。<br/>- true：是 <br/>- false：否
+**功能：** 是否允许在漫游网络中工作，默认为true。
+
+true：是
+
+false：否
 
 **类型：** Bool
 
@@ -712,7 +766,15 @@ public var roaming: Bool
 public var saveas:String
 ```
 
-**功能：** 保存下载文件的路径，包括如下几种：<br/>- 相对路径，位于调用方的缓存路径下，如"./xxx/yyy/zzz.html"、"xxx/yyy/zzz.html"。<br/>- internal协议路径，支持"internal://"及其子路径，internal为调用方（传入的context）对应路径，"internal://cache"对应context.cacheDir。如"internal://cache/path/to/file.txt"。<br/>- 应用沙箱目录，只支持到base及其子目录下，如"/data/storage/el1/base/path/to/file.txt"。<br/>- file协议路径，支持应用文件和用户文件，应用文件必须匹配应用包名，只支持到base及其子目录下，如"file://com.example.test/data/storage/el2/base/file.txt"。用户文件必须为调用方创建好的用户文件uri。
+**功能：** 保存下载文件的路径，包括如下几种：
+
+相对路径，位于调用方的缓存路径下，如"./xxx/yyy/zzz.html"、"xxx/yyy/zzz.html"。
+
+internal协议路径，支持"internal://"及其子路径，internal为调用方（传入的context）对应路径，"internal://cache"对应context.cacheDir。如"internal://cache/path/to/file.txt"。
+
+应用沙箱目录，只支持到base及其子目录下，如"/data/storage/el1/base/path/to/file.txt"。
+
+file协议路径，支持应用文件和用户文件，应用文件必须匹配应用包名，只支持到base及其子目录下，如"file://com.example.test/data/storage/el2/base/file.txt"。用户文件必须为调用方创建好的用户文件uri。
 
 **类型：** ?String
 
@@ -792,26 +854,26 @@ public init(action: Action, url: String, title!: ?String = None, description!: S
 
 | 参数名      | 类型 | 必填 | 默认值                     | 说明 |
 | :---------- | :--------- | :--- | :------- | :-------- |
-| action      | [Action](#enum-action) | 是   | - | **命名参数。**任务操作选项。<br/>- UPLOAD表示上传任务。<br/>- DOWNLOAD表示下载任务。|
+| action      | [Action](#enum-action) | 是   | - | **命名参数。**任务操作选项。|
 | url         | String | 是   | - | **命名参数。** 资源地址。最大长度为8192个字符。支持HTTP拦截功能。|
 | title       | ?String | 否   | None | **命名参数。** 任务标题，其最大长度为256个字符，默认值为小写的 upload 或 download，与上面的 action 保持一致。|
 | description | String | 否   | "" | **命名参数。** 任务的详细信息，其最大长度为1024个字符，默认值为空字符串。|
 | mode        | [Mode](#enum-mode) | 否   | Mode.Background | **命名参数。** 任务模式，默认为后台任务。下载到用户文件场景必须为request.agent.Mode.FOREGROUND。|
-| overwrite   | Bool | 否   | false | **命名参数。** 下载过程中路径已存在时的解决方案选择，默认为false。<br/>- true，覆盖已存在的文件。<br/>- false，下载失败。<br/>下载到用户文件场景必须为true。<br/>设置为 `true` 时，不建议创建多个任务同时往同一个文件下载内容，会导致文件内容混乱。|
-| method      | ?String | 否   | None  | **命名参数。** 上传或下载HTTP的标准方法，包括GET、POST和PUT，不区分大小写。<br/>- 上传时，使用PUT或POST，默认值为PUT。<br/>- 下载时，使用GET或POST，默认值为GET。|
-| headers     | HashMap\<String,String>  | 否   | HashMap<String,String>()   | **命名参数。** 添加要包含在任务中的HTTP协议标志头。<br/>- 上传请求，默认的Content-Type为"multipart/form-data"。<br/>- 下载请求，默认的Content-Type为"application/json"。|
-| data        | ?[ConfigData](#enum-configdata) | 否   | None | **命名参数。** - 下载时，data为字符串类型，通常情况下使用json格式（object将被转换为json文本），默认为空。<br/>- 上传时，data是表单项数组Array&lt;[FormItem](#class-formitem)&gt;。创建单个任务可以上传最多100个文件。默认为空。|
-| saveas      | ?String | 否   | "./" | **命名参数。** 保存下载文件的路径，包括如下几种：<br/>- 相对路径，位于调用方的缓存路径下，如"./xxx/yyy/zzz.html"、"xxx/yyy/zzz.html"。<br/>- internal协议路径，支持"internal://"及其子路径，internal为调用方（传入的context）对应路径，"internal://cache"对应context.cacheDir。如"internal://cache/path/to/file.txt"。<br/>- 应用沙箱目录，只支持到base及其子目录下，如"/data/storage/el1/base/path/to/file.txt"。<br/>- file协议路径，支持应用文件和用户文件，应用文件必须匹配应用包名，只支持到base及其子目录下，如"file://com.example.test/data/storage/el2/base/file.txt"。用户文件必须为调用方创建好的用户文件uri。|
+| overwrite   | Bool | 否   | false | **命名参数。** 下载过程中路径已存在时的解决方案选择，默认为false。|
+| method      | ?String | 否   | None  | **命名参数。** 上传或下载HTTP的标准方法，包括GET、POST和PUT，不区分大小写。|
+| headers     | HashMap\<String,String>  | 否   | HashMap<String,String>()   | **命名参数。** 添加要包含在任务中的HTTP协议标志头。|
+| data        | ?[ConfigData](#enum-configdata) | 否   | None | **命名参数。** - 下载时，data为字符串类型，通常情况下使用json格式（object将被转换为json文本），默认为空。|
+| saveas      | ?String | 否   | "./" | **命名参数。** 保存下载文件的路径。|
 | network     | [Network](#enum-network)  | 否   | Network.AnyType | **命名参数。** 网络选项，当前支持无线网络WIFI和蜂窝数据网络CELLULAR，默认为ANY（WIFI或CELLULAR）。|
-| metered     | Bool | 否   | false  | **命名参数。** 是否允许在按流量计费的网络中工作，默认为false。<br/>- true：是 <br/>- false：否|
-| roaming     | Bool | 否   | true | **命名参数。** 是否允许在漫游网络中工作，默认为true。<br/>- true：是 <br/>- false：否|
-| retry       | Bool | 否   | true | **命名参数。** 是否为后台任务启用自动重试，仅应用于后台任务，默认为true。<br/>- true：是 <br/>- false：否|
-| redirect    | Bool | 否   | true | **命名参数。** 是否允许重定向，默认为true。<br/>- true：是 <br/>- false：否|
+| metered     | Bool | 否   | false  | **命名参数。** 是否允许在按流量计费的网络中工作，默认为false。|
+| roaming     | Bool | 否   | true | **命名参数。** 是否允许在漫游网络中工作，默认为true。|
+| retry       | Bool | 否   | true | **命名参数。** 是否为后台任务启用自动重试，仅应用于后台任务，默认为true。|
+| redirect    | Bool | 否   | true | **命名参数。** 是否允许重定向，默认为true。|
 | index       | UInt32 | 否   | 0 | **命名参数。** 任务的路径索引，通常情况下用于任务断点续传，默认为0。|
-| begins      | Int64 | 否   | 0 | **命名参数。** 文件起点，通常情况下用于断点续传。默认值为0，取值为闭区间，表示从头开始传输。<br/>- 下载时，请求读取服务器开始下载文件时的起点位置（HTTP协议中设置"Range"选项）。<br/>- 上传时，读取需上传的文件的起点位置。|
-| ends        | Int64 | 否   | - 1 | **命名参数。** 文件终点，通常情况下用于断点续传。默认值为-1，取值为闭区间，表示传输到整个文件末尾结束。<br/>- 下载时，请求读取服务器开始下载文件时的结束位置（HTTP协议中设置"Range"选项）。<br/>- 上传时，读取需上传的文件的结束位置。|
-| gauge       | Bool | 否   | false | **命名参数。** 后台任务的过程进度通知策略，仅应用于后台任务，默认值为false。<br/>- false：代表仅完成或失败的通知。<br/>- true：发出每个进度已完成或失败的通知。|
-| precise     | Bool | 否   | false | **命名参数。** - 如果设置为true，在上传/下载无法获取文件大小时任务失败。<br/>- 如果设置为false，将文件大小设置为-1时任务继续。<br/>默认值为false。|
+| begins      | Int64 | 否   | 0 | **命名参数。** 文件起点，通常情况下用于断点续传。默认值为0，取值为闭区间，表示从头开始传输。。|
+| ends        | Int64 | 否   | - 1 | **命名参数。** 文件终点，通常情况下用于断点续传。默认值为-1，取值为闭区间，表示传输到整个文件末尾结束。|
+| gauge       | Bool | 否   | false | **命名参数。** 后台任务的过程进度通知策略，仅应用于后台任务，默认值为false。|
+| precise     | Bool | 否   | false | **命名参数。** - 如果设置为true，在上传/下载无法获取文件大小时任务失败。|
 | token       | ?String | 否   | None | **命名参数。** 任务令牌。查询带有token的任务需提供token并通过[request.agent.touch](#func-touchstring-string)查询，否则无法查询到指定任务。其最小为8个字节，最大为2048个字节。默认为空。|
 | priority    | UInt32 | 否   | 0 | **命名参数。** 任务的优先级。前台任务的优先级比后台任务高。任务模式相同的情况下，该配置项的数字越小优先级越高，默认值为0。|
 | extras      | HashMap\<String,String> | 否   | HashMap\<String, String>() | **命名参数。** 配置的附加功能，默认为空。|
@@ -929,7 +991,27 @@ public var mimeType:?String
 public var path:String
 ```
 
-**功能：** 文件路径。<br/>- 相对路径，位于调用方的缓存路径下。<br/>例如："./xxx/yyy/zzz.html"、"xxx/yyy/zzz.html"。<br/>- internal协议路径，支持"internal://"及其子路径。internal为调用方（即传入的context）对应路径，"internal://cache"对应context.cacheDir。<br/>例如："internal://cache/path/to/file.txt"。<br/>- 应用沙箱目录，只支持到base及其子目录下。<br/>例如："/data/storage/el1/base/path/to/file.txt"。<br/>- file协议路径，必须匹配应用包名，只支持到base及其子目录下。<br/>例如："file://com.example.test/data/storage/el2/base/file.txt"。<br/>- 用户公共文件，仅支持上传任务。<br/>例如："file://media/Photo/path/to/file.img"。仅支持前台任务。
+**功能：** 文件路径。
+
+相对路径，位于调用方的缓存路径下。
+
+例如："./xxx/yyy/zzz.html"、"xxx/yyy/zzz.html"。
+
+internal协议路径，支持"internal://"及其子路径。internal为调用方（即传入的context）对应路径，"internal://cache"对应context.cacheDir。
+
+例如："internal://cache/path/to/file.txt"。
+
+应用沙箱目录，只支持到base及其子目录下。
+
+例如："/data/storage/el1/base/path/to/file.txt"。
+
+file协议路径，必须匹配应用包名，只支持到base及其子目录下。
+
+例如："file://com.example.test/data/storage/el2/base/file.txt"。
+
+用户公共文件，仅支持上传任务。
+
+例如："file://media/Photo/path/to/file.img"。仅支持前台任务。
 
 **类型：** String
 
@@ -960,7 +1042,7 @@ public init(
 
 | 参数名   | 类型 | 必填 | 默认值 | 说明 |
 | :------- | :----- | :--- | :----- | :---------- |
-| path     | String | 是   | - | **命名参数。** 文件路径。<br/>- 相对路径，位于调用方的缓存路径下。<br/>例如："./xxx/yyy/zzz.html"、"xxx/yyy/zzz.html"。<br/>- internal协议路径，支持"internal://"及其子路径。internal为调用方（即传入的context）对应路径，"internal://cache"对应context.cacheDir。<br/>例如："internal://cache/path/to/file.txt"。<br/>- 应用沙箱目录，只支持到base及其子目录下。<br/>例如："/data/storage/el1/base/path/to/file.txt"。<br/>- file协议路径，必须匹配应用包名，只支持到base及其子目录下。<br/>例如："file://com.example.test/data/storage/el2/base/file.txt"。<br/>- 用户公共文件，仅支持上传任务。<br/>例如："file://media/Photo/path/to/file.img"。仅支持前台任务。|
+| path     | String | 是   | - | **命名参数。** 文件路径。|
 | mimeType | ?String | 否   | None | **命名参数。** 文件的mimeType，通过文件名获取，默认值为文件名后缀。|
 | filename | ?String | 否   | None | **命名参数。** 文件名，默认值通过路径获取。|
 | extras   | HashMap\<String,String> | 否   | HashMap<String,String>() | **命名参数。** 文件信息的附加内容，该参数不会体现在HTTP请求中。|
@@ -1000,7 +1082,9 @@ public enum Network <: Equatable<Network> & ToString {
 }
 ```
 
-**功能：** 定义网络选项。<br>
+**功能：** 定义网络选项。
+
+
 网络不满足设置条件时，未执行的任务会等待执行，执行中的任务将失败或暂停。
 
 **系统能力：** SystemCapability.Request.FileTransferAgent
@@ -1071,7 +1155,13 @@ public class Filter {
 public var action:?Action
 ```
 
-**功能：** 任务操作选项。<br/>- UPLOAD表示上传任务。<br/>- DOWNLOAD表示下载任务。<br/>- 如果未填写，则查询所有任务。
+**功能：** 任务操作选项。
+
+ UPLOAD表示上传任务。
+ 
+ DOWNLOAD表示下载任务。
+ 
+ 如果未填写，则查询所有任务。
 
 **类型：** ?[Action](#enum-action)
 
@@ -1119,7 +1209,13 @@ public var before:?Int64
 public var mode:?Mode
 ```
 
-**功能：** 任务模式。<br/>- FOREGROUND表示前台任务。<br/>- BACKGROUND表示后台任务。<br/>- 如果未填写，则查询所有任务。
+**功能：** 任务模式。
+
+FOREGROUND表示前台任务。
+
+BACKGROUND表示后台任务。
+
+如果未填写，则查询所有任务。
 
 **类型：** ?[Mode](#enum-mode)
 
@@ -1166,8 +1262,8 @@ public init(before!: ?Int64 = None, after!: ?Int64 = None, state!: ?State = None
 | before | ?Int64 | 否   | None   | **命名参数。** 结束的Unix时间戳（毫秒），默认为调用时刻。|
 | after  | ?Int64 | 否   | None   | **命名参数。** 开始的Unix时间戳（毫秒），默认值为调用时刻减24小时。|
 | state  | ?[State](#enum-state)   | 否   | None   | **命名参数。** 指定任务的状态。如果未填写，则查询所有任务。|
-| action | ?[Action](#enum-action) | 否   | None   | **命名参数。** 任务操作选项。<br/>- UPLOAD表示上传任务。<br/>- DOWNLOAD表示下载任务。<br/>- 如果未填写，则查询所有任务。|
-| mode   | ?[Mode](#enum-mode)     | 否   | None   | **命名参数。** 任务模式。<br/>- FOREGROUND表示前台任务。<br/>- BACKGROUND表示后台任务。<br/>- 如果未填写，则查询所有任务。 |
+| action | ?[Action](#enum-action) | 否   | None   | **命名参数。** 任务操作选项。|
+| mode   | ?[Mode](#enum-mode)     | 否   | None   | **命名参数。** 任务模式。|
 
 **示例：**
 
@@ -1575,7 +1671,7 @@ public func off(event: EventCallbackType, callback!: ?CallbackObject = None): Un
 
 | 参数名   | 类型  | 必填 | 默认值 | 说明 |
 | :------- | :-----  | :--- | :----- | :----- |
-| event    | [EventCallbackType](#enum-eventcallbacktype)| 是   | -      | 订阅的事件类型。<br>- 取值为'progress'，表示任务进度。<br>- 取值为'completed'，表示任务完成。<br>- 取值为'failed'，表示任务失败。<br>- 取值为'pause'，表示任务暂停。<br>- 取值为'resume'，表示任务恢复。<br>- 取值为'remove'，表示任务删除。<br>- 取值为'response'，表示任务响应。 |
+| event    | [EventCallbackType](#enum-eventcallbacktype)| 是   | -      | 订阅的事件类型。<br>- 取值为Progress，表示任务进度。<br>- 取值为Completed，表示任务完成。<br>- 取值为Failed，表示任务失败。<br>- 取值为Pause，表示任务暂停。<br>- 取值为Resume，表示任务恢复。<br>- 取值为Remove，表示任务删除。<br>- 取值为Response，表示任务响应。 |
 | callback | ?[CallbackObject](../arkinterop/cj-api-callback_invoke.md#class-callbackobject) | 否   | None   | **命名参数。** 需要取消订阅的回调函数。若无此参数，则取消订阅当前类型的所有回调函数。|
 
 **示例：**
@@ -1811,8 +1907,10 @@ try {
 public func start(): Unit
 ```
 
-**功能：** 启动一个任务。<br>
+**功能：** 启动一个任务。
+
 以下状态的任务可以被启动：
+
 1. 刚被request.agent.create接口创建的任务。
 2. 使用request.agent.create接口创建的已经失败或者停止的下载任务。
 
@@ -1946,7 +2044,11 @@ public class TaskInfo {
 public let action: Action
 ```
 
-**功能：** 任务操作选项。<br/>- UPLOAD表示上传任务。<br/>- DOWNLOAD表示下载任务。
+**功能：** 任务操作选项。
+
+UPLOAD表示上传任务。
+
+DOWNLOAD表示下载任务。
 
 **类型：** [Action](#enum-action)
 
@@ -1962,7 +2064,11 @@ public let action: Action
 public let ctime: UInt64
 ```
 
-**功能：** 创建任务的Unix时间戳（毫秒），由当前设备的系统生成。<br/>说明：使用[request.agent.search](#func-searchfilter)进行查询时，该值需处于[after,before]区间内才可正常查询到任务id，before和after信息详见[Filter](#class-filter)。
+**功能：** 创建任务的Unix时间戳（毫秒），由当前设备的系统生成。
+
+> **说明：**
+>
+> - 使用[request.agent.search](#func-searchfilter)进行查询时，该值需处于[after,before]区间内才可正常查询到任务id，before和after信息详见[Filter](#class-filter)。
 
 **类型：** UInt64
 
@@ -1978,7 +2084,9 @@ public let ctime: UInt64
 public let data: ConfigData
 ```
 
-**功能：** 任务值。<br/>- 通过[request.agent.show](#func-showstring)、[request.agent.touch](#func-touchstring-string)进行查询。
+**功能：** 任务值。
+
+通过[request.agent.show](#func-showstring)、[request.agent.touch](#func-touchstring-string)进行查询。
 
 **类型：** [ConfigData](#enum-configdata)
 
@@ -2042,7 +2150,11 @@ public let faults: Faults
 public let gauge: Bool
 ```
 
-**功能：** 后台任务的进度通知策略。<br/>- false：代表仅完成或失败的通知。<br/>- true，发出每个进度已完成或失败的通知。
+**功能：** 后台任务的进度通知策略。
+
+false：代表仅完成或失败的通知。
+
+true，发出每个进度已完成或失败的通知。
 
 **类型：** Bool
 
@@ -2074,7 +2186,11 @@ public let mimeType: String
 public let mode: Mode
 ```
 
-**功能：** 任务模式。<br/>- FOREGROUND表示前台任务。<br/>- BACKGROUND表示后台任务。
+**功能：** 任务模式。
+
+FOREGROUND表示前台任务。
+
+BACKGROUND表示后台任务。
 
 **类型：** [Mode](#enum-mode)
 
@@ -2154,7 +2270,11 @@ public let reason: String
 public let retry: Bool
 ```
 
-**功能：** 任务的重试开关，仅应用于后台任务。<br/>- true：是 <br/>- false：否
+**功能：** 任务的重试开关，仅应用于后台任务。
+
+true：是
+
+false：否
 
 **类型：** Bool
 
@@ -2234,7 +2354,9 @@ public let tries: UInt32
 public let url: String
 ```
 
-**功能：** 任务的url。<br/>- 通过[request.agent.show](#func-showstring)、[request.agent.touch](#func-touchstring-string)进行查询。
+**功能：** 任务的url。
+
+通过[request.agent.show](#func-showstring)、[request.agent.touch](#func-touchstring-string)进行查询。
 
 **类型：** String
 
@@ -2773,7 +2895,8 @@ public enum Mode <: Equatable<Mode> & ToString{
 }
 ```
 
-**功能：** 定义模式选项。<br>
+**功能：** 定义模式选项。
+
 当应用的前台任务切换到后台一段时间后会显示运行失败或暂停，而后台任务不受此操作影响。
 
 **系统能力：** SystemCapability.Request.FileTransferAgent
@@ -2860,7 +2983,8 @@ public enum Network <: Equatable<Network> & ToString {
 }
 ```
 
-**功能：** 定义网络选项。<br>
+**功能：** 定义网络选项。
+
 网络不满足设置条件时，未执行的任务会等待执行，执行中的任务将失败或暂停。
 
 **系统能力：** SystemCapability.Request.FileTransferAgent

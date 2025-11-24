@@ -1,8 +1,14 @@
-# 广播与扫描开发指导
+# 查找设备
 
 ## 简介
 
-广播与扫描，主要提供了蓝牙设备的开启广播、关闭广播、开启扫描、关闭扫描方法，通过广播和扫描发现对端蓝牙设备，实现低功耗的通信。
+本指南主要提供了BLE扫描和BLE广播相关操作的开发指导。可以实现发现周边BLE设备和其他设备发现本机设备的场景。
+
+## 开发步骤
+
+### 申请蓝牙权限
+
+需要申请权限ohos.permission.ACCESS_BLUETOOTH。如何配置和申请权限，请参考[声明权限](../../security/AccessToken/cj-declare-permissions.md)和[向用户申请授权](../../security/AccessToken/cj-request-user-authorization.md)。
 
 ## 场景介绍
 

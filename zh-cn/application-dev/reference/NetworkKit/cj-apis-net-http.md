@@ -1,6 +1,6 @@
 # ohos.net.http（数据请求）
 
-本模块提供HTTP数据请求能力。应用可以通过HTTP发起一个数据请求，支持常见的GET、POST、OPTIONS、HEAD、PUT、DELETE、TRACE、CONNECT方法。
+http模块提供HTTP数据请求能力。应用可以通过HTTP发起一个数据请求，支持常见的GET、POST、OPTIONS、HEAD、PUT、DELETE、TRACE、CONNECT方法。
 
 ## 导入模块
 
@@ -31,7 +31,7 @@ public func createHttp(): HttpRequest
 
 > **说明：**
 >
-> 当该请求使用完毕时，需调用destroy方法主动销毁HttpRequest对象，否则会出现资源泄露问题。
+> - 当该请求使用完毕时，需调用destroy方法主动销毁HttpRequest对象，否则会出现资源泄露问题。
 
 **系统能力：** SystemCapability.Communication.NetStack
 
@@ -738,8 +738,10 @@ public func request(url: String, options: HttpRequestOptions, callback: AsyncCal
 
 > **说明：**
 >
->(1) 此接口仅支持接收5MB以内的数据，如果需要接收超过5MB的数据，则需主动在[HttpRequestOptions](#class-httprequestoptions)的maxLimit中进行设置，或者使用[requestInStream](#func-requestinstreamstring-asynccallbackuint32)接口发起流式请求。<br>
->(2) 如需传入cookies，请开发者自行在参数options中添加。<br>
+>(1) 此接口仅支持接收5MB以内的数据，如果需要接收超过5MB的数据，则需主动在[HttpRequestOptions](#class-httprequestoptions)的maxLimit中进行设置，或者使用[requestInStream](#func-requestinstreamstring-asynccallbackuint32)接口发起流式请求。
+>
+>(2) 如需传入cookies，请开发者自行在参数options中添加。
+>
 >(3) 若URL包含中文或其他语言，需先调用encodeURL(URL)编码，再发起请求。
 
 **需要权限：** ohos.permission.INTERNET
@@ -834,8 +836,10 @@ public func request(url: String, callback: AsyncCallback<HttpResponse>): Unit
 
 > **说明：**
 >
->(1) 此接口仅支持接收5MB以内的数据，如果需要接收超过5MB的数据。<br>
->(2) 如需传入cookies，请开发者自行在参数options中添加。<br>
+>(1) 此接口仅支持接收5MB以内的数据，如果需要接收超过5MB的数据。
+>
+>(2) 如需传入cookies，请开发者自行在参数options中添加。
+>
 >(3) 若URL包含中文或其他语言，需先调用encodeURL(URL)编码，再发起请求。
 
 **需要权限：** ohos.permission.INTERNET
@@ -1241,7 +1245,29 @@ public var expectDataType:?HttpDataType
 public var extraData: HttpData
 ```
 
-**功能：** 发送请求的额外数据，默认无此字段。<br />**说明：** 没有额外数据时，避免添加该参数；若必须添加，请填写undefined或者null，避免直接传入"。<br />1. 当HTTP请求为POST、PUT、DELETE等方法时，此字段为HTTP请求的content，以UTF-8编码形式作为请求体。<br />示例如下：<br />  (1) 当'content-Type'为'application/x-www-form-urlencoded'时，请求提交的信息主体数据必须在key和value进行URL转码后（encodeURIComponent/encodeURI），按照键值对"key1=value1&key2=value2&key3=value3"的方式进行编码，该字段对应的类型通常为String。<br />(2) 当'content-Type'为'text/xml'时，该字段对应的类型通常为String。<br />(3) 当'content-Type'为'application/json'时，该字段对应的类型通常为Object。<br />(4) 当'content-Type'为'application/octet-stream'时，该字段对应的类型通常为ArrayBuffer。<br />(5) 当'content-Type'为'multipart/form-data'且需上传的字段为文件时，该字段对应的类型通常为ArrayBuffer。<br>以上信息仅供参考，并可能根据具体情况有所不同。<br />2. 当HTTP请求为GET、OPTIONS、TRACE、CONNECT等方法时，此字段为HTTP请求参数的补充。开发者需传入Encode编码后的string类型参数，Object类型的参数无需预编码，参数内容会拼接到URL中进行发送。ArrayBuffer类型的参数不会做拼接处理。
+**功能：** 发送请求的额外数据，默认无此字段。
+
+> **说明：**
+>
+> - 没有额外数据时，避免添加该参数；若必须添加，请填写undefined或者null，避免直接传入"。
+
+1. 当HTTP请求为POST、PUT、DELETE等方法时，此字段为HTTP请求的content，以UTF-8编码形式作为请求体。
+
+示例如下：
+
+(1) 当'content-Type'为'application/x-www-form-urlencoded'时，请求提交的信息主体数据必须在key和value进行URL转码后（encodeURIComponent/encodeURI），按照键值对"key1=value1&key2=value2&key3=value3"的方式进行编码，该字段对应的类型通常为String。
+
+(2) 当'content-Type'为'text/xml'时，该字段对应的类型通常为String。
+
+(3) 当'content-Type'为'application/json'时，该字段对应的类型通常为Object。
+
+(4) 当'content-Type'为'application/octet-stream'时，该字段对应的类型通常为ArrayBuffer。
+
+(5) 当'content-Type'为'multipart/form-data'且需上传的字段为文件时，该字段对应的类型通常为ArrayBuffer。
+
+以上信息仅供参考，并可能根据具体情况有所不同。
+
+2. 当HTTP请求为GET、OPTIONS、TRACE、CONNECT等方法时，此字段为HTTP请求参数的补充。开发者需传入Encode编码后的string类型参数，Object类型的参数无需预编码，参数内容会拼接到URL中进行发送。ArrayBuffer类型的参数不会做拼接处理。
 
 **类型：** [HttpData](#enum-httpdata)
 
@@ -1451,7 +1477,7 @@ public init(method!: RequestMethod = RequestMethod.Get, extraData!: HttpData = H
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |method|[RequestMethod](#enum-requestmethod)|否|RequestMethod.Get|**命名参数。** 请求方式，默认为GET。|
-|extraData|[HttpData](#enum-httpdata)|否|HttpData.StringData("")|**命名参数。** 发送请求的额外数据，默认无此字段。<br />**说明：** 没有额外数据时，避免添加该参数；若必须添加，请填写undefined或者null，避免直接传入"。<br />1. 当HTTP请求为POST、PUT、DELETE等方法时，此字段为HTTP请求的content，以UTF-8编码形式作为请求体。<br />示例如下：<br />  (1) 当'content-Type'为'application/x-www-form-urlencoded'时，请求提交的信息主体数据必须在key和value进行URL转码后（encodeURIComponent/encodeURI），按照键值对"key1=value1&key2=value2&key3=value3"的方式进行编码，该字段对应的类型通常为String。<br />(2) 当'content-Type'为'text/xml'时，该字段对应的类型通常为String。<br />(3) 当'content-Type'为'application/json'时，该字段对应的类型通常为Object。<br />(4) 当'content-Type'为'application/octet-stream'时，该字段对应的类型通常为ArrayBuffer。<br />(5) 当'content-Type'为'multipart/form-data'且需上传的字段为文件时，该字段对应的类型通常为ArrayBuffer。<br>以上信息仅供参考，并可能根据具体情况有所不同。<br />2. 当HTTP请求为GET、OPTIONS、TRACE、CONNECT等方法时，此字段为HTTP请求参数的补充。开发者需传入Encode编码后的string类型参数，Object类型的参数无需预编码，参数内容会拼接到URL中进行发送。ArrayBuffer类型的参数不会做拼接处理。|
+|extraData|[HttpData](#enum-httpdata)|否|HttpData.StringData("")|**命名参数。** 发送请求的额外数据，默认无此字段。|
 |expectDataType|?[HttpDataType](#enum-httpdatatype)|否|None|**命名参数。** 指定返回数据的类型，默认无此字段。如果设置了此参数，系统将优先返回指定的类型。当指定其类型为Object时，最大长度为65536字符数。|
 |usingCache|Bool|否|true|**命名参数。** 是否使用缓存，true表示请求时优先读取缓存，false表示不使用缓存；默认为true，请求时优先读取缓存。缓存跟随当前进程生效，新缓存会替换旧缓存。|
 |priority|UInt32|否|1|**命名参数。** HTTP/HTTPS请求并发优先级，值越大优先级越高，范围[1,1000]，默认为1。|
@@ -1510,7 +1536,15 @@ public var cookies: String
 public var header: HashMap<String, String>
 ```
 
-**功能：** 发起HTTP请求返回来的响应头。当前返回的是JSON格式字符串，如需具体字段内容，需开发者自行解析。常见字段及解析方式如下：<br/>- content-type：header['content-type']。<br />- status-line：header['status-line']。<br />- date：header.date/header['date']。<br />- server：header.server/header['server']。
+**功能：** 发起HTTP请求返回来的响应头。当前返回的是JSON格式字符串，如需具体字段内容，需开发者自行解析。常见字段及解析方式如下：
+
+- content-type：header['content-type']。
+
+- status-line：header['status-line']。
+
+- date：header.date/header['date']。
+
+- server：header.server/header['server']。
 
 **类型：** HashMap\<String,String>
 
@@ -1754,7 +1788,11 @@ public var data: HttpData
 public var filePath: String
 ```
 
-**功能：** 此参数将文件路径指向的文件内容设置为表单数据，如果未指定data内容，则必须设置filePath。<br>**说明**：需传入文件管理模块支持的格式，可以通过文件管理的[access](../CoreFileKit/cj-apis-file_fs.md#static-func-accessstring-accessmodetype-accessflagtype)接口，验证文件是否存在且可访问。
+**功能：** 此参数将文件路径指向的文件内容设置为表单数据，如果未指定data内容，则必须设置filePath。
+
+> **说明：**
+>
+> - 需传入文件管理模块支持的格式，可以通过文件管理的[access](../CoreFileKit/cj-apis-file_fs.md#static-func-accessstring-accessmodetype-accessflagtype)接口，验证文件是否存在且可访问。
 
 **类型：** String
 
@@ -1786,7 +1824,15 @@ public var name: String
 public var remoteFileName: String
 ```
 
-**功能：** 上传到服务器保存为文件的名称。<br>**说明**：指定该字段后，请求头中会添加filename字段，表示上传到服务器文件的名称。<br>（1）当上传数据为文件时，若通过data字段指定文件内容，通常需要设置remoteFileName字段，用以指定上传到服务器文件的名称（实际结果与服务器具体行为有关）；若通过filePath字段指定文件路径，请求头中会自动添加filename字段，其默认值为filePath中的文件名称，如需特殊指定，也可通过本字段对filename重新设置。<br>（2）当上传数据为二进制格式时，则必须设置remoteFileName字段。
+**功能：** 上传到服务器保存为文件的名称。
+
+> **说明：**
+>
+> - 指定该字段后，请求头中会添加filename字段，表示上传到服务器文件的名称。
+>
+> - （1）当上传数据为文件时，若通过data字段指定文件内容，通常需要设置remoteFileName字段，用以指定上传到服务器文件的名称（实际结果与服务器具体行为有关）；若通过filePath字段指定文件路径，请求头中会自动添加filename字段，其默认值为filePath中的文件名称，如需特殊指定，也可通过本字段对filename重新设置。
+>
+> - （2）当上传数据为二进制格式时，则必须设置remoteFileName字段。
 
 **类型：** String
 
@@ -1815,9 +1861,9 @@ public init(name: String, contentType: String,  remoteFileName!: String = "",
 |:---|:---|:---|:---|:---|
 |name|String|是|-|数据名称。|
 |contentType|String|是|-|数据类型，如'text/plain'，'image/png', 'image/jpeg', 'audio/mpeg', 'video/mp4'等。|
-|remoteFileName|String|否|""|**命名参数。** 上传到服务器保存为文件的名称。<br>**说明**：指定该字段后，请求头中会添加filename字段，表示上传到服务器文件的名称。<br>（1）当上传数据为文件时，若通过data字段指定文件内容，通常需要设置remoteFileName字段，用以指定上传到服务器文件的名称（实际结果与服务器具体行为有关）；若通过filePath字段指定文件路径，请求头中会自动添加filename字段，其默认值为filePath中的文件名称，如需特殊指定，也可通过本字段对filename重新设置。<br>（2）当上传数据为二进制格式时，则必须设置remoteFileName字段。|
+|remoteFileName|String|否|""|**命名参数。** 上传到服务器保存为文件的名称。|
 |data|[HttpData](#enum-httpdata)|否|HttpData.StringData("")|**命名参数。** 表单数据内容。|
-|filePath|String|否|""|**命名参数。** 此参数将文件路径指向的文件内容设置为表单数据，如果未指定data内容，则必须设置filePath。<br>**说明**：需传入文件管理模块支持的格式，可以通过文件管理的[access](../CoreFileKit/cj-apis-file_fs.md#static-func-accessstring-accessmodetype-accessflagtype)接口，验证文件是否存在且可访问。|
+|filePath|String|否|""|**命名参数。** 此参数将文件路径指向的文件内容设置为表单数据，如果未指定data内容，则必须设置filePath。|
 
 ## class PerformanceTiming
 

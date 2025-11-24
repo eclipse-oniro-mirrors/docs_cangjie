@@ -1,6 +1,6 @@
 # ohos.settings（设置数据项名称）
 
-本模块提供访问设置数据项的能力。
+settings模块提供访问设置数据项的能力。
 
 > **说明：**
 > 
@@ -157,7 +157,11 @@ public enum Date <: ToString {
 AutoGainTime
 ```
 
-**功能：** 是否自动从网络获取日期、时间和时区。 <br>- 值为true，表示自动从网络获取信息。<br/>- 值为false，表示不自动获取信息。
+**功能：** 是否自动从网络获取日期、时间和时区。 
+
+值为true，表示自动从网络获取信息。
+
+值为false，表示不自动获取信息。
 
 **系统能力：** SystemCapability.Applications.Settings.Core
 
@@ -189,7 +193,11 @@ try {
 AutoGainTimeZone
 ```
 
-**功能：** 是否自动从NITZ获取时区。 <br>- 值为true，表示自动获取。<br/>- 值为false，表示不自动获取。
+**功能：** 是否自动从NITZ获取时区。
+
+值为true，表示自动获取。
+
+值为false，表示不自动获取。
 
 **系统能力：** SystemCapability.Applications.Settings.Core
 
@@ -221,7 +229,9 @@ try {
 DateFormat
 ```
 
-**功能：** 日期格式。<br/>日期格式包括mm/dd/yyyy、dd/mm/yyyy和yyyy/mm/dd，其中mm、dd和yyyy分别代表月份、日期和年份。
+**功能：** 日期格式。
+
+日期格式包括mm/dd/yyyy、dd/mm/yyyy和yyyy/mm/dd，其中mm、dd和yyyy分别代表月份、日期和年份。
 
 **系统能力：** SystemCapability.Applications.Settings.Core
 
@@ -253,7 +263,11 @@ try {
 TimeFormat
 ```
 
-**功能：** 时间以12小时格式或24小时格式显示。<br>- 值为 "12"表示12小时格式。<br/>- 值为"24"表示24小时格式。
+**功能：** 时间以12小时格式或24小时格式显示。
+
+值为 "12"表示12小时格式。
+
+值为"24"表示24小时格式。
 
 **系统能力：** SystemCapability.Applications.Settings.Core
 
@@ -330,7 +344,9 @@ public enum Display <: ToString {
 AnimatorDurationScale
 ```
 
-**功能：** 动画持续时间的比例因子，影响所有此类动画的开始延迟和持续时间。<br/>值为0，表示动画将立即结束。默认值为1。
+**功能：** 动画持续时间的比例因子，影响所有此类动画的开始延迟和持续时间。
+
+值为0，表示动画将立即结束。默认值为1。
 
 **系统能力：** SystemCapability.Applications.Settings.Core
 
@@ -362,7 +378,11 @@ try {
 AutoScreenBrightness
 ```
 
-**功能：** 是否启用屏幕亮度自动调整。<br/>- 值为AUTO_SCREEN_BRIGHTNESS_MODE，表示启用自动调整。<br/>- 值为MANUAL_SCREEN_BRIGHTNESS_MODE，表示不启用自动调整。
+**功能：** 是否启用屏幕亮度自动调整。
+
+值为AUTO_SCREEN_BRIGHTNESS_MODE，表示启用自动调整。
+
+值为MANUAL_SCREEN_BRIGHTNESS_MODE，表示不启用自动调整。
 
 **系统能力：** SystemCapability.Applications.Settings.Core
 
@@ -394,7 +414,15 @@ try {
 DefaultScreenRotation
 ```
 
-**功能：** 用屏幕的自动旋转时，此属性无效。不启用自动旋转时，以下值可用: <br>- 值为0，表示屏幕旋转0度。<br>- 值为1，表示屏幕旋转90度。<br/>- 值为2，表示屏幕旋转180度。<br/>- 值为3，表示屏幕旋转270度。
+**功能：** 用屏幕的自动旋转时，此属性无效。不启用自动旋转时，以下值可用: 
+
+值为0，表示屏幕旋转0度。
+
+值为1，表示屏幕旋转90度。
+
+值为2，表示屏幕旋转180度。
+
+值为3，表示屏幕旋转270度。
 
 **系统能力：** SystemCapability.Applications.Settings.Core
 
@@ -426,7 +454,11 @@ try {
 DisplayInversionStatus
 ```
 
-**功能：** 是否启用显示颜色反转。<br/>- 值为1，表示启用显示颜色反转。<br/>- 值为0，表示不启用显示颜色反转。
+**功能：** 是否启用显示颜色反转。
+
+值为1，表示启用显示颜色反转。
+
+值为0，表示不启用显示颜色反转。
 
 **系统能力：** SystemCapability.Applications.Settings.Core
 
@@ -554,7 +586,9 @@ try {
 TransitionAnimationScale
 ```
 
-**功能：** 过渡动画的比例因子。<br/>值为0，表示禁用过渡动画。
+**功能：** 过渡动画的比例因子。
+
+值为0，表示禁用过渡动画。
 
 **系统能力：** SystemCapability.Applications.Settings.Core
 
@@ -586,7 +620,9 @@ try {
 WindowAnimationScale
 ```
 
-**功能：**  普通窗口动画的比例因子。<br/>值为0，表示禁用窗口动画。
+**功能：**  普通窗口动画的比例因子。
+
+值为0，表示禁用窗口动画。
 
 **系统能力：** SystemCapability.Applications.Settings.Core
 

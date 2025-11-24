@@ -1,6 +1,6 @@
 # ohos.file.fileuri
 
-该模块提供通过PATH获取文件统一资源标志符（Uniform Resource Identifier，URI），后续可通过使用[ohos.file_fs（文件管理）](cj-apis-file_fs.md)进行相关open、read、write等操作，实现文件分享。
+fileuri模块提供通过PATH获取文件统一资源标志符（Uniform Resource Identifier，URI），后续可通过使用[ohos.file_fs（文件管理）](cj-apis-file_fs.md)进行相关open、read、write等操作，实现文件分享。
 
 ## 导入模块
 

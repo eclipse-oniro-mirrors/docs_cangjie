@@ -1,6 +1,6 @@
 # ohos.geo_location_manager (位置服务)
 
-位置服务提供GNSS定位、网络定位（蜂窝基站、WLAN、蓝牙定位技术）、地理编码、逆地理编码、国家码和地理围栏等基本功能。
+geo_location_manager模块提供GNSS定位、网络定位（蜂窝基站、WLAN、蓝牙定位技术）、地理编码、逆地理编码、国家码和地理围栏等基本功能。
 
 使用位置服务时请打开设备“位置”开关。如果“位置”开关关闭并且代码未设置捕获异常，可能导致应用异常。
 
@@ -55,7 +55,15 @@ public class CurrentLocationRequest {
 public var maxAccuracy: Float32
 ```
 
-**功能：** 应用向系统请求位置信息时要求的精度值，单位为米。该参数仅在精确位置功能场景（即同时授权了ohos.permission.APPROXIMATELY_LOCATION和ohos.permission.LOCATION 权限）下有效，模糊位置功能生效场景（即仅授权了ohos.permission.APPROXIMATELY_LOCATION 权限）下该字段无意义。<br/>该参数生效的情况下，系统会对比GNSS或网络定位服务上报的位置信息与应用的位置信息申请。当位置信息[Location](#class-location)中的精度值（accuracy）小于等于应用要求的精度值（maxAccuracy）时，位置信息会返回给应用；否则系统将丢弃本次收到的位置信息。<br/>默认值为0，表示不限制位置信息的精度，取值范围为大于等于0。<br/>当scenario为NAVIGATION/TRAJECTORY_TRACKING/CAR_HAILING或者priority为ACCURACY时建议设置maxAccuracy为大于10的值。<br/>当scenario为DAILY_LIFE_SERVICE/NO_POWER或者priority为LOW_POWER/FIRST_FIX时建议设置maxAccuracy为大于100的值。
+**功能：** 应用向系统请求位置信息时要求的精度值，单位为米。该参数仅在精确位置功能场景（即同时授权了ohos.permission.APPROXIMATELY_LOCATION和ohos.permission.LOCATION 权限）下有效，模糊位置功能生效场景（即仅授权了ohos.permission.APPROXIMATELY_LOCATION 权限）下该字段无意义。
+
+该参数生效的情况下，系统会对比GNSS或网络定位服务上报的位置信息与应用的位置信息申请。当位置信息[Location](#class-location)中的精度值（accuracy）小于等于应用要求的精度值（maxAccuracy）时，位置信息会返回给应用；否则系统将丢弃本次收到的位置信息。
+
+默认值为0，表示不限制位置信息的精度，取值范围为大于等于0。
+
+当scenario为NAVIGATION/TRAJECTORY_TRACKING/CAR_HAILING或者priority为ACCURACY时建议设置maxAccuracy为大于10的值。
+
+当scenario为DAILY_LIFE_SERVICE/NO_POWER或者priority为LOW_POWER/FIRST_FIX时建议设置maxAccuracy为大于100的值。
 
 **类型：** Float32
 
@@ -133,8 +141,7 @@ public init(priority!: LocationRequestPriority = LocationRequestPriority.FirstFi
 |:---|:---|:---|:---|:---|
 |priority|[LocationRequestPriority](#enum-locationrequestpriority)|否|LocationRequestPriority.FirstFix|**命名参数。** 表示优先级信息。当scenario取值为UNSET时，priority参数生效，否则priority参数不生效；当scenario和priority均取值为UNSET时，无法发起定位请求。取值范围见[LocationRequestPriority](#enum-locationrequestpriority)的定义。默认值为FIRST_FIX。|
 |scenario|[LocationRequestScenario](#enum-locationrequestscenario)|否|LocationRequestScenario.Unset|**命名参数。** 表示场景信息。当scenario取值为UNSET时，priority参数生效，否则priority参数不生效；当scenario和priority均取值为UNSET时，无法发起定位请求。取值范围见[LocationRequestScenario](#enum-locationrequestscenario)的定义。默认值为UNSET。|
-|maxAccuracy|Float32|否|0.0|**命名参数。** 应用向系统请求位置信息时要求的精度值，单位为米。该参数仅在精确位置功能场景（即同时授权了ohos.permission.APPROXIMATELY_LOCATION和ohos.permission.LOCATION 权限）下有效，模糊位置功能生效场景（即仅授权了ohos.permission.APPROXIMATELY_LOCATION 权限）下该字段无意义。<br/>该参数生效的情况下，系统会对比GNSS或网络定位服务上报的位置信息与应用的位置信息申请。当位置信息[Location](#class-location)中的精度值（accuracy）小于等于应用要求的精度值（maxAccuracy）时，位置信息会返回给应用；否则系统将丢弃本次收到的位置信息。<br/>默认值为0，表示不限制位置信息的精度，取值范围为大于等于0。<br/>当scenario为NAVIGATION/TRAJECTORY_TRACKING/CAR_HAILING或者priority为ACCURACY时建议设置maxAccuracy为大于10的值。<br/>当scenario为DAILY_LIFE_SERVICE/NO_POWER或者priority为LOW_POWER/FIRST_FIX时建议设置maxAccuracy为大于100的值。。|
-|timeoutMs|Int32|否|5000|**命名参数。** 表示超时时间，单位是毫秒，最小为1000毫秒。取值范围为大于等于1000。|
+|maxAccuracy|Float32|否|0.0|**命名参数。** 应用向系统请求位置信息时要求的精度值，单位为米。|
 
 ## class GeoLocationManager
 
@@ -729,7 +736,11 @@ public enum LocatingPriority {
 PriorityAccuracy
 ```
 
-**功能：** 表示精度优先。<br/>定位精度优先策略会同时使用GNSS定位和网络定位技术，并把一段时间内精度较好的结果返回给应用；这个时间段长度为[SingleLocationRequest](#class-singlelocationrequest).locatingTimeoutMs与“30秒”中的较小者。<br/>对设备的硬件资源消耗较大，功耗较大。
+**功能：** 表示精度优先。
+
+定位精度优先策略会同时使用GNSS定位和网络定位技术，并把一段时间内精度较好的结果返回给应用；这个时间段长度为[SingleLocationRequest](#class-singlelocationrequest).locatingTimeoutMs与“30秒”中的较小者。
+
+对设备的硬件资源消耗较大，功耗较大。
 
 **系统能力：** SystemCapability.Location.Location.Core
 
@@ -741,7 +752,9 @@ PriorityAccuracy
 PriorityLocatingSpeed
 ```
 
-**功能：** 表示快速获取位置优先，如果应用希望快速拿到一个位置，可以将优先级设置为该类型。<br/>快速定位优先策略会同时使用GNSS定位和网络定位技术，以便在室内和户外场景下均可以快速获取到位置结果，我们会把最先拿到的定位结果返回给应用。对设备的硬件资源消耗较大，功耗也较大。
+**功能：** 表示快速获取位置优先，如果应用希望快速拿到一个位置，可以将优先级设置为该类型。
+
+快速定位优先策略会同时使用GNSS定位和网络定位技术，以便在室内和户外场景下均可以快速获取到位置结果，我们会把最先拿到的定位结果返回给应用。对设备的硬件资源消耗较大，功耗也较大。
 
 **系统能力：** SystemCapability.Location.Location.Core
 
@@ -771,7 +784,9 @@ public enum LocationRequestPriority {
 Accuracy
 ```
 
-**功能：** 表示精度优先。<br/>定位精度优先策略主要以GNSS定位技术为主。我们会在GNSS提供稳定位置结果之前使用网络定位技术提供服务。在持续定位过程中，如果超过30秒无法获取GNSS定位结果则使用网络定位技术。对设备的硬件资源消耗较大，功耗较大。
+**功能：** 表示精度优先。
+
+定位精度优先策略主要以GNSS定位技术为主。我们会在GNSS提供稳定位置结果之前使用网络定位技术提供服务。在持续定位过程中，如果超过30秒无法获取GNSS定位结果则使用网络定位技术。对设备的硬件资源消耗较大，功耗较大。
 
 **系统能力：** SystemCapability.Location.Location.Core
 
@@ -783,7 +798,9 @@ Accuracy
 FirstFix
 ```
 
-**功能：** 表示快速获取位置优先，如果应用希望快速拿到一个位置，可以将优先级设置为该字段。<br/>快速定位优先策略会同时使用GNSS定位和网络定位技术，以便在室内和户外场景下均可以快速获取到位置结果；当各种定位技术都有提供位置结果时，系统会选择其中精度较好的结果返回给应用。因为对各种定位技术同时使用，对设备的硬件资源消耗较大，功耗也较大。
+**功能：** 表示快速获取位置优先，如果应用希望快速拿到一个位置，可以将优先级设置为该字段。
+
+快速定位优先策略会同时使用GNSS定位和网络定位技术，以便在室内和户外场景下均可以快速获取到位置结果；当各种定位技术都有提供位置结果时，系统会选择其中精度较好的结果返回给应用。因为对各种定位技术同时使用，对设备的硬件资源消耗较大，功耗也较大。
 
 **系统能力：** SystemCapability.Location.Location.Core
 
@@ -795,7 +812,9 @@ FirstFix
 LowPower
 ```
 
-**功能：** 表示低功耗优先。<br/>低功耗定位优先策略仅使用网络定位技术，在室内和户外场景均可提供定位服务，因为其依赖周边基站、可见WLAN、蓝牙设备的分布情况，定位结果的精度波动范围较大，推荐在对定位结果精度要求不高的场景下使用该策略，可以有效节省设备功耗。
+**功能：** 表示低功耗优先。
+
+低功耗定位优先策略仅使用网络定位技术，在室内和户外场景均可提供定位服务，因为其依赖周边基站、可见WLAN、蓝牙设备的分布情况，定位结果的精度波动范围较大，推荐在对定位结果精度要求不高的场景下使用该策略，可以有效节省设备功耗。
 
 **系统能力：** SystemCapability.Location.Location.Core
 
@@ -831,7 +850,7 @@ public enum LocationRequestScenario {
 
 > **说明：**
 >
-> 当使用NAVIGATION/TRAJECTORY_TRACKING/CAR_HAILING场景进行单次定位或持续定位时，会在GNSS提供稳定位置结果之前使用网络定位技术提供服务；在持续定位时，如果超过30秒无法获取GNSS定位结果则会使用网络定位技术获取位置。
+> - 当使用NAVIGATION/TRAJECTORY_TRACKING/CAR_HAILING场景进行单次定位或持续定位时，会在GNSS提供稳定位置结果之前使用网络定位技术提供服务；在持续定位时，如果超过30秒无法获取GNSS定位结果则会使用网络定位技术获取位置。
 
 **系统能力：** SystemCapability.Location.Location.Core
 
@@ -843,7 +862,11 @@ public enum LocationRequestScenario {
 CarHailing
 ```
 
-**功能：** 表示打车场景。<br/>适用于用户出行打车时定位当前位置的场景，如网约车类应用。<br/>主要使用GNSS定位技术提供定位服务，功耗较高。
+**功能：** 表示打车场景。
+
+适用于用户出行打车时定位当前位置的场景，如网约车类应用。
+
+主要使用GNSS定位技术提供定位服务，功耗较高。
 
 **系统能力：** SystemCapability.Location.Location.Core
 
@@ -855,7 +878,11 @@ CarHailing
 DailyLifeService
 ```
 
-**功能：** 表示日常服务使用场景。<br/>适用于不需要定位用户精确位置的使用场景，如新闻资讯、网购、点餐类应用。<br/>该场景仅使用网络定位技术提供定位服务，功耗较低。
+**功能：** 表示日常服务使用场景。
+
+适用于不需要定位用户精确位置的使用场景，如新闻资讯、网购、点餐类应用。
+
+该场景仅使用网络定位技术提供定位服务，功耗较低。
 
 **系统能力：** SystemCapability.Location.Location.Core
 
@@ -867,7 +894,11 @@ DailyLifeService
 Navigation
 ```
 
-**功能：** 表示导航场景。<br/>适用于在户外获取设备实时位置的场景，如车载、步行导航。<br/>主要使用GNSS定位技术提供定位服务，功耗较高。
+**功能：** 表示导航场景。
+
+适用于在户外获取设备实时位置的场景，如车载、步行导航。
+
+主要使用GNSS定位技术提供定位服务，功耗较高。
 
 **系统能力：** SystemCapability.Location.Location.Core
 
@@ -891,7 +922,11 @@ NoPower
 TrajectoryTracking
 ```
 
-**功能：** 表示运动轨迹记录场景。<br/>适用于记录用户位置轨迹的场景，如运动类应用记录轨迹功能。<br/>主要使用GNSS定位技术提供定位服务，功耗较高。
+**功能：** 表示运动轨迹记录场景。
+
+适用于记录用户位置轨迹的场景，如运动类应用记录轨迹功能。
+
+主要使用GNSS定位技术提供定位服务，功耗较高。
 
 **系统能力：** SystemCapability.Location.Location.Core
 

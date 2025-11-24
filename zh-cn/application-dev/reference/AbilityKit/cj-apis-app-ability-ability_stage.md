@@ -1,6 +1,6 @@
 # ohos.app.ability.ability_stage
 
-AbilityStage提供AbilityStage相关的功能，包括AbilityStage的创建、注册等。
+ability_stage模块提供AbilityStage相关的功能，包括AbilityStage的创建、注册等。
 
 ## 导入模块
 
