@@ -180,7 +180,7 @@ public func fontFamily(value: ?ResourceStr): This
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|value|?[ResourceStr](./cj-common-types.md#interface-resourcestr)|是|-| 按钮文本内容。<br>初始值："HarmonyOS Sans"。|
+|value|?[ResourceStr](./cj-common-types.md#interface-resourcestr)|是|-| 字体列表。<br>初始值："HarmonyOS Sans"。|
 
 ### func fontSize(?Length)
 
@@ -758,7 +758,7 @@ class EntryView {
                     }.alignItems(VerticalAlign.Center).width(90).height(40)
                 }.shape(ButtonType.Normal).stateEffect(true).borderRadius(8).width(90)
                 Button("Disable").shape(ButtonType.Normal).stateEffect(true).opacity(0.5)
-                    .borderRadius(8).width(90)
+                    .borderRadius(8).width(90).backgroundColor(0xF55A42)
                 }
 
             Text("Capsule button").fontSize(9).fontColor(0xCCCCCC)
@@ -776,7 +776,7 @@ class EntryView {
                     loggerInfo("The login is successful")
                 })
                 Button("Disable").shape(ButtonType.Capsule).stateEffect(true).opacity(0.5)
-                    .borderRadius(8).width(90)
+                    .borderRadius(8).width(90).backgroundColor(0xF55A42)
             }
 
             Text("Circle button").fontSize(9).fontColor(0xCCCCCC)
@@ -785,7 +785,7 @@ class EntryView {
                 Button("YES").shape(ButtonType.Circle).stateEffect(true).width(55)
                     .height(55)
                 Button("NO").shape(ButtonType.Capsule).stateEffect(true).width(55)
-                    .height(55).margin(left: 20).fontSize(15)
+                    .height(55).margin(left: 20).fontSize(15).backgroundColor(0xF55A42)
                 }
         }.height(400).padding(left: 35, right: 35, top: 35)
     }

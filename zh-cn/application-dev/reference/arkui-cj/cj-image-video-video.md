@@ -495,7 +495,7 @@ public func setCurrentTime(value: Int32, seekMode: ?SeekMode): Unit
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |value|Int32|是|-|播放时间。|
-|seekMode|?[SeekMode](./cj-common-types.md#enum-seekmode)|是|-|搜索模式。|
+|seekMode|?[SeekMode](./cj-common-types.md#enum-seekmode)|是|-|跳转模式。|
 
 #### func start()
 
@@ -529,7 +529,7 @@ public func stop(): Unit
 package ohos_app_cangjie_entry
 import kit.ArkUI.*
 import ohos.i18n.*
-import ohos.resource_manager.*
+import ohos.resource.*
 import ohos.arkui.state_macro_manage.*
 
 @Entry

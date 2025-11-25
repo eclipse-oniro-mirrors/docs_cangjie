@@ -171,9 +171,9 @@ Button组件通常用于触发某些操作，可以绑定[onClick](../reference/
 
 ```cangjie
   Button('Ok', ButtonOptions(shape: ButtonType.Normal, stateEffect: true))
-      .onClick{ evt =>
+      .onClick({ evt =>
       Hilog.info(0, '', 'Button onClick')
-  }
+  })
 ```
 
 ## 场景示例

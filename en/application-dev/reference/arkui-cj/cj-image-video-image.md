@@ -559,7 +559,7 @@ package ohos_app_cangjie_entry
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
 import ohos.i18n.*
-import ohos.resource_manager.*
+import ohos.resource.*
 
 @Entry
 @Component
@@ -613,7 +613,7 @@ package ohos_app_cangjie_entry
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
 import ohos.i18n.*
-import ohos.resource_manager.*
+import ohos.resource.*
 
 @Entry
 @Component
@@ -661,7 +661,7 @@ package ohos_app_cangjie_entry
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
 import ohos.i18n.*
-import ohos.resource_manager.*
+import ohos.resource.*
 
 @Entry
 @Component
@@ -743,7 +743,7 @@ package ohos_app_cangjie_entry
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
 import ohos.i18n.*
-import ohos.resource_manager.*
+import ohos.resource.*
 
 @Entry
 @Component
@@ -782,7 +782,7 @@ package ohos_app_cangjie_entry
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
 import ohos.i18n.*
-import ohos.resource_manager.*
+import ohos.resource.*
 import ohos.arkui.component.ImageFit
 
 @Entry
@@ -821,7 +821,7 @@ package ohos_app_cangjie_entry
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
 import ohos.i18n.*
-import ohos.resource_manager.*
+import ohos.resource.*
 import ohos.arkui.component.ImageFit
 
 @Entry
@@ -855,7 +855,7 @@ package ohos_app_cangjie_entry
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
 import ohos.i18n.*
-import ohos.resource_manager.*
+import ohos.resource.*
 import ohos.arkui.component.ImageFit
 
 @Entry
@@ -890,7 +890,7 @@ package ohos_app_cangjie_entry
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
 import ohos.i18n.*
-import ohos.resource_manager.*
+import ohos.resource.*
 
 @Entry
 @Component

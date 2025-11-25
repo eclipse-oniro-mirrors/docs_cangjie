@@ -83,11 +83,11 @@ In addition to supporting [Universal Events](../reference/arkui-cj/cj-universal-
 
 ```cangjie
 Toggle(ToggleType.Switch, isOn: false)
-    .onChange {
+    .onChange ({
         isOn => if (isOn) {
             // Actions to be performed
         }
-    }
+    })
 ```
 
 ## Usage Example

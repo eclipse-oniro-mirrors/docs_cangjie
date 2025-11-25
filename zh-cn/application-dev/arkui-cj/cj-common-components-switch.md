@@ -95,11 +95,11 @@ Toggle(toggleType: ToggleType, isOn!: Bool = false)
 
 ```cangjie
 Toggle(ToggleType.Switch, isOn: false)
-    .onChange {
+    .onChange ({
         isOn => if (isOn) {
             // 需要执行的操作
         }
-    }
+    })
 ```
 
 ## 场景示例

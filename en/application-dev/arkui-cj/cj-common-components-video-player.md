@@ -137,7 +137,7 @@ Video controllers primarily manage video states, including play, pause, stop, an
 
   import kit.ArkUI.*
   import ohos.arkui.state_macro_manage.*
-  import ohos.resource_manager.*
+  import ohos.resource.*
 
   @Entry
   @Component
@@ -169,7 +169,7 @@ Video controllers primarily manage video states, including play, pause, stop, an
 
   import kit.ArkUI.*
   import ohos.arkui.state_macro_manage.*
-  import ohos.resource_manager.*
+  import ohos.resource.*
 
   @Entry
   @Component

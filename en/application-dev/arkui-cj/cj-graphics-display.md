@@ -16,18 +16,7 @@ The Image component supports loading two types of resources: archived images and
 
 ### Archived Image Data Sources
 
-Archived image data sources can be categorized into local resources, network resources, Resource resources, media library resources, and base64.
-
-- **Local Resources**
-
-  Create a folder and place local images anywhere within the `cangjie` folder.
-
-  The Image component can display images by referencing the local image path (the root directory is the `cangjie` folder).
-
-  ```cangjie
-  Image('file://media/images/view.jpg')
-  .width(200)
-  ```
+Archived image data sources can be categorized into network resources, Resource resources, and base64.
 
 - **Network Resources**
 
@@ -55,17 +44,6 @@ Archived image data sources can be categorized into local resources, network res
   Image(@r(app.media.startIcon))
   ```
 
-- **Media Library (file://media/storage)**
-
-  Supports strings prefixed with `file://`.
-
-  The URL format obtained from the media library typically looks like this:
-
-  ```cangjie
-  Image('file://media/Photos/5')
-  .width(200)
-  ```
-
 ## Displaying Vector Graphics
 
 The Image component can display vector graphics (images in svg format). For svg tag documentation, refer to [svg Description](../reference/ImageKit/cj-apis-image.md#svg-tag-description).
@@ -88,7 +66,7 @@ The svg image after setting the drawing color is shown below:
 
 ### Referencing Bitmaps in Vector Graphics
 
-If the svg source loaded by the Image component contains references to local bitmaps, the path of the svg source should be set to the project path with `cangjie` as the root directory. The path of the local bitmap should be set as a relative path at the same level as the svg source.
+If the svg source loaded by the Image component contains references to local bitmaps, the path of the svg source should be set to the directory src/main/resources/base/media. The path of the local bitmap should be set as a relative path at the same level as the svg source.
 
 The method for setting the svg source path loaded by the Image component is as follows:
 
@@ -102,7 +80,7 @@ The svg source specifies the local bitmap path via the `xmlns:xlink` attribute o
 
 ```cangjie
 <svg width="200" height="200">
-  <image width="200" height="200" xmlns:xlink="sky.svg">
+  <image width="200" height="200" xmlns:xlink="sky.png">
 </svg>
 ```
 
@@ -124,7 +102,7 @@ Use the `objectFit` property to scale the image within a frame of fixed height a
 package ohos_app_cangjie_entry
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
-import ohos.resource_manager.*
+import ohos.resource.*
 
 @Entry
 @Component
@@ -206,7 +184,7 @@ package ohos_app_cangjie_entry
 
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
-import ohos.resource_manager.*
+import ohos.resource.*
 
 @Entry
 @Component
@@ -268,7 +246,7 @@ package ohos_app_cangjie_entry
 
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
-import ohos.resource_manager.*
+import ohos.resource.*
 
 @Entry
 @Component
@@ -322,7 +300,7 @@ package ohos_app_cangjie_entry
 
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
-import ohos.resource_manager.*
+import ohos.resource.*
 
 @Entry
 @Component
@@ -369,7 +347,7 @@ package ohos_app_cangjie_entry
 
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
-import ohos.resource_manager.*
+import ohos.resource.*
 
 @Entry
 @Component
@@ -402,44 +380,6 @@ class EntryView {
 
 ![image5](figures/image5.png)
 
-### Adding Filter Effects to Images
-
-Use the `colorFilter` property to modify the pixel colors of an image, adding filter effects.
-
- <!-- run -->
-
-```cangjie
-package ohos_app_cangjie_entry
-
-import kit.ArkUI.*
-import ohos.arkui.state_macro_manage.*
-import ohos.resource_manager.*
-
-@Entry
-@Component
-class EntryView {
-    let colorFilter = ColorFilter([1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0,
-        0.0, 1.0, 0.0])
-    func build() {
-        Column() {
-            Text() {
-                ImageSpan(@r(app.media.example))
-                    .width(40.percent)
-                    .margin(10)
-            }
-            Text() {
-                ImageSpan(@r(app.media.example))
-                    .width(40.percent)
-                    .colorFilter(colorFilter)
-                    .margin(10)
-            }
-        }
-    }
-}
-```
-
-![image6](figures/image6.png)
-
 ### Synchronous Image Loading
 
 Typically, image loading is performed asynchronously to avoid blocking the main thread and affecting UI interactions. However, in specific cases, image refreshes may cause flickering. The `syncLoad` property can be used to load images synchronously, preventing flickering. This is not recommended for long image loading times, as it may cause the page to become unresponsive.
@@ -458,7 +398,7 @@ package ohos_app_cangjie_entry
 
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
-import ohos.resource_manager.*
+import ohos.resource.*
 import kit.PerformanceAnalysisKit.Hilog
 
 @Entry

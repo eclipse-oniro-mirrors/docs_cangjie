@@ -31,17 +31,17 @@ In addition to supporting [Universal Events](../reference/arkui-cj/cj-universal-
 
 ```cangjie
 Radio(value: 'Radio1', group: 'radioGroup')
-    .onChange{ isChecked =>
+    .onChange({ isChecked =>
         if(isChecked) {
         // Operations to be performed
         }
-    }
+    })
 Radio(value: 'Radio2', group: 'radioGroup')
-    .onChange{ isChecked =>
+    .onChange({ isChecked =>
         if(isChecked) {
         // Operations to be performed
         }
-    }
+    })
 ```
 
 ## Usage Example
