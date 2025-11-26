@@ -55,14 +55,13 @@ public func createAbilityStageContextFromJSValue(context: JSContext, input: JSVa
 <!-- compile -->
 ```cangjie
 import ohos.ark_interop.*
-import ohos.ark_interop_helper.*
 import kit.AbilityKit.*
 
-class MyAbilityStage <: AbilityStage {
+class MyAbilityStage1 <: AbilityStage {
     public override func onCreate(): Unit {
-        let jsContext = JSRuntime.getCurrentContext()
+        let jsContext = jsRuntime.getOrThrow().mainContext
         let input = this.context.toJSValue(jsContext)
-        let ctx = createAbilityStageContextFromJSValue(JjsContext, input)
+        let ctx = createAbilityStageContextFromJSValue(jsContext, input)
     }
 }
 ```
@@ -97,15 +96,14 @@ public func createApplicationContextFromJSValue(context: JSContext, input: JSVal
 <!-- compile -->
 ```cangjie
 import ohos.ark_interop.*
-import ohos.ark_interop_helper.*
 import kit.AbilityKit.*
 import kit.TestKit.*
 
-class MyAbilityStage <: AbilityStage {
+class MyAbilityStage2 <: AbilityStage {
     public override func onCreate(): Unit {
-        let jsContext = JSRuntime.getCurrentContext()
+        let jsContext = jsRuntime.getOrThrow().mainContext
         let input = AbilityDelegatorRegistry.getAbilityDelegator().getAppContext().toJSValue(jsContext)
-        let ctx = createApplicationContextFromJSValue(JjsContext, input)
+        let ctx = createApplicationContextFromJSValue(jsContext, input)
     }
 }
 ```
@@ -140,15 +138,13 @@ public func createContextFromJSValue(context: JSContext, input: JSValue): Contex
 <!-- compile -->
 ```cangjie
 import ohos.ark_interop.*
-import ohos.ark_interop_helper.*
 import kit.AbilityKit.*
-import kit.TestKit.*
 
-class MyAbilityStage <: AbilityStage {
+class MyAbilityStage3 <: AbilityStage {
     public override func onCreate(): Unit {
-        let jsContext = JSRuntime.getCurrentContext()
+        let jsContext = jsRuntime.getOrThrow().mainContext
         let input = this.context.toJSValue(jsContext)
-        let ctx = createContextFromJSValue(JjsContext, input)
+        let ctx = createContextFromJSValue(jsContext, input)
     }
 }
 ```
@@ -183,15 +179,13 @@ public func createUIAbilityContextFromJSValue(context: JSContext, input: JSValue
 <!-- compile -->
 ```cangjie
 import ohos.ark_interop.*
-import ohos.ark_interop_helper.*
 import kit.AbilityKit.*
-import kit.TestKit.*
 
-class MyUIAbility <: UIAbility {
+class MyUIAbility1 <: UIAbility {
     public override func onCreate(want: Want, launchParam: LaunchParam): Unit {
-        let jsContext = JSRuntime.getCurrentContext()
+        let jsContext = jsRuntime.getOrThrow().mainContext
         let input = this.context.toJSValue(jsContext)
-        let ctx = createContextFromJSValue(JjsContext, input)
+        let ctx = createContextFromJSValue(jsContext, input)
     }
 }
 ```
@@ -287,9 +281,9 @@ public static func registerCreator(name: String, creator: () -> Ability): Unit
 ```cangjie
 import kit.AbilityKit.*
 
-let ENTRY_ABILITY_REGISTER_RESULT = Ability.registerCreator("entry", () -> MyUIAbility)
+let ENTRY_ABILITY_REGISTER_RESULT1 = Ability.registerCreator("entry", { => MyUIAbility2()})
 
-class MyUIAbility <: UIAbility {
+class MyUIAbility2 <: UIAbility {
     public override func onCreate(want: Want, launchParam: LaunchParam): Unit {
     }
 }
@@ -337,7 +331,7 @@ public var currentHapModuleInfo: HapModuleInfo
 ```cangjie
 import kit.AbilityKit.*
 
-class MyAbilityStage <: AbilityStage {
+class MyAbilityStage4 <: AbilityStage {
     public override func onCreate(): Unit {
         let info = this.context.currentHapModuleInfo
     }
@@ -398,7 +392,7 @@ public prop applicationInfo: ApplicationInfo
 ```cangjie
 import kit.AbilityKit.*
 
-class MyUIAbility <: UIAbility {
+class MyUIAbility3 <: UIAbility {
     public override func onCreate(want: Want, launchParam: LaunchParam): Unit {
         let info = this.context.applicationInfo
     }
@@ -427,7 +421,7 @@ public mut prop area: AreaMode
 ```cangjie
 import kit.AbilityKit.*
 
-class MyUIAbility <: UIAbility {
+class MyUIAbility4 <: UIAbility {
     public override func onCreate(want: Want, launchParam: LaunchParam): Unit {
         let area = this.context.area
     }
@@ -456,7 +450,7 @@ public prop filesDir: String
 ```cangjie
 import kit.AbilityKit.*
 
-class MyUIAbility <: UIAbility {
+class MyUIAbility5 <: UIAbility {
     public override func onCreate(want: Want, launchParam: LaunchParam): Unit {
         let filesDir = this.context.filesDir
     }
@@ -485,7 +479,7 @@ public prop resourceManager: ResourceManager
 ```cangjie
 import kit.AbilityKit.*
 
-class MyUIAbility <: UIAbility {
+class MyUIAbility6 <: UIAbility {
     public override func onCreate(want: Want, launchParam: LaunchParam): Unit {
         let resourceManager = this.context.resourceManager
     }
@@ -534,7 +528,7 @@ public mut prop context: UIAbilityContext
 ```cangjie
 import kit.AbilityKit.*
 
-class MyUIAbility <: UIAbility {
+class MyUIAbility7 <: UIAbility {
     public override func onCreate(want: Want, launchParam: LaunchParam): Unit {
         let context = this.context
     }
@@ -567,7 +561,7 @@ public mut prop lastRequestWant: Want
 ```cangjie
 import kit.AbilityKit.*
 
-class MyUIAbility <: UIAbility {
+class MyUIAbility8 <: UIAbility {
     public override func onCreate(want: Want, launchParam: LaunchParam): Unit {
         let lastRequestWant = this.lastRequestWant
     }
@@ -596,7 +590,7 @@ public mut prop launchWant: Want
 ```cangjie
 import kit.AbilityKit.*
 
-class MyUIAbility <: UIAbility {
+class MyUIAbility9 <: UIAbility {
     public override func onCreate(want: Want, launchParam: LaunchParam): Unit {
         let launchWant = this.launchWant
     }
@@ -621,8 +615,8 @@ public open func onBackground(): Unit
 ```cangjie
 import kit.AbilityKit.*
 
-class MyUIAbility <: UIAbility {
-    public override onBackground() {
+class MyUIAbility10 <: UIAbility {
+    public override func onBackground() {
         let launchWant = this.launchWant
     }
 }
@@ -653,7 +647,7 @@ public open func onCreate(want: Want, launchParam: LaunchParam): Unit
 ```cangjie
 import kit.AbilityKit.*
 
-class MyUIAbility <: UIAbility {
+class MyUIAbility11 <: UIAbility {
     public override func onCreate(want: Want, launchParam: LaunchParam): Unit {
         let launchWant = this.launchWant
     }
@@ -683,8 +677,8 @@ public open func onDestroy(): Unit
 ```cangjie
 import kit.AbilityKit.*
 
-class MyUIAbility <: UIAbility {
-    public override func onDestroy(): Unit
+class MyUIAbility12 <: UIAbility {
+    public override func onDestroy(): Unit {}
 }
 ```
 
@@ -706,8 +700,8 @@ public open func onForeground(): Unit
 ```cangjie
 import kit.AbilityKit.*
 
-class MyUIAbility <: UIAbility {
-    public override func onForeground(): Unit
+class MyUIAbility13 <: UIAbility {
+    public override func onForeground(): Unit {}
 }
 ```
 
@@ -736,8 +730,8 @@ public open func onNewWant(want: Want, launchParam: LaunchParam): Unit
 ```cangjie
 import kit.AbilityKit.*
 
-class MyUIAbility <: UIAbility {
-    public override func onNewWant(want: Want, launchParam: LaunchParam): Unit
+class MyUIAbility14 <: UIAbility {
+    public override func onNewWant(want: Want, launchParam: LaunchParam): Unit {}
 }
 ```
 
@@ -764,9 +758,10 @@ public open func onWindowStageCreate(windowStage: WindowStage): Unit
 <!-- compile -->
 ```cangjie
 import kit.AbilityKit.*
+import kit.ArkUI.WindowStage
 
-class MyUIAbility <: UIAbility {
-    public override func onWindowStageCreate(windowStage: WindowStage): Unit
+class MyUIAbility15 <: UIAbility {
+    public override func onWindowStageCreate(windowStage: WindowStage): Unit {}
 }
 ```
 
@@ -788,8 +783,8 @@ public open func onWindowStageDestroy(): Unit
 ```cangjie
 import kit.AbilityKit.*
 
-class MyUIAbility <: UIAbility {
-    public override func onWindowStageDestroy(): Unit
+class MyUIAbility16 <: UIAbility {
+    public override func onWindowStageDestroy(): Unit {}
 }
 ```
 
@@ -842,8 +837,9 @@ public func isTerminating(): Bool
 <!-- compile -->
 ```cangjie
 import kit.AbilityKit.*
+import kit.ArkUI.WindowStage
 
-class MyUIAbility <: UIAbility {
+class MyUIAbility17 <: UIAbility {
     public override func onWindowStageCreate(windowStage: WindowStage): Unit {
         let isTerminating = this.context.isTerminating()
     }
@@ -897,10 +893,12 @@ public func requestDialogService(want: Want, result: AsyncCallback<RequestResult
 <!-- compile -->
 ```cangjie
 import kit.AbilityKit.*
+import kit.ArkUI.WindowStage
+import ohos.business_exception.BusinessException
 
-class MyUIAbility <: UIAbility {
+class MyUIAbility18 <: UIAbility {
     public override func onWindowStageCreate(windowStage: WindowStage): Unit {
-        this.context.requestDialogService(Want(), (err: ?BusinessException, data: ?RequestResult) => {})
+        this.context.requestDialogService(Want(), {err: ?BusinessException, data: ?RequestResult => })
     }
 }
 ```
@@ -966,8 +964,9 @@ public func startAbility(want: Want, options!: ?StartOptions = None): Unit
 <!-- compile -->
 ```cangjie
 import kit.AbilityKit.*
+import kit.ArkUI.WindowStage
 
-class MyUIAbility <: UIAbility {
+class MyUIAbility19 <: UIAbility {
     public override func onWindowStageCreate(windowStage: WindowStage): Unit {
             this.context.startAbility(Want(bundleName: "com.example.cangjieinsight", abilityName: "testAbility"))
     }
@@ -1037,12 +1036,14 @@ UIAbility被启动后，有如下情况：
 <!-- compile -->
 ```cangjie
 import kit.AbilityKit.*
+import kit.ArkUI.WindowStage
+import ohos.business_exception.BusinessException
 
-class MyUIAbility <: UIAbility {
+class MyUIAbility20 <: UIAbility {
     public override func onWindowStageCreate(windowStage: WindowStage): Unit {
             this.context.startAbilityForResult(
                 Want(bundleName: "com.example.cangjieinsight", abilityName: "testAbility"),
-                (err: ?BusinessException, data: ?AbilityResult) => {})
+                {err: ?BusinessException, data: ?AbilityResult => })
     }
 }
 ```
@@ -1109,12 +1110,14 @@ UIAbility被启动后，有如下情况：
 <!-- compile -->
 ```cangjie
 import kit.AbilityKit.*
+import kit.ArkUI.WindowStage
+import ohos.business_exception.BusinessException
 
-class MyUIAbility <: UIAbility {
+class MyUIAbility21 <: UIAbility {
     public override func onWindowStageCreate(windowStage: WindowStage): Unit {
             this.context.startAbilityForResult(
                 Want(bundleName: "com.example.cangjieinsight", abilityName: "testAbility"), StartOptions(),
-                (err: ?BusinessException, data: ?AbilityResult) => {})
+                {err: ?BusinessException, data: ?AbilityResult => })
     }
 }
 ```
@@ -1150,8 +1153,9 @@ public func terminateSelf(): Unit
 <!-- compile -->
 ```cangjie
 import kit.AbilityKit.*
+import kit.ArkUI.WindowStage
 
-class MyUIAbility <: UIAbility {
+class MyUIAbility22 <: UIAbility {
     public override func onWindowStageCreate(windowStage: WindowStage): Unit {
             this.context.terminateSelf()
     }
@@ -1197,8 +1201,9 @@ public func terminateSelfWithResult(parameter: AbilityResult): Unit
 <!-- compile -->
 ```cangjie
 import kit.AbilityKit.*
+import kit.ArkUI.WindowStage
 
-class MyUIAbility <: UIAbility {
+class MyUIAbility23 <: UIAbility {
     public override func onWindowStageCreate(windowStage: WindowStage): Unit {
             this.context.terminateSelfWithResult(AbilityResult(0))
     }

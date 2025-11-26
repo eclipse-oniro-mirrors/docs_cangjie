@@ -69,15 +69,14 @@ public func create(context: UIAbilityContext, config: Config): Task
 // main_ability.cj
 
 import kit.BasicServicesKit.*
-import kit.AbilityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 import ohos.business_exception.BusinessException
 
 try {
-    let context = Global.getAbilityContext()
+    let context = Global.abilityContext
     let config = Config(
-        action = Action.Download,
-        url = "https://example.com/file.txt"
+        Action.Download,
+        "https://example.com/file.txt"
     )
     let task = create(context, config)
     Hilog.info(0, "test", "成功创建任务，任务ID: ${task.tid}")
@@ -130,12 +129,11 @@ public func getTask(context: UIAbilityContext, id: String, token!: ?String = Non
 // main_ability.cj
 
 import kit.BasicServicesKit.*
-import kit.AbilityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 import ohos.business_exception.BusinessException
 
 try {
-    let context = Global.getAbilityContext()
+    let context = Global.abilityContext
     let taskId = "example_task_id"
     let task = getTask(context, taskId)
     Hilog.info(0, "test", "成功获取任务，任务ID: ${task.tid}")
@@ -179,7 +177,6 @@ public func remove(id: String): Unit
 // main_ability.cj
 
 import kit.BasicServicesKit.*
-import kit.AbilityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 import ohos.business_exception.BusinessException
 
@@ -232,14 +229,13 @@ public func search(filter!: Filter = Filter()): Array<String>
 // main_ability.cj
 
 import kit.BasicServicesKit.*
-import kit.AbilityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 import ohos.business_exception.BusinessException
 
 try {
     let filter = Filter()
-    let taskIds = search(filter)
-    Hilog.info(0, "test", "搜索到任务数量: ${taskIds.length}")
+    let taskIds = search(filter: filter)
+    Hilog.info(0, "test", "搜索到任务数量: ${taskIds.size}")
     for (id in taskIds) {
         Hilog.info(0, "test", "任务ID: ${id}")
     }
@@ -289,14 +285,13 @@ public func show(id: String): TaskInfo
 // main_ability.cj
 
 import kit.BasicServicesKit.*
-import kit.AbilityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 import ohos.business_exception.BusinessException
 
 try {
     let taskId = "example_task_id"
     let taskInfo = show(taskId)
-    Hilog.info(0, "test", "任务信息: ${taskInfo.toString()}")
+    Hilog.info(0, "test", "任务信息: ${taskInfo.description}")
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -344,7 +339,6 @@ public func touch(id: String, token: String): TaskInfo
 // main_ability.cj
 
 import kit.BasicServicesKit.*
-import kit.AbilityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 import ohos.business_exception.BusinessException
 
@@ -352,7 +346,7 @@ try {
     let taskId = "example_task_id"
     let token = "example_token"
     let taskInfo = touch(taskId, token)
-    Hilog.info(0, "test", "任务信息: ${taskInfo.toString()}")
+    Hilog.info(0, "test", "任务信息: ${taskInfo.description}")
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -886,26 +880,25 @@ public init(action: Action, url: String, title!: ?String = None, description!: S
 // main_ability.cj
 
 import kit.BasicServicesKit.*
-import kit.AbilityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 import ohos.business_exception.BusinessException
 
 try {
     let config = Config(
-        action = Action.Download,
-        url = "https://example.com/file.txt",
-        title = "示例下载任务",
-        description = "这是一个示例下载任务",
-        mode = Mode.Background,
-        overwrite = true,
-        network = Network.Wifi,
-        metered = false,
-        roaming = true,
-        retry = true,
-        redirect = true,
-        gauge = false,
-        precise = false,
-        priority = 0
+        Action.Download,
+        "https://example.com/file.txt",
+        title: "示例下载任务",
+        description: "这是一个示例下载任务",
+        mode: Mode.Background,
+        overwrite: true,
+        network: Network.Wifi,
+        metered: false,
+        roaming: true,
+        retry: true,
+        redirect: true,
+        gauge: false,
+        precise: false,
+        priority: 0
     )
     Hilog.info(0, "test", "成功创建配置对象")
 } catch (e: BusinessException) {
@@ -1055,15 +1048,14 @@ public init(
 // main_ability.cj
 
 import kit.BasicServicesKit.*
-import kit.AbilityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 import ohos.business_exception.BusinessException
 
 try {
     let fileSpec = FileSpec(
-        path = "./example.txt",
-        mimeType = "text/plain",
-        filename = "example.txt"
+        "./example.txt",
+        mimeType: "text/plain",
+        filename: "example.txt"
     )
     Hilog.info(0, "test", "成功创建文件规范对象")
 } catch (e: BusinessException) {
@@ -1273,17 +1265,16 @@ public init(before!: ?Int64 = None, after!: ?Int64 = None, state!: ?State = None
 // main_ability.cj
 
 import kit.BasicServicesKit.*
-import kit.AbilityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 import ohos.business_exception.BusinessException
 
 try {
     let filter = Filter(
-        before = None,
-        after = None,
-        state = State.Running,
-        action = Action.Download,
-        mode = Mode.Background
+        before: None,
+        after: None,
+        state: State.Running,
+        action: Action.Download,
+        mode: Mode.Background
     )
     Hilog.info(0, "test", "成功创建过滤器对象")
 } catch (e: BusinessException) {
@@ -1367,14 +1358,13 @@ public init(name: String, value: FormItemValue)
 // main_ability.cj
 
 import kit.BasicServicesKit.*
-import kit.AbilityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 import ohos.business_exception.BusinessException
 
 try {
     let formItem = FormItem(
-        name = "exampleField",
-        value = FormItemValue.StringItem("exampleValue")
+        "exampleField",
+        FormItemValue.StringItem("exampleValue")
     )
     Hilog.info(0, "test", "成功创建表单项对象")
 } catch (e: BusinessException) {
@@ -1637,16 +1627,15 @@ public init(tid: String, config: Config)
 // main_ability.cj
 
 import kit.BasicServicesKit.*
-import kit.AbilityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 import ohos.business_exception.BusinessException
 
 try {
-    let context = Global.getAbilityContext()
+    let context = Global.abilityContext
     let taskId = "example_task_id"
     let config = Config(
-        action = Action.Download,
-        url = "https://example.com/file.txt"
+        Action.Download,
+        "https://example.com/file.txt"
     )
     let task = Task(taskId, config)
     Hilog.info(0, "test", "成功初始化任务，任务ID: ${task.tid}")
@@ -1689,18 +1678,18 @@ import ohos.callback_invoke.*
 public class ProgressCallback <: Callback1Argument<Progress> {
     public ProgressCallback(let f: (Progress) -> Unit) {}
 
-    public open func invoke(err: ?BusinessException, arg: Progress): Unit {
+    public func invoke(err: ?BusinessException, arg: Progress): Unit {
         f(arg)
     }
 }
 
 try {
     let config = Config(
-        RAction.Download,
-        zipURL
+        Action.Download,
+        "zipURL"
     )
-    let task = create(getAbilityContext(), config)
-    let callback = ProgressCallback({(progress) => Hilog.info(0, "test", "invoke success")})
+    let task = create(Global.abilityContext, config)
+    let callback = ProgressCallback({progress => Hilog.info(0, "test", "invoke success")})
     task.on(EventCallbackType.Pause, callback)
     task.off(EventCallbackType.Pause, callback: callback)
 } catch (e: BusinessException) {
@@ -1737,22 +1726,23 @@ public func on(event: EventCallbackType, callback: Callback1Argument<HttpRespons
 import kit.BasicServicesKit.*
 import kit.PerformanceAnalysisKit.Hilog
 import ohos.callback_invoke.*
+import ohos.business_exception.BusinessException
 
-public class ProgressCallback <: Callback1Argument<HttpResponse> {
-    public ProgressCallback(let f: (HttpResponse) -> Unit) {}
+public class ProgressCallback1 <: Callback1Argument<HttpResponse> {
+    public ProgressCallback1(let f: (HttpResponse) -> Unit) {}
 
-    public open func invoke(err: ?BusinessException, arg: HttpResponse): Unit {
+    public func invoke(err: ?BusinessException, arg: HttpResponse): Unit {
         f(arg)
     }
 }
 
 try {
     let config = Config(
-        RAction.Download,
-        zipURL
+        Action.Download,
+        "zipURL"
     )
-    let task = create(getAbilityContext(), config)
-    let callback = ProgressCallback({(response) => Hilog.info(0, "test", "invoke success")})
+    let task = create(Global.abilityContext, config)
+    let callback = ProgressCallback1({response => Hilog.info(0, "test", "invoke success")})
     task.on(EventCallbackType.Response, callback)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.toString()}")
@@ -1790,21 +1780,21 @@ import kit.PerformanceAnalysisKit.Hilog
 import ohos.business_exception.BusinessException
 import ohos.callback_invoke.*
 
-public class ProgressCallback <: Callback1Argument<Progress> {
-    public ProgressCallback(let f: (Progress) -> Unit) {}
+public class ProgressCallback2 <: Callback1Argument<Progress> {
+    public ProgressCallback2(let f: (Progress) -> Unit) {}
 
-    public open func invoke(err: ?BusinessException, arg: Progress): Unit {
+    public func invoke(err: ?BusinessException, arg: Progress): Unit {
         f(arg)
     }
 }
 
 try {
     let config = Config(
-        RAction.Download,
-        zipURL
+        Action.Download,
+        "zipURL"
     )
-    let task = create(getAbilityContext(), config)
-    let callback = ProgressCallback({(progress) => Hilog.info(0, "test", "invoke success")})
+    let task = create(Global.abilityContext, config)
+    let callback = ProgressCallback2({progress => Hilog.info(0, "test", "invoke success")})
     task.on(EventCallbackType.Pause, callback)
     task.off(EventCallbackType.Pause, callback: callback)
 } catch (e: BusinessException) {
@@ -1842,13 +1832,14 @@ public func pause(): Unit
 
 import kit.BasicServicesKit.*
 import kit.PerformanceAnalysisKit.Hilog
+import ohos.business_exception.BusinessException
 
 try {
     let config = Config(
-        RAction.Download,
-        zipURL
+        Action.Download,
+        "zipURL"
     )
-    let task = create(getAbilityContext(), config)
+    let task = create(Global.abilityContext, config)
     task.pause()
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.toString()}")
@@ -1891,10 +1882,10 @@ import kit.PerformanceAnalysisKit.Hilog
 
 try {
     let config = Config(
-        RAction.Download,
-        zipURL
+        Action.Download,
+        "zipURL"
     )
-    let task = create(getAbilityContext(), config)
+    let task = create(Global.abilityContext, config)
     task.resume()
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.toString()}")
@@ -1938,15 +1929,14 @@ public func start(): Unit
 // main_ability.cj
 
 import kit.BasicServicesKit.*
-import kit.AbilityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 import ohos.business_exception.BusinessException
 
 try {
-    let context = Global.getAbilityContext()
+    let context = Global.abilityContext
     let config = Config(
-        action = Action.Download,
-        url = "https://example.com/file.txt"
+        Action.Download,
+        "https://example.com/file.txt"
     )
     let task = create(context, config)
 
@@ -1986,15 +1976,14 @@ public func stop(): Unit
 // main_ability.cj
 
 import kit.BasicServicesKit.*
-import kit.AbilityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 import ohos.business_exception.BusinessException
 
 try {
-    let context = Global.getAbilityContext()
+    let context = Global.abilityContext
     let config = Config(
-        action = Action.Download,
-        url = "https://example.com/largefile.zip"
+        Action.Download,
+        "https://example.com/largefile.zip"
     )
     let task = create(context, config)
 

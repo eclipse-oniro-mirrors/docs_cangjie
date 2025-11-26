@@ -225,7 +225,7 @@ import kit.PerformanceAnalysisKit.*
 import ohos.business_exception.BusinessException
 
 try {
-    Hilog.isLoggable(0, "testTag", LogLevel.Debug)
+    let result = Hilog.isLoggable(0, "testTag", LogLevel.Debug)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }

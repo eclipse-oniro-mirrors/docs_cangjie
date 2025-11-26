@@ -1340,7 +1340,7 @@ import ohos.callback_invoke.*
 class NetAvailableCb <: Callback1Argument<NetHandle> {
     let callback_: (NetHandle)->Unit
     public init(callback: (NetHandle)->Unit) {callback_ = callback}
-    public open func invoke(err: ?BusinessException, val: NetHandle): Unit {
+    public func invoke(err: ?BusinessException, val: NetHandle): Unit {
         callback_(val)
     }
 }
@@ -1399,7 +1399,7 @@ import ohos.callback_invoke.*
 class NetBlockStatusChangeCb <: Callback1Argument<NetBlockStatusInfo> {
     let callback_: (NetBlockStatusInfo)->Unit
     public init(callback: (NetBlockStatusInfo)->Unit) {callback_ = callback}
-    public open func invoke(err: ?BusinessException, val: NetBlockStatusInfo): Unit {
+    public func invoke(err: ?BusinessException, val: NetBlockStatusInfo): Unit {
         callback_(val)
     }
 }
@@ -1462,7 +1462,7 @@ import ohos.callback_invoke.*
 class NetCapabilitiesChangeCb <: Callback1Argument<NetCapabilityInfo> {
     let callback_: (NetCapabilityInfo)->Unit
     public init(callback: (NetCapabilityInfo)->Unit) {callback_ = callback}
-    public open func invoke(err: ?BusinessException, val: NetCapabilityInfo): Unit {
+    public func invoke(err: ?BusinessException, val: NetCapabilityInfo): Unit {
         callback_(val)
     }
 }
@@ -1525,7 +1525,7 @@ import ohos.callback_invoke.*
 class NetConnectionPropertiesChangeCb <: Callback1Argument<NetConnectionPropertyInfo> {
     let callback_: (NetConnectionPropertyInfo)->Unit
     public init(callback: (NetConnectionPropertyInfo)->Unit) {callback_ = callback}
-    public open func invoke(err: ?BusinessException, val: NetConnectionPropertyInfo): Unit {
+    public func invoke(err: ?BusinessException, val: NetConnectionPropertyInfo): Unit {
         callback_(val)
     }
 }
@@ -1588,7 +1588,7 @@ import ohos.callback_invoke.*
 class NetUnavailableCb <: Callback0Argument {
     let callback_: ()->Unit
     public init(callback: ()->Unit) {callback_ = callback}
-    public open func invoke(err: ?BusinessException): Unit {
+    public func invoke(err: ?BusinessException): Unit {
         callback_()
     }
 }

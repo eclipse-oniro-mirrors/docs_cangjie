@@ -276,7 +276,7 @@ import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 // 此处代码可添加在依赖项定义中
-class BLEDeviceFindCallback <: Callback1Argument<Array<ScanResult>> {
+class BLEDeviceFindCallback1 <: Callback1Argument<Array<ScanResult>> {
     public func invoke(err: ?BusinessException, devices: Array<ScanResult>): Unit {
         for (device in devices) {
             Hilog.info(0, "Bluetooth", "device has find, deviceID is ${device.deviceId}, name is ${device.deviceName}")
@@ -284,7 +284,7 @@ class BLEDeviceFindCallback <: Callback1Argument<Array<ScanResult>> {
     }
 }
 
-let bleDeviceFindCallback = BLEDeviceFindCallback()
+let bleDeviceFindCallback = BLEDeviceFindCallback1()
 try {
     on(BluetoothBleCallbackType.BleDeviceFind, bleDeviceFindCallback)
 } catch (e: BusinessException) {
@@ -511,7 +511,7 @@ import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 // 此处代码可添加在依赖项定义中
-class BLEDeviceFindCallback <: Callback1Argument<Array<ScanResult>> {
+class BLEDeviceFindCallback2 <: Callback1Argument<Array<ScanResult>> {
     public func invoke(err: ?BusinessException, devices: Array<ScanResult>): Unit {
         for (device in devices) {
             Hilog.info(0, "Bluetooth", "device has find, deviceID is ${device.deviceId}, name is ${device.deviceName}")
@@ -519,7 +519,7 @@ class BLEDeviceFindCallback <: Callback1Argument<Array<ScanResult>> {
     }
 }
 
-let bleDeviceFindCallback = BLEDeviceFindCallback()
+let bleDeviceFindCallback = BLEDeviceFindCallback2()
 try {
     on(BluetoothBleCallbackType.BleDeviceFind, bleDeviceFindCallback)
     var scanFilter = ScanFilter()
@@ -1984,8 +1984,8 @@ import ohos.business_exception.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
-let gattClient = createGattClientDevice("XX:XX:XX:XX:XX:XX")  // 请替换为您的设备地址
 try {
+    let gattClient = createGattClientDevice("XX:XX:XX:XX:XX:XX")  // 请替换为您的设备地址
     gattClient.close()
 } catch (e: BusinessException) {
     Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}", "")
@@ -2033,8 +2033,8 @@ import ohos.business_exception.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
-let gattClient = createGattClientDevice("XX:XX:XX:XX:XX:XX")  // 请替换为您的设备地址
 try {
+    let gattClient = createGattClientDevice("XX:XX:XX:XX:XX:XX")  // 请替换为您的设备地址
     gattClient.connect()
 } catch (e: BusinessException) {
     Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}", "")
@@ -2081,8 +2081,8 @@ import ohos.business_exception.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
-let gattClient = createGattClientDevice("XX:XX:XX:XX:XX:XX")  // 请替换为您的设备地址
 try {
+    let gattClient = createGattClientDevice("XX:XX:XX:XX:XX:XX")  // 请替换为您的设备地址
     gattClient.disconnect()
 } catch (e: BusinessException) {
     Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}", "")
@@ -2132,8 +2132,8 @@ import ohos.business_exception.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
-let gattClient = createGattClientDevice("XX:XX:XX:XX:XX:XX")  // 请替换为您的设备地址
 try {
+    let gattClient = createGattClientDevice("XX:XX:XX:XX:XX:XX")  // 请替换为您的设备地址
     let server = gattClient.getDeviceName()
     Hilog.info(0, "Bluetooth", "device name " + server)
 } catch (e: BusinessException) {
@@ -2187,8 +2187,8 @@ import ohos.business_exception.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
-let gattClient = createGattClientDevice("XX:XX:XX:XX:XX:XX")  // 请替换为您的设备地址
 try {
+    let gattClient = createGattClientDevice("XX:XX:XX:XX:XX:XX")  // 请替换为您的设备地址
     gattClient.getRssiValue {
         error: ?BusinessException, rssi: ?Int32 =>
         if (let Some(e) <- error) {
@@ -2244,8 +2244,8 @@ import ohos.business_exception.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
-let gattClient = createGattClientDevice("XX:XX:XX:XX:XX:XX")  // 请替换为您的设备地址
 try {
+    let gattClient = createGattClientDevice("XX:XX:XX:XX:XX:XX")  // 请替换为您的设备地址
     let services = gattClient.getServices{err: ?BusinessException, c: ?Array<GattService> =>
             let ss = c.getOrThrow()
             for (service in ss) {
@@ -2301,20 +2301,16 @@ import ohos.business_exception.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
-let gattClient = createGattClientDevice("XX:XX:XX:XX:XX:XX")  // 请替换为您的设备地址
-let device = "XX:XX:XX:XX:XX:XX"
-var connectState = ProfileConnectionState.StateDisconnected
 class BLEConnectionStateChangeCallback <: Callback1Argument<BLEConnectionChangeState> {
     public func invoke(err: ?BusinessException, stateInfo: BLEConnectionChangeState): Unit {
         Hilog.info(0, "Bluetooth", "onGattServerStateChange: device=" + stateInfo.deviceId + ", state=" + stateInfo.state.toString())
-        if (stateInfo.deviceId == device) {
-            connectState = stateInfo.state
-        }
     }
 }
 
-let bleConnectionStateChangeCallback = BLEConnectionStateChangeCallback()
 try {
+    let gattClient = createGattClientDevice("XX:XX:XX:XX:XX:XX")  // 请替换为您的设备地址
+    var connectState = ProfileConnectionState.StateDisconnected
+    let bleConnectionStateChangeCallback = BLEConnectionStateChangeCallback()
     gattClient.on(BluetoothBleGattClientDeviceCallbackType.BleConnectionStateChange, bleConnectionStateChangeCallback)
     gattClient.off(BluetoothBleGattClientDeviceCallbackType.BleConnectionStateChange, callback: bleConnectionStateChangeCallback)
 } catch (e: BusinessException) {
@@ -2374,9 +2370,9 @@ class BLECharacteristicChangeCallback <: Callback1Argument<BLECharacteristic> {
     }
 }
 
-let gattClient = createGattClientDevice("XX:XX:XX:XX:XX:XX")  // 请替换为您的设备地址
-let bleCharacteristicChangeCallback = BLECharacteristicChangeCallback()
 try {
+    let gattClient = createGattClientDevice("XX:XX:XX:XX:XX:XX")  // 请替换为您的设备地址
+    let bleCharacteristicChangeCallback = BLECharacteristicChangeCallback()
     gattClient.on(BluetoothBleGattClientDeviceCallbackType.BleCharacteristicChange, bleCharacteristicChangeCallback)
 } catch (e: BusinessException) {
     Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}", "")
@@ -2430,20 +2426,15 @@ import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 // 此处代码可添加在依赖项定义中
-let gattClient = createGattClientDevice("XX:XX:XX:XX:XX:XX")  // 请替换为您的设备地址
-let device = "XX:XX:XX:XX:XX:XX"
-var connectState = ProfileConnectionState.StateDisconnected
-class BLEConnectionStateChangeCallback <: Callback1Argument<BLEConnectionChangeState> {
+class BLEConnectionStateChangeCallback1 <: Callback1Argument<BLEConnectionChangeState> {
     public func invoke(err: ?BusinessException, stateInfo: BLEConnectionChangeState): Unit {
         Hilog.info(0, "Bluetooth", "onGattServerStateChange: device=" + stateInfo.deviceId + ", state=" + stateInfo.state.toString())
-        if (stateInfo.deviceId == device) {
-            connectState = stateInfo.state
-        }
     }
 }
 
-let bleConnectionStateChangeCallback = BLEConnectionStateChangeCallback()
 try {
+    let gattClient = createGattClientDevice("XX:XX:XX:XX:XX:XX")  // 请替换为您的设备地址
+    let bleConnectionStateChangeCallback = BLEConnectionStateChangeCallback1()
     gattClient.on(BluetoothBleGattClientDeviceCallbackType.BleConnectionStateChange, bleConnectionStateChangeCallback)
 } catch (e: BusinessException) {
     Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}", "")
@@ -2494,15 +2485,15 @@ import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 // 此处代码可添加在依赖项定义中
-let gattClient = createGattClientDevice("XX:XX:XX:XX:XX:XX")  // 请替换为您的设备地址
 class BLEMtuChangeCallback <: Callback1Argument<Int32> {
     public func invoke(err: ?BusinessException, mtu: Int32): Unit {
         Hilog.info(0, "Bluetooth", "mtu change to ${mtu}")
     }
 }
 
-let bleMtuChangeCallback = BLEMtuChangeCallback()
 try {
+    let gattClient = createGattClientDevice("XX:XX:XX:XX:XX:XX")  // 请替换为您的设备地址
+    let bleMtuChangeCallback = BLEMtuChangeCallback()
     gattClient.on(BluetoothBleGattClientDeviceCallbackType.ClientBleMtuChange, bleMtuChangeCallback)
 } catch (e: BusinessException) {
     Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}", "")
@@ -2569,8 +2560,6 @@ import ohos.business_exception.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
-let gattClient = createGattClientDevice("XX:XX:XX:XX:XX:XX")  // 请替换为您的设备地址
-
 // 创建descriptors
 let descBuffer: Array<Byte> = [31, 32]
 let descriptor = BLEDescriptor(
@@ -2593,6 +2582,7 @@ let characteristic: BLECharacteristic = BLECharacteristic(
 )
 
 try {
+    let gattClient = createGattClientDevice("XX:XX:XX:XX:XX:XX")  // 请替换为您的设备地址
     gattClient.readCharacteristicValue(characteristic) {
         error: ?BusinessException, outData: ?BLECharacteristic =>
         if (let Some(e) <- error) {
@@ -2669,8 +2659,6 @@ import ohos.business_exception.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
-let gattClient = createGattClientDevice("XX:XX:XX:XX:XX:XX")  // 请替换为您的设备地址
-
 let descBuffer: Array<Byte> = [31, 32]
 let descriptor = BLEDescriptor(
     "00001810-0000-1000-8000-00805F9B34FB",
@@ -2680,6 +2668,7 @@ let descriptor = BLEDescriptor(
 )
 
 try {
+    let gattClient = createGattClientDevice("XX:XX:XX:XX:XX:XX")  // 请替换为您的设备地址
     gattClient.readDescriptorValue(descriptor) {
         error: ?BusinessException, outDescriptor: ?BLEDescriptor =>
         if (let Some(e) <- error) {
@@ -2748,8 +2737,8 @@ import ohos.business_exception.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
-let gattClient = createGattClientDevice("XX:XX:XX:XX:XX:XX")  // 请替换为您的设备地址
 try {
+    let gattClient = createGattClientDevice("XX:XX:XX:XX:XX:XX")  // 请替换为您的设备地址
     gattClient.setBLEMtuSize(100)
 } catch (e: BusinessException) {
     Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}", "")
@@ -2818,8 +2807,6 @@ import ohos.business_exception.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
-let gattClient = createGattClientDevice("XX:XX:XX:XX:XX:XX")  // 请替换为您的设备地址
-
 // 创建descriptors
 let descBuffer: Array<Byte> = [31, 32]
 let descriptor = BLEDescriptor(
@@ -2842,6 +2829,7 @@ let characteristic: BLECharacteristic = BLECharacteristic(
 )
 
 try {
+    let gattClient = createGattClientDevice("XX:XX:XX:XX:XX:XX")  // 请替换为您的设备地址
     gattClient.setCharacteristicChangeIndication(characteristic, false)  {
         error: ?BusinessException, c: ?Unit => if (let Some(e) <- error) {
             throw e
@@ -2912,9 +2900,6 @@ public func setCharacteristicChangeNotification(characteristic: BLECharacteristi
 import ohos.business_exception.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
-
-let gattClient = createGattClientDevice("XX:XX:XX:XX:XX:XX")  // 请替换为您的设备地址
-
 // 创建descriptors
 let descBuffer: Array<Byte> = [31, 32]
 let descriptor = BLEDescriptor(
@@ -2937,6 +2922,7 @@ let characteristic: BLECharacteristic = BLECharacteristic(
 )
 
 try {
+    let gattClient = createGattClientDevice("XX:XX:XX:XX:XX:XX")  // 请替换为您的设备地址
     gattClient.setCharacteristicChangeNotification(characteristic, false) {
         error: ?BusinessException, c: ?Unit => if (let Some(e) <- error) {
             throw e
@@ -3006,8 +2992,6 @@ import ohos.business_exception.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
-let gattClient = createGattClientDevice("XX:XX:XX:XX:XX:XX")  // 请替换为您的设备地址
-
 // 创建descriptors
 let descBuffer: Array<Byte> = [31, 32]
 let descriptor = BLEDescriptor(
@@ -3031,6 +3015,7 @@ let characteristic: BLECharacteristic = BLECharacteristic(
 )
 
 try {
+    let gattClient = createGattClientDevice("XX:XX:XX:XX:XX:XX")  // 请替换为您的设备地址
     gattClient.writeCharacteristicValue(characteristic, GattWriteType.Write) {
         error: ?BusinessException, c: ?Unit => if (let Some(e) <- error) {
             throw e
@@ -3100,8 +3085,6 @@ import ohos.business_exception.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
-let gattClient = createGattClientDevice("XX:XX:XX:XX:XX:XX")  // 请替换为您的设备地址
-
 let descBuffer: Array<Byte> = [31, 32]
 let descriptor = BLEDescriptor(
     "00001810-0000-1000-8000-00805F9B34FB",
@@ -3114,6 +3097,7 @@ let charBuffer: Array<Byte> = [1, 2]
 let properties = GattProperties()
 
 try {
+    let gattClient = createGattClientDevice("XX:XX:XX:XX:XX:XX")  // 请替换为您的设备地址
     gattClient.writeDescriptorValue(descriptors) {
         error: ?BusinessException, c: ?Unit => if (let Some(e) <- error) {
             throw e
@@ -3845,8 +3829,7 @@ import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 // 此处代码可添加在依赖项定义中
-let gattServer = createGattServer()
-
+let gattReadServer = createGattServer()
 class CharacteristicReadCallback <: Callback1Argument<CharacteristicReadRequest> {
     public func invoke(err: ?BusinessException, charReq: CharacteristicReadRequest): Unit {
         let deviceId: String = charReq.deviceId
@@ -3862,7 +3845,7 @@ class CharacteristicReadCallback <: Callback1Argument<CharacteristicReadRequest>
             rspBuffer
         )
         try {
-            gattServer.sendResponse(serverResponse)
+            gattReadServer.sendResponse(serverResponse)
         } catch (e: BusinessException) {
             Hilog.info(0, "Bluetooth", "gattServer send response fail because ${e}")
         }
@@ -3871,7 +3854,7 @@ class CharacteristicReadCallback <: Callback1Argument<CharacteristicReadRequest>
 
 let characteristicReadCallback = CharacteristicReadCallback()
 try {
-    gattServer.on(BluetoothBleGattServerCallbackType.CharacteristicRead, characteristicReadCallback)
+    gattReadServer.on(BluetoothBleGattServerCallbackType.CharacteristicRead, characteristicReadCallback)
 } catch (e: BusinessException) {
     Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}", "")
 }
@@ -3920,8 +3903,7 @@ import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 // 此处代码可添加在依赖项定义中
-let gattServer = createGattServer()
-
+let gattWriteServer = createGattServer()
 class CharacteristicWriteCallback <: Callback1Argument<CharacteristicWriteRequest> {
     public func invoke(err: ?BusinessException, charReq: CharacteristicWriteRequest): Unit {
         let deviceId: String = charReq.deviceId
@@ -3944,7 +3926,7 @@ class CharacteristicWriteCallback <: Callback1Argument<CharacteristicWriteReques
             rspBuffer
         )
         try {
-            gattServer.sendResponse(serverResponse)
+            gattWriteServer.sendResponse(serverResponse)
         } catch (e: BusinessException) {
             Hilog.info(0, "Bluetooth", "gattServer send response fail because ${e}")
         }
@@ -3953,7 +3935,7 @@ class CharacteristicWriteCallback <: Callback1Argument<CharacteristicWriteReques
 
 let characteristicWriteCallback = CharacteristicWriteCallback()
 try {
-    gattServer.on(BluetoothBleGattServerCallbackType.CharacteristicWrite, characteristicWriteCallback)
+    gattWriteServer.on(BluetoothBleGattServerCallbackType.CharacteristicWrite, characteristicWriteCallback)
 } catch (e: BusinessException) {
     Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}", "")
 }
@@ -4003,7 +3985,6 @@ import kit.PerformanceAnalysisKit.Hilog
 
 // 此处代码可添加在依赖项定义中
 let gattServer = createGattServer()
-
 class DescriptorReadCallback <: Callback1Argument<DescriptorReadRequest> {
     public func invoke(err: ?BusinessException, desReq: DescriptorReadRequest): Unit {
         let deviceId: String = desReq.deviceId
@@ -4077,8 +4058,7 @@ import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 // 此处代码可添加在依赖项定义中
-let gattServer = createGattServer()
-
+let gattServer1 = createGattServer()
 class DescriptorWriteCallback <: Callback1Argument<DescriptorWriteRequest> {
     public func invoke(err: ?BusinessException, desReq: DescriptorWriteRequest): Unit {
         let deviceId: String = desReq.deviceId
@@ -4098,7 +4078,7 @@ class DescriptorWriteCallback <: Callback1Argument<DescriptorWriteRequest> {
             rspBuffer
         )
         try {
-            gattServer.sendResponse(serverResponse)
+            gattServer1.sendResponse(serverResponse)
         } catch (e: BusinessException) {
             Hilog.info(0, "Bluetooth", "gattServer send response fail because ${e}")
         }
@@ -4107,7 +4087,7 @@ class DescriptorWriteCallback <: Callback1Argument<DescriptorWriteRequest> {
 
 let descriptorWriteCallback = DescriptorWriteCallback()
 try {
-    gattServer.on(BluetoothBleGattServerCallbackType.DescriptorWrite, descriptorWriteCallback)
+    gattServer1.on(BluetoothBleGattServerCallbackType.DescriptorWrite, descriptorWriteCallback)
 } catch (e: BusinessException) {
     Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}", "")
 }
@@ -4158,13 +4138,13 @@ import kit.PerformanceAnalysisKit.Hilog
 // 此处代码可添加在依赖项定义中
 let gattServer = createGattServer()
 
-class StateChangeCallback <: Callback1Argument<BLEConnectionChangeState> {
+class StateChangeCallback1 <: Callback1Argument<BLEConnectionChangeState> {
     public func invoke(err: ?BusinessException, state: BLEConnectionChangeState): Unit {
         Hilog.info(0, "Bluetooth", "onGattServerStateChange: device=" + state.deviceId + ", state=" + state.state.toString())
     }
 }
 
-let stateChangeCallback = StateChangeCallback()
+let stateChangeCallback = StateChangeCallback1()
 try {
     gattServer.on(BluetoothBleGattServerCallbackType.ConnectionStateChange, stateChangeCallback)
 } catch (e: BusinessException) {
@@ -4215,14 +4195,14 @@ import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 // 此处代码可添加在依赖项定义中
-let gattServer = createGattServer()
-class BLEMtuChangeCallback <: Callback1Argument<Int32> {
+class BLEMtuChangeCallback1 <: Callback1Argument<Int32> {
     public func invoke(err: ?BusinessException, mtu: Int32): Unit {
         Hilog.info(0, "Bluetooth", "mtu change to ${mtu}")
     }
 }
 
-let bleMtuChangeCallback = BLEMtuChangeCallback()
+let gattServer = createGattServer()
+let bleMtuChangeCallback = BLEMtuChangeCallback1()
 try {
     gattServer.on(BluetoothBleGattServerCallbackType.ServerBleMtuChange, bleMtuChangeCallback)
 } catch (e: BusinessException) {

@@ -386,12 +386,13 @@ import kit.NetworkKit.*
 import kit.PerformanceAnalysisKit.Hilog
 import ohos.business_exception.BusinessException
 import ohos.callback_invoke.*
+import std.collection.HashMap
 
 // 定义HeadersReceiveCb类
 class HeadersReceiveCb <: Callback1Argument<HashMap<String, String>> {
     let callback_: (HashMap<String, String>)->Unit
     public init(callback: (HashMap<String, String>)->Unit) {callback_ = callback}
-    public open func invoke(err: ?BusinessException, val: HashMap<String, String>): Unit {
+    public func invoke(err: ?BusinessException, val: HashMap<String, String>): Unit {
         callback_(val)
     }
 }
@@ -449,10 +450,10 @@ import ohos.callback_invoke.*
 import std.collection.HashMap
 
 // 定义HeadersReceiveCb类
-class HeadersReceiveCb <: Callback1Argument<HashMap<String, String>> {
+class HeadersReceiveCb1 <: Callback1Argument<HashMap<String, String>> {
     let callback_: (HashMap<String, String>)->Unit
     public init(callback: (HashMap<String, String>)->Unit) {callback_ = callback}
-    public open func invoke(err: ?BusinessException, val: HashMap<String, String>): Unit {
+    public func invoke(err: ?BusinessException, val: HashMap<String, String>): Unit {
         callback_(val)
     }
 }
@@ -460,7 +461,7 @@ class HeadersReceiveCb <: Callback1Argument<HashMap<String, String>> {
 try {
     let client = createHttp()
 
-    let headersReceiveCallBack = HeadersReceiveCb({ map => Hilog.info(0, "test", "header info: ${map}") })
+    let headersReceiveCallBack = HeadersReceiveCb1({ map => Hilog.info(0, "test", "header info: ${map}") })
     client.on(HttpRequestEvent.HeadersReceive, headersReceiveCallBack)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
@@ -510,7 +511,7 @@ import ohos.callback_invoke.*
 class DataReceiveCb <: Callback1Argument<Array<Byte>> {
     let callback_: (Array<Byte>)->Unit
     public init(callback: (Array<Byte>)->Unit) {callback_ = callback}
-    public open func invoke(err: ?BusinessException, val: Array<Byte>): Unit {
+    public func invoke(err: ?BusinessException, val: Array<Byte>): Unit {
         callback_(val)
     }
 }
@@ -568,7 +569,7 @@ import ohos.callback_invoke.*
 class DataEndCb <: Callback0Argument {
     let callback_: ()->Unit
     public init(callback: ()->Unit) {callback_ = callback}
-    public open func invoke(err: ?BusinessException): Unit {
+    public func invoke(err: ?BusinessException): Unit {
         callback_()
     }
 }
@@ -627,7 +628,7 @@ import ohos.callback_invoke.*
 class DataReceiveProgressCb <: Callback1Argument<DataReceiveProgressInfo> {
     let callback_: (DataReceiveProgressInfo)->Unit
     public init(callback: (DataReceiveProgressInfo)->Unit) {callback_ = callback}
-    public open func invoke(err: ?BusinessException, val: DataReceiveProgressInfo): Unit {
+    public func invoke(err: ?BusinessException, val: DataReceiveProgressInfo): Unit {
         callback_(val)
     }
 }
@@ -683,10 +684,10 @@ import std.collection.HashMap
 import ohos.callback_invoke.*
 
 // 定义HeadersReceiveCb类
-class HeadersReceiveCb <: Callback1Argument<HashMap<String, String>> {
+class HeadersReceiveCb2 <: Callback1Argument<HashMap<String, String>> {
     let callback_: (HashMap<String, String>)->Unit
     public init(callback: (HashMap<String, String>)->Unit) {callback_ = callback}
-    public open func invoke(err: ?BusinessException, val: HashMap<String, String>): Unit {
+    public func invoke(err: ?BusinessException, val: HashMap<String, String>): Unit {
         callback_(val)
     }
 }
@@ -694,7 +695,7 @@ class HeadersReceiveCb <: Callback1Argument<HashMap<String, String>> {
 try {
     let client = createHttp()
 
-    let onceHeadersReceiveCallBack = HeadersReceiveCb({ map => Hilog.info(0, "test", "header info once: ${map}") })
+    let onceHeadersReceiveCallBack = HeadersReceiveCb2({ map => Hilog.info(0, "test", "header info once: ${map}") })
     client.once(HttpRequestEvent.HeadersReceive, onceHeadersReceiveCallBack)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")

@@ -753,16 +753,16 @@ try {
     )
     generateKeyItem(keyAlias, options)
     // encrypt
-    let handle = initSession(keyAlias, encOptions).handle
+    let handle = initSession(keyAlias, options).handle
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
 ```
 
-## func hasKeyItemExist(String, HuksOptions)
+## func hasKeyItem(String, HuksOptions)
 
 ```cangjie
-public func hasKeyItemExist(keyAlias: String, options: HuksOptions): Bool
+public func hasKeyItem(keyAlias: String, options: HuksOptions): Bool
 ```
 
 **功能：** 判断密钥是否存在。
@@ -826,9 +826,9 @@ try {
     }
 
     let keyAlias = "KEY_ALIAS" // 密钥别名，在生成密钥时指定，在加密、解密和删除密钥时使用
-    hasKeyItemExist(keyAlias, HuksOptions()) // false
+    var result = hasKeyItem(keyAlias, HuksOptions()) // false
     generateSimpleKey(keyAlias)
-    hasKeyItemExist(keyAlias, HuksOptions()) // true
+    result = hasKeyItem(keyAlias, HuksOptions()) // true
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -894,7 +894,7 @@ import ohos.business_exception.BusinessException
 let keyAlias = "KEY_ALIAS" // 密钥别名，在生成密钥时指定，在加密、解密和删除密钥时使用
 try {
     let plainText = 'PLAIN_TEXT'  // 待加密的明文
-    let IV = 'TEST_IV' // 此处为样例代码，实际使用需采用随机值
+    let iv = 'TEST_IV' // 此处为样例代码，实际使用需采用随机值
     let options = HuksOptions(
         properties:  [
             HuksParam(HuksTag.HUKS_TAG_ALGORITHM, HuksParamValue.Uint32Value(HuksKeyAlg.HUKS_ALG_AES)),

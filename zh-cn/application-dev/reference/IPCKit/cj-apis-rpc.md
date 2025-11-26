@@ -131,7 +131,7 @@ func unmarshalling(dataIn: MessageSequence): Bool
 import kit.IPCKit.*
 
 // 此处代码可添加在依赖项定义中
-class MyParcelable <: Parcelable {
+class MyParcelable1 <: Parcelable {
     var num: Int32 = 0
     var str: String = ''
 
@@ -153,12 +153,12 @@ class MyParcelable <: Parcelable {
     }
 }
 
-let parcelable = MyParcelable(1, "aaa")
-let parcelable2 = MyParcelable(2, "bbb")
-let parcelable3 = MyParcelable(3, "ccc")
+let parcelable = MyParcelable1(1, "aaa")
+let parcelable2 = MyParcelable1(2, "bbb")
+let parcelable3 = MyParcelable1(3, "ccc")
 let data = MessageSequence.create()
 data.writeParcelableArray(parcelable,parcelable2,parcelable3)
-let ret: Array<Parcelable> = [MyParcelable(0, ""), MyParcelable(0, ""), MyParcelable(0, "")]
+let ret: Array<Parcelable> = [MyParcelable1(0, ""), MyParcelable1(0, ""), MyParcelable1(0, "")]
 data.readParcelableArray(ret)
 ```
 
@@ -389,7 +389,7 @@ import kit.PerformanceAnalysisKit.Hilog
 
 try {
     let ashmem = Ashmem.create("ashmem", 1024*1024)
-    ashmem.getAshmemSize()
+    let result = ashmem.getAshmemSize()
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -831,7 +831,7 @@ import kit.PerformanceAnalysisKit.Hilog
 try {
     let filePath = "path/to/file"
     let file = FileIo.open(filePath, mode: (OpenMode.CREATE | OpenMode.READ_WRITE))
-    MessageSequence.dupFileDescriptor(file.fd)
+    let newFd = MessageSequence.dupFileDescriptor(file.fd)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -868,7 +868,7 @@ import kit.PerformanceAnalysisKit.Hilog
 
 try {
     let data = MessageSequence.create()
-    data.containFileDescriptors()
+    let result = data.containFileDescriptors()
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -942,7 +942,7 @@ import kit.PerformanceAnalysisKit.Hilog
 
 try {
     let data = MessageSequence.create()
-    data.getRawDataCapacity()
+    let capacity = data.getRawDataCapacity()
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -1217,7 +1217,7 @@ import kit.PerformanceAnalysisKit.Hilog
 
 try {
     let data = MessageSequence.create()
-    data.readBoolean()
+    let result = data.readBoolean()
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -1307,7 +1307,7 @@ import kit.PerformanceAnalysisKit.Hilog
 
 try {
     let data = MessageSequence.create()
-    data.readByte()
+    let result = data.readByte()
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -1397,7 +1397,7 @@ import kit.PerformanceAnalysisKit.Hilog
 
 try {
     let data = MessageSequence.create()
-    data.readChar()
+    let result = data.readChar()
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -1487,7 +1487,7 @@ import kit.PerformanceAnalysisKit.Hilog
 
 try {
     let data = MessageSequence.create()
-    data.readDouble()
+    let result = data.readDouble()
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -1572,7 +1572,7 @@ import kit.PerformanceAnalysisKit.Hilog
 
 try {
     let data = MessageSequence.create()
-    data.readException()
+    let fd = data.readException()
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -1662,7 +1662,7 @@ import kit.PerformanceAnalysisKit.Hilog
 
 try {
     let data = MessageSequence.create()
-    data.readFloat()
+    let result = data.readFloat()
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -1752,7 +1752,7 @@ import kit.PerformanceAnalysisKit.Hilog
 
 try {
     let data = MessageSequence.create()
-    data.readInt()
+    let result = data.readInt()
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -1842,7 +1842,7 @@ import kit.PerformanceAnalysisKit.Hilog
 
 try {
     let data = MessageSequence.create()
-    data.readInterfaceToken()
+    let result = data.readInterfaceToken()
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -1887,7 +1887,7 @@ import kit.PerformanceAnalysisKit.Hilog
 
 try {
     let data = MessageSequence.create()
-    data.readLong()
+    let result = data.readLong()
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -1976,34 +1976,34 @@ import kit.IPCKit.*
 import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
-try {
-    // 此处代码可添加在依赖项定义中
-    class MyParcelable <: Parcelable {
-        var num: Int32 = 0
-        var str: String = ''
+// 此处代码可添加在依赖项定义中
+class MyParcelable2 <: Parcelable {
+    var num: Int32 = 0
+    var str: String = ''
 
-        init() {}
+    init() {}
 
-        init(num: Int32, str: String) {
-            this.num = num
-            this.str = str
-        }
-        public func marshalling(messageSequence: MessageSequence): Bool {
-            messageSequence.writeInt(this.num)
-            messageSequence.writeString(this.str)
-            return true
-        }
-        public func unmarshalling(messageSequence: MessageSequence): Bool {
-            this.num = messageSequence.readInt()
-            this.str = messageSequence.readString()
-            return true
-        }
+    init(num: Int32, str: String) {
+        this.num = num
+        this.str = str
     }
+    public func marshalling(messageSequence: MessageSequence): Bool {
+        messageSequence.writeInt(this.num)
+        messageSequence.writeString(this.str)
+        return true
+    }
+    public func unmarshalling(messageSequence: MessageSequence): Bool {
+        this.num = messageSequence.readInt()
+        this.str = messageSequence.readString()
+        return true
+    }
+}
 
-    let parcelable = MyParcelable(1, "aaa")
+try {
+    let parcelable = MyParcelable2(1, "aaa")
     let data = MessageSequence.create()
     data.writeParcelable(parcelable)
-    let ret = MyParcelable()
+    let ret = MyParcelable2()
     data.readParcelable(ret)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
@@ -2048,36 +2048,36 @@ import kit.IPCKit.*
 import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
-try {
-    // 此处代码可添加在依赖项定义中
-    class MyParcelable <: Parcelable {
-        var num: Int32 = 0
-        var str: String = ''
+// 此处代码可添加在依赖项定义中
+class MyParcelable3 <: Parcelable {
+    var num: Int32 = 0
+    var str: String = ''
 
-        init() {}
+    init() {}
 
-        init(num: Int32, str: String) {
-            this.num = num
-            this.str = str
-        }
-        public func marshalling(messageSequence: MessageSequence): Bool {
-            messageSequence.writeInt(this.num)
-            messageSequence.writeString(this.str)
-            return true
-        }
-        public func unmarshalling(messageSequence: MessageSequence): Bool {
-            this.num = messageSequence.readInt()
-            this.str = messageSequence.readString()
-            return true
-        }
+    init(num: Int32, str: String) {
+        this.num = num
+        this.str = str
     }
+    public func marshalling(messageSequence: MessageSequence): Bool {
+        messageSequence.writeInt(this.num)
+        messageSequence.writeString(this.str)
+        return true
+    }
+    public func unmarshalling(messageSequence: MessageSequence): Bool {
+        this.num = messageSequence.readInt()
+        this.str = messageSequence.readString()
+        return true
+    }
+}
 
-    let parcelable = MyParcelable(1, "aaa")
-    let parcelable2 = MyParcelable(2, "bbb")
-    let parcelable3 = MyParcelable(3, "ccc")
+try {
+    let parcelable = MyParcelable3(1, "aaa")
+    let parcelable2 = MyParcelable3(2, "bbb")
+    let parcelable3 = MyParcelable3(3, "ccc")
     let data = MessageSequence.create()
     data.writeParcelableArray(parcelable,parcelable2,parcelable3)
-    let ret: Array<Parcelable> = [MyParcelable(0, ""), MyParcelable(0, ""), MyParcelable(0, "")]
+    let ret: Array<Parcelable> = [MyParcelable3(0, ""), MyParcelable3(0, ""), MyParcelable3(0, "")]
     data.readParcelableArray(ret)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
@@ -2174,7 +2174,7 @@ import kit.PerformanceAnalysisKit.Hilog
 
 try {
     let data = MessageSequence.create()
-    data.readShort()
+    let result = data.readShort()
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -2264,7 +2264,7 @@ import kit.PerformanceAnalysisKit.Hilog
 
 try {
     let data = MessageSequence.create()
-    data.readString()
+    let result = data.readString()
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -3552,34 +3552,34 @@ import kit.IPCKit.*
 import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
-try {
-    // 此处代码可添加在依赖项定义中
-    class MyParcelable <: Parcelable {
-        var num: Int32 = 0
-        var str: String = ''
+// 此处代码可添加在依赖项定义中
+class MyParcelable4 <: Parcelable {
+    var num: Int32 = 0
+    var str: String = ''
 
-        init() {}
+    init() {}
 
-        init(num: Int32, str: String) {
-            this.num = num
-            this.str = str
-        }
-        public func marshalling(messageSequence: MessageSequence): Bool {
-            messageSequence.writeInt(this.num)
-            messageSequence.writeString(this.str)
-            return true
-        }
-        public func unmarshalling(messageSequence: MessageSequence): Bool {
-            this.num = messageSequence.readInt()
-            this.str = messageSequence.readString()
-            return true
-        }
+    init(num: Int32, str: String) {
+        this.num = num
+        this.str = str
     }
+    public func marshalling(messageSequence: MessageSequence): Bool {
+        messageSequence.writeInt(this.num)
+        messageSequence.writeString(this.str)
+        return true
+    }
+    public func unmarshalling(messageSequence: MessageSequence): Bool {
+        this.num = messageSequence.readInt()
+        this.str = messageSequence.readString()
+        return true
+    }
+}
 
-    let parcelable = MyParcelable(1, "aaa")
+try {
+    let parcelable = MyParcelable4(1, "aaa")
     let data = MessageSequence.create()
     data.writeParcelable(parcelable)
-    let ret = MyParcelable()
+    let ret = MyParcelable4()
     data.readParcelable(ret)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
@@ -3623,36 +3623,36 @@ import kit.IPCKit.*
 import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
-try {
-    // 此处代码可添加在依赖项定义中
-    class MyParcelable <: Parcelable {
-        var num: Int32 = 0
-        var str: String = ''
+// 此处代码可添加在依赖项定义中
+class MyParcelable5 <: Parcelable {
+    var num: Int32 = 0
+    var str: String = ''
 
-        init() {}
+    init() {}
 
-        init(num: Int32, str: String) {
-            this.num = num
-            this.str = str
-        }
-        public func marshalling(messageSequence: MessageSequence): Bool {
-            messageSequence.writeInt(this.num)
-            messageSequence.writeString(this.str)
-            return true
-        }
-        public func unmarshalling(messageSequence: MessageSequence): Bool {
-            this.num = messageSequence.readInt()
-            this.str = messageSequence.readString()
-            return true
-        }
+    init(num: Int32, str: String) {
+        this.num = num
+        this.str = str
     }
+    public func marshalling(messageSequence: MessageSequence): Bool {
+        messageSequence.writeInt(this.num)
+        messageSequence.writeString(this.str)
+        return true
+    }
+    public func unmarshalling(messageSequence: MessageSequence): Bool {
+        this.num = messageSequence.readInt()
+        this.str = messageSequence.readString()
+        return true
+    }
+}
 
-    let parcelable = MyParcelable(1, "aaa")
-    let parcelable2 = MyParcelable(2, "bbb")
-    let parcelable3 = MyParcelable(3, "ccc")
+try {
+    let parcelable = MyParcelable5(1, "aaa")
+    let parcelable2 = MyParcelable5(2, "bbb")
+    let parcelable3 = MyParcelable5(3, "ccc")
     let data = MessageSequence.create()
     data.writeParcelableArray(parcelable,parcelable2,parcelable3)
-    let ret: Array<Parcelable> = [MyParcelable(0, ""), MyParcelable(0, ""), MyParcelable(0, "")]
+    let ret: Array<Parcelable> = [MyParcelable5(0, ""), MyParcelable5(0, ""), MyParcelable5(0, "")]
     data.readParcelableArray(ret)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")

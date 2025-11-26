@@ -137,12 +137,12 @@ try {
         onException: Some({ errorObj =>
             Hilog.info(0, "test_errorManager", "onException, name:   =${errorObj.name}")
             Hilog.info(0, "test_errorManager", "onException, message:   =${errorObj.message}")
-            if (let Some(v) <-errorObj.stack) {
+            if (let Some(v) <- errorObj.stack) {
                 Hilog.info(0, "test_errorManager", "onException, stack:    =${v}")
             }
         })
     )
-    ErrorManager.on(ErrorManagerEvent.Error, observer)
+    let id = ErrorManager.on(ErrorManagerEvent.Error, observer)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }

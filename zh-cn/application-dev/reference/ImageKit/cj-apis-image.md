@@ -462,7 +462,7 @@ import kit.PerformanceAnalysisKit.*
 import ohos.business_exception.BusinessException
 import ohos.resource_manager.ResourceManager
 
-let resourceManager = Global.getResourceManager() // 需获取Context应用上下文，详见本文使用说明
+let resourceManager = Global.abilityContext.resourceManager // 需获取Context应用上下文，详见本文使用说明
 try {
     let rawfd = resourceManager.getRawFd("test.png")
     createImageSource(rawfd)
@@ -1836,7 +1836,7 @@ import ohos.business_exception.BusinessException
 import ohos.callback_invoke.*
 
 class Callback <: Callback0Argument {
-    public open func invoke(res: ?BusinessException): Unit {
+    public func invoke(res: ?BusinessException): Unit {
         Hilog.info(0, "test", "invoke success")
     }
 }
@@ -1879,9 +1879,10 @@ public func off(eventType: ReceiveType): Unit
 import kit.ImageKit.*
 import kit.PerformanceAnalysisKit.*
 import ohos.business_exception.BusinessException
+import ohos.callback_invoke.*
 
-class Callback <: Callback0Argument {
-    public open func invoke(res: ?BusinessException): Unit {
+class Callback1 <: Callback0Argument {
+    public func invoke(res: ?BusinessException): Unit {
         Hilog.info(0, "test", "invoke success")
     }
 }
@@ -1889,7 +1890,7 @@ class Callback <: Callback0Argument {
 try {
     let size = Size(8, 8192)
     let receiver = createImageReceiver(size, ImageFormat.Jpeg, 8)
-    let callback = Callback()
+    let callback = Callback1()
     receiver.on(ImageArrival, callback)
     receiver.off(ImageArrival)
 } catch (e: BusinessException) {
@@ -2310,7 +2311,7 @@ try {
     let data: Array<UInt8> = Array<UInt8>(112, repeat: 0)
     let sourceOptions: SourceOptions = SourceOptions(120)
     let imageSourceApi: ImageSource = createImageSource(data, sourceOptions)  // 请替换为正确的图片源，参考本文使用说明。
-    imageSourceApi.getImageProperty(PropertyKey.ImageLength)
+    let value = imageSourceApi.getImageProperty(PropertyKey.ImageLength)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -5581,7 +5582,7 @@ PitchAngle
 PixelXDimension
 ```
 
-**功能：** 像素X尺寸。<
+**功能：** 像素X尺寸。
 
 修改传参格式说明：非负整数字符串。
 

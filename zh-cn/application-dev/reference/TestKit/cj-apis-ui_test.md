@@ -81,10 +81,16 @@ public func clearText(): Unit
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let txt: Component = driver.findComponent(On().text("cangjie")).getOrThrow()
-txt.clearText()
+try {
+    let driver: Driver = Driver.create()
+    let txt: Component = driver.findComponent(On().text("cangjie")).getOrThrow()
+    txt.clearText()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func click()
@@ -115,10 +121,16 @@ public func click(): Unit
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let button: Component = driver.findComponent(On().id("button")).getOrThrow()
-button.click()
+try {
+    let driver: Driver = Driver.create()
+    let button: Component = driver.findComponent(On().id("button")).getOrThrow()
+    button.click()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func doubleClick()
@@ -149,10 +161,16 @@ public func doubleClick(): Unit
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let button: Component = driver.findComponent(On().id("button")).getOrThrow()
-button.doubleClick()
+try {
+    let driver: Driver = Driver.create()
+    let button: Component = driver.findComponent(On().id("button")).getOrThrow()
+    button.doubleClick()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func dragTo(Component)
@@ -189,11 +207,17 @@ public func dragTo(target: Component): Unit
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let button: Component = driver.findComponent(On().id("button")).getOrThrow()
-let drag: Component = driver.findComponent(On().text("ohos")).getOrThrow()
-button.dragTo(drag)
+try {
+    let driver: Driver = Driver.create()
+    let button: Component = driver.findComponent(On().id("button")).getOrThrow()
+    let drag: Component = driver.findComponent(On().text("ohos")).getOrThrow()
+    button.dragTo(drag)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getBounds()
@@ -230,10 +254,16 @@ public func getBounds(): Rect
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let button: Component = driver.findComponent(On().id("button")).getOrThrow()
-let rect: Rect = button.getBounds()
+try {
+    let driver: Driver = Driver.create()
+    let button: Component = driver.findComponent(On().id("button")).getOrThrow()
+    let rect: Rect = button.getBounds()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getBoundsCenter()
@@ -270,10 +300,16 @@ public func getBoundsCenter(): Point
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let button: Component = driver.findComponent(On().id("button")).getOrThrow()
-let point: Point = button.getBoundsCenter()
+try {
+    let driver: Driver = Driver.create()
+    let button: Component = driver.findComponent(On().id("button")).getOrThrow()
+    let point = button.getBoundsCenter()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getDescription()
@@ -310,10 +346,16 @@ public func getDescription(): String
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let button: Component = driver.findComponent(On().id("button")).getOrThrow()
-let des: String = button.getDescription()
+try {
+    let driver: Driver = Driver.create()
+    let button: Component = driver.findComponent(On().id("button")).getOrThrow()
+    let des: String = button.getDescription()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getId()
@@ -350,10 +392,16 @@ public func getId(): String
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let button: Component = driver.findComponent(On().id("button")).getOrThrow()
-let id: String = button.getId()
+try {
+    let driver: Driver = Driver.create()
+    let button: Component = driver.findComponent(On().id("button")).getOrThrow()
+    let id: String = button.getId()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getText()
@@ -390,10 +438,16 @@ public func getText(): String
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let button: Component = driver.findComponent(On().id("button")).getOrThrow()
-let text: String = button.getText()
+try {
+    let driver: Driver = Driver.create()
+    let button: Component = driver.findComponent(On().id("button")).getOrThrow()
+    let text: String = button.getText()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getType()
@@ -430,10 +484,16 @@ public func getType(): String
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let button: Component = driver.findComponent(On().id("button")).getOrThrow()
-let btype: String = button.getType()
+try {
+    let driver: Driver = Driver.create()
+    let button: Component = driver.findComponent(On().id("button")).getOrThrow()
+    let btype: String = button.getType()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func inputText(String)
@@ -470,10 +530,16 @@ public func inputText(text: String): Unit
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let txt: Component = driver.findComponent(On().text("cangjie")).getOrThrow()
-txt.inputText("111")
+try {
+    let driver: Driver = Driver.create()
+    let txt: Component = driver.findComponent(On().text("cangjie")).getOrThrow()
+    txt.inputText("111")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func isCheckable()
@@ -510,10 +576,16 @@ public func isCheckable(): Bool
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let button: Component = driver.findComponent(On().id("button")).getOrThrow()
-let c: Bool = button.isCheckable()
+try {
+    let driver: Driver = Driver.create()
+    let button: Component = driver.findComponent(On().id("button")).getOrThrow()
+    let c: Bool = button.isCheckable()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func isChecked()
@@ -550,10 +622,16 @@ public func isChecked(): Bool
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let button: Component = driver.findComponent(On().id("button")).getOrThrow()
-let c2: Bool = button.isChecked()
+try {
+    let driver: Driver = Driver.create()
+    let button: Component = driver.findComponent(On().id("button")).getOrThrow()
+    let c2: Bool = button.isChecked()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func isClickable()
@@ -590,10 +668,16 @@ public func isClickable(): Bool
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let button: Component = driver.findComponent(On().id("button")).getOrThrow()
-let c: Bool = button.isClickable()
+try {
+    let driver: Driver = Driver.create()
+    let button: Component = driver.findComponent(On().id("button")).getOrThrow()
+    let c: Bool = button.isClickable()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func isEnabled()
@@ -630,10 +714,16 @@ public func isEnabled(): Bool
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let button: Component = driver.findComponent(On().id("button")).getOrThrow()
-let e: Bool = button.isEnabled()
+try {
+    let driver: Driver = Driver.create()
+    let button: Component = driver.findComponent(On().id("button")).getOrThrow()
+    let e: Bool = button.isEnabled()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func isFocused()
@@ -670,10 +760,16 @@ public func isFocused(): Bool
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let button: Component = driver.findComponent(On().id("button")).getOrThrow()
-let f: Bool = button.isFocused()
+try {
+    let driver: Driver = Driver.create()
+    let button: Component = driver.findComponent(On().id("button")).getOrThrow()
+    let f: Bool = button.isFocused()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func isLongClickable()
@@ -710,10 +806,16 @@ public func isLongClickable(): Bool
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let button: Component = driver.findComponent(On().id("button")).getOrThrow()
-let c1: Bool = button.isLongClickable()
+try {
+    let driver: Driver = Driver.create()
+    let button: Component = driver.findComponent(On().id("button")).getOrThrow()
+    let c1: Bool = button.isLongClickable()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func isScrollable()
@@ -750,10 +852,16 @@ public func isScrollable(): Bool
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let button: Component = driver.findComponent(On().id("button")).getOrThrow()
-let s: Bool = button.isScrollable()
+try {
+    let driver: Driver = Driver.create()
+    let button: Component = driver.findComponent(On().id("button")).getOrThrow()
+    let s: Bool = button.isScrollable()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func isSelected()
@@ -790,10 +898,16 @@ public func isSelected(): Bool
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let button: Component = driver.findComponent(On().id("button")).getOrThrow()
-let s1: Bool = button.isSelected()
+try {
+    let driver: Driver = Driver.create()
+    let button: Component = driver.findComponent(On().id("button")).getOrThrow()
+    let s1: Bool = button.isSelected()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func longClick()
@@ -824,10 +938,16 @@ public func longClick(): Unit
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let button: Component = driver.findComponent(On().id("button")).getOrThrow()
-button.longClick()
+try {
+    let driver: Driver = Driver.create()
+    let button: Component = driver.findComponent(On().id("button")).getOrThrow()
+    button.longClick()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func pinchIn(Float32)
@@ -864,10 +984,16 @@ public func pinchIn(scale: Float32): Unit
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let image: Component = driver.findComponent(On().id("icon")).getOrThrow()
-image.pinchIn(0.5)
+try {
+    let driver: Driver = Driver.create()
+    let image: Component = driver.findComponent(On().id("icon")).getOrThrow()
+    image.pinchIn(0.5)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func pinchOut(Float32)
@@ -904,10 +1030,16 @@ public func pinchOut(scale: Float32): Unit
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let image: Component = driver.findComponent(On().id("icon")).getOrThrow()
-image.pinchOut(2.5)
+try {
+    let driver: Driver = Driver.create()
+    let image: Component = driver.findComponent(On().id("icon")).getOrThrow()
+    image.pinchOut(2.5)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func scrollSearch(On)
@@ -950,10 +1082,16 @@ public func scrollSearch(on: On): ?Component
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let scrollBar: Component = driver.findComponent(On().onType("Scroll")).getOrThrow()
-let button: Option<Component> = scrollBar.scrollSearch(On().text("1"))
+try {
+    let driver: Driver = Driver.create()
+    let scrollBar: Component = driver.findComponent(On().onType("Scroll")).getOrThrow()
+    let button: Option<Component> = scrollBar.scrollSearch(On().text("1"))
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func scrollToBottom(Int64)
@@ -990,10 +1128,16 @@ public func scrollToBottom(speed!: Int64 = 600): Unit
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let scrollBar: Component = driver.findComponent(On().onType("Scroll")).getOrThrow()
-scrollBar.scrollToBottom()
+try {
+    let driver: Driver = Driver.create()
+    let scrollBar: Component = driver.findComponent(On().onType("Scroll")).getOrThrow()
+    scrollBar.scrollToBottom()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func scrollToTop(Int64)
@@ -1030,10 +1174,16 @@ public func scrollToTop(speed!: Int64 = 600): Unit
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let scrollBar: Component = driver.findComponent(On().onType("Scroll")).getOrThrow()
-scrollBar.scrollToTop()
+try {
+    let driver: Driver = Driver.create()
+    let scrollBar: Component = driver.findComponent(On().onType("Scroll")).getOrThrow()
+    scrollBar.scrollToTop()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## class Driver
@@ -1082,8 +1232,14 @@ public static func create(): Driver
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
+try {
+    let driver: Driver = Driver.create()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func assertComponentExist(On)
@@ -1166,9 +1322,15 @@ public func click(x: Int32, y: Int32): Unit
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-driver.click(100, 100)
+try {
+    let driver: Driver = Driver.create()
+    driver.click(100, 100)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func createUIEventObserver()
@@ -1197,9 +1359,15 @@ public func createUIEventObserver(): UIEventObserver
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let observer: UIEventObserver = driver.createUIEventObserver()
+try {
+    let driver: Driver = Driver.create()
+    let observer: UIEventObserver = driver.createUIEventObserver()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func delayMs(Int32)
@@ -1236,9 +1404,15 @@ public func delayMs(duration: Int32): Unit
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-driver.delayMs(1000)
+try {
+    let driver: Driver = Driver.create()
+    driver.delayMs(1000)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func doubleClick(Int32, Int32)
@@ -1276,9 +1450,15 @@ public func doubleClick(x: Int32, y: Int32): Unit
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-driver.doubleClick(100, 100)
+try {
+    let driver: Driver = Driver.create()
+    driver.doubleClick(100, 100)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func drag(Int32, Int32, Int32, Int32, Int32)
@@ -1325,9 +1505,15 @@ public func drag(
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-driver.drag(100, 100, 200, 200, speed: 600)
+try {
+    let driver: Driver = Driver.create()
+    driver.drag(100, 100, 200, 200, speed: 600)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func findComponent(On)
@@ -1362,9 +1548,15 @@ public func findComponent(on: On): ?Component
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let button: Option<Component> = driver.findComponent(On().text("next page"))
+try {
+    let driver: Driver = Driver.create()
+    let button: Option<Component> = driver.findComponent(On().text("next page"))
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func findComponents(On)
@@ -1407,9 +1599,15 @@ public func findComponents(on: On): ?Array<Component>
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let buttonList: Option<Array<Component>> = driver.findComponents(On().text("next page"))
+try {
+    let driver: Driver = Driver.create()
+    let buttonList: Option<Array<Component>> = driver.findComponents(On().text("next page"))
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func findWindow(WindowFilter)
@@ -1452,9 +1650,15 @@ public func findWindow(filter: WindowFilter): ?UiWindow
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let window: Option<UiWindow> = driver.findWindow(WindowFilter(active: true))
+try {
+    let driver: Driver = Driver.create()
+    let window: Option<UiWindow> = driver.findWindow(WindowFilter(active: true))
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func fling(Point, Point, Int32, Int32)
@@ -1494,9 +1698,15 @@ public func fling(from: Point, to: Point, stepLen: Int32, speed: Int32): Unit
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-driver.fling(UiDirection.Down, 10000)
+try {
+    let driver: Driver = Driver.create()
+    driver.fling(UiDirection.Down, 10000)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func fling(UiDirection, Int32)
@@ -1534,9 +1744,15 @@ public func fling(direction: UiDirection, speed: Int32): Unit
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-driver.fling(UiDirection.Down, 10000)
+try {
+    let driver: Driver = Driver.create()
+    driver.fling(UiDirection.Down, 10000)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getDisplayDensity()
@@ -1565,9 +1781,15 @@ public func getDisplayDensity(): Point
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let density = driver.getDisplayDensity()
+try {
+    let driver: Driver = Driver.create()
+    let density = driver.getDisplayDensity()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getDisplayRotation()
@@ -1596,9 +1818,15 @@ public func getDisplayRotation(): DisplayRotation
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let rotation: DisplayRotation = driver.getDisplayRotation()
+try {
+    let driver: Driver = Driver.create()
+    let rotation: DisplayRotation = driver.getDisplayRotation()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getDisplaySize()
@@ -1627,9 +1855,15 @@ public func getDisplaySize(): Point
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let size = driver.getDisplaySize()
+try {
+    let driver: Driver = Driver.create()
+    let size = driver.getDisplaySize()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func injectMultiPointerAction(PointerMatrix, Int32)
@@ -1675,16 +1909,22 @@ public func injectMultiPointerAction(pointers: PointerMatrix, speed!: Int32 = 60
 import ohos.ui_test.Point as PT
 import ohos.ui_test.Driver
 import ohos.ui_test.PointerMatrix
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let pointers: PointerMatrix = PointerMatrix.create(2, 3)
-pointers.setPoint(0, 0, PT(230, 480))
-pointers.setPoint(0, 1, PT(250, 380))
-pointers.setPoint(0, 2, PT(270, 280))
-pointers.setPoint(1, 0, PT(230, 680))
-pointers.setPoint(1, 1, PT(240, 580))
-pointers.setPoint(1, 2, PT(250, 480))
-driver.injectMultiPointerAction(pointers)
+try {
+    let driver: Driver = Driver.create()
+    let pointers: PointerMatrix = PointerMatrix.create(2, 3)
+    pointers.setPoint(0, 0, PT(230, 480))
+    pointers.setPoint(0, 1, PT(250, 380))
+    pointers.setPoint(0, 2, PT(270, 280))
+    pointers.setPoint(1, 0, PT(230, 680))
+    pointers.setPoint(1, 1, PT(240, 580))
+    pointers.setPoint(1, 2, PT(250, 480))
+    let result = driver.injectMultiPointerAction(pointers)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func inputText(Point, String)
@@ -1770,9 +2010,15 @@ public func longClick(x: Int32, y: Int32): Unit
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-driver.longClick(100, 100)
+try {
+    let driver: Driver = Driver.create()
+    driver.longClick(100, 100)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func mouseClick(Point, MouseButton, Int32, Int32)
@@ -1813,9 +2059,15 @@ public func mouseClick(p: Point, btnId: MouseButton, key1!: Int32 = 0, key2!: In
 
 import kit.TestKit.*
 import ohos.ui_test.Point as PT
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-driver.mouseClick(PT(248, 194), MouseButton.MouseButtonLeft, key1: 2072)
+try {
+    let driver: Driver = Driver.create()
+    driver.mouseClick(PT(248, 194), MouseButton.MouseButtonLeft, key1: 2072)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func mouseDoubleClick(Point, MouseButton, Int32, Int32)
@@ -1856,9 +2108,15 @@ public func mouseDoubleClick(p: Point, btnId: MouseButton, key1!: Int32 = 0, key
 
 import kit.TestKit.*
 import ohos.ui_test.Point as PT
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-driver.mouseDoubleClick(PT(248, 194), MouseButton.MouseButtonLeft, key1: 2072)
+try {
+    let driver: Driver = Driver.create()
+    driver.mouseDoubleClick(PT(248, 194), MouseButton.MouseButtonLeft, key1: 2072)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func mouseDrag(Point, Point, Int32)
@@ -1898,9 +2156,15 @@ public func mouseDrag(from: Point, to: Point, speed!: Int32 = 600): Unit
 
 import kit.TestKit.*
 import ohos.ui_test.Point as PT
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-driver.mouseDrag(PT(100, 100), PT(200, 200))
+try {
+    let driver: Driver = Driver.create()
+    driver.mouseDrag(PT(100, 100), PT(200, 200))
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func mouseLongClick(Point, MouseButton, Int32, Int32)
@@ -1941,9 +2205,15 @@ public func mouseLongClick(p: Point, btnId: MouseButton, key1!: Int32 = 0, key2!
 
 import kit.TestKit.*
 import ohos.ui_test.Point as PT
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-driver.mouseLongClick(PT(248, 194), MouseButton.MouseButtonLeft, key1: 2072)
+try {
+    let driver: Driver = Driver.create()
+    driver.mouseLongClick(PT(248, 194), MouseButton.MouseButtonLeft, key1: 2072)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func mouseMoveTo(Point)
@@ -1981,9 +2251,15 @@ public func mouseMoveTo(p: Point): Unit
 
 import kit.TestKit.*
 import ohos.ui_test.Point as PT
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-driver.mouseMoveTo(PT(248, 194))
+try {
+    let driver: Driver = Driver.create()
+    driver.mouseMoveTo(PT(248, 194))
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func mouseMoveWithTrack(Point, Point, Int32)
@@ -2023,9 +2299,15 @@ public func mouseMoveWithTrack(from: Point, to: Point, speed!: Int32 = 600): Uni
 
 import kit.TestKit.*
 import ohos.ui_test.Point as PT
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-driver.mouseMoveWithTrack(PT(100, 100), PT(200, 200))
+try {
+    let driver: Driver = Driver.create()
+    driver.mouseMoveWithTrack(PT(100, 100), PT(200, 200))
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func mouseScroll(Point, Bool, Int32, Int32, Int32, Int32)
@@ -2068,9 +2350,15 @@ public func mouseScroll(p: Point, down: Bool, d: Int32, key1!: Int32 = 0, key2!:
 
 import kit.TestKit.*
 import ohos.ui_test.Point as PT
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-driver.mouseScroll(PT(360, 640), true, 30, key1: 2072)
+try {
+    let driver: Driver = Driver.create()
+    driver.mouseScroll(PT(360, 640), true, 30, key1: 2072)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func pressBack()
@@ -2093,9 +2381,15 @@ public func pressBack(): Unit
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-driver.pressBack()
+try {
+    let driver: Driver = Driver.create()
+    driver.pressBack()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func pressHome()
@@ -2118,9 +2412,15 @@ public func pressHome(): Unit
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-driver.pressHome()
+try {
+    let driver: Driver = Driver.create()
+    driver.pressHome()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func screenCap(String)
@@ -2163,9 +2463,15 @@ public func screenCap(savePath: String): Bool
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-driver.screenCap("/data/storage/el2/base/cache/1.png")
+try {
+    let driver: Driver = Driver.create()
+    let result = driver.screenCap("/data/storage/el2/base/cache/1.png")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func screenCapture(String, Rect)
@@ -2209,9 +2515,15 @@ public func screenCapture(savePath: String, rect!: Rect = Rect(0,0,0,0)): Bool
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-driver.screenCapture("/data/storage/el2/base/cache/1.png", rect: Rect(0, 0, 100, 100))
+try {
+    let driver: Driver = Driver.create()
+    let result = driver.screenCapture("/data/storage/el2/base/cache/1.png", rect: Rect(0, 0, 100, 100))
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func setDisplayRotation(DisplayRotation)
@@ -2248,9 +2560,15 @@ public func setDisplayRotation(rotation: DisplayRotation): Unit
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-driver.setDisplayRotation(DisplayRotation.Rotation180)
+try {
+    let driver: Driver = Driver.create()
+    driver.setDisplayRotation(DisplayRotation.Rotation180)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func setDisplayRotationEnabled(Bool)
@@ -2287,9 +2605,15 @@ public func setDisplayRotationEnabled(enabled: Bool): Unit
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-driver.setDisplayRotationEnabled(false)
+try {
+    let driver: Driver = Driver.create()
+    driver.setDisplayRotationEnabled(false)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func swipe(Int32, Int32, Int32, Int32, Int32)
@@ -2336,9 +2660,15 @@ public func swipe(
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-driver.swipe(100, 100, 200, 200, speed: 600)
+try {
+    let driver: Driver = Driver.create()
+    driver.swipe(100, 100, 200, 200, speed: 600)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func triggerCombineKeys(Int32, Int32, Int32)
@@ -2377,9 +2707,15 @@ public func triggerCombineKeys(key0: Int32, key1: Int32, key2!: Int32 = 0): Unit
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-driver.triggerCombineKeys(2072, 2047, key2: 2035)
+try {
+    let driver: Driver = Driver.create()
+    driver.triggerCombineKeys(2072, 2047, key2: 2035)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func triggerKey(Int32)
@@ -2416,9 +2752,15 @@ public func triggerKey(keyCode: Int32): Unit
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-driver.triggerKey(123)
+try {
+    let driver: Driver = Driver.create()
+    driver.triggerKey(123)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func waitForComponent(On, Int32)
@@ -2462,9 +2804,15 @@ public func waitForComponent(on: On, time: Int32): ?Component
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let button: Option<Component> = driver.waitForComponent(On().text("next page"), 500)
+try {
+    let driver: Driver = Driver.create()
+    let button: Option<Component> = driver.waitForComponent(On().text("next page"), 500)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func waitForIdle(Int32, Int32)
@@ -2508,9 +2856,15 @@ public func waitForIdle(idleTime: Int32, timeout: Int32): Bool
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let idled = driver.waitForIdle(4000, 5000)
+try {
+    let driver: Driver = Driver.create()
+    let idled = driver.waitForIdle(4000, 5000)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func wakeUpDisplay()
@@ -2533,9 +2887,15 @@ public func wakeUpDisplay(): Unit
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-driver.wakeUpDisplay()
+try {
+    let driver: Driver = Driver.create()
+    driver.wakeUpDisplay()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## class On
@@ -2612,17 +2972,13 @@ public func checkable(b!: Bool = true): On
 //example_test.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-@Test
-class TestExample00 {
-    @TestCase
-    func test00(): Unit {
-        unittest()
-    }
-    @TestCase
-    func test01(): Unit {
-        let on: On = On().checkable(b: true) // 指定目标控件的能否被勾选状态属性。
-    }
+try {
+    let on: On = On().checkable(b: true) // 指定目标控件的能否被勾选状态属性。
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -2666,17 +3022,13 @@ public func checked(b!: Bool = true): On
 //example_test.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-@Test
-class TestExample00 {
-    @TestCase
-    func test00(): Unit {
-        unittest()
-    }
-    @TestCase
-    func test01(): Unit {
-        let on: On = On().checked(b: true) // 指定目标控件的被勾选状态属性
-    }
+try {
+    let on: On = On().checked(b: true) // 指定目标控件的被勾选状态属性
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -2712,17 +3064,13 @@ public func clickable(b!: Bool = true): On
 //example_test.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-@Test
-class TestExample00 {
-    @TestCase
-    func test00(): Unit {
-        unittest()
-    }
-    @TestCase
-    func test01(): Unit {
-        let on: On = On().clickable(b: true) // 指定目标控件的可点击状态属性。
-    }
+try {
+    let on: On = On().clickable(b: true) // 指定目标控件的可点击状态属性。
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -2767,17 +3115,13 @@ public func description(val: String, pattern!: MatchPattern = MatchPattern.Equal
 //example_test.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-@Test
-class TestExample00 {
-    @TestCase
-    func test00(): Unit {
-        unittest()
-    }
-    @TestCase
-    func test01(): Unit {
-        let on: On = On().description("123") // 指定目标控件的控件类型属性。
-    }
+try {
+    let on: On = On().description("123") // 指定目标控件的控件类型属性。
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -2821,17 +3165,13 @@ public func enabled(b!: Bool = true): On
 //example_test.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-@Test
-class TestExample00 {
-    @TestCase
-    func test00(): Unit {
-        unittest()
-    }
-    @TestCase
-    func test01(): Unit {
-        let on: On = On().enabled(b: true) // 指定目标控件的使能状态属性。
-    }
+try {
+    let on: On = On().enabled(b: true) // 指定目标控件的使能状态属性。
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -2875,17 +3215,13 @@ public func focused(b!: Bool = true): On
 //example_test.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-@Test
-class TestExample00 {
-    @TestCase
-    func test00(): Unit {
-        unittest()
-    }
-    @TestCase
-    func test01(): Unit {
-        let on: On = On().focused(b: true) // 指定目标控件的获焦状态属性。
-    }
+try {
+    let on: On = On().focused(b: true) // 指定目标控件的获焦状态属性。
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -2929,17 +3265,13 @@ public func id(id: String): On
 //example_test.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-@Test
-class TestExample00 {
-    @TestCase
-    func test00(): Unit {
-        unittest()
-    }
-    @TestCase
-    func test01(): Unit {
-        let on: On = On().id("123") // 指定目标控件的id属性。
-    }
+try {
+    let on: On = On().id("123") // 指定目标控件的id属性。
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -2983,17 +3315,13 @@ public func inWindow(bundleName: String): On
 //example_test.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-@Test
-class TestExample00 {
-    @TestCase
-    func test00(): Unit {
-        unittest()
-    }
-    @TestCase
-    func test01(): Unit {
-        let on: On = On().inWindow("com.uitestScene.acts") // 指定目标控件位于给出的应用窗口内。
-    }
+try {
+    let on: On = On().inWindow("com.uitestScene.acts") // 指定目标控件位于给出的应用窗口内。
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -3037,18 +3365,14 @@ public func isAfter(on: On): On
 //example_test.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-@Test
-class TestExample00 {
-    @TestCase
-    func test00(): Unit {
-        unittest()
-    }
-    @TestCase
-    func test01(): Unit {
-        let on1: On = On().text("123") // 指定特征属性控件
-        let on2: On = On().onType("Text").isAfter(on1)  // 查找text为123之后的第一个Text组件
-    }
+try {
+    let on1: On = On().text("123") // 指定特征属性控件
+    let on2: On = On().onType("Text").isAfter(on1)  // 查找text为123之后的第一个Text组件
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -3092,18 +3416,14 @@ public func isBefore(on: On): On
 //example_test.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-@Test
-class TestExample00 {
-    @TestCase
-    func test00(): Unit {
-        unittest()
-    }
-    @TestCase
-    func test01(): Unit {
-        let on1: On = On().text("123") // 指定特征属性控件
-        let on2: On = On().onType("Button").isBefore(on1)  // 查找text为123之前的第一个Button组件
-    }
+try {
+    let on1: On = On().text("123") // 指定特征属性控件
+    let on2: On = On().onType("Button").isBefore(on1)  // 查找text为123之前的第一个Button组件
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -3147,17 +3467,13 @@ public func longClickable(b!: Bool = true): On
 //example_test.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-@Test
-class TestExample00 {
-    @TestCase
-    func test00(): Unit {
-        unittest()
-    }
-    @TestCase
-    func test01(): Unit {
-        let on: On = On().longClickable(b: true) // 指定目标控件的可长按点击状态属性。
-    }
+try {
+    let on: On = On().longClickable(b: true) // 指定目标控件的可长按点击状态属性。
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -3201,17 +3517,13 @@ public func onType(tp: String): On
 //example_test.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-@Test
-class TestExample00 {
-    @TestCase
-    func test00(): Unit {
-        unittest()
-    }
-    @TestCase
-    func test01(): Unit {
-        let on: On = On().onType("Button") // 指定目标控件的控件类型属性。
-    }
+try {
+    let on: On = On().onType("Button") // 指定目标控件的控件类型属性。
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -3255,17 +3567,13 @@ public func scrollable(b!: Bool = true): On
 //example_test.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-@Test
-class TestExample00 {
-    @TestCase
-    func test00(): Unit {
-        unittest()
-    }
-    @TestCase
-    func test01(): Unit {
-        let on: On = On().scrollable(b: true) // 指定目标控件的可滑动状态属性。
-    }
+try {
+    let on: On = On().scrollable(b: true) // 指定目标控件的可滑动状态属性。
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -3309,17 +3617,13 @@ public func selected(b!: Bool = true): On
 //example_test.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-@Test
-class TestExample00 {
-    @TestCase
-    func test00(): Unit {
-        unittest()
-    }
-    @TestCase
-    func test01(): Unit {
-        let on: On = On().selected(b: true) // 指定目标控件的被选中状态属性。
-    }
+try {
+    let on: On = On().selected(b: true) // 指定目标控件的被选中状态属性。
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -3356,17 +3660,13 @@ public func text(txt: String, pattern!: MatchPattern = MatchPattern.Equals): On
 //example_test.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-@Test
-class TestExample00 {
-    @TestCase
-    func test00(): Unit {
-        unittest()
-    }
-    @TestCase
-    func test01(): Unit {
-        let on: On = On().text("123") // 指定目标控件的text属性。
-    }
+try {
+    let on: On = On().text("123") // 指定目标控件的text属性。
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -3410,18 +3710,14 @@ public func within(on: On): On
 //example_test.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-@Test
-class TestExample00 {
-    @TestCase
-    func test00(): Unit {
-        unittest()
-    }
-    @TestCase
-    func test01(): Unit {
-        let on1: On = On().onType("Scroll") // 指定特征属性控件
-        let on2: On = On().text("123").within(on1) // 查找Scroller里面的text为123的子组件
-    }
+try {
+    let on1: On = On().onType("Scroll") // 指定特征属性控件
+    let on2: On = On().text("123").within(on1) // 查找Scroller里面的text为123的子组件
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -3563,8 +3859,14 @@ public static func create(fingers: Int32, steps: Int32): PointerMatrix
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let pointerMatrix: PointerMatrix = PointerMatrix.create(2, 3)
+try {
+    let pointerMatrix: PointerMatrix = PointerMatrix.create(2, 3)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func setPoint(Int32, Int32, Point)
@@ -3604,14 +3906,20 @@ public func setPoint(finger: Int32, step: Int32, point: Point): Unit
 
 import kit.TestKit.*
 import ohos.ui_test.Point as PT
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let pointerMatrix: PointerMatrix = PointerMatrix.create(2, 3)
-pointerMatrix.setPoint(0, 0, PT(230, 480))
-pointerMatrix.setPoint(0, 1, PT(250, 380))
-pointerMatrix.setPoint(0, 2, PT(270, 280))
-pointerMatrix.setPoint(1, 0, PT(230, 680))
-pointerMatrix.setPoint(1, 1, PT(240, 580))
-pointerMatrix.setPoint(1, 2, PT(250, 480))
+try {
+    let pointerMatrix: PointerMatrix = PointerMatrix.create(2, 3)
+    pointerMatrix.setPoint(0, 0, PT(230, 480))
+    pointerMatrix.setPoint(0, 1, PT(250, 380))
+    pointerMatrix.setPoint(0, 2, PT(270, 280))
+    pointerMatrix.setPoint(1, 0, PT(230, 680))
+    pointerMatrix.setPoint(1, 1, PT(240, 580))
+    pointerMatrix.setPoint(1, 2, PT(250, 480))
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## class Rect
@@ -3847,19 +4155,24 @@ public func once(onceType: OnceType, callback: Callback<UIElementInfo>): Unit
 
 import kit.TestKit.*
 import kit.PerformanceAnalysisKit.Hilog
+import ohos.business_exception.BusinessException
 
-let driver: Driver = Driver.create()
-let observer: UIEventObserver = driver.createUIEventObserver()
-observer.once(
-    OnceType.DialogShow,
-    {
-        element =>
-        Hilog.info(0, "", "onceDialogShow")
-        Hilog.info(0, "", element.bundleName)
-        Hilog.info(0, "", element.componentType)
-        Hilog.info(0, "", element.text)
-    }
-)
+try {
+    let driver: Driver = Driver.create()
+    let observer: UIEventObserver = driver.createUIEventObserver()
+    observer.once(
+        OnceType.DialogShow,
+        {
+            element =>
+            Hilog.info(0, "", "onceDialogShow")
+            Hilog.info(0, "", element.bundleName)
+            Hilog.info(0, "", element.componentType)
+            Hilog.info(0, "", element.text)
+        }
+    )
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## class UiWindow
@@ -3904,10 +4217,16 @@ public func close(): Unit
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let window: Option<UiWindow> = driver.findWindow(WindowFilter(active: true))
-window?.close()
+try {
+    let driver: Driver = Driver.create()
+    let window: Option<UiWindow> = driver.findWindow(WindowFilter(active: true))
+    window?.close()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func focus()
@@ -3940,10 +4259,16 @@ public func focus(): Unit
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let window: Option<UiWindow> = driver.findWindow(WindowFilter(active: true))
-window?.focus()
+try {
+    let driver: Driver = Driver.create()
+    let window: Option<UiWindow> = driver.findWindow(WindowFilter(active: true))
+    window?.focus()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getBounds()
@@ -3980,10 +4305,16 @@ public func getBounds(): Rect
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let window: Option<UiWindow> = driver.findWindow(WindowFilter(active: true))
-let rect = window?.getBounds()
+try {
+    let driver: Driver = Driver.create()
+    let window: Option<UiWindow> = driver.findWindow(WindowFilter(active: true))
+    let rect = window?.getBounds()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getBundleName()
@@ -4020,10 +4351,16 @@ public func getBundleName(): String
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let window: Option<UiWindow> = driver.findWindow(WindowFilter(active: true))
-let rect = window?.getBundleName()
+try {
+    let driver: Driver = Driver.create()
+    let window: Option<UiWindow> = driver.findWindow(WindowFilter(active: true))
+    let rect = window?.getBundleName()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getTitle()
@@ -4060,10 +4397,16 @@ public func getTitle(): String
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let window: Option<UiWindow> = driver.findWindow(WindowFilter(active: true))
-let title: Option<String> = window?.getTitle()
+try {
+    let driver: Driver = Driver.create()
+    let window: Option<UiWindow> = driver.findWindow(WindowFilter(active: true))
+    let title: Option<String> = window?.getTitle()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getWindowMode()
@@ -4100,10 +4443,16 @@ public func getWindowMode(): WindowMode
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let window: Option<UiWindow> = driver.findWindow(WindowFilter(active: true))
-let mode = window?.getWindowMode()
+try {
+    let driver: Driver = Driver.create()
+    let window: Option<UiWindow> = driver.findWindow(WindowFilter(active: true))
+    let mode = window?.getWindowMode()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func isActive()
@@ -4140,10 +4489,16 @@ public func isActive(): Bool
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let window: Option<UiWindow> = driver.findWindow(WindowFilter(active: true))
-let active = window?.isActive()
+try {
+    let driver: Driver = Driver.create()
+    let window: Option<UiWindow> = driver.findWindow(WindowFilter(active: true))
+    let active = window?.isActive()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func isFocused()
@@ -4180,10 +4535,16 @@ public func isFocused(): Bool
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let window: Option<UiWindow> = driver.findWindow(WindowFilter(active: true))
-let focused = window?.isFocused()
+try {
+    let driver: Driver = Driver.create()
+    let window: Option<UiWindow> = driver.findWindow(WindowFilter(active: true))
+    let focused = window?.isFocused()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func maximize()
@@ -4218,10 +4579,16 @@ public func maximize(): Unit
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let window: Option<UiWindow> = driver.findWindow(WindowFilter(active: true))
-window?.maximize()
+try {
+    let driver: Driver = Driver.create()
+    let window: Option<UiWindow> = driver.findWindow(WindowFilter(active: true))
+    window?.maximize()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func minimize()
@@ -4256,10 +4623,16 @@ public func minimize(): Unit
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let window: Option<UiWindow> = driver.findWindow(WindowFilter(active: true))
-window?.minimize()
+try {
+    let driver: Driver = Driver.create()
+    let window: Option<UiWindow> = driver.findWindow(WindowFilter(active: true))
+    window?.minimize()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func moveTo(Int32, Int32)
@@ -4301,10 +4674,16 @@ public func moveTo(x: Int32, y: Int32): Unit
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let window: Option<UiWindow> = driver.findWindow(WindowFilter(active: true))
-window?.moveTo(100, 100)
+try {
+    let driver: Driver = Driver.create()
+    let window: Option<UiWindow> = driver.findWindow(WindowFilter(active: true))
+    window?.moveTo(100, 100)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func resize(Int32, Int32, ResizeDirection)
@@ -4345,10 +4724,16 @@ public func resize(wide: Int32, height: Int32, direction: ResizeDirection): Unit
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let window: Option<UiWindow> = driver.findWindow(WindowFilter(active: true))
-window?.resize(100, 100, ResizeDirection.Left)
+try {
+    let driver: Driver = Driver.create()
+    let window: Option<UiWindow> = driver.findWindow(WindowFilter(active: true))
+    window?.resize(100, 100, ResizeDirection.Left)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func resume()
@@ -4383,10 +4768,16 @@ public func resume(): Unit
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let window: Option<UiWindow> = driver.findWindow(WindowFilter(active: true))
-window?.resume()
+try {
+    let driver: Driver = Driver.create()
+    let window: Option<UiWindow> = driver.findWindow(WindowFilter(active: true))
+    window?.resume()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func split()
@@ -4421,10 +4812,16 @@ public func split(): Unit
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let window: Option<UiWindow> = driver.findWindow(WindowFilter(active: true))
-window?.split()
+try {
+    let driver: Driver = Driver.create()
+    let window: Option<UiWindow> = driver.findWindow(WindowFilter(active: true))
+    window?.split()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## class WindowFilter

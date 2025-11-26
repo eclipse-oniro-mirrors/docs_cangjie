@@ -113,7 +113,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let startOptions = StartOptions(WindowMode.FullScreen, 0)
+    let startOptions = StartOptions(windowMode: WindowMode.WindowModeFullScreen, displayId: 0)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }

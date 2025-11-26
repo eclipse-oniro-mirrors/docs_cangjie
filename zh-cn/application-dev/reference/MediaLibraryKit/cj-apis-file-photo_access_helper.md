@@ -67,7 +67,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let phAccessHelper = getPhotoAccessHelper(ctx)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
@@ -243,7 +243,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let phAccessHelper = getPhotoAccessHelper(ctx)
     let predicates = DataSharePredicates()
     let fetchOptions: FetchOptions = FetchOptions([], predicates)
@@ -340,7 +340,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let phAccessHelper = getPhotoAccessHelper(ctx)
     let predicates = DataSharePredicates()
     predicates.equalTo('album_name', StringValue('test1'))
@@ -411,7 +411,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let phAccessHelper = getPhotoAccessHelper(ctx)
     let predicates = DataSharePredicates()
     predicates.equalTo('album_name', StringValue('test1'))
@@ -464,7 +464,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let phAccessHelper = getPhotoAccessHelper(ctx)
     let predicates = DataSharePredicates()
     predicates.equalTo('album_name', StringValue('test1'))
@@ -517,7 +517,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let phAccessHelper = getPhotoAccessHelper(ctx)
     let predicates = DataSharePredicates()
     predicates.equalTo('album_name', StringValue('test1'))
@@ -571,7 +571,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let phAccessHelper = getPhotoAccessHelper(ctx)
     let predicates = DataSharePredicates()
     predicates.equalTo('album_name', StringValue('test1'))
@@ -630,7 +630,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let phAccessHelper = getPhotoAccessHelper(ctx)
     let predicates = DataSharePredicates()
     predicates.equalTo('album_name', StringValue('test1'))
@@ -896,7 +896,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let phAccessHelper = getPhotoAccessHelper(ctx)
     let predicates = DataSharePredicates()
     let fetchOptions: FetchOptions = FetchOptions([], predicates)
@@ -947,7 +947,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let phAccessHelper = getPhotoAccessHelper(ctx)
     let predicates = DataSharePredicates()
     let fetchOptions: FetchOptions = FetchOptions([], predicates)
@@ -998,7 +998,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let phAccessHelper = getPhotoAccessHelper(ctx)
     let predicates = DataSharePredicates()
     let fetchOptions: FetchOptions = FetchOptions([], predicates)
@@ -1066,7 +1066,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let phAccessHelper = getPhotoAccessHelper(ctx)
     let predicates = DataSharePredicates()
     let fetchOptions: FetchOptions = FetchOptions([], predicates)
@@ -1119,7 +1119,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let phAccessHelper = getPhotoAccessHelper(ctx)
     let predicates = DataSharePredicates()
     let fetchOptions: FetchOptions = FetchOptions([], predicates)
@@ -1175,7 +1175,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let phAccessHelper = getPhotoAccessHelper(ctx)
     let predicates = DataSharePredicates()
     let fetchOptions: FetchOptions = FetchOptions([], predicates)
@@ -1229,7 +1229,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let phAccessHelper = getPhotoAccessHelper(ctx)
     let predicates = DataSharePredicates()
     let fetchOptions: FetchOptions = FetchOptions([], predicates)
@@ -1290,7 +1290,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let phAccessHelper = getPhotoAccessHelper(ctx)
     let predicates = DataSharePredicates()
     let fetchOptions: FetchOptions = FetchOptions([], predicates)
@@ -1362,7 +1362,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let phAccessHelper = getPhotoAccessHelper(ctx)
     let predicates = DataSharePredicates()
     let fetchOptions = FetchOptions([], predicates)
@@ -1422,7 +1422,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let photoType = PhotoType.Image
     let extension = "jpg"
     let options = CreateOptions(title: "testPhoto")
@@ -1481,7 +1481,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let phAccessHelper = getPhotoAccessHelper(ctx)
     let fileUri = "file://com.example.xxx/data/storage/el2/base/haps/entry/files/test.jpg"
     let assetChangeRequest = MediaAssetChangeRequest.createImageAssetRequest(ctx,
@@ -1540,7 +1540,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let phAccessHelper = getPhotoAccessHelper(ctx)
     let fileUri = "file://com.example.xxx/data/storage/el2/base/haps/entry/files/test.mp4"
     let assetChangeRequest = MediaAssetChangeRequest.createVideoAssetRequest(ctx,
@@ -1595,7 +1595,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let phAccessHelper = getPhotoAccessHelper(ctx)
     let predicates = DataSharePredicates()
     let fetchOptions: FetchOptions = FetchOptions([], predicates)
@@ -1651,7 +1651,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let phAccessHelper = getPhotoAccessHelper(ctx)
     let predicates = DataSharePredicates()
     let fetchOptions: FetchOptions = FetchOptions([], predicates)
@@ -1705,7 +1705,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let phAccessHelper = getPhotoAccessHelper(ctx)
     let photoType = PhotoType.Image
     let extension = "jpg"
@@ -1761,7 +1761,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let phAccessHelper = getPhotoAccessHelper(ctx)
     let photoType = PhotoType.Image
     let extension = "jpg"
@@ -1809,7 +1809,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let phAccessHelper = getPhotoAccessHelper(ctx)
     let predicates = DataSharePredicates()
     let fetchOptions = FetchOptions([], predicates)
@@ -1864,7 +1864,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let phAccessHelper = getPhotoAccessHelper(ctx)
     let predicates = DataSharePredicates()
     let fetchOptions: FetchOptions = FetchOptions([], predicates)
@@ -1922,7 +1922,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let phAccessHelper = getPhotoAccessHelper(ctx)
     let assetChangeRequest = MediaAssetChangeRequest.createAssetRequest(ctx,
         PhotoType.Video, "mp4")
@@ -1968,7 +1968,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let phAccessHelper = getPhotoAccessHelper(ctx)
     let predicates = DataSharePredicates()
     let fetchOptions = FetchOptions([], predicates)
@@ -2026,7 +2026,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let phAccessHelper = getPhotoAccessHelper(ctx)
     let predicates = DataSharePredicates()
     let fetchOptions: FetchOptions = FetchOptions([], predicates)
@@ -2095,7 +2095,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let phAccessHelper = getPhotoAccessHelper(ctx)
     let predicates = DataSharePredicates()
     let fetchOptions = FetchOptions([], predicates)
@@ -2163,7 +2163,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let phAccessHelper = getPhotoAccessHelper(ctx)
     let predicates = DataSharePredicates()
     let fetchOptions: FetchOptions = FetchOptions([], predicates)
@@ -2223,7 +2223,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let phAccessHelper = getPhotoAccessHelper(ctx)
     let predicates = DataSharePredicates()
     let fetchOptions: FetchOptions = FetchOptions([], predicates)
@@ -2282,7 +2282,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let phAccessHelper = getPhotoAccessHelper(ctx)
     let predicates = DataSharePredicates()
     let fetchOptions: FetchOptions = FetchOptions([], predicates)
@@ -2335,19 +2335,19 @@ import ohos.business_exception.BusinessException
 import ohos.callback_invoke.*
 import kit.PerformanceAnalysisKit.Hilog
 
-try {
-    // 此处代码可添加在依赖项定义中
-    class MyCallback<T> <: Callback1Argument<T> {
-        public let callabck_: (T) -> Unit
-        public init(callabck: (T) -> Unit) {
-            callabck_ = callabck
-        }
-        public open func invoke(err: ?BusinessException, arg: T): Unit {
-            callabck_(arg)
-        }
+// 此处代码可添加在依赖项定义中
+class MyCallback<T> <: Callback1Argument<T> {
+    public let callabck_: (T) -> Unit
+    public init(callabck: (T) -> Unit) {
+        callabck_ = callabck
     }
+    public func invoke(err: ?BusinessException, arg: T): Unit {
+        callabck_(arg)
+    }
+}
 
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+try {
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let phAccessHelper = getPhotoAccessHelper(ctx)
     let callback1 = MyCallback<ChangeData>(
         {
@@ -2400,7 +2400,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let phAccessHelper = getPhotoAccessHelper(ctx)
     let predicates = DataSharePredicates()
     let fetchOptions: FetchOptions = FetchOptions([], predicates)
@@ -2458,26 +2458,26 @@ import ohos.business_exception.BusinessException
 import ohos.callback_invoke.*
 import kit.PerformanceAnalysisKit.Hilog
 
-try {
-    // 此处代码可添加在依赖项定义中
-    class MyCallback<T> <: Callback1Argument<T> {
-        public let callabck_: (T) -> Unit
-        public init(callabck: (T) -> Unit) {
-            callabck_ = callabck
-        }
-        public open func invoke(err: ?BusinessException, arg: T): Unit {
-            callabck_(arg)
-        }
+// 此处代码可添加在依赖项定义中
+class MyCallback1<T> <: Callback1Argument<T> {
+    public let callabck_: (T) -> Unit
+    public init(callabck: (T) -> Unit) {
+        callabck_ = callabck
     }
+    public func invoke(err: ?BusinessException, arg: T): Unit {
+        callabck_(arg)
+    }
+}
 
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+try {
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let phAccessHelper = getPhotoAccessHelper(ctx)
-    let callback3 = MyCallback<Array<String>>(
+    let callback = MyCallback1<Array<String>>(
         {
             arg: Array<String> =>
-            Hilog.info(0, "AppLogCj", "oncallback3: Array.size: ${arg.size}")
+            Hilog.info(0, "AppLogCj", "oncallback: Array.size: ${arg.size}")
             for (str in arg) {
-                Hilog.info(0, "AppLogCj", "oncallback3: uri: ${str}")
+                Hilog.info(0, "AppLogCj", "oncallback: uri: ${str}")
             }
         }
     )
@@ -2492,7 +2492,7 @@ try {
             subtype: PhotoSubtype.Default
         )
     ]
-    phAccessHelper.showAssetsCreationDialog(srcFileUris, photoCreationConfigs, callback3)
+    phAccessHelper.showAssetsCreationDialog(srcFileUris, photoCreationConfigs, callback)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -2539,24 +2539,24 @@ import ohos.callback_invoke.*
 import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
-try {
-    // 此处代码可添加在依赖项定义中
-    class MyCallback<T> <: Callback1Argument<T> {
-        public let callabck_: (T) -> Unit
-        public init(callabck: (T) -> Unit) {
-            callabck_ = callabck
-        }
-        public open func invoke(err: ?BusinessException, arg: T): Unit {
-            callabck_(arg)
-        }
+// 此处代码可添加在依赖项定义中
+class MyCallback2<T> <: Callback1Argument<T> {
+    public let callabck_: (T) -> Unit
+    public init(callabck: (T) -> Unit) {
+        callabck_ = callabck
     }
+    public open func invoke(err: ?BusinessException, arg: T): Unit {
+        callabck_(arg)
+    }
+}
 
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+try {
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let phAccessHelper = getPhotoAccessHelper(ctx)
-    let callback1 = MyCallback<ChangeData>(
+    let callback = MyCallback2<ChangeData>(
         {
             arg: ChangeData => Hilog.info(0, "AppLogCj",
-                "onCallback1. ChangeData: type = ${arg.notifyType.toString()}, uris.size: ${arg.uris.size}, extraUris.size = ${arg.extraUris.size}"
+                "onCallback. ChangeData: type = ${arg.notifyType.toString()}, uris.size: ${arg.uris.size}, extraUris.size = ${arg.extraUris.size}"
             )
         })
 
@@ -2565,8 +2565,8 @@ try {
     let fetchResult: PhotoAssetResult = phAccessHelper.getAssets(fetchOptions)
     let firstPhotoAsset = fetchResult.getFirstObject()
 
-    phAccessHelper.registerChange(firstPhotoAsset.uri, false, callback1)
-    phAccessHelper.unRegisterChange(firstPhotoAsset.uri, callback: callback1)
+    phAccessHelper.registerChange(firstPhotoAsset.uri, false, callback)
+    phAccessHelper.unRegisterChange(firstPhotoAsset.uri, callback: callback)
     phAccessHelper.unRegisterChange(firstPhotoAsset.uri)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
@@ -2671,7 +2671,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let phAccessHelper = getPhotoAccessHelper(ctx)
     let predicates = DataSharePredicates()
     let fetchColumns = [PhotoKeys.Title.toString()]
@@ -2733,7 +2733,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let phAccessHelper = getPhotoAccessHelper(ctx)
     let predicates = DataSharePredicates()
     let fetchColumns = [PhotoKeys.Title.toString()]
@@ -2796,7 +2796,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let phAccessHelper = getPhotoAccessHelper(ctx)
     let predicates = DataSharePredicates()
     let fetchColumns = [PhotoKeys.Title.toString()]
@@ -2850,7 +2850,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let phAccessHelper = getPhotoAccessHelper(ctx)
     let predicates = DataSharePredicates()
     let fetchColumns = [PhotoKeys.Title.toString()]
@@ -2920,7 +2920,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let phAccessHelper = getPhotoAccessHelper(ctx)
     let predicates = DataSharePredicates()
     let fetchOptions: FetchOptions = FetchOptions([], predicates)
@@ -2971,7 +2971,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let phAccessHelper = getPhotoAccessHelper(ctx)
     let predicates = DataSharePredicates()
     let fetchOptions: FetchOptions = FetchOptions([], predicates)
@@ -3022,7 +3022,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let phAccessHelper = getPhotoAccessHelper(ctx)
     let predicates = DataSharePredicates()
     let fetchOptions: FetchOptions = FetchOptions([], predicates)
@@ -3074,7 +3074,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let phAccessHelper = getPhotoAccessHelper(ctx)
     let predicates = DataSharePredicates()
     let fetchOptions: FetchOptions = FetchOptions([], predicates)
@@ -3131,7 +3131,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let phAccessHelper = getPhotoAccessHelper(ctx)
     let predicates = DataSharePredicates()
     let fetchOptions: FetchOptions = FetchOptions([], predicates)

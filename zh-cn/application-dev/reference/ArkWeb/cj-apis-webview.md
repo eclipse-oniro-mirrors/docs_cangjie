@@ -106,10 +106,19 @@ public func getItemAtIndex(index: Int32): HistoryItem
 ```cangjie
 // index.cj
 
+import kit.ArkUI.LengthProp
+import kit.ArkUI.Button
+import kit.ArkUI.Column
+import kit.ArkUI.CustomView
+import kit.ArkUI.CJEntry
+import kit.ArkUI.loadNativeView
+import kit.ArkUI.SubscriberManager
+import kit.ArkUI.LocalStorage
+import ohos.arkui.state_macro_manage.Entry
+import ohos.arkui.state_macro_manage.Component
 import kit.ArkWeb.*
 import kit.ArkUI.Web
-import ohos.arkui.component.button.Button
-import kit.PerformanceAnalysisKit.*
+import kit.PerformanceAnalysisKit.Hilog
 
 @Entry
 @Component
@@ -118,7 +127,7 @@ class webview_0 {
     func build() {
         Column(space: 10) {
             Button("getItemAtIndex")
-            .onClick {
+            .onClick ({
                 evt =>
                 Hilog.info(0, "cangjieTest", "getItemAtIndex")
                 let backForwardList = webController.getBackForwardEntries()
@@ -129,7 +138,7 @@ class webview_0 {
                 let pixelMap = historyItem.icon
                 let byteInfo = pixelMap?.getPixelBytesNumber() ?? 0
                 Hilog.info(0, "cangjieTest", "icon byteInfo is ${byteInfo}")
-            }.width(400.px).height(150.px)
+            }).width(400.px).height(150.px)
             Web(src: "www.example.com", controller: webController)
             .onPageBegin({evt =>
                 Hilog.info(0, "cangjieTest", "page begin url: ${evt.url}")
@@ -796,24 +805,33 @@ public static func setWebDebuggingAccess(webDebuggingAccess: Bool): Unit
 ```cangjie
 // index.cj
 
+import kit.ArkUI.LengthProp
+import kit.ArkUI.Button
+import kit.ArkUI.Column
+import kit.ArkUI.CustomView
+import kit.ArkUI.CJEntry
+import kit.ArkUI.loadNativeView
+import kit.ArkUI.SubscriberManager
+import kit.ArkUI.LocalStorage
+import ohos.arkui.state_macro_manage.Entry
+import ohos.arkui.state_macro_manage.Component
 import kit.ArkWeb.*
 import kit.ArkUI.Web
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.arkui.component.button.Button
 
 @Entry
 @Component
-class EntryView {
+class webview_1 {
     let webController = WebviewController()
     let headers = [WebHeader("headerKey", "headerValue")]
     func build() {
         Column(space: 10) {
             Button("setWebDebuggingAccess")
-            .onClick {
+            .onClick ({
                 evt =>
                 Hilog.info(0, "AppLogCj", "setWebDebuggingAccess")
                 WebviewController.setWebDebuggingAccess(true)
-            }.width(400.px).height(150.px)
+            }).width(400.px).height(150.px)
 
             Web(src: "www.example.com", controller: webController)
             .onPageBegin({evt =>
@@ -868,24 +886,33 @@ public func accessBackward(): Bool
 ```cangjie
 // index.cj
 
+import kit.ArkUI.LengthProp
+import kit.ArkUI.Button
+import kit.ArkUI.Column
+import kit.ArkUI.CustomView
+import kit.ArkUI.CJEntry
+import kit.ArkUI.loadNativeView
+import kit.ArkUI.SubscriberManager
+import kit.ArkUI.LocalStorage
+import ohos.arkui.state_macro_manage.Entry
+import ohos.arkui.state_macro_manage.Component
 import kit.ArkWeb.*
 import kit.ArkUI.Web
-import kit.PerformanceAnalysisKit.*
-import ohos.arkui.component.button.Button
+import kit.PerformanceAnalysisKit.Hilog
 
 @Entry
 @Component
-class EntryView {
+class webview_2 {
     let webController = WebviewController()
     func build() {
         Column(space:10) {
             Button("accessBackward")
-            .onClick {
+            .onClick ({
                 evt =>
                 Hilog.info(0, "cangjieTest", "accessBackward")
                 let bool = webController.accessBackward()
                 Hilog.info(0, "cangjieTest", "accessBackward returns ${bool}")
-            }.width(400.px).height(150.px)
+            }).width(400.px).height(150.px)
 
             Web(src: "www.example.com", controller: webController)
             .onPageBegin({evt =>
@@ -938,25 +965,36 @@ public func accessStep(step: Int32): Bool
 ```cangjie
 // index.cj
 
+import kit.ArkUI.LengthProp
+import kit.ArkUI.Button
+import kit.ArkUI.Column
+import kit.ArkUI.CustomView
+import kit.ArkUI.CJEntry
+import kit.ArkUI.loadNativeView
+import kit.ArkUI.SubscriberManager
+import kit.ArkUI.LocalStorage
+import ohos.arkui.state_macro_manage.Entry
+import ohos.arkui.state_macro_manage.Component
+import kit.ArkUI.Text
+import kit.ArkUI.ObservedProperty
 import kit.ArkWeb.*
 import kit.ArkUI.Web
-import ohos.arkui.component.button.Button
-import kit.PerformanceAnalysisKit.*
+import kit.PerformanceAnalysisKit.Hilog
 
 @Entry
 @Component
-class EntryView {
+class webview_3 {
     var message: String = "Hello World"
     let webController = WebviewController()
     func build() {
         Column(space: 10) {
             Button("accessStep")
-             Text(this.message).onClick {
+             Text(this.message).onClick ({
                 evt =>
                 Hilog.info(0, "cangjieTest", "accessStep")
                 let access = webController.accessStep(2)
                 Hilog.info(0, "cangjieTest", "accessStep returns: ${access}")
-            }.width(400.px).height(150.px)
+            }).width(400.px).height(150.px)
 
             Web(src: "www.example.com", controller: webController)
             .onPageBegin({evt =>
@@ -1005,23 +1043,32 @@ public func backOrForward(step: Int32): Unit
 ```cangjie
 // index.cj
 
+import kit.ArkUI.LengthProp
+import kit.ArkUI.Button
+import kit.ArkUI.Column
+import kit.ArkUI.CustomView
+import kit.ArkUI.CJEntry
+import kit.ArkUI.loadNativeView
+import kit.ArkUI.SubscriberManager
+import kit.ArkUI.LocalStorage
+import ohos.arkui.state_macro_manage.Entry
+import ohos.arkui.state_macro_manage.Component
 import kit.ArkWeb.*
 import kit.ArkUI.Web
-import ohos.arkui.component.button.Button
-import kit.PerformanceAnalysisKit.*
+import kit.PerformanceAnalysisKit.Hilog
 
 @Entry
 @Component
-class EntryView {
+class webview_4 {
     let webController = WebviewController()
     func build() {
         Column(space: 10) {
             Button("backOrForward")
-            .onClick {
+            .onClick ({
                 evt =>
                 Hilog.info(0, "cangjieTest", "backOrForward")
                 webController.backOrForward(-2)
-            }.width(400.px).height(150.px)
+            }).width(400.px).height(150.px)
 
             Web(src: "www.example.com", controller: webController)
             .onPageBegin({evt =>
@@ -1062,23 +1109,32 @@ public func backward(): Unit
 ```cangjie
 // index.cj
 
+import kit.ArkUI.LengthProp
+import kit.ArkUI.Button
+import kit.ArkUI.Column
+import kit.ArkUI.CustomView
+import kit.ArkUI.CJEntry
+import kit.ArkUI.loadNativeView
+import kit.ArkUI.SubscriberManager
+import kit.ArkUI.LocalStorage
+import ohos.arkui.state_macro_manage.Entry
+import ohos.arkui.state_macro_manage.Component
 import kit.ArkWeb.*
 import kit.ArkUI.Web
-import kit.PerformanceAnalysisKit.*
-import ohos.arkui.component.button.Button
+import kit.PerformanceAnalysisKit.Hilog
 
 @Entry
 @Component
-class EntryView {
+class webview_5 {
     let webController = WebviewController()
     func build() {
         Column(space: 10) {
             Button("backward")
-            .onClick {
+            .onClick ({
                 evt =>
                 Hilog.info(0, "cangjieTest", "backward")
                 webController.backward()
-            }.width(400.px).height(150.px)
+            }).width(400.px).height(150.px)
 
             Web(src: "www.example.com", controller: webController)
             .onPageBegin({evt =>
@@ -1119,23 +1175,32 @@ public func clearHistory(): Unit
 ```cangjie
 // index.cj
 
+import kit.ArkUI.LengthProp
+import kit.ArkUI.Button
+import kit.ArkUI.Column
+import kit.ArkUI.CustomView
+import kit.ArkUI.CJEntry
+import kit.ArkUI.loadNativeView
+import kit.ArkUI.SubscriberManager
+import kit.ArkUI.LocalStorage
+import ohos.arkui.state_macro_manage.Entry
+import ohos.arkui.state_macro_manage.Component
 import kit.ArkWeb.*
 import kit.ArkUI.Web
-import kit.PerformanceAnalysisKit.*
-import ohos.arkui.component.button.Button
+import kit.PerformanceAnalysisKit.Hilog
 
 @Entry
 @Component
-class EntryView {
+class webview_6 {
     let webController = WebviewController()
     func build() {
         Column(space: 10) {
             Button("clearHistory")
-            .onClick {
+            .onClick ({
                 evt =>
                 Hilog.info(0, "cangjieTest", "clearHistory")
                 webController.clearHistory()
-            }.width(400.px).height(150.px)
+            }).width(400.px).height(150.px)
 
             Web(src: "www.example.com", controller: webController)
             .onPageBegin({evt =>
@@ -1183,23 +1248,32 @@ public func enableSafeBrowsing(enable: Bool): Unit
 ```cangjie
 // index.cj
 
+import kit.ArkUI.LengthProp
+import kit.ArkUI.Button
+import kit.ArkUI.Column
+import kit.ArkUI.CustomView
+import kit.ArkUI.CJEntry
+import kit.ArkUI.loadNativeView
+import kit.ArkUI.SubscriberManager
+import kit.ArkUI.LocalStorage
+import ohos.arkui.state_macro_manage.Entry
+import ohos.arkui.state_macro_manage.Component
 import kit.ArkWeb.*
 import kit.ArkUI.Web
-import kit.PerformanceAnalysisKit.*
-import ohos.arkui.component.button.Button
+import kit.PerformanceAnalysisKit.Hilog
 
 @Entry
 @Component
-class EntryView {
+class webview_7 {
     let webController = WebviewController()
     func build() {
         Column(space: 10) {
             Button("enableSafeBrowsing")
-            .onClick {
+            .onClick ({
                 evt =>
                 Hilog.info(0, "cangjieTest", "enableSafeBrowsing")
                 webController.enableSafeBrowsing(true)
-            }.width(400.px).height(150.px)
+            }).width(400.px).height(150.px)
 
             Web(src: "www.example.com", controller: webController)
             .onPageBegin({evt =>
@@ -1240,23 +1314,32 @@ public func forward(): Unit
 ```cangjie
 // index.cj
 
+import kit.ArkUI.LengthProp
+import kit.ArkUI.Button
+import kit.ArkUI.Column
+import kit.ArkUI.CustomView
+import kit.ArkUI.CJEntry
+import kit.ArkUI.loadNativeView
+import kit.ArkUI.SubscriberManager
+import kit.ArkUI.LocalStorage
+import ohos.arkui.state_macro_manage.Entry
+import ohos.arkui.state_macro_manage.Component
 import kit.ArkWeb.*
 import kit.ArkUI.Web
-import kit.PerformanceAnalysisKit.*
-import ohos.arkui.component.button.Button
+import kit.PerformanceAnalysisKit.Hilog
 
 @Entry
 @Component
-class EntryView {
+class webview_8 {
     let webController = WebviewController()
     func build() {
         Column(space: 10) {
             Button("forward")
-            .onClick {
+            .onClick ({
                 evt =>
                 Hilog.info(0, "cangjieTest", "forward")
                 webController.forward()
-            }.width(400.px).height(150.px)
+            }).width(400.px).height(150.px)
 
             Web(src: "www.example.com", controller: webController)
             .onPageBegin({evt =>
@@ -1303,25 +1386,34 @@ public func getBackForwardEntries(): BackForwardList
 ```cangjie
 // index.cj
 
+import kit.ArkUI.LengthProp
+import kit.ArkUI.Button
+import kit.ArkUI.Column
+import kit.ArkUI.CustomView
+import kit.ArkUI.CJEntry
+import kit.ArkUI.loadNativeView
+import kit.ArkUI.SubscriberManager
+import kit.ArkUI.LocalStorage
+import ohos.arkui.state_macro_manage.Entry
+import ohos.arkui.state_macro_manage.Component
 import kit.ArkWeb.*
 import kit.ArkUI.Web
-import kit.PerformanceAnalysisKit.*
-import ohos.arkui.component.button.Button
+import kit.PerformanceAnalysisKit.Hilog
 
 @Entry
 @Component
-class EntryView {
+class webview_9 {
     let webController = WebviewController()
     func build() {
         Column(space: 10) {
             Button("getBackForwardEntries")
-            .onClick {
+            .onClick ({
                 evt =>
                 Hilog.info(0, "cangjieTest", "getBackForwardEntries")
                 let backForwardList = webController.getBackForwardEntries()
                 Hilog.info(0, "cangjieTest", "backForwardList currentIndex is ${backForwardList.currentIndex}")
                 Hilog.info(0, "cangjieTest", "backForwardList size is ${backForwardList.size}")
-            }.width(400.px).height(150.px)
+            }).width(400.px).height(150.px)
 
             Web(src: "www.example.com", controller: webController)
             .onPageBegin({evt =>
@@ -1368,25 +1460,34 @@ public func getCustomUserAgent(): String
 ```cangjie
 // index.cj
 
+import kit.ArkUI.LengthProp
+import kit.ArkUI.Button
+import kit.ArkUI.Column
+import kit.ArkUI.CustomView
+import kit.ArkUI.CJEntry
+import kit.ArkUI.loadNativeView
+import kit.ArkUI.SubscriberManager
+import kit.ArkUI.LocalStorage
+import ohos.arkui.state_macro_manage.Entry
+import ohos.arkui.state_macro_manage.Component
 import kit.ArkWeb.*
 import kit.ArkUI.Web
-import kit.PerformanceAnalysisKit.*
-import ohos.arkui.component.button.Button
+import kit.PerformanceAnalysisKit.Hilog
 
 @Entry
 @Component
-class EntryView {
+class webview_10 {
     let webController = WebviewController()
     let headers = [WebHeader("headerKey", "headerValue")]
     func build() {
         Column(space: 10) {
             Button("getCustomUserAgent")
-            .onClick {
+            .onClick ({
                 evt =>
                 Hilog.info(0, "cangjieTest", "getCustomUserAgent")
                 let agent = webController.getCustomUserAgent()
                 Hilog.info(0, "cangjieTest", "getCustomUserAgent returns ${agent}")
-            }.width(400.px).height(150.px)
+            }).width(400.px).height(150.px)
 
             Web(src: "www.example.com", controller: webController)
             .onPageBegin({evt =>
@@ -1433,19 +1534,28 @@ public func getHitTest(): WebHitTestType
 ```cangjie
 // index.cj
 
+import kit.ArkUI.LengthProp
+import kit.ArkUI.Button
+import kit.ArkUI.Column
+import kit.ArkUI.CustomView
+import kit.ArkUI.CJEntry
+import kit.ArkUI.loadNativeView
+import kit.ArkUI.SubscriberManager
+import kit.ArkUI.LocalStorage
+import ohos.arkui.state_macro_manage.Entry
+import ohos.arkui.state_macro_manage.Component
 import kit.ArkWeb.*
 import kit.ArkUI.Web
-import kit.PerformanceAnalysisKit.*
-import ohos.arkui.component.button.Button
+import kit.PerformanceAnalysisKit.Hilog
 
 @Entry
 @Component
-class EntryView {
+class webview_11 {
     let webController = WebviewController()
     func build() {
         Column(space: 10) {
             Button("getHitTest")
-            .onClick {
+            .onClick ({
                 evt =>
                 Hilog.info(0, "cangjieTest", "getHitTest")
                 let hitType = webController.getHitTest()
@@ -1455,7 +1565,7 @@ class EntryView {
                     case WebHitTestType.Unknown => Hilog.info(0, "cangjieTest", "getHitTest returns Unknown")
                     case _ =>  ()
                 }
-            }.width(400.px).height(150.px)
+            }).width(400.px).height(150.px)
             Web(src: "www.example.com", controller: webController)
             .onPageBegin({evt =>
                 Hilog.info(0, "cangjieTest", "page begin url: ${evt.url}")
@@ -1501,19 +1611,28 @@ public func getHitTestValue(): HitTestValue
 ```cangjie
 // index.cj
 
+import kit.ArkUI.LengthProp
+import kit.ArkUI.Button
+import kit.ArkUI.Column
+import kit.ArkUI.CustomView
+import kit.ArkUI.CJEntry
+import kit.ArkUI.loadNativeView
+import kit.ArkUI.SubscriberManager
+import kit.ArkUI.LocalStorage
+import ohos.arkui.state_macro_manage.Entry
+import ohos.arkui.state_macro_manage.Component
 import kit.ArkWeb.*
 import kit.ArkUI.Web
-import kit.PerformanceAnalysisKit.*
-import ohos.arkui.component.button.Button
+import kit.PerformanceAnalysisKit.Hilog
 
 @Entry
 @Component
-class EntryView {
+class webview_12 {
     let webController = WebviewController()
     func build() {
         Column(space: 10) {
             Button("getHitTestValue")
-            .onClick {
+            .onClick ({
                 evt =>
                 Hilog.info(0, "cangjieTest", "getHitTestValue")
                 let hitTestValue = webController.getHitTestValue()
@@ -1524,7 +1643,7 @@ class EntryView {
                     case _ =>  ()
                  }
                 Hilog.info(0, "cangjieTest", "getHitTestValue extra returns ${hitTestValue.extra}")
-            }.width(400.px).height(150.px)
+            }).width(400.px).height(150.px)
             Web(src: "www.example.com", controller: webController)
             .onPageBegin({evt =>
                 Hilog.info(0, "cangjieTest", "page begin url: ${evt.url}")
@@ -1570,24 +1689,33 @@ public func getOriginalUrl(): String
 ```cangjie
 // index.cj
 
+import kit.ArkUI.LengthProp
+import kit.ArkUI.Button
+import kit.ArkUI.Column
+import kit.ArkUI.CustomView
+import kit.ArkUI.CJEntry
+import kit.ArkUI.loadNativeView
+import kit.ArkUI.SubscriberManager
+import kit.ArkUI.LocalStorage
+import ohos.arkui.state_macro_manage.Entry
+import ohos.arkui.state_macro_manage.Component
 import kit.ArkWeb.*
 import kit.ArkUI.Web
-import kit.PerformanceAnalysisKit.*
-import ohos.arkui.component.button.Button
+import kit.PerformanceAnalysisKit.Hilog
 
 @Entry
 @Component
-class EntryView {
+class webview_13 {
     let webController = WebviewController()
     func build() {
         Column(space: 10) {
             Button("getOriginalUrl")
-            .onClick {
+            .onClick ({
                 evt =>
                 Hilog.info(0, "cangjieTest", "getOriginalUrl")
                 let url = webController.getOriginalUrl()
                 Hilog.info(0, "cangjieTest", "getOriginalUrl is ${url}")
-            }.width(400.px).height(150.px)
+            }).width(400.px).height(150.px)
 
             Web(src: "www.example.com", controller: webController)
             .onPageBegin({evt =>
@@ -1634,23 +1762,32 @@ public func getPageHeight(): Int32
 ```cangjie
 // index.cj
 
+import kit.ArkUI.LengthProp
+import kit.ArkUI.Button
+import kit.ArkUI.Column
+import kit.ArkUI.CustomView
+import kit.ArkUI.CJEntry
+import kit.ArkUI.loadNativeView
+import kit.ArkUI.SubscriberManager
+import kit.ArkUI.LocalStorage
+import ohos.arkui.state_macro_manage.Entry
+import ohos.arkui.state_macro_manage.Component
 import kit.ArkWeb.*
 import kit.ArkUI.Web
-import kit.PerformanceAnalysisKit.*
-import ohos.arkui.component.button.Button
+import kit.PerformanceAnalysisKit.Hilog
 
 @Entry
 @Component
-class EntryView {
+class webview_14 {
     let webController = WebviewController()
     func build() {
         Column(space: 10) {
             Button("getOriginalUrl")
-            .onClick {
+            .onClick ({
                 evt =>
                 Hilog.info(0, "cangjieTest", "getOriginalUrl")
                 let height = webController.getPageHeight()
-            }.width(400.px).height(150.px)
+            }).width(400.px).height(150.px)
         }
     }
 }
@@ -1689,19 +1826,28 @@ public func getSecurityLevel(): SecurityLevel
 ```cangjie
 // index.cj
 
+import kit.ArkUI.LengthProp
+import kit.ArkUI.Button
+import kit.ArkUI.Column
+import kit.ArkUI.CustomView
+import kit.ArkUI.CJEntry
+import kit.ArkUI.loadNativeView
+import kit.ArkUI.SubscriberManager
+import kit.ArkUI.LocalStorage
+import ohos.arkui.state_macro_manage.Entry
+import ohos.arkui.state_macro_manage.Component
 import kit.ArkWeb.*
 import kit.ArkUI.Web
-import kit.PerformanceAnalysisKit.*
-import ohos.arkui.component.button.Button
+import kit.PerformanceAnalysisKit.Hilog
 
 @Entry
 @Component
-class EntryView {
+class webview_15 {
     let webController = WebviewController()
     func build() {
         Column(space: 10) {
             Button("getSecurityLevel")
-            .onClick {
+            .onClick ({
                 evt =>
                 Hilog.info(0, "cangjieTest", "getSecurityLevel")
                 let securityLevel = webController.getSecurityLevel()
@@ -1712,7 +1858,7 @@ class EntryView {
                     case SecurityLevel.Danger => Hilog.info(0, "cangjieTest", "getSecurityLevel returns DANGEROUS")
                     case _ => throw IllegalArgumentException("The type is not supported.")
                  }
-            }.width(400.px).height(150.px)
+            }).width(400.px).height(150.px)
             Web(src: "www.example.com", controller: webController)
             .onPageBegin({evt =>
                 Hilog.info(0, "cangjieTest", "page begin url: ${evt.url}")
@@ -1758,24 +1904,33 @@ public func getTitle(): String
 ```cangjie
 // index.cj
 
+import kit.ArkUI.LengthProp
+import kit.ArkUI.Button
+import kit.ArkUI.Column
+import kit.ArkUI.CustomView
+import kit.ArkUI.CJEntry
+import kit.ArkUI.loadNativeView
+import kit.ArkUI.SubscriberManager
+import kit.ArkUI.LocalStorage
+import ohos.arkui.state_macro_manage.Entry
+import ohos.arkui.state_macro_manage.Component
 import kit.ArkWeb.*
 import kit.ArkUI.Web
-import kit.PerformanceAnalysisKit.*
-import ohos.arkui.component.button.Button
+import kit.PerformanceAnalysisKit.Hilog
 
 @Entry
 @Component
-class EntryView {
+class webview_16 {
     let webController = WebviewController()
     func build() {
         Column(space: 10) {
             Button("getTitle")
-            .onClick {
+            .onClick ({
                 evt =>
                 Hilog.info(0, "cangjieTest", "getTitle")
                 let title = webController.getTitle()
                 Hilog.info(0, "cangjieTest", "getTitle returns ${title}")
-            }.width(400.px).height(150.px)
+            }).width(400.px).height(150.px)
 
             Web(src: "www.example.com", controller: webController)
             .onPageBegin({evt =>
@@ -1822,24 +1977,33 @@ public func getUrl(): String
 ```cangjie
 // index.cj
 
+import kit.ArkUI.LengthProp
+import kit.ArkUI.Button
+import kit.ArkUI.Column
+import kit.ArkUI.CustomView
+import kit.ArkUI.CJEntry
+import kit.ArkUI.loadNativeView
+import kit.ArkUI.SubscriberManager
+import kit.ArkUI.LocalStorage
+import ohos.arkui.state_macro_manage.Entry
+import ohos.arkui.state_macro_manage.Component
 import kit.ArkWeb.*
 import kit.ArkUI.Web
-import kit.PerformanceAnalysisKit.*
-import ohos.arkui.component.button.Button
+import kit.PerformanceAnalysisKit.Hilog
 
 @Entry
 @Component
-class EntryView {
+class webview_17 {
     let webController = WebviewController()
     func build() {
         Column(space: 10) {
             Button("getUrl")
-            .onClick {
+            .onClick ({
                 evt =>
                 Hilog.info(0, "cangjieTest", "getUrl")
                 let url = webController.getUrl()
                 Hilog.info(0, "cangjieTest", "getUrl is ${url}")
-            }.width(400.px).height(150.px)
+            }).width(400.px).height(150.px)
             Web(src: "www.example.com", controller: webController)
             .onPageBegin({evt =>
                 Hilog.info(0, "cangjieTest", "page begin url: ${evt.url}")
@@ -1885,24 +2049,33 @@ public func getUserAgent(): String
 ```cangjie
 // index.cj
 
+import kit.ArkUI.LengthProp
+import kit.ArkUI.Button
+import kit.ArkUI.Column
+import kit.ArkUI.CustomView
+import kit.ArkUI.CJEntry
+import kit.ArkUI.loadNativeView
+import kit.ArkUI.SubscriberManager
+import kit.ArkUI.LocalStorage
+import ohos.arkui.state_macro_manage.Entry
+import ohos.arkui.state_macro_manage.Component
 import kit.ArkWeb.*
 import kit.ArkUI.Web
-import kit.PerformanceAnalysisKit.*
-import ohos.arkui.component.button.Button
+import kit.PerformanceAnalysisKit.Hilog
 
 @Entry
 @Component
-class EntryView {
+class webview_18 {
     let webController = WebviewController()
     let headers = [WebHeader("headerKey", "headerValue")]
     func build() {
         Column(space: 10) {
             Button("getUserAgent")
-            .onClick {
+            .onClick ({
                 evt =>
                 Hilog.info(0, "cangjieTest", "getUserAgent")
                 webController.getUserAgent()
-            }.width(400.px).height(150.px)
+            }).width(400.px).height(150.px)
 
             Web(src: "www.example.com", controller: webController)
             .onPageBegin({evt =>
@@ -1949,24 +2122,33 @@ public func isIncognitoMode(): Bool
 ```cangjie
 // index.cj
 
+import kit.ArkUI.LengthProp
+import kit.ArkUI.Button
+import kit.ArkUI.Column
+import kit.ArkUI.CustomView
+import kit.ArkUI.CJEntry
+import kit.ArkUI.loadNativeView
+import kit.ArkUI.SubscriberManager
+import kit.ArkUI.LocalStorage
+import ohos.arkui.state_macro_manage.Entry
+import ohos.arkui.state_macro_manage.Component
 import kit.ArkWeb.*
 import kit.ArkUI.Web
-import kit.PerformanceAnalysisKit.*
-import ohos.arkui.component.button.Button
+import kit.PerformanceAnalysisKit.Hilog
 
 @Entry
 @Component
-class EntryView {
+class webview_19 {
     let webController = WebviewController()
     func build() {
         Column(space: 10) {
             Button("isIncognitoMode")
-            .onClick {
+            .onClick ({
                 evt =>
                 Hilog.info(0, "cangjieTest", "isIncognitoMode")
                 let bool = webController.isIncognitoMode()
                 Hilog.info(0, "cangjieTest", "isIncognitoMode returns ${bool}")
-            }.width(400.px).height(150.px)
+            }).width(400.px).height(150.px)
 
             Web(src: "www.example.com", controller: webController)
             .onPageBegin({evt =>
@@ -2014,24 +2196,33 @@ public func isSafeBrowsingEnabled(): Bool
 ```cangjie
 // index.cj
 
+import kit.ArkUI.LengthProp
+import kit.ArkUI.Button
+import kit.ArkUI.Column
+import kit.ArkUI.CustomView
+import kit.ArkUI.CJEntry
+import kit.ArkUI.loadNativeView
+import kit.ArkUI.SubscriberManager
+import kit.ArkUI.LocalStorage
+import ohos.arkui.state_macro_manage.Entry
+import ohos.arkui.state_macro_manage.Component
 import kit.ArkWeb.*
 import kit.ArkUI.Web
-import kit.PerformanceAnalysisKit.*
-import ohos.arkui.component.button.Button
+import kit.PerformanceAnalysisKit.Hilog
 
 @Entry
 @Component
-class EntryView {
+class webview_20 {
     let webController = WebviewController()
     func build() {
         Column(space: 10) {
             Button("isSafeBrowsingEnabled")
-            .onClick {
+            .onClick ({
                 evt =>
                 Hilog.info(0, "cangjieTest", "isSafeBrowsingEnabled")
                 let bool = webController.isSafeBrowsingEnabled()
                 Hilog.info(0, "cangjieTest", "isSafeBrowsingEnabled returns ${bool}")
-            }.width(400.px).height(150.px)
+            }).width(400.px).height(150.px)
             Web(src: "www.example.com", controller: webController)
             .onPageBegin({evt =>
                 Hilog.info(0, "cangjieTest", "page begin url: ${evt.url}")
@@ -2077,23 +2268,32 @@ public func pageDown(bottom: Bool): Unit
 ```cangjie
 // index.cj
 
+import kit.ArkUI.LengthProp
+import kit.ArkUI.Button
+import kit.ArkUI.Column
+import kit.ArkUI.CustomView
+import kit.ArkUI.CJEntry
+import kit.ArkUI.loadNativeView
+import kit.ArkUI.SubscriberManager
+import kit.ArkUI.LocalStorage
+import ohos.arkui.state_macro_manage.Entry
+import ohos.arkui.state_macro_manage.Component
 import kit.ArkWeb.*
 import kit.ArkUI.Web
-import kit.PerformanceAnalysisKit.*
-import ohos.arkui.component.button.Button
+import kit.PerformanceAnalysisKit.Hilog
 
 @Entry
 @Component
-class EntryView {
+class webview_21 {
     let webController = WebviewController()
     func build() {
         Column(space: 10) {
             Button("pageDown")
-            .onClick {
+            .onClick ({
                 evt =>
                 Hilog.info(0, "cangjieTest", "pageDown")
                 webController.pageDown(true)
-            }.width(400.px).height(150.px)
+            }).width(400.px).height(150.px)
 
             Web(src: "www.example.com", controller: webController)
             .onPageBegin({evt =>
@@ -2140,23 +2340,32 @@ public func pageUp(top: Bool): Unit
 ```cangjie
 // index.cj
 
+import kit.ArkUI.LengthProp
+import kit.ArkUI.Button
+import kit.ArkUI.Column
+import kit.ArkUI.CustomView
+import kit.ArkUI.CJEntry
+import kit.ArkUI.loadNativeView
+import kit.ArkUI.SubscriberManager
+import kit.ArkUI.LocalStorage
+import ohos.arkui.state_macro_manage.Entry
+import ohos.arkui.state_macro_manage.Component
 import kit.ArkWeb.*
 import kit.ArkUI.Web
-import kit.PerformanceAnalysisKit.*
-import ohos.arkui.component.button.Button
+import kit.PerformanceAnalysisKit.Hilog
 
 @Entry
 @Component
-class EntryView {
+class webview_22 {
     let webController = WebviewController()
     func build() {
         Column(space: 10) {
             Button("pageUp")
-            .onClick {
+            .onClick ({
                 evt =>
                 Hilog.info(0, "cangjieTest", "pageUp")
                 webController.pageUp(true)
-            }.width(400.px).height(150.px)
+            }).width(400.px).height(150.px)
 
             Web(src: "www.example.com", controller: webController)
             .onPageBegin({evt =>
@@ -2197,24 +2406,33 @@ public func refresh(): Unit
 ```cangjie
 // index.cj
 
+import kit.ArkUI.LengthProp
+import kit.ArkUI.Button
+import kit.ArkUI.Column
+import kit.ArkUI.CustomView
+import kit.ArkUI.CJEntry
+import kit.ArkUI.loadNativeView
+import kit.ArkUI.SubscriberManager
+import kit.ArkUI.LocalStorage
+import ohos.arkui.state_macro_manage.Entry
+import ohos.arkui.state_macro_manage.Component
 import kit.ArkWeb.*
 import kit.ArkUI.Web
-import kit.PerformanceAnalysisKit.*
-import ohos.arkui.component.button.Button
+import kit.PerformanceAnalysisKit.Hilog
 
 @Entry
 @Component
-class EntryView {
+class webview_23 {
     let webController = WebviewController()
     let headers = [WebHeader("headerKey", "headerValue")]
     func build() {
         Column(space: 10) {
             Button("refresh")
-            .onClick {
+            .onClick ({
                 evt =>
                 Hilog.info(0, "cangjieTest", "refresh")
                 webController.refresh()
-            }.width(400.px).height(150.px)
+            }).width(400.px).height(150.px)
 
             Web(src: "www.example.com", controller: webController)
             .onPageBegin({evt =>
@@ -2264,63 +2482,76 @@ public func registerJavaScriptProxy(funcs: Array<(String) -> String>, name: Stri
 ```cangjie
 // index.cj
 
+import kit.ArkUI.LengthProp
+import kit.ArkUI.Button
+import kit.ArkUI.Column
+import kit.ArkUI.CustomView
+import kit.ArkUI.CJEntry
+import kit.ArkUI.loadNativeView
+import kit.ArkUI.SubscriberManager
+import kit.ArkUI.LocalStorage
+import ohos.arkui.state_macro_manage.Entry
+import ohos.arkui.state_macro_manage.Component
+import kit.ArkUI.Row
 import kit.ArkWeb.*
-import kit.UIKit.Web
+import kit.ArkUI.Web
+import kit.PerformanceAnalysisKit.Hilog
+import ohos.business_exception.*
 
 let webController = WebviewController()
 let callback: AsyncCallback<String> = {
-    errorCode: Option<AsyncError>, data: Option<String> => match (errorCode) {
-        case Some(e) => AppLog.error("callback error: errcode is ${e.code}")
+    errorCode: Option<BusinessException>, data: Option<String> => match (errorCode) {
+        case Some(e) => Hilog.error(0, "test", "callback error: errcode is ${e.code}")
         case _ => match (data) {
             case Some(value) =>
-                AppLog.info("callback: get data successfully and data is ${value.toArray()}")
-                AppLog.info("callback: get data successfully and data is ${value}")
-            case _ => AppLog.error("callback: data is null")
+                Hilog.info(0, "test", "callback: get data successfully and data is ${value.toArray()}")
+                Hilog.info(0, "test", "callback: get data successfully and data is ${value}")
+            case _ => Hilog.error(0, "test", "callback: data is null")
         }
     }
 }
 @Entry
 @Component
-class EntryView {
+class webview_24 {
     func build() {
         Row {
             Column {
-                Button("refresh").onClick {
+                Button("refresh").onClick ({
                     evt =>
-                    AppLog.info("refresh")
+                    Hilog.info(0, "test", "refresh")
                     webController.refresh()
-                }.width(400.px).height(150.px)
-                Button("proxy").onClick {
+                }).width(400.px).height(150.px)
+                Button("proxy").onClick ({
                     evt =>
-                    AppLog.info("registerJavaScriptProxy")
+                    Hilog.info(0, "test", "registerJavaScriptProxy")
                     let funcA1 = {
                         a: String =>
-                        AppLog.info("funcA1 ${a}")
+                        Hilog.info(0, "test", "funcA1 ${a}")
                         return "funcA1 " + a
                     }
                     let funcA2 = {
                         a: String =>
-                        AppLog.info("funcA2 ${a}")
+                        Hilog.info(0, "test", "funcA2 ${a}")
                         return "funcA2 " + a
                     }
                     let funcA3 = {
                         a: String =>
-                        AppLog.info("funcA3 ${a}")
+                        Hilog.info(0, "test", "funcA3 ${a}")
                         return "funcA3 " + a
                     }
                     let funcB1 = {
                         a: String =>
-                        AppLog.info("funcB1 ${a}")
+                        Hilog.info(0, "test", "funcB1 ${a}")
                         return "funcB1 " + a
                     }
                     let funcB2 = {
                         a: String =>
-                        AppLog.info("funcB2 ${a}")
+                        Hilog.info(0, "test", "funcB2 ${a}")
                         return "funcB2 " + a
                     }
                     let funcB3 = {
                         a: String =>
-                        AppLog.info("funcB3 ${a}")
+                        Hilog.info(0, "test", "funcB3 ${a}")
                         return "funcB3 " + a
                     }
                     let funcsA = [funcA1, funcA2, funcA3]
@@ -2331,26 +2562,21 @@ class EntryView {
                         webController.registerJavaScriptProxy(funcsA, "testObjA", methodListA)
                         webController.registerJavaScriptProxy(funcsB, "testObjB", methodListB)
                     } catch (e: Exception) {
-                        AppLog.info(e.message)
+                        Hilog.info(0, "test", e.message)
                     }
-                }.width(400.px).height(150.px)
-                Button("deleteJavaScriptRegister").onClick {
+                }).width(400.px).height(150.px)
+                Button("runProxy").onClick ({
                     evt =>
-                    AppLog.info("deleteJavaScriptRegister")
-                    webController.deleteJavaScriptRegister("testObjA")
-                }.width(400.px).height(150.px)
-                Button("runProxy").onClick {
-                    evt =>
-                    AppLog.info("runProxy")
+                    Hilog.info(0, "test", "runProxy")
                     webController.runJavaScript("testObjA.testFunA2('someData')", callback)
                     webController.runJavaScript("testObjB.testFunB2('someData')", callback)
-                }.width(400.px).height(150.px)
+                }).width(400.px).height(150.px)
 
                 Web(src: "www.example.com", controller: webController).onPageBegin(
                     {
-                    evt => AppLog.info("page begin url: ${evt.url}")
+                    evt => Hilog.info(0, "test", "page begin url: ${evt.url}")
                 }).onPageEnd({
-                    evt => AppLog.info("page end url: ${evt.url}")
+                    evt => Hilog.info(0, "test", "page end url: ${evt.url}")
                 })
             }.width(100.percent)
         }.height(100.percent)
@@ -2420,30 +2646,41 @@ public func loadUrl<T>(url: T, headers!: Array<WebHeader> = Array<WebHeader>()):
 ```cangjie
 // index.cj
 
+import kit.ArkUI.LengthProp
+import kit.ArkUI.Button
+import kit.ArkUI.Column
+import kit.ArkUI.CustomView
+import kit.ArkUI.CJEntry
+import kit.ArkUI.loadNativeView
+import kit.ArkUI.SubscriberManager
+import kit.ArkUI.LocalStorage
+import ohos.arkui.state_macro_manage.Entry
+import ohos.arkui.state_macro_manage.Component
 import kit.ArkWeb.*
-import kit.LocalizationKit.*
-import kit.UIKit.Web
+import kit.ArkUI.Web
+import kit.PerformanceAnalysisKit.Hilog
+import ohos.arkui.state_macro_manage.rawfile
 
 @Entry
 @Component
-class EntryView {
+class webview_25 {
     let webController = WebviewController()
     let headers = [WebHeader("headerKey", "headerValue")]
     func build() {
-        Column(10) {
+        Column(space: 10) {
             Button("loadUrl")
-            .onClick {
+            .onClick ({
                 evt =>
-                AppLog.info("loadUrl")
-                webController.loadUrl(@rawfile("index.html"), headers)
-            }.width(400.px).height(150.px)
+                Hilog.info(0, "test", "loadUrl")
+                webController.loadUrl(@rawfile("index.html"), headers: headers)
+            }).width(400.px).height(150.px)
 
             Web(src: "www.example.com", controller: webController)
             .onPageBegin({evt =>
-                AppLog.info("page begin url: ${evt.url}")
+                Hilog.info(0, "test", "page begin url: ${evt.url}")
             })
             .onPageEnd({evt =>
-                AppLog.info("page end url: ${evt.url}")
+                Hilog.info(0, "test", "page end url: ${evt.url}")
             })
         }
     }
@@ -2491,29 +2728,40 @@ public func setCustomUserAgent(userAgent: String): Unit
 ```cangjie
 // index.cj
 
+import kit.ArkUI.LengthProp
+import kit.ArkUI.Button
+import kit.ArkUI.Column
+import kit.ArkUI.CustomView
+import kit.ArkUI.CJEntry
+import kit.ArkUI.loadNativeView
+import kit.ArkUI.SubscriberManager
+import kit.ArkUI.LocalStorage
+import ohos.arkui.state_macro_manage.Entry
+import ohos.arkui.state_macro_manage.Component
 import kit.ArkWeb.*
-import kit.UIKit.Web
+import kit.ArkUI.Web
+import kit.PerformanceAnalysisKit.Hilog
 
 @Entry
 @Component
-class EntryView {
+class webview_26 {
     let webController = WebviewController()
     let headers = [WebHeader("headerKey", "headerValue")]
     func build() {
-        Column(10) {
+        Column(space: 10) {
             Button("setCustomUserAgent")
-            .onClick {
+            .onClick ({
                 evt =>
-                AppLog.info("setCustomUserAgent")
+                Hilog.info(0, "test", "setCustomUserAgent")
                 webController.setCustomUserAgent("ua")
-            }.width(400.px).height(150.px)
+            }).width(400.px).height(150.px)
 
             Web(src: "www.example.com", controller: webController)
             .onPageBegin({evt =>
-                AppLog.info("page begin url: ${evt.url}")
+                Hilog.info(0, "test", "page begin url: ${evt.url}")
             })
             .onPageEnd({evt =>
-                AppLog.info("page end url: ${evt.url}")
+                Hilog.info(0, "test", "page end url: ${evt.url}")
             })
         }
     }
@@ -2547,28 +2795,39 @@ public func stop(): Unit
 ```cangjie
 // index.cj
 
+import kit.ArkUI.LengthProp
+import kit.ArkUI.Button
+import kit.ArkUI.Column
+import kit.ArkUI.CustomView
+import kit.ArkUI.CJEntry
+import kit.ArkUI.loadNativeView
+import kit.ArkUI.SubscriberManager
+import kit.ArkUI.LocalStorage
+import ohos.arkui.state_macro_manage.Entry
+import ohos.arkui.state_macro_manage.Component
 import kit.ArkWeb.*
-import kit.UIKit.Web
+import kit.ArkUI.Web
+import kit.PerformanceAnalysisKit.Hilog
 
 @Entry
 @Component
-class EntryView {
+class webview_27 {
     let webController = WebviewController()
     func build() {
-        Column(10) {
+        Column(space: 10) {
             Button("stop")
-            .onClick {
+            .onClick ({
                 evt =>
-                AppLog.info("stop")
+                Hilog.info(0, "test", "stop")
                 webController.stop()
-            }.width(400.px).height(150.px)
+            }).width(400.px).height(150.px)
 
             Web(src: "www.example.com", controller: webController)
             .onPageBegin({evt =>
-                AppLog.info("page begin url: ${evt.url}")
+                Hilog.info(0, "test", "page begin url: ${evt.url}")
             })
             .onPageEnd({evt =>
-                AppLog.info("page end url: ${evt.url}")
+                Hilog.info(0, "test", "page end url: ${evt.url}")
             })
         }
     }
@@ -2611,39 +2870,51 @@ public func storeWebArchive(baseName: String, autoName: Bool, callback: AsyncCal
 ```cangjie
 // index.cj
 
+import kit.ArkUI.LengthProp
+import kit.ArkUI.Button
+import kit.ArkUI.Column
+import kit.ArkUI.CustomView
+import kit.ArkUI.CJEntry
+import kit.ArkUI.loadNativeView
+import kit.ArkUI.SubscriberManager
+import kit.ArkUI.LocalStorage
+import ohos.arkui.state_macro_manage.Entry
+import ohos.arkui.state_macro_manage.Component
 import kit.ArkWeb.*
-import kit.UIKit.Web
+import kit.ArkUI.Web
+import kit.PerformanceAnalysisKit.Hilog
+import ohos.business_exception.*
 
-let callback: AsyncCallback<String> = {
-    errorCode: Option<AsyncError>, data: Option<String> => match (errorCode) {
-        case Some(e) => AppLog.error("callback error: errcode is ${e.code}")
+let callback1: AsyncCallback<String> = {
+    errorCode: Option<BusinessException>, data: Option<String> => match (errorCode) {
+        case Some(e) => Hilog.error(0, "test", "callback error: errcode is ${e.code}")
         case _ =>
             match (data) {
                 case Some(value) =>
-                    AppLog.info("callback: get data successfully and data is ${value}")
-                case _ => AppLog.error("callback: data is null")
+                    Hilog.info(0, "test", "callback: get data successfully and data is ${value}")
+                case _ => Hilog.error(0, "test", "callback: data is null")
             }
     }
 }
 @Entry
 @Component
-class EntryView {
+class webview_28 {
     let webController = WebviewController()
     func build() {
-        Column(10) {
+        Column(space: 10) {
             Button("storeWebArchive")
-            .onClick {
+            .onClick ({
                 evt =>
-                AppLog.info("storeWebArchive")
-                webController.storeWebArchive("/data/storage/el2/base/", true, callback)
-            }.width(400.px).height(150.px)
+                Hilog.info(0, "test", "storeWebArchive")
+                webController.storeWebArchive("/data/storage/el2/base/", true, callback1)
+            }).width(400.px).height(150.px)
 
             Web(src: "www.example.com", controller: webController)
             .onPageBegin({evt =>
-                AppLog.info("page begin url: ${evt.url}")
+                Hilog.info(0, "test", "page begin url: ${evt.url}")
             })
             .onPageEnd({evt =>
-                AppLog.info("page end url: ${evt.url}")
+                Hilog.info(0, "test", "page end url: ${evt.url}")
             })
         }
     }
@@ -2684,28 +2955,39 @@ public func zoom(factor: Float32): Unit
 ```cangjie
 // index.cj
 
+import kit.ArkUI.LengthProp
+import kit.ArkUI.Button
+import kit.ArkUI.Column
+import kit.ArkUI.CustomView
+import kit.ArkUI.CJEntry
+import kit.ArkUI.loadNativeView
+import kit.ArkUI.SubscriberManager
+import kit.ArkUI.LocalStorage
+import ohos.arkui.state_macro_manage.Entry
+import ohos.arkui.state_macro_manage.Component
 import kit.ArkWeb.*
-import kit.UIKit.Web
+import kit.ArkUI.Web
+import kit.PerformanceAnalysisKit.Hilog
 
 @Entry
 @Component
-class EntryView {
+class webview_29 {
     let webController = WebviewController()
     func build() {
-        Column(10) {
+        Column(space: 10) {
             Button("zoom")
-            .onClick {
+            .onClick ({
                 evt =>
-                AppLog.info("zoom")
+                Hilog.info(0, "test", "zoom")
                 webController.zoom(2.5)
-            }.width(400.px).height(150.px)
+            }).width(400.px).height(150.px)
 
             Web(src: "www.example.com", controller: webController)
             .onPageBegin({evt =>
-                AppLog.info("page begin url: ${evt.url}")
+                Hilog.info(0, "test", "page begin url: ${evt.url}")
             })
             .onPageEnd({evt =>
-                AppLog.info("page end url: ${evt.url}")
+                Hilog.info(0, "test", "page end url: ${evt.url}")
             })
         }
     }
@@ -2740,28 +3022,39 @@ public func zoomIn(): Unit
 ```cangjie
 // index.cj
 
+import kit.ArkUI.LengthProp
+import kit.ArkUI.Button
+import kit.ArkUI.Column
+import kit.ArkUI.CustomView
+import kit.ArkUI.CJEntry
+import kit.ArkUI.loadNativeView
+import kit.ArkUI.SubscriberManager
+import kit.ArkUI.LocalStorage
+import ohos.arkui.state_macro_manage.Entry
+import ohos.arkui.state_macro_manage.Component
 import kit.ArkWeb.*
-import kit.UIKit.Web
+import kit.ArkUI.Web
+import kit.PerformanceAnalysisKit.Hilog
 
 @Entry
 @Component
-class EntryView {
+class webview_30 {
     let webController = WebviewController()
     func build() {
-        Column(10) {
+        Column(space: 10) {
             Button("zoomIn")
-            .onClick {
+            .onClick ({
                 evt =>
-                AppLog.info("zoomIn")
+                Hilog.info(0, "test", "zoomIn")
                 webController.zoomIn()
-            }.width(400.px).height(150.px)
+            }).width(400.px).height(150.px)
 
             Web(src: "www.example.com", controller: webController)
             .onPageBegin({evt =>
-                AppLog.info("page begin url: ${evt.url}")
+                Hilog.info(0, "test", "page begin url: ${evt.url}")
             })
             .onPageEnd({evt =>
-                AppLog.info("page end url: ${evt.url}")
+                Hilog.info(0, "test", "page end url: ${evt.url}")
             })
         }
     }
@@ -2796,28 +3089,39 @@ public func zoomOut(): Unit
 ```cangjie
 // index.cj
 
+import kit.ArkUI.LengthProp
+import kit.ArkUI.Button
+import kit.ArkUI.Column
+import kit.ArkUI.CustomView
+import kit.ArkUI.CJEntry
+import kit.ArkUI.loadNativeView
+import kit.ArkUI.SubscriberManager
+import kit.ArkUI.LocalStorage
+import ohos.arkui.state_macro_manage.Entry
+import ohos.arkui.state_macro_manage.Component
 import kit.ArkWeb.*
-import kit.UIKit.Web
+import kit.ArkUI.Web
+import kit.PerformanceAnalysisKit.Hilog
 
 @Entry
 @Component
-class EntryView {
+class webview_31 {
     let webController = WebviewController()
     func build() {
-        Column(10) {
+        Column(space: 10) {
             Button("zoomOut")
-            .onClick {
+            .onClick ({
                 evt =>
-                AppLog.info("zoomOut")
+                Hilog.info(0, "test", "zoomOut")
                 webController.zoomOut()
-            }.width(400.px).height(150.px)
+            }).width(400.px).height(150.px)
 
             Web(src: "www.example.com", controller: webController)
             .onPageBegin({evt =>
-                AppLog.info("page begin url: ${evt.url}")
+                Hilog.info(0, "test", "page begin url: ${evt.url}")
             })
             .onPageEnd({evt =>
-                AppLog.info("page end url: ${evt.url}")
+                Hilog.info(0, "test", "page end url: ${evt.url}")
             })
         }
     }
@@ -2866,39 +3170,51 @@ public func runJavaScript(script: String, callback: AsyncCallback<String>): Unit
 ```cangjie
 // index.cj
 
+import kit.ArkUI.LengthProp
+import kit.ArkUI.Button
+import kit.ArkUI.Column
+import kit.ArkUI.CustomView
+import kit.ArkUI.CJEntry
+import kit.ArkUI.loadNativeView
+import kit.ArkUI.SubscriberManager
+import kit.ArkUI.LocalStorage
+import ohos.arkui.state_macro_manage.Entry
+import ohos.arkui.state_macro_manage.Component
 import kit.ArkWeb.*
-import kit.UIKit.Web
+import kit.ArkUI.Web
+import kit.PerformanceAnalysisKit.Hilog
+import ohos.business_exception.*
 
-let callback: AsyncCallback<String> = {
-    errorCode: Option<AsyncError>, data: Option<String> => match (errorCode) {
-        case Some(e) => AppLog.error("callback error: errcode is ${e.code}")
+let callback2: AsyncCallback<String> = {
+    errorCode: Option<BusinessException>, data: Option<String> => match (errorCode) {
+        case Some(e) => Hilog.error(0, "test", "callback error: errcode is ${e.code}")
         case _ =>
             match (data) {
                 case Some(value) =>
-                    AppLog.info("callback: get data successfully and data is ${value}")
-                case _ => AppLog.error("callback: data is null")
+                    Hilog.info(0, "test", "callback: get data successfully and data is ${value}")
+                case _ => Hilog.error(0, "test", "callback: data is null")
             }
     }
 }
 @Entry
 @Component
-class EntryView {
+class webview_32 {
     let webController = WebviewController()
     func build() {
-        Column(10) {
+        Column(space: 10) {
             Button("runJavaScript")
-            .onClick {
+            .onClick ({
                 evt =>
-                AppLog.info("runJavaScript")
-                webController.runJavaScript("test()", callback)
-            }.width(400.px).height(150.px)
+                Hilog.info(0, "test", "runJavaScript")
+                webController.runJavaScript("test()", callback2)
+            }).width(400.px).height(150.px)
 
             Web(src: ("index.html"), controller: webController)
             .onPageBegin({evt =>
-                AppLog.info("page begin url: ${evt.url}")
+                Hilog.info(0, "test", "page begin url: ${evt.url}")
             })
             .onPageEnd({evt =>
-                AppLog.info("page end url: ${evt.url}")
+                Hilog.info(0, "test", "page end url: ${evt.url}")
             })
         }
     }
@@ -2959,28 +3275,39 @@ public func scrollBy(deltaX: Float32, deltaY: Float32, duration!: ?Int32 = None)
 ```cangjie
 // index.cj
 
+import kit.ArkUI.LengthProp
+import kit.ArkUI.Button
+import kit.ArkUI.Column
+import kit.ArkUI.CustomView
+import kit.ArkUI.CJEntry
+import kit.ArkUI.loadNativeView
+import kit.ArkUI.SubscriberManager
+import kit.ArkUI.LocalStorage
+import ohos.arkui.state_macro_manage.Entry
+import ohos.arkui.state_macro_manage.Component
 import kit.ArkWeb.*
-import kit.UIKit.Web
+import kit.ArkUI.Web
+import kit.PerformanceAnalysisKit.Hilog
 
 @Entry
 @Component
-class EntryView {
+class webview_33 {
     let webController = WebviewController()
     func build() {
-        Column(10) {
+        Column(space: 10) {
             Button("scrollBy")
-            .onClick {
+            .onClick ({
                 evt =>
-                AppLog.info("scrollBy")
+                Hilog.info(0, "test", "scrollBy")
                 webController.scrollBy(50.0, 50.0)
-            }.width(400.px).height(150.px)
+            }).width(400.px).height(150.px)
 
             Web(src: ("index.html"), controller: webController)
             .onPageBegin({evt =>
-                AppLog.info("page begin url: ${evt.url}")
+                Hilog.info(0, "test", "page begin url: ${evt.url}")
             })
             .onPageEnd({evt =>
-                AppLog.info("page end url: ${evt.url}")
+                Hilog.info(0, "test", "page end url: ${evt.url}")
             })
         }
     }
@@ -3046,28 +3373,39 @@ public func scrollTo(x: Float32, y: Float32, duration!: ?Int32 = None): Unit
 ```cangjie
 // index.cj
 
+import kit.ArkUI.LengthProp
+import kit.ArkUI.Button
+import kit.ArkUI.Column
+import kit.ArkUI.CustomView
+import kit.ArkUI.CJEntry
+import kit.ArkUI.loadNativeView
+import kit.ArkUI.SubscriberManager
+import kit.ArkUI.LocalStorage
+import ohos.arkui.state_macro_manage.Entry
+import ohos.arkui.state_macro_manage.Component
 import kit.ArkWeb.*
-import kit.UIKit.Web
+import kit.ArkUI.Web
+import kit.PerformanceAnalysisKit.Hilog
 
 @Entry
 @Component
-class EntryView {
+class webview_34 {
     let webController = WebviewController()
     func build() {
-        Column(10) {
+        Column(space: 10) {
             Button("scrollTo")
-            .onClick {
+            .onClick ({
                 evt =>
-                AppLog.info("scrollTo")
+                Hilog.info(0, "test", "scrollTo")
                 webController.scrollTo(50.0, 50.0)
-            }.width(400.px).height(150.px)
+            }).width(400.px).height(150.px)
 
             Web(src: ("index.html"), controller: webController)
             .onPageBegin({evt =>
-                AppLog.info("page begin url: ${evt.url}")
+                Hilog.info(0, "test", "page begin url: ${evt.url}")
             })
             .onPageEnd({evt =>
-                AppLog.info("page end url: ${evt.url}")
+                Hilog.info(0, "test", "page end url: ${evt.url}")
             })
         }
     }
@@ -3135,28 +3473,39 @@ public func removeCache(clearRom: Bool): Unit
 ```cangjie
 // index.cj
 
+import kit.ArkUI.LengthProp
+import kit.ArkUI.Button
+import kit.ArkUI.Column
+import kit.ArkUI.CustomView
+import kit.ArkUI.CJEntry
+import kit.ArkUI.loadNativeView
+import kit.ArkUI.SubscriberManager
+import kit.ArkUI.LocalStorage
+import ohos.arkui.state_macro_manage.Entry
+import ohos.arkui.state_macro_manage.Component
 import kit.ArkWeb.*
-import kit.UIKit.Web
+import kit.ArkUI.Web
+import kit.PerformanceAnalysisKit.Hilog
 
 @Entry
 @Component
-class EntryView {
+class webview_35 {
     let webController = WebviewController()
     func build() {
-        Column(10) {
+        Column(space: 10) {
             Button("removeCache")
-            .onClick {
+            .onClick ({
                 evt =>
-                AppLog.info("removeCache")
+                Hilog.info(0, "test", "removeCache")
                 webController.removeCache(true)
-            }.width(400.px).height(150.px)
+            }).width(400.px).height(150.px)
 
             Web(src: "www.example.com", controller: webController)
             .onPageBegin({evt =>
-                AppLog.info("page begin url: ${evt.url}")
+                Hilog.info(0, "test", "page begin url: ${evt.url}")
             })
             .onPageEnd({evt =>
-                AppLog.info("page end url: ${evt.url}")
+                Hilog.info(0, "test", "page end url: ${evt.url}")
             })
         }
     }

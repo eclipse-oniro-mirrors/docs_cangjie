@@ -246,7 +246,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let resourceManager = Global.getResourceManager()
+    let resourceManager = Global.abilityContext.resourceManager
     let path = "/data/storage/el2/base/haps/entry/files/library-default-unsigned.hsp"
     resourceManager.addResource(path)
 } catch (e: BusinessException) {
@@ -292,7 +292,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let resourceManager = Global.getResourceManager()
+    let resourceManager = Global.abilityContext.resourceManager
     let rawfd = resourceManager.closeRawFd("test.txt")
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
@@ -346,9 +346,9 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let resourceManager = Global.getResourceManager()
+    let resourceManager = Global.abilityContext.resourceManager
     let res = @r(app.boolean.test)
-    resourceManager.getBoolean(res.id)
+    let result = resourceManager.getBoolean(res.id)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -401,10 +401,10 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let resourceManager = Global.getResourceManager()
+    let resourceManager = Global.abilityContext.resourceManager
     let res = @r(app.boolean.test)
     let resource = AppResource("com.example.myapplication", "entry", res.id)
-    resourceManager.getBoolean(resource)
+    let result = resourceManager.getBoolean(resource)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -456,8 +456,8 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let resourceManager = Global.getResourceManager()
-    resourceManager.getBooleanByName("test")
+    let resourceManager = Global.abilityContext.resourceManager
+    let result = resourceManager.getBooleanByName("test")
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -510,10 +510,10 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let resourceManager = Global.getResourceManager()
+    let resourceManager = Global.abilityContext.resourceManager
     let res = @r(app.color.test)
     let resource = AppResource("com.example.myapplication", "entry", res.id)
-    resourceManager.getColor(resource)
+    let result = resourceManager.getColor(resource)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -566,9 +566,9 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let resourceManager = Global.getResourceManager()
+    let resourceManager = Global.abilityContext.resourceManager
     let res = @r(app.color.test)
-    resourceManager.getColor(res.id)
+    let result = resourceManager.getColor(res.id)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -620,8 +620,8 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let resourceManager = Global.getResourceManager()
-    resourceManager.getColorByName("test")
+    let resourceManager = Global.abilityContext.resourceManager
+    let result = resourceManager.getColorByName("test")
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -658,7 +658,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let resourceManager = Global.getResourceManager()
+    let resourceManager = Global.abilityContext.resourceManager
     let configuration = resourceManager.getConfiguration()
     Hilog.info(0, "test", configuration.locale, "")
 } catch (e: BusinessException) {
@@ -697,7 +697,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let resourceManager = Global.getResourceManager()
+    let resourceManager = Global.abilityContext.resourceManager
     let deviceCapability = resourceManager.getDeviceCapability()
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
@@ -740,7 +740,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let resourceManager = Global.getResourceManager()
+    let resourceManager = Global.abilityContext.resourceManager
     resourceManager.getLocales()
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
@@ -793,8 +793,8 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let resourceManager = Global.getResourceManager()
-    resourceManager.getMediaBase64ByName("test")
+    let resourceManager = Global.abilityContext.resourceManager
+    let code = resourceManager.getMediaBase64ByName("test")
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -846,7 +846,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let resourceManager = Global.getResourceManager()
+    let resourceManager = Global.abilityContext.resourceManager
     resourceManager.getMediaByName("test", density: ScreenMdpi)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
@@ -900,7 +900,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let resourceManager = Global.getResourceManager()
+    let resourceManager = Global.abilityContext.resourceManager
     let res = @r(app.media.test)
     resourceManager.getMediaContent(res.id, density: ScreenSdpi)
 } catch (e: BusinessException) {
@@ -955,7 +955,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let resourceManager = Global.getResourceManager()
+    let resourceManager = Global.abilityContext.resourceManager
     let res = @r(app.media.test)
     let resource = AppResource("com.example.myapplication", "entry", res.id)
     resourceManager.getMediaContent(resource, density: ScreenSdpi)
@@ -1011,9 +1011,9 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let resourceManager = Global.getResourceManager()
+    let resourceManager = Global.abilityContext.resourceManager
     let res = @r(app.media.test)
-    resourceManager.getMediaContentBase64(res.id)
+    let code = resourceManager.getMediaContentBase64(res.id)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -1066,10 +1066,10 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let resourceManager = Global.getResourceManager()
+    let resourceManager = Global.abilityContext.resourceManager
     let res = @r(app.media.test)
     let resource = AppResource("com.example.myapplication", "entry", res.id)
-    resourceManager.getMediaContentBase64(resource)
+    let code = resourceManager.getMediaContentBase64(resource)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -1123,7 +1123,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let resourceManager = Global.getResourceManager()
+    let resourceManager = Global.abilityContext.resourceManager
     let res = @r(app.integer.test)
     let number = resourceManager.getNumber(res.id)
     match (number) {
@@ -1184,7 +1184,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let resourceManager = Global.getResourceManager()
+    let resourceManager = Global.abilityContext.resourceManager
     let res = @r(app.integer.test)
     let resource = AppResource("com.example.myapplication", "entry", res.id)
     let number = resourceManager.getNumber(resource)
@@ -1246,7 +1246,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let resourceManager = Global.getResourceManager()
+    let resourceManager = Global.abilityContext.resourceManager
     let number = resourceManager.getNumberByName("test")
     match (number) {
         case Int32Value(v) => Hilog.info(0, "test", v.toString(), "")
@@ -1309,8 +1309,8 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let resourceManager = Global.getResourceManager()
-    resourceManager.getPluralStringByName("test", 1)
+    let resourceManager = Global.abilityContext.resourceManager
+    let result = resourceManager.getPluralStringByName("test", 1)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -1368,9 +1368,9 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let resourceManager = Global.getResourceManager()
+    let resourceManager = Global.abilityContext.resourceManager
     let res = @r(app.plural.test)
-    resourceManager.getPluralStringValue(res.id, 1)
+    let result = resourceManager.getPluralStringValue(res.id, 1)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -1428,10 +1428,10 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let resourceManager = Global.getResourceManager()
+    let resourceManager = Global.abilityContext.resourceManager
     let res = @r(app.plural.test)
     let resource = AppResource("com.example.myapplication", "entry", res.id)
-    resourceManager.getPluralStringValue(resource, 1)
+    let result = resourceManager.getPluralStringValue(resource, 1)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -1486,7 +1486,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let resourceManager = Global.getResourceManager()
+    let resourceManager = Global.abilityContext.resourceManager
     let rawfd = resourceManager.getRawFd("test.txt")
     Hilog.info(0, "test", "${rawfd.fd} ${rawfd.offset} ${rawfd.length}", "")
 } catch (e: BusinessException) {
@@ -1538,7 +1538,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let resourceManager = Global.getResourceManager()
+    let resourceManager = Global.abilityContext.resourceManager
     resourceManager.getRawFileContent("test.txt")
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
@@ -1593,7 +1593,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let resourceManager = Global.getResourceManager()
+    let resourceManager = Global.abilityContext.resourceManager
     resourceManager.getRawFileList("")
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
@@ -1649,9 +1649,9 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let resourceManager = Global.getResourceManager()
+    let resourceManager = Global.abilityContext.resourceManager
     let resource = @r(app.string.test)
-    resourceManager.getString(resource.id)
+    let result = resourceManager.getString(resource.id)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -1706,9 +1706,9 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let resourceManager = Global.getResourceManager()
+    let resourceManager = Global.abilityContext.resourceManager
     let resource = @r(app.string.test)
-    resourceManager.getString(resource.id, ArgsValueType.StringValue("format string"), ArgsValueType.Int32Value(10), ArgsValueType.Float32Value(98.78))
+    let result = resourceManager.getString(resource.id, ArgsValueType.StringValue("format string"), ArgsValueType.Int32Value(10), ArgsValueType.Float32Value(98.78))
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -1760,7 +1760,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let resourceManager = Global.getResourceManager()
+    let resourceManager = Global.abilityContext.resourceManager
     resourceManager.getStringArrayByName("test")
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
@@ -1814,9 +1814,9 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let resourceManager = Global.getResourceManager()
+    let resourceManager = Global.abilityContext.resourceManager
     let res = @r(app.strarray.test)
-    resourceManager.getStringArrayValue(res.id)
+    let result = resourceManager.getStringArrayValue(res.id)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -1869,10 +1869,10 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let resourceManager = Global.getResourceManager()
+    let resourceManager = Global.abilityContext.resourceManager
     let res = @r(app.strarray.test)
     let resource = AppResource("com.example.myapplication", "entry", res.id)
-    resourceManager.getStringArrayValue(resource)
+    let result = resourceManager.getStringArrayValue(resource)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -1926,8 +1926,8 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let resourceManager = Global.getResourceManager()
-    resourceManager.getStringByName("test", ArgsValueType.StringValue("format string"), ArgsValueType.Int32Value(10), ArgsValueType.Float32Value(98.78))
+    let resourceManager = Global.abilityContext.resourceManager
+    let result = resourceManager.getStringByName("test", ArgsValueType.StringValue("format string"), ArgsValueType.Int32Value(10), ArgsValueType.Float32Value(98.78))
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -1975,7 +1975,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let resourceManager = Global.getResourceManager()
+    let resourceManager = Global.abilityContext.resourceManager
     let path = "/data/storage/el2/base/haps/entry/files/library-default-unsigned.hsp"
     resourceManager.removeResource(path)
 } catch (e: BusinessException) {

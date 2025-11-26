@@ -404,9 +404,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    var ctx = Option<UIAbilityContext>.None
-
-    Call.makeCall(ctx.getOrThrow(), "138xxxxxxxx")
+    Call.makeCall(Global.abilityContext, "138xxxxxxxx")
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }

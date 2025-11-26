@@ -347,6 +347,7 @@ public static func access(path: String, mode!: AccessModeType = AccessModeType.E
 
 import kit.CoreFileKit.*
 import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
 let pathDir = "path/to/file"
 let filePath = pathDir + "/test.txt"
@@ -3655,16 +3656,21 @@ public func next(): ReaderIteratorResult
 // index.cj
 
 import kit.CoreFileKit.*
-import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let pathDir = "path/to/file"
-let filePath = pathDir + "/test.txt"
-let options: Options = Options(encoding: "utf-8")
-let readerIterator = FileIo.readLines(filePath, options: options)
-var result = readerIterator.next()
-while (!result.done) {
-    Hilog.info(0, "test", "content: ${result.value}", "")
-    result = readerIterator.next()
+try {
+    let pathDir = "path/to/file"
+    let filePath = pathDir + "/test.txt"
+    let options: Options = Options(encoding: "utf-8")
+    let readerIterator = FileIo.readLines(filePath, options: options)
+    var result = readerIterator.next()
+    while (!result.done) {
+        Hilog.info(0, "test", "content: ${result.value}", "")
+        result = readerIterator.next()
+    }
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
 }
 ```
 

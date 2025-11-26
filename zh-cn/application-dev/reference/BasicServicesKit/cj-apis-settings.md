@@ -65,7 +65,7 @@ import kit.PerformanceAnalysisKit.Hilog
 import ohos.business_exception.BusinessException
 
 try {
-    let context = Global.getAbilityContext()
+    let context = Global.abilityContext
     let value = getValue(context, Date.DateFormat, "MM/dd/yyyy")
     Hilog.info(0, "cangjie_ohos_test", "Succeeded in getting date format: ${value}")
 } catch (e: BusinessException) {
@@ -121,7 +121,7 @@ import kit.PerformanceAnalysisKit.Hilog
 import ohos.business_exception.BusinessException
 
 try {
-    let context = Global.getAbilityContext()
+    let context = Global.abilityContext
     let value = getValue(context, Display.ScreenBrightnessStatus, "100", DomainName.DeviceShared)
     Hilog.info(0, "cangjie_ohos_test", "Succeeded in getting screen brightness: ${value}")
 } catch (e: BusinessException) {
@@ -179,7 +179,7 @@ import kit.PerformanceAnalysisKit.Hilog
 import ohos.business_exception.BusinessException
 
 try {
-    let context = Global.getAbilityContext()
+    let context = Global.abilityContext
     let autoGainTime = getValue(context, Date.AutoGainTime, "false")
     Hilog.info(0, "cangjie_ohos_test", "Auto gain time setting: ${autoGainTime}")
 } catch (e: BusinessException) {
@@ -215,7 +215,7 @@ import kit.PerformanceAnalysisKit.Hilog
 import ohos.business_exception.BusinessException
 
 try {
-    let context = Global.getAbilityContext()
+    let context = Global.abilityContext
     let autoGainTimeZone = getValue(context, Date.AutoGainTimeZone, "false")
     Hilog.info(0, "cangjie_ohos_test", "Auto gain time zone setting: ${autoGainTimeZone}")
 } catch (e: BusinessException) {
@@ -249,7 +249,7 @@ import kit.PerformanceAnalysisKit.Hilog
 import ohos.business_exception.BusinessException
 
 try {
-    let context = Global.getAbilityContext()
+    let context = Global.abilityContext
     let dateFormat = getValue(context, Date.DateFormat, "MM/dd/yyyy")
     Hilog.info(0, "cangjie_ohos_test", "Date format setting: ${dateFormat}")
 } catch (e: BusinessException) {
@@ -285,7 +285,7 @@ import kit.PerformanceAnalysisKit.Hilog
 import ohos.business_exception.BusinessException
 
 try {
-    let context = Global.getAbilityContext()
+    let context = Global.abilityContext
     let timeFormat = getValue(context, Date.TimeFormat, "24")
     Hilog.info(0, "cangjie_ohos_test", "Time format setting: ${timeFormat}")
 } catch (e: BusinessException) {
@@ -364,7 +364,7 @@ import kit.PerformanceAnalysisKit.Hilog
 import ohos.business_exception.BusinessException
 
 try {
-    let context = Global.getAbilityContext()
+    let context = Global.abilityContext
     let durationScale = getValue(context, Display.AnimatorDurationScale, "1.0")
     Hilog.info(0, "cangjie_ohos_test", "Animator duration scale: ${durationScale}")
 } catch (e: BusinessException) {
@@ -400,7 +400,7 @@ import kit.PerformanceAnalysisKit.Hilog
 import ohos.business_exception.BusinessException
 
 try {
-    let context = Global.getAbilityContext()
+    let context = Global.abilityContext
     let autoBrightness = getValue(context, Display.AutoScreenBrightness, "0")
     Hilog.info(0, "cangjie_ohos_test", "Auto screen brightness setting: ${autoBrightness}")
 } catch (e: BusinessException) {
@@ -440,7 +440,7 @@ import kit.PerformanceAnalysisKit.Hilog
 import ohos.business_exception.BusinessException
 
 try {
-    let context = Global.getAbilityContext()
+    let context = Global.abilityContext
     let rotation = getValue(context, Display.DefaultScreenRotation, "0")
     Hilog.info(0, "cangjie_ohos_test", "Default screen rotation setting: ${rotation}")
 } catch (e: BusinessException) {
@@ -476,7 +476,7 @@ import kit.PerformanceAnalysisKit.Hilog
 import ohos.business_exception.BusinessException
 
 try {
-    let context = Global.getAbilityContext()
+    let context = Global.abilityContext
     let inversion = getValue(context, Display.DisplayInversionStatus, "0")
     Hilog.info(0, "cangjie_ohos_test", "Display inversion status: ${inversion}")
 } catch (e: BusinessException) {
@@ -508,7 +508,7 @@ import kit.PerformanceAnalysisKit.Hilog
 import ohos.business_exception.BusinessException
 
 try {
-    let context = Global.getAbilityContext()
+    let context = Global.abilityContext
     let fontScale = getValue(context, Display.FontScale, "1.0")
     Hilog.info(0, "cangjie_ohos_test", "Font scale setting: ${fontScale}")
 } catch (e: BusinessException) {
@@ -540,7 +540,7 @@ import kit.PerformanceAnalysisKit.Hilog
 import ohos.business_exception.BusinessException
 
 try {
-    let context = Global.getAbilityContext()
+    let context = Global.abilityContext
     let brightness = getValue(context, Display.ScreenBrightnessStatus, "128")
     Hilog.info(0, "cangjie_ohos_test", "Screen brightness setting: ${brightness}")
 } catch (e: BusinessException) {
@@ -572,7 +572,7 @@ import kit.PerformanceAnalysisKit.Hilog
 import ohos.business_exception.BusinessException
 
 try {
-    let context = Global.getAbilityContext()
+    let context = Global.abilityContext
     let timeout = getValue(context, Display.ScreenOffTimeout, "30000")
     Hilog.info(0, "cangjie_ohos_test", "Screen off timeout setting: ${timeout} ms")
 } catch (e: BusinessException) {
@@ -606,7 +606,7 @@ import kit.PerformanceAnalysisKit.Hilog
 import ohos.business_exception.BusinessException
 
 try {
-    let context = Global.getAbilityContext()
+    let context = Global.abilityContext
     let transitionScale = getValue(context, Display.TransitionAnimationScale, "1.0")
     Hilog.info(0, "cangjie_ohos_test", "Transition animation scale: ${transitionScale}")
 } catch (e: BusinessException) {
@@ -640,7 +640,7 @@ import kit.PerformanceAnalysisKit.Hilog
 import ohos.business_exception.BusinessException
 
 try {
-    let context = Global.getAbilityContext()
+    let context = Global.abilityContext
     let windowScale = getValue(context, Display.WindowAnimationScale, "1.0")
     Hilog.info(0, "cangjie_ohos_test", "Window animation scale: ${windowScale}")
 } catch (e: BusinessException) {
@@ -710,7 +710,7 @@ import kit.PerformanceAnalysisKit.Hilog
 import ohos.business_exception.BusinessException
 
 try {
-    let context = Global.getAbilityContext()
+    let context = Global.abilityContext
     let value = getValue(context, Display.ScreenBrightnessStatus, "100", DomainName.DeviceShared)
     Hilog.info(0, "cangjie_ohos_test", "Device shared screen brightness: ${value}")
 } catch (e: BusinessException) {
@@ -742,7 +742,7 @@ import kit.PerformanceAnalysisKit.Hilog
 import ohos.business_exception.BusinessException
 
 try {
-    let context = Global.getAbilityContext()
+    let context = Global.abilityContext
     let value = getValue(context, Display.ScreenBrightnessStatus, "100", DomainName.UserProperty)
     Hilog.info(0, "cangjie_ohos_test", "User property screen brightness: ${value}")
 } catch (e: BusinessException) {

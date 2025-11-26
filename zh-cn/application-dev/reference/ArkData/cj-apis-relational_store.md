@@ -76,8 +76,8 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    var rdbStore: RdbStore = getRdbStore(Global.getStageContext(), StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db")) // 需获取Context应用上下文，详见本文使用说明
-    deleteRdbStore(Global.getStageContext(), "RdbTest.db")
+    var rdbStore: RdbStore = getRdbStore(Global.abilityContext, StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db")) // 需获取Context应用上下文，详见本文使用说明
+    deleteRdbStore(Global.abilityContext, "RdbTest.db")
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -130,8 +130,8 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    var rdbStore: RdbStore = getRdbStore(Global.getStageContext(), StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db")) // 需获取Context应用上下文，详见本文使用说明
-    deleteRdbStore(Global.getStageContext(), StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db"))
+    var rdbStore: RdbStore = getRdbStore(Global.abilityContext, StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db")) // 需获取Context应用上下文，详见本文使用说明
+    deleteRdbStore(Global.abilityContext, StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db"))
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -206,7 +206,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    var rdbStore: RdbStore = getRdbStore(Global.getStageContext(), StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db")) // 需获取Context应用上下文，详见本文使用说明
+    var rdbStore: RdbStore = getRdbStore(Global.abilityContext, StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db")) // 需获取Context应用上下文，详见本文使用说明
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -1864,7 +1864,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    var rdbStore: RdbStore = getRdbStore(Global.getStageContext(), StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db")) // 需获取Context应用上下文，详见本文使用说明
+    var rdbStore: RdbStore = getRdbStore(Global.abilityContext, StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db")) // 需获取Context应用上下文，详见本文使用说明
     rdbStore.backup("dbBackup.db")
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
@@ -1932,12 +1932,12 @@ public func batchInsert(table: String, values: Array<ValuesBucket>): Int64
 // index.cj
 
 import kit.ArkData.*
-import std.collection.HashMap
+import std.collection.{HashMap, Map}
 import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    var rdbStore: RdbStore = getRdbStore(Global.getStageContext(), StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db")) // 需获取Context应用上下文，详见本文使用说明
+    var rdbStore: RdbStore = getRdbStore(Global.abilityContext, StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db")) // 需获取Context应用上下文，详见本文使用说明
     var values1 = HashMap<String, RelationalStoreValueType>()
     values1.add("ID", RelationalStoreValueType.Integer(1))
     values1.add("NAME", RelationalStoreValueType.StringValue("Lisa"))
@@ -1954,7 +1954,7 @@ try {
     values3.add("AGE", RelationalStoreValueType.Integer(20))
     values3.add("SALARY", RelationalStoreValueType.Double(102.5))
     let valueBuckets: Array<Map<String, RelationalStoreValueType>>= [values1, values2, values3]
-    rdbStore.batchInsert("EMPLOYEE", valueBuckets)
+    let count = rdbStore.batchInsert("EMPLOYEE", valueBuckets)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -2012,7 +2012,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    var rdbStore: RdbStore = getRdbStore(Global.getStageContext(), StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db")) // 需获取Context应用上下文，详见本文使用说明
+    var rdbStore: RdbStore = getRdbStore(Global.abilityContext, StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db")) // 需获取Context应用上下文，详见本文使用说明
     var values = HashMap<String, RelationalStoreValueType>()
     rdbStore.beginTransaction()
     values.add("ID", RelationalStoreValueType.Integer(2))
@@ -2075,7 +2075,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    var rdbStore: RdbStore = getRdbStore(Global.getStageContext(), StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db")) // 需获取Context应用上下文，详见本文使用说明
+    var rdbStore: RdbStore = getRdbStore(Global.abilityContext, StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db")) // 需获取Context应用上下文，详见本文使用说明
     rdbStore.executeSql("CREATE TABLE THING(ID int NOT NULL, NAME varchar(255) NOT NULL, PRIMARY KEY (Id))")
     rdbStore.beginTransaction()
     var values = HashMap<String, RelationalStoreValueType>()
@@ -2151,10 +2151,10 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    var rdbStore: RdbStore = getRdbStore(Global.getStageContext(), StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db")) // 需获取Context应用上下文，详见本文使用说明
+    var rdbStore: RdbStore = getRdbStore(Global.abilityContext, StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db")) // 需获取Context应用上下文，详见本文使用说明
     let predicates = RdbPredicates("EMPLOYEE")
     predicates.equalTo("NAME", RelationalStoreValueType.StringValue("Lisa"))
-    rdbStore.delete(predicates)
+    let count = rdbStore.delete(predicates)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -2202,16 +2202,16 @@ import ohos.callback_invoke.*
 import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
-try {
-    // 此处代码可添加在依赖项定义中
-    class TestCallback <: Callback0Argument {
-        public init() {}
-        public open func invoke(err: ?BusinessException): Unit {
-            Hilog.info(0, "test", "Call invoke.", "")
-        }
+// 此处代码可添加在依赖项定义中
+class TestCallback <: Callback0Argument {
+    public init() {}
+    public open func invoke(err: ?BusinessException): Unit {
+        Hilog.info(0, "test", "Call invoke.", "")
     }
+}
 
-    var rdbStore: RdbStore = getRdbStore(Global.getStageContext(), StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db")) // 需获取Context应用上下文，详见本文使用说明
+try {
+    var rdbStore: RdbStore = getRdbStore(Global.abilityContext, StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db")) // 需获取Context应用上下文，详见本文使用说明
     let testCallback = TestCallback()
     rdbStore.on("PRINT", false, testCallback)
     rdbStore.emit("PRINT")
@@ -2282,7 +2282,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    var rdbStore: RdbStore = getRdbStore(Global.getStageContext(), StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db")) // 需获取Context应用上下文，详见本文使用说明
+    var rdbStore: RdbStore = getRdbStore(Global.abilityContext, StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db")) // 需获取Context应用上下文，详见本文使用说明
     rdbStore.executeSql("DELETE FROM EMPLOYEE WHERE ID = ?", bindArgs: [RelationalStoreValueType.Integer(3)])
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
@@ -2355,7 +2355,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    var rdbStore: RdbStore = getRdbStore(Global.getStageContext(),
+    var rdbStore: RdbStore = getRdbStore(Global.abilityContext,
         StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db")) // 需获取Context应用上下文，详见本文使用说明
     rdbStore.executeSql(
         "CREATE TABLE EMPLOYEE(ID int NOT NULL, NAME varchar(255) NOT NULL, AGE int, SALARY float NOT NULL, CODES Bit NOT NULL, PRIMARY KEY (Id))"
@@ -2366,7 +2366,7 @@ try {
     values.add("AGE", RelationalStoreValueType.Integer(18))
     values.add("SALARY", RelationalStoreValueType.Double(100.5))
     values.add("CODES", RelationalStoreValueType.Boolean(true))
-    rdbStore.insert("EMPLOYEE", values, conflict: OnConflictReplace)
+    let id = rdbStore.insert("EMPLOYEE", values, conflict: OnConflictReplace)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -2416,17 +2416,17 @@ import ohos.callback_invoke.*
 import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
-try {
-    // 此处代码可添加在依赖项定义中
-    class TestCallback <: Callback0Argument {
-        public init() {}
-        public open func invoke(): Unit {
-            Hilog.info(0, "test", "Call invoke.", "")
-        }
+// 此处代码可添加在依赖项定义中
+class TestCallback1 <: Callback0Argument {
+    public init() {}
+    public func invoke(err: ?BusinessException): Unit {
+        Hilog.info(0, "test", "Call invoke.", "")
     }
+}
 
-    var rdbStore: RdbStore = getRdbStore(Global.getStageContext(), StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db")) // 需获取Context应用上下文，详见本文使用说明
-    let testCallback = TestCallback()
+try {
+    var rdbStore: RdbStore = getRdbStore(Global.abilityContext, StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db")) // 需获取Context应用上下文，详见本文使用说明
+    let testCallback = TestCallback1()
     rdbStore.on("PRINT", false, testCallback)
     rdbStore.off("PRINT", false, observer: testCallback)
 } catch (e: BusinessException) {
@@ -2478,18 +2478,18 @@ import ohos.callback_invoke.*
 import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
-try {
-    // 此处代码可添加在依赖项定义中
-    class TestCallback <: Callback0Argument {
-        public init() {}
-        public open func invoke(): Unit {
-            Hilog.info(0, "test", "Call invoke.", "")
-        }
+// 此处代码可添加在依赖项定义中
+class TestCallback2 <: Callback0Argument {
+    public init() {}
+    public func invoke(err: ?BusinessException): Unit {
+        Hilog.info(0, "test", "Call invoke.", "")
     }
+}
 
-    var rdbStore: RdbStore = getRdbStore(Global.getStageContext(),
+try {
+    var rdbStore: RdbStore = getRdbStore(Global.abilityContext,
         StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db")) // 需获取Context应用上下文，详见本文使用说明
-    let testCallback = TestCallback()
+    let testCallback = TestCallback2()
     rdbStore.on("PRINT", false, testCallback)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
@@ -2543,7 +2543,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    var rdbStore: RdbStore = getRdbStore(Global.getStageContext(),
+    var rdbStore: RdbStore = getRdbStore(Global.abilityContext,
         StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db")) // 需获取Context应用上下文，详见本文使用说明
     let predicates = RdbPredicates("EMPLOYEE")
     predicates.equalTo("NAME", RelationalStoreValueType.StringValue("Rose"))
@@ -2608,7 +2608,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    var rdbStore: RdbStore = getRdbStore(Global.getStageContext(),
+    var rdbStore: RdbStore = getRdbStore(Global.abilityContext,
         StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db")) // 需获取Context应用上下文，详见本文使用说明
     let resultSet = rdbStore.querySql("SELECT * FROM EMPLOYEE WHERE NAME = 'Peter'")
     resultSet.goToNextRow()
@@ -2676,7 +2676,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    var rdbStore: RdbStore = getRdbStore(Global.getStageContext(),
+    var rdbStore: RdbStore = getRdbStore(Global.abilityContext,
         StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db")) // 需获取Context应用上下文，详见本文使用说明
     rdbStore.restore("dbBackup.db")
 } catch (e: BusinessException) {
@@ -2735,7 +2735,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    var rdbStore: RdbStore = getRdbStore(Global.getStageContext(),
+    var rdbStore: RdbStore = getRdbStore(Global.abilityContext,
         StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db")) // 需获取Context应用上下文，详见本文使用说明
     let predicates = RdbPredicates("THING")
     var values = HashMap<String, RelationalStoreValueType>()
@@ -2822,7 +2822,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    var rdbStore: RdbStore = getRdbStore(Global.getStageContext(),
+    var rdbStore: RdbStore = getRdbStore(Global.abilityContext,
         StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db")) // 需获取Context应用上下文，详见本文使用说明
     let predicates = RdbPredicates("EMPLOYEE")
     predicates.equalTo("NAME", RelationalStoreValueType.StringValue("TOM"))
@@ -2830,7 +2830,7 @@ try {
     values.add("NAME", RelationalStoreValueType.StringValue("TOM"))
     values.add("AGE", RelationalStoreValueType.Integer(88))
     values.add("SALARY", RelationalStoreValueType.Double(9999.513))
-    rdbStore.update(values, predicates, conflict: OnConflictReplace)
+    let count = rdbStore.update(values, predicates, conflict: OnConflictReplace)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -3029,7 +3029,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    var rdbStore: RdbStore = getRdbStore(Global.getStageContext(),
+    var rdbStore: RdbStore = getRdbStore(Global.abilityContext,
         StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db")) // 需获取Context应用上下文，详见本文使用说明
     let resultSet = rdbStore.querySql("SELECT * FROM EMPLOYEE WHERE NAME = 'Peter'")
     resultSet.close()
@@ -3100,7 +3100,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    var rdbStore: RdbStore = getRdbStore(Global.getStageContext(),
+    var rdbStore: RdbStore = getRdbStore(Global.abilityContext,
         StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db")) // 需获取Context应用上下文，详见本文使用说明
     let resultSet = rdbStore.querySql("SELECT * FROM EMPLOYEE WHERE NAME = 'Peter'")
     let doc = resultSet.getAsset(resultSet.getColumnIndex("DOC"))
@@ -3171,7 +3171,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    var rdbStore: RdbStore = getRdbStore(Global.getStageContext(),
+    var rdbStore: RdbStore = getRdbStore(Global.abilityContext,
         StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db")) // 需获取Context应用上下文，详见本文使用说明
     let resultSet = rdbStore.querySql("SELECT * FROM EMPLOYEE WHERE NAME = 'Peter'")
     let docs = resultSet.getAssets(resultSet.getColumnIndex("DOCS"))
@@ -3242,7 +3242,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    var rdbStore: RdbStore = getRdbStore(Global.getStageContext(),
+    var rdbStore: RdbStore = getRdbStore(Global.abilityContext,
          StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db")) // 需获取Context应用上下文，详见本文使用说明
     let resultSet = rdbStore.querySql("SELECT * FROM EMPLOYEE WHERE NAME = 'Peter'")
     let codes = resultSet.getBlob(resultSet.getColumnIndex("CODES"))
@@ -3313,7 +3313,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    var rdbStore: RdbStore = getRdbStore(Global.getStageContext(),
+    var rdbStore: RdbStore = getRdbStore(Global.abilityContext,
         StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db")) // 需获取Context应用上下文，详见本文使用说明
     let resultSet = rdbStore.querySql("SELECT * FROM EMPLOYEE WHERE NAME = 'Peter'")
     let id = resultSet.getLong(resultSet.getColumnIndex("ID"))
@@ -3387,7 +3387,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    var rdbStore: RdbStore = getRdbStore(Global.getStageContext(),
+    var rdbStore: RdbStore = getRdbStore(Global.abilityContext,
         StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db")) // 需获取Context应用上下文，详见本文使用说明
     let resultSet = rdbStore.querySql("SELECT * FROM EMPLOYEE WHERE NAME = 'Peter'")
     let id = resultSet.getColumnName(0)
@@ -3460,7 +3460,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    var rdbStore: RdbStore = getRdbStore(Global.getStageContext(),
+    var rdbStore: RdbStore = getRdbStore(Global.abilityContext,
         StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db")) // 需获取Context应用上下文，详见本文使用说明
     let resultSet = rdbStore.querySql("SELECT * FROM EMPLOYEE WHERE NAME = 'Peter'")
     let salary = resultSet.getDouble(resultSet.getColumnIndex("SALARY"))
@@ -3531,7 +3531,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    var rdbStore: RdbStore = getRdbStore(Global.getStageContext(),
+    var rdbStore: RdbStore = getRdbStore(Global.abilityContext,
         StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db")) // 需获取Context应用上下文，详见本文使用说明
     let resultSet = rdbStore.querySql("SELECT * FROM EMPLOYEE WHERE NAME = 'Peter'")
     let age = resultSet.getLong(resultSet.getColumnIndex("AGE"))
@@ -3596,7 +3596,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    var rdbStore: RdbStore = getRdbStore(Global.getStageContext(),
+    var rdbStore: RdbStore = getRdbStore(Global.abilityContext,
         StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db")) // 需获取Context应用上下文，详见本文使用说明
     let resultSet = rdbStore.querySql("SELECT * FROM EMPLOYEE WHERE NAME = 'Peter'")
     let value = resultSet.getRow()
@@ -3667,7 +3667,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    var rdbStore: RdbStore = getRdbStore(Global.getStageContext(),
+    var rdbStore: RdbStore = getRdbStore(Global.abilityContext,
         StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db")) // 需获取Context应用上下文，详见本文使用说明
     let resultSet = rdbStore.querySql("SELECT * FROM EMPLOYEE WHERE NAME = 'Peter'")
     let name = resultSet.getString(resultSet.getColumnIndex("NAME"))
@@ -3738,10 +3738,10 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    var rdbStore: RdbStore = getRdbStore(Global.getStageContext(),
+    var rdbStore: RdbStore = getRdbStore(Global.abilityContext,
         StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db")) // 需获取Context应用上下文，详见本文使用说明
     let resultSet = rdbStore.querySql("SELECT * FROM EMPLOYEE WHERE NAME = 'Peter'")
-    resultSet.goTo(1)
+    let result = resultSet.goTo(1)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -3803,10 +3803,10 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    var rdbStore: RdbStore = getRdbStore(Global.getStageContext(),
+    var rdbStore: RdbStore = getRdbStore(Global.abilityContext,
         StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db")) // 需获取Context应用上下文，详见本文使用说明
     let resultSet = rdbStore.querySql("SELECT * FROM EMPLOYEE WHERE NAME = 'Peter'")
-    resultSet.goToFirstRow()
+    let result = resultSet.goToFirstRow()
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -3868,10 +3868,10 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    var rdbStore: RdbStore = getRdbStore(Global.getStageContext(),
+    var rdbStore: RdbStore = getRdbStore(Global.abilityContext,
         StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db")) // 需获取Context应用上下文，详见本文使用说明
     let resultSet = rdbStore.querySql("SELECT * FROM EMPLOYEE WHERE NAME = 'Peter'")
-    resultSet.goToLastRow()
+    let result = resultSet.goToLastRow()
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -3933,10 +3933,10 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    var rdbStore: RdbStore = getRdbStore(Global.getStageContext(),
+    var rdbStore: RdbStore = getRdbStore(Global.abilityContext,
         StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db")) // 需获取Context应用上下文，详见本文使用说明
     let resultSet = rdbStore.querySql("SELECT * FROM EMPLOYEE WHERE NAME = 'Peter'")
-    resultSet.goToNextRow()
+    let result = resultSet.goToNextRow()
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -3998,10 +3998,10 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    var rdbStore: RdbStore = getRdbStore(Global.getStageContext(),
+    var rdbStore: RdbStore = getRdbStore(Global.abilityContext,
         StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db")) // 需获取Context应用上下文，详见本文使用说明
     let resultSet = rdbStore.querySql("SELECT * FROM EMPLOYEE WHERE NAME = 'Peter'")
-    resultSet.goToPreviousRow()
+    let result = resultSet.goToPreviousRow()
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -4069,10 +4069,10 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    var rdbStore: RdbStore = getRdbStore(Global.getStageContext(),
+    var rdbStore: RdbStore = getRdbStore(Global.abilityContext,
         StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db")) // 需获取Context应用上下文，详见本文使用说明
     let resultSet = rdbStore.querySql("SELECT * FROM EMPLOYEE WHERE NAME = 'Peter'")
-    resultSet.goToRow(5)
+    let result = resultSet.goToRow(5)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -4140,7 +4140,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    var rdbStore: RdbStore = getRdbStore(Global.getStageContext(),
+    var rdbStore: RdbStore = getRdbStore(Global.abilityContext,
         StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db")) // 需获取Context应用上下文，详见本文使用说明
     let resultSet = rdbStore.querySql("SELECT * FROM EMPLOYEE WHERE NAME = 'Peter'")
     let isColumnNull = resultSet.isColumnNull(resultSet.getColumnIndex("CODES"))

@@ -2230,14 +2230,14 @@ import kit.PerformanceAnalysisKit.*
 import ohos.business_exception.BusinessException
 import ohos.callback_invoke.*
 
-class AccelerometerCallback <: Callback1Argument<AccelerometerResponse> {
+class AccelerometerCallback1 <: Callback1Argument<AccelerometerResponse> {
     init() {}
     public func invoke(err: ?BusinessException, arg: AccelerometerResponse): Unit {
         Hilog.info(0, "test", "Accelerometer data: timestamp: ${arg.timestamp}, x: ${arg.x}, y: ${arg.y}, z: ${arg.z}", "")
     }
 }
 
-let callback = AccelerometerCallback()
+let callback = AccelerometerCallback1()
 let options = Options(interval: IntervalOption.SensorNumber(100000000))
 try {
     // 订阅传感器数据
@@ -2512,14 +2512,14 @@ import kit.PerformanceAnalysisKit.*
 import ohos.business_exception.BusinessException
 import ohos.callback_invoke.*
 
-class GyroscopeCallback <: Callback1Argument<GyroscopeResponse> {
+class GyroscopeCallback1 <: Callback1Argument<GyroscopeResponse> {
     init() {}
     public func invoke(err: ?BusinessException, arg: GyroscopeResponse): Unit {
         Hilog.info(0, "test", "Gyroscope data: timestamp: ${arg.timestamp}, x: ${arg.x}, y: ${arg.y}, z: ${arg.z}", "")
     }
 }
 
-let callback = GyroscopeCallback()
+let callback = GyroscopeCallback1()
 let options = Options(interval: IntervalOption.SensorNumber(100000000))
 try {
     // 订阅传感器数据

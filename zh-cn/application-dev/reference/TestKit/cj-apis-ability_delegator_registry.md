@@ -64,13 +64,19 @@ public func addAbilityMonitor(monitor: AbilityMonitor): Unit
 
 import kit.AbilityKit.*
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let delegator = AbilityDelegatorRegistry.getAbilityDelegator()
-let monitor = AbilityMonitor(
-        "EntryAbility", moduleName: "entry",
-        onAbilityCreate: {ability => delegator.print("onAbilityCreate called, abilityName: ${ability.launchWant.abilityName}")}
-)
-delegator.addAbilityMonitor(monitor)
+try {
+    let delegator = AbilityDelegatorRegistry.getAbilityDelegator()
+    let monitor = AbilityMonitor(
+            "EntryAbility", moduleName: "entry",
+            onAbilityCreate: {ability => delegator.print("onAbilityCreate called, abilityName: ${ability.launchWant.abilityName}")}
+    )
+    delegator.addAbilityMonitor(monitor)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func addAbilityStageMonitor(AbilityStageMonitor)
@@ -108,10 +114,16 @@ public func addAbilityStageMonitor(monitor: AbilityStageMonitor): Unit
 
 import kit.AbilityKit.*
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let delegator = AbilityDelegatorRegistry.getAbilityDelegator()
-let monitor = AbilityStageMonitor("entry", "ohos_app_cangjie_entry.MyAbilityStage")
-delegator.addAbilityStageMonitor(monitor)
+try {
+    let delegator = AbilityDelegatorRegistry.getAbilityDelegator()
+    let monitor = AbilityStageMonitor("entry", "ohos_app_cangjie_entry.MyAbilityStage")
+    delegator.addAbilityStageMonitor(monitor)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func doAbilityBackground(UIAbility)
@@ -149,10 +161,16 @@ public func doAbilityBackground(ability: UIAbility): Unit
 
 import kit.AbilityKit.*
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let delegator = AbilityDelegatorRegistry.getAbilityDelegator()
-let ability = delegator.getCurrentTopAbility()
-delegator.doAbilityBackground(ability)
+try {
+    let delegator = AbilityDelegatorRegistry.getAbilityDelegator()
+    let ability = delegator.getCurrentTopAbility()
+    delegator.doAbilityBackground(ability)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func doAbilityForeground(UIAbility)
@@ -190,10 +208,16 @@ public func doAbilityForeground(ability: UIAbility): Unit
 
 import kit.AbilityKit.*
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let delegator = AbilityDelegatorRegistry.getAbilityDelegator()
-let ability = delegator.getCurrentTopAbility()
-delegator.doAbilityForeground(ability)
+try {
+    let delegator = AbilityDelegatorRegistry.getAbilityDelegator()
+    let ability = delegator.getCurrentTopAbility()
+    delegator.doAbilityForeground(ability)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func executeShellCommand(String, Int64)
@@ -230,10 +254,16 @@ public func executeShellCommand(cmd: String, timeoutSecs!: Int64 = 0): ShellCmdR
 
 import kit.AbilityKit.*
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let delegator = AbilityDelegatorRegistry.getAbilityDelegator()
-let cmd = "cmd"
-delegator.executeShellCommand(cmd, timeoutSecs: 2)
+try {
+    let delegator = AbilityDelegatorRegistry.getAbilityDelegator()
+    let cmd = "cmd"
+    delegator.executeShellCommand(cmd, timeoutSecs: 2)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func finishTest(String, Int64)
@@ -264,10 +294,16 @@ public func finishTest(msg: String, code: Int64): Unit
 
 import kit.AbilityKit.*
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let delegator = AbilityDelegatorRegistry.getAbilityDelegator()
-let msg = "msg"
-delegator.finishTest(msg, 0)
+try {
+    let delegator = AbilityDelegatorRegistry.getAbilityDelegator()
+    let msg = "msg"
+    delegator.finishTest(msg, 0)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getAbilityState(UIAbility)
@@ -303,10 +339,16 @@ public func getAbilityState(ability: UIAbility): AbilityLifecycleState
 
 import kit.AbilityKit.*
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let delegator = AbilityDelegatorRegistry.getAbilityDelegator()
-let ability = delegator.getCurrentTopAbility()
-delegator.getAbilityState(ability)
+try {
+    let delegator = AbilityDelegatorRegistry.getAbilityDelegator()
+    let ability = delegator.getCurrentTopAbility()
+    delegator.getAbilityState(ability)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getAppContext()
@@ -336,9 +378,15 @@ public func getAppContext(): Context
 
 import kit.AbilityKit.*
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let delegator = AbilityDelegatorRegistry.getAbilityDelegator()
-let context = delegator.getAppContext()
+try {
+    let delegator = AbilityDelegatorRegistry.getAbilityDelegator()
+    let context = delegator.getAppContext()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getCurrentTopAbility()
@@ -377,10 +425,16 @@ public func getCurrentTopAbility(): UIAbility
 
 import kit.AbilityKit.*
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let delegator = AbilityDelegatorRegistry.getAbilityDelegator()
-let ability = delegator.getCurrentTopAbility()
-delegator.getAbilityState(ability)
+try {
+    let delegator = AbilityDelegatorRegistry.getAbilityDelegator()
+    let ability = delegator.getCurrentTopAbility()
+    delegator.getAbilityState(ability)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func print(String)
@@ -410,10 +464,16 @@ public func print(msg: String): Unit
 
 import kit.AbilityKit.*
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let delegator = AbilityDelegatorRegistry.getAbilityDelegator()
-let msg = "msg"
-delegator.print(msg)
+try {
+    let delegator = AbilityDelegatorRegistry.getAbilityDelegator()
+    let msg = "msg"
+    delegator.print(msg)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func removeAbilityMonitor(AbilityMonitor)
@@ -451,13 +511,19 @@ public func removeAbilityMonitor(monitor: AbilityMonitor): Unit
 
 import kit.AbilityKit.*
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let delegator = AbilityDelegatorRegistry.getAbilityDelegator()
-let monitor = AbilityMonitor(
-    "EntryAbility", moduleName: "entry",
-    onAbilityCreate: {ability => delegator.print("onAbilityCreate called, abilityName: ${ability.launchWant.abilityName}")}
-)
-delegator.removeAbilityMonitor(monitor)
+try {
+    let delegator = AbilityDelegatorRegistry.getAbilityDelegator()
+    let monitor = AbilityMonitor(
+        "EntryAbility", moduleName: "entry",
+        onAbilityCreate: {ability => delegator.print("onAbilityCreate called, abilityName: ${ability.launchWant.abilityName}")}
+    )
+    delegator.removeAbilityMonitor(monitor)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func removeAbilityStageMonitor(AbilityStageMonitor)
@@ -495,10 +561,16 @@ public func removeAbilityStageMonitor(monitor: AbilityStageMonitor): Unit
 
 import kit.AbilityKit.*
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let delegator = AbilityDelegatorRegistry.getAbilityDelegator()
-let monitor = AbilityStageMonitor("entry", "ohos_app_cangjie_entry.MyAbilityStage")
-delegator.removeAbilityStageMonitor(monitor)
+try {
+    let delegator = AbilityDelegatorRegistry.getAbilityDelegator()
+    let monitor = AbilityStageMonitor("entry", "ohos_app_cangjie_entry.MyAbilityStage")
+    delegator.removeAbilityStageMonitor(monitor)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func startAbility(Want)
@@ -550,10 +622,16 @@ public func startAbility(want: Want): Unit
 
 import kit.AbilityKit.*
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let delegator = AbilityDelegatorRegistry.getAbilityDelegator()
-let want = Want(bundleName: "com.example.myapplication", abilityName: "EntryAbility")
-delegator.startAbility(want)
+try {
+    let delegator = AbilityDelegatorRegistry.getAbilityDelegator()
+    let want = Want(bundleName: "com.example.myapplication", abilityName: "EntryAbility")
+    delegator.startAbility(want)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func waitAbilityMonitor(AbilityMonitor, Int64)
@@ -599,13 +677,19 @@ public func waitAbilityMonitor(monitor: AbilityMonitor, timeout!: Int64 = 5000):
 
 import kit.AbilityKit.*
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let delegator = AbilityDelegatorRegistry.getAbilityDelegator()
-let monitor = AbilityMonitor("EntryAbility", moduleName: "entry",
-    onAbilityCreate: {ability => delegator.print("call onAbilityCreate success!")}
-)
-spawn {
-    let ability = delegator.waitAbilityMonitor(monitor)
+try {
+    let delegator = AbilityDelegatorRegistry.getAbilityDelegator()
+    let monitor = AbilityMonitor("EntryAbility", moduleName: "entry",
+        onAbilityCreate: {ability => delegator.print("call onAbilityCreate success!")}
+    )
+    spawn {
+        let ability = delegator.waitAbilityMonitor(monitor)
+    }
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -652,11 +736,17 @@ public func waitAbilityStageMonitor(monitor: AbilityStageMonitor, timeout!: Int6
 
 import kit.AbilityKit.*
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let delegator = AbilityDelegatorRegistry.getAbilityDelegator()
-let stageMonitor = AbilityStageMonitor("entry", "ohos_app_cangjie_entry.MyAbilityStage")
-spawn {
-    let abilityStage = delegator.waitAbilityStageMonitor(stageMonitor, timeout: 2000)
+try {
+    let delegator = AbilityDelegatorRegistry.getAbilityDelegator()
+    let stageMonitor = AbilityStageMonitor("entry", "ohos_app_cangjie_entry.MyAbilityStage")
+    spawn {
+        let abilityStage = delegator.waitAbilityStageMonitor(stageMonitor, timeout: 2000)
+    }
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -774,8 +864,14 @@ public static func getAbilityDelegator(): AbilityDelegator
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let delegator = AbilityDelegatorRegistry.getAbilityDelegator()
+try {
+    let delegator = AbilityDelegatorRegistry.getAbilityDelegator()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### static func getArguments()
@@ -805,12 +901,18 @@ public static func getArguments(): AbilityDelegatorArgs
 
 import kit.TestKit.*
 import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let args = AbilityDelegatorRegistry.getArguments()
-Hilog.info(0, "test", "args is ${args.bundleName}")
-Hilog.info(0, "test", "args is ${args.testCaseNames}")
-Hilog.info(0, "test", "args is ${args.testRunnerClassName}")
-Hilog.info(0, "test", "args is ${args.parameters}")
+try {
+    let args = AbilityDelegatorRegistry.getArguments()
+    Hilog.info(0, "test", "args is ${args.bundleName}")
+    Hilog.info(0, "test", "args is ${args.testCaseNames}")
+    Hilog.info(0, "test", "args is ${args.testRunnerClassName}")
+    Hilog.info(0, "test", "args is ${args.parameters}")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## class AbilityMonitor
@@ -1034,12 +1136,18 @@ public init(
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let delegator = AbilityDelegatorRegistry.getAbilityDelegator()
-let monitor = AbilityMonitor(
-    "EntryAbility", moduleName: "entry",
-    onAbilityCreate: {ability => delegator.print("onAbilityCreate called, abilityName: ${ability.launchWant.abilityName}")}
-)
+try {
+    let delegator = AbilityDelegatorRegistry.getAbilityDelegator()
+    let monitor = AbilityMonitor(
+        "EntryAbility", moduleName: "entry",
+        onAbilityCreate: {ability => delegator.print("onAbilityCreate called, abilityName: ${ability.launchWant.abilityName}")}
+    )
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## class AbilityStageMonitor
@@ -1128,10 +1236,16 @@ public init(
 
 import kit.AbilityKit.*
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let delegator = AbilityDelegatorRegistry.getAbilityDelegator()
-let monitor = AbilityStageMonitor("entry", "ohos_app_cangjie_entry.MyAbilityStage")
-delegator.addAbilityStageMonitor(monitor)
+try {
+    let delegator = AbilityDelegatorRegistry.getAbilityDelegator()
+    let monitor = AbilityStageMonitor("entry", "ohos_app_cangjie_entry.MyAbilityStage")
+    delegator.addAbilityStageMonitor(monitor)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## class ShellCmdResult

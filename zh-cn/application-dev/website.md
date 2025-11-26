@@ -503,9 +503,10 @@
         - 网络
             - Connectivity Kit（短距通信服务）
                 - [Connectivity Kit简介](connectivity/cj-connectivity-kit-intro.md)
+                - [Connectivity Kit术语](connectivity/terminology.md)
                 - 蓝牙
                     - [蓝牙服务开发概述](connectivity/bluetooth/cj-bluetooth-overview.md)
-                    - [广播与扫描开发指导](connectivity/bluetooth/cj-ble-development-guide.md)
+                    - [查找设备](connectivity/bluetooth/cj-ble-development-guide.md)
                     - [通用属性协议开发指导](connectivity/bluetooth/cj-gatt-development-guide.md)
             - Network Kit（网络服务）
                 - [Network Kit简介](network/cj-net-mgmt-overview.md)

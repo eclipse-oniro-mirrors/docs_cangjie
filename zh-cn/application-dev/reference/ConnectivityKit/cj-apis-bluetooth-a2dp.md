@@ -343,7 +343,7 @@ import ohos.callback_invoke.*
 import ohos.business_exception.*
 
 // 此处定义所需要的依赖项等
-class StateChangeCallback <: Callback1Argument<StateChangeParam> {
+class StateChangeCallback1 <: Callback1Argument<StateChangeParam> {
     public func invoke(err: ?BusinessException, arg: StateChangeParam): Unit {
         let connectionState = arg.state.toString()
         Hilog.info(0, "Bluetooth", "profile connection state has change to ${connectionState}")
@@ -351,7 +351,7 @@ class StateChangeCallback <: Callback1Argument<StateChangeParam> {
 }
 
 let a2dp = createA2dpSrcProfile()
-let changeCallBack = StateChangeCallback()
+let changeCallBack = StateChangeCallback1()
 try {
     a2dp.on(ProfileCallbackType.ConnectionStateChange, changeCallBack)
     a2dp.off(ProfileCallbackType.ConnectionStateChange)
@@ -403,7 +403,7 @@ import ohos.callback_invoke.*
 import ohos.business_exception.*
 
 // 此处定义所需要的依赖项等
-class StateChangeCallback <: Callback1Argument<StateChangeParam> {
+class StateChangeCallback2 <: Callback1Argument<StateChangeParam> {
     public func invoke(err: ?BusinessException, arg: StateChangeParam): Unit {
         let connectionState = arg.state.toString()
         Hilog.info(0, "Bluetooth", "profile connection state has change to ${connectionState}")
@@ -411,7 +411,7 @@ class StateChangeCallback <: Callback1Argument<StateChangeParam> {
 }
 
 let a2dp = createA2dpSrcProfile()
-let changeCallBack = StateChangeCallback()
+let changeCallBack = StateChangeCallback2()
 try {
     a2dp.on(ProfileCallbackType.ConnectionStateChange, changeCallBack)
     a2dp.off(ProfileCallbackType.ConnectionStateChange)

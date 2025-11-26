@@ -187,7 +187,7 @@ try {
             }
         })
     )
-    ErrorManager.on(ErrorManagerEvent.Error, observer)
+    let id = ErrorManager.on(ErrorManagerEvent.Error, observer)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }

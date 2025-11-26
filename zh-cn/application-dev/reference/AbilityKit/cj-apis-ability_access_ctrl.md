@@ -192,7 +192,7 @@ try {
     let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let atManager = AbilityAccessCtrl.createAtManager()
     let permissionList = ["ohos.permission.READ_CONTACTS", "ohos.permission.CAMERA"]
-    atManager.requestPermissionsFromUser(ctx.getOrThrow(), permissionList, resultCallback)
+    atManager.requestPermissionsFromUser(ctx, permissionList, resultCallback)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
