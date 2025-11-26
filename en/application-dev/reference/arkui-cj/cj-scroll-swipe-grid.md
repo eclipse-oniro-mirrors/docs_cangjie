@@ -133,6 +133,7 @@ Here, `repeat`, `auto-fit`, `auto-fill`, and `auto-stretch` are keywords. `track
 > **Note:**
 > - `auto-stretch` mode only supports a single valid `track-size` value, and `track-size` cannot use %.
 > - Setting '0fr' makes the column width 0, hiding GridItems. Other invalid values default to 1 column.
+> - When setting a track-size with a unit, it needs to follow the format of number + unit, such as '16vp' or '20%', which is different from the format used for Length type.
 
 **System Capability:** SystemCapability.ArkUI.ArkUI.Full
 
@@ -181,6 +182,7 @@ Here, `repeat`, `auto-fit`, `auto-fill`, and `auto-stretch` are keywords. `track
 > **Note:**
 > - `auto-stretch` mode only supports a single valid `track-size` value, and `track-size` cannot use %.
 > - Setting '0fr' makes the row height 0, hiding GridItems. Other invalid values default to 1 row.
+> - When setting a track-size with a unit, it needs to follow the format of number + unit, such as '16vp' or '20%', which is different from the format used for Length type.
 
 Grid components can be categorized into three layout modes based on `rowsTemplate` and `columnsTemplate` settings:
 

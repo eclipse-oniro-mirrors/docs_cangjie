@@ -151,9 +151,9 @@ Button components are typically used to trigger actions. You can bind the [onCli
 
 ```cangjie
   Button('Ok', ButtonOptions(shape: ButtonType.Normal, stateEffect: true))
-      .onClick{ evt =>
+      .onClick({ evt =>
       Hilog.info(0, '', 'Button onClick')
-  }
+  })
 ```
 
 ## Usage Examples

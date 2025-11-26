@@ -1,6 +1,6 @@
 # ohos.app.ability.ability_delegator_registry
 
-AbilityDelegatorRegistry模块提供用于存储已注册的[AbilityDelegator](#class-abilitydelegator)和[AbilityDelegatorArgs](#class-abilitydelegatorargs)对象的全局寄存器的能力，包括获取应用程序的[AbilityDelegator](#class-abilitydelegator)对象、获取单元测试参数对象。该模块中的接口只能用于测试框架中。
+ability_delegator_registry模块提供用于存储已注册的[AbilityDelegator](#class-abilitydelegator)和[AbilityDelegatorArgs](#class-abilitydelegatorargs)对象的全局寄存器的能力，包括获取应用程序的[AbilityDelegator](#class-abilitydelegator)对象、获取单元测试参数对象。该模块中的接口只能用于测试框架中。
 
 ## 导入模块
 
@@ -64,13 +64,19 @@ public func addAbilityMonitor(monitor: AbilityMonitor): Unit
 
 import kit.AbilityKit.*
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let delegator = AbilityDelegatorRegistry.getAbilityDelegator()
-let monitor = AbilityMonitor(
-        "EntryAbility", moduleName: "entry",
-        onAbilityCreate: {ability => delegator.print("onAbilityCreate called, abilityName: ${ability.launchWant.abilityName}")}
-)
-delegator.addAbilityMonitor(monitor)
+try {
+    let delegator = AbilityDelegatorRegistry.getAbilityDelegator()
+    let monitor = AbilityMonitor(
+            "EntryAbility", moduleName: "entry",
+            onAbilityCreate: {ability => delegator.print("onAbilityCreate called, abilityName: ${ability.launchWant.abilityName}")}
+    )
+    delegator.addAbilityMonitor(monitor)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func addAbilityStageMonitor(AbilityStageMonitor)
@@ -108,10 +114,16 @@ public func addAbilityStageMonitor(monitor: AbilityStageMonitor): Unit
 
 import kit.AbilityKit.*
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let delegator = AbilityDelegatorRegistry.getAbilityDelegator()
-let monitor = AbilityStageMonitor("entry", "ohos_app_cangjie_entry.MyAbilityStage")
-delegator.addAbilityStageMonitor(monitor)
+try {
+    let delegator = AbilityDelegatorRegistry.getAbilityDelegator()
+    let monitor = AbilityStageMonitor("entry", "ohos_app_cangjie_entry.MyAbilityStage")
+    delegator.addAbilityStageMonitor(monitor)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func doAbilityBackground(UIAbility)
@@ -130,7 +142,7 @@ public func doAbilityBackground(ability: UIAbility): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|ability|[UIAbility](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiability)|是|-|[UIAbility](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiability)对象。|
+|ability|[UIAbility](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiability)|是|-|指定[UIAbility](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiability)对象。|
 
 **异常：**
 
@@ -149,10 +161,16 @@ public func doAbilityBackground(ability: UIAbility): Unit
 
 import kit.AbilityKit.*
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let delegator = AbilityDelegatorRegistry.getAbilityDelegator()
-let ability = delegator.getCurrentTopAbility()
-delegator.doAbilityBackground(ability)
+try {
+    let delegator = AbilityDelegatorRegistry.getAbilityDelegator()
+    let ability = delegator.getCurrentTopAbility()
+    delegator.doAbilityBackground(ability)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func doAbilityForeground(UIAbility)
@@ -171,7 +189,7 @@ public func doAbilityForeground(ability: UIAbility): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|ability|[UIAbility](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiability)|是|-|[UIAbility](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiability)对象。|
+|ability|[UIAbility](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiability)|是|-|指定[UIAbility](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiability)对象。|
 
 **异常：**
 
@@ -190,10 +208,16 @@ public func doAbilityForeground(ability: UIAbility): Unit
 
 import kit.AbilityKit.*
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let delegator = AbilityDelegatorRegistry.getAbilityDelegator()
-let ability = delegator.getCurrentTopAbility()
-delegator.doAbilityForeground(ability)
+try {
+    let delegator = AbilityDelegatorRegistry.getAbilityDelegator()
+    let ability = delegator.getCurrentTopAbility()
+    delegator.doAbilityForeground(ability)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func executeShellCommand(String, Int64)
@@ -202,7 +226,7 @@ delegator.doAbilityForeground(ability)
 public func executeShellCommand(cmd: String, timeoutSecs!: Int64 = 0): ShellCmdResult
 ```
 
-**功能：** 执行指定的Shell命令。
+**功能：** 指定超时时间，并执行指定的shell命令。
 
 **系统能力：** SystemCapability.Ability.AbilityRuntime.Core
 
@@ -230,10 +254,16 @@ public func executeShellCommand(cmd: String, timeoutSecs!: Int64 = 0): ShellCmdR
 
 import kit.AbilityKit.*
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let delegator = AbilityDelegatorRegistry.getAbilityDelegator()
-let cmd = "cmd"
-delegator.executeShellCommand(cmd, timeoutSecs: 2)
+try {
+    let delegator = AbilityDelegatorRegistry.getAbilityDelegator()
+    let cmd = "cmd"
+    delegator.executeShellCommand(cmd, timeoutSecs: 2)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func finishTest(String, Int64)
@@ -264,10 +294,16 @@ public func finishTest(msg: String, code: Int64): Unit
 
 import kit.AbilityKit.*
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let delegator = AbilityDelegatorRegistry.getAbilityDelegator()
-let msg = "msg"
-delegator.finishTest(msg, 0)
+try {
+    let delegator = AbilityDelegatorRegistry.getAbilityDelegator()
+    let msg = "msg"
+    delegator.finishTest(msg, 0)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getAbilityState(UIAbility)
@@ -303,10 +339,16 @@ public func getAbilityState(ability: UIAbility): AbilityLifecycleState
 
 import kit.AbilityKit.*
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let delegator = AbilityDelegatorRegistry.getAbilityDelegator()
-let ability = delegator.getCurrentTopAbility()
-delegator.getAbilityState(ability)
+try {
+    let delegator = AbilityDelegatorRegistry.getAbilityDelegator()
+    let ability = delegator.getCurrentTopAbility()
+    delegator.getAbilityState(ability)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getAppContext()
@@ -336,9 +378,15 @@ public func getAppContext(): Context
 
 import kit.AbilityKit.*
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let delegator = AbilityDelegatorRegistry.getAbilityDelegator()
-let context = delegator.getAppContext()
+try {
+    let delegator = AbilityDelegatorRegistry.getAbilityDelegator()
+    let context = delegator.getAppContext()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getCurrentTopAbility()
@@ -377,10 +425,16 @@ public func getCurrentTopAbility(): UIAbility
 
 import kit.AbilityKit.*
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let delegator = AbilityDelegatorRegistry.getAbilityDelegator()
-let ability = delegator.getCurrentTopAbility()
-delegator.getAbilityState(ability)
+try {
+    let delegator = AbilityDelegatorRegistry.getAbilityDelegator()
+    let ability = delegator.getCurrentTopAbility()
+    delegator.getAbilityState(ability)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func print(String)
@@ -410,10 +464,16 @@ public func print(msg: String): Unit
 
 import kit.AbilityKit.*
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let delegator = AbilityDelegatorRegistry.getAbilityDelegator()
-let msg = "msg"
-delegator.print(msg)
+try {
+    let delegator = AbilityDelegatorRegistry.getAbilityDelegator()
+    let msg = "msg"
+    delegator.print(msg)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func removeAbilityMonitor(AbilityMonitor)
@@ -422,7 +482,7 @@ delegator.print(msg)
 public func removeAbilityMonitor(monitor: AbilityMonitor): Unit
 ```
 
-**功能：** 删除已经添加的[AbilityMonitor](#class-abilitymonitor)对象。
+**功能：** 删除已经添加的[AbilityMonitor](#class-abilitymonitor)实例。
 
 **系统能力：** SystemCapability.Ability.AbilityRuntime.Core
 
@@ -451,13 +511,19 @@ public func removeAbilityMonitor(monitor: AbilityMonitor): Unit
 
 import kit.AbilityKit.*
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let delegator = AbilityDelegatorRegistry.getAbilityDelegator()
-let monitor = AbilityMonitor(
-    "EntryAbility", moduleName: "entry",
-    onAbilityCreate: {ability => delegator.print("onAbilityCreate called, abilityName: ${ability.launchWant.abilityName}")}
-)
-delegator.removeAbilityMonitor(monitor)
+try {
+    let delegator = AbilityDelegatorRegistry.getAbilityDelegator()
+    let monitor = AbilityMonitor(
+        "EntryAbility", moduleName: "entry",
+        onAbilityCreate: {ability => delegator.print("onAbilityCreate called, abilityName: ${ability.launchWant.abilityName}")}
+    )
+    delegator.removeAbilityMonitor(monitor)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func removeAbilityStageMonitor(AbilityStageMonitor)
@@ -466,7 +532,7 @@ delegator.removeAbilityMonitor(monitor)
 public func removeAbilityStageMonitor(monitor: AbilityStageMonitor): Unit
 ```
 
-**功能：** 删除已经添加的[AbilityStageMonitor](#class-abilitystagemonitor)对象。
+**功能：** 从应用程序内存中删除指定的AbilityStageMonitor对象。
 
 **系统能力：** SystemCapability.Ability.AbilityRuntime.Core
 
@@ -495,10 +561,16 @@ public func removeAbilityStageMonitor(monitor: AbilityStageMonitor): Unit
 
 import kit.AbilityKit.*
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let delegator = AbilityDelegatorRegistry.getAbilityDelegator()
-let monitor = AbilityStageMonitor("entry", "ohos_app_cangjie_entry.MyAbilityStage")
-delegator.removeAbilityStageMonitor(monitor)
+try {
+    let delegator = AbilityDelegatorRegistry.getAbilityDelegator()
+    let monitor = AbilityStageMonitor("entry", "ohos_app_cangjie_entry.MyAbilityStage")
+    delegator.removeAbilityStageMonitor(monitor)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func startAbility(Want)
@@ -550,10 +622,16 @@ public func startAbility(want: Want): Unit
 
 import kit.AbilityKit.*
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let delegator = AbilityDelegatorRegistry.getAbilityDelegator()
-let want = Want(bundleName: "com.example.myapplication", abilityName: "EntryAbility")
-delegator.startAbility(want)
+try {
+    let delegator = AbilityDelegatorRegistry.getAbilityDelegator()
+    let want = Want(bundleName: "com.example.myapplication", abilityName: "EntryAbility")
+    delegator.startAbility(want)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func waitAbilityMonitor(AbilityMonitor, Int64)
@@ -573,7 +651,7 @@ public func waitAbilityMonitor(monitor: AbilityMonitor, timeout!: Int64 = 5000):
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |monitor|[AbilityMonitor](#class-abilitymonitor)|是|-|[AbilityMonitor](#class-abilitymonitor)实例。|
-|timeout|Int64|否|5000|最大等待时间，单位毫秒（ms）。|
+|timeout|Int64|否|5000|最大等待时间，单位毫秒（ms），默认值为5000毫秒。   |
 
 **返回值：**
 
@@ -599,13 +677,19 @@ public func waitAbilityMonitor(monitor: AbilityMonitor, timeout!: Int64 = 5000):
 
 import kit.AbilityKit.*
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let delegator = AbilityDelegatorRegistry.getAbilityDelegator()
-let monitor = AbilityMonitor("EntryAbility", moduleName: "entry",
-    onAbilityCreate: {ability => delegator.print("call onAbilityCreate success!")}
-)
-spawn {
-    let ability = delegator.waitAbilityMonitor(monitor)
+try {
+    let delegator = AbilityDelegatorRegistry.getAbilityDelegator()
+    let monitor = AbilityMonitor("EntryAbility", moduleName: "entry",
+        onAbilityCreate: {ability => delegator.print("call onAbilityCreate success!")}
+    )
+    spawn {
+        let ability = delegator.waitAbilityMonitor(monitor)
+    }
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -615,7 +699,7 @@ spawn {
 public func waitAbilityStageMonitor(monitor: AbilityStageMonitor, timeout!: Int64 = 5000): AbilityStage
 ```
 
-**功能：** 等待并返回与给定[AbilityStageMonitor](#class-abilitystagemonitor)中设置的条件匹配的[AbilityStage](../AbilityKit/cj-apis-app-ability-ability_stage.md#class-abilitystage)对象。
+**功能：** 在指定的超时最大等待时间内，等待并返回与给定[AbilityStageMonitor](#class-abilitystagemonitor)中设置的条件匹配的[AbilityStage](../AbilityKit/cj-apis-app-ability-ability_stage.md#class-abilitystage)对象。
 
 **系统能力：** SystemCapability.Ability.AbilityRuntime.Core
 
@@ -626,7 +710,7 @@ public func waitAbilityStageMonitor(monitor: AbilityStageMonitor, timeout!: Int6
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |monitor|[AbilityStageMonitor](#class-abilitystagemonitor)|是|-|[AbilityStageMonitor](#class-abilitystagemonitor)实例。|
-|timeout|Int64|否|5000|超时最大等待时间，以毫秒（ms）为单位。|
+|timeout|Int64|否|5000|超时最大等待时间，单位毫秒（ms），默认值为5000毫秒。|
 
 **返回值：**
 
@@ -652,11 +736,17 @@ public func waitAbilityStageMonitor(monitor: AbilityStageMonitor, timeout!: Int6
 
 import kit.AbilityKit.*
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let delegator = AbilityDelegatorRegistry.getAbilityDelegator()
-let stageMonitor = AbilityStageMonitor("entry", "ohos_app_cangjie_entry.MyAbilityStage")
-spawn {
-    let abilityStage = delegator.waitAbilityStageMonitor(stageMonitor, timeout: 2000)
+try {
+    let delegator = AbilityDelegatorRegistry.getAbilityDelegator()
+    let stageMonitor = AbilityStageMonitor("entry", "ohos_app_cangjie_entry.MyAbilityStage")
+    spawn {
+        let abilityStage = delegator.waitAbilityStageMonitor(stageMonitor, timeout: 2000)
+    }
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -774,8 +864,14 @@ public static func getAbilityDelegator(): AbilityDelegator
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let delegator = AbilityDelegatorRegistry.getAbilityDelegator()
+try {
+    let delegator = AbilityDelegatorRegistry.getAbilityDelegator()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### static func getArguments()
@@ -805,12 +901,18 @@ public static func getArguments(): AbilityDelegatorArgs
 
 import kit.TestKit.*
 import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let args = AbilityDelegatorRegistry.getArguments()
-Hilog.info(0, "test", "args is ${args.bundleName}")
-Hilog.info(0, "test", "args is ${args.testCaseNames}")
-Hilog.info(0, "test", "args is ${args.testRunnerClassName}")
-Hilog.info(0, "test", "args is ${args.parameters}")
+try {
+    let args = AbilityDelegatorRegistry.getArguments()
+    Hilog.info(0, "test", "args is ${args.bundleName}")
+    Hilog.info(0, "test", "args is ${args.testCaseNames}")
+    Hilog.info(0, "test", "args is ${args.testRunnerClassName}")
+    Hilog.info(0, "test", "args is ${args.parameters}")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## class AbilityMonitor
@@ -852,7 +954,7 @@ public class AbilityMonitor {
 public var abilityName: String
 ```
 
-**功能：** 当前[AbilityMonitor](#class-abilitymonitor)绑定的ability名称。
+**功能：** 被监听的UIAbility对象名称。
 
 **类型：** String
 
@@ -868,7 +970,7 @@ public var abilityName: String
 public var moduleName: String
 ```
 
-**功能：** 当前[AbilityMonitor](#class-abilitymonitor)绑定的模块名称。
+**功能：** 被监听的UIAbility对象所属模块名称。
 
 **类型：** String
 
@@ -884,7 +986,7 @@ public var moduleName: String
 public var onAbilityBackground:?(UIAbility) -> Unit
 ```
 
-**功能：** ability状态变成后台时的回调函数。不设置该属性则不能收到该生命周期回调。
+**功能：** UIAbility对象状态变成后台时，触发该回调函数。
 
 **类型：** ?([UIAbility](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiability))->Unit
 
@@ -900,7 +1002,7 @@ public var onAbilityBackground:?(UIAbility) -> Unit
 public var onAbilityCreate:?(UIAbility) -> Unit
 ```
 
-**功能：** ability被启动初始化时的回调函数。不设置该属性则不能收到该生命周期回调。
+**功能：** UIAbility对象被创建时，触发该回调函数。
 
 **类型：** ?([UIAbility](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiability))->Unit
 
@@ -916,7 +1018,7 @@ public var onAbilityCreate:?(UIAbility) -> Unit
 public var onAbilityDestroy:?(UIAbility) -> Unit
 ```
 
-**功能：** ability被销毁前的回调函数。不设置该属性则不能收到该生命周期回调。
+**功能：** UIAbility对象被销毁前，触发该回调函数。
 
 **类型：** ?([UIAbility](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiability))->Unit
 
@@ -932,7 +1034,7 @@ public var onAbilityDestroy:?(UIAbility) -> Unit
 public var onAbilityForeground:?(UIAbility) -> Unit
 ```
 
-**功能：** ability状态变成前台时的回调函数。不设置该属性则不能收到该生命周期回调。
+**功能：** UIAbility对象状态变成前台时，触发该回调函数。
 
 **类型：** ?([UIAbility](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiability))->Unit
 
@@ -948,7 +1050,7 @@ public var onAbilityForeground:?(UIAbility) -> Unit
 public var onWindowStageCreate:?(UIAbility) -> Unit
 ```
 
-**功能：** window stage被创建时的回调函数。不设置该属性则不能收到该生命周期回调。
+**功能：** 当WindowStage实例被创建时，触发该回调函数。
 
 **类型：** ?([UIAbility](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiability))->Unit
 
@@ -964,7 +1066,7 @@ public var onWindowStageCreate:?(UIAbility) -> Unit
 public var onWindowStageDestroy:?(UIAbility) -> Unit
 ```
 
-**功能：** window stage被销毁前的回调函数。不设置该属性则不能收到该生命周期回调。
+**功能：** 当WindowStage被销毁前，触发该回调函数。
 
 **类型：** ?([UIAbility](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiability))->Unit
 
@@ -980,7 +1082,7 @@ public var onWindowStageDestroy:?(UIAbility) -> Unit
 public var onWindowStageRestore:?(UIAbility) -> Unit
 ```
 
-**功能：** window stage被重载时的回调函数。不设置该属性则不能收到该生命周期回调。
+**功能：** 当UIAbility跨端迁移时，目标端UIAbility恢复页面栈时，触发该回调函数。
 
 **类型：** ?([UIAbility](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiability))->Unit
 
@@ -1016,15 +1118,15 @@ public init(
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|abilityName|String|是|-|当前[AbilityMonitor](#class-abilitymonitor)绑定的ability名称。|
-|moduleName|String|否|""| **命名参数。** 当前[AbilityMonitor](#class-abilitymonitor)绑定的模块名称。|
-|onAbilityCreate|?([UIAbility](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiability)) -> Unit|否|None| **命名参数。** ability被启动初始化时的回调函数。None即不设置该属性，则不能收到该生命周期回调。|
-|onAbilityForeground|?([UIAbility](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiability)) -> Unit|否|None| **命名参数。** ability状态变成前台时的回调函数。None即不设置该属性，则不能收到该生命周期回调。|
-|onAbilityBackground|?([UIAbility](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiability)) -> Unit|否|None| **命名参数。** ability状态变成后台时的回调函数。None即不设置该属性，则不能收到该生命周期回调。|
-|onAbilityDestroy|?([UIAbility](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiability)) -> Unit|否|None| **命名参数。** ability被销毁前的回调函数。None即不设置该属性，则不能收到该生命周期回调。|
-|onWindowStageCreate|?([UIAbility](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiability)) -> Unit|否|None| **命名参数。** windowStage被创建时的回调函数。None即不设置该属性，则不能收到该生命周期回调。|
-|onWindowStageRestore|?([UIAbility](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiability)) -> Unit|否|None| **命名参数。** windowStage被重载时的回调函数。None即不设置该属性，则不能收到该生命周期回调。|
-|onWindowStageDestroy|?([UIAbility](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiability)) -> Unit|否|None| **命名参数。** windowStage销毁前调用的回调函数。None即不设置该属性，则不能收到该生命周期回调。|
+|abilityName|String|是|-|被监听的UIAbility对象名称。|
+|moduleName|String|否|""| **命名参数。** 被监听的UIAbility对象所属模块名称。|
+|onAbilityCreate|?([UIAbility](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiability)) -> Unit|否|None| **命名参数。** UIAbility对象被创建时，触发该回调函数。|
+|onAbilityForeground|?([UIAbility](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiability)) -> Unit|否|None| **命名参数。** UIAbility对象状态变成前台时，触发该回调函数。|
+|onAbilityBackground|?([UIAbility](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiability)) -> Unit|否|None| **命名参数。** UIAbility对象状态变成后台时，触发该回调函数。|
+|onAbilityDestroy|?([UIAbility](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiability)) -> Unit|否|None| **命名参数。** UIAbility对象被销毁前，触发该回调函数。|
+|onWindowStageCreate|?([UIAbility](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiability)) -> Unit|否|None| **命名参数。** 当WindowStage实例被创建时，触发该回调函数。|
+|onWindowStageRestore|?([UIAbility](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiability)) -> Unit|否|None| **命名参数。** 当UIAbility跨端迁移时，目标端UIAbility恢复页面栈时，触发该回调函数。|
+|onWindowStageDestroy|?([UIAbility](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiability)) -> Unit|否|None| **命名参数。**当WindowStage被销毁前，触发该回调函数。|
 
 **示例：**
 
@@ -1034,12 +1136,18 @@ public init(
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let delegator = AbilityDelegatorRegistry.getAbilityDelegator()
-let monitor = AbilityMonitor(
-    "EntryAbility", moduleName: "entry",
-    onAbilityCreate: {ability => delegator.print("onAbilityCreate called, abilityName: ${ability.launchWant.abilityName}")}
-)
+try {
+    let delegator = AbilityDelegatorRegistry.getAbilityDelegator()
+    let monitor = AbilityMonitor(
+        "EntryAbility", moduleName: "entry",
+        onAbilityCreate: {ability => delegator.print("onAbilityCreate called, abilityName: ${ability.launchWant.abilityName}")}
+    )
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## class AbilityStageMonitor
@@ -1128,10 +1236,16 @@ public init(
 
 import kit.AbilityKit.*
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let delegator = AbilityDelegatorRegistry.getAbilityDelegator()
-let monitor = AbilityStageMonitor("entry", "ohos_app_cangjie_entry.MyAbilityStage")
-delegator.addAbilityStageMonitor(monitor)
+try {
+    let delegator = AbilityDelegatorRegistry.getAbilityDelegator()
+    let monitor = AbilityStageMonitor("entry", "ohos_app_cangjie_entry.MyAbilityStage")
+    delegator.addAbilityStageMonitor(monitor)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## class ShellCmdResult
@@ -1152,7 +1266,7 @@ public class ShellCmdResult {}
 public mut prop exitCode: Int32
 ```
 
-**功能：** 结果码。
+**功能：** Shell命令的结果码。
 
 **类型：** Int32
 
@@ -1168,7 +1282,7 @@ public mut prop exitCode: Int32
 public mut prop stdResult: String
 ```
 
-**功能：** 标准输出内容。
+**功能：** Shell命令的标准输出内容。
 
 **类型：** String
 

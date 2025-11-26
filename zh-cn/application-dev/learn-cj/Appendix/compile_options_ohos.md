@@ -23,7 +23,7 @@ $ cjc tool.cj --output-type=dylib
 
 可以将 `tool.cj` 编译成一个动态链接库，在 Linux 平台，`cjc` 会生成一个名为 `libtool.so` 的动态链接库文件。
 
-**值得注意的是**，若编译可执行程序时链接了仓颉的动态库文件，必须同时指定 `--dy-std` 与 `--dy-libs` 选项，详情请见 [`--dy-std` 选项说明](#--dy-std)。
+**值得注意的是**，若编译可执行程序时链接了仓颉的动态库文件，必须指定 `--dy-std` 选项，详情请见 [`--dy-std` 选项说明](#--dy-std)。
 
 <sup>[frontend]</sup> 在 `cjc-frontend` 中，编译流程仅进行至 `LLVM IR`，因此输出总是 `.bc` 文件，但不同的 `--output-type` 类型仍会影响前端编译的策略。
 
@@ -75,7 +75,9 @@ $ cjc main.cj liblog.a
 
 ### `--module-name <value>` <sup>[frontend]</sup>
 
-该选项已废弃，并会在未来版本被移除。当前版本使用该选项没有功能性作用。
+> **说明：**
+>
+> 该选项已废弃，并会在未来版本被移除。当前版本使用该选项没有功能性作用。
 
 ### `--output <value>`, `-o <value>`, `-o<value>` <sup>[frontend]</sup>
 
@@ -113,7 +115,9 @@ void printHello() {
 }
 ```
 
-与仓颉文件 `main.cj`：
+仓颉文件 `main.cj`：
+
+<!-- code_check_manual -->
 
 ```cangjie
 foreign func printHello(): Unit
@@ -226,6 +230,7 @@ Hello World
 ```
 
 且有代码如下的 `main.cj` 文件：
+
 <!-- code_check_manual -->
 
 ```cangjie
@@ -243,6 +248,7 @@ main() {
 ### `--scan-dependency` <sup>[frontend]</sup>
 
 通过 `--scan-dependency` 指令可以获得指定包源码或者一个包的 `cjo` 文件对于其他包的直接依赖以及其他信息，以 `json` 格式输出。
+
 <!-- code_check_manual -->
 
 ```cangjie
@@ -379,24 +385,19 @@ cjc --scan-dependency pkgA.cjo
 
 **值得注意的是：**
 
-1. `--static-std` 和 `--dy-std` 选项一起叠加使用，仅最后输入的选项生效。
-2. `--dy-std` 与 `--static-libs` 选项不可一起使用，否则会报错。
-3. 当编译可执行程序时链接了仓颉动态库（即通过 `--output-type=dylib` 选项编译的产物），必须显式指定 `--dy-std` 选项动态链接标准库，否则可能导致程序集中出现多份标准库，最终可能会导致运行时问题。
-
+1. `--static-std` 和 `--dy-std` 选项一起叠加使用，仅最后的那个选项生效。
+2. 当编译可执行程序时链接了仓颉动态库（即通过 `--output-type=dylib` 选项编译的产物），必须显式指定 `--dy-std` 选项动态链接标准库，否则可能导致程序集中出现多份标准库，最终可能会导致运行时问题。
 ### `--static-libs`
 
-该选项已废弃，并会在未来版本被移除。当前版本使用该选项没有功能性作用。
+> **说明：**
+>
+> 该选项已废弃，并会在未来版本被移除。当前版本使用该选项没有功能性作用。
 
 ### `--dy-libs`
 
-该选项已废弃，并会在未来版本被移除。当前版本使用该选项没有功能性作用。
-
-**值得注意的是：**
-
-1. `--static-libs` 和 `--dy-libs` 选项一起叠加使用，仅最后输入的选项生效。
-2. `--static-std` 与 `--dy-libs` 选项不可一起使用，否则会报错。
-3. `--dy-std` 单独使用时，会默认生效 `--dy-libs` 选项，并有相关告警信息提示。
-4. `--dy-libs` 单独使用时，会默认生效 `--dy-std` 选项，并有相关告警信息提示。
+> **说明：**
+>
+> 该选项已废弃，并会在未来版本被移除。当前版本使用该选项没有功能性作用。
 
 ### `--stack-trace-format=[default|simple|all]`
 
@@ -448,7 +449,7 @@ cjc --scan-dependency pkgA.cjo
     >
     > `LTO` 模式下的静态库（`.bc` 文件）输入的时候需要将该文件的路径输入仓颉编译器。
 
-3. 在 `LTO` 模式下，静态链接标准库（`--static-std` & `-static-libs`）时，标准库的代码也会参与 `LTO` 优化，并静态链接到可执行文件；动态链接标准库（`--dy-std` & `-dy-libs`）时，在 `LTO` 模式下依旧使用标准库中的动态库参与链接。
+3. 在 `LTO` 模式下，静态链接标准库（`--static-std`）时，标准库的代码也会参与 `LTO` 优化，并静态链接到可执行文件；动态链接标准库（`--dy-std`）时，在 `LTO` 模式下依旧使用标准库中的动态库参与链接。
 
     ```shell
     # 静态链接，标准库代码也参与 LTO 优化
@@ -768,11 +769,11 @@ cjc --target=arch-os-env --sysroot /usr/sdk/arch-os-env hello.cj -o hello
 
 ### `--profile-compile-time` <sup>[frontend]</sup>
 
-打印各编译阶段的时间消耗数据。
+输出各编译阶段时间消耗数据到一份文件中，该文件以 .time.prof 为后缀， 保存在 `output` 指定的目录中，若`output` 指定的是一个文件，则 .time.prof 与该文件同级。
 
 ### `--profile-compile-memory` <sup>[frontend]</sup>
 
-打印各编译阶段的内存消耗数据。
+输出各编译阶段内存消耗数据到一份文件中，该文件以 .mem.prof 为后缀， 保存在 `output` 指定的目录中，若`output` 指定的是一个文件，则 .mem.prof 与该文件同级。
 
 ## 单元测试选项
 
@@ -834,15 +835,16 @@ application
 可以在 `application`目录下使用 `-p` 编译选项配合编译整包：
 
 ```shell
-cjc pkgc --test -p
+cjc --test -p pkgc
 ```
 
 来编译整个 `pkgc` 包下的测试用例 `a1.cj` 和 `a2.cj`。
+
 <!-- code_check_manual -->
 
 ```cangjie
 /*a1.cj*/
-package a
+package pkgc
 
 import std.unittest.*
 import std.unittest.testmacro.*
@@ -855,10 +857,12 @@ public class TestA {
     }
 }
 ```
+
 <!-- code_check_manual -->
+
 ```cangjie
 /*a2.cj*/
-package a
+package pkgc
 
 import std.unittest.*
 import std.unittest.testmacro.*
@@ -923,7 +927,7 @@ func concatM(s1: String, s2: String): String {
     return s1 + s2
 }
 
-main() {
+main(): Int64 {
     println(concatM("a", "b"))
     0
 }
@@ -957,7 +961,9 @@ cjc -p my_pkg --test-only -L output -lmain --import-path output
 
 如果传递了 `on` ，则该包将使能 mock 编译，该选项允许在测试用例中 mock 该包中的类。`off` 是一种显式禁用 mock 的方法。
 
-**值得注意的是**，在测试模式下（当使能 `--test` ）自动启用对此包的 mock 支持，不需要显式传递 `--mock` 选项。
+> **注意：**
+>
+> 在测试模式下（当使能 `--test` ）自动启用对此包的 mock 支持，不需要显式传递 `--mock` 选项。
 
 `runtime-error` 仅在测试模式下可用（当使能 `--test` 时），它允许编译带有 mock 代码的包，但不在编译器中做任何 mock 相关的处理（这些处理可能会造成一些开销并影响测试的运行时性能）。这对于带有 mock 代码用例进行基准测试时可能是有用的。使用此编译选项时，避免编译带有 mock 代码的用例并运行测试，否则将抛出运行时异常。
 

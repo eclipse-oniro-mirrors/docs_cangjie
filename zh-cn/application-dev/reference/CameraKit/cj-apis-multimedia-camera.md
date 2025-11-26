@@ -1,6 +1,6 @@
 # ohos.multimedia.camera（相机管理）
 
-本模块为开发者提供一套简单且易于理解的相机服务接口，开发者通过调用接口可以开发相机应用。应用通过访问和操作相机硬件，实现基础操作，如预览、拍照和录像；还可以通过接口组合完成更多操作，如控制闪光灯和曝光时间、对焦或调焦等。
+camera模块为开发者提供一套简单且易于理解的相机服务接口，开发者通过调用接口可以开发相机应用。应用通过访问和操作相机硬件，实现基础操作，如预览、拍照和录像；还可以通过接口组合完成更多操作，如控制闪光灯和曝光时间、对焦或调焦等。
 
 ## 导入模块
 
@@ -68,7 +68,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
@@ -88,7 +88,7 @@ public interface AutoExposure <: AutoExposureQuery {
 }
 ```
 
-**功能：** 设备自动曝光（AE）操作。
+**功能：** 自动曝光类，对设备自动曝光（AE）操作。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -106,6 +106,10 @@ func getExposureMode(): ExposureMode
 
 **功能：** 获取当前曝光模式。
 
+> **说明：**
+>
+> - 若未通过[setExposureMode](#func-setexposuremodeexposuremode)接口进行设置，直接调用该接口查询当前曝光模式，会返回无效值。
+
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **起始版本：** 22
@@ -114,7 +118,7 @@ func getExposureMode(): ExposureMode
 
 |类型|说明|
 |:----|:----|
-|[ExposureMode](#enum-exposuremode)|当前曝光模式。|
+|[ExposureMode](#enum-exposuremode)|获取当前曝光模式。接口调用失败会抛出相应错误码。|
 
 **异常：**
 
@@ -136,7 +140,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let session = cameraManager.createSession(SceneMode.NormalPhoto)
     let photoSession = session as PhotoSession
@@ -162,7 +166,7 @@ func getExposureValue(): Float64
 
 |类型|说明|
 |:----|:----|
-|Float64|曝光值。曝光补偿存在步长，如步长为0.5。则设置1.2时，获取到实际生效曝光补偿为1.0。|
+|Float64|获取曝光值。曝光补偿存在步长，如步长为0.5。则设置1.2时，获取到实际生效曝光补偿为1.0。|
 
 **异常：**
 
@@ -184,7 +188,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let session = cameraManager.createSession(SceneMode.NormalPhoto)
     let photoSession = session as PhotoSession
@@ -210,7 +214,7 @@ func getMeteringPoint(): Point
 
 |类型|说明|
 |:----|:----|
-|[Point](#class-point)|当前曝光点。|
+|[Point](#class-point)|获取当前曝光点。|
 
 **异常：**
 
@@ -232,7 +236,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let session = cameraManager.createSession(SceneMode.NormalPhoto)
     let photoSession = session as PhotoSession
@@ -249,6 +253,8 @@ func setExposureBias(exposureBias: Float64): Unit
 ```
 
 **功能：** 设置曝光补偿，曝光补偿值（EV）。
+
+进行设置之前，建议先通过方法[getExposureBiasRange](#func-getexposurebiasrange)查询支持的范围。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -281,7 +287,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let session = cameraManager.createSession(SceneMode.NormalPhoto)
     var photoSessionOption = session as PhotoSession
@@ -332,7 +338,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let session = cameraManager.createSession(SceneMode.NormalPhoto)
     var photoSessionOption = session as PhotoSession
@@ -350,7 +356,9 @@ try {
 func setMeteringPoint(point: Point): Unit
 ```
 
-**功能：** 查询曝光区域中心点。
+**功能：** 设置曝光区域中心点，曝光点应在0-1坐标系内，该坐标系左上角为{0，0}，右下角为{1，1}。
+
+此坐标系是以设备充电口在右侧时的横向设备方向为基准的，例如应用的预览界面布局以设备充电口在下侧时的竖向方向为基准，布局宽高为{w，h}，且触碰点为{x，y}，则转换后的坐标点为{y/h，1-x/w}。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -360,7 +368,7 @@ func setMeteringPoint(point: Point): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|point|[Point](#class-point)|是|-|当前曝光点。|
+|point|[Point](#class-point)|是|-|曝光点，x、y设置范围应在[0，1]之内，超过范围，如果小于0设置0，大于1设置1。|
 
 **异常：**
 
@@ -383,7 +391,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let session = cameraManager.createSession(SceneMode.NormalPhoto)
     var photoSessionOption = session as PhotoSession
@@ -404,7 +412,7 @@ public interface AutoExposureQuery {
 }
 ```
 
-**功能：** 提供了设备自动曝光特性查询功能。
+**功能：** 针对设备的自动曝光特性提供了一系列查询功能。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -426,7 +434,7 @@ func getExposureBiasRange(): Array<Float64>
 
 |类型|说明|
 |:----|:----|
-|Array\<Float64>|补偿范围的数组。|
+|Array\<Float64>|获取补偿范围的数组。|
 
 **异常：**
 
@@ -448,7 +456,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let session = cameraManager.createSession(SceneMode.NormalPhoto)
     var photoSessionOption = session as PhotoSession
@@ -503,7 +511,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let session = cameraManager.createSession(SceneMode.NormalPhoto)
     var photoSessionOption = session as PhotoSession
@@ -523,7 +531,7 @@ public interface CameraOutput {
 }
 ```
 
-**功能：** 会话中Session使用的输出信息，output的基类。
+**功能：** 会话中[Session](#interface-session)使用的输出信息，output的基类。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -564,7 +572,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let device = cameraManager.getSupportedCameras()[0]
     let mode = cameraManager.getSupportedSceneModes(device)[0]
@@ -588,7 +596,7 @@ public interface ColorManagement <: ColorManagementQuery {
 }
 ```
 
-**功能：** 用于管理色彩空间参数。
+**功能：** 色彩管理类，用于设置色彩空间参数。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -636,7 +644,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let session = cameraManager.createSession(SceneMode.NormalPhoto)
     var photoSessionOption = session as PhotoSession
@@ -653,29 +661,32 @@ try {
 func setColorSpace(colorSpace: ColorSpace): Unit
 ```
 
-**功能：** 设置色彩空间。可以先通过[getSupportedColorSpaces](#func-getsupportedcolorspaces)获取当前设备所支持的ColorSpaces。
+**功能：** 设置色彩空间。
 
-应用可以下发不同的色彩空间（[ColorSpace](../ArkGraphics2D/cj-apis-color_manager.md#enum-colorspace)）参数来支持P3广色域以及HDR高动态范围成像的功能。
+使用该接口前，必须先通过[getSupportedColorSpaces](#func-getsupportedcolorspaces)获取当前设备所支持的ColorSpaces。该接口建议在[addOutput](#func-addoutputcameraoutput)之后、[commitConfig](#func-commitconfig)之前调用，如果在[commitConfig](#func-commitconfig)之后调用该接口，会导致相机会话配置耗时增加。
 
-当应用不主动设置色彩空间时，拍照以及录像模式默认为HDR拍摄效果。
+**P3广色域与HDR高动态范围成像**   
 
-在拍照模式下设置HDR高显效果可直接支持P3色域。
+应用可以下发不同的色彩空间(ColorSpace)参数来支持P3广色域以及HDR的功能。  
+当应用不主动设置色彩空间时，拍照模式默认为SDR拍摄效果。  
+在拍照模式下若需要获取HDR高显效果的图片可通过设置色彩空间P3色域实现。
+应用针对不同模式使能HDR效果、设置的色彩空间以及设置相机输出流[Profile](#class-profile)中的[CameraFormat](#enum-cameraformat)一一对应关系可参考下表。例如，在录像模式下若需要选择HDR拍摄，相机预览输出流和录像输出流[Profile](#class-profile)中的[CameraFormat](#enum-cameraformat)可选择CAMERA_FORMAT_YCRCB_P010，色彩空间ColorSpace可选择设置2020_HLG_LIMIT。
 
-应用针对不同模式使能HDR效果以及设置的色彩空间可参考下表。
+在录像模式下，使能SDR或HDR_VIVID拍摄效果时，CameraFormat与ColorSpace必须按照下列表格中的对应关系配置，若不满足表格中CameraFormat与ColorSpace配置，会导致预览异常等问题。
 
-表1：录像模式
+**录像模式：**
 
-|SDR/HRD拍摄|CameraFormat|ColorSpace|
-|:---|:---|:---|
-|SDR|CAMERA_FORMAT_YUV_420_SP|BT709_LIMIT|
-|HDR_VIVID(Default)|CAMERA_FORMAT_YCRCB_P010|BT2020_HLG_LIMIT|
+| SDR/HDR拍摄         | CameraFormat             | ColorSpace       |
+|--------------------|--------------------------|------------------|
+| SDR                | CAMERA_FORMAT_YUV_420_SP | BT709_LIMIT      |
+| HDR_VIVID          | CAMERA_FORMAT_YCRCB_P010<br>CAMERA_FORMAT_YCBCR_P010 | BT2020_HLG_LIMIT<br>BT2020_HLG_FULL |
 
-表2：拍照模式
+**拍照模式：**
 
-|SDR/HRD拍摄|ColorSpace|
-|:---|:---|
-|SDR|Srgb|
-|HDR_VIVID(Default)|DisplayP3|
+| SDR/HDR拍摄        | ColorSpace |
+|--------------------|------------|
+| SDR(Default)       | SRGB       |
+| HDR                | DISPLAY_P3 |
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -710,13 +721,16 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let session = cameraManager.createSession(SceneMode.NormalPhoto)
     var photoSessionOption = session as PhotoSession
     let photoSession = photoSessionOption.getOrThrow()
-    let colorSpace = photoSession.getSupportedColorSpaces()[0]
-    photoSession.setColorSpace(colorSpace)
+    let colorSpaces = photoSession.getSupportedColorSpaces()
+    if (colorSpaces.size > 0) {
+        let colorSpace = colorSpaces[0]
+        photoSession.setColorSpace(colorSpace)
+    }
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -730,7 +744,7 @@ public interface ColorManagementQuery {
 }
 ```
 
-**功能：** 用于查询色彩空间参数。
+**功能：** 色彩管理类，用于查询色彩空间参数。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -774,7 +788,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let session = cameraManager.createSession(SceneMode.NormalPhoto)
     var photoSessionOption = session as PhotoSession
@@ -794,7 +808,7 @@ public interface Flash <: FlashQuery {
 }
 ```
 
-**功能：** 设备闪光灯操作。
+**功能：** 闪光灯类，对设备闪光灯操作。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -842,7 +856,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let session = cameraManager.createSession(SceneMode.NormalPhoto)
     var photoSessionOption = session as PhotoSession
@@ -896,7 +910,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let session = cameraManager.createSession(SceneMode.NormalPhoto)
     var photoSessionOption = session as PhotoSession
@@ -929,7 +943,7 @@ public interface FlashQuery {
 func hasFlash(): Bool
 ```
 
-**功能：** 检测是否有闪光灯。
+**功能：** 检测是否有闪光灯，返回是否支持闪光灯。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -939,7 +953,7 @@ func hasFlash(): Bool
 
 |类型|说明|
 |:----|:----|
-|Bool|返回true表示设备支持闪光灯，false表示不支持。|
+|Bool|设备是否支持闪光灯。true表示支持，false表示不支持。|
 
 **异常：**
 
@@ -961,7 +975,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let session = cameraManager.createSession(SceneMode.NormalPhoto)
     var photoSessionOption = session as PhotoSession
@@ -978,7 +992,7 @@ try {
 func isFlashModeSupported(flashMode: FlashMode): Bool
 ```
 
-**功能：** 检测是否支持指定的闪光灯模式。
+**功能：** 检测闪光灯模式是否支持。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -1016,12 +1030,12 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let session = cameraManager.createSession(SceneMode.NormalPhoto)
     var photoSessionOption = session as PhotoSession
     let photoSession = photoSessionOption.getOrThrow()
-    photoSession.isFlashModeSupported(FlashMode.FlashModeAlwaysOpen)
+    let result = photoSession.isFlashModeSupported(FlashMode.FlashModeAlwaysOpen)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -1039,7 +1053,7 @@ public interface Focus <: FocusQuery {
 }
 ```
 
-**功能：** 设备对焦操作。
+**功能：** 对焦类，对设备对焦操作。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -1055,7 +1069,7 @@ public interface Focus <: FocusQuery {
 func getFocalLength(): Float64
 ```
 
-**功能：** 查询焦距值。
+**功能：** 查询当前的焦距值。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -1087,7 +1101,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let session = cameraManager.createSession(SceneMode.NormalPhoto)
     var photoSessionOption = session as PhotoSession
@@ -1114,7 +1128,7 @@ func getFocusMode(): FocusMode
 
 |类型|说明|
 |:----|:----|
-|[FocusMode](#enum-focusmode)|当前设备的焦距模式。|
+|[FocusMode](#enum-focusmode)|获取当前设备的焦距模式。|
 
 **异常：**
 
@@ -1136,7 +1150,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let session = cameraManager.createSession(SceneMode.NormalPhoto)
     var photoSessionOption = session as PhotoSession
@@ -1153,7 +1167,7 @@ try {
 func getFocusPoint(): Point
 ```
 
-**功能：** 查询焦点。
+**功能：** 查询当前的焦点。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -1163,7 +1177,7 @@ func getFocusPoint(): Point
 
 |类型|说明|
 |:----|:----|
-|[Point](#class-point)|当前焦点。|
+|[Point](#class-point)|用于获取当前的焦点。|
 
 **异常：**
 
@@ -1185,7 +1199,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let session = cameraManager.createSession(SceneMode.NormalPhoto)
     var photoSessionOption = session as PhotoSession
@@ -1236,7 +1250,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let session = cameraManager.createSession(SceneMode.NormalPhoto)
     var photoSessionOption = session as PhotoSession
@@ -1254,7 +1268,7 @@ try {
 func setFocusPoint(point: Point): Unit
 ```
 
-**功能：** 设置焦点，焦点应在0-1坐标系内，该坐标系左上角为{0.0，0.0}，右下角为{1.0，1.0}。
+**功能：** 设置焦点，焦点应在0-1坐标系内，该坐标系左上角为{0，0}，右下角为{1，1}。
 
 此坐标系是以设备充电口在右侧时的横向设备方向为基准的，例如应用的预览界面布局以设备充电口在下侧时的竖向方向为基准，布局宽高为{w，h}，且触碰点为{x，y}，则转换后的坐标点为{y/h，1-x/w}。
 
@@ -1266,7 +1280,7 @@ func setFocusPoint(point: Point): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|point|[Point](#class-point)|是|-|焦点。x、y设置范围应在[0.0, 1.0]之内，超过范围，如果小于0.0设置0.0，大于1.0设置1.0。|
+|point|[Point](#class-point)|是|-|焦点。x、y设置范围应在[0，1]之内，超过范围，如果小于0设置0，大于1设置1。|
 
 **异常：**
 
@@ -1289,7 +1303,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let session = cameraManager.createSession(SceneMode.NormalPhoto)
     var photoSessionOption = session as PhotoSession
@@ -1308,7 +1322,7 @@ public interface FocusQuery {
 }
 ```
 
-**功能：** 提供了查询是否支持指定对焦模式的方法。
+**功能：** 提供了查询是否支持当前对焦模式的方法。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -1336,7 +1350,7 @@ func isFocusModeSupported(afMode: FocusMode): Bool
 
 |类型|说明|
 |:----|:----|
-|Bool|返回true表示支持该焦距模式，false表示不支持。|
+|Bool|检测对焦模式是否支持。true表示支持，false表示不支持。|
 
 **异常：**
 
@@ -1358,7 +1372,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let session = cameraManager.createSession(SceneMode.NormalPhoto)
     var photoSessionOption = session as PhotoSession
@@ -1434,7 +1448,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let session = cameraManager.createSession(SceneMode.NormalPhoto)
     let cameraDevice = cameraManager.getSupportedCameras()[0]
@@ -1485,7 +1499,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let session = cameraManager.createSession(SceneMode.NormalPhoto)
     let cameraDevice = cameraManager.getSupportedCameras()[0]
@@ -1531,7 +1545,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let session = cameraManager.createSession(SceneMode.NormalPhoto)
     session.beginConfig()
@@ -1546,9 +1560,7 @@ try {
 func canAddInput(cameraInput: CameraInput): Bool
 ```
 
-**功能：** 判断当前cameraInput是否可以添加到session中
-
-该方法在[beginConfig](#func-beginconfig)和[commitConfig](#func-commitconfig)之间调用才能生效。
+**功能：** 判断当前cameraInput是否可以添加到session中。当前函数需要在[beginConfig](#func-beginconfig)和[commitConfig](#func-commitconfig)之间生效。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -1578,7 +1590,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let session = cameraManager.createSession(SceneMode.NormalPhoto)
     let cameraDevice = cameraManager.getSupportedCameras()[0]
@@ -1595,9 +1607,7 @@ try {
 func canAddOutput(cameraOutput: CameraOutput): Bool
 ```
 
-**功能：** 判断当前cameraOutput是否可以添加到session中。
-
-该方法在[beginConfig](#func-beginconfig)和[commitConfig](#func-commitconfig)之间调用才能生效。
+**功能：** 判断当前cameraOutput是否可以添加到session中。当前函数需要在[addInput](#func-addinputcamerainput)和[commitConfig](#func-commitconfig)之间生效。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -1627,7 +1637,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let session = cameraManager.createSession(SceneMode.NormalPhoto)
     let cameraDevice = cameraManager.getSupportedCameras()[0]
@@ -1645,7 +1655,6 @@ try {
 ```cangjie
 func commitConfig(): Unit
 ```
-
 
 **功能：** 提交配置信息。
 
@@ -1674,7 +1683,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let session = cameraManager.createSession(SceneMode.NormalPhoto)
     session.commitConfig()
@@ -1715,7 +1724,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let session = cameraManager.createSession(SceneMode.NormalPhoto)
     session.release()
@@ -1730,9 +1739,7 @@ try {
 func removeInput(cameraInput: CameraInput): Unit
 ```
 
-**功能：** 从会话中移除指定的CameraInput。
-
-该方法在[beginConfig](#func-beginconfig)和[commitConfig](#func-commitconfig)之间调用才能生效。
+**功能：** 移除[CameraInput](#class-camerainput)。当前函数需要在[beginConfig](#func-beginconfig)和[commitConfig](#func-commitconfig)之间生效。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -1766,7 +1773,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let session = cameraManager.createSession(SceneMode.NormalPhoto)
     let cameraDevice = cameraManager.getSupportedCameras()[0]
@@ -1783,7 +1790,7 @@ try {
 func removeOutput(cameraOutput: CameraOutput): Unit
 ```
 
-**功能：** 从会话中移除指定的CameraOutput。
+**功能：** 从会话中移除[CameraOutput](#interface-cameraoutput)。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -1820,7 +1827,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let session = cameraManager.createSession(SceneMode.NormalPhoto)
     let cameraDevice = cameraManager.getSupportedCameras()[0]
@@ -1870,7 +1877,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let session = cameraManager.createSession(SceneMode.NormalPhoto)
     session.start()
@@ -1911,7 +1918,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let session = cameraManager.createSession(SceneMode.NormalPhoto)
     session.stop()
@@ -1929,7 +1936,13 @@ public interface Stabilization <: StabilizationQuery {
 }
 ```
 
-**功能：** 提供设备在录像模式下视频防抖的相关操作。
+**功能：** 提供设备在录像模式下设置视频防抖的操作。
+
+ > **说明：**
+ >
+ > - 需要会话中有录像流（[VideoOutput](#class-videooutput)）的前提下，才可以对视频进行防抖设置，
+ >
+ > - 其中[VideoStabilizationMode](#enum-videostabilizationmode)中的枚举HIGH需要在[Profile](#class-profile)的分辨率为1920*1080的场景下生效。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -1977,7 +1990,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let session = cameraManager.createSession(SceneMode.NormalVideo)
     var videoSessionOption = session as VideoSession
@@ -1994,7 +2007,7 @@ try {
 func setVideoStabilizationMode(mode: VideoStabilizationMode): Unit
 ```
 
-**功能：** 设置视频防抖模式。需要先检查设备是否支持对应的防抖模式，可以通过[isVideoStabilizationModeSupported](#func-isvideostabilizationmodesupportedvideostabilizationmode)方法判断所设置的模式是否支持。
+**功能：** 设置视频防抖模式。需要先检查设备是否支持对应的防抖模式，可以通过[isVideoStabilizationModeSupported](#func-isvideostabilizationmodesupportedvideostabilizationmode)方法判断所设置的模式是否支持。建议在[commitConfig](#func-commitconfig)与[start](#func-start)之间设置视频防抖。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -2026,7 +2039,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let session = cameraManager.createSession(SceneMode.NormalVideo)
     var videoSessionOption = session as VideoSession
@@ -2046,7 +2059,7 @@ public interface StabilizationQuery {
 }
 ```
 
-**功能：** 提供查询设备在录像模式下是否支持对应的视频防抖模式的能力。
+**功能：** 提供了查询设备在录像模式下是否支持对应的视频防抖模式的能力。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -2074,7 +2087,7 @@ func isVideoStabilizationModeSupported(vsMode: VideoStabilizationMode): Bool
 
 |类型|说明|
 |:----|:----|
-|Bool|返回视频防抖模式是否支持，true表示支持，false表示不支持。|
+|Bool|返回视频防抖模式是否支持。true表示支持，false表示不支持。|
 
 **异常：**
 
@@ -2096,13 +2109,13 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let session = cameraManager.createSession(SceneMode.NormalVideo)
     var videoSessionOption = session as VideoSession
     let videoSession = videoSessionOption.getOrThrow()
     let vsMode = VideoStabilizationMode.Off
-    videoSession.isVideoStabilizationModeSupported(vsMode)
+    let result = videoSession.isVideoStabilizationModeSupported(vsMode)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -2119,7 +2132,7 @@ public interface Zoom <: ZoomQuery {
 }
 ```
 
-**功能：** 设备变焦（缩放）操作。
+**功能：** 变焦类，对设备变焦操作。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -2145,7 +2158,7 @@ func getZoomRatio(): Float64
 
 |类型|说明|
 |:----|:----|
-|Float64|当前的变焦比结果。|
+|Float64|获取当前的变焦比结果。|
 
 **异常：**
 
@@ -2168,7 +2181,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let session = cameraManager.createSession(SceneMode.NormalPhoto)
     var photoSessionOption = session as PhotoSession
@@ -2195,8 +2208,8 @@ func setSmoothZoom(targetRatio: Float64, mode: SmoothZoomMode): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|targetRatio|Float64|是|-|目标值。|
-|mode|[SmoothZoomMode](#enum-smoothzoommode)|是|-|模式。|
+|targetRatio|Float64|是|-|目标值。通过[getZoomRatioRange](#func-getzoomratiorange)获取支持的变焦范围，如果设置超过支持范围的值，则只保留精度范围内数值。|
+|mode|[SmoothZoomMode](#enum-smoothzoommode)|是|-|平滑变焦模式。|
 
 **示例：**
 
@@ -2210,7 +2223,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let session = cameraManager.createSession(SceneMode.NormalPhoto)
     var photoSessionOption = session as PhotoSession
@@ -2252,7 +2265,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let session = cameraManager.createSession(SceneMode.NormalPhoto)
     var photoSessionOption = session as PhotoSession
@@ -2280,7 +2293,7 @@ func setZoomRatio(zoomRatio: Float64): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|zoomRatio|Float64|是|-|可变焦距比，通过[getZoomRatioRange](#func-getzoomratiorange)获取支持的变焦范围，如果设置超过支持范围的值，则只保留精度范围内数值。设置可变焦距比到底层生效需要一定时间，获取正确设置的可变焦距比需要等待1~2帧的时间。|
+|zoomRatio|Float64|是|-|可变焦距比，通过[getZoomRatioRange](#func-getzoomratiorange)获取支持的变焦范围，如果设置超过支持范围的值，则只保留精度范围内数值。<br>设置可变焦距比到底层生效需要一定时间，获取正确设置的可变焦距比需要等待1~2帧的时间。|
 
 **异常：**
 
@@ -2302,7 +2315,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let session = cameraManager.createSession(SceneMode.NormalPhoto)
     var photoSessionOption = session as PhotoSession
@@ -2322,7 +2335,7 @@ public interface ZoomQuery {
 }
 ```
 
-**功能：** 提供了与设备缩放能力相关的查询功能，包括获取支持的缩放比例范围。
+**功能：** 提供了与设备的缩放相关的查询功能，包括获取支持的缩放比例范围。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -2366,7 +2379,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let session = cameraManager.createSession(SceneMode.NormalPhoto)
     var photoSessionOption = session as PhotoSession
@@ -2402,7 +2415,7 @@ public class CameraDevice {
 public let cameraId: String
 ```
 
-**功能：** 相机id。
+**功能：** 相机ID。
 
 **类型：** String
 
@@ -2418,7 +2431,7 @@ public let cameraId: String
 public let cameraOrientation: UInt32
 ```
 
-**功能：** 镜头的安装角度，不会随着屏幕旋转而改变，取值范围为0-360。
+**功能：** 相机安装角度，不会随着屏幕旋转而改变，取值范围为0°-360°，单位：度。
 
 **类型：** UInt32
 
@@ -2482,7 +2495,9 @@ public let connectionType: ConnectionType
 public class CameraInput {}
 ```
 
-**功能：** 相机设备输入对象。会话中Session使用的相机信息。
+**功能：** 相机设备输入对象。
+
+会话中[Session](#interface-session)使用的相机信息。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -2520,7 +2535,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let cameraDevice = cameraManager.getSupportedCameras()[0]
     let cameraInput = cameraManager.createCameraInput(cameraDevice)
@@ -2536,7 +2551,7 @@ try {
 public func off(eventType: CameraEvents, camera: CameraDevice, callback: Callback0Argument): Unit
 ```
 
-**功能：** 取消对应监听事件的对应回调。
+**功能：** 注销监听CameraInput的错误事件。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -2546,7 +2561,7 @@ public func off(eventType: CameraEvents, camera: CameraDevice, callback: Callbac
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|eventType|[CameraEvents](#enum-cameraevents)|是|-|监听事件。|
+|eventType|[CameraEvents](#enum-cameraevents)|是|-|监听事件，固定为CameraError，CameraInput对象创建成功可监听。相机设备出错情况下可触发该事件并返回结果，比如设备不可用或者冲突等返回对应错误信息。|
 |camera|[CameraDevice](#class-cameradevice)|是|-|CameraDevice对象。|
 |callback|[Callback0Argument](../arkinterop/cj-api-callback_invoke.md#class-callback0argument)|是|-|回调函数。|
 
@@ -2570,7 +2585,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let cameraDevice = cameraManager.getSupportedCameras()[0]
     let cameraInput = cameraManager.createCameraInput(cameraDevice)
@@ -2586,7 +2601,7 @@ try {
 public func off(eventType: CameraEvents, camera: CameraDevice): Unit
 ```
 
-**功能：** 取消对应监听事件的所有回调。
+**功能：** 注销监听CameraInput的错误事件。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -2596,7 +2611,7 @@ public func off(eventType: CameraEvents, camera: CameraDevice): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|eventType|[CameraEvents](#enum-cameraevents)|是|-|监听事件。|
+|eventType|[CameraEvents](#enum-cameraevents)|是|-|监听事件，固定为CameraError，CameraInput对象创建成功可监听。相机设备出错情况下可触发该事件并返回结果，比如设备不可用或者冲突等返回对应错误信息。|
 |camera|[CameraDevice](#class-cameradevice)|是|-|CameraDevice对象。|
 
 **异常：**
@@ -2619,7 +2634,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let cameraDevice = cameraManager.getSupportedCameras()[0]
     let cameraInput = cameraManager.createCameraInput(cameraDevice)
@@ -2639,7 +2654,7 @@ public func on(eventType: CameraEvents, camera: CameraDevice, callback: Callback
 
 > **说明：**
 >
-> 不支持在on监听的回调方法里调用off注销回调。
+> - 当前注册监听接口，不支持在on监听的回调方法里，调用off注销回调。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -2673,16 +2688,16 @@ import ohos.callback_invoke.Callback0Argument
 import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
-try {
-    // 此处代码可添加在依赖项定义中
-    class TestCallbackError <: Callback0Argument {
-        public init() {}
-        public open func invoke(res: ?BusinessException): Unit {
-            Hilog.info(0, "Camera", "Call invoke error. code: ${res?.code}, msg: ${res?.message}")
-        }
+// 此处代码可添加在依赖项定义中
+class TestCallbackError <: Callback0Argument {
+    public init() {}
+    public func invoke(res: ?BusinessException): Unit {
+        Hilog.info(0, "Camera", "Call invoke error. code: ${res?.code}, msg: ${res?.message}")
     }
+}
 
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+try {
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let cameraDevice = cameraManager.getSupportedCameras()[0]
     let cameraInput = cameraManager.createCameraInput(cameraDevice)
@@ -2727,7 +2742,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let cameraDevice = cameraManager.getSupportedCameras()[0]
     let cameraInput = cameraManager.createCameraInput(cameraDevice)
@@ -2743,7 +2758,7 @@ try {
 public func open(isSecureEnabled: Bool): UInt64
 ```
 
-**功能：** 打开相机，获取安全相机的句柄。
+**功能：** 打开相机。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -2753,7 +2768,7 @@ public func open(isSecureEnabled: Bool): UInt64
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|isSecureEnabled|Bool|是|-|是否以安全的方式打开相机。|
+|isSecureEnabled|Bool|是|-|设置true为使能以安全的方式打开相机，设置false则反之。|
 
 **返回值：**
 
@@ -2783,7 +2798,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let cameraDevice = cameraManager.getSupportedCameras()[0]
     let cameraInput = cameraManager.createCameraInput(cameraDevice)
@@ -2812,7 +2827,9 @@ public class CameraManager {}
 public func createCameraInput(camera: CameraDevice): CameraInput
 ```
 
-**功能：** 根据相机位置和类型创建CameraInput实例。
+**功能：** 使用CameraDevice对象创建CameraInput实例，同步返回结果。
+
+该接口使用前首先通过[getSupportedCameras](#func-getsupportedcameras)接口查询当前设备支持的相机设备信息列表，开发者需要根据具体使用场景选择符合需求的相机设备，然后使用该接口创建CameraInput实例。
 
 **需要权限：** ohos.permission.CAMERA
 
@@ -2854,7 +2871,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let cameraDevices = cameraManager.getSupportedCameras()
     let cameraDevice0 = cameraDevices[0]
@@ -2873,6 +2890,8 @@ public func createCameraInput(position: CameraPosition, cameraType: CameraType):
 ```
 
 **功能：** 根据相机位置和类型创建CameraInput实例。
+
+该接口使用前需要开发者根据应用具体使用场景自行指定相机位置和类型，例如打开前置相机进入自拍功能。
 
 **需要权限：** ohos.permission.CAMERA
 
@@ -2915,7 +2934,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let cameraDevices = cameraManager.getSupportedCameras()
     let cameraDevice0 = cameraDevices[0]
@@ -2943,7 +2962,7 @@ public func createPhotoOutput(?Profile = None): PhotoOutput
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|profile|?[Profile](#class-profile)|否|None|支持的拍照配置信息，通过[getSupportedOutputCapability](#func-getsupportedoutputcapabilitycameradevice-scenemode)接口获取。|
+|profile|?[Profile](#class-profile)|否|None|支持的拍照配置信息，通过[getSupportedOutputCapability](#func-getsupportedcameras)接口获取。如果使用[preconfig](#func-preconfigpreconfigtype-preconfigratio)进行预配置，传入profile参数会覆盖preconfig的预配置参数。|
 
 **返回值：**
 
@@ -2972,7 +2991,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let cameraDevices = cameraManager.getSupportedCameras()
     let camera = cameraDevices[0]
@@ -3034,7 +3053,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let size = ImageSize(8, 8192)
     let receiver = createImageReceiver(size, ImageFormat.Jpeg, 8)
@@ -3093,7 +3112,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let size = ImageSize(8, 8192)
     let receiver = createImageReceiver(size, ImageFormat.Jpeg, 8)
@@ -3149,7 +3168,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let cameraDevices = cameraManager.getSupportedCameras()
     let camera = cameraDevices[0]
@@ -3209,7 +3228,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let size = ImageSize(8, 8192)
     let receiver = createImageReceiver(size, ImageFormat.Jpeg, 8)
@@ -3268,7 +3287,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let size = ImageSize(8, 8192)
     let receiver = createImageReceiver(size, ImageFormat.Jpeg, 8)
@@ -3309,7 +3328,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let cameraDevices = cameraManager.getSupportedCameras()
 } catch (e: BusinessException) {
@@ -3354,7 +3373,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let cameraDevices = cameraManager.getSupportedCameras()
     let camera = cameraDevices[0]
@@ -3401,7 +3420,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let cameraDevices = cameraManager.getSupportedCameras()
     let camera = cameraDevices[0]
@@ -3441,7 +3460,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let torchMode = cameraManager.getTorchMode()
 } catch (e: BusinessException) {
@@ -3455,7 +3474,7 @@ try {
 public func isCameraMuted(): Bool
 ```
 
-**功能：** 查询相机当前的禁用状态（禁用/未禁用）。
+**功能：** 查询当前相机是否禁用。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -3479,7 +3498,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     Hilog.info(0, "AppLogCj", cameraManager.isCameraMuted().toString())
 } catch (e: BusinessException) {
@@ -3523,7 +3542,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let torchMode = cameraManager.getTorchMode()
     Hilog.info(0, "AppLogCj", cameraManager.isTorchModeSupported(torchMode).toString())
@@ -3548,7 +3567,7 @@ public func isTorchSupported(): Bool
 
 |类型|说明|
 |:----|:----|
-|Bool|返回true表示设备支持手电筒。|
+|Bool|返回true表示设备支持手电筒，返回false表示设备不支持手电。|
 
 **示例：**
 
@@ -3562,7 +3581,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     Hilog.info(0, "AppLogCj", cameraManager.isTorchSupported().toString())
 } catch (e: BusinessException) {
@@ -3586,7 +3605,7 @@ public func off(eventType: CameraEvents, callback: Callback1Argument<CameraStatu
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|eventType|[CameraEvents](#enum-cameraevents)|是|-|监听事件，必须为CameraStatus。CameraManager对象获取成功后可监听。目前只支持对设备打开或者关闭会触发该事件并返回对应信息。|
+|eventType|[CameraEvents](#enum-cameraevents)|是|-|监听事件，必须为CameraStatus。CameraManager对象获取成功后可监听。|
 |callback|[Callback1Argument](../arkinterop/cj-api-callback_invoke.md#class-callback1argument)\<[CameraStatusInfo](#class-camerastatusinfo)>|是|-|回调函数。|
 
 **异常：**
@@ -3609,7 +3628,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     cameraManager.off(CameraEvents.TorchStatusChange)
 } catch (e: BusinessException) {
@@ -3623,7 +3642,7 @@ try {
 public func off(eventType: CameraEvents, callback: Callback1Argument<FoldStatusInfo>): Unit
 ```
 
-**功能：** 折叠设备折叠状态变化注销回调，通过注销回调函数取消获取折叠状态变化。
+**功能：** 关闭折叠设备折叠状态变化的监听。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -3656,7 +3675,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     cameraManager.off(CameraEvents.TorchStatusChange)
 } catch (e: BusinessException) {
@@ -3680,7 +3699,7 @@ public func off(eventType: CameraEvents, callback: Callback1Argument<TorchStatus
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|eventType|[CameraEvents](#enum-cameraevents)|是|-|监听事件，必须为TorchStatusChange。CameraManager对象获取成功后可监听。目前只支持手电筒打开，手电筒关闭，手电筒不可用，手电筒恢复可用会触发该事件并返回对应信息。|
+|eventType|[CameraEvents](#enum-cameraevents)|是|-|监听事件，必须为TorchStatusChange。CameraManager对象获取成功后可监听。|
 |callback|[Callback1Argument](../arkinterop/cj-api-callback_invoke.md#class-callback1argument)\<[TorchStatusInfo](#class-torchstatusinfo)>|是|-|回调函数。|
 
 **异常：**
@@ -3703,7 +3722,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     cameraManager.off(CameraEvents.TorchStatusChange)
 } catch (e: BusinessException) {
@@ -3749,7 +3768,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     cameraManager.off(CameraEvents.TorchStatusChange)
 } catch (e: BusinessException) {
@@ -3767,7 +3786,7 @@ public func on(eventType: CameraEvents, callback: Callback1Argument<CameraStatus
 
 > **说明：**
 >
-> 不支持在on监听的回调方法里调用off注销回调。
+> - 当前注册监听接口，不支持在on监听的回调方法里，调用off注销回调。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -3800,16 +3819,16 @@ import ohos.business_exception.BusinessException
 import ohos.callback_invoke.Callback1Argument
 import kit.PerformanceAnalysisKit.Hilog
 
-try {
-    // 此处代码可添加在依赖项定义中
-    class TestCallbackTorchStatusChange <: Callback1Argument<TorchStatusInfo> {
-        public init() {}
-        public open func invoke(err: ?BusinessException, res: TorchStatusInfo): Unit {
-            Hilog.info(0, "Camera", "Call invoke TorchStatusChange. isTorchAvailable: ${res.isTorchAvailable}, isTorchActive: ${res.isTorchActive}, torchLevel:${res.torchLevel}")
-        }
+// 此处代码可添加在依赖项定义中
+class TestCallbackTorchStatusChange <: Callback1Argument<TorchStatusInfo> {
+    public init() {}
+    public func invoke(err: ?BusinessException, res: TorchStatusInfo): Unit {
+        Hilog.info(0, "Camera", "Call invoke TorchStatusChange. isTorchAvailable: ${res.isTorchAvailable}, isTorchActive: ${res.isTorchActive}, torchLevel:${res.torchLevel}")
     }
+}
 
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+try {
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let testCallbackTorchStatusChange = TestCallbackTorchStatusChange()
     cameraManager.on(CameraEvents.TorchStatusChange, testCallbackTorchStatusChange)
@@ -3824,11 +3843,11 @@ try {
 public func on(eventType: CameraEvents, callback: Callback1Argument<FoldStatusInfo>): Unit
 ```
 
-**功能：** 开启折叠设备折叠状态变化的监听。
+**功能：** 注册折叠设备折叠状态变化的监听。使用callback异步回调。
 
 > **说明：**
 >
-> 不支持在on监听的回调方法里调用off注销回调。
+> - 当前注册监听接口，不支持在on监听的回调方法里，调用off注销回调。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -3861,18 +3880,18 @@ import ohos.business_exception.BusinessException
 import ohos.callback_invoke.Callback1Argument
 import kit.PerformanceAnalysisKit.Hilog
 
-try {
-    // 此处代码可添加在依赖项定义中
-    class TestCallbackTorchStatusChange <: Callback1Argument<TorchStatusInfo> {
-        public init() {}
-        public open func invoke(err: ?BusinessException, res: TorchStatusInfo): Unit {
-            Hilog.info(0, "Camera", "Call invoke TorchStatusChange. isTorchAvailable: ${res.isTorchAvailable}, isTorchActive: ${res.isTorchActive}, torchLevel:${res.torchLevel}")
-        }
+// 此处代码可添加在依赖项定义中
+class TestCallbackTorchStatusChange1 <: Callback1Argument<TorchStatusInfo> {
+    public init() {}
+    public func invoke(err: ?BusinessException, res: TorchStatusInfo): Unit {
+        Hilog.info(0, "Camera", "Call invoke TorchStatusChange. isTorchAvailable: ${res.isTorchAvailable}, isTorchActive: ${res.isTorchActive}, torchLevel:${res.torchLevel}")
     }
+}
 
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+try {
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
-    let testCallbackTorchStatusChange = TestCallbackTorchStatusChange()
+    let testCallbackTorchStatusChange = TestCallbackTorchStatusChange1()
     cameraManager.on(CameraEvents.TorchStatusChange, testCallbackTorchStatusChange)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
@@ -3885,11 +3904,11 @@ try {
 public func on(eventType: CameraEvents, callback: Callback1Argument<TorchStatusInfo>): Unit
 ```
 
-**功能：** 手电筒状态变化回调，通过注册回调函数获取手电筒状态变化。
+**功能：** 手电筒状态变化回调，通过注册回调函数获取手电筒状态变化。使用callback异步回调。
 
 > **说明：**
 >
-> 不支持在on监听的回调方法里调用off注销回调。
+> - 当前注册监听接口，不支持在on监听的回调方法里，调用off注销回调。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -3922,18 +3941,18 @@ import ohos.business_exception.BusinessException
 import ohos.callback_invoke.Callback1Argument
 import kit.PerformanceAnalysisKit.Hilog
 
-try {
-    // 此处代码可添加在依赖项定义中
-    class TestCallbackTorchStatusChange <: Callback1Argument<TorchStatusInfo> {
-        public init() {}
-        public open func invoke(err: ?BusinessException, res: TorchStatusInfo): Unit {
-            Hilog.info(0, "Camera", "Call invoke TorchStatusChange. isTorchAvailable: ${res.isTorchAvailable}, isTorchActive: ${res.isTorchActive}, torchLevel:${res.torchLevel}")
-        }
+// 此处代码可添加在依赖项定义中
+class TestCallbackTorchStatusChange2 <: Callback1Argument<TorchStatusInfo> {
+    public init() {}
+    public func invoke(err: ?BusinessException, res: TorchStatusInfo): Unit {
+        Hilog.info(0, "Camera", "Call invoke TorchStatusChange. isTorchAvailable: ${res.isTorchAvailable}, isTorchActive: ${res.isTorchActive}, torchLevel:${res.torchLevel}")
     }
+}
 
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+try {
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
-    let testCallbackTorchStatusChange = TestCallbackTorchStatusChange()
+    let testCallbackTorchStatusChange = TestCallbackTorchStatusChange2()
     cameraManager.on(CameraEvents.TorchStatusChange, testCallbackTorchStatusChange)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
@@ -3979,7 +3998,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     cameraManager.setTorchMode(TorchMode.On)
     cameraManager.setTorchMode(TorchMode.Off)
@@ -4078,7 +4097,7 @@ public class CameraStatusInfo {
 }
 ```
 
-**功能：** 相机管理器回调返回的接口实例，表示相机状态信息。
+**功能：** 相机管理器回调返回的接口实例，该实例表示相机状态信息。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -4200,7 +4219,7 @@ public var captureId: Int32
 public var time: Int64
 ```
 
-**功能：** 预估的单次拍照底层出sensor采集帧时间。
+**功能：** 预估的单次拍照底层出sensor采集帧时间，如果上报-1，代表没有预估时间。
 
 **类型：** Int64
 
@@ -4278,7 +4297,7 @@ public class FrameRateRange {
 public let max: Int32
 ```
 
-**功能：** 最大帧率。
+**功能：** 最大帧率，单位：fps。
 
 **类型：** Int32
 
@@ -4294,7 +4313,7 @@ public let max: Int32
 public let min: Int32
 ```
 
-**功能：** 最小帧率。
+**功能：** 最小帧率，单位：fps。
 
 **类型：** Int32
 
@@ -4371,7 +4390,7 @@ public var captureId: Int32
 public var timestamp: Int64
 ```
 
-**功能：** 快门时间戳。
+**功能：** 快门时间戳，单位毫秒。
 
 **类型：** Int64
 
@@ -4420,7 +4439,7 @@ public var altitude: Float64
 public var latitude: Float64
 ```
 
-**功能：** 纬度(度)。
+**功能：** 纬度（度）。取值范围：[-90, 90]。
 
 **类型：** Float64
 
@@ -4436,7 +4455,7 @@ public var latitude: Float64
 public var longitude: Float64
 ```
 
-**功能：** 经度(度)。
+**功能：** 经度（度）。取值范围：[-180, 180]。
 
 **类型：** Float64
 
@@ -4462,8 +4481,8 @@ public init(latitude: Float64, longitude: Float64, altitude: Float64)
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|latitude|Float64|是|-|纬度(度)。|
-|longitude|Float64|是|-|经度(度)。|
+|latitude|Float64|是|-|纬度（度）。取值范围：[-90, 90]。|
+|longitude|Float64|是|-|经度（度）。取值范围：[-180, 180]。|
 |altitude|Float64|是|-|海拔(米)。|
 
 ## class PhotoCaptureSetting
@@ -4511,7 +4530,7 @@ public var location:?Location
 public var mirror: Bool
 ```
 
-**功能：** 镜像使能开关(默认关)。使用之前需要使用isMirrorSupported进行判断是否支持。
+**功能：** 镜像使能开关（默认关）。使用之前需要使用[isMirrorSupported](#func-ismirrorsupported)进行判断是否支持。true表示使能，false表示不使能。
 
 **类型：** Bool
 
@@ -4575,9 +4594,9 @@ public init(
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |quality|[QualityLevel](#enum-qualitylevel)|否|QualityLevel.QualityLevelLow|**命名参数。** 图片质量(默认低)。|
-|rotation|[ImageRotation](#enum-imagerotation)|否|ImageRotation.Rotation0|**命名参数。** 图片质量(默认低)。|
+|rotation|[ImageRotation](#enum-imagerotation)|否|ImageRotation.Rotation0|**命名参数。** 图片旋转角度（默认0度，顺时针旋转）。|
 |location|?[Location](#class-location)|否|None|**命名参数。** 图片地理位置信息(默认以设备硬件信息为准)。|
-|mirror|Bool|否|false|**命名参数。** 镜像使能开关(默认关)。使用之前需要使用[isMirrorSupported](#func-ismirrorsupported)进行判断是否支持。|
+|mirror|Bool|否|false|**命名参数。** 镜像使能开关（默认关）。使用之前需要使用[isMirrorSupported](#func-ismirrorsupported)进行判断是否支持。true表示使能，false表示不使能。|
 
 ## class PhotoOutput
 
@@ -4601,7 +4620,7 @@ public class PhotoOutput CameraOutput {}
 public func capture(): Unit
 ```
 
-**功能：** 以指定参数触发一次拍照。
+**功能：** 以默认设置触发一次拍照。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -4629,7 +4648,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let device = cameraManager.getSupportedCameras()[0]
     let mode = cameraManager.getSupportedSceneModes(device)[0]
@@ -4681,7 +4700,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let device = cameraManager.getSupportedCameras()[0]
     let mode = cameraManager.getSupportedSceneModes(device)[0]
@@ -4699,7 +4718,9 @@ try {
 public func enableMirror(enabled: Bool): Unit
 ```
 
-**功能：** 是否启用镜像拍照。
+**功能：** 是否启用动态照片镜像拍照。
+
+调用该接口前，需要通过[isMovingPhotoSupported](#func-ismovingphotosupported)查询是否支持动态照片拍摄功能以及通过[isMirrorSupported](#func-ismirrorsupported)查询是否支持镜像拍照功能。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -4733,7 +4754,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let device = cameraManager.getSupportedCameras()[0]
     let mode = cameraManager.getSupportedSceneModes(device)[0]
@@ -4764,7 +4785,7 @@ public func enableMovingPhoto(enabled: Bool): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|enabled|Bool|是|-|true为开启动态照片，false为关闭动态照片。|
+|enabled|Bool|是|-|使能动态照片拍照。true为开启动态照片，false为关闭动态照片。|
 
 **异常：**
 
@@ -4788,7 +4809,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let device = cameraManager.getSupportedCameras()[0]
     let mode = cameraManager.getSupportedSceneModes(device)[0]
@@ -4839,7 +4860,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let device = cameraManager.getSupportedCameras()[0]
     let mode = cameraManager.getSupportedSceneModes(device)[0]
@@ -4860,7 +4881,7 @@ public func getPhotoRotation(deviceDegree: Int32): ImageRotation
 **功能：** 获取拍照旋转角度。
 
 - 设备自然方向：设备默认使用方向，手机为竖屏（充电口向下）。
-- 相机镜头角度：值等于相机图像顺时针旋转到设备自然方向的角度，手机后置相机传感器是竖屏安装的，所以需要顺时针旋转90度到设备自然方向。
+- 相机镜头角度：值等于相机图像顺时针旋转到设备自然方向的角度，手机后置相机传感器是横屏安装的，所以需要顺时针旋转90度到设备自然方向。
 - 屏幕显示方向：需要屏幕显示的图片左上角为第一个像素点为坐标原点。锁屏时与自然方向一致。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
@@ -4871,7 +4892,7 @@ public func getPhotoRotation(deviceDegree: Int32): ImageRotation
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|deviceDegree|Int32|是|-|设备旋转角度。|
+|deviceDegree|Int32|是|-|设备旋转角度，单位度，取值范围：[0, 360]。<br>若入参超过该范围，则取入参除以360的余数。|
 
 **返回值：**
 
@@ -4900,7 +4921,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let device = cameraManager.getSupportedCameras()[0]
     let mode = cameraManager.getSupportedSceneModes(device)[0]
@@ -4943,7 +4964,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let device = cameraManager.getSupportedCameras()[0]
     let mode = cameraManager.getSupportedSceneModes(device)[0]
@@ -4993,7 +5014,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let device = cameraManager.getSupportedCameras()[0]
     let mode = cameraManager.getSupportedSceneModes(device)[0]
@@ -5021,7 +5042,7 @@ public func isMovingPhotoSupported(): Bool
 
 |类型|说明|
 |:----|:----|
-|Bool|返回是否支持动态照片拍照，true表示支持，false表示不支持。|
+|Bool|返回是否支持动态照片拍照。true表示支持，false表示不支持。|
 
 **异常：**
 
@@ -5043,7 +5064,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let device = cameraManager.getSupportedCameras()[0]
     let mode = cameraManager.getSupportedSceneModes(device)[0]
@@ -5071,7 +5092,7 @@ public func off(eventType: CameraEvents, callback: Callback1Argument<CaptureStar
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|eventType|[CameraEvents](#enum-cameraevents)|是|-|监听事件，必须为CaptureStartWithInfo。|
+|eventType|[CameraEvents](#enum-cameraevents)|是|-|监听事件，必须为CaptureStartWithInfo，photoOutput创建成功后可监听。|
 |callback|[Callback1Argument](../arkinterop/cj-api-callback_invoke.md#class-callback1argument)\<[CaptureStartInfo](#class-capturestartinfo)>|是|-|回调函数，用于处理[CaptureStartInfo](#class-capturestartinfo)。|
 
 **异常：**
@@ -5094,7 +5115,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let device = cameraManager.getSupportedCameras()[0]
     let mode = cameraManager.getSupportedSceneModes(device)[0]
@@ -5122,7 +5143,7 @@ public func off(eventType: CameraEvents, callback: Callback1Argument<FrameShutte
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|eventType|[CameraEvents](#enum-cameraevents)|是|-|监听事件，必须为FrameShutter。|
+|eventType|[CameraEvents](#enum-cameraevents)|是|-|监听事件，必须为FrameShutter，photoOutput创建成功后可监听。|
 |callback|[Callback1Argument](../arkinterop/cj-api-callback_invoke.md#class-callback1argument)\<[FrameShutterInfo](#class-frameshutterinfo)>|是|-|回调函数，用于处理[FrameShutterInfo](#class-frameshutterinfo)。|
 
 **异常：**
@@ -5145,7 +5166,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let device = cameraManager.getSupportedCameras()[0]
     let mode = cameraManager.getSupportedSceneModes(device)[0]
@@ -5173,7 +5194,7 @@ public func off(eventType: CameraEvents, callback: Callback1Argument<CaptureEndI
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|eventType|[CameraEvents](#enum-cameraevents)|是|-|监听事件，必须为CaptureEnd。|
+|eventType|[CameraEvents](#enum-cameraevents)|是|-|监听事件，必须为CaptureEnd，photoOutput创建成功后可监听。|
 |callback|[Callback1Argument](../arkinterop/cj-api-callback_invoke.md#class-callback1argument)\<[CaptureEndInfo](#class-captureendinfo)>|是|-|回调函数，用于处理[CaptureEndInfo](#class-captureendinfo)。|
 
 **异常：**
@@ -5196,7 +5217,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let device = cameraManager.getSupportedCameras()[0]
     let mode = cameraManager.getSupportedSceneModes(device)[0]
@@ -5224,7 +5245,7 @@ public func off(eventType: CameraEvents, callback: Callback1Argument<FrameShutte
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|eventType|[CameraEvents](#enum-cameraevents)|是|-|监听事件，必须为FrameShutterEnd。|
+|eventType|[CameraEvents](#enum-cameraevents)|是|-|监听事件，必须为FrameShutterEnd，photoOutput创建成功后可监听。|
 |callback|[Callback1Argument](../arkinterop/cj-api-callback_invoke.md#class-callback1argument)\<[FrameShutterEndInfo](#class-frameshutterendinfo)>|是|-|回调函数，用于处理[FrameShutterEndInfo](#class-frameshutterendinfo)。|
 
 **异常：**
@@ -5247,7 +5268,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let device = cameraManager.getSupportedCameras()[0]
     let mode = cameraManager.getSupportedSceneModes(device)[0]
@@ -5275,7 +5296,7 @@ public func off(eventType: CameraEvents, callback: Callback0Argument): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|eventType|[CameraEvents](#enum-cameraevents)|是|-|监听事件，必须为[CaptureReady, CameraError]其中之一。|
+|eventType|[CameraEvents](#enum-cameraevents)|是|-|监听事件，必须为[CaptureReady, CameraError]其中之一，photoOutput创建成功后可监听。|
 |callback|[Callback0Argument](../arkinterop/cj-api-callback_invoke.md#class-callback0argument)|是|-|回调函数。|
 
 **异常：**
@@ -5298,7 +5319,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let device = cameraManager.getSupportedCameras()[0]
     let mode = cameraManager.getSupportedSceneModes(device)[0]
@@ -5326,7 +5347,7 @@ public func off(eventType: CameraEvents, callback: Callback1Argument<Float64>): 
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|eventType|[CameraEvents](#enum-cameraevents)|是|-|监听事件，必须为EstimatedCaptureDuration。|
+|eventType|[CameraEvents](#enum-cameraevents)|是|-|监听事件，必须为EstimatedCaptureDuration，photoOutput创建成功后可监听。|
 |callback|[Callback1Argument](../arkinterop/cj-api-callback_invoke.md#class-callback1argument)\<Float64>|是|-|回调函数，用于获取预估的拍照时间（毫秒）。|
 
 **异常：**
@@ -5349,7 +5370,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let device = cameraManager.getSupportedCameras()[0]
     let mode = cameraManager.getSupportedSceneModes(device)[0]
@@ -5399,7 +5420,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let device = cameraManager.getSupportedCameras()[0]
     let mode = cameraManager.getSupportedSceneModes(device)[0]
@@ -5421,7 +5442,7 @@ public func on(eventType: CameraEvents, callback: Callback1Argument<CaptureStart
 
 > **说明：**
 >
-> 不支持在on监听的回调方法里调用off注销回调。
+> - 当前注册监听接口，不支持在on监听的回调方法里，调用off注销回调。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -5431,7 +5452,7 @@ public func on(eventType: CameraEvents, callback: Callback1Argument<CaptureStart
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|eventType|[CameraEvents](#enum-cameraevents)|是|-|监听事件，必须为CaptureStartWithInfo。|
+|eventType|[CameraEvents](#enum-cameraevents)|是|-|监听事件，必须为CaptureStartWithInfo，photoOutput创建成功后可监听。|
 |callback|[Callback1Argument](../arkinterop/cj-api-callback_invoke.md#class-callback1argument)\<[CaptureStartInfo](#class-capturestartinfo)>|是|-|回调函数，用于处理[CaptureStartInfo](#class-capturestartinfo)。|
 
 **异常：**
@@ -5454,22 +5475,22 @@ import ohos.callback_invoke.Callback0Argument
 import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
-try {
-    // 此处代码可添加在依赖项定义中
-    class TestCallbackError <: Callback0Argument {
-        public init() {}
-        public open func invoke(res: ?BusinessException): Unit {
-            Hilog.info(0, "Camera", "Call invoke error. code: ${res?.code}, msg: ${res?.message}")
-        }
+// 此处代码可添加在依赖项定义中
+class TestCallbackError3 <: Callback0Argument {
+    public init() {}
+    public func invoke(res: ?BusinessException): Unit {
+        Hilog.info(0, "Camera", "Call invoke error. code: ${res?.code}, msg: ${res?.message}")
     }
+}
 
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+try {
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let device = cameraManager.getSupportedCameras()[0]
     let mode = cameraManager.getSupportedSceneModes(device)[0]
     let ability = cameraManager.getSupportedOutputCapability(device, mode)
     let output = cameraManager.createPhotoOutput(profile:ability.photoProfiles[0])
-    let testCallbackError = TestCallbackError()
+    let testCallbackError = TestCallbackError3()
     output.on(CameraEvents.CameraError, testCallbackError)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
@@ -5484,10 +5505,6 @@ public func on(eventType: CameraEvents, callback: Callback1Argument<FrameShutter
 
 **功能：** 监听拍照帧输出捕获，通过注册回调函数获取结果。使用callback异步回调。
 
-> **说明：**
->
-> 不支持在on监听的回调方法里调用off注销回调。
-
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **起始版本：** 22
@@ -5496,7 +5513,7 @@ public func on(eventType: CameraEvents, callback: Callback1Argument<FrameShutter
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|eventType|[CameraEvents](#enum-cameraevents)|是|-|监听事件，必须为FrameShutter。|
+|eventType|[CameraEvents](#enum-cameraevents)|是|-|监听事件，必须为FrameShutter，photoOutput创建成功后可监听。|
 |callback|[Callback1Argument](../arkinterop/cj-api-callback_invoke.md#class-callback1argument)\<[FrameShutterInfo](#class-frameshutterinfo)>|是|-|回调函数，用于处理[FrameShutterInfo](#class-frameshutterinfo)。|
 
 **异常：**
@@ -5519,22 +5536,22 @@ import ohos.callback_invoke.Callback0Argument
 import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
-try {
-    // 此处代码可添加在依赖项定义中
-    class TestCallbackError <: Callback0Argument {
-        public init() {}
-        public open func invoke(res: ?BusinessException): Unit {
-            Hilog.info(0, "Camera", "Call invoke error. code: ${res?.code}, msg: ${res?.message}")
-        }
+// 此处代码可添加在依赖项定义中
+class TestCallbackError4 <: Callback0Argument {
+    public init() {}
+    public func invoke(res: ?BusinessException): Unit {
+        Hilog.info(0, "Camera", "Call invoke error. code: ${res?.code}, msg: ${res?.message}")
     }
+}
 
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+try {
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let device = cameraManager.getSupportedCameras()[0]
     let mode = cameraManager.getSupportedSceneModes(device)[0]
     let ability = cameraManager.getSupportedOutputCapability(device, mode)
     let output = cameraManager.createPhotoOutput(profile:ability.photoProfiles[0])
-    let testCallbackError = TestCallbackError()
+    let testCallbackError = TestCallbackError4()
     output.on(CameraEvents.CameraError, testCallbackError)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
@@ -5551,7 +5568,7 @@ public func on(eventType: CameraEvents, callback: Callback1Argument<CaptureEndIn
 
 > **说明：**
 >
-> 不支持在on监听的回调方法里调用off注销回调。
+> - 当前注册监听接口，不支持在on监听的回调方法里，调用off注销回调。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -5561,7 +5578,7 @@ public func on(eventType: CameraEvents, callback: Callback1Argument<CaptureEndIn
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|eventType|[CameraEvents](#enum-cameraevents)|是|-|监听事件，必须为CaptureEnd。|
+|eventType|[CameraEvents](#enum-cameraevents)|是|-|监听事件，必须为CaptureEnd。photoOutput创建成功后可监听。拍照完全结束可触发该事件发生并返回相应信息。|
 |callback|[Callback1Argument](../arkinterop/cj-api-callback_invoke.md#class-callback1argument)\<[CaptureEndInfo](#class-captureendinfo)>|是|-|回调函数，用于处理[CaptureEndInfo](#class-captureendinfo)。|
 
 **异常：**
@@ -5584,22 +5601,22 @@ import ohos.callback_invoke.Callback0Argument
 import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
-try {
-    // 此处代码可添加在依赖项定义中
-    class TestCallbackError <: Callback0Argument {
-        public init() {}
-        public open func invoke(res: ?BusinessException): Unit {
-            Hilog.info(0, "Camera", "Call invoke error. code: ${res?.code}, msg: ${res?.message}")
-        }
+// 此处代码可添加在依赖项定义中
+class TestCallbackError5 <: Callback0Argument {
+    public init() {}
+    public func invoke(res: ?BusinessException): Unit {
+        Hilog.info(0, "Camera", "Call invoke error. code: ${res?.code}, msg: ${res?.message}")
     }
+}
 
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+try {
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let device = cameraManager.getSupportedCameras()[0]
     let mode = cameraManager.getSupportedSceneModes(device)[0]
     let ability = cameraManager.getSupportedOutputCapability(device, mode)
     let output = cameraManager.createPhotoOutput(profile:ability.photoProfiles[0])
-    let testCallbackError = TestCallbackError()
+    let testCallbackError = TestCallbackError5()
     output.on(CameraEvents.CameraError, testCallbackError)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
@@ -5612,11 +5629,11 @@ try {
 public func on(eventType: CameraEvents, callback: Callback1Argument<FrameShutterEndInfo>): Unit
 ```
 
-**功能：** 监听拍照帧输出捕获，通过注册回调函数获取结果。使用callback异步回调。
+**功能：** 监听拍照曝光结束捕获，通过注册回调函数获取结果。使用callback异步回调。
 
 > **说明：**
 >
-> 不支持在on监听的回调方法里调用off注销回调。
+> - 当前注册监听接口，不支持在on监听的回调方法里，调用off注销回调。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -5626,7 +5643,7 @@ public func on(eventType: CameraEvents, callback: Callback1Argument<FrameShutter
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|eventType|[CameraEvents](#enum-cameraevents)|是|-|监听事件，必须为FrameShutterEnd。|
+|eventType|[CameraEvents](#enum-cameraevents)|是|-|监听事件，必须为FrameShutterEnd，photoOutput创建成功后可监听。|
 |callback|[Callback1Argument](../arkinterop/cj-api-callback_invoke.md#class-callback1argument)\<[FrameShutterEndInfo](#class-frameshutterendinfo)>|是|-|回调函数，用于处理[FrameShutterEndInfo](#class-frameshutterendinfo)。|
 
 **异常：**
@@ -5649,22 +5666,22 @@ import ohos.callback_invoke.Callback0Argument
 import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
-try {
-    // 此处代码可添加在依赖项定义中
-    class TestCallbackError <: Callback0Argument {
-        public init() {}
-        public open func invoke(res: ?BusinessException): Unit {
-            Hilog.info(0, "Camera", "Call invoke error. code: ${res?.code}, msg: ${res?.message}")
-        }
+// 此处代码可添加在依赖项定义中
+class TestCallbackError6 <: Callback0Argument {
+    public init() {}
+    public func invoke(res: ?BusinessException): Unit {
+        Hilog.info(0, "Camera", "Call invoke error. code: ${res?.code}, msg: ${res?.message}")
     }
+}
 
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+try {
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let device = cameraManager.getSupportedCameras()[0]
     let mode = cameraManager.getSupportedSceneModes(device)[0]
     let ability = cameraManager.getSupportedOutputCapability(device, mode)
     let output = cameraManager.createPhotoOutput(profile:ability.photoProfiles[0])
-    let testCallbackError = TestCallbackError()
+    let testCallbackError = TestCallbackError6()
     output.on(CameraEvents.CameraError, testCallbackError)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
@@ -5681,7 +5698,7 @@ public func on(eventType: CameraEvents, callback: Callback0Argument): Unit
 
 > **说明：**
 >
-> 不支持在on监听的回调方法里调用off注销回调。
+> - 当前注册监听接口，不支持在on监听的回调方法里，调用off注销回调。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -5691,7 +5708,7 @@ public func on(eventType: CameraEvents, callback: Callback0Argument): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|eventType|[CameraEvents](#enum-cameraevents)|是|-|监听事件，必须为[CaptureReady, CameraError]其中之一。|
+|eventType|[CameraEvents](#enum-cameraevents)|是|-|监听事件，必须为[CaptureReady, CameraError]其中之一，photoOutput创建成功后可监听。当下一张可拍时或拍照接口调用时出现错误可触发该事件发生并返回相应信息。|
 |callback|[Callback0Argument](../arkinterop/cj-api-callback_invoke.md#class-callback0argument)|是|-|回调函数。|
 
 **异常：**
@@ -5714,22 +5731,22 @@ import ohos.callback_invoke.Callback0Argument
 import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
-try {
-    // 此处代码可添加在依赖项定义中
-    class TestCallbackError <: Callback0Argument {
-        public init() {}
-        public open func invoke(res: ?BusinessException): Unit {
-            Hilog.info(0, "Camera", "Call invoke error. code: ${res?.code}, msg: ${res?.message}")
-        }
+// 此处代码可添加在依赖项定义中
+class TestCallbackError7 <: Callback0Argument {
+    public init() {}
+    public func invoke(res: ?BusinessException): Unit {
+        Hilog.info(0, "Camera", "Call invoke error. code: ${res?.code}, msg: ${res?.message}")
     }
+}
 
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+try {
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let device = cameraManager.getSupportedCameras()[0]
     let mode = cameraManager.getSupportedSceneModes(device)[0]
     let ability = cameraManager.getSupportedOutputCapability(device, mode)
     let output = cameraManager.createPhotoOutput(profile:ability.photoProfiles[0])
-    let testCallbackError = TestCallbackError()
+    let testCallbackError = TestCallbackError7()
     output.on(CameraEvents.CameraError, testCallbackError)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
@@ -5746,7 +5763,7 @@ public func on(eventType: CameraEvents, callback: Callback1Argument<Float64>): U
 
 > **说明：**
 >
-> 不支持在on监听的回调方法里调用off注销回调。
+> - 当前注册监听接口，不支持在on监听的回调方法里，调用off注销回调。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -5756,8 +5773,8 @@ public func on(eventType: CameraEvents, callback: Callback1Argument<Float64>): U
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|eventType|[CameraEvents](#enum-cameraevents)|是|-|监听事件，必须为EstimatedCaptureDuration。|
-|callback|[Callback1Argument](../arkinterop/cj-api-callback_invoke.md#class-callback1argument)\<Float64>|是|-|回调函数，用于获取预估的拍照时间（毫秒）。|
+|eventType|[CameraEvents](#enum-cameraevents)|是|-|监听事件，必须为EstimatedCaptureDuration，photoOutput创建成功后可监听。拍照完全结束可触发该事件发生并返回相应信息。|
+|callback|[Callback1Argument](../arkinterop/cj-api-callback_invoke.md#class-callback1argument)\<Float64>|是|-|回调函数，用于获取预估的单次拍照底层出sensor采集帧时间，单位：毫秒。如果上报-1，代表没有预估时间。 |
 
 **异常：**
 
@@ -5779,22 +5796,22 @@ import ohos.callback_invoke.Callback0Argument
 import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
-try {
-    // 此处代码可添加在依赖项定义中
-    class TestCallbackError <: Callback0Argument {
-        public init() {}
-        public open func invoke(res: ?BusinessException): Unit {
-            Hilog.info(0, "Camera", "Call invoke error. code: ${res?.code}, msg: ${res?.message}")
-        }
+// 此处代码可添加在依赖项定义中
+class TestCallbackError8 <: Callback0Argument {
+    public init() {}
+    public func invoke(res: ?BusinessException): Unit {
+        Hilog.info(0, "Camera", "Call invoke error. code: ${res?.code}, msg: ${res?.message}")
     }
+}
 
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+try {
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let device = cameraManager.getSupportedCameras()[0]
     let mode = cameraManager.getSupportedSceneModes(device)[0]
     let ability = cameraManager.getSupportedOutputCapability(device, mode)
     let output = cameraManager.createPhotoOutput(profile:ability.photoProfiles[0])
-    let testCallbackError = TestCallbackError()
+    let testCallbackError = TestCallbackError8()
     output.on(CameraEvents.CameraError, testCallbackError)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
@@ -5833,7 +5850,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let device = cameraManager.getSupportedCameras()[0]
     let mode = cameraManager.getSupportedSceneModes(device)[0]
@@ -5861,7 +5878,7 @@ public func setMovingPhotoVideoCodecType(codecType: VideoCodecType): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|codecType|[VideoCodecType](#enum-videocodectype)|是|-|动态照片短视频编码类型。|
+|codecType|[VideoCodecType](#enum-videocodectype)|是|-|获取动态照片短视频编码类型。|
 
 **异常：**
 
@@ -5883,7 +5900,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let device = cameraManager.getSupportedCameras()[0]
     let mode = cameraManager.getSupportedSceneModes(device)[0]
@@ -5901,7 +5918,7 @@ try {
 public class PhotoSession  Session & Flash & AutoExposure & Focus & Zoom & ColorManagement {}
 ```
 
-**功能：** 普通拍照模式会话类，提供了对闪光灯、曝光、对焦、变焦、色彩空间的操作。
+**功能：** 普通拍照模式会话类，提供了对闪光灯、曝光、白平衡、对焦、变焦、色彩空间及微距的操作。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -5922,7 +5939,7 @@ public class PhotoSession  Session & Flash & AutoExposure & Focus & Zoom & Color
 public func canPreconfig(preconfigType: PreconfigType, preconfigRatio!: PreconfigRatio = PreconfigRatio_4_3): Bool
 ```
 
-**功能：** 查询当前Session是否支持指定的与配置类型。
+**功能：** 查询当前Session是否支持指定的预配置类型。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -5933,7 +5950,7 @@ public func canPreconfig(preconfigType: PreconfigType, preconfigRatio!: Preconfi
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |preconfigType|[PreconfigType](#enum-preconfigtype)|是|-|指定配置预期分辨率。|
-|preconfigRatio|[PreconfigRatio](#enum-preconfigratio)|否|PreconfigRatio_4_3|**命名参数。** 可选画幅比例。|
+|preconfigRatio|[PreconfigRatio](#enum-preconfigratio)|否|PreconfigRatio_4_3|**命名参数。** 可选画幅比例，默认为4:3。|
 
 **返回值：**
 
@@ -5961,7 +5978,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let photoSession = cameraManager.createSession(SceneMode.NormalPhoto) as PhotoSession
     let session = photoSession.getOrThrow()
@@ -5987,7 +6004,7 @@ public func off(eventType: CameraEvents, callback: Callback0Argument): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|eventType|[CameraEvents](#enum-cameraevents)|是|-|监听事件，必须为CameraError。|
+|eventType|[CameraEvents](#enum-cameraevents)|是|-|监听事件，必须为CameraError，session创建成功之后可监听该接口。|
 |callback|[Callback0Argument](../arkinterop/cj-api-callback_invoke.md#class-callback0argument)|是|-|回调函数，用于处理[BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)。|
 
 **示例：**
@@ -6002,7 +6019,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let photoSession = cameraManager.createSession(SceneMode.NormalPhoto) as PhotoSession
     let session = photoSession.getOrThrow()
@@ -6028,7 +6045,7 @@ public func off(eventType: CameraEvents, callback: Callback1Argument<FocusState>
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|eventType|[CameraEvents](#enum-cameraevents)|是|-|监听事件，必须为FocusStateChange。|
+|eventType|[CameraEvents](#enum-cameraevents)|是|-|监听事件，必须为FocusStateChange，session创建成功可监听。|
 |callback|[Callback1Argument](../arkinterop/cj-api-callback_invoke.md#class-callback1argument)\<[FocusState](#enum-focusstate)>|是|-|回调函数，用于处理[FocusState](#enum-focusstate)。|
 
 **示例：**
@@ -6043,7 +6060,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let photoSession = cameraManager.createSession(SceneMode.NormalPhoto) as PhotoSession
     let session = photoSession.getOrThrow()
@@ -6069,7 +6086,7 @@ public func off(eventType: CameraEvents, callback: Callback1Argument<SmoothZoomI
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|eventType|[CameraEvents](#enum-cameraevents)|是|-|监听事件，必须为SmoothZoomInfoAvailable。|
+|eventType|[CameraEvents](#enum-cameraevents)|是|-|监听事件，必须为SmoothZoomInfoAvailable，session创建成功可监听。|
 |callback|[Callback1Argument](../arkinterop/cj-api-callback_invoke.md#class-callback1argument)\<[SmoothZoomInfo](#class-smoothzoominfo)>|是|-|回调函数，用于处理[SmoothZoomInfo](#class-smoothzoominfo)。|
 
 **示例：**
@@ -6084,7 +6101,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let photoSession = cameraManager.createSession(SceneMode.NormalPhoto) as PhotoSession
     let session = photoSession.getOrThrow()
@@ -6131,7 +6148,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let photoSession = cameraManager.createSession(SceneMode.NormalPhoto) as PhotoSession
     let session = photoSession.getOrThrow()
@@ -6151,7 +6168,7 @@ public func on(eventType: CameraEvents, callback: Callback0Argument): Unit
 
 > **说明：**
 >
-> 不支持在on监听的回调方法里调用off注销回调。
+> - 当前注册监听接口，不支持在on监听的回调方法里，调用off注销回调。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -6161,7 +6178,7 @@ public func on(eventType: CameraEvents, callback: Callback0Argument): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|eventType|[CameraEvents](#enum-cameraevents)|是|-|监听事件，必须为CameraError。|
+|eventType|[CameraEvents](#enum-cameraevents)|是|-|监听事件，必须为CameraError，session创建成功之后可监听该接口。session调用相关接口出现错误时会触发该事件，比如调用[beginConfig](#func-beginconfig)，[commitConfig](#func-commitconfig)，[addInput](#func-addinputcamerainput)等接口发生错误时返回错误信息。|
 |callback|[Callback0Argument](../arkinterop/cj-api-callback_invoke.md#class-callback0argument)|是|-|回调函数，用于处理[BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)。|
 
 **示例：**
@@ -6173,27 +6190,25 @@ public func on(eventType: CameraEvents, callback: Callback0Argument): Unit
 
 import kit.CameraKit.*
 import ohos.callback_invoke.*
-import ohos.business_exception.*
 import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
-try {
-    // 此处代码可添加在依赖项定义中
-    class SmoothZoomInfoAvailableCallback <: Callback1Argument<SmoothZoomInfo> {
-        public static var invoked = false
+// 此处代码可添加在依赖项定义中
+class SmoothZoomInfoAvailableCallback4 <: Callback1Argument<SmoothZoomInfo> {
+    public static var invoked = false
 
-        public func invoke(err: ?BusinessException, info: SmoothZoomInfo) {
-            Hilog.info(0, "AppLogCj", "[multimedia_camera | SmoothZoomInfoAvailable Callback]: info: ${info.duration}")
-
-            invoked = true
-        }
+    public func invoke(err: ?BusinessException, info: SmoothZoomInfo) {
+        Hilog.info(0, "AppLogCj", "[multimedia_camera | SmoothZoomInfoAvailable Callback]: info: ${info.duration}")
+        invoked = true
     }
+}
 
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+try {
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let photoSession = cameraManager.createSession(SceneMode.NormalPhoto) as PhotoSession
     let session = photoSession.getOrThrow()
-    let callback = SmoothZoomInfoAvailableCallback()
+    let callback = SmoothZoomInfoAvailableCallback4()
     session.on(CameraEvents.SmoothZoomInfoAvailable, callback)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
@@ -6210,7 +6225,7 @@ public func on(eventType: CameraEvents, callback: Callback1Argument<FocusState>)
 
 > **说明：**
 >
-> 不支持在on监听的回调方法里调用off注销回调。
+> - 当前注册监听接口，不支持在on监听的回调方法里，调用off注销回调。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -6220,7 +6235,7 @@ public func on(eventType: CameraEvents, callback: Callback1Argument<FocusState>)
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|eventType|[CameraEvents](#enum-cameraevents)|是|-|监听事件，必须为FocusStateChange。|
+|eventType|[CameraEvents](#enum-cameraevents)|是|-|监听事件，必须为FocusStateChange，session创建成功可监听。仅当自动对焦模式时，且相机对焦状态发生改变时可触发该事件。|
 |callback|[Callback1Argument](../arkinterop/cj-api-callback_invoke.md#class-callback1argument)\<[FocusState](#enum-focusstate)>|是|-|回调函数，用于获取当前对焦状态。|
 
 **示例：**
@@ -6232,27 +6247,25 @@ public func on(eventType: CameraEvents, callback: Callback1Argument<FocusState>)
 
 import kit.CameraKit.*
 import ohos.callback_invoke.*
-import ohos.business_exception.*
 import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
-try {
-    // 此处代码可添加在依赖项定义中
-    class SmoothZoomInfoAvailableCallback <: Callback1Argument<SmoothZoomInfo> {
-        public static var invoked = false
+// 此处代码可添加在依赖项定义中
+class SmoothZoomInfoAvailableCallback1 <: Callback1Argument<SmoothZoomInfo> {
+    public static var invoked = false
 
-        public func invoke(err: ?BusinessException, info: SmoothZoomInfo) {
-            Hilog.info(0, "AppLogCj", "[multimedia_camera | SmoothZoomInfoAvailable Callback]: info: ${info.duration}")
-
-            invoked = true
-        }
+    public func invoke(err: ?BusinessException, info: SmoothZoomInfo) {
+        Hilog.info(0, "AppLogCj", "[multimedia_camera | SmoothZoomInfoAvailable Callback]: info: ${info.duration}")
+        invoked = true
     }
+}
 
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+try {
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let photoSession = cameraManager.createSession(SceneMode.NormalPhoto) as PhotoSession
     let session = photoSession.getOrThrow()
-    let callback = SmoothZoomInfoAvailableCallback()
+    let callback = SmoothZoomInfoAvailableCallback1()
     session.on(CameraEvents.SmoothZoomInfoAvailable, callback)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
@@ -6269,7 +6282,7 @@ public func on(eventType: CameraEvents, callback: Callback1Argument<SmoothZoomIn
 
 > **说明：**
 >
-> 不支持在on监听的回调方法里调用off注销回调。
+> - 当前注册监听接口，不支持在on监听的回调方法里，调用off注销回调。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -6279,8 +6292,8 @@ public func on(eventType: CameraEvents, callback: Callback1Argument<SmoothZoomIn
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|eventType|[CameraEvents](#enum-cameraevents)|是|-|监听事件，必须为SmoothZoomInfoAvailable。|
-|callback|[Callback1Argument](../arkinterop/cj-api-callback_invoke.md#class-callback1argument)\<[SmoothZoomInfo](#class-smoothzoominfo)>|是|-|回调函数，用于处理[SmoothZoomInfo](#class-smoothzoominfo)。|
+|eventType|[CameraEvents](#enum-cameraevents)|是|-|监听事件，必须为SmoothZoomInfoAvailable，session创建成功可监听。|
+|callback|[Callback1Argument](../arkinterop/cj-api-callback_invoke.md#class-callback1argument)\<[SmoothZoomInfo](#class-smoothzoominfo)>|是|-|回调函数，用于获取当前平滑变焦状态。|
 
 **示例：**
 
@@ -6291,27 +6304,25 @@ public func on(eventType: CameraEvents, callback: Callback1Argument<SmoothZoomIn
 
 import kit.CameraKit.*
 import ohos.callback_invoke.*
-import ohos.business_exception.*
 import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
-try {
-    // 此处代码可添加在依赖项定义中
-    class SmoothZoomInfoAvailableCallback <: Callback1Argument<SmoothZoomInfo> {
-        public static var invoked = false
+// 此处代码可添加在依赖项定义中
+class SmoothZoomInfoAvailableCallback2 <: Callback1Argument<SmoothZoomInfo> {
+    public static var invoked = false
 
-        public func invoke(err: ?BusinessException, info: SmoothZoomInfo) {
-            Hilog.info(0, "AppLogCj", "[multimedia_camera | SmoothZoomInfoAvailable Callback]: info: ${info.duration}")
-
-            invoked = true
-        }
+    public func invoke(err: ?BusinessException, info: SmoothZoomInfo) {
+        Hilog.info(0, "AppLogCj", "[multimedia_camera | SmoothZoomInfoAvailable Callback]: info: ${info.duration}")
+        invoked = true
     }
+}
 
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+try {
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let photoSession = cameraManager.createSession(SceneMode.NormalPhoto) as PhotoSession
     let session = photoSession.getOrThrow()
-    let callback = SmoothZoomInfoAvailableCallback()
+    let callback = SmoothZoomInfoAvailableCallback2()
     session.on(CameraEvents.SmoothZoomInfoAvailable, callback)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
@@ -6338,7 +6349,7 @@ public func preconfig(
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |preconfigType|[PreconfigType](#enum-preconfigtype)|是|-|指定配置预期分辨率。|
-|preconfigRatio|[PreconfigRatio](#enum-preconfigratio)|否|PreconfigRatio.PreconfigRatio_4_3|**命名参数。** 可选画幅比例。|
+|preconfigRatio|[PreconfigRatio](#enum-preconfigratio)|否|PreconfigRatio.PreconfigRatio_4_3|**命名参数。** 可选画幅比例，默认为4:3。|
 
 **异常：**
 
@@ -6360,7 +6371,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let photoSession = cameraManager.createSession(SceneMode.NormalPhoto) as PhotoSession
     let session = photoSession.getOrThrow()
@@ -6380,7 +6391,7 @@ public class Point {
 }
 ```
 
-**功能：** 点坐标用于对焦、曝光配置。
+**功能：** 点坐标用于对焦和曝光配置。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -6461,6 +6472,8 @@ public func getActiveFrameRate(): FrameRateRange
 
 **功能：** 获取已设置的帧率范围。
 
+使用[setFrameRate](#func-setframerateint32-int32)接口对预览流设置过帧率后可查询。
+
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **起始版本：** 22
@@ -6494,7 +6507,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let device = cameraManager.getSupportedCameras()[0]
     let mode = cameraManager.getSupportedSceneModes(device)[0]
@@ -6550,7 +6563,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let device = cameraManager.getSupportedCameras()[0]
     let mode = cameraManager.getSupportedSceneModes(device)[0]
@@ -6574,7 +6587,7 @@ public func getPreviewRotation(displayRotation: Int32): ImageRotation
 **功能：** 获取预览旋转角度。
 
 - 设备自然方向：设备默认使用方向，手机为竖屏（充电口向下）。
-- 相机镜头角度：值等于相机图像顺时针旋转到设备自然方向的角度，手机后置相机传感器是竖屏安装的，所以需要顺时针旋转90度到设备自然方向。
+- 相机镜头角度：值等于相机图像顺时针旋转到设备自然方向的角度，手机后置相机传感器是横屏安装的，所以需要顺时针旋转90度到设备自然方向。
 - 屏幕显示方向：需要屏幕显示的图片左上角为第一个像素点为坐标原点。锁屏时与自然方向一致。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
@@ -6591,7 +6604,7 @@ public func getPreviewRotation(displayRotation: Int32): ImageRotation
 
 |类型|说明|
 |:----|:----|
-|[ImageRotation](#enum-imagerotation)|预览旋转角度。|
+|[ImageRotation](#enum-imagerotation)|获取预览旋转角度。|
 
 **异常：**
 
@@ -6617,7 +6630,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let device = cameraManager.getSupportedCameras()[0]
     let mode = cameraManager.getSupportedSceneModes(device)[0]
@@ -6673,7 +6686,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let device = cameraManager.getSupportedCameras()[0]
     let mode = cameraManager.getSupportedSceneModes(device)[0]
@@ -6730,7 +6743,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let device = cameraManager.getSupportedCameras()[0]
     let mode = cameraManager.getSupportedSceneModes(device)[0]
@@ -6787,7 +6800,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let device = cameraManager.getSupportedCameras()[0]
     let mode = cameraManager.getSupportedSceneModes(device)[0]
@@ -6812,7 +6825,7 @@ public func on(eventType: CameraEvents, callback: Callback0Argument): Unit
 
 > **说明：**
 >
-> 不支持在on监听的回调方法里调用off注销回调。
+> - 不支持在on监听的回调方法里调用off注销回调。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -6848,16 +6861,16 @@ import ohos.callback_invoke.Callback0Argument
 import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
-try {
-    // 此处代码可添加在依赖项定义中
-    class TestCallbackError <: Callback0Argument {
-        public init() {}
-        public open func invoke(res: ?BusinessException): Unit {
-            Hilog.info(0, "Camera", "Call invoke error. code: ${res?.code}, msg: ${res?.message}")
-        }
+// 此处代码可添加在依赖项定义中
+class TestCallbackError1 <: Callback0Argument {
+    public init() {}
+    public func invoke(res: ?BusinessException): Unit {
+        Hilog.info(0, "Camera", "Call invoke error. code: ${res?.code}, msg: ${res?.message}")
     }
+}
 
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+try {
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let device = cameraManager.getSupportedCameras()[0]
     let mode = cameraManager.getSupportedSceneModes(device)[0]
@@ -6866,7 +6879,7 @@ try {
     let receiver = createImageReceiver(size, ImageFormat.Jpeg, 8)
     let surfaceId: String = receiver.getReceivingSurfaceId()
     let output = cameraManager.createPreviewOutput(ability.previewProfiles[0], surfaceId)
-    let testCallbackError = TestCallbackError()
+    let testCallbackError = TestCallbackError1()
     output.on(CameraEvents.CameraError, testCallbackError)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
@@ -6908,7 +6921,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let device = cameraManager.getSupportedCameras()[0]
     let mode = cameraManager.getSupportedSceneModes(device)[0]
@@ -6929,11 +6942,12 @@ try {
 public func setFrameRate(minFps: Int32, maxFps: Int32): Unit
 ```
 
-**功能：** 设置预览流帧率范围，设置的范围必须在支持的帧率范围内。 进行设置前，可通过[getSupportedFrameRates](#func-getsupportedframerates)查询支持的帧率范围。
+**功能：** 设置预览流帧率范围，设置的范围必须在支持的帧率范围内。
+进行设置前，可通过[getSupportedFrameRates](#func-getsupportedframerates)查询支持的帧率范围。
 
 > **说明：**
 >
-> 仅在[PhotoSession](#class-photosession)或[VideoSession](#class-videosession)模式下支持。
+> - 仅在[PhotoSession](#class-photosession)或[VideoSession](#class-videosession)模式下支持。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -6943,8 +6957,8 @@ public func setFrameRate(minFps: Int32, maxFps: Int32): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|minFps|Int32|是|-|最小帧率。|
-|maxFps|Int32|是|-|最大帧率，当传入的最小值大于最大值时，传参异常，接口不生效。|
+|minFps|Int32|是|-|最小帧率（单位：fps），当传入的最大值小于最小值时，传参异常，接口不生效。|
+|maxFps|Int32|是|-|最大帧率（单位：fps），当传入的最小值大于最大值时，传参异常，接口不生效。|
 
 **异常：**
 
@@ -6970,7 +6984,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let device = cameraManager.getSupportedCameras()[0]
     let mode = cameraManager.getSupportedSceneModes(device)[0]
@@ -7002,7 +7016,7 @@ public func setPreviewRotation(previewRotation: ImageRotation, isDisplayLocked!:
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |previewRotation|[ImageRotation](#enum-imagerotation)|是|-|预览旋转角度。|
-|isDisplayLocked|Bool|否|false|**命名参数。** 是否旋转锁定。|
+|isDisplayLocked|Bool|否|false|**命名参数。** Surface在屏幕旋转时是否锁定方向，未设置时默认取值为false，即不锁定方向。true表示锁定方向，false表示不锁定方向。|
 
 **异常：**
 
@@ -7028,7 +7042,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let device = cameraManager.getSupportedCameras()[0]
     let mode = cameraManager.getSupportedSceneModes(device)[0]
@@ -7080,7 +7094,9 @@ public let format: CameraFormat
 public let size: Size
 ```
 
-**功能：** 分辨率。设置的是相机分辨率宽高，非实际出图宽高。
+**功能：** 分辨率。
+
+设置的是相机的分辨率宽度和高度，而非实际输出图像的宽度和高度。
 
 **类型：** [Size](#class-size)
 
@@ -7101,7 +7117,7 @@ public class Rect {
 }
 ```
 
-**功能：** 矩形定义。
+**功能：** 矩形定义，返回的检测点坐标系以设备充电口在右侧时的横向设备方向为基准。该坐标系左上角为（0，0），右下角为（1，1），其中（topLeftX，topLeftY）表示矩形区域的左上角坐标，width和height分别表示矩形区域的宽和高。因此在实际使用中根据业务诉求需要裁剪或者选择人脸区域时，必须将矩形区域的x坐标和y坐标分别乘以实际相机输出流的宽和高，即可得到裁剪后的人脸矩形区域。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -7180,7 +7196,7 @@ public class Size {
 }
 ```
 
-**功能：** 输出能力查询。
+**功能：** 尺寸参数。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -7270,7 +7286,7 @@ public class TorchStatusInfo {
 public let isTorchActive: Bool
 ```
 
-**功能：** 手电筒是否被激活。
+**功能：** 手电筒是否被激活。true表示手电筒被激活，false表示手电筒未被激活。
 
 **类型：** Bool
 
@@ -7286,7 +7302,7 @@ public let isTorchActive: Bool
 public let isTorchAvailable: Bool
 ```
 
-**功能：** 手电筒是否可用。
+**功能：** 手电筒是否可用。true表示手电筒可用，false表示手电筒不可用。
 
 **类型：** Bool
 
@@ -7334,7 +7350,9 @@ public class VideoOutput  <:  CameraOutput {}
 public func getActiveFrameRate(): FrameRateRange
 ```
 
-**功能：** 获取已设置的帧率范围。使用setFrameRate对录像流设置过帧率后可查询。
+**功能：** 获取已设置的帧率范围。
+
+使用[setFrameRate](#func-setframerateint32-int32)对录像流设置过帧率后可查询。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -7369,7 +7387,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let device = cameraManager.getSupportedCameras()[0]
     let mode = cameraManager.getSupportedSceneModes(device)[1]
@@ -7425,7 +7443,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let device = cameraManager.getSupportedCameras()[0]
     let mode = cameraManager.getSupportedSceneModes(device)[1]
@@ -7481,7 +7499,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let device = cameraManager.getSupportedCameras()[0]
     let mode = cameraManager.getSupportedSceneModes(device)[1]
@@ -7505,7 +7523,7 @@ public func getVideoRotation(deviceDegree: Int32): ImageRotation
 **功能：** 获取录像旋转角度。
 
 - 设备自然方向：设备默认使用方向，手机为竖屏（充电口向下）。
-- 相机镜头角度：值等于相机图像顺时针旋转到设备自然方向的角度，手机后置相机传感器是竖屏安装的，所以需要顺时针旋转90度到设备自然方向。
+- 相机镜头角度：值等于相机图像顺时针旋转到设备自然方向的角度，手机后置相机传感器是横屏安装的，所以需要顺时针旋转90度到设备自然方向。
 - 屏幕显示方向：需要屏幕显示的图片左上角为第一个像素点为坐标原点。锁屏时与自然方向一致。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
@@ -7522,7 +7540,7 @@ public func getVideoRotation(deviceDegree: Int32): ImageRotation
 
 |类型|说明|
 |:----|:----|
-|[ImageRotation](#enum-imagerotation)|录像旋转角度。|
+|[ImageRotation](#enum-imagerotation)|设备旋转角度，单位度，取值范围0-360。+|
 
 **异常：**
 
@@ -7548,7 +7566,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let device = cameraManager.getSupportedCameras()[0]
     let mode = cameraManager.getSupportedSceneModes(device)[1]
@@ -7579,7 +7597,7 @@ public func off(eventType: CameraEvents, callback: Callback0Argument): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|eventType|[CameraEvents](#enum-cameraevents)|是|-|监听事件，必须为[FrameStart, FrameEnd, CameraError]其中之一。|
+|eventType|[CameraEvents](#enum-cameraevents)|是|-|监听事件，必须为[FrameStart, FrameEnd, CameraError]其中之一，videoOutput创建成功后可监听|
 |callback|[Callback0Argument](../arkinterop/cj-api-callback_invoke.md#class-callback0argument)|是|-|回调函数，要取消的callback。|
 
 **异常：**
@@ -7605,7 +7623,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let device = cameraManager.getSupportedCameras()[0]
     let mode = cameraManager.getSupportedSceneModes(device)[1]
@@ -7661,7 +7679,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let device = cameraManager.getSupportedCameras()[0]
     let mode = cameraManager.getSupportedSceneModes(device)[1]
@@ -7686,7 +7704,7 @@ public func on(eventType: CameraEvents, callback: Callback0Argument): Unit
 
 > **说明：**
 >
-> 不支持在on监听的回调方法里调用off注销回调。
+> - 当前注册监听接口，不支持在on监听的回调方法里，调用off注销回调。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -7722,20 +7740,16 @@ import ohos.callback_invoke.Callback0Argument
 import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
-try {
-    //// check redundant import
-
-    //// end
-
-    // 此处代码可添加在依赖项定义中
-    class TestCallbackError <: Callback0Argument {
-        public init() {}
-        public open func invoke(res: ?BusinessException): Unit {
-            Hilog.info(0, "Camera", "Call invoke error. code: ${res?.code}, msg: ${res?.message}")
-        }
+// 此处代码可添加在依赖项定义中
+class TestCallbackError2 <: Callback0Argument {
+    public init() {}
+    public func invoke(res: ?BusinessException): Unit {
+        Hilog.info(0, "Camera", "Call invoke error. code: ${res?.code}, msg: ${res?.message}")
     }
+}
 
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+try {
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let device = cameraManager.getSupportedCameras()[0]
     let mode = cameraManager.getSupportedSceneModes(device)[1]
@@ -7744,7 +7758,7 @@ try {
     let receiver = createImageReceiver(size, ImageFormat.Jpeg, 8)
     let surfaceId: String = receiver.getReceivingSurfaceId()
     let output = cameraManager.createVideoOutput(ability.videoProfiles[0], surfaceId)
-    let testCallbackError = TestCallbackError()
+    let testCallbackError = TestCallbackError2()
     output.on(CameraEvents.CameraError, testCallbackError)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
@@ -7786,7 +7800,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let device = cameraManager.getSupportedCameras()[0]
     let mode = cameraManager.getSupportedSceneModes(device)[1]
@@ -7807,11 +7821,15 @@ try {
 public func setFrameRate(minFps: Int32, maxFps: Int32): Unit
 ```
 
-**功能：** 设置录像流帧率范围，设置的范围必须在支持的帧率范围内。进行设置前，可通过[getSupportedFrameRates](#func-getsupportedframerates)查询支持的帧率范围。
+**功能：** 设置录像流帧率范围，设置的范围必须在支持的帧率范围内。
+
+进行设置前，可通过[getSupportedFrameRates](#func-getsupportedframerates)查询支持的帧率范围。
 
 > **说明：**
 >
-> 仅在[PhotoSession](#class-photosession)或[VideoSession](#class-videosession)模式下支持。
+> - 仅在[PhotoSession](#class-photosession)或[VideoSession](#class-videosession)模式下支持。
+>
+> - 接口调用前，先调用[getActiveFrameRate](#func-getactiveframerate)接口查询当前VideoSession的帧率，若下发的帧率与当前帧率相等，则下发的帧率不会生效。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -7821,8 +7839,8 @@ public func setFrameRate(minFps: Int32, maxFps: Int32): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|minFps|Int32|是|-|最小帧率。|
-|maxFps|Int32|是|-|最大帧率。当传入的最小值大于最大值时，传参异常，接口不生效。|
+|minFps|Int32|是|-|最小帧率，单位：fps。当传入的最大值小于最小值时，传参异常，接口不生效。|
+|maxFps|Int32|是|-|最大帧率，单位：fps。当传入的最小值大于最大值时，传参异常，接口不生效。|
 
 **异常：**
 
@@ -7848,7 +7866,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let device = cameraManager.getSupportedCameras()[0]
     let mode = cameraManager.getSupportedSceneModes(device)[1]
@@ -7899,7 +7917,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let device = cameraManager.getSupportedCameras()[0]
     let mode = cameraManager.getSupportedSceneModes(device)[1]
@@ -7949,7 +7967,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let device = cameraManager.getSupportedCameras()[0]
     let mode = cameraManager.getSupportedSceneModes(device)[1]
@@ -7988,7 +8006,7 @@ public class VideoProfile <: Profile {
 public let frameRateRange: FrameRateRange
 ```
 
-**功能：** 帧率范围，fps(frames per second)。
+**功能：** 帧率范围，单位：fps(frames per second)。
 
 **类型：** [FrameRateRange](#class-frameraterange)
 
@@ -8004,11 +8022,11 @@ public let frameRateRange: FrameRateRange
 public class VideoSession  Session & Flash & AutoExposure & Focus & Zoom & Stabilization & ColorManagement {}
 ```
 
-**功能：** 普通录像模式会话类，提供了对闪光灯、曝光、对焦、变焦、视频防抖、色彩空间的操作。
+**功能：** 普通录像模式会话类，提供了对闪光灯、曝光、白平衡、对焦、变焦、视频防抖、色彩空间、微距及控制器的操作。
 
 > **说明：**
 >
-> 默认的视频录制模式，适用于一般场景。支持720P、1080p等多种分辨率的录制，可选择不同帧率（如30fps、60fps）。
+> - 默认的视频录制模式，适用于一般场景。支持720P、1080p等多种分辨率的录制，可选择不同帧率（如30fps、60fps）。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -8030,7 +8048,7 @@ public class VideoSession  Session & Flash & AutoExposure & Focus & Zoom & Stabi
 public func canPreconfig(preconfigType: PreconfigType, preconfigRatio!: PreconfigRatio = PreconfigRatio_16_9): Bool
 ```
 
-**功能：** 查询当前Session是否支持指定的与配置类型。
+**功能：** 查询当前Session是否支持指定的预配置类型。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -8041,13 +8059,13 @@ public func canPreconfig(preconfigType: PreconfigType, preconfigRatio!: Preconfi
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |preconfigType|[PreconfigType](#enum-preconfigtype)|是|-|指定配置预期分辨率。|
-|preconfigRatio|[PreconfigRatio](#enum-preconfigratio)|否|PreconfigRatio_16_9|**命名参数。** 可选画幅比例。|
+|preconfigRatio|[PreconfigRatio](#enum-preconfigratio)|否|PreconfigRatio_16_9|**命名参数。** 可选画幅比例，默认为16:9。|
 
 **返回值：**
 
 |类型|说明|
 |:----|:----|
-|Bool|true: 支持指定预配值类型。false: 不支持指定预配值类型。|
+|Bool|true: 支持指定预配置类型。<br/>false: 不支持指定预配置类型。|
 
 **异常：**
 
@@ -8069,11 +8087,11 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let videoSession = cameraManager.createSession(SceneMode.NormalVideo) as VideoSession
     let session = videoSession.getOrThrow()
-    session.canPreconfig(Preconfig1080p, preconfigRatio: PreconfigRatio_16_9)
+    let result = session.canPreconfig(Preconfig1080p, preconfigRatio: PreconfigRatio_16_9)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -8118,7 +8136,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let videoSession = cameraManager.createSession(SceneMode.NormalVideo) as VideoSession
     let session = videoSession.getOrThrow()
@@ -8134,7 +8152,7 @@ try {
 public func off(eventType: CameraEvents, callback: Callback1Argument<FocusState>): Unit
 ```
 
-**功能：** 注销监听普通录像会话的对焦状态变化。
+**功能：** 注销监听相机聚焦的状态变化。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -8167,7 +8185,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let videoSession = cameraManager.createSession(SceneMode.NormalVideo) as VideoSession
     let session = videoSession.getOrThrow()
@@ -8183,7 +8201,7 @@ try {
 public func off(eventType: CameraEvents, callback: Callback1Argument<SmoothZoomInfo>): Unit
 ```
 
-**功能：** 注销监听普通录像会话的平滑变焦状态变化。
+**功能：** 注销监听相机平滑变焦的状态变化。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -8216,7 +8234,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let videoSession = cameraManager.createSession(SceneMode.NormalVideo) as VideoSession
     let session = videoSession.getOrThrow()
@@ -8265,7 +8283,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let videoSession = cameraManager.createSession(SceneMode.NormalVideo) as VideoSession
     let session = videoSession.getOrThrow()
@@ -8281,11 +8299,11 @@ try {
 public func on(eventType: CameraEvents, callback: Callback0Argument): Unit
 ```
 
-**功能：** 监听普通录像会话的错误事件，通过注册回调函数获取结果。
+**功能：** 监听普通录像会话的错误事件，通过注册回调函数获取结果。使用callback异步回调。
 
 > **说明：**
 >
-> 不支持在on监听的回调方法里调用off注销回调。
+> - 当前注册监听接口，不支持在on监听的回调方法里，调用off注销回调。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -8295,7 +8313,7 @@ public func on(eventType: CameraEvents, callback: Callback0Argument): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|eventType|[CameraEvents](#enum-cameraevents)|是|-|监听事件，必须为CameraError，session创建成功之后可监听该接口。|
+|eventType|[CameraEvents](#enum-cameraevents)|是|-|监听事件，必须为CameraError，session创建成功之后可监听该接口。session调用相关接口出现错误时会触发该事件，比如调用[beginConfig](#func-beginconfig)，[commitConfig](#func-commitconfig)，[addInput](#func-addinputcamerainput)等接口发生错误时返回错误信息。|
 |callback|[Callback0Argument](../arkinterop/cj-api-callback_invoke.md#class-callback0argument)|是|-|回调函数，用于获取错误信息。|
 
 **异常：**
@@ -8315,27 +8333,25 @@ public func on(eventType: CameraEvents, callback: Callback0Argument): Unit
 
 import kit.CameraKit.*
 import ohos.callback_invoke.*
-import ohos.business_exception.*
 import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
-try {
-    // 此处代码可添加在依赖项定义中
-    class SmoothZoomInfoAvailableCallback <: Callback1Argument<SmoothZoomInfo> {
-        public static var invoked = false
+// 此处代码可添加在依赖项定义中
+class SmoothZoomInfoAvailableCallback3 <: Callback1Argument<SmoothZoomInfo> {
+    public static var invoked = false
 
-        public func invoke(err: ?BusinessException, info: SmoothZoomInfo) {
-            Hilog.info(0, "AppLogCj", "[multimedia_camera | SmoothZoomInfoAvailable Callback]: info: ${info.duration}")
-
-            invoked = true
-        }
+    public func invoke(err: ?BusinessException, info: SmoothZoomInfo) {
+        Hilog.info(0, "AppLogCj", "[multimedia_camera | SmoothZoomInfoAvailable Callback]: info: ${info.duration}")
+        invoked = true
     }
+}
 
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+try {
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let videoSession = cameraManager.createSession(SceneMode.NormalVideo) as VideoSession
     let session = videoSession.getOrThrow()
-    let callback = SmoothZoomInfoAvailableCallback()
+    let callback = SmoothZoomInfoAvailableCallback3()
     session.on(CameraEvents.SmoothZoomInfoAvailable, callback)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
@@ -8348,11 +8364,11 @@ try {
 public func on(eventType: CameraEvents, callback: Callback1Argument<FocusState>): Unit
 ```
 
-**功能：** 监听普通录像会话的对焦状态变化，通过注册回调函数获取结果。
+**功能：** 监听相机聚焦的状态变化，通过注册回调函数获取结果。使用callback异步回调。
 
 > **说明：**
 >
-> 不支持在on监听的回调方法里调用off注销回调。
+> - 当前注册监听接口，不支持在on监听的回调方法里，调用off注销回调。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -8362,8 +8378,8 @@ public func on(eventType: CameraEvents, callback: Callback1Argument<FocusState>)
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|eventType|[CameraEvents](#enum-cameraevents)|是|-|监听事件，必须为FocusStateChange，session创建成功之后可监听该接口。|
-|callback|[Callback1Argument](../arkinterop/cj-api-callback_invoke.md#class-callback1argument)\<[FocusState](#enum-focusstate)>|是|-|回调函数，用于获取对焦状态变化信息。|
+|eventType|[CameraEvents](#enum-cameraevents)|是|-|监听事件，必须为FocusStateChange，session创建成功之后可监听该接口。仅当自动对焦模式时，且相机对焦状态发生改变时可触发该事件。|
+|callback|[Callback1Argument](../arkinterop/cj-api-callback_invoke.md#class-callback1argument)\<[FocusState](#enum-focusstate)>|是|-|回调函数，用于获取当前对焦状态。|
 
 **异常：**
 
@@ -8382,27 +8398,25 @@ public func on(eventType: CameraEvents, callback: Callback1Argument<FocusState>)
 
 import kit.CameraKit.*
 import ohos.callback_invoke.*
-import ohos.business_exception.*
 import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
-try {
-    // 此处代码可添加在依赖项定义中
-    class SmoothZoomInfoAvailableCallback <: Callback1Argument<SmoothZoomInfo> {
-        public static var invoked = false
+// 此处代码可添加在依赖项定义中
+class SmoothZoomInfoAvailableCallback5 <: Callback1Argument<SmoothZoomInfo> {
+    public static var invoked = false
 
-        public func invoke(err: ?BusinessException, info: SmoothZoomInfo) {
-            Hilog.info(0, "AppLogCj", "[multimedia_camera | SmoothZoomInfoAvailable Callback]: info: ${info.duration}")
-
-            invoked = true
-        }
+    public func invoke(err: ?BusinessException, info: SmoothZoomInfo) {
+        Hilog.info(0, "AppLogCj", "[multimedia_camera | SmoothZoomInfoAvailable Callback]: info: ${info.duration}")
+        invoked = true
     }
+}
 
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+try {
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let videoSession = cameraManager.createSession(SceneMode.NormalVideo) as VideoSession
     let session = videoSession.getOrThrow()
-    let callback = SmoothZoomInfoAvailableCallback()
+    let callback = SmoothZoomInfoAvailableCallback5()
     session.on(CameraEvents.SmoothZoomInfoAvailable, callback)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
@@ -8415,11 +8429,11 @@ try {
 public func on(eventType: CameraEvents, callback: Callback1Argument<SmoothZoomInfo>): Unit
 ```
 
-**功能：** 监听普通录像会话的平滑变焦状态变化，通过注册回调函数获取结果。
+**功能：** 监听相机平滑变焦的状态变化，通过注册回调函数获取结果。使用callback异步回调。
 
 > **说明：**
 >
-> 不支持在on监听的回调方法里调用off注销回调。
+> - 当前注册监听接口，不支持在on监听的回调方法里，调用off注销回调。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -8430,7 +8444,7 @@ public func on(eventType: CameraEvents, callback: Callback1Argument<SmoothZoomIn
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |eventType|[CameraEvents](#enum-cameraevents)|是|-|监听事件，必须为SmoothZoomInfoAvailable，session创建成功之后可监听该接口。|
-|callback|[Callback1Argument](../arkinterop/cj-api-callback_invoke.md#class-callback1argument)\<[SmoothZoomInfo](#class-smoothzoominfo)>|是|-|回调函数，用于获取平滑变焦状态变化信息。|
+|callback|[Callback1Argument](../arkinterop/cj-api-callback_invoke.md#class-callback1argument)\<[SmoothZoomInfo](#class-smoothzoominfo)>|是|-|回调函数，用于获取当前平滑变焦状态。|
 
 **异常：**
 
@@ -8449,27 +8463,26 @@ public func on(eventType: CameraEvents, callback: Callback1Argument<SmoothZoomIn
 
 import kit.CameraKit.*
 import ohos.callback_invoke.*
-import ohos.business_exception.*
 import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
-try {
-    // 此处代码可添加在依赖项定义中
-    class SmoothZoomInfoAvailableCallback <: Callback1Argument<SmoothZoomInfo> {
-        public static var invoked = false
+// 此处代码可添加在依赖项定义中
+class SmoothZoomInfoAvailableCallback6 <: Callback1Argument<SmoothZoomInfo> {
+    public static var invoked = false
 
-        public func invoke(err: ?BusinessException, info: SmoothZoomInfo) {
-            Hilog.info(0, "AppLogCj", "[multimedia_camera | SmoothZoomInfoAvailable Callback]: info: ${info.duration}")
+    public func invoke(err: ?BusinessException, info: SmoothZoomInfo) {
+        Hilog.info(0, "AppLogCj", "[multimedia_camera | SmoothZoomInfoAvailable Callback]: info: ${info.duration}")
 
-            invoked = true
-        }
+        invoked = true
     }
+}
 
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+try {
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let videoSession = cameraManager.createSession(SceneMode.NormalVideo) as VideoSession
     let session = videoSession.getOrThrow()
-    let callback = SmoothZoomInfoAvailableCallback()
+    let callback = SmoothZoomInfoAvailableCallback6()
     session.on(CameraEvents.SmoothZoomInfoAvailable, callback)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
@@ -8496,7 +8509,7 @@ public func preconfig(
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |preconfigType|[PreconfigType](#enum-preconfigtype)|是|-|指定配置预期分辨率。|
-|preconfigRatio|[PreconfigRatio](#enum-preconfigratio)|否|PreconfigRatio.PreconfigRatio_16_9|**命名参数。** 可选画幅比例。|
+|preconfigRatio|[PreconfigRatio](#enum-preconfigratio)|否|PreconfigRatio.PreconfigRatio_16_9|**命名参数。** 可选画幅比例，默认为16:9。|
 
 **异常：**
 
@@ -8518,7 +8531,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let cameraManager = getCameraManager(ctx)
     let videoSession = cameraManager.createSession(SceneMode.NormalVideo) as VideoSession
     let session = videoSession.getOrThrow()
@@ -8759,7 +8772,7 @@ public operator func !=(other: CameraEvents): Bool
 
 |类型|说明|
 |:----|:----|
-|Bool|true表示相等，false表示不相等。|
+|Bool|true表示不相等，false表示相等。|
 
 ### func ==(CameraEvents)
 
@@ -8767,7 +8780,7 @@ public operator func !=(other: CameraEvents): Bool
 public operator func ==(other: CameraEvents): Bool
 ```
 
-**功能：** 判断两个枚举值是否不相等。
+**功能：** 判断两个枚举值是否相等。
 
 **参数：**
 
@@ -8779,7 +8792,7 @@ public operator func ==(other: CameraEvents): Bool
 
 |类型|说明|
 |:----|:----|
-|Bool|true表示不相等，false表示相等。|
+|Bool|true表示相等，false表示不相等。|
 
 ## enum CameraFormat
 
@@ -8795,7 +8808,7 @@ public enum CameraFormat {
 }
 ```
 
-**功能：** 输出格式。
+**功能：** 枚举，输出格式。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -8904,7 +8917,7 @@ public operator func !=(other: CameraFormat): Bool
 public operator func ==(other: CameraFormat): Bool
 ```
 
-**功能：** 判断两个枚举值是否不相等。
+**功能：** 判断两个枚举值是否相等。
 
 **参数：**
 
@@ -8916,7 +8929,7 @@ public operator func ==(other: CameraFormat): Bool
 
 |类型|说明|
 |:----|:----|
-|Bool|两个枚举值不相等返回true，否则返回false。|
+|Bool|两个枚举值相等返回true，否则返回false。|
 
 ### func toString()
 
@@ -8947,7 +8960,7 @@ public enum CameraPosition {
 }
 ```
 
-**功能：** 相机位置。
+**功能：** 枚举，相机位置。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -8988,7 +9001,7 @@ CameraPositionFront
 CameraPositionUnspecified
 ```
 
-**功能：** 相机位置未指定。
+**功能：** 相对于设备屏幕没有固定的朝向的相机
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -9020,7 +9033,7 @@ public operator func !=(other: CameraPosition): Bool
 public operator func ==(other: CameraPosition): Bool
 ```
 
-**功能：** 判断两个枚举值是否不相等。
+**功能：** 判断两个枚举值是否相等。
 
 **参数：**
 
@@ -9032,7 +9045,7 @@ public operator func ==(other: CameraPosition): Bool
 
 |类型|说明|
 |:----|:----|
-|Bool|两个枚举值不相等返回true，否则返回false。|
+|Bool|两个枚举值相等返回true，否则返回false。|
 
 ### func toString()
 
@@ -9064,7 +9077,7 @@ public enum CameraStatus {
 }
 ```
 
-**功能：** 相机状态。
+**功能：** 枚举，相机状态。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -9149,7 +9162,7 @@ public operator func !=(other: CameraStatus): Bool
 public operator func ==(other: CameraStatus): Bool
 ```
 
-**功能：** 判断两个枚举值是否不相等。
+**功能：** 判断两个枚举值是否相等。
 
 **参数：**
 
@@ -9194,7 +9207,7 @@ public enum CameraType {
 }
 ```
 
-**功能：** 相机类型。
+**功能：** 枚举，相机类型。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -9211,7 +9224,7 @@ public enum CameraType {
 CameraTypeDefault
 ```
 
-**功能：** 相机类型未指定。
+**功能：** 默认相机类型。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -9334,7 +9347,7 @@ public enum ConnectionType {
 }
 ```
 
-**功能：** 相机连接类型。
+**功能：** 枚举，相机连接类型。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -9450,7 +9463,7 @@ public enum ExposureMode {
 }
 ```
 
-**功能：** 曝光模式。
+**功能：** 枚举，曝光模式。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -9563,7 +9576,7 @@ public enum FlashMode {
 }
 ```
 
-**功能：** 闪光灯模式。
+**功能：** 枚举，闪光灯模式。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -9688,7 +9701,7 @@ public enum FocusMode {
 }
 ```
 
-**功能：** 焦距模式。
+**功能：** 枚举，焦距模式。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -9812,7 +9825,7 @@ public enum FocusState {
 }
 ```
 
-**功能：** 焦距状态。
+**功能：** 枚举，焦距状态。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -9924,7 +9937,7 @@ public enum FoldStatus {
 }
 ```
 
-**功能：** 折叠机折叠状态。
+**功能：** 枚举，折叠机折叠状态。+
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -10041,7 +10054,7 @@ public enum ImageRotation {
 }
 ```
 
-**功能：** 图片旋转角度。
+**功能：** 枚举，图片旋转角度。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -10167,7 +10180,7 @@ public enum MetadataObjectType {
 }
 ```
 
-**功能：** metadata流。
+**功能：** 枚举，metadata流。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -10184,7 +10197,7 @@ public enum MetadataObjectType {
 FaceDetection
 ```
 
-**功能：** metadata对象类型，用于人脸检测。检测点应在0-1坐标系内，该坐标系左上角为(0.0，0.0)，右下角为(1.0，1.0)。此坐标系以设备充电口在右侧时的横向设备方向为基准。例如应用的预览界面布局以设备充电口在下侧时的竖向方向为基准，布局宽高为(w，h)， 返回点为(x，y)，则转换后的坐标点为(1.0-y，x)。
+**功能：** metadata对象类型，用于人脸检测。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -10259,7 +10272,7 @@ public enum PreconfigRatio {
 }
 ```
 
-**功能：** 提供预配置的分辨率比例。
+**功能：** 枚举，提供预配置的分辨率比例。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -10376,7 +10389,7 @@ public enum PreconfigType {
 }
 ```
 
-**功能：** 提供预配置的类型。
+**功能：** 枚举，提供预配置的类型。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -10504,7 +10517,7 @@ public enum QualityLevel {
 }
 ```
 
-**功能：** 图片质量。
+**功能：** 枚举，图片质量。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -10620,7 +10633,7 @@ public enum SceneMode {
 }
 ```
 
-**功能：** 相机支持模式。
+**功能：** 枚举，相机模式。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -10822,7 +10835,7 @@ public enum TorchMode {
 }
 ```
 
-**功能：** 手电筒模式。
+**功能：** 枚举，手电筒模式。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -10839,7 +10852,7 @@ public enum TorchMode {
 Auto
 ```
 
-**功能：** 自动模式。
+**功能：** 自动模式，系统根据环境自动调节手电筒亮度。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -10937,7 +10950,7 @@ public enum VideoCodecType {
 }
 ```
 
-**功能：** 视频编码类型。
+**功能：** 枚举，视频编码类型。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -11043,7 +11056,7 @@ public enum VideoStabilizationMode {
 }
 ```
 
-**功能：** 视频防抖模式。
+**功能：** 枚举，视频防抖模式。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -11060,7 +11073,7 @@ public enum VideoStabilizationMode {
 Auto
 ```
 
-**功能：** 自动进行选择。
+**功能：** 自动进行选择防抖算法。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -11084,7 +11097,7 @@ High
 Low
 ```
 
-**功能：** 关闭视频防抖功能。
+**功能：** 使用基础防抖算法。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 

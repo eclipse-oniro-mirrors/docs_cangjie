@@ -1,6 +1,6 @@
 # ohos.multimedia.media（媒体服务）
 
-媒体服务模块为开发者提供一套简单且易于理解的接口，使得开发者能够方便接入系统并使用系统的媒体资源。
+media模块为开发者提供一套简单且易于理解的接口，使得开发者能够方便接入系统并使用系统的媒体资源。
 
 媒体子系统包含了音视频相关媒体业务，提供以下常用功能：
 
@@ -42,7 +42,7 @@ public func createAVImageGenerator(): AVImageGenerator
 
 |类型|说明|
 |:----|:----|
-|[AVImageGenerator](#class-avimagegenerator)|视频缩略图获取类。|
+|[AVImageGenerator](#class-avimagegenerator)|返回AVImageGenerator实例。|
 
 **异常：**
 
@@ -97,7 +97,7 @@ public class AVFileDescriptor {
 public var fd: Int32
 ```
 
-**功能：** 资源句柄。
+**功能：** 资源句柄，通过[getRawFd](../LocalizationKit/cj-apis-resource_manager.md#func-getrawfdstring)获取，也可以通过[open](../CoreFileKit/cj-apis-file_fs.md#static-func-openstring-int64)获取。
 
 **类型：** Int32
 
@@ -159,7 +159,7 @@ public init(
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|fd|Int32|是|-|资源句柄，通过[resourceManager.getRawFd](../LocalizationKit/cj-apis-resource_manager.md#func-getrawfdstring)获取。|
+|fd|Int32|是|-|资源句柄，通过[getRawFd](../LocalizationKit/cj-apis-resource_manager.md#func-getrawfdstring)获取，也可以通过[open](../CoreFileKit/cj-apis-file_fs.md#static-func-openstring-int64)获取。|
 |offset|Int64|否|0| **命名参数。** 资源偏移量，需要基于预置资源的信息输入，非法值会造成字幕频资源解析错误。|
 |length|Int64|否|-1| **命名参数。** 资源长度，默认值为文件中从偏移量开始的剩余字节，需要基于预置资源的信息输入，非法值会造成字幕频资源解析错误。|
 
@@ -183,9 +183,13 @@ public mut prop fdSrc: AVFileDescriptor
 
 **功能：** 媒体文件描述，通过该属性设置数据源。
 
+使用示例：
+
+假设一个连续存储的媒体文件，地址偏移：0，字节长度：100。其文件描述为AVFileDescriptor { fd = 资源句柄; offset = 0; length = 100; }。
+
 > **说明：**
 >
-> 将资源句柄（fd）传递给AVImageGenerator 实例之后，请不要通过该资源句柄做其他读写操作，包括但不限于将同一个资源句柄传递给多个AVPlayer / AVMetadataExtractor / AVImageGenerator / AVTranscoder。同一时间通过同一个资源句柄读写文件时存在竞争关系，将导致视频缩略图数据获取异常。
+> - 将资源句柄（fd）传递给AVImageGenerator实例之后，不允许通过该资源句柄做其他读写操作，包括但不限于将同一个资源句柄传递给多个AVPlayer/AVMetadataExtractor/AVImageGenerator/AVTranscoder。同一时间通过同一个资源句柄读写文件时存在竞争关系，将导致视频缩略图数据获取异常。
 
 **类型：** [AVFileDescriptor](#class-avfiledescriptor)
 
@@ -258,8 +262,8 @@ try {
     let queryOption = AVImageQueryOptions.AvImageQueryNextSync
     let param = PixelMapParams(width: 300, height: 300)
     let generator = createAVImageGenerator()
-    let abilityContext = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-    let rawFd = Global.getResourceManager().getRawFd("trailer.mp4")    // 请替换您的资源路径，获取文件路径参考本文使用说明
+    let abilityContext = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+    let rawFd = abilityContext.resourceManager.getRawFd("trailer.mp4")    // 请替换您的资源路径，获取文件路径参考本文使用说明
     generator.fdSrc = AVFileDescriptor(rawFd.fd, offset: rawFd.offset, length: rawFd.length)
     let pic = generator.fetchFrameByTime(timeUs, queryOption, param)
     generator.release()
@@ -305,8 +309,8 @@ try {
     let queryOption = AVImageQueryOptions.AvImageQueryNextSync
     let param = PixelMapParams(width: 300, height: 300)
     let generator = createAVImageGenerator()
-    let abilityContext = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
-    let rawFd = abilityContext.getResourceManager().getRawFd("trailer.mp4")
+    let abilityContext = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+    let rawFd = abilityContext.resourceManager.getRawFd("trailer.mp4")
     generator.fdSrc = AVFileDescriptor(rawFd.fd, offset:rawFd.offset, length:rawFd.length)
     let pic = generator.fetchFrameByTime(timeUs, queryOption, param)
     generator.release()
@@ -337,7 +341,7 @@ public class PixelMapParams {
 public var height: Int32
 ```
 
-**功能：** 输出的缩略图高度。
+**功能：** 输出的缩略图高度。应保证大于0且不大于原始视频高度。否则返回的缩略图不会进行缩放。
 
 **类型：** Int32
 
@@ -353,7 +357,7 @@ public var height: Int32
 public var width: Int32
 ```
 
-**功能：** 输出的缩略图宽度。
+**功能：** 输出的缩略图宽度。应保证大于0且不大于原始视频宽度。否则返回的缩略图不会进行缩放。
 
 **类型：** Int32
 
@@ -394,7 +398,9 @@ public enum AVImageQueryOptions <: Equatable<AVImageQueryOptions> & ToString {
 }
 ```
 
-**功能：** 需要获取的缩略图时间点与视频帧的对应关系。<br/>在获取视频缩略图时，传入的时间点与实际取得的视频帧所在时间点不一定相等，需要指定传入的时间点与实际取得的视频帧的时间关系。
+**功能：** 需要获取的缩略图时间点与视频帧的对应关系。
+
+在获取视频缩略图时，传入的时间点与实际取得的视频帧所在时间点不一定相等，需要指定传入的时间点与实际取得的视频帧的时间关系。
 
 **系统能力：** SystemCapability.Multimedia.Media.AVImageGenerator
 

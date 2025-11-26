@@ -116,7 +116,7 @@ public func radius(value: ?Array<Length>): This
 ### func radius(?Array\<(Length, Length)>)
 
 ```cangjie
-public func radius(radiusArray: ?Array<(Length, Length)>): This
+public func radius(value: ?Array<(Length, Length)>): This
 ```
 
 **功能：** 设置圆角半径大小，取值范围≥0。异常值按照初始值处理。
@@ -129,7 +129,7 @@ public func radius(radiusArray: ?Array<(Length, Length)>): This
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|radiusArray|?Array\<([Length](./cj-common-types.md#interface-length), [Length](./cj-common-types.md#interface-length))>|是|-|左上、右上、右下、左下圆角宽、高大小。<br>初始值：0。<br>默认单位：vp。|
+|value|?Array\<([Length](./cj-common-types.md#interface-length), [Length](./cj-common-types.md#interface-length))>|是|-|左上、右上、右下、左下圆角宽、高大小。<br>初始值：0。<br>默认单位：vp。|
 
 ## 示例代码
 

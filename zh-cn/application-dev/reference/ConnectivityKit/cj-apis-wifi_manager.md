@@ -1,6 +1,6 @@
 # ohos.wifi_manager（WLAN）
 
-该模块主要提供WLAN基础功能、P2P（peer-to-peer）功能和WLAN消息通知的相应服务，让应用可以通过WLAN和其他设备互联互通。
+wifi_manager模块主要提供WLAN基础功能、P2P（peer-to-peer）功能和WLAN消息通知的相应服务，让应用可以通过WLAN和其他设备互联互通。
 
 ## 导入模块
 
@@ -160,13 +160,13 @@ import ohos.business_exception.BusinessException
 import ohos.callback_invoke.*
 import kit.PerformanceAnalysisKit.Hilog
 
-try {
-    class WifiCallback <: Callback1Argument<Int32> {
-        public func invoke(err: ?BusinessException, arg: Int32) {
-            Hilog.info(0, "test", "invoke success", "")
-        }
+class WifiCallback <: Callback1Argument<Int32> {
+    public func invoke(err: ?BusinessException, arg: Int32) {
+        Hilog.info(0, "test", "invoke success", "")
     }
+}
 
+try {
     let callback = WifiCallback()
     // Register event
     on(WifiScanStateChange, callback)
@@ -221,14 +221,14 @@ import ohos.business_exception.BusinessException
 import ohos.callback_invoke.*
 import kit.PerformanceAnalysisKit.Hilog
 
-try {
-    class WifiCallback <: Callback1Argument<Int32> {
-        public func invoke(err: ?BusinessException, arg: Int32) {
-            Hilog.info(0, "test", "invoke success", "")
-        }
+class WifiCallback1 <: Callback1Argument<Int32> {
+    public func invoke(err: ?BusinessException, arg: Int32) {
+        Hilog.info(0, "test", "invoke success", "")
     }
+}
 
-    let callback = WifiCallback()
+try {
+    let callback = WifiCallback1()
     // Register event
     on(WifiScanStateChange, callback)
     // Unregister event

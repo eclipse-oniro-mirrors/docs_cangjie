@@ -404,7 +404,7 @@ public init(value: ?Array<Float32>)
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|value|?Array\<Float32>|否|-|4x5的滤镜矩阵。<br>初始值：[]|
+|value|?Array\<Float32>|是|-|4x5的滤镜矩阵。<br>初始值：[]|
 
 ### class ImageError
 
@@ -685,7 +685,7 @@ package ohos_app_cangjie_entry
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
 import ohos.i18n.*
-import ohos.resource_manager.*
+import ohos.resource.*
 
 @Entry
 @Component
@@ -739,7 +739,7 @@ package ohos_app_cangjie_entry
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
 import ohos.i18n.*
-import ohos.resource_manager.*
+import ohos.resource.*
 
 @Entry
 @Component
@@ -787,7 +787,7 @@ package ohos_app_cangjie_entry
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
 import ohos.i18n.*
-import ohos.resource_manager.*
+import ohos.resource.*
 
 @Entry
 @Component
@@ -869,7 +869,7 @@ package ohos_app_cangjie_entry
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
 import ohos.i18n.*
-import ohos.resource_manager.*
+import ohos.resource.*
 
 @Entry
 @Component
@@ -908,7 +908,7 @@ package ohos_app_cangjie_entry
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
 import ohos.i18n.*
-import ohos.resource_manager.*
+import ohos.resource.*
 import ohos.arkui.component.ImageFit
 
 @Entry
@@ -947,7 +947,7 @@ package ohos_app_cangjie_entry
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
 import ohos.i18n.*
-import ohos.resource_manager.*
+import ohos.resource.*
 import ohos.arkui.component.ImageFit
 
 @Entry
@@ -981,7 +981,7 @@ package ohos_app_cangjie_entry
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
 import ohos.i18n.*
-import ohos.resource_manager.*
+import ohos.resource.*
 import ohos.arkui.component.ImageFit
 
 @Entry
@@ -1016,7 +1016,7 @@ package ohos_app_cangjie_entry
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
 import ohos.i18n.*
-import ohos.resource_manager.*
+import ohos.resource.*
 
 @Entry
 @Component

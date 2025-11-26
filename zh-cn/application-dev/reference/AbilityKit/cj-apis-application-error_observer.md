@@ -1,6 +1,6 @@
 # ohos.application.error_observer
 
-本模块定义异常监听。
+error_observer模块定义异常监听，可以作为[ErrorManager.on](./cj-apis-app-ability-error_manager.md#static-func-onerrormanagerevent-errorobserver)的入参监听当前应用发生的异常。
 
 ## 导入模块
 
@@ -35,7 +35,7 @@ public class ErrorObject {
 }
 ```
 
-**功能：** 包含了该未被捕获的异常的异常名称、异常信息与栈追踪。
+**功能：** 包含了该未被捕获的异常的异常名称、异常信息与错误堆栈信息。
 
 **系统能力：** SystemCapability.Ability.AbilityRuntime.Core
 
@@ -79,7 +79,7 @@ public let name: String
 public let stack: Option<String>
 ```
 
-**功能：** 包含了该未被捕获的异常的栈追踪。
+**功能：** 包含了该未被捕获的异常的错误堆栈信息。
 
 **类型：** Option\<String>
 
@@ -114,7 +114,7 @@ public class ErrorObserver {
 public var onException: Option <(ErrorObject) -> Unit>
 ```
 
-**功能：** 应用产生异常，上报js层时的回调。
+**功能：** 应用产生异常，上报cangjie层时的回调。
 
 **类型：** Option\<([ErrorObject](#class-errorobject))->Unit>
 
@@ -187,7 +187,7 @@ try {
             }
         })
     )
-    ErrorManager.on(ErrorManagerEvent.Error, observer)
+    let id = ErrorManager.on(ErrorManagerEvent.Error, observer)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }

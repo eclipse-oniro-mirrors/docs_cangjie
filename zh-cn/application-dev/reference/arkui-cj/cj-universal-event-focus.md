@@ -39,7 +39,6 @@ func onFocus(event: ?() -> Unit): T
 |:---|:---|
 |T|返回通用方法接口类型|
 
-
 ## func onBlur(?() -> Unit)
 
 ```cangjie
@@ -63,4 +62,3 @@ func onBlur(event: ?() -> Unit): T
 |类型|说明|
 |:---|:---|
 |T|返回通用方法接口类型|
-

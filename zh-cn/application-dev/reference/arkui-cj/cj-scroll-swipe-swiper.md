@@ -876,6 +876,7 @@ public init()
 ```cangjie
 public func finishAnimation(): Unit
 ```
+
 **功能：** 停止播放动画。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full

@@ -5,13 +5,6 @@
     - 快速入门
         - [开发准备](cj-start/start/quick-start/cj-quick-start-preparations.md)
         - [构建第一个仓颉应用](cj-start/start/quick-start/cj-quick-start-first-cangjie-app.md)
-        - [构建第一个仓颉与ArkTS混合应用](cj-start/start/quick-start/cj-quick-start-first-cangjie-hybrid-app.md)
-        - [在已有ArkTS工程中增量使用仓颉](cj-start/start/quick-start/cj-quick-start-first-cangjie-hybrid-module.md)
-        - [仓颉调用ArkTS三方模块](cj-start/start/quick-start/cj-quick-start-dts2cj-plugin-usage.md)
-        - [仓颉调用模块内cpp文件](cj-start/start/quick-start/cj-quick-start-cangjie-module-cpp.md)
-    - ArkTS与仓颉互操作
-        - [在ArkTS应用中使用仓颉模块](cj-start/arkts-cj/cj-cangjie-in-arkts.md)
-        - [在仓颉应用中使用ArkTS的API](cj-start/arkts-cj/cj-arktsapi-in-cangjie.md)
     - 开发基础知识
         - 应用程序包基础知识
             - [应用程序包概述](cj-start/basic-knowledge/application-package-overview.md)
@@ -140,6 +133,9 @@
         - 跨语言互操作
             - [仓颉-C 互操作](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/FFI/cangjie-c.md)
             - 仓颉-ArkTS 互操作
+                - 互操作入门
+                    - [构建第一个仓颉与ArkTS混合应用](learn-cj/FFI/cangjie-arkts/cj-quick-start-first-cangjie-hybrid-app.md)
+                    - [在已有ArkTS工程中增量使用仓颉](learn-cj/FFI/cangjie-arkts/cj-quick-start-first-cangjie-hybrid-module.md)
                 - [概述](learn-cj/FFI/cangjie-arkts/cangjie_arkts_overview.md)
                 - [场景](learn-cj/FFI/cangjie-arkts/interoperability_senario.md)
                     - [ArkTS 应用中使用仓颉](learn-cj/FFI/cangjie-arkts/using_cangjie.md)
@@ -159,6 +155,7 @@
                     - [仓颉访问 ArkTS 数据](learn-cj/FFI/cangjie-arkts/operating_ArkTS_data.md)
                     - [ArkTS 访问仓颉数据](learn-cj/FFI/cangjie-arkts/operating_cangjie_objects.md)
                     - [仓颉多线程中使用互操作](learn-cj/FFI/cangjie-arkts/using_interoperability_lib_multithread.md)
+                    - [仓颉调用ArkTS三方模块](learn-cj/FFI/cangjie-arkts/cj-quick-start-dts2cj-plugin-usage.md)
                 - [仓颉与 ArkTS 互操作辅助库](learn-cj/FFI/cangjie-arkts/auxiliary_lib.md)
                 - [仓颉-ArkTS 互操作开发规范](learn-cj/FFI/cangjie-arkts/interop_guidelines.md)
         - 编译和构建
@@ -506,9 +503,10 @@
         - 网络
             - Connectivity Kit（短距通信服务）
                 - [Connectivity Kit简介](connectivity/cj-connectivity-kit-intro.md)
+                - [Connectivity Kit术语](connectivity/terminology.md)
                 - 蓝牙
                     - [蓝牙服务开发概述](connectivity/bluetooth/cj-bluetooth-overview.md)
-                    - [广播与扫描开发指导](connectivity/bluetooth/cj-ble-development-guide.md)
+                    - [查找设备](connectivity/bluetooth/cj-ble-development-guide.md)
                     - [通用属性协议开发指导](connectivity/bluetooth/cj-gatt-development-guide.md)
             - Network Kit（网络服务）
                 - [Network Kit简介](network/cj-net-mgmt-overview.md)
@@ -742,6 +740,7 @@
                     - [拖拽控制](reference/arkui-cj/cj-universal-attribute-dragcontrol.md)
                     - [安全区域](reference/arkui-cj/cj-universal-attribute-expandsafearea.md)
                     - [组件内容填充方式](reference/arkui-cj/cj-universal-attribute-renderfit.md)
+                    - [触摸热区设置](reference/arkui-cj/cj-universal-attribute-touchtarget.md)
                 - 行列与堆叠
                     - [Flex](reference/arkui-cj/cj-row-column-stack-flex.md)
                     - [Column](reference/arkui-cj/cj-row-column-stack-column.md)

@@ -33,7 +33,6 @@ func position(x!: ?Length, y!: ?Length): T
 |:---|:---|
 |T|返回通用方法接口类型|
 
-
 ## func markAnchor(?Length, ?Length)
 
 ```cangjie
@@ -77,6 +76,34 @@ func offset(x!: ?Length, y!: ?Length): T
 |:---|:---|:---|:---|:---|
 |x|?[Length](./cj-common-types.md#interface-length)|是|-|**命名参数** x轴偏移量|
 |y|?[Length](./cj-common-types.md#interface-length)|是|-|**命名参数** y轴偏移量|
+
+**返回值：**
+
+|类型|说明|
+|:---|:---|
+|T|返回通用方法接口类型|
+
+## func alignRules(?AlignRuleOptions)
+
+```cangjie
+func alignRules(value: ?AlignRuleOptions): T
+```
+
+**功能：** 设置组件的对齐规则。
+
+> **说明：**
+>
+> 仅当父容器为RelativeContainer时生效。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|value|?[AlignRuleOptions](./cj-common-types.md#class-alignruleoptions)|是|-|对齐规则选项<br>初始值：AlignRuleOptions()。|
 
 **返回值：**
 

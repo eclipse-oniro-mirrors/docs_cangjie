@@ -232,7 +232,7 @@ public init(dataSource: IDataSource<T>, itemGenerator!: ItemGeneratorFunc<T>, ke
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |dataSource|[IDataSource](#interface-idatasourcet)\<T>|是|-|LazyForEach数据源，需要开发者实现相关接口。|
-|itemGenerator|[ItemGeneratorFunc](./cj-common-types.md#type-itemgeneratorfunc)\<T>|否|-|子组件生成函数，为数组中的每一个数据项创建一个子组件。lambda函数的第一个泛型参数为数据类型；第二个参数为当前列表项的索引值。|
+|itemGenerator|[ItemGeneratorFunc](./cj-common-types.md#type-itemgeneratorfunc)\<T>|是|-|子组件生成函数，为数组中的每一个数据项创建一个子组件。lambda函数的第一个泛型参数为数据类型；第二个参数为当前列表项的索引值。|
 |keyGenerator|?[KeyGeneratorFunc](./cj-common-types.md#type-keygeneratorfunc)\<T>|否|None|匿名函数，用于键值生成，为给定数组项生成唯一且稳定的键值。|
 
 ## 示例代码

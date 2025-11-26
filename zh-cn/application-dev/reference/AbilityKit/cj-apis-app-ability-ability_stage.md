@@ -1,6 +1,6 @@
 # ohos.app.ability.ability_stage
 
-AbilityStage提供AbilityStage相关的功能，包括AbilityStage的创建、注册等。
+ability_stage模块提供AbilityStage相关的功能，包括AbilityStage的创建、注册等。
 
 ## 导入模块
 
@@ -58,17 +58,11 @@ public mut prop context: AbilityStageContext
 <!-- compile -->
 ```cangjie
 import kit.AbilityKit.*
-import ohos.business_exception.BusinessException
-import kit.PerformanceAnalysisKit.Hilog
 
-try {
-    class MyAbilityStage <: AbilityStage {
-        public override func onCreate(): Unit {
-            let context = this.context
-        }
+class MyAbilityStage1 <: AbilityStage {
+    public override func onCreate(): Unit {
+        let context = this.context
     }
-} catch (e: BusinessException) {
-    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -96,19 +90,13 @@ public static func registerCreator(moduleName: String, creator: () -> AbilitySta
 <!-- compile -->
 ```cangjie
 import kit.AbilityKit.*
-import ohos.business_exception.BusinessException
-import kit.PerformanceAnalysisKit.Hilog
 
-try {
-    let ENTRY_STAGE_REGISTER_RESULT = AbilityStage.registerCreator("entry", () -> MyAbilityStage)
+let ENTRY_STAGE_REGISTER_RESULT = AbilityStage.registerCreator("entry", { => MyAbilityStage2()})
 
-    class MyAbilityStage <: AbilityStage {
-        public override func onCreate(): Unit {
-            let context = this.context
-        }
+class MyAbilityStage2 <: AbilityStage {
+    public override func onCreate(): Unit {
+        let context = this.context
     }
-} catch (e: BusinessException) {
-    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -118,7 +106,9 @@ try {
 public open func onCreate(): Unit
 ```
 
-**功能：** AbilityStage创建时回调，执行初始化业务逻辑操作。
+**功能：** 在加载Module的第一个Ability实例前，系统会先创建对应的AbilityStage实例，并在AbilityStage创建完成后，自动触发该回调。
+
+开发者可以在该回调中执行Module的初始化操作（如资源预加载、线程创建等）。同步接口，不支持异步回调。
 
 **系统能力：** SystemCapability.Ability.AbilityRuntime.Core
 
@@ -129,16 +119,10 @@ public open func onCreate(): Unit
 <!-- compile -->
 ```cangjie
 import kit.AbilityKit.*
-import ohos.business_exception.BusinessException
-import kit.PerformanceAnalysisKit.Hilog
 
-try {
-    class MyAbilityStage <: AbilityStage {
-        public override func onCreate(): Unit {
-            let context = this.context
-        }
+class MyAbilityStage <: AbilityStage {
+    public override func onCreate(): Unit {
+        let context = this.context
     }
-} catch (e: BusinessException) {
-    Hilog.info(0, "test", "${e.message}")
 }
 ```

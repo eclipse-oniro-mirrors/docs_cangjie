@@ -1,6 +1,6 @@
 # ohos.app.ability.app_recovery
 
-AppRecovery提供AppRecovery相关的功能，包括进程的重启等。
+app_recovery模块提供了应用在故障状态下的恢复能力。
 
 ## 导入模块
 
@@ -35,13 +35,13 @@ public func restartApp(): Unit
 
 按以下规则启动：
 
-如果当前应用前台的Ability支持恢复，则重新拉起该Ability。
+- 如果当前应用前台的Ability支持恢复，则重新拉起该Ability。
 
-如果存在多个支持恢复的Ability处于前台，则只拉起最后一个。
+- 如果存在多个支持恢复的Ability处于前台，则只拉起最后一个。
 
-如果没有Ability处于前台，则不拉起。
+- 如果没有Ability处于前台，则不拉起。
 
-可以配合[ErrorManager](./cj-apis-app-ability-error_manager.md#class-errormanager)相关接口使用。两次重启的间隔应大于一分钟，一分钟之内重复调用此接口只会退出应用不会重启应用。自动重启的行为与主动重启一致。
+- 可以配合[ErrorManager](./cj-apis-app-ability-error_manager.md)相关接口使用。两次重启的间隔应大于一分钟，一分钟之内重复调用此接口只会退出应用不会重启应用。自动重启的行为与主动重启一致。
 
 **系统能力：** SystemCapability.Ability.AbilityRuntime.Core
 

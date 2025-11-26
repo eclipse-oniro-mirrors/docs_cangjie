@@ -88,9 +88,9 @@ public init(width: ?Float64, height: ?Float64, data!: ?Array<UInt8>,
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|width|?Float64|否|-|矩形区域宽度，默认单位为vp。|
-|height|?Float64|否|-|矩形区域高度，默认单位为vp。|
-|data|?Array\<UInt8>|否|-|**命名参数。** 一维数组，保存了相应的颜色数据，数据值范围为0到255。|
+|width|?Float64|是|-|矩形区域宽度，默认单位为vp。|
+|height|?Float64|是|-|矩形区域高度，默认单位为vp。|
+|data|?Array\<UInt8>|是|-|**命名参数。** 一维数组，保存了相应的颜色数据，数据值范围为0到255。|
 |unit|?[LengthMetricsUnit](./cj-common-types.md#enum-lengthmetricsunit)|否|None|**命名参数。** 用来配置ImageData对象的单位模式，配置后无法动态更改，配置方法同[CanvasRenderingContext2D](./cj-canvas-drawing-canvasrenderingcontext2d.md#class-canvasrenderingcontext2d)。|
 
 ### init(?Float64, ?Float64, ?LengthMetricsUnit)
@@ -109,6 +109,6 @@ public init(width: ?Float64, height: ?Float64, unit!: ?LengthMetricsUnit = None)
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|width|?Float64|否|-|矩形区域宽度，默认单位为vp。|
-|height|?Float64|否|-|矩形区域高度，默认单位为vp。|
+|width|?Float64|是|-|矩形区域宽度，默认单位为vp。|
+|height|?Float64|是|-|矩形区域高度，默认单位为vp。|
 |unit|?[LengthMetricsUnit](./cj-common-types.md#enum-lengthmetricsunit)|否|None|**命名参数。** 用来配置ImageData对象的单位模式，配置后无法动态更改，配置方法同[CanvasRenderingContext2D](./cj-canvas-drawing-canvasrenderingcontext2d.md#class-canvasrenderingcontext2d)。|

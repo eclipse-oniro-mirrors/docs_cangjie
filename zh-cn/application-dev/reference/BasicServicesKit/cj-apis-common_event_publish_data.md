@@ -1,6 +1,6 @@
 # ohos.common_event_publish_data
 
-本模块描述公共事件内容和属性。
+common_event_publish_data模块描述公共事件内容和属性。
 
 ## 导入模块
 
@@ -68,7 +68,7 @@ public var bundleName: String
 public var code: Int32
 ```
 
-**功能：** 表示公共事件的结果代码。
+**功能：** 表示发布方传递的公共事件数据（Int32类型）。默认值为0。
 
 **类型：** Int32
 
@@ -84,7 +84,7 @@ public var code: Int32
 public var data: String
 ```
 
-**功能：** 表示公共事件的自定义结果数据。
+**功能：** 表示发布方传递的公共事件数据（string类型）。数据大小不超过64KB。
 
 **类型：** String
 
@@ -100,7 +100,11 @@ public var data: String
 public var isOrdered: Bool
 ```
 
-**功能：** 表示是否是有序事件。
+**功能：** 表示是否是有序事件。默认为false。
+
+- true：有序公共事件，根据订阅者设置的优先级等级，优先将公共事件发送给优先级较高的订阅者，等待其成功接收该公共事件之后再将事件发送给优先级较低的订阅者。如果有多个订阅者具有相同的优先级，则他们将随机接收到公共事件。
+
+- false：无序公共事件，不考虑订阅者是否接收到该事件，也不保证订阅者接收到该事件的顺序与其订阅顺序一致。
 
 **类型：** Bool
 
@@ -116,7 +120,13 @@ public var isOrdered: Bool
 public var isSticky: Bool
 ```
 
-**功能：** 表示是否是粘性事件。仅系统应用或系统服务允许发送粘性事件。
+**功能：** 表示是否是粘性事件。默认为false。
+
+- true：粘性公共事件，能够让订阅者收到在订阅前已经发送的公共事件。
+
+- false：普通公共事件，只能让订阅者收到在订阅后才发送的公共事件。
+
+仅系统应用或系统服务允许发送粘性事件。
 
 **类型：** Bool
 
@@ -132,7 +142,7 @@ public var isSticky: Bool
 public var parameters: HashMap<String, ValueType>
 ```
 
-**功能：** 表示公共事件的附加信息。
+**功能：** 表示发布方传递的公共事件的附加信息。
 
 **类型：** HashMap\<String, ValueType>
 
@@ -183,9 +193,9 @@ public init(
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |bundleName|String|否|""|表示订阅者包名称，只有包名为bundleName的订阅者才能收到该公共事件。|
-|data|String|否|""|表示公共事件的自定义结果数据。|
-|code|Int32|否|0|表示公共事件的结果代码。|
+|data|String|否|""|表示发布方传递的公共事件数据（string类型）。数据大小不超过64KB。|
+|code|Int32|否|0|表示发布方传递的公共事件数据（Int32类型）。默认值为0。|
 |subscriberPermissions|Array\<String>|否|Array\<String>()| **命名参数。** 表示订阅者的权限。|
-|isOrdered|Bool|否|false| **命名参数。** 表示是否是有序事件。|
-|isSticky|Bool|否|false| **命名参数。** 表示是否是粘性事件。仅系统应用或系统服务允许发送粘性事件。|
-|parameters|HashMap\<String, ValueType>|否|HashMap<String, ValueType>()| **命名参数。** 表示公共事件的附加信息|
+|isOrdered|Bool|否|false| **命名参数。** 表示是否是有序事件。默认为false。|
+|isSticky|Bool|否|false| **命名参数。** 表示是否是粘性事件。默认为false。|
+|parameters|HashMap\<String, ValueType>|否|HashMap<String, ValueType>()| **命名参数。** 表示发布方传递的公共事件的附加信息。|

@@ -58,12 +58,6 @@ public func onReady(callback: ?() -> Unit): This
 |:---|:---|:---|:---|:---|
 |callback|?() -> Unit|是|-|事件回调。<br>初始值：{ => }。|
 
-**返回值：**
-
-|类型|说明|
-|:---|:---|
-|This|返回当前组件实例。|
-
 ## 基础类型定义
 
 ### class RenderingContextSettings
@@ -175,7 +169,6 @@ public class CanvasGradient {
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **起始版本：** 22
-
 
 #### func addColorStop(Float64, ?ResourceColor)
 

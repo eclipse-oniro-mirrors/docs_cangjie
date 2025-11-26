@@ -542,6 +542,7 @@ extend UInt32 <: ResourceColor {
     public func toUInt32(): UInt32
 }
 ```
+
 **功能：** 扩展UInt32为ResourceColor子类型。
 
 #### func toUInt32()
@@ -1631,6 +1632,10 @@ public init(pixelMap: ?PixelMap, builder: ?CustomBuilder, extraInfo: ?String)
 ```
 
 **功能：** 创建一个DragItemInfo类型的对象。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
 
 **参数：**
 
@@ -5425,7 +5430,7 @@ public init(
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |modalTransition|?[ModalTransition](./cj-common-types.md#enum-modaltransition)|否|Option.None|**命名参数。** 全屏模态页面的转场方式。|
-|onWillDismiss|?(([DismissContentCoverAction](#class-dismisscontentcoveraction)) -> Unit)|否|Option.None|**命名参数。** 内容覆盖交互式关闭时的回调函数。|
+|onWillDismiss|?([DismissContentCoverAction](#class-dismisscontentcoveraction))-> Unit|否|Option.None|**命名参数。** 内容覆盖交互式关闭时的回调函数。|
 |transition|?[TransitionEffect](./cj-animation-transition.md#class-transitioneffect)|否|Option.None|**命名参数。** 全屏模态页面交互式关闭回调函数。|
 |backgroundColor|?[ResourceColor](./cj-common-types.md#interface-resourcecolor)|否|Option.None|**命名参数。** sheet的背景色。默认值：**Color.White**。|
 |onAppear|?() -> Unit|否|Option.None|**命名参数。** 全模态页面显示（动画结束后）回调函数。|

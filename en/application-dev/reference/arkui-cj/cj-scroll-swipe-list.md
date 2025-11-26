@@ -159,7 +159,7 @@ public func edgeEffect(value: ?EdgeEffect): This
 public func lanes(value: ?Int32): This
 ```
 
-**Function:** Sets the number of columns or rows in the list. When set to `gutter`, it represents the gap between columns. Takes effect when the number of columns is greater than 1.
+**Function:** Sets the number of columns or rows in the list.
 
 **System Capability:** SystemCapability.ArkUI.ArkUI.Full
 
@@ -177,7 +177,7 @@ public func lanes(value: ?Int32): This
 public func lanes(minLength!: ?Length, maxLength!: ?Length): This
 ```
 
-**Function:** Sets the number of columns or rows in the list. When set to `gutter`, it represents the gap between columns. Takes effect when the number of columns is greater than 1.
+**Function:** Sets the number of columns or rows in the list.
 
 **System Capability:** SystemCapability.ArkUI.ArkUI.Full
 

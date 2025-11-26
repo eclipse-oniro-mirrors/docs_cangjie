@@ -1,6 +1,6 @@
 # 请求动画绘制帧率
 
-在应用开发中，[属性动画](../reference/arkui-cj/cj-animation-animation.md)和[显式动画](../reference/arkui-cj/cj-animation-animateto.md)能够使用可选参数[ExpectedFrameRateRange](../reference/arkui-cj/cj-animation-animateto.md#expectedframeraterange)，为不同的动画配置不同的期望绘制帧率。
+在应用开发中，[属性动画](../reference/arkui-cj/cj-animation-animation.md)和[显式动画](../reference/arkui-cj/cj-apis-uicontext-uicontext.md)能够使用可选参数[ExpectedFrameRateRange](./cj-common-types.md#class-expectedframeraterange)，为不同的动画配置不同的期望绘制帧率。
 
 ## 请求属性动画的绘制帧率
 

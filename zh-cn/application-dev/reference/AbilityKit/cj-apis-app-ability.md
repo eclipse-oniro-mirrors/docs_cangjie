@@ -1,6 +1,6 @@
 # ohos.app.ability
 
-Ability模块提供了包含BaseContext类的定义。
+ability模块提供了包含BaseContext类的定义。
 
 ## 导入模块
 
@@ -33,7 +33,7 @@ public abstract class BaseContext {
 }
 ```
 
-**功能：** 提供ability或application的上下文的能力。
+**功能：** 所有Context类型的父类。
 
 **系统能力：** SystemCapability.Ability.AbilityRuntime.Core
 
@@ -60,9 +60,11 @@ public let stageMode: Bool
 <!-- compile -->
 ```cangjie
 import kit.AbilityKit.*
+import kit.ArkUI.WindowStage
 
 class MyUIAbility <: UIAbility {
     public override func onWindowStageCreate(windowStage: WindowStage): Unit {
           let isStageMode = this.context.stageMode
     }
 }
+```

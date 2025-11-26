@@ -1,6 +1,7 @@
 # ohos.app.ability.dialog_request
 
-DialogRequest提供对话框请求相关的能力，包括请求结果和结果码等。
+dialog_request模块用于处理模态弹框的能力，包括获取RequestInfo（用于绑定模态弹框）、获取RequestCallback（用于设置结果）。
+模态弹框是指一个系统弹框，该弹框会拦截弹框之下的页面的鼠标、键盘、触屏等事件。销毁该弹框后，才能对页面进行操作。
 
 ## 导入模块
 
@@ -34,7 +35,7 @@ public class RequestResult {
 }
 ```
 
-**功能：** 请求结果，包含结果码和Want信息。
+**功能：** 模态弹框请求结果，包含结果码ResultCode和请求结果ResultWant。
 
 **系统能力：** SystemCapability.Ability.AbilityRuntime.Core
 
@@ -46,7 +47,7 @@ public class RequestResult {
 public var result: ResultCode
 ```
 
-**功能：** 结果码。
+**功能：** 表示结果码。
 
 **类型：** [ResultCode](#enum-resultcode)
 
@@ -62,7 +63,7 @@ public var result: ResultCode
 public var want: Want
 ```
 
-**功能：** Want信息。
+**功能：** 表示Want类型信息，如ability名称，包名等。
 
 **类型：** [Want](./cj-apis-app-ability-want.md#class-want)
 
@@ -82,7 +83,7 @@ public enum ResultCode {
 }
 ```
 
-**功能：** 结果码。
+**功能：** 模态弹框请求结果码。
 
 **系统能力：** SystemCapability.Ability.AbilityRuntime.Core
 
@@ -94,7 +95,7 @@ public enum ResultCode {
 ResultCancel
 ```
 
-**功能：** 取消。
+**功能：** 表示失败。
 
 **系统能力：** SystemCapability.Ability.AbilityRuntime.Core
 
@@ -106,7 +107,7 @@ ResultCancel
 ResultOk
 ```
 
-**功能：** 成功。
+**功能：** 表示成功。
 
 **系统能力：** SystemCapability.Ability.AbilityRuntime.Core
 

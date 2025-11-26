@@ -138,10 +138,9 @@ public func off(sensorType: SensorId, callback!: ?CallbackObject = None): Unit
 
 **参数：**
 
-| 参数名        | 类型                                                                                 | 必填  | 默认值  | 说明                                          |
-|:---------- |:---------------------------------------------------------------------------------- |:--- |:---- |:------------------------------------------- |
-| sensorType | [SensorId](#enum-sensorid)                                                         | 是   | -    | 传感器类型。                                      |
-| callback   | ?[CallbackObject](../arkinterop/cj-api-callback_invoke.md#class-callbackobject) | 否   | None | **命名参数。** 回调函数，异步上报的传感器数据，每种传感器类型对应的数据类型不同。 |
+| 参数名 | 类型 | 必填  | 默认值  | 说明 |
+|:---------- |:--- |:--- |:---- |:----- |
+| sensorType | [SensorId](#enum-sensorid)| 是   | -    | 传感器类型。| callback   | ?[CallbackObject](../arkinterop/cj-api-callback_invoke.md#class-callbackobject) | 否   | None | **命名参数。** 需要取消订阅的回调函数，若无此参数，则取消订阅当前类型的所有回调函数。 |
 
 **异常：**
 
@@ -198,11 +197,11 @@ public func on<T>(sensorType: SensorId, callback: Callback1Argument<T>, option!:
 
 **参数：**
 
-| 参数名        | 类型                                                                                          | 必填  | 默认值  | 说明                                  |
-|:---------- |:------------------------------------------------------------------------------------------- |:--- |:---- |:----------------------------------- |
-| sensorType | [SensorId](#enum-sensorid)                                                                  | 是   | -    | 传感器类型。                              |
-| callback   | [Callback1Argument](../arkinterop/cj-api-callback_invoke.md#class-callback1argument)\<T> | 是   | -    | 回调函数。                               |
-| option     | ?[Options](#class-options)                                                                  | 否   | None | 可选参数列表，用于设置传感器上报频率，默认值为200000000ns。 |
+| 参数名        | 类型 | 必填  | 默认值  | 说明 |
+|:---------- |:--------- |:--- |:---- |:---- |
+| sensorType | [SensorId](#enum-sensorid) | 是   | -    | 传感器类型。|
+| callback   | [Callback1Argument](../arkinterop/cj-api-callback_invoke.md#class-callback1argument)\<T> | 是   | -    | 回调函数。|
+| option     | ?[Options](#class-options) | 否   | None | 可选参数列表，用于设置传感器上报频率，默认值为200000000ns。 |
 
 **异常：**
 
@@ -255,8 +254,7 @@ public func once<T>(sensorType: SensorId, callback: Callback1Argument<T>): Unit 
 
 **参数：**
 
-| 参数名        | 类型                                                                                          | 必填  | 默认值 | 说明                                |
-|:---------- |:------------------------------------------------------------------------------------------- |:--- |:--- |:--------------------------------- |
+| 参数名        | 类型 | 必填  | 默认值 | 说明 | |
 | sensorType | [SensorId](#enum-sensorid)                                                                  | 是   | -   | 传感器类型。                            |
 | callback   | [Callback1Argument](../arkinterop/cj-api-callback_invoke.md#class-callback1argument)\<T> | 是   | -   | 回调函数，异步上报的传感器数据，每种传感器类型对应的数据类型不同。 |
 
@@ -306,7 +304,7 @@ public class AccelerometerResponse <: Response {
 }
 ```
 
-**功能：** 加速度传感器数据，继承自[Response](#class-response)。
+**功能：** 加速度传感器数据。
 
 **系统能力：** SystemCapability.Sensors.Sensor
 
@@ -322,7 +320,7 @@ public class AccelerometerResponse <: Response {
 public var x: Float32
 ```
 
-**功能：** 施加在设备x轴的加速度，单位：m/s²。
+**功能：** 施加在设备x轴的线性加速度，单位 : m/s²。
 
 **类型：** Float32
 
@@ -338,7 +336,7 @@ public var x: Float32
 public var y: Float32
 ```
 
-**功能：** 施加在设备y轴的加速度，单位：m/s²。
+**功能：** 施加在设备y轴的线性加速度，单位 : m/s²。
 
 **类型：** Float32
 
@@ -354,7 +352,7 @@ public var y: Float32
 public var z: Float32
 ```
 
-**功能：** 施加在设备z轴的加速度，单位：m/s²。
+**功能：** 施加在设备z轴的线性加速度，单位 : m/s²。
 
 **类型：** Float32
 
@@ -393,7 +391,7 @@ public class AccelerometerUncalibratedResponse <: Response {
 public var biasX: Float32
 ```
 
-**功能：** 施加在设备x轴未校准的加速度偏量，单位：m/s²。
+**功能：** 施加在设备x轴未校准的加速度偏量，单位 : m/s²。
 
 **类型：** Float32
 
@@ -409,7 +407,7 @@ public var biasX: Float32
 public var biasY: Float32
 ```
 
-**功能：** 施加在设备y轴未校准的加速度偏量，单位：m/s²。
+**功能：** 施加在设备y轴未校准的加速度偏量，单位 : m/s²。
 
 **类型：** Float32
 
@@ -425,7 +423,7 @@ public var biasY: Float32
 public var biasZ: Float32
 ```
 
-**功能：** 施加在设备z轴未校准的加速度偏量，单位：m/s²。
+**功能：** 施加在设备z轴未校准的加速度偏量，单位 : m/s²。
 
 **类型：** Float32
 
@@ -441,7 +439,7 @@ public var biasZ: Float32
 public var x: Float32
 ```
 
-**功能：** 施加在设备x轴未校准的加速度，单位：m/s²。
+**功能：** 施加在设备x轴未校准的加速度，单位 : m/s²。
 
 **类型：** Float32
 
@@ -457,7 +455,7 @@ public var x: Float32
 public var y: Float32
 ```
 
-**功能：** 施加在设备y轴未校准的加速度，单位：m/s²。
+**功能：** 施加在设备y轴未校准的加速度，单位 : m/s²。
 
 **类型：** Float32
 
@@ -473,7 +471,7 @@ public var y: Float32
 public var z: Float32
 ```
 
-**功能：** 施加在设备z轴未校准的加速度，单位：m/s²。
+**功能：** 施加在设备z轴未校准的加速度，单位 : m/s²。
 
 **类型：** Float32
 
@@ -491,7 +489,7 @@ public class AmbientTemperatureResponse <: Response {
 }
 ```
 
-**功能：** 温度传感器数据，继承自[Response](#class-response)。
+**功能：** 温度传感器数据。
 
 **系统能力：** SystemCapability.Sensors.Sensor
 
@@ -525,7 +523,7 @@ public class BarometerResponse <: Response {
 }
 ```
 
-**功能：** 气压计传感器数据，继承自[Response](#class-response)。
+**功能：** 气压计传感器数据。
 
 **系统能力：** SystemCapability.Sensors.Sensor
 
@@ -561,7 +559,7 @@ public class GravityResponse <: Response {
 }
 ```
 
-**功能：** 重力传感器数据，继承自[Response](#class-response)。
+**功能：** 重力传感器数据。
 
 **系统能力：** SystemCapability.Sensors.Sensor
 
@@ -577,7 +575,7 @@ public class GravityResponse <: Response {
 public var x: Float32
 ```
 
-**功能：** 施加在设备x轴的重力加速度，单位：m/s²。
+**功能：** 施加在设备x轴的重力加速度，单位 : m/s²。
 
 **类型：** Float32
 
@@ -593,7 +591,7 @@ public var x: Float32
 public var y: Float32
 ```
 
-**功能：** 施加在设备y轴的重力加速度，单位：m/s²。
+**功能：** 施加在设备y轴的重力加速度，单位 : m/s²。
 
 **类型：** Float32
 
@@ -609,7 +607,7 @@ public var y: Float32
 public var z: Float32
 ```
 
-**功能：** 施加在设备z轴的重力加速度，单位：m/s²。
+**功能：** 施加在设备z轴的重力加速度，单位 : m/s²。
 
 **类型：** Float32
 
@@ -629,7 +627,7 @@ public class GyroscopeResponse <: Response {
 }
 ```
 
-**功能：** 陀螺仪传感器数据，继承自[Response](#class-response)。
+**功能：** 陀螺仪传感器数据。
 
 **系统能力：** SystemCapability.Sensors.Sensor
 
@@ -645,7 +643,7 @@ public class GyroscopeResponse <: Response {
 public var x: Float32
 ```
 
-**功能：** 设备x轴的旋转角速度，单位rad/s。
+**功能：** 设备x轴的旋转角速度，单位rad/s；取值为实际上报物理量。
 
 **类型：** Float32
 
@@ -661,7 +659,7 @@ public var x: Float32
 public var y: Float32
 ```
 
-**功能：** 设备y轴的旋转角速度，单位rad/s。
+**功能：** 设备y轴的旋转角速度，单位rad/s；取值为实际上报物理量。
 
 **类型：** Float32
 
@@ -677,7 +675,7 @@ public var y: Float32
 public var z: Float32
 ```
 
-**功能：** 设备z轴的旋转角速度，单位rad/s。
+**功能：** 设备z轴的旋转角速度，单位rad/s；取值为实际上报物理量。
 
 **类型：** Float32
 
@@ -700,7 +698,7 @@ public class GyroscopeUncalibratedResponse <: Response {
 }
 ```
 
-**功能：** 未校准陀螺仪传感器数据，继承自[Response](#class-response)。
+**功能：** 未校准陀螺仪传感器数据。
 
 **系统能力：** SystemCapability.Sensors.Sensor
 
@@ -814,7 +812,7 @@ public class HallResponse <: Response {
 }
 ```
 
-**功能：** 霍尔传感器数据，继承自[Response](#class-response)。
+**功能：** 霍尔传感器数据。
 
 **系统能力：** SystemCapability.Sensors.Sensor
 
@@ -848,7 +846,7 @@ public class HeartRateResponse <: Response {
 }
 ```
 
-**功能：** 心率传感器数据，继承自[Response](#class-response)。
+**功能：** 心率传感器数据。
 
 **系统能力：** SystemCapability.Sensors.Sensor
 
@@ -882,7 +880,7 @@ public class HumidityResponse <: Response {
 }
 ```
 
-**功能：** 湿度传感器数据，继承自[Response](#class-response)。
+**功能：** 湿度传感器数据。
 
 **系统能力：** SystemCapability.Sensors.Sensor
 
@@ -918,7 +916,7 @@ public class LightResponse <: Response {
 }
 ```
 
-**功能：** 环境光传感器数据，继承自[Response](#class-response)。
+**功能：** 环境光传感器数据。
 
 **系统能力：** SystemCapability.Sensors.Sensor
 
@@ -934,7 +932,7 @@ public class LightResponse <: Response {
 public var colorTemperature:?Float32
 ```
 
-**功能：** 色温（单位：开尔文），可选参数，如果该参数不支持在js层返回未定义，支持则返回正常数值。
+**功能：** 色温（单位：开尔文），可选参数，如果该参数不支持则返回固定值（固定值由传感器自定义），支持则返回正常数值。
 
 **类型：** ?Float32
 
@@ -950,7 +948,7 @@ public var colorTemperature:?Float32
 public var infraredLuminance:?Float32
 ```
 
-**功能：** 红外亮度（单位：cd/m²），可选参数，如果该参数不支持在js层返回未定义，支持则返回正常数值。
+**功能：** 红外亮度（单位：cd/m²），可选参数，如果该参数不支持则返回固定值（固定值由传感器自定义），支持则返回正常数值。
 
 **类型：** ?Float32
 
@@ -986,7 +984,7 @@ public class LinearAccelerometerResponse <: Response {
 }
 ```
 
-**功能：** 线性加速度传感器数据，继承自[Response](#class-response)。
+**功能：** 线性加速度传感器数据。
 
 **系统能力：** SystemCapability.Sensors.Sensor
 
@@ -1002,7 +1000,7 @@ public class LinearAccelerometerResponse <: Response {
 public var x: Float32
 ```
 
-**功能：** 施加在设备x轴的线性加速度，单位：m/s²。
+**功能：** 施加在设备x轴的线性加速度，单位 : m/s²。
 
 **类型：** Float32
 
@@ -1018,7 +1016,7 @@ public var x: Float32
 public var y: Float32
 ```
 
-**功能：** 施加在设备y轴的线性加速度，单位：m/s²。
+**功能：** 施加在设备y轴的线性加速度，单位 : m/s²。
 
 **类型：** Float32
 
@@ -1034,7 +1032,7 @@ public var y: Float32
 public var z: Float32
 ```
 
-**功能：** 施加在设备z轴的线性加速度，单位：m/s²。
+**功能：** 施加在设备z轴的线性加速度，单位 : m/s²。
 
 **类型：** Float32
 
@@ -1054,7 +1052,7 @@ public class MagneticFieldResponse <: Response {
 }
 ```
 
-**功能：** 磁场传感器数据，继承自[Response](#class-response)。
+**功能：** 磁场传感器数据。
 
 **系统能力：** SystemCapability.Sensors.Sensor
 
@@ -1070,7 +1068,7 @@ public class MagneticFieldResponse <: Response {
 public var x: Float32
 ```
 
-**功能：** x轴环境磁场强度，单位：μT。
+**功能：** x轴环境磁场强度，单位 : μT。
 
 **类型：** Float32
 
@@ -1086,7 +1084,7 @@ public var x: Float32
 public var y: Float32
 ```
 
-**功能：** y轴环境磁场强度，单位：μT。
+**功能：** y轴环境磁场强度，单位 : μT。
 
 **类型：** Float32
 
@@ -1102,7 +1100,7 @@ public var y: Float32
 public var z: Float32
 ```
 
-**功能：** z轴环境磁场强度，单位：μT。
+**功能：** z轴环境磁场强度，单位 : μT。
 
 **类型：** Float32
 
@@ -1125,7 +1123,7 @@ public class MagneticFieldUncalibratedResponse <: Response {
 }
 ```
 
-**功能：** 未校准磁场传感器数据，继承自[Response](#class-response)。
+**功能：** 未校准磁场传感器数据。
 
 **系统能力：** SystemCapability.Sensors.Sensor
 
@@ -1141,7 +1139,7 @@ public class MagneticFieldUncalibratedResponse <: Response {
 public var biasX: Float32
 ```
 
-**功能：** x轴未校准环境磁场强度偏量，单位：μT。
+**功能：** x轴未校准环境磁场强度偏量，单位 : μT。
 
 **类型：** Float32
 
@@ -1157,7 +1155,7 @@ public var biasX: Float32
 public var biasY: Float32
 ```
 
-**功能：** y轴未校准环境磁场强度偏量，单位：μT。
+**功能：** y轴未校准环境磁场强度偏量，单位 : μT。
 
 **类型：** Float32
 
@@ -1173,7 +1171,7 @@ public var biasY: Float32
 public var biasZ: Float32
 ```
 
-**功能：** z轴未校准环境磁场强度偏量，单位：μT。
+**功能：** z轴未校准环境磁场强度偏量，单位 : μT。
 
 **类型：** Float32
 
@@ -1189,7 +1187,7 @@ public var biasZ: Float32
 public var x: Float32
 ```
 
-**功能：** x轴未校准环境磁场强度，单位：μT。
+**功能：** x轴未校准环境磁场强度，单位 : μT。
 
 **类型：** Float32
 
@@ -1205,7 +1203,7 @@ public var x: Float32
 public var y: Float32
 ```
 
-**功能：** y轴未校准环境磁场强度，单位：μT。
+**功能：** y轴未校准环境磁场强度，单位 : μT。
 
 **类型：** Float32
 
@@ -1221,7 +1219,7 @@ public var y: Float32
 public var z: Float32
 ```
 
-**功能：** z轴未校准环境磁场强度，单位：μT。
+**功能：** z轴未校准环境磁场强度，单位 : μT。
 
 **类型：** Float32
 
@@ -1241,7 +1239,7 @@ public class Options {
 }
 ```
 
-**功能：** 传感器配置选项。
+**功能：** 设置传感器上报频率。
 
 **系统能力：** SystemCapability.Sensors.Sensor
 
@@ -1253,7 +1251,7 @@ public class Options {
 public var interval: IntervalOption
 ```
 
-**功能：** 传感器上报频率。
+**功能：** 表示传感器的上报频率，默认值为200000000ns。该属性有最小值和最大值的限制，由硬件支持的上报频率决定，当设置频率大于最大值时以最大值上报数据，小于最小值时以最小值上报数据。
 
 **类型：** [IntervalOption](#enum-intervaloption)
 
@@ -1269,7 +1267,7 @@ public var interval: IntervalOption
 public var sensorInfoParam:?SensorInfoParam
 ```
 
-**功能：** 传感器信息参数。
+**功能：** 传感器传入设置参数，可指定deviceId、sensorIndex。
 
 **类型：** ?[SensorInfoParam](#class-sensorinfoparam)
 
@@ -1293,10 +1291,10 @@ public init(interval!: IntervalOption = NormalMode, sensorInfoParam!: ?SensorInf
 
 **参数：**
 
-| 参数名             | 类型                                         | 必填  | 默认值        | 说明       |
-|:--------------- |:------------------------------------------ |:--- |:---------- |:-------- |
-| interval        | [IntervalOption](#enum-intervaloption)     | 否   | NormalMode | 传感器上报频率。 |
-| sensorInfoParam | ?[SensorInfoParam](#class-sensorinfoparam) | 否   | None       | 传感器信息参数。 |
+| 参数名 | 类型 | 必填  | 默认值  | 说明       |
+|:--------------- |:------ |:--- |:---------- |:-------- |
+| interval        | [IntervalOption](#enum-intervaloption)     | 否   | NormalMode | 表示传感器的上报频率，默认值为200000000ns。该属性有最小值和最大值的限制，由硬件支持的上报频率决定，当设置频率大于最大值时以最大值上报数据，小于最小值时以最小值上报数据。 |
+| sensorInfoParam | ?[SensorInfoParam](#class-sensorinfoparam) | 否   | None       | 传感器传入设置参数，可指定deviceId、sensorIndex。 |
 
 ## class OrientationResponse
 
@@ -1308,7 +1306,7 @@ public class OrientationResponse <: Response {
 }
 ```
 
-**功能：** 方向传感器数据，继承自[Response](#class-response)。
+**功能：** 方向传感器数据。
 
 **系统能力：** SystemCapability.Sensors.Sensor
 
@@ -1324,7 +1322,7 @@ public class OrientationResponse <: Response {
 public var alpha: Float32
 ```
 
-**功能：** 设备围绕Z轴的旋转角度，单位：度。
+**功能：** 设备围绕Z轴的旋转角度，单位：度；取值范围为0-360度。
 
 **类型：** Float32
 
@@ -1340,7 +1338,7 @@ public var alpha: Float32
 public var beta: Float32
 ```
 
-**功能：** 设备围绕X轴的旋转角度，单位：度。
+**功能：** 设备围绕X轴的旋转角度，单位：度；取值范围为0-±180度。
 
 **类型：** Float32
 
@@ -1356,7 +1354,7 @@ public var beta: Float32
 public var gamma: Float32
 ```
 
-**功能：** 设备围绕Y轴的旋转角度，单位：度。
+**功能：** 设备围绕Y轴的旋转角度，单位：度；取值范围为0-±90度。
 
 **类型：** Float32
 
@@ -1374,7 +1372,7 @@ public class PedometerDetectionResponse <: Response {
 }
 ```
 
-**功能：** 计步检测传感器数据，继承自[Response](#class-response)。
+**功能：** 计步检测传感器数据。
 
 **系统能力：** SystemCapability.Sensors.Sensor
 
@@ -1408,7 +1406,7 @@ public class PedometerResponse <: Response {
 }
 ```
 
-**功能：** 计步传感器数据，继承自[Response](#class-response)。
+**功能：** 计步传感器数据，。
 
 **系统能力：** SystemCapability.Sensors.Sensor
 
@@ -1442,7 +1440,7 @@ public class ProximityResponse <: Response {
 }
 ```
 
-**功能：** 接近光传感器数据，继承自[Response](#class-response)。
+**功能：** 接近光传感器数据。
 
 **系统能力：** SystemCapability.Sensors.Sensor
 
@@ -1489,7 +1487,7 @@ public open class Response {
 public var accuracy: SensorAccuracy
 ```
 
-**功能：** 传感器数据上报的精度档位值。
+**功能：** 传感器数据上报的精度挡位值。
 
 **类型：** [SensorAccuracy](#enum-sensoraccuracy)
 
@@ -1505,7 +1503,7 @@ public var accuracy: SensorAccuracy
 public var timestamp: Int64
 ```
 
-**功能：** 传感器数据上报的时间戳。
+**功能：** 传感器数据上报的时间戳。从设备开机开始计时到上报数据的时间，单位 : ns。
 
 **类型：** Int64
 
@@ -1526,7 +1524,7 @@ public class RotationVectorResponse <: Response {
 }
 ```
 
-**功能：** 旋转矢量传感器数据，继承自[Response](#class-response)。
+**功能：** 旋转矢量传感器数据。
 
 **系统能力：** SystemCapability.Sensors.Sensor
 
@@ -1542,7 +1540,7 @@ public class RotationVectorResponse <: Response {
 public var w: Float32
 ```
 
-**功能：** 标量。
+**功能：** 标量，描述设备相对于某个参考方向的旋转状态，单位：弧度。
 
 **类型：** Float32
 
@@ -1793,7 +1791,7 @@ public class SensorInfoParam {
 }
 ```
 
-**功能：** 传感器信息参数。
+**功能：** 传感器传入设置参数，多传感器情况下通过deviceId、sensorIndex控制指定传感器。
 
 **系统能力：** SystemCapability.Sensors.Sensor
 
@@ -1805,7 +1803,7 @@ public class SensorInfoParam {
 public var deviceId: Int32
 ```
 
-**功能：** 设备ID。
+**功能：** 设备ID：默认值为-1，表示本地设备，设备ID需通过[getSensorList](#func-getsensorlist)查询或者监听设备上下线接口[on](#func-ontsensorid-callback1argumentt-options-where-t--response)获取。
 
 **类型：** Int32
 
@@ -1821,7 +1819,7 @@ public var deviceId: Int32
 public var sensorIndex: Int32
 ```
 
-**功能：** 传感器索引。
+**功能：** 传感器索引：默认值为0，为设备上的默认传感器，其它传感器ID需通过[getSensorList](#func-getsensorlist)查询或者监听设备上下线接口[on](#func-ontsensorid-callback1argumentt-options-where-t--response)获取。
 
 **类型：** Int32
 
@@ -1847,8 +1845,8 @@ public init(deviceId!: Int32 = -1, sensorIndex!: Int32 = 0)
 
 | 参数名         | 类型    | 必填  | 默认值 | 说明     |
 |:----------- |:----- |:--- |:--- |:------ |
-| deviceId    | Int32 | 否   | - 1 | 设备ID。  |
-| sensorIndex | Int32 | 否   | 0   | 传感器索引。 |
+| deviceId    | Int32 | 否   | - 1 | 设备ID：默认值为-1，表示本地设备，设备ID需通过[getSensorList](#func-getsensorlist)查询或者监听设备上下线接口[on](#func-ontsensorid-callback1argumentt-options-where-t--response)获取。  |
+| sensorIndex | Int32 | 否   | 0   | 传感器索引：默认值为0，为设备上的默认传感器，其它传感器ID需通过[getSensorList](#func-getsensorlist)查询或者监听设备上下线接口[on](#func-ontsensorid-callback1argumentt-options-where-t--response)获取。 |
 
 ## class SignificantMotionResponse
 
@@ -1858,7 +1856,7 @@ public class SignificantMotionResponse <: Response {
 }
 ```
 
-**功能：** 有效运动传感器数据，继承自[Response](#class-response)。
+**功能：** 有效运动传感器数据。
 
 **系统能力：** SystemCapability.Sensors.Sensor
 
@@ -1892,7 +1890,7 @@ public class WearDetectionResponse <: Response {
 }
 ```
 
-**功能：** 佩戴检测传感器数据，继承自[Response](#class-response)。
+**功能：** 佩戴检测传感器数据。
 
 **系统能力：** SystemCapability.Sensors.Sensor
 
@@ -2232,14 +2230,14 @@ import kit.PerformanceAnalysisKit.*
 import ohos.business_exception.BusinessException
 import ohos.callback_invoke.*
 
-class AccelerometerCallback <: Callback1Argument<AccelerometerResponse> {
+class AccelerometerCallback1 <: Callback1Argument<AccelerometerResponse> {
     init() {}
     public func invoke(err: ?BusinessException, arg: AccelerometerResponse): Unit {
         Hilog.info(0, "test", "Accelerometer data: timestamp: ${arg.timestamp}, x: ${arg.x}, y: ${arg.y}, z: ${arg.z}", "")
     }
 }
 
-let callback = AccelerometerCallback()
+let callback = AccelerometerCallback1()
 let options = Options(interval: IntervalOption.SensorNumber(100000000))
 try {
     // 订阅传感器数据
@@ -2514,14 +2512,14 @@ import kit.PerformanceAnalysisKit.*
 import ohos.business_exception.BusinessException
 import ohos.callback_invoke.*
 
-class GyroscopeCallback <: Callback1Argument<GyroscopeResponse> {
+class GyroscopeCallback1 <: Callback1Argument<GyroscopeResponse> {
     init() {}
     public func invoke(err: ?BusinessException, arg: GyroscopeResponse): Unit {
         Hilog.info(0, "test", "Gyroscope data: timestamp: ${arg.timestamp}, x: ${arg.x}, y: ${arg.y}, z: ${arg.z}", "")
     }
 }
 
-let callback = GyroscopeCallback()
+let callback = GyroscopeCallback1()
 let options = Options(interval: IntervalOption.SensorNumber(100000000))
 try {
     // 订阅传感器数据

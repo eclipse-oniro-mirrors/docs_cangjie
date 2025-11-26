@@ -1,6 +1,6 @@
 # ohos.ui_test（UI测试）
 
-ui_test提供模拟UI操作的能力，供开发者在测试场景使用，主要支持如点击、双击、长按、滑动等UI操作能力。
+ui_test模块提供模拟UI操作的能力，供开发者在测试场景使用，主要支持如点击、双击、长按、滑动等UI操作能力。
 
 该模块提供以下功能：
 
@@ -59,7 +59,7 @@ public class Component {}
 public func clearText(): Unit
 ```
 
-**功能：** 清除控件的文本信息，适用于文本框控件。
+**功能：** 清除控件的文本信息，仅针对可编辑的文本组件生效。
 
 **系统能力：** SystemCapability.Test.UiTest
 
@@ -81,10 +81,16 @@ public func clearText(): Unit
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let txt: Component = driver.findComponent(On().text("cangjie")).getOrThrow()
-txt.clearText()
+try {
+    let driver: Driver = Driver.create()
+    let txt: Component = driver.findComponent(On().text("cangjie")).getOrThrow()
+    txt.clearText()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func click()
@@ -115,10 +121,16 @@ public func click(): Unit
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let button: Component = driver.findComponent(On().id("button")).getOrThrow()
-button.click()
+try {
+    let driver: Driver = Driver.create()
+    let button: Component = driver.findComponent(On().id("button")).getOrThrow()
+    button.click()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func doubleClick()
@@ -127,7 +139,7 @@ button.click()
 public func doubleClick(): Unit
 ```
 
-**功能：** 对控件对象进行双击操作。
+**功能：** 控件对象进行双击操作。
 
 **系统能力：** SystemCapability.Test.UiTest
 
@@ -149,10 +161,16 @@ public func doubleClick(): Unit
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let button: Component = driver.findComponent(On().id("button")).getOrThrow()
-button.doubleClick()
+try {
+    let driver: Driver = Driver.create()
+    let button: Component = driver.findComponent(On().id("button")).getOrThrow()
+    button.doubleClick()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func dragTo(Component)
@@ -189,11 +207,17 @@ public func dragTo(target: Component): Unit
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let button: Component = driver.findComponent(On().id("button")).getOrThrow()
-let drag: Component = driver.findComponent(On().text("ohos")).getOrThrow()
-button.dragTo(drag)
+try {
+    let driver: Driver = Driver.create()
+    let button: Component = driver.findComponent(On().id("button")).getOrThrow()
+    let drag: Component = driver.findComponent(On().text("ohos")).getOrThrow()
+    button.dragTo(drag)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getBounds()
@@ -212,7 +236,7 @@ public func getBounds(): Rect
 
 |类型|说明|
 |:----|:----|
-|[Rect](#class-rect)|控件对象的边框信息。|
+|[Rect](#class-rect)|返回控件对象的边框信息。|
 
 **异常：**
 
@@ -230,10 +254,16 @@ public func getBounds(): Rect
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let button: Component = driver.findComponent(On().id("button")).getOrThrow()
-let rect: Rect = button.getBounds()
+try {
+    let driver: Driver = Driver.create()
+    let button: Component = driver.findComponent(On().id("button")).getOrThrow()
+    let rect: Rect = button.getBounds()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getBoundsCenter()
@@ -252,7 +282,7 @@ public func getBoundsCenter(): Point
 
 |类型|说明|
 |:----|:----|
-|[Point](#class-point)|控件对象所占区域的中心点信息。|
+|[Point](#class-point)|返回控件对象所占区域的中心点信息。|
 
 **异常：**
 
@@ -270,10 +300,16 @@ public func getBoundsCenter(): Point
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let button: Component = driver.findComponent(On().id("button")).getOrThrow()
-let point: Point = button.getBoundsCenter()
+try {
+    let driver: Driver = Driver.create()
+    let button: Component = driver.findComponent(On().id("button")).getOrThrow()
+    let point = button.getBoundsCenter()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getDescription()
@@ -292,7 +328,7 @@ public func getDescription(): String
 
 |类型|说明|
 |:----|:----|
-|String|控件的描述信息。|
+|String|返回控件的描述信息。|
 
 **异常：**
 
@@ -310,10 +346,16 @@ public func getDescription(): String
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let button: Component = driver.findComponent(On().id("button")).getOrThrow()
-let des: String = button.getDescription()
+try {
+    let driver: Driver = Driver.create()
+    let button: Component = driver.findComponent(On().id("button")).getOrThrow()
+    let des: String = button.getDescription()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getId()
@@ -332,7 +374,7 @@ public func getId(): String
 
 |类型|说明|
 |:----|:----|
-|String|控件的id值。|
+|String|返回控件的id值。|
 
 **异常：**
 
@@ -350,10 +392,16 @@ public func getId(): String
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let button: Component = driver.findComponent(On().id("button")).getOrThrow()
-let id: String = button.getId()
+try {
+    let driver: Driver = Driver.create()
+    let button: Component = driver.findComponent(On().id("button")).getOrThrow()
+    let id: String = button.getId()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getText()
@@ -372,7 +420,7 @@ public func getText(): String
 
 |类型|说明|
 |:----|:----|
-|String|控件的文本信息。|
+|String|返回控件的文本信息。|
 
 **异常：**
 
@@ -390,10 +438,16 @@ public func getText(): String
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let button: Component = driver.findComponent(On().id("button")).getOrThrow()
-let text: String = button.getText()
+try {
+    let driver: Driver = Driver.create()
+    let button: Component = driver.findComponent(On().id("button")).getOrThrow()
+    let text: String = button.getText()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getType()
@@ -412,7 +466,7 @@ public func getType(): String
 
 |类型|说明|
 |:----|:----|
-|String|控件的类型。|
+|String|返回控件的类型。|
 
 **异常：**
 
@@ -430,10 +484,16 @@ public func getType(): String
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let button: Component = driver.findComponent(On().id("button")).getOrThrow()
-let btype: String = button.getType()
+try {
+    let driver: Driver = Driver.create()
+    let button: Component = driver.findComponent(On().id("button")).getOrThrow()
+    let btype: String = button.getType()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func inputText(String)
@@ -442,7 +502,7 @@ let btype: String = button.getType()
 public func inputText(text: String): Unit
 ```
 
-**功能：** 向控件中输入文本，适用于文本框控件。
+**功能：** 清空组件内原有文本并输入指定文本内容，仅针对可编辑的文本组件生效。
 
 **系统能力：** SystemCapability.Test.UiTest
 
@@ -452,7 +512,7 @@ public func inputText(text: String): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|text|String|是|-|输入的文本信息，当前支持英文和特殊字符。|
+|text|String|是|-|输入的文本信息，当前支持英文、中文和特殊字符。|
 
 **异常：**
 
@@ -470,10 +530,16 @@ public func inputText(text: String): Unit
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let txt: Component = driver.findComponent(On().text("cangjie")).getOrThrow()
-txt.inputText("111")
+try {
+    let driver: Driver = Driver.create()
+    let txt: Component = driver.findComponent(On().text("cangjie")).getOrThrow()
+    txt.inputText("111")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func isCheckable()
@@ -492,7 +558,7 @@ public func isCheckable(): Bool
 
 |类型|说明|
 |:----|:----|
-|Bool|控件对象能否可被勾选属性，true：可被勾选，false：不可被勾选。|
+|Bool|返回控件对象能否可被勾选属性。true：可被勾选。false：不可被勾选。|
 
 **异常：**
 
@@ -510,10 +576,16 @@ public func isCheckable(): Bool
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let button: Component = driver.findComponent(On().id("button")).getOrThrow()
-let c: Bool = button.isCheckable()
+try {
+    let driver: Driver = Driver.create()
+    let button: Component = driver.findComponent(On().id("button")).getOrThrow()
+    let c: Bool = button.isCheckable()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func isChecked()
@@ -532,7 +604,7 @@ public func isChecked(): Bool
 
 |类型|说明|
 |:----|:----|
-|Bool|控件对象被勾选状态，true：被勾选，false：未被勾选。|
+|Bool|返回控件对象被勾选状态。true：被勾选。false：未被勾选。|
 
 **异常：**
 
@@ -550,10 +622,16 @@ public func isChecked(): Bool
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let button: Component = driver.findComponent(On().id("button")).getOrThrow()
-let c2: Bool = button.isChecked()
+try {
+    let driver: Driver = Driver.create()
+    let button: Component = driver.findComponent(On().id("button")).getOrThrow()
+    let c2: Bool = button.isChecked()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func isClickable()
@@ -562,7 +640,7 @@ let c2: Bool = button.isChecked()
 public func isClickable(): Bool
 ```
 
-**功能：** 判断控件对象是否可点击。
+**功能：** 获取控件对象可点击属性。
 
 **系统能力：** SystemCapability.Test.UiTest
 
@@ -572,7 +650,7 @@ public func isClickable(): Bool
 
 |类型|说明|
 |:----|:----|
-|Bool|控件对象是否可点击，true：可点击，false：不可点击。|
+|Bool|返回控件对象是否可点击。true：可点击。false：不可点击。|
 
 **异常：**
 
@@ -590,10 +668,16 @@ public func isClickable(): Bool
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let button: Component = driver.findComponent(On().id("button")).getOrThrow()
-let c: Bool = button.isClickable()
+try {
+    let driver: Driver = Driver.create()
+    let button: Component = driver.findComponent(On().id("button")).getOrThrow()
+    let c: Bool = button.isClickable()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func isEnabled()
@@ -612,7 +696,7 @@ public func isEnabled(): Bool
 
 |类型|说明|
 |:----|:----|
-|Bool|控件使能状态，true：使能，false：未使能。|
+|Bool|返回控件使能状态。true：使能。false：未使能。|
 
 **异常：**
 
@@ -630,10 +714,16 @@ public func isEnabled(): Bool
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let button: Component = driver.findComponent(On().id("button")).getOrThrow()
-let e: Bool = button.isEnabled()
+try {
+    let driver: Driver = Driver.create()
+    let button: Component = driver.findComponent(On().id("button")).getOrThrow()
+    let e: Bool = button.isEnabled()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func isFocused()
@@ -652,7 +742,7 @@ public func isFocused(): Bool
 
 |类型|说明|
 |:----|:----|
-|Bool|控件对象获焦状态，true：获焦，false：未获焦。|
+|Bool|返回控件对象获焦状态。true：获焦。false：未获焦。|
 
 **异常：**
 
@@ -670,10 +760,16 @@ public func isFocused(): Bool
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let button: Component = driver.findComponent(On().id("button")).getOrThrow()
-let f: Bool = button.isFocused()
+try {
+    let driver: Driver = Driver.create()
+    let button: Component = driver.findComponent(On().id("button")).getOrThrow()
+    let f: Bool = button.isFocused()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func isLongClickable()
@@ -682,7 +778,7 @@ let f: Bool = button.isFocused()
 public func isLongClickable(): Bool
 ```
 
-**功能：** 判断控件对象是否可长按点击。
+**功能：** 获取控件对象可长按点击属性。
 
 **系统能力：** SystemCapability.Test.UiTest
 
@@ -692,7 +788,7 @@ public func isLongClickable(): Bool
 
 |类型|说明|
 |:----|:----|
-|Bool|控件对象是否可长按点击，true：可长按点击，false：不可长按点击。|
+|Bool|返回控件对象是否可长按点击。true：可长按点击。false：不可长按点击。|
 
 **异常：**
 
@@ -710,10 +806,16 @@ public func isLongClickable(): Bool
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let button: Component = driver.findComponent(On().id("button")).getOrThrow()
-let c1: Bool = button.isLongClickable()
+try {
+    let driver: Driver = Driver.create()
+    let button: Component = driver.findComponent(On().id("button")).getOrThrow()
+    let c1: Bool = button.isLongClickable()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func isScrollable()
@@ -722,7 +824,7 @@ let c1: Bool = button.isLongClickable()
 public func isScrollable(): Bool
 ```
 
-**功能：** 判断控件对象是否可滑动。
+**功能：** 获取控件对象可滑动属性。
 
 **系统能力：** SystemCapability.Test.UiTest
 
@@ -732,7 +834,7 @@ public func isScrollable(): Bool
 
 |类型|说明|
 |:----|:----|
-|Bool|控件对象是否可滑动，true：可滑动，false：不可滑动。|
+|Bool|返回控件对象是否可滑动。true：可滑动。false：不可滑动。|
 
 **异常：**
 
@@ -750,10 +852,16 @@ public func isScrollable(): Bool
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let button: Component = driver.findComponent(On().id("button")).getOrThrow()
-let s: Bool = button.isScrollable()
+try {
+    let driver: Driver = Driver.create()
+    let button: Component = driver.findComponent(On().id("button")).getOrThrow()
+    let s: Bool = button.isScrollable()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func isSelected()
@@ -772,7 +880,7 @@ public func isSelected(): Bool
 
 |类型|说明|
 |:----|:----|
-|Bool|控件对象被选中状态，true：被选中，false：未被选中。|
+|Bool|返回控件对象被选中状态。true：被选中。false：未被选中。|
 
 **异常：**
 
@@ -790,10 +898,16 @@ public func isSelected(): Bool
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let button: Component = driver.findComponent(On().id("button")).getOrThrow()
-let s1: Bool = button.isSelected()
+try {
+    let driver: Driver = Driver.create()
+    let button: Component = driver.findComponent(On().id("button")).getOrThrow()
+    let s1: Bool = button.isSelected()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func longClick()
@@ -802,7 +916,7 @@ let s1: Bool = button.isSelected()
 public func longClick(): Unit
 ```
 
-**功能：** 对控件对象进行长按操作。
+**功能：** 在目标坐标点长按。
 
 **系统能力：** SystemCapability.Test.UiTest
 
@@ -824,10 +938,16 @@ public func longClick(): Unit
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let button: Component = driver.findComponent(On().id("button")).getOrThrow()
-button.longClick()
+try {
+    let driver: Driver = Driver.create()
+    let button: Component = driver.findComponent(On().id("button")).getOrThrow()
+    button.longClick()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func pinchIn(Float32)
@@ -846,7 +966,7 @@ public func pinchIn(scale: Float32): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|scale|Float32|是|-|指定缩小的比例。|
+|scale|Float32|是|-|指定缩小的比例。取值范围为0~1。|
 
 **异常：**
 
@@ -864,10 +984,16 @@ public func pinchIn(scale: Float32): Unit
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let image: Component = driver.findComponent(On().id("icon")).getOrThrow()
-image.pinchIn(0.5)
+try {
+    let driver: Driver = Driver.create()
+    let image: Component = driver.findComponent(On().id("icon")).getOrThrow()
+    image.pinchIn(0.5)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func pinchOut(Float32)
@@ -886,7 +1012,7 @@ public func pinchOut(scale: Float32): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|scale|Float32|是|-|指定放大的比例。|
+|scale|Float32|是|-|指定放大的比例。取值范围大于1。|
 
 **异常：**
 
@@ -904,10 +1030,16 @@ public func pinchOut(scale: Float32): Unit
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let image: Component = driver.findComponent(On().id("icon")).getOrThrow()
-image.pinchOut(2.5)
+try {
+    let driver: Driver = Driver.create()
+    let image: Component = driver.findComponent(On().id("icon")).getOrThrow()
+    image.pinchOut(2.5)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func scrollSearch(On)
@@ -916,7 +1048,7 @@ image.pinchOut(2.5)
 public func scrollSearch(on: On): ?Component
 ```
 
-**功能：** 在控件上滑动查找目标控件，适用支持滑动的控件。
+**功能：** 在控件上滑动查找目标控件（适用支持滑动的控件）。
 
 **系统能力：** SystemCapability.Test.UiTest
 
@@ -932,7 +1064,7 @@ public func scrollSearch(on: On): ?Component
 
 |类型|说明|
 |:----|:----|
-|?[Component](#class-component)|找到的目标控件对象。|
+|?[Component](#class-component)|返回目标控件对象。|
 
 **异常：**
 
@@ -950,10 +1082,16 @@ public func scrollSearch(on: On): ?Component
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let scrollBar: Component = driver.findComponent(On().onType("Scroll")).getOrThrow()
-let button: Option<Component> = scrollBar.scrollSearch(On().text("1"))
+try {
+    let driver: Driver = Driver.create()
+    let scrollBar: Component = driver.findComponent(On().onType("Scroll")).getOrThrow()
+    let button: Option<Component> = scrollBar.scrollSearch(On().text("1"))
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func scrollToBottom(Int64)
@@ -962,7 +1100,7 @@ let button: Option<Component> = scrollBar.scrollSearch(On().text("1"))
 public func scrollToBottom(speed!: Int64 = 600): Unit
 ```
 
-**功能：** 在控件上滑动到底部，适用支持滑动的控件。
+**功能：** 在控件上滑动到底部（适用支持滑动的控件）。
 
 **系统能力：** SystemCapability.Test.UiTest
 
@@ -972,7 +1110,7 @@ public func scrollToBottom(speed!: Int64 = 600): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|speed|Int64|否|600| **命名参数。** 滑动速率，范围：200-15000，不在范围内设为默认值为600，单位：像素点/秒。|
+|speed|Int64|否|600| **命名参数。** 滑动速率，取值范围为200-40000的整数，默认值为600，不在范围内设为默认值为600，单位：px/s。|
 
 **异常：**
 
@@ -990,10 +1128,16 @@ public func scrollToBottom(speed!: Int64 = 600): Unit
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let scrollBar: Component = driver.findComponent(On().onType("Scroll")).getOrThrow()
-scrollBar.scrollToBottom()
+try {
+    let driver: Driver = Driver.create()
+    let scrollBar: Component = driver.findComponent(On().onType("Scroll")).getOrThrow()
+    scrollBar.scrollToBottom()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func scrollToTop(Int64)
@@ -1002,7 +1146,7 @@ scrollBar.scrollToBottom()
 public func scrollToTop(speed!: Int64 = 600): Unit
 ```
 
-**功能：** 在控件上滑动到顶部，适用支持滑动的控件。
+**功能：** 在控件上滑动到顶部（适用支持滑动的控件）。
 
 **系统能力：** SystemCapability.Test.UiTest
 
@@ -1012,7 +1156,7 @@ public func scrollToTop(speed!: Int64 = 600): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|speed|Int64|否|600| **命名参数。** 滑动速率，范围：200-15000，不在范围内设为默认值为600，单位：像素点/秒。|
+|speed|Int64|否|600| **命名参数。** 滑动速率，取值范围为200-40000的整数，默认值为600，不在范围内设为默认值为600，单位：px/s。|
 
 **异常：**
 
@@ -1030,10 +1174,16 @@ public func scrollToTop(speed!: Int64 = 600): Unit
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let scrollBar: Component = driver.findComponent(On().onType("Scroll")).getOrThrow()
-scrollBar.scrollToTop()
+try {
+    let driver: Driver = Driver.create()
+    let scrollBar: Component = driver.findComponent(On().onType("Scroll")).getOrThrow()
+    scrollBar.scrollToTop()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## class Driver
@@ -1042,7 +1192,7 @@ scrollBar.scrollToTop()
 public class Driver {}
 ```
 
-**功能：** [Driver](#class-driver)类为uitest测试框架的总入口，提供控件匹配、查找、按键注入，坐标点击或滑动，截图等能力。
+**功能：** Driver类为uitest测试框架的总入口，提供控件匹配/查找，按键注入，坐标点击/滑动，截图等能力。
 
 **系统能力：** SystemCapability.Test.UiTest
 
@@ -1082,8 +1232,14 @@ public static func create(): Driver
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
+try {
+    let driver: Driver = Driver.create()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func assertComponentExist(On)
@@ -1137,7 +1293,7 @@ try {
 public func click(x: Int32, y: Int32): Unit
 ```
 
-**功能：** [Driver](#class-driver)对象执行目标坐标点的点击操作。
+**功能：** 在目标坐标点单击。
 
 **系统能力：** SystemCapability.Test.UiTest
 
@@ -1147,8 +1303,8 @@ public func click(x: Int32, y: Int32): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|x|Int32|是|-|以Int32的形式传入目标点的横坐标信息。|
-|y|Int32|是|-|以Int32的形式传入目标点的纵坐标信息。|
+|x|Int32|是|-|以Int32的形式传入目标点的横坐标信息，取值范围：大于等于0的整数。|
+|y|Int32|是|-|以Int32的形式传入目标点的纵坐标信息，取值范围：大于等于0的整数。|
 
 **异常：**
 
@@ -1166,9 +1322,15 @@ public func click(x: Int32, y: Int32): Unit
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-driver.click(100, 100)
+try {
+    let driver: Driver = Driver.create()
+    driver.click(100, 100)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func createUIEventObserver()
@@ -1197,9 +1359,15 @@ public func createUIEventObserver(): UIEventObserver
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let observer: UIEventObserver = driver.createUIEventObserver()
+try {
+    let driver: Driver = Driver.create()
+    let observer: UIEventObserver = driver.createUIEventObserver()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func delayMs(Int32)
@@ -1208,7 +1376,7 @@ let observer: UIEventObserver = driver.createUIEventObserver()
 public func delayMs(duration: Int32): Unit
 ```
 
-**功能：** [Driver](#class-driver)对象在给定的时间内延时。
+**功能：** 在给定的时间内延时。
 
 **系统能力：** SystemCapability.Test.UiTest
 
@@ -1218,7 +1386,7 @@ public func delayMs(duration: Int32): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|duration|Int32|是|-|给定的时间，单位：ms。|
+|duration|Int32|是|-|给定的时间，单位：ms，取值范围：大于等于0的整数。|
 
 **异常：**
 
@@ -1236,9 +1404,15 @@ public func delayMs(duration: Int32): Unit
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-driver.delayMs(1000)
+try {
+    let driver: Driver = Driver.create()
+    driver.delayMs(1000)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func doubleClick(Int32, Int32)
@@ -1247,7 +1421,7 @@ driver.delayMs(1000)
 public func doubleClick(x: Int32, y: Int32): Unit
 ```
 
-**功能：** [Driver](#class-driver) 对象执行目标坐标点的双击操作。
+**功能：** 在目标坐标点双击。
 
 **系统能力：** SystemCapability.Test.UiTest
 
@@ -1257,8 +1431,8 @@ public func doubleClick(x: Int32, y: Int32): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|x|Int32|是|-|以Int32的形式传入目标点的横坐标信息。|
-|y|Int32|是|-|以Int32的形式传入目标点的纵坐标信息。|
+|x|Int32|是|-|以Int32的形式传入目标点的横坐标信息，取值范围：大于等于0的整数。|
+|y|Int32|是|-|以Int32的形式传入目标点的纵坐标信息，取值范围：大于等于0的整数。|
 
 **异常：**
 
@@ -1276,9 +1450,15 @@ public func doubleClick(x: Int32, y: Int32): Unit
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-driver.doubleClick(100, 100)
+try {
+    let driver: Driver = Driver.create()
+    driver.doubleClick(100, 100)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func drag(Int32, Int32, Int32, Int32, Int32)
@@ -1293,7 +1473,7 @@ public func drag(
 ): Unit
 ```
 
-**功能：** [Driver](#class-driver)对象执行从起始坐标到目标坐标的拖拽操作。
+**功能：** 从起始坐标点拖拽至目的坐标点。
 
 **系统能力：** SystemCapability.Test.UiTest
 
@@ -1303,11 +1483,11 @@ public func drag(
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|startx|Int32|是|-|以Int32的形式传入起始点的横坐标信息。|
-|starty|Int32|是|-|以Int32的形式传入起始点的纵坐标信息。|
-|endx|Int32|是|-|以Int32的形式传入目的点的横坐标信息。|
-|endy|Int32|是|-|以Int32的形式传入目的点的纵坐标信息。|
-|speed|Int32|否|600|**命名参数。** 滑动速率，范围：200-15000，不在范围内设为默认值为600，单位：像素点/秒。|
+|startx|Int32|是|-|以Int32的形式传入起始点的横坐标信息，取值范围：大于等于0的整数。|
+|starty|Int32|是|-|以Int32的形式传入起始点的纵坐标信息，取值范围：大于等于0的整数。|
+|endx|Int32|是|-|以Int32的形式传入目的点的横坐标信息，取值范围：大于等于0的整数。
+|endy|Int32|是|-|以Int32的形式传入目的点的纵坐标信息，取值范围：大于等于0的整数。|
+|speed|Int32|否|600|**命名参数。** 滑动速率，取值范围为200-40000的整数，默认值为600，不在范围内设为默认值为600，单位：px/s。|
 
 **异常：**
 
@@ -1325,9 +1505,15 @@ public func drag(
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-driver.drag(100, 100, 200, 200, speed: 600)
+try {
+    let driver: Driver = Driver.create()
+    driver.drag(100, 100, 200, 200, speed: 600)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func findComponent(On)
@@ -1336,7 +1522,7 @@ driver.drag(100, 100, 200, 200, speed: 600)
 public func findComponent(on: On): ?Component
 ```
 
-**功能：** 在[Driver](#class-driver)对象中，根据给出的目标控件属性要求查找目标控件。当UI组件树存在多个满足条件的控件时，会优先返回深度优先搜索到的第一个控件。
+**功能：** 根据给出的目标控件属性要求查找目标控件。
 
 **系统能力：** SystemCapability.Test.UiTest
 
@@ -1352,7 +1538,7 @@ public func findComponent(on: On): ?Component
 
 |类型|说明|
 |:----|:----|
-|?[Component](#class-component)|找到的控件对象。|
+|?[Component](#class-component)|返回控件对象。|
 
 **示例：**
 
@@ -1362,9 +1548,15 @@ public func findComponent(on: On): ?Component
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let button: Option<Component> = driver.findComponent(On().text("next page"))
+try {
+    let driver: Driver = Driver.create()
+    let button: Option<Component> = driver.findComponent(On().text("next page"))
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func findComponents(On)
@@ -1373,7 +1565,7 @@ let button: Option<Component> = driver.findComponent(On().text("next page"))
 public func findComponents(on: On): ?Array<Component>
 ```
 
-**功能：** 在[Driver](#class-driver)对象中，根据给出的目标控件属性要求查找出所有匹配控件，以列表保存。
+**功能：** 根据给出的目标控件属性要求查找出所有匹配控件，以列表保存。
 
 **系统能力：** SystemCapability.Test.UiTest
 
@@ -1389,7 +1581,7 @@ public func findComponents(on: On): ?Array<Component>
 
 |类型|说明|
 |:----|:----|
-|?Array\<[Component](#class-component)>|目标控件的属性要求。|
+|?Array\<[Component](#class-component)>|返回控件对象的列表。|
 
 **异常：**
 
@@ -1407,9 +1599,15 @@ public func findComponents(on: On): ?Array<Component>
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let buttonList: Option<Array<Component>> = driver.findComponents(On().text("next page"))
+try {
+    let driver: Driver = Driver.create()
+    let buttonList: Option<Array<Component>> = driver.findComponents(On().text("next page"))
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func findWindow(WindowFilter)
@@ -1418,7 +1616,7 @@ let buttonList: Option<Array<Component>> = driver.findComponents(On().text("next
 public func findWindow(filter: WindowFilter): ?UiWindow
 ```
 
-**功能：** 通过指定窗口的属性来查找目标窗口。当存在多个满足条件的窗口时，会优先返回最上层且可见的窗口。
+**功能：** 通过指定窗口的属性来查找目标窗口。
 
 **系统能力：** SystemCapability.Test.UiTest
 
@@ -1434,7 +1632,7 @@ public func findWindow(filter: WindowFilter): ?UiWindow
 
 |类型|说明|
 |:----|:----|
-|?[UiWindow](#class-uiwindow)|找到的目标窗口对象。|
+|?[UiWindow](#class-uiwindow)|返回目标窗口对象。|
 
 **异常：**
 
@@ -1452,9 +1650,15 @@ public func findWindow(filter: WindowFilter): ?UiWindow
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let window: Option<UiWindow> = driver.findWindow(WindowFilter(active: true))
+try {
+    let driver: Driver = Driver.create()
+    let window: Option<UiWindow> = driver.findWindow(WindowFilter(active: true))
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func fling(Point, Point, Int32, Int32)
@@ -1463,7 +1667,7 @@ let window: Option<UiWindow> = driver.findWindow(WindowFilter(active: true))
 public func fling(from: Point, to: Point, stepLen: Int32, speed: Int32): Unit
 ```
 
-**功能：** 指定方向和速度，模拟手指滑动后脱离屏幕的快速滑动操作。
+**功能：** 模拟手指滑动后脱离屏幕的快速滑动操作。
 
 **系统能力：** SystemCapability.Test.UiTest
 
@@ -1475,8 +1679,8 @@ public func fling(from: Point, to: Point, stepLen: Int32, speed: Int32): Unit
 |:---|:---|:---|:---|:---|
 |from|[Point](#class-point)|是|-|手指接触屏幕的起始点坐标。|
 |to|[Point](#class-point)|是|-|手指离开屏幕时的坐标点。|
-|stepLen|Int32|是|-|间隔距离，单位：像素点。|
-|speed|Int32|是|-|滑动速率，范围：200-40000，不在范围内设为默认值为600，单位：像素点/秒。|
+|stepLen|Int32|是|-|间隔距离，取值大于等于0的整数，单位：px。|
+|speed|Int32|是|-|滑动速率，取值范围为200-40000的整数，默认值为600，不在范围内设为默认值为600，单位：px/s。|
 
 **异常：**
 
@@ -1494,9 +1698,15 @@ public func fling(from: Point, to: Point, stepLen: Int32, speed: Int32): Unit
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-driver.fling(UiDirection.Down, 10000)
+try {
+    let driver: Driver = Driver.create()
+    driver.fling(UiDirection.Down, 10000)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func fling(UiDirection, Int32)
@@ -1505,7 +1715,7 @@ driver.fling(UiDirection.Down, 10000)
 public func fling(direction: UiDirection, speed: Int32): Unit
 ```
 
-**功能：** 指定方向和速度，模拟手指滑动后脱离屏幕的快速滑动操作。
+**功能：** 指定方向和滑动速率，模拟手指滑动后脱离屏幕的快速滑动操作。
 
 **系统能力：** SystemCapability.Test.UiTest
 
@@ -1516,7 +1726,7 @@ public func fling(direction: UiDirection, speed: Int32): Unit
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |direction|[UiDirection](#enum-uidirection)|是|-|进行抛滑的方向。|
-|speed|Int32|是|-|滑动速率，范围：200-40000，不在范围内设为默认值为600，单位：像素点/秒。|
+|speed|Int32|是|-|滑动速率，取值范围为200-40000的整数，默认值为600，不在范围内设为默认值为600，单位：px/s。|
 
 **异常：**
 
@@ -1534,9 +1744,15 @@ public func fling(direction: UiDirection, speed: Int32): Unit
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-driver.fling(UiDirection.Down, 10000)
+try {
+    let driver: Driver = Driver.create()
+    driver.fling(UiDirection.Down, 10000)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getDisplayDensity()
@@ -1555,7 +1771,7 @@ public func getDisplayDensity(): Point
 
 |类型|说明|
 |:----|:----|
-|[Point](#class-point)|返回当前设备屏幕的分辨率。|
+|[Point](#class-point)|返回Point对象，当前设备屏幕的分辨率为Point.x*Point.y。|
 
 **示例：**
 
@@ -1565,9 +1781,15 @@ public func getDisplayDensity(): Point
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let density = driver.getDisplayDensity()
+try {
+    let driver: Driver = Driver.create()
+    let density = driver.getDisplayDensity()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getDisplayRotation()
@@ -1596,9 +1818,15 @@ public func getDisplayRotation(): DisplayRotation
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let rotation: DisplayRotation = driver.getDisplayRotation()
+try {
+    let driver: Driver = Driver.create()
+    let rotation: DisplayRotation = driver.getDisplayRotation()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getDisplaySize()
@@ -1617,7 +1845,7 @@ public func getDisplaySize(): Point
 
 |类型|说明|
 |:----|:----|
-|[Point](#class-point)|返回当前设备的屏幕大小。|
+|[Point](#class-point)|返回Point对象，当前设备屏幕的大小为Point.x * Point.y。|
 
 **示例：**
 
@@ -1627,9 +1855,15 @@ public func getDisplaySize(): Point
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let size = driver.getDisplaySize()
+try {
+    let driver: Driver = Driver.create()
+    let size = driver.getDisplaySize()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func injectMultiPointerAction(PointerMatrix, Int32)
@@ -1649,13 +1883,13 @@ public func injectMultiPointerAction(pointers: PointerMatrix, speed!: Int32 = 60
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |pointers|[PointerMatrix](#class-pointermatrix)|是|-|滑动轨迹，包括操作手指个数和滑动坐标序列。|
-|speed|Int32|否|600|**命名参数。** 滑动速率，范围：200-15000，不在范围内设为默认值为600，单位：像素点/秒。|
+|speed|Int32|否|600|**命名参数。** 滑动速率，取值范围为200-40000的整数，默认值为600，不在范围内设为默认值为600，单位：px/s。|
 
 **返回值：**
 
 |类型|说明|
 |:----|:----|
-|Bool|返回操作是否成功完成。成功返回true，否则返回false。|
+|Bool|返回操作是否成功完成。true：完成，false：未完成。|
 
 **异常：**
 
@@ -1675,16 +1909,22 @@ public func injectMultiPointerAction(pointers: PointerMatrix, speed!: Int32 = 60
 import ohos.ui_test.Point as PT
 import ohos.ui_test.Driver
 import ohos.ui_test.PointerMatrix
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let pointers: PointerMatrix = PointerMatrix.create(2, 3)
-pointers.setPoint(0, 0, PT(230, 480))
-pointers.setPoint(0, 1, PT(250, 380))
-pointers.setPoint(0, 2, PT(270, 280))
-pointers.setPoint(1, 0, PT(230, 680))
-pointers.setPoint(1, 1, PT(240, 580))
-pointers.setPoint(1, 2, PT(250, 480))
-driver.injectMultiPointerAction(pointers)
+try {
+    let driver: Driver = Driver.create()
+    let pointers: PointerMatrix = PointerMatrix.create(2, 3)
+    pointers.setPoint(0, 0, PT(230, 480))
+    pointers.setPoint(0, 1, PT(250, 380))
+    pointers.setPoint(0, 2, PT(270, 280))
+    pointers.setPoint(1, 0, PT(230, 680))
+    pointers.setPoint(1, 1, PT(240, 580))
+    pointers.setPoint(1, 2, PT(250, 480))
+    let result = driver.injectMultiPointerAction(pointers)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func inputText(Point, String)
@@ -1693,7 +1933,7 @@ driver.injectMultiPointerAction(pointers)
 public func inputText(p: Point, text: String): Unit
 ```
 
-**功能：** 在指定坐标点输入文本。
+**功能：** 在指定坐标点输入文本，不清空组件内原有文本，直接在坐标处追加输入。
 
 **系统能力：** SystemCapability.Test.UiTest
 
@@ -1704,7 +1944,7 @@ public func inputText(p: Point, text: String): Unit
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |p|[Point](#class-point)|是|-|输入文本的坐标点。|
-|text|String|是|-|输入的文本信息。|
+|text|String|是|-|输入的文本信息，当前支持英文、中文和特殊字符。|
 
 **异常：**
 
@@ -1741,7 +1981,7 @@ try {
 public func longClick(x: Int32, y: Int32): Unit
 ```
 
-**功能：** [Driver](#class-driver)对象执行目标坐标点的长按操作。
+**功能：** 在目标坐标点长按。
 
 **系统能力：** SystemCapability.Test.UiTest
 
@@ -1751,8 +1991,8 @@ public func longClick(x: Int32, y: Int32): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|x|Int32|是|-|以Int32的形式传入目标点的横坐标信息。|
-|y|Int32|是|-|以Int32的形式传入目标点的纵坐标信息。|
+|x|Int32|是|-|以Int32的形式传入目标点的横坐标信息，取值范围：大于等于0的整数。|
+|y|Int32|是|-|以Int32的形式传入目标点的纵坐标信息，取值范围：大于等于0的整数。|
 
 **异常：**
 
@@ -1770,9 +2010,15 @@ public func longClick(x: Int32, y: Int32): Unit
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-driver.longClick(100, 100)
+try {
+    let driver: Driver = Driver.create()
+    driver.longClick(100, 100)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func mouseClick(Point, MouseButton, Int32, Int32)
@@ -1781,7 +2027,7 @@ driver.longClick(100, 100)
 public func mouseClick(p: Point, btnId: MouseButton, key1!: Int32 = 0, key2!: Int32 = 0): Unit
 ```
 
-**功能：** 在指定坐标点注入鼠标点击动作，支持同时按下对应键盘组合键。例如，Key值为2072时，按下CTRL并进行鼠标点击动作。
+**功能：** 在指定坐标点注入鼠标点击动作，支持同时按下对应键盘组合键。例如，Key值为2072时，按下Ctrl并进行鼠标点击动作。
 
 **系统能力：** SystemCapability.Test.UiTest
 
@@ -1793,8 +2039,8 @@ public func mouseClick(p: Point, btnId: MouseButton, key1!: Int32 = 0, key2!: In
 |:---|:---|:---|:---|:---|
 |p|[Point](#class-point)|是|-|鼠标点击的坐标。|
 |btnId|[MouseButton](#enum-mousebutton)|是|-|按下的鼠标按钮。|
-|key1|Int32|否|0|**命名参数。** 指定的第一个key值。|
-|key2|Int32|否|0|**命名参数。** 指定的第二个key值。|
+|key1|Int32|否|0|**命名参数。** 指定的第一个key值，取值大于等于0的整数，默认值为0。|
+|key2|Int32|否|0|**命名参数。** 指定的第二个key值，取值大于等于0的整数，默认值为0。|
 
 **异常：**
 
@@ -1813,9 +2059,15 @@ public func mouseClick(p: Point, btnId: MouseButton, key1!: Int32 = 0, key2!: In
 
 import kit.TestKit.*
 import ohos.ui_test.Point as PT
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-driver.mouseClick(PT(248, 194), MouseButton.MouseButtonLeft, key1: 2072)
+try {
+    let driver: Driver = Driver.create()
+    driver.mouseClick(PT(248, 194), MouseButton.MouseButtonLeft, key1: 2072)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func mouseDoubleClick(Point, MouseButton, Int32, Int32)
@@ -1824,7 +2076,7 @@ driver.mouseClick(PT(248, 194), MouseButton.MouseButtonLeft, key1: 2072)
 public func mouseDoubleClick(p: Point, btnId: MouseButton, key1!: Int32 = 0, key2!: Int32 = 0): Unit
 ```
 
-**功能：** 在指定坐标点注入鼠标双击动作，支持同时按下对应键盘组合键。例如，Key值为2072时，按下CTRL并进行鼠标双击动作。
+**功能：** 在指定坐标点注入鼠标双击动作，支持同时按下对应键盘组合键。例如，Key值为2072时，按下Ctrl并进行鼠标双击动作。
 
 **系统能力：** SystemCapability.Test.UiTest
 
@@ -1836,8 +2088,8 @@ public func mouseDoubleClick(p: Point, btnId: MouseButton, key1!: Int32 = 0, key
 |:---|:---|:---|:---|:---|
 |p|[Point](#class-point)|是|-|鼠标双击的坐标。|
 |btnId|[MouseButton](#enum-mousebutton)|是|-|按下的鼠标按钮。|
-|key1|Int32|否|0|**命名参数。** 指定的第一个key值。|
-|key2|Int32|否|0|**命名参数。** 指定的第二个key值。|
+|key1|Int32|否|0|**命名参数。** 指定的第一个key值，取值大于等于0的整数，默认值0。|
+|key2|Int32|否|0|**命名参数。** 指定的第二个key值，取值大于等于0的整数，默认值0。|
 
 **异常：**
 
@@ -1856,9 +2108,15 @@ public func mouseDoubleClick(p: Point, btnId: MouseButton, key1!: Int32 = 0, key
 
 import kit.TestKit.*
 import ohos.ui_test.Point as PT
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-driver.mouseDoubleClick(PT(248, 194), MouseButton.MouseButtonLeft, key1: 2072)
+try {
+    let driver: Driver = Driver.create()
+    driver.mouseDoubleClick(PT(248, 194), MouseButton.MouseButtonLeft, key1: 2072)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func mouseDrag(Point, Point, Int32)
@@ -1867,7 +2125,7 @@ driver.mouseDoubleClick(PT(248, 194), MouseButton.MouseButtonLeft, key1: 2072)
 public func mouseDrag(from: Point, to: Point, speed!: Int32 = 600): Unit
 ```
 
-**功能：** 鼠标按住左键从起始点拖拽至终点。
+**功能：** 鼠标按住鼠标左键从起始坐标点拖拽至终点坐标点。
 
 **系统能力：** SystemCapability.Test.UiTest
 
@@ -1879,7 +2137,7 @@ public func mouseDrag(from: Point, to: Point, speed!: Int32 = 600): Unit
 |:---|:---|:---|:---|:---|
 |from|[Point](#class-point)|是|-|起始点坐标。|
 |to|[Point](#class-point)|是|-|终点坐标。|
-|speed|Int32|否|600|**命名参数。** 滑动速率，范围：200-15000，不在范围内设为默认值为600，单位：像素点/秒。|
+|speed|Int32|否|600|**命名参数。** 滑动速率，取值范围为200-40000的整数，默认值为600，不在范围内设为默认值为600，单位：px/s。|
 
 **异常：**
 
@@ -1898,9 +2156,15 @@ public func mouseDrag(from: Point, to: Point, speed!: Int32 = 600): Unit
 
 import kit.TestKit.*
 import ohos.ui_test.Point as PT
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-driver.mouseDrag(PT(100, 100), PT(200, 200))
+try {
+    let driver: Driver = Driver.create()
+    driver.mouseDrag(PT(100, 100), PT(200, 200))
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func mouseLongClick(Point, MouseButton, Int32, Int32)
@@ -1909,7 +2173,7 @@ driver.mouseDrag(PT(100, 100), PT(200, 200))
 public func mouseLongClick(p: Point, btnId: MouseButton, key1!: Int32 = 0, key2!: Int32 = 0): Unit
 ```
 
-**功能：** 在指定坐标点注入鼠标长按动作，支持同时按下对应键盘组合键。例如，Key值为2072时，按下CTRL并进行鼠标长按动作。
+**功能：** 在指定坐标点注入鼠标长按动作，支持同时按下对应键盘组合键，支持指定长按时长。例如，Key值为2072时，按下Ctrl并进行鼠标长按动作。
 
 **系统能力：** SystemCapability.Test.UiTest
 
@@ -1921,8 +2185,8 @@ public func mouseLongClick(p: Point, btnId: MouseButton, key1!: Int32 = 0, key2!
 |:---|:---|:---|:---|:---|
 |p|[Point](#class-point)|是|-|鼠标长按的坐标。|
 |btnId|[MouseButton](#enum-mousebutton)|是|-|按下的鼠标按钮。|
-|key1|Int32|否|0|**命名参数。** 指定的第一个key值。|
-|key2|Int32|否|0|**命名参数。** 指定的第二个key值。|
+|key1|Int32|否|0|**命名参数。** 指定的第一个key值，取值大于等于0的整数，默认值为0。|
+|key2|Int32|否|0|**命名参数。** 指定的第二个key值，取值大于等于0的整数，默认值为0。|
 
 **异常：**
 
@@ -1941,9 +2205,15 @@ public func mouseLongClick(p: Point, btnId: MouseButton, key1!: Int32 = 0, key2!
 
 import kit.TestKit.*
 import ohos.ui_test.Point as PT
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-driver.mouseLongClick(PT(248, 194), MouseButton.MouseButtonLeft, key1: 2072)
+try {
+    let driver: Driver = Driver.create()
+    driver.mouseLongClick(PT(248, 194), MouseButton.MouseButtonLeft, key1: 2072)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func mouseMoveTo(Point)
@@ -1981,9 +2251,15 @@ public func mouseMoveTo(p: Point): Unit
 
 import kit.TestKit.*
 import ohos.ui_test.Point as PT
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-driver.mouseMoveTo(PT(248, 194))
+try {
+    let driver: Driver = Driver.create()
+    driver.mouseMoveTo(PT(248, 194))
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func mouseMoveWithTrack(Point, Point, Int32)
@@ -2004,7 +2280,7 @@ public func mouseMoveWithTrack(from: Point, to: Point, speed!: Int32 = 600): Uni
 |:---|:---|:---|:---|:---|
 |from|[Point](#class-point)|是|-|起始点坐标。|
 |to|[Point](#class-point)|是|-|终点坐标。|
-|speed|Int32|否|600|**命名参数。** 滑动速率，范围：200-15000，不在范围内设为默认值为600，单位：像素点/秒。|
+|speed|Int32|否|600|**命名参数。** 滑动速率，取值范围为200-40000的整数，默认值为600，不在范围内设为默认值为600，单位：px/s。|
 
 **异常：**
 
@@ -2023,9 +2299,15 @@ public func mouseMoveWithTrack(from: Point, to: Point, speed!: Int32 = 600): Uni
 
 import kit.TestKit.*
 import ohos.ui_test.Point as PT
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-driver.mouseMoveWithTrack(PT(100, 100), PT(200, 200))
+try {
+    let driver: Driver = Driver.create()
+    driver.mouseMoveWithTrack(PT(100, 100), PT(200, 200))
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func mouseScroll(Point, Bool, Int32, Int32, Int32, Int32)
@@ -2045,11 +2327,11 @@ public func mouseScroll(p: Point, down: Bool, d: Int32, key1!: Int32 = 0, key2!:
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |p|[Point](#class-point)|是|-|鼠标点击的坐标。|
-|down|Bool|是|-|滚轮滑动方向是否向下，true表示向下滑动，false表示向上滑动。|
-|d|Int32|是|-|鼠标滚轮滑动的格数，每格对应目标点位移120个像素点。|
-|key1|Int32|否|0|**命名参数。** 指定的第一个key值。|
-|key2|Int32|否|0|**命名参数。** 指定的第二个key值。|
-|speed|Int32|否|20|**命名参数。** 鼠标滚轮滑动的速度，范围：1-500，不在范围内设为默认值为20，单位：格/秒。|
+|down|Bool|是|-|滚轮滑动方向是否向下。true表示向下滑动。false表示向上滚动。|
+|d|Int32|是|-|鼠标滚轮滚动的格数，取值大于等于0的整数，每格对应目标点位移120px。|
+|key1|Int32|否|0|**命名参数。** 指定的第一个key值，取值大于等于0的整数，默认值为0。|
+|key2|Int32|否|0|**命名参数。** 指定的第二个key值，取值大于等于0的整数，默认值为0。|
+|speed|Int32|否|20|**命名参数。** 鼠标滚轮滚动的速度，范围：1-500的整数，不在范围内设为默认值为20，单位：格/秒。|
 
 **异常：**
 
@@ -2068,9 +2350,15 @@ public func mouseScroll(p: Point, down: Bool, d: Int32, key1!: Int32 = 0, key2!:
 
 import kit.TestKit.*
 import ohos.ui_test.Point as PT
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-driver.mouseScroll(PT(360, 640), true, 30, key1: 2072)
+try {
+    let driver: Driver = Driver.create()
+    driver.mouseScroll(PT(360, 640), true, 30, key1: 2072)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func pressBack()
@@ -2079,7 +2367,7 @@ driver.mouseScroll(PT(360, 640), true, 30, key1: 2072)
 public func pressBack(): Unit
 ```
 
-**功能：** [Driver](#class-driver)对象进行点击BACK键的操作。
+**功能：** 进行点击BACK键的操作。
 
 **系统能力：** SystemCapability.Test.UiTest
 
@@ -2093,9 +2381,15 @@ public func pressBack(): Unit
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-driver.pressBack()
+try {
+    let driver: Driver = Driver.create()
+    driver.pressBack()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func pressHome()
@@ -2104,7 +2398,7 @@ driver.pressBack()
 public func pressHome(): Unit
 ```
 
-**功能：** 设备返回到桌面。
+**功能：** 设备注入返回桌面操作。
 
 **系统能力：** SystemCapability.Test.UiTest
 
@@ -2118,9 +2412,15 @@ public func pressHome(): Unit
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-driver.pressHome()
+try {
+    let driver: Driver = Driver.create()
+    driver.pressHome()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func screenCap(String)
@@ -2129,7 +2429,7 @@ driver.pressHome()
 public func screenCap(savePath: String): Bool
 ```
 
-**功能：** [Driver](#class-driver)对象捕获当前屏幕，并将其保存为PNG格式的图片，保存至参数传入的路径中。
+**功能：** 捕获当前屏幕，并保存为PNG格式的图片至给出的保存路径中。适用于支持截屏的场景。
 
 **系统能力：** SystemCapability.Test.UiTest
 
@@ -2145,7 +2445,7 @@ public func screenCap(savePath: String): Bool
 
 |类型|说明|
 |:----|:----|
-|Bool|截图操作是否成功完成。成功完成为true，否则为false。|
+|Bool|返回截图操作是否成功完成。true：完成，false：未完成。|
 
 **异常：**
 
@@ -2163,9 +2463,15 @@ public func screenCap(savePath: String): Bool
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-driver.screenCap("/data/storage/el2/base/cache/1.png")
+try {
+    let driver: Driver = Driver.create()
+    let result = driver.screenCap("/data/storage/el2/base/cache/1.png")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func screenCapture(String, Rect)
@@ -2174,7 +2480,7 @@ driver.screenCap("/data/storage/el2/base/cache/1.png")
 public func screenCapture(savePath: String, rect!: Rect = Rect(0,0,0,0)): Bool
 ```
 
-**功能：** 捕获当前屏幕，并将其保存为PNG格式的图片，保存至参数传入的路径中。
+**功能：** 捕获当前屏幕的指定区域，并保存为PNG格式的图片至给出的保存路径中。适用于支持截屏的场景。
 
 **系统能力：** SystemCapability.Test.UiTest
 
@@ -2191,7 +2497,7 @@ public func screenCapture(savePath: String, rect!: Rect = Rect(0,0,0,0)): Bool
 
 |类型|说明|
 |:----|:----|
-|Bool|截图操作是否成功完成。成功完成为true，否则为false。|
+|Bool|返回截图操作是否成功完成。true：成功完成，false：未成功完成。|
 
 **异常：**
 
@@ -2209,9 +2515,15 @@ public func screenCapture(savePath: String, rect!: Rect = Rect(0,0,0,0)): Bool
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-driver.screenCapture("/data/storage/el2/base/cache/1.png", rect: Rect(0, 0, 100, 100))
+try {
+    let driver: Driver = Driver.create()
+    let result = driver.screenCapture("/data/storage/el2/base/cache/1.png", rect: Rect(0, 0, 100, 100))
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func setDisplayRotation(DisplayRotation)
@@ -2220,7 +2532,7 @@ driver.screenCapture("/data/storage/el2/base/cache/1.png", rect: Rect(0, 0, 100,
 public func setDisplayRotation(rotation: DisplayRotation): Unit
 ```
 
-**功能：** 将设备的屏幕显示方向设置为指定的显示方向。
+**功能：** 将当前场景的显示方向设置为指定的显示方向。适用于可旋转的应用场景。
 
 **系统能力：** SystemCapability.Test.UiTest
 
@@ -2248,9 +2560,15 @@ public func setDisplayRotation(rotation: DisplayRotation): Unit
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-driver.setDisplayRotation(DisplayRotation.Rotation180)
+try {
+    let driver: Driver = Driver.create()
+    driver.setDisplayRotation(DisplayRotation.Rotation180)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func setDisplayRotationEnabled(Bool)
@@ -2259,7 +2577,7 @@ driver.setDisplayRotation(DisplayRotation.Rotation180)
 public func setDisplayRotationEnabled(enabled: Bool): Unit
 ```
 
-**功能：** 启用或禁用设备旋转屏幕的功能。
+**功能：** 启用/禁用设备旋转屏幕的功能。
 
 **系统能力：** SystemCapability.Test.UiTest
 
@@ -2287,9 +2605,15 @@ public func setDisplayRotationEnabled(enabled: Bool): Unit
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-driver.setDisplayRotationEnabled(false)
+try {
+    let driver: Driver = Driver.create()
+    driver.setDisplayRotationEnabled(false)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func swipe(Int32, Int32, Int32, Int32, Int32)
@@ -2304,7 +2628,7 @@ public func swipe(
 ): Unit
 ```
 
-**功能：** [Driver](#class-driver)对象执行从起始坐标到目标坐标的滑动操作。
+**功能：** 从起始坐标点滑向目的坐标点。
 
 **系统能力：** SystemCapability.Test.UiTest
 
@@ -2314,11 +2638,11 @@ public func swipe(
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|startx|Int32|是|-|以Int32的形式传入起始点的横坐标信息。|
-|starty|Int32|是|-|以Int32的形式传入起始点的纵坐标信息。|
-|endx|Int32|是|-|以Int32的形式传入目的点的横坐标信息。|
-|endy|Int32|是|-|以Int32的形式传入目的点的纵坐标信息。|
-|speed|Int32|否|600|**命名参数。** 滑动速率，范围：200-15000，不在范围内设为默认值为600，单位：像素点/秒。|
+|startx|Int32|是|-|以Int32的形式传入起始点的横坐标信息，取值范围：大于等于0的整数。|
+|starty|Int32|是|-|以Int32的形式传入起始点的纵坐标信息，取值范围：大于等于0的整数。|
+|endx|Int32|是|-|以Int32的形式传入目的点的横坐标信息，取值范围：大于等于0的整数。|
+|endy|Int32|是|-|以Int32的形式传入目的点的纵坐标信息，取值范围：大于等于0的整数。|
+|speed|Int32|否|600|**命名参数。** 滑动速率，取值范围为200-40000的整数，默认值为600，不在范围内设为默认值为600，单位：px/s。|
 
 **异常：**
 
@@ -2336,9 +2660,15 @@ public func swipe(
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-driver.swipe(100, 100, 200, 200, speed: 600)
+try {
+    let driver: Driver = Driver.create()
+    driver.swipe(100, 100, 200, 200, speed: 600)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func triggerCombineKeys(Int32, Int32, Int32)
@@ -2347,7 +2677,7 @@ driver.swipe(100, 100, 200, 200, speed: 600)
 public func triggerCombineKeys(key0: Int32, key1: Int32, key2!: Int32 = 0): Unit
 ```
 
-**功能：** [Driver](#class-driver)对象通过给定的key值，找到对应组合键并点击。例如，Key值为(2072, 2019)时，[Driver](#class-driver)对象找到key值对应的组合键并点击，如CTRL+C。
+**功能：** 通过给定的key值，找到对应组合键并点击。例如，Key值为(2072, 2019)时，找到key值对应的组合键并点击，如Ctrl+c。
 
 **系统能力：** SystemCapability.Test.UiTest
 
@@ -2357,9 +2687,9 @@ public func triggerCombineKeys(key0: Int32, key1: Int32, key2!: Int32 = 0): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|key0|Int32|是|-|指定的第一个key值。|
-|key1|Int32|是|-|指定的第二个key值。|
-|key2|Int32|否|0|**命名参数。** 指定的第三个key值。|
+|key0|Int32|是|-|指定的第一个key值，取值大于等于0的整数。|
+|key1|Int32|是|-|指定的第二个key值，取值大于等于0的整数。|
+|key2|Int32|否|0|**命名参数。** 指定的第三个key值，取值范围：大于等于0的整数。默认值为0。|
 
 **异常：**
 
@@ -2377,9 +2707,15 @@ public func triggerCombineKeys(key0: Int32, key1: Int32, key2!: Int32 = 0): Unit
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-driver.triggerCombineKeys(2072, 2047, key2: 2035)
+try {
+    let driver: Driver = Driver.create()
+    driver.triggerCombineKeys(2072, 2047, key2: 2035)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func triggerKey(Int32)
@@ -2388,7 +2724,7 @@ driver.triggerCombineKeys(2072, 2047, key2: 2035)
 public func triggerKey(keyCode: Int32): Unit
 ```
 
-**功能：** [Driver](#class-driver)对象通过传入 key 值模拟点击对应按键。
+**功能：** 传入key值实现模拟点击对应按键的效果。
 
 **系统能力：** SystemCapability.Test.UiTest
 
@@ -2398,7 +2734,7 @@ public func triggerKey(keyCode: Int32): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|keyCode|Int32|是|-|指定的key值。|
+|keyCode|Int32|是|-|指定的key值，取值范围：大于等于0的整数。|
 
 **异常：**
 
@@ -2416,9 +2752,15 @@ public func triggerKey(keyCode: Int32): Unit
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-driver.triggerKey(123)
+try {
+    let driver: Driver = Driver.create()
+    driver.triggerKey(123)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func waitForComponent(On, Int32)
@@ -2427,7 +2769,7 @@ driver.triggerKey(123)
 public func waitForComponent(on: On, time: Int32): ?Component
 ```
 
-**功能：** 在[Driver](#class-driver)对象中，在用户给定的时间内，持续查找满足控件属性要求的目标控件。
+**功能：** 在用户给定的时间内，持续查找满足控件属性要求的目标控件。
 
 **系统能力：** SystemCapability.Test.UiTest
 
@@ -2438,13 +2780,13 @@ public func waitForComponent(on: On, time: Int32): ?Component
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |on|[On](#class-on)|是|-|目标控件的属性要求。|
-|time|Int32|是|-|查找目标控件的持续时间。单位ms。|
+|time|Int32|是|-|查找目标控件的持续时间。单位ms，取值范围：大于等于0的整数。|
 
 **返回值：**
 
 |类型|说明|
 |:----|:----|
-|?[Component](#class-component)|找到的控件对象。|
+|?[Component](#class-component)|返回控件对象。|
 
 **异常：**
 
@@ -2462,9 +2804,15 @@ public func waitForComponent(on: On, time: Int32): ?Component
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let button: Option<Component> = driver.waitForComponent(On().text("next page"), 500)
+try {
+    let driver: Driver = Driver.create()
+    let button: Option<Component> = driver.waitForComponent(On().text("next page"), 500)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func waitForIdle(Int32, Int32)
@@ -2483,14 +2831,14 @@ public func waitForIdle(idleTime: Int32, timeout: Int32): Bool
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|idleTime|Int32|是|-|空闲时间的阈值。在这个时间段控件不发生变化，视为该控件空闲，单位：毫秒。|
-|timeout|Int32|是|-|等待空闲的最大时间，单位：毫秒。|
+|idleTime|Int32|是|-|空闲时间的阈值。在这个时间段控件不发生变化，视为该控件空闲，单位：毫秒，取值范围：大于等于0的整数。|
+|timeout|Int32|是|-|等待空闲的最大时间，单位：毫秒，取值范围：大于等于0的整数。|
 
 **返回值：**
 
 |类型|说明|
 |:----|:----|
-|Bool|返回当前界面的所有控件是否已经空闲。|
+|Bool|返回当前界面的所有控件是否已经空闲。true：已经空闲，false：不空闲。|
 
 **异常：**
 
@@ -2508,9 +2856,15 @@ public func waitForIdle(idleTime: Int32, timeout: Int32): Bool
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let idled = driver.waitForIdle(4000, 5000)
+try {
+    let driver: Driver = Driver.create()
+    let idled = driver.waitForIdle(4000, 5000)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func wakeUpDisplay()
@@ -2533,9 +2887,15 @@ public func wakeUpDisplay(): Unit
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-driver.wakeUpDisplay()
+try {
+    let driver: Driver = Driver.create()
+    driver.wakeUpDisplay()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## class On
@@ -2548,7 +2908,7 @@ public class On {
 
 **功能：** UiTest框架中，通过On类提供了丰富的控件特征描述API，用于进行控件筛选来匹配或查找出目标控件。
 
-[On](#class-on)提供的API能力具有以下几个特点:
+On提供的API能力具有以下几个特点:
 
 1、支持单属性匹配和多属性组合匹配，例如同时指定目标控件text和id。
 
@@ -2612,17 +2972,13 @@ public func checkable(b!: Bool = true): On
 //example_test.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-@Test
-class TestExample00 {
-    @TestCase
-    func test00(): Unit {
-        unittest()
-    }
-    @TestCase
-    func test01(): Unit {
-        let on: On = On().checkable(b: true) // 指定目标控件的能否被勾选状态属性。
-    }
+try {
+    let on: On = On().checkable(b: true) // 指定目标控件的能否被勾选状态属性。
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -2666,17 +3022,13 @@ public func checked(b!: Bool = true): On
 //example_test.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-@Test
-class TestExample00 {
-    @TestCase
-    func test00(): Unit {
-        unittest()
-    }
-    @TestCase
-    func test01(): Unit {
-        let on: On = On().checked(b: true) // 指定目标控件的被勾选状态属性
-    }
+try {
+    let on: On = On().checked(b: true) // 指定目标控件的被勾选状态属性
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -2712,17 +3064,13 @@ public func clickable(b!: Bool = true): On
 //example_test.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-@Test
-class TestExample00 {
-    @TestCase
-    func test00(): Unit {
-        unittest()
-    }
-    @TestCase
-    func test01(): Unit {
-        let on: On = On().clickable(b: true) // 指定目标控件的可点击状态属性。
-    }
+try {
+    let on: On = On().clickable(b: true) // 指定目标控件的可点击状态属性。
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -2749,7 +3097,7 @@ public func description(val: String, pattern!: MatchPattern = MatchPattern.Equal
 
 |类型|说明|
 |:----|:----|
-|[On](#class-on)|返回指定目标控件的控件类型属性的[On](#class-on)对象。|
+|[On](#class-on)|返回指定目标控件description属性的[On](#class-on)对象。|
 
 **异常：**
 
@@ -2767,17 +3115,13 @@ public func description(val: String, pattern!: MatchPattern = MatchPattern.Equal
 //example_test.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-@Test
-class TestExample00 {
-    @TestCase
-    func test00(): Unit {
-        unittest()
-    }
-    @TestCase
-    func test01(): Unit {
-        let on: On = On().description("123") // 指定目标控件的控件类型属性。
-    }
+try {
+    let on: On = On().description("123") // 指定目标控件的控件类型属性。
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -2821,17 +3165,13 @@ public func enabled(b!: Bool = true): On
 //example_test.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-@Test
-class TestExample00 {
-    @TestCase
-    func test00(): Unit {
-        unittest()
-    }
-    @TestCase
-    func test01(): Unit {
-        let on: On = On().enabled(b: true) // 指定目标控件的使能状态属性。
-    }
+try {
+    let on: On = On().enabled(b: true) // 指定目标控件的使能状态属性。
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -2875,17 +3215,13 @@ public func focused(b!: Bool = true): On
 //example_test.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-@Test
-class TestExample00 {
-    @TestCase
-    func test00(): Unit {
-        unittest()
-    }
-    @TestCase
-    func test01(): Unit {
-        let on: On = On().focused(b: true) // 指定目标控件的获焦状态属性。
-    }
+try {
+    let on: On = On().focused(b: true) // 指定目标控件的获焦状态属性。
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -2929,17 +3265,13 @@ public func id(id: String): On
 //example_test.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-@Test
-class TestExample00 {
-    @TestCase
-    func test00(): Unit {
-        unittest()
-    }
-    @TestCase
-    func test01(): Unit {
-        let on: On = On().id("123") // 指定目标控件的id属性。
-    }
+try {
+    let on: On = On().id("123") // 指定目标控件的id属性。
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -2983,17 +3315,13 @@ public func inWindow(bundleName: String): On
 //example_test.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-@Test
-class TestExample00 {
-    @TestCase
-    func test00(): Unit {
-        unittest()
-    }
-    @TestCase
-    func test01(): Unit {
-        let on: On = On().inWindow("com.uitestScene.acts") // 指定目标控件位于给出的应用窗口内。
-    }
+try {
+    let on: On = On().inWindow("com.uitestScene.acts") // 指定目标控件位于给出的应用窗口内。
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -3037,18 +3365,14 @@ public func isAfter(on: On): On
 //example_test.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-@Test
-class TestExample00 {
-    @TestCase
-    func test00(): Unit {
-        unittest()
-    }
-    @TestCase
-    func test01(): Unit {
-        let on1: On = On().text("123") // 指定特征属性控件
-        let on2: On = On().onType("Text").isAfter(on1)  // 查找text为123之后的第一个Text组件
-    }
+try {
+    let on1: On = On().text("123") // 指定特征属性控件
+    let on2: On = On().onType("Text").isAfter(on1)  // 查找text为123之后的第一个Text组件
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -3092,18 +3416,14 @@ public func isBefore(on: On): On
 //example_test.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-@Test
-class TestExample00 {
-    @TestCase
-    func test00(): Unit {
-        unittest()
-    }
-    @TestCase
-    func test01(): Unit {
-        let on1: On = On().text("123") // 指定特征属性控件
-        let on2: On = On().onType("Button").isBefore(on1)  // 查找text为123之前的第一个Button组件
-    }
+try {
+    let on1: On = On().text("123") // 指定特征属性控件
+    let on2: On = On().onType("Button").isBefore(on1)  // 查找text为123之前的第一个Button组件
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -3147,17 +3467,13 @@ public func longClickable(b!: Bool = true): On
 //example_test.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-@Test
-class TestExample00 {
-    @TestCase
-    func test00(): Unit {
-        unittest()
-    }
-    @TestCase
-    func test01(): Unit {
-        let on: On = On().longClickable(b: true) // 指定目标控件的可长按点击状态属性。
-    }
+try {
+    let on: On = On().longClickable(b: true) // 指定目标控件的可长按点击状态属性。
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -3201,17 +3517,13 @@ public func onType(tp: String): On
 //example_test.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-@Test
-class TestExample00 {
-    @TestCase
-    func test00(): Unit {
-        unittest()
-    }
-    @TestCase
-    func test01(): Unit {
-        let on: On = On().onType("Button") // 指定目标控件的控件类型属性。
-    }
+try {
+    let on: On = On().onType("Button") // 指定目标控件的控件类型属性。
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -3255,17 +3567,13 @@ public func scrollable(b!: Bool = true): On
 //example_test.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-@Test
-class TestExample00 {
-    @TestCase
-    func test00(): Unit {
-        unittest()
-    }
-    @TestCase
-    func test01(): Unit {
-        let on: On = On().scrollable(b: true) // 指定目标控件的可滑动状态属性。
-    }
+try {
+    let on: On = On().scrollable(b: true) // 指定目标控件的可滑动状态属性。
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -3309,17 +3617,13 @@ public func selected(b!: Bool = true): On
 //example_test.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-@Test
-class TestExample00 {
-    @TestCase
-    func test00(): Unit {
-        unittest()
-    }
-    @TestCase
-    func test01(): Unit {
-        let on: On = On().selected(b: true) // 指定目标控件的被选中状态属性。
-    }
+try {
+    let on: On = On().selected(b: true) // 指定目标控件的被选中状态属性。
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -3356,17 +3660,13 @@ public func text(txt: String, pattern!: MatchPattern = MatchPattern.Equals): On
 //example_test.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-@Test
-class TestExample00 {
-    @TestCase
-    func test00(): Unit {
-        unittest()
-    }
-    @TestCase
-    func test01(): Unit {
-        let on: On = On().text("123") // 指定目标控件的text属性。
-    }
+try {
+    let on: On = On().text("123") // 指定目标控件的text属性。
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -3410,18 +3710,14 @@ public func within(on: On): On
 //example_test.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-@Test
-class TestExample00 {
-    @TestCase
-    func test00(): Unit {
-        unittest()
-    }
-    @TestCase
-    func test01(): Unit {
-        let on1: On = On().onType("Scroll") // 指定特征属性控件
-        let on2: On = On().text("123").within(on1) // 查找Scroller里面的text为123的子组件
-    }
+try {
+    let on1: On = On().onType("Scroll") // 指定特征属性控件
+    let on2: On = On().text("123").within(on1) // 查找Scroller里面的text为123的子组件
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -3448,7 +3744,7 @@ public class Point {
 public var displayId:?Int32
 ```
 
-**功能：** 坐标点所属的屏幕ID。
+**功能：** 坐标点所属的屏幕ID，取值范围：大于等于0的整数。默认值为设备默认屏幕ID。
 
 **类型：** ?Int32
 
@@ -3464,7 +3760,7 @@ public var displayId:?Int32
 public var x: Int32
 ```
 
-**功能：** 坐标点的横坐标。
+**功能：** 坐标点的横坐标，取值大于0的整数。
 
 **类型：** Int32
 
@@ -3480,7 +3776,7 @@ public var x: Int32
 public var y: Int32
 ```
 
-**功能：** 坐标点的纵坐标。
+**功能：** 坐标点的纵坐标，取值大于0的整数。
 
 **类型：** Int32
 
@@ -3506,9 +3802,9 @@ public init(x: Int32, y: Int32, displayId!: ?Int32 = None)
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|x|Int32|是|-|坐标点的横坐标。|
-|y|Int32|是|-|坐标点的纵坐标。|
-|displayId|?Int32|否|None| **命名参数。** 坐标点所属的屏幕ID，取值范围：大于等于0的整数。|
+|x|Int32|是|-|坐标点的横坐标，取值大于0的整数。|
+|y|Int32|是|-|坐标点的纵坐标，取值大于0的整数。|
+|displayId|?Int32|否|None| **命名参数。** 坐标点所属的屏幕ID，取值范围：大于等于0的整数。默认值为设备默认屏幕ID。|
 
 ## class PointerMatrix
 
@@ -3516,7 +3812,7 @@ public init(x: Int32, y: Int32, displayId!: ?Int32 = None)
 public class PointerMatrix {}
 ```
 
-**功能：** 用于多指操作，存储每根手指的坐标点及每一步动作的行为的二维数组。
+**功能：** 存储多指操作中每根手指每一步动作的坐标点及其行为的二维数组。
 
 **系统能力：** SystemCapability.Test.UiTest
 
@@ -3538,8 +3834,8 @@ public static func create(fingers: Int32, steps: Int32): PointerMatrix
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|fingers|Int32|是|-|多指操作中注入的手指数，取值范围：[1,10]。|
-|steps|Int32|是|-|每根手指操作的步骤数，取值范围：[1,1000]。|
+|fingers|Int32|是|-|多指操作中注入的手指数，取值范围：[1,10]的整数。|
+|steps|Int32|是|-|每根手指操作的步骤数，取值范围：[1,1000]的整数。|
 
 **返回值：**
 
@@ -3563,8 +3859,14 @@ public static func create(fingers: Int32, steps: Int32): PointerMatrix
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let pointerMatrix: PointerMatrix = PointerMatrix.create(2, 3)
+try {
+    let pointerMatrix: PointerMatrix = PointerMatrix.create(2, 3)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func setPoint(Int32, Int32, Point)
@@ -3583,9 +3885,9 @@ public func setPoint(finger: Int32, step: Int32, point: Point): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|finger|Int32|是|-|手指的序号。|
-|step|Int32|是|-|步骤的序号。|
-|point|[Point](#class-point)|是|-|该行为的坐标点。|
+|finger|Int32|是|-|手指的序号，取值大于等于0的整数，且不超过构造PointerMatrix对象时设置的手指数。|
+|step|Int32|是|-|步骤的序号，取值大于等于0的整数，且不超过构造PointerMatrix对象时设置的操作的步骤数。|
+|point|[Point](#class-point)|是|-|该行为的坐标点。建议相邻的坐标点距离在10px至80px范围内。|
 
 **异常：**
 
@@ -3604,14 +3906,20 @@ public func setPoint(finger: Int32, step: Int32, point: Point): Unit
 
 import kit.TestKit.*
 import ohos.ui_test.Point as PT
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let pointerMatrix: PointerMatrix = PointerMatrix.create(2, 3)
-pointerMatrix.setPoint(0, 0, PT(230, 480))
-pointerMatrix.setPoint(0, 1, PT(250, 380))
-pointerMatrix.setPoint(0, 2, PT(270, 280))
-pointerMatrix.setPoint(1, 0, PT(230, 680))
-pointerMatrix.setPoint(1, 1, PT(240, 580))
-pointerMatrix.setPoint(1, 2, PT(250, 480))
+try {
+    let pointerMatrix: PointerMatrix = PointerMatrix.create(2, 3)
+    pointerMatrix.setPoint(0, 0, PT(230, 480))
+    pointerMatrix.setPoint(0, 1, PT(250, 380))
+    pointerMatrix.setPoint(0, 2, PT(270, 280))
+    pointerMatrix.setPoint(1, 0, PT(230, 680))
+    pointerMatrix.setPoint(1, 1, PT(240, 580))
+    pointerMatrix.setPoint(1, 2, PT(250, 480))
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## class Rect
@@ -3639,7 +3947,7 @@ public class Rect {
 public var bottom: Int32
 ```
 
-**功能：** 控件边框的右下角的Y坐标。
+**功能：** 控件边框的右下角的Y坐标，取值大于0的整数。
 
 **类型：** Int32
 
@@ -3655,7 +3963,7 @@ public var bottom: Int32
 public var displayId:?Int32
 ```
 
-**功能：** 控件边框所属的屏幕ID。
+**功能：** 控件边框所属的屏幕ID，取值大于或等于0的整数。默认值为设备默认屏幕ID。
 
 **类型：** ?Int32
 
@@ -3671,7 +3979,7 @@ public var displayId:?Int32
 public var left: Int32
 ```
 
-**功能：** 控件边框的左上角的X坐标。
+**功能：** 控件边框的左上角的X坐标，取值大于0的整数。
 
 **类型：** Int32
 
@@ -3687,7 +3995,7 @@ public var left: Int32
 public var right: Int32
 ```
 
-**功能：** 控件边框的右下角的X坐标。
+**功能：** 控件边框的右下角的X坐标，取值大于0的整数。
 
 **类型：** Int32
 
@@ -3703,7 +4011,7 @@ public var right: Int32
 public var top: Int32
 ```
 
-**功能：** 控件边框的左上角的Y坐标。
+**功能：** 控件边框的左上角的Y坐标，取值大于0的整数。
 
 **类型：** Int32
 
@@ -3729,11 +4037,11 @@ public init(left: Int32, top: Int32, right: Int32, bottom: Int32, displayId!: ?I
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|left|Int32|是|-|控件边框的左上角的X坐标。|
-|top|Int32|是|-|控件边框的左上角的Y坐标。|
-|right|Int32|是|-|控件边框的右下角的X坐标。|
-|bottom|Int32|是|-|控件边框的右下角的Y坐标。|
-|displayId|?Int32|否|None| **命名参数。** 控件边框所属的屏幕ID，取值大于或等于0的整数。|
+|left|Int32|是|-|控件边框的左上角的X坐标，取值大于0的整数。|
+|top|Int32|是|-|控件边框的左上角的Y坐标，取值大于0的整数。|
+|right|Int32|是|-|控件边框的右下角的X坐标，取值大于0的整数。|
+|bottom|Int32|是|-|控件边框的右下角的Y坐标，取值大于0的整数。|
+|displayId|?Int32|否|None| **命名参数。** 控件边框所属的屏幕ID，取值大于或等于0的整数。默认值为设备默认屏幕ID。|
 
 ## class UIElementInfo
 
@@ -3757,7 +4065,7 @@ public class UIElementInfo {
 public let bundleName: String
 ```
 
-**功能：** 归属应用的包名。
+**功能：** 应用包名。
 
 **类型：** String
 
@@ -3773,7 +4081,7 @@ public let bundleName: String
 public let componentType: String
 ```
 
-**功能：** 控件或窗口类型。
+**功能：** 控件/窗口类型。
 
 **类型：** String
 
@@ -3789,7 +4097,7 @@ public let componentType: String
 public let text: String
 ```
 
-**功能：** 控件或窗口的文本信息。
+**功能：** 控件/窗口的文本信息。
 
 **类型：** String
 
@@ -3817,7 +4125,7 @@ public class UIEventObserver {}
 public func once(onceType: OnceType, callback: Callback<UIElementInfo>): Unit
 ```
 
-**功能：** 监听指定控件出现的事件。
+**功能：** 开始监听指定控件出现的事件。
 
 **系统能力：** SystemCapability.Test.UiTest
 
@@ -3827,7 +4135,7 @@ public func once(onceType: OnceType, callback: Callback<UIElementInfo>): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|onceType|[OnceType](#enum-oncetype)|是|-|控件类型。|
+|onceType|[OnceType](#enum-oncetype)|是|-|订阅的事件类型。|
 |callback|[Callback](./../arkui-cj/cj-common-types.md#type-callback)\<[UIElementInfo](#class-uielementinfo)>|是|-|事件发生时执行的回调函数。|
 
 **异常：**
@@ -3847,19 +4155,24 @@ public func once(onceType: OnceType, callback: Callback<UIElementInfo>): Unit
 
 import kit.TestKit.*
 import kit.PerformanceAnalysisKit.Hilog
+import ohos.business_exception.BusinessException
 
-let driver: Driver = Driver.create()
-let observer: UIEventObserver = driver.createUIEventObserver()
-observer.once(
-    OnceType.DialogShow,
-    {
-        element =>
-        Hilog.info(0, "", "onceDialogShow")
-        Hilog.info(0, "", element.bundleName)
-        Hilog.info(0, "", element.componentType)
-        Hilog.info(0, "", element.text)
-    }
-)
+try {
+    let driver: Driver = Driver.create()
+    let observer: UIEventObserver = driver.createUIEventObserver()
+    observer.once(
+        OnceType.DialogShow,
+        {
+            element =>
+            Hilog.info(0, "", "onceDialogShow")
+            Hilog.info(0, "", element.bundleName)
+            Hilog.info(0, "", element.componentType)
+            Hilog.info(0, "", element.text)
+        }
+    )
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## class UiWindow
@@ -3904,10 +4217,16 @@ public func close(): Unit
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let window: Option<UiWindow> = driver.findWindow(WindowFilter(active: true))
-window?.close()
+try {
+    let driver: Driver = Driver.create()
+    let window: Option<UiWindow> = driver.findWindow(WindowFilter(active: true))
+    window?.close()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func focus()
@@ -3940,10 +4259,16 @@ public func focus(): Unit
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let window: Option<UiWindow> = driver.findWindow(WindowFilter(active: true))
-window?.focus()
+try {
+    let driver: Driver = Driver.create()
+    let window: Option<UiWindow> = driver.findWindow(WindowFilter(active: true))
+    window?.focus()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getBounds()
@@ -3952,7 +4277,7 @@ window?.focus()
 public func getBounds(): Rect
 ```
 
-**功能：** 获取窗口的边框信息。
+**功能：** 获取控件对象的边框信息。
 
 **系统能力：** SystemCapability.Test.UiTest
 
@@ -3962,7 +4287,7 @@ public func getBounds(): Rect
 
 |类型|说明|
 |:----|:----|
-|[Rect](#class-rect)|返回窗口的边框信息。|
+|[Rect](#class-rect)|返回控件对象的边框信息。|
 
 **异常：**
 
@@ -3980,10 +4305,16 @@ public func getBounds(): Rect
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let window: Option<UiWindow> = driver.findWindow(WindowFilter(active: true))
-let rect = window?.getBounds()
+try {
+    let driver: Driver = Driver.create()
+    let window: Option<UiWindow> = driver.findWindow(WindowFilter(active: true))
+    let rect = window?.getBounds()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getBundleName()
@@ -4020,10 +4351,16 @@ public func getBundleName(): String
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let window: Option<UiWindow> = driver.findWindow(WindowFilter(active: true))
-let rect = window?.getBundleName()
+try {
+    let driver: Driver = Driver.create()
+    let window: Option<UiWindow> = driver.findWindow(WindowFilter(active: true))
+    let rect = window?.getBundleName()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getTitle()
@@ -4060,10 +4397,16 @@ public func getTitle(): String
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let window: Option<UiWindow> = driver.findWindow(WindowFilter(active: true))
-let title: Option<String> = window?.getTitle()
+try {
+    let driver: Driver = Driver.create()
+    let window: Option<UiWindow> = driver.findWindow(WindowFilter(active: true))
+    let title: Option<String> = window?.getTitle()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func getWindowMode()
@@ -4100,10 +4443,16 @@ public func getWindowMode(): WindowMode
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let window: Option<UiWindow> = driver.findWindow(WindowFilter(active: true))
-let mode = window?.getWindowMode()
+try {
+    let driver: Driver = Driver.create()
+    let window: Option<UiWindow> = driver.findWindow(WindowFilter(active: true))
+    let mode = window?.getWindowMode()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func isActive()
@@ -4122,7 +4471,7 @@ public func isActive(): Bool
 
 |类型|说明|
 |:----|:----|
-|Bool|返回窗口对象交互状态，true：交互窗口，false：非交互窗口。|
+|Bool|返回窗口对象是否为用户正在交互窗口。true：交互窗口。false：非交互窗口。|
 
 **异常：**
 
@@ -4140,10 +4489,16 @@ public func isActive(): Bool
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let window: Option<UiWindow> = driver.findWindow(WindowFilter(active: true))
-let active = window?.isActive()
+try {
+    let driver: Driver = Driver.create()
+    let window: Option<UiWindow> = driver.findWindow(WindowFilter(active: true))
+    let active = window?.isActive()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func isFocused()
@@ -4162,7 +4517,7 @@ public func isFocused(): Bool
 
 |类型|说明|
 |:----|:----|
-|Bool|返回窗口对象是否处于获焦状态，true：获焦，false：未获焦。|
+|Bool|返回窗口对象是否获取获焦状态。true：获焦。false：未获焦。|
 
 **异常：**
 
@@ -4180,10 +4535,16 @@ public func isFocused(): Bool
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let window: Option<UiWindow> = driver.findWindow(WindowFilter(active: true))
-let focused = window?.isFocused()
+try {
+    let driver: Driver = Driver.create()
+    let window: Option<UiWindow> = driver.findWindow(WindowFilter(active: true))
+    let focused = window?.isFocused()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func maximize()
@@ -4218,10 +4579,16 @@ public func maximize(): Unit
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let window: Option<UiWindow> = driver.findWindow(WindowFilter(active: true))
-window?.maximize()
+try {
+    let driver: Driver = Driver.create()
+    let window: Option<UiWindow> = driver.findWindow(WindowFilter(active: true))
+    window?.maximize()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func minimize()
@@ -4256,10 +4623,16 @@ public func minimize(): Unit
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let window: Option<UiWindow> = driver.findWindow(WindowFilter(active: true))
-window?.minimize()
+try {
+    let driver: Driver = Driver.create()
+    let window: Option<UiWindow> = driver.findWindow(WindowFilter(active: true))
+    window?.minimize()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func moveTo(Int32, Int32)
@@ -4280,8 +4653,8 @@ public func moveTo(x: Int32, y: Int32): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|x|Int32|是|-|以IntNative的形式传入目标点的横坐标信息。|
-|y|Int32|是|-|以IntNative的形式传入目标点的纵坐标信息。|
+|x|Int32|是|-|以Int32的形式传入目标点的横坐标信息，取值范围：大于等于0的整数|
+|y|Int32|是|-|Int32的形式传入目标点的纵坐标信息，取值范围：大于等于0的整数|
 
 **异常：**
 
@@ -4301,10 +4674,16 @@ public func moveTo(x: Int32, y: Int32): Unit
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let window: Option<UiWindow> = driver.findWindow(WindowFilter(active: true))
-window?.moveTo(100, 100)
+try {
+    let driver: Driver = Driver.create()
+    let window: Option<UiWindow> = driver.findWindow(WindowFilter(active: true))
+    window?.moveTo(100, 100)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func resize(Int32, Int32, ResizeDirection)
@@ -4323,8 +4702,8 @@ public func resize(wide: Int32, height: Int32, direction: ResizeDirection): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|wide|Int32|是|-|以IntNative的形式传入调整后窗口的宽度。|
-|height|Int32|是|-|以IntNative的形式传入调整后窗口的高度。|
+|wide|Int32|是|-|以Int32的形式传入调整后窗口的宽度，取值范围：大于等于0的整数。|
+|height|Int32|是|-|以Int32的形式传入调整后窗口的高度，取值范围：大于等于0的整数。|
 |direction|[ResizeDirection](#enum-resizedirection)|是|-|以ResizeDirection的形式传入窗口调整的方向。|
 
 **异常：**
@@ -4345,10 +4724,16 @@ public func resize(wide: Int32, height: Int32, direction: ResizeDirection): Unit
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let window: Option<UiWindow> = driver.findWindow(WindowFilter(active: true))
-window?.resize(100, 100, ResizeDirection.Left)
+try {
+    let driver: Driver = Driver.create()
+    let window: Option<UiWindow> = driver.findWindow(WindowFilter(active: true))
+    window?.resize(100, 100, ResizeDirection.Left)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func resume()
@@ -4383,10 +4768,16 @@ public func resume(): Unit
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let window: Option<UiWindow> = driver.findWindow(WindowFilter(active: true))
-window?.resume()
+try {
+    let driver: Driver = Driver.create()
+    let window: Option<UiWindow> = driver.findWindow(WindowFilter(active: true))
+    window?.resume()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ### func split()
@@ -4421,10 +4812,16 @@ public func split(): Unit
 // index.cj
 
 import kit.TestKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let driver: Driver = Driver.create()
-let window: Option<UiWindow> = driver.findWindow(WindowFilter(active: true))
-window?.split()
+try {
+    let driver: Driver = Driver.create()
+    let window: Option<UiWindow> = driver.findWindow(WindowFilter(active: true))
+    window?.split()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## class WindowFilter
@@ -4440,7 +4837,7 @@ public class WindowFilter {
 }
 ```
 
-**功能：** 窗口的属性信息。
+**功能：** 窗口的标志属性信息。
 
 **系统能力：** SystemCapability.Test.UiTest
 
@@ -4452,7 +4849,7 @@ public class WindowFilter {
 public var active:?Bool
 ```
 
-**功能：** 窗口是否正与用户进行交互。
+**功能：** 窗口是否正与用户进行交互，true：交互状态，false：未交互状态，默认值为false。
 
 **类型：** ?Bool
 
@@ -4468,7 +4865,7 @@ public var active:?Bool
 public var bundleName:?String
 ```
 
-**功能：** 窗口归属应用的包名。
+**功能：** 窗口归属应用的包名，默认值为空。
 
 **类型：** ?String
 
@@ -4484,7 +4881,7 @@ public var bundleName:?String
 public var displayId:?Int32
 ```
 
-**功能：** 控件边框所属的屏幕ID。
+**功能：** 窗口所属的屏幕ID。取值大于或等于0的整数。默认值为设备默认屏ID。
 
 **类型：** ?Int32
 
@@ -4500,7 +4897,7 @@ public var displayId:?Int32
 public var focused:?Bool
 ```
 
-**功能：** 窗口是否处于获焦状态。
+**功能：** 窗口是否处于获焦状态，true：获焦状态，false：未获焦状态，默认值为false。
 
 **类型：** ?Bool
 
@@ -4516,7 +4913,7 @@ public var focused:?Bool
 public var title:?String
 ```
 
-**功能：** 窗口的标题信息。
+**功能：** 窗口的标题信息，默认值为空。
 
 **类型：** ?String
 
@@ -4542,11 +4939,11 @@ public init(bundleName!: ?String = None, title!: ?String = None, focused!: ?Bool
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|bundleName|?String|否|None| **命名参数。** 窗口归属应用的包名。|
-|title|?String|否|None| **命名参数。** 窗口的标题信息。|
-|focused|?Bool|否|None| **命名参数。** 窗口是否处于获焦状态。|
-|active|?Bool|否|None| **命名参数。** 窗口是否正与用户进行交互。|
-|displayId|?Int32|否|None| **命名参数。** 控件边框所属的屏幕ID，取值大于或等于0的整数。|
+|bundleName|?String|否|None| **命名参数。** 窗口归属应用的包名，默认值为空。|
+|title|?String|否|None| **命名参数。** 窗口的标题信息，默认值为空。|
+|focused|?Bool|否|None| **命名参数。** 窗口是否处于获焦状态，true：获焦状态，false：未获焦状态，默认值为false。|
+|active|?Bool|否|None| **命名参数。** 窗口是否正与用户进行交互，true：交互状态，false：未交互状态，默认值为false。|
+|displayId|?Int32|否|None| **命名参数。** 窗口所属的屏幕ID。取值大于或等于0的整数。默认值为设备默认屏ID。|
 
 ## enum DisplayRotation
 
@@ -4848,7 +5245,7 @@ public enum ResizeDirection {
 }
 ```
 
-**功能：** 窗口调整的方向。
+**功能：** 窗口调整大小的方向。
 
 **系统能力：** SystemCapability.Test.UiTest
 
@@ -5028,7 +5425,7 @@ public enum WindowMode {
 }
 ```
 
-**功能：** 窗口模式。
+**功能：** 窗口的窗口模式。
 
 **系统能力：** SystemCapability.Test.UiTest
 

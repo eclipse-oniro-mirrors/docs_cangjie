@@ -15,7 +15,11 @@ public func border(width!: ?Length, color!: ?ResourceColor = None, radius!: ?Len
     style!: ?BorderStyle = Option.None): T
 ```
 
-**功能：** 设置组件的边框样式，当color、radius缺省时，为了保证borderColor、borderRadius生效，需要将borderColor、borderRadius设置在border后。
+**功能：** 设置组件的边框样式。
+
+> **说明：**
+>
+> 当color、radius缺省时，为了保证borderColor、borderRadius生效，需要将borderColor、borderRadius设置在border后。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 

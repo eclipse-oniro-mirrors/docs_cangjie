@@ -1,6 +1,8 @@
 # ohos.application.test_runner
 
-本模块提供了框架测试的能力。
+test_runner模块提供了框架测试的能力。包括准备单元测试环境、运行测试用例。
+
+如果您想实现自己的单元测试框架，您必须继承这个类并覆盖它的所有方法。
 
 ## 导入模块
 
@@ -62,9 +64,9 @@ public static func registerCreator(name: String, creator: () -> TestRunner): Uni
 ```cangjie
 import kit.TestKit.*
 
-let TESTRUNNER_REGISTER_RESULT = TestRunner.registerCreator("test", () -> MyTestRunner)
+let TESTRUNNER_REGISTER_RESULT1 = TestRunner.registerCreator("test", { => MyTestRunner1()})
 
-class MyTestRunner <: TestRunner {
+class MyTestRunner1 <: TestRunner {
     public override func onPrepare(): Unit {
     }
 }
@@ -74,32 +76,6 @@ class MyTestRunner <: TestRunner {
 
 ```cangjie
 public open func onPrepare(): Unit
-```
-
-**功能：** 运行测试用例。
-
-**系统能力：** SystemCapability.Ability.AbilityRuntime.Core
-
-**起始版本：** 22
-
-**示例：**
-
-<!-- compile -->
-```cangjie
-import kit.TestKit.*
-
-let TESTRUNNER_REGISTER_RESULT = TestRunner.registerCreator("test", () -> MyTestRunner)
-
-class MyTestRunner <: TestRunner {
-    public override func onPrepare(): Unit {
-    }
-}
-```
-
-### func onRun()
-
-```cangjie
-public open func onRun(): Unit
 ```
 
 **功能：** 为运行测试用例准备单元测试环境。
@@ -114,9 +90,36 @@ public open func onRun(): Unit
 ```cangjie
 import kit.TestKit.*
 
-let TESTRUNNER_REGISTER_RESULT = TestRunner.registerCreator("test", () -> MyTestRunner)
+let TESTRUNNER_REGISTER_RESULT2 = TestRunner.registerCreator("test", { => MyTestRunner2()})
 
-class MyTestRunner <: TestRunner {
+class MyTestRunner2 <: TestRunner {
+    public override func onPrepare(): Unit {
+    }
+}
+```
+
+### func onRun()
+
+```cangjie
+public open func onRun(): Unit
+```
+
+**功能：** 运行测试用例。
+
+**系统能力：** SystemCapability.Ability.AbilityRuntime.Core
+
+**起始版本：** 22
+
+**示例：**
+
+<!-- compile -->
+```cangjie
+import kit.TestKit.*
+
+let TESTRUNNER_REGISTER_RESULT3 = TestRunner.registerCreator("test", { => MyTestRunner3()})
+
+class MyTestRunner3 <: TestRunner {
     public override func onRun(): Unit {
     }
 }
+```

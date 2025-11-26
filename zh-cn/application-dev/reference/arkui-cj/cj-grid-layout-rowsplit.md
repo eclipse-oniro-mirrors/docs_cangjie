@@ -67,7 +67,6 @@ public func resizeable(value: ?Bool): This
 > - RowSplit的分割线可以改变左右两边子组件的宽度，子组件可改变宽度的范围取决于子组件的最大最小宽度。
 > - 支持[clip](../arkui-cj/cj-universal-attribute-shapclip.md#func-clipbool)、[margin](../arkui-cj/cj-universal-attribute-size.md#func-marginlength)等通用属性，clip不设置的时候默认值为true。
 
-
 ## 示例代码
 
 RowSplit的基本用法。设置可拖动的、横向布局的子组件。

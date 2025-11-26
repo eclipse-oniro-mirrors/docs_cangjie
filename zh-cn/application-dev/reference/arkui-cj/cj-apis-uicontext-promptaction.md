@@ -64,7 +64,7 @@ public func openCustomDialog(options: CustomDialogOptions, callBack: (Int32) -> 
 ### func showActionMenu(ActionMenuOptions, ShowActionMenuCallBack)
 
 ```cangjie
-public func showActionMenu(option: ActionMenuOptions, callback!: ShowActionMenuCallBack = defaultCallback)
+public func showActionMenu(option: ActionMenuOptions, callback!: ShowActionMenuCallBack = DEFAULT_CALLBACK)
 ```
 
 **功能：** 在给定设置中显示操作菜单。此API使用异步回调返回结果。
@@ -78,7 +78,7 @@ public func showActionMenu(option: ActionMenuOptions, callback!: ShowActionMenuC
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |option|[ActionMenuOptions](#class-actionmenuoptions)|是|-| **命名参数。** 操作菜单选项。|
-|callback|[ShowActionMenuCallBack](#type-showactionmenucallback)|否|defaultCallback| **命名参数。** 用于返回操作菜单响应结果的回调。|
+|callback|[ShowActionMenuCallBack](#type-showactionmenucallback)|否|DEFAULT_CALLBACK| **命名参数。** 用于返回操作菜单响应结果的回调。DEFAULT_CALLBACK表示{_: Option<BusinessException>, _: Option<Int32> =>}|
 
 **异常：**
 
@@ -91,7 +91,7 @@ public func showActionMenu(option: ActionMenuOptions, callback!: ShowActionMenuC
 ### func showDialog(ShowDialogOptions, ShowDialogCallBack)
 
 ```cangjie
-public func showDialog(option: ShowDialogOptions, callback!: ShowDialogCallBack = defaultCallback)
+public func showDialog(option: ShowDialogOptions, callback!: ShowDialogCallBack = DEFAULT_CALLBACK)
 ```
 
 **功能：** 在给定设置中显示对话框。此API使用异步回调返回结果。
@@ -105,7 +105,7 @@ public func showDialog(option: ShowDialogOptions, callback!: ShowDialogCallBack 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |option|[ShowDialogOptions](#class-showdialogoptions)|是|-| **命名参数。** 对话框选项。|
-|callback|[ShowDialogCallBack](#type-showdialogcallback)|否|defaultCallback| **命名参数。** 用于返回对话框响应结果的回调。|
+|callback|[ShowDialogCallBack](#type-showdialogcallback)|否|DEFAULT_CALLBACK|**命名参数。** 用于返回对话框响应结果的回调。DEFAULT_CALLBACK表示{_: Option<BusinessException>, _: Option<Int32> =>}|
 
 **异常：**
 
@@ -1348,8 +1348,8 @@ public init(
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|title|[ResourceColor](./cj-common-types.md#interface-resourcecolor)|否|''| **命名参数。** 标题文本。|
-|message|[ResourceColor](./cj-common-types.md#interface-resourcecolor)|否|''| **命名参数。** 文本主体。|
+|title|[ResourceStr](./cj-common-types.md#interface-resourcestr)|否|''| **命名参数。** 标题文本。|
+|message|[ResourceStr](./cj-common-types.md#interface-resourcestr)|否|''| **命名参数。** 文本主体。|
 |buttons|Array\<[ButtonInfo](#class-buttoninfo)>|否|[]| **命名参数。** 对话框中的按钮数组。|
 |alignment|[DialogAlignment](./cj-common-types.md#enum-dialogalignment)|否|DialogAlignment.Default| **命名参数。** 对话框在屏幕上的对齐方式。|
 |offset|[Offset](./cj-common-types.md#class-offset)|否|Offset(0.vp, 0.vp)| **命名参数。** 对话框偏移量。|

@@ -32,7 +32,6 @@ public func blur(value: ?Float64): T
 |:---|:---|
 |T|返回调用此接口的组件实例本身。|
 
-
 ## func colorBlend(?ResourceColor)
 
 ```cangjie
@@ -57,7 +56,6 @@ public func colorBlend(value: ?ResourceColor): T
 |:---|:---|
 |T|返回调用此接口的组件实例本身。|
 
-
 ## func backdropBlur(?Float64)
 
 ```cangjie
@@ -81,7 +79,6 @@ public func backdropBlur(value: ?Float64): T
 |类型|说明|
 |:---|:---|
 |T|返回调用此接口的组件实例本身。|
-
 
 ## func shadow(?Float64, ?ResourceColor, ?Float64, ?Float64)
 
@@ -110,7 +107,6 @@ public func shadow(radius!: ?Float64, color!: ?ResourceColor = None, offsetX!: ?
 |:---|:---|
 |T|返回调用此接口的组件实例本身。|
 
-
 ## func grayscale(?Float64)
 
 ```cangjie
@@ -134,7 +130,6 @@ public func grayscale(value: ?Float64): T
 |类型|说明|
 |:---|:---|
 |T|返回调用此接口的组件实例本身。|
-
 
 ## func brightness(?Float64)
 
@@ -160,7 +155,6 @@ public func brightness(value: ?Float64): T
 |:---|:---|
 |T|返回调用此接口的组件实例本身。|
 
-
 ## func saturate(?Float64)
 
 ```cangjie
@@ -184,7 +178,6 @@ public func saturate(value: ?Float64): T
 |类型|说明|
 |:---|:---|
 |T|返回调用此接口的组件实例本身。|
-
 
 ## func contrast(?Float64)
 
@@ -210,7 +203,6 @@ public func contrast(value: ?Float64): T
 |:---|:---|
 |T|返回调用此接口的组件实例本身。|
 
-
 ## func invert(?Float64)
 
 ```cangjie
@@ -234,7 +226,6 @@ public func invert(value: ?Float64): T
 |类型|说明|
 |:---|:---|
 |T|返回调用此接口的组件实例本身。|
-
 
 ## func invert(?Float64, ?Float64, ?Float64, ?Float64)
 
@@ -262,7 +253,6 @@ public func invert(low!: ?Float64, high!: ?Float64, threshold!: ?Float64, thresh
 |类型|说明|
 |:---|:---|
 |T|返回调用此接口的组件实例本身。|
-
 
 ## func sepia(?Float64)
 
@@ -311,7 +301,6 @@ public func hueRotate(value: ?Float32): T
 |类型|说明|
 |:---|:---|
 |T|返回调用此接口的组件实例本身。|
-
 
 ## 示例代码
 
@@ -700,4 +689,3 @@ class EntryView {
 ![uni_image_effect](figures/uni_image_effect_2.png)
 
 ![uni_image_effect](figures/uni_image_effect_3.png)
-

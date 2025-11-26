@@ -20,7 +20,7 @@ root_path
 
 宏定义放在 _macros_ 子目录下：
 
-<!-- run -macro1 -->
+<!-- run -macro0 -->
 <!-- cfg="--compile-macro" -->
 
 ```cangjie
@@ -41,8 +41,7 @@ public macro Outer(input: Tokens) {
 
 宏调用放在 _src_ 子目录下：
 
-<!-- run -macro1 -->
-<!-- cfg="--debug-macro" -->
+<!-- run -macro0 -->
 
 ```cangjie
 // src/demo.cj
@@ -55,7 +54,6 @@ class Demo {
 
 main() {
     println("test macro")
-    0
 }
 ```
 
@@ -96,13 +94,13 @@ cjc src/demo.cj -o demo.exe --import-path ./target --output-dir ./target
 >
 > 如果宏函数依赖一些全局变量，使用并行宏展开会存在风险。
 
-<!-- compile -->
+<!-- compile -macro1 -->
 <!-- cfg="--compile-macro" -->
 
 ```cangjie
 macro package define
 import std.ast.*
-import std.collection.*
+import std.collection.HashMap
 
 var Counts = HashMap<String, Int64>()
 
@@ -313,45 +311,4 @@ cjc --debug-macro demo.cj --import-path ./target
 /* ===== End of the Emit ===== */
 ```
 
-如果宏展开后的代码有语义错误，则编译器的错误信息会溯源到宏展开后代码的具体行列号。仓颉宏的 _debug_ 模式有以下注意事项：
-
-- 宏的 _debug_ 模式会重排源码的行列号信息，不适用于某些特殊的换行场景。例如：
-
-  ```txt
-  // before expansion
-  @M() - 2 // macro M return 2
-
-  // after expansion
-  // ===== Emitted my Macro M at line 1 ===
-  2
-  // ===== End of the Emit =====
-  - 2
-  ```
-
-  这些因换行符导致语义改变的情形，不应使用 _debug_ 模式。
-
-- 不支持宏调用在宏定义内的调试，会编译报错。
-
-  <!-- compile.error -->
-
-  ```cangjie
-  public macro M(input: Tokens) {
-      let a = @M2(1+2) // M2 is in macro M, not suitable for debug mode.
-      return input + quote($a)
-  }
-  ```
-
-- 不支持带括号宏的调试。
-
-  <!-- compile.error -->
-
-  ```cangjie
-  // main.cj
-
-  main() {
-      // For macro with parenthesis, newline introduced by debug will change the semantics
-      // of the expression, so it is not suitable for debug mode.
-      let t = @M(1+2)
-      0
-  }
-  ```
+如果宏展开后的代码有语义错误，则编译器的错误信息会溯源到宏展开后代码的具体行列号。

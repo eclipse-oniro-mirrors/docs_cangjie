@@ -50,7 +50,7 @@ public func flexBasis(value: ?Length): T
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|value|?[Length](./cj-common-types.md#interface-length)|是|-|组件在父容器主轴方向上的基准尺寸。|
+|value|?[Length](./cj-common-types.md#interface-length)|是|-|组件在父容器主轴方向上的基准尺寸。<br>初始值：'auto'（表示组件在主轴方向上的基准尺寸为组件原本的大小）。<br>不支持设置percent。<br>取值范围(0,+∞)，默认单位为vp。<br>异常值：实际布局效果均与'auto'一致。|
 
 **返回值：**
 

@@ -1,6 +1,6 @@
 # ohos.file.fileuri
 
-该模块提供通过PATH获取文件统一资源标志符（Uniform Resource Identifier，URI），后续可通过使用[ohos.file_fs（文件管理）](cj-apis-file_fs.md)进行相关open、read、write等操作，实现文件分享。
+fileuri模块提供通过PATH获取文件统一资源标志符（Uniform Resource Identifier，URI），后续可通过使用[ohos.file_fs（文件管理）](cj-apis-file_fs.md)进行相关open、read、write等操作，实现文件分享。
 
 ## 导入模块
 
@@ -23,7 +23,7 @@ API示例代码使用说明：
 public func getUriFromPath(path: String): String
 ```
 
-**功能：** 通过传入的路径path生成应用自己的uri(不支持媒体类型uri的获取)。将path转uri时，路径中的中文及非数字字母的特殊字符将会被编译成对应的ASCII码，拼接在uri中。
+**功能：** 通过传入的路径path生成应用自己的URI；将path转URI时，路径中的中文及非数字字母的特殊字符将会被编译成对应的ASCII码，拼接在URI中。
 
 **系统能力：** SystemCapability.FileManagement.AppFileService
 
@@ -75,7 +75,7 @@ public class FileUri <: Uri {
 }
 ```
 
-**功能：** 提供在分享过程中将uri转分享路径path、应用自己的沙箱路径在分享时生成对应应用自己的uri、获取uri所在目录路径的uri等接口能力，方便应用对文件分享业务中uri的访问。
+**功能：** 提供通过PATH获取文件统一资源标志符（Uniform Resource Identifier，URI），后续可通过使用[ohos.file.fs](./cj-apis-file_fs.md)进行相关open、read、write等操作，实现文件分享。
 
 **系统能力：** SystemCapability.FileManagement.AppFileService
 
@@ -91,7 +91,7 @@ public class FileUri <: Uri {
 public prop name: String
 ```
 
-**功能：** 获取FileUri对应文件名。
+**功能：** 通过传入的uri获取到对应的文件名称。（如果文件名中存在ASCII码将会被解码处理后拼接在原处）
 
 **类型：** String
 
@@ -116,7 +116,7 @@ public prop name: String
 public override prop path: String
 ```
 
-**功能：** 获取FileUri对应路径名。
+**功能：** 将uri转换成对应的沙箱路径path。 1、uri转path过程中会将uri中存在的ASCII码进行解码后拼接在原处，非系统接口生成的uri中可能存在ASCII码解析范围之外的字符，导致字符串无法正常拼接；2、转换处理为系统约定的字符串替换规则（规则随系统演进可能会发生变化），转换过程中不进行路径校验操作，无法保证转换结果的一定可以访问。
 
 **类型：** String
 
@@ -177,8 +177,7 @@ public override func toString(): String
 ## class Uri
 
 ```cangjie
-public open class Uri <: ToString {
-}
+public open class Uri <: ToString {}
 ```
 
 **功能：** 提供在分享过程中将uri转分享路径path、应用自己的沙箱路径在分享时生成对应应用自己的uri、获取uri所在目录路径的uri等接口能力，方便应用对文件分享业务中uri的访问。

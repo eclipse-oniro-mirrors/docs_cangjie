@@ -1,6 +1,6 @@
 # ohos.i18n（国际化-I18n）
 
-本模块提供系统相关的或者增强的国际化能力，包括区域管理、电话号码处理、日历等，相关接口为ECMA 402标准中未定义的补充接口。Intl模块提供了ECMA 402标准定义的基础国际化接口，与本模块共同使用可提供完整地国际化支持能力。
+i18n模块提供系统相关的或者增强的国际化能力，包括区域管理、电话号码处理、日历等，相关接口为ECMA 402标准中未定义的补充接口。Intl模块提供了ECMA 402标准定义的基础国际化接口，与本模块共同使用可提供完整地国际化支持能力。
 
 ## 导入模块
 
@@ -23,7 +23,8 @@ API示例代码使用说明：
 public func getCalendar(locale: String, calendarType!: ?CalendarType = None): Calendar
 ```
 
-**功能：** 获取指定区域和日历类型对应的日历对象。
+**功能：** 获取指定区域和历法的日历对象。
+
 **系统能力：** SystemCapability.Global.I18n
 
 **起始版本：** 22
@@ -32,14 +33,14 @@ public func getCalendar(locale: String, calendarType!: ?CalendarType = None): Ca
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|locale|String|是|-|表示区域信息的字符串，由语言、脚本、国家或地区组成。|
-|calendarType|?CalendarType|否|None|日历类型。|
+|locale|String|是|-|表示区域信息的字符串，由语言、脚本、国家地区组成，例如zh-Hans-CN。|
+|calendarType|?CalendarType|否|None|表示历法，取值包括：buddhist,&nbsp;chinese,&nbsp;coptic,&nbsp;ethiopic,&nbsp;hebrew,&nbsp;gregory,&nbsp;indian,&nbsp;islamic_civil,&nbsp;islamic_tbla,&nbsp;islamic_umalqura,&nbsp;japanese,&nbsp;persian。<br>默认值：区域默认的历法。|
 
 **返回值：**
 
 |类型|说明|
 |:----|:----|
-|Calendar|返回与指定区域和日历类型对应的日历对象。|
+|Calendar|日历对象。|
 
 **示例：**
 
@@ -65,7 +66,7 @@ try {
 public class Calendar {}
 ```
 
-**功能：** 实体日历对象。
+**功能：** 提供历法相关的能力，包括历法名称获取和日期计算等。
 
 **系统能力：** SystemCapability.Global.I18n
 
@@ -77,7 +78,7 @@ public class Calendar {}
 public func add(field: String, amount: Int32): Unit
 ```
 
-**功能：** 在日历的给定字段进行加减操作。
+**功能：** 对日历对象中的表示时间日期的日历属性值进行加减操作。
 
 **系统能力：** SystemCapability.Global.I18n
 
@@ -87,7 +88,7 @@ public func add(field: String, amount: Int32): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|field|String|是|-|指定进行操作的日历字段，目前支持的field值有year, month, week_of_year, week_of_month, date, day_of_year, day_of_week, day_of_week_in_month, hour, hour_of_day, minute, second, millisecond。|
+|field|String|是|-|指定的日历属性，目前支持的属性值有&nbsp;year,&nbsp;month,&nbsp;week_of_year,&nbsp;week_of_month,&nbsp;date,&nbsp;day_of_year,&nbsp;day_of_week,&nbsp;day_of_week_in_month,&nbsp;hour,&nbsp;hour_of_day,&nbsp;minute,&nbsp;second,&nbsp;millisecond。<br>各取值代表的含义请参考[get](#func-getstring)。。|
 |amount|Int32|是|-|进行加减操作的具体数值。|
 
 **异常：**
@@ -125,7 +126,7 @@ try {
 public func get(field: String): Int32
 ```
 
-**功能：** 获取日历对象中与field相关联的值。
+**功能：** 获取日历对象中日历属性的值。
 
 **系统能力：** SystemCapability.Global.I18n
 
@@ -135,13 +136,38 @@ public func get(field: String): Int32
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|field|String|是|-|通过field来获取日历对象相应的值。目前支持的field值请参考下表。|
+|field|String|是|-|指定的日历属性，目前支持的属性值请参考下表。|
+
+| 属性名称   | 说明                                       |
+| ----- | ---------------------------------------- |
+| era | 纪元，例如公历中的公元前或者公元后。 |
+| year | 年。 |
+| month | 月。说明：月份从0开始计数，例如0表示一月。 |
+| date | 日。 |
+| hour | 挂钟小时数。 |
+| hour_of_day | 一天中的第几小时。 |
+| minute | 分。 |
+| second | 秒。 |
+| millisecond | 毫秒。 |
+| week_of_year | 一年中的第几周，按照星期计算周，注意：第一周的归属算法各地有区别。 |
+| year_woy | 一年中的第几周，按照数值计算周，例如一年中前1~7日属于第一周。 |
+| week_of_month | 一个月中的第几周，按照星期计算周。 |
+| day_of_week_in_month | 一月中的第几周，按照数值计算周，例如1-7日属于第一周。 |
+| day_of_year | 一年中的第几天。 |
+| day_of_week | 一周中的第几天(星期)。 |
+| milliseconds_in_day | 一天中的第几毫秒。 |
+| zone_offset | 以毫秒计时的时区固定偏移量（不含夏令时）。 |
+| dst_offset | 以毫秒计时的夏令时偏移量。 |
+| dow_local | 本地星期。 |
+| extended_year | 扩展的年份数值，支持负数。 |
+| julian_day | 儒略日,与当前时区相关。 |
+| is_leap_month | 是否为闰月。 |
 
 **返回值：**
 
 |类型|说明|
 |:----|:----|
-|Int32|与field相关联的值，如当前Calendar对象的内部日期的年份为1990，get(“year”)返回1990。|
+|Int32|日历属性的值，如当前Calendar对象的内部日期的年份为1990，get('year')返回1990。|
 
 **示例：**
 
@@ -174,7 +200,7 @@ try {
 public func getDisplayName(locale: String): String
 ```
 
-**功能：** 获取日历对象在该区域的名字。
+**功能：** 获取日历对象名称在指定语言下的翻译。
 
 **系统能力：** SystemCapability.Global.I18n
 
@@ -184,13 +210,13 @@ public func getDisplayName(locale: String): String
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|locale|String|是|-|表示区域信息的字符串，由语言、脚本、国家或地区组成。|
+|locale|String|是|-|表示区域ID的字符串，由语言、脚本、国家地区组成。|
 
 **返回值：**
 
 |类型|说明|
 |:----|:----|
-|String|日历在locale所指示区域的名字。如buddhist在en-US上显示的名称为“Buddhist Calendar”。|
+|String|日历对象名称在指定语言下的翻译。如buddhist在en-US上显示的名称为“Buddhist&nbsp;Calendar”。|
 
 **示例：**
 
@@ -218,7 +244,7 @@ try {
 public func getFirstDayOfWeek(): Int32
 ```
 
-**功能：** 获取日历对象的一周起始日。
+**功能：** 获取系统设置的周起始日。
 
 **系统能力：** SystemCapability.Global.I18n
 
@@ -228,7 +254,7 @@ public func getFirstDayOfWeek(): Int32
 
 |类型|说明|
 |:----|:----|
-|Int32|获取一周的起始日，1代表周日，7代表周六。|
+|Int32|周起始日。|
 
 **示例：**
 
@@ -255,7 +281,7 @@ try {
 public func getMinimalDaysInFirstWeek(): Int32
 ```
 
-**功能：** 获取一年中第一周的最小天数。
+**功能：** 获取日历对象一年中第一周的最小天数。
 
 **系统能力：** SystemCapability.Global.I18n
 
@@ -265,7 +291,7 @@ public func getMinimalDaysInFirstWeek(): Int32
 
 |类型|说明|
 |:----|:----|
-|Int32|一年中第一周的最小天数。这表示为了确定一年中的第一周至少需要包含的天数。例如，如果这个值设置为4，那么一年的第一周必须至少包含4天，否则这些天将被算作上一年的最后一周。这一设定帮助确保周数的计算符合不同地区的习惯。|
+|Int32|一年中第一周的最小天数。|
 
 **示例：**
 
@@ -292,7 +318,7 @@ try {
 public func getTimeInMillis(): Float64
 ```
 
-**功能：** 获取当前日历的UTC毫秒数。
+**功能：** 获取当前日历对象的时间戳。
 
 **系统能力：** SystemCapability.Global.I18n
 
@@ -302,7 +328,7 @@ public func getTimeInMillis(): Float64
 
 |类型|说明|
 |:----|:----|
-|Float64|当前日历的UTC毫秒数。|
+|Float64|Unix时间戳，表示从1970.1.1&nbsp;00:00:00&nbsp;GMT逝去的毫秒数。|
 
 **示例：**
 
@@ -330,7 +356,7 @@ try {
 public func getTimeZone(): String
 ```
 
-**功能：** 获取日历对象的时区。
+**功能：** 创建对应时区城市的时区对象。
 
 **系统能力：** SystemCapability.Global.I18n
 
@@ -340,7 +366,7 @@ public func getTimeZone(): String
 
 |类型|说明|
 |:----|:----|
-|String|合法的时区ID，如“Asia/Shanghai”。|
+|String|时区城市ID，要求是系统支持的时区城市ID。|
 
 **示例：**
 
@@ -382,9 +408,9 @@ public func set(year: Int32, month: Int32, date: Int32, hour!: ?Int32 = None, mi
 |year|Int32|是|-|设置的年。|
 |month|Int32|是|-|设置的月。说明：月份从0开始计数，如0表示一月。|
 |date|Int32|是|-|设置的日。|
-|hour|?Int32|否|None|**命名参数。** 设置的小时。-1代表系统小时。|
-|minute|?Int32|否|None|**命名参数。** 设置的分钟。-1代表系统分钟。|
-|second|?Int32|否|None|**命名参数。** 设置的秒。-1代表系统秒。|
+|hour|?Int32|否|None|**命名参数。** 设置的小时。默认值：系统当前时间。|
+|minute|?Int32|否|None|**命名参数。** 设置的分钟。默认值：系统当前时间。|
+|second|?Int32|否|None|**命名参数。** 设置的秒。默认值：系统当前时间。|
 
 **示例：**
 
@@ -411,7 +437,7 @@ try {
 public func setFirstDayOfWeek(value: Int32): Unit
 ```
 
-**功能：** 设置每一周的起始日。
+**功能：** 设置日历对象的周起始日。
 
 **系统能力：** SystemCapability.Global.I18n
 
@@ -421,7 +447,7 @@ public func setFirstDayOfWeek(value: Int32): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|value|Int32|是|-|设置一周的起始日，1代表周日，7代表周六。|
+|value|Int32|是|-|一周的起始日，1代表周日，7代表周六。|
 
 **示例：**
 
@@ -449,7 +475,7 @@ try {
 public func setMinimalDaysInFirstWeek(value: Int32): Unit
 ```
 
-**功能：** 设置一年中第一周的最小天数。
+**功能：** 设置日历对象一年中第一周的最小天数。
 
 **系统能力：** SystemCapability.Global.I18n
 
@@ -459,7 +485,7 @@ public func setMinimalDaysInFirstWeek(value: Int32): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|value|Int32|是|-|一年中第一周的最小天数。这表示为了确定一年中的第一周至少需要包含的天数。例如，如果这个值为4，那么一年的第一周必须至少包含4天，否则这些天将被算作上一年的最后一周。这一设定帮助确保周数的计算符合不同地区的习惯。|
+|value|Int32|是|-|一年中第一周的最小天数。|
 
 **示例：**
 
@@ -487,7 +513,7 @@ try {
 public func setTime(time: Float64): Unit
 ```
 
-**功能：** 设置日历对象内部的时间日期，time为从1970.1.1 00:00:00 GMT逝去的毫秒数。
+**功能：** 基于传入的时间戳，设置日历对象内部的时间、日期。
 
 **系统能力：** SystemCapability.Global.I18n
 
@@ -497,7 +523,7 @@ public func setTime(time: Float64): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|time|Float64|是|-|time为从1970.1.1 00:00:00 GMT逝去的毫秒数。|
+|time|Float64|是|-|Unix时间戳，表示从1970.1.1&nbsp;00:00:00&nbsp;GMT逝去的毫秒数。|
 
 **示例：**
 
@@ -573,7 +599,7 @@ public class System {}
 public static func getAppPreferredLanguage(): String
 ```
 
-**功能：** 获取应用的偏好语言。
+**功能：** 获取应用偏好语言。
 
 **系统能力：** SystemCapability.Global.I18n
 
@@ -583,7 +609,7 @@ public static func getAppPreferredLanguage(): String
 
 |类型|说明|
 |:----|:----|
-|String|应用的偏好语言。|
+|String|应用偏好语言。|
 
 **示例：**
 
@@ -636,7 +662,7 @@ public enum CalendarType {
 Buddhist
 ```
 
-**功能：** buddhist日历类型
+**功能：** 佛历
 
 **系统能力：**  SystemCapability.Global.I18n
 
@@ -648,7 +674,7 @@ Buddhist
 Chinese
 ```
 
-**功能：**  coptic日历类型
+**功能：** 农历
 
 **系统能力：** SystemCapability.Global.I18n
 
@@ -660,7 +686,7 @@ Chinese
 Coptic
 ```
 
-**功能：**  coptic日历类型
+**功能：** 科普特历
 
 **系统能力：** SystemCapability.Global.I18n
 
@@ -672,7 +698,7 @@ Coptic
 Ethiopic
 ```
 
-**功能：**  ethiopic日历类型
+**功能：** 埃塞俄比亚历
 
 **系统能力：** SystemCapability.Global.I18n
 
@@ -684,7 +710,7 @@ Ethiopic
 Hebrew
 ```
 
-**功能：**  hebrew日历类型
+**功能：** 希伯来历
 
 **系统能力：** SystemCapability.Global.I18n
 
@@ -696,7 +722,7 @@ Hebrew
 Gregory
 ```
 
-**功能：**  gregory日历类型
+**功能：** 公历
 
 **系统能力：** SystemCapability.Global.I18n
 
@@ -708,7 +734,7 @@ Gregory
 Indian
 ```
 
-**功能：**  indian日历类型
+**功能：** 印度历
 
 **系统能力：** SystemCapability.Global.I18n
 
@@ -720,7 +746,7 @@ Indian
 IslamicCivil
 ```
 
-**功能：**  IslamicCivil日历类型
+**功能：** 伊斯兰希吉来历
 
 **系统能力：** SystemCapability.Global.I18n
 
@@ -732,7 +758,7 @@ IslamicCivil
 IslamicTbla
 ```
 
-**功能：**  IslamicTbla日历类型
+**功能：** 伊斯兰天文历
 
 **系统能力：** SystemCapability.Global.I18n
 
@@ -744,7 +770,7 @@ IslamicTbla
 IslamicUmalqura
 ```
 
-**功能：**  IslamicUmalqura日历类型
+**功能：** 伊斯兰历（乌姆库拉）
 
 **系统能力：** SystemCapability.Global.I18n
 
@@ -756,7 +782,7 @@ IslamicUmalqura
 Japanese
 ```
 
-**功能：**  Japanese日历类型
+**功能：** 日本历
 
 **系统能力：** SystemCapability.Global.I18n
 
@@ -768,7 +794,7 @@ Japanese
 Persian
 ```
 
-**功能：**  Persian日历类型
+**功能：** 波斯历
 
 **系统能力：** SystemCapability.Global.I18n
 

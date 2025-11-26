@@ -1,6 +1,6 @@
 # ohos.element_name
 
-本模块描述ElementName信息。
+element_name模块描述应用组件结构体，包含bundleName、moduleName和abilityName等。
 
 ## 导入模块
 

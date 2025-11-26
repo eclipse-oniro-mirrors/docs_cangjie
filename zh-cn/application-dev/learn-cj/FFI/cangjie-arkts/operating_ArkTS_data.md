@@ -207,7 +207,7 @@ console.log("result = " + result);
 
 ### ArkTS 异步锁
 
-为了解决多并发实例间的数据竞争问题， ArkTS 语言基础库引入了异步锁能力。为了开发者的开发效率， AsyncLock 对象支持跨并发实例引用传递，具体可参考[异步锁](https://docs.openharmony.cn/pages/v5.1/zh-cn/application-dev/arkts-utils/arkts-async-lock-introduction.md)。本节重点介绍异步锁结合 sendable 对象的场景。
+为了解决多并发实例间的数据竞争问题， ArkTS 语言基础库引入了异步锁能力。为了开发者的开发效率， AsyncLock 对象支持跨并发实例引用传递，具体可参考[异步锁](https://docs.openharmony.cn/pages/v6.0/zh-cn/application-dev/arkts-utils/arkts-async-lock-introduction.md)。本节重点介绍异步锁结合 sendable 对象的场景。
 
 仓颉侧实现：
 

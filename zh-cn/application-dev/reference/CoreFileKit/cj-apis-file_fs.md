@@ -1,6 +1,6 @@
 # ohos.file.fs（文件管理）
 
-该模块为基础文件操作API，提供基础文件操作能力，包括文件基本管理、文件目录管理、文件信息统计、文件流式读写等常用功能。
+fs模块为基础文件操作API，提供基础文件操作能力，包括文件基本管理、文件目录管理、文件信息统计、文件流式读写等常用功能。
 
 ## 导入模块
 
@@ -192,7 +192,7 @@ public func tryLock(exclusive!: Bool = false): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|exclusive|Bool|否|false|**命名参数。** 是否施加独占锁，默认false。|
+|exclusive|Bool|否|false|**命名参数。** 是否施加独占锁，默认false。true：施加独占锁；false：不施加独占锁。|
 
 **异常：**
 
@@ -236,7 +236,7 @@ try {
 public func unlock(): Unit
 ```
 
-**功能：** 以同步方式给文件解锁。
+**功能：** 以同步方式解锁文件。
 
 **系统能力：** SystemCapability.FileManagement.File.FileIO
 
@@ -297,7 +297,9 @@ public static func access(path: String, mode!: AccessModeType = AccessModeType.E
     flag!: AccessFlagType = AccessFlagType.Local): Bool
 ```
 
-**功能：**  检查文件是否存在，或校验操作权限。校验读、写或读写权限不通过会抛出13900012（Permission denied）错误码。
+**功能：**  检查文件或目录是否在本地，或校验操作权限。
+
+校验读、写或读写权限不通过会抛出13900012（Permission denied）错误码。
 
 **系统能力：** SystemCapability.FileManagement.File.FileIO
 
@@ -315,7 +317,7 @@ public static func access(path: String, mode!: AccessModeType = AccessModeType.E
 
 |类型|说明|
 |:----|:----|
-|Bool|返回true，表示文件在本地且校验权限存在；返回false，表示文件不存在或者文件在云端或其他分布式设备上。|
+|Bool|返回布尔值。返回true，表示文件或目录在本地且校验权限存在；返回false，表示文件或目录不存在或者文件或目录在云端或其他分布式设备上。|
 
 **异常：**
 
@@ -345,6 +347,7 @@ public static func access(path: String, mode!: AccessModeType = AccessModeType.E
 
 import kit.CoreFileKit.*
 import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
 let pathDir = "path/to/file"
 let filePath = pathDir + "/test.txt"
@@ -376,7 +379,7 @@ public static func close(file: Int32): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|file|Int32|是|-|已打开的File对象，关闭后file对象不再具备实际意义，不可再用于进行读写等操作。|
+|file|Int32|是|-|已打开的文件描述符fd。关闭后文件描述符fd不再具备实际意义，不可再用于进行读写等操作。|
 
 **异常：**
 
@@ -482,7 +485,7 @@ public static func copyDir(src: String, dest: String, mode!: Int32 = 0): Unit
 |:---|:---|:---|:---|:---|
 |src|String|是|-|源文件夹的应用沙箱路径。|
 |dest|String|是|-|目标文件夹的应用沙箱路径。|
-|mode|Int32|否|0| **命名参数。** 复制模式。默认mode为0。<br/>-&nbsp; mode为0，文件级别抛异常。目标文件夹下存在与源文件夹名冲突的文件夹，若冲突文件夹下存在同名文件，则抛出异常。源文件夹下未冲突的文件全部移动至目标文件夹下，目标文件夹下未冲突文件将继续保留，且冲突文件信息将在抛出异常(ConfilictFileException)的data属性中以Array\<ConflictFiles>形式提供。<br/>-&nbsp; mode为1，文件级别强制覆盖。目标文件夹下存在与源文件夹名冲突的文件夹，若冲突文件夹下存在同名文件，则强制覆盖冲突文件夹下所有同名文件，未冲突文件将继续保留。|
+|mode|Int32|否|0| **命名参数。** 复制模式，默认值为0。<br/>-&nbsp; mode为0，文件级别抛异常。目标目录下存在与源目录名冲突的目录，若冲突目录下存在同名文件，则抛出异常。源目录下未冲突的文件全部移动至目标目录下，目标目录下未冲突文件将继续保留，且冲突文件信息将在抛出异常的data属性中以Array\<[ConflictFiles](#class-conflictfiles)>形式提供。<br/>-&nbsp; mode为1，文件级别强制覆盖。目标目录下存在与源目录名冲突的目录，若冲突目录下存在同名文件，则强制覆盖冲突目录下所有同名文件，未冲突文件将继续保留。|
 
 **异常：**
 
@@ -547,8 +550,8 @@ public static func copyFile(src: String, dest: String, mode!: Int32 = 0): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|src|String|是|-|待复制文件的文件描述符。|
-|dest|String|是|-|目标文件的文件描述符。|
+|src|String|是|-|待复制文件的路径。|
+|dest|String|是|-|目标文件路径。|
 |mode|Int32|否|0| **命名参数。** mode提供覆盖文件的选项，当前仅支持0，且默认为0。<br/>0：完全覆盖目标文件，未覆盖部分将被裁切掉。|
 
 **异常：**
@@ -613,7 +616,7 @@ public static func copyFile(src: String, dest: Int32, mode!: Int32 = 0): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|src|String|是|-|待复制文件的文件描述符。|
+|src|String|是|-|待复制文件的路径。|
 |dest|Int32|是|-|目标文件的文件描述符。|
 |mode|Int32|否|0| **命名参数。** mode提供覆盖文件的选项，当前仅支持0，且默认为0。<br/>0：完全覆盖目标文件，未覆盖部分将被裁切掉。|
 
@@ -681,7 +684,7 @@ public static func copyFile(src: Int32, dest: String, mode!: Int32 = 0): Unit
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |src|Int32|是|-|待复制文件的文件描述符。|
-|dest|String|是|-|目标文件的文件描述符。|
+|dest|String|是|-|目标文件路径。|
 |mode|Int32|否|0| **命名参数。** mode提供覆盖文件的选项，当前仅支持0，且默认为0。<br/>0：完全覆盖目标文件，未覆盖部分将被裁切掉。|
 
 **异常：**
@@ -806,7 +809,7 @@ public static func createRandomAccessFile(file: String, mode!: Int64 = OpenMode.
     options!: RandomAccessFileOptions = RandomAccessFileOptions()): RandomAccessFile
 ```
 
-**功能：** 基于文件路径或文件对象创建RandomAccessFile文件对象。
+**功能：** 基于文件路径创建RandomAccessFile文件对象。
 
 **系统能力：** SystemCapability.FileManagement.File.FileIO
 
@@ -816,9 +819,9 @@ public static func createRandomAccessFile(file: String, mode!: Int64 = OpenMode.
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|file|String|是|-|已打开的File对象。|
+|file|String|是|-|文件的应用沙箱路径。|
 |mode|Int64|否|OpenMode.READ_ONLY|**命名参数。** 创建文件RandomAccessFile对象的[选项](#class-openmode)，仅当传入文件沙箱路径时生效，必须指定如下选项中的一个，默认以只读方式创建：<br/>-&nbsp;OpenMode.READ_ONLY(0o0)：只读创建。<br/>-&nbsp;OpenMode.WRITE_ONLY(0o1)：只写创建。<br/>-&nbsp;OpenMode.READ_WRITE(0o2)：读写创建。<br/>给定如下功能选项，以按位或的方式追加，默认不给定任何额外选项：<br/>-&nbsp;OpenMode.CREATE(0o100)：若文件不存在，则创建文件。<br/>-&nbsp;OpenMode.TRUNC(0o1000)：如果RandomAccessFile对象存在且文件具有写权限，则将其长度裁剪为零。<br/>-&nbsp;OpenMode.APPEND(0o2000)：以追加方式打开，后续写将追加到RandomAccessFile对象末尾。<br/>-&nbsp;OpenMode.NONBLOCK(0o4000)：如果path指向FIFO、块特殊文件或字符特殊文件，则本次打开及后续&nbsp;IO&nbsp;进行非阻塞操作。<br/>-&nbsp;OpenMode.DIR(0o200000)：如果path不指向目录，则出错。不允许附加写权限。<br/>-&nbsp;OpenMode.NOFOLLOW(0o400000)：如果path指向符号链接，则出错。<br/>-&nbsp;OpenMode.SYNC(0o4010000)：以同步IO的方式创建RandomAccessFile对象。|
-|options|[RandomAccessFileOptions](#class-randomaccessfileoptions)|否|RandomAccessFileOptions()|支持如下选项：<br/>- start，number类型，表示期望读取文件的位置。可选，默认从当前位置开始读。<br/>- end，number类型，表示期望读取结束的位置。可选，默认文件末尾。|
+|options|[RandomAccessFileOptions](#class-randomaccessfileoptions)|否|RandomAccessFileOptions()|支持如下选项：<br/>- start，Option<Int64>类型，表示期望读取文件的位置。可选，默认从当前位置开始读。<br/>- end，Option<Int64>类型，表示期望读取结束的位置。可选，默认文件末尾。|
 
 **返回值：**
 
@@ -891,7 +894,7 @@ public static func createRandomAccessFile(file: File, mode!: Int64 = OpenMode.RE
     options!: RandomAccessFileOptions = RandomAccessFileOptions()): RandomAccessFile
 ```
 
-**功能：** 基于文件路径或文件对象创建RandomAccessFile文件对象。
+**功能：** 基于文件对象创建RandomAccessFile文件对象。
 
 **系统能力：** SystemCapability.FileManagement.File.FileIO
 
@@ -903,7 +906,7 @@ public static func createRandomAccessFile(file: File, mode!: Int64 = OpenMode.RE
 |:---|:---|:---|:---|:---|
 |file|[File](#class-file)|是|-|已打开的File对象。|
 |mode|Int64|否|OpenMode.READ_ONLY|创建文件RandomAccessFile对象的选项，仅当传入文件沙箱路径时生效，必须指定如下选项中的一个，默认以只读方式创建：<br/>-&nbsp;OpenMode.READ_ONLY(0o0)：只读创建。<br/>-&nbsp;OpenMode.WRITE_ONLY(0o1)：只写创建。<br/>-&nbsp;OpenMode.READ_WRITE(0o2)：读写创建。<br/>给定如下功能选项，以按位或的方式追加，默认不给定任何额外选项：<br/>-&nbsp;OpenMode.CREATE(0o100)：若文件不存在，则创建文件。<br/>-&nbsp;OpenMode.TRUNC(0o1000)：如果RandomAccessFile对象存在且文件具有写权限，则将其长度裁剪为零。<br/>-&nbsp;OpenMode.APPEND(0o2000)：以追加方式打开，后续写将追加到RandomAccessFile对象末尾。<br/>-&nbsp;OpenMode.NONBLOCK(0o4000)：如果path指向FIFO、块特殊文件或字符特殊文件，则本次打开及后续&nbsp;IO&nbsp;进行非阻塞操作。<br/>-&nbsp;OpenMode.DIR(0o200000)：如果path不指向目录，则出错。不允许附加写权限。<br/>-&nbsp;OpenMode.NOFOLLOW(0o400000)：如果path指向符号链接，则出错。<br/>-&nbsp;OpenMode.SYNC(0o4010000)：以同步IO的方式创建RandomAccessFile对象。|
-|options|[RandomAccessFileOptions](#class-randomaccessfileoptions)|否|RandomAccessFileOptions()|支持如下选项：<br/>- start，number类型，表示期望读取文件的位置。可选，默认从当前位置开始读。<br/>- end，number类型，表示期望读取结束的位置。可选，默认文件末尾。|
+|options|[RandomAccessFileOptions](#class-randomaccessfileoptions)|否|RandomAccessFileOptions()|支持如下选项：<br/>- start，Option<Int64>类型，表示期望读取文件的位置。可选，默认从当前位置开始读。<br/>- end，Option<Int64>类型，表示期望读取结束的位置。可选，默认文件末尾。|
 
 **返回值：**
 
@@ -975,7 +978,7 @@ try {
 public static func createStream(path: String, mode: String): Stream
 ```
 
-**功能：** 基于文件路径创建文件流。
+**功能：** 基于文件路径创建文件流。需要配合[Stream](#class-stream)中的close()函数关闭文件流。
 
 **系统能力：** SystemCapability.FileManagement.File.FileIO
 
@@ -1056,7 +1059,7 @@ try {
 public static func dup(fd: Int32): File
 ```
 
-**功能：** 将文件描述符转化为File。
+**功能：** 复制文件描述符，并返回对应的File对象。
 
 **系统能力：** SystemCapability.FileManagement.File.FileIO
 
@@ -1119,7 +1122,7 @@ try {
 public static func fdatasync(fd: Int32): Unit
 ```
 
-**功能：** 以同步方法实现文件内容数据同步。
+**功能：** 实现文件内容数据同步。
 
 **系统能力：** SystemCapability.FileManagement.File.FileIO
 
@@ -1173,7 +1176,7 @@ try {
 public static func fdopenStream(fd: Int32, mode: String): Stream
 ```
 
-**功能：** 以同步方法基于文件描述符打开文件流。
+**功能：** 基于文件描述符打开文件流。需要配合[Stream](#class-stream)中的close()函数关闭文件流。
 
 **系统能力：** SystemCapability.FileManagement.File.FileIO
 
@@ -1255,7 +1258,7 @@ try {
 public static func fsync(fd: Int32): Unit
 ```
 
-**功能：** 以同步方法同步文件数据。
+**功能：** 将文件系统缓存数据写入磁盘。
 
 **系统能力：** SystemCapability.FileManagement.File.FileIO
 
@@ -1309,7 +1312,9 @@ try {
 public static func listFile(path: String, options!: ListFileOptions = ListFileOptions()): Array<String>
 ```
 
-**功能：** 以同步方式列出文件夹下所有文件名，支持递归列出所有文件名（包含子目录下），支持文件过滤。
+**功能：** 列出当前目录下所有文件名和目录名。支持过滤。
+
+可通过配置options中recursion参数实现递归列出所有文件的相对路径，相对路径以“/”开头。
 
 **系统能力：** SystemCapability.FileManagement.File.FileIO
 
@@ -1319,7 +1324,7 @@ public static func listFile(path: String, options!: ListFileOptions = ListFileOp
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|path|String|是|-|文件夹的应用沙箱路径。|
+|path|String|是|-|目录的应用沙箱路径。|
 |options|[ListFileOptions](#class-listfileoptions)|否|ListFileOptions()|文件过滤选项。默认不进行过滤。|
 
 **返回值：**
@@ -1381,14 +1386,14 @@ public static func lseek(fd: Int32, offset: Int64, whence!: WhenceType = SeekSet
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |fd|Int32|是|-|文件描述符。|
-|offset|Int64|是|-|相对偏移位置。|
-|whence|[WhenceType](#enum-whencetype)|否|SeekSet|偏移指针相对位置类型。|
+|offset|Int64|是|-|相对偏移位置，单位为字节。|
+|whence|[WhenceType](#enum-whencetype)|否|SeekSet|偏**命名参数。** 移指针相对位置类型。不指定则默认为文件起始位置处。|
 
 **返回值：**
 
 |类型|说明|
 |:----|:----|
-|Int64|当前文件偏置指针位置（相对于文件头的偏移量）。|
+|Int64|当前文件偏移指针位置（相对于文件头的偏移量，单位为字节）。|
 
 **异常：**
 
@@ -1431,7 +1436,7 @@ try {
 public static func lstat(path: String): Stat
 ```
 
-**功能：** 以同步方法获取链接文件信息。
+**功能：** 获取链接文件信息
 
 **系统能力：** SystemCapability.FileManagement.File.FileIO
 
@@ -1441,13 +1446,13 @@ public static func lstat(path: String): Stat
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|path|String|是|-|文件的应用沙箱路径。|
+|path|String|是|-|文件的应用沙箱路径path或URI。|
 
 **返回值：**
 
 |类型|说明|
 |:----|:----|
-|[Stat](#class-stat)|表示文件的具体信息。|
+|[Stat](#class-stat)|返回Stat对象，表示文件的具体信息，详情见Stat。|
 
 **异常：**
 
@@ -1552,7 +1557,7 @@ try {
 public static func mkdir(path: String, recursion: Bool): Unit
 ```
 
-**功能：** 创建目录。当recursion指定为true，可多层级创建目录。
+**功能：** 创建目录。当recursion指定为true时，可递归创建目录。
 
 **系统能力：** SystemCapability.FileManagement.File.FileIO
 
@@ -1563,7 +1568,7 @@ public static func mkdir(path: String, recursion: Bool): Unit
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |path|String|是|-|目录的应用沙箱路径。|
-|recursion|Bool|是|-|是否多层级创建目录。`recursion`指定为`true`时，可多层级创建目录。`recursion`指定为`false`时，仅可创建单层目录。|
+|recursion|Bool|是|-|是否递归创建目录。recursion指定为true时，可递归创建目录。recursion指定为false时，仅可创建单层目录。|
 
 **异常：**
 
@@ -1613,7 +1618,7 @@ try {
 public static func mkdtemp(prefix: String): String
 ```
 
-**功能：** 以同步的方法创建临时目录。
+**功能：** 创建临时目录。
 
 **系统能力：** SystemCapability.FileManagement.File.FileIO
 
@@ -1629,7 +1634,7 @@ public static func mkdtemp(prefix: String): String
 
 |类型|说明|
 |:----|:----|
-|String|产生的唯一目录路径。|
+|String|返回生成的唯一目录路径。|
 
 **异常：**
 
@@ -1678,7 +1683,11 @@ try {
 public static func moveDir(src: String, dest: String, mode!: Int32 = 0): Unit
 ```
 
-**功能：** 移动源文件夹至目标路径下。
+**功能：** 移动源目录至目标路径下。
+
+> **说明：**
+>
+> - 该接口不支持在分布式文件路径下操作。
 
 **系统能力：** SystemCapability.FileManagement.File.FileIO
 
@@ -1690,7 +1699,7 @@ public static func moveDir(src: String, dest: String, mode!: Int32 = 0): Unit
 |:---|:---|:---|:---|:---|
 |src|String|是|-|源文件夹的应用沙箱路径。|
 |dest|String|是|-|目标文件夹的应用沙箱路径。|
-|mode|Int32|否|0|移动模式。默认mode为0。<br/>-&nbsp;mode为0，文件夹级别抛异常。若目标文件夹下存在与源文件夹名冲突的同名非空文件夹，则抛出异常。<br/>-&nbsp;mode为1，文件级别抛异常。目标文件夹下存在与源文件夹名冲突的文件夹，若冲突文件夹下存在同名文件，则抛出异常。源文件夹下未冲突的文件全部移动至目标文件夹下，目标文件夹下未冲突文件将继续保留，且冲突文件信息将在抛出异常(ConfilictFileException)的data属性中以Array\<ConflictFiles>形式提供。<br/>-&nbsp; mode为2，文件级别强制覆盖。目标文件夹下存在与源文件夹名冲突的文件夹，若冲突文件夹下存在同名文件，则强制覆盖冲突文件夹下所有同名文件，未冲突文件将继续保留。<br/>-&nbsp; mode为3，文件夹级别强制覆盖。移动源文件夹至目标文件夹下，目标文件夹下移动的文件夹内容与源文件夹完全一致。若目标文件夹下存在与源文件夹名冲突的文件夹，该文件夹下所有原始文件将不会保留。|
+|mode|Int32|否|0|移动模式，默认值为0。<br/>-&nbsp;mode为0，目录级别抛异常。若目标目录下存在与源目录名冲突的非空目录，则抛出异常。<br/>-&nbsp;mode为1，文件级别抛异常。目标目录下存在与源目录名冲突的目录，若冲突目录下存在同名文件，则抛出异常。源目录下未冲突的文件全部移动至目标目录下，目标目录下未冲突文件将继续保留，且冲突文件信息将在抛出异常的data属性中以Array\<[ConflictFiles](#class-conflictfiles)>形式提供。<br/>-&nbsp; mode为2，文件级别强制覆盖。目标目录下存在与源目录名冲突的目录，若冲突目录下存在同名文件，则强制覆盖冲突目录下所有同名文件，未冲突文件将继续保留。<br/>-&nbsp; mode为3，目录级别强制覆盖。移动源目录至目标目录下，目标目录下移动的目录内容与源目录完全一致。若目标目录下存在与源目录名冲突的目录，该目录下的所有原始文件将被删除。|
 
 **异常：**
 
@@ -1746,7 +1755,11 @@ try {
 public static func moveFile(src: String, dest: String, mode!: Int32 = 0): Unit
 ```
 
-**功能：** 移动源文件夹至目标路径下。
+**功能：** 移动文件。
+
+> **说明：**
+>
+> - 该接口不支持在分布式文件路径下操作。
 
 **系统能力：** SystemCapability.FileManagement.File.FileIO
 
@@ -1758,7 +1771,7 @@ public static func moveFile(src: String, dest: String, mode!: Int32 = 0): Unit
 |:---|:---|:---|:---|:---|
 |src|String|是|-|源文件夹的应用沙箱路径。|
 |dest|String|是|-|目标文件夹的应用沙箱路径。|
-|mode|Int32|否|0|移动模式。默认mode为0。<br/>-&nbsp;mode为0，文件夹级别抛异常。若目标文件夹下存在与源文件夹名冲突的同名非空文件夹，则抛出异常。<br/>-&nbsp;mode为1，文件级别抛异常。目标文件夹下存在与源文件夹名冲突的文件夹，若冲突文件夹下存在同名文件，则抛出异常。源文件夹下未冲突的文件全部移动至目标文件夹下，目标文件夹下未冲突文件将继续保留，且冲突文件信息将在抛出异常(ConfilictFileException)的data属性中以Array\<ConflictFiles>形式提供。<br/>-&nbsp; mode为2，文件级别强制覆盖。目标文件夹下存在与源文件夹名冲突的文件夹，若冲突文件夹下存在同名文件，则强制覆盖冲突文件夹下所有同名文件，未冲突文件将继续保留。<br/>-&nbsp; mode为3，文件夹级别强制覆盖。移动源文件夹至目标文件夹下，目标文件夹下移动的文件夹内容与源文件夹完全一致。若目标文件夹下存在与源文件夹名冲突的文件夹，该文件夹下所有原始文件将不会保留。|
+|mode|Int32|否|0|移动模式。若mode为0，移动位置存在同名文件时，强制移动覆盖。若mode为1，移动位置存在同名文件时，抛出异常。默认为0。|
 
 **异常：**
 
@@ -1814,7 +1827,7 @@ try {
 public static func open(path: String, mode!: Int64 = OpenMode.READ_ONLY): File
 ```
 
-**功能：** 以同步方法打开文件。支持使用URI打开文件。
+**功能：** 打开文件或目录。支持使用URI打开文件。
 
 **系统能力：** SystemCapability.FileManagement.File.FileIO
 
@@ -1824,8 +1837,8 @@ public static func open(path: String, mode!: Int64 = OpenMode.READ_ONLY): File
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|path|String|是|-|打开文件的应用沙箱路径或URI。|
-|mode|Int64|否|OpenMode.READ_ONLY|打开文件的选项，必须指定如下选项中的一个，默认以只读方式打开：<br/>-&nbsp;OpenMode.READ_ONLY(0o0)：只读打开。<br/>-&nbsp;OpenMode.WRITE_ONLY(0o1)：只写打开。<br/>-&nbsp;OpenMode.READ_WRITE(0o2)：读写打开。<br/>给定如下功能选项，以按位或的方式追加，默认不给定任何额外选项：<br/>-&nbsp;OpenMode.CREATE(0o100)：若文件不存在，则创建文件。<br/>-&nbsp;OpenMode.TRUNC(0o1000)：如果文件存在且文件具有写权限，则将其长度裁剪为零。<br/>-&nbsp;OpenMode.APPEND(0o2000)：以追加方式打开，后续写将追加到文件末尾。<br/>-&nbsp;OpenMode.NONBLOCK(0o4000)：如果path指向FIFO、块特殊文件或字符特殊文件，则本次打开及后续&nbsp;IO&nbsp;进行非阻塞操作。<br/>-&nbsp;OpenMode.DIR(0o200000)：如果path不指向目录，则出错。不允许附加写权限。<br/>-&nbsp;OpenMode.NOFOLLOW(0o400000)：如果path指向符号链接，则出错。<br/>-&nbsp;OpenMode.SYNC(0o4010000)：以同步IO的方式打开文件。|
+|path|String|是|-|打开文件或目录的应用沙箱路径或URI。|
+|mode|Int64|否|OpenMode.READ_ONLY|打开文件或目录的[选项](#class-openmode)，必须指定如下选项中的一个，默认以只读方式打开：<br/>-&nbsp;OpenMode.READ_ONLY(0o0)：只读打开。<br/>-&nbsp;OpenMode.WRITE_ONLY(0o1)：只写打开。<br/>-&nbsp;OpenMode.READ_WRITE(0o2)：读写打开。<br/>给定如下功能选项，以按位或的方式追加，默认不给定任何额外选项：<br/>-&nbsp;OpenMode.CREATE(0o100)：若文件不存在，则创建文件。<br/>-&nbsp;OpenMode.TRUNC(0o1000)：如果文件存在且文件具有写权限，则将其长度裁剪为零。<br/>-&nbsp;OpenMode.APPEND(0o2000)：以追加方式打开，后续写将追加到文件末尾。<br/>-&nbsp;OpenMode.NONBLOCK(0o4000)：如果path指向FIFO、块特殊文件或字符特殊文件，则本次打开及后续&nbsp;IO&nbsp;进行非阻塞操作。<br/>-&nbsp;OpenMode.DIR(0o200000)：如果path不指向目录，则出错。不允许附加写权限。<br/>-&nbsp;OpenMode.NOFOLLOW(0o400000)：如果path指向符号链接，则出错。<br/>-&nbsp;OpenMode.SYNC(0o4010000)：以同步IO的方式打开文件。|
 
 **返回值：**
 
@@ -1895,7 +1908,7 @@ try {
 public static func read(fd: Int32, buffer: Array<Byte>, options!: ReadOptions = ReadOptions()): Int64
 ```
 
-**功能：** 以同步方法从文件读取数据。
+**功能：** 从文件读取数据。
 
 **系统能力：** SystemCapability.FileManagement.File.FileIO
 
@@ -1913,7 +1926,7 @@ public static func read(fd: Int32, buffer: Array<Byte>, options!: ReadOptions = 
 
 |类型|说明|
 |:----|:----|
-|Int64|返回实际读取的长度。|
+|Int64|返回实际读取的数据长度（单位：字节）。|
 
 **异常：**
 
@@ -1961,7 +1974,7 @@ try {
 public static func readLines(filePath: String, options!: Options = Options()): ReaderIterator
 ```
 
-**功能：** 以同步方式逐行读取文件文本内容。
+**功能：** 逐行读取文件的文本内容。
 
 **系统能力：** SystemCapability.FileManagement.File.FileIO
 
@@ -2032,7 +2045,7 @@ try {
 public static func readText(filePath: String, options!: ReadTextOptions = ReadTextOptions()): String
 ```
 
-**功能：** 以同步方法基于文本方式读取文件（即直接读取文件的文本内容）。
+**功能：** 基于文本方式读取文件（即直接读取文件的文本内容）。
 
 **系统能力：** SystemCapability.FileManagement.File.FileIO
 
@@ -2098,7 +2111,11 @@ try {
 public static func rename(oldPath: String, newPath: String): Unit
 ```
 
-**功能：** 重命名文件或文件夹。
+**功能：** 重命名文件或目录。
+
+> **说明：**
+>
+> - 该接口不支持在分布式文件路径下操作。
 
 **系统能力：** SystemCapability.FileManagement.File.FileIO
 
@@ -2164,7 +2181,7 @@ try {
 public static func rmdir(path: String): Unit
 ```
 
-**功能：** 删除目录。
+**功能：** 删除目录及其所有子目录和文件。
 
 **系统能力：** SystemCapability.FileManagement.File.FileIO
 
@@ -2221,7 +2238,7 @@ try {
 public static func stat(file: Int32): Stat
 ```
 
-**功能：** 获取文件详细属性信息。
+**功能：** 获取文件或目录详细属性信息。
 
 **系统能力：** SystemCapability.FileManagement.File.FileIO
 
@@ -2237,7 +2254,7 @@ public static func stat(file: Int32): Stat
 
 |类型|说明|
 |:----|:----|
-|[Stat](#class-stat)|表示文件的具体信息。|
+|[Stat](#class-stat)|表示文件或目录的具体信息。|
 
 **异常：**
 
@@ -2286,7 +2303,7 @@ try {
 public static func stat(file: String): Stat
 ```
 
-**功能：** 获取文件详细属性信息。
+**功能：** 获取文件或目录详细属性信息。
 
 **系统能力：** SystemCapability.FileManagement.File.FileIO
 
@@ -2296,13 +2313,13 @@ public static func stat(file: String): Stat
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|file|String|是|-|文件应用沙箱路径path。|
+|file|String|是|-|文件或目录的应用沙箱路径path、URI。|
 
 **返回值：**
 
 |类型|说明|
 |:----|:----|
-|[Stat](#class-stat)|表示文件的具体信息。|
+|[Stat](#class-stat)|表示文件或目录的具体信息。。|
 
 **异常：**
 
@@ -2350,7 +2367,7 @@ try {
 public static func truncate(file: String, len!: Int64 = 0): Unit
 ```
 
-**功能：** 以同步方法截断文件。
+**功能：** 截断文件内容。
 
 **系统能力：** SystemCapability.FileManagement.File.FileIO
 
@@ -2361,7 +2378,7 @@ public static func truncate(file: String, len!: Int64 = 0): Unit
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |file|String|是|-|文件的应用沙箱路径。|
-|len|Int64|否|0|文件截断后的长度，以字节为单位。默认为0。|
+|len|Int64|否|0|文件截断后的长度（单位：字节）。默认为0。|
 
 **异常：**
 
@@ -2424,7 +2441,7 @@ public static func truncate(file: Int32, len!: Int64 = 0): Unit
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |file|Int32|是|-|已打开的文件描述符fd。|
-|len|Int64|否|0|文件截断后的长度，以字节为单位。默认为0。|
+|len|Int64|否|0|文件截断后的长度（单位：字节）。默认为0。|
 
 **异常：**
 
@@ -2537,7 +2554,7 @@ try {
 public static func utimes(path: String, mtime: Float64): Unit
 ```
 
-**功能：** 删除文件。
+**功能：** 更改文件上次修改该文件的时间。
 
 **系统能力：** SystemCapability.FileManagement.File.FileIO
 
@@ -2548,7 +2565,7 @@ public static func utimes(path: String, mtime: Float64): Unit
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |path|String|是|-|文件的应用沙箱路径。|
-|mtime|Float64|是|-|待更新的时间戳。自1970年1月1日起至目标时间的毫秒数。仅支持修改文件最近访问时间属性。|
+|mtime|Float64|是|-|待更新的时间戳。自1970年1月1日起至目标时间的毫秒数。仅支持更改上次修改该文件的时间属性。|
 
 **异常：**
 
@@ -2593,7 +2610,7 @@ try {
 public static func write(fd: Int32, buffer: Array<Byte>, options!: WriteOptions = WriteOptions()): Int64
 ```
 
-**功能：** 以同步方法将数据写入文件。
+**功能：** 将数据写入文件。
 
 **系统能力：** SystemCapability.FileManagement.File.FileIO
 
@@ -2604,14 +2621,14 @@ public static func write(fd: Int32, buffer: Array<Byte>, options!: WriteOptions 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |fd|Int32|是|-|已打开的文件描述符。|
-|buffer|Array\<Byte>|是|-|待写入文件的数据，来自字符串。|
+|buffer|Array\<Byte>|是|-|待写入文件的数据，来自缓冲区。|
 |options|[WriteOptions](#class-writeoptions)|否|WriteOptions()|支持如下选项：<br/>-&nbsp;offset，?Int64类型，表示期望写入文件的位置。可选，默认从当前位置开始写。<br/>-&nbsp;length，?UIntNative类型，表示期望写入数据的长度。可选，默认缓冲区长度。<br/>-&nbsp;encoding，String类型，当数据是String类型时有效，表示数据的编码方式，默认&nbsp;"utf-8"。当前仅支持&nbsp;"utf-8"。|
 
 **返回值：**
 
 |类型|说明|
 |:----|:----|
-|Int64|实际写入的长度。|
+|Int64|返回实际写入的数据长度（单位：字节）。|
 
 **异常：**
 
@@ -2679,7 +2696,7 @@ public static func write(fd: Int32, buffer: String, options!: WriteOptions = Wri
 
 |类型|说明|
 |:----|:----|
-|Int64|实际写入的长度。|
+|Int64|实返回实际写入的数据长度（单位：字节）。|
 
 **异常：**
 
@@ -2744,7 +2761,7 @@ public class Filter {
 }
 ```
 
-**功能：** 文件过滤配置项类型，支持listFile接口使用。其中mimeType与excludeMedia过滤暂不支持。
+**功能：** 文件过滤配置项，支持listFile接口使用。其中mimeType与excludeMedia过滤暂不支持。
 
 **系统能力：** SystemCapability.FileManagement.File.FileIO
 
@@ -2772,7 +2789,7 @@ public var displayName: Array<String>
 public var excludeMedia: Bool
 ```
 
-**功能：** 是否排除Media中已有的文件。预留能力，暂不支持。
+**功能：** 是是否排除Media中已有的文件。true：排除Media中已有的文件；false：不排除Media中已有的文件。
 
 **类型：** Bool
 
@@ -2804,7 +2821,7 @@ public var fileSizeOver:?Int64
 public var lastModifiedAfter:?Float64
 ```
 
-**功能：** 文件最近修改时间匹配，在指定时间点之后的文件。
+**功能：** 文件最近修改时间匹配，在指定时间点及之后的文件。
 
 **类型：** ?Float64
 
@@ -2820,7 +2837,7 @@ public var lastModifiedAfter:?Float64
 public var mimeType: Array<String>
 ```
 
-**功能：** mime类型完全匹配，各个关键词OR关系。预留能力，暂不支持。
+**功能：** mime类型完全匹配，各个关键词OR关系。预留字段，暂不支持使用。
 
 **类型：** Array\<String>
 
@@ -2871,10 +2888,10 @@ public init(
 |:---|:---|:---|:---|:---|
 |suffix|Array\<String>|否|Array<String>()|文件后缀名完全匹配，各个关键词OR关系。|
 |displayName|Array\<String>|否|Array<String>()|文件名模糊匹配，各个关键词OR关系。当前仅支持通配符*。|
-|mimeType|Array\<String>|否|Array<String>()|mime类型完全匹配，各个关键词OR关系。预留能力，暂不支持。|
+|mimeType|Array\<String>|否|Array<String>()|mime类型完全匹配，各个关键词OR关系。预留字段，暂不支持使用。|
 |fileSizeOver|?Int64|否|None|文件大小匹配，大于指定大小的文件。|
-|lastModifiedAfter|?Float64|否|None|文件最近修改时间匹配，在指定时间点之后的文件。|
-|excludeMedia|Bool|否|false|是否排除Media中已有的文件。预留能力，暂不支持。|
+|lastModifiedAfter|?Float64|否|None|文件最近修改时间匹配，在指定时间点及之后的文件。|
+|excludeMedia|Bool|否|false|是否排除Media中已有的文件。true：排除Media中已有的文件；false：不排除Media中已有的文件。|
 
 **异常：**
 
@@ -2911,7 +2928,7 @@ public class ListFileOptions {
 public var filter: Filter
 ```
 
-**功能：** 当数据是String类型时有效，表示数据的编码方式，默认"utf-8"。仅支持"utf-8"。
+**功能：** 文件过滤配置项。 可选，设置过滤条件。
 
 **类型：** [Filter](#class-filter)
 
@@ -2927,7 +2944,7 @@ public var filter: Filter
 public var listNum: Int32
 ```
 
-**功能：** 列出文件名数量。当设置0时，列出所有文件，默认为0。
+**功能：** 列出文件名数量。可选，当设置0时，列出所有文件，默认为0。
 
 **类型：** Int32
 
@@ -2943,7 +2960,7 @@ public var listNum: Int32
 public var recursion: Bool
 ```
 
-**功能：** 是否递归子目录下文件名。默认为false。当recursion为false时，返回当前目录下满足过滤要求的文件名及文件夹名。当recursion为true时，返回此目录下所有满足过滤要求的文件的相对路径（以/开头）。
+**功能：** 是否递归子目录下文件名。可选，默认为false。当recursion为false时，返回当前目录下满足过滤要求的文件名及目录名。当recursion为true时，返回此目录下所有满足过滤要求的文件的相对路径（以/开头）。
 
 **类型：** Bool
 
@@ -2973,9 +2990,9 @@ public init(
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|recursion|Bool|否|false|是否递归子目录下文件名。默认为false。当recursion为false时，返回当前目录下满足过滤要求的文件名及文件夹名。当recursion为true时，返回此目录下所有满足过滤要求的文件的相对路径（以/开头）。|
-|listNum|Int32|否|0|列出文件名数量。当设置0时，列出所有文件，默认为0。|
-|filter|[Filter](#class-filter)|否|Filter()|文件过滤选项。当前仅支持后缀名匹配、文件名模糊查询、文件大小过滤、最近修改时间过滤。|
+|recursion|Bool|否|false|是否递归子目录下文件名。可选，默认为false。当recursion为false时，返回当前目录下满足过滤要求的文件名及目录名。当recursion为true时，返回此目录下所有满足过滤要求的文件的相对路径（以/开头）。|
+|listNum|Int32|否|0|列出文件名数量。可选，当设置0时，列出所有文件，默认为0。|
+|filter|[Filter](#class-filter)|否|Filter()|文件过滤配置项。 可选，设置过滤条件。|
 
 ## class OpenMode
 
@@ -3062,7 +3079,7 @@ public static const NOFOLLOW: Int64 = 0o400000
 public static const NONBLOCK: Int64 = 0o4000
 ```
 
-**功能：** 如果path指向FIFO、块特殊文件或字符特殊文件，则本次打开及后续IO进行非阻塞操作。
+**功能：** 如果path指向FIFO、块特殊文件或字符特殊文件，则本次打开及后续 IO 进行非阻塞操作。
 
 **类型：** Int64
 
@@ -3118,7 +3135,7 @@ public static const SYNC: Int64 = 0o4010000
 public static const TRUNC: Int64 = 0o1000
 ```
 
-**功能：** 如果文件存在且以只写或读写的方式打开文件，则将其长度裁剪为零。
+**功能：** 如果文件存在且以只写或读写的方式打开，则将其长度裁剪为零。
 
 **类型：** Int64
 
@@ -3163,7 +3180,7 @@ public open class Options {
 public var encoding: String
 ```
 
-**功能：** 文件编码方式。可选项。
+**功能：** 文件编码方式。
 
 **类型：** String
 
@@ -3191,7 +3208,7 @@ public init(
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|encoding|String|否|"utf-8"|用于指定字符串的编码方式。|
+|encoding|String|否|"utf-8"|**命名参数。** 文件编码方式。可选项。。|
 
 ## class RandomAccessFile
 
@@ -3243,7 +3260,7 @@ public prop filePointer: Int64
 public func close(): Unit
 ```
 
-**功能：** 同步关闭RandomAccessFile对象。
+**功能：** 关闭RandomAccessFile对象。
 
 **系统能力：** SystemCapability.FileManagement.File.FileIO
 
@@ -3277,7 +3294,7 @@ try {
 public func read(buffer: Array<Byte>, options!: ReadOptions = ReadOptions()): Int64
 ```
 
-**功能：** 以同步方法从文件读取数据。
+**功能：** 从文件读取数据。
 
 **系统能力：** SystemCapability.FileManagement.File.FileIO
 
@@ -3346,7 +3363,7 @@ try {
 public func setFilePointer(filePointer: Int64): Unit
 ```
 
-**功能：** 设置文件偏置指针。
+**功能：** 设置文件偏移指针。
 
 **系统能力：** SystemCapability.FileManagement.File.FileIO
 
@@ -3356,7 +3373,7 @@ public func setFilePointer(filePointer: Int64): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|filePointer|Int64|是|-|RandomAccessFile对象的偏置指针。|
+|filePointer|Int64|是|-|RandomAccessFile对象的偏移指针。|
 
 **示例：**
 
@@ -3387,7 +3404,7 @@ try {
 public func write(buffer: String, options!: WriteOptions = WriteOptions()): Int64
 ```
 
-**功能：** 以同步方法将数据写入文件。
+**功能：** 将数据写入文件。
 
 **系统能力：** SystemCapability.FileManagement.File.FileIO
 
@@ -3397,7 +3414,7 @@ public func write(buffer: String, options!: WriteOptions = WriteOptions()): Int6
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|buffer|String|是|-|待写入文件的数据。|
+|buffer|String|是|-|待写入文件的数据，可来自字符串。|
 |options|[WriteOptions](#class-writeoptions)|否|WriteOptions()| **命名参数。** 支持如下选项：<br>- length，?UIntNative类型，表示期望写入数据的长度。默认缓冲区长度。<br>- offset，?Int64类型，表示期望写入文件的位置。可选，默认从当前位置开始写。<br>- encoding，String类型，当数据是String类型时有效，表示数据的编码方式，默认"utf-8"。仅支持"utf-8"。|
 
 **返回值：**
@@ -3465,7 +3482,7 @@ public func write(buffer: Array<Byte>, options!: WriteOptions = WriteOptions()):
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|buffer|Array\<Byte>|是|-|待写入文件的数据。|
+|buffer|Array\<Byte>|是|-|待写入文件的数据，可来自缓冲区。|
 |options|[WriteOptions](#class-writeoptions)|否|WriteOptions()|**命名参数。** 支持如下选项：<br>- length，?UIntNative类型，表示期望写入数据的长度。默认缓冲区长度。<br>- offset，?Int64类型，表示期望写入文件的位置。可选，默认从当前位置开始写。<br>- encoding，String类型，当数据是String类型时有效，表示数据的编码方式，默认"utf-8"。仅支持"utf-8"。|
 
 **返回值：**
@@ -3531,7 +3548,7 @@ public class RandomAccessFileOptions {
 }
 ```
 
-**功能：** 可选项类型，支持createRandomAccessFile接口使用。
+**功能：** 可选项类型，支持 createRandomAccessFile 接口使用。
 
 **系统能力：** SystemCapability.FileManagement.File.FileIO
 
@@ -3543,7 +3560,7 @@ public class RandomAccessFileOptions {
 public var end: Option<Int64>
 ```
 
-**功能：** 期望读取结束的位置。可选，默认文件末尾。
+**功能：** 表示期望读取结束的位置，单位为字节。可选，默认文件末尾。
 
 **类型：** Option\<Int64>
 
@@ -3559,7 +3576,7 @@ public var end: Option<Int64>
 public var start: Option<Int64>
 ```
 
-**功能：** 期望读取文件的位置。可选，默认从当前位置开始读。
+**功能：** 表示期望读取文件的位置，单位为字节。可选，默认从当前位置开始读。
 
 **类型：** Option\<Int64>
 
@@ -3588,8 +3605,8 @@ public init(
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|start|Option\<Int64>|否|None|期望读取文件的位置。可选，默认从当前位置开始读。|
-|end|Option\<Int64>|否|None|期望读取结束的位置。可选，默认文件末尾。|
+|start|Option\<Int64>|否|None|**命名参数。** 表示期望读取文件的位置，单位为字节。可选，默认从当前位置开始读。|
+|end|Option\<Int64>|否|None|**命名参数。** 表示期望读取结束的位置，单位为字节。可选，默认文件末尾。|
 
 ## class ReaderIterator
 
@@ -3609,7 +3626,7 @@ public class ReaderIterator {}
 public func next(): ReaderIteratorResult
 ```
 
-**功能：** 取迭代器下一项内容。
+**功能：** 获取迭代器下一项内容。
 
 **系统能力：** SystemCapability.FileManagement.File.FileIO
 
@@ -3639,16 +3656,21 @@ public func next(): ReaderIteratorResult
 // index.cj
 
 import kit.CoreFileKit.*
-import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let pathDir = "path/to/file"
-let filePath = pathDir + "/test.txt"
-let options: Options = Options(encoding: "utf-8")
-let readerIterator = FileIo.readLines(filePath, options: options)
-var result = readerIterator.next()
-while (!result.done) {
-    Hilog.info(0, "test", "content: ${result.value}", "")
-    result = readerIterator.next()
+try {
+    let pathDir = "path/to/file"
+    let filePath = pathDir + "/test.txt"
+    let options: Options = Options(encoding: "utf-8")
+    let readerIterator = FileIo.readLines(filePath, options: options)
+    var result = readerIterator.next()
+    while (!result.done) {
+        Hilog.info(0, "test", "content: ${result.value}", "")
+        result = readerIterator.next()
+    }
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
 }
 ```
 
@@ -3673,7 +3695,7 @@ public class ReaderIteratorResult {
 public var done: Bool
 ```
 
-**功能：** 迭代器是否已完成迭代。
+**功能：**  迭代器是否已完成迭代。true：已完成迭代；false：未完成迭代。
 
 **类型：** Bool
 
@@ -3724,7 +3746,7 @@ public open class ReadOptions {
 public var length: Option<UIntNative>
 ```
 
-**功能：** 期望读取数据的长度。默认缓冲区长度。
+**功能：** 期望读取数据的长度，单位为字节。可选，默认缓冲区长度。
 
 **类型：** Option\<UIntNative>
 
@@ -3740,7 +3762,7 @@ public var length: Option<UIntNative>
 public var offset: Option<Int64>
 ```
 
-**功能：** 期望读取文件位置（基于当前filePointer加上offset的位置）。默认从偏置指针（filePointer）开始读。
+**功能：** 期望读取文件位置，单位为字节（基于当前filePointer加上offset的位置）。可选，默认从偏移指针（filePointer）开始读
 
 **类型：** Option\<Int64>
 
@@ -3769,8 +3791,8 @@ public init(
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|offset|Option\<Int64>|否|None|期望读取文件位置（基于当前filePointer加上offset的位置）。默认从偏置指针（filePointer）开始读。|
-|length|Option\<UIntNative>|否|None|期望读取数据的长度。默认缓冲区长度。|
+|offset|Option\<Int64>|否|None|期望读取文件位置，单位为字节（基于当前filePointer加上offset的位置）。可选，默认从偏移指针（filePointer）开始读|
+|length|Option\<UIntNative>|否|None|期望读取数据的长度，单位为字节。可选，默认缓冲区长度。|
 
 ## class ReadTextOptions
 
@@ -3801,7 +3823,7 @@ public class ReadTextOptions <: ReadOptions {
 public var encoding: String
 ```
 
-**功能：** 当数据是String类型时有效，表示数据的编码方式，默认"utf-8"，仅支持"utf-8"。
+**功能：** 当数据是 String 类型时有效，表示数据的编码方式，默认 'utf-8'，仅支持 'utf-8'。
 
 **类型：** String
 
@@ -3831,9 +3853,9 @@ public init(
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|offset|Option\<Int64>|否|None|期望读取文件位置（基于当前filePointer加上offset的位置）。默认从偏置指针（filePointer）开始读。|
-|length|Option\<UIntNative>|否|None|期望读取数据的长度。默认缓冲区长度。|
-|encoding|String|否|"utf-8"|当数据是String类型时有效，表示数据的编码方式，默认"utf-8"，仅支持"utf-8"。|
+|offset|Option\<Int64>|否|None| 期望读取文件的位置，单位为字节。可选，默认从当前位置开始读取。|
+|length|Option\<UIntNative>|否|None| 期望读取数据的长度，单位为字节。可选，默认文件长度。|
+|encoding|String|否|"utf-8"|当数据是 String 类型时有效，表示数据的编码方式，默认 'utf-8'，仅支持 'utf-8'。|
 
 ## class Stat
 
@@ -3854,6 +3876,8 @@ public prop atime: Int64
 ```
 
 **功能：** 上次访问该文件的时间，表示距1970年1月1日0时0分0秒的秒数。
+
+注意：目前用户数据分区默认以“noatime”方式挂载，atime更新被禁用。
 
 **类型：** Int64
 
@@ -3917,11 +3941,29 @@ public prop ino: Int64
 public prop mode: Int64
 ```
 
-**功能：** 表示文件权限，各特征位的含义如下。
+**功能：** 表示文件权限，各特征位的含义如下：
 
->**说明：**
+> **说明：**
 >
->以下值为八进制，取得的返回值为十进制，请换算后查看。<br/>-&nbsp;0o400：用户读，对于普通文件，所有者可读取文件；对于目录，所有者可读取目录项。<br/>-&nbsp;0o200：用户写，对于普通文件，所有者可写入文件；对于目录，所有者可创建/删除目录项。<br/>-&nbsp;0o100：用户执行，对于普通文件，所有者可执行文件；对于目录，所有者可在目录中搜索给定路径名。<br/>-&nbsp;0o040：用户组读，对于普通文件，所有用户组可读取文件；对于目录，所有用户组可读取目录项。<br/>-&nbsp;0o020：用户组写，对于普通文件，所有用户组可写入文件；对于目录，所有用户组可创建/删除目录项。<br/>-&nbsp;0o010：用户组执行，对于普通文件，所有用户组可执行文件；对于目录，所有用户组是否可在目录中搜索给定路径名。<br/>-&nbsp;0o004：其他读，对于普通文件，其余用户可读取文件；对于目录，其他用户组可读取目录项。<br/>-&nbsp;0o002：其他写，对于普通文件，其余用户可写入文件；对于目录，其他用户组可创建/删除目录项。<br/>-&nbsp;0o001：其他执行，对于普通文件，其余用户可执行文件；对于目录，其他用户组可在目录中搜索给定路径名。
+> - 以下值为八进制，取得的返回值为十进制，请换算后查看。
+>
+> - 0o400：用户读。对于普通文件，所有者可读取文件；对于目录，所有者可读取目录项。
+>
+> - 0o200：用户写。对于普通文件，所有者可写入文件；对于目录，所有者可创建/删除目录项。
+>
+> - 0o100：用户执行。对于普通文件，所有者可执行文件；对于目录，所有者可在目录中搜索给定路径名。
+>
+> - 0o040：用户组读。对于普通文件，所有用户组可读取文件；对于目录，所有用户组可读取目录项。
+>
+> - 0o020：用户组写。对于普通文件，所有用户组可写入文件；对于目录，所有用户组可创建/删除目录项。
+>
+> - 0o010：用户组执行。对于普通文件，所有用户组可执行文件；对于目录，所有用户组是否可在目录中搜索给定路径名。
+>
+> - 0o004：其他读。对于普通文件，其余用户可读取文件；对于目录，其他用户组可读取目录项。
+>
+> - 0o002：其他写。对于普通文件，其余用户可写入文件；对于目录，其他用户组可创建/删除目录项。
+>
+> - 0o001：其他执行。对于普通文件，其余用户可执行文件；对于目录，其他用户组可在目录中搜索给定路径名。
 
 **类型：** Int64
 
@@ -3995,7 +4037,7 @@ public func isBlockDevice(): Bool
 
 |类型|说明|
 |:----|:----|
-|Bool|表示文件是否是块特殊设备。|
+|Bool|表示文件是否是块特殊设备。true：是块特殊设备；false：不是块特殊设备。|
 
 **示例：**
 
@@ -4024,7 +4066,7 @@ try {
 public func isCharacterDevice(): Bool
 ```
 
-**功能：** 用于判断文件是否是字符特殊文件。一个字符特殊设备可进行随机访问，且访问的时候不带缓存。
+**功能：** 判断文件是否为字符特殊文件。字符特殊设备支持随机访问，且访问时无缓存。
 
 **系统能力：** SystemCapability.FileManagement.File.FileIO
 
@@ -4034,7 +4076,7 @@ public func isCharacterDevice(): Bool
 
 |类型|说明|
 |:----|:----|
-|Bool|表示文件是否是字符特殊设备。|
+|Bool|表示文件是否是字符特殊设备。true：是字符特殊设备；false：不是字符特殊设备。|
 
 **示例：**
 
@@ -4063,7 +4105,7 @@ try {
 public func isDirectory(): Bool
 ```
 
-**功能：** 用于判断文件是否是目录。
+**功能：** 判断文件是否为目录。
 
 **系统能力：** SystemCapability.FileManagement.File.FileIO
 
@@ -4073,7 +4115,7 @@ public func isDirectory(): Bool
 
 |类型|说明|
 |:----|:----|
-|Bool|表示文件是否是目录。|
+|Bool|表示文件是否是目录。true：是目录；false：不是目录。|
 
 **示例：**
 
@@ -4112,7 +4154,7 @@ public func isFIFO(): Bool
 
 |类型|说明|
 |:----|:----|
-|Bool|表示文件是否是&nbsp;FIFO。|
+|Bool|表示文件是否是&nbsp;FIFO。true：是FIFO；false：不是FIFO。|
 
 **示例：**
 
@@ -4151,7 +4193,7 @@ public func isFile(): Bool
 
 |类型|说明|
 |:----|:----|
-|Bool|表示文件是否是普通文件。|
+|Bool|表示文件是否是普通文件。true：是普通文件；false：不是普通文件。|
 
 **示例：**
 
@@ -4180,7 +4222,7 @@ try {
 public func isSocket(): Bool
 ```
 
-**功能：** 用于判断文件是否是套接字。
+**功能：** 判断文件是否是套接字。
 
 **系统能力：** SystemCapability.FileManagement.File.FileIO
 
@@ -4190,7 +4232,7 @@ public func isSocket(): Bool
 
 |类型|说明|
 |:----|:----|
-|Bool|表示文件是否是套接字。|
+|Bool|表示文件是否是套接字。true：是套接字；false：不是套接字。|
 
 **示例：**
 
@@ -4219,7 +4261,7 @@ try {
 public func isSymbolicLink(): Bool
 ```
 
-**功能：** 用于判断文件是否是符号链接。
+**功能：** 判断文件是否为符号链接。
 
 **系统能力：** SystemCapability.FileManagement.File.FileIO
 
@@ -4229,7 +4271,7 @@ public func isSymbolicLink(): Bool
 
 |类型|说明|
 |:----|:----|
-|Bool|表示文件是否是符号链接。|
+|Bool|表示文件是否是符号链接。true：是符号链接；false：不是符号链接。|
 
 **示例：**
 
@@ -4270,7 +4312,7 @@ public class Stream {}
 public func close(): Unit
 ```
 
-**功能：** 同步关闭文件流。
+**功能：** 关闭文件流。
 
 **系统能力：** SystemCapability.FileManagement.File.FileIO
 
@@ -4317,7 +4359,7 @@ try {
 public func flush(): Unit
 ```
 
-**功能：** 同步刷新文件流。
+**功能：** 刷新文件流。
 
 **系统能力：** SystemCapability.FileManagement.File.FileIO
 
@@ -4371,7 +4413,7 @@ try {
 public func read(buffer: Array<Byte>, options!: ReadOptions = ReadOptions()): Int64
 ```
 
-**功能：** 以同步方法从流文件读取数据。
+**功能：** 从流文件读取数据。
 
 **系统能力：** SystemCapability.FileManagement.File.FileIO
 
@@ -4382,13 +4424,13 @@ public func read(buffer: Array<Byte>, options!: ReadOptions = ReadOptions()): In
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |buffer|Array\<Byte>|是|-| 用于读取文件的缓冲区。|
-|options|[ReadOptions](#class-readoptions)|否|ReadOptions()|**命名参数。** 支持如下选项：<br/>-&nbsp;length，UIntNative类型，表示期望读取数据的长度。可选，默认缓冲区长度。<br/>-&nbsp;offset，Int64类型，表示期望读取文件的位置。可选，默认从当前位置开始读。<br/>|
+|options|[ReadOptions](#class-readoptions)|否|ReadOptions()|**命名参数。** 支持如下选项：<br/>-&nbsp;length，UIntNative类型，表示期望读取数据的长度。可选，默认缓冲区长度。<br/>-&nbsp;offset，Int64类型，表示期望读取文件的位置。可选，默认从当前位置开始读。|
 
 **返回值：**
 
 |类型|说明|
 |:----|:----|
-|Int64|实际读取的长度。|
+|Int64|返回读取的结果。|
 
 **异常：**
 
@@ -4447,7 +4489,7 @@ public func write(buffer: String, options!: WriteOptions = WriteOptions()): Int6
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|buffer|String|是|-|待写入文件的数据。|
+|buffer|String|是|-|待写入文件的数据，可来自字符串。|
 |options|[WriteOptions](#class-writeoptions)|否|WriteOptions()|**命名参数。** 支持如下选项：<br/>-&nbsp;length，?UIntNative类型，表示期望写入数据的长度。默认缓冲区长度。<br/>-&nbsp;offset，?Int64类型，表示期望写入文件的位置。可选，默认从当前位置开始写。<br/>-&nbsp;encoding，String类型，当数据是String类型时有效，表示数据的编码方式，默认&nbsp;"utf-8"。仅支持&nbsp;"utf-8"。|
 
 **返回值：**
@@ -4515,7 +4557,7 @@ public func write(buffer: Array<Byte>, options!: WriteOptions = WriteOptions()):
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|buffer|Array\<Byte>|是|-|待写入文件的数据。|
+|buffer|Array\<Byte>|是|-|待写入文件的数据，可来自缓冲区。|
 |options|[WriteOptions](#class-writeoptions)|否|WriteOptions()|**命名参数。** 支持如下选项：<br/>-&nbsp;length，?UIntNative类型，表示期望写入数据的长度。默认缓冲区长度。<br/>-&nbsp;offset，?Int64类型，表示期望写入文件的位置。可选，默认从当前位置开始写。<br/>-&nbsp;encoding，String类型，当数据是String类型时有效，表示数据的编码方式，默认&nbsp;"utf-8"。仅支持&nbsp;"utf-8"。|
 
 **返回值：**
@@ -4597,7 +4639,7 @@ public class WriteOptions <: Options {
 public var length: Option<UIntNative>
 ```
 
-**功能：** 期望写入数据的长度。默认缓冲区长度。
+**功能：** 期望写入数据的长度，单位为字节。可选，默认缓冲区长度。
 
 **类型：** Option\<UIntNative>
 
@@ -4613,7 +4655,7 @@ public var length: Option<UIntNative>
 public var offset: Option<Int64>
 ```
 
-**功能：** 期望写入文件位置（基于当前filePointer加上offset的位置）。默认从偏置指针（filePointer）开始写。
+**功能：** 期望写入文件位置，单位为字节（基于当前filePointer加上offset的位置）。可选，默认从偏移指针（filePointer）开始写
 
 **类型：** Option\<Int64>
 
@@ -4643,8 +4685,8 @@ public init(
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|length|Option\<UIntNative>|否|None|期望写入数据的长度。默认缓冲区长度。|
-|offset|Option\<Int64>|否|None|期望写入文件位置（基于当前filePointer加上offset的位置）。默认从偏置指针（filePointer）开始写。|
+|length|Option\<UIntNative>|否|None|期望写入数据的长度，单位为字节。可选，默认缓冲区长度。|
+|offset|Option\<Int64>|否|None|期望写入文件位置，单位为字节（基于当前filePointer加上offset的位置）。可选，默认从偏移指针（filePointer）开始写|
 |encoding|String|否|"utf-8"|当数据是String类型时有效，表示数据的编码方式，默认"utf-8"，仅支持"utf-8"。|
 
 ## enum AccessFlagType
@@ -4656,7 +4698,7 @@ public enum AccessFlagType {
 }
 ```
 
-**功能：** 表示需要校验的文件位置。
+**功能：** 枚举，表示需要校验的文件位置。
 
 **系统能力：** SystemCapability.FileManagement.File.FileIO
 
@@ -4686,7 +4728,7 @@ public enum AccessModeType {
 }
 ```
 
-**功能：** 表示需要校验的具体权限。默认为校验文件是否存在。
+**功能：** 枚举，表示需要校验的具体权限。若不填，默认校验文件是否存在。
 
 **系统能力：** SystemCapability.FileManagement.File.FileIO
 
@@ -4751,7 +4793,7 @@ public enum WhenceType {
 }
 ```
 
-**功能：** 文件偏移指针相对偏移位置类型，支持lseek接口使用。
+**功能：** 枚举，文件偏移指针相对偏移位置类型，支持lseek接口使用。
 
 **系统能力：** SystemCapability.FileManagement.File.FileIO
 
@@ -4763,7 +4805,7 @@ public enum WhenceType {
 SeekCur
 ```
 
-**功能：** 当前文件偏置指针位置处。
+**功能：** 当前文件偏移指针位置处。
 
 **系统能力：** SystemCapability.FileManagement.File.FileIO
 

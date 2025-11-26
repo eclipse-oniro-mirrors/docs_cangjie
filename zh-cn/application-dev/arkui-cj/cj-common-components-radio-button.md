@@ -35,17 +35,17 @@ Radio(value: 'Radio2', group: 'radioGroup')
 
 ```cangjie
 Radio(value: 'Radio1', group: 'radioGroup')
-    .onChange{ isChecked =>
+    .onChange({ isChecked =>
         if(isChecked) {
         //需要执行的操作
         }
-    }
+    })
 Radio(value: 'Radio2', group: 'radioGroup')
-    .onChange{ isChecked =>
+    .onChange({ isChecked =>
         if(isChecked) {
         //需要执行的操作
         }
-    }
+    })
 ```
 
 ## 场景示例

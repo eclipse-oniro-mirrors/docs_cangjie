@@ -1,6 +1,6 @@
 # ohos.graphics.color_space_manager（色彩管理）
 
-本模块提供管理抽象化色域对象的一些基础能力，包括色域对象的创建与色域基础属性的获取等。
+color_space_manager模块提供管理抽象化色域对象的一些基础能力，包括色域对象的创建与色域基础属性的获取等。
 
 ## 导入模块
 
@@ -84,13 +84,13 @@ public func create(primaries: ColorSpacePrimaries, gamma: Float32): ColorSpaceMa
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |primaries|[ColorSpacePrimaries](#class-colorspaceprimaries)|是|-|色域标准三原色。|
-|gamma|Float32|是|-|色域gamma值。|
+|gamma|Float32|是|-|色域gamma值，取值为大于0的浮点数。|
 
 **返回值：**
 
 |类型|说明|
 |:----|:----|
-|[ColorSpaceManager](#class-colorspacemanager)|返回当前创建的色域对象实例。色域类型定义为[ColorSpace.CUSTOM](#custom)。|
+|[ColorSpaceManager](#class-colorspacemanager)|返回当前创建的色域对象实例。<br>色域类型定义为[ColorSpace](#custom)枚举值`CUSTOM`。|
 
 **异常：**
 
@@ -137,9 +137,7 @@ public class ColorSpaceManager {}
 
 **功能：** 当前色域对象实例。
 
-> **说明：**
->
-> 先使用[create()](#func-createcolorspace)获取到ColorSpaceManager实例，再通过此实例调用下述对应方法。
+下列API示例中都需先使用[create()](#func-createcolorspace)获取到ColorSpaceManager实例，再通过此实例调用对应方法。
 
 **系统能力：** SystemCapability.Graphic.Graphic2D.ColorManager.Core
 
@@ -296,7 +294,7 @@ public class ColorSpacePrimaries {
 }
 ```
 
-**功能：** 色域标准三原色（红、绿、蓝）和白色，使用 (x, y) 坐标表示其在 CIE XYZ 色彩空间中的位置。
+**功能：** 色域标准三原色（红、绿、蓝）和白色，使用(x, y)表示其在色彩空间中的位置。
 
 **系统能力：** SystemCapability.Graphic.Graphic2D.ColorManager.Core
 
@@ -436,7 +434,7 @@ public var whitePointY: Float32
 public init(redX: Float32, redY: Float32, greenX: Float32, greenY: Float32, blueX: Float32, blueY: Float32, whitePointX: Float32, whitePointY: Float32)
 ```
 
-**功能：** ColorSpacePrimaries的主构造函数。
+**功能：** ColorSpacePrimaries的构造函数。
 
 **系统能力：** SystemCapability.Graphic.Graphic2D.ColorManager.Core
 
@@ -446,14 +444,14 @@ public init(redX: Float32, redY: Float32, greenX: Float32, greenY: Float32, blue
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|redX|Float32|是|-|命名参数。标准红色在色彩空间的x坐标值。|
-|redY|Float32|是|-|命名参数。标准红色在色彩空间的y坐标值。|
-|greenX|Float32|是|-|命名参数。标准绿色在色彩空间的x坐标值。|
-|greenY|Float32|是|-|命名参数。标准绿色在色彩空间的y坐标值。|
-|blueX|Float32|是|-|命名参数。标准蓝色在色彩空间的x坐标值。|
-|blueY|Float32|是|-|命名参数。标准蓝色在色彩空间的y坐标值。|
-|whitePointX|Float32|是|-|命名参数。标准白色在色彩空间的x坐标值。|
-|whitePointY|Float32|是|-|命名参数。标准白色在色彩空间的y坐标值。|
+|redX|Float32|是|-|标准红色在色彩空间的x坐标值。|
+|redY|Float32|是|-|标准红色在色彩空间的y坐标值。|
+|greenX|Float32|是|-|标准绿色在色彩空间的x坐标值。|
+|greenY|Float32|是|-|标准绿色在色彩空间的y坐标值。|
+|blueX|Float32|是|-|标准蓝色在色彩空间的x坐标值。|
+|blueY|Float32|是|-|标准蓝色在色彩空间的y坐标值。|
+|whitePointX|Float32|是|-|标准白色在色彩空间的x坐标值。|
+|whitePointY|Float32|是|-|标准白色在色彩空间的y坐标值。|
 
 ## enum ColorSpace
 
@@ -511,7 +509,11 @@ public enum ColorSpace <: Equatable<ColorSpace> & ToString {
 AdobeRgb1998
 ```
 
-**功能：** RGB色域为Adobe RGB(1998)类型；转换函数为Adobe RGB(1998)类型；编码范围为Full类型。
+**功能：** RGB色域为Adobe RGB(1998)类型。
+
+转换函数为Adobe RGB(1998)类型。
+
+编码范围为Full类型。
 
 **系统能力：** SystemCapability.Graphic.Graphic2D.ColorManager.Core
 
@@ -523,7 +525,11 @@ AdobeRgb1998
 AdobeRgb1998Limit
 ```
 
-**功能：** RGB色域为Adobe RGB(1998)类型；转换函数为Adobe RGB(1998)类型；编码范围为Limit类型。
+**功能：** RGB色域为Adobe RGB(1998)类型。
+
+转换函数为Adobe RGB(1998)类型。
+
+编码范围为Limit类型。
 
 **系统能力：** SystemCapability.Graphic.Graphic2D.ColorManager.Core
 
@@ -535,7 +541,11 @@ AdobeRgb1998Limit
 Bt2020Hlg
 ```
 
-**功能：** RGB色域为BT2020类型；转换函数为HLG类型；编码范围为Full类型。
+**功能：** RGB色域为BT2020类型。
+
+转换函数为HLG类型。
+
+编码范围为Limit类型。
 
 **系统能力：** SystemCapability.Graphic.Graphic2D.ColorManager.Core
 
@@ -547,7 +557,11 @@ Bt2020Hlg
 Bt2020HlgLimit
 ```
 
-**功能：** RGB色域为BT2020类型；转换函数为HLG类型；编码范围为Limit类型。
+**功能：** RGB色域为BT2020类型。
+
+转换函数为HLG类型。
+
+编码范围为Limit类型。
 
 **系统能力：** SystemCapability.Graphic.Graphic2D.ColorManager.Core
 
@@ -559,7 +573,11 @@ Bt2020HlgLimit
 Bt2020Pq
 ```
 
-**功能：** RGB色域为BT2020类型；转换函数为PQ类型；编码范围为Full类型。
+**功能：** RGB色域为BT2020类型。
+
+转换函数为PQ类型。
+
+编码范围为Full类型。
 
 **系统能力：** SystemCapability.Graphic.Graphic2D.ColorManager.Core
 
@@ -571,7 +589,11 @@ Bt2020Pq
 Bt2020PqLimit
 ```
 
-**功能：** RGB色域为BT2020类型；转换函数为PQ类型；编码范围为Limit类型。
+**功能：** RGB色域为BT2020类型。
+
+转换函数为PQ类型。
+
+编码范围为Limit类型。
 
 **系统能力：** SystemCapability.Graphic.Graphic2D.ColorManager.Core
 
@@ -583,7 +605,11 @@ Bt2020PqLimit
 Bt601Ebu
 ```
 
-**功能：** RGB色域为BT601_P类型；转换函数为BT709类型；编码范围为Full类型。
+**功能：** RGB色域为BT601_P类型。
+
+转换函数为BT709类型。
+
+编码范围为Full类型。
 
 **系统能力：** SystemCapability.Graphic.Graphic2D.ColorManager.Core
 
@@ -595,7 +621,11 @@ Bt601Ebu
 Bt601EbuLimit
 ```
 
-**功能：** RGB色域为BT601_P类型；转换函数为BT709类型；编码范围为Limit类型。
+**功能：** RGB色域为BT601_P类型。
+
+转换函数为BT709类型。
+
+编码范围为Limit类型。
 
 **系统能力：** SystemCapability.Graphic.Graphic2D.ColorManager.Core
 
@@ -607,7 +637,11 @@ Bt601EbuLimit
 Bt601SmpteC
 ```
 
-**功能：** RGB色域为BT601_N类型；转换函数为BT709类型；编码范围为Full类型。
+**功能：** RGB色域为BT601_N类型。
+
+转换函数为BT709类型。
+
+编码范围为Full类型。
 
 **系统能力：** SystemCapability.Graphic.Graphic2D.ColorManager.Core
 
@@ -619,7 +653,11 @@ Bt601SmpteC
 Bt601SmpteCLimit
 ```
 
-**功能：** RGB色域为BT601_N类型；转换函数为BT709类型；编码范围为Limit类型。
+**功能：** RGB色域为BT601_N类型。
+
+转换函数为BT709类型。
+
+编码范围为Limit类型。
 
 **系统能力：** SystemCapability.Graphic.Graphic2D.ColorManager.Core
 
@@ -631,7 +669,11 @@ Bt601SmpteCLimit
 Bt709
 ```
 
-**功能：** RGB色域为BT709类型；转换函数为BT709类型；编码范围为Full类型。
+**功能：** RGB色域为BT709类型。
+
+转换函数为BT709类型。
+
+编码范围为Full类型。
 
 **系统能力：** SystemCapability.Graphic.Graphic2D.ColorManager.Core
 
@@ -643,7 +685,11 @@ Bt709
 Bt709Limit
 ```
 
-**功能：** RGB色域为BT709类型；转换函数为BT709类型；编码范围为Limit类型。
+**功能：** RGB色域为BT709类型。
+
+转换函数为BT709类型。
+
+编码范围为Limit类型。
 
 **系统能力：** SystemCapability.Graphic.Graphic2D.ColorManager.Core
 
@@ -667,7 +713,11 @@ Custom
 DciP3
 ```
 
-**功能：** RGB色域为DCI-P3类型；转换函数为Gamma 2.6类型；编码范围为Full类型。
+**功能：** RGB色域为DCI-P3类型。
+
+转换函数为Gamma 2.6类型。
+
+编码范围为Full类型。
 
 **系统能力：** SystemCapability.Graphic.Graphic2D.ColorManager.Core
 
@@ -679,7 +729,11 @@ DciP3
 DisplayP3
 ```
 
-**功能：** RGB色域为Display P3类型；转换函数为Srgb类型；编码范围为Full类型。
+**功能：** RGB色域为Display P3类型。
+
+转换函数为SRGB类型。
+
+编码范围为Full类型。
 
 **系统能力：** SystemCapability.Graphic.Graphic2D.ColorManager.Core
 
@@ -691,7 +745,13 @@ DisplayP3
 DisplayP3Hlg
 ```
 
-**功能：** 与P3_HLG相同；RGB色域为Display P3类型；转换函数为HLG类型；编码范围为Full类型。
+**功能：** 与P3_HLG相同。
+
+RGB色域为Display P3类型。
+
+转换函数为HLG类型。
+
+编码范围为Full类型。
 
 **系统能力：** SystemCapability.Graphic.Graphic2D.ColorManager.Core
 
@@ -703,7 +763,11 @@ DisplayP3Hlg
 DisplayP3Limit
 ```
 
-**功能：** RGB色域为Display P3类型；转换函数为Srgb类型；编码范围为Limit类型。
+**功能：** RGB色域为Display P3类型。
+
+转换函数为SRGB类型。
+
+编码范围为Limit类型。
 
 **系统能力：** SystemCapability.Graphic.Graphic2D.ColorManager.Core
 
@@ -715,7 +779,13 @@ DisplayP3Limit
 DisplayP3Pq
 ```
 
-**功能：** 与P3_PQ相同；RGB色域为Display P3类型；转换函数为PQ类型；编码范围为Full类型。
+**功能：** 与P3_PQ相同。
+
+RGB色域为Display P3类型。
+
+转换函数为PQ类型。
+
+编码范围为Full类型。
 
 **系统能力：** SystemCapability.Graphic.Graphic2D.ColorManager.Core
 
@@ -727,7 +797,13 @@ DisplayP3Pq
 DisplayP3Srgb
 ```
 
-**功能：** 与DisplayP3相同；RGB色域为Display P3类型；转换函数为Srgb类型；编码范围为Full类型。
+**功能：** 与DISPLAY_P3相同。
+
+RGB色域为Display P3类型。
+
+转换函数为SRGB类型。
+
+编码范围为Full类型。
 
 **系统能力：** SystemCapability.Graphic.Graphic2D.ColorManager.Core
 
@@ -739,7 +815,13 @@ DisplayP3Srgb
 DisplaySrgb
 ```
 
-**功能：** 与Srgb相同；RGB色域为Srgb类型；转换函数为Srgb类型；编码范围为Full类型。
+**功能：** 与SRGB相同。
+
+RGB色域为SRGB类型。
+
+转换函数为SRGB类型。
+
+编码范围为Full类型。
 
 **系统能力：** SystemCapability.Graphic.Graphic2D.ColorManager.Core
 
@@ -751,7 +833,9 @@ DisplaySrgb
 LinearBt2020
 ```
 
-**功能：** RGB色域为BT2020类型；转换函数为Linear类型。
+**功能：** RGB色域为BT2020类型。
+
+转换函数为Linear类型。
 
 **系统能力：** SystemCapability.Graphic.Graphic2D.ColorManager.Core
 
@@ -763,7 +847,11 @@ LinearBt2020
 LinearBt709
 ```
 
-**功能：** 与LINEAR_Srgb相同；RGB色域为BT709类型；转换函数为Linear类型。
+**功能：** 与LINEAR_SRGB相同。
+
+RGB色域为BT709类型。
+
+转换函数为Linear类型。
 
 **系统能力：** SystemCapability.Graphic.Graphic2D.ColorManager.Core
 
@@ -775,7 +863,9 @@ LinearBt709
 LinearP3
 ```
 
-**功能：** RGB色域为Display P3类型；转换函数为Linear类型。
+**功能：** RGB色域为Display P3类型。
+
+转换函数为Linear类型。
 
 **系统能力：** SystemCapability.Graphic.Graphic2D.ColorManager.Core
 
@@ -787,7 +877,9 @@ LinearP3
 LinearSrgb
 ```
 
-**功能：** RGB色域为Srgb类型；转换函数为Linear类型。
+**功能：** RGB色域为SRGB类型。
+
+转换函数为Linear类型。
 
 **系统能力：** SystemCapability.Graphic.Graphic2D.ColorManager.Core
 
@@ -799,7 +891,11 @@ LinearSrgb
 P3Hlg
 ```
 
-**功能：** RGB色域为Display P3类型；转换函数为HLG类型；编码范围为Full类型。
+**功能：** RGB色域为Display P3类型。
+
+转换函数为HLG类型。
+
+编码范围为Full类型。
 
 **系统能力：** SystemCapability.Graphic.Graphic2D.ColorManager.Core
 
@@ -811,7 +907,11 @@ P3Hlg
 P3HlgLimit
 ```
 
-**功能：** RGB色域为Display P3类型；转换函数为HLG类型；编码范围为Limit类型。
+**功能：** RGB色域为Display P3类型。
+
+转换函数为HLG类型。
+
+编码范围为Limit类型。
 
 **系统能力：** SystemCapability.Graphic.Graphic2D.ColorManager.Core
 
@@ -823,7 +923,11 @@ P3HlgLimit
 P3Pq
 ```
 
-**功能：** RGB色域为Display P3类型；转换函数为PQ类型；编码范围为Full类型。
+**功能：** RGB色域为Display P3类型。
+
+转换函数为PQ类型。
+
+编码范围为Full类型。
 
 **系统能力：** SystemCapability.Graphic.Graphic2D.ColorManager.Core
 
@@ -835,7 +939,11 @@ P3Pq
 P3PqLimit
 ```
 
-**功能：** RGB色域为Display P3类型；转换函数为PQ类型；编码范围为Limit类型。
+**功能：** RGB色域为Display P3类型。
+
+转换函数为PQ类型。
+
+编码范围为Limit类型。
 
 **系统能力：** SystemCapability.Graphic.Graphic2D.ColorManager.Core
 
@@ -847,7 +955,13 @@ P3PqLimit
 Srgb
 ```
 
-**功能：** RGB色域为Srgb类型；转换函数为Srgb类型；编码范围为Full类型；系统默认色域类型。
+**功能：** RGB色域为SRGB类型。
+
+转换函数为SRGB类型。
+
+编码范围为Full类型。
+
+系统默认色域类型。
 
 **系统能力：** SystemCapability.Graphic.Graphic2D.ColorManager.Core
 
@@ -859,7 +973,11 @@ Srgb
 SrgbLimit
 ```
 
-**功能：** RGB色域为Srgb类型。转换函数为Srgb类型。编码范围为Limit类型。
+**功能：** RGB色域为SRGB类型。
+
+转换函数为SRGB类型。
+
+编码范围为Limit类型。
 
 **系统能力：** SystemCapability.Graphic.Graphic2D.ColorManager.Core
 

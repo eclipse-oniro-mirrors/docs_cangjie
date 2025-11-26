@@ -109,6 +109,9 @@
 - Cross-language Interoperability
     - [Cangjie-C Interoperability](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/FFI/cangjie-c.md)
     - Cangjie-ArkTS Interoperability
+        - Introduction to Interoperability
+            - [Building Your First Cangjie-ArkTS Hybrid Application](FFI/cangjie-arkts/cj-quick-start-first-cangjie-hybrid-app.md)
+            - [Incremental Cangjie Usage in Existing ArkTS Projects](FFI/cangjie-arkts/cj-quick-start-first-cangjie-hybrid-module.md)
         - [Overview](FFI/cangjie-arkts/cangjie_arkts_overview.md)
         - [Scenarios](FFI/cangjie-arkts/interoperability_senario.md)
             - [Using Cangjie in ArkTS Applications](FFI/cangjie-arkts/using_cangjie.md)
@@ -128,6 +131,7 @@
             - [Cangjie Accessing ArkTS Data](FFI/cangjie-arkts/operating_ArkTS_data.md)
             - [ArkTS Accessing Cangjie Data](FFI/cangjie-arkts/operating_cangjie_objects.md)
             - [Using Interoperability Library in Cangjie Multithreading](FFI/cangjie-arkts/using_interoperability_lib_multithread.md)
+            - [Cangjie Calling ArkTS Third-Party Modules](FFI/cangjie-arkts/cj-quick-start-dts2cj-plugin-usage.md)
         - [Cangjie-ArkTS Interoperability Auxiliary Library](FFI/cangjie-arkts/auxiliary_lib.md)
         - [Cangjie-ArkTS Interoperability Development Guidelines](FFI/cangjie-arkts/interop_guidelines.md)
 - Compilation and Build

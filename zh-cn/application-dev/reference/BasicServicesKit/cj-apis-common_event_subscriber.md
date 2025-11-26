@@ -1,6 +1,6 @@
 # ohos.common_event_subscriber
 
-本模块表示公共事件的订阅者。
+common_event_subscriber模块表示公共事件的订阅者。
 
 ## 导入模块
 

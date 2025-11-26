@@ -56,7 +56,6 @@ public init(content: ?ResourceStr)
 
 通用事件：全部支持。
 
-
 ## 组件事件
 
 ### func onStart(?() -> Unit)

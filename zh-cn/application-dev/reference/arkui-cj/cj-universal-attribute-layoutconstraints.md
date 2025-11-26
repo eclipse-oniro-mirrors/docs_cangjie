@@ -35,7 +35,6 @@ func constraintSize(minWidth!: ?Length = None, maxWidth!: ?Length = None, minHei
 |:---|:---|
 |T|返回通用方法接口类型|
 
-
 ## func align(?Alignment)
 
 ```cangjie
@@ -60,7 +59,6 @@ func align(value: ?Alignment): T
 |:---|:---|
 |T|返回通用方法接口类型|
 
-
 ## func direction(?Direction)
 
 ```cangjie
@@ -78,30 +76,6 @@ func direction(value: ?Direction): T
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |value|?[Direction](./cj-common-types.md#enum-direction)|是|-|布局方向<br>初始值：Direction.Auto。|
-
-**返回值：**
-
-|类型|说明|
-|:---|:---|
-|T|返回通用方法接口类型|
-
-## func alignRules(?AlignRuleOptions)
-
-```cangjie
-func alignRules(value: ?AlignRuleOptions): T
-```
-
-**功能：** 设置组件的对齐规则，仅当父容器为RelativeContainer时生效。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**起始版本：** 22
-
-**参数：**
-
-|参数名|类型|必填|默认值|说明|
-|:---|:---|:---|:---|:---|
-|value|?[AlignRuleOptions](./cj-common-types.md#class-alignruleoptions)|是|-|对齐规则选项<br>初始值：AlignRuleOptions()。|
 
 **返回值：**
 

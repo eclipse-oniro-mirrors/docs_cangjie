@@ -330,7 +330,17 @@ public class FullscreenInfo {
 
 #### var fullscreen
 
+```cangjie
+public var fullscreen: ?Bool
+```
+
 **功能：** 当前视频是否进入全屏播放状态。
+
+**类型：** ?Bool
+
+**读写能力：** 可读写
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **起始版本：** 22
 
@@ -350,7 +360,17 @@ public class PlaybackInfo {
 
 #### var time
 
+```cangjie
+public var time: ?Int32
+```
+
 **功能：** 当前视频播放的进度。单位：秒。
+
+**类型：** ?Int32
+
+**读写能力：** 可读写
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **起始版本：** 22
 
@@ -370,7 +390,17 @@ public class PreparedInfo {
 
 #### var duration
 
+```cangjie
+public var duration: ?Int32
+```
+
 **功能：** 当前视频的时长。单位：秒。
+
+**类型：** ?Int32
+
+**读写能力：** 可读写
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **起始版本：** 22
 
@@ -465,7 +495,7 @@ public func setCurrentTime(value: Int32, seekMode: ?SeekMode): Unit
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |value|Int32|是|-|播放时间。|
-|seekMode|?[SeekMode](./cj-common-types.md#enum-seekmode)|是|-|搜索模式。|
+|seekMode|?[SeekMode](./cj-common-types.md#enum-seekmode)|是|-|跳转模式。|
 
 #### func start()
 
@@ -499,7 +529,7 @@ public func stop(): Unit
 package ohos_app_cangjie_entry
 import kit.ArkUI.*
 import ohos.i18n.*
-import ohos.resource_manager.*
+import ohos.resource.*
 import ohos.arkui.state_macro_manage.*
 
 @Entry

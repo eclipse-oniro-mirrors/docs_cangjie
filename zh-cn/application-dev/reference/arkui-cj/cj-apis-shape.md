@@ -38,12 +38,6 @@ public func fill(color: ?ResourceColor): This
 |:---|:---|:---|:---|:---|
 |color|?[ResourceColor](./cj-common-types.md#interface-resourcecolor)|是|-|填充区域的颜色。|
 
-**返回值：**
-
-|类型|说明|
-|:----|:----|
-|This|返回当前对象。|
-
 ### func height(?Length)
 
 ```cangjie
@@ -61,12 +55,6 @@ public func height(height: ?Length): This
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |height|?[Length](./cj-common-types.md#interface-length)|是|-|图形高度。|
-
-**返回值：**
-
-|类型|说明|
-|:----|:----|
-|This|返回当前对象。|
 
 ### func offset(?Length, ?Length)
 
@@ -87,12 +75,6 @@ public func offset(x!: ?Length, y!: ?Length): This
 |x|?[Length](./cj-common-types.md#interface-length)|是|-| **命名参数。** x轴偏移。<br>初始值：0.0.px。|
 |y|?[Length](./cj-common-types.md#interface-length)|是|-| **命名参数。** y轴偏移。<br>初始值：0.0.px。|
 
-**返回值：**
-
-|类型|说明|
-|:----|:----|
-|This|返回当前对象。|
-
 ### func size(?Length, ?Length)
 
 ```cangjie
@@ -112,12 +94,6 @@ public func size(width!: ?Length, height!: ?Length): This
 |width|?[Length](./cj-common-types.md#interface-length)|是|-| **命名参数。** 图形宽度。<br>初始值：0.0.vp。|
 |height|?[Length](./cj-common-types.md#interface-length)|是|-| **命名参数。** 图形高度。<br>初始值：0.0.vp。|
 
-**返回值：**
-
-|类型|说明|
-|:----|:----|
-|This|返回当前对象。|
-
 ### func width(?Length)
 
 ```cangjie
@@ -135,12 +111,6 @@ public func width(width: ?Length): This
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |width|?[Length](./cj-common-types.md#interface-length)|是|-|图形宽度。|
-
-**返回值：**
-
-|类型|说明|
-|:----|:----|
-|This|返回当前对象。|
 
 ## class CircleShape
 
@@ -328,12 +298,6 @@ public func radius(value: ?Length): This
 |:---|:---|:---|:---|:---|
 |value|?[Length](./cj-common-types.md#interface-length)|是|-|矩形圆角半径。<br>初始值：0.vp。|
 
-**返回值：**
-
-|类型|说明|
-|:----|:----|
-|This|返回当前对象。|
-
 ### func radiusHeight(?Length)
 
 ```cangjie
@@ -352,12 +316,6 @@ public func radiusHeight(value: ?Length): This
 |:---|:---|:---|:---|:---|
 |value|?[Length](./cj-common-types.md#interface-length)|是|-|矩形垂直圆角半径。<br>初始值：0.vp。|
 
-**返回值：**
-
-|类型|说明|
-|:----|:----|
-|This|返回当前对象。|
-
 ### func radiusWidth(?Length)
 
 ```cangjie
@@ -375,9 +333,3 @@ public func radiusWidth(value: ?Length): This
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |value|?[Length](./cj-common-types.md#interface-length)|是|-|矩形水平圆角半径。<br>初始值：0.vp。|
-
-**返回值：**
-
-|类型|说明|
-|:----|:----|
-|This|返回当前对象。|

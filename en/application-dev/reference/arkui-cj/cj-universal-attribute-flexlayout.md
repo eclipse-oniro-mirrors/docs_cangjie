@@ -50,7 +50,7 @@ public func flexBasis(value: ?Length): T
 
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
-| value | ?[Length](./cj-common-types.md#interface-length) | Yes | - | Base size of the component along the main axis of the parent container. |
+| value | ?[Length](./cj-common-types.md#interface-length) | Yes | - | Base size of the component along the main axis of the parent container.<br>Initial value: 'auto' (indicating that the base size of the component along the main axis is the component's original size).<br>Setting percent is not supported.<br>Value range: (0, +∞), default unit is vp.<br>Abnormal values: The actual layout effect is consistent with 'auto'.|
 
 **Return Value:**
 

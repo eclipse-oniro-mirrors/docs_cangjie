@@ -35,7 +35,7 @@ public class AbilityAccessCtrl {}
 public static func createAtManager(): AtManager
 ```
 
-**功能：** 获取访问控制模块对象。
+**功能：** 创建程序访问控制管理的实例对象。
 
 **系统能力：** SystemCapability.Security.AccessToken
 
@@ -93,8 +93,8 @@ public func checkAccessToken(tokenID: UInt32, permissionName: Permissions): Gran
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|tokenID|UInt32|是|-|要校验的目标应用的身份标识。可通过应用的[ApplicationInfo](cj-apis-bundle_manager.md#class-applicationinfo)获得。|
-|permissionName|[Permissions](#type-permissions)|是|-|需要校验的权限名称，合法的权限名取值可在[应用权限列表](../../security/AccessToken/cj-app-permissions.md)中查询。|
+|tokenID|UInt32|是|-|要校验的目标应用的身份标识。可通过应用的[ApplicationInfo](cj-apis-bundle_manager.md#class-applicationinfo)的accessTokenId字段获得。|
+|permissionName|[Permissions](#type-permissions)|是|-|需要校验的权限名称，合法的权限名取值可在[应用权限列表](../../security/AccessToken/cj-app-permissions.md#应用权限列表)中查询。|
 
 **返回值：**
 
@@ -150,7 +150,7 @@ public func requestPermissionsFromUser(context: UIAbilityContext, permissionList
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |context|[UIAbilityContext](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiabilitycontext)|是|-|请求权限的<!--RP1-->UIAbility<!--RP1End-->的Context。|
-|permissionList|Array\<[Permissions](#type-permissions)>|是|-|需要校验的权限名称，合法的权限名取值可在[应用权限列表](../../security/AccessToken/cj-app-permissions.md)中查询。|
+|permissionList|Array\<[Permissions](#type-permissions)>|是|-|权限名列表，合法的权限名取值可在[应用权限列表](../../security/AccessToken/cj-app-permissions.md#应用权限列表)中查询。|
 |requestCallback|AsyncCallback\<[PermissionRequestResult](cj-apis-sercurity-permission_request_result.md#class-permissionrequestresultarraystring-arrayint32-arraybool)>|是|-|回调函数，返回接口调用是否成功的结果。|
 
 **异常：**
@@ -192,7 +192,7 @@ try {
     let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let atManager = AbilityAccessCtrl.createAtManager()
     let permissionList = ["ohos.permission.READ_CONTACTS", "ohos.permission.CAMERA"]
-    atManager.requestPermissionsFromUser(ctx.getOrThrow(), permissionList, resultCallback)
+    atManager.requestPermissionsFromUser(ctx, permissionList, resultCallback)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -208,7 +208,7 @@ public enum GrantStatus <: Equatable<GrantStatus> & ToString {
 }
 ```
 
-**功能：** 表示授权状态。
+**功能：** 表示授权状态的枚举。
 
 **系统能力：** SystemCapability.Security.AccessToken
 
@@ -225,7 +225,7 @@ public enum GrantStatus <: Equatable<GrantStatus> & ToString {
 PermissionDenied
 ```
 
-**功能：** 未授权。
+**功能：** 表示未授权。
 
 **系统能力：** SystemCapability.Security.AccessToken
 
@@ -237,7 +237,7 @@ PermissionDenied
 PermissionGranted
 ```
 
-**功能：** 已授权。
+**功能：** 表示已授权。
 
 **系统能力：** SystemCapability.Security.AccessToken
 

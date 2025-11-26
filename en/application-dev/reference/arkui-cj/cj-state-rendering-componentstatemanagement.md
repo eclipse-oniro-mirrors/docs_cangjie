@@ -12,7 +12,7 @@ import kit.ArkUI.*
 
 A property type used for state management.
 
-### class ObservedProperty
+### class ObservedProperty\<T>
 
 ```cangjie
 public open class ObservedProperty<T> {
@@ -29,7 +29,7 @@ public open class ObservedProperty<T> {
 
 An array list type used for state management.
 
-### class ObservedArrayList
+### class ObservedArrayList\<T>
 
 ```cangjie
 public class ObservedArrayList<T> <: CollectionEx<T> {

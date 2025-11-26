@@ -497,7 +497,7 @@ public func stop(): Unit
 package ohos_app_cangjie_entry
 import kit.ArkUI.*
 import ohos.i18n.*
-import ohos.resource_manager.*
+import ohos.resource.*
 import ohos.arkui.state_macro_manage.*
 
 @Entry

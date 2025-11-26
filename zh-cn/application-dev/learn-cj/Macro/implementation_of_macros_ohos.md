@@ -364,7 +364,7 @@ public macro getIdent(attr:Tokens, input:Tokens):Tokens {
 宏包 `pkg2` 中定义 `Prop` 宏，其中嵌套了 `getIdent` 宏的调用：
 
 <!-- compile -macro8 -->
-<!-- cfg="--debug-macro --compile-macro" -->
+<!-- cfg="--compile-macro" -->
 
 ```cangjie
 macro package pkg2
@@ -560,6 +560,8 @@ struct Data{
 ```cangjie
 macro package define
 
+import std.ast.*
+
 public macro Outer(input: Tokens): Tokens {
     return input
 }
@@ -576,8 +578,13 @@ public macro Inner(input: Tokens): Tokens {
 <!-- cfg="--debug-macro" -->
 
 ```cangjie
-@Outer var a = 0
-@Inner var b = 0 // Error, The macro call 'Inner' should with the surround code contains a call 'Outer'.
+import define.*
+
+@Outer
+var a = 0
+
+@Inner
+var b = 0 // Error, The macro call 'Inner' should with the surround code contains a call 'Outer'.
 ```
 
 如上代码所示，`Inner` 宏在定义时使用了 `assertParentContext` 函数用于检查其在调用阶段是否位于 `Outer` 宏中，在代码示例的宏调用场景下，由于 `Outer` 和 `Inner` 在调用时不存在这样的嵌套关系，因此编译器将报告一个错误。

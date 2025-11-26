@@ -1,6 +1,6 @@
 # ohos.app.ability.error_manager
 
-ErrorManager提供Ability错误管理的能力，包括错误事件的监听和取消监听。
+error_manager模块提供对错误观测器的注册和注销的能力，主要是观测应用发生cj crash和appfreeze等错误。
 
 ## 导入模块
 
@@ -137,12 +137,12 @@ try {
         onException: Some({ errorObj =>
             Hilog.info(0, "test_errorManager", "onException, name:   =${errorObj.name}")
             Hilog.info(0, "test_errorManager", "onException, message:   =${errorObj.message}")
-            if (let Some(v) <-errorObj.stack) {
+            if (let Some(v) <- errorObj.stack) {
                 Hilog.info(0, "test_errorManager", "onException, stack:    =${v}")
             }
         })
     )
-    ErrorManager.on(ErrorManagerEvent.Error, observer)
+    let id = ErrorManager.on(ErrorManagerEvent.Error, observer)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }

@@ -1003,12 +1003,6 @@ public func scrollToIndex(
 |align|?[ScrollAlign](#enum-scrollalign)|否|None|**命名参数。** 对齐方式。初始值：ScrollAlign.Start。|
 |options|?[ScrollToIndexOptions](#class-scrolltoindexoptions)|否|None|**命名参数。** 滚动到索引选项。初始值：ScrollToIndexOptions()。|
 
-**返回值：**
-
-|类型|说明|
-|:---|:---|
-|This|返回自身。|
-
 #### func isAtEnd()
 
 ```cangjie

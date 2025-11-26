@@ -799,10 +799,10 @@ func getCutoutInfoExample() {
 ```cangjie
 public class FoldCreaseRegion {
     public let creaseRects: Array<Rect>
-    public let displayId: UInt32
+    public let displayId: Int64
     public init(
-    displayId!: UInt32,
-    creaseRects!: Array<Rect>
+        displayId!: Int64,
+        creaseRects!: Array<Rect>
     )
 }
 ```
@@ -832,7 +832,7 @@ public let creaseRects: Array<Rect>
 ### let displayId
 
 ```cangjie
-public let displayId: UInt32
+public let displayId: Int64
 ```
 
 **功能：** 显示ID，用于标识crease所在的屏幕。
@@ -845,11 +845,11 @@ public let displayId: UInt32
 
 **起始版本：** 22
 
-### init(UInt32, Array<Rect>)
+### init(Int64, Array<Rect>)
 
 ```cangjie
 public init(
-    displayId!: UInt32,
+    displayId!: Int64,
     creaseRects!: Array<Rect>
 )
 ```
@@ -864,7 +864,7 @@ public init(
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|displayId|UInt32|是|-| **命名参数。** 显示屏ID。|
+|displayId|Int64|是|-| **命名参数。** 显示屏ID。|
 |creaseRects|Array\<[Rect](#class-rect)>|是|-| **命名参数。** crease区域。|
 
 ## class Rect

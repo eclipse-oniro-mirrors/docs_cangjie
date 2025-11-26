@@ -1,6 +1,6 @@
 # ohos.system_date_time（系统时间、时区）
 
-本模块主要由系统时间和系统时区功能组成。开发者可以设置、获取系统时间及系统时区。
+system_date_time模块主要由系统时间和系统时区功能组成。开发者可以获取系统时间及系统时区。
 
 ## 导入模块
 
@@ -35,7 +35,7 @@ public class SystemDateTime {}
 public static func getTime(isNanoseconds!: Bool = false): Int64
 ```
 
-**功能：** 获取自Unix纪元以来经过的时间。
+**功能：** 获取自Unix纪元以来到当前系统时间所经过的时间。
 
 **系统能力：** SystemCapability.MiscServices.Time
 
@@ -45,13 +45,13 @@ public static func getTime(isNanoseconds!: Bool = false): Int64
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|isNanoseconds|Bool|否|false| **命名参数。** 返回结果是否为纳秒数。<br>- true：表示返回结果为纳秒数（ns）。 <br>- false：表示返回结果为毫秒数（ms）。|
+|isNanoseconds|Bool|否|false| **命名参数。** 返回结果是否为纳秒数。<br>- true：表示返回结果为纳秒数(ns)。 <br>- false：表示返回结果为毫秒数(ms)。<br>默认值为false。|
 
 **返回值：**
 
 |类型|说明|
 |:----|:----|
-|Int64|自Unix纪元以来经过的时间。|
+|Int64|自Unix纪元以来到当前系统时间所经过的时间。|
 
 **示例：**
 
@@ -88,7 +88,7 @@ public static func getTimezone(): String
 
 |类型|说明|
 |:----|:----|
-|String|返回系统时区。|
+|String|返回系统时区。具体可见[支持的系统时区](#支持的系统时区)。|
 
 **示例：**
 
@@ -125,8 +125,8 @@ public static func getUptime(timeType: TimeType, isNanoseconds!: Bool = false): 
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|timeType|[TimeType](#enum-timetype)|是|-|获取时间的类型。|
-|isNanoseconds|Bool|否|false| **命名参数。** 返回结果是否为纳秒数。<br/>- true：表示返回结果为纳秒数（ns）。 <br/>- false：表示返回结果为毫秒数（ms）。|
+|timeType|[TimeType](#enum-timetype)|是|-|获取时间的类型，仅能为Startup或者Active。|
+|isNanoseconds|Bool|否|false| **命名参数。** 返回结果是否为纳秒数。<br/>- true：表示返回结果为纳秒数(ns)。 <br/>- false：表示返回结果为毫秒数(ms)。<br>默认值为false。|
 
 **返回值：**
 

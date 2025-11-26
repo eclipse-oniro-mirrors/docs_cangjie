@@ -471,7 +471,7 @@ public type PageTransitionCallback = (RouteType, Float64) -> Unit
 
 **Function:** Callback for reporting page transition events.
 
-**Type:** (RouteType, Float64) -> Unit
+**Type:** ([RouteType](#enum-routetype), Float64) -> Unit
 
 ## Example Code
 
@@ -489,6 +489,7 @@ import ohos.arkui.state_macro_manage.*
 import ohos.i18n.*
 import ohos.resource_manager.*
 import ohos.arkui.ui_context.*
+import ohos.resource.__GenerateResource__
 
 @Entry
 @Component
@@ -542,6 +543,7 @@ import ohos.arkui.state_macro_manage.*
 import ohos.i18n.*
 import ohos.resource_manager.*
 import ohos.arkui.ui_context.*
+import ohos.resource.__GenerateResource__
 
 @Entry
 @Component

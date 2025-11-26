@@ -494,7 +494,6 @@ public type OnSelectCallback = (Int32, String) -> Unit
 
 **类型：** (Int32, String) -> Unit
 
-
 ## 示例代码
 
 ### 示例1（设置下拉菜单）

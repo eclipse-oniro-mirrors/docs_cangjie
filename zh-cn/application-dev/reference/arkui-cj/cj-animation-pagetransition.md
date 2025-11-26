@@ -473,7 +473,7 @@ public type PageTransitionCallback = (RouteType, Float64) -> Unit
 
 **功能：** 回调用于报告页面转换事件。
 
-**类型：** (RouteType, Float64) -> Unit
+**类型：** ([RouteType](#enum-routetype) , Float64) -> Unit
 
 ## 示例代码
 
@@ -491,6 +491,7 @@ import ohos.arkui.state_macro_manage.*
 import ohos.i18n.*
 import ohos.resource_manager.*
 import ohos.arkui.ui_context.*
+import ohos.resource.__GenerateResource__
 
 @Entry
 @Component
@@ -544,6 +545,7 @@ import ohos.arkui.state_macro_manage.*
 import ohos.i18n.*
 import ohos.resource_manager.*
 import ohos.arkui.ui_context.*
+import ohos.resource.__GenerateResource__
 
 @Entry
 @Component

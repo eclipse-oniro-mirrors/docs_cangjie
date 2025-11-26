@@ -2030,7 +2030,7 @@ public func getSubWindow(): Array<Window>
 public func loadContent(path: String): Unit
 ```
 
-**Description:** Loads page content into this window. It is recommended to call this API during UIAbility startup.  
+**Description:** Loads page content into this window. It is recommended to call this API during UIAbility startup.
 If called multiple times, this API will destroy the existing page content (UIContent) before loading new content. Use with caution.
 
 **System Capability:** SystemCapability.WindowManager.WindowManager.Core
@@ -3249,7 +3249,7 @@ public operator func ==(other: WindowStatusType): Bool
 ```cangjie
 public enum WindowType <: Equatable<WindowType> {
     | TypeApp
-    | TypeSystemAlert
+    | TypeMain
     | TypeFloat
     | TypeDialog
     | ...
@@ -3278,13 +3278,13 @@ TypeApp
 
 **Since:** 22
 
-### TypeSystemAlert
+### TypeMain
 
 ```cangjie
-TypeSystemAlert
+TypeMain
 ```
 
-**Description:** System alert window.
+**Description:** Main window of an application. This window type cannot be used when creating a window. It is only for reading purposes in the return value of the getWindowProperties API.
 
 **System Capability:** SystemCapability.WindowManager.WindowManager.Core
 

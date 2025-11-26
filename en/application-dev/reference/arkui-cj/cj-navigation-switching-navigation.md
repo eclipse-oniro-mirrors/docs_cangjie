@@ -99,7 +99,7 @@ public func navDestination(builder: ?(String, Any) -> Unit): This
 
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
-| builder | ?(String, Any) -> Unit | Yes | - | The NavDestination component. Parameters: NavDestination page name and parameters. Initial value: { _: String, _: Any => }. |
+| builder | ?(String, Any) -> Unit | Yes | - | The NavDestination component. <br/>Parameter 1: The page name of NavDestination.<br/>Parameter 2: Detailed parameters of the NavDestination page set by developers. This parameter setting is currently not supported (setting has no effect). <br/>Initial value: { _: String, _: Any => }. |
 
 ### func title(?CustomBuilder, ?NavigationTitleOptions)
 

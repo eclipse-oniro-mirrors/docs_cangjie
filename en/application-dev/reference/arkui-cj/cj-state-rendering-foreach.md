@@ -8,7 +8,7 @@ The ForEach interface performs loop rendering based on array-type data.
 import kit.ArkUI.*
 ```
 
-## class ForEach
+## class ForEach\<T>
 
 ```cangjie
 public class ForEach<T> {

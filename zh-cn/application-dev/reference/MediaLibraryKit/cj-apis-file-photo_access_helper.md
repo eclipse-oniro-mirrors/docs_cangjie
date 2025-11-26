@@ -1,6 +1,6 @@
 # ohos.file.photo_access_helper
 
-该模块提供相册管理模块能力，包括创建相册以及访问、修改相册中的媒体数据信息等。
+photo_access_helper模块提供相册管理模块能力，包括创建相册以及访问、修改相册中的媒体数据信息等。
 
 ## 导入模块
 
@@ -39,7 +39,7 @@ public func getPhotoAccessHelper(context: UIAbilityContext): PhotoAccessHelper
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|context|[UIAbilityContext](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiabilitycontext)|是|-|传入Ability实例的Context。|
+|context|[UIAbilityContext](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiabilitycontext)|是|-|传入Ability实例的上下文。|
 
 **返回值：**
 
@@ -67,7 +67,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let phAccessHelper = getPhotoAccessHelper(ctx)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
@@ -243,7 +243,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let phAccessHelper = getPhotoAccessHelper(ctx)
     let predicates = DataSharePredicates()
     let fetchOptions: FetchOptions = FetchOptions([], predicates)
@@ -277,7 +277,7 @@ public class Album <: AbsAlbum {}
 public prop imageCount: Int32
 ```
 
-**功能：** 获取相册中图片数量。
+**功能：** 相册中图片数量。
 
 **类型：** Int32
 
@@ -293,7 +293,7 @@ public prop imageCount: Int32
 public prop videoCount: Int32
 ```
 
-**功能：** 获取相册中图片数量。
+**功能：** 相册中视频数量。
 
 **类型：** Int32
 
@@ -340,7 +340,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let phAccessHelper = getPhotoAccessHelper(ctx)
     let predicates = DataSharePredicates()
     predicates.equalTo('album_name', StringValue('test1'))
@@ -361,7 +361,7 @@ try {
 public class AlbumResult <: FetchResult {}
 ```
 
-**功能：** 相册结果模块。
+**功能：** 文件检索结果集。
 
 **系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
 
@@ -377,7 +377,7 @@ public class AlbumResult <: FetchResult {}
 public func getAllObjects(): Array<Album>
 ```
 
-**功能：** 获取相册中的所有资产。
+**功能：** 获取文件检索结果中的所有文件资产。
 
 **系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
 
@@ -387,7 +387,7 @@ public func getAllObjects(): Array<Album>
 
 |类型|说明|
 |:----|:----|
-|Array\<[Album](#class-album)>|返回相册列表。|
+|Array\<[Album](#class-album)>|返回所有文件资产的数组。|
 
 **异常：**
 
@@ -411,7 +411,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let phAccessHelper = getPhotoAccessHelper(ctx)
     let predicates = DataSharePredicates()
     predicates.equalTo('album_name', StringValue('test1'))
@@ -430,7 +430,7 @@ try {
 public func getFirstObject(): Album
 ```
 
-**功能：** 获取相册中的第一个文件资产。
+**功能：** 获取文件检索结果中的第一个文件资产。
 
 **系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
 
@@ -440,7 +440,7 @@ public func getFirstObject(): Album
 
 |类型|说明|
 |:----|:----|
-|[Album](#class-album)|返回第一个相册|
+|[Album](#class-album)|返回结果集中的第一个对象。|
 
 **异常：**
 
@@ -464,7 +464,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let phAccessHelper = getPhotoAccessHelper(ctx)
     let predicates = DataSharePredicates()
     predicates.equalTo('album_name', StringValue('test1'))
@@ -483,7 +483,7 @@ try {
 public func getLastObject(): Album
 ```
 
-**功能：** 获取相册中的最后一个文件资产。
+**功能：** 获取文件检索结果中的最后一个文件资产。
 
 **系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
 
@@ -493,7 +493,7 @@ public func getLastObject(): Album
 
 |类型|说明|
 |:----|:----|
-|[Album](#class-album)|返回最后一个相册。|
+|[Album](#class-album)|返回结果集中的最后一个对象。|
 
 **异常：**
 
@@ -517,7 +517,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let phAccessHelper = getPhotoAccessHelper(ctx)
     let predicates = DataSharePredicates()
     predicates.equalTo('album_name', StringValue('test1'))
@@ -536,7 +536,8 @@ try {
 public func getNextObject(): Album
 ```
 
-**功能：** 获取相册中的下一个文件资产。
+**功能：** 获取文件检索结果中的下一个文件资产。
+在调用此方法之前，必须使用[isAfterLast()](#func-isafterlast)来检查当前位置是否为最后一行。
 
 **系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
 
@@ -546,7 +547,7 @@ public func getNextObject(): Album
 
 |类型|说明|
 |:----|:----|
-|[Album](#class-album)|返回下一个相册|
+|[Album](#class-album)|返回结果集中下一个对象。|
 
 **异常：**
 
@@ -570,7 +571,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let phAccessHelper = getPhotoAccessHelper(ctx)
     let predicates = DataSharePredicates()
     predicates.equalTo('album_name', StringValue('test1'))
@@ -605,7 +606,7 @@ public func getObjectByPosition(index: Int32): Album
 
 |类型|说明|
 |:----|:----|
-|[Album](#class-album)|获取的文件资产。|
+|[Album](#class-album)|返回结果集中指定索引的一个对象。|
 
 **异常：**
 
@@ -629,7 +630,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let phAccessHelper = getPhotoAccessHelper(ctx)
     let predicates = DataSharePredicates()
     predicates.equalTo('album_name', StringValue('test1'))
@@ -652,7 +653,7 @@ public class ChangeData {
 }
 ```
 
-**功能：** 监听器回调函数的值。
+**功能：** 监听器回调函数的返回值。
 
 **系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
 
@@ -718,11 +719,10 @@ public class CreateOptions {
 
 **功能：** 图片或视频的创建选项。
 
-title参数规格为：
+title参数的规格如下：
 
 - 不应包含扩展名。
 - 文件名字符串长度为1~255。
-- 文件名中不允许出现的非法英文字符，包括：. .. \ / : * ? " ' ` < > | { } [ ]
 
 **系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
 
@@ -734,7 +734,7 @@ title参数规格为：
 public var subtype: PhotoSubtype
 ```
 
-**功能：** 图片或者视频的标题。
+**功能：** 图片或者视频的文件子类型。
 
 **类型：** [PhotoSubtype](#enum-photosubtype)
 
@@ -801,7 +801,11 @@ public class FetchOptions {
 public var fetchColumns: Array<String>
 ```
 
-**功能：** 检索条件。
+**功能：** 检索条件，指定列名查询。
+
+对于照片，如果该参数为空，默认查询'uri'、'media_type'、'subtype'和'display_name'，使用[get](#func-getstring)接口获取当前对象的其他属性时将会报错。示例：fetchColumns: ['uri', 'title']。
+
+对于相册，如果该参数为空，默认查询'uri'和'album_name'。
 
 **类型：** Array\<String>
 
@@ -817,7 +821,7 @@ public var fetchColumns: Array<String>
 public var predicates: DataSharePredicates
 ```
 
-**功能：** 谓词查询。
+**功能：** 谓词查询，显示过滤条件。
 
 **类型：** [DataSharePredicates](../ArkData/cj-apis-data_share_predicates.md#class-datasharepredicates)
 
@@ -843,7 +847,7 @@ public init(fetchColumns: Array<String>, predicates: DataSharePredicates)
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|fetchColumns|Array\<String>|是|-| 检索条件，指定列名查询。<br>对于照片，如果该参数为空，默认查询'uri'、'media_type'、'subtype'和'display_name'。示例：fetchColumns: ['uri', 'title']。<br>对于相册，如果该参数为空，默认查询'uri'和'album_name'。|
+|fetchColumns|Array\<String>|是|-| 检索条件，指定列名查询。|
 |predicates|[DataSharePredicates](../ArkData/cj-apis-data_share_predicates.md#class-datasharepredicates)|是|-| 谓词查询，显示过滤条件。|
 
 ## class FetchResult
@@ -864,7 +868,7 @@ public open class FetchResult {}
 public func close(): Unit
 ```
 
-**功能：** 释放FetchResult实例并使其失效。无法调用其他方法。
+**功能：** 释放FetchResult实例并使其失效，无法再调用其他方法。
 
 **系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
 
@@ -892,7 +896,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let phAccessHelper = getPhotoAccessHelper(ctx)
     let predicates = DataSharePredicates()
     let fetchOptions: FetchOptions = FetchOptions([], predicates)
@@ -943,7 +947,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let phAccessHelper = getPhotoAccessHelper(ctx)
     let predicates = DataSharePredicates()
     let fetchOptions: FetchOptions = FetchOptions([], predicates)
@@ -994,7 +998,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let phAccessHelper = getPhotoAccessHelper(ctx)
     let predicates = DataSharePredicates()
     let fetchOptions: FetchOptions = FetchOptions([], predicates)
@@ -1029,7 +1033,7 @@ public class MediaAlbumChangeRequest <: MediaChangeRequest {
 public init(album: Album)
 ```
 
-**功能：** 构造MediaAlbumChangeRequest对象。
+**功能：** 构造函数用于初始化新创建的对象。
 
 **系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
 
@@ -1062,7 +1066,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let phAccessHelper = getPhotoAccessHelper(ctx)
     let predicates = DataSharePredicates()
     let fetchOptions: FetchOptions = FetchOptions([], predicates)
@@ -1115,7 +1119,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let phAccessHelper = getPhotoAccessHelper(ctx)
     let predicates = DataSharePredicates()
     let fetchOptions: FetchOptions = FetchOptions([], predicates)
@@ -1137,6 +1141,8 @@ public func getAlbum(): Album
 ```
 
 **功能：** 获取当前相册变更请求中的相册。
+
+**注意**：对于创建相册的变更请求，在调用[applyChanges](#func-applychangesmediachangerequest)提交生效之前，该接口返回异常。
 
 **系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
 
@@ -1169,7 +1175,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let phAccessHelper = getPhotoAccessHelper(ctx)
     let predicates = DataSharePredicates()
     let fetchOptions: FetchOptions = FetchOptions([], predicates)
@@ -1223,7 +1229,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let phAccessHelper = getPhotoAccessHelper(ctx)
     let predicates = DataSharePredicates()
     let fetchOptions: FetchOptions = FetchOptions([], predicates)
@@ -1247,10 +1253,9 @@ public func setAlbumName(name: String): Unit
 
 **功能：** 设置相册名称。
 
-相册名的参数规格为
-
+相册名参数规格：
 - 相册名字符串长度为1~255。
-- 不允许出现非法字符，包括：. .. \ / : * ? " ' ` < > | { } [ ]
+- 不允许出现的非法英文字符，包括：. \ / : * ? " ' ` < > | { } [ ]
 - 英文字符大小写不敏感。
 - 相册名不允许重名。
 
@@ -1285,7 +1290,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let phAccessHelper = getPhotoAccessHelper(ctx)
     let predicates = DataSharePredicates()
     let fetchOptions: FetchOptions = FetchOptions([], predicates)
@@ -1324,7 +1329,7 @@ public class MediaAssetChangeRequest <: & MediaChangeRequest {
 public init(asset: PhotoAsset)
 ```
 
-**功能：** 构造MediaAssetChangeRequest对象。
+**功能：** 构造函数，用于初始化资产变更请求。
 
 **系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
 
@@ -1357,7 +1362,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let phAccessHelper = getPhotoAccessHelper(ctx)
     let predicates = DataSharePredicates()
     let fetchOptions = FetchOptions([], predicates)
@@ -1376,7 +1381,7 @@ public static func createAssetRequest(context: UIAbilityContext, photoType: Phot
     options!: CreateOptions = CreateOptions(title: "", subtype: Default)): MediaAssetChangeRequest
 ```
 
-**功能：** 指定待创建的文件类型和扩展名，创建资产变更请求。
+**功能：** 指定文件类型和扩展名，创建资产变更请求。
 
 **系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
 
@@ -1386,10 +1391,10 @@ public static func createAssetRequest(context: UIAbilityContext, photoType: Phot
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|context|[UIAbilityContext](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiabilitycontext)|是|-|传入Ability实例的Context。|
+|context|[UIAbilityContext](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiabilitycontext)|是|-|传入Ability实例的上下文。|
 |photoType|[PhotoType](./cj-apis-file-photo_access_helper.md#enum-phototype)|是|-|待创建的文件类型，IMAGE或者VIDEO类型。|
 |extension|String|是|-|文件扩展名，例如：'jpg'。|
-|options|[CreateOptions](#class-createoptions)|否|CreateOptions(title: "", subtype: Default)|**命名参数。** 创建选项，例如：{title: 'testPhoto'}。|
+|options|[CreateOptions](#class-createoptions)|否|CreateOptions(title: "", subtype: Default)|**命名参数。** 创建选项，例如：{title: 'testPhoto'}。<br>文件名中不允许出现非法英文字符，包括： . .. \ / : * ? " ' ` < > \| { } [ ]|
 
 **返回值：**
 
@@ -1417,7 +1422,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let photoType = PhotoType.Image
     let extension = "jpg"
     let options = CreateOptions(title: "testPhoto")
@@ -1436,7 +1441,7 @@ public static func createImageAssetRequest(context: UIAbilityContext, fileUri: S
 
 **功能：** 创建图片资产变更请求。
 
-通过fileUri指定待创建资产的数据来源，可参考[FileUri](../CoreFileKit/cj-apis-file_fileuri.md)。
+指定待创建资产的数据来源，可参考[FileUri](../CoreFileKit/cj-apis-file_fileuri.md)。
 
 **系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
 
@@ -1446,8 +1451,8 @@ public static func createImageAssetRequest(context: UIAbilityContext, fileUri: S
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|context|[UIAbilityContext](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiabilitycontext)|是|-|传入Ability实例的Context。|
-|fileUri|String|是|-|图片资产的数据来源，在应用沙箱下的uri。|
+|context|[UIAbilityContext](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiabilitycontext)|是|-|传入Ability实例的上下文。|
+|fileUri|String|是|-|图片资产的数据来源，在应用沙箱下的uri。示例fileUri：'file://com.example.temptest/data/storage/el2/base/haps/entry/files/test.jpg'。|
 
 **返回值：**
 
@@ -1476,7 +1481,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let phAccessHelper = getPhotoAccessHelper(ctx)
     let fileUri = "file://com.example.xxx/data/storage/el2/base/haps/entry/files/test.jpg"
     let assetChangeRequest = MediaAssetChangeRequest.createImageAssetRequest(ctx,
@@ -1505,8 +1510,8 @@ public static func createVideoAssetRequest(context: UIAbilityContext, fileUri: S
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|context|[UIAbilityContext](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiabilitycontext)|是|-|传入Ability实例的Context。|
-|fileUri|String|是|-|视频资产的数据来源，在应用沙箱下的uri。|
+|context|[UIAbilityContext](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiabilitycontext)|是|-|传入Ability实例的上下文。|
+|fileUri|String|是|-|视频资产的数据来源，在应用沙箱下的uri。示例fileUri：'file://com.example.temptest/data/storage/el2/base/haps/entry/files/test.mp4'。|
 
 **返回值：**
 
@@ -1535,7 +1540,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let phAccessHelper = getPhotoAccessHelper(ctx)
     let fileUri = "file://com.example.xxx/data/storage/el2/base/haps/entry/files/test.mp4"
     let assetChangeRequest = MediaAssetChangeRequest.createVideoAssetRequest(ctx,
@@ -1564,8 +1569,8 @@ public static func deleteAssets(context: UIAbilityContext, assets: Array<PhotoAs
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|context|[UIAbilityContext](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiabilitycontext)|是|-|传入Ability实例的Context。|
-|assets|Array\<[PhotoAsset](./cj-apis-file-photo_access_helper.md#class-photoasset)>|是|-|待删除的媒体文件uri数组。|
+|context|[UIAbilityContext](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiabilitycontext)|是|-|传入Ability实例的上下文。|
+|assets|Array\<[PhotoAsset](./cj-apis-file-photo_access_helper.md#class-photoasset)>|是|-|待删除的媒体文件数组，数组中元素个数不超过300个。|
 
 **异常：**
 
@@ -1590,7 +1595,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let phAccessHelper = getPhotoAccessHelper(ctx)
     let predicates = DataSharePredicates()
     let fetchOptions: FetchOptions = FetchOptions([], predicates)
@@ -1620,8 +1625,8 @@ public static func deleteAssets(context: UIAbilityContext, assets: Array<String>
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|context|[UIAbilityContext](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiabilitycontext)|是|-|传入Ability实例的Context。|
-|assets|Array\<String>|是|-|待删除的媒体文件uri数组。|
+|context|[UIAbilityContext](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiabilitycontext)|是|-|传入Ability实例的上下文。|
+|assets|Array\<String>|是|-|待删除的媒体文件uri数组，数组中元素个数不超过300个。|
 
 **异常：**
 
@@ -1646,7 +1651,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let phAccessHelper = getPhotoAccessHelper(ctx)
     let predicates = DataSharePredicates()
     let fetchOptions: FetchOptions = FetchOptions([], predicates)
@@ -1664,7 +1669,9 @@ try {
 public func addResource(resourceType: ResourceType, fileUri: String): Unit
 ```
 
-**功能：** 通过ArrayBuffer数据添加资源。
+**功能：** 通过[fileUri](../CoreFileKit/cj-apis-file_fileuri.md)从应用沙箱添加资源。
+
+**注意**：对于同一个资产变更请求，成功添加资源后不支持重复调用该接口。对于动态照片，可调用两次该接口分别添加图片和视频资源。
 
 **系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
 
@@ -1675,7 +1682,7 @@ public func addResource(resourceType: ResourceType, fileUri: String): Unit
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |resourceType|[ResourceType](#enum-resourcetype)|是|-|待添加资源的类型。|
-|fileUri|String|是|-|待添加资源的数据来源，在应用沙箱下的uri。|
+|fileUri|String|是|-|待添加资源的数据来源，在应用沙箱下的uri。示例fileUri：'file://com.example.temptest/data/storage/el2/base/haps/entry/files/test.jpg'。|
 
 **异常：**
 
@@ -1698,7 +1705,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let phAccessHelper = getPhotoAccessHelper(ctx)
     let photoType = PhotoType.Image
     let extension = "jpg"
@@ -1719,6 +1726,8 @@ public func addResource(resourceType: ResourceType, data: Array<Byte>): Unit
 ```
 
 **功能：** 通过ArrayBuffer数据添加资源。
+
+**注意**：对于同一个资产变更请求，成功添加资源后不支持重复调用该接口。对于动态照片，可调用两次该接口分别添加图片和视频资源。
 
 **系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
 
@@ -1752,7 +1761,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let phAccessHelper = getPhotoAccessHelper(ctx)
     let photoType = PhotoType.Image
     let extension = "jpg"
@@ -1772,7 +1781,7 @@ try {
 public func discardCameraPhoto(): Unit
 ```
 
-**功能：** 保存相机拍摄的照片。
+**功能：** 删除相机拍摄的照片。
 
 **系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
 
@@ -1800,7 +1809,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let phAccessHelper = getPhotoAccessHelper(ctx)
     let predicates = DataSharePredicates()
     let fetchOptions = FetchOptions([], predicates)
@@ -1821,6 +1830,8 @@ public func getAsset(): PhotoAsset
 ```
 
 **功能：** 获取当前资产变更请求中的资产。
+
+**注意**：对于创建资产的变更请求，在调用[applyChanges](#func-applychangesmediachangerequest)提交生效之前，该接口返回异常。
 
 **系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
 
@@ -1853,7 +1864,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let phAccessHelper = getPhotoAccessHelper(ctx)
     let predicates = DataSharePredicates()
     let fetchOptions: FetchOptions = FetchOptions([], predicates)
@@ -1873,6 +1884,8 @@ public func getWriteCacheHandler(): Int32
 ```
 
 **功能：** 获取临时文件写句柄。
+
+**注意**：对于同一个资产变更请求，不支持在成功获取临时文件写句柄后，重复调用该接口。
 
 **需要权限：** ohos.permission.WRITE_IMAGEVIDEO
 
@@ -1909,7 +1922,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let phAccessHelper = getPhotoAccessHelper(ctx)
     let assetChangeRequest = MediaAssetChangeRequest.createAssetRequest(ctx,
         PhotoType.Video, "mp4")
@@ -1955,7 +1968,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let phAccessHelper = getPhotoAccessHelper(ctx)
     let predicates = DataSharePredicates()
     let fetchOptions = FetchOptions([], predicates)
@@ -1987,6 +2000,11 @@ public func setTitle(title: String): Unit
 |:---|:---|:---|:---|:---|
 |title|String|是|-|待修改的资产标题。|
 
+title参数规格为：
+- 不应包含扩展名。
+- 文件名字符串长度为1~255。
+- 不允许出现的非法英文字符，包括：. \ / : * ? " ' ` < > | { } [ ]
+
 **异常：**
 
 - BusinessException：对应错误码如下表，详见[文件管理错误码](../CoreFileKit/cj-errorcode-filemanagement.md)。
@@ -2008,7 +2026,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let phAccessHelper = getPhotoAccessHelper(ctx)
     let predicates = DataSharePredicates()
     let fetchOptions: FetchOptions = FetchOptions([], predicates)
@@ -2077,7 +2095,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let phAccessHelper = getPhotoAccessHelper(ctx)
     let predicates = DataSharePredicates()
     let fetchOptions = FetchOptions([], predicates)
@@ -2098,7 +2116,9 @@ public func getAlbums(albumType: AlbumType, subtype: AlbumSubtype,
     options!: FetchOptions = FetchOptions(["uri", "album_name"], DataSharePredicates())): AlbumResult
 ```
 
-**功能：** 根据检索选项和相册类型获取相册。获取相册前需先保证相册存在。
+**功能：** 根据检索选项和相册类型获取相册。
+
+在获取相册之前，确保相册已存在。
 
 **需要权限：** ohos.permission.READ_IMAGEVIDEO
 
@@ -2112,7 +2132,7 @@ public func getAlbums(albumType: AlbumType, subtype: AlbumSubtype,
 |:---|:---|:---|:---|:---|
 |albumType|[AlbumType](#enum-albumtype)|是|-|相册类型。|
 |subtype|[AlbumSubtype](#enum-albumsubtype)|是|-|相册子类型。|
-|options|[FetchOptions](#class-fetchoptions)|否|FetchOptions(["uri", "album_name"], DataSharePredicates())|**命名参数。** 检索选项。|
+|options|[FetchOptions](#class-fetchoptions)|否|FetchOptions(["uri", "album_name"], DataSharePredicates())|**命名参数。** 检索选项，不填时默认根据相册类型检索。|
 
 **返回值：**
 
@@ -2143,7 +2163,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let phAccessHelper = getPhotoAccessHelper(ctx)
     let predicates = DataSharePredicates()
     let fetchOptions: FetchOptions = FetchOptions([], predicates)
@@ -2178,7 +2198,7 @@ public func getAssets(options: FetchOptions): PhotoAssetResult
 
 |类型|说明|
 |:----|:----|
-|PhotoAssetResult|返回获取连拍照片的结果集。|
+|PhotoAssetResult|返回图片和视频数据结果集。|
 
 **异常：**
 
@@ -2203,7 +2223,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let phAccessHelper = getPhotoAccessHelper(ctx)
     let predicates = DataSharePredicates()
     let fetchOptions: FetchOptions = FetchOptions([], predicates)
@@ -2231,7 +2251,7 @@ public func getBurstAssets(burstKey: String, options: FetchOptions): PhotoAssetR
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|burstKey|String|是|-|一组连拍照片的唯一标识：uuid(可传入[PhotoKeys](#enum-photokeys)的BURST_KEY)。|
+|burstKey|String|是|-|一组连拍照片的唯一标识：uuid(可传入[PhotoKeys](#enum-photokeys)的BURST_KEY)。字符串长度为36。|
 |options|[FetchOptions](#class-fetchoptions)|是|-|连拍照片检索选项。|
 
 **返回值：**
@@ -2262,7 +2282,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let phAccessHelper = getPhotoAccessHelper(ctx)
     let predicates = DataSharePredicates()
     let fetchOptions: FetchOptions = FetchOptions([], predicates)
@@ -2290,8 +2310,8 @@ public func registerChange(uri: String, forChildUris: Bool, callback: Callback1A
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |uri|String|是|-|PhotoAsset的uri, Album的uri或[DefaultChangeUri](#enum-defaultchangeuri)的值。|
-|forChildUris|Bool|是|-|是否模糊监听，uri为相册uri时，forChildUris为true能监听到相册中文件的变化，如果是false只能监听相册本身变化。uri为photoAsset时，forChildUris为true、false没有区别，uri为DefaultChangeUri时，forChildUris必须为true，如果为false将找不到该uri，收不到任何消息。|
-|callback|[Callback1Argument](../arkinterop/cj-api-callback_invoke.md#class-callback1argument)\<[ChangeData](#class-changedata)>|是|-|返回要监听的[ChangeData](#class-changedata)。注：uri可以注册多个不同的callback监听，[unRegisterChange](#func-unregisterchangestring-callback1argumentchangedata)可以关闭该uri所有监听，也可以关闭指定callback的监听。|
+|forChildUris|Bool|是|-|是否模糊监听。uri为相册uri时：forChildUris为true，能监听到相册中文件的变化。如果是false，只能监听相册本身变化；uri为photoAsset时：forChildUris为true、false没有区别；uri为DefaultChangeUri时：forChildUris必须为true，如果为false将找不到该uri，收不到任何消息。|
+|callback|[Callback1Argument](../arkinterop/cj-api-callback_invoke.md#class-callback1argument)\<[ChangeData](#class-changedata)>|是|-|返回要监听的[ChangeData](#class-changedata)。注：uri可以注册多个不同的callback监听，[unRegisterChange](#func-unregisterchangestring-callback1argumentchangedata)可以关闭该uri所有监听，也可以关闭指定callback的监听。。|
 
 **异常：**
 
@@ -2315,19 +2335,19 @@ import ohos.business_exception.BusinessException
 import ohos.callback_invoke.*
 import kit.PerformanceAnalysisKit.Hilog
 
-try {
-    // 此处代码可添加在依赖项定义中
-    class MyCallback<T> <: Callback1Argument<T> {
-        public let callabck_: (T) -> Unit
-        public init(callabck: (T) -> Unit) {
-            callabck_ = callabck
-        }
-        public open func invoke(err: ?BusinessException, arg: T): Unit {
-            callabck_(arg)
-        }
+// 此处代码可添加在依赖项定义中
+class MyCallback<T> <: Callback1Argument<T> {
+    public let callabck_: (T) -> Unit
+    public init(callabck: (T) -> Unit) {
+        callabck_ = callabck
     }
+    public func invoke(err: ?BusinessException, arg: T): Unit {
+        callabck_(arg)
+    }
+}
 
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+try {
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let phAccessHelper = getPhotoAccessHelper(ctx)
     let callback1 = MyCallback<ChangeData>(
         {
@@ -2351,7 +2371,8 @@ try {
 public func release(): Unit
 ```
 
-**功能：** 释放PhotoAccessHelper实例。当后续不需要使用PhotoAccessHelper 实例中的方法时调用。
+**功能：** 释放PhotoAccessHelper实例。
+当后续不需要使用PhotoAccessHelper实例中的方法时调用。
 
 **系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
 
@@ -2379,7 +2400,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let phAccessHelper = getPhotoAccessHelper(ctx)
     let predicates = DataSharePredicates()
     let fetchOptions: FetchOptions = FetchOptions([], predicates)
@@ -2398,7 +2419,11 @@ public func showAssetsCreationDialog(srcFileUris: Array<String>, photoCreationCo
     callback: Callback1Argument<Array<String>>): Unit
 ```
 
-**功能：** 调用接口拉起保存确认弹窗。用户同意保存后，在callback中返回已创建并授予保存权限的uri列表，该列表永久生效，应用可使用该uri写入图片/视频。如果用户拒绝保存，将返回空列表。
+**功能：** 调用接口拉起保存确认弹窗。用户同意保存后，返回已创建并授予保存权限的uri列表，该列表永久生效，应用可使用该uri写入图片/视频。如果用户拒绝保存，将返回空列表。弹框需要显示应用名称，无法直接获取应用名称，依赖于配置项的label和icon，因此调用此接口时请确保module.json5文件中的abilities标签中配置了label和icon项。
+
+> **说明：**
+>
+> - 当传入uri为沙箱路径时，可正常保存图片/视频，但无界面预览。
 
 **系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
 
@@ -2408,9 +2433,9 @@ public func showAssetsCreationDialog(srcFileUris: Array<String>, photoCreationCo
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|srcFileUris|Array\<String>|是|-|需保存到媒体库中的图片/视频文件对应的媒体库uri。<br>**注意：**  仅支持处理图片、视频uri。|
-|photoCreationConfigs|Array\<[PhotoCreationConfig](#class-photocreationconfig)>|是|-|保存图片/视频到媒体库的配置，包括保存的文件名等，与srcFileUris保持一一对应。|
-|callback|[Callback1Argument](../arkinterop/cj-api-callback_invoke.md#class-callback1argument)\<Array\<String>>|是|-|回调函数，获取返回给应用的媒体库文件uri列表。|
+|srcFileUris|Array\<String>|是|-|需保存到媒体库中的图片/视频文件对应的媒体库uri。<br>**注意：**<br>- 一次弹窗最多保存100张图片。<br>- 仅支持处理图片、视频uri。<br>- 不支持手动拼接的uri，需调用接口获取。|
+|photoCreationConfigs|Array\<[PhotoCreationConfig](#class-photocreationconfig)>|是|-|保存图片或视频到媒体库的配置，包括文件名等，与srcFileUris保持一一对应。|
+|callback|[Callback1Argument](../arkinterop/cj-api-callback_invoke.md#class-callback1argument)\<Array\<String>>|是|-|回调函数，返回给应用的媒体库文件uri列表。uri已对应用授权，支持应用写入数据。如果生成uri异常，则返回批量创建错误码。<br>返回-3006表示不允许出现非法字符；返回-2004表示图片类型和后缀不符；返回-203表示文件操作异常。|
 
 **异常：**
 
@@ -2433,26 +2458,26 @@ import ohos.business_exception.BusinessException
 import ohos.callback_invoke.*
 import kit.PerformanceAnalysisKit.Hilog
 
-try {
-    // 此处代码可添加在依赖项定义中
-    class MyCallback<T> <: Callback1Argument<T> {
-        public let callabck_: (T) -> Unit
-        public init(callabck: (T) -> Unit) {
-            callabck_ = callabck
-        }
-        public open func invoke(err: ?BusinessException, arg: T): Unit {
-            callabck_(arg)
-        }
+// 此处代码可添加在依赖项定义中
+class MyCallback1<T> <: Callback1Argument<T> {
+    public let callabck_: (T) -> Unit
+    public init(callabck: (T) -> Unit) {
+        callabck_ = callabck
     }
+    public func invoke(err: ?BusinessException, arg: T): Unit {
+        callabck_(arg)
+    }
+}
 
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+try {
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let phAccessHelper = getPhotoAccessHelper(ctx)
-    let callback3 = MyCallback<Array<String>>(
+    let callback = MyCallback1<Array<String>>(
         {
             arg: Array<String> =>
-            Hilog.info(0, "AppLogCj", "oncallback3: Array.size: ${arg.size}")
+            Hilog.info(0, "AppLogCj", "oncallback: Array.size: ${arg.size}")
             for (str in arg) {
-                Hilog.info(0, "AppLogCj", "oncallback3: uri: ${str}")
+                Hilog.info(0, "AppLogCj", "oncallback: uri: ${str}")
             }
         }
     )
@@ -2467,7 +2492,7 @@ try {
             subtype: PhotoSubtype.Default
         )
     ]
-    phAccessHelper.showAssetsCreationDialog(srcFileUris, photoCreationConfigs, callback3)
+    phAccessHelper.showAssetsCreationDialog(srcFileUris, photoCreationConfigs, callback)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -2514,24 +2539,24 @@ import ohos.callback_invoke.*
 import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
-try {
-    // 此处代码可添加在依赖项定义中
-    class MyCallback<T> <: Callback1Argument<T> {
-        public let callabck_: (T) -> Unit
-        public init(callabck: (T) -> Unit) {
-            callabck_ = callabck
-        }
-        public open func invoke(err: ?BusinessException, arg: T): Unit {
-            callabck_(arg)
-        }
+// 此处代码可添加在依赖项定义中
+class MyCallback2<T> <: Callback1Argument<T> {
+    public let callabck_: (T) -> Unit
+    public init(callabck: (T) -> Unit) {
+        callabck_ = callabck
     }
+    public open func invoke(err: ?BusinessException, arg: T): Unit {
+        callabck_(arg)
+    }
+}
 
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+try {
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let phAccessHelper = getPhotoAccessHelper(ctx)
-    let callback1 = MyCallback<ChangeData>(
+    let callback = MyCallback2<ChangeData>(
         {
             arg: ChangeData => Hilog.info(0, "AppLogCj",
-                "onCallback1. ChangeData: type = ${arg.notifyType.toString()}, uris.size: ${arg.uris.size}, extraUris.size = ${arg.extraUris.size}"
+                "onCallback. ChangeData: type = ${arg.notifyType.toString()}, uris.size: ${arg.uris.size}, extraUris.size = ${arg.extraUris.size}"
             )
         })
 
@@ -2540,8 +2565,8 @@ try {
     let fetchResult: PhotoAssetResult = phAccessHelper.getAssets(fetchOptions)
     let firstPhotoAsset = fetchResult.getFirstObject()
 
-    phAccessHelper.registerChange(firstPhotoAsset.uri, false, callback1)
-    phAccessHelper.unRegisterChange(firstPhotoAsset.uri, callback: callback1)
+    phAccessHelper.registerChange(firstPhotoAsset.uri, false, callback)
+    phAccessHelper.unRegisterChange(firstPhotoAsset.uri, callback: callback)
     phAccessHelper.unRegisterChange(firstPhotoAsset.uri)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
@@ -2566,7 +2591,7 @@ public class PhotoAsset {}
 public prop displayName: String
 ```
 
-**功能：** 获取文件名，包含后缀名。
+**功能：** 显示文件名，包含后缀名。字符串长度为1~255。
 
 **类型：** String
 
@@ -2582,7 +2607,7 @@ public prop displayName: String
 public prop photoType: PhotoType
 ```
 
-**功能：** 获取媒体文件类型。
+**功能：** 媒体文件类型。
 
 **类型：** [PhotoType](#enum-phototype)
 
@@ -2598,7 +2623,7 @@ public prop photoType: PhotoType
 public prop uri: String
 ```
 
-**功能：** 获取媒体文件资源uri。
+**功能：** 媒体文件资源uri（如：file://media/Photo/1/IMG_datetime_0001/displayName.jpg）。
 
 **类型：** String
 
@@ -2646,7 +2671,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let phAccessHelper = getPhotoAccessHelper(ctx)
     let predicates = DataSharePredicates()
     let fetchColumns = [PhotoKeys.Title.toString()]
@@ -2678,7 +2703,7 @@ public func get(member: String): MemberType
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|member|String|是|-|成员参数名称，在get时，除了'uri'、'media_type'、'subtype'和'display_name'四个属性之外，其他的属性都需要在fetchColumns中填入需要get的[PhotoKeys](./cj-apis-file-photo_access_helper.md#enum-photokeys)，例如：get title属性['title']。|
+|member|String|是|-|成员参数名称，在get时，除了'uri'、'media_type'、'subtype'和'display_name'四个属性之外，其他的属性都需要在fetchColumns中填入需要获取的[PhotoKeys](#enum-photokeys)，例如：get title属性fetchColumns: ['title']。|
 
 **返回值：**
 
@@ -2708,7 +2733,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let phAccessHelper = getPhotoAccessHelper(ctx)
     let predicates = DataSharePredicates()
     let fetchColumns = [PhotoKeys.Title.toString()]
@@ -2771,7 +2796,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let phAccessHelper = getPhotoAccessHelper(ctx)
     let predicates = DataSharePredicates()
     let fetchColumns = [PhotoKeys.Title.toString()]
@@ -2800,8 +2825,8 @@ public func set(member: String, value: String): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|member|String|是|-|成员参数名称例如：[PhotoKeys](./cj-apis-file-photo_access_helper.md#enum-photokeys).TITLE。|
-|value|String|是|-|设置成员参数名称，只能修改[PhotoKeys](./cj-apis-file-photo_access_helper.md#enum-photokeys).TITLE的值。|
+|member|String|是|-|成员参数名称例如：[PhotoKeys](#enum-photokeys).TITLE。字符串长度为1~255。|
+|value|String|是|-|设置成员参数名称，只能修改[PhotoKeys](#enum-photokeys).TITLE的值。title的参数规格为：<br>- 不应包含扩展名。<br>- 文件名字符串长度为1~255（资产文件名为标题+扩展名）。<br>- 不允许出现的非法英文字符，包括：. \ / : * ? " ' ` < > \| { } [ ] |
 
 **异常：**
 
@@ -2825,7 +2850,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let phAccessHelper = getPhotoAccessHelper(ctx)
     let predicates = DataSharePredicates()
     let fetchColumns = [PhotoKeys.Title.toString()]
@@ -2895,7 +2920,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let phAccessHelper = getPhotoAccessHelper(ctx)
     let predicates = DataSharePredicates()
     let fetchOptions: FetchOptions = FetchOptions([], predicates)
@@ -2946,7 +2971,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let phAccessHelper = getPhotoAccessHelper(ctx)
     let predicates = DataSharePredicates()
     let fetchOptions: FetchOptions = FetchOptions([], predicates)
@@ -2997,7 +3022,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let phAccessHelper = getPhotoAccessHelper(ctx)
     let predicates = DataSharePredicates()
     let fetchOptions: FetchOptions = FetchOptions([], predicates)
@@ -3014,7 +3039,8 @@ try {
 public func getNextObject(): PhotoAsset
 ```
 
-**功能：** 获取文件检索结果中的下一个文件资产。
+**功能：** 获获取文件检索结果中的下一个文件资产。此方法使用promise方式来异步返回。
+在调用此方法之前，必须使用[isAfterLast()](#func-isafterlast)来检查当前位置是否为最后一行。
 
 **系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
 
@@ -3048,7 +3074,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let phAccessHelper = getPhotoAccessHelper(ctx)
     let predicates = DataSharePredicates()
     let fetchOptions: FetchOptions = FetchOptions([], predicates)
@@ -3081,7 +3107,7 @@ public func getObjectByPosition(index: Int32): PhotoAsset
 
 |类型|说明|
 |:----|:----|
-|[PhotoAsset](#class-photoasset)|获取的文件资产。|
+|[PhotoAsset](#class-photoasset)|返回结果集中指定索引的一个对象。|
 
 **异常：**
 
@@ -3105,7 +3131,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let ctx = Global.getAbilityContext() // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
     let phAccessHelper = getPhotoAccessHelper(ctx)
     let predicates = DataSharePredicates()
     let fetchOptions: FetchOptions = FetchOptions([], predicates)
@@ -3156,7 +3182,7 @@ public var fileNameExtension: String
 public var photoType: PhotoType
 ```
 
-**功能：** 文件类型。
+**功能：** 创建的文件类型[PhotoType](#phototype)，IMAGE或者VIDEO。
 
 **类型：** [PhotoType](#enum-phototype)
 
@@ -3172,7 +3198,7 @@ public var photoType: PhotoType
 public var subtype: PhotoSubtype
 ```
 
-**功能：** 文件子类型。
+**功能：** 图片或者视频的文件子类型[PhotoSubtype](#enum-photosubtype)，不传入时默认为DEFAULT。
 
 **类型：** [PhotoSubtype](#enum-photosubtype)
 
@@ -3188,7 +3214,13 @@ public var subtype: PhotoSubtype
 public var title: String
 ```
 
-**功能：** 图片或者视频的标题。
+**功能：** 图片或者视频的标题，不传入时由系统生成。参数规格为：
+
+- 不应包含扩展名。
+
+- 文件名字符串长度为1~255（资产文件名为标题+扩展名）。
+
+- 不允许出现的非法英文字符，包括：. \ / : * ? " ' ` < > \| { } [ ]
 
 **类型：** String
 
@@ -3215,9 +3247,9 @@ public init(fileNameExtension: String, photoType: PhotoType, title!: String = ""
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |fileNameExtension|String|是|-|文件扩展名，例如'jpg'。|
-|photoType|[PhotoType](./cj-apis-file-photo_access_helper.md#enum-phototype)|是|-|创建的文件类型，IMAGE或者VIDEO。|
-|title|String|否|""| **命名参数。** 图片或者视频的标题。|
-|subtype|[PhotoSubtype](#enum-photosubtype)|否|Default| **命名参数。** 图片或者视频的文件子类型，Default或者MovingPhoto。|
+|photoType|[PhotoType](#enum-phototype)|是|-|创建的文件类型[PhotoType](#phototype)，IMAGE或者VIDEO。|
+|title|String|否|""| **命名参数。** 图片或者视频的标题，不传入时由系统生成。|
+|subtype|[PhotoSubtype](#enum-photosubtype)|否|Default| **命名参数。** 图片或者视频的文件子类型[PhotoSubtype](#enum-photosubtype)，不传入时默认为DEFAULT。|
 
 ## class RequestOptions
 
@@ -3239,7 +3271,7 @@ public class RequestOptions {
 public var deliveryMode: DeliveryMode
 ```
 
-**功能：** 请求资源分发模式。
+**功能：** 请求资源分发模式，可以指定对于该资源的请求策略，可被配置为快速模式，高质量模式，均衡模式三种策略。
 
 **类型：** [DeliveryMode](#enum-deliverymode)
 
@@ -3259,7 +3291,7 @@ public enum AlbumKeys <: ToString & Equatable<AlbumKeys> {
 }
 ```
 
-**功能：** 相册关键信息。
+**功能：** 枚举，相册关键信息。
 
 **系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
 
@@ -3365,7 +3397,7 @@ public enum AlbumSubtype <: Equatable<AlbumSubtype> & ToString {
 }
 ```
 
-**功能：** 相册子类型，表示具体的相册类型。
+**功能：** 枚举，相册子类型，表示具体的相册类型。
 
 **系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
 
@@ -3500,7 +3532,7 @@ public enum AlbumType <: Equatable<AlbumType> & ToString {
 }
 ```
 
-**功能：** 相册类型，表示是用户相册还是系统预置相册。
+**功能：** 枚举，相册类型，表示是用户相册还是系统预置相册。
 
 **系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
 
@@ -3599,7 +3631,7 @@ public enum DefaultChangeUri <: ToString & Equatable<DefaultChangeUri> {
 }
 ```
 
-**功能：** DefaultChangeUri子类型。
+**功能：** 枚举，DefaultChangeUri子类型。
 
 **系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
 
@@ -3616,7 +3648,7 @@ public enum DefaultChangeUri <: ToString & Equatable<DefaultChangeUri> {
 DefaultAlbumUri
 ```
 
-**功能：** 默认相册的Uri，与forSubUri{true}一起使用，将接收所有相册的更改通知。
+**功能：** 默认相册的uri，与forSubUri{true}一起使用，将接收所有相册的更改通知。
 
 **系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
 
@@ -3628,7 +3660,7 @@ DefaultAlbumUri
 DefaultPhotoUri
 ```
 
-**功能：** 默认PhotoAsset的Uri，与forSubUri{true}一起使用，将接收所有PhotoAsset的更改通知。
+**功能：** 默认PhotoAsset的uri，与forSubUri{true}一起使用，将接收所有PhotoAsset的更改通知。
 
 **系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
 
@@ -3703,7 +3735,7 @@ public enum DeliveryMode <: Equatable<DeliveryMode> & ToString {
 }
 ```
 
-**功能：** 资源分发模式。
+**功能：** 枚举，资源分发模式。
 
 **系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
 
@@ -3814,7 +3846,7 @@ public enum DynamicRangeType <: Equatable<DynamicRangeType> & ToString {
 }
 ```
 
-**功能：** 媒体文件的动态范围类型。
+**功能：** 枚举，媒体文件的动态范围类型。
 
 **系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
 
@@ -3925,7 +3957,7 @@ public enum MemberType {
 BoolValue(Bool)
 ```
 
-**功能：** Bool类型。
+**功能：** 表示值类型为布尔类型。
 
 **系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
 
@@ -3937,7 +3969,7 @@ BoolValue(Bool)
 Int64Value(Int64)
 ```
 
-**功能：** Int64类型。
+**功能：** 表示值类型为数字，可取任意值。
 
 **系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
 
@@ -3949,7 +3981,7 @@ Int64Value(Int64)
 StringValue(String)
 ```
 
-**功能：** String类型。
+**功能：** 表示值类型为字符，可取任意值。
 
 **系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
 
@@ -3968,7 +4000,7 @@ public enum NotifyType <: Equatable<NotifyType> & ToString {
 }
 ```
 
-**功能：** 通知事件的类型。
+**功能：** 枚举，通知事件的类型。
 
 **系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
 
@@ -4122,7 +4154,7 @@ public enum PhotoKeys <: ToString & Equatable<PhotoKeys> {
 }
 ```
 
-**功能：** 图片和视频文件关键信息。
+**功能：** 枚举，图片和视频文件关键信息。
 
 **系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
 
@@ -4163,7 +4195,7 @@ CoverPosition
 DateAdded
 ```
 
-**功能：** 添加日期（添加文件时间距1970年1月1日的秒数值）。
+**功能：** 文件创建时的Unix时间戳（单位：秒）。
 
 **系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
 
@@ -4175,7 +4207,7 @@ DateAdded
 DateAddedMs
 ```
 
-**功能：** 添加日期（添加文件时间距1970年1月1日的毫秒数值）。
+**功能：** 文件创建时的Unix时间戳（单位：毫秒）。
 
 注意：查询照片时，不支持基于该字段排序。
 
@@ -4189,7 +4221,7 @@ DateAddedMs
 DateModified
 ```
 
-**功能：** 修改日期（修改文件时间距1970年1月1日的秒数值，修改文件名不会改变此值，当文件内容发生修改时才会更新）。
+**功能：** 文件修改时的Unix时间戳（单位：秒）。修改文件名不会改变此值，当文件内容发生修改时才会更新。
 
 **系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
 
@@ -4201,7 +4233,7 @@ DateModified
 DateModifiedMs
 ```
 
-**功能：** 修改日期（修改文件时间距1970年1月1日的毫秒数值，修改文件名不会改变此值，当文件内容发生修改时才会更新）。
+**功能：** 文件修改时的Unix时间戳（单位：毫秒）。修改文件名不会改变此值，当文件内容发生修改时才会更新。
 
 注意：查询照片时，不支持基于该字段排序。
 
@@ -4215,7 +4247,7 @@ DateModifiedMs
 DateTaken
 ```
 
-**功能：** 拍摄日期（文件拍照时间距1970年1月1日的秒数值）。
+**功能：** 拍摄时的Unix时间戳（单位：秒）。
 
 **系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
 
@@ -4227,7 +4259,13 @@ DateTaken
 DisplayName
 ```
 
-**功能：** 显示名字。
+**功能：** 显示名字。规格为：
+
+- 应包含有效文件主名和图片或视频扩展名。
+
+- 文件名字符串长度为1~255。
+
+- 文件主名中不允许出现的非法英文字符，包括：. .. \ / : * ? " ' ` < > \| { } [ ]。
 
 **系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
 
@@ -4311,7 +4349,7 @@ Orientation
 PhotoSubtype
 ```
 
-**功能：** 媒体文件的动态范围类型。
+**功能：** 媒体文件的子类型。
 
 **系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
 
@@ -4335,7 +4373,7 @@ PhotoType
 Size
 ```
 
-**功能：** 文件大小（单位：字节）。
+**功能：** 文件大小（单位：字节）。动态照片的size包括图片和视频的总大小。
 
 **系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
 
@@ -4460,7 +4498,7 @@ public enum PhotoSubtype <: Equatable<PhotoSubtype> & ToString {
 }
 ```
 
-**功能：** 连拍照片文件类型。
+**功能：** PhotoSubtype是不同[PhotoAsset](#class-photoasset)类型的枚举。
 
 **系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
 
@@ -4570,7 +4608,7 @@ public enum PhotoType <: Equatable<PhotoType> & ToString {
 }
 ```
 
-**功能：** 媒体文件类型。
+**功能：** 枚举，媒体文件类型。
 
 **系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
 
@@ -4671,7 +4709,7 @@ public enum PhotoViewMIMETypes <: Equatable<PhotoViewMIMETypes> & ToString {
 }
 ```
 
-**功能：** 可选择的媒体文件类型。
+**功能：** 枚举，可选择的媒体文件类型。
 
 **系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
 
@@ -4802,7 +4840,7 @@ public enum RecommendationType <: Equatable<RecommendationType> & ToString {
 }
 ```
 
-**功能：** 推荐的图片类型。
+**功能：** 枚举，推荐的图片类型。
 
 **系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
 
@@ -4997,7 +5035,7 @@ public enum ResourceType <: Equatable<ResourceType> & ToString {
 }
 ```
 
-**功能：** 表示图片资源。
+**功能：** 枚举，写入资源的类型。
 
 **系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
 

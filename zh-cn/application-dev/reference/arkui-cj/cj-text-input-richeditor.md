@@ -43,7 +43,6 @@ public init(controller: ?RichEditorController)
 
 通用事件：全部支持。
 
-
 ## 组件属性
 
 ### func bindSelectionMenu(?RichEditorSpanType, ?CustomBuilder, ?ResponseType, ?SelectionMenuOptions)
@@ -181,6 +180,12 @@ public func onImeInputComplete(callback: ?Callback<RichEditorTextSpanResult, Uni
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |callback|?[Callback](./cj-common-types.md#type-callbackt-v)\<[RichEditorTextSpanResult](#class-richeditortextspanresult), Unit>|是|-|回调函数，输入法完成输入后触发回调。RichEditorTextSpanResult：输入法完成输入后的文本Span信息。<br>初始值：{ _ => false }。|
+
+**返回值：**
+
+|类型|说明|
+|:----|:----|
+|[RichEditor](./cj-text-input-richeditor.md)|当前的RichEditor组件实例本身。|
 
 ### func onDeleteComplete(?VoidCallback)
 
@@ -1639,8 +1644,8 @@ public init(margin!: ?Length, borderRadius!: ?Length)
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|margin|?[Length](./cj-common-types.md#interface-length)|否|None|**命名参数。** 边距。|
-|borderRadius|?[Length](./cj-common-types.md#interface-length)|否|None|**命名参数。** 边框圆角。|
+|margin|?[Length](./cj-common-types.md#interface-length)|是|-|**命名参数。** 边距。|
+|borderRadius|?[Length](./cj-common-types.md#interface-length)|是|-|**命名参数。** 边框圆角。|
 
 ### class RichEditorImageSpanStyle
 
@@ -1910,7 +1915,7 @@ public init(textAlign!: ?TextAlign = None, leadingMargin!: ?Length)
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |textAlign|?[TextAlign](./cj-common-types.md#enum-textalign)|否|None|**命名参数。** 文本对齐。初始值：TextAlign.Start。|
-|leadingMargin|?[Length](./cj-common-types.md#interface-length)|否|None|**命名参数。** 首行缩进。|
+|leadingMargin|?[Length](./cj-common-types.md#interface-length)|是|-|**命名参数。** 首行缩进。|
 
 #### init(?TextAlign, ?LeadingMarginPlaceholder)
 

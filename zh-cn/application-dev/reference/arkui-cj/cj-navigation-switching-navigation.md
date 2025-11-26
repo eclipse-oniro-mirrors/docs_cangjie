@@ -99,7 +99,7 @@ public func navDestination(builder: ?(String, Any) -> Unit): This
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|builder|?(String, Any) -> Unit|是|-|NavDestination组件。参数：NavDestination页面名称和参数。初始值：{ _: String, _: Any => }。|
+|builder|?(String, Any) -> Unit|是|-|NavDestination组件。<br/>参数一：NavDestination页面名称。<br/>参数二：开发者设置的NavDestination页面详细参数，当前不支持此参数设置（设置后不生效）。<br/>初始值：{ _: String, _: Any => }。|
 
 ### func title(?CustomBuilder, ?NavigationTitleOptions)
 
@@ -311,7 +311,7 @@ public var paddingStart: ?Length
 #### init(?ResourceColor, ?BlurStyle, ?BarStyle, ?Length, ?Length)
 
 ```cangjie
-public init(backgroundColor: ?ResourceColor = None, backgroundBlurStyle: ?BlurStyle = None, 
+public init(backgroundColor: ?ResourceColor = None, backgroundBlurStyle: ?BlurStyle = Option.None, 
     barStyle: ?BarStyle = None, paddingStart: ?Length = None, paddingEnd: ?Length = None)
 ```
 
@@ -326,7 +326,7 @@ public init(backgroundColor: ?ResourceColor = None, backgroundBlurStyle: ?BlurSt
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |backgroundColor|?[ResourceColor](./cj-common-types.md#interface-resourcecolor)|否|None|标题栏背景颜色。|
-|backgroundBlurStyle|?[BlurStyle](./cj-common-types.md#enum-blurstyle)|否|None|标题栏背景模糊样式。|
+|backgroundBlurStyle|?[BlurStyle](./cj-common-types.md#enum-blurstyle)|否|Option.None|标题栏背景模糊样式。|
 |barStyle|?[BarStyle](#enum-barstyle)|否|None|标题栏布局样式。初始值：BarStyle.STANDARD。|
 |paddingStart|?[Length](./cj-common-types.md#interface-length)|否|None|标题栏起始边距。|
 |paddingEnd|?[Length](./cj-common-types.md#interface-length)|否|None|标题栏结束边距。|
@@ -482,7 +482,7 @@ public func pushPath(info: ?NavPathInfo, options!: ?NavigationOptions = None): U
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|info|?[NavPathInfo](#class-navpathinfo)|否|NavPathInfo(name: "", param: "")|要推入的NavDestination。|
+|info|?[NavPathInfo](#class-navpathinfo)|是|-|要推入的NavDestination。|
 |options|?[NavigationOptions](#class-navigationoptions)|否|None|**命名参数**  导航选项。|
 
 #### func pushPathByName(?String, ?String, ?Bool)

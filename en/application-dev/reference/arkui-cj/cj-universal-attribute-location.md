@@ -83,6 +83,34 @@ func offset(x!: ?Length, y!: ?Length): T
 |:---|:---|
 | T | Returns the generic method interface type |
 
+## func alignRules(?AlignRuleOptions)
+
+```cangjie
+func alignRules(value: ?AlignRuleOptions): T
+```
+
+**Function:** Sets component alignment rules.
+
+> **Note:**
+>
+> This component is only effective when its parent container is a RelativeComponent.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 22
+
+**Parameters:**
+
+| Parameter | Type | Required | Default | Description |
+|:---|:---|:---|:---|:---|
+| value | ?[AlignRuleOptions](./cj-common-types.md#class-alignruleoptions) | Yes | - | Alignment rule options <br>Default: AlignRuleOptions() |
+
+**Return Value:**
+
+| Type | Description |
+|:---|:---|
+| T | Returns generic method interface type |
+
 ## Example Code
 
 ### Example 1 (Alignment and Main Axis Layout)

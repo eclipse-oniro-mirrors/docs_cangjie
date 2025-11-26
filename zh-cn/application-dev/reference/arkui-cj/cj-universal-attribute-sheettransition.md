@@ -38,7 +38,6 @@ public func bindSheet(isShow: ?Bool, builder: CustomBuilder, options!: ?SheetOpt
 |:---|:---|
 |T|返回调用此接口的组件实例本身。|
 
-
 > **说明：**
 >
 > - 在半模态单挡位向上拖拽或是多挡位上滑换挡情况下，内容在拖拽结束或换挡结束后更新显示区域。

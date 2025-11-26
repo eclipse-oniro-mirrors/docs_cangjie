@@ -119,13 +119,13 @@ class VideoPlayer {
         Column() {
             Video(src: this.innerResource, previewUri: this.previewUris, controller: this.controller)
                 .onUpdate({ value => // 更新事件回调
-                    Hilog.info(0, "cangjie", video update.")
+                    Hilog.info(0, "cangjie", "video update.")
                 })
                 .onPrepared({ value => // 准备事件回调
-                    Hilog.info(0, "cangjie", video prepared.")
+                    Hilog.info(0, "cangjie", "video prepared.")
                 })
                 .onError({ => // 失败事件回调
-                    Hilog.info(0, "cangjie", video error.")
+                    Hilog.info(0, "cangjie", "video error.")
                 })
         }
     }
@@ -147,7 +147,7 @@ Video控制器主要用于控制视频的状态，包括播放、暂停、停止
 
   import kit.ArkUI.*
   import ohos.arkui.state_macro_manage.*
-  import ohos.resource_manager.*
+  import ohos.resource.*
 
   @Entry
   @Component
@@ -179,7 +179,7 @@ Video控制器主要用于控制视频的状态，包括播放、暂停、停止
 
   import kit.ArkUI.*
   import ohos.arkui.state_macro_manage.*
-  import ohos.resource_manager.*
+  import ohos.resource.*
 
   @Entry
   @Component

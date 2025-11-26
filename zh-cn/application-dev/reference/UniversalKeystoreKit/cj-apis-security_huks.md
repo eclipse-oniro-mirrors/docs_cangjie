@@ -1,6 +1,6 @@
 # ohos.security.huks
 
-向应用提供密钥库能力，包括密钥管理及密钥的密码学操作等功能。
+huks模块向应用提供密钥库能力，包括密钥管理及密钥的密码学操作等功能。
 
 HUKS所管理的密钥可以由应用导入或者由应用调用HUKS接口生成。
 
@@ -92,7 +92,9 @@ try {
 public func anonAttestKeyItem(keyAlias: String, options: HuksOptions): Array<String>
 ```
 
-**功能：** 获取匿名化密钥证书。该操作需要联网进行，且耗时较长。
+**功能：** 获取匿名化密钥证书，使用Promise方式异步返回结果。
+
+该操作需要联网进行，且耗时较长。返回12000012错误码时，可能是由于网络异常导致。此时如果没有联网，需要提示用户网络没有连接，如果已经联网，可能是由于网络抖动导致失败，建议重试。
 
 **系统能力：** SystemCapability.Security.Huks.Extension
 
@@ -109,7 +111,7 @@ public func anonAttestKeyItem(keyAlias: String, options: HuksOptions): Array<Str
 
 |类型|说明|
 |:----|:----|
-|Array\<String>|返回密钥证书链。|
+|Array\<String>|获取到的证书链。|
 
 **异常：**
 
@@ -334,8 +336,8 @@ public func finishSession(handle: HuksHandleId, options: HuksOptions, token!: By
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |handle|[HuksHandleId](#class-hukshandleid)|是|-|finishSession操作的handle。|
-|options|[HuksOptions](#class-huksoptions)|是|-|finishSession的参数集合。|
-|token|Bytes|否|Bytes\<UInt8>()|表示USER IAM服务的AuthToken的值。|
+|options|[HuksOptions](#class-huksoptions)|是|-|finishSession操作的参数集合。|
+|token|Bytes|否|Bytes\<UInt8>()|密钥二次认证密钥访问控制的用户鉴权证明(AuthToken)，不填表示不进行二次认证密钥访问控制。|
 
 **返回值：**
 
@@ -413,8 +415,8 @@ public func generateKeyItem(keyAlias: String, options: HuksOptions): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|keyAlias|String|是|-|密钥别名。|
-|options|[HuksOptions](#class-huksoptions)|是|-|用于存放生成key所需Tag。其中密钥使用的算法、密钥用途、密钥长度为必选参数。|
+|keyAlias|String|是|-|密钥别名。密钥别名的最大长度为128字节，建议不包含个人信息等敏感词汇。|
+|options|[HuksOptions](#class-huksoptions)|是|-|用于存放生成key所需TAG。其中密钥使用的算法、密钥用途、密钥长度为必选参数。|
 
 **异常：**
 
@@ -480,7 +482,7 @@ public func getKeyItemProperties(keyAlias: String, _: HuksOptions): Array<HuksPa
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|keyAlias|String|是|-|密钥别名。|
+|keyAlias|String|是|-|密钥别名，应与所用密钥生成时使用的别名相同。|
 |_|[HuksOptions](#class-huksoptions)|是|-|空对象（此处传空即可）。|
 
 **返回值：**
@@ -549,8 +551,8 @@ public func importKeyItem(keyAlias: String, options: HuksOptions): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|keyAlias|String|是|-|密钥别名。|
-|options|[HuksOptions](#class-huksoptions)|是|-|用于导入时所需Tag和需要导入的密钥。其中密钥使用的算法、密钥用途、密钥长度为必选参数。|
+|keyAlias|String|是|-|密钥别名（密钥别名的最大长度为128字节，建议不包含个人信息等敏感词汇）。|
+|options|[HuksOptions](#class-huksoptions)|是|-|用于导入时所需TAG和需要导入的密钥。其中密钥使用的算法、密钥用途、密钥长度为必选参数。|
 
 **异常：**
 
@@ -623,7 +625,7 @@ public func importWrappedKeyItem(keyAlias: String, wrappingKeyAlias: String, opt
 |:---|:---|:---|:---|:---|
 |keyAlias|String|是|-|密钥别名，存放待导入密钥的别名。|
 |wrappingKeyAlias|String|是|-|密钥别名，对应密钥用于解密加密的密钥数据。|
-|options|[HuksOptions](#class-huksoptions)|是|-|用于导入时所需Tag和需要导入的加密的密钥数据。其中密钥使用的算法、密钥用途、密钥长度为必选参数。|
+|options|[HuksOptions](#class-huksoptions)|是|-|用于导入时所需TAG和需要导入的加密的密钥数据。其中密钥使用的算法、密钥用途、密钥长度为必选参数。|
 
 **异常：**
 
@@ -751,16 +753,16 @@ try {
     )
     generateKeyItem(keyAlias, options)
     // encrypt
-    let handle = initSession(keyAlias, encOptions).handle
+    let handle = initSession(keyAlias, options).handle
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
 ```
 
-## func hasKeyItemExist(String, HuksOptions)
+## func hasKeyItem(String, HuksOptions)
 
 ```cangjie
-public func hasKeyItemExist(keyAlias: String, options: HuksOptions): Bool
+public func hasKeyItem(keyAlias: String, options: HuksOptions): Bool
 ```
 
 **功能：** 判断密钥是否存在。
@@ -824,9 +826,9 @@ try {
     }
 
     let keyAlias = "KEY_ALIAS" // 密钥别名，在生成密钥时指定，在加密、解密和删除密钥时使用
-    hasKeyItemExist(keyAlias, HuksOptions()) // false
+    var result = hasKeyItem(keyAlias, HuksOptions()) // false
     generateSimpleKey(keyAlias)
-    hasKeyItemExist(keyAlias, HuksOptions()) // true
+    result = hasKeyItem(keyAlias, HuksOptions()) // true
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -849,8 +851,8 @@ public func updateSession(handle: HuksHandleId, options: HuksOptions, token!: By
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |handle|[HuksHandleId](#class-hukshandleid)|是|-|updateSession操作的handle。|
-|options|[HuksOptions](#class-huksoptions)|是|-|updateSession的参数集合。|
-|token|Bytes|否|Bytes\<UInt8>()|表示USER IAM服务的AuthToken的值。|
+|options|[HuksOptions](#class-huksoptions)|是|-|updateSession操作的参数集合。|
+|token|Bytes|否|Bytes\<UInt8>()|密钥二次认证密钥访问控制的用户鉴权证明(AuthToken)，不填表示不进行二次认证密钥访问控制。|
 
 **返回值：**
 
@@ -892,7 +894,7 @@ import ohos.business_exception.BusinessException
 let keyAlias = "KEY_ALIAS" // 密钥别名，在生成密钥时指定，在加密、解密和删除密钥时使用
 try {
     let plainText = 'PLAIN_TEXT'  // 待加密的明文
-    let IV = 'TEST_IV' // 此处为样例代码，实际使用需采用随机值
+    let iv = 'TEST_IV' // 此处为样例代码，实际使用需采用随机值
     let options = HuksOptions(
         properties:  [
             HuksParam(HuksTag.HUKS_TAG_ALGORITHM, HuksParamValue.Uint32Value(HuksKeyAlg.HUKS_ALG_AES)),
@@ -947,7 +949,7 @@ public class HuksAuthAccessType {
 public static const HUKS_AUTH_ACCESS_INVALID_CLEAR_PASSWORD: UInt32 = 1 << 0
 ```
 
-**功能：** 表示安全访问控制类型为该密钥总是有效。
+**功能：** 表示安全访问控制类型为清除密码后密钥无效。
 
 **类型：** UInt32
 
@@ -961,7 +963,7 @@ public static const HUKS_AUTH_ACCESS_INVALID_CLEAR_PASSWORD: UInt32 = 1 << 0
 public static const HUKS_AUTH_ACCESS_INVALID_NEW_BIO_ENROLL: UInt32 = 1 << 1
 ```
 
-**功能：** 表示安全访问控制类型为清除密码后密钥无效。
+**功能：** 表示安全访问控制类型为新录入生物特征后密钥无效。
 
 **类型：** UInt32
 
@@ -1038,7 +1040,7 @@ public class HuksChallengePosition {
 }
 ```
 
-**功能：** 表示challenge类型为用户自定义类型时，生成的challenge有效长度仅为8字节连续的数据，且仅支持4种位置 。
+**功能：** 表示challenge类型为用户自定义类型时，生成的challenge有效长度仅为8字节连续的数据，且仅支持4种位置。
 
 **系统能力：** SystemCapability.Security.Huks.Extension
 
@@ -1760,10 +1762,10 @@ public static const HUKS_KEY_FLAG_IMPORT_KEY: UInt32 = 1
 
 **起始版本：** 22
 
-## class HuksKeyGeneraterationType
+## class HuksKeyGenerateType
 
 ```cangjie
-public class HuksKeyGeneraterationType {
+public class HuksKeyGenerateType {
     public static const HUKS_KEY_GENERATE_TYPE_DEFAULT: UInt32 = 0
     public static const HUKS_KEY_GENERATE_TYPE_DERIVE: UInt32 = 1
     public static const HUKS_KEY_GENERATE_TYPE_AGREE: UInt32 = 2
@@ -1939,6 +1941,8 @@ public class HuksKeyPurpose {
 
 **功能：** 表示密钥用途。
 
+一个密钥仅能用于单类用途，不能既用于加解密又用于签名验签。
+
 **系统能力：** SystemCapability.Security.Huks.Core
 
 **起始版本：** 22
@@ -2019,7 +2023,7 @@ public static const HUKS_KEY_PURPOSE_MAC: UInt32 = 128
 public static const HUKS_KEY_PURPOSE_SIGN: UInt32 = 4
 ```
 
-**功能：** 表示密钥加密导入。
+**功能：** 表示密钥用于对数据进行签名。
 
 **类型：** UInt32
 
@@ -2107,7 +2111,7 @@ public class HuksKeySize {
 public static const HUKS_AES_KEY_SIZE_128: UInt32 = 128
 ```
 
-**功能：** 表示3DES算法的密钥长度为128bit。
+**功能：** 表示使用AES算法的密钥长度为128bit。
 
 **类型：** UInt32
 
@@ -2121,7 +2125,7 @@ public static const HUKS_AES_KEY_SIZE_128: UInt32 = 128
 public static const HUKS_AES_KEY_SIZE_192: UInt32 = 192
 ```
 
-**功能：** 表示3DES算法的密钥长度为192bit。
+**功能：** 表示使用AES算法的密钥长度为192bit。
 
 **类型：** UInt32
 
@@ -2433,7 +2437,7 @@ public class HuksOptions {
 public var inData: Bytes
 ```
 
-**功能：** 输入数据。
+**功能：** 输入数据。默认为空。
 
 **类型：** Bytes
 
@@ -2449,7 +2453,7 @@ public var inData: Bytes
 public var properties: Array<HuksParam>
 ```
 
-**功能：** 属性，用于存HuksParam的数组。
+**功能：** 属性，用于存HuksParam的数组。默认为空。
 
 **类型：** Array\<[HuksParam](#class-huksparam)>
 
@@ -2475,8 +2479,8 @@ public init(properties!: Array<HuksParam> = Array<HuksParam>(), inData!: Bytes =
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|properties|Array\<[HuksParam](#class-huksparam)>|否|Array<HuksParam>()|属性，用于存HuksParam的数组。|
-|inData|Bytes|否|Bytes\<UInt8>()|输入数据。|
+|properties|Array\<[HuksParam](#class-huksparam)>|否|Array<HuksParam>()|属性，用于存HuksParam的数组。默认为空。|
+|inData|Bytes|否|Bytes\<UInt8>()|输入数据。默认为空。|
 
 ## class HuksParam
 
@@ -2489,7 +2493,7 @@ public class HuksParam {
 }
 ```
 
-**功能：** [HuksOptions](#class-huksoptions)中properties数组中的元素。
+**功能：** 调用接口使用的options中的properties数组中的param。
 
 **系统能力：** SystemCapability.Security.Huks.Core
 
@@ -2555,7 +2559,7 @@ public class HuksRsaPssSaltLenType {
 }
 ```
 
-**功能：** 表示Rsa在签名或者验签且padding为pss时，需指定的salt_len类型。
+**功能：** 表示Rsa在签名验签、padding为pss时需指定的salt_len类型。
 
 **系统能力：** SystemCapability.Security.Huks.Core
 
@@ -2610,6 +2614,8 @@ public static const HUKS_SECURE_SIGN_WITH_AUTH_INFO: UInt32 = 1
 ```
 
 **功能：** 表示签名类型为携带认证信息。生成或导入密钥时指定该字段，则在使用密钥进行签名时，对待签名的数据添加认证信息后进行签名。
+
+注意：携带的认证信息包含身份信息，开发者需在其隐私声明中对此身份信息的使用目的、存留策略和销毁方式进行说明。
 
 **类型：** UInt32
 
@@ -2682,7 +2688,7 @@ public class HuksTag {
     public static const HUKS_TAG_SALT: UInt32 = HuksTagType.HUKS_TAG_TYPE_BYTES | 12
     public static const HUKS_TAG_ITERATION: UInt32 = HuksTagType.HUKS_TAG_TYPE_UINT | 14
     public static const HUKS_TAG_KEY_GENERATION_TYPE: UInt32 = HuksTagType.HUKS_TAG_TYPE_UINT | 15
-    public static const HUKS_TAG_ALG_FOR_AGREEMENT: UInt32 = HuksTagType.HUKS_TAG_TYPE_UINT | 19
+    public static const HUKS_TAG_AGREE_ALG: UInt32 = HuksTagType.HUKS_TAG_TYPE_UINT | 19
     public static const HUKS_TAG_AGREE_PUBLIC_KEY_IS_KEY_ALIAS: UInt32 = HuksTagType.HUKS_TAG_TYPE_BOOL | 20
     public static const HUKS_TAG_PRIVATE_KEY_ALIAS_FOR_AGREEMENT: UInt32 = HuksTagType.HUKS_TAG_TYPE_BYTES | 21
     public static const HUKS_TAG_AGREE_PUBLIC_KEY: UInt32 = HuksTagType.HUKS_TAG_TYPE_BYTES | 22
@@ -2735,10 +2741,10 @@ public static const HUKS_TAG_AE_TAG: UInt32 = HuksTagType.HUKS_TAG_TYPE_BYTES | 
 
 **起始版本：** 22
 
-### static const HUKS_TAG_ALG_FOR_AGREEMENT
+### static const HUKS_TAG_AGREE_ALG
 
 ```cangjie
-public static const HUKS_TAG_ALG_FOR_AGREEMENT: UInt32 = HuksTagType.HUKS_TAG_TYPE_UINT | 19
+public static const HUKS_TAG_AGREE_ALG: UInt32 = HuksTagType.HUKS_TAG_TYPE_UINT | 19
 ```
 
 **功能：** 表示密钥协商时的算法类型。
@@ -2749,10 +2755,10 @@ public static const HUKS_TAG_ALG_FOR_AGREEMENT: UInt32 = HuksTagType.HUKS_TAG_TY
 
 **起始版本：** 22
 
-### static const HUKS_TAG_PRIVATE_KEY_ALIAS_FOR_AGREEMENT
+### static const HUKS_TAG_AGREE_PRIVATE_KEY_ALIAS
 
 ```cangjie
-public static const HUKS_TAG_PRIVATE_KEY_ALIAS_FOR_AGREEMENT: UInt32 = HuksTagType.HUKS_TAG_TYPE_BYTES | 21
+public static const HUKS_TAG_AGREE_PRIVATE_KEY_ALIAS: UInt32 = HuksTagType.HUKS_TAG_TYPE_BYTES | 21
 ```
 
 **功能：** 表示密钥协商时的私钥别名。
@@ -2839,7 +2845,7 @@ public static const HUKS_TAG_ATTESTATION_CHALLENGE: UInt32 = HuksTagType.HUKS_TA
 public static const HUKS_TAG_AUTH_TIMEOUT: UInt32 = HuksTagType.HUKS_TAG_TYPE_UINT | 305
 ```
 
-**功能：** 表示authtoken单次有效期。
+**功能：** 表示auth token单次有效期。
 
 **类型：** UInt32
 
@@ -3113,10 +3119,10 @@ public static const HUKS_TAG_KEY_FLAG: UInt32 = HuksTagType.HUKS_TAG_TYPE_UINT |
 
 **起始版本：** 22
 
-### static const HUKS_TAG_KEY_GENERATION_TYPE
+### static const HUKS_TAG_KEY_GENERATE_TYPE
 
 ```cangjie
-public static const HUKS_TAG_KEY_GENERATION_TYPE: UInt32 = HuksTagType.HUKS_TAG_TYPE_UINT | 15
+public static const HUKS_TAG_KEY_GENERATE_TYPE: UInt32 = HuksTagType.HUKS_TAG_TYPE_UINT | 15
 ```
 
 **功能：** 表示生成密钥类型的Tag。
@@ -3231,7 +3237,7 @@ public static const HUKS_TAG_NONCE: UInt32 = HuksTagType.HUKS_TAG_TYPE_BYTES | 9
 public static const HUKS_TAG_PADDING: UInt32 = HuksTagType.HUKS_TAG_TYPE_UINT | 5
 ```
 
-**功能：** 表示补齐算法的Tag。
+**功能：** 表示填充模式的Tag。
 
 **类型：** UInt32
 
@@ -3329,7 +3335,7 @@ public static const HUKS_TAG_USER_ID: UInt32 = HuksTagType.HUKS_TAG_TYPE_UINT | 
 public static const HUKS_TAG_AUTH_STORAGE_LEVEL: UInt32 = HuksTagType.HUKS_TAG_TYPE_UINT | 316
 ```
 
-**功能：** 密钥存储安全级别，即HuksAuthStorageLevel的一个取值。
+**功能：** 表示密钥存储安全等级的tag。从[HuksAuthStorageLevel](#class-huksauthstoragelevel)中选择。
 
 **类型：** UInt32
 
@@ -3362,7 +3368,7 @@ public class HuksTagType {
 public static const HUKS_TAG_TYPE_BOOL: UInt32 = 4 << 28
 ```
 
-**功能：** 表示该Tag的数据类型为boolean。
+**功能：** 表示该Tag的数据类型为Bool。
 
 **类型：** UInt32
 
@@ -3376,7 +3382,7 @@ public static const HUKS_TAG_TYPE_BOOL: UInt32 = 4 << 28
 public static const HUKS_TAG_TYPE_BYTES: UInt32 = 5 << 28
 ```
 
-**功能：** 表示该Tag的数据类型为Uint8Array。
+**功能：** 表示该Tag的数据类型为Bytes。
 
 **类型：** UInt32
 
@@ -3390,7 +3396,7 @@ public static const HUKS_TAG_TYPE_BYTES: UInt32 = 5 << 28
 public static const HUKS_TAG_TYPE_INT: UInt32 = 1 << 28
 ```
 
-**功能：** 表示该Tag的数据类型为UInt32。
+**功能：** 表示该Tag的数据类型为Int32。
 
 **类型：** UInt32
 
@@ -3432,7 +3438,7 @@ public static const HUKS_TAG_TYPE_UINT: UInt32 = 2 << 28
 public static const HUKS_TAG_TYPE_ULONG: UInt32 = 3 << 28
 ```
 
-**功能：** 表示该Tag的数据类型为bigint。
+**功能：** 表示该Tag的数据类型为Int64。
 
 **类型：** UInt32
 

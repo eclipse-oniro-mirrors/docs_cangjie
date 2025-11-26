@@ -45,7 +45,6 @@ public func rotate(x!: ?Float64 = None, y!: ?Float64 = None, z!: ?Float64 = None
 |:---|:---|
 |T|返回调用此接口的组件实例本身。|
 
-
 ## func scale(?Float32, ?Float32, ?Float32, ?Length, ?Length)
 
 ```cangjie
@@ -75,7 +74,6 @@ public func scale(x!: ?Float32 = None, y!: ?Float32 = None, z!: ?Float32 = None,
 |:---|:---|
 |T|返回调用此接口的组件实例本身。|
 
-
 ## func translate(?Length, ?Length, ?Length)
 
 ```cangjie
@@ -92,16 +90,15 @@ public func translate(x!: ?Length = None, y!: ?Length = None, z!: ?Length = None
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|x|?[Length](./cj-common-types.md#interface-length)|否|None|**命名参数。** X轴平移距离。初始值:  0.vp|
-|y|?[Length](./cj-common-types.md#interface-length)|否|None|**命名参数。** Y轴平移距离。初始值:  0.vp|
-|z|?[Length](./cj-common-types.md#interface-length)|否|None|**命名参数。** Z轴平移距离。初始值:  0.vp|
+|x|?[Length](./cj-common-types.md#interface-length)|否|None|**命名参数。** X轴平移距离。初始值:  0.px|
+|y|?[Length](./cj-common-types.md#interface-length)|否|None|**命名参数。** Y轴平移距离。初始值:  0.px|
+|z|?[Length](./cj-common-types.md#interface-length)|否|None|**命名参数。** Z轴平移距离。初始值:  0.px|
 
 **返回值：**
 
 |类型|说明|
 |:---|:---|
 |T|返回调用此接口的组件实例本身。|
-
 
 ## 示例代码
 

@@ -110,7 +110,6 @@ public func starStyle(backgroundUri!: ?ResourceStr, foregroundUri!: ?ResourceStr
 > - backgroundUri或者foregroundUri设置为空字符串时，rating会选择加载系统默认星型图源。
 > - secondaryUri不设置或者设置的值为空字符串时，优先设置为backgroundUri，效果上等同于只设置了foregroundUri、backgroundUri。
 
-
 ## 组件事件
 
 ### func onChange(?(Float64) -> Unit)

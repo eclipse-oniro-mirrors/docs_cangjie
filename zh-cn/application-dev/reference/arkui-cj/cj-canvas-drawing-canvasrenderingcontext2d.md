@@ -557,7 +557,7 @@ public func setLineDash(dashArr: ?Array<Float64>): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|segments|?Array\<Float64>|否|-|描述线段如何交替和线段间距长度的数组。<br>默认单位：vp|
+|segments|?Array\<Float64>|是|-|描述线段如何交替和线段间距长度的数组。<br>默认单位：vp|
 
 ### func fillRect(Float64, Float64, Float64, Float64)
 
@@ -641,12 +641,12 @@ public func fillText(text: String, x: Float64, y: Float64, maxWidth!: ?Float64 =
 |text|String|是|-|需要绘制的文本内容。|
 |x|Float64|是|-|需要绘制的文本的左下角x坐标。<br>默认单位：vp。|
 |y|Float64|是|-|需要绘制的文本的左下角y坐标。<br>默认单位：vp。|
-|maxWidth|?Float64|否|-|**命名参数。** 指定文本允许的最大宽度。<br>默认单位：vp。<br>初始值：不限制宽度。|
+|maxWidth|?Float64|否|Option.None|**命名参数。** 指定文本允许的最大宽度。<br>默认单位：vp。<br>初始值：不限制宽度。|
 
 ### func strokeText(String, Float64, Float64, ?Float64)
 
 ```cangjie
-public func strokeText(text: String, x: Float64, y: Float64, maxWidth!: Option<Float64> = Option.None): Unit
+public func strokeText(text: String, x: Float64, y: Float64, maxWidth!: ?Float64 = Option.None): Unit
 ```
 
 **功能：** 绘制描边类文本。
@@ -662,7 +662,7 @@ public func strokeText(text: String, x: Float64, y: Float64, maxWidth!: Option<F
 |text|String|是|-|需要绘制的文本内容。|
 |x|Float64|是|-|需要绘制的文本的左下角x坐标。<br>默认单位：vp。|
 |y|Float64|是|-|需要绘制的文本的左下角y坐标。<br>默认单位：vp。|
-|maxWidth|Option\<Float64>|否|-|**命名参数。** 需要绘制的文本的最大宽度。<br>默认单位：vp。|
+|maxWidth|?Float64|否|Option.None|**命名参数。** 需要绘制的文本的最大宽度。<br>默认单位：vp。|
 
 ### func measureText(?String)
 
@@ -716,7 +716,7 @@ public func stroke(path: Path2D): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|path|Path2D|是|-|指定的描边路径对象。|
+|path|[Path2D](cj-canvas-drawing-path2d.md)|是|-|指定的描边路径对象。|
 
 ### func beginPath()
 
@@ -795,8 +795,8 @@ public func createPattern(image: ?ImageBitmap, repetition: Option<Repetition>): 
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|image|?ImageBitmap|否|-|图源对象，具体参考ImageBitmap对象。|
-|repetition|Option\<Repetition>|否|-|指定如何重复图像。|
+|image|?[ImageBitmap](cj-canvas-drawing-imagebitmap.md)|是|-|图源对象，具体参考ImageBitmap对象。|
+|repetition|Option\<[Repetition](cj-common-types.md#enum-repetition)>|是|-|指定如何重复图像。|
 
 **返回值：**
 
@@ -932,7 +932,7 @@ public func ellipse(
 |rotation|Float64|是|-|椭圆的旋转角度，单位为弧度。|
 |startAngle|Float64|是|-|椭圆绘制的起始点角度，以弧度表示。|
 |endAngle|Float64|是|-|椭圆绘制的结束点角度，以弧度表示。|
-|counterclockwise|Bool|否|false| **命名参数。** 是否以逆时针方向绘制椭圆。</br>true:逆时针方向绘制椭圆。</br>false:顺时针方向绘制椭圆。|
+|counterclockwise|?Bool|否|None| **命名参数。** 是否以逆时针方向绘制椭圆。</br>true:逆时针方向绘制椭圆。</br>false:顺时针方向绘制椭圆。|
 
 ### func rect(Float64, Float64, Float64, Float64)
 
@@ -971,7 +971,7 @@ public func fill(fillRule!: ?CanvasFillRule = None): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|fillRule|?CanvasFillRule|否|None|**命名参数。** 指定要剪切对象的规则。|
+|fillRule|?[CanvasFillRule](cj-common-types.md#enum-canvasfillrule)|否|None|**命名参数。** 指定要剪切对象的规则。|
 
 ### func fill(?Path2D, ?CanvasFillRule)
 
@@ -989,8 +989,8 @@ public func fill(path: ?Path2D, fillRule!: ?CanvasFillRule = None): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|path|?Path2D|否|-|Path2D剪切路径。|
-|fillRule|?CanvasFillRule|否|None|**命名参数。** 指定要剪切对象的规则。|
+|path|?[Path2D](cj-canvas-drawing-path2d.md)|是|-|Path2D剪切路径。|
+|fillRule|?[CanvasFillRule](cj-common-types.md#enum-canvasfillrule)|否|None|**命名参数。** 指定要剪切对象的规则。|
 
 ### func clip(?CanvasFillRule)
 
@@ -1008,7 +1008,7 @@ public func clip(fillRule!: ?CanvasFillRule = None): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|fillRule|?CanvasFillRule|否|None|**命名参数。** 指定要剪切对象的规则。|
+|fillRule|?[CanvasFillRule](cj-common-types.md#enum-canvasfillrule)|否|None|**命名参数。** 指定要剪切对象的规则。|
 
 ### func clip(?Path2D, ?CanvasFillRule)
 
@@ -1026,8 +1026,8 @@ public func clip(path: ?Path2D, fillRule!: ?CanvasFillRule = None): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|path|?Path2D|否|-|Path2D剪切路径。|
-|fillRule|?CanvasFillRule|否|None|**命名参数。** 指定要剪切对象的规则。|
+|path|?[Path2D](cj-canvas-drawing-path2d.md)|是|-|Path2D剪切路径。|
+|fillRule|?[CanvasFillRule](cj-common-types.md#enum-canvasfillrule)|否|None|**命名参数。** 指定要剪切对象的规则。|
 
 ### func rotate(Float64)
 
@@ -1285,9 +1285,9 @@ public func drawImage(image: ImageBitmap, dx: ?Float64, dy: ?Float64): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|image|ImageBitmap|是|-|图片资源。|
-|dx|?Float64|否|-|绘制区域左上角在 x 轴的位置。<br>默认单位：vp。|
-|dy|?Float64|否|-|绘制区域左上角在 y 轴的位置。<br>默认单位：vp。|
+|image|[ImageBitmap](cj-canvas-drawing-imagebitmap.md)|是|-|图片资源。|
+|dx|?Float64|是|-|绘制区域左上角在 x 轴的位置。<br>默认单位：vp。|
+|dy|?Float64|是|-|绘制区域左上角在 y 轴的位置。<br>默认单位：vp。|
 
 ### func drawImage(ImageBitmap, ?Float64, ?Float64, ?Float64, ?Float64)
 
@@ -1305,11 +1305,11 @@ public func drawImage(image: ImageBitmap, dx: ?Float64, dy: ?Float64, dw: ?Float
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|image|ImageBitmap|是|-|图片资源。|
-|dx|?Float64|否|-|绘制区域左上角在 x 轴的位置。<br>默认单位：vp。|
-|dy|?Float64|否|-|绘制区域左上角在 y 轴的位置。<br>默认单位：vp。|
-|dw|?Float64|否|-|绘制区域的宽度。当绘制区域的宽度和裁剪图像的宽度不一致时，将图像宽度拉伸或压缩为绘制区域的宽度。<br>默认单位：vp。|
-|dh|?Float64|否|-|绘制区域的高度。当绘制区域的高度和裁剪图像的高度不一致时，将图像高度拉伸或压缩为绘制区域的高度。<br>默认单位：vp。|
+|image|[ImageBitmap](cj-canvas-drawing-imagebitmap.md)|是|-|图片资源。|
+|dx|?Float64|是|-|绘制区域左上角在 x 轴的位置。<br>默认单位：vp。|
+|dy|?Float64|是|-|绘制区域左上角在 y 轴的位置。<br>默认单位：vp。|
+|dw|?Float64|是|-|绘制区域的宽度。当绘制区域的宽度和裁剪图像的宽度不一致时，将图像宽度拉伸或压缩为绘制区域的宽度。<br>默认单位：vp。|
+|dh|?Float64|是|-|绘制区域的高度。当绘制区域的高度和裁剪图像的高度不一致时，将图像高度拉伸或压缩为绘制区域的高度。<br>默认单位：vp。|
 
 ### func drawImage(ImageBitmap, ?Float64, ?Float64, ?Float64, ?Float64, ?Float64, ?Float64, ?Float64, ?Float64)
 
@@ -1319,7 +1319,7 @@ public func drawImage(
     sx: ?Float64,
     sy: ?Float64,
     sw: ?Float64,
-    sd: ?Float64,
+    sh: ?Float64,
     dx: ?Float64,
     dy: ?Float64,
     dw: ?Float64,
@@ -1337,15 +1337,15 @@ public func drawImage(
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|image|ImageBitmap|是|-|图片资源。|
-|sx|?Float64|否|-|裁切源图像时距离源图像左上角的x坐标值。<br>单位：px。|
-|sy|?Float64|否|-|裁切源图像时距离源图像左上角的y坐标值。<br>单位：px。|
-|sw|?Float64|否|-|裁切源图像时需要裁切的宽度。<br>单位：px。|
-|sd|?Float64|否|-|裁切源图像时需要裁切的高度。<br>单位：px。|
-|dx|?Float64|否|-|绘制区域左上角在 x 轴的位置。<br>默认单位：vp。|
-|dy|?Float64|否|-|绘制区域左上角在 y 轴的位置。<br>默认单位：vp。|
-|dw|?Float64|否|-|绘制区域的宽度。当绘制区域的宽度和裁剪图像的宽度不一致时，将图像宽度拉伸或压缩为绘制区域的宽度。<br>默认单位：vp。|
-|dh|?Float64|否|-|绘制区域的高度。当绘制区域的高度和裁剪图像的高度不一致时，将图像高度拉伸或压缩为绘制区域的高度。<br>默认单位：vp。|
+|image|[ImageBitmap](cj-canvas-drawing-imagebitmap.md)|是|-|图片资源。|
+|sx|?Float64|是|-|裁切源图像时距离源图像左上角的x坐标值。<br>单位：px。|
+|sy|?Float64|是|-|裁切源图像时距离源图像左上角的y坐标值。<br>单位：px。|
+|sw|?Float64|是|-|裁切源图像时需要裁切的宽度。<br>单位：px。|
+|sh|?Float64|是|-|裁切源图像时需要裁切的高度。<br>单位：px。|
+|dx|?Float64|是|-|绘制区域左上角在 x 轴的位置。<br>默认单位：vp。|
+|dy|?Float64|是|-|绘制区域左上角在 y 轴的位置。<br>默认单位：vp。|
+|dw|?Float64|是|-|绘制区域的宽度。当绘制区域的宽度和裁剪图像的宽度不一致时，将图像宽度拉伸或压缩为绘制区域的宽度。<br>默认单位：vp。|
+|dh|?Float64|是|-|绘制区域的高度。当绘制区域的高度和裁剪图像的高度不一致时，将图像高度拉伸或压缩为绘制区域的高度。<br>默认单位：vp。|
 
 ### func drawImage(PixelMap, ?Float64, ?Float64)
 
@@ -1364,8 +1364,8 @@ public func drawImage(image: PixelMap, dx: ?Float64, dy: ?Float64): Unit
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |image|[PixelMap](../ImageKit/cj-apis-image.md#class-pixelmap)|是|-|绘制到画布上的图片对象。|
-|dx|?Float64|否|-|绘制区域左上角在 x 轴的位置。<br>默认单位：vp。|
-|dy|?Float64|否|-|绘制区域左上角在 y 轴的位置。<br>默认单位：vp。|
+|dx|?Float64|是|-|绘制区域左上角在 x 轴的位置。<br>默认单位：vp。|
+|dy|?Float64|是|-|绘制区域左上角在 y 轴的位置。<br>默认单位：vp。|
 
 ### func drawImage(PixelMap, ?Float64, ?Float64, ?Float64, ?Float64)
 
@@ -1384,10 +1384,10 @@ public func drawImage(image: PixelMap, dx: ?Float64, dy: ?Float64, dw: ?Float64,
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |image|[PixelMap](../ImageKit/cj-apis-image.md#class-pixelmap)|是|-|绘制到画布上的图片对象。|
-|dx|?Float64|否|-|绘制区域左上角在 x 轴的位置。<br>默认单位：vp。|
-|dy|?Float64|否|-|绘制区域左上角在 y 轴的位置。<br>默认单位：vp。|
-|dw|?Float64|否|-|绘制区域的宽度。当绘制区域的宽度和裁剪图像的宽度不一致时，将图像宽度拉伸或压缩为绘制区域的宽度。<br>默认单位：vp。|
-|dh|?Float64|否|-|绘制区域的高度。当绘制区域的高度和裁剪图像的高度不一致时，将图像高度拉伸或压缩为绘制区域的高度。<br>默认单位：vp。|
+|dx|?Float64|是|-|绘制区域左上角在 x 轴的位置。<br>默认单位：vp。|
+|dy|?Float64|是|-|绘制区域左上角在 y 轴的位置。<br>默认单位：vp。|
+|dw|?Float64|是|-|绘制区域的宽度。当绘制区域的宽度和裁剪图像的宽度不一致时，将图像宽度拉伸或压缩为绘制区域的宽度。<br>默认单位：vp。|
+|dh|?Float64|是|-|绘制区域的高度。当绘制区域的高度和裁剪图像的高度不一致时，将图像高度拉伸或压缩为绘制区域的高度。<br>默认单位：vp。|
 
 ### func drawImage(PixelMap, ?Float64, ?Float64, ?Float64, ?Float64, ?Float64, ?Float64, ?Float64, ?Float64)
 
@@ -1397,7 +1397,7 @@ public func drawImage(
     sx: ?Float64,
     sy: ?Float64,
     sw: ?Float64,
-    sd: ?Float64,
+    sh: ?Float64,
     dx: ?Float64,
     dy: ?Float64,
     dw: ?Float64,
@@ -1416,14 +1416,14 @@ public func drawImage(
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |image|[PixelMap](../ImageKit/cj-apis-image.md#class-pixelmap)|是|-|绘制到画布上的图片对象。|
-|sx|?Float64|否|-|裁切源图像时距离源图像左上角的x坐标值。<br>单位：px。|
-|sy|?Float64|否|-|裁切源图像时距离源图像左上角的y坐标值。<br>单位：px。|
-|sw|?Float64|否|-|裁切源图像时需要裁切的宽度。<br>单位：px。|
-|sd|?Float64|否|-|裁切源图像时需要裁切的高度。<br>单位：px。|
-|dx|?Float64|否|-|绘制区域左上角在 x 轴的位置。<br>默认单位：vp。|
-|dy|?Float64|否|-|绘制区域左上角在 y 轴的位置。<br>默认单位：vp。|
-|dw|?Float64|否|-|绘制区域的宽度。当绘制区域的宽度和裁剪图像的宽度不一致时，将图像宽度拉伸或压缩为绘制区域的宽度。<br>默认单位：vp。|
-|dh|?Float64|否|-|绘制区域的高度。当绘制区域的高度和裁剪图像的高度不一致时，将图像高度拉伸或压缩为绘制区域的高度。<br>默认单位：vp。|
+|sx|?Float64|是|-|裁切源图像时距离源图像左上角的x坐标值。<br>单位：px。|
+|sy|?Float64|是|-|裁切源图像时距离源图像左上角的y坐标值。<br>单位：px。|
+|sw|?Float64|是|-|裁切源图像时需要裁切的宽度。<br>单位：px。|
+|sh|?Float64|是|-|裁切源图像时需要裁切的高度。<br>单位：px。|
+|dx|?Float64|是|-|绘制区域左上角在 x 轴的位置。<br>默认单位：vp。|
+|dy|?Float64|是|-|绘制区域左上角在 y 轴的位置。<br>默认单位：vp。|
+|dw|?Float64|是|-|绘制区域的宽度。当绘制区域的宽度和裁剪图像的宽度不一致时，将图像宽度拉伸或压缩为绘制区域的宽度。<br>默认单位：vp。|
+|dh|?Float64|是|-|绘制区域的高度。当绘制区域的高度和裁剪图像的高度不一致时，将图像高度拉伸或压缩为绘制区域的高度。<br>默认单位：vp。|
 
 ### func getPixelMap(?Float64, ?Float64, ?Float64, ?Float64)
 
@@ -1441,10 +1441,10 @@ public func getPixelMap(sx: ?Float64, sy: ?Float64, sw: ?Float64, sh: ?Float64):
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|sx|?Float64|否|-|需要输出的区域的左上角x坐标。<br>默认单位：vp。|
-|sy|?Float64|否|-|需要输出的区域的左上角y坐标。<br>默认单位：vp。|
-|sw|?Float64|否|-|需要输出的区域的宽度。<br>默认单位：vp。|
-|sh|?Float64|否|-|需要输出的区域的高度。<br>默认单位：vp。|
+|sx|?Float64|是|-|需要输出的区域的左上角x坐标。<br>默认单位：vp。|
+|sy|?Float64|是|-|需要输出的区域的左上角y坐标。<br>默认单位：vp。|
+|sw|?Float64|是|-|需要输出的区域的宽度。<br>默认单位：vp。|
+|sh|?Float64|是|-|需要输出的区域的高度。<br>默认单位：vp。|
 
 **返回值：**
 
@@ -1534,7 +1534,7 @@ public func transferFromImageBitmap(bitmap: ?ImageBitmap): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|bitmap|?ImageBitmap|是|-|待显示的ImageBitmap对象。|
+|bitmap|?[ImageBitmap](cj-canvas-drawing-imagebitmap.md)|是|-|待显示的ImageBitmap对象。|
 
 ### func setPixelMap(?PixelMap)
 
@@ -1613,8 +1613,8 @@ public func createImageData(sw: ?Float64, sh: ?Float64): ImageData
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|sw|?Float64|否|-|ImageData的宽度。<br>默认单位：vp。|
-|sh|?Float64|否|-|ImageData的高度。<br>默认单位：vp。|
+|sw|?Float64|是|-|ImageData的宽度。<br>默认单位：vp。|
+|sh|?Float64|是|-|ImageData的高度。<br>默认单位：vp。|
 
 **返回值：**
 
@@ -1717,12 +1717,12 @@ public func putImageData(
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |imageData|[ImageData](./cj-canvas-drawing-imagedata.md#class-imagedata)|是|-| 包含像素值的ImageData对象。|
-|dx|?Float64|是|-|填充区域在x轴方向的偏移量。<br>默认单位：vp。|
-|dy|?Float64|是|-|填充区域在y轴方向的偏移量。<br>默认单位：vp。|
-|dirtyX|?Float64|是|-|源图像数据矩形裁切范围左上角距离源图像左上角的x轴偏移量。<br>默认单位：vp。|
-|dirtyY|?Float64|是|-|源图像数据矩形裁切范围左上角距离源图像左上角的y轴偏移量。<br>默认单位：vp。|
-|dirtyWidth|?Float64|是|-|源图像数据矩形裁切范围的宽度。<br>默认单位：vp。|
-|dirtyHeight|?Float64|是|-|源图像数据矩形裁切范围的高度。<br>默认单位：vp。|
+|dx|?[Length](./cj-common-types.md#interface-length)|是|-|填充区域在x轴方向的偏移量。<br>默认单位：vp。|
+|dy|?[Length](./cj-common-types.md#interface-length)|是|-|填充区域在y轴方向的偏移量。<br>默认单位：vp。|
+|dirtyX|?[Length](./cj-common-types.md#interface-length)|是|-|源图像数据矩形裁切范围左上角距离源图像左上角的x轴偏移量。<br>默认单位：vp。|
+|dirtyY|?[Length](./cj-common-types.md#interface-length)|是|-|源图像数据矩形裁切范围左上角距离源图像左上角的y轴偏移量。<br>默认单位：vp。|
+|dirtyWidth|?[Length](./cj-common-types.md#interface-length)|是|-|源图像数据矩形裁切范围的宽度。<br>默认单位：vp。|
+|dirtyHeight|?[Length](./cj-common-types.md#interface-length)|是|-|源图像数据矩形裁切范围的高度。<br>默认单位：vp。|
 
 ## 示例代码
 

@@ -159,7 +159,7 @@ public func edgeEffect(value: ?EdgeEffect): This
 public func lanes(value: ?Int32): This
 ```
 
-**功能：** 设置列表中列或行的数量。当值设置为gutter类型时，表示列之间的间隙。当列数大于1时生效。
+**功能：** 设置列表中列或行的数量。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -177,7 +177,7 @@ public func lanes(value: ?Int32): This
 public func lanes(minLength!: ?Length, maxLength!: ?Length): This
 ```
 
-**功能：** 设置列表中列或行的数量。当值设置为gutter类型时，表示列之间的间隙。当列数大于1时生效。
+**功能：** 设置列表中列或行的数量。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
