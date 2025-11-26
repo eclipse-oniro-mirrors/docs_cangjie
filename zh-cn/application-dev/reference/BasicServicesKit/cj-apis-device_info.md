@@ -295,7 +295,7 @@ public static prop distributionOSReleaseType: String
 public static prop distributionOSVersion: String
 ```
 
-**功能：** 发行版系统版本号。
+**功能：** 发行版系统版本号。<!--RP11--><!--RP11End-->
 
 **类型：** String
 

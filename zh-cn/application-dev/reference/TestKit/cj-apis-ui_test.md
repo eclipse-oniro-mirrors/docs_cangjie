@@ -2588,7 +2588,7 @@ public func checkable(b!: Bool = true): On
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|b|Bool|否|true|**命名参数。** 指定控件能否被勾选状态，true：能被勾选，false：不能被勾选。默认为false。|
+|b|Bool|否|true|**命名参数。** 指定控件能否被勾选状态，true：能被勾选，false：不能被勾选。默认为false。<!--RP2--><!--RP2End-->|
 
 **返回值：**
 
@@ -2642,7 +2642,7 @@ public func checked(b!: Bool = true): On
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|b|Bool|否|true|**命名参数。** 指定控件被勾选状态，true：被勾选，false：未被勾选。默认为false。|
+|b|Bool|否|true|**命名参数。** 指定控件被勾选状态，true：被勾选，false：未被勾选。默认为false。<!--RP2--><!--RP2End-->|
 
 **返回值：**
 
@@ -2696,7 +2696,7 @@ public func clickable(b!: Bool = true): On
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|b|Bool|否|true|**命名参数。** 指定控件可点击状态，true：可点击，false：不可点击。默认为true。|
+|b|Bool|否|true|**命名参数。** 指定控件可点击状态，true：可点击，false：不可点击。默认为true。<!--RP2--><!--RP2End-->|
 
 **返回值：**
 
@@ -2742,7 +2742,7 @@ public func description(val: String, pattern!: MatchPattern = MatchPattern.Equal
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|val|String|是|-|控件的描述属性。|
+|val|String|是|-|控件的描述属性。<!--RP2--><!--RP2End-->|
 |pattern|[MatchPattern](#enum-matchpattern)|否|MatchPattern.Equals|**命名参数。** 指定的文本匹配模式，默认为EQUALS。|
 
 **返回值：**
@@ -2797,7 +2797,7 @@ public func enabled(b!: Bool = true): On
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|b|Bool|否|true|**命名参数。** 指定控件使能状态，true：使能，false：未使能。默认为true。|
+|b|Bool|否|true|**命名参数。** 指定控件使能状态，true：使能，false：未使能。默认为true。<!--RP2--><!--RP2End-->|
 
 **返回值：**
 
@@ -2851,7 +2851,7 @@ public func focused(b!: Bool = true): On
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|b|Bool|否|true|**命名参数。** 控件获焦状态，true：获焦，false：未获焦。默认为true。|
+|b|Bool|否|true|**命名参数。** 控件获焦状态，true：获焦，false：未获焦。默认为true。<!--RP2--><!--RP2End-->|
 
 **返回值：**
 
@@ -2905,7 +2905,7 @@ public func id(id: String): On
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|id|String|是|-|指定控件的id值。|
+|id|String|是|-|指定控件的id值。<!--RP2--><!--RP2End-->|
 
 **返回值：**
 
@@ -2959,7 +2959,7 @@ public func inWindow(bundleName: String): On
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|bundleName|String|是|-|应用窗口的包名。|
+|bundleName|String|是|-|应用窗口的包名。<!--RP2--><!--RP2End-->|
 
 **返回值：**
 
@@ -3013,7 +3013,7 @@ public func isAfter(on: On): On
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|on|[On](#class-on)|是|-|特征控件的属性要求。|
+|on|[On](#class-on)|是|-|特征控件的属性要求。<!--RP3--><!--RP3End-->|
 
 **返回值：**
 
@@ -3068,7 +3068,7 @@ public func isBefore(on: On): On
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|on|[On](#class-on)|是|-|特征控件的属性要求。|
+|on|[On](#class-on)|是|-|特征控件的属性要求。<!--RP3--><!--RP3End-->|
 
 **返回值：**
 
@@ -3123,7 +3123,7 @@ public func longClickable(b!: Bool = true): On
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|b|Bool|否|true|**命名参数。** 指定控件可长按点击状态，true：可长按点击，false：不可长按点击。默认为true。|
+|b|Bool|否|true|**命名参数。** 指定控件可长按点击状态，true：可长按点击，false：不可长按点击。默认为true。<!--RP2--><!--RP2End-->|
 
 **返回值：**
 
@@ -3177,7 +3177,7 @@ public func onType(tp: String): On
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|tp|String|是|-|指定控件类型。|
+|tp|String|是|-|指定控件类型。<!--RP2--><!--RP2End-->|
 
 **返回值：**
 
@@ -3231,7 +3231,7 @@ public func scrollable(b!: Bool = true): On
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|b|Bool|否|true|**命名参数。** 控件可滑动状态，true：可滑动，false：不可滑动。默认为true。|
+|b|Bool|否|true|**命名参数。** 控件可滑动状态，true：可滑动，false：不可滑动。默认为true。<!--RP2--><!--RP2End-->|
 
 **返回值：**
 
@@ -3285,7 +3285,7 @@ public func selected(b!: Bool = true): On
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|b|Bool|否|true|**命名参数。** 指定控件被选中状态，true：被选中，false：未被选中。默认为true。|
+|b|Bool|否|true|**命名参数。** 指定控件被选中状态，true：被选中，false：未被选中。默认为true。<!--RP2--><!--RP2End-->|
 
 **返回值：**
 
@@ -3339,7 +3339,7 @@ public func text(txt: String, pattern!: MatchPattern = MatchPattern.Equals): On
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|txt|String|是|-|指定控件文本，用于匹配目标控件文本。|
+|txt|String|是|-|指定控件文本，用于匹配目标控件文本。<!--RP2--><!--RP2End-->|
 |pattern|[MatchPattern](#enum-matchpattern)|否|MatchPattern.Equals|**命名参数。** 指定的文本匹配模式，默认为EQUALS。|
 
 **返回值：**
@@ -3386,7 +3386,7 @@ public func within(on: On): On
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|on|[On](#class-on)|是|-|特征控件的属性要求。|
+|on|[On](#class-on)|是|-|特征控件的属性要求。<!--RP3--><!--RP3End-->|
 
 **返回值：**
 

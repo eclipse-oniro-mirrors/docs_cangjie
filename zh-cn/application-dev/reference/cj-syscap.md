@@ -35,6 +35,7 @@ SDK向DevEco Studio提供全量API，DevEco Studio识别开发者项目中选择
 ![image-SDK-view](figures/image-SDK-view.png)
 
 ## SysCap开发指导
+<!--RP1--><!--RP1End-->
 
 ### PCID获取
 

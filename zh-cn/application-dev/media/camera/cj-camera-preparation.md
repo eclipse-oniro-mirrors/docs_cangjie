@@ -14,7 +14,7 @@
 
 > **说明：**
 >
-> 仅应用需要克隆、备份或同步用户公共目录的图片、视频类文件时，可申请ohos.permission.READ_IMAGEVIDEO、ohos.permission.WRITE_IMAGEVIDEO权限来读写音频文件，申请方式请参见[申请受控权限](../../security/AccessToken/cj-declare-permissions-in-acl.md#申请使用受限权限)。
+> 仅应用需要克隆、备份或同步用户公共目录的图片、视频类文件时，可申请ohos.permission.READ_IMAGEVIDEO、ohos.permission.WRITE_IMAGEVIDEO权限来读写音频文件，申请方式请参见<!--RP1-->[申请受控权限](../../security/AccessToken/cj-declare-permissions-in-acl.md#申请使用受限权限)。<!--RP1End-->
 
 ## 开发指导
 

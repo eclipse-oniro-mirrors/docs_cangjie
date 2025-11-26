@@ -2273,7 +2273,7 @@ error: Check pluginDistributionID between plugin and host application failed.
 
 **处理步骤**
 
-重新配置应用或者插件<!--RP7-->[签名证书profile文件](https://gitcode.com/openharmony/docs/blob/master/zh-cn/application-dev/security/app-provision-structure.md)<!--RP7End-->中的 pluginDistributionIDs。
+重新配置应用或者插件<!--RP6-->[签名证书profile文件](https://gitcode.com/openharmony/docs/blob/master/zh-cn/application-dev/security/app-provision-structure.md)<!--RP6End-->中的 pluginDistributionIDs。
 
 ### 9568433 应用缺少ohos.permission.SUPPORT_PLUGIN权限
 
@@ -2637,7 +2637,7 @@ error: install failed due to U1Enabled can not change.
 
 **可能原因**
 
-应用<!--RP9-->[Profile签名文件](https://gitcode.com/openharmony/docs/blob/master/zh-cn/application-dev/security/app-provision-structure.md)<!--RP9End-->中allowed-acls字段的U1Enabled配置发生变更，例如：
+应用<!--RP6-->[Profile签名文件](https://gitcode.com/openharmony/docs/blob/master/zh-cn/application-dev/security/app-provision-structure.md)<!--RP6End-->中allowed-acls字段的U1Enabled配置发生变更，例如：
 
 1. 已安装应用在allowed-acls中配置了U1Enabled，待安装应用在allowed-acls中没有配置U1Enabled。
 2. 已安装应用在allowed-acls中没有配置U1Enabled，待安装应用在allowed-acls中配置了U1Enabled。
@@ -2660,7 +2660,7 @@ error: Install failed due to the U1Enabled is not same in all haps.
 
 **可能原因**
 
-多HAP包签名时使用的<!--RP10-->[Profile签名文件](https://gitcode.com/openharmony/docs/blob/master/zh-cn/application-dev/security/app-provision-structure.md)<!--RP10End-->不一致导致签名信息中allowed-acls的U1Enabled配置不一致。
+多HAP包签名时使用的<!--RP6-->[Profile签名文件](https://gitcode.com/openharmony/docs/blob/master/zh-cn/application-dev/security/app-provision-structure.md)<!--RP6End-->不一致导致签名信息中allowed-acls的U1Enabled配置不一致。
 
 **处理步骤**
 

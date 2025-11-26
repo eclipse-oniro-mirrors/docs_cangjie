@@ -1037,7 +1037,7 @@ public class KVOptions {
 public var autoSync: Bool
 ```
 
-**功能：** 设置数据库文件是否自动同步。默认为false，即手动同步。
+**功能：** 设置数据库文件是否自动同步。默认为false，即手动同步。<!--RP1--><!--RP1End-->
 
 **类型：** Bool
 
