@@ -116,9 +116,11 @@ Below is an example of loading the Cangjie third-party library `libapplication.s
 >
 > Assuming that the Cangjie third-party library `libapplication.so` has already implemented the `addNumber` interface for ArkTS to call.
 
-1. In the ArkTS project, create the directory `libs->arm64-v8a`, and copy the Cangjie third-party library `libapplication.so` into the `libs->arm64-v8a` directory of the ArkTS project.
+1. Create a Cangjie module in the ArkTS project. For details, refer to [Adding a Cangjie Module to an ArkTS Project](./add_cangjie_module.md).
 
-2. Create interface declaration for the Cangjie third-party library `libapplication.so` on the ArkTS side.
+2. In the ArkTS project, create the directory `libs->arm64-v8a`, and copy the Cangjie third-party library `libapplication.so` into the `libs->arm64-v8a` directory of the ArkTS project.
+
+3. Create interface declaration for the Cangjie third-party library `libapplication.so` on the ArkTS side.
 
     - Create a new Index.d.ts file in the `types->libapplication` folder to provide interface declarations for ArkTS:
 
@@ -139,7 +141,7 @@ Below is an example of loading the Cangjie third-party library `libapplication.s
         }
         ```
 
-3. Declare the root directory path of the so library in the `oh-package.json5` file within the ArkTS module.
+4. Declare the root directory path of the so library in the `oh-package.json5` file within the ArkTS module.
 
     ```json
     // entry/oh-package.json5
@@ -152,7 +154,7 @@ Below is an example of loading the Cangjie third-party library `libapplication.s
     }
     ```
 
-4. On the ArkTS side, use `import` syntax to import the third-party Cangjie library `libapplication.so` and call the Cangjie `addNumber` interface:
+5. On the ArkTS side, use `import` syntax to import the third-party Cangjie library `libapplication.so` and call the Cangjie `addNumber` interface:
 
     ```typescript
     // Import the Cangjie dynamic library. The library name must match the package name of the interoperability interface
@@ -263,9 +265,11 @@ Below is an example of loading the Cangjie third-party library `libapplication.s
 >
 > Assuming that there is a local HAR package `cangjielib.har` that contains `libohos_app_cangjie_cangjielib.so`, in which the `addNumber` interface has already been implemented and is available for ArkTS to call.
 
-1. Copy the local HAR package `cangjielib.har` to the libs directory of the ArkTS project.
+1. Create a Cangjie module in the ArkTS project. For details, refer to [Adding a Cangjie Module to an ArkTS Project](./add_cangjie_module.md).
 
-2. Create interface declaration for the Cangjie library `libohos_app_cangjie_cangjielib.so` on the ArkTS side.
+2. Copy the local HAR package `cangjielib.har` to the libs directory of the ArkTS project.
+
+3. Create interface declaration for the Cangjie library `libohos_app_cangjie_cangjielib.so` on the ArkTS side.
 
     - Create a new Index.d.ts file in the `types->libohos_app_cangjie_cangjielib` folder to provide interface declarations for ArkTS:
 
@@ -286,7 +290,7 @@ Below is an example of loading the Cangjie third-party library `libapplication.s
         }
         ```
 
-3. Declare the path of the HAR package and so in the `oh-package.json5` file within the ArkTS module.
+4. Declare the path of the HAR package and so in the `oh-package.json5` file within the ArkTS module.
 
     ```json
     // entry/oh-package.json5
@@ -300,7 +304,7 @@ Below is an example of loading the Cangjie third-party library `libapplication.s
     }
     ```
 
-4. On the ArkTS side, use the `import` syntax to directly import the third-party Cangjie library `libapplication.so` and call the Cangjie `addNumber` interface:
+5. On the ArkTS side, use the `import` syntax to directly import the third-party Cangjie library `libapplication.so` and call the Cangjie `addNumber` interface:
 
     ```typescript
     // Import the Cangjie dynamic library. The library name must match the package name of the interoperability interface
@@ -309,6 +313,345 @@ Below is an example of loading the Cangjie third-party library `libapplication.s
     // Call the Cangjie interface
     let result = addNumber(1, 2);
     console.log(`1 + 2 = ${result}`);
+    ```
+
+### Use `import` syntax to load third-party library A, and third-party library A depends on third-party library B.
+
+> **Note：**
+>
+> Assuming that ArkTS needs to load the `returnA` interface from third-party library A, and the `returnA` interface in third-party library A depends on the `returnB` interface from third-party library B.
+
+#### Option 1: Configure third-party library dependencies through cjpm.toml
+
+1. Create new `package_a` and `package_b` directories in the ArkTS project. Create `a.cj` and `cjpm.toml` files under the `package_a` directory, and create `b.cj` and `cjpm.toml` files under the `package_b` directory.
+
+    - a.cj file
+
+        <!-- compile -arkts_import_cangjie-example1 -->
+        <!-- cfg="libpackage_b.so" -->
+        ```cangjie
+        // package_a/a.cj
+        package package_a
+        // Import interoperability library
+        import ohos.ark_interop.JSModule
+        import ohos.ark_interop.JSContext
+        import ohos.ark_interop.JSCallInfo
+        import ohos.ark_interop.JSValue
+        // Import third-party library B
+        import package_b.returnB
+
+        // Define the returnA interface in third-party library A
+        public func returnA(context: JSContext, callInfo: JSCallInfo): JSValue {
+            let result = "A " + returnB()
+            return context.string(result).toJSValue()
+        }
+
+        // Register this function in JSModule
+        let EXPORT_MODULE = JSModule.registerModule {
+            runtime, exports => exports["returnA"] = runtime.function(returnA).toJSValue()
+        }
+        ```
+
+    - b.cj file
+
+        <!-- compile -arkts_import_cangjie-example1 -->
+        <!-- cfg="-p package_b --output-type=dylib" -->
+        ```cangjie
+        // package_b/b.cj
+        package package_b
+
+        public func returnB(): String {
+            return "B"
+        }
+        ```
+
+    - Add the dependency on third-party library B to the dependencies field in `cjpm.toml` of third-party library A:
+
+        ```toml
+        # package_a/cjpm.toml
+        [dependencies]
+          [dependencies.package_b]
+            path = "../package_b"
+        ```
+
+2. Create a Cangjie module in the ArkTS project. For details, refer to [Adding a Cangjie Module to an ArkTS Project](./add_cangjie_module.md).
+
+3. Create Cangjie third-party library A interface declarations on the ArkTS side.
+
+    - Create a new `Index.d.ts` file under the `types->libpackage_a` folder to provide interface declarations for the ArkTS side:
+
+        ```typescript
+        // entry/src/main/cangjie/types/libpackage_a/Index.d.ts
+        export declare function returnA(): string;
+        ```
+
+    - Create a new `oh-package.json5` file under the `types->libpackage_a` folder to associate `Index.d.ts` with Cangjie third-party library A.
+
+        ```json
+        // entry/src/main/cangjie/types/libpackage_a/oh-package.json5
+        {
+            "name": "libpackage_a.so",
+            "types": "./Index.d.ts",
+            "version": "1.0.0",
+            "description": ""
+        }
+        ```
+
+4. Declare the root directory path of Cangjie third-party library A in the `oh-package.json5` file within the ArkTS module:
+
+    ```json
+    // entry/oh-package.json5
+    {
+        "dependencies": {
+            // ...
+            "libpackage_a.so": "file:./src/main/cangjie/types/libpackage_a"
+            // ...
+        }
+    }
+    ```
+
+5. Declare the path of Cangjie third-party library A in the dependencies field of the `cjpm.toml` file within the `entry` module:
+
+    ```toml
+    // entry/cjpm.toml
+    [dependencies]
+      [dependencies.package_a]
+        path = "../package_a"
+    ```
+
+6. Import Cangjie third-party library A using the `import` syntax on the ArkTS side and call the Cangjie `returnA` interface:
+
+    ```typescript
+    // Import the Cangjie dynamic library. The library name must match the package name of the interoperability interface
+    import { returnA } from "libpackage_a.so";
+
+    // Call Cangjie interface
+    let result = returnA();
+    console.log(${result});
+    ```
+
+#### Option 2: Third-party library B as a subpackage of third-party library A
+
+1. Create new `package_a` and `package_a->package_b` directories in the ArkTS project. Create `a.cj` and `cjpm.toml` files under the `package_a` directory, and create `b.cj` file under the `package_b` directory.
+
+    - a.cj file
+
+        <!-- compile -arkts_import_cangjie-example2 -->
+        <!-- cfg="libpackage_a.package_b.so" -->
+        ```cangjie
+        // package_a/a.cj
+        package package_a
+        // Import interoperability library
+        import ohos.ark_interop.JSModule
+        import ohos.ark_interop.JSContext
+        import ohos.ark_interop.JSCallInfo
+        import ohos.ark_interop.JSValue
+        // Import subpackage B
+        import package_a.package_b.returnB
+        
+        // Define the returnA interface in third-party library A
+        public func returnA(context: JSContext, callInfo: JSCallInfo): JSValue {
+            let result = "A " + returnB()
+            return context.string(result).toJSValue()
+        }
+
+        // Register this function in JSModule
+        let EXPORT_MODULE = JSModule.registerModule {
+            runtime, exports => exports["returnA"] = runtime.function(returnA).toJSValue()
+        }
+        ```
+
+    - b.cj file
+
+        <!-- compile -arkts_import_cangjie-example2 -->
+        <!-- cfg="-p package_b --output-type=dylib" -->
+        ```cangjie
+        // package_a/package_b/b.cj
+        package package_a.package_b
+        
+        public func returnB(): String {
+            return "B"
+        }
+        ```
+
+2. Create a Cangjie module in the ArkTS project. For details, refer to [Adding a Cangjie Module to an ArkTS Project](./add_cangjie_module.md).
+
+3. Create Cangjie third-party library A interface declarations on the ArkTS side.
+
+    - Create a new `Index.d.ts` file under the `types->libpackage_a` folder to provide interface declarations for the ArkTS side:
+
+        ```typescript
+        // entry/src/main/cangjie/types/libpackage_a/Index.d.ts
+        export declare function returnA(): string;
+        ```
+
+    - Create a new oh-package.json5 file under the types->libpackage_a folder to associate Index.d.ts with Cangjie third-party library A.
+
+        ```json
+        // entry/src/main/cangjie/types/libpackage_a/oh-package.json5
+        {
+            "name": "libpackage_a.so",
+            "types": "./Index.d.ts",
+            "version": "1.0.0",
+            "description": ""
+        }
+        ```
+
+4. Declare the root directory path of Cangjie third-party library A in the `oh-package.json5` file within the ArkTS module:
+
+    ```json
+    // entry/oh-package.json5
+    {
+        "dependencies": {
+            // ...
+            "libpackage_a.so": "file:./src/main/cangjie/types/libpackage_a"
+            // ...
+        }
+    }
+    ```
+
+5. Declare the path of Cangjie third-party library A in the dependencies field of the `cjpm.toml` file within the `entry` module:
+
+    ```toml
+    // entry/cjpm.toml
+    [dependencies]
+      [dependencies.package_a]
+        path = "../package_a"
+    ```
+
+6. Import Cangjie third-party library A using the `import` syntax on the ArkTS side and call the Cangjie `returnA` interface:
+
+    ```typescript
+    // Import the Cangjie dynamic library. The library name must match the package name of the interoperability interface
+    import { returnA } from "libpackage_a.so";
+
+    // Call Cangjie interface
+    let result = returnA();
+    console.log(${result});
+    ```
+
+#### Option 3: Compile third-party library B into a har package as a module
+
+1. Create a Cangjie Static Library Module `package_b` in the ArkTS project. For details, refer to [Adding a Cangjie Static Library Module](./add_cangjie_module.md). Declare the `returnB` interface under module `package_b`:
+
+    <!-- compile -arkts_import_cangjie-example3 -->
+    <!-- cfg="-p ohos_app_cangjie_package_b --output-type=dylib" -->
+    ```cangjie
+    // package_b/src/main/cangjie/index.cj
+    package ohos_app_cangjie_package_b
+
+    public func returnB(): String {
+        return "B"
+    }
+    ```
+
+
+2. Configure the dependency on Cangjie static library module `package_b` in the dependencies field of the `oh-package.json5` file within the ArkTS module:
+
+    ```json
+    // entry/oh-package.json5
+    {
+        "dependencies": {
+            // ...
+            "package_b": "../package_b",
+            // ...
+        }
+    }
+    ```
+
+3. Create a Cangjie module in the ArkTS project. For details, refer to [Adding a Cangjie Module to an ArkTS Project](./add_cangjie_module.md).
+
+4. Create a new `package_a` directory under the cangjie folder, and create new `src->a.cj` file and `cjpm.toml` file under the `package_a` directory.
+
+    - a.cj
+
+        <!-- compile -arkts_import_cangjie-example3 -->
+        <!-- cfg="libohos_app_cangjie_package_b.so" -->
+        ```cangjie
+        // entry/src/main/cangjie/package_a/src/a.cj
+
+        package package_a
+        // Import interoperability library
+        import ohos.ark_interop.JSModule
+        import ohos.ark_interop.JSContext
+        import ohos.ark_interop.JSCallInfo
+        import ohos.ark_interop.JSValue
+        // Import third-party library B
+        import ohos_app_cangjie_package_b.returnB
+        
+        // Define the returnA interface in third-party library A
+        public func returnA(context: JSContext, callInfo: JSCallInfo): JSValue {
+            let result = "A " + returnB()
+            return context.string(result).toJSValue()
+        }
+
+        // Register this function in JSModule
+        let EXPORT_MODULE = JSModule.registerModule {
+            runtime, exports => exports["returnA"] = runtime.function(returnA).toJSValue()
+        }
+        ```
+
+    - Add the dependency on third-party library B to the dependencies field in `cjpm.toml` of third-party library A:
+
+        ```toml
+        # entry/src/main/cangjie/package_a/cjpm.toml
+        [dependencies]
+          [dependencies.ohos_app_cangjie_package_b]
+            path = ${package_b}
+        ```
+
+5. Create Cangjie third-party library A interface declarations on the ArkTS side.
+
+    - Create a new Index.d.ts file under the types->libpackage_a folder to provide interface declarations for the ArkTS side:
+
+        ```typescript
+        // entry/src/main/cangjie/types/libpackage_a/Index.d.ts
+        export declare function returnA(): string;
+        ```
+
+    - Create a new `oh-package.json5` file under the `types->libpackage_a` folder to associate `Index.d.ts` with Cangjie third-party library A.
+
+        ```json
+        // entry/src/main/cangjie/types/libpackage_a/oh-package.json5
+        {
+            "name": "libpackage_a.so",
+            "types": "./Index.d.ts",
+            "version": "1.0.0",
+            "description": ""
+        }
+
+6. Declare the paths of Cangjie third-party library A and static library module `package_b` in the `oh-package.json5` file within the ArkTS module:
+
+    ```json
+    // entry/oh-package.json5
+    {
+        "dependencies": {
+            // ...
+            "package_b": "../package_b",
+            "libpackage_a.so": "file:./src/main/cangjie/types/libpackage_a"
+            // ...
+        }
+    }
+    ```
+
+7. Declare the path of Cangjie third-party library A in the dependencies field of the `cjpm.toml` file within the entry module:
+
+    ```toml
+    // entry/cjpm.toml
+    [dependencies]
+      [dependencies.package_a]
+        path = "../package_a"
+    ```
+
+8. Import Cangjie third-party library A using the `import` syntax on the ArkTS side and call the Cangjie `returnA` interface:
+
+    ```typescript
+    // Import the Cangjie dynamic library. The library name must match the package name of the interoperability interface
+    import { returnA } from "libpackage_a.so";
+
+    // Call Cangjie interface
+    let result = returnA();
+    console.log(${result});
     ```
 
 ## Method 2: Loading Cangjie Modules Using the `loadNativeModule` Interface
