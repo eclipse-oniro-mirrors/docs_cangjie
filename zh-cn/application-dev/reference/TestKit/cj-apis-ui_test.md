@@ -2948,7 +2948,7 @@ public func checkable(b!: Bool = true): On
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|b|Bool|否|true|**命名参数。** 指定控件能否被勾选状态，true：能被勾选，false：不能被勾选。默认为false。<!--RP2--><!--RP2End-->|
+|b|Bool|否|true|**命名参数。** 指定控件能否被勾选状态，true：能被勾选，false：不能被勾选。默认为true。<!--RP2--><!--RP2End-->|
 
 **返回值：**
 
@@ -2998,7 +2998,7 @@ public func checked(b!: Bool = true): On
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|b|Bool|否|true|**命名参数。** 指定控件被勾选状态，true：被勾选，false：未被勾选。默认为false。<!--RP2--><!--RP2End-->|
+|b|Bool|否|true|**命名参数。** 指定控件被勾选状态，true：被勾选，false：未被勾选。默认为true。<!--RP2--><!--RP2End-->|
 
 **返回值：**
 
