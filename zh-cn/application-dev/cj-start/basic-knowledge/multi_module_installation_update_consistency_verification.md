@@ -26,7 +26,7 @@
 |versionCode|标识应用的版本号，取值为小于2^31次方的正整数。此数字仅用于确定某个版本是否比另一个版本更新，数值越大表示版本越高。开发者可以将该值设置为任何正整数，但是必须确保应用的新版本都使用比旧版本更大的值。该字段来源[app.json5配置文件](./app-configuration-file.md#appjson5配置文件)中versionCode字段。|是|是|
 |apiReleaseType|标识编译HAP的SDK发布类型。设备中未安装该应用，该应用包含多个模块包，模块一个一个安装时，不检验一致性。该字段来源[app.json5配置文件](./app-configuration-file.md#appjson5配置文件)中apiReleaseType字段。|否|是|
 |singleton|标识应用是否安装在0用户下。|否|是|
-|appType|标识应用的类型，分为SYSTEM_APP（系统应用）、THIRD_SYSTEM_APP（三方系统应用）、THIRD_PARTY_APP（三方应用）。|是|是|
+|appType|标识应用的类型，分为SYSTEM_APP（系统应用）、THIRD_SYSTEM_APP（三方系统应用）、THIRD_PARTY_APP（三方应用）。|是|是|<!--RP3--><!--RP3End-->
 |isStage|标识应用是否为Stage模型。|是，FA和stage同版本不允许变更|是|
 |targetBundleName|标识当前包所指定的目标应用，配置该字段的应用为具有overlay特征的应用。该字段来源[app.json5配置文件](./app-configuration-file.md#appjson5配置文件)中targetBundleName字段。|是|是|
 |targetPriority|标识当前应用的优先级。该字段来源[app.json5配置文件](./app-configuration-file.md#appjson5配置文件)中targetPriority字段。|是|是|
