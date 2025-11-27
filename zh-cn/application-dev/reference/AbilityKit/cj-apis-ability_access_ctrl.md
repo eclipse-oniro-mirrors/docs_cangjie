@@ -189,7 +189,7 @@ try {
         }
     }
 
-    let ctx = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+    let ctx = Global.abilityContext // 此处需手动配置模板，获取Context上下文。上下文获取方式请参见使用说明。
     let atManager = AbilityAccessCtrl.createAtManager()
     let permissionList = ["ohos.permission.READ_CONTACTS", "ohos.permission.CAMERA"]
     atManager.requestPermissionsFromUser(ctx, permissionList, resultCallback)

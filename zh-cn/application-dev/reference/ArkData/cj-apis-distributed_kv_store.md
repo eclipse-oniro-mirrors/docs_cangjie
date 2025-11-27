@@ -200,7 +200,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let manager = DistributedKVStore.createKVManager(KVManagerConfig(Global.abilityContext, "test_kvstore")) // 需获取Context应用上下文，详见本文使用说明
+    let manager = DistributedKVStore.createKVManager(KVManagerConfig(Global.abilityContext, "test_kvstore")) // 此处需手动配置模板，获取Context上下文。上下文获取方式请参见使用说明。
     let store = (manager.getKVStore<DeviceKVStore>("test", KVOptions(KVSecurityLevel.S1)) as DeviceKVStore).getOrThrow()
     store.put("key", KVValueType.StringValue("value"))
     store.get("key")
@@ -254,7 +254,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let manager = DistributedKVStore.createKVManager(KVManagerConfig(Global.abilityContext, "test_kvstore")) // 需获取Context应用上下文，详见本文使用说明
+    let manager = DistributedKVStore.createKVManager(KVManagerConfig(Global.abilityContext, "test_kvstore")) // 此处需手动配置模板，获取Context上下文。上下文获取方式请参见使用说明。
     let store = (manager.getKVStore<DeviceKVStore>("test", KVOptions(KVSecurityLevel.S1)) as DeviceKVStore).getOrThrow()
     store.put("key", KVValueType.StringValue("value"))
     store.getEntries("key")
@@ -308,7 +308,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let manager = DistributedKVStore.createKVManager(KVManagerConfig(Global.abilityContext, "test_kvstore")) // 需获取Context应用上下文，详见本文使用说明
+    let manager = DistributedKVStore.createKVManager(KVManagerConfig(Global.abilityContext, "test_kvstore")) // 此处需手动配置模板，获取Context上下文。上下文获取方式请参见使用说明。
     let store = (manager.getKVStore<DeviceKVStore>("test", KVOptions(KVSecurityLevel.S1)) as DeviceKVStore).getOrThrow()
     store.put("key", KVValueType.StringValue("value"))
     store.getEntries(Query())
@@ -363,7 +363,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let manager = DistributedKVStore.createKVManager(KVManagerConfig(Global.abilityContext, "test_kvstore")) // 需获取Context应用上下文，详见本文使用说明
+    let manager = DistributedKVStore.createKVManager(KVManagerConfig(Global.abilityContext, "test_kvstore")) // 此处需手动配置模板，获取Context上下文。上下文获取方式请参见使用说明。
     let store = (manager.getKVStore<DeviceKVStore>("test", KVOptions(KVSecurityLevel.S1)) as DeviceKVStore).getOrThrow()
     store.put("key", KVValueType.StringValue("value"))
     store.getResultSet("key")
@@ -418,7 +418,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let manager = DistributedKVStore.createKVManager(KVManagerConfig(Global.abilityContext, "test_kvstore")) // 需获取Context应用上下文，详见本文使用说明
+    let manager = DistributedKVStore.createKVManager(KVManagerConfig(Global.abilityContext, "test_kvstore")) // 此处需手动配置模板，获取Context上下文。上下文获取方式请参见使用说明。
     let store = (manager.getKVStore<DeviceKVStore>("test", KVOptions(KVSecurityLevel.S1)) as DeviceKVStore).getOrThrow()
     store.put("key", KVValueType.StringValue("value"))
     store.getResultSet(Query())
@@ -472,7 +472,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let manager = DistributedKVStore.createKVManager(KVManagerConfig(Global.abilityContext, "test_kvstore")) // 需获取Context应用上下文，详见本文使用说明
+    let manager = DistributedKVStore.createKVManager(KVManagerConfig(Global.abilityContext, "test_kvstore")) // 此处需手动配置模板，获取Context上下文。上下文获取方式请参见使用说明。
     let store = (manager.getKVStore<DeviceKVStore>("test", KVOptions(KVSecurityLevel.S1)) as DeviceKVStore).getOrThrow()
     store.put("key", KVValueType.StringValue("value"))
     let result = store.getResultSize(Query())
@@ -529,7 +529,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let kvManager = DistributedKVStore.createKVManager(KVManagerConfig(Global.abilityContext, "com.example.myapplication")) // 需获取Context应用上下文，详见本文使用说明
+    let kvManager = DistributedKVStore.createKVManager(KVManagerConfig(Global.abilityContext, "com.example.myapplication")) // 此处需手动配置模板，获取Context上下文。上下文获取方式请参见使用说明。
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -688,7 +688,7 @@ public init(name: String, nullable: Bool, default: String, nodeType: Int32)
 |name|String|是|-|FieldNode的值，不能为空，且不大于64个字符。|
 |nullable|Bool|是|-|表示数据库字段是否可以为空。true表示此节点数据可以为空，false表示此节点数据不能为空。|
 |default|String|是|-|表示FieldNode的默认值。|
-|nodeType|Int32|是|-|表示指定节点对应的数据类型，取值为[ValueType](#enum-kvvaluetype)对应的枚举值。暂不支持BYTE_ARRAY，使用此类型会导致[getKVStore](#func-getkvstoretstring-kvoptions-where-t--singlekvstore)失败。。|
+|nodeType|Int32|是|-|表示指定节点对应的数据类型，取值为[ValueType](#enum-kvvaluetype)对应的枚举值。暂不支持BYTE_ARRAY，使用此类型会导致[getKVStore](#func-getkvstoretstring-kvoptions-where-t--singlekvstore)失败。|
 
 ## class KVManager
 
@@ -733,7 +733,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let kvManager = DistributedKVStore.createKVManager(KVManagerConfig(Global.abilityContext, "com.example.myapplication")) // 需获取Context应用上下文，详见本文使用说明
+    let kvManager = DistributedKVStore.createKVManager(KVManagerConfig(Global.abilityContext, "com.example.myapplication")) // 此处需手动配置模板，获取Context上下文。上下文获取方式请参见使用说明。
     kvManager.closeKVStore("com.example.myapplication", "myStore")
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
@@ -779,7 +779,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let kvManager = DistributedKVStore.createKVManager(KVManagerConfig(Global.abilityContext, "com.example.myapplication")) // 需获取Context应用上下文，详见本文使用说明
+    let kvManager = DistributedKVStore.createKVManager(KVManagerConfig(Global.abilityContext, "com.example.myapplication")) // 此处需手动配置模板，获取Context上下文。上下文获取方式请参见使用说明。
     kvManager.deleteKVStore("com.example.myapplication", "myStore")
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
@@ -822,7 +822,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let kvManager = DistributedKVStore.createKVManager(KVManagerConfig(Global.abilityContext, "com.example.myapplication")) // 需获取Context应用上下文，详见本文使用说明
+    let kvManager = DistributedKVStore.createKVManager(KVManagerConfig(Global.abilityContext, "com.example.myapplication")) // 此处需手动配置模板，获取Context上下文。上下文获取方式请参见使用说明。
     kvManager.getAllKVStoreId("com.example.myapplication")
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
@@ -879,7 +879,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let kvManager = DistributedKVStore.createKVManager(KVManagerConfig(Global.abilityContext, "com.example.myapplication")) // 需获取Context应用上下文，详见本文使用说明
+    let kvManager = DistributedKVStore.createKVManager(KVManagerConfig(Global.abilityContext, "com.example.myapplication")) // 此处需手动配置模板，获取Context上下文。上下文获取方式请参见使用说明。
     let opt = KVOptions(
         KVSecurityLevel.S4,
         createIfMissing: true,
@@ -1011,7 +1011,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let kvManager = DistributedKVStore.createKVManager(KVManagerConfig(Global.abilityContext, "test_kvstore")) // 需获取Context应用上下文，详见本文使用说明
+    let kvManager = DistributedKVStore.createKVManager(KVManagerConfig(Global.abilityContext, "test_kvstore")) // 此处需手动配置模板，获取Context上下文。上下文获取方式请参见使用说明。
     let store = (kvManager.getKVStore<DeviceKVStore>("test", KVOptions(KVSecurityLevel.S1)) as DeviceKVStore).getOrThrow()
     store.put("key", KVValueType.StringValue("value"))
     var resultSet = store.getResultSet("key")
@@ -1349,7 +1349,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let kvManager = DistributedKVStore.createKVManager(KVManagerConfig(Global.abilityContext, "test_kvstore")) // 需获取Context应用上下文，详见本文使用说明
+    let kvManager = DistributedKVStore.createKVManager(KVManagerConfig(Global.abilityContext, "test_kvstore")) // 此处需手动配置模板，获取Context上下文。上下文获取方式请参见使用说明。
     let opt = KVOptions(
         KVSecurityLevel.S4,
         createIfMissing: true,
@@ -1396,7 +1396,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let kvManager = DistributedKVStore.createKVManager(KVManagerConfig(Global.abilityContext, "test_kvstore")) // 需获取Context应用上下文，详见本文使用说明
+    let kvManager = DistributedKVStore.createKVManager(KVManagerConfig(Global.abilityContext, "test_kvstore")) // 此处需手动配置模板，获取Context上下文。上下文获取方式请参见使用说明。
     let opt = KVOptions(
         KVSecurityLevel.S4,
         createIfMissing: true,
@@ -1451,7 +1451,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let kvManager = DistributedKVStore.createKVManager(KVManagerConfig(Global.abilityContext, "test_kvstore")) // 需获取Context应用上下文，详见本文使用说明
+    let kvManager = DistributedKVStore.createKVManager(KVManagerConfig(Global.abilityContext, "test_kvstore")) // 此处需手动配置模板，获取Context上下文。上下文获取方式请参见使用说明。
     let opt = KVOptions(
         KVSecurityLevel.S4,
         createIfMissing: true,
@@ -1506,7 +1506,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let kvManager = DistributedKVStore.createKVManager(KVManagerConfig(Global.abilityContext, "test_kvstore")) // 需获取Context应用上下文，详见本文使用说明
+    let kvManager = DistributedKVStore.createKVManager(KVManagerConfig(Global.abilityContext, "test_kvstore")) // 此处需手动配置模板，获取Context上下文。上下文获取方式请参见使用说明。
     let opt = KVOptions(
         KVSecurityLevel.S4,
         createIfMissing: true,
@@ -1552,7 +1552,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let kvManager = DistributedKVStore.createKVManager(KVManagerConfig(Global.abilityContext, "test_kvstore")) // 需获取Context应用上下文，详见本文使用说明
+    let kvManager = DistributedKVStore.createKVManager(KVManagerConfig(Global.abilityContext, "test_kvstore")) // 此处需手动配置模板，获取Context上下文。上下文获取方式请参见使用说明。
     let opt = KVOptions(
         KVSecurityLevel.S4,
         createIfMissing: true,
@@ -1612,7 +1612,7 @@ import kit.ArkData.*
 import kit.PerformanceAnalysisKit.*
 import ohos.business_exception.BusinessException
 
-let kvManager = DistributedKVStore.createKVManager(KVManagerConfig(Global.abilityContext, "test_kvstore")) // 需获取Context应用上下文，详见本文使用说明
+let kvManager = DistributedKVStore.createKVManager(KVManagerConfig(Global.abilityContext, "test_kvstore")) // 此处需手动配置模板，获取Context上下文。上下文获取方式请参见使用说明。
 let kvStore = (kvManager.getKVStore<DeviceKVStore>("test", KVOptions(KVSecurityLevel.S1)) as DeviceKVStore).getOrThrow()
 try {
     let value = kvStore.get("myKey")
@@ -1668,7 +1668,7 @@ import kit.PerformanceAnalysisKit.*
 import ohos.business_exception.BusinessException
 
 let kvManager = DistributedKVStore.createKVManager(
-    KVManagerConfig(Global.abilityContext, "test_kvstore")) // 需获取Context应用上下文，详见本文使用说明
+    KVManagerConfig(Global.abilityContext, "test_kvstore")) // 此处需手动配置模板，获取Context上下文。上下文获取方式请参见使用说明。
 let kvStore = (kvManager.getKVStore<DeviceKVStore>("test", KVOptions(KVSecurityLevel.S1)) as DeviceKVStore).getOrThrow()
 try {
     kvStore.put("myKey", StringValue("myValue"))
@@ -1719,7 +1719,7 @@ import kit.PerformanceAnalysisKit.Hilog
 
 try {
     let kvManager = DistributedKVStore.createKVManager(
-        KVManagerConfig(Global.abilityContext, "test_kvstore")) // 需获取Context应用上下文，详见本文使用说明
+        KVManagerConfig(Global.abilityContext, "test_kvstore")) // 此处需手动配置模板，获取Context上下文。上下文获取方式请参见使用说明。
     let opt = KVOptions(
         KVSecurityLevel.S4,
         createIfMissing: true,
@@ -1778,7 +1778,7 @@ import kit.PerformanceAnalysisKit.Hilog
 
 try {
     let kvManager = DistributedKVStore.createKVManager(
-        KVManagerConfig(Global.abilityContext, "test_kvstore")) // 需获取Context应用上下文，详见本文使用说明
+        KVManagerConfig(Global.abilityContext, "test_kvstore")) // 此处需手动配置模板，获取Context上下文。上下文获取方式请参见使用说明。
     let opt = KVOptions(
         KVSecurityLevel.S4,
         createIfMissing: true,
@@ -1826,7 +1826,7 @@ import kit.PerformanceAnalysisKit.Hilog
 
 try {
     let kvManager = DistributedKVStore.createKVManager(
-        KVManagerConfig(Global.abilityContext, "test_kvstore")) // 需获取Context应用上下文，详见本文使用说明
+        KVManagerConfig(Global.abilityContext, "test_kvstore")) // 此处需手动配置模板，获取Context上下文。上下文获取方式请参见使用说明。
     let opt = KVOptions(
         KVSecurityLevel.S4,
         createIfMissing: true,
@@ -1872,7 +1872,7 @@ import kit.PerformanceAnalysisKit.Hilog
 
 try {
     let kvManager = DistributedKVStore.createKVManager(
-        KVManagerConfig(Global.abilityContext, "test_kvstore")) // 需获取Context应用上下文，详见本文使用说明
+        KVManagerConfig(Global.abilityContext, "test_kvstore")) // 此处需手动配置模板，获取Context上下文。上下文获取方式请参见使用说明。
     let opt = KVOptions(
         KVSecurityLevel.S4,
         createIfMissing: true,
@@ -1921,7 +1921,7 @@ import kit.PerformanceAnalysisKit.Hilog
 
 try {
     let kvManager = DistributedKVStore.createKVManager(
-        KVManagerConfig(Global.abilityContext, "test_kvstore")) // 需获取Context应用上下文，详见本文使用说明
+        KVManagerConfig(Global.abilityContext, "test_kvstore")) // 此处需手动配置模板，获取Context上下文。上下文获取方式请参见使用说明。
     let opt = KVOptions(
         KVSecurityLevel.S4,
         createIfMissing: true,

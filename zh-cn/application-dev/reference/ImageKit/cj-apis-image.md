@@ -462,7 +462,7 @@ import kit.PerformanceAnalysisKit.*
 import ohos.business_exception.BusinessException
 import ohos.resource_manager.ResourceManager
 
-let resourceManager = Global.abilityContext.resourceManager // 需获取Context应用上下文，详见本文使用说明
+let resourceManager = Global.abilityContext.resourceManager // 此处需手动配置模板，获取Context上下文。上下文获取方式请参见使用说明。
 try {
     let rawfd = resourceManager.getRawFd("test.png")
     createImageSource(rawfd)

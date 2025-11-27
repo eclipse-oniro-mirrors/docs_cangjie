@@ -262,7 +262,7 @@ try {
     let queryOption = AVImageQueryOptions.AvImageQueryNextSync
     let param = PixelMapParams(width: 300, height: 300)
     let generator = createAVImageGenerator()
-    let abilityContext = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+    let abilityContext = Global.abilityContext // 此处需手动配置模板，获取Context上下文。上下文获取方式请参见使用说明。
     let rawFd = abilityContext.resourceManager.getRawFd("trailer.mp4")    // 请替换您的资源路径，获取文件路径参考本文使用说明
     generator.fdSrc = AVFileDescriptor(rawFd.fd, offset: rawFd.offset, length: rawFd.length)
     let pic = generator.fetchFrameByTime(timeUs, queryOption, param)
@@ -309,7 +309,7 @@ try {
     let queryOption = AVImageQueryOptions.AvImageQueryNextSync
     let param = PixelMapParams(width: 300, height: 300)
     let generator = createAVImageGenerator()
-    let abilityContext = Global.abilityContext // 需获取Context应用上下文，详见本文使用说明
+    let abilityContext = Global.abilityContext // 此处需手动配置模板，获取Context上下文。上下文获取方式请参见使用说明。
     let rawFd = abilityContext.resourceManager.getRawFd("trailer.mp4")
     generator.fdSrc = AVFileDescriptor(rawFd.fd, offset:rawFd.offset, length:rawFd.length)
     let pic = generator.fetchFrameByTime(timeUs, queryOption, param)

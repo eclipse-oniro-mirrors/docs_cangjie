@@ -1,6 +1,8 @@
 # ArkData（方舟数据管理）（Beta特性）
 
 - [ArkData简介](cj-data-mgmt-overview.md)
+- 标准化数据定义
+  - [Uniform Type Descriptor(UTD)预置类型列表](cj-uniform-data-type-list.md)
 - 应用数据持久化
   - [应用数据持久化概述](cj-app-data-persistence-overview.md)
   - [通过用户首选项实现数据持久化](cj-data-persistence-by-preferences.md)
