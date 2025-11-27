@@ -23,7 +23,7 @@ $ cjc tool.cj --output-type=dylib
 
 This compiles `tool.cj` into a dynamic library. On Linux, `cjc` will generate a dynamic library file named `libtool.so`.
 
-**Note:** If an executable program is linked with Cangjie dynamic library files, the `--dy-std` and `--dy-libs` options must also be specified. For details, refer to the [`--dy-std` option description](#--dy-std).
+**Note:** If an executable program is linked with Cangjie dynamic library files, the `--dy-std` option must also be specified. For details, refer to the [`--dy-std` option description](#--dy-std).
 
 <sup>[frontend]</sup> In `cjc-frontend`, the compilation process stops at `LLVM IR`, so the output is always a `.bc` file. However, different `--output-type` values still affect the frontend compilation strategy.
 
@@ -75,7 +75,9 @@ $ cjc main.cj liblog.a
 
 ### `--module-name <value>` <sup>[frontend]</sup>
 
-This option is deprecated and will be removed in the future. Using this option in the current version has no functional effect.
+> **Note:**
+>
+> This option is deprecated and will be removed in the future. Using this option in the current version has no functional effect.
 
 ### `--output <value>`, `-o <value>`, `-o<value>` <sup>[frontend]</sup>
 
@@ -113,7 +115,9 @@ void printHello() {
 }
 ```
 
-And the Cangjie file `main.cj`:
+The Cangjie file `main.cj`:
+
+<!-- code_check_manual -->
 
 ```cangjie
 foreign func printHello(): Unit
@@ -220,6 +224,7 @@ For example, given the following directory structure where `libs/myModule` conta
 ```
 
 And the `main.cj` file:
+
 <!-- code_check_manual -->
 
 ```cangjie
@@ -237,6 +242,7 @@ You can add `./libs` to the AST file search path using `--import-path ./libs`. `
 ### `--scan-dependency` <sup>[frontend]</sup>
 
 The `--scan-dependency` command outputs direct dependencies and other information for a package's source code or `.cjo` file in JSON format.
+
 <!-- code_check_manual -->
 
 ```cangjie
@@ -371,23 +377,19 @@ When compiling a dynamic library (i.e., when `--output-type=dylib` is specified)
 **Important Notes:**
 
 1. When both `--static-std` and `--dy-std` options are used together, only the last specified option takes effect.
-2. The `--dy-std` option cannot be used together with the `--static-libs` option; otherwise, an error will occur.
-3. When compiling an executable program that links to a Cangjie dynamic library (i.e., a product compiled with the `--output-type=dylib` option), the `--dy-std` option must be explicitly specified to dynamically link the standard library. Otherwise, multiple copies of the standard library may appear in the program, potentially causing runtime issues.
+2. When compiling an executable program that links to a Cangjie dynamic library (i.e., a product compiled with the `--output-type=dylib` option), the `--dy-std` option must be explicitly specified to dynamically link the standard library. Otherwise, multiple copies of the standard library may appear in the program, potentially causing runtime issues.
 
 ### `--static-libs`
 
-This option is deprecated and will be removed in the future. Using this option in the current version has no functional effect.
+> **Note:**
+>
+> This option is deprecated and will be removed in the future. Using this option in the current version has no functional effect.
 
 ### `--dy-libs`
 
-This option is deprecated and will be removed in the future. Using this option in the current version has no functional effect.
-
-**Important Notes:**
-
-1. When both `--static-libs` and `--dy-libs` options are used together, only the last specified option takes effect.
-2. The `--static-std` option cannot be used together with the `--dy-libs` option; otherwise, an error will occur.
-3. When `--dy-std` is used alone, the `--dy-libs` option is automatically enabled, and a warning message is displayed.
-4. When `--dy-libs` is used alone, the `--dy-std` option is automatically enabled, and a warning message is displayed.
+> **Note:**
+>
+> This option is deprecated and will be removed in the future. Using this option in the current version has no functional effect.
 
 ### `--stack-trace-format=[default|simple|all]`
 
@@ -439,7 +441,7 @@ Enables and specifies the `LTO` (`Link Time Optimization`) compilation mode.
     >
     > In `LTO` mode, the path to the static library (`.bc` file) must be provided to the Cangjie compiler.
 
-3. In `LTO` mode, when statically linking the standard library (`--static-std` & `--static-libs`), the standard library code participates in `LTO` optimization and is statically linked into the executable. When dynamically linking the standard library (`--dy-std` & `--dy-libs`), the dynamic library from the standard library is still used for linking in `LTO` mode.
+3. In `LTO` mode, when statically linking the standard library (`--static-std`), the standard library code participates in `LTO` optimization and is statically linked into the executable. When dynamically linking the standard library (`--dy-std`), the dynamic library from the standard library is still used for linking in `LTO` mode.
 
     ```shell
     # Static linking: standard library code participates in LTO optimization
@@ -759,11 +761,13 @@ Specifies linker options.
 
 ### `--profile-compile-time` <sup>[frontend]</sup>
 
-Prints time consumption data for each compilation phase.
+Outputs the time consumption data of each compilation phase into a file with the suffix `.time.prof`: if the output directory is specified, the file will be saved there; if `output` specifies a file, the `.time.prof` file will be created in the same directory as that file.
 
 ### `--profile-compile-memory` <sup>[frontend]</sup>
 
-Prints memory consumption data for each compilation phase.## Unit Test Options
+Outputs the memory consumption data of each compilation phase into a file with the suffix `.mem.prof`: if the output directory is specified, the file will be saved there; if `output` specifies a file, the `.mem.prof` file will be created in the same directory as that file.
+
+## Unit Test Options
 
 ### `--test` <sup>[frontend]</sup>
 
@@ -821,16 +825,19 @@ application
 └── a3.cj
 ```
 
-You can compile all test cases (`a1.cj` and `a2.cj`) in the `pkgc` package from the `application` directory using the `-p` compilation option:
+You can use the `-p` compilation option to compile the entire package in the `application` directory:
 
 ```shell
-cjc pkgc --test -p
+cjc --test -p pkgc
 ```
+
+to compile the test cases `a1.cj` and `a2.cj` under the entire `pkgc` package.
+
 <!-- code_check_manual -->
 
 ```cangjie
 /*a1.cj*/
-package a
+package pkgc
 
 import std.unittest.*
 import std.unittest.testmacro.*
@@ -843,11 +850,12 @@ public class TestA {
     }
 }
 ```
+
 <!-- code_check_manual -->
 
 ```cangjie
 /*a2.cj*/
-package a
+package pkgc
 
 import std.unittest.*
 import std.unittest.testmacro.*
@@ -912,7 +920,7 @@ func concatM(s1: String, s2: String): String {
     return s1 + s2
 }
 
-main() {
+main(): Int64 {
     println(concatM("a", "b"))
     0
 }
@@ -946,7 +954,9 @@ cjc -p my_pkg --test-only -L output -lmain --import-path output
 
 If `on` is passed, the package will enable mock compilation, allowing classes in the package to be mocked in test cases. `off` explicitly disables mocking.
 
-**Note:** Mock support is automatically enabled in test mode (when `--test` is enabled), and the `--mock` option does not need to be explicitly passed.
+> **Note:** 
+>
+> Mock support is automatically enabled in test mode (when `--test` is enabled), and the `--mock` option does not need to be explicitly passed.
 
 `runtime-error` is only available in test mode (when `--test` is enabled). It allows compiling packages with mock code but does not perform any mock-related processing in the compiler (which may introduce overhead and affect test runtime performance). This can be useful for benchmarking test cases with mock code. Avoid compiling and running tests with mock code when using this option, as it will throw runtime exceptions.
 

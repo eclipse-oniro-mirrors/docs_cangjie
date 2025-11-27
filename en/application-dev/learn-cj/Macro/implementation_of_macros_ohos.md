@@ -364,7 +364,7 @@ public macro getIdent(attr:Tokens, input:Tokens):Tokens {
 Macro package `pkg2` defines the `Prop` macro, which nests the `getIdent` macro invocation:
 
 <!-- compile -macro8 -->
-<!-- cfg="--debug-macro --compile-macro" -->
+<!-- cfg="--compile-macro" -->
 
 ```cangjie
 macro package pkg2
@@ -560,6 +560,8 @@ Macro definitions:
 ```cangjie
 macro package define
 
+import std.ast.*
+
 public macro Outer(input: Tokens): Tokens {
     return input
 }
@@ -576,8 +578,13 @@ Macro invocations:
 <!-- cfg="--debug-macro" -->
 
 ```cangjie
-@Outer var a = 0
-@Inner var b = 0 // Error, The macro call 'Inner' should with the surround code contains a call 'Outer'.
+import define.*
+
+@Outer
+var a = 0
+
+@Inner
+var b = 0 // Error, The macro call 'Inner' should with the surround code contains a call 'Outer'.
 ```
 
 As shown in the code above, the `Inner` macro uses the `assertParentContext` function during definition to check whether it is nested within the `Outer` macro during invocation. In the example, since `Outer` and `Inner` do not have such a nesting relationship during invocation, the compiler will report an error.

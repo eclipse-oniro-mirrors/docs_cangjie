@@ -20,7 +20,7 @@ root_path
 
 Macro definitions are placed in the _macros_ subdirectory:
 
-<!-- run -macro1 -->
+<!-- run -macro0 -->
 <!-- cfg="--compile-macro" -->
 
 ```cangjie
@@ -40,7 +40,7 @@ public macro Outer(input: Tokens) {
 
 Macro calls are placed in the _src_ subdirectory:
 
-<!-- run -macro1 -->
+<!-- run -macro0 -->
 <!-- cfg="--debug-macro" -->
 
 ```cangjie
@@ -95,13 +95,13 @@ The `--parallel-macro-expansion` option can be added when compiling the macro-ca
 >
 > If macro functions depend on global variables, using parallel macro expansion may introduce risks.
 
-<!-- compile -->
+<!-- compile -macro1-->
 <!-- cfg="--compile-macro" -->
 
 ```cangjie
 macro package define
 import std.ast.*
-import std.collection.*
+import std.collection.HashMap
 
 var Counts = HashMap<String, Int64>()
 
@@ -313,43 +313,3 @@ In debug mode, a temporary file `demo.cj.macrocall` will be generated, containin
 
 If the macro-expanded code contains semantic errors, the compiler's error messages will trace back to specific line numbers in the expanded code. Notes about Cangjie macro debug mode:
 
-- Debug mode reorders source code line numbers and is not suitable for certain special line-breaking scenarios. For example:
-
-  ```txt
-  // before expansion
-  @M() - 2 // macro M return 2
-
-  // after expansion
-  // ===== Emitted my Macro M at line 1 ===
-  2
-  // ===== End of the Emit =====
-  - 2
-  ```
-
-  Cases where line breaks alter semantics should not use debug mode.
-
-- Debugging macro calls within macro definitions is not supported and will cause compilation errors.
-
-  <!-- compile.error -->
-
-  ```cangjie
-  public macro M(input: Tokens) {
-      let a = @M2(1+2) // M2 is in macro M, not suitable for debug mode.
-      return input + quote($a)
-  }
-  ```
-
-- Debugging macros with parentheses is not supported.
-
-  <!-- compile.error -->
-
-  ```cangjie
-  // main.cj
-
-  main() {
-      // For macro with parenthesis, newline introduced by debug will change the semantics
-      // of the expression, so it is not suitable for debug mode.
-      let t = @M(1+2)
-      0
-  }
-  ```
