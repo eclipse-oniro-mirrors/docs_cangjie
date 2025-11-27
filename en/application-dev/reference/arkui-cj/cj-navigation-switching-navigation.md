@@ -4,7 +4,7 @@ The Navigation component is the root view container for route navigation, typica
 
 > **Note:**
 >
-> - When Navigation is nested within NavBar, the lifecycle of the inner Navigation does not synchronize with the outer Navigation or the lifecycle of [Full Modal](./cj-universal-attribute-bindcontentcover.md).
+> - When Navigation is nested within Navigation, the lifecycle of the inner Navigation does not synchronize with the outer Navigation or the lifecycle of [Full Modal](./cj-universal-attribute-bindcontentcover.md).
 > - When NavDestination has no main/subtitle set and no back button, the title bar is not displayed.
 
 ## Import Module
@@ -765,20 +765,92 @@ public operator func ==(other: LaunchMode): Bool
 The Navigation component is the root view container for route navigation.
 
 ```cangjie
+package ohos_app_cangjie_entry
 import kit.ArkUI.*
+import ohos.arkui.state_macro_manage.*
+
+@Builder
+func pageMap(name: String, param: Any) {
+    if (name == "pageOne") {
+        PageOne()
+    } else {
+        PageTwo()
+    }
+}
 
 @Entry
 @Component
-struct NavigationExample {
-    build() {
-        Navigation() {
-            Text("Home")
-                .width("100%")
-                .height("100%")
+class EntryView {
+    @Provide
+    var stack: NavPathStack = NavPathStack()
+
+    func build() {
+        Navigation(this.stack) {
+            Stack(alignContent: Alignment.Center) {
+                Button("push PageOne", ButtonOptions(shape: ButtonType.Capsule))
+                .width(80.percent)
+                .height(40)
+                .onClick({ evt =>
+                    this.stack.pushPath(NavPathInfo(name: "pageOne", param: "pageOne test"))
+                })
+            }
+            .width(100.percent)
+            .height(50.percent)
         }
-        .title("Home")
-        .width("100%")
-        .height("100%")
+        .title("PageHome")
+        .navDestination(bind(pageMap, this))
+    }
+}
+
+@Component
+class PageOne {
+    @Consume
+    var stack: NavPathStack
+
+    func build() {
+        NavDestination() {
+            Stack(alignContent: Alignment.Center) {
+                Button("push PageTwo", ButtonOptions(shape: ButtonType.Capsule))
+                .width(80.percent)
+                .height(40)
+                .onClick({ evt =>
+                    this.stack.pushPathByName("pageTwo", "pageOne test")
+                })
+            }
+            .width(100.percent)
+            .height(50.percent)
+        }
+        .title("PageOne")
+    }
+}
+
+@Component
+class PageTwo {
+    private var pathStack: NavPathStack = NavPathStack()
+
+    func build() {
+        NavDestination() {
+            Stack(alignContent: Alignment.Center) {
+                Button("pop PageOne", ButtonOptions(shape: ButtonType.Capsule))
+                .width(80.percent)
+                .height(40)
+                .onClick({ evt =>
+                    this.pathStack.pop()
+                })
+            }
+            .width(100.percent)
+            .height(50.percent)
+        }
+        .title("PageTwo")
+        .onReady({ context =>
+            this.pathStack = context.pathStack
+        })
+        .onBackPressed({ =>
+            this.pathStack.pop()
+            return true
+        })
     }
 }
 ```
+
+![navigation](./figures/navigationExample1.gif)

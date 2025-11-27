@@ -3281,7 +3281,7 @@ public enum WindowType <: Equatable<WindowType> {
 TypeApp
 ```
 
-**功能：** 应用程序窗口。
+**功能：** 应用程序窗口。此窗口类型不支持在创建窗口时使用，仅可在[getWindowProperties](#func-getwindowproperties)接口的返回值中用于读取。
 
 **系统能力：** SystemCapability.WindowManager.WindowManager.Core
 
@@ -3293,7 +3293,7 @@ TypeApp
 TypeMain
 ```
 
-**功能：** 应用主窗口。此窗口类型不支持在创建窗口时使用，仅可在getWindowProperties接口的返回值中用于读取。
+**功能：** 应用主窗口。此窗口类型不支持在创建窗口时使用，仅可在[getWindowProperties](#func-getwindowproperties)接口的返回值中用于读取。
 
 **系统能力：** SystemCapability.WindowManager.WindowManager.Core
 

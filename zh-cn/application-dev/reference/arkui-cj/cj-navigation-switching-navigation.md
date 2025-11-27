@@ -4,7 +4,7 @@ Navigation组件是路由导航的根视图容器，一般作为Page页面的根
 
 > **说明：**
 >
-> - NavBar嵌套使用Navigation时，内层Navigation的生命周期不和外层Navigation以及[全模态](./cj-universal-attribute-bindcontentcover.md)的生命周期进行联动。
+> - Navigation嵌套使用Navigation时，内层Navigation的生命周期不和外层Navigation以及[全模态](./cj-universal-attribute-bindcontentcover.md)的生命周期进行联动。
 > - NavDestination未设置主副标题并且没有返回键时，不显示标题栏。
 
 ## 导入模块
@@ -773,18 +773,88 @@ package ohos_app_cangjie_entry
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
 
+@Builder
+func pageMap(name: String, param: Any) {
+    if (name == "pageOne") {
+        PageOne()
+    } else {
+        PageTwo()
+    }
+}
+
 @Entry
 @Component
-class NavigationExample {
+class EntryView {
+    @Provide
+    var stack: NavPathStack = NavPathStack()
+
     func build() {
-        Navigation() {
-            Text("Home")
-                .width(100.percent)
-                .height(100.percent)
+        Navigation(this.stack) {
+            Stack(alignContent: Alignment.Center) {
+                Button("push PageOne", ButtonOptions(shape: ButtonType.Capsule))
+                .width(80.percent)
+                .height(40)
+                .onClick({ evt =>
+                    this.stack.pushPath(NavPathInfo(name: "pageOne", param: "pageOne test"))
+                })
+            }
+            .width(100.percent)
+            .height(50.percent)
         }
-        .title("Home")
-        .width(100.percent)
-        .height(100.percent)
+        .title("PageHome")
+        .navDestination(bind(pageMap, this))
+    }
+}
+
+@Component
+class PageOne {
+    @Consume
+    var stack: NavPathStack
+
+    func build() {
+        NavDestination() {
+            Stack(alignContent: Alignment.Center) {
+                Button("push PageTwo", ButtonOptions(shape: ButtonType.Capsule))
+                .width(80.percent)
+                .height(40)
+                .onClick({ evt =>
+                    this.stack.pushPathByName("pageTwo", "pageOne test")
+                })
+            }
+            .width(100.percent)
+            .height(50.percent)
+        }
+        .title("PageOne")
+    }
+}
+
+@Component
+class PageTwo {
+    private var pathStack: NavPathStack = NavPathStack()
+
+    func build() {
+        NavDestination() {
+            Stack(alignContent: Alignment.Center) {
+                Button("pop PageOne", ButtonOptions(shape: ButtonType.Capsule))
+                .width(80.percent)
+                .height(40)
+                .onClick({ evt =>
+                    this.pathStack.pop()
+                })
+            }
+            .width(100.percent)
+            .height(50.percent)
+        }
+        .title("PageTwo")
+        .onReady({ context =>
+            this.pathStack = context.pathStack
+        })
+        .onBackPressed({ =>
+            this.pathStack.pop()
+            return true
+        })
     }
 }
 ```
+
+![navigation](./figures/navigationExample1.gif)

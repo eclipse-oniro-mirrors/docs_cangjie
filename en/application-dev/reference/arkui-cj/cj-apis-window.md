@@ -3272,7 +3272,7 @@ public enum WindowType <: Equatable<WindowType> {
 TypeApp
 ```
 
-**Description:** Application window.
+**Description:** Application window. This window type cannot be used when creating a window. It is only for reading purposes in the return value of the [getWindowProperties](#func-getwindowproperties) API.
 
 **System Capability:** SystemCapability.WindowManager.WindowManager.Core
 
@@ -3284,7 +3284,7 @@ TypeApp
 TypeMain
 ```
 
-**Description:** Main window of an application. This window type cannot be used when creating a window. It is only for reading purposes in the return value of the getWindowProperties API.
+**Description:** Main window of an application. This window type cannot be used when creating a window. It is only for reading purposes in the return value of the [getWindowProperties](#func-getwindowproperties) API.
 
 **System Capability:** SystemCapability.WindowManager.WindowManager.Core
 
