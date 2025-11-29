@@ -17,7 +17,8 @@ If the Web debugging switch is not enabled, DevTools cannot discover the webpage
     import ohos.arkui.state_macro_manage.*
     import kit.PerformanceAnalysisKit.Hilog
     import ohos.web.webview.WebviewController
-    import kit.ArkUI.{Web}
+    import kit.ArkUI.Web
+    import ohos.business_exception.*
 
     func loggerError(str: String) {
         Hilog.error(0, "CangjieTest", str)

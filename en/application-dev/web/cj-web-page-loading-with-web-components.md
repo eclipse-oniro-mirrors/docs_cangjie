@@ -24,7 +24,9 @@ In the following example, after the Web component loads the "www.example.com" pa
 // index.cj
 import ohos.arkui.state_macro_manage.*
 import ohos.web.webview.WebviewController
-import kit.ArkUI.{ Web }
+import kit.ArkUI.{Web, Button}
+import ohos.business_exception.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func loggerError(str: String) {
     Hilog.error(0, "CangjieTest", str)
@@ -80,7 +82,10 @@ When loading local HTML files, referencing local CSS style files can be achieved
     import ohos.arkui.state_macro_manage.*
     import kit.LocalizationKit.*
     import ohos.web.webview.WebviewController
-    import kit.ArkUI.{ Web }
+    import ohos.business_exception.*
+    import kit.ArkUI.{Web, Button}
+    import ohos.resource.__GenerateResource__
+    import kit.PerformanceAnalysisKit.Hilog
 
     func loggerError(str: String) {
         Hilog.error(0, "CangjieTest", str)

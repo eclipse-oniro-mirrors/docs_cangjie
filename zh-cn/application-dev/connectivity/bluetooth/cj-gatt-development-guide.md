@@ -184,7 +184,7 @@ try {
 
 写入描述符操作，可以更新服务端描述符的数据内容。
 
-相关API请参考[readDescriptorValue](../../reference/apis-connectivity-kit/js-apis-bluetooth-ble.md#readdescriptorvalue)和[writeDescriptorValue](../../reference/apis-connectivity-kit/js-apis-bluetooth-ble.md#writedescriptorvalue)。
+相关API请参考[readDescriptorValue](../../reference/ConnectivityKit/cj-apis-bluetooth-ble.md#func-readdescriptorvaluebledescriptor-asynccallbackbledescriptor)和[writeDescriptorValue](../../reference/ConnectivityKit/cj-apis-bluetooth-ble.md#func-writedescriptorvaluebledescriptor-asynccallbackunit)。
 
 ```cangjie
 import kit.ConnectivityKit.*
@@ -376,7 +376,7 @@ try {
 
 **3. 订阅连接状态变化事件**
 
-通过订阅连接状态变化事件，可以获取实时的GATT连接状态以及客户端的设备地址。整个连接过程涉及多种状态的跃迁，其中[StateConnected](../../reference/apis-connectivity-kit/js-apis-bluetooth-constant.md#profileconnectionstate)表示已连接，[StateDisconnected](../../reference/apis-connectivity-kit/js-apis-bluetooth-constant.md#profileconnectionstate)表示已断连。
+通过订阅连接状态变化事件，可以获取实时的GATT连接状态以及客户端的设备地址。整个连接过程涉及多种状态的跃迁，其中[StateConnected](../../reference/ConnectivityKit/cj-apis-bluetooth-constant.md#stateconnected)表示已连接，[StateDisconnected](../../reference/ConnectivityKit/cj-apis-bluetooth-constant.md#statedisconnected)表示已断连。
 
 ```cangjie
 import ohos.callback_invoke.*

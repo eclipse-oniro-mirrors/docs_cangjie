@@ -194,6 +194,8 @@
                 - [Stage模型应用配置文件](application-models/cj-config-file-stage.md)
         - ArkData（方舟数据管理）
             - [ArkData简介](database/cj-data-mgmt-overview.md)
+            - 标准化数据定义
+              - [UTD预置列表](database/cj-uniform-data-type-list.md)
             - 应用数据持久化
                 - [应用数据持久化概述](database/cj-app-data-persistence-overview.md)
                 - [通过用户首选项实现数据持久化](database/cj-data-persistence-by-preferences.md)

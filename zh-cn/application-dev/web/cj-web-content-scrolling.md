@@ -14,8 +14,10 @@ ArkWeb中的Webview.WebviewController提供scrollTo和scrollBy接口。
 // index.cj
 import ohos.arkui.state_macro_manage.*
 import kit.ArkWeb.WebviewController
-import kit.ArkUI.Web
+import kit.ArkUI.{Web, Button}
 import ohos.business_exception.*
+import kit.PerformanceAnalysisKit.Hilog
+import ohos.resource.__GenerateResource__
 
 @Entry
 @Component

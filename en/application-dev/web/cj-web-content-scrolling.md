@@ -14,8 +14,10 @@ When the displayed content size in Web is significantly larger than the componen
 // index.cj
 import ohos.arkui.state_macro_manage.*
 import kit.ArkWeb.WebviewController
-import kit.ArkUI.Web
+import kit.ArkUI.{Web, Button}
 import ohos.business_exception.*
+import kit.PerformanceAnalysisKit.Hilog
+import ohos.resource.__GenerateResource__
 
 @Entry
 @Component
@@ -47,7 +49,7 @@ class EntryView {
                 } catch (e: BusinessException) {
                     Hilog.error(1, "info", "scrollStop ErrorCode: ${e.code},  Message: ${e.message}")
                 }
-            }}.margin(10)
+            }).margin(10)
             Web(src: @rawfile("index.html"), controller: webController)
         }
     }
