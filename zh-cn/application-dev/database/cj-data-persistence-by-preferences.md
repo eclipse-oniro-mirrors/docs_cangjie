@@ -49,7 +49,7 @@
     ```cangjie
     // xxx.cj
     import kit.ArkData.{ Preferences, PreferencesValueType, PreferencesEvent }
-    import kit.ArkUI.Callback1Argument
+    import ohos.callback_invoke.Callback1Argument
     ```
 
 2. 获取Preferences实例。
