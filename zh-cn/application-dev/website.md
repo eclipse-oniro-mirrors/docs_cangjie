@@ -2,8 +2,7 @@
 
 <!--RP4-->
 - [应用开发导读](cj-start-application-development-overview.md)
-- 入门
-<!--RP4End-->
+- 入门<!--RP4End-->
     - 快速入门
         - [开发准备](cj-start/start/quick-start/cj-quick-start-preparations.md)
         - [构建第一个仓颉应用](cj-start/start/quick-start/cj-quick-start-first-cangjie-app.md)
