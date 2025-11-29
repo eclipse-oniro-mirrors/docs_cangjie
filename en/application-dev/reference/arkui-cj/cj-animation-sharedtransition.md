@@ -18,7 +18,7 @@ public func sharedTransition(id: String, options!: ?SharedTransitionOptions = No
 
 > **Note:**
 >
-> The `motionPath` takes effect only when `type` is `SharedTransitionEffectType.Exchange`. When `type` is `SharedTransitionEffectType.Exchange`, the effect produces transitions in position and size for matched shared elements (observable via component border configuration), but does not support content transitions. For example, if a `Text` component uses different `fontSize` property values on two pages (i.e., the rendered content has size differences), the `fontSize` effect of the `Text` component will abruptly change to the target page's `fontSize` effect in the final frame after the `sharedTransition` animation completes.
+> The `motionPath` takes effect only when `effectType` is `SharedTransitionEffectType.Exchange`. When `effectType` is `SharedTransitionEffectType.Exchange`, the effect produces transitions in position and size for matched shared elements (observable via component border configuration), but does not support content transitions. For example, if a `Text` component uses different `fontSize` property values on two pages (i.e., the rendered content has size differences), the `fontSize` effect of the `Text` component will abruptly change to the target page's `fontSize` effect in the final frame after the `sharedTransition` animation completes.
 
 **System Capability:** SystemCapability.ArkUI.ArkUI.Full
 

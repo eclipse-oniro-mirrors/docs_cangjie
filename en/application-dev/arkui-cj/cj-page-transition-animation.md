@@ -27,11 +27,11 @@ PageTransitionExit(routeType: RouteType.None, duration: 1000)
 
 The above interfaces define the `PageTransitionEnter` and `PageTransitionExit` components, which can specify different page transition effects using properties like `slide`, `translate`, `scale`, and `opacity`. For `PageTransitionEnter`, these effects represent the starting values for entry animations, while for `PageTransitionExit`, they represent the ending values for exit animations, similar to the configuration method for component transitions. Additionally, `PageTransitionEnter` provides the `onEnter` callback for custom entry animations, and `PageTransitionExit` provides the `onExit` callback for custom exit animations.
 
-The `type` parameter in these interfaces indicates the route type for which the transition takes effect, which can be confusing for developers. In a page transition, one page exits while another enters. For example, when navigating from Page A to Page B via `router.pushUrl`, Page A exits with an exit animation, and Page B enters with an entry animation. Conversely, when returning from Page B to Page A via `router.back`, Page B exits with an exit animation, and Page A enters with an entry animation. Thus, `PageTransitionEnter` can apply to either a new page entering due to a push operation or an existing page re-entering due to a pop operation. The `type` parameter distinguishes between these scenarios, allowing developers to fully customize all types of page transitions.
+The `routeType` parameter in these interfaces indicates the route type for which the transition takes effect, which can be confusing for developers. In a page transition, one page exits while another enters. For example, when navigating from Page A to Page B via `router.pushUrl`, Page A exits with an exit animation, and Page B enters with an entry animation. Conversely, when returning from Page B to Page A via `router.back`, Page B exits with an exit animation, and Page A enters with an entry animation. Thus, `PageTransitionEnter` can apply to either a new page entering due to a push operation or an existing page re-entering due to a pop operation. The `routeType` parameter distinguishes between these scenarios, allowing developers to fully customize all types of page transitions.
 
-## Type Configured as RouteType.None
+## `routeType` Configured as RouteType.None
 
-Setting `type` to `RouteType.None` means the transition applies to both push and pop operations. The default value for `type` is `RouteType.None`.
+Setting `routeType` to `RouteType.None` means the transition applies to both push and pop operations. The default value for `routeType` is `RouteType.None`.
 
 ```cangjie
 // page A
@@ -68,9 +68,9 @@ Assuming the page navigation is configured for multi-instance mode (allowing dup
 
 If the desired behavior is for pages to always slide in from the right during `pushUrl` and slide out to the right during `back`, the third and fourth scenarios above do not meet this requirement. In such cases, all four transition effects must be explicitly defined.
 
-## Type Configured as RouteType.Push or RouteType.Pop
+## `routeType` Configured as RouteType.Push or RouteType.Pop
 
-Setting `type` to `RouteType.Push` means the transition applies only to push operations, while `RouteType.Pop` means it applies only to pop operations.
+Setting `routeType` to `RouteType.Push` means the transition applies only to push operations, while `RouteType.Pop` means it applies only to pop operations.
 
 ```cangjie
 // page A
@@ -143,15 +143,14 @@ The following example demonstrates page transition animations using all four tra
 package ohos_app_cangjie_entry
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
-import kit.LocalizationKit.*
-import ohos.arkui.ui_context.*
+import ohos.resource.*
 
 @Entry
 @Component
 class EntryView {
     func build() {
         Column() {
-            Image(@r(app.media.background))
+            Image(@r(app.media.image1))
                 .width(90.percent).height(80.percent)
                 .objectFit(ImageFit.Fill)
                 .syncLoad(true) // Synchronously load the image so it's ready when the page appears
@@ -198,15 +197,14 @@ package ohos_app_cangjie_entry
 
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
-import kit.LocalizationKit.*
-import ohos.arkui.ui_context.*
+import ohos.resource.*
 
 @Entry
 @Component
 class Page1 {
     func build() {
         Column() {
-            Image(@r(app.media.foreground))
+            Image(@r(app.media.image2))
                 .width(90.percent).height(80.percent)
                 .objectFit(ImageFit.Fill)
                 .syncLoad(true) // Synchronously load the image so it's ready when the page appears
@@ -248,7 +246,7 @@ class Page1 {
 
 ![transiton-animation](figures/transition-animation1.gif)
 
-The following example demonstrates page transition animations using `type` set to `None`.
+The following example demonstrates page transition animations using `routeType` set to `None`.
 
  <!-- run -->
 
@@ -256,15 +254,14 @@ The following example demonstrates page transition animations using `type` set t
 package ohos_app_cangjie_entry
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
-import kit.LocalizationKit.*
-import ohos.arkui.ui_context.*
+import ohos.resource.*
 
 @Entry
 @Component
 class EntryView {
     func build() {
         Column() {
-            Image(@r(app.media.background))
+            Image(@r(app.media.image1))
                 .width(90.percent).height(80.percent)
                 .objectFit(ImageFit.Fill)
                 .syncLoad(true) // Synchronously load the image so it's ready when the page appears
@@ -305,15 +302,14 @@ class EntryView {
 package ohos_app_cangjie_entry
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
-import kit.LocalizationKit.*
-import ohos.arkui.ui_context.*
+import ohos.resource.*
 
 @Entry
 @Component
 class Page1 {
     func build() {
         Column() {
-            Image(@r(app.media.foreground))
+            Image(@r(app.media.image2))
                 .width(90.percent).height(80.percent)
                 .objectFit(ImageFit.Fill)
                 .syncLoad(true) // Synchronously load the image so it's ready when the page appears

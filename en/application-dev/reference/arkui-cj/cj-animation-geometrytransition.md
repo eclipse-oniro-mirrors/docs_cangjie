@@ -45,8 +45,7 @@ public func geometryTransition(id: ?String, followWithoutTransition!: ?Bool = No
 package ohos_app_cangjie_entry
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
-import ohos.i18n.*
-import ohos.resource_manager.*
+import ohos.resource.*
 
 @Entry
 @Component

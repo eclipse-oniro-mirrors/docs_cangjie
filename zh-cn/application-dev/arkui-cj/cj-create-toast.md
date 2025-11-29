@@ -2,6 +2,12 @@
 
 即时反馈（Toast）是一种临时性的消息提示框，用于向用户显示简短的操作反馈或状态信息。​它通常在屏幕的底部或顶部短暂弹出，随后在一段时间后自动消失。即时反馈的主要目的是提供简洁、不打扰的信息反馈，避免干扰用户当前的操作流程。
 
+可以通过使用[UIContext](../reference/arkui-cj/cj-apis-uicontext-uicontext.md)中的[getPromptAction](../reference/arkui-cj/cj-apis-uicontext-uicontext.md#func-getpromptaction)方法获取当前UI上下文关联的[PromptAction](../reference/arkui-cj/cj-apis-uicontext-promptaction.md)对象，再通过该对象调用[showToast](../reference/arkui-cj/cj-apis-uicontext-promptaction.md#func-showtoastshowtoastoptions)创建并显示文本提示框。
+
+> **说明：**
+>
+> 为了安全考虑，例如Toast恶意遮挡其他页面，Toast只能显示在当前的UI实例中，应用退出后，不会单独显示在桌面上。
+
 ## 使用建议
 
 - 合理使用弹出场景，而不是频繁的提醒用户。
@@ -20,13 +26,17 @@
 
    即时反馈在系统中默认从界面底部弹出，距离底部有一定的安全间距，作为系统性的应用内提示反馈，请遵守系统默认效果，避免与其他弹出类组件内容重叠。特殊场景下可对内容布局进行规避。
 
+- 弹框字体最大放大倍数限制。
+
+   即时反馈中，字体的最大放大倍数为2。
+
 ## 即时反馈模式对比
 
-即时反馈提供了两种显示模式，分别为DEFAULT（显示在应用内）、TOP\_MOST（显示在应用之上）。
+即时反馈提供了两种显示模式，分别为Default（显示在应用内）、TopMost（显示在应用之上）。
 
-在TOP_MOST类型的Toast显示前，会创建一个全屏大小的子窗（终端上子窗大小和主窗大小一致），然后在该子窗上计算Toast的布局位置，最后显示在该子窗上。具体和DEFAULT模式Toast的差异如下：
+在TopMost类型的Toast显示前，会创建一个全屏大小的子窗（终端上子窗大小和主窗大小一致），然后在该子窗上计算Toast的布局位置，最后显示在该子窗上。具体和Default模式Toast的差异如下：
 
-| 差异点| DEFAULT | TOP_MOST |
+| 差异点| Default | TopMost |
 | :--- | :--- | :--- |
 | 是否创建子窗 | 否 | 是 |
 | 层级 | 显示在主窗内，层级和主窗一致，一般比较低 | 显示在子窗中，一般比主窗层级高，比其他弹窗类组件层级高，比软键盘和权限弹窗层级低。 |
@@ -48,25 +58,25 @@ class EntryView{
         Row(){
             Blank().height(20.percent)
             Button(){
-                Text("DEFAULT类型Toast")
+                Text("Default类型Toast")
                 .fontSize(20)
                 .fontWeight(FontWeight.Bold)
 
             }.onClick({
                 evt =>
                 getUIContext().getPromptAction().showToast(
-                        ShowToastOptions(message: "ok，我是DEFAULT toast", duration: 2000,
+                        ShowToastOptions(message: "ok，我是Default toast", duration: 2000,
                         bottom: 80.vp, showMode: ToastShowMode.Default))
             }).align(Alignment.Center)
 
             Button(){
-                Text("TOPMOST类型Toast")
+                Text("TopMost类型Toast")
                 .fontSize(20)
                 .fontWeight(FontWeight.Bold)
             }.onClick({
                 evt =>
                 getUIContext().getPromptAction().showToast(
-                        ShowToastOptions(message: "ok，我是TOP_MOST toast", duration: 2000,
+                        ShowToastOptions(message: "ok，我是TopMost toast", duration: 2000,
                         bottom: 85.vp, showMode: ToastShowMode.TopMost))
             })
         }

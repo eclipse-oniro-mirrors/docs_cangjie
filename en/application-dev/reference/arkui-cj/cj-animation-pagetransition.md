@@ -163,7 +163,7 @@ public init(
 public func onEnter(event: ?PageTransitionCallback)
 ```
 
-**Function:** Frame-by-frame callback until the entrance animation ends, with progress changing from 0 to 1.
+**Function:** Frame-by-frame callback until the entrance animation ends, with the transition progress changing from 0 to 1.
 
 **System Capability:** SystemCapability.ArkUI.ArkUI.Full
 
@@ -173,7 +173,7 @@ public func onEnter(event: ?PageTransitionCallback)
 
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
-| event | ?[PageTransitionCallback](#type-pagetransitioncallback) | Yes | - | The frame-by-frame callback for the entrance animation until it ends, with progress changing from 0 to 1. |
+| event | ?[PageTransitionCallback](#type-pagetransitioncallback) | Yes | - | The frame-by-frame callback for the entrance animation until it ends, with the transition progress changing from 0 to 1. |
 
 ## class PageTransitionExit
 
@@ -230,7 +230,7 @@ public init(
 public func onExit(event: ?PageTransitionCallback)
 ```
 
-**Function:** Frame-by-frame callback until the exit animation ends, with progress changing from 0 to 1.
+**Function:** Frame-by-frame callback until the exit animation ends, with the transition progress changing from 0 to 1.
 
 **System Capability:** SystemCapability.ArkUI.ArkUI.Full
 
@@ -240,7 +240,7 @@ public func onExit(event: ?PageTransitionCallback)
 
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
-| event | ?[PageTransitionCallback](#type-pagetransitioncallback) | Yes | - | The frame-by-frame callback for the exit animation until it ends, with progress changing from 0 to 1. |
+| event | ?[PageTransitionCallback](#type-pagetransitioncallback) | Yes | - | The frame-by-frame callback for the exit animation until it ends, with the transition progress changing from 0 to 1. |
 
 ## enum RouteType
 
@@ -473,6 +473,11 @@ public type PageTransitionCallback = (RouteType, Float64) -> Unit
 
 **Type:** ([RouteType](#enum-routetype), Float64) -> Unit
 
+|类型参数|说明|
+|:---|:---|
+|[RouteType](#enum-routetype)|Page transition type.|
+|Float64|Transition progress, which changes from 0 to 1.|
+
 ## Example Code
 
 ### Example Code 1 (Configuring Exit/Enter Animations)
@@ -486,10 +491,7 @@ Configure different exit and enter animations through different transition types
 package ohos_app_cangjie_entry
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
-import ohos.i18n.*
-import ohos.resource_manager.*
-import ohos.arkui.ui_context.*
-import ohos.resource.__GenerateResource__
+import ohos.resource.*
 
 @Entry
 @Component
@@ -512,22 +514,20 @@ class EntryView {
             })
     }
 
-    protected func onTransition(): Unit {
+    protected func pageTransition(): Unit {
         PageTransitionEnter(duration: 1200, curve: Curve.Linear,).onEnter({
-            ty: RouteType, progress: Float64 => match (ty) {
-                case RouteType.Push | RouteType.Pop =>
+            ty: RouteType, progress: Float64 => 
+                if (ty == RouteType.Push || ty ==  RouteType.Pop) {
                     scale2 = Float32(progress)
                     opacity2 = progress
-                case _ => ()
-            }
+                }
         })
         PageTransitionExit(duration: 1200, curve: Curve.Ease, ).onExit({
-            ty: RouteType, progress: Float64 => match (ty) {
-                case RouteType.Push =>
+            ty: RouteType, progress: Float64 =>
+                if (ty == RouteType.Push) {
                     this.scale2 = Float32(1.0 - progress)
                     this.opacity2 = 1.0 - progress
-                case _ => ()
-            }
+                }
         })
     }
 }
@@ -540,10 +540,7 @@ class EntryView {
 package ohos_app_cangjie_entry
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
-import ohos.i18n.*
-import ohos.resource_manager.*
-import ohos.arkui.ui_context.*
-import ohos.resource.__GenerateResource__
+import ohos.resource.*
 
 @Entry
 @Component
@@ -566,22 +563,20 @@ class Page1 {
             })
     }
 
-    protected func onTransition(): Unit {
+    protected func pageTransition(): Unit {
         PageTransitionEnter(duration: 1200, curve: Curve.Linear).onEnter({
-            ty: RouteType, progress: Float64 => match (ty) {
-                case RouteType.Push | RouteType.Pop =>
+            ty: RouteType, progress: Float64 => 
+                if (ty == RouteType.Push || ty ==  RouteType.Pop) {
                     scale1 = Float32(progress)
                     opacity1 = progress
-                case _ => ()
-            }
+                }
         })
         PageTransitionExit(duration: 1200, curve: Curve.Ease).onExit({
-            ty: RouteType, progress: Float64 => match (ty) {
-                case RouteType.Push =>
+            ty: RouteType, progress: Float64 => 
+                if (ty == RouteType.Push) {
                     this.scale1 = Float32(1.0 - progress)
                     this.opacity1 = 1.0 - progress
-                case _ => ()
-            }
+                }
         })
     }
 }
@@ -600,9 +595,6 @@ Configure different exit/enter slide effects by changing the system language lay
 package ohos_app_cangjie_entry
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
-import ohos.i18n.*
-import ohos.resource_manager.*
-import ohos.arkui.ui_context.*
 
 @Entry
 @Component
@@ -629,7 +621,7 @@ class EntryView {
         .justifyContent(FlexAlign.Center)
     }
 
-    protected func onTransition(): Unit {
+    protected func pageTransition(): Unit {
         PageTransitionEnter(duration: 1200, curve: Curve.Linear).slide(SlideEffect.Left)
         PageTransitionExit(duration: 1200, curve: Curve.Ease).slide(SlideEffect.Left)
     }
@@ -644,9 +636,6 @@ class EntryView {
 package ohos_app_cangjie_entry
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
-import ohos.i18n.*
-import ohos.resource_manager.*
-import ohos.arkui.ui_context.*
 
 @Entry
 @Component
@@ -673,7 +662,7 @@ class Page1 {
         .justifyContent(FlexAlign.Center)
     }
 
-    protected func onTransition(): Unit {
+    protected func pageTransition(): Unit {
         PageTransitionEnter(duration: 1200).slide(SlideEffect.Right)
         PageTransitionExit(duration: 1200).slide(SlideEffect.Right)
     }

@@ -163,7 +163,7 @@ public init(
 public func onEnter(event: ?PageTransitionCallback)
 ```
 
-**功能：** 逐帧回调，直到入场动画结束，progress从0变化到1。
+**功能：** 逐帧回调，直到入场动画结束，转场进度从0变化到1。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -173,7 +173,7 @@ public func onEnter(event: ?PageTransitionCallback)
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|event|?[PageTransitionCallback](#type-pagetransitioncallback)|是|-|入场动画的逐帧回调直到入场动画结束，progress从0变化到1。|
+|event|?[PageTransitionCallback](#type-pagetransitioncallback)|是|-|入场动画的逐帧回调直到入场动画结束，转场进度从0变化到1。|
 
 ## class PageTransitionExit
 
@@ -230,7 +230,7 @@ public init(
 public func onExit(event: ?PageTransitionCallback)
 ```
 
-**功能：** 逐帧回调，直到出场动画结束，progress从0变化到1。
+**功能：** 逐帧回调，直到出场动画结束，转场进度从0变化到1。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -240,7 +240,7 @@ public func onExit(event: ?PageTransitionCallback)
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|event|?[PageTransitionCallback](#type-pagetransitioncallback)|是|-|出场动画的逐帧回调直到入场动画结束，progress从0变化到1。|
+|event|?[PageTransitionCallback](#type-pagetransitioncallback)|是|-|出场动画的逐帧回调直到入场动画结束，转场进度从0变化到1。|
 
 ## enum RouteType
 
@@ -475,6 +475,11 @@ public type PageTransitionCallback = (RouteType, Float64) -> Unit
 
 **类型：** ([RouteType](#enum-routetype) , Float64) -> Unit
 
+|类型参数|说明|
+|:---|:---|
+|[RouteType](#enum-routetype)|页面转场类型。|
+|Float64|转场进度，从0变化到1。|
+
 ## 示例代码
 
 ### 示例代码1(设置退入场动画)
@@ -488,10 +493,7 @@ public type PageTransitionCallback = (RouteType, Float64) -> Unit
 package ohos_app_cangjie_entry
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
-import ohos.i18n.*
-import ohos.resource_manager.*
-import ohos.arkui.ui_context.*
-import ohos.resource.__GenerateResource__
+import ohos.resource.*
 
 @Entry
 @Component
@@ -514,22 +516,20 @@ class EntryView {
             })
     }
 
-    protected func onTransition(): Unit {
+    protected func pageTransition(): Unit {
         PageTransitionEnter(duration: 1200, curve: Curve.Linear,).onEnter({
-            ty: RouteType, progress: Float64 => match (ty) {
-                case RouteType.Push | RouteType.Pop =>
+            ty: RouteType, progress: Float64 => 
+                if (ty == RouteType.Push || ty ==  RouteType.Pop) {
                     scale2 = Float32(progress)
                     opacity2 = progress
-                case _ => ()
-            }
+                }
         })
         PageTransitionExit(duration: 1200, curve: Curve.Ease, ).onExit({
-            ty: RouteType, progress: Float64 => match (ty) {
-                case RouteType.Push =>
+            ty: RouteType, progress: Float64 =>
+                if (ty == RouteType.Push) {
                     this.scale2 = Float32(1.0 - progress)
                     this.opacity2 = 1.0 - progress
-                case _ => ()
-            }
+                }
         })
     }
 }
@@ -542,10 +542,7 @@ class EntryView {
 package ohos_app_cangjie_entry
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
-import ohos.i18n.*
-import ohos.resource_manager.*
-import ohos.arkui.ui_context.*
-import ohos.resource.__GenerateResource__
+import ohos.resource.*
 
 @Entry
 @Component
@@ -568,22 +565,20 @@ class Page1 {
             })
     }
 
-    protected func onTransition(): Unit {
+    protected func pageTransition(): Unit {
         PageTransitionEnter(duration: 1200, curve: Curve.Linear).onEnter({
-            ty: RouteType, progress: Float64 => match (ty) {
-                case RouteType.Push | RouteType.Pop =>
+            ty: RouteType, progress: Float64 => 
+                if (ty == RouteType.Push || ty ==  RouteType.Pop) {
                     scale1 = Float32(progress)
                     opacity1 = progress
-                case _ => ()
-            }
+                }
         })
         PageTransitionExit(duration: 1200, curve: Curve.Ease).onExit({
-            ty: RouteType, progress: Float64 => match (ty) {
-                case RouteType.Push =>
+            ty: RouteType, progress: Float64 => 
+                if (ty == RouteType.Push) {
                     this.scale1 = Float32(1.0 - progress)
                     this.opacity1 = 1.0 - progress
-                case _ => ()
-            }
+                }
         })
     }
 }
@@ -602,9 +597,6 @@ class Page1 {
 package ohos_app_cangjie_entry
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
-import ohos.i18n.*
-import ohos.resource_manager.*
-import ohos.arkui.ui_context.*
 
 @Entry
 @Component
@@ -631,7 +623,7 @@ class EntryView {
         .justifyContent(FlexAlign.Center)
     }
 
-    protected func onTransition(): Unit {
+    protected func pageTransition(): Unit {
         PageTransitionEnter(duration: 1200, curve: Curve.Linear).slide(SlideEffect.Left)
         PageTransitionExit(duration: 1200, curve: Curve.Ease).slide(SlideEffect.Left)
     }
@@ -646,9 +638,6 @@ class EntryView {
 package ohos_app_cangjie_entry
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
-import ohos.i18n.*
-import ohos.resource_manager.*
-import ohos.arkui.ui_context.*
 
 @Entry
 @Component
@@ -675,7 +664,7 @@ class Page1 {
         .justifyContent(FlexAlign.Center)
     }
 
-    protected func onTransition(): Unit {
+    protected func pageTransition(): Unit {
         PageTransitionEnter(duration: 1200).slide(SlideEffect.Right)
         PageTransitionExit(duration: 1200).slide(SlideEffect.Right)
     }

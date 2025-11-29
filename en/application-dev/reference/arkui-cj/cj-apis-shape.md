@@ -150,7 +150,7 @@ public class CircleShape <: BaseShape {
 }
 ```
 
-**Description:** The class for circular shapes.
+**Description:** Circular shape used for the [clipShape](./cj-universal-attribute-shapclip.md#func-clipshapebaseshape) and [maskShape](./cj-universal-attribute-shapclip.md#func-maskshapebaseshape) interfaces.
 
 **System Capability:** SystemCapability.ArkUI.ArkUI.Full
 
@@ -187,7 +187,7 @@ public class EllipseShape <: BaseShape {
 }
 ```
 
-**Description:** The class for elliptical shapes.
+**Description:** Elliptical shape used for the [clipShape](./cj-universal-attribute-shapclip.md#func-clipshapebaseshape) and [maskShape](./cj-universal-attribute-shapclip.md#func-maskshapebaseshape) interfaces.
 
 **System Capability:** SystemCapability.ArkUI.ArkUI.Full
 
@@ -225,7 +225,7 @@ public class PathShape <: BaseShape {
 }
 ```
 
-**Description:** The class for path shapes.
+**Description:** Path used for the [clipShape](./cj-universal-attribute-shapclip.md#func-clipshapebaseshape) and [maskShape](./cj-universal-attribute-shapclip.md#func-maskshapebaseshape) interfaces.
 
 **System Capability:** SystemCapability.ArkUI.ArkUI.Full
 
@@ -251,7 +251,7 @@ public init(commands!: ?ResourceStr = None)
 
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
-| commands | ?[ResourceStr](./cj-common-types.md#interface-resourcestr) | No | None | **Named parameter.** The path commands.<br>Default: "". |
+| commands | ?[ResourceStr](./cj-common-types.md#interface-resourcestr) | No | None | **Named parameter.** Drawing commands for the path.<br>Default: "". <br>For more information, see the [drawing commands]((./cj-graphic-drawing-path.md#func-commandsresourcestr)) supported by commands.|
 
 ### init(?Length, ?Length, ?ResourceStr)
 
@@ -271,7 +271,7 @@ public init(width!: ?Length, height!: ?Length, commands!: ?ResourceStr = None)
 |:---|:---|:---|:---|:---|
 | width | ?[Length](./cj-common-types.md#interface-length) | Yes | - | **Named parameter.** The width of the path.<br>Default: 0.vp. |
 | height | ?[Length](./cj-common-types.md#interface-length) | Yes | - | **Named parameter.** The height of the path.<br>Default: 0.vp. |
-| commands | ?[ResourceStr](./cj-common-types.md#interface-resourcestr) | No | None | **Named parameter.** The path commands.<br>Default: "". |
+| commands | ?[ResourceStr](./cj-common-types.md#interface-resourcestr) | No | None | **Named parameter.** The path commands.<br>Default: "". <br>For more information, see the [drawing commands]((./cj-graphic-drawing-path.md#func-commandsresourcestr)) supported by commands.|
 
 ## class RectShape
 
@@ -281,7 +281,7 @@ public class RectShape <: BaseShape {
 }
 ```
 
-**Description:** The class for rectangular shapes.
+**Description:** Rectangular shape used for the [clipShape](./cj-universal-attribute-shapclip.md#func-clipshapebaseshape) and [maskShape](./cj-universal-attribute-shapclip.md#func-maskshapebaseshape) interfaces.
 
 **System Capability:** SystemCapability.ArkUI.ArkUI.Full
 

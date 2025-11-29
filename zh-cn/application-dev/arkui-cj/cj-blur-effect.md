@@ -6,7 +6,7 @@
 
 | 接口                                                         | 说明                                         |
 | :------------------------------------------------------------ | :-------------------------------------------- |
-| [backdropBlur](../reference/arkui-cj/cj-universal-attribute-background.md#func-backdropblurfloat64) | 为当前组件添加背景模糊效果，入参为模糊半径。 |
+| [backdropBlur](../reference/arkui-cj/cj-universal-attribute-imageeffect.md#func-backdropblurfloat64) | 为当前组件添加背景模糊效果，入参为模糊半径。 |
 | [blur](../reference/arkui-cj/cj-universal-attribute-imageeffect.md#func-blurfloat64) | 为当前组件添加内容模糊效果，入参为模糊半径。 |
 
 > **说明：**
@@ -22,7 +22,7 @@ package ohos_app_cangjie_entry
 
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
-import kit.LocalizationKit.*
+import ohos.resource.*
 
 @Entry
 @Component
@@ -36,7 +36,7 @@ class EntryView {
                 .fontColor(Color.White)
                 .textAlign(TextAlign.Center)
                 .backdropBlur(Float64(10))
-                .backgroundImage(@r(app.media.background))
+                .backgroundImage(@r(app.media.image1))
                 .backgroundImageSize(width: 400, height: 300)
         }
         .width(100.percent)
@@ -57,7 +57,7 @@ package ohos_app_cangjie_entry
 
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
-import kit.LocalizationKit.*
+import ohos.resource.*
 
 @Entry
 @Component
@@ -79,7 +79,7 @@ class EntryView {
                 .fontWeight(FontWeight.Bold)
                 .fontFamily("cursive")
                 .fontStyle(FontStyle.Italic)
-            Image(@r(app.media.background))
+            Image(@r(app.media.image1))
                 .blur(this.radius)
                 .height(100.percent)
                 .width(100.percent)

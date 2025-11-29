@@ -63,7 +63,7 @@ let animateOpt2 = AnimateParam(
     duration: 1200,
     curve: Curve.Friction,
     delay: 500,
-    iterations: -1, // Setting -1 means infinite animation loop
+    iterations: -1,
     playMode: PlayMode.Alternate,
     onFinish: {
         => Hilog.info(0, "cangjie", "onfinish")
@@ -106,7 +106,7 @@ class EntryView {
                    evt => this.rotateAngle = 90.0
                 })
                 .margin(50)
-                .rotate(angle:this.rotateAngle,)
+                .rotate(angle: this.rotateAngle)
         }
         .width(100.percent)
         .margin(top: 20)

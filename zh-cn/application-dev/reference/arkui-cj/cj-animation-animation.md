@@ -80,7 +80,7 @@ let animateOpt2 = AnimateParam(
 class EntryView {
     @State var widthSize: Length = 250.vp
     @State var heightSize: Length = 100.vp
-    @State var rotateAngle: Float64 = 0.0
+    @State var rotateAngle: Float32 = 0.0
     @State var flag: Bool = true
     func build() {
         Column() {

@@ -120,7 +120,7 @@ public class CircleShape <: BaseShape {
 }
 ```
 
-**功能：** 圆形图形类。
+**功能：** 用于[clipShape](./cj-universal-attribute-shapclip.md#func-clipshapebaseshape)和[maskShape](./cj-universal-attribute-shapclip.md#func-maskshapebaseshape)接口的圆形形状。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -157,7 +157,7 @@ public class EllipseShape <: BaseShape {
 }
 ```
 
-**功能：** 椭圆形图形类。
+**功能：** 用于[clipShape](./cj-universal-attribute-shapclip.md#func-clipshapebaseshape)和[maskShape](./cj-universal-attribute-shapclip.md#func-maskshapebaseshape)接口的椭圆形状。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -195,7 +195,7 @@ public class PathShape <: BaseShape {
 }
 ```
 
-**功能：** 路径图形类。
+**功能：** 用于[clipShape](./cj-universal-attribute-shapclip.md#func-clipshapebaseshape)和[maskShape](./cj-universal-attribute-shapclip.md#func-maskshapebaseshape)接口的路径。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -221,7 +221,7 @@ public init(commands!: ?ResourceStr = None)
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|commands|?[ResourceStr](./cj-common-types.md#interface-resourcestr)|否|None| **命名参数。** 路径命令。<br>初始值：""。|
+|commands|?[ResourceStr](./cj-common-types.md#interface-resourcestr)|否|None| **命名参数。** 路径的绘制指令。<br>初始值：""。<br>更多说明请参考commands支持的[绘制命令](./cj-graphic-drawing-path.md#func-commandsresourcestr)。|
 
 ### init(?Length, ?Length, ?ResourceStr)
 
@@ -241,7 +241,7 @@ public init(width!: ?Length, height!: ?Length, commands!: ?ResourceStr = None)
 |:---|:---|:---|:---|:---|
 |width|?[Length](./cj-common-types.md#interface-length)|是|-| **命名参数。** 路径宽度。<br>初始值：0.vp。|
 |height|?[Length](./cj-common-types.md#interface-length)|是|-| **命名参数。** 路径高度。<br>初始值：0.vp。|
-|commands|?[ResourceStr](./cj-common-types.md#interface-resourcestr)|否|None| **命名参数。** 路径命令。<br>初始值：""。|
+|commands|?[ResourceStr](./cj-common-types.md#interface-resourcestr)|否|None| **命名参数。** 路径命令。<br>初始值：""。<br>更多说明请参考commands支持的[绘制命令](./cj-graphic-drawing-path.md#func-commandsresourcestr)。|
 
 ## class RectShape
 
@@ -251,7 +251,7 @@ public class RectShape <: BaseShape {
 }
 ```
 
-**功能：** 矩形图形类。
+**功能：** 用于[clipShape](./cj-universal-attribute-shapclip.md#func-clipshapebaseshape)和[maskShape](./cj-universal-attribute-shapclip.md#func-maskshapebaseshape)接口的矩形形状。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
