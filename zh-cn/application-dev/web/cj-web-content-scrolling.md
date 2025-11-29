@@ -47,7 +47,7 @@ class EntryView {
                 } catch (e: BusinessException) {
                     Hilog.error(1, "info", "scrollStop ErrorCode: ${e.code},  Message: ${e.message}")
                 }
-            }}.margin(10)
+            }).margin(10)
             Web(src: @rawfile("index.html"), controller: webController)
         }
     }

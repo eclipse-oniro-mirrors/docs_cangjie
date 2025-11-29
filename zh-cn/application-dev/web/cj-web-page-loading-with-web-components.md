@@ -24,7 +24,8 @@
 // index.cj
 import ohos.arkui.state_macro_manage.*
 import ohos.web.webview.WebviewController
-import kit.ArkUI.{ Web }
+import kit.ArkUI.Web
+import ohos.business_exception.*
 
 func loggerError(str: String) {
     Hilog.error(0, "CangjieTest", str)
