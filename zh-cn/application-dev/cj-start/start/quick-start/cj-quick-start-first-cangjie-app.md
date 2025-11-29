@@ -148,9 +148,9 @@ Project_name
                    Text(this.message)
                     .fontSize(50)
                     .fontWeight(FontWeight.Bold)
-                    .onClick {
+                    .onClick ({
                         evt => this.message = "Hello Cangjie"
-                    }
+                    })
                    // 添加按钮，以响应用户点击
                    Button("Next")
                    .onClick ({
@@ -256,9 +256,9 @@ Project_name
                    Text(this.message)
                     .fontSize(50)
                     .fontWeight(FontWeight.Bold)
-                    .onClick {
+                    .onClick ({
                         evt => this.message = "Hello Cangjie"
-                    }
+                    })
                    // 添加按钮，以响应用户点击
                    Button("Next")
                    .onClick ({
@@ -324,7 +324,7 @@ Project_name
 
 1. 将搭载OpenHarmony系统的真机与电脑连接。
 
-2. 真机连接成功后，进入**File > Project Structure > Project > Signing Configs**界面勾选**Support OpenHarmony**和**Automatically generate signature**，单击界面提示的**Sign In**，使用用户账号登录。等待自动签名完成后，单击**OK**即可。如下图所示：
+2. 真机连接成功后，进入**File > Project Structure > Project > Signing Configs**界面勾选**Support HarmonyOS**和**Automatically generate signature**，单击界面提示的**Sign In**，使用用户账号登录。等待自动签名完成后，单击**OK**即可。如下图所示：
 
    ![buildSign](../../figures/buildSign.png)
 
