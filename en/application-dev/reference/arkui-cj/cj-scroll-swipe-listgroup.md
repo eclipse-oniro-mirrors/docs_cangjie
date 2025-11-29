@@ -5,7 +5,7 @@ This component is used to display grouped list items. By default, it fills the w
 > **Note:**
 >
 > - The parent component of this component can only be [List](cj-scroll-swipe-list.md).
-> - The ListItemGroup component does not support setting the [universal attribute aspectRatio](cj-universal-attribute-layoutconstraints.md##func-aspectratiofloat64).
+> - The ListItemGroup component does not support setting the [universal attribute aspectRatio](cj-universal-attribute-size.md#func-aspectratiofloat64).
 > - When the listDirection property of the parent List component is set to Axis.Vertical, setting the [universal attribute height](cj-universal-attribute-size.md#func-heightlength) property will not take effect. The height of the ListItemGroup is the sum of the header height, footer height, and the total height of all ListItems after layout.
 > - When the listDirection property of the parent List component is set to Axis.Horizontal, setting the [universal attribute width](cj-universal-attribute-size.md#func-widthoptionlength) property will not take effect. The width of the ListItemGroup is the sum of the header width, footer width, and the total width of all ListItems after layout.
 > - The ListItem components inside the current ListItemGroup do not support editing or dragging, meaning the editable property of the ListItem component will not take effect.
@@ -57,7 +57,7 @@ Universal Attributes: All supported.
 
 > **Note:**
 >
-> Does not support [setting the universal attribute aspectRatio](./cj-universal-attribute-layoutconstraints.md#func-aspectratiofloat64).
+> Does not support [setting the universal attribute aspectRatio](./cj-universal-attribute-size.md#func-aspectratiofloat64).
 
 Universal Events: All supported.
 

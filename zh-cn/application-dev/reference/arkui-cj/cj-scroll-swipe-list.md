@@ -262,7 +262,7 @@ public func onScrollFrameBegin(event: ?(Float64, ScrollState) -> OnScrollFrameBe
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|event|?(Float64, [ScrollState](./cj-common-types.md#enum-scrollstate)) -> [OnScrollFrameBeginHandlerResult](#class-onscrollframebeginhandlerresult)|是|-|滚动帧开始事件回调。初始值：{ _, _ => onScrollFrameBeginHandleResult(offsetRemain: 0.0) }。|
+|event|?(Float64, [ScrollState](./cj-common-types.md#enum-scrollstate)) -> [OnScrollFrameBeginHandlerResult](#class-onscrollframebeginhandlerresult)|是|-|滚动帧开始事件回调。参数一表示即将发生的滑动量，参数二表示当前的滑动的状态。初始值：{ _, _ => onScrollFrameBeginHandleResult(offsetRemain: 0.0) }。|
 
 ### func onScrollIndex(?(Int32, Int32, Int32) -> Unit)
 
@@ -280,7 +280,7 @@ public func onScrollIndex(event: ?(Int32, Int32, Int32) -> Unit): This
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|event|?(Int32, Int32, Int32) -> Unit|是|-|滚动索引事件回调。初始值：{ _, _, _ => }。|
+|event|?(Int32, Int32, Int32) -> Unit|是|-|滚动索引事件回调。<br> 参数一表示List显示区域内第一个子组件的索引值；<br> 参数二表示List显示区域内最后一个子组件的索引值；<br> 参数三表示List显示区域内中间位置子组件的索引值。初始值：{ _, _, _ => }。|
 
 ## 基础类型定义
 

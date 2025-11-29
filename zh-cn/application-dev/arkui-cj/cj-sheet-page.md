@@ -4,11 +4,11 @@
 
 半模态页面适用于展示简单的任务或信息面板，例如，个人信息、文本简介、分享面板、创建日程、添加内容等。若需展示可能影响父视图的半模态页面，半模态支持配置为非模态交互形式。
 
-半模态在不同宽度的设备上存在不同的形态能力，开发者对不同宽度的设备上有不同的形态诉求请参见([preferType](../reference/arkui-cj/cj-universal-attribute-sheettransition.md#class-sheetoptions))属性。可以使用bindSheet构建半模态转场效果，详见[模态转场](./cj-modal-transition.md)。对于复杂或者冗长的用户流程，建议考虑其他的转场方式替代半模态。如[全模态转场](./cj-contentcover-page.md)。
+半模态在不同宽度的设备上存在不同的形态能力，开发者对不同宽度的设备上有不同的形态诉求请参见([preferType](../reference/arkui-cj/cj-common-types.md#class-sheetoptions))属性。可以使用bindSheet构建半模态转场效果，详见[模态转场](./cj-modal-transition.md)。对于复杂或者冗长的用户流程，建议考虑其他的转场方式替代半模态。如[全模态转场](./cj-contentcover-page.md)。
 
 ## 使用约束
 
-- 若无二次确认或者自定义关闭行为的场景，不建议使用[shouldDismiss/onWilDismiss](../reference/arkui-cj/cj-universal-attribute-sheettransition.md#class-sheetoptions)接口。
+- 若无二次确认或者自定义关闭行为的场景，不建议使用[shouldDismiss/onWilDismiss](../reference/arkui-cj/cj-common-types.md#class-sheetoptions)接口。
 
 ## 生命周期
 
@@ -132,47 +132,6 @@ class EntryView {
 
 ![page](figures/page.gif)
 
-## 二次确认能力
-
-推荐使用onWillDismiss接口，此接口支持在回调中处理二次确认，或自定义关闭行为。
-
-```cangjie
-// 第一步：声明onWillDismiss回调
-onWillDismiss: {
-    // 第二步：确认二次回调交互能力，此处用AlertDialog提示 "是否需要关闭半模态"
-    dismissSheetAction: DismissSheetAction => {
-        AlertDialog.show(
-            AlertDialogParamWithButtons(
-                "text",
-                title: '是否选择关闭半模态',
-                primaryButton: AlertDialogButtonOptions(
-                    value: 'cancel',
-                    action: {
-                        => Hilog.info(0, "cangjie", Callback when the cancel button is clicked")
-                    }
-                ),
-                secondaryButton: AlertDialogButtonOptions(
-                    value: 'ok',
-                    // 第三步：确认关闭半模态逻辑所在，此处为AlertDialog的Button回调
-                    action: {
-                        => {
-                            // 第四步：上述第三步逻辑触发的时候，调用dismiss()关闭半模态
-                            dismissSheetAction.dismiss(),
-                            Hilog.info(0, "cangjie", Callback when the ok button is clicked")
-                        }
-                    }
-                ),
-                cancel: {
-                    => Hilog.info(0, "cangjie", AlertDialog Closed callbacks")
-                }
-            )
-        )
-    }
-}
-```
-
-![page](figures/page.gif)
-
 ## 屏蔽部分关闭行为
 
 由于声明了onWillDismiss接口，半模态的关闭行为都需要dismiss处理。可以通过if等逻辑自定义处理关闭逻辑。
@@ -181,11 +140,10 @@ onWillDismiss: {
 
 ```cangjie
 onWillDismiss: {
-    dismissSheetAction: DismissSheetAction => {
-        if (dismissSheetAction.reason == DismissReason.SLIDE_DOWN) {
+    dismissSheetAction: DismissSheetAction =>
+        if (dismissSheetAction.reason == DismissReason.SlideDown) {
             DismissSheetAction.dismiss() // 注册dismiss行为
         }
-    }
 }
 ```
 
@@ -197,16 +155,14 @@ onWillDismiss: {
 
 ```cangjie
 onWillDismiss: {
-    dismissSheetAction: DismissSheetAction => {
-        if (dismissSheetAction.reason == DismissReason.SLIDE_DOWN) {
+    dismissSheetAction: DismissSheetAction =>
+        if (dismissSheetAction.reason == DismissReason.SlideDown) {
             dismissSheetAction.dismiss() // 注册dismiss行为
         }
-    }
 }
 
 onWillSpringBackWhenDismiss: {
-    springBackAction: SpringBackAction => {
+    springBackAction: SpringBackAction =>
         // 没有注册springBack, 下拉半模态页面无回弹行为
-    }
 }
 ```

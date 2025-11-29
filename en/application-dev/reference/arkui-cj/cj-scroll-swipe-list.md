@@ -262,7 +262,7 @@ public func onScrollFrameBegin(event: ?(Float64, ScrollState) -> onScrollFrameBe
 
 | Parameter Name | Type | Required | Default Value | Description |
 |:---|:---|:---|:---|:---|
-| event | ?(Float64, [ScrollState](./cj-common-types.md#enum-scrollstate)) -> [OnScrollFrameBeginHandlerResult](#class-onscrollframebeginhandlerresult) | Yes | - | Scroll frame start event callback. Initial value: `{ _, _ => onScrollFrameBeginHandleResult(offsetRemain: 0.0) }`. |
+| event | ?(Float64, [ScrollState](./cj-common-types.md#enum-scrollstate)) -> [OnScrollFrameBeginHandlerResult](#class-onscrollframebeginhandlerresult) | Yes | - | Scroll frame start event callback. Parameter 1: the upcoming scroll amount. Parameter 2: the current scroll state. Initial value: `{ _, _ => onScrollFrameBeginHandleResult(offsetRemain: 0.0) }`. |
 
 ### func onScrollIndex(?(Int32, Int32, Int32) -> Unit)
 
@@ -280,7 +280,7 @@ public func onScrollIndex(event: ?(Int32, Int32, Int32) -> Unit): This
 
 | Parameter Name | Type | Required | Default Value | Description |
 |:---|:---|:---|:---|:---|
-| event | ?(Int32, Int32, Int32) -> Unit | Yes | - | Scroll index event callback. Initial value: `{ _, _, _ => }`. |
+| event | ?(Int32, Int32, Int32) -> Unit | Yes | - | Scroll index event callback. <br> Parameter 1 indicates the index of the first child component in the List's visible area; <br> Parameter 2 indicates the index of the last child component in the List's visible area; <br> Parameter 3 indicates the index of the middle child component in the List's visible area. Initial value: `{ _, _, _ => }`. |
 
 ## Basic Type Definitions
 

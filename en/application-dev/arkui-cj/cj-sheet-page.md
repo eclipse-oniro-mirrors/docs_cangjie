@@ -4,11 +4,11 @@
 
 Sheet modals are suitable for displaying simple tasks or information panels, such as personal information, text introductions, share panels, schedule creation, content addition, etc. If you need to display a sheet modal that may affect the parent view, the sheet modal supports configuration as a non-modal interaction form.
 
-Sheet modals exhibit different behavioral capabilities on devices with varying widths. Developers with different form factor requirements across device widths should refer to the ([preferType](../reference/arkui-cj/cj-universal-attribute-sheettransition.md#class-sheetoptions)) property. The bindSheet can be used to construct sheet transition effects, as detailed in [Modal Transition](./cj-modal-transition.md). For complex or lengthy user flows, consider alternative transition methods instead of sheet modals, such as [Full Modal Transition](./cj-contentcover-page.md).
+Sheet modals exhibit different behavioral capabilities on devices with varying widths. Developers with different form factor requirements across device widths should refer to the ([preferType](../reference/arkui-cj/cj-common-types.md#class-sheetoptions)) property. The bindSheet can be used to construct sheet transition effects, as detailed in [Modal Transition](./cj-modal-transition.md). For complex or lengthy user flows, consider alternative transition methods instead of sheet modals, such as [Full Modal Transition](./cj-contentcover-page.md).
 
 ## Usage Constraints
 
-- Without scenarios requiring secondary confirmation or custom close behaviors, it is not recommended to use the [shouldDismiss/onWilDismiss](../reference/arkui-cj/cj-universal-attribute-sheettransition.md#class-sheetoptions) interface.
+- Without scenarios requiring secondary confirmation or custom close behaviors, it is not recommended to use the [shouldDismiss/onWilDismiss](../reference/arkui-cj/cj-common-types.md#class-sheetoptions) interface.
 
 ## Lifecycle
 

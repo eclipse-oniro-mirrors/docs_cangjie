@@ -4857,7 +4857,9 @@ public init(builder!: () -> Unit, placement!: ?Placement = Option.None, popupCol
 | backgroundColor | ?[Color](./cj-common-types.md#class-color) | No | None | **Named parameter.** Background color of the tooltip bubble. Initial value is Color(0x1000000). |
 | arrowOffset | ?[Length](./cj-common-types.md#interface-length) | No | None | **Named parameter.** Offset of the popup arrow on the popup window.<br>**Note:** When the arrow is above or below the bubble, a value of 0 means the arrow is aligned to the far left, and the offset is the distance from the arrow to the far left, defaulting to center alignment. When the arrow is to the left or right of the bubble, the offset is the distance from the arrow to the top, defaulting to center alignment. If displayed at the edge of the screen, the bubble will automatically shift left or right, and a value of 0 means the arrow will always point to the bound component. Initial value is 0.vp. |
 | mask | ?[Color](./cj-common-types.md#class-color) | No | None | **Named parameter.** Color of the tooltip bubble's mask layer. |
-| targetSpace | ?[Length](./cj-common-types.md#interface-length) | No | None | **Named parameter.** Sets the gap between the popup and the target. Initial value is 0.vp.## class SheetOptions
+| targetSpace | ?[Length](./cj-common-types.md#interface-length) | No | None | **Named parameter.** Sets the gap between the popup and the target. Initial value is 0.vp.|
+
+## class SheetOptions
 
 ```cangjie
 public class SheetOptions <: BindOptions {

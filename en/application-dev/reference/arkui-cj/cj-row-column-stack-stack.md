@@ -47,7 +47,7 @@ Universal events: All supported.
 public func alignContent(value: ?Alignment): This
 ```
 
-**Function:** Sets the alignment of all child components within the container. If this attribute is set simultaneously with the [universal attribute align](cj-universal-attribute-location.md#func-alignalignment), the latter setting takes effect.
+**Function:** Sets the alignment of all child components within the container. If this attribute is set simultaneously with the [universal attribute align](./cj-universal-attribute-layoutconstraints#func-alignalignment), the latter setting takes effect.
 
 **System Capability:** SystemCapability.ArkUI.ArkUI.Full
 

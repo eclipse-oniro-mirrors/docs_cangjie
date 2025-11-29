@@ -47,7 +47,7 @@ public init(alignContent!: ?Alignment = None, child!: () -> Unit = {=>})
 public func alignContent(value: ?Alignment): This
 ```
 
-**功能：** 设置所有子组件在容器内的对齐方式。该属性与[通用属性align](cj-universal-attribute-location.md#func-alignalignment)同时设置时，后设置的属性生效。
+**功能：** 设置所有子组件在容器内的对齐方式。该属性与[通用属性align](./cj-universal-attribute-layoutconstraints.md#func-alignalignment)同时设置时，后设置的属性生效。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
