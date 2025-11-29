@@ -14,23 +14,19 @@ For permission application, refer to [Declaring Permissions](../security/AccessT
 
 The involved interfaces are listed in the table below. For detailed interface descriptions, refer to the [API Documentation](../reference/NetworkKit/cj-apis-net-http.md).
 
-| Interface Name            | Description                                            |
-| ------------------------- | ------------------------------------------------------ |
-| createHttp()              | Creates an HTTP request.                               |
-| request()                 | Initiates an HTTP network request based on the URL.    |
-| requestInStream()         | Initiates an HTTP network request and returns a streaming response. |
-| destroy()                 | Aborts the request task.                               |
-| onHeadersReceive()        | Subscribes to the HTTP Response Header event.          |
-| offHeadersReceive()       | Unsubscribes from the HTTP Response Header event.      |
-| onceHeadersReceive()      | Subscribes to the HTTP Response Header event but triggers only once. |
-| onDataReceive()           | Subscribes to the HTTP streaming response data reception event. |
-| offDataReceive()          | Unsubscribes from the HTTP streaming response data reception event. |
-| onDataEnd()               | Subscribes to the HTTP streaming response data completion event. |
-| offDataEnd()              | Unsubscribes from the HTTP streaming response data completion event. |
-| onDataReceiveProgress()   | Subscribes to the HTTP streaming response data reception progress event. |
-| offDataReceiveProgress()  | Unsubscribes from the HTTP streaming response data reception progress event. |
-| onDataSendProgress()      | Subscribes to the HTTP network request data transmission progress event. |
-| offDataSendProgress()     | Unsubscribes from the HTTP network request data transmission progress event. |
+| Interface Name                                                                                       | Description                                                               |
+| ---------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| createHttp(): HttpRequest                                                                            | Creates an HTTP request.                                                  |
+| func request(url: String, options: HttpRequestOptions, callback: AsyncCallback\<HttpResponse>): Unit | Initiates an HTTP network request based on the URL.                       |
+| requestInStream(url: String, options: HttpRequestOptions, callback: AsyncCallback\<UInt32>): Unit    | Initiates an HTTP network request and returns a streaming response.       |
+| destroy(): Unit                                                                                      | Aborts the request task.                                                  |
+| on(event: HttpRequestEvent, callback: Callback1Argument\<HashMap\<String, String>>): Unit            | Subscribes to the HTTP Response Header event.                             |
+| once(event: HttpRequestEvent, callback: Callback1Argument\<HashMap\<String, String>>): Unit          | Subscribes to the HTTP Response Header event but triggers only once.      |
+| on(event: HttpRequestEvent, callback: Callback1Argument\<Array\<Byte>>): Unit                        | Subscribes to the HTTP streaming response data reception event.           |
+| on(event: HttpRequestEvent, callback: Callback0Argument): Unit                                       | Subscribes to the HTTP streaming response data completion event.          |
+| on(event: HttpRequestEvent, callback: Callback1Argument\<DataReceiveProgressInfo>): Unit             | Subscribes to the HTTP streaming response data reception progress event.  |
+| on(event: HttpRequestEvent, callback: Callback1Argument\<DataSendProgressInfo>): Unit                | Subscribes to the HTTP network request data transmission progress event.  |
+| off(event: HttpRequestEvent, callback!: ?CallbackObject = None): Unit                                | Unsubscribes from the HTTP request event.                                 |
 
 ## Steps for request Interface Development
 
@@ -147,6 +143,7 @@ import std.collection.*
 import ohos.base.*
 import ohos.net.http.*
 import ohos.callback_invoke.*
+import ohos.business_exception.*
 
 func loggerInfo(str: String) {
     Hilog.info(0, "CangjieTest", str)

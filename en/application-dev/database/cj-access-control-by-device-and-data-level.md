@@ -100,7 +100,6 @@ For specific interfaces and functions, refer to [Distributed Key-Value Database]
     // xxx.cj
     import kit.ArkData.{DistributedKVStore, KVManagerConfig}
     import ohos.business_exception.BusinessException
-    import kit.AbilityKit.getStageContext
     import ohos.data.distributed_kv_store.*
 
     try {

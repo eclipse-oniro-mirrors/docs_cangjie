@@ -38,7 +38,7 @@
             globalAbilityContext = this.context
 
             match (launchParam.launchReason) {
-                case LaunchReason.StartAbility => Hilog.info(0, "cangjie", "START_ABILITY")
+                case LaunchReason.StartAbility => Hilog.info(0, "cangjie", "StartAbility")
                 case _ => ()
             }
         } 
@@ -192,7 +192,7 @@ try {
     try {
         let predicates = RdbPredicates("EMPLOYEE")
         let columns = ["ID", "NAME", "AGE", "SALARY", "CODES"]
-        let resultSet = rdbStore_.getOrThrow().query(predicates, columns)
+        let resultSet = rdbStore_.getOrThrow().query(predicates, columns: columns)
         /*
          * 业务的增删改逻辑
          * ...
@@ -241,7 +241,7 @@ try {
     <!-- compile -->
 
     ```cangjie
-    import kit.CoreFileKit.FileFs
+    import kit.CoreFileKit.FileIo
     try {
         /**
          * "Backup.db"为备份数据库文件名，默认在当前 store 所在路径下查找备份文件 Backup.db。

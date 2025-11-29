@@ -63,7 +63,7 @@
                 Hilog.error(0, "ErrorCode: ${e.code}", e.message)
             }
             match (launchParam.launchReason) {
-                case LaunchReason.START_ABILITY => Hilog.info(0, "cangjie", "START_ABILITY")
+                case LaunchReason.StartAbility => Hilog.info(0, "cangjie", "StartAbility")
                 case _ => ()
             }
         }

@@ -38,7 +38,7 @@ For key-value databases, backups are implemented via the `backup` interface, rec
             globalAbilityContext = this.context
 
             match (launchParam.launchReason) {
-                case LaunchReason.StartAbility => Hilog.info(0, "cangjie", "START_ABILITY")
+                case LaunchReason.StartAbility => Hilog.info(0, "cangjie", "StartAbility")
                 case _ => ()
             }
         } 
@@ -192,7 +192,7 @@ The recovery process and key code snippets are as follows. For complete example 
     try {
         let predicates = RdbPredicates("EMPLOYEE")
         let columns = ["ID", "NAME", "AGE", "SALARY", "CODES"]
-        let resultSet = rdbStore_.getOrThrow().query(predicates, columns)
+        let resultSet = rdbStore_.getOrThrow().query(predicates, columns: columns)
         /*
          * Business logic for insert, delete, and update operations
          * ...
@@ -241,7 +241,7 @@ The recovery process and key code snippets are as follows. For complete example 
     <!-- compile -->
 
     ```cangjie
-    import kit.CoreFileKit.FileFs
+    import kit.CoreFileKit.FileIo
     try {
         /**
          * "Backup.db" is the backup database filename, which is searched for in the same path as the current store by default.

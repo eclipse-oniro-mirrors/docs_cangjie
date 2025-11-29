@@ -30,30 +30,29 @@ Specific development methods are described below.
 
 For the complete Cangjie API documentation and example code, refer to [Network Connection Management](../reference/NetworkKit/cj-apis-net-connection.md).
 
-| Interface Name                                                                                 | Description                                                                                                                                                     |
-| --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `getDefaultNet(): NetHandle`                                                                  | Retrieves a `NetHandle` object containing the `netId` of the default network.                                                                                  |
-| `getAppNet(): NetHandle`                                                                      | Retrieves a `NetHandle` object containing the `netId` of the network bound to the app.                                                                          |
-| `setAppNet(netHandle: NetHandle): Unit`                                                       | Binds the app to the specified network. The bound app can only access external networks through the specified network.                                          |
-| `getDefaultNetSync(): NetHandle`                                                              | Retrieves the default active data network synchronously. Use `getNetCapabilities` to obtain network type and capabilities.                                      |
-| `hasDefaultNet(): Bool`                                                                       | Checks whether the default data network is active.                                                                                                              |
-| `getAllNets(): Array<NetHandle>`                                                              | Retrieves a list of `NetHandle` objects for all connected networks.                                                                                            |
-| `getConnectionProperties(netHandle: NetHandle): ConnectionProperties`                         | Queries the connection information of the network corresponding to `netHandle`.                                                                                |
-| `getNetCapabilities(netHandle: NetHandle): NetCapabilities`                                   | Retrieves the capability information of the network corresponding to `netHandle`.                                                                              |
-| `isDefaultNetMetered(): Bool`                                                                 | Checks whether data traffic on the current network is metered (asynchronous callback method).                                                                   |
-| `reportNetConnected(netHandle: NetHandle): Unit`                                              | Reports to network management that the network is available. Indicates a discrepancy between the app's and network management's view of network availability.   |
-| `reportNetDisconnected(netHandle: NetHandle): Unit`                                           | Reports to network management that the network is unavailable. Indicates a discrepancy between the app's and network management's view of network availability. |
-| `getAddressesByName(host: String): Array<NetAddress>`                                         | Resolves a domain name using the corresponding network to obtain all IP addresses.                                                                              |
-| `createNetConnection(netSpecifier!: ?NetSpecifier = None, timeout!: UInt32 = 0): NetConnection` | Returns a `NetConnection` object. `netSpecifier` specifies the characteristics of the network to monitor. `timeout` is in milliseconds.                       |
-| `getAddressByName(host: String): NetAddress`                                                   | Resolves a domain name using the corresponding network to obtain one IP address (callback method).                                                              |
-| `onNetAvailable(callback: (NetHandle) -> Unit): Unit`                                          | Subscribes to network availability events.                                                                                                                      |
-| `onNetCapabilitiesChange(callback: (NetCapabilityInfo) -> Unit): Unit`                         | Subscribes to network capability change events.                                                                                                                 |
-| `onNetConnectionPropertiesChange(callback: (NetHandle, ConnectionProperties) -> Unit): Unit`  | Subscribes to network connection property change events.                                                                                                        |
-| `onNetBlockStatusChange(callback: (NetHandle, Bool) -> Unit): Unit`                           | Subscribes to network block status events (asynchronous callback method).                                                                                      |
-| `onNetLost(callback: (NetHandle) -> Unit): Unit`                                              | Subscribes to network loss events.                                                                                                                              |
-| `onNetUnavailable(callback: () -> Unit): Unit`                                                | Subscribes to network unavailability events.                                                                                                                    |
-| `register(): Unit`                                                                            | Subscribes to notifications for specified network status changes.                                                                                              |
-| `unregister(): Unit`                                                                          | Unsubscribes from notifications for default network status changes.                                                                                             |
+| Interface Name                                                                                  | Description                                                                                                                                                     |
+| ----------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `getDefaultNet(): NetHandle`                                                                    | Retrieves a `NetHandle` object containing the `netId` of the default network.                                                                                   |
+| `getAppNet(): NetHandle`                                                                        | Retrieves a `NetHandle` object containing the `netId` of the network bound to the app.                                                                          |
+| `setAppNet(netHandle: NetHandle): Unit`                                                         | Binds the app to the specified network. The bound app can only access external networks through the specified network.                                          |
+| `getDefaultNetSync(): NetHandle`                                                                | Retrieves the default active data network synchronously. Use `getNetCapabilities` to obtain network type and capabilities.                                      |
+| `hasDefaultNet(): Bool`                                                                         | Checks whether the default data network is active.                                                                                                              |
+| `getAllNets(): Array<NetHandle>`                                                                | Retrieves a list of `NetHandle` objects for all connected networks.                                                                                             |
+| `getConnectionProperties(netHandle: NetHandle): ConnectionProperties`                           | Queries the connection information of the network corresponding to `netHandle`.                                                                                 |
+| `getNetCapabilities(netHandle: NetHandle): NetCapabilities`                                     | Retrieves the capability information of the network corresponding to `netHandle`.                                                                               |
+| `isDefaultNetMetered(): Bool`                                                                   | Checks whether data traffic on the current network is metered (asynchronous callback method).                                                                   |
+| `reportNetConnected(netHandle: NetHandle): Unit`                                                | Reports to network management that the network is available. Indicates a discrepancy between the app's and network management's view of network availability.   |
+| `reportNetDisconnected(netHandle: NetHandle): Unit`                                             | Reports to network management that the network is unavailable. Indicates a discrepancy between the app's and network management's view of network availability. |
+| `getAddressesByName(host: String): Array<NetAddress>`                                           | Resolves a domain name using the corresponding network to obtain all IP addresses.                                                                              |
+| `createNetConnection(netSpecifier!: ?NetSpecifier = None, timeout!: UInt32 = 0): NetConnection` | Returns a `NetConnection` object. `netSpecifier` specifies the characteristics of the network to monitor. `timeout` is in milliseconds.                         |
+| `getAddressByName(host: String): NetAddress`                                                    | Resolves a domain name using the corresponding network to obtain one IP address (callback method).                                                              |
+| `on(event: NetConnectionEvent, callback: Callback1Argument<NetHandle>): Unit`                   | Subscribes to network availability events or network loss events.                                                                                               |
+| `on(event: NetConnectionEvent, callback: Callback1Argument<NetCapabilityInfo>): Unit`           | Subscribes to network capability change events.                                                                                                                 |
+| `on(event: NetConnectionEvent, callback: Callback1Argument<NetConnectionPropertyInfo>): Unit`   | Subscribes to network connection property change events.                                                                                                        |
+| `on(event: NetConnectionEvent, callback: Callback1Argument<NetBlockStatusInfo>): Unit`          | Subscribes to network block status events (asynchronous callback method).                                                                                       |
+| `on(event: NetConnectionEvent, callback: Callback0Argument): Unit`                              | Subscribes to network unavailability events.                                                                                                                    |
+| `register(): Unit`                                                                              | Subscribes to notifications for specified network status changes.                                                                                               |
+| `unregister(): Unit`                                                                            | Unsubscribes from notifications for default network status changes.                                                                                             |
 
 ## Receiving Notifications for Specified Network Status Changes
 
@@ -80,6 +79,7 @@ import kit.AbilityKit.*
 import kit.NetworkKit.*
 import ohos.base.*
 import ohos.callback_invoke.*
+import ohos.business_exception.*
 
 func loggerInfo(str: String) {
     Hilog.info(0, "CangjieTest", str)
@@ -157,6 +157,7 @@ import kit.AbilityKit.*
 import kit.NetworkKit.*
 import ohos.base.*
 import ohos.callback_invoke.*
+import ohos.business_exception.*
 
 func loggerInfo(str: String) {
     Hilog.info(0, "CangjieTest", str)

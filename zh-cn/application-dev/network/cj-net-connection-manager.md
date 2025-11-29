@@ -46,12 +46,11 @@
 | getAddressesByName(host: String): Array\<NetAddress>                                          | 使用对应网络解析域名，获取所有IP。                                                                                                                              |
 | createNetConnection(netSpecifier!: ?NetSpecifier = None, timeout!: UInt32 = 0): NetConnection | 返回一个NetConnection对象，netSpecifier指定关注的网络的各项特征。timeout是超时时间(单位：毫秒)，netSpecifier是timeout的必要条件，两者都没有则表示关注默认网络。 |
 | getAddressByName(host: String): NetAddress                                                    | 使用对应网络解析域名，获取一个IP，调用callback。                                                                                                                |
-| onNetAvailable(callback: (NetHandle) -> Unit): Unit                                           | 订阅网络可用事件。                                                                                                                                              |
-| onNetCapabilitiesChange(callback: (NetCapabilityInfo) -> Unit): Unit                          | 订阅网络能力变化事件。                                                                                                                                          |
-| onNetConnectionPropertiesChange(callback: (NetHandle, ConnectionProperties) -> Unit): Unit    | 订阅网络连接信息变化事件。                                                                                                                                      |
-| onNetBlockStatusChange(callback: (NetHandle, Bool) -> Unit): Unit                             | 订阅网络阻塞状态事件，使用callback方式作为异步方法。                                                                                                            |
-| onNetLost(callback: (NetHandle) -> Unit): Unit                                                | 订阅网络丢失事件。                                                                                                                                              |
-| onNetUnavailable(callback: () -> Unit): Unit                                                  | 订阅网络不可用事件。                                                                                                                                            |
+| on(event: NetConnectionEvent, callback: Callback1Argument\<NetHandle>): Unit                  | 订阅网络可用事件或网络丢失事件。                                                                                                                                |
+| on(event: NetConnectionEvent, callback: Callback1Argument\<NetCapabilityInfo>): Unit          | 订阅网络能力变化事件。                                                                                                                                          |
+| on(event: NetConnectionEvent, callback: Callback1Argument\<NetConnectionPropertyInfo>): Unit  | 订阅网络连接信息变化事件。                                                                                                                                      |
+| on(event: NetConnectionEvent, callback: Callback1Argument\<NetBlockStatusInfo>): Unit         | 订阅网络阻塞状态事件，使用callback方式作为异步方法。                                                                                                            |
+| on(event: NetConnectionEvent, callback: Callback0Argument): Unit                              | 订阅网络不可用事件。                                                                                                                                            |
 | register(): Unit                                                                              | 订阅指定网络状态变化的通知。                                                                                                                                    |
 | unregister(): Unit                                                                            | 取消订阅默认网络状态变化的通知。                                                                                                                                |
 
@@ -80,6 +79,7 @@ import kit.AbilityKit.*
 import kit.NetworkKit.*
 import ohos.base.*
 import ohos.callback_invoke.*
+import ohos.business_exception.*
 
 func loggerInfo(str: String) {
     Hilog.info(0, "CangjieTest", str)
@@ -157,6 +157,7 @@ import kit.AbilityKit.*
 import kit.NetworkKit.*
 import ohos.base.*
 import ohos.callback_invoke.*
+import ohos.business_exception.*
 
 func loggerInfo(str: String) {
     Hilog.info(0, "CangjieTest", str)
