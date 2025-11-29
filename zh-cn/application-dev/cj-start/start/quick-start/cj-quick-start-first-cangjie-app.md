@@ -322,7 +322,7 @@ Project_name
 
 ### 使用真机运行应用
 
-1. 将搭载HarmonyOS系统的真机与电脑连接。
+1. 将搭载OpenHarmony系统的真机与电脑连接。
 
 2. 真机连接成功后，进入**File > Project Structure > Project > Signing Configs**界面勾选**Support HarmonyOS**和**Automatically generate signature**，单击界面提示的**Sign In**，使用用户账号登录。等待自动签名完成后，单击**OK**即可。如下图所示：
 
@@ -334,7 +334,7 @@ Project_name
 
 ### 使用模拟器
 
-仓颉语言编写的HarmonyOS应用/服务，支持在DevEco Studio提供的模拟器（Emulator）上运行。
+仓颉语言编写的OpenHarmony应用/服务，支持在DevEco Studio提供的模拟器（Emulator）上运行。
 
 1. 创建一个类型为Phone的模拟器设备，并在DevEco Studio右上角的设备列表中，选中该设备。
 
