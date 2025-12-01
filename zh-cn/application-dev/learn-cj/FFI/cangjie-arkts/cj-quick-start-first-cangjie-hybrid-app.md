@@ -226,7 +226,6 @@ Project_name
 
        import ohos.base.*
        import ohos.arkui.component.*
-       import ohos.hybrid_base.*
        import ohos.arkui.state_macro_manage.*
        import ohos.arkui.state_management.*
 
@@ -247,7 +246,7 @@ Project_name
                                .fontSize(30)
                                .fontWeight(FontWeight.Bold)
                        }
-                       .shape(ShapeType.Capsule)
+                       .shape(ButtonType.Capsule)
                        .margin(top: 20)
                        .backgroundColor(Color(0x0D9FFB))
                        .width(40.percent)
@@ -267,15 +266,15 @@ Project_name
        ```typescript
        // second.ets
        // 在 ArkTS 页面中嵌入仓颉页面
-       import { CJHybridComponentV2 } from '@cangjie/cjhybridview';
+       import { CJHybridComponent } from '@cangjie/cjhybridcomponent';
 
        @Entry
        @Component
        struct Second {
          build() {
            Row() {
-             // 通过 CJHybridComponentV2 接口嵌入仓颉页面
-             CJHybridComponentV2({
+             // 通过 CJHybridComponent 接口嵌入仓颉页面
+             CJHybridComponent({
                library: "ohos_app_cangjie_entry", // 仓颉页面所在的 package 名字
                component: "Second"                // 仓颉页面对应的 class 名字
              })
@@ -382,6 +381,7 @@ Project_name
    import ohos.base.*
    import ohos.ark_interop.*
    import ohos.ark_interop_macro.*
+   import ohos.hilog.Hilog
    import std.collection.*
 
    // 定义一个全局 HashMap，用于保存ArkTS注册的函数
@@ -451,7 +451,7 @@ Project_name
    > ```json
    > "dependencies": {
    >    "libohos_app_cangjie_entry.so": "file:src/main/cangjie/types/libohos_app_cangjie_entry",
-   >    "@cangjie/cjhybridview": "1.0.4",
+   >    "@cangjie/cjhybridcomponent": "1.0.0",
    >    "libark_interop_api.so": "file:src/main/cangjie/ark_interop_api"
    > }
    >    ```
@@ -460,7 +460,7 @@ Project_name
 
    ```typescript
    // second.ets
-   import { CJHybridComponentV2 } from '@cangjie/cjhybridview';
+   import { CJHybridComponent } from '@cangjie/cjhybridcomponent';
 
    // 导入ArkTS页面路由模块
    import { router } from '@kit.ArkUI';
@@ -494,8 +494,8 @@ Project_name
 
      build() {
        Row() {
-         // 通过 CJHybridComponentV2 嵌入仓颉页面组件
-         CJHybridComponentV2({
+         // 通过 CJHybridComponent 嵌入仓颉页面组件
+         CJHybridComponent({
            library: "ohos_app_cangjie_entry", // 仓颉页面组件所在的 package 名字
            component: "Second"      // 仓颉页面组件对应的 class 名字
          })
@@ -516,9 +516,9 @@ Project_name
 
    import ohos.base.*
    import ohos.arkui.component.*
-   import ohos.hybrid_base.*
    import ohos.arkui.state_macro_manage.*
    import ohos.arkui.state_management.*
+   import ohos.hilog.Hilog
 
    @HybridComponentEntry
    @Component
@@ -537,13 +537,13 @@ Project_name
                            .fontSize(30)
                            .fontWeight(FontWeight.Bold)
                    }
-                   .shape(ShapeType.Capsule)
+                   .shape(ButtonType.Capsule)
                    .margin(top: 20)
                    .backgroundColor(Color(0x0D9FFB))
                    .width(40.percent)
                    .height(5.percent)
                    // 返回按钮绑定onClick事件，单击按钮时返回到第一页
-                   .onClick ({
+                   .onClick ({ _ =>
                        Hilog.info(1, "info", "Succeeded in clicking the 'Back' button.")
                        let optFn = globalJSFunction.get("SecondPageRouterBack")
                        if (let Some(fn) <- optFn) {
