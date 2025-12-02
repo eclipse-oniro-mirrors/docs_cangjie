@@ -114,11 +114,19 @@
 
 2. 获取到RdbStore后，调用insert()接口插入数据。示例代码如下所示：
 
+    为实现插入数据功能，需要导入如下包：
+
     <!-- compile -->
 
     ```cangjie
     import ohos.data.relational_store.RelationalStoreValueType 
+    ```
 
+    实现插入数据功能的核心代码是：
+
+    <!-- compile -->
+
+    ```cangjie
     var values = HashMap<String, RelationalStoreValueType>()
     values.add("ID", RelationalStoreValueType.Integer(1))
     values.add("NAME", RelationalStoreValueType.StringValue("Lisa"))

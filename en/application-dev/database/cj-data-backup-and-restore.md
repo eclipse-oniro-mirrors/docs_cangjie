@@ -48,6 +48,8 @@ For key-value databases, backups are implemented via the `backup` interface, rec
 
     b. Create a kvStore.
 
+    To create a kvStore, the following packages need to be imported:
+
     <!-- compile -->
 
     ```cangjie
@@ -57,7 +59,13 @@ For key-value databases, backups are implemented via the `backup` interface, rec
     import ohos.data.distributed_kv_store.KVManager
     import ohos.data.distributed_kv_store.SingleKVStore
     import ohos.data.relational_store.*
+    ```
 
+    The core code for create a kvStore is:
+
+    <!-- compile -->
+
+    ```cangjie
     var kvManager: Option<KVManager> = Option<KVManager>.None
     var kvStore: Option<SingleKVStore> = Option<SingleKVStore>.None
 
@@ -82,11 +90,19 @@ For key-value databases, backups are implemented via the `backup` interface, rec
 
 2. Insert data using the `put()` method.
 
+    To insert data, the following packages need to be imported:
+
     <!-- compile -->
 
     ```cangjie
     import ohos.data.distributed_kv_store.*
+    ```
 
+    The core code for insert data is:
+
+    <!-- compile -->
+
+    ```cangjie
     const KEY_TEST_STRING_ELEMENT: String = "key_test_string"
     const VALUE_TEST_STRING_ELEMENT: String = "value_test_string"
 
@@ -143,13 +159,21 @@ Relational databases support two backup methods: manual backup and automatic bac
 
 Manual backup is implemented by calling the [`backup`](../reference/ArkData/cj-apis-relational_store.md#func-backupstring) interface. Example:
 
+To manual backup, the following packages need to be imported:
+
 <!-- compile -->
 
 ```cangjie
 import kit.ArkData.*
 import ohos.business_exception.BusinessException
 import ohos.data.relational_store.*
+```
 
+The core code for manual backup is:
+
+<!-- compile -->
+
+```cangjie
 var rdbStore_: Option<RdbStore> = Option<RdbStore>.None
 let storeConfig_ = StoreConfig(
     RelationalStoreSecurityLevel.S3, // Database security level
@@ -183,12 +207,20 @@ The recovery process and key code snippets are as follows. For complete example 
 
 1. Throw database exception error codes.
 
+    To throw database exception error codes, the following packages need to be imported:
+
     <!-- compile -->
 
     ```cangjie
     import ohos.data.relational_store.RdbPredicates
     import ohos.data.relational_store.RdbStore
+    ```
 
+    The core code for throw database exception error codes is:
+
+    <!-- compile -->
+
+    ```cangjie
     try {
         let predicates = RdbPredicates("EMPLOYEE")
         let columns = ["ID", "NAME", "AGE", "SALARY", "CODES"]
@@ -216,10 +248,19 @@ The recovery process and key code snippets are as follows. For complete example 
 
 2. Close all open result sets.
 
+    To close all open result sets, the following packages need to be imported:
+
     <!-- compile -->
 
     ```cangjie
     import ohos.data.relational_store.ResultSet
+    ```
+
+    The core code for close all open result sets is:
+
+    <!-- compile -->
+
+    ```cangjie
     try {
         // All open result sets
         var resultSets: Array<ResultSet> = Array<ResultSet>()
@@ -238,10 +279,19 @@ The recovery process and key code snippets are as follows. For complete example 
 
 3. Call the `restore` interface to recover data.
 
+    To recover data, the following packages need to be imported:
+
     <!-- compile -->
 
     ```cangjie
     import kit.CoreFileKit.FileIo
+    ```
+
+    The core code for recover data is:
+
+    <!-- compile -->
+
+    ```cangjie
     try {
         /**
          * "Backup.db" is the backup database filename, which is searched for in the same path as the current store by default.

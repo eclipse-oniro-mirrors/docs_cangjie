@@ -46,6 +46,8 @@ For specific interfaces and functionalities, refer to [Distributed Key-Value Dat
 
 2. Configure key-value database encryption.  
 
+    To configure key-value database encryption, the following packages need to be imported:
+
     <!-- compile -->  
 
     ```cangjie  
@@ -55,7 +57,13 @@ For specific interfaces and functionalities, refer to [Distributed Key-Value Dat
     import kit.AbilityKit.*  
     import ohos.data.distributed_kv_store.KVOptions  
     import ohos.data.distributed_kv_store.KVSecurityLevel  
+    ```
 
+    The core code for configure key-value database encryption is:
+
+    <!-- compile -->
+
+    ```cangjie
     try {  
         let context = globalAbilityContext.getOrThrow()  
         let kvManagerConfig = KVManagerConfig(globalAbilityContext.getOrThrow(), "com.example.datamanagertest")  
@@ -117,12 +125,20 @@ For specific interfaces and functionalities, refer to [Relational Database](../r
 
 2. Configure relational database encryption.  
 
+    To configure relational database encryption, the following packages need to be imported:
+
     <!-- compile -->  
 
     ```cangjie  
     import kit.ArkData.{ getRdbStore, StoreConfig, RelationalStoreSecurityLevel }  
     import ohos.business_exception.BusinessException  
+    ```
 
+    The core code for configure relational database encryption is:
+
+    <!-- compile -->
+
+    ```cangjie
     try {  
         // globalAbilityContext is obtained during Ability onCreate  
         let context = globalAbilityContext.getOrThrow()  

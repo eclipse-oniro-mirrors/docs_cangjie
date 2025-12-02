@@ -104,12 +104,20 @@ Below are key interfaces for User Preferences persistence. For more details, ref
 
     Example:
 
+    To write data, the following packages need to be imported:
+
     <!-- compile -->
 
     ```cangjie
     // xxx.cj
     import ohos.data.preferences.PreferencesValueType
+    ```
 
+    The core code for write data is:
+
+    <!-- compile -->
+
+    ```cangjie
     if (dataPreferences.getOrThrow().has("startup")) {
         Hilog.info(0, "cangjie", "The key 'startup' is contained.")
     } else {
@@ -164,6 +172,8 @@ Below are key interfaces for User Preferences persistence. For more details, ref
 
     Example:
 
+    To subscribe to data changes, the following class need to be defined:
+
     <!-- compile -->
 
     ```cangjie
@@ -174,7 +184,13 @@ Below are key interfaces for User Preferences persistence. For more details, ref
             Hilog.info(1, "info", "callback： ${arg.toString()}")
         }
     }
+    ```
 
+    The core code for subscribe to data changes is:
+
+    <!-- compile -->
+
+    ```cangjie
     let preferenceCallback = Callback()
     dataPreferences.getOrThrow().on(PreferencesEvent.PreferencesChange, preferenceCallback)
     // Change data from "auto" to "manual"

@@ -94,6 +94,8 @@
 
 2. 创建安全等级为S1的键值型数据库。
 
+    为实现创建数据库功能，需要导入如下包：
+
     <!-- compile -->
 
     ```cangjie
@@ -101,7 +103,13 @@
     import kit.ArkData.{DistributedKVStore, KVManagerConfig}
     import ohos.business_exception.BusinessException
     import ohos.data.distributed_kv_store.*
+    ```
 
+    实现创建数据库功能的核心代码是：
+
+    <!-- compile -->
+
+    ```cangjie
     try {
         let context = globalAbilityContext.getOrThrow()
         let kvManagerConfig = KVManagerConfig(globalAbilityContext.getOrThrow(), "com.example.datamanagertest")
@@ -163,6 +171,8 @@
 
 2. 创建安全等级为S1的关系型数据库。
 
+    为实现创建数据库功能，需要导入如下包：
+
     <!-- compile -->
 
     ```cangjie
@@ -170,7 +180,13 @@
     import kit.ArkData.{StoreConfig, getRdbStore}
     import ohos.business_exception.BusinessException
     import ohos.data.relational_store.*
+    ```
 
+    实现创建数据库功能的核心代码是：
+
+    <!-- compile -->
+
+    ```cangjie
     try {
         let context = globalAbilityContext.getOrThrow()
         let storeConfig = StoreConfig(

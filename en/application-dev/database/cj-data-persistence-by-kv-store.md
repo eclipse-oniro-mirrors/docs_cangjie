@@ -73,6 +73,8 @@ The following are the key interfaces for key-value database persistence function
 
 2. Create and retrieve the key-value database. Example code:
 
+    To create and retrieve the key-value database, the following packages need to be imported:
+
     <!-- compile -->
 
     ```cangjie
@@ -80,7 +82,13 @@ The following are the key interfaces for key-value database persistence function
     import kit.ArkData.*
     import ohos.business_exception.BusinessException
     import ohos.data.distributed_kv_store.SingleKVStore
+    ```
 
+    The core code for create and retrieve the key-value database is:
+
+    <!-- compile -->
+
+    ```cangjie
     var kvStore: Option<SingleKVStore> = Option<SingleKVStore>.None
 
     try {
@@ -99,12 +107,20 @@ The following are the key interfaces for key-value database persistence function
 
 3. Use the `put()` method to insert data into the key-value database. Example code:
 
+    To insert data, the following packages need to be imported:
+
     <!-- compile -->
 
     ```cangjie
     // xxx.cj
     import ohos.data.distributed_kv_store.KVValueType
+    ```
 
+    The core code for insert data is:
+
+    <!-- compile -->
+
+    ```cangjie
     const KEY_TEST_STRING_ELEMENT: String = "key_test_string"
     const VALUE_TEST_STRING_ELEMENT: String = "value_test_string"
 
