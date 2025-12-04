@@ -115,7 +115,7 @@ Project_name
 2. **my_module**模块的目录结构如下：
 
    ```text
-   entry
+   my_module
    ├── build
    ├── src
    │    ├── main
@@ -176,10 +176,10 @@ Project_name
    }
    ```
 
-    - **my_module > src > main > resources > base > profile > route_map.json**需要配置子页的路由信息，示例如下：
+    - **my_module > src > main > resources > base > profile > router_map.json**需要配置子页的路由信息，示例如下：
 
    ```json
-   // route_map.json
+   // router_map.json
    {
      "routerMap": [
        {
@@ -194,11 +194,11 @@ Project_name
    }
    ```
 
-    - **my_module > src > main > module.json5**配置文件的module标签中定义routerMap字段，指向定义的本模块路由表配置文件route_map.json。示例如下：
+    - **my_module > src > main > module.json5**配置文件的module标签中定义routerMap字段，指向定义的本模块路由表配置文件router_map.json。示例如下：
 
    ```json5
    // module.json5
-   "routerMap": "$profile:route_map"
+   "routerMap": "$profile:router_map"
    ```
 
    > **注意：**
@@ -249,7 +249,7 @@ Project_name
     │    │    │    └── base
     │    │    │         ├── element
     │    │    │         └── profile
-    │    │    │              └── route_map.json
+    │    │    │              └── router_map.json
     │    │    └── module.json5
     │    ├── ohosTest
     │    └── test
@@ -435,6 +435,7 @@ Project_name
         │    │    └── index.cj
         │    ├── ets
         │    │    └── pages
+        │    │         └── cangjie_page.ets
         │    │         └── MyModulePage.ets
         │    ├── resources
         │    └── module.json5
@@ -454,7 +455,6 @@ Project_name
    import ohos.arkui.component.*
    import ohos.arkui.state_macro_manage.*
    import ohos.arkui.state_management.*
-   import ohos.hybrid_base.*
 
    @HybridComponentEntry
    @Component
@@ -468,11 +468,11 @@ Project_name
                    .fontSize(20)
                    .fontWeight(FontWeight.Bold)
                Button("点击修改上方文本")
-                   .shape(ShapeType.Capsule)
+                   .shape(ButtonType.Capsule)
                    .width(80.percent)
                    .height(40)
                    .margin(20)
-                   .onClick ({
+                   .onClick ({ _ =>
                        msg = "Okay, Cangjie clicked"
                    })
            }
@@ -489,7 +489,7 @@ Project_name
    ```typescript
    // MyModulePage.ets
    // 在 ArkTS 页面中嵌入仓颉页面
-   import { CJHybridComponentV2 } from '@cangjie/cjhybridview'
+   import { CJHybridComponent } from '@cangjie/cjhybridcomponent'
    // 导入 libohos_app_cangjie_entry.so 中的 callSync 和 callAsync 接口
    import cjlib from 'libohos_app_cangjie_my_module.so'
 
@@ -541,7 +541,7 @@ Project_name
                  })
              })
              // 通过 CJHybridComponent 嵌入仓颉页面
-           CJHybridComponentV2({
+           CJHybridComponent({
              library: 'ohos_app_cangjie_my_module', // 仓颉页面所在的 package 名字
              component: 'CangjiePage'               // 仓颉页面对应的 class 名字
            })

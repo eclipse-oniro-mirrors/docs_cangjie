@@ -34,7 +34,7 @@ The following example demonstrates specific practices. This use case involves an
         // Convert JSValue to Cangjie types
         let a: Float64 = arg0.toNumber()
         let b: Float64 = arg1.toNumber()
-        let callback = arg2.asFunction(context)
+        let callback = arg2.asFunction()
         // Create new Cangjie thread
         spawn {
             // Actual Cangjie function behavior

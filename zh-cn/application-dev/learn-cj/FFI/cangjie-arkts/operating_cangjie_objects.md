@@ -49,7 +49,7 @@
             let arg1 = callInfo[1]
 
             // 把参数0转换为js对仓颉对象的引用
-            let jsExternal = arg0.asExternal(context)
+            let jsExternal = arg0.asExternal()
             // 获取仓颉对象
             let data: Data = jsExternal.cast<Data>().getOrThrow()
             // 把参数1转换为Float64
@@ -67,7 +67,7 @@
         static func getDataId(context: JSContext, callInfo: JSCallInfo): JSValue {
             let arg0 = callInfo[0]
 
-            let jsExternal = arg0.asExternal(context)
+            let jsExternal = arg0.asExternal()
 
             let data: Data = jsExternal.cast<Data>().getOrThrow()
 
@@ -163,7 +163,7 @@ class Data <: SharedObject {
         let arg0 = callInfo[0]
 
         // 把this指针转换为JSObject
-        let thisObject = thisArg.asObject(context)
+        let thisObject = thisArg.asObject()
         // 从JSObject上获取隐藏属性
         let jsExternal = thisObject.getAttachInfo().getOrThrow()
         // 从js对仓颉对象的引用上获取仓颉对象
@@ -181,7 +181,7 @@ class Data <: SharedObject {
     // 获取对象的id
     static func getDataId(context: JSContext, callInfo: JSCallInfo): JSValue {
         let thisArg = callInfo.thisArg
-        let thisObject = thisArg.asObject(context)
+        let thisObject = thisArg.asObject()
         let jsExternal = thisObject.getAttachInfo().getOrThrow()
         let data = jsExternal.cast<Data>().getOrThrow()
 
@@ -257,7 +257,7 @@ console.log("id is " + id);
             // 获取this指针
             let thisArg = callInfo.thisArg
             // 转换为JSObject
-            let thisObject = thisArg.asObject(context)
+            let thisObject = thisArg.asObject()
             // 创建创建对象
             let data = Data(1, "abc")
             // 创建js对仓颉对象的引用
@@ -272,7 +272,7 @@ console.log("id is " + id);
             // 获取this指针
             let thisArg = callInfo.thisArg
             // 把this指针转换为JSObject
-            let thisObject = thisArg.asObject(context)
+            let thisObject = thisArg.asObject()
             // 从JSObject上获取隐藏属性
             let jsExternal = thisObject.getAttachInfo().getOrThrow()
             // 从js对仓颉对象的引用上获取仓颉对象
@@ -292,7 +292,7 @@ console.log("id is " + id);
         // 获取对象的id
         static func getDataId(context: JSContext, callInfo: JSCallInfo): JSValue {
             let thisArg = callInfo.thisArg
-            let thisObject = thisArg.asObject(context)
+            let thisObject = thisArg.asObject()
             let jsExternal = thisObject.getAttachInfo().getOrThrow()
             let data = jsExternal.cast<Data>().getOrThrow()
 

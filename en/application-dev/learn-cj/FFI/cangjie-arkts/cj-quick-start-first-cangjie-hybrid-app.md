@@ -220,7 +220,6 @@ Key files include:
 
      import ohos.base.*
      import ohos.arkui.component.*
-     import ohos.hybrid_base.*
      import ohos.arkui.state_macro_manage.*
      import ohos.arkui.state_management.*
 
@@ -241,7 +240,7 @@ Key files include:
                              .fontSize(30)
                              .fontWeight(FontWeight.Bold)
                      }
-                     .shape(ShapeType.Capsule)
+                     .shape(ButtonType.Capsule)
                      .margin(top: 20)
                      .backgroundColor(Color(0x0D9FFB))
                      .width(40.percent)
@@ -260,7 +259,7 @@ Key files include:
 
      ```typescript
      // second.ets
-     import { CJHybridComponentV2 } from '@cangjie/cjhybridview';
+     import { CJHybridComponent } from '@cangjie/cjhybridcomponent';
 
      @Entry
      @Component
@@ -268,7 +267,7 @@ Key files include:
        build() {
          Row() {
            // Embed Cangjie page component
-           CJHybridComponentV2({
+           CJHybridComponent({
              library: "ohos_app_cangjie_entry", // Cangjie package name
              component: "Second"                // Cangjie class name
            })
@@ -362,6 +361,7 @@ Page navigation uses the router module to find target pages via URLs.
      import ohos.ark_interop.*
      import ohos.ark_interop_macro.*
      import std.collection.*
+     import ohos.hilog.Hilog
 
      public let globalJSFunction = HashMap<String, ()->Unit>()
 
@@ -386,7 +386,7 @@ Page navigation uses the router module to find target pages via URLs.
 
      ```typescript
      // second.ets
-     import { CJHybridComponentV2 } from '@cangjie/cjhybridview';
+     import { CJHybridComponent } from '@cangjie/cjhybridcomponent';
      import { router } from '@kit.ArkUI';
      import { BusinessError } from '@kit.BasicServicesKit';
      import cjlib from 'libohos_app_cangjie_entry.so'
@@ -413,7 +413,7 @@ Page navigation uses the router module to find target pages via URLs.
 
        build() {
          Row() {
-           CJHybridComponentV2({
+           CJHybridComponent({
              library: "ohos_app_cangjie_entry",
              component: "Second"
            })
@@ -432,9 +432,9 @@ Page navigation uses the router module to find target pages via URLs.
 
      import ohos.base.*
      import ohos.arkui.component.*
-     import ohos.hybrid_base.*
      import ohos.arkui.state_macro_manage.*
      import ohos.arkui.state_management.*
+     import ohos.hilog.Hilog
 
      @HybridComponentEntry
      @Component
@@ -453,12 +453,12 @@ Page navigation uses the router module to find target pages via URLs.
                              .fontSize(30)
                              .fontWeight(FontWeight.Bold)
                      }
-                     .shape(ShapeType.Capsule)
+                     .shape(ButtonType.Capsule)
                      .margin(top: 20)
                      .backgroundColor(Color(0x0D9FFB))
                      .width(40.percent)
                      .height(5.percent)
-                     .onClick ({
+                     .onClick ({ _ =>
                          Hilog.info(1, "info", "Succeeded in clicking the 'Back' button.")
                          let optFn = globalJSFunction.get("SecondPageRouterBack")
                          if (let Some(fn) <- optFn) {

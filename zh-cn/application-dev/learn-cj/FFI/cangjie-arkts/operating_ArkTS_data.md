@@ -221,9 +221,6 @@ internal import ohos.ark_interop.JSContext
 internal import ohos.ark_interop.JSCallInfo
 internal import ohos.ark_interop.JSValue
 
-import ohos.hilog.HilogChannel
-let logger = HilogChannel(0, 0, "WBT")
-
 func testAsync(context: JSContext, callInfo: JSCallInfo): JSValue {
     // 创建 PromiseCapability
     let promise = context.promiseCapability()
@@ -420,7 +417,7 @@ startTestWorker();
         let a = callInfo[0].toNumber()
         let b = callInfo[1].toNumber()
         // 把第3个参数转换为JSFunction
-        let callback = callInfo[2].asFunction(context)
+        let callback = callInfo[2].asFunction()
         // 计算结果
         let result = a + b
         // 从仓颉Float64创建ArkTS number
@@ -442,7 +439,7 @@ startTestWorker();
 <!--compile-->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
-    let callback = callInfo[0].asFunction(context)
+    let callback = callInfo[0].asFunction()
     let thisArg = callInfo[1]
 
     callback.call(thisArg: thisArg)
@@ -474,11 +471,11 @@ doSth.call();
 <!--compile.error-->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
-    let object = callInfo[0].asObject(context)
+    let object = callInfo[0].asObject()
     // 会隐式传递this指针，调用正常
     object.callMethod("doSth")
 
-    let doSth = object["doSth"].asFunction(context)
+    let doSth = object["doSth"].asFunction()
     // 未传递this指针，会出现异常`can't read property of undefined`
     doSth.call()
     // 显式传递this指针，调用正常

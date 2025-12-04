@@ -114,7 +114,7 @@ Both **entry** and **my_module** modules contain a page, with navigation between
 2. The directory structure of the **my_module** module is as follows:
 
    ```text
-   entry
+   my_module
    ├── build
    ├── src
    │    ├── main
@@ -178,7 +178,7 @@ Both **entry** and **my_module** modules contain a page, with navigation between
    - **my_module > src > main > resources > base > profile > route_map.json** must configure the subpage routing information, as shown below:
 
    ```json
-   // route_map.json
+   // router_map.json
    {
      "routerMap": [
        {
@@ -197,7 +197,7 @@ Both **entry** and **my_module** modules contain a page, with navigation between
 
    ```json5
    // module.json5
-   "routerMap": "$profile:route_map"
+   "routerMap": "$profile:router_map"
    ```
 
    > **Note:**
@@ -248,7 +248,7 @@ After the project syncs automatically, the directory structure is as follows:
     │    │    │    └── base
     │    │    │         ├── element
     │    │    │         └── profile
-    │    │    │              └── route_map.json
+    │    │    │              └── router_map.json
     │    │    └── module.json5
     │    ├── ohosTest
     │    └── test
@@ -432,6 +432,7 @@ Here, **my_module** becomes a Cangjie-ArkTS hybrid module.
         │    │    └── index.cj
         │    ├── ets
         │    │    └── pages
+        │    │         └── cangjie_page.ets
         │    │         └── MyModulePage.ets
         │    ├── resources
         │    └── module.json5
@@ -451,7 +452,6 @@ Here, **my_module** becomes a Cangjie-ArkTS hybrid module.
    import ohos.arkui.component.*
    import ohos.arkui.state_macro_manage.*
    import ohos.arkui.state_management.*
-   import ohos.hybrid_base.*
 
    @HybridComponentEntry
    @Component
@@ -465,13 +465,13 @@ Here, **my_module** becomes a Cangjie-ArkTS hybrid module.
                    .fontSize(20)
                    .fontWeight(FontWeight.Bold)
                Button("Click to Modify the Text Above")
-                   .shape(ShapeType.Capsule)
+                   .shape(ButtonType.Capsule)
                    .width(80.percent)
                    .height(40)
                    .margin(20)
-                   .onClick ({
-                       msg = "Okay, Cangjie clicked"
-                   })
+                   .onClick ({ _ =>
+                        msg = "Okay, Cangjie clicked"
+                    })
            }
            .width(100.percent)
            .height(100.percent)
@@ -486,7 +486,7 @@ Here, **my_module** becomes a Cangjie-ArkTS hybrid module.
    ```typescript
    // MyModulePage.ets
    // Embedding the Cangjie page in an ArkTS page
-   import { CJHybridComponentV2 } from '@cangjie/cjhybridview'
+   import { CJHybridComponent } from '@cangjie/cjhybridcomponent'
    // Import the callSync and callAsync interfaces from libohos_app_cangjie_entry.so
    import cjlib from 'libohos_app_cangjie_my_module.so'
 
@@ -538,7 +538,7 @@ Here, **my_module** becomes a Cangjie-ArkTS hybrid module.
                  })
              })
              // Embed the Cangjie page via CJHybridComponent
-           CJHybridComponentV2({
+           CJHybridComponent({
              library: 'ohos_app_cangjie_my_module', // The package name where the Cangjie page resides
              component: 'CangjiePage'               // The class name corresponding to the Cangjie page
            })

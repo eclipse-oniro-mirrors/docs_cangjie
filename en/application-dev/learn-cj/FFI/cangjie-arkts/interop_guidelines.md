@@ -205,7 +205,7 @@ class Data <: SharedObject {
         let arg1 = callInfo[1]
 
         // Convert argument 0 to a JS reference to the Cangjie object
-        let jsExternal = arg0.asExternal(context)
+        let jsExternal = arg0.asExternal()
         // Get the Cangjie object
         let data: Data = jsExternal.cast<Data>().getOrThrow()
         // Convert argument 1 to Float64
@@ -223,7 +223,7 @@ class Data <: SharedObject {
     static func getDataId(context: JSContext, callInfo: JSCallInfo): JSValue {
         let arg0 = callInfo[0]
 
-        let jsExternal = arg0.asExternal(context)
+        let jsExternal = arg0.asExternal()
 
         let data: Data = jsExternal.cast<Data>().getOrThrow()
 
@@ -301,7 +301,7 @@ class Data <: SharedObject {
         let arg0 = callInfo[0]
 
         // Convert this pointer to JSObject
-        let thisObject = thisArg.asObject(context)
+        let thisObject = thisArg.asObject()
         // Get hidden property from JSObject
         let jsExternal = thisObject.getAttachInfo().getOrThrow()
         // Get Cangjie object from JS reference
@@ -319,7 +319,7 @@ class Data <: SharedObject {
     // Get object's ID
     static func getDataId(context: JSContext, callInfo: JSCallInfo): JSValue {
         let thisArg = callInfo.thisArg
-        let thisObject = thisArg.asObject(context)
+        let thisObject = thisArg.asObject()
         let jsExternal = thisObject.getAttachInfo().getOrThrow()
         let data = jsExternal.cast<Data>().getOrThrow()
 
@@ -514,7 +514,7 @@ func addNumberAsync(context: JSContext, callInfo: JSCallInfo): JSValue {
     // Convert JSValue to Cangjie types
     let a: Float64 = arg0.toNumber()
     let b: Float64 = arg1.toNumber()
-    let callback = arg2.asFunction(context)
+    let callback = arg2.asFunction()
 
     // Create a new Cangjie thread
     spawn {
@@ -552,7 +552,7 @@ func addNumberAsync(context: JSContext, callInfo: JSCallInfo): JSValue {
     // Convert JSValue to Cangjie types
     let a: Float64 = arg0.toNumber()
     let b: Float64 = arg1.toNumber()
-    let callback = arg2.asFunction(context)
+    let callback = arg2.asFunction()
 
     // Create a new Cangjie thread
     spawn {
@@ -600,7 +600,7 @@ func addNumberAsync(context: JSContext, callInfo: JSCallInfo): JSValue {
     // Convert JSValue to Cangjie types
     let a: Float64 = arg0.toNumber()
     let b: Float64 = arg1.toNumber()
-    let callback = arg2.asFunction(context)
+    let callback = arg2.asFunction()
 
     // Create a new Cangjie thread
     spawn {
@@ -646,7 +646,7 @@ func addNumberAsync(context: JSContext, callInfo: JSCallInfo): JSValue {
     // Convert JSValue to Cangjie types
     let a: Float64 = arg0.toNumber()
     let b: Float64 = arg1.toNumber()
-    let callback = arg2.asFunction(context)
+    let callback = arg2.asFunction()
 
     // Create a new Cangjie thread
     spawn {

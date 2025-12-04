@@ -22,10 +22,9 @@ The steps to add a Cangjie page in DevEco Studio are as follows:
    ```cangjie
    package ohos_app_cangjie_entry   // Package name
 
-   import ohos.component.*
-   import ohos.state_manage.*
-   import ohos.state_macro_manage.*
-   import ohos.hybrid_base.*
+   import ohos.arkui.component.*
+   import ohos.arkui.state_macro_manage.*
+   import ohos.arkui.state_management.*
 
    // This page component must be decorated with HybridComponentEntry
    @HybridComponentEntry
@@ -37,9 +36,9 @@ The steps to add a Cangjie page in DevEco Studio are as follows:
        public func build() {
            Column {
                Text(msg)
-               Button("click to change Text").onClick {
-                   => msg = "world"
-               }
+               Button("click to change Text").onClick({ _ =>
+                  msg = "world"
+               })
            }
        }
    }
@@ -55,15 +54,15 @@ The steps to add a Cangjie page in DevEco Studio are as follows:
    ```ts
    // Embedding a Cangjie page component in an ArkTS page
    // Importing interface functions
-   import { CJHybridComponentV2 } from '@cangjie/cjhybridview';
+   import { CJHybridComponent } from '@cangjie/cjhybridcomponent';
 
    @Entry
    @Component
    struct Second {
      build() {
        Row() {
-         // Embedding the Cangjie page via the CJHybridComponentV2 interface
-         CJHybridComponentV2({
+         // Embedding the Cangjie page via the CJHybridComponent interface
+         CJHybridComponent({
            library: "ohos_app_cangjie_entry", // The package name where the Cangjie page resides
            component: "Second"                // The class name corresponding to the Cangjie page
          })

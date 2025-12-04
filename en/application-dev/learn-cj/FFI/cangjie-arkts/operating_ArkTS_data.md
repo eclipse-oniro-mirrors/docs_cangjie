@@ -221,9 +221,6 @@ internal import ohos.ark_interop.JSContext
 internal import ohos.ark_interop.JSCallInfo
 internal import ohos.ark_interop.JSValue
 
-import ohos.hilog.HilogChannel
-let logger = HilogChannel(0, 0, "WBT")
-
 func testAsync(context: JSContext, callInfo: JSCallInfo): JSValue {
     // Create PromiseCapability
     let promise = context.promiseCapability()
@@ -421,7 +418,7 @@ This example first calls a Cangjie function from ArkTS, then calls back an ArkTS
         let a = callInfo[0].toNumber()
         let b = callInfo[1].toNumber()
         // Convert the 3rd parameter to JSFunction
-        let callback = callInfo[2].asFunction(context)
+        let callback = callInfo[2].asFunction()
         // Calculate the result
         let result = a + b
         // Create ArkTS number from Cangjie Float64
@@ -443,7 +440,7 @@ The function in this example doesn't have a `this` pointer. For method calls req
 <!--compile-->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
-    let callback = callInfo[0].asFunction(context)
+    let callback = callInfo[0].asFunction()
     let thisArg = callInfo[1]
 
     callback.call(thisArg: thisArg)
@@ -475,11 +472,11 @@ The corresponding implementation in Cangjie is as follows:
 <!--compile.error-->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
-    let object = callInfo[0].asObject(context)
+    let object = callInfo[0].asObject()
     // Implicitly passes the this pointer and works correctly
     object.callMethod("doSth")
 
-    let doSth = object["doSth"].asFunction(context)
+    let doSth = object["doSth"].asFunction()
     // Fails to pass the this pointer and throws `can't read property of undefined`
     doSth.call()
     // Explicitly passes the this pointer and works correctly

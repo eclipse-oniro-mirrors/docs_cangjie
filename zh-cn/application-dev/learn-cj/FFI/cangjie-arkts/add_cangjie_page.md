@@ -22,10 +22,9 @@
    ```cangjie
    package ohos_app_cangjie_entry   // 包名
 
-   import ohos.component.*
-   import ohos.state_manage.*
-   import ohos.state_macro_manage.*
-   import ohos.hybrid_base.*
+   import ohos.arkui.component.*
+   import ohos.arkui.state_macro_manage.*
+   import ohos.arkui.state_management.*
 
    // 该页面组件必须由HybridComponentEntry修饰
    @HybridComponentEntry
@@ -37,9 +36,9 @@
        public func build() {
            Column {
                Text(msg)
-               Button("click to change Text").onClick {
-                   => msg = "world"
-               }
+               Button("click to change Text").onClick({ _ =>
+                  msg = "world"
+               })
            }
        }
    }
@@ -55,15 +54,15 @@
    ```ts
    // 在 ArkTS 页面中嵌入仓颉页面组件
    // 导入接口函数
-   import { CJHybridComponentV2 } from '@cangjie/cjhybridview';
+   import { CJHybridComponent } from '@cangjie/cjhybridcomponent';
 
    @Entry
    @Component
    struct Second {
      build() {
        Row() {
-         // 通过 CJHybridComponentV2 接口嵌入仓颉页面
-         CJHybridComponentV2({
+         // 通过 CJHybridComponent 接口嵌入仓颉页面
+         CJHybridComponent({
            library: "ohos_app_cangjie_entry", // 仓颉页面所在的 package 名字
            component: "Second"                // 仓颉页面对应的 class 名字
          })

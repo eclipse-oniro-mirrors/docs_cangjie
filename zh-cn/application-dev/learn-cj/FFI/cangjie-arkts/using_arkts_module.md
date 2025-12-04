@@ -13,7 +13,7 @@ func tryLoadArkTSSo() {
     // 根据 ArkTS 模块名导入对应的模块，模块导入进来是一个 JSValue
     let module = context.requireSystemNativeModule("file.photoAccessHelper")
     // 按照操作 JSValue 的方法使用该 module
-    let obj = module.asObject(context)
+    let obj = module.asObject()
     // 通过 callMethod 来调用 photoAccessHelper 的方法
     // obj.callMethod(...)
 }

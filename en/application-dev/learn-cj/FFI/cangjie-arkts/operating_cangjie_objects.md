@@ -49,7 +49,7 @@ This example demonstrates sharing Cangjie objects to the ArkTS runtime, using Ar
             let arg1 = callInfo[1]
 
             // Convert parameter 0 to JS reference of Cangjie object
-            let jsExternal = arg0.asExternal(context)
+            let jsExternal = arg0.asExternal()
             // Get Cangjie object
             let data: Data = jsExternal.cast<Data>().getOrThrow()
             // Convert parameter 1 to Float64
@@ -67,7 +67,7 @@ This example demonstrates sharing Cangjie objects to the ArkTS runtime, using Ar
         static func getDataId(context: JSContext, callInfo: JSCallInfo): JSValue {
             let arg0 = callInfo[0]
 
-            let jsExternal = arg0.asExternal(context)
+            let jsExternal = arg0.asExternal()
 
             let data: Data = jsExternal.cast<Data>().getOrThrow()
 
@@ -163,7 +163,7 @@ class Data <: SharedObject {
         let arg0 = callInfo[0]
 
         // Convert this pointer to JSObject
-        let thisObject = thisArg.asObject(context)
+        let thisObject = thisArg.asObject()
         // Get hidden property from JSObject
         let jsExternal = thisObject.getAttachInfo().getOrThrow()
         // Get Cangjie object from JS reference
@@ -181,7 +181,7 @@ class Data <: SharedObject {
     // Get object's ID
     static func getDataId(context: JSContext, callInfo: JSCallInfo): JSValue {
         let thisArg = callInfo.thisArg
-        let thisObject = thisArg.asObject(context)
+        let thisObject = thisArg.asObject()
         let jsExternal = thisObject.getAttachInfo().getOrThrow()
         let data = jsExternal.cast<Data>().getOrThrow()
 
@@ -257,7 +257,7 @@ Attaching all object operation methods directly to objects consumes more memory 
             // Get this pointer
             let thisArg = callInfo.thisArg
             // Convert to JSObject
-            let thisObject = thisArg.asObject(context)
+            let thisObject = thisArg.asObject()
             // Create object
             let data = Data(1, "abc")
             // Create JS reference to Cangjie object
@@ -272,7 +272,7 @@ Attaching all object operation methods directly to objects consumes more memory 
             // Get this pointer
             let thisArg = callInfo.thisArg
             // Convert this pointer to JSObject
-            let thisObject = thisArg.asObject(context)
+            let thisObject = thisArg.asObject()
             // Get hidden property from JSObject
             let jsExternal = thisObject.getAttachInfo().getOrThrow()
             // Get Cangjie object from JS reference
@@ -292,7 +292,7 @@ Attaching all object operation methods directly to objects consumes more memory 
         // Get object's ID
         static func getDataId(context: JSContext, callInfo: JSCallInfo): JSValue {
             let thisArg = callInfo.thisArg
-            let thisObject = thisArg.asObject(context)
+            let thisObject = thisArg.asObject()
             let jsExternal = thisObject.getAttachInfo().getOrThrow()
             let data = jsExternal.cast<Data>().getOrThrow()
 
