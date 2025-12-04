@@ -18,10 +18,10 @@
 
 3. 仓颉互操作模块实现后，在 ArkTS 代码中导入仓颉 ohos_app_cangjie_entry 模块，即可加载自定义的仓颉互操作模块，并调用相关的接口。
 
-```typescript
-// 加载自定义的仓颉互操作模块
-import testCJ from "libohos_app_cangjie_entry.so"
-```
+   ```typescript
+   // 加载自定义的仓颉互操作模块
+   import testCJ from "libohos_app_cangjie_entry.so"
+   ```
 
 4. 自定义的仓颉互操作模块加载成功后，即可在 ArkTS 工程中调用仓颉互操作模块提供的接口。
 

@@ -52,39 +52,39 @@
 仓颉API本次随OpenHarmony 6.x版本首次向应用开放，并将在后续版本中持续丰富API能力，目标是为仓颉应用提供全量的OpenHarmony系统能力。本次仓颉版API将优先提供安全、高性能、可并发和基础运行所需的能力，涉及5大类别，22个Kit：
 
 * **应用框架**
-  
-  * ArkUI（方舟UI框架）：提供高性能的声明式开发范式。
-  * ArkData（方舟数据管理）：提供高性能的分布式键值数据库、Key-Value键值型的数据处理能力。
-  * ArkWeb（方舟Web）：提供高性能的web控制能力。
-  * Core File Kit（文件基础服务）：提供支持并发的文件操作能力。
-  * Ability Kit（程序框架服务）：提供应用运行所需的基础元能力、包管理和访问控制能力。
-  * IPC Kit（进程间通信服务）：提供应用运行所需的进程间通信基础能力。
-  * Localization Kit（本地化开发服务）：提供应用运行所需的国际化基础能力。
+
+    * ArkUI（方舟UI框架）：提供高性能的声明式开发范式。
+    * ArkData（方舟数据管理）：提供高性能的分布式键值数据库、Key-Value键值型的数据处理能力。
+    * ArkWeb（方舟Web）：提供高性能的web控制能力。
+    * Core File Kit（文件基础服务）：提供支持并发的文件操作能力。
+    * Ability Kit（程序框架服务）：提供应用运行所需的基础元能力、包管理和访问控制能力。
+    * IPC Kit（进程间通信服务）：提供应用运行所需的进程间通信基础能力。
+    * Localization Kit（本地化开发服务）：提供应用运行所需的国际化基础能力。
 * **系统**
-  
-  * Crypto Architecture Kit（加解密算法框架服务）：提供安全类的密码算法库。加解密接口
-  * Universal Keystore Kit（密钥管理服务）：提供安全类的密钥库能力，包括密钥管理及密钥的密码学操作等功能。
-  * Network Kit（网络服务）：提供支持并发的HTTP数据请求能力
-  * Connectivity Kit（短距通信服务）：提供高性能的蓝牙、wifi设备操作接口。
-  * Sensor Service Kit（传感器服务）：提供高性能的传感器数据处理能力。
-  * Basic Services Kit（基础服务）：提供应用运行所需的电源服务、事件通知、启动恢复、上传下载、设置数据等基础能力。
-  * Performance Analysis Kit（性能分析服务）：提供应用运行所需的应用打点和事件订阅等基础能力。
-  * Telephony Kit（蜂窝通信服务）：提供应用运行所需的呼叫管理基础功能。
-  * Test Kit（应用测试服务）：提供应用运行所需的测试调测框架。
+
+    * Crypto Architecture Kit（加解密算法框架服务）：提供安全类的密码算法库。加解密接口
+    * Universal Keystore Kit（密钥管理服务）：提供安全类的密钥库能力，包括密钥管理及密钥的密码学操作等功能。
+    * Network Kit（网络服务）：提供支持并发的HTTP数据请求能力
+    * Connectivity Kit（短距通信服务）：提供高性能的蓝牙、wifi设备操作接口。
+    * Sensor Service Kit（传感器服务）：提供高性能的传感器数据处理能力。
+    * Basic Services Kit（基础服务）：提供应用运行所需的电源服务、事件通知、启动恢复、上传下载、设置数据等基础能力。
+    * Performance Analysis Kit（性能分析服务）：提供应用运行所需的应用打点和事件订阅等基础能力。
+    * Telephony Kit（蜂窝通信服务）：提供应用运行所需的呼叫管理基础功能。
+    * Test Kit（应用测试服务）：提供应用运行所需的测试调测框架。
 * **媒体**
-  
-  * Camera Kit（相机服务）：提供高性能的相机服务接口。
-  * Image Kit（图片处理服务）：提供可并发的解码、编码、编辑、元数据处理和图片接收等能力。
-  * Media Kit（媒体服务）：提供可并发的音视频相关媒体业务访问能力。
-  * Media Library Kit（媒体文件管理服务）：提供可并发的相册管理能力，包括创建相册、访问和修改相册中的媒体数据。
+
+    * Camera Kit（相机服务）：提供高性能的相机服务接口。
+    * Image Kit（图片处理服务）：提供可并发的解码、编码、编辑、元数据处理和图片接收等能力。
+    * Media Kit（媒体服务）：提供可并发的音视频相关媒体业务访问能力。
+    * Media Library Kit（媒体文件管理服务）：提供可并发的相册管理能力，包括创建相册、访问和修改相册中的媒体数据。
 
 * **图形**
-  
-  * ArkGraphics 2D（方舟2D图形服务）：提供应用运行所的抽象化色域对象管理的基础能力。
+
+    * ArkGraphics 2D（方舟2D图形服务）：提供应用运行所的抽象化色域对象管理的基础能力。
 
 * **应用服务**
-  
-  * Location Kit（位置服务）：提供应用运行所需定位基本功能。
+
+    * Location Kit（位置服务）：提供应用运行所需定位基本功能。
 
 当前仓颉暂不支持的API，用户可通过仓颉->ArkTS和仓颉->C跨语言互操作的方式调用ArkTS API或者NDK API。
 
@@ -182,11 +182,11 @@ func callInterop(x: Float64, y: Float64): Float64 {
 开发者在下载安装DevEco Studio后，获取并安装仓颉开发插件至对应版本的DevEco Studio，下载对应OpenHarmony SDK，进行仓颉OpenHarmony应用开发。 仓颉开发的特性全貌将主要有以下方面：
 
 - 工程管理和创建：
-  
+
   **工程目录结构：仓颉工程目录结构**
-  
+
   DevEco Studio支持创建仓颉工程，其工程目录结构如下：
-  
+
   ```text
   Project_name
   ├── .hvigor
@@ -217,30 +217,30 @@ func callInterop(x: Float64, y: Float64): Float64 {
   ├── oh-package.json5
   └── oh-package-lock.json5
   ```
-  
+
   其中关键文件信息如下：
-  
-  - **AppScope > app.json5**：应用的全局配置信息。
-  - **entry**：应用模块，编译构建生成一个HAP。
-    - **src > main > cangjie**：用于存放仓颉源码。
-    - **src > main > resources**：用于存放应用所用到的资源文件，如图形、多媒体、字符串、布局文件等。
-    - **src > main > module.json5**：Stage 模块配置文件，主要包含HAP的配置信息、应用在具体设备上的配置信息以及应用的全局配置信息。
-    - **build-profile.json5**：当前的模块信息、编译信息配置项，包括buildOption、targets配置等。
-    - **hvigorfile.ts**：模块级编译构建任务脚本。
-    - **cjpm.toml**：仓颉的包管理配置文件。
-    - **oh-package.json5**：描述三方包的包名、版本、入口文件（类型声明文件）和依赖项等信息。
-    - **src > ohosTest**：存放仓颉测试源码，用于仓颉仪器测试。
-  - **hvigor**：用于存放当前工程使用的 hvigor。
-    - **hvigor-config.json5**：指定工程全局使用的 hvigor 以及 hvigor 参数配置。
-  - **oh_modules**：用于存放三方库依赖信息，包含应用/服务所依赖的第三方库文件。
-  - **build-profile.json5**：应用级配置信息，包括签名、产品配置等。
-  - **hvigorfile.ts**：应用级编译构建任务脚本。
-  - **oh-package.json5**：描述全局配置，如：依赖覆盖（overrides）、依赖关系重写（overrideDependencyMap）和参数化配置（parameterFile）等。
-  
+
+    - **AppScope > app.json5**：应用的全局配置信息。
+    - **entry**：应用模块，编译构建生成一个HAP。
+        - **src > main > cangjie**：用于存放仓颉源码。
+        - **src > main > resources**：用于存放应用所用到的资源文件，如图形、多媒体、字符串、布局文件等。
+        - **src > main > module.json5**：Stage 模块配置文件，主要包含HAP的配置信息、应用在具体设备上的配置信息以及应用的全局配置信息。
+        - **build-profile.json5**：当前的模块信息、编译信息配置项，包括buildOption、targets配置等。
+        - **hvigorfile.ts**：模块级编译构建任务脚本。
+        - **cjpm.toml**：仓颉的包管理配置文件。
+        - **oh-package.json5**：描述三方包的包名、版本、入口文件（类型声明文件）和依赖项等信息。
+        - **src > ohosTest**：存放仓颉测试源码，用于仓颉仪器测试。
+    - **hvigor**：用于存放当前工程使用的 hvigor。
+        - **hvigor-config.json5**：指定工程全局使用的 hvigor 以及 hvigor 参数配置。
+    - **oh_modules**：用于存放三方库依赖信息，包含应用/服务所依赖的第三方库文件。
+    - **build-profile.json5**：应用级配置信息，包括签名、产品配置等。
+    - **hvigorfile.ts**：应用级编译构建任务脚本。
+    - **oh-package.json5**：描述全局配置，如：依赖覆盖（overrides）、依赖关系重写（overrideDependencyMap）和参数化配置（parameterFile）等。
+
   **工程目录结构：仓颉与ArkTS互操作工程目录结构**
-  
+
   DevEco Studio支持创建仓颉与ArkTS互操作工程，其工程目录结构如下：
-  
+
   ```text
   Project_name
   ├── .hvigor
@@ -280,41 +280,41 @@ func callInterop(x: Float64, y: Float64): Float64 {
   ├── oh-package.json5
   └── oh-package-lock.json5
   ```
-  
-  - **AppScope > app.json5**：应用的全局配置信息。
-  - **entry**：应用模块，编译构建生成一个HAP。
-    - **src > main > cangjie > loader**：提供加载仓颉so的方法声明，帮助ArkTS调用仓颉中注册的方法。
-    - **src > main > cangjie**：用于存放仓颉源码。
-    - **src > main > ets**：用于存放ArkTS源码。
-    - **src > main > resources**：用于存放应用所用到的资源文件，如图形、多媒体、字符串、布局文件等。
-    - **src > main > module.json5**：Stage 模块配置文件，主要包含HAP的配置信息、应用在具体设备上的配置信息以及应用的全局配置信息。
-    - **build-profile.json5**：当前的模块信息、编译信息配置项，包括 buildOption、targets 配置等。
-    - **hvigorfile.ts**：模块级编译构建任务脚本。
-    - **cjpm.toml**：仓颉的包管理配置文件。
-    - **oh-package.json5**：描述三方包的包名、版本、入口文件（类型声明文件）和依赖项等信息。
-  - **hvigor**：用于存放当前工程使用的 hvigor。
-    - **hvigor-config.json5**：指定工程全局使用的 hvigor 以及 hvigor 参数配置。
-  - **oh_modules**：用于存放三方库依赖信息，包含应用/服务所依赖的第三方库文件。
-  - **build-profile.json5**：应用级配置信息，包括签名、产品配置等。
-  - **hvigorfile.ts**：应用级编译构建任务脚本。
-  - **oh-package.json5**：描述全局配置，如：依赖覆盖（overrides）、依赖关系重写（overrideDependencyMap）和参数化配置（parameterFile）等。
-  
+
+    - **AppScope > app.json5**：应用的全局配置信息。
+    - **entry**：应用模块，编译构建生成一个HAP。
+        - **src > main > cangjie > loader**：提供加载仓颉so的方法声明，帮助ArkTS调用仓颉中注册的方法。
+        - **src > main > cangjie**：用于存放仓颉源码。
+        - **src > main > ets**：用于存放ArkTS源码。
+        - **src > main > resources**：用于存放应用所用到的资源文件，如图形、多媒体、字符串、布局文件等。
+        - **src > main > module.json5**：Stage 模块配置文件，主要包含HAP的配置信息、应用在具体设备上的配置信息以及应用的全局配置信息。
+        - **build-profile.json5**：当前的模块信息、编译信息配置项，包括 buildOption、targets 配置等。
+        - **hvigorfile.ts**：模块级编译构建任务脚本。
+        - **cjpm.toml**：仓颉的包管理配置文件。
+        - **oh-package.json5**：描述三方包的包名、版本、入口文件（类型声明文件）和依赖项等信息。
+    - **hvigor**：用于存放当前工程使用的 hvigor。
+        - **hvigor-config.json5**：指定工程全局使用的 hvigor 以及 hvigor 参数配置。
+    - **oh_modules**：用于存放三方库依赖信息，包含应用/服务所依赖的第三方库文件。
+    - **build-profile.json5**：应用级配置信息，包括签名、产品配置等。
+    - **hvigorfile.ts**：应用级编译构建任务脚本。
+    - **oh-package.json5**：描述全局配置，如：依赖覆盖（overrides）、依赖关系重写（overrideDependencyMap）和参数化配置（parameterFile）等。
+
   **创建仓颉工程**
-  
+
   1. 通过如下两种方式，打开工程创建向导界面。
      - 如果当前未打开任何工程，可以在DevEco Studio的欢迎页，选择**Create Project**开始创建一个新工程。
      - 如果已经打开了工程，可以在菜单栏选择**File > New > Create Project**来创建一个新工程。
   2. 根据工程创建向导，选择 **[Cangjie] Empty Ability** 模板。
-     
+
      ![image](./figures/capability/cangjieTemplate.png)
 
   3. 在工程配置页面，需要根据向导配置工程的基本信息。
-     
+
      ![image](./figures/capability/cangjieConfig.png)
-     
+
      - **Project name**：工程的名称，可以自定义，由大小写字母、数字和下划线组成。
      - **Bundle name**：标识应用的包名，用于标识应用的唯一性。
-       
+
        应用包名要求：
        - 必须为以点号（.）分隔的字符串，且至少包含三段，每段中仅允许使用英文字母、数字、下划线（_），如“com.example.myapplication ”。
        - 首段以英文字母开头，非首段以数字或英文字母开头，每一段以数字或者英文字母结尾，如“com.01example.myapplication”。
@@ -324,39 +324,39 @@ func callInterop(x: Float64, y: Float64): Float64 {
      - **Compatible SDK**：兼容的最低 API Version。
      - **Module name**： 模块的名称。
      - **Device type**：该工程模板支持的设备类型。
-       
+
        对于开发应用过程中使用的某个API所支持的设备类型，可以通过下述方式进行查询：
-       
+
        1. 在编辑器使用该API的位置，通过语言服务的悬浮提示查看该API syscap信息。
        2. 通过API声明位置的注释头中syscap字段获取该API的syscap标签，比如：SystemCapability.Communication.NFC.CardEmulation。
        3. 在DevEco的SDK中查看所有设备支持的syscap能力，具体位置为:
           - ohos: deveco-studio\sdk\default\openharmony\ets\api\device-define
        4. 查找openharmony目录，按照设备类型{A}，查找{A}.json文件，该文件包含{A}设备全量syscap能力集合。
   4. 单击 **Finish**，工具会自动生成示例代码和相关资源，等待工程初始化，完成新工程创建。
-     
+
      ![image](./figures/capability/finishCreateCangjie.png)
-  
+
   **在已有ArkTS工程中引入仓颉**
-  
+
   在工程界面，右键选择 **entry > New > Cangjie(Interop)** 使能仓颉与ArkTS混合模块。工程同步完成后，原有的ArkTS模块变为仓颉与ArkTS混合模块。
-  
+
   ![image](./figures/capability/startEnableCangjie.png)
 
 - 代码编辑：代码高亮、代码补全、语法诊断、悬浮提示、定义跳转、引用查找、格式化等编码辅助能力，包括元编程相关的编码辅助能力。
-  
+
   例如，代码补全：
-  
+
   ![image](./figures/capability/funcCom.png)
 
 - 编译构建：支持编译仓颉的HAP/APP、支持编译仓颉的HAR/HSP、支持推送仓颉HAP包至OpenHarmony设备运行能力。
 - 代码调试：支持仓颉HAP在手机的调试能力，包括断点能力、单步调试、调试信息（线程、堆栈、变量等）可视化查看能力。
-  
+
   例如，设置调试代码类型：单击**Run > Edit Configurations > Debugger**，选择相应模块，设置Debug type。
-  
+
   ![image](./figures/capability/debugType.png)
-  
+
   例如，检查变量：调试时，停在断点或由于其他原因导致程序中断，在堆栈列表展示当前线程状态，在Variable变量列表支持查看全局/静态变量、寄存器变量和局部变量。
-  
+
   ![image](./figures/capability/debugInfo.png)
 
 ## 三、下一步演进

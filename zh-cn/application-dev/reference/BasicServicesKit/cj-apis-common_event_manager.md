@@ -1846,8 +1846,8 @@ public static const COMMON_EVENT_PACKAGE_ADDED: String = "usual.event.PACKAGE_AD
 
 在设备上指定用户下安装了新的应用程序，将会触发事件通知服务发布该系统公共事件。
 
-> **说明：** 
-> 
+> **说明：**
+>
 > - 三方应用只能监听自身应用的安装事件。
 
 **类型：** String
@@ -1866,8 +1866,8 @@ public static const COMMON_EVENT_PACKAGE_CACHE_CLEARED: String = "usual.event.PA
 
 对设备上安装的应用程序包清除缓存时，将会触发事件通知服务发布该系统公共事件。
 
-> **说明：** 
-> 
+> **说明：**
+>
 > - 三方应用只能监听自身应用的缓存清理事件。
 
 **类型：** String
@@ -1886,8 +1886,8 @@ public static const COMMON_EVENT_PACKAGE_CHANGED: String = "usual.event.PACKAGE_
 
 在设备上安装的应用程序包更新或者包的组件被禁用使能，将会触发事件通知服务发布该系统公共事件。
 
-> **说明：** 
-> 
+> **说明：**
+>
 > - 三方应用只能监听自身应用的更改事件。
 
 **类型：** String
@@ -1906,8 +1906,8 @@ public static const COMMON_EVENT_PACKAGE_DATA_CLEARED: String = "usual.event.PAC
 
 在设备上指定用户清除应用包数据，将会触发事件通知服务发布该系统公共事件。
 
-> **说明：** 
-> 
+> **说明：**
+>
 > - 三方应用只能监听自身应用的数据清理事件。
 
 **类型：** String
@@ -1968,8 +1968,8 @@ public static const COMMON_EVENT_PACKAGE_REMOVED: String = "usual.event.PACKAGE_
 
 在设备指定用户下卸载指定的应用程序包，将会触发事件通知服务发布该系统公共事件。
 
-> **说明：** 
-> 
+> **说明：**
+>
 > - 三方应用只能监听自身应用的卸载事件。
 
 **类型：** String
@@ -2002,8 +2002,8 @@ public static const COMMON_EVENT_PACKAGE_RESTARTED: String = "usual.event.PACKAG
 
 在设备上指定用户重启应用包并终止其所有进程，将会触发事件通知服务发布该系统公共事件。
 
-> **说明：** 
-> 
+> **说明：**
+>
 > - 三方应用只能监听自身应用的重启事件。
 
 **类型：** String
@@ -2084,8 +2084,8 @@ public static const COMMON_EVENT_QUICK_FIX_APPLY_RESULT: String = "usual.event.Q
 
 在设备上指定用户快速修复应用，将会触发事件通知服务发布该系统公共事件。
 
-> **说明：** 
-> 
+> **说明：**
+>
 > - 三方应用只能监听自身应用的快速修复事件。
 
 **类型：** String

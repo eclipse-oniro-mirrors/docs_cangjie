@@ -2509,7 +2509,7 @@ public class MultiAppMode {
 public let maxCount: Int32
 ```
 
-**功能：** 应用多开的最大个数。 
+**功能：** 应用多开的最大个数。
 
 **类型：** Int32
 

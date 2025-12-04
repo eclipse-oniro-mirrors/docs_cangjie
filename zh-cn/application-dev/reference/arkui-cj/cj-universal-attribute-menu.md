@@ -90,7 +90,6 @@ public func bindMenu(builder!: ?CustomBuilder): T
 |:---|:---|
 |T|返回通用方法接口类型|
 
-
 ## 示例代码
 
 ### 示例1（弹出自定义菜单）

@@ -30,7 +30,7 @@
 
 > **说明：**
 >
-> - [Popup](./cj-popup-and-menu-components-popup.md)组件在[focusable](../reference/arkui-cj/cj-universal-attribute-focus.md#focusablebool)属性（组件属性，非通用属性）为false的时候，不会有第2条特性。
+> - [Popup](./cj-popup-and-menu-components-popup.md)组件在[focusable](../reference/arkui-cj/cj-universal-attribute-focus.md#func-focusablebool)属性（组件属性，非通用属性）为false的时候，不会有第2条特性。
 > - NavBar、[NavDestination](../reference/arkui-cj/cj-navigation-switching-navdestination.md#navdestination)没有第3条特性，对于它们的走焦范围，是与它们的首个父层级页面相同的。
 
 #### 根容器

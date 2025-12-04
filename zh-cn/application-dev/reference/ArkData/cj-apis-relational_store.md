@@ -1070,7 +1070,6 @@ public func greaterThan(field: String, value: RelationalStoreValueType): RdbPred
 |:----|:----|
 |[RdbPredicates](#class-rdbpredicates)|返回与指定字段匹配的谓词。|
 
-
 **示例：**
 
 <!-- compile -->
@@ -1115,7 +1114,6 @@ public func greaterThanOrEqualTo(field: String, value: RelationalStoreValueType)
 |类型|说明|
 |:----|:----|
 |[RdbPredicates](#class-rdbpredicates)|返回与指定字段匹配的谓词。|
-
 
 **示例：**
 
@@ -4388,7 +4386,7 @@ public var pluginLibs: Array<String>
 
 3. 动态库名需为完整路径，用于被sqlite加载。
 
-样例：[context.bundleCodeDir+ "/libs/arm64/" + libtokenizer.so]，其中context.bundleCodeDir是应用沙箱对应的路径，"/libs/arm64/"表示子目录，libtokenizer.so表示动态库的文件名。当此参数不填时，默认不加载动态库。
+    样例：[context.bundleCodeDir+ "/libs/arm64/" + libtokenizer.so]，其中context.bundleCodeDir是应用沙箱对应的路径，"/libs/arm64/"表示子目录，libtokenizer.so表示动态库的文件名。当此参数不填时，默认不加载动态库。
 
 4. 动态库需要包含其全部依赖，避免依赖项丢失导致无法运行。
 

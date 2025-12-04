@@ -169,7 +169,7 @@ public func clone(): ObservedArrayList<T>
 
 |类型|说明|
 |:----|:----|
-|[ObservedArrayList](#class-observedarraylist)\<T>|克隆的状态管理数组列表。|
+|[ObservedArrayList](#class-observedarraylistt)\<T>|克隆的状态管理数组列表。|
 
 ### func clear()
 

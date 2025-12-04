@@ -388,7 +388,7 @@ public static func configCookie(url: String, value: String, incognito!: Bool = f
 > - 若通过configCookie进行两次或多次设置cookie，则每次设置的cookie之间会通过"; "进行分隔。
 >
 > - cookie每30s周期性保存到磁盘中。
-> 
+>
 > - 若存在相同host、path和名称的cookie，将被新cookie替换。若设置的cookie已过期，则不会存储该cookie。如需设置多个cookie，应多次调用此方法。
 >
 > - value参数必须遵循Set-Cookie HTTP响应头的格式。形式为"key=value"的键值对，后面可跟随以分号分隔的cookie属性列表（例如"key=value;Max-Age=100"）。
@@ -491,9 +491,9 @@ public static func fetchCookie(url: String, incognito!: Bool = false): String
 > **说明：**
 >
 > - 系统会自动清理过期的cookie，对于同名key的数据，新数据将会覆盖前一个数据。
-> 
+>
 > - 为了获取可正常使用的cookie值，fetchCookie需传入完整链接。
-> 
+>
 > - fetchCookie用于获取所有的cookie值，每条cookie值之间会通过"; "进行分隔，但无法单独获取某一条特定的cookie值。
 
 **系统能力：** SystemCapability.Web.Webview.Core
@@ -3619,7 +3619,7 @@ public operator func ==(other: SecurityLevel): Bool
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|other|[SecurityLevel](../ArkData/cj-apis-distributed_kv_store.md#enum-securitylevel)|是|-|待比较的另一个枚举值。|
+|other|[SecurityLevel](../ArkWeb/cj-apis-webview.md#enum-securitylevel)|是|-|待比较的另一个枚举值。|
 
 **返回值：**
 

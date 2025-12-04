@@ -83,6 +83,7 @@ public func createGattServer(): GattServer
 ```
 
 **功能：** 创建[GattServer](#class-gattserver)实例，表示GATT连接中的server端。
+
 - 通过该实例可以操作server端的行为，如添加服务[addService](#func-addservicegattservice)、通知特征值变化[notifyCharacteristicChanged](#func-notifycharacteristicchangedstring-notifycharacteristic)等。
 
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
@@ -2326,7 +2327,7 @@ public func on(eventType: BluetoothBleGattClientDeviceCallbackType, callback: Ca
 
 **功能：** client端订阅server端特征值变化事件。使用Callback异步回调。
 
--  需调用[setCharacteristicChangeNotification](#func-setcharacteristicchangenotificationblecharacteristic-bool-asynccallbackunit)或者[setCharacteristicChangeIndication](#func-setcharacteristicchangeindicationblecharacteristic-bool-asynccallbackunit)，且启用通知或者指示能力后，才能接收到server端的特征值内容变更通知或者指示。
+- 需调用[setCharacteristicChangeNotification](#func-setcharacteristicchangenotificationblecharacteristic-bool-asynccallbackunit)或者[setCharacteristicChangeIndication](#func-setcharacteristicchangeindicationblecharacteristic-bool-asynccallbackunit)，且启用通知或者指示能力后，才能接收到server端的特征值内容变更通知或者指示。
 
 **需要权限：** ohos.permission.ACCESS_BLUETOOTH
 
@@ -2766,7 +2767,6 @@ public func setCharacteristicChangeIndication(characteristic: BLECharacteristic,
 - 若client端收到server端特征值内容变更指示后，系统蓝牙服务会主动回复确认，应用无需关注。
 
 - 异步回调结果返回后，才能调用下一次读取或者写入操作，如[readCharacteristicValue](#func-readcharacteristicvalueblecharacteristic-asynccallbackblecharacteristic)、[readDescriptorValue](#func-readdescriptorvaluebledescriptor-asynccallbackbledescriptor)、[writeCharacteristicValue](#func-writecharacteristicvalueblecharacteristic-gattwritetype-asynccallbackunit)、[writeDescriptorValue](#func-writedescriptorvaluebledescriptor-asynccallbackunit)、[setCharacteristicChangeNotification](#func-setcharacteristicchangenotificationblecharacteristic-bool-asynccallbackunit)和[setCharacteristicChangeIndication](#func-setcharacteristicchangeindicationblecharacteristic-bool-asynccallbackunit)。
-
 
 **需要权限：** ohos.permission.ACCESS_BLUETOOTH
 

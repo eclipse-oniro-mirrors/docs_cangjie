@@ -37,7 +37,6 @@ public func bindPopup(show: ?Bool, popup: ?PopupOptions): T
 |:---|:---|
 |T|返回调用此接口的组件实例本身。|
 
-
 ## func bindPopup(?Bool, ?CustomPopupOptions)
 
 ```cangjie
@@ -62,7 +61,6 @@ public func bindPopup(show: ?Bool, popup: ?CustomPopupOptions): T
 |类型|说明|
 |:---|:---|
 |T|返回调用此接口的组件实例本身。|
-
 
 ## 示例代码
 

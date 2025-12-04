@@ -32,7 +32,6 @@ public func opacity(value: ?Float64): T
 |:---|:---|
 |T|返回调用此接口的组件实例本身。|
 
-
 ## 示例代码
 
 该示例主要显示通过opacity设置组件的不透明度。

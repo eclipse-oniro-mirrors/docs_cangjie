@@ -57,7 +57,6 @@ func onDragStart(event: ?(DragInfo) -> DragItemInfo): T
 |:---|:---|
 |T|返回通用方法接口类型|
 
-
 ## func onDragStart(?(DragInfo) -> CustomBuilder)
 
 ```cangjie
@@ -82,7 +81,6 @@ func onDragStart(event: ?(DragInfo) -> CustomBuilder): T
 |:---|:---|
 |T|返回通用方法接口类型|
 
-
 ## func onDragStart(?(DragInfo) -> Unit)
 
 ```cangjie
@@ -106,7 +104,6 @@ func onDragStart(event: ?(DragInfo) -> Unit): T
 |类型|说明|
 |:---|:---|
 |T|返回通用方法接口类型|
-
 
 ## func onDragEnter(?(DragInfo) -> Unit)
 
@@ -136,7 +133,6 @@ func onDragEnter(event: ?(DragInfo) -> Unit): T
 |:---|:---|
 |T|返回通用方法接口类型|
 
-
 ## func onDragMove(?(DragInfo) -> Unit)
 
 ```cangjie
@@ -165,7 +161,6 @@ func onDragMove(event: ?(DragInfo) -> Unit): T
 |:---|:---|
 |T|返回通用方法接口类型|
 
-
 ## func onDragLeave(?(DragInfo) -> Unit)
 
 ```cangjie
@@ -193,7 +188,6 @@ func onDragLeave(event: ?(DragInfo) -> Unit): T
 |类型|说明|
 |:---|:---|
 |T|返回通用方法接口类型|
-
 
 ## func onDrop(?(DragInfo) -> Unit)
 

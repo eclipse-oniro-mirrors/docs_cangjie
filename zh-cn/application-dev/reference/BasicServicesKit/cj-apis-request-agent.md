@@ -570,7 +570,7 @@ public var metered: Bool
 
 **功能：** 是否允许在按流量计费的网络中工作，默认为false。
 
-true：是 
+true：是
 
 false：否
 
@@ -702,7 +702,7 @@ public var redirect: Bool
 
 **功能：** 是否允许重定向，默认为true。
 
-true：是 
+true：是
 
 false：否
 
@@ -1076,7 +1076,6 @@ public enum Network <: Equatable<Network> & ToString {
 
 **功能：** 定义网络选项。
 
-
 网络不满足设置条件时，未执行的任务会等待执行，执行中的任务将失败或暂停。
 
 **系统能力：** SystemCapability.Request.FileTransferAgent
@@ -1095,10 +1094,10 @@ AnyType
 
 **起始版本：** 22
 
-### WIFI	
+### WIFI
 
 ```cangjie
-WIFI	
+WIFI 
 ```
 
 **功能：** 表示无线网络。
@@ -1107,10 +1106,10 @@ WIFI
 
 **起始版本：** 22
 
-### CELLULAR		
+### CELLULAR
 
 ```cangjie
-CELLULAR	
+CELLULAR 
 ```
 
 **功能：** 表示蜂窝数据网络。
@@ -1150,9 +1149,9 @@ public var action:?Action
 **功能：** 任务操作选项。
 
  UPLOAD表示上传任务。
- 
+
  DOWNLOAD表示下载任务。
- 
+
  如果未填写，则查询所有任务。
 
 **类型：** ?[Action](#enum-action)

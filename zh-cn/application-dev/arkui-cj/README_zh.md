@@ -122,7 +122,7 @@
     - 使用自定义能力
         - 自定义绘制
             - [使用画布绘制自定义图形（Canvas）](cj-drawing-customization-on-canvas.md)
-    - [混合开发](arkui-cj/cj-appendix-hybrid.md)
+    - [混合开发](cj-appendix-hybrid.md)
     - [使用镜像能力](cj-mirroring-display.md)
     - 主题设置
         - [应用深浅色适配](cj-ui-dark-light-color-adaptation.md)

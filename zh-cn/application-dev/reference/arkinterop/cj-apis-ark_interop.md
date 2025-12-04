@@ -781,7 +781,6 @@ func toJSValue(context: JSContext): JSValue
 |:----|:----|
 |[JSValue](#struct-jsvalue)|ArkTS 统一类型。|
 
-
 **异常：**
 
 - BusinessException：对应错误码如下表。
@@ -7978,6 +7977,7 @@ func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     return object.toJSValue()
 }
 ```
+
 ### prop nativeId
 
 ```cangjie
@@ -10006,6 +10006,7 @@ public func toUtf16String(): Utf16String
 |类型|说明|
 |:----|:----|
 |[Utf16String](#class-utf16string)|转换后的 Utf16String 对象。|
+
 **异常：**
 
 - BusinessException：对应错误码如下表。

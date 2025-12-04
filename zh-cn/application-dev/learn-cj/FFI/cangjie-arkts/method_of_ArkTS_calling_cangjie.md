@@ -8,4 +8,3 @@
 - 仓颉- ArkTS 互操作库方式：提供动态类型接口，适用于与 javascript 和 typescript 相互调用，灵活多变，适用于对互操作有一定基础的用户。
 
 ArkTS侧使用互操作代码有两种方式，可详见 [ArkTS 侧使用互操作代码](./arkts_import_cangjie.md)。
-

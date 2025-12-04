@@ -92,6 +92,7 @@ try {
 **4. 服务发现**
 
 服务发现是获取服务端支持的所有服务能力集合的过程。客户端需要根据服务发现结果，判断服务端是否存在应用需要的服务能力。
+
 - 后续的读写特征值、读写描述符等操作都需要在服务发现操作完成后进行，否则会失败。
 - 后续的读写等操作中指定的特征值或描述符必须包含在服务能力集合中，否则会失败。
 
@@ -1309,4 +1310,3 @@ class DescriptorWriteRequestCb <: Callback1Argument<DescriptorWriteRequest> {
 
 let gattServerManager = GattServerManager()
 ```
-

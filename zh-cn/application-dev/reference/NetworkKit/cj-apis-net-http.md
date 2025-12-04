@@ -310,7 +310,6 @@ public class HttpRequest {}
 
 **功能：** HTTP请求任务。在调用HttpRequest的方法前，需要先通过[createHttp()](#func-createhttp)创建一个任务。
 
-
 **系统能力：** SystemCapability.Communication.NetStack
 
 **起始版本：** 22
@@ -583,7 +582,6 @@ try {
     Hilog.info(0, "test", "${e.message}")
 }
 ```
-
 
 ### func on(HttpRequestEvent, Callback1Argument\<DataReceiveProgressInfo>)
 
@@ -1254,19 +1252,19 @@ public var extraData: HttpData
 
 1. 当HTTP请求为POST、PUT、DELETE等方法时，此字段为HTTP请求的content，以UTF-8编码形式作为请求体。
 
-示例如下：
+    示例如下：
 
-(1) 当'content-Type'为'application/x-www-form-urlencoded'时，请求提交的信息主体数据必须在key和value进行URL转码后（encodeURIComponent/encodeURI），按照键值对"key1=value1&key2=value2&key3=value3"的方式进行编码，该字段对应的类型通常为String。
+    (1) 当'content-Type'为'application/x-www-form-urlencoded'时，请求提交的信息主体数据必须在key和value进行URL转码后（encodeURIComponent/encodeURI），按照键值对"key1=value1&key2=value2&key3=value3"的方式进行编码，该字段对应的类型通常为String。
 
-(2) 当'content-Type'为'text/xml'时，该字段对应的类型通常为String。
+    (2) 当'content-Type'为'text/xml'时，该字段对应的类型通常为String。
 
-(3) 当'content-Type'为'application/json'时，该字段对应的类型通常为Object。
+    (3) 当'content-Type'为'application/json'时，该字段对应的类型通常为Object。
 
-(4) 当'content-Type'为'application/octet-stream'时，该字段对应的类型通常为ArrayBuffer。
+    (4) 当'content-Type'为'application/octet-stream'时，该字段对应的类型通常为ArrayBuffer。
 
-(5) 当'content-Type'为'multipart/form-data'且需上传的字段为文件时，该字段对应的类型通常为ArrayBuffer。
+    (5) 当'content-Type'为'multipart/form-data'且需上传的字段为文件时，该字段对应的类型通常为ArrayBuffer。
 
-以上信息仅供参考，并可能根据具体情况有所不同。
+    以上信息仅供参考，并可能根据具体情况有所不同。
 
 2. 当HTTP请求为GET、OPTIONS、TRACE、CONNECT等方法时，此字段为HTTP请求参数的补充。开发者需传入Encode编码后的string类型参数，Object类型的参数无需预编码，参数内容会拼接到URL中进行发送。ArrayBuffer类型的参数不会做拼接处理。
 

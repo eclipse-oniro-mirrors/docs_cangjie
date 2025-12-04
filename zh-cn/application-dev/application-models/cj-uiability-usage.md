@@ -80,7 +80,7 @@ class MainAbility <: UIAbility {
   ```
 
   也可以在导入依赖资源context模块后，再使用[UIAbilityContext](../reference/AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiabilitycontext)前进行变量定义。
-  
+
   <!-- compile -->
 
   ```cangjie

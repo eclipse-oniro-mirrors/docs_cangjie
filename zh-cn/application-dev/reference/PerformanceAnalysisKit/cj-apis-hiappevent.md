@@ -1766,7 +1766,7 @@ public var onReceive: Option <(String, Array<AppEventGroup>) -> Unit>
 
 **功能：** 订阅实时回调函数，与回调函数onTrigger同时存在时，只触发此回调，函数入参说明如下：
 
-domain：回调事件的领域名称； 
+domain：回调事件的领域名称；
 
 appEventGroups：回调事件集合。
 

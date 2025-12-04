@@ -666,7 +666,6 @@ public open func onDestroy(): Unit
 >
 > - 该回调仅在UIAbility正常退出时触发，当UIAbility异常退出（例如低内存终止进程）时，该回调将不被触发。
 
-
 **系统能力：** SystemCapability.Ability.AbilityRuntime.AbilityCore
 
 **起始版本：** 22
@@ -983,9 +982,9 @@ public func startAbilityForResult(want: Want, callback: AsyncCallback<AbilityRes
 
 UIAbility被启动后，有如下情况：
 
- - 正常情况下可以通过调用[terminateSelfWithResult](#func-terminateselfwithresultabilityresult)接口销毁自身，并将结果返回给调用方。
+- 正常情况下可以通过调用[terminateSelfWithResult](#func-terminateselfwithresultabilityresult)接口销毁自身，并将结果返回给调用方。
 
- - 异常情况下比如杀死UIAbility会将异常结果返回给调用方，异常结果中resultCode为-1。	
+- 异常情况下比如杀死UIAbility会将异常结果返回给调用方，异常结果中resultCode为-1。
 
 **系统能力：** SystemCapability.Ability.AbilityRuntime.Core
 
@@ -1058,9 +1057,9 @@ public func startAbilityForResult(want: Want, options: StartOptions, callback: A
 
 UIAbility被启动后，有如下情况：
 
- - 正常情况下可以通过调用[terminateSelfWithResult](#func-terminateselfwithresultabilityresult)接口销毁自身，并将结果返回给调用方。
+- 正常情况下可以通过调用[terminateSelfWithResult](#func-terminateselfwithresultabilityresult)接口销毁自身，并将结果返回给调用方。
 
- - 异常情况下比如杀死UIAbility会将异常结果返回给调用方，异常结果中resultCode为-1。	
+- 异常情况下比如杀死UIAbility会将异常结果返回给调用方，异常结果中resultCode为-1。
 
 **系统能力：** SystemCapability.Ability.AbilityRuntime.Core
 

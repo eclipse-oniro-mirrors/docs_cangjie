@@ -41,7 +41,7 @@ public func createCipher(transformation: String): Cipher
 > **说明：**
 >
 > 1. 目前对称加解密中，PKCS5和PKCS7的实现相同，其padding长度和分组长度保持一致。在3DES中均按8字节填充，在AES中均按16字节填充。另有NoPadding表示不填充。
-> 
+>
 > 开发者需要自行了解密码学不同分组模式的差异，以便选择合适的参数规格。例如选择ECB和CBC模式时，建议启用填充，否则必须确保明文长度是分组大小的整数倍；选择其他模式时，可以不启用填充，此时密文长度和明文长度一致（即可能不是分组大小的整数倍）。
 > 2. 使用RSA或SM2进行非对称加解密时，必须创建两个Cipher对象，分别进行加密和解密操作，不能对同一个Cipher对象进行加解密。对称加解密没有此要求，只要算法规格一致，可以对同一个Cipher对象进行加解密操作。
 
@@ -523,21 +523,21 @@ public func doFinal(data: ?DataBlob): DataBlob
 
 - 对于GCM和CCM模式的对称加密：一次加密流程中，如果将每次update和doFinal的结果拼接起来，会得到“密文 + authTag”。即末尾的16字节（GCM模式）或12字节（CCM模式）是authTag，其余部分均为密文。也就是说，如果doFinalSync的data参数传入None，则doFinalSync的结果就是 authTag。
 
-  authTag需要填入解密时的[GcmParamsSpec](#class-gcmparamsspec)或[CcmParamsSpec](#struct-ccmparamsspec)；密文则作为解密时的入参data。
+  authTag需要填入解密时的[GcmParamsSpec](#class-gcmparamsspec)或[CcmParamsSpec](#class-ccmparamsspec)；密文则作为解密时的入参data。
 - 对于其他模式的对称加解密、GCM和CCM模式的对称解密：一次加/解密流程中，每一次update和doFinal的结果拼接起来，得到完整的明文/密文。
 
 （2）在RSA和SM2非对称加解密中，doFinal用于加解密本次传入的数据，获取加密或解密后的数据。如果数据量超过单次处理能力，可以多次调用doFinal，并将结果拼接以获得完整的明文或密文。
 
 > **说明：**
 >
->  1. 对称加解密中，调用doFinal标志着一次加解密流程已经完成，即[Cipher](#class-cipher)实例的状态被清除，因此当后续开启新一轮加解密流程时，需要重新调用initialize()并传入完整的参数列表进行初始化
+> 1. 对称加解密中，调用doFinal标志着一次加解密流程已经完成，即[Cipher](#class-cipher)实例的状态被清除，因此当后续开启新一轮加解密流程时，需要重新调用initialize()并传入完整的参数列表进行初始化
 > （比如即使是对同一个Cipher实例，采用同样的对称密钥，进行加密然后解密，则解密中调用initialize的时候仍需填写params参数，而不能直接省略为None）。
->  2. 如果遇到解密失败，需检查加解密数据和initialize时的参数是否匹配，包括GCM模式下加密得到的authTag是否填入解密时的GcmParamsSpec等。
->  3. doFinal的结果可能为null，因此使用.data字段访问doFinal结果的具体数据前，请记得先判断结果是否为null，避免产生异常。
+> 2. 如果遇到解密失败，需检查加解密数据和initialize时的参数是否匹配，包括GCM模式下加密得到的authTag是否填入解密时的GcmParamsSpec等。
+> 3. doFinal的结果可能为null，因此使用.data字段访问doFinal结果的具体数据前，请记得先判断结果是否为null，避免产生异常。
 >
->    对于加密，CFB、OFB和CTR模式，如果doFinal传None, 则返回结果为空。
+> 对于加密，CFB、OFB和CTR模式，如果doFinal传None, 则返回结果为空。
 >
->    对于解密，GCM、CCM、CFB、OFB和CTR模式，如果doFinal传None，则返回结果为空；对于解密，其他模式，如果明文是加密块大小的整倍数，调用update传入所有密文，调用doFinal传None, 则返回结果为空。
+> 对于解密，GCM、CCM、CFB、OFB和CTR模式，如果doFinal传None，则返回结果为空；对于解密，其他模式，如果明文是加密块大小的整倍数，调用update传入所有密文，调用doFinal传None, 则返回结果为空。
 
 **系统能力：** SystemCapability.Security.CryptoFramework.Cipher
 
@@ -606,16 +606,16 @@ public func update(data: DataBlob): DataBlob
 > **说明：**
 >
 > 1. 在进行对称加解密操作时，如果开发者对各分组模式不够熟悉，建议每次调用update和doFinal后，都判断结果是否为空。如果结果不为空，则取出其中的数据进行拼接，以形成完整的密文或明文。这是因为选择的分组模式等各项规格可能会影响update和doFinal的结果。
-> 
+>
 >（例如对于ECB和CBC模式，不论update传入的数据是否为分组长度的整数倍，都会以分组作为基本单位进行加/解密，并输出本次update新产生的加/解密分组结果。
 > 可以理解为，update只要凑满一个新的分组就会有输出，如果没有凑满则此次update输出为null，把当前还没被加/解密的数据留着，等下一次update/doFinal传入数据的时候，拼接起来继续凑分组。
 > 最后doFinal的时候，会把剩下的还没加/解密的数据，根据[createCipher](#func-createcipherstring)时设置的padding模式进行填充，补齐到分组的整数倍长度，再输出剩余加解密结果。
 > 而对于可以将分组密码转化为流模式实现的模式，还可能出现密文长度和明文长度相同的情况等。）
 > 2. 根据数据量，可以不调用update（即initialize完成后直接调用doFinal）或多次调用update。
 >
->    算法库目前没有对update（单次或累计）的数据量设置大小限制，建议对于大数据量的对称加解密，可以采用多次update的方式传入数据。
+> 算法库目前没有对update（单次或累计）的数据量设置大小限制，建议对于大数据量的对称加解密，可以采用多次update的方式传入数据。
 >
->    AES使用多次update操作的示例代码详见[使用AES对称密钥分段加解密](../../security/CryptoArchitectureKit/cj-crypto-aes-sym-encrypt-decrypt-gcm-by-segment.md)
+> AES使用多次update操作的示例代码详见[使用AES对称密钥分段加解密](../../security/CryptoArchitectureKit/cj-crypto-aes-sym-encrypt-decrypt-gcm-by-segment.md)
 > 3. RSA、SM2非对称加解密不支持update操作。
 > 4. 对于CCM模式的对称加解密算法，加密时只能调用1次update接口加密数据并调用doFinal接口获取tag，或直接调用doFinal接口加密数据并获取tag，解密时只能调用1次update接口或调用1次doFinal接口解密数据并验证tag。
 
@@ -1497,7 +1497,7 @@ public class CcmParamsSpec <: ParamsSpec {
 
 > **说明：**
 >
-> - 传入[initialize()](#func-initializecryptomode-key-paramsspec)方法前需要指定其algName属性（来源于父类[ParamsSpec](#paramsspec)）。
+> - 传入[initialize()](#func-initializecryptomode-key-paramsspec)方法前需要指定其algName属性（来源于父类[ParamsSpec](#class-paramsspec)）。
 
 **系统能力：** SystemCapability.Security.CryptoFramework.Cipher
 
@@ -1531,7 +1531,7 @@ public mut prop authTag: DataBlob
 
 **功能：** 指定加解密参数authTag，长度为12字节。
 
-在CCM模式加密时，需从[doFinal()](#func-dofinaldatablob)输出的[DataBlob](#datablob)末尾提取12字节，作为[initialize()](#func-initializecryptomode-key-paramsspec)方法的参数[CcmParamsSpec](#class-ccmparamsspec)中的authTag。
+在CCM模式加密时，需从[doFinal()](#func-dofinaldatablob)输出的[DataBlob](#class-datablob)末尾提取12字节，作为[initialize()](#func-initializecryptomode-key-paramsspec)方法的参数[CcmParamsSpec](#class-ccmparamsspec)中的authTag。
 
 **类型：** [DataBlob](#class-datablob)
 
@@ -1576,7 +1576,7 @@ public init(algName: String, iv: DataBlob, aad: DataBlob, authTag: DataBlob)
 |algName|String|是|-|指明对称加解密参数的算法模式。|
 |iv|[DataBlob](#class-datablob)|是|-|指明加解密参数iv，长度为7字节。|
 |aad|[DataBlob](#class-datablob)|是|-|指明加解密参数aad，长度为8字节。|
-|authTag|[DataBlob](#class-datablob)|是|-|指定加解密参数authTag，长度为12字节。<br/>在CCM模式加密时，需从[doFinal()](#func-dofinaldatablob)输出的[DataBlob](#datablob)末尾提取12字节，作为[initialize()](#func-initializecryptomode-key-paramsspec)方法的参数[CcmParamsSpec](#class-ccmparamsspec)中的authTag。|
+|authTag|[DataBlob](#class-datablob)|是|-|指定加解密参数authTag，长度为12字节。<br/>在CCM模式加密时，需从[doFinal()](#func-dofinaldatablob)输出的[DataBlob](#class-datablob)末尾提取12字节，作为[initialize()](#func-initializecryptomode-key-paramsspec)方法的参数[CcmParamsSpec](#class-ccmparamsspec)中的authTag。|
 
 **示例：**
 
@@ -1653,7 +1653,7 @@ public class GcmParamsSpec <: ParamsSpec {
 }
 ```
 
-**功能：** 加解密参数[ParamsSpec](#paramsspec)的子类，用于在对称加解密时作为[initialize()](#func-initializecryptomode-key-paramsspec)方法的参数。
+**功能：** 加解密参数    [ParamsSpec](#class-paramsspec)的子类，用于在对称加解密时作为[initialize()](#func-initializecryptomode-key-paramsspec)方法的参数。
 
 适用于GCM模式。
 
@@ -1667,7 +1667,7 @@ public class GcmParamsSpec <: ParamsSpec {
 
 > **说明：**
 >
-> 1. 传入[initialize()](#func-initializecryptomode-key-paramsspec)方法前需要指定其algName属性（来源于父类[ParamsSpec](#paramsspec)）。
+> 1. 传入[initialize()](#func-initializecryptomode-key-paramsspec)方法前需要指定其algName属性（来源于父类    [ParamsSpec](#class-paramsspec)）。
 > 2. 对于1~16字节长度的iv，加解密算法库无额外限制，但结果取决于底层openssl的支持情况。
 > 3. 当aad参数不需要使用或aad长度为0时，可以将aad的data属性设置为一个空的Array\<UInt8>，来构造GcmParamsSpec，写法为aad: { data: Array\<UInt8>() }。
 
@@ -1695,7 +1695,7 @@ public mut prop authTag: DataBlob
 
 **功能：** 指明加解密参数authTag，长度为16字节。
 
-采用GCM模式加密时，需从[doFinal()](#func-dofinaldatablob)输出的[DataBlob](#datablob)中提取末尾16字节，作为[initialize()](#func-initializecryptomode-key-paramsspec)方法中GcmParamsSpec的authTag。
+采用GCM模式加密时，需从[doFinal()](#func-dofinaldatablob)输出的[DataBlob](#class-datablob)中提取末尾16字节，作为[initialize()](#func-initializecryptomode-key-paramsspec)方法中GcmParamsSpec的authTag。
 
 **类型：** [DataBlob](#class-datablob)
 
@@ -1740,7 +1740,7 @@ public init(algName: String, iv: DataBlob, aad: DataBlob, authTag: DataBlob)
 |algName|String|是|-|指明对称加解密参数的算法模式。|
 |iv|[DataBlob](#class-datablob)|是|-|指明加解密参数iv，长度为1~16字节，常用为12字节。|
 |aad|[DataBlob](#class-datablob)|是|-|指明加解密参数aad，长度为0~INT32_MAX字节，常用为16字节。|
-|authTag|[DataBlob](#class-datablob)|是|-|指明加解密参数authTag，长度为16字节。<br/>采用GCM模式加密时，需从[doFinal()](#func-dofinaldatablob)输出的[DataBlob](#datablob)中提取末尾16字节，作为[initialize()](#func-initializecryptomode-key-paramsspec)方法中GcmParamsSpec的authTag。|
+|authTag|[DataBlob](#class-datablob)|是|-|指明加解密参数authTag，长度为16字节。<br/>采用GCM模式加密时，需从[doFinal()](#func-dofinaldatablob)输出的[DataBlob](#class-datablob)中提取末尾16字节，作为[initialize()](#func-initializecryptomode-key-paramsspec)方法中GcmParamsSpec的authTag。|
 
 **示例：**
 
@@ -1768,13 +1768,13 @@ public struct IvParamsSpec <: ParamsSpec {
 }
 ```
 
-**功能：** 加解密参数[ParamsSpec](#paramsspec)的子类，用于在对称加解密时作为[initialize()](#func-initializecryptomode-key-paramsspec)方法的参数。
+**功能：** 加解密参数    [ParamsSpec](#class-paramsspec)的子类，用于在对称加解密时作为[initialize()](#func-initializecryptomode-key-paramsspec)方法的参数。
 
 适用于CBC、CTR、OFB、CFB、Poly1305这些需要iv作为参数的加解密模式。
 
 > **说明：**
 >
-> - 传入[initialize()](#func-initializecryptomode-key-paramsspec)方法前需要指定其algName属性（来源于父类[ParamsSpec](#paramsspec)）。
+> - 传入[initialize()](#func-initializecryptomode-key-paramsspec)方法前需要指定其algName属性（来源于父类    [ParamsSpec](#class-paramsspec)）。
 
 **系统能力：** SystemCapability.Security.CryptoFramework.Cipher
 

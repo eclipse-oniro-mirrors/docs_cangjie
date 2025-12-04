@@ -665,10 +665,10 @@ func setColorSpace(colorSpace: ColorSpace): Unit
 
 使用该接口前，必须先通过[getSupportedColorSpaces](#func-getsupportedcolorspaces)获取当前设备所支持的ColorSpaces。该接口建议在[addOutput](#func-addoutputcameraoutput)之后、[commitConfig](#func-commitconfig)之前调用，如果在[commitConfig](#func-commitconfig)之后调用该接口，会导致相机会话配置耗时增加。
 
-**P3广色域与HDR高动态范围成像**   
+**P3广色域与HDR高动态范围成像**
 
-应用可以下发不同的色彩空间(ColorSpace)参数来支持P3广色域以及HDR的功能。  
-当应用不主动设置色彩空间时，拍照模式默认为SDR拍摄效果。  
+应用可以下发不同的色彩空间(ColorSpace)参数来支持P3广色域以及HDR的功能。
+当应用不主动设置色彩空间时，拍照模式默认为SDR拍摄效果。
 在拍照模式下若需要获取HDR高显效果的图片可通过设置色彩空间P3色域实现。
 应用针对不同模式使能HDR效果、设置的色彩空间以及设置相机输出流[Profile](#class-profile)中的[CameraFormat](#enum-cameraformat)一一对应关系可参考下表。例如，在录像模式下若需要选择HDR拍摄，相机预览输出流和录像输出流[Profile](#class-profile)中的[CameraFormat](#enum-cameraformat)可选择CAMERA_FORMAT_YCRCB_P010，色彩空间ColorSpace可选择设置2020_HLG_LIMIT。
 
@@ -6782,7 +6782,6 @@ public func off(eventType: CameraEvents): Unit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  
   | 7400201 | Camera service fatal error. |
 
 **示例：**
@@ -8268,7 +8267,6 @@ public func off(eventType: CameraEvents): Unit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  
   | 7400201 | Camera service fatal error. |
 
 **示例：**

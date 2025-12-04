@@ -353,7 +353,7 @@ try {
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
-```  
+```
 
 ## class AlbumResult
 
@@ -422,7 +422,7 @@ try {
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
-```  
+```
 
 ### func getFirstObject()
 
@@ -475,7 +475,7 @@ try {
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
-```  
+```
 
 ### func getLastObject()
 
@@ -528,7 +528,7 @@ try {
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
-```  
+```
 
 ### func getNextObject()
 
@@ -582,7 +582,7 @@ try {
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
-``` 
+```
 
 ### func getObjectByPosition(Int32)
 
@@ -641,7 +641,7 @@ try {
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
-``` 
+```
 
 ## class ChangeData
 
@@ -1254,6 +1254,7 @@ public func setAlbumName(name: String): Unit
 **功能：** 设置相册名称。
 
 相册名参数规格：
+
 - 相册名字符串长度为1~255。
 - 不允许出现的非法英文字符，包括：. \ / : * ? " ' ` < > | { } [ ]
 - 英文字符大小写不敏感。
@@ -2001,6 +2002,7 @@ public func setTitle(title: String): Unit
 |title|String|是|-|待修改的资产标题。|
 
 title参数规格为：
+
 - 不应包含扩展名。
 - 文件名字符串长度为1~255。
 - 不允许出现的非法英文字符，包括：. \ / : * ? " ' ` < > | { } [ ]
@@ -2771,7 +2773,6 @@ public func getThumbnail(size!: ?Size = Size(256, 256)): PixelMap
 |类型|说明|
 |:----|:----|
 |[PixelMap](../ImageKit/cj-apis-image.md#class-pixelmap)|返回缩略图的PixelMap。|
-
 
 **异常：**
 
@@ -4411,7 +4412,7 @@ Uri
 
 **功能：** 文件uri。
 
-注意：查询照片时，该字段仅支持使用[DataSharePredicates.equalTo](../ArkData/cj-apis-data_share_predicates.md#func-equaltostring-valuetype)谓词。
+注意：查询照片时，该字段仅支持使用[DataSharePredicates.equalTo](../ArkData/cj-apis-data_share_predicates.md#func-equaltostring-vbvaluetype)谓词。
 
 **系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
 

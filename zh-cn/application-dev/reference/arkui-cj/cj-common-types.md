@@ -6697,7 +6697,7 @@ public enum ScrollSizeMode <: Equatable<ScrollSizeMode> {
 
 **父类型：**
 
-- Equatable\<[ScrollSizeMode](enum-scrollsizemode)>
+- Equatable\<[ScrollSizeMode](#enum-scrollsizemode)>
 
 ### FollowDetent
 
