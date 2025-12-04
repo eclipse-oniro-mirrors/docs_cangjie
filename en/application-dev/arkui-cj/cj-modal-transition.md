@@ -402,7 +402,7 @@ import ohos.resource.*
 @Entry
 @Component
 class EntryView {
-    private var menu: Array<String> = ["保存图片", "收藏", "搜一搜"]
+    private var menu: Array<String> = ["Save Image", "Collect", "Search"]
     private var pics: Array<AppResource> = [@r(app.media.startIcon)]
 
     @Builder
@@ -431,7 +431,7 @@ class EntryView {
     func build() {
         Column {
             Row {
-                Text("查看图片")
+                Text("View Image")
                     .fontSize(20.vp)
                     .fontColor(Color.White)
                     .width(100.percent)
@@ -446,9 +446,9 @@ class EntryView {
                         item: AppResource, index: Int64 => Row {
                             Image(item)
                                 .width(100.percent)
+                                .bindContextMenu(builder: this.myMenu, responseType: ResponseType.LongPress)
                         }
                         .padding(top: 20.vp, bottom: 20.vp, left: 10.vp, right: 10.vp)
-                        .bindContextMenu(builder: this.myMenu, responseType: ResponseType.LongPress)
                     }
                 )
             }
@@ -459,7 +459,9 @@ class EntryView {
 }
 ```
 
-![bindContextMenu1](figures/chakantupian.jpg)## Implementing Bubble Popup Effect Using bindPopUp
+![bindContextMenu1](figures/chakantupian.gif)
+
+## Implementing Bubble Popup Effect Using bindPopUp
 
 The [bindpopup](../reference/arkui-cj/cj-universal-attribute-popup.md) attribute can bind a popup to a component and configure its content, interaction logic, and display state.
 
