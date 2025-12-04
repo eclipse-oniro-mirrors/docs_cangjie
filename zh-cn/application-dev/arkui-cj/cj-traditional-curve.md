@@ -38,7 +38,7 @@ let myCurves: Array<MyCurve> = [
 @Entry
 @Component
 class EntryView {
-    @State var dRotate: Float64 = 0.0
+    @State var dRotate: Float32 = 0.0
 
     func build() {
         Column() {
@@ -82,7 +82,7 @@ class EntryView {
                         }
                         .width(20)
                         .height(300)
-                        .rotate(x: this.dRotate)
+                        .rotate(angle: this.dRotate)
                         .animation(AnimateParam(duration: 2000, curve: item.curve, delay: 100, iterations: -1))
                     }
                 )

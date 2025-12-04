@@ -12,4 +12,4 @@ Transition animations are divided into basic transitions and advanced templated 
 
 - [Page Transition Animation (Not Recommended)](./cj-page-transition-animation.md): A page routing transition method that allows customizing entry and exit transition effects via the `pageTransition` function. For better transition effects, it is recommended to use [Modal Transition](./cj-modal-transition.md) instead.
 
-- [Screen Rotation Animation](./cj-rotation-transition-animation.md): Screen rotation animations are mainly divided into two types: [Layout Switch Rotation Animation](./cj-rotation-transition-animation.md#布局切换的旋转屏动画) and [Opacity Change Rotation Animation](./cj-rotation-transition-animation.md#透明度变化的旋转屏动画), designed to achieve smooth transitions during screen orientation changes.
+- [Screen Rotation Animation](./cj-rotation-transition-animation.md): [Layout Switch Rotation Animation](./cj-rotation-transition-animation.md#布局切换的旋转屏动画), designed to achieve smooth transitions during screen orientation changes.

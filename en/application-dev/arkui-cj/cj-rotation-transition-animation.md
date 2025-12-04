@@ -1,6 +1,6 @@
 # Rotation Screen Animation
 
-Rotation screen animations are primarily divided into two categories: [Layout Transition Rotation Animation](#layout-transition-rotation-animation) and [Opacity Transition Rotation Animation](#opacity-transition-rotation-animation), designed to achieve natural transitions when the screen display orientation changes. The layout transition rotation animation is relatively simple to implement—for example, configuring auto-rotation in `module.json5` (or setting the window display orientation) suffices. In contrast, the opacity transition rotation animation requires preparing two sets of views in addition to the `module.json5` configuration. During screen rotation, the disappearing view gradually fades out while the newly appearing view fades in, creating a smooth visual experience.
+The screen rotation animation primarily includes the [Layout Transition Rotation Animation](#layout-transition-rotation-animation), designed to achieve natural transitions when the screen display orientation changes. The layout transition rotation animation is relatively simple to implement—for example, configuring auto-rotation in `module.json5` (or setting the window display orientation) suffices.
 
 ## Layout Transition Rotation Animation
 
