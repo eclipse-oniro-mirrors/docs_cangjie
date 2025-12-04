@@ -30,7 +30,7 @@
 
   如需检查用户是否已向您的应用授予特定权限，可以使用[checkAccessToken()](../../reference/AbilityKit/cj-apis-ability_access_ctrl.md#func-checkaccesstokenuint32-permissions)函数，此方法会返回[PERMISSION_GRANTED](../../reference/AbilityKit/cj-apis-ability_access_ctrl.md#enum-grantstatus)或[PERMISSION_DENIED](../../reference/AbilityKit/cj-apis-ability_access_ctrl.md#enum-grantstatus)。具体示例可参考下文。
 
-- 每次访问受目标权限保护的接口之前，都需要使用[requestPermissionsFromUser()](../../reference/AbilityKit/cj-apis-ability_access_ctrl.md#func-requestpermissionsfromuseruiabilitycontext-arraypermissions-asynccallbackexpermissionrequestresult)接口请求相应的权限。
+- 每次访问受目标权限保护的接口之前，都需要使用[requestPermissionsFromUser()](../../reference/AbilityKit/cj-apis-ability_access_ctrl.md#func-requestpermissionsfromuseruiabilitycontext-arraypermissions-asynccallbackpermissionrequestresult)接口请求相应的权限。
 
   用户可能在动态授予权限后通过系统设置来取消应用的权限，因此不能将之前授予的授权状态持久化。
 

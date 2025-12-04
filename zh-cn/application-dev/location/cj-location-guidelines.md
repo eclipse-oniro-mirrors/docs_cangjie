@@ -14,12 +14,9 @@
 
 | 接口名 | 功能描述 |
 | -------- | -------- |
-| [on(CallbackType, LocationRequest, Callback1Argument\<Location>)](../reference/LocationKit/cj-apis-geo_location_manager.md#static-func-oncallbacktype-locationrequest-callback1argumentlocation) | 开启位置变化订阅，并发起定位请求。 |
-| [off(CallbackType, Callback1Argument\<Location>)](../reference/LocationKit/cj-apis-geo_location_manager.md#static-func-offcallbacktype-callback1argumentlocation) | 关闭位置变化订阅，并删除对应的定位请求。 |
 | [getCurrentLocation()](../reference/LocationKit/cj-apis-geo_location_manager.md#static-func-getcurrentlocation) | 获取当前位置。|
 | [getCurrentLocation(CurrentLocationRequest)](../reference/LocationKit/cj-apis-geo_location_manager.md#static-func-getcurrentlocationcurrentlocationrequest) | 获取当前位置。|
 | [getCurrentLocation(SingleLocationRequest)](../reference/LocationKit/cj-apis-geo_location_manager.md#static-func-getcurrentlocationsinglelocationrequest) | 获取当前位置。|
-| [getLastLocation()](../reference/LocationKit/cj-apis-geo_location_manager.md#static-func-getlastlocation) | 获取最近一次定位结果。 |
 | [isLocationEnabled()](../reference/LocationKit/cj-apis-geo_location_manager.md#static-func-islocationenabled) | 判断位置服务是否已经开启。 |
 
 ## 开发步骤
@@ -48,8 +45,6 @@
         Hilog.error(1, "info", "errCode: ${err.code}, message: ${err.message}")
     }
     ```
-
-    如果位置开关未开启，可以拉起全局开关设置弹框，引导用户打开位置开关，具体可参考[拉起全局开关设置弹框](../reference/AbilityKit/cj-apis-ability_access_ctrl.md#func-requestglobalswitchcontext-switchtype-asynccallbackbool)。
 
 4. 单次获取当前设备位置。多用于查看当前位置、签到打卡、服务推荐等场景。
     - 获取当前位置。<br/>
@@ -82,5 +77,4 @@
         ```
 
     通过本模块获取到的坐标均为WGS-84坐标系坐标点，如需使用其他坐标系类型的坐标点，请进行坐标系转换后再使用。
-    <!--Del-->
-    可使用三方地图提供的SDK能力进行坐标系转换。<!--DelEnd-->
+    可使用三方地图提供的SDK能力进行坐标系转换。

@@ -16,9 +16,7 @@ import kit.LocationKit.*
 
 ## 申请权限
 
-<!--RP1-->
 请参考[申请位置权限开发指导](../../location/cj-location-permission-guidelines.md#开发步骤)
-<!--RP1End-->
 
 ## 使用说明
 

@@ -311,7 +311,7 @@ public static prop distributionOSName: String
 
 **功能：** 发行版系统名称<!--Del-->，由发行方定义<!--DelEnd-->。
 
-示例：OpenHarmony
+示例：<!--RP12End-->OpenHarmony<!--RP12End-->
 
 **类型：** String
 
@@ -507,7 +507,7 @@ public static prop osFullName: String
 
 **功能：** 系统版本，版本格式OpenHarmony-x.x.x.x,x为数值。
 
-示例：<!--RP10-->Openharmony-5.0.0.1<!--RP10End-->
+示例：Openharmony-5.0.0.1
 
 **类型：** String
 
@@ -705,7 +705,7 @@ public static prop versionId: String
 
 **功能：** 版本ID。由deviceType、manufacture、brand、productSeries、osFullName、productModel、softwareModel、sdkApiVersion、incrementalVersion、buildType拼接组成。
 
-示例：wearable/TAS/OpenHarmony-5.0.0.1/TAS-AL00/TAS-AL00/12/default/release:nolog
+示例：wearable/TAS/<!--RP12End-->OpenHarmony<!--RP12End-->-5.0.0.1/TAS-AL00/TAS-AL00/12/default/release:nolog
 
 **类型：** String
 

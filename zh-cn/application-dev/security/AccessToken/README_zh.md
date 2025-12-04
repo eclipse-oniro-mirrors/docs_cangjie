@@ -8,9 +8,7 @@
         - [声明权限](./cj-declare-permissions.md)
         - [向用户申请授权](./cj-request-user-authorization.md)
         - [向用户申请单次授权](./cj-one-time-authorization.md)
-        <!--Del-->
         - [申请使用受限权限](./cj-declare-permissions-in-acl.md)
-        <!--DelEnd-->
     - [应用权限列表](./cj-app-permissions.md)
         - [开放权限（系统授权）](./cj-permissions-for-all.md)
         - [开放权限（用户授权）](./cj-permissions-for-all-user.md)
