@@ -94,6 +94,8 @@ For specific interfaces and functions, refer to [Distributed Key-Value Database]
 
 2. Create a key-value database with a security level of S1.
 
+    To create a key-value database, the following packages need to be imported:
+
     <!-- compile -->
 
     ```cangjie
@@ -101,7 +103,13 @@ For specific interfaces and functions, refer to [Distributed Key-Value Database]
     import kit.ArkData.{DistributedKVStore, KVManagerConfig}
     import ohos.business_exception.BusinessException
     import ohos.data.distributed_kv_store.*
+    ```
 
+    The core code for create a key-value database is:
+
+    <!-- compile -->
+
+    ```cangjie
     try {
         let context = globalAbilityContext.getOrThrow()
         let kvManagerConfig = KVManagerConfig(globalAbilityContext.getOrThrow(), "com.example.datamanagertest")
@@ -163,6 +171,8 @@ For specific interfaces and functions, refer to [Relational Database](../referen
 
 2. Create a relational database with a security level of S1.
 
+    To create a relational database, the following packages need to be imported:
+
     <!-- compile -->
 
     ```cangjie
@@ -170,7 +180,13 @@ For specific interfaces and functions, refer to [Relational Database](../referen
     import kit.ArkData.{StoreConfig, getRdbStore}
     import ohos.business_exception.BusinessException
     import ohos.data.relational_store.*
+    ```
 
+    The core code for create a relational database is:
+
+    <!-- compile -->
+
+    ```cangjie
     try {
         let context = globalAbilityContext.getOrThrow()
         let storeConfig = StoreConfig(

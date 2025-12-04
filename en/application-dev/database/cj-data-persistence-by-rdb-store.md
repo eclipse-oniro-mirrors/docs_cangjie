@@ -114,11 +114,19 @@ During relational database operations or storage, unexpected exceptions (error c
 
 2. After obtaining RdbStore, call insert() to add data. Example:
 
+    To add data, the following packages need to be imported:
+
     <!-- compile -->
 
     ```cangjie
     import ohos.data.relational_store.RelationalStoreValueType 
+    ```
 
+    The core code for add data is:
+
+    <!-- compile -->
+
+    ```cangjie
     var values = HashMap<String, RelationalStoreValueType>()
     values.add("ID", RelationalStoreValueType.Integer(1))
     values.add("NAME", RelationalStoreValueType.StringValue("Lisa"))

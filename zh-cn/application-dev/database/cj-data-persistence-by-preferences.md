@@ -104,12 +104,20 @@
 
     示例代码如下所示：
 
+    为实现写入数据功能，需要导入如下包：
+
     <!-- compile -->
 
     ```cangjie
     // xxx.cj
     import ohos.data.preferences.PreferencesValueType
+    ```
 
+    实现写入数据功能的核心代码是：
+
+    <!-- compile -->
+
+    ```cangjie
     if (dataPreferences.getOrThrow().has("startup")) {
         Hilog.info(0, "cangjie", "The key 'startup' is contained.")
     } else {
@@ -162,6 +170,8 @@
 
     应用订阅数据变更需要自定义Callback作为回调方法。订阅的Key值发生变更后，当执行flush()方法时，Callback被触发回调。示例代码如下所示：
 
+    为实现订阅数据变更功能，需要定义如下类：
+
     <!-- compile -->
 
     ```cangjie
@@ -172,7 +182,13 @@
             Hilog.info(1, "info", "callback： ${arg.toString()}")
         }
     }
+    ```
 
+    实现订阅数据变更功能的核心代码是：
+
+    <!-- compile -->
+
+    ```cangjie
     let preferenceCallback = Callback()
     dataPreferences.getOrThrow().on(PreferencesEvent.PreferencesChange, preferenceCallback)
     // 数据产生变更，由“auto”变为“manual”

@@ -73,6 +73,8 @@
 
 2. 创建并获取键值数据库。示例代码如下所示：
 
+    为实现创建并获取键值数据库功能，需要导入如下包：
+
     <!-- compile -->
 
     ```cangjie
@@ -80,7 +82,13 @@
     import kit.ArkData.*
     import ohos.business_exception.BusinessException
     import ohos.data.distributed_kv_store.SingleKVStore
+    ```
 
+    实现创建并获取键值数据库功能的核心代码是：
+
+    <!-- compile -->
+
+    ```cangjie
     var kvStore: Option<SingleKVStore> = Option<SingleKVStore>.None
 
     try {
@@ -99,12 +107,20 @@
 
 3. 调用put()方法向键值数据库中插入数据。示例代码如下所示：
 
+    为实现插入数据功能，需要导入如下包：
+
     <!-- compile -->
 
     ```cangjie
     // xxx.cj
     import ohos.data.distributed_kv_store.KVValueType
+    ```
 
+    实现插入数据功能的核心代码是：
+
+    <!-- compile -->
+
+    ```cangjie
     const KEY_TEST_STRING_ELEMENT: String = "key_test_string"
     const VALUE_TEST_STRING_ELEMENT: String = "value_test_string"
 

@@ -46,6 +46,8 @@
 
 2. 键值型数据库加密设置。
 
+    为实现加密功能，需要导入如下包：
+
     <!-- compile -->
 
     ```cangjie
@@ -55,7 +57,13 @@
     import kit.AbilityKit.*
     import ohos.data.distributed_kv_store.KVOptions
     import ohos.data.distributed_kv_store.KVSecurityLevel
+    ```
 
+    实现加密功能的核心代码是：
+
+    <!-- compile -->
+
+    ```cangjie
     try {
         let context = globalAbilityContext.getOrThrow()
         let kvManagerConfig = KVManagerConfig(globalAbilityContext.getOrThrow(), "com.example.datamanagertest")
@@ -117,12 +125,20 @@
 
 2. 关系型数据库加密设置。
 
+    为实现加密功能，需要导入如下包：
+
     <!-- compile -->
 
     ```cangjie
     import kit.ArkData.{ getRdbStore, StoreConfig, RelationalStoreSecurityLevel }
     import ohos.business_exception.BusinessException
+    ```
 
+    实现加密功能的核心代码是：
+
+    <!-- compile -->
+
+    ```cangjie
     try {
         // globalAbilityContext 在Ability onCreate时获取
         let context = globalAbilityContext.getOrThrow()

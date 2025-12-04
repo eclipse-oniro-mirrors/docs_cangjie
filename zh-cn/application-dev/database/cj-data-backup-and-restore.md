@@ -48,6 +48,8 @@
 
     b. 创建kvStore。
 
+    为实现创建kvStore功能，需要导入如下包：
+
     <!-- compile -->
 
     ```cangjie
@@ -57,7 +59,13 @@
     import ohos.data.distributed_kv_store.KVManager
     import ohos.data.distributed_kv_store.SingleKVStore
     import ohos.data.relational_store.*
+    ```
 
+    实现创建kvStore功能的核心代码是：
+
+    <!-- compile -->
+
+    ```cangjie
     var kvManager: Option<KVManager> = Option<KVManager>.None
     var kvStore: Option<SingleKVStore> = Option<SingleKVStore>.None
 
@@ -82,11 +90,19 @@
 
 2. 使用put()方法插入数据。
 
+    为实现插入数据功能，需要导入如下包：
+
     <!-- compile -->
 
     ```cangjie
     import ohos.data.distributed_kv_store.*
+    ```
 
+    实现插入数据功能的核心代码是：
+
+    <!-- compile -->
+
+    ```cangjie
     const KEY_TEST_STRING_ELEMENT: String = "key_test_string"
     const VALUE_TEST_STRING_ELEMENT: String = "value_test_string"
 
@@ -143,13 +159,21 @@
 
 手动备份：通过调用[backup](../reference/ArkData/cj-apis-relational_store.md#func-backupstring)接口实现数据库手动备份。示例如下：
 
+为实现手动备份功能，需要导入如下包：
+
 <!-- compile -->
 
 ```cangjie
 import kit.ArkData.*
 import ohos.business_exception.BusinessException
 import ohos.data.relational_store.*
+```
 
+实现手动备份功能的核心代码是：
+
+<!-- compile -->
+
+```cangjie
 var rdbStore_: Option<RdbStore> = Option<RdbStore>.None
 let storeConfig_ = StoreConfig(
     RelationalStoreSecurityLevel.S3,// 数据库安全级别
@@ -183,12 +207,20 @@ try {
 
 1. 抛出数据库异常错误码。
 
+    为实现抛出数据库异常错误码功能，需要导入如下包：
+
     <!-- compile -->
 
     ```cangjie
     import ohos.data.relational_store.RdbPredicates
     import ohos.data.relational_store.RdbStore
+    ```
 
+    实现抛出数据库异常错误码功能的核心代码是：
+
+    <!-- compile -->
+
+    ```cangjie
     try {
         let predicates = RdbPredicates("EMPLOYEE")
         let columns = ["ID", "NAME", "AGE", "SALARY", "CODES"]
@@ -216,10 +248,19 @@ try {
 
 2. 关闭所有打开着的结果集。
 
+    为实现关闭结果集功能，需要导入如下包：
+
     <!-- compile -->
 
     ```cangjie
     import ohos.data.relational_store.ResultSet
+    ```
+
+    实现关闭结果集功能的核心代码是：
+
+    <!-- compile -->
+
+    ```cangjie
     try {
         // 所有打开着的结果集
         var resultSets: Array<ResultSet> = Array<ResultSet>()
@@ -238,10 +279,19 @@ try {
 
 3. 调用restore接口恢复数据。
 
+    为实现恢复数据功能，需要导入如下包：
+
     <!-- compile -->
 
     ```cangjie
     import kit.CoreFileKit.FileIo
+    ```
+
+    实现恢复数据功能的核心代码是：
+
+    <!-- compile -->
+
+    ```cangjie
     try {
         /**
          * "Backup.db"为备份数据库文件名，默认在当前 store 所在路径下查找备份文件 Backup.db。
