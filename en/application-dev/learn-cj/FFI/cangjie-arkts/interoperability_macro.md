@@ -6,7 +6,7 @@ The Cangjie-ArkTS Declarative Interop Macros automatically generate ArkTS declar
 
 For DevEco Studio configuration, refer to [Adding Cangjie Modules to ArkTS Projects](./add_cangjie_module.md). After configuration, interop modules can be implemented.
 
-Currently, for functions (asynchronous functions), interfaces, and classes that need to be called by ArkTS, the interop declaration macro `@Interop` can be used for annotation. The following demonstrates the specific usage of declarative interop macros using a regular function scenario as an example. For examples of asynchronous functions, interfaces, and classes, refer to [Detailed Scenario Descriptions](#detailed-scenario-descriptions).
+Currently, for functions (including asynchronous functions), interfaces, classes and enums that need to be called by ArkTS, the interop declaration macro `@Interop` can be used for annotation. The following demonstrates the specific usage of declarative interop macros using a regular function scenario as an example. For examples of asynchronous functions, interfaces, classes and enums, refer to [Detailed Scenario Descriptions](#detailed-scenario-descriptions).
 
 ### Implementing Cangjie Interop Modules
 
@@ -127,14 +127,15 @@ console.log("result " + addF64(1, 2))
 
 ## Detailed Scenario Descriptions
 
-The declarative interop macros can annotate functions (asynchronous functions), interfaces, and classes. The recommended usage for different scenarios is as follows:
+The declarative interop macros can annotate functions (including asynchronous functions), interfaces, classes and enums. The recommended usage for different scenarios is as follows:
 
-| Scenario | Type | Annotation |
-| :--- | :--- | :--- |
-| ArkTS calling Cangjie functions | Function | @Interop[ArkTS] |
-| ArkTS calling time-consuming Cangjie functions | Asynchronous function | @Interop[ArkTS, Async] |
-| Passing objects created on the ArkTS side to Cangjie | Interface | @Interop[ArkTS] |
-| Returning objects created on the Cangjie side to ArkTS | Class | @Interop[ArkTS] for the entire class<br>@Interop[ArkTS, Invisible] for members not intended to be exposed |
+| Scenario                                               | Type                  | Annotation                                                                                                |
+| :----------------------------------------------------- | :-------------------- | :-------------------------------------------------------------------------------------------------------- |
+| ArkTS calling Cangjie functions                        | Function              | @Interop[ArkTS]                                                                                           |
+| ArkTS calling time-consuming Cangjie functions         | Asynchronous function | @Interop[ArkTS, Async]                                                                                    |
+| Passing objects created on the ArkTS side to Cangjie   | Interface             | @Interop[ArkTS]                                                                                           |
+| Returning objects created on the Cangjie side to ArkTS | Class                 | @Interop[ArkTS] for the entire class<br>@Interop[ArkTS, Invisible] for members not intended to be exposed |
+| Passing enum data between Cangjie and ArkTS            | Enum                  | @Interop[ArkTS]                                                                                           |
 
 ### Functions
 
@@ -229,11 +230,11 @@ Automatically generated ArkTS interface:
 ```typescript
 // Generated .d.ts after selecting Generate... > Cangjie-ArkTS Interop API
 export declare interface InterfaceDemo {
-    id: number;
-    foo: (a: number) => number;
+    id: number
+    foo: (a: number) => number
 }
 
-export declare function doInterface(a: InterfaceDemo): number;
+export declare function doInterface(a: InterfaceDemo): number
 ```
 
 Calling the Cangjie module from the ArkTS side:
@@ -258,7 +259,8 @@ Classes annotated with declarative interop macros must meet the following condit
 - Inheritance from other classes is supported but not expanded
 - Inheritance from interfaces is supported but not expanded
 - Static initializers are not supported
-- If there is only one regular constructor or primary constructor, it must be annotated with `public`; other modifiers are not supported, member variable parameters are not supported, and default parameter values are not supported
+- Multiple regular constructors or primary constructors are supported. They must be annotated with `public`. Other modifiers are not supported. Member variable parameters are not supported. Default parameter values are not supported.
+- If multiple regular constructors or primary constructors have the same ArkTS interface signature, the first matching constructor will be used.
 - Member variables can have default values, must be annotated with `public`, other modifiers are not supported, and variable type annotations cannot be omitted
 - Operator overloading is not supported
 - Member properties must be annotated with `public`
@@ -279,16 +281,24 @@ import ohos.ark_interop_macro.*
 
 @Interop[ArkTS]
 public class ClassDemo {
-    public var value2: Float64 = 1.0
-    public let value3: Float64 = 1.0
+    public var value1: Float64 = 1.0
+    public let value2: Float64 = 1.0
     @Interop[ArkTS, Invisible]
-    public var value4: Float64 = 1.0
+    public var value3: Float64 = 1.0
 
     public init(a: Float64) {
-        value2 = a
+        value1 = a
     }
 
-    public func foo(a: Float64 ): Float64 {
+    public init(a: Float64, b: Float64) {
+        value1 = a + b
+    }
+
+    public static func staticMethod(): Float64 {
+        1.0
+    }
+
+    public func foo(a: Float64): Float64 {
         a
     }
 
@@ -297,25 +307,25 @@ public class ClassDemo {
         1.0
     }
 
-    public mut prop id: Float64 {
+    public mut prop id1: Float64 {
         get() {
-            value2
+            value1
         }
         set(value) {
-            this.value2 = value
+            this.value1 = value
         }
     }
 
     public prop id2: Float64 {
         get() {
-            value3
+            value2
         }
     }
 
     @Interop[ArkTS, Invisible]
     public prop id3: Float64 {
         get() {
-            value4
+            value3
         }
     }
 }
@@ -326,12 +336,14 @@ Automatically generated ArkTS interface:
 ```typescript
 // Generated .d.ts after selecting Generate... > Cangjie-ArkTS Interop API
 export declare class ClassDemo {
+    value1: number
     value2: number
-    value3: number
-    foo(number): number
-    id: number
+    static staticMethod(): number
+    foo(a: number): number
+    id1: number
     id2: number
-    constructor (a: number)
+    constructor(a: number)
+    constructor(a: number, b: number)
 }
 ```
 
@@ -342,28 +354,83 @@ Calling the Cangjie module from the ArkTS side:
 import { ClassDemo } from "libohos_app_cangjie_entry.so";
 
 let class1: ClassDemo = new ClassDemo(3);
+let class2: ClassDemo = new ClassDemo(3, 3);
 
 console.log("result " + class1.foo(5));
-console.log("result " + class1.value2);
+console.log("result " + class1.value1);
+console.log("result " + class2.value1);
+console.log("result " + ClassDemo.staticMethod());
+```
+
+### Enums
+
+Enums annotated with declarative interop macros must meet the following conditions; otherwise, compilation errors will occur:
+
+- Must be annotated with `public`
+- Constructors with parameters are not supported
+
+Example of enum interop:
+
+<!--compile-->
+```cangjie
+// Create an interop function on the Cangjie side
+package ohos_app_cangjie_entry
+
+import ohos.ark_interop.*
+import ohos.ark_interop_macro.*
+
+@Interop[ArkTS]
+public enum EnumDemo {
+    Red | Green | Blue
+}
+
+@Interop[ArkTS]
+public func getEnum(e: EnumDemo): EnumDemo {
+    return e
+}
+```
+
+Automatically generated ArkTS interface:
+
+```typescript
+// Generated .d.ts after selecting Generate... > Cangjie-ArkTS Interop API
+export declare const enum EnumDemo {
+    Red = 0,
+    Green = 1,
+    Blue = 2
+}
+
+export declare function getEnum(e: EnumDemo): EnumDemo
+```
+
+Calling the Cangjie module from the ArkTS side:
+
+```typescript
+// Import the Cangjie dynamic library. The library name must match the package name of the interop interface.
+import { EnumDemo, getEnum } from "libohos_app_cangjie_entry.so";
+
+let e = EnumDemo.Green;
+console.log("result " + getEnum(e));
 ```
 
 ## Type Mapping
 
 The declarative interop macros support the following data type conversions:
 
-| Cangjie Type | ArkTS Corresponding Type | Notes |
-| :----------------------------------------------------------- | :------------- | :----------------------------------------------------------- |
-| Int8, Int16, Int32, Int64, UInt8, UInt16, UInt32, UInt64, Float16, Float32, Float64 | number | - |
-| Bool | boolean | - |
-| String, JSStringEx | string | - |
-| Unit | undefined | - |
-| Option\<T> | T \| undefined | T cannot be of type Option\<T> or function type. If T is a custom type (class or interface), it must be annotated with Interop macros |
-| func | function | - |
-| JSArrayEx\<T> | Array\<T> | T cannot be a function type. If T is a custom type (class or interface), it must be annotated with Interop macros |
-| JSHashMapEx\<K, V> | Map\<K, V> | V cannot be a function type. If V is a custom type (class or interface), it must be annotated with Interop macros |
-| Array\<Byte> | ArrayBuffer | - |
-| class | class | - |
-| interface | interface | - |
+| Cangjie Type                                                                        | ArkTS Corresponding Type | Notes                                                                                                                                 |
+| :---------------------------------------------------------------------------------- | :----------------------- | :------------------------------------------------------------------------------------------------------------------------------------ |
+| Int8, Int16, Int32, Int64, UInt8, UInt16, UInt32, UInt64, Float16, Float32, Float64 | number                   | -                                                                                                                                     |
+| Bool                                                                                | boolean                  | -                                                                                                                                     |
+| String, JSStringEx                                                                  | string                   | -                                                                                                                                     |
+| Unit                                                                                | undefined                | -                                                                                                                                     |
+| Option\<T>                                                                          | T \| undefined           | T cannot be of type Option\<T> or function type. If T is a custom type (class or interface), it must be annotated with Interop macros |
+| func                                                                                | function                 | -                                                                                                                                     |
+| JSArrayEx\<T>                                                                       | Array\<T>                | T cannot be a function type. If T is a custom type (class or interface), it must be annotated with Interop macros                     |
+| JSHashMapEx\<K, V>                                                                  | Map\<K, V>               | V cannot be a function type. If V is a custom type (class or interface), it must be annotated with Interop macros                     |
+| Array\<Byte>                                                                        | ArrayBuffer              | -                                                                                                                                     |
+| enum                                                                                | const enum               | -                                                                                                                                     |
+| class                                                                               | class                    | -                                                                                                                                     |
+| interface                                                                           | interface                | -                                                                                                                                     |
 
 > **Warning:**
 >

@@ -6,7 +6,7 @@
 
 DevEco Studio 的配置可参考[在 ArkTS 工程中添加仓颉模块](./add_cangjie_module.md)。配置完成后，可实现互操作模块。
 
-目前针对希望被 ArkTS 调用的函数（异步函数）、interface 和 class，可以使用互操作声明宏 `@Interop` 进行修饰。以下以普通函数场景作为演示示例，介绍声明式互操作宏的具体使用方法，异步函数、interface、class 等示例请参考[场景详细说明](#场景详细说明)。
+目前针对希望被 ArkTS 调用的函数（含异步函数）、接口、类和枚举，可以使用互操作声明宏 `@Interop` 进行修饰。以下以普通函数场景作为演示示例，介绍声明式互操作宏的具体使用方法，异步函数、接口、类、枚举等示例请参考[场景详细说明](#场景详细说明)。
 
 ### 实现仓颉互操作模块
 
@@ -127,14 +127,15 @@ console.log("result " + addF64(1, 2))
 
 ## 场景详细说明
 
-声明式互操作宏可修饰范围包括函数（异步函数）、interface 和 class，针对不同的场景使用建议如下表：
+声明式互操作宏可修饰范围包括函数（含异步函数）、接口、类和枚举，针对不同的场景使用建议如下表：
 
-| 适用场景 | 使用类型 | 修饰 |
-| :--- | :--- | :--- |
-| ArkTS 调用仓颉函数 | 函数 | @Interop[ArkTS] |
-| ArkTS 调用耗时仓颉函数 | 异步函数 | @Interop[ArkTS, Async] |
-| 用于传递 ArkTS 侧创建的对象给仓颉 | interface  | @Interop[ArkTS] |
-| 用于返回仓颉侧创建的对象给 ArkTS | class  | @Interop[ArkTS] 修饰整个 class<br>@Interop[ArkTS, Invisible] 修饰 class 中不准备暴露的成员 |
+| 适用场景                          | 使用类型  | 修饰                                                                                       |
+| :-------------------------------- | :-------- | :----------------------------------------------------------------------------------------- |
+| ArkTS 调用仓颉函数                | 函数      | @Interop[ArkTS]                                                                            |
+| ArkTS 调用耗时仓颉函数            | 异步函数  | @Interop[ArkTS, Async]                                                                     |
+| 用于传递 ArkTS 侧创建的对象给仓颉 | interface | @Interop[ArkTS]                                                                            |
+| 用于返回仓颉侧创建的对象给 ArkTS  | class     | @Interop[ArkTS] 修饰整个 class<br>@Interop[ArkTS, Invisible] 修饰 class 中不准备暴露的成员 |
+| 用于仓颉和 ArkTS 互相传递枚举数据 | enum      | @Interop[ArkTS]                                                                            |
 
 ### 函数
 
@@ -229,11 +230,11 @@ public func doInterface(a: InterfaceDemo): Float64  {
 ```typescript
 // Generate... > Cangjie-ArkTS Interop API 后自动生成 .d.ts
 export declare interface InterfaceDemo {
-    id: number;
-    foo: (a: number) => number;
+    id: number
+    foo: (a: number) => number
 }
 
-export declare function doInterface(a: InterfaceDemo): number;
+export declare function doInterface(a: InterfaceDemo): number
 ```
 
 ArkTS 侧对于仓颉模块的调用：
@@ -258,7 +259,8 @@ console.log("result " + doInterface(inter));
 - 支持继承其他类，但是不会展开
 - 支持继承接口，但是不会展开
 - 不支持静态初始化器
-- 有且仅有一个普通构造函数或主构造函数时，修饰符必带 public，不支持其他修饰符，不支持成员变量形参，不支持参数默认值
+- 支持多个普通构造函数或主构造函数，修饰符必带 public，不支持其他修饰符，不支持成员变量形参，不支持参数默认值
+- 存在多个普通构造函数或主构造函数对应的 ArkTS 接口签名相同时，会优先使用第一个匹配的构造函数
 - 成员变量可选默认值，修饰符必带 public，不支持其他修饰符，不可省略变量类型标注
 - 不支持操作符重载
 - 成员属性修饰符必带 public
@@ -279,16 +281,24 @@ import ohos.ark_interop_macro.*
 
 @Interop[ArkTS]
 public class ClassDemo {
-    public var value2: Float64 = 1.0
-    public let value3: Float64 = 1.0
+    public var value1: Float64 = 1.0
+    public let value2: Float64 = 1.0
     @Interop[ArkTS, Invisible]
-    public var value4: Float64 = 1.0
+    public var value3: Float64 = 1.0
 
     public init(a: Float64) {
-        value2 = a
+        value1 = a
     }
 
-    public func foo(a: Float64 ): Float64 {
+    public init(a: Float64, b: Float64) {
+        value1 = a + b
+    }
+
+    public static func staticMethod(): Float64 {
+        1.0
+    }
+
+    public func foo(a: Float64): Float64 {
         a
     }
 
@@ -297,25 +307,25 @@ public class ClassDemo {
         1.0
     }
 
-    public mut prop id: Float64 {
+    public mut prop id1: Float64 {
         get() {
-            value2
+            value1
         }
         set(value) {
-            this.value2 = value
+            this.value1 = value
         }
     }
 
     public prop id2: Float64 {
         get() {
-            value3
+            value2
         }
     }
 
     @Interop[ArkTS, Invisible]
     public prop id3: Float64 {
         get() {
-            value4
+            value3
         }
     }
 }
@@ -326,12 +336,14 @@ public class ClassDemo {
 ```typescript
 // Generate... > Cangjie-ArkTS Interop API 后在自动生成 .d.ts
 export declare class ClassDemo {
+    value1: number
     value2: number
-    value3: number
-    foo(number): number
-    id: number
+    static staticMethod(): number
+    foo(a: number): number
+    id1: number
     id2: number
-    constructor (a: number)
+    constructor(a: number)
+    constructor(a: number, b: number)
 }
 ```
 
@@ -342,28 +354,83 @@ ArkTS 侧对于仓颉模块的调用：
 import { ClassDemo } from "libohos_app_cangjie_entry.so";
 
 let class1: ClassDemo = new ClassDemo(3);
+let class2: ClassDemo = new ClassDemo(3, 3);
 
 console.log("result " + class1.foo(5));
-console.log("result " + class1.value2);
+console.log("result " + class1.value1);
+console.log("result " + class2.value1);
+console.log("result " + ClassDemo.staticMethod());
+```
+
+### 枚举
+
+对于声明式互操作宏修饰的枚举，必须满足以下条件，不满足时将会编译报错：
+
+- 必须由 public 修饰
+- 不支持带参数的构造器
+
+枚举互操作使用示例：
+
+<!--compile-->
+```cangjie
+// 仓颉侧创建互操作函数
+package ohos_app_cangjie_entry
+
+import ohos.ark_interop.*
+import ohos.ark_interop_macro.*
+
+@Interop[ArkTS]
+public enum EnumDemo {
+    Red | Green | Blue
+}
+
+@Interop[ArkTS]
+public func getEnum(e: EnumDemo): EnumDemo {
+    return e
+}
+```
+
+自动生成的 ArkTS 接口：
+
+```typescript
+// Generate... > Cangjie-ArkTS Interop API 后自动生成 .d.ts
+export declare const enum EnumDemo {
+    Red = 0,
+    Green = 1,
+    Blue = 2
+}
+
+export declare function getEnum(e: EnumDemo): EnumDemo
+```
+
+ArkTS 侧对于仓颉模块的调用：
+
+```typescript
+// 导入仓颉动态库，该动态库名称为仓颉包名的名称，该名称需要和互操作接口所在的包名一致
+import { EnumDemo, getEnum } from "libohos_app_cangjie_entry.so";
+
+let e = EnumDemo.Green;
+console.log("result " + getEnum(e));
 ```
 
 ## 类型映射
 
 声明式互操作宏支持转换的数据类型如下表。
 
-| cangjie 类型                                                 | ArkTS 对应类型 | 备注                                                         |
-| :----------------------------------------------------------- | :------------- | :----------------------------------------------------------- |
-| Int8、Int16、Int32、Int64、UInt8、UInt16、UInt32、UInt64、Float16、Float32、Float64 | number         | -                                                            |
-| Bool                                                         | boolean        | -                                                            |
-| String、JSStringEx                                           | string         | -                                                            |
-| Unit                                                         | undefined      | -                                                            |
-| Option\<T>                                                   | T \| undefined | T 不支持 Option\<T> 类型和函数类型，如果 T 为自定义类型（class 或 interface 类型），该自定义类型必须被 Interop 宏修饰 |
-| func                                                         | function       | -                                                            |
-| JSArrayEx\<T>                                                | Array\<T>      | T 不支持函数类型，如果 T 为自定义类型（class 或 interface 类型），该自定义类型必须被 Interop 宏修饰 |
-| JSHashMapEx\<K, V>                                           | Map\<K, V>     | V 不支持函数类型，如果 V 为自定义类型（class 或 interface 类型），该自定义类型必须被 Interop 宏修饰 |
-| Array\<Byte>                                                 | ArrayBuffer    | -                                                            |
-| class                                                        | class          | -                                                            |
-| interface                                                    | interface      | -                                                            |
+| cangjie 类型                                                                        | ArkTS 对应类型 | 备注                                                                                                                  |
+| :---------------------------------------------------------------------------------- | :------------- | :-------------------------------------------------------------------------------------------------------------------- |
+| Int8、Int16、Int32、Int64、UInt8、UInt16、UInt32、UInt64、Float16、Float32、Float64 | number         | -                                                                                                                     |
+| Bool                                                                                | boolean        | -                                                                                                                     |
+| String、JSStringEx                                                                  | string         | -                                                                                                                     |
+| Unit                                                                                | undefined      | -                                                                                                                     |
+| Option\<T>                                                                          | T \| undefined | T 不支持 Option\<T> 类型和函数类型，如果 T 为自定义类型（class 或 interface 类型），该自定义类型必须被 Interop 宏修饰 |
+| func                                                                                | function       | -                                                                                                                     |
+| JSArrayEx\<T>                                                                       | Array\<T>      | T 不支持函数类型，如果 T 为自定义类型（class 或 interface 类型），该自定义类型必须被 Interop 宏修饰                   |
+| JSHashMapEx\<K, V>                                                                  | Map\<K, V>     | V 不支持函数类型，如果 V 为自定义类型（class 或 interface 类型），该自定义类型必须被 Interop 宏修饰                   |
+| Array\<Byte>                                                                        | ArrayBuffer    | -                                                                                                                     |
+| enum                                                                                | const enum     | -                                                                                                                     |
+| class                                                                               | class          | -                                                                                                                     |
+| interface                                                                           | interface      | -                                                                                                                     |
 
 > **注意：**
 >
