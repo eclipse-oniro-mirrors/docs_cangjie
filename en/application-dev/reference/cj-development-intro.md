@@ -67,7 +67,7 @@ The Cangjie samples in each Kit are not complete programs but rather key code sn
                 Column {
                     Text(this.message)
                         .fontSize(50)
-                        .fontWeight(FontWeight.BOLD)
+                        .fontWeight(FontWeight.Bold)
                         .onClick ({
                             evt => this.message = "Hello Cangjie"
                         })
