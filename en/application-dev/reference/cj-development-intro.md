@@ -54,8 +54,6 @@ The Cangjie samples in each Kit are not complete programs but rather key code sn
     import ohos.arkui.state_macro_manage.Component
     import ohos.arkui.state_macro_manage.State
 
-    // 此处定义所需要的依赖项如class、func等
-
     @Entry
     @Component
     class EntryView {
