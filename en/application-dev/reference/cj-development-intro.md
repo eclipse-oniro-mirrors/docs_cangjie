@@ -54,6 +54,8 @@ The Cangjie samples in each Kit are not complete programs but rather key code sn
     import ohos.arkui.state_macro_manage.Component
     import ohos.arkui.state_macro_manage.State
 
+    // Define required dependencies such as classes and functions here
+
     @Entry
     @Component
     class EntryView {
