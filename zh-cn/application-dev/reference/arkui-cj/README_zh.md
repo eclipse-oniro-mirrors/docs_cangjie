@@ -93,7 +93,7 @@
         - [Toggle](cj-button-picker-toggle.md)
         - [Checkbox](cj-button-picker-checkbox.md)
         - [CheckboxGroup](cj-button-picker-checkboxgroup.md)
-        - [Datepicker](cj-button-picker-datepicker.md)
+        - [DatePicker](cj-button-picker-datepicker.md)
         - [TextPicker](cj-button-picker-textpicker.md)
         - [Radio](cj-button-picker-radio.md)
         - [Rating](cj-button-picker-rating.md)

@@ -529,12 +529,14 @@ class EntryView {
                         => this.controller.start() // Start playback
                     })
                     .margin(5)
+                    .width(100)
                     .id("start")
                 Button("pause")
                     .onClick({ evt
                         => this.controller.pause() // Pause playback
                     })
                     .margin(5)
+                    .width(100)
                     .id("pause")
                 Button("stop")
                     .onClick({ evt
@@ -543,6 +545,7 @@ class EntryView {
                         }
                     )
                     .margin(5)
+                    .width(100)
                     .id("stop")
             }
             Row() {
@@ -551,18 +554,21 @@ class EntryView {
                         => this.controller.requestFullscreen(true)
                     })
                     .margin(5)
+                    .width(100)
                     .id("Fullscreen")
                 Button("at 10s")
                     .onClick({ evt
                         => this.controller.setCurrentTime(10, SeekMode.ClosestKeyframe)
                     })
                     .margin(5)
+                    .width(100)
                     .id("at 10s")
                 Button("exitFull")
                     .onClick({ evt
                         => this.controller.exitFullscreen()
                     })
                     .margin(5)
+                    .width(100)
                     .id("exitFull")
             }
             Row() {
@@ -571,18 +577,21 @@ class EntryView {
                         => this.curRate = PlaybackSpeed.SpeedForward075X
                     })
                     .margin(5)
+                    .width(100)
                     .id("rate 0.75")
                 Button("rate 1")
                     .onClick({ evt
                         => this.curRate = PlaybackSpeed.SpeedForward100X
                     })
                     .margin(5)
+                    .width(100)
                     .id("rate 1")
                 Button("rate 2")
                     .onClick({ evt
                         => this.curRate = PlaybackSpeed.SpeedForward200X
                     })
                     .margin(5)
+                    .width(100)
                     .id("rate 2")
             }
         }

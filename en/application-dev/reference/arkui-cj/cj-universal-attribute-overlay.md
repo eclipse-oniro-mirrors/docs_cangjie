@@ -60,19 +60,20 @@ class EntryView {
             Text("Default Centered Overlay")
                 .width(200)
                 .height(100)
-                .backgroundColor(Color.Blue)
+                .backgroundColor(0xf48899)
+                .align(Alignment.Top)
                 .overlay(value: "Overlay Text")
             
             Text("Top-Left Overlay")
                 .width(200)
                 .height(100)
-                .backgroundColor(Color.Green)
+                .backgroundColor(0xf7b0bb)
                 .overlay(value: "Top Left", align: Alignment.TopStart)
             
             Text("Overlay with Offset")
                 .width(200)
                 .height(100)
-                .backgroundColor(Color.Red)
+                .backgroundColor(0xfbd7dd)
                 .overlay(
                     value: "Offset Text", 
                     align: Alignment.BottomEnd,

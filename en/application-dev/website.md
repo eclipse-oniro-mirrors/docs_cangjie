@@ -615,7 +615,7 @@
                     - [Toggle](reference/arkui-cj/cj-button-picker-toggle.md)
                     - [Checkbox](reference/arkui-cj/cj-button-picker-checkbox.md)
                     - [CheckboxGroup](reference/arkui-cj/cj-button-picker-checkboxgroup.md)
-                    - [Datepicker](reference/arkui-cj/cj-button-picker-datepicker.md)
+                    - [DatePicker](reference/arkui-cj/cj-button-picker-datepicker.md)
                     - [TextPicker](reference/arkui-cj/cj-button-picker-textpicker.md)
                     - [Radio](reference/arkui-cj/cj-button-picker-radio.md)
                     - [Rating](reference/arkui-cj/cj-button-picker-rating.md)
