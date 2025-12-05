@@ -281,10 +281,10 @@ try {
 }
 ```
 
-## func p2pConnect(WifiP2PConfig)
+## func p2pConnect(WifiP2pConfig)
 
 ```cangjie
-public func p2pConnect(config: WifiP2PConfig): Unit
+public func p2pConnect(config: WifiP2pConfig): Unit
 ```
 
 **功能：** 执行P2P连接。
@@ -299,7 +299,7 @@ public func p2pConnect(config: WifiP2PConfig): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|config|[WifiP2PConfig](#class-wifip2pconfig)|是|-|连接配置信息。如果DeviceAddressType未指定值，则DeviceAddressType默认为随机设备地址类型。|
+|config|[WifiP2pConfig](#class-wifip2pconfig)|是|-|连接配置信息。如果DeviceAddressType未指定值，则DeviceAddressType默认为随机设备地址类型。|
 
 **异常：**
 
@@ -324,7 +324,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let config = WifiP2PConfig("xx:xx:xx:xx", -2, "", "", GroupOwnerBand.GoBandAuto)
+    let config = WifiP2pConfig("xx:xx:xx:xx", -2, "", "", GroupOwnerBand.GoBandAuto)
     p2pConnect(config)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
@@ -417,10 +417,10 @@ try {
 }
 ```
 
-## class WifiInfoElem
+## class WifiInfoElement
 
 ```cangjie
-public class WifiInfoElem {
+public class WifiInfoElement {
     public var eid: UInt32
     public var content: Array<UInt8>
 }
@@ -460,10 +460,10 @@ public var eid: UInt32
 
 **起始版本：** 22
 
-## class WifiP2PConfig
+## class WifiP2pConfig
 
 ```cangjie
-public class WifiP2PConfig {
+public class WifiP2pConfig {
     public var deviceAddress: String
     public var netId: Int32
     public var passphrase: String
@@ -616,7 +616,7 @@ public class WifiScanInfo {
     public var channelWidth: Int32
     public var centerFrequency0: Int32
     public var centerFrequency1: Int32
-    public var infoElems: Array<WifiInfoElem>
+    public var infoElems: Array<WifiInfoElement>
     public var timestamp: Int64
     public var supportedWifiCategory: WifiCategory
     public var isHiLinkNetwork: Bool
@@ -744,12 +744,12 @@ public var frequency: Int32
 ### var infoElems
 
 ```cangjie
-public var infoElems: Array<WifiInfoElem>
+public var infoElems: Array<WifiInfoElement>
 ```
 
 **功能：** 信息元素。
 
-**类型：** Array\<[WifiInfoElem](#class-wifiinfoelem)>
+**类型：** Array\<[WifiInfoElement](#class-wifiinfoelement)>
 
 **系统能力：** SystemCapability.Communication.WiFi.STA
 

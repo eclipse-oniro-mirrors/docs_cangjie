@@ -643,7 +643,7 @@ public var default: String
 public var nodeType: Int32
 ```
 
-**功能：** 表示指定节点对应的数据类型，取值为[ValueType](#enum-kvvaluetype)对应的枚举值。暂不支持BYTE_ARRAY，使用此类型会导致[getKVStore](#func-getkvstoretstring-kvoptions-where-t--singlekvstore)失败。
+**功能：** 表示指定节点对应的数据类型，取值为[KVValueType](#enum-kvvaluetype)对应的枚举值。暂不支持BYTE_ARRAY，使用此类型会导致[getKVStore](#func-getkvstoretstring-kvoptions-where-t--singlekvstore)失败。
 
 **类型：** Int32
 
@@ -688,7 +688,7 @@ public init(name: String, nullable: Bool, default: String, nodeType: Int32)
 |name|String|是|-|FieldNode的值，不能为空，且不大于64个字符。|
 |nullable|Bool|是|-|表示数据库字段是否可以为空。true表示此节点数据可以为空，false表示此节点数据不能为空。|
 |default|String|是|-|表示FieldNode的默认值。|
-|nodeType|Int32|是|-|表示指定节点对应的数据类型，取值为[ValueType](#enum-kvvaluetype)对应的枚举值。暂不支持BYTE_ARRAY，使用此类型会导致[getKVStore](#func-getkvstoretstring-kvoptions-where-t--singlekvstore)失败。|
+|nodeType|Int32|是|-|表示指定节点对应的数据类型，取值为[KVValueType](#enum-kvvaluetype)对应的枚举值。暂不支持BYTE_ARRAY，使用此类型会导致[getKVStore](#func-getkvstoretstring-kvoptions-where-t--singlekvstore)失败。|
 
 ## class KVManager
 

@@ -330,7 +330,7 @@ public class Support {
     public static const COMMON_EVENT_IVI_SLEEP: String = "common.event.IVI_SLEEP"
     public static const COMMON_EVENT_IVI_PAUSE: String = "common.event.IVI_PAUSE"
     public static const COMMON_EVENT_IVI_STANDBY: String = "common.event.IVI_STANDBY"
-    public static const COMMON_EVENT_IVI_LASTMODE_SAVE: String = "common.event.IVI_LASTMODE_SAVE"
+    public static const COMMON_EVENT_IVI_LAST_MODE_SAVE: String = "common.event.IVI_LASTMODE_SAVE"
     public static const COMMON_EVENT_IVI_VOLTAGE_ABNORMAL: String = "common.event.IVI_VOLTAGE_ABNORMAL"
     public static const COMMON_EVENT_IVI_HIGH_TEMPERATURE: String = "common.event.IVI_HIGH_TEMPERATURE"
     public static const COMMON_EVENT_IVI_EXTREME_TEMPERATURE: String = "common.event.IVI_EXTREME_TEMPERATURE"
@@ -1519,10 +1519,10 @@ public static const COMMON_EVENT_IVI_HIGH_TEMPERATURE: String = "common.event.IV
 
 **起始版本：** 22
 
-### static const COMMON_EVENT_IVI_LASTMODE_SAVE
+### static const COMMON_EVENT_IVI_LAST_MODE_SAVE
 
 ```cangjie
-public static const COMMON_EVENT_IVI_LASTMODE_SAVE: String = "common.event.IVI_LASTMODE_SAVE"
+public static const COMMON_EVENT_IVI_LAST_MODE_SAVE: String = "common.event.IVI_LASTMODE_SAVE"
 ```
 
 **功能：** （预留事件，暂未支持）表示第三方应用保存其最后一个模式的公共事件的动作。

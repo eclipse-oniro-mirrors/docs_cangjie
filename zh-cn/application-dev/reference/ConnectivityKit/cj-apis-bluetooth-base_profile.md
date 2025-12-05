@@ -396,11 +396,11 @@ public var state: ProfileConnectionState
 ```cangjie
 public enum DisconnectCause <: Equatable<DisconnectCause> & ToString {
     | UserDisconnect
-    | ConnectFromKeyboard
-    | ConnectFromMouse
-    | ConnectFromCar
+    | ConnectShouldFromKeyboard
+    | ConnectShouldFromMouse
+    | ConnectShouldFromCar
     | TooManyConnectedDevices
-    | ConnectFailInternal
+    | ConnectInternalFail
     | ...
 }
 ```
@@ -416,10 +416,10 @@ public enum DisconnectCause <: Equatable<DisconnectCause> & ToString {
 - Equatable\<DisconnectCause>
 - ToString
 
-### ConnectFailInternal
+### ConnectInternalFail
 
 ```cangjie
-ConnectFailInternal
+ConnectInternalFail
 ```
 
 **功能：** 内部错误。
@@ -428,10 +428,10 @@ ConnectFailInternal
 
 **起始版本：** 22
 
-### ConnectFromCar
+### ConnectShouldFromCar
 
 ```cangjie
-ConnectFromCar
+ConnectShouldFromCar
 ```
 
 **功能：** 应该从车机侧发起连接。
@@ -440,10 +440,10 @@ ConnectFromCar
 
 **起始版本：** 22
 
-### ConnectFromKeyboard
+### ConnectShouldFromKeyboard
 
 ```cangjie
-ConnectFromKeyboard
+ConnectShouldFromKeyboard
 ```
 
 **功能：** 应该从键盘侧发起连接。
@@ -452,10 +452,10 @@ ConnectFromKeyboard
 
 **起始版本：** 22
 
-### ConnectFromMouse
+### ConnectShouldFromMouse
 
 ```cangjie
-ConnectFromMouse
+ConnectShouldFromMouse
 ```
 
 **功能：** 应该从鼠标侧发起连接。

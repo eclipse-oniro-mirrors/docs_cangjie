@@ -27,7 +27,7 @@ public class CommonEventPublishData {
     public var subscriberPermissions: Array<String>
     public var isOrdered: Bool
     public var isSticky: Bool
-    public var parameters: HashMap<String, ValueType>
+    public var parameters: HashMap<String, CommonEventValueType>
     public init(
         bundleName!: String = "",
         data!: String = "",
@@ -35,7 +35,7 @@ public class CommonEventPublishData {
         subscriberPermissions!: Array<String> = Array<String>(),
         isOrdered!: Bool = false,
         isSticky!: Bool = false,
-        parameters!: HashMap<String, ValueType> = HashMap<String, ValueType>()
+        parameters!: HashMap<String, ValuCommonEventValueTypeeType> = HashMap<String, CommonEventValueType>()
     )
 }
 ```
@@ -139,12 +139,12 @@ public var isSticky: Bool
 ### var parameters
 
 ```cangjie
-public var parameters: HashMap<String, ValueType>
+public var parameters: HashMap<String, CommonEventValueType>
 ```
 
 **功能：** 表示发布方传递的公共事件的附加信息。
 
-**类型：** HashMap\<String, ValueType>
+**类型：** HashMap\<String, CommonEventValueType>
 
 **读写能力：** 可读写
 
@@ -168,7 +168,7 @@ public var subscriberPermissions: Array<String>
 
 **起始版本：** 22
 
-### init(String, String, Int32, Array\<String>, Bool, Bool, HashMap\<String,ValueType>)
+### init(String, String, Int32, Array\<String>, Bool, Bool, HashMap\<String,CommonEventValueType>)
 
 ```cangjie
 public init(
@@ -178,7 +178,7 @@ public init(
     subscriberPermissions!: Array<String> = Array<String>(),
     isOrdered!: Bool = false,
     isSticky!: Bool = false,
-    parameters!: HashMap<String, ValueType> = HashMap<String, ValueType>()
+    parameters!: HashMap<String, CommonEventValueType> = HashMap<String, CommonEventValueType>()
 )
 ```
 
@@ -198,4 +198,4 @@ public init(
 |subscriberPermissions|Array\<String>|否|Array\<String>()| **命名参数。** 表示订阅者的权限。|
 |isOrdered|Bool|否|false| **命名参数。** 表示是否是有序事件。默认为false。|
 |isSticky|Bool|否|false| **命名参数。** 表示是否是粘性事件。默认为false。|
-|parameters|HashMap\<String, ValueType>|否|HashMap<String, ValueType>()| **命名参数。** 表示发布方传递的公共事件的附加信息。|
+|parameters|HashMap\<String, CommonEventValueType>|否|HashMap<String, CommonEventValueType>()| **命名参数。** 表示发布方传递的公共事件的附加信息。|

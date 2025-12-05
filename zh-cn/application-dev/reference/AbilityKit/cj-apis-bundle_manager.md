@@ -39,7 +39,7 @@ public class AbilityInfo {
     public let applicationInfo: ApplicationInfo
     public let metadata: Array<Metadata>
     public let enabled: Bool
-    public let supportWindowModes: Array<SupportWindowMode>
+    public let supportedWindowModes: Array<SupportWindowMode>
     public let windowSize: WindowSize
     public let excludeFromDock: Bool
     public let skills: Array<Skill>
@@ -389,10 +389,10 @@ public let skills: Array<Skill>
 
 **起始版本：** 22
 
-### let supportWindowModes
+### let supportedWindowModes
 
 ```cangjie
-public let supportWindowModes: Array<SupportWindowMode>
+public let supportedWindowModes: Array<SupportWindowMode>
 ```
 
 **功能：** Ability支持的窗口模式。

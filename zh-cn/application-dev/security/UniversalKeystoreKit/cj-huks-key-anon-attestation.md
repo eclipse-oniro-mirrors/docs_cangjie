@@ -71,15 +71,15 @@ let genKeyProperties: Array<HuksParam> = [
         HuksParamValue.Uint32Value(HuksKeyPadding.HUKS_PADDING_PSS)
     ),
     HuksParam(
-        HuksTag.HUKS_TAG_KEY_GENERATE_TYPE,
-        HuksParamValue.Uint32Value(HuksKeyGenerateType.HUKS_KEY_GENERATE_TYPE_DEFAULT)
+        HuksTag.HUKS_TAG_KEY_GENERATION_TYPE,
+        HuksParamValue.Uint32Value(HuksKeyGenerationType.HUKS_KEY_GENERATE_TYPE_DEFAULT)
     ),
     HuksParam(
         HuksTag.HUKS_TAG_BLOCK_MODE,
         HuksParamValue.Uint32Value(HuksCipherMode.HUKS_MODE_ECB)
     )
 ]
-let genOptions: HuksOptions = HuksOptions(properties: genKeyProperties, inData: Option<Array<UInt8>>.None.getOrThrow())
+let genOptions: HuksOptions = HuksOptions(properties: genKeyProperties, inData: Array<UInt8>())
 
 /* 2.封装证明密钥的参数集 */
 let anonAttestKeyProperties: Array<HuksParam> = [
@@ -88,7 +88,7 @@ let anonAttestKeyProperties: Array<HuksParam> = [
         HuksParamValue.BytesValue(challenge.toArray())
     )
 ]
-let huksOptions: HuksOptions = HuksOptions(properties: anonAttestKeyProperties, inData: Option<Array<UInt8>>.None.getOrThrow())
+let huksOptions: HuksOptions = HuksOptions(properties: anonAttestKeyProperties, inData: Array<UInt8>())
 
 func StringToUint8Array(str: String) {
     return str.toArray()

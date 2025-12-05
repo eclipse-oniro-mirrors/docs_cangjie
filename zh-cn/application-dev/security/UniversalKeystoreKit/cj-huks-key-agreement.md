@@ -527,12 +527,12 @@
         aliasAgreedKeyFromA: String, aliasAgreedKeyFromB: String) {
         let finishAliceResult = HuksDhAgreeInHuks(aliasA, pubKeyB, aliasAgreedKeyFromA).getOrThrow()
         loggerInfo("ok! finishAliceResult in huks is 0x${Uint8ArrayToBigInt(finishAliceResult).toString(radix: 16)}")
-        let aliceAgreedExist = isKeyItemExist(aliasAgreedKeyFromA, emptyOptions)
+        let aliceAgreedExist = hasKeyItem(aliasAgreedKeyFromA, emptyOptions)
         loggerInfo("ok! aliceAgreedExist in huks is ${aliceAgreedExist}")
 
         let finishBobResult = HuksDhAgreeInHuks(aliasB, pubKeyA, aliasAgreedKeyFromB).getOrThrow()
         loggerInfo("ok! finishBobResult in huks is 0x${Uint8ArrayToBigInt(finishBobResult).toString(radix: 16)}")
-        let bobAgreedExist = isKeyItemExist(aliasAgreedKeyFromB, emptyOptions)
+        let bobAgreedExist = hasKeyItem(aliasAgreedKeyFromB, emptyOptions)
         loggerInfo("ok! bobAgreedExist in huks is ${bobAgreedExist}")
 
         deleteKeyItem(aliasAgreedKeyFromA, emptyOptions)

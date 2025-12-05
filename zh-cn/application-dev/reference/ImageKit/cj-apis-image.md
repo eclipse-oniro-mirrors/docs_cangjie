@@ -2871,10 +2871,10 @@ try {
 }
 ```
 
-### func createAlphaPixelmap()
+### func createAlphaPixelMap()
 
 ```cangjie
-public func createAlphaPixelmap(): PixelMap
+public func createAlphaPixelMap(): PixelMap
 ```
 
 **功能：** 根据Alpha通道的信息，来生成一个仅包含Alpha通道信息的pixelmap，可用于阴影效果，yuv格式不支持此接口。
@@ -2914,7 +2914,7 @@ try {
     let sourceOptions: SourceOptions = SourceOptions(120)
     let imageSourceApi: ImageSource = createImageSource(data, sourceOptions)  // 请替换为正确的图片源，参考本文使用说明。
     let pixelMap = imageSourceApi.createPixelMap()
-    let alphaPixelmap = pixelMap.createAlphaPixelmap()
+    let alphaPixelmap = pixelMap.createAlphaPixelMap()
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -4955,7 +4955,7 @@ public enum PropertyKey <: ToString & Equatable<PropertyKey> {
     | GpsLatitude
     | GpsLongitudeRef
     | GpsLongitude
-    | GpsTimeStamp
+    | GpsTimestamp
     | GpsDateStamp
     | IsoSpeedRatings
     | SensitivityType
@@ -5318,10 +5318,10 @@ GpsLongitudeRef
 
 **起始版本：** 22
 
-### GpsTimeStamp
+### GpsTimestamp
 
 ```cangjie
-GpsTimeStamp
+GpsTimestamp
 ```
 
 **功能：** GPS时间戳。

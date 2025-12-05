@@ -411,24 +411,6 @@ public static prop hardwareModel: String
 
 **起始版本：** 22
 
-### static prop hardwareProfile
-
-```cangjie
-public static prop hardwareProfile: String
-```
-
-**功能：** 硬件Profile。
-
-示例：default
-
-**类型：** String
-
-**读写能力：** 只读
-
-**系统能力：** SystemCapability.Startup.SystemInfo
-
-**起始版本：** 22
-
 ### static prop incrementalVersion
 
 ```cangjie
@@ -727,8 +709,6 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let hardwareProfile = DeviceInfo.hardwareProfile
-    Hilog.info(0, "deviceinfo", "the value of thehardwareProfile is : :${hardwareProfile}")
     let osFullName = DeviceInfo.osFullName
     Hilog.info(0, "deviceinfo", "the value of the osFullName is: :${osFullName}")
     let productModel = DeviceInfo.productModel

@@ -49,6 +49,7 @@
 
    ```cangjie
    import kit.BasicServicesKit.*
+   import std.collection.HashMap
    ```
 
 2. 构建需要发布的公共事件信息。
@@ -64,7 +65,7 @@
       subscriberPermissions: Array<String>(),
       isOrdered: false,
       isSticky: false,
-      parameters: HashMap<String, ValueType>()
+      parameters: HashMap<String, CommonEventValueType>()
    )
    ```
 

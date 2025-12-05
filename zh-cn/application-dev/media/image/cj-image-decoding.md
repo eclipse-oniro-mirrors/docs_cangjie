@@ -2,6 +2,13 @@
 
 图片解码指将所支持格式的存档图片解码成统一的[PixelMap](./cj-image-overview.md)，以便在应用或系统中进行图片显示或[图片处理](./cj-image-transformation.md)。当前支持的存档图片格式包括JPEG、PNG、GIF、WebP、BMP、SVG、ICO、DNG 和 HEIF（不同硬件设备支持情况可能有所不同）。
 
+## 使用说明
+
+API示例代码使用说明：
+
+- 若示例代码首行有“// index.cj”注释，表示该示例可在仓颉模板工程的“index.cj”文件中编译运行。
+- 若示例需获取[Context](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-context)应用上下文，需在仓颉模板工程中的“main_ability.cj”文件中进行配置。
+
 ## 开发步骤
 
 图片解码相关API的详细介绍请参见：[图片解码API说明](../../reference/ImageKit/cj-apis-image.md#class-imagesource)。
@@ -137,7 +144,7 @@
         // 获取resourceManager资源管理器。
         let resourceManager = abilityContext.resourceManager
 
-        let img = resourceManager.getMediaContent(@r(app.media.layered_image))
+        let img = resourceManager.getMediaContent(@r(app.media.layered_image).id)
         let imageSource = createImageSource(img)
         let decodingOptions = DecodingOptions(editable: true, desiredPixelFormat: PixelMapFormat.Rgba8888)
 
@@ -158,7 +165,7 @@
         // 获取resourceManager资源管理器。
         let resourceManager = abilityContext.resourceManager
 
-        let img = resourceManager.getMediaContent(@r(app.media.layered_image))
+        let img = resourceManager.getMediaContent(@r(app.media.layered_image).id)
         let imageSource = createImageSource(img)
         //设置为AUTO会根据图片资源格式解码，如果图片资源为HDR资源则会解码为HDR的pixelmap。
         let decodingOptions = DecodingOptions(desiredDynamicRange: DecodingDynamicRange.Auto)

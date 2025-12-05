@@ -792,11 +792,11 @@ class EntryView {
     @State var url: String = "www.example.com"
     func build() {
         Column(space: 10) {
-            Button("refresh")
+            Button("reload")
             .onClick({
                 evt =>
-                Hilog.info(0, "AppLogCj", "refresh")
-                webController.refresh()
+                Hilog.info(0, "AppLogCj", "reload")
+                webController.reload()
             }).width(400.px).height(150.px)
             Button("loadUrl")
             .onClick({

@@ -29,7 +29,7 @@ API示例代码使用说明：
 
 ```cangjie
 public abstract class BaseContext {
-    public let stageMode: Bool
+    public let stageModel: Bool
 }
 ```
 
@@ -39,10 +39,10 @@ public abstract class BaseContext {
 
 **起始版本：** 22
 
-### let stageMode
+### let stageModel
 
 ```cangjie
-public let stageMode: Bool
+public let stageModel: Bool
 ```
 
 **功能：** 表示是否Stage模型。

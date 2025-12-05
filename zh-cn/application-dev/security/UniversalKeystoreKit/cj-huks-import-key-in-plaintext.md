@@ -126,7 +126,7 @@ func importKeyFunc(): Unit {
 
 ## 调测验证
 
-调用[isKeyItemExist](../../reference/UniversalKeystoreKit/cj-apis-security_huks.md#func-iskeyitemexiststring-huksoptions)验证密钥是否存在，如密钥存在即表示密钥导入成功。
+调用[hasKeyItem](../../reference/UniversalKeystoreKit/cj-apis-security_huks.md#func-haskeyitemstring-huksoptions)验证密钥是否存在，如密钥存在即表示密钥导入成功。
 
 <!-- compile -->
 
@@ -143,7 +143,7 @@ let keyProperties: Array<HuksParam> = [
 ]
 let huksOptions: HuksOptions = HuksOptions(
     properties: keyProperties, // 非空填充。
-    inData: None // 非空填充。
+    inData: Array<UInt8>() // 非空填充。
 )
 
 @Entry
@@ -160,7 +160,7 @@ class EntryView {
                     .fontWeight(FontWeight.Bold)
                     .onClick ({
                         evt => try {
-                            isKeyItemExist(keyAlias, huksOptions)
+                            hasKeyItem(keyAlias, huksOptions)
                         } catch (e: Exception) {
                             throw e
                         }

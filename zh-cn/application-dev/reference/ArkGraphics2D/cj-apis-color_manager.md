@@ -143,10 +143,10 @@ public class ColorSpaceManager {}
 
 **起始版本：** 22
 
-### func getColorSpaceName()
+### func getColorSpaceType()
 
 ```cangjie
-public func getColorSpaceName(): ColorSpace
+public func getColorSpaceType(): ColorSpace
 ```
 
 **功能：** 获取色域类型。
@@ -182,7 +182,7 @@ import kit.PerformanceAnalysisKit.Hilog
 
 try {
     let colorSpaceManagerInstance = create(ColorSpace.Srgb)
-    let colorSpace: ColorSpace = colorSpaceManagerInstance.getColorSpaceName()
+    let colorSpace: ColorSpace = colorSpaceManagerInstance.getColorSpaceType()
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }

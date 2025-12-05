@@ -1333,10 +1333,10 @@ try {
 }
 ```
 
-### func createUIEventObserver()
+### func createUiEventObserver()
 
 ```cangjie
-public func createUIEventObserver(): UIEventObserver
+public func createUiEventObserver(): UiEventObserver
 ```
 
 **功能：** 创建一个UI事件监听器。
@@ -1349,7 +1349,7 @@ public func createUIEventObserver(): UIEventObserver
 
 |类型|说明|
 |:----|:----|
-|[UIEventObserver](#class-uieventobserver)|返回找到的目标窗口对象。|
+|[UiEventObserver](#class-uieventobserver)|返回找到的目标窗口对象。|
 
 **示例：**
 
@@ -1364,7 +1364,7 @@ import kit.PerformanceAnalysisKit.Hilog
 
 try {
     let driver: Driver = Driver.create()
-    let observer: UIEventObserver = driver.createUIEventObserver()
+    let observer: UiEventObserver = driver.createUiEventObserver()
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -4043,10 +4043,10 @@ public init(left: Int32, top: Int32, right: Int32, bottom: Int32, displayId!: ?I
 |bottom|Int32|是|-|控件边框的右下角的Y坐标，取值大于0的整数。|
 |displayId|?Int32|否|None| **命名参数。** 控件边框所属的屏幕ID，取值大于或等于0的整数。默认值为设备默认屏幕ID。|
 
-## class UIElementInfo
+## class UiElementInfo
 
 ```cangjie
-public class UIElementInfo {
+public class UiElementInfo {
     public let bundleName: String
     public let componentType: String
     public let text: String
@@ -4107,10 +4107,10 @@ public let text: String
 
 **起始版本：** 22
 
-## class UIEventObserver
+## class UiEventObserver
 
 ```cangjie
-public class UIEventObserver {}
+public class UiEventObserver {}
 ```
 
 **功能：** UI事件监听器。
@@ -4119,10 +4119,10 @@ public class UIEventObserver {}
 
 **起始版本：** 22
 
-### func once(OnceType, Callback\<UIElementInfo>)
+### func once(OnceType, Callback\<UiElementInfo>)
 
 ```cangjie
-public func once(onceType: OnceType, callback: Callback<UIElementInfo>): Unit
+public func once(onceType: OnceType, callback: Callback<UiElementInfo>): Unit
 ```
 
 **功能：** 开始监听指定控件出现的事件。
@@ -4136,7 +4136,7 @@ public func once(onceType: OnceType, callback: Callback<UIElementInfo>): Unit
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |onceType|[OnceType](#enum-oncetype)|是|-|订阅的事件类型。|
-|callback|[Callback](./../arkui-cj/cj-common-types.md#type-callback)\<[UIElementInfo](#class-uielementinfo)>|是|-|事件发生时执行的回调函数。|
+|callback|[Callback](./../arkui-cj/cj-common-types.md#type-callback)\<[UiElementInfo](#class-uielementinfo)>|是|-|事件发生时执行的回调函数。|
 
 **异常：**
 
@@ -4159,7 +4159,7 @@ import ohos.business_exception.BusinessException
 
 try {
     let driver: Driver = Driver.create()
-    let observer: UIEventObserver = driver.createUIEventObserver()
+    let observer: UiEventObserver = driver.createUiEventObserver()
     observer.once(
         OnceType.DialogShow,
         {

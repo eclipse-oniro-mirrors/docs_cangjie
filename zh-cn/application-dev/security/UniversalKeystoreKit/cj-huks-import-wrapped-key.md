@@ -275,7 +275,7 @@ var importWrappedAes192Params: HuksOptions = HuksOptions(
         ),
         HuksParam(
             HuksTag.HUKS_TAG_UNWRAP_ALGORITHM_SUITE,
-            HuksParamValue.Uint32Value(HuksUnwrapSuite.HUKS_UNWRAP_SUITE_ECDH_AES_256_GCM_NOPADDING)
+            HuksParamValue.Uint32Value(HuksUnwrapSuite.HUKS_UNWRAP_SUITE_ECDH_AES_256_GCM_NO_PADDING)
         ),
         HuksParam(
             HuksTag.HUKS_TAG_IV,
