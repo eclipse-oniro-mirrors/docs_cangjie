@@ -1,4 +1,4 @@
-# ohos.battery_info
+# ohos.battery_info（电量信息）
 
 battery_info模块主要提供电池状态和充放电状态的查询接口。
 

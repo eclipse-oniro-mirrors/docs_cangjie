@@ -1,4 +1,4 @@
-# ohos.app.ability.want
+# ohos.app.ability.want（Want）
 
 Want是对象间信息传递的载体，可以用于应用组件间的信息传递。
 

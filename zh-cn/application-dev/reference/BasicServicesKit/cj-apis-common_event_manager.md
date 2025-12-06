@@ -1,4 +1,4 @@
-# ohos.common_event_manager
+# ohos.common_event_manager（公共事件模块）
 
 common_event_manager模块提供了公共事件相关的能力，包括发布公共事件、订阅公共事件、以及退订公共事件。
 

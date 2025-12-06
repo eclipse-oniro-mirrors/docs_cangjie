@@ -1,4 +1,4 @@
-# ohos.data.values_bucket
+# ohos.data.values_bucket（数据集）
 
 数据集(ValuesBucket) 是开发者向数据库插入的数据集合，数据集以键值对的形式进行传输。
 

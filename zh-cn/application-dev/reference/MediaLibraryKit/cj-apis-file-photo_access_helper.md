@@ -1,4 +1,4 @@
-# ohos.file.photo_access_helper
+# ohos.file.photo_access_helper（相册管理模块）
 
 photo_access_helper模块提供相册管理模块能力，包括创建相册以及访问、修改相册中的媒体数据信息等。
 
@@ -4781,7 +4781,7 @@ public operator func !=(other: PhotoViewMimeTypes): Bool
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|other|[PhotoViewMimeTypes](#enum-PhotoViewMimeTypes)|是|-|另一个枚举值。|
+|other|[PhotoViewMimeTypes](#enum-photoviewmimetypes)|是|-|另一个枚举值。|
 
 **返回值：**
 
