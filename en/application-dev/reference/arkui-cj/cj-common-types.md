@@ -2829,7 +2829,8 @@ public init(topLeft!: ?Length = None, topRight!: ?Length = None, bottomLeft!: ?L
 | topRight | ?[Length](./cj-common-types.md#interface-length) | No | None | **Named parameter.** Top-right corner radius of the component. Initial value is 0.vp. |
 | bottomLeft | ?[Length](./cj-common-types.md#interface-length) | No | None | **Named parameter.** Bottom-left corner radius of the component. Initial value is 0.v2. |
 | bottomRight | ?[Length](./cj-common-types.md#interface-length) | No | None | **Named parameter.** Bottom-right corner radius of the component. Initial value is 0.vp. |
-```## class Margin
+
+## class Margin
 
 ```cangjie
 public class Margin {
@@ -5541,7 +5542,7 @@ public var hoverScale: ?VArray<Float64, $2>
 
 **Since:** 22
 
-### init(?VArray\<Float64, $2>, ?TransitionEffect, ?VArray\<Float64, $2>)
+### init(?VArray\<Float64, \$2>, ?TransitionEffect, ?VArray\<Float64, \$2>)
 
 ```cangjie
 public init(scale!: ?VArray<Float64, $2> = None, transition!: ?TransitionEffect = None, hoverScale!: ?VArray<Float64, $2> = None)
