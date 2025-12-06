@@ -1071,6 +1071,7 @@ package ohos_app_cangjie_entry
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
 import ohos.hilog.*
+import ohos.arkui.component.common.Offset as CommonOffset
 
 @Entry
 @Component
@@ -1079,12 +1080,15 @@ class EntryView {
         Column(space:5.vp) {
             Button("one button dialog")
                 .onClick({ evt =>
+                    getUIContext().showAlertDialog(
                         AlertDialogParamWithConfirm(message:"text",
                             title: "title",
                             subtitle: "subtitle",
                             autoCancel: true,
                             cancel: {=> Hilog.info(0, "AppLogCj", "Closed callbacks")}, alignment: DialogAlignment.Center,
-                            offset: Offset(0, -20), gridCount: 4,
+                            offset: CommonOffset(0, -20),
+                            gridCount: 4,
+                            backgroundColor: Color.White,
                             onWillDismiss: {
                                 dismissDialogAction: DismissDialogAction => match (dismissDialogAction.reason) {
                                     case PRESS_BACK => dismissDialogAction.dismiss()
@@ -1093,18 +1097,24 @@ class EntryView {
                                 }
                             },
                             confirm: AlertDialogButtonOptions(value: "button",
-                                action: {=> Hilog.info(0, "AppLogCj", "Button-clicking callback")}))
+                                action: {=> Hilog.info(0, "AppLogCj", "Button-clicking callback")}
+                            )
+                        )
+                    )
                 })
             .backgroundColor(0x317aff)
             Button("two button dialog")
                 .onClick({ evt =>
+                    getUIContext().showAlertDialog(
                         AlertDialogParamWithButtons(message: "text",
                             title: "title",
                             subtitle: "subtitle",
                             autoCancel: true,
                             cancel: {=> Hilog.info(0, "AppLogCj", "Closed callbacks")},
                             alignment: DialogAlignment.Center,
-                            offset: Offset(0, -20), gridCount: 4,
+                            offset: CommonOffset(0, -20),
+                            gridCount: 4,
+                            backgroundColor: Color.White,
                             onWillDismiss: {
                                 dismissDialogAction: DismissDialogAction => match (dismissDialogAction.reason) {
                                     case PRESS_BACK => dismissDialogAction.dismiss()
@@ -1116,11 +1126,15 @@ class EntryView {
                                 action: {=> Hilog.info(0, "AppLogCj", "Callback when second button is clicked")}),
                             secondaryButton: AlertDialogButtonOptions(enabled: true, defaultFocus: true,
                                 style: DialogButtonStyle.Highlight, value: "OK",
-                                action: {=> Hilog.info(0, "AppLogCj", "Callback when second button is clicked")}))
+                                action: {=> Hilog.info(0, "AppLogCj", "Callback when second button is clicked")}
+                            )
+                        )
+                    )
                 })
             .backgroundColor(0x317aff)
             Button("three button dialog")
                 .onClick({ evt =>
+                    getUIContext().showAlertDialog(
                         AlertDialogParamWithOptions(
                             message: "text",
                             title: "title",
@@ -1128,8 +1142,9 @@ class EntryView {
                             autoCancel: true,
                             cancel: {=> Hilog.info(0, "AppLogCj", "Callback when third button is clicked")},
                             alignment: DialogAlignment.Center,
-                            offset: Offset(0, -20),
+                            offset: CommonOffset(0, -20),
                             gridCount: 4,
+                            backgroundColor: Color.White,
                             onWillDismiss: {
                                 dismissDialogAction: DismissDialogAction => match (dismissDialogAction.reason) {
                                     case PRESS_BACK => dismissDialogAction.dismiss()
@@ -1146,14 +1161,17 @@ class EntryView {
                                     action: {=> Hilog.info(0, "AppLogCj", "Callback when button1 is clicked")})
                             ]
                         )
+                    )
                 })
                 .backgroundColor(0x317aff)
         }
+        .width(100.percent)
+        .height(100.percent)
     }
 }
 ```
 
-![alertdialog1](./figures/alertDialog1.png)
+![alertdialog1](./figures/alertDialog1.gif)
 
 ### Example 2 (Dialog That Can Pop Up Outside the Main Window)
 
@@ -1166,6 +1184,7 @@ package ohos_app_cangjie_entry
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
 import ohos.hilog.*
+import ohos.arkui.component.common.Offset as CommonOffset
 
 @Entry
 @Component
@@ -1174,6 +1193,7 @@ class EntryView {
         Column(space: 5.vp) {
             Button("button dialog")
                 .onClick({ evt =>
+                    getUIContext().showAlertDialog(
                         AlertDialogParamWithOptions(
                             message: "text",
                             title: "title",
@@ -1181,10 +1201,11 @@ class EntryView {
                             autoCancel: true,
                             cancel: {=> Hilog.info(0, "AppLogCj", "Closed callbacks")},
                             alignment: DialogAlignment.Center,
-                            offset: Offset(0, -20),
+                            offset: CommonOffset(0, -20),
                             showInSubWindow: true,
                             buttonDirection: DialogButtonDirection.Horizontal,
                             gridCount: 4,
+                            backgroundColor: Color.White,
                             onWillDismiss: {
                                 dismissDialogAction: DismissDialogAction => match (dismissDialogAction.reason) {
                                     case PRESS_BACK => dismissDialogAction.dismiss()
@@ -1201,12 +1222,15 @@ class EntryView {
                                     action: {=> Hilog.info(0, "AppLogCj", "Callback when button1 is clicked")})
                             ]
                         )
+                    )
                 })
                 .backgroundColor(0x317aff)
         }
+        .width(100.percent)
+        .height(100.percent)
     }
 }
 
 ```
 
-![alertdialog2](./figures/alertdialog2.png)
+![alertdialog2](./figures/alertdialog2.gif)
