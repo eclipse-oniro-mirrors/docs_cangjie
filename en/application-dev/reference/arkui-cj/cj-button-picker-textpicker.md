@@ -114,6 +114,10 @@ public type OnTextPickerChangeCallback = (String, UInt32) -> Unit
 
 **Type:** (String, UInt32) -> Unit
 
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 22
+
 ## Example Code
 
 ### Example 1 (Setting the Number of Picker Columns)

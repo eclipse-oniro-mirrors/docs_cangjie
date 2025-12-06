@@ -1328,7 +1328,9 @@ public init(onAppear!: ?() -> Unit = None, onDisappear!: ?() -> Unit = None)
 | Parameter Name | Type | Required | Default Value | Description |
 |:---|:---|:---|:---|:---|
 | onAppear | ?() -> Unit | No | None | **Named parameter.** Callback function when the selection menu appears. Initial value: {=>}. |
-| onDisappear | ?() -> Unit | No | None | **Named parameter.** Callback function when the selection menu disappears. Initial value: {=>}. |### class RichEditorTextStyle
+| onDisappear | ?() -> Unit | No | None | **Named parameter.** Callback function when the selection menu disappears. Initial value: {=>}. |
+
+### class RichEditorTextStyle
 
 ```cangjie
 public class RichEditorTextStyle {
@@ -1632,8 +1634,8 @@ public init(margin!: ?Length, borderRadius!: ?Length)
 
 | Parameter Name | Type | Required | Default Value | Description |
 |:---|:---|:---|:---|:---|
-| margin | ?[Length](./cj-common-types.md#interface-length) | No | None | **Named parameter.** Margin. |
-| borderRadius | ?[Length](./cj-common-types.md#interface-length) | No | None | **Named parameter.** Border radius. |
+| margin | ?[Length](./cj-common-types.md#interface-length) | Yes | - | **Named parameter.** Margin. |
+| borderRadius | ?[Length](./cj-common-types.md#interface-length) | Yes | - | **Named parameter.** Border radius. |
 
 ### class RichEditorImageSpanStyle
 
@@ -1901,7 +1903,7 @@ public init(textAlign!: ?TextAlign = None, leadingMargin!: ?Length)
 | Parameter | Type | Required | Default Value | Description |
 |:---|:---|:---|:---|:---|
 | textAlign | ?[TextAlign](./cj-common-types.md#enum-textalign) | No | None | **Named parameter.** Text alignment. Initial value: TextAlign.Start. |
-| leadingMargin | ?[Length](./cj-common-types.md#interface-length) | No | None | **Named parameter.** First-line indentation. |
+| leadingMargin | ?[Length](./cj-common-types.md#interface-length) | Yes | - | **Named parameter.** First-line indentation. |
 
 #### init(?TextAlign, ?LeadingMarginPlaceholder)
 

@@ -1930,6 +1930,10 @@ public type ShowDialogCallBack = AsyncCallback<Int32>
 
 **Type:** [AsyncCallback\<Int32>](../arkinterop/cj-api-business_exception.md#type-asynccallback)
 
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 22
+
 ## type ShowActionMenuCallBack
 
 ```cangjie
@@ -1939,3 +1943,7 @@ public type ShowActionMenuCallBack = AsyncCallback<Int32>
 **Function:** ShowActionMenuCallBack callback function.
 
 **Type:** [AsyncCallback\<Int32>](../arkinterop/cj-api-business_exception.md#type-asynccallback)
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 22

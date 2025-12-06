@@ -128,6 +128,10 @@ public type OnCheckboxChangeCallback = (Bool) -> Unit
 
 **Type:** (Bool) -> Unit
 
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 22
+
 ## Example Code
 
 ### Example 1 (Setting Checkbox Shape)

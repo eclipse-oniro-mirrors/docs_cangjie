@@ -372,6 +372,8 @@ public type OnAlphabetIndexerSelectCallback = (Int64) -> Unit
 
 **功能：** 索引项被选中时触发的事件。
 
+**类型：** (Int64) -> Unit
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **起始版本：** 22
@@ -384,6 +386,8 @@ public type OnAlphabetIndexerRequestPopupDataCallback = (Int64) -> Array<String>
 
 **功能：** usingPopup设置值为true，索引项被选中时触发的事件。
 
+**类型：** (Int64) -> Array\<String>
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **起始版本：** 22
@@ -395,6 +399,8 @@ public type OnAlphabetIndexerPopupSelectCallback = (Int64) -> Unit
 ```
 
 **功能：** 提示弹窗二级索引项被选中时触发的事件。
+
+**类型：** (Int64) -> Unit
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 

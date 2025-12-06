@@ -39,7 +39,7 @@ public init(count!: Int32, style!: ?BadgeStyle, position!: ?BadgePosition = None
 | style | ?[BadgeStyle](#class-badgestyle) | Yes | - | **Named parameter.** The style settings for the Badge component, including text color, size, dot color, and size. |
 | position | ?[BadgePosition](#enum-badgeposition) | No | None | **Named parameter.** The display position of the badge. Initial value: BadgePosition.RightTop |
 | maxCount | ?Int32 | No | None | **Named parameter.** The maximum number of messages. If exceeded, displays as maxCount+. Initial value: 99 |
-| child | () -> Unit | Yes | - | The child component of the container. |
+| child | () -> Unit | Yes | - | **Named parameter.** The child component of the container. |
 
 ### init(String, ?BadgeStyle, ?BadgePosition, () -> Unit)
 
@@ -60,7 +60,7 @@ public init(value!: String, style!: ?BadgeStyle, position!: ?BadgePosition = Non
 | value | String | Yes | - | **Named parameter.** The text parameter for the badge component. |
 | style | ?[BadgeStyle](#class-badgestyle) | Yes | - | **Named parameter.** The style settings for the Badge component, including text color, size, dot color, and size. |
 | position | ?[BadgePosition](#enum-badgeposition) | No | None | **Named parameter.** The display position of the badge. Initial value: BadgePosition.RightTop |
-| child | () -> Unit | Yes | - | The child component of the container. |
+| child | () -> Unit | Yes | - | **Named parameter.** The child component of the container. |
 
 ## Common Attributes/Events
 

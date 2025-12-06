@@ -349,7 +349,7 @@ public init(
 )
 ```
 
-**功能：** RichEditorSpanPosition构造函数
+**功能：** RichEditorSpanPosition构造函数。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -498,7 +498,7 @@ public init(
 )
 ```
 
-**功能：** RichEditorTextStyleResult构造函数
+**功能：** RichEditorTextStyleResult构造函数。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -698,7 +698,7 @@ public init(
 )
 ```
 
-**功能：** RichEditorTextSpanResult构造函数
+**功能：** RichEditorTextSpanResult构造函数。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -834,7 +834,7 @@ public init(
 )
 ```
 
-**功能：** RichEditorImageSpanResult构造函数
+**功能：** RichEditorImageSpanResult构造函数。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -904,7 +904,7 @@ public var spans: ArrayList<RichEditorSpanResult>
 public init(selection: ?(Int32, Int32), spans: ?ArrayList<RichEditorSpanResult>)
 ```
 
-**功能：** RichEditorSelection构造函数
+**功能：** RichEditorSelection构造函数。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1015,7 +1015,7 @@ public init(
 )
 ```
 
-**功能：** RichEditorDeleteValue构造函数
+**功能：** RichEditorDeleteValue构造函数。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1084,7 +1084,7 @@ public var end: ?Int32
 public init(start: ?Int32, end: ?Int32)
 ```
 
-**功能：** TextRange构造函数
+**功能：** TextRange构造函数。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1181,7 +1181,7 @@ public init(
 )
 ```
 
-**功能：** RichEditorInsertValue构造函数
+**功能：** RichEditorInsertValue构造函数。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1254,7 +1254,7 @@ public init(
 )
 ```
 
-**功能：** DecorationStyleResult构造函数
+**功能：** DecorationStyleResult构造函数。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1321,7 +1321,7 @@ public var onDisappear: ?VoidCallback
 public init(onAppear!: ?() -> Unit = None, onDisappear!: ?() -> Unit = None)
 ```
 
-**功能：** SelectionMenuOptions构造函数
+**功能：** SelectionMenuOptions构造函数。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1470,7 +1470,7 @@ public init(
 )
 ```
 
-**功能：** RichEditorTextStyle构造函数
+**功能：** RichEditorTextStyle构造函数。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1541,7 +1541,7 @@ public var style: ?RichEditorTextStyle
 public init(offset!: ?Int32 = None, style!: ?RichEditorTextStyle = None)
 ```
 
-**功能：** RichEditorTextSpanOptions构造函数
+**功能：** RichEditorTextSpanOptions构造函数。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1609,7 +1609,7 @@ public var borderRadius: ?BorderRadiuses
 public init(margin!: ?Margin = None, borderRadius!: ?BorderRadiuses = None)
 ```
 
-**功能：** RichEditorLayoutStyle构造函数
+**功能：** RichEditorLayoutStyle构造函数。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1628,7 +1628,7 @@ public init(margin!: ?Margin = None, borderRadius!: ?BorderRadiuses = None)
 public init(margin!: ?Length, borderRadius!: ?Length)
 ```
 
-**功能：** RichEditorLayoutStyle构造函数
+**功能：** RichEditorLayoutStyle构造函数。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1737,7 +1737,7 @@ public init(
 )
 ```
 
-**功能：** RichEditorImageSpanStyle构造函数
+**功能：** RichEditorImageSpanStyle构造函数。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1811,7 +1811,7 @@ public init(
 )
 ```
 
-**功能：** RichEditorImageSpanOptions构造函数
+**功能：** RichEditorImageSpanOptions构造函数。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1880,7 +1880,7 @@ public var leadingMargin: ?LeadingMarginType
 public init(textAlign!: ?TextAlign = None)
 ```
 
-**功能：** RichEditorParagraphStyle构造函数
+**功能：** RichEditorParagraphStyle构造函数。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1898,7 +1898,7 @@ public init(textAlign!: ?TextAlign = None)
 public init(textAlign!: ?TextAlign = None, leadingMargin!: ?Length)
 ```
 
-**功能：** RichEditorParagraphStyle构造函数
+**功能：** RichEditorParagraphStyle构造函数。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1917,7 +1917,7 @@ public init(textAlign!: ?TextAlign = None, leadingMargin!: ?Length)
 public init(textAlign!: ?TextAlign = None, leadingMargin!: ?LeadingMarginPlaceholder)
 ```
 
-**功能：** RichEditorParagraphStyle构造函数
+**功能：** RichEditorParagraphStyle构造函数。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1984,7 +1984,7 @@ public var color: ?ResourceColor
 public init(decorationType!: ?TextDecorationType, color!: ?ResourceColor = None)
 ```
 
-**功能：** TextDecorationOptions构造函数
+**功能：** TextDecorationOptions构造函数。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -2051,7 +2051,7 @@ public var size: ?(Length, Length)
 public init(pixelMap!: PixelMap, size!: ?(Length, Length))
 ```
 
-**功能：** LeadingMarginPlaceholder构造函数
+**功能：** LeadingMarginPlaceholder构造函数。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -2381,6 +2381,10 @@ public type PasteEventCallback = (PasteEvent) -> Unit
 
 **类型：** ([PasteEvent](#class-pasteevent)) -> Unit
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
+
 ### type OnDidChangeCallback
 
 ```cangjie
@@ -2390,6 +2394,10 @@ public type OnDidChangeCallback = (rangeBefore: TextRange, rangeAfter: TextRange
 **功能：** 内容更改后的回调函数。
 
 **类型：** ([TextRange](#class-textrange), [TextRange](#class-textrange)) -> Unit
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
 
 ## 示例代码
 

@@ -114,6 +114,10 @@ public type OnTextPickerChangeCallback = (String, UInt32) -> Unit
 
 **类型：** (String, UInt32) -> Unit
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
+
 ## 示例代码
 
 ### 示例1（设置选择器列数）

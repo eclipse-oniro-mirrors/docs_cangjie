@@ -197,7 +197,7 @@ public mut prop fillStyle: Option<FillStyle>
 
 **功能：** 指定绘制的填充色。
 
-**类型：** Option\<FillStyle>
+**类型：** Option\<[FillStyle](#interface-fillstyle)>
 
 **读写能力：** 可读写
 
@@ -229,7 +229,7 @@ public mut prop strokeStyle: Option<StrokeStyle>
 
 **功能：** 设置描边的颜色。
 
-**类型：** Option\<StrokeStyle>
+**类型：** Option\<[StrokeStyle](#interface-strokestyle)>
 
 **读写能力：** 可读写
 
@@ -405,7 +405,7 @@ public mut prop shadowColor: Option<ResourceColor>
 
 **功能：** 阴影颜色。
 
-**类型：** Option\<ResourceColor>
+**类型：** Option\<[ResourceColor](./cj-common-types.md#interface-resourcecolor)>
 
 **读写能力：** 可读写
 
@@ -544,7 +544,7 @@ public prop width: Float64
 ### func setLineDash(?Array\<Float64>)
 
 ```cangjie
-public func setLineDash(dashArr: ?Array<Float64>): Unit
+public func setLineDash(segments: ?Array<Float64>): Unit
 ```
 
 **功能：** 为线条设置虚线模式。
@@ -737,6 +737,7 @@ public func moveTo(x: Float64, y: Float64): Unit
 ```
 
 **功能：** 路径从当前点移动到指定点。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **起始版本：** 22
@@ -802,7 +803,7 @@ public func createPattern(image: ?ImageBitmap, repetition: Option<Repetition>): 
 
 |类型|说明|
 |:---|:---|
-|Option\<CanvasPattern>|通过指定图像和重复方式创建图片填充的模板对象。|
+|Option\<[CanvasPattern](#canvaspattern)>|通过指定图像和重复方式创建图片填充的模板对象。|
 
 ### func bezierCurveTo(Float64, Float64, Float64, Float64, Float64, Float64)
 

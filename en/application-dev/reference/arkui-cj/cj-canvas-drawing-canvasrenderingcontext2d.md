@@ -197,7 +197,7 @@ public mut prop fillStyle: Option<FillStyle>
 
 **Function:** Specifies the fill color for drawing.
 
-**Type:** Option\<FillStyle>
+**Type:** Option\<[FillStyle](#interface-fillstyle)>
 
 **Read/Write:** Readable and Writable
 
@@ -229,7 +229,7 @@ public mut prop strokeStyle: Option<StrokeStyle>
 
 **Function:** Sets the stroke color.
 
-**Type:** Option\<StrokeStyle>
+**Type:** Option\<[StrokeStyle](#interface-strokestyle)>
 
 **Read/Write:** Readable and Writable
 
@@ -405,7 +405,7 @@ public mut prop shadowColor: Option<ResourceColor>
 
 **Function:** Shadow color.
 
-**Type:** Option\<ResourceColor>
+**Type:** Option\<[ResourceColor](./cj-common-types.md#interface-resourcecolor)>
 
 **Read/Write:** Readable and Writable
 
@@ -542,7 +542,7 @@ public prop width: Float64
 ### func setLineDash(?Array\<Float64>)
 
 ```cangjie
-public func setLineDash(dashArr: ?Array<Float64>): Unit
+public func setLineDash(segments: ?Array<Float64>): Unit
 ```
 
 **Function:** Sets the dash pattern for lines.
@@ -801,7 +801,7 @@ public func createPattern(image: ?ImageBitmap, repetition: Option<Repetition>): 
 
 | Type | Description |
 |:---|:---|
-| Option\<CanvasPattern> | The pattern object created for image filling. |
+| Option\<[CanvasPattern](#canvaspattern)> | The pattern object created for image filling. |
 
 ### func bezierCurveTo(Float64, Float64, Float64, Float64, Float64, Float64)
 

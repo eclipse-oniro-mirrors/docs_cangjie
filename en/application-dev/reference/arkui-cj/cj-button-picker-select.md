@@ -492,6 +492,9 @@ public type OnSelectCallback = (Int32, String) -> Unit
 
 **Type:** (Int32, String) -> Unit
 
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 22
 
 ## Example Code
 

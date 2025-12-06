@@ -1921,6 +1921,10 @@ public type ShowDialogCallBack = AsyncCallback<Int32>
 
 **类型：** [AsyncCallback\<Int32>](../arkinterop/cj-api-business_exception.md#type-asynccallback)
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
+
 ## type ShowActionMenuCallBack
 
 ```cangjie
@@ -1930,3 +1934,7 @@ public type ShowActionMenuCallBack = AsyncCallback<Int32>
 **功能：** ShowActionMenuCallBack回调函数
 
 **类型：** [AsyncCallback\<Int32>](../arkinterop/cj-api-business_exception.md#type-asynccallback)
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22

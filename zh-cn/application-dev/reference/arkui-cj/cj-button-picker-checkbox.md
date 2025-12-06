@@ -128,6 +128,10 @@ public type OnCheckboxChangeCallback = (Bool) -> Unit
 
 **类型：** (Bool) -> Unit
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
+
 ## 示例代码
 
 ### 示例一（设置多选框形状）

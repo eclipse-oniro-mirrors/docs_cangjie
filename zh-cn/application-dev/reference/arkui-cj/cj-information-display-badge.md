@@ -39,7 +39,7 @@ public init(count!: Int32, style!: ?BadgeStyle, position!: ?BadgePosition = None
 |style|?[BadgeStyle](#class-badgestyle)|是|-|**命名参数。** Badge组件可设置的样式，支持设置文本颜色、尺寸、圆点颜色和尺寸。|
 |position|?[BadgePosition](#enum-badgeposition)|否|None|**命名参数。** 提示点显示位置。初始值：BadgePosition.RightTop|
 |maxCount|?Int32|否|None|**命名参数。** 最大消息数，超过最大消息时仅显示 maxCount+。初始值：99|
-|child|() -> Unit|是|-|容器的子组件。|
+|child|() -> Unit|是|-|**命名参数。** 容器的子组件。|
 
 ### init(String, ?BadgeStyle, ?BadgePosition, () -> Unit)
 
@@ -60,7 +60,7 @@ public init(value!: String, style!: ?BadgeStyle, position!: ?BadgePosition = Non
 |value|String|是|-|**命名参数。** 文本标记组件参数。|
 |style|?[BadgeStyle](#class-badgestyle)|是|-|**命名参数。** Badge组件可设置的样式，支持设置文本颜色、尺寸、圆点颜色和尺寸。|
 |position|?[BadgePosition](#enum-badgeposition)|否|None|**命名参数。** 提示点显示位置。初始值：BadgePosition.RightTop|
-|child|() -> Unit|是|-|容器的子组件。|
+|child|() -> Unit|是|-|**命名参数。** 容器的子组件。|
 
 ## 通用属性/通用事件
 

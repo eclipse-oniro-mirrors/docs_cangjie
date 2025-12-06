@@ -709,3 +709,7 @@ public type Matrix4Result = VArray<Float64, $16>
 **功能：** 4x4变换矩阵结果类型。
 
 **类型：** VArray<Float64, $16>
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22

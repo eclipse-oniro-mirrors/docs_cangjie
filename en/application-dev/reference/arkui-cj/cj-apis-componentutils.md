@@ -707,3 +707,7 @@ public type Matrix4Result = VArray<Float64, $16>
 **Function:** 4x4 transformation matrix result type.
 
 **Type:** VArray<Float64, $16>
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 22

@@ -372,6 +372,8 @@ public type OnAlphabetIndexerSelectCallback = (Int64) -> Unit
 
 **Function:** Event triggered when an index item is selected.
 
+**Type:** (Int64) -> Unit
+
 **System Capability:** SystemCapability.ArkUI.ArkUI.Full
 
 **Since:** 22
@@ -383,6 +385,8 @@ public type OnAlphabetIndexerRequestPopupDataCallback = (Int64) -> Array<String>
 ```
 
 **Function:** Event triggered when an index item is selected and usingPopup is set to true.
+
+**Type:** (Int64) -> Array\<String>
 
 **System Capability:** SystemCapability.ArkUI.ArkUI.Full
 
@@ -396,9 +400,13 @@ public type OnAlphabetIndexerPopupSelectCallback = (Int64) -> Unit
 
 **Function:** Event triggered when a secondary index item in the popup is selected.
 
+**Type:** (Int64) -> Unit
+
 **System Capability:** SystemCapability.ArkUI.ArkUI.Full
 
-**Since:** 22## Sample Code
+**Since:** 22
+
+## Sample Code
 
 ### Example 1 (Setting Prompt Popup Display Text Content)
 

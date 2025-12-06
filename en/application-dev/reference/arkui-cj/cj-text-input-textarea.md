@@ -206,6 +206,66 @@ public func maxLength(value: ?UInt32): This
 |:---|:---|:---|:---|:---|
 | value | ?UInt32 | Yes | - | Maximum length of the text. |
 
+### func placeholderColor(?ResourceColor)
+
+```cangjie
+public func placeholderColor(value: ?ResourceColor): This
+```
+
+**Function:** Sets the color of the placeholder text.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Initial Version:** 22
+
+**Parameters:**
+
+| Parameter Name | Type | Required | Default Value | Description |
+|:---|:---|:---|:---|:---|
+| value | ?[ResourceColor](./cj-common-types.md#interface-resourcecolor) | Yes | - | Color of the placeholder text. |
+
+### func placeholderFont(?Length, ?FontWeight, ?String, ?FontStyle)
+
+```cangjie
+public func placeholderFont(size!: ?Length, weight!: ?FontWeight = None, family!: ?String = None,
+    style!: ?FontStyle = None): This
+```
+
+**Function:** Sets the font attributes of the placeholder text.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Initial Version:** 22
+
+**Parameters:**
+
+| Parameter Name | Type | Required | Default Value | Description |
+|:---|:---|:---|:---|:---|
+| size | ?[Length](./cj-common-types.md#interface-length) | Yes | - | **Named parameter.** Font size of the placeholder text.<br>Initial value: 16.0.fp. |
+| weight | ?[FontWeight](./cj-common-types.md#enum-fontweight) | No | None | **Named parameter.** Font weight of the placeholder text.<br>Initial value: FontWeight.W400. |
+| family | ?String | No | None | **Named parameter.** Font family of the placeholder text.<br>Initial value: "". |
+| style | ?[FontStyle](./cj-common-types.md#enum-fontstyle) | No | None | **Named parameter.** Font style of the placeholder text.<br>Initial value: FontStyle.Normal. |
+
+### func textAlign(?TextAlign)
+
+```cangjie
+public func textAlign(value: ?TextAlign): This
+```
+
+**Function:** Sets the horizontal alignment of the text.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Initial Version:** 22
+
+**Parameters:**
+
+| Parameter Name | Type | Required | Default Value | Description |
+|:---|:---|:---|:---|:---|
+| value | ?[TextAlign](./cj-common-types.md#enum-textalign) | Yes | - | Horizontal alignment of the text.<br>Initial value: TextAlign.Start. |
+
+## Common Events
+
 ### func onChange(?(String) -> Unit)
 
 ```cangjie
@@ -313,64 +373,6 @@ public func onSubmit(callback: ?(EnterKeyType) -> Unit): This
 | Parameter Name | Type | Required | Default Value | Description |
 |:---|:---|:---|:---|:---|
 | callback | ?([EnterKeyType](./cj-common-types.md#enum-enterkeytype)) -> Unit | Yes | - | Callback function upon submission.<br>Initial value: { _ => }. |
-
-### func placeholderColor(?ResourceColor)
-
-```cangjie
-public func placeholderColor(value: ?ResourceColor): This
-```
-
-**Function:** Sets the color of the placeholder text.
-
-**System Capability:** SystemCapability.ArkUI.ArkUI.Full
-
-**Initial Version:** 22
-
-**Parameters:**
-
-| Parameter Name | Type | Required | Default Value | Description |
-|:---|:---|:---|:---|:---|
-| value | ?[ResourceColor](./cj-common-types.md#interface-resourcecolor) | Yes | - | Color of the placeholder text. |
-
-### func placeholderFont(?Length, ?FontWeight, ?String, ?FontStyle)
-
-```cangjie
-public func placeholderFont(size!: ?Length, weight!: ?FontWeight = None, family!: ?String = None,
-    style!: ?FontStyle = None): This
-```
-
-**Function:** Sets the font attributes of the placeholder text.
-
-**System Capability:** SystemCapability.ArkUI.ArkUI.Full
-
-**Initial Version:** 22
-
-**Parameters:**
-
-| Parameter Name | Type | Required | Default Value | Description |
-|:---|:---|:---|:---|:---|
-| size | ?[Length](./cj-common-types.md#interface-length) | Yes | - | **Named parameter.** Font size of the placeholder text.<br>Initial value: 16.0.fp. |
-| weight | ?[FontWeight](./cj-common-types.md#enum-fontweight) | No | None | **Named parameter.** Font weight of the placeholder text.<br>Initial value: FontWeight.W400. |
-| family | ?String | No | None | **Named parameter.** Font family of the placeholder text.<br>Initial value: "". |
-| style | ?[FontStyle](./cj-common-types.md#enum-fontstyle) | No | None | **Named parameter.** Font style of the placeholder text.<br>Initial value: FontStyle.Normal. |
-
-### func textAlign(?TextAlign)
-
-```cangjie
-public func textAlign(value: ?TextAlign): This
-```
-
-**Function:** Sets the horizontal alignment of the text.
-
-**System Capability:** SystemCapability.ArkUI.ArkUI.Full
-
-**Initial Version:** 22
-
-**Parameters:**
-
-| Parameter Name | Type | Required | Default Value | Description |
-|:---|:---|:---|:---|:---|
-| value | ?[TextAlign](./cj-common-types.md#enum-textalign) | Yes | - | Horizontal alignment of the text.<br>Initial value: TextAlign.Start. |
 
 ## Basic Type Definitions
 
