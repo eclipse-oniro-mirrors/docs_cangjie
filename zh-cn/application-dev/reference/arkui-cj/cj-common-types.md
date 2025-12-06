@@ -5992,7 +5992,7 @@ public var hoverScale: ?VArray<Float64, $2>
 
 **起始版本：** 22
 
-### init(?VArray\<Float64, $2>, ?TransitionEffect, ?VArray\<Float64, $2>)
+### init(?VArray\<Float64, \$2>, ?TransitionEffect, ?VArray\<Float64, \$2>)
 
 ```cangjie
 public init(scale!: ?VArray<Float64, $2> = None, transition!: ?TransitionEffect = None, hoverScale!: ?VArray<Float64, $2> = None)

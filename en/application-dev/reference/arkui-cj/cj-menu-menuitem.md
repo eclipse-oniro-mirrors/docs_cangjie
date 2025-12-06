@@ -53,7 +53,7 @@ public init(startIcon!: ?ResourceStr, content!: ?ResourceStr, endIcon!: ?Resourc
 | content | ?[ResourceStr](./cj-common-types.md#interface-resourcestr) | Yes | - | **Named parameter.** Content information of the item. Initial value: "". |
 | endIcon | ?[ResourceStr](./cj-common-types.md#interface-resourcestr) | Yes | - | **Named parameter.** Path to the icon displayed on the right side of the item. Initial value: "". |
 | labelInfo | ?[ResourceStr](./cj-common-types.md#interface-resourcestr) | Yes | - | **Named parameter.** Defines the end label information, such as shortcuts like Ctrl+C. Initial value: "". |
-| builder | Option\<() -> Unit> | No | None | **Named parameter.** Custom UI description. Used in combination with [@Builder](../../arkui-cj/paradigm/cj-macro-builder.md) and bind methods. |
+| builder | Option\<() -> Unit> | No | None | **Named parameter.** Custom UI description. Used in combination with [@Builder](../../arkui-cj/paradigm/cj-macro-builder.md) and [bind](cj-ui-framework.md#func-bindcustomview---viewbuilder-customview) methods. |
 
 ## Common Attributes/Common Events
 
