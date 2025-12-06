@@ -473,6 +473,10 @@ public type PageTransitionCallback = (RouteType, Float64) -> Unit
 
 **功能：** 回调用于报告页面转换事件。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
+
 **类型：** ([RouteType](#enum-routetype) , Float64) -> Unit
 
 |类型参数|说明|

@@ -122,6 +122,7 @@ public var z: ?Length
 **功能：** z轴上的平移距离。对于数字类型，单位为vp，取值范围为(-∞, +∞)。
 
 **类型：** ?[Length](./cj-common-types.md#interface-length)
+
 **读写能力：** 可读写
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full

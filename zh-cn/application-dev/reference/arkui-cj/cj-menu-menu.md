@@ -38,7 +38,7 @@ public init(child!: () -> Unit = {=>})
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|child|() -> Unit|否|{=>}|声明容器内的子组件。|
+|child|() -> Unit|否|{=>}|**命名参数。** 声明容器内的子组件。|
 
 ## 通用属性/通用事件
 
@@ -116,7 +116,7 @@ public func radius(value: ?BorderRadiuses): This
 public func radius(value: ?Length): This
 ```
 
-**功能：**设置Menu边框圆角半径。
+**功能：** 设置Menu边框圆角半径。
 
 > **说明：**
 >

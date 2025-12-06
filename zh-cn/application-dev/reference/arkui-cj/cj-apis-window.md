@@ -1059,10 +1059,10 @@ public func isWindowShowing(): Bool
   |:----|:----|
   |1300002|This window state is abnormal.|
 
-### func isWindowSupportWideGamut()
+### func isWideGamutSupported()
 
 ```cangjie
-public func isWindowSupportWideGamut(): Bool
+public func isWideGamutSupported(): Bool
 ```
 
 **功能：** 窗口是否支持宽色域设置。

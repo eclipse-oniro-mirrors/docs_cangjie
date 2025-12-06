@@ -686,7 +686,7 @@ public func measureText(text: ?String): TextMetrics
 
 |类型|说明|
 |:---|:---|
-|TextMetrics|文本测量结果。|
+|[TextMetrics](cj-canvas-drawing-canvas.md#class-textmetrics)|文本测量结果。|
 
 ### func stroke()
 
@@ -1212,7 +1212,7 @@ public func createLinearGradient(x0: Float64, y0: Float64, x1: Float64, y1: Floa
 
 |类型|说明|
 |:---|:---|
-|CanvasGradient|渐变对象。使用完毕后需要释放。|
+|[CanvasGradient](cj-canvas-drawing-canvas.md#class-canvasgradient)|渐变对象。使用完毕后需要释放。|
 
 ### func createRadialGradient(Float64, Float64, Float64, Float64, Float64, Float64)
 
@@ -1241,7 +1241,7 @@ public func createRadialGradient(x0: Float64, y0: Float64, r0: Float64, x1: Floa
 
 |类型|说明|
 |:---|:---|
-|CanvasGradient|渐变对象。使用完毕后需要释放。|
+|[CanvasGradient](cj-canvas-drawing-canvas.md#class-canvasgradient)|渐变对象。使用完毕后需要释放。|
 
 ### func createConicGradient(?Float64, ?Float64, ?Float64)
 
@@ -1267,7 +1267,7 @@ public func createConicGradient(startAngle: ?Float64, x: ?Float64, y: ?Float64):
 
 |类型|说明|
 |:---|:---|
-|CanvasGradient|新的CanvasGradient对象，用于在canvas上创建渐变效果。|
+|[CanvasGradient](cj-canvas-drawing-canvas.md#class-canvasgradient)|新的CanvasGradient对象，用于在canvas上创建渐变效果。|
 
 ### func drawImage(ImageBitmap, ?Float64, ?Float64)
 

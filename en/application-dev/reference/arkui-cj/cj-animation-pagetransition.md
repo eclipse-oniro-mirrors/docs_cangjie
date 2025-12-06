@@ -471,6 +471,10 @@ public type PageTransitionCallback = (RouteType, Float64) -> Unit
 
 **Function:** Callback for reporting page transition events.
 
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Initial Version:** 22
+
 **Type:** ([RouteType](#enum-routetype), Float64) -> Unit
 
 |类型参数|说明|

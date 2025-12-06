@@ -464,7 +464,7 @@ public var url: String
 public init(url: String)
 ```
 
-**功能：** 构造函数。
+**功能：** 构造一个OnPageBeginEvent类型的对象。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -540,7 +540,6 @@ public class PermissionRequest {}
 #### func deny()
 
 ```cangjie
-
 public func deny(): Unit
 ```
 
@@ -762,7 +761,7 @@ public var request: PermissionRequest
 public init(request: PermissionRequest)
 ```
 
-**功能：** 构造函数。
+**功能：** 构造一个OnPermissionRequestEvent类型的对象。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 

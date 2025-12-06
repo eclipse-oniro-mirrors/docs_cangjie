@@ -30,7 +30,7 @@ public init(child!: () -> Unit = {=>})
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|child|() -> Unit|否|{=>}|**命名参数。** 自定义UI描述。使用时结合[@Builder](../../arkui-cj/paradigm/cj-macro-builder.md)和bind方法使用。|
+|child|() -> Unit|否|{=>}|**命名参数。** 自定义UI描述。使用时结合[@Builder](../../arkui-cj/paradigm/cj-macro-builder.md)和[bind](cj-ui-framework.md#func-bindcustomview---viewbuilder-customview)方法使用。|
 
 ### init(?ResourceStr, ?ResourceStr, ?ResourceStr, ?ResourceStr, Option\<() -> Unit>)
 

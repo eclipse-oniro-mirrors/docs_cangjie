@@ -1,6 +1,6 @@
 # Implicit Shared Element Transition Within Components (geometryTransition)
 
-Provides smooth contextual inheritance transitions during view switching. The general transition mechanism offers effects like opacity and scale. geometryTransition establishes spatial connections between originally independent transition animations by coordinating the frame and position of the bound in/out components (where "in" refers to the new view and "out" refers to the old view), guiding the visual focus from the old view's position to the new view's position.
+Provides smooth contextual inheritance transitions during view switching. The general transition mechanism offers effects like [opacity](cj-animation-transition.md#static-func-opacityfloat64) and [scale](cj-animation-transition.md#static-func-scalescaleoptions). geometryTransition establishes spatial connections between originally independent transition animations by coordinating the frame and position of the bound in/out components (where "in" refers to the new view and "out" refers to the old view), guiding the visual focus from the old view's position to the new view's position.
 
 ## Import Module
 

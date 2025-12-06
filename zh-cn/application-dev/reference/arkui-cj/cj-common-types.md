@@ -20763,6 +20763,10 @@ public type VoidCallback = () -> Unit
 
 **功能：** [VoidCallback](#type-voidcallback)是[() -> Unit](#type-voidcallback)类型的别名。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
+
 **类型：** () -> Unit
 
 ## type Callback\<T, V>
@@ -20772,6 +20776,10 @@ public type Callback<T, V> = (T) -> V
 ```
 
 **功能：** Callback\<T, V>是(T) -> V类型的别名。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
 
 **类型：** (T) -> V
 
@@ -20783,6 +20791,10 @@ public type CustomBuilder = () -> Unit
 
 **功能：** CustomBuilder是() -> Unit类型的别名。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
+
 **类型：** () -> Unit
 
 ## type TransitionFinishCallback
@@ -20792,6 +20804,10 @@ public type TransitionFinishCallback = (Bool) -> Unit
 ```
 
 **功能：** [TransitionFinishCallback](#type-transitionfinishcallback)是(Bool) -> Unit类型的别名。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
 
 **类型：** (Bool) -> Unit
 
@@ -20803,6 +20819,10 @@ public type ItemGeneratorFunc<T> = (T, Int64) -> Unit
 
 **功能：** 定义Item生成器函数。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
+
 **类型：** (T, Int64) -> Unit
 
 ## type KeyGeneratorFunc\<T>
@@ -20812,5 +20832,9 @@ public type KeyGeneratorFunc<T> = (T, Int64) -> String
 ```
 
 **功能：** 定义键生成器函数。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
 
 **类型：** (T, Int64) -> String

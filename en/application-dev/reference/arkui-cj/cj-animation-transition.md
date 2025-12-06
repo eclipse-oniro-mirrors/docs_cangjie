@@ -122,6 +122,7 @@ public var z: ?Length
 **Function:** Translation distance along the z-axis. For numeric types, the unit is vp, with a range of (-∞, +∞).
 
 **Type:** ?[Length](./cj-common-types.md#interface-length)
+
 **Read/Write:** Readable and Writable
 
 **System Capability:** SystemCapability.ArkUI.ArkUI.Full

@@ -684,7 +684,7 @@ public func measureText(text: ?String): TextMetrics
 
 | Type | Description |
 |:---|:---|
-| TextMetrics | The text measurement result. |
+| [TextMetrics](cj-canvas-drawing-canvas.md#class-textmetrics) | The text measurement result. |
 
 ### func stroke()
 
@@ -1209,7 +1209,7 @@ public func createLinearGradient(x0: Float64, y0: Float64, x1: Float64, y1: Floa
 
 | Type           | Description |
 |:---------------|:------------|
-| CanvasGradient | The gradient object. Must be released after use. |
+| [CanvasGradient](cj-canvas-drawing-canvas.md#class-canvasgradient) | The gradient object. Must be released after use. |
 
 ### func createRadialGradient(Float64, Float64, Float64, Float64, Float64, Float64)
 
@@ -1237,7 +1237,10 @@ public func createRadialGradient(x0: Float64, y0: Float64, r0: Float64, x1: Floa
 **Return Value:**
 
 | Type           | Description |
-|:---------------### func createConicGradient(?Float64, ?Float64, ?Float64)
+|:---------------|:---------------|
+|[CanvasGradient](cj-canvas-drawing-canvas.md#class-canvasgradient)|  The gradient object. Must be released after use. |
+
+### func createConicGradient(?Float64, ?Float64, ?Float64)
 
 ```cangjie
 public func createConicGradient(startAngle: ?Float64, x: ?Float64, y: ?Float64): CanvasGradient
@@ -1261,7 +1264,7 @@ public func createConicGradient(startAngle: ?Float64, x: ?Float64, y: ?Float64):
 
 | Type | Description |
 |:---|:---|
-| CanvasGradient | A new CanvasGradient object for creating gradient effects on the canvas. |
+| [CanvasGradient](cj-canvas-drawing-canvas.md#class-canvasgradient) | A new CanvasGradient object for creating gradient effects on the canvas. |
 
 ### func drawImage(ImageBitmap, ?Float64, ?Float64)
 

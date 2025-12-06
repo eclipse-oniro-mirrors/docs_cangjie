@@ -40,8 +40,8 @@ public init(arr: CollectionEx<T>, itemGenerator!: ItemGeneratorFunc<T>, keyGener
 | Parameter Name | Type | Required | Default Value | Description |
 |:---|:---|:---|:---|:---|
 | arr | [CollectionEx](./cj-common-types.md#interface-collectionext)\<T> | Yes | - | Array collection for UI. |
-| itemGenerator | [ItemGeneratorFunc](./cj-common-types.md#type-itemgeneratorfunc)\<T> | No | - | Item generator function. |
-| keyGenerator | ?[KeyGeneratorFunc](./cj-common-types.md#type-keygeneratorfunc)\<T> | No | None | Key generator function. |
+| itemGenerator | [ItemGeneratorFunc](./cj-common-types.md#type-itemgeneratorfunc)\<T> | Yes | - | **Named parameter.** Item generator function. |
+| keyGenerator | ?[KeyGeneratorFunc](./cj-common-types.md#type-keygeneratorfunc)\<T> | No | None | **Named parameter.** Key generator function. |
 
 ### func pop()
 

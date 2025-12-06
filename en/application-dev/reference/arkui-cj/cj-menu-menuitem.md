@@ -30,7 +30,7 @@ public init(child!: () -> Unit = {=>})
 
 | Parameter | Type | Required | Default Value | Description |
 |:---|:---|:---|:---|:---|
-| child | () -> Unit | No | {=>} | **Named parameter.** Custom UI description. Used in combination with [@Builder](../../arkui-cj/paradigm/cj-macro-builder.md) and bind methods. |
+| child | () -> Unit | No | {=>} | **Named parameter.** Custom UI description. Used in combination with [@Builder](../../arkui-cj/paradigm/cj-macro-builder.md) and [bind](cj-ui-framework.md#func-bindcustomview---viewbuilder-customview) methods. |
 
 ### init(?ResourceStr, ?ResourceStr, ?ResourceStr, ?ResourceStr, Option\<() -> Unit>)
 

@@ -405,7 +405,7 @@ public var url: String
 public init(url: String)
 ```
 
-**Function:** Constructor.
+**Function:** Creates an OnPageBeginEvent object.
 
 **System Capability:** SystemCapability.Web.Webview.Core
 
@@ -701,7 +701,7 @@ public var request: PermissionRequest
 public init(request: PermissionRequest)
 ```
 
-**Function:** Constructor.
+**Function:** Creates an OnPermissionRequestEvent object.
 
 **System Capability:** SystemCapability.Web.Webview.Core
 

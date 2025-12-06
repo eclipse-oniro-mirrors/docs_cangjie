@@ -24,7 +24,7 @@ public func bind(builder: (CustomView) -> ViewBuilder, thisView: CustomView)
 
 | Parameter Name | Type | Required | Default Value | Description |
 |:---|:---|:---|:---|:---|
-| builder | ([CustomView](#class-customview))->[ViewBuilder](#class-viewbuilder) | Yes | - | @Builder decorated function type. |
+| builder | ([CustomView](#class-customview))->[ViewBuilder](#class-viewbuilder) | Yes | - | [@Builder](../../arkui-cj/paradigm/cj-macro-builder.md) decorated function type. |
 | thisView | [CustomView](#class-customview) | Yes | - | Current custom component object (usually `this`). |
 
 ## func bind\<T1>((CustomView,ObservedProperty\<T1>) -> ViewBuilder, CustomView)
@@ -43,7 +43,7 @@ public func bind<T1>(builder: (CustomView, ObservedProperty<T1>) -> ViewBuilder,
 
 | Parameter Name | Type | Required | Default Value | Description |
 |:---|:---|:---|:---|:---|
-| builder | ([CustomView](#class-customview),[ObservedProperty](./cj-state-rendering-componentstatemanagement.md#class-observedproperty)\<T1>)->[ViewBuilder](#class-viewbuilder) | Yes | - | @Builder decorated function type. |
+| builder | ([CustomView](#class-customview),[ObservedProperty](./cj-state-rendering-componentstatemanagement.md#class-observedpropertyt)\<T1>)->[ViewBuilder](#class-viewbuilder) | Yes | - | [@Builder](../../arkui-cj/paradigm/cj-macro-builder.md) decorated function type. |
 | thisView | [CustomView](#class-customview) | Yes | - | Current custom component object (usually `this`). |
 
 ## func bind\<T1, T2>((CustomView,ObservedProperty\<T1>,ObservedProperty\<T2>) -> ViewBuilder, CustomView)
@@ -63,7 +63,7 @@ public func bind<T1, T2>(builder: (CustomView, ObservedProperty<T1>,
 
 | Parameter Name | Type | Required | Default Value | Description |
 |:---|:---|:---|:---|:---|
-| builder | ([CustomView](#class-customview),[ObservedProperty](./cj-state-rendering-componentstatemanagement.md#class-observedproperty)\<T1>,[ObservedProperty](./cj-state-rendering-componentstatemanagement.md#class-observedproperty)\<T2>)->[ViewBuilder](#class-viewbuilder) | Yes | - | @Builder decorated function type. |
+| builder | ([CustomView](#class-customview),[ObservedProperty](./cj-state-rendering-componentstatemanagement.md#class-observedpropertyt)\<T1>,[ObservedProperty](./cj-state-rendering-componentstatemanagement.md#class-observedpropertyt)\<T2>)->[ViewBuilder](#class-viewbuilder) | Yes | - | [@Builder](../../arkui-cj/paradigm/cj-macro-builder.md) decorated function type. |
 | thisView | [CustomView](#class-customview) | Yes | - | Current custom component object (usually `this`). |
 
 ## func bind\<T1, T2, T3>((CustomView,ObservedProperty\<T1>,ObservedProperty\<T2>,ObservedProperty\<T3>) -> ViewBuilder, CustomView)
@@ -83,7 +83,7 @@ public func bind<T1, T2, T3>(builder: (CustomView, ObservedProperty<T1>, Observe
 
 | Parameter Name | Type | Required | Default Value | Description |
 |:---|:---|:---|:---|:---|
-| builder | ([CustomView](#class-customview),[ObservedProperty](./cj-state-rendering-componentstatemanagement.md#class-observedproperty)\<T1>,[ObservedProperty](./cj-state-rendering-componentstatemanagement.md#class-observedproperty)\<T2>,[ObservedProperty](./cj-state-rendering-componentstatemanagement.md#class-observedproperty)\<T3>)->[ViewBuilder](#class-viewbuilder) | Yes | - | @Builder decorated function type. |
+| builder | ([CustomView](#class-customview),[ObservedProperty](./cj-state-rendering-componentstatemanagement.md#class-observedpropertyt)\<T1>,[ObservedProperty](./cj-state-rendering-componentstatemanagement.md#class-observedpropertyt)\<T2>,[ObservedProperty](./cj-state-rendering-componentstatemanagement.md#class-observedpropertyt)\<T3>)->[ViewBuilder](#class-viewbuilder) | Yes | - | [@Builder](../../arkui-cj/paradigm/cj-macro-builder.md) decorated function type. |
 | thisView | [CustomView](#class-customview) | Yes | - | Current custom component object (usually `this`). |
 
 ## class RemoteView
@@ -106,7 +106,7 @@ public abstract class RemoteView {
 public init()
 ```
 
-**Function:** For UI framework use.
+**Function:** Construct an object of type RemoteView, which is only effective in UI framework scenarios.
 
 **System Capability:** SystemCapability.ArkUI.ArkUI.Full
 
@@ -118,7 +118,7 @@ public init()
 public func build(): Unit
 ```
 
-**Function:** For UI framework use.
+**Function:** Used to define the declarative UI description of a custom component. Custom components must define a build() function.
 
 **System Capability:** SystemCapability.ArkUI.ArkUI.Full
 
@@ -130,7 +130,7 @@ public func build(): Unit
 public open func rerender(): Unit
 ```
 
-**Function:** For UI framework use.
+**Function:** The framework automatically triggers a rerender and re-executes the component's build() method to update the UI. For UI framework use only.
 
 **System Capability:** SystemCapability.ArkUI.ArkUI.Full
 
@@ -142,7 +142,7 @@ public open func rerender(): Unit
 public func purgeVariableDependenciesOnElmtId(rmElmtId: Int64): Unit
 ```
 
-**Function:** For UI framework use.
+**Function:** This is responsible for removing the state variable dependencies bound to the specified component ID, thereby preventing memory leaks and invalid references. Intended for internal UI framework use only.
 
 **System Capability:** SystemCapability.ArkUI.ArkUI.Full
 
@@ -160,7 +160,7 @@ public func purgeVariableDependenciesOnElmtId(rmElmtId: Int64): Unit
 public func forceCompleteRerender(deep: Bool): Unit
 ```
 
-**Function:** For UI framework use.
+**Function:** Forces a re-render of the component tree. For UI framework use only.
 
 **System Capability:** SystemCapability.ArkUI.ArkUI.Full
 
@@ -196,7 +196,7 @@ public abstract class CustomView <: RemoteView {
 public init(parent: Option<CustomView>, localStorage: Option<LocalStorage>)
 ```
 
-**Function:** For UI framework use.
+**Function:** Constructs an object of type CustomView, which is only effective in UI framework implementation scenarios.
 
 **System Capability:** SystemCapability.ArkUI.ArkUI.Full
 
@@ -215,7 +215,7 @@ public init(parent: Option<CustomView>, localStorage: Option<LocalStorage>)
 public func getLocalStorage(): LocalStorage
 ```
 
-**Function:** For UI framework use.
+**Function:** Retrieves the LocalStorage instance. For UI framework use only.
 
 **System Capability:** SystemCapability.ArkUI.ArkUI.Full
 
@@ -233,7 +233,7 @@ public func getLocalStorage(): LocalStorage
 public func build(): Unit
 ```
 
-**Function:** For UI framework use.
+**Function:** Used to define the declarative UI description of a custom component. Custom components must define a build() function.
 
 **System Capability:** SystemCapability.ArkUI.ArkUI.Full
 
@@ -245,7 +245,7 @@ public func build(): Unit
 public func aboutToBeDeleted(): Unit
 ```
 
-**Function:** For UI framework use.
+**Function:** Automatically triggered by the framework during the component destruction phase. For UI framework use only.
 
 **System Capability:** SystemCapability.ArkUI.ArkUI.Full
 
@@ -257,7 +257,7 @@ public func aboutToBeDeleted(): Unit
 public func getUIContext(): UIContext
 ```
 
-**Function:** For UI framework use.
+**Function:** Obtains the UIContext object.
 
 **System Capability:** SystemCapability.ArkUI.ArkUI.Full
 
