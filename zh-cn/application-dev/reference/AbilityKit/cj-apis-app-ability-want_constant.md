@@ -1,4 +1,4 @@
-# ohos.app.ability.want_constant
+# ohos.app.ability.want_constant（Want常量）
 
 want_constant模块提供Ability相关的枚举，包括应用启动原因LaunchReason、上次退出原因LastExitReason、迁移结果OnContinueResult等。
 

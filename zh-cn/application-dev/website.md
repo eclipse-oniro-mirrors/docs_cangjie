@@ -645,17 +645,17 @@
         - Ability Kit（程序框架服务）
             - 仓颉API
                 - [ohos.app.ability.ui_ability](reference/AbilityKit/cj-apis-app-ability-ui_ability.md)
-                - [ohos.app.ability.want](reference/AbilityKit/cj-apis-app-ability-want.md)
+                - [ohos.app.ability.want（Want）](reference/AbilityKit/cj-apis-app-ability-want.md)
                 - [ohos.ability_access_ctrl（程序访问控制管理）](reference/AbilityKit/cj-apis-ability_access_ctrl.md)
                 - [ohos.bundle.bundle_manager（bundleManager管理）](reference/AbilityKit/cj-apis-bundle_manager.md)
                 - [ohos.app.ability.ability_stage](reference/AbilityKit/cj-apis-app-ability-ability_stage.md)
                 - [ohos.app.ability.ability_result](reference/AbilityKit/cj-apis-ability-ability_result.md)
-                - [ohos.app.ability.app_recovery](reference/AbilityKit/cj-apis-app-ability-app_recovery.md)
+                - [ohos.app.ability.app_recovery（应用故障恢复）](reference/AbilityKit/cj-apis-app-ability-app_recovery.md)
                 - [ohos.app.ability.ability_constant](reference/AbilityKit/cj-apis-app-ability-ability_constant.md)
                 - [ohos.app.ability.context_constant](reference/AbilityKit/cj-apis-app-ability-context_constant.md)
                 - [ohos.app.ability.dialog_request](reference/AbilityKit/cj-apis-app-ability-dialog_request.md)
                 - [ohos.app.ability.start_options](reference/AbilityKit/cj-apis-app-ability-start_options.md)
-                - [ohos.app.ability.want_constant](reference/AbilityKit/cj-apis-app-ability-want_constant.md)
+                - [ohos.app.ability.want_constant（Want常量）](reference/AbilityKit/cj-apis-app-ability-want_constant.md)
                 - [ohos.app.ability](reference/AbilityKit/cj-apis-app-ability.md)
                 - [ohos.application.error_observer](reference/AbilityKit/cj-apis-application-error_observer.md)
                 - [ohos.application.test_runner](reference/AbilityKit/cj-apis-application-test_runner.md)
@@ -663,7 +663,7 @@
                 - [ohos.metadata](reference/AbilityKit/cj-apis-metadata.md)
                 - [ohos.security.permission_request_result（PermissionRequestResult）](reference/AbilityKit/cj-apis-sercurity-permission_request_result.md)
                 - [ohos.security.skill](reference/AbilityKit/cj-apis-skill.md)
-                - [ohos.app.ability.error_manager](reference/AbilityKit/cj-apis-app-ability-error_manager.md)
+                - [ohos.app.ability.error_manager（错误管理模块）](reference/AbilityKit/cj-apis-app-ability-error_manager.md)
             - 错误码
                 - [元能力子系统错误码](reference/AbilityKit/cj-errorcode-ability.md)
                 - [包管理子系统通用错误码](reference/AbilityKit/cj-errorcode-bundle.md)
@@ -946,7 +946,7 @@
                     - [传感器错误码](reference/SensorServiceKit/cj-errorcode-sensor.md)
             - Telephony Kit
                 - 仓颉API
-                    - [ohos.telephony.call](reference/TelephonyKit/cj-apis-telephony-call.md)
+                    - [ohos.telephony.call（拨打电话）](reference/TelephonyKit/cj-apis-telephony-call.md)
                 - 错误码
                     - [电话子系统错误码](reference/TelephonyKit/cj-errorcode-telephony.md)
         - 调测调优

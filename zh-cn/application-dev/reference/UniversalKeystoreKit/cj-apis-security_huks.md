@@ -1,4 +1,4 @@
-# ohos.security.huks
+# ohos.security.huks（通用密钥库系统）
 
 huks模块向应用提供密钥库能力，包括密钥管理及密钥的密码学操作等功能。
 
