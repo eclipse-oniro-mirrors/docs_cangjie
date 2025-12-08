@@ -971,7 +971,7 @@ public class KVStoreResultSet {}
 
 KVStoreResultSet实例不会实时刷新。使用结果集后，如果数据库中的数据发生变化（如增删改操作），需要重新查询才能获取到最新的数据。
 
-在调用KVStoreResultSet的方法前，需要先通过[getKVStore](#func-getkvstoretstring-kvoptions-where-t--singlekvstore)构建一个SingleKVStore或者DeviceKVStore实例。
+在调用KVStoreResultSet的方法前，需要先通过[getKVStore](#func-getkvstoretstring-kvoptions-where-t--singlekvstore)构建一个[SingleKVStore](#class-singlekvstore)或者[DeviceKVStore](#class-devicekvstore)实例。
 
 > **说明：**
 >
