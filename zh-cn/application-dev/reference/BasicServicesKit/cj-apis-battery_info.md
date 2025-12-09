@@ -61,10 +61,10 @@ public static prop batteryCapacityLevel: BatteryCapacityLevel
 
 **起始版本：** 22
 
-### static prop batterySOC
+### static prop batterySoc
 
 ```cangjie
-public static prop batterySOC: Int32
+public static prop batterySoc: Int32
 ```
 
 **功能：** 表示当前设备剩余电池电量百分比。

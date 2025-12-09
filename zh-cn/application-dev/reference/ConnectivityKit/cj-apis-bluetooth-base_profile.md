@@ -595,6 +595,10 @@ public func toString(): String
 
 **功能：** 获取回调事件类型的字符串表示。
 
+**系统能力：** SystemCapability.Communication.Bluetooth.Core
+
+**起始版本：** 22
+
 **返回值：**
 
 |类型|说明|

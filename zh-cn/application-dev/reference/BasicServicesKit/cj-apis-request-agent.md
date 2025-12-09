@@ -770,7 +770,7 @@ internal协议路径，支持"internal://"及其子路径，internal为调用方
 
 file协议路径，支持应用文件和用户文件，应用文件必须匹配应用包名，只支持到base及其子目录下，如"file://com.example.test/data/storage/el2/base/file.txt"。用户文件必须为调用方创建好的用户文件uri。
 
-**类型：** ?String
+**类型：** String
 
 **读写能力：** 可读写
 
@@ -2999,6 +2999,24 @@ public operator func ==(other: Mode): Bool
 | 类型 | 说明                                    |
 | :--- | :-------------------------------------- |
 | Bool | 两个枚举值相等返回true，否则返回false。 |
+
+### func toString()
+
+```cangjie
+public func toString(): String
+```
+
+**功能：** 获取当前枚举的字符串表示。
+
+**系统能力：** SystemCapability.Request.FileTransferAgent
+
+**起始版本：** 22
+
+**返回值：**
+
+| 类型   | 说明                       |
+| :----- | :------------------------- |
+| String | 当前枚举的字符串表示。 |
 
 ## enum Network
 
