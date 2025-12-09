@@ -155,7 +155,7 @@ class webview_0 {
 
 ```cangjie
 public class HistoryItem {
-    public var icon: PixelMap
+    public var icon: ?PixelMap
     public var historyUrl: String
     public var historyRawUrl: String
     public var title: String
@@ -224,7 +224,9 @@ public var icon: ?PixelMap
 
 **功能：** 历史页面图标的PixelMap对象。
 
-**类型：** [PixelMap](../ImageKit/cj-apis-image.md#class-pixelmap)
+**类型：** ?[PixelMap](../ImageKit/cj-apis-image.md#class-pixelmap)
+
+**读写能力：** 可读写
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -1154,7 +1156,7 @@ class webview_5 {
 public func clearHistory(): Unit
 ```
 
-**功能：** 删除所有前进后退记录，不建议在onErrorReceive与onPageBegin中调用clearHistory，会造成异常退出。
+**功能：** 删除所有前进后退记录，不建议在onPageBegin中调用clearHistory，会造成异常退出。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -1293,7 +1295,7 @@ class webview_7 {
 public func goForward(): Unit
 ```
 
-**功能：** 按照历史栈，前进一个页面。一般结合accessForward一起使用。
+**功能：** 按照历史栈，前进一个页面。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -1654,7 +1656,7 @@ public func getSecurityLevel(): SecurityLevel
 
 |类型|说明|
 |:----|:----|
-|[SecurityLevel](#enum-securitylevel)|当前网页的安全级别，具体值为NONE、SECURE、WARNING、DANGEROUS。|
+|[SecurityLevel](#enum-securitylevel)|当前网页的安全级别，具体值为NoneLevel、Secure、Warning、Dangerous。|
 
 **异常：**
 
@@ -1697,10 +1699,10 @@ class webview_15 {
                 Hilog.info(0, "cangjieTest", "getSecurityLevel")
                 let securityLevel = webController.getSecurityLevel()
                 match(securityLevel) {
-                    case SecurityLevel.NoneLevel => Hilog.info(0, "cangjieTest", "getSecurityLevel returns NONE")
-                    case SecurityLevel.Secure => Hilog.info(0, "cangjieTest", "getSecurityLevel returns SECURE")
-                    case SecurityLevel.Warning => Hilog.info(0, "cangjieTest", "getSecurityLevel returns WARNING")
-                    case SecurityLevel.Dangerous => Hilog.info(0, "cangjieTest", "getSecurityLevel returns DANGEROUS")
+                    case SecurityLevel.NoneLevel => Hilog.info(0, "cangjieTest", "getSecurityLevel returns NoneLevel")
+                    case SecurityLevel.Secure => Hilog.info(0, "cangjieTest", "getSecurityLevel returns Secure")
+                    case SecurityLevel.Warning => Hilog.info(0, "cangjieTest", "getSecurityLevel returns Warning ")
+                    case SecurityLevel.Dangerous => Hilog.info(0, "cangjieTest", "getSecurityLevel returns Dangerous")
                     case _ => throw IllegalArgumentException("The type is not supported.")
                  }
             }).width(400.px).height(150.px)
@@ -2096,7 +2098,7 @@ public func pageDown(bottom: Bool): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|bottom|Bool|是|-|是否跳转到页面最底部。<br>false时表示将页面内容向下滚动半个视框大小，true表示跳转到页面最底部。+|
+|bottom|Bool|是|-|是否跳转到页面最底部。<br>false时表示将页面内容向下滚动半个视框大小，true表示跳转到页面最底部。|
 
 **异常：**
 
@@ -2309,7 +2311,7 @@ public func registerJavaScriptProxy(funcs: Array<(String) -> String>, name: Stri
 |:---|:---|:---|:---|:---|
 |funcs|Array\<(String)->String>|是|-|参与注册的应用侧仓颉方法数组。注册的仓颉方法的入参和返回值都是String类型。|
 |name|String|是|-|注册仓颉方法数组的名称，与window中调用的对象名一致。注册后window对象可以通过此名字访问应用侧仓颉方法。|
-|methodList|Array\<String>|是|-|参与注册的应用侧仓颉方法名，此数组的长度需要与funcs数组一致。注册完成后，后续funcs的判等会通过methodList来判断。因此后续如果想注册新的、或更改funcs，需要传入新的methodList。|
+|methodList|Array\<String>|是|-|参与注册的应用侧仓颉方法名，此数组的长度需要与funcs数组一致。注册完成后，后续如果想注册新的、或更改funcs，需要传入新的methodList。|
 
 **异常：**
 
@@ -2472,7 +2474,7 @@ public func loadUrl<T>(url: T, headers!: Array<WebHeader> = Array<WebHeader>()):
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |url|T|是|-|需要加载的URL。|
-|headers|Array\<[WebHeader](#class-webheader)>|否|Array\<WebHeader >()|URL的附加HTTP请求头。<br>默认值： []|
+|headers|Array\<[WebHeader](#class-webheader)>|否|Array\<WebHeader>()|URL的附加HTTP请求头。<br>默认值： []|
 
 **异常：**
 
@@ -2540,13 +2542,13 @@ public func setCustomUserAgent(userAgent: String): Unit
 
 **功能：** 设置自定义用户代理，会覆盖系统的用户代理。
 
-当Web组件src设置了url时，建议在onControllerAttached回调事件中设置User-Agent，设置方式请参考示例。不建议将User-Agent设置在onLoadIntercept回调事件中，会概率性出现设置失败。
+不建议将User-Agent设置在onLoadIntercept回调事件中，会概率性出现设置失败。
 
 当Web组件src设置为空字符串时，建议先调用setCustomUserAgent方法设置User-Agent，再通过loadUrl加载具体页面。
 
 > **说明：**
 >
-> - 当Web组件src设置了url，且未在onControllerAttached回调事件中设置User-Agent。再调用setCustomUserAgent方法时，可能会出现加载的页面与实际设置User-Agent不符的异常现象。
+> - 当Web组件src设置了url，再调用setCustomUserAgent方法时，可能会出现加载的页面与实际设置User-Agent不符的异常现象。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -2979,7 +2981,7 @@ class webview_31 {
 public func runJavaScript(script: String, callback: AsyncCallback<String>): Unit
 ```
 
-**功能：** 在当前显示页面的上下文中异步执行JavaScript脚本，脚本执行的结果将通过异步回调方式返回。此方法必须在用户界面（UI）线程上使用 ，并且回调也将在用户界面（UI）线程上调用。
+**功能：** 在当前显示页面的上下文中异步执行JavaScript脚本，脚本执行的结果将通过异步回调方式返回。此方法必须在用户界面（UI）线程上使用，并且回调也将在用户界面（UI）线程上调用。
 
 > **说明：**
 >
@@ -3444,7 +3446,7 @@ public operator func !=(other: SecurityLevel): Bool
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|other|[SecurityLevel](../ArkData/cj-apis-distributed_kv_store.md#enum-securitylevel)|是|-|待比较的另一个枚举值。|
+|other|[SecurityLevel](#enum-securitylevel)|是|-|待比较的另一个枚举值。|
 
 **返回值：**
 
@@ -3468,7 +3470,7 @@ public operator func ==(other: SecurityLevel): Bool
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|other|[SecurityLevel](../ArkWeb/cj-apis-webview.md#enum-securitylevel)|是|-|待比较的另一个枚举值。|
+|other|[SecurityLevel](#enum-securitylevel)|是|-|待比较的另一个枚举值。|
 
 **返回值：**
 
