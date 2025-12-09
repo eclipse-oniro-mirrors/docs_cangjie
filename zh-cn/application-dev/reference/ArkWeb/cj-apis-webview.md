@@ -2106,7 +2106,7 @@ public func pageDown(bottom: Bool): Unit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 17100001 | Init error. The WebviewController must be associated with a Web component. relation pageDown(bottom: boolean): void |
+  | 17100001 | Init error. The WebviewController must be associated with a Web component. |
 
 **示例：**
 
