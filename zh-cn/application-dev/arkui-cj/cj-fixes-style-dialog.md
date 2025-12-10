@@ -10,7 +10,7 @@
 
 ## 操作菜单（showActionMenu）
 
-操作菜单通过[UIContext](./cj-apis-uicontext-uicontext.md#class-uicontext)中的[getPromptAction](../reference/arkui-cj/cj-apis-uicontext-uicontext.md#func-getPromptAction)方法获取到PromptAction对象，支持在回调或开发者自定义类中使用。
+操作菜单通过[UIContext](../reference/arkui-cj/cj-apis-uicontext-uicontext.md#class-uicontext)中的[getPromptAction](../reference/arkui-cj/cj-apis-uicontext-uicontext.md#func-getPromptAction)方法获取到PromptAction对象，支持在回调或开发者自定义类中使用。
 
 创建并显示操作菜单后，菜单的响应结果会异步返回选中按钮在buttons数组中的索引。
 
@@ -117,7 +117,7 @@ class EntryView {
 
 列表选择器弹窗适用于呈现多个操作选项，尤其当界面中仅需展示操作列表而无其他内容时。
 
-列表选择器弹窗通过[UIContext](./cj-apis-uicontext-uicontext.md#class-uicontext)的[showActionSheet](../reference/arkui-cj/cj-apis-uicontext-uicontext.md#func-showActionSheet)接口实现。
+列表选择器弹窗通过[UIContext](../reference/arkui-cj/cj-apis-uicontext-uicontext.md#class-uicontext)的[showActionSheet](../reference/arkui-cj/cj-apis-uicontext-uicontext.md#func-showactionsheetactionsheetoptions)接口实现。
 
 该示例通过配置width、height、transition等接口定义了弹窗的样式以及弹出动效。
 
