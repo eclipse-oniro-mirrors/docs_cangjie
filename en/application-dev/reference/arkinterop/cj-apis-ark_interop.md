@@ -234,14 +234,14 @@ static func fromJSValue(context: JSContext, input: JSValue): Int8
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are as follows.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------| :--- |
-| 2     | Outside error occurred. |
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch. |
-| 5     | The ArkTS data types do not match. |
+| 34300002   | Outside error occurred. |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch. |
+| 34300005   | The ArkTS data types do not match. |
 
 ### static func toArktsType()
 
@@ -283,12 +283,12 @@ func toJSValue(context: JSContext): JSValue
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are as follows.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------| :--- |
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch. |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch. |
 
 ## extend Int16 <: JSInteropType<Int16>
 
@@ -333,14 +333,14 @@ static func fromJSValue(context: JSContext, input: JSValue): Int16
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are as follows.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 2     | Outside error occurred. |
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch. |
-| 5     | The ArkTS data types do not match. |
+| 34300002   | Outside error occurred. |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch. |
+| 34300005   | The ArkTS data types do not match. |
 
 ### static func toArktsType()
 
@@ -382,12 +382,12 @@ func toJSValue(context: JSContext): JSValue
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are as follows.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------| :--- |
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch. |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch. |
 
 ## extend Int32 <: JSInteropType<Int32>
 
@@ -432,14 +432,14 @@ static func fromJSValue(context: JSContext, input: JSValue): Int32
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are as follows.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 2     | Outside error occurred. |
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch. |
-| 5     | The ArkTS data types do not match. |
+| 34300002   | Outside error occurred. |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch. |
+| 34300005   | The ArkTS data types do not match. |
 
 ### static func toArktsType()
 
@@ -481,12 +481,12 @@ func toJSValue(context: JSContext): JSValue
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are as follows.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------| :--- |
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch. |## extend Int64 <: JSInteropType<Int64>
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch. |## extend Int64 <: JSInteropType<Int64>
 
 **Functionality:** This interface can be used to implement extension methods for the built-in type Int64.
 
@@ -529,7 +529,7 @@ static func fromJSValue(context: JSContext, input: JSValue): Int64
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -578,7 +578,7 @@ func toJSValue(context: JSContext): JSValue
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -629,7 +629,7 @@ static func fromJSValue(context: JSContext, input: JSValue): UInt8
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -719,7 +719,7 @@ static func fromJSValue(context: JSContext, input: JSValue): UInt16
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -768,7 +768,7 @@ func toJSValue(context: JSContext): JSValue
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:---|
@@ -818,7 +818,7 @@ static func fromJSValue(context: JSContext, input: JSValue): UInt32
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -867,7 +867,7 @@ func toJSValue(context: JSContext): JSValue
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:---|
@@ -917,7 +917,7 @@ static func fromJSValue(context: JSContext, input: JSValue): UInt64
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -966,7 +966,7 @@ func toJSValue(context: JSContext): JSValue
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -1015,7 +1015,7 @@ static func fromJSValue(context: JSContext, input: JSValue): Float16
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -1064,7 +1064,7 @@ func toJSValue(context: JSContext): JSValue
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------| :--- |
@@ -1114,7 +1114,7 @@ static func fromJSValue(context: JSContext, input: JSValue): Float32
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -1163,7 +1163,7 @@ func toJSValue(context: JSContext): JSValue
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------| :--- |
@@ -1213,7 +1213,7 @@ static func fromJSValue(context: JSContext, input: JSValue): Float64
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------| :--- |
@@ -1261,7 +1261,7 @@ func toJSValue(context: JSContext): JSValue
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------| :--- |
@@ -1327,7 +1327,7 @@ static func toArktsType(): String
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------| :--- |
@@ -1359,7 +1359,7 @@ func toJSValue(context: JSContext): JSValue
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------| :--- |
@@ -1409,7 +1409,7 @@ static func fromJSValue(_: JSContext, input: JSValue): String
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------| :--- |
@@ -1473,13 +1473,13 @@ func toJSValue(context: JSContext): JSValue
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                                |
 |:------|:-------------------------------------|
-| 2     | Outside error occurred.              |
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
+| 34300002   | Outside error occurred.              |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
 
 ## extend Unit <: JSInteropType<Unit>
 
@@ -1561,12 +1561,12 @@ func toJSValue(context: JSContext): JSValue
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------| :--- |
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch. |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch. |
 
 ## extend<T> Option<T> <: JSInteropType<Option<T>> where T <: JSInteropType<T>
 
@@ -1613,12 +1613,12 @@ static func fromJSValue(context: JSContext, input: JSValue): Option<T>
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------| :--- |
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch. |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch. |
 
 ### static func toArktsType()
 
@@ -1660,12 +1660,12 @@ func toJSValue(context: JSContext): JSValue
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------| :--- |
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch. |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch. |
 
 ## extend<T> Array<T> <: JSInteropType<Array<T>> where T <: JSInteropByte
 
@@ -1710,13 +1710,13 @@ static func fromJSValue(_: JSContext, input: JSValue): Array<T>
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------| :--- |
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch. |
-| 5     | The ArkTS data types do not match.|
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch. |
+| 34300005   | The ArkTS data types do not match.|
 
 ### static func toArktsType()
 
@@ -1758,12 +1758,12 @@ func toJSValue(context: JSContext): JSValue
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------| :--- |
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch. |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch. |
 
 ## class JSArray
 
@@ -1795,12 +1795,12 @@ public prop size: Int64
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------| :--- |
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch. |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch. |
 
 ### func \[](Int64)
 
@@ -1826,13 +1826,13 @@ public operator func[](index: Int64): JSValue
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                                  |
 |:------|:--------------------------------------|
-| 1     | The accessing index is out of range.  |
-| 3     | Accessing reference is beyond reach.  |
-| 4     | Thread mismatch.                      |
+| 34300001   | The accessing index is out of range.  |
+| 34300003   | Accessing reference is beyond reach.  |
+| 34300004   | Thread mismatch.                      |
 
 **Example:**
 
@@ -1864,13 +1864,13 @@ public operator func[](index: Int64, value!: JSValue): Unit
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                                  |
 |:------|:--------------------------------------|
-| 1     | The accessing index is out of range.  |
-| 3     | Accessing reference is beyond reach.  |
-| 4     | Thread mismatch.                      |
+| 34300001   | The accessing index is out of range.  |
+| 34300003   | Accessing reference is beyond reach.  |
+| 34300004   | Thread mismatch.                      |
 
 **Example:**
 
@@ -1903,13 +1903,13 @@ public operator func[](index: Int64, value!: JSHeapObject): Unit
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                                  |
 |:------|:--------------------------------------|
-| 1     | The accessing index is out of range.  |
-| 3     | Accessing reference is beyond reach.  |
-| 4     | Thread mismatch.                      |
+| 34300001   | The accessing index is out of range.  |
+| 34300003   | Accessing reference is beyond reach.  |
+| 34300004   | Thread mismatch.                      |
 
 **Example:**
 
@@ -1955,8 +1955,8 @@ public prop byteLength: Int32
 
 | Error Code ID | Error Message                                  |
 |:-------------|:---------------------------------------------|
-| 3            | Accessing reference is beyond reach.          |
-| 4            | Thread mismatch.                              |
+| 34300003          | Accessing reference is beyond reach.          |
+| 34300004          | Thread mismatch.                              |
 
 **Example:**
 
@@ -1992,8 +1992,8 @@ public func readBytes(): Array<Byte>
 
 | Error Code ID | Error Message                                  |
 |:-------------|:---------------------------------------------|
-| 3            | Accessing reference is beyond reach.          |
-| 4            | Thread mismatch.                              |
+| 34300003          | Accessing reference is beyond reach.          |
+| 34300004          | Thread mismatch.                              |
 
 **Example:**
 
@@ -2029,9 +2029,9 @@ public func toArrayBufferJSValue(): JSValue
 
 | Error Code ID | Error Message                     |
 |:-------------|:--------------------------------|
-| 2            | Outside error occurred.          |
-| 3            | Accessing reference is beyond reach. |
-| 4            | Thread mismatch.                 |
+| 34300002          | Outside error occurred.          |
+| 34300003          | Accessing reference is beyond reach. |
+| 34300004          | Thread mismatch.                 |
 
 **Example:**
 
@@ -2067,9 +2067,9 @@ public func toFloat32Array(): Array<Float32>
 
 | Error Code ID | Error Message                     |
 |:-------------|:--------------------------------|
-| 2            | Outside error occurred.          |
-| 3            | Accessing reference is beyond reach. |
-| 4            | Thread mismatch.                 |
+| 34300002          | Outside error occurred.          |
+| 34300003          | Accessing reference is beyond reach. |
+| 34300004          | Thread mismatch.                 |
 
 **Example:**
 
@@ -2105,9 +2105,9 @@ public func toFloat32ArrayJSValue(): JSValue
 
 | Error Code ID | Error Message                     |
 |:-------------|:--------------------------------|
-| 2            | Outside error occurred.          |
-| 3            | Accessing reference is beyond reach. |
-| 4            | Thread mismatch.                 |
+| 34300002          | Outside error occurred.          |
+| 34300003          | Accessing reference is beyond reach. |
+| 34300004          | Thread mismatch.                 |
 
 **Example:**
 
@@ -2143,9 +2143,9 @@ public func toFloat64Array(): Array<Float64>
 
 | Error Code ID | Error Message                     |
 |:-------------|:--------------------------------|
-| 2            | Outside error occurred.          |
-| 3            | Accessing reference is beyond reach. |
-| 4            | Thread mismatch.                 |
+| 34300002          | Outside error occurred.          |
+| 34300003          | Accessing reference is beyond reach. |
+| 34300004          | Thread mismatch.                 |
 
 **Example:**
 
@@ -2181,9 +2181,9 @@ public func toFloat64ArrayJSValue(): JSValue
 
 | Error Code ID | Error Message                     |
 |:-------------|:--------------------------------|
-| 2            | Outside error occurred.          |
-| 3            | Accessing reference is beyond reach. |
-| 4            | Thread mismatch.                 |
+| 34300002          | Outside error occurred.          |
+| 34300003          | Accessing reference is beyond reach. |
+| 34300004          | Thread mismatch.                 |
 
 **Example:**
 
@@ -2218,9 +2218,9 @@ public func toInt16Array(): Array<Int16>
 
 | Error Code ID | Error Message                     |
 |:-------------|:--------------------------------|
-| 2            | Outside error occurred.          |
-| 3            | Accessing reference is beyond reach. |
-| 4            | Thread mismatch.                 |
+| 34300002          | Outside error occurred.          |
+| 34300003          | Accessing reference is beyond reach. |
+| 34300004          | Thread mismatch.                 |
 
 **Example:**
 
@@ -2256,9 +2256,9 @@ public func toInt16ArrayJSValue(): JSValue
 
 | Error Code ID | Error Message                     |
 |:-------------|:--------------------------------|
-| 2            | Outside error occurred.          |
-| 3            | Accessing reference is beyond reach. |
-| 4            | Thread mismatch.                 |
+| 34300002          | Outside error occurred.          |
+| 34300003          | Accessing reference is beyond reach. |
+| 34300004          | Thread mismatch.                 |
 
 **Example:**
 
@@ -2293,9 +2293,9 @@ public func toInt32Array(): Array<Int32>
 
 | Error Code ID | Error Message                     |
 |:-------------|:--------------------------------|
-| 2            | Outside error occurred.          |
-| 3            | Accessing reference is beyond reach. |
-| 4            | Thread mismatch.                 |
+| 34300002          | Outside error occurred.          |
+| 34300003          | Accessing reference is beyond reach. |
+| 34300004          | Thread mismatch.                 |
 
 **Example:**
 
@@ -2331,9 +2331,9 @@ public func toInt32ArrayJSValue(): JSValue
 
 | Error Code ID | Error Message                     |
 |:-------------|:--------------------------------|
-| 2            | Outside error occurred.          |
-| 3            | Accessing reference is beyond reach. |
-| 4            | Thread mismatch.                 |
+| 34300002          | Outside error occurred.          |
+| 34300003          | Accessing reference is beyond reach. |
+| 34300004          | Thread mismatch.                 |
 
 **Example:**
 
@@ -2366,9 +2366,9 @@ public func toInt64Array(): Array<Int64>
 
 | Error Code ID | Error Message                                  |
 |:------|:-----------------------------------------|
-| 2     | Outside error occurred.　             |
-| 3     | Accessing reference is beyond reach.     |
-| 4     | Thread mismatch.                         |
+| 34300002   | Outside error occurred.　             |
+| 34300003   | Accessing reference is beyond reach.     |
+| 34300004   | Thread mismatch.                         |
 
 **Example:**
 
@@ -2404,9 +2404,9 @@ public func toInt64ArrayJSValue(): JSValue
 
 | Error Code ID | Error Message |
 |:------| :--- |
-| 2     | Outside error occurred. |
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch. |
+| 34300002   | Outside error occurred. |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch. |
 
 **Example:**
 
@@ -2441,8 +2441,8 @@ public func toInt8Array(): Array<Int8>
 
 | Error Code ID | Error Message                                  |
 |:------|:-----------------------------------------|
-| 3     | Accessing reference is beyond reach.     |
-| 4     | Thread mismatch.                         |
+| 34300003   | Accessing reference is beyond reach.     |
+| 34300004   | Thread mismatch.                         |
 
 **Example:**
 
@@ -2478,9 +2478,9 @@ public func toInt8ArrayJSValue(): JSValue
 
 | Error Code ID | Error Message |
 |:------| :--- |
-| 2     | Outside error occurred. |
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch. |
+| 34300002   | Outside error occurred. |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch. |
 
 **Example:**
 
@@ -2515,9 +2515,9 @@ public func toUInt16Array(): Array<UInt16>
 
 | Error Code ID | Error Message                              |
 |:------|:-------------------------------------|
-| 2     | Outside error occurred.　             |
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
+| 34300002   | Outside error occurred.　             |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
 
 **Example:**
 
@@ -2553,9 +2553,9 @@ public func toUInt16ArrayJSValue(): JSValue
 
 | Error Code ID | Error Message |
 |:------| :--- |
-| 2     | Outside error occurred. |
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch. |
+| 34300002   | Outside error occurred. |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch. |
 
 **Example:**
 
@@ -2590,9 +2590,9 @@ public func toUInt32Array(): Array<UInt32>
 
 | Error Code ID | Error Message                                  |
 |:------|:-----------------------------------------|
-| 2     | Outside error occurred.　             |
-| 3     | Accessing reference is beyond reach.     |
-| 4     | Thread mismatch.                         |
+| 34300002   | Outside error occurred.　             |
+| 34300003   | Accessing reference is beyond reach.     |
+| 34300004   | Thread mismatch.                         |
 
 **Example:**
 
@@ -2628,9 +2628,9 @@ public func toUInt32ArrayJSValue(): JSValue
 
 | Error Code ID | Error Message |
 |:------| :--- |
-| 2     | Outside error occurred. |
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch. |
+| 34300002   | Outside error occurred. |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch. |
 
 **Example:**
 
@@ -2665,9 +2665,9 @@ public func toUInt64Array(): Array<UInt64>
 
 | Error Code ID | Error Message                                  |
 |:------|:-----------------------------------------|
-| 2     | Outside error occurred.　             |
-| 3     | Accessing reference is beyond reach.     |
-| 4     | Thread mismatch.                         |
+| 34300002   | Outside error occurred.　             |
+| 34300003   | Accessing reference is beyond reach.     |
+| 34300004   | Thread mismatch.                         |
 
 **Example:**
 
@@ -2703,9 +2703,9 @@ public func toUInt64ArrayJSValue(): JSValue
 
 | Error Code ID | Error Message |
 |:------| :--- |
-| 2     | Outside error occurred. |
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch. |
+| 34300002   | Outside error occurred. |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch. |
 
 **Example:**
 
@@ -2740,8 +2740,8 @@ public func toUInt8Array(): Array<UInt8>
 
 | Error Code ID | Error Message                                  |
 |:------|:-----------------------------------------|
-| 3     | Accessing reference is beyond reach.     |
-| 4     | Thread mismatch.                         |
+| 34300003   | Accessing reference is beyond reach.     |
+| 34300004   | Thread mismatch.                         |
 
 **Example:**
 
@@ -2777,9 +2777,9 @@ public func toUInt8ArrayJSValue(): JSValue
 
 | Error Code ID | Error Message |
 |:------| :--- |
-| 2     | Outside error occurred. |
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch. |
+| 34300002   | Outside error occurred. |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch. |
 
 **Example:**
 
@@ -2814,9 +2814,9 @@ public func toUInt8ClampedArrayJSValue(): JSValue
 
 | Error Code ID | Error Message |
 |:------| :--- |
-| 2     | Outside error occurred. |
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch. |
+| 34300002   | Outside error occurred. |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch. |
 
 **Example:**
 
@@ -2863,8 +2863,8 @@ public prop size: Int64
 
 | Error Code ID | Error Message |
 |:------| :--- |
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch. |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch. |
 
 ### init(Array\<T>)
 
@@ -2911,9 +2911,9 @@ public static func fromJSValue(context: JSContext, input: JSValue): JSArrayEx<T>
 
 | Error Code ID | Error Message |
 |:------|:-----------------------------------------|
-| 3     | Accessing reference is beyond reach.     |
-| 4     | Thread mismatch.                         |
-| 5     | The ArkTS data types do not match.       |
+| 34300003   | Accessing reference is beyond reach.     |
+| 34300004   | Thread mismatch.                         |
+| 34300005   | The ArkTS data types do not match.       |
 
 ### static func toArktsType()
 
@@ -2953,8 +2953,8 @@ public func clone(): JSArrayEx<T>
 
 | Error Code ID | Error Message |
 |:------|:-----------------------------------------|
-| 3     | Accessing reference is beyond reach.     |
-| 4     | Thread mismatch.                         |
+| 34300003   | Accessing reference is beyond reach.     |
+| 34300004   | Thread mismatch.                         |
 
 **Example:**
 
@@ -3000,8 +3000,8 @@ public func concat(other: JSArrayEx<T>): JSArrayEx<T>
 
 | Error Code ID | Error Message |
 |:------|:-----------------------------------------|
-| 3     | Accessing reference is beyond reach.     |
-| 4     | Thread mismatch.                         |
+| 34300003   | Accessing reference is beyond reach.     |
+| 34300004   | Thread mismatch.                         |
 
 **Example:**
 
@@ -3049,8 +3049,8 @@ public func get(index: Int64): Option<T>
 
 | Error Code ID | Error Message |
 |:------|:-----------------------------------------|
-| 3     | Accessing reference is beyond reach.     |
-| 4     | Thread mismatch.                         |
+| 34300003   | Accessing reference is beyond reach.     |
+| 34300004   | Thread mismatch.                         |
 
 **Example:**
 
@@ -3091,8 +3091,8 @@ public func isEmpty(): Bool
 
 | Error Code ID | Error Message |
 |:------|:-----------------------------------------|
-| 3     | Accessing reference is beyond reach.     |
-| 4     | Thread mismatch.                         |
+| 34300003   | Accessing reference is beyond reach.     |
+| 34300004   | Thread mismatch.                         |
 
 **Example:**
 
@@ -3135,9 +3135,9 @@ public func set(index: Int64, element: T): Unit
 
 | Error Code ID | Error Message |
 |:------|:-----------------------------------------|
-| 1     | The accessing index is out of range.     |
-| 3     | Accessing reference is beyond reach.     |
-| 4     | Thread mismatch.                         |
+| 34300001   | The accessing index is out of range.     |
+| 34300003   | Accessing reference is beyond reach.     |
+| 34300004   | Thread mismatch.                         |
 
 **Example:**
 
@@ -3177,8 +3177,8 @@ public func toArray(): Array<T>
 
 | Error Code ID | Error Message |
 |:------|:-----------------------------------------|
-| 3     | Accessing reference is beyond reach.     |
-| 4     | Thread mismatch.                         |
+| 34300003   | Accessing reference is beyond reach.     |
+| 34300004   | Thread mismatch.                         |
 
 **Example:**
 
@@ -3223,9 +3223,9 @@ public func toJSValue(context: JSContext): JSValue
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 2     | Outside error occurred.              |
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
+| 34300002   | Outside error occurred.              |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
 
 ### func \[](Int64)
 
@@ -3255,9 +3255,9 @@ public operator func[](index: Int64): T
 
 | Error Code ID | Error Message |
 |:------|:--------------------------------------|
-| 1     | The accessing index is out of range.  |
-| 3     | Accessing reference is beyond reach.  |
-| 4     | Thread mismatch.                      |
+| 34300001   | The accessing index is out of range.  |
+| 34300003   | Accessing reference is beyond reach.  |
+| 34300004   | Thread mismatch.                      |
 
 **Example:**
 
@@ -3297,9 +3297,9 @@ public operator func[](index: Int64, value!: T)
 
 | Error Code ID | Error Message |
 |:------|:--------------------------------------|
-| 1     | The accessing index is out of range.  |
-| 3     | Accessing reference is beyond reach.  |
-| 4     | Thread mismatch.                      |
+| 34300001   | The accessing index is out of range.  |
+| 34300003   | Accessing reference is beyond reach.  |
+| 34300004   | Thread mismatch.                      |
 
 **Example:**
 
@@ -3351,8 +3351,8 @@ public func toBigInt(): BigInt
 
 | Error Code ID | Error Message                                |
 |:------|:--------------------------------------|
-| 3     | Accessing reference is beyond reach.  |
-| 4     | Thread mismatch.                      |
+| 34300003   | Accessing reference is beyond reach.  |
+| 34300004   | Thread mismatch.                      |
 
 **Example:**
 
@@ -3402,7 +3402,7 @@ public prop prototype: JSObject
 
 | Error Code ID | Error Message                           |
 |:------|:-------------------------------|
-| 2     | Outside error occurred.　             |
+| 34300002   | Outside error occurred.　             |
 
 **Example:**
 
@@ -3445,9 +3445,9 @@ public func addAccessor(key: JSKeyable, getter!: ?JSFunction = None, setter!: ?J
 
 | Error Code ID | Error Message                                 |
 |:------|:-------------------------------------|
-| 2     | Outside error occurred.                |
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
+| 34300002   | Outside error occurred.                |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
 
 **Example:**
 
@@ -3493,9 +3493,9 @@ public func addAccessor(key: JSKeyable, getter!: ?JSLambda = None, setter!: ?JSL
 
 | Error Code ID | Error Message                                 |
 |:------|:-------------------------------------|
-| 2     | Outside error occurred.                |
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
+| 34300002   | Outside error occurred.                |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
 
 **Example:**
 
@@ -3540,9 +3540,9 @@ public func addMethod(key: JSKeyable, method: JSFunction): Unit
 
 | Error Code ID | Error Message                                 |
 |:------|:-------------------------------------|
-| 2     | Outside error occurred.                |
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
+| 34300002   | Outside error occurred.                |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
 
 **Example:**
 
@@ -3587,9 +3587,9 @@ public func addMethod(key: JSKeyable, method: JSLambda): Unit
 
 | Error Code ID | Error Message                                 |
 |:------|:-------------------------------------|
-| 2     | Outside error occurred.                |
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
+| 34300002   | Outside error occurred.                |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
 
 **Example:**
 
@@ -3634,9 +3634,9 @@ public func addProperty(key: JSKeyable, value: JSValue): Unit
 
 | Error Code ID | Error Message                                 |
 |:------|:-------------------------------------|
-| 2     | Outside error occurred.                |
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
+| 34300002   | Outside error occurred.                |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
 
 **Example:**
 
@@ -3677,9 +3677,9 @@ public func new(): JSValue
 
 | Error Code ID | Error Message                                 |
 |:------|:-------------------------------------|
-| 2     | Outside error occurred.                |
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
+| 34300002   | Outside error occurred.                |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
 
 **Example:**
 
@@ -3723,9 +3723,9 @@ public func new(arg: JSValue): JSValue
 
 | Error Code ID | Error Message                                 |
 |:------|:-------------------------------------|
-| 2     | Outside error occurred.                |
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
+| 34300002   | Outside error occurred.                |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
 
 **Example:**
 
@@ -3773,9 +3773,9 @@ public func new(args: Array<JSValue>): JSValue
 
 | Error Code ID | Error Message                                 |
 |:------|:-------------------------------------|
-| 2     | Outside error occurred.                |
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
+| 34300002   | Outside error occurred.                |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
 
 **Example:**
 
@@ -3832,8 +3832,8 @@ public prop env: JSEnv
 
 | Error Code ID | Error Message                           |
 |:--------------|:---------------------------------------|
-| 3            | Accessing reference is beyond reach.   |
-| 4            | Thread mismatch.                       |
+| 34300003          | Accessing reference is beyond reach.   |
+| 34300004          | Thread mismatch.                       |
 
 **Example:**
 
@@ -3867,8 +3867,8 @@ public prop global: JSObject
 
 | Error Code ID | Error Message                           |
 |:--------------|:---------------------------------------|
-| 3            | Accessing reference is beyond reach.   |
-| 4            | Thread mismatch.                       |
+| 34300003          | Accessing reference is beyond reach.   |
+| 34300004          | Thread mismatch.                       |
 
 **Example:**
 
@@ -3912,9 +3912,9 @@ public func array(arr: Array<JSValue>): JSArray
 
 | Error Code ID | Error Message                           |
 |:--------------|:---------------------------------------|
-| 2            | Outside error occurred.                |
-| 3            | Accessing reference is beyond reach.   |
-| 4            | Thread mismatch.                       |
+| 34300002          | Outside error occurred.                |
+| 34300003          | Accessing reference is beyond reach.   |
+| 34300004          | Thread mismatch.                       |
 
 **Example:**
 
@@ -3954,10 +3954,10 @@ public func arrayBuffer(length: Int32): JSArrayBuffer
 
 | Error Code ID | Error Message                           |
 |:--------------|:---------------------------------------|
-| 1            | The arrayBuffer length is invalid.     |
-| 2            | Outside error occurred.                |
-| 3            | Accessing reference is beyond reach.   |
-| 4            | Thread mismatch.                       |
+| 34300001          | The arrayBuffer length is invalid.     |
+| 34300002          | Outside error occurred.                |
+| 34300003          | Accessing reference is beyond reach.   |
+| 34300004          | Thread mismatch.                       |
 
 **Example:**
 
@@ -3997,9 +3997,9 @@ public func arrayBuffer(data: Array<Byte>): JSArrayBuffer
 
 | Error Code ID | Error Message                           |
 |:--------------|:---------------------------------------|
-| 2            | Outside error occurred.                |
-| 3            | Accessing reference is beyond reach.   |
-| 4            | Thread mismatch.                       |
+| 34300002          | Outside error occurred.                |
+| 34300003          | Accessing reference is beyond reach.   |
+| 34300004          | Thread mismatch.                       |
 
 **Example:**
 
@@ -4040,9 +4040,9 @@ public func arrayBuffer(data: Array<Int8>): JSArrayBuffer
 
 | Error Code ID | Error Message                           |
 |:--------------|:---------------------------------------|
-| 2            | Outside error occurred.                |
-| 3            | Accessing reference is beyond reach.   |
-| 4            | Thread mismatch.                       |
+| 34300002          | Outside error occurred.                |
+| 34300003          | Accessing reference is beyond reach.   |
+| 34300004          | Thread mismatch.                       |
 
 **Example:**
 
@@ -4086,9 +4086,9 @@ public func arrayBuffer(data: Array<Int16>): JSArrayBuffer
 
 | Error Code ID | Error Message                           |
 |:--------------|:---------------------------------------|
-| 2            | Outside error occurred.                |
-| 3            | Accessing reference is beyond reach.   |
-| 4            | Thread mismatch.                       |
+| 34300002          | Outside error occurred.                |
+| 34300003          | Accessing reference is beyond reach.   |
+| 34300004          | Thread mismatch.                       |
 
 **Example:**
 
@@ -4132,9 +4132,9 @@ public func arrayBuffer(data: Array<UInt16>): JSArrayBuffer
 
 | Error Code ID | Error Message                           |
 |:--------------|:---------------------------------------|
-| 2            | Outside error occurred.                |
-| 3            | Accessing reference is beyond reach.   |
-| 4            | Thread mismatch.                       |
+| 34300002          | Outside error occurred.                |
+| 34300003          | Accessing reference is beyond reach.   |
+| 34300004          | Thread mismatch.                       |
 
 **Example:**
 
@@ -4178,9 +4178,9 @@ public func arrayBuffer(data: Array<UInt32>): JSArrayBuffer
 
 | Error Code ID | Error Message                           |
 |:--------------|:---------------------------------------|
-| 2            | Outside error occurred.                |
-| 3            | Accessing reference is beyond reach.   |
-| 4            | Thread mismatch.                       |
+| 34300002          | Outside error occurred.                |
+| 34300003          | Accessing reference is beyond reach.   |
+| 34300004          | Thread mismatch.                       |
 
 **Example:**
 
@@ -4224,9 +4224,9 @@ public func arrayBuffer(data: Array<Int32>): JSArrayBuffer
 
 | Error Code ID | Error Message                           |
 |:--------------|:---------------------------------------|
-| 2            | Outside error occurred.                |
-| 3            | Accessing reference is beyond reach.   |
-| 4            | Thread mismatch.                       |
+| 34300002          | Outside error occurred.                |
+| 34300003          | Accessing reference is beyond reach.   |
+| 34300004          | Thread mismatch.                       |
 
 **Example:**
 
@@ -4268,9 +4268,9 @@ public func arrayBuffer(data: Array<Float32>): JSArrayBuffer
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 2     | Outside error occurred.                |
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
+| 34300002   | Outside error occurred.                |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
 
 **Example:**
 
@@ -4314,9 +4314,9 @@ public func arrayBuffer(data: Array<Int64>): JSArrayBuffer
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 2     | Outside error occurred.                |
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
+| 34300002   | Outside error occurred.                |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
 
 **Example:**
 
@@ -4360,9 +4360,9 @@ public func arrayBuffer(data: Array<UInt64>): JSArrayBuffer
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 2     | Outside error occurred.                |
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
+| 34300002   | Outside error occurred.                |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
 
 **Example:**
 
@@ -4406,9 +4406,9 @@ public func arrayBuffer(data: Array<Float64>): JSArrayBuffer
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 2     | Outside error occurred.                |
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
+| 34300002   | Outside error occurred.                |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
 
 **Example:**
 
@@ -4454,9 +4454,9 @@ public unsafe func arrayBuffer(rawData: CPointer<Byte>, length: Int32, finalizer
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 2     | Outside error occurred.                |
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
+| 34300002   | Outside error occurred.                |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
 
 **Example:**
 
@@ -4501,9 +4501,9 @@ public func bigint(value: Int64): JSBigInt
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 2     | Outside error occurred.                |
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
+| 34300002   | Outside error occurred.                |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
 
 **Example:**
 
@@ -4543,9 +4543,9 @@ public func bigint(value: BigInt): JSBigInt
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 2     | Outside error occurred.                |
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
+| 34300002   | Outside error occurred.                |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
 
 **Example:**
 
@@ -4587,8 +4587,8 @@ public func boolean(value: Bool): JSBoolean
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
 
 **Example:**
 
@@ -4629,9 +4629,9 @@ public func clazz(ctor: JSLambda, superClass!: ?JSClass = None): JSClass
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 2     | Outside error occurred.                |
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
+| 34300002   | Outside error occurred.                |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
 
 **Example:**
 
@@ -4669,7 +4669,7 @@ public func external(data: SharedObject): JSExternal
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -4714,7 +4714,7 @@ public func function(lambda: JSLambda): JSFunction
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -4754,7 +4754,7 @@ public func getNapiEnv(): napi_env
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -4819,7 +4819,7 @@ public func null(): JSNull
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -4860,7 +4860,7 @@ public func number(value: Float64): JSNumber
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -4901,7 +4901,7 @@ public func number(value: Int32): JSNumber
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -4936,7 +4936,7 @@ public func object(): JSObject
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -5003,7 +5003,7 @@ public func promiseCapability(): JSPromiseCapability
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -5046,7 +5046,7 @@ public func requireSystemNativeModule(moduleName: String, prefix!: ?String = Non
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -5088,7 +5088,7 @@ public func string(value: String): JSString
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -5130,7 +5130,7 @@ public func string(value: Utf16String): JSString
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -5173,7 +5173,7 @@ public func symbol(description!: String = ""): JSSymbol
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -5210,7 +5210,7 @@ public func undefined(): JSUndefined
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -5259,13 +5259,13 @@ public func cast<T>(): Option<T> where T <: SharedObject
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows:
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                          |
 |:------|:-------------------------------------|
-| 2     | Outside error occurred.              |
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
+| 34300002   | Outside error occurred.              |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
 
 **Example:**
 
@@ -5304,13 +5304,13 @@ public func getData(): SharedObject
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows:
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                          |
 |:------|:-------------------------------------|
-| 2     | Outside error occurred.              |
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
+| 34300002   | Outside error occurred.              |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
 
 **Example:**
 
@@ -5350,21 +5350,21 @@ public func requireArkModule(src: String): JSValue
 
 **Return Value:**
 
-| 类型                         | 说明                |
-|:---------------------------|:------------------|
-| [JSValue](#struct-jsvalue) | The module value. |
+| 类型                         | 说明                    |
+|:---------------------------|:----------------------|
+| [JSValue](#struct-jsvalue) | The module's JSValue. |
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                                                             |
 |:------|:--------------------------------------------------------------------------|
-| 2     | Module initialize fail.                                                   |
-| 4     | Thread mismatch.                                                          |
-| 6     | Target module not exist.                                                  |
-| 7     | Can not requireArkModule during initializing cangjie module.              |
-| 8     | Current application have not support requireArkModule of the url.         |
+| 34300002   | Module initialize fail.                                                   |
+| 34300004   | Thread mismatch.                                                          |
+| 34300006   | Target module not exist.                                                  |
+| 34300007   | Can not requireArkModule during initializing cangjie module.              |
+| 34300008   | Current application have not support requireArkModule of the url.         |
 
 **Example:**
 
@@ -5419,13 +5419,13 @@ public func call(thisArg!: JSValue = context.undefined().toJSValue()): JSValue
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows:
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                          |
 |:------|:-------------------------------------|
-| 2     | Outside error occurred.              |
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
+| 34300002   | Outside error occurred.              |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
 
 **Example:**
 
@@ -5462,13 +5462,13 @@ public func call(arg: JSValue, thisArg!: JSValue = context.undefined().toJSValue
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows:
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                          |
 |:------|:-------------------------------------|
-| 2     | Outside error occurred.              |
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
+| 34300002   | Outside error occurred.              |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
 
 **Example:**
 
@@ -5506,13 +5506,13 @@ public func call(args: Array<JSValue>, thisArg!: JSValue = context.undefined().t
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows:
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                          |
 |:------|:-------------------------------------|
-| 2     | Outside error occurred.              |
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
+| 34300002   | Outside error occurred.              |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
 
 **Example:**
 
@@ -5559,12 +5559,12 @@ public prop size: Int64
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows:
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                          |
 |:------|:-------------------------------------|
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
 
 ### init(HashMap\<K,V>)
 
@@ -5645,13 +5645,13 @@ public static func fromJSValue(context: JSContext, input: JSValue): JSHashMapEx<
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows:
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                          |
 |:------|:-------------------------------------|
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
-| 5     | The ArkTS data types do not match.   |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
+| 34300005   | The ArkTS data types do not match.   |
 
 **Example:**
 
@@ -5707,12 +5707,12 @@ public func clear(): Unit
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                               |
 |:------|:-------------------------------------|
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
 
 ### func clone()
 
@@ -5732,12 +5732,12 @@ public func clone(): JSHashMapEx<K, V>
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                               |
 |:------|:-------------------------------------|
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
 
 ### func containsAll(Collection\<K>)
 
@@ -5763,12 +5763,12 @@ public func containsAll(keys: Collection<K>): Bool
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                               |
 |:------|:-------------------------------------|
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
 
 ### func delete(K)
 
@@ -5794,12 +5794,12 @@ public func delete(key: K): Bool
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                               |
 |:------|:-------------------------------------|
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
 
 ### func deleteAll(Collection\<K>)
 
@@ -5819,13 +5819,13 @@ public func deleteAll(keys: Collection<K>): Unit
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                               |
 |:------|:-------------------------------------|
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
-| 5     | The ArkTS data types do not match.   |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
+| 34300005   | The ArkTS data types do not match.   |
 
 ### func deleteIf((K,V) -> Bool)
 
@@ -5847,13 +5847,13 @@ This function traverses the entire JSHashMapEx, deleting all key-value pairs whe
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                               |
 |:------|:-------------------------------------|
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
-| 5     | The ArkTS data types do not match.   |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
+| 34300005   | The ArkTS data types do not match.   |
 
 ### func get(K)
 
@@ -5879,12 +5879,12 @@ public func get(key: K): Option<V>
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                               |
 |:------|:-------------------------------------|
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
 
 ### func has(K)
 
@@ -5910,12 +5910,12 @@ public func has(key: K) : Bool
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                               |
 |:------|:-------------------------------------|
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
 
 ### func isEmpty()
 
@@ -5935,12 +5935,12 @@ public func isEmpty(): Bool
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                               |
 |:------|:-------------------------------------|
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
 
 **Example:**
 
@@ -5976,12 +5976,12 @@ public func keys(): EquatableCollection<K>
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                               |
 |:------|:-------------------------------------|
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
 
 **Example:**
 
@@ -6019,12 +6019,12 @@ public func set(key: K, value: V): Unit
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                               |
 |:------|:-------------------------------------|
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
 
 **Example:**
 
@@ -6058,12 +6058,12 @@ public func setAll(elements: Collection<(K, V)>): Unit
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                               |
 |:------|:-------------------------------------|
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
 
 **Example:**
 
@@ -6105,12 +6105,12 @@ public func setIfAbsent(key: K, value: V): Bool
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                               |
 |:------|:-------------------------------------|
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
 
 ### func toHashMap()
 
@@ -6130,12 +6130,12 @@ public func toHashMap(): HashMap<K, V>
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                               |
 |:------|:-------------------------------------|
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
 
 ### func toJSValue(JSContext)
 
@@ -6161,12 +6161,12 @@ public func toJSValue(c: JSContext): JSValue
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                               |
 |:------|:-------------------------------------|
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
 
 ### func values()
 
@@ -6186,12 +6186,12 @@ public func values(): Collection<V>
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                               |
 |:------|:-------------------------------------|
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
 
 ### func \[](K)
 
@@ -6217,13 +6217,13 @@ public operator func [](key: K): V
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                               |
 |:------|:-------------------------------------|
-| 2     | Outside error occurred.              |
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
+| 34300002   | Outside error occurred.              |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
 
 **Example:**
 
@@ -6259,12 +6259,12 @@ public operator func [](key: K, value!: V): Unit
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                               |
 |:------|:-------------------------------------|
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
 
 **Example:**
 
@@ -6308,12 +6308,12 @@ public func toJSValue(): JSValue
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
 
 **Example:**
 
@@ -6568,13 +6568,13 @@ public func callMethod(key: JSKeyable, args: Array<JSValue>): JSValue
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 2     | Outside error occurred.                |
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
+| 34300002   | Outside error occurred.                |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
 
 **Example:**
 
@@ -6617,13 +6617,13 @@ public func defineOwnAccessor(key: JSKeyable, getter!:? JSFunction = None, sette
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 2     | Outside error occurred.                |
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
+| 34300002   | Outside error occurred.                |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
 
 **Example:**
 
@@ -6670,13 +6670,13 @@ public func defineOwnAccessor(key: JSKeyable, getter!:? JSLambda = None, setter!
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 2     | Outside error occurred.                |
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
+| 34300002   | Outside error occurred.                |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
 
 **Example:**
 
@@ -6722,7 +6722,7 @@ public func defineOwnProperty(key: JSKeyable, setValue: JSValue,
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -6759,7 +6759,7 @@ public func getAttachInfo(): ?JSExternal
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -6807,7 +6807,7 @@ public func getProperty(key: JSKeyable): JSValue
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -6850,7 +6850,7 @@ public func hasProperty(key: JSKeyable): Bool
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -6893,7 +6893,7 @@ public func instanceOf(clazz: JSClass): Bool
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -6934,7 +6934,7 @@ public func keys(): Array<String>
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -6971,7 +6971,7 @@ public func setProperty(key: JSKeyable, setValue: JSValue): Unit
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -7014,7 +7014,7 @@ public operator func [](key: JSKeyable): JSValue
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -7052,7 +7052,7 @@ public operator func [](key: JSKeyable, value!: JSValue): Unit
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -7107,7 +7107,7 @@ public func catchError(callback: JSFunction): Unit
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -7147,7 +7147,7 @@ public func then(onFulfilled: JSFunction, onRejected!: ?JSFunction = None): Unit
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -7197,12 +7197,12 @@ public func reject(value: JSValue): Unit
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
 
 **Example:**
 
@@ -7235,12 +7235,12 @@ public func resolve(value: JSValue): Unit
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
 
 **Example:**
 
@@ -7275,12 +7275,12 @@ public func toJSValue(): JSValue
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
 
 **Example:**
 
@@ -7364,11 +7364,11 @@ public init()
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 2     | Outside error occurred.　             |
+| 34300002   | Outside error occurred.　             |
 
 ### func getNapiEnv()
 
@@ -7426,12 +7426,12 @@ public func toJSValue(_: JSContext): JSValue
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
 
 ### func toString()
 
@@ -7451,12 +7451,12 @@ public func toString(): String
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
 
 **Example:**
 
@@ -7488,12 +7488,12 @@ public func toUtf16String(): Utf16String
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
 
 ## class JSStringEx
 
@@ -7569,13 +7569,13 @@ public static func fromJSValue(context: JSContext, input: JSValue): JSStringEx
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
-| 5     | The ArkTS data types do not match.   |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
+| 34300005   | The ArkTS data types do not match.   |
 
 ### static func toArktsType()
 
@@ -7617,12 +7617,12 @@ public func toJSValue(context: JSContext): JSValue
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
 
 ### func toString()
 
@@ -7642,12 +7642,12 @@ public func toString(): String
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
 
 ### func !=(JSStringEx)
 
@@ -7673,12 +7673,12 @@ public operator func !=(str: JSStringEx): Bool
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
 
 ### func ==(JSStringEx)
 
@@ -7704,12 +7704,12 @@ public operator func ==(str: JSStringEx): Bool
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |## class JSSymbol
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |## class JSSymbol
 
 ```cangjie
 public class JSSymbol <: JSHeapObject & JSKeyable {}
@@ -7759,12 +7759,12 @@ public prop description: String
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                           |
 |:-------------|:---------------------------------------|
-| 3            | Accessing reference is beyond reach.   |
-| 4            | Thread mismatch.                       |
+| 34300003          | Accessing reference is beyond reach.   |
+| 34300004          | Thread mismatch.                       |
 
 ### func toJSValue(JSContext)
 
@@ -7790,12 +7790,12 @@ public func toJSValue(_: JSContext): JSValue
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                           |
 |:-------------|:---------------------------------------|
-| 3            | Accessing reference is beyond reach.   |
-| 4            | Thread mismatch.                       |
+| 34300003          | Accessing reference is beyond reach.   |
+| 34300004          | Thread mismatch.                       |
 
 ### func toString()
 
@@ -7815,12 +7815,12 @@ public func toString(): String
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                           |
 |:-------------|:---------------------------------------|
-| 3            | Accessing reference is beyond reach.   |
-| 4            | Thread mismatch.                       |
+| 34300003          | Accessing reference is beyond reach.   |
+| 34300004          | Thread mismatch.                       |
 
 ## class SharedObject
 
@@ -7918,12 +7918,12 @@ public func toBool(): Bool
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                           |
 |:-------------|:---------------------------------------|
-| 3            | Accessing reference is beyond reach.   |
-| 4            | Thread mismatch.                       |
+| 34300003          | Accessing reference is beyond reach.   |
+| 34300004          | Thread mismatch.                       |
 
 **Example:**
 
@@ -7955,12 +7955,12 @@ public func toJSValue(): JSValue
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                           |
 |:-------------|:---------------------------------------|
-| 3            | Accessing reference is beyond reach.   |
-| 4            | Thread mismatch.                       |
+| 34300003          | Accessing reference is beyond reach.   |
+| 34300004          | Thread mismatch.                       |
 
 ## struct JSCallInfo
 
@@ -7992,12 +7992,12 @@ public prop count: Int64
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                           |
 |:-------------|:---------------------------------------|
-| 3            | Accessing reference is beyond reach.   |
-| 4            | Thread mismatch.                       |
+| 34300003          | Accessing reference is beyond reach.   |
+| 34300004          | Thread mismatch.                       |
 
 ### prop thisArg
 
@@ -8015,12 +8015,12 @@ public prop thisArg: JSValue
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                           |
 |:-------------|:---------------------------------------|
-| 3            | Accessing reference is beyond reach.   |
-| 4            | Thread mismatch.                       |
+| 34300003          | Accessing reference is beyond reach.   |
+| 34300004          | Thread mismatch.                       |
 
 ### func \[](Int64)
 
@@ -8046,13 +8046,13 @@ public operator func[](index: Int64): JSValue
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                          |
 |:-------------|:--------------------------------------|
-| 1            | The accessing index is out of range.  |
-| 3            | Accessing reference is beyond reach.  |
-| 4            | Thread mismatch.                      |
+| 34300001          | The accessing index is out of range.  |
+| 34300003          | Accessing reference is beyond reach.  |
+| 34300004          | Thread mismatch.                      |
 
 **Example:**
 
@@ -8095,12 +8095,12 @@ public func toJSValue(): JSValue
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                          |
 |:-------------|:--------------------------------------|
-| 3            | Accessing reference is beyond reach.  |
-| 4            | Thread mismatch.                      |
+| 34300003          | Accessing reference is beyond reach.  |
+| 34300004          | Thread mismatch.                      |
 
 ## struct JSNumber
 
@@ -8130,12 +8130,12 @@ public func toFloat64(): Float64
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                          |
 |:-------------|:--------------------------------------|
-| 3            | Accessing reference is beyond reach.  |
-| 4            | Thread mismatch.                      |
+| 34300003          | Accessing reference is beyond reach.  |
+| 34300004          | Thread mismatch.                      |
 
 **Example:**
 
@@ -8167,12 +8167,12 @@ public func toJSValue(): JSValue
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                          |
 |:-------------|:--------------------------------------|
-| 3            | Accessing reference is beyond reach.  |
-| 4            | Thread mismatch.                      |## struct JSType
+| 34300003          | Accessing reference is beyond reach.  |
+| 34300004          | Thread mismatch.                      |## struct JSType
 
 ```cangjie
 public struct JSType {
@@ -8428,8 +8428,8 @@ public func toJSValue(): JSValue
 
 | Error Code ID | Error Message                               |
 |:------|:--------------------------------------|
-| 3     | Accessing reference is beyond reach.  |
-| 4     | Thread mismatch.                      |
+| 34300003   | Accessing reference is beyond reach.  |
+| 34300004   | Thread mismatch.                      |
 
 **Example:**
 
@@ -8478,9 +8478,9 @@ public func asArray(): JSArray
 
 | Error Code ID | Error Message                               |
 |:------|:-------------------------------------|
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
-| 5     | The ArkTS data types do not match.   |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
+| 34300005   | The ArkTS data types do not match.   |
 
 ### func asArrayBuffer()
 
@@ -8504,9 +8504,9 @@ public func asArrayBuffer(): JSArrayBuffer
 
 | Error Code ID | Error Message                               |
 |:------|:-------------------------------------|
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
-| 5     | The ArkTS data types do not match.   |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
+| 34300005   | The ArkTS data types do not match.   |
 
 ### func asBigInt()
 
@@ -8530,9 +8530,9 @@ public func asBigInt(): JSBigInt
 
 | Error Code ID | Error Message                               |
 |:------|:-------------------------------------|
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
-| 5     | The ArkTS data types do not match.   |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
+| 34300005   | The ArkTS data types do not match.   |
 
 ### func asBoolean()
 
@@ -8556,9 +8556,9 @@ public func asBoolean(): JSBoolean
 
 | Error Code ID | Error Message                               |
 |:------|:-------------------------------------|
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
-| 5     | The ArkTS data types do not match.   |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
+| 34300005   | The ArkTS data types do not match.   |
 
 ### func asClass()
 
@@ -8582,9 +8582,9 @@ public func asClass(): JSClass
 
 | Error Code ID | Error Message                               |
 |:------|:-------------------------------------|
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
-| 5     | The ArkTS data types do not match.   |### func asExternal()
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
+| 34300005   | The ArkTS data types do not match.   |### func asExternal()
 
 ```cangjie
 public func asExternal(): JSExternal
@@ -8602,13 +8602,13 @@ public func asExternal(): JSExternal
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                              |
 |:------|:-------------------------------------|
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
-| 5     | The ArkTS data types do not match.   |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
+| 34300005   | The ArkTS data types do not match.   |
 
 ### func asFunction()
 
@@ -8628,13 +8628,13 @@ public func asFunction(): JSFunction
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                              |
 |:------|:-------------------------------------|
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
-| 5     | The ArkTS data types do not match.   |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
+| 34300005   | The ArkTS data types do not match.   |
 
 ### func asNull()
 
@@ -8654,13 +8654,13 @@ public func asNull(): JSNull
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                              |
 |:------|:-------------------------------------|
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
-| 5     | The ArkTS data types do not match.   |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
+| 34300005   | The ArkTS data types do not match.   |
 
 ### func asNumber()
 
@@ -8680,13 +8680,13 @@ public func asNumber(): JSNumber
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                              |
 |:------|:-------------------------------------|
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
-| 5     | The ArkTS data types do not match.   |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
+| 34300005   | The ArkTS data types do not match.   |
 
 ### func asObject()
 
@@ -8706,13 +8706,13 @@ public func asObject(): JSObject
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                              |
 |:------|:-------------------------------------|
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
-| 5     | The ArkTS data types do not match.   |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
+| 34300005   | The ArkTS data types do not match.   |
 
 ### func asPromise()
 
@@ -8732,13 +8732,13 @@ public func asPromise(): JSPromise
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                              |
 |:------|:-------------------------------------|
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
-| 5     | The ArkTS data types do not match.   |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
+| 34300005   | The ArkTS data types do not match.   |
 
 ### func asString()
 
@@ -8758,13 +8758,13 @@ public func asString(): JSString
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                              |
 |:------|:-------------------------------------|
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
-| 5     | The ArkTS data types do not match.   |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
+| 34300005   | The ArkTS data types do not match.   |
 
 ### func asSymbol()
 
@@ -8784,13 +8784,13 @@ public func asSymbol(): JSSymbol
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                              |
 |:------|:-------------------------------------|
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
-| 5     | The ArkTS data types do not match.   |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
+| 34300005   | The ArkTS data types do not match.   |
 
 ### func asUndefined()
 
@@ -8810,13 +8810,13 @@ public func asUndefined(): JSUndefined
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                              |
 |:------|:-------------------------------------|
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
-| 5     | The ArkTS data types do not match.   |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
+| 34300005   | The ArkTS data types do not match.   |
 
 ### func bindObject(JSValue)
 
@@ -8836,13 +8836,13 @@ public func bindObject(external: JSValue): Unit
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                              |
 |:------|:-------------------------------------|
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
-| 5     | The ArkTS data types do not match.   |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
+| 34300005   | The ArkTS data types do not match.   |
 
 **Example:**
 
@@ -8880,13 +8880,13 @@ public func bindObject(data: SharedObject): Unit
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                              |
 |:------|:-------------------------------------|
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
-| 5     | The ArkTS data types do not match.   |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
+| 34300005   | The ArkTS data types do not match.   |
 
 **Example:**
 
@@ -8923,14 +8923,14 @@ public func getBindingObject(): ?SharedObject
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                              |
 |:------|:-------------------------------------|
-| 2     | Outside error occurred.　             |
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
-| 5     | The ArkTS data types do not match.   |
+| 34300002   | Outside error occurred.　             |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
+| 34300005   | The ArkTS data types do not match.   |
 
 **Example:**
 
@@ -8975,14 +8975,14 @@ public func getElement(index: Int64): JSValue
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                              |
 |:------|:-------------------------------------|
-| 1     | The accessing index is out of range. |
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
-| 5     | The ArkTS data types do not match.   |
+| 34300001   | The accessing index is out of range. |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
+| 34300005   | The ArkTS data types do not match.   |
 
 **Example:**
 
@@ -9021,9 +9021,9 @@ public func getProperty(key: JSKeyable): JSValue
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
-| 5     | The ArkTS data types do not match.   |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
+| 34300005   | The ArkTS data types do not match.   |
 
 **Example:**
 
@@ -9062,8 +9062,8 @@ public func isArray(): Bool
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
 
 **Example:**
 
@@ -9101,8 +9101,8 @@ public func isArrayBuffer(): Bool
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
 
 **Example:**
 
@@ -9140,8 +9140,8 @@ public func isBigInt(): Bool
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
 
 **Example:**
 
@@ -9179,8 +9179,8 @@ public func isBoolean(): Bool
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
 
 **Example:**
 
@@ -9218,8 +9218,8 @@ public func isClass(): Bool
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
 
 **Example:**
 
@@ -9257,8 +9257,8 @@ public func isExternal(): Bool
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
 
 **Example:**
 
@@ -9296,8 +9296,8 @@ public func isFunction(): Bool
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
 
 **Example:**
 
@@ -9335,8 +9335,8 @@ public func isNull(): Bool
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
 
 **Example:**
 
@@ -9374,8 +9374,8 @@ public func isNumber(): Bool
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
 
 **Example:**
 
@@ -9413,8 +9413,8 @@ public func isObject(): Bool
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
 
 **Example:**
 
@@ -9446,12 +9446,12 @@ public func isPromise(): Bool
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                                |
 |:------|:-------------------------------------|
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
 
 **Example:**
 
@@ -9485,12 +9485,12 @@ public func isString(): Bool
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                                |
 |:------|:-------------------------------------|
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
 
 **Example:**
 
@@ -9524,12 +9524,12 @@ public func isSymbol(): Bool
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                                |
 |:------|:-------------------------------------|
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
 
 **Example:**
 
@@ -9563,12 +9563,12 @@ public func isUndefined(): Bool
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                                |
 |:------|:-------------------------------------|
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
 
 **Example:**
 
@@ -9603,14 +9603,14 @@ public func setElement(index: Int64, value: JSValue): Unit
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                                |
 |:------|:-------------------------------------|
-| 1     | The accessing index is out of range. |
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
-| 5     | The ArkTS data types do not match.   |
+| 34300001   | The accessing index is out of range. |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
+| 34300005   | The ArkTS data types do not match.   |
 
 **Example:**
 
@@ -9644,14 +9644,14 @@ public func setProperty(key: JSKeyable, setValue: JSValue): Unit
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                                |
 |:------|:-------------------------------------|
-| 2     | Outside error occurred.                |
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
-| 5     | The ArkTS data types do not match.   |
+| 34300002   | Outside error occurred.                |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
+| 34300005   | The ArkTS data types do not match.   |
 
 **Example:**
 
@@ -9689,12 +9689,12 @@ public func strictEqual(target: JSValue): Bool
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                                |
 |:------|:-------------------------------------|
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
 
 **Example:**
 
@@ -9729,13 +9729,13 @@ public func toBigInt(): BigInt
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                                |
 |:------|:-------------------------------------|
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
-| 5     | The ArkTS data types do not match.   |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
+| 34300005   | The ArkTS data types do not match.   |
 
 **Example:**
 
@@ -9766,13 +9766,13 @@ public func toBoolean(): Bool
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                                |
 |:------|:-------------------------------------|
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
-| 5     | The ArkTS data types do not match.   |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
+| 34300005   | The ArkTS data types do not match.   |
 
 **Example:**
 
@@ -9803,13 +9803,13 @@ public func toNumber(): Float64
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                                |
 |:------|:-------------------------------------|
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
-| 5     | The ArkTS data types do not match.   |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
+| 34300005   | The ArkTS data types do not match.   |
 
 **Example:**
 
@@ -9840,14 +9840,14 @@ public func toString(): String
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                                |
 |:------|:-------------------------------------|
-| 2     | Outside error occurred.　             |
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
-| 5     | The ArkTS data types do not match.   |
+| 34300002   | Outside error occurred.　             |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
+| 34300005   | The ArkTS data types do not match.   |
 
 **Example:**
 
@@ -9886,13 +9886,13 @@ public func toUtf16String(): Utf16String
 |[Utf16String](#class-utf16string)|Converted Utf16String object.|
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                                |
 |:------|:-------------------------------------|
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
-| 5     | The ArkTS data types do not match.   |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
+| 34300005   | The ArkTS data types do not match.   |
 
 ### func typeof()
 
@@ -9912,12 +9912,12 @@ public func typeof(): JSType
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                                |
 |:------|:-------------------------------------|
-| 3     | Accessing reference is beyond reach. |
-| 4     | Thread mismatch.                     |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
 
 **Example:**
 
@@ -10073,11 +10073,11 @@ public prop size: Int64
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows:
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                          |
 |:-------------|:---------------------------------------|
-| 3            | Accessing reference is beyond reach.   |
+| 34300003          | Accessing reference is beyond reach.   |
 
 **Example:**
 
@@ -10109,11 +10109,11 @@ public prop totalChars: Int64
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows:
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                          |
 |:-------------|:---------------------------------------|
-| 3            | Accessing reference is beyond reach.   |
+| 34300003          | Accessing reference is beyond reach.   |
 
 **Example:**
 
@@ -10161,11 +10161,11 @@ public init(src: String)
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows:
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                          |
 |:-------------|:---------------------------------------|
-| 2            | Outside error occurred.                |
+| 34300002          | Outside error occurred.                |
 
 **Example:**
 
@@ -10210,13 +10210,13 @@ public static func fromJSValue(_: JSContext, value: JSValue): Utf16String
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows:
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                          |
 |:-------------|:---------------------------------------|
-| 3            | Accessing reference is beyond reach.   |
-| 4            | Thread mismatch.                       |
-| 5            | The ArkTS data types do not match.     |
+| 34300003          | Accessing reference is beyond reach.   |
+| 34300004          | Thread mismatch.                       |
+| 34300005          | The ArkTS data types do not match.     |
 
 **Example:**
 
@@ -10275,11 +10275,11 @@ public func compare(target: Utf16String): Ordering
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows:
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                          |
 |:-------------|:---------------------------------------|
-| 3            | Accessing reference is beyond reach.   |
+| 34300003          | Accessing reference is beyond reach.   |
 
 ### func contains(Utf16String)
 
@@ -10305,11 +10305,11 @@ public func contains(target: Utf16String): Bool
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows:
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                          |
 |:-------------|:---------------------------------------|
-| 3            | Accessing reference is beyond reach.   |
+| 34300003          | Accessing reference is beyond reach.   |
 
 ### func count(Utf16String)
 
@@ -10335,11 +10335,11 @@ public func count(src: Utf16String): Int64
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows:
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                          |
 |:-------------|:---------------------------------------|
-| 3            | Accessing reference is beyond reach.   |
+| 34300003          | Accessing reference is beyond reach.   |
 
 **Example:**
 
@@ -10410,11 +10410,11 @@ public func endsWith(target: Utf16String): Bool
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 3     | Accessing reference is beyond reach. |
+| 34300003   | Accessing reference is beyond reach. |
 
 **Example:**
 
@@ -10450,11 +10450,11 @@ public func hashCode(): Int64
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 3     | Accessing reference is beyond reach. |
+| 34300003   | Accessing reference is beyond reach. |
 
 **Example:**
 
@@ -10494,11 +10494,11 @@ public func indexOf(target: Utf16String): ?Int64
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 3     | Accessing reference is beyond reach. |
+| 34300003   | Accessing reference is beyond reach. |
 
 **Example:**
 
@@ -10545,11 +10545,11 @@ public func indexOf(target: Utf16String, fromIndex: Int64): ?Int64
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 3     | Accessing reference is beyond reach. |
+| 34300003   | Accessing reference is beyond reach. |
 
 ### func isEmpty()
 
@@ -10569,11 +10569,11 @@ public func isEmpty(): Bool
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 3     | Accessing reference is beyond reach. |
+| 34300003   | Accessing reference is beyond reach. |
 
 **Example:**
 
@@ -10611,11 +10611,11 @@ public func isCompressed(): Bool
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 3     | Accessing reference is beyond reach. |
+| 34300003   | Accessing reference is beyond reach. |
 
 **Example:**
 
@@ -10656,11 +10656,11 @@ public func lastIndexOf(target: Utf16String): ?Int64
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 3     | Accessing reference is beyond reach. |
+| 34300003   | Accessing reference is beyond reach. |
 
 **Example:**
 
@@ -10707,11 +10707,11 @@ public func lastIndexOf(target: Utf16String, fromIndex: Int64): ?Int64
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 3     | Accessing reference is beyond reach. |
+| 34300003   | Accessing reference is beyond reach. |
 
 **Example:**
 
@@ -10759,11 +10759,11 @@ public func lazySplit(separator: Utf16String, remoteEmpty!: Bool = false): Itera
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 3     | Accessing reference is beyond reach. |
+| 34300003   | Accessing reference is beyond reach. |
 
 **Example:**
 
@@ -10810,7 +10810,7 @@ public func lazySplit(separator: Utf16String, maxSplit: Int64, remoteEmpty!: Boo
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -10834,7 +10834,7 @@ public func lines(): Iterator<Utf16String>
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -10886,7 +10886,7 @@ public func replace(old: Utf16String, new: Utf16String, count!: Int64 = Int64.Ma
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -10929,7 +10929,7 @@ public func runes(): Iterator<Rune>
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -10960,7 +10960,7 @@ public func split(separator: Utf16String, remoteEmpty!: Bool = false): Array<Utf
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -11013,7 +11013,7 @@ public func split(separator: Utf16String, maxSplit: Int64, remoteEmpty!: Bool = 
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -11044,7 +11044,7 @@ public func startsWith(target: Utf16String): Bool
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -11090,7 +11090,7 @@ public func toJSValue(context: JSContext): JSValue
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -11131,7 +11131,7 @@ public func toString(): String
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -11175,7 +11175,7 @@ public operator func != (target: Utf16String): Bool
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -11205,7 +11205,7 @@ public operator func + (right: Utf16String): Utf16String
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -11233,11 +11233,11 @@ public operator func < (target: Utf16String): Bool
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 3     | Accessing reference is beyond reach. |
+| 34300003   | Accessing reference is beyond reach. |
 
 ### func \<=(Utf16String)
 
@@ -11263,11 +11263,11 @@ public operator func <= (target: Utf16String): Bool
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 3     | Accessing reference is beyond reach. |
+| 34300003   | Accessing reference is beyond reach. |
 
 ### func ==(Utf16String)
 
@@ -11293,11 +11293,11 @@ public operator func == (target: Utf16String): Bool
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 3     | Accessing reference is beyond reach. |
+| 34300003   | Accessing reference is beyond reach. |
 
 ### func >(Utf16String)
 
@@ -11323,11 +11323,11 @@ public operator func > (target: Utf16String): Bool
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 3     | Accessing reference is beyond reach. |
+| 34300003   | Accessing reference is beyond reach. |
 
 ### func >=(Utf16String)
 
@@ -11353,11 +11353,11 @@ public operator func >= (target: Utf16String): Bool
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 3     | Accessing reference is beyond reach. |
+| 34300003   | Accessing reference is beyond reach. |
 
 ### func \[](Int64)
 
@@ -11383,12 +11383,12 @@ public operator func [](index: Int64): UInt16
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 1     | The accessing index is out of range. |
-| 3     | Accessing reference is beyond reach. |
+| 34300001   | The accessing index is out of range. |
+| 34300003   | Accessing reference is beyond reach. |
 
 ### func \[](Range\<Int64>)
 
@@ -11414,9 +11414,9 @@ public operator func [](range: Range<Int64>): Utf16String
 
 **Exceptions:**
 
-- BusinessException: Corresponding error codes are listed below.
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 1     | The accessing index is out of range. |
-| 3     | Accessing reference is beyond reach. |
+| 34300001   | The accessing index is out of range. |
+| 34300003   | Accessing reference is beyond reach. |
