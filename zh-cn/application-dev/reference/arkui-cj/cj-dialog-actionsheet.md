@@ -111,11 +111,11 @@ public class ActionSheetButtonOptions {
     public var defaultFocus: ?Bool
     public var style: ?DialogButtonStyle
     public init(
-        value!: ?ResourceStr,
-        action!: ?VoidCallback,
         enabled!: ?Bool = None,
         defaultFocus!: ?Bool = None,
-        style!: ?DialogButtonStyle = None
+        style!: ?DialogButtonStyle = None,
+        value!: ?ResourceStr,
+        action!: ?VoidCallback
     )
 }
 ```
@@ -210,11 +210,11 @@ public var value: ?ResourceStr
 
 ```cangjie
 public init(
-    value!: ?ResourceStr,
-    action!: ?VoidCallback,
     enabled!: ?Bool = None,
     defaultFocus!: ?Bool = None,
-    style!: ?DialogButtonStyle = None
+    style!: ?DialogButtonStyle = None,
+    value!: ?ResourceStr,
+    action!: ?VoidCallback
 )
 ```
 
@@ -228,11 +228,11 @@ public init(
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|value|?[ResourceStr](./cj-common-types.md#interface-resourcestr)|是|-|**命名参数。** Button文本内容。|
-|action|?[VoidCallback](./cj-common-types.md#type-voidcallback)|是|-|**命名参数。** Button选中时的回调。|
 |enabled|?Bool|否|None|**命名参数。** 点击Button是否响应，true表示Button可以响应，false表示Button不可以响应。|
 |defaultFocus|?Bool|否|None|**命名参数。** 设置Button是否是默认焦点，true表示Button是默认焦点，false表示Button不是默认焦点。|
 |style|?[DialogButtonStyle](./cj-common-types.md#enum-dialogbuttonstyle)|否|None|**命名参数。** 设置Button的风格样式。 |
+|value|?[ResourceStr](./cj-common-types.md#interface-resourcestr)|是|-|**命名参数。** Button文本内容。|
+|action|?[VoidCallback](./cj-common-types.md#type-voidcallback)|是|-|**命名参数。** Button选中时的回调。|
 
 ## class DismissDialogAction
 

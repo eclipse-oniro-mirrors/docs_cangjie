@@ -111,11 +111,11 @@ public class ActionSheetButtonOptions {
     public var defaultFocus: ?Bool
     public var style: ?DialogButtonStyle
     public init(
-        value!: ?ResourceStr,
-        action!: ?VoidCallback,
         enabled!: ?Bool = None,
         defaultFocus!: ?Bool = None,
-        style!: ?DialogButtonStyle = None
+        style!: ?DialogButtonStyle = None,
+        value!: ?ResourceStr,
+        action!: ?VoidCallback
     )
 }
 ```
@@ -206,15 +206,15 @@ public var value: ?ResourceStr
 
 **Since:** 22
 
-### init(?ResourceStr, ?VoidCallback, ?Bool, ?Bool, ?DialogButtonStyle)
+### init(?Bool, ?Bool, ?DialogButtonStyle, ?ResourceStr, ?VoidCallback)
 
 ```cangjie
 public init(
-    value!: ?ResourceStr,
-    action!: ?VoidCallback,
     enabled!: ?Bool = None,
     defaultFocus!: ?Bool = None,
-    style!: ?DialogButtonStyle = None
+    style!: ?DialogButtonStyle = None,
+    value!: ?ResourceStr,
+    action!: ?VoidCallback
 )
 ```
 
@@ -228,11 +228,11 @@ public init(
 
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
-| value | ?[ResourceStr](./cj-common-types.md#interface-resourcestr) | Yes | - | **Named parameter.** Text content of the button. |
-| action | ?[VoidCallback](./cj-common-types.md#type-voidcallback) | Yes | - | **Named parameter.** Callback when the button is selected. |
 | enabled | ?Bool | No | None | **Named parameter.** Determines if the button responds to clicks. true means the button responds, false means it does not. |
 | defaultFocus | ?Bool | No | None | **Named parameter.** Sets whether the button is the default focus. true means it is the default focus, false means it is not. |
 | style | ?[DialogButtonStyle](./cj-common-types.md#enum-dialogbuttonstyle) | No | None | **Named parameter.** Sets the style of the button. |
+| value | ?[ResourceStr](./cj-common-types.md#interface-resourcestr) | Yes | - | **Named parameter.** Text content of the button. |
+| action | ?[VoidCallback](./cj-common-types.md#type-voidcallback) | Yes | - | **Named parameter.** Callback when the button is selected. |
 
 ## class DismissDialogAction
 

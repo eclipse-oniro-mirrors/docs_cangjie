@@ -301,8 +301,8 @@ public open class AlertDialogParam {
         backgroundColor!: ?ResourceColor = None,
         backgroundBlurStyle!: ?BlurStyle = None,
         onWillDismiss!: ?Callback<DismissDialogAction, Unit> = None,
-        cornerRadius!: ?BorderRadiuses = None,
         transition!: ?TransitionEffect = None,
+        cornerRadius!: ?BorderRadiuses = None,
         width!: ?Length = None,
         height!: ?Length = None,
         borderWidth!: ?Length = None,
@@ -686,7 +686,7 @@ public var width: ?Length
 
 **Since:** 22
 
-### init(?ResourceStr, ?ResourceStr, ?ResourceStr, ?Bool, ?VoidCallback, ?DialogAlignment, ?Offset, ?UInt32, ?Rectangle, ?Bool, ?Bool, ?ResourceColor, ?BlurStyle, ?Callback\<DismissDialogAction, Unit>, ?BorderRadiuses, ?TransitionEffect, ?Length, ?Length, ?Length, ?ResourceColor, ?EdgeStyles, ?ShadowOptions, ?WordBreak)
+### init(?ResourceStr, ?ResourceStr, ?ResourceStr, ?Bool, ?VoidCallback, ?DialogAlignment, ?Offset, ?UInt32, ?Rectangle, ?Bool, ?Bool, ?ResourceColor, ?BlurStyle, ?Callback\<DismissDialogAction, Unit>, ?TransitionEffect, ?BorderRadiuses, ?Length, ?Length, ?Length, ?ResourceColor, ?EdgeStyles, ?ShadowOptions, ?WordBreak)
 
 ```cangjie
 public init(
@@ -704,8 +704,8 @@ public init(
     backgroundColor!: ?ResourceColor = None,
     backgroundBlurStyle!: ?BlurStyle = None,
     onWillDismiss!: ?Callback<DismissDialogAction, Unit> = None,
-    cornerRadius!: ?BorderRadiuses = None,
     transition!: ?TransitionEffect = None,
+    cornerRadius!: ?BorderRadiuses = None,
     width!: ?Length = None,
     height!: ?Length = None,
     borderWidth!: ?Length = None,
@@ -740,8 +740,8 @@ public init(
 | backgroundColor | ?[ResourceColor](./cj-common-types.md#interface-resourcecolor) | No | None | **Named parameter.** The background color of the popup. **Note:** When backgroundColor is set to a non-transparent color, backgroundBlurStyle should be set to BlurStyle.NONE; otherwise, the color display may not meet expectations. Initial value: Color.Transparent |
 | backgroundBlurStyle | ?[BlurStyle](./cj-common-types.md#enum-blurstyle) | No | None | **Named parameter.** The blur material of the popup backdrop. **Note:** Set to BlurStyle.NONE to disable background blur. When backgroundBlurStyle is set to a non-NONE value, do not set backgroundColor; otherwise, the color display may not meet expectations. Initial value: BlurStyle.ComponentUltraThick |
 | onWillDismiss | ?[Callback](./cj-common-types.md#type-callbackt-v)\<[DismissDialogAction](./cj-dialog-actionsheet.md#class-dismissdialogaction), Unit> | No | None | **Named parameter.** Interactive close callback function. **Note:** 1. When the user performs actions like clicking the mask layer to close, swiping left/right, pressing the back button, or pressing ESC to close, if this callback is registered, the popup will not close immediately. The callback can determine whether to close the popup based on the reason obtained. Currently, the reason returned by this component does not support the CLOSE_BUTTON enum value. 2. Within the onWillDismiss callback, another onWillDismiss interception cannot be performed. |
-| cornerRadius | ?[BorderRadiuses](./cj-common-types.md#class-borderradiuses) | No | None | **Named parameter.** Sets the corner radius of the backdrop. The radius of each of the four corners can be set separately. The corner radius is limited by the component size, with the maximum value being half of the component's width or height. Negative values are treated as default values. Percentage parameter: Sets the corner radius as a percentage of the parent popup's width and height. **Note:** When the cornerRadius property type is LocalizedBorderRadiuses, it supports changing the layout order according to language habits. Initial value: BorderRadiuses(topLeft: 32.vp, topRight: 32.vp, bottomLeft: 32.vp, bottomRight: 32.vp) |
 | transition | ?[TransitionEffect](./cj-animation-transition.md#class-transitioneffect) | No | None | **Named parameter.** Sets the transition effect for popup display and exit. **Note:** 1. If not set, the default display/exit animation is used. 2. Pressing the back key during the display animation interrupts the display animation and executes the exit animation, with the effect being a combination of the display and exit animation curves. 3. Pressing the back key during the exit animation does not interrupt the exit animation; the exit animation continues, and pressing the back key again exits the application. |
+| cornerRadius | ?[BorderRadiuses](./cj-common-types.md#class-borderradiuses) | No | None | **Named parameter.** Sets the corner radius of the backdrop. The radius of each of the four corners can be set separately. The corner radius is limited by the component size, with the maximum value being half of the component's width or height. Negative values are treated as default values. Percentage parameter: Sets the corner radius as a percentage of the parent popup's width and height. **Note:** When the cornerRadius property type is LocalizedBorderRadiuses, it supports changing the layout order according to language habits. Initial value: BorderRadiuses(topLeft: 32.vp, topRight: 32.vp, bottomLeft: 32.vp, bottomRight: 32.vp) |
 | width | ?[Length](./cj-common-types.md#interface-length) | No | None | **Named parameter.** Sets the width of the popup backdrop. **Note:** - Default maximum width: None. - Percentage parameter: The reference width is the window width, adjusted up or down based on this. |
 | height | ?[Length](./cj-common-types.md#interface-length) | No | None | **Named parameter.** Sets the height of the popup backdrop. **Note:** - Default maximum height: None. - Percentage parameter: The reference height is (window height - safe area), adjusted up or down based on this. |
 | borderWidth | ?[Length](./cj-common-types.md#interface-length) | No | None | **Named parameter.** Sets the width of each of the four borders separately. Percentage parameter: Sets the border width as a percentage of the parent popup's width. If the left and right borders exceed the popup width or the top and bottom borders exceed the popup height, the display may not meet expectations. **Note:** When the borderWidth property type is LocalizedEdgeWidths, it supports changing the layout order according to language habits. Initial value: 0 |
@@ -802,7 +802,17 @@ public class AlertDialogParamWithButtons <: AlertDialogParam {
 public var primaryButton: ?AlertDialogButtonBaseOptions
 ```
 
-**Function:**## class AlertDialogParamWithConfirm
+**Function:** The first button.
+
+**Type:** ?[AlertDialogButtonBaseOptions](#class-alertdialogbuttonbaseoptions)
+
+**Access:** Read-write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 22
+
+## class AlertDialogParamWithConfirm
 
 ```cangjie
 public class AlertDialogParamWithConfirm <: AlertDialogParam {
@@ -822,8 +832,8 @@ public class AlertDialogParamWithConfirm <: AlertDialogParam {
         backgroundColor!: ?ResourceColor = None,
         backgroundBlurStyle!: ?BlurStyle = None,
         onWillDismiss!: ?Callback<DismissDialogAction, Unit> = None,
-        transition!: ?TransitionEffect = None,
         cornerRadius!: ?BorderRadiuses = None,
+        transition!: ?TransitionEffect = None,
         width!: ?Length = None,
         height!: ?Length = None,
         borderWidth!: ?Length = None,
@@ -862,7 +872,7 @@ public var confirm: ?AlertDialogButtonBaseOptions
 
 **Since:** 22
 
-### init(?ResourceStr, ?ResourceStr, ?ResourceStr, ?Bool, ?VoidCallback, ?DialogAlignment, ?Offset, ?UInt32, ?Rectangle, ?Bool, ?Bool, ?ResourceColor, ?BlurStyle, ?Callback\<DismissDialogAction, Unit>, ?TransitionEffect, ?BorderRadiuses, ?Length, ?Length, ?Length, ?ResourceColor, ?EdgeStyles, ?ShadowOptions, ?WordBreak, ?AlertDialogButtonBaseOptions)
+### init(?ResourceStr, ?ResourceStr, ?ResourceStr, ?Bool, ?VoidCallback, ?DialogAlignment, ?Offset, ?UInt32, ?Rectangle, ?Bool, ?Bool, ?ResourceColor, ?BlurStyle, ?Callback\<DismissDialogAction, Unit>, ?BorderRadiuses, ?TransitionEffect, ?Length, ?Length, ?Length, ?ResourceColor, ?EdgeStyles, ?ShadowOptions, ?WordBreak, ?AlertDialogButtonBaseOptions)
 
 ```cangjie
 public init(
@@ -880,8 +890,8 @@ public init(
     backgroundColor!: ?ResourceColor = None,
     backgroundBlurStyle!: ?BlurStyle = None,
     onWillDismiss!: ?Callback<DismissDialogAction, Unit> = None,
-    transition!: ?TransitionEffect = None,
     cornerRadius!: ?BorderRadiuses = None,
+    transition!: ?TransitionEffect = None,
     width!: ?Length = None,
     height!: ?Length = None,
     borderWidth!: ?Length = None,
@@ -917,8 +927,8 @@ public init(
 | backgroundColor | ?[ResourceColor](./cj-common-types.md#interface-resourcecolor) | No | None | **Named parameter.** Background color of the dialog. **Note:** When backgroundColor is set to a non-transparent color, backgroundBlurStyle should be set to BlurStyle.NONE; otherwise, the color display may not meet expectations. Initial value: Color.Transparent |
 | backgroundBlurStyle | ?[BlurStyle](./cj-common-types.md#enum-blurstyle) | No | None | **Named parameter.** Blur material of the dialog background. **Note:** Set to BlurStyle.NONE to disable background blur. When backgroundBlurStyle is set to a non-NONE value, do not set backgroundColor; otherwise, the color display may not meet expectations. Initial value: BlurStyle.ComponentUltraThick |
 | onWillDismiss | ?[Callback](./cj-common-types.md#type-callbackt-v)\<[DismissDialogAction](./cj-dialog-actionsheet.md#class-dismissdialogaction), Unit> | No | None | **Named parameter.** Interactive close callback function. **Note:** 1. When users perform actions like clicking the mask layer to close, swiping left/right, pressing the back button, or pressing ESC to close, if this callback is registered, the dialog will not close immediately. The callback can determine whether to close the dialog based on the operation type obtained from reason. The current component does not support the CLOSE_BUTTON enum value in reason. 2. Do not perform onWillDismiss interception within the onWillDismiss callback. |
-| transition | ?[TransitionEffect](./cj-animation-transition.md#class-transitioneffect) | No | None | **Named parameter.** Sets the transition effect for dialog display and exit. **Note:** 1. If not set, the default show/exit animation is used. 2. Pressing the back button during the show animation interrupts the show animation and executes the exit animation, resulting in a combined effect of both animations. 3. Pressing the back button during the exit animation does not interrupt it; the exit animation continues, and pressing back again exits the application. |
 | cornerRadius | ?[BorderRadiuses](./cj-common-types.md#class-borderradiuses) | No | None | **Named parameter.** Sets the corner radius of the background. The radius of each corner can be set separately. The maximum corner radius is limited by the component size (half of the component width or height). Negative values are treated as default values. Percentage parameter: Sets the corner radius as a percentage of the parent dialog's width and height. **Note:** When cornerRadius is of type LocalizedBorderRadiuses, it supports layout order changes based on language habits. Initial value: BorderRadiuses(topLeft: 32.vp, topRight: 32.vp, bottomLeft: 32.vp, bottomRight: 32.vp) |
+| transition | ?[TransitionEffect](./cj-animation-transition.md#class-transitioneffect) | No | None | **Named parameter.** Sets the transition effect for dialog display and exit. **Note:** 1. If not set, the default show/exit animation is used. 2. Pressing the back button during the show animation interrupts the show animation and executes the exit animation, resulting in a combined effect of both animations. 3. Pressing the back button during the exit animation does not interrupt it; the exit animation continues, and pressing back again exits the application. |
 | width | ?[Length](./cj-common-types.md#interface-length) | No | None | **Named parameter.** Sets the width of the dialog background. **Note:** - Default maximum dialog width: None. - Percentage parameter: Adjusts the dialog width relative to the window width. |
 | height | ?[Length](./cj-common-types.md#interface-length) | No | None | **Named parameter.** Sets the height of the dialog background. **Note:** - Default maximum dialog height: None. - Percentage parameter: Adjusts the dialog height relative to (window height - safe area). |
 | borderWidth | ?[Length](./cj-common-types.md#interface-length) | No | None | **Named parameter.** Sets the width of each border separately. Percentage parameter: Sets the border width as a percentage of the parent dialog's width. If the left/right borders exceed the dialog width or the top/bottom borders exceed the dialog height, the display may not meet expectations. **Note:** When borderWidth is of type LocalizedEdgeWidths, it supports layout order changes based on language habits. Initial value: 0 |
