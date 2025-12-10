@@ -262,7 +262,7 @@ public func onScrollFrameBegin(event: ?(Float64, ScrollState) -> OnScrollFrameBe
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|event|?(Float64, [ScrollState](./cj-common-types.md#enum-scrollstate)) -> [OnScrollFrameBeginHandlerResult](#class-onscrollframebeginhandlerresult)|是|-|滚动帧开始事件回调。参数一表示即将发生的滑动量，参数二表示当前的滑动的状态。初始值：{ _, _ => onScrollFrameBeginHandlerResult(offsetRemain: 0.0) }。|
+|event|?(Float64, [ScrollState](./cj-common-types.md#enum-scrollstate)) -> [OnScrollFrameBeginHandlerResult](#class-onscrollframebeginhandlerresult)|是|-|滚动帧开始事件回调。参数一表示即将发生的滑动量，参数二表示当前的滑动的状态，返回值表示实际滑动量。初始值：{ _, _ => OnScrollFrameBeginHandlerResult(offsetRemain: 0.0) }。|
 
 ### func onScrollIndex(?(Int32, Int32, Int32) -> Unit)
 
@@ -321,7 +321,7 @@ public var offsetRemain: ?Float64
 public init(offsetRemain!: ?Float64)
 ```
 
-**功能：** 创建onScrollFrameBeginHandlerResult对象。
+**功能：** 创建OnScrollFrameBeginHandlerResult对象。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
