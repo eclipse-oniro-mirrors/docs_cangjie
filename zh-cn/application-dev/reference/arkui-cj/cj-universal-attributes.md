@@ -24,7 +24,6 @@
 - 模态转场设置
     - [全屏模态转场](cj-universal-attribute-bindcontentcover.md)
     - [半模态转场](cj-universal-attribute-sheettransition.md)
-- [拖拽控制](cj-universal-attribute-dragcontrol.md)
 - [安全区域](cj-universal-attribute-expandsafearea.md)
 - [组件内容填充方式](cj-universal-attribute-renderfit.md)
 <!--DelEnd-->

@@ -342,7 +342,7 @@ class EntryView {
                 Row().width(100).height(100)
                 .backgroundColor(0xff3333)
                 .alignRules(
-                    AlignRuleOptions(
+                    AlignRuleOption(
                         top: VerticalAlignParam("__container__", VerticalAlign.Top),
                         left: HorizontalAlignParam("__container__", HorizontalAlign.Start)
                     )
@@ -350,7 +350,7 @@ class EntryView {
                 Row().width(100).height(100)
                 .backgroundColor(0xFFCC00)
                 .alignRules(
-                    AlignRuleOptions(
+                    AlignRuleOption(
                         top: VerticalAlignParam("__container__", VerticalAlign.Top),
                         right: HorizontalAlignParam("__container__", HorizontalAlign.End)
                     )
@@ -358,7 +358,7 @@ class EntryView {
                 Row().height(100)
                 .backgroundColor(0xFF6633)
                 .alignRules(
-                    AlignRuleOptions(
+                    AlignRuleOption(
                         top: VerticalAlignParam("row1", VerticalAlign.Bottom),
                         left: HorizontalAlignParam("row1", HorizontalAlign.End),
                         right: HorizontalAlignParam("row2", HorizontalAlign.Start)
@@ -367,7 +367,7 @@ class EntryView {
                 Row()
                 .backgroundColor(0xFF9966)
                 .alignRules(
-                    AlignRuleOptions(
+                    AlignRuleOption(
                         top: VerticalAlignParam("row3", VerticalAlign.Bottom),
                         bottom: VerticalAlignParam("__container__", VerticalAlign.Bottom),
                         left: HorizontalAlignParam("__container__", HorizontalAlign.Start),
@@ -377,7 +377,7 @@ class EntryView {
                 Row()
                 .backgroundColor(0xff3333)
                 .alignRules(
-                    AlignRuleOptions(
+                    AlignRuleOption(
                         top: VerticalAlignParam("row3", VerticalAlign.Bottom),
                         bottom: VerticalAlignParam("__container__", VerticalAlign.Bottom),
                         left: HorizontalAlignParam("row2", HorizontalAlign.Start),
@@ -416,7 +416,7 @@ class EntryView {
                 Row().width(100).height(100)
                 .backgroundColor(0xff3333)
                 .alignRules(
-                    AlignRuleOptions(
+                    AlignRuleOption(
                         top: VerticalAlignParam("__container__", VerticalAlign.Top),
                         left: HorizontalAlignParam("__container__", HorizontalAlign.Start)
                     )
@@ -425,7 +425,7 @@ class EntryView {
                 Row().width(100).height(100)
                 .backgroundColor(0xFFCC00)
                 .alignRules(
-                    AlignRuleOptions(
+                    AlignRuleOption(
                         top: VerticalAlignParam("row1", VerticalAlign.Top),
                         left: HorizontalAlignParam("row1", HorizontalAlign.End)
                     )
@@ -433,7 +433,7 @@ class EntryView {
                 Row().height(100).width(100)
                 .backgroundColor(0xFF6633)
                 .alignRules(
-                    AlignRuleOptions(
+                    AlignRuleOption(
                         top: VerticalAlignParam("row1", VerticalAlign.Bottom),
                         left: HorizontalAlignParam("row1", HorizontalAlign.Start)
                     )
@@ -441,7 +441,7 @@ class EntryView {
                 Row().width(100).height(100)
                 .backgroundColor(0xFF9966)
                 .alignRules(
-                    AlignRuleOptions(
+                    AlignRuleOption(
                         top: VerticalAlignParam("row2", VerticalAlign.Bottom),
                         left: HorizontalAlignParam("row3", HorizontalAlign.End),
                     )
@@ -475,7 +475,7 @@ class EntryView {
         Row() {
             RelativeContainer() {
                 Row().width(100).height(100).backgroundColor(0xff3333).alignRules(
-                    AlignRuleOptions(
+                    AlignRuleOption(
                         top: VerticalAlignParam("__container__", VerticalAlign.Top),
                         bottom: VerticalAlignParam("__container__", VerticalAlign.Bottom),
                         left: HorizontalAlignParam("__container__", HorizontalAlign.Start),
@@ -513,7 +513,7 @@ class EntryView {
         Row() {
             RelativeContainer() {
                 Row().width(100).height(100).backgroundColor(0xff3333).alignRules(
-                    AlignRuleOptions(
+                    AlignRuleOption(
                         top: VerticalAlignParam("guideline2", VerticalAlign.Top),
                         left: HorizontalAlignParam("guideline1", HorizontalAlign.End),
                     )
@@ -554,7 +554,7 @@ class EntryView {
                 Row().width(100).height(100)
                 .backgroundColor(0xFFCC00)
                 .alignRules(
-                    AlignRuleOptions(
+                    AlignRuleOption(
                         top: VerticalAlignParam("row1", VerticalAlign.Bottom),
                         middle: HorizontalAlignParam("row1", HorizontalAlign.End)
                     )
@@ -563,7 +563,7 @@ class EntryView {
                 Row().height(100).width(100)
                 .backgroundColor(0xFF6633)
                 .alignRules(
-                    AlignRuleOptions(
+                    AlignRuleOption(
                         top: VerticalAlignParam("row1", VerticalAlign.Top),
                         left: HorizontalAlignParam("barrier1", HorizontalAlign.End)
                     )
@@ -572,7 +572,7 @@ class EntryView {
                 Row().width(50).height(50)
                 .backgroundColor(0xFF9966)
                 .alignRules(
-                    AlignRuleOptions(
+                    AlignRuleOption(
                         top: VerticalAlignParam("barrier2", VerticalAlign.Bottom),
                         left: HorizontalAlignParam("row1", HorizontalAlign.Start),
                     )

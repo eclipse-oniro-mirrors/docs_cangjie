@@ -34,9 +34,9 @@ public init(value: ?ResourceStr)
 
 ## Common Attributes/Common Events
 
-Common Attributes: All supported.
+Common Attributes: Not supported.
 
-Common Events: All supported.
+Common Events: Only onClick click event sare supported.
 
 > **Note:**
 >

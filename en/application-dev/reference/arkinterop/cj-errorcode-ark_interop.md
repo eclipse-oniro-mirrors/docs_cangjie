@@ -99,130 +99,57 @@ Incorrect type conversion, such as converting a number to JSString.
 
 Verify the data type before performing operations.
 
-## 34300008 ArrayBuffer Memory Size Misaligned
+## 34300006 Fail To Load Module.
 
 **Error Message**
 
-ArrayBuffer memory size is not aligned.
+Fail to load module which doesn't exist.
 
 **Error Description**
 
-This error code is reported when reading an array from an ArrayBuffer whose byte length is not aligned with the array element type.
+Require ArkTS module from cangjie, Fail to load the module which doesn't exist.
 
 **Possible Causes**
 
-Reading a UInt16 array from an ArrayBuffer with byteLength of 1.
+* The module path is incorrect.
+* The device's ApiLevel does not meet the minimum requirements.
 
 **Resolution Steps**
 
-Ensure the ArrayBuffer's byteLength is aligned before performing operations.
+Check if the module path is correct, If the target is a system module, check whether the ApiLevel of the running device meets the requirements.
 
-## 34300009 Encoding Conversion Error
+## 34300007 Cannot Import During Cangjie Exports
 
 **Error Message**
 
-Encoding conversion error.
+Cannot requireArkModule during initializing cangjie module.
 
 **Error Description**
 
-The Unicode range expressible by UTF-8 encoding is larger than that of UTF-16. This error code is reported when converting a UTF-8 string containing characters outside the UTF-16 range to a UTF-16 string.
+Calling requireArkModule in the callback for exporting ArkTS interfaces in Cangjie will throw this exception.
 
 **Possible Causes**
 
-The UTF-8 string contains characters outside the UTF-16 encoding range.
+Calling requireArkModule in the callback for exporting ArkTS interfaces in Cangjie.
 
 **Resolution Steps**
 
-Check if the UTF-8 string contains characters outside the UTF-16 encoding range.
+Troubleshoot whether requireArkModule is called in the exported function of the registered module, and remove the call or delay the invocation.
 
-## 34300010 Unknown Native Reference
+## 34300008 Application Does Not Support The Module
 
 **Error Message**
 
-Unknown Native reference.
+The current application does not support importing the specified ArkTS module.
 
 **Error Description**
 
-Native references created via the napi interface are type-compatible with JSExternal. This error code is reported when attempting to retrieve an object from such a reference.
+Importing ArkTS source code modules in Cangjie applications is not yet supported, and this exception will be thrown if it occurs.
 
 **Possible Causes**
 
-The accessed Native reference was not created by Cangjie.
+Not support yet.
 
 **Resolution Steps**
 
-Ensure the input is a Native reference created by Cangjie.
-
-## 34300011 Property Access Error
-
-**Error Message**
-
-Property access error.
-
-**Error Description**
-
-This error code is reported when the accessed property does not exist or the type is mismatched.
-
-**Possible Causes**
-
-The accessed property does not exist or the type is mismatched.
-
-**Resolution Steps**
-
-Ensure the property exists and the type is correct.
-
-## 34300012 Integer Overflow Error
-
-**Error Message**
-
-Integer overflow error.
-
-**Error Description**
-
-This error code is reported when an integer overflow occurs during data conversion.
-
-**Possible Causes**
-
-1. The source value exceeds the target type's range.
-2. Precision loss occurs during numerical conversion.
-
-**Resolution Steps**
-
-Ensure the source value is within the target type's range.
-
-## 34300013 Dictionary Key Not Found
-
-**Error Message**
-
-Dictionary key not found.
-
-**Error Description**
-
-This error code is reported when a key expected to exist in a dictionary cannot be found.
-
-**Possible Causes**
-
-The searched key does not exist.
-
-**Resolution Steps**
-
-Verify the key's existence before accessing it.
-
-## 34300014 Runtime Creation Failed
-
-**Error Message**
-
-Runtime creation failed.
-
-**Error Description**
-
-This error code is reported when runtime creation fails.
-
-**Possible Causes**
-
-1. Insufficient system memory.
-2. Attempting to create runtime on a non-main thread.
-
-**Resolution Steps**
-
-Ensure runtime is created on the main thread and check for insufficient system memory.
+Switch to an ArkTS application or wait for subsequent support.

@@ -1,4 +1,4 @@
-# ohos.data.preferences
+# ohos.data.preferences（用户首选项）
 
 用户首选项为应用提供Key-Value键值型的数据处理能力，支持应用持久化轻量级数据，并对其修改和查询。
 

@@ -16,7 +16,7 @@ As shown in the diagram, the HUKS module can be divided into the following three
 >  
 > For systems/devices equipped with a secure environment (e.g., [TEE](./cj-huks-concepts.md), secure chip), the HUKS Core Layer must run within the secure environment. Since the secure environment relies on hardware support, the open-source repository only provides a simulated implementation, requiring adaptation by OEM vendors.  
 
-![zh-cn_image_0000001736030930](./figures/zh-cn_image_0000001736030930.png)  
+![huks1](./figures/huks1.png)  
 
 ## Core Features  
 

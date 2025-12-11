@@ -62,12 +62,6 @@ public func blockBorderColor(value: ?ResourceColor): This
 
 **功能：** 设置滑块描边颜色。
 
-当滑块形状设置为SliderBlockType.DEFAULT时，blockBorderColor可设置默认圆形滑块描边颜色。
-
-当滑块形状设置为SliderBlockType.IMAGE时，滑块无描边，设置blockBorderColor不生效。
-
-当滑块形状设置为SliderBlockType.SHAPE时，blockBorderColor可设置自定义形状中线的颜色。
-
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **起始版本：** 22
@@ -85,12 +79,6 @@ public func blockColor(value: ?ResourceColor): This
 ```
 
 **功能：** 设置滑块的颜色。
-
-当滑块形状设置为SliderBlockType.DEFAULT时，blockColor可设置默认圆形滑块颜色。
-
-当滑块形状设置为SliderBlockType.IMAGE时，滑块无填充，设置blockColor不生效。
-
-当滑块形状设置为SliderBlockType.SHAPE时，blockColor可设置自定义形状的填充颜色。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -255,9 +243,9 @@ class EntryView {
     @State var vInSetValueTwo: Float64 = 40.00
 
     func build() {
-        Column {
+        Column() {
             Text('outset slider').fontSize(9).fontColor(0xCCCCCC).width(90.percent).margin(15)
-            Row {
+            Row() {
                 Slider(
                     value: this.outSetValueOne,
                     min: 0.0,

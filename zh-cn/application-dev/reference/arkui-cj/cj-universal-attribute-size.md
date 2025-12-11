@@ -72,8 +72,8 @@ func size(width!: ?Length, height!: ?Length): T
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|width|?[Length](./cj-common-types.md#interface-length)|是|-|**命名参数** 组件的宽度<br>初始值：0.0.vp。|
-|height|?[Length](./cj-common-types.md#interface-length)|是|-|**命名参数** 组件的高度<br>初始值：0.0.vp。|
+|width|?[Length](./cj-common-types.md#interface-length)|是|-|**命名参数。** 组件的宽度<br>初始值：0.0.vp。|
+|height|?[Length](./cj-common-types.md#interface-length)|是|-|**命名参数。** 组件的高度<br>初始值：0.0.vp。|
 
 **返回值：**
 
@@ -121,10 +121,10 @@ func padding(top!: ?Length, right!: ?Length, bottom!: ?Length, left!: ?Length): 
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|top|?[Length](./cj-common-types.md#interface-length)|是|-|**命名参数** 上内边距<br>初始值：0.vp。|
-|right|?[Length](./cj-common-types.md#interface-length)|是|-|**命名参数** 右内边距<br>初始值：0.vp。|
-|bottom|?[Length](./cj-common-types.md#interface-length)|是|-|**命名参数** 下内边距<br>初始值：0.vp。|
-|left|?[Length](./cj-common-types.md#interface-length)|是|-|**命名参数** 左内边距<br>初始值：0.vp。|
+|top|?[Length](./cj-common-types.md#interface-length)|是|-|**命名参数。** 上内边距<br>初始值：0.vp。|
+|right|?[Length](./cj-common-types.md#interface-length)|是|-|**命名参数。** 右内边距<br>初始值：0.vp。|
+|bottom|?[Length](./cj-common-types.md#interface-length)|是|-|**命名参数。** 下内边距<br>初始值：0.vp。|
+|left|?[Length](./cj-common-types.md#interface-length)|是|-|**命名参数。** 左内边距<br>初始值：0.vp。|
 
 **返回值：**
 
@@ -172,10 +172,10 @@ func margin(top!: ?Length, right!: ?Length, bottom!: ?Length, left!: ?Length): T
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|top|?[Length](./cj-common-types.md#interface-length)|是|-|**命名参数** 上外边距<br>初始值：0.vp。|
-|right|?[Length](./cj-common-types.md#interface-length)|是|-|**命名参数** 右外边距<br>初始值：0.vp。|
-|bottom|?[Length](./cj-common-types.md#interface-length)|是|-|**命名参数** 下外边距<br>初始值：0.vp。|
-|left|?[Length](./cj-common-types.md#interface-length)|是|-|**命名参数** 左外边距<br>初始值：0.vp。|
+|top|?[Length](./cj-common-types.md#interface-length)|是|-|**命名参数。** 上外边距<br>初始值：0.vp。|
+|right|?[Length](./cj-common-types.md#interface-length)|是|-|**命名参数。** 右外边距<br>初始值：0.vp。|
+|bottom|?[Length](./cj-common-types.md#interface-length)|是|-|**命名参数。** 下外边距<br>初始值：0.vp。|
+|left|?[Length](./cj-common-types.md#interface-length)|是|-|**命名参数。** 左外边距<br>初始值：0.vp。|
 
 **返回值：**
 

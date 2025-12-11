@@ -198,7 +198,7 @@ public func fontSize(value: ?Length): This
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|value|?[Length](./cj-common-types.md#interface-length)|是|-|按钮文本大小。<br>初始值：18.fp。|
+|value|?[Length](./cj-common-types.md#interface-length)|是|-|按钮文本大小。<br/>当controlSize为ControlSize.NORMAL时，默认值为@r(sys.float.Body_L)。<br/>当controlSize为ControlSize.SMALL时，默认值为@r(sys.float.Body_S)。|
 
 ### func fontStyle(?FontStyle)
 

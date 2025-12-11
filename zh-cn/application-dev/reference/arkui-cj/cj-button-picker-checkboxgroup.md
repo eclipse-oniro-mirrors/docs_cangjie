@@ -183,6 +183,10 @@ public type OnCheckboxGroupChangeCallback = (CheckboxGroupResult) -> Unit
 
 **类型：** ([CheckboxGroupResult](#class-checkboxgroupresult)) -> Unit
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
+
 ## 示例代码
 
 ### 示例1（设置多选框群组）

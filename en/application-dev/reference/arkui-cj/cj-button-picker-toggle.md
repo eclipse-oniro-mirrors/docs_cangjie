@@ -10,7 +10,7 @@ import kit.ArkUI.*
 
 ## Child Components
 
-Child components are only allowed when ToggleType is ButtonType.
+Child components are only allowed when ToggleType is Button.
 
 ## Creating Components
 

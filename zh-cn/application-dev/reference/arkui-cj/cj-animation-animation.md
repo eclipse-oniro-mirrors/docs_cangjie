@@ -85,7 +85,6 @@ class EntryView {
     func build() {
         Column() {
             Button("change size")
-                .animation(animateOpt1)
                 .onClick({
                    evt =>
                     if (this.flag) {
@@ -100,13 +99,14 @@ class EntryView {
                 .margin(30)
                 .width(this.widthSize)
                 .height(this.heightSize)
+                .animation(animateOpt1)
             Button('change rotate angle')
-                .animation(animateOpt2)
                 .onClick({
                    evt => this.rotateAngle = 90.0
                 })
                 .margin(50)
                 .rotate(angle: this.rotateAngle)
+                .animation(animateOpt2)
         }
         .width(100.percent)
         .margin(top: 20)

@@ -367,7 +367,11 @@ public func onChange(event: ?(Int32) -> Unit): This
 
 **Function:** Triggered when the index of the currently displayed child component changes, returning the index value of the currently displayed child component.
 
-When using the Swiper component with LazyForEach, do not### class DotIndicator
+When using Swiper with LazyForEach, do not trigger UI refresh of child pages in the onChange event.
+
+## Basic Type Definitions
+
+### class DotIndicator
 
 ```cangjie
 public class DotIndicator <: Indicator {
@@ -473,10 +477,10 @@ public func mask(value: ?Bool): This
 |:---|:---|:---|:---|:---|
 | value | ?Bool | Yes | - | Sets whether to display the mask style for the dot navigation indicator of the Swiper component.<br>Initial value: false. |
 
-#### func maxDisplayCount(UInt32)
+#### func maxDisplayCount(?UInt32)
 
 ```cangjie
-public func maxDisplayCount(value: UInt32): This
+public func maxDisplayCount(value: ?UInt32): This
 ```
 
 **Function:** Sets the maximum number of navigation dots to display in dot navigation indicator mode.
@@ -491,7 +495,7 @@ This property does not take effect when the navigation dot component is used ind
 
 | Parameter | Type | Required | Default Value | Description |
 |:---|:---|:---|:---|:---|
-| value | UInt32 | Yes | - | Sets the maximum number of navigation dots to display in dot navigation indicator mode. When the actual number of navigation dots exceeds this value, an overflow effect style will be applied, as shown in Example 4.<br>Initial value: This property has no initial value. Invalid settings will result in no overflow effect.<br>Valid range: 6-9.<br> **Note:**<br>1. Overflow display scenarios currently do not support interactive functions (including touch, drag, mouse operations, etc.).<br>2. In overflow display scenarios, the position of the selected navigation dot corresponding to the middle page is not completely fixed and depends on the previous page-turning operation sequence.<br>3. Currently, only scenarios where `displayCount` is 1 are supported. |
+| value | ?UInt32 | Yes | - | Sets the maximum number of navigation dots to display in dot navigation indicator mode. When the actual number of navigation dots exceeds this value, an overflow effect style will be applied, as shown in Example 4.<br>Initial value: This property has no initial value. Invalid settings will result in no overflow effect.<br>Valid range: 6-9.<br> **Note:**<br>1. Overflow display scenarios currently do not support interactive functions (including touch, drag, mouse operations, etc.).<br>2. In overflow display scenarios, the position of the selected navigation dot corresponding to the middle page is not completely fixed and depends on the previous page-turning operation sequence.<br>3. Currently, only scenarios where `displayCount` is 1 are supported. |
 
 #### func selectedColor(?ResourceColor)
 

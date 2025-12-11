@@ -65,8 +65,8 @@ let genKeyProperties: Array<HuksParam> = [
         HuksParamValue.Uint32Value(HuksKeyPadding.HUKS_PADDING_PSS)
     ),
     HuksParam(
-        HuksTag.HUKS_TAG_KEY_GENERATE_TYPE,
-        HuksParamValue.Uint32Value(HuksKeyGenerateType.HUKS_KEY_GENERATE_TYPE_DEFAULT)
+        HuksTag.HUKS_TAG_KEY_GENERATION_TYPE,
+        HuksParamValue.Uint32Value(HuksKeyGenerationType.HUKS_KEY_GENERATE_TYPE_DEFAULT)
     ),
     HuksParam(
         HuksTag.HUKS_TAG_BLOCK_MODE,

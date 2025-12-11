@@ -139,7 +139,7 @@ public operator func [](index: Int64, value!: T): Unit
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
 | index | Int64 | Yes | - | Element index. |
-| value | T | No | - | **Named parameter.** The element value to set. |
+| value | T | Yes | - | **Named parameter.** The element value to set. |
 
 #### func isEmpty()
 

@@ -142,7 +142,7 @@ class EntryView {
 onWillDismiss: {
     dismissSheetAction: DismissSheetAction =>
         if (dismissSheetAction.reason == DismissReason.SlideDown) {
-            DismissSheetAction.dismiss() // 注册dismiss行为
+            dismissSheetAction.dismiss() // 注册dismiss行为
         }
 }
 ```

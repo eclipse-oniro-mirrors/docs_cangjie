@@ -106,7 +106,7 @@ public func opacity(value: Float64): This
 
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
-| value | Float64 | Yes | - | The opacity value, ranging from [0, 1], where 0 means fully transparent and 1 means fully opaque. |
+| value | Float64 | Yes | - | The opacity value, ranging from [0.0, 1.0], where 0.0 means fully transparent and 1.0 means fully opaque. |
 
 ## class PageTransitionEnter
 
@@ -470,6 +470,10 @@ public type PageTransitionCallback = (RouteType, Float64) -> Unit
 ```
 
 **Function:** Callback for reporting page transition events.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Initial Version:** 22
 
 **Type:** ([RouteType](#enum-routetype), Float64) -> Unit
 

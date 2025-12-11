@@ -1,4 +1,4 @@
-# ohos.resource_manager
+# ohos.resource_manager（资源管理）
 
 resource_manager模块，根据当前configuration：语言、区域、横竖屏、Mcc（移动国家码）和Mnc（移动网络码）、Device capability（设备类型）、Density（分辨率）提供获取应用资源对象读取接口。
 
@@ -354,62 +354,6 @@ try {
 }
 ```
 
-### func getBoolean(AppResource)
-
-```cangjie
-public func getBoolean(resource: AppResource): Bool
-```
-
-**功能：** 获取指定resource对象对应的布尔值，。
-
-**系统能力：** SystemCapability.Global.ResourceManager
-
-**起始版本：** 22
-
-**参数：**
-
-|参数名|类型|必填|默认值|说明|
-|:---|:---|:---|:---|:---|
-|resource|[AppResource](../LocalizationKit/cj-apis-resource.md#class-appresource)|是|-|资源信息。|
-
-**返回值：**
-
-|类型|说明|
-|:----|:----|
-|Bool|resource对象对应的布尔值。|
-
-**异常：**
-
-- BusinessException：对应错误码如下表，详见[资源管理错误码](./cj-errorcode-resource-manager.md)。
-
-  | 错误码ID | 错误信息 |
-  | :---- | :--- |
-  | 9001001 | Invalid resource ID.|
-  | 9001002 | No matching resource is found based on the resource ID.|
-  | 9001006 | The resource is referenced cyclically.|
-
-**示例：**
-
-<!-- compile -->
-
-```cangjie
-// index.cj
-
-import kit.LocalizationKit.*
-import ohos.arkui.state_macro_manage.*
-import ohos.business_exception.BusinessException
-import kit.PerformanceAnalysisKit.Hilog
-
-try {
-    let resourceManager = Global.abilityContext.resourceManager
-    let res = @r(app.boolean.test)
-    let resource = AppResource("com.example.myapplication", "entry", res.id)
-    let result = resourceManager.getBoolean(resource)
-} catch (e: BusinessException) {
-    Hilog.info(0, "test", "${e.message}")
-}
-```
-
 ### func getBooleanByName(String)
 
 ```cangjie
@@ -458,62 +402,6 @@ import kit.PerformanceAnalysisKit.Hilog
 try {
     let resourceManager = Global.abilityContext.resourceManager
     let result = resourceManager.getBooleanByName("test")
-} catch (e: BusinessException) {
-    Hilog.info(0, "test", "${e.message}")
-}
-```
-
-### func getColor(AppResource)
-
-```cangjie
-public func getColor(resource: AppResource): UInt32
-```
-
-**功能：** 获取指定resource对象对应的颜色值。
-
-**系统能力：** SystemCapability.Global.ResourceManager
-
-**起始版本：** 22
-
-**参数：**
-
-|参数名|类型|必填|默认值|说明|
-|:---|:---|:---|:---|:---|
-|resource|[AppResource](../LocalizationKit/cj-apis-resource.md#class-appresource)|是|-|资源信息。|
-
-**返回值：**
-
-|类型|说明|
-|:----|:----|
-|UInt32|resource对象对应的颜色值（十进制）。|
-
-**异常：**
-
-- BusinessException：对应错误码如下表，详见[资源管理错误码](./cj-errorcode-resource-manager.md)。
-
-  | 错误码ID | 错误信息 |
-  | :---- | :--- |
-  | 9001001 | Invalid resource ID. |
-  | 9001002 | No matching resource is found based on the resource ID. |
-  | 9001006 | The resource is referenced cyclically. |
-
-**示例：**
-
-<!-- compile -->
-
-```cangjie
-// index.cj
-
-import kit.LocalizationKit.*
-import ohos.arkui.state_macro_manage.*
-import ohos.business_exception.BusinessException
-import kit.PerformanceAnalysisKit.Hilog
-
-try {
-    let resourceManager = Global.abilityContext.resourceManager
-    let res = @r(app.color.test)
-    let resource = AppResource("com.example.myapplication", "entry", res.id)
-    let result = resourceManager.getColor(resource)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -908,62 +796,6 @@ try {
 }
 ```
 
-### func getMediaContent(AppResource, ?ScreenDensity)
-
-```cangjie
-public func getMediaContent(resource: AppResource, density!: ?ScreenDensity = None): Array<UInt8>
-```
-
-**功能：** 获取指定resource对象对应的默认或指定的屏幕密度媒体文件内容。
-
-**系统能力：** SystemCapability.Global.ResourceManager
-
-**起始版本：** 22
-
-**参数：**
-
-|参数名|类型|必填|默认值|说明|
-|:---|:---|:---|:---|:---|
-|resource|[AppResource](../LocalizationKit/cj-apis-resource.md#class-appresource)|是|-|资源信息。|
-|density|?[ScreenDensity](#enum-screendensity)|否|None|资源获取需要的屏幕密度，0或缺省表示默认屏幕密度。|
-
-**返回值：**
-
-|类型|说明|
-|:----|:----|
-|Array\<UInt8>|resource对象对应的媒体文件内容。|
-
-**异常：**
-
-- BusinessException：对应错误码如下表，详见[资源管理错误码](./cj-errorcode-resource-manager.md)。
-
-  | 错误码ID | 错误信息 |
-  | :---- | :--- |
-  | 9001001 | Invalid resource ID.|
-  | 9001002 | No matching resource is found based on the resource ID.|
-
-**示例：**
-
-<!-- compile -->
-
-```cangjie
-// index.cj
-
-import kit.LocalizationKit.*
-import ohos.arkui.state_macro_manage.*
-import ohos.business_exception.BusinessException
-import kit.PerformanceAnalysisKit.Hilog
-
-try {
-    let resourceManager = Global.abilityContext.resourceManager
-    let res = @r(app.media.test)
-    let resource = AppResource("com.example.myapplication", "entry", res.id)
-    resourceManager.getMediaContent(resource, density: ScreenSdpi)
-} catch (e: BusinessException) {
-    Hilog.info(0, "test", "${e.message}")
-}
-```
-
 ### func getMediaContentBase64(UInt32, ?ScreenDensity)
 
 ```cangjie
@@ -1014,62 +846,6 @@ try {
     let resourceManager = Global.abilityContext.resourceManager
     let res = @r(app.media.test)
     let code = resourceManager.getMediaContentBase64(res.id)
-} catch (e: BusinessException) {
-    Hilog.info(0, "test", "${e.message}")
-}
-```
-
-### func getMediaContentBase64(AppResource, ?ScreenDensity)
-
-```cangjie
-public func getMediaContentBase64(resource: AppResource, density!: ?ScreenDensity = None): String
-```
-
-**功能：** 获取指定resource对象对应的默认或指定的屏幕密度图片资源Base64编码。
-
-**系统能力：** SystemCapability.Global.ResourceManager
-
-**起始版本：** 22
-
-**参数：**
-
-|参数名|类型|必填|默认值|说明|
-|:---|:---|:---|:---|:---|
-|resource|[AppResource](../LocalizationKit/cj-apis-resource.md#class-appresource)|是|-|资源信息。|
-|density|?[ScreenDensity](#enum-screendensity)|否|None| **命名参数。** 资源获取需要的屏幕密度，0或缺省表示默认屏幕密度。|
-
-**返回值：**
-
-|类型|说明|
-|:----|:----|
-|String|resource对象对应的图片资源Base64编码。|
-
-**异常：**
-
-- BusinessException：对应错误码如下表，详见[资源管理错误码](./cj-errorcode-resource-manager.md)。
-
-  | 错误码ID | 错误信息 |
-  | :---- | :--- |
-  | 9001001 | Invalid resource ID.|
-  | 9001002 | No matching resource is found based on the resource ID.|
-
-**示例：**
-
-<!-- compile -->
-
-```cangjie
-// index.cj
-
-import kit.LocalizationKit.*
-import ohos.arkui.state_macro_manage.*
-import ohos.business_exception.BusinessException
-import kit.PerformanceAnalysisKit.Hilog
-
-try {
-    let resourceManager = Global.abilityContext.resourceManager
-    let res = @r(app.media.test)
-    let resource = AppResource("com.example.myapplication", "entry", res.id)
-    let code = resourceManager.getMediaContentBase64(resource)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -1126,68 +902,6 @@ try {
     let resourceManager = Global.abilityContext.resourceManager
     let res = @r(app.integer.test)
     let number = resourceManager.getNumber(res.id)
-    match (number) {
-        case Int32Value(v) => Hilog.info(0, "test", v.toString(), "")
-        case Float32Value(v) => Hilog.info(0, "test", v.toString(), "")
-        case _ => throw IllegalArgumentException("The type is not supported.")
-    }
-} catch (e: BusinessException) {
-    Hilog.info(0, "test", "${e.message}")
-}
-```
-
-### func getNumber(AppResource)
-
-```cangjie
-public func getNumber(resource: AppResource): NumberValueType
-```
-
-**功能：** 获取指定resource对象对应的integer数值或者float数值。
-
-**系统能力：** SystemCapability.Global.ResourceManager
-
-**起始版本：** 22
-
-**参数：**
-
-|参数名|类型|必填|默认值|说明|
-|:---|:---|:---|:---|:---|
-|resource|[AppResource](../LocalizationKit/cj-apis-resource.md#class-appresource)|是|-|资源信息。|
-
-**返回值：**
-
-|类型|说明|
-|:----|:----|
-|[NumberValueType](#enum-numbervaluetype)|resource对象对应的数值。<br>integer对应的是原数值，float不带单位时对应的是原数值，带"vp","fp"单位时对应的是px值。|
-
-**异常：**
-
-- BusinessException：对应错误码如下表，详见[资源管理错误码](./cj-errorcode-resource-manager.md)。
-
-  | 错误码ID | 错误信息 |
-  | :---- | :--- |
-  | 9001001 | Invalid resource ID.|
-  | 9001002 | No matching resource is found based on the resource ID.|
-  | 9001006 | The resource is referenced cyclically.|
-
-**示例：**
-
-<!-- compile -->
-
-```cangjie
-// index.cj
-
-import kit.LocalizationKit.*
-import kit.PerformanceAnalysisKit.*
-import ohos.arkui.state_macro_manage.*
-import ohos.business_exception.BusinessException
-import kit.PerformanceAnalysisKit.Hilog
-
-try {
-    let resourceManager = Global.abilityContext.resourceManager
-    let res = @r(app.integer.test)
-    let resource = AppResource("com.example.myapplication", "entry", res.id)
-    let number = resourceManager.getNumber(resource)
     match (number) {
         case Int32Value(v) => Hilog.info(0, "test", v.toString(), "")
         case Float32Value(v) => Hilog.info(0, "test", v.toString(), "")
@@ -1371,67 +1085,6 @@ try {
     let resourceManager = Global.abilityContext.resourceManager
     let res = @r(app.plural.test)
     let result = resourceManager.getPluralStringValue(res.id, 1)
-} catch (e: BusinessException) {
-    Hilog.info(0, "test", "${e.message}")
-}
-```
-
-### func getPluralStringValue(AppResource, Int64)
-
-```cangjie
-public func getPluralStringValue(resource: AppResource, num: Int64): String
-```
-
-**功能：** 获取指定资源信息，指定资源数量的单复数字符串。
-
-> **说明**
->
-> 中文环境下，字符串不区分单复数；其他语言环境下，字符串区分单复数，具体规则参考[语言单复数规则](https://www.unicode.org/cldr/charts/45/supplemental/language_plural_rules.html)。
-
-**系统能力：** SystemCapability.Global.ResourceManager
-
-**起始版本：** 22
-
-**参数：**
-
-|参数名|类型|必填|默认值|说明|
-|:---|:---|:---|:---|:---|
-|resource|[AppResource](../LocalizationKit/cj-apis-resource.md#class-appresource)|是|-|资源信息。|
-|num|Int64|是|-|数量值。根据当前语言的复数规则获取该数量值对应的字符串数字，语言的复数规则参见[语言单复数规则](https://www.unicode.org/cldr/charts/45/supplemental/language_plural_rules.html)。|
-
-**返回值：**
-
-|类型|说明|
-|:----|:----|
-|String|根据指定数量获取指定resource对象表示的单复数字符串。|
-
-**异常：**
-
-- BusinessException：对应错误码如下表，详见[资源管理错误码](./cj-errorcode-resource-manager.md)。
-
-  | 错误码ID | 错误信息 |
-  | :---- | :--- |
-  | 9001001 | Invalid resource ID.|
-  | 9001002 | No matching resource is found based on the resource ID.|
-  | 9001006 | The resource is referenced cyclically.|
-
-**示例：**
-
-<!-- compile -->
-
-```cangjie
-// index.cj
-
-import kit.LocalizationKit.*
-import ohos.arkui.state_macro_manage.*
-import ohos.business_exception.BusinessException
-import kit.PerformanceAnalysisKit.Hilog
-
-try {
-    let resourceManager = Global.abilityContext.resourceManager
-    let res = @r(app.plural.test)
-    let resource = AppResource("com.example.myapplication", "entry", res.id)
-    let result = resourceManager.getPluralStringValue(resource, 1)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -1657,63 +1310,6 @@ try {
 }
 ```
 
-### func getString(AppResource, Array\<ArgsValueType>)
-
-```cangjie
-public func getString(resource: AppResource, args: Array<ArgsValueType>): String
-```
-
-**功能：** 获取指定resource对象对应的字符串，并根据args参数对字符串进行格式化。
-
-**系统能力：** SystemCapability.Global.ResourceManager
-
-**起始版本：** 22
-
-**参数：**
-
-|参数名|类型|必填|默认值|说明|
-|:---|:---|:---|:---|:---|
-|resource|[AppResource](../LocalizationKit/cj-apis-resource.md#class-appresource)|是|-|资源信息。|
-|args|Array\<[ArgsValueType](#enum-argsvaluetype)>|是|-|格式化字符串资源参数。<br>支持参数类型：`%d`、`%f`、`%s`、`%%`、`%数字$d`、`%数字$f`、`%数字$s`。<br>说明：`%%`转义为`%`; `%数字$d`中的数字表示使用args中的第几个参数。<br>举例：`%%d`格式化后为`%d`字符串; `%1$d`表示使用第一个参数。|
-
-**返回值：**
-
-|类型|说明|
-|:----|:----|
-|String|resource对象对应的格式化字符串。|
-
-**异常：**
-
-- BusinessException：对应错误码如下表，详见[资源管理错误码](./cj-errorcode-resource-manager.md)。
-
-  | 错误码ID | 错误信息 |
-  | :---- | :--- |
-  | 9001001 | Invalid resource ID.|
-  | 9001002 | No matching resource is found based on the resource ID.|
-  | 9001006 | The resource is referenced cyclically.|
-  | 9001007 | Failed to format the resource obtained based on the resource ID.|
-
-**示例：**
-
-<!-- compile -->
-
-```cangjie
-// index.cj
-
-import kit.LocalizationKit.*
-import ohos.arkui.state_macro_manage.*
-import ohos.business_exception.BusinessException
-import kit.PerformanceAnalysisKit.Hilog
-
-try {
-    let resourceManager = Global.abilityContext.resourceManager
-    let resource = @r(app.string.test)
-    let result = resourceManager.getString(resource.id, ArgsValueType.StringValue("format string"), ArgsValueType.Int32Value(10), ArgsValueType.Float32Value(98.78))
-} catch (e: BusinessException) {
-    Hilog.info(0, "test", "${e.message}")
-}
-```
-
 ### func getStringArrayByName(String)
 
 ```cangjie
@@ -1817,62 +1413,6 @@ try {
     let resourceManager = Global.abilityContext.resourceManager
     let res = @r(app.strarray.test)
     let result = resourceManager.getStringArrayValue(res.id)
-} catch (e: BusinessException) {
-    Hilog.info(0, "test", "${e.message}")
-}
-```
-
-### func getStringArrayValue(AppResource)
-
-```cangjie
-public func getStringArrayValue(resource: AppResource): Array<String>
-```
-
-**功能：** 获取指定resource对象对应的字符串数组。
-
-**系统能力：** SystemCapability.Global.ResourceManager
-
-**起始版本：** 22
-
-**参数：**
-
-|参数名|类型|必填|默认值|说明|
-|:---|:---|:---|:---|:---|
-|resource|[AppResource](../LocalizationKit/cj-apis-resource.md#class-appresource)|是|-|资源信息。|
-
-**返回值：**
-
-|类型|说明|
-|:----|:----|
-|Array\<String>|resource对象对应的字符串数组。|
-
-**异常：**
-
-- BusinessException：对应错误码如下表，详见[资源管理错误码](./cj-errorcode-resource-manager.md)。
-
-  | 错误码ID | 错误信息 |
-  | :---- | :--- |
-  | 9001001 | Invalid resource ID.|
-  | 9001002 | No matching resource is found based on the resource ID.|
-  | 9001006 | The resource is referenced cyclically.|
-
-**示例：**
-
-<!-- compile -->
-
-```cangjie
-// index.cj
-
-import kit.LocalizationKit.*
-import ohos.arkui.state_macro_manage.*
-import ohos.business_exception.BusinessException
-import kit.PerformanceAnalysisKit.Hilog
-
-try {
-    let resourceManager = Global.abilityContext.resourceManager
-    let res = @r(app.strarray.test)
-    let resource = AppResource("com.example.myapplication", "entry", res.id)
-    let result = resourceManager.getStringArrayValue(resource)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }

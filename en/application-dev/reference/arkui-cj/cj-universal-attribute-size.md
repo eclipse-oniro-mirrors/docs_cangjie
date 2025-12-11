@@ -72,8 +72,8 @@ func size(width!: ?Length, height!: ?Length): T
 
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
-| width | ?[Length](./cj-common-types.md#interface-length) | Yes | - | **Named parameter** Component width<br>Initial value: 0.0.vp. |
-| height | ?[Length](./cj-common-types.md#interface-length) | Yes | - | **Named parameter** Component height<br>Initial value: 0.0.vp. |
+| width | ?[Length](./cj-common-types.md#interface-length) | Yes | - | **Named parameter.** Component width<br>Initial value: 0.0.vp. |
+| height | ?[Length](./cj-common-types.md#interface-length) | Yes | - | **Named parameter.** Component height<br>Initial value: 0.0.vp. |
 
 **Return Value:**
 
@@ -121,10 +121,10 @@ func padding(top!: ?Length, right!: ?Length, bottom!: ?Length, left!: ?Length): 
 
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
-| top | ?[Length](./cj-common-types.md#interface-length) | Yes | - | **Named parameter** Top padding<br>Initial value: 0.vp. |
-| right | ?[Length](./cj-common-types.md#interface-length) | Yes | - | **Named parameter** Right padding<br>Initial value: 0.vp. |
-| bottom | ?[Length](./cj-common-types.md#interface-length) | Yes | - | **Named parameter** Bottom padding<br>Initial value: 0.vp. |
-| left | ?[Length](./cj-common-types.md#interface-length) | Yes | - | **Named parameter** Left padding<br>Initial value: 0.vp. |
+| top | ?[Length](./cj-common-types.md#interface-length) | Yes | - | **Named parameter.** Top padding<br>Initial value: 0.vp. |
+| right | ?[Length](./cj-common-types.md#interface-length) | Yes | - | **Named parameter.** Right padding<br>Initial value: 0.vp. |
+| bottom | ?[Length](./cj-common-types.md#interface-length) | Yes | - | **Named parameter.** Bottom padding<br>Initial value: 0.vp. |
+| left | ?[Length](./cj-common-types.md#interface-length) | Yes | - | **Named parameter.** Left padding<br>Initial value: 0.vp. |
 
 **Return Value:**
 
@@ -172,10 +172,10 @@ func margin(top!: ?Length, right!: ?Length, bottom!: ?Length, left!: ?Length): T
 
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
-| top | ?[Length](./cj-common-types.md#interface-length) | Yes | - | **Named parameter** Top margin<br>Initial value: 0.vp. |
-| right | ?[Length](./cj-common-types.md#interface-length) | Yes | - | **Named parameter** Right margin<br>Initial value: 0.vp. |
-| bottom | ?[Length](./cj-common-types.md#interface-length) | Yes | - | **Named parameter** Bottom margin<br>Initial value: 0.vp. |
-| left | ?[Length](./cj-common-types.md#interface-length) | Yes | - | **Named parameter** Left margin<br>Initial value: 0.vp. |
+| top | ?[Length](./cj-common-types.md#interface-length) | Yes | - | **Named parameter.** Top margin<br>Initial value: 0.vp. |
+| right | ?[Length](./cj-common-types.md#interface-length) | Yes | - | **Named parameter.** Right margin<br>Initial value: 0.vp. |
+| bottom | ?[Length](./cj-common-types.md#interface-length) | Yes | - | **Named parameter.** Bottom margin<br>Initial value: 0.vp. |
+| left | ?[Length](./cj-common-types.md#interface-length) | Yes | - | **Named parameter.** Left margin<br>Initial value: 0.vp. |
 
 **Return Value:**
 

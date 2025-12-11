@@ -81,8 +81,6 @@ public func onChange(callback: ?(Bool) -> Unit): This
 
 ## 示例代码
 
-该示例通过配置checkedBackgroundColor实现自定义单选框的底板颜色。
-
 <!-- run -->
 
 ```cangjie

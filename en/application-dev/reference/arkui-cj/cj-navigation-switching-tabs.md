@@ -39,10 +39,10 @@ public init(
 
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
-| barPosition | ?[BarPosition](./cj-common-types.md#enum-barposition) | No | None | **Named parameter** Sets the position of the Tabs bar.<br> Initial value: BarPosition.Start |
-| controller | ?[TabsController](#class-tabscontroller) | No | None | **Named parameter** Sets the Tabs controller.<br> Initial value: TabsController() |
-| index | ?Int32 | No | None | **Named parameter** Sets the index of the currently displayed tab.<br> Initial value: 0 <br> **Note:**<br> Values less than 0 will default to the initial value. Valid range: [0, number of TabContent child nodes - 1]. Directly modifying the index to switch tabs will not trigger the transition animation. Using TabController's changeIndex will enable the transition animation by default, which can be disabled by setting animationDuration to 0. |
-| child | () -> Unit | No | {=>} | **Named parameter** Declares the child components within the container. |
+| barPosition | ?[BarPosition](./cj-common-types.md#enum-barposition) | No | None | **Named parameter.** Sets the position of the Tabs bar.<br> Initial value: BarPosition.Start |
+| controller | ?[TabsController](#class-tabscontroller) | No | None | **Named parameter.** Sets the Tabs controller.<br> Initial value: TabsController() |
+| index | ?Int32 | No | None | **Named parameter.** Sets the index of the currently displayed tab.<br> Initial value: 0 <br> **Note:**<br> Values less than 0 will default to the initial value. Valid range: [0, number of TabContent child nodes - 1]. Directly modifying the index to switch tabs will not trigger the transition animation. Using TabController's changeIndex will enable the transition animation by default, which can be disabled by setting animationDuration to 0. |
+| child | () -> Unit | No | {=>} | **Named parameter.** Declares the child components within the container. |
 
 ## Common Attributes/Events
 

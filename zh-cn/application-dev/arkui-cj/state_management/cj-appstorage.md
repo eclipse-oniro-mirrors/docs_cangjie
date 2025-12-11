@@ -240,6 +240,7 @@ import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
 import ohos.resource_manager.AppResource
 import kit.PerformanceAnalysisKit.Hilog
+import ohos.resource.__GenerateResource__
 
 class ViewData {
     var title: String

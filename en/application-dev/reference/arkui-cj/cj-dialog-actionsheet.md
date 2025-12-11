@@ -17,8 +17,8 @@ public class SheetInfo {
     public var icon: ?ResourceStr
     public init(
         title!: ?ResourceStr,
-        action!: ?VoidCallback,
-        icon!: ?ResourceStr = None
+        icon!: ?ResourceStr = None,
+        action!: ?VoidCallback
     )
 }
 ```
@@ -77,13 +77,13 @@ public var title: ?ResourceStr
 
 **Since:** 22
 
-### init(?ResourceStr, ?VoidCallback, ?ResourceStr)
+### init(?ResourceStr, ?ResourceStr, ?VoidCallback)
 
 ```cangjie
 public init(
     title!: ?ResourceStr,
-    action!: ?VoidCallback,
-    icon!: ?ResourceStr = None
+    icon!: ?ResourceStr = None,
+    action!: ?VoidCallback
 )
 ```
 
@@ -98,8 +98,8 @@ public init(
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
 | title | ?[ResourceStr](./cj-common-types.md#interface-resourcestr) | Yes | - | **Named parameter.** Text content of the option.<br/>A scrollbar appears when the text is too long. |
-| action | ?[VoidCallback](./cj-common-types.md#type-voidcallback) | Yes | - | **Named parameter.** Callback when the option is selected. |
 | icon | ?[ResourceStr](./cj-common-types.md#interface-resourcestr) | No | None | **Named parameter.** Icon for the option. No icon is displayed by default.<br/>The string format can be used to load network and local images, commonly used for network images. When referencing local images with relative paths, e.g., Image("common/test.jpg"). |
+| action | ?[VoidCallback](./cj-common-types.md#type-voidcallback) | Yes | - | **Named parameter.** Callback when the option is selected. |
 
 ## class ActionSheetButtonOptions
 
@@ -398,12 +398,12 @@ public class ActionSheetOptions {
     public var transition: ?TransitionEffect
     public init(
         title!: ?ResourceStr,
-        message!: ?ResourceStr,
-        sheets!: ?Array<SheetInfo>,
         subtitle!: ?ResourceStr = None,
+        message!: ?ResourceStr,
         confirm!: ?ActionSheetButtonOptions = None,
-        autoCancel!: ?Bool = None,
         cancel!: ?VoidCallback = None,
+        sheets!: ?Array<SheetInfo>,
+        autoCancel!: ?Bool = None,
         alignment!: ?DialogAlignment = None,
         offset!: ?ActionSheetOffset = None,
         maskRect!: ?Rectangle = None,
@@ -412,14 +412,14 @@ public class ActionSheetOptions {
         backgroundColor!: ?ResourceColor = None,
         backgroundBlurStyle!: ?BlurStyle = None,
         onWillDismiss!: ?Callback<DismissDialogAction, Unit> = None,
+        transition!: ?TransitionEffect = None,
         cornerRadius!: ?BorderRadiuses = None,
+        width!: ?Length = None,
+        height!: ?Length = None,
         borderWidth!: ?Length = None,
         borderColor!: ?ResourceColor = None,
         borderStyle!: ?EdgeStyles = None,
-        width!: ?Length = None,
-        height!: ?Length = None,
-        shadow!: ?ShadowOptions = None,
-        transition!: ?TransitionEffect = None
+        shadow!: ?ShadowOptions = None
     )
 }
 ```
@@ -796,17 +796,17 @@ public var width: ?Length
 
 **Since:** 22
 
-### init(?ResourceStr, ?ResourceStr, ?Array\<SheetInfo>, ?ResourceStr, ?ActionSheetButtonOptions, ?Bool, ?VoidCallback, ?DialogAlignment, ?ActionSheetOffset, ?Rectangle, ?Bool, ?Bool, ?ResourceColor, ?BlurStyle, ?Callback\<DismissDialogAction, Unit>, ?BorderRadiuses, ?Length, ?ResourceColor, ?EdgeStyles, ?Length, ?Length, ?ShadowOptions, ?TransitionEffect)
+### init(?ResourceStr, ?ResourceStr, ?ResourceStr, ?ActionSheetButtonOptions, ?VoidCallback, ?Array\<SheetInfo>, ?Bool, ?DialogAlignment, ?ActionSheetOffset, ?Rectangle, ?Bool, ?Bool, ?ResourceColor, ?BlurStyle, ?Callback\<DismissDialogAction, Unit>, ?TransitionEffect, ?BorderRadiuses, ?Length, ?Length, ?Length, ?ResourceColor, ?EdgeStyles, ?ShadowOptions)
 
 ```cangjie
 public init(
     title!: ?ResourceStr,
-    message!: ?ResourceStr,
-    sheets!: ?Array<SheetInfo>,
     subtitle!: ?ResourceStr = None,
+    message!: ?ResourceStr,
     confirm!: ?ActionSheetButtonOptions = None,
-    autoCancel!: ?Bool = None,
     cancel!: ?VoidCallback = None,
+    sheets!: ?Array<SheetInfo>,
+    autoCancel!: ?Bool = None,
     alignment!: ?DialogAlignment = None,
     offset!: ?ActionSheetOffset = None,
     maskRect!: ?Rectangle = None,
@@ -815,14 +815,14 @@ public init(
     backgroundColor!: ?ResourceColor = None,
     backgroundBlurStyle!: ?BlurStyle = None,
     onWillDismiss!: ?Callback<DismissDialogAction, Unit> = None,
+    transition!: ?TransitionEffect = None,
     cornerRadius!: ?BorderRadiuses = None,
+    width!: ?Length = None,
+    height!: ?Length = None,
     borderWidth!: ?Length = None,
     borderColor!: ?ResourceColor = None,
     borderStyle!: ?EdgeStyles = None,
-    width!: ?Length = None,
-    height!: ?Length = None,
-    shadow!: ?ShadowOptions = None,
-    transition!: ?TransitionEffect = None
+    shadow!: ?ShadowOptions = None
 )
 ```
 
@@ -835,12 +835,12 @@ public init(
 | Parameter Name | Type | Required | Default Value | Description |  
 |:---|:---|:---|:---|:---|  
 | title | ?[ResourceStr](./cj-common-types.md#interface-resourcestr) | Yes | - | **Named parameter.** Popup title. <br/>When the text content is too long to display, an ellipsis replaces the hidden portion. |  
-| message | ?[ResourceStr](./cj-common-types.md#interface-resourcestr) | Yes | - | **Named parameter.** Popup content. <br/>A scrollbar is triggered when the text exceeds the display limit. |  
-| sheets | ?Array\<[SheetInfo](#class-sheetinfo)> | Yes | - | **Named parameter.** Sets the option content, where each selection supports configuring an image, text, and selection callback. |  
 | subtitle | ?[ResourceStr](./cj-common-types.md#interface-resourcestr) | No | None | **Named parameter.** Popup subtitle. <br/>When the text content is too long to display, an ellipsis replaces the hidden portion. |  
+| message | ?[ResourceStr](./cj-common-types.md#interface-resourcestr) | Yes | - | **Named parameter.** Popup content. <br/>A scrollbar is triggered when the text exceeds the display limit. |  
 | confirm | ?[ActionSheetButtonOptions](#class-actionsheetbuttonoptions) | No | None | **Named parameter.** Configures the enabled state, default focus, button style, text content, and click callback for the confirmation button. When the popup gains focus and no tab navigation is performed, this button responds to the Enter key by default, and multiple popups can gain focus consecutively for continuous response. The default Enter key response does not take effect when `defaultFocus` is true. <br/>`enabled`: Whether the button responds to clicks. `true` means the button is responsive; `false` means it is not. <br/>Default: `true`. <br/>`defaultFocus`: Sets whether the button is the default focus. `true` means it is the default focus; `false` means it is not. <br/>Default: `false`. <br/>`style`: Sets the button's style. <br/>Default: `DialogButtonStyle.DEFAULT`. <br/>`value`: Button text content. When the text is too long to display, an ellipsis replaces the hidden portion. <br/>`action`: Callback when the button is selected. |  
-| autoCancel | ?Bool | No | None | **Named parameter.** Whether the popup closes when clicking the overlay. <br/>If `true`, clicking the overlay closes the popup; if `false`, it does not. |  
-| cancel | ?[VoidCallback](./cj-common-types.md#type-voidcallback) | No | None | **Named parameter.** Callback when the popup is closed by clicking the overlay. |  
+| cancel | ?[VoidCallback](./cj-common-types.md#type-voidcallback) | No | None | **Named parameter.** Callback when the popup is closed by clicking the overlay. |
+| sheets | ?Array\<[SheetInfo](#class-sheetinfo)> | Yes | - | **Named parameter.** Sets the option content, where each selection supports configuring an image, text, and selection callback. |   
+| autoCancel | ?Bool | No | None | **Named parameter.** Whether the popup closes when clicking the overlay. <br/>If `true`, clicking the overlay closes the popup; if `false`, it does not. |   
 | alignment | ?[DialogAlignment](./cj-common-types.md#enum-dialogalignment) | No | None | **Named parameter.** Vertical alignment of the popup. |  
 | offset | ?[ActionSheetOffset](#class-actionsheetoffset) | No | None | **Named parameter.** Offset of the popup relative to the `alignment` position. |  
 | maskRect | ?[Rectangle](./cj-common-types.md#class-rectangle) | No | None | **Named parameter.** Overlay area of the popup. Events within this area are blocked, while events outside are passed through. <br>**Note:**<br> `maskRect` does not take effect when `showInSubWindow` is `true`. |  
@@ -849,11 +849,11 @@ public init(
 | backgroundColor | ?[ResourceColor](./cj-common-types.md#interface-resourcecolor) | No | None | **Named parameter.** Background color of the popup. <br>**Note:**<br> When `backgroundColor` is set to a non-transparent color, `backgroundBlurStyle` must be set to `BlurStyle.NONE`; otherwise, the color display may not meet expectations. |  
 | backgroundBlurStyle | ?[BlurStyle](./cj-common-types.md#enum-blurstyle) | No | None | **Named parameter.** Blur material for the popup background. <br>**Note:**<br> Set to `BlurStyle.NONE` to disable background blurring. When `backgroundBlurStyle` is set to a non-`NONE` value, do not set `backgroundColor`; otherwise, the color display may not meet expectations. |  
 | onWillDismiss | ?[Callback](./cj-common-types.md#type-callbackt-v)\<[DismissDialogAction](#class-dismissdialogaction), Unit> | No | None | **Named parameter.** Interactive close callback function. <br>**Note:**<br> 1. When the user performs actions to close the popup (e.g., clicking the overlay, swiping left/right, pressing the back button, or pressing ESC), if this callback is registered, the popup will not close immediately. The callback can determine whether to allow closing based on the `reason` parameter, which indicates the operation type that triggered the close attempt. The current component does not support the `CLOSE_BUTTON` enum value in `reason`. <br> 2. The `onWillDismiss` callback cannot intercept itself. |  
+| transition | ?[TransitionEffect](./cj-animation-transition.md#class-transitioneffect) | No | None | **Named parameter.** Sets the transition effect for popup display and exit. <br>**Note:**<br> 1. If not set, the default display/exit animation is used. <br>2. Pressing the back key during the display animation interrupts it and triggers the exit animation, resulting in a combined effect of both animations. <br>3. Pressing the back key during the exit animation does not interrupt it; the animation continues, and pressing back again exits the application. |
 | cornerRadius | ?[BorderRadiuses](./cj-common-types.md#class-borderradiuses) | No | None | **Named parameter.** Sets the corner radius of the background. The radius of each corner can be configured separately. <br>The maximum corner radius is limited by the component dimensions and cannot exceed half the width or height. Negative values are treated as defaults. <br>Percentage parameter: Sets the corner radius as a percentage of the parent popup's width and height. |  
+| width | ?[Length](./cj-common-types.md#interface-length) | No | None | **Named parameter.** Sets the width of the popup background. <br>**Note:**<br>1. The default maximum popup width is `400.vp`. <br>2. Percentage parameter: The reference width is the window width, which can be adjusted up or down. |  
+| height | ?[Length](./cj-common-types.md#interface-length) | No | None | **Named parameter.** Sets the height of the popup background. <br>**Note:**<br>1. The default maximum popup height is `0.9 * (window height - safe area)`. <br>2. Percentage parameter: The reference height is `(window height - safe area)`, which can be adjusted up or down. |  
 | borderWidth | ?[Length](./cj-common-types.md#interface-length) | No | None | **Named parameter.** Sets the border width of the popup background. <br>Percentage parameter: Sets the border width as a percentage of the parent popup's width and height. <br>If the left/right border exceeds the popup width or the top/bottom border exceeds the popup height, the display may not meet expectations. |  
 | borderColor | ?[ResourceColor](./cj-common-types.md#interface-resourcecolor) | No | None | **Named parameter.** Sets the border color of the popup background. If `borderColor` is used, it must be paired with `borderWidth`. |  
 | borderStyle | ?[EdgeStyles](./cj-common-types.md#class-edgestyles) | No | None | **Named parameter.** Sets the border style of the popup background. If `borderStyle` is used, it must be paired with `borderWidth`. |  
-| width | ?[Length](./cj-common-types.md#interface-length) | No | None | **Named parameter.** Sets the width of the popup background. <br>**Note:**<br>1. The default maximum popup width is `400.vp`. <br>2. Percentage parameter: The reference width is the window width, which can be adjusted up or down. |  
-| height | ?[Length](./cj-common-types.md#interface-length) | No | None | **Named parameter.** Sets the height of the popup background. <br>**Note:**<br>1. The default maximum popup height is `0.9 * (window height - safe area)`. <br>2. Percentage parameter: The reference height is `(window height - safe area)`, which can be adjusted up or down. |  
 | shadow | ?[ShadowOptions](./cj-common-types.md#class-shadowoptions) | No | None | **Named parameter.** Sets the shadow of the popup background. |  
-| transition | ?[TransitionEffect](./cj-animation-transition.md#class-transitioneffect) | No | None | **Named parameter.** Sets the transition effect for popup display and exit. <br>**Note:**<br> 1. If not set, the default display/exit animation is used. <br>2. Pressing the back key during the display animation interrupts it and triggers the exit animation, resulting in a combined effect of both animations. <br>3. Pressing the back key during the exit animation does not interrupt it; the animation continues, and pressing back again exits the application. |

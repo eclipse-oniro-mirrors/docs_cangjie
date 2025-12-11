@@ -35,7 +35,7 @@ public init(child!: () -> Unit = { => })
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|child|() -> Unit|否|{ => }|**命名参数** Navigation容器的子组件。|
+|child|() -> Unit|否|{ => }|**命名参数。** Navigation容器的子组件。|
 
 ### init(?NavPathStack, () -> Unit)
 
@@ -54,7 +54,7 @@ public init(pathInfos: ?NavPathStack, child!: () -> Unit = { => })
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |pathInfos|?[NavPathStack](#class-navpathstack)|是|- |绑定到Navigation组件的路由栈。|
-|child|() -> Unit|否|{ => }|**命名参数** Navigation容器的子组件。|
+|child|() -> Unit|否|{ => }|**命名参数。** Navigation容器的子组件。|
 
 ## 通用属性/通用事件
 
@@ -81,7 +81,7 @@ public func hideTitleBar(hide: ?Bool, animated!: ?Bool = None): This
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |hide|?Bool|是|-|是否隐藏标题栏。初始值：false。|
-|animated|?Bool|否|None|**命名参数** 是否使用动画显隐标题栏。初始值：false。|
+|animated|?Bool|否|None|**命名参数。** 是否使用动画显隐标题栏。初始值：false。|
 
 ### func navDestination(?(String, Any) -> Unit)
 
@@ -118,7 +118,7 @@ public func title(value: ?CustomBuilder, options!: ?NavigationTitleOptions = Non
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |value|?[CustomBuilder](./cj-common-types.md#type-custombuilder)|是|-|页面标题。初始值：{ => }。|
-|options|?[NavigationTitleOptions](#class-navigationtitleoptions)|否|None|**命名参数** 标题栏选项。|
+|options|?[NavigationTitleOptions](#class-navigationtitleoptions)|否|None|**命名参数。** 标题栏选项。|
 
 ### func title(?ResourceStr, ?NavigationTitleOptions)
 
@@ -137,7 +137,7 @@ public func title(value: ?ResourceStr, options!: ?NavigationTitleOptions = None)
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |value|?[ResourceStr](./cj-common-types.md#interface-resourcestr)|是|-|页面标题。初始值：""。|
-|options|?[NavigationTitleOptions](#class-navigationtitleoptions)|否|None|**命名参数** 标题栏选项。|
+|options|?[NavigationTitleOptions](#class-navigationtitleoptions)|否|None|**命名参数。** 标题栏选项。|
 
 ## 基础类型定义
 
@@ -412,9 +412,9 @@ public init(name！: ?String, param！: ?String, onPop！: ?Callback<PopInfo, Un
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|name|?String|是|-|**命名参数** NavDestination的名称。初始值：""。|
-|param|?String|是|-|**命名参数** NavDestination的详细参数。初始值：""。|
-|onPop|?[Callback](./cj-common-types.md#type-callbackt-v)\<[PopInfo](#class-popinfo), Unit>|否|None|**命名参数**  NavDestination页面触发pop时的回调函数。|
+|name|?String|是|-|**命名参数。** NavDestination的名称。初始值：""。|
+|param|?String|是|-|**命名参数。** NavDestination的详细参数。初始值：""。|
+|onPop|?[Callback](./cj-common-types.md#type-callbackt-v)\<[PopInfo](#class-popinfo), Unit>|否|None|**命名参数。**  NavDestination页面触发pop时的回调函数。|
 
 ### class NavPathStack
 
@@ -458,7 +458,7 @@ public func pop(animated!: ?Bool = None): ?NavPathInfo
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|animated|?Bool|否|None|**命名参数** 是否支持过渡动画。初始值：true。|
+|animated|?Bool|否|None|**命名参数。** 是否支持过渡动画。初始值：true。|
 
 **返回值：**
 
@@ -483,7 +483,7 @@ public func pushPath(info: ?NavPathInfo, options!: ?NavigationOptions = None): U
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |info|?[NavPathInfo](#class-navpathinfo)|是|-|要推入的NavDestination。|
-|options|?[NavigationOptions](#class-navigationoptions)|否|None|**命名参数**  导航选项。|
+|options|?[NavigationOptions](#class-navigationoptions)|否|None|**命名参数。**  导航选项。|
 
 #### func pushPathByName(?String, ?String, ?Bool)
 
@@ -503,7 +503,7 @@ public func pushPathByName(name: ?String, param: ?String, animated!: ?Bool = Non
 |:---|:---|:---|:---|:---|
 |name|?String|是|-|要推入的NavDestination的名称。初始值：""。|
 |param|?String|是|-|要推入的NavDestination的详细参数。初始值：""。|
-|animated|?Bool|否|None|**命名参数** 是否支持过渡动画。|
+|animated|?Bool|否|None|**命名参数。** 是否支持过渡动画。|
 
 ### class PopInfo
 

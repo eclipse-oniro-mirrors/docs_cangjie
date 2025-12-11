@@ -452,9 +452,9 @@ class EntryView {
                         item: AppResource, index: Int64 => Row {
                             Image(item)
                                 .width(100.percent)
+                                .bindContextMenu(builder: this.myMenu, responseType: ResponseType.LongPress)
                         }
                         .padding(top: 20.vp, bottom: 20.vp, left: 10.vp, right: 10.vp)
-                        .bindContextMenu(builder: this.myMenu, responseType: ResponseType.LongPress)
                     }
                 )
             }
@@ -465,7 +465,7 @@ class EntryView {
 }
 ```
 
-![bindContextMenu1](figures/chakantupian.jpg)
+![bindContextMenu1](figures/chakantupian.gif)
 
 ## 使用bindPopUp实现气泡弹窗效果
 

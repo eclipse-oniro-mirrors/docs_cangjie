@@ -47,7 +47,7 @@ public var authResults: Array<Int32>
 
 - 2：未授权，表示请求无效。可能原因有：①未在设置文件中声明目标权限；②权限名非法；③部分权限存在特殊申请条件，在申请对应权限时未满足其指定的条件。
 
-**类型：** Array<\Int32>
+**类型：** Array\<Int32>
 
 **读写能力：** 可读写
 
@@ -67,7 +67,7 @@ true：有弹窗。
 
 false：无弹窗。
 
-**类型：** Array<\Bool>
+**类型：** Array\<Bool>
 
 **读写能力：** 可读写
 
@@ -83,7 +83,7 @@ public var permissions: Array<String>
 
 **功能：** 用户传入的权限。
 
-**类型：** Array<\String>
+**类型：** Array\<String>
 
 **读写能力：** 可读写
 

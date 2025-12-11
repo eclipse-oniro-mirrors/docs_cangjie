@@ -319,11 +319,8 @@ public enum Display <: ToString {
     | ScreenBrightnessStatus
     | AutoScreenBrightness
     | ScreenOffTimeout
-    | DefaultScreenRotation
-    | AnimatorDurationScale
-    | TransitionAnimationScale
-    | WindowAnimationScale
-    | DisplayInversionStatus
+    | AutoScreenBrightnessMode
+    | ManualScreenBrightnessMode
     | ...
 }
 ```
@@ -338,40 +335,6 @@ public enum Display <: ToString {
 
 - ToString
 
-### AnimatorDurationScale
-
-```cangjie
-AnimatorDurationScale
-```
-
-**功能：** 动画持续时间的比例因子，影响所有此类动画的开始延迟和持续时间。
-
-值为0，表示动画将立即结束。默认值为1。
-
-**系统能力：** SystemCapability.Applications.Settings.Core
-
-**起始版本：** 22
-
-**示例：**
-
-<!-- compile -->
-
-```cangjie
-// main_ability.cj
-
-import kit.BasicServicesKit.*
-import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.BusinessException
-
-try {
-    let context = Global.abilityContext
-    let durationScale = getValue(context, Display.AnimatorDurationScale, "1.0")
-    Hilog.info(0, "cangjie_ohos_test", "Animator duration scale: ${durationScale}")
-} catch (e: BusinessException) {
-    Hilog.info(0, "test", "${e.message}")
-}
-```
-
 ### AutoScreenBrightness
 
 ```cangjie
@@ -380,9 +343,9 @@ AutoScreenBrightness
 
 **功能：** 是否启用屏幕亮度自动调整。
 
-值为AUTO_SCREEN_BRIGHTNESS_MODE，表示启用自动调整。
+值为AutoScreenBrightnessMode，表示启用自动调整。
 
-值为MANUAL_SCREEN_BRIGHTNESS_MODE，表示不启用自动调整。
+值为ManualScreenBrightnessMode，表示不启用自动调整。
 
 **系统能力：** SystemCapability.Applications.Settings.Core
 
@@ -403,82 +366,6 @@ try {
     let context = Global.abilityContext
     let autoBrightness = getValue(context, Display.AutoScreenBrightness, "0")
     Hilog.info(0, "cangjie_ohos_test", "Auto screen brightness setting: ${autoBrightness}")
-} catch (e: BusinessException) {
-    Hilog.info(0, "test", "${e.message}")
-}
-```
-
-### DefaultScreenRotation
-
-```cangjie
-DefaultScreenRotation
-```
-
-**功能：** 用屏幕的自动旋转时，此属性无效。不启用自动旋转时，以下值可用:
-
-值为0，表示屏幕旋转0度。
-
-值为1，表示屏幕旋转90度。
-
-值为2，表示屏幕旋转180度。
-
-值为3，表示屏幕旋转270度。
-
-**系统能力：** SystemCapability.Applications.Settings.Core
-
-**起始版本：** 22
-
-**示例：**
-
-<!-- compile -->
-
-```cangjie
-// main_ability.cj
-
-import kit.BasicServicesKit.*
-import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.BusinessException
-
-try {
-    let context = Global.abilityContext
-    let rotation = getValue(context, Display.DefaultScreenRotation, "0")
-    Hilog.info(0, "cangjie_ohos_test", "Default screen rotation setting: ${rotation}")
-} catch (e: BusinessException) {
-    Hilog.info(0, "test", "${e.message}")
-}
-```
-
-### DisplayInversionStatus
-
-```cangjie
-DisplayInversionStatus
-```
-
-**功能：** 是否启用显示颜色反转。
-
-值为1，表示启用显示颜色反转。
-
-值为0，表示不启用显示颜色反转。
-
-**系统能力：** SystemCapability.Applications.Settings.Core
-
-**起始版本：** 22
-
-**示例：**
-
-<!-- compile -->
-
-```cangjie
-// main_ability.cj
-
-import kit.BasicServicesKit.*
-import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.BusinessException
-
-try {
-    let context = Global.abilityContext
-    let inversion = getValue(context, Display.DisplayInversionStatus, "0")
-    Hilog.info(0, "cangjie_ohos_test", "Display inversion status: ${inversion}")
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -580,73 +467,31 @@ try {
 }
 ```
 
-### TransitionAnimationScale
+### AutoScreenBrightnessMode
 
 ```cangjie
-TransitionAnimationScale
+AutoScreenBrightnessMode
 ```
 
-**功能：** 过渡动画的比例因子。
-
-值为0，表示禁用过渡动画。
+**功能：** 使用屏幕亮度自动调整时AutoScreenBrightness的值。
 
 **系统能力：** SystemCapability.Applications.Settings.Core
 
 **起始版本：** 22
 
-**示例：**
 
-<!-- compile -->
-
-```cangjie
-// main_ability.cj
-
-import kit.BasicServicesKit.*
-import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.BusinessException
-
-try {
-    let context = Global.abilityContext
-    let transitionScale = getValue(context, Display.TransitionAnimationScale, "1.0")
-    Hilog.info(0, "cangjie_ohos_test", "Transition animation scale: ${transitionScale}")
-} catch (e: BusinessException) {
-    Hilog.info(0, "test", "${e.message}")
-}
-```
-
-### WindowAnimationScale
+### ManualScreenBrightnessMode
 
 ```cangjie
-WindowAnimationScale
+ManualScreenBrightnessMode
 ```
 
-**功能：**  普通窗口动画的比例因子。
-
-值为0，表示禁用窗口动画。
+**功能：** 使用屏幕亮度手动调整时的AutoScreenBrightness值。
 
 **系统能力：** SystemCapability.Applications.Settings.Core
 
 **起始版本：** 22
 
-**示例：**
-
-<!-- compile -->
-
-```cangjie
-// main_ability.cj
-
-import kit.BasicServicesKit.*
-import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.BusinessException
-
-try {
-    let context = Global.abilityContext
-    let windowScale = getValue(context, Display.WindowAnimationScale, "1.0")
-    Hilog.info(0, "cangjie_ohos_test", "Window animation scale: ${windowScale}")
-} catch (e: BusinessException) {
-    Hilog.info(0, "test", "${e.message}")
-}
-```
 
 ### func toString()
 

@@ -274,7 +274,7 @@ class EntryView {
                     )
                     .onStateChange({
                         refreshStatus: RefreshStatus =>
-                        var status = match (refreshStatus) {
+                        this.status = match (refreshStatus) {
                             case Inactive => "Inactive"
                             case Drag => "Drag"
                             case OverDrag => "OverDrag"

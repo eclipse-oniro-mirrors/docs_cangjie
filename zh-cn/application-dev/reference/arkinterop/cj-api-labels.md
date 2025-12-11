@@ -259,16 +259,16 @@ public const init(since!: String, atomicservice!: Bool = false, crossplatform!: 
 
 |参数|类型|必填|默认值| 描述                 |
 |:---|:---|:---|:---|:-------------------|
-|since|String|是|-| 命名参数 API level。         |
-|atomicservice|Bool|否|false| 命名参数 是否支持原子服务。     |
-|crossplatform|Bool|否|false| 命名参数 是否支持跨平台。      |
-|deprecated|?String|否|None| 命名参数 弃用版本。         |
-|form|Bool|否|false| 命名参数 是否支持forms。    |
-|permission|?[PermissionValue](#interface-permissionvalue)|否|None| 命名参数 是否支持所需权限。      |
-|syscap|String|否|""| 命名参数 系统能力。      |
-|throwexception|Bool|否|""| 命名参数 是否抛出异常。      |
-|workerthread|Bool|否|""| 命名参数 是否建议并发执行。      |
-|systemapi|Bool|否|""| 命名参数 是否为系统api。      |
+|since|String|是|-| **命名参数。** API level。         |
+|atomicservice|Bool|否|false| **命名参数。** 是否支持原子服务。     |
+|crossplatform|Bool|否|false| **命名参数。** 是否支持跨平台。      |
+|deprecated|?String|否|None| **命名参数。** 弃用版本。         |
+|form|Bool|否|false| **命名参数。** 是否支持forms。    |
+|permission|?[PermissionValue](#interface-permissionvalue)|否|None| **命名参数。** 是否支持所需权限。      |
+|syscap|String|否|""| **命名参数。** 系统能力。      |
+|throwexception|Bool|否|""| **命名参数。** 是否抛出异常。      |
+|workerthread|Bool|否|""| **命名参数。** 是否建议并发执行。      |
+|systemapi|Bool|否|""| **命名参数。** 是否为系统api。      |
 
 ## class PermissionAnd
 

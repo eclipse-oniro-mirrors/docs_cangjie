@@ -1,6 +1,6 @@
 # Touch Events
 
-Touch events refer to callback events triggered when a finger/stylus presses, slides, or lifts on a component. These include [Click Events](#click-events), [Drag Events](./../reference/arkui-cj/cj-universal-event-drag.md), and [Touch Events](#touch-events). The principle of touch events is illustrated below:
+Touch events refer to callback events triggered when a finger/stylus presses, slides, or lifts on a component. These include [Click Events](#click-events) and [Touch Events](#touch-events). The principle of touch events is illustrated below:
 
 **Figure 1** Touch Event Principle
 
@@ -25,6 +25,7 @@ package ohos_app_cangjie_entry
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
 import ohos.resource_manager.*
+import ohos.resource.__GenerateResource__
 
 @Entry
 @Component

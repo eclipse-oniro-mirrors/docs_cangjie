@@ -822,8 +822,8 @@ public class AlertDialogParamWithConfirm <: AlertDialogParam {
         backgroundColor!: ?ResourceColor = None,
         backgroundBlurStyle!: ?BlurStyle = None,
         onWillDismiss!: ?Callback<DismissDialogAction, Unit> = None,
-        cornerRadius!: ?BorderRadiuses = None,
         transition!: ?TransitionEffect = None,
+        cornerRadius!: ?BorderRadiuses = None,
         width!: ?Length = None,
         height!: ?Length = None,
         borderWidth!: ?Length = None,
@@ -862,7 +862,7 @@ public var confirm: ?AlertDialogButtonBaseOptions
 
 **Since:** 22
 
-### init(?ResourceStr, ?ResourceStr, ?ResourceStr, ?Bool, ?VoidCallback, ?DialogAlignment, ?Offset, ?UInt32, ?Rectangle, ?Bool, ?Bool, ?ResourceColor, ?BlurStyle, ?Callback\<DismissDialogAction, Unit>, ?BorderRadiuses, ?TransitionEffect, ?Length, ?Length, ?Length, ?ResourceColor, ?EdgeStyles, ?ShadowOptions, ?WordBreak, ?AlertDialogButtonBaseOptions)
+### init(?ResourceStr, ?ResourceStr, ?ResourceStr, ?Bool, ?VoidCallback, ?DialogAlignment, ?Offset, ?UInt32, ?Rectangle, ?Bool, ?Bool, ?ResourceColor, ?BlurStyle, ?Callback\<DismissDialogAction, Unit>, ?TransitionEffect, ?BorderRadiuses, ?Length, ?Length, ?Length, ?ResourceColor, ?EdgeStyles, ?ShadowOptions, ?WordBreak, ?AlertDialogButtonBaseOptions)
 
 ```cangjie
 public init(
@@ -880,8 +880,8 @@ public init(
     backgroundColor!: ?ResourceColor = None,
     backgroundBlurStyle!: ?BlurStyle = None,
     onWillDismiss!: ?Callback<DismissDialogAction, Unit> = None,
-    cornerRadius!: ?BorderRadiuses = None,
     transition!: ?TransitionEffect = None,
+    cornerRadius!: ?BorderRadiuses = None,
     width!: ?Length = None,
     height!: ?Length = None,
     borderWidth!: ?Length = None,
@@ -917,8 +917,8 @@ public init(
 | backgroundColor | ?[ResourceColor](./cj-common-types.md#interface-resourcecolor) | No | None | **Named parameter.** Background color of the dialog. **Note:** When backgroundColor is set to a non-transparent color, backgroundBlurStyle should be set to BlurStyle.NONE; otherwise, the color display may not meet expectations. Initial value: Color.Transparent |
 | backgroundBlurStyle | ?[BlurStyle](./cj-common-types.md#enum-blurstyle) | No | None | **Named parameter.** Blur material of the dialog background. **Note:** Set to BlurStyle.NONE to disable background blur. When backgroundBlurStyle is set to a non-NONE value, do not set backgroundColor; otherwise, the color display may not meet expectations. Initial value: BlurStyle.ComponentUltraThick |
 | onWillDismiss | ?[Callback](./cj-common-types.md#type-callbackt-v)\<[DismissDialogAction](./cj-dialog-actionsheet.md#class-dismissdialogaction), Unit> | No | None | **Named parameter.** Interactive close callback function. **Note:** 1. When users perform actions like clicking the mask layer to close, swiping left/right, pressing the back button, or pressing ESC to close, if this callback is registered, the dialog will not close immediately. The callback can determine whether to close the dialog based on the operation type obtained from reason. The current component does not support the CLOSE_BUTTON enum value in reason. 2. Do not perform onWillDismiss interception within the onWillDismiss callback. |
-| cornerRadius | ?[BorderRadiuses](./cj-common-types.md#class-borderradiuses) | No | None | **Named parameter.** Sets the corner radius of the background. The radius of each corner can be set separately. The maximum corner radius is limited by the component size (half of the component width or height). Negative values are treated as default values. Percentage parameter: Sets the corner radius as a percentage of the parent dialog's width and height. **Note:** When cornerRadius is of type LocalizedBorderRadiuses, it supports layout order changes based on language habits. Initial value: BorderRadiuses(topLeft: 32.vp, topRight: 32.vp, bottomLeft: 32.vp, bottomRight: 32.vp) |
 | transition | ?[TransitionEffect](./cj-animation-transition.md#class-transitioneffect) | No | None | **Named parameter.** Sets the transition effect for dialog display and exit. **Note:** 1. If not set, the default show/exit animation is used. 2. Pressing the back button during the show animation interrupts the show animation and executes the exit animation, resulting in a combined effect of both animations. 3. Pressing the back button during the exit animation does not interrupt it; the exit animation continues, and pressing back again exits the application. |
+| cornerRadius | ?[BorderRadiuses](./cj-common-types.md#class-borderradiuses) | No | None | **Named parameter.** Sets the corner radius of the background. The radius of each corner can be set separately. The maximum corner radius is limited by the component size (half of the component width or height). Negative values are treated as default values. Percentage parameter: Sets the corner radius as a percentage of the parent dialog's width and height. **Note:** When cornerRadius is of type LocalizedBorderRadiuses, it supports layout order changes based on language habits. Initial value: BorderRadiuses(topLeft: 32.vp, topRight: 32.vp, bottomLeft: 32.vp, bottomRight: 32.vp) |
 | width | ?[Length](./cj-common-types.md#interface-length) | No | None | **Named parameter.** Sets the width of the dialog background. **Note:** - Default maximum dialog width: None. - Percentage parameter: Adjusts the dialog width relative to the window width. |
 | height | ?[Length](./cj-common-types.md#interface-length) | No | None | **Named parameter.** Sets the height of the dialog background. **Note:** - Default maximum dialog height: None. - Percentage parameter: Adjusts the dialog height relative to (window height - safe area). |
 | borderWidth | ?[Length](./cj-common-types.md#interface-length) | No | None | **Named parameter.** Sets the width of each border separately. Percentage parameter: Sets the border width as a percentage of the parent dialog's width. If the left/right borders exceed the dialog width or the top/bottom borders exceed the dialog height, the display may not meet expectations. **Note:** When borderWidth is of type LocalizedEdgeWidths, it supports layout order changes based on language habits. Initial value: 0 |
@@ -1006,7 +1006,7 @@ public var buttons: ?Array<AlertDialogButtonOptions>
 
 **Since:** 22
 
-### init(?ResourceStr, ?ResourceStr, ?ResourceStr, ?Bool, ?VoidCallback, ?DialogAlignment, ?Offset, ?UInt32, ?Rectangle, ?Bool, ?Bool, ?ResourceColor, ?BlurStyle, ?Callback\<DismissDialogAction, Unit>, ?BorderRadiuses, ?TransitionEffect, ?Length, ?Length, ?Length, ?ResourceColor, ?EdgeStyles, ?ShadowOptions, ?WordBreak, ?Array\<AlertDialogButtonOptions>, ?DialogButtonDirection)
+### init(?ResourceStr, ?ResourceStr, ?ResourceStr, ?Bool, ?VoidCallback, ?DialogAlignment, ?Offset, ?UInt32, ?Rectangle, ?Bool, ?Bool, ?ResourceColor, ?BlurStyle, ?Callback\<DismissDialogAction, Unit>, ?BorderRadiuses, ?TransitionEffect, ?Length, ?Length, ?Length, ?BorderColor, ?EdgeStyles, ?ShadowOptions, ?WordBreak, ?Array\<AlertDialogButtonOptions>, ?DialogButtonDirection)
 
 ```cangjie
 public init(
@@ -1071,6 +1071,7 @@ package ohos_app_cangjie_entry
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
 import ohos.hilog.*
+import ohos.arkui.component.common.Offset as CommonOffset
 
 @Entry
 @Component
@@ -1079,12 +1080,15 @@ class EntryView {
         Column(space:5.vp) {
             Button("one button dialog")
                 .onClick({ evt =>
+                    getUIContext().showAlertDialog(
                         AlertDialogParamWithConfirm(message:"text",
                             title: "title",
                             subtitle: "subtitle",
                             autoCancel: true,
                             cancel: {=> Hilog.info(0, "AppLogCj", "Closed callbacks")}, alignment: DialogAlignment.Center,
-                            offset: Offset(0, -20), gridCount: 4,
+                            offset: CommonOffset(0, -20),
+                            gridCount: 4,
+                            backgroundColor: Color.White,
                             onWillDismiss: {
                                 dismissDialogAction: DismissDialogAction => match (dismissDialogAction.reason) {
                                     case PRESS_BACK => dismissDialogAction.dismiss()
@@ -1093,18 +1097,24 @@ class EntryView {
                                 }
                             },
                             confirm: AlertDialogButtonOptions(value: "button",
-                                action: {=> Hilog.info(0, "AppLogCj", "Button-clicking callback")}))
+                                action: {=> Hilog.info(0, "AppLogCj", "Button-clicking callback")}
+                            )
+                        )
+                    )
                 })
             .backgroundColor(0x317aff)
             Button("two button dialog")
                 .onClick({ evt =>
+                    getUIContext().showAlertDialog(
                         AlertDialogParamWithButtons(message: "text",
                             title: "title",
                             subtitle: "subtitle",
                             autoCancel: true,
                             cancel: {=> Hilog.info(0, "AppLogCj", "Closed callbacks")},
                             alignment: DialogAlignment.Center,
-                            offset: Offset(0, -20), gridCount: 4,
+                            offset: CommonOffset(0, -20),
+                            gridCount: 4,
+                            backgroundColor: Color.White,
                             onWillDismiss: {
                                 dismissDialogAction: DismissDialogAction => match (dismissDialogAction.reason) {
                                     case PRESS_BACK => dismissDialogAction.dismiss()
@@ -1116,11 +1126,15 @@ class EntryView {
                                 action: {=> Hilog.info(0, "AppLogCj", "Callback when second button is clicked")}),
                             secondaryButton: AlertDialogButtonOptions(enabled: true, defaultFocus: true,
                                 style: DialogButtonStyle.Highlight, value: "OK",
-                                action: {=> Hilog.info(0, "AppLogCj", "Callback when second button is clicked")}))
+                                action: {=> Hilog.info(0, "AppLogCj", "Callback when second button is clicked")}
+                            )
+                        )
+                    )
                 })
             .backgroundColor(0x317aff)
             Button("three button dialog")
                 .onClick({ evt =>
+                    getUIContext().showAlertDialog(
                         AlertDialogParamWithOptions(
                             message: "text",
                             title: "title",
@@ -1128,8 +1142,9 @@ class EntryView {
                             autoCancel: true,
                             cancel: {=> Hilog.info(0, "AppLogCj", "Callback when third button is clicked")},
                             alignment: DialogAlignment.Center,
-                            offset: Offset(0, -20),
+                            offset: CommonOffset(0, -20),
                             gridCount: 4,
+                            backgroundColor: Color.White,
                             onWillDismiss: {
                                 dismissDialogAction: DismissDialogAction => match (dismissDialogAction.reason) {
                                     case PRESS_BACK => dismissDialogAction.dismiss()
@@ -1146,14 +1161,17 @@ class EntryView {
                                     action: {=> Hilog.info(0, "AppLogCj", "Callback when button1 is clicked")})
                             ]
                         )
+                    )
                 })
                 .backgroundColor(0x317aff)
         }
+        .width(100.percent)
+        .height(100.percent)
     }
 }
 ```
 
-![alertdialog1](./figures/alertDialog1.png)
+![alertdialog1](./figures/alertDialog1.gif)
 
 ### Example 2 (Dialog That Can Pop Up Outside the Main Window)
 
@@ -1166,6 +1184,7 @@ package ohos_app_cangjie_entry
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
 import ohos.hilog.*
+import ohos.arkui.component.common.Offset as CommonOffset
 
 @Entry
 @Component
@@ -1174,6 +1193,7 @@ class EntryView {
         Column(space: 5.vp) {
             Button("button dialog")
                 .onClick({ evt =>
+                    getUIContext().showAlertDialog(
                         AlertDialogParamWithOptions(
                             message: "text",
                             title: "title",
@@ -1181,10 +1201,11 @@ class EntryView {
                             autoCancel: true,
                             cancel: {=> Hilog.info(0, "AppLogCj", "Closed callbacks")},
                             alignment: DialogAlignment.Center,
-                            offset: Offset(0, -20),
+                            offset: CommonOffset(0, -20),
                             showInSubWindow: true,
                             buttonDirection: DialogButtonDirection.Horizontal,
                             gridCount: 4,
+                            backgroundColor: Color.White,
                             onWillDismiss: {
                                 dismissDialogAction: DismissDialogAction => match (dismissDialogAction.reason) {
                                     case PRESS_BACK => dismissDialogAction.dismiss()
@@ -1201,12 +1222,15 @@ class EntryView {
                                     action: {=> Hilog.info(0, "AppLogCj", "Callback when button1 is clicked")})
                             ]
                         )
+                    )
                 })
                 .backgroundColor(0x317aff)
         }
+        .width(100.percent)
+        .height(100.percent)
     }
 }
 
 ```
 
-![alertdialog2](./figures/alertdialog2.png)
+![alertdialog2](./figures/alertdialog2.gif)

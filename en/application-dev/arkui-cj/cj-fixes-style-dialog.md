@@ -4,7 +4,7 @@ Fixed-style popup dialogs adopt a consistent layout format, allowing developers 
 
 ## Usage Constraints
 
-- Action menus (`showActionMenu`) and dialog boxes (`showDialog`) must first obtain a `PromptAction` object using the [getPromptAction](../reference/arkui-cj/cj-apis-uicontext-uicontext.md#func-getPromptAction) method before invoking corresponding methods through this object.
+- Action menus (`showActionMenu`) and dialog boxes (`showDialog`) must first obtain a [UIContext](../reference/arkui-cj/cj-apis-uicontext-uicontext.md#class-uicontext) object using the [getPromptAction](../reference/arkui-cj/cj-apis-uicontext-uicontext.md#func-getPromptAction) method before invoking corresponding methods through this object.
 
 - Action menus (`showActionMenu`), dialog boxes (`showDialog`), list selection popups (`ActionSheet`), and alert dialogs (`AlertDialog`) can be configured with `isModal` set to `false` to become non-modal popups.
 
@@ -114,27 +114,11 @@ class EntryView {
 
 ![showdialog](figures/showdialog.gif)
 
-## Picker Dialog (`PickerDialog`)
-
-Picker dialogs are typically used to display specific information or options when users perform certain actions (such as clicking a button).
-
-### Lifecycle
-
-The popup provides lifecycle functions to notify users about the popup's lifecycle.
-The triggering sequence of lifecycle events can be found in the API reference for each component.
-
-| Name            | Type | Description                       |
-| :----------------- | :------ | :---------------------------- |
-| `onDidAppear`    | `() -> Unit`  | Callback event when the popup appears.  |
-| `onDidDisappear` | `() -> Unit`  | Callback event when the popup disappears.  |
-| `onWillAppear`    | `() -> Unit` | Callback event before the popup's display animation. |
-| `onWillDisappear` | `() -> Unit` | Callback event before the popup's exit animation. |
-
 ## List Selection Popup (`ActionSheet`)
 
 List selector popups are suitable for presenting multiple action options, especially when only an action list needs to be displayed without other content.
 
-The list selector popup is implemented through the [showActionSheet](../reference/arkui-cj/cj-apis-uicontext-uicontext.md#func-showActionSheet)interface in `ActionSheet`.
+The list selector popup is implemented through the [showActionSheet](../reference/arkui-cj/cj-apis-uicontext-uicontext.md#func-showActionSheetactionsheetoptions)interface in [UIContext](../reference/arkui-cj/cj-apis-uicontext-uicontext.md#class-uicontext).
 
 This example defines the popup's style and animation effects by configuring interfaces such as `width`, `height`, and `transition`.
 

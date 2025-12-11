@@ -13,7 +13,7 @@
 
 - 当前系统支持的权限组如下所示，各子权限的含义请查阅[应用权限列表](./cj-permissions-for-all-user.md)。
 
-## 位置<!--Del-->信息<!--DelEnd-->
+## 位置信息
 
 - [ohos.permission.LOCATION_IN_BACKGROUND](./cj-permissions-for-all-user.md#ohospermissionlocation_in_background)
 - [ohos.permission.LOCATION](./cj-permissions-for-all-user.md#ohospermissionlocation)
@@ -37,7 +37,7 @@
 - [ohos.permission.READ_CALENDAR](./cj-permissions-for-all-user.md#ohospermissionread_calendar)
 - [ohos.permission.WRITE_CALENDAR](./cj-permissions-for-all-user.md#ohospermissionwrite_calendar)<!--Del-->
 - [ohos.permission.READ_WHOLE_CALENDAR](./cj-permissions-for-system-apps-user.md#ohospermissionread_whole_calendar)
-- [ohos.permission.WRITE_WHOLE_CALENDAR](./cj-permissions-for-system-apps-user.md#ohospermissionwrite_whole_calendar)<!--DelEnd-->
+- [ohos.permission.WRITE_WHOLE_CALENDAR](./cj-permissions-for-system-apps-user.md#ohospermissionwrite_whole_calendar
 
 <!--RP1-->
 ## 健身运动

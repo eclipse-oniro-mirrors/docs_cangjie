@@ -1,6 +1,6 @@
 # 禁用控制
 
-组件是否可交互，可交互状态下响应[点击事件](./cj-universal-event-click.md#)、[触摸事件](./cj-universal-event-touch.md)、[拖拽事件](./cj-universal-event-drag.md)、[按键事件](./cj-universal-event-key.md)、[焦点事件](../../arkui-cj/cj-common-events-focus-event.md)和[鼠标事件](./cj-universal-event-mouse.md)。
+组件是否可交互，可交互状态下响应[点击事件](./cj-universal-event-click.md#)、[触摸事件](./cj-universal-event-touch.md)、[按键事件](./cj-universal-event-key.md)、[焦点事件](../../arkui-cj/cj-common-events-focus-event.md)和[鼠标事件](./cj-universal-event-mouse.md)。
 
 > **说明：**
 >

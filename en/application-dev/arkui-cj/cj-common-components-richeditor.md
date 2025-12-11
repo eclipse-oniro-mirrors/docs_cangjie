@@ -77,7 +77,7 @@ class EntryView {
             Column {
                 RichEditor(this.controller)
                 .bindSelectionMenu(
-                    spantype: RichEditorSpanType.Text,
+                    spanType: RichEditorSpanType.Text,
                     content: bind(this.RightClickTextCustomMenu, this),
                     responseType: ResponseType.LongPress,
                     options: SelectionMenuOptions( onDisappear: {

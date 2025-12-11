@@ -716,7 +716,6 @@ App clone is not supported.
 
 在不支持应用分身的应用中，避免调用getCurrentAppCloneIndex。
 
-<!--Del-->
 ## 16000072 不支持应用多开
 
 **错误信息**
@@ -734,7 +733,6 @@ App clone or multi-instance is not supported.
 **处理步骤**
 
 调用getCurrentAppCloneIndex时确保查询的应用支持应用多开。
-<!--DelEnd-->
 
 ## 16000073 传入的appCloneIndex是一个无效值
 
@@ -749,9 +747,7 @@ The app clone index is invalid.
 **可能原因**
 
 1.调用startAbility时，使用ohos.extra.param.key.appCloneIndex携带的appCloneIndex是一个无效值，则返回该错误码。
-<!--Del-->
 2.调用isAppRunning是，入参appCloneIndex是一个无效值，则返回该错误码。
-<!--DelEnd-->
 
 **处理步骤**
 

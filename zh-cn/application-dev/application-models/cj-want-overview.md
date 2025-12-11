@@ -39,7 +39,7 @@
       // entities can be omitted
       entities: ["entity.system.browsable"],
       uri: "https://www.test.com:8080/query/student",
-      wantType: "text/plain")
+      dataType: "text/plain")
   ```
 
     > **说明：**

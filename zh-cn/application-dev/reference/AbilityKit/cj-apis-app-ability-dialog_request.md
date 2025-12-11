@@ -35,7 +35,7 @@ public class RequestResult {
 }
 ```
 
-**功能：** 模态弹框请求结果，包含结果码ResultCode和请求结果ResultWant。
+**功能：** 模态弹框请求结果，包含结果码ResultCode和请求结果Want。
 
 **系统能力：** SystemCapability.Ability.AbilityRuntime.Core
 

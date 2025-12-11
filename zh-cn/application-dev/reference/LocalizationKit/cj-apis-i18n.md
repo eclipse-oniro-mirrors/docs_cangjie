@@ -662,7 +662,7 @@ public enum CalendarType {
 Buddhist
 ```
 
-**功能：** 佛历
+**功能：** 佛历。
 
 **系统能力：**  SystemCapability.Global.I18n
 
@@ -674,7 +674,7 @@ Buddhist
 Chinese
 ```
 
-**功能：** 农历
+**功能：** 农历。
 
 **系统能力：** SystemCapability.Global.I18n
 
@@ -686,7 +686,7 @@ Chinese
 Coptic
 ```
 
-**功能：** 科普特历
+**功能：** 科普特历。
 
 **系统能力：** SystemCapability.Global.I18n
 
@@ -698,7 +698,7 @@ Coptic
 Ethiopic
 ```
 
-**功能：** 埃塞俄比亚历
+**功能：** 埃塞俄比亚历。
 
 **系统能力：** SystemCapability.Global.I18n
 
@@ -710,7 +710,7 @@ Ethiopic
 Hebrew
 ```
 
-**功能：** 希伯来历
+**功能：** 希伯来历。
 
 **系统能力：** SystemCapability.Global.I18n
 
@@ -722,7 +722,7 @@ Hebrew
 Gregory
 ```
 
-**功能：** 公历
+**功能：** 公历。
 
 **系统能力：** SystemCapability.Global.I18n
 
@@ -734,7 +734,7 @@ Gregory
 Indian
 ```
 
-**功能：** 印度历
+**功能：** 印度历。
 
 **系统能力：** SystemCapability.Global.I18n
 
@@ -746,7 +746,7 @@ Indian
 IslamicCivil
 ```
 
-**功能：** 伊斯兰希吉来历
+**功能：** 伊斯兰希吉来历。
 
 **系统能力：** SystemCapability.Global.I18n
 
@@ -758,7 +758,7 @@ IslamicCivil
 IslamicTbla
 ```
 
-**功能：** 伊斯兰天文历
+**功能：** 伊斯兰天文历。
 
 **系统能力：** SystemCapability.Global.I18n
 
@@ -770,7 +770,7 @@ IslamicTbla
 IslamicUmalqura
 ```
 
-**功能：** 伊斯兰历（乌姆库拉）
+**功能：** 伊斯兰历（乌姆库拉）。
 
 **系统能力：** SystemCapability.Global.I18n
 
@@ -782,7 +782,7 @@ IslamicUmalqura
 Japanese
 ```
 
-**功能：** 日本历
+**功能：** 日本历。
 
 **系统能力：** SystemCapability.Global.I18n
 
@@ -794,7 +794,7 @@ Japanese
 Persian
 ```
 
-**功能：** 波斯历
+**功能：** 波斯历。
 
 **系统能力：** SystemCapability.Global.I18n
 

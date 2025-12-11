@@ -14,10 +14,10 @@ import kit.ArkUI.*
 
 ## 创建组件
 
-### init(?Float64, ?Float64, ?Float64, () -> Unit)
+### init(?Float32, ?Float32, ?Float32, () -> Unit)
 
 ```cangjie
-public init(value!: ?Float64, min!: ?Float64 = None, max!: ?Float64 = None, child!: () -> Unit = { => })
+public init(value!: ?Float32, min!: ?Float32 = None, max!: ?Float32 = None, child!: () -> Unit = { => })
 ```
 
 **功能：** 创建一个数据量规图表组件。
@@ -30,9 +30,9 @@ public init(value!: ?Float64, min!: ?Float64 = None, max!: ?Float64 = None, chil
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|value|?Float64|是|-| **命名参数。** 初始值: 0.0。 量规图的当前数据值，即图中指针指向位置。用于组件创建时量规图初始值的预置。<br>**说明：**<br>value不在min和max范围内时使用min作为默认值。|
-|min|?Float64|否|None| **命名参数。** 初始值: 0.0。 当前数据段最小值。|
-|max|?Float64|否|None| **命名参数。** 初始值: 100.0。 当前数据段最大值。<br>**说明：**<br>max小于min时使用默认值0.0和100.0。<br>max和min支持负数。|
+|value|?Float32|是|-| **命名参数。** 初始值: 0.0。 量规图的当前数据值，即图中指针指向位置。用于组件创建时量规图初始值的预置。<br>**说明：**<br>value不在min和max范围内时使用min作为默认值。|
+|min|?Float32|否|None| **命名参数。** 初始值: 0.0。 当前数据段最小值。|
+|max|?Float32|否|None| **命名参数。** 初始值: 100.0。 当前数据段最大值。<br>**说明：**<br>max小于min时使用默认值0.0和100.0。<br>max和min支持负数。|
 |child|()->Unit|否|{ => }| **命名参数。** 声明当前组件的子组件。|
 
 ## 通用属性/通用事件
@@ -141,10 +141,10 @@ public func description(builder: ?CustomBuilder): This
 |:---|:---|:---|:---|:---|
 |builder|?[CustomBuilder](./cj-common-types.md#type-custombuilder)|是|-|说明内容，@Builder中的内容由开发者自定义，建议使用文本。<br>初始值：{ => }。|
 
-### func endAngle(?Float64)
+### func endAngle(?Float32)
 
 ```cangjie
-public func endAngle(angle: ?Float64): This
+public func endAngle(angle: ?Float32): This
 ```
 
 **功能：** 设置终止角度位置。
@@ -161,7 +161,7 @@ public func endAngle(angle: ?Float64): This
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|angle|?Float64|是|-|终止角度位置，时钟0点为0度，顺时针方向为正角度。<br>初始值: 360.0。|
+|angle|?Float32|是|-|终止角度位置，时钟0点为0度，顺时针方向为正角度。<br>初始值: 360.0。|
 
 ### func indicator(?ResourceStr, ?Length)
 
@@ -182,10 +182,10 @@ public func indicator(icon!: ?ResourceStr = None, space!: ?Length = None): This
 |icon|?[ResourceStr](./cj-common-types.md#interface-resourcestr)|否|None| **命名参数。** 初始值: "default" 指针样式："default"为三角箭头，"null"为无指针。|
 |space|?[Length](./cj-common-types.md#interface-length)|否|None| **命名参数。** 初始值: 8.0.vp 指针距离圆环外边的间距(不支持百分比)。<br>单位：vp。|
 
-### func startAngle(?Float64)
+### func startAngle(?Float32)
 
 ```cangjie
-public func startAngle(angle: ?Float64): This
+public func startAngle(angle: ?Float32): This
 ```
 
 **功能：** 设置量规图起始角度位置。
@@ -198,7 +198,7 @@ public func startAngle(angle: ?Float64): This
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|angle|?Float64|是|-|起始角度位置，时钟0点为0度，顺时针方向为正角度。初始值: 0.0。|
+|angle|?Float32|是|-|起始角度位置，时钟0点为0度，顺时针方向为正角度。初始值: 0.0。|
 
 ### func strokeWidth(?Length)
 
@@ -218,10 +218,10 @@ public func strokeWidth(length: ?Length): This
 |:---|:---|:---|:---|:---|
 |length|?[Length](./cj-common-types.md#interface-length)|是|-|环形量规图的环形厚度。<br>初始值: 4.0.vp。<br>单位：vp。<br>**说明：**<br>设置小于0的值时，按默认值显示。<br>环形厚度的最大值为圆环的半径，超过最大值按最大值处理。<br>不支持百分比。|
 
-### func trackShadow(?Float64, ?Float64, ?Float64)
+### func trackShadow(?Float32, ?Float32, ?Float32)
 
 ```cangjie
-public func trackShadow(radius!: ?Float64 = None, offsetX!: ?Float64 = None, offsetY!: ?Float64 = None): This
+public func trackShadow(radius!: ?Float32 = None, offsetX!: ?Float32 = None, offsetY!: ?Float32 = None): This
 ```
 
 **功能：** 设置阴影样式。
@@ -234,14 +234,14 @@ public func trackShadow(radius!: ?Float64 = None, offsetX!: ?Float64 = None, off
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|radius|?Float64|否|None| **命名参数。** 初始值: 20.0 投影模糊半径。<br>单位：vp。|
-|offsetX|?Float64|否|None| **命名参数。** 初始值: 5.0 X轴的偏移量。|
-|offsetY|?Float64|否|None| **命名参数。** 初始值: 5.0 Y轴的偏移量 。|
+|radius|?Float32|否|None| **命名参数。** 初始值: 20.0 投影模糊半径。<br>单位：vp。|
+|offsetX|?Float32|否|None| **命名参数。** 初始值: 5.0 X轴的偏移量。|
+|offsetY|?Float32|否|None| **命名参数。** 初始值: 5.0 Y轴的偏移量 。|
 
-### func value(?Float64)
+### func value(?Float32)
 
 ```cangjie
-public func value(value: ?Float64): This
+public func value(value: ?Float32): This
 ```
 
 **功能：** 设置量规图的数据值。
@@ -254,4 +254,4 @@ public func value(value: ?Float64): This
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|value|?Float64|是|-|量规图的数据值，可用于动态修改量规图的数据值。<br>初始值: 0.0。|
+|value|?Float32|是|-|量规图的数据值，可用于动态修改量规图的数据值。<br>初始值: 0.0。|

@@ -1,6 +1,6 @@
 # LazyForEach
 
-Combined with cached list items, it can improve the rendering performance of the list.
+In scenarios with a large number of child components, using LazyForEach in combination with cached list items, dynamic preloading, and component reuse can further improve scrolling frame rates and reduce application memory consumption.
 
 ## Import Module
 
@@ -232,8 +232,8 @@ public init(dataSource: IDataSource<T>, itemGenerator!: ItemGeneratorFunc<T>, ke
 | Name | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
 | dataSource | [IDataSource](#interface-idatasourcet)\<T> | Yes | - | The data source for LazyForEach, requiring developers to implement related interfaces. |
-| itemGenerator | [ItemGeneratorFunc](./cj-common-types.md#type-itemgeneratorfunc)\<T> | No | - | The child component generator function, which creates a child component for each data item in the array. The first generic parameter of the lambda function is the data type, and the second parameter is the index of the current list item. |
-| keyGenerator | ?[KeyGeneratorFunc](./cj-common-types.md#type-keygeneratorfunc)\<T> | No | None | An anonymous function for key generation, which generates a unique and stable key for a given array item. |
+| itemGenerator | [ItemGeneratorFunc](./cj-common-types.md#type-itemgeneratorfunc)\<T> | Yes | - |  **Named parameter.** The child component generator function, which creates a child component for each data item in the array. The first generic parameter of the lambda function is the data type, and the second parameter is the index of the current list item. |
+| keyGenerator | ?[KeyGeneratorFunc](./cj-common-types.md#type-keygeneratorfunc)\<T> | No | None |  **Named parameter.** An anonymous function for key generation, which generates a unique and stable key for a given array item. |
 
 ## Example Code
 

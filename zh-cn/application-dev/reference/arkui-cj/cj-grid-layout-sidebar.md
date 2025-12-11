@@ -368,9 +368,9 @@ public init(shown!: ?ResourceStr, hidden!: ?ResourceStr, switching!: ?ResourceSt
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|shown|?[ResourceStr](./cj-common-types.md#interface-resourcestr)|是|-|**命名参数** 设置侧边栏显示时控制按钮的图标。|
-|hidden|?[ResourceStr](./cj-common-types.md#interface-resourcestr)|是|-|**命名参数** 设置侧边栏隐藏时控制按钮的图标。|
-|switching|?[ResourceStr](./cj-common-types.md#interface-resourcestr)|否|None|**命名参数** 设置侧边栏显示和隐藏状态切换时控制按钮的图标。<br>初始值：""|
+|shown|?[ResourceStr](./cj-common-types.md#interface-resourcestr)|是|-|**命名参数。** 设置侧边栏显示时控制按钮的图标。|
+|hidden|?[ResourceStr](./cj-common-types.md#interface-resourcestr)|是|-|**命名参数。** 设置侧边栏隐藏时控制按钮的图标。|
+|switching|?[ResourceStr](./cj-common-types.md#interface-resourcestr)|否|None|**命名参数。** 设置侧边栏显示和隐藏状态切换时控制按钮的图标。<br>初始值：""|
 
 ### class ButtonStyle
 
@@ -499,11 +499,11 @@ public init(
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|left|?Float64|否|None|**命名参数** 设置侧边栏控制按钮距离容器左界限的间距。<br>单位：vp。<br>初始值：16.0。|
-|top|?Float64|否|None|**命名参数** 设置侧边栏控制按钮距离容器上界限的间距。<br>单位：vp。<br>初始值：48.0。|
-|width|?Float64|否|None|**命名参数** 设置侧边栏控制按钮的宽度。<br>单位：vp。<br>初始值：24.0。|
-|height|?Float64|否|None|**命名参数** 设置侧边栏控制按钮的高度。<br>单位：vp。<br>初始值：24.0。|
-|icons|?[ButtonIconOptions](#class-buttoniconoptions)|否|None|**命名参数** 设置侧边栏控制按钮的图标。<br>初始值：ButtonIconOptions(shown: "", hidden: "")。|
+|left|?Float64|否|None|**命名参数。** 设置侧边栏控制按钮距离容器左界限的间距。<br>单位：vp。<br>初始值：16.0。|
+|top|?Float64|否|None|**命名参数。** 设置侧边栏控制按钮距离容器上界限的间距。<br>单位：vp。<br>初始值：48.0。|
+|width|?Float64|否|None|**命名参数。** 设置侧边栏控制按钮的宽度。<br>单位：vp。<br>初始值：24.0。|
+|height|?Float64|否|None|**命名参数。** 设置侧边栏控制按钮的高度。<br>单位：vp。<br>初始值：24.0。|
+|icons|?[ButtonIconOptions](#class-buttoniconoptions)|否|None|**命名参数。** 设置侧边栏控制按钮的图标。<br>初始值：ButtonIconOptions(shown: "", hidden: "")。|
 
 ### class DividerStyle
 
@@ -613,10 +613,10 @@ public init(strokeWidth!: ?Length, color!: ?ResourceColor = None, startMargin!: 
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|strokeWidth|?[Length](./cj-common-types.md#interface-length)|是|-|**命名参数** 分割线的线宽。<br>初始值：1.vp。|
-|color|?[ResourceColor](./cj-common-types.md#interface-resourcecolor)|否|None|**命名参数** 分割线的颜色。<br>初始值：0x08000000。|
-|startMargin|?[Length](./cj-common-types.md#interface-length)|否|None|**命名参数** 分割线与侧边栏顶端的距离。<br>初始值：0.vp。|
-|endMargin|?[Length](./cj-common-types.md#interface-length)|否|None|**命名参数** 分割线与侧边栏底端的距离。<br>初始值：0.vp。|
+|strokeWidth|?[Length](./cj-common-types.md#interface-length)|是|-|**命名参数。** 分割线的线宽。<br>初始值：1.vp。|
+|color|?[ResourceColor](./cj-common-types.md#interface-resourcecolor)|否|None|**命名参数。** 分割线的颜色。<br>初始值：0x08000000。|
+|startMargin|?[Length](./cj-common-types.md#interface-length)|否|None|**命名参数。** 分割线与侧边栏顶端的距离。<br>初始值：0.vp。|
+|endMargin|?[Length](./cj-common-types.md#interface-length)|否|None|**命名参数。** 分割线与侧边栏底端的距离。<br>初始值：0.vp。|
 
 ## 示例代码
 
@@ -629,6 +629,7 @@ import ohos.arkui.state_management.*
 import ohos.arkui.state_macro_manage.*
 import ohos.i18n.*
 import ohos.resource_manager.*
+import ohos.resource.__GenerateResource__
 
 @Entry
 @Component

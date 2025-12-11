@@ -223,6 +223,7 @@ Button组件通常用于触发某些操作，可以绑定[onClick](../reference/
   import kit.ArkUI.*
   import ohos.arkui.state_macro_manage.*
   import kit.LocalizationKit.AppResource
+  import ohos.resource.__GenerateResource__
 
   @Entry
   @Component

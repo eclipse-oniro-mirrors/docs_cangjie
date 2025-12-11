@@ -10,12 +10,12 @@ Toggle is created by calling an interface with the following syntax:
 Toggle(toggleType: ToggleType, isOn!: Bool = false)
 ```
 
-Here, ToggleType represents the switch type, including ButtonType, CheckboxType, and SwitchType, while isOn indicates the state of the toggle button.
+Here, ToggleType represents the switch type, including Button, Checkbox, and Switch, while isOn indicates the state of the toggle button.
 
 The interface can be called in two forms:
 
 - Creating a Toggle without child components.
-  When ToggleType is CheckboxType or SwitchType, it creates a Toggle without child components:
+  When ToggleType is Checkbox or Switch, it creates a Toggle without child components:
 
   ```cangjie
   Toggle(ToggleType.Checkbox, isOn: false)
@@ -33,7 +33,7 @@ The interface can be called in two forms:
 
 - Creating a Toggle with child components.
 
-  When ToggleType is ButtonType, it can only contain one child component. If the child component has text settings, the corresponding text content will be displayed on the button.
+  When ToggleType is Button, it can only contain one child component. If the child component has text settings, the corresponding text content will be displayed on the button.
 
   ```cangjie
   Toggle(ToggleType.Button, false) {
@@ -68,7 +68,7 @@ The interface can be called in two forms:
 
   ![Toggle3](figures/Toggle3.png)
 
-- Use the switchPointColor property to set the color of the circular slider for SwitchType. This only applies when toggleType is ToggleType.Switch.
+- Use the switchPointColor property to set the color of the circular slider for Switch. This only applies when toggleType is ToggleType.Switch.
 
   ```cangjie
   Toggle(ToggleType.Switch, isOn: false).switchPointColor(0xFEC0CD)

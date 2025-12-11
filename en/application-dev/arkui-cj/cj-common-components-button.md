@@ -203,6 +203,7 @@ Button components are typically used to trigger actions. You can bind the [onCli
   import kit.ArkUI.*
   import ohos.arkui.state_macro_manage.*
   import kit.LocalizationKit.AppResource
+  import ohos.resource.__GenerateResource__
 
   @Entry
   @Component

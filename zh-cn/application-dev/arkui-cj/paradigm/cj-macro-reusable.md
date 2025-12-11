@@ -339,6 +339,7 @@ import ohos.arkui.state_macro_manage.*
 import std.collection.ArrayList
 import kit.PerformanceAnalysisKit.Hilog
 import kit.LocalizationKit.*
+import ohos.resource.__GenerateResource__
 
 class MyDataSource <: IDataSource<FriendMoment> {
     public MyDataSource(let data_: ArrayList<FriendMoment>) {}

@@ -14,11 +14,11 @@ None
 
 ## Creating the Component
 
-### init(Array\<String>, ?UInt32, ?String)
+### init(?Array\<String>, ?UInt32, ?String)
 
 ```cangjie
 public init(
-    range!: Array<String>,
+    range!: ?Array<String>,
     selected!: ?UInt32 = Option.None,
     value!: ?String = Option.None
 )
@@ -34,7 +34,7 @@ public init(
 
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
-| range | Array\<String> | Yes | - | **Named parameter.** The data selection list for the picker. |
+| range | ?Array\<String> | Yes | - | **Named parameter.** The data selection list for the picker. |
 | selected | ?UInt32 | No | Option.None | **Named parameter.** Sets the index value of the default selected item in the array.<br>Initial value: 0. |
 | value | ?String | No | Option.None | **Named parameter.** Sets the value of the default selected item, with lower priority than `selected`.<br>Initial value: First element value.<br>**Note:** This value is only valid when displaying a text list. It is invalid when displaying an image list or an image plus text list. |
 
@@ -113,6 +113,10 @@ public type OnTextPickerChangeCallback = (String, UInt32) -> Unit
 **Function:** Callback for the TextPicker item selection event.
 
 **Type:** (String, UInt32) -> Unit
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 22
 
 ## Example Code
 

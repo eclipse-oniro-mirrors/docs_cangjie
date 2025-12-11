@@ -1,4 +1,4 @@
-# ohos.file.photo_access_helper
+# ohos.file.photo_access_helper（相册管理模块）
 
 photo_access_helper模块提供相册管理模块能力，包括创建相册以及访问、修改相册中的媒体数据信息等。
 
@@ -2313,7 +2313,7 @@ public func registerChange(uri: String, forChildUris: Bool, callback: Callback1A
 |:---|:---|:---|:---|:---|
 |uri|String|是|-|PhotoAsset的uri, Album的uri或[DefaultChangeUri](#enum-defaultchangeuri)的值。|
 |forChildUris|Bool|是|-|是否模糊监听。uri为相册uri时：forChildUris为true，能监听到相册中文件的变化。如果是false，只能监听相册本身变化；uri为photoAsset时：forChildUris为true、false没有区别；uri为DefaultChangeUri时：forChildUris必须为true，如果为false将找不到该uri，收不到任何消息。|
-|callback|[Callback1Argument](../arkinterop/cj-api-callback_invoke.md#class-callback1argument)\<[ChangeData](#class-changedata)>|是|-|返回要监听的[ChangeData](#class-changedata)。注：uri可以注册多个不同的callback监听，[unRegisterChange](#func-unregisterchangestring-callback1argumentchangedata)可以关闭该uri所有监听，也可以关闭指定callback的监听。。|
+|callback|[Callback1Argument](../arkinterop/cj-api-callback_invoke.md#class-callback1argument)\<[ChangeData](#class-changedata)>|是|-|返回要监听的[ChangeData](#class-changedata)。注：uri可以注册多个不同的callback监听，[unregisterChange](#func-unregisterchangestring-callback1argumentchangedata)可以关闭该uri所有监听，也可以关闭指定callback的监听。。|
 
 **异常：**
 
@@ -2500,10 +2500,10 @@ try {
 }
 ```
 
-### func unRegisterChange(String, ?Callback1Argument\<ChangeData>)
+### func unregisterChange(String, ?Callback1Argument\<ChangeData>)
 
 ```cangjie
-public func unRegisterChange(uri: String, callback!: ?Callback1Argument<ChangeData> = None): Unit
+public func unregisterChange(uri: String, callback!: ?Callback1Argument<ChangeData> = None): Unit
 ```
 
 **功能：** 取消指定uri的监听，一个uri可以注册多个监听，存在多个callback监听时，可以取消指定注册的callback的监听；不指定callback时取消该uri的所有监听。
@@ -2568,8 +2568,8 @@ try {
     let firstPhotoAsset = fetchResult.getFirstObject()
 
     phAccessHelper.registerChange(firstPhotoAsset.uri, false, callback)
-    phAccessHelper.unRegisterChange(firstPhotoAsset.uri, callback: callback)
-    phAccessHelper.unRegisterChange(firstPhotoAsset.uri)
+    phAccessHelper.unregisterChange(firstPhotoAsset.uri, callback: callback)
+    phAccessHelper.unregisterChange(firstPhotoAsset.uri)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -3335,6 +3335,10 @@ public operator func !=(other: AlbumKeys): Bool
 
 **功能：** 判断两个枚举值是否不相等。
 
+**系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -3354,6 +3358,10 @@ public operator func ==(other: AlbumKeys): Bool
 ```
 
 **功能：** 判断两个枚举值是否相等。
+
+**系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
+
+**起始版本：** 22
 
 **参数：**
 
@@ -3477,6 +3485,10 @@ public operator func !=(other: AlbumSubtype): Bool
 
 **功能：** 判断两个枚举值是否不相等。
 
+**系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -3497,6 +3509,10 @@ public operator func ==(other: AlbumSubtype): Bool
 
 **功能：** 判断两个枚举值是否相等。
 
+**系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -3516,6 +3532,10 @@ public func toString(): String
 ```
 
 **功能：** 获取枚举的值。
+
+**系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
+
+**起始版本：** 22
 
 **返回值：**
 
@@ -3576,6 +3596,10 @@ public operator func !=(other: AlbumType): Bool
 
 **功能：** 判断两个枚举值是否不相等。
 
+**系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -3596,6 +3620,10 @@ public operator func ==(other: AlbumType): Bool
 
 **功能：** 判断两个枚举值是否相等。
 
+**系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -3615,6 +3643,10 @@ public func toString(): String
 ```
 
 **功能：** 获取枚举的值。
+
+**系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
+
+**起始版本：** 22
 
 **返回值：**
 
@@ -3675,6 +3707,10 @@ public operator func !=(other: DefaultChangeUri): Bool
 
 **功能：** 判断两个枚举值是否不相等。
 
+**系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -3694,6 +3730,10 @@ public operator func ==(other: DefaultChangeUri): Bool
 ```
 
 **功能：** 判断两个枚举值是否相等。
+
+**系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
+
+**起始版本：** 22
 
 **参数：**
 
@@ -3791,6 +3831,10 @@ public operator func !=(other: DeliveryMode): Bool
 
 **功能：** 判断两个枚举值是否不相等。
 
+**系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -3811,6 +3855,10 @@ public operator func ==(other: DeliveryMode): Bool
 
 **功能：** 判断两个枚举值是否相等。
 
+**系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -3830,6 +3878,10 @@ public func toString(): String
 ```
 
 **功能：** 获取枚举的值。
+
+**系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
+
+**起始版本：** 22
 
 **返回值：**
 
@@ -3890,6 +3942,10 @@ public operator func !=(other: DynamicRangeType): Bool
 
 **功能：** 判断两个枚举值是否不相等。
 
+**系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -3910,6 +3966,10 @@ public operator func ==(other: DynamicRangeType): Bool
 
 **功能：** 判断两个枚举值是否相等。
 
+**系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -3929,6 +3989,10 @@ public func toString(): String
 ```
 
 **功能：** 获取枚举的值。
+
+**系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
+
+**起始版本：** 22
 
 **返回值：**
 
@@ -4080,6 +4144,10 @@ public operator func !=(other: NotifyType): Bool
 
 **功能：** 判断两个枚举值是否不相等。
 
+**系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -4100,6 +4168,10 @@ public operator func ==(other: NotifyType): Bool
 
 **功能：** 判断两个枚举值是否相等。
 
+**系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -4119,6 +4191,10 @@ public func toString(): String
 ```
 
 **功能：** 获取枚举的值。
+
+**系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
+
+**起始版本：** 22
 
 **返回值：**
 
@@ -4150,7 +4226,7 @@ public enum PhotoKeys <: ToString & Equatable<PhotoKeys> {
     | CoverPosition
     | BurstKey
     | LcdSize
-    | ThmSize
+    | ThumbnailSize
     | ...
 }
 ```
@@ -4380,10 +4456,10 @@ Size
 
 **起始版本：** 22
 
-### ThmSize
+### ThumbnailSize
 
 ```cangjie
-ThmSize
+ThumbnailSize
 ```
 
 **功能：** THUMB图片的宽高，值为width:height拼接而成的字符串。
@@ -4438,6 +4514,10 @@ public operator func !=(other: PhotoKeys): Bool
 
 **功能：** 判断两个枚举值是否不相等。
 
+**系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -4457,6 +4537,10 @@ public operator func ==(other: PhotoKeys): Bool
 ```
 
 **功能：** 判断两个枚举值是否相等。
+
+**系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
+
+**起始版本：** 22
 
 **参数：**
 
@@ -4554,6 +4638,10 @@ public operator func !=(other: PhotoSubtype): Bool
 
 **功能：** 判断两个枚举值是否不相等。
 
+**系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -4574,6 +4662,10 @@ public operator func ==(other: PhotoSubtype): Bool
 
 **功能：** 判断两个枚举值是否相等。
 
+**系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -4593,6 +4685,10 @@ public func toString(): String
 ```
 
 **功能：** 获取枚举的值。
+
+**系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
+
+**起始版本：** 22
 
 **返回值：**
 
@@ -4652,6 +4748,10 @@ public operator func !=(other: PhotoType): Bool
 
 **功能：** 判断两个枚举值是否不相等。
 
+**系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -4671,6 +4771,10 @@ public operator func ==(other: PhotoType): Bool
 ```
 
 **功能：** 判断两个枚举值是否相等。
+
+**系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
+
+**起始版本：** 22
 
 **参数：**
 
@@ -4692,16 +4796,20 @@ public func toString(): String
 
 **功能：** 获取枚举的值。
 
+**系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
+
+**起始版本：** 22
+
 **返回值：**
 
 |类型|说明|
 |:----|:----|
 |String|枚举的说明。|
 
-## enum PhotoViewMIMETypes
+## enum PhotoViewMimeTypes
 
 ```cangjie
-public enum PhotoViewMIMETypes <: Equatable<PhotoViewMIMETypes> & ToString {
+public enum PhotoViewMimeTypes <: Equatable<PhotoViewMimeTypes> & ToString {
     | ImageType
     | VideoType
     | ImageVideoType
@@ -4718,7 +4826,7 @@ public enum PhotoViewMIMETypes <: Equatable<PhotoViewMIMETypes> & ToString {
 
 **父类型：**
 
-- Equatable\<PhotoViewMIMETypes>
+- Equatable\<PhotoViewMimeTypes>
 - ToString
 
 ### ImageType
@@ -4769,19 +4877,23 @@ VideoType
 
 **起始版本：** 22
 
-### func !=(PhotoViewMIMETypes)
+### func !=(PhotoViewMimeTypes)
 
 ```cangjie
-public operator func !=(other: PhotoViewMIMETypes): Bool
+public operator func !=(other: PhotoViewMimeTypes): Bool
 ```
 
 **功能：** 判断两个枚举值是否不相等。
+
+**系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
+
+**起始版本：** 22
 
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|other|[PhotoViewMIMETypes](#enum-photoviewmimetypes)|是|-|另一个枚举值。|
+|other|[PhotoViewMimeTypes](#enum-photoviewmimetypes)|是|-|另一个枚举值。|
 
 **返回值：**
 
@@ -4789,19 +4901,23 @@ public operator func !=(other: PhotoViewMIMETypes): Bool
 |:----|:----|
 |Bool|两个枚举值不相等返回true，否则返回false。|
 
-### func ==(PhotoViewMIMETypes)
+### func ==(PhotoViewMimeTypes)
 
 ```cangjie
-public operator func ==(other: PhotoViewMIMETypes): Bool
+public operator func ==(other: PhotoViewMimeTypes): Bool
 ```
 
 **功能：** 判断两个枚举值是否相等。
+
+**系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
+
+**起始版本：** 22
 
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|other|[PhotoViewMIMETypes](#enum-photoviewmimetypes)|是|-|另一个枚举值。|
+|other|[PhotoViewMimeTypes](#enum-photoviewmimetypes)|是|-|另一个枚举值。|
 
 **返回值：**
 
@@ -4816,6 +4932,10 @@ public func toString(): String
 ```
 
 **功能：** 获取枚举的值。
+
+**系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
+
+**起始版本：** 22
 
 **返回值：**
 
@@ -4832,7 +4952,7 @@ public enum RecommendationType <: Equatable<RecommendationType> & ToString {
     | BarCode
     | IdCard
     | ProfilePicture
-    | PassPort
+    | Passport
     | BankCard
     | DriverLicense
     | DrivingLicense
@@ -4924,10 +5044,10 @@ IdCard
 
 **起始版本：** 22
 
-### PassPort
+### Passport
 
 ```cangjie
-PassPort
+Passport
 ```
 
 **功能：** 护照。
@@ -4980,6 +5100,10 @@ public operator func !=(other: RecommendationType): Bool
 
 **功能：** 判断两个枚举值是否不相等。
 
+**系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -5000,6 +5124,10 @@ public operator func ==(other: RecommendationType): Bool
 
 **功能：** 判断两个枚举值是否相等。
 
+**系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -5019,6 +5147,10 @@ public func toString(): String
 ```
 
 **功能：** 获取枚举的值。
+
+**系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
+
+**起始版本：** 22
 
 **返回值：**
 
@@ -5079,6 +5211,10 @@ public operator func !=(other: ResourceType): Bool
 
 **功能：** 判断两个枚举值是否不相等。
 
+**系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -5099,6 +5235,10 @@ public operator func ==(other: ResourceType): Bool
 
 **功能：** 判断两个枚举值是否相等。
 
+**系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -5118,6 +5258,10 @@ public func toString(): String
 ```
 
 **功能：** 获取枚举的值。
+
+**系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
+
+**起始版本：** 22
 
 **返回值：**
 

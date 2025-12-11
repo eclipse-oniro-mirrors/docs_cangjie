@@ -24,7 +24,7 @@ public func opacity(value: ?Float64): T
 
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
-| value | ?Float64 | Yes | - | Opacity value. Range: 0 to 1, where 0 means completely transparent and 1 means completely opaque. Initial value: 1.0 |
+| value | ?Float64 | Yes | - | Opacity value. Range: 0.0 to 1.0, where 0.0 means completely transparent and 1.0 means completely opaque. Initial value: 1.0 |
 
 **Return Value:**
 

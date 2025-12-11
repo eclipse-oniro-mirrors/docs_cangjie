@@ -311,7 +311,7 @@ public static prop distributionOSName: String
 
 **功能：** 发行版系统名称<!--Del-->，由发行方定义<!--DelEnd-->。
 
-示例：OpenHarmony
+示例：<!--RP12End-->OpenHarmony<!--RP12End-->
 
 **类型：** String
 
@@ -411,24 +411,6 @@ public static prop hardwareModel: String
 
 **起始版本：** 22
 
-### static prop hardwareProfile
-
-```cangjie
-public static prop hardwareProfile: String
-```
-
-**功能：** 硬件Profile。
-
-示例：default
-
-**类型：** String
-
-**读写能力：** 只读
-
-**系统能力：** SystemCapability.Startup.SystemInfo
-
-**起始版本：** 22
-
 ### static prop incrementalVersion
 
 ```cangjie
@@ -507,7 +489,7 @@ public static prop osFullName: String
 
 **功能：** 系统版本，版本格式OpenHarmony-x.x.x.x,x为数值。
 
-示例：<!--RP10-->Openharmony-5.0.0.1<!--RP10End-->
+示例：Openharmony-5.0.0.1
 
 **类型：** String
 
@@ -705,7 +687,7 @@ public static prop versionId: String
 
 **功能：** 版本ID。由deviceType、manufacture、brand、productSeries、osFullName、productModel、softwareModel、sdkApiVersion、incrementalVersion、buildType拼接组成。
 
-示例：wearable/TAS/OpenHarmony-5.0.0.1/TAS-AL00/TAS-AL00/12/default/release:nolog
+示例：wearable/TAS/<!--RP12End-->OpenHarmony<!--RP12End-->-5.0.0.1/TAS-AL00/TAS-AL00/12/default/release:nolog
 
 **类型：** String
 
@@ -727,8 +709,6 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let hardwareProfile = DeviceInfo.hardwareProfile
-    Hilog.info(0, "deviceinfo", "the value of thehardwareProfile is : :${hardwareProfile}")
     let osFullName = DeviceInfo.osFullName
     Hilog.info(0, "deviceinfo", "the value of the osFullName is: :${osFullName}")
     let productModel = DeviceInfo.productModel

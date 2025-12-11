@@ -1995,6 +1995,10 @@ public operator func !=(other: IntervalOption): Bool
 
 **功能：** 判断两个[IntervalOption](#enum-intervaloption) 是否不相等。
 
+**系统能力：** SystemCapability.Sensors.Sensor
+
+**起始版本：** 22
+
 **参数：**
 
 | 参数名   | 类型                                     | 必填  | 默认值 | 说明                                         |
@@ -2015,6 +2019,10 @@ public operator func ==(other: IntervalOption): Bool
 
 **功能：** 判断两个[IntervalOption](#enum-intervaloption) 是否相等。
 
+**系统能力：** SystemCapability.Sensors.Sensor
+
+**起始版本：** 22
+
 **参数：**
 
 | 参数名   | 类型                                     | 必填  | 默认值 | 说明                                         |
@@ -2034,6 +2042,10 @@ public func toString(): String
 ```
 
 **功能：** 将枚举值转换为字符串。
+
+**系统能力：** SystemCapability.Sensors.Sensor
+
+**起始版本：** 22
 
 **返回值：**
 
@@ -2120,6 +2132,10 @@ public operator func !=(other: SensorAccuracy): Bool
 
 **功能：** 判断两个[SensorAccuracy](#enum-sensoraccuracy) 是否不相等。
 
+**系统能力：** SystemCapability.Sensors.Sensor
+
+**起始版本：** 22
+
 **参数：**
 
 | 参数名   | 类型                                     | 必填  | 默认值 | 说明                                         |
@@ -2140,6 +2156,10 @@ public operator func ==(other: SensorAccuracy): Bool
 
 **功能：** 判断两个[SensorAccuracy](#enum-sensoraccuracy) 是否相等。
 
+**系统能力：** SystemCapability.Sensors.Sensor
+
+**起始版本：** 22
+
 **参数：**
 
 | 参数名   | 类型                                     | 必填  | 默认值 | 说明                                         |
@@ -2159,6 +2179,10 @@ public func toString(): String
 ```
 
 **功能：** 将枚举值转换为字符串。
+
+**系统能力：** SystemCapability.Sensors.Sensor
+
+**起始版本：** 22
 
 **返回值：**
 
@@ -3201,6 +3225,10 @@ public operator func !=(other: SensorId): Bool
 
 **功能：** 判断两个[SensorId](#enum-sensorid) 是否不相等。
 
+**系统能力：** SystemCapability.Sensors.Sensor
+
+**起始版本：** 22
+
 **参数：**
 
 | 参数名   | 类型                         | 必填  | 默认值 | 说明                             |
@@ -3220,6 +3248,10 @@ public operator func ==(other: SensorId): Bool
 ```
 
 **功能：** 判断两个[SensorId](#enum-sensorid) 是否相等。
+
+**系统能力：** SystemCapability.Sensors.Sensor
+
+**起始版本：** 22
 
 **参数：**
 
@@ -3258,6 +3290,10 @@ public func toString(): String
 ```
 
 **功能：** 将枚举值转换为字符串。
+
+**系统能力：** SystemCapability.Sensors.Sensor
+
+**起始版本：** 22
 
 **返回值：**
 

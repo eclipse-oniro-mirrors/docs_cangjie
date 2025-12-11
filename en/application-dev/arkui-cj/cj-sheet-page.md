@@ -188,7 +188,7 @@ The following example shows the sheet modal closing only when swiped down.
 onWillDismiss: {
     dismissSheetAction: DismissSheetAction => {
         if (dismissSheetAction.reason == DismissReason.SLIDE_DOWN) {
-            DismissSheetAction.dismiss() // Register dismiss behavior
+            dismissSheetAction.dismiss() // Register dismiss behavior
         }
     }
 }

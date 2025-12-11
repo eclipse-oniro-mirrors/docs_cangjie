@@ -101,7 +101,7 @@
                 uri: uri,
                 action: "ohos.want.action.viewData", // 表示查看数据的操作，文件打开场景固定为此值
                 entities: [],
-                wantType: 'general.plain-text', // 表示待打开文件的类型
+                dataType: 'general.plain-text', // 表示待打开文件的类型
                 parameters: HashMap<String, WantValueType>(),
                 fds: HashMap<String, Int32>()
             )
@@ -138,7 +138,7 @@
                 uri: uri,
                 action: "ohos.want.action.viewData", // 表示查看数据的操作，文件打开场景固定为此值
                 entities: [],
-                wantType: 'general.plain-text', // 表示待打开文件的类型
+                dataType: 'general.plain-text', // 表示待打开文件的类型
                 parameters: HashMap<String, WantValueType>(),
                 fds: HashMap<String, Int32>()
             )
@@ -198,7 +198,7 @@
     import kit.AbilityKit.{UIAbility, Want, LaunchParam}
     import kit.ArkUI.{WindowStage}
     import kit.CoreFileKit.{FileIo, OpenMode}
-    import kit.ArkUI.BusinessException
+    import ohos.business_exception.BusinessException
     import kit.PerformanceAnalysisKit.Hilog
 
     class MainAbility <: UIAbility {

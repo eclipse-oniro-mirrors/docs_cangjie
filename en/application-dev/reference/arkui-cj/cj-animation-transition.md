@@ -122,6 +122,7 @@ public var z: ?Length
 **Function:** Translation distance along the z-axis. For numeric types, the unit is vp, with a range of (-∞, +∞).
 
 **Type:** ?[Length](./cj-common-types.md#interface-length)
+
 **Read/Write:** Readable and Writable
 
 **System Capability:** SystemCapability.ArkUI.ArkUI.Full
@@ -551,7 +552,7 @@ public static func opacity(alpha: Float64): TransitionEffect
 
 | Name | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
-| alpha | Float64 | Yes | - | Sets the opacity effect during component transition, which is the value at the start of insertion and the end of deletion. Range: [0, 1].<br> **Note:** <br>Invalid values less than 0 are treated as 0, and values greater than 1 are treated as 1. |
+| alpha | Float64 | Yes | - | Sets the opacity effect during component transition, which is the value at the start of insertion and the end of deletion. Range: [0.0, 1.0].<br> **Note:** <br>Invalid values less than 0.0 are treated as 0.0, and values greater than 1.0 are treated as 1.0 |
 
 **Return Value:**
 

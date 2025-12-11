@@ -24,8 +24,8 @@ func position(x!: ?Length, y!: ?Length): T
 
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
-| x | ?[Length](./cj-common-types.md#interface-length) | Yes | - | **Named parameter** The x-coordinate of the component |
-| y | ?[Length](./cj-common-types.md#interface-length) | Yes | - | **Named parameter** The y-coordinate of the component |
+| x | ?[Length](./cj-common-types.md#interface-length) | Yes | - | **Named parameter.** The x-coordinate of the component |
+| y | ?[Length](./cj-common-types.md#interface-length) | Yes | - | **Named parameter.** The y-coordinate of the component |
 
 **Return Value:**
 
@@ -49,8 +49,8 @@ func markAnchor(x!: ?Length, y!: ?Length): T
 
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
-| x | ?[Length](./cj-common-types.md#interface-length) | Yes | - | **Named parameter** The x-coordinate of the anchor point |
-| y | ?[Length](./cj-common-types.md#interface-length) | Yes | - | **Named parameter** The y-coordinate of the anchor point |
+| x | ?[Length](./cj-common-types.md#interface-length) | Yes | - | **Named parameter.** The x-coordinate of the anchor point |
+| y | ?[Length](./cj-common-types.md#interface-length) | Yes | - | **Named parameter.** The y-coordinate of the anchor point |
 
 **Return Value:**
 
@@ -74,8 +74,8 @@ func offset(x!: ?Length, y!: ?Length): T
 
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
-| x | ?[Length](./cj-common-types.md#interface-length) | Yes | - | **Named parameter** The x-axis offset |
-| y | ?[Length](./cj-common-types.md#interface-length) | Yes | - | **Named parameter** The y-axis offset |
+| x | ?[Length](./cj-common-types.md#interface-length) | Yes | - | **Named parameter.** The x-axis offset |
+| y | ?[Length](./cj-common-types.md#interface-length) | Yes | - | **Named parameter.** The y-axis offset |
 
 **Return Value:**
 

@@ -62,12 +62,6 @@ public func blockBorderColor(value: ?ResourceColor): This
 
 **Function:** Sets the slider border color.
 
-When slider shape is SliderBlockType.DEFAULT, blockBorderColor sets the border color of the default circular slider.
-
-When slider shape is SliderBlockType.IMAGE, the slider has no border, and blockBorderColor has no effect.
-
-When slider shape is SliderBlockType.SHAPE, blockBorderColor sets the color of lines in custom shapes.
-
 **System Capability:** SystemCapability.ArkUI.ArkUI.Full
 
 **Initial Version:** 22
@@ -85,12 +79,6 @@ public func blockColor(value: ?ResourceColor): This
 ```
 
 **Function:** Sets the slider color.
-
-When slider shape is SliderBlockType.DEFAULT, blockColor sets the color of the default circular slider.
-
-When slider shape is SliderBlockType.IMAGE, the slider has no fill, and blockColor has no effect.
-
-When slider shape is SliderBlockType.SHAPE, blockColor sets the fill color of custom shapes.
 
 **System Capability:** SystemCapability.ArkUI.ArkUI.Full
 
@@ -255,9 +243,9 @@ class EntryView {
     @State var vInSetValueTwo: Float64 = 40.00
 
     func build() {
-        Column {
+        Column() {
             Text('outset slider').fontSize(9).fontColor(0xCCCCCC).width(90.percent).margin(15)
-            Row {
+            Row() {
                 Slider(
                     value: this.outSetValueOne,
                     min: 0.0,

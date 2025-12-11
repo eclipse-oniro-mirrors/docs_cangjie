@@ -82,6 +82,7 @@ import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
 import std.collection.*
 import kit.LocalizationKit.*
+import ohos.resource.__GenerateResource__
 
 @Entry
 @Component
@@ -146,6 +147,7 @@ import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
 import std.collection.*
 import kit.LocalizationKit.*
+import ohos.resource.__GenerateResource__
 
 @Component
 class TodoComponent {
@@ -276,6 +278,7 @@ package ohos_app_cangjie_entry
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
 import kit.LocalizationKit.*
+import ohos.resource.__GenerateResource__
 
 @Component
 class TodoComponent {
@@ -399,6 +402,7 @@ package ohos_app_cangjie_entry
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
 import kit.LocalizationKit.*
+import ohos.resource.__GenerateResource__
 
 @Observed
 class TodoListData{

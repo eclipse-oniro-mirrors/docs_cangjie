@@ -35,7 +35,7 @@ public init(child!: () -> Unit = { => })
 
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
-| child | () -> Unit | No | { => } | **Named parameter** Child components of the Navigation container. |
+| child | () -> Unit | No | { => } | **Named parameter.** Child components of the Navigation container. |
 
 ### init(?NavPathStack, () -> Unit)
 
@@ -54,7 +54,7 @@ public init(pathInfos: ?NavPathStack, child!: () -> Unit = { => })
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
 | pathInfos | ?[NavPathStack](#class-navpathstack) | Yes | - | The route stack bound to the Navigation component. |
-| child | () -> Unit | No | { => } | **Named parameter** Child components of the Navigation container. |
+| child | () -> Unit | No | { => } | **Named parameter.** Child components of the Navigation container. |
 
 ## Common Attributes/Events
 
@@ -81,7 +81,7 @@ public func hideTitleBar(hide: ?Bool, animated!: ?Bool = None): This
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
 | hide | ?Bool | Yes | - | Whether to hide the title bar. Initial value: false. |
-| animated | ?Bool | No | None | **Named parameter** Whether to use animation for showing/hiding the title bar. Initial value: false. |
+| animated | ?Bool | No | None | **Named parameter.** Whether to use animation for showing/hiding the title bar. Initial value: false. |
 
 ### func navDestination(?(String, Any) -> Unit)
 
@@ -118,7 +118,7 @@ public func title(value: ?CustomBuilder, options!: ?NavigationTitleOptions = Non
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
 | value | ?[CustomBuilder](./cj-common-types.md#type-custombuilder) | Yes | - | The page title. Initial value: { => }. |
-| options | ?[NavigationTitleOptions](#class-navigationtitleoptions) | No | None | **Named parameter** Title bar options. |
+| options | ?[NavigationTitleOptions](#class-navigationtitleoptions) | No | None | **Named parameter.** Title bar options. |
 
 ### func title(?ResourceStr, ?NavigationTitleOptions)
 
@@ -137,7 +137,7 @@ public func title(value: ?ResourceStr, options!: ?NavigationTitleOptions = None)
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
 | value | ?[ResourceStr](./cj-common-types.md#interface-resourcestr) | Yes | - | The page title. Initial value: "". |
-| options | ?[NavigationTitleOptions](#class-navigationtitleoptions) | No | None | **Named parameter** Title bar options. |
+| options | ?[NavigationTitleOptions](#class-navigationtitleoptions) | No | None | **Named parameter.** Title bar options. |
 
 ## Basic Type Definitions
 
@@ -412,9 +412,9 @@ public init(name！: ?String, param！: ?String, onPop！: ?Callback<PopInfo, Un
 
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
-| name | ?String | Yes | - | **Named parameter** Name of the NavDestination. Initial value: "". |
-| param | ?String | Yes | - | **Named parameter** Detailed parameters of the NavDestination. Initial value: "". |
-| onPop | ?[Callback](./cj-common-types.md#type-callbackt-v)\<[PopInfo](#class-popinfo), Unit> | No | None | **Named parameter** Callback function triggered when the NavDestination page pops. |### class NavPathStack
+| name | ?String | Yes | - | **Named parameter.** Name of the NavDestination. Initial value: "". |
+| param | ?String | Yes | - | **Named parameter.** Detailed parameters of the NavDestination. Initial value: "". |
+| onPop | ?[Callback](./cj-common-types.md#type-callbackt-v)\<[PopInfo](#class-popinfo), Unit> | No | None | **Named parameter.** Callback function triggered when the NavDestination page pops. |### class NavPathStack
 
 ```cangjie
 public class NavPathStack {
@@ -456,7 +456,7 @@ public func pop(animated!: ?Bool = None): ?NavPathInfo
 
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
-| animated | ?Bool | No | None | **Named parameter** Whether to support transition animation. Initial value: true. |
+| animated | ?Bool | No | None | **Named parameter.** Whether to support transition animation. Initial value: true. |
 
 **Return Value:**
 
@@ -481,7 +481,7 @@ public func pushPath(info: ?NavPathInfo, options!: ?NavigationOptions = None): U
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
 | info | ?[NavPathInfo](#class-navpathinfo) | No | NavPathInfo(name: "", param: "") | The NavDestination to be pushed. |
-| options | ?[NavigationOptions](#class-navigationoptions) | No | None | **Named parameter** Navigation options. |
+| options | ?[NavigationOptions](#class-navigationoptions) | No | None | **Named parameter.** Navigation options. |
 
 #### func pushPathByName(?String, ?String, ?Bool)
 
@@ -501,7 +501,7 @@ public func pushPathByName(name: ?String, param: ?String, animated!: ?Bool = Non
 |:---|:---|:---|:---|:---|
 | name | ?String | Yes | - | The name of the NavDestination to be pushed. Initial value: "". |
 | param | ?String | Yes | - | Detailed parameters of the NavDestination to be pushed. Initial value: "". |
-| animated | ?Bool | No | None | **Named parameter** Whether to support transition animation. |
+| animated | ?Bool | No | None | **Named parameter.** Whether to support transition animation. |
 
 ### class PopInfo
 

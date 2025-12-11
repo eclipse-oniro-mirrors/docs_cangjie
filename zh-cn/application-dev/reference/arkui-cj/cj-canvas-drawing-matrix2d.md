@@ -12,7 +12,7 @@ import kit.ArkUI.*
 
 ```cangjie
 public class Matrix2D {
-    public init(?LengthMetricsUnit)
+    public init(unit!: ?LengthMetricsUnit = None)
 }
 ```
 

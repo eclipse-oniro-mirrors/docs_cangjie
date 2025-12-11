@@ -32,7 +32,7 @@ SystemCapability.ArkUI.ArkUI.Full
 
 | Parameter | Type | Required | Default Value | Description |  
 |:---|:---|:---|:---|:---|  
-| isShow | Bool | Yes | - | Whether to display the full-screen modal page.<br/>Default value: false. |  
+| isShow | ?Bool | Yes | - | Whether to display the full-screen modal page.<br/>Default value: false. |  
 | builder | ?[CustomBuilder](./cj-common-types.md#type-custombuilder) | Yes | - | Configures the content of the full-screen modal page.<br>Default value: { => }. |  
 | options | ?[ContentCoverOptions](./cj-common-types.md#class-contentcoveroptions) | No | None | **Named parameter.** Configures optional properties of the full-screen modal page.<br/>Default value: ContentCoverOptions(). |  
 

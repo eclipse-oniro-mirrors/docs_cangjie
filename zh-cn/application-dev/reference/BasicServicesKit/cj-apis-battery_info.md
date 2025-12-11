@@ -1,4 +1,4 @@
-# ohos.battery_info
+# ohos.battery_info（电量信息）
 
 battery_info模块主要提供电池状态和充放电状态的查询接口。
 
@@ -32,6 +32,22 @@ public class BatteryInfo {}
 ### static prop batteryCapacityLevel
 
 ```cangjie
+public static prop batterySoc: Int32
+```
+
+**功能：** 当前设备的电池充电状态 (SoC)，单位为百分比。
+
+**类型：** Int32
+
+**读写能力：** 只读
+
+**系统能力：** SystemCapability.PowerManager.BatteryManager.Core
+
+**起始版本：** 22
+
+### static prop batteryCapacityLevel
+
+```cangjie
 public static prop batteryCapacityLevel: BatteryCapacityLevel
 ```
 
@@ -45,10 +61,10 @@ public static prop batteryCapacityLevel: BatteryCapacityLevel
 
 **起始版本：** 22
 
-### static prop batterySOC
+### static prop batterySoc
 
 ```cangjie
-public static prop batterySOC: Int32
+public static prop batterySoc: Int32
 ```
 
 **功能：** 表示当前设备剩余电池电量百分比。
@@ -307,6 +323,10 @@ public operator func !=(other: BatteryCapacityLevel): Bool
 
 **功能：** 对电池电量等级进行判不等。
 
+**系统能力：** SystemCapability.PowerManager.BatteryManager.Core
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -327,6 +347,10 @@ public operator func ==(other: BatteryCapacityLevel): Bool
 
 **功能：** 对电池电量等级进行判等。
 
+**系统能力：** SystemCapability.PowerManager.BatteryManager.Core
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -346,6 +370,10 @@ public func toString(): String
 ```
 
 **功能：** 返回电池电量等级的字符串表示。
+
+**系统能力：** SystemCapability.PowerManager.BatteryManager.Core
+
+**起始版本：** 22
 
 **返回值：**
 
@@ -432,6 +460,10 @@ public operator func !=(other: BatteryChargeState): Bool
 
 **功能：** 对电池充电状态进行判不等。
 
+**系统能力：** SystemCapability.PowerManager.BatteryManager.Core
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -452,6 +484,10 @@ public operator func ==(other: BatteryChargeState): Bool
 
 **功能：**  对电池充电状态进行判等。
 
+**系统能力：** SystemCapability.PowerManager.BatteryManager.Core
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -471,6 +507,10 @@ public func toString(): String
 ```
 
 **功能：** 返回电池充电状态的字符串表示。
+
+**系统能力：** SystemCapability.PowerManager.BatteryManager.Core
+
+**起始版本：** 22
 
 **返回值：**
 
@@ -583,6 +623,10 @@ public operator func !=(other: BatteryHealthState): Bool
 
 **功能：** 对电池健康状态进行判不等。
 
+**系统能力：** SystemCapability.PowerManager.BatteryManager.Core
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -603,6 +647,10 @@ public operator func ==(other: BatteryHealthState): Bool
 
 **功能：** 对电池健康状态进行判等。
 
+**系统能力：** SystemCapability.PowerManager.BatteryManager.Core
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -622,6 +670,10 @@ public func toString(): String
 ```
 
 **功能：** 返回电池健康状态的字符串表示。
+
+**系统能力：** SystemCapability.PowerManager.BatteryManager.Core
+
+**起始版本：** 22
 
 **返回值：**
 
@@ -708,6 +760,10 @@ public operator func !=(other: BatteryPluggedType): Bool
 
 **功能：** 对充电器类型进行判不等。
 
+**系统能力：** SystemCapability.PowerManager.BatteryManager.Core
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -728,6 +784,10 @@ public operator func ==(other: BatteryPluggedType): Bool
 
 **功能：** 对充电器类型进行判等。
 
+**系统能力：** SystemCapability.PowerManager.BatteryManager.Core
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -747,6 +807,10 @@ public func toString(): String
 ```
 
 **功能：** 返回充电器类型信息的字符串表示。
+
+**系统能力：** SystemCapability.PowerManager.BatteryManager.Core
+
+**起始版本：** 22
 
 **返回值：**
 

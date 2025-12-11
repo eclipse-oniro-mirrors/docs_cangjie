@@ -24,7 +24,6 @@
 - Modal Transition Settings
     - [Full-screen Modal Transition](cj-universal-attribute-bindcontentcover.md)
     - [Half-modal Transition](cj-universal-attribute-sheettransition.md)
-- [Drag Control](cj-universal-attribute-dragcontrol.md)
 - [Safe Area](cj-universal-attribute-expandsafearea.md)
 - [Component Content Filling Mode](cj-universal-attribute-renderfit.md)
 <!--DelEnd-->

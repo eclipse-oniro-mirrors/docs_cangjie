@@ -486,7 +486,7 @@ public let waterfallDisplayAreaRects: WaterfallDisplayAreaRects
 
 **起始版本：** 22
 
-### init(Array<Rect>, WaterfallDisplayAreaRects)
+### init(Array\<Rect>, WaterfallDisplayAreaRects)
 
 ```cangjie
 public init(
@@ -537,10 +537,10 @@ public prop alive: Bool
 
 **起始版本：** 22
 
-### prop densityDPI
+### prop densityDpi
 
 ```cangjie
-public prop densityDPI: Float32
+public prop densityDpi: Float32
 ```
 
 **功能：** 显示屏密度，以像素为单位，是物理像素和逻辑像素之间的缩放系数。低分辨率显示屏的值为1.0。
@@ -717,10 +717,10 @@ public prop width: Int32
 
 **起始版本：** 22
 
-### prop xDPI
+### prop xDpi
 
 ```cangjie
-public prop xDPI: Float32
+public prop xDpi: Float32
 ```
 
 **功能：** x轴上的DPI。
@@ -845,7 +845,7 @@ public let displayId: Int64
 
 **起始版本：** 22
 
-### init(Int64, Array<Rect>)
+### init(Int64, Array\<Rect>)
 
 ```cangjie
 public init(

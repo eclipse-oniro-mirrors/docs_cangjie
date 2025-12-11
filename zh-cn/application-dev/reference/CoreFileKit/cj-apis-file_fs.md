@@ -4138,10 +4138,10 @@ try {
 }
 ```
 
-### func isFIFO()
+### func isFifo()
 
 ```cangjie
-public func isFIFO(): Bool
+public func isFifo(): Bool
 ```
 
 **功能：** 用于判断文件是否是命名管道（有时也称为FIFO）。命名管道通常用于进程间通信。
@@ -4171,7 +4171,7 @@ import kit.PerformanceAnalysisKit.Hilog
 try {
     let pathDir = "path/to/file"
     let filePath = pathDir + "/test.txt"  // 请替换正确的文件路径，获取文件路径参考本文使用说明
-    let isFIFO = FileIo.stat(filePath).isFIFO()
+    let res = FileIo.stat(filePath).isFifo()
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }

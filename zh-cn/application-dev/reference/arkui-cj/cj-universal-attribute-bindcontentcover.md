@@ -29,7 +29,7 @@ public func bindContentCover(isShow: ?Bool, builder: ?CustomBuilder, options!: ?
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|isShow|Bool|是|-|是否显示全屏模态页面。<br/>初始值：false。|
+|isShow|?Bool|是|-|是否显示全屏模态页面。<br/>初始值：false。|
 |builder|?[CustomBuilder](./cj-common-types.md#type-custombuilder)|是|-|配置全屏模态页面内容。<br>初始值：{ => }。|
 |options|?[ContentCoverOptions](./cj-common-types.md#class-contentcoveroptions)|否|None|**命名参数。** 配置全屏模态页面的可选属性。<br/>初始值：ContentCoverOptions()。|
 

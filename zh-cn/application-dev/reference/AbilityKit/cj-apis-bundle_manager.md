@@ -39,7 +39,7 @@ public class AbilityInfo {
     public let applicationInfo: ApplicationInfo
     public let metadata: Array<Metadata>
     public let enabled: Bool
-    public let supportWindowModes: Array<SupportWindowMode>
+    public let supportedWindowModes: Array<SupportedWindowMode>
     public let windowSize: WindowSize
     public let excludeFromDock: Bool
     public let skills: Array<Skill>
@@ -389,15 +389,15 @@ public let skills: Array<Skill>
 
 **起始版本：** 22
 
-### let supportWindowModes
+### let supportedWindowModes
 
 ```cangjie
-public let supportWindowModes: Array<SupportWindowMode>
+public let supportedWindowModes: Array<SupportedWindowMode>
 ```
 
 **功能：** Ability支持的窗口模式。
 
-**类型：** Array\<[SupportWindowMode](#enum-supportwindowmode)>
+**类型：** Array\<[SupportedWindowMode](#enum-SupportedWindowMode)>
 
 **读写能力：** 只读
 
@@ -3127,7 +3127,6 @@ Word
 ```cangjie
 public enum BundleType {
     | App
-    | AtomicService
     | ...
 }
 ```
@@ -3145,18 +3144,6 @@ App
 ```
 
 **功能：** 该Bundle是应用。
-
-**系统能力：** SystemCapability.BundleManager.BundleFramework.Core
-
-**起始版本：** 22
-
-### AtomicService
-
-```cangjie
-AtomicService
-```
-
-**功能：** 该Bundle是原子化服务。
 
 **系统能力：** SystemCapability.BundleManager.BundleFramework.Core
 
@@ -3375,7 +3362,6 @@ Unspecified
 
 ```cangjie
 public enum ExtensionAbilityType {
-    | Form
     | WorkScheduler
     | InputMethod
     | Service
@@ -3395,8 +3381,8 @@ public enum ExtensionAbilityType {
     | Driver
     | Action
     | AdsService
-    | EmbeddedUi
-    | InsightIntentUi
+    | EmbeddedUI
+    | InsightIntentUI
     | Unspecified
     | ...
 }
@@ -3480,10 +3466,10 @@ Driver
 
 **起始版本：** 22
 
-### EmbeddedUi
+### EmbeddedUI
 
 ```cangjie
-EmbeddedUi
+EmbeddedUI
 ```
 
 **功能：** 嵌入式UI扩展能力，提供跨进程界面嵌入的能力。
@@ -3516,18 +3502,6 @@ FileShare
 
 **起始版本：** 22
 
-### Form
-
-```cangjie
-Form
-```
-
-**功能：** 卡片扩展能力，提供卡片开发能力。
-
-**系统能力：** SystemCapability.BundleManager.BundleFramework.Core
-
-**起始版本：** 22
-
 ### InputMethod
 
 ```cangjie
@@ -3540,10 +3514,10 @@ InputMethod
 
 **起始版本：** 22
 
-### InsightIntentUi
+### InsightIntentUI
 
 ```cangjie
-InsightIntentUi
+InsightIntentUI
 ```
 
 **功能：** 为开发者提供能被小艺意图调用，以窗口形态呈现内容的扩展能力。
@@ -3883,10 +3857,10 @@ PermissionGranted
 
 **起始版本：** 22
 
-## enum SupportWindowMode
+## enum SupportedWindowMode
 
 ```cangjie
-public enum SupportWindowMode {
+public enum SupportedWindowMode {
     | FullScreen
     | Split
     | Floating
@@ -3894,19 +3868,7 @@ public enum SupportWindowMode {
 }
 ```
 
-**功能：** 标识该组件所支持的窗口模式。
-
-**系统能力：** SystemCapability.BundleManager.BundleFramework.Core
-
-**起始版本：** 22
-
-### Floating
-
-```cangjie
-Floating
-```
-
-**功能：** 支持窗口化显示，即显示悬浮窗口。
+**功能：** 支持窗口模式。
 
 **系统能力：** SystemCapability.BundleManager.BundleFramework.Core
 
@@ -3918,7 +3880,7 @@ Floating
 FullScreen
 ```
 
-**功能：** 窗口支持全屏显示。
+**功能：** 表示支持全屏模式的窗口模式。
 
 **系统能力：** SystemCapability.BundleManager.BundleFramework.Core
 
@@ -3930,7 +3892,19 @@ FullScreen
 Split
 ```
 
-**功能：** 窗口支持分屏显示。
+**功能：**表示支持分屏模式的窗口模式。
+
+**系统能力：** SystemCapability.BundleManager.BundleFramework.Core
+
+**起始版本：** 22
+
+### Floating
+
+```cangjie
+Floating
+```
+
+**功能：** 表示支持浮动模式的窗口模式。
 
 **系统能力：** SystemCapability.BundleManager.BundleFramework.Core
 

@@ -470,7 +470,7 @@ public let waterfallDisplayAreaRects: WaterfallDisplayAreaRects
 
 **Since:** 22
 
-### init(Array<Rect>, WaterfallDisplayAreaRects)
+### init(Array\<Rect>, WaterfallDisplayAreaRects)
 
 ```cangjie
 public init(
@@ -521,10 +521,10 @@ public prop alive: Bool
 
 **Since:** 22
 
-### prop densityDPI
+### prop densityDpi
 
 ```cangjie
-public prop densityDPI: Float32
+public prop densityDpi: Float32
 ```
 
 **Function:** Display density in pixels, representing the scaling factor between physical and logical pixels. The value is 1.0 for low-resolution displays.
@@ -701,10 +701,10 @@ public prop width: Int32
 
 **Since:** 22
 
-### prop xDPI
+### prop xDpi
 
 ```cangjie
-public prop xDPI: Float32
+public prop xDpi: Float32
 ```
 
 **Function:** DPI on the x-axis.
@@ -827,7 +827,7 @@ public let displayId: UInt32
 
 **Since:** 22
 
-### init(UInt32, Array<Rect>)
+### init(UInt32, Array\<Rect>)
 
 ```cangjie
 public init(

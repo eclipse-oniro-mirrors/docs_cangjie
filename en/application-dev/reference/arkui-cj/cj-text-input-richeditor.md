@@ -49,7 +49,7 @@ Common Events: All supported.
 
 ```cangjie
 public func bindSelectionMenu(
-    spantype!: ?RichEditorSpanType = None,
+    spanType!: ?RichEditorSpanType = None,
     content!: ?CustomBuilder,
     responseType!: ?ResponseType = None,
     options!: ?SelectionMenuOptions
@@ -70,7 +70,7 @@ public func bindSelectionMenu(
 
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
-| spantype | ?[RichEditorSpanType](./cj-common-types.md#enum-richeditorspantype) | No | None | **Named parameter.** Specifies the type of selection menu.<br>Initial value: RichEditorSpanType.Text. |
+| spanType | ?[RichEditorSpanType](./cj-common-types.md#enum-richeditorspantype) | No | None | **Named parameter.** Specifies the type of selection menu.<br>Initial value: RichEditorSpanType.Text. |
 | content | ?[CustomBuilder](./cj-common-types.md#type-custombuilder) | Yes | - | **Named parameter.** Specifies the content of the selection menu. Use with [@Builder](../../arkui-cj/paradigm/cj-macro-builder.md) and bind method.<br>Initial value: { => }. |
 | responseType | ?[ResponseType](./cj-common-types.md#enum-responsetype) | No | None | **Named parameter.** Specifies the response type of the selection menu.<br>Initial value: ResponseType.LongPress. |
 | options | ?[SelectionMenuOptions](#class-selectionmenuoptions) | Yes | - | **Named parameter.** Specifies the options for the selection menu.<br>Initial value: SelectionMenuOptions(). |
@@ -1328,7 +1328,9 @@ public init(onAppear!: ?() -> Unit = None, onDisappear!: ?() -> Unit = None)
 | Parameter Name | Type | Required | Default Value | Description |
 |:---|:---|:---|:---|:---|
 | onAppear | ?() -> Unit | No | None | **Named parameter.** Callback function when the selection menu appears. Initial value: {=>}. |
-| onDisappear | ?() -> Unit | No | None | **Named parameter.** Callback function when the selection menu disappears. Initial value: {=>}. |### class RichEditorTextStyle
+| onDisappear | ?() -> Unit | No | None | **Named parameter.** Callback function when the selection menu disappears. Initial value: {=>}. |
+
+### class RichEditorTextStyle
 
 ```cangjie
 public class RichEditorTextStyle {
@@ -1632,8 +1634,8 @@ public init(margin!: ?Length, borderRadius!: ?Length)
 
 | Parameter Name | Type | Required | Default Value | Description |
 |:---|:---|:---|:---|:---|
-| margin | ?[Length](./cj-common-types.md#interface-length) | No | None | **Named parameter.** Margin. |
-| borderRadius | ?[Length](./cj-common-types.md#interface-length) | No | None | **Named parameter.** Border radius. |
+| margin | ?[Length](./cj-common-types.md#interface-length) | Yes | - | **Named parameter.** Margin. |
+| borderRadius | ?[Length](./cj-common-types.md#interface-length) | Yes | - | **Named parameter.** Border radius. |
 
 ### class RichEditorImageSpanStyle
 
@@ -1901,7 +1903,7 @@ public init(textAlign!: ?TextAlign = None, leadingMargin!: ?Length)
 | Parameter | Type | Required | Default Value | Description |
 |:---|:---|:---|:---|:---|
 | textAlign | ?[TextAlign](./cj-common-types.md#enum-textalign) | No | None | **Named parameter.** Text alignment. Initial value: TextAlign.Start. |
-| leadingMargin | ?[Length](./cj-common-types.md#interface-length) | No | None | **Named parameter.** First-line indentation. |
+| leadingMargin | ?[Length](./cj-common-types.md#interface-length) | Yes | - | **Named parameter.** First-line indentation. |
 
 #### init(?TextAlign, ?LeadingMarginPlaceholder)
 
@@ -2414,7 +2416,7 @@ class EntryView {
             RichEditor(controller)
             .customKeyboard(value: bind(builder, this))
             .bindSelectionMenu(
-                spantype: RichEditorSpanType.Text,
+                spanType: RichEditorSpanType.Text,
                 content: bind(builder, this),
                 responseType: ResponseType.LongPress,
                 options: SelectionMenuOptions(onAppear: { => Hilog.info(0, "AppLogCj", "SelectionMenuOptions onAppear")}, onDisappear: { => Hilog.info(0, "AppLogCj", "SelectionMenuOptions onDisappear")})

@@ -31,7 +31,7 @@ public func createGattClientDevice(deviceId: String): GattClientDevice
 **功能：** 创建[GattClientDevice](#class-gattclientdevice)实例，表示GATT连接中的client端。
 
 - 通过该实例可以操作client端行为，如调用[connect](#func-connect)向对端设备发起连接，调用[getServices](#func-getrssivalueasynccallbackint32)获取对端设备支持的所有服务能力。
-- 创建该实例所需要的设备地址表示server端设备。可以通过[startBLEScan](#func-startblescanarrayscanfilter-scanoptions)接口获取server端设备地址，且需保证server端设备的BLE广播是可连接的。
+- 创建该实例所需要的设备地址表示server端设备。可以通过[startBleScanning](#func-startblescanningarrayscanfilter-scanoptions)接口获取server端设备地址，且需保证server端设备的BLE广播是可连接的。
 
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
@@ -461,17 +461,17 @@ try {
 }
 ```
 
-## func startBLEScan(Array\<ScanFilter>, ?ScanOptions)
+## func startBleScanning(Array\<ScanFilter>, ?ScanOptions)
 
 ```cangjie
-public func startBLEScan(filters: Array<ScanFilter>, options!: ?ScanOptions = None): Unit
+public func startBleScanning(filters: Array<ScanFilter>, options!: ?ScanOptions = None): Unit
 ```
 
 **功能：** 发起BLE扫描流程。
 
-- 扫描结果会通过[on(BleDeviceFind)](#func-onbluetoothblecallbacktype-callback1argumentarrayscanresult)的回调函数获取到。只能扫描BLE设备，调用[stopBLEScan](#func-stopblescan)可以停止该方法开启的扫描流程。
+- 扫描结果会通过[on(BleDeviceFind)](#func-onbluetoothblecallbacktype-callback1argumentarrayscanresult)的回调函数获取到。只能扫描BLE设备，调用[stopBleScanning](#func-stopblescanning)可以停止该方法开启的扫描流程。
 
-- 该接口只支持单路扫描，即应用同时只能调用一次，下一次调用前，需要先调用[stopBLEScan](#func-stopblescan)停止上一次的扫描流程。
+- 该接口只支持单路扫描，即应用同时只能调用一次，下一次调用前，需要先调用[stopBleScanning](#func-stopblescanning)停止上一次的扫描流程。
 
 **需要权限：** ohos.permission.ACCESS_BLUETOOTH
 
@@ -526,7 +526,7 @@ try {
     var scanFilter = ScanFilter()
     scanFilter.serviceUUID = "00001888-0000-1000-8000-00805f9b34fb"  // 请替换为您的 serviceUUid
     let scanOptions = ScanOptions(interval: 0, dutyMode: ScanDuty.ScanModeLowPower, matchMode: MatchMode.MatchModeAggressive, phyType: PhyType.PhyLe1M)
-    startBLEScan([scanFilter], options: scanOptions)
+    startBleScanning([scanFilter], options: scanOptions)
 } catch (e: BusinessException) {
     Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}", "")
 }
@@ -665,15 +665,15 @@ try {
 }
 ```
 
-## func stopBLEScan()
+## func stopBleScanning()
 
 ```cangjie
-public func stopBLEScan(): Unit
+public func stopBleScanning(): Unit
 ```
 
 **功能：** 停止BLE扫描流程。
 
-- 停止的BLE扫描由[startBLEScan](#func-startblescanarrayscanfilter-scanoptions)触发。
+- 停止的BLE扫描由[startBleScanning](#func-startblescanningarrayscanfilter-scanoptions)触发。
 
 - 当应用不再需要扫描BLE设备时，需主动调用该方法停止扫描。
 
@@ -709,7 +709,7 @@ import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    stopBLEScan()
+    stopBleScanning()
 } catch (e: BusinessException) {
     Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}", "")
 }
@@ -1084,20 +1084,20 @@ public var state: AdvertisingState
 
 **起始版本：** 22
 
-## class BLECharacteristic
+## class BleCharacteristic
 
 ```cangjie
-public class BLECharacteristic {
+public class BleCharacteristic {
     public var serviceUUID: String
     public var characteristicUUID: String
     public var characteristicValue: Array<Byte>
-    public var descriptors: Array<BLEDescriptor>
+    public var descriptors: Array<BleDescriptor>
     public var properties: GattProperties
     public init(
         serviceUUID: String,
         characteristicUUID: String,
         characteristicValue: Array<Byte>,
-        descriptors: Array<BLEDescriptor>,
+        descriptors: Array<BleDescriptor>,
         properties!: GattProperties = GattProperties(),
         permissions!: GattPermissions = GattPermissions(),
         characteristicValueHandle!: UInt32 = 0
@@ -1146,12 +1146,12 @@ public var characteristicValue: Array<Byte>
 ### var descriptors
 
 ```cangjie
-public var descriptors: Array<BLEDescriptor>
+public var descriptors: Array<BleDescriptor>
 ```
 
 **功能：** 特征值包含的描述符列表。
 
-**类型：** Array\<[BLEDescriptor](#class-bledescriptor)>
+**类型：** Array\<[BleDescriptor](#class-bledescriptor)>
 
 **读写能力：** 可读写
 
@@ -1191,21 +1191,21 @@ public var serviceUUID: String
 
 **起始版本：** 22
 
-### init(String, String, Array\<Byte>, Array\<BLEDescriptor>, GattProperties, GattPermissions, UInt32)
+### init(String, String, Array\<Byte>, Array\<BleDescriptor>, GattProperties, GattPermissions, UInt32)
 
 ```cangjie
 public init(
     serviceUUID: String,
     characteristicUUID: String,
     characteristicValue: Array<Byte>,
-    descriptors: Array<BLEDescriptor>,
+    descriptors: Array<BleDescriptor>,
     properties!: GattProperties = GattProperties(),
     permissions!: GattPermissions = GattPermissions(),
     characteristicValueHandle!: UInt32 = 0
 )
 ```
 
-**功能：** BLECharacteristic 构造器。
+**功能：** BleCharacteristic 构造器。
 
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
@@ -1218,15 +1218,15 @@ public init(
 |serviceUUID|String|是|-|特征值所属的服务UUID。例如：00001888-0000-1000-8000-00805f9b34fb。|
 |characteristicUUID|String|是|-|特征值UUID。例如：00002a11-0000-1000-8000-00805f9b34fb。|
 |characteristicValue|Array\<Byte>|是|-|特征值的数据内容。|
-|descriptors|Array\<[BLEDescriptor](#class-bledescriptor)>|是|-|特征值包含的描述符列表。|
+|descriptors|Array\<[BleDescriptor](#class-bledescriptor)>|是|-|特征值包含的描述符列表。|
 |properties|[GattProperties](#class-gattproperties)|否|GattProperties()|**命名参数。** 特征值支持的属性。|
 |permissions|[GattPermissions](#class-gattpermissions)|否|GattPermissions()|**命名参数。** 特征值读写操作需要的权限。预留字段，本版本暂不支持。|
 |characteristicValueHandle|UInt32|否|0|**命名参数。** 特征值的唯一标识句柄。当server端BLE蓝牙设备提供了多个相同UUID特征值时，可以通过此句柄区分不同的特征值。预留字段，本版本暂不支持。|
 
-## class BLEConnectionChangeState
+## class BleConnectionChangeState
 
 ```cangjie
-public class BLEConnectionChangeState {
+public class BleConnectionChangeState {
     public var deviceId: String
     public var state: ProfileConnectionState
 }
@@ -1270,10 +1270,10 @@ public var state: ProfileConnectionState
 
 **起始版本：** 22
 
-## class BLEDescriptor
+## class BleDescriptor
 
 ```cangjie
-public class BLEDescriptor {
+public class BleDescriptor {
     public var serviceUUID: String
     public var characteristicUUID: String
     public var descriptorUUID: String
@@ -1289,7 +1289,7 @@ public class BLEDescriptor {
 }
 ```
 
-**功能：** GATT描述符结构定义，是特征值[BLECharacteristic](#class-blecharacteristic)的数据单元，用于描述特征值的附加信息和属性。
+**功能：** GATT描述符结构定义，是特征值[BleCharacteristic](#class-blecharacteristic)的数据单元，用于描述特征值的附加信息和属性。
 
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
@@ -1372,7 +1372,7 @@ public init(
 )
 ```
 
-**功能：** BLEDescriptor 构造器。
+**功能：** BleDescriptor 构造器。
 
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
@@ -2302,8 +2302,8 @@ import ohos.business_exception.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
-class BLEConnectionStateChangeCallback <: Callback1Argument<BLEConnectionChangeState> {
-    public func invoke(err: ?BusinessException, stateInfo: BLEConnectionChangeState): Unit {
+class BLEConnectionStateChangeCallback <: Callback1Argument<BleConnectionChangeState> {
+    public func invoke(err: ?BusinessException, stateInfo: BleConnectionChangeState): Unit {
         Hilog.info(0, "Bluetooth", "onGattServerStateChange: device=" + stateInfo.deviceId + ", state=" + stateInfo.state.toString())
     }
 }
@@ -2319,10 +2319,10 @@ try {
 }
 ```
 
-### func on(BluetoothBleGattClientDeviceCallbackType, Callback1Argument\<BLECharacteristic>)
+### func on(BluetoothBleGattClientDeviceCallbackType, Callback1Argument\<BleCharacteristic>)
 
 ```cangjie
-public func on(eventType: BluetoothBleGattClientDeviceCallbackType, callback: Callback1Argument<BLECharacteristic>): Unit
+public func on(eventType: BluetoothBleGattClientDeviceCallbackType, callback: Callback1Argument<BleCharacteristic>): Unit
 ```
 
 **功能：** client端订阅server端特征值变化事件。使用Callback异步回调。
@@ -2340,7 +2340,7 @@ public func on(eventType: BluetoothBleGattClientDeviceCallbackType, callback: Ca
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |eventType|[BluetoothBleGattClientDeviceCallbackType](#enum-bluetoothblegattclientdevicecallbacktype)|是|-|事件回调类型，支持的事件为BleCharacteristicChange，表示server端特征值变化事件。<br>当client端收到server端特征值内容变更的通知或者指示时，触发该事件。|
-|callback|[Callback1Argument](../arkinterop/cj-api-callback_invoke.md#class-callback1argument)\<[BLECharacteristic](#class-blecharacteristic)>|是|-|指定订阅的回调函数，会携带server端变化后的特征值内容。|
+|callback|[Callback1Argument](../arkinterop/cj-api-callback_invoke.md#class-callback1argument)\<[BleCharacteristic](#class-blecharacteristic)>|是|-|指定订阅的回调函数，会携带server端变化后的特征值内容。|
 
 **异常：**
 
@@ -2365,8 +2365,8 @@ import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 // 此处代码可添加在依赖项定义中
-class BLECharacteristicChangeCallback <: Callback1Argument<BLECharacteristic> {
-    public func invoke(err: ?BusinessException, characteristic: BLECharacteristic): Unit {
+class BLECharacteristicChangeCallback <: Callback1Argument<BleCharacteristic> {
+    public func invoke(err: ?BusinessException, characteristic: BleCharacteristic): Unit {
         Hilog.info(0, "Bluetooth", "characteristic ${characteristic.serviceUUID} has change")
     }
 }
@@ -2380,12 +2380,12 @@ try {
 }
 ```
 
-### func on(BluetoothBleGattClientDeviceCallbackType, Callback1Argument\<BLEConnectionChangeState>)
+### func on(BluetoothBleGattClientDeviceCallbackType, Callback1Argument\<BleConnectionChangeState>)
 
 ```cangjie
 public func on(
     eventType: BluetoothBleGattClientDeviceCallbackType,
-    callback: Callback1Argument<BLEConnectionChangeState>
+    callback: Callback1Argument<BleConnectionChangeState>
 ): Unit
 ```
 
@@ -2402,7 +2402,7 @@ public func on(
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |eventType|[BluetoothBleGattClientDeviceCallbackType](#enum-bluetoothblegattclientdevicecallbacktype)|是|-|事件回调类型，支持的事件为BleConnectionStateChange，表示连接状态变化事件。<br>client和server端之间的连接状态发生变化时，触发该事件。<br>当client端调用[connect](#func-connect)或[disconnect](#func-disconnect)时，可能引起连接状态生变化。|
-|callback|[Callback1Argument](../arkinterop/cj-api-callback_invoke.md#class-callback1argument)\<[BLEConnectionChangeState](#class-bleconnectionchangestate)>|是|-|指定订阅的回调函数，会携带连接状态信息。|
+|callback|[Callback1Argument](../arkinterop/cj-api-callback_invoke.md#class-callback1argument)\<[BleConnectionChangeState](#class-bleconnectionchangestate)>|是|-|指定订阅的回调函数，会携带连接状态信息。|
 
 **异常：**
 
@@ -2427,8 +2427,8 @@ import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 // 此处代码可添加在依赖项定义中
-class BLEConnectionStateChangeCallback1 <: Callback1Argument<BLEConnectionChangeState> {
-    public func invoke(err: ?BusinessException, stateInfo: BLEConnectionChangeState): Unit {
+class BLEConnectionStateChangeCallback1 <: Callback1Argument<BleConnectionChangeState> {
+    public func invoke(err: ?BusinessException, stateInfo: BleConnectionChangeState): Unit {
         Hilog.info(0, "Bluetooth", "onGattServerStateChange: device=" + stateInfo.deviceId + ", state=" + stateInfo.state.toString())
     }
 }
@@ -2460,7 +2460,7 @@ public func on(eventType: BluetoothBleGattClientDeviceCallbackType, callback: Ca
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|eventType|[BluetoothBleGattClientDeviceCallbackType](#enum-bluetoothblegattclientdevicecallbacktype)|是|-|事件回调类型，支持的事件为ClientBleMtuChange，表示MTU大小变更事件。<br>当调用[setBLEMtuSize](#func-setblemtusizeint32)方法，client端发起MTU大小协商后，会触发该事件。|
+|eventType|[BluetoothBleGattClientDeviceCallbackType](#enum-bluetoothblegattclientdevicecallbacktype)|是|-|事件回调类型，支持的事件为ClientBleMtuChange，表示MTU大小变更事件。<br>当调用[setBleMtuSize](#func-setblemtusizeint32)方法，client端发起MTU大小协商后，会触发该事件。|
 |callback|[Callback1Argument](../arkinterop/cj-api-callback_invoke.md#class-callback1argument)\<Int32>|是|-|指定订阅的回调函数，会携带协商后的MTU大小。单位：Byte。|
 
 **异常：**
@@ -2501,12 +2501,12 @@ try {
 }
 ```
 
-### func readCharacteristicValue(BLECharacteristic, AsyncCallback\<BLECharacteristic>)
+### func readCharacteristicValue(BleCharacteristic, AsyncCallback\<BleCharacteristic>)
 
 ```cangjie
 public func readCharacteristicValue(
-    characteristic: BLECharacteristic,
-    callback: AsyncCallback<BLECharacteristic>
+    characteristic: BleCharacteristic,
+    callback: AsyncCallback<BleCharacteristic>
 ): Unit
 ```
 
@@ -2516,7 +2516,7 @@ public func readCharacteristicValue(
 
 - 异步回调结果返回后，才能调用下一次读取或者写入操作，如[readCharacteristicValue](#func-readcharacteristicvalueblecharacteristic-asynccallbackblecharacteristic)、[readDescriptorValue](#func-readdescriptorvaluebledescriptor-asynccallbackbledescriptor)、[writeCharacteristicValue](#func-writecharacteristicvalueblecharacteristic-gattwritetype-asynccallbackunit)、[writeDescriptorValue](#func-writedescriptorvaluebledescriptor-asynccallbackunit)、[setCharacteristicChangeNotification](#func-setcharacteristicchangenotificationblecharacteristic-bool-asynccallbackunit)和[setCharacteristicChangeIndication](#func-setcharacteristicchangeindicationblecharacteristic-bool-asynccallbackunit)。
 
-- 读取特征值过程中，需确保[BLECharacteristic](#class-blecharacteristic)入参特征值的serviceUuid、characteristicUuid准确。characteristicValue表示的数据内容长度可由用户任意指定，不会影响实际读取到的特征值数据内容。
+- 读取特征值过程中，需确保[BleCharacteristic](#class-blecharacteristic)入参特征值的serviceUuid、characteristicUuid准确。characteristicValue表示的数据内容长度可由用户任意指定，不会影响实际读取到的特征值数据内容。
 
 **需要权限：** ohos.permission.ACCESS_BLUETOOTH
 
@@ -2528,8 +2528,8 @@ public func readCharacteristicValue(
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|characteristic|[BLECharacteristic](#class-blecharacteristic)|是|-|需要读取的特征值。|
-|callback|[AsyncCallback](../arkinterop/cj-api-business_exception.md#type-asynccallback)\<[BLECharacteristic](#class-blecharacteristic)>|是|-|回调函数。当读取成功，获取到的特征值对象，包含读取到的数据内容。|
+|characteristic|[BleCharacteristic](#class-blecharacteristic)|是|-|需要读取的特征值。|
+|callback|[AsyncCallback](../arkinterop/cj-api-business_exception.md#type-asynccallback)\<[BleCharacteristic](#class-blecharacteristic)>|是|-|回调函数。当读取成功，获取到的特征值对象，包含读取到的数据内容。|
 
 **异常：**
 
@@ -2563,18 +2563,18 @@ import kit.PerformanceAnalysisKit.Hilog
 
 // 创建descriptors
 let descBuffer: Array<Byte> = [31, 32]
-let descriptor = BLEDescriptor(
+let descriptor = BleDescriptor(
     "00001810-0000-1000-8000-00805F9B34FB",
     "00001820-0000-1000-8000-00805F9B34FB",
     "00002902-0000-1000-8000-00805F9B34FB",
     Array<Byte>(2, repeat: 0)
 )
 // 创建characteristics
-let descriptors: Array<BLEDescriptor> = [descriptor]
+let descriptors: Array<BleDescriptor> = [descriptor]
 let charBuffer: Array<Byte> = [21, 22]
 let properties = GattProperties()
 
-let characteristic: BLECharacteristic = BLECharacteristic(
+let characteristic: BleCharacteristic = BleCharacteristic(
     "00001810-0000-1000-8000-00805F9B34FB",
     "00001820-0000-1000-8000-00805F9B34FB",
     charBuffer,
@@ -2585,7 +2585,7 @@ let characteristic: BLECharacteristic = BLECharacteristic(
 try {
     let gattClient = createGattClientDevice("XX:XX:XX:XX:XX:XX")  // 请替换为您的设备地址
     gattClient.readCharacteristicValue(characteristic) {
-        error: ?BusinessException, outData: ?BLECharacteristic =>
+        error: ?BusinessException, outData: ?BleCharacteristic =>
         if (let Some(e) <- error) {
             throw e
         }
@@ -2603,10 +2603,10 @@ try {
 }
 ```
 
-### func readDescriptorValue(BLEDescriptor, AsyncCallback\<BLEDescriptor>)
+### func readDescriptorValue(BleDescriptor, AsyncCallback\<BleDescriptor>)
 
 ```cangjie
-public func readDescriptorValue(descriptor: BLEDescriptor, callback: AsyncCallback<BLEDescriptor>): Unit
+public func readDescriptorValue(descriptor: BleDescriptor, callback: AsyncCallback<BleDescriptor>): Unit
 ```
 
 **功能：** client端从指定的server端描述符读取数据。
@@ -2615,7 +2615,7 @@ public func readDescriptorValue(descriptor: BLEDescriptor, callback: AsyncCallba
 
 - 异步回调结果返回后，才能调用下一次读取或者写入操作，如[readCharacteristicValue](#func-readcharacteristicvalueblecharacteristic-asynccallbackblecharacteristic)、[readDescriptorValue](#func-readdescriptorvaluebledescriptor-asynccallbackbledescriptor)、[writeCharacteristicValue](#func-writecharacteristicvalueblecharacteristic-gattwritetype-asynccallbackunit)、[writeDescriptorValue](#func-writedescriptorvaluebledescriptor-asynccallbackunit)、[setCharacteristicChangeNotification](#func-setcharacteristicchangenotificationblecharacteristic-bool-asynccallbackunit)和[setCharacteristicChangeIndication](#func-setcharacteristicchangeindicationblecharacteristic-bool-asynccallbackunit)。
 
-- 读取描述符过程中，需确保[BLEDescriptor](#class-bledescriptor)入参描述符的serviceUuid、characteristicUuid、descriptorUuid准确。descriptorValue表示的数据内容长度可由用户任意指定，不会影响实际读取到的描述符数据内容。
+- 读取描述符过程中，需确保[BleDescriptor](#class-bledescriptor)入参描述符的serviceUuid、characteristicUuid、descriptorUuid准确。descriptorValue表示的数据内容长度可由用户任意指定，不会影响实际读取到的描述符数据内容。
 
 **需要权限：** ohos.permission.ACCESS_BLUETOOTH
 
@@ -2627,8 +2627,8 @@ public func readDescriptorValue(descriptor: BLEDescriptor, callback: AsyncCallba
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|descriptor|[BLEDescriptor](#class-bledescriptor)|是|-|需要读取的描述符。|
-|callback|[AsyncCallback](../arkinterop/cj-api-business_exception.md#type-asynccallback)\<[BLEDescriptor](#class-bledescriptor)>|是|-|回调函数。当读取成功，data为获取到的描述符对象，包含读取到的数据内容。|
+|descriptor|[BleDescriptor](#class-bledescriptor)|是|-|需要读取的描述符。|
+|callback|[AsyncCallback](../arkinterop/cj-api-business_exception.md#type-asynccallback)\<[BleDescriptor](#class-bledescriptor)>|是|-|回调函数。当读取成功，data为获取到的描述符对象，包含读取到的数据内容。|
 
 **异常：**
 
@@ -2661,7 +2661,7 @@ import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 let descBuffer: Array<Byte> = [31, 32]
-let descriptor = BLEDescriptor(
+let descriptor = BleDescriptor(
     "00001810-0000-1000-8000-00805F9B34FB",
     "00001820-0000-1000-8000-00805F9B34FB",
     "00002903-0000-1000-8000-00805F9B34FB",
@@ -2671,7 +2671,7 @@ let descriptor = BLEDescriptor(
 try {
     let gattClient = createGattClientDevice("XX:XX:XX:XX:XX:XX")  // 请替换为您的设备地址
     gattClient.readDescriptorValue(descriptor) {
-        error: ?BusinessException, outDescriptor: ?BLEDescriptor =>
+        error: ?BusinessException, outDescriptor: ?BleDescriptor =>
         if (let Some(e) <- error) {
             throw e
         }
@@ -2689,10 +2689,10 @@ try {
 }
 ```
 
-### func setBLEMtuSize(Int32)
+### func setBleMtuSize(Int32)
 
 ```cangjie
-public func setBLEMtuSize(mtu: Int32): Unit
+public func setBleMtuSize(mtu: Int32): Unit
 ```
 
 **功能：** client端同server端协商[MTU](../../connectivity/terminology.md#mtu)（最大传输单元）大小。
@@ -2740,16 +2740,16 @@ import kit.PerformanceAnalysisKit.Hilog
 
 try {
     let gattClient = createGattClientDevice("XX:XX:XX:XX:XX:XX")  // 请替换为您的设备地址
-    gattClient.setBLEMtuSize(100)
+    gattClient.setBleMtuSize(100)
 } catch (e: BusinessException) {
     Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}", "")
 }
 ```
 
-### func setCharacteristicChangeIndication(BLECharacteristic, Bool, AsyncCallback\<Unit>)
+### func setCharacteristicChangeIndication(BleCharacteristic, Bool, AsyncCallback\<Unit>)
 
 ```cangjie
-public func setCharacteristicChangeIndication(characteristic: BLECharacteristic, enable: Bool, callback: AsyncCallback<Unit>): Unit
+public func setCharacteristicChangeIndication(characteristic: BleCharacteristic, enable: Bool, callback: AsyncCallback<Unit>): Unit
 ```
 
 **功能：** client端启用或者禁用接收server端特征值内容变更指示的能力。
@@ -2778,7 +2778,7 @@ public func setCharacteristicChangeIndication(characteristic: BLECharacteristic,
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|characteristic|[BLECharacteristic](#class-blecharacteristic)|是|-|需要管理的server端特征值。|
+|characteristic|[BleCharacteristic](#class-blecharacteristic)|是|-|需要管理的server端特征值。|
 |enable|Bool|是|-|蓝牙设备特征的写入类型。|
 |callback|[AsyncCallback](../arkinterop/cj-api-business_exception.md#type-asynccallback)\<Unit>|是|-|回调函数。|
 
@@ -2809,18 +2809,18 @@ import kit.PerformanceAnalysisKit.Hilog
 
 // 创建descriptors
 let descBuffer: Array<Byte> = [31, 32]
-let descriptor = BLEDescriptor(
+let descriptor = BleDescriptor(
     "00001810-0000-1000-8000-00805F9B34FB",
     "00001820-0000-1000-8000-00805F9B34FB",
     "00002902-0000-1000-8000-00805F9B34FB",
     Array<Byte>(2, repeat: 0)
 )
 // 创建characteristics
-let descriptors: Array<BLEDescriptor> = [descriptor]
+let descriptors: Array<BleDescriptor> = [descriptor]
 let charBuffer: Array<Byte> = [21, 22]
 let properties = GattProperties()
 
-let characteristic: BLECharacteristic = BLECharacteristic(
+let characteristic: BleCharacteristic = BleCharacteristic(
     "00001810-0000-1000-8000-00805F9B34FB",
     "00001820-0000-1000-8000-00805F9B34FB",
     charBuffer,
@@ -2840,10 +2840,10 @@ try {
 }
 ```
 
-### func setCharacteristicChangeNotification(BLECharacteristic, Bool, AsyncCallback\<Unit>)
+### func setCharacteristicChangeNotification(BleCharacteristic, Bool, AsyncCallback\<Unit>)
 
 ```cangjie
-public func setCharacteristicChangeNotification(characteristic: BLECharacteristic, enable: Bool, callback: AsyncCallback<Unit>): Unit
+public func setCharacteristicChangeNotification(characteristic: BleCharacteristic, enable: Bool, callback: AsyncCallback<Unit>): Unit
 ```
 
 **功能：** client端启用或者禁用接收server端特征值内容变更通知的能力。
@@ -2872,7 +2872,7 @@ public func setCharacteristicChangeNotification(characteristic: BLECharacteristi
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|characteristic|[BLECharacteristic](#class-blecharacteristic)|是|-|需要管理的server端特征值。|
+|characteristic|[BleCharacteristic](#class-blecharacteristic)|是|-|需要管理的server端特征值。|
 |enable|Bool|是|-|是否启用接收server端特征值通知的能力。<br>true表示启用，false表示禁用。|
 |callback|[AsyncCallback](../arkinterop/cj-api-business_exception.md#type-asynccallback)\<Unit>|是|-|回调函数。|
 
@@ -2902,18 +2902,18 @@ import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 // 创建descriptors
 let descBuffer: Array<Byte> = [31, 32]
-let descriptor = BLEDescriptor(
+let descriptor = BleDescriptor(
     "00001810-0000-1000-8000-00805F9B34FB",
     "00001820-0000-1000-8000-00805F9B34FB",
     "00002902-0000-1000-8000-00805F9B34FB",
     Array<Byte>(2, repeat: 0)
 )
 // 创建characteristics
-let descriptors: Array<BLEDescriptor> = [descriptor]
+let descriptors: Array<BleDescriptor> = [descriptor]
 let charBuffer: Array<Byte> = [21, 22]
 let properties = GattProperties()
 
-let characteristic: BLECharacteristic = BLECharacteristic(
+let characteristic: BleCharacteristic = BleCharacteristic(
     "00001810-0000-1000-8000-00805F9B34FB",
     "00001820-0000-1000-8000-00805F9B34FB",
     charBuffer,
@@ -2933,10 +2933,10 @@ try {
 }
 ```
 
-### func writeCharacteristicValue(BLECharacteristic, GattWriteType, AsyncCallback\<Unit>)
+### func writeCharacteristicValue(BleCharacteristic, GattWriteType, AsyncCallback\<Unit>)
 
 ```cangjie
-public func writeCharacteristicValue(characteristic: BLECharacteristic, writeType: GattWriteType,
+public func writeCharacteristicValue(characteristic: BleCharacteristic, writeType: GattWriteType,
     callback: AsyncCallback<Unit>): Unit
 ```
 
@@ -2946,7 +2946,7 @@ public func writeCharacteristicValue(characteristic: BLECharacteristic, writeTyp
 
 - 异步回调结果返回后，才能调用下一次读取或者写入操作，如[readCharacteristicValue](#func-readcharacteristicvalueblecharacteristic-asynccallbackblecharacteristic)、[readDescriptorValue](#func-readdescriptorvaluebledescriptor-asynccallbackbledescriptor)、[writeCharacteristicValue](#func-writecharacteristicvalueblecharacteristic-gattwritetype-asynccallbackunit)、[writeDescriptorValue](#func-writedescriptorvaluebledescriptor-asynccallbackunit)、[setCharacteristicChangeNotification](#func-setcharacteristicchangenotificationblecharacteristic-bool-asynccallbackunit)和[setCharacteristicChangeIndication](#func-setcharacteristicchangeindicationblecharacteristic-bool-asynccallbackunit)。
 
-- 应用单次可写入的特征值数据长度默认限制为（MTU-3）字节，MTU大小可由[setBLEMtuSize](#func-setblemtusizeint32)接口指定。
+- 应用单次可写入的特征值数据长度默认限制为（MTU-3）字节，MTU大小可由[setBleMtuSize](#func-setblemtusizeint32)接口指定。
 
 **需要权限：** ohos.permission.ACCESS_BLUETOOTH
 
@@ -2958,7 +2958,7 @@ public func writeCharacteristicValue(characteristic: BLECharacteristic, writeTyp
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|characteristic|[BLECharacteristic](#class-blecharacteristic)|是|-|需要写入的特征值，包含写入的数据内容。|
+|characteristic|[BleCharacteristic](#class-blecharacteristic)|是|-|需要写入的特征值，包含写入的数据内容。|
 |writeType|[GattWriteType](#enum-gattwritetype)|是|-|写入特征值的方式。|
 |callback|[AsyncCallback](../arkinterop/cj-api-business_exception.md#type-asynccallback)\<Unit>|是|-|回调函数。|
 
@@ -2994,7 +2994,7 @@ import kit.PerformanceAnalysisKit.Hilog
 
 // 创建descriptors
 let descBuffer: Array<Byte> = [31, 32]
-let descriptor = BLEDescriptor(
+let descriptor = BleDescriptor(
     "00001810-0000-1000-8000-00805F9B34FB",
     "00001820-0000-1000-8000-00805F9B34FB",
     "00002902-0000-1000-8000-00805F9B34FB",
@@ -3002,11 +3002,11 @@ let descriptor = BLEDescriptor(
 )
 
 // 创建characteristics
-let descriptors: Array<BLEDescriptor> = [descriptor]
+let descriptors: Array<BleDescriptor> = [descriptor]
 let charBuffer: Array<Byte> = [21, 22]
 let properties = GattProperties()
 
-let characteristic: BLECharacteristic = BLECharacteristic(
+let characteristic: BleCharacteristic = BleCharacteristic(
     "00001810-0000-1000-8000-00805F9B34FB",
     "00001820-0000-1000-8000-00805F9B34FB",
     charBuffer,
@@ -3026,10 +3026,10 @@ try {
 }
 ```
 
-### func writeDescriptorValue(BLEDescriptor, AsyncCallback\<Unit>)
+### func writeDescriptorValue(BleDescriptor, AsyncCallback\<Unit>)
 
 ```cangjie
-public func writeDescriptorValue(descriptor: BLEDescriptor, callback: AsyncCallback<Unit>): Unit
+public func writeDescriptorValue(descriptor: BleDescriptor, callback: AsyncCallback<Unit>): Unit
 ```
 
 **功能：** client端向指定的server端描述符写入数据。使用Callback异步回调。
@@ -3038,7 +3038,7 @@ public func writeDescriptorValue(descriptor: BLEDescriptor, callback: AsyncCallb
 
 - 异步回调结果返回后，才能调用下一次读取或者写入操作，如[readCharacteristicValue](#func-readcharacteristicvalueblecharacteristic-asynccallbackblecharacteristic)、[readDescriptorValue](#func-readdescriptorvaluebledescriptor-asynccallbackbledescriptor)、[writeCharacteristicValue](#func-writecharacteristicvalueblecharacteristic-gattwritetype-asynccallbackunit)、[writeDescriptorValue](#func-writedescriptorvaluebledescriptor-asynccallbackunit)、[setCharacteristicChangeNotification](#func-setcharacteristicchangenotificationblecharacteristic-bool-asynccallbackunit)和[setCharacteristicChangeIndication](#func-setcharacteristicchangeindicationblecharacteristic-bool-asynccallbackunit)。
 
-- 应用单次可写入的描述符数据长度默认限制为（MTU-3）字节，MTU大小可由[setBLEMtuSize](#func-setblemtusizeint32)接口指定。
+- 应用单次可写入的描述符数据长度默认限制为（MTU-3）字节，MTU大小可由[setBleMtuSize](#func-setblemtusizeint32)接口指定。
 
 - Client Characteristic Configuration描述符（UUID：00002902-0000-1000-8000-00805f9b34fb）和 Server Characteristic Configuration描述符（UUID：00002903-0000-1000-8000-00805f9b34fb）较为特殊，蓝牙标准协议规定内容长度为2字节，写入内容长度应设置为2字节。
 
@@ -3052,7 +3052,7 @@ public func writeDescriptorValue(descriptor: BLEDescriptor, callback: AsyncCallb
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|descriptor|[BLEDescriptor](#class-bledescriptor)|是|-|需要写入的描述符，包含写入的数据内容。|
+|descriptor|[BleDescriptor](#class-bledescriptor)|是|-|需要写入的描述符，包含写入的数据内容。|
 |callback|[AsyncCallback](../arkinterop/cj-api-business_exception.md#type-asynccallback)\<Unit>|是|-|回调函数。|
 
 **异常：**
@@ -3086,13 +3086,13 @@ import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 let descBuffer: Array<Byte> = [31, 32]
-let descriptor = BLEDescriptor(
+let descriptor = BleDescriptor(
     "00001810-0000-1000-8000-00805F9B34FB",
     "00001820-0000-1000-8000-00805F9B34FB",
     "00002903-0000-1000-8000-00805F9B34FB",
     Array<Byte>(2, repeat: 0)
 )
-let descriptors: BLEDescriptor = descriptor
+let descriptors: BleDescriptor = descriptor
 let charBuffer: Array<Byte> = [1, 2]
 let properties = GattProperties()
 
@@ -3329,6 +3329,10 @@ public operator func !=(other: GattPermissions): Bool
 
 **功能：** 对 GattPermissions 进行判不等。
 
+**系统能力：** SystemCapability.Communication.Bluetooth.Core
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -3348,6 +3352,11 @@ public operator func ==(other: GattPermissions): Bool
 ```
 
 **功能：** 对 GattPermissions 进行判等。
+
+**系统能力：** SystemCapability.Communication.Bluetooth.Core
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -3573,13 +3582,13 @@ import kit.PerformanceAnalysisKit.Hilog
 
 // 创建descriptors
 let descBuffer: Array<Byte> = [31, 32]
-let descriptors0 = BLEDescriptor(
+let descriptors0 = BleDescriptor(
     "00001810-0000-1000-8000-00805F9B34FB",
     "00001820-0000-1000-8000-00805F9B34FB",
     "00002902-0000-1000-8000-00805F9B34FB",
     Array<Byte>(2, repeat: 0)
 )
-let descriptors1 = BLEDescriptor(
+let descriptors1 = BleDescriptor(
     "00001810-0000-1000-8000-00805F9B34FB",
     "00001820-0000-1000-8000-00805F9B34FB",
     "00002903-0000-1000-8000-00805F9B34FB",
@@ -3587,11 +3596,11 @@ let descriptors1 = BLEDescriptor(
 )
 
 // 创建characteristics
-let descriptors: Array<BLEDescriptor> = [descriptors0, descriptors1]
+let descriptors: Array<BleDescriptor> = [descriptors0, descriptors1]
 let charBuffer: Array<Byte> = [21, 22]
 let properties = GattProperties()
 
-let characteristic: BLECharacteristic = BLECharacteristic(
+let characteristic: BleCharacteristic = BleCharacteristic(
     "00001810-0000-1000-8000-00805F9B34FB",
     "00001820-0000-1000-8000-00805F9B34FB",
     charBuffer,
@@ -3599,7 +3608,7 @@ let characteristic: BLECharacteristic = BLECharacteristic(
     properties: properties
 )
 
-let characteristics: Array<BLECharacteristic> = [characteristic]
+let characteristics: Array<BleCharacteristic> = [characteristic]
 let gattService: GattService = GattService(
     "00001810-0000-1000-8000-00805F9B34FB",
     true,
@@ -3770,8 +3779,8 @@ import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 // 此处代码可添加在依赖项定义中
-class StateChangeCallback <: Callback1Argument<BLEConnectionChangeState> {
-    public func invoke(err: ?BusinessException, state: BLEConnectionChangeState): Unit {
+class StateChangeCallback <: Callback1Argument<BleConnectionChangeState> {
+    public func invoke(err: ?BusinessException, state: BleConnectionChangeState): Unit {
         Hilog.info(0, "Bluetooth", "onGattServerStateChange: device=" + state.deviceId + ", state=" + state.state.toString())
     }
 }
@@ -4093,10 +4102,10 @@ try {
 }
 ```
 
-### func on(BluetoothBleGattServerCallbackType, Callback1Argument\<BLEConnectionChangeState>)
+### func on(BluetoothBleGattServerCallbackType, Callback1Argument\<BleConnectionChangeState>)
 
 ```cangjie
-public func on(eventType: BluetoothBleGattServerCallbackType, callback: Callback1Argument<BLEConnectionChangeState>): Unit
+public func on(eventType: BluetoothBleGattServerCallbackType, callback: Callback1Argument<BleConnectionChangeState>): Unit
 ```
 
 **功能：** server端订阅GATT profile协议的连接状态变化事件。
@@ -4112,7 +4121,7 @@ public func on(eventType: BluetoothBleGattServerCallbackType, callback: Callback
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |eventType|[BluetoothBleGattServerCallbackType](#enum-bluetoothblegattservercallbacktype)|是|-|事件回调类型，支持的事件为ConnectionStateChange，表示GATT profile连接状态发生变化的事件。<br>当client和server端之间的连接状态发生变化时，触发该事件。<br>例如：收到连接请求或者断连请求时，可能引起连接状态生变化。|
-|callback|[Callback1Argument](../arkinterop/cj-api-callback_invoke.md#class-callback1argument)\<[BLEConnectionChangeState](#class-bleconnectionchangestate)>|是|-|指定订阅的回调函数，会携带连接状态。|
+|callback|[Callback1Argument](../arkinterop/cj-api-callback_invoke.md#class-callback1argument)\<[BleConnectionChangeState](#class-bleconnectionchangestate)>|是|-|指定订阅的回调函数，会携带连接状态。|
 
 **异常：**
 
@@ -4138,8 +4147,8 @@ import kit.PerformanceAnalysisKit.Hilog
 // 此处代码可添加在依赖项定义中
 let gattServer = createGattServer()
 
-class StateChangeCallback1 <: Callback1Argument<BLEConnectionChangeState> {
-    public func invoke(err: ?BusinessException, state: BLEConnectionChangeState): Unit {
+class StateChangeCallback1 <: Callback1Argument<BleConnectionChangeState> {
+    public func invoke(err: ?BusinessException, state: BleConnectionChangeState): Unit {
         Hilog.info(0, "Bluetooth", "onGattServerStateChange: device=" + state.deviceId + ", state=" + state.state.toString())
     }
 }
@@ -4333,18 +4342,18 @@ try {
 public class GattService {
     public var serviceUUID: String
     public var isPrimary: Bool
-    public var characteristics: Array<BLECharacteristic>
+    public var characteristics: Array<BleCharacteristic>
     public var includeServices: Array<GattService>
     public init(
         serviceUUID: String,
         isPrimary: Bool,
-        characteristics: Array<BLECharacteristic>,
+        characteristics: Array<BleCharacteristic>,
         includeServices!: Array<GattService> = []
     )
 }
 ```
 
-**功能：** GATT服务结构定义，可包含多个特征值[BLECharacteristic](#class-blecharacteristic)和依赖的其他服务。
+**功能：** GATT服务结构定义，可包含多个特征值[BleCharacteristic](#class-blecharacteristic)和依赖的其他服务。
 
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
@@ -4353,12 +4362,12 @@ public class GattService {
 ### var characteristics
 
 ```cangjie
-public var characteristics: Array<BLECharacteristic>
+public var characteristics: Array<BleCharacteristic>
 ```
 
 **功能：** 当前服务包含的特征值列表。
 
-**类型：** Array\<[BLECharacteristic](#class-blecharacteristic)>
+**类型：** Array\<[BleCharacteristic](#class-blecharacteristic)>
 
 **读写能力：** 可读写
 
@@ -4414,13 +4423,13 @@ public var serviceUUID: String
 
 **起始版本：** 22
 
-### init(String, Bool, Array\<BLECharacteristic>, Array\<GattService>)
+### init(String, Bool, Array\<BleCharacteristic>, Array\<GattService>)
 
 ```cangjie
 public init(
     serviceUUID: String,
     isPrimary: Bool,
-    characteristics: Array<BLECharacteristic>,
+    characteristics: Array<BleCharacteristic>,
     includeServices!: Array<GattService> = []
 )
 ```
@@ -4437,7 +4446,7 @@ public init(
 |:---|:---|:---|:---|:---|
 |serviceUUID|String|是|-|服务UUID，标识一个GATT服务。例如：00001888-0000-1000-8000-00805f9b34fb。|
 |isPrimary|Bool|是|-|是否是主服务。true表示是主服务，false表示是次要服务。|
-|characteristics|Array\<[BLECharacteristic](#class-blecharacteristic)>|是|-|当前服务包含的特征值列表。|
+|characteristics|Array\<[BleCharacteristic](#class-blecharacteristic)>|是|-|当前服务包含的特征值列表。|
 |includeServices|Array\<[GattService](#class-gattservice)>|否|[]|当前服务依赖的其它服务。|
 
 ## class ManufactureData
@@ -4645,9 +4654,9 @@ public class ScanFilter {
         deviceId!: String = "",
         name!: String = "",
         serviceUUID!: String = "",
-        serviceUuidMask!: String = "",
-        serviceSolicitationUuid!: String = "",
-        serviceSolicitationUuidMask!: String = "",
+        serviceUUIDMask!: String = "",
+        serviceSolicitationUUID!: String = "",
+        serviceSolicitationUUIDMask!: String = "",
         serviceData!: Array<Byte> = [],
         serviceDataMask!: Array<Byte> = [],
         manufactureId!: UInt16 = 0,
@@ -4797,7 +4806,7 @@ public var serviceSolicitationUUID: String
 public var serviceSolicitationUUIDMask: String
 ```
 
-**功能：** 搭配serviceSolicitationUuid过滤器使用，可设置过滤部分服务请求UUID。例如：FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF。
+**功能：** 搭配serviceSolicitationUUID过滤器使用，可设置过滤部分服务请求UUID。例如：FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF。
 
 **类型：** String
 
@@ -4829,7 +4838,7 @@ public var serviceUUID: String
 public var serviceUUIDMask: String
 ```
 
-**功能：** 搭配serviceUuid过滤器使用，可设置过滤部分服务UUID。例如：FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF。
+**功能：** 搭配serviceUUID过滤器使用，可设置过滤部分服务UUID。例如：FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF。
 
 **类型：** String
 
@@ -4846,9 +4855,9 @@ public init(
     deviceId!: String = "",
     name!: String = "",
     serviceUUID!: String = "",
-    serviceUuidMask!: String = "",
-    serviceSolicitationUuid!: String = "",
-    serviceSolicitationUuidMask!: String = "",
+    serviceUUIDMask!: String = "",
+    serviceSolicitationUUID!: String = "",
+    serviceSolicitationUUIDMask!: String = "",
     serviceData!: Array<Byte> = [],
     serviceDataMask!: Array<Byte> = [],
     manufactureId!: UInt16 = 0,
@@ -4870,9 +4879,9 @@ public init(
 |deviceId|String|否|""| **命名参数。** 过滤该BLE设备地址的广播报文。例如："XX:XX:XX:XX:XX:XX"。预留字段，本版本暂不支持。|
 |name|String|否|""|**命名参数。** 过滤该BLE设备名称的广播报文。。预留字段，本版本暂不支持。|
 |serviceUUID|String|否|""|**命名参数。** 过滤包含该服务UUID的广播报文。例如：00001888-0000-1000-8000-00805f9b34fb。预留字段，本版本暂不支持。|
-|serviceUuidMask|String|否|""|**命名参数。** 搭配serviceUuid过滤器使用，可设置过滤部分服务UUID。例如：FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF。预留字段，本版本暂不支持。|
-|serviceSolicitationUuid|String|否|""|**命名参数。** 过滤包含该服务请求UUID的广播报文。例如：00001888-0000-1000-8000-00805F9B34FB。预留字段，本版本暂不支持。|
-|serviceSolicitationUuidMask|String|否|""|**命名参数。** 搭配serviceSolicitationUuid过滤器使用，可设置过滤部分服务请求UUID。例如：FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF。预留字段，本版本暂不支持。|
+|serviceUUIDMask|String|否|""|**命名参数。** 搭配serviceUuid过滤器使用，可设置过滤部分服务UUID。例如：FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF。预留字段，本版本暂不支持。|
+|serviceSolicitationUUID|String|否|""|**命名参数。** 过滤包含该服务请求UUID的广播报文。例如：00001888-0000-1000-8000-00805F9B34FB。预留字段，本版本暂不支持。|
+|serviceSolicitationUUIDMask|String|否|""|**命名参数。** 搭配serviceSolicitationUuid过滤器使用，可设置过滤部分服务请求UUID。例如：FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF。预留字段，本版本暂不支持。|
 |serviceData|Array\<Byte>|否|[]|**命名参数。** 过滤包含该服务数据的广播报文。例如：[0x90,0x00,0xF1,0xF2]。预留字段，本版本暂不支持。|
 |serviceDataMask|Array\<Byte>|否|[]|**命名参数。** 搭配serviceData过滤器使用，可设置过滤部分服务数据。例如：[0xFF,0xFF,0xFF,0xFF]。预留字段，本版本暂不支持。|
 |manufactureId|UInt16|否|0|**命名参数。** 过滤包含该制造商标识符的广播报文。例如：0x0006。预留字段，本版本暂不支持。|
@@ -5390,6 +5399,10 @@ public operator func !=(other: AdvertisingState): Bool
 
 **功能：** 判断两个枚举值是否不相等。
 
+**系统能力：** SystemCapability.Communication.Bluetooth.Core
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -5410,6 +5423,10 @@ public operator func ==(other: AdvertisingState): Bool
 
 **功能：** 判断两个枚举值是否相等。
 
+**系统能力：** SystemCapability.Communication.Bluetooth.Core
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -5429,6 +5446,10 @@ public func toString(): String
 ```
 
 **功能：** 获取枚举的值。
+
+**系统能力：** SystemCapability.Communication.Bluetooth.Core
+
+**起始版本：** 22
 
 **返回值：**
 
@@ -5496,6 +5517,10 @@ public operator func !=(other: BluetoothBleCallbackType): Bool
 
 **功能：** 判断两个枚举值是否不相等。
 
+**系统能力：** SystemCapability.Communication.Bluetooth.Core
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -5515,6 +5540,10 @@ public operator func ==(other: BluetoothBleCallbackType): Bool
 ```
 
 **功能：** 判断两个枚举值是否相等。
+
+**系统能力：** SystemCapability.Communication.Bluetooth.Core
+
+**起始版本：** 22
 
 **参数：**
 
@@ -5536,6 +5565,10 @@ public func hashCode(): Int64
 
 **功能：** 获取输入数据的哈希值。
 
+**系统能力：** SystemCapability.Communication.Bluetooth.Core
+
+**起始版本：** 22
+
 **返回值：**
 
 |类型|说明|
@@ -5549,6 +5582,10 @@ public func toString(): String
 ```
 
 **功能：** 获取枚举的值。
+
+**系统能力：** SystemCapability.Communication.Bluetooth.Core
+
+**起始版本：** 22
 
 **返回值：**
 
@@ -5631,6 +5668,10 @@ public operator func !=(other: BluetoothBleGattClientDeviceCallbackType): Bool
 
 **功能：** 判断两个枚举值是否不相等。
 
+**系统能力：** SystemCapability.Communication.Bluetooth.Core
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -5650,6 +5691,10 @@ public operator func ==(other: BluetoothBleGattClientDeviceCallbackType): Bool
 ```
 
 **功能：** 判断两个枚举值是否相等。
+
+**系统能力：** SystemCapability.Communication.Bluetooth.Core
+
+**起始版本：** 22
 
 **参数：**
 
@@ -5671,6 +5716,10 @@ public func hashCode(): Int64
 
 **功能：** 获取输入数据的哈希值。
 
+**系统能力：** SystemCapability.Communication.Bluetooth.Core
+
+**起始版本：** 22
+
 **返回值：**
 
 |类型|说明|
@@ -5684,6 +5733,10 @@ public func toString(): String
 ```
 
 **功能：** 获取枚举的值。
+
+**系统能力：** SystemCapability.Communication.Bluetooth.Core
+
+**起始版本：** 22
 
 **返回值：**
 
@@ -5811,6 +5864,10 @@ public operator func !=(other: BluetoothBleGattServerCallbackType): Bool
 
 **功能：** 判断两个枚举值是否不相等。
 
+**系统能力：** SystemCapability.Communication.Bluetooth.Core
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -5830,6 +5887,10 @@ public operator func ==(other: BluetoothBleGattServerCallbackType): Bool
 ```
 
 **功能：** 判断两个枚举值是否相等。
+
+**系统能力：** SystemCapability.Communication.Bluetooth.Core
+
+**起始版本：** 22
 
 **参数：**
 
@@ -5851,6 +5912,10 @@ public func hashCode(): Int64
 
 **功能：** 获取输入数据的哈希值。
 
+**系统能力：** SystemCapability.Communication.Bluetooth.Core
+
+**起始版本：** 22
+
 **返回值：**
 
 |类型|说明|
@@ -5864,6 +5929,10 @@ public func toString(): String
 ```
 
 **功能：** 获取枚举的值。
+
+**系统能力：** SystemCapability.Communication.Bluetooth.Core
+
+**起始版本：** 22
 
 **返回值：**
 
@@ -5924,6 +5993,10 @@ public operator func !=(other: GattWriteType): Bool
 
 **功能：** 判断两个枚举值是否不相等。
 
+**系统能力：** SystemCapability.Communication.Bluetooth.Core
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -5944,6 +6017,10 @@ public operator func ==(other: GattWriteType): Bool
 
 **功能：** 判断两个枚举值是否相等。
 
+**系统能力：** SystemCapability.Communication.Bluetooth.Core
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -5963,6 +6040,10 @@ public func toString(): String
 ```
 
 **功能：** 获取枚举的值。
+
+**系统能力：** SystemCapability.Communication.Bluetooth.Core
+
+**起始版本：** 22
 
 **返回值：**
 
@@ -6023,6 +6104,10 @@ public operator func !=(other: MatchMode): Bool
 
 **功能：** 判断两个枚举值是否不相等。
 
+**系统能力：** SystemCapability.Communication.Bluetooth.Core
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -6043,6 +6128,10 @@ public operator func ==(other: MatchMode): Bool
 
 **功能：** 判断两个枚举值是否相等。
 
+**系统能力：** SystemCapability.Communication.Bluetooth.Core
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -6062,6 +6151,10 @@ public func toString(): String
 ```
 
 **功能：** 获取枚举的值。
+
+**系统能力：** SystemCapability.Communication.Bluetooth.Core
+
+**起始版本：** 22
 
 **返回值：**
 
@@ -6122,6 +6215,10 @@ public operator func !=(other: PhyType): Bool
 
 **功能：** 判断两个枚举值是否不相等。
 
+**系统能力：** SystemCapability.Communication.Bluetooth.Core
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -6142,6 +6239,10 @@ public operator func ==(other: PhyType): Bool
 
 **功能：** 判断两个枚举值是否相等。
 
+**系统能力：** SystemCapability.Communication.Bluetooth.Core
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -6161,6 +6262,10 @@ public func toString(): String
 ```
 
 **功能：** 获取枚举的值。
+
+**系统能力：** SystemCapability.Communication.Bluetooth.Core
+
+**起始版本：** 22
 
 **返回值：**
 
@@ -6234,6 +6339,10 @@ public operator func !=(other: ScanDuty): Bool
 
 **功能：** 判断两个枚举值是否不相等。
 
+**系统能力：** SystemCapability.Communication.Bluetooth.Core
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -6254,6 +6363,10 @@ public operator func ==(other: ScanDuty): Bool
 
 **功能：** 判断两个枚举值是否相等。
 
+**系统能力：** SystemCapability.Communication.Bluetooth.Core
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -6273,6 +6386,10 @@ public func toString(): String
 ```
 
 **功能：** 获取枚举的值。
+
+**系统能力：** SystemCapability.Communication.Bluetooth.Core
+
+**起始版本：** 22
 
 **返回值：**
 
@@ -6379,6 +6496,10 @@ public operator func !=(other: ScanReportMode): Bool
 
 **功能：** 对扫描上报模式进行判不等。
 
+**系统能力：** SystemCapability.Communication.Bluetooth.Core
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -6399,6 +6520,10 @@ public operator func ==(other: ScanReportMode): Bool
 
 **功能：** 对扫描上报模式进行判等。
 
+**系统能力：** SystemCapability.Communication.Bluetooth.Core
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -6418,6 +6543,10 @@ public func toString(): String
 ```
 
 **功能：** 获取扫描结果数据上报模式的字符串表示。
+
+**系统能力：** SystemCapability.Communication.Bluetooth.Core
+
+**起始版本：** 22
 
 **返回值：**
 

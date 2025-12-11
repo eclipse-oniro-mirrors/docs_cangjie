@@ -48,13 +48,6 @@ public func getFontByName(fontName: String): ?FontInfo
 |:----|:----|
 | ?[FontInfo](#class-fontinfo) | Returns font information, or None if the font is not found. |
 
-**Example:**
-
-```cangjie
-let font = Font()
-let fontInfo = font.getFontByName("Arial")
-```
-
 ### func getSystemFontList()
 
 ```cangjie
@@ -72,13 +65,6 @@ public func getSystemFontList(): Array<String>
 | Type | Description |
 |:----|:----|
 | Array\<String> | List of system font names. |
-
-**Example:**
-
-```cangjie
-let font = Font()
-let fontList = font.getSystemFontList()
-```
 
 ### func registerFont(ResourceStr, ResourceStr)
 
@@ -109,11 +95,6 @@ public func registerFont(familyName!: ResourceStr, familySrc!: ResourceStr): Uni
   | 100001 | Internal error. |
 
 **Example:**
-
-```cangjie
-let font = Font()
-font.registerFont(familyName: "MyFont", familySrc: "/font/MyFont.ttf")
-```
 
 ## class FontInfo
 

@@ -374,7 +374,7 @@ class EntryView {
             //GridRow设置中一行有5列
             GridRow(
                 columns: 5,
-                gutter: GutterOptions(x: 5.vp, y: 10.vp),
+                gutter: GutterOption(x: 5.vp, y: 10.vp),
                 breakpoints: BreakPoints(
                     value: [400.vp, 600.vp, 800.vp],
                     reference: BreakpointsReference.WindowSize

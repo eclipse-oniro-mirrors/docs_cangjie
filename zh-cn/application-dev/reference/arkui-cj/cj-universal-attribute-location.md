@@ -24,8 +24,8 @@ func position(x!: ?Length, y!: ?Length): T
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|x|?[Length](./cj-common-types.md#interface-length)|是|-|**命名参数** 组件的x坐标|
-|y|?[Length](./cj-common-types.md#interface-length)|是|-|**命名参数** 组件的y坐标|
+|x|?[Length](./cj-common-types.md#interface-length)|是|-|**命名参数。** 组件的x坐标|
+|y|?[Length](./cj-common-types.md#interface-length)|是|-|**命名参数。** 组件的y坐标|
 
 **返回值：**
 
@@ -49,8 +49,8 @@ func markAnchor(x!: ?Length, y!: ?Length): T
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|x|?[Length](./cj-common-types.md#interface-length)|是|-|**命名参数** 锚点的x坐标|
-|y|?[Length](./cj-common-types.md#interface-length)|是|-|**命名参数** 锚点的y坐标|
+|x|?[Length](./cj-common-types.md#interface-length)|是|-|**命名参数。** 锚点的x坐标|
+|y|?[Length](./cj-common-types.md#interface-length)|是|-|**命名参数。** 锚点的y坐标|
 
 **返回值：**
 
@@ -74,8 +74,8 @@ func offset(x!: ?Length, y!: ?Length): T
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|x|?[Length](./cj-common-types.md#interface-length)|是|-|**命名参数** x轴偏移量|
-|y|?[Length](./cj-common-types.md#interface-length)|是|-|**命名参数** y轴偏移量|
+|x|?[Length](./cj-common-types.md#interface-length)|是|-|**命名参数。** x轴偏移量|
+|y|?[Length](./cj-common-types.md#interface-length)|是|-|**命名参数。** y轴偏移量|
 
 **返回值：**
 

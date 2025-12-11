@@ -180,8 +180,6 @@ public var bottomRect: Rect
 
 **读写能力：** 可读写
 
-**系统能力：** SystemCapability.WindowManager.WindowManager.Core
-
 **起始版本：** 22
 
 ### var leftRect
@@ -197,8 +195,6 @@ public var leftRect: Rect
 **类型：** [Rect](#class-rect)
 
 **读写能力：** 可读写
-
-**系统能力：** SystemCapability.WindowManager.WindowManager.Core
 
 **起始版本：** 22
 
@@ -216,8 +212,6 @@ public var rightRect: Rect
 
 **读写能力：** 可读写
 
-**系统能力：** SystemCapability.WindowManager.WindowManager.Core
-
 **起始版本：** 22
 
 ### var topRect
@@ -234,8 +228,6 @@ public var topRect: Rect
 
 **读写能力：** 可读写
 
-**系统能力：** SystemCapability.WindowManager.WindowManager.Core
-
 **起始版本：** 22
 
 ### var visible
@@ -251,8 +243,6 @@ public var visible: Bool
 **类型：** Bool
 
 **读写能力：** 可读写
-
-**系统能力：** SystemCapability.WindowManager.WindowManager.Core
 
 **起始版本：** 22
 
@@ -1069,10 +1059,10 @@ public func isWindowShowing(): Bool
   |:----|:----|
   |1300002|This window state is abnormal.|
 
-### func isWindowSupportWideGamut()
+### func isWideGamutSupported()
 
 ```cangjie
-public func isWindowSupportWideGamut(): Bool
+public func isWideGamutSupported(): Bool
 ```
 
 **功能：** 窗口是否支持宽色域设置。
@@ -1457,7 +1447,7 @@ public func setWindowKeepScreenOn(isKeepScreenOn: Bool): Unit
   |:----|:----|
   |1300002|This window state is abnormal.|
 
-### func setWindowSystemBarEnabled(Array<SystemBarType>)
+### func setWindowSystemBarEnabled(Array\<SystemBarType>)
 
 ```cangjie
 public func setWindowSystemBarEnabled(names: Array<SystemBarType>): Unit

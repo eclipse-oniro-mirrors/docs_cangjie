@@ -36,7 +36,7 @@ public init(child!: () -> Unit = { => })
 
 | Parameter | Type | Required | Default Value | Description |
 |:---|:---|:---|:---|:---|
-| child | () -> Unit | No | { => } | **Named parameter** Child components of the NavDestination container. |
+| child | () -> Unit | No | { => } | **Named parameter.** Child components of the NavDestination container. |
 
 ## Common Attributes/Common Events
 
@@ -83,7 +83,7 @@ public func title(value: ?CustomBuilder, options!: ?NavigationTitleOptions = Non
 | Parameter | Type | Required | Default Value | Description |
 |:---|:---|:---|:---|:---|
 | value | ?[CustomBuilder](./cj-common-types.md#type-custombuilder) | Yes | - | Page title. Initial value: {=>}. |
-| options | ?[NavigationTitleOptions](./cj-navigation-switching-navigation.md#class-navigationtitleoptions) | No | None | **Named parameter** Title bar options. |
+| options | ?[NavigationTitleOptions](./cj-navigation-switching-navigation.md#class-navigationtitleoptions) | No | None | **Named parameter.** Title bar options. |
 
 ### func title(?ResourceStr, ?NavigationTitleOptions)
 
@@ -102,7 +102,7 @@ public func title(value: ?ResourceStr, options!: ?NavigationTitleOptions = None)
 | Parameter | Type | Required | Default Value | Description |
 |:---|:---|:---|:---|:---|
 | value | ?[ResourceStr](./cj-common-types.md#interface-resourcestr) | Yes | - | Page title.<br>Initial value: {=>}. |
-| options | ?[NavigationTitleOptions](./cj-navigation-switching-navigation.md#class-navigationtitleoptions) | No | None | **Named parameter** Title bar options. |
+| options | ?[NavigationTitleOptions](./cj-navigation-switching-navigation.md#class-navigationtitleoptions) | No | None | **Named parameter.** Title bar options. |
 
 ## Component Events
 

@@ -8760,6 +8760,10 @@ public operator func !=(other: CameraEvents): Bool
 
 **功能：** 判断两个枚举值是否不相等。
 
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -8779,6 +8783,10 @@ public operator func ==(other: CameraEvents): Bool
 ```
 
 **功能：** 判断两个枚举值是否相等。
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**起始版本：** 22
 
 **参数：**
 
@@ -8897,6 +8905,10 @@ public operator func !=(other: CameraFormat): Bool
 
 **功能：** 判断两个枚举值是否不相等。
 
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -8916,6 +8928,10 @@ public operator func ==(other: CameraFormat): Bool
 ```
 
 **功能：** 判断两个枚举值是否相等。
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**起始版本：** 22
 
 **参数：**
 
@@ -9013,6 +9029,10 @@ public operator func !=(other: CameraPosition): Bool
 
 **功能：** 判断两个枚举值是否不相等。
 
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -9032,6 +9052,10 @@ public operator func ==(other: CameraPosition): Bool
 ```
 
 **功能：** 判断两个枚举值是否相等。
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**起始版本：** 22
 
 **参数：**
 
@@ -9142,6 +9166,10 @@ public operator func !=(other: CameraStatus): Bool
 
 **功能：** 判断两个枚举值是否不相等。
 
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -9161,6 +9189,10 @@ public operator func ==(other: CameraStatus): Bool
 ```
 
 **功能：** 判断两个枚举值是否相等。
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**起始版本：** 22
 
 **参数：**
 
@@ -9284,6 +9316,10 @@ public operator func !=(other: CameraType): Bool
 
 **功能：** 判断两个枚举值是否不相等。
 
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -9303,6 +9339,10 @@ public operator func ==(other: CameraType): Bool
 ```
 
 **功能：** 判断两个枚举值是否相等。
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**起始版本：** 22
 
 **参数：**
 
@@ -9400,6 +9440,10 @@ public operator func !=(other: ConnectionType): Bool
 
 **功能：** 判断两个枚举值是否不相等。
 
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -9419,6 +9463,10 @@ public operator func ==(other: ConnectionType): Bool
 ```
 
 **功能：** 判断两个枚举值是否相等。
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**起始版本：** 22
 
 **参数：**
 
@@ -9516,6 +9564,10 @@ public operator func !=(other: ExposureMode): Bool
 
 **功能：** 判断两个枚举值是否不相等。
 
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -9536,6 +9588,10 @@ public operator func ==(other: ExposureMode): Bool
 
 **功能：** 判断两个枚举值是否相等。
 
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -9555,6 +9611,10 @@ public func toString(): String
 ```
 
 **功能：** 获取枚举的字符串值。
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**起始版本：** 22
 
 **返回值：**
 
@@ -9641,6 +9701,10 @@ public operator func !=(other: FlashMode): Bool
 
 **功能：** 判断两个枚举值是否不相等。
 
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -9661,6 +9725,10 @@ public operator func ==(other: FlashMode): Bool
 
 **功能：** 判断两个枚举值是否相等。
 
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -9680,6 +9748,10 @@ public func toString(): String
 ```
 
 **功能：** 获取枚举的字符串值。
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**起始版本：** 22
 
 **返回值：**
 
@@ -9766,6 +9838,10 @@ public operator func !=(other: FocusMode): Bool
 
 **功能：** 判断两个枚举值是否不相等。
 
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -9786,6 +9862,10 @@ public operator func ==(other: FocusMode): Bool
 
 **功能：** 判断两个枚举值是否相等。
 
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -9805,6 +9885,10 @@ public func toString(): String
 ```
 
 **功能：** 获取枚举的字符串值。
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**起始版本：** 22
 
 **返回值：**
 
@@ -9878,6 +9962,10 @@ public operator func !=(other: FocusState): Bool
 
 **功能：** 判断两个枚举值是否不相等。
 
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -9898,6 +9986,10 @@ public operator func ==(other: FocusState): Bool
 
 **功能：** 判断两个枚举值是否相等。
 
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -9917,6 +10009,10 @@ public func toString(): String
 ```
 
 **功能：** 获取枚举的字符串值。
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**起始版本：** 22
 
 **返回值：**
 
@@ -9990,6 +10086,10 @@ public operator func !=(other: FoldStatus): Bool
 
 **功能：** 判断两个枚举值是否不相等。
 
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -10009,6 +10109,10 @@ public operator func ==(other: FoldStatus): Bool
 ```
 
 **功能：** 判断两个枚举值是否相等。
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**起始版本：** 22
 
 **参数：**
 
@@ -10119,6 +10223,10 @@ public operator func !=(other: ImageRotation): Bool
 
 **功能：** 判断两个枚举值是否不相等。
 
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -10138,6 +10246,10 @@ public operator func ==(other: ImageRotation): Bool
 ```
 
 **功能：** 判断两个枚举值是否相等。
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**起始版本：** 22
 
 **参数：**
 
@@ -10209,6 +10321,10 @@ public operator func !=(other: MetadataObjectType): Bool
 
 **功能：** 判断两个枚举值是否不相等。
 
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -10228,6 +10344,10 @@ public operator func ==(other: MetadataObjectType): Bool
 ```
 
 **功能：** 判断两个枚举值是否相等。
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**起始版本：** 22
 
 **参数：**
 
@@ -10325,6 +10445,10 @@ public operator func !=(other: PreconfigRatio): Bool
 
 **功能：** 判断两个枚举值是否不相等。
 
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -10344,6 +10468,10 @@ public operator func ==(other: PreconfigRatio): Bool
 ```
 
 **功能：** 判断两个枚举值是否相等。
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**起始版本：** 22
 
 **参数：**
 
@@ -10454,6 +10582,10 @@ public operator func !=(other: PreconfigType): Bool
 
 **功能：** 判断两个枚举值是否不相等。
 
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -10473,6 +10605,10 @@ public operator func ==(other: PreconfigType): Bool
 ```
 
 **功能：** 判断两个枚举值是否相等。
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**起始版本：** 22
 
 **参数：**
 
@@ -10570,6 +10706,10 @@ public operator func !=(other: QualityLevel): Bool
 
 **功能：** 判断两个枚举值是否不相等。
 
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -10589,6 +10729,10 @@ public operator func ==(other: QualityLevel): Bool
 ```
 
 **功能：** 判断两个枚举值是否相等。
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**起始版本：** 22
 
 **参数：**
 
@@ -10686,6 +10830,10 @@ public operator func !=(other: SceneMode): Bool
 
 **功能：** 判断两个枚举值是否不相等。
 
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -10705,6 +10853,10 @@ public operator func ==(other: SceneMode): Bool
 ```
 
 **功能：** 判断两个枚举值是否相等。
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**起始版本：** 22
 
 **参数：**
 
@@ -10776,6 +10928,10 @@ public operator func !=(other: SmoothZoomMode): Bool
 
 **功能：** 判断两个枚举值是否不相等。
 
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -10796,6 +10952,10 @@ public operator func ==(other: SmoothZoomMode): Bool
 
 **功能：** 判断两个枚举值是否相等。
 
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -10815,6 +10975,11 @@ public func toString(): String
 ```
 
 **功能：** 获取枚举的字符串值。
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**起始版本：** 22
+
 
 **返回值：**
 
@@ -10888,6 +11053,10 @@ public operator func !=(other: TorchMode): Bool
 
 **功能：** 判断两个枚举值是否不相等。
 
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -10907,6 +11076,10 @@ public operator func ==(other: TorchMode): Bool
 ```
 
 **功能：** 判断两个枚举值是否相等。
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**起始版本：** 22
 
 **参数：**
 
@@ -10991,6 +11164,10 @@ public operator func !=(other: VideoCodecType): Bool
 
 **功能：** 判断两个枚举值是否不相等。
 
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -11010,6 +11187,10 @@ public operator func ==(other: VideoCodecType): Bool
 ```
 
 **功能：** 判断两个枚举值是否相等。
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**起始版本：** 22
 
 **参数：**
 
@@ -11133,6 +11314,10 @@ public operator func !=(other: VideoStabilizationMode): Bool
 
 **功能：** 判断两个枚举值是否不相等。
 
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -11153,6 +11338,10 @@ public operator func ==(other: VideoStabilizationMode): Bool
 
 **功能：** 判断两个枚举值是否相等。
 
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -11172,6 +11361,10 @@ public func toString(): String
 ```
 
 **功能：** 获取枚举的字符串值。
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**起始版本：** 22
 
 **返回值：**
 

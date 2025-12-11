@@ -60,19 +60,20 @@ class EntryView {
             Text("默认居中浮层")
                 .width(200)
                 .height(100)
-                .backgroundColor(Color.Blue)
+                .backgroundColor(0xf48899)
+                .align(Alignment.Top)
                 .overlay(value: "Overlay Text")
             
             Text("左上角浮层")
                 .width(200)
                 .height(100)
-                .backgroundColor(Color.Green)
+                .backgroundColor(0xf7b0bb)
                 .overlay(value: "Top Left", align: Alignment.TopStart)
             
             Text("带偏移的浮层")
                 .width(200)
                 .height(100)
-                .backgroundColor(Color.Red)
+                .backgroundColor(0xfbd7dd)
                 .overlay(
                     value: "Offset Text", 
                     align: Alignment.BottomEnd,

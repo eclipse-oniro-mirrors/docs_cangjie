@@ -27,7 +27,7 @@ Derived keys are session key results obtained by services through a three-stage 
 > PBKDF2/HKDF only supports derivation from HUKS-managed keys and does not support direct derivation from non-HUKS-managed keys, such as user passwords. For key hosting, refer to [Key Import](./cj-huks-key-import-overview.md).  
 
 | Algorithm/Digest | Derived Key Algorithm/Length | Usable Derived Key Algorithm/Length | API Level | <!--DelCol5-->Mandatory Specification |  
-| :-------- | :-------- | :-------- | :-------- |  
+| :-------- | :-------- | :-------- | :-------- | :-------- |
 | HKDF/SHA256 | AES/192-256 | AES/128/192/256<br/>HMAC/8-1024<br/>SM4/128 | 15+ | Yes |  
 | HKDF/SHA384 | AES/256 | AES/128/192/256<br/>HMAC/8-1024<br/>SM4/128 | 15+ | Yes |  
 | HKDF/SHA512 | AES/256 | AES/128/192/256<br/>HMAC/8-1024<br/>SM4/128 | 15+ | Yes |  

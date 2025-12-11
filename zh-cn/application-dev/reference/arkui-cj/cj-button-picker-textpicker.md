@@ -14,11 +14,11 @@ import kit.ArkUI.*
 
 ## 创建组件
 
-### init(Array\<String>, ?UInt32, ?String)
+### init(?Array\<String>, ?UInt32, ?String)
 
 ```cangjie
 public init(
-    range!: Array<String>,
+    range!: ?Array<String>,
     selected!: ?UInt32 = Option.None,
     value!: ?String = Option.None
 )
@@ -34,7 +34,7 @@ public init(
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|range|Array\<String>|是|-|**命名参数。** 选择器的数据选择列表。|
+|range|?Array\<String>|是|-|**命名参数。** 选择器的数据选择列表。|
 |selected|?UInt32|否|Option.None| **命名参数。** 设置默认选中项在数组中的索引值。<br>初始值：0。|
 |value|?String|否|Option.None| **命名参数。** 设置默认选中项的值，优先级低于selected。<br>初始值：第一个元素值。<br>**说明**：只有显示文本列表时该值有效。显示图片或图片加文本的列表时，该值无效。|
 
@@ -113,6 +113,10 @@ public type OnTextPickerChangeCallback = (String, UInt32) -> Unit
 **功能：** TextPicker项目被选中事件的回调。
 
 **类型：** (String, UInt32) -> Unit
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
 
 ## 示例代码
 

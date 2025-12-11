@@ -1,4 +1,4 @@
-# ohos.security.huks
+# ohos.security.huks（通用密钥库系统）
 
 huks模块向应用提供密钥库能力，包括密钥管理及密钥的密码学操作等功能。
 
@@ -1762,10 +1762,10 @@ public static const HUKS_KEY_FLAG_IMPORT_KEY: UInt32 = 1
 
 **起始版本：** 22
 
-## class HuksKeyGenerateType
+## class HuksKeyGenerationType
 
 ```cangjie
-public class HuksKeyGenerateType {
+public class HuksKeyGenerationType {
     public static const HUKS_KEY_GENERATE_TYPE_DEFAULT: UInt32 = 0
     public static const HUKS_KEY_GENERATE_TYPE_DERIVE: UInt32 = 1
     public static const HUKS_KEY_GENERATE_TYPE_AGREE: UInt32 = 2
@@ -2688,10 +2688,10 @@ public class HuksTag {
     public static const HUKS_TAG_SALT: UInt32 = HuksTagType.HUKS_TAG_TYPE_BYTES | 12
     public static const HUKS_TAG_ITERATION: UInt32 = HuksTagType.HUKS_TAG_TYPE_UINT | 14
     public static const HUKS_TAG_KEY_GENERATION_TYPE: UInt32 = HuksTagType.HUKS_TAG_TYPE_UINT | 15
-    public static const HUKS_TAG_AGREE_ALG: UInt32 = HuksTagType.HUKS_TAG_TYPE_UINT | 19
+    public static const HUKS_TAG_ALG_FOR_AGREEMENT: UInt32 = HuksTagType.HUKS_TAG_TYPE_UINT | 19
     public static const HUKS_TAG_AGREE_PUBLIC_KEY_IS_KEY_ALIAS: UInt32 = HuksTagType.HUKS_TAG_TYPE_BOOL | 20
     public static const HUKS_TAG_PRIVATE_KEY_ALIAS_FOR_AGREEMENT: UInt32 = HuksTagType.HUKS_TAG_TYPE_BYTES | 21
-    public static const HUKS_TAG_AGREE_PUBLIC_KEY: UInt32 = HuksTagType.HUKS_TAG_TYPE_BYTES | 22
+    public static const HUKS_TAG_PUBLIC_KEY_FOR_AGREEMENT: UInt32 = HuksTagType.HUKS_TAG_TYPE_BYTES | 22
     public static const HUKS_TAG_KEY_ALIAS: UInt32 = HuksTagType.HUKS_TAG_TYPE_BYTES | 23
     public static const HUKS_TAG_DERIVE_KEY_SIZE: UInt32 = HuksTagType.HUKS_TAG_TYPE_UINT | 24
     public static const HUKS_TAG_IMPORT_KEY_TYPE: UInt32 =  HuksTagType.HUKS_TAG_TYPE_UINT | 25
@@ -2741,10 +2741,10 @@ public static const HUKS_TAG_AE_TAG: UInt32 = HuksTagType.HUKS_TAG_TYPE_BYTES | 
 
 **起始版本：** 22
 
-### static const HUKS_TAG_AGREE_ALG
+### static const HUKS_TAG_ALG_FOR_AGREEMENT
 
 ```cangjie
-public static const HUKS_TAG_AGREE_ALG: UInt32 = HuksTagType.HUKS_TAG_TYPE_UINT | 19
+public static const HUKS_TAG_ALG_FOR_AGREEMENT: UInt32 = HuksTagType.HUKS_TAG_TYPE_UINT | 19
 ```
 
 **功能：** 表示密钥协商时的算法类型。
@@ -2755,10 +2755,10 @@ public static const HUKS_TAG_AGREE_ALG: UInt32 = HuksTagType.HUKS_TAG_TYPE_UINT 
 
 **起始版本：** 22
 
-### static const HUKS_TAG_AGREE_PRIVATE_KEY_ALIAS
+### static const HUKS_TAG_PRIVATE_KEY_ALIAS_FOR_AGREEMENT
 
 ```cangjie
-public static const HUKS_TAG_AGREE_PRIVATE_KEY_ALIAS: UInt32 = HuksTagType.HUKS_TAG_TYPE_BYTES | 21
+public static const HUKS_TAG_PRIVATE_KEY_ALIAS_FOR_AGREEMENT: UInt32 = HuksTagType.HUKS_TAG_TYPE_BYTES | 21
 ```
 
 **功能：** 表示密钥协商时的私钥别名。
@@ -2769,10 +2769,10 @@ public static const HUKS_TAG_AGREE_PRIVATE_KEY_ALIAS: UInt32 = HuksTagType.HUKS_
 
 **起始版本：** 22
 
-### static const HUKS_TAG_AGREE_PUBLIC_KEY
+### static const HUKS_TAG_PUBLIC_KEY_FOR_AGREEMENT
 
 ```cangjie
-public static const HUKS_TAG_AGREE_PUBLIC_KEY: UInt32 = HuksTagType.HUKS_TAG_TYPE_BYTES | 22
+public static const HUKS_TAG_PUBLIC_KEY_FOR_AGREEMENT: UInt32 = HuksTagType.HUKS_TAG_TYPE_BYTES | 22
 ```
 
 **功能：** 表示密钥协商时的公钥。
@@ -3119,10 +3119,10 @@ public static const HUKS_TAG_KEY_FLAG: UInt32 = HuksTagType.HUKS_TAG_TYPE_UINT |
 
 **起始版本：** 22
 
-### static const HUKS_TAG_KEY_GENERATE_TYPE
+### static const HUKS_TAG_KEY_GENERATION_TYPE
 
 ```cangjie
-public static const HUKS_TAG_KEY_GENERATE_TYPE: UInt32 = HuksTagType.HUKS_TAG_TYPE_UINT | 15
+public static const HUKS_TAG_KEY_GENERATION_TYPE: UInt32 = HuksTagType.HUKS_TAG_TYPE_UINT | 15
 ```
 
 **功能：** 表示生成密钥类型的Tag。
@@ -3625,3 +3625,11 @@ Uint64Value(UInt64)
 **系统能力：** SystemCapability.Security.Huks.Core
 
 **起始版本：** 22
+
+## type Bytes
+
+```cangjie
+public type Bytes = Array<UInt8>
+```
+
+**功能：** [Bytes](#type-Bytes)用于表示密钥输入输出值，支持Array\<UInt8>格式。

@@ -106,7 +106,7 @@ public func opacity(value: Float64): This
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|value|Float64|是|-|透明度值，取值范围[0, 1]，0表示完全透明，1表示完全不透明。|
+|value|Float64|是|-|透明度值，取值范围[0.0, 1.0]，0.0表示完全透明，1.0表示完全不透明。|
 
 ## class PageTransitionEnter
 
@@ -472,6 +472,10 @@ public type PageTransitionCallback = (RouteType, Float64) -> Unit
 ```
 
 **功能：** 回调用于报告页面转换事件。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
 
 **类型：** ([RouteType](#enum-routetype) , Float64) -> Unit
 

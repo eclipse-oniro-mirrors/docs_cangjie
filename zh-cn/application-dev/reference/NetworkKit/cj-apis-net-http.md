@@ -2326,6 +2326,10 @@ public operator func !=(other: HttpRequestEvent): Bool
 
 **功能：** 比较两个HttpRequestEvent是否不相等。
 
+**系统能力：** SystemCapability.Communication.NetStack
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -2369,6 +2373,10 @@ public func hashCode(): Int64
 ```
 
 **功能：** 获取HttpRequestEvent的哈希值。
+
+**系统能力：** SystemCapability.Communication.NetStack
+
+**起始版本：** 22
 
 **返回值：**
 

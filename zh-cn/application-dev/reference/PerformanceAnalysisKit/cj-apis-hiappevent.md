@@ -1907,32 +1907,6 @@ Statistic
 
 **起始版本：** 22
 
-### func getValue()
-
-```cangjie
-public func getValue(): UInt32
-```
-
-**功能：** 获取枚举的值。
-
-**系统能力：** SystemCapability.HiviewDFX.HiAppEvent
-
-**起始版本：** 22
-
-**返回值：**
-
-|类型|说明|
-|:----|:----|
-|UInt32|获取枚举的值。|
-
-**异常：**
-
-- BusinessException：对应错误码如下表，详见[应用事件打点错误码](./cj-errorcode-hiappevent.md)。
-
-  | 错误码ID | 错误信息 |
-  | :---- | :--- |
-  | 11105001 | Parameter error. |
-
 ## enum EventValueType
 
 ```cangjie

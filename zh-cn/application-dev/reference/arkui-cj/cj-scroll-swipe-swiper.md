@@ -593,10 +593,10 @@ public func mask(value: ?Bool): This
 |:---|:---|:---|:---|:---|
 |value|?Bool|是|-|设置是否显示Swiper组件圆点导航指示器的蒙版样式。<br>初始值：false。|
 
-#### func maxDisplayCount(UInt32)
+#### func maxDisplayCount(?UInt32)
 
 ```cangjie
-public func maxDisplayCount(value: UInt32): This
+public func maxDisplayCount(value: ?UInt32): This
 ```
 
 **功能：** 圆点导航点指示器样式下，导航点显示个数最大值。
@@ -611,7 +611,7 @@ public func maxDisplayCount(value: UInt32): This
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|value|UInt32|是|-|设置圆点导航点指示器样式下，导航点显示个数最大值，当实际导航点个数大于最大导航点个数时，会生效超长效果样式，样式如示例4所示。<br>初始值：这个属性没有初始值，如果设置异常值那等同于没有超长显示效果。<br>取值范围：6-9。<br> **说明：**<br>1、超长显示场景，目前暂时不支持交互功能（包括：手指点击拖拽、鼠标操作等）。<br>2、在超长显示场景下，中间页面对应的选中导航点的位置，并不是完全固定的，取决于之前的翻页操作序列。<br>3、当前仅支持displayCount为1的场景。|
+|value|?UInt32|是|-|设置圆点导航点指示器样式下，导航点显示个数最大值，当实际导航点个数大于最大导航点个数时，会生效超长效果样式，样式如示例4所示。<br>初始值：这个属性没有初始值，如果设置异常值那等同于没有超长显示效果。<br>取值范围：6-9。<br> **说明：**<br>1、超长显示场景，目前暂时不支持交互功能（包括：手指点击拖拽、鼠标操作等）。<br>2、在超长显示场景下，中间页面对应的选中导航点的位置，并不是完全固定的，取决于之前的翻页操作序列。<br>3、当前仅支持displayCount为1的场景。|
 
 #### func selectedColor(?ResourceColor)
 

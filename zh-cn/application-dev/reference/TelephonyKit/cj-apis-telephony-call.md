@@ -1,4 +1,4 @@
-# ohos.telephony.call
+# ohos.telephony.call（拨打电话）
 
 call模块提供呼叫管理功能，包括拨打电话、跳转到拨号界面、获取通话状态、格式化电话号码等。
 

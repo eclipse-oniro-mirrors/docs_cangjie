@@ -1,4 +1,4 @@
-# ohos.app.ability.ability_delegator_registry
+# ohos.app.ability.ability_delegator_registry（AbilityDelegatorRegistry）
 
 ability_delegator_registry模块提供用于存储已注册的[AbilityDelegator](#class-abilitydelegator)和[AbilityDelegatorArgs](#class-abilitydelegatorargs)对象的全局寄存器的能力，包括获取应用程序的[AbilityDelegator](#class-abilitydelegator)对象、获取单元测试参数对象。该模块中的接口只能用于测试框架中。
 
@@ -1384,6 +1384,10 @@ public operator func !=(other: AbilityLifecycleState): Bool
 
 **功能：** 判断两个枚举值是否不等。
 
+**系统能力：** SystemCapability.Ability.AbilityRuntime.Core
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -1404,6 +1408,10 @@ public operator func ==(other: AbilityLifecycleState): Bool
 
 **功能：** 判断两个枚举值是否相等。
 
+**系统能力：** SystemCapability.Ability.AbilityRuntime.Core
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -1423,6 +1431,10 @@ public func toString(): String
 ```
 
 **功能：** 获取当前枚举的字符串表示。
+
+**系统能力：** SystemCapability.Ability.AbilityRuntime.Core
+
+**起始版本：** 22
 
 **返回值：**
 

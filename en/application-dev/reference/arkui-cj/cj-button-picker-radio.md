@@ -81,8 +81,6 @@ public func onChange(callback: ?(Bool) -> Unit): This
 
 ## Example Code
 
-This example demonstrates customizing the background color of radio buttons by configuring checkedBackgroundColor.
-
 <!-- run -->
 
 ```cangjie

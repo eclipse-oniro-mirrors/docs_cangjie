@@ -1,4 +1,4 @@
-# ohos.data.distributed_kv_store
+# ohos.data.distributed_kv_store（分布式键值数据库）
 
 分布式键值数据库为应用程序提供不同设备间数据库的分布式协同能力。通过调用分布式键值数据库各个接口，应用程序可将数据保存到分布式键值数据库中，并可对分布式键值数据库中的数据进行增加、删除、修改、查询、同步等操作。
 
@@ -643,7 +643,7 @@ public var default: String
 public var nodeType: Int32
 ```
 
-**功能：** 表示指定节点对应的数据类型，取值为[ValueType](#enum-kvvaluetype)对应的枚举值。暂不支持BYTE_ARRAY，使用此类型会导致[getKVStore](#func-getkvstoretstring-kvoptions-where-t--singlekvstore)失败。
+**功能：** 表示指定节点对应的数据类型，取值为[KVValueType](#enum-kvvaluetype)对应的枚举值。暂不支持BYTE_ARRAY，使用此类型会导致[getKVStore](#func-getkvstoretstring-kvoptions-where-t--singlekvstore)失败。
 
 **类型：** Int32
 
@@ -688,7 +688,7 @@ public init(name: String, nullable: Bool, default: String, nodeType: Int32)
 |name|String|是|-|FieldNode的值，不能为空，且不大于64个字符。|
 |nullable|Bool|是|-|表示数据库字段是否可以为空。true表示此节点数据可以为空，false表示此节点数据不能为空。|
 |default|String|是|-|表示FieldNode的默认值。|
-|nodeType|Int32|是|-|表示指定节点对应的数据类型，取值为[ValueType](#enum-kvvaluetype)对应的枚举值。暂不支持BYTE_ARRAY，使用此类型会导致[getKVStore](#func-getkvstoretstring-kvoptions-where-t--singlekvstore)失败。|
+|nodeType|Int32|是|-|表示指定节点对应的数据类型，取值为[KVValueType](#enum-kvvaluetype)对应的枚举值。暂不支持BYTE_ARRAY，使用此类型会导致[getKVStore](#func-getkvstoretstring-kvoptions-where-t--singlekvstore)失败。|
 
 ## class KVManager
 
@@ -971,7 +971,7 @@ public class KVStoreResultSet {}
 
 KVStoreResultSet实例不会实时刷新。使用结果集后，如果数据库中的数据发生变化（如增删改操作），需要重新查询才能获取到最新的数据。
 
-在调用KVStoreResultSet的方法前，需要先通过[getKVStore](#func-getkvstoretstring-kvoptions-where-t--singlekvstore)构建一个SingleKVStore或者DeviceKVStore实例。
+在调用KVStoreResultSet的方法前，需要先通过[getKVStore](#func-getkvstoretstring-kvoptions-where-t--singlekvstore)构建一个[SingleKVStore](#class-singlekvstore)或者[DeviceKVStore](#class-devicekvstore)实例。
 
 > **说明：**
 >

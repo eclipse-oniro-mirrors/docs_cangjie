@@ -45,7 +45,7 @@ public init(
 
 通用属性：仅支持[aspectRatio](./cj-universal-attribute-layoutconstraints.md#func-aspectratioint64)、[backdropBlur](./cj-universal-attribute-background.md#func-backdropblurfloat64)、[backgroundColor](./cj-universal-attribute-background.md#func-backgroundcolorresourcecolor)、[bindContentCover](./cj-universal-attribute-menu.md)、[bindContextMenu](./cj-universal-attribute-menu.md#func-bindcontextmenu---unit-responsetype)、[bindMenu](./cj-universal-attribute-menu.md#func-bindmenu---unit) 、[bindSheet](./cj-universal-attribute-sheettransition.md#func-bindsheetbool----unit-sheetoptions)、[borderColor](./cj-information-display-progress.md#var-bordercolor)、[borderStyle](./cj-common-types.md#enum-borderstyle)、[borderWidth](./cj-information-display-badge.md#var-borderwidth)、[clip](./cj-common-types.md#clip)、[constraintSize](./cj-universal-attribute-size.md#func-constraintsizelength-length-length-length)、[defaultFocus](./cj-universal-attribute-focus.md#func-defaultfocusbool)、[focusable](./cj-universal-attribute-popup.md#var-focusable)、[tabIndex](./cj-universal-attribute-focus.md#func-tabindexint32)、[groupDefaultFocus](./cj-universal-attribute-focus.md#func-groupdefaultfocusbool)、[displayPriority](./cj-universal-attribute-layoutconstraints.md#func-displaypriorityint32)、[draggable](./cj-image-video-image.md#func-draggablebool)、[enabled](./cj-universal-attribute-enable.md#func-enabledbool)、[flexBasis](./cj-universal-attribute-flexlayout.md#func-flexbasislength)、[flexShrink](./cj-universal-attribute-flexlayout.md#func-flexshrinkfloat64)、[layoutWeight](./cj-universal-attribute-size.md#func-layoutweightint32)、[id](./cj-universal-attribute-componentid.md)、[height](./cj-universal-attribute-size.md#func-heightlength)、[touchable](./cj-apis-window.md#let-touchable)、[margin](./cj-universal-attribute-size.md#func-marginlength)、[markAnchor](./cj-universal-attribute-location.md#func-markanchorlength-length)、[mask](./cj-scroll-swipe-swiper.md#func-maskbool)、[offset](./cj-apis-componentutils.md#class-offset)、[width](./cj-apis-display.md#var-width)、[zIndex](./cj-animation-sharedtransition.md#var-zindex)、[visibility](./cj-common-types.md#enum-visibility)、[scale](./cj-animation-pagetransition.md#func-scalefloat32-float32-float32-length-length)、[transform](./cj-apis-componentutils.md#let-transform)、[size](./cj-apis-componentutils.md#let-size)、[opacity](./cj-animation-pagetransition.md#func-opacityfloat64)、[sharedTransition](./cj-animation-sharedtransition.md#func-sharedtransitionstring-sharedtransitionoptions)、[transition](./cj-animation-transition.md#func-transition)。
 
-通用事件：仅支持[onAppear](./cj-universal-attribute-menu.md#var-onappear)、[onDisAppear](./cj-universal-attribute-menu.md#var-ondisappear)、[onBlur](./cj-universal-event-focus.md#func-onblur---unit)、[onFocus](./cj-universal-event-focus.md#func-onfocus---unit)、[onDragEnd](./cj-universal-event-drag.md#func-ondragenddrageventstring---unit)、[onDragEnter](./cj-universal-event-drag.md#func-ondragenterdrageventstring---unit)、[onDragStart](./cj-universal-event-drag.md#func-ondragstartdrageventstring------unit)、[onDragMove](./cj-universal-event-drag.md#func-ondragmovedrageventstring---unit)、[onDragLeave](./cj-universal-event-drag.md#func-ondragleavedrageventstring---unit)、[onDrop](./cj-universal-event-drag.md#func-ondropdrageventstring---unit)、[onHover](./cj-universal-event-mouse.md)、[onMouse](./cj-universal-event-mouse.md#func-onmousemouseevent)、[onKeyEvent](./cj-universal-event-key.md#func-onkeyeventkeyevent-unit)、[onTouch](./cj-universal-event-touch.md#func-ontouchtouchevent-unit)、[onVisibleAreaChange](./cj-universal-event-visibleareachange.md#func-onvisibleareachangearrayfloat64-bool-float64-unit---unit)。
+通用事件：仅支持[onAppear](./cj-universal-attribute-menu.md#var-onappear)、[onDisAppear](./cj-universal-attribute-menu.md#var-ondisappear)、[onBlur](./cj-universal-event-focus.md#func-onblur---unit)、[onFocus](./cj-universal-event-focus.md#func-onfocus---unit)、[onHover](./cj-universal-event-mouse.md)、[onMouse](./cj-universal-event-mouse.md#func-onmousemouseevent)、[onKeyEvent](./cj-universal-event-key.md#func-onkeyeventkeyevent-unit)、[onTouch](./cj-universal-event-touch.md#func-ontouchtouchevent-unit)、[onVisibleAreaChange](./cj-universal-event-visibleareachange.md#func-onvisibleareachangearrayfloat64-bool-float64-unit---unit)。
 
 ## 组件属性
 
@@ -464,7 +464,7 @@ public var url: String
 public init(url: String)
 ```
 
-**功能：** 构造函数。
+**功能：** 构造一个OnPageBeginEvent类型的对象。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -540,7 +540,6 @@ public class PermissionRequest {}
 #### func deny()
 
 ```cangjie
-
 public func deny(): Unit
 ```
 
@@ -762,7 +761,7 @@ public var request: PermissionRequest
 public init(request: PermissionRequest)
 ```
 
-**功能：** 构造函数。
+**功能：** 构造一个OnPermissionRequestEvent类型的对象。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -792,11 +791,11 @@ class EntryView {
     @State var url: String = "www.example.com"
     func build() {
         Column(space: 10) {
-            Button("refresh")
+            Button("reload")
             .onClick({
                 evt =>
-                Hilog.info(0, "AppLogCj", "refresh")
-                webController.refresh()
+                Hilog.info(0, "AppLogCj", "reload")
+                webController.reload()
             }).width(400.px).height(150.px)
             Button("loadUrl")
             .onClick({

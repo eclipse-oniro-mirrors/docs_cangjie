@@ -2291,6 +2291,10 @@ public operator func !=(other: NetConnectionEvent): Bool
 
 **功能：** 判断两个事件是否不相等。
 
+**系统能力：** SystemCapability.Communication.NetManager.Core
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|

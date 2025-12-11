@@ -137,6 +137,7 @@
                 - 互操作入门
                     - [构建第一个仓颉与ArkTS混合应用](learn-cj/FFI/cangjie-arkts/cj-quick-start-first-cangjie-hybrid-app.md)
                     - [在已有ArkTS工程中增量使用仓颉](learn-cj/FFI/cangjie-arkts/cj-quick-start-first-cangjie-hybrid-module.md)
+                    - [在仓颉代码里导入ArkTS模块](learn-cj/FFI/cangjie-arkts/cangjie-load-arkts.md)
                 - [概述](learn-cj/FFI/cangjie-arkts/cangjie_arkts_overview.md)
                 - [场景](learn-cj/FFI/cangjie-arkts/interoperability_senario.md)
                     - [ArkTS 应用中使用仓颉](learn-cj/FFI/cangjie-arkts/using_cangjie.md)
@@ -171,6 +172,7 @@
             - [TokenKind 类型](learn-cj/Appendix/tokenkind_type.md)
 
 - 开发
+    <!--RP5--><!--RP5End-->
     - 应用框架
         - Ability Kit（程序框架服务）
             - [Ability Kit简介](application-models/cj-abilitykit-overview.md)
@@ -618,6 +620,7 @@
                     - [使用AVImageGenerator提取视频指定时间图像（仓颉）](media/media/cj-avimagegenerator.md)
                 - [AVCodec支持的格式](media/media/cj-avcodec-support-formats.md)
         - Media Library Kit（媒体文件管理服务）
+            <!--RP6--><!--RP6End-->
             - 受限开放能力
                 - [系统相册资源使用指导](media/medialibrary/cj-photoAccessHelper-systemAlbum-guidelines.md)
     - 图形
@@ -645,17 +648,17 @@
         - Ability Kit（程序框架服务）
             - 仓颉API
                 - [ohos.app.ability.ui_ability](reference/AbilityKit/cj-apis-app-ability-ui_ability.md)
-                - [ohos.app.ability.want](reference/AbilityKit/cj-apis-app-ability-want.md)
+                - [ohos.app.ability.want（Want）](reference/AbilityKit/cj-apis-app-ability-want.md)
                 - [ohos.ability_access_ctrl（程序访问控制管理）](reference/AbilityKit/cj-apis-ability_access_ctrl.md)
                 - [ohos.bundle.bundle_manager（bundleManager管理）](reference/AbilityKit/cj-apis-bundle_manager.md)
                 - [ohos.app.ability.ability_stage](reference/AbilityKit/cj-apis-app-ability-ability_stage.md)
                 - [ohos.app.ability.ability_result](reference/AbilityKit/cj-apis-ability-ability_result.md)
-                - [ohos.app.ability.app_recovery](reference/AbilityKit/cj-apis-app-ability-app_recovery.md)
+                - [ohos.app.ability.app_recovery（应用故障恢复）](reference/AbilityKit/cj-apis-app-ability-app_recovery.md)
                 - [ohos.app.ability.ability_constant](reference/AbilityKit/cj-apis-app-ability-ability_constant.md)
                 - [ohos.app.ability.context_constant](reference/AbilityKit/cj-apis-app-ability-context_constant.md)
                 - [ohos.app.ability.dialog_request](reference/AbilityKit/cj-apis-app-ability-dialog_request.md)
                 - [ohos.app.ability.start_options](reference/AbilityKit/cj-apis-app-ability-start_options.md)
-                - [ohos.app.ability.want_constant](reference/AbilityKit/cj-apis-app-ability-want_constant.md)
+                - [ohos.app.ability.want_constant（Want常量）](reference/AbilityKit/cj-apis-app-ability-want_constant.md)
                 - [ohos.app.ability](reference/AbilityKit/cj-apis-app-ability.md)
                 - [ohos.application.error_observer](reference/AbilityKit/cj-apis-application-error_observer.md)
                 - [ohos.application.test_runner](reference/AbilityKit/cj-apis-application-test_runner.md)
@@ -663,7 +666,7 @@
                 - [ohos.metadata](reference/AbilityKit/cj-apis-metadata.md)
                 - [ohos.security.permission_request_result（PermissionRequestResult）](reference/AbilityKit/cj-apis-sercurity-permission_request_result.md)
                 - [ohos.security.skill](reference/AbilityKit/cj-apis-skill.md)
-                - [ohos.app.ability.error_manager](reference/AbilityKit/cj-apis-app-ability-error_manager.md)
+                - [ohos.app.ability.error_manager（错误管理模块）](reference/AbilityKit/cj-apis-app-ability-error_manager.md)
             - 错误码
                 - [元能力子系统错误码](reference/AbilityKit/cj-errorcode-ability.md)
                 - [包管理子系统通用错误码](reference/AbilityKit/cj-errorcode-bundle.md)
@@ -703,7 +706,6 @@
                     - [点击事件](reference/arkui-cj/cj-universal-event-click.md)
                     - [触摸事件](reference/arkui-cj/cj-universal-event-touch.md)
                     - [挂载卸载事件](reference/arkui-cj/cj-universal-event-appear.md)
-                    - [拖拽事件](reference/arkui-cj/cj-universal-event-drag.md)
                     - [按键事件](reference/arkui-cj/cj-universal-event-key.md)
                     - [焦点事件](reference/arkui-cj/cj-universal-event-focus.md)
                     - [鼠标事件](reference/arkui-cj/cj-universal-event-mouse.md)
@@ -736,7 +738,6 @@
                     - 模态转场设置
                         - [全屏模态转场](reference/arkui-cj/cj-universal-attribute-bindcontentcover.md)
                         - [半模态转场](reference/arkui-cj/cj-universal-attribute-sheettransition.md)
-                    - [拖拽控制](reference/arkui-cj/cj-universal-attribute-dragcontrol.md)
                     - [安全区域](reference/arkui-cj/cj-universal-attribute-expandsafearea.md)
                     - [组件内容填充方式](reference/arkui-cj/cj-universal-attribute-renderfit.md)
                     - [触摸热区设置](reference/arkui-cj/cj-universal-attribute-touchtarget.md)
@@ -774,7 +775,7 @@
                     - [Toggle](reference/arkui-cj/cj-button-picker-toggle.md)
                     - [Checkbox](reference/arkui-cj/cj-button-picker-checkbox.md)
                     - [CheckboxGroup](reference/arkui-cj/cj-button-picker-checkboxgroup.md)
-                    - [Datepicker](reference/arkui-cj/cj-button-picker-datepicker.md)
+                    - [DatePicker](reference/arkui-cj/cj-button-picker-datepicker.md)
                     - [TextPicker](reference/arkui-cj/cj-button-picker-textpicker.md)
                     - [Radio](reference/arkui-cj/cj-button-picker-radio.md)
                     - [Rating](reference/arkui-cj/cj-button-picker-rating.md)
@@ -948,7 +949,7 @@
                     - [传感器错误码](reference/SensorServiceKit/cj-errorcode-sensor.md)
             - Telephony Kit
                 - 仓颉API
-                    - [ohos.telephony.call](reference/TelephonyKit/cj-apis-telephony-call.md)
+                    - [ohos.telephony.call（拨打电话）](reference/TelephonyKit/cj-apis-telephony-call.md)
                 - 错误码
                     - [电话子系统错误码](reference/TelephonyKit/cj-errorcode-telephony.md)
         - 调测调优

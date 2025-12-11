@@ -685,9 +685,8 @@ public static func persistProps<T>(props: Array<(String, T)>): Unit
 
 ```cangjie
 public enum ColorMode <: Equatable<ColorMode> {
-    Light
-    |
-    Dark
+    | Light
+    | Dark
     | ...
 }
 ```
@@ -778,11 +777,9 @@ public operator func ==(other: ColorMode): Bool
 
 ```cangjie
 public enum LayoutDirection <: Equatable<LayoutDirection> {
-    Ltr
-    |
-    Rtl
-    |
-    Auto
+    | Ltr
+    | Rtl
+    | Auto
     | ...
 }
 ```

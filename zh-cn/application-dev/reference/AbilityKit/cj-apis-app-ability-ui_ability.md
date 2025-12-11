@@ -256,38 +256,6 @@ abstract sealed class Ability {}
 
 **起始版本：** 22
 
-### static func registerCreator(String, () -> Ability)
-
-```cangjie
-public static func registerCreator(name: String, creator: () -> Ability): Unit
-```
-
-**功能：** 注册BaseAbility的对应的creator。
-
-**系统能力：** SystemCapability.Ability.AbilityRuntime.AbilityCore
-
-**起始版本：** 22
-
-**参数：**
-
-|参数名|类型|必填|默认值|说明|
-|:---|:---|:---|:---|:---|
-|name|String|是|-|注册 UIAbility 的名称。|
-|creator|()->[Ability](#class-ability)|是|-|注册BaseAbility的对应的creator。|
-
-**示例：**
-
-<!-- compile -->
-```cangjie
-import kit.AbilityKit.*
-
-let ENTRY_ABILITY_REGISTER_RESULT1 = Ability.registerCreator("entry", { => MyUIAbility2()})
-
-class MyUIAbility2 <: UIAbility {
-    public override func onCreate(want: Want, launchParam: LaunchParam): Unit {
-    }
-}
-```
 
 ## class AbilityStageContext
 

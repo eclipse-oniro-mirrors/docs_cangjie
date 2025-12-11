@@ -198,7 +198,7 @@ public func fontSize(value: ?Length): This
 
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
-| value | ?[Length](./cj-common-types.md#interface-length) | Yes | - | The text size of the button.<br>Initial value: 18.fp. |
+| value | ?[Length](./cj-common-types.md#interface-length) | Yes | - | The text size of the button.<br>@r(sys.float.Body_L) when controlSize is set to ControlSize.NORMAL<br/>@r(sys.float.Body_S) when controlSize is set to ControlSize.SMALL |
 
 ### func fontStyle(?FontStyle)
 
@@ -252,7 +252,7 @@ public func shape(value: ?ButtonType): This
 
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
-| value | ?[ButtonType](#enum-buttontype) | Yes | - | The shape type of the button.<br>Initial value: ButtonType.RoundRectangle. |
+| value | ?[ButtonType](#enum-buttontype) | Yes | - | The shape type of the button.<br>Initial value: ButtonType.RoundedRectangle. |
 
 ### func stateEffect(?Bool)
 

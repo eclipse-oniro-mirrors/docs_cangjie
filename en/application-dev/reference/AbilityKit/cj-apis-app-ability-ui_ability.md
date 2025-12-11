@@ -532,7 +532,9 @@ try {
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
-```## class UIAbility
+```
+
+## class UIAbility
 
 ```cangjie
 public open class UIAbility <: Ability {}

@@ -110,7 +110,7 @@ public class SkillUri {
     public let pathRegex: String
     public let uriType: String
     public let utd: String
-    public let maxFileSupported: Int32
+    public let maxFilesSupported: Int32
     public let linkFeature: String
 }
 ```
@@ -153,10 +153,10 @@ public let linkFeature: String
 
 **起始版本：** 22
 
-### let maxFileSupported
+### let maxFilesSupported
 
 ```cangjie
-public let maxFileSupported: Int32
+public let maxFilesSupported: Int32
 ```
 
 **功能：** 对于指定类型的文件，标识一次能接收或打开的最大数量。取值范围：不小于0的整数。

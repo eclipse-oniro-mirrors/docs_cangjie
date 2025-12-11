@@ -14,10 +14,10 @@ None
 
 ## Creating the Component
 
-### init(?Array\<SelectOptions>)
+### init(?Array\<SelectOption>)
 
 ```cangjie
-public init(options: ?Array<SelectOptions>)
+public init(options: ?Array<SelectOption>)
 ```
 
 **Function:** Constructs a dropdown selection menu component.
@@ -30,7 +30,7 @@ public init(options: ?Array<SelectOptions>)
 
 | Parameter | Type | Required | Default Value | Description |
 |:---|:---|:---|:---|:---|
-| options | ?Array\<[SelectOptions](#class-selectoptions)> | Yes | - | Sets the dropdown options.<br>Initial value: []. |
+| options | ?Array\<[SelectOption](#class-selectoptions)> | Yes | - | Sets the dropdown options.<br>Initial value: []. |
 
 ## Universal Attributes/Events
 
@@ -415,10 +415,10 @@ public func onSelect(callback: ?OnSelectCallback): This
 |:---|:---|:---|:---|:---|
 | callback | ?[OnSelectCallback](#type-onselectcallback) | Yes | - | The index and value of the selected item.<br>Initial value: { _, _ => }. |## Basic Type Definitions
 
-### class SelectOptions
+### class SelectOption
 
 ```cangjie
-public class SelectOptions {
+public class SelectOption {
     public var value: ?ResourceStr
     public var icon: ?ResourceStr
     public init(value!: ?ResourceStr, icon!: ?ResourceStr = None)
@@ -469,7 +469,7 @@ public var icon: ?ResourceStr
 public init(value!: ?ResourceStr, icon!: ?ResourceStr = None)
 ```
 
-**Function:** Constructs a SelectOptions object.
+**Function:** Constructs a SelectOption object.
 
 **System Capability:** SystemCapability.ArkUI.ArkUI.Full
 
@@ -492,12 +492,15 @@ public type OnSelectCallback = (Int32, String) -> Unit
 
 **Type:** (Int32, String) -> Unit
 
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 22
 
 ## Example Code
 
 ### Example 1 (Configuring Dropdown Menu)
 
-This example implements a dropdown menu by configuring SelectOptions.
+This example implements a dropdown menu by configuring SelectOption.
 
 <!-- run -->
 
@@ -509,7 +512,7 @@ import ohos.arkui.state_macro_manage.*
 import ohos.i18n.*
 import ohos.resource_manager.*
 import ohos.hilog.*
-
+import ohos.resource.__GenerateResource__
 
 @Entry
 @Component
@@ -518,11 +521,11 @@ class EntryView {
     @State var index: Int32 = 2
     @State var space: Int64 = 8
 
-    @State var values1: Array<SelectOptions> = [
-            SelectOptions(value: "aaa", icon: @r(app.media.startIcon)),
-            SelectOptions(value: "bbb", icon: @r(app.media.startIcon)),
-            SelectOptions(value: "ccc", icon: @r(app.media.startIcon)),
-            SelectOptions(value: "ddd", icon: @r(app.media.startIcon))]
+    @State var values1: Array<SelectOption> = [
+            SelectOption(value: "aaa", icon: @r(app.media.startIcon)),
+            SelectOption(value: "bbb", icon: @r(app.media.startIcon)),
+            SelectOption(value: "ccc", icon: @r(app.media.startIcon)),
+            SelectOption(value: "ddd", icon: @r(app.media.startIcon))]
 
     @State var arrow: ArrowPosition = ArrowPosition.End
 

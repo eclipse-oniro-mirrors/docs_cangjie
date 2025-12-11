@@ -183,6 +183,10 @@ public type OnCheckboxGroupChangeCallback = (CheckboxGroupResult) -> Unit
 
 **Type:** ([CheckboxGroupResult](#class-checkboxgroupresult)) -> Unit
 
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since Version:** 22
+
 ## Example Code
 
 ### Example 1 (Setting Up a Checkbox Group)

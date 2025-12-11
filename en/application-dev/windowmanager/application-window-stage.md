@@ -42,18 +42,18 @@ The commonly used APIs for the above scenarios are listed in the table below. Fo
 
 ## Configuring the Main Application Window
 
-In the `Stage` model, the main application window is created and managed by `UIAbility`. In the `onWindowStageCreate` callback of `UIAbility`, the main window can be retrieved via `WindowStage` for property configuration. Additionally, main window properties such as `maxWindowWidth` can be set in the application configuration file. For details, refer to [abilities tag in module.json5 configuration file](../cj-start/basic-knowledge/module-configuration-file.md#abilities标签).
+In the `Stage` model, the main application window is created and managed by [UIAbility](../reference/AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiability). In the [onWindowStageCreate](../reference/AbilityKit/cj-apis-app-ability-ui_ability.md#func-onwindowstagecreatewindowstage) callback of [UIAbility](../reference/AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiability), the main window can be retrieved via `WindowStage` for property configuration. Additionally, main window properties such as `maxWindowWidth` can be set in the application configuration file. For details, refer to [abilities tag in module.json5 configuration file](../cj-start/basic-knowledge/module-configuration-file.md#abilities-tag).
 
 ### Development Steps
 
 1. Retrieve the main application window.  
-   Use the `getMainWindow` API to obtain the main window.
+   Use the [getMainWindow](../reference/arkui-cj/cj-apis-window.md#func-getmainwindow) API to obtain the main window.
 
 2. Set main window properties.  
    Multiple properties such as background color, brightness, and touchability can be configured as needed. This example demonstrates setting the "touchable" property.
 
 3. Load the target page into the main window.  
-   Use the `loadContent` API to load the target page.
+   Use the [loadContent](../reference/arkui-cj/cj-apis-window.md#func-loadcontentstring) API to load the target page.
 
 ```cangjie
 package ohos_app_cangjie_entry

@@ -10,7 +10,7 @@ import kit.ArkUI.*
 
 ## 子组件
 
-仅当ToggleType为ButtonType时可包含子组件。
+仅当ToggleType为Button时可包含子组件。
 
 ## 创建组件
 

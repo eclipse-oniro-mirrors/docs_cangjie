@@ -6,7 +6,7 @@ The Image component is used to display images in applications. It supports image
 >
 > - When copying the Image component using shortcut keys, the Image component must be in a [focused state](./cj-universal-attribute-focus.md#func-focusontouchbool). By default, the Image component is not focusable. To enable focus, set the [focusable](cj-apis-window.md#var-focusable) attribute to true, then use the TAB key to switch focus to the component. Setting the [focusOnTouch](./cj-universal-attribute-focus.md#func-focusontouchbool) attribute to true will allow the component to gain focus when clicked.
 > - The component supports SVG image sources. For SVG tag documentation, refer to [SVG Tag Description](../ImageKit/cj-apis-image.md#svg标签说明).
-> - The playback of animated images depends on the visibility changes of the Image node. By default, animations are not played. When the node becomes visible, the animation starts via a callback, and when the node becomes invisible, the animation stops. The visibility state is determined by the [onVisibleAreaChange](./cj-ui-framework.md#func-onvisibleareachangearrayfloat64-boolfloat64---unit) event. When the visible threshold ratio is greater than 0, the Image is considered visible.
+> - The playback of animated images depends on the visibility changes of the Image node. By default, animations are not played. When the node becomes visible, the animation starts via a callback, and when the node becomes invisible, the animation stops. The visibility state is determined by the [onVisibleAreaChange](./cj-universal-event-visibleareachange.md#func-onvisibleareachangearrayfloat64-bool-float64---unit) event. When the visible threshold ratio is greater than 0, the Image is considered visible.
 
 ## Import Module
 
@@ -534,6 +534,10 @@ public type ImageCompleteCallback = (ImageLoadResult) -> Unit
 
 **Function:** Callback function type for image loading completion.
 
+**Type:** ([ImageLoadResult](#class-imageloadresult)) -> Unit
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
 **Initial Version:** 22
 
 ## type ImageErrorCallback
@@ -543,6 +547,10 @@ public type ImageErrorCallback = (ImageError) -> Unit
 ```
 
 **Function:** Callback function type for image loading errors.
+
+**Type:** ([ImageError](#class-imageerror)) -> Unit
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
 
 **Initial Version:** 22
 

@@ -24,7 +24,7 @@ Detection principle: The application's watchdog thread periodically inserts live
 
 Detection principle illustrated below:
 
-![appfreeze_20230308145163](figures/appfreeze_20230308145163.png)
+![appfreeze2](figures/appfreeze2.png)
 
 ### APP_INPUT_BLOCK - User Input Response Timeout
 
@@ -34,7 +34,7 @@ Detection principle: When a user clicks a button in the application, the input s
 
 Detection principle illustrated below:
 
-![appfreeze_20230308145162](figures/appfreeze_20230308145162.png)
+![appfreeze1](figures/appfreeze1.png)
 
 ### Lifecycle Transition Timeout
 
@@ -46,7 +46,7 @@ Detection principle: By capturing different lifecycle transition processes, a ti
 
 Lifecycle transition timeout consists of two combined events: LIFECYCLE_HALF_TIMEOUT (as a warning event for LIFECYCLE_TIMEOUT) to capture binder information, and LIFECYCLE_TIMEOUT.
 
-![appfreeze_20230308145164](figures/appfreeze_20230308145164.png)
+![appfreeze3](figures/appfreeze3.png)
 
 Different lifecycles have varying timeout durations:
 

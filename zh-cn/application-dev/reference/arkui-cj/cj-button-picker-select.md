@@ -14,10 +14,10 @@ import kit.ArkUI.*
 
 ## 创建组件
 
-### init(?Array\<SelectOptions>)
+### init(?Array\<SelectOption>)
 
 ```cangjie
-public init(options: ?Array<SelectOptions>)
+public init(options: ?Array<SelectOption>)
 ```
 
 **功能：** 构造一个下拉选择菜单组件。
@@ -30,7 +30,7 @@ public init(options: ?Array<SelectOptions>)
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|options|?Array\<[SelectOptions](#class-selectoptions)>|是|-|设置下拉选项。<br>初始值：[]。|
+|options|?Array\<[SelectOption](#class-selectoptions)>|是|-|设置下拉选项。<br>初始值：[]。|
 
 ## 通用属性/通用事件
 
@@ -417,10 +417,10 @@ public func onSelect(callback: ?OnSelectCallback): This
 
 ## 基础类型定义
 
-### class SelectOptions
+### class SelectOption
 
 ```cangjie
-public class SelectOptions {
+public class SelectOption {
     public var value: ?ResourceStr
     public var icon: ?ResourceStr
     public init(value!: ?ResourceStr, icon!: ?ResourceStr = None)
@@ -494,6 +494,10 @@ public type OnSelectCallback = (Int32, String) -> Unit
 
 **类型：** (Int32, String) -> Unit
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
+
 ## 示例代码
 
 ### 示例1（设置下拉菜单）
@@ -511,7 +515,7 @@ import ohos.i18n.*
 import ohos.resource_manager.*
 import ohos.hilog.*
 import ohos.arkui.component.common.Offset as CommonOffset
-
+import ohos.resource.__GenerateResource__
 
 @Entry
 @Component
@@ -520,11 +524,11 @@ class EntryView {
     @State var index: Int32 = 2
     @State var space: Int64 = 8
 
-    @State var values1: Array<SelectOptions> = [
-            SelectOptions(value: "aaa", icon: @r(app.media.startIcon)),
-            SelectOptions(value: "bbb", icon: @r(app.media.startIcon)),
-            SelectOptions(value: "ccc", icon: @r(app.media.startIcon)),
-            SelectOptions(value: "ddd", icon: @r(app.media.startIcon))]
+    @State var values1: Array<SelectOption> = [
+            SelectOption(value: "aaa", icon: @r(app.media.startIcon)),
+            SelectOption(value: "bbb", icon: @r(app.media.startIcon)),
+            SelectOption(value: "ccc", icon: @r(app.media.startIcon)),
+            SelectOption(value: "ddd", icon: @r(app.media.startIcon))]
 
     @State var arrow: ArrowPosition = ArrowPosition.End
 

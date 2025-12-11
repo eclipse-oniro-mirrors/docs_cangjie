@@ -1,4 +1,4 @@
-# ohos.app.ability.want
+# ohos.app.ability.want（Want）
 
 Want是对象间信息传递的载体，可以用于应用组件间的信息传递。
 
@@ -39,7 +39,7 @@ public class Want {
     public var uri: String
     public var action: String
     public var entities: Array<String>
-    public var wantType: String
+    public var dataType: String
     public var parameters: HashMap<String, WantValueType>
     public init(
         deviceId!: String = "",
@@ -50,7 +50,7 @@ public class Want {
         uri!: String = "",
         action!: String = "",
         entities!: Array<String> = [],
-        wantType!: String = "",
+        dataType!: String = "",
         parameters!: HashMap<String, WantValueType> = HashMap<String, WantValueType>(),
         fds!: HashMap<String, Int32> = HashMap<String, Int32>()
     )
@@ -207,10 +207,10 @@ public var uri: String
 
 **起始版本：** 22
 
-### var wantType
+### var dataType
 
 ```cangjie
-public var wantType: String
+public var dataType: String
 ```
 
 **功能：** 表示MIME type类型描述，打开文件的类型，主要用于文管打开文件。比如：'text/xml' 、 'image/*'等，MIME定义请参见[Media Types](https://www.iana.org/assignments/media-types/media-types.xhtml?utm_source=ld246.com)。
@@ -235,7 +235,7 @@ public init(
     uri!: String = "",
     action!: String = "",
     entities!: Array<String> = [],
-    wantType!: String = "",
+    dataType!: String = "",
     parameters!: HashMap<String, WantValueType> = HashMap<String, WantValueType>(),
     fds!: HashMap<String, Int32> = HashMap<String, Int32>()
 )
@@ -259,7 +259,7 @@ public init(
 |uri|String|否|""|统一资源标识符，一般在应用启动场景中配合type使用，指明待处理的数据类型。如果在Want中指定了uri，则Want将匹配指定的Uri信息，包括`scheme`、`schemeSpecificPart`、`authority`和`path`信息。|
 |action|String|否|""|表示要执行的通用操作（如：查看、分享、应用详情）。在隐式Want中，开发者可以定义该字段，配合uri或parameters来表示对数据执行的操作。隐式Want定义及匹配规则请参见[显式Want与隐式Want匹配规则](../../application-models/cj-explicit-implicit-want-mappings.md)。|
 |entities|Array\<String>|否|[]|表示目标Ability额外的类别信息（如：浏览器、视频播放器）。在隐式Want中是对action字段的补充。在隐式Want中，开发者可以定义该字段，来过滤匹配Ability类型。|
-|wantType|String|否|""|表示MIME type类型描述，打开文件的类型，主要用于文管打开文件。比如：'text/xml' 、 'image/*'等，MIME定义请参见[Media Types](https://www.iana.org/assignments/media-types/media-types.xhtml?utm_source=ld246.com)。|
+|dataType|String|否|""|表示MIME type类型描述，打开文件的类型，主要用于文管打开文件。比如：'text/xml' 、 'image/*'等，MIME定义请参见[Media Types](https://www.iana.org/assignments/media-types/media-types.xhtml?utm_source=ld246.com)。|
 |parameters|HashMap\<String,[WantValueType](#enum-wantvaluetype)>|否|HashMap<String, WantValueType>()|表示WantParams描述。|
 |fds|HashMap\<String,Int32>|否|HashMap<String, Int32>()|表示文件描述符，在启动场景中拉起方写入的FD，会设置到该参数中。|
 

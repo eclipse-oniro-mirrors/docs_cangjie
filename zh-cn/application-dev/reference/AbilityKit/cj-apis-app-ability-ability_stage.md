@@ -65,41 +65,6 @@ class MyAbilityStage1 <: AbilityStage {
     }
 }
 ```
-
-### static func registerCreator(String, () -> AbilityStage)
-
-```cangjie
-public static func registerCreator(moduleName: String, creator: () -> AbilityStage): Unit
-```
-
-**功能：** 注册AbilityStage的创建者。
-
-**系统能力：** SystemCapability.Ability.AbilityRuntime.Core
-
-**起始版本：** 22
-
-**参数：**
-
-|参数名|类型|必填|默认值|说明|
-|:---|:---|:---|:---|:---|
-|moduleName|String|是|-|模块名称。|
-|creator|()->[AbilityStage](#class-abilitystage)|是|-|AbilityStage的创建者。|
-
-**示例：**
-
-<!-- compile -->
-```cangjie
-import kit.AbilityKit.*
-
-let ENTRY_STAGE_REGISTER_RESULT = AbilityStage.registerCreator("entry", { => MyAbilityStage2()})
-
-class MyAbilityStage2 <: AbilityStage {
-    public override func onCreate(): Unit {
-        let context = this.context
-    }
-}
-```
-
 ### func onCreate()
 
 ```cangjie

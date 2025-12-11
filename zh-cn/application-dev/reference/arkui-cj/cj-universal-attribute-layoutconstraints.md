@@ -24,10 +24,10 @@ func constraintSize(minWidth!: ?Length = None, maxWidth!: ?Length = None, minHei
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|minWidth|?[Length](./cj-common-types.md#interface-length)|否|None|**命名参数** 组件最小宽度 <br>初始值: 0.vp。|
-|maxWidth|?[Length](./cj-common-types.md#interface-length)|否|None|**命名参数** 组件最大宽度 <br>初始值: (Float64.Inf).vp。|
-|minHeight|?[Length](./cj-common-types.md#interface-length)|否|None|**命名参数** 组件最小高度 <br>初始值: 0.vp。|
-|maxHeight|?[Length](./cj-common-types.md#interface-length)|否|None|**命名参数** 组件最大高度 <br>初始值: (Float64.Inf).vp。|
+|minWidth|?[Length](./cj-common-types.md#interface-length)|否|None|**命名参数。** 组件最小宽度 <br>初始值: 0.vp。|
+|maxWidth|?[Length](./cj-common-types.md#interface-length)|否|None|**命名参数。** 组件最大宽度 <br>初始值: (Float64.Inf).vp。|
+|minHeight|?[Length](./cj-common-types.md#interface-length)|否|None|**命名参数。** 组件最小高度 <br>初始值: 0.vp。|
+|maxHeight|?[Length](./cj-common-types.md#interface-length)|否|None|**命名参数。** 组件最大高度 <br>初始值: (Float64.Inf).vp。|
 
 **返回值：**
 

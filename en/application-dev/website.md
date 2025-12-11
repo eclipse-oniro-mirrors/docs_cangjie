@@ -544,7 +544,6 @@
                     - [Click Event](reference/arkui-cj/cj-universal-event-click.md)
                     - [Touch Event](reference/arkui-cj/cj-universal-event-touch.md)
                     - [Mount/Unmount Event](reference/arkui-cj/cj-universal-event-appear.md)
-                    - [Drag Event](reference/arkui-cj/cj-universal-event-drag.md)
                     - [Key Event](reference/arkui-cj/cj-universal-event-key.md)
                     - [Focus Event](reference/arkui-cj/cj-universal-event-focus.md)
                     - [Mouse Event](reference/arkui-cj/cj-universal-event-mouse.md)
@@ -577,7 +576,6 @@
                     - Modal Transition Setting
                         - [Full-Screen Modal Transition](reference/arkui-cj/cj-universal-attribute-bindcontentcover.md)
                         - [Half-Modal Transition](reference/arkui-cj/cj-universal-attribute-sheettransition.md)
-                    - [Drag Control](reference/arkui-cj/cj-universal-attribute-dragcontrol.md)
                     - [Safe Area](reference/arkui-cj/cj-universal-attribute-expandsafearea.md)
                     - [Component Content Filling Method](reference/arkui-cj/cj-universal-attribute-renderfit.md)
                     - [Touch hot zone settings](reference/arkui-cj/cj-universal-attribute-touchtarget.md)
@@ -615,7 +613,7 @@
                     - [Toggle](reference/arkui-cj/cj-button-picker-toggle.md)
                     - [Checkbox](reference/arkui-cj/cj-button-picker-checkbox.md)
                     - [CheckboxGroup](reference/arkui-cj/cj-button-picker-checkboxgroup.md)
-                    - [Datepicker](reference/arkui-cj/cj-button-picker-datepicker.md)
+                    - [DatePicker](reference/arkui-cj/cj-button-picker-datepicker.md)
                     - [TextPicker](reference/arkui-cj/cj-button-picker-textpicker.md)
                     - [Radio](reference/arkui-cj/cj-button-picker-radio.md)
                     - [Rating](reference/arkui-cj/cj-button-picker-rating.md)
@@ -976,6 +974,7 @@
                 - Cangjie Calling ArkTS
                     - [Preparing ArkTS Modules for Interoperability](learn-cj/FFI/cangjie-arkts/prepare_arkts_module.md)
                     - [Calling Interoperability Code on Cangjie Side](learn-cj/FFI/cangjie-arkts/using_arkts_module.md)
+                    - [Import ArkTS Modules in Cangjie](learn-cj/FFI/cangjie-arkts/cangjie-load-arkts.md)
             - [Interoperability Usage Examples](learn-cj/FFI/cangjie-arkts/using_example.md)
                 - [Cangjie Accessing ArkTS Data](learn-cj/FFI/cangjie-arkts/operating_ArkTS_data.md)
                 - [ArkTS Accessing Cangjie Data](learn-cj/FFI/cangjie-arkts/operating_cangjie_objects.md)

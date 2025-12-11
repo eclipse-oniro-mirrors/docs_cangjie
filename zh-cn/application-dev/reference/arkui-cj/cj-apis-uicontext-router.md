@@ -40,8 +40,8 @@ public func pushUrl(url!: String, params!: String = ""): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|url|String|是|-|**命名参数。**表示目标页面的url。|
-|params|String|否|""|**命名参数。**表示路由跳转时要同时传递到目标页面的数据，切换到其他页面时，当前接收的数据失效。跳转到目标页面后，使用getParams()获取传递的参数。|
+|url|String|是|-|**命名参数。** 表示目标页面的url。|
+|params|String|否|""|**命名参数。** 表示路由跳转时要同时传递到目标页面的数据，切换到其他页面时，当前接收的数据失效。跳转到目标页面后，使用getParams()获取传递的参数。|
 
 ### func back(?String,String)
 
@@ -59,8 +59,8 @@ public func back(url!: ?String = None, params!: String = ""): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|url|?String|否|None|**命名参数。**表示目标页面的url。|
-|params|String|否|""|**命名参数。**页面返回时携带的参数。|
+|url|?String|否|None|**命名参数。** 表示目标页面的url。|
+|params|String|否|""|**命名参数。** 页面返回时携带的参数。|
 
 ### func back(Int32,String)
 
@@ -97,7 +97,7 @@ public func getParams(): Option<String>
 
 |类型|说明|
 |:----|:----|
-|Option<String>|发起跳转的页面往当前页传入的参数。|
+|Option\<String>|发起跳转的页面往当前页传入的参数。|
 
 ## class RouterState
 

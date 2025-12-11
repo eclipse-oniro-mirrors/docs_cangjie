@@ -195,7 +195,7 @@ public mut prop fdSrc: AVFileDescriptor
 
 **读写能力：** 可读写
 
-**系统能力：** SystemCapability.Multimedia.Media.AVImageGenerator
+**系统能力：** SystemCapability.Multimedia.Media.AVMetadataExtractor
 
 **起始版本：** 22
 

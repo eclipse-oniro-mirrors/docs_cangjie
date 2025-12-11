@@ -246,10 +246,10 @@ public func sticky(value: ?StickyStyle): This
 
 ## Component Events
 
-### func onScrollFrameBegin(?(Float64, ScrollState) -> onScrollFrameBeginHandleResult)
+### func onScrollFrameBegin(?(Float64, ScrollState) -> OnScrollFrameBeginHandlerResult)
 
 ```cangjie
-public func onScrollFrameBegin(event: ?(Float64, ScrollState) -> onScrollFrameBeginHandleResult): This
+public func onScrollFrameBegin(event: ?(Float64, ScrollState) -> OnScrollFrameBeginHandlerResult): This
 ```
 
 **Function:** Triggered at the start of each scroll frame.
@@ -262,7 +262,7 @@ public func onScrollFrameBegin(event: ?(Float64, ScrollState) -> onScrollFrameBe
 
 | Parameter Name | Type | Required | Default Value | Description |
 |:---|:---|:---|:---|:---|
-| event | ?(Float64, [ScrollState](./cj-common-types.md#enum-scrollstate)) -> [OnScrollFrameBeginHandlerResult](#class-onscrollframebeginhandlerresult) | Yes | - | Scroll frame start event callback. Parameter 1: the upcoming scroll amount. Parameter 2: the current scroll state. Initial value: `{ _, _ => onScrollFrameBeginHandleResult(offsetRemain: 0.0) }`. |
+| event | ?(Float64, [ScrollState](./cj-common-types.md#enum-scrollstate)) -> [OnScrollFrameBeginHandlerResult](#class-onscrollframebeginhandlerresult) | Yes | - | Scroll frame start event callback. Parameter 1: the upcoming scroll amount. Parameter 2: the current scroll state. Initial value: `{ _, _ => OnScrollFrameBeginHandlerResult(offsetRemain: 0.0) }`. |
 
 ### func onScrollIndex(?(Int32, Int32, Int32) -> Unit)
 
@@ -321,7 +321,7 @@ public var offsetRemain: ?Float64
 public init(offsetRemain!: ?Float64)
 ```
 
-**Function:** Creates an `onScrollFrameBeginHandleResult` object.
+**Function:** Creates an `OnScrollFrameBeginHandlerResult` object.
 
 **System Capability:** SystemCapability.ArkUI.ArkUI.Full
 

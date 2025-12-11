@@ -10,12 +10,12 @@ Toggle通过调用接口来创建，接口调用形式如下：
 Toggle(toggleType: ToggleType, isOn!: Bool = false)
 ```
 
-其中，ToggleType为开关类型，包括ButtonType、CheckboxType和SwitchType，isOn为切换按钮的状态。
+其中，ToggleType为开关类型，包括Button、Checkbox和Switch，isOn为切换按钮的状态。
 
 接口调用有以下两种形式：
 
 - 创建不包含子组件的Toggle。
-  当ToggleType为CheckboxType或者SwitchType时，用于创建不包含子组件的Toggle：
+  当ToggleType为Checkbox或者Switch时，用于创建不包含子组件的Toggle：
 
   <!-- code_check_manual -->
 
@@ -37,7 +37,7 @@ Toggle(toggleType: ToggleType, isOn!: Bool = false)
 
 - 创建包含子组件的Toggle。
 
-  当ToggleType为ButtonType时，只能包含一个子组件，如果子组件有文本设置，则相应的文本内容会显示在按钮上。
+  当ToggleType为Button时，只能包含一个子组件，如果子组件有文本设置，则相应的文本内容会显示在按钮上。
 
   <!-- code_check_manual -->
 
@@ -76,7 +76,7 @@ Toggle(toggleType: ToggleType, isOn!: Bool = false)
 
   ![Toggle3](figures/Toggle3.png)
 
-- 通过switchPointColor属性设置SwitchType类型的圆形滑块颜色，仅对toggleType为ToggleType.Switch生效。
+- 通过switchPointColor属性设置Switch类型的圆形滑块颜色，仅对toggleType为ToggleType.Switch生效。
 
   <!-- code_check_manual -->
 

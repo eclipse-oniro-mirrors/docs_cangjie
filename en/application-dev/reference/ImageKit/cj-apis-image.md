@@ -3620,8 +3620,8 @@ public init(sourceDensity: Int32, sourcePixelFormat!: PixelMapFormat = PixelMapF
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
 | sourceDensity | Int32 | Yes | - | Pixel density of the image resource, in DPI.<br>When the desiredSize parameter in [DecodingOptions](#class-decodingoptions) is not set, and both SourceOptions.sourceDensity and DecodingOptions.fitDensity are non-zero, the decoded output pixelmap will be scaled.<br>The scaled width is calculated as follows (height is similar): (width * fitDensity + (sourceDensity >> 1)) / sourceDensity. |
-| sourcePixelFormat | [PixelMapFormat](#enum-pixelmapformat) | No | PixelMapFormat.Unknown | **Named parameter** Pixel format of the image, default is UNKNOWN. |
-| sourceSize | [Size](#class-size) | No | Size(0, 0) | **Named parameter** Pixel size of the image, default is empty. |
+| sourcePixelFormat | [PixelMapFormat](#enum-pixelmapformat) | No | PixelMapFormat.Unknown | **Named parameter.** Pixel format of the image, default is UNKNOWN. |
+| sourceSize | [Size](#class-size) | No | Size(0, 0) | **Named parameter.** Pixel size of the image, default is empty. |
 
 ## enum AlphaType
 

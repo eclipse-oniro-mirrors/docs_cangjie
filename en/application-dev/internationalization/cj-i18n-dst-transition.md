@@ -37,7 +37,7 @@ The system is configured with DST transition rules. When local time reaches the 
 
    For local time displays during DST, it is recommended to include a DST indicator.  
 
-   ![Image1](figures/图片1.png)  
+   ![i8n_1](figures/i8n_1.png)  
 
 3. Storing and transmitting time data.  
    It is recommended to use Coordinated Universal Time (UTC or GMT) for storing and transmitting time data to avoid information loss or anomalies caused by DST transitions.

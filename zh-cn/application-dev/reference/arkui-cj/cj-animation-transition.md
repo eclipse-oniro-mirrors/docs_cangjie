@@ -122,6 +122,7 @@ public var z: ?Length
 **功能：** z轴上的平移距离。对于数字类型，单位为vp，取值范围为(-∞, +∞)。
 
 **类型：** ?[Length](./cj-common-types.md#interface-length)
+
 **读写能力：** 可读写
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
@@ -553,7 +554,7 @@ public static func opacity(alpha: Float64): TransitionEffect
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|alpha|Float64|是|-|设置组件转场时的透明度效果，为插入时起点和删除时终点的值。取值范围：[0, 1]。<br> **说明：** <br>设置小于0的非法值按0处理，大于1的非法值按1处理。|
+|alpha|Float64|是|-|设置组件转场时的透明度效果，为插入时起点和删除时终点的值。取值范围：[0.0, 1.0]。<br> **说明：** <br>设置小于0.0的非法值按0.0处理，大于1.0的非法值按1.0处理。|
 
 **返回值：**
 

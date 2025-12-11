@@ -24,7 +24,7 @@
 
 检测原理如下图：
 
-![appfreeze_20230308145163](figures/appfreeze_20230308145163.png)
+![appfreeze2](figures/appfreeze2.png)
 
 ### APP_INPUT_BLOCK 用户输入响应超时
 
@@ -34,7 +34,7 @@
 
 检测原理如下图：
 
-![appfreeze_20230308145162](figures/appfreeze_20230308145162.png)
+![appfreeze1](figures/appfreeze1.png)
 
 ### 生命周期切换超时
 
@@ -46,7 +46,7 @@
 
 生命周期切换超时由LIFECYCLE_HALF_TIMEOUT和LIFECYCLE_TIMEOUT两个事件组合而成。LIFECYCLE_HALF_TIMEOUT作为LIFECYCLE_TIMEOUT的警告事件，抓取binder等信息。
 
-![appfreeze_20230308145164](figures/appfreeze_20230308145164.png)
+![appfreeze3](figures/appfreeze3.png)
 
 不同的生命周期，超时的时间不一样：
 

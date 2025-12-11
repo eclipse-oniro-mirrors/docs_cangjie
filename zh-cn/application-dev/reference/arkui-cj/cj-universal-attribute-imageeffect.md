@@ -195,7 +195,7 @@ public func contrast(value: ?Float64): T
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|value|?Float64|是|-|对比度值。值为1时，显示原图，大于1时，值越大对比度越高，图像越清晰醒目，小于1时，值越小对比度越低。推荐取值范围：[0, 10)。初始值:  1.0|
+|value|?Float64|是|-|对比度值。值为1.0时，显示原图，大于1.0时，值越大对比度越高，图像越清晰醒目，小于1.0时，值越小对比度越低。推荐取值范围：[0.0, 10.0)。初始值:  1.0|
 
 **返回值：**
 
@@ -315,6 +315,7 @@ package ohos_app_cangjie_entry
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
 import kit.LocalizationKit.*
+import ohos.resource.__GenerateResource__
 
 @Entry
 @Component
@@ -472,6 +473,7 @@ package ohos_app_cangjie_entry
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
 import ohos.resource_manager.*
+import ohos.resource.__GenerateResource__
 
 @Entry
 @Component

@@ -18,6 +18,10 @@
 
 4. Click **Finish** to complete project creation. The IDE will automatically generate foundational sample code and related resources.
 
+5. To build an OpenHarmony application, you need to change the `runtimeOS` field in the **build-profile.json5** file to OpenHarmony
+
+    ![changeOpenharmony](../../figures/change_openharmony.png)
+
 ## Cangjie Project Directory Structure
 
 The Cangjie project directory structure is as follows:
@@ -321,9 +325,9 @@ Page navigation uses the router module to find target pages via URLs.
 
 1. Connect an OpenHarmony device to your computer.
 
-2. After successful connection, go to **File > Project Structure > Project > Signing Configs**, check **Support OpenHarmony** and **Automatically generate signature**, click **Sign In** to log in. After automatic signing completes, click **OK**.
+2. After successful connection, go to **File > Project Structure > Project > Signing Configs**, check **Automatically generate signature**, click **Sign In** to log in. After automatic signing completes, click **OK**.
 
-   ![buildSign](../../figures/buildSign.png)
+   ![buildSign](../../figures/buildSignNew.png)
 
 3. Click the ![runButton](../../figures/runButton.png) button in the top-right toolbar to run. Expected output:
 

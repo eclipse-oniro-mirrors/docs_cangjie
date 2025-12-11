@@ -38,7 +38,7 @@ public init(child!: () -> Unit = {=>})
 
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
-| child | () -> Unit | No | {=>} | Declares the child components within the container. |
+| child | () -> Unit | No | {=>} | **Named parameter.** Declares the child components within the container. |
 
 ## Universal Attributes/Events
 

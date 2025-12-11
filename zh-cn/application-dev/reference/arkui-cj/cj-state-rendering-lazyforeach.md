@@ -1,6 +1,6 @@
 # LazyForEach
 
-结合缓存列表项，可以提高列表的渲染性能。
+在大量子组件的场景下，LazyForEach与缓存列表项、动态预加载、组件复用等方法配合使用，可以进一步提升滑动帧率并降低应用内存占用。
 
 ## 导入模块
 
@@ -232,8 +232,8 @@ public init(dataSource: IDataSource<T>, itemGenerator!: ItemGeneratorFunc<T>, ke
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |dataSource|[IDataSource](#interface-idatasourcet)\<T>|是|-|LazyForEach数据源，需要开发者实现相关接口。|
-|itemGenerator|[ItemGeneratorFunc](./cj-common-types.md#type-itemgeneratorfunc)\<T>|是|-|子组件生成函数，为数组中的每一个数据项创建一个子组件。lambda函数的第一个泛型参数为数据类型；第二个参数为当前列表项的索引值。|
-|keyGenerator|?[KeyGeneratorFunc](./cj-common-types.md#type-keygeneratorfunc)\<T>|否|None|匿名函数，用于键值生成，为给定数组项生成唯一且稳定的键值。|
+|itemGenerator|[ItemGeneratorFunc](./cj-common-types.md#type-itemgeneratorfunc)\<T>|是|-|**命名参数。** 子组件生成函数，为数组中的每一个数据项创建一个子组件。lambda函数的第一个泛型参数为数据类型；第二个参数为当前列表项的索引值。|
+|keyGenerator|?[KeyGeneratorFunc](./cj-common-types.md#type-keygeneratorfunc)\<T>|否|None|**命名参数。** 匿名函数，用于键值生成，为给定数组项生成唯一且稳定的键值。|
 
 ## 示例代码
 

@@ -841,7 +841,7 @@ class EntryView {
                 // lg: large width devices     xl: extra large width devices  xxl: super large width devices.
                 columns: GridRowOptions(xs: 6, sm: 7, md: 8, lg: 9, xl: 10, xxl: 11),
                 // Set grid layout spacing, where x represents horizontal and y represents vertical direction.
-                gutter: GutterOptions(x: 5.vp, y: 10.vp),
+                gutter: GutterOption(x: 5.vp, y: 10.vp),
                 // Set breakpoint values and corresponding references based on window or container size.
                 breakpoints: BreakPoints(
                     // Enable four breakpoints: xs, sm, md, lg
@@ -875,7 +875,7 @@ class EntryView {
                 // Set layout column count to 5
                 columns: 5,
                 // Set grid layout spacing: 5vp horizontal, 10vp vertical.
-                gutter: GutterOptions(x: 5.vp, y: 10.vp),
+                gutter: GutterOption(x: 5.vp, y: 10.vp),
                 // Set breakpoint values and corresponding references based on window or container size.
                 breakpoints: BreakPoints(
                     // Enable four breakpoints: xs, sm, md, lg

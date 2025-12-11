@@ -25,8 +25,8 @@
 
 | 接口名 | 功能描述 |
 | ---------------------------------- | -----------------------------------------------|
-| startBLEScan() | 发起BLE扫描流程。 |
-| stopBLEScan() | 停止BLE扫描流程。 |
+| startBleScanning() | 发起BLE扫描流程。 |
+| stopBleScanning() | 停止BLE扫描流程。 |
 | startAdvertising() | 开始发送BLE广播。 |
 | disableAdvertising() | 临时停止BLE广播。 |
 | enableAdvertising() | 临时启动BLE广播。 |
@@ -53,6 +53,7 @@
     import kit.ConnectivityKit.*
     import ohos.callback_invoke.*
     import ohos.business_exception.*
+    import kit.PerformanceAnalysisKit.Hilog
 
     let TAG: String = 'BleAdvertisingManager'
 
@@ -188,7 +189,7 @@
             )
             try {
                 this.onScanResult() // 订阅扫描结果
-                startBLEScan([scanFilter], options: scanOptions)
+                startBleScanning([scanFilter], options: scanOptions)
                 Hilog.info(0xFF00, 'Tag', 'startBleScan success')
             } catch (e: BusinessException) {
                 Hilog.error(0x0000, 'Tag', 'errCode: ${e.code}, errMessage: ' + e.message)
@@ -199,7 +200,7 @@
         public func stopScan() {
             try {
                 off(BluetoothBleCallbackType.BleDeviceFind) // 取消订阅扫描结果
-                stopBLEScan()
+                stopBleScanning()
                 Hilog.info(0xFF00, 'Tag', 'stopBleScan success')
             } catch (e: BusinessException) {
                 Hilog.error(0x0000, 'Tag', 'errCode: ${e.code}, errMessage: ' + e.message)

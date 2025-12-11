@@ -1,4 +1,4 @@
-# ohos.web.webview
+# ohos.web.webview（Webview）
 
 webview模块提供web控制能力，组件提供网页显示的能力。
 
@@ -155,7 +155,7 @@ class webview_0 {
 
 ```cangjie
 public class HistoryItem {
-    public var icon: PixelMap
+    public var icon: ?PixelMap
     public var historyUrl: String
     public var historyRawUrl: String
     public var title: String
@@ -224,7 +224,9 @@ public var icon: ?PixelMap
 
 **功能：** 历史页面图标的PixelMap对象。
 
-**类型：** [PixelMap](../ImageKit/cj-apis-image.md#class-pixelmap)
+**类型：** ?[PixelMap](../ImageKit/cj-apis-image.md#class-pixelmap)
+
+**读写能力：** 可读写
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -239,7 +241,7 @@ public class HitTestValue {
 }
 ```
 
-**功能：** 提供点击区域的元素信息。示例代码参考[getHitTestValue](#func-gethittestvalue)。
+**功能：** 提供点击区域的元素信息。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -442,10 +444,10 @@ try {
 }
 ```
 
-### static func existCookie(Bool)
+### static func hasCookie(Bool)
 
 ```cangjie
-public static func existCookie(incognito!: Bool = false): Bool
+public static func hasCookie(incognito!: Bool = false): Bool
 ```
 
 **功能：** 获取是否存在cookie。
@@ -476,7 +478,7 @@ public static func existCookie(incognito!: Bool = false): Bool
 import kit.ArkWeb.*
 import kit.PerformanceAnalysisKit.Hilog
 
-let result = WebCookieManager.existCookie()
+let result = WebCookieManager.hasCookie()
 Hilog.info(0, "AppLogCj", "WebCookiemanager result: ${result}")
 ```
 
@@ -609,10 +611,10 @@ let result = WebCookieManager.isThirdPartyCookieAllowed()
 Hilog.info(0, "AppLogCj",  "WebCookieManager, result: ${result}")
 ```
 
-### static func putAcceptCookieEnabled(Bool)
+### static func setAcceptCookiesEnabled(Bool)
 
 ```cangjie
-public static func putAcceptCookieEnabled(accept: Bool): Unit
+public static func setAcceptCookiesEnabled(accept: Bool): Unit
 ```
 
 **功能：** 设置WebCookieManager实例是否拥有发送和接收cookie的权限。
@@ -637,13 +639,13 @@ public static func putAcceptCookieEnabled(accept: Bool): Unit
 import kit.ArkWeb.*
 import kit.PerformanceAnalysisKit.Hilog
 
-WebCookieManager.putAcceptCookieEnabled(false)
+WebCookieManager.setAcceptCookiesEnabled(false)
 ```
 
-### static func putAcceptThirdPartyCookieEnabled(Bool)
+### static func setAcceptThirdPartyCookieEnabled(Bool)
 
 ```cangjie
-public static func putAcceptThirdPartyCookieEnabled(accept: Bool): Unit
+public static func setAcceptThirdPartyCookieEnabled(accept: Bool): Unit
 ```
 
 **功能：** 设置WebCookieManager实例是否拥有发送和接收第三方cookie的权限。
@@ -668,7 +670,7 @@ public static func putAcceptThirdPartyCookieEnabled(accept: Bool): Unit
 import kit.ArkWeb.*
 import kit.PerformanceAnalysisKit.Hilog
 
-WebCookieManager.putAcceptThirdPartyCookieEnabled(true)
+WebCookieManager.setAcceptThirdPartyCookieEnabled(true)
 ```
 
 ## class WebHeader
@@ -845,10 +847,10 @@ class webview_1 {
 }
 ```
 
-### func accessBackward()
+### func canGoBack()
 
 ```cangjie
-public func accessBackward(): Bool
+public func canGoBack(): Bool
 ```
 
 **功能：** 当前页面是否可后退，即当前页面是否有返回历史记录。
@@ -857,9 +859,9 @@ public func accessBackward(): Bool
 
 > **说明：**
 >
-> - 在Web组件首次加载过程中调用[setCustomUserAgent](#func-setcustomuseragentstring)，可能会导致在当前存在多个历史节点的情况下，获取的accessBackward实际为false，即没有后退节点。建议先调用setCustomUserAgent方法设置UserAgent，再通过loadUrl加载具体页面。
+> - 在Web组件首次加载过程中调用[setCustomUserAgent](#func-setcustomuseragentstring)，可能会导致在当前存在多个历史节点的情况下，获取的canGoBack实际为false，即没有后退节点。建议先调用setCustomUserAgent方法设置UserAgent，再通过loadUrl加载具体页面。
 >
-> - 该现象是由于在Web组件首次加载时，调用[setCustomUserAgent](#func-setcustomuseragentstring)会导致组件重新加载并保持初始历史节点的状态。随后新增的节点将替换初始历史节点，不会生成新的历史节点，导致accessBackward为false。
+> - 该现象是由于在Web组件首次加载时，调用[setCustomUserAgent](#func-setcustomuseragentstring)会导致组件重新加载并保持初始历史节点的状态。随后新增的节点将替换初始历史节点，不会生成新的历史节点，导致canGoBack为false。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -906,12 +908,12 @@ class webview_2 {
     let webController = WebviewController()
     func build() {
         Column(space:10) {
-            Button("accessBackward")
+            Button("canGoBack")
             .onClick ({
                 evt =>
-                Hilog.info(0, "cangjieTest", "accessBackward")
-                let bool = webController.accessBackward()
-                Hilog.info(0, "cangjieTest", "accessBackward returns ${bool}")
+                Hilog.info(0, "cangjieTest", "canGoBack")
+                let bool = webController.canGoBack()
+                Hilog.info(0, "cangjieTest", "canGoBack returns ${bool}")
             }).width(400.px).height(150.px)
 
             Web(src: "www.example.com", controller: webController)
@@ -1008,10 +1010,10 @@ class webview_3 {
 }
 ```
 
-### func backOrForward(Int32)
+### func goBackOrForward(Int32)
 
 ```cangjie
-public func backOrForward(step: Int32): Unit
+public func goBackOrForward(step: Int32): Unit
 ```
 
 **功能：** 按照历史栈，前进或者后退指定步长的页面，当历史栈中不存在对应步长的页面时，不会进行页面跳转。
@@ -1063,11 +1065,11 @@ class webview_4 {
     let webController = WebviewController()
     func build() {
         Column(space: 10) {
-            Button("backOrForward")
+            Button("goBackOrForward")
             .onClick ({
                 evt =>
-                Hilog.info(0, "cangjieTest", "backOrForward")
-                webController.backOrForward(-2)
+                Hilog.info(0, "cangjieTest", "goBackOrForward")
+                webController.goBackOrForward(-2)
             }).width(400.px).height(150.px)
 
             Web(src: "www.example.com", controller: webController)
@@ -1082,13 +1084,13 @@ class webview_4 {
 }
 ```
 
-### func backward()
+### func goBack()
 
 ```cangjie
-public func backward(): Unit
+public func goBack(): Unit
 ```
 
-**功能：** 按照历史栈，后退一个页面。一般结合[accessBackward](#func-accessbackward)一起使用。
+**功能：** 按照历史栈，后退一个页面。一般结合[canGoBack](#func-cangoback)一起使用。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -1129,11 +1131,11 @@ class webview_5 {
     let webController = WebviewController()
     func build() {
         Column(space: 10) {
-            Button("backward")
+            Button("goBack")
             .onClick ({
                 evt =>
-                Hilog.info(0, "cangjieTest", "backward")
-                webController.backward()
+                Hilog.info(0, "cangjieTest", "goBack")
+                webController.goBack()
             }).width(400.px).height(150.px)
 
             Web(src: "www.example.com", controller: webController)
@@ -1154,7 +1156,7 @@ class webview_5 {
 public func clearHistory(): Unit
 ```
 
-**功能：** 删除所有前进后退记录，不建议在onErrorReceive与onPageBegin中调用clearHistory，会造成异常退出。
+**功能：** 删除所有前进后退记录，不建议在onPageBegin中调用clearHistory，会造成异常退出。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -1287,13 +1289,13 @@ class webview_7 {
 }
 ```
 
-### func forward()
+### func goForward()
 
 ```cangjie
-public func forward(): Unit
+public func goForward(): Unit
 ```
 
-**功能：** 按照历史栈，前进一个页面。一般结合accessForward一起使用。
+**功能：** 按照历史栈，前进一个页面。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -1334,11 +1336,11 @@ class webview_8 {
     let webController = WebviewController()
     func build() {
         Column(space: 10) {
-            Button("forward")
+            Button("goForward")
             .onClick ({
                 evt =>
-                Hilog.info(0, "cangjieTest", "forward")
-                webController.forward()
+                Hilog.info(0, "cangjieTest", "goForward")
+                webController.goForward()
             }).width(400.px).height(150.px)
 
             Web(src: "www.example.com", controller: webController)
@@ -1489,161 +1491,6 @@ class webview_10 {
                 Hilog.info(0, "cangjieTest", "getCustomUserAgent returns ${agent}")
             }).width(400.px).height(150.px)
 
-            Web(src: "www.example.com", controller: webController)
-            .onPageBegin({evt =>
-                Hilog.info(0, "cangjieTest", "page begin url: ${evt.url}")
-            })
-            .onPageEnd({evt =>
-                Hilog.info(0, "cangjieTest", "page end url: ${evt.url}")
-            })
-        }
-    }
-}
-```
-
-### func getHitTest()
-
-```cangjie
-public func getHitTest(): WebHitTestType
-```
-
-**功能：** 获取当前被点击区域的元素类型。
-
-**系统能力：** SystemCapability.Web.Webview.Core
-
-**起始版本：** 22
-
-**返回值：**
-
-|类型|说明|
-|:----|:----|
-|[WebHitTestType](#enum-webhittesttype)|被点击区域的元素类型。|
-
-**异常：**
-
-- BusinessException：对应错误码如下表，详见[Webview错误码](./cj-errorcode-webview.md)。
-
-  | 错误码ID | 错误信息 |
-  | :---- | :--- |
-  | 17100001 | Init error. The WebviewController must be associated with a Web component. |
-
-**示例：**
-
-<!-- compile -->
-
-```cangjie
-// index.cj
-
-import kit.ArkUI.LengthProp
-import kit.ArkUI.Button
-import kit.ArkUI.Column
-import kit.ArkUI.CustomView
-import kit.ArkUI.CJEntry
-import kit.ArkUI.loadNativeView
-import kit.ArkUI.SubscriberManager
-import kit.ArkUI.LocalStorage
-import ohos.arkui.state_macro_manage.Entry
-import ohos.arkui.state_macro_manage.Component
-import kit.ArkWeb.*
-import kit.ArkUI.Web
-import kit.PerformanceAnalysisKit.Hilog
-
-@Entry
-@Component
-class webview_11 {
-    let webController = WebviewController()
-    func build() {
-        Column(space: 10) {
-            Button("getHitTest")
-            .onClick ({
-                evt =>
-                Hilog.info(0, "cangjieTest", "getHitTest")
-                let hitType = webController.getHitTest()
-                match(hitType) {
-                    case WebHitTestType.EditText => Hilog.info(0, "cangjieTest", "getHitTest returns EditText")
-                    case WebHitTestType.Email => Hilog.info(0, "cangjieTest", "getHitTest returns Email")
-                    case WebHitTestType.Unknown => Hilog.info(0, "cangjieTest", "getHitTest returns Unknown")
-                    case _ =>  ()
-                }
-            }).width(400.px).height(150.px)
-            Web(src: "www.example.com", controller: webController)
-            .onPageBegin({evt =>
-                Hilog.info(0, "cangjieTest", "page begin url: ${evt.url}")
-            })
-            .onPageEnd({evt =>
-                Hilog.info(0, "cangjieTest", "page end url: ${evt.url}")
-            })
-        }
-    }
-}
-```
-
-### func getHitTestValue()
-
-```cangjie
-public func getHitTestValue(): HitTestValue
-```
-
-**功能：** 获取当前被点击区域的元素信息。
-
-**系统能力：** SystemCapability.Web.Webview.Core
-
-**起始版本：** 22
-
-**返回值：**
-
-|类型|说明|
-|:----|:----|
-|[HitTestValue](#class-hittestvalue)|点击区域的元素信息。|
-
-**异常：**
-
-- BusinessException：对应错误码如下表，详见[Webview错误码](./cj-errorcode-webview.md)。
-
-  | 错误码ID | 错误信息 |
-  | :---- | :--- |
-  | 17100001 | Init error. The WebviewController must be associated with a Web component. |
-
-**示例：**
-
-<!-- compile -->
-
-```cangjie
-// index.cj
-
-import kit.ArkUI.LengthProp
-import kit.ArkUI.Button
-import kit.ArkUI.Column
-import kit.ArkUI.CustomView
-import kit.ArkUI.CJEntry
-import kit.ArkUI.loadNativeView
-import kit.ArkUI.SubscriberManager
-import kit.ArkUI.LocalStorage
-import ohos.arkui.state_macro_manage.Entry
-import ohos.arkui.state_macro_manage.Component
-import kit.ArkWeb.*
-import kit.ArkUI.Web
-import kit.PerformanceAnalysisKit.Hilog
-
-@Entry
-@Component
-class webview_12 {
-    let webController = WebviewController()
-    func build() {
-        Column(space: 10) {
-            Button("getHitTestValue")
-            .onClick ({
-                evt =>
-                Hilog.info(0, "cangjieTest", "getHitTestValue")
-                let hitTestValue = webController.getHitTestValue()
-                match(hitTestValue.hitTestType) {
-                    case WebHitTestType.EditText => Hilog.info(0, "cangjieTest", "getHitTestValue returns EditText")
-                    case WebHitTestType.Email => Hilog.info(0, "cangjieTest", "getHitTestValue returns Email")
-                    case WebHitTestType.Unknown => Hilog.info(0, "cangjieTest", "getHitTestValue returns Unknown")
-                    case _ =>  ()
-                 }
-                Hilog.info(0, "cangjieTest", "getHitTestValue extra returns ${hitTestValue.extra}")
-            }).width(400.px).height(150.px)
             Web(src: "www.example.com", controller: webController)
             .onPageBegin({evt =>
                 Hilog.info(0, "cangjieTest", "page begin url: ${evt.url}")
@@ -1809,7 +1656,7 @@ public func getSecurityLevel(): SecurityLevel
 
 |类型|说明|
 |:----|:----|
-|[SecurityLevel](#enum-securitylevel)|当前网页的安全级别，具体值为NONE、SECURE、WARNING、DANGEROUS。|
+|[SecurityLevel](#enum-securitylevel)|当前网页的安全级别，具体值为NoneLevel、Secure、Warning、Dangerous。|
 
 **异常：**
 
@@ -1852,10 +1699,10 @@ class webview_15 {
                 Hilog.info(0, "cangjieTest", "getSecurityLevel")
                 let securityLevel = webController.getSecurityLevel()
                 match(securityLevel) {
-                    case SecurityLevel.NoneLevel => Hilog.info(0, "cangjieTest", "getSecurityLevel returns NONE")
-                    case SecurityLevel.Secure => Hilog.info(0, "cangjieTest", "getSecurityLevel returns SECURE")
-                    case SecurityLevel.Warning => Hilog.info(0, "cangjieTest", "getSecurityLevel returns WARNING")
-                    case SecurityLevel.Danger => Hilog.info(0, "cangjieTest", "getSecurityLevel returns DANGEROUS")
+                    case SecurityLevel.NoneLevel => Hilog.info(0, "cangjieTest", "getSecurityLevel returns NoneLevel")
+                    case SecurityLevel.Secure => Hilog.info(0, "cangjieTest", "getSecurityLevel returns Secure")
+                    case SecurityLevel.Warning => Hilog.info(0, "cangjieTest", "getSecurityLevel returns Warning ")
+                    case SecurityLevel.Dangerous => Hilog.info(0, "cangjieTest", "getSecurityLevel returns Dangerous")
                     case _ => throw IllegalArgumentException("The type is not supported.")
                  }
             }).width(400.px).height(150.px)
@@ -2251,7 +2098,7 @@ public func pageDown(bottom: Bool): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|bottom|Bool|是|-|是否跳转到页面最底部。<br>false时表示将页面内容向下滚动半个视框大小，true表示跳转到页面最底部。+|
+|bottom|Bool|是|-|是否跳转到页面最底部。<br>false时表示将页面内容向下滚动半个视框大小，true表示跳转到页面最底部。|
 
 **异常：**
 
@@ -2259,7 +2106,7 @@ public func pageDown(bottom: Bool): Unit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 17100001 | Init error. The WebviewController must be associated with a Web component. relation pageDown(bottom: boolean): void |
+  | 17100001 | Init error. The WebviewController must be associated with a Web component. |
 
 **示例：**
 
@@ -2379,10 +2226,10 @@ class webview_22 {
 }
 ```
 
-### func refresh()
+### func reload()
 
 ```cangjie
-public func refresh(): Unit
+public func reload(): Unit
 ```
 
 **功能：** 调用此接口通知Web组件刷新网页。
@@ -2427,11 +2274,11 @@ class webview_23 {
     let headers = [WebHeader("headerKey", "headerValue")]
     func build() {
         Column(space: 10) {
-            Button("refresh")
+            Button("reload")
             .onClick ({
                 evt =>
-                Hilog.info(0, "cangjieTest", "refresh")
-                webController.refresh()
+                Hilog.info(0, "cangjieTest", "reload")
+                webController.reload()
             }).width(400.px).height(150.px)
 
             Web(src: "www.example.com", controller: webController)
@@ -2452,7 +2299,7 @@ class webview_23 {
 public func registerJavaScriptProxy(funcs: Array<(String) -> String>, name: String, methodList: Array<String>): Unit
 ```
 
-**功能：** 注入仓颉方法到Window对象中，并在window对象中调用该方法。注册后，须调用[refresh](#func-refresh)接口生效。
+**功能：** 注入仓颉方法到Window对象中，并在window对象中调用该方法。注册后，须调用[reload](#func-reload)接口生效。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -2464,7 +2311,7 @@ public func registerJavaScriptProxy(funcs: Array<(String) -> String>, name: Stri
 |:---|:---|:---|:---|:---|
 |funcs|Array\<(String)->String>|是|-|参与注册的应用侧仓颉方法数组。注册的仓颉方法的入参和返回值都是String类型。|
 |name|String|是|-|注册仓颉方法数组的名称，与window中调用的对象名一致。注册后window对象可以通过此名字访问应用侧仓颉方法。|
-|methodList|Array\<String>|是|-|参与注册的应用侧仓颉方法名，此数组的长度需要与funcs数组一致。注册完成后，后续funcs的判等会通过methodList来判断。因此后续如果想注册新的、或更改funcs，需要传入新的methodList。|
+|methodList|Array\<String>|是|-|参与注册的应用侧仓颉方法名，此数组的长度需要与funcs数组一致。注册完成后，后续如果想注册新的、或更改funcs，需要传入新的methodList。|
 
 **异常：**
 
@@ -2516,10 +2363,10 @@ class webview_24 {
     func build() {
         Row {
             Column {
-                Button("refresh").onClick ({
+                Button("reload").onClick ({
                     evt =>
-                    Hilog.info(0, "test", "refresh")
-                    webController.refresh()
+                    Hilog.info(0, "test", "reload")
+                    webController.reload()
                 }).width(400.px).height(150.px)
                 Button("proxy").onClick ({
                     evt =>
@@ -2627,7 +2474,7 @@ public func loadUrl<T>(url: T, headers!: Array<WebHeader> = Array<WebHeader>()):
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |url|T|是|-|需要加载的URL。|
-|headers|Array\<[WebHeader](#class-webheader)>|否|Array\<WebHeader >()|URL的附加HTTP请求头。<br>默认值： []|
+|headers|Array\<[WebHeader](#class-webheader)>|否|Array\<WebHeader>()|URL的附加HTTP请求头。<br>默认值： []|
 
 **异常：**
 
@@ -2695,13 +2542,13 @@ public func setCustomUserAgent(userAgent: String): Unit
 
 **功能：** 设置自定义用户代理，会覆盖系统的用户代理。
 
-当Web组件src设置了url时，建议在onControllerAttached回调事件中设置User-Agent，设置方式请参考示例。不建议将User-Agent设置在onLoadIntercept回调事件中，会概率性出现设置失败。
+不建议将User-Agent设置在onLoadIntercept回调事件中，会概率性出现设置失败。
 
 当Web组件src设置为空字符串时，建议先调用setCustomUserAgent方法设置User-Agent，再通过loadUrl加载具体页面。
 
 > **说明：**
 >
-> - 当Web组件src设置了url，且未在onControllerAttached回调事件中设置User-Agent。再调用setCustomUserAgent方法时，可能会出现加载的页面与实际设置User-Agent不符的异常现象。
+> - 当Web组件src设置了url，再调用setCustomUserAgent方法时，可能会出现加载的页面与实际设置User-Agent不符的异常现象。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -3134,7 +2981,7 @@ class webview_31 {
 public func runJavaScript(script: String, callback: AsyncCallback<String>): Unit
 ```
 
-**功能：** 在当前显示页面的上下文中异步执行JavaScript脚本，脚本执行的结果将通过异步回调方式返回。此方法必须在用户界面（UI）线程上使用 ，并且回调也将在用户界面（UI）线程上调用。
+**功能：** 在当前显示页面的上下文中异步执行JavaScript脚本，脚本执行的结果将通过异步回调方式返回。此方法必须在用户界面（UI）线程上使用，并且回调也将在用户界面（UI）线程上调用。
 
 > **说明：**
 >
@@ -3519,7 +3366,7 @@ public enum SecurityLevel <: Equatable<SecurityLevel> & ToString {
     | NoneLevel
     | Secure
     | Warning
-    | Danger
+    | Dangerous
     | ...
 }
 ```
@@ -3571,10 +3418,10 @@ Warning
 
 **起始版本：** 22
 
-### Danger
+### Dangerous
 
 ```cangjie
-Danger
+Dangerous
 ```
 
 **功能：** 页面不安全。尝试HTTPS并失败、页面未通过身份验证、页面上包含不安全活动内容的HTTPS、恶意软件、网络钓鱼或任何其他可能危险的严重安全问题。
@@ -3591,11 +3438,15 @@ public operator func !=(other: SecurityLevel): Bool
 
 **功能：** 判断两个枚举值是否不等。
 
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|other|[SecurityLevel](../ArkData/cj-apis-distributed_kv_store.md#enum-securitylevel)|是|-|待比较的另一个枚举值。|
+|other|[SecurityLevel](#enum-securitylevel)|是|-|待比较的另一个枚举值。|
 
 **返回值：**
 
@@ -3619,7 +3470,7 @@ public operator func ==(other: SecurityLevel): Bool
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|other|[SecurityLevel](../ArkWeb/cj-apis-webview.md#enum-securitylevel)|是|-|待比较的另一个枚举值。|
+|other|[SecurityLevel](#enum-securitylevel)|是|-|待比较的另一个枚举值。|
 
 **返回值：**
 
@@ -3634,6 +3485,10 @@ public func toString(): String
 ```
 
 **功能：** 获取枚举的字符串表示。
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**起始版本：** 22
 
 **返回值：**
 
@@ -3652,7 +3507,7 @@ public enum WebHitTestType <: Equatable<WebHitTestType> & ToString {
 }
 ```
 
-**功能：** [getHitTest](#func-gethittest)用于指示游标节点。
+**功能：** 用于指示游标节点。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -3707,6 +3562,10 @@ public operator func !=(other: WebHitTestType): Bool
 
 **功能：** 判断两个枚举值是否不等。
 
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -3750,6 +3609,10 @@ public func toString(): String
 ```
 
 **功能：** 获取枚举的字符串表示。
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**起始版本：** 22
 
 **返回值：**
 

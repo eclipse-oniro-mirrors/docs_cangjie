@@ -17,21 +17,21 @@ API示例代码使用说明：
 
 上述示例工程及配置模板详见[仓颉示例代码说明](../cj-development-intro.md#仓颉示例代码说明)。
 
-## enum ValueType
+## enum CommonEventValueType
 
 ```cangjie
-public enum ValueType {
+public enum CommonEventValueType {
     | Int32Value(Int32)
     | Float64Value(Float64)
     | StringValue(String)
     | BoolValue(Bool)
-    | Fd(Int32)
+    | FD(Int32)
     | ArrayString(Array<String>)
     | ArrayInt32(Array<Int32>)
     | ArrayInt64(Array<Int64>)
     | ArrayBool(Array<Bool>)
     | ArrayFloat64(Array<Float64>)
-    | ArrayFd(Array<Int32>)
+    | ArrayFD(Array<Int32>)
     | ...
 }
 ```
@@ -54,10 +54,10 @@ ArrayBool(Array<Bool>)
 
 **起始版本：** 22
 
-### ArrayFd(Array\<Int32>)
+### ArrayFD(Array\<Int32>)
 
 ```cangjie
-ArrayFd(Array<Int32>)
+ArrayFD(Array<Int32>)
 ```
 
 **功能：** 表示文件描述符数组数据。
@@ -126,10 +126,10 @@ BoolValue(Bool)
 
 **起始版本：** 22
 
-### Fd(Int32)
+### FD(Int32)
 
 ```cangjie
-Fd(Int32)
+FD(Int32)
 ```
 
 **功能：** 表示文件描述符数据。

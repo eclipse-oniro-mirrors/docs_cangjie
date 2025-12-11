@@ -2,6 +2,13 @@
 
 图片编码指将PixelMap编码成不同格式的存档图片，当前支持打包为JPEG、WebP、PNG 和 HEIF(不同硬件设备的支持情况有所不同) 格式，用于后续处理，如保存、传输等。
 
+## 使用说明
+
+API示例代码使用说明：
+
+- 若示例代码首行有“// index.cj”注释，表示该示例可在仓颉模板工程的“index.cj”文件中编译运行。
+- 若示例需获取[Context](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-context)应用上下文，需在仓颉模板工程中的“main_ability.cj”文件中进行配置。
+
 ## 开发步骤
 
 图片编码相关API的详细介绍请参见：[图片编码接口说明](../../reference/ImageKit/cj-apis-image.md#class-imagepacker)。
@@ -80,7 +87,7 @@ var abilityContext = Global.abilityContext
 // 获取resourceManager资源管理器。
 let resourceManager = abilityContext.resourceManager   
         
-let img = resourceManager.getMediaContent(@r(app.media.layered_image))
+let img = resourceManager.getMediaContent(@r(app.media.layered_image).id)
 let imageSource = createImageSource(img)
 let cacheDir = "/data/storage/el2/base/haps/entry/cache"
 let filePath = cacheDir + '/test.jpg'
@@ -103,7 +110,7 @@ var abilityContext = Global.abilityContext
 // 获取resourceManager资源管理器。
 let resourceManager = abilityContext.resourceManager   
         
-let img = resourceManager.getMediaContent(@r(app.media.layered_image))
+let img = resourceManager.getMediaContent(@r(app.media.layered_image).id)
 let imageSource = createImageSource(img)
 let cacheDir = "/data/storage/el2/base/haps/entry/cache"
 let filePath = cacheDir + '/test.jpg'

@@ -97,7 +97,7 @@ public func getParams(): Option<String>
 
 | Type          | Description |
 |:--------------|:------------|
-| Option<String> | Parameters passed from the initiating page to the current page. |
+| Option\<String> | Parameters passed from the initiating page to the current page. |
 
 ## class RouterState
 

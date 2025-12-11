@@ -1,4 +1,4 @@
-# ohos.data.relational_store
+# ohos.data.relational_store（关系型数据库）
 
 关系型数据库（Relational Database，RDB）是一种基于关系模型来管理数据的数据库。关系型数据库基于SQLite组件提供了一套完整的对本地数据库进行管理的机制，对外提供了一系列的增、删、改、查等接口，也可以直接运行用户输入的SQL语句来满足复杂的场景需要。不支持Worker线程。
 
@@ -39,7 +39,7 @@ public func deleteRdbStore(context: UIAbilityContext, name: String): Unit
 
 删除成功后，建议将数据库对象置为null。建立数据库时，若在[StoreConfig](#class-storeconfig)中配置了自定义路径，则调用此接口进行删库无效，必须使用[deleteRdbStore(UIAbilityContext, StoreConfig)](#func-deleterdbstoreuiabilitycontext-storeconfig)接口进行删库。
 
-当使用向量数据库时，在调用deleteRdbStore接口前，应当确保向量数据库已打开的RdbStore和ResultSet均已成功关闭。
+当使用向量数据库时，在调用deleteRdbStore接口前，应当确保向量数据库已打开的[RdbStore](#class-rdbstore)和[ResultSet](#class-resultset)均已成功关闭。
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
 
@@ -321,7 +321,7 @@ public var size: String
 public var status: AssetStatus
 ```
 
-**功能：** 资产的状态，默认值为ASSET_NORMAL。
+**功能：** 资产的状态，默认值为AssetNormal。
 
 **类型：** [AssetStatus](#enum-assetstatus)
 

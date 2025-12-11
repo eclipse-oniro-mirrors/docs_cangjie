@@ -36,7 +36,7 @@ public init(child!: () -> Unit = { => })
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|child|() -> Unit|否|{ => }|**命名参数** NavDestination容器的子组件。|
+|child|() -> Unit|否|{ => }|**命名参数。** NavDestination容器的子组件。|
 
 ## 通用属性/通用事件
 
@@ -83,7 +83,7 @@ public func title(value: ?CustomBuilder, options!: ?NavigationTitleOptions = Non
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |value|?[CustomBuilder](./cj-common-types.md#type-custombuilder)|是|-|页面标题。初始值：{=>}。|
-|options|?[NavigationTitleOptions](./cj-navigation-switching-navigation.md#class-navigationtitleoptions)|否|None|**命名参数** 标题栏选项。|
+|options|?[NavigationTitleOptions](./cj-navigation-switching-navigation.md#class-navigationtitleoptions)|否|None|**命名参数。** 标题栏选项。|
 
 ### func title(?ResourceStr, ?NavigationTitleOptions)
 
@@ -102,7 +102,7 @@ public func title(value: ?ResourceStr, options!: ?NavigationTitleOptions = None)
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |value|?[ResourceStr](./cj-common-types.md#interface-resourcestr)|是|-|页面标题。<br>初始值：{=>}。|
-|options|?[NavigationTitleOptions](./cj-navigation-switching-navigation.md#class-navigationtitleoptions)|否|None|**命名参数** 标题栏选项。|
+|options|?[NavigationTitleOptions](./cj-navigation-switching-navigation.md#class-navigationtitleoptions)|否|None|**命名参数。** 标题栏选项。|
 
 ## 组件事件
 

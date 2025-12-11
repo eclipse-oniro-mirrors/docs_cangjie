@@ -39,7 +39,7 @@ public init(count!: Int32, style!: ?BadgeStyle, position!: ?BadgePosition = None
 | style | ?[BadgeStyle](#class-badgestyle) | Yes | - | **Named parameter.** The style settings for the Badge component, including text color, size, dot color, and size. |
 | position | ?[BadgePosition](#enum-badgeposition) | No | None | **Named parameter.** The display position of the badge. Initial value: BadgePosition.RightTop |
 | maxCount | ?Int32 | No | None | **Named parameter.** The maximum number of messages. If exceeded, displays as maxCount+. Initial value: 99 |
-| child | () -> Unit | Yes | - | The child component of the container. |
+| child | () -> Unit | Yes | - | **Named parameter.** The child component of the container. |
 
 ### init(String, ?BadgeStyle, ?BadgePosition, () -> Unit)
 
@@ -60,7 +60,7 @@ public init(value!: String, style!: ?BadgeStyle, position!: ?BadgePosition = Non
 | value | String | Yes | - | **Named parameter.** The text parameter for the badge component. |
 | style | ?[BadgeStyle](#class-badgestyle) | Yes | - | **Named parameter.** The style settings for the Badge component, including text color, size, dot color, and size. |
 | position | ?[BadgePosition](#enum-badgeposition) | No | None | **Named parameter.** The display position of the badge. Initial value: BadgePosition.RightTop |
-| child | () -> Unit | Yes | - | The child component of the container. |
+| child | () -> Unit | Yes | - | **Named parameter.** The child component of the container. |
 
 ## Common Attributes/Events
 
@@ -82,8 +82,8 @@ public class BadgeStyle {
     public var borderColor: ?ResourceColor
     public var borderWidth: ?Length
     public init(color!: ?ResourceColor = None, fontSize!: ?Length = None, badgeSize!: ?Length = None,
-        badgeColor!: ?ResourceColor = None, fontWeight!: ?FontWeight = None,
-        borderColor!: ?ResourceColor = None, borderWidth!: ?Length = None)
+        badgeColor!: ?ResourceColor = None, borderColor!: ?ResourceColor = None,
+        borderWidth!: ?Length = None, fontWeight!: ?FontWeight = None)
 }
 ```
 
@@ -205,12 +205,12 @@ public var fontWeight: ?FontWeight
 
 **Since:** 22
 
-#### init(?ResourceColor, ?Length, ?Length, ?ResourceColor, ?FontWeight, ?ResourceColor, ?Length)
+#### init(?ResourceColor, ?Length, ?Length, ?ResourceColor, ?ResourceColor, ?Length, ?FontWeight)
 
 ```cangjie
 public init(color!: ?ResourceColor = None, fontSize!: ?Length = None, badgeSize!: ?Length = None,
-    badgeColor!: ?ResourceColor = None, fontWeight!: ?FontWeight = None,
-    borderColor!: ?ResourceColor = None, borderWidth!: ?Length = None)
+    badgeColor!: ?ResourceColor = None, borderColor!: ?ResourceColor = None,
+    borderWidth!: ?Length = None, fontWeight!: ?FontWeight = None)
 ```
 
 **Function:** Creates a BadgeStyle object.
@@ -227,9 +227,9 @@ public init(color!: ?ResourceColor = None, fontSize!: ?Length = None, badgeSize!
 | fontSize | ?[Length](./cj-common-types.md#interface-length) | No | None | **Named parameter.** The text size. Initial value: 10.fp |
 | badgeSize | ?[Length](./cj-common-types.md#interface-length) | No | None | **Named parameter.** The size of the badge. Initial value: 16.vp |
 | badgeColor | ?[ResourceColor](./cj-common-types.md#interface-resourcecolor) | No | None | **Named parameter.** The color of the badge. Initial value: Color.Red |
-| fontWeight | ?[FontWeight](./cj-common-types.md#enum-fontweight) | No | None | **Named parameter.** Sets the font weight of the text. Initial value: FontWeight.Normal |
 | borderColor | ?[ResourceColor](./cj-common-types.md#interface-resourcecolor) | No | None | **Named parameter.** The border color of the base plate. Initial value: Color.Red |
 | borderWidth | ?[Length](./cj-common-types.md#interface-length) | No | None | **Named parameter.** The border width of the base plate. Initial value: 1.vp |
+| fontWeight | ?[FontWeight](./cj-common-types.md#enum-fontweight) | No | None | **Named parameter.** Sets the font weight of the text. Initial value: FontWeight.Normal |
 
 ### enum BadgePosition
 

@@ -1,4 +1,4 @@
-# Class (UIContext)
+# UIContext
 
 Provides UI context-related functionalities.
 

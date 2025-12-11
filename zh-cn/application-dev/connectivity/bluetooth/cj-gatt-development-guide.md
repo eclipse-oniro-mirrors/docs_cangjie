@@ -54,8 +54,8 @@ import kit.PerformanceAnalysisKit.Hilog
 // 此处是伪代码
 let device = 'XX:XX:XX:XX:XX:XX'
 
-class BLEConnectionStateChangeCallback <: Callback1Argument<BLEConnectionChangeState> {
-    public func invoke(err: ?BusinessException, stateInfo: BLEConnectionChangeState): Unit {
+class BLEConnectionStateChangeCallback <: Callback1Argument<BleConnectionChangeState> {
+    public func invoke(err: ?BusinessException, stateInfo: BleConnectionChangeState): Unit {
         let connectState = stateInfo.state
     }
 }
@@ -135,15 +135,15 @@ import ohos.business_exception.*
 // 此处是伪代码
 let device = 'XX:XX:XX:XX:XX:XX'
 let bufferDesc: Array<Byte> = [11, 0]
-let descriptor = BLEDescriptor(
+let descriptor = BleDescriptor(
     "00001810-0000-1000-8000-00805F9B34FB",
     "00001820-0000-1000-8000-00805F9B34FB",
     "00002902-0000-1000-8000-00805F9B34FB",
     bufferDesc
 )
-let descriptors: Array<BLEDescriptor> = [descriptor]
+let descriptors: Array<BleDescriptor> = [descriptor]
 let bufferCCC: Array<Byte> = [1, 0]
-let characteristic: BLECharacteristic = BLECharacteristic(
+let characteristic: BleCharacteristic = BleCharacteristic(
     "00001810-0000-1000-8000-00805F9B34FB",
     "00001820-0000-1000-8000-00805F9B34FB",
     bufferCCC,
@@ -160,7 +160,7 @@ try {
 // 读取特征值
 try {
     gattClient?.readCharacteristicValue(characteristic) {
-        error: ?BusinessException, outData: ?BLECharacteristic =>
+        error: ?BusinessException, outData: ?BleCharacteristic =>
     }
 } catch (e: BusinessException) {
     Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}")
@@ -195,7 +195,7 @@ import ohos.business_exception.*
 // 此处是伪代码
 let device = 'XX:XX:XX:XX:XX:XX'
 let bufferDesc: Array<Byte> = [11, 0]
-let descriptor = BLEDescriptor(
+let descriptor = BleDescriptor(
     "00001810-0000-1000-8000-00805F9B34FB",
     "00001820-0000-1000-8000-00805F9B34FB",
     "00002903-0000-1000-8000-00805F9B34FB",
@@ -211,8 +211,8 @@ try {
 
 // 读取描述符
 try {
-    gattClient.readDescriptorValue(descriptor) {
-        error: ?BusinessException, outDescriptor: ?BLEDescriptor =>
+    gattClient?.readDescriptorValue(descriptor) {
+        error: ?BusinessException, outDescriptor: ?BleDescriptor =>
     }
 } catch (e: BusinessException) {
     Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}")
@@ -220,7 +220,7 @@ try {
 
 // 写入描述符
 try {
-    gattClient.writeDescriptorValue(descriptor) {
+    gattClient?.writeDescriptorValue(descriptor) {
         error: ?BusinessException, c: ?Unit => if (let Some(e) <- error) {
             Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}")
         }
@@ -249,22 +249,22 @@ import kit.PerformanceAnalysisKit.Hilog
 let device = 'XX:XX:XX:XX:XX:XX'
 
 // 定义服务端特征值变化事件
-class BLECharacteristicChangeCallback <: Callback1Argument<BLECharacteristic> {
-    public func invoke(err: ?BusinessException, characteristic: BLECharacteristic): Unit {
+class BLECharacteristicChangeCallback <: Callback1Argument<BleCharacteristic> {
+    public func invoke(err: ?BusinessException, characteristic: BleCharacteristic): Unit {
         Hilog.info(0, "Bluetooth", "characteristic has change")
     }
 }
 
 let arrayBuffer: Array<Byte> = [11, 0]
-let descriptor = BLEDescriptor(
+let descriptor = BleDescriptor(
     "00001810-0000-1000-8000-00805F9B34FB",
     "00001820-0000-1000-8000-00805F9B34FB",
     "00002902-0000-1000-8000-00805F9B34FB",
     arrayBuffer
 )
-let descriptors: Array<BLEDescriptor> = [descriptor]
+let descriptors: Array<BleDescriptor> = [descriptor]
 let arrayBufferC: Array<Byte> = [0, 0]
-let characteristic: BLECharacteristic = BLECharacteristic(
+let characteristic: BleCharacteristic = BleCharacteristic(
     "00001810-0000-1000-8000-00805F9B34FB",
     "00001820-0000-1000-8000-00805F9B34FB",
     arrayBufferC,
@@ -341,23 +341,23 @@ try {
 ```cangjie
 // 创建descriptors
 let arrayBuffer: Array<Byte> = [11, 0]
-let descriptor = BLEDescriptor(
+let descriptor = BleDescriptor(
     "00001810-0000-1000-8000-00805F9B34FB",
     "00001820-0000-1000-8000-00805F9B34FB",
     "00002902-0000-1000-8000-00805F9B34FB",
     arrayBuffer
 )
-let descriptors: Array<BLEDescriptor> = [descriptor]
+let descriptors: Array<BleDescriptor> = [descriptor]
 
 // 创建characteristics
 let arrayBufferC: Array<Byte> = [1, 0]
-let characteristic: BLECharacteristic = BLECharacteristic(
+let characteristic: BleCharacteristic = BleCharacteristic(
     "00001810-0000-1000-8000-00805F9B34FB",
     "00001820-0000-1000-8000-00805F9B34FB",
     arrayBufferC,
     descriptors
 )
-let characteristics: Array<BLECharacteristic> = [characteristic]
+let characteristics: Array<BleCharacteristic> = [characteristic]
 
 // 创建gattService
 let gattService: GattService = GattService(
@@ -385,8 +385,8 @@ import ohos.business_exception.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
-class StateChangeCallback <: Callback1Argument<BLEConnectionChangeState> {
-    public func invoke(err: ?BusinessException, state: BLEConnectionChangeState): Unit {
+class StateChangeCallback <: Callback1Argument<BleConnectionChangeState> {
+    public func invoke(err: ?BusinessException, state: BleConnectionChangeState): Unit {
         Hilog.info(0, "Bluetooth", "bluetooth connect state changed")
     }
 }
@@ -640,9 +640,9 @@ class GattClientManager {
     var found: Bool = false
 
     var myService: ?GattService = None<GattService>
-    var myCharacteristic: ?BLECharacteristic = None<BLECharacteristic>
-    var myFirstDescriptor: ?BLEDescriptor = None<BLEDescriptor>
-    var mySecondDescriptor: ?BLEDescriptor = None<BLEDescriptor>
+    var myCharacteristic: ?BleCharacteristic = None<BleCharacteristic>
+    var myFirstDescriptor: ?BleDescriptor = None<BleDescriptor>
+    var mySecondDescriptor: ?BleDescriptor = None<BleDescriptor>
 
     var foundService: Bool = false
     var foundChar: Bool = false
@@ -650,8 +650,8 @@ class GattClientManager {
     var foundSecondDes: Bool = false
 
     // 构造BLEDescriptor
-    private func initDescriptor(des: String, value: Array<Byte>): BLEDescriptor {
-        let descriptor: BLEDescriptor = BLEDescriptor(
+    private func initDescriptor(des: String, value: Array<Byte>): BleDescriptor {
+        let descriptor: BleDescriptor = BleDescriptor(
             this.myServiceUuid,
             this.myCharacteristicUuid,
             des,
@@ -661,13 +661,13 @@ class GattClientManager {
     }
 
     // 构造BLECharacteristic
-    private func initCharacteristic(isWrite: Bool): BLECharacteristic {
+    private func initCharacteristic(isWrite: Bool): BleCharacteristic {
         let charBuffer: Array<UInt8> = if (isWrite) {
             [21, 22]
         } else {
             [0, 0]
         }
-        let characteristic: BLECharacteristic = BLECharacteristic(
+        let characteristic: BleCharacteristic = BleCharacteristic(
             this.myServiceUuid,
             this.myCharacteristicUuid,
             charBuffer,
@@ -676,7 +676,7 @@ class GattClientManager {
         return characteristic
     }
 
-    private func logCharacteristic(char: BLECharacteristic) {
+    private func logCharacteristic(char: BleCharacteristic) {
         var message = 'logCharacteristic uuid:' + char.characteristicUUID + ', value: '
         let value = char.characteristicValue
         message += 'logCharacteristic value: '
@@ -686,7 +686,7 @@ class GattClientManager {
         Hilog.info(1, TAG, message)
     }
 
-    private func logDescriptor(des: BLEDescriptor) {
+    private func logDescriptor(des: BleDescriptor) {
         var message = 'logDescriptor uuid:' + des.descriptorUUID + ', value: '
         let value = des.descriptorValue
         message += 'logDescriptor value: '
@@ -765,7 +765,7 @@ class GattClientManager {
         Hilog.info(1, TAG, 'discoverServices')
         try {
             let result = this.gattClient?.getServices(){
-                error: ?BusinessException, result: ?Int32 =>
+                error: ?BusinessException, result: ?Array<GattService> =>
                 if (let Some(e) <- error) {
                     throw e
                 }
@@ -981,22 +981,22 @@ class GattClientManager {
     }
 }
 
-class BLEConnectionStateChangeCallback <: Callback1Argument<BLEConnectionChangeState> {
-    let callback: (?BusinessException, BLEConnectionChangeState) -> Unit
-    public init(callback: (?BusinessException, BLEConnectionChangeState) -> Unit){
+class BLEConnectionStateChangeCallback <: Callback1Argument<BleConnectionChangeState> {
+    let callback: (?BusinessException, BleConnectionChangeState) -> Unit
+    public init(callback: (?BusinessException, BleConnectionChangeState) -> Unit){
         this.callback = callback
     }
-    public func invoke(err: ?BusinessException, stateInfo: BLEConnectionChangeState): Unit {
+    public func invoke(err: ?BusinessException, stateInfo: BleConnectionChangeState): Unit {
         callback(err, stateInfo)
     }
 }
 
-class BLECharacteristicChangeCallback <: Callback1Argument<BLECharacteristic> {
-    let callback: (?BusinessException, BLECharacteristic) -> Unit
-    public init(callback: (?BusinessException, BLECharacteristic) -> Unit){
+class BLECharacteristicChangeCallback <: Callback1Argument<BleCharacteristic> {
+    let callback: (?BusinessException, BleCharacteristic) -> Unit
+    public init(callback: (?BusinessException, BleCharacteristic) -> Unit){
         this.callback = callback
     }
-    public func invoke(err: ?BusinessException, char: BLECharacteristic): Unit {
+    public func invoke(err: ?BusinessException, char: BleCharacteristic): Unit {
         callback(err, char)
     }
 }
@@ -1031,8 +1031,8 @@ class GattServerManager {
     var secDescBuffer: Array<UInt8> = Array<UInt8>(2, repeat: 0)
 
     // 构造BLEDescriptor
-    private func initDescriptor(des: String, value: Array<Byte>): BLEDescriptor {
-        let descriptor: BLEDescriptor = BLEDescriptor(
+    private func initDescriptor(des: String, value: Array<Byte>): BleDescriptor {
+        let descriptor: BleDescriptor = BleDescriptor(
             this.myServiceUuid,
             this.myCharacteristicUuid,
             des,
@@ -1042,12 +1042,12 @@ class GattServerManager {
     }
 
     // 构造BLECharacteristic
-    private func initCharacteristic(): BLECharacteristic {
+    private func initCharacteristic(): BleCharacteristic {
         secDescBuffer = [31, 32]
-        let descriptors: Array<BLEDescriptor> = [initDescriptor(this.myFirstDescriptorUuid, firDescBuffer),
+        let descriptors: Array<BleDescriptor> = [initDescriptor(this.myFirstDescriptorUuid, firDescBuffer),
             initDescriptor(this.mySecondDescriptorUuid, secDescBuffer)] // 默认Client Characteristic Configuration描述符没有使能特征值变化通知或者指示能力
         charBuffer = [1, 2]
-        let characteristic: BLECharacteristic = BLECharacteristic(
+        let characteristic: BleCharacteristic = BleCharacteristic(
             this.myServiceUuid,
             this.myCharacteristicUuid,
             charBuffer,
@@ -1134,7 +1134,7 @@ class GattServerManager {
                 Hilog.error(1, TAG, 'errCode: ${e.code}, errMessage: ${e.message}')
             }
         }
-        let characteristics: ArrayList<BLECharacteristic> = ArrayList<BLECharacteristic>()
+        let characteristics: ArrayList<BleCharacteristic> = ArrayList<BleCharacteristic>()
         let characteristic = this.initCharacteristic()
         characteristics.add(characteristic)
         let gattService: GattService = GattService(
@@ -1147,7 +1147,7 @@ class GattServerManager {
             let deviceId: String = desReq.deviceId
             let transId: Int32 = desReq.transId
             let offset: Int32 = desReq.offset
-            let tmpBuffer = if (desReq.descriptorUuid == this.myFirstDescriptorUuid) {
+            let tmpBuffer = if (desReq.descriptorUUID == this.myFirstDescriptorUuid) {
                 this.firDescBuffer
             } else {
                 this.secDescBuffer
@@ -1258,12 +1258,12 @@ class GattServerManager {
     }
 }
 
-class BLEConnectionStateChangeCallback <: Callback1Argument<BLEConnectionChangeState> {
-    let callback: (?BusinessException, BLEConnectionChangeState) -> Unit
-    public init(callback: (?BusinessException, BLEConnectionChangeState) -> Unit){
+class BLEConnectionStateChangeCallback <: Callback1Argument<BleConnectionChangeState> {
+    let callback: (?BusinessException, BleConnectionChangeState) -> Unit
+    public init(callback: (?BusinessException, BleConnectionChangeState) -> Unit){
         this.callback = callback
     }
-    public func invoke(err: ?BusinessException, stateInfo: BLEConnectionChangeState): Unit {
+    public func invoke(err: ?BusinessException, stateInfo: BleConnectionChangeState): Unit {
         callback(err, stateInfo)
     }
 }

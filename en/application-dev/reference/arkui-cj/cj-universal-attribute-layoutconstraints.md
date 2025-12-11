@@ -24,10 +24,10 @@ func constraintSize(minWidth!: ?Length = None, maxWidth!: ?Length = None, minHei
 
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
-| minWidth | ?[Length](./cj-common-types.md#interface-length) | No | None | **Named parameter** Minimum component width <br>Default: 0.vp |
-| maxWidth | ?[Length](./cj-common-types.md#interface-length) | No | None | **Named parameter** Maximum component width <br>Default: (Float64.Inf).vp |
-| minHeight | ?[Length](./cj-common-types.md#interface-length) | No | None | **Named parameter** Minimum component height <br>Default: 0.vp |
-| maxHeight | ?[Length](./cj-common-types.md#interface-length) | No | None | **Named parameter** Maximum component height <br>Default: (Float64.Inf).vp |
+| minWidth | ?[Length](./cj-common-types.md#interface-length) | No | None | **Named parameter.** Minimum component width <br>Default: 0.vp |
+| maxWidth | ?[Length](./cj-common-types.md#interface-length) | No | None | **Named parameter.** Maximum component width <br>Default: (Float64.Inf).vp |
+| minHeight | ?[Length](./cj-common-types.md#interface-length) | No | None | **Named parameter.** Minimum component height <br>Default: 0.vp |
+| maxHeight | ?[Length](./cj-common-types.md#interface-length) | No | None | **Named parameter.** Maximum component height <br>Default: (Float64.Inf).vp |
 
 **Return Value:**
 

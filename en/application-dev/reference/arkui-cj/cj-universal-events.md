@@ -3,7 +3,6 @@
 - [Click Event](cj-universal-event-click.md)
 - [Touch Event](cj-universal-event-touch.md)
 - [Mount/Unmount Event](cj-universal-event-appear.md)
-- [Drag Event](cj-universal-event-drag.md)
 - [Key Event](cj-universal-event-key.md)
 - [Focus Event](cj-universal-event-focus.md)
 - [Mouse Event](cj-universal-event-mouse.md)

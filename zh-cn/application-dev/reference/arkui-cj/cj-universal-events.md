@@ -3,7 +3,6 @@
 - [点击事件](cj-universal-event-click.md)
 - [触摸事件](cj-universal-event-touch.md)
 - [挂载卸载事件](cj-universal-event-appear.md)
-- [拖拽事件](cj-universal-event-drag.md)
 - [按键事件](cj-universal-event-key.md)
 - [焦点事件](cj-universal-event-focus.md)
 - [鼠标事件](cj-universal-event-mouse.md)

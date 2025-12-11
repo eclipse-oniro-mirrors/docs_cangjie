@@ -1368,7 +1368,7 @@ error: moduleName is inconsistent.
 **处理步骤：**
 
 检查系统中已安装应用的模块名是否与待安装的模块名重复，若模块名称一致但类型不一致，修改对应模块module.json5中type属性。
-
+<!--Del-->
 ### 9568302 应用多个模块singleton不一致导致安装失败
 
 **错误信息**

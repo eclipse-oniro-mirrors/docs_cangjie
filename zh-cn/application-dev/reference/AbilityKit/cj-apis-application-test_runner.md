@@ -39,39 +39,6 @@ public open class TestRunner {}
 
 **起始版本：** 22
 
-### static func registerCreator(String, () -> TestRunner)
-
-```cangjie
-public static func registerCreator(name: String, creator: () -> TestRunner): Unit
-```
-
-**功能：** 注册构建[TestRunner](#class-testrunner)对象的函数。
-
-**系统能力：** SystemCapability.Ability.AbilityRuntime.Core
-
-**起始版本：** 22
-
-**参数：**
-
-|参数名|类型|必填|默认值|说明|
-|:---|:---|:---|:---|:---|
-|name|String|是|-|构建函数标识。|
-|creator|()->[TestRunner](#class-testrunner)|是|-|构建[TestRunner](#class-testrunner)对象的函数。|
-
-**示例：**
-
-<!-- compile -->
-```cangjie
-import kit.TestKit.*
-
-let TESTRUNNER_REGISTER_RESULT1 = TestRunner.registerCreator("test", { => MyTestRunner1()})
-
-class MyTestRunner1 <: TestRunner {
-    public override func onPrepare(): Unit {
-    }
-}
-```
-
 ### func onPrepare()
 
 ```cangjie

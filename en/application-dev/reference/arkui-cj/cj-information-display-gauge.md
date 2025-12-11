@@ -14,10 +14,10 @@ Can contain child components.
 
 ## Creating the Component
 
-### init(?Float64, ?Float64, ?Float64, () -> Unit)
+### init(?Float32, ?Float32, ?Float32, () -> Unit)
 
 ```cangjie
-public init(value!: ?Float64, min!: ?Float64 = None, max!: ?Float64 = None, child!: () -> Unit = { => })
+public init(value!: ?Float32, min!: ?Float32 = None, max!: ?Float32 = None, child!: () -> Unit = { => })
 ```
 
 **Function:** Creates a gauge chart component.
@@ -30,9 +30,9 @@ public init(value!: ?Float64, min!: ?Float64 = None, max!: ?Float64 = None, chil
 
 | Parameter | Type | Required | Default Value | Description |
 |:---|:---|:---|:---|:---|
-| value | ?Float64 | Yes | - | **Named parameter.** Initial value: 0.0. The current data value of the gauge, indicating the pointer position. Used to preset the initial value when creating the component.<br>**Note:**<br>If value is outside the min and max range, min is used as the default value. |
-| min | ?Float64 | No | None | **Named parameter.** Initial value: 0.0. The minimum value of the current data segment. |
-| max | ?Float64 | No | None | **Named parameter.** Initial value: 100.0. The maximum value of the current data segment.<br>**Note:**<br>If max is less than min, the default values 0.0 and 100.0 are used.<br>Negative values are supported for max and min. |
+| value | ?Float32 | Yes | - | **Named parameter.** Initial value: 0.0. The current data value of the gauge, indicating the pointer position. Used to preset the initial value when creating the component.<br>**Note:**<br>If value is outside the min and max range, min is used as the default value. |
+| min | ?Float32 | No | None | **Named parameter.** Initial value: 0.0. The minimum value of the current data segment. |
+| max | ?Float32 | No | None | **Named parameter.** Initial value: 100.0. The maximum value of the current data segment.<br>**Note:**<br>If max is less than min, the default values 0.0 and 100.0 are used.<br>Negative values are supported for max and min. |
 | child | ()->Unit | No | { => } | **Named parameter.** Declares the child components of the current component. |
 
 ## Common Attributes/Common Events
@@ -141,10 +141,10 @@ public func description(builder: ?CustomBuilder): This
 |:---|:---|:---|:---|:---|
 | builder | ?[CustomBuilder](./cj-common-types.md#type-custombuilder) | Yes | - | The description content. The content in @Builder is customizable by the developer, and text is recommended.<br>Initial value: { => }. |
 
-### func endAngle(?Float64)
+### func endAngle(?Float32)
 
 ```cangjie
-public func endAngle(angle: ?Float64): This
+public func endAngle(angle: ?Float32): This
 ```
 
 **Function:** Sets the end angle position.
@@ -161,7 +161,7 @@ public func endAngle(angle: ?Float64): This
 
 | Parameter | Type | Required | Default Value | Description |
 |:---|:---|:---|:---|:---|
-| angle | ?Float64 | Yes | - | The end angle position, where 0 degrees is at the 12 o'clock position, and positive angles are measured clockwise.<br>Initial value: 360.0. |
+| angle | ?Float32 | Yes | - | The end angle position, where 0 degrees is at the 12 o'clock position, and positive angles are measured clockwise.<br>Initial value: 360.0. |
 
 ### func indicator(?ResourceStr, ?Length)
 
@@ -182,10 +182,10 @@ public func indicator(icon!: ?ResourceStr = None, space!: ?Length = None): This
 | icon | ?[ResourceStr](./cj-common-types.md#interface-resourcestr) | No | None | **Named parameter.** Initial value: "default". Pointer style: "default" is a triangular arrow, "null" means no pointer. |
 | space | ?[Length](./cj-common-types.md#interface-length) | No | None | **Named parameter.** Initial value: 8.0.vp. The spacing between the pointer and the outer edge of the ring (percentage not supported).<br>Unit: vp. |
 
-### func startAngle(?Float64)
+### func startAngle(?Float32)
 
 ```cangjie
-public func startAngle(angle: ?Float64): This
+public func startAngle(angle: ?Float32): This
 ```
 
 **Function:** Sets the start angle position of the gauge.
@@ -198,7 +198,7 @@ public func startAngle(angle: ?Float64): This
 
 | Parameter | Type | Required | Default Value | Description |
 |:---|:---|:---|:---|:---|
-| angle | ?Float64 | Yes | - | The start angle position, where 0 degrees is at the 12 o'clock position, and positive angles are measured clockwise. Initial value: 0.0. |
+| angle | ?Float32 | Yes | - | The start angle position, where 0 degrees is at the 12 o'clock position, and positive angles are measured clockwise. Initial value: 0.0. |
 
 ### func strokeWidth(?Length)
 
@@ -218,10 +218,10 @@ public func strokeWidth(length: ?Length): This
 |:---|:---|:---|:---|:---|
 | length | ?[Length](./cj-common-types.md#interface-length) | Yes | - | The thickness of the ring in the gauge.<br>Initial value: 4.0.vp.<br>Unit: vp.<br>**Note:**<br>If set to a value less than 0, the default value is used.<br>The maximum thickness is the radius of the ring. Values exceeding this will be capped at the maximum.<br>Percentage values are not supported. |
 
-### func trackShadow(?Float64, ?Float64, ?Float64)
+### func trackShadow(?Float32, ?Float32, ?Float32)
 
 ```cangjie
-public func trackShadow(radius!: ?Float64 = None, offsetX!: ?Float64 = None, offsetY!: ?Float64 = None): This
+public func trackShadow(radius!: ?Float32 = None, offsetX!: ?Float32 = None, offsetY!: ?Float32 = None): This
 ```
 
 **Function:** Sets the shadow style.
@@ -234,14 +234,14 @@ public func trackShadow(radius!: ?Float64 = None, offsetX!: ?Float64 = None, off
 
 | Parameter | Type | Required | Default Value | Description |
 |:---|:---|:---|:---|:---|
-| radius | ?Float64 | No | None | **Named parameter.** Initial value: 20.0. The blur radius of the shadow.<br>Unit: vp. |
-| offsetX | ?Float64 | No | None | **Named parameter.** Initial value: 5.0. The X-axis offset. |
-| offsetY | ?Float64 | No | None | **Named parameter.** Initial value: 5.0. The Y-axis offset. |
+| radius | ?Float32 | No | None | **Named parameter.** Initial value: 20.0. The blur radius of the shadow.<br>Unit: vp. |
+| offsetX | ?Float32 | No | None | **Named parameter.** Initial value: 5.0. The X-axis offset. |
+| offsetY | ?Float32 | No | None | **Named parameter.** Initial value: 5.0. The Y-axis offset. |
 
-### func value(?Float64)
+### func value(?Float32)
 
 ```cangjie
-public func value(value: ?Float64): This
+public func value(value: ?Float32): This
 ```
 
 **Function:** Sets the data value of the gauge.
@@ -254,4 +254,4 @@ public func value(value: ?Float64): This
 
 | Parameter | Type | Required | Default Value | Description |
 |:---|:---|:---|:---|:---|
-| value | ?Float64 | Yes | - | The data value of the gauge, which can be used to dynamically modify the gauge's value.<br>Initial value: 0.0. |
+| value | ?Float32 | Yes | - | The data value of the gauge, which can be used to dynamically modify the gauge's value.<br>Initial value: 0.0. |

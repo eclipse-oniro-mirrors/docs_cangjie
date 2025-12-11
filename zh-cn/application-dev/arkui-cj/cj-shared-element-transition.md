@@ -37,7 +37,7 @@ import kit.ArkUI.*
 import ohos.arkui.ui_context.*
 import ohos.arkui.state_macro_manage.*
 import ohos.resource_manager.*
-import std.collection.ArrayList
+import ohos.resource.__GenerateResource__
 
 let storage: LocalStorage = LocalStorage()
 
@@ -61,22 +61,25 @@ class EntryView {
     @State var isExpand: Bool = false
     @State @Watch[onItemClicked] var selectedIndex: Int64 = -1
 
+    // The photos in the array all use AppResource resources, which need to be defined by developers as needed.
     private var allPostData: Array<PostData> = [
         PostData(@r(app.media.startIcon),"Alice","天气晴朗",[@r(app.media.startIcon), @r(app.media.startIcon)] ),
         PostData(@r(app.media.startIcon),"Bob","你好世界",[@r(app.media.startIcon)]),
-        PostData(@r(app.media.startIcon),"Carl","万物生长",[@r(app.media.startIcon),@r(app.media.startIcon),@r(app.media.startIcon)])
+        PostData(@r(app.media.startIcon),"Carl","万物生长",[@r(app.media.startIcon), @r(app.media.startIcon),@r(app.media.startIcon)])
         ]
 
     private func onItemClicked():Unit {
         if(this.selectedIndex<0){
             return
         }
-        getUIContext().animateTo(
-            AnimateParam(duration: 350,curve: Curve.Friction),
-            {
-                => this.isExpand = !this.isExpand
-            }
-        )
+        spawn(UIThread) {
+            getUIContext().animateTo(
+                AnimateParam(duration: 350,curve: Curve.Friction),
+                {
+                    => this.isExpand = !this.isExpand
+                }
+            )
+        }
     }
 
     func build() {
@@ -257,7 +260,7 @@ import kit.ArkUI.*
 import ohos.arkui.ui_context.*
 import ohos.arkui.state_macro_manage.*
 import ohos.resource_manager.AppResource
-import std.collection.ArrayList
+import ohos.resource.__GenerateResource__
 import kit.PerformanceAnalysisKit.Hilog
 
 let storage: LocalStorage = LocalStorage()
@@ -394,7 +397,7 @@ class Post{
                         this.postOnAvatarClicked(this.index)
                 })
                 // 对头像绑定共享元素转场的id
-                .geometryTransition(this.index.toString(),followWithoutTransition: true)
+                .geometryTransition(this.index.toString(), follow: true)
                 .transition(TransitionEffect.OPACITY.animation(AnimateParam(duration: 350,curve: Curve.Friction)))
 
                 Text(this.data.name)

@@ -20,7 +20,7 @@ API示例代码使用说明：
 ## func create(ColorSpace)
 
 ```cangjie
-public func create(colorSpaceName: ColorSpace): ColorSpaceManager
+public func create(colorSpaceType: ColorSpace): ColorSpaceManager
 ```
 
 **功能：** 创建标准色域对象。
@@ -33,7 +33,7 @@ public func create(colorSpaceName: ColorSpace): ColorSpaceManager
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|colorSpaceName|[ColorSpace](#enum-colorspace)|是|-|标准色域类型枚举值。UNKNOWN与CUSTOM不可用于直接创建色域对象。|
+|colorSpaceType|[ColorSpace](#enum-colorspace)|是|-|标准色域类型枚举值。UNKNOWN与CUSTOM不可用于直接创建色域对象。|
 
 **返回值：**
 
@@ -143,10 +143,10 @@ public class ColorSpaceManager {}
 
 **起始版本：** 22
 
-### func getColorSpaceName()
+### func getColorSpaceType()
 
 ```cangjie
-public func getColorSpaceName(): ColorSpace
+public func getColorSpaceType(): ColorSpace
 ```
 
 **功能：** 获取色域类型。
@@ -182,7 +182,7 @@ import kit.PerformanceAnalysisKit.Hilog
 
 try {
     let colorSpaceManagerInstance = create(ColorSpace.Srgb)
-    let colorSpace: ColorSpace = colorSpaceManagerInstance.getColorSpaceName()
+    let colorSpace: ColorSpace = colorSpaceManagerInstance.getColorSpaceType()
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -1003,6 +1003,10 @@ public operator func !=(other: ColorSpace): Bool
 
 **功能：** 与另一个 `ColorSpace` 枚举值进行不等比较。
 
+**系统能力：** SystemCapability.Graphic.Graphic2D.ColorManager.Core
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -1023,6 +1027,10 @@ public operator func ==(other: ColorSpace): Bool
 
 **功能：** 与另一个 `ColorSpace` 枚举值进行相等比较。
 
+**系统能力：** SystemCapability.Graphic.Graphic2D.ColorManager.Core
+
+**起始版本：** 22
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -1042,6 +1050,10 @@ public func toString(): String
 ```
 
 **功能：** 将[ColorSpace](#enum-colorspace)枚举值转换为字符串。
+
+**系统能力：** SystemCapability.Graphic.Graphic2D.ColorManager.Core
+
+**起始版本：** 22
 
 **返回值：**
 

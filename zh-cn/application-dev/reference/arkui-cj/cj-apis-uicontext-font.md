@@ -48,22 +48,13 @@ public func getFontByName(fontName: String): ?FontInfo
 |:----|:----|
 |?[FontInfo](#class-fontinfo)|返回字体信息，如果找不到对应字体则返回None。|
 
-**示例：**
-
-<!-- code_check_manual -->
-
-```cangjie
-let font = Font()
-let fontInfo = font.getFontByName("Arial")
-```
-
 ### func getSystemFontList()
 
 ```cangjie
 public func getSystemFontList(): Array<String>
 ```
 
-**功能：** 获取系统支持的字体列表。
+**功能：** 获取系统支持的字体列表。该接口仅在PC/2in1设备上生效，在其他设备上返回空数组。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -74,15 +65,6 @@ public func getSystemFontList(): Array<String>
 |类型|说明|
 |:----|:----|
 |Array\<String>|系统字体名称列表。|
-
-**示例：**
-
-<!-- code_check_manual -->
-
-```cangjie
-let font = Font()
-let fontList = font.getSystemFontList()
-```
 
 ### func registerFont(ResourceStr, ResourceStr)
 
@@ -111,15 +93,6 @@ public func registerFont(familyName!: ResourceStr, familySrc!: ResourceStr): Uni
   |:----|:----|
   |401|Invalid input parameter|
   |100001|Internal error.|
-
-**示例：**
-
-<!-- code_check_manual -->
-
-```cangjie
-let font = Font()
-font.registerFont(familyName: "MyFont", familySrc: "/font/MyFont.ttf")
-```
 
 ## class FontInfo
 

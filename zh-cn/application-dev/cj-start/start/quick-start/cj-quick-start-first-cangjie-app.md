@@ -18,6 +18,10 @@
 
 4. 单击 **Finish**，完成工程创建，工具会自动生成基础示例代码和相关资源。
 
+5. 若需要构建OpenHarmony应用，需要将**build-profile.json5**下的runtimeOS字段改为OpenHarmony：
+    
+    ![changeOpenharmony](../../figures/change_openharmony.png)
+
 ## 仓颉工程目录结构
 
 仓颉工程目录结构如下所示。
@@ -324,9 +328,9 @@ Project_name
 
 1. 将搭载OpenHarmony系统的真机与电脑连接。
 
-2. 真机连接成功后，进入**File > Project Structure > Project > Signing Configs**界面勾选**Support HarmonyOS**和**Automatically generate signature**，单击界面提示的**Sign In**，使用用户账号登录。等待自动签名完成后，单击**OK**即可。如下图所示：
+2. 真机连接成功后，进入**File > Project Structure > Project > Signing Configs**界面勾选**Automatically generate signature**，单击界面提示的**Sign In**，使用用户账号登录。等待自动签名完成后，单击**OK**即可。如下图所示：
 
-   ![buildSign](../../figures/buildSign.png)
+   ![buildSign](../../figures/buildSignNew.png)
 
 3. 在编辑窗口右上角的工具栏，单击![runButton](../../figures/runButton.png)按钮运行。效果如下图所示：
 

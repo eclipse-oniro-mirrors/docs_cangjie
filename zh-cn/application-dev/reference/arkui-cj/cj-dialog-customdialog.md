@@ -144,6 +144,7 @@ public class CustomDialogControllerOptions {
     public var shadow: ?ShadowOptions
     public var backgroundBlurStyle: ?BlurStyle
     public init(
+        builder!: CustomView,
         cancel!: ?VoidCallback = None,
         autoCancel!: ?Bool = None,
         alignment!: ?DialogAlignment = None,
@@ -159,11 +160,11 @@ public class CustomDialogControllerOptions {
         cornerRadius!: ?Length = None,
         isModal!: ?Bool = None,
         onWillDismiss!: ?Callback<DismissDialogAction, Unit> = None,
+        width!: ?Length = None,
+        height!: ?Length = None,
         borderWidth!: ?Length = None,
         borderColor!: ?ResourceColor = None,
         borderStyle!: ?EdgeStyles = None,
-        width!: ?Length = None,
-        height!: ?Length = None,
         shadow!: ?ShadowOptions = None,
         backgroundBlurStyle!: ?BlurStyle = None
     )
@@ -558,10 +559,11 @@ public var width: ?Length
 
 **起始版本：** 22
 
-### init(?VoidCallback, ?Bool, ?DialogAlignment, ?Offset, ?Bool, ?UInt32, ?ResourceColor, ?Rectangle, ?AnimateParam, ?AnimateParam, ?Bool, ?ResourceColor, ?Length, ?Bool, ?Callback\<DismissDialogAction,Unit>, ?Length, ?ResourceColor, ?EdgeStyles, ?Length, ?Length, ?ShadowOptions, ?BlurStyle)
+### init(?VoidCallback, ?Bool, ?DialogAlignment, ?Offset, ?Bool, ?UInt32, ?ResourceColor, ?Rectangle, ?AnimateParam, ?AnimateParam, ?Bool, ?ResourceColor, ?Length, ?Bool, ?Callback\<DismissDialogAction,Unit>, ?Length, ?Length, ?Length, ?ResourceColor, ?EdgeStyles, ?ShadowOptions, ?BlurStyle)
 
 ```cangjie
 public init(
+    builder!: CustomView,
     cancel!: ?VoidCallback = None,
     autoCancel!: ?Bool = None,
     alignment!: ?DialogAlignment = None,
@@ -577,11 +579,11 @@ public init(
     cornerRadius!: ?Length = None,
     isModal!: ?Bool = None,
     onWillDismiss!: ?Callback<DismissDialogAction, Unit> = None,
+    width!: ?Length = None,
+    height!: ?Length = None,
     borderWidth!: ?Length = None,
     borderColor!: ?ResourceColor = None,
     borderStyle!: ?EdgeStyles = None,
-    width!: ?Length = None,
-    height!: ?Length = None,
     shadow!: ?ShadowOptions = None,
     backgroundBlurStyle!: ?BlurStyle = None
 )
@@ -612,11 +614,11 @@ public init(
 |cornerRadius|?[Length](./cj-common-types.md#interface-length)|否|None| **命名参数。** 设置背板的圆角半径。初始值: 32.vp<br/>可分别设置4个圆角的半径。<br/>**说明**：自定义弹窗默认的背板圆角半径为32.vp，如果需要使用cornerRadius属性，请和[borderRadius](./cj-universal-attribute-border.md#func-borderradiustopleft-topright-bottomleft-bottomright)属性一起使用。|
 |isModal|?Bool|否|None| **命名参数。** 弹窗是否为模态窗口，模态窗口有蒙层，非模态窗口无蒙层。初始值: true|
 |onWillDismiss|?[Callback](./cj-common-types.md#type-callbackt-v)\<[DismissDialogAction](./cj-dialog-actionsheet.md#class-dismissdialogaction),Unit>|否|None| **命名参数。** 交互式关闭回调函数。<br/>**说明：**<br/>1.当用户执行点击遮障层关闭、左滑/右滑、三键back、键盘ESC关闭交互操作时，如果注册该回调函数，则不会立刻关闭弹窗。在回调函数中可以通过reason得到阻拦关闭弹窗的操作类型，从而根据原因选择是否能关闭弹窗。当前组件返回的reason中，暂不支持CloseButton的枚举值。<br/>2.在onWillDismiss回调中，不能再做onWillDismiss拦截。|
+|width|?[Length](./cj-common-types.md#interface-length)|否|None| **命名参数。** 设置弹窗背板的宽度。<br/>**说明：**<br>- 弹窗宽度默认最大值：400.vp。<br/>- 百分比参数方式：弹窗参考宽度为所在窗口的宽度，在此基础上调小或调大。|
+|height|?[Length](./cj-common-types.md#interface-length)|否|None| **命名参数。** 设置弹窗背板的高度。<br/>**说明：**<br/>- 弹窗高度默认最大值：0.9 *（窗口高度 - 安全区域）。<br/>- 百分比参数方式：弹窗参考高度为（窗口高度 - 安全区域），在此基础上调小或调大。|
 |borderWidth|?[Length](./cj-common-types.md#interface-length)|否|None| **命名参数。** 设置弹窗背板的边框宽度。初始值: 0.vp<br/>可分别设置4个边框宽度。<br/> 百分比参数方式：以父元素弹窗宽的百分比来设置弹窗的边框宽度。<br/>当弹窗左边框和右边框大于弹窗宽度，弹窗上边框和下边框大于弹窗高度，显示可能不符合预期。|
 |borderColor|?[ResourceColor](./cj-common-types.md#interface-resourcecolor)|否|None| **命名参数。** 设置弹窗背板的边框颜色。初始值: Color.Black<br/>如果使用borderColor属性，需要和borderWidth属性一起使用。|
 |borderStyle|?[EdgeStyles](./cj-common-types.md#class-edgestyles)|否|None| **命名参数。** 设置弹窗背板的边框样式。初始值: EdgeStyles()<br/>如果使用borderStyle属性，需要和borderWidth属性一起使用。|
-|width|?[Length](./cj-common-types.md#interface-length)|否|None| **命名参数。** 设置弹窗背板的宽度。<br/>**说明：**<br>- 弹窗宽度默认最大值：400.vp。<br/>- 百分比参数方式：弹窗参考宽度为所在窗口的宽度，在此基础上调小或调大。|
-|height|?[Length](./cj-common-types.md#interface-length)|否|None| **命名参数。** 设置弹窗背板的高度。<br/>**说明：**<br/>- 弹窗高度默认最大值：0.9 *（窗口高度 - 安全区域）。<br/>- 百分比参数方式：弹窗参考高度为（窗口高度 - 安全区域），在此基础上调小或调大。|
 |shadow|?[ShadowOptions](./cj-common-types.md#class-shadowoptions)|否|None| **命名参数。** 设置弹窗背板的阴影。 <br/> 当设备为2in1时，默认场景下获焦阴影值为ShadowStyle.OuterFloatingMD，失焦为ShadowStyle.OuterFloatingSM|
 |backgroundBlurStyle|?[BlurStyle](./cj-common-types.md#enum-blurstyle)|否|None| **命名参数。** 弹窗背板模糊材质。 初始值: BlurStyle.ComponentUltraThick<br/>**说明：** <br/>设置为BlurStyle.None即可关闭背景虚化。当设置了backgroundBlurStyle为非None值时，则不要设置backgroundColor，否则颜色显示将不符合预期效果。|
 

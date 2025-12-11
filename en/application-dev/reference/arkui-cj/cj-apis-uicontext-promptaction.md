@@ -77,7 +77,7 @@ public func showActionMenu(option: ActionMenuOptions, callback!: ShowActionMenuC
 
 | Parameter | Type | Required | Default | Description |
 |:---------|:-----|:--------|:--------|:------------|
-| option | [ActionMenuOptions](#class-actionmenuoptions) | Yes | - | **Named parameter.** Action menu options. |
+| option | [ActionMenuOptions](#class-actionmenuoptions) | Yes | - | Action menu options. |
 | callback | [ShowActionMenuCallBack](#type-showactionmenucallback) | No | defaultCallback | **Named parameter.** Callback for returning action menu response results. |
 
 **Exceptions:**
@@ -104,7 +104,7 @@ public func showDialog(option: ShowDialogOptions, callback!: ShowDialogCallBack 
 
 | Parameter | Type | Required | Default | Description |
 |:---------|:-----|:--------|:--------|:------------|
-| option | [ShowDialogOptions](#class-showdialogoptions) | Yes | - | **Named parameter.** Dialog options. |
+| option | [ShowDialogOptions](#class-showdialogoptions) | Yes | - | Dialog options. |
 | callback | [ShowDialogCallBack](#type-showdialogcallback) | No | defaultCallback | **Named parameter.** Callback for returning dialog response results. |
 
 **Exceptions:**
@@ -640,7 +640,7 @@ public var text: ResourceStr
 
 **Function:** Display text on the button.
 
-**Type:** [ResourceColor](./cj-common-types.md#interface-resourcecolor)
+**Type:** [ResourceStr](./cj-common-types.md#interface-resourcestr)
 
 **Access:** Read-write
 
@@ -1329,7 +1329,7 @@ public var title: ResourceStr
 
 **Since:** 22
 
-### init(ResourceStr, ResourceStr, Array<ButtonInfo>, DialogAlignment, Offset, Rectangle, Bool, Bool, Color, BlurStyle, ?ShadowOptions, Bool, HoverModeAreaType)
+### init(ResourceStr, ResourceStr, Array\<ButtonInfo\>, DialogAlignment, Offset, Rectangle, Bool, Bool, Color, BlurStyle, ?ShadowOptions, Bool, HoverModeAreaType)
 
 ```cangjie
 public init(
@@ -1928,7 +1928,11 @@ public type ShowDialogCallBack = AsyncCallback<Int32>
 
 **Function:** ShowDialogCallBack callback function.
 
-**Type:** AsyncCallback\<Int32>
+**Type:** [AsyncCallback\<Int32>](../arkinterop/cj-api-business_exception.md#type-asynccallback)
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 22
 
 ## type ShowActionMenuCallBack
 
@@ -1938,4 +1942,8 @@ public type ShowActionMenuCallBack = AsyncCallback<Int32>
 
 **Function:** ShowActionMenuCallBack callback function.
 
-**Type:** AsyncCallback\<Int32>
+**Type:** [AsyncCallback\<Int32>](../arkinterop/cj-api-business_exception.md#type-asynccallback)
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 22
