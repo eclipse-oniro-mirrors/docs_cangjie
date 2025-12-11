@@ -58,37 +58,56 @@ import kit.ArkUI.*
 import ohos.arkui.ui_context.*  
 import ohos.arkui.state_macro_manage.*  
 
-@Entry  
-@Component  
-class EntryView{  
-    func build(){  
-        Row(){  
-            Blank().height(20.percent)  
-            Button(){  
-                Text("Default Toast")  
-                .fontSize(20)  
-                .fontWeight(FontWeight.Bold)  
+@Entry
+@Component
+class EntryView{
+    func build(){
+        Column(){
+            Blank().height(10.percent)
+            Button(){
+                Text("Default Toast")
+                .fontSize(20)
+                .fontWeight(FontWeight.Bold)
+                .fontColor(Color.White)
+            }.onClick({
+                evt =>
+                getUIContext().getPromptAction().showToast(
+                        ShowToastOptions(
+                            message: "OK, I'm a Default Toast",
+                            duration: 2000,
+                            bottom: 72.percent,
+                            showMode: ToastShowMode.Default
+                        )
+                    )
+            })
+            .align(Alignment.Center)
+            .backgroundColor(0x0a59f7)
+            .width(80.percent)
+            .height(30.vp)
 
-            }.onClick({  
-                evt =>  
-                getUIContext().getPromptAction().showToast(  
-                        ShowToastOptions(message: "OK, I'm a Default Toast", duration: 2000,  
-                        bottom: 80.vp, showMode: ToastShowMode.Default))  
-            }).align(Alignment.Center)  
-
-            Button(){  
-                Text("TopMost Toast")  
-                .fontSize(20)  
-                .fontWeight(FontWeight.Bold)  
-            }.onClick({  
-                evt =>  
-                getUIContext().getPromptAction().showToast(  
-                        ShowToastOptions(message: "OK, I'm a TopMost Toast", duration: 2000,  
-                        bottom: 85.vp, showMode: ToastShowMode.TopMost))  
-            })  
-        }  
-    }  
-}  
+            Blank().height(2.percent)
+            Button(){
+                Text("TopMost Toast")
+                .fontSize(20)
+                .fontWeight(FontWeight.Bold)
+                .fontColor(Color.White)
+            }.onClick({
+                evt =>
+                getUIContext().getPromptAction().showToast(
+                        ShowToastOptions(
+                          message: "OK, I'm a TopMost Toast",
+                          duration: 2000,
+                          bottom: 70.percent,
+                          showMode: ToastShowMode.TopMost
+                        )
+                    )
+            })
+            .backgroundColor(0x0a59f7)
+            .width(80.percent)
+            .height(30.vp)
+        }.size(width: 100.percent,height: 100.percent).alignItems(HorizontalAlign.Center)
+    }
+}
 ```  
 
 ![creattoast](./figures/creattoast.gif)  
@@ -100,26 +119,32 @@ Suitable for scenarios requiring brief, auto-dismissing prompts.
 <!--run-->  
 
 ```cangjie  
-package ohos_app_cangjie_entry  
+package ohos_app_cangjie_entry
 
-import kit.ArkUI.*  
-import ohos.arkui.ui_context.*  
-import ohos.arkui.state_macro_manage.*  
+import kit.ArkUI.*
+import ohos.arkui.ui_context.*
+import ohos.arkui.state_macro_manage.*
 
-@Entry  
-@Component  
-class EntryView{  
+@Entry
+@Component
+class EntryView{
 
-    func build(){  
-        Column(){  
-            Button("Show toast").fontSize(20)  
-            .onClick({  
-                    evt=>  
-                    getUIContext().getPromptAction().showToast(message: "Hello World")  
-            })  
-        }.size(width: 100.percent,height: 100.percent).justifyContent(FlexAlign.Center)  
-    }  
-}  
+    func build(){
+        Column(){
+            Button("Show toast").fontSize(20)
+            .onClick({
+                    evt=>
+                    getUIContext().getPromptAction().showToast(
+                        ShowToastOptions(
+                            message: "Hello World",
+                            bottom: 35.percent,
+                            duration: 2000
+                        )
+                    )
+            })
+        }.size(width: 100.percent,height: 100.percent).justifyContent(FlexAlign.Center)
+    }
+}
 ```  
 
 ![image](figures/UIToast1.gif)

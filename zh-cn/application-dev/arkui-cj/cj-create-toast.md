@@ -55,31 +55,50 @@ import ohos.arkui.state_macro_manage.*
 @Component
 class EntryView{
     func build(){
-        Row(){
-            Blank().height(20.percent)
+        Column(){
+            Blank().height(10.percent)
             Button(){
                 Text("Default类型Toast")
                 .fontSize(20)
                 .fontWeight(FontWeight.Bold)
-
+                .fontColor(Color.White)
             }.onClick({
                 evt =>
                 getUIContext().getPromptAction().showToast(
-                        ShowToastOptions(message: "ok，我是Default toast", duration: 2000,
-                        bottom: 80.vp, showMode: ToastShowMode.Default))
-            }).align(Alignment.Center)
+                        ShowToastOptions(
+                            message: "ok，我是Default toast",
+                            duration: 2000,
+                            bottom: 72.percent,
+                            showMode: ToastShowMode.Default
+                        )
+                    )
+            })
+            .align(Alignment.Center)
+            .backgroundColor(0x0a59f7)
+            .width(80.percent)
+            .height(30.vp)
 
+            Blank().height(2.percent)
             Button(){
                 Text("TopMost类型Toast")
                 .fontSize(20)
                 .fontWeight(FontWeight.Bold)
+                .fontColor(Color.White)
             }.onClick({
                 evt =>
                 getUIContext().getPromptAction().showToast(
-                        ShowToastOptions(message: "ok，我是TopMost toast", duration: 2000,
-                        bottom: 85.vp, showMode: ToastShowMode.TopMost))
+                        ShowToastOptions(
+                            message: "ok，我是TopMost toast",
+                            duration: 2000,
+                            bottom: 70.percent,
+                            showMode: ToastShowMode.TopMost
+                        )
+                    )
             })
-        }
+            .backgroundColor(0x0a59f7)
+            .width(80.percent)
+            .height(30.vp)
+        }.size(width: 100.percent,height: 100.percent).alignItems(HorizontalAlign.Center)
     }
 }
 ```
@@ -108,7 +127,13 @@ class EntryView{
             Button("Show toast").fontSize(20)
             .onClick({
                     evt=>
-                    getUIContext().getPromptAction().showToast(ShowToastOptions(message: "Hello Word",duration: 2000))
+                    getUIContext().getPromptAction().showToast(
+                        ShowToastOptions(
+                            message: "Hello World",
+                            bottom: 35.percent,
+                            duration: 2000
+                        )
+                    )
             })
         }.size(width: 100.percent,height: 100.percent).justifyContent(FlexAlign.Center)
     }
