@@ -526,7 +526,7 @@ public init(encryptionKey: Array<UInt8>, iterationCount!: Int32 = 10000,
 |encryptionAlgo|[EncryptionAlgo](#enum-encryptionalgo)|否|EncryptionAlgo.Aes256Gcm|指定数据库加解密使用的加密算法。如不指定，默认值为Aes256Gcm。|
 |hmacAlgo|[HmacAlgo](#enum-hmacalgo)|否|HmacAlgo.Sha256|指定数据库加解密使用的HMAC算法。如不指定，默认值为Sha256。|
 |kdfAlgo|?[KdfAlgo](#enum-kdfalgo)|否|None|指定数据库加解密使用的PBKDF2算法。如不指定，默认使用和HMAC算法相等的算法。|
-|cryptoPageSize|UInt32|否|1024|指定数据库加解密使用的页大小。如不指定，默认值为1024字节。|
+|cryptoPageSize|UInt32|否|1024|整数类型，指定数据库加解密使用的页大小，单位为字节。如不指定，默认值为1024字节。|
 
 ## class RdbPredicates
 
