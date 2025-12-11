@@ -4,7 +4,7 @@
 
 * **自定义弹出框：** 开发者需要根据使用场景，传入自定义组件填充在弹出框中实现自定义的弹出框内容。主要包括基础自定义弹出框 (CustomDialog)、不依赖UI组件的自定义弹出框 (openCustomDialog)。
 
-* **固定样式弹出框：** 开发者可使用固定样式弹出框，指定需要显示的文本内容和按钮操作，完成简单的交互效果。主要包括警告弹窗 (AlertDialog)、列表选择弹窗 (ActionSheet)、选择器弹窗 (PickerDialog)、对话框 (showDialog)、操作菜单 (showActionMenu)。
+* **固定样式弹出框：** 开发者可使用固定样式弹出框，指定需要显示的文本内容和按钮操作，完成简单的交互效果。主要包括警告弹窗 (AlertDialog)、列表选择弹窗 (ActionSheet)、对话框 (showDialog)、操作菜单 (showActionMenu)。
 
 ## 使用场景
 
@@ -14,6 +14,5 @@
 |[基础自定义弹出框 (CustomDialog)](cj-common-components-custom-dialog.md) | 当用户需要自定义弹出框内的组件和内容时使用。 |
 | [警告弹窗 (AlertDialog)](cj-fixes-style-dialog.md#警告弹窗-alertdialog) | 固定样式，通常用来展示用户当前需要或必须关注的信息或操作。如用户操作一个敏感行为时响应一个二次确认的弹出框。 |
 | [列表选择弹窗 (ActionSheet)](cj-fixes-style-dialog.md#列表选择弹窗-actionsheet) | 固定样式，当用户需要关注或确认的信息存在列表选择时使用。 |
-|[选择器弹窗 (PickerDialog)](cj-fixes-style-dialog.md#选择器弹窗-pickerdialog) | 固定样式，当用户需要在弹出框内选择日期、时间和文本时使用。 |
 | [对话框 (showDialog)](cj-fixes-style-dialog.md#对话框-showdialog) | 固定样式，当用户需要处理弹出框响应后的异步返回结果时调用。 |
 | [操作菜单 (showActionMenu)](cj-fixes-style-dialog.md#操作菜单-showactionmenu) | 固定样式，当用户需要处理操作菜单响应后的异步返回结果时调用。 |

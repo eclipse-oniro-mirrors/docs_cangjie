@@ -4,7 +4,7 @@ A popup is a modal window typically used to temporarily display information requ
 
 * **Custom Popup:** Developers need to pass custom components to fill the popup based on usage scenarios to achieve customized popup content. This mainly includes the basic custom popup (CustomDialog) and the UI component-independent custom popup (openCustomDialog).  
 
-* **Fixed-Style Popup:** Developers can use fixed-style popups to specify the text content and button operations to be displayed, achieving simple interactive effects. This mainly includes the alert dialog (AlertDialog), list selection popup (ActionSheet), picker popup (PickerDialog), dialog (showDialog), and action menu (showActionMenu).  
+* **Fixed-Style Popup:** Developers can use fixed-style popups to specify the text content and button operations to be displayed, achieving simple interactive effects. This mainly includes the alert dialog (AlertDialog), list selection popup (ActionSheet), dialog (showDialog), and action menu (showActionMenu).  
 
 ## Usage Scenarios  
 
@@ -14,6 +14,5 @@ A popup is a modal window typically used to temporarily display information requ
 | [Basic Custom Popup (CustomDialog)](cj-common-components-custom-dialog.md) | Used when users need to customize the components and content within the popup. |  
 | [Alert Dialog (AlertDialog)](cj-fixes-style-dialog.md#警告弹窗-alertdialog) | Fixed-style, typically used to display information or operations that users currently need or must pay attention to. For example, responding with a confirmation popup when a user performs a sensitive action. |  
 | [List Selection Popup (ActionSheet)](cj-fixes-style-dialog.md#列表选择弹窗-actionsheet) | Fixed-style, used when users need to select from a list of options for attention or confirmation. |  
-| [Picker Popup (PickerDialog)](cj-fixes-style-dialog.md#选择器弹窗-pickerdialog) | Fixed-style, used when users need to select dates, times, or text within the popup. |  
 | [Dialog (showDialog)](cj-fixes-style-dialog.md#对话框-showdialog) | Fixed-style, called when users need to handle asynchronous return results after responding to the popup. |  
 | [Action Menu (showActionMenu)](cj-fixes-style-dialog.md#操作菜单-showactionmenu) | Fixed-style, called when users need to handle asynchronous return results after responding to the action menu. |
