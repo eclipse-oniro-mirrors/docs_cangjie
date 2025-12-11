@@ -4,7 +4,7 @@ The API reference is primarily intended for developers to consult various API de
 
 ## Version Notes
 
-The version number from which a component or interface begins to be supported will be indicated in the corresponding description, e.g., **Initial Version:** 19.
+The version number from which a component or interface begins to be supported will be indicated in the corresponding description, e.g., **Initial Version:** 22.
 
 ## System Capability Description
 
