@@ -16,11 +16,12 @@
 
    ![cangjieConfig](../../figures/cangjieConfig.png)
 
-4. 单击 **Finish**，完成工程创建，工具会自动生成基础示例代码和相关资源。
+4. 单击 **Finish**，完成工程创建，工具会自动生成基础示例代码和相关资源。<!--Del-->
 
 5. 若需要构建OpenHarmony应用，需要将**build-profile.json5**下的runtimeOS字段改为OpenHarmony：
-    
+
     ![changeOpenharmony](../../figures/change_openharmony.png)
+<!--DelEnd-->
 
 ## 仓颉工程目录结构
 
