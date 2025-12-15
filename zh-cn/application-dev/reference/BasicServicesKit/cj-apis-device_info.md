@@ -489,7 +489,7 @@ public static prop osFullName: String
 
 **功能：** 系统版本，版本格式OpenHarmony-x.x.x.x,x为数值。
 
-示例：Openharmony-5.0.0.1
+示例：OpenHarmony-5.0.0.1
 
 **类型：** String
 

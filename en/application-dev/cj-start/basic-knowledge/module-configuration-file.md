@@ -60,16 +60,6 @@ An example to provide an overall understanding of the module.json5 configuration
         ]
       }
     ],
-    "definePermissions": [
-      {
-        "name": "ohos.abilitydemo.permission.PROVIDER",
-        "grantMode": "system_grant",
-        "availableLevel": "system_core",
-        "provisionEnable": true,
-        "distributedSceneEnable": false,
-        "label": "$string:EntryAbility_label"
-      }
-    ],
     "requestPermissions": [
       {
         "name": "ohos.abilitydemo.permission.PROVIDER",
