@@ -1001,7 +1001,7 @@ public func scrollToIndex(
     smooth!: ?Bool = None,
     align!: ?ScrollAlign = None,
     options!: ?ScrollToIndexOptions = None
-): This
+): Unit
 ```
 
 **Function:** Scrolls to the specified index, supporting additional scroll offsets.
@@ -1018,12 +1018,6 @@ public func scrollToIndex(
 | smooth | ?Bool | No | None | **Named parameter.** Whether to enable smooth scrolling. Initial value: false. |
 | align | ?[ScrollAlign](#enum-scrollalign) | No | None | **Named parameter.** Alignment method. Initial value: ScrollAlign.Start. |
 | options | ?[ScrollToIndexOptions](#class-scrolltoindexoptions) | No | None | **Named parameter.** Options for scrolling to an index. Initial value: ScrollToIndexOptions(). |
-
-**Return Value:**
-
-| Type | Description |
-|:---|:---|
-| This | Returns itself. |
 
 #### func isAtEnd()
 

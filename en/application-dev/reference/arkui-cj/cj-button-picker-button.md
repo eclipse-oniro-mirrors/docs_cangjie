@@ -609,7 +609,7 @@ public enum ButtonType <: Equatable<ButtonType> {
     | Normal
     | Capsule
     | Circle
-    | RoundRectangle
+    | RoundedRectangle
     | ...
 }
 ```
@@ -660,10 +660,10 @@ Circle
 
 **Since:** 22
 
-#### RoundRectangle
+#### RoundedRectangle
 
 ```cangjie
-RoundRectangle
+RoundedRectangle
 ```
 
 **Function:** Rounded rectangle button.

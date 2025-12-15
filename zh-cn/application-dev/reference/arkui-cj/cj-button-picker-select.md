@@ -30,7 +30,7 @@ public init(options: ?Array<SelectOption>)
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|options|?Array\<[SelectOption](#class-selectoptions)>|是|-|设置下拉选项。<br>初始值：[]。|
+|options|?Array\<[SelectOption](#class-selectoption)>|是|-|设置下拉选项。<br>初始值：[]。|
 
 ## 通用属性/通用事件
 

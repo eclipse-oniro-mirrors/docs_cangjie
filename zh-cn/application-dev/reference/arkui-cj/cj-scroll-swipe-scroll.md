@@ -985,7 +985,7 @@ public func scrollToIndex(
     smooth!: ?Bool = None,
     align!: ?ScrollAlign = None,
     options!: ?ScrollToIndexOptions = None
-): This
+): Unit
 ```
 
 **功能：** 滚动到指定索引，支持设置额外的滚动偏移量。

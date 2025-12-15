@@ -83,10 +83,10 @@ func offset(x!: ?Length, y!: ?Length): T
 |:---|:---|
 | T | Returns the generic method interface type |
 
-## func alignRules(?AlignRuleOptions)
+## func alignRules(?AlignRuleOption)
 
 ```cangjie
-func alignRules(value: ?AlignRuleOptions): T
+func alignRules(value: ?AlignRuleOption): T
 ```
 
 **Function:** Sets component alignment rules.
@@ -103,7 +103,7 @@ func alignRules(value: ?AlignRuleOptions): T
 
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
-| value | ?[AlignRuleOptions](./cj-common-types.md#class-alignruleoptions) | Yes | - | Alignment rule options <br>Default: AlignRuleOptions() |
+| value | ?[AlignRuleOption](./cj-common-types.md#class-alignruleoption) | Yes | - | Alignment rule options <br>Default: AlignRuleOption() |
 
 **Return Value:**
 

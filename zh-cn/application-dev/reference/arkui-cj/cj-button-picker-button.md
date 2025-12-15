@@ -252,7 +252,7 @@ public func shape(value: ?ButtonType): This
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|value|?[ButtonType](#enum-buttontype)|是|-|按键形状类型。<br>初始值：ButtonType.RoundRectangle。|
+|value|?[ButtonType](#enum-buttontype)|是|-|按键形状类型。<br>初始值：ButtonType.RoundedRectangle。|
 
 ### func stateEffect(?Bool)
 
@@ -611,7 +611,7 @@ public enum ButtonType <: Equatable<ButtonType> {
     | Normal
     | Capsule
     | Circle
-    | RoundRectangle
+    | RoundedRectangle
     | ...
 }
 ```
@@ -662,10 +662,10 @@ Circle
 
 **起始版本：** 22
 
-#### RoundRectangle
+#### RoundedRectangle
 
 ```cangjie
-RoundRectangle
+RoundedRectangle
 ```
 
 **功能：** 圆角矩形按钮。

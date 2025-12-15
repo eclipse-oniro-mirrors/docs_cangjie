@@ -1468,86 +1468,7 @@ public var y: Float64
 
 **Since:** 22
 
-## class DragItemInfo
-
-```cangjie
-public class DragItemInfo {
-    public var pixelMap: ?PixelMap
-    public var builder: ?CustomBuilder
-    public var extraInfo: ?String
-    public init(pixelMap: ?PixelMap, builder: ?CustomBuilder, extraInfo: ?String)
-}
-```
-
-**Description:** Information about the component displayed during drag operations.
-
-**System Capability:** SystemCapability.ArkUI.ArkUI.Full
-
-**Since:** 22
-
-### var builder
-
-```cangjie
-public var builder: ?CustomBuilder
-```
-
-**Description:** Uses a custom builder for drawing. If pixelMap is set, this value is ignored.
-
-**Type:** ?[CustomBuilder](./cj-common-types.md#type-custombuilder)
-
-**Access:** Read-write
-
-**System Capability:** SystemCapability.ArkUI.ArkUI.Full
-
-**Since:** 22
-
-### var extraInfo
-
-```cangjie
-public var extraInfo: ?String
-```
-
-**Description:** Configures the description of the drag item.
-
-**Type:** ?String
-
-**Access:** Read-write
-
-**System Capability:** SystemCapability.ArkUI.ArkUI.Full
-
-**Since:** 22
-
-### var pixelMap
-
-```cangjie
-public var pixelMap: ?PixelMap
-```
-
-**Description:** Sets the image displayed during drag operations.
-
-**Type:** ?[PixelMap](../ImageKit/cj-apis-image.md#class-pixelmap)
-
-**Access:** Read-write
-
-**System Capability:** SystemCapability.ArkUI.ArkUI.Full
-
-**Since:** 22
-
-### init(PixelMap, CustomBuilder, String)
-
-```cangjie
-public init(pixelMap: ?PixelMap, builder: ?CustomBuilder, extraInfo: ?String)
-```
-
-**Description:** Creates a DragItemInfo type object.
-
-**Parameters:**
-
-| Parameter | Type | Required | Default | Description |
-|:---|:---|:---|:---|:---|
-| pixelMap | ?[PixelMap](../ImageKit/cj-apis-image.md#class-pixelmap) | Yes | - | Sets the image displayed during drag operations. |
-| builder | ?[CustomBuilder](./cj-common-types.md#type-custombuilder) | Yes | - | Uses a custom builder for drawing. If pixelMap is set, this value is ignored. |
-| extraInfo | ?String | Yes | - | Description of the drag item. |## class MouseEvent
+## class MouseEvent
 
 ```cangjie
 public class MouseEvent <: BaseEvent {
@@ -3156,10 +3077,10 @@ public init(min!: ?Int32, max!: ?Int32, expected!: ?Int32)
 | max | ?Int32 | Yes | - | **Named parameter.** Maximum frame rate value. |
 | expected | ?Int32 | Yes | - | **Named parameter.** Expected frame rate value. |
 
-## class AlignRuleOptions
+## class AlignRuleOption
 
 ```cangjie
-public class AlignRuleOptions {
+public class AlignRuleOption {
     public var left: ?HorizontalAlignParam
     public var right: ?HorizontalAlignParam
     public var middle: ?HorizontalAlignParam
@@ -3295,7 +3216,7 @@ public var bias: ?Bias
 public init(left!: ?HorizontalAlignParam = None, right!: ?HorizontalAlignParam = None, middle!: ?HorizontalAlignParam = None, top!: ?VerticalAlignParam = None, bottom!: ?VerticalAlignParam = None, center!: ?VerticalAlignParam = None, bias!: ?Bias = None)
 ```
 
-**Function:** Constructs an AlignRuleOptions object.
+**Function:** Constructs an AlignRuleOption object.
 
 **System Capability:** SystemCapability.ArkUI.ArkUI.Full
 
@@ -7981,7 +7902,7 @@ public operator func !=(other: SharedTransitionEffectType): Bool
 ```cangjie
 public enum ScrollState <: Equatable<ScrollState> {
     | Idle
-    | Scrolling
+    | Scroll
     | Fling
     | ...
 }
@@ -8009,10 +7930,10 @@ Idle
 
 **Since:** 22
 
-### Scrolling
+### Scroll
 
 ```cangjie
-Scrolling
+Scroll
 ```
 
 **Function:** Finger dragging state.

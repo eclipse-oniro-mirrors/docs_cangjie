@@ -72,12 +72,12 @@ public init(
 |direction|?[GridRowDirection](#enum-gridrowdirection)|否|Option.None| **命名参数。** 栅格布局排列方向。<br>初始值：GridRowDirection.Row|
 |child|() -> Unit|否|{=>}| **命名参数。** GridRow 容器的子组件。|
 
-### init(?Int32, ?GutterOptions, ?BreakPoints, ?GridRowDirection, () -> Unit)
+### init(?Int32, ?GutterOption, ?BreakPoints, ?GridRowDirection, () -> Unit)
 
 ```cangjie
 public init(
     columns!: ?Int32,
-    gutter!: ?GutterOptions,
+    gutter!: ?GutterOption,
     breakpoints!: ?BreakPoints = Option.None,
     direction!: ?GridRowDirection = Option.None,
     child!: () -> Unit = {=>}
@@ -95,17 +95,17 @@ public init(
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |columns|?Int32|是|-| **命名参数。** 布局列数设置。|
-|gutter|?[GutterOptions](#class-gutteroptions)|是|-| **命名参数。** 栅格布局间距。|
+|gutter|?[GutterOption](#class-gutteroption)|是|-| **命名参数。** 栅格布局间距。|
 |breakpoints|?[BreakPoints](#class-breakpoints)|否|Option.None| **命名参数。** 断点值的断点数列以及基于窗口或容器尺寸的相应参照。<br>初始值：BreakPoints()|
 |direction|?[GridRowDirection](#enum-gridrowdirection)|否|Option.None| **命名参数。** 栅格布局排列方向。<br>初始值：GridRowDirection.Row|
 |child|() -> Unit|否|{=>}| **命名参数。** GridRow 容器的子组件。|
 
-### init(?GridRowOptions, ?GutterOptions, ?BreakPoints, ?GridRowDirection, () -> Unit)
+### init(?GridRowOptions, ?GutterOption, ?BreakPoints, ?GridRowDirection, () -> Unit)
 
 ```cangjie
 public init(
     columns!: ?GridRowOptions = None,
-    gutter!: ?GutterOptions,
+    gutter!: ?GutterOption,
     breakpoints!: ?BreakPoints = Option.None,
     direction!: ?GridRowDirection = Option.None,
     child!: () -> Unit = {=>})
@@ -122,7 +122,7 @@ public init(
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |columns|?[GridRowOptions](#class-gridrowoptions)|否|None| **命名参数。** 布局列数设置。<br>初始值：GridRowOptions()。|
-|gutter|?[GutterOptions](#class-gutteroptions)|是|-| **命名参数。** 栅格布局间距。|
+|gutter|?[GutterOption](#class-gutteroption)|是|-| **命名参数。** 栅格布局间距。|
 |breakpoints|?[BreakPoints](#class-breakpoints)|否|Option.None| **命名参数。** 断点值的断点数列以及基于窗口或容器尺寸的相应参照。<br>初始值：BreakPoints()。|
 |direction|?[GridRowDirection](#enum-gridrowdirection)|否|Option.None| **命名参数。** 栅格布局排列方向。<br>初始值：GridRowDirection.Row。|
 |child|() -> Unit|否|{=>}| **命名参数。** GridRow容器的子组件。|
@@ -246,10 +246,10 @@ public init(value!: ?Array<Length> = None,
 |value|?Array\<[Length](./cj-common-types.md#interface-length)>|否|None| **命名参数。** 断点位置的单调递增数组设置<br>初始值：[320.vp, 600.vp, 840.vp]|
 |reference|?[BreakpointsReference](#enum-breakpointsreference)|否|None| **命名参数。** 断点切换参照物。<br>初始值：BreakpointsReference.WindowSize|
 
-### class GridRowSizeOptions
+### class GridRowSizeOption
 
 ```cangjie
-public class GridRowSizeOptions {
+public class GridRowSizeOption {
     public var xs: ?Length
     public var sm: ?Length
     public var md: ?Length
@@ -418,12 +418,12 @@ public init(value: ?Length)
 |:---|:---|:---|:---|:---|
 |value|?[Length](./cj-common-types.md#interface-length)|是|-|在任意栅格大小的设备上，栅格子组件占据的列数或偏移的列数。<br>初始值：0.vp|
 
-### class GutterOptions
+### class GutterOption
 
 ```cangjie
-public class GutterOptions {
+public class GutterOption {
     public init(x!: ?Length = None, y!: ?Length = None)
-    public init(x!: ?GridRowSizeOptions, y!: ?GridRowSizeOptions)
+    public init(x!: ?GridRowSizeOption, y!: ?GridRowSizeOption)
 }
 ```
 
@@ -452,10 +452,10 @@ public init(x!: ?Length = None, y!: ?Length = None)
 |x|?[Length](./cj-common-types.md#interface-length)|否|None| **命名参数。** 栅格子组件x方向的间距。<br>初始值：0.vp|
 |y|?[Length](./cj-common-types.md#interface-length)|否|None| **命名参数。** 栅格子组件y方向的间距。<br>初始值：0.vp|
 
-#### init(?GridRowSizeOptions, ?GridRowSizeOptions)
+#### init(?GridRowSizeOption, ?GridRowSizeOption)
 
 ```cangjie
-public init(x!: ?GridRowSizeOptions, y!: ?GridRowSizeOptions)
+public init(x!: ?GridRowSizeOption, y!: ?GridRowSizeOption)
 ```
 
 **功能：** 构造一个GutterOptions类型的对象。
@@ -468,8 +468,8 @@ public init(x!: ?GridRowSizeOptions, y!: ?GridRowSizeOptions)
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|x|?[GridRowSizeOptions](#class-gridrowsizeoptions)|是|-| **命名参数。** 栅格子组件x方向的间距。<br>初始值：GridRowSizeOptions()|
-|y|?[GridRowSizeOptions](#class-gridrowsizeoptions)|是|-| **命名参数。** 栅格子组件y方向的间距。<br>初始值：GridRowSizeOptions()|
+|x|?[GridRowSizeOption](#class-gridrowsizeoption)|是|-| **命名参数。** 栅格子组件x方向的间距。<br>初始值：GridRowSizeOption()|
+|y|?[GridRowSizeOption](#class-gridrowsizeoption)|是|-| **命名参数。** 栅格子组件y方向的间距。<br>初始值：GridRowSizeOption()|
 
 ### class GridRowOptions
 

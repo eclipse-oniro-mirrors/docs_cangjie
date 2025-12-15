@@ -3210,10 +3210,10 @@ public init(min!: ?Int32, max!: ?Int32, expected!: ?Int32)
 |max|?Int32|是|-|**命名参数。** 最大帧率值。|
 |expected|?Int32|是|-|**命名参数。** 期望的帧率值。|
 
-## class AlignRuleOptions
+## class AlignRuleOption
 
 ```cangjie
-public class AlignRuleOptions {
+public class AlignRuleOption {
     public var left: ?HorizontalAlignParam
     public var right: ?HorizontalAlignParam
     public var middle: ?HorizontalAlignParam
@@ -8394,7 +8394,7 @@ public operator func !=(other: SharedTransitionEffectType): Bool
 ```cangjie
 public enum ScrollState <: Equatable<ScrollState> {
     | Idle
-    | Scrolling
+    | Scroll
     | Fling
     | ...
 }
@@ -8422,10 +8422,10 @@ Idle
 
 **起始版本：** 22
 
-### Scrolling
+### Scroll
 
 ```cangjie
-Scrolling
+Scroll
 ```
 
 **功能：** 手指拖动状态

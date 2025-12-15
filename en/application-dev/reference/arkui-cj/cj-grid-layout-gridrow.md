@@ -72,12 +72,12 @@ public init(
 | direction | ?[GridRowDirection](#enum-gridrowdirection) | No | Option.None | **Named parameter.** Arrangement direction of the grid layout.<br>Initial value: GridRowDirection.Row |
 | child | () -> Unit | No | {=>} | **Named parameter.** Child components of the GridRow container. |
 
-### init(?Int32, ?GutterOptions, ?BreakPoints, ?GridRowDirection, () -> Unit)
+### init(?Int32, ?GutterOption, ?BreakPoints, ?GridRowDirection, () -> Unit)
 
 ```cangjie
 public init(
     columns!: ?Int32,
-    gutter!: ?GutterOptions,
+    gutter!: ?GutterOption,
     breakpoints!: ?BreakPoints = Option.None,
     direction!: ?GridRowDirection = Option.None,
     child!: () -> Unit = {=>}
@@ -95,17 +95,17 @@ public init(
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
 | columns | ?Int32 | Yes | - | **Named parameter.** Sets the number of layout columns.<br>Initial value: 12 |
-| gutter | ?[GutterOptions](#class-gutteroptions) | Yes | - | **Named parameter.** Spacing between grid layouts. |
+| gutter | ?[GutterOption](#class-gutteroption) | Yes | - | **Named parameter.** Spacing between grid layouts. |
 | breakpoints | ?[BreakPoints](#class-breakpoints) | No | Option.None | **Named parameter.** Breakpoint sequence for breakpoint values and corresponding references based on window or container size.<br>Initial value: BreakPoints() |
 | direction | ?[GridRowDirection](#enum-gridrowdirection) | No | Option.None | **Named parameter.** Arrangement direction of the grid layout.<br>Initial value: GridRowDirection.Row |
 | child | () -> Unit | No | {=>} | **Named parameter.** Child components of the GridRow container. |
 
-### init(?GridRowOptions, ?GutterOptions, ?BreakPoints, ?GridRowDirection, () -> Unit)
+### init(?GridRowOptions, ?GutterOption, ?BreakPoints, ?GridRowDirection, () -> Unit)
 
 ```cangjie
 public init(
     columns!: ?GridRowOptions = None,
-    gutter!: ?GutterOptions,
+    gutter!: ?GutterOption,
     breakpoints!: ?BreakPoints = Option.None,
     direction!: ?GridRowDirection = Option.None,
     child!: () -> Unit = {=>})
@@ -122,7 +122,7 @@ public init(
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
 | columns | ?[GridRowOptions](#class-gridrowoptions) | No | None | **Named parameter.** Sets the number of layout columns.<br>Initial value: GridRowOptions(). |
-| gutter | ?[GutterOptions](#class-gutteroptions) | Yes | - | **Named parameter.** Spacing between grid layouts. |
+| gutter | ?[GutterOption](#class-gutteroption) | Yes | - | **Named parameter.** Spacing between grid layouts. |
 | breakpoints | ?[BreakPoints](#class-breakpoints) | No | Option.None | **Named parameter.** Breakpoint sequence for breakpoint values and corresponding references based on window or container size.<br>Initial value: BreakPoints(). |
 | direction | ?[GridRowDirection](#enum-gridrowdirection) | No | Option.None | **Named parameter.** Arrangement direction of the grid layout.<br>Initial value: GridRowDirection.Row. |
 | child | () -> Unit | No | {=>} | **Named parameter.** Child components of the GridRow container. |
@@ -246,10 +246,10 @@ public init(value!: ?Array<Length> = None,
 | value | ?Array\<[Length](./cj-common-types.md#interface-length)> | No | None | **Named parameter.** Sets a monotonically increasing array of breakpoint positions.<br>Initial value: [320.vp, 600.vp, 840.vp] |
 | reference | ?[BreakpointsReference](#enum-breakpointsreference) | No | None | **Named parameter.** Reference for breakpoint switching.<br>Initial value: BreakpointsReference.WindowSize |
 
-### class GridRowSizeOptions
+### class GridRowSizeOption
 
 ```cangjie
-public class GridRowSizeOptions {
+public class GridRowSizeOption {
     public var xs: ?Length
     public var sm: ?Length
     public var md: ?Length
@@ -383,7 +383,7 @@ public init(
 )
 ```
 
-**Function:** Constructs a GridRowSizeOptions object.
+**Function:** Constructs a GridRowSizeOption object.
 
 **System Capability:** SystemCapability.ArkUI.ArkUI.Full
 
@@ -406,7 +406,7 @@ public init(
 public init(value: ?Length)
 ```
 
-**Function:** Constructs a GridRowSizeOptions object.
+**Function:** Constructs a GridRowSizeOption object.
 
 **System Capability:** SystemCapability.ArkUI.ArkUI.Full
 
@@ -416,12 +416,14 @@ public init(value: ?Length)
 
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
-| value | ?[Length](./cj-common-types.md#interface-length) | Yes | - | Number of columns occupied or offset by grid child components on devices of any grid size.<br>Initial value: 0.vp |### class GutterOptions
+| value | ?[Length](./cj-common-types.md#interface-length) | Yes | - | Number of columns occupied or offset by grid child components on devices of any grid size.<br>Initial value: 0.vp |
+
+### class GutterOption
 
 ```cangjie
-public class GutterOptions {
+public class GutterOption {
     public init(x!: ?Length = None, y!: ?Length = None)
-    public init(x!: ?GridRowSizeOptions, y!: ?GridRowSizeOptions)
+    public init(x!: ?GridRowSizeOption, y!: ?GridRowSizeOption)
 }
 ```
 
@@ -437,7 +439,7 @@ public class GutterOptions {
 public init(x!: ?Length = None, y!: ?Length = None)
 ```
 
-**Function:** Constructs a GutterOptions object.
+**Function:** Constructs a GutterOption object.
 
 **System Capability:** SystemCapability.ArkUI.ArkUI.Full
 
@@ -450,13 +452,13 @@ public init(x!: ?Length = None, y!: ?Length = None)
 | x | ?[Length](./cj-common-types.md#interface-length) | No | None | **Named parameter.** Spacing of grid subcomponents in the x-direction.<br>Initial value: 0.vp |
 | y | ?[Length](./cj-common-types.md#interface-length) | No | None | **Named parameter.** Spacing of grid subcomponents in the y-direction.<br>Initial value: 0.vp |
 
-#### init(?GridRowSizeOptions, ?GridRowSizeOptions)
+#### init(?GridRowSizeOption, ?GridRowSizeOption)
 
 ```cangjie
-public init(x!: ?GridRowSizeOptions, y!: ?GridRowSizeOptions)
+public init(x!: ?GridRowSizeOption, y!: ?GridRowSizeOption)
 ```
 
-**Function:** Constructs a GutterOptions object.
+**Function:** Constructs a GutterOption object.
 
 **System Capability:** SystemCapability.ArkUI.ArkUI.Full
 
@@ -466,8 +468,8 @@ public init(x!: ?GridRowSizeOptions, y!: ?GridRowSizeOptions)
 
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
-| x | ?[GridRowSizeOptions](#class-gridrowsizeoptions) | No | None | **Named parameter.** Spacing of grid subcomponents in the x-direction.<br>Initial value: GridRowSizeOptions() |
-| y | ?[GridRowSizeOptions](#class-gridrowsizeoptions) | No | None | **Named parameter.** Spacing of grid subcomponents in the y-direction.<br>Initial value: GridRowSizeOptions() |
+| x | ?[GridRowSizeOption](#class-gridrowsizeoption) | No | None | **Named parameter.** Spacing of grid subcomponents in the x-direction.<br>Initial value: GridRowSizeOption() |
+| y | ?[GridRowSizeOption](#class-gridrowsizeoption) | No | None | **Named parameter.** Spacing of grid subcomponents in the y-direction.<br>Initial value: GridRowSizeOption() |
 
 ### class GridRowOptions
 

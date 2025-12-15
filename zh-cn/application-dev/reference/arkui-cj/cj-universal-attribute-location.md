@@ -83,10 +83,10 @@ func offset(x!: ?Length, y!: ?Length): T
 |:---|:---|
 |T|返回通用方法接口类型|
 
-## func alignRules(?AlignRuleOptions)
+## func alignRules(?AlignRuleOption)
 
 ```cangjie
-func alignRules(value: ?AlignRuleOptions): T
+func alignRules(value: ?AlignRuleOption): T
 ```
 
 **功能：** 设置组件的对齐规则。
@@ -103,7 +103,7 @@ func alignRules(value: ?AlignRuleOptions): T
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|value|?[AlignRuleOptions](./cj-common-types.md#class-alignruleoptions)|是|-|对齐规则选项<br>初始值：AlignRuleOptions()。|
+|value|?[AlignRuleOption](./cj-common-types.md#class-alignruleoption)|是|-|对齐规则选项<br>初始值：AlignRuleOption()。|
 
 **返回值：**
 
