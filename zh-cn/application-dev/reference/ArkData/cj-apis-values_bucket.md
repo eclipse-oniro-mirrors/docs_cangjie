@@ -16,6 +16,7 @@ public enum VBValueType {
     | Double(Float64)
     | StringValue(String)
     | Boolean(Bool)
+    | ...
 }
 ```
 

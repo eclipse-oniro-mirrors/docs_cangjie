@@ -35,7 +35,7 @@ public class CommonEventPublishData {
         subscriberPermissions!: Array<String> = Array<String>(),
         isOrdered!: Bool = false,
         isSticky!: Bool = false,
-        parameters!: HashMap<String, ValuCommonEventValueTypeeType> = HashMap<String, CommonEventValueType>()
+        parameters!: HashMap<String, CommonEventValueType> = HashMap<String, CommonEventValueType>()
     )
 }
 ```

@@ -2949,7 +2949,7 @@ try {
 ### func createPhotoOutput(?Profile)
 
 ```cangjie
-public func createPhotoOutput(?Profile = None): PhotoOutput
+public func createPhotoOutput(profile!: ?Profile = None): PhotoOutput
 ```
 
 **功能：** 创建拍照输出对象。
@@ -4601,7 +4601,7 @@ public init(
 ## class PhotoOutput
 
 ```cangjie
-public class PhotoOutput CameraOutput {}
+public class PhotoOutput <: CameraOutput {}
 ```
 
 **功能：** 拍照会话中使用的输出信息。
@@ -5915,7 +5915,7 @@ try {
 ## class PhotoSession
 
 ```cangjie
-public class PhotoSession  Session & Flash & AutoExposure & Focus & Zoom & ColorManagement {}
+public class PhotoSession <: Session & Flash & AutoExposure & Focus & Zoom & ColorManagement {}
 ```
 
 **功能：** 普通拍照模式会话类，提供了对闪光灯、曝光、白平衡、对焦、变焦、色彩空间及微距的操作。
@@ -6451,7 +6451,7 @@ public init(x: Float64, y: Float64)
 ## class PreviewOutput
 
 ```cangjie
-public class PreviewOutput  CameraOutput {}
+public class PreviewOutput <: CameraOutput {}
 ```
 
 **功能：** 预览输出类。
@@ -8018,7 +8018,7 @@ public let frameRateRange: FrameRateRange
 ## class VideoSession
 
 ```cangjie
-public class VideoSession  Session & Flash & AutoExposure & Focus & Zoom & Stabilization & ColorManagement {}
+public class VideoSession <: Session & Flash & AutoExposure & Focus & Zoom & Stabilization & ColorManagement {}
 ```
 
 **功能：** 普通录像模式会话类，提供了对闪光灯、曝光、白平衡、对焦、变焦、视频防抖、色彩空间、微距及控制器的操作。
@@ -8804,12 +8804,12 @@ public operator func ==(other: CameraEvents): Bool
 
 ```cangjie
 public enum CameraFormat {
+    | CameraFormatRgba8888
+    | CameraFormatYuv420Sp
+    | CameraFormatJpeg
     | CameraFormatYcbcrP010
     | CameraFormatYcrcbP010
     | CameraFormatHeic
-    | CameraFormatJpeg
-    | CameraFormatYuv420Sp
-    | CameraFormatRgba8888
     | ...
 }
 ```
@@ -8819,11 +8819,6 @@ public enum CameraFormat {
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **起始版本：** 22
-
-**父类型：**
-
-- Equatable\<CameraFormat>
-- ToString
 
 ### CameraFormatHeic
 

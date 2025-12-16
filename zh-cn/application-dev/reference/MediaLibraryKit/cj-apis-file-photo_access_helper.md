@@ -1309,7 +1309,7 @@ try {
 ## class MediaAssetChangeRequest
 
 ```cangjie
-public class MediaAssetChangeRequest <: & MediaChangeRequest {
+public class MediaAssetChangeRequest <: MediaChangeRequest {
     public init(asset: PhotoAsset)
 }
 ```
@@ -3285,7 +3285,7 @@ public var deliveryMode: DeliveryMode
 ## enum AlbumKeys
 
 ```cangjie
-public enum AlbumKeys <: ToString & Equatable<AlbumKeys> {
+public enum AlbumKeys <: ToString {
     | Uri
     | AlbumName
     | ...
@@ -3301,7 +3301,6 @@ public enum AlbumKeys <: ToString & Equatable<AlbumKeys> {
 **父类型：**
 
 - ToString
-- Equatable\<AlbumKeys>
 
 ### AlbumName
 
@@ -3657,7 +3656,7 @@ public func toString(): String
 ## enum DefaultChangeUri
 
 ```cangjie
-public enum DefaultChangeUri <: ToString & Equatable<DefaultChangeUri> {
+public enum DefaultChangeUri <: ToString {
     | DefaultPhotoUri
     | DefaultAlbumUri
     | ...
@@ -3673,7 +3672,6 @@ public enum DefaultChangeUri <: ToString & Equatable<DefaultChangeUri> {
 **父类型：**
 
 - ToString
-- Equatable\<DefaultChangeUri>
 
 ### DefaultAlbumUri
 
@@ -4007,6 +4005,7 @@ public enum MemberType {
     | Int64Value(Int64)
     | StringValue(String)
     | BoolValue(Bool)
+    | ...
 }
 ```
 
@@ -4205,7 +4204,7 @@ public func toString(): String
 ## enum PhotoKeys
 
 ```cangjie
-public enum PhotoKeys <: ToString & Equatable<PhotoKeys> {
+public enum PhotoKeys <: ToString {
     | Uri
     | PhotoType
     | DisplayName
@@ -4240,7 +4239,6 @@ public enum PhotoKeys <: ToString & Equatable<PhotoKeys> {
 **父类型：**
 
 - ToString
-- Equatable\<PhotoKeys>
 
 ### BurstKey
 
@@ -4699,7 +4697,7 @@ public func toString(): String
 ## enum PhotoType
 
 ```cangjie
-public enum PhotoType <: Equatable<PhotoType> & ToString {
+public enum PhotoType {
     | Image
     | Video
 }
@@ -4710,11 +4708,6 @@ public enum PhotoType <: Equatable<PhotoType> & ToString {
 **系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
 
 **起始版本：** 22
-
-**父类型：**
-
-- Equatable\<PhotoType>
-- ToString
 
 ### Image
 

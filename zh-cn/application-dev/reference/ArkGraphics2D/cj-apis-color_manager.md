@@ -456,7 +456,7 @@ public init(redX: Float32, redY: Float32, greenX: Float32, greenY: Float32, blue
 ## enum ColorSpace
 
 ```cangjie
-public enum ColorSpace <: Equatable<ColorSpace> & ToString {
+public enum ColorSpace {
     | Unknown
     | AdobeRgb1998
     | DciP3
@@ -497,11 +497,6 @@ public enum ColorSpace <: Equatable<ColorSpace> & ToString {
 **系统能力：** SystemCapability.Graphic.Graphic2D.ColorManager.Core
 
 **起始版本：** 22
-
-**父类型：**
-
-- Equatable\<ColorSpace>
-- ToString
 
 ### AdobeRgb1998
 

@@ -607,11 +607,11 @@ public init(key: String, value: KVValueType)
 
 ```cangjie
 public class FieldNode {
-    public var nullable: Bool
     public var default: String
-    public var type_: Int32
+    public var nullable: Bool
+    public var nodeType: Int32
 
-    public init(name: String, nullable: Bool, default: String, type_: Int32)
+    public init(name: String, nullable: Bool, default: String, nodeType: Int32)
 }
 ```
 
@@ -897,8 +897,8 @@ try {
 
 ```cangjie
 public class KVManagerConfig {
-    public var context: BaseContext
     public var bundleName: String
+    public var context: BaseContext
 
     public init(context: BaseContext, bundleName: String)
 }

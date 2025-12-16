@@ -4173,7 +4173,7 @@ public class StoreConfig {
         customDir!: String = "", rootDir!: String = "",
         autoCleanDirtyData!: Bool = true, allowRebuild!: Bool = false,
         isReadOnly!: Bool = false, pluginLibs!: Array<String> = Array<String>(),
-        cryptoParam!: CryptoParam, vector!: Bool = false,
+        cryptoParam!: CryptoParam([]), vector!: Bool = false,
         tokenizer!: Tokenizer = Tokenizer.NoneTokenizer, persist!: Bool = true,
         enableSemanticIndex!: Bool = false)
 }

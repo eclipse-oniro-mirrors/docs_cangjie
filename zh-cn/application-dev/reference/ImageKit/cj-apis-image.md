@@ -610,6 +610,7 @@ public let rowStride: Int32
 
 ```cangjie
 public class DecodingOptions {
+    public var index: UInt32
     public var sampleSize: UInt32
     public var rotate: UInt32
     public var editable: Bool
@@ -2632,7 +2633,7 @@ public class PackingOption {
     public var bufferSize: UInt64
     public var desiredDynamicRange: PackingDynamicRange
     public var needsPackProperties: Bool
-    public init(format: String, quality: UInt8, bufferSize!: UInt64 = 25  * 1024  * 1024,
+    public init(format: String, quality: UInt8, bufferSize!: UInt64 = 0,
         desiredDynamicRange!: PackingDynamicRange = Sdr, needsPackProperties!: Bool = false)
 }
 ```
@@ -5011,7 +5012,7 @@ public func toString(): String
 ## enum PropertyKey
 
 ```cangjie
-public enum PropertyKey <: ToString & Equatable<PropertyKey> {
+public enum PropertyKey <: ToString {
     | ImageWidth
     | ImageLength
     | BitsPerSample
@@ -5080,7 +5081,6 @@ public enum PropertyKey <: ToString & Equatable<PropertyKey> {
 **父类型：**
 
 - ToString
-- Equatable\<PropertyKey>
 
 ### ApertureValue
 

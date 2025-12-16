@@ -3111,7 +3111,7 @@ try {
 ## class GattPermissions
 
 ```cangjie
-public class GattPermissions <: Equatable<GattPermissions> {
+public class GattPermissions {
     public var read: Bool
     public var readEncrypted: Bool
     public var readEncryptedMitm: Bool
@@ -3138,10 +3138,6 @@ public class GattPermissions <: Equatable<GattPermissions> {
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
 **起始版本：** 22
-
-**父类型：**
-
-- Equatable\<GattPermissions>
 
 ### var read
 
@@ -4642,9 +4638,9 @@ public class ScanFilter {
     public var deviceId: String
     public var name: String
     public var serviceUUID: String
-    public var serviceUuidMask: String
-    public var serviceSolicitationUuid: String
-    public var serviceSolicitationUuidMask: String
+    public var serviceUUIDMask: String
+    public var serviceSolicitationUUID: String
+    public var serviceSolicitationUUIDMask: String
     public var serviceData: Array<Byte>
     public var serviceDataMask: Array<Byte>
     public var manufactureId: UInt16

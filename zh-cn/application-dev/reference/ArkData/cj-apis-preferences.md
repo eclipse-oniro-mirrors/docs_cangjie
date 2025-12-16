@@ -954,6 +954,7 @@ try {
 public enum PreferencesEvent {
     | PreferencesChange
     | PreferencesMultiProcessChange
+    | ...
 }
 ```
 
@@ -993,6 +994,7 @@ PreferencesMultiProcessChange
 public enum StorageType {
     | Xml
     | Gskv
+    | ...
 }
 ```
 
@@ -1051,6 +1053,7 @@ public enum PreferencesValueType {
     | BoolArray(Array<Bool>)
     | DoubleArray(Array<Float64>)
     | StringArray(Array<String>)
+    | ...
 }
 ```
 

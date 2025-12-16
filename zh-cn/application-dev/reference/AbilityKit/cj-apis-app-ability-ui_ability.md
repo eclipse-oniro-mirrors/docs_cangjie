@@ -457,7 +457,7 @@ class MyUIAbility6 <: UIAbility {
 ### func toJSValue(JSContext)
 
 ```cangjie
-func toJSValue(context: JSContext): JSValue
+public func toJSValue(context: JSContext): JSValue
 ```
 
 **功能：** 将仓颉对象转换成[JSValue](../arkinterop/cj-apis-ark_interop.md#struct-jsvalue)。

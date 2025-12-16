@@ -322,7 +322,7 @@ try {
 ## func finishSession(HuksHandleId, HuksOptions, Bytes)
 
 ```cangjie
-public func finishSession(handle: HuksHandleId, options: HuksOptions, token!: Bytes): Option<Bytes>
+public func finishSession(handle: HuksHandleId, options: HuksOptions, token!: Bytes = Bytes<UInt8>()): Option<Bytes>
 ```
 
 **功能：** finishSession操作密钥接口。[security_huks.initSession](#func-initsessionstring-huksoptions)、[security_huks.updateSession](#func-updatesessionhukshandleid-huksoptions-bytes)、[security_huks.finishSession](#func-finishsessionhukshandleid-huksoptions-bytes)为三段式接口，需要一起使用。
@@ -837,7 +837,7 @@ try {
 ## func updateSession(HuksHandleId, HuksOptions, Bytes)
 
 ```cangjie
-public func updateSession(handle: HuksHandleId, options: HuksOptions, token!: Bytes): Option<Bytes>
+public func updateSession(handle: HuksHandleId, options: HuksOptions, token!: Bytes = Bytes<UInt8>()): Option<Bytes>
 ```
 
 **功能：** updateSession操作密钥接口。[security_huks.initSession](#func-initsessionstring-huksoptions)、[security_huks.updateSession](#func-updatesessionhukshandleid-huksoptions-bytes)、[security_huks.finishSession](#func-finishsessionhukshandleid-huksoptions-bytes)为三段式接口，需要一起使用。
@@ -2421,7 +2421,7 @@ public class HuksOptions {
     public var properties: Array<HuksParam>
     public var inData: Bytes
 
-    public init(properties!: Array<HuksParam> = Array<HuksParam>(), inData!: Bytes = Bytes())
+    public init(properties!: Array<HuksParam> = Array<HuksParam>(), inData!: Bytes =  Bytes<UInt8>())
 }
 ```
 
@@ -2466,7 +2466,7 @@ public var properties: Array<HuksParam>
 ### init(Array\<HuksParam>, Bytes)
 
 ```cangjie
-public init(properties!: Array<HuksParam> = Array<HuksParam>(), inData!: Bytes = Bytes())
+public init(properties!: Array<HuksParam> = Array<HuksParam>(), inData!: Bytes = Bytes<UInt8>())
 ```
 
 **功能：** 构造调用接口使用的options实例。

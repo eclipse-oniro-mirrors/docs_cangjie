@@ -1153,7 +1153,7 @@ try {
 ## class AbilityStageMonitor
 
 ```cangjie
-public class AbilityStageMonitor <: FFIData {
+public class AbilityStageMonitor {
     public var moduleName: String
     public var srcEntrance: String
     public init(
@@ -1168,10 +1168,6 @@ public class AbilityStageMonitor <: FFIData {
 **系统能力：** SystemCapability.Ability.AbilityRuntime.Core
 
 **起始版本：** 22
-
-**父类型：**
-
-- FFIData
 
 ### var moduleName
 

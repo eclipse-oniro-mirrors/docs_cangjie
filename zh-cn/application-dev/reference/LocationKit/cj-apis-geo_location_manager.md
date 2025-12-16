@@ -373,14 +373,14 @@ public class Location {
     public var timestamp: Int64
     public var direction: Float64
     public var timeSinceBoot: Int64
-    public var additions: Array<String>
-    public var additionSize: Int64
-    public var additionsMap: Map<String, String>
-    public var altitudeAccuracy: Float64
-    public var speedAccuracy: Float64
-    public var directionAccuracy: Float64
-    public var uncertaintyOfTimeSinceBoot: Int64
-    public var sourceType: LocationSourceType
+    public var additions: ?Array<String>
+    public var additionsMap: ?Map<String, String>
+    public var additionSize: ?Int64
+    public var altitudeAccuracy: ?Float64
+    public var speedAccuracy: ?Float64
+    public var directionAccuracy: ?Float64
+    public var uncertaintyOfTimeSinceBoot: ?Int64
+    public var sourceType: ?LocationSourceType
 }
 ```
 
@@ -569,7 +569,7 @@ public var sourceType: ?LocationSourceType
 ### var speed
 
 ```cangjie
-public var speed: ?Float64
+public var speed: Float64
 ```
 
 **功能：** 表示速度信息，单位米每秒。
@@ -585,12 +585,12 @@ public var speed: ?Float64
 ### var speedAccuracy
 
 ```cangjie
-public var speedAccuracy: Float64
+public var speedAccuracy: ?Float64
 ```
 
 **功能：** 表示速度信息的精度，单位米每秒。
 
-**类型：** Float64
+**类型：** ?Float64
 
 **读写能力：** 可读写
 

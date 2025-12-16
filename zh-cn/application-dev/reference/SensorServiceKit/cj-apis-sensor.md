@@ -1403,7 +1403,7 @@ public var scalar: Float32
 
 ```cangjie
 public class PedometerResponse <: Response {
-    public var steps: Int64
+    public var steps: Float32
 }
 ```
 
@@ -1420,12 +1420,12 @@ public class PedometerResponse <: Response {
 ### var steps
 
 ```cangjie
-public var steps: Int64
+public var steps: Float32
 ```
 
 **功能：** 用户的行走步数。步数初始值是0。用户订阅计步传感器后，每行走一步，步数累计加一。
 
-**类型：** Int64
+**类型：** Float32
 
 **读写能力：** 可读写
 

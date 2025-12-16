@@ -381,8 +381,7 @@ try {
 
 ```cangjie
 public class ParamsSpec {
-    mut prop algName: String
-    mut prop iv: DataBlob
+    public var algName: String
 }
 ```
 
@@ -397,7 +396,7 @@ public class ParamsSpec {
 ### var algName
 
 ```cangjie
-mut var algName: String
+public var algName: String
 ```
 
 **功能：** 指明对称加解密参数的算法模式。可选值如下：
@@ -1487,7 +1486,10 @@ try {
 
 ```cangjie
 public class CcmParamsSpec <: ParamsSpec {
-    public init(algName: String, iv: DataBlob, add: DataBlob, authTag: DataBlob)
+    public var authTag: DataBlob
+    public var aad: DataBlob
+    public var iv: DataBlob
+    public init(algName: String, iv: DataBlob, aad: DataBlob, authTag: DataBlob)
 }
 ```
 
@@ -1507,10 +1509,10 @@ public class CcmParamsSpec <: ParamsSpec {
 
 - [ParamsSpec](#class-paramsspec)
 
-### prop aad
+### var aad
 
 ```cangjie
-public mut prop aad: DataBlob
+public var aad: DataBlob
 ```
 
 **功能：** 指明加解密参数aad，长度为8字节。
@@ -1523,10 +1525,10 @@ public mut prop aad: DataBlob
 
 **起始版本：** 22
 
-### prop authTag
+### var authTag
 
 ```cangjie
-public mut prop authTag: DataBlob
+public var authTag: DataBlob
 ```
 
 **功能：** 指定加解密参数authTag，长度为12字节。
@@ -1541,10 +1543,10 @@ public mut prop authTag: DataBlob
 
 **起始版本：** 22
 
-### prop iv
+### var iv
 
 ```cangjie
-public mut prop iv: DataBlob
+public var iv: DataBlob
 ```
 
 **功能：** 指明加解密参数iv，长度为7字节。
@@ -1649,7 +1651,10 @@ public init(data: Array<UInt8>)
 
 ```cangjie
 public class GcmParamsSpec <: ParamsSpec {
-    public init(algName: String, iv: DataBlob, add: DataBlob, authTag: DataBlob)
+    public var aad: DataBlob
+    public var iv: DataBlob
+    public var authTag: DataBlob
+    public init(algName: String, iv: DataBlob, aad: DataBlob, authTag: DataBlob)
 }
 ```
 
@@ -1671,10 +1676,10 @@ public class GcmParamsSpec <: ParamsSpec {
 > 2. 对于1~16字节长度的iv，加解密算法库无额外限制，但结果取决于底层openssl的支持情况。
 > 3. 当aad参数不需要使用或aad长度为0时，可以将aad的data属性设置为一个空的Array\<UInt8>，来构造GcmParamsSpec，写法为aad: { data: Array\<UInt8>() }。
 
-### prop aad
+### var aad
 
 ```cangjie
-public mut prop aad: DataBlob
+public var aad: DataBlob
 ```
 
 **功能：** 指明加解密参数aad，长度为0~INT32_MAX字节，常用为16字节。
@@ -1687,10 +1692,10 @@ public mut prop aad: DataBlob
 
 **起始版本：** 22
 
-### prop authTag
+### var authTag
 
 ```cangjie
-public mut prop authTag: DataBlob
+public var authTag: DataBlob
 ```
 
 **功能：** 指明加解密参数authTag，长度为16字节。
@@ -1705,10 +1710,10 @@ public mut prop authTag: DataBlob
 
 **起始版本：** 22
 
-### prop iv
+### var iv
 
 ```cangjie
-public mut prop iv: DataBlob
+public var iv: DataBlob
 ```
 
 **功能：** 指明加解密参数iv，长度为1~16字节，常用为12字节。
@@ -1760,10 +1765,11 @@ try {
 }
 ```
 
-## struct IvParamsSpec
+## class IvParamsSpec
 
 ```cangjie
-public struct IvParamsSpec <: ParamsSpec {
+public class IvParamsSpec <: ParamsSpec {
+    public var iv: DataBlob
     public init(algName: String, iv: DataBlob)
 }
 ```
@@ -1784,10 +1790,10 @@ public struct IvParamsSpec <: ParamsSpec {
 
 - [ParamsSpec](#class-paramsspec)
 
-### prop iv
+### var iv
 
 ```cangjie
-public mut prop iv: DataBlob
+public var iv: DataBlob
 ```
 
 **功能：** 指明加解密参数iv。常见取值如下：

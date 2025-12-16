@@ -73,11 +73,10 @@ try {
 }
 ```
 
-## func getValue\<T, P>(UIAbilityContext, T, String, P) where T \<: ToString, P \<: ToString
+## func getValue\<T, P>(UIAbilityContext, T, String, P) where T \<: ToString
 
 ```cangjie
-public func getValue<T, P>(context: UIAbilityContext, name: T, defValue: String, domainName: P): String where T <: ToString,
-    P <: ToString
+public func getValue<T, P>(context: UIAbilityContext, name: T, defValue: String, domainName: P): String where T <: ToString
 ```
 
 **功能：** 获取数据库中指定数据项的值。

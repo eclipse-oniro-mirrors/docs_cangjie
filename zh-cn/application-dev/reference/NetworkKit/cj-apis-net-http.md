@@ -1109,13 +1109,13 @@ try {
 public class HttpRequestOptions {
     public var method: RequestMethod
     public var extraData: HttpData
-    public var expectDataType:?HttpDataType
+    public var expectDataType: ?HttpDataType
     public var usingCache: Bool
     public var priority: UInt32
     public var header: HashMap<String, String>
     public var readTimeout: UInt32
     public var connectTimeout: UInt32
-    public var usingProtocol:?HttpProtocol
+    public var usingProtocol: ?HttpProtocol
     public var usingProxy: UsingProxy
     public var caPath: String
     public var resumeFrom: Int64
@@ -1126,11 +1126,11 @@ public class HttpRequestOptions {
     public var maxLimit: UInt32
     public var multiFormDataList: Array<MultiFormData>
     public init(method!: RequestMethod = RequestMethod.Get, extraData!: HttpData = HttpData.StringData(""),
-        expectDataType!: ?HttpDataType, usingCache!: Bool = true, priority!: UInt32 = 1,
+        expectDataType!: ?HttpDataType = None, usingCache!: Bool = true, priority!: UInt32 = 1,
         header!: HashMap<String, String> = HashMap<String, String>(), readTimeout!: UInt32 = 60000,
-        connectTimeout!: UInt32 = 60000, usingProtocol!: ?HttpProtocol,
+        connectTimeout!: UInt32 = 60000, usingProtocol!: ?HttpProtocol = None,
         usingProxy!: UsingProxy = UsingProxy.UseDefault, caPath!: String = "", resumeFrom!: Int64 = 0,
-        resumeTo!: Int64 = 0, clientCert!: ClientCert = ClientCert("",""), dnsOverHttps!: String = "",
+        resumeTo!: Int64 = 0, clientCert!: ClientCert = ClientCert("", ""), dnsOverHttps!: String = "",
         dnsServers!: Array<String> = Array<String>(), maxLimit!: UInt32 = 5 * 1024 * 1024,
         multiFormDataList!: Array<MultiFormData> = Array<MultiFormData>())
 }
@@ -1423,7 +1423,7 @@ public var usingCache: Bool
 ### var usingProtocol
 
 ```cangjie
-public var usingProtocol:?HttpProtocol
+public var usingProtocol: ?HttpProtocol
 ```
 
 **功能：** 使用协议。默认值由系统自动指定。
