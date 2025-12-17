@@ -8,7 +8,7 @@
 
 1. 若首次打开**DevEco Studio**，请单击**Create Project**创建工程。如果已经打开了一个工程，请在菜单栏选择**File** > **New** > **Create Project**来创建一个新工程。
 
-2. 选择**Application**应用开发（本文以应用开发为例，仓颉暂不支持元服务开发），选择模板 **[Cangjie] Empty Ability**，单击**Next**进行下一步配置。
+2. 选择**Application**应用开发（本文以应用开发为例，仓颉暂不支持元服务开发），选择模板 **[Cangjie] Empty Ability**，然后单击**Next**进行下一步配置。
 
    ![cangjieTemplate](../../figures/cangjieTemplate.png)
 
@@ -81,7 +81,7 @@ Project_name
 
 ## 构建第一个页面
 
-1. 使用文本组件。
+1. 在页面中添加Text组件来显示文本内容。
 
    工程同步完成后，在**Project**窗口，点击**entry > src > main > cangjie**，打开**index.cj**文件，使用仓颉语言进行应用页面的编写。针对本文中使用文本/按钮来实现页面跳转/返回的应用场景，页面均使用Row和Column组件为例来组建布局。
 
@@ -128,7 +128,7 @@ Project_name
    }
    ```
 
-2. 添加文本，修改按钮。
+2. 添加按钮，并配置其点击事件处理逻辑。
 
    在默认页面基础上，添加一个Button组件，作为按钮响应用户点击，从而实现跳转到另一个页面。**index.cj**文件的示例如下：
 
@@ -234,7 +234,7 @@ Project_name
 
 ## 实现页面间的跳转
 
-页面间的导航可以通过页面路由router来实现。页面路由router根据页面url找到目标页面，从而实现跳转。使用页面路由请导入router模块。
+页面间的导航可以通过页面路由router来实现。router根据页面url找到目标页面，从而实现跳转。使用页面路由请导入router模块。
 
 1. 第一个页面跳转到第二个页面。
 
@@ -280,9 +280,9 @@ Project_name
 
    ```
 
-2. 第二个页面返回到第一个页面。
+2. 从第二个页面返回到第一个页面。
 
-   在第二个页面中，返回按钮绑定onClick事件，单击按钮时返回到第一页。**second.cj**文件的示例如下：
+   在第二个页面中，返回按钮绑定onClick事件，单击时返回到第一页。**second.cj**文件的示例如下：
 
    <!-- compile -->
 
@@ -356,4 +356,4 @@ Project_name
 
 3. 在编辑窗口右上角的工具栏，单击![runButton](../../figures/runButton.png)按钮运行。效果同使用真机运行。
 
-恭喜您已经构建完成第一个仓颉应用。
+您已经成功构建第一个仓颉应用。
