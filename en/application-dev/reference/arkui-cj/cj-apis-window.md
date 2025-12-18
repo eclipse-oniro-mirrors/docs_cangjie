@@ -1543,7 +1543,7 @@ public func setWindowPrivacyMode(isPrivacyMode: Bool): Unit
   |:----------|:------------|
   | 1300002   | This window state is abnormal. |
 
-### func setWindowSystemBarEnable(Array<SystemBarType>)
+### func setWindowSystemBarEnable(Array\<SystemBarType>)
 
 ```cangjie
 public func setWindowSystemBarEnable(names: Array<SystemBarType>): Unit

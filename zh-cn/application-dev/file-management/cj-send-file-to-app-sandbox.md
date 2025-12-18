@@ -35,9 +35,9 @@ hdc shell chown ${user_id}:${user_id} ${文件路径}
 在调试过程中，如果权限不对或文件不存在，开发者需要从调试进程视角切换为应用视角，以便直观分析权限及文件目录问题。视角切换命令如下：
 
 ```shell
-hdc shell                         // 进入shell
-ps -ef|grep [hapName]             // 通过ps命令找到对应应用的pid
-nsenter -t [hapPid] -m /bin/sh    // 通过上一步找到的应用pid进入对应应用的沙箱环境中
+hdc shell                         # 进入shell
+ps -ef|grep [hapName]             # 通过ps命令找到对应应用的pid
+nsenter -t [hapPid] -m /bin/sh    # 通过上一步找到的应用pid进入对应应用的沙箱环境中
 ```
 
 执行完成后，即切换到了应用视角，该视角下的目录路径为应用沙箱路径，可以去排查沙箱路径相关问题。

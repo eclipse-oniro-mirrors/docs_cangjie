@@ -16,11 +16,11 @@
 
 | 接口                                                         | 描述                                                         |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| getAllDisplays(): Array<Display>                   | 获取当前所有的Display对象。             |
+| getAllDisplays(): Array\<Display>                   | 获取当前所有的Display对象。             |
 | getDefaultDisplaySync(): Display                             | 获取当前默认的Display对象。                                  |
 | func isFoldable(): Bool                                        | 检查设备是否可折叠，true表示设备可折叠，false表示设备不可折叠。                          |
-| on(listenerType: ListenerType, callback: Callback1Argument<FoldStatus>): Unit | 开启折叠设备折叠状态变化的监听。                             |
-| off(listenerType: ListenerType, callback: Callback1Argument<FoldStatus>): Unit | 关闭折叠设备折叠状态变化的监听。                             |
+| on(listenerType: ListenerType, callback: Callback1Argument\<FoldStatus>): Unit | 开启折叠设备折叠状态变化的监听。                             |
+| off(listenerType: ListenerType, callback: Callback1Argument\<FoldStatus>): Unit | 关闭折叠设备折叠状态变化的监听。                             |
 
 ## 获取Display对象
 

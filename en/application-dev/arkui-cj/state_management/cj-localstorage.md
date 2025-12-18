@@ -70,7 +70,7 @@ When a custom component initializes, variables decorated with `@LocalStorageProp
 - Changes to variables decorated with `@LocalStorageProp` will refresh the associated components in the current custom component.
 - Changes to `LocalStorage(key)` will trigger updates to all variables decorated with `@LocalStorageProp` corresponding to `key`, overwriting local changes.
 
-![LocalStorage(key)](figures/LocalStorage(key).png)
+![LocalStorage(key)](figures/local-storage-key.png)
 
 ## @LocalStorageLink
 
@@ -119,7 +119,7 @@ If updates to a custom component's state variables need to be synchronized back 
 2. Once the data corresponding to `key` in LocalStorage changes, all data bound to `key` (including two-way `@LocalStorageLink` and one-way `@LocalStorageProp`) will be updated.
 3. If the `@LocalStorageLink(key)`-decorated data itself is a state variable, its changes will not only synchronize back to LocalStorage but also trigger a re-render of the associated custom component.
 
-![LocalStorageLink(key)](figures/LocalStorageLink(key).png)
+![LocalStorageLink(key)](figures/local-storage-link-key.png)
 
 ## Constraints
 

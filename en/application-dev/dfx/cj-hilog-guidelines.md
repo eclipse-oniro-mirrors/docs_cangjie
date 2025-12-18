@@ -9,11 +9,11 @@ HiLog defines five log levels: DEBUG, INFO, WARN, ERROR, and FATAL, and provides
 | Interface Name | Description |
 | -------- | -------- |
 | isLoggable(domain: UInt32, tag: String, level: LogLevel): Bool | Call this interface before printing logs to check whether logs with the specified domain identifier, log tag, and level can be printed. |
-| debug(domain: UInt32, tag: String, format: String, args: Array<String>): Unit | Outputs DEBUG-level logs. Used only for application/service debugging.<br/>In the DevEco Studio terminal window or cmd, use the command "hdc shell hilogcat" to set the log level to DEBUG. |
-| info(domain: UInt32, tag: String, format: String, args: Array<String>): Unit | Outputs INFO-level logs. Represents general information. |
-| warn(domain: UInt32, tag: String, format: String, args: Array<String>): Unit | Outputs WARN-level logs. Indicates the presence of a warning. |
-| error(domain: UInt32, tag: String, format: String, args: Array<String>): Unit | Outputs ERROR-level logs. Indicates the presence of an error. |
-| fatal(domain: UInt32, tag: String, format: String, args: Array<String>): Unit | Outputs FATAL-level logs. Indicates a fatal or unrecoverable error. |
+| debug(domain: UInt32, tag: String, format: String, args: Array\<String>): Unit | Outputs DEBUG-level logs. Used only for application/service debugging.<br/>In the DevEco Studio terminal window or cmd, use the command "hdc shell hilogcat" to set the log level to DEBUG. |
+| info(domain: UInt32, tag: String, format: String, args: Array\<String>): Unit | Outputs INFO-level logs. Represents general information. |
+| warn(domain: UInt32, tag: String, format: String, args: Array\<String>): Unit | Outputs WARN-level logs. Indicates the presence of a warning. |
+| error(domain: UInt32, tag: String, format: String, args: Array\<String>): Unit | Outputs ERROR-level logs. Indicates the presence of an error. |
+| fatal(domain: UInt32, tag: String, format: String, args: Array\<String>): Unit | Outputs FATAL-level logs. Indicates a fatal or unrecoverable error. |
 
 ### Parameter Analysis
 

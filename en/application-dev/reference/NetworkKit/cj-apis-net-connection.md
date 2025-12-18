@@ -1220,7 +1220,7 @@ public init(bearerTypes: Array<NetBearType>, linkUpBandwidthKbps!: UInt32 = 0, l
 | bearerTypes | Array\<[NetBearType](#enum-netbeartype)> | Yes | - | Network type. |
 | linkUpBandwidthKbps | UInt32 | No | 0 | **Named parameter.** Uplink (device to network) bandwidth, 0 indicates inability to evaluate current network bandwidth. |
 | linkDownBandwidthKbps | UInt32 | No | 0 | **Named parameter.** Downlink (network to device) bandwidth, 0 indicates inability to evaluate current network bandwidth. |
-| networkCap | Array\<[NetCap](#enum-netcap)> | No | Array<NetCap>() | Specific network capabilities. |
+| networkCap | Array\<[NetCap](#enum-netcap)> | No | Array\<NetCap>() | Specific network capabilities. |
 
 ## class NetCapabilityInfo
 

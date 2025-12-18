@@ -412,7 +412,7 @@
 5. 在 entry 模块内的 cjpm.toml 文件中的 dependencies 字段声明仓颉三方库 A 的路径：
 
     ```toml
-    // entry/cjpm.toml
+    # entry/cjpm.toml
     [dependencies]
       [dependencies.package_a]
         path = "../package_a"
@@ -512,7 +512,7 @@
 5. 在 entry 模块内的 cjpm.toml 文件中的 dependencies 字段声明仓颉三方库 A 的路径：
 
     ```toml
-    // entry/cjpm.toml
+    # entry/cjpm.toml
     [dependencies]
       [dependencies.package_a]
         path = "../package_a"
@@ -636,7 +636,7 @@
 7. 在 entry 模块内的 cjpm.toml 文件中的 dependencies 字段声明仓颉三方库 A 的路径：
 
     ```toml
-    // entry/cjpm.toml
+    # entry/cjpm.toml
     [dependencies]
       [dependencies.package_a]
         path = "../package_a"

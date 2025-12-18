@@ -34,7 +34,7 @@ public let code: Int32
 
 **起始版本：** 22
 
-### func getData<T>()
+### func getData\<T>()
 
 ```cangjie
 public func getData<T>(): ?T

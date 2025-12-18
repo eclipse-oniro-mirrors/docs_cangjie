@@ -34,7 +34,7 @@ public let code: Int32
 
 **Since:** 22
 
-### func getData<T>()
+### func getData\<T>()
 
 ```cangjie
 public func getData<T>(): ?T

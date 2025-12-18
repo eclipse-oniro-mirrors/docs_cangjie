@@ -137,7 +137,7 @@ The following three examples illustrate the usage of viewport:
   }
   ```
 
-  ![viewport(2)](figures/viewport(2).jpg)
+  ![viewport(2)](figures/viewport2.jpg)
 
 - Create a Shape component with width and height of 300, yellow background, and a viewport of 300x300. Fill the viewport with a blue rectangle and draw a circle with a radius of 75 inside it. Translate the viewport 150 units right and 150 units down.
 
@@ -169,7 +169,7 @@ The following three examples illustrate the usage of viewport:
   }
   ```
 
-  ![viewport(3)](figures/viewport(3).jpg)
+  ![viewport(3)](figures/viewport3.jpg)
 
 ## Custom Styles
 

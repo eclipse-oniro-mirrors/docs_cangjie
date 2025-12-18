@@ -1226,7 +1226,7 @@ public init(bearerTypes: Array<NetBearType>, linkUpBandwidthKbps!: UInt32 = 0, l
 |bearerTypes|Array\<[NetBearType](#enum-netbeartype)>|是|-|网络类型。数组里面只包含了一种网络类型。|
 |linkUpBandwidthKbps|UInt32|否|0|**命名参数。** 上行（设备到网络）带宽，单位(kb/s)。0表示无法评估当前网络带宽。|
 |linkDownBandwidthKbps|UInt32|否|0|**命名参数。** **功能：** 下行（网络到设备）带宽，单位(kb/s)。0表示无法评估当前网络带宽。|
-|networkCap|Array\<[NetCap](#enum-netcap)>|否|Array<NetCap>()|网络具体能力。|
+|networkCap|Array\<[NetCap](#enum-netcap)>|否|Array\<NetCap>()|网络具体能力。|
 
 ## class NetCapabilityInfo
 

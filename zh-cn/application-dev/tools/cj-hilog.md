@@ -474,19 +474,19 @@ $ hilog -v nsec
 ### 查看和设置日志级别
 
 ```shell
-// 全局日志级别默认为Info，查询全局日志级别
+# 全局日志级别默认为Info，查询全局日志级别
 param get param get hilog.loggable.global
 
-// 设置全局日志级别
+# 设置全局日志级别
 hilog -b D/I/W/E/F
 
-// 设置[DOMAINID]可打印的日志级别
+# 设置[DOMAINID]可打印的日志级别
 hilog -b D/I/W/E/F -D [DOMAINID]
 
-// 设置[TAG]可打印的日志级别
+# 设置[TAG]可打印的日志级别
 hilog -b D/I/W/E/F -T [TAG]
 
-// 设置全局日志级别，重启仍生效
+# 设置全局日志级别，重启仍生效
 hilog -b D/I/W/E/F --persist
 ```
 

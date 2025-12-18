@@ -151,7 +151,7 @@ bm clean [-h] [-c] [-n bundleName] [-d] [-i appIndex]
 bm clean -c -n com.ohos.app
 # 清理该应用下的用户数据
 bm clean -d -n com.ohos.app
-// 执行结果
+# 执行结果
 clean bundle data files successfully.
 ```
 
@@ -222,7 +222,7 @@ bm get [-h] [-u]
 ```bash
 # 获取设备的udid
 bm get -u
-// 执行结果
+# 执行结果
 udid of current device is :
 23CADE0C
 ```
@@ -746,7 +746,7 @@ error: install parse profile prop check error.
         b. 执行如下命令查看设备的特权管控白名单文件install_list_capability.json。
 
         ```bash
-        // 设备中查询白名单文件的位置
+        # 设备中查询白名单文件的位置
         find /system -name install_list_capability.json
         ```
 
@@ -958,7 +958,7 @@ error: signature verification failed due to not trusted app source.
     a. 获取当前设备的UDID。
 
     ```bash
-    // UDID获取命令
+    # UDID获取命令
     hdc shell bm get -u
         ```
 
@@ -1329,7 +1329,7 @@ singleton权限应用安装未指定UserID 0。
 应用是singleton权限，安装时指定UserID 0。
 
 ```bash
-// 指定userId安装命令
+# 指定userId安装命令
 hdc install -p hap名.hap -u 0
 ```
 
@@ -1520,10 +1520,10 @@ error: isolationMode does not match the system.
 按照设备的隔离模式配置HAP配置文件isolationMode属性。
 
 ```bash
-// 查询设备persist.bms.supportIsolationMode值，若返回errNum is:106说明没配置
+# 查询设备persist.bms.supportIsolationMode值，若返回errNum is:106说明没配置
 hdc shell
 param get persist.bms.supportIsolationMode
-// 配置设备persist.bms.supportIsolationMode值
+# 配置设备persist.bms.supportIsolationMode值
 hdc shell
 param set persist.bms.supportIsolationMode [true|false]
 ```

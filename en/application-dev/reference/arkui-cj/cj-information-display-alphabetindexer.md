@@ -342,7 +342,7 @@ public func onRequestPopupData(callback: ?OnAlphabetIndexerRequestPopupDataCallb
 
 | Name | Type | Required | Default Value | Description |
 |:---|:---|:---|:---|:---|
-| callback | ?[OnAlphabetIndexerRequestPopupDataCallback](#type-onalphabetindexerrequestpopupdatacallback) | Yes | - | Callback function triggered when the current index is selected.<br>Return value: String array corresponding to the index, displayed vertically in the popup. The string list displays up to 5 items, with additional items scrollable. Initial value: { _: Int64 => Array<String>() } |
+| callback | ?[OnAlphabetIndexerRequestPopupDataCallback](#type-onalphabetindexerrequestpopupdatacallback) | Yes | - | Callback function triggered when the current index is selected.<br>Return value: String array corresponding to the index, displayed vertically in the popup. The string list displays up to 5 items, with additional items scrollable. Initial value: { _: Int64 => Array\<String>() } |
 
 ### func onSelect(?OnAlphabetIndexerSelectCallback)
 

@@ -191,7 +191,7 @@ func toJSValue(context: JSContext): JSValue
 |:----|:----|
 | [JSValue](#struct-jsvalue) | ArkTS unified type. |
 
-## extend Int8 <: JSInteropType<Int8>
+## extend Int8 <: JSInteropType\<Int8>
 
 **Description:** This interface can be used to implement extension methods for the built-in type Int8.
 
@@ -290,7 +290,7 @@ func toJSValue(context: JSContext): JSValue
 | 34300003   | Accessing reference is beyond reach. |
 | 34300004   | Thread mismatch. |
 
-## extend Int16 <: JSInteropType<Int16>
+## extend Int16 <: JSInteropType\<Int16>
 
 **Description:** This interface can be used to implement extension methods for the built-in type Int16.
 
@@ -389,7 +389,7 @@ func toJSValue(context: JSContext): JSValue
 | 34300003   | Accessing reference is beyond reach. |
 | 34300004   | Thread mismatch. |
 
-## extend Int32 <: JSInteropType<Int32>
+## extend Int32 <: JSInteropType\<Int32>
 
 **Description:** This interface can be used to implement extension methods for the built-in type Int32.
 
@@ -486,7 +486,7 @@ func toJSValue(context: JSContext): JSValue
 | Error Code ID | Error Message |
 |:------| :--- |
 | 34300003   | Accessing reference is beyond reach. |
-| 34300004   | Thread mismatch. |## extend Int64 <: JSInteropType<Int64>
+| 34300004   | Thread mismatch. |## extend Int64 <: JSInteropType\<Int64>
 
 **Functionality:** This interface can be used to implement extension methods for the built-in type Int64.
 
@@ -586,7 +586,7 @@ func toJSValue(context: JSContext): JSValue
 | 3 | Accessing reference is beyond reach. |
 | 4 | Thread mismatch. |
 
-## extend UInt8 <: JSInteropType<UInt8>
+## extend UInt8 <: JSInteropType\<UInt8>
 
 **Functionality:** This interface can be used to implement extension methods for the built-in type UInt8.
 
@@ -676,7 +676,7 @@ func toJSValue(context: JSContext): JSValue
 |:----|:----|
 | [JSValue](#struct-jsvalue) | ArkTS unified type. |
 
-## extend UInt16 <: JSInteropType<UInt16>
+## extend UInt16 <: JSInteropType\<UInt16>
 
 **Functionality:** This interface can be used to implement extension methods for the built-in type UInt16.
 
@@ -775,7 +775,7 @@ func toJSValue(context: JSContext): JSValue
 | 3 | Accessing reference is beyond reach. |
 | 4 | Thread mismatch. |
 
-## extend UInt32 <: JSInteropType<UInt32>
+## extend UInt32 <: JSInteropType\<UInt32>
 
 **Functionality:** This interface can be used to implement extension methods for the built-in type UInt32.
 
@@ -874,7 +874,7 @@ func toJSValue(context: JSContext): JSValue
 | 3 | Accessing reference is beyond reach. |
 | 4 | Thread mismatch. |
 
-## extend UInt64 <: JSInteropType<UInt64>
+## extend UInt64 <: JSInteropType\<UInt64>
 
 **Functionality:** This interface can be used to implement extension methods for the built-in type UInt64.
 
@@ -972,7 +972,7 @@ func toJSValue(context: JSContext): JSValue
 |:------|:-------------------------------------|
 | 2 | Outside error occurred. |
 | 3 | Accessing reference is beyond reach. |
-| 4 | Thread mismatch. |## extend Float16 <: JSInteropType<Float16>
+| 4 | Thread mismatch. |## extend Float16 <: JSInteropType\<Float16>
 
 **Function:** This interface can be used to implement extension methods for the built-in type Float16.
 
@@ -1071,7 +1071,7 @@ func toJSValue(context: JSContext): JSValue
 | 3 | Accessing reference is beyond reach. |
 | 4 | Thread mismatch. |
 
-## extend Float32 <: JSInteropType<Float32>
+## extend Float32 <: JSInteropType\<Float32>
 
 **Function:** This interface can be used to implement extension methods for the built-in type Float32.
 
@@ -1170,7 +1170,7 @@ func toJSValue(context: JSContext): JSValue
 | 3 | Accessing reference is beyond reach. |
 | 4 | Thread mismatch. |
 
-## extend Float64 <: JSInteropType<Float64>
+## extend Float64 <: JSInteropType\<Float64>
 
 **Function:** This interface can be used to implement extension methods for the built-in type Float64.
 
@@ -1268,7 +1268,7 @@ func toJSValue(context: JSContext): JSValue
 | 3 | Accessing reference is beyond reach. |
 | 4 | Thread mismatch. |
 
-## extend Bool <: JSInteropType<Bool>
+## extend Bool <: JSInteropType\<Bool>
 
 **Function:** This interface can be used to implement extension methods for the built-in type Bool.
 
@@ -1366,7 +1366,7 @@ func toJSValue(context: JSContext): JSValue
 | 3 | Accessing reference is beyond reach. |
 | 4 | Thread mismatch. |
 
-## extend String <: JSInteropType<String>
+## extend String <: JSInteropType\<String>
 
 **Function:** This interface can be used to implement extension methods for the built-in type String.
 
@@ -1481,7 +1481,7 @@ func toJSValue(context: JSContext): JSValue
 | 34300003   | Accessing reference is beyond reach. |
 | 34300004   | Thread mismatch.                     |
 
-## extend Unit <: JSInteropType<Unit>
+## extend Unit <: JSInteropType\<Unit>
 
 **Functionality:** This interface can be used to implement extension methods for the built-in Unit type.
 
@@ -1568,9 +1568,9 @@ func toJSValue(context: JSContext): JSValue
 | 34300003   | Accessing reference is beyond reach. |
 | 34300004   | Thread mismatch. |
 
-## extend<T> Option<T> <: JSInteropType<Option<T>> where T <: JSInteropType<T>
+## extend\<T> Option\<T> <: JSInteropType<Option\<T>> where T <: JSInteropType\<T>
 
-**Functionality:** This interface can be used to implement extension methods for the Option<T> type.
+**Functionality:** This interface can be used to implement extension methods for the Option\<T> type.
 
 **Initial Version:** 22
 
@@ -1594,7 +1594,7 @@ func optionTranslate(context: JSContext): Unit {
 static func fromJSValue(context: JSContext, input: JSValue): Option<T>
 ```
 
-**Functionality:** Converts JSValue type data to corresponding Option<T> type.
+**Functionality:** Converts JSValue type data to corresponding Option\<T> type.
 
 **Initial Version:** 22
 
@@ -1609,7 +1609,7 @@ static func fromJSValue(context: JSContext, input: JSValue): Option<T>
 
 |Type|Description|
 |:----|:----|
-|Option<T>|Cangjie Option type.|
+|Option\<T>|Cangjie Option type.|
 
 **Exceptions:**
 
@@ -1626,7 +1626,7 @@ static func fromJSValue(context: JSContext, input: JSValue): Option<T>
 static func toArktsType(): String
 ```
 
-**Functionality:** Gets the ArkTS type name corresponding to the Cangjie Option<T> type.
+**Functionality:** Gets the ArkTS type name corresponding to the Cangjie Option\<T> type.
 
 **Initial Version:** 22
 
@@ -1642,7 +1642,7 @@ static func toArktsType(): String
 func toJSValue(context: JSContext): JSValue
 ```
 
-**Functionality:** Converts Cangjie Option<T> type data to JSValue.
+**Functionality:** Converts Cangjie Option\<T> type data to JSValue.
 
 **Initial Version:** 22
 
@@ -1667,9 +1667,9 @@ func toJSValue(context: JSContext): JSValue
 | 34300003   | Accessing reference is beyond reach. |
 | 34300004   | Thread mismatch. |
 
-## extend<T> Array<T> <: JSInteropType<Array<T>> where T <: JSInteropByte
+## extend\<T> Array\<T> <: JSInteropType<Array\<T>> where T <: JSInteropByte
 
-**Functionality:** This interface can be used to implement extension methods for the Array<T> type.
+**Functionality:** This interface can be used to implement extension methods for the Array\<T> type.
 
 **Initial Version:** 22
 
@@ -1691,7 +1691,7 @@ func arrayTranslate(context: JSContext): Unit {
 static func fromJSValue(_: JSContext, input: JSValue): Array<T>
 ```
 
-**Functionality:** Converts JSValue type data to corresponding Array<T> type.
+**Functionality:** Converts JSValue type data to corresponding Array\<T> type.
 
 **Initial Version:** 22
 
@@ -1706,7 +1706,7 @@ static func fromJSValue(_: JSContext, input: JSValue): Array<T>
 
 |Type|Description|
 |:----|:----|
-|Array<T>|Cangjie Option type.|
+|Array\<T>|Cangjie Option type.|
 
 **Exceptions:**
 
@@ -1724,7 +1724,7 @@ static func fromJSValue(_: JSContext, input: JSValue): Array<T>
 static func toArktsType(): String
 ```
 
-**Functionality:** Gets the ArkTS type name corresponding to the Cangjie Array<T> type.
+**Functionality:** Gets the ArkTS type name corresponding to the Cangjie Array\<T> type.
 
 **Initial Version:** 22
 
@@ -1740,7 +1740,7 @@ static func toArktsType(): String
 func toJSValue(context: JSContext): JSValue
 ```
 
-**Functionality:** Converts Cangjie Array<T> type data to JSValue.
+**Functionality:** Converts Cangjie Array\<T> type data to JSValue.
 
 **Initial Version:** 22
 
@@ -7382,7 +7382,7 @@ public func getNapiEnv(): CPointer<Unit>
 
 | Type | Description |
 |:---------|:------------|
-| CPointer<Unit> | napi interface env. |
+| CPointer\<Unit> | napi interface env. |
 
 **Initial Version:** 22
 

@@ -342,7 +342,7 @@ public func onRequestPopupData(callback: ?OnAlphabetIndexerRequestPopupDataCallb
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|callback|?[OnAlphabetIndexerRequestPopupDataCallback](#type-onalphabetindexerrequestpopupdatacallback)|是|-|回调函数，当前选中索引触发。<br>返回值：索引对应的字符串数组，此字符串数组在弹窗中竖排显示，字符串列表最多显示5个，超出部分可以滑动显示。初始值: { _: Int64 => Array<String>() }|
+|callback|?[OnAlphabetIndexerRequestPopupDataCallback](#type-onalphabetindexerrequestpopupdatacallback)|是|-|回调函数，当前选中索引触发。<br>返回值：索引对应的字符串数组，此字符串数组在弹窗中竖排显示，字符串列表最多显示5个，超出部分可以滑动显示。初始值: { _: Int64 => Array\<String>() }|
 
 ### func onSelect(?OnAlphabetIndexerSelectCallback)
 

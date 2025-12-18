@@ -1696,7 +1696,7 @@ try {
 }
 ```
 
-### func on(EventCallbackType, Callback1Argument<HttpResponse>)
+### func on(EventCallbackType, Callback1Argument\<HttpResponse>)
 
 ```cangjie
 public func on(event: EventCallbackType, callback: Callback1Argument<HttpResponse>): Unit

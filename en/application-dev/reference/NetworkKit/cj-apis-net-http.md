@@ -1156,9 +1156,9 @@ public init(method!: RequestMethod = RequestMethod.Get, extraData!: HttpData = H
 | resumeTo | Int64 | No | 0 | **Named parameter.** Sets the ending position for upload or download. |
 | clientCert | [ClientCert](#class-clientcert) | No | ClientCert("", "") | **Named parameter.** Supports transmitting client certificates. |
 | dnsOverHttps | String | No | "" | **Named parameter.** Sets the use of an HTTPS protocol server for DNS resolution. |
-| dnsServers | Array\<String> | No | Array<String>() | **Named parameter.** Sets specified DNS servers for DNS resolution. |
+| dnsServers | Array\<String> | No | Array\<String>() | **Named parameter.** Sets specified DNS servers for DNS resolution. |
 | maxLimit | UInt32 | No | 5 * 1024 * 1024 | **Named parameter.** Maximum byte limit for response messages. Default is 5MB. |
-| multiFormDataList | Array\<[MultiFormData](#class-multiformdata)> | No | Array<MultiFormData>() | **Named parameter.** When 'content-Type' is 'multipart/form-data', this field defines the list of data fields to be uploaded. |
+| multiFormDataList | Array\<[MultiFormData](#class-multiformdata)> | No | Array\<MultiFormData>() | **Named parameter.** When 'content-Type' is 'multipart/form-data', this field defines the list of data fields to be uploaded. |
 
 ## class HttpResponse
 

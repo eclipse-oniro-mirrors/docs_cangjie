@@ -139,7 +139,7 @@ hdc help
 hdc -h
 hdc help
 
-// 显示详细帮助信息
+# 显示详细帮助信息
 hdc -h verbose
 ```
 
@@ -216,8 +216,8 @@ hdc -t [connect-key] [command]
 该方法需要与具体的操作命令搭配使用，下面以shell命令举例：
 
 ```shell
-hdc list targets  // 查询已连接的所有目标设备的connect-key
-hdc -t [connect-key] shell // -t 后面添加的connect-key需要替换为指定的设备标识符
+hdc list targets  # 查询已连接的所有目标设备的connect-key
+hdc -t [connect-key] shell # -t 后面添加的connect-key需要替换为指定的设备标识符
 ```
 
 ### 等待设备正常连接
@@ -225,8 +225,8 @@ hdc -t [connect-key] shell // -t 后面添加的connect-key需要替换为指定
 命令格式如下：
 
 ```shell
-hdc wait // 等待设备正常连接
-hdc -t connect-key wait // 等待指定的设备正常连接，connect-key需要替换为指定的设备标识符
+hdc wait # 等待设备正常连接
+hdc -t connect-key wait # 等待指定的设备正常连接，connect-key需要替换为指定的设备标识符
 ```
 
 **返回值：**
@@ -363,11 +363,11 @@ hdc client（客户端）在PC1中运行，hdc server（服务端）在PC2中运
       服务端通过USB连接到对应的HDC设备后执行以下命令：
 
       ```shell
-      hdc kill          // 关闭本地hdc服务
-      hdc -s IP:8710 -m // 启动网络转发的hdc服务
-                        // 其中IP为服务端自身的IP，Windows可通过ipconfig查询，unix系统可通过ifconfig查询
-                        // 8710为默认端口号，也可设置为其他端口号如：18710
-                        // 启动后服务端将打印日志
+      hdc kill          # 关闭本地hdc服务
+      hdc -s IP:8710 -m # 启动网络转发的hdc服务
+                        # 其中IP为服务端自身的IP，Windows可通过ipconfig查询，unix系统可通过ifconfig查询
+                        # 8710为默认端口号，也可设置为其他端口号如：18710
+                        # 启动后服务端将打印日志
       ```
 
    ii. 客户端连接
@@ -375,9 +375,9 @@ hdc client（客户端）在PC1中运行，hdc server（服务端）在PC2中运
       客户端连接需要确保可以连通服务端IP地址，满足前述条件后执行以下命令：
 
       ```shell
-      hdc -s IP:8710 [command] // 其中IP为服务端IP，8710为第一步服务端启动时设置的端口号，
-                              // 如果端口号有变化，这里也需要变更。
-                              // command可以为任意hdc可用命令，例如list targets
+      hdc -s IP:8710 [command] # 其中IP为服务端IP，8710为第一步服务端启动时设置的端口号，
+                               # 如果端口号有变化，这里也需要变更。
+                               # command可以为任意hdc可用命令，例如list targets
       ```
 
 ### usb调试和无线调试切换
@@ -784,7 +784,7 @@ PC端支持的端口转发类型：tcp。
 
    ```shell
    hdc start
-   hdc start -r // 服务进程启动状态下，触发服务进程重新启动
+   hdc start -r # 服务进程启动状态下，触发服务进程重新启动
    ```
 
    > **说明：**
@@ -808,7 +808,7 @@ PC端支持的端口转发类型：tcp。
 
    ```shell
    hdc kill
-   hdc kill -r  // 重启并终止服务进程
+   hdc kill -r  # 重启并终止服务进程
    ```
 
 3. 绕过对服务进程的查询步骤，用于快速执行客户端命令，命令格式如下：
@@ -969,9 +969,9 @@ PC端支持的端口转发类型：tcp。
    **使用方法：**
 
    ```shell
-   hdc target boot -bootloader // 重启后进入fastboot模式
-   hdc target boot -recovery  // 重启后进入recovery模式
-   hdc target boot shutdown  // 关机
+   hdc target boot -bootloader # 重启后进入fastboot模式
+   hdc target boot -recovery   # 重启后进入recovery模式
+   hdc target boot shutdown    # 关机
    ```
 
    <!--Del-->
@@ -1015,7 +1015,7 @@ PC端支持的端口转发类型：tcp。
 
    ```shell
    hdc smode
-   hdc smode -r  // 取消root权限
+   hdc smode -r  # 取消root权限
    ```
 
    > **说明：**
@@ -1044,7 +1044,7 @@ PC端支持的端口转发类型：tcp。
    **使用方法：**
 
    ```shell
-   hdc keygen key // 在当前目录下生成key和key.pub文件
+   hdc keygen key # 在当前目录下生成key和key.pub文件
    ```
 
 ## 查询版本号
@@ -1185,9 +1185,9 @@ hdc -l5 start
 开启hilog日志工具，获取对应日志，命令如下：
 
 ```shell
-hdc shell hilog -w start                              // 开启hilog日志落盘
-hdc shell ls /data/log/hilog                          // 查看已落盘hilog日志
-hdc file recv /data/log/hilog                         // 获取hilog已落盘日志（包含内核日志）
+hdc shell hilog -w start                              # 开启hilog日志落盘
+hdc shell ls /data/log/hilog                          # 查看已落盘hilog日志
+hdc file recv /data/log/hilog                         # 获取hilog已落盘日志（包含内核日志）
 ```
 
 ## 常见问题

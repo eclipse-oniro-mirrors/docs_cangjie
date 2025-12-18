@@ -151,7 +151,7 @@ Examples:
 bm clean -c -n com.ohos.app
 # Clear user data for the application
 bm clean -d -n com.ohos.app
-// Execution result
+# Execution result
 clean bundle data files successfully.
 ```
 
@@ -222,7 +222,7 @@ Example:
 ```bash
 # Get the device's UDID
 bm get -u
-// Execution result
+# Execution result
 udid of current device is:
 23CADE0C
 ```
@@ -744,7 +744,7 @@ During debugging or running the application/service, an error occurred while ins
         b. Execute the following command to locate the install_list_capability.json file on the device.
 
         ```bash
-        // Query the location of the whitelist file on the device
+        # Query the location of the whitelist file on the device
         find /system -name install_list_capability.json
         ```
 
@@ -954,9 +954,9 @@ When launching debugging or running an application/service, an error occurs duri
     a. Obtain the UDID of the current device.
 
     ```bash
-    // Command to retrieve UDID
+    # Command to retrieve UDID
     hdc shell bm get -u
-        ```
+    ```
 
     b. Locate the UnsgnedDebugProfileTemplate.json configuration file in the SDK directory under the IDE installation path.
 
@@ -1331,7 +1331,7 @@ The singleton-permission application was not installed with UserID 0 specified.
 For singleton-permission applications, specify UserID 0 during installation.
 
 ```bash
-// Command to install with userId
+# Command to install with userId
 hdc install -p hap_name.hap -u 0
 ```
 
@@ -1541,10 +1541,10 @@ During installation, the configured `isolationMode` does not match the system's 
 Configure the HAP's `isolationMode` attribute according to the device's isolation mode settings.
 
 ```bash
-// Query the device's `persist.bms.supportIsolationMode` value. If `errNum is:106` is returned, the setting is not configured.
+# Query the device's `persist.bms.supportIsolationMode` value. If `errNum is:106` is returned, the setting is not configured.
 hdc shell
 param get persist.bms.supportIsolationMode
-// Configure the device's `persist.bms.supportIsolationMode` value.
+# Configure the device's `persist.bms.supportIsolationMode` value.
 hdc shell
 param set persist.bms.supportIsolationMode [true|false]
 ```

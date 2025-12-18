@@ -122,7 +122,7 @@ Examples:
 hdc -h  
 hdc help  
 
-// Detailed help  
+# Detailed help  
 hdc -h verbose  
 ```  
 
@@ -181,14 +181,14 @@ hdc -t [connect-key] [command]
 
 **Example:**  
 ```shell  
-hdc list targets  // Get connect-key  
+hdc list targets  # Get connect-key  
 hdc -t [connect-key] shell  
 ```  
 
 ### Wait for Device Connection  
 ```shell  
-hdc wait  // Waits for any device  
-hdc -t connect-key wait  // Waits for specific device  
+hdc wait  # Waits for any device  
+hdc -t connect-key wait  # Waits for specific device  
 ```  
 
 **Return Value:**  
@@ -294,7 +294,7 @@ Remote connection involves a client on PC1 connecting to a server on PC2, which 
 
    i. **Server Configuration:**  
    ```shell  
-   hdc kill  // Stop local server  
+   hdc kill  # Stop local server  
    hdc -s IP:8710 -m  // Start networked server (IP = server's local IP)  
    ```  
 
@@ -667,7 +667,7 @@ Supported port forwarding types on device: tcp, dev, localabstract, localfilesys
 
    ```shell
    hdc start
-   hdc start -r // Restart the service process if it is already running.
+   hdc start -r # Restart the service process if it is already running.
    ```
 
    > **Note:**
@@ -691,7 +691,7 @@ Supported port forwarding types on device: tcp, dev, localabstract, localfilesys
 
    ```shell
    hdc kill
-   hdc kill -r // Terminate and restart the service process.
+   hdc kill -r # Terminate and restart the service process.
    ```
 
 3. Skip the service process query step for faster command execution. Command format:
@@ -845,7 +845,7 @@ Supported port forwarding types on device: tcp, dev, localabstract, localfilesys
    **Usage:**
 
    ```shell
-   hdc keygen key // Generates key and key.pub files in the current directory
+   hdc keygen key # Generates key and key.pub files in the current directory
    ```
 
 ## Query Version Number
@@ -986,9 +986,9 @@ The following example configures the OHOS_HDC_LOG_LEVEL environment variable to 
 Enable the hilog tool to retrieve logs using the following commands:
 
 ```shell
-hdc shell hilog -w start                              // Enable hilog disk logging
-hdc shell ls /data/log/hilog                          // View hilog logs saved to disk
-hdc file recv /data/log/hilog                         // Retrieve hilog logs (including kernel logs)
+hdc shell hilog -w start                              # Enable hilog disk logging
+hdc shell ls /data/log/hilog                          # View hilog logs saved to disk
+hdc file recv /data/log/hilog                         # Retrieve hilog logs (including kernel logs)
 ```
 
 ## Common Issues

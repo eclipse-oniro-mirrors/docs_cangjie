@@ -2770,9 +2770,9 @@ public init(
 
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
-| suffix | Array\<String> | No | Array<String>() | Exact file extension matching with OR relationship between keywords. |
-| displayName | Array\<String> | No | Array<String>() | Fuzzy filename matching with OR relationship between keywords. Currently only supports wildcard *. |
-| mimeType | Array\<String> | No | Array<String>() | Exact mime type matching with OR relationship between keywords. Reserved capability, currently unsupported. |
+| suffix | Array\<String> | No | Array\<String>() | Exact file extension matching with OR relationship between keywords. |
+| displayName | Array\<String> | No | Array\<String>() | Fuzzy filename matching with OR relationship between keywords. Currently only supports wildcard *. |
+| mimeType | Array\<String> | No | Array\<String>() | Exact mime type matching with OR relationship between keywords. Reserved capability, currently unsupported. |
 | fileSizeOver | ?Int64 | No | None | File size matching - files larger than specified size. |
 | lastModifiedAfter | ?Float64 | No | None | File last modified time matching - files modified after specified timestamp. |
 | excludeMedia | Bool | No | false | Whether to exclude files already present in Media. Reserved capability, currently unsupported. |

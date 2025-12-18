@@ -4505,7 +4505,7 @@ public init(securityLevel: RelationalStoreSecurityLevel, name!: String = "",
 |autoCleanDirtyData|Bool|否|true|指定是否自动清理云端删除后同步到本地的数据，true表示自动清理，false表示手动清理，默认自动清理。|
 |allowRebuild|Bool|否|false|指定数据库是否支持异常时自动删除，并重建一个空库空表，默认不删除。|
 |isReadOnly|Bool|否|false|指定数据库是否只读，默认为数据库可读写。|
-|pluginLibs|Array\<String>|否|Array<String>()|表示包含有fts（Full-Text Search，即全文搜索引擎）等能力的动态库名的数组。|
+|pluginLibs|Array\<String>|否|Array\<String>()|表示包含有fts（Full-Text Search，即全文搜索引擎）等能力的动态库名的数组。|
 |cryptoParam|[CryptoParam](#class-cryptoparam)|否|CryptoParam([])|指定用户自定义的加密参数。|
 |vector|Bool|否|false|指定数据库是否是向量数据库，true表示向量数据库，false表示关系型数据库，默认为false。|
 |tokenizer|[Tokenizer](#enum-tokenizer)|否|Tokenizer.NoneTokenizer|指定用户在fts场景下使用哪种分词器。|

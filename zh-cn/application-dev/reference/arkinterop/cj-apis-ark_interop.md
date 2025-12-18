@@ -192,7 +192,7 @@ func toJSValue(context: JSContext): JSValue
 |:----|:----|
 |[JSValue](#struct-jsvalue)|ArkTS 统一类型。|
 
-## extend Int8 <: JSInteropType<Int8>
+## extend Int8 <: JSInteropType\<Int8>
 
 **功能：** 该接口可用为内置类型 Int8 实现扩展方法。
 
@@ -293,7 +293,7 @@ func toJSValue(context: JSContext): JSValue
 | 34300003     | Accessing reference is beyond reach. |
 | 34300004     | Thread mismatch. |
 
-## extend Int16 <: JSInteropType<Int16>
+## extend Int16 <: JSInteropType\<Int16>
 
 **功能：** 该接口可用为内置类型 Int16 实现扩展方法。
 
@@ -394,7 +394,7 @@ func toJSValue(context: JSContext): JSValue
 | 34300003     | Accessing reference is beyond reach. |
 | 34300004     | Thread mismatch. |
 
-## extend Int32 <: JSInteropType<Int32>
+## extend Int32 <: JSInteropType\<Int32>
 
 **功能：** 该接口可用为内置类型 Int32 实现扩展方法。
 
@@ -495,7 +495,7 @@ func toJSValue(context: JSContext): JSValue
 | 34300003     | Accessing reference is beyond reach. |
 | 34300004     | Thread mismatch. |
 
-## extend Int64 <: JSInteropType<Int64>
+## extend Int64 <: JSInteropType\<Int64>
 
 **功能：** 该接口可用为内置类型 Int64 实现扩展方法。
 
@@ -597,7 +597,7 @@ func toJSValue(context: JSContext): JSValue
 | 34300003     | Accessing reference is beyond reach. |
 | 34300004     | Thread mismatch.                     |
 
-## extend UInt8 <: JSInteropType<UInt8>
+## extend UInt8 <: JSInteropType\<UInt8>
 
 **功能：** 该接口可用为内置类型 UInt8 实现扩展方法。
 
@@ -689,7 +689,7 @@ func toJSValue(context: JSContext): JSValue
 |:----|:----|
 |[JSValue](#struct-jsvalue)|ArkTS 统一类型。|
 
-## extend UInt16 <: JSInteropType<UInt16>
+## extend UInt16 <: JSInteropType\<UInt16>
 
 **功能：** 该接口可用为内置类型 UInt16 实现扩展方法。
 
@@ -790,7 +790,7 @@ func toJSValue(context: JSContext): JSValue
 | 34300003     | Accessing reference is beyond reach. |
 | 34300004     | Thread mismatch. |
 
-## extend UInt32 <: JSInteropType<UInt32>
+## extend UInt32 <: JSInteropType\<UInt32>
 
 **功能：** 该接口可用为内置类型 UInt32 实现扩展方法。
 
@@ -891,7 +891,7 @@ func toJSValue(context: JSContext): JSValue
 | 34300003     | Accessing reference is beyond reach. |
 | 34300004     | Thread mismatch. |
 
-## extend UInt64 <: JSInteropType<UInt64>
+## extend UInt64 <: JSInteropType\<UInt64>
 
 **功能：** 该接口可用为内置类型 UInt64 实现扩展方法。
 
@@ -993,7 +993,7 @@ func toJSValue(context: JSContext): JSValue
 | 34300003     | Accessing reference is beyond reach. |
 | 34300004     | Thread mismatch.                     |
 
-## extend Float16 <: JSInteropType<Float16>
+## extend Float16 <: JSInteropType\<Float16>
 
 **功能：** 该接口可用为内置类型 Float16 实现扩展方法。
 
@@ -1094,7 +1094,7 @@ func toJSValue(context: JSContext): JSValue
 | 34300003     | Accessing reference is beyond reach. |
 | 34300004     | Thread mismatch. |
 
-## extend Float32 <: JSInteropType<Float32>
+## extend Float32 <: JSInteropType\<Float32>
 
 **功能：** 该接口可用为内置类型 Float32 实现扩展方法。
 
@@ -1195,7 +1195,7 @@ func toJSValue(context: JSContext): JSValue
 | 34300003   | Accessing reference is beyond reach. |
 | 34300004   | Thread mismatch. |
 
-## extend Float64 <: JSInteropType<Float64>
+## extend Float64 <: JSInteropType\<Float64>
 
 **功能：** 该接口可用为内置类型 Float64 实现扩展方法。
 
@@ -1295,7 +1295,7 @@ func toJSValue(context: JSContext): JSValue
 | 34300003   | Accessing reference is beyond reach. |
 | 34300004   | Thread mismatch. |
 
-## extend Bool <: JSInteropType<Bool>
+## extend Bool <: JSInteropType\<Bool>
 
 **功能：** 该接口可用为内置类型 Bool 实现扩展方法。
 
@@ -1395,7 +1395,7 @@ func toJSValue(context: JSContext): JSValue
 | 34300003   | Accessing reference is beyond reach. |
 | 34300004   | Thread mismatch. |
 
-## extend String <: JSInteropType<String>
+## extend String <: JSInteropType\<String>
 
 **功能：** 该接口可用为内置类型 String 实现扩展方法。
 
@@ -1516,7 +1516,7 @@ func toJSValue(context: JSContext): JSValue
 | 34300003   | Accessing reference is beyond reach. |
 | 34300004   | Thread mismatch.                     |
 
-## extend Unit <: JSInteropType<Unit>
+## extend Unit <: JSInteropType\<Unit>
 
 **功能：** 该接口可用为内置类型 Unit 实现扩展方法。
 
@@ -1603,9 +1603,9 @@ func toJSValue(context: JSContext): JSValue
 | 34300003   | Accessing reference is beyond reach. |
 | 34300004   | Thread mismatch. |
 
-## extend<T> Option<T> <: JSInteropType<Option<T>> where T <: JSInteropType<T>
+## extend\<T> Option\<T> <: JSInteropType<Option\<T>> where T <: JSInteropType\<T>
 
-**功能：** 该接口可用为类型 Option<T> 实现扩展方法。
+**功能：** 该接口可用为类型 Option\<T> 实现扩展方法。
 
 **起始版本：** 22
 
@@ -1631,7 +1631,7 @@ func optionTranslate(context: JSContext): Unit {
 static func fromJSValue(context: JSContext, input: JSValue): Option<T>
 ```
 
-**功能：** 将 JSValue 类型数据转换为相应的 Option<T> 类型。
+**功能：** 将 JSValue 类型数据转换为相应的 Option\<T> 类型。
 
 **起始版本：** 22
 
@@ -1646,7 +1646,7 @@ static func fromJSValue(context: JSContext, input: JSValue): Option<T>
 
 |类型|说明|
 |:----|:----|
-|Option<T>|仓颉 Option 类型。|
+|Option\<T>|仓颉 Option 类型。|
 
 **异常：**
 
@@ -1663,7 +1663,7 @@ static func fromJSValue(context: JSContext, input: JSValue): Option<T>
 static func toArktsType(): String
 ```
 
-**功能：** 获取仓颉 Option<T> 类型对应的ArkTS类型名称。
+**功能：** 获取仓颉 Option\<T> 类型对应的ArkTS类型名称。
 
 **起始版本：** 22
 
@@ -1679,7 +1679,7 @@ static func toArktsType(): String
 func toJSValue(context: JSContext): JSValue
 ```
 
-**功能：** 将仓颉 Option<T> 类型数据转换为JSValue。
+**功能：** 将仓颉 Option\<T> 类型数据转换为JSValue。
 
 **起始版本：** 22
 
@@ -1704,9 +1704,9 @@ func toJSValue(context: JSContext): JSValue
 | 34300003   | Accessing reference is beyond reach. |
 | 34300004   | Thread mismatch. |
 
-## extend<T> Array<T> <: JSInteropType<Array<T>> where T <: JSInteropByte
+## extend\<T> Array\<T> <: JSInteropType<Array\<T>> where T <: JSInteropByte
 
-**功能：** 该接口可用为类型 Array<T> 实现扩展方法。
+**功能：** 该接口可用为类型 Array\<T> 实现扩展方法。
 
 **起始版本：** 22
 
@@ -1730,7 +1730,7 @@ func arrayTranslate(context: JSContext): Unit {
 static func fromJSValue(_: JSContext, input: JSValue): Array<T>
 ```
 
-**功能：** 将 JSValue 类型数据转换为相应的 Array<T> 类型。
+**功能：** 将 JSValue 类型数据转换为相应的 Array\<T> 类型。
 
 **起始版本：** 22
 
@@ -1745,7 +1745,7 @@ static func fromJSValue(_: JSContext, input: JSValue): Array<T>
 
 |类型|说明|
 |:----|:----|
-|Array<T>|仓颉 Option 类型。|
+|Array\<T>|仓颉 Option 类型。|
 
 **异常：**
 
@@ -1763,7 +1763,7 @@ static func fromJSValue(_: JSContext, input: JSValue): Array<T>
 static func toArktsType(): String
 ```
 
-**功能：** 获取仓颉 Array<T> 类型对应的ArkTS类型名称。
+**功能：** 获取仓颉 Array\<T> 类型对应的ArkTS类型名称。
 
 **起始版本：** 22
 
@@ -1779,7 +1779,7 @@ static func toArktsType(): String
 func toJSValue(context: JSContext): JSValue
 ```
 
-**功能：** 将仓颉 Array<T> 类型数据转换为JSValue。
+**功能：** 将仓颉 Array\<T> 类型数据转换为JSValue。
 
 **起始版本：** 22
 
@@ -7539,7 +7539,7 @@ public func getNapiEnv(): CPointer<Unit>
 
 | 类型       | 说明          |
 |:---------|:------------|
-| CPointer<Unit> | napi接口的env。 |
+| CPointer\<Unit> | napi接口的env。 |
 
 **起始版本：** 22
 

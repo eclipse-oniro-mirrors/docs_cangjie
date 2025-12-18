@@ -413,7 +413,7 @@ Below is an example of loading the Cangjie third-party library `libapplication.s
 5. Declare the path of Cangjie third-party library A in the dependencies field of the `cjpm.toml` file within the `entry` module:
 
     ```toml
-    // entry/cjpm.toml
+    # entry/cjpm.toml
     [dependencies]
       [dependencies.package_a]
         path = "../package_a"
@@ -513,7 +513,7 @@ Below is an example of loading the Cangjie third-party library `libapplication.s
 5. Declare the path of Cangjie third-party library A in the dependencies field of the `cjpm.toml` file within the `entry` module:
 
     ```toml
-    // entry/cjpm.toml
+    # entry/cjpm.toml
     [dependencies]
       [dependencies.package_a]
         path = "../package_a"

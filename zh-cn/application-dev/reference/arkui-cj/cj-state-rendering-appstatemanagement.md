@@ -207,7 +207,7 @@ public static func set<T>(propName: String, newValue: T): Bool
 |:----|:----|
 |Bool|如果AppStorage中存在对应的属性，则设置成功并返回true，否则返回false。|
 
-### static func setAndLink<T>(String, T)
+### static func setAndLink\<T>(String, T)
 
 ```cangjie
 public static func setAndLink<T>(propName: String, defaultValue: T): ObservedProperty<T>

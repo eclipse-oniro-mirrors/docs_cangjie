@@ -137,7 +137,7 @@ viewPort(x!: Length, y!: Length, width!: Length, height!: Length)
   }
   ```
 
-  ![viewport(2)](figures/viewport(2).jpg)
+  ![viewport(2)](figures/viewport2.jpg)
 
 - 创建一个宽高都为300的shape组件，背景色为黄色，创建一个宽高都为300的viewport。用一个蓝色的矩形来填充viewport，在viewport中绘制一个半径为75的圆，将viewport向右方和下方各平移150。
 
@@ -169,7 +169,7 @@ viewPort(x!: Length, y!: Length, width!: Length, height!: Length)
   }
   ```
 
-  ![viewport(3)](figures/viewport(3).jpg)
+  ![viewport(3)](figures/viewport3.jpg)
 
 ## 自定义样式
 

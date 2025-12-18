@@ -39,7 +39,7 @@
 | Window         | moveWindowTo(x: Int32, y: Int32): Unit | 移动当前窗口位置。                                           |
 | Window         | resize(width: UInt32, height: UInt32): Unit | 改变当前窗口大小。                                           |
 | Window         | setWindowLayoutFullScreen(isLayoutFullScreen: Bool): Unit | 设置主窗口或子窗口的布局是否为沉浸式布局。true表示沉浸式布局；false表示非沉浸式布局。|
-| Window         | setWindowSystemBarEnable(names: Array<SystemBarType>): Unit | 设置主窗口状态栏、三键导航栏的可见模式，状态栏通过status控制、三键导航栏通过navigation控制。<br>例如，该参数设置为[SystemBarType.Status,&nbsp;SystemBarType.Navigation]，则全部显示；设置为[]，则不显示。|
+| Window         | setWindowSystemBarEnable(names: Array\<SystemBarType>): Unit | 设置主窗口状态栏、三键导航栏的可见模式，状态栏通过status控制、三键导航栏通过navigation控制。<br>例如，该参数设置为[SystemBarType.Status,&nbsp;SystemBarType.Navigation]，则全部显示；设置为[]，则不显示。|
 | Window         | setWindowSystemBarProperties(systemBarProperties: SystemBarProperties): Unit | 设置窗口内导航栏、状态栏属性。<br/>`systemBarProperties`：导航栏、状态栏的属性集合。 |
 | Window         | func showWindow(): Unit             | 显示当前窗口。                                               |
 | Window         | func destroyWindow(): Unit     | 销毁当前窗口。                                               |

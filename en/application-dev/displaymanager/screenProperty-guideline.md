@@ -16,11 +16,11 @@ The commonly used interfaces for screen properties are listed in the table below
 
 | Interface                                                         | Description                                                         |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| getAllDisplays(): Array<Display>                   | Retrieves all current Display objects.             |
+| getAllDisplays(): Array\<Display>                   | Retrieves all current Display objects.             |
 | getDefaultDisplaySync(): Display                             | Retrieves the current default Display object.                                  |
 | func isFoldable(): Bool                                        | Checks whether the device is foldable. Returns true if the device is foldable, false otherwise.                          |
-| on(listenerType: ListenerType, callback: Callback1Argument<FoldStatus>): Unit | Enables monitoring of fold state changes for foldable devices.                             |
-| off(listenerType: ListenerType, callback: Callback1Argument<FoldStatus>): Unit | Disables monitoring of fold state changes for foldable devices.                             |
+| on(listenerType: ListenerType, callback: Callback1Argument\<FoldStatus>): Unit | Enables monitoring of fold state changes for foldable devices.                             |
+| off(listenerType: ListenerType, callback: Callback1Argument\<FoldStatus>): Unit | Disables monitoring of fold state changes for foldable devices.                             |
 
 ## Obtaining Display Objects
 

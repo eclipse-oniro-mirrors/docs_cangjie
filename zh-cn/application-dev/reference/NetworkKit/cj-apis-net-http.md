@@ -1490,9 +1490,9 @@ public init(method!: RequestMethod = RequestMethod.Get, extraData!: HttpData = H
 |resumeTo|Int64|否|0|**命名参数。** 用于设置下载结束位置，该参数只能用于GET方法，不能用于其他。HTTP标准（RFC 7233第3.1节）允许服务器忽略范围请求。<br />- 使用HTTP PUT时，不能使用该选项，因为该选项可能与其他选项冲突。<br />- 取值范围是：[1，4294967296（4GB）]，超出范围则不生效。|
 |clientCert|[ClientCert](#class-clientcert)|否|ClientCert("", "")|**命名参数。** 支持传输客户端证书。|
 |dnsOverHttps|String|否|""|**命名参数。** 设置使用HTTPS协议的服务器进行DNS解析。<br />- 参数必须根据以下格式进行URL编码："https:// host:port/path"。|
-|dnsServers|Array\<String>|否|Array<String>()|**命名参数。** 设置指定的DNS服务器进行DNS解析。<br />- 最多可以设置3个DNS解析服务器。如果有3个以上，只取前3个。<br />- 服务器必须是IPV4或者IPV6地址。|
+|dnsServers|Array\<String>|否|Array\<String>()|**命名参数。** 设置指定的DNS服务器进行DNS解析。<br />- 最多可以设置3个DNS解析服务器。如果有3个以上，只取前3个。<br />- 服务器必须是IPV4或者IPV6地址。|
 |maxLimit|UInt32|否|5 * 1024 * 1024|**命名参数。** 响应消息的最大字节限制。<br />默认值为5\*1024\*1024，以字节为单位。最大值为100\*1024\*1024，以字节为单位。|
-|multiFormDataList|Array\<[MultiFormData](#class-multiformdata)>|否|Array<MultiFormData>()|**命名参数。** 当'content-Type'为'multipart/form-data'时，则上传该字段定义的数据字段表单列表。|
+|multiFormDataList|Array\<[MultiFormData](#class-multiformdata)>|否|Array\<MultiFormData>()|**命名参数。** 当'content-Type'为'multipart/form-data'时，则上传该字段定义的数据字段表单列表。|
 
 ## class HttpResponse
 

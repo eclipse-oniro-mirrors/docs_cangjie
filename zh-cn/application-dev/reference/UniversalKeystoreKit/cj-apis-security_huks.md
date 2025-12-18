@@ -2479,7 +2479,7 @@ public init(properties!: Array<HuksParam> = Array<HuksParam>(), inData!: Bytes =
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|properties|Array\<[HuksParam](#class-huksparam)>|否|Array<HuksParam>()|属性，用于存HuksParam的数组。默认为空。|
+|properties|Array\<[HuksParam](#class-huksparam)>|否|Array\<HuksParam>()|属性，用于存HuksParam的数组。默认为空。|
 |inData|Bytes|否|Bytes\<UInt8>()|输入数据。默认为空。|
 
 ## class HuksParam

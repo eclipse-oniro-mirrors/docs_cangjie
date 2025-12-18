@@ -35,9 +35,9 @@ hdc shell chown ${user_id}:${user_id} ${file_path}
 During debugging, if encountering permission issues or missing files, developers should switch from the debugging process perspective to the application perspective for direct analysis of permission and directory issues. Use these commands to switch perspectives:
 
 ```shell
-hdc shell                         // Enter shell
-ps -ef|grep [hapName]             // Find corresponding application pid via ps command
-nsenter -t [hapPid] -m /bin/sh    // Enter application sandbox environment using the pid found above
+hdc shell                         # Enter shell
+ps -ef|grep [hapName]             # Find corresponding application pid via ps command
+nsenter -t [hapPid] -m /bin/sh    # Enter application sandbox environment using the pid found above
 ```
 
 After execution, you'll be in the application perspective where directory paths represent application sandbox paths, allowing investigation of sandbox path-related issues.

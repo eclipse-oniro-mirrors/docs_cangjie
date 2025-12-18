@@ -20,7 +20,7 @@ ArkUI's UI development model follows the MVVM pattern. With this basic introduct
 
 ArkUI's UI development model is the MVVM pattern, with state variables playing the role of ViewModel in this pattern—refreshing the UI upward and updating data downward. The overall framework is as follows:
 
-![ArkUI Development Model Diagram](./figures/arkui开发模式图.png)
+![ArkUI Development Model Diagram](./figures/arkui-development-mode-diagram.png)
 
 ### View Layer
 
