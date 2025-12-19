@@ -462,7 +462,6 @@ public enum ColorSpace {
     | DciP3
     | DisplayP3
     | Srgb
-    | Custom
     | Bt709
     | Bt601Ebu
     | Bt601SmpteC
@@ -488,6 +487,7 @@ public enum ColorSpace {
     | DisplayP3Srgb
     | DisplayP3Hlg
     | DisplayP3Pq
+    | Custom
     | ...
 }
 ```

@@ -4173,7 +4173,7 @@ public class StoreConfig {
         customDir!: String = "", rootDir!: String = "",
         autoCleanDirtyData!: Bool = true, allowRebuild!: Bool = false,
         isReadOnly!: Bool = false, pluginLibs!: Array<String> = Array<String>(),
-        cryptoParam!: CryptoParam([]), vector!: Bool = false,
+        cryptoParam!: CryptoParam = CryptoParam([]), vector!: Bool = false,
         tokenizer!: Tokenizer = Tokenizer.NoneTokenizer, persist!: Bool = true,
         enableSemanticIndex!: Bool = false)
 }
@@ -4481,7 +4481,7 @@ public init(securityLevel: RelationalStoreSecurityLevel, name!: String = "",
     customDir!: String = "", rootDir!: String = "",
     autoCleanDirtyData!: Bool = true, allowRebuild!: Bool = false,
     isReadOnly!: Bool = false, pluginLibs!: Array<String> = Array<String>(),
-    cryptoParam = CryptoParam([]), vector!: Bool = false,
+    cryptoParam!: CryptoParam = CryptoParam([]), vector!: Bool = false,
     tokenizer!: Tokenizer = Tokenizer.NoneTokenizer, persist!: Bool = true,
     enableSemanticIndex!: Bool = false)
 ```

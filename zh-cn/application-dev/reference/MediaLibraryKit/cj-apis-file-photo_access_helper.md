@@ -4700,6 +4700,7 @@ public func toString(): String
 public enum PhotoType {
     | Image
     | Video
+    | ...
 }
 ```
 

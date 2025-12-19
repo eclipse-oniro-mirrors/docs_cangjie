@@ -380,7 +380,7 @@ try {
 ## class ParamsSpec
 
 ```cangjie
-public class ParamsSpec {
+public open class ParamsSpec {
     public var algName: String
 }
 ```

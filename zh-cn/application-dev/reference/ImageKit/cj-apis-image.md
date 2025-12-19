@@ -617,9 +617,8 @@ public class DecodingOptions {
     public var desiredSize: Size
     public var desiredRegion: Region
     public var desiredPixelFormat: PixelMapFormat
-    public var index: UInt32
     public var fitDensity: Int32
-    public var desiredColorSpace:?ColorSpaceManager
+    public var desiredColorSpace: ?ColorSpaceManager
     public var desiredDynamicRange: DecodingDynamicRange
     public init(sampleSize!: UInt32 = 1, rotate!: UInt32 = 0, editable!: Bool = false,
         desiredSize!: Size = Size(0, 0), desiredRegion!: Region = Region(Size(0, 0), 0, 0),
