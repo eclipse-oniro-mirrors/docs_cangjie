@@ -1458,7 +1458,7 @@ public var usingProxy: UsingProxy
 public init(method!: RequestMethod = RequestMethod.Get, extraData!: HttpData = HttpData.StringData(""),
     expectDataType!: ?HttpDataTypee = None, usingCache!: Bool = true, priority!: UInt32 = 1,
     header!: HashMap<String, String> = HashMap<String, String>(), readTimeout!: UInt32 = 60000,
-    connectTimeout!: UInt32 = 60000, usingProtocol!: ?HttpProtocol = = None,
+    connectTimeout!: UInt32 = 60000, usingProtocol!: ?HttpProtocol = None,
     usingProxy!: UsingProxy = UsingProxy.UseDefault, caPath!: String = "", resumeFrom!: Int64 = 0,
     resumeTo!: Int64 = 0, clientCert!: ClientCert = ClientCert("",""), dnsOverHttps!: String = "",
     dnsServers!: Array<String> = Array<String>(), maxLimit!: UInt32 = 5 * 1024 * 1024,
