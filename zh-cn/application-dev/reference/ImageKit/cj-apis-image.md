@@ -5012,35 +5012,45 @@ public func toString(): String
 
 ```cangjie
 public enum PropertyKey <: ToString {
-    | ImageWidth
-    | ImageLength
     | BitsPerSample
+    | Orientation
+    | ImageLength
+    | ImageWidth
+    | GpsLatitude
+    | GpsLongitude
+    | GpsLatitudeRef
+    | GpsLongitudeRef
+    | DateTimeOriginal
+    | ExposureTime
+    | SceneType
+    | IsoSpeedRatings
+    | FNumber
+    | DateTime
+    | GpsTimestamp
+    | GpsDateStamp
     | ImageDescription
     | Make
     | Model
-    | Orientation
-    | DateTime
     | PhotoMode
-    | ExposureTime
-    | FNumber
-    | GpsLatitudeRef
-    | GpsLatitude
-    | GpsLongitudeRef
-    | GpsLongitude
-    | GpsTimestamp
-    | GpsDateStamp
-    | IsoSpeedRatings
     | SensitivityType
     | StandardOutputSensitivity
     | RecommendedExposureIndex
     | IsoSpeed
-    | DateTimeOriginal
     | ApertureValue
     | ExposureBiasValue
     | MeteringMode
     | LightSource
     | Flash
     | FocalLength
+    | UserComment
+    | PixelXDimension
+    | PixelYDimension
+    | WhiteBalance
+    | FocalLengthIn35mmFilm
+    | CaptureMode
+    | PhysicalAperture
+    | RollAngle
+    | PitchAngle
     | SceneFoodConf
     | SceneStageConf
     | SceneBlueSkyConf
@@ -5052,17 +5062,7 @@ public enum PropertyKey <: ToString {
     | SceneNightConf
     | SceneTextConf
     | FaceCount
-    | CaptureMode
-    | RollAngle
-    | PitchAngle
-    | PhysicalAperture
     | FocusMode
-    | UserComment
-    | PixelXDimension
-    | PixelYDimension
-    | SceneType
-    | WhiteBalance
-    | FocalLengthIn35mmFilm
     | ...
 }
 ```

@@ -4160,7 +4160,8 @@ public class StoreConfig {
     public var rootDir: String
     public var autoCleanDirtyData: Bool
     public var allowRebuild: Bool
-    public var vector: Bool
+    public var vector
+    : Bool
     public var isReadOnly: Bool
     public var pluginLibs: Array<String>
     public var cryptoParam: CryptoParam
