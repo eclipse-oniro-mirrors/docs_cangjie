@@ -472,6 +472,12 @@ public func toJSValue(context: JSContext): JSValue
 |:---|:---|:---|:---|:---|
 |context|[JSContext](../arkinterop/cj-apis-ark_interop.md#class-jscontext)|是|-|ArkTS互操作上下文。|
 
+**返回值：**
+
+|类型|说明|
+|:----|:----|
+|[JSValue](../arkinterop/cj-apis-ark_interop.md#struct-jsvalue)|ArkTS统一类型。|
+
 ## class UIAbility
 
 ```cangjie
