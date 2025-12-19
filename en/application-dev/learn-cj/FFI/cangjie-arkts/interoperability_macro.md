@@ -260,7 +260,7 @@ Classes annotated with declarative interop macros must meet the following condit
 - Inheritance from interfaces is supported but not expanded
 - Static initializers are not supported
 - Multiple regular constructors or primary constructors are supported. They must be annotated with `public`. Other modifiers are not supported. Member variable parameters are not supported. Default parameter values are not supported.
-- If multiple regular constructors or primary constructors have the same ArkTS interface signature, the first matching constructor will be used.
+- Multiple regular constructors or primary constructors corresponding to the same ArkTS signature are not supported. In this scenario, it is recommended to use static functions.
 - Member variables can have default values, must be annotated with `public`, other modifiers are not supported, and variable type annotations cannot be omitted
 - Operator overloading is not supported
 - Member properties must be annotated with `public`
