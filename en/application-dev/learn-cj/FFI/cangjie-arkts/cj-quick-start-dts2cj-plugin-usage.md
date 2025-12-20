@@ -67,7 +67,7 @@ The following demonstrates detailed steps for invoking the [lz4js](https://ohpm.
 
      ```cangjie
      //index.cj
-     import lz4js.compress // Import the compress interface from the lz4cj library
+     import lz4cj.compress // Import the compress interface from the lz4cj library
 
      func testCJ() {
          ...

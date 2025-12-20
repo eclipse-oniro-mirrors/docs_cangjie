@@ -67,7 +67,7 @@
 
      ```cangjie
      //index.cj
-     import lz4js.compress // 导入lz4cj库中的compress接口
+     import lz4cj.compress // 导入lz4cj库中的compress接口
 
      func testCJ() {
          ...

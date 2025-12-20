@@ -10940,7 +10940,7 @@ func findLastSubstringFromIndex(context: JSContext): JSValue {
 ### func lazySplit(Utf16String, Bool)
 
 ```cangjie
-public func lazySplit(separator: Utf16String, remoteEmpty!: Bool = false): Iterator<Utf16String>
+public func lazySplit(separator: Utf16String, removeEmpty!: Bool = false): Iterator<Utf16String>
 ```
 
 **功能：** 懒分割字符串。
@@ -10952,7 +10952,7 @@ public func lazySplit(separator: Utf16String, remoteEmpty!: Bool = false): Itera
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |separator|[Utf16String](#class-utf16string)|是|-|分隔符。当分隔符为空字符串时，每个字符都是单独的元素。|
-|remoteEmpty|Bool|否|false|是否删除空白元素。|
+|removeEmpty|Bool|否|false|是否删除空白元素。|
 
 **返回值：**
 
@@ -10979,7 +10979,7 @@ func lazySplitString(context: JSContext): JSValue {
     let separator = Utf16String(",")
 
     // 懒分割字符串，移除空元素
-    let splitIterator = utf16Str.lazySplit(separator, remoteEmpty: true)
+    let splitIterator = utf16Str.lazySplit(separator, removeEmpty: true)
 
     var count = 0
     for (part in splitIterator) {
@@ -10994,7 +10994,7 @@ func lazySplitString(context: JSContext): JSValue {
 ### func lazySplit(Utf16String, Int64, Bool)
 
 ```cangjie
-public func lazySplit(separator: Utf16String, maxSplit: Int64, remoteEmpty!: Bool = false): Iterator<Utf16String>
+public func lazySplit(separator: Utf16String, maxSplit: Int64, removeEmpty!: Bool = false): Iterator<Utf16String>
 ```
 
 **功能：** 懒分割字符串。
@@ -11007,7 +11007,7 @@ public func lazySplit(separator: Utf16String, maxSplit: Int64, remoteEmpty!: Boo
 |:---|:---|:---|:---|:---|
 |separator|[Utf16String](#class-utf16string)|是|-|分隔符。当分隔符为空字符串时，每个字符都是单独的元素。|
 |maxSplit|Int64|是|-|分割最大数量。为 0 时无上限。|
-|remoteEmpty|Bool|否|false|是否删除空白元素。|
+|removeEmpty|Bool|否|false|是否删除空白元素。|
 
 **返回值：**
 
@@ -11149,7 +11149,7 @@ public func runes(): Iterator<Rune>
 ### func split(Utf16String, Bool)
 
 ```cangjie
-public func split(separator: Utf16String, remoteEmpty!: Bool = false): Array<Utf16String>
+public func split(separator: Utf16String, removeEmpty!: Bool = false): Array<Utf16String>
 ```
 
 **功能：** 分割字符串。
@@ -11161,7 +11161,7 @@ public func split(separator: Utf16String, remoteEmpty!: Bool = false): Array<Utf
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |separator|[Utf16String](#class-utf16string)|是|-|分隔符。当分隔符为空字符串时，每个字符都是单独的元素。|
-|remoteEmpty|Bool|否|false|是否删除空白元素。|
+|removeEmpty|Bool|否|false|是否删除空白元素。|
 
 **返回值：**
 
@@ -11188,7 +11188,7 @@ func splitString(context: JSContext): JSValue {
     let separator = Utf16String(",")
 
     // 分割字符串，最多分割成3个部分，不移除空元素
-    let splitResult = utf16Str.split(separator, 3, remoteEmpty: false)
+    let splitResult = utf16Str.split(separator, 3, removeEmpty: false)
 
     Hilog.info(0, "test", "Split result size: ${splitResult.size}")
 
@@ -11203,7 +11203,7 @@ func splitString(context: JSContext): JSValue {
 ### func split(Utf16String, Int64, Bool)
 
 ```cangjie
-public func split(separator: Utf16String, maxSplit: Int64, remoteEmpty!: Bool = false): Array<Utf16String>
+public func split(separator: Utf16String, maxSplit: Int64, removeEmpty!: Bool = false): Array<Utf16String>
 ```
 
 **功能：** 分割字符串。
@@ -11216,7 +11216,7 @@ public func split(separator: Utf16String, maxSplit: Int64, remoteEmpty!: Bool = 
 |:---|:---|:---|:---|:---|
 |separator|[Utf16String](#class-utf16string)|是|-|分隔符。当分隔符为空字符串时，每个字符都是单独的元素。|
 |maxSplit|Int64|是|-|分割最大数量。为 0 时无上限。|
-|remoteEmpty|Bool|否|false|是否删除空白元素。|
+|removeEmpty|Bool|否|false|是否删除空白元素。|
 
 **返回值：**
 

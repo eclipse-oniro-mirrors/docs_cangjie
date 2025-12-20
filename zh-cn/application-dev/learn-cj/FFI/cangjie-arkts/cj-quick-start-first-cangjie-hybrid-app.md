@@ -186,7 +186,7 @@ Project_name
 
 1. 创建仓颉页面。
 
-    - 在**Project**窗口，打开**entry > src > main**，右键单击**cangjie**文件夹，选择**New -> Cangjie HybridComponent File**，**Component name**命名为**Second**，**Component name** 中选中**Cangjie**选项，**Type** 中选中**With ArkTS Wrapper**选项,如下图所示：
+    - 在**Project**窗口，打开**entry > src > main**，右键单击**cangjie**文件夹，选择**New -> Cangjie HybridComponent File**，**Component name**命名为**Second**，**Language** 中选中**Cangjie**选项，**Type** 中选中**With ArkTS Wrapper**选项,如下图所示：
 
        ![inputPageName](../../figures/inputPageName.png)
 

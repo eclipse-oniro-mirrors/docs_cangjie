@@ -10737,7 +10737,7 @@ func findLastSubstringFromIndex(context: JSContext): JSValue {
 ### func lazySplit(Utf16String, Bool)
 
 ```cangjie
-public func lazySplit(separator: Utf16String, remoteEmpty!: Bool = false): Iterator<Utf16String>
+public func lazySplit(separator: Utf16String, removeEmpty!: Bool = false): Iterator<Utf16String>
 ```
 
 **Function:** Lazily splits the string.
@@ -10749,7 +10749,7 @@ public func lazySplit(separator: Utf16String, remoteEmpty!: Bool = false): Itera
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
 | separator | [Utf16String](#class-utf16string) | Yes | - | Separator. When the separator is an empty string, each character is treated as a separate element. |
-| remoteEmpty | Bool | No | false | Whether to remove empty elements. |
+| removeEmpty | Bool | No | false | Whether to remove empty elements. |
 
 **Return Value:**
 
@@ -10787,7 +10787,7 @@ func lazySplitString(context: JSContext): JSValue {
 ```### func lazySplit(Utf16String, Int64, Bool)
 
 ```cangjie
-public func lazySplit(separator: Utf16String, maxSplit: Int64, remoteEmpty!: Bool = false): Iterator<Utf16String>
+public func lazySplit(separator: Utf16String, maxSplit: Int64, removeEmpty!: Bool = false): Iterator<Utf16String>
 ```
 
 **Function:** Lazy string splitting.
@@ -10800,7 +10800,7 @@ public func lazySplit(separator: Utf16String, maxSplit: Int64, remoteEmpty!: Boo
 |:---|:---|:---|:---|:---|
 | separator | [Utf16String](#class-utf16string) | Yes | - | Delimiter. When the delimiter is an empty string, each character is treated as a separate element. |
 | maxSplit | Int64 | Yes | - | Maximum number of splits. Unlimited when set to 0. |
-| remoteEmpty | Bool | No | false | Whether to remove empty elements. |
+| removeEmpty | Bool | No | false | Whether to remove empty elements. |
 
 **Return Value:**
 
@@ -10938,7 +10938,7 @@ public func runes(): Iterator<Rune>
 ### func split(Utf16String, Bool)
 
 ```cangjie
-public func split(separator: Utf16String, remoteEmpty!: Bool = false): Array<Utf16String>
+public func split(separator: Utf16String, removeEmpty!: Bool = false): Array<Utf16String>
 ```
 
 **Function:** Split string.
@@ -10950,7 +10950,7 @@ public func split(separator: Utf16String, remoteEmpty!: Bool = false): Array<Utf
 | Parameter Name | Type | Required | Default Value | Description |
 |:---|:---|:---|:---|:---|
 | separator | [Utf16String](#class-utf16string) | Yes | - | Delimiter. When the delimiter is an empty string, each character is treated as a separate element. |
-| remoteEmpty | Bool | No | false | Whether to remove empty elements. |
+| removeEmpty | Bool | No | false | Whether to remove empty elements. |
 
 **Return Value:**
 
@@ -10990,7 +10990,7 @@ func splitString(context: JSContext): JSValue {
 ### func split(Utf16String, Int64, Bool)
 
 ```cangjie
-public func split(separator: Utf16String, maxSplit: Int64, remoteEmpty!: Bool = false): Array<Utf16String>
+public func split(separator: Utf16String, maxSplit: Int64, removeEmpty!: Bool = false): Array<Utf16String>
 ```
 
 **Function:** Split string.
@@ -11003,7 +11003,7 @@ public func split(separator: Utf16String, maxSplit: Int64, remoteEmpty!: Bool = 
 |:---|:---|:---|:---|:---|
 | separator | [Utf16String](#class-utf16string) | Yes | - | Delimiter. When the delimiter is an empty string, each character is treated as a separate element. |
 | maxSplit | Int64 | Yes | - | Maximum number of splits. Unlimited when set to 0. |
-| remoteEmpty | Bool | No | false | Whether to remove empty elements. |
+| removeEmpty | Bool | No | false | Whether to remove empty elements. |
 
 **Return Value:**
 
