@@ -331,7 +331,7 @@ Project_name
 
 2. 真机连接成功后，进入**File > Project Structure > Project > Signing Configs**界面勾选**Automatically generate signature**，单击界面提示的**Sign In**，使用用户账号登录。等待自动签名完成后，单击**OK**即可。如下图所示：
 
-   ![buildSign](../../figures/buildSignNew.png)
+   ![buildSign](../../figures/buildSignN.png)
 
 3. 在编辑窗口右上角的工具栏，单击![runButton](../../figures/runButton.png)按钮运行。效果如下图所示：
 
