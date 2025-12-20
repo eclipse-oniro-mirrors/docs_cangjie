@@ -136,11 +136,11 @@
         - [Cangjie-ArkTS Interoperability Auxiliary Library](FFI/cangjie-arkts/auxiliary_lib.md)
         - [Cangjie-ArkTS Interoperability Development Guidelines](FFI/cangjie-arkts/interop_guidelines.md)
 - Compilation and Build
-    - [cjc Usage](compile_and_build/cjc_usage_ohos.md)
+    - [cjc Usage](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/compile_and_build/cjc_usage.md)
     - [cjpm Introduction](compile_and_build/cjpm_usage_ohos.md)
     - [Conditional Compilation](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/compile_and_build/conditional_compilation.md)
 - Appendix
-    - [cjc Compilation Options](Appendix/compile_options_ohos.md)
+    - [cjc Compilation Options](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/Appendix/compile_options.md)
     - [Keywords](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/Appendix/keyword.md)
     - [Operators](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/Appendix/operator.md)
     - [Operator Functions](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/Appendix/operator_function.md)

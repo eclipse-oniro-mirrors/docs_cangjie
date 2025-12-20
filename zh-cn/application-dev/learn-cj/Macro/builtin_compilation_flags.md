@@ -71,7 +71,7 @@ main(): Int32 {
 }
 ```
 
-具体的编译介绍，详情请参见[附录](../Appendix/compile_options_ohos.md#cjc-编译选项)。下面为该用例对应的编译命令：
+具体的编译介绍，详情请参见[附录](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/Appendix/compile_options.md)。下面为该用例对应的编译命令：
 
 ```shell
 cjc -L . -lcProg ./main.cj

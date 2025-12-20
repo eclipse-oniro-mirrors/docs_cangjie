@@ -71,7 +71,7 @@ main(): Int32 {
 }
 ```
 
-For specific compilation instructions, please refer to [Appendix](../Appendix/compile_options_ohos.md#cjc-compilation-options). Below is the corresponding compilation command for this example:
+For specific compilation instructions, please refer to [Appendix](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/compile_and_build/cjc_usage.md). Below is the corresponding compilation command for this example:
 
 ```shell
 cjc -L . -lcProg ./main.cj
