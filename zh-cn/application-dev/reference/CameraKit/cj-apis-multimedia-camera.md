@@ -670,7 +670,7 @@ func setColorSpace(colorSpace: ColorSpace): Unit
 应用可以下发不同的色彩空间(ColorSpace)参数来支持P3广色域以及HDR的功能。
 当应用不主动设置色彩空间时，拍照模式默认为SDR拍摄效果。
 在拍照模式下若需要获取HDR高显效果的图片可通过设置色彩空间P3色域实现。
-应用针对不同模式使能HDR效果、设置的色彩空间以及设置相机输出流[Profile](#class-profile)中的[CameraFormat](#enum-cameraformat)一一对应关系可参考下表。例如，在录像模式下若需要选择HDR拍摄，相机预览输出流和录像输出流[Profile](#class-profile)中的[CameraFormat](#enum-cameraformat)可选择CAMERA_FORMAT_YCRCB_P010，色彩空间ColorSpace可选择设置2020_HLG_LIMIT。
+应用针对不同模式使能HDR效果、设置的色彩空间以及设置相机输出流[Profile](#class-profile)中的[CameraFormat](#enum-cameraformat)一一对应关系可参考下表。例如，在录像模式下若需要选择HDR拍摄，相机预览输出流和录像输出流[Profile](#class-profile)中的[CameraFormat](#enum-cameraformat)可选择CameraFormatYcrcbP010，色彩空间ColorSpace可选择设置Bt2020HlgLimit。
 
 在录像模式下，使能SDR或HDR_VIVID拍摄效果时，CameraFormat与ColorSpace必须按照下列表格中的对应关系配置，若不满足表格中CameraFormat与ColorSpace配置，会导致预览异常等问题。
 
@@ -678,15 +678,15 @@ func setColorSpace(colorSpace: ColorSpace): Unit
 
 | SDR/HDR拍摄         | CameraFormat             | ColorSpace       |
 |--------------------|--------------------------|------------------|
-| SDR                | CAMERA_FORMAT_YUV_420_SP | BT709_LIMIT      |
-| HDR_VIVID          | CAMERA_FORMAT_YCRCB_P010<br>CAMERA_FORMAT_YCBCR_P010 | BT2020_HLG_LIMIT<br>BT2020_HLG_FULL |
+| SDR                | CameraFormatYuv420Sp | Bt709Limit      |
+| HDR_VIVID          | CameraFormatYcrcbP010<br>CameraFormatYcbcrP010 | Bt2020HlgLimit |
 
 **拍照模式：**
 
 | SDR/HDR拍摄        | ColorSpace |
 |--------------------|------------|
-| SDR(Default)       | SRGB       |
-| HDR                | DISPLAY_P3 |
+| SDR(Default)       | Srgb      |
+| HDR                | DisplayP3 |
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -2827,7 +2827,7 @@ public class CameraManager {}
 public func createCameraInput(camera: CameraDevice): CameraInput
 ```
 
-**功能：** 使用CameraDevice对象创建CameraInput实例，同步返回结果。
+**功能：** 使用CameraDevice对象创建CameraInput实例。
 
 该接口使用前首先通过[getSupportedCameras](#func-getsupportedcameras)接口查询当前设备支持的相机设备信息列表，开发者需要根据具体使用场景选择符合需求的相机设备，然后使用该接口创建CameraInput实例。
 
@@ -3782,7 +3782,7 @@ try {
 public func on(eventType: CameraEvents, callback: Callback1Argument<CameraStatusInfo>): Unit
 ```
 
-**功能：** 相机设备状态回调，通过注册回调函数获取相机的状态变化。使用callback异步回调。
+**功能：** 相机设备状态回调，通过注册回调函数获取相机的状态变化。
 
 > **说明：**
 >
@@ -3843,7 +3843,7 @@ try {
 public func on(eventType: CameraEvents, callback: Callback1Argument<FoldStatusInfo>): Unit
 ```
 
-**功能：** 注册折叠设备折叠状态变化的监听。使用callback异步回调。
+**功能：** 注册折叠设备折叠状态变化的监听。
 
 > **说明：**
 >
@@ -3904,7 +3904,7 @@ try {
 public func on(eventType: CameraEvents, callback: Callback1Argument<TorchStatusInfo>): Unit
 ```
 
-**功能：** 手电筒状态变化回调，通过注册回调函数获取手电筒状态变化。使用callback异步回调。
+**功能：** 手电筒状态变化回调，通过注册回调函数获取手电筒状态变化。
 
 > **说明：**
 >
@@ -4514,7 +4514,7 @@ public class PhotoCaptureSetting {
 public var location:?Location
 ```
 
-**功能：** 图片地理位置信息(默认以设备硬件信息为准)。
+**功能：** 图片地理位置信息。
 
 **类型：** ?[Location](#class-location)
 
@@ -4530,7 +4530,7 @@ public var location:?Location
 public var mirror: Bool
 ```
 
-**功能：** 镜像使能开关（默认关）。使用之前需要使用[isMirrorSupported](#func-ismirrorsupported)进行判断是否支持。true表示使能，false表示不使能。
+**功能：** 镜像使能开关。使用之前需要使用[isMirrorSupported](#func-ismirrorsupported)进行判断是否支持。true表示使能，false表示不使能。
 
 **类型：** Bool
 
@@ -4546,7 +4546,7 @@ public var mirror: Bool
 public var quality: QualityLevel
 ```
 
-**功能：** 图片质量(默认低)。
+**功能：** 图片质量。
 
 **类型：** [QualityLevel](#enum-qualitylevel)
 
@@ -4562,7 +4562,7 @@ public var quality: QualityLevel
 public var rotation: ImageRotation
 ```
 
-**功能：** 图片旋转角度(默认0度，顺时针旋转)。
+**功能：** 图片旋转角度。
 
 **类型：** [ImageRotation](#enum-imagerotation)
 
@@ -5438,7 +5438,7 @@ try {
 public func on(eventType: CameraEvents, callback: Callback1Argument<CaptureStartInfo>): Unit
 ```
 
-**功能：** 监听拍照开始，通过注册回调函数获取CaptureStartInfo。使用callback异步回调。
+**功能：** 监听拍照开始，通过注册回调函数获取CaptureStartInfo。
 
 > **说明：**
 >
@@ -5503,7 +5503,7 @@ try {
 public func on(eventType: CameraEvents, callback: Callback1Argument<FrameShutterInfo>): Unit
 ```
 
-**功能：** 监听拍照帧输出捕获，通过注册回调函数获取结果。使用callback异步回调。
+**功能：** 监听拍照帧输出捕获，通过注册回调函数获取结果。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -5564,7 +5564,7 @@ try {
 public func on(eventType: CameraEvents, callback: Callback1Argument<CaptureEndInfo>): Unit
 ```
 
-**功能：** 监听拍照结束，通过注册回调函数获取结果。使用callback异步回调。
+**功能：** 监听拍照结束，通过注册回调函数获取结果。
 
 > **说明：**
 >
@@ -5629,7 +5629,7 @@ try {
 public func on(eventType: CameraEvents, callback: Callback1Argument<FrameShutterEndInfo>): Unit
 ```
 
-**功能：** 监听拍照曝光结束捕获，通过注册回调函数获取结果。使用callback异步回调。
+**功能：** 监听拍照曝光结束捕获，通过注册回调函数获取结果。
 
 > **说明：**
 >
@@ -5694,7 +5694,7 @@ try {
 public func on(eventType: CameraEvents, callback: Callback0Argument): Unit
 ```
 
-**功能：** 监听可拍下一张或拍照错误，通过注册回调函数获取结果。使用callback异步回调。
+**功能：** 监听可拍下一张或拍照错误，通过注册回调函数获取结果。
 
 > **说明：**
 >
@@ -5759,7 +5759,7 @@ try {
 public func on(eventType: CameraEvents, callback: Callback1Argument<Float64>): Unit
 ```
 
-**功能：** 监听预估的拍照时间，通过注册回调函数获取结果。使用callback异步回调。
+**功能：** 监听预估的拍照时间，通过注册回调函数获取结果。
 
 > **说明：**
 >
@@ -6164,7 +6164,7 @@ try {
 public func on(eventType: CameraEvents, callback: Callback0Argument): Unit
 ```
 
-**功能：** 监听普通拍照会话的错误事件，通过注册回调函数获取结果。使用callback异步回调。
+**功能：** 监听普通拍照会话的错误事件，通过注册回调函数获取结果。
 
 > **说明：**
 >
@@ -6221,7 +6221,7 @@ try {
 public func on(eventType: CameraEvents, callback: Callback1Argument<FocusState>): Unit
 ```
 
-**功能：** 监听相机聚焦的状态变化，通过注册回调函数获取结果。使用callback异步回调。
+**功能：** 监听相机聚焦的状态变化，通过注册回调函数获取结果。
 
 > **说明：**
 >
@@ -6278,7 +6278,7 @@ try {
 public func on(eventType: CameraEvents, callback: Callback1Argument<SmoothZoomInfo>): Unit
 ```
 
-**功能：** 监听相机平滑变焦的状态变化，通过注册回调函数获取结果。使用callback异步回调。
+**功能：** 监听相机平滑变焦的状态变化，通过注册回调函数获取结果。
 
 > **说明：**
 >
@@ -6717,7 +6717,7 @@ public func off(eventType: CameraEvents, callback: Callback0Argument): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|eventType|[CameraEvents](#enum-cameraevents)|是|-|监听事件，必须为[FrameStart, FrameEnd, CameraError]其中之一，否则抛出401参数错误。|
+|eventType|[CameraEvents](#enum-cameraevents)|是|-|监听事件，必须为[FrameStart, FrameEnd, CameraError]其中之一。|
 |callback|[Callback0Argument](../arkinterop/cj-api-callback_invoke.md#class-callback0argument)|是|-|回调函数。|
 
 **异常：**
@@ -6820,7 +6820,7 @@ try {
 public func on(eventType: CameraEvents, callback: Callback0Argument): Unit
 ```
 
-**功能：** 监听预览帧启动，通过注册回调函数获取结果。使用callback异步回调。
+**功能：** 监听预览帧启动，通过注册回调函数获取结果。
 
 > **说明：**
 >
@@ -6834,7 +6834,7 @@ public func on(eventType: CameraEvents, callback: Callback0Argument): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|eventType|[CameraEvents](#enum-cameraevents)|是|-|监听事件，必须为[FrameStart, FrameEnd, CameraError]其中之一，否则抛出401参数错误。|
+|eventType|[CameraEvents](#enum-cameraevents)|是|-|监听事件，必须为[FrameStart, FrameEnd, CameraError]其中之一。|
 |callback|[Callback0Argument](../arkinterop/cj-api-callback_invoke.md#class-callback0argument)|是|-|回调函数。|
 
 **异常：**
@@ -7539,7 +7539,7 @@ public func getVideoRotation(deviceDegree: Int32): ImageRotation
 
 |类型|说明|
 |:----|:----|
-|[ImageRotation](#enum-imagerotation)|设备旋转角度，单位度，取值范围0-360。+|
+|[ImageRotation](#enum-imagerotation)|设备旋转角度，单位度，取值范围0-360。|
 
 **异常：**
 
@@ -7596,7 +7596,7 @@ public func off(eventType: CameraEvents, callback: Callback0Argument): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|eventType|[CameraEvents](#enum-cameraevents)|是|-|监听事件，必须为[FrameStart, FrameEnd, CameraError]其中之一，videoOutput创建成功后可监听|
+|eventType|[CameraEvents](#enum-cameraevents)|是|-|监听事件，必须为[FrameStart, FrameEnd, CameraError]其中之一，videoOutput创建成功后可监听。|
 |callback|[Callback0Argument](../arkinterop/cj-api-callback_invoke.md#class-callback0argument)|是|-|回调函数，要取消的callback。|
 
 **异常：**
@@ -8297,7 +8297,7 @@ try {
 public func on(eventType: CameraEvents, callback: Callback0Argument): Unit
 ```
 
-**功能：** 监听普通录像会话的错误事件，通过注册回调函数获取结果。使用callback异步回调。
+**功能：** 监听普通录像会话的错误事件，通过注册回调函数获取结果。
 
 > **说明：**
 >
@@ -8362,7 +8362,7 @@ try {
 public func on(eventType: CameraEvents, callback: Callback1Argument<FocusState>): Unit
 ```
 
-**功能：** 监听相机聚焦的状态变化，通过注册回调函数获取结果。使用callback异步回调。
+**功能：** 监听相机聚焦的状态变化，通过注册回调函数获取结果。
 
 > **说明：**
 >
@@ -8427,7 +8427,7 @@ try {
 public func on(eventType: CameraEvents, callback: Callback1Argument<SmoothZoomInfo>): Unit
 ```
 
-**功能：** 监听相机平滑变焦的状态变化，通过注册回调函数获取结果。使用callback异步回调。
+**功能：** 监听相机平滑变焦的状态变化，通过注册回调函数获取结果。
 
 > **说明：**
 >
@@ -8507,7 +8507,7 @@ public func preconfig(
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |preconfigType|[PreconfigType](#enum-preconfigtype)|是|-|指定配置预期分辨率。|
-|preconfigRatio|[PreconfigRatio](#enum-preconfigratio)|否|PreconfigRatio.PreconfigRatio_16_9|**命名参数。** 可选画幅比例，默认为16:9。|
+|preconfigRatio|[PreconfigRatio](#enum-preconfigratio)|否|PreconfigRatio_16_9|**命名参数。** 可选画幅比例，默认为16:9。|
 
 **异常：**
 
@@ -10026,7 +10026,7 @@ public enum FoldStatus {
 }
 ```
 
-**功能：** 枚举，折叠机折叠状态。+
+**功能：** 枚举，折叠机折叠状态。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -11259,7 +11259,7 @@ Auto
 High
 ```
 
-**功能：** 使用防抖效果最好的防抖算法，防抖效果优于MIDDLE类型。
+**功能：** 使用防抖效果最好的防抖算法，防抖效果优于Middle类型。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
@@ -11283,7 +11283,7 @@ Low
 Middle
 ```
 
-**功能：** 使用防抖效果一般的防抖算法，防抖效果优于LOW类型。
+**功能：** 使用防抖效果一般的防抖算法，防抖效果优于Low类型。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 

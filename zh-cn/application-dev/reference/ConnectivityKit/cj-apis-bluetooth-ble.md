@@ -745,7 +745,7 @@ public class AdvertiseData {
 public var includeDeviceName: Bool
 ```
 
-**功能：** 是否携带蓝牙设备名称。true表示携带，false表示不携带，默认值为false。
+**功能：** 是否携带蓝牙设备名称。true表示携带，false表示不携带。
 
 **类型：** Bool
 
@@ -854,7 +854,7 @@ public class AdvertiseSetting {
 public var connectable: Bool
 ```
 
-**功能：** 是否是可连接广播。true表示发送可连接广播，false表示发送不可连接广播，默认值为true。
+**功能：** 是否是可连接广播。true表示发送可连接广播，false表示发送不可连接广播。
 
 **类型：** Bool
 
@@ -872,7 +872,7 @@ public var interval: UInt16
 
 **功能：** 广播发送间隔。
 
-取值范围：[32, 16777215]，单位：slot（时间槽），一个slot代表0.625毫秒，默认值为1600。
+取值范围：[32, 16777215]，单位：slot（时间槽），一个slot代表0.625毫秒。
 
 其中传统广播的最大值是16384。
 
@@ -890,7 +890,7 @@ public var interval: UInt16
 public var txPower: Int8
 ```
 
-**功能：** 广播发送功率。取值范围：[-127, 1]，单位：dBm，默认值为-7。
+**功能：** 广播发送功率。取值范围：[-127, 1]，单位：dBm。
 
 考虑到发送广播的性能和功耗，建议高档取值为1，中档取为-7，低档取值为-15。
 
@@ -918,9 +918,9 @@ public init(interval!: UInt16 = BLE_ADV_DEFAULT_INTERVAL, txPower!: Int8 = BLE_A
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|interval|UInt16|否|BLE_ADV_DEFAULT_INTERVAL|广播发送间隔。|
-|txPower|Int8|否|BLE_ADV_TX_POWER_MEDIUM_VALUE|广播发送功率。取值范围：[-127, 1]，单位：dBm，默认值为-7。|
-|connectable|Bool|否|true|是否是可连接广播。true表示发送可连接广播，false表示发送不可连接广播，默认值为true。|
+|interval|UInt16|否|BLE_ADV_DEFAULT_INTERVAL|**命名参数。** 广播发送间隔。取值范围：[32, 16777215]，单位：slot（时间槽），一个slot代表0.625毫秒，默认值为1600。|
+|txPower|Int8|否|BLE_ADV_TX_POWER_MEDIUM_VALUE|**命名参数。** 广播发送功率。取值范围：[-127, 1]，单位：dBm，默认值为-7。|
+|connectable|Bool|否|true|**命名参数。** 是否是可连接广播。true表示发送可连接广播，false表示发送不可连接广播，默认值为true。|
 
 ## class AdvertisingParams
 
@@ -1001,8 +1001,6 @@ public var duration: UInt16
 
 **功能：** 发送广播的持续时间。取值范围：[1, 65535]，单位：10ms。
 
-如果未指定此参数或者将其设置为0，则会持续发送广播。
-
 **类型：** UInt16
 
 **读写能力：** 可读写
@@ -1034,7 +1032,7 @@ public init(
 |:---|:---|:---|:---|:---|
 |advertisingSettings|[AdvertiseSetting](#class-advertisesetting)|是|-|广播的发送参数。|
 |advertisingData|[AdvertiseData](#class-advertisedata)|是|-|需要发送的广播报文数据内容。|
-|advertisingResponse|[AdvertiseData](#class-advertisedata)|否|AdvertiseData([],[],[])|回复扫描请求的广播报文数据内容。|
+|advertisingResponse|[AdvertiseData](#class-advertisedata)|否|AdvertiseData([],[],[])| **命名参数。** 回复扫描请求的广播报文数据内容。|
 |duration|UInt16|否|0| **命名参数。** 发送广播的持续时间。取值范围：[1, 65535]，单位：10ms。|
 
 ## class AdvertisingStateChangeInfo
@@ -2148,7 +2146,7 @@ try {
 public func getRssiValue(callback: AsyncCallback<Int32>): Unit
 ```
 
-**功能：** client端获取GATT连接链路信号强度 (Received Signal Strength Indication, RSSI)。使用Promise异步回调。
+**功能：** client端获取GATT连接链路信号强度 (Received Signal Strength Indication, RSSI)。
 
 - 需先调用[connect](#func-connect)方法，等GATT profile连接成功后才能使用。
 
@@ -2325,7 +2323,7 @@ try {
 public func on(eventType: BluetoothBleGattClientDeviceCallbackType, callback: Callback1Argument<BleCharacteristic>): Unit
 ```
 
-**功能：** client端订阅server端特征值变化事件。使用Callback异步回调。
+**功能：** client端订阅server端特征值变化事件。
 
 - 需调用[setCharacteristicChangeNotification](#func-setcharacteristicchangenotificationblecharacteristic-bool-asynccallbackunit)或者[setCharacteristicChangeIndication](#func-setcharacteristicchangeindicationblecharacteristic-bool-asynccallbackunit)，且启用通知或者指示能力后，才能接收到server端的特征值内容变更通知或者指示。
 
@@ -2514,9 +2512,9 @@ public func readCharacteristicValue(
 
 - 需要先调用[getServices](#func-getservicesasynccallbackarraygattservice)，获取到server端所有支持的能力，且包含指定的入参特征值UUID；否则会读取失败。
 
-- 异步回调结果返回后，才能调用下一次读取或者写入操作，如[readCharacteristicValue](#func-readcharacteristicvalueblecharacteristic-asynccallbackblecharacteristic)、[readDescriptorValue](#func-readdescriptorvaluebledescriptor-asynccallbackbledescriptor)、[writeCharacteristicValue](#func-writecharacteristicvalueblecharacteristic-gattwritetype-asynccallbackunit)、[writeDescriptorValue](#func-writedescriptorvaluebledescriptor-asynccallbackunit)、[setCharacteristicChangeNotification](#func-setcharacteristicchangenotificationblecharacteristic-bool-asynccallbackunit)和[setCharacteristicChangeIndication](#func-setcharacteristicchangeindicationblecharacteristic-bool-asynccallbackunit)。
+- 回调结果返回后，才能调用下一次读取或者写入操作，如[readCharacteristicValue](#func-readcharacteristicvalueblecharacteristic-asynccallbackblecharacteristic)、[readDescriptorValue](#func-readdescriptorvaluebledescriptor-asynccallbackbledescriptor)、[writeCharacteristicValue](#func-writecharacteristicvalueblecharacteristic-gattwritetype-asynccallbackunit)、[writeDescriptorValue](#func-writedescriptorvaluebledescriptor-asynccallbackunit)、[setCharacteristicChangeNotification](#func-setcharacteristicchangenotificationblecharacteristic-bool-asynccallbackunit)和[setCharacteristicChangeIndication](#func-setcharacteristicchangeindicationblecharacteristic-bool-asynccallbackunit)。
 
-- 读取特征值过程中，需确保[BleCharacteristic](#class-blecharacteristic)入参特征值的serviceUuid、characteristicUuid准确。characteristicValue表示的数据内容长度可由用户任意指定，不会影响实际读取到的特征值数据内容。
+- 读取特征值过程中，需确保[BleCharacteristic](#class-blecharacteristic)入参特征值的serviceUUID、characteristicUUID准确。characteristicValue表示的数据内容长度可由用户任意指定，不会影响实际读取到的特征值数据内容。
 
 **需要权限：** ohos.permission.ACCESS_BLUETOOTH
 
@@ -2613,9 +2611,9 @@ public func readDescriptorValue(descriptor: BleDescriptor, callback: AsyncCallba
 
 - 需要先调用[getServices](#func-getservicesasynccallbackarraygattservice)，获取到server端所有支持的能力，且包含指定的入参特征值UUID；否则会读取失败。
 
-- 异步回调结果返回后，才能调用下一次读取或者写入操作，如[readCharacteristicValue](#func-readcharacteristicvalueblecharacteristic-asynccallbackblecharacteristic)、[readDescriptorValue](#func-readdescriptorvaluebledescriptor-asynccallbackbledescriptor)、[writeCharacteristicValue](#func-writecharacteristicvalueblecharacteristic-gattwritetype-asynccallbackunit)、[writeDescriptorValue](#func-writedescriptorvaluebledescriptor-asynccallbackunit)、[setCharacteristicChangeNotification](#func-setcharacteristicchangenotificationblecharacteristic-bool-asynccallbackunit)和[setCharacteristicChangeIndication](#func-setcharacteristicchangeindicationblecharacteristic-bool-asynccallbackunit)。
+- 回调结果返回后，才能调用下一次读取或者写入操作，如[readCharacteristicValue](#func-readcharacteristicvalueblecharacteristic-asynccallbackblecharacteristic)、[readDescriptorValue](#func-readdescriptorvaluebledescriptor-asynccallbackbledescriptor)、[writeCharacteristicValue](#func-writecharacteristicvalueblecharacteristic-gattwritetype-asynccallbackunit)、[writeDescriptorValue](#func-writedescriptorvaluebledescriptor-asynccallbackunit)、[setCharacteristicChangeNotification](#func-setcharacteristicchangenotificationblecharacteristic-bool-asynccallbackunit)和[setCharacteristicChangeIndication](#func-setcharacteristicchangeindicationblecharacteristic-bool-asynccallbackunit)。
 
-- 读取描述符过程中，需确保[BleDescriptor](#class-bledescriptor)入参描述符的serviceUuid、characteristicUuid、descriptorUuid准确。descriptorValue表示的数据内容长度可由用户任意指定，不会影响实际读取到的描述符数据内容。
+- 读取描述符过程中，需确保[BleDescriptor](#class-bledescriptor)入参描述符的serviceUUID、characteristicUUID、descriptorUuid准确。descriptorValue表示的数据内容长度可由用户任意指定，不会影响实际读取到的描述符数据内容。
 
 **需要权限：** ohos.permission.ACCESS_BLUETOOTH
 
@@ -2766,7 +2764,7 @@ public func setCharacteristicChangeIndication(characteristic: BleCharacteristic,
 
 - 若client端收到server端特征值内容变更指示后，系统蓝牙服务会主动回复确认，应用无需关注。
 
-- 异步回调结果返回后，才能调用下一次读取或者写入操作，如[readCharacteristicValue](#func-readcharacteristicvalueblecharacteristic-asynccallbackblecharacteristic)、[readDescriptorValue](#func-readdescriptorvaluebledescriptor-asynccallbackbledescriptor)、[writeCharacteristicValue](#func-writecharacteristicvalueblecharacteristic-gattwritetype-asynccallbackunit)、[writeDescriptorValue](#func-writedescriptorvaluebledescriptor-asynccallbackunit)、[setCharacteristicChangeNotification](#func-setcharacteristicchangenotificationblecharacteristic-bool-asynccallbackunit)和[setCharacteristicChangeIndication](#func-setcharacteristicchangeindicationblecharacteristic-bool-asynccallbackunit)。
+- 回调结果返回后，才能调用下一次读取或者写入操作，如[readCharacteristicValue](#func-readcharacteristicvalueblecharacteristic-asynccallbackblecharacteristic)、[readDescriptorValue](#func-readdescriptorvaluebledescriptor-asynccallbackbledescriptor)、[writeCharacteristicValue](#func-writecharacteristicvalueblecharacteristic-gattwritetype-asynccallbackunit)、[writeDescriptorValue](#func-writedescriptorvaluebledescriptor-asynccallbackunit)、[setCharacteristicChangeNotification](#func-setcharacteristicchangenotificationblecharacteristic-bool-asynccallbackunit)和[setCharacteristicChangeIndication](#func-setcharacteristicchangeindicationblecharacteristic-bool-asynccallbackunit)。
 
 **需要权限：** ohos.permission.ACCESS_BLUETOOTH
 
@@ -2860,7 +2858,7 @@ public func setCharacteristicChangeNotification(characteristic: BleCharacteristi
 
 - 若client端收到server端特征值内容变更通知后，无需回复确认。
 
-- 异步回调结果返回后，才能调用下一次读取或者写入操作，如[readCharacteristicValue](#func-readcharacteristicvalueblecharacteristic-asynccallbackblecharacteristic)、[readDescriptorValue](#func-readdescriptorvaluebledescriptor-asynccallbackbledescriptor)、[writeCharacteristicValue](#func-writecharacteristicvalueblecharacteristic-gattwritetype-asynccallbackunit)、[writeDescriptorValue](#func-writedescriptorvaluebledescriptor-asynccallbackunit)、[setCharacteristicChangeNotification](#func-setcharacteristicchangenotificationblecharacteristic-bool-asynccallbackunit)和[setCharacteristicChangeIndication](#func-setcharacteristicchangeindicationblecharacteristic-bool-asynccallbackunit)。
+- 回调结果返回后，才能调用下一次读取或者写入操作，如[readCharacteristicValue](#func-readcharacteristicvalueblecharacteristic-asynccallbackblecharacteristic)、[readDescriptorValue](#func-readdescriptorvaluebledescriptor-asynccallbackbledescriptor)、[writeCharacteristicValue](#func-writecharacteristicvalueblecharacteristic-gattwritetype-asynccallbackunit)、[writeDescriptorValue](#func-writedescriptorvaluebledescriptor-asynccallbackunit)、[setCharacteristicChangeNotification](#func-setcharacteristicchangenotificationblecharacteristic-bool-asynccallbackunit)和[setCharacteristicChangeIndication](#func-setcharacteristicchangeindicationblecharacteristic-bool-asynccallbackunit)。
 
 **需要权限：** ohos.permission.ACCESS_BLUETOOTH
 
@@ -2940,11 +2938,11 @@ public func writeCharacteristicValue(characteristic: BleCharacteristic, writeTyp
     callback: AsyncCallback<Unit>): Unit
 ```
 
-**功能：** client端向指定的server端特征值写入数据。使用Callback异步回调。
+**功能：** client端向指定的server端特征值写入数据。
 
 - 需要先调用[getServices](#func-getservicesasynccallbackarraygattservice)，获取到server端所有支持的能力，且包含指定的入参特征值UUID；否则会写入失败。
 
-- 异步回调结果返回后，才能调用下一次读取或者写入操作，如[readCharacteristicValue](#func-readcharacteristicvalueblecharacteristic-asynccallbackblecharacteristic)、[readDescriptorValue](#func-readdescriptorvaluebledescriptor-asynccallbackbledescriptor)、[writeCharacteristicValue](#func-writecharacteristicvalueblecharacteristic-gattwritetype-asynccallbackunit)、[writeDescriptorValue](#func-writedescriptorvaluebledescriptor-asynccallbackunit)、[setCharacteristicChangeNotification](#func-setcharacteristicchangenotificationblecharacteristic-bool-asynccallbackunit)和[setCharacteristicChangeIndication](#func-setcharacteristicchangeindicationblecharacteristic-bool-asynccallbackunit)。
+- 回调结果返回后，才能调用下一次读取或者写入操作，如[readCharacteristicValue](#func-readcharacteristicvalueblecharacteristic-asynccallbackblecharacteristic)、[readDescriptorValue](#func-readdescriptorvaluebledescriptor-asynccallbackbledescriptor)、[writeCharacteristicValue](#func-writecharacteristicvalueblecharacteristic-gattwritetype-asynccallbackunit)、[writeDescriptorValue](#func-writedescriptorvaluebledescriptor-asynccallbackunit)、[setCharacteristicChangeNotification](#func-setcharacteristicchangenotificationblecharacteristic-bool-asynccallbackunit)和[setCharacteristicChangeIndication](#func-setcharacteristicchangeindicationblecharacteristic-bool-asynccallbackunit)。
 
 - 应用单次可写入的特征值数据长度默认限制为（MTU-3）字节，MTU大小可由[setBleMtuSize](#func-setblemtusizeint32)接口指定。
 
@@ -3032,11 +3030,11 @@ try {
 public func writeDescriptorValue(descriptor: BleDescriptor, callback: AsyncCallback<Unit>): Unit
 ```
 
-**功能：** client端向指定的server端描述符写入数据。使用Callback异步回调。
+**功能：** client端向指定的server端描述符写入数据。
 
 - 需要先调用[getServices](#func-getservicesasynccallbackarraygattservice)，获取到server端所有支持的能力，且包含指定的入参描述符UUID；否则会写入失败。
 
-- 异步回调结果返回后，才能调用下一次读取或者写入操作，如[readCharacteristicValue](#func-readcharacteristicvalueblecharacteristic-asynccallbackblecharacteristic)、[readDescriptorValue](#func-readdescriptorvaluebledescriptor-asynccallbackbledescriptor)、[writeCharacteristicValue](#func-writecharacteristicvalueblecharacteristic-gattwritetype-asynccallbackunit)、[writeDescriptorValue](#func-writedescriptorvaluebledescriptor-asynccallbackunit)、[setCharacteristicChangeNotification](#func-setcharacteristicchangenotificationblecharacteristic-bool-asynccallbackunit)和[setCharacteristicChangeIndication](#func-setcharacteristicchangeindicationblecharacteristic-bool-asynccallbackunit)。
+- 回调结果返回后，才能调用下一次读取或者写入操作，如[readCharacteristicValue](#func-readcharacteristicvalueblecharacteristic-asynccallbackblecharacteristic)、[readDescriptorValue](#func-readdescriptorvaluebledescriptor-asynccallbackbledescriptor)、[writeCharacteristicValue](#func-writecharacteristicvalueblecharacteristic-gattwritetype-asynccallbackunit)、[writeDescriptorValue](#func-writedescriptorvaluebledescriptor-asynccallbackunit)、[setCharacteristicChangeNotification](#func-setcharacteristicchangenotificationblecharacteristic-bool-asynccallbackunit)和[setCharacteristicChangeIndication](#func-setcharacteristicchangeindicationblecharacteristic-bool-asynccallbackunit)。
 
 - 应用单次可写入的描述符数据长度默认限制为（MTU-3）字节，MTU大小可由[setBleMtuSize](#func-setblemtusizeint32)接口指定。
 
@@ -3147,7 +3145,7 @@ public var read: Bool
 
 **功能：** 是否允许读取该特征值或描述符内容。
 
-true表示允许，false表示不允许。默认值为true。
+true表示允许，false表示不允许。
 
 **类型：** Bool
 
@@ -3165,7 +3163,7 @@ public var readEncrypted: Bool
 
 **功能：** 读取该特征值或描述符内容是否需要加密。
 
-true表示需要加密后，方可读取内容，false表示不需要普通方式加密。默认值为false。
+true表示需要加密后，方可读取内容，false表示不需要普通方式加密。
 
 **类型：** Bool
 
@@ -3183,7 +3181,7 @@ public var readEncryptedMitm: Bool
 
 **功能：** 读取该特征值或描述符内容是否需要防中间人攻击的加密。
 
-防中间人攻击表示操作需要经过认证，防止数据被第三方篡改。true表示需要防中间人攻击的加密后才能读取内容，false表示不需要防中间人攻击的加密。默认值为false。
+防中间人攻击表示操作需要经过认证，防止数据被第三方篡改。true表示需要防中间人攻击的加密后才能读取内容，false表示不需要防中间人攻击的加密。
 
 **类型：** Bool
 
@@ -3201,7 +3199,7 @@ public var write: Bool
 
 **功能：** 是否允许写入该特征值或描述符内容。
 
-true表示允许，false表示不允许。默认值为true。
+true表示允许，false表示不允许。
 
 **类型：** Bool
 
@@ -3219,7 +3217,7 @@ public var writeEncrypted: Bool
 
 **功能：** 写入该特征值或描述符内容是否需要加密。
 
-true表示需要加密后，方可写入内容，false表示不需要普通方式加密。默认值为false。
+true表示需要加密后，方可写入内容，false表示不需要普通方式加密。
 
 **类型：** Bool
 
@@ -3237,7 +3235,7 @@ public var writeEncryptedMitm: Bool
 
 **功能：** 写入该特征值或描述符内容是否需要防中间人攻击的加密。
 
-true表示需要防中间人攻击的加密后才能写入内容，false表示不需要防中间人攻击的加密。默认值为false。
+true表示需要防中间人攻击的加密后才能写入内容，false表示不需要防中间人攻击的加密。
 
 **类型：** Bool
 
@@ -3255,7 +3253,7 @@ public var writeSigned: Bool
 
 **功能：** 写入该特征值或描述符内容是否需要经过签名处理。
 
-true表示内容需要签名处理后方可写入，false表示不需要签名处理。默认值为false。
+true表示内容需要签名处理后方可写入，false表示不需要签名处理。
 
 **类型：** Bool
 
@@ -3273,7 +3271,7 @@ public var writeSignedMitm: Bool
 
 **功能：** 写入该特征值或描述符内容是否需要经过防中间人攻击方式的签名处理。
 
-true表示需要防中间人攻击方式的签名处理后方可写入，false表示不需要以防中间人攻击方式签名处理。默认值为false。
+true表示需要防中间人攻击方式的签名处理后方可写入，false表示不需要以防中间人攻击方式签名处理。
 
 **类型：** Bool
 
@@ -3308,14 +3306,14 @@ public init (
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|read|Bool|否|true|是否允许读取该特征值或描述符内容。|
-|readEncrypted|Bool|否|false|读取该特征值或描述符内容是否需要加密。|
-|readEncryptedMitm|Bool|否|false|读取该特征值或描述符内容是否需要防中间人攻击的加密。|
-|write|Bool|否|true|是否允许写入该特征值或描述符内容。|
-|writeEncrypted|Bool|否|false|写入该特征值或描述符内容是否需要加密。|
-|writeEncryptedMitm|Bool|否|false|写入该特征值或描述符内容是否需要防中间人攻击的加密。|
-|writeSigned|Bool|否|false|写入该特征值或描述符内容是否需要经过签名处理。|
-|writeSignedMitm|Bool|否|false|写入该特征值或描述符内容是否需要经过防中间人攻击方式的签名处理。|
+|read|Bool|否|true|**命名参数。** 是否允许读取该特征值或描述符内容。|
+|readEncrypted|Bool|否|false|**命名参数。** 读取该特征值或描述符内容是否需要加密。|
+|readEncryptedMitm|Bool|否|false|**命名参数。** 读取该特征值或描述符内容是否需要防中间人攻击的加密。|
+|write|Bool|否|true|**命名参数。** 是否允许写入该特征值或描述符内容。|
+|writeEncrypted|Bool|否|false|**命名参数。** 写入该特征值或描述符内容是否需要加密。|
+|writeEncryptedMitm|Bool|否|false|**命名参数。** 写入该特征值或描述符内容是否需要防中间人攻击的加密。|
+|writeSigned|Bool|否|false|**命名参数。** 写入该特征值或描述符内容是否需要经过签名处理。|
+|writeSignedMitm|Bool|否|false|**命名参数。** 写入该特征值或描述符内容是否需要经过防中间人攻击方式的签名处理。|
 
 ### func !=(GattPermissions)
 
@@ -3401,7 +3399,7 @@ public var indicate: Bool
 
 **功能：** 该特征值是否支持向对端设备指示特征值内容。
 
-true表示支持，对端设备需要回复确认，false表示不支持。默认值为false。
+true表示支持，对端设备需要回复确认，false表示不支持。
 
 **类型：** Bool
 
@@ -3419,7 +3417,7 @@ public var notify: Bool
 
 **功能：** 该特征值是否支持主动向对端设备通知特征值内容。
 
-true表示支持，且对端设备不需要回复确认，false表示不支持。默认值为false
+true表示支持，且对端设备不需要回复确认，false表示不支持。
 
 **类型：** Bool
 
@@ -3437,7 +3435,7 @@ public var read: Bool
 
 **功能：** 该特征值是否支持读取操作。
 
-true表示支持，false表示不支持。默认值为true。
+true表示支持，false表示不支持。
 
 **类型：** Bool
 
@@ -3455,7 +3453,7 @@ public var write: Bool
 
 **功能：** 该特征值是否支持写入操作。
 
-true表示支持，且被写入时需要回复对端设备，false表示不支持。默认值为true。
+true表示支持，且被写入时需要回复对端设备，false表示不支持。
 
 **类型：** Bool
 
@@ -3473,7 +3471,7 @@ public var writeNoResponse: Bool
 
 **功能：** 该特征值是否支持写入操作。
 
-true表示支持，且被写入时无需回复对端设备，false表示不支持。默认值为true。
+true表示支持，且被写入时无需回复对端设备，false表示不支持。
 
 **类型：** Bool
 
@@ -4442,7 +4440,7 @@ public init(
 |serviceUUID|String|是|-|服务UUID，标识一个GATT服务。例如：00001888-0000-1000-8000-00805f9b34fb。|
 |isPrimary|Bool|是|-|是否是主服务。true表示是主服务，false表示是次要服务。|
 |characteristics|Array\<[BleCharacteristic](#class-blecharacteristic)>|是|-|当前服务包含的特征值列表。|
-|includeServices|Array\<[GattService](#class-gattservice)>|否|[]|当前服务依赖的其它服务。|
+|includeServices|Array\<[GattService](#class-gattservice)>|否|[]|**命名参数。** 当前服务依赖的其它服务。|
 
 ## class ManufactureData
 
@@ -4874,7 +4872,7 @@ public init(
 |deviceId|String|否|""| **命名参数。** 过滤该BLE设备地址的广播报文。例如："XX:XX:XX:XX:XX:XX"。预留字段，本版本暂不支持。|
 |name|String|否|""|**命名参数。** 过滤该BLE设备名称的广播报文。。预留字段，本版本暂不支持。|
 |serviceUUID|String|否|""|**命名参数。** 过滤包含该服务UUID的广播报文。例如：00001888-0000-1000-8000-00805f9b34fb。预留字段，本版本暂不支持。|
-|serviceUUIDMask|String|否|""|**命名参数。** 搭配serviceUuid过滤器使用，可设置过滤部分服务UUID。例如：FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF。预留字段，本版本暂不支持。|
+|serviceUUIDMask|String|否|""|**命名参数。** 搭配serviceUUID过滤器使用，可设置过滤部分服务UUID。例如：FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF。预留字段，本版本暂不支持。|
 |serviceSolicitationUUID|String|否|""|**命名参数。** 过滤包含该服务请求UUID的广播报文。例如：00001888-0000-1000-8000-00805F9B34FB。预留字段，本版本暂不支持。|
 |serviceSolicitationUUIDMask|String|否|""|**命名参数。** 搭配serviceSolicitationUuid过滤器使用，可设置过滤部分服务请求UUID。例如：FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF。预留字段，本版本暂不支持。|
 |serviceData|Array\<Byte>|否|[]|**命名参数。** 过滤包含该服务数据的广播报文。例如：[0x90,0x00,0xF1,0xF2]。预留字段，本版本暂不支持。|
@@ -4913,7 +4911,7 @@ public class ScanOptions {
 public var dutyMode: ScanDuty
 ```
 
-**功能：** 扫描模式，默认值为ScanModeLowPower。
+**功能：** 扫描模式。
 
 **类型：** [ScanDuty](#enum-scanduty)
 
@@ -4929,7 +4927,7 @@ public var dutyMode: ScanDuty
 public var interval: Int32
 ```
 
-**功能：** 扫描结果上报的延迟时间，单位：ms，默认值为0。搭配[ScanReportMode](#enum-scanreportmode)使用。
+**功能：** 扫描结果上报的延迟时间，单位：ms。搭配[ScanReportMode](#enum-scanreportmode)使用。
 
 - 在常规或围栏扫描上报模式下，该值不生效，扫描到符合过滤条件的广播报文后立即上报。
 
@@ -4949,7 +4947,7 @@ public var interval: Int32
 public var matchMode: MatchMode
 ```
 
-**功能：** 硬件的过滤匹配模式，默认值为MatchModeAggressive。
+**功能：** 硬件的过滤匹配模式。
 
 **类型：** [MatchMode](#enum-matchmode)
 
@@ -4965,7 +4963,7 @@ public var matchMode: MatchMode
 public var phyType: PhyType
 ```
 
-**功能：** 扫描中使用的物理通道类型，默认值为PhyLe1M。
+**功能：** 扫描中使用的物理通道类型。
 
 **类型：** [PhyType](#enum-phytype)
 
@@ -5001,7 +4999,7 @@ public init(
 |dutyMode|[ScanDuty](#enum-scanduty)|否|ScanModeLowPower|**命名参数。** 扫描模式，默认值为ScanModeLowPower。|
 |matchMode|[MatchMode](#enum-matchmode)|否|MatchModeAggressive|**命名参数。** 硬件的过滤匹配模式，默认值为MatchModeAggressive。|
 |phyType|[PhyType](#enum-phytype)|否|PhyLe1M|**命名参数。** 扫描中使用的物理通道类型，默认值为PhyLe1M。|
-|reportMode|[ScanReportMode](#enum-scanreportmode)|否|Normal|**命名参数。** 扫描结果数据上报模式，默认值为NORMAL。|
+|reportMode|[ScanReportMode](#enum-scanreportmode)|否|Normal|**命名参数。** 扫描结果数据上报模式，默认值为Normal。|
 
 ## class ScanResult
 
@@ -5380,7 +5378,7 @@ Started
 Stopped
 ```
 
-**功能：**调用[stopAdvertising](#func-stopadvertisinguint32)方法后，广播停止成功，且会释放首次启动广播时分配的相关资源。
+**功能：** 调用[stopAdvertising](#func-stopadvertisinguint32)方法后，广播停止成功，且会释放首次启动广播时分配的相关资源。
 
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
@@ -5464,8 +5462,6 @@ public enum BluetoothBleCallbackType <: Equatable<BluetoothBleCallbackType> & Ha
 
 **功能：** 广播扫描订阅事件类型。
 
-**需要权限：** ohos.permission.ACCESS_BLUETOOTH
-
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
 **起始版本：** 22
@@ -5484,8 +5480,6 @@ AdvertisingStateChange
 
 **功能：** 表示广播状态事件类型。
 
-**需要权限：** ohos.permission.ACCESS_BLUETOOTH
-
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
 **起始版本：** 22
@@ -5497,8 +5491,6 @@ BleDeviceFind
 ```
 
 **功能：** 表示BLE设备发现事件类型。
-
-**需要权限：** ohos.permission.ACCESS_BLUETOOTH
 
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
@@ -5558,7 +5550,7 @@ public operator func ==(other: BluetoothBleCallbackType): Bool
 public func hashCode(): Int64
 ```
 
-**功能：** 获取输入数据的哈希值。
+**功能：** 获取枚举值的哈希值。
 
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
@@ -5568,7 +5560,7 @@ public func hashCode(): Int64
 
 |类型|说明|
 |:----|:----|
-|Int64|数据的哈希值。|
+|Int64|枚举值的哈希值。|
 
 ### func toString()
 
@@ -5576,7 +5568,7 @@ public func hashCode(): Int64
 public func toString(): String
 ```
 
-**功能：** 获取枚举的值。
+**功能：** 获取枚举值的字符串表达。
 
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
@@ -5586,7 +5578,7 @@ public func toString(): String
 
 |类型|说明|
 |:----|:----|
-|String|枚举的说明。|
+|String|枚举值的字符串表达。|
 
 ## enum BluetoothBleGattClientDeviceCallbackType
 
@@ -5600,8 +5592,6 @@ public enum BluetoothBleGattClientDeviceCallbackType <: Equatable<BluetoothBleGa
 ```
 
 **功能：** 客户端 on/off 事件的类型。
-
-**需要权限：** ohos.permission.ACCESS_BLUETOOTH
 
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
@@ -5621,8 +5611,6 @@ BleCharacteristicChange
 
 **功能：** 表示特征值变化事件类型。
 
-**需要权限：** ohos.permission.ACCESS_BLUETOOTH
-
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
 **起始版本：** 22
@@ -5635,8 +5623,6 @@ BleConnectionStateChange
 
 **功能：** 表示连接状态变化事件类型。
 
-**需要权限：** ohos.permission.ACCESS_BLUETOOTH
-
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
 **起始版本：** 22
@@ -5648,8 +5634,6 @@ ClientBleMtuChange
 ```
 
 **功能：** 表示MTU状态变化事件类型。
-
-**需要权限：** ohos.permission.ACCESS_BLUETOOTH
 
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
@@ -5755,8 +5739,6 @@ public enum BluetoothBleGattServerCallbackType <: Equatable<BluetoothBleGattServ
 
 **功能：** 服务端 on/off 事件的类型。
 
-**需要权限：** ohos.permission.ACCESS_BLUETOOTH
-
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
 **起始版本：** 22
@@ -5775,8 +5757,6 @@ CharacteristicRead
 
 **功能：** 表示特征值读请求事件类型。
 
-**需要权限：** ohos.permission.ACCESS_BLUETOOTH
-
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
 **起始版本：** 22
@@ -5788,8 +5768,6 @@ CharacteristicWrite
 ```
 
 **功能：** 表示特征值写请求事件类型。
-
-**需要权限：** ohos.permission.ACCESS_BLUETOOTH
 
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
@@ -5803,8 +5781,6 @@ ConnectionStateChange
 
 **功能：** 表示BLE连接状态变化事件类型。
 
-**需要权限：** ohos.permission.ACCESS_BLUETOOTH
-
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
 **起始版本：** 22
@@ -5816,8 +5792,6 @@ DescriptorRead
 ```
 
 **功能：** 表示描述符读请求事件类型。
-
-**需要权限：** ohos.permission.ACCESS_BLUETOOTH
 
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
@@ -5831,8 +5805,6 @@ DescriptorWrite
 
 **功能：** 表示描述符写请求事件类型。
 
-**需要权限：** ohos.permission.ACCESS_BLUETOOTH
-
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
 **起始版本：** 22
@@ -5844,8 +5816,6 @@ ServerBleMtuChange
 ```
 
 **功能：** 表示MTU状态变化事件类型。
-
-**需要权限：** ohos.permission.ACCESS_BLUETOOTH
 
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
@@ -6499,7 +6469,7 @@ public operator func !=(other: ScanReportMode): Bool
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|other|[ScanReportMode](#enum-scanreportmode)|是|-|扫描结果数据上报模式|
+|other|[ScanReportMode](#enum-scanreportmode)|是|-|另一个枚举值。|
 
 **返回值：**
 
@@ -6523,7 +6493,7 @@ public operator func ==(other: ScanReportMode): Bool
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|other|[ScanReportMode](#enum-scanreportmode)|是|-|扫描结果数据上报模式|
+|other|[ScanReportMode](#enum-scanreportmode)|是|-|另一个枚举值。|
 
 **返回值：**
 

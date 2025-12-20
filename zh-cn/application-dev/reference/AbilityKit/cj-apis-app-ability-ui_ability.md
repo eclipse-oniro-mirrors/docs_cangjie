@@ -20,8 +20,8 @@ ohos.permission.PRIVACY_WINDOW
 
 API示例代码使用说明：
 
-- 若示例代码首行有"// index.cj"注释，表示该示例可在仓颉模板工程的"index.cj"文件中编译运行。
-- 若示例需获取[Context](./cj-apis-app-ability-ui_ability.md#class-context)应用上下文，需在仓颉模板工程中的"main_ability.cj"文件中进行配置。
+- 若示例代码首行有“// index.cj”注释，表示该示例可在仓颉模板工程的“index.cj”文件中编译运行。
+- 若示例需获取[Context](./cj-apis-app-ability-ui_ability.md#class-context)应用上下文，需在仓颉模板工程中的“main_ability.cj”文件中进行配置。
 
 上述示例工程及配置模板详见[仓颉示例代码说明](../cj-development-intro.md#仓颉示例代码说明)。
 
@@ -842,7 +842,7 @@ class MyUIAbility17 <: UIAbility {
 public func requestDialogService(want: Want, result: AsyncCallback<RequestResult>): Unit
 ```
 
-**功能：** 启动一个支持模态弹框的ServiceExtensionAbility。ServiceExtensionAbility被启动后，应用弹出模态弹框。使用callback异步回调。仅支持在主线程调用。
+**功能：** 启动一个支持模态弹框的ServiceExtensionAbility。ServiceExtensionAbility被启动后，应用弹出模态弹框。仅支持在主线程调用。
 
 **系统能力：** SystemCapability.Ability.AbilityRuntime.Core
 
@@ -910,7 +910,7 @@ public func startAbility(want: Want, options!: ?StartOptions = None): Unit
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |want|[Want](./cj-apis-app-ability-want.md#class-want)|是|-|启动UIAbility的必要信息。|
-|options|?[StartOptions](./cj-apis-app-ability-start_options.md#class-startoptions)|否|None|启动UIAbility所携带的参数。|
+|options|?[StartOptions](./cj-apis-app-ability-start_options.md#class-startoptions)|否|None|**命名参数。** 启动UIAbility所携带的参数。|
 
 **异常：**
 
@@ -969,7 +969,7 @@ class MyUIAbility19 <: UIAbility {
 public func startAbilityForResult(want: Want, callback: AsyncCallback<AbilityResult>): Unit
 ```
 
-**功能：** 启动一个UIAbility，并通过回调函数接收被拉起的UIAbility退出时的返回结果。使用callback异步回调。仅支持在主线程调用。
+**功能：** 启动一个UIAbility，并通过回调函数接收被拉起的UIAbility退出时的返回结果。仅支持在主线程调用。
 
 UIAbility被启动后，有如下情况：
 
@@ -1044,7 +1044,7 @@ class MyUIAbility20 <: UIAbility {
 public func startAbilityForResult(want: Want, options: StartOptions, callback: AsyncCallback<AbilityResult>): Unit
 ```
 
-**功能：** 启动一个UIAbility，并通过回调函数接收被拉起的UIAbility退出时的返回结果。使用callback异步回调。仅支持在主线程调用。
+**功能：** 启动一个UIAbility，并通过回调函数接收被拉起的UIAbility退出时的返回结果。仅支持在主线程调用。
 
 UIAbility被启动后，有如下情况：
 
@@ -1158,7 +1158,7 @@ class MyUIAbility22 <: UIAbility {
 public func terminateSelfWithResult(parameter: AbilityResult): Unit
 ```
 
-**功能：** 销毁UIAbility自身。使用callback异步回调。仅支持在主线程调用。
+**功能：** 销毁UIAbility自身。仅支持在主线程调用。
 
 仅当UIAbility通过[startAbilityForResult](#func-startabilityforresultwant-asynccallbackabilityresult)接口拉起时，调用terminateSelfWithResult接口销毁UIAbility，才会返回结果给调用方。
 

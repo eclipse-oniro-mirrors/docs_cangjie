@@ -309,7 +309,7 @@ try {
 public func on(eventType: ProfileCallbackType, callback: Callback1Argument<StateChangeParam>): Unit
 ```
 
-**功能：** 订阅连接状态变化事件。使用Callback异步回调。
+**功能：** 订阅连接状态变化事件。
 
 **需要权限：** ohos.permission.ACCESS_BLUETOOTH
 

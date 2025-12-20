@@ -260,7 +260,7 @@ try {
 public func closeRawFd(path: String): Unit
 ```
 
-**功能：** 关闭resources/rawfile目录下rawfile文件所在HAP的文件描述符（fd）+。
+**功能：** 关闭resources/rawfile目录下rawfile文件所在HAP的文件描述符（fd）。
 
 **系统能力：** SystemCapability.Global.ResourceManager
 
@@ -608,13 +608,13 @@ public func getLocales(includeSystem!: Bool = false): Array<String>
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|includeSystem|Bool|否|false| **命名参数。** 是否包含系统资源，默认值为false。 <br> - false：表示仅获取应用资源的语言列表。 <br> - true：表示获取系统资源和应用资源的语言列表。 <br>当使用系统资源管理对象获取语言列表时，includeSystem值无效，始终返回系统资源语言列表|
+|includeSystem|Bool|否|false| **命名参数。** 是否包含系统资源，默认值为false。 <br> - false：表示仅获取应用资源的语言列表。 <br> - true：表示获取系统资源和应用资源的语言列表。 <br>当使用系统资源管理对象获取语言列表时，includeSystem值无效，始终返回系统资源语言列表。|
 
 **返回值：**
 
 |类型|说明|
 |:----|:----|
-|Array\<String>|返回获取的语言列表，列表中的字符串由语言、脚本（可选）、地区（可选），按照顺序使用中划线“-”连接组成|
+|Array\<String>|返回获取的语言列表，列表中的字符串由语言、脚本（可选）、地区（可选），按照顺序使用中划线“-”连接组成。|
 
 **示例：**
 
@@ -705,7 +705,7 @@ public func getMediaByName(resName: String, density!: ?ScreenDensity = None): Ar
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |resName|String|是|-|资源名称。|
-|density|?[ScreenDensity](#enum-screendensity)|否|None|资源获取需要的屏幕密度，0或缺省表示默认屏幕密度。|
+|density|?[ScreenDensity](#enum-screendensity)|否|None| **命名参数。** 资源获取需要的屏幕密度，0或缺省表示默认屏幕密度。|
 
 **返回值：**
 
@@ -758,7 +758,7 @@ public func getMediaContent(resId: UInt32, density!: ?ScreenDensity = None): Arr
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |resId|UInt32|是|-|资源ID值。|
-|density|?[ScreenDensity](#enum-screendensity)|否|None|资源获取需要的屏幕密度，0或缺省表示默认屏幕密度。|
+|density|?[ScreenDensity](#enum-screendensity)|否|None| **命名参数。** 资源获取需要的屏幕密度，0或缺省表示默认屏幕密度。|
 
 **返回值：**
 
@@ -857,7 +857,7 @@ try {
 public func getNumber(resId: UInt32): NumberValueType
 ```
 
-**功能：** 获取指定资源ID对应的integer数值或者float数值。
+**功能：** 获取指定资源ID对应的Int32数值或者Float32数值。
 
 **系统能力：** SystemCapability.Global.ResourceManager
 
@@ -873,7 +873,7 @@ public func getNumber(resId: UInt32): NumberValueType
 
 |类型|说明|
 |:----|:----|
-|[NumberValueType](#enum-numbervaluetype)|资源ID值对应的数值。<br>integer对应的是原数值，float不带单位时对应的是原数值，带"vp","fp"单位时对应的是px值，具体参考示例代码。|
+|[NumberValueType](#enum-numbervaluetype)|资源ID值对应的数值。<br>Int32对应的是原数值，Float32不带单位时对应的是原数值，带"vp","fp"单位时对应的是px值，具体参考示例代码。|
 
 **异常：**
 
@@ -918,7 +918,7 @@ try {
 public func getNumberByName(resName: String): NumberValueType
 ```
 
-**功能：** 获取指定资源名称对应的integer数值或者float数值。
+**功能：** 获取指定资源名称对应的Int32数值或者Float32数值。
 
 **系统能力：** SystemCapability.Global.ResourceManager
 
@@ -934,7 +934,7 @@ public func getNumberByName(resName: String): NumberValueType
 
 |类型|说明|
 |:----|:----|
-|[NumberValueType](#enum-numbervaluetype)|资源名称对应的数值。<br>integer对应的是原数值，float不带单位时对应的是原数值，带"vp","fp"单位时对应的是px值。|
+|[NumberValueType](#enum-numbervaluetype)|资源名称对应的数值。<br>Int32对应的是原数值，Float32不带单位时对应的是原数值，带"vp","fp"单位时对应的是px值。|
 
 **异常：**
 
@@ -978,7 +978,7 @@ try {
 public func getPluralStringByName(resName: String, num: Int64): String
 ```
 
-**功能：** 获取指定资源名称，指定资源数量的单复数字符串，使用同步方式返回。
+**功能：** 获取指定资源名称，指定资源数量的单复数字符串。
 
 > **说明**
 >

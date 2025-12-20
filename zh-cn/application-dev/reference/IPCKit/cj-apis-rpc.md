@@ -1899,7 +1899,7 @@ try {
 public func readLongArray(): Array<Int64>
 ```
 
-**功能：** 从MessageSequence实例中读取所有的长整数数组。
+**功能：** 从MessageSequence实例中读取长整数数组。
 
 **系统能力：** SystemCapability.Communication.IPC.Core
 

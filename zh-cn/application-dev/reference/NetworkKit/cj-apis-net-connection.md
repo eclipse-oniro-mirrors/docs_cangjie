@@ -941,8 +941,8 @@ public init(host: String,  port: UInt32, exclusionList: Array<String>,
 |host|String|是|-|代理服务器主机名。|
 |port|UInt32|是|-|主机端口。取值范围[0,65535]。|
 |exclusionList|Array\<String>|是|-|不使用代理的主机名列表。|
-|username|String|否|""|使用代理的用户名。|
-|password|String|否|""|使用代理的用户密码。|
+|username|String|否|""|**命名参数。** 使用代理的用户名。|
+|password|String|否|""|**命名参数。** 使用代理的用户密码。|
 
 ## class LinkAddress
 
@@ -1030,7 +1030,7 @@ public var address: String
 public var family: UInt32
 ```
 
-**功能：** IPv4 = 1，IPv6 = 2，默认IPv4。
+**功能：** IPv4 = 1，IPv6 = 2。
 
 **类型：** UInt32
 
@@ -1046,7 +1046,7 @@ public var family: UInt32
 public var port: UInt32
 ```
 
-**功能：** 端口，取值范围\[0, 65535]，默认值为0。
+**功能：** 端口，取值范围\[0, 65535]。
 
 **类型：** UInt32
 
@@ -1073,8 +1073,8 @@ public init(address: String, family!: UInt32 = 1, port!: UInt32 = 0)
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |address|String|是|-|地址。|
-|family|UInt32|否|1|IPv4 = 1，IPv6 = 2，默认IPv4。|
-|port|UInt32|否|0|端口，取值范围\[0, 65535]，默认值为0。|
+|family|UInt32|否|1|**命名参数。** IPv4 = 1，IPv6 = 2，默认IPv4。|
+|port|UInt32|否|0|**命名参数。** 端口，取值范围\[0, 65535]，默认值为0。|
 
 ## class NetBlockStatusInfo
 
@@ -1225,8 +1225,8 @@ public init(bearerTypes: Array<NetBearType>, linkUpBandwidthKbps!: UInt32 = 0, l
 |:---|:---|:---|:---|:---|
 |bearerTypes|Array\<[NetBearType](#enum-netbeartype)>|是|-|网络类型。数组里面只包含了一种网络类型。|
 |linkUpBandwidthKbps|UInt32|否|0|**命名参数。** 上行（设备到网络）带宽，单位(kb/s)。0表示无法评估当前网络带宽。|
-|linkDownBandwidthKbps|UInt32|否|0|**命名参数。** **功能：** 下行（网络到设备）带宽，单位(kb/s)。0表示无法评估当前网络带宽。|
-|networkCap|Array\<[NetCap](#enum-netcap)>|否|Array\<NetCap>()|网络具体能力。|
+|linkDownBandwidthKbps|UInt32|否|0|**命名参数。** 下行（网络到设备）带宽，单位(kb/s)。0表示无法评估当前网络带宽。|
+|networkCap|Array\<[NetCap](#enum-netcap)>|否|Array\<NetCap>()|**命名参数。** 网络具体能力。|
 
 ## class NetCapabilityInfo
 
@@ -2131,7 +2131,7 @@ public enum NetCap {
 NetCapabilityInternet
 ```
 
-**功能：** 表示该网络应具有访问Internet的能力，此能力由网络提供者设置，但该网络访问Internet的连通性并未被网络管理成功验证。网络连通性可以通过NET_CAPABILITY_VALIDATED和NET_CAPABILITY_CHECKING_CONNECTIVITY判断。
+**功能：** 表示该网络应具有访问Internet的能力，此能力由网络提供者设置，但该网络访问Internet的连通性并未被网络管理成功验证。网络连通性可以通过NetCapabilityValidated判断。
 
 **系统能力：** SystemCapability.Communication.NetManager.Core
 
@@ -2181,7 +2181,7 @@ NetCapabilityValidated
 
 **功能：** 表示网络管理通过该网络与华为云地址成功建立连接，此能力由网络管理模块设置。
 
-注意： 网络管理可能会与华为云地址建立连接失败，导致网络能力不具备此标记位，但不完全代表该网络无法访问互联网。另外，对于新完成连接的网络，由于网络正在进行连通性验证，此值可能无法反映真实的验证结果。对此，应用可以通过NET_CAPABILITY_CHECKING_CONNECTIVITY检查网络是否正在检测连通性。
+注意： 网络管理可能会与华为云地址建立连接失败，导致网络能力不具备此标记位，但不完全代表该网络无法访问互联网。另外，对于新完成连接的网络，由于网络正在进行连通性验证，此值可能无法反映真实的验证结果。
 
 **系统能力：** SystemCapability.Communication.NetManager.Core
 

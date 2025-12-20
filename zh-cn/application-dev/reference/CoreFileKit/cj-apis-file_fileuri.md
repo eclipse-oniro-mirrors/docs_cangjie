@@ -103,8 +103,8 @@ public prop name: String
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 13900005 | I/O error |
-  | 13900042 | Unknown error |
+  | 13900005 | I/O error. |
+  | 13900042 | Unknown error. |
 
 ### prop path
 
@@ -146,11 +146,11 @@ public init(uriOrPath: String)
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 13900005 | I/O error |
-  | 13900011 | Out of memory |
-  | 13900020 | Invalid argument |
-  | 13900042 | Unknown error |
-  | 14300002 | Invalid uri |
+  | 13900005 | I/O error. |
+  | 13900011 | Out of memory. |
+  | 13900020 | Invalid argument. |
+  | 13900042 | Unknown error. |
+  | 14300002 | Invalid uri. |
 
 ### func toString()
 

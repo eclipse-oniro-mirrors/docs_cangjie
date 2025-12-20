@@ -53,7 +53,7 @@ public func getPhotoAccessHelper(context: UIAbilityContext): PhotoAccessHelper
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 13900020 | Invalid argument |
+  | 13900020 | Invalid argument. |
 
 **示例：**
 
@@ -226,9 +226,9 @@ public func getAssets(options: FetchOptions): PhotoAssetResult
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 201 | Permission denied |
-  | 13900020 | Invalid argument |
-  | 14000011 | System inner fail |
+  | 201 | Permission denied. |
+  | 13900020 | Invalid argument. |
+  | 14000011 | System inner fail. |
 
 **示例：**
 
@@ -323,9 +323,9 @@ public func commitModify(): Unit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 201 | Permission denied |
-  | 13900020 | Invalid argument |
-  | 14000011 | System inner fail |
+  | 201 | Permission denied. |
+  | 13900020 | Invalid argument. |
+  | 14000011 | System inner fail. |
 
 **示例：**
 
@@ -395,8 +395,8 @@ public func getAllObjects(): Array<Album>
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 13900020 | Invalid argument |
-  | 14000011 | System inner fail |
+  | 13900020 | Invalid argument. |
+  | 14000011 | System inner fail. |
 
 **示例：**
 
@@ -448,8 +448,8 @@ public func getFirstObject(): Album
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 13900020 | Invalid argument |
-  | 14000011 | System inner fail |
+  | 13900020 | Invalid argument. |
+  | 14000011 | System inner fail. |
 
 **示例：**
 
@@ -501,8 +501,8 @@ public func getLastObject(): Album
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 13900020 | Invalid argument |
-  | 14000011 | System inner fail |
+  | 13900020 | Invalid argument. |
+  | 14000011 | System inner fail. |
 
 **示例：**
 
@@ -555,8 +555,8 @@ public func getNextObject(): Album
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 13900020 | Invalid argument |
-  | 14000011 | System inner fail |
+  | 13900020 | Invalid argument. |
+  | 14000011 | System inner fail. |
 
 **示例：**
 
@@ -614,8 +614,8 @@ public func getObjectByPosition(index: Int32): Album
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 13900020 | Invalid argument |
-  | 14000011 | System inner fail |
+  | 13900020 | Invalid argument. |
+  | 14000011 | System inner fail. |
 
 **示例：**
 
@@ -880,8 +880,8 @@ public func close(): Unit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 13900020 | Invalid argument |
-  | 14000011 | System inner fail |
+  | 13900020 | Invalid argument. |
+  | 14000011 | System inner fail. |
 
 **示例：**
 
@@ -931,8 +931,8 @@ public func getCount(): Int32
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 13900020 | Invalid argument |
-  | 14000011 | System inner fail |
+  | 13900020 | Invalid argument. |
+  | 14000011 | System inner fail. |
 
 **示例：**
 
@@ -982,8 +982,8 @@ public func isAfterLast(): Bool
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 13900020 | Invalid argument |
-  | 14000011 | System inner fail |
+  | 13900020 | Invalid argument. |
+  | 14000011 | System inner fail. |
 
 **示例：**
 
@@ -1051,7 +1051,7 @@ public init(album: Album)
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 14000011 | System inner fail |
+  | 14000011 | System inner fail. |
 
 **示例：**
 
@@ -1103,8 +1103,8 @@ public func addAssets(assets: Array<PhotoAsset>): Unit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 14000011 | System inner fail |
-  | 14000016 | Operation Not Support |
+  | 14000011 | System inner fail. |
+  | 14000016 | Operation Not Support. |
 
 **示例：**
 
@@ -1160,7 +1160,7 @@ public func getAlbum(): Album
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 14000011 | System inner fail |
+  | 14000011 | System inner fail. |
 
 **示例：**
 
@@ -1213,8 +1213,8 @@ public func removeAssets(assets: Array<PhotoAsset>): Unit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 14000011 | System inner fail |
-  | 14000016 | Operation Not Support |
+  | 14000011 | System inner fail. |
+  | 14000016 | Operation Not Support. |
 
 **示例：**
 
@@ -1276,7 +1276,7 @@ public func setAlbumName(name: String): Unit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 14000011 | System inner fail |
+  | 14000011 | System inner fail. |
 
 **示例：**
 
@@ -1348,7 +1348,7 @@ public init(asset: PhotoAsset)
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 14000011 | System inner fail |
+  | 14000011 | System inner fail. |
 
 **示例：**
 
@@ -1409,7 +1409,7 @@ public static func createAssetRequest(context: UIAbilityContext, photoType: Phot
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 14000011 | System inner fail |
+  | 14000011 | System inner fail. |
 
 **示例：**
 
@@ -1468,7 +1468,7 @@ public static func createImageAssetRequest(context: UIAbilityContext, fileUri: S
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 13900002 | The file corresponding to the URI is not in the app sandbox. |
-  | 14000011 | System inner fail |
+  | 14000011 | System inner fail. |
 
 **示例：**
 
@@ -1527,7 +1527,7 @@ public static func createVideoAssetRequest(context: UIAbilityContext, fileUri: S
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 13900002 | The file corresponding to the URI is not in the app sandbox. |
-  | 14000011 | System inner fail |
+  | 14000011 | System inner fail. |
 
 **示例：**
 
@@ -1579,9 +1579,9 @@ public static func deleteAssets(context: UIAbilityContext, assets: Array<PhotoAs
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 201 | Permission denied |
+  | 201 | Permission denied. |
   | 14000002 | The uri format is incorrect or does not exist. |
-  | 14000011 | System inner fail |
+  | 14000011 | System inner fail. |
 
 **示例：**
 
@@ -1635,9 +1635,9 @@ public static func deleteAssets(context: UIAbilityContext, assets: Array<String>
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 201 | Permission denied |
+  | 201 | Permission denied. |
   | 14000002 | The uri format is incorrect or does not exist. |
-  | 14000011 | System inner fail |
+  | 14000011 | System inner fail. |
 
 **示例：**
 
@@ -1691,8 +1691,8 @@ public func addResource(resourceType: ResourceType, fileUri: String): Unit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 14000011 | System inner fail |
-  | 14000016 | Operation Not Support |
+  | 14000011 | System inner fail. |
+  | 14000016 | Operation Not Support. |
 
 **示例：**
 
@@ -1747,8 +1747,8 @@ public func addResource(resourceType: ResourceType, data: Array<Byte>): Unit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 14000011 | System inner fail |
-  | 14000016 | Operation Not Support |
+  | 14000011 | System inner fail. |
+  | 14000016 | Operation Not Support. |
 
 **示例：**
 
@@ -1794,8 +1794,8 @@ public func discardCameraPhoto(): Unit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 14000011 | Internal system error |
-  | 14000016 | Operation Not Support |
+  | 14000011 | Internal system error. |
+  | 14000016 | Operation Not Support. |
 
 **示例：**
 
@@ -1850,7 +1850,7 @@ public func getAsset(): PhotoAsset
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 14000011 | System inner fail |
+  | 14000011 | System inner fail. |
 
 **示例：**
 
@@ -1906,9 +1906,9 @@ public func getWriteCacheHandler(): Int32
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 201 | Permission denied |
-  | 14000011 | System inner fail |
-  | 14000016 | Operation Not Support |
+  | 201 | Permission denied. |
+  | 14000011 | System inner fail. |
+  | 14000016 | Operation Not Support. |
 
 **示例：**
 
@@ -1953,8 +1953,8 @@ public func saveCameraPhoto(): Unit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 14000011 | System inner fail |
-  | 14000016 | Operation Not Support |
+  | 14000011 | System inner fail. |
+  | 14000016 | Operation Not Support. |
 
 **示例：**
 
@@ -2013,7 +2013,7 @@ title参数规格为：
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 14000011 | System inner fail |
+  | 14000011 | System inner fail. |
 
 **示例：**
 
@@ -2081,8 +2081,8 @@ public func applyChanges(mediaChangeRequest: MediaChangeRequest): Unit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 201 | Permission denied |
-  | 14000011 | System inner fail |
+  | 201 | Permission denied. |
+  | 14000011 | System inner fail. |
 
 **示例：**
 
@@ -2148,9 +2148,9 @@ public func getAlbums(albumType: AlbumType, subtype: AlbumSubtype,
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 201 | Permission denied |
-  | 13900020 | Invalid argument |
-  | 14000011 | System inner fail |
+  | 201 | Permission denied. |
+  | 13900020 | Invalid argument. |
+  | 14000011 | System inner fail. |
 
 **示例：**
 
@@ -2208,9 +2208,9 @@ public func getAssets(options: FetchOptions): PhotoAssetResult
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 201 | Permission denied |
-  | 13900020 | Invalid argument |
-  | 14000011 | System inner fail |
+  | 201 | Permission denied. |
+  | 13900020 | Invalid argument. |
+  | 14000011 | System inner fail. |
 
 **示例：**
 
@@ -2268,8 +2268,8 @@ public func getBurstAssets(burstKey: String, options: FetchOptions): PhotoAssetR
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 201 | Permission denied |
-  | 14000011 | Internal system error |
+  | 201 | Permission denied. |
+  | 14000011 | Internal system error. |
 
 **示例：**
 
@@ -2301,7 +2301,7 @@ try {
 public func registerChange(uri: String, forChildUris: Bool, callback: Callback1Argument<ChangeData>): Unit
 ```
 
-**功能：** 注册对指定uri的监听，使用callback方式返回异步结果。
+**功能：** 注册对指定uri的监听，使用callback方式返回结果。
 
 **系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
 
@@ -2321,8 +2321,8 @@ public func registerChange(uri: String, forChildUris: Bool, callback: Callback1A
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 13900012 | Permission denied |
-  | 13900020 | Invalid argument |
+  | 13900012 | Permission denied. |
+  | 13900020 | Invalid argument. |
 
 **示例：**
 
@@ -2386,8 +2386,8 @@ public func release(): Unit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 13900020 | Invalid argument |
-  | 14000011 | System inner fail |
+  | 13900020 | Invalid argument. |
+  | 14000011 | System inner fail. |
 
 **示例：**
 
@@ -2445,7 +2445,7 @@ public func showAssetsCreationDialog(srcFileUris: Array<String>, photoCreationCo
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 14000011 | Internal system error |
+  | 14000011 | Internal system error. |
 
 **示例：**
 
@@ -2525,8 +2525,8 @@ public func unregisterChange(uri: String, callback!: ?Callback1Argument<ChangeDa
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 13900012 | Permission denied |
-  | 13900020 | Invalid argument |
+  | 13900012 | Permission denied. |
+  | 13900020 | Invalid argument. |
 
 **示例：**
 
@@ -2655,10 +2655,10 @@ public func commitModify(): Unit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 201 | Permission denied |
-  | 13900020 | Invalid argument |
-  | 14000001 | Invalid display name |
-  | 14000011 | System inner fail |
+  | 201 | Permission denied. |
+  | 13900020 | Invalid argument. |
+  | 14000001 | Invalid display name. |
+  | 14000011 | System inner fail. |
 
 **示例：**
 
@@ -2719,7 +2719,7 @@ public func get(member: String): MemberType
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 13900020 | Invalid argument |
+  | 13900020 | Invalid argument. |
   | 14000014 | The provided member must be a property name of PhotoKey. |
 
 **示例：**
@@ -2780,9 +2780,9 @@ public func getThumbnail(size!: ?Size = Size(256, 256)): PixelMap
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 13900012 | Permission denied |
-  | 13900020 | Invalid argument |
-  | 14000011 | System inner fail |
+  | 13900012 | Permission denied. |
+  | 13900020 | Invalid argument. |
+  | 14000011 | System inner fail. |
 
 **示例：**
 
@@ -2835,7 +2835,7 @@ public func set(member: String, value: String): Unit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 13900020 | Invalid argument |
+  | 13900020 | Invalid argument. |
   | 14000014 | The provided member must be a property name of PhotoKey. |
 
 **示例：**
@@ -2905,8 +2905,8 @@ public func getAllObjects(): Array<PhotoAsset>
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 13900020 | Invalid argument |
-  | 14000011 | System inner fail |
+  | 13900020 | Invalid argument. |
+  | 14000011 | System inner fail. |
 
 **示例：**
 
@@ -2956,8 +2956,8 @@ public func getFirstObject(): PhotoAsset
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 13900020 | Invalid argument |
-  | 14000011 | System inner fail |
+  | 13900020 | Invalid argument. |
+  | 14000011 | System inner fail. |
 
 **示例：**
 
@@ -3007,8 +3007,8 @@ public func getLastObject(): PhotoAsset
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 13900020 | Invalid argument |
-  | 14000011 | System inner fail |
+  | 13900020 | Invalid argument. |
+  | 14000011 | System inner fail. |
 
 **示例：**
 
@@ -3040,7 +3040,7 @@ try {
 public func getNextObject(): PhotoAsset
 ```
 
-**功能：** 获获取文件检索结果中的下一个文件资产。此方法使用promise方式来异步返回。
+**功能：** 获获取文件检索结果中的下一个文件资产。
 在调用此方法之前，必须使用[isAfterLast()](#func-isafterlast)来检查当前位置是否为最后一行。
 
 **系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
@@ -3059,8 +3059,8 @@ public func getNextObject(): PhotoAsset
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 13900020 | Invalid argument |
-  | 14000011 | System inner fail |
+  | 13900020 | Invalid argument. |
+  | 14000011 | System inner fail. |
 
 **示例：**
 
@@ -3116,8 +3116,8 @@ public func getObjectByPosition(index: Int32): PhotoAsset
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 13900020 | Invalid argument |
-  | 14000011 | System inner fail |
+  | 13900020 | Invalid argument. |
+  | 14000011 | System inner fail. |
 
 **示例：**
 
@@ -3183,7 +3183,7 @@ public var fileNameExtension: String
 public var photoType: PhotoType
 ```
 
-**功能：** 创建的文件类型[PhotoType](#phototype)，IMAGE或者VIDEO。
+**功能：** 创建的文件类型[PhotoType](#phototype)，Image或者Video。
 
 **类型：** [PhotoType](#enum-phototype)
 
@@ -3199,7 +3199,7 @@ public var photoType: PhotoType
 public var subtype: PhotoSubtype
 ```
 
-**功能：** 图片或者视频的文件子类型[PhotoSubtype](#enum-photosubtype)，不传入时默认为DEFAULT。
+**功能：** 图片或者视频的文件子类型[PhotoSubtype](#enum-photosubtype)。
 
 **类型：** [PhotoSubtype](#enum-photosubtype)
 
@@ -3250,7 +3250,7 @@ public init(fileNameExtension: String, photoType: PhotoType, title!: String = ""
 |fileNameExtension|String|是|-|文件扩展名，例如'jpg'。|
 |photoType|[PhotoType](#enum-phototype)|是|-|创建的文件类型[PhotoType](#phototype)，IMAGE或者VIDEO。|
 |title|String|否|""| **命名参数。** 图片或者视频的标题，不传入时由系统生成。|
-|subtype|[PhotoSubtype](#enum-photosubtype)|否|Default| **命名参数。** 图片或者视频的文件子类型[PhotoSubtype](#enum-photosubtype)，不传入时默认为DEFAULT。|
+|subtype|[PhotoSubtype](#enum-photosubtype)|否|Default| **命名参数。** 图片或者视频的文件子类型[PhotoSubtype](#enum-photosubtype)，不传入时默认为Default。|
 
 ## class RequestOptions
 
@@ -3679,7 +3679,7 @@ public enum DefaultChangeUri <: ToString {
 DefaultAlbumUri
 ```
 
-**功能：** 默认相册的uri，与forSubUri{true}一起使用，将接收所有相册的更改通知。
+**功能：** 默认相册的uri，与forChildUris{true}一起使用，将接收所有相册的更改通知。
 
 **系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
 
@@ -3691,7 +3691,7 @@ DefaultAlbumUri
 DefaultPhotoUri
 ```
 
-**功能：** 默认PhotoAsset的uri，与forSubUri{true}一起使用，将接收所有PhotoAsset的更改通知。
+**功能：** 默认PhotoAsset的uri，与forChildUris{true}一起使用，将接收所有PhotoAsset的更改通知。
 
 **系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
 
@@ -4340,7 +4340,7 @@ DisplayName
 
 - 文件名字符串长度为1~255。
 
-- 文件主名中不允许出现的非法英文字符，包括：. .. \ / : * ? " ' ` < > \| { } [ ]。
+- 文件主名中不允许出现的非法英文字符，包括：. .. \ / : * ? " ' ` < > \| { } [ ]
 
 **系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
 

@@ -108,8 +108,8 @@ public init(bundleName: String, abilityName: String, deviceId!: String = "", mod
 |:---|:---|:---|:---|:---|
 |bundleName|String|是|-|应用Bundle名称。|
 |abilityName|String|是|-|Ability名称。|
-|deviceId|String|否|""|设备ID。|
-|moduleName|String|否|""|Ability所属的HAP的模块名称。|
+|deviceId|String|否|""|**命名参数。** 设备ID。|
+|moduleName|String|否|""|**命名参数。** Ability所属的HAP的模块名称。|
 
 **示例：**
 

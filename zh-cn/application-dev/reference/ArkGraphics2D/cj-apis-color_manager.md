@@ -33,7 +33,7 @@ public func create(colorSpaceType: ColorSpace): ColorSpaceManager
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|colorSpaceType|[ColorSpace](#enum-colorspace)|是|-|标准色域类型枚举值。UNKNOWN与CUSTOM不可用于直接创建色域对象。|
+|colorSpaceType|[ColorSpace](#enum-colorspace)|是|-|标准色域类型枚举值。Unknown与Custom不可用于直接创建色域对象。|
 
 **返回值：**
 
@@ -540,7 +540,7 @@ Bt2020Hlg
 
 转换函数为HLG类型。
 
-编码范围为Limit类型。
+编码范围为Full类型。
 
 **系统能力：** SystemCapability.Graphic.Graphic2D.ColorManager.Core
 
@@ -792,7 +792,7 @@ RGB色域为Display P3类型。
 DisplayP3Srgb
 ```
 
-**功能：** 与DISPLAY_P3相同。
+**功能：** 与DisplayP3相同。
 
 RGB色域为Display P3类型。
 
@@ -842,7 +842,7 @@ LinearBt2020
 LinearBt709
 ```
 
-**功能：** 与LINEAR_SRGB相同。
+**功能：** 与LinearSrgb相同。
 
 RGB色域为BT709类型。
 

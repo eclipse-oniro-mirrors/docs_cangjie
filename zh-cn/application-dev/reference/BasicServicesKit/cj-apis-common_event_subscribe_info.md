@@ -128,7 +128,7 @@ public var publisherPermission: String
 public var userId: Int32
 ```
 
-**功能：** 表示用户ID。此参数是可选的，默认值当前用户的ID。如果指定了此参数，则该值必须是系统中现有的用户ID。
+**功能：** 表示用户ID。
 
 **类型：** Int32
 

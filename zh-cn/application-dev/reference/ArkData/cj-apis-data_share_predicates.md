@@ -165,7 +165,7 @@ public func equalTo(field: String, value: VBValueType): DataSharePredicates
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |field|String|是|-|数据库表中的列名。</br>field为""时，此次调用接口配置的谓词无效。|
-|value|[VBValueType](./cj-apis-values_bucket.md#enum-vbvaluetype)|是|-|指示要与谓词匹配的值。</br>value为undefined或者null时，此次调用接口配置的谓词无效。|
+|value|[VBValueType](./cj-apis-values_bucket.md#enum-vbvaluetype)|是|-|指示要与谓词匹配的值。|
 
 **返回值：**
 

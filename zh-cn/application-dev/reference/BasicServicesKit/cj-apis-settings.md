@@ -79,7 +79,7 @@ try {
 public func getValue<T, P>(context: UIAbilityContext, name: T, defValue: String, domainName: P): String where T <: ToString
 ```
 
-**功能：** 获取数据库中指定数据项的值。
+**功能：** 获取数据项的值。
 
 **系统能力：** SystemCapability.Applications.Settings.Core
 

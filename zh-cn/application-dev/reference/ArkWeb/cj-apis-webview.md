@@ -22,8 +22,8 @@ ohos.permission.INTERNET
 
 API示例代码使用说明：
 
-- 若示例代码首行有"// index.cj"注释，表示该示例可在仓颉模板工程的"index.cj"文件中编译运行。
-- 若示例需获取[Context](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-context)应用上下文，需在仓颉模板工程中的"main_ability.cj"文件中进行配置。
+- 若示例代码首行有“// index.cj”注释，表示该示例可在仓颉模板工程的“index.cj”文件中编译运行。
+- 若示例需获取[Context](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-context)应用上下文，需在仓颉模板工程中的“main_ability.cj”文件中进行配置。
 
 上述示例工程及配置模板详见[接口使用说明](../cj-development-intro.md#接口使用说明)。
 
@@ -416,7 +416,7 @@ public static func configCookie(url: String, value: String, incognito!: Bool = f
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 17100002 | URL error. No valid cookie found for the specified URL. |
-  | 17100005 | The provided cookie value is invalid. It must follow the format specified |
+  | 17100005 | The provided cookie value is invalid. It must follow the format specified. |
 
 **示例：**
 
@@ -627,7 +627,7 @@ public static func setAcceptCookiesEnabled(accept: Bool): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|accept|Bool|是|-|设置是否拥有发送和接收cookie的权限，默认为true，表示拥有发送和接收cookie的权限。|
+|accept|Bool|是|-|设置是否拥有发送和接收cookie的权限，true表示拥有发送和接收cookie的权限。|
 
 **示例：**
 
@@ -778,7 +778,7 @@ public init(webTag!: ?String = None)
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|webTag|?String|否|None|指定了 Web 组件的名称。|
+|webTag|?String|否|None|**命名参数。** 指定了Web组件的名称。|
 
 ### static func setWebDebuggingAccess(Bool)
 
@@ -2178,7 +2178,7 @@ public func pageUp(top: Bool): Unit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 17100001 | Init error. The WebviewController must be associated with a Web component. relation pageUp(top: boolean): void |
+  | 17100001 | Init error. The WebviewController must be associated with a Web component. |
 
 **示例：**
 
@@ -2474,7 +2474,7 @@ public func loadUrl<T>(url: T, headers!: Array<WebHeader> = Array<WebHeader>()):
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |url|T|是|-|需要加载的URL。|
-|headers|Array\<[WebHeader](#class-webheader)>|否|Array\<WebHeader>()|URL的附加HTTP请求头。<br>默认值： []|
+|headers|Array\<[WebHeader](#class-webheader)>|否|Array\<WebHeader>()|**命名参数。** URL的附加HTTP请求头。<br>默认值：Array\<WebHeader>()。|
 
 **异常：**
 
@@ -2687,7 +2687,7 @@ class webview_27 {
 public func storeWebArchive(baseName: String, autoName: Bool, callback: AsyncCallback<String>): Unit
 ```
 
-**功能：** 以回调方式异步保存当前页面。
+**功能：** 以回调方式保存当前页面。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -2699,7 +2699,7 @@ public func storeWebArchive(baseName: String, autoName: Bool, callback: AsyncCal
 |:---|:---|:---|:---|:---|
 |baseName|String|是|-|生成的离线网页存储位置，该值不能为空。|
 |autoName|Bool|是|-|决定是否自动生成文件名。如果为false，则按baseName的文件名存储；如果为true，则根据当前Url自动生成文件名，并按baseName的文件目录存储。|
-|callback|[AsyncCallback](../arkinterop/cj-api-business_exception.md#type-asynccallbackt)\<String>|是|-|返回文件存储路径，保存网页失败会返回null。|
+|callback|[AsyncCallback](../arkinterop/cj-api-business_exception.md#type-asynccallbackt)\<String>|是|-|返回文件存储路径，保存网页失败会返回空字符串。|
 
 **异常：**
 
@@ -2981,14 +2981,13 @@ class webview_31 {
 public func runJavaScript(script: String, callback: AsyncCallback<String>): Unit
 ```
 
-**功能：** 在当前显示页面的上下文中异步执行JavaScript脚本，脚本执行的结果将通过异步回调方式返回。此方法必须在用户界面（UI）线程上使用，并且回调也将在用户界面（UI）线程上调用。
+**功能：** 在当前显示页面的上下文中执行JavaScript脚本，脚本执行的结果将通过回调方式返回。此方法必须在用户界面（UI）线程上使用，并且回调也将在用户界面（UI）线程上调用。
 
 > **说明：**
 >
 > - 跨导航操作（如loadUrl）时，JavaScript状态将不再保留。例如，调用loadUrl前定义的全局变量和函数在加载的页面中将不存在。
 > - 建议应用程序使用registerJavaScriptProxy来确保JavaScript状态能够在页面导航间保持。
 > - 目前不支持传递对象，支持传递结构体。
-> - 执行异步方法无法获取返回值，需要根据具体情境判断是否使用同步或异步方式。
 > - 前端页面传到Native的string数据类型会被视为json格式的数据，需要调用JSON.parse反序列化。
 
 **系统能力：** SystemCapability.Web.Webview.Core
@@ -3000,7 +2999,7 @@ public func runJavaScript(script: String, callback: AsyncCallback<String>): Unit
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |script|String|是|-|JavaScript脚本。|
-|callback|[AsyncCallback](../arkinterop/cj-api-business_exception.md#type-asynccallbackt)\<String>|是|-|回调执行JavaScript脚本结果。JavaScript脚本若执行失败或无返回值时，返回null。|
+|callback|[AsyncCallback](../arkinterop/cj-api-business_exception.md#type-asynccallbackt)\<String>|是|-|回调执行JavaScript脚本结果。JavaScript脚本若执行失败或无返回值时，返回字符串null。|
 
 **异常：**
 
@@ -3056,7 +3055,7 @@ class webview_32 {
                 webController.runJavaScript("test()", callback2)
             }).width(400.px).height(150.px)
 
-            Web(src: ("index.html"), controller: webController)
+            Web(src: @rawfile("index.html"), controller: webController)
             .onPageBegin({evt =>
                 Hilog.info(0, "test", "page begin url: ${evt.url}")
             })

@@ -12,8 +12,8 @@ import kit.AbilityKit.*
 
 API示例代码使用说明：
 
-- 若示例代码首行有"// index.cj"注释，表示该示例可在仓颉模板工程的"index.cj"文件中编译运行。
-- 若示例需获取[Context](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-context)应用上下文，需在仓颉模板工程中的"main_ability.cj"文件中进行配置。
+- 若示例代码首行有“// index.cj”注释，表示该示例可在仓颉模板工程的“index.cj”文件中编译运行。
+- 若示例需获取[Context](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-context)应用上下文，需在仓颉模板工程中的“main_ability.cj”文件中进行配置。
 
 上述示例工程及配置模板详见[仓颉示例代码说明](../cj-development-intro.md#仓颉示例代码说明)。
 
@@ -1660,7 +1660,7 @@ public class DefaultAppManager {}
 public static func isDefaultApplication(appType: ApplicationType): Bool
 ```
 
-**功能：** 根据系统已定义的应用类型或者UniformDataType类型判断当前应用是否是该类型的默认应用。
+**功能：** 根据系统已定义的应用类型判断当前应用是否是该类型的默认应用。
 
 **系统能力：** SystemCapability.BundleManager.BundleFramework.DefaultApp
 
@@ -1670,7 +1670,7 @@ public static func isDefaultApplication(appType: ApplicationType): Bool
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|appType|ApplicationType|是|-|要查询的应用类型，取[ApplicationType](#enum-applicationtype)或者UniformDataType类型中的值。|
+|appType|ApplicationType|是|-|要查询的应用类型，取[ApplicationType](#enum-applicationtype)类型中的值。|
 
 **返回值：**
 

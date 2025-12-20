@@ -74,8 +74,6 @@ public var dataGroupId: String
 
 **功能：** 应用组ID，<!--RP1-->暂不支持指定dataGroupId在对应共享沙箱路径下创建Preferences实例。<!--RP1End-->
 
-为可选参数。指定在此dataGroupId对应的沙箱路径下创建Preferences实例。当此参数不填时，默认在本应用沙箱目录下创建Preferences实例。
-
 **类型：** String
 
 **读写能力：** 可读写
@@ -106,7 +104,7 @@ public var name: String
 public var storageType: StorageType
 ```
 
-**功能：** 存储模式，为可选参数。表示当前Preferences实例需要使用的存储模式。当此参数不填时，默认使用XML存储模式。当选择某种存储模式创建Preferences后，不支持中途切换存储模式。
+**功能：** 存储模式。表示当前Preferences实例需要使用的存储模式。当选择某种存储模式创建Preferences后，不支持中途切换存储模式。
 
 **类型：** [StorageType](#enum-storagetype)
 
@@ -134,8 +132,8 @@ public init(name: String, dataGroupId!: String = String.empty,
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |name|String|是|-|Preferences实例的名称。名称长度需大于零且小于等于255字节，名称中不能包含'/'且不能以'/'结尾。|
-|dataGroupId|String|否|String.empty|应用组ID，为可选参数。|
-|storageType|[StorageType](#enum-storagetype)|否|StorageType.Xml|存储模式，为可选参数。表示当前Preferences实例需要使用的存储模式。当此参数不填时，默认使用XML存储模式。当选择某种存储模式创建Preferences后，不支持中途切换存储模式。|
+|dataGroupId|String|否|String.empty|**命名参数。** 应用组ID，为可选参数。|
+|storageType|[StorageType](#enum-storagetype)|否|StorageType.Xml|**命名参数。** 存储模式，为可选参数。表示当前Preferences实例需要使用的存储模式。当此参数不填时，默认使用StorageType.Xml存储模式。当选择某种存储模式创建Preferences后，不支持中途切换存储模式。|
 
 ## class Preferences
 
@@ -628,7 +626,7 @@ public func get(key: String, defValue: PreferencesValueType): PreferencesValueTy
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|key|String|是|-|要获取的存储Key名称，不能为空，最大长度限制为[MAX_KEY_LENGTH](#const-max_key_length)|
+|key|String|是|-|要获取的存储Key名称，不能为空，最大长度限制为[MAX_KEY_LENGTH](#const-max_key_length)。|
 |defValue|[PreferencesValueType](#enum-preferencesvaluetype)|是|-|默认返回值。支持Int64、Float64、String、Bool、 Array\<Bool>、Array\<Float64>、Array\<String>。|
 
 **返回值：**
@@ -797,7 +795,7 @@ public func off(event: PreferencesEvent, callback!: ?Callback1Argument<String> =
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |event|[PreferencesEvent](#enum-preferencesevent)|是|-|事件类型，表示取消订阅数据变更，或表示取消订阅进程间数据变更。|
-|callback|?[Callback1Argument](../arkinterop/cj-api-callback_invoke.md#class-callback1argumenta)\<String>|否|None|需要取消的回调函数，不填写则全部取消。<br> String: 发生变化的Key的类型。|
+|callback|?[Callback1Argument](../arkinterop/cj-api-callback_invoke.md#class-callback1argumenta)\<String>|否|None|**命名参数。** 需要取消的回调函数，不填写则全部取消。<br> String: 发生变化的Key的类型。|
 
 **异常：**
 

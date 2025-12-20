@@ -68,7 +68,7 @@ public static let MAX_BATCH_SIZE: Int32 = 128
 public static let MAX_KEY_LENGTH: Int32 = 1024
 ```
 
-**功能：** 值为1024，表示数据库中Key允许的最大长度，单位字节。如果存在重名符号，推荐使用别名：KV_MAX_KEY_LENGTH。
+**功能：** 值为1024，表示数据库中Key允许的最大长度，单位字节。
 
 **类型：** Int32
 
@@ -124,7 +124,7 @@ public static let MAX_STORE_ID_LENGTH: Int32 = 128
 public static let MAX_VALUE_LENGTH: Int32 = 4194303
 ```
 
-**功能：** 值为4194303，表示数据库中Value允许的最大长度，单位字节。推荐使用别名：KV_MAX_VALUE_LENGTH。
+**功能：** 值为4194303，表示数据库中Value允许的最大长度，单位字节。
 
 **类型：** Int32
 
@@ -849,7 +849,7 @@ public func getKVStore<T>(storeId: String, options: KVOptions): T where T <: Sin
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|storeId|String|是|-|数据库唯一标识符，长度不大于[MAX_STORE_ID_LENGTH](#static-let-max_store_id_length)，且只能包含字母数字或下划线_|
+|storeId|String|是|-|数据库唯一标识符，长度不大于[MAX_STORE_ID_LENGTH](#static-let-max_store_id_length)，且只能包含字母数字或下划线_。|
 |options|[KVOptions](#class-kvoptions)|是|-|创建分布式键值实例的配置信息。|
 
 **返回值：**
@@ -1157,11 +1157,11 @@ public init(securityLevel: KVSecurityLevel, createIfMissing!: Bool = true, encry
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |securityLevel|[KVSecurityLevel](#enum-kvsecuritylevel)|是|-|设置数据库安全级别。|
-|createIfMissing|Bool|否|true|当数据库文件不存在时是否创建数据库，true为创建，false为不创建，默认为true。|
-|encrypt|Bool|否|false|设置数据库文件是否加密，true为加密，false为不加密，默认为false。|
-|backup|Bool|否|true|设设置数据库文件是否备份，true为备份，false为不备份，默认为true。|
-|autoSync|Bool|否|false|设置数据库是否支持跨设备自动同步。默认为false，即只支持手动同步。|
-|schema|?[Schema](#class-schema)|否|None|设设置定义存储在数据库中的值，默认为undefined，即不使用Schema。|
+|createIfMissing|Bool|否|true|**命名参数。** 当数据库文件不存在时是否创建数据库，true为创建，false为不创建，默认为true。|
+|encrypt|Bool|否|false|**命名参数。** 设置数据库文件是否加密，true为加密，false为不加密，默认为false。|
+|backup|Bool|否|true|**命名参数。** 设置数据库文件是否备份，true为备份，false为不备份，默认为true。|
+|autoSync|Bool|否|false|**命名参数。** 设置数据库是否支持跨设备自动同步。默认为false，即只支持手动同步。|
+|schema|?[Schema](#class-schema)|否|None|**命名参数。** 设置定义存储在数据库中的值，默认为None，即不使用Schema。|
 
 ## class Query
 

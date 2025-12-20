@@ -237,7 +237,7 @@ public func executeShellCommand(cmd: String, timeoutSecs!: Int64 = 0): ShellCmdR
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |cmd|String|是|-|Shell命令字符串。|
-|timeoutSecs|Int64|否|0|设定命令超时时间，单位秒（s）。|
+|timeoutSecs|Int64|否|0|**命名参数。** 设定命令超时时间，单位秒（s）。|
 
 **返回值：**
 
@@ -651,7 +651,7 @@ public func waitAbilityMonitor(monitor: AbilityMonitor, timeout!: Int64 = 5000):
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |monitor|[AbilityMonitor](#class-abilitymonitor)|是|-|[AbilityMonitor](#class-abilitymonitor)实例。|
-|timeout|Int64|否|5000|最大等待时间，单位毫秒（ms），默认值为5000毫秒。   |
+|timeout|Int64|否|5000|**命名参数。** 最大等待时间，单位毫秒（ms），默认值为5000毫秒。   |
 
 **返回值：**
 
@@ -710,7 +710,7 @@ public func waitAbilityStageMonitor(monitor: AbilityStageMonitor, timeout!: Int6
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |monitor|[AbilityStageMonitor](#class-abilitystagemonitor)|是|-|[AbilityStageMonitor](#class-abilitystagemonitor)实例。|
-|timeout|Int64|否|5000|超时最大等待时间，单位毫秒（ms），默认值为5000毫秒。|
+|timeout|Int64|否|5000|**命名参数。** 超时最大等待时间，单位毫秒（ms），默认值为5000毫秒。|
 
 **返回值：**
 
@@ -1126,7 +1126,7 @@ public init(
 |onAbilityDestroy|?([UIAbility](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiability)) -> Unit|否|None| **命名参数。** UIAbility对象被销毁前，触发该回调函数。|
 |onWindowStageCreate|?([UIAbility](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiability)) -> Unit|否|None| **命名参数。** 当WindowStage实例被创建时，触发该回调函数。|
 |onWindowStageRestore|?([UIAbility](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiability)) -> Unit|否|None| **命名参数。** 当UIAbility跨端迁移时，目标端UIAbility恢复页面栈时，触发该回调函数。|
-|onWindowStageDestroy|?([UIAbility](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiability)) -> Unit|否|None| **命名参数。**当WindowStage被销毁前，触发该回调函数。|
+|onWindowStageDestroy|?([UIAbility](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiability)) -> Unit|否|None| **命名参数。** 当WindowStage被销毁前，触发该回调函数。|
 
 **示例：**
 

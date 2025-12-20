@@ -44,12 +44,12 @@ public func abortSession(handle: HuksHandleId, options: HuksOptions): Unit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 801 | api is not supported |
-  | 12000004 | operating file failed |
-  | 12000005 | IPC communication failed |
-  | 12000006 | error occured in crypto engine |
-  | 12000012 | Device environment or input parameter abnormal |
-  | 12000014 | memory is insufficient |
+  | 801 | api is not supported. |
+  | 12000004 | operating file failed. |
+  | 12000005 | IPC communication failed. |
+  | 12000006 | error occured in crypto engine. |
+  | 12000012 | Device environment or input parameter abnormal. |
+  | 12000014 | memory is insufficient. |
 
 **示例：**
 
@@ -92,7 +92,7 @@ try {
 public func anonAttestKeyItem(keyAlias: String, options: HuksOptions): Array<String>
 ```
 
-**功能：** 获取匿名化密钥证书，使用Promise方式异步返回结果。
+**功能：** 获取匿名化密钥证书。
 
 该操作需要联网进行，且耗时较长。返回12000012错误码时，可能是由于网络异常导致。此时如果没有联网，需要提示用户网络没有连接，如果已经联网，可能是由于网络抖动导致失败，建议重试。
 
@@ -119,15 +119,15 @@ public func anonAttestKeyItem(keyAlias: String, options: HuksOptions): Array<Str
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 201 | check permission failed |
-  | 801 | api is not supported |
-  | 12000001 | algorithm mode is not supported |
-  | 12000004 | operating file failed |
-  | 12000005 | IPC communication failed |
-  | 12000006 | error occurred in crypto engine |
-  | 12000011 | queried entity does not exist |
-  | 12000012 | Device environment or input parameter abnormal |
-  | 12000014 | memory is insufficient |
+  | 201 | check permission failed. |
+  | 801 | api is not supported. |
+  | 12000001 | algorithm mode is not supported. |
+  | 12000004 | operating file failed. |
+  | 12000005 | IPC communication failed. |
+  | 12000006 | error occurred in crypto engine. |
+  | 12000011 | queried entity does not exist. |
+  | 12000012 | Device environment or input parameter abnormal. |
+  | 12000014 | memory is insufficient. |
 
 **示例：**
 
@@ -197,12 +197,12 @@ public func deleteKeyItem(keyAlias: String, options: HuksOptions): Unit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 801 | api is not supported |
-  | 12000004 | operating file failed |
-  | 12000005 | IPC communication failed |
-  | 12000011 | queried entity does not exist |
-  | 12000012 | Device environment or input parameter abnormal |
-  | 12000014 | memory is insufficient |
+  | 801 | api is not supported. |
+  | 12000004 | operating file failed. |
+  | 12000005 | IPC communication failed. |
+  | 12000011 | queried entity does not exist. |
+  | 12000012 | Device environment or input parameter abnormal. |
+  | 12000014 | memory is insufficient. |
 
 **示例：**
 
@@ -275,14 +275,14 @@ public func exportKeyItem(keyAlias: String, _: HuksOptions): Bytes
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 801 | api is not supported |
-  | 12000001 | algorithm mode is not supported |
-  | 12000004 | operating file failed |
-  | 12000005 | IPC communication failed |
-  | 12000006 | error occurred in crypto engine |
-  | 12000011 | queried entity does not exist |
-  | 12000012 | Device environment or input parameter abnormal |
-  | 12000014 | memory is insufficient |
+  | 801 | api is not supported. |
+  | 12000001 | algorithm mode is not supported. |
+  | 12000004 | operating file failed. |
+  | 12000005 | IPC communication failed. |
+  | 12000006 | error occurred in crypto engine. |
+  | 12000011 | queried entity does not exist. |
+  | 12000012 | Device environment or input parameter abnormal. |
+  | 12000014 | memory is insufficient. |
 
 **示例：**
 
@@ -337,7 +337,7 @@ public func finishSession(handle: HuksHandleId, options: HuksOptions, token!: By
 |:---|:---|:---|:---|:---|
 |handle|[HuksHandleId](#class-hukshandleid)|是|-|finishSession操作的handle。|
 |options|[HuksOptions](#class-huksoptions)|是|-|finishSession操作的参数集合。|
-|token|Bytes|否|Bytes\<UInt8>()|密钥二次认证密钥访问控制的用户鉴权证明(AuthToken)，不填表示不进行二次认证密钥访问控制。|
+|token|Bytes|否|Bytes()|**命名参数。** 密钥二次认证密钥访问控制的用户鉴权证明(AuthToken)，不填表示不进行二次认证密钥访问控制。|
 
 **返回值：**
 
@@ -351,19 +351,19 @@ public func finishSession(handle: HuksHandleId, options: HuksOptions, token!: By
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 801 | api is not supported |
-  | 12000001 | algorithm mode is not supported |
-  | 12000002 | algorithm param is missing |
-  | 12000003 | algorithm param is invalid |
-  | 12000004 | operating file failed |
-  | 12000005 | IPC communication failed |
-  | 12000006 | error occurred in crypto engine |
-  | 12000007 | this credential is already invalidated permanently |
-  | 12000008 | verify auth token failed |
-  | 12000009 | auth token is already timeout |
-  | 12000011 | queried entity does not exist |
-  | 12000012 | Device environment or input parameter abnormal |
-  | 12000014 | memory is insufficient |
+  | 801 | api is not supported. |
+  | 12000001 | algorithm mode is not supported. |
+  | 12000002 | algorithm param is missing. |
+  | 12000003 | algorithm param is invalid. |
+  | 12000004 | operating file failed. |
+  | 12000005 | IPC communication failed. |
+  | 12000006 | error occurred in crypto engine. |
+  | 12000007 | this credential is already invalidated permanently .|
+  | 12000008 | verify auth token failed. |
+  | 12000009 | auth token is already timeout. |
+  | 12000011 | queried entity does not exist. |
+  | 12000012 | Device environment or input parameter abnormal. |
+  | 12000014 | memory is insufficient. |
 
 **示例：**
 
@@ -424,18 +424,18 @@ public func generateKeyItem(keyAlias: String, options: HuksOptions): Unit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 801 | api is not supported |
-  | 12000001 | algorithm mode is not supported |
-  | 12000002 | algorithm param is missing |
-  | 12000003 | algorithm param is invalid |
-  | 12000004 | operating file failed |
-  | 12000005 | IPC communication failed |
-  | 12000006 | error occured in crypto engine |
-  | 12000012 | Device environment or input parameter abnormal |
-  | 12000013 | queried credential does not exist |
-  | 12000014 | memory is insufficient |
-  | 12000015 | Failed to obtain the security information via UserIAM |
-  | 12000017 | The key with same alias is already exist |
+  | 801 | api is not supported. |
+  | 12000001 | algorithm mode is not supported. |
+  | 12000002 | algorithm param is missing. |
+  | 12000003 | algorithm param is invalid. |
+  | 12000004 | operating file failed. |
+  | 12000005 | IPC communication failed. |
+  | 12000006 | error occured in crypto engine. |
+  | 12000012 | Device environment or input parameter abnormal. |
+  | 12000013 | queried credential does not exist. |
+  | 12000014 | memory is insufficient. |
+  | 12000015 | Failed to obtain the security information via UserIAM. |
+  | 12000017 | The key with same alias is already exist. |
 
 **示例：**
 
@@ -497,14 +497,14 @@ public func getKeyItemProperties(keyAlias: String, _: HuksOptions): Array<HuksPa
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 801 | api is not supported |
-  | 12000001 | algorithm mode is not supported |
-  | 12000004 | operating file failed |
-  | 12000005 | IPC communication failed |
-  | 12000006 | error occurred in crypto engine |
-  | 12000011 | queried entity does not exist |
-  | 12000012 | Device environment or input parameter abnormal |
-  | 12000014 | memory is insufficient |
+  | 801 | api is not supported. |
+  | 12000001 | algorithm mode is not supported. |
+  | 12000004 | operating file failed. |
+  | 12000005 | IPC communication failed. |
+  | 12000006 | error occurred in crypto engine. |
+  | 12000011 | queried entity does not exist. |
+  | 12000012 | Device environment or input parameter abnormal. |
+  | 12000014 | memory is insufficient. |
 
 **示例：**
 
@@ -560,19 +560,19 @@ public func importKeyItem(keyAlias: String, options: HuksOptions): Unit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 801 | api is not supported |
-  | 12000001 | algorithm mode is not supported |
-  | 12000002 | algorithm param is missing |
-  | 12000003 | algorithm param is invalid |
-  | 12000004 | operating file failed |
-  | 12000005 | IPC communication failed |
-  | 12000006 | error occured in crypto engine |
-  | 12000011 | queried entity does not exist |
-  | 12000012 | Device environment or input parameter abnormal |
-  | 12000013 | queried credential does not exist |
-  | 12000014 | memory is insufficient |
-  | 12000015 | Failed to obtain the security information via UserIAM |
-  | 12000017 | The key with same alias is already exist |
+  | 801 | api is not supported. |
+  | 12000001 | algorithm mode is not supported. |
+  | 12000002 | algorithm param is missing. |
+  | 12000003 | algorithm param is invalid. |
+  | 12000004 | operating file failed. |
+  | 12000005 | IPC communication failed. |
+  | 12000006 | error occured in crypto engine. |
+  | 12000011 | queried entity does not exist. |
+  | 12000012 | Device environment or input parameter abnormal. |
+  | 12000013 | queried credential does not exist. |
+  | 12000014 | memory is insufficient. |
+  | 12000015 | Failed to obtain the security information via UserIAM. |
+  | 12000017 | The key with same alias is already exist. |
 
 **示例：**
 
@@ -633,20 +633,20 @@ public func importWrappedKeyItem(keyAlias: String, wrappingKeyAlias: String, opt
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 201 | check permission failed |
-  | 801 | api is not supported |
-  | 12000001 | algorithm mode is not supported |
-  | 12000002 | algorithm param is missing |
-  | 12000003 | algorithm param is invalid |
-  | 12000004 | operating file failed |
-  | 12000005 | IPC communication failed |
-  | 12000006 | error occurred in crypto engine |
-  | 12000011 | queried entity does not exist |
-  | 12000012 | Device environment or input parameter abnormal |
-  | 12000013 | queried credential does not exist |
-  | 12000014 | memory is insufficient |
-  | 12000015 | Failed to obtain the security information via UserIAM |
-  | 12000017 | The key with same alias is already exist |
+  | 201 | check permission failed. |
+  | 801 | api is not supported. |
+  | 12000001 | algorithm mode is not supported. |
+  | 12000002 | algorithm param is missing. |
+  | 12000003 | algorithm param is invalid. |
+  | 12000004 | operating file failed. |
+  | 12000005 | IPC communication failed. |
+  | 12000006 | error occurred in crypto engine. |
+  | 12000011 | queried entity does not exist. |
+  | 12000012 | Device environment or input parameter abnormal. |
+  | 12000013 | queried credential does not exist. |
+  | 12000014 | memory is insufficient. |
+  | 12000015 | Failed to obtain the security information via UserIAM. |
+  | 12000017 | The key with same alias is already exist. |
 
 **示例：**
 
@@ -713,18 +713,18 @@ public func initSession(keyAlias: String, options: HuksOptions): HuksSessionHand
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 801 | api is not supported |
-  | 12000001 | algorithm mode is not supported |
-  | 12000002 | algorithm param is missing |
-  | 12000003 | algorithm param is invalid |
-  | 12000004 | operating file failed |
-  | 12000005 | IPC communication failed |
-  | 12000006 | error occurred in crypto engine |
-  | 12000010 | the number of sessions has reached limit |
-  | 12000011 | queried entity does not exist |
-  | 12000012 | Device environment or input parameter abnormal |
-  | 12000014 | memory is insufficient |
-  | 12000018 | the input parameter is invalid |
+  | 801 | api is not supported. |
+  | 12000001 | algorithm mode is not supported. |
+  | 12000002 | algorithm param is missing. |
+  | 12000003 | algorithm param is invalid. |
+  | 12000004 | operating file failed. |
+  | 12000005 | IPC communication failed. |
+  | 12000006 | error occurred in crypto engine. |
+  | 12000010 | the number of sessions has reached limit. |
+  | 12000011 | queried entity does not exist. |
+  | 12000012 | Device environment or input parameter abnormal. |
+  | 12000014 | memory is insufficient. |
+  | 12000018 | the input parameter is invalid. |
 
 **示例：**
 
@@ -790,13 +790,13 @@ public func hasKeyItem(keyAlias: String, options: HuksOptions): Bool
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 801 | api is not supported |
-  | 12000004 | operating file failed |
-  | 12000005 | IPC communication failed |
-  | 12000006 | error occurred in crypto engine |
-  | 12000011 | queried entity does not exist |
-  | 12000012 | Device environment or input parameter abnormal |
-  | 12000014 | memory is insufficient |
+  | 801 | api is not supported. |
+  | 12000004 | operating file failed. |
+  | 12000005 | IPC communication failed. |
+  | 12000006 | error occurred in crypto engine. |
+  | 12000011 | queried entity does not exist. |
+  | 12000012 | Device environment or input parameter abnormal. |
+  | 12000014 | memory is insufficient. |
 
 **示例：**
 
@@ -852,7 +852,7 @@ public func updateSession(handle: HuksHandleId, options: HuksOptions, token!: By
 |:---|:---|:---|:---|:---|
 |handle|[HuksHandleId](#class-hukshandleid)|是|-|updateSession操作的handle。|
 |options|[HuksOptions](#class-huksoptions)|是|-|updateSession操作的参数集合。|
-|token|Bytes|否|Bytes\<UInt8>()|密钥二次认证密钥访问控制的用户鉴权证明(AuthToken)，不填表示不进行二次认证密钥访问控制。|
+|token|Bytes|否|Bytes()|**命名参数。** 密钥二次认证密钥访问控制的用户鉴权证明(AuthToken)，不填表示不进行二次认证密钥访问控制。|
 
 **返回值：**
 
@@ -866,19 +866,19 @@ public func updateSession(handle: HuksHandleId, options: HuksOptions, token!: By
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 801 | api is not supported |
-  | 12000001 | algorithm mode is not supported |
-  | 12000002 | algorithm param is missing |
-  | 12000003 | algorithm param is invalid |
-  | 12000004 | operating file failed |
-  | 12000005 | IPC communication failed |
-  | 12000006 | error occurred in crypto engine |
-  | 12000007 | this credential is already invalidated permanently |
-  | 12000008 | verify auth token failed |
-  | 12000009 | auth token is already timeout |
-  | 12000011 | queried entity does not exist |
-  | 12000012 | Device environment or input parameter abnormal |
-  | 12000014 | memory is insufficient |
+  | 801 | api is not supported. |
+  | 12000001 | algorithm mode is not supported. |
+  | 12000002 | algorithm param is missing. |
+  | 12000003 | algorithm param is invalid. |
+  | 12000004 | operating file failed. |
+  | 12000005 | IPC communication failed. |
+  | 12000006 | error occurred in crypto engine. |
+  | 12000007 | this credential is already invalidated permanently .|
+  | 12000008 | verify auth token failed. |
+  | 12000009 | auth token is already timeout. |
+  | 12000011 | queried entity does not exist. |
+  | 12000012 | Device environment or input parameter abnormal. |
+  | 12000014 | memory is insufficient. |
 
 **示例：**
 
@@ -2437,7 +2437,7 @@ public class HuksOptions {
 public var inData: Bytes
 ```
 
-**功能：** 输入数据。默认为空。
+**功能：** 输入数据。
 
 **类型：** Bytes
 
@@ -2453,7 +2453,7 @@ public var inData: Bytes
 public var properties: Array<HuksParam>
 ```
 
-**功能：** 属性，用于存HuksParam的数组。默认为空。
+**功能：** 属性，用于存HuksParam的数组。
 
 **类型：** Array\<[HuksParam](#class-huksparam)>
 
@@ -2466,7 +2466,7 @@ public var properties: Array<HuksParam>
 ### init(Array\<HuksParam>, Bytes)
 
 ```cangjie
-public init(properties!: Array<HuksParam> = Array<HuksParam>(), inData!: Bytes = Bytes<UInt8>())
+public init(properties!: Array<HuksParam> = Array<HuksParam>(), inData!: Bytes = Bytes())
 ```
 
 **功能：** 构造调用接口使用的options实例。
@@ -2479,8 +2479,8 @@ public init(properties!: Array<HuksParam> = Array<HuksParam>(), inData!: Bytes =
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|properties|Array\<[HuksParam](#class-huksparam)>|否|Array\<HuksParam>()|属性，用于存HuksParam的数组。默认为空。|
-|inData|Bytes|否|Bytes\<UInt8>()|输入数据。默认为空。|
+|properties|Array\<[HuksParam](#class-huksparam)>|否|Array\<HuksParam>()|**命名参数。** 属性，用于存HuksParam的数组。默认为空。|
+|inData|Bytes|否|Bytes()|**命名参数。** 输入数据。默认为空。|
 
 ## class HuksParam
 
@@ -2615,7 +2615,9 @@ public static const HUKS_SECURE_SIGN_WITH_AUTH_INFO: UInt32 = 1
 
 **功能：** 表示签名类型为携带认证信息。生成或导入密钥时指定该字段，则在使用密钥进行签名时，对待签名的数据添加认证信息后进行签名。
 
-注意：携带的认证信息包含身份信息，开发者需在其隐私声明中对此身份信息的使用目的、存留策略和销毁方式进行说明。
+> **注意：**
+>
+> 携带的认证信息包含身份信息，开发者需在其隐私声明中对此身份信息的使用目的、存留策略和销毁方式进行说明。
 
 **类型：** UInt32
 
@@ -3560,7 +3562,7 @@ public enum HuksParamValue {
 }
 ```
 
-**功能：** 用于表示HuksParam中value的值，支持Bool、Int32、UInt32、UInt64、Array\<UInt8>格式。
+**功能：** 用于表示HuksParam中value的值，支持Bool、Int32、UInt32、UInt64、Bytes格式。
 
 **系统能力：** SystemCapability.Security.Huks.Core
 
@@ -3632,4 +3634,4 @@ Uint64Value(UInt64)
 public type Bytes = Array<UInt8>
 ```
 
-**功能：** [Bytes](#type-Bytes)用于表示密钥输入输出值，支持Array\<UInt8>格式。
+**功能：** [Bytes](#type-bytes)用于表示密钥输入输出值，支持Array\<UInt8>格式。
