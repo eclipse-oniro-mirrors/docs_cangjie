@@ -9,7 +9,7 @@
 
 后者会涉及混合使用ArkTS和仓颉两种语言开发UI逻辑的情况，即UI页面中同时包含由ArkTS和仓颉开发的页面/组件。
 
-借助ArkUI的NodeContainer的能力，以及仓颉与ArkTS互操作，可以实现仓颉和ArkTS的混合开发。仓颉组件可作为NodeContainer的内容嵌入ArkTS页面中。
+借助ArkUI中ArkTS实现的NodeContainer能力，以及仓颉与ArkTS互操作，可以实现仓颉和ArkTS的混合开发。仓颉组件可作为NodeContainer的内容嵌入ArkTS页面中。
 
 ## 与纯仓颉开发模式的异同
 

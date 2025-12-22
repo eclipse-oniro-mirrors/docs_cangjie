@@ -19853,7 +19853,7 @@ public type TransitionFinishCallback = (Bool) -> Unit
 
 **Type:** (Bool) -> Unit
 
-## type ItemGeneratorFunc
+## type ItemGeneratorFunc\<T>
 
 ```cangjie
 public type ItemGeneratorFunc<T> = (T, Int64) -> Unit
@@ -19867,7 +19867,7 @@ public type ItemGeneratorFunc<T> = (T, Int64) -> Unit
 
 **Type:** (T, Int64) -> Unit
 
-## type KeyGeneratorFunc
+## type KeyGeneratorFunc\<T>
 
 ```cangjie
 public type KeyGeneratorFunc<T> = (T, Int64) -> String

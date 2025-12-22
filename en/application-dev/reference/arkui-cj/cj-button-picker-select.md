@@ -278,7 +278,7 @@ public func arrowPosition(value: ?ArrowPosition): This
 
 | Parameter | Type | Required | Default Value | Description |
 |:---|:---|:---|:---|:---|
-| value | ?ArrowPosition | Yes | - | The alignment between the text and arrow of dropdown menu items.<br>Initial value: ArrowPosition.End. |
+| value | ?[ArrowPosition](./cj-common-types.md#enum-arrowposition) | Yes | - | The alignment between the text and arrow of dropdown menu items.<br>Initial value: ArrowPosition.End. |
 
 ### func menuAlign(?MenuAlignType, ?Offset)
 

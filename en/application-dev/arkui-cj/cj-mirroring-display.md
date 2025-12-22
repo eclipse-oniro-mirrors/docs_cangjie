@@ -35,5 +35,3 @@ However, the following three scenarios still require adaptation:
 1. Interface layout and border settings: For direction-related universal attributes, if mirroring capability support is needed, use generalized directional indicators (start/end parameter types) to replace absolute directional indicators (left/right, x/y, etc.) to represent adaptive mirroring capability.
 
 2. The Canvas component has limited support for text rendering mirroring capability.
-
-3. The XComponent component does not support component mirroring capability.

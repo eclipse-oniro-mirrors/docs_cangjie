@@ -278,7 +278,7 @@ public func arrowPosition(value: ?ArrowPosition): This
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|value|?ArrowPosition|是|-|下拉菜单项的文本与箭头之间的对齐方式。<br>初始值：ArrowPosition.End。|
+|value|?[ArrowPosition](./cj-common-types.md#enum-arrowposition)|是|-|下拉菜单项的文本与箭头之间的对齐方式。<br>初始值：ArrowPosition.End。|
 
 ### func menuAlign(?MenuAlignType, ?Offset)
 
