@@ -983,11 +983,11 @@
             - [Cangjie-ArkTS Interoperability Auxiliary Library](learn-cj/FFI/cangjie-arkts/auxiliary_lib.md)
             - [Cangjie-ArkTS Interoperability Development Guidelines](learn-cj/FFI/cangjie-arkts/interop_guidelines.md)
     - Compilation and Build
-        - [cjc Usage](learn-cj/compile_and_build/cjc_usage_ohos.md)
+        - [cjc Usage](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/compile_and_build/cjc_usage.md)
         - [cjpm Introduction](learn-cj/compile_and_build/cjpm_usage_ohos.md)
         - [Conditional Compilation](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/compile_and_build/conditional_compilation.md)
     - Appendix
-        - [cjc Compilation Options](learn-cj/Appendix/compile_options_ohos.md)
+        - [cjc Compilation Options](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/Appendix/compile_options.md)
         - [Keywords](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/Appendix/keyword.md)
         - [Operators](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/Appendix/operator.md)
         - [Operator Functions](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/Appendix/operator_function.md)

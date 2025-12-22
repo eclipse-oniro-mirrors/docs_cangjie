@@ -161,11 +161,11 @@
                 - [仓颉与 ArkTS 互操作辅助库](learn-cj/FFI/cangjie-arkts/auxiliary_lib.md)
                 - [仓颉-ArkTS 互操作开发规范](learn-cj/FFI/cangjie-arkts/interop_guidelines.md)
         - 编译和构建
-            - [cjc 使用](learn-cj/compile_and_build/cjc_usage_ohos.md)
+            - [cjc 使用](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/compile_and_build/cjc_usage.md)
             - [cjpm 介绍](learn-cj/compile_and_build/cjpm_usage_ohos.md)
             - [条件编译](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/compile_and_build/conditional_compilation.md)
         - 附录
-            - [cjc 编译选项](learn-cj/Appendix/compile_options_ohos.md)
+            - [cjc 编译选项](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/Appendix/compile_options.md)
             - [关键字](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/Appendix/keyword.md)
             - [操作符](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/Appendix/operator.md)
             - [操作符函数](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/Appendix/operator_function.md)
