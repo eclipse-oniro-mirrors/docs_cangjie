@@ -1710,7 +1710,7 @@ public var objectFit: ?ImageFit
 #### var layoutStyle
 
 ```cangjie
-public var layoutStyle: RichEditorLayoutStyle
+public var layoutStyle: ?RichEditorLayoutStyle
 ```
 
 **Function:** Image layout style.

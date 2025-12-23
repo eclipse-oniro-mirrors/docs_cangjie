@@ -80,7 +80,7 @@ public func createWindow(config: Configuration): Window
 ## func shiftAppWindowFocus(Int32, Int32)
 
 ```cangjie
-public func shiftAppWindowFocus(sourceWindowID: Int32, targetWindowID: Int32): Unit
+public func shiftAppWindowFocus(sourceWindowId: Int32, targetWindowId: Int32): Unit
 ```
 
 **Description:** Transfers window focus from the source window to the target window within the same application. Window focus can be transferred between the main window and sub-windows.
@@ -93,8 +93,8 @@ public func shiftAppWindowFocus(sourceWindowID: Int32, targetWindowID: Int32): U
 
 | Parameter | Type | Required | Default Value | Description |
 |:---------|:-----|:--------|:-------------|:------------|
-| sourceWindowID | Int32 | Yes | - | Source window ID for focus transfer. |
-| targetWindowID | Int32 | Yes | - | Target window ID for focus transfer. |
+| sourceWindowId | Int32 | Yes | - | Source window ID for focus transfer. |
+| targetWindowId | Int32 | Yes | - | Target window ID for focus transfer. |
 
 **Exceptions:**
 
@@ -279,16 +279,16 @@ public init(
 ```cangjie
 public class Configuration {
     public var ctx: BaseContext
-    public var displayID: Int64
+    public var displayId: Int64 = -1
     public var name: String
-    public var parentID: Int64
+    public var parentId: Int64 = -1
     public var windowType: WindowType
     public init(
       name!: String,
       windowType!: WindowType,
       ctx!: BaseContext,
-      displayID!: Int64 = -1,
-      parentID!: Int64 = -1
+      displayId!: Int64 = -1,
+      parentId!: Int64 = -1
     )
 }
 ```
@@ -318,7 +318,7 @@ public var ctx: BaseContext
 ### var displayID
 
 ```cangjie
-public var displayID: Int64
+public var displayId: Int64 = -1
 ```
 
 **Description:** Current physical screen ID.
@@ -350,7 +350,7 @@ public var name: String
 ### var parentID
 
 ```cangjie
-public var parentID: Int64
+public var parentID: Int64 = -1
 ```
 
 **Description:** Parent window ID.
@@ -592,10 +592,10 @@ public init(
 
 ```cangjie
 public class SystemBarProperties {
-    public var enableNavigationBarAnimation: Bool
-    public var enableStatusBarAnimation: Bool
-    public var isNavigationBarLightIcon: Bool
-    public var isStatusBarLightIcon: Bool
+    public var enableNavigationBarAnimation: Bool = false
+    public var enableStatusBarAnimation: Bool = false
+    public var isNavigationBarLightIcon: Bool = false
+    public var isStatusBarLightIcon: Bool = false
     public var navigationBarColor: String
     public var navigationBarContentColor: String
     public var statusBarColor: String
@@ -622,7 +622,7 @@ public class SystemBarProperties {
 ### var enableNavigationBarAnimation
 
 ```cangjie
-public var enableNavigationBarAnimation: Bool
+public var enableNavigationBarAnimation: Bool = false
 ```
 
 **Function:** Enable navigation bar animation.
@@ -640,7 +640,7 @@ public var enableNavigationBarAnimation: Bool
 ### var enableStatusBarAnimation
 
 ```cangjie
-public var enableStatusBarAnimation: Bool
+public var enableStatusBarAnimation: Bool = false
 ```
 
 **Function:** Enable status bar animation.
@@ -658,7 +658,7 @@ public var enableStatusBarAnimation: Bool
 ### var isNavigationBarLightIcon
 
 ```cangjie
-public var isNavigationBarLightIcon: Bool
+public var isNavigationBarLightIcon: Bool = false
 ```
 
 **Function:** Light-colored icons for the navigation bar.
@@ -676,7 +676,7 @@ public var isNavigationBarLightIcon: Bool
 ### var isStatusBarLightIcon
 
 ```cangjie
-public var isStatusBarLightIcon: Bool
+public var isStatusBarLightIcon: Bool = false
 ```
 
 **Function:** Light-colored icons for the status bar.

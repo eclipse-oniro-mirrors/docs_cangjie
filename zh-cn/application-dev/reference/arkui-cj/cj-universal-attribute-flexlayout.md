@@ -13,7 +13,7 @@ import kit.ArkUI.*
 ## func alignSelf(?ItemAlign)
 
 ```cangjie
-public func alignSelf(value: ?ItemAlign): T
+func alignSelf(value: ?ItemAlign): T
 ```
 
 **功能：** 子组件在父容器交叉轴的对齐格式。

@@ -1648,7 +1648,7 @@ public class RichEditorImageSpanStyle {
     public var size: Option<(Length, Length)>
     public var verticalAlign: ?ImageSpanAlignment
     public var objectFit: ?ImageFit
-    public var layoutStyle: RichEditorLayoutStyle
+    public var layoutStyle: ?RichEditorLayoutStyle
     public init(
         size!: Option<(Length, Length)> = Option.None,
         verticalAlign!: ?ImageSpanAlignment = Option.None,

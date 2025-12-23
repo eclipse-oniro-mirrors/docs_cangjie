@@ -11,7 +11,7 @@ import kit.ArkUI.*
 ## func backgroundColor(?ResourceColor)
 
 ```cangjie
-public func backgroundColor(value: ?ResourceColor): T
+func backgroundColor(value: ?ResourceColor): T
 ```
 
 **Description:** Sets the background color of a component.

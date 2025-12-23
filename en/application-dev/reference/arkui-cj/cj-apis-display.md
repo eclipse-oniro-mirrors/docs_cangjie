@@ -524,12 +524,12 @@ public prop alive: Bool
 ### prop densityDpi
 
 ```cangjie
-public prop densityDpi: Float32
+public prop densityDpi: Float64
 ```
 
 **Function:** Display density in pixels, representing the scaling factor between physical and logical pixels. The value is 1.0 for low-resolution displays.
 
-**Type:** Float32
+**Type:** Float64
 
 **Accessibility:** Read-only
 
@@ -540,12 +540,12 @@ public prop densityDpi: Float32
 ### prop densityPixels
 
 ```cangjie
-public prop densityPixels: Float32
+public prop densityPixels: Float64
 ```
 
 **Function:** Display resolution, measured in pixels per inch (PPI).
 
-**Type:** Float32
+**Type:** Float64
 
 **Accessibility:** Read-only
 
@@ -556,12 +556,12 @@ public prop densityPixels: Float32
 ### prop height
 
 ```cangjie
-public prop height: Int32
+public prop height: Int64
 ```
 
 **Function:** Display height in pixels.
 
-**Type:** Int32
+**Type:** Int64
 
 **Accessibility:** Read-only
 
@@ -572,12 +572,12 @@ public prop height: Int32
 ### prop id
 
 ```cangjie
-public prop id: UInt32
+public prop id: Int64
 ```
 
 **Function:** Display ID.
 
-**Type:** UInt32
+**Type:** Int64
 
 **Accessibility:** Read-only
 
@@ -656,12 +656,12 @@ public prop rotation: UInt32
 ### prop scaledDensity
 
 ```cangjie
-public prop scaledDensity: Float32
+public prop scaledDensity: Float64
 ```
 
 **Function:** Text scaling density for the display.
 
-**Type:** Float32
+**Type:** Float64
 
 **Accessibility:** Read-only
 
@@ -704,12 +704,12 @@ public prop width: Int32
 ### prop xDpi
 
 ```cangjie
-public prop xDpi: Float32
+public prop xDpi: Float64
 ```
 
 **Function:** DPI on the x-axis.
 
-**Type:** Float32
+**Type:** Float64
 
 **Accessibility:** Read-only
 

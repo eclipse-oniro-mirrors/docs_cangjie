@@ -13,7 +13,7 @@ import kit.ArkUI.*
 ## func alignSelf(?ItemAlign)
 
 ```cangjie
-public func alignSelf(value: ?ItemAlign): T
+func alignSelf(value: ?ItemAlign): T
 ```
 
 **Function:** Alignment format of child components along the cross axis of the parent container.

@@ -107,7 +107,7 @@ public func getInspectorTree(): String
 ## func sendEventByKey(String, IntNative, String)
 
 ```cangjie
-func sendEventByKey(id: String, action: IntNative, params: String): Bool
+public func sendEventByKey(id: String, action: IntNative, params: String): Bool
 ```
 
 **功能：** 给指定id的组件发送事件。此接口仅用于对应用的测试。由于耗时长，不建议使用。

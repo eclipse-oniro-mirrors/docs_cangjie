@@ -11,7 +11,7 @@ import kit.ArkUI.*
 ## func backgroundColor(?ResourceColor)
 
 ```cangjie
-public func backgroundColor(value: ?ResourceColor): T
+func backgroundColor(value: ?ResourceColor): T
 ```
 
 **功能：** 设置组件的背景颜色。
@@ -35,7 +35,7 @@ public func backgroundColor(value: ?ResourceColor): T
 ## func backgroundImage(?ResourceStr)
 
 ```cangjie
-public func backgroundImage(src: ?ResourceStr): T
+func backgroundImage(src: ?ResourceStr): T
 ```
 
 **功能：** 设置组件的背景图片。
@@ -59,7 +59,7 @@ public func backgroundImage(src: ?ResourceStr): T
 ## func backgroundImage(?ResourceStr, ?ImageRepeat)
 
 ```cangjie
-public func backgroundImage(src: ?ResourceStr, repeat: ?ImageRepeat): T
+func backgroundImage(src: ?ResourceStr, repeat: ?ImageRepeat): T
 ```
 
 **功能：** 设置组件的背景图片和重复方式。
@@ -84,7 +84,7 @@ public func backgroundImage(src: ?ResourceStr, repeat: ?ImageRepeat): T
 ## func backgroundImagePosition(?Alignment)
 
 ```cangjie
-public func backgroundImagePosition(value: ?Alignment): T
+func backgroundImagePosition(value: ?Alignment): T
 ```
 
 **功能：** 设置背景图片的对齐方式。
@@ -108,7 +108,7 @@ public func backgroundImagePosition(value: ?Alignment): T
 ## func backgroundImagePosition(?Length, ?Length)
 
 ```cangjie
-public func backgroundImagePosition(x!: ?Length = None, y!: ?Length = None): T
+func backgroundImagePosition(x!: ?Length = None, y!: ?Length = None): T
 ```
 
 **功能：** 设置背景图片的位置。

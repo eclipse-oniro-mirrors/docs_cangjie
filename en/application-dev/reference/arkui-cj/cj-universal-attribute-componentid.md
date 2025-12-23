@@ -107,7 +107,7 @@ public func getInspectorTree(): String
 ## func sendEventByKey(String, IntNative, String)
 
 ```cangjie
-func sendEventByKey(id: String, action: IntNative, params: String): Bool
+public func sendEventByKey(id: String, action: IntNative, params: String): Bool
 ```
 
 **Functionality:** Sends an event to the component with the specified id. This interface is intended solely for application testing. Due to its time-consuming nature, usage is not recommended.

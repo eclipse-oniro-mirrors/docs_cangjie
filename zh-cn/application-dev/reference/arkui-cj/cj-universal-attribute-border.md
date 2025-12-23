@@ -43,7 +43,7 @@ func border(width!: ?Length, color!: ?ResourceColor = None, radius!: ?Length = N
 ## func borderColor(?ResourceColor)
 
 ```cangjie
-public func borderColor(value: ?ResourceColor): T
+func borderColor(value: ?ResourceColor): T
 ```
 
 **功能：** 设置组件的边框颜色。

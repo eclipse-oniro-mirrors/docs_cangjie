@@ -75,7 +75,7 @@ public init(src: ?String)
 ## Example Code
 
 ```cangjie
-public class ImageBitmap {
+public class ImageBitmap{
     public init(src: String)
 }
 ```
