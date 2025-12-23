@@ -37,7 +37,7 @@
 - [ohos.permission.READ_CALENDAR](./cj-permissions-for-all-user.md#ohospermissionread_calendar)
 - [ohos.permission.WRITE_CALENDAR](./cj-permissions-for-all-user.md#ohospermissionwrite_calendar)<!--Del-->
 - [ohos.permission.READ_WHOLE_CALENDAR](./cj-permissions-for-system-apps-user.md#ohospermissionread_whole_calendar)
-- [ohos.permission.WRITE_WHOLE_CALENDAR](./cj-permissions-for-system-apps-user.md#ohospermissionwrite_whole_calendar
+- [ohos.permission.WRITE_WHOLE_CALENDAR](./cj-permissions-for-system-apps-user.md#ohospermissionwrite_whole_calendar)<!--DelEnd-->
 
 <!--RP1-->
 ## 健身运动

@@ -1,7 +1,6 @@
 # OpenHarmony开发者文档（仓颉）
 
-<!--RP4-->
-- [应用开发导读](cj-start-application-development-overview.md)
+<!--RP4-->- [应用开发导读](cj-start-application-development-overview.md)
 - 入门<!--RP4End-->
     - 快速入门
         - [开发准备](cj-start/start/quick-start/cj-quick-start-preparations.md)
@@ -170,7 +169,6 @@
             - [操作符](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/Appendix/operator.md)
             - [操作符函数](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/Appendix/operator_function.md)
             - [TokenKind 类型](learn-cj/Appendix/tokenkind_type.md)
-
 - 开发
     <!--RP5--><!--RP5End-->
     - 应用框架
@@ -634,7 +632,6 @@
             - [Location Kit简介](location/cj-location-kit-intro.md)
             - [申请位置权限开发指导](location/cj-location-permission-guidelines.md)
             - [获取设备的位置信息开发指导](location/cj-location-guidelines.md)
-
 - API参考
     - API参考概述
         - [开发说明](reference/cj-development-intro.md)
