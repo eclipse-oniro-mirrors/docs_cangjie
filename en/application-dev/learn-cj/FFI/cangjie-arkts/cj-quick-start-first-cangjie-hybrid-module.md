@@ -8,17 +8,17 @@ This document is intended for OpenHarmony application developers who have a basi
 
 Assume the initial runtime effect of the original ArkTS application is as follows (with two pages supporting navigation/return):
 
-![HybridExample2_ArkTSProjectDemo](../../figures/HybridExample2_ArkTSProjectDemo.png)
+![HybridExample2_ArkTSProjectDemo](../../figures/HybridExample2_ArkTSProjectDemo.gif)
 
 Now, introducing Cangjie aims to achieve the following two effects:
 
 1. In the ArkTS page, add two Button components. When clicked, they trigger calls to Cangjie's synchronous and asynchronous interfaces, respectively, updating the Text component as shown below.
 
-   ![HybridExample2_ArkTSCallCangjieFunctionDemo](../../figures/HybridExample2_ArkTSCallCangjieFunctionDemo.png)
+   ![HybridExample2_ArkTSCallCangjieFunctionDemo](../../figures/HybridExample2_ArkTSCallCangjieFunctionDemo.gif)
 
 2. Embed a Cangjie component in the ArkTS page. The Cangjie component provides a Button that updates the Text component when clicked, as shown below.
 
-   ![HybridExample2_ArkTSCallCangjieUIDemo](../../figures/HybridExample2_ArkTSCallCangjieUIDemo.png)
+   ![HybridExample2_ArkTSCallCangjieUIDemo](../../figures/HybridExample2_ArkTSCallCangjieUIDemo.gif)
 
 ## Initial State of the Original ArkTS Project
 
@@ -408,7 +408,7 @@ Here, **my_module** becomes a Cangjie-ArkTS hybrid module.
 
    After successful compilation and installation, navigate to the **MyModulePage** and click the buttons to trigger function calls. The effect is as follows:
 
-   ![HybridExample2_ArkTSCallCangjieFunctionDemo](../../figures/HybridExample2_ArkTSCallCangjieFunctionDemo.png)
+   ![HybridExample2_ArkTSCallCangjieFunctionDemo](../../figures/HybridExample2_ArkTSCallCangjieFunctionDemo.gif)
 
    > **Note:**
    >
@@ -558,7 +558,7 @@ Here, **my_module** becomes a Cangjie-ArkTS hybrid module.
 
    After successful compilation and installation of the application, navigate to the **MyModulePage**, then click the Cangjie Button to trigger the Cangjie Text to update its content. The effect is as follows:
 
-   ![HybridExample2_ArkTSCallCangjieUIDemo](../../figures/HybridExample2_ArkTSCallCangjieUIDemo.png)
+   ![HybridExample2_ArkTSCallCangjieUIDemo](../../figures/HybridExample2_ArkTSCallCangjieUIDemo.gif)
 
    > **Note:**
    >
