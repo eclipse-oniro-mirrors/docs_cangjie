@@ -441,9 +441,7 @@
                 - [Camera Management](media/camera/cj-camera-device-management.md)
                 - [Device Input](media/camera/cj-camera-device-input.md)
                 - [Session Management](media/camera/cj-camera-session-management.md)
-                - [Preview](media/camera/cj-camera-preview.md)
                 - [Flashlight Usage](media/camera/cj-camera-torch-use.md)
-                - [Camera Startup Recovery Practice (Cangjie)](media/camera/cj-camera-background-recovery.md)
         - Image Kit (Image Processing Service)
             - [Image Kit Overview](media/image/cj-image-overview.md)
             - Image Development Guide
@@ -453,7 +451,6 @@
                 - [Using ImagePacker for Image Encoding](media/image/cj-image-encoding.md)
                 - [Editing Image EXIF Information](media/image/cj-image-tool.md)
         - Media Kit (Media Service)
-            - [Media Kit Introduction](media/media/cj-media-kit-intro.md)
             - Media Development Guide
                 - Media Information Query
                     - [Using AVImageGenerator to Extract Video Frames at Specified Times (Cangjie)](media/media/cj-avimagegenerator.md)

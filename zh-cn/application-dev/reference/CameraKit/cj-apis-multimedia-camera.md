@@ -3021,7 +3021,7 @@ public func createPreviewOutput(profile: Profile, surfaceId: String): PreviewOut
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |profile|[Profile](#class-profile)|是|-|支持的预览配置信息，通过[getSupportedOutputCapability](#func-getsupportedoutputcapabilitycameradevice-scenemode)接口获取。|
-|surfaceId|String|是|-|从XComponent或者[ImageReceiver](../ImageKit/cj-apis-image.md#class-imagereceiver)组件获取的surfaceId。|
+|surfaceId|String|是|-|从[ImageReceiver](../ImageKit/cj-apis-image.md#class-imagereceiver)组件获取的surfaceId。|
 
 **返回值：**
 
@@ -3080,7 +3080,7 @@ public func createPreviewOutput(surfaceId: String): PreviewOutput
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|surfaceId|String|是|-|从XComponent或者[ImageReceiver](../ImageKit/cj-apis-image.md#class-imagereceiver)组件获取的surfaceId。|
+|surfaceId|String|是|-|从[ImageReceiver](../ImageKit/cj-apis-image.md#class-imagereceiver)组件获取的surfaceId。|
 
 **返回值：**
 

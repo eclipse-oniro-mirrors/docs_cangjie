@@ -7,6 +7,4 @@
     - [设备输入](cj-camera-device-input.md)
     - [会话管理](cj-camera-session-management.md)
 - 开发相机应用基础能力（仓颉）
-    - [预览](cj-camera-preview.md)
     - [手电筒使用](cj-camera-torch-use.md)
-    - [相机启动恢复实践（仓颉）](cj-camera-background-recovery.md)

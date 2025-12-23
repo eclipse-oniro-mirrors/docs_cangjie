@@ -1,6 +1,6 @@
 # Extracting Video Frames at Specified Timestamps Using AVImageGenerator (Cangjie)
 
-The [AVImageGenerator](./cj-media-kit-intro.md#avimagegenerator) can be used to obtain thumbnails from original media assets at specified video timestamps. This development guide demonstrates AVImageGenerator's functionality through an example of extracting thumbnails from a video asset.
+The AVImageGenerator can be used to obtain thumbnails from original media assets at specified video timestamps. This development guide demonstrates AVImageGenerator's functionality through an example of extracting thumbnails from a video asset.
 
 The complete workflow for obtaining video thumbnails includes: creating an AVImageGenerator object, setting up the resource, fetching thumbnails, and releasing resources.
 

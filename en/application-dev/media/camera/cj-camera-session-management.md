@@ -5,7 +5,7 @@ Before using camera functions such as preview, photo capture, video recording, o
 Within a session, the following functionalities can be achieved:
 
 - Configure camera input and output streams. The camera must complete input and output stream configuration before shooting.
-  Configuring input streams involves adding device inputs, which for users means selecting a specific camera device for shooting. Configuring output streams determines the format in which data will be output. When an application needs to implement photo capture, the output streams should be configured as preview and photo capture streams. Preview stream data will be displayed on the XComponent, while photo capture stream data will be saved to the album via the ImageReceiver interface capability.
+  Configuring input streams involves adding device inputs, which for users means selecting a specific camera device for shooting. Configuring output streams determines the format in which data will be output. When an application needs to implement photo capture, the output streams should be configured as preview and photo capture streams. Photo capture stream data will be saved to the album via the ImageReceiver interface capability.
 
 - Add configurations such as flash and focus adjustment. For specific supported configurations and interface descriptions, refer to the [Camera API Reference](../../reference/CameraKit/cj-apis-multimedia-camera.md).
 

@@ -598,9 +598,7 @@
                 - [设备输入](media/camera/cj-camera-device-input.md)
                 - [会话管理](media/camera/cj-camera-session-management.md)
             - 开发相机应用基础能力（仓颉）
-                - [预览](media/camera/cj-camera-preview.md)
                 - [手电筒使用](media/camera/cj-camera-torch-use.md)
-                - [相机启动恢复实践（仓颉）](media/camera/cj-camera-background-recovery.md)
         - Image Kit（图片处理服务）
             - [Image Kit简介](media/image/cj-image-overview.md)
             - 图片开发指导
@@ -613,7 +611,6 @@
                 - 图片接收
                     - [使用ImagePacker完成图片编码](media/image/cj-image-encoding.md)
         - Media Kit（媒体服务）
-            - [Media Kit简介](media/media/cj-media-kit-intro.md)
             - 媒体开发指导
                 - 媒体信息查询
                     - [使用AVImageGenerator提取视频指定时间图像（仓颉）](media/media/cj-avimagegenerator.md)

@@ -6,6 +6,4 @@
   - [Camera Management](cj-camera-device-management.md)
   - [Device Input](cj-camera-device-input.md)
   - [Session Management](cj-camera-session-management.md)
-  - [Preview](cj-camera-preview.md)
   - [Flashlight Usage](cj-camera-torch-use.md)
-  - [Camera Startup/Recovery Practice (Cangjie)](cj-camera-background-recovery.md)

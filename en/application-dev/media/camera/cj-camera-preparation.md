@@ -22,5 +22,4 @@ All the above permissions require user authorization via pop-up dialogs. For spe
 | -------------------- | ------------------------- |
 | Device Input         | [Device Input](./cj-camera-device-input.md) |
 | Session Management   | [Session Management](./cj-camera-session-management.md) |
-| Preview              | [Preview](./cj-camera-preview.md) |
 | Metadata             | [Metadata] |

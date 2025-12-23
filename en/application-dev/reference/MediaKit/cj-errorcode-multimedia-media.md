@@ -115,8 +115,6 @@ Unsupported file or format.
 
 The currently used format is not supported. The user must switch to a supported format.
 
-For supported formats, refer to the specifications of the corresponding module in the [Media Kit Introduction](../../media/media/cj-media-kit-intro.md) based on the actual module functionality used.
-
 ## 5400107 Audio Focus Conflict
 
 **Error Message**

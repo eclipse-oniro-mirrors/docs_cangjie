@@ -2990,7 +2990,7 @@ public func createPreviewOutput(profile: Profile, surfaceId: String): PreviewOut
 | Name      | Type                    | Mandatory | Default | Description                                                                 |
 | :-------- | :---------------------- | :-------- | :------ | :-------------------------------------------------------------------------- |
 | profile   | [Profile](#class-profile) | Yes       | -       | Supported preview configuration obtained via the [getSupportedOutputCapability](#func-getsupportedoutputcapabilitycameradevice-scenemode) API. |
-| surfaceId | String                  | Yes       | -       | surfaceId obtained from the XComponent or [ImageReceiver](../ImageKit/cj-apis-image.md#class-imagereceiver) component. |
+| surfaceId | String                  | Yes       | -       | surfaceId obtained from the [ImageReceiver](../ImageKit/cj-apis-image.md#class-imagereceiver) component. |
 
 **Return Value:**
 
@@ -3049,7 +3049,7 @@ public func createPreviewOutput(surfaceId: String): PreviewOutput
 
 | Name      | Type   | Mandatory | Default | Description                                                                 |
 | :-------- | :----- | :-------- | :------ | :-------------------------------------------------------------------------- |
-| surfaceId | String | Yes       | -       | surfaceId obtained from the XComponent or [ImageReceiver](../ImageKit/cj-apis-image.md#class-imagereceiver) component. |
+| surfaceId | String | Yes       | -       | surfaceId obtained from the [ImageReceiver](../ImageKit/cj-apis-image.md#class-imagereceiver) component. |
 
 **Return Value:**
 
