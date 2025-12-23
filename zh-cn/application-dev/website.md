@@ -1,6 +1,7 @@
 # OpenHarmony开发者文档（仓颉）
 
-<!--RP4-->- [应用开发导读](cj-start-application-development-overview.md)
+<!--RP4-->
+- [应用开发导读](cj-start-application-development-overview.md)
 - 入门<!--RP4End-->
     - 快速入门
         - [开发准备](cj-start/start/quick-start/cj-quick-start-preparations.md)
