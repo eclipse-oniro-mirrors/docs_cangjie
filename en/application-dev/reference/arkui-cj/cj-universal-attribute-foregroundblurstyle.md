@@ -11,7 +11,7 @@ import kit.ArkUI.*
 ## func foregroundBlurStyle(?BlurStyle)
 
 ```cangjie
-public func foregroundBlurStyle(value: ?BlurStyle): T
+func foregroundBlurStyle(value: ?BlurStyle): T
 ```
 
 **Function:** Provides content blur capability for the current component.
@@ -35,7 +35,7 @@ public func foregroundBlurStyle(value: ?BlurStyle): T
 ## func foregroundBlurStyle(?BlurStyle, ?ForegroundBlurStyleOptions)
 
 ```cangjie
-public func foregroundBlurStyle(value: ?BlurStyle, options: ?ForegroundBlurStyleOptions): T
+func foregroundBlurStyle(value: ?BlurStyle, options: ?ForegroundBlurStyleOptions): T
 ```
 
 **Function:** Provides content blur capability for the current component.

@@ -11,7 +11,7 @@ import kit.ArkUI.*
 ## func foregroundColor(?ColoringStrategy)
 
 ```cangjie
-public func foregroundColor(value: ?ColoringStrategy): T
+func foregroundColor(value: ?ColoringStrategy): T
 ```
 
 **Function:** Sets the foreground color of a component. When no foreground color is set for a component, it inherits from its parent component by default.
@@ -35,7 +35,7 @@ public func foregroundColor(value: ?ColoringStrategy): T
 ## func foregroundColor(?ResourceColor)
 
 ```cangjie
-public func foregroundColor(value: ?ResourceColor): T
+func foregroundColor(value: ?ResourceColor): T
 ```
 
 **Function:** Sets the foreground color of a component. When no foreground color is set for a component, it inherits from its parent component by default.

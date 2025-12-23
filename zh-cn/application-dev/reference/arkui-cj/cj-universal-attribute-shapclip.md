@@ -35,7 +35,7 @@ public func clip(value: ?Bool): T
 ## func clipShape(?BaseShape)
 
 ```cangjie
-public func clipShape(value: ?BaseShape): T
+func clipShape(value: ?BaseShape): T
 ```
 
 **功能：** 按指定形状对当前组件进行裁剪。

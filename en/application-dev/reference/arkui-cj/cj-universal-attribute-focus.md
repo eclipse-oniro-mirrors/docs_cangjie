@@ -17,7 +17,7 @@ import kit.ArkUI.*
 ## func defaultFocus(?Bool)
 
 ```cangjie
-public func defaultFocus(value: ?Bool): T
+func defaultFocus(value: ?Bool): T
 ```
 
 **Function:** Sets whether the current component is the default focus on the current page.
@@ -41,7 +41,7 @@ public func defaultFocus(value: ?Bool): T
 ## func focusable(?Bool)
 
 ```cangjie
-public func focusable(value: ?Bool): T
+func focusable(value: ?Bool): T
 ```
 
 **Function:** Sets whether the current component can receive focus.
@@ -89,7 +89,7 @@ public func focusOnTouch(value: ?Bool): T
 ## func groupDefaultFocus(?Bool)
 
 ```cangjie
-public func groupDefaultFocus(value: ?Bool): T
+func groupDefaultFocus(value: ?Bool): T
 ```
 
 **Function:** Sets whether the current component is the default focus when its container receives focus.
@@ -113,7 +113,7 @@ public func groupDefaultFocus(value: ?Bool): T
 ## func tabIndex(?Int32)
 
 ```cangjie
-public func tabIndex(index: ?Int32): T
+func tabIndex(index: ?Int32): T
 ```
 
 **Function:** Customizes the component's focus navigation behavior using the Tab key.

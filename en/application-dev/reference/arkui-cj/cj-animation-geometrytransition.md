@@ -11,7 +11,7 @@ import kit.ArkUI.*
 ## func geometryTransition(?String, ?Bool)
 
 ```cangjie
-public func geometryTransition(id: ?String, follow!: ?Bool = None): T
+func geometryTransition(id: ?String, follow!: ?Bool = None): T
 ```
 
 **Function:** Implicit shared element transition within components

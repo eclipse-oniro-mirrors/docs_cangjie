@@ -11,7 +11,7 @@ import kit.ArkUI.*
 ## func renderFit(?RenderFit)
 
 ```cangjie
-public func renderFit(fitMode: ?RenderFit): T
+func renderFit(fitMode: ?RenderFit): T
 ```
 
 **Function:** Sets the component content filling mode during width/height animations.

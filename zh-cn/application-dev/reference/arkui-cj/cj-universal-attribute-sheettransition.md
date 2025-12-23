@@ -15,7 +15,7 @@ import kit.ArkUI.*
 ## func bindSheet(?Bool, CustomBuilder, ?SheetOptions)
 
 ```cangjie
-public func bindSheet(isShow: ?Bool, builder: CustomBuilder, options!: ?SheetOptions = None): T
+func bindSheet(isShow: ?Bool, builder: CustomBuilder, options!: ?SheetOptions = None): T
 ```
 
 **功能：** 给组件绑定半模态页面，点击后显示模态页面。

@@ -17,7 +17,7 @@ import kit.ArkUI.*
 ## func defaultFocus(?Bool)
 
 ```cangjie
-public func defaultFocus(value: ?Bool): T
+func defaultFocus(value: ?Bool): T
 ```
 
 **功能：** 设置当前组件是否为当前页面上的默认焦点。
@@ -41,7 +41,7 @@ public func defaultFocus(value: ?Bool): T
 ## func focusable(?Bool)
 
 ```cangjie
-public func focusable(value: ?Bool): T
+func focusable(value: ?Bool): T
 ```
 
 **功能：** 设置当前组件是否可以获焦。
@@ -89,7 +89,7 @@ public func focusOnTouch(value: ?Bool): T
 ## func groupDefaultFocus(?Bool)
 
 ```cangjie
-public func groupDefaultFocus(value: ?Bool): T
+func groupDefaultFocus(value: ?Bool): T
 ```
 
 **功能：** 设置当前组件是否为当前组件所在容器获焦时的默认焦点。
@@ -113,7 +113,7 @@ public func groupDefaultFocus(value: ?Bool): T
 ## func tabIndex(?Int32)
 
 ```cangjie
-public func tabIndex(index: ?Int32): T
+func tabIndex(index: ?Int32): T
 ```
 
 **功能：** 自定义组件tab键走焦能力。

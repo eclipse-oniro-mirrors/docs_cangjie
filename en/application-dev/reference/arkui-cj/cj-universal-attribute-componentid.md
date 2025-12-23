@@ -15,7 +15,7 @@ import kit.ArkUI.*
 ## func id(?String)
 
 ```cangjie
-public func id(value: ?String): T
+func id(value: ?String): T
 ```
 
 **Functionality:** The unique identifier of a component, with uniqueness guaranteed by the user.
@@ -39,7 +39,7 @@ public func id(value: ?String): T
 ## func key(?String)
 
 ```cangjie
-public func key(value: ?String): T
+func key(value: ?String): T
 ```
 
 **Functionality:** The unique identifier of a component, with uniqueness guaranteed by the user.
@@ -107,7 +107,7 @@ public func getInspectorTree(): String
 ## func sendEventByKey(String, IntNative, String)
 
 ```cangjie
-public func sendEventByKey(id: String, action: IntNative, params: String): Bool
+func sendEventByKey(id: String, action: IntNative, params: String): Bool
 ```
 
 **Functionality:** Sends an event to the component with the specified id. This interface is intended solely for application testing. Due to its time-consuming nature, usage is not recommended.

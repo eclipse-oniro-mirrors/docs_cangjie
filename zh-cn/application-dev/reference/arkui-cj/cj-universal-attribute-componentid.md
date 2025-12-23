@@ -15,7 +15,7 @@ import kit.ArkUI.*
 ## func id(?String)
 
 ```cangjie
-public func id(value: ?String): T
+func id(value: ?String): T
 ```
 
 **功能：** 组件的唯一标识，唯一性由使用者保证。
@@ -39,7 +39,7 @@ public func id(value: ?String): T
 ## func key(?String)
 
 ```cangjie
-public func key(value: ?String): T
+func key(value: ?String): T
 ```
 
 **功能：** 组件的唯一标识，唯一性由使用者保证。
@@ -107,7 +107,7 @@ public func getInspectorTree(): String
 ## func sendEventByKey(String, IntNative, String)
 
 ```cangjie
-public func sendEventByKey(id: String, action: IntNative, params: String): Bool
+func sendEventByKey(id: String, action: IntNative, params: String): Bool
 ```
 
 **功能：** 给指定id的组件发送事件。此接口仅用于对应用的测试。由于耗时长，不建议使用。

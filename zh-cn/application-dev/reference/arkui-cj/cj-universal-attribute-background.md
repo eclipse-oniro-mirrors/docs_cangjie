@@ -133,7 +133,7 @@ public func backgroundImagePosition(x!: ?Length = None, y!: ?Length = None): T
 ## func backgroundImageSize(?ImageSize)
 
 ```cangjie
-public func backgroundImageSize(value: ?ImageSize): T
+func backgroundImageSize(value: ?ImageSize): T
 ```
 
 **功能：** 设置背景图片的尺寸。
@@ -157,7 +157,7 @@ public func backgroundImageSize(value: ?ImageSize): T
 ## func backgroundImageSize(?Length, ?Length)
 
 ```cangjie
-public func backgroundImageSize(width!: ?Length = None, height!: ?Length = None): T
+func backgroundImageSize(width!: ?Length = None, height!: ?Length = None): T
 ```
 
 **功能：** 设置背景图片的宽度和高度。

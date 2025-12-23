@@ -18,7 +18,7 @@ import kit.ArkUI.*
 ## func transition(?TransitionEffect)
 
 ```cangjie
-public func transition(value: ?TransitionEffect): T
+func transition(value: ?TransitionEffect): T
 ```
 
 **功能：** 设置组件插入显示和删除隐藏的过渡效果。
@@ -42,7 +42,7 @@ public func transition(value: ?TransitionEffect): T
 ## func transition(?TransitionEffect, ?TransitionFinishCallback)
 
 ```cangjie
-public func transition(value: ?TransitionEffect, onFinish: ?TransitionFinishCallback): T
+func transition(value: ?TransitionEffect, onFinish: ?TransitionFinishCallback): T
 ```
 
 **功能：** 设置组件插入显示和删除隐藏的过渡效果和转场动画结束回调。

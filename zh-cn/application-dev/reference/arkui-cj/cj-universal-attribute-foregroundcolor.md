@@ -11,7 +11,7 @@ import kit.ArkUI.*
 ## func foregroundColor(?ColoringStrategy)
 
 ```cangjie
-public func foregroundColor(value: ?ColoringStrategy): T
+func foregroundColor(value: ?ColoringStrategy): T
 ```
 
 **功能：** 设置组件的前景色。当组件未设置前景色，默认继承父组件。
@@ -35,7 +35,7 @@ public func foregroundColor(value: ?ColoringStrategy): T
 ## func foregroundColor(?ResourceColor)
 
 ```cangjie
-public func foregroundColor(value: ?ResourceColor): T
+func foregroundColor(value: ?ResourceColor): T
 ```
 
 **功能：** 设置组件的前景色。当组件未设置前景色，默认继承父组件。

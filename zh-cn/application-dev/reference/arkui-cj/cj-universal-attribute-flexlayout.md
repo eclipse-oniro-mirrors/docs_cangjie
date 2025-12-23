@@ -37,7 +37,7 @@ public func alignSelf(value: ?ItemAlign): T
 ## func flexBasis(?Length)
 
 ```cangjie
-public func flexBasis(value: ?Length): T
+func flexBasis(value: ?Length): T
 ```
 
 **功能：** 设置组件的基准尺寸。
@@ -61,7 +61,7 @@ public func flexBasis(value: ?Length): T
 ## func flexGrow(?Float64)
 
 ```cangjie
-public func flexGrow(value: ?Float64): T
+func flexGrow(value: ?Float64): T
 ```
 
 **功能：** 设置组件在父容器的剩余空间所占比例。
@@ -85,7 +85,7 @@ public func flexGrow(value: ?Float64): T
 ## func flexGrow(?Int64)
 
 ```cangjie
-public func flexGrow(value: ?Int64): T
+func flexGrow(value: ?Int64): T
 ```
 
 **功能：** 设置组件在父容器的剩余空间所占比例。
@@ -109,7 +109,7 @@ public func flexGrow(value: ?Int64): T
 ## func flexShrink(?Float64)
 
 ```cangjie
-public func flexShrink(value: ?Float64): T
+func flexShrink(value: ?Float64): T
 ```
 
 **功能：** 设置父容器压缩尺寸分配给此属性所在组件的比例。当父容器为Column、Row时，需设置主轴方向的尺寸。
@@ -133,7 +133,7 @@ public func flexShrink(value: ?Float64): T
 ## func flexShrink(?Int64)
 
 ```cangjie
-public func flexShrink(value: ?Int64): T
+func flexShrink(value: ?Int64): T
 ```
 
 **功能：** 设置父容器压缩尺寸分配给此属性所在组件的比例。当父容器为Column、Row时，需设置主轴方向的尺寸。
