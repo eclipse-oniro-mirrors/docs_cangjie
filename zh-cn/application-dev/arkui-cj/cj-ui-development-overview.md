@@ -68,7 +68,6 @@
 | 使用动画| 介绍了组件和页面使用动画的典型场景。| - [动画](cj-animation.md)<br>- [属性动画](cj-attribute-animation-overview.md)<br>- [实现属性动画](cj-attribute-animation-apis.md)<br>- [转场动画](cj-transition-overview.md)<br>- [出现/消失转场](cj-enter-exit-transition.md)<br>- [模态转场](cj-modal-transition.md)<br>- [组件动画](cj-component-animation.md)<br>- [动画曲线](cj-curve-overview.md)<br>- [传统曲线](cj-traditional-curve.md)<br>- [动画衔接](cj-animation-smoothing.md)<br>- [模糊](cj-blur-effect.md)<br>- [阴影](cj-shadow-effect.md)<br>- [色彩](cj-color-effect.md)<br> - [帧动画](cj-animator.md)|
 |绑定事件| 介绍了事件的基本概念和如何使用通用事件和手势事件。| - [交互事件](cj-event-overview.md)<br/>- [事件分发](cj-common-events-distribute.md)<br/>-&nbsp;[触屏事件](cj-common-events-touch-screen-event.md)<br/>- [键鼠事件](cj-common-events-device-input-event.md)<br/>- [焦点事件](cj-common-events-focus-event.md)|
 |使用镜像能力|介绍了镜像能力的基本概念和如何使用镜像能力。| - [使用镜像能力](./cj-mirroring-display.md)|
-|支持适老化|介绍了适老化的使用场景和使用方法。| - 支持适老化 |
 |主题设置|介绍了应用级和页面级的主题设置能力。| - [应用深浅色适配](./cj-ui-dark-light-color-adaptation.md)|
 
 ## 通用规则
