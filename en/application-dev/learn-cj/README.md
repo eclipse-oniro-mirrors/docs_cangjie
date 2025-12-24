@@ -98,10 +98,10 @@
     - [Macro Introduction](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/Macro/macro_introduction.md)
     - [Tokens Related Types and quote Expressions](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/Macro/Tokens_types_and_quote_expressions.md)
     - [Syntax Nodes](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/Macro/syntax_node.md)
-    - [Macro Implementation](Macro/implementation_of_macros_ohos.md)
-    - [Compilation, Error Reporting and Debugging](Macro/compiling_error_reporting_and_debugging_ohos.md)
+    - [Macro Implementation](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/Macro/implementation_of_macros.md)
+    - [Compilation, Error Reporting and Debugging](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/Macro/compiling_error_reporting_and_debugging.md)
     - [Macro Package Definition and Import](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/Macro/defining_and_importing_macro_package.md)
-    - [Built-in Compilation Flags](Macro/builtin_compilation_flags.md)
+    - [Built-in Compilation Flags](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/Macro/builtin_compilation_flags.md)
     - [Practical Cases](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/Macro/practical_case.md)
 - Reflection and Annotations
     - [Dynamic Features](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/reflect_and_annotation/dynamic_feature.md)
@@ -137,11 +137,11 @@
         - [Cangjie-ArkTS Interoperability Development Guidelines](FFI/cangjie-arkts/interop_guidelines.md)
 - Compilation and Build
     - [cjc Usage](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/compile_and_build/cjc_usage.md)
-    - [cjpm Introduction](compile_and_build/cjpm_usage_ohos.md)
+    - [cjpm Introduction](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/compile_and_build/cjpm_usage.md)
     - [Conditional Compilation](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/compile_and_build/conditional_compilation.md)
 - Appendix
     - [cjc Compilation Options](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/Appendix/compile_options.md)
     - [Keywords](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/Appendix/keyword.md)
     - [Operators](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/Appendix/operator.md)
     - [Operator Functions](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/Appendix/operator_function.md)
-    - [TokenKind Type](Appendix/tokenkind_type.md)
+    - [TokenKind Type](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/Appendix/tokenkind_type.md)
