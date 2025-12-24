@@ -149,7 +149,7 @@ public func requestPermissionsFromUser(context: UIAbilityContext, permissionList
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|context|[UIAbilityContext](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiabilitycontext)|是|-|请求权限的<!--RP1-->UIAbility<!--RP1End-->的Context。|
+|context|[UIAbilityContext](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiabilitycontext)|是|-|请求权限的UIAbility的Context。|
 |permissionList|Array\<[Permissions](#type-permissions)>|是|-|权限名列表，合法的权限名取值可在[应用权限列表](../../security/AccessToken/cj-app-permissions.md#应用权限列表)中查询。|
 |requestCallback|AsyncCallback\<[PermissionRequestResult](cj-apis-sercurity-permission_request_result.md#class-permissionrequestresultarraystring-arrayint32-arraybool)>|是|-|回调函数，返回接口调用是否成功的结果。|
 
