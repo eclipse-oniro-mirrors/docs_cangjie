@@ -98,10 +98,10 @@
     - [宏的简介](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/Macro/macro_introduction.md)
     - [Tokens 相关类型和 quote 表达式](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/Macro/Tokens_types_and_quote_expressions.md)
     - [语法节点](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/Macro/syntax_node.md)
-    - [宏的实现](Macro/implementation_of_macros_ohos.md)
-    - [编译、报错与调试](Macro/compiling_error_reporting_and_debugging_ohos.md)
+    - [宏的实现](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/Macro/implementation_of_macros.md)
+    - [编译、报错与调试](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/Macro/compiling_error_reporting_and_debugging.md)
     - [宏包定义和导入](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/Macro/defining_and_importing_macro_package.md)
-    - [内置编译标记](Macro/builtin_compilation_flags.md)
+    - [内置编译标记](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/Macro/builtin_compilation_flags.md)
     - [实用案例](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/Macro/practical_case.md)
 - 反射和注解
     - [动态特性](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/reflect_and_annotation/dynamic_feature.md)
@@ -137,11 +137,11 @@
         - [仓颉-ArkTS 互操作开发规范](FFI/cangjie-arkts/interop_guidelines.md)
 - 编译和构建
     - [cjc 使用](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/compile_and_build/cjc_usage.md)
-    - [cjpm 介绍](compile_and_build/cjpm_usage_ohos.md)
+    - [cjpm 介绍](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/compile_and_build/cjpm_usage.md)
     - [条件编译](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/compile_and_build/conditional_compilation.md)
 - 附录
     - [cjc 编译选项](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/Appendix/compile_options.md)
     - [关键字](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/Appendix/keyword.md)
     - [操作符](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/Appendix/operator.md)
     - [操作符函数](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/Appendix/operator_function.md)
-    - [TokenKind 类型](Appendix/tokenkind_type.md)
+    - [TokenKind 类型](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/Appendix/tokenkind_type.md)
