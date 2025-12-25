@@ -11,7 +11,7 @@ import kit.ArkUI.*
 ## func border(?Length, ?ResourceColor, ?Length, ?BorderStyle)
 
 ```cangjie
-public func border(width!: ?Length, color!: ?ResourceColor = None, radius!: ?Length = None,
+func border(width!: ?Length, color!: ?ResourceColor = None, radius!: ?Length = None,
     style!: ?BorderStyle = Option.None): T
 ```
 
@@ -43,7 +43,7 @@ public func border(width!: ?Length, color!: ?ResourceColor = None, radius!: ?Len
 ## func borderColor(?ResourceColor)
 
 ```cangjie
-public func borderColor(value: ?ResourceColor): T
+func borderColor(value: ?ResourceColor): T
 ```
 
 **功能：** 设置组件的边框颜色。
@@ -67,7 +67,7 @@ public func borderColor(value: ?ResourceColor): T
 ## func borderRadius(?Length)
 
 ```cangjie
-public func borderRadius(value: ?Length): T
+func borderRadius(value: ?Length): T
 ```
 
 **功能：** 设置组件的圆角半径。
@@ -91,7 +91,7 @@ public func borderRadius(value: ?Length): T
 ## func borderRadius(?Length, ?Length, ?Length, ?Length)
 
 ```cangjie
-public func borderRadius(topLeft!: ?Length = None, topRight!: ?Length = None, bottomLeft!: ?Length = None,
+func borderRadius(topLeft!: ?Length = None, topRight!: ?Length = None, bottomLeft!: ?Length = None,
     bottomRight!: ?Length = None): T
 ```
 
@@ -119,7 +119,7 @@ public func borderRadius(topLeft!: ?Length = None, topRight!: ?Length = None, bo
 ## func borderStyle(?BorderStyle)
 
 ```cangjie
-public func borderStyle(value: ?BorderStyle): T
+func borderStyle(value: ?BorderStyle): T
 ```
 
 **功能：** 设置组件的边框样式。
@@ -143,7 +143,7 @@ public func borderStyle(value: ?BorderStyle): T
 ## func borderWidth(?EdgeWidths)
 
 ```cangjie
-public func borderWidth(value: ?EdgeWidths): T
+func borderWidth(value: ?EdgeWidths): T
 ```
 
 **功能：** 设置组件的边框宽度。
@@ -167,7 +167,7 @@ public func borderWidth(value: ?EdgeWidths): T
 ## func borderWidth(?Length)
 
 ```cangjie
-public func borderWidth(value: ?Length): T
+func borderWidth(value: ?Length): T
 ```
 
 **功能：** 设置组件的边框宽度。

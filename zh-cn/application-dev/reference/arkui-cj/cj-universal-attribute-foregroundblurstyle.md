@@ -11,7 +11,7 @@ import kit.ArkUI.*
 ## func foregroundBlurStyle(?BlurStyle)
 
 ```cangjie
-public func foregroundBlurStyle(value: ?BlurStyle): T
+func foregroundBlurStyle(value: ?BlurStyle): T
 ```
 
 **功能：** 为当前组件提供内容模糊能力。
@@ -35,7 +35,7 @@ public func foregroundBlurStyle(value: ?BlurStyle): T
 ## func foregroundBlurStyle(?BlurStyle, ?ForegroundBlurStyleOptions)
 
 ```cangjie
-public func foregroundBlurStyle(value: ?BlurStyle, options: ?ForegroundBlurStyleOptions): T
+func foregroundBlurStyle(value: ?BlurStyle, options: ?ForegroundBlurStyleOptions): T
 ```
 
 **功能：** 为当前组件提供内容模糊能力。

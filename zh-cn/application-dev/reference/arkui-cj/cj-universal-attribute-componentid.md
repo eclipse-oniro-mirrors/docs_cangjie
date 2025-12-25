@@ -15,7 +15,7 @@ import kit.ArkUI.*
 ## func id(?String)
 
 ```cangjie
-public func id(value: ?String): T
+func id(value: ?String): T
 ```
 
 **功能：** 组件的唯一标识，唯一性由使用者保证。
@@ -39,7 +39,7 @@ public func id(value: ?String): T
 ## func key(?String)
 
 ```cangjie
-public func key(value: ?String): T
+func key(value: ?String): T
 ```
 
 **功能：** 组件的唯一标识，唯一性由使用者保证。

@@ -11,7 +11,7 @@ import kit.ArkUI.*
 ## func renderFit(?RenderFit)
 
 ```cangjie
-public func renderFit(fitMode: ?RenderFit): T
+func renderFit(fitMode: ?RenderFit): T
 ```
 
 **功能：** 设置宽高动画过程中的组件内容填充方式。

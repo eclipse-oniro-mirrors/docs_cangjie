@@ -11,7 +11,7 @@ import kit.ArkUI.*
 ## func sharedTransition(String, ?SharedTransitionOptions)
 
 ```cangjie
-public func sharedTransition(id: String, options!: ?SharedTransitionOptions = None): T
+func sharedTransition(id: String, options!: ?SharedTransitionOptions): T
 ```
 
 **功能：** 设置共享元素转场动效。

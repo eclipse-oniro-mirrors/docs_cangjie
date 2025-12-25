@@ -11,7 +11,7 @@ import kit.ArkUI.*
 ## func border(?Length, ?ResourceColor, ?Length, ?BorderStyle)
 
 ```cangjie
-public func border(width!: ?Length, color!: ?ResourceColor = None, radius!: ?Length = None,
+func border(width!: ?Length, color!: ?ResourceColor = None, radius!: ?Length = None,
     style!: ?BorderStyle = Option.None): T
 ```
 
@@ -43,7 +43,7 @@ public func border(width!: ?Length, color!: ?ResourceColor = None, radius!: ?Len
 ## func borderColor(?ResourceColor)
 
 ```cangjie
-public func borderColor(value: ?ResourceColor): T
+func borderColor(value: ?ResourceColor): T
 ```
 
 **Function:** Sets the border color of a component.
@@ -67,7 +67,7 @@ public func borderColor(value: ?ResourceColor): T
 ## func borderRadius(?Length)
 
 ```cangjie
-public func borderRadius(value: ?Length): T
+func borderRadius(value: ?Length): T
 ```
 
 **Function:** Sets the border radius of a component.
@@ -91,7 +91,7 @@ public func borderRadius(value: ?Length): T
 ## func borderRadius(?Length, ?Length, ?Length, ?Length)
 
 ```cangjie
-public func borderRadius(topLeft!: ?Length = None, topRight!: ?Length = None, bottomLeft!: ?Length = None,
+func borderRadius(topLeft!: ?Length = None, topRight!: ?Length = None, bottomLeft!: ?Length = None,
     bottomRight!: ?Length = None): T
 ```
 
@@ -119,7 +119,7 @@ public func borderRadius(topLeft!: ?Length = None, topRight!: ?Length = None, bo
 ## func borderStyle(?BorderStyle)
 
 ```cangjie
-public func borderStyle(value: ?BorderStyle): T
+func borderStyle(value: ?BorderStyle): T
 ```
 
 **Function:** Sets the border style of a component.
@@ -143,7 +143,7 @@ public func borderStyle(value: ?BorderStyle): T
 ## func borderWidth(?EdgeWidths)
 
 ```cangjie
-public func borderWidth(value: ?EdgeWidths): T
+func borderWidth(value: ?EdgeWidths): T
 ```
 
 **Function:** Sets the border width of a component.
@@ -167,7 +167,7 @@ public func borderWidth(value: ?EdgeWidths): T
 ## func borderWidth(?Length)
 
 ```cangjie
-public func borderWidth(value: ?Length): T
+func borderWidth(value: ?Length): T
 ```
 
 **Function:** Sets the border width of a component.

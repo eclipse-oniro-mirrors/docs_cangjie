@@ -15,7 +15,7 @@ import kit.ArkUI.*
 ## func bindSheet(?Bool, CustomBuilder, ?SheetOptions)  
 
 ```cangjie  
-public func bindSheet(isShow: ?Bool, builder: CustomBuilder, options!: ?SheetOptions = None): T  
+func bindSheet(isShow: ?Bool, builder: CustomBuilder, options!: ?SheetOptions = None): T  
 ```  
 
 **Function:** Binds a half-modal page to a component, which is displayed upon clicking.  

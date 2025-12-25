@@ -15,7 +15,7 @@ import kit.ArkUI.*
 ## func bindPopup(?Bool, ?PopupOptions)
 
 ```cangjie
-public func bindPopup(show: ?Bool, popup: ?PopupOptions): T
+func bindPopup(show: ?Bool, popup: ?PopupOptions): T
 ```
 
 **Function:** Binds a Popup dialog to a component.
@@ -41,7 +41,7 @@ public func bindPopup(show: ?Bool, popup: ?PopupOptions): T
 ## func bindPopup(?Bool, ?CustomPopupOptions)
 
 ```cangjie
-public func bindPopup(show: ?Bool, popup: ?CustomPopupOptions): T
+func bindPopup(show: ?Bool, popup: ?CustomPopupOptions): T
 ```
 
 **Function:** Binds a Popup dialog to a component.

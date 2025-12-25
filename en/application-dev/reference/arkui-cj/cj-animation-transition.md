@@ -18,7 +18,7 @@ import kit.ArkUI.*
 ## func transition(?TransitionEffect)
 
 ```cangjie
-public func transition(value: ?TransitionEffect): T
+func transition(value: ?TransitionEffect): T
 ```
 
 **Function:** Sets the transition effect for component insertion and deletion.
@@ -42,7 +42,7 @@ public func transition(value: ?TransitionEffect): T
 ## func transition(?TransitionEffect, ?TransitionFinishCallback)
 
 ```cangjie
-public func transition(value: ?TransitionEffect, onFinish: ?TransitionFinishCallback): T
+func transition(value: ?TransitionEffect, onFinish: ?TransitionFinishCallback): T
 ```
 
 **Function:** Sets the transition effect for component insertion/deletion and the callback after the transition animation ends.

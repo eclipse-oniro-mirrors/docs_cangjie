@@ -11,7 +11,7 @@ import kit.ArkUI.*
 ## func blur(?Float64)
 
 ```cangjie
-public func blur(value: ?Float64): T
+func blur(value: ?Float64): T
 ```
 
 **功能：** 为当前组件添加内容模糊效果。输入参数为模糊半径，半径越大内容越模糊，为0时不模糊。
@@ -35,7 +35,7 @@ public func blur(value: ?Float64): T
 ## func colorBlend(?ResourceColor)
 
 ```cangjie
-public func colorBlend(value: ?ResourceColor): T
+func colorBlend(value: ?ResourceColor): T
 ```
 
 **功能：** 为组件添加颜色混合效果。
@@ -83,7 +83,7 @@ public func backdropBlur(value: ?Float64): T
 ## func shadow(?Float64, ?ResourceColor, ?Float64, ?Float64)
 
 ```cangjie
-public func shadow(radius!: ?Float64, color!: ?ResourceColor = None, offsetX!: ?Float64 = None, offsetY!: ?Float64 = None): T
+func shadow(radius!: ?Float64, color!: ?ResourceColor = None, offsetX!: ?Float64 = None, offsetY!: ?Float64 = None): T
 ```
 
 **功能：** 为组件添加阴影效果。
@@ -110,7 +110,7 @@ public func shadow(radius!: ?Float64, color!: ?ResourceColor = None, offsetX!: ?
 ## func grayscale(?Float64)
 
 ```cangjie
-public func grayscale(value: ?Float64): T
+func grayscale(value: ?Float64): T
 ```
 
 **功能：** 为组件添加灰度效果。
@@ -134,7 +134,7 @@ public func grayscale(value: ?Float64): T
 ## func brightness(?Float64)
 
 ```cangjie
-public func brightness(value: ?Float64): T
+func brightness(value: ?Float64): T
 ```
 
 **功能：** 为组件添加亮度效果。
@@ -158,7 +158,7 @@ public func brightness(value: ?Float64): T
 ## func saturate(?Float64)
 
 ```cangjie
-public func saturate(value: ?Float64): T
+func saturate(value: ?Float64): T
 ```
 
 **功能：** 为组件添加饱和度效果。
@@ -182,7 +182,7 @@ public func saturate(value: ?Float64): T
 ## func contrast(?Float64)
 
 ```cangjie
-public func contrast(value: ?Float64): T
+func contrast(value: ?Float64): T
 ```
 
 **功能：** 为组件添加对比度效果。
@@ -206,7 +206,7 @@ public func contrast(value: ?Float64): T
 ## func invert(?Float64)
 
 ```cangjie
-public func invert(value: ?Float64): T
+func invert(value: ?Float64): T
 ```
 
 **功能：** 为组件添加反色效果。
@@ -230,7 +230,7 @@ public func invert(value: ?Float64): T
 ## func invert(?Float64, ?Float64, ?Float64, ?Float64)
 
 ```cangjie
-public func invert(low!: ?Float64, high!: ?Float64, threshold!: ?Float64, thresholdRange!: ?Float64): T
+func invert(low!: ?Float64, high!: ?Float64, threshold!: ?Float64, thresholdRange!: ?Float64): T
 ```
 
 **功能：** 为组件添加指定范围和阈值的反色效果。
@@ -257,7 +257,7 @@ public func invert(low!: ?Float64, high!: ?Float64, threshold!: ?Float64, thresh
 ## func sepia(?Float64)
 
 ```cangjie
-public func sepia(value: ?Float64): T
+func sepia(value: ?Float64): T
 ```
 
 **功能：** 为组件添加深褐色效果。
@@ -281,7 +281,7 @@ public func sepia(value: ?Float64): T
 ## func hueRotate(?Float32)
 
 ```cangjie
-public func hueRotate(value: ?Float32): T
+func hueRotate(value: ?Float32): T
 ```
 
 **功能：** 为组件添加色相旋转效果。

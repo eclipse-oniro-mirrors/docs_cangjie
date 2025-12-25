@@ -11,7 +11,7 @@ import kit.ArkUI.*
 ## class ImageBitmap
 
 ```cangjie
-public class ImageBitmap{
+public class ImageBitmap {
     public init(?String)
 }
 ```

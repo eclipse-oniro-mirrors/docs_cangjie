@@ -11,7 +11,7 @@ import kit.ArkUI.*
 ## func geometryTransition(?String, ?Bool)
 
 ```cangjie
-public func geometryTransition(id: ?String, followWithoutTransition!: ?Bool = None): T
+func geometryTransition(id: ?String, followWithoutTransition!: ?Bool = None): T
 ```
 
 **功能：** 组件内隐式共享元素转场

@@ -80,7 +80,7 @@ public func createWindow(config: Configuration): Window
 ## func shiftAppWindowFocus(Int32, Int32)
 
 ```cangjie
-public func shiftAppWindowFocus(sourceWindowID: Int32, targetWindowID: Int32): Unit
+public func shiftAppWindowFocus(sourceWindowId: Int32, targetWindowId: Int32): Unit
 ```
 
 **功能：** 将窗口焦点从源窗口转移到同一应用程序中的目标窗口。窗口焦点可以在主窗口和子窗口之间转移。
@@ -93,8 +93,8 @@ public func shiftAppWindowFocus(sourceWindowID: Int32, targetWindowID: Int32): U
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|sourceWindowID|Int32|是|-|焦点转移的源窗口ID。|
-|targetWindowID|Int32|是|-|焦点转移的目标窗口ID。|
+|sourceWindowId|Int32|是|-|焦点转移的源窗口ID。|
+|targetWindowId|Int32|是|-|焦点转移的目标窗口ID。|
 
 **异常：**
 
@@ -279,9 +279,9 @@ public init(
 ```cangjie
 public class Configuration {
     public var ctx: BaseContext
-    public var displayId: Int64
+    public var displayId: Int64 = -1
     public var name: String
-    public var parentId: Int64
+    public var parentId: Int64 = -1
     public var windowType: WindowType
     public init(
       name!: String,
@@ -318,7 +318,7 @@ public var ctx: BaseContext
 ### var displayId
 
 ```cangjie
-public var displayId: Int64
+public var displayId: Int64 = -1
 ```
 
 **功能：** 当前物理屏幕ID。
@@ -350,7 +350,7 @@ public var name: String
 ### var parentId
 
 ```cangjie
-public var parentId: Int64
+public var parentId: Int64 = -1
 ```
 
 **功能：** 父窗口ID。
@@ -598,10 +598,10 @@ public init(
 
 ```cangjie
 public class SystemBarProperties {
-    public var enableNavigationBarAnimation: Bool
-    public var enableStatusBarAnimation: Bool
-    public var isNavigationBarLightIcon: Bool
-    public var isStatusBarLightIcon: Bool
+    public var enableNavigationBarAnimation: Bool = false
+    public var enableStatusBarAnimation: Bool = false
+    public var isNavigationBarLightIcon: Bool = false
+    public var isStatusBarLightIcon: Bool = false
     public var navigationBarColor: String
     public var navigationBarContentColor: String
     public var statusBarColor: String
@@ -628,7 +628,7 @@ public class SystemBarProperties {
 ### var enableNavigationBarAnimation
 
 ```cangjie
-public var enableNavigationBarAnimation: Bool
+public var enableNavigationBarAnimation: Bool = false
 ```
 
 **功能：** 启用导航栏动画。
@@ -646,7 +646,7 @@ public var enableNavigationBarAnimation: Bool
 ### var enableStatusBarAnimation
 
 ```cangjie
-public var enableStatusBarAnimation: Bool
+public var enableStatusBarAnimation: Bool = false
 ```
 
 **功能：** 启用状态栏动画。
@@ -664,7 +664,7 @@ public var enableStatusBarAnimation: Bool
 ### var isNavigationBarLightIcon
 
 ```cangjie
-public var isNavigationBarLightIcon: Bool
+public var isNavigationBarLightIcon: Bool = false
 ```
 
 **功能：** 导航栏浅色图标。
@@ -682,7 +682,7 @@ public var isNavigationBarLightIcon: Bool
 ### var isStatusBarLightIcon
 
 ```cangjie
-public var isStatusBarLightIcon: Bool
+public var isStatusBarLightIcon: Bool = false
 ```
 
 **功能：** 状态栏浅色图标。

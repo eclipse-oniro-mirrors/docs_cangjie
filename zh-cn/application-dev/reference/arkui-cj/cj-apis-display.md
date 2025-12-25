@@ -540,12 +540,12 @@ public prop alive: Bool
 ### prop densityDpi
 
 ```cangjie
-public prop densityDpi: Float32
+public prop densityDpi: Float64
 ```
 
 **功能：** 显示屏密度，以像素为单位，是物理像素和逻辑像素之间的缩放系数。低分辨率显示屏的值为1.0。
 
-**类型：** Float32
+**类型：** Float64
 
 **读写能力：** 只读
 
@@ -556,12 +556,12 @@ public prop densityDpi: Float32
 ### prop densityPixels
 
 ```cangjie
-public prop densityPixels: Float32
+public prop densityPixels: Float64
 ```
 
 **功能：** 显示分辨率，即每英寸的像素数。
 
-**类型：** Float32
+**类型：** Float64
 
 **读写能力：** 只读
 
@@ -572,12 +572,12 @@ public prop densityPixels: Float32
 ### prop height
 
 ```cangjie
-public prop height: Int32
+public prop height: Int64
 ```
 
 **功能：** 显示屏高度，以像素为单位。
 
-**类型：** Int32
+**类型：** Int64
 
 **读写能力：** 只读
 
@@ -588,12 +588,12 @@ public prop height: Int32
 ### prop id
 
 ```cangjie
-public prop id: UInt32
+public prop id: Int64
 ```
 
 **功能：** 显示屏ID。
 
-**类型：** UInt32
+**类型：** Int64
 
 **读写能力：** 只读
 
@@ -672,12 +672,12 @@ public prop rotation: UInt32
 ### prop scaledDensity
 
 ```cangjie
-public prop scaledDensity: Float32
+public prop scaledDensity: Float64
 ```
 
 **功能：** 显示屏文本缩放密度。
 
-**类型：** Float32
+**类型：** Float64
 
 **读写能力：** 只读
 
@@ -720,12 +720,12 @@ public prop width: Int32
 ### prop xDpi
 
 ```cangjie
-public prop xDpi: Float32
+public prop xDpi: Float64
 ```
 
 **功能：** x轴上的DPI。
 
-**类型：** Float32
+**类型：** Float64
 
 **读写能力：** 只读
 

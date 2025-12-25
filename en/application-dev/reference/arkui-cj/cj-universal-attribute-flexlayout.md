@@ -13,7 +13,7 @@ import kit.ArkUI.*
 ## func alignSelf(?ItemAlign)
 
 ```cangjie
-public func alignSelf(value: ?ItemAlign): T
+func alignSelf(value: ?ItemAlign): T
 ```
 
 **Function:** Alignment format of child components along the cross axis of the parent container.
@@ -37,7 +37,7 @@ public func alignSelf(value: ?ItemAlign): T
 ## func flexBasis(?Length)
 
 ```cangjie
-public func flexBasis(value: ?Length): T
+func flexBasis(value: ?Length): T
 ```
 
 **Function:** Sets the base size of the component.
@@ -61,7 +61,7 @@ public func flexBasis(value: ?Length): T
 ## func flexGrow(?Float64)
 
 ```cangjie
-public func flexGrow(value: ?Float64): T
+func flexGrow(value: ?Float64): T
 ```
 
 **Function:** Sets the proportion of remaining space in the parent container allocated to the component.
@@ -85,7 +85,7 @@ public func flexGrow(value: ?Float64): T
 ## func flexGrow(?Int64)
 
 ```cangjie
-public func flexGrow(value: ?Int64): T
+func flexGrow(value: ?Int64): T
 ```
 
 **Function:** Sets the proportion of remaining space in the parent container allocated to the component.
@@ -109,7 +109,7 @@ public func flexGrow(value: ?Int64): T
 ## func flexShrink(?Float64)
 
 ```cangjie
-public func flexShrink(value: ?Float64): T
+func flexShrink(value: ?Float64): T
 ```
 
 **Function:** Sets the proportion of compressed size in the parent container allocated to the component where this property is set. When the parent container is Column or Row, the size along the main axis must be set.
@@ -133,7 +133,7 @@ public func flexShrink(value: ?Float64): T
 ## func flexShrink(?Int64)
 
 ```cangjie
-public func flexShrink(value: ?Int64): T
+func flexShrink(value: ?Int64): T
 ```
 
 **Function:** Sets the proportion of compressed size in the parent container allocated to the component where this property is set. When the parent container is Column or Row, the size along the main axis must be set.

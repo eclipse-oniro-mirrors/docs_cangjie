@@ -11,7 +11,7 @@ import kit.ArkUI.*
 ## func blur(?Float64)
 
 ```cangjie
-public func blur(value: ?Float64): T
+func blur(value: ?Float64): T
 ```
 
 **Function:** Adds a content blur effect to the current component. The input parameter is the blur radius—the larger the radius, the more blurred the content becomes. A value of 0 means no blur.
@@ -36,7 +36,7 @@ public func blur(value: ?Float64): T
 ## func colorBlend(?ResourceColor)
 
 ```cangjie
-public func colorBlend(value: ?ResourceColor): T
+func colorBlend(value: ?ResourceColor): T
 ```
 
 **Function:** Adds a color blending effect to the component.
@@ -86,7 +86,7 @@ public func backdropBlur(value: ?Float64): T
 ## func shadow(?Float64, ?ResourceColor, ?Float64, ?Float64)
 
 ```cangjie
-public func shadow(radius!: ?Float64, color!: ?ResourceColor = None, offsetX!: ?Float64 = None, offsetY!: ?Float64 = None): T
+func shadow(radius!: ?Float64, color!: ?ResourceColor = None, offsetX!: ?Float64 = None, offsetY!: ?Float64 = None): T
 ```
 
 **Function:** Adds a shadow effect to the component.
@@ -114,7 +114,7 @@ public func shadow(radius!: ?Float64, color!: ?ResourceColor = None, offsetX!: ?
 ## func grayscale(?Float64)
 
 ```cangjie
-public func grayscale(value: ?Float64): T
+func grayscale(value: ?Float64): T
 ```
 
 **Function:** Adds a grayscale effect to the component.
@@ -139,7 +139,7 @@ public func grayscale(value: ?Float64): T
 ## func brightness(?Float64)
 
 ```cangjie
-public func brightness(value: ?Float64): T
+func brightness(value: ?Float64): T
 ```
 
 **Function:** Adds a brightness effect to the component.
@@ -164,7 +164,7 @@ public func brightness(value: ?Float64): T
 ## func saturate(?Float64)
 
 ```cangjie
-public func saturate(value: ?Float64): T
+func saturate(value: ?Float64): T
 ```
 
 **Function:** Adds a saturation effect to the component.
@@ -189,7 +189,7 @@ public func saturate(value: ?Float64): T
 ## func contrast(?Float64)
 
 ```cangjie
-public func contrast(value: ?Float64): T
+func contrast(value: ?Float64): T
 ```
 
 **Function:** Adds a contrast effect to the component.
@@ -214,7 +214,7 @@ public func contrast(value: ?Float64): T
 ## func invert(?Float64)
 
 ```cangjie
-public func invert(value: ?Float64): T
+func invert(value: ?Float64): T
 ```
 
 **Function:** Adds a color inversion effect to the component.
@@ -239,7 +239,7 @@ public func invert(value: ?Float64): T
 ## func invert(?Float64, ?Float64, ?Float64, ?Float64)
 
 ```cangjie
-public func invert(low!: ?Float64, high!: ?Float64, threshold!: ?Float64, thresholdRange!: ?Float64): T
+func invert(low!: ?Float64, high!: ?Float64, threshold!: ?Float64, thresholdRange!: ?Float64): T
 ```
 
 **Function:** Adds a color inversion effect with specified range and threshold to the component.
@@ -267,7 +267,7 @@ public func invert(low!: ?Float64, high!: ?Float64, threshold!: ?Float64, thresh
 ## func sepia(?Float64)
 
 ```cangjie
-public func sepia(value: ?Float64): T
+func sepia(value: ?Float64): T
 ```
 
 **Function:** Adds a sepia effect to the component.
@@ -291,7 +291,7 @@ public func sepia(value: ?Float64): T
 ## func hueRotate(?Float32)
 
 ```cangjie
-public func hueRotate(value: ?Float32): T
+func hueRotate(value: ?Float32): T
 ```
 
 **Function:** Adds a hue rotation effect to the component.

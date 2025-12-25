@@ -36,7 +36,7 @@ public func clip(value: ?Bool): T
 ## func clipShape(?BaseShape)
 
 ```cangjie
-public func clipShape(value: ?BaseShape): T
+func clipShape(value: ?BaseShape): T
 ```
 
 **Function:** Clips the current component according to the specified shape.

@@ -15,7 +15,7 @@ import kit.ArkUI.*
 ## func id(?String)
 
 ```cangjie
-public func id(value: ?String): T
+func id(value: ?String): T
 ```
 
 **Functionality:** The unique identifier of a component, with uniqueness guaranteed by the user.
@@ -39,7 +39,7 @@ public func id(value: ?String): T
 ## func key(?String)
 
 ```cangjie
-public func key(value: ?String): T
+func key(value: ?String): T
 ```
 
 **Functionality:** The unique identifier of a component, with uniqueness guaranteed by the user.

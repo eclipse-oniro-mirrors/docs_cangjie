@@ -15,7 +15,7 @@ import kit.ArkUI.*
 ## func bindPopup(?Bool, ?PopupOptions)
 
 ```cangjie
-public func bindPopup(show: ?Bool, popup: ?PopupOptions): T
+func bindPopup(show: ?Bool, popup: ?PopupOptions): T
 ```
 
 **功能：** 给组件绑定Popup弹窗。
@@ -40,7 +40,7 @@ public func bindPopup(show: ?Bool, popup: ?PopupOptions): T
 ## func bindPopup(?Bool, ?CustomPopupOptions)
 
 ```cangjie
-public func bindPopup(show: ?Bool, popup: ?CustomPopupOptions): T
+func bindPopup(show: ?Bool, popup: ?CustomPopupOptions): T
 ```
 
 **功能：** 给组件绑定Popup弹窗。

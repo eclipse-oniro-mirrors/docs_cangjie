@@ -11,7 +11,7 @@ import kit.ArkUI.*
 ## func expandSafeArea(?Array\<SafeAreaType>, ?Array\<SafeAreaEdge>)
 
 ```cangjie
-public func expandSafeArea(types!: ?Array<SafeAreaType> = None, edges!: ?Array<SafeAreaEdge> = None): This
+func expandSafeArea(types!: ?Array<SafeAreaType> = None, edges!: ?Array<SafeAreaEdge> = None): This
 ```
 
 **功能：** 设置控制组件扩展其安全区域。
