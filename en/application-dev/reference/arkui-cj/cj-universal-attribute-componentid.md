@@ -70,6 +70,12 @@ public func getInspectorByKey(id: String): String
 
 **Functionality:** Retrieves all attributes of the component with the specified id, excluding child component information. This interface is intended solely for application testing. Due to its time-consuming nature, usage is not recommended.
 
+> **Note:**
+>
+> This interface must be called on the main thread (UI thread) to ensure complete attribute information is retrieved. Since the interface returns a JSON-formatted string, you need to parse the JSON to obtain the corresponding attribute values. When called from a worker thread, some component attributes may be missing from the JSON, which will result in the inability to retrieve the corresponding attributes.
+>
+> Affected components and attributes: Select component: Attributes such as space, arrowPosition, value, fontColor, font, controlSize, maxLines.
+
 **System Capability:** SystemCapability.ArkUI.ArkUI.Full
 
 **Initial Version:** 22
@@ -201,3 +207,63 @@ public func sendMouseEvent(event: MouseEvent): Bool
 | Type | Description |
 | :-------   | :---------- |
 | Bool | Returns false if the event fails to send; otherwise, returns true.|
+
+## Example Code
+
+This example demonstrates how to correctly call the getInspectorByKey interface to retrieve attribute information of a Select component.
+
+<!-- run -->
+
+```cangjie
+package ohos_app_cangjie_entry
+import kit.ArkUI.*
+import ohos.arkui.state_macro_manage.*
+import ohos.hilog.*
+
+@Entry
+@Component
+class EntryView {
+    @State var selectedIndex: Int32 = 0
+    @State var selectOptions: Array<SelectOption> = [
+        SelectOption(value: "Option 1"),
+        SelectOption(value: "Option 2"),
+        SelectOption(value: "Option 3")
+    ]
+
+    func build() {
+        Column(space: 20) {
+            Select(this.selectOptions)
+                .id("mySelect")
+                .selected(this.selectedIndex)
+                .value("Please select")
+                .fontColor(0xFF000000)
+                .space(8.vp)
+                .onSelect({ index: Int32, value: String =>
+                    this.selectedIndex = index
+                })
+
+            Button("Get Component Attributes on Main Thread")
+                .onClick({ evt =>
+                    // Call getInspectorByKey on the main thread to retrieve complete attribute information
+                    let inspectorInfo = getInspectorByKey("mySelect")
+                    Hilog.info(0x0000, "Inspector", "Select component attributes: ${inspectorInfo}")
+                })
+
+            Button("Get Component Attributes from Worker Thread")
+                .onClick({ evt =>
+                    // Execute in a worker thread
+                    spawn {
+                        // Use launch to forward the getInspectorByKey call to the main thread
+                        launch {
+                            // Call on the main thread to retrieve complete attribute information
+                            let inspectorInfo = getInspectorByKey("mySelect")
+                            Hilog.info(0x0000, "Inspector", "Select component attributes: ${inspectorInfo}")
+                        }
+                    }
+                })
+        }
+        .width(100.percent)
+        .padding(20)
+    }
+}
+```

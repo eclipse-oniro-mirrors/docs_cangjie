@@ -70,6 +70,12 @@ public func getInspectorByKey(id: String): String
 
 **功能：** 获取指定id的组件的所有属性，不包括子组件信息。此接口仅用于对应用的测试。由于耗时长，不建议使用。
 
+> **说明：**
+>
+> 该接口必须在主线程（UI线程）中调用，以确保获取完整的属性信息。由于接口返回的是JSON格式的字符串，需要通过JSON解析才能获取对应的属性值，而在子线程中调用时，部分组件的属性在JSON中缺失，会导致无法获取对应的属性。
+>
+> 受影响的组件及属性：Select组件的space、arrowPosition、value、fontColor、font、controlSize、maxLines属性。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **起始版本：** 22
@@ -201,3 +207,63 @@ public func sendMouseEvent(event: MouseEvent): Bool
 |类型|说明|
 | :-------   | :---------- |
 | Bool | 事件发送失败时时返回false，其余情况返回true。|
+
+## 示例代码
+
+该示例演示如何正确调用getInspectorByKey接口获取Select组件的属性信息。
+
+<!-- run -->
+
+```cangjie
+package ohos_app_cangjie_entry
+import kit.ArkUI.*
+import ohos.arkui.state_macro_manage.*
+import ohos.hilog.*
+
+@Entry
+@Component
+class EntryView {
+    @State var selectedIndex: Int32 = 0
+    @State var selectOptions: Array<SelectOption> = [
+        SelectOption(value: "选项1"),
+        SelectOption(value: "选项2"),
+        SelectOption(value: "选项3")
+    ]
+
+    func build() {
+        Column(space: 20) {
+            Select(this.selectOptions)
+                .id("mySelect")
+                .selected(this.selectedIndex)
+                .value("请选择")
+                .fontColor(0xFF000000)
+                .space(8.vp)
+                .onSelect({ index: Int32, value: String =>
+                    this.selectedIndex = index
+                })
+
+            Button("在主线程中获取组件属性")
+                .onClick({ evt =>
+                    // 在主线程中调用getInspectorByKey，可以获取完整的属性信息
+                    let inspectorInfo = getInspectorByKey("mySelect")
+                    Hilog.info(0x0000, "Inspector", "Select组件属性: ${inspectorInfo}")
+                })
+
+            Button("在子线程中获取组件属性")
+                .onClick({ evt =>
+                    // 在子线程中执行
+                    spawn {
+                        // 使用launch将getInspectorByKey调用转发到主线程
+                        launch {
+                            // 在主线程中调用，可以获取完整的属性信息
+                            let inspectorInfo = getInspectorByKey("mySelect")
+                            Hilog.info(0x0000, "Inspector", "Select组件属性: ${inspectorInfo}")
+                        }
+                    }
+                })
+        }
+        .width(100.percent)
+        .padding(20)
+    }
+}
+```
