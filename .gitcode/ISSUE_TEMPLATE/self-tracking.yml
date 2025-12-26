@@ -25,9 +25,13 @@ body:
       label: 文档更新涉及手册或模块 | Involved manuals or modules
       description: 请提供文档更新内容所属手册或模块：| Provide the manuals or modules involed in the document updates.
       options:
-        - label: 仓颉编程语言开发指南 | dev-guide
+        - label: 应用开发导读 | application-dev/cj-start-application-development-overview.md
           required: false
-        - label: 仓颉编程语言工具使用指南 | tools
+        - label: 入门 | application-dev/cj-start
+          required: false
+        - label: 开发 | application-dev
+          required: false
+        - label: API参考 | application-dev/reference
           required: false
         - label: 仓库配置相关 | Repository Configuration
           required: false
