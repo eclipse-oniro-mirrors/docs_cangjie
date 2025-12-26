@@ -662,8 +662,6 @@ public type ImageCompleteCallback = (ImageLoadResult) -> Unit
 
 **类型：** ([ImageLoadResult](#class-imageloadresult)) -> Unit
 
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
 ## type ImageErrorCallback
 
 ```cangjie
@@ -673,8 +671,6 @@ public type ImageErrorCallback = (ImageError) -> Unit
 **功能：** 图片加载错误回调函数类型。
 
 **类型：** ([ImageError](#class-imageerror)) -> Unit
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 ## 示例代码
 

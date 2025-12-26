@@ -2364,8 +2364,6 @@ public type PasteEventCallback = (PasteEvent) -> Unit
 
 **类型：** ([PasteEvent](#class-pasteevent)) -> Unit
 
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
 ### type OnDidChangeCallback
 
 ```cangjie
@@ -2375,8 +2373,6 @@ public type OnDidChangeCallback = (rangeBefore: TextRange, rangeAfter: TextRange
 **功能：** 内容更改后的回调函数。
 
 **类型：** ([TextRange](#class-textrange), [TextRange](#class-textrange)) -> Unit
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 ## 示例代码
 

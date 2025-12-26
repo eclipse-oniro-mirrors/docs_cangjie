@@ -1315,9 +1315,6 @@ public type OnWillScrollCallBack = (Float64, ScrollState, ScrollSource) -> Scrol
 
 **Function:** Defines the callback function type for onWillScroll.
 
-**System Capability:** SystemCapability.ArkUI.ArkUI.Full
-
-
 **Type:** (Float64, [ScrollState](./cj-common-types.md#enum-scrollstate), [ScrollSource](./cj-common-types.md#enum-scrollsource)) -> [ScrollResult](#class-scrollresult)
 
 ### type OnScrollCallBack
@@ -1327,8 +1324,6 @@ public type OnScrollCallBack = (scrollOffset: Float64, scrollState: ScrollState)
 ```
 
 **Function:** Defines the callback function type for onScroll.
-
-**System Capability:** SystemCapability.ArkUI.ArkUI.Full
 
 **Type:** (Float64, [ScrollState](./cj-common-types.md#enum-scrollstate)) -> Unit
 
@@ -1340,8 +1335,6 @@ public type ScrollOnScrollCallback = (Float64, Float64, ScrollState) -> Unit
 
 **Function:** Defines the callback function type for onDidScroll.
 
-**System Capability:** SystemCapability.ArkUI.ArkUI.Full
-
 **Type:** (Float64, Float64, [ScrollState](./cj-common-types.md#enum-scrollstate)) -> Unit
 
 ### type OnScrollFrameBeginCallback
@@ -1352,8 +1345,6 @@ public type OnScrollFrameBeginCallback = (Float64, ScrollState) -> Float64
 
 **Function:** Defines the callback function type for onScrollFrameBegin.
 
-**System Capability:** SystemCapability.ArkUI.ArkUI.Full
-
 **Type:** (Float64, [ScrollState](./cj-common-types.md#enum-scrollstate)) -> Float64
 
 ### type OnScrollEdgeCallback
@@ -1363,8 +1354,6 @@ public type OnScrollEdgeCallback = (Edge) -> Unit
 ```
 
 **Function:** Defines the callback function type for onScrollEdge.
-
-**System Capability:** SystemCapability.ArkUI.ArkUI.Full
 
 **Type:** ([Edge](./cj-common-types.md#enum-edge)) -> Unit
 
