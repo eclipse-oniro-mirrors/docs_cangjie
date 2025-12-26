@@ -536,8 +536,6 @@ public type ImageCompleteCallback = (ImageLoadResult) -> Unit
 
 **Type:** ([ImageLoadResult](#class-imageloadresult)) -> Unit
 
-**System Capability:** SystemCapability.ArkUI.ArkUI.Full
-
 ## type ImageErrorCallback
 
 ```cangjie
@@ -547,8 +545,6 @@ public type ImageErrorCallback = (ImageError) -> Unit
 **Function:** Callback function type for image loading errors.
 
 **Type:** ([ImageError](#class-imageerror)) -> Unit
-
-**System Capability:** SystemCapability.ArkUI.ArkUI.Full
 
 ## Example Code
 

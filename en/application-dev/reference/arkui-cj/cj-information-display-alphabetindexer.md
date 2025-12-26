@@ -374,8 +374,6 @@ public type OnAlphabetIndexerSelectCallback = (Int64) -> Unit
 
 **Type:** (Int64) -> Unit
 
-**System Capability:** SystemCapability.ArkUI.ArkUI.Full
-
 ### type OnAlphabetIndexerRequestPopupDataCallback
 
 ```cangjie
@@ -386,8 +384,6 @@ public type OnAlphabetIndexerRequestPopupDataCallback = (Int64) -> Array<String>
 
 **Type:** (Int64) -> Array\<String>
 
-**System Capability:** SystemCapability.ArkUI.ArkUI.Full
-
 ### type OnAlphabetIndexerPopupSelectCallback
 
 ```cangjie
@@ -397,8 +393,6 @@ public type OnAlphabetIndexerPopupSelectCallback = (Int64) -> Unit
 **Function:** Event triggered when a secondary index item in the popup is selected.
 
 **Type:** (Int64) -> Unit
-
-**System Capability:** SystemCapability.ArkUI.ArkUI.Full
 
 ## Sample Code
 
