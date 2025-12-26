@@ -211,11 +211,6 @@ Project_name
 >
 > 仓颉模块目前仅支持OpenHarmony的静态库模块，即HAR静态共享包。
 
-仓颉支持在SDK范围为API 12~15、设备类型为 phone、tablet、2in1 的ArkTS HAP模块或HAR模块中，直接使能仓颉开发。
-若当前模块支持的设备类型包括default、phone、tablet、2in1之外的其他设备类型，请将模块下module.json5中的deviceTypes字段中不支持的设备类型删去，修改为支持的设备类型格式（如下图应删去wearable设备），再进行增量使用仓颉的操作。
-
-![deviceTypes](../../figures/deviceTypes.png)
-
 仍以上方原始的ArkTS应用工程为例，介绍如何在ArkTS模块中（即**my_module**）使能仓颉开发。
 
 ### 右键菜单一键使能仓颉-ArkTS混合模块

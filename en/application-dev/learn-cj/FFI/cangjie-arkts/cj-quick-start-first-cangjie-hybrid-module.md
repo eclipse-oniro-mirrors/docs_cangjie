@@ -210,11 +210,6 @@ Both **entry** and **my_module** modules contain a page, with navigation between
 >
 > Currently, Cangjie modules only support OpenHarmony static library modules, i.e., HAR static shared packages.
 
-Cangjie supports enabling Cangjie development directly in ArkTS HAP or HAR modules with SDK ranges of API 12~15 and device types including phone, tablet, and 2in1.  
-If the current module supports device types other than default, phone, tablet, and 2in1, delete the unsupported device types from the deviceTypes field in module.json5 and modify it to the supported format (e.g., delete the wearable device type in the figure below) before incrementally using Cangjie.
-
-![deviceTypes](../../figures/deviceTypes.png)
-
 Using the original ArkTS application project as an example, this section explains how to enable Cangjie development in an ArkTS module (i.e., **my_module**).
 
 ### Right-Click Menu to Enable Cangjie-ArkTS Hybrid Module
