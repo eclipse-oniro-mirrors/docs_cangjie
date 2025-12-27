@@ -328,7 +328,7 @@ public init(backgroundColor!: ?ResourceColor = None, backgroundBlurStyle!: ?Blur
 |:---|:---|:---|:---|:---|
 | backgroundColor | ?[ResourceColor](./cj-common-types.md#interface-resourcecolor) | No | None | Background color of the title bar. |
 | backgroundBlurStyle | ?[BlurStyle](./cj-common-types.md#enum-blurstyle) | No | None | Background blur style of the title bar. |
-| barStyle | ?[BarStyle](#enum-barstyle) | No | None | Layout style of the title bar. Initial value: BarStyle.STANDARD. |
+| barStyle | ?[BarStyle](#enum-barstyle) | No | None | Layout style of the title bar. Initial value: BarStyle.Standard. |
 | paddingStart | ?[Length](./cj-common-types.md#interface-length) | No | None | Start margin of the title bar. |
 | paddingEnd | ?[Length](./cj-common-types.md#interface-length) | No | None | End margin of the title bar. |
 
@@ -671,7 +671,7 @@ public enum LaunchMode <: Equatable<LaunchMode> {
 MoveToTopSingleTon
 ```
 
-**Function:** If a NavDestination with the specified name exists, moves it to the top of the stack; otherwise, behaves the same as STANDARD mode.
+**Function:** If a NavDestination with the specified name exists, moves it to the top of the stack; otherwise, behaves the same as Standard mode.
 
 **System Capability:** SystemCapability.ArkUI.ArkUI.Full
 
@@ -683,7 +683,7 @@ MoveToTopSingleTon
 NewInstance
 ```
 
-**Function:** This mode creates a NavDestination instance. Unlike STANDARD, this mode does not reuse instances with the same name in the stack.
+**Function:** This mode creates a NavDestination instance. Unlike Standard, this mode does not reuse instances with the same name in the stack.
 
 **System Capability:** SystemCapability.ArkUI.ArkUI.Full
 
@@ -695,7 +695,7 @@ NewInstance
 PopToSingleTon
 ```
 
-**Function:** If a NavDestination with the specified name exists, pops the stack until that NavDestination; otherwise, behaves the same as STANDARD mode.
+**Function:** If a NavDestination with the specified name exists, pops the stack until that NavDestination; otherwise, behaves the same as Standard mode.
 
 **System Capability:** SystemCapability.ArkUI.ArkUI.Full
 
