@@ -70,8 +70,7 @@ Project_name
 │    ├── oh-package.json5
 │    └── oh-package-lock.json5
 ├── hvigor
-│    ├── cangjie-build-support-x.y.z.tgz
-│    └── hvigor-config.json5
+│    ├── hvigor-config.json5
 ├── oh_modules
 ├── build-profile.json5
 ├── code-linter.json5
@@ -99,7 +98,6 @@ Key files include:
     - **hvigorfile.ts**: Module-level build script.
     - **oh-package.json5**: Package metadata (name, version, entry file, dependencies).
 - **hvigor**: Contains hvigor configurations.
-    - **cangjie-build-support-x.y.z.tgz**: Cangjie-specific hvigor task package.
     - **hvigor-config.json5**: Global hvigor configuration.
 - **oh_modules**: Third-party dependencies.
 - **build-profile.json5**: Application-level configuration (signing, product settings).

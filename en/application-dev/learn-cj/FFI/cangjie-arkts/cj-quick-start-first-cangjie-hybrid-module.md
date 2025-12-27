@@ -222,8 +222,7 @@ After the project syncs automatically, the directory structure is as follows:
 
 ```text
 ├── hvigor
-│    ├── cangjie-build-support-x.y.z.tgz
-│    └── hvigor-config.json5
+│    ├── hvigor-config.json5
 └── my_module
     ├── build
     ├── libs
@@ -257,10 +256,6 @@ After the project syncs automatically, the directory structure is as follows:
 ```
 
 Here, **my_module** becomes a Cangjie-ArkTS hybrid module.
-
-> **Note:**
->
-> When enabling Cangjie development in an ArkTS project for the first time, a "cangjie-build-support-x.y.z.tgz" plugin package is automatically created in the project's "hvigor" directory to support Cangjie-related compilation.
 
 ### Cross-Module Calls to Cangjie Functions in a Pure ArkTS Project Within the Same Project
 
@@ -329,9 +324,7 @@ Here, **my_module** becomes a Cangjie-ArkTS hybrid module.
    >
    > After creating a Cangjie Hybrid Ability hybrid project, the **libohos_app_cangjie_my_module** library is automatically added to the **dependencies** field in **my_module > oh-package.json5**.
 
-3. After generating the .d.ts interface declarations, to use Cangjie interfaces in a pure ArkTS module, modify the **hvigorfile.ts** file of the pure ArkTS module. In this example, modify **entry > hvigorfile.ts**, changing the first line `import { hapTasks } from '@ohos/hvigor-ohos-plugin'` to `import { hapTasks } from '@ohos/cangjie-build-support'`.
-
-4. After modifying the **hvigorfile.ts** file, you can directly import the dependencies of the interfaces declared in the .d.ts file in ArkTS files.
+3. After modifying the **hvigorfile.ts** file, you can directly import the dependencies of the interfaces declared in the .d.ts file in ArkTS files.
 
    Modify **my_module > src > main > ets > pages > MyModulePage.ets** as follows:
 
@@ -399,7 +392,7 @@ Here, **my_module** becomes a Cangjie-ArkTS hybrid module.
    }
    ```
 
-5. Run the application on a real device or emulator.
+4. Run the application on a real device or emulator.
 
    After successful compilation and installation, navigate to the **MyModulePage** and click the buttons to trigger function calls. The effect is as follows:
 

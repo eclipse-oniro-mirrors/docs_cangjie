@@ -28,7 +28,7 @@ HAR (Harmony Archive) is a static shared package that can contain code, C++ libr
 
 - If a module contains custom macros and needs to be used by other modules, neither this module nor other modules can be compiled into a binary HAR. Instead, they must be compiled into a Cangjie HAR in source code format<!-- add link -->.  
 
-- Binary HAR packages require the use of `hapTasks` imported from `@ohos/cangjie-build-support` in the `hvigorfile.ts` of the final integrated HAP module. Otherwise, only Cangjie HARs in source code format can be used.  
+- By default, the binary HAR packages Cangjie .so and .cjo products and places them in the HAR package under the directories libs/arm64-v8a/cjbins/package or libs/x86_64/cjbins/package; if you need the Cangjie .so products to be directly placed in the libs/arm64-v8a or libs/x86_64 directories, for example, in scenarios where a pure ArkTS HAP depends on the binary format of the Cangjie HAR, you can set the flattenLibs configuration option to true in the Cangjie HAR module.
 
 > **Note:**  
 >  

@@ -204,6 +204,7 @@ Project_name
    import ohos.arkui.state_macro_manage.r
    import ohos.arkui.component.Button
    import ohos.hilog.Hilog
+   import kit.ArkUI.*
 
    @Entry
    @Component
@@ -294,6 +295,8 @@ Project_name
    import ohos.arkui.state_macro_manage.State
    import ohos.arkui.state_macro_manage.r
    import ohos.arkui.ui_context.* // 导入页面路由模块
+   import ohos.hilog.Hilog
+   import kit.ArkUI.*
 
    @Entry
    @Component
@@ -309,7 +312,7 @@ Project_name
                        .fontWeight(FontWeight.Bold)
                    Button("Back")
                        .onClick ({
-                           evt => Router.back(url: "EntryView") // 实现返回第一页
+                           evt => getUIContext().getRouter().back(url: "EntryView") // 实现返回第一页
                        })
                        .fontSize(30)
                        .width(180)
