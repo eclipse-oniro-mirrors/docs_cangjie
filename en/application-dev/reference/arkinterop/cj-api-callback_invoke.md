@@ -38,8 +38,6 @@ public abstract class Callback1Argument<A> <: CallbackObject {}
 
 **Description:** Abstract class for callback functions with one parameter.
 
-**System Capability:** SystemCapability.Base
-
 **Since:** 22
 
 **Parent Type:**
@@ -53,8 +51,6 @@ public open func invoke(err: ?BusinessException, arg: A): Unit
 ```
 
 **Description:** Abstract class constraint requiring implementation of single-parameter callback methods.
-
-**System Capability:** SystemCapability.Base
 
 **Since:** 22
 
@@ -73,8 +69,6 @@ public abstract class Callback1ArgumentWithReturn<A, B> <: CallbackObject {}
 
 **Description:** Abstract class for callback functions with one parameter and a return value.
 
-**System Capability:** SystemCapability.Base
-
 **Since:** 22
 
 **Parent Type:**
@@ -88,8 +82,6 @@ public open func invoke(err: ?BusinessException, arg1: A): B
 ```
 
 **Description:** Abstract class constraint requiring implementation of single-parameter callback methods.
-
-**System Capability:** SystemCapability.Base
 
 **Since:** 22
 
@@ -114,8 +106,6 @@ public abstract class Callback2Argument<A, B> <: CallbackObject {}
 
 **Description:** Abstract class for callback functions with two parameters.
 
-**System Capability:** SystemCapability.Base
-
 **Since:** 22
 
 **Parent Type:**
@@ -129,8 +119,6 @@ public open func invoke(err: ?BusinessException, arg1: A, arg2: B): Unit
 ```
 
 **Description:** Abstract class constraint requiring implementation of dual-parameter callback methods.
-
-**System Capability:** SystemCapability.Base
 
 **Since:** 22
 
@@ -150,8 +138,6 @@ public abstract class Callback3ArgumentWithReturn<A, B, C, D> <: CallbackObject 
 
 **Description:** Abstract class for callback functions with three parameters and a return value.
 
-**System Capability:** SystemCapability.Base
-
 **Since:** 22
 
 **Parent Type:**
@@ -165,8 +151,6 @@ public open func invoke(err: ?BusinessException, arg1: A, arg2: B, arg3: C): D
 ```
 
 **Description:** Abstract class constraint requiring implementation of three-parameter callback methods.
-
-**System Capability:** SystemCapability.Base
 
 **Since:** 22
 
@@ -193,8 +177,6 @@ public abstract class CallbackObject {}
 
 **Description:** Abstract base class for callback functions.
 
-**System Capability:** SystemCapability.Base
-
 **Since:** 22
 
 ## class CallbackWithReturn\<A>
@@ -204,8 +186,6 @@ public abstract class CallbackWithReturn<A> <: CallbackObject {}
 ```
 
 **Description:** Abstract class for callback functions with a return value.
-
-**System Capability:** SystemCapability.Base
 
 **Since:** 22
 
@@ -220,8 +200,6 @@ public open func invoke(err: ?BusinessException): A
 ```
 
 **Description:** Abstract class constraint requiring implementation of callback methods.
-
-**System Capability:** SystemCapability.Base
 
 **Since:** 22
 
@@ -240,7 +218,7 @@ public open func invoke(err: ?BusinessException): A
 ## type Callback\<T>
 
 ```cangjie
-public type Callback<T>=(T) -> Unit
+public type Callback<T> = (arg: T) -> Unit
 ```
 
 **Description:** Callback function type.

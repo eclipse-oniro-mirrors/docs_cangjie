@@ -67,7 +67,7 @@ public func toString(): String
 ## type AsyncCallback\<T>
 
 ```cangjie
-public type AsyncCallback<T>=(Option<AsyncError>, Option<T>) -> Unit
+public type AsyncCallback<T> = (Option<BusinessException>, Option<T>) -> Unit
 ```
 
 **功能：** 定义了异步回调类型。

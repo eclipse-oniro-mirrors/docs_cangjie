@@ -67,7 +67,7 @@ public func toString(): String
 ## type AsyncCallback\<T>
 
 ```cangjie
-public type AsyncCallback<T>=(Option<AsyncError>, Option<T>) -> Unit
+public type AsyncCallback<T> = (Option<BusinessException>, Option<T>) -> Unit
 ```
 
 **Description:** Defines the asynchronous callback type.
