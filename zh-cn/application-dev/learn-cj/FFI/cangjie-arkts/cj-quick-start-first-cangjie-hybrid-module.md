@@ -223,8 +223,7 @@ Project_name
 
 ```text
 ├── hvigor
-│    ├── cangjie-build-support-x.y.z.tgz
-│    └── hvigor-config.json5
+│    ├── hvigor-config.json5
 └── my_module
     ├── build
     ├── libs
@@ -258,10 +257,6 @@ Project_name
 ```
 
 可以看出，**my_module** 变成了一个仓颉-ArkTS混合模块。
-
-> **说明：**
->
-> 首次在ArkTS工程中使能仓颉开发时，会在工程的 “hvigor” 目录下同步创建一个“cangjie-build-support-x.y.z.tgz”的插件包，用于支持仓颉相关的编译。
 
 ### 在同一个工程内，纯ArkTS工程跨模块调用仓颉函数
 
@@ -330,9 +325,7 @@ Project_name
    >
    > 创建Cangjie Hybrid Ability混合工程之后，在模块下**my_module > oh-package.json5**文件中会自动将**libohos_app_cangjie_my_module**库添加到**dependencies**字段中作为依赖。
 
-3. 仓颉暴露给ArkTS的.d.ts接口声明生成后，如果需要在纯Arkts模块中引入仓颉接口，需要先修改纯Arkts模块的**hvigorfile.ts**文件。如本例中，需要修改  **entry > hvigorfile.ts**  ，将首行接口 import { hapTasks } from '@ohos/hvigor-ohos-plugin' 修改为 import { hapTasks } from '@ohos/cangjie-build-support'。
-
-4. 完成纯Arkts模块的**hvigorfile.ts**文件修改后，可以直接在ArkTS文件中引入.d.ts文件中接口的依赖。
+3. 完成纯Arkts模块的**hvigorfile.ts**文件修改后，可以直接在ArkTS文件中引入.d.ts文件中接口的依赖。
 
    修改 **my_module > src > main > ets > pages > MyModulePage.ets**文件，示例代码如下：
 
@@ -400,7 +393,7 @@ Project_name
    }
    ```
 
-5. 使用真机或模拟器运行应用。
+4. 使用真机或模拟器运行应用。
 
    应用编译安装成功后，先跳转到**MyModulePage**页面，再单击按钮触发函数调用，其效果如下：
 

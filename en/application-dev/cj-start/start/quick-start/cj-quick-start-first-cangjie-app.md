@@ -203,6 +203,7 @@ Key file descriptions:
    import ohos.arkui.state_macro_manage.r
    import ohos.arkui.component.Button
    import ohos.hilog.Hilog
+   import kit.ArkUI.*
 
    @Entry
    @Component
@@ -291,6 +292,8 @@ Page navigation uses the router module to find target pages via URLs.
    import ohos.arkui.state_macro_manage.State
    import ohos.arkui.state_macro_manage.r
    import ohos.arkui.ui_context.* // Import router module
+   import ohos.hilog.Hilog
+   import kit.ArkUI.*
 
    @Entry
    @Component
@@ -306,7 +309,7 @@ Page navigation uses the router module to find target pages via URLs.
                        .fontWeight(FontWeight.Bold)
                    Button("Back")
                        .onClick ({
-                           evt => Router.back(url: "EntryView") // Return to first page
+                           evt => getUIContext().getRouter().back(url: "EntryView") // Return to first page
                        })
                        .fontSize(30)
                        .width(180)
