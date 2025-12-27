@@ -41,7 +41,7 @@
             - 开发指导
                 - [匿名密钥证明（仓颉）](cj-huks-key-anon-attestation.md)
                 <!--Del-->
-                - [非匿名密钥证明(仓颉)](cj-huks-key-attestation-arkts.md)
+                - [非匿名密钥证明（仓颉）](cj-huks-key-attestation-arkts.md)
                 <!--DelEnd-->
         - 其他操作
             - 查询密钥是否存在

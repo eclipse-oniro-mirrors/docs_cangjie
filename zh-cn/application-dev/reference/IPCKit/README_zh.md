@@ -3,4 +3,4 @@
 - 仓颉API
     - [ohos.rpc（RPC通信）](cj-apis-rpc.md)
 - 错误码
-    - [ipc错误码](cj-errorcode-rpc.md)
+    - [RPC错误码](cj-errorcode-rpc.md)

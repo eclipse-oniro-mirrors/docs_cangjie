@@ -1,6 +1,6 @@
 # Localization Kit（本地化开发服务）（Beta特性）
 
-- [Localization Kit简介](cj-i18n-l10n.md)
+- [国际化和本地化概述](cj-i18n-l10n.md)
 - 应用国际化
     - [国际化界面设计](cj-i18n-ui-design.md)
     - [设置日历和历法](cj-i18n-calendar.md)

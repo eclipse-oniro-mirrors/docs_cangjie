@@ -126,5 +126,5 @@
     - [使用镜像能力](cj-mirroring-display.md)
     - 主题设置
         - [应用深浅色适配](cj-ui-dark-light-color-adaptation.md)
-- [窗口管理](../windowmanager/README_zh.md)
-- [屏幕管理](../displaymanager/README_zh.md)
+- [窗口管理（Beta特性）](../windowmanager/README_zh.md)
+- [屏幕管理（Beta特性）](../displaymanager/README_zh.md)

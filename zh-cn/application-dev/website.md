@@ -5,7 +5,7 @@
 - 入门<!--RP4End-->
     - 快速入门
         - [开发准备](cj-start/start/quick-start/cj-quick-start-preparations.md)
-        - [构建第一个仓颉应用](cj-start/start/quick-start/cj-quick-start-first-cangjie-app.md)
+        - [构建第一个OpenHarmony应用（仓颉）](cj-start/start/quick-start/cj-quick-start-first-cangjie-app.md)
     - 开发基础知识
         - 应用程序包基础知识
             - [应用程序包概述](cj-start/basic-knowledge/application-package-overview.md)
