@@ -12,8 +12,6 @@ public class BusinessException <: Exception {
 
 **Description:** Business exception class, inherits from the Exception class.
 
-**System Capability:** SystemCapability.Base
-
 **Since:** 22
 
 **Parent Type:**
@@ -42,21 +40,21 @@ public func getData<T>(): ?T
 
 **Description:** Additional supplementary exception information.
 
-**Type:** T
-
-**Access:** Read-only
-
 **Since:** 22
+
+**Return Value:**
+
+| Type | Description    |
+|:----|:------|
+| ?T | Additional supplementary exception information.|
 
 ### func toString()
 
 ```cangjie
-public open func toString(): String
+public func toString(): String
 ```
 
 **Description:** Gets the error message string.
-
-**System Capability:** SystemCapability.Base
 
 **Since:** 22
 
@@ -66,32 +64,10 @@ public open func toString(): String
 |:----|:-----------|
 | String | Error message. |
 
-### func getClassName()
-
-```cangjie
-protected override func getClassName(): String
-```
-
-**Description:** Gets the exception type name.
-
-**System Capability:** SystemCapability.Base
-
-**Since:** 22
-
-**Return Value:**
-
-| Type     | Description |
-|:--------|:-----------|
-| String | Type name. |
-
-## type AsyncCallback
+## type AsyncCallback\<T>
 
 ```cangjie
 public type AsyncCallback<T>=(Option<AsyncError>, Option<T>) -> Unit
 ```
 
 **Description:** Defines the asynchronous callback type.
-
-**System Capability:** SystemCapability.Base
-
-**Since:** 22

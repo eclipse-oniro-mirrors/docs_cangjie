@@ -8,8 +8,6 @@ public abstract class Callback0Argument <: CallbackObject {}
 
 **Description:** Abstract class for callback functions with no parameters.
 
-**System Capability:** SystemCapability.Base
-
 **Since:** 22
 
 **Parent Type:**
@@ -24,8 +22,6 @@ public open func invoke(err: ?BusinessException): Unit
 
 **Description:** Abstract class constraint requiring implementation of callback methods.
 
-**System Capability:** SystemCapability.Base
-
 **Since:** 22
 
 **Parameters:**
@@ -34,7 +30,7 @@ public open func invoke(err: ?BusinessException): Unit
 |:---------|:-----|:---------|:------------|
 | err | ?BusinessException  | Yes | Exception information. |
 
-## class Callback1Argument
+## class Callback1Argument\<A>
 
 ```cangjie
 public abstract class Callback1Argument<A> <: CallbackObject {}
@@ -69,7 +65,7 @@ public open func invoke(err: ?BusinessException, arg: A): Unit
 | err | ?BusinessException  | Yes | Exception information. |
 | arg | A  | Yes | Parameter required by the callback function. |
 
-## class Callback1ArgumentWithReturn
+## class Callback1ArgumentWithReturn\<A, B>
 
 ```cangjie
 public abstract class Callback1ArgumentWithReturn<A, B> <: CallbackObject {}
@@ -110,7 +106,7 @@ public open func invoke(err: ?BusinessException, arg1: A): B
 |:-----|:------------|
 | B | Return value of the callback function. |
 
-## class Callback2Argument
+## class Callback2Argument\<A, B>
 
 ```cangjie
 public abstract class Callback2Argument<A, B> <: CallbackObject {}
@@ -146,7 +142,7 @@ public open func invoke(err: ?BusinessException, arg1: A, arg2: B): Unit
 | arg1 | A | Yes  | - | First parameter required by the callback function. |
 | arg2 | B | Yes  | - | Second parameter required by the callback function. |
 
-## class Callback3ArgumentWithReturn
+## class Callback3ArgumentWithReturn\<A, B, C, D>
 
 ```cangjie
 public abstract class Callback3ArgumentWithReturn<A, B, C, D> <: CallbackObject {}
@@ -201,7 +197,7 @@ public abstract class CallbackObject {}
 
 **Since:** 22
 
-## class CallbackWithReturn
+## class CallbackWithReturn\<A>
 
 ```cangjie
 public abstract class CallbackWithReturn<A> <: CallbackObject {}
@@ -241,14 +237,10 @@ public open func invoke(err: ?BusinessException): A
 |:-----|:------------|
 | A | Return value of the callback function. |
 
-## type Callback
+## type Callback\<T>
 
 ```cangjie
 public type Callback<T>=(T) -> Unit
 ```
 
 **Description:** Callback function type.
-
-**System Capability:** SystemCapability.Base
-
-**Since:** 22

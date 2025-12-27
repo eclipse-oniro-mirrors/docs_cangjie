@@ -8,8 +8,6 @@ public abstract class Callback0Argument <: CallbackObject {}
 
 **功能：** 无参数回调函数的抽象类。
 
-**系统能力：** SystemCapability.Base
-
 **起始版本：** 22
 
 **父类型：**
@@ -24,8 +22,6 @@ public open func invoke(err: ?BusinessException): Unit
 
 **功能：** 要求实现回调方法的抽象类约束。
 
-**系统能力：** SystemCapability.Base
-
 **起始版本：** 22
 
 **参数：**
@@ -34,7 +30,7 @@ public open func invoke(err: ?BusinessException): Unit
 |:----|:---|:---|:------|
 | err | ?BusinessException  | 是 | 异常信息。 |
 
-## class Callback1Argument
+## class Callback1Argument\<A>
 
 ```cangjie
 public abstract class Callback1Argument<A> <: CallbackObject {}
@@ -69,7 +65,7 @@ public open func invoke(err: ?BusinessException, arg: A): Unit
 | err | ?BusinessException  | 是 | 异常信息。 |
 | arg | A  | 是 | 回调函数需要的参数。|
 
-## class Callback1ArgumentWithReturn
+## class Callback1ArgumentWithReturn\<A, B>
 
 ```cangjie
 public abstract class Callback1ArgumentWithReturn<A, B> <: CallbackObject {}
@@ -110,7 +106,7 @@ public open func invoke(err: ?BusinessException, arg1: A): B
 |:----|:---------|
 | B | 回调函数返回值。|
 
-## class Callback2Argument
+## class Callback2Argument\<A, B>
 
 ```cangjie
 public abstract class Callback2Argument<A, B> <: CallbackObject {}
@@ -146,7 +142,7 @@ public open func invoke(err: ?BusinessException, arg1: A, arg2: B): Unit
 | arg1 | A | 是  | - | 回调函数所需的第一个参数。|
 | arg2 | B | 是  | - | 回调函数所需的第二个参数。|
 
-## class Callback3ArgumentWithReturn
+## class Callback3ArgumentWithReturn\<A, B, C, D>
 
 ```cangjie
 public abstract class Callback3ArgumentWithReturn<A, B, C, D> <: CallbackObject {}
@@ -197,11 +193,9 @@ public abstract class CallbackObject {}
 
 **功能：** 回调函数的抽象基类。
 
-**系统能力：** SystemCapability.Base
-
 **起始版本：** 22
 
-## class CallbackWithReturn
+## class CallbackWithReturn\<A>
 
 ```cangjie
 public abstract class CallbackWithReturn<A> <: CallbackObject {}
@@ -241,7 +235,7 @@ public open func invoke(err: ?BusinessException): A
 |:----|:----------|
 | A | 回调函数的返回值。|
 
-## type Callback
+## type Callback\<T>
 
 ```cangjie
 public type Callback<T>=(T) -> Unit
@@ -249,6 +243,3 @@ public type Callback<T>=(T) -> Unit
 
 **功能：** 回调函数类型。
 
-**系统能力：** SystemCapability.Base
-
-**起始版本：** 22
