@@ -2,10 +2,10 @@
 
 - Cangjie APIs
     - UI Interface
-        - [ohos.component_utils (ComponentUtils)](cj-apis-componentutils.md)
-        - [ohos.shape (Shape)](cj-apis-shape.md)
+        - [ohos.arkui.component_utils (ComponentUtils)](cj-apis-componentutils.md)
+        - [ohos.arkui.shape (Shape)](cj-apis-shape.md)
         - [ohos.curves (Interpolation Calculation)](cj-apis-curves.md)
-        - ohos.ui_context（UIContext）
+        - ohos.arkui.ui_context（UIContext）
             - [AnimatorResult](cj-apis-uicontext-animator.md)
             - [ContextMenuController](cj-apis-uicontext-contextmenucontroller.md)
             - [Font](cj-apis-uicontext-font.md)

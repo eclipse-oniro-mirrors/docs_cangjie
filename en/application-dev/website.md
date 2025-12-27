@@ -521,10 +521,10 @@
         - ArkUI (Ark UI Framework)
             - Cangjie API
                 - UI Interface
-                    - [ohos.component_utils (ComponentUtils)](reference/arkui-cj/cj-apis-componentutils.md)
-                    - [ohos.shape (Shape)](reference/arkui-cj/cj-apis-shape.md)
+                    - [ohos.arkui.component_utils (ComponentUtils)](reference/arkui-cj/cj-apis-componentutils.md)
+                    - [ohos.arkui.shape (Shape)](reference/arkui-cj/cj-apis-shape.md)
                     - [ohos.curves (Interpolation Calculation)](reference/arkui-cj/cj-apis-curves.md)
-                    - ohos.ui_context (UIContext)
+                    - ohos.arkui.ui_context (UIContext)
                         - [AnimatorResult](reference/arkui-cj/cj-apis-uicontext-animator.md)
                         - [ContextMenuController](reference/arkui-cj/cj-apis-uicontext-contextmenucontroller.md)
                         - [Font](reference/arkui-cj/cj-apis-uicontext-font.md)

@@ -1,4 +1,4 @@
-# ohos.component_utils (ComponentUtils)
+# ohos.arkui.component_utils (ComponentUtils)
 
 Provides the capability to obtain the coordinates and dimensions of a component's drawing area.
 
