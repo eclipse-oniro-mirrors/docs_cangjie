@@ -328,7 +328,7 @@ public init(backgroundColor!: ?ResourceColor = None, backgroundBlurStyle!: ?Blur
 |:---|:---|:---|:---|:---|
 |backgroundColor|?[ResourceColor](./cj-common-types.md#interface-resourcecolor)|否|None|标题栏背景颜色。|
 |backgroundBlurStyle|?[BlurStyle](./cj-common-types.md#enum-blurstyle)|否|Option.None|标题栏背景模糊样式。|
-|barStyle|?[BarStyle](#enum-barstyle)|否|None|标题栏布局样式。初始值：BarStyle.STANDARD。|
+|barStyle|?[BarStyle](#enum-barstyle)|否|None|标题栏布局样式。初始值：BarStyle.Standard。|
 |paddingStart|?[Length](./cj-common-types.md#interface-length)|否|None|标题栏起始边距。|
 |paddingEnd|?[Length](./cj-common-types.md#interface-length)|否|None|标题栏结束边距。|
 
@@ -673,7 +673,7 @@ public enum LaunchMode <: Equatable<LaunchMode> {
 MoveToTopSingleTon
 ```
 
-**功能：** 当具有指定名称的NavDestination存在时，将其移到栈顶，否则行为与STANDARD模式一致。
+**功能：** 当具有指定名称的NavDestination存在时，将其移到栈顶，否则行为与Standard模式一致。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -685,7 +685,7 @@ MoveToTopSingleTon
 NewInstance
 ```
 
-**功能：** 此模式创建NavDestination实例。与STANDARD相比，此模式不会重用栈中同名实例。
+**功能：** 此模式创建NavDestination实例。与Standard相比，此模式不会重用栈中同名实例。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -697,7 +697,7 @@ NewInstance
 PopToSingleTon
 ```
 
-**功能：** 当具有指定名称的NavDestination存在时，栈将弹出直到该NavDestination，否则行为与STANDARD模式一致。
+**功能：** 当具有指定名称的NavDestination存在时，栈将弹出直到该NavDestination，否则行为与Standard模式一致。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 

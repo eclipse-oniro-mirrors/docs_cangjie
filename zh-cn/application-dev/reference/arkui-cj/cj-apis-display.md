@@ -704,12 +704,12 @@ public prop state: DisplayState
 ### prop width
 
 ```cangjie
-public prop width: Int32
+public prop width: Int64
 ```
 
 **功能：** 显示屏宽度，以像素为单位。
 
-**类型：** Int32
+**类型：** Int64
 
 **读写能力：** 只读
 
@@ -736,12 +736,12 @@ public prop xDpi: Float64
 ### prop yDpi
 
 ```cangjie
-public prop yDpi: Float32
+public prop yDpi: Float64
 ```
 
 **功能：** y轴上的Dpi。
 
-**类型：** Float32
+**类型：** Float64
 
 **读写能力：** 只读
 
