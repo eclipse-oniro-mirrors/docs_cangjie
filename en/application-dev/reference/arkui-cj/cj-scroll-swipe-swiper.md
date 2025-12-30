@@ -555,14 +555,6 @@ public func selectedItemWidth(value: ?Length): This
 
 ```cangjie
 public open class Indicator {
-    public func bottom(?Length): This
-    public func end(?Length): This
-    public func left(?Length): This
-    public func right(?Length): This
-    public func start(?Length): This
-    public func top(?Length): This
-    public static func digit(): DigitIndicator
-    public static func dot(): DotIndicator
     public init()
 }
 ```

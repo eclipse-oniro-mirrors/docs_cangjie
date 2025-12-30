@@ -78,9 +78,9 @@ public class BadgeStyle {
     public var fontSize: ?Length
     public var badgeSize: ?Length
     public var badgeColor: ?ResourceColor
-    public var fontWeight: ?FontWeight
     public var borderColor: ?ResourceColor
     public var borderWidth: ?Length
+    public var fontWeight: ?FontWeight
     public init(color!: ?ResourceColor = None, fontSize!: ?Length = None, badgeSize!: ?Length = None,
         badgeColor!: ?ResourceColor = None, borderColor!: ?ResourceColor = None,
         borderWidth!: ?Length = None, fontWeight!: ?FontWeight = None)
@@ -93,15 +93,31 @@ public class BadgeStyle {
 
 **Since:** 22
 
-#### var badgeColor
+#### var color
 
 ```cangjie
-public var badgeColor: ?ResourceColor
+public var color: ?ResourceColor
 ```
 
-**Function:** The color of the badge.
+**Function:** The text color.
 
 **Type:** ?[ResourceColor](./cj-common-types.md#interface-resourcecolor)
+
+**Read/Write:** Readable and Writable
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 22
+
+#### var fontSize
+
+```cangjie
+public var fontSize: ?Length
+```
+
+**Function:** The text size, in fp units.
+
+**Type:** ?[Length](./cj-common-types.md#interface-length)
 
 **Read/Write:** Readable and Writable
 
@@ -118,6 +134,22 @@ public var badgeSize: ?Length
 **Function:** The size of the badge, in vp units.
 
 **Type:** ?[Length](./cj-common-types.md#interface-length)
+
+**Read/Write:** Readable and Writable
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 22
+
+#### var badgeColor
+
+```cangjie
+public var badgeColor: ?ResourceColor
+```
+
+**Function:** The color of the badge.
+
+**Type:** ?[ResourceColor](./cj-common-types.md#interface-resourcecolor)
 
 **Read/Write:** Readable and Writable
 
@@ -148,38 +180,6 @@ public var borderWidth: ?Length
 ```
 
 **Function:** The border width of the base plate.
-
-**Type:** ?[Length](./cj-common-types.md#interface-length)
-
-**Read/Write:** Readable and Writable
-
-**System Capability:** SystemCapability.ArkUI.ArkUI.Full
-
-**Since:** 22
-
-#### var color
-
-```cangjie
-public var color: ?ResourceColor
-```
-
-**Function:** The text color.
-
-**Type:** ?[ResourceColor](./cj-common-types.md#interface-resourcecolor)
-
-**Read/Write:** Readable and Writable
-
-**System Capability:** SystemCapability.ArkUI.ArkUI.Full
-
-**Since:** 22
-
-#### var fontSize
-
-```cangjie
-public var fontSize: ?Length
-```
-
-**Function:** The text size, in fp units.
 
 **Type:** ?[Length](./cj-common-types.md#interface-length)
 

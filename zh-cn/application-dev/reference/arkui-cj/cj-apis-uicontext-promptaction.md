@@ -64,7 +64,7 @@ public func openCustomDialog(options: CustomDialogOptions, callBack: (Int32) -> 
 ### func showActionMenu(ActionMenuOptions, ShowActionMenuCallBack)
 
 ```cangjie
-public func showActionMenu(option: ActionMenuOptions, callback!: ShowActionMenuCallBack = DEFAULT_CALLBACK)
+public func showActionMenu(option: ActionMenuOptions, callback!: ShowActionMenuCallBack = defaultCallback)
 ```
 
 **功能：** 在给定设置中显示操作菜单。此API使用异步回调返回结果。
@@ -78,7 +78,7 @@ public func showActionMenu(option: ActionMenuOptions, callback!: ShowActionMenuC
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |option|[ActionMenuOptions](#class-actionmenuoptions)|是|-| 操作菜单选项。|
-|callback|[ShowActionMenuCallBack](#type-showactionmenucallback)|否|DEFAULT_CALLBACK| **命名参数。** 用于返回操作菜单响应结果的回调。DEFAULT_CALLBACK表示{_: Option\<BusinessException>, _: Option\<Int32> =>}|
+|callback|[ShowActionMenuCallBack](#type-showactionmenucallback)|否|defaultCallback| **命名参数。** 用于返回操作菜单响应结果的回调。defaultCallback表示{_: Option\<BusinessException>, _: Option\<Int32> =>}|
 
 **异常：**
 
@@ -91,7 +91,7 @@ public func showActionMenu(option: ActionMenuOptions, callback!: ShowActionMenuC
 ### func showDialog(ShowDialogOptions, ShowDialogCallBack)
 
 ```cangjie
-public func showDialog(option: ShowDialogOptions, callback!: ShowDialogCallBack = DEFAULT_CALLBACK)
+public func showDialog(option: ShowDialogOptions, callback!: ShowDialogCallBack = defaultCallback)
 ```
 
 **功能：** 在给定设置中显示对话框。此API使用异步回调返回结果。
@@ -105,7 +105,7 @@ public func showDialog(option: ShowDialogOptions, callback!: ShowDialogCallBack 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |option|[ShowDialogOptions](#class-showdialogoptions)|是|-| 对话框选项。|
-|callback|[ShowDialogCallBack](#type-showdialogcallback)|否|DEFAULT_CALLBACK|**命名参数。** 用于返回对话框响应结果的回调。DEFAULT_CALLBACK表示{_: Option\<BusinessException>, _: Option\<Int32> =>}|
+|callback|[ShowDialogCallBack](#type-showdialogcallback)|否|defaultCallback|**命名参数。** 用于返回对话框响应结果的回调。defaultCallback表示{_: Option\<BusinessException>, _: Option\<Int32> =>}|
 
 **异常：**
 

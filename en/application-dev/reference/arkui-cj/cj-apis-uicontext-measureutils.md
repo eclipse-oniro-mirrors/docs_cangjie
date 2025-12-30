@@ -154,9 +154,9 @@ public init(
 
 ```cangjie
 public class SizeOptions {
-    public var height: Length = 0
     public var width: Length = 0
-    public init(Length = 0, Length = 0)
+    public var height: Length = 0
+    public init(width!: Length = 0, height!: Length = 0)
 }
 ```
 

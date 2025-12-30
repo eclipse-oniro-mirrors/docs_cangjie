@@ -11,7 +11,7 @@ import kit.ArkUI.*
 ## func overlay(?String, ?Alignment, ?OverlayOffset)
 
 ```cangjie
-public func overlay(value!: ?String, align!: ?Alignment,
+func overlay(value!: ?String, align!: ?Alignment,
     offset!: ?OverlayOffset): T
 ```
 

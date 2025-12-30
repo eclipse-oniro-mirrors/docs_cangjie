@@ -798,14 +798,30 @@ func getCutoutInfoExample() {
 
 ```cangjie
 public class FoldCreaseRegion {
-    public let creaseRects: Array<Rect>
     public let displayId: UInt32
+    public let creaseRects: Array<Rect>
     public init(
         displayId!: UInt32,
         creaseRects!: Array<Rect>
     )
 }
 ```
+
+### let displayId
+
+```cangjie
+public let displayId: UInt32
+```
+
+**功能：** 显示ID，用于标识crease所在的屏幕。
+
+**类型：** UInt32
+
+**读写能力：** 只读
+
+**系统能力：** SystemCapability.Window.SessionManager
+
+**起始版本：** 22
 
 **功能：** 折叠 crease 区域。
 
@@ -822,22 +838,6 @@ public let creaseRects: Array<Rect>
 **功能：** crease 区域。
 
 **类型：** Array\<[Rect](#class-rect)>
-
-**读写能力：** 只读
-
-**系统能力：** SystemCapability.Window.SessionManager
-
-**起始版本：** 22
-
-### let displayId
-
-```cangjie
-public let displayId: UInt32
-```
-
-**功能：** 显示ID，用于标识crease所在的屏幕。
-
-**类型：** UInt32
 
 **读写能力：** 只读
 

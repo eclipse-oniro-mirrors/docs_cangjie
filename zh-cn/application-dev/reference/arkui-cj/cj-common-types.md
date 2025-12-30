@@ -59,7 +59,7 @@ prop size: Int64
 ### operator func [](Int64, T)
 
 ```cangjie
-public operator func [](idx: Int64, value!: T): Unit
+operator func [](idx: Int64, value!: T): Unit
 ```
 
 **功能：** 设置指定索引位置的元素值。
@@ -78,7 +78,7 @@ public operator func [](idx: Int64, value!: T): Unit
 ### operator func [](Int64)
 
 ```cangjie
-public operator func [](idx: Int64): T
+operator func [](idx: Int64): T
 ```
 
 **功能：** 获取指定索引位置的元素值。
@@ -1007,12 +1007,12 @@ public func get<T>(key: String): ?T
 
 ```cangjie
 public class KeyEvent {
-    public var keyText: String
     public var keyType: KeyType
     public var keyCode: Int32
+    public var keyText: String
     public var keySource: KeySource
-    public var metaKey: Int32
     public var deviceId: Int64
+    public var metaKey: Int32
     public var timestamp: Int64
     public init(keyText: String, keyType: KeyType, keyCode: Int32, keySource: KeySource, metaKey: Int32,
         deviceId: Int64, timestamp: Int64)
@@ -1316,7 +1316,7 @@ public init(touchType: TouchType, id: Int32, screenX: Float64, screenY: Float64,
 ## class BaseEvent
 
 ```cangjie
-sealed abstract class BaseEvent {
+abstract sealed class BaseEvent {
     public var target: ?EventTarget
     public var timestamp: Int64
     public var source: ?SourceType
@@ -1398,12 +1398,12 @@ public var deviceId: ?Int64
 
 ```cangjie
 public class ClickEvent <: BaseEvent {
-    public var x: Float64
-    public var y: Float64
-    public var windowX: Float64
-    public var windowY: Float64
     public var displayX: Float64
     public var displayY: Float64
+    public var windowX: Float64
+    public var windowY: Float64
+    public var x: Float64
+    public var y: Float64
 }
 ```
 
@@ -1602,11 +1602,11 @@ public init(pixelMap: ?PixelMap, builder: ?CustomBuilder, extraInfo: ?String)
 
 ```cangjie
 public class MouseEvent <: BaseEvent {
+    public var button: MouseButton
     public var screenX: Float64
     public var screenY: Float64
     public var x: Float64
     public var y: Float64
-    public var button: MouseButton
     public var action: MouseAction
     public init(timestamp: Int64, screenX: Float64, screenY: Float64, x: Float64, y: Float64, button: MouseButton, action: MouseAction)
 }
@@ -1621,22 +1621,6 @@ public class MouseEvent <: BaseEvent {
 **父类型：**
 
 - [BaseEvent](#class-baseevent)
-
-### var action
-
-```cangjie
-public var action: MouseAction
-```
-
-**功能：** 事件动作。
-
-**类型：** [MouseAction](./cj-common-types.md#enum-mouseaction)
-
-**读写能力：** 可读写
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**起始版本：** 22
 
 ### var button
 
@@ -1711,6 +1695,22 @@ public var y: Float64
 **功能：** 点击触点相对于当前组件左上角的y轴坐标。
 
 **类型：** Float64
+
+**读写能力：** 可读写
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
+
+### var action
+
+```cangjie
+public var action: MouseAction
+```
+
+**功能：** 事件动作。
+
+**类型：** [MouseAction](./cj-common-types.md#enum-mouseaction)
 
 **读写能力：** 可读写
 
@@ -3983,15 +3983,15 @@ public init(value: Bool)
 ```cangjie
 public class PopupOptions {
     public var message: ?String
+    public var placement: ?Placement
     public var primaryButton: ?PopupButton
     public var secondaryButton: ?PopupButton
     public var onStateChange: ?(PopupStateChangeParam) -> Unit
-    public var messageOptions: ?PopupMessageOptions
     public var arrowOffset: ?Length
     public var showInSubWindow: ?Bool
     public var mask: ?ResourceColor
+    public var messageOptions: ?PopupMessageOptions
     public var targetSpace: ?Length
-    public var placement: ?Placement
     public var offset: ?Position
     public var enableArrow: ?Bool
     public var popupColor: ?ResourceColor
@@ -4057,6 +4057,22 @@ public var message: ?String
 
 **起始版本：** 22
 
+### var placement
+
+```cangjie
+public var placement: ?Placement
+```
+
+**功能：** 设置popup组件相对于目标的显示位置，默认值为Placement.Bottom。如果同时设置了placementOnTop和placement，则以placement的设置生效。
+
+**类型：** ?[Placement](#enum-placement)
+
+**读写能力：** 可读写
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
+
 ### var primaryButton
 
 ```cangjie
@@ -4098,22 +4114,6 @@ public var onStateChange: ?(PopupStateChangeParam) -> Unit
 **功能：** 设置弹窗状态变化事件回调，参数为弹窗当前的显示状态。
 
 **类型：** ?([PopupStateChangeParam](#class-popupstatechangeparam)) -> Unit
-
-**读写能力：** 可读写
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**起始版本：** 22
-
-### var messageOptions
-
-```cangjie
-public var messageOptions: ?PopupMessageOptions
-```
-
-**功能：** 设置弹窗信息文本参数。
-
-**类型：** ?[PopupMessageOptions](#class-popupmessageoptions)
 
 **读写能力：** 可读写
 
@@ -4169,6 +4169,22 @@ public var mask: ?ResourceColor
 
 **起始版本：** 22
 
+### var messageOptions
+
+```cangjie
+public var messageOptions: ?PopupMessageOptions
+```
+
+**功能：** 设置弹窗信息文本参数。
+
+**类型：** ?[PopupMessageOptions](#class-popupmessageoptions)
+
+**读写能力：** 可读写
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
+
 ### var targetSpace
 
 ```cangjie
@@ -4178,22 +4194,6 @@ public var targetSpace: ?Length
 **功能：** 设置popup与目标的间隙。
 
 **类型：** ?[Length](./cj-common-types.md#interface-length)
-
-**读写能力：** 可读写
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**起始版本：** 22
-
-### var placement
-
-```cangjie
-public var placement: ?Placement
-```
-
-**功能：** 设置popup组件相对于目标的显示位置，默认值为Placement.Bottom。如果同时设置了placementOnTop和placement，则以placement的设置生效。
-
-**类型：** ?[Placement](#enum-placement)
 
 **读写能力：** 可读写
 
@@ -20792,10 +20792,6 @@ public type Callback<T, V> = (T) -> V
 
 **功能：** Callback\<T, V>是(T) -> V类型的别名。
 
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**起始版本：** 22
-
 **类型：** (T) -> V
 
 ## type CustomBuilder
@@ -20826,10 +20822,6 @@ public type ItemGeneratorFunc<T> = (T, Int64) -> Unit
 
 **功能：** 定义Item生成器函数。
 
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**起始版本：** 22
-
 **类型：** (T, Int64) -> Unit
 
 ## type KeyGeneratorFunc\<T>
@@ -20839,9 +20831,5 @@ public type KeyGeneratorFunc<T> = (T, Int64) -> String
 ```
 
 **功能：** 定义键生成器函数。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**起始版本：** 22
 
 **类型：** (T, Int64) -> String

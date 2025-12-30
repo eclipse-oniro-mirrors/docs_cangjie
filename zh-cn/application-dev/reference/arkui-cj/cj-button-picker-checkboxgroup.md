@@ -104,8 +104,8 @@ public func onChange(callback: ?OnCheckboxGroupChangeCallback): This
 
 ```cangjie
 public class CheckboxGroupResult {
-    public var status: SelectStatus
     public var name: Array<String>
+    public var status: SelectStatus
     public init(
         status: SelectStatus,
         name: Array<String>

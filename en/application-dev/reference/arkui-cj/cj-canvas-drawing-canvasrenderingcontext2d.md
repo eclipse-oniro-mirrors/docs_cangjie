@@ -1126,7 +1126,7 @@ public func setTransform(
 ### func setTransform(?Matrix2D)
 
 ```cangjie
-public func setTransform(matrix: ?Matrix2D): Unit
+public func setTransform(matrix: Option<Matrix2D>): Unit
 ```
 
 **Function:** Resets the existing transformation matrix and creates a new one using a Matrix2D object as a template.
@@ -1139,7 +1139,7 @@ public func setTransform(matrix: ?Matrix2D): Unit
 
 | Parameter | Type      | Mandatory | Default | Description |
 |:----------|:----------|:----------|:--------|:------------|
-| matrix    | ?Matrix2D | No        | -       | The transformation matrix. |
+| matrix    | ?[Matrix2D](cj-canvas-drawing-matrix2d.md#class-Matrix2D) | No        | -       | The transformation matrix. |
 
 ### func translate(Float64, Float64)
 

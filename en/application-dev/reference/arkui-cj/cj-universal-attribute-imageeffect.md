@@ -61,7 +61,7 @@ func colorBlend(value: ?ResourceColor): T
 ## func backdropBlur(?Float64)
 
 ```cangjie
-public func backdropBlur(value: ?Float64): T
+func backdropBlur(value: ?Float64): T
 ```
 
 **Function:** Adds a background blur effect to the component, allowing customization of the blur radius.

@@ -18,7 +18,7 @@ import kit.ArkUI.*
 ## func bindContextMenu(?CustomBuilder, ?ResponseType, ?ContextMenuOptions)
 
 ```cangjie
-public func bindContextMenu(builder!: ?CustomBuilder, responseType!: ?ResponseType,
+func bindContextMenu(builder!: ?CustomBuilder, responseType!: ?ResponseType,
     options!: ?ContextMenuOptions): T
 ```
 
@@ -32,7 +32,7 @@ public func bindContextMenu(builder!: ?CustomBuilder, responseType!: ?ResponseTy
 
 | Parameter Name | Type | Required | Default Value | Description |
 | :--- | :--- | :--- | :--- | :--- |
-| builder | ?[CustomBuilder](./cj-common-types.md#type-custombuilder) | Yes | \- | **Named parameter.** Custom builder.<br>Initial value: { => }. |
+| builder | ?[CustomBuilder](./cj-common-types.md#type-custombuilder) | Yes | - | **Named parameter.** Custom builder.<br>Initial value: { => }. |
 | responseType | ?[ResponseType](./cj-common-types.md#enum-responsetype) | Yes | - | **Named parameter.** Response type.<br>Initial value: ResponseType.LongPress. |
 | options | ?[ContextMenuOptions](./cj-common-types.md#class-contextmenuoptions) | Yes | - | **Named parameter.** Context menu options.<br>Initial value: ContextMenuOptions(). |
 
@@ -45,7 +45,7 @@ public func bindContextMenu(builder!: ?CustomBuilder, responseType!: ?ResponseTy
 ## func bindMenu(?Array\<MenuElement>)
 
 ```cangjie
-public func bindMenu(content: ?Array<MenuElement>): T
+func bindMenu(content: ?Array<MenuElement>): T
 ```
 
 **Function:** Binds a menu to a component.
@@ -58,7 +58,7 @@ public func bindMenu(content: ?Array<MenuElement>): T
 
 | Parameter Name | Type | Required | Default Value | Description |
 | :--- | :--- | :--- | :--- | :--- |
-| content | ?Array\<[MenuElement](./cj-common-types.md#class-menuelement)> | Yes | \- | **Named parameter.** Array of menu elements. |
+| content | ?Array\<[MenuElement](./cj-common-types.md#class-menuelement)> | Yes | - | **Named parameter.** Array of menu elements. |
 
 **Return Value:**
 
@@ -69,7 +69,7 @@ public func bindMenu(content: ?Array<MenuElement>): T
 ## func bindMenu(?CustomBuilder)
 
 ```cangjie
-public func bindMenu(builder!: ?CustomBuilder): T
+func bindMenu(builder!: ?CustomBuilder): T
 ```
 
 **Function:** Binds a custom menu to a component.
@@ -82,7 +82,7 @@ public func bindMenu(builder!: ?CustomBuilder): T
 
 | Parameter Name | Type | Required | Default Value | Description |
 | :--- | :--- | :--- | :--- | :--- |
-| builder | ?[CustomBuilder](./cj-common-types.md#type-custombuilder) | Yes | \- | **Named parameter.** Custom builder.<br>Initial value: { => }. |
+| builder | ?[CustomBuilder](./cj-common-types.md#type-custombuilder) | Yes | - | **Named parameter.** Custom builder.<br>Initial value: { => }. |
 
 **Return Value:**
 

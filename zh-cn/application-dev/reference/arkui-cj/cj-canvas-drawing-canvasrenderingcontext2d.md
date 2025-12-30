@@ -641,7 +641,7 @@ public func fillText(text: String, x: Float64, y: Float64, maxWidth!: Option<Flo
 |text|String|是|-|需要绘制的文本内容。|
 |x|Float64|是|-|需要绘制的文本的左下角x坐标。<br>默认单位：vp。|
 |y|Float64|是|-|需要绘制的文本的左下角y坐标。<br>默认单位：vp。|
-|maxWidth|?Float64|否|Option.None|**命名参数。** 指定文本允许的最大宽度。<br>默认单位：vp。<br>初始值：不限制宽度。|
+|maxWidth|Option\<Float64>|否|Option.None|**命名参数。** 指定文本允许的最大宽度。<br>默认单位：vp。<br>初始值：不限制宽度。|
 
 ### func strokeText(String, Float64, Float64, Option\<Float64>)
 
@@ -662,7 +662,7 @@ public func strokeText(text: String, x: Float64, y: Float64, maxWidth!: Option<F
 |text|String|是|-|需要绘制的文本内容。|
 |x|Float64|是|-|需要绘制的文本的左下角x坐标。<br>默认单位：vp。|
 |y|Float64|是|-|需要绘制的文本的左下角y坐标。<br>默认单位：vp。|
-|maxWidth|?Float64|否|Option.None|**命名参数。** 需要绘制的文本的最大宽度。<br>默认单位：vp。|
+|maxWidth|Option\<Float64>|否|Option.None|**命名参数。** 需要绘制的文本的最大宽度。<br>默认单位：vp。|
 
 ### func measureText(?String)
 
@@ -1143,7 +1143,7 @@ public func setTransform(matrix: Option<Matrix2D>): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|matrix|?Matrix2D|是|-|变换矩阵。|
+|matrix|Option\<[Matrix2D](cj-canvas-drawing-matrix2d.md#class-Matrix2D)>|是|-|变换矩阵。|
 
 ### func translate(Float64, Float64)
 

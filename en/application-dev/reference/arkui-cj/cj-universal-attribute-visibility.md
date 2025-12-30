@@ -11,7 +11,7 @@ import kit.ArkUI.*
 ## func visibility(?Visibility)
 
 ```cangjie
-public func visibility(value: ?Visibility): T
+func visibility(value: ?Visibility): T
 ```
 
 **Function:** Sets the visibility of a component.

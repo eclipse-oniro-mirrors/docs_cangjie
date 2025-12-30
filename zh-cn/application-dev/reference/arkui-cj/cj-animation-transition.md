@@ -461,7 +461,12 @@ public init(angle: ?Float32, x!: ?Float32 = None, y!: ?Float32 = None, z!: ?Floa
 ## class TransitionEffect
 
 ```cangjie
-public class TransitionEffect {}
+public class TransitionEffect {
+    public static let IDENTITY: TransitionEffect
+    public static let OPACITY: TransitionEffect
+    public static let SLIDE: TransitionEffect
+    public static let SLIDE_SWITCH: TransitionEffect
+}
 ```
 
 **功能：** 以函数形式指定转场效果类型。

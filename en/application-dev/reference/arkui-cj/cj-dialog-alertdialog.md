@@ -22,7 +22,7 @@ public open class AlertDialogButtonBaseOptions {
     public init(
         enabled!: ?Bool = None,
         defaultFocus!: ?Bool = None,
-        style!: ?DialogButtonStyle = Option.None,
+        style!: ?DialogButtonStyle = None,
         value!: ?ResourceStr,
         fontColor!: ?ResourceColor = None,
         backgroundColor!: ?ResourceColor = None,
@@ -189,7 +189,7 @@ public class AlertDialogButtonOptions <: AlertDialogButtonBaseOptions {
     public init(
         enabled!: ?Bool = None,
         defaultFocus!: ?Bool = None,
-        style!: ?DialogButtonStyle = Option.None,
+        style!: ?DialogButtonStyle = None,
         value!: ?ResourceStr,
         fontColor!: ?ResourceColor = None,
         backgroundColor!: ?ResourceColor = None,
@@ -299,7 +299,7 @@ public open class AlertDialogParam {
         showInSubWindow!: ?Bool = None,
         isModal!: ?Bool = None,
         backgroundColor!: ?ResourceColor = None,
-        backgroundBlurStyle!: ?BlurStyle = Option.None,
+        backgroundBlurStyle!: ?BlurStyle = None,
         onWillDismiss!: ?Callback<DismissDialogAction, Unit> = None,
         transition!: ?TransitionEffect = None,
         cornerRadius!: ?BorderRadiuses = None,
@@ -702,7 +702,7 @@ public init(
     showInSubWindow!: ?Bool = None,
     isModal!: ?Bool = None,
     backgroundColor!: ?ResourceColor = None,
-    backgroundBlurStyle!: ?BlurStyle = Option.None,
+    backgroundBlurStyle!: ?BlurStyle = None,
     onWillDismiss!: ?Callback<DismissDialogAction, Unit> = None,
     transition!: ?TransitionEffect = None,
     cornerRadius!: ?BorderRadiuses = None,
@@ -738,7 +738,7 @@ public init(
 | showInSubWindow | ?Bool | No | None | **Named parameter.** Whether to display this popup in a sub-window when it needs to be displayed outside the main window. Initial value: false, the popup is displayed within the application, not in an independent sub-window. **Note:** A popup with showInSubWindow set to true cannot trigger another popup with showInSubWindow set to true. |
 | isModal | ?Bool | No | None | **Named parameter.** Whether the popup is a modal window. Modal windows have a mask layer, while non-modal windows do not. Initial value: true, meaning the popup has a mask layer. |
 | backgroundColor | ?[ResourceColor](./cj-common-types.md#interface-resourcecolor) | No | None | **Named parameter.** The background color of the popup. **Note:** When backgroundColor is set to a non-transparent color, backgroundBlurStyle should be set to BlurStyle.NONE; otherwise, the color display may not meet expectations. Initial value: Color.Transparent |
-| backgroundBlurStyle | ?[BlurStyle](./cj-common-types.md#enum-blurstyle) | No | Option.None | **Named parameter.** The blur material of the popup backdrop. **Note:** Set to BlurStyle.NONE to disable background blur. When backgroundBlurStyle is set to a non-NONE value, do not set backgroundColor; otherwise, the color display may not meet expectations. Initial value: BlurStyle.ComponentUltraThick |
+| backgroundBlurStyle | ?[BlurStyle](./cj-common-types.md#enum-blurstyle) | No | None | **Named parameter.** The blur material of the popup backdrop. **Note:** Set to BlurStyle.NONE to disable background blur. When backgroundBlurStyle is set to a non-NONE value, do not set backgroundColor; otherwise, the color display may not meet expectations. Initial value: BlurStyle.ComponentUltraThick |
 | onWillDismiss | ?[Callback](./cj-common-types.md#type-callbackt-v)\<[DismissDialogAction](./cj-dialog-actionsheet.md#class-dismissdialogaction), Unit> | No | None | **Named parameter.** Interactive close callback function. **Note:** 1. When the user performs actions like clicking the mask layer to close, swiping left/right, pressing the back button, or pressing ESC to close, if this callback is registered, the popup will not close immediately. The callback can determine whether to close the popup based on the reason obtained. Currently, the reason returned by this component does not support the CLOSE_BUTTON enum value. 2. Within the onWillDismiss callback, another onWillDismiss interception cannot be performed. |
 | transition | ?[TransitionEffect](./cj-animation-transition.md#class-transitioneffect) | No | None | **Named parameter.** Sets the transition effect for popup display and exit. **Note:** 1. If not set, the default display/exit animation is used. 2. Pressing the back key during the display animation interrupts the display animation and executes the exit animation, with the effect being a combination of the display and exit animation curves. 3. Pressing the back key during the exit animation does not interrupt the exit animation; the exit animation continues, and pressing the back key again exits the application. |
 | cornerRadius | ?[BorderRadiuses](./cj-common-types.md#class-borderradiuses) | No | None | **Named parameter.** Sets the corner radius of the backdrop. The radius of each of the four corners can be set separately. The corner radius is limited by the component size, with the maximum value being half of the component's width or height. Negative values are treated as default values. Percentage parameter: Sets the corner radius as a percentage of the parent popup's width and height. **Note:** When the cornerRadius property type is LocalizedBorderRadiuses, it supports changing the layout order according to language habits. Initial value: BorderRadiuses(topLeft: 32.vp, topRight: 32.vp, bottomLeft: 32.vp, bottomRight: 32.vp) |
@@ -769,7 +769,7 @@ public class AlertDialogParamWithButtons <: AlertDialogParam {
         showInSubWindow!: ?Bool = None,
         isModal!: ?Bool = None,
         backgroundColor!: ?ResourceColor = None,
-        backgroundBlurStyle!: ?BlurStyle = Option.None,
+        backgroundBlurStyle!: ?BlurStyle = None,
         onWillDismiss!: ?Callback<DismissDialogAction, Unit> = None,
         cornerRadius!: ?BorderRadiuses = None,
         transition!: ?TransitionEffect = None,
@@ -830,7 +830,7 @@ public class AlertDialogParamWithConfirm <: AlertDialogParam {
         showInSubWindow!: ?Bool = None,
         isModal!: ?Bool = None,
         backgroundColor!: ?ResourceColor = None,
-        backgroundBlurStyle!: ?BlurStyle = Option.None,
+        backgroundBlurStyle!: ?BlurStyle = None,
         onWillDismiss!: ?Callback<DismissDialogAction, Unit> = None,
         cornerRadius!: ?BorderRadiuses = None,
         transition!: ?TransitionEffect = None,
@@ -888,7 +888,7 @@ public init(
     showInSubWindow!: ?Bool = None,
     isModal!: ?Bool = None,
     backgroundColor!: ?ResourceColor = None,
-    backgroundBlurStyle!: ?BlurStyle = Option.None,
+    backgroundBlurStyle!: ?BlurStyle = None,
     onWillDismiss!: ?Callback<DismissDialogAction, Unit> = None,
     cornerRadius!: ?BorderRadiuses = None,
     transition!: ?TransitionEffect = None,
@@ -925,7 +925,7 @@ public init(
 | showInSubWindow | ?Bool | No | None | **Named parameter.** Whether to display the dialog in a sub-window when it needs to appear outside the main window. Initial value: false, meaning the dialog is displayed within the application rather than in an independent sub-window. **Note:** A dialog with showInSubWindow=true cannot trigger another dialog with showInSubWindow=true. |
 | isModal | ?Bool | No | None | **Named parameter.** Whether the dialog is a modal window. Modal windows have a mask layer, while non-modal windows do not. Initial value: true, meaning the dialog has a mask layer. |
 | backgroundColor | ?[ResourceColor](./cj-common-types.md#interface-resourcecolor) | No | None | **Named parameter.** Background color of the dialog. **Note:** When backgroundColor is set to a non-transparent color, backgroundBlurStyle should be set to BlurStyle.NONE; otherwise, the color display may not meet expectations. Initial value: Color.Transparent |
-| backgroundBlurStyle | ?[BlurStyle](./cj-common-types.md#enum-blurstyle) | No | Option.None | **Named parameter.** Blur material of the dialog background. **Note:** Set to BlurStyle.NONE to disable background blur. When backgroundBlurStyle is set to a non-NONE value, do not set backgroundColor; otherwise, the color display may not meet expectations. Initial value: BlurStyle.ComponentUltraThick |
+| backgroundBlurStyle | ?[BlurStyle](./cj-common-types.md#enum-blurstyle) | No | None | **Named parameter.** Blur material of the dialog background. **Note:** Set to BlurStyle.NONE to disable background blur. When backgroundBlurStyle is set to a non-NONE value, do not set backgroundColor; otherwise, the color display may not meet expectations. Initial value: BlurStyle.ComponentUltraThick |
 | onWillDismiss | ?[Callback](./cj-common-types.md#type-callbackt-v)\<[DismissDialogAction](./cj-dialog-actionsheet.md#class-dismissdialogaction), Unit> | No | None | **Named parameter.** Interactive close callback function. **Note:** 1. When users perform actions like clicking the mask layer to close, swiping left/right, pressing the back button, or pressing ESC to close, if this callback is registered, the dialog will not close immediately. The callback can determine whether to close the dialog based on the operation type obtained from reason. The current component does not support the CLOSE_BUTTON enum value in reason. 2. Do not perform onWillDismiss interception within the onWillDismiss callback. |
 | cornerRadius | ?[BorderRadiuses](./cj-common-types.md#class-borderradiuses) | No | None | **Named parameter.** Sets the corner radius of the background. The radius of each corner can be set separately. The maximum corner radius is limited by the component size (half of the component width or height). Negative values are treated as default values. Percentage parameter: Sets the corner radius as a percentage of the parent dialog's width and height. **Note:** When cornerRadius is of type LocalizedBorderRadiuses, it supports layout order changes based on language habits. Initial value: BorderRadiuses(topLeft: 32.vp, topRight: 32.vp, bottomLeft: 32.vp, bottomRight: 32.vp) |
 | transition | ?[TransitionEffect](./cj-animation-transition.md#class-transitioneffect) | No | None | **Named parameter.** Sets the transition effect for dialog display and exit. **Note:** 1. If not set, the default show/exit animation is used. 2. Pressing the back button during the show animation interrupts the show animation and executes the exit animation, resulting in a combined effect of both animations. 3. Pressing the back button during the exit animation does not interrupt it; the exit animation continues, and pressing back again exits the application. |
@@ -957,7 +957,7 @@ public class AlertDialogParamWithOptions <: AlertDialogParam {
         showInSubWindow!: ?Bool = None,
         isModal!: ?Bool = None,
         backgroundColor!: ?ResourceColor = None,
-        backgroundBlurStyle!: ?BlurStyle = Option.None,
+        backgroundBlurStyle!: ?BlurStyle = None,
         onWillDismiss!: ?Callback<DismissDialogAction, Unit> = None,
         cornerRadius!: ?BorderRadiuses = None,
         transition!: ?TransitionEffect = None,
@@ -1032,7 +1032,7 @@ public init(
     showInSubWindow!: ?Bool = None,
     isModal!: ?Bool = None,
     backgroundColor!: ?ResourceColor = None,
-    backgroundBlurStyle!: ?BlurStyle = Option.None,
+    backgroundBlurStyle!: ?BlurStyle = None,
     onWillDismiss!: ?Callback<DismissDialogAction, Unit> = None,
     cornerRadius!: ?BorderRadiuses = None,
     transition!: ?TransitionEffect = None,
