@@ -54,7 +54,7 @@ public func getFontByName(fontName: String): ?FontInfo
 public func getSystemFontList(): Array<String>
 ```
 
-**功能：** 获取系统支持的字体列表。该接口仅在PC/2in1设备上生效，在其他设备上返回空数组。
+**功能：** 获取系统支持的字体列表。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
