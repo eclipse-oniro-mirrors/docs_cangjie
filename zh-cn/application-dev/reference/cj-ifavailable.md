@@ -61,17 +61,17 @@
 ```cangjie
 package ohos.sample
 
-@!APILevel[17]
+@!APILevel[since: "17"]
 public func f17() {
     println("level-17")
 }
 
-@!APILevel[18]
+@!APILevel[since: "18"]
 public func f18() {
     println("level-18")
 }
 
-@!APILevel[19]
+@!APILevel[since: "19"]
 public func f19() {
     println("level-19")
 }
@@ -114,22 +114,22 @@ func demo() {
 ```cangjie
 package ohos.sample
 
-@!APILevel[18, syscap: "SystemCapability.A"]
+@!APILevel[since: "18", syscap: "SystemCapability.A"]
 public func f1() {
     println("SystemCapability.A")
 }
 
-@!APILevel[18, syscap: "SystemCapability.B"]
+@!APILevel[since: "18", syscap: "SystemCapability.B"]
 public func f2() {
     println("SystemCapability.B")
 }
 
-@!APILevel[18, syscap: "SystemCapability.C"]
+@!APILevel[since: "18", syscap: "SystemCapability.C"]
 public func f3() {
     println("SystemCapability.C")
 }
 
-@!APILevel[18, syscap: "SystemCapability.D"]
+@!APILevel[since: "18", syscap: "SystemCapability.D"]
 public func f4() {
     println("SystemCapability.D")
 }
