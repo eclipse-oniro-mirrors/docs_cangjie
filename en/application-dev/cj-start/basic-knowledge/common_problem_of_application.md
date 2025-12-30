@@ -11,7 +11,6 @@
     ```cangjie
     import ohos.base.*
     import kit.AbilityKit.*
-    import kit.PerformanceAnalysisKit.Hilog
 
     let bundleFlags =  GET_BUNDLE_INFO_WITH_APPLICATION.getValue() | GET_BUNDLE_INFO_WITH_SIGNATURE.getValue()
     try {
@@ -56,7 +55,6 @@ Therefore, for scenarios requiring consistent appIdentifier across devices (e.g.
     ```cangjie
     import ohos.base.*
     import kit.AbilityKit.*
-    import kit.PerformanceAnalysisKit.Hilog
 
     let bundleFlags =  GET_BUNDLE_INFO_WITH_APPLICATION.getValue() | GET_BUNDLE_INFO_WITH_SIGNATURE.getValue()
     try {
