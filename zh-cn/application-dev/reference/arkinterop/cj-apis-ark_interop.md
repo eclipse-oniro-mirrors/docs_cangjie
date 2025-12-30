@@ -47,7 +47,7 @@ public interface JSInteropType<T> {
 <!--compile-->
 ```cangjie
 @Interop[ArkTS]
-class MyCustomClass {
+public class MyCustomClass {
     public let name: String   // String实现了JSInteropType<String>，所以可以在这里使用。
     public let age: Int64     // Int64实现了JSInteropType<Int64>，所以可以在这里使用。
 
@@ -229,7 +229,7 @@ public static func fromJSValue(_: JSContext, input: JSValue): Int8
 |_|[JSContext](#class-jscontext)|是|-|ArkTS 互操作上下文。|
 |input|[JSValue](#class-jsvalue)|是|-|ArkTS 统一类型。|
 
-**返回值：** Int8
+**返回值：**
 
 |类型|说明|
 |:----|:----|
@@ -2906,7 +2906,7 @@ public class JSArrayEx<T> <: JSInteropType<JSArrayEx<T>> where T <: JSInteropTyp
 
 **父类型：**
 
-- [JSInteropType\<JSArrayEx\<T>>](#interface-jsinteroptype)
+- [JSInteropType\<JSArrayEx\<T>>](#interface-jsinteroptypet)
 
 ### prop size
 
@@ -2968,7 +2968,7 @@ public static func fromJSValue(context: JSContext, input: JSValue): JSArrayEx<T>
 
 |类型|说明|
 |:----|:----|
-|[JSArrayEx](#class-jsarrayex)\<T>|声明式互操作宏类型 JSArrayEx。|
+|[JSArrayEx](#class-jsarrayext-where-t--jsinteroptypet)\<T>|声明式互操作宏类型 JSArrayEx。|
 
 **异常：**
 
@@ -3010,7 +3010,7 @@ public func clone(): JSArrayEx<T>
 
 |类型|说明|
 |:----|:----|
-|[JSArrayEx](#class-jsarrayex)\<T>|克隆得到的新 JSArrayEx。|
+|[JSArrayEx](#class-jsarrayext-where-t--jsinteroptypet)\<T>|克隆得到的新 JSArrayEx。|
 
 **异常：**
 
@@ -3053,13 +3053,13 @@ public func concat(other: JSArrayEx<T>): JSArrayEx<T>
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|other|[JSArrayEx](#class-jsarrayex)\<T>|是|-|串联到末尾的 JSArrayEx。|
+|other|[JSArrayEx](#class-jsarrayext-where-t--jsinteroptypet)\<T>|是|-|串联到末尾的 JSArrayEx。|
 
 **返回值：**
 
 |类型|说明|
 |:----|:----|
-|[JSArrayEx](#class-jsarrayex)\<T>|串联得到的新 JSArrayEx。|
+|[JSArrayEx](#class-jsarrayext-where-t--jsinteroptypet)\<T>|串联得到的新 JSArrayEx。|
 
 **异常：**
 
@@ -5798,7 +5798,7 @@ public class JSHashMapEx<K, V> <: JSInteropType<JSHashMapEx<K, V>> where K <: JS
 
 **父类型：**
 
-- [JSInteropType\<JSHashMapEx\<K,V>>](#interface-jsinteroptype)
+- [JSInteropType\<JSHashMapEx\<K,V>>](#interface-jsinteroptypet)
 
 ### prop size
 
@@ -5904,7 +5904,7 @@ public static func fromJSValue(context: JSContext, input: JSValue): JSHashMapEx<
 
 |类型|说明|
 |:----|:----|
-|[JSHashMapEx](#class-jshashmapex)\<K, V>|声明式互操作宏类型 JSHashMapEx。|
+|[JSHashMapEx](#class-jshashmapexk-v-where-k--jskeyable--hashable--equatablek--jsinteroptypek-v--jsinteroptypev)\<K, V>|声明式互操作宏类型 JSHashMapEx。|
 
 **异常：**
 
@@ -5995,7 +5995,7 @@ public func clone(): JSHashMapEx<K, V>
 
 |类型|说明|
 |:----|:----|
-|[JSHashMapEx](#class-jshashmapex)\<K, V>|克隆得到的新 JSHashMapEx。|
+|[JSHashMapEx](#class-jshashmapexk-v-where-k--jskeyable--hashable--equatablek--jsinteroptypek-v--jsinteroptypev)\<K, V>|克隆得到的新 JSHashMapEx。|
 
 **异常：**
 
@@ -6895,7 +6895,7 @@ func setObjectProperties(context: JSContext): JSValue {
 ## class JSObjectBase
 
 ```cangjie
-sealed abstract class JSObjectBase <: JSHeapObject {}
+abstract sealed class JSObjectBase <: JSHeapObject {}
 ```
 
 **功能：** 一个 ArkTS 对象的安全引用的基类。可以操作 ArkTS 对象。
@@ -7903,6 +7903,66 @@ public func toUtf16String(): Utf16String
 | 34300003   | Accessing reference is beyond reach. |
 | 34300004   | Thread mismatch.                     |
 
+### extend JSString <: JSInteropType\<JSString>
+
+**功能：** 为类型JSString实现扩展方法。
+
+**起始版本：** 22
+
+**父类型：**
+
+- [JSInteropType\<JSString>](#interface-jsinteroptypet)
+
+#### static func fromJSValue(JSContext, JSValue)
+
+```cangjie
+public static func fromJSValue(_: JSContext, input: JSValue): JSString
+```
+
+**功能：** 将JSValue类型转换为相应的JSString类型。
+
+**起始版本：** 22
+
+**参数：**
+
+| 参数名 | 类型                          | 必填 | 默认值 | 说明                |
+| :----- | :---------------------------- | :--- | :----- | :------------------ |
+| _      | [JSContext](#class-jscontext) | 是   | -      | ArkTS互操作上下文。 |
+| input  | [JSValue](#class-jsvalue)     | 是   | -      | ArkTS统一类型。     |
+
+**返回值：**
+
+| 类型                        | 说明                              |
+| :-------------------------- | :-------------------------------- |
+| [JSString](#class-jsstring) | JSValue类型转换后的JSString类型。 |
+
+**异常：**
+
+- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+
+| 错误码ID | 错误信息                             |
+| :------- | :----------------------------------- |
+| 34300002 | Outside error occurred.              |
+| 34300003 | Accessing reference is beyond reach. |
+| 34300004 | Thread mismatch.                     |
+| 34300005 | The ArkTS data types do not match.   |
+
+#### static func toArktsType()
+
+```cangjie
+public static func toArktsType(): String
+```
+
+**功能：** 获取JSString类型对应的ArkTS类型的名称。
+
+**起始版本：** 22
+
+**返回值：**
+
+| 类型   | 说明                |
+| :----- | :------------------ |
+| String | 对应的ArkTS类型的名称，即"string"。 |
+
 ## class JSStringEx
 
 ```cangjie
@@ -7917,7 +7977,7 @@ public class JSStringEx <: JSInteropType<JSStringEx> & Equatable<JSStringEx> & T
 
 **父类型：**
 
-- [JSInteropType\<JSStringEx>](#interface-jsinteroptype)
+- [JSInteropType\<JSStringEx>](#interface-jsinteroptypet)
 - Equatable\<JSStringEx>
 - ToString
 
@@ -9874,7 +9934,7 @@ public class Utf16String <: ToString & Equatable<Utf16String> & Hashable & JSKey
 - Equatable\<Utf16String>
 - Hashable
 - [JSKeyable](#interface-jskeyable)
-- [JSInteropType\<Utf16String>](#interface-jsinteroptype)
+- [JSInteropType\<Utf16String>](#interface-jsinteroptypet)
 
 ### prop accessible
 

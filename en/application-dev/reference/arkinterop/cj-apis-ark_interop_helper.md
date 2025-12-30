@@ -1,4 +1,4 @@
-# ohos.ark_interop_helper
+# ohos.ark_interop_helper (ArkTS Interoperability Common Utility Functions)
 
 Provides some common utility functions.
 
@@ -8,10 +8,10 @@ Provides some common utility functions.
 import ohos.ark_interop_helper.*
 ```
 
-## func arktsValueToNapiValue(napi_env, JSValue)
+## func arktsValuetoNapiValue(napi_env, JSValue)
 
 ```cangjie
-public func arktsValueToNapiValue(env: napi_env, ark_value: JSValue): napi_value
+public func arktsValuetoNapiValue(env: napi_env, ark_value: JSValue): napi_value
 ```
 
 **Description:** Converts a JSValue type to napi_value type.

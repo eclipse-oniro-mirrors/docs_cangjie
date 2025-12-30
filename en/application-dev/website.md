@@ -836,6 +836,7 @@
             - Error Codes
                 - [ArkTS Interoperability Library Error Codes](reference/arkinterop/cj-errorcode-ark_interop.md)
         - [ohos.ark_interop_helper (ArkTS Interoperability Common Utility Functions)](reference/arkinterop/cj-apis-ark_interop_helper.md)
+        - [ohos.ark_interop_macro (ArkTS Interoperability Macros)](reference/arkinterop/cj-apis-ark_interop_macro.md)
         - [ohos.business_exception (Common Exception Information)](reference/arkinterop/cj-api-business_exception.md)
         - [ohos.callback_invoke (Common Callback Information)](reference/arkinterop/cj-api-callback_invoke.md)
     - Basic Capabilities

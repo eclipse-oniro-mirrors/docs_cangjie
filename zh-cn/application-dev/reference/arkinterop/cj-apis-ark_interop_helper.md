@@ -8,10 +8,10 @@
 import ohos.ark_interop_helper.*
 ```
 
-## func arktsValueToNapiValue(napi_env, JSValue)
+## func arktsValuetoNapiValue(napi_env, JSValue)
 
 ```cangjie
-public func arktsValueToNapiValue(env: napi_env, ark_value: JSValue): napi_value
+public func arktsValuetoNapiValue(env: napi_env, ark_value: JSValue): napi_value
 ```
 
 **功能：** 将 JSValue 类型转化为 napi_value 类型。

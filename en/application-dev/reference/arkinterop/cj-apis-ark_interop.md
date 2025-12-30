@@ -1,4 +1,4 @@
-# ohos.ark_interop
+# ohos.ark_interop (ArkTS Interoperability Library)
 
 The development languages for ArkTS applications include ArkTS, TypeScript, and JavaScript. The ArkTS interoperation library provides interoperability capabilities between the Cangjie language and ArkTS language.
 
@@ -47,7 +47,7 @@ The following types extend this interface:
 <!--compile-->
 ```cangjie
 @Interop[ArkTS]
-class MyCustomClass {
+public class MyCustomClass {
     public let name: String   // String implements JSInteropType<String>, so it can be used here.
     public let age: Int64     // Int64 implements JSInteropType<Int64>, so it can be used here.
 
@@ -230,7 +230,7 @@ public static func fromJSValue(_: JSContext, input: JSValue): Int8
 | _ | [JSContext](#class-jscontext) | Yes | - | ArkTS interoperation context. |
 | input | [JSValue](#class-jsvalue) | Yes | - | ArkTS unified type. |
 
-**Return Value:** Int8
+**Return Value:**
 
 | Type | Description |
 |:----|:----|
@@ -2907,7 +2907,7 @@ public class JSArrayEx<T> <: JSInteropType<JSArrayEx<T>> where T <: JSInteropTyp
 
 **Parent Type:**
 
-- [JSInteropType\<JSArrayEx\<T>>](#interface-jsinteroptype)
+- [JSInteropType\<JSArrayEx\<T>>](#interface-jsinteroptypet)
 
 ### prop size
 
@@ -2969,7 +2969,7 @@ public static func fromJSValue(context: JSContext, input: JSValue): JSArrayEx<T>
 
 | Type | Description |
 |:----|:----|
-| [JSArrayEx](#class-jsarrayex)\<T> | Declarative interop macro type JSArrayEx. |
+| [JSArrayEx](#class-jsarrayext-where-t--jsinteroptypet)\<T> | Declarative interop macro type JSArrayEx. |
 
 **Exceptions:**
 
@@ -3011,7 +3011,7 @@ public func clone(): JSArrayEx<T>
 
 | Type | Description |
 |:----|:----|
-| [JSArrayEx](#class-jsarrayex)\<T> | New JSArrayEx obtained from cloning. |
+| [JSArrayEx](#class-jsarrayext-where-t--jsinteroptypet)\<T> | New JSArrayEx obtained from cloning. |
 
 **Exceptions:**
 
@@ -3054,13 +3054,13 @@ public func concat(other: JSArrayEx<T>): JSArrayEx<T>
 
 | Parameter Name | Type | Required | Default Value | Description |
 |:---|:---|:---|:---|:---|
-| other | [JSArrayEx](#class-jsarrayex)\<T> | Yes | - | JSArrayEx to concatenate at the end. |
+| other | [JSArrayEx](#class-jsarrayext-where-t--jsinteroptypet)\<T> | Yes | - | JSArrayEx to concatenate at the end. |
 
 **Return Value:**
 
 | Type | Description |
 |:----|:----|
-| [JSArrayEx](#class-jsarrayex)\<T> | New JSArrayEx obtained from concatenation. |
+| [JSArrayEx](#class-jsarrayext-where-t--jsinteroptypet)\<T> | New JSArrayEx obtained from concatenation. |
 
 **Exceptions:**
 
@@ -5799,7 +5799,7 @@ public class JSHashMapEx<K, V> <: JSInteropType<JSHashMapEx<K, V>> where K <: JS
 
 **Parent Type:**
 
-- [JSInteropType\<JSHashMapEx\<K,V>>](#interface-jsinteroptype)
+- [JSInteropType\<JSHashMapEx\<K,V>>](#interface-jsinteroptypet)
 
 ### prop size
 
@@ -5903,7 +5903,7 @@ public static func fromJSValue(context: JSContext, input: JSValue): JSHashMapEx<
 
 |Type|Description|
 |:----|:----|
-|[JSHashMapEx](#class-jshashmapex)\<K, V>|Declarative interoperability macro type JSHashMapEx.|
+|[JSHashMapEx](#class-jshashmapexk-v-where-k--jskeyable--hashable--equatablek--jsinteroptypek-v--jsinteroptypev)\<K, V>|Declarative interoperability macro type JSHashMapEx.|
 
 **Exceptions:**
 
@@ -5994,7 +5994,7 @@ public func clone(): JSHashMapEx<K, V>
 
 |Type|Description|
 |:----|:----|
-|[JSHashMapEx](#class-jshashmapex)\<K, V>|New JSHashMapEx obtained from cloning.|
+|[JSHashMapEx](#class-jshashmapexk-v-where-k--jskeyable--hashable--equatablek--jsinteroptypek-v--jsinteroptypev)\<K, V>|New JSHashMapEx obtained from cloning.|
 
 **Exceptions:**
 
@@ -6892,7 +6892,7 @@ func setObjectProperties(context: JSContext): JSValue {
 ## class JSObjectBase
 
 ```cangjie
-sealed abstract class JSObjectBase <: JSHeapObject {}
+abstract sealed class JSObjectBase <: JSHeapObject {}
 ```
 
 **Function:** The base class for safe references to ArkTS objects. Allows manipulation of ArkTS objects.
@@ -7900,6 +7900,66 @@ public func toUtf16String(): Utf16String
 | 34300003   | Accessing reference is beyond reach. |
 | 34300004   | Thread mismatch.                     |
 
+### extend JSString <: JSInteropType\<JSString>
+
+**Function:** Implements extension methods for the class type JSString.
+
+**Initial Version:** 22
+
+**Parent Types:**
+
+- [JSInteropType\<JSString>](#interface-jsinteroptypet)
+
+#### static func fromJSValue(JSContext, JSValue)
+
+```cangjie
+public static func fromJSValue(_: JSContext, input: JSValue): JSString
+```
+
+**Function:** Converts JSValue type to the corresponding JSString type.
+
+**Initial Version:** 22
+
+**Parameters:**
+
+| Parameter | Type                          | Required | Default | Description                   |
+| :-------- | :---------------------------- | :------- | :------ | :---------------------------- |
+| _         | [JSContext](#class-jscontext) | Yes      | -       | ArkTS interoperation context. |
+| input     | [JSValue](#class-jsvalue)     | Yes      | -       | ArkTS unified type.           |
+
+**Return Value:**
+
+| Type                        | Description             |
+| :-------------------------- | :---------------------- |
+| [JSString](#class-jsstring) | JSString type converted by JSValue type. |
+
+**Exceptions:**
+
+- BusinessException: Error codes as follows，see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+
+| Error Code ID | Error Message                        |
+| :------------ | :----------------------------------- |
+| 34300002      | Outside error occurred.              |
+| 34300003      | Accessing reference is beyond reach. |
+| 34300004      | Thread mismatch.                     |
+| 34300005      | The ArkTS data types do not match.   |
+
+#### static func toArktsType()
+
+```cangjie
+public static func toArktsType(): String
+```
+
+**Function:** Gets the ArkTS type name corresponding to the JSString type.
+
+**Initial Version:** 22
+
+**Return Value:**
+
+| Type   | Description                |
+| :----- | :------------------------- |
+| String | Corresponding ArkTS type name, i.e., "string" |
+
 ## class JSStringEx
 
 ```cangjie
@@ -7914,7 +7974,7 @@ public class JSStringEx <: JSInteropType<JSStringEx> & Equatable<JSStringEx> & T
 
 **Parent Types:**
 
-- [JSInteropType\<JSStringEx>](#interface-jsinteroptype)
+- [JSInteropType\<JSStringEx>](#interface-jsinteroptypet)
 - Equatable\<JSStringEx>
 - ToString
 
@@ -9879,7 +9939,7 @@ public class Utf16String <: ToString & Equatable<Utf16String> & Hashable & JSKey
 - Equatable\<Utf16String>
 - Hashable
 - [JSKeyable](#interface-jskeyable)
-- [JSInteropType\<Utf16String>](#interface-jsinteroptype)
+- [JSInteropType\<Utf16String>](#interface-jsinteroptypet)
 
 ### prop accessible
 
