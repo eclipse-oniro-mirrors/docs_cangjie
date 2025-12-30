@@ -857,6 +857,8 @@
                 - [ohos.web.webview（Webview）](reference/ArkWeb/cj-apis-webview.md)
             - 错误码
                 - [Webview错误码](reference/ArkWeb/cj-errorcode-webview.md)
+        - Cangjie（仓颉）
+            - [仓颉标准库API](reference/cj-libs-api.md)
         - Core File Kit（文件基础服务）
             - 仓颉API
                 - [ohos.file.fileuri（文件URI）](reference/CoreFileKit/cj-apis-file_fileuri.md)
@@ -1004,4 +1006,3 @@
     - 公共基础能力
         - 仓颉API
             - [SysCap（系统能力）](reference/arkui-cj/cj-apis-syscap.md)
-    - [仓颉编程语言标准库API](reference/cj-libs-api.md)
