@@ -124,7 +124,6 @@
 
 > **说明：**
 >
-> 仅2in1设备可申请。
 
 - [ohos.permission.READ_WRITE_DOWNLOAD_DIRECTORY](./cj-permissions-for-all-user.md#ohospermissionread_write_download_directory)
 - [ohos.permission.READ_WRITE_DESKTOP_DIRECTORY](./cj-restricted-permissions.md#ohospermissionread_write_desktop_directory)
@@ -134,7 +133,6 @@
 
 > **说明：**
 >
-> 仅2in1设备可申请。
 
 - [ohos.permission.READ_WRITE_DOWNLOAD_DIRECTORY](./cj-permissions-for-all-user.md#ohospermissionread_write_download_directory)
 - [ohos.permission.READ_WRITE_DOCUMENTS_DIRECTORY](./cj-permissions-for-all-user.md#ohospermissionread_write_documents_directory)

@@ -224,8 +224,6 @@
 
 允许系统应用配置防火墙规则。
 
-当前仅2in1设备应用可申请此权限。
-
 **权限级别：** system_basic
 
 **授权方式：** 系统授权（system_grant）
@@ -240,8 +238,6 @@
 ## ohos.permission.GET_NET_FIREWALL
 
 允许系统应用查询防火墙规则和查询防火墙拦截记录。
-
-当前仅2in1设备应用可申请此权限。
 
 **权限级别：** system_basic
 

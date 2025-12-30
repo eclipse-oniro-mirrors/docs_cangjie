@@ -848,7 +848,6 @@ The multi-instance is not supported.
 **处理步骤**
 
 1. 对目标应用配置多实例。
-2. 在2in1设备上调用该方法。
 
 ## 16000079 不支持指定APP_INSTANCE_KEY
 

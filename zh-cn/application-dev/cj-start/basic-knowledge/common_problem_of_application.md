@@ -11,6 +11,7 @@
     ```cangjie
     import ohos.base.*
     import kit.AbilityKit.*
+    import kit.PerformanceAnalysisKit.Hilog
 
     let bundleFlags =  BundleFlag.GET_BUNDLE_INFO_WITH_APPLICATION | BundleFlag.GET_BUNDLE_INFO_WITH_SIGNATURE
     try {
@@ -55,6 +56,7 @@ appIdentifier是<!--RP1-->[Profile签名文件](https://gitcode.com/openharmony/
     ```cangjie
     import ohos.base.*
     import kit.AbilityKit.*
+    import kit.PerformanceAnalysisKit.Hilog
 
     let bundleFlags =  BundleFlag.GET_BUNDLE_INFO_WITH_APPLICATION | BundleFlag.GET_BUNDLE_INFO_WITH_SIGNATURE
     try {

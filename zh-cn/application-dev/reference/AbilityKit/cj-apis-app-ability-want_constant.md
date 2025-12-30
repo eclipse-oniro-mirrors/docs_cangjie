@@ -49,7 +49,7 @@ public class Flags {
 public static const FLAG_AUTH_PERSISTABLE_URI_PERMISSION: UInt32 = 0x00000040
 ```
 
-**功能：** 表示该URI可被接收方持久化。该字段仅在2in1和Tablet设备上生效。
+**功能：** 表示该URI可被接收方持久化。
 
 **类型：** UInt32
 
