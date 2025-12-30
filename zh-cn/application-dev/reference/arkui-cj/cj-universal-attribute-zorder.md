@@ -11,7 +11,7 @@ import kit.ArkUI.*
 ## func zIndex(?Int32)
 
 ```cangjie
-public func zIndex(value: ?Int32): T
+func zIndex(value: ?Int32): T
 ```
 
 **功能：** 设置组件的Z轴层级。

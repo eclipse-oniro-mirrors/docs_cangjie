@@ -28,8 +28,8 @@ func bindPopup(show: ?Bool, popup: ?PopupOptions): T
 
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
-| show | ?Bool | Yes | \- | Popup display state. The popup dialog must wait for the page to fully render before displaying. Therefore, `show` cannot be set to `true` during page construction, as this may cause incorrect popup positioning or shape.<br>Initial value: `false`. |
-| popup | ?[PopupOptions](./cj-common-types.md#class-popupoptions) | Yes | \- | Parameters for configuring the current popup dialog. |
+| show | ?Bool | Yes | - | Popup display state. The popup dialog must wait for the page to fully render before displaying. Therefore, `show` cannot be set to `true` during page construction, as this may cause incorrect popup positioning or shape.<br>Initial value: `false`. |
+| popup | ?[PopupOptions](./cj-common-types.md#class-popupoptions) | Yes | - | Parameters for configuring the current popup dialog. |
 
 **Return Value:**
 
@@ -54,8 +54,8 @@ func bindPopup(show: ?Bool, popup: ?CustomPopupOptions): T
 
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
-| show | ?Bool | Yes | \- | Popup display state. The popup dialog must wait for the page to fully render before displaying. Therefore, `show` cannot be set to `true` during page construction, as this may cause incorrect popup positioning or shape.<br>Initial value: `false`. |
-| popup | ?[CustomPopupOptions](./cj-common-types.md#class-custompopupoptions) | Yes | \- | Parameters for configuring the current popup dialog. |
+| show | ?Bool | Yes | - | Popup display state. The popup dialog must wait for the page to fully render before displaying. Therefore, `show` cannot be set to `true` during page construction, as this may cause incorrect popup positioning or shape.<br>Initial value: `false`. |
+| popup | ?[CustomPopupOptions](./cj-common-types.md#class-custompopupoptions) | Yes | - | Parameters for configuring the current popup dialog. |
 
 **Return Value:**
 

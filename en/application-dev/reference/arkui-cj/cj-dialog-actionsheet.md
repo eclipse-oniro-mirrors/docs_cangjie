@@ -105,11 +105,11 @@ public init(
 
 ```cangjie
 public class ActionSheetButtonOptions {
-    public var value: ?ResourceStr
-    public var action: ?VoidCallback
     public var enabled: ?Bool
     public var defaultFocus: ?Bool
     public var style: ?DialogButtonStyle
+    public var value: ?ResourceStr
+    public var action: ?VoidCallback
     public init(
         enabled!: ?Bool = None,
         defaultFocus!: ?Bool = None,
@@ -410,7 +410,7 @@ public class ActionSheetOptions {
         showInSubWindow!: ?Bool = None,
         isModal!: ?Bool = None,
         backgroundColor!: ?ResourceColor = None,
-        backgroundBlurStyle!: ?BlurStyle = Option.None,
+        backgroundBlurStyle!: ?BlurStyle = None,
         onWillDismiss!: ?Callback<DismissDialogAction, Unit> = None,
         transition!: ?TransitionEffect = None,
         cornerRadius!: ?BorderRadiuses = None,
@@ -813,7 +813,7 @@ public init(
     showInSubWindow!: ?Bool = None,
     isModal!: ?Bool = None,
     backgroundColor!: ?ResourceColor = None,
-    backgroundBlurStyle!: ?BlurStyle = Option.None,
+    backgroundBlurStyle!: ?BlurStyle = None,
     onWillDismiss!: ?Callback<DismissDialogAction, Unit> = None,
     transition!: ?TransitionEffect = None,
     cornerRadius!: ?BorderRadiuses = None,

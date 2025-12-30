@@ -281,8 +281,8 @@ public class Configuration {
     public var name: String
     public var windowType: WindowType
     public var ctx: BaseContext
-    public var displayId: Int64
-    public var parentId: Int64
+    public var displayId: Int64 = -1
+    public var parentId: Int64 = -1
     public init(
         name!: String,
         windowType!: WindowType,
@@ -411,8 +411,8 @@ public init(
 public class Rect {
     public var left: Int32
     public var top: Int32
-    public var height: UInt32
     public var width: UInt32
+    public var height: UInt32
     public init(
         left!: Int32,
         top!: Int32,

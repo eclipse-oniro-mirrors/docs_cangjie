@@ -11,7 +11,7 @@ import kit.ArkUI.*
 ## func clip(?Bool)
 
 ```cangjie
-public func clip(value: ?Bool): T
+func clip(value: ?Bool): T
 ```
 
 **Function:** Whether to clip the areas of child components that exceed the bounds of the current component.
@@ -24,7 +24,7 @@ public func clip(value: ?Bool): T
 
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
-| value | ?Bool | Yes | \- | Whether to clip according to the parent container's edge contour. |
+| value | ?Bool | Yes | - | Whether to clip according to the parent container's edge contour. |
 
 **Return Value:**
 
@@ -49,7 +49,7 @@ func clipShape(value: ?BaseShape): T
 
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
-| value | ?[BaseShape](./cj-apis-shape.md#class-baseshape) | Yes | \- | The specified shape used to clip the current component. |
+| value | ?[BaseShape](./cj-apis-shape.md#class-baseshape) | Yes | - | The specified shape used to clip the current component. |
 
 **Return Value:**
 
@@ -61,7 +61,7 @@ func clipShape(value: ?BaseShape): T
 ## func maskShape(BaseShape)
 
 ```cangjie
-public func maskShape(value: BaseShape): T
+func maskShape(value: BaseShape): T
 ```
 
 **Function:** Adds a mask of the specified shape to the component.
@@ -74,7 +74,7 @@ public func maskShape(value: BaseShape): T
 
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
-| value | [BaseShape](./cj-apis-shape.md#class-baseshape) | Yes | \- | The specified shape used to mask the current component. |
+| value | [BaseShape](./cj-apis-shape.md#class-baseshape) | Yes | - | The specified shape used to mask the current component. |
 
 **Return Value:**
 

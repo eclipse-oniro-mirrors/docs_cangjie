@@ -11,7 +11,7 @@ import kit.ArkUI.*
 ## func opacity(?Float64)
 
 ```cangjie
-public func opacity(value: ?Float64): T
+func opacity(value: ?Float64): T
 ```
 
 **Function:** Sets the opacity of a component.

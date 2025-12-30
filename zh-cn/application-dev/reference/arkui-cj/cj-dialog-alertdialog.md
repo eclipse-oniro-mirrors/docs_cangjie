@@ -155,7 +155,7 @@ public var value: ?ResourceStr
 public init(
     enabled!: ?Bool = None,
     defaultFocus!: ?Bool = None,
-    style!: ?DialogButtonStyle = Option.None,
+    style!: ?DialogButtonStyle = None,
     value!: ?ResourceStr,
     fontColor!: ?ResourceColor = None,
     backgroundColor!: ?ResourceColor = None,
@@ -175,7 +175,7 @@ public init(
 |:---|:---|:---|:---|:---|
 |enabled|?Bool|否|None| **命名参数。** 点击Button是否响应。初始值: true |
 |defaultFocus|?Bool|否|None| **命名参数。** 设置Button是否是默认焦点。初始值: false |
-|style|?[DialogButtonStyle](./cj-common-types.md#enum-dialogbuttonstyle)|否|Option.None| **命名参数。** 设置Button的风格样式。初始值: DialogButtonStyle.Default |
+|style|?[DialogButtonStyle](./cj-common-types.md#enum-dialogbuttonstyle)|否|None| **命名参数。** 设置Button的风格样式。初始值: DialogButtonStyle.Default |
 |value|?[ResourceStr](./cj-common-types.md#interface-resourcestr)|是|-| **命名参数。** Button的文本内容。 |
 |fontColor|?[ResourceColor](./cj-common-types.md#interface-resourcecolor)|否|None| **命名参数。** Button的文本颜色。 |
 |backgroundColor|?[ResourceColor](./cj-common-types.md#interface-resourcecolor)|否|None| **命名参数。** Button背景颜色。 |
@@ -189,7 +189,7 @@ public class AlertDialogButtonOptions <: AlertDialogButtonBaseOptions {
     public init(
         enabled!: ?Bool = None,
         defaultFocus!: ?Bool = None,
-        style!: ?DialogButtonStyle = Option.None,
+        style!: ?DialogButtonStyle = None,
         value!: ?ResourceStr,
         fontColor!: ?ResourceColor = None,
         backgroundColor!: ?ResourceColor = None,
@@ -231,7 +231,7 @@ public var primary: ?Bool
 public init(
     enabled!: ?Bool = None,
     defaultFocus!: ?Bool = None,
-    style!: ?DialogButtonStyle = Option.None,
+    style!: ?DialogButtonStyle = None,
     value!: ?ResourceStr,
     fontColor!: ?ResourceColor = None,
     backgroundColor!: ?ResourceColor = None,
@@ -252,7 +252,7 @@ public init(
 |:---|:---|:---|:---|:---|
 |enabled|?Bool|否|None| **命名参数。** 点击Button是否响应。初始值: true |
 |defaultFocus|?Bool|否|None| **命名参数。** 设置Button是否是默认焦点。初始值: false |
-|style|?[DialogButtonStyle](./cj-common-types.md#enum-dialogbuttonstyle)|否|Option.None| **命名参数。** 设置Button的风格样式。初始值: DialogButtonStyle.Default |
+|style|?[DialogButtonStyle](./cj-common-types.md#enum-dialogbuttonstyle)|否|None| **命名参数。** 设置Button的风格样式。初始值: DialogButtonStyle.Default |
 |value|?[ResourceStr](./cj-common-types.md#interface-resourcestr)|是|-| **命名参数。** Button的文本内容。 |
 |fontColor|?[ResourceColor](./cj-common-types.md#interface-resourcecolor)|否|None| **命名参数。** Button的文本颜色。 |
 |backgroundColor|?[ResourceColor](./cj-common-types.md#interface-resourcecolor)|否|None| **命名参数。** Button背景颜色。 |
@@ -299,7 +299,7 @@ public open class AlertDialogParam {
         showInSubWindow!: ?Bool = None,
         isModal!: ?Bool = None,
         backgroundColor!: ?ResourceColor = None,
-        backgroundBlurStyle!: ?BlurStyle = Option.None,
+        backgroundBlurStyle!: ?BlurStyle = None,
         onWillDismiss!: ?Callback<DismissDialogAction, Unit> = None,
         transition!: ?TransitionEffect = None,
         cornerRadius!: ?BorderRadiuses = None,
@@ -704,7 +704,7 @@ public init(
     showInSubWindow!: ?Bool = None,
     isModal!: ?Bool = None,
     backgroundColor!: ?ResourceColor = None,
-    backgroundBlurStyle!: ?BlurStyle = Option.None,
+    backgroundBlurStyle!: ?BlurStyle = None,
     onWillDismiss!: ?Callback<DismissDialogAction, Unit> = None,
     transition!: ?TransitionEffect = None,
     cornerRadius!: ?BorderRadiuses = None,
@@ -740,7 +740,7 @@ public init(
 |showInSubWindow|?Bool|否|None| **命名参数。** 某弹框需要显示在主窗口之外时，是否在子窗口显示此弹窗。初始值：false，弹窗显示在应用内，而非独立子窗口。**说明**：showInSubWindow为true的弹窗无法触发显示另一个showInSubWindow为true的弹窗。 |
 |isModal|?Bool|否|None| **命名参数。** 弹窗是否为模态窗口。模态窗口有蒙层，非模态窗口无蒙层。初始值：true，此时弹窗有蒙层。 |
 |backgroundColor|?[ResourceColor](./cj-common-types.md#interface-resourcecolor)|否|None| **命名参数。** 弹窗背板颜色。**说明：** 当设置了backgroundColor为非透明色时，backgroundBlurStyle需要设置为BlurStyle.NONE，否则颜色显示将不符合预期效果。初始值: Color.Transparent |
-|backgroundBlurStyle|?[BlurStyle](./cj-common-types.md#enum-blurstyle)|否|Option.None| **命名参数。** 弹窗背板模糊材质。**说明：** 设置为BlurStyle.None即可关闭背景虚化。当设置了backgroundBlurStyle为非None值时，则不要设置backgroundColor，否则颜色显示将不符合预期效果。初始值: BlurStyle.ComponentUltraThick |
+|backgroundBlurStyle|?[BlurStyle](./cj-common-types.md#enum-blurstyle)|否|None| **命名参数。** 弹窗背板模糊材质。**说明：** 设置为BlurStyle.None即可关闭背景虚化。当设置了backgroundBlurStyle为非None值时，则不要设置backgroundColor，否则颜色显示将不符合预期效果。初始值: BlurStyle.ComponentUltraThick |
 |onWillDismiss|?[Callback](./cj-common-types.md#type-callbackt-v)\<[DismissDialogAction](./cj-dialog-actionsheet.md#class-dismissdialogaction), Unit>|否|None| **命名参数。** 交互式关闭回调函数。**说明：** 1.当用户执行点击遮障层关闭、左滑/右滑、三键back、键盘ESC关闭交互操作时，如果注册该回调函数，则不会立刻关闭弹窗。在回调函数中可以通过reason得到阻拦关闭弹窗的操作类型，从而根据原因选择是否能关闭弹窗。当前组件返回的reason中，暂不支持CLOSE_BUTTON的枚举值。2.在onWillDismiss回调中，不能再做onWillDismiss拦截。 |
 |transition|?[TransitionEffect](./cj-animation-transition.md#class-transitioneffect)|否|None| **命名参数。** 设置弹窗显示和退出的过渡效果。**说明：** 1.如果不设置，则使用默认的显示/退出动效。 2.显示动效中按back键，打断显示动效，执行退出动效，动画效果为显示动效与退出动效的曲线叠加后的效果。 3.退出动效中按back键，不会打断退出动效，退出动效继续执行，继续按back键退出应用。 |
 |cornerRadius|?[BorderRadiuses](./cj-common-types.md#class-borderradiuses)|否|None| **命名参数。** 设置背板的圆角半径。可分别设置4个圆角的半径。圆角大小受组件尺寸限制，最大值为组件宽或高的一半，若值为负，则按照默认值处理。 百分比参数方式：以父元素弹窗宽和高的百分比来设置弹窗的圆角。**说明：** 当cornerRadius属性类型为LocalizedBorderRadiuses时，支持随语言习惯改变布局顺序。初始值: BorderRadiuses(topLeft: 32.vp, topRight: 32.vp, bottomLeft: 32.vp, bottomRight: 32.vp) |
@@ -771,7 +771,7 @@ public class AlertDialogParamWithButtons <: AlertDialogParam {
         showInSubWindow!: ?Bool = None,
         isModal!: ?Bool = None,
         backgroundColor!: ?ResourceColor = None,
-        backgroundBlurStyle!: ?BlurStyle = Option.None,
+        backgroundBlurStyle!: ?BlurStyle = None,
         onWillDismiss!: ?Callback<DismissDialogAction, Unit> = None,
         cornerRadius!: ?BorderRadiuses = None,
         transition!: ?TransitionEffect = None,
@@ -846,7 +846,7 @@ public init(
     showInSubWindow!: ?Bool = None,
     isModal!: ?Bool = None,
     backgroundColor!: ?ResourceColor = None,
-    backgroundBlurStyle!: ?BlurStyle = Option.None,
+    backgroundBlurStyle!: ?BlurStyle = None,
     onWillDismiss!: ?Callback<DismissDialogAction, Unit> = None,
     cornerRadius!: ?BorderRadiuses = None,
     transition!: ?TransitionEffect = None,
@@ -884,7 +884,7 @@ public init(
 |showInSubWindow|?Bool|否|None| **命名参数。** 某弹框需要显示在主窗口之外时，是否在子窗口显示此弹窗。初始值：false，弹窗显示在应用内，而非独立子窗口。**说明**：showInSubWindow为true的弹窗无法触发显示另一个showInSubWindow为true的弹窗。|
 |isModal|?Bool|否|None| **命名参数。** 弹窗是否为模态窗口。模态窗口有蒙层，非模态窗口无蒙层。初始值：true，此时弹窗有蒙层。|
 |backgroundColor|?[ResourceColor](./cj-common-types.md#interface-resourcecolor)|否|None| **命名参数。** 弹窗背板颜色。**说明：** 当设置了backgroundColor为非透明色时，backgroundBlurStyle需要设置为BlurStyle.NONE，否则颜色显示将不符合预期效果。初始值: Color.Transparent |
-|backgroundBlurStyle|?[BlurStyle](./cj-common-types.md#enum-blurstyle)|否|Option.None| **命名参数。** 弹窗背板模糊材质。**说明：** 设置为BlurStyle.NONE即可关闭背景虚化。当设置了backgroundBlurStyle为非NONE值时，则不要设置backgroundColor，否则颜色显示将不符合预期效果。初始值: BlurStyle.ComponentUltraThick |
+|backgroundBlurStyle|?[BlurStyle](./cj-common-types.md#enum-blurstyle)|否|None| **命名参数。** 弹窗背板模糊材质。**说明：** 设置为BlurStyle.NONE即可关闭背景虚化。当设置了backgroundBlurStyle为非NONE值时，则不要设置backgroundColor，否则颜色显示将不符合预期效果。初始值: BlurStyle.ComponentUltraThick |
 |onWillDismiss|?[Callback](./cj-common-types.md#type-callbackt-v)\<[DismissDialogAction](./cj-dialog-actionsheet.md#class-dismissdialogaction), Unit>|否|None| **命名参数。** 交互式关闭回调函数。**说明：** 1.当用户执行点击遮障层关闭、左滑/右滑、三键back、键盘ESC关闭交互操作时，如果注册该回调函数，则不会立刻关闭弹窗。在回调函数中可以通过reason得到阻拦关闭弹窗的操作类型，从而根据原因选择是否能关闭弹窗。当前组件返回的reason中，暂不支持CLOSE_BUTTON的枚举值。2.在onWillDismiss回调中，不能再做onWillDismiss拦截。 |
 |cornerRadius|?[BorderRadiuses](./cj-common-types.md#class-borderradiuses)|否|None| **命名参数。** 设置背板的圆角半径。可分别设置4个圆角的半径。圆角大小受组件尺寸限制，最大值为组件宽或高的一半，若值为负，则按照默认值处理。 百分比参数方式：以父元素弹窗宽和高的百分比来设置弹窗的圆角。**说明：** 当cornerRadius属性类型为LocalizedBorderRadiuses时，支持随语言习惯改变布局顺序。初始值: BorderRadiuses(topLeft: 32.vp, topRight: 32.vp, bottomLeft: 32.vp, bottomRight: 32.vp) |
 |transition|?[TransitionEffect](./cj-animation-transition.md#class-transitioneffect)|否|None| **命名参数。** 设置弹窗显示和退出的过渡效果。**说明：** 1.如果不设置，则使用默认的显示/退出动效。 2.显示动效中按back键，打断显示动效，执行退出动效，动画效果为显示动效与退出动效的曲线叠加后的效果。 3.退出动效中按back键，不会打断退出动效，退出动效继续执行，继续按back键退出应用。 |
@@ -916,7 +916,7 @@ public class AlertDialogParamWithConfirm <: AlertDialogParam {
         showInSubWindow!: ?Bool = None,
         isModal!: ?Bool = None,
         backgroundColor!: ?ResourceColor = None,
-        backgroundBlurStyle!: ?BlurStyle = Option.None,
+        backgroundBlurStyle!: ?BlurStyle = None,
         onWillDismiss!: ?Callback<DismissDialogAction, Unit> = None,
         cornerRadius!: ?BorderRadiuses = None,
         transition!: ?TransitionEffect = None,
@@ -974,7 +974,7 @@ public init(
     showInSubWindow!: ?Bool = None,
     isModal!: ?Bool = None,
     backgroundColor!: ?ResourceColor = None,
-    backgroundBlurStyle!: ?BlurStyle = Option.None,
+    backgroundBlurStyle!: ?BlurStyle = None,
     onWillDismiss!: ?Callback<DismissDialogAction, Unit> = None,
     cornerRadius!: ?BorderRadiuses = None,
     transition!: ?TransitionEffect = None,
@@ -1011,7 +1011,7 @@ public init(
 |showInSubWindow|?Bool|否|None| **命名参数。** 某弹框需要显示在主窗口之外时，是否在子窗口显示此弹窗。初始值：false，弹窗显示在应用内，而非独立子窗口。**说明**：showInSubWindow为true的弹窗无法触发显示另一个showInSubWindow为true的弹窗。|
 |isModal|?Bool|否|None| **命名参数。** 弹窗是否为模态窗口。模态窗口有蒙层，非模态窗口无蒙层。初始值：true，此时弹窗有蒙层。 |
 |backgroundColor|?[ResourceColor](./cj-common-types.md#interface-resourcecolor)|否|None| **命名参数。** 弹窗背板颜色。**说明：** 当设置了backgroundColor为非透明色时，backgroundBlurStyle需要设置为BlurStyle.NONE，否则颜色显示将不符合预期效果。初始值: Color.Transparent |
-|backgroundBlurStyle|?[BlurStyle](./cj-common-types.md#enum-blurstyle)|否|Option.None| **命名参数。** 弹窗背板模糊材质。**说明：** 设置为BlurStyle.NONE即可关闭背景虚化。当设置了backgroundBlurStyle为非NONE值时，则不要设置backgroundColor，否则颜色显示将不符合预期效果。初始值: BlurStyle.ComponentUltraThick |
+|backgroundBlurStyle|?[BlurStyle](./cj-common-types.md#enum-blurstyle)|否|None| **命名参数。** 弹窗背板模糊材质。**说明：** 设置为BlurStyle.NONE即可关闭背景虚化。当设置了backgroundBlurStyle为非NONE值时，则不要设置backgroundColor，否则颜色显示将不符合预期效果。初始值: BlurStyle.ComponentUltraThick |
 |onWillDismiss|?[Callback](./cj-common-types.md#type-callbackt-v)\<[DismissDialogAction](./cj-dialog-actionsheet.md#class-dismissdialogaction), Unit>|否|None| **命名参数。** 交互式关闭回调函数。**说明：** 1.当用户执行点击遮障层关闭、左滑/右滑、三键back、键盘ESC关闭交互操作时，如果注册该回调函数，则不会立刻关闭弹窗。在回调函数中可以通过reason得到阻拦关闭弹窗的操作类型，从而根据原因选择是否能关闭弹窗。当前组件返回的reason中，暂不支持CLOSE_BUTTON的枚举值。2.在onWillDismiss回调中，不能再做onWillDismiss拦截。 |
 |cornerRadius|?[BorderRadiuses](./cj-common-types.md#class-borderradiuses)|否|None| **命名参数。** 设置背板的圆角半径。可分别设置4个圆角的半径。圆角大小受组件尺寸限制，最大值为组件宽或高的一半，若值为负，则按照默认值处理。 百分比参数方式：以父元素弹窗宽和高的百分比来设置弹窗的圆角。**说明：** 当cornerRadius属性类型为LocalizedBorderRadiuses时，支持随语言习惯改变布局顺序。初始值: BorderRadiuses(topLeft: 32.vp, topRight: 32.vp, bottomLeft: 32.vp, bottomRight: 32.vp) |
 |transition|?[TransitionEffect](./cj-animation-transition.md#class-transitioneffect)|否|None| **命名参数。** 设置弹窗显示和退出的过渡效果。**说明：** 1.如果不设置，则使用默认的显示/退出动效。 2.显示动效中按back键，打断显示动效，执行退出动效，动画效果为显示动效与退出动效的曲线叠加后的效果。 3.退出动效中按back键，不会打断退出动效，退出动效继续执行，继续按back键退出应用。 |
@@ -1043,7 +1043,7 @@ public class AlertDialogParamWithOptions <: AlertDialogParam {
         showInSubWindow!: ?Bool = None,
         isModal!: ?Bool = None,
         backgroundColor!: ?ResourceColor = None,
-        backgroundBlurStyle!: ?BlurStyle = Option.None,
+        backgroundBlurStyle!: ?BlurStyle = None,
         onWillDismiss!: ?Callback<DismissDialogAction, Unit> = None,
         cornerRadius!: ?BorderRadiuses = None,
         transition!: ?TransitionEffect = None,
@@ -1118,7 +1118,7 @@ public init(
     showInSubWindow!: ?Bool = None,
     isModal!: ?Bool = None,
     backgroundColor!: ?ResourceColor = None,
-    backgroundBlurStyle!: ?BlurStyle = Option.None,
+    backgroundBlurStyle!: ?BlurStyle = None,
     onWillDismiss!: ?Callback<DismissDialogAction, Unit> = None,
     cornerRadius!: ?BorderRadiuses = None,
     transition!: ?TransitionEffect = None,
@@ -1156,7 +1156,7 @@ public init(
 |showInSubWindow|?Bool|否|None| **命名参数。** 某弹框需要显示在主窗口之外时，是否在子窗口显示此弹窗。初始值：false，弹窗显示在应用内，而非独立子窗口。**说明**：showInSubWindow为true的弹窗无法触发显示另一个showInSubWindow为true的弹窗。 |
 |isModal|?Bool|否|None| **命名参数。** 弹窗是否为模态窗口。模态窗口有蒙层，非模态窗口无蒙层。初始值：true，此时弹窗有蒙层。 |
 |backgroundColor|?[ResourceColor](./cj-common-types.md#interface-resourcecolor)|否|None| **命名参数。** 弹窗背板颜色。**说明：** 当设置了backgroundColor为非透明色时，backgroundBlurStyle需要设置为BlurStyle.NONE，否则颜色显示将不符合预期效果。初始值: Color.Transparent |
-|backgroundBlurStyle|?[BlurStyle](./cj-common-types.md#enum-blurstyle)|否|Option.None| **命名参数。** 弹窗背板模糊材质。**说明：** 设置为BlurStyle.NONE即可关闭背景虚化。当设置了backgroundBlurStyle为非NONE值时，则不要设置backgroundColor，否则颜色显示将不符合预期效果。初始值: BlurStyle.ComponentUltraThick |
+|backgroundBlurStyle|?[BlurStyle](./cj-common-types.md#enum-blurstyle)|否|None| **命名参数。** 弹窗背板模糊材质。**说明：** 设置为BlurStyle.NONE即可关闭背景虚化。当设置了backgroundBlurStyle为非NONE值时，则不要设置backgroundColor，否则颜色显示将不符合预期效果。初始值: BlurStyle.ComponentUltraThick |
 |onWillDismiss|?[Callback](./cj-common-types.md#type-callbackt-v)\<[DismissDialogAction](./cj-dialog-actionsheet.md#class-dismissdialogaction), Unit>|否|None| **命名参数。** 交互式关闭回调函数。**说明：** 1.当用户执行点击遮障层关闭、左滑/右滑、三键back、键盘ESC关闭交互操作时，如果注册该回调函数，则不会立刻关闭弹窗。在回调函数中可以通过reason得到阻拦关闭弹窗的操作类型，从而根据原因选择是否能关闭弹窗。当前组件返回的reason中，暂不支持CLOSE_BUTTON的枚举值。2.在onWillDismiss回调中，不能再做onWillDismiss拦截。 |
 |cornerRadius|?[BorderRadiuses](./cj-common-types.md#class-borderradiuses)|否|None| **命名参数。** 设置背板的圆角半径。可分别设置4个圆角的半径。圆角大小受组件尺寸限制，最大值为组件宽或高的一半，若值为负，则按照默认值处理。 百分比参数方式：以父元素弹窗宽和高的百分比来设置弹窗的圆角。**说明：** 当cornerRadius属性类型为LocalizedBorderRadiuses时，支持随语言习惯改变布局顺序。初始值: BorderRadiuses(topLeft: 32.vp, topRight: 32.vp, bottomLeft: 32.vp, bottomRight: 32.vp) |
 |transition|?[TransitionEffect](./cj-animation-transition.md#class-transitioneffect)|否|None| **命名参数。** 设置弹窗显示和退出的过渡效果。**说明：** 1.如果不设置，则使用默认的显示/退出动效。 2.显示动效中按back键，打断显示动效，执行退出动效，动画效果为显示动效与退出动效的曲线叠加后的效果。 3.退出动效中按back键，不会打断退出动效，退出动效继续执行，继续按back键退出应用。 |

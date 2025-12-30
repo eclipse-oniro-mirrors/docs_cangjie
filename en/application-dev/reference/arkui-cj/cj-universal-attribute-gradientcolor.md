@@ -16,7 +16,7 @@ import kit.ArkUI.*
 ## func linearGradient(?Float64, ?GradientDirection, ?Array\<(ResourceColor, Float64)>, ?Bool)
 
 ```cangjie
-public func linearGradient(angle!: ?Float64, direction!: ?GradientDirection,
+func linearGradient(angle!: ?Float64, direction!: ?GradientDirection,
     colors!: ?Array<(ResourceColor, Float64)>, repeating!: ?Bool): T
 ```
 
@@ -39,7 +39,7 @@ public func linearGradient(angle!: ?Float64, direction!: ?GradientDirection,
 ## func sweepGradient(?(Length, Length), ?Float64, ?Float64, ?Float64, ?Array\<(ResourceColor, Float64)>, ?Bool)
 
 ```cangjie
-public func sweepGradient(center: ?(Length, Length), start!: ?Float64, end!: ?Float64,
+func sweepGradient(center: ?(Length, Length), start!: ?Float64, end!: ?Float64,
     rotation!: ?Float64, colors!: ?Array<(ResourceColor, Float64)>,
     repeating!: ?Bool): T
 ```
@@ -65,7 +65,7 @@ public func sweepGradient(center: ?(Length, Length), start!: ?Float64, end!: ?Fl
 ## func radialGradient(?(Length, Length), ?Length, ?Array\<(ResourceColor, Float64)>, ?Bool)
 
 ```cangjie
-public func radialGradient(center: ?(Length, Length), radius: ?Length, colors: ?Array<(ResourceColor, Float64)>,
+func radialGradient(center: ?(Length, Length), radius: ?Length, colors: ?Array<(ResourceColor, Float64)>,
     repeating!: ?Bool): T
 ```
 
@@ -79,9 +79,9 @@ public func radialGradient(center: ?(Length, Length), radius: ?Length, colors: ?
 
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
-| center | ?([Length](./cj-common-types.md#interface-length), [Length](./cj-common-types.md#interface-length)) | Yes | \- | The center coordinates relative to the top-left corner of the current component.<br>Default: (0.0.px, 0.0.px). |
-| radius | ?[Length](./cj-common-types.md#interface-length) | Yes | \- | The radius of the radial gradient. |
-| colors | ?Array\<([ResourceColor](./cj-common-types.md#interface-resourcecolor), Float64)> | Yes | \- | An array specifying gradient colors and their corresponding percentage positions. Invalid colors will be skipped.<br>Default: []. |
+| center | ?([Length](./cj-common-types.md#interface-length), [Length](./cj-common-types.md#interface-length)) | Yes | - | The center coordinates relative to the top-left corner of the current component.<br>Default: (0.0.px, 0.0.px). |
+| radius | ?[Length](./cj-common-types.md#interface-length) | Yes | - | The radius of the radial gradient. |
+| colors | ?Array\<([ResourceColor](./cj-common-types.md#interface-resourcecolor), Float64)> | Yes | - | An array specifying gradient colors and their corresponding percentage positions. Invalid colors will be skipped.<br>Default: []. |
 | repeating | ?Bool | Yes | - | **Named parameter.** Repeats the gradient colors.<br>Default: false. |
 
 

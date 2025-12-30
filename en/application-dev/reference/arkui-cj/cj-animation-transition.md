@@ -459,7 +459,12 @@ public init(angle: ?Float32, x!: ?Float32 = None, y!: ?Float32 = None, z!: ?Floa
 | perspective | ?Float32 | No | None | **Named parameter.** Distance from the user to the z=0 plane. The axis and rotation center are based on the coordinate system, which remains fixed when the component moves. Initial value: 0.0 |## class TransitionEffect
 
 ```cangjie
-public class TransitionEffect {}
+public class TransitionEffect {
+    public static let IDENTITY: TransitionEffect
+    public static let OPACITY: TransitionEffect
+    public static let SLIDE: TransitionEffect
+    public static let SLIDE_SWITCH: TransitionEffect
+}
 ```
 
 **Function:** Specifies the type of transition effect in function form.

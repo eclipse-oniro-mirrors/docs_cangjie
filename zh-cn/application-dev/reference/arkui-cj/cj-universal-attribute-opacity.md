@@ -11,7 +11,7 @@ import kit.ArkUI.*
 ## func opacity(?Float64)
 
 ```cangjie
-public func opacity(value: ?Float64): T
+func opacity(value: ?Float64): T
 ```
 
 **功能：** 设置组件的透明度。

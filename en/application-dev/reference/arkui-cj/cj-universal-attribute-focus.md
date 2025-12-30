@@ -65,7 +65,7 @@ func focusable(value: ?Bool): T
 ## func focusOnTouch(?Bool)
 
 ```cangjie
-public func focusOnTouch(value: ?Bool): T
+func focusOnTouch(value: ?Bool): T
 ```
 
 **Function:** Sets whether the current component supports focus acquisition via touch.

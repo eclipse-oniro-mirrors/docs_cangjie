@@ -15,7 +15,7 @@ import kit.ArkUI.*
 ## func enabled(?Bool)
 
 ```cangjie
-public func enabled(value: ?Bool): T
+func enabled(value: ?Bool): T
 ```
 
 **Function:** Sets whether the component is enabled.

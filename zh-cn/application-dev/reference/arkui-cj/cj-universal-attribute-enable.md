@@ -15,7 +15,7 @@ import kit.ArkUI.*
 ## func enabled(?Bool)
 
 ```cangjie
-public func enabled(value: ?Bool): T
+func enabled(value: ?Bool): T
 ```
 
 **功能：** 设置组件是否启用。

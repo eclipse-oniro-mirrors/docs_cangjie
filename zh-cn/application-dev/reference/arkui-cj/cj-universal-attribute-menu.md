@@ -18,7 +18,7 @@ import kit.ArkUI.*
 ## func bindContextMenu(?CustomBuilder, ?ResponseType, ?ContextMenuOptions)
 
 ```cangjie
-public func bindContextMenu(builder!: ?CustomBuilder, responseType!: ?ResponseType,
+func bindContextMenu(builder!: ?CustomBuilder, responseType!: ?ResponseType,
     options!: ?ContextMenuOptions): T
 ```
 
@@ -32,7 +32,7 @@ public func bindContextMenu(builder!: ?CustomBuilder, responseType!: ?ResponseTy
 
 |参数名|类型|必填|默认值|说明|
 | :--- | :--- | :--- | :--- | :--- |
-| builder | ?[CustomBuilder](./cj-common-types.md#type-custombuilder) | 是 | \- | **命名参数。** 自定义构建器。<br>初始值：{ => }。|
+| builder | ?[CustomBuilder](./cj-common-types.md#type-custombuilder) | 是 | - | **命名参数。** 自定义构建器。<br>初始值：{ => }。|
 | responseType | ?[ResponseType](./cj-common-types.md#enum-responsetype) |是|-| **命名参数。** 响应类型。<br>初始值：ResponseType.LongPress。|
 | options | ?[ContextMenuOptions](./cj-common-types.md#class-contextmenuoptions) | 是 | - | **命名参数。** 上下文菜单选项。<br>初始值：ContextMenuOptions()。|
 
@@ -58,7 +58,7 @@ public func bindMenu(content: ?Array<MenuElement>): T
 
 |参数名|类型|必填|默认值|说明|
 | :--- | :--- | :--- | :--- | :--- |
-| content | ?Array\<[MenuElement](./cj-common-types.md#class-menuelement)> | 是 | \- | **命名参数。** 菜单元素数组。|
+| content | ?Array\<[MenuElement](./cj-common-types.md#class-menuelement)> | 是 | - | **命名参数。** 菜单元素数组。|
 
 **返回值：**
 
@@ -69,7 +69,7 @@ public func bindMenu(content: ?Array<MenuElement>): T
 ## func bindMenu(?CustomBuilder)
 
 ```cangjie
-public func bindMenu(builder!: ?CustomBuilder): T
+func bindMenu(builder!: ?CustomBuilder): T
 ```
 
 **功能：** 绑定自定义菜单到组件。
@@ -82,7 +82,7 @@ public func bindMenu(builder!: ?CustomBuilder): T
 
 |参数名|类型|必填|默认值|说明|
 | :--- | :--- | :--- | :--- | :--- |
-| builder | ?[CustomBuilder](./cj-common-types.md#type-custombuilder) | 是 | \- | **命名参数。** 自定义构建器。<br>初始值：{ => }。|
+| builder | ?[CustomBuilder](./cj-common-types.md#type-custombuilder) | 是 | - | **命名参数。** 自定义构建器。<br>初始值：{ => }。|
 
 **返回值：**
 

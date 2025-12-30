@@ -54,7 +54,7 @@ func focusable(value: ?Bool): T
 
 |名称|类型|必填|默认值|说明|
 | :--- | :--- | :--- | :--- | :--- |
-| value | ?Bool | 是 | \- | 当前组件是否可以获焦。true表示组件可以获焦，false表示组件不可获焦。 <br/>初始值：true。|
+| value | ?Bool | 是 | - | 当前组件是否可以获焦。true表示组件可以获焦，false表示组件不可获焦。 <br/>初始值：true。|
 
 **返回值：**
 
@@ -65,7 +65,7 @@ func focusable(value: ?Bool): T
 ## func focusOnTouch(?Bool)
 
 ```cangjie
-public func focusOnTouch(value: ?Bool): T
+func focusOnTouch(value: ?Bool): T
 ```
 
 **功能：** 设置当前组件是否支持点击获焦能力。

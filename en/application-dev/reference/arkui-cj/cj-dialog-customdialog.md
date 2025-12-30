@@ -98,11 +98,11 @@ public class CustomDialogControllerOptions {
     public var cornerRadius: ?Length
     public var isModal: ?Bool
     public var onWillDismiss: ?Callback<DismissDialogAction, Unit>
+    public var width: ?Length
+    public var height: ?Length
     public var borderWidth: ?Length
     public var borderColor: ?ResourceColor
     public var borderStyle: ?EdgeStyles
-    public var width: ?Length
-    public var height: ?Length
     public var shadow: ?ShadowOptions
     public var backgroundBlurStyle: ?BlurStyle
     public init(
@@ -128,7 +128,7 @@ public class CustomDialogControllerOptions {
         borderColor!: ?ResourceColor = None,
         borderStyle!: ?EdgeStyles = None,
         shadow!: ?ShadowOptions = None,
-        backgroundBlurStyle!: ?BlurStyle = Option.None
+        backgroundBlurStyle!: ?BlurStyle = None
     )
 }
 ```

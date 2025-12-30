@@ -217,7 +217,7 @@ public class NavigationTitleOptions {
     public var barStyle: ?BarStyle
     public var paddingStart: ?Length
     public var paddingEnd: ?Length
-    public init(backgroundColor!: ?ResourceColor = None, backgroundBlurStyle!: ?BlurStyle = Option.None,
+    public init(backgroundColor!: ?ResourceColor = None, backgroundBlurStyle!: ?BlurStyle = None,
         barStyle!: ?BarStyle = None, paddingStart!: ?Length = None, paddingEnd!: ?Length = None
     )
 }

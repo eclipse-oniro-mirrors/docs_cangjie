@@ -16,7 +16,7 @@ import kit.ArkUI.*
 ## func bindContentCover(?Bool, ?CustomBuilder, ?ContentCoverOptions)
 
 ```cangjie
-public func bindContentCover(isShow: ?Bool, builder: ?CustomBuilder, options!: ?ContentCoverOptions): T
+func bindContentCover(isShow: ?Bool, builder: ?CustomBuilder, options!: ?ContentCoverOptions): T
 ```
 
 **功能：** 给组件绑定全屏模态页面，点击后显示模态页面。模态页面内容自定义，显示方式可设置无动画过渡，上下切换过渡以及透明渐变过渡方式。

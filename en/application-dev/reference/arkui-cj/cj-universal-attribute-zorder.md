@@ -11,7 +11,7 @@ import kit.ArkUI.*
 ## func zIndex(?Int32)
 
 ```cangjie
-public func zIndex(value: ?Int32): T
+func zIndex(value: ?Int32): T
 ```
 
 **Function:** Sets the Z-axis level of a component.

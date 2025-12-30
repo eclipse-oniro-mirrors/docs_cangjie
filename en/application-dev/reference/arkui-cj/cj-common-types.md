@@ -59,7 +59,7 @@ prop size: Int64
 ### operator func [](Int64, T)
 
 ```cangjie
-public operator func [](idx: Int64, value!: T): Unit
+operator func [](idx: Int64, value!: T): Unit
 ```
 
 **Functionality:** Sets the element value at the specified index position.
@@ -78,7 +78,7 @@ public operator func [](idx: Int64, value!: T): Unit
 ### operator func [](Int64)
 
 ```cangjie
-public operator func [](idx: Int64): T
+operator func [](idx: Int64): T
 ```
 
 **Functionality:** Gets the element value at the specified index position.
@@ -996,12 +996,12 @@ public func get<T>(key: String): ?T
 
 ```cangjie
 public class KeyEvent {
-    public var keyText: String
     public var keyType: KeyType
     public var keyCode: Int32
+    public var keyText: String
     public var keySource: KeySource
-    public var metaKey: Int32
     public var deviceId: Int64
+    public var metaKey: Int32
     public var timestamp: Int64
     public init(keyText: String, keyType: KeyType, keyCode: Int32, keySource: KeySource, metaKey: Int32,
         deviceId: Int64, timestamp: Int64)
@@ -1291,7 +1291,7 @@ public init(touchType: TouchType, id: Int32, screenX: Float64, screenY: Float64,
 ## class BaseEvent
 
 ```cangjie
-sealed abstract class BaseEvent {
+abstract sealed class BaseEvent {
     public var target: ?EventTarget
     public var timestamp: Int64
     public var source: ?SourceType
@@ -1365,12 +1365,12 @@ public var deviceId: ?Int64
 
 ```cangjie
 public class ClickEvent <: BaseEvent {
-    public var x: Float64
-    public var y: Float64
-    public var windowX: Float64
-    public var windowY: Float64
     public var displayX: Float64
     public var displayY: Float64
+    public var windowX: Float64
+    public var windowY: Float64
+    public var x: Float64
+    public var y: Float64
 }
 ```
 
@@ -1472,11 +1472,11 @@ public var y: Float64
 
 ```cangjie
 public class MouseEvent <: BaseEvent {
+    public var button: MouseButton
     public var screenX: Float64
     public var screenY: Float64
     public var x: Float64
     public var y: Float64
-    public var button: MouseButton
     public var action: MouseAction
     public init(timestamp: Int64, screenX: Float64, screenY: Float64, x: Float64, y: Float64, button: MouseButton, action: MouseAction)
 }
@@ -1581,6 +1581,22 @@ public var y: Float64
 **Description:** The y-coordinate of the touch point relative to the top-left corner of the current component.
 
 **Type:** Float64
+
+**Readable/Writable:** Readable and Writable
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 22
+
+### var action
+
+```cangjie
+public var action: MouseAction
+```
+
+**Description:** The event action.
+
+**Type:** [MouseAction](./cj-common-types.md#enum-mouseaction)
 
 **Readable/Writable:** Readable and Writable
 
@@ -3833,17 +3849,17 @@ public init(value: Bool)
 ```cangjie
 public class PopupOptions {
     public var message: ?String
+    public var placement: ?Placement
     public var primaryButton: ?PopupButton
     public var secondaryButton: ?PopupButton
     public var onStateChange: ?(PopupStateChangeParam) -> Unit
-    public var messageOptions: ?PopupMessageOptions
     public var arrowOffset: ?Length
     public var showInSubWindow: ?Bool
     public var mask: ?ResourceColor
+    public var messageOptions: ?PopupMessageOptions
     public var targetSpace: ?Length
-    public var placement: ?Placement
-    public var offset: ?Position
     public var enableArrow: ?Bool
+    public var offset: ?Position
     public var popupColor: ?ResourceColor
     public var autoCancel: ?Bool
     public var width: ?Length
@@ -3907,6 +3923,22 @@ public var message: ?String
 
 **Since:** 22
 
+### var placement
+
+```cangjie
+public var placement: ?Placement
+```
+
+**Function:** Sets the display position of the popup component relative to the target. Default value: Placement.Bottom. If both placementOnTop and placement are set, the placement setting takes effect.
+
+**Type:** ?[Placement](#enum-placement)
+
+**Access:** Read-write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 22
+
 ### var primaryButton
 
 ```cangjie
@@ -3948,22 +3980,6 @@ public var onStateChange: ?(PopupStateChangeParam) -> Unit
 **Function:** Sets the callback for popup state changes, with the parameter being the current display state of the popup.
 
 **Type:** ?([PopupStateChangeParam](#class-popupstatechangeparam)) -> Unit
-
-**Access:** Read-write
-
-**System Capability:** SystemCapability.ArkUI.ArkUI.Full
-
-**Since:** 22
-
-### var messageOptions
-
-```cangjie
-public var messageOptions: ?PopupMessageOptions
-```
-
-**Function:** Sets the text parameters for the popup message.
-
-**Type:** ?[PopupMessageOptions](#class-popupmessageoptions)
 
 **Access:** Read-write
 
@@ -4019,6 +4035,22 @@ public var mask: ?ResourceColor
 
 **Since:** 22
 
+### var messageOptions
+
+```cangjie
+public var messageOptions: ?PopupMessageOptions
+```
+
+**Function:** Sets the text parameters for the popup message.
+
+**Type:** ?[PopupMessageOptions](#class-popupmessageoptions)
+
+**Access:** Read-write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 22
+
 ### var targetSpace
 
 ```cangjie
@@ -4035,15 +4067,15 @@ public var targetSpace: ?Length
 
 **Since:** 22
 
-### var placement
+### var enableArrow
 
 ```cangjie
-public var placement: ?Placement
+public var enableArrow: ?Bool
 ```
 
-**Function:** Sets the display position of the popup component relative to the target. Default value: Placement.Bottom. If both placementOnTop and placement are set, the placement setting takes effect.
+**Function:** Sets whether to display the arrow. Default value: true. When there is insufficient space on the page to fully avoid the bubble, the bubble will cover the component and the arrow will not be displayed.
 
-**Type:** ?[Placement](#enum-placement)
+**Type:** ?Bool
 
 **Access:** Read-write
 
@@ -4060,22 +4092,6 @@ public var offset: ?Position
 **Function:** Sets the offset of the popup component relative to the display position set by placement. Percentage values are not supported.
 
 **Type:** ?[Position](#class-position)
-
-**Access:** Read-write
-
-**System Capability:** SystemCapability.ArkUI.ArkUI.Full
-
-**Since:** 22
-
-### var enableArrow
-
-```cangjie
-public var enableArrow: ?Bool
-```
-
-**Function:** Sets whether to display the arrow. Default value: true. When there is insufficient space on the page to fully avoid the bubble, the bubble will cover the component and the arrow will not be displayed.
-
-**Type:** ?Bool
 
 **Access:** Read-write
 
@@ -19800,10 +19816,6 @@ public type Callback<T, V> = (T) -> V
 
 **Function:** Callback\<T, V> is a type alias for (T) -> V.
 
-**System Capability:** SystemCapability.ArkUI.ArkUI.Full
-
-**Since:** 22
-
 **Type:** (T) -> V
 
 ## type CustomBuilder
@@ -19834,10 +19846,6 @@ public type ItemGeneratorFunc<T> = (T, Int64) -> Unit
 
 **Function:** Defines an item generator function.
 
-**System Capability:** SystemCapability.ArkUI.ArkUI.Full
-
-**Since:** 22
-
 **Type:** (T, Int64) -> Unit
 
 ## type KeyGeneratorFunc\<T>
@@ -19847,9 +19855,5 @@ public type KeyGeneratorFunc<T> = (T, Int64) -> String
 ```
 
 **Function:** Defines a key generator function.
-
-**System Capability:** SystemCapability.ArkUI.ArkUI.Full
-
-**Since:** 22
 
 **Type:** (T, Int64) -> String

@@ -59,7 +59,7 @@ func colorBlend(value: ?ResourceColor): T
 ## func backdropBlur(?Float64)
 
 ```cangjie
-public func backdropBlur(value: ?Float64): T
+func backdropBlur(value: ?Float64): T
 ```
 
 **功能：** 为组件添加背景模糊效果，可以自定义模糊半径。

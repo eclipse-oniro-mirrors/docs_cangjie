@@ -16,7 +16,7 @@ import kit.ArkUI.*
 ## func bindContentCover(?Bool, ?CustomBuilder, ?ContentCoverOptions)  
 
 ```cangjie  
-public func bindContentCover(isShow: ?Bool, builder: ?CustomBuilder, options!: ?ContentCoverOptions): T  
+func bindContentCover(isShow: ?Bool, builder: ?CustomBuilder, options!: ?ContentCoverOptions): T
 ```  
 
 **Function:**  

@@ -29,7 +29,7 @@ func bindSheet(isShow: ?Bool, builder: CustomBuilder, options!: ?SheetOptions): 
 | Parameter | Type | Required | Default Value | Description |
 |:---|:---|:---|:---|:---|
 | isShow | ?Bool | Yes | - | Whether to display the half-modal page. <br>Initial value: `false`. |
-| builder | [CustomBuilder](./cj-common-types.md#type-custombuilder) | Yes | \- | Configures the content of the half-modal page. |
+| builder | [CustomBuilder](./cj-common-types.md#type-custombuilder) | Yes | - | Configures the content of the half-modal page. |
 | options | ?[SheetOptions](./cj-common-types.md#class-sheetoptions) | Yes | - | **Named parameter.** Configures optional properties of the half-modal page. <br/>Initial value: `SheetOptions()`. |
 
 **Return Value:**

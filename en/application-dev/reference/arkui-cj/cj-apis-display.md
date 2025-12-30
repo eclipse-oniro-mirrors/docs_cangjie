@@ -789,6 +789,22 @@ public class FoldCreaseRegion {
 }
 ```
 
+### let displayId
+
+```cangjie
+public let displayId: UInt32
+```
+
+**Function:** Display ID, identifying the screen where the crease is located.
+
+**Type:** UInt32
+
+**Accessibility:** Read-only
+
+**System Capability:** SystemCapability.Window.SessionManager
+
+**Since:** 22
+
 **Function:** Fold crease region.
 
 **System Capability:** SystemCapability.Window.SessionManager
@@ -804,22 +820,6 @@ public let creaseRects: Array<Rect>
 **Function:** Crease region.
 
 **Type:** Array\<[Rect](#class-rect)>
-
-**Accessibility:** Read-only
-
-**System Capability:** SystemCapability.Window.SessionManager
-
-**Since:** 22
-
-### let displayId
-
-```cangjie
-public let displayId: UInt32
-```
-
-**Function:** Display ID, identifying the screen where the crease is located.
-
-**Type:** UInt32
 
 **Accessibility:** Read-only
 

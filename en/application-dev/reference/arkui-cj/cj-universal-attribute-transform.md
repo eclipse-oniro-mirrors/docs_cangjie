@@ -11,8 +11,8 @@ import kit.ArkUI.*
 ## func rotate(?Float32, ?Float32, ?Float32, ?Float32, ?Length, ?Length)
 
 ```cangjie
-public func rotate(x!: ?Float32 = None, y!: ?Float32 = None, z!: ?Float32 = None, angle!: ?Float32 = None,
-    centerX!: ?Length = None, centerY!: ?Length = None): T
+func rotate(x!: ?Float32, y!: ?Float32, z!: ?Float32, angle!: ?Float32,
+    centerX!: ?Length, centerY!: ?Length): T
 ```
 
 **Function:** Sets the rotation of a component.
@@ -32,12 +32,12 @@ public func rotate(x!: ?Float32 = None, y!: ?Float32 = None, z!: ?Float32 = None
 
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
-| x | ?Float32 | No | None | **Named parameter.** X-coordinate of the rotation axis vector. Initial value: 0.0 |
-| y | ?Float32 | No | None | **Named parameter.** Y-coordinate of the rotation axis vector. Initial value: 0.0 |
-| z | ?Float32 | No | None | **Named parameter.** Z-coordinate of the rotation axis vector. Initial value: 1.0 |
-| angle | ?Float32 | No | None | **Named parameter.** Rotation angle. A positive value rotates clockwise relative to the rotation axis direction, while a negative value rotates counterclockwise. Initial value: 0.0 |
-| centerX | ?[Length](./cj-common-types.md#interface-length) | No | None | **Named parameter.** X-coordinate of the transformation center point. Represents the x-coordinate of the component's transformation center point (i.e., anchor point). Initial value: 50.percent |
-| centerY | ?[Length](./cj-common-types.md#interface-length) | No | None | **Named parameter.** Y-coordinate of the transformation center point. Represents the y-coordinate of the component's transformation center point (i.e., anchor point). Initial value: 50.percent |
+| x | ?Float32 | Yes | - | **Named parameter.** X-coordinate of the rotation axis vector. Initial value: 0.0 |
+| y | ?Float32 | Yes | - | **Named parameter.** Y-coordinate of the rotation axis vector. Initial value: 0.0 |
+| z | ?Float32 | Yes | - | **Named parameter.** Z-coordinate of the rotation axis vector. Initial value: 1.0 |
+| angle | ?Float32 | Yes | - | **Named parameter.** Rotation angle. A positive value rotates clockwise relative to the rotation axis direction, while a negative value rotates counterclockwise. Initial value: 0.0 |
+| centerX | ?[Length](./cj-common-types.md#interface-length) | Yes | - | **Named parameter.** X-coordinate of the transformation center point. Represents the x-coordinate of the component's transformation center point (i.e., anchor point). Initial value: 50.percent |
+| centerY | ?[Length](./cj-common-types.md#interface-length) | Yes | - | **Named parameter.** Y-coordinate of the transformation center point. Represents the y-coordinate of the component's transformation center point (i.e., anchor point). Initial value: 50.percent |
 
 **Return Value:**
 
@@ -49,8 +49,8 @@ public func rotate(x!: ?Float32 = None, y!: ?Float32 = None, z!: ?Float32 = None
 ## func scale(?Float32, ?Float32, ?Float32, ?Length, ?Length)
 
 ```cangjie
-public func scale(x!: ?Float32 = None, y!: ?Float32 = None, z!: ?Float32 = None, centerX!: ?Length = None,
-    centerY!: ?Length = None): T
+public func scale(x!: ?Float32, y!: ?Float32, z!: ?Float32, centerX!: ?Length,
+    centerY!: ?Length): T
 ```
 
 **Function:** Sets the scaling of a component.
@@ -63,11 +63,11 @@ public func scale(x!: ?Float32 = None, y!: ?Float32 = None, z!: ?Float32 = None,
 
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
-| x | ?Float32 | No | None | **Named parameter.** X-axis scaling component. Initial value: 1.0 |
-| y | ?Float32 | No | None | **Named parameter.** Y-axis scaling component. Initial value: 1.0 |
-| z | ?Float32 | No | None | **Named parameter.** Z-axis scaling component. Initial value: 1.0 |
-| centerX | ?[Length](./cj-common-types.md#interface-length) | No | None | **Named parameter.** X-coordinate of the transformation center point. Represents the x-coordinate of the component's transformation center point (i.e., anchor point). Initial value: 50.percent |
-| centerY | ?[Length](./cj-common-types.md#interface-length) | No | None | **Named parameter.** Y-coordinate of the transformation center point. Represents the y-coordinate of the component's transformation center point (i.e., anchor point). Initial value: 50.percent |
+| x | ?Float32 | Yes | - | **Named parameter.** X-axis scaling component. Initial value: 1.0 |
+| y | ?Float32 | Yes | - | **Named parameter.** Y-axis scaling component. Initial value: 1.0 |
+| z | ?Float32 | Yes | - | **Named parameter.** Z-axis scaling component. Initial value: 1.0 |
+| centerX | ?[Length](./cj-common-types.md#interface-length) | Yes | - | **Named parameter.** X-coordinate of the transformation center point. Represents the x-coordinate of the component's transformation center point (i.e., anchor point). Initial value: 50.percent |
+| centerY | ?[Length](./cj-common-types.md#interface-length) | Yes | - | **Named parameter.** Y-coordinate of the transformation center point. Represents the y-coordinate of the component's transformation center point (i.e., anchor point). Initial value: 50.percent |
 
 **Return Value:**
 
@@ -79,7 +79,7 @@ public func scale(x!: ?Float32 = None, y!: ?Float32 = None, z!: ?Float32 = None,
 ## func translate(?Length, ?Length, ?Length)
 
 ```cangjie
-public func translate(x!: ?Length = None, y!: ?Length = None, z!: ?Length = None): T
+public func translate(x!: ?Length, y!: ?Length, z!: ?Length): T
 ```
 
 **Function:** Sets the translation of a component.
@@ -92,9 +92,9 @@ public func translate(x!: ?Length = None, y!: ?Length = None, z!: ?Length = None
 
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
-| x | ?[Length](./cj-common-types.md#interface-length) | No | None | **Named parameter.** X-axis translation distance. Initial value: 0.px |
-| y | ?[Length](./cj-common-types.md#interface-length) | No | None | **Named parameter.** Y-axis translation distance. Initial value: 0.px |
-| z | ?[Length](./cj-common-types.md#interface-length) | No | None | **Named parameter.** Z-axis translation distance. Initial value: 0.px |
+| x | ?[Length](./cj-common-types.md#interface-length) | Yes | - | **Named parameter.** X-axis translation distance. Initial value: 0.px |
+| y | ?[Length](./cj-common-types.md#interface-length) | Yes | - | **Named parameter.** Y-axis translation distance. Initial value: 0.px |
+| z | ?[Length](./cj-common-types.md#interface-length) | Yes | - | **Named parameter.** Z-axis translation distance. Initial value: 0.px |
 
 **Return Value:**
 
