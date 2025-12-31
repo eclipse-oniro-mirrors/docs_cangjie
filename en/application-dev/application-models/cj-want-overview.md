@@ -39,7 +39,7 @@ One common usage scenario is as a parameter of the [startAbility()](../reference
       // entities can be omitted
       entities: ["entity.system.browsable"],
       uri: "https://www.test.com:8080/query/student",
-      wantType: "text/plain")
+      dataType: "text/plain")
   ```
 
     > **Note:**
