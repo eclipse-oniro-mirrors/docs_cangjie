@@ -144,8 +144,7 @@ import ohos.hilog.Hilog
 func keyableUsage(context: JSContext): Unit {
     // Create an array that can be used as JSObject keys
     let keys: Array<JSKeyable> = [
-        1,                   // Int64
-        "2",                 // String
+        "1",                 // String
         context.string("a"), // JSString
         context.symbol()     // JSSymbol
     ]
@@ -1873,7 +1872,7 @@ public operator func[](index: Int64): JSValue
 <!--compile-->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
-    let jsArr = callInfo[0].asArray(context)
+    let jsArr = callInfo[0].asArray()
     let firstElement = jsArr[0]
     return firstElement
 }
@@ -1911,7 +1910,7 @@ public operator func[](index: Int64, value!: JSValue): Unit
 <!--compile-->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
-    let jsArr = callInfo[0].asArray(context)
+    let jsArr = callInfo[0].asArray()
     let setValue = context.number(1.0).toJSValue()
     jsArr[0] = setValue
     return setValue
@@ -1950,7 +1949,7 @@ public operator func[](index: Int64, value!: JSHeapObject): Unit
 <!--compile-->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
-    let jsArr = callInfo[0].asArray(context)
+    let jsArr = callInfo[0].asArray()
     let setValue = context.string("abc")
     jsArr[0] = setValue
     return setValue.toJSValue()
@@ -3134,7 +3133,7 @@ func getElementFromArrayEx(context: JSContext, callInfo: JSCallInfo): JSValue {
 
     let element = jsArrayEx.get(1)  // Get element at index 1
     if (element != None) {
-        Hilog.info(0, "test", "Element at index 1: ${element!}")
+        Hilog.info(0, "test", "Element at index 1: ${element}")
     }
 
     return jsArrayEx.toJSValue(context)
@@ -3732,7 +3731,7 @@ func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     }
     clazz.addAccessor("classKind", getter: context.function(getClassKind))
     let obj = clazz.new()
-    let classKind = obj.getProperty(context, "classKind").toString(context)
+    let classKind = obj.getProperty("classKind").toString()
     Hilog.info(0, "test", "class kind is ${classKind}")
     return obj
 }
@@ -3782,7 +3781,7 @@ func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     }
     clazz.addAccessor("classKind", getter: getClassKind)
     let obj = clazz.new()
-    let classKind = obj.getProperty(context, "classKind").toString(context)
+    let classKind = obj.getProperty("classKind").toString()
     Hilog.info(0, "test", "class kind is ${classKind}")
     return obj
 }
@@ -3831,7 +3830,7 @@ func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     }
     clazz.addMethod("getClassKind", context.function(getClassKind))
     let obj = clazz.new()
-    let classKind = obj.getProperty(context, "classKind").toString(context)
+    let classKind = obj.getProperty("classKind").toString()
     Hilog.info(0, "test", "class kind is ${classKind}")
     return obj
 }
@@ -3880,7 +3879,7 @@ func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     }
     clazz.addMethod("getClassKind", getClassKind)
     let obj = clazz.new()
-    let classKind = obj.getProperty(context, "classKind").toString(context)
+    let classKind = obj.getProperty("classKind").toString()
     Hilog.info(0, "test", "class kind is ${classKind}")
     return obj
 }
@@ -3926,7 +3925,7 @@ func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let clazz = context.clazz(ctor)
     clazz.addProperty("classKind", context.string("CustomClass").toJSValue())
     let obj = clazz.new()
-    let classKind = obj.getProperty(context, "classKind").toString(context)
+    let classKind = obj.getProperty("classKind").toString()
     Hilog.info(0, "test", "class kind is ${classKind}")
     return obj
 }
@@ -4668,7 +4667,7 @@ public func arrayBuffer(data: Array<UInt64>): JSArrayBuffer
 import ohos.hilog.Hilog
 
 func createArrayBufferFromUInt64(context: JSContext): JSValue {
-    let uint64Array: Array<UInt64> = [1.u64, 2.u64, 3.u64]
+    let uint64Array: Array<UInt64> = [1u64, 2u64, 3u64]
     let arrayBuffer = context.arrayBuffer(uint64Array)
 
     Hilog.info(0, "test", "Created ArrayBuffer from UInt64 array")
@@ -5583,7 +5582,7 @@ class Data <: SharedObject {
 }
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
-    let external = callInfo[0].asExternal(context)
+    let external = callInfo[0].asExternal()
 
     if (let Some(data) <- external.cast<Data>()) {
          data.doSth()
@@ -5628,7 +5627,7 @@ class Data <: SharedObject {
 }
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
-    let external = callInfo[0].asExternal(context)
+    let external = callInfo[0].asExternal()
 
     let sharedObject = external.getData()
     if (let Some(data) <- (sharedObject as Data)) {
@@ -5690,7 +5689,7 @@ public func call(thisArg!: JSValue = context.undefined().toJSValue()): JSValue
 <!--compile-->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
-    let callback = callInfo[0].asFunction(context)
+    let callback = callInfo[0].asFunction()
     return callback.call()
 }
 ```
@@ -5733,7 +5732,7 @@ public func call(arg: JSValue, thisArg!: JSValue = context.undefined().toJSValue
 <!--compile-->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
-    let callback = callInfo[0].asFunction(context)
+    let callback = callInfo[0].asFunction()
     let arg0 = context.number(1.0).toJSValue()
     return callback.call(arg0)
 }
@@ -5777,7 +5776,7 @@ public func call(args: Array<JSValue>, thisArg!: JSValue = context.undefined().t
 <!--compile-->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
-    let callback = callInfo[0].asFunction(context)
+    let callback = callInfo[0].asFunction()
     let arg0 = context.number(1.0).toJSValue()
     let arg1 = context.boolean(false).toJSValue()
     return callback.call([arg0, arg1])
@@ -5845,6 +5844,7 @@ public init(map: HashMap<K, V>)
 <!--compile-->
 ```cangjie
 import ohos.hilog.Hilog
+import std.collection.HashMap
 
 func createHashMapExFromHashMap(context: JSContext): JSValue {
     let hashMap = HashMap<String, Int64>()
@@ -5937,8 +5937,8 @@ func convertJSValueToStringHashMapEx(context: JSContext, callInfo: JSCallInfo): 
 
     // Iterate all key-value pairs
     for (key in keys) {
-        let value = jsHashMapEx[key]
-        Hilog.info(0, "test", "Key: ${key}, Value: ${value!}")
+        let value = source[key]
+        Hilog.info(0, "test", "Key: ${key}, Value: ${value}")
     }
 
     return jsValue
@@ -6550,7 +6550,7 @@ import ohos.hilog.Hilog
 
 func setIndexOperatorHashMapEx(context: JSContext): JSValue {
     let jsHashMapEx = JSHashMapEx<String, Int64>()
-    jsHashMapEx["newKey"] = context.number(200).toJSValue()
+    jsHashMapEx["newKey"] = 200
 
     Hilog.info(0, "test", "Set value using index operator")
 
@@ -6597,9 +6597,10 @@ public func toJSValue(): JSValue
 
 **Example:**
 
+<!--compile-->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
-    let external = context.external(123)
+    let external = context.number(123)
     let jsValue = external.toJSValue()
     return jsValue
 }
@@ -6866,6 +6867,7 @@ public class JSObject <: JSObjectBase {}
 
 **Example:**
 
+<!--compile-->
 ```cangjie
 import ohos.hilog.Hilog
 
@@ -6972,7 +6974,7 @@ public func callMethod(key: JSKeyable, args: Array<JSValue>): JSValue
 <!--compile-->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
-    let json = context.global["JSON"].asObject(context)
+    let json = context.global["JSON"].asObject()
     json.callMethod("parse", [context.string("{a: 1, b: 2}").toJSValue()])
 }
 ```
@@ -7168,7 +7170,7 @@ class Data <: SharedObject {
 }
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
-    let obj = callInfo[0].asObject(context)
+    let obj = callInfo[0].asObject()
     let sharedObJ = obj.getAttachInfo().getOrThrow()
     let data = (sharedObJ as Data).getOrThrow()
     data.doSth()
@@ -7213,7 +7215,7 @@ public func getProperty(key: JSKeyable): JSValue
 <!--compile-->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
-    let obj = callInfo[0].asObject(context)
+    let obj = callInfo[0].asObject()
     let result = obj.getProperty("a")
     return result
 }
@@ -7257,7 +7259,7 @@ public func hasProperty(key: JSKeyable): Bool
 import ohos.hilog.Hilog
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
-    let obj = callInfo[0].asObject(context)
+    let obj = callInfo[0].asObject()
     let hasA = obj.hasProperty("a")
     Hilog.info(0, "test", "obj has property of a: ${hasA}")
     obj.toJSValue()
@@ -7306,7 +7308,7 @@ func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
         callInfo.thisArg
     }
     let classA = context.clazz(ctor)
-    let obj = classA.new().asObject(context)
+    let obj = classA.new().asObject()
     let isClassA = obj.instanceOf(classA)
     Hilog.info(0, "test", "obj is classA: ${isClassA}")
     return obj.toJSValue()
@@ -7426,7 +7428,7 @@ public operator func [](key: JSKeyable): JSValue
 <!--compile-->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
-    let obj = callInfo[0].asObject(context)
+    let obj = callInfo[0].asObject()
     let result = obj["a"]
     return result
 }
@@ -7518,7 +7520,7 @@ public func catchError(callback: JSFunction): Unit
 <!--compile-->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
-    let promise = callInfo[0].asPromise(context)
+    let promise = callInfo[0].asPromise()
     let onError: JSLambda = {context, callInfo =>
         context.undefined().toJSValue()
     }
@@ -7558,7 +7560,7 @@ public func then(onFulfilled: JSFunction, onRejected!: ?JSFunction = None): Unit
 <!--compile-->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
-    let promise = callInfo[0].asPromise(context)
+    let promise = callInfo[0].asPromise()
     let onFulfilled: JSLambda = {context, callInfo =>
         context.undefined().toJSValue()
     }
@@ -8208,7 +8210,7 @@ func createSymbol(context: JSContext): JSValue {
     object["name"] = context.function { context, callInfo =>
         return object[symbol]
     }.toJSValue()
-    return jsStringEx.toJSValue(context)
+    return object.toJSValue()
 }
 ```
 
@@ -8930,9 +8932,9 @@ public func getProperty(key: JSKeyable): JSValue
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let jsObJ = callInfo[0]
-    let element = jsObJ.getProperty(context, "a")
-    let element1 = jsObJ.getProperty(context, context.string("a"))
-    let element2 = jsObJ.getProperty(context, context.symbol())
+    let element = jsObJ.getProperty("a")
+    let element1 = jsObJ.getProperty(context.string("a"))
+    let element2 = jsObJ.getProperty(context.symbol())
     return element
 }
 ```
@@ -9887,9 +9889,9 @@ func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
         // Get this object
         let object = callInfo.thisArg.asObject()
         // Retrieve the bound MyObject instance from object
-        let data = object.getAttachInfo<MyObject>().getOrThrow()
+        let external = object.getAttachInfo().getOrThrow()
         // Convert data.name to JSString
-        let name = context.string(data.name)
+        let name = context.string(external.cast<MyObject>().getOrThrow().name)
         return name.toJSValue()
     }.toJSValue()
     return object.toJSValue()
@@ -10104,7 +10106,7 @@ func createUtf16String(context: JSContext): JSValue {
 
     // Create Utf16String from JSValue
     let jsString = context.string("Test String")
-    let utf16Str2 = Utf16String(jsString.toJSValue())
+    let utf16Str2 = Utf16String(jsString.toString())
     Hilog.info(0, "test", "Created Utf16String from JSValue: ${utf16Str2.toString()}")
 
     return context.string(utf16Str.toString()).toJSValue()
@@ -10451,12 +10453,12 @@ func findSubstring(context: JSContext): JSValue {
     let index = utf16Str.indexOf(target)
 
     if (index != None) {
-        Hilog.info(0, "test", "Found 'World' at index: ${index!}")
+        Hilog.info(0, "test", "Found 'World' at index: ${index}")
     } else {
         Hilog.info(0, "test", "Substring not found")
     }
 
-    return context.number(Float64(index.getOrElse(-1))).toJSValue()
+    return context.number(Float64(index.getOrDefault({=> -1}))).toJSValue()
 }
 ```
 
@@ -10619,12 +10621,12 @@ func findLastSubstring(context: JSContext): JSValue {
     let index = utf16Str.lastIndexOf(target)
 
     if (index != None) {
-        Hilog.info(0, "test", "Last 'Hello' found at index: ${index!}")
+        Hilog.info(0, "test", "Last 'Hello' found at index: ${index}")
     } else {
         Hilog.info(0, "test", "Substring not found")
     }
 
-    return context.number(Float64(index.getOrElse(-1))).toJSValue()
+    return context.number(Float64(index.getOrDefault({=> -1}))).toJSValue()
 }
 ```
 
@@ -10673,12 +10675,12 @@ func findLastSubstringFromIndex(context: JSContext): JSValue {
     let index = utf16Str.lastIndexOf(target, 10)
 
     if (index != None) {
-        Hilog.info(0, "test", "Last 'Hello' found at index: ${index!}")
+        Hilog.info(0, "test", "Last 'Hello' found at index: ${index}")
     } else {
         Hilog.info(0, "test", "Substring not found")
     }
 
-    return context.number(Float64(index.getOrElse(-1))).toJSValue()
+    return context.number(Float64(index.getOrDefault({=> -1}))).toJSValue()
 }
 ```
 
@@ -10724,9 +10726,9 @@ func lazySplitString(context: JSContext): JSValue {
     let separator = Utf16String(",")
 
     // Lazily split the string, removing empty elements
-    let splitIterator = utf16Str.lazySplit(separator, true)
+    let splitIterator = utf16Str.lazySplit(separator, removeEmpty: true)
 
-    let count = 0
+    var count = 0
     for (part in splitIterator) {
         Hilog.info(0, "test", "Lazy split part ${count}: ${part.toString()}")
         count = count + 1
@@ -10804,7 +10806,7 @@ func getLines(context: JSContext): JSValue {
     // Get line iterator
     let lineIterator = utf16Str.lines()
 
-    let count = 0
+    var count = 0
     for (line in lineIterator) {
         Hilog.info(0, "test", "Line ${count}: ${line.toString()}")
         count = count + 1
@@ -10858,7 +10860,7 @@ func replaceString(context: JSContext): JSValue {
     let replacement = Utf16String("Hi")
 
     // Replace at most once
-    let replacedStr = utf16Str.replace(target, replacement, 1)
+    let replacedStr = utf16Str.replace(target, replacement, count: 1)
 
     Hilog.info(0, "test", "Original string: ${utf16Str.toString()}")
     Hilog.info(0, "test", "Replaced string: ${replacedStr.toString()}")
@@ -10933,7 +10935,7 @@ func splitString(context: JSContext): JSValue {
     let separator = Utf16String(",")
 
     // Split string into max 3 parts, keeping empty elements
-    let splitResult = utf16Str.split(separator, 3, false)
+    let splitResult = utf16Str.split(separator, 3, removeEmpty: false)
 
     Hilog.info(0, "test", "Split result size: ${splitResult.size}")
 

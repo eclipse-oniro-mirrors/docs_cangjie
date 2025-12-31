@@ -1872,7 +1872,7 @@ public operator func[](index: Int64): JSValue
 <!--compile-->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
-    let jsArr = callInfo[0].asArray(context)
+    let jsArr = callInfo[0].asArray()
     let firstElement = jsArr[0]
     return firstElement
 }
@@ -1910,7 +1910,7 @@ public operator func[](index: Int64, value!: JSValue): Unit
 <!--compile-->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
-    let jsArr = callInfo[0].asArray(context)
+    let jsArr = callInfo[0].asArray()
     let setValue = context.number(1.0).toJSValue()
     jsArr[0] = setValue
     return setValue
@@ -1949,7 +1949,7 @@ public operator func[](index: Int64, value!: JSHeapObject): Unit
 <!--compile-->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
-    let jsArr = callInfo[0].asArray(context)
+    let jsArr = callInfo[0].asArray()
     let setValue = context.string("abc")
     jsArr[0] = setValue
     return setValue.toJSValue()
@@ -3731,7 +3731,7 @@ func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     }
     clazz.addAccessor("classKind", getter: context.function(getClassKind))
     let obj = clazz.new()
-    let classKind = obj.getProperty(context, "classKind").toString(context)
+    let classKind = obj.getProperty("classKind").toString()
     Hilog.info(0, "test", "class kind is ${classKind}")
     return obj
 }
@@ -3781,7 +3781,7 @@ func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     }
     clazz.addAccessor("classKind", getter: getClassKind)
     let obj = clazz.new()
-    let classKind = obj.getProperty(context, "classKind").toString(context)
+    let classKind = obj.getProperty("classKind").toString()
     Hilog.info(0, "test", "class kind is ${classKind}")
     return obj
 }
@@ -3830,7 +3830,7 @@ func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     }
     clazz.addMethod("getClassKind", context.function(getClassKind))
     let obj = clazz.new()
-    let classKind = obj.getProperty(context, "classKind").toString(context)
+    let classKind = obj.getProperty("classKind").toString()
     Hilog.info(0, "test", "class kind is ${classKind}")
     return obj
 }
@@ -3879,7 +3879,7 @@ func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     }
     clazz.addMethod("getClassKind", getClassKind)
     let obj = clazz.new()
-    let classKind = obj.getProperty(context, "classKind").toString(context)
+    let classKind = obj.getProperty("classKind").toString()
     Hilog.info(0, "test", "class kind is ${classKind}")
     return obj
 }
@@ -3925,7 +3925,7 @@ func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let clazz = context.clazz(ctor)
     clazz.addProperty("classKind", context.string("CustomClass").toJSValue())
     let obj = clazz.new()
-    let classKind = obj.getProperty(context, "classKind").toString(context)
+    let classKind = obj.getProperty("classKind").toString()
     Hilog.info(0, "test", "class kind is ${classKind}")
     return obj
 }
@@ -5582,7 +5582,7 @@ class Data <: SharedObject {
 }
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
-    let external = callInfo[0].asExternal(context)
+    let external = callInfo[0].asExternal()
 
     if (let Some(data) <- external.cast<Data>()) {
          data.doSth()
@@ -5627,7 +5627,7 @@ class Data <: SharedObject {
 }
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
-    let external = callInfo[0].asExternal(context)
+    let external = callInfo[0].asExternal()
 
     let sharedObject = external.getData()
     if (let Some(data) <- (sharedObject as Data)) {
@@ -5689,7 +5689,7 @@ public func call(thisArg!: JSValue = context.undefined().toJSValue()): JSValue
 <!--compile-->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
-    let callback = callInfo[0].asFunction(context)
+    let callback = callInfo[0].asFunction()
     return callback.call()
 }
 ```
@@ -5732,7 +5732,7 @@ public func call(arg: JSValue, thisArg!: JSValue = context.undefined().toJSValue
 <!--compile-->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
-    let callback = callInfo[0].asFunction(context)
+    let callback = callInfo[0].asFunction()
     let arg0 = context.number(1.0).toJSValue()
     return callback.call(arg0)
 }
@@ -5776,7 +5776,7 @@ public func call(args: Array<JSValue>, thisArg!: JSValue = context.undefined().t
 <!--compile-->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
-    let callback = callInfo[0].asFunction(context)
+    let callback = callInfo[0].asFunction()
     let arg0 = context.number(1.0).toJSValue()
     let arg1 = context.boolean(false).toJSValue()
     return callback.call([arg0, arg1])
@@ -5844,7 +5844,6 @@ public init(map: HashMap<K, V>)
 <!--compile-->
 ```cangjie
 import ohos.hilog.Hilog
-
 import std.collection.HashMap
 
 func createHashMapExFromHashMap(context: JSContext): JSValue {
@@ -5938,7 +5937,7 @@ func convertJSValueToStringHashMapEx(context: JSContext, callInfo: JSCallInfo): 
 
     // 遍历所有键值对
     for (key in keys) {
-        let value = jsHashMapEx[key]
+        let value = source[key]
         Hilog.info(0, "test", "Key: ${key}, Value: ${value}")
     }
 
@@ -6975,7 +6974,7 @@ public func callMethod(key: JSKeyable, args: Array<JSValue>): JSValue
 <!--compile-->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
-    let json = context.global["JSON"].asObject(context)
+    let json = context.global["JSON"].asObject()
     json.callMethod("parse", [context.string("{a: 1, b: 2}").toJSValue()])
 }
 ```
@@ -7171,7 +7170,7 @@ class Data <: SharedObject {
 }
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
-    let obj = callInfo[0].asObject(context)
+    let obj = callInfo[0].asObject()
     let sharedObJ = obj.getAttachInfo().getOrThrow()
     let data = (sharedObJ as Data).getOrThrow()
     data.doSth()
@@ -7216,7 +7215,7 @@ public func getProperty(key: JSKeyable): JSValue
 <!--compile-->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
-    let obj = callInfo[0].asObject(context)
+    let obj = callInfo[0].asObject()
     let result = obj.getProperty("a")
     return result
 }
@@ -7260,7 +7259,7 @@ public func hasProperty(key: JSKeyable): Bool
 import ohos.hilog.Hilog
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
-    let obj = callInfo[0].asObject(context)
+    let obj = callInfo[0].asObject()
     let hasA = obj.hasProperty("a")
     Hilog.info(0, "test", "obj has property of a: ${hasA}")
     obj.toJSValue()
@@ -7309,7 +7308,7 @@ func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
         callInfo.thisArg
     }
     let classA = context.clazz(ctor)
-    let obj = classA.new().asObject(context)
+    let obj = classA.new().asObject()
     let isClassA = obj.instanceOf(classA)
     Hilog.info(0, "test", "obj is classA: ${isClassA}")
     return obj.toJSValue()
@@ -7429,7 +7428,7 @@ public operator func [](key: JSKeyable): JSValue
 <!--compile-->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
-    let obj = callInfo[0].asObject(context)
+    let obj = callInfo[0].asObject()
     let result = obj["a"]
     return result
 }
@@ -7521,7 +7520,7 @@ public func catchError(callback: JSFunction): Unit
 <!--compile-->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
-    let promise = callInfo[0].asPromise(context)
+    let promise = callInfo[0].asPromise()
     let onError: JSLambda = {context, callInfo =>
         context.undefined().toJSValue()
     }
@@ -7561,7 +7560,7 @@ public func then(onFulfilled: JSFunction, onRejected!: ?JSFunction = None): Unit
 <!--compile-->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
-    let promise = callInfo[0].asPromise(context)
+    let promise = callInfo[0].asPromise()
     let onFulfilled: JSLambda = {context, callInfo =>
         context.undefined().toJSValue()
     }
@@ -8211,7 +8210,7 @@ func createSymbol(context: JSContext): JSValue {
     object["name"] = context.function { context, callInfo =>
         return object[symbol]
     }.toJSValue()
-    return object.toJSValue(context)
+    return object.toJSValue()
 }
 ```
 
@@ -8933,9 +8932,9 @@ public func getProperty(key: JSKeyable): JSValue
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let jsObJ = callInfo[0]
-    let element = jsObJ.getProperty(context, "a")
-    let element1 = jsObJ.getProperty(context, context.string("a"))
-    let element2 = jsObJ.getProperty(context, context.symbol())
+    let element = jsObJ.getProperty("a")
+    let element1 = jsObJ.getProperty(context.string("a"))
+    let element2 = jsObJ.getProperty(context.symbol())
     return element
 }
 ```
