@@ -685,8 +685,6 @@ public let onChange: (T) -> Unit
 ```cangjie
 public class LengthMetrics <: Length {
     public init(value: Float64, unit!: LengthUnit = LengthUnit.Vp)
-    public prop value: Float64
-    public prop unitType: LengthUnit
 }
 ```
 
@@ -764,7 +762,6 @@ public class Color <: ResourceColor {
     public static let Transparent: Color = Color(0, 0, 0, alpha: 0.0)
     public init(red: UInt8, green: UInt8, blue: UInt8, alpha!: ?Float32 = None)
     public init(value: UInt32)
-    public func toUInt32(): UInt32
 }
 ```
 
@@ -1749,7 +1746,6 @@ public class TouchEvent <: BaseEvent {
     public var eventType: TouchType
     public var touches: Array<TouchObject>
     public var changedTouches: Array<TouchObject>
-    public func stopPropagation(): Unit
 }
 ```
 
@@ -3477,6 +3473,7 @@ public open class MultiShadowOptions {
     public var radius: ?Length
     public var offsetX: ?Length
     public var offsetY: ?Length
+    protected init(radius: ?Length, offsetX: ?Length, offsetY: ?Length)
 }
 ```
 
@@ -3539,6 +3536,26 @@ public var offsetY: ?Length
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **起始版本：** 22
+
+### init(?Length, ?Length, ?Length)
+
+```cangjie
+protected init(radius: ?Length, offsetX: ?Length, offsetY: ?Length)
+```
+
+**功能：** 构造一个MultiShadowOptions对象。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 22
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+| radius | ?[Length](./cj-common-types.md#interface-length) | 是 | - | 半径 |
+| offsetX | ?[Length](./cj-common-types.md#interface-length) | 是 | - | X轴偏移 |
+| offsetY | ?[Length](./cj-common-types.md#interface-length) | 是 | - | Y轴偏移 |
 
 ## class PickerTextStyle
 
@@ -3992,8 +4009,8 @@ public class PopupOptions {
     public var mask: ?ResourceColor
     public var messageOptions: ?PopupMessageOptions
     public var targetSpace: ?Length
-    public var offset: ?Position
     public var enableArrow: ?Bool
+    public var offset: ?Position
     public var popupColor: ?ResourceColor
     public var autoCancel: ?Bool
     public var width: ?Length

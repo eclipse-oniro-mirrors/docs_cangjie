@@ -13,9 +13,6 @@ import kit.ArkUI.*
 ```cangjie
 public class CustomDialogController {
     public init(value: CustomDialogControllerOptions)
-    public func openDialog(): Unit
-    public func closeDialog(): Unit
-    public func releaseSelf(): Unit
 }
 ```
 
@@ -517,7 +514,7 @@ public init(
     borderColor!: ?ResourceColor = None,
     borderStyle!: ?EdgeStyles = None,
     shadow!: ?ShadowOptions = None,
-    backgroundBlurStyle!: ?BlurStyle = Option.None
+    backgroundBlurStyle!: ?BlurStyle = None
 )
 ```
 
@@ -553,7 +550,7 @@ public init(
 |borderColor|?[ResourceColor](./cj-common-types.md#interface-resourcecolor)|否|None| **命名参数。** 设置弹窗背板的边框颜色。初始值: Color.Black<br/>如果使用borderColor属性，需要和borderWidth属性一起使用。|
 |borderStyle|?[EdgeStyles](./cj-common-types.md#class-edgestyles)|否|None| **命名参数。** 设置弹窗背板的边框样式。初始值: EdgeStyles()<br/>如果使用borderStyle属性，需要和borderWidth属性一起使用。|
 |shadow|?[ShadowOptions](./cj-common-types.md#class-shadowoptions)|否|None| **命名参数。** 设置弹窗背板的阴影。|
-|backgroundBlurStyle|?[BlurStyle](./cj-common-types.md#enum-blurstyle)|否|Option.None| **命名参数。** 弹窗背板模糊材质。 初始值: BlurStyle.ComponentUltraThick<br/>**说明：** <br/>设置为BlurStyle.None即可关闭背景虚化。当设置了backgroundBlurStyle为非None值时，则不要设置backgroundColor，否则颜色显示将不符合预期效果。|
+|backgroundBlurStyle|?[BlurStyle](./cj-common-types.md#enum-blurstyle)|否|None| **命名参数。** 弹窗背板模糊材质。 初始值: BlurStyle.ComponentUltraThick<br/>**说明：** <br/>设置为BlurStyle.None即可关闭背景虚化。当设置了backgroundBlurStyle为非None值时，则不要设置backgroundColor，否则颜色显示将不符合预期效果。|
 
 ## 示例代码
 

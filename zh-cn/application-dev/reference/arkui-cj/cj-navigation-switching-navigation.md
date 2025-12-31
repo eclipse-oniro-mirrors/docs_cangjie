@@ -312,7 +312,7 @@ public var paddingStart: ?Length
 #### init(?ResourceColor, ?BlurStyle, ?BarStyle, ?Length, ?Length)
 
 ```cangjie
-public init(backgroundColor!: ?ResourceColor = None, backgroundBlurStyle!: ?BlurStyle = Option.None,
+public init(backgroundColor!: ?ResourceColor = None, backgroundBlurStyle!: ?BlurStyle = None,
     barStyle!: ?BarStyle = None, paddingStart!: ?Length = None, paddingEnd!: ?Length = None)
 ```
 
@@ -327,7 +327,7 @@ public init(backgroundColor!: ?ResourceColor = None, backgroundBlurStyle!: ?Blur
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |backgroundColor|?[ResourceColor](./cj-common-types.md#interface-resourcecolor)|否|None|标题栏背景颜色。|
-|backgroundBlurStyle|?[BlurStyle](./cj-common-types.md#enum-blurstyle)|否|Option.None|标题栏背景模糊样式。|
+|backgroundBlurStyle|?[BlurStyle](./cj-common-types.md#enum-blurstyle)|否|None|标题栏背景模糊样式。|
 |barStyle|?[BarStyle](#enum-barstyle)|否|None|标题栏布局样式。初始值：BarStyle.Standard。|
 |paddingStart|?[Length](./cj-common-types.md#interface-length)|否|None|标题栏起始边距。|
 |paddingEnd|?[Length](./cj-common-types.md#interface-length)|否|None|标题栏结束边距。|

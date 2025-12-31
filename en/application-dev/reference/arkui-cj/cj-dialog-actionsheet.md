@@ -240,7 +240,6 @@ public init(
 public class DismissDialogAction {
     public var reason: ?DismissReason
     public init(reason: ?DismissReason)
-    public func dismiss(): Unit
 }
 ```
 
@@ -374,12 +373,12 @@ public init(
 ```cangjie
 public class ActionSheetOptions {
     public var title: ?ResourceStr
-    public var message: ?ResourceStr
-    public var sheets: ?Array<SheetInfo>
     public var subtitle: ?ResourceStr
+    public var message: ?ResourceStr
     public var confirm: ?ActionSheetButtonOptions
-    public var autoCancel: ?Bool
     public var cancel: ?VoidCallback
+    public var sheets: ?Array<SheetInfo>
+    public var autoCancel: ?Bool
     public var alignment: ?DialogAlignment
     public var offset: ?ActionSheetOffset
     public var maskRect: ?Rectangle
@@ -388,14 +387,14 @@ public class ActionSheetOptions {
     public var backgroundColor: ?ResourceColor
     public var backgroundBlurStyle: ?BlurStyle
     public var onWillDismiss: ?Callback<DismissDialogAction, Unit>
+    public var transition: ?TransitionEffect
     public var cornerRadius: ?BorderRadiuses
+    public var width: ?Length
+    public var height: ?Length
     public var borderWidth: ?Length
     public var borderColor: ?ResourceColor
     public var borderStyle: ?EdgeStyles
-    public var width: ?Length
-    public var height: ?Length
     public var shadow: ?ShadowOptions
-    public var transition: ?TransitionEffect
     public init(
         title!: ?ResourceStr,
         subtitle!: ?ResourceStr = None,
@@ -428,15 +427,98 @@ public class ActionSheetOptions {
 
 **System Capability:** SystemCapability.ArkUI.ArkUI.Full
 
-**Since:** 22### var alignment
+**Since:** 22
+
+### var title
 
 ```cangjie
-public var alignment: ?DialogAlignment
+public var title: ?ResourceStr
 ```
 
-**Function:** Vertical alignment of the dialog.
+**Function:** Title of the dialog.
 
-**Type:** ?[DialogAlignment](./cj-common-types.md#enum-dialogalignment)
+**Type:** ?[ResourceStr](./cj-common-types.md#interface-resourcestr)
+
+**Read/Write:** Read-Write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 22
+
+### var subtitle
+
+```cangjie
+public var subtitle: ?ResourceStr
+```
+
+**Function:** Subtitle of the dialog.
+
+**Type:** ?[ResourceStr](./cj-common-types.md#interface-resourcestr)
+
+**Read/Write:** Read-Write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 22
+
+
+### var message
+
+```cangjie
+public var message: ?ResourceStr
+```
+
+**Function:** Content of the dialog.
+
+**Type:** ?[ResourceStr](./cj-common-types.md#interface-resourcestr)
+
+**Read/Write:** Read-Write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 22
+
+### var confirm
+
+```cangjie
+public var confirm: ?ActionSheetButtonOptions
+```
+
+**Function:** Enables the state, default focus, button style, text content, and click callback of the confirmation button. When the dialog is focused and no tab key navigation is performed, this button responds to the Enter key by default, and multiple dialogs can automatically focus and respond continuously.
+
+**Type:** ?[ActionSheetButtonOptions](#class-actionsheetbuttonoptions)
+
+**Read/Write:** Read-Write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 22
+
+### var cancel
+
+```cangjie
+public var cancel: ?VoidCallback
+```
+
+**Function:** Callback when the dialog is closed by clicking the mask layer.
+
+**Type:** ?[VoidCallback](./cj-common-types.md#type-voidcallback)
+
+**Read/Write:** Read-Write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 22
+
+### var sheets
+
+```cangjie
+public var sheets: ?Array<SheetInfo>
+```
+
+**Function:** Sets the option content. Each option supports setting an image, text, and a selected callback.
+
+**Type:** ?Array\<[SheetInfo](#class-sheetinfo)>
 
 **Read/Write:** Read-Write
 
@@ -460,15 +542,79 @@ public var autoCancel: ?Bool
 
 **Since:** 22
 
-### var backgroundBlurStyle
+### var alignment
 
 ```cangjie
-public var backgroundBlurStyle: ?BlurStyle
+public var alignment: ?DialogAlignment
 ```
 
-**Function:** Blur material of the dialog backplate.
+**Function:** Vertical alignment of the dialog.
 
-**Type:** ?[BlurStyle](./cj-common-types.md#enum-blurstyle)
+**Type:** ?[DialogAlignment](./cj-common-types.md#enum-dialogalignment)
+
+**Read/Write:** Read-Write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 22
+
+### var offset
+
+```cangjie
+public var offset: ?ActionSheetOffset
+```
+
+**Function:** Offset of the dialog relative to the alignment position.
+
+**Type:** ?[ActionSheetOffset](#class-actionsheetoffset)
+
+**Read/Write:** Read-Write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 22
+
+### var maskRect
+
+```cangjie
+public var maskRect: ?Rectangle
+```
+
+**Function:** The area of the dialog mask layer. Events within the mask layer area are not transmitted, while events outside the mask layer area are transmitted.
+
+**Type:** ?[Rectangle](./cj-common-types.md#class-rectangle)
+
+**Read/Write:** Read-Write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 22
+
+### var showInSubWindow
+
+```cangjie
+public var showInSubWindow: ?Bool
+```
+
+**Function:** Whether to display this dialog in a sub-window when it needs to be displayed outside the main window.
+
+**Type:** ?Bool
+
+**Read/Write:** Read-Write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 22
+
+### var isModal
+
+```cangjie
+public var isModal: ?Bool
+```
+
+**Function:** Whether the dialog is a modal window. Modal windows have a mask layer, while non-modal windows do not.
+
+**Type:** ?Bool
 
 **Read/Write:** Read-Write
 
@@ -485,6 +631,118 @@ public var backgroundColor: ?ResourceColor
 **Function:** Color of the dialog backplate.
 
 **Type:** ?[ResourceColor](./cj-common-types.md#interface-resourcecolor)
+
+**Read/Write:** Read-Write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 22
+
+### var backgroundBlurStyle
+
+```cangjie
+public var backgroundBlurStyle: ?BlurStyle
+```
+
+**Function:** Blur material of the dialog backplate.
+
+**Type:** ?[BlurStyle](./cj-common-types.md#enum-blurstyle)
+
+**Read/Write:** Read-Write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 22
+
+### var onWillDismiss
+
+```cangjie
+public var onWillDismiss: ?Callback<DismissDialogAction, Unit>
+```
+
+**Function:** Interactive close callback function.
+
+**Type:** ?[Callback](./cj-common-types.md#type-callbackt-v)\<[DismissDialogAction](#class-dismissdialogaction), Unit>
+
+**Read/Write:** Read-Write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 22
+
+### var transition
+
+```cangjie
+public var transition: ?TransitionEffect
+```
+
+**Function:** Sets the transition effect for dialog display and exit.
+
+**Type:** ?[TransitionEffect](./cj-animation-transition.md#class-transitioneffect)
+
+**Read/Write:** Read-Write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 22
+
+### var cornerRadius
+
+```cangjie
+public var cornerRadius: ?BorderRadiuses
+```
+
+**Function:** Sets the corner radius of the backplate. The radius of each of the four corners can be set separately.
+
+**Type:** ?[BorderRadiuses](./cj-common-types.md#class-borderradiuses)
+
+**Read/Write:** Read-Write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 22
+
+### var width
+
+```cangjie
+public var width: ?Length
+```
+
+**Function:** Sets the width of the dialog backplate.
+
+**Type:** ?[Length](./cj-common-types.md#interface-length)
+
+**Read/Write:** Read-Write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 22
+
+### var height
+
+```cangjie
+public var height: ?Length
+```
+
+**Function:** Sets the height of the dialog backplate.
+
+**Type:** ?[Length](./cj-common-types.md#interface-length)
+
+**Read/Write:** Read-Write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 22
+
+### var borderWidth
+
+```cangjie
+public var borderWidth: ?Length
+```
+
+**Function:** Sets the border width of the dialog backplate.
+
+**Type:** ?[Length](./cj-common-types.md#interface-length)
 
 **Read/Write:** Read-Write
 
@@ -524,166 +782,6 @@ public var borderStyle: ?EdgeStyles
 
 **Since:** 22
 
-### var borderWidth
-
-```cangjie
-public var borderWidth: ?Length
-```
-
-**Function:** Sets the border width of the dialog backplate.
-
-**Type:** ?[Length](./cj-common-types.md#interface-length)
-
-**Read/Write:** Read-Write
-
-**System Capability:** SystemCapability.ArkUI.ArkUI.Full
-
-**Since:** 22
-
-### var cancel
-
-```cangjie
-public var cancel: ?VoidCallback
-```
-
-**Function:** Callback when the dialog is closed by clicking the mask layer.
-
-**Type:** ?[VoidCallback](./cj-common-types.md#type-voidcallback)
-
-**Read/Write:** Read-Write
-
-**System Capability:** SystemCapability.ArkUI.ArkUI.Full
-
-**Since:** 22
-
-### var confirm
-
-```cangjie
-public var confirm: ?ActionSheetButtonOptions
-```
-
-**Function:** Enables the state, default focus, button style, text content, and click callback of the confirmation button. When the dialog is focused and no tab key navigation is performed, this button responds to the Enter key by default, and multiple dialogs can automatically focus and respond continuously.
-
-**Type:** ?[ActionSheetButtonOptions](#class-actionsheetbuttonoptions)
-
-**Read/Write:** Read-Write
-
-**System Capability:** SystemCapability.ArkUI.ArkUI.Full
-
-**Since:** 22
-
-### var cornerRadius
-
-```cangjie
-public var cornerRadius: ?BorderRadiuses
-```
-
-**Function:** Sets the corner radius of the backplate. The radius of each of the four corners can be set separately.
-
-**Type:** ?[BorderRadiuses](./cj-common-types.md#class-borderradiuses)
-
-**Read/Write:** Read-Write
-
-**System Capability:** SystemCapability.ArkUI.ArkUI.Full
-
-**Since:** 22
-
-### var height
-
-```cangjie
-public var height: ?Length
-```
-
-**Function:** Sets the height of the dialog backplate.
-
-**Type:** ?[Length](./cj-common-types.md#interface-length)
-
-**Read/Write:** Read-Write
-
-**System Capability:** SystemCapability.ArkUI.ArkUI.Full
-
-**Since:** 22
-
-### var isModal
-
-```cangjie
-public var isModal: ?Bool
-```
-
-**Function:** Whether the dialog is a modal window. Modal windows have a mask layer, while non-modal windows do not.
-
-**Type:** ?Bool
-
-**Read/Write:** Read-Write
-
-**System Capability:** SystemCapability.ArkUI.ArkUI.Full
-
-**Since:** 22
-
-### var maskRect
-
-```cangjie
-public var maskRect: ?Rectangle
-```
-
-**Function:** The area of the dialog mask layer. Events within the mask layer area are not transmitted, while events outside the mask layer area are transmitted.
-
-**Type:** ?[Rectangle](./cj-common-types.md#class-rectangle)
-
-**Read/Write:** Read-Write
-
-**System Capability:** SystemCapability.ArkUI.ArkUI.Full
-
-**Since:** 22
-
-### var message
-
-```cangjie
-public var message: ?ResourceStr
-```
-
-**Function:** Content of the dialog.
-
-**Type:** ?[ResourceStr](./cj-common-types.md#interface-resourcestr)
-
-**Read/Write:** Read-Write
-
-**System Capability:** SystemCapability.ArkUI.ArkUI.Full
-
-**Since:** 22
-
-### var offset
-
-```cangjie
-public var offset: ?ActionSheetOffset
-```
-
-**Function:** Offset of the dialog relative to the alignment position.
-
-**Type:** ?[ActionSheetOffset](#class-actionsheetoffset)
-
-**Read/Write:** Read-Write
-
-**System Capability:** SystemCapability.ArkUI.ArkUI.Full
-
-**Since:** 22
-
-### var onWillDismiss
-
-```cangjie
-public var onWillDismiss: ?Callback<DismissDialogAction, Unit>
-```
-
-**Function:** Interactive close callback function.
-
-**Type:** ?[Callback](./cj-common-types.md#type-callbackt-v)\<[DismissDialogAction](#class-dismissdialogaction), Unit>
-
-**Read/Write:** Read-Write
-
-**System Capability:** SystemCapability.ArkUI.ArkUI.Full
-
-**Since:** 22
-
 ### var shadow
 
 ```cangjie
@@ -693,102 +791,6 @@ public var shadow: ?ShadowOptions
 **Function:** Sets the shadow of the dialog backplate.
 
 **Type:** ?[ShadowOptions](./cj-common-types.md#class-shadowoptions)
-
-**Read/Write:** Read-Write
-
-**System Capability:** SystemCapability.ArkUI.ArkUI.Full
-
-**Since:** 22
-
-### var sheets
-
-```cangjie
-public var sheets: ?Array<SheetInfo>
-```
-
-**Function:** Sets the option content. Each option supports setting an image, text, and a selected callback.
-
-**Type:** ?Array\<[SheetInfo](#class-sheetinfo)>
-
-**Read/Write:** Read-Write
-
-**System Capability:** SystemCapability.ArkUI.ArkUI.Full
-
-**Since:** 22
-
-### var showInSubWindow
-
-```cangjie
-public var showInSubWindow: ?Bool
-```
-
-**Function:** Whether to display this dialog in a sub-window when it needs to be displayed outside the main window.
-
-**Type:** ?Bool
-
-**Read/Write:** Read-Write
-
-**System Capability:** SystemCapability.ArkUI.ArkUI.Full
-
-**Since:** 22
-
-### var subtitle
-
-```cangjie
-public var subtitle: ?ResourceStr
-```
-
-**Function:** Subtitle of the dialog.
-
-**Type:** ?[ResourceStr](./cj-common-types.md#interface-resourcestr)
-
-**Read/Write:** Read-Write
-
-**System Capability:** SystemCapability.ArkUI.ArkUI.Full
-
-**Since:** 22
-
-### var title
-
-```cangjie
-public var title: ?ResourceStr
-```
-
-**Function:** Title of the dialog.
-
-**Type:** ?[ResourceStr](./cj-common-types.md#interface-resourcestr)
-
-**Read/Write:** Read-Write
-
-**System Capability:** SystemCapability.ArkUI.ArkUI.Full
-
-**Since:** 22
-
-### var transition
-
-```cangjie
-public var transition: ?TransitionEffect
-```
-
-**Function:** Sets the transition effect for dialog display and exit.
-
-**Type:** ?[TransitionEffect](./cj-animation-transition.md#class-transitioneffect)
-
-**Read/Write:** Read-Write
-
-**System Capability:** SystemCapability.ArkUI.ArkUI.Full
-
-**Since:** 22
-
-### var width
-
-```cangjie
-public var width: ?Length
-```
-
-**Function:** Sets the width of the dialog backplate.
-
-**Type:** ?[Length](./cj-common-types.md#interface-length)
 
 **Read/Write:** Read-Write
 

@@ -312,7 +312,7 @@ public var paddingStart: ?Length
 #### init(?ResourceColor, ?BlurStyle, ?BarStyle, ?Length, ?Length)
 
 ```cangjie
-public init(backgroundColor!: ?ResourceColor = None, backgroundBlurStyle!: ?BlurStyle = Option.None,
+public init(backgroundColor!: ?ResourceColor = None, backgroundBlurStyle!: ?BlurStyle = None,
     barStyle!: ?BarStyle = None, paddingStart!: ?Length = None, paddingEnd!: ?Length = None)
 ```
 

@@ -674,8 +674,6 @@ public let onChange: (T) -> Unit
 ```cangjie
 public class LengthMetrics <: Length {
     public init(value: Float64, unit!: LengthUnit = LengthUnit.Vp)
-    public prop value: Float64
-    public prop unitType: LengthUnit
 }
 ```
 
@@ -753,7 +751,6 @@ public class Color <: ResourceColor {
     public static let Transparent: Color = Color(0, 0, 0, alpha: 0.0)
     public init(red: UInt8, green: UInt8, blue: UInt8, alpha!: ?Float32 = None)
     public init(value: UInt32)
-    public func toUInt32(): UInt32
 }
 ```
 
@@ -1635,7 +1632,6 @@ public class TouchEvent <: BaseEvent {
     public var eventType: TouchType
     public var touches: Array<TouchObject>
     public var changedTouches: Array<TouchObject>
-    public func stopPropagation(): Unit
 }
 ```
 

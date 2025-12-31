@@ -13,9 +13,6 @@ import kit.ArkUI.*
 ```cangjie
 public class CustomDialogController {
     public init(value: CustomDialogControllerOptions)
-    public func openDialog(): Unit
-    public func closeDialog(): Unit
-    public func releaseSelf(): Unit
 }
 ```
 
@@ -517,7 +514,7 @@ public init(
     borderColor!: ?ResourceColor = None,
     borderStyle!: ?EdgeStyles = None,
     shadow!: ?ShadowOptions = None,
-    backgroundBlurStyle!: ?BlurStyle = Option.None
+    backgroundBlurStyle!: ?BlurStyle = None
 )
 ```
 
@@ -553,7 +550,7 @@ public init(
 |borderColor|?[ResourceColor](./cj-common-types.md#interface-resourcecolor)|No|None| **Named parameter.** Sets the border color of the dialog backplane. Initial value: Color.Black<br/>If you use the borderColor attribute, it must be used together with the borderWidth attribute.|
 |borderStyle|?[EdgeStyles](./cj-common-types.md#class-edgestyles)|No|None| **Named parameter.** Sets the border style of the dialog backplane. Initial value: EdgeStyles()<br/>If you use the borderStyle attribute, it must be used together with the borderWidth attribute.|
 |shadow|?[ShadowOptions](./cj-common-types.md#class-shadowoptions)|No|None| **Named parameter.** Sets the shadow of the dialog backplane.<br/>When the device is a 2-in-1 device, the default focused shadow value is ShadowStyle.OuterFloatingMD, and the unfocused shadow value is ShadowStyle.OuterFloatingSM.|
-|backgroundBlurStyle|?[BlurStyle](./cj-common-types.md#enum-blurstyle)|No|Option.None| **Named parameter.** Blur material of the dialog backplane. Initial value: BlurStyle.ComponentUltraThick<br/>**Note:**<br/>Set to BlurStyle.None to disable background blur. When backgroundBlurStyle is set to a non-None value, do not set backgroundColor, otherwise the color display will not meet the expected effect.|
+|backgroundBlurStyle|?[BlurStyle](./cj-common-types.md#enum-blurstyle)|No|None| **Named parameter.** Blur material of the dialog backplane. Initial value: BlurStyle.ComponentUltraThick<br/>**Note:**<br/>Set to BlurStyle.None to disable background blur. When backgroundBlurStyle is set to a non-None value, do not set backgroundColor, otherwise the color display will not meet the expected effect.|
 
 <!-- run -->
 

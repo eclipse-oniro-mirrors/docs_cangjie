@@ -277,8 +277,8 @@ public open class AlertDialogParam {
     public var backgroundColor: ?ResourceColor
     public var backgroundBlurStyle: ?BlurStyle
     public var onWillDismiss: ?Callback<DismissDialogAction, Unit>
-    public var cornerRadius: ?BorderRadiuses
     public var transition: ?TransitionEffect
+    public var cornerRadius: ?BorderRadiuses
     public var width: ?Length
     public var height: ?Length
     public var borderWidth: ?Length

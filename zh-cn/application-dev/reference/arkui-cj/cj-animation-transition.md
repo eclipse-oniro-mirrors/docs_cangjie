@@ -285,7 +285,6 @@ public init(x!: ?Float32 = None, y!: ?Float32 = None, z!: ?Float32 = None, cente
 
 ```cangjie
 public class RotateOptions {
-    public var angle: ?Float32
     public var x: ?Float32
     public var y: ?Float32
     public var z: ?Float32
@@ -293,6 +292,7 @@ public class RotateOptions {
     public var centerY: ?Length
     public var centerZ: ?Length
     public var perspective: ?Float32
+    public var angle: ?Float32
     public init(angle: ?Float32, x!: ?Float32 = None, y!: ?Float32 = None, z!: ?Float32 = None, centerX!: ?Length = None,
         centerY!: ?Length = None, centerZ!: ?Length = None, perspective!: ?Float32 = None)
 }

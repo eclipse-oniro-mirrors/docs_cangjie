@@ -807,6 +807,12 @@ public class FoldCreaseRegion {
 }
 ```
 
+**功能：** 构造一个FoldCreaseRegion类型的对象。
+
+**系统能力：** SystemCapability.Window.SessionManager
+
+**起始版本：** 22
+
 ### let displayId
 
 ```cangjie
@@ -864,7 +870,7 @@ public init(
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|displayId|Int64|是|-| **命名参数。** 显示屏ID。|
+|displayId|UInt32|是|-| **命名参数。** 显示屏ID。|
 |creaseRects|Array\<[Rect](#class-rect)>|是|-| **命名参数。** crease区域。|
 
 ## class Rect

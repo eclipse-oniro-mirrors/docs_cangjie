@@ -671,7 +671,6 @@ public func selectedItemWidth(value: ?Length): This
 
 ```cangjie
 public open class Indicator {
-    public init()
 }
 ```
 
@@ -681,17 +680,6 @@ public open class Indicator {
 
 **起始版本：** 22
 
-#### init()
-
-```cangjie
-public init()
-```
-
-**功能：** 指示器的构造函数。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**起始版本：** 22
 
 #### static func digit()
 

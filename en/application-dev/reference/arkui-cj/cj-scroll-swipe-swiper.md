@@ -555,23 +555,10 @@ public func selectedItemWidth(value: ?Length): This
 
 ```cangjie
 public open class Indicator {
-    public init()
 }
 ```
 
 **Function:** Sets the distance between the navigation dots and the Swiper component. Due to the default interactive area of the navigation dots (32 vp in height), it is not possible to make the visible part completely flush with the bottom.
-
-**System Capability:** SystemCapability.ArkUI.ArkUI.Full
-
-**Since:** 22
-
-#### init()
-
-```cangjie
-public init()
-```
-
-**Function:** Constructor for the Indicator.
 
 **System Capability:** SystemCapability.ArkUI.ArkUI.Full
 

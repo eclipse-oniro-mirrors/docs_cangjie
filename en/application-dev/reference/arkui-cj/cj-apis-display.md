@@ -789,6 +789,12 @@ public class FoldCreaseRegion {
 }
 ```
 
+**Function:**  Constructs an object of type FoldCreaseRegion.
+
+**System Capability:** SystemCapability.Window.SessionManager
+
+**Since:** 22
+
 ### let displayId
 
 ```cangjie
