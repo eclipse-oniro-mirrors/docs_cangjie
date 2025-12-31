@@ -18,7 +18,7 @@
     import ohos.business_exception.BusinessException
     ```
 
-2. 通过[getCameraManager](../../reference/CameraKit/cj-apis-multimedia-camera.md#func-getcameramanagerabilitycontext)方法，获取cameraManager对象。
+2. 通过[getCameraManager](../../reference/CameraKit/cj-apis-multimedia-camera.md#func-getcameramanageruiabilitycontext)方法，获取cameraManager对象。
 
     Context获取方式请参见：[获取UIAbility的上下文信息](../../application-models/cj-uiability-usage.md#获取uiability的上下文信息)。
 

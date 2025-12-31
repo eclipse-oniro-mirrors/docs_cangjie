@@ -4,13 +4,13 @@
 
 在基于Stage模型开发的应用项目代码下，都存在一个app.json5配置文件、以及一个或多个module.json5配置文件。
 
-[app.json5配置文件](app-configuration-file.md#app.json5配置文件)包含以下内容：
+[app.json5配置文件](app-configuration-file.md)包含以下内容：
 
 - 应用的全局配置信息，包含应用的Bundle名称、开发厂商、版本号等基本信息。
 
 - 特定设备类型的配置信息。
 
-[module.json5配置文件](module-configuration-file.md#app.json5配置文件)包含以下内容：
+[module.json5配置文件](module-configuration-file.md)包含以下内容：
 
 - Module的基本配置信息，包含Module名称、类型、描述、支持的设备类型等基本信息。
 

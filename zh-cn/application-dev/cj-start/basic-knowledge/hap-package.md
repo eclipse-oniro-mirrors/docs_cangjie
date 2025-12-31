@@ -39,7 +39,7 @@ HAP（Harmony Ability Package）是应用安装和运行的基本单元。HAP包
 
 ## 开发
 
-- 仓颉HAP中支持引用HAR，详见[HAR的使用](./har-package.md#HAR)。
+- 仓颉HAP中支持引用HAR，详见[HAR的使用](./har-package.md)。
 
 ## 调试
 
@@ -49,7 +49,7 @@ HAP（Harmony Ability Package）是应用安装和运行的基本单元。HAP包
 
 - **方法一：** 使用DevEco Studio进行调试，详见应用程序包调试方法<!-- add link -->。
 
-- **方法二：** 使用[hdc工具](../../tools/cj-hdc.md#hdc)进行调试。
+- **方法二：** 使用[hdc工具](../../tools/cj-hdc.md)进行调试。
 
     在调试前，需要先安装或更新HAP，此处有两种方式：
 
@@ -85,4 +85,4 @@ HAP（Harmony Ability Package）是应用安装和运行的基本单元。HAP包
         uninstall bundle successfully.
         ```
 
-    完成HAP安装或更新后，即可参考相关调试命令进行[调试](../../tools/cj-aa-tool.md#aa工具)。
+    完成HAP安装或更新后，即可参考相关调试命令进行[调试](../../tools/cj-aa-tool.md)。

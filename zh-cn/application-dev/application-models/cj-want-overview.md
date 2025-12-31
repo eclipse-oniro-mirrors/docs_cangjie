@@ -4,7 +4,7 @@
 
 [Want](../reference/AbilityKit/cj-apis-app-ability-want.md#class-want)是一种对象，用于在应用组件之间传递信息。
 
-其中，一种常见的使用场景是作为[startAbility()](../reference/AbilityKit/cj-apis-app-ability-ui_ability.md#func-startabilitywant-startOptions)方法的参数。例如，当UIAbilityA需要启动UIAbilityB并向UIAbilityB传递一些数据时，可以使用Want作为一个载体，将数据传递给UIAbilityB。
+其中，一种常见的使用场景是作为[startAbility()](../reference/AbilityKit/cj-apis-app-ability-ui_ability.md#func-startabilitywant-startoptions)方法的参数。例如，当UIAbilityA需要启动UIAbilityB并向UIAbilityB传递一些数据时，可以使用Want作为一个载体，将数据传递给UIAbilityB。
 
 **图1** Want用法示意
 

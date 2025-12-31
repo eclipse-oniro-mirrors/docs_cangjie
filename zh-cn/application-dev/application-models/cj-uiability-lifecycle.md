@@ -65,7 +65,7 @@ class MainAbility <: UIAbility {
 
 > **说明：**
 >
-> WindowStage的相关使用请参见[窗口开发指导](../windowmanager/application-window-stage.md#管理应用窗口)。
+> WindowStage的相关使用请参见[窗口开发指导](../windowmanager/application-window-stage.md)。
 
 ### Foreground和Background状态
 

@@ -252,7 +252,7 @@ Swiper支持水平和垂直方向上进行轮播，主要通过vertical属性控
 
 ## 每页显示多个子页面
 
-Swiper支持在一个页面内同时显示多个子组件，通过[displayCount](../reference/arkui-cj/cj-scroll-swipe-swiper.md#func-displaycountint32)属性设置。
+Swiper支持在一个页面内同时显示多个子组件，通过[displayCount](../reference/arkui-cj/cj-scroll-swipe-swiper.md#func-displaycountint32-bool)属性设置。
 
  <!-- run -->
 

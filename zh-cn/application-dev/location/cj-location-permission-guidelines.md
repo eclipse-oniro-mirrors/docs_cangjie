@@ -14,7 +14,7 @@ Location Kit接口对权限的要求请参见：[Location Kit](../reference/Loca
 
 ## 开发步骤
 
-1. 开发者可以在应用配置文件中声明所需要的权限并向用户申请授权，具体可参考[向用户申请授权](../security/AccessToken/cj-request-user-authorization.md#向用户申请授权)。
+1. 开发者可以在应用配置文件中声明所需要的权限并向用户申请授权，具体可参考[向用户申请授权](../security/AccessToken/cj-request-user-authorization.md)。
 
 2. 当APP运行在前台，且访问设备位置信息时，申请位置权限的方式如下：
 

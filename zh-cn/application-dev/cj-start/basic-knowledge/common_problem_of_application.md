@@ -22,7 +22,7 @@
     }
     ```
 
-2. 通过[bm工具](../../tools/cj-bm-tool.md#bm工具)获取fingerprint指纹信息。
+2. 通过[bm工具](../../tools/cj-bm-tool.md)获取fingerprint指纹信息。
 
     ```shell
     hdc shell
@@ -66,7 +66,7 @@ appIdentifier是<!--RP1-->[Profile签名文件](https://gitcode.com/openharmony/
     }
     ```
 
-2. 通过[bm工具](../../tools/cj-bm-tool.md#bm工具)获取。
+2. 通过[bm工具](../../tools/cj-bm-tool.md)获取。
 
     ```shell
     hdc shell

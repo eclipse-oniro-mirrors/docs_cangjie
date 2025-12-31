@@ -482,7 +482,7 @@ Text可通过以下两种方式来创建：
 
 ## 添加事件
 
-Text组件可以添加通用事件，可以绑定[onClick](../reference/arkui-cj/cj-universal-event-click.md#func-onclickclickevent---unit)、[onTouch](../reference/arkui-cj/cj-universal-event-touch.md#func-ontouchtouchevent-unit)等事件来响应操作。
+Text组件可以添加通用事件，可以绑定[onClick](../reference/arkui-cj/cj-universal-event-click.md#func-onclickclickevent---unit)、[onTouch](../reference/arkui-cj/cj-universal-event-touch.md#func-ontouchtouchevent---unit)等事件来响应操作。
 
  <!-- run -->
 
