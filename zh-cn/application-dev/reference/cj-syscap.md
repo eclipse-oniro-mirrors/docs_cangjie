@@ -42,14 +42,6 @@ SDK向DevEco Studio提供全量API，DevEco Studio识别开发者项目中选择
 
 PCID，全称Product Compatibility ID，包含当前设备支持的SysCap信息。获取所有设备PCID的认证中心正在建设中，目前需要找对应设备的厂商获取该设备的PCID。
 
-### PCID导入
-
-DevEco Studio工程支持PCID的导入。导入的PCID文件解码后输出的SysCap会被写入syscap.json文件中。
-
-在工程目录右键后选择Import Product Compatibility ID，即可上传PCID文件并导入至syscap.json中。
-
-![20220329-103626](figures/20220329-103626.gif)
-
 ### 配置联想能力集和要求能力集
 
 DevEco Studio会根据创建的工程所支持的设置自动配置联想能力集和要求能力集，开发者也可以自行修改。
