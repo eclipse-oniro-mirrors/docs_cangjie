@@ -1638,15 +1638,15 @@ public enum DeviceType {
 **起始版本：** 22
 
 ### DeviceType2In1
- 
-```cangjie 
-DeviceType2In1 
-``` 
- 
+
+```cangjie
+DeviceType2In1
+```
+
 **功能：** 2in1设备。
- 
+
 **系统能力：** SystemCapability.Global.ResourceManager
- 
+
 **起始版本：** 22
 
 ### DeviceTypeCar
