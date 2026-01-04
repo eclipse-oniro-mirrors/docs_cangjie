@@ -1937,7 +1937,7 @@ public enum IntervalOption <: Equatable<IntervalOption> & ToString {
 
 **父类型：**
 
-- [Equatable\<IntervalOption>](#enum-IntervalOption)
+- Equatable\<[IntervalOption](#enum-intervaloption)>
 - ToString
 
 ### GameMode
@@ -2074,7 +2074,7 @@ public enum SensorAccuracy  <: Equatable<SensorAccuracy> & ToString {
 
 **父类型：**
 
-- [Equatable\<SensorAccuracy>](#enum-SensorAccuracy)
+- Equatable\<[SensorAccuracy](#enum-sensoraccuracy)>
 - ToString
 
 ### AccuracyHigh
@@ -2228,7 +2228,7 @@ public enum SensorId <: Equatable<SensorId> & ToString {
 
 **父类型：**
 
-- [Equatable\<SensorId>](#enum-SensorId)
+- Equatable\<[SensorId](#enum-sensorid)>
 - ToString
 
 ### Accelerometer
