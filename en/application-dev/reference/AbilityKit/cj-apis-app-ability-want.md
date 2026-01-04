@@ -37,7 +37,7 @@ public class Want {
     public var uri: String
     public var action: String
     public var entities: Array<String>
-    public var wantType: String
+    public var dataType: String
     public var parameters: HashMap<String, WantValueType>
     public init(
         deviceId!: String = "",
@@ -48,7 +48,7 @@ public class Want {
         uri!: String = "",
         action!: String = "",
         entities!: Array<String> = [],
-        wantType!: String = "",
+        dataType!: String = "",
         parameters!: HashMap<String, WantValueType> = HashMap<String, WantValueType>(),
         fds!: HashMap<String, Int32> = HashMap<String, Int32>()
     )
@@ -205,13 +205,13 @@ public var uri: String
 
 **Since:** 22
 
-### var wantType
+### var dataType
 
 ```cangjie
-public var wantType: String
+public var dataType: String
 ```
 
-**Function:** Want type.
+**Function:** data type.
 
 **Type:** String
 
@@ -233,7 +233,7 @@ public init(
     uri!: String = "",
     action!: String = "",
     entities!: Array<String> = [],
-    wantType!: String = "",
+    dataType!: String = "",
     parameters!: HashMap<String, WantValueType> = HashMap<String, WantValueType>(),
     fds!: HashMap<String, Int32> = HashMap<String, Int32>()
 )
@@ -257,7 +257,7 @@ public init(
 | uri | String | No | "" | URI. |
 | action | String | No | "" | Action. |
 | entities | Array\<String> | No | [] | Entities. |
-| wantType | String | No | "" | Want type. |
+| dataType | String | No | "" | Want type. |
 | parameters | HashMap\<String,[WantValueType](#enum-wantvaluetype)> | No | HashMap<String, WantValueType>() | Parameters. |
 | fds | HashMap\<String,Int32> | No | HashMap<String, Int32>() | File descriptors. |
 

@@ -45,14 +45,6 @@ The SDK provides the full set of APIs to DevEco Studio. DevEco Studio identifies
 
 PCID, short for Product Compatibility ID, contains SysCap information supported by the current device. A certification center for obtaining PCIDs of all devices is under construction. Currently, you need to contact the manufacturer of the corresponding device to obtain its PCID.
 
-### Importing PCID
-
-DevEco Studio projects support PCID import. The SysCap decoded from the imported PCID file will be written into the `syscap.json` file.
-
-Right-click the project directory and select **Import Product Compatibility ID** to upload the PCID file and import it into `syscap.json`.
-
-![20220329-103626](figures/20220329-103626.gif)
-
 ### Configuring Suggested Capability Set and Required Capability Set
 
 DevEco Studio automatically configures the Suggested Capability Set and Required Capability Set based on the project settings. Developers can also modify them manually.

@@ -100,7 +100,7 @@ Developers can achieve opening files by installed vertical domain applications b
                 uri: uri,
                 action: "ohos.want.action.viewData", // Indicates the action to view data, fixed to this value for file opening scenarios
                 entities: [],
-                wantType: 'general.plain-text', // Indicates the type of file to be opened
+                dataType: 'general.plain-text', // Indicates the type of file to be opened
                 parameters: HashMap<String, WantValueType>(),
                 fds: HashMap<String, Int32>()
             )
@@ -136,7 +136,7 @@ Developers can achieve opening files by installed vertical domain applications b
                 uri: uri,
                 action: "ohos.want.action.viewData", // Indicates the action to view data, fixed to this value for file opening scenarios
                 entities: [],
-                wantType: 'general.plain-text', // Indicates the type of file to be opened
+                dataType: 'general.plain-text', // Indicates the type of file to be opened
                 parameters: HashMap<String, WantValueType>(),
                 fds: HashMap<String, Int32>()
             )
