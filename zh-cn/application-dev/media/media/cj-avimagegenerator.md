@@ -34,20 +34,23 @@
 
 ```cangjie
 // index.cj
+import kit.ArkUI.Button
+import kit.ArkUI.Image
 import kit.MediaKit.*
 import kit.ImageKit.PixelMap
 import kit.AbilityKit.*
+import kit.PerformanceAnalysisKit.Hilog
 
 var ctx = Option<UIAbilityContext>.None
 
 @Entry
 @Component
 class EntryView {
-    @State 
+    @State
     var message: String = 'Hello World'
 
     // pixelMap对象声明，用于图片显示
-    @State 
+    @State
     var pixelMap: ?PixelMap = Option<PixelMap>.None
 
     func build() {
@@ -86,7 +89,7 @@ class EntryView {
 
         // 初始化入参
         let timeUs = 0
-        let queryOption = AVImageQueryOptions.AV_IMAGE_QUERY_NEXT_SYNC
+        let queryOption = AVImageQueryOptions.AvImageQueryNextSync
         let param = PixelMapParams(
             width : 300,
             height : 300

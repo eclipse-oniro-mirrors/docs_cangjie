@@ -28,6 +28,7 @@
     import kit.SensorServiceKit.*
     import ohos.business_exception.BusinessException
     import ohos.callback_invoke.Callback1Argument
+    import kit.PerformanceAnalysisKit.Hilog
     ```
 
 2. 查询设备支持的所有传感器的参数。

@@ -29,8 +29,11 @@ photoAccessHelper仅提供开发者对收藏夹、视频相册、截屏和录屏
 
 ```cangjie
 import kit.MediaLibraryKit.*
-import kit.ArkData.*
 import ohos.business_exception.*
+import kit.AbilityKit.*
+import kit.PerformanceAnalysisKit.Hilog
+
+var ctx = Option<UIAbilityContext>.None
 
 func example() {
   try {
@@ -50,9 +53,9 @@ func example() {
 
 ```cangjie
 // main_ability.cj
-import ohos.hilog.*
-import ohos.ability.AbilityStage
-import ohos.ability.LaunchReason
+import kit.AbilityKit.*
+import kit.PerformanceAnalysisKit.Hilog
+import kit.ArkUI.WindowStage
 
 class MainAbility <: UIAbility {
     public init() {
@@ -63,7 +66,7 @@ class MainAbility <: UIAbility {
     public override func onCreate(want: Want, launchParam: LaunchParam): Unit {
         Hilog.info(1, "info", "MainAbility OnCreated.${want.abilityName}")
         match (launchParam.launchReason) {
-            case LaunchReason.START_ABILITY => Hilog.info(1, "info", "START_ABILITY")
+            case LaunchReason.StartAbility => Hilog.info(1, "info", "START_ABILITY")
             case _ => ()
         }
     }
@@ -100,6 +103,10 @@ class MainAbility <: UIAbility {
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
 import ohos.business_exception.*
+import kit.PerformanceAnalysisKit.Hilog
+import kit.AbilityKit.*
+
+var ctx = Option<UIAbilityContext>.None
 
 func example() {
     let context = ctx.getOrThrow()
@@ -128,9 +135,9 @@ func example() {
 
 ```cangjie
 // main_ability.cj
-import ohos.hilog.*
-import ohos.ability.AbilityStage
-import ohos.ability.LaunchReason
+import kit.AbilityKit.*
+import kit.PerformanceAnalysisKit.Hilog
+import kit.ArkUI.WindowStage
 
 class MainAbility <: UIAbility {
     public init() {
@@ -141,7 +148,7 @@ class MainAbility <: UIAbility {
     public override func onCreate(want: Want, launchParam: LaunchParam): Unit {
         Hilog.info(1, "info", "MainAbility OnCreated.${want.abilityName}")
         match (launchParam.launchReason) {
-            case LaunchReason.START_ABILITY => Hilog.info(1, "info", "START_ABILITY")
+            case LaunchReason.StartAbility => Hilog.info(1, "info", "START_ABILITY")
             case _ => ()
         }
     }
@@ -176,8 +183,11 @@ class MainAbility <: UIAbility {
 
 ```cangjie
 import kit.MediaLibraryKit.*
-import kit.ArkData.*
 import ohos.business_exception.*
+import kit.AbilityKit.*
+import kit.PerformanceAnalysisKit.Hilog
+
+var ctx = Option<UIAbilityContext>.None
 
 func example() {
   try {
@@ -197,9 +207,9 @@ func example() {
 
 ```cangjie
 // main_ability.cj
-import ohos.hilog.*
-import ohos.ability.AbilityStage
-import ohos.ability.LaunchReason
+import kit.AbilityKit.*
+import kit.PerformanceAnalysisKit.Hilog
+import kit.ArkUI.WindowStage
 
 class MainAbility <: UIAbility {
     public init() {
@@ -210,7 +220,7 @@ class MainAbility <: UIAbility {
     public override func onCreate(want: Want, launchParam: LaunchParam): Unit {
         Hilog.info(1, "info", "MainAbility OnCreated.${want.abilityName}")
         match (launchParam.launchReason) {
-            case LaunchReason.START_ABILITY => Hilog.info(1, "info", "START_ABILITY")
+            case LaunchReason.StartAbility => Hilog.info(1, "info", "START_ABILITY")
             case _ => ()
         }
     }
@@ -247,6 +257,10 @@ class MainAbility <: UIAbility {
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
 import ohos.business_exception.*
+import kit.AbilityKit.*
+import kit.PerformanceAnalysisKit.Hilog
+
+var ctx = Option<UIAbilityContext>.None
 
 func example() {
     let context = ctx.getOrThrow()
@@ -275,9 +289,9 @@ func example() {
 
 ```cangjie
 // main_ability.cj
-import ohos.hilog.*
-import ohos.ability.AbilityStage
-import ohos.ability.LaunchReason
+import kit.AbilityKit.*
+import kit.PerformanceAnalysisKit.Hilog
+import kit.ArkUI.WindowStage
 
 class MainAbility <: UIAbility {
     public init() {
@@ -288,7 +302,7 @@ class MainAbility <: UIAbility {
     public override func onCreate(want: Want, launchParam: LaunchParam): Unit {
         Hilog.info(1, "info", "MainAbility OnCreated.${want.abilityName}")
         match (launchParam.launchReason) {
-            case LaunchReason.START_ABILITY => Hilog.info(1, "info", "START_ABILITY")
+            case LaunchReason.StartAbility => Hilog.info(1, "info", "START_ABILITY")
             case _ => ()
         }
     }

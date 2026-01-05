@@ -8507,7 +8507,7 @@ public func preconfig(
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |preconfigType|[PreconfigType](#enum-preconfigtype)|是|-|指定配置预期分辨率。|
-|preconfigRatio|[PreconfigRatio](#enum-preconfigratio)|否|PreconfigRatio_16_9|**命名参数。** 可选画幅比例，默认为16:9。|
+|preconfigRatio|[PreconfigRatio](#enum-preconfigratio)|否|PreconfigRatio.PreconfigRatio_16_9|**命名参数。** 可选画幅比例，默认为16:9。|
 
 **异常：**
 
