@@ -28,7 +28,7 @@ public init(child!: () -> Unit = {=>})
 
 > **Note:**
 >
-> Menu and menu item width calculation rules:<br/>During layout, it is expected that each menu item has the same width. If a child component sets a width, it follows the [size calculation rules](./cj-universal-attribute-size.md#func-constraintsizelength-length-length-length).<br/>When width is not set: The menu component will set a default width of 2 grid units for child components MenuItem and MenuItemGroup. If the content area of a menu item is wider than 2 grid units, it will adaptively expand.<br/>When width is set: The menu component will set a fixed width for child components MenuItem and MenuItemGroup after subtracting padding.<br/>When setting the [width](./cj-universal-attribute-size.md#func-widthlength) of the Menu border, the minimum supported width is 64vp.
+> Menu and menu item width calculation rules:<br/>During layout, it is expected that each menu item has the same width. If a child component sets a width, it follows the [size calculation rules](./cj-universal-attribute-layoutconstraints.md#func-constraintsizelength-length-length-length).<br/>When width is not set: The menu component will set a default width of 2 grid units for child components MenuItem and MenuItemGroup. If the content area of a menu item is wider than 2 grid units, it will adaptively expand.<br/>When width is set: The menu component will set a fixed width for child components MenuItem and MenuItemGroup after subtracting padding.<br/>When setting the [width](./cj-universal-attribute-size.md#func-widthlength) of the Menu border, the minimum supported width is 64vp.
 
 **System Capability:** SystemCapability.ArkUI.ArkUI.Full
 

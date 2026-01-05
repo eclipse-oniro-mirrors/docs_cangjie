@@ -18,7 +18,7 @@ Below is a comparison of different implementation approaches:
 
 ## Modifying Original Components Without Creating New Ones
 
-This method doesn't create new containers but triggers [transition](../reference/arkui-cj/cj-animation-transition.md#func-transition) by adding/removing components from existing containers, combined with component [property animation](./cj-attribute-animation-apis.md) to achieve the one-shot effect.
+This method doesn't create new containers but triggers [transition](../reference/arkui-cj/cj-animation-transition.md#func-transitiontransitioneffect) by adding/removing components from existing containers, combined with component [property animation](./cj-attribute-animation-apis.md) to achieve the one-shot effect.
 
 For scenarios where the same container expands and sibling components disappear or appear, the one-shot effect can be achieved by modifying the container's width, height, and position before/after expansion with property animation, while configuring appear/disappear transition animations for sibling components. The basic steps are:
 

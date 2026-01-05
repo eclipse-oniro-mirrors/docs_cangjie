@@ -52,7 +52,7 @@ public init(content: ?ResourceStr)
 
 ## Common Properties/Common Events
 
-**Common Properties:** Only the following common properties are supported: [width](./cj-universal-attribute-size.md#func-widthlength), [height](./cj-universal-attribute-size.md#func-heightlength), [size](./cj-universal-attribute-size.md#func-sizelength-length), and [layoutWeight](./cj-universal-attribute-size.md#func-layoutweightint32). Properties such as [padding](./cj-universal-attribute-size.md#func-paddinglength), [margin](./cj-universal-attribute-size.md#func-marginlength), and [constraintSize](./cj-universal-attribute-size.md#func-constraintsizelength-length-length-length) are not supported as their behavior deviates from the common property descriptions.
+**Common Properties:** Only the following common properties are supported: [width](./cj-universal-attribute-size.md#func-widthlength), [height](./cj-universal-attribute-size.md#func-heightlength), [size](./cj-universal-attribute-size.md#func-sizelength-length), and [layoutWeight](./cj-universal-attribute-size.md#func-layoutweightint32). Properties such as [padding](./cj-universal-attribute-size.md#func-paddinglength), [margin](./cj-universal-attribute-size.md#func-marginlength), and [constraintSize](./cj-universal-attribute-layoutconstraints.md#func-constraintsizelength-length-length-length) are not supported as their behavior deviates from the common property descriptions.
 
 **Common Events:** All common events are supported.
 

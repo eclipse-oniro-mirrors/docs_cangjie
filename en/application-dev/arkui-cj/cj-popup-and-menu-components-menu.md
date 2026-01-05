@@ -2,9 +2,9 @@
 
 Menu is a menu interface, typically used for right-click pop-ups, click pop-ups, etc. For specific usage, please refer to [Menu Control](../reference/arkui-cj/cj-universal-attribute-menu.md).
 
-When using [bindContextMenu](../reference/arkui-cj/cj-universal-attribute-menu.md#func-bindcontextmenu---unit-responsetype) with a preview image set, the menu will have an overlay when popped up, making it modal.
+When using [bindContextMenu](../reference/arkui-cj/cj-universal-attribute-menu.md#func-bindcontextmenucustombuilder-responsetype-contextmenuoptions) with a preview image set, the menu will have an overlay when popped up, making it modal.
 
-When using [bindMenu](../reference/arkui-cj/cj-universal-attribute-menu.md#func-bindmenu---unit) or bindContextMenu without setting a preview image, the menu will pop up without an overlay, making it non-modal.
+When using [bindMenu](../reference/arkui-cj/cj-universal-attribute-menu.md#func-bindmenuarraymenuelement) or bindContextMenu without setting a preview image, the menu will pop up without an overlay, making it non-modal.
 
 ## Lifecycle
 

@@ -7,7 +7,7 @@
 > - CustomBuilder里不支持再使用bindMenu、bindContextMenu弹出菜单。多级菜单可使用[Menu](./cj-menu-menu.md)组件。
 > - 弹出菜单的文本内容不支持长按选中。
 > - 若组件是可拖动节点，绑定bindContextMenu未指定preview时，菜单弹出会浮起拖拽预览图且菜单选项和预览图不会发生避让。对此，开发者可根据使用场景设置preview或者将目标节点设置成不可拖动节点。
-> - 菜单支持长按500ms弹出子菜单，支持按压态跟随手指移动。<br> a.仅支持使用[Menu](./cj-menu-menu.md)组件且子组件包含[MenuItem](./cj-menu-menuitem.md)或[MenuItemGroup](./cj-menu-menuitemgroup.md)的场景。<br> b.仅支持[MenuPreviewMode](./cj-common-types.md#enum-menupreviewmode)为NONE的菜单。
+> - 菜单支持长按500ms弹出子菜单，支持按压态跟随手指移动。仅支持使用[Menu](./cj-menu-menu.md)组件且子组件包含[MenuItem](./cj-menu-menuitem.md)或[MenuItemGroup](./cj-menu-menuitemgroup.md)的场景。
 
 ## 导入模块
 
@@ -45,7 +45,7 @@ func bindContextMenu(builder!: ?CustomBuilder, responseType!: ?ResponseType,
 ## func bindMenu(?Array\<MenuElement>)
 
 ```cangjie
-public func bindMenu(content: ?Array<MenuElement>): T
+func bindMenu(content: ?Array<MenuElement>): T
 ```
 
 **功能：** 绑定菜单到组件。

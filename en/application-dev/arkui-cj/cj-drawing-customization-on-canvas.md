@@ -159,7 +159,7 @@ After invoking the Canvas component's lifecycle interface `onReady()`, developer
 
 ## Common Methods of Canvas Component
 
-The `OffscreenCanvasRenderingContext2D` and `CanvasRenderingContext2D` objects provide numerous properties and methods for drawing text, graphics, and pixel manipulation, serving as the core of the Canvas component. Common interfaces include [`fill`](../reference/arkui-cj/cj-canvas-drawing-canvasrenderingcontext2d.md#func-fill) (fills closed paths), [`clip`](../reference/arkui-cj/cj-canvas-drawing-canvasrenderingcontext2d.md#func-clip) (sets the current path as a clipping path), [`stroke`](../reference/arkui-cj/cj-canvas-drawing-canvasrenderingcontext2d.md#func-stroke) (performs stroke operations), etc. Additionally, properties like [`fillStyle`](../reference/arkui-cj/cj-canvas-drawing-canvasrenderingcontext2d.md#func-fillstylecanvasgradient) (specifies fill color), [`globalAlpha`](../reference/arkui-cj/cj-canvas-drawing-canvasrenderingcontext2d.md#func-globalalphafloat64) (sets transparency), and [`strokeStyle`](../reference/arkui-cj/cj-canvas-drawing-canvasrenderingcontext2d.md#func-strokestylecanvasgradient) (sets stroke color) modify rendering styles. Below are some common use cases:
+The `OffscreenCanvasRenderingContext2D` and `CanvasRenderingContext2D` objects provide numerous properties and methods for drawing text, graphics, and pixel manipulation, serving as the core of the Canvas component. Common interfaces include [`fill`](../reference/arkui-cj/cj-canvas-drawing-canvasrenderingcontext2d.md#func-fillcanvasfillrule) (fills closed paths), [`clip`](../reference/arkui-cj/cj-canvas-drawing-canvasrenderingcontext2d.md#func-clipcanvasfillrule) (sets the current path as a clipping path), [`stroke`](../reference/arkui-cj/cj-canvas-drawing-canvasrenderingcontext2d.md#func-stroke) (performs stroke operations), etc. Additionally, properties like [`fillStyle`](../reference/arkui-cj/cj-canvas-drawing-canvasrenderingcontext2d.md#prop-fillstyle) (specifies fill color), [`globalAlpha`](../reference/arkui-cj/cj-canvas-drawing-canvasrenderingcontext2d.md#prop-globalalpha) (sets transparency), and [`strokeStyle`](../reference/arkui-cj/cj-canvas-drawing-canvasrenderingcontext2d.md#prop-strokestyle) (sets stroke color) modify rendering styles. Below are some common use cases:
 
 - Basic Shape Drawing.
 
@@ -210,7 +210,7 @@ The `OffscreenCanvasRenderingContext2D` and `CanvasRenderingContext2D` objects p
 
 - Text Drawing.
 
-  Use [`fillText`](../reference/arkui-cj/cj-canvas-drawing-canvasrenderingcontext2d.md#func-filltextstring-float64-float64) (fills text) and [`strokeText`](../reference/arkui-cj/cj-canvas-drawing-canvasrenderingcontext2d.md#func-stroketextstring-float64-float64) (strokes text) for text rendering. The example sets the font to a bold 50-pixel "sans-serif" and fills "Hello World!" at (50, 100). It then sets `strokeStyle` to red, `lineWidth` to 0.7, and the same font to stroke "Hello World!" at (50, 120).
+  Use [`fillText`](../reference/arkui-cj/cj-canvas-drawing-canvasrenderingcontext2d.md#func-filltextstring-float64-float64-optionfloat64) (fills text) and [`strokeText`](../reference/arkui-cj/cj-canvas-drawing-canvasrenderingcontext2d.md#func-stroketextstring-float64-float64-optionfloat64) (strokes text) for text rendering. The example sets the font to a bold 50-pixel "sans-serif" and fills "Hello World!" at (50, 100). It then sets `strokeStyle` to red, `lineWidth` to 0.7, and the same font to stroke "Hello World!" at (50, 120).
 
      <!-- run -->
 

@@ -41,7 +41,6 @@ Universal attributes: All supported.
 >
 > - When the [width](cj-text-input-imagespan.md#var-width) attribute is set to "auto", it indicates adaptive width, which changes with the maximum width of index items.
 > - The [padding](./cj-universal-attribute-size.md#func-paddinglength) attribute defaults to 4.vp.
-> - The maximum font scaling factor [maxFontScale](./cj-common-types.md#var-maxfontscale) and the minimum font scaling factor [minFontScale](./cj-common-types.md#var-minfontscale) are both 1 and do not change with system font size adjustments.
 
 Universal events: All supported.
 

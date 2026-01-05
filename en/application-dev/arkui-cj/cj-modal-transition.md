@@ -8,8 +8,8 @@ Modal transition is a type of transition where a new interface overlays the old 
 |:---------------------------------------- |:----------------- |:---------------------------------------- |
 | [bindContentCover](../reference/arkui-cj/cj-universal-attribute-bindcontentcover.md#func-bindcontentcoverbool-custombuilder-contentcoveroptions) | Displays a full-screen modal component.        | Used for custom full-screen modal interfaces, combined with transition animations and shared element animations to achieve complex transition effects, such as clicking a thumbnail to view a larger image. |
 | [bindSheet](../reference/arkui-cj/cj-universal-attribute-sheettransition.md#func-bindsheetbool----unit-sheetoptions) | Displays a semi-modal component.          | Used for semi-modal interfaces, such as a share dialog.                          |
-| [bindMenu](../reference/arkui-cj/cj-universal-attribute-menu.md#func-bindmenu---unit) | Displays a menu, which pops up when the component is clicked.     | Scenarios requiring a menu, such as the "+" button in general applications.                 |
-| [bindContextMenu](../reference/arkui-cj/cj-universal-attribute-menu.md#func-bindcontextmenu---unit-responsetype) | Displays a menu, which pops up after a long press or right-click. | Floating effect on long press, typically used in combination with drag-and-drop frameworks, such as long-pressing a desktop icon to float it.             |
+| [bindMenu](../reference/arkui-cj/cj-universal-attribute-menu.md#func-bindmenuarraymenuelement) | Displays a menu, which pops up when the component is clicked.     | Scenarios requiring a menu, such as the "+" button in general applications.                 |
+| [bindContextMenu](../reference/arkui-cj/cj-universal-attribute-menu.md#func-bindcontextmenucustombuilder-responsetype-contextmenuoptions) | Displays a menu, which pops up after a long press or right-click. | Floating effect on long press, typically used in combination with drag-and-drop frameworks, such as long-pressing a desktop icon to float it.             |
 | [bindPopup](../reference/arkui-cj/cj-universal-attribute-popup.md#func-bindpopupbool-custompopupoptions) | Displays a Popup dialog.        | Popup dialog scenarios, such as providing temporary explanations for a component after clicking.               |
 | [if](./rendering_control/cj-rendering-control-ifelse.md)                                       | Adds or removes components via `if`.      | Used to temporarily display an interface under certain conditions. The back navigation for this method must be implemented by the developer through event listeners.  |
 
@@ -351,7 +351,7 @@ class EntryView {
 
 ## Implementing Menu Popup Effects with `bindMenu`  
 
-[bindMenu](../reference/arkui-cj/cj-universal-attribute-menu.md#func-bindmenuarraymenuelement-menuoptions) binds a popup menu to a component, triggered by clicking. The complete example and effect are as follows.  
+[bindMenu](../reference/arkui-cj/cj-universal-attribute-menu.md#func-bindmenuarraymenuelement) binds a popup menu to a component, triggered by clicking. The complete example and effect are as follows.  
 
  <!-- run -->
 
@@ -389,7 +389,7 @@ class EntryView {
 
 ## Implementing Menu Popup Effects with `bindContextMenu`  
 
-[bindContextMenu](../reference/arkui-cj/cj-universal-attribute-menu.md#func-bindcontextmenu---unit-responsetype-contextmenuoptions) binds a popup menu to a component, triggered by a long press or right-click. The complete example and effect are as follows.  
+[bindContextMenu](../reference/arkui-cj/cj-universal-attribute-menu.md#func-bindcontextmenucustombuilder-responsetype-contextmenuoptions) binds a popup menu to a component, triggered by a long press or right-click. The complete example and effect are as follows.  
 
  <!-- run -->
 
