@@ -2,7 +2,7 @@
 
 ## 通过DevEco Studio可视化界面查看
 
-开发者可使用 DevEco Studio Profiler 的 CPU Insight 功能，可视化展示 HiTraceMeter 日志内容，分析应用/服务的 CPU 使用率和线程的运行状态，查看指定时间段内程序在 CPU 上的执行耗时情况，具体使用指导请参见[CPU活动分析：CPU分析](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/ide-insight-session-cpu-V5)。
+开发者可使用 DevEco Studio Profiler 的 CPU Insight 功能，可视化展示 HiTraceMeter 日志内容，分析应用/服务的 CPU 使用率和线程的运行状态，查看指定时间段内程序在 CPU 上的执行耗时情况，具体使用指导请参见[CPU活动分析：CPU分析](https://developer.huawei.com/consumer/cn/doc/cangjie-guides/cj-insight-cpu)。
 
 ## 通过命令行工具查看
 
@@ -48,5 +48,5 @@
 
 8. HiTraceMeter 文本日志可视化分析。
 
-   - 导入 DevEco Studio 进行分析，具体参见[CPU活动分析：CPU分析](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/ide-insight-session-cpu-V5)文档，在 DevEco Studio Profiler 的会话区选择“Open File”，将 HiTraceMeter 文本日志导入 DevEco Studio 进行分析。
+   - 导入 DevEco Studio 进行分析，具体参见[CPU活动分析：CPU分析](https://developer.huawei.com/consumer/cn/doc/cangjie-guides/cj-insight-cpu)文档，在 DevEco Studio Profiler 的会话区选择“Open File”，将 HiTraceMeter 文本日志导入 DevEco Studio 进行分析。
    - 通过 [HiSmartPerf](https://gitee.com/openharmony/developtools_smartperf_host) 工具进行分析，工具下载链接[developtools_smartperf_host 发行版](https://gitee.com/openharmony/developtools_smartperf_host/releases)。

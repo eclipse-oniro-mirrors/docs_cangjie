@@ -48,8 +48,8 @@
 | --ets-path | 否 | NA  | 存放ets文件目录路径。| 仅stage模型生效。 |
 | --out-path  | 是| NA  | 目标文件路径，文件名必须以.hap为后缀。 | NA |
 | --force  | 否 | true或者false | 默认值为false。如果为true，表示当目标文件存在时，强制删除。| NA  |
-| --an-path | 否  | NA | 存放[an文件](https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs-V5/faqs-arkts-52-V5)的路径。| 仅stage模型生效。 |
-| --ap-path | 否| NA | 存放[ap文件](https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs-V5/faqs-arkts-52-V5)的路径。| 仅stage模型生效。 |
+| --an-path | 否  | NA | 存放[an文件](https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkts-52)的路径。| 仅stage模型生效。 |
+| --ap-path | 否| NA | 存放[ap文件](https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkts-52)的路径。| 仅stage模型生效。 |
 | --dir-list | 否 | NA | 可指定目标文件夹列表，将其打入HAP包内。 | NA  |
 | --compress-level | 否| number| 压缩等级，默认值1。可选等级1-9。在应用配置compressNativeLibs参数为true的情况下生效，数值越大压缩率越高、压缩速度越慢。 | NA  |
 | --pkg-context-path   | 否 | NA  | 可指定语境信息表文件路径，文件名必须为pkgContextInfo.json。 | 仅stage模型生效。|
