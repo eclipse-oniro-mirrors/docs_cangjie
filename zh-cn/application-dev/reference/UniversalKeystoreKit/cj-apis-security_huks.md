@@ -337,7 +337,7 @@ public func finishSession(handle: HuksHandleId, options: HuksOptions, token!: By
 |:---|:---|:---|:---|:---|
 |handle|[HuksHandleId](#class-hukshandleid)|是|-|finishSession操作的handle。|
 |options|[HuksOptions](#class-huksoptions)|是|-|finishSession操作的参数集合。|
-|token|Bytes|否|Bytes\<UInt8>()|**命名参数。** 密钥二次认证密钥访问控制的用户鉴权证明(AuthToken)，不填表示不进行二次认证密钥访问控制。|
+|token|Bytes|否|Bytes()|**命名参数。** 密钥二次认证密钥访问控制的用户鉴权证明(AuthToken)，不填表示不进行二次认证密钥访问控制。|
 
 **返回值：**
 
@@ -852,7 +852,7 @@ public func updateSession(handle: HuksHandleId, options: HuksOptions, token!: By
 |:---|:---|:---|:---|:---|
 |handle|[HuksHandleId](#class-hukshandleid)|是|-|updateSession操作的handle。|
 |options|[HuksOptions](#class-huksoptions)|是|-|updateSession操作的参数集合。|
-|token|Bytes|否|Bytes\<UInt8>()|**命名参数。** 密钥二次认证密钥访问控制的用户鉴权证明(AuthToken)，不填表示不进行二次认证密钥访问控制。|
+|token|Bytes|否|Bytes()|**命名参数。** 密钥二次认证密钥访问控制的用户鉴权证明(AuthToken)，不填表示不进行二次认证密钥访问控制。|
 
 **返回值：**
 
@@ -2466,7 +2466,7 @@ public var properties: Array<HuksParam>
 ### init(Array\<HuksParam>, Bytes)
 
 ```cangjie
-public init(properties!: Array<HuksParam> = Array<HuksParam>(), inData!: Bytes = Bytes<UInt8>())
+public init(properties!: Array<HuksParam> = Array<HuksParam>(), inData!: Bytes = Bytes())
 ```
 
 **功能：** 构造调用接口使用的options实例。
@@ -2480,7 +2480,7 @@ public init(properties!: Array<HuksParam> = Array<HuksParam>(), inData!: Bytes =
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |properties|Array\<[HuksParam](#class-huksparam)>|否|Array\<HuksParam>()|**命名参数。** 属性，用于存HuksParam的数组。默认为空。|
-|inData|Bytes|否|Bytes\<UInt8>()|**命名参数。** 输入数据。默认为空。|
+|inData|Bytes|否|Bytes()|**命名参数。** 输入数据。默认为空。|
 
 ## class HuksParam
 
