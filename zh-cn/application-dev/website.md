@@ -2,36 +2,36 @@
 
 <!--RP4-->
 - [应用开发导读](cj-start-application-development-overview.md)
-- 入门<!--RP4End-->
-    - 快速入门
+- 入门<!--cj-start--><!--RP4End-->
+    - 快速入门<!--cj-quick-start-->
         - [开发准备](cj-start/start/quick-start/cj-quick-start-preparations.md)
         - [构建第一个OpenHarmony应用（仓颉）](cj-start/start/quick-start/cj-quick-start-first-cangjie-app.md)
-    - 开发基础知识
-        - 应用程序包基础知识
+    - 开发基础知识<!--cj-basic-knowledge-->
+        - 应用程序包基础知识<!--cj-development-fundamentals-->
             - [应用程序包概述](cj-start/basic-knowledge/application-package-overview.md)
-            - 应用程序包结构
+            - 应用程序包结构<!--cj-application-package-structure-->
                 - [Stage模型应用程序包结构](cj-start/basic-knowledge/application-package-structure-stage.md)
-            - 应用程序包开发与使用
+            - 应用程序包开发与使用<!--cj-application-package-dev-->
                 - [HAP](cj-start/basic-knowledge/hap-package.md)
                 - [HAR](cj-start/basic-knowledge/har-package.md)
-            - 应用程序包安装卸载与更新
+            - 应用程序包安装卸载与更新<!--cj-application-package-install-->
                 - [应用安装卸载与更新开发指导](cj-start/basic-knowledge/application-package-install-uninstall.md)
                 - [应用安装与更新一致性校验](cj-start/basic-knowledge/multi_module_installation_update_consistency_verification.md)
-        - 应用配置文件（Stage模型）
+        - 应用配置文件（Stage模型）<!--cj-application-configuration-file-stage-->
             - [应用配置文件概述（Stage模型）](cj-start/basic-knowledge/application-configuration-file-overview-stage.md)
             - [app.json5配置文件](cj-start/basic-knowledge/app-configuration-file.md)
             - [module.json5配置文件](cj-start/basic-knowledge/module-configuration-file.md)
         - [应用程序包常见问题](cj-start/basic-knowledge/common_problem_of_application.md)
         - [应用程序包术语](cj-start/basic-knowledge/application-package-glossary.md)
     - [资源分类与访问](cj-start/start/ide-resource-categories-and-access.md)
-    - 学习仓颉语言
+    - 学习仓颉语言<!--cj-learn-cj-->
         - [初识仓颉语言](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/first_understanding/basic.md)
-        - 基本概念
+        - 基本概念<!--cj-basic-concept-->
             - [标识符](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/basic_programming_concepts/identifier.md)
             - [程序结构](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/basic_programming_concepts/program_structure.md)
             - [表达式](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/basic_programming_concepts/expression.md)
             - [函数](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/basic_programming_concepts/function.md)
-        - 基础数据类型
+        - 基础数据类型<!--cj-basic-data-type-->
             - [基本操作符](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/basic_data_type/basic_operators.md)
             - [整数类型](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/basic_data_type/integer.md)
             - [浮点类型](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/basic_data_type/float.md)
@@ -43,7 +43,7 @@
             - [区间类型](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/basic_data_type/range.md)
             - [Unit 类型](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/basic_data_type/unit.md)
             - [Nothing 类型](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/basic_data_type/nothing.md)
-        - 函数
+        - 函数<!--cj-func-->
             - [定义函数](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/function/define_functions.md)
             - [调用函数](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/function/call_functions.md)
             - [函数类型](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/function/first_class_citizen.md)
@@ -54,24 +54,24 @@
             - [函数重载](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/function/function_overloading.md)
             - [操作符重载](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/function/operator_overloading.md)
             - [const 函数和常量求值](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/function/const_func_and_eval.md)
-        - 结构类型
+        - 结构类型<!--cj-struct-types-->
             - [定义 struct 类型](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/struct/define_struct.md)
             - [创建 struct 实例](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/struct/create_instance.md)
             - [mut 函数](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/struct/mut.md)
-        - 枚举类型和模式匹配
+        - 枚举类型和模式匹配<!--cj-enum-type-->
             - [枚举类型](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/enum_and_pattern_match/enum.md)
             - [Option 类型](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/enum_and_pattern_match/option_type.md)
             - [模式概述](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/enum_and_pattern_match/pattern_overview.md)
             - [模式的 Refutability](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/enum_and_pattern_match/pattern_refutability.md)
             - [match 表达式](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/enum_and_pattern_match/match.md)
             - [其他使用模式的地方](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/enum_and_pattern_match/other.md)
-        - 类和接口
+        - 类和接口<!--cj-class-and-interface-->
             - [类](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/class_and_interface/class.md)
             - [接口](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/class_and_interface/interface.md)
             - [属性](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/class_and_interface/prop.md)
             - [子类型关系](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/class_and_interface/subtype.md)
             - [类型转换](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/class_and_interface/typecast.md)
-        - 泛型
+        - 泛型<!--cj-generic-->
             - [泛型概述](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/generic/generic_overview.md)
             - [泛型函数](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/generic/generic_function.md)
             - [泛型接口](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/generic/generic_interface.md)
@@ -81,45 +81,45 @@
             - [泛型类型的子类型关系](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/generic/generic_subtype.md)
             - [类型别名](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/generic/typealias.md)
             - [泛型约束](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/generic/generic_constraint.md)
-        - 扩展
+        - 扩展<!--cj-extend-->
             - [扩展概述](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/extension/extend_overview.md)
             - [直接扩展](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/extension/direct_extension.md)
             - [接口扩展](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/extension/interface_extension.md)
             - [访问规则](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/extension/access_rules.md)
-        - Collection 类型
+        - Collection 类型<!--cj-collections-->
             - [基础 Collection 类型概述](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/collections/collection_overview.md)
             - [ArrayList](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/collections/collection_arraylist.md)
             - [HashSet](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/collections/collection_hashset.md)
             - [HashMap](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/collections/collection_hashmap.md)
             - [Iterable 和 Collections](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/collections/collection_iterable_collections.md)
-        - 包
+        - 包<!--cj-package-->
             - [包的概述](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/package/package_overview.md)
             - [包的声明](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/package/package_name.md)
             - [顶层声明的可见性](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/package/toplevel_access.md)
             - [包的导入](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/package/import.md)
             - [程序入口](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/package/entry.md)
-        - 异常处理
+        - 异常处理<!--cj-exceptions-->
             - [定义异常](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/error_handle/exception_overview.md)
             - [throw 和处理异常](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/error_handle/handle.md)
             - [常见运行时异常](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/error_handle/common_runtime_exceptions.md)
             - [使用 Option](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/error_handle/use_option.md)
-        - 并发编程
+        - 并发编程<!--cj-concurrency-->
             - [并发概述](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/concurrency/concurrency_overview.md)
             - [创建线程](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/concurrency/create_thread.md)
             - [访问线程](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/concurrency/use_thread.md)
             - [终止线程](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/concurrency/terminal_thread.md)
             - [同步机制](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/concurrency/sync.md)
             - [线程睡眠指定时长 sleep](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/concurrency/sleep.md)
-        - 基础 I/O 操作
+        - 基础 I/O 操作<!--cj-basic_IO-->
             - [I/O 流概述](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/Basic_IO/basic_IO_overview.md)
             - [I/O 节点流](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/Basic_IO/basic_IO_source_stream.md)
             - [I/O 处理流](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/Basic_IO/basic_IO_process_stream.md)
-        - 网络编程
+        - 网络编程<!--cj-net-->
             - [网络编程概述](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/Net/net_overview.md)
             - [Socket 编程](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/Net/net_socket.md)
             - [HTTP 编程](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/Net/net_http.md)
             - [WebSocket 编程](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/Net/net_websocket.md)
-        - 宏
+        - 宏<!--cj-macro-->
             - [宏的简介](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/Macro/macro_introduction.md)
             - [Tokens 相关类型和 quote 表达式](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/Macro/Tokens_types_and_quote_expressions.md)
             - [语法节点](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/Macro/syntax_node.md)
@@ -128,16 +128,16 @@
             - [宏包定义和导入](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/Macro/defining_and_importing_macro_package.md)
             - [内置编译标记](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/Macro/builtin_compilation_flags.md)
             - [实用案例](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/Macro/practical_case.md)
-        - 反射和注解
+        - 反射和注解<!--cj-reflection-and-annotations-->
             - [动态特性](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/reflect_and_annotation/dynamic_feature.md)
             - [注解](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/reflect_and_annotation/anno.md)
-        - 跨语言互操作
+        - 跨语言互操作<!--cj-arkts-->
             - [仓颉-C 互操作](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/FFI/cangjie-c.md)
-        - 编译和构建
+        - 编译和构建<!--cj-compilation-and-build-->
             - [`cjc` 使用](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/compile_and_build/cjc_usage.md)
             - [`cjpm` 介绍](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/compile_and_build/cjpm_usage.md)
             - [条件编译](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/compile_and_build/conditional_compilation.md)
-        - 附录
+        - 附录<!--cj-learn-appendix-->
             - [`cjc` 编译选项](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/Appendix/compile_options.md)
             - [关键字](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/Appendix/keyword.md)
             - [操作符](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_zh_cn/Appendix/operator.md)
