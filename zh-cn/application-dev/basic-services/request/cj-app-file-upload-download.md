@@ -22,8 +22,7 @@ import ohos.callback_invoke.*
 import ohos.business_exception.*
 import kit.BasicServicesKit.*
 import kit.CoreFileKit.*
-import kit.AbilityKit.*
-import kit.BasicServicesKit.{State as RState, Filter as RFilter, Action as RAction, Progress as RProgress, remove as rRemove}
+import kit.PerformanceAnalysisKit.Hilog
 
 func Upload(): Unit {
     // 获取应用文件路径
@@ -51,7 +50,7 @@ func Upload(): Unit {
     ])
 
     let uploadConfig = Config(
-        RAction.Upload,
+        Action.Upload,
         "http://xxx",
         title: "taskOnTest",
         mode: Mode.Foreground,
@@ -77,10 +76,10 @@ func Upload(): Unit {
     task.start()
 }
 
-public class ProgressCallback <: Callback1Argument<RProgress> {
+public class ProgressCallback <: Callback1Argument<Progress> {
     public ProgressCallback() {}
 
-    public open func invoke(err: ?BusinessException, arg: RProgress): Unit {
+    public open func invoke(err: ?BusinessException, arg: Progress): Unit {
         Hilog.info(0, "CangjieTest", "ProgressCallback Invoke")
     }
 }
@@ -107,12 +106,9 @@ import ohos.callback_invoke.*
 import ohos.business_exception.*
 import kit.BasicServicesKit.*
 import kit.CoreFileKit.*
-import kit.AbilityKit.*
-import kit.BasicServicesKit.{State as RState, Filter as RFilter, Action as RAction, Progress as RProgress, remove as rRemove}
-import std.time.*
 import std.collection.*
-import std.runtime.*
 import std.sync.*
+import kit.PerformanceAnalysisKit.Hilog
 
 //下载的函数
 func Download(): Unit {
@@ -127,7 +123,7 @@ func Download(): Unit {
     let responseCallback = HttpResponseCallback()
 
     let config = Config(
-        RAction.Download,
+        Action.Download,
         fileURL,
         saveas: fileName,
         headers: HashMap<String, String>([("headers", "http")]),
@@ -153,7 +149,7 @@ func Download(): Unit {
         FileIo.unlink(filePath)
     }
     //结束任务
-    rRemove(task.tid)
+    remove(task.tid)
 }
 
 class HttpResponseCallback <: Callback1Argument<HttpResponse> {

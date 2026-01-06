@@ -182,12 +182,10 @@ func readWriteFileWithStream() {
 
 ```cangjie
 import kit.CoreFileKit.*
-import kit.CoreFileKit.*
-import kit.AbilityKit.*
-import ohos.base.*
+import kit.PerformanceAnalysisKit.Hilog
 
 // 见获取UIAbility的上下文信息章节
-let context = getContext()
+let context = Global.abilityContext
 // 获取应用文件路径
 let filesDir = context.filesDir
 

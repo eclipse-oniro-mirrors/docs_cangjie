@@ -37,7 +37,8 @@
 
     ```cangjie
     import kit.LocationKit.*
-    import ohos.base.*
+    import ohos.business_exception.BusinessException
+    import kit.PerformanceAnalysisKit.Hilog
 
     try {
         let locationEnabled = GeoLocationManager.isLocationEnabled()
@@ -64,9 +65,10 @@
 
         ```cangjie
         import kit.LocationKit.*
-        import ohos.base.*
+        import ohos.business_exception.BusinessException
+        import kit.PerformanceAnalysisKit.Hilog
 
-        let request: SingleLocationRequest = SingleLocationRequest(LocatingPriority.PRIORITY_LOCATING_SPEED, 10000)
+        let request: SingleLocationRequest = SingleLocationRequest(LocatingPriority.PriorityLocatingSpeed, 10000)
         try {
             // 调用getCurrentLocation获取当前设备位置
             let result = GeoLocationManager.getCurrentLocation(request)
