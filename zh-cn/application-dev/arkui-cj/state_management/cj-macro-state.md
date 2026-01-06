@@ -599,4 +599,4 @@ class EntryView {
 }
 ```
 
-此外，也可以使用[LocalStorage](./cj-localstorage.md#自定义组件改变状态变量)的方式在自定义组件外改变状态变量。
+此外，也可以使用[LocalStorage](./cj-localstorage.md#自定义组件外改变状态变量)的方式在自定义组件外改变状态变量。

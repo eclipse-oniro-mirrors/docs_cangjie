@@ -232,7 +232,7 @@ After setting anchor points, use the [`alignRules`](../reference/arkui-cj/cj-uni
 
 ### Child Component Position Offset
 
-After relative alignment, a child component's position may still not meet the target requirements. Developers can apply additional offsets (`offset`) as needed. When an offset-adjusted component serves as an anchor point, the alignment reference remains its pre-offset position. It is recommended to use [`bias`](../reference/arkui-cj/cj-universal-attribute-location.md#class-bias) for additional offsets.
+After relative alignment, a child component's position may still not meet the target requirements. Developers can apply additional offsets (`offset`) as needed. When an offset-adjusted component serves as an anchor point, the alignment reference remains its pre-offset position. It is recommended to use [`bias`](../reference/arkui-cj/cj-common-types.md#class-bias) for additional offsets.
 
  <!-- run -->  
 ```cangjie

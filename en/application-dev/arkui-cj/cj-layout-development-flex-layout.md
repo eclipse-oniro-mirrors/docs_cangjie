@@ -780,7 +780,7 @@ In the above example, the Flex container's `alignItems` sets the cross-axis alig
 
 ### Content Alignment
 
-The [`alignContent`](../reference/arkui-cj/cj-row-column-stack-flex.md#var-aligncontent) parameter can set the alignment of child element rows within the remaining space of the cross-axis, only effective in multi-line Flex layouts. Optional values include:
+The [`alignContent`](../reference/arkui-cj/cj-row-column-stack-flex.md#initflexdirection-flexwrap-flexalign-itemalign-flexalign----unit) parameter can set the alignment of child element rows within the remaining space of the cross-axis, only effective in multi-line Flex layouts. Optional values include:
 
 - `FlexAlign.Start`: Aligns child element rows to the start of the cross-axis.
 

@@ -41,7 +41,6 @@ public init(arrayValue!: Array<String>, selected!: ?UInt32)
 >
 > - [width](./cj-universal-attribute-size.md#func-widthoptionlength)属性设置"auto"时表示自适应宽度，宽度会随索引项最大宽度变化。
 > - [padding](./cj-universal-attribute-size.md#func-paddinglength)属性默认为4.vp。
-> - 文本最大的字体缩放倍数[maxFontScale](./cj-common-types.md#var-maxfontscale)和最小的字体缩放倍数[minFontScale](./cj-common-types.md#var-minfontscale)皆为1，不跟随系统字体大小调节变化。
 
 通用事件：全部支持。
 

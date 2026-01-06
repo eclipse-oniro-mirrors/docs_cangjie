@@ -73,7 +73,7 @@ public func columnEnd(value: ?Int32): This
 
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
-| value | ?Int32 | Yes | - | The ending column number of the current element, used in conjunction with columnStart. For scenarios requiring specification of GridItem's starting row/column numbers and occupied rows/columns, it is recommended to use [Grid's layoutOptions parameter](./cj-scroll-swipe-grid.md#class-gridlayoutoptions).<br/>Value range: [0, total columns - 1]. Initial value: 0 |
+| value | ?Int32 | Yes | - | The ending column number of the current element, used in conjunction with columnStart. |
 
 ### func columnStart(?Int32)
 
@@ -91,7 +91,7 @@ public func columnStart(value: ?Int32): This
 
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
-| value | ?Int32 | Yes | - | The starting column number of the current element, used in conjunction with columnEnd. For scenarios requiring specification of GridItem's starting row/column numbers and occupied rows/columns, it is recommended to use [Grid's layoutOptions parameter](./cj-scroll-swipe-grid.md#class-gridlayoutoptions).<br/>Value range: [0, total columns - 1]. Initial value: 0 |
+| value | ?Int32 | Yes | - | The starting column number of the current element, used in conjunction with columnEnd. |
 
 ### func rowEnd(?Int32)
 
@@ -109,7 +109,7 @@ public func rowEnd(value: ?Int32): This
 
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
-| value | ?Int32 | Yes | - | The ending row number of the current element, used in conjunction with rowStart. For scenarios requiring specification of GridItem's starting row/column numbers and occupied rows/columns, it is recommended to use [Grid's layoutOptions parameter](./cj-scroll-swipe-grid.md#class-gridlayoutoptions).<br/>Value range: [0, total rows - 1]. Initial value: 0 |
+| value | ?Int32 | Yes | - | The ending row number of the current element, used in conjunction with rowStart. |
 
 ### func rowStart(?Int32)
 
@@ -127,13 +127,13 @@ public func rowStart(value: ?Int32): This
 
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
-| value | ?Int32 | Yes | - | The starting row number of the current element, used in conjunction with rowEnd. For scenarios requiring specification of GridItem's starting row/column numbers and occupied rows/columns, it is recommended to use [Grid's layoutOptions parameter](./cj-scroll-swipe-grid.md#class-gridlayoutoptions).<br/>Value range: [0, total rows - 1]. Initial value: 0 |
+| value | ?Int32 | Yes | - | The starting row number of the current element, used in conjunction with rowEnd. |
 
 ## Example Code
 
 ### Example 1 (Setting GridItem Position)
 
-GridItem sets its own position by configuring appropriate ColumnStart, ColumnEnd, RowStart, and RowEnd attributes. For scenarios requiring specification of GridItem's starting row/column numbers and occupied rows/columns, it is recommended to use [Grid's layoutOptions parameter](./cj-scroll-swipe-grid.md#class-gridlayoutoptions).
+GridItem sets its own position by configuring appropriate ColumnStart, ColumnEnd, RowStart, and RowEnd attributes.
 
 <!-- run -->
 

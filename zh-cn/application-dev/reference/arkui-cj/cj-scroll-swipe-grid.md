@@ -83,7 +83,7 @@ public func cachedCount(count: ?Int32, show: ?Bool): This
 
 **功能：** 设置预加载的GridItem数量，并配置是否显示预加载节点。
 
-设置缓存后会在Grid显示区域上下各缓存cachedCount*列数个GridItem。配合[裁剪](./cj-universal-attribute-shapclip.md#func-clip)或[内容裁剪](./cj-universal-attribute-shapclip.md#func-clip)属性可以显示出预加载节点。
+设置缓存后会在Grid显示区域上下各缓存cachedCount*列数个GridItem。配合[裁剪](./cj-universal-attribute-shapclip.md#func-clipbool)或[内容裁剪](./cj-universal-attribute-shapclip.md#func-clipbool)属性可以显示出预加载节点。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 

@@ -7,7 +7,7 @@ Bind a pop-up menu to a component. The pop-up menu displays menu items in a vert
 > - CustomBuilder does not support using bindMenu or bindContextMenu to pop up menus. For multi-level menus, use the [Menu](./cj-menu-menu.md#menu) component.
 > - The text content of the pop-up menu does not support long-press selection.
 > - If the component is a draggable node and bindContextMenu is bound without specifying preview, the menu pop-up will float the drag preview, and the menu options and preview will not avoid each other. Developers can set preview or make the target node non-draggable based on usage scenarios.
-> - The menu supports long-press for 500ms to pop up submenus and supports press state following finger movement.<br> a. Only supports scenarios using the [Menu](./cj-menu-menu.md#menu) component and subcomponents containing [MenuItem](./cj-menu-menuitem.md#menuitem) or [MenuItemGroup](./cj-menu-menuitemgroup.md#menuitemgroup).<br> b. Only supports menus with [MenuPreviewMode](./cj-common-types.md#enum-menupreviewmode) set to NONE.
+> - The menu supports long-press for 500ms to pop up submenus and supports press state following finger movement. Only supports scenarios using the [Menu](./cj-menu-menu.md#menu) component and subcomponents containing [MenuItem](./cj-menu-menuitem.md#menuitem) or [MenuItemGroup](./cj-menu-menuitemgroup.md#menuitemgroup).
 
 ## Import Module
 

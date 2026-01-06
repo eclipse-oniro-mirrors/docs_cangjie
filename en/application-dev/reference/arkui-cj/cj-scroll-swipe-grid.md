@@ -83,7 +83,7 @@ public func cachedCount(count: ?Int32, show: ?Bool): This
 
 **Function:** Sets the number of preloaded GridItems and configures whether to display preloaded nodes.
 
-After setting the cache, GridItems equal to `cachedCount * number of columns` will be cached above and below the Grid's display area. Combined with [Clip](./cj-universal-attribute-shapclip.md#func-clip) or [Content Clip](./cj-universal-attribute-shapclip.md#func-clip) attributes, preloaded nodes can be displayed.
+After setting the cache, GridItems equal to `cachedCount * number of columns` will be cached above and below the Grid's display area. Combined with [Clip](./cj-universal-attribute-shapclip.md#func-clipbool) or [Content Clip](./cj-universal-attribute-shapclip.md#func-clipbool) attributes, preloaded nodes can be displayed.
 
 **System Capability:** SystemCapability.ArkUI.ArkUI.Full
 

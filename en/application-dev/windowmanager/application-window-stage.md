@@ -284,7 +284,7 @@ Floating windows can remain displayed in the foreground even after the creating 
 
 ### Development Steps
 
-**Prerequisite:** To create a `WindowType.TypeFloat` (floating window), the `ohos.permission.SYSTEM_FLOAT_WINDOW` permission must be requested. For configuration details, refer to [Permission Request for system_basic-Level Applications](../security/AccessToken/cj-determine-application-mode.md#system_basic等级应用申请权限的方式).
+**Prerequisite:** To create a `WindowType.TypeFloat` (floating window), the `ohos.permission.SYSTEM_FLOAT_WINDOW` permission must be requested. For configuration details, refer to [Permission Request for system_basic-Level Applications](../security/AccessToken/cj-determine-application-mode.md#system_basic-level-application-permission-request-methods).
 
 1. Create a floating window.  
    Use the `createWindow` API with `WindowType.TypeFloat`.

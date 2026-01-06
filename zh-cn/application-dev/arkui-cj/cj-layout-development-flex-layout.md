@@ -780,7 +780,7 @@ class EntryView {
 
 ### 内容对齐
 
-可以通过[alignContent](../reference/arkui-cj/cj-row-column-stack-flex.md#var-aligncontent)参数设置子元素各行在交叉轴剩余空间内的对齐方式，只在多行的Flex布局中生效，可选值有：
+可以通过[alignContent](../reference/arkui-cj/cj-row-column-stack-flex.md#initflexdirection-flexwrap-flexalign-itemalign-flexalign----unit)参数设置子元素各行在交叉轴剩余空间内的对齐方式，只在多行的Flex布局中生效，可选值有：
 
 - FlexAlign.Start：子元素各行与交叉轴起点对齐。
 

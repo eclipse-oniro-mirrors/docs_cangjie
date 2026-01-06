@@ -12,7 +12,7 @@ This document focuses on the usage scenarios of AppStorage and related macros: @
 
 AppStorage is designed to provide developers with broader cross-ability basic data sharing, unlike macros such as @State, which can only be passed along the component tree. Before reading this document, developers are advised to have a macro-level understanding of AppStorage's role in the state management framework. It is recommended to read [State Management Overview](cj-state-management-overview.md) in advance.
 
-AppStorage also provides API interfaces, allowing developers to manually trigger additions, deletions, modifications, and queries of AppStorage keys outside custom components. It is recommended to read the [AppStorage API Documentation](../../reference/arkui-cj/cj-state-rendering-appstatemanagement.md#appstorage-application-wide-ui-state-storage) in conjunction with this document.
+AppStorage also provides API interfaces, allowing developers to manually trigger additions, deletions, modifications, and queries of AppStorage keys outside custom components. It is recommended to read the [AppStorage API Documentation](../../reference/arkui-cj/cj-state-rendering-appstatemanagement.md#class-appstorage) in conjunction with this document.
 
 ## Overview
 

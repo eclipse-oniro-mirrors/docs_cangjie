@@ -458,7 +458,7 @@ class EntryView {
 
 ![relativecontainer2](figures/relativecontainer2.png)### Example 3 (Setting Offset)
 
-This example demonstrates how to achieve vertical offset between two anchor points for child components using [bias](cj-universal-attribute-location.md#class-bias).
+This example demonstrates how to achieve vertical offset between two anchor points for child components using [bias](cj-common-types.md#class-bias).
 
 <!-- run -->
 
