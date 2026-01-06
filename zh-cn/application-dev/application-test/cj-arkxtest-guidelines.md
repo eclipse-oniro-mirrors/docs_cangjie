@@ -467,7 +467,7 @@ hdc shell uitest uiInput inputText 100 100 hello
 
 > **说明：**
 >
-> 最多支持传入是三个键值，键值的具体取值请参考[KeyCode](../reference/arkui-cj/cj-universal-event-key.md#var-keycode)。
+> 最多支持传入是三个键值，键值的具体取值请参考[KeyCode](../reference/arkui-cj/cj-common-types.md#var-keycode)。
 
 ```shell
 # 返回主页。
