@@ -463,8 +463,9 @@ public init(angle: ?Float32, x!: ?Float32 = None, y!: ?Float32 = None, z!: ?Floa
 ```cangjie
 public class TransitionEffect {
     public static let IDENTITY: TransitionEffect
-    public static let OPACITY: TransitionEffect
-    public static let SLIDE: TransitionEffect
+    public static let OPACITY: TransitionEffect = TransitionEffect.opacity(0.0)
+    public static let SLIDE: TransitionEffect = TransitionEffect.asymmetric(TransitionEffect.move(TransitionEdge.Start),
+        TransitionEffect.move(TransitionEdge.End))
     public static let SLIDE_SWITCH: TransitionEffect
 }
 ```
@@ -498,7 +499,7 @@ public static let IDENTITY: TransitionEffect
 ### static let OPACITY
 
 ```cangjie
-public static let OPACITY: TransitionEffect
+public static let OPACITY: TransitionEffect = TransitionEffect.opacity(0.0)
 ```
 
 **功能：** 定义透明度为0的转场效果，等效于TransitionEffect.opacity(0.0)。
@@ -514,7 +515,8 @@ public static let OPACITY: TransitionEffect
 ### static let SLIDE
 
 ```cangjie
-public static let SLIDE: TransitionEffect
+public static let SLIDE: TransitionEffect = TransitionEffect.asymmetric(TransitionEffect.move(TransitionEdge.Start),
+        TransitionEffect.move(TransitionEdge.End))
 ```
 
 **功能：** 定义滑动转场效果。

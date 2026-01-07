@@ -49,7 +49,7 @@ func rotate(x!: ?Float32, y!: ?Float32, z!: ?Float32, angle!: ?Float32,
 ## func scale(?Float32, ?Float32, ?Float32, ?Length, ?Length)
 
 ```cangjie
-public func scale(x!: ?Float32, y!: ?Float32, z!: ?Float32, centerX!: ?Length,
+func scale(x!: ?Float32, y!: ?Float32, z!: ?Float32, centerX!: ?Length,
     centerY!: ?Length): T
 ```
 
@@ -79,7 +79,7 @@ public func scale(x!: ?Float32, y!: ?Float32, z!: ?Float32, centerX!: ?Length,
 ## func translate(?Length, ?Length, ?Length)
 
 ```cangjie
-public func translate(x!: ?Length, y!: ?Length, z!: ?Length): T
+func translate(x!: ?Length, y!: ?Length, z!: ?Length): T
 ```
 
 **Function:** Sets the translation of a component.

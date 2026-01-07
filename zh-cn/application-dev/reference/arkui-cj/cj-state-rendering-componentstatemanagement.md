@@ -12,8 +12,8 @@ import kit.ArkUI.*
 
 ```cangjie
 public class ObservedArrayList<T> <:  CollectionEx<T> {
-    public init(ArrayList<T>)
-    public init(Array<T>)
+    public init(initValue: ArrayList<T>)
+    public init(initValue: Array<T>)
 }
 ```
 

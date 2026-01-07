@@ -379,12 +379,6 @@ public class PreparedInfo {
 ```cangjie
 public class VideoController {
     public init()
-    public func start(): Unit
-    public func pause(): Unit
-    public func stop(): Unit
-    public func setCurrentTime(value: Int32, seekMode: ?SeekMode): Unit
-    public func requestFullscreen(value: ?Bool): Unit
-    public func exitFullscreen(): Unit
 }
 ```
 
