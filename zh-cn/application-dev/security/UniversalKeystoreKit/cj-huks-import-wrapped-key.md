@@ -1,4 +1,4 @@
-# 加密导入密钥（仓颉）
+# 加密导入密钥
 
 以加密导入ECDH密钥对为例，涉及业务侧加密密钥的[密钥生成](./cj-huks-key-generation-overview.md)、[协商](./cj-huks-key-agreement-overview.md)等操作不在本示例中体现。
 

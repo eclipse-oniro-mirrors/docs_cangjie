@@ -5,19 +5,19 @@
   - [分析Cangjie Crash（进程崩溃）](cj-cangjiecrash-guidelines.md)
   - [分析AppFreeze（应用无响应）](cj-appfreeze-guidelines.md)
 - 日志打印
-  - [使用HiLog打印日志（仓颉）](cj-hilog-guidelines.md)
+  - [使用HiLog打印日志](cj-hilog-guidelines.md)
 - 事件订阅
   - [HiAppEvent介绍](cj-hiappevent-intro.md)
   - 使用HiAppEvent订阅事件
     - 应用事件
-      - [订阅应用事件（仓颉）](cj-hiappevent-watcher-app-events.md)
+      - [订阅应用事件](cj-hiappevent-watcher-app-events.md)
     - 系统事件
       - 崩溃事件
         - [崩溃事件介绍](cj-hiappevent-watcher-crash-events.md)
-        - [订阅崩溃事件（仓颉）](cj-hiappevent-watcher-crash-events-cangjie.md)
+        - [订阅崩溃事件](cj-hiappevent-watcher-crash-events-cangjie.md)
       - appfreeze事件
         - [appfreeze事件介绍](cj-hiappevent-watcher-freeze-events.md)
-        - [订阅appfreeze事件（仓颉）](cj-hiappevent-watcher-freeze-events-cangjie.md)
+        - [订阅appfreeze事件](cj-hiappevent-watcher-freeze-events-cangjie.md)
   - [事件上报](cj-hiappevent-event-reporting.md)
 - 性能跟踪
   - [查看HiTraceMeter日志](cj-hitracemeter-view.md)

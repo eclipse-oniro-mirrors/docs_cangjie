@@ -1,4 +1,4 @@
-# 使用AVImageGenerator提取视频指定时间图像（仓颉）
+# 使用AVImageGenerator提取视频指定时间图像
 
 使用AVImageGenerator可以实现从原始媒体资源中获取视频指定时间的缩略图。本开发指导将以获取一个视频资源的缩略图为例，向开发者讲解 AVImageGenerator 的相关功能。
 

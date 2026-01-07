@@ -424,8 +424,8 @@
                     - 密钥生成和转换规格
                         - [对称密钥生成和转换规格](security/CryptoArchitectureKit/cj-crypto-sym-key-generation-conversion-spec.md)
                     - 密钥生成和转换开发指导
-                        - [随机生成对称密钥（仓颉）](security/CryptoArchitectureKit/cj-crypto-generate-sym-key-randomly.md)
-                        - [指定二进制数据转换对称密钥（仓颉）](security/CryptoArchitectureKit/cj-crypto-convert-binary-data-to-sym-key.md)
+                        - [随机生成对称密钥](security/CryptoArchitectureKit/cj-crypto-generate-sym-key-randomly.md)
+                        - [指定二进制数据转换对称密钥](security/CryptoArchitectureKit/cj-crypto-convert-binary-data-to-sym-key.md)
                 - 加解密
                     - [加解密介绍](security/CryptoArchitectureKit/cj-crypto-encryption-decryption-overview.md)
                     - 加解密算法规格
@@ -433,21 +433,21 @@
                         - [非对称密钥加解密算法规格](security/CryptoArchitectureKit/cj-crypto-asym-encrypt-decrypt-spec.md)
                         - [分段加解密说明](security/CryptoArchitectureKit/cj-crypto-encrypt-decrypt-by-segment.md)
                     - 加解密开发指导
-                        - [使用AES对称密钥（GCM模式）加解密（仓颉）](security/CryptoArchitectureKit/cj-crypto-aes-sym-encrypt-decrypt-gcm.md)
-                        - [使用AES对称密钥（CCM模式）加解密（仓颉）](security/CryptoArchitectureKit/cj-crypto-aes-sym-encrypt-decrypt-ccm.md)
-                        - [使用AES对称密钥（CBC模式）加解密（仓颉）](security/CryptoArchitectureKit/cj-crypto-aes-sym-encrypt-decrypt-cbc.md)
-                        - [使用AES对称密钥（ECB模式）加解密（仓颉）](security/CryptoArchitectureKit/cj-crypto-aes-sym-encrypt-decrypt-ecb.md)
-                        - [使用AES对称密钥（GCM模式）分段加解密（仓颉）](security/CryptoArchitectureKit/cj-crypto-aes-sym-encrypt-decrypt-gcm-by-segment.md)
-                        - [使用3DES对称密钥（ECB模式）加解密（仓颉）](security/CryptoArchitectureKit/cj-crypto-3des-sym-encrypt-decrypt-ecb.md)
-                        - [使用SM4对称密钥（ECB模式）加解密（仓颉）](security/CryptoArchitectureKit/cj-crypto-sm4-sym-encrypt-decrypt-ecb.md)
-                        - [使用SM4对称密钥（CBC模式）加解密（仓颉）](security/CryptoArchitectureKit/cj-crypto-sm4-sym-encrypt-decrypt-cbc.md)
-                        - [使用SM4对称密钥（GCM模式）加解密（仓颉）](security/CryptoArchitectureKit/cj-crypto-sm4-sym-encrypt-decrypt-gcm.md)
-                        - [使用SM4对称密钥（GCM模式）分段加解密（仓颉）](security/CryptoArchitectureKit/cj-crypto-sm4-sym-encrypt-decrypt-gcm-by-segment.md)
+                        - [使用AES对称密钥（GCM模式）加解密](security/CryptoArchitectureKit/cj-crypto-aes-sym-encrypt-decrypt-gcm.md)
+                        - [使用AES对称密钥（CCM模式）加解密](security/CryptoArchitectureKit/cj-crypto-aes-sym-encrypt-decrypt-ccm.md)
+                        - [使用AES对称密钥（CBC模式）加解密](security/CryptoArchitectureKit/cj-crypto-aes-sym-encrypt-decrypt-cbc.md)
+                        - [使用AES对称密钥（ECB模式）加解密](security/CryptoArchitectureKit/cj-crypto-aes-sym-encrypt-decrypt-ecb.md)
+                        - [使用AES对称密钥（GCM模式）分段加解密](security/CryptoArchitectureKit/cj-crypto-aes-sym-encrypt-decrypt-gcm-by-segment.md)
+                        - [使用3DES对称密钥（ECB模式）加解密](security/CryptoArchitectureKit/cj-crypto-3des-sym-encrypt-decrypt-ecb.md)
+                        - [使用SM4对称密钥（ECB模式）加解密](security/CryptoArchitectureKit/cj-crypto-sm4-sym-encrypt-decrypt-ecb.md)
+                        - [使用SM4对称密钥（CBC模式）加解密](security/CryptoArchitectureKit/cj-crypto-sm4-sym-encrypt-decrypt-cbc.md)
+                        - [使用SM4对称密钥（GCM模式）加解密](security/CryptoArchitectureKit/cj-crypto-sm4-sym-encrypt-decrypt-gcm.md)
+                        - [使用SM4对称密钥（GCM模式）分段加解密](security/CryptoArchitectureKit/cj-crypto-sm4-sym-encrypt-decrypt-gcm-by-segment.md)
                 - 消息摘要计算
                     - [消息摘要计算介绍及算法规格](security/CryptoArchitectureKit/cj-crypto-generate-message-digest-overview.md)
                     - 消息摘要计算开发指导
-                        - [消息摘要计算SHA256（仓颉）](security/CryptoArchitectureKit/cj-crypto-generate-message-digest.md)
-                        - [消息摘要计算MD5（仓颉）](security/CryptoArchitectureKit/cj-crypto-generate-message-digest-md5.md)
+                        - [消息摘要计算SHA256](security/CryptoArchitectureKit/cj-crypto-generate-message-digest.md)
+                        - [消息摘要计算MD5](security/CryptoArchitectureKit/cj-crypto-generate-message-digest-md5.md)
                 - 消息认证码
                     - [消息认证码计算](security/CryptoArchitectureKit/cj-crypto-compute-mac.md)
                 - 随机数
@@ -459,50 +459,50 @@
                     - 密钥生成
                         - [密钥生成介绍及算法规格](security/UniversalKeystoreKit/cj-huks-key-generation-overview.md)
                         - 开发指导
-                            - [生成密钥（仓颉）](security/UniversalKeystoreKit/cj-huks-key-generation.md)
+                            - [生成密钥](security/UniversalKeystoreKit/cj-huks-key-generation.md)
                     - 密钥导入
                         - [密钥导入介绍及算法规格](security/UniversalKeystoreKit/cj-huks-key-import-overview.md)
                         - 开发指导
-                            - [明文导入密钥（仓颉）](security/UniversalKeystoreKit/cj-huks-import-key-in-plaintext.md)
-                            - [加密导入密钥（仓颉）](security/UniversalKeystoreKit/cj-huks-import-wrapped-key.md)
+                            - [明文导入密钥](security/UniversalKeystoreKit/cj-huks-import-key-in-plaintext.md)
+                            - [加密导入密钥](security/UniversalKeystoreKit/cj-huks-import-wrapped-key.md)
                 - 密钥使用
                     - [密钥使用介绍及通用流程](security/UniversalKeystoreKit/cj-huks-key-use-overview.md)
                     - 加密/解密
                         - [加密/解密介绍及算法规格](security/UniversalKeystoreKit/cj-huks-encryption-decryption-overview.md)
                         - 开发指导
-                            - [加解密（仓颉）](security/UniversalKeystoreKit/cj-huks-encryption-decryption.md)
+                            - [加解密](security/UniversalKeystoreKit/cj-huks-encryption-decryption.md)
                     - 签名/验签
                         - [签名/验签介绍及算法规格](security/UniversalKeystoreKit/cj-huks-signing-signature-verification-overview.md)
                         - 开发指导
-                            - [签名/验签（仓颉）](security/UniversalKeystoreKit/cj-huks-signing-signature-verification.md)
+                            - [签名/验签](security/UniversalKeystoreKit/cj-huks-signing-signature-verification.md)
                     - 密钥协商
                         - [密钥协商介绍及算法规格](security/UniversalKeystoreKit/cj-huks-key-agreement-overview.md)
                         - 开发指导
-                            - [密钥协商（仓颉）](security/UniversalKeystoreKit/cj-huks-key-agreement.md)
+                            - [密钥协商](security/UniversalKeystoreKit/cj-huks-key-agreement.md)
                     - 密钥派生
                         - [密钥派生介绍及算法规格](security/UniversalKeystoreKit/cj-huks-key-derivation-overview.md)
                         - 开发指导
-                            - [密钥派生（仓颉）](security/UniversalKeystoreKit/cj-huks-key-derivation.md)
+                            - [密钥派生](security/UniversalKeystoreKit/cj-huks-key-derivation.md)
                     - HMAC
                         - [HMAC介绍及算法规格](security/UniversalKeystoreKit/cj-huks-hmac-overview.md)
                         - 开发指导
-                            - [HMAC（仓颉）](security/UniversalKeystoreKit/cj-huks-hmac.md)
+                            - [HMAC](security/UniversalKeystoreKit/cj-huks-hmac.md)
                 - 密钥删除
-                    - [密钥删除（仓颉）](security/UniversalKeystoreKit/cj-huks-delete-key.md)
+                    - [密钥删除](security/UniversalKeystoreKit/cj-huks-delete-key.md)
                 - 密钥证明
                     - [密钥证明介绍及算法规格](security/UniversalKeystoreKit/cj-huks-key-attestation-overview.md)
                     - 开发指导
-                        - [匿名密钥证明（仓颉）](security/UniversalKeystoreKit/cj-huks-key-anon-attestation.md)
+                        - [匿名密钥证明](security/UniversalKeystoreKit/cj-huks-key-anon-attestation.md)
                         <!--Del-->
-                        - [非匿名密钥证明（仓颉）](security/UniversalKeystoreKit/cj-huks-key-attestation-arkts.md)
+                        - [非匿名密钥证明](security/UniversalKeystoreKit/cj-huks-key-attestation-arkts.md)
                         <!--DelEnd-->
                 - 其他操作
                     - 查询密钥是否存在
-                        - [查询密钥是否存在（仓颉）](security/UniversalKeystoreKit/cj-huks-check-key.md)
+                        - [查询密钥是否存在](security/UniversalKeystoreKit/cj-huks-check-key.md)
                     - 获取密钥属性
-                        - [获取密钥属性（仓颉）](security/UniversalKeystoreKit/cj-huks-obtain-key-properties.md)
+                        - [获取密钥属性](security/UniversalKeystoreKit/cj-huks-obtain-key-properties.md)
                     - 密钥导出
-                        - [密钥导出（仓颉）](security/UniversalKeystoreKit/cj-huks-export-key.md)
+                        - [密钥导出](security/UniversalKeystoreKit/cj-huks-export-key.md)
         - 网络
             - Connectivity Kit（短距通信服务）
                 - [Connectivity Kit简介](connectivity/cj-connectivity-kit-intro.md)
@@ -535,7 +535,7 @@
                 - [Sensor Service Kit开发简介](device/sensor/cj-sensorservice-kit-intro.md)
                 - 传感器
                     - [传感器开发概述](device/sensor/cj-sensor-overview.md)
-                    - [传感器开发指导（仓颉）](device/sensor/cj-sensor-guidelines.md)
+                    - [传感器开发指导](device/sensor/cj-sensor-guidelines.md)
         - 调测调优
             - Performance Analysis Kit（性能分析服务）
                 - [Performance Analysis Kit简介](dfx/cj-performance-analysis-kit-overview.md)
@@ -543,19 +543,19 @@
                     - [分析Cangjie Crash（进程崩溃）](dfx/cj-cangjiecrash-guidelines.md)
                     - [分析AppFreeze（应用无响应）](dfx/cj-appfreeze-guidelines.md)
                 - 日志打印
-                    - [使用HiLog打印日志（仓颉）](dfx/cj-hilog-guidelines.md)
+                    - [使用HiLog打印日志](dfx/cj-hilog-guidelines.md)
                 - 事件订阅
                     - [HiAppEvent介绍](dfx/cj-hiappevent-intro.md)
                     - 使用HiAppEvent订阅事件
                         - 应用事件
-                            - [订阅应用事件（仓颉）](dfx/cj-hiappevent-watcher-app-events.md)
+                            - [订阅应用事件](dfx/cj-hiappevent-watcher-app-events.md)
                         - 系统事件
                             - 崩溃事件
                                 - [崩溃事件介绍](dfx/cj-hiappevent-watcher-crash-events.md)
-                                - [订阅崩溃事件（仓颉）](dfx/cj-hiappevent-watcher-crash-events-cangjie.md)
+                                - [订阅崩溃事件](dfx/cj-hiappevent-watcher-crash-events-cangjie.md)
                             - appfreeze事件
                                 - [appfreeze事件介绍](dfx/cj-hiappevent-watcher-freeze-events.md)
-                                - [订阅appfreeze事件（仓颉）](dfx/cj-hiappevent-watcher-freeze-events-cangjie.md)
+                                - [订阅appfreeze事件](dfx/cj-hiappevent-watcher-freeze-events-cangjie.md)
                     - [事件上报](dfx/cj-hiappevent-event-reporting.md)
                 - 性能跟踪
                     - [查看HiTraceMeter日志](dfx/cj-hitracemeter-view.md)
@@ -594,11 +594,11 @@
         - Camera Kit（相机服务）
             - [Camera Kit简介](media/camera/cj-camera-overview.md)
             - [开发准备](media/camera/cj-camera-preparation.md)
-            - 开发相机应用必选能力（仓颉）
-                - [相机管理（仓颉）](media/camera/cj-camera-device-management.md)
-                - [设备输入（仓颉）](media/camera/cj-camera-device-input.md)
-                - [会话管理（仓颉）](media/camera/cj-camera-session-management.md)
-            - 开发相机应用基础能力（仓颉）
+            - 开发相机应用必选能力
+                - [相机管理](media/camera/cj-camera-device-management.md)
+                - [设备输入](media/camera/cj-camera-device-input.md)
+                - [会话管理](media/camera/cj-camera-session-management.md)
+            - 开发相机应用基础能力
                 - [手电筒使用](media/camera/cj-camera-torch-use.md)
         - Image Kit（图片处理服务）
             - [Image Kit简介](media/image/cj-image-overview.md)
@@ -614,7 +614,7 @@
         - Media Kit（媒体服务）
             - 媒体开发指导
                 - 媒体信息查询
-                    - [使用AVImageGenerator提取视频指定时间图像（仓颉）](media/media/cj-avimagegenerator.md)
+                    - [使用AVImageGenerator提取视频指定时间图像](media/media/cj-avimagegenerator.md)
                 - [AVCodec支持的格式](media/media/cj-avcodec-support-formats.md)
         - Media Library Kit（媒体文件管理服务）
             <!--RP6--><!--RP6End-->

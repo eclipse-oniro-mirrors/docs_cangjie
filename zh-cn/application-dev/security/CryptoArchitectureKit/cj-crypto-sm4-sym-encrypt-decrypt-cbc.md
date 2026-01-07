@@ -1,4 +1,4 @@
-# 使用SM4对称密钥（CBC模式）加解密（仓颉）
+# 使用SM4对称密钥（CBC模式）加解密
 
 对应的算法规格请参见[对称密钥加解密算法规格：SM4](./cj-crypto-sym-encrypt-decrypt-spec.md#sm4)。
 

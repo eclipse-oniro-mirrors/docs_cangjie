@@ -1,4 +1,4 @@
-# 消息摘要计算SHA256（仓颉）
+# 消息摘要计算SHA256
 
 对应的算法规格请参见[消息摘要计算算法规格](./cj-crypto-generate-message-digest-overview.md#支持的算法与规格)。
 

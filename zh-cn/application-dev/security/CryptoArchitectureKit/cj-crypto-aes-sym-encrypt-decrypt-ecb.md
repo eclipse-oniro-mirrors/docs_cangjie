@@ -1,4 +1,4 @@
-# 使用AES对称密钥（ECB模式）加解密（仓颉）
+# 使用AES对称密钥（ECB模式）加解密
 
 对应的算法规格请参见[对称密钥加解密算法规格：AES](./cj-crypto-sym-encrypt-decrypt-spec.md#aes)。
 

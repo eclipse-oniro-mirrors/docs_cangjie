@@ -2,7 +2,7 @@
 
 HiAppEvent提供接口用于订阅系统崩溃事件。
 
-[订阅崩溃事件（仓颉）](./cj-hiappevent-watcher-crash-events-cangjie.md)
+[订阅崩溃事件](./cj-hiappevent-watcher-crash-events-cangjie.md)
 
 崩溃事件信息中params属性的详细描述如下：
 

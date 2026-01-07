@@ -1,4 +1,4 @@
-# 订阅appfreeze事件（仓颉）
+# 订阅appfreeze事件
 
 ## 接口说明
 

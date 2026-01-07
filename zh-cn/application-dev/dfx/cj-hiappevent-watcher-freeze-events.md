@@ -2,7 +2,7 @@
 
 HiAppEvent提供接口用于订阅系统appfreeze事件。
 
-[订阅appfreeze事件（仓颉）](./cj-hiappevent-watcher-freeze-events-cangjie.md)
+[订阅appfreeze事件](./cj-hiappevent-watcher-freeze-events-cangjie.md)
 
 appfreeze事件信息中params属性的详细描述如下：
 

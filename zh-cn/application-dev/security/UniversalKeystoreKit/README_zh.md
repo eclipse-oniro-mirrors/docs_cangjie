@@ -6,47 +6,47 @@
     - 密钥生成
         - [密钥生成介绍及算法规格](cj-huks-key-generation-overview.md)
         - 开发指导
-            - [生成密钥（仓颉）](cj-huks-key-generation.md)
+            - [生成密钥](cj-huks-key-generation.md)
     - 密钥导入
         - [密钥导入介绍及算法规格](cj-huks-key-import-overview.md)
         - 开发指导
-            - [明文导入密钥（仓颉）](cj-huks-import-key-in-plaintext.md)
-            - [加密导入密钥（仓颉）](cj-huks-import-wrapped-key.md)
+            - [明文导入密钥](cj-huks-import-key-in-plaintext.md)
+            - [加密导入密钥](cj-huks-import-wrapped-key.md)
     - 密钥使用
         - [密钥使用介绍及通用流程](cj-huks-key-use-overview.md)
         - 加密/解密
             - [加密/解密介绍及算法规格](cj-huks-encryption-decryption-overview.md)
             - 开发指导
-                - [加解密（仓颉）](cj-huks-encryption-decryption.md)
+                - [加解密](cj-huks-encryption-decryption.md)
             - 签名/验签
                 - [签名/验签介绍及算法规格](cj-huks-signing-signature-verification-overview.md)
                 - 开发指导
-                    - [签名/验签（仓颉）](cj-huks-signing-signature-verification.md)
+                    - [签名/验签](cj-huks-signing-signature-verification.md)
             - 密钥协商
                 - [密钥协商介绍及算法规格](cj-huks-key-agreement-overview.md)
                 - 开发指导
-                    - [密钥协商（仓颉）](cj-huks-key-agreement.md)
+                    - [密钥协商](cj-huks-key-agreement.md)
             - 密钥派生
                 - [密钥派生介绍及算法规格](cj-huks-key-derivation-overview.md)
                 - 开发指导
-                    - [密钥派生（仓颉）](cj-huks-key-derivation.md)
+                    - [密钥派生](cj-huks-key-derivation.md)
             - HMAC
                 - [HMAC介绍及算法规格](cj-huks-hmac-overview.md)
                 - 开发指导
-                    - [HMAC（仓颉）](cj-huks-hmac.md)
+                    - [HMAC](cj-huks-hmac.md)
         - 密钥删除
-            - [密钥删除（仓颉）](cj-huks-delete-key.md)
+            - [密钥删除](cj-huks-delete-key.md)
         - 密钥证明
             - [密钥证明介绍及算法规格](cj-huks-key-attestation-overview.md)
             - 开发指导
-                - [匿名密钥证明（仓颉）](cj-huks-key-anon-attestation.md)
+                - [匿名密钥证明](cj-huks-key-anon-attestation.md)
                 <!--Del-->
-                - [非匿名密钥证明（仓颉）](cj-huks-key-attestation-arkts.md)
+                - [非匿名密钥证明](cj-huks-key-attestation-arkts.md)
                 <!--DelEnd-->
         - 其他操作
             - 查询密钥是否存在
-                - [查询密钥是否存在（仓颉）](cj-huks-check-key.md)
+                - [查询密钥是否存在](cj-huks-check-key.md)
             - 获取密钥属性
-                - [获取密钥属性（仓颉）](cj-huks-obtain-key-properties.md)
+                - [获取密钥属性](cj-huks-obtain-key-properties.md)
             - 密钥导出
-                - [密钥导出（仓颉）](cj-huks-export-key.md)
+                - [密钥导出](cj-huks-export-key.md)
