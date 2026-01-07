@@ -37,12 +37,12 @@
 
 **图3** 一般图标资源
 
-![zh-cn_image_0000001737423164](figures/zh-cn_image_0000001737423164.png)
+![zh-cn_image_0000001737423164](figures/right_speaker.png)
 
 **图4** RTL语言系统下提供的图标资源
 
-![zh-cn_image_0000001737264020](figures/zh-cn_image_0000001737264020.png)
+![zh-cn_image_0000001737264020](figures/left_speaker.png)
 
 **图5** RTL语言系统下提供的镜像控件
 
-![zh-cn_image_0000001784343305](figures/zh-cn_image_0000001784343305.png)
+![zh-cn_image_0000001784343305](figures/rtl_component.png)
