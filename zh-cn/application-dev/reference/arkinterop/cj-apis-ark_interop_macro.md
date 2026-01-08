@@ -8,7 +8,7 @@
 public macro Interop(attrTokens: Tokens, input: Tokens): Tokens
 ```
 
-**功能：** 自动生成 ArkTS 声明文件及互操作层代码，详见[仓颉-ArkTS 声明式互操作宏](../../learn-cj/FFI/cangjie-arkts/interoperability_macro.md)。
+**功能：** 自动生成 ArkTS 声明文件及互操作层代码，详见[仓颉-ArkTS 声明式互操作宏](../../learn-cj/FFI/cangjie-arkts/cj-arkts_interoperability_macro.md)。
 
 **示例：**
 

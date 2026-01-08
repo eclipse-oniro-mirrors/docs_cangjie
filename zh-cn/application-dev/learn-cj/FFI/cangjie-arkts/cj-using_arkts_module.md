@@ -19,4 +19,4 @@ func tryLoadArkTSSo() {
 }
 ```
 
-操作 ArkTS 数据的方法请参考[仓颉使用 ArkTS 数据](./operating_ArkTS_data.md)。
+操作 ArkTS 数据的方法请参考[仓颉使用 ArkTS 数据](./cj-operating_ArkTS_data.md)。

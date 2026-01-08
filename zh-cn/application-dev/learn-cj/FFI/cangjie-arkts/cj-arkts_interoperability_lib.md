@@ -2,7 +2,7 @@
 
 > **说明：**
 >
-> 优先推荐使用[声明式互操作宏](./interoperability_macro.md)的方式实现 ArkTS 调用仓颉模块，互操作宏的方式无法满足开发者场景时再使用“仓颉- ArkTS 互操作库”的方式。
+> 优先推荐使用[声明式互操作宏](./cj-arkts_interoperability_macro.md)的方式实现 ArkTS 调用仓颉模块，互操作宏的方式无法满足开发者场景时再使用“仓颉- ArkTS 互操作库”的方式。
 
 开发仓颉互操作模块：
 
@@ -59,7 +59,7 @@
     console.log(`1 + 2 = ${result}`);
     ```
 
-上述流程中，仓颉侧定义的要导出的函数中通过互操作库使用了最基础的仓颉类型，其他类型可以参照章节[仓颉使用 ArkTS 数据](./operating_ArkTS_data.md)和[在 ArkTS 里操作仓颉对象](./operating_cangjie_objects.md)。
+上述流程中，仓颉侧定义的要导出的函数中通过互操作库使用了最基础的仓颉类型，其他类型可以参照章节[仓颉使用 ArkTS 数据](./cj-operating_ArkTS_data.md)和[在 ArkTS 里操作仓颉对象](./operating_cangjie_objects.md)。
 
 > **注意：**
 >

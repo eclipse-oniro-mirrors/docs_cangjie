@@ -313,9 +313,9 @@
                 - 主题设置
                     - [应用深浅色适配](arkui-cj/cj-ui-dark-light-color-adaptation.md)
             - 窗口管理
-                - [管理应用窗口](windowmanager/application-window-stage.md)
+                - [管理应用窗口](windowmanager/cj-application-window-stage.md)
             - 屏幕管理
-                - [使用Display实现屏幕属性查询及状态监听](displaymanager/screenProperty-guideline.md)
+                - [使用Display实现屏幕属性查询及状态监听](displaymanager/cj-screenProperty-guideline.md)
         - ArkWeb（方舟Web）
             - [ArkWeb简介](web/cj-web-component-overview.md)
             - 设置基本属性和事件
@@ -335,34 +335,34 @@
                 - [使用DevTools工具调试前端页面](web/cj-web-debugging-with-devtools.md)
                 - [使用crashpad收集Web组件崩溃信息](web/cj-web-crashpad.md)
         - Cangjie（仓颉）
-            - [仓颉简介](learn-cj/FFI/cangjie-overview.md)
+            - [仓颉简介](learn-cj/FFI/cj-cangjie-overview.md)
             - 仓颉-ArkTS 互操作
                 - 互操作入门
                     - [构建第一个仓颉与ArkTS混合应用](learn-cj/FFI/cangjie-arkts/cj-quick-start-first-cangjie-hybrid-app.md)
                     - [在已有ArkTS工程中增量使用仓颉](learn-cj/FFI/cangjie-arkts/cj-quick-start-first-cangjie-hybrid-module.md)
                     - [在仓颉代码里导入ArkTS模块](learn-cj/FFI/cangjie-arkts/cangjie-load-arkts.md)
                 - [仓颉-ArkTS 互操作概述](learn-cj/FFI/cangjie-arkts/cangjie_arkts_overview.md)
-                - [仓颉-ArkTS 互操作场景](learn-cj/FFI/cangjie-arkts/interoperability_senario.md)
+                - [仓颉-ArkTS 互操作场景](learn-cj/FFI/cangjie-arkts/cj-arkts_interoperability_senario.md)
                     - [ArkTS 应用中使用仓颉](learn-cj/FFI/cangjie-arkts/using_cangjie.md)
                         - [增加仓颉页面](learn-cj/FFI/cangjie-arkts/add_cangjie_page.md)
                         - [增加仓颉模块](learn-cj/FFI/cangjie-arkts/add_cangjie_module.md)
-                    - [仓颉应用中使用 ArkTS](learn-cj/FFI/cangjie-arkts/using_arkts.md)
+                    - [仓颉应用中使用 ArkTS](learn-cj/FFI/cangjie-arkts/cj-using_arkts.md)
                 - 互操作用法
                     - [ArkTS 调用仓颉](learn-cj/FFI/cangjie-arkts/method_of_ArkTS_calling_cangjie.md)
                         - 仓颉侧实现互操作代码
-                            - [仓颉-ArkTS 声明式互操作宏](learn-cj/FFI/cangjie-arkts/interoperability_macro.md)
-                            - [仓颉-ArkTS 互操作库](learn-cj/FFI/cangjie-arkts/interoperability_lib.md)
+                            - [仓颉-ArkTS 声明式互操作宏](learn-cj/FFI/cangjie-arkts/cj-arkts_interoperability_macro.md)
+                            - [仓颉-ArkTS 互操作库](learn-cj/FFI/cangjie-arkts/cj-arkts_interoperability_lib.md)
                         - [ArkTS 侧使用互操作代码](learn-cj/FFI/cangjie-arkts/arkts_import_cangjie.md)
                     - 仓颉调用 ArkTS
-                        - [ArkTS 侧获取互操作模块名](learn-cj/FFI/cangjie-arkts/prepare_arkts_module.md)
-                        - [仓颉侧调用 ArkTS 模块](learn-cj/FFI/cangjie-arkts/using_arkts_module.md)
-                - [互操作使用案例](learn-cj/FFI/cangjie-arkts/using_example.md)
-                    - [仓颉访问 ArkTS 数据](learn-cj/FFI/cangjie-arkts/operating_ArkTS_data.md)
+                        - [ArkTS 侧获取互操作模块名](learn-cj/FFI/cangjie-arkts/cj-prepare_arkts_module.md)
+                        - [仓颉侧调用 ArkTS 模块](learn-cj/FFI/cangjie-arkts/cj-using_arkts_module.md)
+                - [互操作使用案例](learn-cj/FFI/cangjie-arkts/cj-arkts_using_example.md)
+                    - [仓颉访问 ArkTS 数据](learn-cj/FFI/cangjie-arkts/cj-operating_ArkTS_data.md)
                     - [ArkTS 访问仓颉数据](learn-cj/FFI/cangjie-arkts/operating_cangjie_objects.md)
-                    - [仓颉多线程中使用互操作库](learn-cj/FFI/cangjie-arkts/using_interoperability_lib_multithread.md)
+                    - [仓颉多线程中使用互操作库](learn-cj/FFI/cangjie-arkts/cj-using_interoperability_lib_multithread.md)
                     - [仓颉调用ArkTS三方模块](learn-cj/FFI/cangjie-arkts/cj-quick-start-dts2cj-plugin-usage.md)
-                - [仓颉-ArkTS 互操作辅助库](learn-cj/FFI/cangjie-arkts/auxiliary_lib.md)
-                - [仓颉-ArkTS 互操作开发规范](learn-cj/FFI/cangjie-arkts/interop_guidelines.md)
+                - [仓颉-ArkTS 互操作辅助库](learn-cj/FFI/cangjie-arkts/cj-arkts_auxiliary_lib.md)
+                - [仓颉-ArkTS 互操作开发规范](learn-cj/FFI/cangjie-arkts/cj-arkts_interop_guidelines.md)
         - Core File Kit（文件基础服务）
             - [Core File Kit简介](file-management/cj-core-file-kit-intro.md)
             - 应用文件
@@ -506,7 +506,7 @@
         - 网络
             - Connectivity Kit（短距通信服务）
                 - [Connectivity Kit简介](connectivity/cj-connectivity-kit-intro.md)
-                - [Connectivity Kit术语](connectivity/terminology.md)
+                - [Connectivity Kit术语](connectivity/cj-terminology.md)
                 - 蓝牙
                     - [蓝牙服务开发概述](connectivity/bluetooth/cj-bluetooth-overview.md)
                     - [查找设备](connectivity/bluetooth/cj-ble-development-guide.md)

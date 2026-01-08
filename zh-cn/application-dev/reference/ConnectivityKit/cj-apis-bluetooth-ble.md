@@ -2693,7 +2693,7 @@ try {
 public func setBleMtuSize(mtu: Int32): Unit
 ```
 
-**功能：** client端同server端协商[MTU](../../connectivity/terminology.md#mtu)（最大传输单元）大小。
+**功能：** client端同server端协商[MTU](../../connectivity/cj-terminology.md#mtu)（最大传输单元）大小。
 
 - 需先调用[connect](#func-connect)方法，等GATT profile连接成功后才能使用。
 
