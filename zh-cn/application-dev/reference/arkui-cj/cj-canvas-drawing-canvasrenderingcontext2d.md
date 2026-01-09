@@ -1143,7 +1143,7 @@ public func setTransform(matrix: Option<Matrix2D>): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|matrix|Option\<[Matrix2D](cj-canvas-drawing-matrix2d.md#class-Matrix2D)>|是|-|变换矩阵。|
+|matrix|Option\<[Matrix2D](cj-canvas-drawing-matrix2d.md#class-matrix2d)>|是|-|变换矩阵。|
 
 ### func translate(Float64, Float64)
 
