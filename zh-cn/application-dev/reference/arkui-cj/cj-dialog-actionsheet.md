@@ -206,7 +206,7 @@ public var value: ?ResourceStr
 
 **起始版本：** 22
 
-### init(?ResourceStr, ?VoidCallback, ?Bool, ?Bool, ?DialogButtonStyle)
+### init(?Bool, ?Bool, ?DialogButtonStyle, ?ResourceStr, ?VoidCallback)
 
 ```cangjie
 public init(
