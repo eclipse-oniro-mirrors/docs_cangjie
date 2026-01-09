@@ -4279,7 +4279,7 @@ client请求是指通过下述接口订阅回调收到的请求消息：
 - [on(CharacteristicRead)](#func-onbluetoothblegattservercallbacktype-callback1argumentcharacteristicreadrequest)
 - [on(CharacteristicWrite)](#func-onbluetoothblegattservercallbacktype-callback1argumentcharacteristicwriterequest)，需根据[CharacteristicWriteRequest](#class-characteristicwriterequest)中的needRsp决定是否需要回复。
 - [on(DescriptorRead)](#func-onbluetoothblegattservercallbacktype-callback1argumentdescriptorreadrequest)
-- [on(DescriptorWrite)](#ondescriptorwrite)，需根据[DescriptorWriteRequest](#class-descriptorwriterequest)中的needRsp决定是否需要回复。
+- [on(DescriptorWrite)](#func-onbluetoothblegattservercallbacktype-callback1argumentdescriptorwriterequest)，需根据[DescriptorWriteRequest](#class-descriptorwriterequest)中的needRsp决定是否需要回复。
 
 **需要权限：** ohos.permission.ACCESS_BLUETOOTH
 

@@ -32,22 +32,6 @@ public class BatteryInfo {}
 ### static prop batteryCapacityLevel
 
 ```cangjie
-public static prop batterySoc: Int32
-```
-
-**功能：** 当前设备的电池充电状态 (SoC)，单位为百分比。
-
-**类型：** Int32
-
-**读写能力：** 只读
-
-**系统能力：** SystemCapability.PowerManager.BatteryManager.Core
-
-**起始版本：** 22
-
-### static prop batteryCapacityLevel
-
-```cangjie
 public static prop batteryCapacityLevel: BatteryCapacityLevel
 ```
 

@@ -25,7 +25,6 @@ public func createCipher(transformation: String): Cipher
 
 **功能：** 通过指定算法名称，获取相应的[Cipher](#class-cipher)实例。
 
-<!-- 支持的规格详见[对称密钥加解密算法规格](../cj-development-intro.md#对称密钥加解密算法规格)和[非对称密钥加解密算法规格](../cj-development-intro.md#非对称密钥加解密算法规格)。 -->
 支持的规格详见[对称密钥加解密算法规格](../../security/CryptoArchitectureKit/cj-crypto-sym-encrypt-decrypt-spec.md)和[非对称密钥加解密算法规格](../../security/CryptoArchitectureKit/cj-crypto-asym-encrypt-decrypt-spec.md)。
 
 **系统能力：** SystemCapability.Security.CryptoFramework.Cipher

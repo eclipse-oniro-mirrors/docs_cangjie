@@ -397,7 +397,7 @@ public let supportedWindowModes: Array<SupportedWindowMode>
 
 **功能：** Ability支持的窗口模式。
 
-**类型：** Array\<[SupportedWindowMode](#enum-SupportedWindowMode)>
+**类型：** Array\<[SupportedWindowMode](#enum-supportedwindowmode)>
 
 **读写能力：** 只读
 

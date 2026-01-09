@@ -53,7 +53,7 @@
    subscriber = CommonEventManager.createSubscriber(subscribeInfo)
    ```
 
-4. 创建订阅回调函数，订阅回调函数会在接收到事件时触发。订阅回调函数返回的data内包含了公共事件的名称、发布者携带的数据等信息，公共事件数据的详细参数和数据类型请见[CommonEventData](../../reference/BasicServicesKit/cj-apis-common_event_data.md#struct-commoneventdata)文档介绍。
+4. 创建订阅回调函数，订阅回调函数会在接收到事件时触发。订阅回调函数返回的data内包含了公共事件的名称、发布者携带的数据等信息，公共事件数据的详细参数和数据类型请见[CommonEventData](../../reference/BasicServicesKit/cj-apis-common_event_data.md#class-commoneventdata)文档介绍。
 
    <!-- compile -->
 

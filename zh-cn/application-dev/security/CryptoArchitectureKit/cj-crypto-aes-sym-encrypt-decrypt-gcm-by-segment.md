@@ -24,7 +24,7 @@
 
    由于已使用update传入数据，此处data传入None。
 
-6. 读取[GcmParamsSpec](../../reference/CryptoArchitectureKit/cj-apis-crypto.md#struct-gcmparamsspec).authTag作为解密的认证信息。
+6. 读取[GcmParamsSpec](../../reference/CryptoArchitectureKit/cj-apis-crypto.md#class-gcmparamsspec).authTag作为解密的认证信息。
 
    在GCM模式下，算法库当前只支持16字节的authTag，作为解密时初始化的认证信息。示例中authTag恰好为16字节。
 
