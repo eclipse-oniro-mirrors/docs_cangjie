@@ -11,6 +11,7 @@
     - [调用方UIAbility指定启动页面](#调用方uiability指定启动页面)
     - [目标UIAbility冷启动](#目标uiability冷启动)
     - [目标UIAbility热启动](#目标uiability热启动)
+  - [示例代码](#示例代码)
 
 ## 启动应用内的UIAbility
 
@@ -299,3 +300,7 @@ class FuncAbilityA <: UIAbility {
 > **说明：**
 >
 > 当被调用方[UIAbility组件启动模式](cj-uiability-launch-type.md)设置为multiton启动模式时，每次启动都会创建一个新的实例，那么onNewWant()回调就不会被用到。
+
+## 示例代码
+
+[启动应用内的UIAbility组件](https://gitcode.com/openharmony-sig/applications_app_samples_cangjie/tree/master/code/BasicFeature/Ability/LaunchUIAbilityComponentsApp)

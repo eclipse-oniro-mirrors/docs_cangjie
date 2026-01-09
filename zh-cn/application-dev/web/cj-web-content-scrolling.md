@@ -82,3 +82,8 @@ class EntryView {
 ```
 
 ![web-content-scrolling](figures/web-content-scrolling.gif)
+
+## 示例代码
+
+[Web页面显示内容滚动](https://gitcode.com/openharmony-sig/applications_app_samples_cangjie/tree/master/code/BasicFeature/Web/PageScroll)
+
