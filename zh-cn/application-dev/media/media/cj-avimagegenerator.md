@@ -20,7 +20,7 @@
    >
    > - 也可以使用应用沙箱路径访问对应资源（必须确认资源文件可用），请参见[获取应用文件路径](../../file-management/cj-app-sandbox-directory.md#应用文件目录与应用文件路径)。应用沙箱的介绍及如何向应用沙箱推送文件，请参见[文件管理](../../file-management/cj-app-sandbox-directory.md)。
    >
-   > - 不同AVImageGenerator或者[AVMetadataExtractor](../../reference/MediaKit/cj-apis-multimedia_media.md#class-avmetadataextractor)，如果需要操作同一资源，需要多次打开文件描述符，不要共用同一文件描述符。
+   > - 不同AVImageGenerator或者AVMetadataExtractor，如果需要操作同一资源，需要多次打开文件描述符，不要共用同一文件描述符。
 
 3. 获取指定时间图像：调用fetchFrameByTime()，可以获取到一个PixelMap对象，该对象可用于图片显示。
 

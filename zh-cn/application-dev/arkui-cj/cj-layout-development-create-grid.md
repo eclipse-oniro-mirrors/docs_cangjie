@@ -202,7 +202,7 @@ class EntryView {
 
 ![GridItem7](figures/GridItem7.gif)
 
-Grid组件初始化时，可以绑定一个[Scroller](../reference/arkui-cj/cj-scroll-swipe-scroll.md)对象，用于进行滚动控制，例如通过Scroller对象的[scrollPage](../reference/arkui-cj/cj-scroll-swipe-scroll.md#func-scrollpagebool-bool)方法进行翻页。
+Grid组件初始化时，可以绑定一个[Scroller](../reference/arkui-cj/cj-scroll-swipe-scroll.md)对象，用于进行滚动控制，例如通过Scroller对象的scrollPage方法进行翻页。
 
 ```cangjie
 var scroller: Scroller = Scroller()

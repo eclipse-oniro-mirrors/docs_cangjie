@@ -2,17 +2,7 @@
 
 当前指导共提供四种示例，供开发者参考完成签名、验签开发：
 
-- [签名/验签](#签名验签)
-  - [开发步骤](#开发步骤)
-    - [生成密钥](#生成密钥)
-    - [签名](#签名)
-    - [验签](#验签)
-    - [删除密钥](#删除密钥)
-  - [开发案例](#开发案例)
-    - [ECC256/SHA256](#ecc256sha256)
-    - [SM2/SM3](#sm2sm3)
-    - [RSA/SHA256/PSS](#rsasha256pss)
-    - [RSA/SHA256/PKCS1\_V1\_5](#rsasha256pkcs1_v1_5)
+- [SM2/SM3](#sm2sm3)、[RSA/SHA256/PSS](#rsasha256pss)、[RSA/SHA256/PKCS1\_V1\_5](#rsasha256pkcs1_v1_5)
 
 具体的场景介绍及支持的算法规格，请参见[签名/验签支持的算法](./cj-huks-signing-signature-verification-overview.md#支持的算法)。
 

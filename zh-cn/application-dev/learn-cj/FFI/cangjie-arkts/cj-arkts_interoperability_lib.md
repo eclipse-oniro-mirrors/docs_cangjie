@@ -2,11 +2,11 @@
 
 > **说明：**
 >
-> 优先推荐使用[声明式互操作宏](./cj-arkts_interoperability_macro.md)的方式实现 ArkTS 调用仓颉模块，互操作宏的方式无法满足开发者场景时再使用“仓颉- ArkTS 互操作库”的方式。
+> 优先推荐使用[声明式互操作宏](./cj-arkts_interoperability_macro.md)的方式实现ArkTS调用仓颉模块，互操作宏的方式无法满足开发者场景时再使用“仓颉-ArkTS互操作库”的方式。
 
 开发仓颉互操作模块：
 
-1. 在 ArkTS 工程中创建仓颉模块，详情请参见[在 ArkTS 工程中添加仓颉模块](./add_cangjie_module.md)。
+1. 在ArkTS工程中创建仓颉模块，详情请参见[在ArkTS工程中添加仓颉模块](./add_cangjie_module.md)。
 
 2. 在生成的仓颉文件中构造代码，如下代码示例：
 
@@ -48,7 +48,7 @@
     export declare function addNumber(a: number, b: number): number;
     ```
 
-4. 在 ArkTS 调用侧，代码如下所示：
+4. 在ArkTS调用侧，代码如下所示：
 
     ```typescript
     // 导入仓颉动态库，该动态库名称为仓颉包名的名称，该名称需要和互操作接口所在的包名一致
@@ -59,7 +59,7 @@
     console.log(`1 + 2 = ${result}`);
     ```
 
-上述流程中，仓颉侧定义的要导出的函数中通过互操作库使用了最基础的仓颉类型，其他类型可以参照章节[仓颉使用 ArkTS 数据](./cj-operating_ArkTS_data.md)和[在 ArkTS 里操作仓颉对象](./operating_cangjie_objects.md)。
+上述流程中，仓颉侧定义的要导出的函数中通过互操作库使用了最基础的仓颉类型，其他类型可以参照章节[仓颉使用ArkTS数据](./cj-operating_ArkTS_data.md)和[在ArkTS里操作仓颉对象](./operating_cangjie_objects.md)。
 
 > **注意：**
 >

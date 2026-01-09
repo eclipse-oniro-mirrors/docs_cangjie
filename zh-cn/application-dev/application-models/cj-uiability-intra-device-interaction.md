@@ -4,14 +4,6 @@
 
 本章主要介绍启动应用内的Ability组件的方式。
 
-- [启动应用内的UIAbility组件](#启动应用内的uiability组件)
-  - [启动应用内的UIAbility](#启动应用内的uiability)
-  - [启动UIAbility的指定页面](#启动uiability的指定页面)
-    - [概述](#概述)
-    - [调用方UIAbility指定启动页面](#调用方uiability指定启动页面)
-    - [目标UIAbility冷启动](#目标uiability冷启动)
-    - [目标UIAbility热启动](#目标uiability热启动)
-
 ## 启动应用内的UIAbility
 
 当一个应用内包含多个[UIAbility](../reference/AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiability)时，存在应用内启动Ability的场景。例如在支付应用中从入口Ability启动收付款Ability。

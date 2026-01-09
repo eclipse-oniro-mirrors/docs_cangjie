@@ -299,7 +299,7 @@ class MainAbility <: UIAbility {
 
 ### 开发步骤
 
-**前提条件：** 创建`WindowType.TypeFloat`即悬浮窗类型的窗口，需要申请`ohos.permission.SYSTEM_FLOAT_WINDOW`权限，配置方式请参见[system_basic等级应用申请权限的方式](../security/AccessToken/cj-determine-application-mode.md#system_basic等级应用申请权限的方式)。
+**前提条件：** 创建`WindowType.TypeFloat`即悬浮窗类型的窗口，需要申请`ohos.permission.SYSTEM_FLOAT_WINDOW`权限，配置方式请参见[选择申请权限的方式](../security/AccessToken/cj-determine-application-mode.md)。
 
 1. 创建悬浮窗。
 

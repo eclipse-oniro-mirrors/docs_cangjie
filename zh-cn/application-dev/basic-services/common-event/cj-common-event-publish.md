@@ -41,7 +41,7 @@
 
 ## 发布携带信息的公共事件
 
-携带信息的公共事件，可以发布为无序公共事件、有序公共事件和粘性事件，可以通过参数[CommonEventPublishData](../../reference/BasicServicesKit/cj-apis-common_event_publish_data.md#struct-commoneventpublishdata)的isOrdered、isSticky的字段进行设置。
+携带信息的公共事件，可以发布为无序公共事件、有序公共事件和粘性事件，可以通过参数[CommonEventPublishData](../../reference/BasicServicesKit/cj-apis-common_event_publish_data.md#class-commoneventpublishdata)的isOrdered、isSticky的字段进行设置。
 
 1. 导入模块。
 

@@ -118,7 +118,7 @@
 
     class MainAbility <: UIAbility {
         public override func onWindowStageCreate(windowStage: WindowStage): Unit {
-            // 打印日志，Hilog用法见[使用hilog打印日志仓颉](../dfx/cj-hilog-guidelines.md#使用hilog打印日志仓颉)
+            // 打印日志
             Hilog.info(1, "info", "MainAbility onWindowStageCreate.")
             // 获取文件沙箱路径
             let filePath = this
