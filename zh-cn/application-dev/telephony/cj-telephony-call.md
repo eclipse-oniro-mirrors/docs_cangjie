@@ -106,3 +106,7 @@ class MainAbility <: UIAbility {
     }
 }
 ```
+
+## 示例代码
+
+[拨打电话](https://gitcode.com/openharmony-sig/applications_app_samples_cangjie/tree/master/code/BasicFeature/Telephony/MakeCall)

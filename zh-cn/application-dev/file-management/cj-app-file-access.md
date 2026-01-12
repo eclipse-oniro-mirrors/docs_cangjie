@@ -207,3 +207,7 @@ func getListFile() {
     }
 }
 ```
+
+## 示例代码
+
+[查询文件列表](https://gitcode.com/openharmony-sig/applications_app_samples_cangjie/tree/master/code/BasicFeature/FileManagement/FileList)

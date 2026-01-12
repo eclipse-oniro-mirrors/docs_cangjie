@@ -315,3 +315,7 @@ class MainAbility <: UIAbility {
     }
 }
 ```
+
+## 示例代码
+
+[获取相册图片](https://gitcode.com/openharmony-sig/applications_app_samples_cangjie/tree/master/code/BasicFeature/FileManagement/Photo)

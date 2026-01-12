@@ -80,3 +80,7 @@
 
     通过本模块获取到的坐标均为WGS-84坐标系坐标点，如需使用其他坐标系类型的坐标点，请进行坐标系转换后再使用。
     可使用三方地图提供的SDK能力进行坐标系转换。
+
+## 示例代码
+
+[获取当前位置的经纬度](https://gitcode.com/openharmony-sig/applications_app_samples_cangjie/tree/master/code/BasicFeature/DeviceManagement/CurrentLocation)
