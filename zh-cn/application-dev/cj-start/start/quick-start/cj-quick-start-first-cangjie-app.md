@@ -20,7 +20,7 @@
 
 5. 若需要构建OpenHarmony应用，需要将**build-profile.json5**下的runtimeOS字段改为OpenHarmony：
 
-    ![changeOpenharmony](../../figures/change_openharmony.PNG)
+    ![changeOpenharmony](../../figures/changeOpenharmony.png)
 <!--DelEnd-->
 
 ## 仓颉工程目录结构

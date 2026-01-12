@@ -20,7 +20,7 @@
 
 5. To build an OpenHarmony application, you need to change the `runtimeOS` field in the **build-profile.json5** file to OpenHarmony
 
-    ![changeOpenharmony](../../figures/change_openharmony.png)
+    ![changeOpenharmony](../../figures/changeOpenharmony.png)
 
 ## Cangjie Project Directory Structure
 
@@ -329,7 +329,7 @@ Page navigation uses the router module to find target pages via URLs.
 
 2. After successful connection, go to **File > Project Structure > Project > Signing Configs**, check **Automatically generate signature**, click **Sign In** to log in. After automatic signing completes, click **OK**.
 
-   ![buildSign](../../figures/buildSignNew.png)
+   ![buildSign](../../figures/buildSignN.png)
 
 3. Click the ![runButton](../../figures/runButton.png) button in the top-right toolbar to run. Expected output:
 
