@@ -229,7 +229,7 @@ class EntryView{
                     .backgroundColor(0x0D9FFB)
                     .width(220)
                     .height(68)
-                    .onClick( {
+                    .onClick({
                         evt =>
                             // 4.销毁子窗口。当不再需要子窗口时，可根据具体实现逻辑，使用destroy对其进行销毁。
                             if (!subWindow.isSome()) {

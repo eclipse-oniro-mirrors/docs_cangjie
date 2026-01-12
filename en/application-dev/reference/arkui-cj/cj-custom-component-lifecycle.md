@@ -109,7 +109,7 @@ protected open func onBackPress(): Bool
 |:----|:----|
 | Bool | Returns `true` to indicate the page handles the back logic itself without performing page routing. Returns `false` to use the default routing back logic. If no return value is set, it is treated as `false`. |
 
-## func aboutToReuse()
+## func aboutToReuse(ReuseParams)
 
 ```cangjie
 protected open func aboutToReuse(_: ReuseParams): Unit

@@ -1139,7 +1139,7 @@ public func setTransform(matrix: Option<Matrix2D>): Unit
 
 | Parameter | Type      | Mandatory | Default | Description |
 |:----------|:----------|:----------|:--------|:------------|
-| matrix    | ?[Matrix2D](cj-canvas-drawing-matrix2d.md#class-Matrix2D) | No        | -       | The transformation matrix. |
+| matrix    | ?[Matrix2D](cj-canvas-drawing-matrix2d.md#class-matrix2d) | No        | -       | The transformation matrix. |
 
 ### func translate(Float64, Float64)
 
