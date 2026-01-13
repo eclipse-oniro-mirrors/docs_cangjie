@@ -1,5 +1,6 @@
-# ArkInterop（仓颉与ArkTS互操作库）（Beta特性）
+# Cangjie（仓颉）（Beta特性）
 
+- [仓颉标准库API](../cj-libs-api.md)
 - 仓颉与ArkTS互操作库
     - 互操作API
         - [ohos.ark_interop（ArkTS互操作库）](cj-apis-ark_interop.md)（Beta特性）

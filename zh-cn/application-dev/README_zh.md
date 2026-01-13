@@ -8,7 +8,7 @@
         - [ArkData（方舟数据管理）（Beta特性）](database/README_zh.md)（Beta特性）
         - [ArkUI（方舟UI框架）（Beta特性）](arkui-cj/README_zh.md)（Beta特性）
         - [ArkWeb（方舟Web）（Beta特性）](web/README_zh.md)（Beta特性）
-        - [Cangjie（仓颉）](learn-cj/FFI/README_zh.md)（Beta特性）
+        - [Cangjie（仓颉）(Beta特性)](learn-cj/FFI/README_zh.md)（Beta特性）
         - [Core File Kit（文件基础服务）（Beta特性）](file-management/README_zh.md)（Beta特性）
         - [IPC Kit（进程间通信服务）（Beta特性）](ipc/README_zh.md)（Beta特性）
         - [Localization Kit（本地化开发服务）（Beta特性）](internationalization/README_zh.md)（Beta特性）

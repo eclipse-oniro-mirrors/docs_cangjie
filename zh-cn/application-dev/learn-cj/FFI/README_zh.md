@@ -1,4 +1,4 @@
-# Cangjie（仓颉）
+# Cangjie（仓颉）(Beta特性)
 
 - [仓颉简介](cj-cangjie-overview.md)
 - 仓颉-ArkTS 互操作
