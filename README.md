@@ -14,7 +14,7 @@ The overall architecture of OpenHarmony Cangjie documentation is illustrated bel
 
 **Figure 1**: Documentation Architecture Diagram
 
-![Documentation Architecture Diagram](./en/figures/ohcj_doc_arch.png)
+<img src="./en/figures/ohcj_doc_arch.png" alt="doc_arch" width="50%" />
 
 As shown above, the application developer documentation primarily includes:
 

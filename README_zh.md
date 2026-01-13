@@ -14,7 +14,7 @@ OpenHarmony仓颉文档的总体架构如下图所示：
 
 **图1**：文档架构图
 
-![文档架构图](./zh-cn/figures/ohcj_doc_arch.png)
+<img src="./zh-cn/figures/ohcj_doc_arch.png" alt="文档架构图" width="50%" />
 
 如上图所示，应用开发者文档主要包含：
 
