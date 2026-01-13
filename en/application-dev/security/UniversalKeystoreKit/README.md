@@ -1,52 +1,52 @@
 # Universal Keystore Kit (Key Management Service) (Beta Feature)
 
-- [Universal Keystore Kit Introduction](cj-huks-overview.md)
-- [Universal Keystore Basic Concepts](cj-huks-concepts.md)
+- [Universal Keystore Kit Introduction](cj-huks-overview.md)(Beta Feature)
+- [Universal Keystore Basic Concepts](cj-huks-concepts.md)(Beta Feature)
 - Key Generation/Import
     - Key Generation
-        - [Key Generation Overview and Algorithm Specifications](cj-huks-key-generation-overview.md)
+        - [Key Generation Overview and Algorithm Specifications](cj-huks-key-generation-overview.md)(Beta Feature)
         - [Development Guide]()
-            - [Key Generation (Cangjie)](cj-huks-key-generation.md)
+            - [Key Generation (Cangjie)](cj-huks-key-generation.md)(Beta Feature)
     - Key Import
-        - [Key Import Overview and Algorithm Specifications](cj-huks-key-import-overview.md)
+        - [Key Import Overview and Algorithm Specifications](cj-huks-key-import-overview.md)(Beta Feature)
         - Development Guide
-            - [Plaintext Key Import (Cangjie)](cj-huks-import-key-in-plaintext.md)
-            - [Encrypted Key Import (Cangjie)](cj-huks-import-wrapped-key.md)
+            - [Plaintext Key Import (Cangjie)](cj-huks-import-key-in-plaintext.md)(Beta Feature)
+            - [Encrypted Key Import (Cangjie)](cj-huks-import-wrapped-key.md)(Beta Feature)
     - Key Usage
-        - [Key Usage Overview and General Process](cj-huks-key-use-overview.md)
+        - [Key Usage Overview and General Process](cj-huks-key-use-overview.md)(Beta Feature)
         - Encryption/Decryption
-            - [Encryption/Decryption Overview and Algorithm Specifications](cj-huks-encryption-decryption-overview.md)
+            - [Encryption/Decryption Overview and Algorithm Specifications](cj-huks-encryption-decryption-overview.md)(Beta Feature)
             - Development Guide
-                - [Encryption/Decryption (Cangjie)](cj-huks-encryption-decryption.md)
+                - [Encryption/Decryption (Cangjie)](cj-huks-encryption-decryption.md)(Beta Feature)
             - Signature/Verification
-                - [Signature/Verification Overview and Algorithm Specifications](cj-huks-signing-signature-verification-overview.md)
+                - [Signature/Verification Overview and Algorithm Specifications](cj-huks-signing-signature-verification-overview.md)(Beta Feature)
                 - Development Guide
-                    - [Signature/Verification (Cangjie)](cj-huks-signing-signature-verification.md)
+                    - [Signature/Verification (Cangjie)](cj-huks-signing-signature-verification.md)(Beta Feature)
             - Key Agreement
-                - [Key Agreement Overview and Algorithm Specifications](cj-huks-key-agreement-overview.md)
+                - [Key Agreement Overview and Algorithm Specifications](cj-huks-key-agreement-overview.md)(Beta Feature)
                 - Development Guide
-                    - [Key Agreement (Cangjie)](cj-huks-key-agreement.md)
+                    - [Key Agreement (Cangjie)](cj-huks-key-agreement.md)(Beta Feature)
             - Key Derivation
-                - [Key Derivation Overview and Algorithm Specifications](cj-huks-key-derivation-overview.md)
+                - [Key Derivation Overview and Algorithm Specifications](cj-huks-key-derivation-overview.md)(Beta Feature)
                 - [Development Guide]()
-                    - [Key Derivation (Cangjie)](scj-huks-key-derivation.md)
+                    - [Key Derivation (Cangjie)](scj-huks-key-derivation.md)(Beta Feature)
             - HMAC
-                - [HMAC Overview and Algorithm Specifications](cj-huks-hmac-overview.md)
+                - [HMAC Overview and Algorithm Specifications](cj-huks-hmac-overview.md)(Beta Feature)
                 - Development Guide
-                    - [HMAC (Cangjie)](cj-huks-hmac.md)
+                    - [HMAC (Cangjie)](cj-huks-hmac.md)(Beta Feature)
         - Key Deletion
-            - [Key Deletion (Cangjie)](cj-huks-delete-key.md)
+            - [Key Deletion (Cangjie)](cj-huks-delete-key.md)(Beta Feature)
         - Key Attestation
-            - [Key Attestation Overview and Algorithm Specifications](cj-huks-key-attestation-overview.md)
+            - [Key Attestation Overview and Algorithm Specifications](cj-huks-key-attestation-overview.md)(Beta Feature)
             - Development Guide
-                - [Anonymous Key Attestation (Cangjie)](cj-huks-key-anon-attestation.md)
+                - [Anonymous Key Attestation (Cangjie)](cj-huks-key-anon-attestation.md)(Beta Feature)
                 <!--Del-->
-                - [Non-Anonymous Key Attestation(Cangjie)](cj-huks-key-attestation-arkts.md)
+                - [Non-Anonymous Key Attestation(Cangjie)](cj-huks-key-attestation-arkts.md)(Beta Feature)
                 <!--DelEnd-->
         - Other Operations
             - Checking Key Existence
-                - [Checking Key Existence (Cangjie)](cj-huks-check-key.md)
+                - [Checking Key Existence (Cangjie)](cj-huks-check-key.md)(Beta Feature)
             - Obtaining Key Properties
-                - [Obtaining Key Properties (Cangjie)](cj-huks-obtain-key-properties.md)
+                - [Obtaining Key Properties (Cangjie)](cj-huks-obtain-key-properties.md)(Beta Feature)
             - Key Export
-                - [Key Export (Cangjie)](cj-huks-export-key.md)
+                - [Key Export (Cangjie)](cj-huks-export-key.md)(Beta Feature)

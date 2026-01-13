@@ -1,36 +1,36 @@
 # API参考（Beta特性）
 
 - API参考概述
-    - [开发说明](cj-development-intro.md)
-    - [系统能力SystemCapability使用指南](cj-syscap.md)
+    - [开发说明](cj-development-intro.md)（Beta特性）
+    - [系统能力SystemCapability使用指南](cj-syscap.md)（Beta特性）
 - 系统能力SystemCapability列表
-    - [Phone](cj-phone-syscap-list.md)
-    - [Tablet](cj-tablet-syscap-list.md)
-- [API标签化管控](cj-ifavailable.md)
-- [通用错误码](cj-errorcode-universal.md)
-- [Ability Kit（程序框架服务）（Beta特性）](AbilityKit/README_zh.md)
-- [ArkData（方舟数据管理）（Beta特性）](ArkData/README_zh.md)
-- [ArkGraphics2D（方舟2D图形服务）（Beta特性）](ArkGraphics2D/README_zh.md)
-- [ArkInterop（仓颉与ArkTS互操作库）（Beta特性）](arkinterop/README_zh.md)
-- [ArkUI（方舟UI框架）（Beta特性）](arkui-cj/README_zh.md)
-- [ArkWeb（方舟Web）（Beta特性）](ArkWeb/README_zh.md)
-- [Basic Services Kit（基础服务）（Beta特性）](BasicServicesKit/README_zh.md)
-- [Camera Kit（相机服务）（Beta特性）](CameraKit/README_zh.md)
-- [Connectivity Kit（短距通信服务）（Beta特性）](ConnectivityKit/README_zh.md)
-- [Core File Kit（文件基础服务）（Beta特性）](CoreFileKit/README_zh.md)
-- [Crypto Architecture Kit（加解密算法框架服务）（Beta特性）](CryptoArchitectureKit/README_zh.md)
-- [Image Kit（图片处理服务）（Beta特性）](ImageKit/README_zh.md)
-- [IPC Kit（进程间通信服务）（Beta特性）](IPCKit/README_zh.md)
-- [Localization Kit（本地化开发服务）（Beta特性）](LocalizationKit/README_zh.md)
-- [Location Kit（位置服务）（Beta特性）](LocationKit/README_zh.md)
-- [Media Kit（媒体服务）（Beta特性）](MediaKit/README_zh.md)
-- [Media Library Kit（媒体文件管理服务）（Beta特性）](MediaLibraryKit/README_zh.md)
-- [Network Kit（网络服务）（Beta特性）](NetworkKit/README_zh.md)
-- [Performance Analysis Kit（性能分析服务）（Beta特性）](PerformanceAnalysisKit/README_zh.md)
-- [Sensor Service Kit（传感器服务）（Beta特性）](SensorServiceKit/README_zh.md)
-- [Telephony Kit（Beta特性）](TelephonyKit/README_zh.md)
-- [Test Kit（应用测试服务）（Beta特性）](TestKit/README_zh.md)
-- [Universal Keystore Kit（密钥管理服务）（Beta特性）](UniversalKeystoreKit/README_zh.md)
+    - [Phone](cj-phone-syscap-list.md)（Beta特性）
+    - [Tablet](cj-tablet-syscap-list.md)（Beta特性）
+- [API标签化管控](cj-ifavailable.md)（Beta特性）
+- [通用错误码](cj-errorcode-universal.md)（Beta特性）
+- [Ability Kit（程序框架服务）（Beta特性）](AbilityKit/README_zh.md)（Beta特性）
+- [ArkData（方舟数据管理）（Beta特性）](ArkData/README_zh.md)（Beta特性）
+- [ArkGraphics2D（方舟2D图形服务）（Beta特性）](ArkGraphics2D/README_zh.md)（Beta特性）
+- [ArkInterop（仓颉与ArkTS互操作库）（Beta特性）](arkinterop/README_zh.md)（Beta特性）
+- [ArkUI（方舟UI框架）（Beta特性）](arkui-cj/README_zh.md)（Beta特性）
+- [ArkWeb（方舟Web）（Beta特性）](ArkWeb/README_zh.md)（Beta特性）
+- [Basic Services Kit（基础服务）（Beta特性）](BasicServicesKit/README_zh.md)（Beta特性）
+- [Camera Kit（相机服务）（Beta特性）](CameraKit/README_zh.md)（Beta特性）
+- [Connectivity Kit（短距通信服务）（Beta特性）](ConnectivityKit/README_zh.md)（Beta特性）
+- [Core File Kit（文件基础服务）（Beta特性）](CoreFileKit/README_zh.md)（Beta特性）
+- [Crypto Architecture Kit（加解密算法框架服务）（Beta特性）](CryptoArchitectureKit/README_zh.md)（Beta特性）
+- [Image Kit（图片处理服务）（Beta特性）](ImageKit/README_zh.md)（Beta特性）
+- [IPC Kit（进程间通信服务）（Beta特性）](IPCKit/README_zh.md)（Beta特性）
+- [Localization Kit（本地化开发服务）（Beta特性）](LocalizationKit/README_zh.md)（Beta特性）
+- [Location Kit（位置服务）（Beta特性）](LocationKit/README_zh.md)（Beta特性）
+- [Media Kit（媒体服务）（Beta特性）](MediaKit/README_zh.md)（Beta特性）
+- [Media Library Kit（媒体文件管理服务）（Beta特性）](MediaLibraryKit/README_zh.md)（Beta特性）
+- [Network Kit（网络服务）（Beta特性）](NetworkKit/README_zh.md)（Beta特性）
+- [Performance Analysis Kit（性能分析服务）（Beta特性）](PerformanceAnalysisKit/README_zh.md)（Beta特性）
+- [Sensor Service Kit（传感器服务）（Beta特性）](SensorServiceKit/README_zh.md)（Beta特性）
+- [Telephony Kit（Beta特性）](TelephonyKit/README_zh.md)（Beta特性）
+- [Test Kit（应用测试服务）（Beta特性）](TestKit/README_zh.md)（Beta特性）
+- [Universal Keystore Kit（密钥管理服务）（Beta特性）](UniversalKeystoreKit/README_zh.md)（Beta特性）
 - 公共基础能力
-    - [SysCap（系统能力）](arkui-cj/cj-apis-syscap.md)
+    - [SysCap（系统能力）](arkui-cj/cj-apis-syscap.md)（Beta特性）
 - [仓颉编程语言标准库API](cj-libs-api.md)

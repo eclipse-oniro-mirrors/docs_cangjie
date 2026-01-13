@@ -1,24 +1,24 @@
 # Performance Analysis Kit (Performance Analysis Service) (Beta Feature)
 
-- [Performance Analysis Kit Introduction](cj-performance-analysis-kit-overview.md)
+- [Performance Analysis Kit Introduction](cj-performance-analysis-kit-overview.md)(Beta Feature)
 - HiLog Usage Guide
-  - [Logging with HiLog (Cangjie)](cj-hilog-guidelines.md)
+  - [Logging with HiLog (Cangjie)](cj-hilog-guidelines.md)(Beta Feature)
 - HiAppEvent Usage Guide
-  - [HiAppEvent Introduction](cj-hiappevent-intro.md)
+  - [HiAppEvent Introduction](cj-hiappevent-intro.md)(Beta Feature)
   - Event Subscription
     - Application Events
-      - [Subscribing to Application Events (Cangjie)](cj-hiappevent-watcher-app-events.md)
+      - [Subscribing to Application Events (Cangjie)](cj-hiappevent-watcher-app-events.md)(Beta Feature)
     - System Events
       - Crash Events
-        - [Crash Events Introduction](cj-hiappevent-watcher-crash-events.md)
-        - [Subscribing to Crash Events (Cangjie)](cj-hiappevent-watcher-crash-events-cangjie.md)
+        - [Crash Events Introduction](cj-hiappevent-watcher-crash-events.md)(Beta Feature)
+        - [Subscribing to Crash Events (Cangjie)](cj-hiappevent-watcher-crash-events-cangjie.md)(Beta Feature)
       - AppFreeze Events
-        - [AppFreeze Events Introduction](cj-hiappevent-watcher-freeze-events.md)
-        - [Subscribing to AppFreeze Events (Cangjie)](cj-hiappevent-watcher-freeze-events-cangjie.md)
+        - [AppFreeze Events Introduction](cj-hiappevent-watcher-freeze-events.md)(Beta Feature)
+        - [Subscribing to AppFreeze Events (Cangjie)](cj-hiappevent-watcher-freeze-events-cangjie.md)(Beta Feature)
 - HiTraceMeter Usage Guide
-  - [Viewing HiTraceMeter Logs](cj-hitracemeter-view.md)
+  - [Viewing HiTraceMeter Logs](cj-hitracemeter-view.md)(Beta Feature)
 - Error Management
-  - [Error Management Development Guide](cj-errormanager-guidelines.md)
+  - [Error Management Development Guide](cj-errormanager-guidelines.md)(Beta Feature)
 - Fault Analysis
-  - [Analyzing Cangjie Crash (Process Crash)](cj-cangjiecrash-guidelines.md)
-  - [Analyzing AppFreeze (Application Not Responding)](cj-appfreeze-guidelines.md)
+  - [Analyzing Cangjie Crash (Process Crash)](cj-cangjiecrash-guidelines.md)(Beta Feature)
+  - [Analyzing AppFreeze (Application Not Responding)](cj-appfreeze-guidelines.md)(Beta Feature)

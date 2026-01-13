@@ -1,4 +1,4 @@
-# FFI (Beta Feature)
+# FFI
 
 - [Cangjie and C Interoperability](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/FFI/cangjie-c.md)
 - Cangjie-ArkTS Interoperability

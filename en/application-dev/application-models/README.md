@@ -1,21 +1,21 @@
 # Application Framework (Beta Feature)
 
-- [Ability Kit Introduction](cj-abilitykit-overview.md)
-- [Application Models](cj-application-models.md)
+- [Ability Kit Introduction](cj-abilitykit-overview.md)(Beta Feature)
+- [Application Models](cj-application-models.md)(Beta Feature)
 - Stage Model Development Guide
     - Stage Model Application Components
-        - [Application/Component-Level Configuration](cj-application-component-configuration-stage.md)
+        - [Application/Component-Level Configuration](cj-application-component-configuration-stage.md)(Beta Feature)
         - UIAbility Component
-            - [UIAbility Component Overview](cj-uiability-overview.md)
-            - [UIAbility Component Lifecycle](cj-uiability-lifecycle.md)
-            - [UIAbility Component Launch Mode](cj-uiability-launch-type.md)
-            - [UIAbility Component Basic Usage](cj-uiability-usage.md)
-            - [Launching UIAbility Components Within an Application](cj-uiability-intra-device-interaction.md)
+            - [UIAbility Component Overview](cj-uiability-overview.md)(Beta Feature)
+            - [UIAbility Component Lifecycle](cj-uiability-lifecycle.md)(Beta Feature)
+            - [UIAbility Component Launch Mode](cj-uiability-launch-type.md)(Beta Feature)
+            - [UIAbility Component Basic Usage](cj-uiability-usage.md)(Beta Feature)
+            - [Launching UIAbility Components Within an Application](cj-uiability-intra-device-interaction.md)(Beta Feature)
         - Information Carrier Want
-            - [Want Overview](cj-want-overview.md)
-            - [Explicit & Implicit Want Matching Rules](cj-explicit-implicit-want-mappings.md)
-            - [Common Actions & Entities (Deprecated)](cj-actions-entities.md)
+            - [Want Overview](cj-want-overview.md)(Beta Feature)
+            - [Explicit & Implicit Want Matching Rules](cj-explicit-implicit-want-mappings.md)(Beta Feature)
+            - [Common Actions & Entities (Deprecated)](cj-actions-entities.md)(Beta Feature)
     - Cross-Application Navigation
         - Launching Specified Application Types
-            - [Launching File Processing Applications (startAbility)](cj-file-processing-apps-startup.md)
-    - [Stage Model Application Configuration File](cj-config-file-stage.md)
+            - [Launching File Processing Applications (startAbility)](cj-file-processing-apps-startup.md)(Beta Feature)
+    - [Stage Model Application Configuration File](cj-config-file-stage.md)(Beta Feature)

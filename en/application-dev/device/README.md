@@ -1,3 +1,3 @@
 # Hardware (Beta Feature)
 
-- [Sensor Service Kit (Sensor Service)](sensor/README.md)
+- [Sensor Service Kit (Sensor Service)](sensor/README.md)(Beta Feature)

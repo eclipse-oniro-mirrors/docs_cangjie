@@ -2,23 +2,23 @@
 
 - Cangjie API
     - Device Management
-        - [ohos.battery_info (Battery Information)](cj-apis-battery_info.md)
-        - [ohos.device_info (Device Information)](cj-apis-device_info.md)
+        - [ohos.battery_info (Battery Information)](cj-apis-battery_info.md)(Beta Feature)
+        - [ohos.device_info (Device Information)](cj-apis-device_info.md)(Beta Feature)
     - Data File Processing
-        - [kit.BasicServicesKit.agent (Upload/Download)](cj-apis-request-agent.md)
+        - [kit.BasicServicesKit.agent (Upload/Download)](cj-apis-request-agent.md)(Beta Feature)
     - Process/Thread Communication
-        - [ohos.common_event_manager (Common Event Module)](cj-apis-common_event_manager.md)
+        - [ohos.common_event_manager (Common Event Module)](cj-apis-common_event_manager.md)(Beta Feature)
     - Others
-        - [ohos.settings (Setting Data Item Names)](cj-apis-settings.md)
-        - [ohos.system_date_time (System Time/Timezone)](cj-apis-system_date_time.md)
-        - [ohos.common_event_subscriber](cj-apis-common_event_subscriber.md)
-        - [ohos.common_event_subscribe_info](cj-apis-common_event_subscribe_info.md)
-        - [ohos.common_event_data](cj-apis-common_event_data.md)
-        - [ohos.common_event_publish_data](cj-apis-common_event_publish_data.md)
-        - [ohos.value_type](cj-apis-value_type.md)
+        - [ohos.settings (Setting Data Item Names)](cj-apis-settings.md)(Beta Feature)
+        - [ohos.system_date_time (System Time/Timezone)](cj-apis-system_date_time.md)(Beta Feature)
+        - [ohos.common_event_subscriber](cj-apis-common_event_subscriber.md)(Beta Feature)
+        - [ohos.common_event_subscribe_info](cj-apis-common_event_subscribe_info.md)(Beta Feature)
+        - [ohos.common_event_data](cj-apis-common_event_data.md)(Beta Feature)
+        - [ohos.common_event_publish_data](cj-apis-common_event_publish_data.md)(Beta Feature)
+        - [ohos.value_type](cj-apis-value_type.md)(Beta Feature)
 - Error Codes
-    - [Upload/Download Error Codes](cj-errorcode-request.md)
-    - [Time and Time Zone Error Codes](cj-errorcode-time.md)
-    - [Event Error Codes](cj-errorcode-common_event_service.md)
-    - [System Power Management Error Codes](cj-errorcode-power.md)
-    - [Account Management Error Codes](cj-errorcode-basic-account.md)
+    - [Upload/Download Error Codes](cj-errorcode-request.md)(Beta Feature)
+    - [Time and Time Zone Error Codes](cj-errorcode-time.md)(Beta Feature)
+    - [Event Error Codes](cj-errorcode-common_event_service.md)(Beta Feature)
+    - [System Power Management Error Codes](cj-errorcode-power.md)(Beta Feature)
+    - [Account Management Error Codes](cj-errorcode-basic-account.md)(Beta Feature)

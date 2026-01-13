@@ -1,4 +1,4 @@
-# Learning Cangjie Language (Beta Feature)
+# Learning Cangjie Language
 
 - [First Look at Cangjie Language](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/first_understanding/basic.md)
 - Basic Concepts
