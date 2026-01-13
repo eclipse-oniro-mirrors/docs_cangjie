@@ -1844,7 +1844,7 @@ public prop size: Int64
 ### operator func \[](Int64)
 
 ```cangjie
-public operator func[](index: Int64): JSValue
+public operator func [](index: Int64): JSValue
 ```
 
 **Functionality:** Writes an element to the ArkTS array.
@@ -1887,7 +1887,7 @@ func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
 ### operator func \[](Int64, JSValue)
 
 ```cangjie
-public operator func[](index: Int64, value!: JSValue): Unit
+public operator func [](index: Int64, value!: JSValue): Unit
 ```
 
 **Functionality:** Writes an element to the ArkTS array.
@@ -1926,7 +1926,7 @@ func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
 ### operator func \[](Int64, JSHeapObject)
 
 ```cangjie
-public operator func[](index: Int64, value!: JSHeapObject): Unit
+public operator func [](index: Int64, value!: JSHeapObject): Unit
 ```
 
 **Functionality:** Writes an element to the ArkTS array.
@@ -3596,7 +3596,7 @@ public prop thisArg: JSValue
 ### operator func \[](Int64)
 
 ```cangjie
-public operator func[](index: Int64): JSValue
+public operator func [](index: Int64): JSValue
 ```
 
 **Function:** Retrieves the corresponding parameter by index.
@@ -11126,7 +11126,7 @@ func convertToString(context: JSContext): JSValue {
 ### operator func !=(Utf16String)
 
 ```cangjie
-public operator func != (target: Utf16String): Bool
+public operator func !=(target: Utf16String): Bool
 ```
 
 **Function:** Check if strings are not equal.
@@ -11156,7 +11156,7 @@ public operator func != (target: Utf16String): Bool
 ### operator func +(Utf16String)
 
 ```cangjie
-public operator func + (right: Utf16String): Utf16String
+public operator func +(right: Utf16String): Utf16String
 ```
 
 **Function:** Concatenate strings.
@@ -11186,7 +11186,7 @@ public operator func + (right: Utf16String): Utf16String
 ### operator func \<(Utf16String)
 
 ```cangjie
-public operator func < (target: Utf16String): Bool
+public operator func <(target: Utf16String): Bool
 ```
 
 **Function:** Determines whether the string is less than the target string (based on Unicode lexicographical order).
@@ -11216,7 +11216,7 @@ public operator func < (target: Utf16String): Bool
 ### operator func <(Utf16String)
 
 ```cangjie
-public operator func < (target: Utf16String): Bool
+public operator func <(target: Utf16String): Bool
 ```
 
 **Function:** Determines whether the string is less than or equal to the target string (based on Unicode lexicographical order).
@@ -11246,7 +11246,7 @@ public operator func < (target: Utf16String): Bool
 ### operator func ==(Utf16String)
 
 ```cangjie
-public operator func == (target: Utf16String): Bool
+public operator func ==(target: Utf16String): Bool
 ```
 
 **Function:** Determines whether the string is equal to the target string.
@@ -11276,7 +11276,7 @@ public operator func == (target: Utf16String): Bool
 ### operator func >(Utf16String)
 
 ```cangjie
-public operator func > (target: Utf16String): Bool
+public operator func >(target: Utf16String): Bool
 ```
 
 **Function:** Determines whether the string is greater than the target string (based on Unicode lexicographical order).
@@ -11306,7 +11306,7 @@ public operator func > (target: Utf16String): Bool
 ### operator func >=(Utf16String)
 
 ```cangjie
-public operator func >= (target: Utf16String): Bool
+public operator func >=(target: Utf16String): Bool
 ```
 
 **Function:** Determines whether the string is greater than or equal to the target string (based on Unicode lexicographical order).
