@@ -1835,10 +1835,10 @@ public prop size: Int64
 | 34300003   | Accessing reference is beyond reach. |
 | 34300004   | Thread mismatch. |
 
-### func \[](Int64)
+### operator func \[](Int64)
 
 ```cangjie
-public operator func[](index: Int64): JSValue
+public operator func [](index: Int64): JSValue
 ```
 
 **功能：** 往 ArkTS 数组写入一个元素。
@@ -1878,10 +1878,10 @@ func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
 }
 ```
 
-### func \[](Int64, JSValue)
+### operator func \[](Int64, JSValue)
 
 ```cangjie
-public operator func[](index: Int64, value!: JSValue): Unit
+public operator func [](index: Int64, value!: JSValue): Unit
 ```
 
 **功能：** 往 ArkTS 数组写入一个元素。
@@ -1917,10 +1917,10 @@ func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
 }
 ```
 
-### func \[](Int64, JSHeapObject)
+### operator func \[](Int64, JSHeapObject)
 
 ```cangjie
-public operator func[](index: Int64, value!: JSHeapObject): Unit
+public operator func [](index: Int64, value!: JSHeapObject): Unit
 ```
 
 **功能：** 往 ArkTS 数组写入一个元素。
@@ -3304,7 +3304,7 @@ public func toJSValue(context: JSContext): JSValue
 | 34300003   | Accessing reference is beyond reach. |
 | 34300004   | Thread mismatch.                     |
 
-### func \[](Int64)
+### operator func \[](Int64)
 
 ```cangjie
 public operator func [](index: Int64): T
@@ -3353,7 +3353,7 @@ func getIndexOperator(context: JSContext): JSValue {
 }
 ```
 
-### func \[](Int64, T)
+### operator func \[](Int64, T)
 
 ```cangjie
 public operator func [](index: Int64, value!: T): Unit
@@ -3587,10 +3587,10 @@ public prop thisArg: JSValue
 | 34300003   | Accessing reference is beyond reach. |
 | 34300004   | Thread mismatch.                     |
 
-### func \[](Int64)
+### operator func \[](Int64)
 
 ```cangjie
-public operator func[](index: Int64): JSValue
+public operator func [](index: Int64): JSValue
 ```
 
 **功能：** 通过索引获取对应的参数。
@@ -6467,7 +6467,7 @@ public func values(): Collection<V>
 | 34300003   | Accessing reference is beyond reach.  |
 | 34300004   | Thread mismatch.                      |
 
-### func \[](K)
+### operator func \[](K)
 
 ```cangjie
 public operator func [](key: K): V
@@ -6516,7 +6516,7 @@ func getIndexOperatorHashMapEx(context: JSContext): JSValue {
 }
 ```
 
-### func \[](K, V)
+### operator func \[](K, V)
 
 ```cangjie
 public operator func [](key: K, value!: V): Unit
@@ -7391,7 +7391,7 @@ func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
 }
 ```
 
-### func \[](JSKeyable)
+### operator func \[](JSKeyable)
 
 ```cangjie
 public operator func [](key: JSKeyable): JSValue
@@ -7434,7 +7434,7 @@ func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
 }
 ```
 
-### func \[](JSKeyable, JSValue)
+### operator func \[](JSKeyable, JSValue)
 
 ```cangjie
 public operator func [](key: JSKeyable, value!: JSValue): Unit
@@ -8118,7 +8118,7 @@ public func toString(): String
 | 34300003   | Accessing reference is beyond reach. |
 | 34300004   | Thread mismatch.                     |
 
-### func !=(JSStringEx)
+### operator func !=(JSStringEx)
 
 ```cangjie
 public operator func !=(str: JSStringEx): Bool
@@ -8149,7 +8149,7 @@ public operator func !=(str: JSStringEx): Bool
 | 34300003   | Accessing reference is beyond reach. |
 | 34300004   | Thread mismatch.                     |
 
-### func ==(JSStringEx)
+### operator func ==(JSStringEx)
 
 ```cangjie
 public operator func ==(str: JSStringEx): Bool
@@ -11109,10 +11109,10 @@ func convertToString(context: JSContext): JSValue {
 }
 ```
 
-### func !=(Utf16String)
+### operator func !=(Utf16String)
 
 ```cangjie
-public operator func != (target: Utf16String): Bool
+public operator func !=(target: Utf16String): Bool
 ```
 
 **功能：** 判断与目标字符串是否不相等。
@@ -11139,10 +11139,10 @@ public operator func != (target: Utf16String): Bool
 |:------|:-------------------------------------|
 | 34300003   | Accessing reference is beyond reach. |
 
-### func +(Utf16String)
+### operator func +(Utf16String)
 
 ```cangjie
-public operator func + (right: Utf16String): Utf16String
+public operator func +(right: Utf16String): Utf16String
 ```
 
 **功能：** 往后拼接一个字符串。
@@ -11169,10 +11169,10 @@ public operator func + (right: Utf16String): Utf16String
 |:------|:-------------------------------------|
 | 34300003   | Accessing reference is beyond reach. |
 
-### func \<(Utf16String)
+### operator func \<(Utf16String)
 
 ```cangjie
-public operator func < (target: Utf16String): Bool
+public operator func <(target: Utf16String): Bool
 ```
 
 **功能：** 判断是否小于目标字符串（按字符 Unicode 的字典序）。
@@ -11199,10 +11199,10 @@ public operator func < (target: Utf16String): Bool
 |:------|:-------------------------------------|
 | 34300003   | Accessing reference is beyond reach. |
 
-### func \<=(Utf16String)
+### operator func \<=(Utf16String)
 
 ```cangjie
-public operator func <= (target: Utf16String): Bool
+public operator func <=(target: Utf16String): Bool
 ```
 
 **功能：** 判断是否小于或等于目标字符串（按字符 Unicode 的字典序）。
@@ -11229,10 +11229,10 @@ public operator func <= (target: Utf16String): Bool
 |:------|:-------------------------------------|
 | 34300003   | Accessing reference is beyond reach. |
 
-### func ==(Utf16String)
+### operator func ==(Utf16String)
 
 ```cangjie
-public operator func == (target: Utf16String): Bool
+public operator func ==(target: Utf16String): Bool
 ```
 
 **功能：** 判断与目标字符串是否相等。
@@ -11259,10 +11259,10 @@ public operator func == (target: Utf16String): Bool
 |:------|:-------------------------------------|
 | 34300003   | Accessing reference is beyond reach. |
 
-### func >(Utf16String)
+### operator func >(Utf16String)
 
 ```cangjie
-public operator func > (target: Utf16String): Bool
+public operator func >(target: Utf16String): Bool
 ```
 
 **功能：** 判断是否大于目标字符串（按字符 Unicode 的字典序）。
@@ -11289,10 +11289,10 @@ public operator func > (target: Utf16String): Bool
 |:------|:-------------------------------------|
 | 34300003   | Accessing reference is beyond reach. |
 
-### func >=(Utf16String)
+### operator func >=(Utf16String)
 
 ```cangjie
-public operator func >= (target: Utf16String): Bool
+public operator func >=(target: Utf16String): Bool
 ```
 
 **功能：** 判断是否大于或等于目标字符串（按字符 Unicode 的字典序）。
@@ -11319,7 +11319,7 @@ public operator func >= (target: Utf16String): Bool
 |:------|:-------------------------------------|
 | 34300003   | Accessing reference is beyond reach. |
 
-### func \[](Int64)
+### operator func \[](Int64)
 
 ```cangjie
 public operator func [](index: Int64): UInt16
@@ -11350,7 +11350,7 @@ public operator func [](index: Int64): UInt16
 | 1     | The accessing index is out of range. |
 | 34300003   | Accessing reference is beyond reach. |
 
-### func \[](Range\<Int64>)
+### operator func \[](Range\<Int64>)
 
 ```cangjie
 public operator func [](range: Range<Int64>): Utf16String
@@ -11563,7 +11563,7 @@ public func toString(): String
 |:----|:----|
 |String|字符串描述。|
 
-### func !=(JSType)
+### operator func !=(JSType)
 
 ```cangjie
 public operator func !=(target: JSType): Bool
@@ -11585,7 +11585,7 @@ public operator func !=(target: JSType): Bool
 |:----|:----|
 |Bool|为 true 时代表两个类型不等。|
 
-### func ==(JSType)
+### operator func ==(JSType)
 
 ```cangjie
 public operator func ==(target: JSType): Bool
