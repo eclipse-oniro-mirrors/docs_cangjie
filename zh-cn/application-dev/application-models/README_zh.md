@@ -19,4 +19,3 @@
         - 拉起指定类型的应用
             - [拉起文件处理类应用（startAbility）](cj-file-processing-apps-startup.md)（Beta特性）
     - [Stage模型应用配置文件](cj-config-file-stage.md)（Beta特性）
-- 

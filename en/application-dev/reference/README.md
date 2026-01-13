@@ -30,4 +30,4 @@
 - [Telephony Kit API Reference](TelephonyKit/README.md)(Beta Feature)
 - [Test Kit API Reference](TestKit/README.md)(Beta Feature)
 - [Universal Keystore Kit API Reference](UniversalKeystoreKit/README.md)(Beta Feature)
-- [Cangjie Programming Language Library API](cj-libs-api.md)(Beta Feature)
+- [Cangjie Programming Language Library API](cj-libs-api.md)
