@@ -63,7 +63,7 @@
 
     ```cangjie
     import kit.AbilityKit.{Permissions, AbilityAccessCtrl, GrantStatus, BundleManager, BundleFlag}
-    import ohos.hilog.Hilog
+    import kit.PerformanceAnalysisKit.Hilog
     import ohos.bundle.bundle_manager.BundleInfo
 
     func checkPermissionGrant(permission: Permissions): GrantStatus {
@@ -115,7 +115,7 @@
         ```cangjie
         // main_ability.cj
         import kit.AbilityKit.*
-        import ohos.hilog.Hilog
+        import kit.PerformanceAnalysisKit.Hilog
         import ohos.business_exception.*
         import ohos.window.WindowStage
 
@@ -162,7 +162,7 @@
             // main_ability.cj
             import kit.AbilityKit.*
             import ohos.window.WindowStage
-            import ohos.hilog.Hilog
+            import kit.PerformanceAnalysisKit.Hilog
 
             var globalAbilityContext: Option<UIAbilityContext> = Option<UIAbilityContext>.None
 
@@ -197,7 +197,7 @@
             // index.cj
             import kit.AbilityKit.*
             import ohos.business_exception.*
-            import ohos.hilog.Hilog
+            import kit.PerformanceAnalysisKit.Hilog
             import ohos.arkui.component.button.Button
             import ohos.arkui.state_macro_manage.Entry
             import ohos.arkui.state_macro_manage.Component

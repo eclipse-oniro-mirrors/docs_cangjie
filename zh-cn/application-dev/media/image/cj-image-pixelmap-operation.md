@@ -25,7 +25,6 @@
     <!-- compile -->
 
     ```cangjie
-    import kit.ImageKit.*
     // 获取图像像素的总字节数。
     let pixelBytesNumber = pixelMap.getPixelBytesNumber()
     // 获取图像像素每行字节数。

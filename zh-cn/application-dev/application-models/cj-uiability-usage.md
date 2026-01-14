@@ -119,7 +119,7 @@ class MainAbility <: UIAbility {
   <!-- compile -->
 
   ```cangjie
-  internal import kit.PerformanceAnalysisKit.Hilog
+  import kit.PerformanceAnalysisKit.Hilog
   import kit.AbilityKit.{UIAbilityContext, Want}
 
   func getContext(): UIAbilityContext {

@@ -86,13 +86,17 @@ API示例代码使用说明：
 
 方法一：通过PixelMap编码进文件。
 
-<!-- compile -->
+为实现通过PixelMap编码进文件功能，需要导入如下包：
 
 ```cangjie
 import kit.ImageKit.*
 import kit.CoreFileKit.*
 import ohos.arkui.state_macro_manage.r
+```
 
+实现通过PixelMap编码进文件功能的核心代码是：
+
+```cangjie
 var abilityContext = Global.abilityContext
 // 获取resourceManager资源管理器。
 let resourceManager = abilityContext.resourceManager   
@@ -109,15 +113,19 @@ imagePacker.packToFile(imageSource, Int32(file.fd), PackingOption("image/jpeg", 
 FileIo.close(file.fd)
 ```
 
-方法二：通过imageSource编码进文件。
+方法二：通过ImageSource编码进文件。
 
-<!-- compile -->
+为实现通过ImageSource编码进文件功能，需要导入如下包：
 
 ```cangjie
 import kit.ImageKit.*
 import kit.CoreFileKit.*
 import ohos.arkui.state_macro_manage.r
+```
 
+实现通过ImageSource编码进文件功能的核心代码是：
+
+```cangjie
 var abilityContext = Global.abilityContext
 // 获取resourceManager资源管理器。
 let resourceManager = abilityContext.resourceManager   

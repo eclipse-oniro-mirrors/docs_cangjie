@@ -18,12 +18,18 @@
 
 ## 示例
 
+为实现密钥导出功能，需要导入如下包：
+
 <!-- compile -->
 
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 import kit.UniversalKeystoreKit.*
+```
 
+实现密钥导出功能的核心代码是：
+
+```cangjie
 func loggerInfo(str: String) {
     Hilog.info(0, "CangjieTest", str)
 }

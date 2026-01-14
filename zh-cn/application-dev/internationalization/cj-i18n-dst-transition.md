@@ -27,12 +27,12 @@
    import kit.LocalizationKit.*
 
    let calendar: Calendar = getCalendar('zh-Hans')
-    calendar.setTimeZone('Europe/London')
-    calendar.set(2021, 2, 27, hour: 16, minute: 0, second: 0) // 夏令时开始前的时间
-    let startTime: Float64 = calendar.getTimeInMillis()
-    calendar.set(2021, 2, 28, hour: 16, minute: 0, second: 0) // 处于夏令时期间的时间
-    let finishTime: Float64 = calendar.getTimeInMillis()
-    let hours: Float64 = (finishTime - startTime) / 3600000.0 // hours = 23.0
+   calendar.setTimeZone('Europe/London')
+   calendar.set(2021, 2, 27, hour: 16, minute: 0, second: 0) // 夏令时开始前的时间
+   let startTime: Float64 = calendar.getTimeInMillis()
+   calendar.set(2021, 2, 28, hour: 16, minute: 0, second: 0) // 处于夏令时期间的时间
+   let finishTime: Float64 = calendar.getTimeInMillis()
+   let hours: Float64 = (finishTime - startTime) / 3600000.0 // hours = 23.0
    ```
 
 2. 存储和显示数据。

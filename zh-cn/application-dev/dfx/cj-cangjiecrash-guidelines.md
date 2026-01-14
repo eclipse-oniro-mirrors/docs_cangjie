@@ -75,7 +75,6 @@ Stacktrace:                               // 异常代码调用栈
 <!-- compile -->
 
 ```cangjie
-
 var bigArray = Array<Rune>(1024 * 1024 * 60, repeat: r'a')
 func foo(): Unit {
     var smallArray = Array<Rune>(1024 * 1024 * 5, repeat: r'a')

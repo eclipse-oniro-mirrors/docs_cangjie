@@ -66,7 +66,7 @@
    <!-- compile -->
 
    ```cangjie
-      // 订阅公共事件回调
+   // 订阅公共事件回调
    let callback = {
       a: ?BusinessException, b: ?CommonEventData =>
          Hilog.info(0, "TestCEM", "=======================================")

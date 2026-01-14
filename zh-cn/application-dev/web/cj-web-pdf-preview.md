@@ -121,18 +121,22 @@ Web().domStorageAccess(true)
 
 - 预览加载应用内PDF资源文件，有两种使用形式。`@rawfile("test.pdf")`形式无法指定下面介绍的预览参数。
 
-    <!-- compile -->
+    为实现预览加载应用内PDF资源文件功能，需要导入如下包：
 
     ```cangjie
     import kit.LocalizationKit.*
+    ```
 
+    实现预览加载应用内PDF资源文件功能的核心代码是：
+
+    ```cangjie
+    // 格式一
     Web(src: @rawfile("test.pdf"), controller: this.webController)
         .domStorageAccess(true)
     ```
 
-    <!-- compile -->
-
     ```cangjie
+    // 格式二
     Web(src: "resource://rawfile/test.pdf", controller: this.webController)
         .domStorageAccess(true)
     ```

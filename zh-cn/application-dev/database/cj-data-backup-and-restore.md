@@ -254,7 +254,7 @@ try {
             Hilog.error(0, "ErrorCode: ${e.code}", e.message)
         }
     }
-   ```
+    ```
 
 3. 调用restore接口恢复数据。
 

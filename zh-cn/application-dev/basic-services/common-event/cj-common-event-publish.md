@@ -63,7 +63,7 @@
 
    ```cangjie
    // 公共事件相关信息
-    let pData = CommonEventPublishData(
+   let pData = CommonEventPublishData(
       bundleName: "com.example.myapplication", 
       data: "newbee", 
       code: 123321,

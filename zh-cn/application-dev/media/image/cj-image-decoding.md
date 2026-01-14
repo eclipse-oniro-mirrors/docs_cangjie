@@ -142,6 +142,7 @@ API示例代码使用说明：
         ```
 
 4. 设置解码参数DecodingOptions，解码获取pixelMap图片对象。
+   
     - 设置期望的format进行解码：
 
         <!-- compile -->

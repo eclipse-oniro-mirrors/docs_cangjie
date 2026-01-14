@@ -111,15 +111,6 @@
 
 3. 调用put()方法向键值数据库中插入数据。示例代码如下所示：
 
-    为实现插入数据功能，需要导入如下包：
-
-    <!-- compile -->
-
-    ```cangjie
-    // xxx.cj
-    import ohos.data.distributed_kv_store.KVValueType
-    ```
-
     实现插入数据功能的核心代码是：
 
     <!-- compile -->

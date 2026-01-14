@@ -510,7 +510,7 @@
                 - 蓝牙
                     - [蓝牙服务开发概述](connectivity/bluetooth/cj-bluetooth-overview.md)
                     - [查找设备](connectivity/bluetooth/cj-ble-development-guide.md)
-                    - [通用属性协议开发指导](connectivity/bluetooth/cj-gatt-development-guide.md)
+                    - [连接和传输数据](connectivity/bluetooth/cj-gatt-development-guide.md)
             - Network Kit（网络服务）
                 - [Network Kit简介](network/cj-net-mgmt-overview.md)
                 - 访问网络

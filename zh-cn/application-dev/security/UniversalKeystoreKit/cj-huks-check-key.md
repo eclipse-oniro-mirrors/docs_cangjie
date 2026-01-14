@@ -18,11 +18,15 @@ HUKS提供了接口供应用查询指定密钥是否存在。
 
 ## 示例
 
-<!-- compile -->
+为实现查询密钥是否存在功能，需要导入如下包：
 
 ```cangjie
 import kit.UniversalKeystoreKit.*
+```
 
+实现查询密钥是否存在功能的核心代码是：
+
+```cangjie
 /* 1. 确定密钥别名 */
 let keyAlias = "test_is_key_item_exist"
 

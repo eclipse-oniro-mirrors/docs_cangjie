@@ -34,5 +34,5 @@
 
    ```cangjie
    // subscriber为订阅事件时创建的订阅者对象
-    CommonEventManager.unsubscribe(subscriber)
+   CommonEventManager.unsubscribe(subscriber)
    ```

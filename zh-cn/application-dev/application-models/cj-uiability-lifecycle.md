@@ -25,8 +25,8 @@ Create状态为在应用加载过程中，[UIAbility](../reference/AbilityKit/cj
 <!-- compile -->
 
 ```cangjie
-internal import kit.AbilityKit.UIAbility
-internal import kit.AbilityKit.Want
+import kit.AbilityKit.UIAbility
+import kit.AbilityKit.Want
 
 class MainAbility <: UIAbility {
     public override func onCreate(want: Want, launchParam: LaunchParam): Unit {
