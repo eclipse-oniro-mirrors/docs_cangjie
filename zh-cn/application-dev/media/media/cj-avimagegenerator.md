@@ -115,8 +115,9 @@ class EntryView {
 
 ```cangjie
 // main_ability.cj
-import ohos.ability.AbilityStage
-import ohos.ability.LaunchReason
+import kit.AbilityKit.*
+import kit.PerformanceAnalysisKit.Hilog
+import kit.ArkUI.WindowStage
 
 class MainAbility <: UIAbility {
     public init() {

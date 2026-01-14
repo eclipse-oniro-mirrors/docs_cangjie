@@ -18,31 +18,27 @@
 
 **错误管理接口功能介绍：**
 
-| 接口名称                                                       | 说明                                                 |
-| ------------------------------------------------------------ | ---------------------------------------------------- |
+| 接口名称 | 说明 |
+| ---------- | -------------------- |
 | on(eventType: ErrorManagerEvent, observer: ErrorObserver): Int32 | 注册错误观测器。注册后程序如果出现crash，会触发未捕获异常机制。|
 | off(eventType: ErrorManagerEvent, observerId: Int32): Unit | 注销错误观测器。|
 
 <!-- waiting -->
 **错误监听(ErrorObserver)接口功能介绍：**
 
-| 接口名称                         | 说明                                                         |
-| ------------------------------ | ------------------------------------------------------------ |
-| onUnhandledException(errMsg: String): Unit | 该回调函数调用场景：在程序运行中抛出异常且该异常未被任务‘try-catch’语句成功捕获。errMsg的内容固定为Uncaught exception was found.。 |
-| onException?(errObject: ErrorObject): Unit | 该回调函数调用场景：在程序运行中抛出异常且该异常未被任务‘try-catch’语句成功捕获。errObject中包含了该未被捕获的异常的异常名称、异常信息与栈追踪。|
+| 接口名称 | 说明 |
+| --------------- | ----------------- |
+| onUnhandledException: (String) -> Unit | 该回调函数调用场景：在程序运行中抛出异常且该异常未被任务‘try-catch’语句成功捕获。errMsg的内容固定为Uncaught exception was found.。 |
+| onException: Option \<(ErrorObject) -> Unit> | 该回调函数调用场景：在程序运行中抛出异常且该异常未被任务‘try-catch’语句成功捕获。errObject中包含了该未被捕获的异常的异常名称、异常信息与栈追踪。|
 
 ## 开发示例
 
 <!-- compile -->
 
 ```cangjie
-import kit.PerformanceAnalysisKit.Hilog
-import kit.BasicServicesKit.*
-import kit.CoreFileKit.*
 import kit.AbilityKit.*
-import ohos.base.*
 import kit.PerformanceAnalysisKit.*
-import ohos.window.WindowStage
+import kit.ArkUI.WindowStage
 
 func loggerInfo(str: String) {
     Hilog.info(0, "CangjieTest", str)

@@ -75,7 +75,7 @@
     ```cangjie
     // main_ability.cj
     import kit.PerformanceAnalysisKit.Hilog
-    import kit.AbilityKit.{UIAbility, AbilityStage, Want, LaunchParam, LaunchReason, UIAbilityContext}
+    import kit.AbilityKit.{UIAbility, Want, LaunchParam, LaunchReason, UIAbilityContext}
 
     var globalAbilityContext: Option<UIAbilityContext> = Option<UIAbilityContext>.None
 
@@ -106,9 +106,9 @@
 
     ```cangjie
     // xxx.cj
-    import kit.ArkData.{DistributedKVStore, KVManagerConfig}
+    import kit.ArkData.*
+    import kit.PerformanceAnalysisKit.Hilog
     import ohos.business_exception.BusinessException
-    import ohos.data.distributed_kv_store.*
     ```
 
     实现创建数据库功能的核心代码是：
@@ -152,7 +152,7 @@
     ```cangjie
     // main_ability.cj
     import kit.PerformanceAnalysisKit.Hilog
-    import kit.AbilityKit.{UIAbility, AbilityStage, Want, LaunchParam, LaunchReason, UIAbilityContext}
+    import kit.AbilityKit.{UIAbility, Want, LaunchParam, LaunchReason, UIAbilityContext}
 
     var globalAbilityContext: Option<UIAbilityContext> = Option<UIAbilityContext>.None
 
@@ -183,9 +183,9 @@
 
     ```cangjie
     // xxx.cj
-    import kit.ArkData.{StoreConfig, getRdbStore}
+    import kit.ArkData.*
+    import kit.PerformanceAnalysisKit.Hilog
     import ohos.business_exception.BusinessException
-    import ohos.data.relational_store.*
     ```
 
     实现创建数据库功能的核心代码是：

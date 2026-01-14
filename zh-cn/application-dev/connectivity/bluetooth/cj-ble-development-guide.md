@@ -34,13 +34,11 @@
 | startBleScanning() | 发起BLE扫描流程。 |
 | stopBleScanning() | 停止BLE扫描流程。 |
 | startAdvertising() | 开始发送BLE广播。 |
-| disableAdvertising() | 临时停止BLE广播。 |
-| enableAdvertising() | 临时启动BLE广播。 |
 | stopAdvertising() | 停止发送BLE广播。 |
-| on(`type`: BluetoothBleCallbackType) | 订阅BLE广播状态。 |
-| off(`type`: BluetoothBleCallbackType) | 取消订阅BLE广播状态。 |
-| on(`type`: BluetoothBleCallbackType) | 订阅BLE设备发现上报事件。 |
-| off(`type`: BluetoothBleCallbackType) | 取消订阅BLE设备发现上报事件。  |
+| on(eventType: BluetoothBleCallbackType) | 订阅BLE广播状态。 |
+| off(eventType: BluetoothBleCallbackType) | 取消订阅BLE广播状态。 |
+| on(eventType: BluetoothBleCallbackType) | 订阅BLE设备发现上报事件。 |
+| off(eventType: BluetoothBleCallbackType) | 取消订阅BLE设备发现上报事件。  |
 
 ## 主要场景开发步骤
 
@@ -146,6 +144,7 @@
     import ohos.business_exception.*
     import std.collection.{HashMap, ArrayList}
     import std.math.numeric.BigInt
+    import kit.PerformanceAnalysisKit.Hilog
 
     const BLE_ADV_TYPE_FLAG = 0x01
     const BLE_ADV_TYPE_16_BIT_SERVICE_UUIDS_INCOMPLETE = 0x02

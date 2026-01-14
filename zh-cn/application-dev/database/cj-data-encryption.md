@@ -27,7 +27,7 @@
     ```cangjie
     // main_ability.cj
     import kit.PerformanceAnalysisKit.Hilog
-    import kit.AbilityKit.{UIAbility, AbilityStage, Want, LaunchParam, LaunchReason, UIAbilityContext}
+    import kit.AbilityKit.{UIAbility, Want, LaunchParam, LaunchReason, UIAbilityContext}
 
     var globalAbilityContext: Option<UIAbilityContext> = Option<UIAbilityContext>.None
 
@@ -58,11 +58,9 @@
 
     ```cangjie
     // xxx.cj
-    import kit.ArkData.{DistributedKVStore, KVManagerConfig}
+    import kit.ArkData.*
     import ohos.business_exception.BusinessException
-    import kit.AbilityKit.*
-    import ohos.data.distributed_kv_store.KVOptions
-    import ohos.data.distributed_kv_store.KVSecurityLevel
+    import kit.PerformanceAnalysisKit.Hilog
     ```
 
     实现加密功能的核心代码是：
@@ -106,7 +104,7 @@
     ```cangjie
     // main_ability.cj
     import kit.PerformanceAnalysisKit.Hilog
-    import kit.AbilityKit.{UIAbility, AbilityStage, Want, LaunchParam, LaunchReason, UIAbilityContext}
+    import kit.AbilityKit.{UIAbility, Want, LaunchParam, LaunchReason, UIAbilityContext}
 
     var globalAbilityContext: Option<UIAbilityContext> = Option<UIAbilityContext>.None
 
@@ -136,7 +134,8 @@
     <!-- compile -->
 
     ```cangjie
-    import kit.ArkData.{ getRdbStore, StoreConfig, RelationalStoreSecurityLevel }
+    import kit.ArkData.*
+    import kit.PerformanceAnalysisKit.Hilog
     import ohos.business_exception.BusinessException
     ```
 

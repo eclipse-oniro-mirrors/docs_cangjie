@@ -18,10 +18,9 @@
 
 详细接口请参见[接口文档](../../reference/BasicServicesKit/cj-apis-common_event_manager.md#static-func-publishstring-commoneventpublishdata)。
 
-| 接口名                                                       | 接口描述                     |
-| ------------------------------------------------------------ | ---------------------------- |
-| publish(event:&nbsp;String): Unit | 发布公共事件。               |
-| publish(event:&nbsp;String,&nbsp;options:&nbsp;[CommonEventPublishData](../../reference/BasicServicesKit/cj-apis-common_event_publish_data.md#class-commoneventpublishdata)): Unit | 指定发布信息并发布公共事件。 |
+| 接口名 | 接口描述 |
+| ------------- | --------- |
+| publish(event: String, options!: CommonEventPublishData =  CommonEventPublishData()): Unit | 指定发布信息并发布公共事件。 |
 
 ## 发布不携带信息的公共事件
 

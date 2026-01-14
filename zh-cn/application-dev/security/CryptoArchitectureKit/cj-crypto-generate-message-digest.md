@@ -30,7 +30,7 @@
 
 ```cangjie
 import kit.CryptoArchitectureKit.*
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func doMd() {
     let mdAlgName = 'SHA256' // 摘要算法名。
@@ -61,7 +61,7 @@ func doMd() {
 
 ```cangjie
 import kit.CryptoArchitectureKit.*
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func doLoopMd() {
     let mdAlgName = "SHA256" // 摘要算法名。

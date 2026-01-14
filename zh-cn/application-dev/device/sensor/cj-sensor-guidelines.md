@@ -16,9 +16,9 @@
 
 | 名称 | 描述 |
 | -------- | -------- |
-| on\<T>(\`type\`:SensorId, callback:Callback1Argument\<T>, option:?SensorOptions):Unit where T <: Response | 持续监听传感器数据变化。 |
-| once\<T>(\`type\`:SensorId, callback:Callback1Argument\<T>):Unit  where T <: Response | 获取一次传感器数据变化。 |
-| off(\`type\`: SensorId, callback!: ?CallbackObject = None): Unit | 注销传感器数据的监听。 |
+| on\<T>(sensorType: SensorId, callback: Callback1Argument\<T>, option!: ?Options = None): Unit where T \<: Response | 持续监听传感器数据变化。 |
+| once\<T>(sensorType: SensorId, callback: Callback1Argument\<T>): Unit where T \<: Response | 获取一次传感器数据变化。 |
+| off(sensorType: SensorId, callback!: ?CallbackObject = None): Unit | 注销传感器数据的监听。 |
 | getSensorList():Array\<Sensor> | 获取设备上的所有传感器信息。 |
 
 ## 开发步骤
@@ -30,7 +30,6 @@
     <!-- compile -->
 
     ```cangjie
-    import kit.ArkUI.*
     import kit.SensorServiceKit.*
     import ohos.business_exception.BusinessException
     import ohos.callback_invoke.Callback1Argument
@@ -45,9 +44,8 @@
     try {
         let sensors = getSensorList()
         for (index in 0..sensors.size) {
-            Hilog.info(1, "info", "{sensorName: ${sensors[index].sensorName}, vendorName: ${sensors[index].vendorName},
-             firmwareVersion: ${sensors[index].firmwareVersion}, \n hardwareVersion: ${sensors[index].hardwareVersion}, 
-             sensorId: ${sensors[index].sensorId}, \n minSamplePeriod: ${sensors[index].minSamplePeriod}, maxSamplePeriod: ${sensors[index].maxSamplePeriod}}")
+            Hilog.info(1, "info",
+                "{sensorName: ${sensors[index].sensorName}, vendorName: ${sensors[index].vendorName}, firmwareVersion: ${sensors[index].firmwareVersion}, \n hardwareVersion: ${sensors[index].hardwareVersion}, sensorId: ${sensors[index].sensorId}, \n minSamplePeriod: ${sensors[index].minSamplePeriod}, maxSamplePeriod: ${sensors[index].maxSamplePeriod}}")
         }
     } catch (e: BusinessException) {
         Hilog.info(1, "info", "Failed to get sensor list. Code: ${e.code}, message: ${e.message}")

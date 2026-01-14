@@ -31,7 +31,7 @@
 
 | 算法 | 长度（Byte） |
 | -------- | -------- |
-| CTR_DRBG | [1, INT_MAX] |
+| CTR_DRBG | [1, Int32.MAX] |
 
 ## 开发步骤
 
@@ -41,7 +41,7 @@
 
 3. 设置指定字节长度，调用[generateRandom](../../reference/CryptoArchitectureKit/cj-apis-crypto.md#func-generaterandomint32)，生成安全随机数。
 
-   指定字节长度范围为1~INT_MAX。
+   指定字节长度范围为1~Int32.MAX。
 
 ## 示例
 
@@ -51,7 +51,7 @@
 
 ```cangjie
 import kit.CryptoArchitectureKit.*
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 import ohos.business_exception.BusinessException
 
 func doRand() {

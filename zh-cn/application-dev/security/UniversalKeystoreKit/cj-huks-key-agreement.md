@@ -59,9 +59,6 @@
      * 以下以X25519密钥的操作使用为例
      */
     import kit.PerformanceAnalysisKit.Hilog
-    import kit.BasicServicesKit.*
-    import kit.CoreFileKit.*
-    import kit.AbilityKit.*
     import kit.UniversalKeystoreKit.*
 
     func loggerInfo(str: String) {
@@ -329,9 +326,6 @@
      * 以下以 DH密钥的操作使用为例
      */
     import kit.PerformanceAnalysisKit.Hilog
-    import kit.BasicServicesKit.*
-    import kit.CoreFileKit.*
-    import kit.AbilityKit.*
     import kit.UniversalKeystoreKit.*
     import std.math.numeric.BigInt
 

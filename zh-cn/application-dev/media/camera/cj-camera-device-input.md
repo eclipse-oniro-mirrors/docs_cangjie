@@ -21,7 +21,7 @@
     ```cangjie
     import kit.CameraKit.*
     import ohos.business_exception.BusinessException
-    import ohos.hilog.Hilog
+    import kit.PerformanceAnalysisKit.Hilog
     import ohos.callback_invoke.Callback0Argument
     ```
 

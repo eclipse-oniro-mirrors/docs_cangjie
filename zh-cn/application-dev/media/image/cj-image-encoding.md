@@ -15,6 +15,8 @@ API示例代码使用说明：
 - 若示例代码首行有“// index.cj”注释，表示该示例可在仓颉模板工程的“index.cj”文件中编译运行。
 - 若示例需获取[Context](../../reference/AbilityKit/cj-apis-app-ability-ui_ability.md#class-context)应用上下文，需在仓颉模板工程中的“main_ability.cj”文件中进行配置。
 
+上述示例工程及配置模板详见[仓颉示例代码说明](../../reference/cj-development-intro.md#仓颉示例代码说明)。
+
 ## 开发步骤
 
 图片编码相关API的详细介绍请参见：[图片编码接口说明](../../reference/ImageKit/cj-apis-image.md#class-imagepacker)。
@@ -87,7 +89,9 @@ API示例代码使用说明：
 <!-- compile -->
 
 ```cangjie
+import kit.ImageKit.*
 import kit.CoreFileKit.*
+import ohos.arkui.state_macro_manage.r
 
 var abilityContext = Global.abilityContext
 // 获取resourceManager资源管理器。
@@ -110,7 +114,9 @@ FileIo.close(file.fd)
 <!-- compile -->
 
 ```cangjie
+import kit.ImageKit.*
 import kit.CoreFileKit.*
+import ohos.arkui.state_macro_manage.r
 
 var abilityContext = Global.abilityContext
 // 获取resourceManager资源管理器。
@@ -121,7 +127,7 @@ let imageSource = createImageSource(img)
 let cacheDir = "/data/storage/el2/base/haps/entry/cache"
 let filePath = cacheDir + '/test.jpg'
 
-let file = FileIo.open(path, mode: OpenMode.CREATE | OpenMode.READ_WRITE)
+let file = FileIo.open(filePath, mode: OpenMode.CREATE | OpenMode.READ_WRITE)
 // 直接打包进文件。
 let imagePacker = createImagePacker()
 imagePacker.packToFile(imageSource, Int32(file.fd), PackingOption("image/jpeg", 100))

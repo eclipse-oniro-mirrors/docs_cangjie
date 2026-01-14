@@ -26,7 +26,7 @@
 
 ```cangjie
 import kit.CryptoArchitectureKit.*
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func testSyncGenerateAesKey() {
     // 创建SymKeyGenerator实例。
@@ -56,7 +56,7 @@ func testSyncGenerateAesKey() {
 
 ```cangjie
 import kit.CryptoArchitectureKit.*
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func testSyncGenerateSm4Key() {
     // 创建SymKeyGenerator实例。

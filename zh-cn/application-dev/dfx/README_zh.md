@@ -15,9 +15,9 @@
       - 崩溃事件
         - [崩溃事件介绍](cj-hiappevent-watcher-crash-events.md)（Beta特性）
         - [订阅崩溃事件](cj-hiappevent-watcher-crash-events-cangjie.md)（Beta特性）
-      - appfreeze事件
-        - [appfreeze事件介绍](cj-hiappevent-watcher-freeze-events.md)（Beta特性）
-        - [订阅appfreeze事件](cj-hiappevent-watcher-freeze-events-cangjie.md)（Beta特性）
+      - 应用冻屏事件
+        - [应用冻屏事件介绍](cj-hiappevent-watcher-freeze-events.md)（Beta特性）
+        - [订阅应用冻屏事件](cj-hiappevent-watcher-freeze-events-cangjie.md)（Beta特性）
   - [事件上报](cj-hiappevent-event-reporting.md)（Beta特性）
 - 性能跟踪
   - [查看HiTraceMeter日志](cj-hitracemeter-view.md)（Beta特性）

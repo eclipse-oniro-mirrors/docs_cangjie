@@ -8,10 +8,6 @@
 
 当业务需要获取持久化存储的非对称密钥的公钥时使用，当前支持ECC/RSA/ED25519/X25519/SM2的公钥导出。
 
-> **说明：**
->
-> 轻量级设备仅支持RSA公钥导出。
-
 ## 开发步骤
 
 1. 指定密钥别名keyAlias，密钥别名最大长度为128字节。
@@ -26,9 +22,6 @@
 
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
-import kit.BasicServicesKit.*
-import kit.CoreFileKit.*
-import kit.AbilityKit.*
 import kit.UniversalKeystoreKit.*
 
 func loggerInfo(str: String) {
@@ -48,5 +41,4 @@ try {
 } catch (e: Exception) {
     loggerInfo("exportKeyItem input arg invalid")
 }
-
 ```

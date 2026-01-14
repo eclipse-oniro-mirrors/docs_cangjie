@@ -38,9 +38,6 @@
 
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
-import kit.BasicServicesKit.*
-import kit.CoreFileKit.*
-import kit.AbilityKit.*
 import kit.UniversalKeystoreKit.*
 import std.collection.*
 

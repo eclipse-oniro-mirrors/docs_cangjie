@@ -78,6 +78,7 @@ DevEco Studio可参考其官网介绍进行[下载](https://developer.harmonyos.
     import std.unittest.*
     import std.unittest.common.*
     import std.unittest.testmacro.*
+    import kit.PerformanceAnalysisKit.Hilog
 
     @Test
     class TestExample00 {
@@ -95,7 +96,6 @@ DevEco Studio可参考其官网介绍进行[下载](https://developer.harmonyos.
             //check top display ability
             let ability = delegator.getCurrentTopAbility()
             Hilog.info(1, "info", "get top ability")
-            @Expect(ability.context.abilityInfo.name, 'EntryAbility')
         }
     }
     ```
@@ -113,7 +113,7 @@ UI测试基于单元测试，UI测试脚本在单元测试脚本上增加了对U
     <!-- compile -->
 
     ```cangjie
-    import ohos.base.*
+    import kit.ArkUI.LengthProp
     import ohos.arkui.component.*
     import ohos.arkui.state_management.*
     import ohos.arkui.state_macro_manage.*
@@ -154,6 +154,7 @@ UI测试基于单元测试，UI测试脚本在单元测试脚本上增加了对U
     import std.unittest.*
     import std.unittest.common.*
     import std.unittest.testmacro.*
+    import kit.PerformanceAnalysisKit.Hilog
 
     @Test
     class TestExample00 {
@@ -166,21 +167,18 @@ UI测试基于单元测试，UI测试脚本在单元测试脚本上增加了对U
             Hilog.info(1, "info", "uitest: TestUiExample begin")
             //start tested ability
             let want = Want(bundleName: bundleName, abilityName: 'EntryAbility')
-            delegator
-                .startAbility(want)
-                .get()
+            delegator.startAbility(want)
             sleep(Duration.second * 5)
             //check top display ability
             let ability = delegator.getCurrentTopAbility()
             Hilog.info(1, "info", "get top ability")
-            @Expect(ability.context.abilityInfo.name, 'EntryAbility')
             // ui test code
             // init driver
             let driver = Driver.create()
             driver.delayMs(1000)
             let button = driver.findComponent(On().text('Next'))
             //click button
-            button.click()
+            button?.click()
             driver.delayMs(1000)
             //check text
             driver.assertComponentExist(On().text('after click'))

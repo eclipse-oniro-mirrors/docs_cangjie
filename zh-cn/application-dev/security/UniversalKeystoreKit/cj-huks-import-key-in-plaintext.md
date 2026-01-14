@@ -31,9 +31,6 @@
 /* 以下以导入AES256密钥的Callback操作使用为例 */
 /* 以下以生成DH密钥为例 */
 import kit.PerformanceAnalysisKit.Hilog
-import kit.BasicServicesKit.*
-import kit.CoreFileKit.*
-import kit.AbilityKit.*
 import kit.UniversalKeystoreKit.*
 
 func loggerInfo(str: String) {
@@ -84,6 +81,7 @@ func importKeyFunc(): Unit {
 
 ```cangjie
 /* 以下以生成DH密钥为例 */
+import kit.PerformanceAnalysisKit.Hilog
 import kit.UniversalKeystoreKit.*
 
 // X25519的公钥数据。X25519 密钥对中的私钥和公钥都是 32 字节（256 位），关于算法原理请自行参考相关密钥学资料。

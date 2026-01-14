@@ -25,7 +25,7 @@
 | 接口名 | 接口描述 |
 | -------- | -------- |
 | createSubscriber(subscribeInfo:&nbsp;[CommonEventSubscribeInfo](../../reference/BasicServicesKit/cj-apis-common_event_subscribe_info.md#class-commoneventsubscribeinfo)): [CommonEventSubscriber](../../reference/BasicServicesKit/cj-apis-common_event_subscriber.md#class-commoneventsubscriber)| 创建订阅者对象。 |
-| subscribe(subscriber:&nbsp;[CommonEventSubscriber](../../reference/BasicServicesKit/cj-apis-common_event_subscriber.md#class-commoneventsubscriber),&nbsp;callback: ([CommonEventData](../../reference/BasicServicesKit/cj-apis-common_event_data.md#struct-commoneventdata)) -> Unit): Unit | 订阅公共事件。 |
+| subscribe(subscriber:&nbsp;[CommonEventSubscriber](../../reference/BasicServicesKit/cj-apis-common_event_subscriber.md#class-commoneventsubscriber),&nbsp;callback: ([CommonEventData](../../reference/BasicServicesKit/cj-apis-common_event_data.md#class-commoneventdata)) -> Unit): Unit | 订阅公共事件。 |
 
 ## 开发步骤
 
@@ -35,6 +35,8 @@
 
    ```cangjie
    import kit.BasicServicesKit.*
+   import kit.PerformanceAnalysisKit.Hilog
+   import ohos.business_exception.*
    ```
 
 2. 创建订阅者信息，详细的订阅者信息数据类型及包含的参数请见[CommonEventSubscribeInfo](../../reference/BasicServicesKit/cj-apis-common_event_subscribe_info.md#class-commoneventsubscribeinfo)文档介绍。

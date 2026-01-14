@@ -15,6 +15,8 @@ API示例代码使用说明：
 - 若示例代码首行有“// index.cj”注释，表示该示例可在仓颉模板工程的“index.cj”文件中编译运行。
 - 若示例需获取[Context](../../reference/AbilityKit/cj-apis-app-ability-ui_ability.md#class-context)应用上下文，需在仓颉模板工程中的“main_ability.cj”文件中进行配置。
 
+上述示例工程及配置模板详见[仓颉示例代码说明](../../reference/cj-development-intro.md#仓颉示例代码说明)。
+
 ## 开发步骤
 
 图片解码相关API的详细介绍请参见：[图片解码API说明](../../reference/ImageKit/cj-apis-image.md#class-imagesource)。
@@ -56,7 +58,8 @@ API示例代码使用说明：
         ```cangjie
         // 导入resourceManager资源管理器。
         import kit.LocalizationKit.*
-        import ohos.hilog.Hilog
+        import kit.PerformanceAnalysisKit.Hilog
+        import ohos.business_exception.BusinessException
 
         var abilityContext = Global.abilityContext
         // 获取resourceManager资源管理器。
@@ -82,6 +85,8 @@ API示例代码使用说明：
         ```cangjie
         // 导入resourceManager资源管理器。
         import kit.LocalizationKit.*
+        import kit.PerformanceAnalysisKit.Hilog
+        import ohos.business_exception.BusinessException
 
         var abilityContext = Global.abilityContext
         // 获取resourceManager资源管理器。
@@ -133,7 +138,7 @@ API示例代码使用说明：
         <!-- compile -->
 
         ```cangjie
-        let imageSource = createImageSource(rawFileDescriptor);
+        let imageSource = createImageSource(rawFileDescriptor)
         ```
 
 4. 设置解码参数DecodingOptions，解码获取pixelMap图片对象。
@@ -144,7 +149,7 @@ API示例代码使用说明：
         ```cangjie
         import kit.ImageKit.*
         import kit.AbilityKit.*
-        import ohos.resource_manager.AppResource
+        import ohos.arkui.state_macro_manage.r
 
         var abilityContext = Global.abilityContext
         // 获取resourceManager资源管理器。
@@ -165,7 +170,7 @@ API示例代码使用说明：
         ```cangjie
         import kit.ImageKit.*
         import kit.AbilityKit.*
-        import ohos.resource_manager.AppResource
+        import ohos.arkui.state_macro_manage.r
 
         var abilityContext = Global.abilityContext
         // 获取resourceManager资源管理器。
@@ -191,8 +196,8 @@ API示例代码使用说明：
     <!-- compile -->
 
     ```cangjie
-    pixelMap.release();
-    imageSource.release();
+    pixelMap.release()
+    imageSource.release()
     ```
 
 ## 开发示例-对资源文件中的图片进行解码
@@ -206,7 +211,6 @@ API示例代码使用说明：
     import kit.LocalizationKit.*
     import kit.AbilityKit.*
 
-    // globalcontext需要在main_ability.cj中的func onCreate中赋值：globalcontext = this.context
     var abilityContext = Global.abilityContext
     // 获取resourceManager资源管理器。
     let resourceManager = abilityContext.resourceManager
@@ -246,6 +250,6 @@ API示例代码使用说明：
     <!-- compile -->
 
     ```cangjie
-    pixelMap.release();
-    imageSource.release();
+    pixelMap.release()
+    imageSource.release()
     ```

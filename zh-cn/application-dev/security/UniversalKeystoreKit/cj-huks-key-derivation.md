@@ -63,9 +63,6 @@
  * 以下以HKDF密钥的操作使用为例
  */
 import kit.PerformanceAnalysisKit.Hilog
-import kit.BasicServicesKit.*
-import kit.CoreFileKit.*
-import kit.AbilityKit.*
 import kit.UniversalKeystoreKit.*
 
 func loggerInfo(str: String) {
@@ -302,9 +299,6 @@ func testDerive() {
  * 以下以PBKDF2密钥的操作使用为例
  */
 import kit.PerformanceAnalysisKit.Hilog
-import kit.BasicServicesKit.*
-import kit.CoreFileKit.*
-import kit.AbilityKit.*
 import kit.UniversalKeystoreKit.*
 
 func loggerInfo(str: String) {

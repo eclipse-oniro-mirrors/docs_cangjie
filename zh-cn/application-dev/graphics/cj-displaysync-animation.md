@@ -45,7 +45,7 @@ class EntryView {
         }.height(100.percent)
     }
 }
- ```
+```
 
 ## 请求显式动画的绘制帧率
 
@@ -54,7 +54,6 @@ class EntryView {
 <!-- compile -->
 
 ```cangjie
-import ohos.arkui.ui_context.*
 import kit.ArkUI.*
 
 @Entry
@@ -96,7 +95,6 @@ class EntryView {
 
 ```cangjie
 import kit.ArkUI.*
-import ohos.arkui.ui_context.*
 
 let animateOpt1 = AnimateParam(
     duration: 1200,

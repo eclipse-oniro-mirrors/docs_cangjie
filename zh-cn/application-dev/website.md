@@ -553,9 +553,9 @@
                             - 崩溃事件
                                 - [崩溃事件介绍](dfx/cj-hiappevent-watcher-crash-events.md)
                                 - [订阅崩溃事件](dfx/cj-hiappevent-watcher-crash-events-cangjie.md)
-                            - appfreeze事件
-                                - [appfreeze事件介绍](dfx/cj-hiappevent-watcher-freeze-events.md)
-                                - [订阅appfreeze事件](dfx/cj-hiappevent-watcher-freeze-events-cangjie.md)
+                            - 应用冻屏事件
+                                - [应用冻屏事件介绍](dfx/cj-hiappevent-watcher-freeze-events.md)
+                                - [订阅应用冻屏事件](dfx/cj-hiappevent-watcher-freeze-events-cangjie.md)
                     - [事件上报](dfx/cj-hiappevent-event-reporting.md)
                 - 性能跟踪
                     - [查看HiTraceMeter日志](dfx/cj-hitracemeter-view.md)

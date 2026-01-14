@@ -36,9 +36,6 @@
 ```cangjie
 /* 以生成DH密钥为例 */
 import kit.PerformanceAnalysisKit.Hilog
-import kit.BasicServicesKit.*
-import kit.CoreFileKit.*
-import kit.AbilityKit.*
 import kit.UniversalKeystoreKit.*
 
 func loggerInfo(str: String) {

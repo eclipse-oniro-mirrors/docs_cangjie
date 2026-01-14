@@ -34,7 +34,7 @@
 
 - 每次执行需要目标权限的操作时，应用都必须检查自己是否已经具有该权限。
 
-  如需检查用户是否已向您的应用授予特定权限，可以使用[checkAccessToken()](../../reference/AbilityKit/cj-apis-ability_access_ctrl.md#func-checkaccesstokenuint32-permissions)函数，此方法会返回[PERMISSION_GRANTED](../../reference/AbilityKit/cj-apis-ability_access_ctrl.md#enum-grantstatus)或[PERMISSION_DENIED](../../reference/AbilityKit/cj-apis-ability_access_ctrl.md#enum-grantstatus)。具体示例可参考下文。
+  如需检查用户是否已向您的应用授予特定权限，可以使用[checkAccessToken()](../../reference/AbilityKit/cj-apis-ability_access_ctrl.md#func-checkaccesstokenuint32-permissions)函数，此方法会返回[PermissionGranted](../../reference/AbilityKit/cj-apis-ability_access_ctrl.md#enum-grantstatus)或[PermissionDenied](../../reference/AbilityKit/cj-apis-ability_access_ctrl.md#enum-grantstatus)。具体示例可参考下文。
 
 - 每次访问受目标权限保护的接口之前，都需要使用[requestPermissionsFromUser()](../../reference/AbilityKit/cj-apis-ability_access_ctrl.md#func-requestpermissionsfromuseruiabilitycontext-arraypermissions-asynccallbackpermissionrequestresult)接口请求相应的权限。
 
@@ -228,7 +228,7 @@
                         }
                     }
                     let atManager = AbilityAccessCtrl.createAtManager()
-                    let stageContext = Global.abilityContext
+                    let stageContext = globalAbilityContext.getOrThrow()
                     let permissionList = ["ohos.permission.LOCATION", "ohos.permission.APPROXIMATELY_LOCATION"]
                     atManager.requestPermissionsFromUser(stageContext, permissionList, resultCallback)
                 }

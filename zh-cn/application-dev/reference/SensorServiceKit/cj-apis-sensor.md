@@ -2290,7 +2290,7 @@ try {
 AccelerometerUncalibrated
 ```
 
-**功能：** 未校准加速度计传感器。
+**功能：** 未校准加速度传感器。
 
 **系统能力：** SystemCapability.Sensors.Sensor
 

@@ -21,10 +21,6 @@ HUKS提供了接口供应用查询指定密钥是否存在。
 <!-- compile -->
 
 ```cangjie
-import kit.PerformanceAnalysisKit.Hilog
-import kit.BasicServicesKit.*
-import kit.CoreFileKit.*
-import kit.AbilityKit.*
 import kit.UniversalKeystoreKit.*
 
 /* 1. 确定密钥别名 */

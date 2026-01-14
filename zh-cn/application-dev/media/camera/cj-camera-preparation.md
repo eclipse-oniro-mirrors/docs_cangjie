@@ -28,4 +28,4 @@
 | ------- | ------------- |
 | 设备输入 | [设备输入](./cj-camera-device-input.md) |
 | 会话管理 | [会话管理](./cj-camera-session-management.md) |
-| 元数据 | [元数据] |
+| 元数据 | 元数据 |

@@ -235,7 +235,7 @@ class EntryView {
             // 通过在GlobalContext对象上绑定filesDir，可以实现Ability组件与UI之间的数据同步。
             GlobalContext.getInstance().setValue("filesDir", this.context.filesDir)
             match (launchParam.launchReason) {
-                case LaunchReason.START_ABILITY => loggerInfo("START_ABILITY")
+                case LaunchReason.StartAbility => loggerInfo("StartAbility")
                 case _ => ()
             }
         }

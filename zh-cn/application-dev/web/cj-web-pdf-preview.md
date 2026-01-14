@@ -114,7 +114,7 @@ Web().domStorageAccess(true)
         <!-- compile -->
 
         ```cangjie
-        Web(src: globalAbilityContext.getOrThrow().filesDirectory + "/test.pdf", controller: this.webController)
+        Web(src: globalAbilityContext.getOrThrow().filesDir + "/test.pdf", controller: this.webController)
             .domStorageAccess(true)
             .fileAccess(true)
         ```

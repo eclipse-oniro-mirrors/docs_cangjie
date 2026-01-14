@@ -53,12 +53,8 @@ class MainAbility <: UIAbility {
 <!-- compile -->
 
 ```cangjie
-import kit.AbilityKit.UIAbilityContext
 import kit.AbilityKit.UIAbility
-import kit.ArkUI.{WindowStage, WindowCallbackType, WindowStageEventType}
-import ohos.callback_invoke.Callback1Argument
-import ohos.business_exception.BusinessException
-import kit.PerformanceAnalysisKit.Hilog
+import kit.ArkUI.WindowStage
 
 class MainAbility <: UIAbility {
     // ...

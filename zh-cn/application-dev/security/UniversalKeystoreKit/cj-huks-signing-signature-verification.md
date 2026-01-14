@@ -64,10 +64,6 @@
 /*
  * 密钥算法为ECC256、摘要算法为SHA256
  */
-import kit.PerformanceAnalysisKit.Hilog
-import kit.BasicServicesKit.*
-import kit.CoreFileKit.*
-import kit.AbilityKit.*
 import kit.UniversalKeystoreKit.*
 
 let keyAlias = 'test_eccKeyAlias'
@@ -198,10 +194,6 @@ func testSignVerify() {
 /*
  * 密钥算法为SM2、摘要算法为SM3
  */
-import kit.PerformanceAnalysisKit.Hilog
-import kit.BasicServicesKit.*
-import kit.CoreFileKit.*
-import kit.AbilityKit.*
 import kit.UniversalKeystoreKit.*
 
 let keyAlias = 'test_sm2KeyAlias'
@@ -332,10 +324,6 @@ func testSignVerify() {
 /*
  * 密钥算法为RSA，摘要算法为SHA256，填充模式为PSS
  */
-import kit.PerformanceAnalysisKit.Hilog
-import kit.BasicServicesKit.*
-import kit.CoreFileKit.*
-import kit.AbilityKit.*
 import kit.UniversalKeystoreKit.*
 
 let keyAlias = 'test_rsaKeyAlias'
@@ -477,10 +465,6 @@ func testSignVerify() {
 /*
  * 密钥算法为RSA，摘要算法为SHA256，填充模式为PKCS1_V1_5
  */
-import kit.PerformanceAnalysisKit.Hilog
-import kit.BasicServicesKit.*
-import kit.CoreFileKit.*
-import kit.AbilityKit.*
 import kit.UniversalKeystoreKit.*
 
 let keyAlias = 'test_rsaKeyAlias'

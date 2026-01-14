@@ -28,8 +28,7 @@
     ```cangjie
     import kit.CameraKit.*
     import ohos.business_exception.BusinessException
-    import ohos.hilog.Hilog
-
+    import kit.PerformanceAnalysisKit.Hilog
     ```
 
 2. 调用cameraManager类中的[createSession](../../reference/CameraKit/cj-apis-multimedia-camera.md#func-createsessionscenemode)方法创建一个会话。
@@ -55,7 +54,6 @@
             Hilog.error(0,"","Failed to beginConfig. error: ${error.message}")
         }
     }
-
     ```
 
 4. 使能。向会话中添加相机的输入流和输出流，调用[addInput](../../reference/CameraKit/cj-apis-multimedia-camera.md#func-addinputcamerainput)添加相机的输入流；调用[addOutput](../../reference/CameraKit/cj-apis-multimedia-camera.md#func-addoutputcameraoutput)添加相机的输出流。以下示例代码以添加预览流previewOutput和拍照流photoOutput为例，即当前模式支持拍照和预览。

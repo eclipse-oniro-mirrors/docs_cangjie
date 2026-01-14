@@ -52,7 +52,6 @@
 // xxx.cj
 import kit.CoreFileKit.*
 import kit.AbilityKit.*
-import ohos.base.*
 
 // 见获取UIAbility的上下文信息章节
 let context = getContext()
@@ -92,7 +91,6 @@ func createFile(): Unit {
 // xxx.cj
 import kit.CoreFileKit.*
 import kit.AbilityKit.*
-import ohos.base.*
 
 // 见获取UIAbility的上下文信息章节
 let context = getContext()
@@ -141,7 +139,6 @@ func readWriteFile() {
 // xxx.cj
 import kit.CoreFileKit.*
 import kit.AbilityKit.*
-import ohos.base.*
 
 // 见获取UIAbility的上下文信息章节
 let context = getContext()
@@ -191,7 +188,7 @@ import kit.CoreFileKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 // 见获取UIAbility的上下文信息章节
-let context = Global.abilityContext
+let context = getContext()
 // 获取应用文件路径
 let filesDir = context.filesDir
 

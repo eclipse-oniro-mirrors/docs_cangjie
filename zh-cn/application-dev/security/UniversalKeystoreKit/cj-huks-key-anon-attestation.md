@@ -29,9 +29,6 @@
  * 以下以anonAttestKey的接口操作验证为例
  */
 import kit.PerformanceAnalysisKit.Hilog
-import kit.BasicServicesKit.*
-import kit.CoreFileKit.*
-import kit.AbilityKit.*
 import kit.UniversalKeystoreKit.*
 
 func loggerInfo(str: String) {

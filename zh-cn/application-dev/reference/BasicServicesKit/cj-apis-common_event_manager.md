@@ -76,7 +76,6 @@ public static func createSubscriber(subscribeInfo: CommonEventSubscribeInfo): Co
 
 import kit.BasicServicesKit.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.base.*
 import ohos.business_exception.*
 
 let subscriber: CommonEventSubscriber //用于保存创建成功的订阅者对象，后续使用其完成订阅及退订的动作

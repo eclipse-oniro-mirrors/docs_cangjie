@@ -1,4 +1,4 @@
-# appfreeze事件介绍
+# 应用冻屏事件介绍
 
 <!--Del-->
 > **说明：**
@@ -8,7 +8,7 @@
 
 HiAppEvent提供接口用于订阅系统appfreeze事件。
 
-[订阅appfreeze事件](./cj-hiappevent-watcher-freeze-events-cangjie.md)
+[订阅应用冻屏事件](./cj-hiappevent-watcher-freeze-events-cangjie.md)
 
 appfreeze事件信息中params属性的详细描述如下：
 

@@ -51,7 +51,7 @@
 
 ```cangjie
 import kit.CryptoArchitectureKit.*
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func generateRandom(len: Int32) {
     let rand = createRandom()

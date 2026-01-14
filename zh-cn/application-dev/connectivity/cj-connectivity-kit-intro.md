@@ -54,10 +54,6 @@ WLAN系统为用户提供接入WLAN网络功能（STA模式）、点对点的数
 
   详情请参见[ohos.wifiManager API参考](../reference/ConnectivityKit/cj-apis-wifi_manager.md)。
 
-### NFC简介
-
-NFC英文全称Near Field Communication，近距离无线通信。NFC服务提供NFC开关控制、NFC标签读写、NFC卡模拟等业务功能。
-
 ### 运作机制
 
 Connectivity能力作为系统为应用提供的一种基础通信服务，需要在应用使用场景中打开相应开关/连接等处理，在业务结束时主动结束连接等。

@@ -27,8 +27,6 @@
     import std.collection.HashMap
     import kit.PerformanceAnalysisKit.Hilog
 
-    var globalContext:?UIAbilityContext = None
-
     // 见获取UIAbility的上下文信息章节
     func getContext(): UIAbilityContext {
         return globalContext.getOrThrow()

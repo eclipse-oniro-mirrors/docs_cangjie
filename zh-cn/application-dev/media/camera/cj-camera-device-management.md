@@ -19,7 +19,7 @@
     ```cangjie
     import kit.CameraKit.*
     import kit.AbilityKit.*
-    import ohos.hilog.Hilog
+    import kit.PerformanceAnalysisKit.Hilog
     import ohos.callback_invoke.Callback1Argument
     import ohos.business_exception.BusinessException
     ```
