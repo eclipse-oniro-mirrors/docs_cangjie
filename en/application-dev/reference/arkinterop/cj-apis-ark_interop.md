@@ -42,7 +42,7 @@ public interface JSInteropType<T> {
 }
 ```
 
-**Description:** This interface is used to implement extension methods for types that can be used in declarative interoperation macros. It is used in declarative interoperation macro framework scenarios and developers do not need to use this API.
+**Description:** This interface provides extension methods for types that support declarative interoperation macros. This interface is for internal use by the declarative interoperation macro framework only, and developers do not need to call it directly.
 
 The following types extend this interface:
 

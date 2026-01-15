@@ -54,7 +54,7 @@ public let code: Int32
 public func getData<T>(): ?T
 ```
 
-**功能：** 额外补充异常信息。
+**功能：** 获取异常中携带的自定义数据信息。
 
 **起始版本：** 22
 

@@ -6,7 +6,7 @@
 > Currently in the beta phase.
 <!--DelEnd-->
 
-Provides some common utility functions.
+Provides common utility functions for data type conversion and interoperability, including conversion from JSValue to napi_value, format conversion between HashMap and JSValue, and other utility functions.
 
 ## Import Module
 

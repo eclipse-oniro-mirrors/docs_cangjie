@@ -6,7 +6,7 @@
 > Currently in the beta phase.
 <!--DelEnd-->
 
-Provide macros for interoperability between the Cangjie language and ArkTS language.
+Provides declarative interoperability macros between Cangjie and ArkTS, used to automatically generate ArkTS declaration files and interoperation layer code, simplifying cross-language call development work.
 
 ## Import Module
 

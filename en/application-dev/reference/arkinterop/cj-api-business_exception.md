@@ -54,7 +54,7 @@ public let code: Int32
 public func getData<T>(): ?T
 ```
 
-**Description:** Additional supplementary exception information.
+**Description:** Gets the custom data information carried in the exception.
 
 **Since:** 22
 
