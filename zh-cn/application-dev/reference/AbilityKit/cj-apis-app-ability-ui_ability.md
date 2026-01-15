@@ -6,7 +6,7 @@
 > 当前为Beta阶段。
 <!--DelEnd-->
 
-ui_ability模块提供Ability相关的枚举，包括应用启动原因LaunchReason、上次退出原因LastExitReason、迁移结果OnContinueResult等。
+ui_ability模块提供UIAbility应用组件的核心API，包括UIAbility生命周期管理、上下文（Context）体系、Ability启动与销毁、以及与ArkTS的互操作能力。通过本模块，开发者可以创建和管理包含UI界面的应用组件，实现组件的创建、销毁、前后台切换等生命周期回调，并通过Context实现获取应用资源、启动其他Ability等能力。
 
 ## 导入模块
 

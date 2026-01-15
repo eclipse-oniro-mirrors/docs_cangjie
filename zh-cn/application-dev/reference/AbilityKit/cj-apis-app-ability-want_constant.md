@@ -6,7 +6,7 @@
 > 当前为Beta阶段。
 <!--DelEnd-->
 
-want_constant模块提供Ability相关的枚举，包括应用启动原因LaunchReason、上次退出原因LastExitReason、迁移结果OnContinueResult等。
+want_constant模块提供了Want操作相关的系统预设枚举和常量，例如在启动Ability时常用的Flag、Param参数等。
 
 ## 导入模块
 

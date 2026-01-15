@@ -6,7 +6,7 @@
 > 当前为Beta阶段。
 <!--DelEnd-->
 
-ability模块提供了包含BaseContext类的定义。
+ability模块提供BaseContext基类，作为所有Context类型的父类，定义了Context的基础能力。BaseContext是Ability上下文体系的基础，为UIAbilityContext、ApplicationContext、AbilityStageContext等具体上下文类提供统一的基类接口，支持判断应用是否采用Stage模型等基础功能。
 
 ## 导入模块
 
