@@ -83,7 +83,13 @@ public func createWindow(config: Configuration): Window
 public func shiftAppWindowFocus(sourceWindowId: Int32, targetWindowId: Int32): Unit
 ```
 
-**Description:** Transfers window focus from the source window to the target window within the same application. Window focus can be transferred between the main window and sub-windows.
+**Description:** Shifts the window focus from the source window to the target window in the same application. The window focus can be shifted within the main window and child windows.
+
+Ensure that the target window can gain focus (configurable by calling [setWindowFocusable()](#func-setwindowfocusablebool)) and that [showWindow()](#func-showwindow) has been successfully executed.
+
+> **NOTE: **
+>
+> Before calling shiftAppWindowFocus(), ensure that the target window has called [loadContent()](#func-loadcontentstring) and these operations have been effective. Otherwise, an invisible window may gain focus, causing function exceptions or affecting user experience.
 
 **System Capability:** SystemCapability.Window.SessionManager
 

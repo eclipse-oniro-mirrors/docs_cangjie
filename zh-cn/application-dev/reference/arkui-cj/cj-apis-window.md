@@ -83,7 +83,13 @@ public func createWindow(config: Configuration): Window
 public func shiftAppWindowFocus(sourceWindowId: Int32, targetWindowId: Int32): Unit
 ```
 
-**功能：** 将窗口焦点从源窗口转移到同一应用程序中的目标窗口。窗口焦点可以在主窗口和子窗口之间转移。
+**功能：** 在同应用内将窗口焦点从源窗口转移到目标窗口，仅支持应用主窗、子窗范围内的焦点转移。
+
+目标窗口需确保具有获得焦点的能力（可通过[setWindowFocusable()](#func-setwindowfocusablebool)设置），并确保调用[showWindow()](#func-showwindow)成功且执行完毕。
+
+> **说明：**
+>
+> 在调用shiftAppWindowFocus()前，建议确保目标窗口已调用[loadContent()](#func-loadcontentstring)并生效，否则可能会导致不可见窗口获取焦点，造成功能异常或影响用户体验。
 
 **系统能力：** SystemCapability.Window.SessionManager
 
