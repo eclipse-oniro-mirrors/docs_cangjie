@@ -49,6 +49,7 @@
         - [菜单控制](cj-universal-attribute-menu.md)（Beta特性）
         - [焦点控制](cj-universal-attribute-focus.md)（Beta特性）
         - [组件标识](cj-universal-attribute-componentid.md)（Beta特性）
+        - [拖拽控制](cj-universal-attribute-dragcontrol.md)（Beta特性）
         - [前景色设置](cj-universal-attribute-foregroundcolor.md)（Beta特性）
         - [组件内容模糊](cj-universal-attribute-foregroundblurstyle.md)（Beta特性）
         - 模态转场设置

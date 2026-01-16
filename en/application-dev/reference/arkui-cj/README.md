@@ -48,6 +48,7 @@
         - [Popup Control](cj-universal-attribute-popup.md)(Beta Feature)
         - [Menu Control](cj-universal-attribute-menu.md)(Beta Feature)
         - [Focus Control](cj-universal-attribute-focus.md)(Beta Feature)
+        - [Drag and Drop Control](cj-universal-attribute-dragcontrol.md)(Beta Feature)
         - [Component Identifier](cj-universal-attribute-componentid.md)(Beta Feature)
         - [Foreground Color Setting](cj-universal-attribute-foregroundcolor.md)(Beta Feature)
         - [Component Content Blur](cj-universal-attribute-foregroundblurstyle.md)(Beta Feature)

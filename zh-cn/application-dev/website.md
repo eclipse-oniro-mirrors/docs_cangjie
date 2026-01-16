@@ -728,6 +728,7 @@
                     - [Popup控制](reference/arkui-cj/cj-universal-attribute-popup.md)
                     - [菜单控制](reference/arkui-cj/cj-universal-attribute-menu.md)
                     - [焦点控制](reference/arkui-cj/cj-universal-attribute-focus.md)
+                    - [拖拽控制](reference/arkui-cj/cj-universal-attribute-dragcontrol.md)
                     - [组件标识](reference/arkui-cj/cj-universal-attribute-componentid.md)
                     - [前景色设置](reference/arkui-cj/cj-universal-attribute-foregroundcolor.md)
                     - [组件内容模糊](reference/arkui-cj/cj-universal-attribute-foregroundblurstyle.md)
