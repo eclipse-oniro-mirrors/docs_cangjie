@@ -51,26 +51,3 @@ func bindSheet(isShow: ?Bool, builder: CustomBuilder, options!: ?SheetOptions): 
 > - 尤其是 [SheetMode](./cj-common-types.md#enum-sheetmode) = Embedded 时，除宿主节点外，还需确保对应的页面节点成功挂载。
 > - 半模态页面的离场动效不支持打断，动效执行期间无法响应其他手势动作。目前离场动效使用弹簧曲线，该动画曲线存在视觉上并不明显的拖尾动画。因此，在半模态退出时，视觉上半模态页面已经消失，但此时动效可能还未结束，若想再次点击拉起半模态页面则不会响应。需要等动效完全结束后，才可以再次拉起。
 
-## func dragPreview(String)
-
-```cangjie
-func dragPreview(value: String): T
-```
-
-**功能：** 设置组件浮起和拖拽过程中的预览图。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**起始版本：** 22
-
-**参数：**
-
-|参数名|类型|必填|默认值|说明|
-|:---|:---|:---|:---|:---|
-| value | String |是|-| 当传入类型为String的id时，则将id对应组件的截图作为预览图。如果id对应的组件无法查找到，或者id对应的组件Visibility属性设置成None/Hidden，则对组件自身进行截图作为拖拽预览图。目前截图不含有亮度、阴影、模糊和旋转等视觉效果。|
-
-**返回值：**
-
-|类型|说明|
-|:---|:---|
-|T|返回调用此接口的组件实例本身。|

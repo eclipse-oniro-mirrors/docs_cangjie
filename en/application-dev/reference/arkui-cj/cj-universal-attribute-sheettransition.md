@@ -51,26 +51,3 @@ func bindSheet(isShow: ?Bool, builder: CustomBuilder, options!: ?SheetOptions): 
 > - Especially when [`SheetMode`](./cj-common-types.md#enum-sheetmode) = `Embedded`, in addition to the host node, ensure the corresponding page node is successfully mounted.
 > - The exit animation of the half-modal page cannot be interrupted, and no other gesture actions are responsive during the animation. Currently, the exit animation uses a spring curve, which includes a visually subtle trailing effect. Therefore, when the half-modal exits, it may appear visually gone, but the animation might not have fully ended. Attempting to click and reopen the half-modal during this time will not work. Wait until the animation completely finishes before reopening.
 
-## func dragPreview(String)
-
-```cangjie
-func dragPreview(value: String): T
-```
-
-**Function:** Set the preview image for the component when it is floating and being dragged.
-
-**System Capability:** SystemCapability.ArkUI.ArkUI.Full
-
-**Since:** 22
-
-**Parameters:**
-
-| Parameter | Type | Required | Default Value | Description |
-|:---|:---|:---|:---|:---|
-| value | String | Yes |-| When an ID of String type is passed in, the screenshot of the component corresponding to the ID will be used as the preview image. If the component corresponding to the ID cannot be found, or the Visibility property of the component corresponding to the ID is set to None/Hidden, a screenshot of the component itself will be taken as the drag preview image. Currently, the screenshot does not include visual effects such as brightness, shadow, blur, and rotation.|
-
-**Return Value:**
-
-| Type | Description |
-|:---|:---|
-| T | Returns the component instance itself that calls this interface. |

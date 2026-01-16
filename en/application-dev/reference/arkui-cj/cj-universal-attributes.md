@@ -25,6 +25,7 @@
 - [Popup Control](cj-universal-attribute-popup.md)
 - [Menu Control](cj-universal-attribute-menu.md)
 - [Focus Control](cj-universal-attribute-focus.md)
+- [Drag and Drop Control](cj-universal-attribute-dragcontrol.md)
 - [Component ID](cj-universal-attribute-componentid.md)
 - [Foreground Color Settings](cj-universal-attribute-foregroundcolor.md)
 - [Component Content Blur](cj-universal-attribute-foregroundblurstyle.md)

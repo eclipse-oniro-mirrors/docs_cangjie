@@ -567,6 +567,7 @@
                     - [Popup Control](reference/arkui-cj/cj-universal-attribute-popup.md)
                     - [Menu Control](reference/arkui-cj/cj-universal-attribute-menu.md)
                     - [Focus Control](reference/arkui-cj/cj-universal-attribute-focus.md)
+                    - [Drag and Drop Control](reference/arkui-cj/cj-universal-attribute-dragcontrol.md)
                     - [Component Identifier](reference/arkui-cj/cj-universal-attribute-componentid.md)
                     - [Foreground Color Setting](reference/arkui-cj/cj-universal-attribute-foregroundcolor.md)
                     - [Component Content Blur](reference/arkui-cj/cj-universal-attribute-foregroundblurstyle.md)
