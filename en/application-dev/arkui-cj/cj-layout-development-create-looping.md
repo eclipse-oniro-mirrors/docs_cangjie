@@ -143,7 +143,7 @@ The `indicator` property allows positioning indicators relative to the Swiper's 
   )
   ```
 
-  ![ind](figures/ind.png)
+  ![indicator_customize](figures/indicator_customize.png)
 
 ## Page Switching Methods
 

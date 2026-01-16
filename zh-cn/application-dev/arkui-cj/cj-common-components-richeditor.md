@@ -313,7 +313,7 @@ class EntryView {
 }
 ```
 
-![zhantie](figures/zhantie.jpg)
+![paste](figures/paste.png)
 
 ## 添加文本内容
 

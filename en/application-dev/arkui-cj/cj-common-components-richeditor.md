@@ -317,7 +317,7 @@ class EntryView {
 }
 ```
 
-![zhantie](figures/zhantie.jpg)
+![paste](figures/paste.png)
 
 ## Adding Text Content
 

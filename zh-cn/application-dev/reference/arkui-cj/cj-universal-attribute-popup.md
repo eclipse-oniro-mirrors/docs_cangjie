@@ -104,7 +104,7 @@ class EntryView {
             Text(dismiss).margin(left: 100)
             Text(custom).margin(left: 100)
             Button('PopupOptions')
-                .margin(left: 100， top: 200)
+                .margin(left: 100, top: 200)
                 .onClick({ e =>
                     this.handlePopup = !this.handlePopup
                 })
@@ -162,7 +162,7 @@ class EntryView {
                     )
                 )
             Button("CustomPopupOptions")
-                .margin(left: 100， top: 10)
+                .margin(left: 100, top: 10)
                 .onClick({ e => customPopup = !customPopup})
                 .bindPopup(
                     customPopup,

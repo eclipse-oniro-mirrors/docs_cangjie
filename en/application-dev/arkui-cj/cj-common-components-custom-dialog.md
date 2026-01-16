@@ -70,7 +70,7 @@ The dialog (CustomDialog) can be configured as modal or non-modal via the [isMod
     }
     ```
 
-    ![constructor](figures/zidingyi.png)
+    ![constructor](figures/customize.png)
 
 ## Dialog Interaction
 
