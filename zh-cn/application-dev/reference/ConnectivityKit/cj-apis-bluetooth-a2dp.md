@@ -33,7 +33,7 @@ API示例代码使用说明：
 public func createA2dpSrcProfile(): A2dpSourceProfile
 ```
 
-**功能：** 创建a2dp profile实例。
+**功能：** 创建蓝牙媒体[A2DP Source](#class-a2dpsourceprofile)实例。通过该实例可使用本端作为A2DP Source设备的方法，如：获取和其他设备间的蓝牙媒体音频播放状态。
 
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
