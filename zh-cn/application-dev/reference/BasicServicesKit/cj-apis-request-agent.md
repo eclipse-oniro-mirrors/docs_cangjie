@@ -33,7 +33,7 @@ API示例代码使用说明：
 public func create(context: UIAbilityContext, config: Config): Task
 ```
 
-**功能：** 创建需要上传或下载的任务，并将其排入队列。支持HTTP/HTTPS协议，每个应用最多支持创建10个未完成的任务。
+**功能：** 创建需要上传或下载的任务，并将其排入队列。支持HTTP/HTTPS协议。
 
 **需要权限：** ohos.permission.INTERNET
 

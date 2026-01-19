@@ -33,7 +33,7 @@ For details about the aforementioned sample projects and configuration templates
 public func create(context: UIAbilityContext, config: Config): Task
 ```
 
-**Function:** Creates an upload or download task and queues it. Each application can create up to 10 pending tasks.
+**Function:** Creates an upload or download task and queues it.
 
 **Required Permission:** ohos.permission.INTERNET
 
