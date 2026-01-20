@@ -8,7 +8,9 @@
 
 > **Note:**
 >
-> To ensure optimal performance, this guide uses the **latest DevEco Studio version** as an example. Click [here](https://developer.huawei.com/consumer/en/download/) to download.
+> - you can only create a HarmonyOS project by default. To create an OpenHarmony project, you should modify some fields in the created HarmonyOS project.
+>
+> - To ensure optimal performance, this guide uses the **latest DevEco Studio version** as an example. Click [here](https://developer.huawei.com/consumer/en/download/) to download.
 
 ## Creating a Cangjie Project
 
@@ -22,11 +24,32 @@
 
    ![cangjieConfig](../../figures/cangjieConfig.png)
 
-4. Click **Finish** to complete project creation. The IDE will automatically generate foundational sample code and related resources.
+4. Click **Finish** to complete project creation. The IDE will automatically generate foundational sample code and related resources. <!--Del-->
 
-5. To build an OpenHarmony application, you need to change the `runtimeOS` field in the **build-profile.json5** file to OpenHarmony
+5. After the project is created, perform the following operations to modify related fields in the project-level **build-profile.json5** file (at the same directory level as **entry**):
+   
+   1. Add the **compileSdkVersion** field.
 
-    ![changeOpenharmony](../../figures/changeOpenharmony.png)
+   2. Set the value of **compatibleSdkVersion** and **compileSdkVersion** to an integer, such as **22**, **23**.
+
+   3. Change the **runtimeOS** field from **HarmonyOS** to **OpenHarmony**.
+
+   ```json
+   "products": [
+     {
+       "name": "default",
+       "signingConfig": "default", 
+       "compileSdkVersion": 22,    // Version for compiling the OpenHarmony application or atomic service.
+       "compatibleSdkVersion": 22, // Minimum version compatible with the OpenHarmony application or atomic service.
+       "runtimeOS": "OpenHarmony",
+     }
+   ],
+   ```
+
+6. Click **Sync Now** to start synchronization.
+
+   In the **Sync Check** dialog box, click **Yes** to switch the phone type in the **module.json5/config.json** file to the default type supported by the OpenHarmony, and delete other device types that are not applicable to the OpenHarmony. The OpenHarmony project is created if the synchronization is successful and no other error is reported.
+<!--DelEnd-->
 
 ## Cangjie Project Directory Structure
 
