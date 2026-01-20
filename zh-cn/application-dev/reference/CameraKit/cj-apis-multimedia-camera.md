@@ -4660,7 +4660,7 @@ try {
     let mode = cameraManager.getSupportedSceneModes(device)[0]
     let ability = cameraManager.getSupportedOutputCapability(device, mode)
     let output = cameraManager.createPhotoOutput(profile:ability.photoProfiles[0])
-    output.capture(PhotoCaptureSetting())
+    output.capture()
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }

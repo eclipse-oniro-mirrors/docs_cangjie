@@ -202,7 +202,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let location = GeoLocationManager.getCurrentLocation(SingleLocationRequest(LocatingPriority.PriorityLocatingSpeed, 1000))
+    let location = GeoLocationManager.getCurrentLocation()
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -258,7 +258,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let location = GeoLocationManager.getCurrentLocation(SingleLocationRequest(LocatingPriority.PriorityLocatingSpeed, 1000))
+    let location = GeoLocationManager.getCurrentLocation(CurrentLocationRequest())
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
