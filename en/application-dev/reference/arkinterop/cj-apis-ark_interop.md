@@ -5335,6 +5335,62 @@ func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
 }
 ```
 
+### func requireArkModule(String)
+
+```cangjie
+public func requireArkModule(src: String): JSValue
+```
+
+**Function:** Import an ArkTS module, including system modules, files in HAP modules, files in HAR modules, files in HSP modules and Native modules, see [Importing ArkTS Modules in Cangjie Code](../../learn-cj/FFI/cangjie-arkts/cangjie-load-arkts.md).
+
+**Initial Version:** 23
+
+**Parameters:**
+
+| Parameter | Type   | Required | Default | Description           |
+| :-------- | :----- | :------- | :------ | :-------------------- |
+| src       | String | Yes      | -       | The module specifier. |
+
+**Return Value:**
+
+| Type                      | Description           |
+| :------------------------ | :-------------------- |
+| [JSValue](#class-jsvalue) | The module's JSValue. |
+
+**Exceptions:**
+
+- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+
+| Error Code ID | Error Message                                                     |
+| :------------ | :---------------------------------------------------------------- |
+| 34300002      | Module initialize fail.                                           |
+| 34300004      | Thread mismatch.                                                  |
+| 34300006      | Target module not exist.                                          |
+| 34300007      | Can not requireArkModule during initializing cangjie module.      |
+| 34300008      | Current application have not support requireArkModule of the url. |
+
+**Example:**
+
+<!--compile-->
+```cangjie
+import ohos.hilog.Hilog
+import ohos.business_exception.BusinessException
+
+func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
+    try {
+        let hilog = context.requireArkModule("@ohos.hilog").asObject()
+        hilog.callMethod("info", [
+            context.number(0).toJSValue(),
+            context.string("test").toJSValue(),
+            context.string("call hilog success").toJSValue()
+        ])
+    } catch (e: BusinessException) {
+        Hilog.info(0, "test", e.message)
+    }
+    return context.undefined().toJSValue()
+}
+```
+
 ### func requireSystemNativeModule(String, ?String)
 
 ```cangjie
