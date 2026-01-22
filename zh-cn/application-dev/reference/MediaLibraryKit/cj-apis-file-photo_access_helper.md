@@ -411,22 +411,55 @@ public func getAllObjects(): Array<Album>
 ```cangjie
 // index.cj
 
+import kit.ArkUI.*
+import ohos.arkui.state_macro_manage.*
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
 import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
-try {
-    let ctx = Global.abilityContext // 此处需手动配置模板，获取Context上下文。上下文获取方式请参见使用说明。
-    let phAccessHelper = getPhotoAccessHelper(ctx)
-    let predicates = DataSharePredicates()
-    predicates.equalTo('album_name', StringValue('test1'))
-    let fetchOptions: FetchOptions = FetchOptions([], predicates)
-    let fetchResult = phAccessHelper.getAlbums(AlbumType.User,
-        AlbumSubtype.UserGeneric, options: fetchOptions)
-    let albums = fetchResult.getAllObjects()
-} catch (e: BusinessException) {
-    Hilog.info(0, "test", "${e.message}")
+@Component
+class ChildItem {
+    @Prop var item: String
+    func build() {
+        Text(this.item)
+        .fontSize(50)
+    }
+}
+
+func getAlbumList(): Array<Album> {
+    try {
+        // Global 的实现请参见本文"使用说明"小节
+        let ctx = Global.abilityContext
+        let phAccessHelper = getPhotoAccessHelper(ctx)
+        let predicates = DataSharePredicates()
+        predicates.equalTo('album_name', StringValue('test1'))
+        let fetchOptions: FetchOptions = FetchOptions([], predicates)
+        let fetchResult = phAccessHelper.getAlbums(AlbumType.User,
+            AlbumSubtype.UserGeneric, options: fetchOptions)
+        // 获取文件检索结果中的所有相册资产，后续可以遍历相册数组获取每一个相册的信息
+        let albums = fetchResult.getAllObjects()
+        return albums
+    } catch (e: BusinessException) {
+        Hilog.info(0, "test", "${e.message}")
+        throw e
+    }
+}
+
+@Entry
+@Component
+class EntryView {
+    @State
+    var albumList: Array<Album> = getAlbumList()
+
+    func build() {
+        Row {
+            Column {
+                ForEach(this.albumList, itemGeneratorFunc: {item: Album,idx:Int64 =>
+            ChildItem(item: item.albumUri)}, keyGeneratorFunc: {item: Album, idx: Int64 => return item.albumUri})
+            }.width(100.percent)
+        }.height(100.percent)
+    }
 }
 ```
 
@@ -1175,23 +1208,57 @@ public func getAlbum(): Album
 ```cangjie
 // index.cj
 
+import kit.ArkUI.*
+import ohos.arkui.state_macro_manage.*
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
 import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
-try {
-    let ctx = Global.abilityContext // 此处需手动配置模板，获取Context上下文。上下文获取方式请参见使用说明。
-    let phAccessHelper = getPhotoAccessHelper(ctx)
-    let predicates = DataSharePredicates()
-    let fetchOptions: FetchOptions = FetchOptions([], predicates)
-    let fetchResult = phAccessHelper.getAlbums(AlbumType.User, AlbumSubtype.UserGeneric,
-        options: fetchOptions)
-    let album = fetchResult.getFirstObject()
-    let albumChangeRequest = MediaAlbumChangeRequest(album)
-    var changeRequestAlbum = albumChangeRequest.getAlbum()
-} catch (e: BusinessException) {
-    Hilog.info(0, "test", "${e.message}")
+@Component
+class ChildItem {
+    @Prop var item: String
+    func build() {
+        Text(this.item)
+        .fontSize(50)
+    }
+}
+
+func getPhotoAssetList(): Array<PhotoAsset> {
+    try {
+        // Global 的实现请参见本文"使用说明"小节
+        let ctx = Global.abilityContext
+        let phAccessHelper = getPhotoAccessHelper(ctx)
+        let predicates = DataSharePredicates()
+        let fetchOptions: FetchOptions = FetchOptions([], predicates)
+        let albumList = phAccessHelper.getAlbums(AlbumType.User, AlbumSubtype.UserGeneric,
+            options: fetchOptions)
+        let album = albumList.getFirstObject()
+        let albumChangeRequest = MediaAlbumChangeRequest(album)
+        // 获取当前相册变更请求中的相册，后续可以调用接口获取相册相关信息
+        let changeRequestAlbum = albumChangeRequest.getAlbum()
+        let fetchResult = changeRequestAlbum.getAssets(fetchOptions)
+        return fetchResult.getAllObjects()
+    } catch (e: BusinessException) {
+        Hilog.info(0, "test", "${e.message}")
+        throw e
+    }
+}
+
+@Entry
+@Component
+class EntryView {
+    @State
+    var albumList: Array<PhotoAsset> = getPhotoAssetList()
+
+    func build() {
+        Row {
+            Column {
+                ForEach(this.albumList, itemGeneratorFunc: {item: PhotoAsset,idx:Int64 =>
+            ChildItem(item: item.displayName)}, keyGeneratorFunc: {item: PhotoAsset, idx: Int64 => return item.displayName})
+            }.width(100.percent)
+        }.height(100.percent)
+    }
 }
 ```
 
@@ -1923,21 +1990,47 @@ public func getWriteCacheHandler(): Int32
 ```cangjie
 // index.cj
 
+import kit.ArkUI.*
+import ohos.arkui.state_macro_manage.*
 import kit.MediaLibraryKit.*
 import kit.CoreFileKit.*
+import kit.ImageKit.{createImageSource, PixelMap}
 import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
-try {
-    let ctx = Global.abilityContext // 此处需手动配置模板，获取Context上下文。上下文获取方式请参见使用说明。
-    let phAccessHelper = getPhotoAccessHelper(ctx)
-    let assetChangeRequest = MediaAssetChangeRequest.createAssetRequest(ctx,
-        PhotoType.Video, "mp4")
-    let fd = assetChangeRequest.getWriteCacheHandler()
-    FileIo.close(fd)
-    phAccessHelper.applyChanges(assetChangeRequest)
-} catch (e: BusinessException) {
-    Hilog.info(0, "test", "${e.message}")
+func getPixelMap(): PixelMap {
+    try {
+        // Global 的实现请参见本文"使用说明"小节
+        let ctx = Global.abilityContext
+        let phAccessHelper = getPhotoAccessHelper(ctx)
+        let assetChangeRequest = MediaAssetChangeRequest.createAssetRequest(ctx,
+            PhotoType.Image, "jpg")
+        // 获取临时文件写句柄，后续可以通过该句柄写入数据
+        let fd = assetChangeRequest.getWriteCacheHandler()
+        // write data into fd..
+        FileIo.write(fd, Array<UInt8>(96, repeat: 0))
+        let imageSource = createImageSource(fd)
+        let pixelMap = imageSource.createPixelMap()
+        FileIo.close(fd)
+        phAccessHelper.applyChanges(assetChangeRequest)
+        return pixelMap
+    } catch (e: BusinessException) {
+        Hilog.info(0, "test", "${e.message}")
+        throw e
+    }
+}
+
+@Entry
+@Component
+class EntryView {
+
+    func build() {
+        Row {
+            Column {
+                Image(getPixelMap())
+            }.width(100.percent)
+        }.height(100.percent)
+    }
 }
 ```
 

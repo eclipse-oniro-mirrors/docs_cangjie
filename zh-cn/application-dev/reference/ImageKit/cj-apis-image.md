@@ -560,16 +560,36 @@ public func createPixelMap(colors: Array<UInt8>, options: InitializationOptions)
 ```cangjie
 // index.cj
 
-import kit.ImageKit.*
+import kit.ArkUI.Image
+import kit.ImageKit.{InitializationOptions, createPixelMap, Size, PixelMap}
 import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
-try {
-    let color: Array<UInt8> = Array<UInt8>(96, repeat: 0) //96为需要创建的像素buffer大小，取值为：height * width *4
-    let opts: InitializationOptions = InitializationOptions(Size(4, 6))
-    let pixelMap = createPixelMap(color, opts)
-} catch (e: BusinessException) {
-    Hilog.info(0, "test", "${e.message}")
+func getPixelMap(): PixelMap {
+    try {
+        // 96 为需要创建的像素 buffer 大小，取值为：height * width * 4
+        let color: Array<UInt8> = Array<UInt8>(96, repeat: 0)
+        let opts: InitializationOptions = InitializationOptions(Size(4, 6))
+        // 通过属性创建的PixelMap实例，后续可以调用该实例的方法读取或写入图像数据
+        let pixelMap = createPixelMap(color, opts)
+        return pixelMap
+    } catch (e: BusinessException) {
+        Hilog.info(0, "test", "${e.message}")
+        throw e
+    }
+}
+
+@Entry
+@Component
+class EntryView {
+
+    func build() {
+        Row {
+            Column {
+                Image(getPixelMap())
+            }.width(100.percent)
+        }.height(100.percent)
+    }
 }
 ```
 
