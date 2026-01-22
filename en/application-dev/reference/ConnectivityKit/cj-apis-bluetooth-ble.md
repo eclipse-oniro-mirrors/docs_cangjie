@@ -5437,7 +5437,9 @@ public func toString(): String
 
 |Type|Description|
 |:----|:----|
-|String|The description of the enumeration.|## enum GattWriteType
+|String|The description of the enumeration.
+
+## enum GattWriteType
 
 ```cangjie
 public enum GattWriteType <: Equatable<GattWriteType> & ToString {
