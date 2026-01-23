@@ -3839,6 +3839,10 @@ import kit.PerformanceAnalysisKit.Hilog
 
 // 此处代码可添加在依赖项定义中
 class CharacteristicReadCallback <: Callback1Argument<CharacteristicReadRequest> {
+    let gattReadServer: GattServer
+    init(gattReadServer: GattServer) {
+    	this.gattReadServer = gattReadServer
+    }
     public func invoke(err: ?BusinessException, charReq: CharacteristicReadRequest): Unit {
         let deviceId: String = charReq.deviceId
         let transId: Int32 = charReq.transId
@@ -3862,7 +3866,7 @@ class CharacteristicReadCallback <: Callback1Argument<CharacteristicReadRequest>
 
 try {
     let gattReadServer = createGattServer()
-    let characteristicReadCallback = CharacteristicReadCallback()
+    let characteristicReadCallback = CharacteristicReadCallback(gattReadServer)
     gattReadServer.on(BluetoothBleGattServerCallbackType.CharacteristicRead, characteristicReadCallback)
 } catch (e: BusinessException) {
     Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}", "")
@@ -3913,6 +3917,10 @@ import kit.PerformanceAnalysisKit.Hilog
 
 // 此处代码可添加在依赖项定义中
 class CharacteristicWriteCallback <: Callback1Argument<CharacteristicWriteRequest> {
+    let gattWriteServer: GattServer
+    init(gattWriteServer: GattServer) {
+    	this.gattWriteServer = gattWriteServer
+    }
     public func invoke(err: ?BusinessException, charReq: CharacteristicWriteRequest): Unit {
         let deviceId: String = charReq.deviceId
         let transId: Int32 = charReq.transId
@@ -3943,7 +3951,7 @@ class CharacteristicWriteCallback <: Callback1Argument<CharacteristicWriteReques
 
 try {
     let gattWriteServer = createGattServer()
-    let characteristicWriteCallback = CharacteristicWriteCallback()
+    let characteristicWriteCallback = CharacteristicWriteCallback(gattWriteServer)
     gattWriteServer.on(BluetoothBleGattServerCallbackType.CharacteristicWrite, characteristicWriteCallback)
 } catch (e: BusinessException) {
     Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}", "")
@@ -3994,6 +4002,10 @@ import kit.PerformanceAnalysisKit.Hilog
 
 // 此处代码可添加在依赖项定义中
 class DescriptorReadCallback <: Callback1Argument<DescriptorReadRequest> {
+    let gattServer: GattServer
+    init(gattServer: GattServer) {
+    	this.gattServer = gattServer
+    }
     public func invoke(err: ?BusinessException, desReq: DescriptorReadRequest): Unit {
         let deviceId: String = desReq.deviceId
         let transId: Int32 = desReq.transId
@@ -4017,7 +4029,7 @@ class DescriptorReadCallback <: Callback1Argument<DescriptorReadRequest> {
 
 try {
     let gattServer = createGattServer()
-    let descriptorReadCallback = DescriptorReadCallback()
+    let descriptorReadCallback = DescriptorReadCallback(gattServer)
     gattServer.on(BluetoothBleGattServerCallbackType.DescriptorRead, descriptorReadCallback)
 } catch (e: BusinessException) {
     Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}", "")
@@ -4068,6 +4080,10 @@ import kit.PerformanceAnalysisKit.Hilog
 
 // 此处代码可添加在依赖项定义中
 class DescriptorWriteCallback <: Callback1Argument<DescriptorWriteRequest> {
+    let gattServer: GattServer
+    init(gattServer: GattServer) {
+    	this.gattServer = gattServer
+    }
     public func invoke(err: ?BusinessException, desReq: DescriptorWriteRequest): Unit {
         let deviceId: String = desReq.deviceId
         let transId: Int32 = desReq.transId
@@ -4086,7 +4102,7 @@ class DescriptorWriteCallback <: Callback1Argument<DescriptorWriteRequest> {
             rspBuffer
         )
         try {
-            gattServer1.sendResponse(serverResponse)
+            gattServer.sendResponse(serverResponse)
         } catch (e: BusinessException) {
             Hilog.info(0, "Bluetooth", "gattServer send response fail because ${e}")
         }
@@ -4095,7 +4111,7 @@ class DescriptorWriteCallback <: Callback1Argument<DescriptorWriteRequest> {
 
 try {
     let gattServer = createGattServer()
-    let descriptorWriteCallback = DescriptorWriteCallback()
+    let descriptorWriteCallback = DescriptorWriteCallback(gattServer)
     gattServer.on(BluetoothBleGattServerCallbackType.DescriptorWrite, descriptorWriteCallback)
 } catch (e: BusinessException) {
     Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}", "")
