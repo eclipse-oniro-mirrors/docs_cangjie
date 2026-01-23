@@ -3036,6 +3036,8 @@ import kit.ArkWeb.*
 import kit.ArkUI.Web
 import kit.PerformanceAnalysisKit.Hilog
 import ohos.business_exception.*
+import ohos.arkui.state_macro_manage.rawfile
+import ohos.resource.__GenerateResource__
 
 let callback2: AsyncCallback<String> = {
     errorCode: Option<BusinessException>, data: Option<String> => match (errorCode) {
