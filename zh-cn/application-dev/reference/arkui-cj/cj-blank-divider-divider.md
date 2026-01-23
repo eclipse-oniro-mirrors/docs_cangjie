@@ -138,7 +138,7 @@ class EntryView {
             List() {
                 ForEach(
                     [1, 2, 3],
-                    {
+                    itemGeneratorFunc: {
                         item: Int64, idx: Int64 => ListItem() {
                             Text("list" + item.toString())
                                 .width(100.percent)
@@ -158,7 +158,7 @@ class EntryView {
             List() {
                 ForEach(
                     [4, 5],
-                    {
+                    itemGeneratorFunc: {
                         item: Int64, idx: Int64 => ListItem() {
                             Text("list" + item.toString())
                                 .width(100.percent)

@@ -70,7 +70,7 @@ class EntryView {
                         Hilog.info(0, "AppLogCj", "change font size")
                     })
             List() {
-                ForEach(this.styleList, {
+                ForEach(this.styleList, itemGeneratorFunc: {
                         item: TextStyles, _: Int64 =>
                         ListItem(){
                             Text("Hello World")
@@ -126,7 +126,7 @@ class EntryView {
                     Hilog.info(0,"AppLog: info","change font size")
                 })
             List(){
-                ForEach(this.styleList ,{
+                ForEach(this.styleList ,itemGeneratorFunc: {
                         item: TextStyles, _:Int64 =>
                         ListItem(){
                             Text("Hello World")

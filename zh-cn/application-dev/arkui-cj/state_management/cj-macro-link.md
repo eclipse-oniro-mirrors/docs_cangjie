@@ -370,7 +370,7 @@ class EntryView{
     func build(){
         Column(){
             Child(items: arr)
-            ForEach(this.arr,{item: Int,index: Int
+            ForEach(this.arr, itemGeneratorFunc: {item: Int,index: Int
                     =>
                     Button("${item}")
                         .margin(12)

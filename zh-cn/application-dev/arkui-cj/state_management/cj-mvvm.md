@@ -375,7 +375,7 @@ class EntryView {
 
             List(){
                 ForEach(
-                    this.planList, {item: String, _:Int64 =>
+                    this.planList, itemGeneratorFunc: {item: String, _:Int64 =>
                         ListItem(){
                             // 待办事项
                             ThingsComponent(isFinished: this.isFinished, things: item)
@@ -505,7 +505,7 @@ class EntryView{
             AllChooseComponent(isFinished: this.isFinished)
             List() {
                 ForEach(
-                    this.data.planList, {item: String, _:Int64 =>
+                    this.data.planList, itemGeneratorFunc: {item: String, _:Int64 =>
                         ListItem(){
                             ThingsComponent(isFinished: this.isFinished, things: item)
                         }.margin(top: 10.vp).width(100.percent)
@@ -803,7 +803,7 @@ View层根据需要来组织，但View层需要区分一下三种组件：
             Column() {
                 List() {
                     ForEach(
-                        this.thingViewModelArray, {item: ThingViewModel, _:Int64 =>
+                        this.thingViewModelArray, itemGeneratorFunc: {item: ThingViewModel, _:Int64 =>
                             ListItem() {
                                 ThingComponent(thingViewModel: item)
                             }

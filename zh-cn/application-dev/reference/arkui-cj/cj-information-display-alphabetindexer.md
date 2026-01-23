@@ -427,7 +427,7 @@ class EntryView {
                 List(space: 20, initialIndex: 0) {
                     ForEach(
                         this.arrayA,
-                        {
+                        itemGeneratorFunc: {
                             item: String, idx: Int64 => ListItem() {
                                 Text(item)
                                     .width(80.percent)
@@ -439,7 +439,7 @@ class EntryView {
                     )
                     ForEach(
                         this.arrayB,
-                        {
+                        itemGeneratorFunc: {
                             item: String, idx: Int64 => ListItem() {
                                 Text(item)
                                     .width(80.percent)
@@ -451,7 +451,7 @@ class EntryView {
                     )
                     ForEach(
                         this.arrayC,
-                        {
+                        itemGeneratorFunc: {
                             item: String, idx: Int64 => ListItem() {
                                 Text(item)
                                     .width(80.percent)
@@ -463,7 +463,7 @@ class EntryView {
                     )
                     ForEach(
                         this.arrayJ,
-                        {
+                        itemGeneratorFunc: {
                             item: String, idx: Int64 => ListItem() {
                                 Text(item)
                                     .width(80.percent)

@@ -537,7 +537,7 @@ class Child {
     func build(){
         Column(){
             ForEach(arr,
-                { item: (Int64, String), idx: Int64 =>
+                itemGeneratorFunc: { item: (Int64, String), idx: Int64 =>
                     Text("key: ${item[0]} value: ${item[1]}").fontSize(30)
                     Divider()
                 },
@@ -626,7 +626,7 @@ class Child{
 
     func build(){
         Column{
-            ForEach(arr,{item: Int64, idx: Int64 =>
+            ForEach(arr,itemGeneratorFunc: {item: Int64, idx: Int64 =>
                 Text("${item}").fontSize(30)
                 Divider()
             })

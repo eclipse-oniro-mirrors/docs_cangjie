@@ -413,7 +413,7 @@ class Post{
             Text(this.data.message)
 
             Row(){
-                ForEach(this.data.images,{imageResource: AppResource,index: Int
+                ForEach(this.data.images, itemGeneratorFunc: {imageResource: AppResource,index: Int
                     =>
                     Image(imageResource)
                     .size(width:100,height:100)

@@ -42,7 +42,7 @@ class EntryView{
 
     func build(){
         Column(space: 20){
-            ForEach(this.updateUIArr(this.realStateArr), {item: Int64, _: Int64 => Text("${item}")})
+            ForEach(this.updateUIArr(this.realStateArr), itemGeneratorFunc: {item: Int64, _: Int64 => Text("${item}")})
             Text("add item")
             .onClick({ event =>
                 // 改变realStateArr不会触发UI视图更新
@@ -97,7 +97,7 @@ class EntryView{
 
     func build(){
         Column(space: 20){
-            ForEach(this.realStateArr, {item: Int64, _: Int64 => Text("${item}")})
+            ForEach(this.realStateArr, itemGeneratorFunc: {item: Int64, _: Int64 => Text("${item}")})
 
             Text("add item")
             .onClick({event =>
