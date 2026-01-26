@@ -518,7 +518,7 @@ extend Int64 <: ResourceColor {
 #### func toUInt32()
 
 ```cangjie
-func toUInt32(): UInt32
+public func toUInt32(): UInt32
 ```
 
 **功能：** 转为UInt32颜色取值。
@@ -546,7 +546,7 @@ extend UInt32 <: ResourceColor {
 #### func toUInt32()
 
 ```cangjie
-func toUInt32(): UInt32
+public func toUInt32(): UInt32
 ```
 
 **功能：** 转为UInt32颜色取值。
