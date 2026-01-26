@@ -6,7 +6,7 @@
 > Currently in the beta phase.
 <!--DelEnd-->
 
-A single-line text input component.
+A single-line text input component. Currently only basic input mode is supported with no special restrictions.
 
 ## Import Module
 
@@ -603,18 +603,6 @@ class EntryView {
             .margin(15)
         Button('Get CaretOffset')
             .margin(15)
-        // Password input field
-        TextInput(placeholder: 'input your password...')
-            .width(95.percent)
-            .height(40)
-            .margin(20)
-            .maxLength(9)
-        // Email address autofill type
-        TextInput(placeholder: 'input your email...' )
-            .width(95.percent)
-            .height(40)
-            .margin(20)
-            .maxLength(9)
         // Inline style input field
         TextInput( text: 'inline style' )
             .width(95.percent)
