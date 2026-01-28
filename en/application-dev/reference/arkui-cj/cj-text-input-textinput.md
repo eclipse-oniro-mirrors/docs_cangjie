@@ -601,8 +601,10 @@ class EntryView {
         Text(this.text)
         Button('Set caretPosition 1')
             .margin(15)
-        Button('Get CaretOffset')
-            .margin(15)
+            .onClick({ evt => 
+                // Move the caret to after first entered character.
+                this.controller.caretPosition(1)
+            })
         // Inline style input field
         TextInput( text: 'inline style' )
             .width(95.percent)

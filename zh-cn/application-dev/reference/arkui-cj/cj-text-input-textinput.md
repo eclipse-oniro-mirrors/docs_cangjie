@@ -603,8 +603,10 @@ class EntryView {
         Text(this.text)
         Button('Set caretPosition 1')
             .margin(15)
-        Button('Get CaretOffset')
-            .margin(15)
+            .onClick({ evt => 
+                // 将光标移动至第一个字符后
+                this.controller.caretPosition(1)
+            })
         // 内联风格输入框
         TextInput( text: 'inline style' )
             .width(95.percent)
