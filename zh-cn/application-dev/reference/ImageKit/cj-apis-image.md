@@ -560,7 +560,16 @@ public func createPixelMap(colors: Array<UInt8>, options: InitializationOptions)
 ```cangjie
 // index.cj
 
+import kit.ArkUI.Row
+import kit.ArkUI.Column
+import kit.ArkUI.loadNativeView
+import kit.ArkUI.CustomView
+import kit.ArkUI.CJEntry
 import kit.ArkUI.Image
+import kit.ArkUI.LengthProp
+import kit.ArkUI.SubscriberManager
+import kit.ArkUI.LocalStorage
+import ohos.arkui.state_macro_manage.*
 import kit.ImageKit.{InitializationOptions, createPixelMap, Size, PixelMap}
 import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
