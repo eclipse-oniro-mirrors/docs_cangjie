@@ -751,7 +751,7 @@ Example of the start_window.json resource file under resources/base/profile:
 
 ## definePermissions Tag
 
-This tag supports only system resource HAPs for defining permissions and does not support application-defined permissions. For permission definition methods, refer to [System Resource Permission Definition](https://gitee.com/openharmony/utils_system_resources/blob/master/systemres/main/config.json).
+This tag supports only system resource HAPs for defining permissions and does not support application-defined permissions. For permission definition methods, refer to [System Resource Permission Definition](https://gitcode.com/openharmony/utils_system_resources/blob/master/systemres/main/config.json).
 
 **Table 26** Description of the definePermissions Tag
 
