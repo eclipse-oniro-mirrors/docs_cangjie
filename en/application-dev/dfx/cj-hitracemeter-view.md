@@ -55,4 +55,4 @@ Developers can use the CPU Insight feature in DevEco Studio Profiler to visually
 8. Visual analysis of HiTraceMeter text logs.
 
    - Import into DevEco Studio for analysis. Refer to the [CPU Activity Analysis: CPU Profiling](https://developer.huawei.com/consumer/en/doc/harmonyos-guides-V5/ide-insight-session-cpu-V5) documentation. In DevEco Studio Profiler's session area, select "Open File" to import the HiTraceMeter text logs for analysis.
-   - Analyze using the [HiSmartPerf](https://gitee.com/openharmony/developtools_smartperf_host) tool. Download the tool from the [developtools_smartperf_host Releases](https://gitee.com/openharmony/developtools_smartperf_host/releases).
+   - Use [Smartperf_Host](https://gitcode.com/openharmony/developtools_smartperf_host) for analysis. You can download the tool from [developtools_smartperf_host Release](https://gitcode.com/openharmony/developtools_smartperf_host/releases).

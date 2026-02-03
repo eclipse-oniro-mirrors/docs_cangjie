@@ -330,7 +330,7 @@ hiperf report --limit-percent 1
 
 ## Scripts
 
-General users can use scripts to perform sampling operations and generate visual flame graphs. The tools can be obtained from the [developtools_hiperf repository](https://gitee.com/openharmony/developtools_hiperf/tree/master/script).
+General users can use scripts to perform sampling operations and generate visual flame graphs. The tools can be obtained from the [developtools_hiperf repository](https://gitcode.com/openharmony/developtools_hiperf/tree/master/script).
 
 1. Sampling.
 

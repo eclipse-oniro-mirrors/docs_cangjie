@@ -34,7 +34,7 @@ HiTrace provides developers with debugging interfaces for tracking business proc
 
 > **Note:**  
 >  
-> Snapshot mode refers to a trace collection service with fixed trace tags. By default, traces are not saved to disk. Developers can use the `--dump_bgsrv` command to trigger trace dumping at the current moment. The trace is in binary format and is saved by default in the `/data/log/hitrace` directory. The filename follows the format `trace-YYMMDDHHmmSS@[BOOT_TIME].sys`. For visual trace analysis, use the [HiSmartPerf](https://gitee.com/openharmony/developtools_smartperf_host) tool. Download link: [developtools_smartperf_host](https://gitee.com/openharmony/developtools_smartperf_host/releases) official release.  
+> Snapshot mode refers to a trace collection service with fixed trace tags. By default, traces are not saved to disk. Developers can use the `--dump_bgsrv` command to trigger trace dumping at the current moment. The trace is in binary format and is saved by default in the `/data/log/hitrace` directory. The filename follows the format `trace-YYMMDDHHmmSS@[BOOT_TIME].sys`. For visual trace analysis, use the [Smartperf_Host](https://gitcode.com/openharmony/developtools_smartperf_host) tool. Download link: [developtools_smartperf_host Release](https://gitcode.com/openharmony/developtools_smartperf_host/releases).  
 
 ## Common Commands  
 
@@ -256,7 +256,7 @@ Execute the following commands in hdc shell:
 
 7. Export trace in snapshot mode.  
 
-   By default, trace information is saved in `/data/log/hitrace/`. The filename follows the format `trace-YYMMDDHHmmSS@[BOOT_TIME].sys`. For visual trace analysis, use the [HiSmartPerf](https://gitee.com/openharmony/developtools_smartperf_host) tool. Download link: [developtools_smartperf_host](https://gitee.com/openharmony/developtools_smartperf_host/releases) official release.  
+   By default, trace information is saved in `/data/log/hitrace/`. The filename follows the format `trace-YYMMDDHHmmSS@[BOOT_TIME].sys`. For visual trace analysis, use the [Smartperf_Host](https://gitcode.com/openharmony/developtools_smartperf_host) tool. Download link: [developtools_smartperf_host Release](https://gitcode.com/openharmony/developtools_smartperf_host/releases).  
 
    ```shell  
    hitrace --dump_bgsrv  

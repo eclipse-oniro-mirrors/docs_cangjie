@@ -1017,7 +1017,7 @@ resources/base/profile路径下的start_window.json资源文件示例如下：
 <!--Del-->
 ## definePermissions标签
 
-该标签仅支持系统资源hap定义权限，不支持应用自定义权限。权限定义方式参见[系统资源权限定义](https://gitee.com/openharmony/utils_system_resources/blob/master/systemres/main/config.json)。
+该标签仅支持系统资源hap定义权限，不支持应用自定义权限。权限定义方式参见[系统资源权限定义](https://gitcode.com/openharmony/utils_system_resources/blob/master/systemres/main/config.json)。
 
 **表26** definePermissions标签说明
 
