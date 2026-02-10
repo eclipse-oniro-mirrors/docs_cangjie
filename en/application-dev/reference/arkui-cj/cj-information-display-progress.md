@@ -86,7 +86,7 @@ public func style(strokeWidth!: ?Length = None, scaleCount!: ?Int32 = None, scal
 
 | Parameter Name | Type | Required | Default Value | Description |
 |:---|:---|:---|:---|:---|
-| strokeWidth | ?[Length](./cj-common-types.md#interface-length) | No | None | **Named parameter.** Sets the width of the progress bar (percentage values are not supported). Initial value: 10.vp. |
+| strokeWidth | ?[Length](./cj-common-types.md#interface-length) | No | None | **Named parameter.** Sets the width of the progress bar (percentage values are not supported). Initial value: 4.vp. |
 | scaleCount | ?Int32 | No | None | **Named parameter.** Sets the total number of scale marks for a circular progress bar. Initial value: 120. |
 | scaleWidth | ?[Length](./cj-common-types.md#interface-length) | No | None | **Named parameter.** Sets the thickness of the scale marks for a circular progress bar (percentage values are not supported). If the scale thickness exceeds the progress bar width, the system default thickness is used. Initial value: 2.vp. |
 
