@@ -48,7 +48,7 @@ public init(child!: () -> Unit = {=>})
 
 ## 通用属性/通用事件
 
-通用属性：全部支持。
+通用属性：除[shadow](./cj-universal-attribute-imageeffect.md#func-shadowfloat64-resourcecolor-float64-float64)外，其余全部支持。
 
 通用事件：全部支持。
 

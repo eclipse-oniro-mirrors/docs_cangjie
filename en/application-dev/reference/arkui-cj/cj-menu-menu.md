@@ -48,7 +48,7 @@ public init(child!: () -> Unit = {=>})
 
 ## Universal Attributes/Events
 
-Universal Attributes: All supported.
+Universal Attributes: All supported except [shadow](./cj-universal-attribute-imageeffect.md#func-shadowfloat64-resourcecolor-float64-float64).
 
 Universal Events: All supported.
 
