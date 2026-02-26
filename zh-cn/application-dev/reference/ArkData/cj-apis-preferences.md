@@ -310,7 +310,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let preferences = Preferences.getPreferences(Global.abilityContext, PreferencesOptions("mystore", dataGroupId:"myGroupID")) // 此处需手动配置模板，获取Context上下文。上下文获取方式请参见使用说明。
+    let preferences = Preferences.getPreferences(Global.abilityContext, "mystore") // 此处需手动配置模板，获取Context上下文。上下文获取方式请参见使用说明。
     // 删除 Preferences 实例的缓存
     Preferences.removePreferencesFromCache(Global.abilityContext, PreferencesOptions("mystore", dataGroupId:"myGroupID"))
 } catch (e: BusinessException) {
@@ -345,7 +345,7 @@ public static func getPreferences(context: UIAbilityContext, options: Preference
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)和[事件错误码](./cj-errorcode-preferences.md)。
+- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)和[用户首选项错误码](./cj-errorcode-preferences.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |

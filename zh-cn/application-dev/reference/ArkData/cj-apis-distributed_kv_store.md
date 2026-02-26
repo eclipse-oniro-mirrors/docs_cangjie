@@ -285,7 +285,7 @@ public func getEntries(query: Query): Array<Entry>
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|query|[Query](#class-query)|是|-|表示要匹配的键前缀。|
+|query|[Query](#class-query)|是|-|表示查询对象。|
 
 **返回值：**
 
