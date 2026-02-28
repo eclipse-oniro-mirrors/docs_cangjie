@@ -230,12 +230,14 @@ class EntryView{
             Text("Total number of fruits: ${this.fruit.toString()}")
                 .fontSize(30)
             Button("Add apples")
-                .onClick({etv=> this.apple++
+                .onClick({etv=>
                     this.propName = "apple"
+                    this.apple++
                 })
             Button("Add cabbages")
-                .onClick({etv=> this.cabbage++
+                .onClick({etv=>
                     this.propName = "cabbages"
+                    this.cabbage++
                 })
 
         }
