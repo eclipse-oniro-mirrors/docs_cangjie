@@ -3624,6 +3624,10 @@ public func goTo(offset: Int32): Bool
 
 **Function:** Moves the result set forward or backward to the specified row relative to its current position.
 
+> **Attention:**
+>
+> This interface does not return `false` on failure, but throws an exception. Please ensure that you handle error code prompts appropriately when calling it.
+
 **System Capability:** SystemCapability.DistributedDataManager.RelationalStore.Core
 
 **Since:** 22
@@ -3638,7 +3642,7 @@ public func goTo(offset: Int32): Bool
 
 | Type | Description |
 |:----|:----|
-| Bool | Returns true if the result set is successfully moved; otherwise returns false. |
+| Bool | Returns true if the result set is successfully moved. |
 
 **Exceptions:**
 
@@ -3695,6 +3699,10 @@ public func goToFirstRow(): Bool
 
 **Function:** Moves the result set to the first row.
 
+> **Attention:**
+>
+> This interface does not return `false` on failure, but throws an exception. Please ensure that you handle error code prompts appropriately when calling it.
+
 **System Capability:** SystemCapability.DistributedDataManager.RelationalStore.Core
 
 **Since:** 22
@@ -3703,7 +3711,7 @@ public func goToFirstRow(): Bool
 
 | Type | Description |
 |:----|:----|
-| Bool | Returns true if the result set is successfully moved; otherwise returns false. |
+| Bool | Returns true if the result set is successfully moved. |
 
 **Exceptions:**
 
@@ -3760,6 +3768,10 @@ public func goToLastRow(): Bool
 
 **Function:** Moves the result set to the last row.
 
+> **Attention:**
+>
+> This interface does not return `false` on failure, but throws an exception. Please ensure that you handle error code prompts appropriately when calling it.
+
 **System Capability:** SystemCapability.DistributedDataManager.RelationalStore.Core
 
 **Since:** 22
@@ -3768,7 +3780,7 @@ public func goToLastRow(): Bool
 
 | Type | Description |
 |:----|:----|
-| Bool | Returns true if the result set is successfully moved; otherwise returns false. |
+| Bool | Returns true if the result set is successfully moved. |
 
 **Exceptions:**
 
@@ -3825,6 +3837,10 @@ public func goToNextRow(): Bool
 
 **Function:** Moves to the next row in the result set.
 
+> **Attention:**
+>
+> This interface does not return `false` on failure, but throws an exception. Please ensure that you handle error code prompts appropriately when calling it.
+
 **System Capability:** SystemCapability.DistributedDataManager.RelationalStore.Core
 
 **Since:** 22
@@ -3833,7 +3849,7 @@ public func goToNextRow(): Bool
 
 | Type | Description |
 | :---- | :---- |
-| Bool | Returns true if the result set is successfully moved; otherwise returns false. |
+| Bool | Returns true if the result set is successfully moved. |
 
 **Exceptions:**
 
@@ -3890,6 +3906,10 @@ public func goToPreviousRow(): Bool
 
 **Function:** Moves to the previous row in the result set.
 
+> **Attention:**
+>
+> This interface does not return `false` on failure, but throws an exception. Please ensure that you handle error code prompts appropriately when calling it.
+
 **System Capability:** SystemCapability.DistributedDataManager.RelationalStore.Core
 
 **Since:** 22
@@ -3898,7 +3918,7 @@ public func goToPreviousRow(): Bool
 
 | Type | Description |
 | :---- | :---- |
-| Bool | Returns true if the result set is successfully moved; otherwise returns false. |
+| Bool | Returns true if the result set is successfully moved. |
 
 **Exceptions:**
 
@@ -3955,6 +3975,10 @@ public func goToRow(position: Int32): Bool
 
 **Function:** Moves to the specified row in the result set.
 
+> **Attention:**
+>
+> This interface does not return `false` on failure, but throws an exception. Please ensure that you handle error code prompts appropriately when calling it.
+
 **System Capability:** SystemCapability.DistributedDataManager.RelationalStore.Core
 
 **Since:** 22
@@ -3969,7 +3993,7 @@ public func goToRow(position: Int32): Bool
 
 | Type | Description |
 | :---- | :---- |
-| Bool | Returns true if the result set is successfully moved; otherwise returns false. |
+| Bool | Returns true if the result set is successfully moved. |
 
 **Exceptions:**
 
