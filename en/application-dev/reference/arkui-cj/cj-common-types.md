@@ -16250,7 +16250,9 @@ public operator func !=(other: SafeAreaType): Bool
 
 |Type|Description|
 |:----|:----|
-|Bool|Returns true if the two enums are not equal, otherwise returns false.|## enum SafeAreaEdge
+|Bool|Returns true if the two enums are not equal, otherwise returns false.|
+
+## enum SafeAreaEdge
 
 ```cangjie
 public enum SafeAreaEdge <: Equatable<SafeAreaEdge> {

@@ -58,7 +58,7 @@ func align(value: ?Alignment): T
 
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
-| value | ?[Alignment](cj-common-types.md#enum-alignment) | Yes | - | Alignment method <br>Default: Alignment.Center |
+| value | ?[Alignment](cj-common-types.md#enum-alignment) | Yes | - | Alignment mode for child elements in container drawing area.<br>This setting is effective only in the following components: [Stack](cj-row-column-stack-stack.md), [Shape](cj-graphic-drawing-shape.md), [Button](cj-button-picker-button.md), [StepperItem](cj-navigation-switching-stepperitem.md), [Text](cj-text-input-text.md), [TextArea](cj-text-input-textarea.md), [TextInput](cj-text-input-textinput.md), [RichEditor](cj-text-input-richeditor.md), [ListItem](cj-scroll-swipe-listitem.md), [GridItem](cj-scroll-swipe-griditem.md), [Scroll](cj-scroll-swipe-scroll.md), [LoadingProgress](cj-information-display-loadingprogress.md), [PatternLock](cj-information-display-patternlock.md), [Progress](cj-information-display-progress.md), [QRCode](cj-information-display-qrcode.md), [TextClock](cj-information-display-textclock.md), [TextTimer](cj-information-display-texttimer.md), [MenuItem](cj-menu-menuitem.md), [Toggle](cj-button-picker-toggle.md), [Checkbox](cj-button-picker-checkbox.md).For text alignment in [Text](cj-text-input-text.md), [TextArea](cj-text-input-textarea.md), [TextInput](cj-text-input-textinput.md), [RichEditor](cj-text-input-richeditor.md) components, see [textAlign](cj-text-input-text.md#func-textaligntextalign).<br>If a component does not support the textAlign attribute, horizontal text alignment cannot be configured.<br> Default: Alignment.Center |
 
 **Return Value:**
 

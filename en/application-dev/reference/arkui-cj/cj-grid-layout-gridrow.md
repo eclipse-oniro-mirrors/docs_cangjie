@@ -135,7 +135,7 @@ public init(
 
 ## Common Attributes/Events
 
-Common Attributes: All supported except text styles.
+Common Attributes: All supported.
 
 Common Events: All supported.
 

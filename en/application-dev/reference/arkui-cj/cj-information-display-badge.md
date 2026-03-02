@@ -70,7 +70,7 @@ public init(value!: String, style!: ?BadgeStyle, position!: ?BadgePosition = Non
 
 ## Common Attributes/Events
 
-Common Attributes: All supported except text styles.
+Common Attributes: All supported.
 
 Common Events: All supported.
 

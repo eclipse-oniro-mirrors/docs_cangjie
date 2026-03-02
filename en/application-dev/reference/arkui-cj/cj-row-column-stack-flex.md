@@ -55,7 +55,7 @@ public init(direction!: ?FlexDirection = None, wrap!: ?FlexWrap = None,
 
 ## Common Attributes/Events
 
-Common Attributes: All are supported except text styles. For container components with their own `alignItems` property, the common `align` attribute does not take effect.
+Common Attributes: All are supported.
 
 Common Events: All are supported.
 

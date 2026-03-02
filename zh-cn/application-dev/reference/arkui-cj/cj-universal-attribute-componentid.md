@@ -68,7 +68,9 @@ func key(value: ?String): T
 |:---|:---|
 |T|返回调用此接口的组件实例本身。|
 
-## func getInspectorByKey(String)
+## 基于组件标识的拓展能力
+
+### func getInspectorByKey(String)
 
 ```cangjie
 public func getInspectorByKey(id: String): String
@@ -98,7 +100,7 @@ public func getInspectorByKey(id: String): String
 | :-------   | :---------- |
 | String   | 组件属性列表的JSON字符串。<br>**说明：** <br>字符串信息包含组件的tag、id、位置信息(相对于窗口左上角的坐标)以及用于测试检查的组件所包含的相关属性信息。   |
 
-## func getInspectorTree()
+### func getInspectorTree()
 
 ```cangjie
 public func getInspectorTree(): String
@@ -116,7 +118,7 @@ public func getInspectorTree(): String
 | :-------   | :---------- |
 | String  | 组件树及组件属性列表的JSON对象。 |
 
-## func sendEventByKey(String, IntNative, String)
+### func sendEventByKey(String, IntNative, String)
 
 ```cangjie
 public func sendEventByKey(id: String, action: IntNative, params: String): Bool
@@ -142,7 +144,7 @@ public func sendEventByKey(id: String, action: IntNative, params: String): Bool
 | :-------   | :---------- |
 | Bool   | 找不到指定id的组件时返回false，其余情况返回true。 |
 
-## func sendTouchEvent(TouchObject)
+### func sendTouchEvent(TouchObject)
 
 ```cangjie
 public func sendTouchEvent(event: TouchObject): Bool
@@ -166,7 +168,7 @@ public func sendTouchEvent(event: TouchObject): Bool
 | :-------   | :---------- |
 | Bool | 事件发送失败时时返回false，其余情况返回true。|
 
-## func sendKeyEvent(KeyEvent)
+### func sendKeyEvent(KeyEvent)
 
 ```cangjie
 public func sendKeyEvent(event: KeyEvent): Bool
@@ -190,7 +192,7 @@ public func sendKeyEvent(event: KeyEvent): Bool
 | :-------   | :---------- |
 | Bool | 事件发送失败时时返回false，其余情况返回true。|
 
-## func sendMouseEvent(MouseEvent)
+### func sendMouseEvent(MouseEvent)
 
 ```cangjie
 public func sendMouseEvent(event: MouseEvent): Bool

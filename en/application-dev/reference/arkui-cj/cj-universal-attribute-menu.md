@@ -64,7 +64,7 @@ func bindMenu(content: ?Array<MenuElement>): T
 
 | Parameter Name | Type | Required | Default Value | Description |
 | :--- | :--- | :--- | :--- | :--- |
-| content | ?Array\<[MenuElement](./cj-common-types.md#class-menuelement)> | Yes | - | **Named parameter.** Array of menu elements. |
+| content | ?Array\<[MenuElement](./cj-common-types.md#class-menuelement)> | Yes | - | Array of menu elements. |
 
 **Return Value:**
 
