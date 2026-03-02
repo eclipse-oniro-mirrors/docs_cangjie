@@ -40,6 +40,10 @@ public init(header!: ?CustomBuilder, footer!: ?CustomBuilder, child!: () -> Unit
 | footer | ?[CustomBuilder](./cj-common-types.md#type-custombuilder) | Yes | - | **Named parameter.** Sets the footer display information for the corresponding group. Initial value: { => }. |
 | child | () -> Unit | No | {=>} | **Named parameter.** Declares the child components within the container. |
 
+> **Note:**
+>
+> When passing [CustomBuilder](./cj-common-types.md#type-custombuilder) type parameters, use bind to manage the invocation of custom builder functions. For bind usage, see the bind function description in [Framework Interfaces](./cj-ui-framework.md).
+
 ### init(?ResourceStr, ?ResourceStr, () -> Unit)
 
 ```cangjie

@@ -6,7 +6,7 @@
 > Currently in the beta phase.
 <!--DelEnd-->
 
-This page documents the public interfaces used by the UI framework. Application developers are prohibited from using these interfaces, as doing so may lead to unexpected results.
+This page describes the public interfaces used by the UI framework.
 
 ## Import Module
 
@@ -39,6 +39,10 @@ public func bind(builder: (CustomView) -> ViewBuilder, thisView: CustomView): ()
 | :------------------------ | :--------------------------------------- |
 | () -> Unit | Returns the bind function, can used as a builder. |
 
+> **Note:**
+>
+> bind is recommended when using the [title](./cj-navigation-switching-navdestination.md#func-titlecustombuilder-navigationtitleoptions)、[tabBar](./cj-navigation-switching-tabcontent.md#func-tabbarcustombuilder) attributes, or when constructing [MenuItemGroup](./cj-menu-menuitemgroup.md#initcustombuilder-custombuilder----unit) objects.
+
 ## func bind\<T1>((CustomView,ObservedProperty\<T1>) -> ViewBuilder, CustomView)
 
 ```cangjie
@@ -63,6 +67,10 @@ public func bind<T1>(builder: (CustomView, ObservedProperty<T1>) -> ViewBuilder,
 | Type                      | Description                              |
 | :------------------------ | :--------------------------------------- |
 | () -> Unit | Returns the bind function, can used as a builder. |
+
+> **Note:**
+>
+> bind is recommended when using the [title](./cj-navigation-switching-navdestination.md#func-titlecustombuilder-navigationtitleoptions)、[tabBar](./cj-navigation-switching-tabcontent.md#func-tabbarcustombuilder) attributes, or when constructing [MenuItemGroup](./cj-menu-menuitemgroup.md#initcustombuilder-custombuilder----unit) objects.
 
 ## func bind\<T1, T2>((CustomView,ObservedProperty\<T1>,ObservedProperty\<T2>) -> ViewBuilder, CustomView)
 
@@ -92,6 +100,10 @@ public func bind<T1, T2>(
 | :------------------------ | :--------------------------------------- |
 | () -> Unit | Returns the bind function, can used as a builder. |
 
+> **Note:**
+>
+> bind is recommended when using the [title](./cj-navigation-switching-navdestination.md#func-titlecustombuilder-navigationtitleoptions)、[tabBar](./cj-navigation-switching-tabcontent.md#func-tabbarcustombuilder) attributes, or when constructing [MenuItemGroup](./cj-menu-menuitemgroup.md#initcustombuilder-custombuilder----unit) objects.
+
 ## func bind\<T1, T2, T3>((CustomView,ObservedProperty\<T1>,ObservedProperty\<T2>,ObservedProperty\<T3>) -> ViewBuilder, CustomView)
 
 ```cangjie
@@ -112,6 +124,10 @@ public func bind<T1, T2, T3>(builder: (CustomView, ObservedProperty<T1>, Observe
 | builder | ([CustomView](#class-customview),ObservedProperty\<T1>,ObservedProperty\<T2>,ObservedProperty\<T3>)->ViewBuilder | Yes | - | [@Builder](../../arkui-cj/paradigm/cj-macro-builder.md) decorated function type. |
 | thisView | [CustomView](#class-customview) | Yes | - | Current custom component object (usually `this`). |
 
+> **Note:**
+>
+> bind is recommended when using the [title](./cj-navigation-switching-navdestination.md#func-titlecustombuilder-navigationtitleoptions)、[tabBar](./cj-navigation-switching-tabcontent.md#func-tabbarcustombuilder) attributes, or when constructing [MenuItemGroup](./cj-menu-menuitemgroup.md#initcustombuilder-custombuilder----unit) objects.
+
 ## class RemoteView
 
 ```cangjie
@@ -126,6 +142,10 @@ public abstract class RemoteView {
 
 **Since:** 22
 
+> **Note:**
+>
+> This type is for framework internal use only. Application developers should not use it, as doing so may lead to unexpected behavior.
+
 ### init()
 
 ```cangjie
@@ -137,6 +157,10 @@ public init()
 **System Capability:** SystemCapability.ArkUI.ArkUI.Full
 
 **Since:** 22
+
+> **Note:**
+>
+> This interface is for framework internal use only. Application developers should not call it, as doing so may lead to unexpected behavior.
 
 ### func build()
 
@@ -167,6 +191,10 @@ public abstract class CustomView <: RemoteView {
 
 - [RemoteView](#class-remoteview)
 
+> **Note:**
+>
+> This type is for framework internal use only. Application developers should not use it, as doing so may lead to unexpected behavior.
+
 ### func getLocalStorage()
 
 ```cangjie
@@ -184,6 +212,10 @@ public func getLocalStorage(): LocalStorage
 | Type | Description |
 |:----|:----|
 | [LocalStorage](./cj-state-rendering-appstatemanagement.md#class-localstorage) | Persistent storage object. |
+
+> **Note:**
+>
+> This interface is for framework internal use only. Application developers should not call it, as doing so may lead to unexpected behavior.
 
 ### func build()
 
@@ -209,6 +241,10 @@ public func aboutToBeDeleted(): Unit
 
 **Since:** 22
 
+> **Note:**
+>
+> This interface is for framework internal use only. Application developers should not call it, as doing so may lead to unexpected behavior.
+
 ### func getUIContext()
 
 ```cangjie
@@ -226,3 +262,7 @@ public func getUIContext(): UIContext
 | Type | Description |
 |:----|:----|
 | [UIContext](./cj-apis-uicontext-uicontext.md#class-uicontext) | UI context. |
+
+> **Note:**
+>
+> This interface is for framework internal use only. Application developers should not call it, as doing so may lead to unexpected behavior.

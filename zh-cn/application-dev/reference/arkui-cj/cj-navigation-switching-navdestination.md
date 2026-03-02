@@ -91,6 +91,10 @@ public func title(value: ?CustomBuilder, options!: ?NavigationTitleOptions = Non
 |value|?[CustomBuilder](./cj-common-types.md#type-custombuilder)|是|-|页面标题。初始值：{=>}。|
 |options|?[NavigationTitleOptions](./cj-navigation-switching-navigation.md#class-navigationtitleoptions)|否|None|**命名参数。** 标题栏选项。|
 
+> **说明：**
+>
+> 传入[CustomBuilder](./cj-common-types.md#type-custombuilder)类型的参数时，需使用bind管理自定义构建函数的调用，bind使用方式请参见[框架接口](./cj-ui-framework.md)中的bind函数说明。
+
 ### func title(?ResourceStr, ?NavigationTitleOptions)
 
 ```cangjie

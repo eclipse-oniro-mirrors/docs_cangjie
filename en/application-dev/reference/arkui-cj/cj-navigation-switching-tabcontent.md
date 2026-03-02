@@ -91,7 +91,8 @@ public func tabBar(content: ?CustomBuilder): This
 
 > **Note:**
 >
-> If the set content exceeds the space provided by the TabBar, it will be clipped.
+> - If the set content exceeds the space provided by the TabBar, it will be clipped.
+> - When passing [CustomBuilder](./cj-common-types.md#type-custombuilder) type parameters, use bind to manage the invocation of custom builder functions. For bind usage, see the bind function description in [Framework Interfaces](./cj-ui-framework.md).
 
 ### func tabBar(?ResourceStr)
 

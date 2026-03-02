@@ -6,7 +6,7 @@
 > 当前为Beta阶段。
 <!--DelEnd-->
 
-此页面记录UI框架使用的公开接口，应用开发者禁止使用，否则会产生无法预期的结果。
+本页面描述UI框架使用的公开接口。
 
 ## 导入模块
 
@@ -39,6 +39,10 @@ public func bind(builder: (CustomView) -> ViewBuilder, thisView: CustomView): ()
 |:----|:----|
 |() -> Unit|返回builder函数。|
 
+> **说明：**
+>
+> bind推荐在使用属性[title](./cj-navigation-switching-navdestination.md#func-titlecustombuilder-navigationtitleoptions)、[tabBar](./cj-navigation-switching-tabcontent.md#func-tabbarcustombuilder)以及构造[MenuItemGroup对象](./cj-menu-menuitemgroup.md#initcustombuilder-custombuilder----unit)时使用。
+
 ## func bind\<T1>((CustomView,ObservedProperty\<T1>) -> ViewBuilder, CustomView)
 
 ```cangjie
@@ -63,6 +67,10 @@ public func bind<T1>(builder: (CustomView, ObservedProperty<T1>) -> ViewBuilder,
 |类型|说明|
 |:----|:----|
 |(T1) -> Unit|返回builder函数。|
+
+> **说明：**
+>
+> bind推荐在使用属性[title](./cj-navigation-switching-navdestination.md#func-titlecustombuilder-navigationtitleoptions)、[tabBar](./cj-navigation-switching-tabcontent.md#func-tabbarcustombuilder)以及构造[MenuItemGroup对象](./cj-menu-menuitemgroup.md#initcustombuilder-custombuilder----unit)时使用。
 
 ## func bind\<T1, T2>((CustomView,ObservedProperty\<T1>,ObservedProperty\<T2>) -> ViewBuilder, CustomView)
 
@@ -92,6 +100,10 @@ public func bind<T1, T2>(
 |:----|:----|
 |(T1, T2) -> Unit|返回builder函数。|
 
+> **说明：**
+>
+> bind推荐在使用属性[title](./cj-navigation-switching-navdestination.md#func-titlecustombuilder-navigationtitleoptions)、[tabBar](./cj-navigation-switching-tabcontent.md#func-tabbarcustombuilder)以及构造[MenuItemGroup对象](./cj-menu-menuitemgroup.md#initcustombuilder-custombuilder----unit)时使用。
+
 ## func bind\<T1, T2, T3>((CustomView,ObservedProperty\<T1>,ObservedProperty\<T2>,ObservedProperty\<T3>) -> ViewBuilder, CustomView)
 
 ```cangjie
@@ -112,6 +124,11 @@ public func bind<T1, T2, T3>(builder: (CustomView, ObservedProperty<T1>, Observe
 |builder|([CustomView](#class-customview),ObservedProperty\<T1>,ObservedProperty\<T2>,ObservedProperty\<T3>)->ViewBuilder|是|-|[@Builder](../../arkui-cj/paradigm/cj-macro-builder.md)修饰的函数类型。|
 |thisView|[CustomView](#class-customview)|是|-|当前自定义组件对象（一般为this）。|
 
+> **说明：**
+>
+> bind推荐在使用属性[title](./cj-navigation-switching-navdestination.md#func-titlecustombuilder-navigationtitleoptions)、[tabBar](./cj-navigation-switching-tabcontent.md#func-tabbarcustombuilder)以及构造[MenuItemGroup对象](./cj-menu-menuitemgroup.md#initcustombuilder-custombuilder----unit)时使用。
+
+
 ## class RemoteView
 
 ```cangjie
@@ -126,6 +143,10 @@ public abstract class RemoteView {
 
 **起始版本：** 22
 
+> **说明：**
+>
+> 该类型仅供框架内部使用，应用开发者请勿使用，否则可能产生不可预期的行为。
+
 ### init()
 
 ```cangjie
@@ -137,6 +158,10 @@ public init()
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **起始版本：** 22
+
+> **说明：**
+>
+> 该接口仅供框架内部使用，应用开发者请勿调用，否则可能产生不可预期的行为。
 
 ### func build()
 
@@ -167,6 +192,10 @@ public abstract class CustomView <: RemoteView {
 
 - [RemoteView](#class-remoteview)
 
+> **说明：**
+>
+> 该类型仅供框架内部使用，应用开发者请勿使用，否则可能产生不可预期的行为。
+
 ### func getLocalStorage()
 
 ```cangjie
@@ -184,6 +213,10 @@ public func getLocalStorage(): LocalStorage
 |类型|说明|
 |:----|:----|
 |[LocalStorage](./cj-state-rendering-appstatemanagement.md#class-localstorage)|持久化存储对象。|
+
+> **说明：**
+>
+> 该接口仅供框架内部使用，应用开发者请勿调用，否则可能产生不可预期的行为。
 
 ### func build()
 
@@ -209,6 +242,10 @@ public func aboutToBeDeleted(): Unit
 
 **起始版本：** 22
 
+> **说明：**
+>
+> 该接口仅供框架内部使用，应用开发者请勿调用，否则可能产生不可预期的行为。
+
 ### func getUIContext()
 
 ```cangjie
@@ -226,3 +263,7 @@ public func getUIContext(): UIContext
 |类型|说明|
 |:----|:----|
 |[UIContext](./cj-apis-uicontext-uicontext.md#class-uicontext)|UI上下文。|
+
+> **说明：**
+>
+> 该接口仅供框架内部使用，应用开发者请勿调用，否则可能产生不可预期的行为。

@@ -91,7 +91,8 @@ public func tabBar(content: ?CustomBuilder): This
 
 > **说明：**
 >
-> 如果设置的内容超出TabBar提供的空间，则会被裁剪。
+> - 如果设置的内容超出TabBar提供的空间，则会被裁剪。
+> - 传入[CustomBuilder](./cj-common-types.md#type-custombuilder)类型的参数时，需使用bind管理自定义构建函数的调用，bind使用方式请参见[框架接口](./cj-ui-framework.md)中的bind函数说明。
 
 ### func tabBar(?ResourceStr)
 
