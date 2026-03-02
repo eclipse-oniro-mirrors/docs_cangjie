@@ -64,7 +64,7 @@ func bindMenu(content: ?Array<MenuElement>): T
 
 |参数名|类型|必填|默认值|说明|
 | :--- | :--- | :--- | :--- | :--- |
-| content | ?Array\<[MenuElement](./cj-common-types.md#class-menuelement)> | 是 | - | **命名参数。** 菜单元素数组。|
+| content | ?Array\<[MenuElement](./cj-common-types.md#class-menuelement)> | 是 | - | 菜单元素数组。|
 
 **返回值：**
 

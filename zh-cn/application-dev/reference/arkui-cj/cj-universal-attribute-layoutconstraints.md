@@ -57,7 +57,7 @@ func align(value: ?Alignment): T
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|value|?[Alignment](cj-common-types.md#enum-alignment)|是|-|对齐方式<br>初始值：Alignment.Center。|
+|value|?[Alignment](cj-common-types.md#enum-alignment)|是|-|设置容器元素绘制区域内的子元素的对齐方式。<br>只在[Stack](cj-row-column-stack-stack.md)、[Shape](cj-graphic-drawing-shape.md)、[Button](cj-button-picker-button.md)、[StepperItem](cj-navigation-switching-stepperitem.md)、[Text](cj-text-input-text.md)、[TextArea](cj-text-input-textarea.md)、[TextInput](cj-text-input-textinput.md)、[RichEditor](cj-text-input-richeditor.md)、[ListItem](cj-scroll-swipe-listitem.md)、[GridItem](cj-scroll-swipe-griditem.md)、[Scroll](cj-scroll-swipe-scroll.md)、[LoadingProgress](cj-information-display-loadingprogress.md)、[PatternLock](cj-information-display-patternlock.md)、[Progress](cj-information-display-progress.md)、[QRCode](cj-information-display-qrcode.md)、[TextClock](cj-information-display-textclock.md)、[TextTimer](cj-information-display-texttimer.md)、[MenuItem](cj-menu-menuitem.md)、[Toggle](cj-button-picker-toggle.md)、[Checkbox](cj-button-picker-checkbox.md)中生效，其中和文本相关的组件[Text](cj-text-input-text.md)、[TextArea](cj-text-input-textarea.md)、[TextInput](cj-text-input-textinput.md)、[RichEditor](cj-text-input-richeditor.md)的align结果参考[textAlign](cj-text-input-text.md#func-textaligntextalign)。<br>不支持textAlign属性的组件则无法设置水平方向的文字对齐。<br>初始值：Alignment.Center。|
 
 **返回值：**
 

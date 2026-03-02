@@ -36,7 +36,7 @@ public init()
 
 ## Common Attributes/Common Events
 
-Common Attributes: All are supported except text styles.
+Common Attributes: All are supported.
 
 > **Note:**
 >

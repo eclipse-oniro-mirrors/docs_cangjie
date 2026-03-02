@@ -51,7 +51,7 @@ public func animateTo(value: AnimateParam, event: VoidCallback): Unit
 public func createAnimator(options: AnimatorOptions): AnimatorResult
 ```
 
-**功能：** 创建animator动画结果对象（AnimatorResult）
+**功能：** 创建animator动画结果对象（AnimatorResult）。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 

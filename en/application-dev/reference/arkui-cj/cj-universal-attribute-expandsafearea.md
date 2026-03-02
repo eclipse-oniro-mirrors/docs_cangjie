@@ -31,7 +31,7 @@ func expandSafeArea(types!: ?Array<SafeAreaType>, edges!: ?Array<SafeAreaEdge>):
 | Name | Type | Required | Default Value | Description |
 | :--- | :--- | :--- | :--- | :--- |
 | types | ?Array\<[SafeAreaType](./cj-common-types.md#enum-safeareatype)> | Yes | - | **Named parameter.** Configures the type of safe area to extend. <br/>Initial value: [SafeAreaType.System, SafeAreaType.Cutout, SafeAreaType.Keyboard]. |
-| edges | ?Array\<[SafeAreaEdge](./cj-common-types.md#enum-safeareatype)> | Yes | - | **Named parameter.** Configures the direction to extend the safe area. <br/>Initial value: [SafeAreaEdge.Top, SafeAreaEdge.Bottom, SafeAreaEdge.Start, SafeAreaEdge.End]. |
+| edges | ?Array\<[SafeAreaEdge](./cj-common-types.md#enum-safeareaedge)> | Yes | - | **Named parameter.** Configures the direction to extend the safe area. <br/>Initial value: [SafeAreaEdge.Top, SafeAreaEdge.Bottom, SafeAreaEdge.Start, SafeAreaEdge.End]. |
 
 > **Notes:**
 >

@@ -40,7 +40,7 @@ public init(context: ?CanvasRenderingContext2D)
 
 ## 通用属性/通用事件
 
-通用属性: 全部支持。
+通用属性：全部支持。
 
 通用事件：全部支持。
 

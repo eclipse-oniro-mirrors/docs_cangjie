@@ -68,7 +68,9 @@ This interface is intended solely for application testing. When used alongside i
 |:---|:---|
 | T | Returns the component instance itself that called this interface. |
 
-## func getInspectorByKey(String)
+## Component ID-Based Extended Capabilities
+
+### func getInspectorByKey(String)
 
 ```cangjie
 public func getInspectorByKey(id: String): String
@@ -98,7 +100,7 @@ public func getInspectorByKey(id: String): String
 | :-------   | :---------- |
 | String   | A JSON string of the component's attribute list.<br>**Note:** <br>The string includes the component's tag, id, position information (coordinates relative to the top-left corner of the window), and relevant attribute information for testing purposes.   |
 
-## func getInspectorTree()
+### func getInspectorTree()
 
 ```cangjie
 public func getInspectorTree(): String
@@ -116,7 +118,7 @@ public func getInspectorTree(): String
 | :-------   | :---------- |
 | String  | A JSON object containing the component tree and attribute list. |
 
-## func sendEventByKey(String, IntNative, String)
+### func sendEventByKey(String, IntNative, String)
 
 ```cangjie
 public func sendEventByKey(id: String, action: IntNative, params: String): Bool
@@ -142,7 +144,7 @@ public func sendEventByKey(id: String, action: IntNative, params: String): Bool
 | :-------   | :---------- |
 | Bool   | Returns false if the specified id is not found; otherwise, returns true. |
 
-## func sendTouchEvent(TouchObject)
+### func sendTouchEvent(TouchObject)
 
 ```cangjie
 public func sendTouchEvent(event: TouchObject): Bool
@@ -166,7 +168,7 @@ public func sendTouchEvent(event: TouchObject): Bool
 | :-------   | :---------- |
 | Bool | Returns false if the event fails to send; otherwise, returns true.|
 
-## func sendKeyEvent(KeyEvent)
+### func sendKeyEvent(KeyEvent)
 
 ```cangjie
 public func sendKeyEvent(event: KeyEvent): Bool
@@ -190,7 +192,7 @@ public func sendKeyEvent(event: KeyEvent): Bool
 | :-------   | :---------- |
 | Bool | Returns false if the event fails to send; otherwise, returns true.|
 
-## func sendMouseEvent(MouseEvent)
+### func sendMouseEvent(MouseEvent)
 
 ```cangjie
 public func sendMouseEvent(event: MouseEvent): Bool

@@ -55,7 +55,7 @@ public init(direction!: ?FlexDirection = None, wrap!: ?FlexWrap = None,
 
 ## 通用属性/通用事件
 
-通用属性：除文本样式外，其余全部支持；对于自身独有 alignItems 属性的容器组件，通用属性 align 不生效。
+通用属性：全部支持。
 
 通用事件：全部支持。
 
