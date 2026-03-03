@@ -2477,6 +2477,7 @@ public func modifyImageProperty(key: PropertyKey, value: String): Unit
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 62980104 | Failed to initialize the internal object. |
+  | 62980110 | The image source data is incorrect. |
   | 62980115 | Parameter error.Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
   | 62980123 | The image does not support EXIF decoding. |
   | 62980133 | The EXIF data is out of range. |

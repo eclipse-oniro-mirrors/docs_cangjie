@@ -2033,6 +2033,9 @@ public func modifyImageProperty(key: PropertyKey, value: String): Unit
 
   | Error Code ID | Error Message |
   | ------------- | ------------- |
+  | 62980104      | Failed to initialize the internal object. |
+  | 62980110      | The image source data is incorrect. |
+  | 62980115      | Invalid image parameter. |
   | 62980123      | The image does not support EXIF decoding. |
   | 62980133      | The EXIF data is out of range. |
   | 62980135      | The EXIF value is invalid. |
