@@ -8,6 +8,10 @@
 
 The ImageData object can store pixel data rendered by a canvas.
 
+> **Note：**
+>
+> When creating ImageData, the width and height should not exceed 16384px, and the maximum area should not exceed 16000px*16000px. Exceeding the maximum area will prevent proper rendering.
+
 ## Import Module
 
 ```cangjie
@@ -99,6 +103,11 @@ public init(width: ?Float64, height: ?Float64, data!: ?Array<UInt8>,
 | data | ?Array\<UInt8> | No | - | **Named parameter.** A one-dimensional array containing corresponding color data, with values ranging from 0 to 255. |
 | unit | ?[LengthMetricsUnit](./cj-common-types.md#enum-lengthmetricsunit) | No | None | **Named parameter.** Used to configure the unit mode of the ImageData object. Once configured, it cannot be dynamically changed. The configuration method is the same as [CanvasRenderingContext2D](./cj-canvas-drawing-canvasrenderingcontext2d.md#class-canvasrenderingcontext2d). |
 
+> **Note：**
+>
+> - width and height cannot be less than 0.0, otherwise there will be unexpected results.
+> - The size of data must be equal to 4.0 * width * height, otherwise there will be unexpected results.
+
 ### init(?Float64, ?Float64, ?LengthMetricsUnit)
 
 ```cangjie
@@ -118,3 +127,7 @@ public init(width: ?Float64, height: ?Float64, unit!: ?LengthMetricsUnit = None)
 | width | ?Float64 | No | - | Width of the rectangular area, with vp as the default unit. |
 | height | ?Float64 | No | - | Height of the rectangular area, with vp as the default unit. |
 | unit | ?[LengthMetricsUnit](./cj-common-types.md#enum-lengthmetricsunit) | No | None | **Named parameter.** Used to configure the unit mode of the ImageData object. Once configured, it cannot be dynamically changed. The configuration method is the same as [CanvasRenderingContext2D](./cj-canvas-drawing-canvasrenderingcontext2d.md#class-canvasrenderingcontext2d). |
+
+> **Note：**
+>
+> width and height cannot be less than 0.0, otherwise there will be unexpected results.
