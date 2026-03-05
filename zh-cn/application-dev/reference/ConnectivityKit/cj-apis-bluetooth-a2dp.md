@@ -384,7 +384,7 @@ public func on(eventType: ProfileCallbackType, callback: Callback1Argument<State
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|eventType|[ProfileCallbackType](cj-apis-bluetooth-base_profile.md#enum-profilecallbacktype)|是|-|传入[CONNECTION_STATE_CHANGE](./cj-apis-bluetooth-base_profile.md#connectionstatechange)，表示连接状态变化事件类型。|
+|eventType|[ProfileCallbackType](cj-apis-bluetooth-base_profile.md#enum-profilecallbacktype)|是|-|传入[ConnectionStateChange](./cj-apis-bluetooth-base_profile.md#connectionstatechange)，表示连接状态变化事件类型。|
 |callback|Callback1Argument\<[StateChangeParam](cj-apis-bluetooth-base_profile.md#class-statechangeparam)>|是|-|表示回调函数的入参。|
 
 **异常：**
@@ -481,7 +481,7 @@ public var codecChannelMode: CodecChannelMode
 public var codecSampleRate: CodecSampleRate
 ```
 
-**功能：** 表示编码器的采样率，初始值为CodecBitsPerSampleNone。
+**功能：** 表示编码器的采样率，初始值为CodecSampleRateNone。
 
 **类型：** [CodecSampleRate](#enum-codecsamplerate)
 

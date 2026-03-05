@@ -3061,10 +3061,15 @@ import kit.PerformanceAnalysisKit.Hilog
 try {
     let ctx = Global.abilityContext // 此处需手动配置模板，获取Context上下文。上下文获取方式请参见使用说明。
     let cameraManager = getCameraManager(ctx)
+    let cameraDevices = cameraManager.getSupportedCameras()
+    let camera = cameraDevices[0]
+    let mode = cameraManager.getSupportedSceneModes(camera)[0]
+    let cameraOutputCapability = cameraManager.getSupportedOutputCapability(camera, mode)
+    let profile = cameraOutputCapability.previewProfiles[0]
     let size = ImageSize(8, 8192)
     let receiver = createImageReceiver(size, ImageFormat.Jpeg, 8)
     let surfaceId: String = receiver.getReceivingSurfaceId()
-    let previewOutput = cameraManager.createPreviewOutput(surfaceId)
+    let previewOutput = cameraManager.createPreviewOutput(profile, surfaceId)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -3227,19 +3232,20 @@ public func createVideoOutput(profile: VideoProfile, surfaceId: String): VideoOu
 // index.cj
 
 import kit.CameraKit.*
-import kit.ImageKit.createImageReceiver
-import kit.ImageKit.Size as ImageSize
-import kit.ImageKit.ImageFormat
 import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
     let ctx = Global.abilityContext // 此处需手动配置模板，获取Context上下文。上下文获取方式请参见使用说明。
     let cameraManager = getCameraManager(ctx)
-    let size = ImageSize(8, 8192)
-    let receiver = createImageReceiver(size, ImageFormat.Jpeg, 8)
-    let surfaceId: String = receiver.getReceivingSurfaceId()
-    let videoOutput = cameraManager.createVideoOutput(surfaceId)
+    let cameraDevices = cameraManager.getSupportedCameras()
+    let camera = cameraDevices[0]
+    let mode = cameraManager.getSupportedSceneModes(camera)[0]
+    let cameraOutputCapability = cameraManager.getSupportedOutputCapability(camera, mode)
+    let profile = cameraOutputCapability.videoProfiles[0]
+    // 假设从AVRecorder获取surfaceId
+    let surfaceId: String = "surfaceId_from_avrecorder"
+    let videoOutput = cameraManager.createVideoOutput(profile, surfaceId)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -6257,11 +6263,11 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 // 此处代码可添加在依赖项定义中
-class SmoothZoomInfoAvailableCallback1 <: Callback1Argument<SmoothZoomInfo> {
+class FocusStateChangeCallback <: Callback1Argument<FocusState> {
     public static var invoked = false
 
-    public func invoke(err: ?BusinessException, info: SmoothZoomInfo) {
-        Hilog.info(0, "AppLogCj", "[multimedia_camera | SmoothZoomInfoAvailable Callback]: info: ${info.duration}")
+    public func invoke(err: ?BusinessException, state: FocusState) {
+        Hilog.info(0, "AppLogCj", "[multimedia_camera | FocusStateChange Callback]: state: ${state.toString()}")
         invoked = true
     }
 }
@@ -6271,8 +6277,8 @@ try {
     let cameraManager = getCameraManager(ctx)
     let photoSession = cameraManager.createSession(SceneMode.NormalPhoto) as PhotoSession
     let session = photoSession.getOrThrow()
-    let callback = SmoothZoomInfoAvailableCallback1()
-    session.on(CameraEvents.SmoothZoomInfoAvailable, callback)
+    let callback = FocusStateChangeCallback()
+    session.on(CameraEvents.FocusStateChange, callback)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -8406,11 +8412,11 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 // 此处代码可添加在依赖项定义中
-class SmoothZoomInfoAvailableCallback5 <: Callback1Argument<SmoothZoomInfo> {
+class FocusStateChangeCallback1 <: Callback1Argument<FocusState> {
     public static var invoked = false
 
-    public func invoke(err: ?BusinessException, info: SmoothZoomInfo) {
-        Hilog.info(0, "AppLogCj", "[multimedia_camera | SmoothZoomInfoAvailable Callback]: info: ${info.duration}")
+    public func invoke(err: ?BusinessException, state: FocusState) {
+        Hilog.info(0, "AppLogCj", "[multimedia_camera | FocusStateChange Callback]: state: ${state.toString()}")
         invoked = true
     }
 }
@@ -8420,8 +8426,8 @@ try {
     let cameraManager = getCameraManager(ctx)
     let videoSession = cameraManager.createSession(SceneMode.NormalVideo) as VideoSession
     let session = videoSession.getOrThrow()
-    let callback = SmoothZoomInfoAvailableCallback5()
-    session.on(CameraEvents.SmoothZoomInfoAvailable, callback)
+    let callback = FocusStateChangeCallback1()
+    session.on(CameraEvents.FocusStateChange, callback)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }

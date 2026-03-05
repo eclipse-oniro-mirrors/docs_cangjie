@@ -165,7 +165,7 @@ public init(
 |:---|:---|:---|:---|:---|
 |fd|Int32|是|-|资源句柄，通过[getRawFd](../LocalizationKit/cj-apis-resource_manager.md#func-getrawfdstring)获取，也可以通过[open](../CoreFileKit/cj-apis-file_fs.md#static-func-openstring-int64)获取。|
 |offset|Int64|否|0| **命名参数。** 资源偏移量，默认值为0，需要基于预置资源的信息输入，非法值会造成音视频资源解析错误。|
-|length|Int64|否|-1| **命名参数。** 资源长度，默认值为-1，需要基于预置资源的信息输入，非法值会造成字幕频资源解析错误。|
+|length|Int64|否|-1| **命名参数。** 资源长度，默认值为-1，需要基于预置资源的信息输入，非法值会造成音视频资源解析错误。|
 
 ## class AVImageGenerator
 
@@ -250,7 +250,6 @@ public func fetchFrameByTime(timeUs: Int64, options: AVImageQueryOptions, param:
 
 **示例：**
 
-<!-- compile only -->
 <!-- compile -->
 
 ```cangjie

@@ -65,7 +65,6 @@ public func createGattClientDevice(deviceId: String): GattClientDevice
 
 **示例：**
 
-<!-- compile only -->
 <!-- compile -->
 
 ```cangjie
@@ -3512,11 +3511,11 @@ public init(
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|write|Bool|否|true| **命名参数。** 该特征值是否支持写入操作。|
-|writeNoResponse|Bool|否|true| **命名参数。** 该特征值是否支持写入操作。|
-|read|Bool|否|true| **命名参数。** 该特征值是否支持读取操作。|
-|notify|Bool|否|false| **命名参数。** 该特征值是否支持主动向对端设备通知特征值内容。|
-|indicate|Bool|否|false| **命名参数。** 该特征值是否支持向对端设备指示特征值内容。|
+|write|Bool|否|true|**命名参数。** 该特征值是否支持写入操作。|
+|writeNoResponse|Bool|否|true|**命名参数。** 该特征值是否支持写入操作。|
+|read|Bool|否|true|**命名参数。** 该特征值是否支持读取操作。|
+|notify|Bool|否|false|**命名参数。** 该特征值是否支持主动向对端设备通知特征值内容。|
+|indicate|Bool|否|false|**命名参数。** 该特征值是否支持向对端设备指示特征值内容。|
 |broadcast|Bool|否|false|**命名参数。** 该特征值是否支持作为广播内容由server端发送。<br>true表示支持，server端可将特征值内容以[ServiceData](#class-servicedata)类型在广播报文中携带，false表示不支持。默认值为false。预留字段，本版本暂不支持。|
 |authenticatedSignedWrite|Bool|否|false|**命名参数。** 该特征值是否支持签名写入操作，通过对写入内容进行签名校验替代加密流程。<br>true表示支持，且该特征值权限[GattPermissions](#class-gattpermissions)中的writeSigned或writeSignedMitm需设置为true，否则该属性不生效，false表示不支持。默认值为false。预留字段，本版本暂不支持。|
 |extendedProperties|Bool|否|false|**命名参数。** 该特征值是否存在扩展属性。<br>true表示存在扩展属性，false表示不存在。默认值为false。预留字段，本版本暂不支持。|
@@ -4341,7 +4340,7 @@ import kit.PerformanceAnalysisKit.Hilog
 try {
     let rspBuffer = Array<Byte>()
     let serverResponse: ServerResponse = ServerResponse(
-        "XX:XX:XX:XX:XX:XX'", 0, 0, 0,
+        "XX:XX:XX:XX:XX:XX", 0, 0, 0,
         rspBuffer
     )
     let gattServer = createGattServer()
@@ -4891,8 +4890,8 @@ public init(
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|deviceId|String|否|""| **命名参数。** 过滤该BLE设备地址的广播报文。例如："XX:XX:XX:XX:XX:XX"。预留字段，本版本暂不支持。|
-|name|String|否|""|**命名参数。** 过滤该BLE设备名称的广播报文。。预留字段，本版本暂不支持。|
+|deviceId|String|否|""|**命名参数。** 过滤该BLE设备地址的广播报文。例如："XX:XX:XX:XX:XX:XX"。预留字段，本版本暂不支持。|
+|name|String|否|""|**命名参数。** 过滤该BLE设备名称的广播报文。预留字段，本版本暂不支持。|
 |serviceUUID|String|否|""|**命名参数。** 过滤包含该服务UUID的广播报文。例如：00001888-0000-1000-8000-00805f9b34fb。预留字段，本版本暂不支持。|
 |serviceUUIDMask|String|否|""|**命名参数。** 搭配serviceUUID过滤器使用，可设置过滤部分服务UUID。例如：FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF。预留字段，本版本暂不支持。|
 |serviceSolicitationUUID|String|否|""|**命名参数。** 过滤包含该服务请求UUID的广播报文。例如：00001888-0000-1000-8000-00805F9B34FB。预留字段，本版本暂不支持。|

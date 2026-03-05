@@ -1313,7 +1313,6 @@ public func packToData(source: ImageSource, options: PackingOption): Array<UInt8
 
 **示例：**
 
-<!-- compile only -->
 <!-- compile -->
 
 ```cangjie
@@ -1444,7 +1443,6 @@ public func packToFile(source: ImageSource, fd: Int32, options: PackingOption): 
 
 **示例：**
 
-<!-- compile only -->
 <!-- compile -->
 
 ```cangjie
@@ -2091,7 +2089,6 @@ public func createPixelMap(options!: DecodingOptions = DecodingOptions()): Pixel
 
 **示例：**
 
-<!-- compile only -->
 <!-- compile -->
 
 ```cangjie
@@ -2179,7 +2176,6 @@ public func createPixelMapList(options!: DecodingOptions = DecodingOptions()): A
 
 **示例：**
 
-<!-- compile only -->
 <!-- compile -->
 
 ```cangjie
@@ -2246,7 +2242,6 @@ public func getDelayTimeList(): Array<Int32>
 
 **示例：**
 
-<!-- compile only -->
 <!-- compile -->
 
 ```cangjie
@@ -2303,7 +2298,6 @@ public func getFrameCount(): UInt32
 
 **示例：**
 
-<!-- compile only -->
 <!-- compile -->
 
 ```cangjie
@@ -2357,7 +2351,6 @@ public func getImageInfo(index!: UInt32 = 0): ImageInfo
 
 **示例：**
 
-<!-- compile only -->
 <!-- compile -->
 
 ```cangjie
@@ -2425,7 +2418,6 @@ public func getImageProperty(key: PropertyKey, options!: ImagePropertyOptions = 
 
 **示例：**
 
-<!-- compile only -->
 <!-- compile -->
 
 ```cangjie
@@ -2486,7 +2478,6 @@ public func modifyImageProperty(key: PropertyKey, value: String): Unit
 
 **示例：**
 
-<!-- compile only -->
 <!-- compile -->
 
 ```cangjie
@@ -2582,7 +2573,6 @@ public func updateData(buf: Array<UInt8>, isFinished: Bool, offset: UInt32, leng
 
 **示例：**
 
-<!-- compile only -->
 <!-- compile -->
 
 ```cangjie
@@ -2887,7 +2877,7 @@ public init(format: String, quality: UInt8, bufferSize!: UInt64 = 0,
 |quality|UInt8|是|-|1. 编码中设定输出图片质量的参数，该参数仅对JPEG图片和HEIF图片生效。取值范围：[0, 100]。0质量最低，100质量最高，质量越高生成图片所占空间越大。WebP、PNG等图片均为无损编码。<br> 2.sdr_astc_4x4编码中，可以设定输出图片质量的参数，可选参数：92、85。<br>3. sut编码中，设定输出图片质量可选参数：92。<br>4. hdr_astc_4x4编码中，可以设定输出图片质量的参数，可选参数：85。|
 |bufferSize|UInt64|否|0|**命名参数。** 接收编码数据的缓冲区大小，单位为Byte。如果不设置大小，默认为25M。如果编码图片超过25M，需要指定大小。bufferSize需大于编码后图片大小。使用[packToFile](#func-packtofileimagesource-int32-packingoption)不受此参数限制。|
 |desiredDynamicRange|[PackingDynamicRange](#enum-packingdynamicrange)|否|Sdr|**命名参数。** 目标动态范围。默认值为Sdr。|
-|needsPackProperties|Bool|否|false|**命名参数。** 是否需要编码图片属性信息，例如EXIF。true表示需要，false表示不需要。默认值为false。。|
+|needsPackProperties|Bool|否|false|**命名参数。** 是否需要编码图片属性信息，例如EXIF。true表示需要，false表示不需要。默认值为false。|
 
 ## class PixelMap
 
@@ -2983,7 +2973,6 @@ public func applyColorSpace(targetColorSpace: ColorSpaceManager): Unit
 
 **示例：**
 
-<!-- compile only -->
 <!-- compile -->
 
 ```cangjie
@@ -3034,7 +3023,6 @@ public func createAlphaPixelMap(): PixelMap
 
 **示例：**
 
-<!-- compile only -->
 <!-- compile -->
 
 ```cangjie
@@ -3083,7 +3071,6 @@ public func crop(region: Region): Unit
 
 **示例：**
 
-<!-- compile only -->
 <!-- compile -->
 
 ```cangjie
@@ -3134,7 +3121,6 @@ public func flip(horizontal: Bool, vertical: Bool): Unit
 
 **示例：**
 
-<!-- compile only -->
 <!-- compile -->
 
 ```cangjie
@@ -3185,7 +3171,6 @@ public func getBytesNumberPerRow(): UInt32
 
 **示例：**
 
-<!-- compile only -->
 <!-- compile -->
 
 ```cangjie
@@ -3237,7 +3222,6 @@ public func getColorSpace(): ColorSpaceManager
 
 **示例：**
 
-<!-- compile only -->
 <!-- compile -->
 
 ```cangjie
@@ -3287,7 +3271,6 @@ public func getDensity(): Int32
 
 **示例：**
 
-<!-- compile only -->
 <!-- compile -->
 
 ```cangjie
@@ -3336,7 +3319,6 @@ public func getImageInfo(): ImageInfo
 
 **示例：**
 
-<!-- compile only -->
 <!-- compile -->
 
 ```cangjie
@@ -3385,7 +3367,6 @@ public func getPixelBytesNumber(): UInt32
 
 **示例：**
 
-<!-- compile only -->
 <!-- compile -->
 
 ```cangjie
@@ -3434,7 +3415,6 @@ public func opacity(rate: Float32): Unit
 
 **示例：**
 
-<!-- compile only -->
 <!-- compile -->
 
 ```cangjie
@@ -3484,7 +3464,6 @@ public func readPixels(area: PositionArea): Unit
 
 **示例：**
 
-<!-- compile only -->
 <!-- compile -->
 
 ```cangjie
@@ -3539,7 +3518,6 @@ public func readPixelsToBuffer(dst: Array<UInt8>): Unit
 
 **示例：**
 
-<!-- compile only -->
 <!-- compile -->
 
 ```cangjie
@@ -3591,7 +3569,6 @@ public func release(): Unit
 
 **示例：**
 
-<!-- compile only -->
 <!-- compile -->
 
 ```cangjie
@@ -3645,7 +3622,6 @@ public func rotate(angle: Float32): Unit
 
 **示例：**
 
-<!-- compile only -->
 <!-- compile -->
 
 ```cangjie
@@ -3701,7 +3677,6 @@ public func scale(x: Float32, y: Float32): Unit
 
 **示例：**
 
-<!-- compile only -->
 <!-- compile -->
 
 ```cangjie
@@ -3752,7 +3727,6 @@ public func setColorSpace(colorSpace: ColorSpaceManager): Unit
 
 **示例：**
 
-<!-- compile only -->
 <!-- compile -->
 
 ```cangjie
@@ -3806,7 +3780,6 @@ translate后的图片尺寸改变为：width+X ，height+Y，建议translate后�
 
 **示例：**
 
-<!-- compile only -->
 <!-- compile -->
 
 ```cangjie
@@ -3857,7 +3830,6 @@ public func writeBufferToPixels(src: Array<UInt8>): Unit
 
 **示例：**
 
-<!-- compile only -->
 <!-- compile -->
 
 ```cangjie
@@ -3913,7 +3885,6 @@ RGBA的区域计算公式：读取区域（region.size{width * height}）* 4 （
 
 **示例：**
 
-<!-- compile only -->
 <!-- compile -->
 
 ```cangjie

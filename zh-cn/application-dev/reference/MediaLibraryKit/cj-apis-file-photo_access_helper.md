@@ -860,7 +860,7 @@ public var fetchColumns: Array<String>
 public var predicates: DataSharePredicates
 ```
 
-**功能：** 谓词查询，显示过滤条件。
+**功能：** 谓词查询，指定过滤条件。
 
 **类型：** [DataSharePredicates](../ArkData/cj-apis-data_share_predicates.md#class-datasharepredicates)
 
@@ -887,7 +887,7 @@ public init(fetchColumns: Array<String>, predicates: DataSharePredicates)
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |fetchColumns|Array\<String>|是|-| 检索条件，指定列名查询。|
-|predicates|[DataSharePredicates](../ArkData/cj-apis-data_share_predicates.md#class-datasharepredicates)|是|-| 谓词查询，显示过滤条件。|
+|predicates|[DataSharePredicates](../ArkData/cj-apis-data_share_predicates.md#class-datasharepredicates)|是|-| 谓词查询，指定过滤条件。|
 
 ## class FetchResult
 

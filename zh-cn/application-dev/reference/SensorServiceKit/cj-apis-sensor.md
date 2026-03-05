@@ -1414,7 +1414,7 @@ public class PedometerResponse <: Response {
 }
 ```
 
-**功能：** 计步传感器数据，。
+**功能：** 计步传感器数据。
 
 **系统能力：** SystemCapability.Sensors.Sensor
 

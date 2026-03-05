@@ -459,7 +459,7 @@ public prop algName: String
 public func initialize(opMode: CryptoMode, key: Key, params: ?ParamsSpec): Unit
 ```
 
-**功能：** 初始化加解密的[cipher](#class-cipher)对象。initialize、update、doFinal为三段式接口，需要成组使用。其中initialize和doFinal必选，update可选。
+**功能：** 初始化加解密的[Cipher](#class-cipher)对象。initialize、update、doFinal为三段式接口，需要成组使用。其中initialize和doFinal必选，update可选。
 
 必须在使用[createCipher](#func-createcipherstring)创建[Cipher](#class-cipher)实例后，才能使用本函数。
 
@@ -525,7 +525,7 @@ public func doFinal(data: ?DataBlob): DataBlob
 
 根据对称加解密的模式不同，doFinal的输出有如下区别：
 
-- 对于GCM和CCM模式的对称加密：一次加密流程中，如果将每次update和doFinal的结果拼接起来，会得到“密文 + authTag”。即末尾的16字节（GCM模式）或12字节（CCM模式）是authTag，其余部分均为密文。也就是说，如果doFinalSync的data参数传入None，则doFinalSync的结果就是 authTag。
+- 对于GCM和CCM模式的对称加密：一次加密流程中，如果将每次update和doFinal的结果拼接起来，会得到“密文 + authTag”。即末尾的16字节（GCM模式）或12字节（CCM模式）是authTag，其余部分均为密文。也就是说，如果doFinal的data参数传入None，则doFinal的结果就是 authTag。
 
   authTag需要填入解密时的[GcmParamsSpec](#class-gcmparamsspec)或[CcmParamsSpec](#class-ccmparamsspec)；密文则作为解密时的入参data。
 - 对于其他模式的对称加解密、GCM和CCM模式的对称解密：一次加/解密流程中，每一次update和doFinal的结果拼接起来，得到完整的明文/密文。
@@ -1158,7 +1158,7 @@ import kit.PerformanceAnalysisKit.Hilog
 
 try {
     let rand = createRandom()
-    let promiseGenerateRand = rand.generateRandom(12)
+    let randomData = rand.generateRandom(12)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -1279,7 +1279,6 @@ public func clearMem(): Unit
 // index.cj
 
 import kit.CryptoArchitectureKit.*
-import kit.PerformanceAnalysisKit.*
 import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -1332,7 +1331,6 @@ public func getEncoded(): DataBlob
 // index.cj
 
 import kit.CryptoArchitectureKit.*
-import kit.PerformanceAnalysisKit.*
 import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -1451,7 +1449,7 @@ public func generateSymKey(): SymKey
 > **说明：**
 >
 > - 对于HMAC算法的对称密钥，如果已经在创建对称密钥生成器时指定了具体哈希算法（如指定“HMAC|SHA256”），则会随机生成与哈希长度一致的二进制密钥数据（如指定“HMAC|SHA256”会随机生成256位的密钥数据）。
-> - 如果在创建对称密钥生成器时没有指定具体哈希算法，如仅指定“HMAC”，则不支持随机生成对称密钥数据，可通过[convertKeySync](#func-convertkeydatablob)方式生成对称密钥数据。
+> - 如果在创建对称密钥生成器时没有指定具体哈希算法，如仅指定“HMAC”，则不支持随机生成对称密钥数据，可通过[convertKey](#func-convertkeydatablob)方式生成对称密钥数据。
 
 **系统能力：** SystemCapability.Security.CryptoFramework.Key.SymKey
 

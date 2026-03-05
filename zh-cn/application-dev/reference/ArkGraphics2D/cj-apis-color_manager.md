@@ -96,7 +96,7 @@ public func create(primaries: ColorSpacePrimaries, gamma: Float32): ColorSpaceMa
 
 |类型|说明|
 |:----|:----|
-|[ColorSpaceManager](#class-colorspacemanager)|返回当前创建的色域对象实例。<br>色域类型定义为[ColorSpace](#custom)枚举值`CUSTOM`。|
+|[ColorSpaceManager](#class-colorspacemanager)|返回当前创建的色域对象实例。<br>色域类型定义为[ColorSpace](#enum-colorspace)枚举值`CUSTOM`。|
 
 **异常：**
 
@@ -232,7 +232,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let colorSpaceManagerInstance = create(Srgb)
+    let colorSpaceManagerInstance = create(ColorSpace.Srgb)
     let colorSpace = colorSpaceManagerInstance.getGamma()
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
@@ -277,7 +277,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
-    let colorSpaceManagerInstance = create(Srgb)
+    let colorSpaceManagerInstance = create(ColorSpace.Srgb)
     let colorSpace = colorSpaceManagerInstance.getWhitePoint()
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")

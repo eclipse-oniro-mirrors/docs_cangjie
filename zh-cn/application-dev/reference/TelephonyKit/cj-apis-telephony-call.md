@@ -654,7 +654,7 @@ public operator func !=(other: CallState): Bool
 public operator func ==(other: CallState): Bool
 ```
 
-**功能：**  判断两个枚举值是否不相等。
+**功能：** 判断两个枚举值是否相等。
 
 **系统能力：** SystemCapability.Telephony.CallManager
 

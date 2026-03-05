@@ -183,7 +183,7 @@ public var keyPassword: String
 public var keyPath: String
 ```
 
-**功能：** 证书秘钥的路径。
+**功能：** 证书密钥的路径。
 
 **类型：** String
 
@@ -210,7 +210,7 @@ public init(certPath: String, keyPath: String, certType!: CertType = CertType.Pe
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |certPath|String|是|-|证书路径。|
-|keyPath|String|是|-|证书秘钥的路径。|
+|keyPath|String|是|-|证书密钥的路径。|
 |certType|[CertType](#enum-certtype)|否|CertType.Pem|**命名参数。** 证书类型，默认是CertType.Pem。|
 |keyPassword|String|否|""|**命名参数。** 证书密钥的密码。默认值为空字符串。|
 

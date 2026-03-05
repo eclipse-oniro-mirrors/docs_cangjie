@@ -498,7 +498,7 @@ try {
 public func isDefaultNetMetered(): Bool
 ```
 
-**功能：** 检查默认数据网络是否被激活。如果有默认数据网络，可以使用[getDefaultNet](#func-getdefaultnet)去获取。
+**功能：** 检查当前网络上的数据流量使用是否被计费（例如：WiFi网络不会被计费，蜂窝网络会被计费）
 
 **需要权限：** ohos.permission.GET_NETWORK_INFO
 
@@ -510,7 +510,7 @@ public func isDefaultNetMetered(): Bool
 
 |类型|说明|
 |:----|:----|
-|Bool|返回true表示默认数据网络被激活，返回false表示没有被激活。|
+|Bool|表示当前网络上的数据流量是否被计费。true表示会被计费，false表示不会被计费。|
 
 **异常：**
 

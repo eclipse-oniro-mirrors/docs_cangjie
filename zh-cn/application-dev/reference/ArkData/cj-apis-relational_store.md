@@ -1242,7 +1242,7 @@ public func isNotNull(field: String): RdbPredicates
 
 |类型|说明|
 |:----|:----|
-|[RdbPredicates](#class-rdbpredicates)|<返回与指定字段匹配的谓词。|
+|[RdbPredicates](#class-rdbpredicates)|返回与指定字段匹配的谓词。|
 
 **示例：**
 

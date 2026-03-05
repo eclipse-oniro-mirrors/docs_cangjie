@@ -659,11 +659,11 @@ try {
     let productModel = DeviceInfo.productModel
     Hilog.info(0, "deviceinfo", "the value of the productModelis : :${productModel}")
     let brand = DeviceInfo.brand
-    Hilog.info(0, "deviceinfo", "the value of the brand is : :{brand}")
+    Hilog.info(0, "deviceinfo", "the value of the brand is : :${brand}")
     let deviceType = DeviceInfo.deviceType
     Hilog.info(0, "deviceinfo", "the value of the deviceType is: :${deviceType}")
     let udid = DeviceInfo.udid
-    Hilog.info(0, "deviceinfo", "the value of the udid is : :{udid}")
+    Hilog.info(0, "deviceinfo", "the value of the udid is : :${udid}")
     let buildRootHash = DeviceInfo.buildRootHash
     Hilog.info(0, "deviceinfo", "the value of the buildRootHashis : :${buildRootHash}")
     let buildTime = DeviceInfo.buildTime
@@ -687,7 +687,7 @@ try {
     let displayVersion = DeviceInfo.displayVersion
     Hilog.info(0, "deviceinfo", "the value of thedisplayVersion is : :${displayVersion}")
     let serial = DeviceInfo.serial
-    Hilog.info(0, "deviceinfo", "the value of the serial is : :{serial}")
+    Hilog.info(0, "deviceinfo", "the value of the serial is : :${serial}")
     let osReleaseType = DeviceInfo.osReleaseType
     Hilog.info(0, "deviceinfo", "the value of the osReleaseTypeis : :${osReleaseType}")
     let incrementalVersion = DeviceInfo.incrementalVersion

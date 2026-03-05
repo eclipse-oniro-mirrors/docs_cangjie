@@ -53,7 +53,7 @@ public func abortSession(handle: HuksHandleId, options: HuksOptions): Unit
   | 801 | api is not supported. |
   | 12000004 | operating file failed. |
   | 12000005 | IPC communication failed. |
-  | 12000006 | error occured in crypto engine. |
+  | 12000006 | error occurred in crypto engine. |
   | 12000012 | Device environment or input parameter abnormal. |
   | 12000014 | memory is insufficient. |
 
@@ -436,7 +436,7 @@ public func generateKeyItem(keyAlias: String, options: HuksOptions): Unit
   | 12000003 | algorithm param is invalid. |
   | 12000004 | operating file failed. |
   | 12000005 | IPC communication failed. |
-  | 12000006 | error occured in crypto engine. |
+  | 12000006 | error occurred in crypto engine. |
   | 12000012 | Device environment or input parameter abnormal. |
   | 12000013 | queried credential does not exist. |
   | 12000014 | memory is insufficient. |
@@ -525,16 +525,6 @@ import kit.PerformanceAnalysisKit.Hilog
 
 try {
     let keyAlias = "KEY_ALIAS" // 密钥别名，在生成密钥时指定，在加密、解密和删除密钥时使用
-    let options = HuksOptions(properties:
-        [
-            HuksParam(HuksTag.HUKS_TAG_ALGORITHM, Uint32Value(HuksKeyAlg.HUKS_ALG_AES)),
-            HuksParam(HuksTag.HUKS_TAG_KEY_SIZE, Uint32Value(HuksKeySize.HUKS_AES_KEY_SIZE_128)),
-            HuksParam(
-                HuksTag.HUKS_TAG_PURPOSE,
-                Uint32Value(HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT | HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT)
-            )
-        ]
-    )
     let properties = getKeyItemProperties(keyAlias, HuksOptions())
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
@@ -572,7 +562,7 @@ public func importKeyItem(keyAlias: String, options: HuksOptions): Unit
   | 12000003 | algorithm param is invalid. |
   | 12000004 | operating file failed. |
   | 12000005 | IPC communication failed. |
-  | 12000006 | error occured in crypto engine. |
+  | 12000006 | error occurred in crypto engine. |
   | 12000011 | queried entity does not exist. |
   | 12000012 | Device environment or input parameter abnormal. |
   | 12000013 | queried credential does not exist. |
@@ -662,8 +652,8 @@ public func importWrappedKeyItem(keyAlias: String, wrappingKeyAlias: String, opt
 // index.cj
 
 import kit.UniversalKeystoreKit.*
-import kit.PerformanceAnalysisKit.*
 import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
 let keyAlias = "KEY_ALIAS" // 密钥别名，在生成密钥时指定，在加密、解密和删除密钥时使用
 let wrappingKeyAlias = "test_import_wrapped_wrong_wrapping_key"
@@ -893,9 +883,9 @@ public func updateSession(handle: HuksHandleId, options: HuksOptions, token!: By
 ```cangjie
 // index.cj
 
-import kit.PerformanceAnalysisKit.*
 import kit.UniversalKeystoreKit.*
 import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
 let keyAlias = "KEY_ALIAS" // 密钥别名，在生成密钥时指定，在加密、解密和删除密钥时使用
 try {
@@ -1193,7 +1183,7 @@ public static const HUKS_MODE_CBC: UInt32 = 2
 
 **功能：** 表示使用CBC加密模式。
 
-**类型：**  UInt32
+**类型：** UInt32
 
 **系统能力：** SystemCapability.Security.Huks.Core
 
@@ -1207,7 +1197,7 @@ public static const HUKS_MODE_CCM: UInt32 = 31
 
 **功能：** 表示使用CCM加密模式。
 
-**类型：**  UInt32
+**类型：** UInt32
 
 **系统能力：** SystemCapability.Security.Huks.Core
 
@@ -3315,7 +3305,7 @@ public static const HUKS_TAG_UNWRAP_ALGORITHM_SUITE: UInt32 = HuksTagType.HUKS_T
 public static const HUKS_TAG_USER_AUTH_TYPE: UInt32 = HuksTagType.HUKS_TAG_TYPE_UINT | 304
 ```
 
-**功能：** 表示用户认证类型。从[HuksUserAuthType](#class-huksuserauthtype)中选择，需要与安全访问控制类型同时设置。支持同时指定两种用户认证类型，如：安全访问控制类型指定为HUKS_SECURE_ACCESS_INVALID_NEW_BIO_ENROLL时，密钥访问认证类型可以指定以下三种： HUKS_USER_AUTH_TYPE_FACE 、HUKS_USER_AUTH_TYPE_FINGERPRINT、HUKS_USER_AUTH_TYPE_FACE MagIc_StrINg HUKS_USER_AUTH_TYPE_FINGERPRINT。
+**功能：** 表示用户认证类型。从[HuksUserAuthType](#class-huksuserauthtype)中选择，需要与安全访问控制类型同时设置。支持同时指定两种用户认证类型，如：安全访问控制类型指定为HUKS_SECURE_ACCESS_INVALID_NEW_BIO_ENROLL时，密钥访问认证类型可以指定以下三种： HUKS_USER_AUTH_TYPE_FACE、HUKS_USER_AUTH_TYPE_FINGERPRINT、HUKS_USER_AUTH_TYPE_FACE | HUKS_USER_AUTH_TYPE_FINGERPRINT。
 
 **类型：** UInt32
 

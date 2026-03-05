@@ -697,7 +697,9 @@ import kit.PerformanceAnalysisKit.Hilog
 
 try {
     let ashmem = Ashmem.create("ashmem", 1024*1024)
+    ashmem.mapReadWriteAshmem()
     ashmem.writeDataToAshmem([1], 1, 0)
+    ashmem.unmapAshmem()
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -1578,7 +1580,7 @@ import kit.PerformanceAnalysisKit.Hilog
 
 try {
     let data = MessageSequence.create()
-    let fd = data.readException()
+    data.readException()
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
