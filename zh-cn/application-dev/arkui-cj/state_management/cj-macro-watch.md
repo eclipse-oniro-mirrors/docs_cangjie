@@ -86,7 +86,7 @@
 
 以下示例展示组件更新和@Watch的处理步骤。count在CountModifier中由@State装饰，在TotalView中由@Link装饰。
 
- <!-- run -->
+<!-- run -->
 
 ```cangjie
 package ohos_app_cangjie_entry
@@ -132,7 +132,7 @@ class EntryView {
 
 以下示例说明了如何在子组件中观察@Link变量。
 
- <!-- run -->
+<!-- run -->
 
 ```cangjie
 package ohos_app_cangjie_entry

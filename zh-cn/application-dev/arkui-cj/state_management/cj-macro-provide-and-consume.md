@@ -82,7 +82,7 @@ var age: Float64;
 
 - 当装饰的数据类型为整数类型、浮点类型、布尔类型、字符类型、字符串类型时，可以观察到数值的变化。
 
-- 当装饰的对象是元祖类型、数组类型、区间类型的时候，可以观察到数组的元素的更新。
+- 当装饰的对象是元组类型、数组类型、区间类型的时候，可以观察到数组的元素的更新。
 
 - 当装饰的对象是DateTime时，可以观察到DateTime整体的赋值，同时可通过调用DateTime的函数addDays(Int64), addHours(Int64), addMinutes(Int64), addMonths(Int64), addNanoseconds(Int64), addSeconds(Int64), addWeeks(Int64), addYears(Int64)更新DateTime的属性。
 

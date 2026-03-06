@@ -88,7 +88,7 @@ class EntryView {
                 .height(200)
                 .margin(20)
                 .backgroundColor(Color(0xED6F21))
-                // 通过设置raitos为[0.0, 1.0]，实现当组件完全显示或完全消失在屏幕中时触发回调
+                // 通过设置ratios为[0.0, 1.0]，实现当组件完全显示或完全消失在屏幕中时触发回调
                 .onVisibleAreaChange([0.0, 1.0], {isVisible, currentRatio =>
                 this.sizeValue = isVisible.toString() + ", currentRatio:" + currentRatio.toString()
                 if (isVisible && currentRatio >= 1.0) {

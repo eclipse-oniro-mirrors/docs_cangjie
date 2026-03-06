@@ -22,7 +22,7 @@
 >
 > 自定义变量不能与基础通用属性/事件名重复。
 
-- 宏： 用于修饰类、结构、方法以及变量，并赋予其特殊的含义。如上述示例中@Entry、@Component和@State都是宏，[@Component](./cj-create-custom-components.md#component)表示自定义组件，[@Entry](./cj-create-custom-components.md#entry)表示该自定义组件为入口组件，[@State](../state_management/cj-macro-state.md)表示组件中的状态变量，状态变量变化会触发UI刷新。
+- 宏：用于修饰类、结构、方法以及变量，并赋予其特殊的含义。如上述示例中@Entry、@Component和@State都是宏，[@Component](./cj-create-custom-components.md#component)表示自定义组件，[@Entry](./cj-create-custom-components.md#entry)表示该自定义组件为入口组件，[@State](../state_management/cj-macro-state.md)表示组件中的状态变量，状态变量变化会触发UI刷新。
 
 - [UI描述](./cj-declarative-ui-description.md)：以声明式的方式来描述UI的结构，例如build()方法中的代码块。
 

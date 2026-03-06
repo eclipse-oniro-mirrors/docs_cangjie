@@ -30,7 +30,7 @@
 
 开发过程中常将对象数组与[ForEach](../rendering_control/cj-rendering-control-foreach.md)结合使用，但写法不当会导致 UI 不刷新。
 
- <!-- run -->
+<!-- run -->
 
 ```cangjie
 package ohos_app_cangjie_entry
@@ -87,7 +87,7 @@ class EntryView {
 
 由于 ForEach 中生成的 item 是常量，因此在点击改变 item 内容时，无法触发 UI 刷新，尽管日志显示 item 的值已经改变（打印了“change font size”）。因此，需要使用 ObservedArrayList，配合 \@Publish 修饰自定义类属性来实现可观测能力。
 
- <!-- run -->
+<!-- run -->
 
 ```cangjie
 package ohos_app_cangjie_entry

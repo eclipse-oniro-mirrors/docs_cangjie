@@ -131,7 +131,7 @@ class EntryView{
 
 【反例】
 
- <!-- run -->
+<!-- run -->
 
 ```cangjie
 package ohos_app_cangjie_entry
@@ -210,7 +210,7 @@ class EntryView{
 
 【反例】
 
- <!-- run -->
+<!-- run -->
 
 ```cangjie
 package ohos_app_cangjie_entry
