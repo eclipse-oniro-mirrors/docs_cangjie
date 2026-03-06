@@ -5338,7 +5338,7 @@ func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
 ### func requireArkModule(String)
 
 ```cangjie
-public func requireArkModule(src: String): JSValue
+public func requireArkModule(path: String): JSValue
 ```
 
 **功能：** 导入一个ArkTS模块，包括系统模块、HAP模块里的文件、HAR模块里的文件、HSP模块里的文件和Native模块，详见[在仓颉代码里导入ArkTS模块](../../learn-cj/FFI/cangjie-arkts/cangjie-load-arkts.md)。
@@ -5349,7 +5349,7 @@ public func requireArkModule(src: String): JSValue
 
 | 参数名 | 类型   | 必填 | 默认值 | 说明         |
 | :----- | :----- | :--- | :----- | :----------- |
-| src    | String | 是   | -      | 模块标识符。 |
+| path   | String | 是   | -      | 模块标识符。 |
 
 **返回值：**
 

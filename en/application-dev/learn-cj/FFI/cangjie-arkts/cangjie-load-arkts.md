@@ -7,7 +7,7 @@ The `JSContext.requireArkModule` interface in the ArkTS interop library can load
 ## Function Description
 
 ```cangjie
-public func requireArkModule(src: String): JSValue
+public func requireArkModule(path: String): JSValue
 ```
 
 ## Usage Restrictions
@@ -21,10 +21,10 @@ public func requireArkModule(src: String): JSValue
 
 ## Supported Scenarios
 
-| Scenario                | src Format                                                      | Description                                                                                                   |
+| Scenario                | path Format                                                     | Description                                                                                                   |
 |:---------------------- |:-------------------------------------------------------------- |:--------------------------------------------------------------------------------------------------------------|
 | System Modules          | @ohos.\*, @system.\*, @hms.\* and @kit.\*, e.g.: "@ohos.hilog"   | /                                                                                                             |
-| Files in HAP Modules    | Module name/path under the module, e.g.: "entry/src/main/ets/Index" | Supports files in .ets, .ts and .js formats. The src does not include a suffix (applicable to all scenarios). |
+| Files in HAP Modules    | Module name/path under the module, e.g.: "entry/src/main/ets/Index" | Supports files in .ets, .ts and .js formats. The path does not include a suffix (applicable to all scenarios). |
 | Files in HAR Modules    | Module name/path under the module, e.g.: "myhar/src/main/ets/Index" | Supports (local \| remote \| ohpm) (source code \| binary) HAR (additional configuration required).           |
 | Files in HSP Modules    | Module name/path under the module, e.g.: "@ohos/lottie/src/main/js/main" | Supports (remote \| ohpm) HSP.                                                                                |
 | Native Modules          | lib\<module name>.so, e.g.: "libentry.so"                        | Supports (napi \| Cangjie) modules included in (HAR \| local HSP \| HAP).                                     |
