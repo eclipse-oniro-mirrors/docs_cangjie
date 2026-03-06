@@ -5338,7 +5338,7 @@ func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
 ### func requireArkModule(String)
 
 ```cangjie
-public func requireArkModule(src: String): JSValue
+public func requireArkModule(path: String): JSValue
 ```
 
 **Function:** Import an ArkTS module, including system modules, files in HAP modules, files in HAR modules, files in HSP modules and Native modules, see [Importing ArkTS Modules in Cangjie Code](../../learn-cj/FFI/cangjie-arkts/cangjie-load-arkts.md).
@@ -5349,7 +5349,7 @@ public func requireArkModule(src: String): JSValue
 
 | Parameter | Type   | Required | Default | Description           |
 | :-------- | :----- | :------- | :------ | :-------------------- |
-| src       | String | Yes      | -       | The module specifier. |
+| path      | String | Yes      | -       | The module specifier. |
 
 **Return Value:**
 
