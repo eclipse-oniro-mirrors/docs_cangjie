@@ -91,7 +91,7 @@ class EntryView {
   b. Next checks if "aProp" exists in AppStorage—still absent.
   c. Creates a number-type property named "aProp" in AppStorage with the default value 47.
   d. PersistentStorage writes property "aProp" with value 47 to disk. Subsequent changes to "aProp" in AppStorage will be persisted.
-  e. The @StorageLink("aProp") aProp state variable in the Index component establishes two-way binding with "aProp" in AppStorage. During creation, it successfully finds "aProp" in AppStorage and uses its value 47.
+  e. The @StorageLink("aProp") aProp state variable in the EntryView component establishes two-way binding with "aProp" in AppStorage. During creation, it successfully finds "aProp" in AppStorage and uses its value 47.
 
 **Figure 1** PersistProp Initialization Rules
 
@@ -106,7 +106,7 @@ class EntryView {
 - Subsequent application launches:
   a. PersistentStorage.persistProp("aProp", 47) first queries the "aProp" property in PersistentStorage local files—successful.
   b. Writes the queried value to AppStorage.
-  c. Writes the queried value to AppStorage.
+  c. In the EntryView component, the value of the @StorageLink decorated aProp property is the value written by PersistentStorage to AppStorage, that is, the value stored when the application was closed last time.
 
 ### Accessing AppStorage Properties Before PersistentStorage
 
