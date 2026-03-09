@@ -2,7 +2,7 @@
 
 > **说明：**
 >
-> 为确保运行效果，本文以**DevEco Studio 5.0.2 Release** 和 **DevEco Studio-Cangjie Plugin 5.0.7.100 Beta1** 版本为例，单击[此处](https://developer.huawei.com/consumer/cn/download/)获取最新版本的下载链接。
+> 为确保运行效果，本文以**DevEco Studio 6.0.2 Release** 和 **DevEco Studio-Cangjie Plugin 6.0.2 Beta2** 版本为例，单击[此处](https://developer.huawei.com/consumer/cn/download/)获取最新版本的下载链接。
 
 本文档适用于对仓颉语言、ArkTS语言、UI框架等有基本概念的OpenHarmony应用开发者。基于一个简单的、支持页面跳转/返回功能的、纯ArkTS开发的应用，通过引入仓颉来开发一些增量业务（比如，仓颉提供一个同步接口给ArkTS调用，仓颉提供一个异步接口给ArkTS调用，在原ArkTS页面中嵌入一个仓颉组件），来帮助开发者快速了解如何在存量ArkTS业务中，快速引入仓颉进行开发，熟悉混合应用的开发流程。
 
@@ -45,7 +45,7 @@ Project_name
 其中：
 
 - **entry** 是通过 **Empty Ability** 工程模板创建的ArkTS模块，该模块会被编译为HAP包。
-- **my_module** 是通过 **Static Library** 工程模块创建的ArkTS静态库模块，该模块会被编译为HAR包，被**entry**模块依赖。
+- **my_module** 是通过工程模板创建的ArkTS模块，该模块会被编译为HAR包，被**entry**模块依赖。**my_module** 模块可以通过 **Shared Library** 工程模板创建，也可以通过 **Static Library** 工程模板创建，下面示例代码通过 **Shared Library** 工程模板创建ArkTS共享库模块。
 
 **entry**和**my_module**模块内各有一个页面，通过Navigation进行页面路由。
 
@@ -67,11 +67,11 @@ Project_name
    │    ├── mock
    │    ├── ohosTest
    │    └── test
+   ├── .gitignore
    ├── build-profile.json5
    ├── hvigorfile.ts
    ├── obfuscation-rules.txt
-   ├── oh-package.json5
-   └── oh-package-lock.json5
+   └── oh-package.json5
    ```
 
     - **entry > src > main > ets > pages > Index.ets** 文件的示例如下：
@@ -120,18 +120,23 @@ Project_name
    ├── src
    │    ├── main
    │    │    ├── ets
-   │    │    │    └── pages
-   │    │    │         └── MyModulePage.ets
+   │    │    │    ├── pages
+   |    │    │    │    ├── Index.ets
+   │    │    │    │    └── MyModulePage.ets
+   |    │    │    └── utils
    │    │    ├── resources
-   │    │    │    └── base
-   │    │    │         ├── element
-   │    │    │         └── profile
-   │    │    │              └──router_map.json
+   │    │    │    ├── base
+   │    │    │    │    ├── element
+   |    │    │    │    ├── media
+   │    │    │    │    └── profile
+   │    │    │    │         ├──main_pages.json
+   │    │    │    │         └──router_map.json
+   │    │    │    └── rawfile
    │    │    └── module.json5
    │    ├── ohosTest
    │    └── test
+   ├── .gitignore
    ├── build-profile.json5
-   ├── BuildProfile.ets
    ├── consumer-rules.txt
    ├── hvigorfile.ts
    ├── Index.ets
@@ -179,7 +184,6 @@ Project_name
     - **my_module > src > main > resources > base > profile > router_map.json**需要配置子页的路由信息，示例如下：
 
    ```json
-   // router_map.json
    {
      "routerMap": [
        {
@@ -207,10 +211,6 @@ Project_name
 
 ## 在ArkTS模块中增量使用仓颉
 
-> **说明：**
->
-> 仓颉模块目前仅支持OpenHarmony的静态库模块，即HAR静态共享包。
-
 仍以上方原始的ArkTS应用工程为例，介绍如何在ArkTS模块中（即**my_module**）使能仓颉开发。
 
 ### 右键菜单一键使能仓颉-ArkTS混合模块
@@ -232,22 +232,29 @@ Project_name
     │    ├── main
     │    │    ├── cangjie
     │    │    │    ├── types
-    │    │    │    │    └── libohos_app_cangjie_entry
+    │    │    │    │    └── libohos_app_cangjie_my_module
     │    │    │    │          ├── Index.d.ts
     │    │    │    │          └── oh-package.json5
     │    │    │    └── index.cj
     │    │    ├── ets
-    │    │    │    └── pages
-    │    │    │         └── MyModulePage.ets
+    │    │    │    ├── pages
+    |    │    │    |    ├── Index.ets
+    │    │    │    |    └── MyModulePage.ets
+    |    │    │    └── utils
     │    │    ├── resources
     │    │    │    └── base
-    │    │    │         ├── element
-    │    │    │         └── profile
-    │    │    │              └── router_map.json
+    │    │    │    |    ├── element
+    |    │    │    |    ├── media
+    │    │    │    |    └── profile
+    |    │    │    |         ├──main_pages.json
+    │    │    │    |         └── router_map.json
+    |    │    │    └── rawfile
     │    │    └── module.json5
     │    ├── ohosTest
     │    └── test
     ├── build-profile.json5
+    ├── cjpm.lock
+    ├── cjpm.toml
     ├── consumer-rules.txt
     ├── hvigorfile.ts
     ├── Index.ets
@@ -294,7 +301,7 @@ Project_name
 
 2. 自动生成仓颉-ArkTS互操作接口声明。
 
-   打开上述**index.cj**文件，在文件编辑界面中右键单击选择**Generate... > Cangjie-ArkTS Interop API**，则会在**entry > src > main > cangjie > types > libohos_app_cangjie_entry**目录下的**Index.d.ts**文件中自动生成仓颉暴露给ArkTS的.d.ts接口声明，目录结构如下所示：
+   打开上述**index.cj**文件，在文件编辑界面中右键单击选择**Generate... > Cangjie-ArkTS Interop API**，则会在**entry > src > main > cangjie > types > libohos_app_cangjie_my_module**目录下的**Index.d.ts**文件中自动生成仓颉暴露给ArkTS的.d.ts接口声明，目录结构如下所示：
 
    ```text
    my_module
@@ -306,7 +313,7 @@ Project_name
              ├── cangjie
              │    ├── ark_interop_api
              │    ├── types
-             │    │    └── libohos_app_cangjie_entry
+             │    │    └── libohos_app_cangjie_my_module
              │    │         │── Index.d.ts
              │    │         └── oh-package.json5
              │    └── index.cj
@@ -422,9 +429,11 @@ Project_name
         │    │    ├── cangjie_page.cj
         │    │    └── index.cj
         │    ├── ets
-        │    │    └── pages
-        │    │         └── cangjie_page.ets
-        │    │         └── MyModulePage.ets
+        │    │    ├── pages
+        │    │    |    ├── cangjie_page.ets
+        |    │    |    ├── Index.ets
+        │    │    |    └── MyModulePage.ets
+        |    |    └── utils
         │    ├── resources
         │    └── module.json5
         ├── ohosTest
