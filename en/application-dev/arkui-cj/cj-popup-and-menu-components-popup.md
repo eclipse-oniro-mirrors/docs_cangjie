@@ -207,7 +207,7 @@ class EntryView {
                 .bindPopup(
                     this.customPopup,
                     CustomPopupOptions(
-                        builder: bind(popupBuilder, this),
+                        builder: popupBuilder,
                         placement: Placement.Top,
                         showInSubWindow: false,
                         onStateChange: {
@@ -273,7 +273,7 @@ class EntryView {
                 .bindPopup(
                     this.customPopup,
                     CustomPopupOptions(
-                        builder: bind(popupBuilder, this), // Popup content
+                        builder: popupBuilder, // Popup content
                         placement: Placement.Bottom, // Popup position
                         popupColor: Color.Red, // Popup background color
                         showInSubWindow: false,

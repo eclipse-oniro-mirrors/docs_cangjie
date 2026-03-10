@@ -207,7 +207,7 @@ class EntryView {
                 .bindPopup(
                     this.customPopup,
                     CustomPopupOptions(
-                        builder: bind(popupBuilder, this),
+                        builder: popupBuilder,
                         placement: Placement.Top,
                         showInSubWindow: false,
                         onStateChange: {
@@ -273,7 +273,7 @@ class EntryView {
                 .bindPopup(
                     this.customPopup,
                     CustomPopupOptions(
-                        builder: bind(popupBuilder, this), // 气泡的内容
+                        builder: popupBuilder, // 气泡的内容
                         placement: Placement.Bottom, // 气泡的弹出位置
                         popupColor: Color.Red, // 气泡的背景色
                         showInSubWindow: false,

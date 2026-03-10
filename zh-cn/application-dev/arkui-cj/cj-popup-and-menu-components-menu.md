@@ -94,7 +94,7 @@ class EntryView {
                 endIcon: @r(app.media.startIcon),
                 labelInfo: @r(app.string.module_desc),
                 // 当builder参数进行配置时，表示与menuItem项绑定了子菜单。鼠标hover在该菜单项时，会显示子菜单。
-                builder: {=> bind(this.SubMenu, this)()}
+                builder: this.SubMenu
             )
             MenuItemGroup(header: "小标题", footer: "") {
                 =>
@@ -113,7 +113,7 @@ class EntryView {
                     content: @r(app.string.module_desc),
                     endIcon: @r(app.media.startIcon),
                     labelInfo: @r(app.string.module_desc),
-                    builder: {=> bind(this.SubMenu, this)()}
+                    builder: this.SubMenu
                 )
             }
 

@@ -344,13 +344,13 @@ public class EntryView {
     func build() {
         List() {
             ListItemGroup(
-                header: {=> bind(this.itemHead, this)("A")}){
+                header: this.itemHead("A")){
                     =>
                     // Iteratively render ListItems for group A
                 }
 
             ListItemGroup(
-                header: {=> bind(this.itemHead, this)("B")}) {
+                header: this.itemHead("B")) {
                     =>
                     // Iteratively render ListItems for group B
                 }
@@ -439,7 +439,7 @@ public class EntryView {
     func build() {
         List() {
             ForEach(this.contactsGroups, itemGeneratorFunc: { itemGroup: ContactGroup, _: Int64 =>
-                    ListItemGroup(header: { => bind(this.itemHead, this)(itemGroup.title)}) {
+                    ListItemGroup(header: this.itemHead(itemGroup.title)) {
                         this.footertest(itemGroup)
                     }
                     .divider(ListDividerOptions(strokeWidth: 1, color: Color(0X08000000), startMargin: 48, endMargin: 48))
@@ -573,7 +573,7 @@ In a message list, the `end` parameter configures the delete button. Passing the
     ListItem(){
         Text('1111').height(20)
     }
-    .swipeAction(end: { => bind(this.itemEnd, this)(index)}) // index is the ListItem's position
+    .swipeAction(end: this.itemEnd(index)) // index is the ListItem's position
     ```
 
 ## Adding Badges to List Items
@@ -710,7 +710,7 @@ Implementation steps:
                 ForEach(
                     this.routes,
                     itemGeneratorFunc: { itemGroup: ItemGroupInfo, _: Int64 =>
-                        ListItemGroup(header: {=> bind(this.ListItemGroupHeader, this)(itemGroup)},
+                        ListItemGroup(header: this.ListItemGroupHeader(itemGroup),
                             footer: {=>}, space: 0, style: ListItemGroupStyle.Card) {
                                 if (this.expandedItems[itemGroup.index] == 180.0) {
                                     ForEach(itemGroup.children, itemGeneratorFunc: { item: ItemInfo, _: Int64 =>

@@ -84,7 +84,7 @@ class EntryView {
                 RichEditor(this.controller)
                 .bindSelectionMenu(
                     spanType: RichEditorSpanType.Text,
-                    content: bind(this.RightClickTextCustomMenu, this),
+                    content: this.RightClickTextCustomMenu,
                     responseType: ResponseType.LongPress,
                     options: SelectionMenuOptions( onDisappear: {
                             => Hilog.info(0, " ", "Trigger this callback when the custom selection menu closes")

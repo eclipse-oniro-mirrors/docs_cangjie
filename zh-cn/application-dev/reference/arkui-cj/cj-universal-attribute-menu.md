@@ -300,7 +300,7 @@ class EntryView {
                         builder: myBuilder,
                         responseType: ResponseType.LongPress,
                         options: ContextMenuOptions(
-                            preview: bind(this.MyPreview, this),
+                            preview: this.MyPreview,
                             transition: TransitionEffect.SLIDE_SWITCH
                         )
                     )
@@ -316,7 +316,7 @@ class EntryView {
                         builder: myBuilder,
                         responseType: ResponseType.LongPress,
                         options: ContextMenuOptions(
-                            preview: bind(this.MyPreview, this),
+                            preview: this.MyPreview,
                             previewAnimationOptions: ContextMenuAnimationOptions(
                                 transition: TransitionEffect
                                     .OPACITY
@@ -336,7 +336,7 @@ class EntryView {
                         builder: myBuilder,
                         responseType: ResponseType.LongPress,
                         options: ContextMenuOptions(
-                            preview: bind(this.MyPreview, this),
+                            preview: this.MyPreview,
                             previewAnimationOptions: ContextMenuAnimationOptions()
                         )
                     )

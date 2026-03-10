@@ -345,7 +345,7 @@ class EntryView {
         Column() {
             List(space: 20) {
                 ForEach(this.timeTable, itemGeneratorFunc: {item:TimeTable ,_:Int64 =>
-                        ListItemGroup(header:{=>bind(this.itemHead,this)(item.title)},footer:{=>bind(this.itemFoot,this)(item.projects.size)}){
+                        ListItemGroup(header: this.itemHead(item.title), footer: this.itemFoot(item.projects.size)){
                             ForEach(item.projects,itemGeneratorFunc: {project:String,_:Int64=>
                                     ListItem(){
                                         Text(project)
