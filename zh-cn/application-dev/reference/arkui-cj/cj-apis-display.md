@@ -745,7 +745,7 @@ public prop xDpi: Float64
 public prop yDpi: Float64
 ```
 
-**功能：** y轴上的Dpi。
+**功能：** y轴上的DPI。
 
 **类型：** Float64
 

@@ -35,13 +35,13 @@
 
 ### `level` 检查
 
-`@IfAvailable` 宏表达式中，指定 `<label>` 为 `level` 时，该检查生效。
+`@IfAvailable` 宏表达式中，指定 `<label>` 为 `level` 时，该项检查生效。
 
 在任何作用域中，不允许调用比当前作用域更高 Level 的 API。即 `<lambda1>` 中不得调用高于 `level: <value>` 中 `<value>` 指定的值，在 `<lambda2>` 中不得调用高于当前工程的 Level 等级。
 
 ### `syscap` 检查
 
-`@IfAvailable` 宏表达式中，指定 `<label>` 为 `syscap` 时，该检查生效。
+`@IfAvailable` 宏表达式中，指定 `<label>` 为 `syscap` 时，该项检查生效。
 
 > **说明：**
 >

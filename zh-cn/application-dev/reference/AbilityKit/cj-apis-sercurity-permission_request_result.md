@@ -45,7 +45,7 @@ public class PermissionRequestResult {
 public var authResults: Array<Int32>
 ```
 
-**功能：** 相应请求权限的结果：
+**功能：** 响应请求权限的结果：
 
 - -1：未授权。如果dialogShownResults返回为true，表示用户首次申请；如果dialogShownResults返回为false，表示权限已设置，无需弹窗，需要用户在"设置"中修改。
 

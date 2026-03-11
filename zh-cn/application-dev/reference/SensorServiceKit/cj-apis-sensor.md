@@ -1495,7 +1495,7 @@ public open class Response {
 public var accuracy: SensorAccuracy
 ```
 
-**功能：** 传感器数据上报的精度挡位值。
+**功能：** 传感器数据上报的精度档位值。
 
 **类型：** [SensorAccuracy](#enum-sensoraccuracy)
 

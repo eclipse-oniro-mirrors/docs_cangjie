@@ -435,7 +435,7 @@ import std.collection.*
 
 @Component
 class AlignContentFlex{
-    // 初始化对其方式：多行布局下子组件首部对齐
+    // 初始化对齐方式：多行布局下子组件首部对齐
     var alignContent :  FlexAlign  = FlexAlign.Start
 
     func build(){

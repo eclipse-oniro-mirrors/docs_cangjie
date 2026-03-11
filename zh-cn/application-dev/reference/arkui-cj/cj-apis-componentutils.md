@@ -20,7 +20,7 @@ import kit.ArkUI.*
 public class ComponentUtils {}
 ```
 
-**功能：** 提供获取指定组件绘制区域坐标和大小。
+**功能：** 提供获取指定组件绘制区域坐标和大小的能力。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 

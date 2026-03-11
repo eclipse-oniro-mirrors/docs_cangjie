@@ -145,7 +145,7 @@ try {
 public func doubleClick(): Unit
 ```
 
-**功能：** 控件对象进行双击操作。
+**功能：** 对控件对象进行双击操作。
 
 **系统能力：** SystemCapability.Test.UiTest
 
@@ -1956,7 +1956,7 @@ public func mouseClick(p: Point, btnId: MouseButton, key1!: Int32 = 0, key2!: In
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |p|[Point](#class-point)|是|-|鼠标点击的坐标。|
-|btnId|[MouseButton](#enum-mousebutton)|是|-|按下的鼠标按钮。|
+|btnId|[MouseButton](#enum-mousebutton)|是|-|按下的鼠标按键。|
 |key1|Int32|否|0|**命名参数。** 指定的第一个key值，取值大于等于0的整数，默认值为0。|
 |key2|Int32|否|0|**命名参数。** 指定的第二个key值，取值大于等于0的整数，默认值为0。|
 
@@ -1997,7 +1997,7 @@ public func mouseDoubleClick(p: Point, btnId: MouseButton, key1!: Int32 = 0, key
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |p|[Point](#class-point)|是|-|鼠标双击的坐标。|
-|btnId|[MouseButton](#enum-mousebutton)|是|-|按下的鼠标按钮。|
+|btnId|[MouseButton](#enum-mousebutton)|是|-|按下的鼠标按键。|
 |key1|Int32|否|0|**命名参数。** 指定的第一个key值，取值大于等于0的整数，默认值0。|
 |key2|Int32|否|0|**命名参数。** 指定的第二个key值，取值大于等于0的整数，默认值0。|
 
@@ -2078,7 +2078,7 @@ public func mouseLongClick(p: Point, btnId: MouseButton, key1!: Int32 = 0, key2!
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |p|[Point](#class-point)|是|-|鼠标长按的坐标。|
-|btnId|[MouseButton](#enum-mousebutton)|是|-|按下的鼠标按钮。|
+|btnId|[MouseButton](#enum-mousebutton)|是|-|按下的鼠标按键。|
 |key1|Int32|否|0|**命名参数。** 指定的第一个key值，取值大于等于0的整数，默认值为0。|
 |key2|Int32|否|0|**命名参数。** 指定的第二个key值，取值大于等于0的整数，默认值为0。|
 
