@@ -180,7 +180,7 @@ class EntryView {
                 content: @r(app.string.contentName),
                 endIcon: this.iconStr,
                 labelInfo: @r(app.string.emptyName),
-                builder: {=> bind(this.SubMenu, this)()}
+                builder: this.SubMenu
             )
             MenuItemGroup(header: "小标题", footer: "") {
                 =>
@@ -189,14 +189,14 @@ class EntryView {
                     content: @r(app.string.contentName),
                     endIcon: @r(app.string.emptyName),
                     labelInfo: @r(app.string.emptyName),
-                    builder: {=> bind(this.SubMenu, this)()}
+                    builder: this.SubMenu
                     )
                 MenuItem(
                     startIcon: @r(app.media.startIcon),
                     content: @r(app.string.contentName),
                     endIcon: @r(app.media.right),
                     labelInfo: @r(app.string.emptyName),
-                    builder: {=> bind(this.SubMenu, this)()}
+                    builder: this.SubMenu
                 )
                 MenuItem(
                 startIcon: "",

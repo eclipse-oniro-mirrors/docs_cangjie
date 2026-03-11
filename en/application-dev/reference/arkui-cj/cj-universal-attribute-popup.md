@@ -169,7 +169,7 @@ class EntryView {
                 .bindPopup(
                     show: customPopup,
                     popup: CustomPopupOptions(
-                        builder: bind(popupBuilder, this),
+                        builder: popupBuilder,
                         enableArrow: true,
                         placement: Placement.BottomLeft,
                         popupColor: Color.RED,

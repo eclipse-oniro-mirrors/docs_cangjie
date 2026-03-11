@@ -247,7 +247,7 @@ class EntryView {
     func build() {
         Column() {
             Row() {
-                Checkbox(name: "AAA", indicatorBuilder: bind(indicatorA, this))
+                Checkbox(name: "AAA", indicatorBuilder: indicatorA)
                 Text("AAA")
             }
             Row() {

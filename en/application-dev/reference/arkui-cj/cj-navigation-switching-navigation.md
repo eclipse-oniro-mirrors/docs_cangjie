@@ -126,6 +126,10 @@ public func title(value: ?CustomBuilder, options!: ?NavigationTitleOptions = Non
 | value | ?[CustomBuilder](./cj-common-types.md#type-custombuilder) | Yes | - | The page title. Initial value: { => }. |
 | options | ?[NavigationTitleOptions](#class-navigationtitleoptions) | No | None | **Named parameter.** Title bar options. |
 
+> **Note:**
+>
+> When passing [CustomBuilder](./cj-common-types.md#type-custombuilder) type parameters, use bind to manage the invocation of custom builder functions. For bind usage, see the bind function description in [Framework Interfaces](./cj-ui-framework.md).
+
 ### func title(?ResourceStr, ?NavigationTitleOptions)
 
 ```cangjie

@@ -92,7 +92,7 @@ class EntryView {
                 endIcon: @r(app.media.startIcon),
                 labelInfo: @r(app.string.module_desc),
                 // When the builder parameter is configured, it indicates that a submenu is bound to the menuItem. Hovering over this menu item will display the submenu.
-                builder: {=> bind(this.SubMenu, this)()}
+                builder: this.SubMenu
             )
             MenuItemGroup(header: "Subtitle", footer: "") {
                 =>
@@ -111,7 +111,7 @@ class EntryView {
                     content: @r(app.string.module_desc),
                     endIcon: @r(app.media.startIcon),
                     labelInfo: @r(app.string.module_desc),
-                    builder: {=> bind(this.SubMenu, this)()}
+                    builder: this.SubMenu
                 )
             }
 

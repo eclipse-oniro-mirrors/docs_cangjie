@@ -85,7 +85,7 @@ The dialog provides lifecycle functions to notify users of its lifecycle. The li
                 .margin(top: 50)
                 .onClick({
                     evt => getUIContext().getPromptAction().openCustomDialog(
-                        CustomDialogOptions(builder: bind(this.CustomDialog, this)),
+                        CustomDialogOptions(builder: this.CustomDialog),
                         {
                             id => customdialogId = id
                         }
@@ -131,7 +131,7 @@ The dialog provides lifecycle functions to notify users of its lifecycle. The li
                     .onClick(
                         {
                             evt => getUIContext().getPromptAction().openCustomDialog(
-                                CustomDialogOptions(builder: bind(this.CustomDialog, this)),
+                                CustomDialogOptions(builder: this.CustomDialog),
                                 {
                                     id => customdialogId = id
                                 }
@@ -185,7 +185,7 @@ public class EntryView {
                 .margin(top: 50)
                 .onClick({
                         evt => getUIContext().getPromptAction().openCustomDialog(
-                            CustomDialogOptions(builder: bind(this.CustomDialog, this)),
+                            CustomDialogOptions(builder: this.CustomDialog),
                             {
                                 id => customdialogId = id
                             }
@@ -195,7 +195,7 @@ public class EntryView {
                 .margin(top: 50)
                 .onClick({
                         evt => getUIContext().getPromptAction().openCustomDialog(
-                            CustomDialogOptions(builder: bind(this.CustomDialog1, this)),
+                            CustomDialogOptions(builder: this.CustomDialog1),
                             {
                                 id => customdialogId = id
                             }

@@ -2423,10 +2423,10 @@ class EntryView {
             }
 
             RichEditor(controller)
-            .customKeyboard(value: bind(builder, this))
+            .customKeyboard(value: builder)
             .bindSelectionMenu(
                 spanType: RichEditorSpanType.Text,
-                content: bind(builder, this),
+                content: builder,
                 responseType: ResponseType.LongPress,
                 options: SelectionMenuOptions(onAppear: { => Hilog.info(0, "AppLogCj", "SelectionMenuOptions onAppear")}, onDisappear: { => Hilog.info(0, "AppLogCj", "SelectionMenuOptions onDisappear")})
             )
