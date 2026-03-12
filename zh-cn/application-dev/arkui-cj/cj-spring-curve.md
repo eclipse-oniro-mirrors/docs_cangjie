@@ -15,7 +15,7 @@ ArkUI提供了四种阻尼弹簧曲线接口。
 - [springMotion](../reference/arkui-cj/cj-apis-curves.md#static-func-springmotionfloat32-float32-float32)：创建弹性动画，动画时长由曲线参数、属性变化值大小和弹簧初速度自动计算，开发者指定的动画时长不生效。<br> springMotion不提供速度设置接口，速度通过继承获得，无需开发者指定。对于某个属性，如果当前存在正在运行的springMotion或者responsiveSpringMotion类型动画，新创建的弹簧动画将停止正在运行的动画，并继承其当前时刻的动画属性值和速度作为新建动画的初始状态。此外，接口提供默认参数，便于开发者直接使用。
 
     ```cangjie
-    public static func springMotion(response!: Float32 = 0.55, dampingFraction!: Float32 = 0.825,overlapDuration!: Float32 = 0.0): ICurve
+    public static func springMotion(response!: Float32 = 0.55, dampingFraction!: Float32 = 0.825, overlapDuration!: Float32 = 0.0): ICurve
     ```
 
 - [responsiveSpringMotion](../reference/arkui-cj/cj-apis-curves.md#static-func-responsivespringmotionfloat32-float32-float32)：是springMotion动画的一种特例，仅默认参数不同。一般用于跟手做成动画的场景，离手时可用springMotion创建动画，此时离手阶段动画将自动继承跟手阶段动画速度，完成动画衔接。<br> 当新动画的overlapDuration参数不为0，且当前属性的上一个springMotion动画还未结束时，response和dampingFraction将在overlapDuration指定的时间内，从旧动画的参数值过渡到新动画的参数值。
