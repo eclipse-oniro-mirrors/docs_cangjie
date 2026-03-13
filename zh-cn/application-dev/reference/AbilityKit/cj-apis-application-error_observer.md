@@ -120,7 +120,7 @@ public class ErrorObserver {
 public var onException: Option <(ErrorObject) -> Unit>
 ```
 
-**功能：** 应用产生异常，上报cangjie层时的回调。
+**功能：** 应用产生异常，上报仓颉层时的回调。
 
 **类型：** Option\<([ErrorObject](#class-errorobject))->Unit>
 

@@ -582,7 +582,7 @@ ListItem的[swipeAction属性](../reference/arkui-cj/cj-scroll-swipe-listitem.md
     ListItem(){
         Text('1111').height(20)
     }
-    .swipeAction(end: { => bind(this.itemEnd, this)(index)}) // index为该    ListItem在List中的索引值
+    .swipeAction(end: { => bind(this.itemEnd, this)(index)}) // index为该ListItem在List中的索引值
     ```
 
 ## 给列表项添加标记
