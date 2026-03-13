@@ -53,7 +53,7 @@ public init(index!: ?UInt32 = None, child!: () -> Unit = {=>})
 public func onChange(callback: ?(UInt32, UInt32) -> Unit): This
 ```
 
-**功能：** 点击当前StepperItem的prevLabel进行步骤切换时触发该事件；或点击当前StepperItem的nextLabel时当前页面不是步骤导航器最后一个StepperItem，并且ItemState属性为Normal时触发该事件。
+**功能：** 点击当前StepperItem的[prevLabel](./cj-navigation-switching-stepperitem.md#func-prevlabelstring)进行步骤切换时触发该事件；或点击当前StepperItem的[nextLabel](./cj-navigation-switching-stepperitem.md#func-nextlabelstring)时当前页面不是步骤导航器最后一个StepperItem，并且[ItemState](./cj-common-types.md#enum-itemstate)属性为Normal时触发该事件。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -63,7 +63,7 @@ public func onChange(callback: ?(UInt32, UInt32) -> Unit): This
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|callback|?(UInt32, UInt32) -> Unit|是|-|回调函数，当用户点击步骤导航器的左边或者右边按钮进行步骤切换时触发该事件。<br>第一个参数：切换前的步骤页索引值。<br>第二个参数：切换后的步骤页（前一页或者下一页）索引值。<br>初始值：{ _, _ => }。|
+|callback|?(UInt32, UInt32) -> Unit|是|-|回调函数。单击步骤导航器中的左边或者右边按钮进行步骤切换时触发该事件。<br>第一个参数：切换前的步骤页索引值。<br>第二个参数：切换后的步骤页（前一页或者下一页）索引值。<br>初始值：{ _, _ => }。|
 
 ### func onFinish(?() -> Unit)
 

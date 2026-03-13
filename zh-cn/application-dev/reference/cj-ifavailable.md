@@ -67,19 +67,22 @@
 ```cangjie
 package ohos.sample
 
+import kit.PerformanceAnalysisKit.Hilog
+import ohos.labels.APILevel
+
 @!APILevel[since: "22"]
 public func f22() {
-    println("level-22")
+    Hilog.info(0, "", "level-22")
 }
 
 @!APILevel[since: "23"]
 public func f23() {
-    println("level-23")
+    Hilog.info(0, "", "level-23")
 }
 
 @!APILevel[since: "24"]
 public func f24() {
-    println("level-24")
+    Hilog.info(0, "", "level-24")
 }
 ```
 
@@ -120,24 +123,27 @@ func demo() {
 ```cangjie
 package ohos.sample
 
+import kit.PerformanceAnalysisKit.Hilog
+import ohos.labels.APILevel
+
 @!APILevel[since: "22", syscap: "SystemCapability.A"]
 public func f1() {
-    println("SystemCapability.A")
+    Hilog.info(0, "", "SystemCapability.A")
 }
 
 @!APILevel[since: "22", syscap: "SystemCapability.B"]
 public func f2() {
-    println("SystemCapability.B")
+    Hilog.info(0, "", "SystemCapability.B")
 }
 
 @!APILevel[since: "22", syscap: "SystemCapability.C"]
 public func f3() {
-    println("SystemCapability.C")
+    Hilog.info(0, "", "SystemCapability.C")
 }
 
 @!APILevel[since: "22", syscap: "SystemCapability.D"]
 public func f4() {
-    println("SystemCapability.D")
+    Hilog.info(0, "", "SystemCapability.D")
 }
 ```
 

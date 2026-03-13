@@ -120,7 +120,7 @@
    func handleUnknownObject(context: JSContext, target: JSObject): Unit {
        // keys接口枚举对象的可枚举属性
        let keys = target.keys()
-       println("target keys: ${keys}")
+       Hilog.info(0, "", "target keys: ${keys}")
    }
    ```
 
