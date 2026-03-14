@@ -35,9 +35,9 @@ var a = hasKeyItem(keyAlias, HuksOptions())
 
 let options = HuksOptions(
     properties: [
-        HuksParam(HuksTag.HUKS_TAG_ALGORITHM, HuksParamValue.Uint32Value(HuksKeyAlg.HUKS_ALG_AES)),
-        HuksParam(HuksTag.HUKS_TAG_KEY_SIZE, HuksParamValue.Uint32Value(HuksKeySize.HUKS_AES_KEY_SIZE_128)),
-        HuksParam(HuksTag.HUKS_TAG_PURPOSE,  HuksParamValue.Uint32Value(1 | 2))
+        HuksParam(HuksTag.HUKS_TAG_ALGORITHM, HuksParamValue.Uint32Value(HuksKeyAlg.HUKS_ALG_DH)),
+        HuksParam(HuksTag.HUKS_TAG_PURPOSE, HuksParamValue.Uint32Value(HuksKeyPurpose.HUKS_KEY_PURPOSE_AGREE)),
+        HuksParam(HuksTag.HUKS_TAG_KEY_SIZE,  HuksParamValue.Uint32Value(HuksKeySize.HUKS_DH_KEY_SIZE_2048))
     ],
     inData: Bytes()
 )

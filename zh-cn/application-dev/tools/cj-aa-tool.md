@@ -562,7 +562,7 @@ The target application does not support debug mode.
 
 **处理步骤**
 
-使用Debug签名证书重新签名，安装新签名出的HAP后，再尝试执行该该命令。
+使用Debug签名证书重新签名，安装新签名出的HAP后，再尝试执行该命令。
 
 ### 10100101 获取应用信息失败
 
@@ -683,7 +683,7 @@ The device screen is locked during the application launch.
 
 **处理步骤**
 
-解释屏幕后重新尝试即可。
+解锁屏幕后重新尝试即可。
 
 ### 10106103 目标应用为到期众测应用
 
@@ -809,7 +809,7 @@ aa stop命令停止ServiceAbility时，-a的参数abilityName对应的Ability不
 
 **处理步骤**
 
-检查aa -a的参数abilityName对应的Abiility是否为ServiceAbility类型。
+检查aa -a的参数abilityName对应的Ability是否为ServiceAbility类型。
 
 ### 10104002 获取指定包信息失败
 
@@ -951,5 +951,5 @@ The target application is not a debug application.
 
 **处理步骤**
 
-使用Debug签名证书重新签名，安装新签名出的HAP后，再尝试执行该该命令。
+使用Debug签名证书重新签名，安装新签名出的HAP后，再尝试执行该命令。
 签名工具及签名证书的生成方式可以参考：[签名工具指导](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-signing)。
