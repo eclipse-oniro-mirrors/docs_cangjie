@@ -51,7 +51,7 @@
 
 - 打开自定义弹出框。
 
-   通过调用openCustomDialog接口打开的弹出框,弹出框内容为CustomDialogOptions类型，其中this.CustomDialog为自定义弹出框的内容。
+   通过调用openCustomDialog接口打开的弹出框，弹出框内容为CustomDialogOptions类型，其中this.CustomDialog为自定义弹出框的内容。
 
     <!-- run -->
 
@@ -97,7 +97,7 @@
 
 - 关闭自定义弹出框。
 
-   closeCustomDialog接口需要传入待关闭弹出框对应的CustomDialogId。
+    closeCustomDialog接口需要传入待关闭弹出框对应的CustomDialogId。
 
     <!-- run -->
 
