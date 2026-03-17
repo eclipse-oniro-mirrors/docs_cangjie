@@ -8,6 +8,8 @@
 
 本仓库存放使用仓颉编程语言开发OpenHarmony应用相关的指南、API参考等文档。欢迎阅读文档，参与OpenHarmony仓颉开发者文档开源项目，共同完善开发者文档。
 
+当前，仓颉仅提供部分OpenHarmony应用开发API。仓颉支持的能力请参见[OpenHarmony中仓颉能力概述](./zh-cn/Overview-of-Cangjie-capabilities-in-OpenHarmony.md)。
+
 ## 文档架构
 
 OpenHarmony仓颉文档的总体架构如下图所示：
