@@ -8,8 +8,6 @@ The Cangjie programming language is a general-purpose programming language desig
 
 This repository contains guides, API references, and other documentation related to developing OpenHarmony applications using the Cangjie programming language. We welcome you to read the documentation and participate in the OpenHarmony Cangjie Developer Documentation open-source project to collectively improve the developer documentation.
 
-en/Overview-of-Cangjie-capabilities-in-OpenHarmony.md
-
 Currently, Cangjie only provides a subset of the OpenHarmony application development APIs. For a detailed overview of Cangjie's capabilities in OpenHarmony, please refer to [Overview of Cangjie Capabilities in OpenHarmony](./en/Overview-of-Cangjie-capabilities-in-OpenHarmony.md)
 
 ## Documentation Architecture
