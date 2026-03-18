@@ -1278,7 +1278,7 @@ public func getString(resId: UInt32, args: Array<ArgsValueType>): String
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |resId|UInt32|是|-|资源ID值。|
-|args|Array\<[ArgsValueType](#enum-argsvaluetype)>|是|-|格式化字符串资源参数。<br>支持参数类型：`%d`、`%f`、`%s`、`%%`、`%数字$d`、`%数字$f`、`%数字$s`。<br>说明：`%%`转义为`%`; `%数字$d`中的数字表示使用args中的第几个参数。<br>举例：`%%d`格式化后为`%d`字符串; `%1$d`表示使用第一个参数。|
+|args|Array\<[ArgsValueType](#enum-argsvaluetype)>|是|-|格式化字符串资源参数。<br>支持参数类型：`%d`、`%f`、`%s`、`%%`、。<br>说明：`%%`转义为`%`。<br>举例：`%%d`格式化后为`%d`字符串。|
 
 **返回值：**
 
@@ -1443,7 +1443,7 @@ public func getStringByName(resName: String, args: Array<ArgsValueType>): String
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |resName|String|是|-|资源名称。|
-|args|Array\<[ArgsValueType](#enum-argsvaluetype)>|是|-|格式化字符串资源参数。<br>支持参数类型：`%d`、`%f`、`%s`、`%%`、`%数字$d`、`%数字$f`、`%数字$s`。<br>说明：`%%`转义为`%`; `%数字$d`中的数字表示使用args中的第几个参数。<br>举例：`%%d`格式化后为`%d`字符串; `%1$d`表示使用第一个参数。|
+|args|Array\<[ArgsValueType](#enum-argsvaluetype)>|是|-|格式化字符串资源参数。<br>支持参数类型：`%d`、`%f`、`%s`、`%%`。<br>说明：`%%`转义为`%`。<br>举例：`%%d`格式化后为`%d`字符串。|
 
 **返回值：**
 
