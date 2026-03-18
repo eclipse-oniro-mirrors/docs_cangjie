@@ -974,6 +974,7 @@
                 - [ArkTS Accessing Cangjie Data](learn-cj/FFI/cangjie-arkts/operating_cangjie_objects.md)
                 - [Using Interoperability in Cangjie Multithreading](learn-cj/FFI/cangjie-arkts/using_interoperability_lib_multithread.md)
                 - [Cangjie Calling ArkTS Third-Party Modules](learn-cj/FFI/cangjie-arkts/cj-quick-start-dts2cj-plugin-usage.md)
+                - [Interop Object Lifecycle Management](learn-cj/FFI/cangjie-arkts/cj-ark_interop_new_scope.md)
             - [Cangjie-ArkTS Interoperability Helper Library](learn-cj/FFI/cangjie-arkts/auxiliary_lib.md)
             - [Cangjie-ArkTS Interoperability Development Guidelines](learn-cj/FFI/cangjie-arkts/interop_guidelines.md)
     - Compilation and Build

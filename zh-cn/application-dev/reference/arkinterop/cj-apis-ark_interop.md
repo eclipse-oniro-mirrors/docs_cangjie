@@ -4174,6 +4174,54 @@ func accessGlobalObject(context: JSContext): JSValue {
 }
 ```
 
+### func newScope\<T>(()->T)
+
+```cangjie
+public func newScope<T>(callback: ()->T): T
+```
+
+**功能：** 创建一个 ArkTS handle scope。
+
+**起始版本：** 24
+
+**参数：**
+
+| 参数名      | 类型 |必填|默认值| 说明      |
+|:---------|:---|:---|:---|:--------|
+| callback | ()->T |是|-| 用户回调函数。 |
+
+**返回值：**
+
+| 类型 | 说明        |
+|:---|:----------|
+| T  | 用户回调执行结果。 |
+
+**异常：**
+
+- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+
+| 错误码ID | 错误信息                                 |
+|:------|:-------------------------------------|
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
+
+**示例：**
+
+<!--compile-->
+```cangjie
+func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
+    spawn (UIThread) {
+        context.newScope {
+            let callback = context.function { c, _ =>
+                Hilog.info(0, "test", "newScope called")
+            }
+            callback.call()
+        }
+    }
+    return context.undefined().toJSValue()
+}
+```
+
 ### func array(Array\<JSValue>)
 
 ```cangjie
