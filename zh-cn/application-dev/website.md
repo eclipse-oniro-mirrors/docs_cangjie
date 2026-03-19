@@ -361,6 +361,7 @@
                     - [ArkTS 访问仓颉数据](learn-cj/FFI/cangjie-arkts/operating_cangjie_objects.md)
                     - [仓颉多线程中使用互操作库](learn-cj/FFI/cangjie-arkts/cj-using_interoperability_lib_multithread.md)
                     - [仓颉调用ArkTS三方模块](learn-cj/FFI/cangjie-arkts/cj-quick-start-dts2cj-plugin-usage.md)
+                    - [互操作对象生命周期管理](learn-cj/FFI/cangjie-arkts/cj-arkts_interop_new_scope.md)
                 - [仓颉-ArkTS 互操作辅助库](learn-cj/FFI/cangjie-arkts/cj-arkts_auxiliary_lib.md)
                 - [仓颉-ArkTS 互操作开发规范](learn-cj/FFI/cangjie-arkts/cj-arkts_interop_guidelines.md)
         - Core File Kit（文件基础服务）
