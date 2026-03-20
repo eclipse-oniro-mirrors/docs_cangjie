@@ -40,7 +40,7 @@ func opacity(value: ?Float64): T
 
 ## 示例代码
 
-该示例主要显示通过opacity设置组件的不透明度。
+该示例主要展示通过opacity设置组件的不透明度。
 
 <!-- run -->
 

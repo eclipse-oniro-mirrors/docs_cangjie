@@ -2855,7 +2855,7 @@ public func getThumbnail(size!: ?Size = Size(256, 256)): PixelMap
 
 **功能：** 获取文件的缩略图，传入缩略图尺寸。
 
-**需要权限：** ohos.permission.WRITE_IMAGEVIDEO
+**需要权限：** ohos.permission.READ_IMAGEVIDEO
 
 **系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
 

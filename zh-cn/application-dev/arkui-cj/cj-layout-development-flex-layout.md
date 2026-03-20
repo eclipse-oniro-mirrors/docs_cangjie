@@ -1143,7 +1143,7 @@ class EntryView {
 
     父容器宽度420.vp，三个子元素原始宽度为100.vp，左右padding为20.vp，总和320.vp，剩余空间100.vp根据flexGrow值的占比分配给子元素，未设置flexGrow的子元素不参与分配。
 
-    第一个元素以及第二个元素以2:3分配剩下的100.vp。第一个元素为100.vp+100.vp * 2/5=140.vp，第个元素为100.vp+100.vp* 3/5=160.vp。
+    第一个元素以及第二个元素以2:3分配剩下的100.vp。第一个元素为100.vp+100.vp * 2/5=140.vp，第二个元素为100.vp+100.vp* 3/5=160.vp。
 
 - [flexShrink](../reference/arkui-cj/cj-universal-attribute-flexlayout.md#func-flexshrinkfloat64): 当父容器空间不足时，子元素的压缩比例。
 

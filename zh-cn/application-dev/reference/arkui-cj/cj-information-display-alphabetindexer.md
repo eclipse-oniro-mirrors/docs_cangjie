@@ -200,7 +200,7 @@ public func popupFont(
 public func popupPosition(x!: ?Length = None, y!: ?Length = None): This
 ```
 
-**功能：** 设置弹出窗口相对于索引器条上边框中点的位置。
+**功能：** 设置弹出窗口相对于索引条上边框中点的位置。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -210,8 +210,8 @@ public func popupPosition(x!: ?Length = None, y!: ?Length = None): This
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|x|?[Length](./cj-common-types.md#interface-length)|否|None|**命名参数。** 弹出窗口相对于索引器条上边框中点的x坐标。初始值: 60.vp|
-|y|?[Length](./cj-common-types.md#interface-length)|否|None|**命名参数。** 弹出窗口相对于索引器条上边框中点的y坐标。初始值: 48.vp|
+|x|?[Length](./cj-common-types.md#interface-length)|否|None|**命名参数。** 弹出窗口相对于索引条上边框中点的x坐标。初始值: 60.vp|
+|y|?[Length](./cj-common-types.md#interface-length)|否|None|**命名参数。** 弹出窗口相对于索引条上边框中点的y坐标。初始值: 48.vp|
 
 ### func selected(?Int32)
 

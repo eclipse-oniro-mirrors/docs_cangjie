@@ -261,7 +261,7 @@ class EntryView {
                 //行内文字无修饰
                 .decoration(decorationType: TextDecorationType.None, color: Color.Red)
             }
-            //文本横线添加
+            //文本划线添加
             Text("Text Decoration")
             .fontSize(9)
             .fontColor(0xCCCCCC)

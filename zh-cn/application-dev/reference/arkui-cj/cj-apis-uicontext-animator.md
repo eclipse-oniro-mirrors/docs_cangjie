@@ -231,7 +231,7 @@ public func cancel(): Unit
 
   |错误码ID|错误信息|
   |:----|:---|
-  |100001|AInternal error. Possible causes: The specified page is not found or the object property list is not obtained.|
+  |100001|Internal error. Possible causes: The specified page is not found or the object property list is not obtained.|
 
 ### func reverse()
 

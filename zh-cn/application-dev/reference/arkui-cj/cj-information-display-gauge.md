@@ -157,7 +157,7 @@ public func endAngle(angle: ?Float32): This
 
 > **说明：**
 >
-> 当起始角度位置和终止角度位置差过小时，会绘制出异常图像，请取合理的起始角度位置和终止角度位置。
+> 当起始角度位置和终止角度位置差过小时，会绘制出异常图像，请选取合理的起始角度位置和终止角度位置。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 

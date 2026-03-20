@@ -1250,7 +1250,7 @@ public class ImagePacker {}
 public prop supportedFormats: Array<String>
 ```
 
-**功能：** 图片编码支持的格式，包括：jpeg、webp、png、heic、gif（不同硬件设备支持情况不同）
+**功能：** 图片编码支持的格式，包括：jpeg、webp、png、heic、gif（不同硬件设备支持情况不同）。
 
 **类型：** Array\<String>
 
@@ -2031,8 +2031,7 @@ public class ImageSource {}
 public prop supportedFormats: Array<String>
 ```
 
-**功能：** 支持的图片格式，包括：png，jpeg，bmp，gif，webp，dng，heic
-（不同硬件设备支持情况不同）。
+**功能：** 支持的图片格式，包括：png，jpeg，bmp，gif，webp，dng，heic（不同硬件设备支持情况不同）。
 
 **类型：** Array\<String>
 

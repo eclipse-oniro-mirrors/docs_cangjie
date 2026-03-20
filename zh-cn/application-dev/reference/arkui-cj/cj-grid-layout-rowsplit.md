@@ -104,7 +104,6 @@ class EntryView {
                     .height(100)
                     .backgroundColor(0xD2B48C)
                     .textAlign(TextAlign.Center)
-                    .textAlign(TextAlign.Center)
                 Text("3")
                     .width(10.percent)
                     .height(100)

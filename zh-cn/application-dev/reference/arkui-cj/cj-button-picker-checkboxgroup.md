@@ -253,9 +253,7 @@ class EntryView {
 
 ![checkbox_group](figures/checkbox_group.gif)
 
-### 示例2（自定义勾选样式）
-
-该示例通过配置mark实现自定义多选框群组的勾选样式。
+### 示例2
 
 <!-- run -->
 

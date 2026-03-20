@@ -295,7 +295,7 @@ public init(reason: DismissReason)
 public func dismiss(): Unit
 ```
 
-**功能：** Dialog关闭回调函数。开发者需要推出时调用，不需要退出时无需调用。
+**功能：** Dialog关闭回调函数。开发者需要退出时调用，不需要退出时无需调用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 

@@ -246,7 +246,7 @@ public func onExit(event: ?PageTransitionCallback)
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|event|?[PageTransitionCallback](#type-pagetransitioncallback)|是|-|出场动画的逐帧回调直到入场动画结束，转场进度从0变化到1。|
+|event|?[PageTransitionCallback](#type-pagetransitioncallback)|是|-|出场动画的逐帧回调直到出场动画结束，转场进度从0变化到1。|
 
 ## enum RouteType
 

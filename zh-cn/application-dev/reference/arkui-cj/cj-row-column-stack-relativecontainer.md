@@ -466,7 +466,7 @@ class EntryView {
 
 ### 示例3（设置偏移）
 
-本示例通过[Bias](./cj-common-types.md#class-bias)实现了子组件的位置在竖直方向的两个锚点间偏移的效果。
+本示例通过[Bias](./cj-common-types.md#class-bias)实现子组件的位置在竖直方向的两个锚点间偏移的效果。
 
 <!-- run -->
 

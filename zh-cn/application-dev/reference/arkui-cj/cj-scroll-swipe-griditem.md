@@ -43,7 +43,7 @@ public init()
 public init(child: () -> Unit)
 ```
 
-**功能：** 创建一个可包含子组件的网格容器中单项内容组件。
+**功能：** 创建一个可包含子组件的网格容器单项内容组件。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
