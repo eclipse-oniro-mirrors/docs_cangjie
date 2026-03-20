@@ -42,7 +42,7 @@ public init(value: ?ResourceStr)
 
 Common Attributes: Not supported.
 
-Common Events: Only onClick click event sare supported.
+Common Events: Only [onClick](#func-onclickclickevent---unit) click event sare supported.
 
 > **Note:**
 >

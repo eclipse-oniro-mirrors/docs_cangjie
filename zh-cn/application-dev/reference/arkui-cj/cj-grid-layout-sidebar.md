@@ -92,7 +92,7 @@ public func controlButton(value: ?ButtonStyle): This
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|value|?[ButtonStyle](./cj-button-picker-button.md#enum-buttontype)|是|-|侧边栏控制按钮的属性。|
+|value|?[ButtonStyle](#class-buttonstyle)|是|-|侧边栏控制按钮的属性。|
 
 ### func divider(?DividerStyle)
 

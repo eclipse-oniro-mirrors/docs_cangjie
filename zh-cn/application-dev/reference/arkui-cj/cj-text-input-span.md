@@ -42,7 +42,7 @@ public init(value: ?ResourceStr)
 
 通用属性：不支持。
 
-通用事件：仅支持点击事件onClick。
+通用事件：仅支持点击事件[onClick](#func-onclickclickevent---unit)。
 
 > **说明：**
 >
