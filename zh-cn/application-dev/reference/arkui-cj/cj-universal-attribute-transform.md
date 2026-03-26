@@ -42,8 +42,8 @@ func rotate(x!: ?Float32, y!: ?Float32, z!: ?Float32, angle!: ?Float32,
 |y|?Float32|是|-|**命名参数。** 旋转轴向量y坐标。初始值: 0.0|
 |z|?Float32|是|-|**命名参数。** 旋转轴向量z坐标。初始值: 1.0|
 |angle|?Float32|是|-|**命名参数。** 旋转角度。取值为正时相对于旋转轴方向顺时针转动，取值为负时相对于旋转轴方向逆时针转动。初始值: 0.0|
-|centerX|?[Length](./cj-common-types.md#interface-length)|是|-|**命名参数。** 变换中心点x轴坐标。表示组件变换中心点（即锚点）的x方向坐标。初始值:  50.percent|
-|centerY|?[Length](./cj-common-types.md#interface-length)|是|-|**命名参数。** 变换中心点y轴坐标。表示组件变换中心点（即锚点）的y方向坐标。初始值:  50.percent|
+|centerX|?[Length](./cj-common-types.md#interface-length)|是|-|**命名参数。** 变换中心点x轴坐标。表示组件变换中心点（即锚点）的x方向坐标。初始值：50.percent|
+|centerY|?[Length](./cj-common-types.md#interface-length)|是|-|**命名参数。** 变换中心点y轴坐标。表示组件变换中心点（即锚点）的y方向坐标。初始值：50.percent|
 
 **返回值：**
 
@@ -68,11 +68,11 @@ func scale(x!: ?Float32, y!: ?Float32, z!: ?Float32, centerX!: ?Length,
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|x|?Float32|是|-|**命名参数。** X轴缩放分量。初始值:  1.0|
-|y|?Float32|是|-|**命名参数。** Y轴缩放分量。初始值:  1.0|
-|z|?Float32|是|-|**命名参数。** Z轴缩放分量。初始值:  1.0|
-|centerX|?[Length](./cj-common-types.md#interface-length)|是|-|**命名参数。** 变换中心点x轴坐标。表示组件变换中心点（即锚点）的x方向坐标。初始值:  50.percent|
-|centerY|?[Length](./cj-common-types.md#interface-length)|是|-|**命名参数。** 变换中心点y轴坐标。表示组件变换中心点（即锚点）的y方向坐标。初始值:  50.percent|
+|x|?Float32|是|-|**命名参数。** X轴缩放分量。初始值：1.0|
+|y|?Float32|是|-|**命名参数。** Y轴缩放分量。初始值：1.0|
+|z|?Float32|是|-|**命名参数。** Z轴缩放分量。初始值：1.0|
+|centerX|?[Length](./cj-common-types.md#interface-length)|是|-|**命名参数。** 变换中心点x轴坐标。表示组件变换中心点（即锚点）的x方向坐标。初始值：50.percent|
+|centerY|?[Length](./cj-common-types.md#interface-length)|是|-|**命名参数。** 变换中心点y轴坐标。表示组件变换中心点（即锚点）的y方向坐标。初始值：50.percent|
 
 **返回值：**
 
@@ -96,9 +96,9 @@ func translate(x!: ?Length, y!: ?Length, z!: ?Length): T
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|x|?[Length](./cj-common-types.md#interface-length)|是|-|**命名参数。** X轴平移距离。初始值:  0.px|
-|y|?[Length](./cj-common-types.md#interface-length)|是|-|**命名参数。** Y轴平移距离。初始值:  0.px|
-|z|?[Length](./cj-common-types.md#interface-length)|是|-|**命名参数。** Z轴平移距离。初始值:  0.px|
+|x|?[Length](./cj-common-types.md#interface-length)|是|-|**命名参数。** X轴平移距离。初始值：0.px|
+|y|?[Length](./cj-common-types.md#interface-length)|是|-|**命名参数。** Y轴平移距离。初始值：0.px|
+|z|?[Length](./cj-common-types.md#interface-length)|是|-|**命名参数。** Z轴平移距离。初始值：0.px|
 
 **返回值：**
 

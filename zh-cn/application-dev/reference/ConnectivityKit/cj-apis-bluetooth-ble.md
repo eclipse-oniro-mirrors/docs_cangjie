@@ -332,7 +332,7 @@ public func startAdvertising(setting: AdvertiseSetting, advData: AdvertiseData, 
   | 801 | Capability not supported. |
   | 2900001 | Service stopped. |
   | 2900003 | Bluetooth disabled. |
-  | 2900010 | The numeber of advertising resources reaches the upper limit. |
+  | 2900010 | The number of advertising resources reaches the upper limit. |
   | 2900099 | Operation failed. |
   | 2902054 | The length of the advertising data exceeds the upper limit. |
 
@@ -418,7 +418,7 @@ public func startAdvertising(advertisingParams: AdvertisingParams): UInt32
   | 801 | Capability not supported. |
   | 2900001 | Service stopped. |
   | 2900003 | Bluetooth disabled. |
-  | 2900010 | The numeber of advertising resources reaches the upper limit. |
+  | 2900010 | The number of advertising resources reaches the upper limit. |
   | 2900099 | Operation failed. |
   | 2902054 | The length of the advertising data exceeds the upper limit. |
 

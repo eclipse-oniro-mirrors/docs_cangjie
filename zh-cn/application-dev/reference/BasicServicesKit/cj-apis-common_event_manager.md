@@ -2136,7 +2136,7 @@ public static const COMMON_EVENT_SCREEN_LOCKED: String = "usual.event.SCREEN_LOC
 public static const COMMON_EVENT_SCREEN_OFF: String = "usual.event.SCREEN_OFF"
 ```
 
-**功能：** 表表示由电源服务发起的设备灭屏完成的普通事件的动作。
+**功能：** 表示由电源服务发起的设备灭屏完成的普通事件的动作。
 
 当由电源服务发起的设备灭屏完成时，将会触发事件通知服务发布该系统公共事件。
 

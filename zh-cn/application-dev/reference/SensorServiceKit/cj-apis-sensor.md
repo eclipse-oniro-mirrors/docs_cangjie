@@ -1076,7 +1076,7 @@ public class MagneticFieldResponse <: Response {
 public var x: Float32
 ```
 
-**功能：** x轴环境磁场强度，单位 : μT。
+**功能：** x轴环境磁场强度，单位：μT。
 
 **类型：** Float32
 
@@ -1092,7 +1092,7 @@ public var x: Float32
 public var y: Float32
 ```
 
-**功能：** y轴环境磁场强度，单位 : μT。
+**功能：** y轴环境磁场强度，单位：μT。
 
 **类型：** Float32
 
@@ -1108,7 +1108,7 @@ public var y: Float32
 public var z: Float32
 ```
 
-**功能：** z轴环境磁场强度，单位 : μT。
+**功能：** z轴环境磁场强度，单位：μT。
 
 **类型：** Float32
 
@@ -1147,7 +1147,7 @@ public class MagneticFieldUncalibratedResponse <: Response {
 public var biasX: Float32
 ```
 
-**功能：** x轴未校准环境磁场强度偏量，单位 : μT。
+**功能：** x轴未校准环境磁场强度偏量，单位：μT。
 
 **类型：** Float32
 
@@ -1163,7 +1163,7 @@ public var biasX: Float32
 public var biasY: Float32
 ```
 
-**功能：** y轴未校准环境磁场强度偏量，单位 : μT。
+**功能：** y轴未校准环境磁场强度偏量，单位：μT。
 
 **类型：** Float32
 
@@ -1179,7 +1179,7 @@ public var biasY: Float32
 public var biasZ: Float32
 ```
 
-**功能：** z轴未校准环境磁场强度偏量，单位 : μT。
+**功能：** z轴未校准环境磁场强度偏量，单位：μT。
 
 **类型：** Float32
 
@@ -1195,7 +1195,7 @@ public var biasZ: Float32
 public var x: Float32
 ```
 
-**功能：** x轴未校准环境磁场强度，单位 : μT。
+**功能：** x轴未校准环境磁场强度，单位：μT。
 
 **类型：** Float32
 
@@ -1211,7 +1211,7 @@ public var x: Float32
 public var y: Float32
 ```
 
-**功能：** y轴未校准环境磁场强度，单位 : μT。
+**功能：** y轴未校准环境磁场强度，单位：μT。
 
 **类型：** Float32
 
@@ -1227,7 +1227,7 @@ public var y: Float32
 public var z: Float32
 ```
 
-**功能：** z轴未校准环境磁场强度，单位 : μT。
+**功能：** z轴未校准环境磁场强度，单位：μT。
 
 **类型：** Float32
 

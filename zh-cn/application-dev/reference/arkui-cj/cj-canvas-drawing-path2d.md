@@ -214,7 +214,7 @@ public func quadraticCurveTo(
 ): Unit
 ```
 
-**功能：** 创建二次贝赛尔曲线的路径。
+**功能：** 创建二次贝塞尔曲线的路径。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -242,7 +242,7 @@ public func bezierCurveTo(
 ): Unit
 ```
 
-**功能：** 创建三次贝赛尔曲线的路径。
+**功能：** 创建三次贝塞尔曲线的路径。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 

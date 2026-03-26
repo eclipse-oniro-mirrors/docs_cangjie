@@ -2326,7 +2326,7 @@ public func registerJavaScriptProxy(funcs: Array<(String) -> String>, name: Stri
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 17100001 | Init error. The WebviewController must be associated with a Web component. |
-  | 17100015 | New failed, out of memeory. |
+  | 17100015 | New failed, out of memory. |
 
 **示例：**
 

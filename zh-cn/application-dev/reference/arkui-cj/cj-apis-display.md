@@ -1473,7 +1473,7 @@ FoldStatusExpanded
 FoldStatusFolded
 ```
 
-**功能：** 折叠状态。对于双折叠轴设备，第一个折叠轴折叠，第二个折叠轴折叠。
+**功能：** 折叠状态。对于双折叠轴设备，第一个轴处于折叠状态，第二个轴也处于折叠状态。
 
 **系统能力：** SystemCapability.Window.SessionManager
 

@@ -153,7 +153,7 @@ This authentication token timed out.
 
 **处理步骤**
 
-如果是timeout导致不正确，则重新触发密钥init并重新认证，使得认证时间和密钥init时间小于设置的timeout时间。
+如果是timeout导致不正确，则触发密钥init并认证，使得认证和密钥init时间小于设置的timeout值。
 
 ## 12000010 密钥操作会话数已达上限
 

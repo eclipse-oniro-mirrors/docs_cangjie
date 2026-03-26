@@ -183,7 +183,7 @@ public func trackThickness(value: ?Length): This
 
 为保证滑块和滑轨的SliderStyle样式，blockSize跟随trackThickness同比例增减。
 
-当style为SliderStyle.OutSet时，trackThickness ：blockSize = 1 ：4，当style为SliderStyle.InSet时，trackThickness ：blockSize = 5 ：3。
+当style为SliderStyle.OutSet时，trackThickness:blockSize = 1:4，当style为SliderStyle.InSet时，trackThickness:blockSize = 5:3。
 
 在变更trackThickness过程中，若trackThickness的大小或者blockSize的大小超过slider组件的width或者height（SliderStyle.OutSet时可能trackThickness没超过，但是blockSize超过了），取初始值。
 

@@ -102,7 +102,7 @@ public func onChange(callback: ?OnCheckboxGroupChangeCallback): This
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|callback|?[OnCheckboxGroupChangeCallback](#type-oncheckboxgroupchangecallback)|是|-|多选框群组的信息。初始值:  { _ => }|
+|callback|?[OnCheckboxGroupChangeCallback](#type-oncheckboxgroupchangecallback)|是|-|多选框群组的信息。初始值：{ _ => }|
 
 ## 基础类型定义
 

@@ -326,7 +326,7 @@ Failure when receiving data from the peer.
 
 **错误描述**
 
-无法往从对端收到数据，接收网络数据失败。
+无法从对端收到数据，接收网络数据失败。
 
 **可能原因**
 
@@ -380,7 +380,7 @@ SSL peer certificate or SSH remote key was not OK.
 
 **错误描述**
 
-远程服务器SSL证书或SSH秘钥不正确。
+远程服务器SSL证书或SSH密钥不正确。
 
 **可能原因**
 

@@ -92,7 +92,7 @@ public func strokeWidth(value: ?Length): This
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-| value | ?[Length](./cj-common-types.md#interface-length)| 是 | - | 分割线宽度。不指定像素单位时，默认单位vp。不支持百分比设置。分割线的宽度不支持百分比设置。优先级低于通用属性[height](./cj-universal-attribute-size.md#func-heightoptionlength)，超过通用属性设置大小时，按照通用属性进行裁切。部分设备硬件中存在1像素取整后分割线不显示问题，建议使用2像素。初始值: 1.0.px |
+| value | ?[Length](./cj-common-types.md#interface-length)| 是 | - | 分割线宽度。不指定像素单位时，默认单位vp。不支持百分比设置。不支持百分比设置。优先级低于通用属性[height](./cj-universal-attribute-size.md#func-heightoptionlength)，超过通用属性设置大小时，按照通用属性进行裁切。部分设备硬件中存在1像素取整后分割线不显示问题，建议使用2像素。初始值: 1.0.px |
 
 ### func vertical(?Bool)
 

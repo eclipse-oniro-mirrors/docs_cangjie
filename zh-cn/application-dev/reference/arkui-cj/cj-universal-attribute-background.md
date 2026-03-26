@@ -30,7 +30,7 @@ func backgroundColor(value: ?ResourceColor): T
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|value|?[ResourceColor](./cj-common-types.md#interface-resourcecolor)|是|-|背景颜色。初始值:  Color.Transparent|
+|value|?[ResourceColor](./cj-common-types.md#interface-resourcecolor)|是|-|背景颜色。初始值：Color.Transparent|
 
 **返回值：**
 
@@ -79,7 +79,7 @@ func backgroundImage(src: ?ResourceStr, repeat: ?ImageRepeat): T
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |src|?[ResourceStr](./cj-common-types.md#interface-resourcestr)|是|-|图片资源路径。|
-|repeat|?[ImageRepeat](./cj-common-types.md#enum-imagerepeat)|是|-|图片重复方式。初始值:  ImageRepeat.NoRepeat|
+|repeat|?[ImageRepeat](./cj-common-types.md#enum-imagerepeat)|是|-|图片重复方式。初始值：ImageRepeat.NoRepeat|
 
 **返回值：**
 
@@ -127,8 +127,8 @@ func backgroundImagePosition(x!: ?Length, y!: ?Length): T
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|x|?[Length](./cj-common-types.md#interface-length)|是|-|**命名参数。** X轴位置。初始值:  0.vp|
-|y|?[Length](./cj-common-types.md#interface-length)|是|-|**命名参数。** Y轴位置。初始值:  0.vp|
+|x|?[Length](./cj-common-types.md#interface-length)|是|-|**命名参数。** X轴位置。初始值：0.vp|
+|y|?[Length](./cj-common-types.md#interface-length)|是|-|**命名参数。** Y轴位置。初始值：0.vp|
 
 **返回值：**
 
@@ -176,8 +176,8 @@ func backgroundImageSize(width!: ?Length, height!: ?Length): T
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|width|?[Length](./cj-common-types.md#interface-length)|是|-|**命名参数。** 图片宽度。初始值:  0.vp|
-|height|?[Length](./cj-common-types.md#interface-length)|是|-|**命名参数。** 图片高度。初始值:  0.vp|
+|width|?[Length](./cj-common-types.md#interface-length)|是|-|**命名参数。** 图片宽度。初始值：0.vp|
+|height|?[Length](./cj-common-types.md#interface-length)|是|-|**命名参数。** 图片高度。初始值：0.vp|
 
 **返回值：**
 
