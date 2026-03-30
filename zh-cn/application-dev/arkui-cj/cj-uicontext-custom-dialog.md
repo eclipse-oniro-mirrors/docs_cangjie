@@ -33,9 +33,9 @@
 >
 > 详细变量定义请参考[完整示例](#完整示例)。
 
-- 创建customdialog。
+- 创建CustomDialog。
 
-   Customdialog用于定义自定义弹出框的内容。
+   CustomDialog用于定义自定义弹出框的内容。
 
     ```cangjie
     @Builder

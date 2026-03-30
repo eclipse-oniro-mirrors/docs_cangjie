@@ -42,7 +42,7 @@ func pageMap(name: String, param: Any) {
 class EntryView {
      @Provide var pathInfos: NavPathStack = NavPathStack()
      @State var listArray1: Array<String> = ['WLAN', 'Bluetooth']
-     @State var listArray2: Array<String> = ['Personal Hotpot', 'Connect & Share']
+     @State var listArray2: Array<String> = ['Personal Hotspot', 'Connect & Share']
      func build() {
         Column() {
             Navigation(this.pathInfos) {

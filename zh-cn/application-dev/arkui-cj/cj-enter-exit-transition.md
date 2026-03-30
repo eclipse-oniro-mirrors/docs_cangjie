@@ -21,7 +21,7 @@
 | move | 通过[TransitionEdge](../reference/arkui-cj/cj-animation-transition.md#enum-transitionedge)创建从窗口哪条边缘出来的效果。 | 出现时从TransitionEdge方向滑入，消失时滑出到TransitionEdge方向。 |
 | asymmetric | 通过此方法组合非对称的出现消失转场效果。<br/>- appear:出现转场的效果。<br/>- disappear：消失转场的效果。 | 出现时采用appear设置的[TransitionEffect](../reference/arkui-cj/cj-animation-transition.md#class-transitioneffect)出现效果，消失时采用disappear设置的[TransitionEffect](../reference/arkui-cj/cj-animation-transition.md#class-transitioneffect)消失效果。 |
 | combine | 组合其他[TransitionEffect](../reference/arkui-cj/cj-animation-transition.md#class-transitioneffect)。 | 组合其他TransitionEffect，一起生效。 |
-| animation | 定义转场效果的动画参数：<br/>-&nbsp;如果不定义会跟随[animateTo](../reference/arkui-cj/cj-apis-uicontext-uicontext.md#func-animatetoanimateparam-voidcallback)的动画参数。<br/>-&nbsp;不支持通过控件的[animation](../reference/arkui-cj/cj-animation-animation.md)接口配置动画参数。<br/>-&nbsp;[TransitionEffect](../reference/arkui-cj/cj-animation-transition.md#class-transitioneffect)中animation的onFinish不生效。 | 调用顺序时从上往下，上面TransitionEffect的animation也会作用到下面TransitionEffect。 |
+| animation | 定义转场效果的动画参数：<br/>-&nbsp;如果不定义会跟随[animateTo](../reference/arkui-cj/cj-apis-uicontext-uicontext.md#func-animatetoanimateparam-voidcallback)的动画参数。<br/>-&nbsp;不支持通过控件的[animation](../reference/arkui-cj/cj-animation-animation.md)接口配置动画参数。<br/>-&nbsp;[TransitionEffect](../reference/arkui-cj/cj-animation-transition.md#class-transitioneffect)中animation的onFinish不生效。 | 调用顺序是从上往下，上面TransitionEffect的animation也会作用到下面TransitionEffect。 |
 
 ## 示例
 
