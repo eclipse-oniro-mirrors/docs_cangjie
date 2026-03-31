@@ -40,7 +40,7 @@ class EntryView {
 NavPathStack implements page navigation functionality through Push-related interfaces, primarily navigating by page name and optionally carrying parameters.
 
 ```cangjie
-this.pageStack.pushPath(NavPathInfo('PageOne', 'PageOne Param'))
+this.pageStack.pushPath(NavPathInfo(name: 'PageOne', param: 'PageOne Param'))
 ```
 
 ### Page Return
@@ -115,7 +115,7 @@ When switching between NavDestinations, shared element transitions can be achiev
                     .height(40)
                     .margin(20)
                     .onClick({ => animateTo(AnimateParam(duration: 1200),
-                        { => this.pageStack.pushPath(NavPathInfo("PageTwo", "information"))})
+                        { => this.pageStack.pushPath(NavPathInfo(name: "PageTwo", param: "information"))})
                     })
                 }
             }
