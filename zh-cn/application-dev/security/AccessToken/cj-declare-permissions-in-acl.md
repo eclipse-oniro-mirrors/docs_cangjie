@@ -15,7 +15,7 @@
 - 方式一：通过DevEco Studio完成[ACL方式跨级别申请权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-signing)。
 - 方式二：直接修改HarmonyAppProvision配置文件。
 
-    1. 打开HarmonyAppProvision配置文件，即SDK目录下的“Sdk/openharmony/_{Version} _/toolchains /lib/UnsgnedReleasedProfileTemplate.json”文件。
+    1. 打开HarmonyAppProvision配置文件，即SDK目录下的“Sdk/openharmony/_{Version}_/toolchains/lib/UnsgnedReleasedProfileTemplate.json”文件。
     2. 添加需要使用的受限权限。
 
         不携带权限数据的受限权限通过修改 "acls" &gt; "allowed-acls" 字段添加。

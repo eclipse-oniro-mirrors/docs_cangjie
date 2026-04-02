@@ -471,7 +471,7 @@ hdc shell uitest uiInput inputText 100 100 hello
 
 > **说明：**
 >
-> 最多支持传入是三个键值，键值的具体取值请参考[keyCode](../reference/arkui-cj/cj-common-types.md#var-keycode)。
+> 最多支持传入的三个键值，键值的具体取值请参考[keyCode](../reference/arkui-cj/cj-common-types.md#var-keycode)。
 
 ```shell
 # 返回主页。
@@ -528,7 +528,7 @@ hdc shell param set persist.ace.testmode.enabled 1
 
 **问题描述**
 
-UI测试用例执行失败，查看hilog日志发现日志中有“uitest-api dose not allow calling concurrently”错误信息。
+UI测试用例执行失败，查看hilog日志发现日志中有“uitest-api does not allow calling concurrently”错误信息。
 
 **可能原因**
 

@@ -1802,7 +1802,7 @@
 
 **起始版本：** 12
 
-## ohos.permission.START_ABILIIES_FROM_BACKGROUND
+## ohos.permission.START_ABILITIES_FROM_BACKGROUND
 
 允许应用在后台启动FA。
 

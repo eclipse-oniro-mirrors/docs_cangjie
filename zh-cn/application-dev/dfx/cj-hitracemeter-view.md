@@ -8,7 +8,7 @@
 
 ## 通过DevEco Studio可视化界面查看
 
-开发者可使用 DevEco Studio Profiler 的 CPU Insight 功能，可视化展示 HiTraceMeter 日志内容，分析应用/服务的 CPU 使用率和线程的运行状态，查看指定时间段内程序在 CPU 上的执行耗时情况，具体使用指导请参见[CPU活动分析：CPU分析](https://developer.huawei.com/consumer/cn/doc/cangjie-guides/cj-insight-cpu)。
+开发者可使用DevEco Studio Profiler的CPU Insight功能，可视化展示HiTraceMeter日志内容，分析应用/服务的CPU使用率和线程的运行状态，查看指定时间段内程序在CPU上的执行耗时情况，具体使用指导请参见[CPU活动分析：CPU分析](https://developer.huawei.com/consumer/cn/doc/cangjie-guides/cj-insight-cpu)。
 
 ## 通过命令行工具查看
 

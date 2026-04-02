@@ -71,7 +71,7 @@
     ```cangjie
     let calendar: Calendar = getCalendar('zh-Hans', calendarType: CalendarType.Chinese)
     //将公历信息设置到calendar对象，时间日期为2023.07.25 08:00:00
-    calendar.set(2023, 7,  25, hour:8, minute:0)
+    calendar.set(2023, 7, 25, hour:8, minute:0)
     //获取农历年月日
     let year: Int32 = calendar.get('year') // year = 40，指干支纪年40，范围1-60
     let month: Int32 = calendar.get('month') // month = 5，指6月
