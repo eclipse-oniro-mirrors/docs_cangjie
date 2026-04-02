@@ -955,7 +955,7 @@ public init(
 | borderStyle | [EdgeStyles](./cj-common-types.md#class-edgestyles) | No | EdgeStyles() | **Named parameter.** Custom dialog border style. |
 | width | [Length](./cj-common-types.md#interface-length) | No | 400.vp | **Named parameter.** Dialog width. |
 | height | [Length](./cj-common-types.md#interface-length) | No | 100.vp | **Named parameter.** Dialog height. |
-| shadow | ?[ShadowOptions](./cj-common-types.md#class-shadowoptions) | No | None | **Named parameter.** Dialog shadow effect. |
+| shadow | ?[ShadowOptions](./cj-common-types.md#class-shadowoptions) | No | None | **Named parameter.** Dialog shadow.<br>Initial value:<br>Before API version 26, the initial value is ShadowOptions(radius: 0.0);<br>From API version 26 onward, the initial value is ShadowOptions(radius: -1.0). |
 | backgroundBlurStyle | [BlurStyle](./cj-common-types.md#enum-blurstyle) | No | BlurStyle.ComponentUltraThick | **Named parameter.** Dialog background blur style. |
 
 ## class EdgeColors
@@ -1374,7 +1374,7 @@ public init(
 | isModal | Bool | No | true | **Named parameter.** Whether the dialog is modal. |
 | backgroundColor | [Color](./cj-common-types.md#class-color) | No | Color.Transparent | **Named parameter.** Background color of the dialog. |
 | backgroundBlurStyle | [BlurStyle](./cj-common-types.md#enum-blurstyle) | No | BlurStyle.ComponentUltraThick | **Named parameter.** Background blur style of the dialog. |
-| shadow | ?[ShadowOptions](./cj-common-types.md#class-shadowoptions) | No | None | **Named parameter.** Shadow options of the dialog. |
+| shadow | ?[ShadowOptions](./cj-common-types.md#class-shadowoptions) | No | None | **Named parameter.** Shadow options of the dialog.<br>Initial value:<br>Before API version 26, the initial value is ShadowOptions(radius: 0.0);<br>From API version 26 onward, the initial value is ShadowOptions(radius: -1.0). |
 | enableHoverMode | Bool | No | false | **Named parameter.** Whether to enable hover mode. |
 | hoverModeArea | [HoverModeAreaType](#enum-hovermodeareatype) | No | HoverModeAreaType.BottomScreen | **Named parameter.** Display area of the dialog in hover mode. |
 
@@ -1647,7 +1647,7 @@ public init(
 | backgroundColor | [Color](./cj-common-types.md#class-color) | No | Color.Transparent | **Named parameter.** Background color of the Toast. |
 | textColor | [Color](./cj-common-types.md#class-color) | No | Color.Black | **Named parameter.** Text color of the Toast. |
 | backgroundBlurStyle | [BlurStyle](./cj-common-types.md#enum-blurstyle) | No | BlurStyle.ComponentUltraThick | **Named parameter.** Background blur style of the Toast. |
-| shadow | ?[ShadowOptions](./cj-common-types.md#class-shadowoptions) | No | None | **Named parameter.** Shadow options of the Toast. |
+| shadow | ?[ShadowOptions](./cj-common-types.md#class-shadowoptions) | No | None | **Named parameter.** Shadow options of the Toast.<br>Initial value:<br>Before API version 26, the initial value is ShadowOptions(radius: 0.0);<br>From API version 26 onward, the initial value is ShadowOptions(radius: -1.0). |
 | enableHoverMode | Bool | No | false | **Named parameter.** Whether to enable hover mode. |
 | hoverModeArea | [HoverModeAreaType](#enum-hovermodeareatype) | No | H## enum HoverModeAreaType
 

@@ -959,7 +959,7 @@ public init(
 |borderStyle|[EdgeStyles](./cj-common-types.md#class-edgestyles)|否|EdgeStyles()| **命名参数。** 自定义对话框的边框样式。|
 |width|[Length](./cj-common-types.md#interface-length)|否|400.vp| **命名参数。** 对话框的宽度。|
 |height|[Length](./cj-common-types.md#interface-length)|否|100.vp| **命名参数。** 对话框的高度。|
-|shadow|?[ShadowOptions](./cj-common-types.md#class-shadowoptions)|否|None| **命名参数。** 对话框的阴影。|
+|shadow|?[ShadowOptions](./cj-common-types.md#class-shadowoptions)|否|None| **命名参数。** 对话框的阴影。<br>初始值：<br>API version 26之前，初始值为ShadowOptions(radius: 0.0)；<br>从API version 26开始，初始值为ShadowOptions(radius: -1.0)。|
 |backgroundBlurStyle|[BlurStyle](./cj-common-types.md#enum-blurstyle)|否|BlurStyle.ComponentUltraThick| **命名参数。** 对话框的背景模糊样式。|
 
 ## class EdgeColors
@@ -1364,7 +1364,7 @@ public init(
 |isModal|Bool|否|true| **命名参数。** 是否为模态对话框。|
 |backgroundColor|[Color](./cj-common-types.md#class-color)|否|Color.Transparent| **命名参数。** 对话框的背景颜色。|
 |backgroundBlurStyle|[BlurStyle](./cj-common-types.md#enum-blurstyle)|否|BlurStyle.ComponentUltraThick| **命名参数。** 对话框的背景模糊样式。|
-|shadow|?[ShadowOptions](./cj-common-types.md#class-shadowoptions)|否|None| **命名参数。** 对话框的阴影选项。|
+|shadow|?[ShadowOptions](./cj-common-types.md#class-shadowoptions)|否|None| **命名参数。** 对话框的阴影选项。<br>初始值：<br>API version 26之前，初始值为ShadowOptions(radius: 0.0)；<br>从API version 26开始，初始值为ShadowOptions(radius: -1.0)。|
 |enableHoverMode|Bool|否|false| **命名参数。** 是否响应悬停模式。|
 |hoverModeArea|[HoverModeAreaType](#enum-hovermodeareatype)|否|HoverModeAreaType.BottomScreen| **命名参数。** 悬停模式下对话框的显示区域。|
 
@@ -1637,7 +1637,7 @@ public init(
 |backgroundColor|[Color](./cj-common-types.md#class-color)|否|Color.Transparent| **命名参数。** Toast的背景颜色。|
 |textColor|[Color](./cj-common-types.md#class-color)|否|Color.Black| **命名参数。** Toast的文本颜色。|
 |backgroundBlurStyle|[BlurStyle](./cj-common-types.md#enum-blurstyle)|否|BlurStyle.ComponentUltraThick| **命名参数。** Toast的背景模糊样式。|
-|shadow|?[ShadowOptions](./cj-common-types.md#class-shadowoptions)|否|None| **命名参数。** Toast的阴影选项。|
+|shadow|?[ShadowOptions](./cj-common-types.md#class-shadowoptions)|否|None| **命名参数。** Toast的阴影选项。<br>初始值：<br>API version 26之前，初始值为ShadowOptions(radius: 0.0)；<br>从API version 26开始，初始值为ShadowOptions(radius: -1.0)。|
 |enableHoverMode|Bool|否|false| **命名参数。** 是否响应悬停模式。|
 |hoverModeArea|[HoverModeAreaType](#enum-hovermodeareatype)|否|HoverModeAreaType.BottomScreen| **命名参数。** 悬停模式下Toast的显示区域。|
 

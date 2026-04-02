@@ -2937,7 +2937,7 @@ public init(radius!: ?Float64, shadowType!: ?ShadowType = None, color!: ?Resourc
 
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
-| radius | ?Float64 | Yes | - | **Named parameter.** Sets the blur radius of the shadow. |
+| radius | ?Float64 | Yes | - | **Named parameter.** Sets the blur radius of the shadow.<br>Initial value:<br>Before API version 26, the initial value is 0.0; the shadow takes effect when the value is greater than 0.0.<br>From API version 26 onward, the initial value is -1.0; the shadow takes effect when the value is greater than or equal to 0.0. |
 | shadowType | ?[ShadowType](./cj-common-types.md#enum-shadowtype) | No | None | **Named parameter.** Sets the shadow type. Initial value is ShadowType.Color. |
 | color | ?[ResourceColor](./cj-common-types.md#interface-resourcecolor) | No | None | **Named parameter.** Sets the shadow color. Initial value is Color.Black. |
 | offsetX | ?Float64 | No | None | **Named parameter.** Sets the horizontal offset of the shadow. Initial value is 0.0. |
@@ -4903,7 +4903,7 @@ public init(backgroundColor!: Option<ResourceColor> = Option.None, onAppear!: Op
 | borderColor | Option<[Color](./cj-common-types.md#class-color)> | No | None | **Named parameter.** Border color of the semi-modal page. If using the borderColor property, it must be used together with the borderWidth property.<br>Note:<br>For bottom sheets, the bottom border color setting is invalid. |
 | borderStyle | Option<[EdgeStyles](#class-edgestyles)> | No | None | **Named parameter.** Border style of the semi-modal page. If using the borderStyle property, it must be used together with the borderWidth property.<br>Note:<br>For bottom sheets, the bottom border style setting is invalid. |
 | width | Option<[Length](./cj-common-types.md#interface-length)> | No | None | **Named parameter.** Width of the semi-modal page. Percentage parameter: Sets the width of the semi-modal page as a percentage of the parent element's width. |
-| shadow | Option<[ShadowOptions](#class-shadowoptions)> | No | None | **Named parameter.** Shadow effect. |
+| shadow | Option<[ShadowOptions](#class-shadowoptions)> | No | None | **Named parameter.** Shadow effect.<br>Initial value:<br>Before API version 26, the initial value is ShadowOptions(radius: 0.0);<br>From API version 26 onward, the initial value is ShadowOptions(radius: -1.0). |
 | mode | Option<[SheetMode](#enum-sheetmode)> | No | None | **Named parameter.** Shadow of the semi-modal page. |
 | scrollSizeMode | Option<[ScrollSizeMode](#enum-scrollsizemode)> | No | None | **Named parameter.** Refresh timing of the content area during semi-modal panel scrolling. |
 

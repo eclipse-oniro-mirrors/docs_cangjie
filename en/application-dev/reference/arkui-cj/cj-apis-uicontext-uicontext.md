@@ -349,7 +349,7 @@ public func showAlertDialog(options: AlertDialogParamWithOptions): Unit
 
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
-| options | [AlertDialogParamWithOptions](./cj-dialog-alertdialog.md#class-alertdialogparamwithbuttons) | Yes | - | Alert dialog parameters. |
+| options | [AlertDialogParamWithOptions](./cj-dialog-alertdialog.md#class-alertdialogparamwithoptions) | Yes | - | Alert dialog parameters. |
 
 ### func vp2px(Length)
 

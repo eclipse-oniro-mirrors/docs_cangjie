@@ -102,7 +102,7 @@ func shadow(radius!: ?Float64, color!: ?ResourceColor, offsetX!: ?Float64, offse
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|radius|?Float64|是|-|**命名参数。** 阴影模糊半径。初始值：0.0|
+|radius|?Float64|是|-|**命名参数。** 阴影模糊半径。<br>初始值：<br>API version 26之前，初始值为0.0，设置大于0.0时，阴影生效；<br>从API version 26开始，初始值为-1.0，大于等于0.0时，阴影生效。|
 |color|?[ResourceColor](./cj-common-types.md#interface-resourcecolor)|是|-|**命名参数。** 阴影颜色。初始值：Color(0x666666)|
 |offsetX|?Float64|是|-|**命名参数。** 阴影X轴偏移量。初始值：0.0|
 |offsetY|?Float64|是|-|**命名参数。** 阴影Y轴偏移量。初始值：0.0|

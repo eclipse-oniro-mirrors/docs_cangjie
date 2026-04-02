@@ -3045,7 +3045,7 @@ public init(radius!: ?Float64, shadowType!: ?ShadowType = None, color!: ?Resourc
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|radius|?Float64|是|-|**命名参数。** 设置阴影的模糊半径。|
+|radius|?Float64|是|-|**命名参数。** 设置阴影的模糊半径。<br>初始值：<br>API version 26之前，初始值为0.0，设置大于0.0时，阴影生效；<br>从API version 26开始，初始值为-1.0，大于等于0.0时，阴影生效。|
 |shadowType|?[ShadowType](./cj-common-types.md#enum-shadowtype)|否|None|**命名参数。** 设置阴影类型。初始值为ShadowType.Color。|
 |color|?[ResourceColor](./cj-common-types.md#interface-resourcecolor)|否|None|**命名参数。** 设置阴影颜色。初始值为Color.Black。|
 |offsetX|?Float64|否|None|**命名参数。** 设置阴影的水平偏移量。初始值为0.0。|
@@ -5102,7 +5102,7 @@ public init(backgroundColor!: Option<ResourceColor> = Option.None, onAppear!: Op
 |borderColor|Option<[Color](./cj-common-types.md#class-color)>|否|None|**命名参数。**  设置半模态页面的边框颜色。如果使用borderColor属性，需要和borderWidth属性一起使用。<br>**说明：**<br>底部弹窗时，底部边框颜色设置无效。|
 |borderStyle|Option<[EdgeStyles](#class-edgestyles)>|否|None|**命名参数。**  设置半模态页面的边框样式。如果使用borderStyle属性，需要和borderWidth属性一起使用。<br>**说明：**<br>底部弹窗时，底部边框样式设置无效。|
 |width|Option<[Length](./cj-common-types.md#interface-length)>|否|None|**命名参数。**  设置半模态页面的宽度。百分比参数方式：以父元素宽的百分比来设置半模态页面的宽度。|
-|shadow|Option<[ShadowOptions](#class-shadowoptions)>|否|None|**命名参数。** 阴影。|
+|shadow|Option<[ShadowOptions](#class-shadowoptions)>|否|None|**命名参数。** 阴影。<br>初始值：<br>API version 26之前，初始值为ShadowOptions(radius: 0.0)；<br>从API version 26开始，初始值为ShadowOptions(radius: -1.0)。|
 |mode|Option<[SheetMode](#enum-sheetmode)>|否|None|**命名参数。**  设置半模态页面的阴影。|
 |scrollSizeMode|Option<[ScrollSizeMode](#enum-scrollsizemode)>|否|None|**命名参数。**  设置半模态面板滑动时，内容区域刷新时机。|
 

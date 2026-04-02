@@ -753,7 +753,7 @@ public init(
 | borderWidth | ?[Length](./cj-common-types.md#interface-length) | No | None | **Named parameter.** Sets the width of each of the four borders separately. Percentage parameter: Sets the border width as a percentage of the parent popup's width. If the left and right borders exceed the popup width or the top and bottom borders exceed the popup height, the display may not meet expectations. **Note:** When the borderWidth property type is LocalizedEdgeWidths, it supports changing the layout order according to language habits. Initial value: 0 |
 | borderColor | ?[BorderColor](#class-bordercolor) | No | None | **Named parameter.** Sets the border color of the popup backdrop. If using borderColor, it must be used together with borderWidth. **Note:** When the borderColor property type is LocalizedEdgeColors, it supports changing the layout order according to language habits. Initial value: BorderColor(color: Color.Black) |
 | borderStyle | ?[EdgeStyles](./cj-common-types.md#class-edgestyles) | No | None | **Named parameter.** Sets the border style of the popup backdrop. If using borderStyle, it must be used together with borderWidth. Initial value: EdgeStyles() |
-| shadow | ?[ShadowOptions](./cj-common-types.md#class-shadowoptions) | No | None | **Named parameter.** Sets the shadow of the popup backdrop. Initial value: ShadowOptions(radius: 0.0) |
+| shadow | ?[ShadowOptions](./cj-common-types.md#class-shadowoptions) | No | None | **Named parameter.** Sets the shadow of the popup backdrop.<br>Initial value:<br>Before API version 26, the initial value is ShadowOptions(radius: 0.0);<br>From API version 26 onward, the initial value is ShadowOptions(radius: -1.0). |
 | textStyle | ?[WordBreak](./cj-common-types.md#enum-wordbreak) | No | None | **Named parameter.** Sets the text style of the popup message content. Initial value: WordBreak.BreakAll |
 
 ## class AlertDialogParamWithButtons
@@ -817,6 +817,90 @@ public var primaryButton: ?AlertDialogButtonBaseOptions
 **System Capability:** SystemCapability.ArkUI.ArkUI.Full
 
 **Since:** 22
+
+### var secondaryButton
+
+```cangjie
+public var secondaryButton: ?AlertDialogButtonBaseOptions
+```
+
+**Function:** The second button.
+
+**Type:** ?[AlertDialogButtonBaseOptions](#class-alertdialogbuttonbaseoptions)
+
+**Access:** Read-write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 22
+
+### init(?ResourceStr, ?ResourceStr, ?ResourceStr, ?Bool, ?VoidCallback, ?DialogAlignment, ?Offset, ?UInt32, ?Rectangle, ?Bool, ?Bool, ?ResourceColor, ?BlurStyle, ?Callback\<DismissDialogAction, Unit>, ?BorderRadiuses, ?TransitionEffect, ?Length, ?Length, ?Length, ?BorderColor, ?EdgeStyles, ?ShadowOptions, ?WordBreak, ?AlertDialogButtonBaseOptions, ?AlertDialogButtonBaseOptions)
+
+```cangjie
+public init(
+    title!: ?ResourceStr = None,
+    subtitle!: ?ResourceStr = None,
+    message!: ?ResourceStr,
+    autoCancel!: ?Bool = None,
+    cancel!: ?VoidCallback = None,
+    alignment!: ?DialogAlignment = None,
+    offset!: ?Offset = None,
+    gridCount!: ?UInt32 = None,
+    maskRect!: ?Rectangle = None,
+    showInSubWindow!: ?Bool = None,
+    isModal!: ?Bool = None,
+    backgroundColor!: ?ResourceColor = None,
+    backgroundBlurStyle!: ?BlurStyle = None,
+    onWillDismiss!: ?Callback<DismissDialogAction, Unit> = None,
+    cornerRadius!: ?BorderRadiuses = None,
+    transition!: ?TransitionEffect = None,
+    width!: ?Length = None,
+    height!: ?Length = None,
+    borderWidth!: ?Length = None,
+    borderColor!: ?BorderColor = None,
+    borderStyle!: ?EdgeStyles = None,
+    shadow!: ?ShadowOptions = None,
+    textStyle!: ?WordBreak = None,
+    primaryButton!: ?AlertDialogButtonBaseOptions,
+    secondaryButton!: ?AlertDialogButtonBaseOptions
+)
+```
+
+**Function:** Defines an alert dialog with two confirmation buttons.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 22
+
+**Parameters:**
+
+| Name | Type | Required | Default | Description |
+|:---|:---|:---|:---|:---|
+| title | ?[ResourceStr](./cj-common-types.md#interface-resourcestr) | No | None | **Named parameter.** Dialog title. Initial value: "" |
+| subtitle | ?[ResourceStr](./cj-common-types.md#interface-resourcestr) | No | None | **Named parameter.** Dialog subtitle. Initial value: "" |
+| message | ?[ResourceStr](./cj-common-types.md#interface-resourcestr) | Yes | - | Dialog content. |
+| autoCancel | ?Bool | No | None | **Named parameter.** Whether to close the dialog when clicking the mask layer. true: close the dialog; false: do not close the dialog. Initial value: true |
+| cancel | ?[VoidCallback](./cj-common-types.md#type-voidcallback) | No | None | **Named parameter.** Callback when closing the dialog by clicking the mask layer. Initial value: {=>} |
+| alignment | ?[DialogAlignment](./cj-common-types.md#enum-dialogalignment) | No | None | **Named parameter.** Vertical alignment of the dialog. Initial value: DialogAlignment.Default |
+| offset | ?[Offset](./cj-common-types.md#class-offset) | No | None | **Named parameter.** Offset of the dialog relative to the alignment position. Initial value: Offset(0, 0) |
+| gridCount | ?UInt32 | No | None | **Named parameter.** Number of grid columns occupied by the dialog container width. Initial value: 4 |
+| maskRect | ?[Rectangle](./cj-common-types.md#class-rectangle) | No | None | **Named parameter.** Mask layer area of the dialog. Events within the mask layer area are not transmitted, while events outside are transmitted. **Note:** maskRect does not take effect when showInSubWindow is true. Initial value: Rectangle(x: 0, y: 0, width: 100.percent, height: 100.percent) |
+| showInSubWindow | ?Bool | No | None | **Named parameter.** Whether to display the dialog in a sub-window when it needs to appear outside the main window. Initial value: false, meaning the dialog is displayed within the application rather than in an independent sub-window. **Note:** A dialog with showInSubWindow=true cannot trigger another dialog with showInSubWindow=true. |
+| isModal | ?Bool | No | None | **Named parameter.** Whether the dialog is a modal window. Modal windows have a mask layer, while non-modal windows do not. Initial value: true, meaning the dialog has a mask layer. |
+| backgroundColor | ?[ResourceColor](./cj-common-types.md#interface-resourcecolor) | No | None | **Named parameter.** Background color of the dialog. **Note:** When backgroundColor is set to a non-transparent color, backgroundBlurStyle should be set to BlurStyle.NONE; otherwise, the color display may not meet expectations. Initial value: Color.Transparent |
+| backgroundBlurStyle | ?[BlurStyle](./cj-common-types.md#enum-blurstyle) | No | None | **Named parameter.** Blur material of the dialog background. **Note:** Set to BlurStyle.NONE to disable background blur. When backgroundBlurStyle is set to a non-NONE value, do not set backgroundColor; otherwise, the color display may not meet expectations. Initial value: BlurStyle.ComponentUltraThick |
+| onWillDismiss | ?[Callback](./cj-common-types.md#type-callbackt-v)\<[DismissDialogAction](./cj-dialog-actionsheet.md#class-dismissdialogaction), Unit> | No | None | **Named parameter.** Interactive close callback function. **Note:** 1. When users perform actions like clicking the mask layer to close, swiping left/right, pressing the back button, or pressing ESC to close, if this callback is registered, the dialog will not close immediately. The callback can determine whether to close the dialog based on the operation type obtained from reason. The current component does not support the CLOSE_BUTTON enum value in reason. 2. Do not perform onWillDismiss interception within the onWillDismiss callback. |
+| cornerRadius | ?[BorderRadiuses](./cj-common-types.md#class-borderradiuses) | No | None | **Named parameter.** Sets the corner radius of the background. The radius of each corner can be set separately. The maximum corner radius is limited by the component size (half of the component width or height). Negative values are treated as default values. Percentage parameter: Sets the corner radius as a percentage of the parent dialog's width and height. **Note:** When cornerRadius is of type LocalizedBorderRadiuses, it supports layout order changes based on language habits. Initial value: BorderRadiuses(topLeft: 32.vp, topRight: 32.vp, bottomLeft: 32.vp, bottomRight: 32.vp) |
+| transition | ?[TransitionEffect](./cj-animation-transition.md#class-transitioneffect) | No | None | **Named parameter.** Sets the transition effect for dialog display and exit. **Note:** 1. If not set, the default show/exit animation is used. 2. Pressing the back button during the show animation interrupts the show animation and executes the exit animation, resulting in a combined effect of both animations. 3. Pressing the back button during the exit animation does not interrupt it; the exit animation continues, and pressing back again exits the application. |
+| width | ?[Length](./cj-common-types.md#interface-length) | No | None | **Named parameter.** Sets the width of the dialog background. **Note:** - Default maximum dialog width: None. - Percentage parameter: Adjusts the dialog width relative to the window width. |
+| height | ?[Length](./cj-common-types.md#interface-length) | No | None | **Named parameter.** Sets the height of the dialog background. **Note:** - Default maximum dialog height: None. - Percentage parameter: Adjusts the dialog height relative to (window height - safe area). |
+| borderWidth | ?[Length](./cj-common-types.md#interface-length) | No | None | **Named parameter.** Sets the width of each border separately. Percentage parameter: Sets the border width as a percentage of the parent dialog's width. If the left/right borders exceed the dialog width or the top/bottom borders exceed the dialog height, the display may not meet expectations. **Note:** When borderWidth is of type LocalizedEdgeWidths, it supports layout order changes based on language habits. Initial value: 0 |
+| borderColor | ?[BorderColor](#class-bordercolor) | No | None | **Named parameter.** Sets the border color of the dialog background. Requires borderWidth to be set. **Note:** When borderColor is of type LocalizedEdgeColors, it supports layout order changes based on language habits. Initial value: BorderColor(color: Color.Black) |
+| borderStyle | ?[EdgeStyles](./cj-common-types.md#class-edgestyles) | No | None | **Named parameter.** Sets the border style of the dialog background. Requires borderWidth to be set. Initial value: EdgeStyles() |
+| shadow | ?[ShadowOptions](./cj-common-types.md#class-shadowoptions) | No | None | **Named parameter.** Sets the shadow of the dialog background.<br>Initial value:<br>Before API version 26, the initial value is ShadowOptions(radius: 0.0);<br>From API version 26 onward, the initial value is ShadowOptions(radius: -1.0). |
+| textStyle | ?[WordBreak](./cj-common-types.md#enum-wordbreak) | No | None | **Named parameter.** Sets the text style of the dialog message content. Initial value: WordBreak.BreakAll |
+| primaryButton | ?[AlertDialogButtonBaseOptions](#class-alertdialogbuttonbaseoptions) | Yes | - | **Named parameter.** The first button. |
+| secondaryButton | ?[AlertDialogButtonBaseOptions](#class-alertdialogbuttonbaseoptions) | Yes | - | **Named parameter.** The second button. |
 
 ## class AlertDialogParamWithConfirm
 
@@ -940,7 +1024,7 @@ public init(
 | borderWidth | ?[Length](./cj-common-types.md#interface-length) | No | None | **Named parameter.** Sets the width of each border separately. Percentage parameter: Sets the border width as a percentage of the parent dialog's width. If the left/right borders exceed the dialog width or the top/bottom borders exceed the dialog height, the display may not meet expectations. **Note:** When borderWidth is of type LocalizedEdgeWidths, it supports layout order changes based on language habits. Initial value: 0 |
 | borderColor | ?[BorderColor](#class-bordercolor) | No | None | **Named parameter.** Sets the border color of the dialog background. Requires borderWidth to be set. **Note:** When borderColor is of type LocalizedEdgeColors, it supports layout order changes based on language habits. Initial value: BorderColor(color: Color.Black) |
 | borderStyle | ?[EdgeStyles](./cj-common-types.md#class-edgestyles) | No | None | **Named parameter.** Sets the border style of the dialog background. Requires borderWidth to be set. Initial value: EdgeStyles() |
-| shadow | ?[ShadowOptions](./cj-common-types.md#class-shadowoptions) | No | None | **Named parameter.** Sets the shadow of the dialog background. Initial value: ShadowOptions(radius: 0.0) |
+| shadow | ?[ShadowOptions](./cj-common-types.md#class-shadowoptions) | No | None | **Named parameter.** Sets the shadow of the dialog background.<br>Initial value:<br>Before API version 26, the initial value is ShadowOptions(radius: 0.0);<br>From API version 26 onward, the initial value is ShadowOptions(radius: -1.0). |
 | textStyle | ?[WordBreak](./cj-common-types.md#enum-wordbreak) | No | None | **Named parameter.** Sets the text style of the dialog message content. Initial value: WordBreak.BreakAll |
 | confirm | ?[AlertDialogButtonBaseOptions](#class-alertdialogbuttonbaseoptions) | No | None | **Named parameter.** Enables/disables the confirmation button, sets default focus, button style, text content, text color, button background color, and click callback. Initial value: AlertDialogButtonOptions(value: "", action: {=>}) |
 
@@ -1074,7 +1158,21 @@ public init(
 | gridCount | ?UInt32 | No | None | **Named parameter.** Number of grid columns occupied by the dialog container width. Initial value: 4 |
 | maskRect | ?[Rectangle](./cj-common-types.md#class-rectangle) | No | None | **Named parameter.** Mask layer area of the dialog. Events within the mask layer area are not transmitted, while events outside are transmitted. **Note:** maskRect does not take effect when showInSubWindow is true. Initial value: Rectangle(x: 0, y: 0, width: 100.percent, height: 100.percent) |
 | showInSubWindow | ?Bool | No | None | **Named parameter.** Whether to display the dialog in a sub-window when it needs to appear outside the main window. Initial value: false, meaning the dialog is displayed within the application rather than in an independent sub-window. **Note:** A dialog with showInSubWindow=true cannot trigger another dialog with showInSubWindow=true. |
-| isModal | ?Bool | No | None | **Named parameter.** Whether the dialog is a modal window. Modal windows have a mask layer, while non-modal windows do not. Initial value: true, meaning the## Sample Code
+| isModal | ?Bool | No | None | **Named parameter.** Whether the dialog is a modal window. Modal windows have a mask layer, while non-modal windows do not. Initial value: true, meaning the dialog has a mask layer. |
+| backgroundColor | ?[ResourceColor](./cj-common-types.md#interface-resourcecolor) | No | None | **Named parameter.** Background color of the dialog. **Note:** When backgroundColor is set to a non-transparent color, backgroundBlurStyle should be set to BlurStyle.NONE; otherwise, the color display may not meet expectations. Initial value: Color.Transparent |
+| backgroundBlurStyle | ?[BlurStyle](./cj-common-types.md#enum-blurstyle) | No | None | **Named parameter.** Blur material of the dialog background. **Note:** Set to BlurStyle.NONE to disable background blur. When backgroundBlurStyle is set to a non-NONE value, do not set backgroundColor; otherwise, the color display may not meet expectations. Initial value: BlurStyle.ComponentUltraThick |
+| onWillDismiss | ?[Callback](./cj-common-types.md#type-callbackt-v)\<[DismissDialogAction](./cj-dialog-actionsheet.md#class-dismissdialogaction), Unit> | No | None | **Named parameter.** Interactive close callback function. **Note:** 1. When users perform actions like clicking the mask layer to close, swiping left/right, pressing the back button, or pressing ESC to close, if this callback is registered, the dialog will not close immediately. The callback can determine whether to close the dialog based on the operation type obtained from reason. The current component does not support the CLOSE_BUTTON enum value in reason. 2. Do not perform onWillDismiss interception within the onWillDismiss callback. |
+| cornerRadius | ?[BorderRadiuses](./cj-common-types.md#class-borderradiuses) | No | None | **Named parameter.** Sets the corner radius of the background. The radius of each corner can be set separately. The maximum corner radius is limited by the component size (half of the component width or height). Negative values are treated as default values. Percentage parameter: Sets the corner radius as a percentage of the parent dialog's width and height. **Note:** When cornerRadius is of type LocalizedBorderRadiuses, it supports layout order changes based on language habits. Initial value: BorderRadiuses(topLeft: 32.vp, topRight: 32.vp, bottomLeft: 32.vp, bottomRight: 32.vp) |
+| transition | ?[TransitionEffect](./cj-animation-transition.md#class-transitioneffect) | No | None | **Named parameter.** Sets the transition effect for dialog display and exit. **Note:** 1. If not set, the default show/exit animation is used. 2. Pressing the back button during the show animation interrupts the show animation and executes the exit animation, resulting in a combined effect of both animations. 3. Pressing the back button during the exit animation does not interrupt it; the exit animation continues, and pressing back again exits the application. |
+| width | ?[Length](./cj-common-types.md#interface-length) | No | None | **Named parameter.** Sets the width of the dialog background. **Note:** - Default maximum dialog width: None. - Percentage parameter: Adjusts the dialog width relative to the window width. |
+| height | ?[Length](./cj-common-types.md#interface-length) | No | None | **Named parameter.** Sets the height of the dialog background. **Note:** - Default maximum dialog height: None. - Percentage parameter: Adjusts the dialog height relative to (window height - safe area). |
+| borderWidth | ?[Length](./cj-common-types.md#interface-length) | No | None | **Named parameter.** Sets the width of each border separately. Percentage parameter: Sets the border width as a percentage of the parent dialog's width. If the left/right borders exceed the dialog width or the top/bottom borders exceed the dialog height, the display may not meet expectations. **Note:** When borderWidth is of type LocalizedEdgeWidths, it supports layout order changes based on language habits. Initial value: 0 |
+| borderColor | ?[BorderColor](#class-bordercolor) | No | None | **Named parameter.** Sets the border color of the dialog background. Requires borderWidth to be set. **Note:** When borderColor is of type LocalizedEdgeColors, it supports layout order changes based on language habits. Initial value: BorderColor(color: Color.Black) |
+| borderStyle | ?[EdgeStyles](./cj-common-types.md#class-edgestyles) | No | None | **Named parameter.** Sets the border style of the dialog background. Requires borderWidth to be set. Initial value: EdgeStyles() |
+| shadow | ?[ShadowOptions](./cj-common-types.md#class-shadowoptions) | No | None | **Named parameter.** Sets the shadow of the dialog background.<br>Initial value:<br>Before API version 26, the initial value is ShadowOptions(radius: 0.0);<br>From API version 26 onward, the initial value is ShadowOptions(radius: -1.0). |
+| textStyle | ?[WordBreak](./cj-common-types.md#enum-wordbreak) | No | None | **Named parameter.** Sets the text style of the dialog message content. Initial value: WordBreak.BreakAll |
+| buttons | ?Array\<[AlertDialogButtonOptions](#class-alertdialogbuttonoptions)> | Yes | - | **Named parameter.** Multiple buttons in the dialog container. |
+| buttonDirection | ?[DialogButtonDirection](#enum-dialogbuttondirection) | No | None | **Named parameter.** Default button arrangement direction is DialogButtonDirection.AUTO. For three or more buttons, Auto mode is recommended (switches to vertical mode for two or more buttons, usually displaying more buttons). In non-Auto mode, three or more buttons may not display fully, and buttons beyond the display range will be truncated. Initial value: DialogButtonDirection.AUTO |
 
 ### Example 1 (Dialog with Multiple Buttons)
 

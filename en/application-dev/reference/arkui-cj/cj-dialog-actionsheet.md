@@ -836,7 +836,9 @@ public init(
 
 **Function:** Constructor of the ActionSheetOptions class.
 
-**System Capability:** SystemCapability.ArkUI.ArkUI.Full**Initial Version:** 22
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 22
 
 **Parameters:**
 
@@ -864,4 +866,4 @@ public init(
 | borderWidth | ?[Length](./cj-common-types.md#interface-length) | No | None | **Named parameter.** Sets the border width of the popup background. <br>Percentage parameter: Sets the border width as a percentage of the parent popup's width and height. <br>If the left/right border exceeds the popup width or the top/bottom border exceeds the popup height, the display may not meet expectations. |
 | borderColor | ?[ResourceColor](./cj-common-types.md#interface-resourcecolor) | No | None | **Named parameter.** Sets the border color of the popup background. If `borderColor` is used, it must be paired with `borderWidth`. |
 | borderStyle | ?[EdgeStyles](./cj-common-types.md#class-edgestyles) | No | None | **Named parameter.** Sets the border style of the popup background. If `borderStyle` is used, it must be paired with `borderWidth`. |
-| shadow | ?[ShadowOptions](./cj-common-types.md#class-shadowoptions) | No | None | **Named parameter.** Sets the shadow of the popup background. |
+| shadow | ?[ShadowOptions](./cj-common-types.md#class-shadowoptions) | No | None | **Named parameter.** Sets the shadow of the popup background.<br>Initial value:<br>Before API version 26, the initial value is ShadowOptions(radius: 0.0);<br>From API version 26 onward, the initial value is ShadowOptions(radius: -1.0). |

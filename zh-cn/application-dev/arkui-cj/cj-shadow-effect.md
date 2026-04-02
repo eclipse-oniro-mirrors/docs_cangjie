@@ -6,7 +6,7 @@
 > 当前为Beta阶段。
 <!--DelEnd-->
 
-阴影接口[shadow](../reference/arkui-cj/cj-universal-attribute-imageeffect.md#func-shadowfloat64-resourcecolor-float64-float64)可以为当前组件添加阴影效果，该接口支持两种类型参数，开发者可配置[ShadowOptions](../reference/arkui-cj/cj-common-types.md#class-shadowoptions)自定义阴影效果。ShadowOptions模式下，当radius = 0 或者 color 的透明度为0时，无阴影效果。
+阴影接口[shadow](../reference/arkui-cj/cj-universal-attribute-imageeffect.md#func-shadowfloat64-resourcecolor-float64-float64)可以为当前组件添加阴影效果，开发者可配置[ShadowOptions](../reference/arkui-cj/cj-common-types.md#class-shadowoptions)自定义阴影效果。API version 26之前，当radius小于等于0或者color的透明度为0时，无阴影效果；从API version 26开始，当radius小于0或者color的透明度为0时，无阴影效果。
 
  <!-- run -->
 

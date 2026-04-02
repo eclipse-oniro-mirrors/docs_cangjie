@@ -105,7 +105,7 @@ func shadow(radius!: ?Float64, color!: ?ResourceColor, offsetX!: ?Float64, offse
 
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
-| radius | ?Float64 | Yes | - | **Named parameter.** Shadow blur radius. Initial value: 0.0 |
+| radius | ?Float64 | Yes | - | **Named parameter.** Shadow blur radius.<br>Initial value:<br>Before API version 26, the initial value is 0.0; the shadow takes effect when the value is greater than 0.0.<br>From API version 26 onward, the initial value is -1.0; the shadow takes effect when the value is greater than or equal to 0.0. |
 | color | ?[ResourceColor](./cj-common-types.md#interface-resourcecolor) | Yes | - | **Named parameter.** Shadow color. Initial value: Color(0x666666) |
 | offsetX | ?Float64 | Yes | - | **Named parameter.** Shadow X-axis offset. Initial value: 0.0 |
 | offsetY | ?Float64 | Yes | - | **Named parameter.** Shadow Y-axis offset. Initial value: 0.0 |

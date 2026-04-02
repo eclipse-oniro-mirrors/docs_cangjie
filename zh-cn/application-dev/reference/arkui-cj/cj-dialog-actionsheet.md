@@ -865,4 +865,4 @@ public init(
 |borderWidth|?[Length](./cj-common-types.md#interface-length)|否|None| **命名参数。**  设置弹窗背板的边框宽度。<br>百分比参数方式：以父元素弹窗宽和高的百分比来设置弹窗的圆角。<br>当弹窗左边框和右边框大于弹窗宽度，弹窗上边框和下边框大于弹窗高度，显示可能不符合预期。|
 |borderColor|?[ResourceColor](./cj-common-types.md#interface-resourcecolor)|否|None|**命名参数。**  设置弹窗背板的边框颜色。如果使用borderColor属性，需要和borderWidth属性一起使用。 |
 |borderStyle|?[EdgeStyles](./cj-common-types.md#class-edgestyles)|否|None|**命名参数。**  设置弹窗背板的边框样式 。 如果使用borderStyle属性，需要和borderWidth属性一起使用。 |
-|shadow|?[ShadowOptions](./cj-common-types.md#class-shadowoptions)|否|None|**命名参数。** 设置弹窗背板的阴影。|
+|shadow|?[ShadowOptions](./cj-common-types.md#class-shadowoptions)|否|None|**命名参数。** 设置弹窗背板的阴影。<br>初始值：<br>API version 26之前，初始值为ShadowOptions(radius: 0.0)；<br>从API version 26开始，初始值为ShadowOptions(radius: -1.0)。|
