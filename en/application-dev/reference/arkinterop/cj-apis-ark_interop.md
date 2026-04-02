@@ -10756,10 +10756,10 @@ public func lastIndexOf(target: Utf16String, fromIndex: Int64): ?Int64
 
 **Parameters:**
 
-| Parameter | Type | Required | Default | Description                                                                                                                                                                           |
-|:---|:---|:---|:---|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| target | [Utf16String](#class-utf16string) | Yes | - | Target string.                                                                                                                                                                        |
-| fromIndex | Int64 | Yes | - | Starting position for search in the current string. Default is size - 1 if not specified. Treat as size - 1 if the value is less than 0. Treat as size - 1 if the value is greater than size. |
+| Parameter | Type | Required | Default | Description                                                                                                                                              |
+|:---|:---|:---|:---|:---------------------------------------------------------------------------------------------------------------------------------------------------------|
+| target | [Utf16String](#class-utf16string) | Yes | - | Target string.                                                                                                                                           |
+| fromIndex | Int64 | Yes | - | Starting position for search in the current string. Default is size - 1 if not specified.If the value is less than 0 or greater than size, returns None. |
 
 **Return Value:**
 
