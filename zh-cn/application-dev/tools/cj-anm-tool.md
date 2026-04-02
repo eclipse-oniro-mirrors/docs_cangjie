@@ -47,7 +47,7 @@ anm dump [<options>]
 | -u/--user-id     | 可选参数，设置指定的用户ID打印。     |
 | -h/--help        | 帮助信息。                           |
 
-**示例：**：
+**示例：**
 
 ```bash
 # 打印活跃的通知信息
@@ -69,7 +69,7 @@ anm setting [<options>]
 | -e/--enable-notification | 设置通知使能开关。  |
 | -h/--help                | 帮助信息。      |
 
-**示例：**：
+**示例：**
 
 ```bash
 # 设置保存在内存中的最近通知的最大数为100个

@@ -222,7 +222,7 @@ java -jar path\app_packing_tool.jar --mode versionNormalize --input-list 1.hap,2
 java -jar path\app_packing_tool.jar --mode packageNormalize --hsp-list path\1.hsp,path\2.hsp --bundle-name com.example.myapplication --version-code 1000001 --out-path path\out\
 ```
 
-**表8**  参数含义及规范
+**表8** 参数含义及规范
 
 | 指令 | 是否必选项 | 选项   | 描述  |
 |------|-------|------|---|
