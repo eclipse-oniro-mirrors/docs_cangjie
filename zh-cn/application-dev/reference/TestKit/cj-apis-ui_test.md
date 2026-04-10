@@ -3880,6 +3880,8 @@ public func close(): Unit
 
 **起始版本：** 22
 
+**设备行为差异：** 对于API version 22版本，该接口在PC、Tablet设备中可正常调用，在其他设备中返回17000005错误码。从API version 23开始，该接口在Phone、PC、Tablet设备中可正常调用，在其他设备中返回17000005错误码。
+
 **异常：**
 
 - BusinessException：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
@@ -3917,10 +3919,6 @@ public func focus(): Unit
 ```
 
 **功能：** 让窗口获焦。
-
-> **说明：**
->
-> 该接口在Tablet设备中可正常调用，在手机设备中返回17000005错误码。
 
 **系统能力：** SystemCapability.Test.UiTest
 
@@ -4238,13 +4236,11 @@ public func maximize(): Unit
 
 **功能：** 将窗口最大化。适用于支持窗口最大化操作的窗口。
 
-> **说明：**
->
-> 该接口在Tablet设备中可正常调用，在手机设备中返回17000005错误码。
-
 **系统能力：** SystemCapability.Test.UiTest
 
 **起始版本：** 22
+
+**设备行为差异：** 对于API version 22版本，该接口在PC、Tablet设备中可正常调用，在其他设备中返回17000005错误码。从API version 23开始，该接口在Phone、PC、Tablet设备中可正常调用，在其他设备中返回17000005错误码。
 
 **异常：**
 
@@ -4284,13 +4280,11 @@ public func minimize(): Unit
 
 **功能：** 将窗口最小化。适用于支持窗口最小化操作的窗口。
 
-> **说明：**
->
-> 该接口在Tablet设备中可正常调用，在手机设备中返回17000005错误码。
-
 **系统能力：** SystemCapability.Test.UiTest
 
 **起始版本：** 22
+
+**设备行为差异：** 对于API version 22版本，该接口在PC、Tablet设备中可正常调用，在其他设备中返回17000005错误码。从API version 23开始，该接口在Phone、PC、Tablet设备中可正常调用，在其他设备中返回17000005错误码。
 
 **异常：**
 
@@ -4330,13 +4324,11 @@ public func moveTo(x: Int32, y: Int32): Unit
 
 **功能：** 将窗口移动到目标点。适用于支持移动的窗口。
 
-> **说明：**
->
-> 该接口在Tablet设备中可正常调用，在手机设备中返回17000005错误码。
-
 **系统能力：** SystemCapability.Test.UiTest
 
 **起始版本：** 22
+
+**设备行为差异：** 对于API version 22版本，该接口在PC、Tablet设备中可正常调用，在其他设备中返回17000005错误码。从API version 23开始，该接口在Phone、PC、Tablet设备中可正常调用，在其他设备中返回17000005错误码。
 
 **参数：**
 
@@ -4386,6 +4378,8 @@ public func resize(wide: Int32, height: Int32, direction: ResizeDirection): Unit
 
 **起始版本：** 22
 
+**设备行为差异：** 对于API version 22版本，该接口在PC、Tablet设备中可正常调用，在其他设备中返回17000005错误码。从API version 23开始，该接口在Phone、PC、Tablet设备中可正常调用，在其他设备中返回17000005错误码。
+
 **参数：**
 
 |参数名|类型|必填|默认值|说明|
@@ -4432,13 +4426,11 @@ public func resume(): Unit
 
 **功能：** 将窗口恢复到之前的窗口模式。
 
-> **说明：**
->
-> 该接口在Tablet设备中可正常调用，在手机设备中返回17000005错误码。
-
 **系统能力：** SystemCapability.Test.UiTest
 
 **起始版本：** 22
+
+**设备行为差异：** 对于API version 22版本，该接口在PC、Tablet设备中可正常调用，在其他设备中返回17000005错误码。从API version 23开始，该接口在Phone、PC、Tablet设备中可正常调用，在其他设备中返回17000005错误码。
 
 **异常：**
 
@@ -4478,13 +4470,11 @@ public func split(): Unit
 
 **功能：** 将窗口模式切换成分屏模式。适用于支持切换分屏模式的窗口。
 
-> **说明：**
->
-> 该接口在Tablet设备中可正常调用，在手机设备中返回17000005错误码。
-
 **系统能力：** SystemCapability.Test.UiTest
 
 **起始版本：** 22
+
+**设备行为差异：** 对于API version 22版本，该接口在PC、Tablet设备中可正常调用，在其他设备中返回17000005错误码。从API version 23开始，该接口在Phone、PC、Tablet设备中可正常调用，在其他设备中返回17000005错误码。
 
 **异常：**
 
