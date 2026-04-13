@@ -2051,7 +2051,6 @@ public init(pixelMap!: PixelMap, size!: ?(Length, Length))
 
 ```cangjie
 public open class RichEditorBaseController {
-    protected init(id: Int64)
 }
 ```
 
@@ -2060,24 +2059,6 @@ public open class RichEditorBaseController {
 **System Capability:** SystemCapability.ArkUI.ArkUI.Full
 
 **Since:** 22
-
-### init(Int64)
-
-```cangjie
-protected init(id: Int64)
-```
-
-**Function:** Constructs a RichEditorBaseController object.
-
-**System Capability:** SystemCapability.ArkUI.ArkUI.Full
-
-**Since:** 22
-
-**Parameters:**
-
-| Name | Type | Required | Default | Description |
-|:---|:---|:---|:---|:---|
-| id | Int64 | Yes | - | identifier |
 
 #### func getCaretOffset()
 

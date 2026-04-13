@@ -3361,7 +3361,6 @@ public open class MultiShadowOptions {
     public var radius: ?Length
     public var offsetX: ?Length
     public var offsetY: ?Length
-    protected init(radius: ?Length, offsetX: ?Length, offsetY: ?Length)
 }
 ```
 
@@ -3424,26 +3423,6 @@ Unit: vp.
 **System Capability:** SystemCapability.ArkUI.ArkUI.Full
 
 **Since:** 22
-
-### init(?Length, ?Length, ?Length)
-
-```cangjie
-protected init(radius: ?Length, offsetX: ?Length, offsetY: ?Length)
-```
-
-**Function:** Constructs a MultiShadowOptions object.
-
-**System Capability:** SystemCapability.ArkUI.ArkUI.Full
-
-**Since:** 22
-
-**Parameters:**
-
-| Name | Type | Required | Default | Description |
-|:---|:---|:---|:---|:---|
-| radius | ?[Length](./cj-common-types.md#interface-length) | Yes | - | - |
-| offsetX | ?[Length](./cj-common-types.md#interface-length) | Yes | - | - |
-| offsetY | ?[Length](./cj-common-types.md#interface-length) | Yes | - | - |
 
 ## class PickerTextStyle
 

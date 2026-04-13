@@ -2057,7 +2057,6 @@ public init(pixelMap!: PixelMap, size!: ?(Length, Length))
 
 ```cangjie
 public open class RichEditorBaseController {
-    protected init(id: Int64)
 }
 ```
 
@@ -2066,24 +2065,6 @@ public open class RichEditorBaseController {
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **起始版本：** 22
-
-#### init(Int64)
-
-```cangjie
-protected init(id: Int64)
-```
-
-**功能：** 创建实例。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**起始版本：** 22
-
-**参数：**
-
-|参数名|类型|必填|默认值|说明|
-|:---|:---|:---|:---|:---|
-|id|Int64|是|-|标识号|
 
 #### func getCaretOffset()
 
