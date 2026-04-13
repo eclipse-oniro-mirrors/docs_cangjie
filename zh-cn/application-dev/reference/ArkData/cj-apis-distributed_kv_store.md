@@ -329,7 +329,7 @@ try {
 public func getResultSet(keyPrefix: String): KVStoreResultSet
 ```
 
-**功能：** 从DeviceKVStore数据库中获取本设备具有指定前缀的结果集。
+**功能：** 从DeviceKVStore数据库中获取本设备具有指定前缀的结果集。允许同时打开的结果集的最大数量为8个。
 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
 
@@ -384,7 +384,7 @@ try {
 public func getResultSet(query: Query): KVStoreResultSet
 ```
 
-**功能：** 获取与指定设备ID和Query对象匹配的KVStoreResultSet对象。
+**功能：** 获取与指定设备ID和Query对象匹配的KVStoreResultSet对象。允许同时打开的结果集的最大数量为8个。
 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
 
