@@ -1421,7 +1421,9 @@ import ohos.ui_test.Point as PT
 
 let driver: Driver = Driver.create()
 driver.mouseDoubleClick(PT(248, 194), MouseButton.MouseButtonLeft, key1: 2072)
-```### func mouseDrag(Point, Point, Int32)
+```
+
+### func mouseDrag(Point, Point, Int32)
 
 ```cangjie
 public func mouseDrag(from: Point, to: Point, speed!: Int32 = 600): Unit
@@ -3283,6 +3285,8 @@ public func close(): Unit
 
 **Since:** 22
 
+**Device behavior difference:** For API version 22, this API can be called normally on PC and Tablet devices, and returns error code 17000005 on other devices. Starting from API version 23, this API can be called normally on Phone, PC, and Tablet devices, and returns error code 17000005 on other devices.
+
 **Exceptions:**
 
 - BusinessException: Error codes are listed in the table below. For details, see [uitest Error Codes](./cj-errorcode-uitest.md) and [Universal Error Codes](../cj-errorcode-universal.md).
@@ -3591,11 +3595,12 @@ public func maximize(): Unit
 
 **Description:** Maximizes the window. This applies to windows that support the maximize operation.
 
-**Note:** This API can be called normally on PC/2-in-1 and Tablet devices. On other devices, it returns error code 17000005.
 
 **System Capability:** SystemCapability.Test.UiTest
 
 **Since:** 22
+
+**Device behavior difference:** For API version 22, this API can be called normally on PC and Tablet devices, and returns error code 17000005 on other devices. Starting from API version 23, this API can be called normally on Phone, PC, and Tablet devices, and returns error code 17000005 on other devices.
 
 **Exceptions:**
 
@@ -3629,11 +3634,12 @@ public func minimize(): Unit
 
 **Description:** Minimizes the window. This applies to windows that support the minimize operation.
 
-**Note:** This API can be called normally on PC/2-in-1 and Tablet devices. On other devices, it returns error code 17000005.
 
 **System Capability:** SystemCapability.Test.UiTest
 
 **Since:** 22
+
+**Device behavior difference:** For API version 22, this API can be called normally on PC and Tablet devices, and returns error code 17000005 on other devices. Starting from API version 23, this API can be called normally on Phone, PC, and Tablet devices, and returns error code 17000005 on other devices.
 
 **Exceptions:**
 
@@ -3667,11 +3673,12 @@ public func moveTo(x: Int32, y: Int32): Unit
 
 **Description:** Moves the window to the target point. This applies to windows that support movement.
 
-**Note:** This API can be called normally on PC/2-in-1 and Tablet devices. On other devices, it returns error code 17000005.
 
 **System Capability:** SystemCapability.Test.UiTest
 
 **Since:** 22
+
+**Device behavior difference:** For API version 22, this API can be called normally on PC and Tablet devices, and returns error code 17000005 on other devices. Starting from API version 23, this API can be called normally on Phone, PC, and Tablet devices, and returns error code 17000005 on other devices.
 
 **Parameters:**
 
@@ -3716,6 +3723,8 @@ public func resize(wide: Int32, height: Int32, direction: ResizeDirection): Unit
 
 **Since:** 22
 
+**Device behavior difference:** For API version 22, this API can be called normally on PC and Tablet devices, and returns error code 17000005 on other devices. Starting from API version 23, this API can be called normally on Phone, PC, and Tablet devices, and returns error code 17000005 on other devices.
+
 **Parameters:**
 
 | Parameter | Type | Mandatory | Default Value | Description |
@@ -3757,11 +3766,11 @@ public func resume(): Unit
 
 **Description:** Restores the window to its previous window mode.
 
-**Note:** This API can be called normally on PC/2-in-1 and Tablet devices. On other devices, it returns error code 17000005.
-
 **System Capability:** SystemCapability.Test.UiTest
 
 **Since:** 22
+
+**Device behavior difference:** For API version 22, this API can be called normally on PC and Tablet devices, and returns error code 17000005 on other devices. Starting from API version 23, this API can be called normally on Phone, PC, and Tablet devices, and returns error code 17000005 on other devices.
 
 **Exceptions:**
 
@@ -3795,11 +3804,11 @@ public func split(): Unit
 
 **Description:** Switches the window to split-screen mode. This applies to windows that support switching to split-screen mode.
 
-**Note:** This API can be called normally on PC/2-in-1 and Tablet devices. On other devices, it returns error code 17000005.
-
 **System Capability:** SystemCapability.Test.UiTest
 
 **Since:** 22
+
+**Device behavior difference:** For API version 22, this API can be called normally on PC and Tablet devices, and returns error code 17000005 on other devices. Starting from API version 23, this API can be called normally on Phone, PC, and Tablet devices, and returns error code 17000005 on other devices.
 
 **Exceptions:**
 
