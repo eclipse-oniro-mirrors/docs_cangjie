@@ -329,7 +329,7 @@ try {
 public func getResultSet(keyPrefix: String): KVStoreResultSet
 ```
 
-**Function:** Gets a KVStoreResultSet object matching the specified Query object for the current device.
+**Function:** Gets a KVStoreResultSet object matching the specified Query object for the current device.The maximum number of open result sets is 8.
 
 **System Capability:** SystemCapability.DistributedDataManager.KVStore.Core
 
@@ -384,7 +384,7 @@ try {
 public func getResultSet(query: Query): KVStoreResultSet
 ```
 
-**Function:** Gets a KVStoreResultSet object matching the specified Query object for the current device.
+**Function:** Gets a KVStoreResultSet object matching the specified Query object for the current device.The maximum number of open result sets is 8.
 
 **System Capability:** SystemCapability.DistributedDataManager.KVStore.Core
 

@@ -28,7 +28,7 @@ The number of database subscriptions or open result sets has exceeded the maximu
 **Resolution Steps**
 
 1. If the number of database subscriptions has exceeded the limit when calling the `on` interface, cancel some subscriptions and try again.
-2. If the number of open result sets has exceeded the limit when calling `getResultSet`, close some result sets and retry.
+2. If the number of open result sets has exceeded the limit when calling `getResultSet`, retry after close the database.
 
 ## 15100002 Changed Configuration When Opening Existing Database
 
