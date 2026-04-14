@@ -16,7 +16,7 @@ The @Reusable macro decorates any custom component, indicating that the custom c
 
 - Mixed projects are temporarily not supported.
 
-- @Reusable is only applicable to custom components.
+- @Reusable is only applicable to custom components decorated with [@Component](./cj-create-custom-components.md#component) and must not be used together with [@Builder](./cj-macro-builder.md#builder-macro-custom-build-functions).
 
     <!-- run -->
 

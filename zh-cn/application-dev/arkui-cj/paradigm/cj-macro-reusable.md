@@ -16,7 +16,7 @@
 
 - 暂时不支持混合工程。
 
-- @Reusable仅用于自定义组件。
+- @Reusable仅用于自定义组件[@Component](./cj-create-custom-components.md#component)，不可与[@Builder](./cj-macro-builder.md#builder宏自定义构建函数)搭配使用。
 
     <!-- run -->
 

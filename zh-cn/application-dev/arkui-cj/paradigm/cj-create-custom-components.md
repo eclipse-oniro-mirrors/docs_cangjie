@@ -80,17 +80,13 @@ class EntryView {
 
 ### @Component
 
-@Component宏仅能装饰class关键字声明的数据结构。class被@Component装饰后具备组件化的能力，需要实现build方法描述UI，一个class只能被一个@Component装饰。
+@Component宏修饰的class为自定义组件，可以使用状态管理宏的能力。
 
 ```cangjie
 @Component
 class MyComponent {
 }
 ```
-
-使用限制：
-
-一个被@Component修饰的class类型(自定义组件)的成员变量（包括普通成员变量、状态变量）总数不能超过128个。
 
 ### build()函数
 
