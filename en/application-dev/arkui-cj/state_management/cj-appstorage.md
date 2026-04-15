@@ -42,6 +42,7 @@ When a custom component initializes, the variables decorated with @StorageProp(k
 |:---|:---|
 | Macro Parameter | `key`: Constant string, required (the string must be quoted). |
 | Allowed Variable Types | Class, String, integer, float, Bool, enum types, and arrays of these types.<br>Supports Datetime, Map, and Set types. For nested types, see [Observing Changes and Behavior](#observing-changes-and-behavior).<br>The type must be specified and should match the corresponding property type in LocalStorage to avoid implicit type conversion, which may cause application behavior anomalies.<br>Any type is not supported. |
+| Not recommended decorated variable types | Not recommended to decorate function types. |
 | Synchronization Type | One-way synchronization: From the AppStorage property to the component's state variable. Once the given property in AppStorage changes, it will overwrite local modifications. |
 | Initial Value of Decorated Variable | Must be specified. If the property does not exist in AppStorage, this initial value will initialize the property and store it in AppStorage. |
 
@@ -87,6 +88,7 @@ When a custom component initializes, the variables decorated with @StorageProp(k
 |:---|:---|
 | Macro Parameter | `key`: Constant string, required (the string must be quoted). |
 | Allowed Variable Types | Class, String, integer, float, Bool, enum types, and arrays of these types.<br>Supports Datetime, Map, and Set types. For nested types, see [Observing Changes and Behavior](#observing-changes-and-behavior).<br>The type must be specified and should match the corresponding property type in LocalStorage to avoid implicit type conversion, which may cause application behavior anomalies.<br>Any type is not supported. |
+| Not recommended decorated variable types | Not recommended to decorate function types. |
 | Synchronization Type | Two-way synchronization: From AppStorage property to custom component, and from custom component to AppStorage property. |
 | Initial Value of Decorated Variable | Must be specified. If the property does not exist in AppStorage, this initial value will initialize the property and store it in AppStorage. |
 

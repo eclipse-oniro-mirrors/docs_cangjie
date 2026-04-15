@@ -49,6 +49,7 @@ The rules for `@State` also apply to `@Provide`. The difference is that `@Provid
 |Macro Parameter|Alias: A constant string, optional. If specified, the variable is bound via the alias; if not, it is bound via the variable name.|
 |Synchronization Type|Two-way synchronization. Data synchronization from the \@Provide variable to all \@Consume variables and vice versa. The two-way synchronization behavior is the same as the combination of \@State and \@Link.|
 |Allowed Variable Types|Cangjie built-in types include basic data types (except Nothing) and custom types, as well as arrays of these types. Function types and DateTime types are supported. The types of \@Provide and \@Consume variables must match. For supported types, refer to Observing Changes.|
+|Not recommended decorated variable types|Not recommended to decorate function types.|
 |Initial Value of Decorated Variable|The type must be specified, and the initial value must be provided.|
 |\@Provide Supports Duplicate Names|Allowed. \@Consume will search upward and match the nearest \@Provide.|
 
@@ -57,6 +58,7 @@ The rules for `@State` also apply to `@Provide`. The difference is that `@Provid
 |Macro Parameter|Alias: A constant string, optional. If an alias is provided, there must be a \@Provide variable with the same alias for successful matching. If no alias is provided, the variable name and type must match.|
 |Synchronization Type|Two-way: From the \@Provide variable (see \@Provide) to all \@Consume variables and vice versa. The two-way synchronization behavior is the same as the combination of \@State and \@Link.|
 |Allowed Variable Types|Cangjie built-in types include basic data types (except Nothing) and custom types, as well as arrays of these types. Function types and DateTime types are supported. The types of \@Provide and \@Consume variables must match. For supported types, refer to Observing Changes.|
+|Not recommended decorated variable types|Not recommended to decorate function types.|
 |Initial Value of Decorated Variable|The type must be specified, but no initial value is allowed.|
 
 ## Variable Passing/Access Rules

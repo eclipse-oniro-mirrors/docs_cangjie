@@ -21,6 +21,7 @@ Before reading this document, it is recommended that developers have a basic und
 | @Watch Supplemental Variable Macro | Description |
 | :----------------------------------|:------------|
 | Macro Parameter | Required. The name of the callback method. |
+| Decoratable variables in custom components | Can monitor all state variables decorated with macros. Normal variables cannot be monitored. |
 | Macro Order | The order of macros does not affect functionality. Developers can arrange the macro order as needed. It is recommended to place [@State](./cj-macro-state.md), [@Prop](./cj-macro-prop.md), [@Link](./cj-macro-link.md), etc., before @Watch for consistent styling. |
 | @Watch Trigger Timing | When using @Watch to monitor state variable changes, the callback is triggered when the variable is actually changed and assigned a new value. |
 

@@ -72,17 +72,13 @@ Custom components are implemented based on `class`. The combination of `class` +
 
 ### @Component
 
-The `@Component` macro can only decorate data structures declared with the `class` keyword. A `class` decorated with `@Component` gains componentization capabilities and must implement the `build` method to describe the UI. A `class` can only be decorated by one `@Component`.
+A `class` decorated with the `@Component` macro is a custom component and can use state management macros.
 
 ```cangjie
 @Component
 class MyComponent {
 }
 ```
-
-**Usage Restrictions:**
-
-The total number of member variables (including ordinary member variables and state variables) in a `class` type (custom component) decorated with `@Component` cannot exceed 128.
 
 ### build() Function
 
