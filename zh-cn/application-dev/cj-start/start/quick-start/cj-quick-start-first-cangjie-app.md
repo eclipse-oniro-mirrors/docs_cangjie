@@ -6,11 +6,13 @@
 > 当前为Beta阶段。
 <!--DelEnd-->
 
+<!--RP2-->
 > **说明：**
 > 
 > - DevEco Studio默认创建的工程为HarmonyOS工程，不再支持直接创建OpenHarmony工程。需要基于创建完成的HarmonyOS工程进行一些字段修改，才能得到OpenHarmony工程。
 > 
 > - 为确保运行效果，本文以使用**最新DevEco Studio版本**为例，点击[此处](https://developer.huawei.com/consumer/cn/download/)获取下载链接。
+<!--RP2End-->
 
 ## 创建仓颉工程
 
