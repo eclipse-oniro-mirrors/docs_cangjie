@@ -20,19 +20,31 @@
 
 Operation not permitted
 
+**错误描述**
+
+操作不允许。
+
 **可能原因**
 
-当前用户文件操作不被允许。
+当前用户文件操作不被允许，URI或path访问未授权。
 
 **处理步骤**
 
-确认文件权限。
+1.根据当前系统的访问控制机制，应用无法使用分享给其他应用的URI。
+
+2.根据系统Picker的运行机制，通过Picker获取到的URI仅有临时权限，无法持久化保存使用。
+
+3.URI路径不推荐进行拼接，拼接后的URI默认未授权。
 
 ### 13900002 没有这个文件或目录
 
 **错误信息**
 
 No such file or directory
+
+**错误描述**
+
+没有此文件或目录。
 
 **可能原因**
 
@@ -47,6 +59,10 @@ No such file or directory
 **错误信息**
 
 No such process
+
+**错误描述**
+
+没有此类进程。
 
 **可能原因**
 
@@ -64,6 +80,10 @@ No such process
 
 Interrupted system call
 
+**错误描述**
+
+系统调用被中断。
+
 **可能原因**
 
 系统调用被其他线程中断。
@@ -80,19 +100,37 @@ Interrupted system call
 
 I/O error
 
+**错误描述**
+
+I/O错误。
+
 **可能原因**
 
-I/O请求非法。
+底层I/O错误，通常与硬件或者驱动设备层故障相关。
+
+1. 硬件故障：设备物理损坏导致无法完成I/O指令。
+
+2. 通信链路中断：数据传输过程链接断开。
+
+3. 驱动程序错误：驱动程序异常或者版本不兼容。
 
 **处理步骤**
 
-重新进行I/O请求。
+1. 检查硬件状态是否正常。
+
+2. 检查USB设备等链接是否正常。
+
+3. 检查并更新驱动程序。
 
 ### 13900006 没有这个设备或地址
 
 **错误信息**
 
 No such device or address
+
+**错误描述**
+
+没有此设备或地址。
 
 **可能原因**
 
@@ -108,6 +146,10 @@ No such device or address
 
 Arg list too long
 
+**错误描述**
+
+参数列表过长。
+
 **可能原因**
 
 参数列表过长。
@@ -116,27 +158,37 @@ Arg list too long
 
 减少参数个数。
 
-### 13900008 坏的文件描述符
+### 13900008 异常的文件描述符
 
 **错误信息**
 
 Bad file descriptor
 
+**错误描述**
+
+异常的文件描述符。
+
 **可能原因**
 
-1. 此文件描述符已关闭。
-2. 读写权限不匹配。
+1.此文件描述符已关闭。
+
+2.读写权限不匹配。
 
 **处理步骤**
 
-1. 确认此文件描述符是否已关闭。
-2. 确认此文件读写权限是否匹配。
+1.确认此文件描述符是否已关闭。
+
+2.确认此文件读写权限是否匹配。
 
 ### 13900009 没有子进程
 
 **错误信息**
 
 No child processes
+
+**错误描述**
+
+没有子进程。
 
 **可能原因**
 
@@ -152,6 +204,10 @@ No child processes
 
 Try again
 
+**错误描述**
+
+资源暂时不可用。
+
 **可能原因**
 
 资源被阻塞。
@@ -165,6 +221,10 @@ Try again
 **错误信息**
 
 Out of memory
+
+**错误描述**
+
+内存溢出。
 
 **可能原因**
 
@@ -182,23 +242,33 @@ Out of memory
 
 Permission denied
 
+**错误描述**
+
+拒绝许可。
+
 **可能原因**
 
-1.文件操作无权限。
+1.文件操作被DAC或selinux拦截。
 
 2.文件沙箱路径地址错误。
 
 **处理步骤**
 
-1.确认权限。
+1.访问被DAC自主式权限控制权限拦截，请排查文件的UGO权限。
 
-2.确认文件沙箱路径地址。
+2.排查内核日志中是否有avc拦截日志，如果存在avc拦截告警，拦截原因分析请参考SELinux开发说明。
+
+3.确认文件的路径是否为应用内的沙箱路径（应用沙箱目录与应用沙箱路径），文件管理系统禁止操作应用沙箱以外的文档。
 
 ### 13900013 错误的地址
 
 **错误信息**
 
 Bad address
+
+**错误描述**
+
+错误的地址。
 
 **可能原因**
 
@@ -214,6 +284,10 @@ Bad address
 
 Device or resource busy
 
+**错误描述**
+
+设备或资源忙。
+
 **可能原因**
 
 请求的资源不可用。
@@ -227,6 +301,10 @@ Device or resource busy
 **错误信息**
 
 File exists
+
+**错误描述**
+
+文件已存在。
 
 **可能原因**
 
@@ -242,6 +320,10 @@ File exists
 
 Cross-device link
 
+**错误描述**
+
+无效的交叉链接。
+
 **可能原因**
 
 跨设备链接失败。
@@ -255,6 +337,10 @@ Cross-device link
 **错误信息**
 
 No such device
+
+**错误描述**
+
+设备不存在。
 
 **可能原因**
 
@@ -270,6 +356,10 @@ No such device
 
 Not a directory
 
+**错误描述**
+
+不是一个目录。
+
 **可能原因**
 
 此路径不是文件夹目录。
@@ -283,6 +373,10 @@ Not a directory
 **错误信息**
 
 Is a directory
+
+**错误描述**
+
+是一个目录。
 
 **可能原因**
 
@@ -298,6 +392,10 @@ Is a directory
 
 Invalid argument
 
+**错误描述**
+
+无效参数。
+
 **可能原因**
 
 输入参数非法。
@@ -311,6 +409,10 @@ Invalid argument
 **错误信息**
 
 File table overflow
+
+**错误描述**
+
+打开太多的文件描述符。
 
 **可能原因**
 
@@ -326,6 +428,10 @@ File table overflow
 
 Too many open files
 
+**错误描述**
+
+打开的文件过多。
+
 **可能原因**
 
 系统打开过多的文件。
@@ -339,6 +445,10 @@ Too many open files
 **错误信息**
 
 Text file busy
+
+**错误描述**
+
+文本文件忙。
 
 **可能原因**
 
@@ -354,6 +464,10 @@ Text file busy
 
 File too large
 
+**错误描述**
+
+文件过大。
+
 **可能原因**
 
 文件大小超出最大文件大小。
@@ -367,6 +481,10 @@ File too large
 **错误信息**
 
 No space left on device
+
+**错误描述**
+
+设备上剩余空间不足。
 
 **可能原因**
 
@@ -382,6 +500,10 @@ No space left on device
 
 Illegal seek
 
+**错误描述**
+
+非法移位。
+
 **可能原因**
 
 在管道或FIFO中使用seek。
@@ -395,6 +517,10 @@ Illegal seek
 **错误信息**
 
 Read-only file system
+
+**错误描述**
+
+只读文件系统。
 
 **可能原因**
 
@@ -410,6 +536,10 @@ Read-only file system
 
 Too many links
 
+**错误描述**
+
+链接过多。
+
 **可能原因**
 
 文件已达最大链接数。
@@ -423,6 +553,10 @@ Too many links
 **错误信息**
 
 Resource deadlock would occur
+
+**错误描述**
+
+资源死锁错误。
 
 **可能原因**
 
@@ -438,19 +572,27 @@ Resource deadlock would occur
 
 Filename too Long
 
+**错误描述**
+
+文件名过长。
+
 **可能原因**
 
-路径或文件名超过最大长度。
+文件名超过最大长度255字节。
 
 **处理步骤**
 
-确认路径或文件名长度。
+确认文件名长度。
 
 ### 13900031 功能没有实现
 
 **错误信息**
 
 Function not implemented
+
+**错误描述**
+
+功能没有实现。
 
 **可能原因**
 
@@ -465,6 +607,10 @@ Function not implemented
 **错误信息**
 
 Directory not empty
+
+**错误描述**
+
+目录非空。
 
 **可能原因**
 
@@ -482,6 +628,10 @@ Directory not empty
 
 Too many symbolic links encountered
 
+**错误描述**
+
+符号链接层次过多。
+
 **可能原因**
 
 符号链接层次过多。
@@ -495,6 +645,10 @@ Too many symbolic links encountered
 **错误信息**
 
 Operation would block
+
+**错误描述**
+
+操作被阻塞。
 
 **可能原因**
 
@@ -510,6 +664,10 @@ Operation would block
 
 Invalid request descriptor
 
+**错误描述**
+
+请求描述符无效。
+
 **可能原因**
 
 文件描述符非法。
@@ -523,6 +681,10 @@ Invalid request descriptor
 **错误信息**
 
 Device not a stream
+
+**错误描述**
+
+设备不是字符流。
 
 **可能原因**
 
@@ -538,6 +700,10 @@ Device not a stream
 
 No data available
 
+**错误描述**
+
+无可用数据。
+
 **可能原因**
 
 数据不可用。
@@ -546,11 +712,15 @@ No data available
 
 重新请求数据。
 
-### 13900038 对于定义的数据类型值太大
+### 13900038 对于定义的数据类型,值太大
 
 **错误信息**
 
 Value too large for defined data type
+
+**错误描述**
+
+变量值超出数据类型规定的最大值。
 
 **可能原因**
 
@@ -560,11 +730,15 @@ Value too large for defined data type
 
 修改数据类型。
 
-### 13900039 文件描述符在坏状态
+### 13900039 文件描述符在异常状态
 
 **错误信息**
 
 File descriptor in bad state
+
+**错误描述**
+
+文件描述符在异常状态。
 
 **可能原因**
 
@@ -580,6 +754,10 @@ File descriptor in bad state
 
 Interrupted system call should be restarted
 
+**错误描述**
+
+应该重新启动被中断的系统调用。
+
 **可能原因**
 
 系统调用被中断。
@@ -594,6 +772,10 @@ Interrupted system call should be restarted
 
 Quota exceeded
 
+**错误描述**
+
+超出磁盘配额。
+
 **可能原因**
 
 磁盘空间不足。
@@ -607,6 +789,10 @@ Quota exceeded
 **错误信息**
 
 Unknown error
+
+**错误描述**
+
+未知错误。
 
 **可能原因**
 
@@ -624,6 +810,10 @@ Unknown error
 
 No record is locks available
 
+**错误描述**
+
+没有可用的锁。
+
 **可能原因**
 
 系统资源不足。
@@ -637,6 +827,10 @@ No record is locks available
 **错误信息**
 
 Network is unreachable
+
+**错误描述**
+
+网络无法访问。
 
 **可能原因**
 
@@ -652,31 +846,39 @@ Network is unreachable
 
 Connection failed
 
+**错误描述**
+
+连接失败。
+
 **可能原因**
 
-设备、Wifi或蓝牙状态异常，导致建立连接失败。
+设备、Wi-Fi或蓝牙状态异常，导致建立链接失败。
 
 **处理步骤**
 
 1.检查设备，确认设备状态正常。
 
-2.检查WiFi和蓝牙，确认状态正常。
+2.检查Wi-Fi和蓝牙，确认状态正常。
 
-### 13900046 连接失败
+### 13900046 软件造成连接中断
 
 **错误信息**
 
 Software caused connection abort
 
+**错误描述**
+
+软件造成连接中断。
+
 **可能原因**
 
-设备下线或WiFi、蓝牙断连。
+设备下线或Wi-Fi、蓝牙断连。
 
 **处理步骤**
 
 1.检查设备，确认设备状态正常。
 
-2.检查WiFi和蓝牙，确认状态正常。
+2.检查Wi-Fi和蓝牙，确认状态正常。
 
 ## 用户数据管理错误码
 
@@ -684,7 +886,7 @@ Software caused connection abort
 
 **错误信息**
 
-Invalid display name
+Invalid file name
 
 **可能原因**
 
@@ -698,7 +900,7 @@ Invalid display name
 
 **错误信息**
 
-Invalid uri
+Invalid URI
 
 **可能原因**
 
@@ -706,7 +908,7 @@ URI不合法。
 
 **处理步骤**
 
-直接使用查询获取的uri。
+直接使用查询获取的URI。
 
 ### 14000003 文件后缀非法
 
@@ -726,7 +928,7 @@ Invalid file name extension
 
 **错误信息**
 
-File has been put into trash bin
+File already in the recycle bin
 
 **可能原因**
 
@@ -772,6 +974,10 @@ Member is not a valid PhotoKey
 
 IPC error
 
+**错误描述**
+
+IPC通信失败。
+
 **可能原因**
 
 调用服务不存在。
@@ -784,7 +990,11 @@ IPC error
 
 **错误信息**
 
-Not supported filesystem
+File system not supported
+
+**错误描述**
+
+文件系统类型不支持。
 
 **可能原因**
 
@@ -798,7 +1008,11 @@ Not supported filesystem
 
 **错误信息**
 
-Failed to mount
+Mount failed
+
+**错误描述**
+
+挂载失败。
 
 **可能原因**
 
@@ -812,7 +1026,11 @@ Failed to mount
 
 **错误信息**
 
-Failed to unmount
+Unmount failed
+
+**错误描述**
+
+卸载失败。
 
 **可能原因**
 
@@ -828,6 +1046,10 @@ Failed to unmount
 
 Incorrect volume state
 
+**错误描述**
+
+卷状态错误。
+
 **可能原因**
 
 操作的卷状态错误。
@@ -840,7 +1062,11 @@ Incorrect volume state
 
 **错误信息**
 
-Prepare directory or node error
+Failed to create the directory or node
+
+**错误描述**
+
+创建目录或者节点失败。
 
 **可能原因**
 
@@ -854,7 +1080,11 @@ Prepare directory or node error
 
 **错误信息**
 
-Delete directory or node error
+Failed to delete the directory or node
+
+**错误描述**
+
+删除目录或者节点失败。
 
 **可能原因**
 
@@ -869,6 +1099,10 @@ Delete directory or node error
 **错误信息**
 
 No such object
+
+**错误描述**
+
+操作对象不存在。
 
 **可能原因**
 
@@ -886,7 +1120,11 @@ No such object
 
 **错误信息**
 
-User id out of range
+User ID out of range
+
+**错误描述**
+
+用户id超出范围。
 
 **可能原因**
 
@@ -896,6 +1134,150 @@ User id out of range
 
 检查输入的用户id是否处于正常范围。
 
+### 13600010 输入参数非法
+
+**错误信息**
+
+The input parameter is invalid.
+
+**错误描述**
+
+用户输入参数非法。
+
+**可能原因**
+
+输入错误的参数。
+
+**处理步骤**
+
+检查输入的参数是否处于正常范围。
+
+### 13600011 上报指定业务空间占用失败
+
+**错误信息**
+
+Failed to report the specified business space usage.
+
+**错误描述**
+
+上报指定业务空间占用失败。
+
+**可能原因**
+
+与数据库交互异常。
+
+**处理步骤**
+
+重启设备后重试。
+
+### 13600012 查询指定业务空间占用失败
+
+**错误信息**
+
+Failed to query the specified business space usage.
+
+**错误描述**
+
+查询指定业务空间占用失败。
+
+**可能原因**
+
+与数据库交互异常。
+
+**处理步骤**
+
+重启设备后重试。
+
+### 13600013 查询所有业务空间占用情况失败
+
+**错误信息**
+
+Failed to query all business space usage.
+
+**错误描述**
+
+查询所有业务空间占用情况失败。
+
+**可能原因**
+
+与数据库交互异常。
+
+**处理步骤**
+
+重启设备后重试。
+
+### 13600015 获取磁盘空间占用信息失败
+
+**错误信息**
+
+Failed to traverse the query data partition directory.
+
+**错误描述**
+
+获取磁盘空间占用信息失败。
+
+**可能原因**
+
+底层文件系统异常。
+
+**处理步骤**
+
+重启设备后重试。
+
+### 13600016 获取文件系统inode数失败
+
+**错误信息**
+
+Failed to query the inode information of the data partition.
+
+**错误描述**
+
+获取数据分区的inode信息失败。
+
+**可能原因**
+
+底层文件系统异常。
+
+**处理步骤**
+
+重启设备后重试。
+
+### 13600017 获取当前应用的inode占用量失败
+
+**错误信息**
+
+Failed to query the inode information of the application.
+
+**错误描述**
+
+获取当前应用的inode占用量失败。
+
+**可能原因**
+
+底层文件系统异常。
+
+**处理步骤**
+
+重启设备后重试。
+
+### 13600018 查询系统数据大小失败
+
+**错误信息**
+
+Failed to query the system data size.
+
+**错误描述**
+
+查询系统数据大小失败。
+
+**可能原因**
+
+底层文件系统异常。
+
+**处理步骤**
+
+重启设备后重试。
+
 ## 公共文件访问错误码
 
 ### 14300001 IPC通信失败
@@ -903,6 +1285,10 @@ User id out of range
 **错误信息**
 
 IPC error
+
+**错误描述**
+
+IPC通信失败。
 
 **可能原因**
 
@@ -918,11 +1304,15 @@ IPC error
 
 **错误信息**
 
-Invalid uri
+Invalid URI
+
+**错误描述**
+
+URI格式错误。
 
 **可能原因**
 
-使用非法uri。
+使用非法URI。
 
 **处理步骤**
 
@@ -932,7 +1322,11 @@ Invalid uri
 
 **错误信息**
 
-Fail to get fileextension info
+Failed to obtain the server ability information
+
+**错误描述**
+
+查询server端ability信息失败。
 
 **可能原因**
 
@@ -940,13 +1334,17 @@ BMS接口异常。
 
 **处理步骤**
 
-系统基础能力问题
+系统基础能力问题，请向OpenHarmony团队反馈，获取支持。
 
 ### 14300004 js-server实际返回的结果异常
 
 **错误信息**
 
-Get wrong result
+Incorrect result returned by js-server
+
+**错误描述**
+
+js-server实际返回的结果异常。
 
 **可能原因**
 
@@ -954,13 +1352,17 @@ server端返回实际数据不当。
 
 **处理步骤**
 
-检查server端返回值。
+server端返回值检查。
 
 ### 14300005 notify注册失败
 
 **错误信息**
 
-Fail to register notification
+Failed to register notify
+
+**错误描述**
+
+notify注册失败。
 
 **可能原因**
 
@@ -976,7 +1378,11 @@ Fail to register notification
 
 **错误信息**
 
-Fail to remove notification
+Failed to unregister notify
+
+**错误描述**
+
+notify移除失败。
 
 **可能原因**
 
@@ -992,7 +1398,11 @@ Fail to remove notification
 
 **错误信息**
 
-Fail to init notification agent
+Failed to initialize the notify agent
+
+**错误描述**
+
+notify代理初始化失败。
 
 **可能原因**
 
@@ -1006,7 +1416,11 @@ Fail to init notification agent
 
 **错误信息**
 
-Fail to notify agent
+Failed to notify the agent
+
+**错误描述**
+
+js-server端通知代理失败。
 
 **可能原因**
 
@@ -1029,13 +1443,11 @@ Cloud status not ready
 **可能原因**
 
 1.未启用云。
-
 2.应用云同步开关未打开。
 
 **处理步骤**
 
 1.检查是否账号登录。
-
 2.检查云同步开关是否打开。
 
 ### 22400002  网络不可用
@@ -1056,7 +1468,7 @@ Network unavailable
 
 **错误信息**
 
-Battery level warning
+Low battery level
 
 **可能原因**
 
@@ -1064,4 +1476,63 @@ Battery level warning
 
 **处理步骤**
 
-开启充电状态或电量恢复后再执行。
+充电状态或电量恢复后再执行。
+
+### 22400004  入参请求超过最大限制
+
+**错误信息**
+
+Exceeded the maximum limit
+
+**可能原因**
+
+请求数量超过接口规格定义的上限。
+
+**处理步骤**
+
+检查入参，保证请求数量符合规格要求。
+
+### 22400005  内部错误
+
+**错误信息**
+
+Inner error
+
+**可能原因**
+
+1.系统内部数据库请求失败或者SQL执行失败。
+2.系统出现空指针等异常。
+3.系统内存不足或内存异常。
+4.JS框架异常。
+
+**处理步骤**
+
+系统基础能力问题，请向OpenHarmony团队反馈，获取支持。
+
+### 22400006  已经有同类型任务正在运行
+
+**错误信息**
+
+The same task is already in progress
+
+**可能原因**
+
+有同类型任务正在运行。
+
+**处理步骤**
+
+等待现有同类型任务完成，或通过调用对应业务的stop接口终止现有任务后，再触发新任务。
+
+### 22400007  指定用于替换原始文件的历史版本文件不存在
+
+**错误信息**
+
+The version file specified to replace the original file does not exist
+
+**可能原因**
+
+历史版本文件未下载或已删除。
+
+**处理步骤**
+
+重新下载指定的历史版本文件，保证文件存在。

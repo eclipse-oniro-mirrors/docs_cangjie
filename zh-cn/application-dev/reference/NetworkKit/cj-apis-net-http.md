@@ -373,7 +373,7 @@ public func off(event: HttpRequestEvent, callback!: ?CallbackObject = None): Uni
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[HTTP错误码](./cj-errorcode-net-http.md)。
+- BusinessException：对应错误码如下表，详见[网络连接管理错误码](./cj-errorcode-net-connection.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -434,7 +434,7 @@ public func on(event: HttpRequestEvent, callback: Callback1Argument<HashMap<Stri
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[HTTP错误码](./cj-errorcode-net-http.md)。
+- BusinessException：对应错误码如下表，详见[网络连接管理错误码](./cj-errorcode-net-connection.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -493,7 +493,7 @@ public func on(event: HttpRequestEvent, callback: Callback1Argument<Array<Byte>>
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[HTTP错误码](./cj-errorcode-net-http.md)。
+- BusinessException：对应错误码如下表，详见[网络连接管理错误码](./cj-errorcode-net-connection.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -551,7 +551,7 @@ public func on(event: HttpRequestEvent, callback: Callback0Argument): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[HTTP错误码](./cj-errorcode-net-http.md)。
+- BusinessException：对应错误码如下表，详见[网络连接管理错误码](./cj-errorcode-net-connection.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -609,7 +609,7 @@ public func on(event: HttpRequestEvent, callback: Callback1Argument<DataReceiveP
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[HTTP错误码](./cj-errorcode-net-http.md)。
+- BusinessException：对应错误码如下表，详见[网络连接管理错误码](./cj-errorcode-net-connection.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -667,7 +667,7 @@ public func on(event: HttpRequestEvent, callback: Callback1Argument<DataSendProg
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[HTTP错误码](./cj-errorcode-net-http.md)。
+- BusinessException：对应错误码如下表，详见[网络连接管理错误码](./cj-errorcode-net-connection.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -726,7 +726,7 @@ public func once(event: HttpRequestEvent, callback: Callback1Argument<HashMap<St
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[HTTP错误码](./cj-errorcode-net-http.md)。
+- BusinessException：对应错误码如下表，详见[网络连接管理错误码](./cj-errorcode-net-connection.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
