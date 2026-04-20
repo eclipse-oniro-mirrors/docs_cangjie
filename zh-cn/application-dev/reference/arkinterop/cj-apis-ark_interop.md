@@ -1873,7 +1873,7 @@ public operator func [](index: Int64): JSValue
 
 | 错误码ID | 错误信息                                  |
 |:------|:--------------------------------------|
-| 1     | The accessing index is out of range.  |
+| 34300001     | The accessing index is out of range.  |
 | 34300003   | Accessing reference is beyond reach.  |
 | 34300004   | Thread mismatch.                      |
 
@@ -1911,7 +1911,7 @@ public operator func [](index: Int64, value!: JSValue): Unit
 
 | 错误码ID | 错误信息                                  |
 |:------|:--------------------------------------|
-| 1     | The accessing index is out of range.  |
+| 34300001     | The accessing index is out of range.  |
 | 34300003   | Accessing reference is beyond reach.  |
 | 34300004   | Thread mismatch.                      |
 
@@ -1950,7 +1950,7 @@ public operator func [](index: Int64, value!: JSHeapObject): Unit
 
 | 错误码ID | 错误信息                                  |
 |:------|:--------------------------------------|
-| 1     | The accessing index is out of range.  |
+| 34300001     | The accessing index is out of range.  |
 | 34300003   | Accessing reference is beyond reach.  |
 | 34300004   | Thread mismatch.                      |
 
@@ -3218,7 +3218,7 @@ public func set(index: Int64, element: T): Unit
 
 | 错误码ID | 错误信息                                     |
 |:------|:-----------------------------------------|
-| 1     | The accessing index is out of range.     |
+| 34300001     | The accessing index is out of range.     |
 | 34300003   | Accessing reference is beyond reach.     |
 | 34300004   | Thread mismatch.                         |
 
@@ -3342,7 +3342,7 @@ public operator func [](index: Int64): T
 
 | 错误码ID | 错误信息                                  |
 |:------|:--------------------------------------|
-| 1     | The accessing index is out of range.  |
+| 34300001     | The accessing index is out of range.  |
 | 34300003   | Accessing reference is beyond reach.  |
 | 34300004   | Thread mismatch.                      |
 
@@ -3386,7 +3386,7 @@ public operator func [](index: Int64, value!: T): Unit
 
 | 错误码ID | 错误信息                                  |
 |:------|:--------------------------------------|
-| 1     | The accessing index is out of range.  |
+| 34300001     | The accessing index is out of range.  |
 | 34300003   | Accessing reference is beyond reach.  |
 | 34300004   | Thread mismatch.                      |
 
@@ -3625,7 +3625,7 @@ public operator func [](index: Int64): JSValue
 
 | 错误码ID | 错误信息                                  |
 |:------|:--------------------------------------|
-| 1     | The accessing index is out of range.  |
+| 34300001     | The accessing index is out of range.  |
 | 34300003   | Accessing reference is beyond reach.  |
 | 34300004   | Thread mismatch.                      |
 
@@ -8992,7 +8992,7 @@ public func getElement(index: Int64): JSValue
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
-| 1     | The accessing index is out of range. |
+| 34300001     | The accessing index is out of range. |
 | 34300003   | Accessing reference is beyond reach. |
 | 34300004   | Thread mismatch.                     |
 | 34300005   | The ArkTS data types do not match.   |
@@ -9624,7 +9624,7 @@ public func setElement(index: Int64, value: JSValue): Unit
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
-| 1     | The accessing index is out of range. |
+| 34300001    | The accessing index is out of range. |
 | 34300003   | Accessing reference is beyond reach. |
 | 34300004   | Thread mismatch.                     |
 | 34300005   | The ArkTS data types do not match.   |
@@ -11081,10 +11081,10 @@ public func split(separator: Utf16String, maxSplit: Int64, removeEmpty!: Bool = 
 
 - BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
-| 错误码ID | 错误信息                                 |
-|:------|:-------------------------------------|
-| 1     | The accessing index is out of range. |
-| 34300003   | Accessing reference is beyond reach. |
+| 错误码ID    | 错误信息                                 |
+|:---------|:-------------------------------------|
+| 34300001 | The accessing index is out of range. |
+| 34300003 | Accessing reference is beyond reach. |
 
 ### func startsWith(Utf16String)
 
@@ -11459,9 +11459,9 @@ public operator func [](index: Int64): UInt16
 
 - BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
-| 错误码ID | 错误信息                                 |
-|:------|:-------------------------------------|
-| 1     | The accessing index is out of range. |
+| 错误码ID      | 错误信息                                 |
+|:-----------|:-------------------------------------|
+| 34300001   | The accessing index is out of range. |
 | 34300003   | Accessing reference is beyond reach. |
 
 ### operator func \[](Range\<Int64>)
@@ -11490,9 +11490,9 @@ public operator func [](range: Range<Int64>): Utf16String
 
 - BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
-| 错误码ID | 错误信息                                 |
-|:------|:-------------------------------------|
-| 1     | The accessing index is out of range. |
+| 错误码ID      | 错误信息                                 |
+|:-----------|:-------------------------------------|
+| 34300001   | The accessing index is out of range. |
 | 34300003   | Accessing reference is beyond reach. |
 
 ## struct JSType

@@ -554,10 +554,10 @@ public static func fromJSValue(_: JSContext, input: JSValue): Int64
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 2 | Outside error occurred. |
-| 3 | Accessing reference is beyond reach. |
-| 4 | Thread mismatch. |
-| 5 | The ArkTS data types do not match. |
+| 34300002 | Outside error occurred. |
+| 34300003 | Accessing reference is beyond reach. |
+| 34300004 | Thread mismatch. |
+| 34300005 | The ArkTS data types do not match. |
 
 ### static func toArktsType()
 
@@ -603,9 +603,9 @@ public func toJSValue(context: JSContext): JSValue
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 2 | Outside error occurred. |
-| 3 | Accessing reference is beyond reach. |
-| 4 | Thread mismatch. |
+| 34300002 | Outside error occurred. |
+| 34300003 | Accessing reference is beyond reach. |
+| 34300004 | Thread mismatch. |
 
 ## extend UInt8 <: JSInteropType\<UInt8>
 
@@ -656,10 +656,10 @@ public static func fromJSValue(_: JSContext, input: JSValue): UInt8
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 2 | Outside error occurred. |
-| 3 | Accessing reference is beyond reach. |
-| 4 | Thread mismatch. |
-| 5 | The ArkTS data types do not match. |
+| 34300002 | Outside error occurred. |
+| 34300003 | Accessing reference is beyond reach. |
+| 34300004 | Thread mismatch. |
+| 34300005 | The ArkTS data types do not match. |
 
 ### static func toArktsType()
 
@@ -748,10 +748,10 @@ public static func fromJSValue(_: JSContext, input: JSValue): UInt16
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 2 | Outside error occurred. |
-| 3 | Accessing reference is beyond reach. |
-| 4 | Thread mismatch. |
-| 5 | The ArkTS data types do not match. |
+| 34300002 | Outside error occurred. |
+| 34300003 | Accessing reference is beyond reach. |
+| 34300004 | Thread mismatch. |
+| 34300005 | The ArkTS data types do not match. |
 
 ### static func toArktsType()
 
@@ -797,8 +797,8 @@ public func toJSValue(context: JSContext): JSValue
 
 | Error Code ID | Error Message |
 |:------|:---|
-| 3 | Accessing reference is beyond reach. |
-| 4 | Thread mismatch. |
+| 34300003 | Accessing reference is beyond reach. |
+| 34300004 | Thread mismatch. |
 
 ## extend UInt32 <: JSInteropType\<UInt32>
 
@@ -849,10 +849,10 @@ public static func fromJSValue(_: JSContext, input: JSValue): UInt32
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 2 | Outside error occurred. |
-| 3 | Accessing reference is beyond reach. |
-| 4 | Thread mismatch. |
-| 5 | The ArkTS data types do not match. |
+| 34300002 | Outside error occurred. |
+| 34300003 | Accessing reference is beyond reach. |
+| 34300004 | Thread mismatch. |
+| 34300005 | The ArkTS data types do not match. |
 
 ### static func toArktsType()
 
@@ -898,8 +898,8 @@ public func toJSValue(context: JSContext): JSValue
 
 | Error Code ID | Error Message |
 |:------|:---|
-| 3 | Accessing reference is beyond reach. |
-| 4 | Thread mismatch. |
+| 34300003 | Accessing reference is beyond reach. |
+| 34300004 | Thread mismatch. |
 
 ## extend UInt64 <: JSInteropType\<UInt64>
 
@@ -950,10 +950,10 @@ public static func fromJSValue(_: JSContext, input: JSValue): UInt64
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 2 | Outside error occurred. |
-| 3 | Accessing reference is beyond reach. |
-| 4 | Thread mismatch. |
-| 5 | The ArkTS data types do not match. |
+| 34300002 | Outside error occurred. |
+| 34300003 | Accessing reference is beyond reach. |
+| 34300004 | Thread mismatch. |
+| 34300005 | The ArkTS data types do not match. |
 
 ### static func toArktsType()
 
@@ -999,9 +999,9 @@ public func toJSValue(context: JSContext): JSValue
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 2 | Outside error occurred. |
-| 3 | Accessing reference is beyond reach. |
-| 4 | Thread mismatch. |
+| 34300002 | Outside error occurred. |
+| 34300003 | Accessing reference is beyond reach. |
+| 34300004 | Thread mismatch. |
 
 ## extend Float16 <: JSInteropType\<Float16>
 
@@ -1052,10 +1052,10 @@ public static func fromJSValue(_: JSContext, input: JSValue): Float16
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 2 | Outside error occurred. |
-| 3 | Accessing reference is beyond reach. |
-| 4 | Thread mismatch. |
-| 5 | The ArkTS data types do not match. |
+| 34300002 | Outside error occurred. |
+| 34300003 | Accessing reference is beyond reach. |
+| 34300004 | Thread mismatch. |
+| 34300005 | The ArkTS data types do not match. |
 
 ### static func toArktsType()
 
@@ -1101,8 +1101,8 @@ public func toJSValue(context: JSContext): JSValue
 
 | Error Code ID | Error Message |
 |:------| :--- |
-| 3 | Accessing reference is beyond reach. |
-| 4 | Thread mismatch. |
+| 34300003 | Accessing reference is beyond reach. |
+| 34300004 | Thread mismatch. |
 
 ## extend Float32 <: JSInteropType\<Float32>
 
@@ -1153,10 +1153,10 @@ public static func fromJSValue(_: JSContext, input: JSValue): Float32
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 2 | Outside error occurred. |
-| 3 | Accessing reference is beyond reach. |
-| 4 | Thread mismatch. |
-| 5 | The ArkTS data types do not match. |
+| 34300002 | Outside error occurred. |
+| 34300003 | Accessing reference is beyond reach. |
+| 34300004 | Thread mismatch. |
+| 34300005 | The ArkTS data types do not match. |
 
 ### static func toArktsType()
 
@@ -1202,8 +1202,8 @@ public func toJSValue(context: JSContext): JSValue
 
 | Error Code ID | Error Message |
 |:------| :--- |
-| 3 | Accessing reference is beyond reach. |
-| 4 | Thread mismatch. |
+| 34300003 | Accessing reference is beyond reach. |
+| 34300004 | Thread mismatch. |
 
 ## extend Float64 <: JSInteropType\<Float64>
 
@@ -1254,9 +1254,9 @@ public static func fromJSValue(_: JSContext, input: JSValue): Float64
 
 | Error Code ID | Error Message |
 |:------| :--- |
-| 3 | Accessing reference is beyond reach. |
-| 4 | Thread mismatch. |
-| 5 | The ArkTS data types do not match. |
+| 34300003 | Accessing reference is beyond reach. |
+| 34300004 | Thread mismatch. |
+| 34300005 | The ArkTS data types do not match. |
 
 ### static func toArktsType()
 
@@ -1302,8 +1302,8 @@ public func toJSValue(context: JSContext): JSValue
 
 | Error Code ID | Error Message |
 |:------| :--- |
-| 3 | Accessing reference is beyond reach. |
-| 4 | Thread mismatch. |
+| 34300003 | Accessing reference is beyond reach. |
+| 34300004 | Thread mismatch. |
 
 ## extend Bool <: JSInteropType\<Bool>
 
@@ -1370,9 +1370,9 @@ public static func toArktsType(): String
 
 | Error Code ID | Error Message |
 |:------| :--- |
-| 3 | Accessing reference is beyond reach. |
-| 4 | Thread mismatch. |
-| 5 | The ArkTS data types do not match. |
+| 34300003 | Accessing reference is beyond reach. |
+| 34300004 | Thread mismatch. |
+| 34300005 | The ArkTS data types do not match. |
 
 ### func toJSValue(JSContext)
 
@@ -1402,8 +1402,8 @@ public func toJSValue(context: JSContext): JSValue
 
 | Error Code ID | Error Message |
 |:------| :--- |
-| 3 | Accessing reference is beyond reach. |
-| 4 | Thread mismatch. |
+| 34300003 | Accessing reference is beyond reach. |
+| 34300004 | Thread mismatch. |
 
 ## extend String <: JSInteropType\<String>
 
@@ -1454,9 +1454,9 @@ public static func fromJSValue(_: JSContext, input: JSValue): String
 
 | Error Code ID | Error Message |
 |:------| :--- |
-| 3 | Accessing reference is beyond reach. |
-| 4 | Thread mismatch. |
-| 5 | The ArkTS data types do not match. |
+| 34300003 | Accessing reference is beyond reach. |
+| 34300004 | Thread mismatch. |
+| 34300005 | The ArkTS data types do not match. |
 
 ### static func toArktsType()
 
@@ -5033,9 +5033,9 @@ public func external(data: SharedObject): JSExternal
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 2 | Outside error occurred. |
-| 3 | Accessing reference is beyond reach. |
-| 4 | Thread mismatch. |
+| 34300002 | Outside error occurred. |
+| 34300003 | Accessing reference is beyond reach. |
+| 34300004 | Thread mismatch. |
 
 **Example:**
 
@@ -5078,9 +5078,9 @@ public func function(lambda: JSLambda): JSFunction
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 2 | Outside error occurred. |
-| 3 | Accessing reference is beyond reach. |
-| 4 | Thread mismatch. |
+| 34300002 | Outside error occurred. |
+| 34300003 | Accessing reference is beyond reach. |
+| 34300004 | Thread mismatch. |
 
 **Example:**
 
@@ -5118,8 +5118,8 @@ public func getNapiEnv(): napi_env
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 3 | Accessing reference is beyond reach. |
-| 4 | Thread mismatch. |
+| 34300003 | Accessing reference is beyond reach. |
+| 34300004 | Thread mismatch. |
 
 **Example:**
 
@@ -5185,8 +5185,8 @@ public func null(): JSNull
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 3 | Accessing reference is beyond reach. |
-| 4 | Thread mismatch. |
+| 34300003 | Accessing reference is beyond reach. |
+| 34300004 | Thread mismatch. |
 
 **Example:**
 
@@ -5226,8 +5226,8 @@ public func number(value: Float64): JSNumber
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 3 | Accessing reference is beyond reach. |
-| 4 | Thread mismatch. |
+| 34300003 | Accessing reference is beyond reach. |
+| 34300004 | Thread mismatch. |
 
 **Example:**
 
@@ -5267,8 +5267,8 @@ public func number(value: Int32): JSNumber
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 3 | Accessing reference is beyond reach. |
-| 4 | Thread mismatch. |
+| 34300003 | Accessing reference is beyond reach. |
+| 34300004 | Thread mismatch. |
 
 **Example:**
 
@@ -5302,9 +5302,9 @@ public func object(): JSObject
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 2 | Outside error occurred. |
-| 3 | Accessing reference is beyond reach. |
-| 4 | Thread mismatch. |
+| 34300002 | Outside error occurred. |
+| 34300003 | Accessing reference is beyond reach. |
+| 34300004 | Thread mismatch. |
 
 **Example:**
 
@@ -5369,9 +5369,9 @@ public func promiseCapability(): JSPromiseCapability
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 2 | Outside error occurred. |
-| 3 | Accessing reference is beyond reach. |
-| 4 | Thread mismatch. |
+| 34300002 | Outside error occurred. |
+| 34300003 | Accessing reference is beyond reach. |
+| 34300004 | Thread mismatch. |
 
 **Example:**
 
@@ -5468,9 +5468,9 @@ public func requireSystemNativeModule(moduleName: String, prefix!: ?String = Non
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 2 | Outside error occurred. |
-| 3 | Accessing reference is beyond reach. |
-| 4 | Thread mismatch. |
+| 34300002 | Outside error occurred. |
+| 34300003 | Accessing reference is beyond reach. |
+| 34300004 | Thread mismatch. |
 
 **Example:**
 
@@ -5510,9 +5510,9 @@ public func string(value: String): JSString
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 2 | Outside error occurred. |
-| 3 | Accessing reference is beyond reach. |
-| 4 | Thread mismatch. |
+| 34300002 | Outside error occurred. |
+| 34300003 | Accessing reference is beyond reach. |
+| 34300004 | Thread mismatch. |
 
 **Example:**
 
@@ -5552,9 +5552,9 @@ public func string(value: Utf16String): JSString
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 2 | Outside error occurred. |
-| 3 | Accessing reference is beyond reach. |
-| 4 | Thread mismatch. |
+| 34300002 | Outside error occurred. |
+| 34300003 | Accessing reference is beyond reach. |
+| 34300004 | Thread mismatch. |
 
 **Example:**
 
@@ -5595,9 +5595,9 @@ public func symbol(description!: String = ""): JSSymbol
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 2 | Outside error occurred. |
-| 3 | Accessing reference is beyond reach. |
-| 4 | Thread mismatch. |
+| 34300002 | Outside error occurred. |
+| 34300003 | Accessing reference is beyond reach. |
+| 34300004 | Thread mismatch. |
 
 **Example:**
 
@@ -5632,8 +5632,8 @@ public func undefined(): JSUndefined
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 3 | Accessing reference is beyond reach. |
-| 4 | Thread mismatch. |
+| 34300003 | Accessing reference is beyond reach. |
+| 34300004 | Thread mismatch. |
 
 **Example:**
 
@@ -7235,9 +7235,9 @@ public func defineOwnProperty(key: JSKeyable, setValue: JSValue,
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 2 | Outside error occurred. |
-| 3 | Accessing reference is beyond reach. |
-| 4 | Thread mismatch. |
+| 34300002 | Outside error occurred. |
+| 34300003 | Accessing reference is beyond reach. |
+| 34300004 | Thread mismatch. |
 
 **Example:**
 
@@ -7272,8 +7272,8 @@ public func getAttachInfo(): ?JSExternal
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 3 | Accessing reference is beyond reach. |
-| 4 | Thread mismatch. |
+| 34300003 | Accessing reference is beyond reach. |
+| 34300004 | Thread mismatch. |
 
 **Example:**
 
@@ -7320,9 +7320,9 @@ public func getProperty(key: JSKeyable): JSValue
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 2 | Outside error occurred. |
-| 3 | Accessing reference is beyond reach. |
-| 4 | Thread mismatch. |
+| 34300002 | Outside error occurred. |
+| 34300003 | Accessing reference is beyond reach. |
+| 34300004 | Thread mismatch. |
 
 **Example:**
 
@@ -7363,8 +7363,8 @@ public func hasProperty(key: JSKeyable): Bool
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 3 | Accessing reference is beyond reach. |
-| 4 | Thread mismatch. |
+| 34300003 | Accessing reference is beyond reach. |
+| 34300004 | Thread mismatch. |
 
 **Example:**
 
@@ -7408,8 +7408,8 @@ public func instanceOf(clazz: JSClass): Bool
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 3 | Accessing reference is beyond reach. |
-| 4 | Thread mismatch. |
+| 34300003 | Accessing reference is beyond reach. |
+| 34300004 | Thread mismatch. |
 
 **Example:**
 
@@ -7451,8 +7451,8 @@ public func keys(): Array<String>
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 3 | Accessing reference is beyond reach. |
-| 4 | Thread mismatch. |
+| 34300003 | Accessing reference is beyond reach. |
+| 34300004 | Thread mismatch. |
 
 **Example:**
 
@@ -7490,9 +7490,9 @@ public func setProperty(key: JSKeyable, setValue: JSValue): Unit
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 2 | Outside error occurred. |
-| 3 | Accessing reference is beyond reach. |
-| 4 | Thread mismatch. |
+| 34300002 | Outside error occurred. |
+| 34300003 | Accessing reference is beyond reach. |
+| 34300004 | Thread mismatch. |
 
 **Example:**
 
@@ -7533,9 +7533,9 @@ public operator func [](key: JSKeyable): JSValue
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 2 | Outside error occurred. |
-| 3 | Accessing reference is beyond reach. |
-| 4 | Thread mismatch. |
+| 34300002 | Outside error occurred. |
+| 34300003 | Accessing reference is beyond reach. |
+| 34300004 | Thread mismatch. |
 
 **Example:**
 
@@ -7571,9 +7571,9 @@ public operator func [](key: JSKeyable, value!: JSValue): Unit
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 2 | Outside error occurred. |
-| 3 | Accessing reference is beyond reach. |
-| 4 | Thread mismatch. |
+| 34300002 | Outside error occurred. |
+| 34300003 | Accessing reference is beyond reach. |
+| 34300004 | Thread mismatch. |
 
 **Example:**
 
@@ -7626,8 +7626,8 @@ public func catchError(callback: JSFunction): Unit
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 3 | Accessing reference is beyond reach. |
-| 4 | Thread mismatch. |
+| 34300003 | Accessing reference is beyond reach. |
+| 34300004 | Thread mismatch. |
 
 **Example:**
 
@@ -7666,8 +7666,8 @@ public func then(onFulfilled: JSFunction, onRejected!: ?JSFunction = None): Unit
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 3 | Accessing reference is beyond reach. |
-| 4 | Thread mismatch. |
+| 34300003 | Accessing reference is beyond reach. |
+| 34300004 | Thread mismatch. |
 
 **Example:**
 
@@ -10882,7 +10882,7 @@ public func lazySplit(separator: Utf16String, maxSplit: Int64, removeEmpty!: Boo
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 3 | Accessing reference is beyond reach. |
+| 34300003 | Accessing reference is beyond reach. |
 
 ### func lines()
 
@@ -10906,7 +10906,7 @@ public func lines(): Iterator<Utf16String>
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 3 | Accessing reference is beyond reach. |
+| 34300003 | Accessing reference is beyond reach. |
 
 **Example:**
 
@@ -10960,7 +10960,7 @@ public func replace(old: Utf16String, new: Utf16String, count!: Int64 = Int64.Ma
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 3 | Accessing reference is beyond reach. |
+| 34300003 | Accessing reference is beyond reach. |
 
 **Example:**
 
@@ -11005,7 +11005,7 @@ public func runes(): Iterator<Rune>
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 3 | Accessing reference is beyond reach. |
+| 34300003 | Accessing reference is beyond reach. |
 
 ### func split(Utf16String, Bool)
 
@@ -11036,7 +11036,7 @@ public func split(separator: Utf16String, removeEmpty!: Bool = false): Array<Utf
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 3 | Accessing reference is beyond reach. |
+| 34300003 | Accessing reference is beyond reach. |
 
 **Example:**
 
@@ -11091,8 +11091,8 @@ public func split(separator: Utf16String, maxSplit: Int64, removeEmpty!: Bool = 
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 1 | The accessing index is out of range. |
-| 3 | Accessing reference is beyond reach. |
+| 34300001 | The accessing index is out of range. |
+| 34300003 | Accessing reference is beyond reach. |
 
 ### func startsWith(Utf16String)
 
@@ -11122,7 +11122,7 @@ public func startsWith(target: Utf16String): Bool
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 3 | Accessing reference is beyond reach. |
+| 34300003 | Accessing reference is beyond reach. |
 
 **Example:**
 
@@ -11170,8 +11170,8 @@ public func toJSValue(context: JSContext): JSValue
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 3 | Accessing reference is beyond reach. |
-| 4 | Thread mismatch. |
+| 34300003 | Accessing reference is beyond reach. |
+| 34300004 | Thread mismatch. |
 
 **Example:**
 
@@ -11213,7 +11213,7 @@ public func toString(): String
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 3 | Accessing reference is beyond reach. |
+| 34300003 | Accessing reference is beyond reach. |
 
 **Example:**
 
@@ -11259,7 +11259,7 @@ public operator func !=(target: Utf16String): Bool
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 3 | Accessing reference is beyond reach. |
+| 34300003 | Accessing reference is beyond reach. |
 
 ### operator func +(Utf16String)
 
@@ -11289,7 +11289,7 @@ public operator func +(right: Utf16String): Utf16String
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 3 | Accessing reference is beyond reach. |
+| 34300003 | Accessing reference is beyond reach. |
 
 ### operator func \<(Utf16String)
 
