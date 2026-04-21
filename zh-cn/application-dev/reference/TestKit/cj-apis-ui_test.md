@@ -3878,9 +3878,9 @@ public func close(): Unit
 
 **系统能力：** SystemCapability.Test.UiTest
 
-**起始版本：** 22
-
 **设备行为差异：** 对于API version 22版本，该接口在PC、Tablet设备中可正常调用，在其他设备中返回17000005错误码。从API version 23开始，该接口在Phone、PC、Tablet设备中可正常调用，在其他设备中返回17000005错误码。
+
+**起始版本：** 22
 
 **异常：**
 
@@ -4238,9 +4238,9 @@ public func maximize(): Unit
 
 **系统能力：** SystemCapability.Test.UiTest
 
-**起始版本：** 22
-
 **设备行为差异：** 对于API version 22版本，该接口在PC、Tablet设备中可正常调用，在其他设备中返回17000005错误码。从API version 23开始，该接口在Phone、PC、Tablet设备中可正常调用，在其他设备中返回17000005错误码。
+
+**起始版本：** 22
 
 **异常：**
 
@@ -4282,9 +4282,9 @@ public func minimize(): Unit
 
 **系统能力：** SystemCapability.Test.UiTest
 
-**起始版本：** 22
-
 **设备行为差异：** 对于API version 22版本，该接口在PC、Tablet设备中可正常调用，在其他设备中返回17000005错误码。从API version 23开始，该接口在Phone、PC、Tablet设备中可正常调用，在其他设备中返回17000005错误码。
+
+**起始版本：** 22
 
 **异常：**
 
@@ -4326,9 +4326,9 @@ public func moveTo(x: Int32, y: Int32): Unit
 
 **系统能力：** SystemCapability.Test.UiTest
 
-**起始版本：** 22
-
 **设备行为差异：** 对于API version 22版本，该接口在PC、Tablet设备中可正常调用，在其他设备中返回17000005错误码。从API version 23开始，该接口在Phone、PC、Tablet设备中可正常调用，在其他设备中返回17000005错误码。
+
+**起始版本：** 22
 
 **参数：**
 
@@ -4376,9 +4376,9 @@ public func resize(wide: Int32, height: Int32, direction: ResizeDirection): Unit
 
 **系统能力：** SystemCapability.Test.UiTest
 
-**起始版本：** 22
-
 **设备行为差异：** 对于API version 22版本，该接口在PC、Tablet设备中可正常调用，在其他设备中返回17000005错误码。从API version 23开始，该接口在Phone、PC、Tablet设备中可正常调用，在其他设备中返回17000005错误码。
+
+**起始版本：** 22
 
 **参数：**
 
@@ -4428,9 +4428,9 @@ public func resume(): Unit
 
 **系统能力：** SystemCapability.Test.UiTest
 
-**起始版本：** 22
-
 **设备行为差异：** 对于API version 22版本，该接口在PC、Tablet设备中可正常调用，在其他设备中返回17000005错误码。从API version 23开始，该接口在Phone、PC、Tablet设备中可正常调用，在其他设备中返回17000005错误码。
+
+**起始版本：** 22
 
 **异常：**
 
@@ -4472,9 +4472,9 @@ public func split(): Unit
 
 **系统能力：** SystemCapability.Test.UiTest
 
-**起始版本：** 22
-
 **设备行为差异：** 对于API version 22版本，该接口在PC、Tablet设备中可正常调用，在其他设备中返回17000005错误码。从API version 23开始，该接口在Phone、PC、Tablet设备中可正常调用，在其他设备中返回17000005错误码。
+
+**起始版本：** 22
 
 **异常：**
 

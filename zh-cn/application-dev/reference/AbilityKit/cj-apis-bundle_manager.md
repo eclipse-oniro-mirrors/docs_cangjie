@@ -2292,7 +2292,7 @@ public let iconId: Int32
 public let installationFree: Bool
 ```
 
-**功能：** 模块是否支免安装（无需用户通过应用市场显式安装），取值为true表示支持免安装，取值为false表示不支持免安装。
+**功能：** 模块是否支持免安装（无需用户通过应用市场显式安装），取值为true表示支持免安装，取值为false表示不支持免安装。
 
 **类型：** Bool
 
@@ -3213,7 +3213,7 @@ AutoRotationLandscape
 AutoRotationLandscapeRestricted
 ```
 
-**功能：** 表述受开关控制的自动横向旋转模式。
+**功能：** 表示受开关控制的自动横向旋转模式。
 
 **系统能力：** SystemCapability.BundleManager.BundleFramework.Core
 

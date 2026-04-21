@@ -489,7 +489,7 @@ class EntryView {
                             .popupFont(size: 30.vp, weight: FontWeight.Bolder) // 弹出框内容的字体样式
                             .itemSize(28) // 每一项的尺寸大小
                             .alignStyle(IndexerAlign.Right) // 弹出框在索引条右侧弹出
-                            .popupBackground(0xCCCCCC) // 设置提示弹窗首个索引项背板颜色
+                            .popupBackground(0xCCCCCC) // 设置提示弹窗首个索引项背景颜色
                             .selectedColor(0x00FF00)
                             .onSelect({index: Int64 => Hilog.info(0, "AppLogCj", this.value[index] + " Selected!");})
                             .onRequestPopupData(

@@ -1356,7 +1356,7 @@ public static const COMMON_EVENT_DISTRIBUTED_ACCOUNT_LOGOFF: String = "common.ev
 
 **功能：** 表示分布式账号注销的动作。
 
-分布式账号注销成功会时触发事件通知服务发布该系统公共事件，事件携带系统账号ID。
+分布式账号注销成功时会触发事件通知服务发布该系统公共事件，事件携带系统账号ID。
 
 **类型：** String
 
