@@ -1447,6 +1447,11 @@ public open func delete(key: String): Unit
   | :---- | :--- |
   | 15100003 | Database corrupted.|
   | 15100005 | Database or result set already closed.|
+
+- BusinessException：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
   | 14800047 | The WAL file size exceeds the default limit.|
 
 **示例：**
@@ -1502,6 +1507,11 @@ public open func deleteBatch(keys: Array<String>): Unit
   | :---- | :--- |
   | 15100003 | Database corrupted.|
   | 15100005 | Database or result set already closed.|
+
+- BusinessException：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
   | 14800047 | The WAL file size exceeds the default limit.|
 
 **示例：**
@@ -1664,6 +1674,11 @@ public open func put(key: String, value: KVValueType): Unit
   | :---- | :--- |
   | 15100003 | Database corrupted.|
   | 15100005 | Database or result set already closed.|
+
+- BusinessException：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
   | 14800047 | The WAL file size exceeds the default limit.|
 
 **示例：**
@@ -1713,6 +1728,11 @@ public open func putBatch(entries: Array<Entry>): Unit
   | :---- | :--- |
   | 15100003 | Database corrupted.|
   | 15100005 | Database or result set already closed.|
+
+- BusinessException：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
   | 14800047 | The WAL file size exceeds the default limit.|
 
 **示例：**
@@ -1916,6 +1936,11 @@ public open func startTransaction(): Unit
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 15100005 | Database or result set already closed.|
+
+- BusinessException：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
   | 14800047 | The WAL file size exceeds the default limit.|
 
 **示例：**
