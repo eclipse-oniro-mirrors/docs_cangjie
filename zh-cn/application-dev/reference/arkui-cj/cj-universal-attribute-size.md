@@ -22,6 +22,11 @@ func width(value: Option<Length>): T
 
 **功能：** 设置组件的宽度。
 
+> **说明：**
+>
+> - 在TextInput组件中，width设置LengthMetric.AUTO表示自适应文本宽度。
+> - 在AlphabetIndexer组件中，width设置LengthMetric.AUTO表示自适应宽度最大索引项的宽度。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **起始版本：** 22

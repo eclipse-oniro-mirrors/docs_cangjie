@@ -683,6 +683,7 @@ public let onChange: (T) -> Unit
 ```cangjie
 public class LengthMetrics <: Length {
     public init(value: Float64, unit!: LengthUnit = LengthUnit.Vp)
+    public static let AUTO: Length
 }
 ```
 
@@ -746,6 +747,22 @@ public prop unitType: LengthUnit
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **起始版本：** 22
+
+### static let AUTO
+
+```cangjie
+public static let AUTO: Length
+```
+
+**功能：** 表示自适应长度。
+
+**类型：** [Length](#interface-Length)
+
+**读写能力：** 只读
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.0.0
 
 ## class Color
 

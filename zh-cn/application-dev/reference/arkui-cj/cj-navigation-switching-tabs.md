@@ -20,7 +20,8 @@ import kit.ArkUI.*
 
 > **说明：**
 >
-> Tabs子组件的visibility属性设置为None，或者visibility属性设置为Hidden时，对应子组件不显示，但依然会在视窗内占位。
+> - Tabs子组件的visibility属性设置为None，或者visibility属性设置为Hidden时，对应子组件不显示，但依然会在视窗内占位。
+> - Tabs设置height为LengthMetrics.AUTO时，可根据子组件高度自适应高度大小。设置width为LengthMetrics.AUTO时，可根据子组件宽度自适应宽度大小。
 
 ## 创建组件
 
@@ -82,7 +83,7 @@ public func animationDuration(value: ?Float32): This
 public func barHeight(value: ?Length): This
 ```
 
-**功能：** 设置Tabs页签栏的高度。
+**功能：** 设置Tabs页签栏的高度。横向Tabs可以设置height为LengthMetrics.AUTO，让TabBar自适应子组件高度。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -164,7 +165,7 @@ public func vertical(value: ?Bool): This
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|value|?Bool|是|-|页签栏是否垂直排列。初始值：false。|
+|value|?Bool|是|-|页签栏是否垂直排列。<br>初始值：false。<br>当横向Tabs设置height为LengthMetrics.AUTO时，Tabs组件高度自适应子组件高度，即为tabBar高度+divider线宽+TabContent高度+上下padding值+上下border宽度。<br>当纵向Tabs设置width为LengthMetrics.AUTO时，Tabs组件宽度自适应子组件宽度，即为tabBar宽度+divider线宽+TabContent宽度+左右padding值+左右border宽度。|
 
 ## 组件事件
 

@@ -22,6 +22,11 @@ func width(value: Option<Length>): T
 
 **Function:** Sets the width of a component.
 
+> **Note:**
+>
+> - In the TextInput component, setting width to LengthMetric.AUTO means auto-adapting to the text width.
+> - In the AlphabetIndexer component, setting width to LengthMetric.AUTO means auto-adapting to the width of the largest index item.
+
 **System Capability:** SystemCapability.ArkUI.ArkUI.Full
 
 **Since:** 22

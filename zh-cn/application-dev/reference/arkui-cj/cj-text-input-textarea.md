@@ -47,6 +47,10 @@ public init(placeholder!: ?ResourceStr = None, text!: ?ResourceStr = None,
 
 通用事件：全部支持。
 
+> **说明：**
+>
+> 单行输入框可设置.width(LengthMetrics.AUTO)使组件宽度自适应文本宽度，自适应时组件宽度受constraintSize属性以及父容器传递的最大最小宽度限制。
+
 ## 组件属性
 
 ### func caretColor(?ResourceColor)

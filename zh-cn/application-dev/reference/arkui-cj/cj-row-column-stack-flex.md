@@ -14,7 +14,7 @@ Flex是以弹性方式布局子组件的容器组件，提供更加有效的方�
 >
 > - Flex组件在渲染时存在二次布局过程，因此在对性能有严格要求的场景下建议使用[Column](cj-row-column-stack-column.md)、[Row](cj-row-column-stack-row.md)代替。
 > - Flex组件主轴默认不设置时撑满父容器，[Column](cj-row-column-stack-column.md)、[Row](cj-row-column-stack-row.md)组件主轴不设置时默认是跟随子节点大小。
-> - 主轴长度可设置为auto使Flex自适应子组件布局，自适应时，Flex长度受constraintSize属性以及父容器传递的最大最小长度限制且constraintSize属性优先级更高。
+> - 主轴长度可设置为LengthMetrics.AUTO使Flex自适应子组件布局，自适应时，Flex长度受constraintSize属性以及父容器传递的最大最小长度限制且constraintSize属性优先级更高。
 
 ## 导入模块
 
@@ -495,3 +495,63 @@ class EntryView {
 ```
 
 ![flex](figures/flex_5.png)
+
+### 示例6（宽度自适应的Flex容器）
+
+该示例实现了Flex在宽度设置LengthMetrics.AUTO后可以自适应子组件布局的能力。
+
+``` cangjie
+package ohos_app_cangjie_entry
+import kit.ArkUI.*
+import ohos.arkui.state_macro_manage.*
+
+@Component
+class Demo {
+    @Prop var text: String
+
+    func build() {
+        Button() {
+            Flex() {
+                Image(@r(app.media.startIcon))
+                .width(16)
+                .height(16)
+
+                Row() {
+                    Text(this.text)
+                    .margin(
+                        left: 6,
+                        right: 6
+                    )
+                    .fontSize(14)
+                    .maxLines(1)
+                    .textOverflow(overflow: TextOverflow.Ellipsis)
+                }
+
+                Image(@r(app.media.startIcon))
+                .width(16)
+                .height(16)
+            }.width(LengthMetrics.AUTO)
+        }
+        .backgroundColor(0xAFEEEE)
+        .height(36)
+        .padding(left: 16, right: 16)
+        .constraintSize(maxWidth: 156)
+        .width(LengthMetrics.AUTO)
+    }
+}
+
+@Entry
+@Component
+class EntryView {
+    build() {
+        Column(space: 12 ) {
+            Text('Width does not reach max length').fontSize(11).fontColor(0XCCCCCC).width(50.percent)
+            Demo(text: '123' )
+            Text('Width reaches max length').fontSize(11).fontColor(0XCCCCCC).width(50.percent)
+            Demo(text: '1234567890-1234567890-1234567890-1234567890')
+        }
+    }
+}
+```
+
+![flex-auto](figures/flex-auto.png)

@@ -122,3 +122,57 @@ class EntryView {
 ```
 
 ![textinputkeyboardavoid](figures/TextInputKeyboardAvoid.gif)
+
+## Common Issues
+
+### How to Set the Minimum Display Lines for TextArea and Enable Adaptive Height
+
+**Problem Description**
+
+Set the initial height of TextArea to control the minimum number of text lines to display. When the input text exceeds the initial height, the TextArea height adapts automatically.
+
+**Solution**
+
+Set minLines, or set height to LengthMetrics.AUTO and use constraintSize to calculate the height yourself.
+
+``` cangjie
+package ohos_app_cangjie_entry
+
+import kit.ArkUI.*
+import ohos.arkui.state_macro_manage.*
+
+@Entry
+@Component
+class EntryView {
+    let textAreaPadding = 12.0
+    let setMaxLines = 3.0
+    let changeText = "I am TextArea"
+    @State var fullText: String = this.changeText
+    @State var originText: String = this.changeText
+
+    func build() {
+        Column() {
+            TextArea(text: 'constraintSize: ' + this.fullText)
+            .fontSize(18)
+            .padding(top: this.textAreaPadding, bottom: this.textAreaPadding)
+            .width(300)
+            .height(LengthMetrics.AUTO)
+            .constraintSize(
+                // Calculate with padding, set to display at least this.setMaxLines lines of text.
+                // If elderly-friendly font scaling is involved, need to listen and adjust height.
+                minHeight: (this.textAreaPadding * 2.0 + this.setMaxLines * 21.0)
+            )
+
+            Blank(min: 50)
+            Button("Input something")
+            .onClick({ evt =>
+                this.fullText += this.changeText
+            })
+        }
+        .justifyContent(FlexAlign.Center)
+        .width(100.percent)
+        .padding(top: 30)
+    }
+}
+```
+![textAreaAuto](figures/TextArea-auto.gif)

@@ -24,7 +24,7 @@ func expandSafeArea(types!: ?Array<SafeAreaType>, edges!: ?Array<SafeAreaEdge>):
 
 > **说明：**
 >
-> - 设置expandSafeArea属性进行组件绘制扩展时，建议组件尺寸不要设置固定宽高（百分比除外），当设置固定宽高时，扩展安全区域的方向只支持[SafeAreaEdge.TOP, SafeAreaEdge.START]，扩展后的组件尺寸保持不变。
+> - 设置expandSafeArea属性进行组件绘制扩展时，建议组件尺寸不要设置固定宽高（百分比除外），当设置固定宽高（包括设置LengthMetrics.AUTO）时，扩展安全区域的方向只支持[SafeAreaEdge.Top, SafeAreaEdge.Start]，扩展后的组件尺寸保持不变。
 > - 安全区域不会限制内部组件的布局和大小，不会裁剪内部组件。
 > - 当父容器是滚动容器时，设置expandSafeArea属性不生效。
 > - 设置expandSafeArea()时，不传参，走默认值处理；设置expandSafeArea([],[])时，相当于入参是空数组，此时设置expandSafeArea属性不生效。
