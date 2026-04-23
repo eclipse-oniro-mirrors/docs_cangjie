@@ -21,6 +21,7 @@ Custom components are not supported as child components. Only [TabContent](./cj-
 > **Note:**
 >
 > - When the visibility property of a Tabs child component is set to None or Hidden, the corresponding child component will not be displayed but will still occupy space within the viewport.
+> - When the Tabs height is set to LengthMetrics.AUTO, it can adapt its height based on the child component's height. When the width is set to LengthMetrics.AUTO, it can adapt its width based on the child component's width
 
 ## Creating the Component
 
@@ -164,7 +165,7 @@ public func vertical(value: ?Bool): This
 
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
-| value | ?Bool | Yes | - | Whether the Tabs bar is vertically oriented. Initial value: false. |
+| value | ?Bool | Yes | - | Whether the Tabs bar is vertically oriented. Initial value: false. <br> When horizontal Tabs has height set to LengthMetrics.AUTO, the Tabs component height adapts to the child component height, which equals tabBar height + divider line width + TabContent height + top and bottom padding values + top and bottom border width. <br> When vertical Tabs has width set to LengthMetrics.AUTO, the Tabs component width adapts to the child component width, which equals tabBar width + divider line width + TabContent width + left and right padding values + left and right border width. |
 
 ## Component Events
 

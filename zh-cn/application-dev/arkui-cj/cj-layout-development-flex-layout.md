@@ -1071,12 +1071,12 @@ class EntryView {
         func build() {
             Flex() {
                 Text('flexBasis("auto")')
-                    .flexBasis(0) // 未设置width以及flexBasis值为0，内容自身宽度
+                    .flexBasis(LengthMetrics.AUTO) // 未设置width以及flexBasis值为LengthMetrics.AUTO，内容自身宽度
                     .height(100)
                     .backgroundColor(0xF5DEB3)
                 Text('flexBasis("auto")' + ' width("40%")')
                     .width(40.percent)
-                    .flexBasis(0) //设置width以及flexBasis值为0，使用width的值
+                    .flexBasis(LengthMetrics.AUTO) //设置width以及flexBasis值为LengthMetrics.AUTO，使用width的值
                     .height(100)
                     .backgroundColor(0xD2B48C)
 

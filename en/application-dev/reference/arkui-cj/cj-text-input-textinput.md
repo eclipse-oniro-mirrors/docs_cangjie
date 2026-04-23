@@ -48,6 +48,10 @@ Common Events: All supported.
 
 ## Component Attributes
 
+> **Note:**
+>
+> When the single-line input box sets .width(LengthMetrics.AUTO), the component width can adapt to the text width. During auto-adaptation, the component width is constrained by the constraintSize property and the min/max width passed from the parent container.
+
 ### func caretColor(?ResourceColor)
 
 ```cangjie

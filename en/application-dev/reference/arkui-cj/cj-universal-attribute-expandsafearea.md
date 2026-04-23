@@ -35,7 +35,7 @@ func expandSafeArea(types!: ?Array<SafeAreaType>, edges!: ?Array<SafeAreaEdge>):
 
 > **Notes:**
 >
-> - When using the `expandSafeArea` attribute to extend component rendering, it is recommended not to set fixed width and height for the component (except for percentages). If fixed dimensions are set, only [SafeAreaEdge.TOP, SafeAreaEdge.START] directions are supported for safe area extension, and the component size remains unchanged.
+> - When using the `expandSafeArea` attribute to extend component rendering, it is recommended not to set fixed width and height for the component (except for percentages). If fixed dimensions are set(Including setting LengthMetrics.AUTO), only [SafeAreaEdge.Top, SafeAreaEdge.Start] directions are supported for safe area extension, and the component size remains unchanged.
 > - The safe area does not constrain the layout or size of internal components and does not clip them.
 > - The `expandSafeArea` attribute does not take effect if the parent container is a scrollable container.
 > - When `expandSafeArea()` is called without parameters, default values are applied. Calling `expandSafeArea([],[])` with empty arrays renders the attribute ineffective.

@@ -675,11 +675,14 @@ public let onChange: (T) -> Unit
 
 **System Capability:** SystemCapability.ArkUI.ArkUI.Full
 
-**Since Version:** 22## class LengthMetrics
+**Since Version:** 22
+
+## class LengthMetrics
 
 ```cangjie
 public class LengthMetrics <: Length {
     public init(value: Float64, unit!: LengthUnit = LengthUnit.Vp)
+    public static let AUTO: Length
 }
 ```
 
@@ -743,6 +746,22 @@ public prop unitType: LengthUnit
 **System Capability:** SystemCapability.ArkUI.ArkUI.Full
 
 **Since:** 22
+
+### static let AUTO
+
+```cangjie
+public static let AUTO: Length
+```
+
+**Description:** Adaptive length.
+
+**Type:** [Length](#interface-Length)
+
+**Read/Write Permission:** Read-only
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.0.0
 
 ## class Color
 

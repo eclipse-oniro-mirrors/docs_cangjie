@@ -14,7 +14,7 @@ For detailed guidelines, refer to [Flexible Layout](../../arkui-cj/cj-layout-dev
 >
 > - The Flex component undergoes a secondary layout process during rendering. Therefore, it is recommended to use [Column](cj-row-column-stack-column.md) or [Row](cj-row-column-stack-row.md) in performance-critical scenarios.
 > - When the main axis of the Flex component is not explicitly set, it expands to fill the parent container. In contrast, the [Column](cj-row-column-stack-column.md) and [Row](cj-row-column-stack-row.md) components default to matching the size of their child nodes when the main axis is not set.
-> - The main axis length can be set to `auto` to enable Flex to adapt to child component layouts. In adaptive mode, the Flex length is constrained by the `constraintSize` property and the parent container's maximum/minimum length, with the `constraintSize` property taking higher priority.
+> - The main axis length can be set to LengthMetrics.AUTO to enable Flex to adapt to child component layouts. In adaptive mode, the Flex length is constrained by the `constraintSize` property and the parent container's maximum/minimum length, with the `constraintSize` property taking higher priority.
 
 ## Import Module
 
@@ -493,3 +493,63 @@ class EntryView {
 ```
 
 ![flex](figures/flex_5.png)
+
+### Example5（Flex Container with Adaptive Width）
+
+This example demonstrates the Flex's ability to adapt to child component layout when width is set to LengthMetrics.AUTO.
+
+``` cangjie
+package ohos_app_cangjie_entry
+import kit.ArkUI.*
+import ohos.arkui.state_macro_manage.*
+
+@Component
+class Demo {
+    @Prop var text: String
+
+    func build() {
+        Button() {
+            Flex() {
+                Image(@r(app.media.startIcon))
+                .width(16)
+                .height(16)
+
+                Row() {
+                    Text(this.text)
+                    .margin(
+                        left: 6,
+                        right: 6
+                    )
+                    .fontSize(14)
+                    .maxLines(1)
+                    .textOverflow(overflow: TextOverflow.Ellipsis)
+                }
+
+                Image(@r(app.media.startIcon))
+                .width(16)
+                .height(16)
+            }.width(LengthMetrics.AUTO)
+        }
+        .backgroundColor(0xAFEEEE)
+        .height(36)
+        .padding(left: 16, right: 16)
+        .constraintSize(maxWidth: 156)
+        .width(LengthMetrics.AUTO)
+    }
+}
+
+@Entry
+@Component
+class EntryView {
+    build() {
+        Column(space: 12 ) {
+            Text('Width does not reach max length').fontSize(11).fontColor(0XCCCCCC).width(50.percent)
+            Demo(text: '123' )
+            Text('Width reaches max length').fontSize(11).fontColor(0XCCCCCC).width(50.percent)
+            Demo(text: '1234567890-1234567890-1234567890-1234567890')
+        }
+    }
+}
+```
+
+![flex-auto](figures/flex-auto.png)

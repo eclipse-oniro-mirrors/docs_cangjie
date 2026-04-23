@@ -1071,12 +1071,12 @@ When the size of a flex layout parent component is too small, the following prop
         func build() {
             Flex() {
                 Text('flexBasis("auto")')
-                    .flexBasis(0) // If width is not set and flexBasis is 0, the width is determined by the content itself
+                    .flexBasis(LengthMetrics.AUTO) // If width is not set and flexBasis is LengthMetrics.AUTO, the width is determined by the content itself
                     .height(100)
                     .backgroundColor(0xF5DEB3)
                 Text('flexBasis("auto")' + ' width("40%")')
                     .width(40.percent)
-                    .flexBasis(0) // If width is set and flexBasis is 0, the width value is used
+                    .flexBasis(LengthMetrics.AUTO) // If width is set and flexBasis is LengthMetrics.AUTO, the width value is used
                     .height(100)
                     .backgroundColor(0xD2B48C)
 
