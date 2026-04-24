@@ -123,6 +123,11 @@ protected open func aboutToReuse(_: ReuseParams): Unit
 
 **Description:** When a reusable custom component is re-added to the node tree from the reuse cache, the `aboutToReuse` lifecycle callback is triggered, and the component's construction parameters are passed to `aboutToReuse`.
 
+> **Note:**
+>
+> - Avoid repeatedly updating state variables that are automatically updated, such as [\@Link](../../arkui-cj/state_management/cj-macro-link.md), [\@Prop](../../arkui-cj/state_management/cj-macro-prop.md) decorated variables, within aboutToReuse().
+> - In scrolling scenarios where component reuse is implemented, this callback is typically required to update the component's state variables. As such, avoid performing time-consuming operations within this callback to prevent frame drops and UI stuttering during scrolling animations.
+
 **System Capability:** SystemCapability.ArkUI.ArkUI.Full
 
 **Since:** 22
@@ -132,6 +137,53 @@ protected open func aboutToReuse(_: ReuseParams): Unit
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
 | _ | [ReuseParams](./cj-common-types.md#class-reuseparams) | Yes | - | The construction parameters of the custom component. |
+
+```cangjie
+package ohos_app_cangjie_entry
+
+import kit.ArkUI.*
+import ohos.arkui.state_macro_manage.*
+import kit.PerformanceAnalysisKit.Hilog
+
+@Entry
+@Component
+public class EntryView {
+    @State
+    var switch: Bool = true
+    public func build(): Unit {
+        Column() {
+            Button("Switch")
+            .fontSize(50)
+            .onClick({e=>
+                this.switch = !this.switch
+            })
+            if (this.switch) {
+                Child(message: "Child")
+            }
+        }
+    }
+}
+
+@Reusable
+@Component
+class Child {
+    @State
+    var message: String = ""
+
+    protected override func aboutToReuse(params: ReuseParams) {
+        Hilog.info(0, "TEST", "Child reused")
+        if (let Some(value) <- params.get<String>("message")) {
+            message = value
+        }
+    }
+
+    func build() {
+        Column(space: 20) {
+            Text(this.message).fontSize(20)
+        }
+    }
+}
+```
 
 ## func aboutToRecycle()
 
@@ -144,6 +196,57 @@ protected open func aboutToRecycle(): Unit
 **System Capability:** SystemCapability.ArkUI.ArkUI.Full
 
 **Since:** 22
+
+```cangjie
+package ohos_app_cangjie_entry
+
+import kit.ArkUI.*
+import ohos.arkui.state_macro_manage.*
+import kit.PerformanceAnalysisKit.Hilog
+
+@Entry
+@Component
+public class EntryView {
+    @State
+    var switch: Bool = true
+    public func build(): Unit {
+        Column() {
+            Button("Switch")
+            .fontSize(50)
+            .onClick({e=>
+                this.switch = !this.switch
+            })
+            if (this.switch) {
+                Child(message: "Child")
+            }
+        }
+    }
+}
+
+@Reusable
+@Component
+class Child {
+    @State
+    var message: String = ""
+
+    protected override func aboutToRecycle(): Unit {
+        // This is where you can release memory-intensive content or other non-essential resource references to avoid continuous memory usage that could lead to memory leaks.
+        Hilog.info(0, "TEST", "The child enters the recycle pool.")
+    }
+    
+    protected override func aboutToReuse(params: ReuseParams) {
+        if (let Some(value) <- params.get<String>("message")) {
+            message = value
+        }
+    }
+
+    func build() {
+        Column(space: 20) {
+            Text(this.message).fontSize(20)
+        }
+    }
+}
+```
 
 ## func pageTransition()
 
