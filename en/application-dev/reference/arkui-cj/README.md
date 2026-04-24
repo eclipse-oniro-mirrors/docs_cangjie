@@ -18,7 +18,7 @@
     - Screen Management
         - [ohos.display (Screen Properties)](cj-apis-display.md)(Beta Feature)
 - Cangjie Components
-    - Universal Events
+    - [Universal Events](cj-universal-events.md)(Beta Feature)
         - [Click Event](cj-universal-event-click.md)(Beta Feature)
         - [Touch Event](cj-universal-event-touch.md)(Beta Feature)
         - [Mount&Unmout Event](cj-universal-event-appear.md)(Beta Feature)
@@ -29,7 +29,7 @@
         - [Component Area Change Event](cj-universal-event-areachange.md)(Beta Feature)
         - [Component Visible Area Change Event](cj-universal-event-visibleareachange.md)(Beta Feature)
         - [Component Shortcut Key Event](cj-universal-event-keyboardshortcut.md)(Beta Feature)
-    - Universal Attributes
+    - [Universal Attributes](cj-universal-attributes.md)(Beta Feature)
         - [Size Setting](cj-universal-attribute-size.md)(Beta Feature)
         - [Position Setting](cj-universal-attribute-location.md)(Beta Feature)
         - [Layout Constraints](cj-universal-attribute-layoutconstraints.md)(Beta Feature)
@@ -57,7 +57,7 @@
             - [Half-Modal Transition](cj-universal-attribute-sheettransition.md)(Beta Feature)
         - [Safe Area](cj-universal-attribute-expandsafearea.md)(Beta Feature)
         - [Component Content Filling Methods](cj-universal-attribute-renderfit.md)(Beta Feature)
-        - [Touch hot zone settings](reference/arkui-cj/cj-universal-attribute-touchtarget.md)(Beta Feature)
+        - [Touch hot zone settings](cj-universal-attribute-touchtarget.md)(Beta Feature)
     - Rows, Columns & Stacks
         - [Flex](cj-row-column-stack-flex.md)(Beta Feature)
         - [Column](cj-row-column-stack-column.md)(Beta Feature)
