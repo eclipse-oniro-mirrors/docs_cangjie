@@ -29,7 +29,7 @@
             - Key Derivation
                 - [Key Derivation Overview and Algorithm Specifications](cj-huks-key-derivation-overview.md)(Beta Feature)
                 - [Development Guide]()
-                    - [Key Derivation (Cangjie)](scj-huks-key-derivation.md)(Beta Feature)
+                    - [Key Derivation (Cangjie)](cj-huks-key-derivation.md)(Beta Feature)
             - HMAC
                 - [HMAC Overview and Algorithm Specifications](cj-huks-hmac-overview.md)(Beta Feature)
                 - Development Guide

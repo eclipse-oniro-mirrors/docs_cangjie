@@ -1,6 +1,9 @@
 # Performance Analysis Kit (Performance Analysis Service) (Beta Feature)
 
 - [Performance Analysis Kit Introduction](cj-performance-analysis-kit-overview.md)(Beta Feature)
+- Fault Analysis
+  - [Analyzing Cangjie Crash (Process Crash)](cj-cangjiecrash-guidelines.md)(Beta Feature)
+  - [Analyzing AppFreeze (Application Not Responding)](cj-appfreeze-guidelines.md)(Beta Feature)
 - HiLog Usage Guide
   - [Logging with HiLog (Cangjie)](cj-hilog-guidelines.md)(Beta Feature)
 - HiAppEvent Usage Guide
@@ -15,10 +18,14 @@
       - AppFreeze Events
         - [AppFreeze Events Introduction](cj-hiappevent-watcher-freeze-events.md)(Beta Feature)
         - [Subscribing to AppFreeze Events (Cangjie)](cj-hiappevent-watcher-freeze-events-cangjie.md)(Beta Feature)
+  - [Event Reporting](cj-hiappevent-event-reporting.md)(Beta Feature)
 - HiTraceMeter Usage Guide
   - [Viewing HiTraceMeter Logs](cj-hitracemeter-view.md)(Beta Feature)
 - Error Management
   - [Error Management Development Guide](cj-errormanager-guidelines.md)(Beta Feature)
-- Fault Analysis
-  - [Analyzing Cangjie Crash (Process Crash)](cj-cangjiecrash-guidelines.md)(Beta Feature)
-  - [Analyzing AppFreeze (Application Not Responding)](cj-appfreeze-guidelines.md)(Beta Feature)
+- Command Line Tools
+  - [hdc](../tools/cj-hdc.md)(Beta Feature)
+  - [hilog](../tools/cj-hilog.md)(Beta Feature)
+  - [hidumper](../tools/cj-hidumper.md)(Beta Feature)
+  - [hitrace](../tools/cj-hitrace.md)(Beta Feature)
+  - [hiperf](../tools/cj-hiperf.md)(Beta Feature)
