@@ -139,6 +139,7 @@
                         - [Global Custom Dialog Independent of UI Components (openCustomDialog)](arkui-cj/cj-uicontext-custom-dialog.md)
                         - [Basic Custom Dialog (CustomDialog) (Deprecated)](arkui-cj/cj-common-components-custom-dialog.md)
                         - [Fixed-Style Dialog Boxes](arkui-cj/cj-fixes-style-dialog.md)
+                        - [Page-Level Dialog Box](arkui-cj/cj-page-level-dialog.md)
                     - [Menu Control](arkui-cj/cj-popup-and-menu-components-menu.md)
                     - [Popup Tips](arkui-cj/cj-popup-and-menu-components-popup.md)
                     - Binding Modal Pages

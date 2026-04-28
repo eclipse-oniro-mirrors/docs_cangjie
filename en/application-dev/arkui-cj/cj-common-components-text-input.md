@@ -146,7 +146,7 @@ import ohos.arkui.state_macro_manage.*
 class EntryView {
     let textAreaPadding = 12.0
     let setMaxLines = 3.0
-    let changeText = "I am TextArea"
+    let changeText = "Add TextArea \n"
     @State var fullText: String = this.changeText
     @State var originText: String = this.changeText
 
@@ -154,7 +154,7 @@ class EntryView {
         Column() {
             TextArea(text: 'constraintSize: ' + this.fullText)
             .fontSize(18)
-            .padding(top: this.textAreaPadding, bottom: this.textAreaPadding)
+            .padding(this.textAreaPadding)
             .width(300)
             .height(LengthMetrics.AUTO)
             .constraintSize(
