@@ -263,6 +263,7 @@
                         - [不依赖UI组件的全局自定义弹出框（openCustomDialog）](arkui-cj/cj-uicontext-custom-dialog.md)
                         - [基础自定义弹出框（CustomDialog）（不推荐）](arkui-cj/cj-common-components-custom-dialog.md)
                         - [固定样式弹出框](arkui-cj/cj-fixes-style-dialog.md)
+                        - [页面级弹出框](arkui-cj/cj-page-level-dialog.md)
                     - 菜单
                         - [菜单控制（Menu）](arkui-cj/cj-popup-and-menu-components-menu.md)
                     - 气泡提示

@@ -75,6 +75,7 @@
             - [Global Custom Dialog Independent of UI Components (openCustomDialog)](cj-uicontext-custom-dialog.md)(Beta Feature)
             - [Basic Custom Dialog (CustomDialog) (Deprecated)](cj-common-components-custom-dialog.md)(Beta Feature)
             - [Fixed-Style Dialogs](cj-fixes-style-dialog.md)(Beta Feature)
+            - [Page-Level Dialog Box](cj-page-level-dialog.md)(Beta Feature)
         - [Menu Control (Menu)](cj-popup-and-menu-components-menu.md)(Beta Feature)
         - [Popup Tips (Popup)](cj-popup-and-menu-components-popup.md)(Beta Feature)
         - Binding Modal Pages

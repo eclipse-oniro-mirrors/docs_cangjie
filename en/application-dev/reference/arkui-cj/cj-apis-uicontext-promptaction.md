@@ -1802,22 +1802,6 @@ public operator func ==(other: HoverModeAreaType): Bool
 
 ```cangjie
 public open class BaseDialogConfig {
-    public mut prop maskRect: ?Rectangle
-    public mut prop alignment: ?DialogAlignment
-    public mut prop offset: ?Offset
-    public mut prop isModal: ?Bool
-    public mut prop showInSubWindow: ?Bool
-    public mut prop autoCancel: ?Bool
-    public mut prop maskColor: ?ResourceColor
-    public mut prop transition: ?TransitionEffect
-    public mut prop onDidAppear: ?() -> Unit
-    public mut prop onDidDisappear: ?() -> Unit
-    public mut prop onWillAppear: ?() -> Unit
-    public mut prop onWillDisappear: ?() -> Unit
-    public mut prop keyboardAvoidMode: ?KeyboardAvoidMode
-    public mut prop enableHoverMode: ?Bool
-    public mut prop hoverModeArea: ?HoverModeAreaType
-    public mut prop levelMode: ?LevelMode
     public init(
         maskRect!: ?Rectangle = Option.None,
         alignment!: ?DialogAlignment = Option.None,
