@@ -432,7 +432,7 @@ data.callback = () => {
 3. **callback** 捕获 ArkTS 侧的 callback 函数
 4. ArkTS 侧的 callback 函数捕获了 ArkTS 侧创建的 CJData 对象 **data**
 
-假设上述场景为业务场景需要，那么开发者需要在 data.callback 执行完成之后及时将 data.callback 置空，既可解除环形引用。示例如下：
+假设上述场景为业务场景需要，那么开发者需要在 data.callback 执行完成之后及时将 data.callback 置空，即可解除环形引用。示例如下：
 
 <!--code_no_check-->
 ```cangjie

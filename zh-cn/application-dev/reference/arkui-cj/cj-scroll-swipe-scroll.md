@@ -119,7 +119,7 @@ public func onWillScroll(handler: ?(Float64, Float64, ScrollState, ScrollSource)
 
 触发该事件的条件 ：
 
-1. 滚动组件触发滚动时触发，支持键鼠操作和其他触发滚动的输入设置。
+1. 滚动组件触发滚动时触发，支持键鼠操作和其他触发滚动的输入设备。
 
 2. 通过滚动控制器API接口调用。
 

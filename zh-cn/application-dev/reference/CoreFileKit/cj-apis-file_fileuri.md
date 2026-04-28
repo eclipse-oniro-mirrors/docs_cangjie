@@ -6,7 +6,7 @@
 > 当前为Beta阶段。
 <!--DelEnd-->
 
-fileuri模块提供通过PATH获取文件统一资源标志符（Uniform Resource Identifier，URI）的能力，后续可通过使用[ohos.file_fs（文件管理）](cj-apis-file_fs.md)进行相关操作，如open、read、write等，以实现文件分享。
+fileuri模块提供通过PATH获取文件统一资源标识符（Uniform Resource Identifier，URI）的能力，后续可通过使用[ohos.file_fs（文件管理）](cj-apis-file_fs.md)进行相关操作，如open、read、write等，以实现文件分享。
 
 ## 导入模块
 
@@ -29,7 +29,7 @@ API示例代码使用说明：
 public func getUriFromPath(path: String): String
 ```
 
-**功能：** 通过传入的路径path生成应用自己的URI；将path转URI时，路径中的中文及非数字字母的特殊字符将会被编译成对应的ASCII码，拼接在URI中。
+**功能：** 通过传入的路径path生成应用自己的URI；将path转URI时，路径中的中文及非数字字母的特殊字符将会被编码成对应的ASCII码，拼接在URI中。
 
 **系统能力：** SystemCapability.FileManagement.AppFileService
 

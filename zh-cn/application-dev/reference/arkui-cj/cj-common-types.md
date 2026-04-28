@@ -2892,7 +2892,7 @@ public init(topLeft!: ?Length = None, topRight!: ?Length = None, bottomLeft!: ?L
 |:---|:---|:---|:---|:---|
 |topLeft|?[Length](./cj-common-types.md#interface-length)|否|None|**命名参数。** 组件左上角圆角半径。初始值为0.vp。|
 |topRight|?[Length](./cj-common-types.md#interface-length)|否|None|**命名参数。** 组件右上角圆角半径。，初始值为0.vp。|
-|bottomLeft|?[Length](./cj-common-types.md#interface-length)|否|None|**命名参数。** 组件左下角圆角半径。初始值为0.v2。|
+|bottomLeft|?[Length](./cj-common-types.md#interface-length)|否|None|**命名参数。** 组件左下角圆角半径。初始值为0.vp。|
 |bottomRight|?[Length](./cj-common-types.md#interface-length)|否|None|**命名参数。** 组件右下角圆角半径。初始值为0.vp。|
 
 ## class Margin
@@ -4218,7 +4218,7 @@ public var targetSpace: ?Length
 public var offset: ?Position
 ```
 
-**功能：** 设设置popup组件相对于placement设置的显示位置的偏移。不支持设置百分比。
+**功能：** 设置popup组件相对于placement设置的显示位置的偏移。不支持设置百分比。
 
 **类型：** ?[Position](#class-position)
 
@@ -15606,7 +15606,7 @@ public enum StickyStyle <: Equatable<StickyStyle> {
 None
 ```
 
-**功能：** 设置ListItemGroup的headerh不吸顶，footer不吸底。
+**功能：** 设置ListItemGroup的header不吸顶，footer不吸底。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -15618,7 +15618,7 @@ None
 Header
 ```
 
-**功能：** 设置ListItemGroup的headerh吸顶。
+**功能：** 设置ListItemGroup的header吸顶。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 

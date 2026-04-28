@@ -1851,7 +1851,7 @@ public prop size: Int64
 public operator func [](index: Int64): JSValue
 ```
 
-**功能：** 往 ArkTS 数组写入一个元素。
+**功能：** 从 ArkTS 数组读取一个元素。
 
 **起始版本：** 22
 
@@ -8269,7 +8269,7 @@ public operator func !=(str: JSStringEx): Bool
 public operator func ==(str: JSStringEx): Bool
 ```
 
-**功能：** 功能：判断两个 JSStringEx 是否相等。
+**功能：** 判断两个 JSStringEx 是否相等。
 
 **起始版本：** 22
 

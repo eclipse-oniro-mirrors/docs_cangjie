@@ -152,7 +152,7 @@ class EntryView{
 
 2. @Observed装饰的类不能定义构造函数。被@Observed修饰的类会自动生成带命名参数的构造函数。
 
-3. @Publish装饰的变量类型需要为自定义类型拥有的成员变量，且如果未不是@Observed装饰的class成员变量，其内容更新不会触发UI更新。
+3. @Publish装饰的变量类型需要为自定义类型拥有的成员变量，且如果不是@Observed装饰的class成员变量，其内容更新不会触发UI更新。
 
 4. @Publish只能修饰仓颉自定义类型由var声明的成员变量，不能修饰let变量和静态变量。
 

@@ -3283,9 +3283,9 @@ public func close(): Unit
 
 **System Capability:** SystemCapability.Test.UiTest
 
-**Since:** 22
-
 **Device behavior difference:** For API version 22, this API can be called normally on PC and Tablet devices, and returns error code 17000005 on other devices. Starting from API version 23, this API can be called normally on Phone, PC, and Tablet devices, and returns error code 17000005 on other devices.
+
+**Since:** 22
 
 **Exceptions:**
 
@@ -3598,9 +3598,9 @@ public func maximize(): Unit
 
 **System Capability:** SystemCapability.Test.UiTest
 
-**Since:** 22
-
 **Device behavior difference:** For API version 22, this API can be called normally on PC and Tablet devices, and returns error code 17000005 on other devices. Starting from API version 23, this API can be called normally on Phone, PC, and Tablet devices, and returns error code 17000005 on other devices.
+
+**Since:** 22
 
 **Exceptions:**
 
@@ -3637,9 +3637,9 @@ public func minimize(): Unit
 
 **System Capability:** SystemCapability.Test.UiTest
 
-**Since:** 22
-
 **Device behavior difference:** For API version 22, this API can be called normally on PC and Tablet devices, and returns error code 17000005 on other devices. Starting from API version 23, this API can be called normally on Phone, PC, and Tablet devices, and returns error code 17000005 on other devices.
+
+**Since:** 22
 
 **Exceptions:**
 
@@ -3676,9 +3676,9 @@ public func moveTo(x: Int32, y: Int32): Unit
 
 **System Capability:** SystemCapability.Test.UiTest
 
-**Since:** 22
-
 **Device behavior difference:** For API version 22, this API can be called normally on PC and Tablet devices, and returns error code 17000005 on other devices. Starting from API version 23, this API can be called normally on Phone, PC, and Tablet devices, and returns error code 17000005 on other devices.
+
+**Since:** 22
 
 **Parameters:**
 
@@ -3721,9 +3721,9 @@ public func resize(wide: Int32, height: Int32, direction: ResizeDirection): Unit
 
 **System Capability:** SystemCapability.Test.UiTest
 
-**Since:** 22
-
 **Device behavior difference:** For API version 22, this API can be called normally on PC and Tablet devices, and returns error code 17000005 on other devices. Starting from API version 23, this API can be called normally on Phone, PC, and Tablet devices, and returns error code 17000005 on other devices.
+
+**Since:** 22
 
 **Parameters:**
 
@@ -3768,9 +3768,9 @@ public func resume(): Unit
 
 **System Capability:** SystemCapability.Test.UiTest
 
-**Since:** 22
-
 **Device behavior difference:** For API version 22, this API can be called normally on PC and Tablet devices, and returns error code 17000005 on other devices. Starting from API version 23, this API can be called normally on Phone, PC, and Tablet devices, and returns error code 17000005 on other devices.
+
+**Since:** 22
 
 **Exceptions:**
 
@@ -3806,9 +3806,9 @@ public func split(): Unit
 
 **System Capability:** SystemCapability.Test.UiTest
 
-**Since:** 22
-
 **Device behavior difference:** For API version 22, this API can be called normally on PC and Tablet devices, and returns error code 17000005 on other devices. Starting from API version 23, this API can be called normally on Phone, PC, and Tablet devices, and returns error code 17000005 on other devices.
+
+**Since:** 22
 
 **Exceptions:**
 

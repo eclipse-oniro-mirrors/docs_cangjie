@@ -38,7 +38,7 @@ List除了提供垂直和水平布局能力、超出屏幕时可以滚动的自�
 
 ![List1](figures/List1.png)
 
-利用水平布局能力可以是构建单行或多行水平滚动列表，如下图3所示。
+利用水平布局能力可以构建单行或多行水平滚动列表，如下图3所示。
 
 **图3** 水平滚动列表（左：单行；右：多行）
 
@@ -551,7 +551,7 @@ public class EntryView {
 
 ListItem的[swipeAction属性](../reference/arkui-cj/cj-scroll-swipe-listitem.md#func-swipeactioncustombuilder-custombuilder-swipeedgeeffect-float64---unit)可用于实现列表项的左右滑动功能。swipeAction属性方法初始化时有必填参数SwipeActionOptions，其中，start参数表示设置列表项右滑时起始端滑出的组件，end参数表示设置列表项左滑时尾端滑出的组件。
 
-在消息列表中，end参数表示设置ListItem左滑时尾端划出自定义组件，即删除按钮。在初始化end方法时，将滑动列表项的索引传入删除按钮组件，当用户点击删除按钮时，可以根据索引值来删除列表项对应的数据，从而实现侧滑删除功能。
+在消息列表中，end参数表示设置ListItem左滑时尾端滑出自定义组件，即删除按钮。在初始化end方法时，将滑动列表项的索引传入删除按钮组件，当用户点击删除按钮时，可以根据索引值来删除列表项对应的数据，从而实现侧滑删除功能。
 
 - 实现尾端滑出组件的构建。
 

@@ -1123,7 +1123,7 @@ public var encrypt: Bool
 public var schema:?Schema
 ```
 
-**功能：** 置定义存储在数据库中的值，默认为None，即不使用Schema。
+**功能：** 设置定义存储在数据库中的值，默认为None，即不使用Schema。
 
 **类型：** ?[Schema](#class-schema)
 

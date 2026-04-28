@@ -334,7 +334,7 @@ public class ClassDemo {
 自动生成的 ArkTS 接口：
 
 ```typescript
-// Generate... > Cangjie-ArkTS Interop API 后在自动生成 .d.ts
+// Generate... > Cangjie-ArkTS Interop API 后再自动生成 .d.ts
 export declare class ClassDemo {
     value1: number
     value2: number

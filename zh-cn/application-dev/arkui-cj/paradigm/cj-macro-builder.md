@@ -387,7 +387,7 @@ class EntryView {
 
 ### 使用全局和局部的@Builder传入CustomBuilder类型
 
-当某个参数类型为CustomBuilder的时候，可以把定义的@Builder函数传入，因为CustomBuilder实际是一个Function(() -> Unit)类型，而@Builder实际也是一个Function类型。此场景中通过把@Builder传入已实现特定的效果
+当某个参数类型为CustomBuilder的时候，可以把定义的@Builder函数传入，因为CustomBuilder实际是一个Function(() -> Unit)类型，而@Builder实际也是一个Function类型。此场景中通过把@Builder传入以实现特定的效果
 
  <!-- run -->
 

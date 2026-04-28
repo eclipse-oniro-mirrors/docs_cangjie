@@ -2209,7 +2209,7 @@ public let mtime: UInt64
 public let priority: UInt32
 ```
 
-**功能：** 任务配置中的优先级。前端任务的优先级比后台任务高。相同模式的任务，数字越小优先级越高。
+**功能：** 任务配置中的优先级。前台任务的优先级比后台任务高。相同模式的任务，数字越小优先级越高。
 
 **类型：** UInt32
 
@@ -2945,7 +2945,7 @@ Background
 Foreground
 ```
 
-**功能：** 表示前端任务。
+**功能：** 表示前台任务。
 
 **系统能力：** SystemCapability.Request.FileTransferAgent
 

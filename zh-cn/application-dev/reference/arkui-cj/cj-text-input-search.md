@@ -255,7 +255,7 @@ public func onPaste(callback: ?(String) -> Unit): This
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|callback|?(String) -> Unit|是|-|回调函数，组件触发系统剪切板粘贴操作时触发。初始值：{ _ => }。|
+|callback|?(String) -> Unit|是|-|回调函数，组件触发系统剪贴板粘贴操作时触发。初始值：{ _ => }。|
 
 ## 基础类型定义
 
