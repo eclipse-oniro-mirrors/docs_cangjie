@@ -35,13 +35,13 @@
 
 ### `level` 检查
 
-`@IfAvailable` 宏表达式中，指定 `<label>` 为 `level` 时，该检查生效。
+`@IfAvailable` 宏表达式中，指定 `<label>` 为 `level` 时，该项检查生效。
 
 在任何作用域中，不允许调用比当前作用域更高 Level 的 API。即 `<lambda1>` 中不得调用高于 `level: <value>` 中 `<value>` 指定的值，在 `<lambda2>` 中不得调用高于当前工程的 Level 等级。
 
 ### `syscap` 检查
 
-`@IfAvailable` 宏表达式中，指定 `<label>` 为 `syscap` 时，该检查生效。
+`@IfAvailable` 宏表达式中，指定 `<label>` 为 `syscap` 时，该项检查生效。
 
 > **说明：**
 >
@@ -67,19 +67,22 @@
 ```cangjie
 package ohos.sample
 
+import kit.PerformanceAnalysisKit.Hilog
+import ohos.labels.APILevel
+
 @!APILevel[since: "22"]
 public func f22() {
-    println("level-22")
+    Hilog.info(0, "", "level-22")
 }
 
 @!APILevel[since: "23"]
 public func f23() {
-    println("level-23")
+    Hilog.info(0, "", "level-23")
 }
 
 @!APILevel[since: "24"]
 public func f24() {
-    println("level-24")
+    Hilog.info(0, "", "level-24")
 }
 ```
 
@@ -120,24 +123,27 @@ func demo() {
 ```cangjie
 package ohos.sample
 
+import kit.PerformanceAnalysisKit.Hilog
+import ohos.labels.APILevel
+
 @!APILevel[since: "22", syscap: "SystemCapability.A"]
 public func f1() {
-    println("SystemCapability.A")
+    Hilog.info(0, "", "SystemCapability.A")
 }
 
 @!APILevel[since: "22", syscap: "SystemCapability.B"]
 public func f2() {
-    println("SystemCapability.B")
+    Hilog.info(0, "", "SystemCapability.B")
 }
 
 @!APILevel[since: "22", syscap: "SystemCapability.C"]
 public func f3() {
-    println("SystemCapability.C")
+    Hilog.info(0, "", "SystemCapability.C")
 }
 
 @!APILevel[since: "22", syscap: "SystemCapability.D"]
 public func f4() {
-    println("SystemCapability.D")
+    Hilog.info(0, "", "SystemCapability.D")
 }
 ```
 

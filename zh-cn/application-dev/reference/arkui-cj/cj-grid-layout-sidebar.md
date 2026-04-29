@@ -63,7 +63,7 @@ public func autoHide(value: ?Bool): This
 
 > **说明：**
 >
-> - 受[minSideBarWidth](#func-minsidebarwidthlength)属性方法影响，当[minSideBarWidth](#func-minsidebarwidthlength)属性方法未设置值时使用初始值。
+> - 受[minSideBarWidth](#func-minsidebarwidthlength)属性方法影响，当该属性方法未设置值时使用初始值。
 > - 拖拽过程中判断是否要自动隐藏。小于最小宽度时需要阻尼效果触发隐藏（越界一段距离）。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
@@ -92,7 +92,7 @@ public func controlButton(value: ?ButtonStyle): This
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|value|?[ButtonStyle](./cj-button-picker-button.md#enum-buttontype)|是|-|侧边栏控制按钮的属性。|
+|value|?[ButtonStyle](#class-buttonstyle)|是|-|侧边栏控制按钮的属性。|
 
 ### func divider(?DividerStyle)
 

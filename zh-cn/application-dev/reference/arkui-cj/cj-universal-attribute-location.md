@@ -137,7 +137,7 @@ class EntryView {
         Column {
             Column(space: 10) {
                 // 设置子组件左上角相对于父组件左上角的偏移位置
-                // 元素内容<元素宽高，设置内容在与元素内的对齐方式
+                // 元素内容<元素宽高，设置内容在元素内的对齐方式
                 Text("align")
                     .fontSize(9)
                     .fontColor(0xCCCCCC)

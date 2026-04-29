@@ -92,7 +92,7 @@ public func controlButton(value: ?ButtonStyle): This
 
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
-| value | ?[ButtonStyle](./cj-button-picker-button.md#enum-buttontype) | Yes | - | Attributes of the sidebar control button. |
+| value | ?[ButtonStyle](#class-buttonstyle) | Yes | - | Attributes of the sidebar control button. |
 
 ### func divider(?DividerStyle)
 

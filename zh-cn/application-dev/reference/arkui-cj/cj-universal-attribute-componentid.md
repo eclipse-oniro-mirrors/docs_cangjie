@@ -166,7 +166,7 @@ public func sendTouchEvent(event: TouchObject): Bool
 
 |类型|说明|
 | :-------   | :---------- |
-| Bool | 事件发送失败时时返回false，其余情况返回true。|
+| Bool | 事件发送失败时返回false，其余情况返回true。|
 
 ### func sendKeyEvent(KeyEvent)
 
@@ -190,7 +190,7 @@ public func sendKeyEvent(event: KeyEvent): Bool
 
 |类型|说明|
 | :-------   | :---------- |
-| Bool | 事件发送失败时时返回false，其余情况返回true。|
+| Bool | 事件发送失败时返回false，其余情况返回true。|
 
 ### func sendMouseEvent(MouseEvent)
 
@@ -214,7 +214,7 @@ public func sendMouseEvent(event: MouseEvent): Bool
 
 |类型|说明|
 | :-------   | :---------- |
-| Bool | 事件发送失败时时返回false，其余情况返回true。|
+| Bool | 事件发送失败时返回false，其余情况返回true。|
 
 ## 示例代码
 

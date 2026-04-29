@@ -1250,7 +1250,7 @@ public class ImagePacker {}
 public prop supportedFormats: Array<String>
 ```
 
-**功能：** 图片编码支持的格式，包括：jpeg、webp、png、heic、gif（不同硬件设备支持情况不同）
+**功能：** 图片编码支持的格式，包括：jpeg、webp、png、heic、gif（不同硬件设备支持情况不同）。
 
 **类型：** Array\<String>
 
@@ -2017,7 +2017,7 @@ public class ImageSource {}
 >
 > - 在调用ImageSource的方法前，需要先通过[createImageSource](#func-createimagesourcearrayuint8)构建一个ImageSource实例。
 >
-> - mageSource的所有方法均不支持并发调用。
+> - ImageSource的所有方法均不支持并发调用。
 >
 > - 由于图片占用内存较大，所以当ImageSource实例使用完成后，应主动调用[release](#func-release-3)方法及时释放内存。释放时应确保后续不再使用该实例。
 
@@ -2031,8 +2031,7 @@ public class ImageSource {}
 public prop supportedFormats: Array<String>
 ```
 
-**功能：** 支持的图片格式，包括：png，jpeg，bmp，gif，webp，dng，heic
-（不同硬件设备支持情况不同）。
+**功能：** 支持的图片格式，包括：png，jpeg，bmp，gif，webp，dng，heic（不同硬件设备支持情况不同）。
 
 **类型：** Array\<String>
 
@@ -5219,7 +5218,7 @@ BitsPerSample
 
 修改示例：`imageSource.modifyImageProperty(key,'8 8 8');`或`imageSource.modifyImageProperty(key,'8,8,8');`
 
-读取结果示例："8,8,8
+读取结果示例："8,8,8"
 
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
@@ -5423,7 +5422,7 @@ GpsDateStamp
 GpsLatitude
 ```
 
-**功能：** 图片纬度。修改时应按"度，分，秒"格式传入，如"39，54，7.542"
+**功能：** 图片纬度。修改时应按"度，分，秒"格式传入，如"39, 54, 7.542"
 
 修改传参格式说明：三个非负有理数字符串，逗号隔开。
 
@@ -6248,7 +6247,7 @@ public func toString(): String
 支持SVG标签，使用版本为(SVG) 1.1，当前支持的标签列表有：
 
 - a
-- circla
+- circle
 - clipPath
 - defs
 - ellipse

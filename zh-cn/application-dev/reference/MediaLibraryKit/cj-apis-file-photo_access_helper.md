@@ -2855,7 +2855,7 @@ public func getThumbnail(size!: ?Size = Size(256, 256)): PixelMap
 
 **功能：** 获取文件的缩略图，传入缩略图尺寸。
 
-**需要权限：** ohos.permission.WRITE_IMAGEVIDEO
+**需要权限：** ohos.permission.READ_IMAGEVIDEO
 
 **系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
 
@@ -3139,7 +3139,7 @@ try {
 public func getNextObject(): PhotoAsset
 ```
 
-**功能：** 获获取文件检索结果中的下一个文件资产。
+**功能：** 获取文件检索结果中的下一个文件资产。
 在调用此方法之前，必须使用[isAfterLast()](#func-isafterlast)来检查当前位置是否为最后一行。
 
 **系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core

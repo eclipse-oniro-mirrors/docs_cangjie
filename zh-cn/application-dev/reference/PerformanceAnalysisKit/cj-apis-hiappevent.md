@@ -1504,7 +1504,7 @@ public var eventConfigs: Array<AppEventReportConfig>
 public var name: String
 ```
 
-**功能：**  数据处理者的名称。名称只能包含大小写字母、数字、下划线和 $，不能以数字开头，长度非空且不超过256个字符。
+**功能：** 数据处理者的名称。名称只能包含大小写字母、数字、下划线和$，不能以数字开头，长度非空且不超过256个字符。
 
 **类型：** String
 

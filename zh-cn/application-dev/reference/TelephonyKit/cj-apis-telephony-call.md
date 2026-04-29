@@ -46,7 +46,7 @@ public static func formatPhoneNumber(
 
 **功能：** 格式化电话号码，可设置格式化参数。
 
-电话号码格式化后为标准数字字串，例如：“138 xxxx xxxx”、“0755 xxxx xxxx”。
+电话号码格式化后为标准数字字符串，例如：“138 xxxx xxxx”、“0755 xxxx xxxx”。
 
 **系统能力：** SystemCapability.Telephony.CallManager
 

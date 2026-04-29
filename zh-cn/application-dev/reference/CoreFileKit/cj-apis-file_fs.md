@@ -2325,7 +2325,7 @@ public static func stat(file: String): Stat
 
 |类型|说明|
 |:----|:----|
-|[Stat](#class-stat)|表示文件或目录的具体信息。。|
+|[Stat](#class-stat)|表示文件或目录的具体信息。|
 
 **异常：**
 
@@ -2702,7 +2702,7 @@ public static func write(fd: Int32, buffer: String, options!: WriteOptions = Wri
 
 |类型|说明|
 |:----|:----|
-|Int64|实返回实际写入的数据长度（单位：字节）。|
+|Int64|返回实际写入的数据长度（单位：字节）。|
 
 **异常：**
 

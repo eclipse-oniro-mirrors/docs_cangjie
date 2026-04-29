@@ -2120,7 +2120,7 @@ public func getStringByName(resName: String, args: Array<ArgsValueType>): String
   | 9001003 | Invalid resource name. |
   | 9001004 | No matching resource is found based on the resource name. |
   | 9001006 | The resource is referenced cyclically. |
-  | 9001008 | Failed to format the resource obtained based on the resource Name. |
+  | 9001007 | Failed to format the resource obtained based on the resource ID. |
 
 - IllegalStateException:
 

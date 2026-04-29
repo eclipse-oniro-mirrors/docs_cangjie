@@ -487,7 +487,7 @@ public func pushPath(info: ?NavPathInfo, options!: ?NavigationOptions = None): U
 
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
-| info | ?[NavPathInfo](#class-navpathinfo) | No | NavPathInfo(name: "", param: "") | The NavDestination to be pushed. |
+| info | ?[NavPathInfo](#class-navpathinfo) | Yes | - | The NavDestination to be pushed. |
 | options | ?[NavigationOptions](#class-navigationoptions) | No | None | **Named parameter.** Navigation options. |
 
 #### func pushPathByName(?String, ?String, ?Bool)

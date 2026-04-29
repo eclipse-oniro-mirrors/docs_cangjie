@@ -42,7 +42,7 @@ public init(value: ?ResourceStr)
 
 通用属性：不支持。
 
-通用事件：仅支持点击事件onClick。
+通用事件：仅支持点击事件[onClick](#func-onclickclickevent---unit)。
 
 > **说明：**
 >
@@ -261,7 +261,7 @@ class EntryView {
                 //行内文字无修饰
                 .decoration(decorationType: TextDecorationType.None, color: Color.Red)
             }
-            //文本横线添加
+            //文本划线添加
             Text("Text Decoration")
             .fontSize(9)
             .fontColor(0xCCCCCC)

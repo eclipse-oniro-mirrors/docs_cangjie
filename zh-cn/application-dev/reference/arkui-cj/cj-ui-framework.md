@@ -236,7 +236,7 @@ public func build(): Unit
 public func aboutToBeDeleted(): Unit
 ```
 
-**功能：** 组件销毁阶段由架自动触发。仅供UI框架使用。
+**功能：** 组件销毁阶段由框架自动触发。仅供UI框架使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 

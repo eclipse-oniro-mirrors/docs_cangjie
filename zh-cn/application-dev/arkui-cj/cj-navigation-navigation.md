@@ -40,7 +40,7 @@ class EntryView {
 NavPathStack通过Push相关的接口去实现页面跳转的功能，主要通过页面的name去跳转，并可以携带param。
 
 ```cangjie
-this.pageStack.pushPath(NavPathInfo('PageOne', 'PageOne Param'))
+this.pageStack.pushPath(NavPathInfo(name: 'PageOne', param: 'PageOne Param'))
 ```
 
 ### 页面返回
@@ -115,7 +115,7 @@ NavDestination之间切换时可以通过[geometryTransition](../reference/arkui
                     .height(40)
                     .margin(20)
                     .onClick({ => animateTo(AnimateParam(duration: 1200),
-                        { => this.pageStack.pushPath(NavPathInfo("PageTwo", "information"))})
+                        { => this.pageStack.pushPath(NavPathInfo(name: "PageTwo", param: "information"))})
                     })
                 }
             }

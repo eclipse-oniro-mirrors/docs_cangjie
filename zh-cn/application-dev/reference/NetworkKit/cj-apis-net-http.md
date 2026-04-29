@@ -1024,7 +1024,7 @@ try {
 public func requestInStream(url: String, callback: AsyncCallback<UInt32>): Unit
 ```
 
-**功能：** 根据URL地址，发起HTTP网络请求并返回流式响应，
+**功能：** 根据URL地址，发起HTTP网络请求并返回流式响应。
 
 **需要权限：** ohos.permission.INTERNET
 

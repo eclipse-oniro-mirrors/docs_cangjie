@@ -181,7 +181,7 @@ public func selected(value: ?Bool): This
 public func selectIcon(value: ?Bool): This
 ```
 
-**功能：**设置当菜单项被选中时，是否显示被选中的图标。
+**功能：** 设置当菜单项被选中时，是否显示被选中的图标。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 

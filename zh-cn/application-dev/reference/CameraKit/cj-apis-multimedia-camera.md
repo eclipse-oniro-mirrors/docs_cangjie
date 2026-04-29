@@ -4595,7 +4595,7 @@ public init(
 )
 ```
 
-**功能：** 创建PhoroCaptureSetting对象。
+**功能：** 创建PhotoCaptureSetting对象。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 

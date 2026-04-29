@@ -83,7 +83,6 @@ class EntryView {
                                 .height(12)
                                 .margin(15)
                                 .border(width: 2.px, color: 0xCCCCCC)
-                                .rotate( angle: 45.0 )
                             }
                             .borderRadius(15)
                             .shadow(radius: 100.0, color: 0xededed)
@@ -126,7 +125,6 @@ class EntryView {
                                 .height(12)
                                 .margin(15)
                                 .border(width: 2.px,color: 0xCCCCCC)
-                                .rotate( angle: 45.0 )
                             }
                             .borderRadius(15)
                             .shadow(radius: 100.0, color: 0xededed)
@@ -265,7 +263,6 @@ class PageTwo {
                                 .height(12)
                                 .margin( right: 15 )
                                 .border(width: 2.px, color: 0xcccccc )
-                                .rotate(angle: 45.0)
                             }
                             .borderRadius(15)
                             .shadow(radius: 100.0, color: 0xededed)

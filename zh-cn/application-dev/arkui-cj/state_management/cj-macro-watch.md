@@ -95,7 +95,7 @@ import ohos.arkui.state_macro_manage.*
 
 @Component
 class TotalView {
-  @Link @Watch[onCountUpdated] var count: Int64 = 0
+  @Link @Watch[onCountUpdated] var count: Int64
   @State var total: Int64 = 0
   // @Watch 回调
   func onCountUpdated(): Unit {

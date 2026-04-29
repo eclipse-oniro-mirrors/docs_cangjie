@@ -292,7 +292,7 @@ public func toJSValue(context: JSContext): JSValue
 
 |类型|说明|
 |:----|:----|
-|[JSValue](#class-jsvalue)|ArkTS 统一类型。|
+|[JSValue](#class-jsvalue)|ArkTS统一类型。|
 
 **异常：**
 
@@ -1106,7 +1106,7 @@ public func toJSValue(context: JSContext): JSValue
 
 ## extend Float32 <: JSInteropType\<Float32>
 
-**功能：** 该接口可用为内置类型 Float32 实现扩展方法。
+**功能：** 该接口可为内置类型 Float32 实现扩展方法。
 
 **起始版本：** 22
 
@@ -1207,7 +1207,7 @@ public func toJSValue(context: JSContext): JSValue
 
 ## extend Float64 <: JSInteropType\<Float64>
 
-**功能：** 该接口可用为内置类型 Float64 实现扩展方法。
+**功能：** 该接口可为内置类型 Float64 实现扩展方法。
 
 **起始版本：** 22
 

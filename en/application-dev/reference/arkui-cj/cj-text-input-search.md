@@ -70,7 +70,7 @@ public func searchButton(value: ?ResourceStr): This
 
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
-| value | ?[ResourceStr](./cj-common-types.md#interface-resourcestr) | Yes | - | **Named parameter.** Text content of the search button at the end of the search box. Initial value: "". |
+| value | ?[ResourceStr](./cj-common-types.md#interface-resourcestr) | Yes | - | Text content of the search button at the end of the search box. Initial value: "". |
 
 ### func placeholderColor(?ResourceColor)
 

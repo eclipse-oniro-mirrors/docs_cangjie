@@ -145,7 +145,7 @@ public let descriptionId: Int32
 public let deviceTypes: Array<String>
 ```
 
-**功能：** Ability支持的设备类型，来源于modudle.json5配置的deviceTypes。
+**功能：** Ability支持的设备类型，来源于module.json5配置的deviceTypes。
 
 **类型：** Array\<String>
 
@@ -2906,7 +2906,7 @@ public class WindowSize {
 public let maxWindowHeight: UInt32
 ```
 
-**功能：** 表示自由窗口状态下窗口的最大高度，宽度单位为vp。
+**功能：** 表示自由窗口状态下窗口的最大高度，高度单位为vp。
 
 **类型：** UInt32
 

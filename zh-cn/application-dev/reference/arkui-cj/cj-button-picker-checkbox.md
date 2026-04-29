@@ -100,7 +100,7 @@ public func shape(value: ?CheckBoxShape): This
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|value|?[CheckBoxShape](./cj-common-types.md#enum-checkboxshape)|是|-|切换CheckBox组件形状，包括圆形和圆角方形。初始值:  CheckBoxShape.Circle|
+|value|?[CheckBoxShape](./cj-common-types.md#enum-checkboxshape)|是|-|切换CheckBox组件形状，包括圆形和圆角方形。初始值：CheckBoxShape.Circle|
 
 ## 组件事件
 

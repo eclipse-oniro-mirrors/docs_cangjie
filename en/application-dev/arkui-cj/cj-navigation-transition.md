@@ -24,11 +24,12 @@ Implementation steps:
 
 ```cangjie
 package ohos_app_cangjie_entry
-import kit.UIKit.*
-import ohos.state_macro_manage.*
+import kit.ArkUI.*
+import ohos.arkui.state_macro_manage.*
+import ohos.arkui.state_management.*
 
 @Builder
-func pageMap(name: String) {
+func pageMap(name: String, param: Any) {
     if (name == "PageOne") {
         PageOne()
     } else {
@@ -57,13 +58,13 @@ class EntryView {
                             Row() {
                                 Row() {
                                     Text('${item.split("")[0]}')
-                                    .fontColor(Color.WHITE)
+                                    .fontColor(Color.White)
                                     .fontSize(14)
                                     .fontWeight(FontWeight.Bold)
                                 }
                                 .width(30)
                                 .height(30)
-                                .backgroundColor(Color.GREY)
+                                .backgroundColor(Color.Gray)
                                 .margin( right: 20 )
                                 .borderRadius(20)
                                 .justifyContent(FlexAlign.Center)
@@ -82,19 +83,18 @@ class EntryView {
                                 .height(12)
                                 .margin(15)
                                 .border(width: 2.px, color: 0xCCCCCC)
-                                .rotate( angle: 45.0 )
                             }
                             .borderRadius(15)
-                            .shadow(radius: 100, color: 0xededed)
+                            .shadow(radius: 100.0, color: 0xededed)
                             .width(90.percent)
                             .alignItems(VerticalAlign.Center)
                             .padding( left: 15, top: 15, bottom: 15 )
-                            .backgroundColor(Color.WHITE)
+                            .backgroundColor(Color.White)
                         }
                         .width(100.percent)
                         .margin(top: 12)
                         .onClick({ evt =>
-                            this.pathInfos.pushPath(NavPathInfo('PageOne', 'Detail page parameters')) // Push the NaviDestination page info specified by name onto the stack, passing param as parameter
+                            this.pathInfos.pushPath(NavPathInfo(name: 'PageOne', param: 'Detail page parameters')) // Push the NaviDestination page info specified by name onto the stack, passing param as parameter
                         })
                     })
                     ForEach(this.listArray2, itemGeneratorFunc: {item: String, _:Int64 =>
@@ -102,13 +102,13 @@ class EntryView {
                             Row() {
                                 Row() {
                                     Text('${item.split("")[0]}')
-                                    .fontColor(Color.WHITE)
+                                    .fontColor(Color.White)
                                     .fontSize(14)
                                     .fontWeight(FontWeight.Bold)
                                 }
                                 .width(30)
                                 .height(30)
-                                .backgroundColor(Color.GREY)
+                                .backgroundColor(Color.Gray)
                                 .margin( right: 20 )
                                 .borderRadius(20)
                                 .justifyContent(FlexAlign.Center)
@@ -125,19 +125,18 @@ class EntryView {
                                 .height(12)
                                 .margin(15)
                                 .border(width: 2.px,color: 0xCCCCCC)
-                                .rotate( angle: 45.0 )
                             }
                             .borderRadius(15)
-                            .shadow(radius: 100, color: 0xededed)
+                            .shadow(radius: 100.0, color: 0xededed)
                             .width(90.percent)
                             .alignItems(VerticalAlign.Center)
                             .padding( left: 15, top: 15, bottom: 15 )
-                            .backgroundColor(Color.WHITE)
+                            .backgroundColor(Color.White)
                         }
                         .width(100.percent)
                         .margin(top: 12)
                         .onClick({ evt =>
-                            this.pathInfos.pushPath(NavPathInfo('PageTwo', 'Detail page parameters' )) // Push the NaviDestination page info specified by name onto the stack, passing param as parameter
+                            this.pathInfos.pushPath(NavPathInfo(name: 'PageTwo', param: 'Detail page parameters' )) // Push the NaviDestination page info specified by name onto the stack, passing param as parameter
                         })
                     })
                 }
@@ -149,12 +148,12 @@ class EntryView {
                 .height(100.percent)
                 .padding(top: 10)
             }
-            .navDestination(bind<String>(pageMap, this))
+            .navDestination(bind<String, Any>(pageMap, this))
             .width(100.percent).height(100.percent)
 
         }
         .size( width: 100.percent, height: 100.percent )
-        .backgroundColor(Color.WHITE)
+        .backgroundColor(Color.White)
     }
 }
 ```
@@ -198,7 +197,7 @@ class PageOne {
                 .width(50.percent)
                 .height(40)
                 .margin( top: 50 )
-                .onClick({ =>
+                .onClick({e =>
                   // Pop the top element of the route stack to return to the previous page
                   this.pathInfos1.pop()
                 })
@@ -240,13 +239,13 @@ class PageTwo {
                             Row() {
                                 Row() {
                                     Text('${item.split("")[0]}')
-                                    .fontColor(Color.WHITE)
+                                    .fontColor(Color.White)
                                     .fontSize(14)
                                     .fontWeight(FontWeight.Bold)
                                 }
                                 .width(30)
                                 .height(30)
-                                .backgroundColor(Color.GREY)
+                                .backgroundColor(Color.Gray)
                                 .margin( right: 20 )
                                 .borderRadius(20)
                                 .justifyContent(FlexAlign.Center)
@@ -264,17 +263,16 @@ class PageTwo {
                                 .height(12)
                                 .margin( right: 15 )
                                 .border(width: 2.px, color: 0xcccccc )
-                                .rotate(angle: 45.0)
                             }
                             .borderRadius(15)
-                            .shadow(radius: 100, color: 0xededed)
+                            .shadow(radius: 100.0, color: 0xededed)
                             .width(100.percent)
                             .alignItems(VerticalAlign.Center)
                             .padding( left: 15, top: 15, bottom: 15 )
-                            .backgroundColor(Color.WHITE)
+                            .backgroundColor(Color.White)
                         }
                         .onClick({ evt =>
-                            this.pathInfos2.pushPath(NavPathInfo('PageOne', 'Detail page parameters'))
+                            this.pathInfos2.pushPath(NavPathInfo(name: 'PageOne', param: 'Detail page parameters'))
                         })
                         .margin(top: 12, left: 20)
                         .width(90.percent)

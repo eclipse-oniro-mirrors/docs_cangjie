@@ -1855,7 +1855,7 @@ public static const HUKS_PADDING_NONE: UInt32 = 0
 public static const HUKS_PADDING_OAEP: UInt32 = 1
 ```
 
-**功能：** 表示使用OAEP补齐算法。
+**功能：** 表示使用OAEP填充算法。
 
 **类型：** UInt32
 
@@ -1869,7 +1869,7 @@ public static const HUKS_PADDING_OAEP: UInt32 = 1
 public static const HUKS_PADDING_PKCS1_V1_5: UInt32 = 3
 ```
 
-**功能：** 表示使用PKCS1_V1_5补齐算法。
+**功能：** 表示使用PKCS1_V1_5填充算法。
 
 **类型：** UInt32
 
@@ -1883,7 +1883,7 @@ public static const HUKS_PADDING_PKCS1_V1_5: UInt32 = 3
 public static const HUKS_PADDING_PKCS5: UInt32 = 4
 ```
 
-**功能：** 表示使用PKCS5补齐算法。
+**功能：** 表示使用PKCS5填充算法。
 
 **类型：** UInt32
 

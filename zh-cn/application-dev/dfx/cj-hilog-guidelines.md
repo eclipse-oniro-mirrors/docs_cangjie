@@ -102,6 +102,6 @@ HiLog中定义了DEBUG、INFO、WARN、ERROR、FATAL五种日志级别，并提�
    打印日志结果为:
 
    ```txt
-   01-02 08:18:24.947   30988-30988   A0ff00/testTag                  com.example.hilogemo  I     hello World
-   01-02 08:18:24.947   30988-30988   A00000/testTag                  com.example.hilogemo  E     this is an error level log
+   01-02 08:18:24.947   30988-30988   A0ff00/testTag                  com.example.hilogdemo  I     hello World
+   01-02 08:18:24.947   30988-30988   A00000/testTag                  com.example.hilogdemo  E     this is an error level log
    ```

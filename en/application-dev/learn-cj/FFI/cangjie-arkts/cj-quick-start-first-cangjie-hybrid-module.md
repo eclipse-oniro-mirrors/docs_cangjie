@@ -2,7 +2,7 @@
 
 > **Note:**
 >
-> To ensure the operational effect, this document uses **DevEco Studio 5.0.2 Release** and **DevEco Studio-Cangjie Plugin 5.0.7.100 Beta1** as examples. Click [here](https://developer.huawei.com/consumer/en/download/) to download the latest version.
+> To ensure the operational effect, this document uses **DevEco Studio 6.0.2 Release** and **DevEco Studio-Cangjie Plugin 6.0.2 Beta2** as examples. Click [here](https://developer.huawei.com/consumer/en/download/) to download the latest version.
 
 This document is intended for OpenHarmony application developers who have a basic understanding of the Cangjie language, ArkTS language, and UI frameworks. Based on a simple, purely ArkTS-developed application that supports page navigation/return functionality, this guide demonstrates how to introduce Cangjie to develop incremental features (e.g., Cangjie providing a synchronous interface for ArkTS to call, an asynchronous interface for ArkTS to call, and embedding a Cangjie component in the original ArkTS page). This helps developers quickly understand how to introduce Cangjie into existing ArkTS projects and familiarize themselves with the hybrid application development process.
 
@@ -44,7 +44,7 @@ Project_name
 
 Where:
 - **entry** is an ArkTS module created using the **Empty Ability** project template, which is compiled into a HAP package.
-- **my_module** is an ArkTS static library module created using the **Static Library** project template, which is compiled into a HAR package and depended on by the **entry** module.
+- **my_module** is an ArkTS module created using a project template. The module will be compiled into a HAR package and depended on by the **entry** module. **my_module** can be created using either the **Shared Library** project template or the **Static Library** project template. The sample code below creates an ArkTS shared library module using the **Shared Library** project template.
 
 Both **entry** and **my_module** modules contain a page, with navigation between them via the Navigation component.
 
@@ -66,11 +66,11 @@ Both **entry** and **my_module** modules contain a page, with navigation between
    │    ├── mock
    │    ├── ohosTest
    │    └── test
+   ├── .gitignore
    ├── build-profile.json5
    ├── hvigorfile.ts
    ├── obfuscation-rules.txt
-   ├── oh-package.json5
-   └── oh-package-lock.json5
+   └── oh-package.json5
    ```
 
    - Example of **entry > src > main > ets > pages > Index.ets**:
@@ -119,18 +119,23 @@ Both **entry** and **my_module** modules contain a page, with navigation between
    ├── src
    │    ├── main
    │    │    ├── ets
-   │    │    │    └── pages
-   │    │    │         └── MyModulePage.ets
+   │    │    │    ├── pages
+   |    │    │    │    ├── Index.ets
+   │    │    │    │    └── MyModulePage.ets
+   |    │    │    └── utils
    │    │    ├── resources
-   │    │    │    └── base
-   │    │    │         ├── element
-   │    │    │         └── profile
-   │    │    │              └──router_map.json
+   │    │    │    ├── base
+   │    │    │    │    ├── element
+   |    │    │    │    ├── media
+   │    │    │    │    └── profile
+   │    │    │    │         ├──main_pages.json
+   │    │    │    │         └──router_map.json
+   │    │    │    └── rawfile
    │    │    └── module.json5
    │    ├── ohosTest
    │    └── test
+   ├── .gitignore
    ├── build-profile.json5
-   ├── BuildProfile.ets
    ├── consumer-rules.txt
    ├── hvigorfile.ts
    ├── Index.ets
@@ -178,7 +183,6 @@ Both **entry** and **my_module** modules contain a page, with navigation between
    - **my_module > src > main > resources > base > profile > route_map.json** must configure the subpage routing information, as shown below:
 
    ```json
-   // router_map.json
    {
      "routerMap": [
        {
@@ -206,10 +210,6 @@ Both **entry** and **my_module** modules contain a page, with navigation between
 
 ## Incrementally Using Cangjie in an ArkTS Module
 
-> **Note:**
->
-> Currently, Cangjie modules only support OpenHarmony static library modules, i.e., HAR static shared packages.
-
 Using the original ArkTS application project as an example, this section explains how to enable Cangjie development in an ArkTS module (i.e., **my_module**).
 
 ### Right-Click Menu to Enable Cangjie-ArkTS Hybrid Module
@@ -231,22 +231,29 @@ After the project syncs automatically, the directory structure is as follows:
     │    ├── main
     │    │    ├── cangjie
     │    │    │    ├── types
-    │    │    │    │    └── libohos_app_cangjie_entry
+    │    │    │    │    └── libohos_app_cangjie_my_module
     │    │    │    │          ├── Index.d.ts
     │    │    │    │          └── oh-package.json5
     │    │    │    └── index.cj
     │    │    ├── ets
-    │    │    │    └── pages
-    │    │    │         └── MyModulePage.ets
+    │    │    │    ├── pages
+    |    │    │    |    ├── Index.ets
+    │    │    │    |    └── MyModulePage.ets
+    |    │    │    └── utils
     │    │    ├── resources
     │    │    │    └── base
-    │    │    │         ├── element
-    │    │    │         └── profile
-    │    │    │              └── router_map.json
+    │    │    │    |    ├── element
+    |    │    │    |    ├── media
+    │    │    │    |    └── profile
+    |    │    │    |         ├──main_pages.json
+    │    │    │    |         └── router_map.json
+    |    │    │    └── rawfile
     │    │    └── module.json5
     │    ├── ohosTest
     │    └── test
     ├── build-profile.json5
+    ├── cjpm.lock
+    ├── cjpm.toml
     ├── consumer-rules.txt
     ├── hvigorfile.ts
     ├── Index.ets
@@ -293,7 +300,7 @@ Here, **my_module** becomes a Cangjie-ArkTS hybrid module.
 
 2. Automatically generate Cangjie-ArkTS interop interface declarations.
 
-   Open **index.cj**, right-click in the editor, and select **Generate... > Cangjie-ArkTS Interop API**. This generates .d.ts interface declarations in **entry > src > main > cangjie > types > libohos_app_cangjie_entry > Index.d.ts**, exposing Cangjie interfaces to ArkTS. The directory structure is as follows:
+   Open **index.cj**, right-click in the editor, and select **Generate... > Cangjie-ArkTS Interop API**. This generates .d.ts interface declarations in **entry > src > main > cangjie > types > libohos_app_cangjie_my_module > Index.d.ts**, exposing Cangjie interfaces to ArkTS. The directory structure is as follows:
 
    ```text
    my_module
@@ -305,7 +312,7 @@ Here, **my_module** becomes a Cangjie-ArkTS hybrid module.
              ├── cangjie
              │    ├── ark_interop_api
              │    ├── types
-             │    │    └── libohos_app_cangjie_entry
+             │    │    └── libohos_app_cangjie_my_module
              │    │         │── Index.d.ts
              │    │         └── oh-package.json5
              │    └── index.cj
@@ -419,9 +426,11 @@ Here, **my_module** becomes a Cangjie-ArkTS hybrid module.
         │    │    ├── cangjie_page.cj
         │    │    └── index.cj
         │    ├── ets
-        │    │    └── pages
-        │    │         └── cangjie_page.ets
-        │    │         └── MyModulePage.ets
+        │    │    ├── pages
+        │    │    |    ├── cangjie_page.ets
+        |    │    |    ├── Index.ets
+        │    │    |    └── MyModulePage.ets
+        |    |    └── utils
         │    ├── resources
         │    └── module.json5
         ├── ohosTest

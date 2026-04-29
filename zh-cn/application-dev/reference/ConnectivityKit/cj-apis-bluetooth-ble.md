@@ -332,7 +332,7 @@ public func startAdvertising(setting: AdvertiseSetting, advData: AdvertiseData, 
   | 801 | Capability not supported. |
   | 2900001 | Service stopped. |
   | 2900003 | Bluetooth disabled. |
-  | 2900010 | The numeber of advertising resources reaches the upper limit. |
+  | 2900010 | The number of advertising resources reaches the upper limit. |
   | 2900099 | Operation failed. |
   | 2902054 | The length of the advertising data exceeds the upper limit. |
 
@@ -418,7 +418,7 @@ public func startAdvertising(advertisingParams: AdvertisingParams): UInt32
   | 801 | Capability not supported. |
   | 2900001 | Service stopped. |
   | 2900003 | Bluetooth disabled. |
-  | 2900010 | The numeber of advertising resources reaches the upper limit. |
+  | 2900010 | The number of advertising resources reaches the upper limit. |
   | 2900099 | Operation failed. |
   | 2902054 | The length of the advertising data exceeds the upper limit. |
 
@@ -2005,7 +2005,7 @@ public func connect(): Unit
 **功能：** client端主动发起和server蓝牙设备的GATT协议连接。
 
 - 远端设备地址已通过[createGattClientDevice](#func-creategattclientdevicestring)方法中的deviceId参数指定。
-- client可通过订阅[on(AdvertisingStateChange)](#func-onbluetoothblecallbacktype-callback1argumentadvertisingstatechangeinfo)事件来感知连接是否成功。
+- client可通过订阅[on(BleConnectionStateChange)](#func-onbluetoothblegattclientdevicecallbacktype-callback1argumentbleconnectionchangestate)事件来感知连接是否成功。
 
 **需要权限：** ohos.permission.ACCESS_BLUETOOTH
 
@@ -2053,7 +2053,7 @@ public func disconnect(): Unit
 
 **功能：** client断开与远端蓝牙低功耗设备的连接。
 
-- client可通过订阅[on(AdvertisingStateChange)](#func-onbluetoothblecallbacktype-callback1argumentadvertisingstatechangeinfo)事件来感知连接是否成功。
+- client可通过订阅[on(BleConnectionStateChange)](#func-onbluetoothblegattclientdevicecallbacktype-callback1argumentbleconnectionchangestate)事件来感知连接是否成功。
 
 **需要权限：** ohos.permission.ACCESS_BLUETOOTH
 

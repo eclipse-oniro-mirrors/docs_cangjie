@@ -490,7 +490,7 @@ public func pushPath(info: ?NavPathInfo, options!: ?NavigationOptions = None): U
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |info|?[NavPathInfo](#class-navpathinfo)|是|-|要推入的NavDestination。|
-|options|?[NavigationOptions](#class-navigationoptions)|否|None|**命名参数。**  导航选项。|
+|options|?[NavigationOptions](#class-navigationoptions)|否|None|**命名参数。** 导航选项。|
 
 #### func pushPathByName(?String, ?String, ?Bool)
 
