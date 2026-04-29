@@ -14,7 +14,7 @@
 
 **Error Message**
 
-The index used exceeds the allowed range.
+The accessing index is out of range.
 
 **Error Description**
 
@@ -33,7 +33,7 @@ The specified index is less than 0 or exceeds the upper limit.
 
 **Error Message**
 
-An exception occurred in the executed ArkTS code.
+Outside error occurred.
 
 **Error Description**
 
@@ -53,7 +53,7 @@ ArkTS runtime exception or an exception occurred in the called ArkTS function.
 
 **Error Message**
 
-The accessed object has exceeded its lifecycle.
+Accessing reference is beyond reach.
 
 **Error Description**
 
@@ -73,7 +73,7 @@ Use safe references to escape the current scope for access.
 
 **Error Message**
 
-Interoperation performed on a non-ArkTS runtime thread.
+Thread mismatch.
 
 **Error Description**
 
@@ -91,7 +91,7 @@ Before performing interoperation, use the interface `JSContext.isBindThread()` t
 
 **Error Message**
 
-ArkTS data type mismatch.
+The ArkTS data types do not match.
 
 **Error Description**
 
@@ -109,7 +109,7 @@ Verify the data type before performing operations.
 
 **Error Message**
 
-Fail to load module which doesn't exist.
+Target module not exist.
 
 **Error Description**
 
@@ -128,7 +128,7 @@ Check if the module path is correct, If the target is a system module, check whe
 
 **Error Message**
 
-Cannot requireArkModule during initializing cangjie module.
+Can not requireArkModule during initializing cangjie module.
 
 **Error Description**
 
@@ -146,7 +146,7 @@ Troubleshoot whether requireArkModule is called in the exported function of the 
 
 **Error Message**
 
-The current application does not support importing the specified ArkTS module.
+Current application have not support requireArkModule of the url.
 
 **Error Description**
 

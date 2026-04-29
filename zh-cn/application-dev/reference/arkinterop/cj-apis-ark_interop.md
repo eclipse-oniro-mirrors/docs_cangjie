@@ -5411,7 +5411,7 @@ public func requireArkModule(path: String): JSValue
 
 | 错误码ID | 错误信息                                                          |
 | :------- | :---------------------------------------------------------------- |
-| 34300002 | Module initialize fail.                                           |
+| 34300002 | Outside error occurred.                                           |
 | 34300004 | Thread mismatch.                                                  |
 | 34300006 | Target module not exist.                                          |
 | 34300007 | Can not requireArkModule during initializing cangjie module.      |
