@@ -6856,6 +6856,38 @@ class Main {
 }
 ```
 
+### static func registerModule(String, ModuleRegister)
+
+```cangjie
+public static func registerModule(name: String, register: ModuleRegister): Unit
+```
+
+**功能：** 将仓颉模块的导出内容注册到指定名称的 ArkTS 模块。
+
+**起始版本：** 26.0.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|name|String|是|-|要导出的接口名称，或接口所在模块名与接口名称的拼接（用@分隔）。|
+|register|[ModuleRegister](#type-moduleregister)|是|-|一个能够返回 ArkTS 类（构造函数）的函数。|
+
+**示例：**
+
+<!--compile-->
+```cangjie
+class Main {
+    static init() {
+        JSModule.registerModule("cangjiemodule@doSth") { context, exports =>
+            exports["doSth"] = context.function { context, callInfo =>
+                context.undefined().toJSValue()
+            }.toJSValue()
+        }
+    }
+}
+```
+
 ## class JSNull
 
 ```cangjie

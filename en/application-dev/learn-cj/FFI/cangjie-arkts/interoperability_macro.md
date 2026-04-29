@@ -127,7 +127,7 @@ console.log("result " + addF64(1, 2))
 
 ## Detailed Scenario Descriptions
 
-The declarative interop macros can annotate functions (including asynchronous functions), interfaces, classes and enums. The recommended usage for different scenarios is as follows:
+The declarative interop macros can annotate functions (including asynchronous functions), interfaces, classes, enums and global variables. The recommended usage for different scenarios is as follows:
 
 | Scenario                                               | Type                  | Annotation                                                                                                |
 | :----------------------------------------------------- | :-------------------- | :-------------------------------------------------------------------------------------------------------- |
@@ -136,6 +136,7 @@ The declarative interop macros can annotate functions (including asynchronous fu
 | Passing objects created on the ArkTS side to Cangjie   | Interface             | @Interop[ArkTS]                                                                                           |
 | Returning objects created on the Cangjie side to ArkTS | Class                 | @Interop[ArkTS] for the entire class<br>@Interop[ArkTS, Invisible] for members not intended to be exposed |
 | Passing enum data between Cangjie and ArkTS            | Enum                  | @Interop[ArkTS]                                                                                           |
+| Exporting Cangjie global variables to ArkTS            | Global variable       | @Interop[ArkTS]                                                                                           |
 
 ### Functions
 
@@ -412,6 +413,62 @@ import { EnumDemo, getEnum } from "libohos_app_cangjie_entry.so";
 let e = EnumDemo.Green;
 console.log("result " + getEnum(e));
 ```
+
+### Global Variables
+
+Global variables annotated with declarative interop macros must meet the following conditions; otherwise, compilation errors will occur:
+
+- Must be annotated with `public`
+- Variable type annotations cannot be omitted
+- Supports `const`, `let`, and `var` keywords
+
+Example of global variable interop:
+
+<!--compile-->
+```cangjie
+// Create interop global variables on the Cangjie side
+package ohos_app_cangjie_entry
+
+import ohos.ark_interop.*
+import ohos.ark_interop_macro.*
+
+@Interop[ArkTS]
+public const MAX_COUNT: Int64 = 100
+
+@Interop[ArkTS]
+public let DEFAULT_NAME: String = "Cangjie"
+
+@Interop[ArkTS]
+public var globalCounter: Int64 = 0
+```
+
+Automatically generated ArkTS interface:
+
+```typescript
+// Generated .d.ts after selecting Generate... > Cangjie-ArkTS Interop API
+export declare const MAX_COUNT: 100
+export declare const DEFAULT_NAME: string
+export declare let globalCounter: number
+```
+
+Calling the Cangjie module from the ArkTS side:
+
+```typescript
+// Import the Cangjie dynamic library. The library name must match the package name of the interop interface.
+import { MAX_COUNT, DEFAULT_NAME, globalCounter } from "libohos_app_cangjie_entry.so";
+
+console.log("MAX_COUNT " + MAX_COUNT);
+console.log("DEFAULT_NAME " + DEFAULT_NAME);
+console.log("globalCounter " + globalCounter);
+```
+
+> **Note:**
+>
+> - If a `const` variable is initialized with a basic type literal (e.g., integer, floating-point number, boolean, string), the literal value is directly used in the ArkTS declaration; otherwise, a type declaration is used.
+>
+> - `var` variables are mapped to ArkTS `let`, while `let` and `const` maintain their corresponding keywords in the ArkTS declaration.
+>
+> - Due to ArkTS syntax restrictions, variables imported via import cannot be directly assigned in ArkTS. To modify a `var` variable on the Cangjie side, call a Cangjie function to indirectly achieve this.
 
 ## Type Mapping
 
