@@ -106,6 +106,8 @@
 - Reflection and Annotations
     - [Dynamic Features](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/reflect_and_annotation/dynamic_feature.md)
     - [Annotations](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/reflect_and_annotation/anno.md)
+- Cross-language Interoperability
+    - [Cangjie-C Interoperability](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/FFI/cangjie-c.md)
 - Compilation and Build
     - [cjc Usage](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/compile_and_build/cjc_usage.md)
     - [cjpm Introduction](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/compile_and_build/cjpm_usage.md)

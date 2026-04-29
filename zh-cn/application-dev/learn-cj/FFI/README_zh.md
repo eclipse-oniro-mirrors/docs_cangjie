@@ -26,6 +26,5 @@
         - [ArkTS 访问仓颉数据](cangjie-arkts/operating_cangjie_objects.md)
         - [仓颉多线程中使用互操作库](cangjie-arkts/cj-using_interoperability_lib_multithread.md)
         - [仓颉调用ArkTS三方模块](cangjie-arkts/cj-quick-start-dts2cj-plugin-usage.md)
-        - [互操作对象生命周期管理](cangjie-arkts/cj-arkts_interop_new_scope.md)
     - [仓颉-ArkTS 互操作辅助库](cangjie-arkts/cj-arkts_auxiliary_lib.md)
     - [仓颉-ArkTS 互操作开发规范](cangjie-arkts/cj-arkts_interop_guidelines.md)

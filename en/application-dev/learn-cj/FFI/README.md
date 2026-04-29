@@ -25,6 +25,5 @@
         - [ArkTS Accessing Cangjie Data](cangjie-arkts/operating_cangjie_objects.md)
         - [Using Interoperability in Cangjie Multithreading](cangjie-arkts/using_interoperability_lib_multithread.md)
         - [Cangjie Calling ArkTS Third-Party Modules](cangjie-arkts/cj-quick-start-dts2cj-plugin-usage.md)
-        - [Lifecycle Development Using the Interop Library](cangjie-arkts/cj-ark_interop_new_scope.md)
     - [Cangjie-ArkTS Interoperability Auxiliary Library](cangjie-arkts/auxiliary_lib.md)
     - [Cangjie-ArkTS Interoperability Development Guidelines](cangjie-arkts/interop_guidelines.md)
