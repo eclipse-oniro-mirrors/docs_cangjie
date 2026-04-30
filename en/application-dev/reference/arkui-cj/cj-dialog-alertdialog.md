@@ -1249,4 +1249,4 @@ class EntryView {
 
 ```
 
-![alertdialog2](./figures/alertdialog2.gif)
+![alertdialog2](./figures/alertDialog2.gif)

@@ -399,7 +399,7 @@ class EntryView {
 }
 ```
 
-![relativecontainer1](figures/relativecontainer1.png)
+![relativecontainer1](figures/relative_container1.png)
 
 ### Example 2 (Setting Margins for Child Components)
 
@@ -462,7 +462,9 @@ class EntryView {
 }
 ```
 
-![relativecontainer2](figures/relativecontainer2.png)### Example 3 (Setting Offset)
+![relativecontainer2](figures/relative_container2.png)
+
+### Example 3 (Setting Offset)
 
 This example demonstrates how to achieve vertical offset between two anchor points for child components using [bias](cj-common-types.md#class-bias).
 

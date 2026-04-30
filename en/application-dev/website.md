@@ -838,9 +838,6 @@
         - [ohos.ark_interop_macro (ArkTS Interoperability Macros)](reference/arkinterop/cj-apis-ark_interop_macro.md)
         - [ohos.business_exception (Common Exception Information)](reference/arkinterop/cj-api-business_exception.md)
         - [ohos.callback_invoke (Common Callback Information)](reference/arkinterop/cj-api-callback_invoke.md)
-    - Basic Capabilities
-        - Cangjie APIs
-            - [sysCap (System Capabilities)](reference/arkui-cj/cj-apis-syscap.md)
     - [Cangjie Programming Language Library API](reference/cj-libs-api.md)
 
 - Learning Cangjie Language
@@ -896,7 +893,7 @@
         - [Generic Interfaces](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/generic/generic_interface.md)
         - [Generic Classes](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/generic/generic_class.md)
         - [Generic Structs](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/generic/generic_struct.md)
-        - [Generic Enums](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/cangjie_docs/blob/main/docs/dev-guide/source_en/generic/generic_enum.md)
+        - [Generic Enums](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/generic/generic_enum.md)
         - [Subtype Relationships of Generic Types](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/generic/generic_subtype.md)
         - [Type Aliases](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/generic/typealias.md)
         - [Generic Constraints](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/generic/generic_constraint.md)
@@ -945,7 +942,7 @@
         - [Macro Implementation](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/Macro/implementation_of_macros.md)
         - [Compilation, Error Reporting and Debugging](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/Macro/compiling_error_reporting_and_debugging.md)
         - [Macro Package Definition and Import](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/Macro/defining_and_importing_macro_package.md)
-        - [Built-in Compilation Flags]https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/Macro/builtin_compilation_flags.md)
+        - [Built-in Compilation Flags](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/Macro/builtin_compilation_flags.md)
         - [Practical Cases](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/Macro/practical_case.md)
     - Reflection and Annotations
         - [Dynamic Features](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/reflect_and_annotation/dynamic_feature.md)
@@ -977,7 +974,7 @@
                 - [ArkTS Accessing Cangjie Data](learn-cj/FFI/cangjie-arkts/operating_cangjie_objects.md)
                 - [Using Interoperability in Cangjie Multithreading](learn-cj/FFI/cangjie-arkts/using_interoperability_lib_multithread.md)
                 - [Cangjie Calling ArkTS Third-Party Modules](learn-cj/FFI/cangjie-arkts/cj-quick-start-dts2cj-plugin-usage.md)
-            - [Cangjie-ArkTS Interoperability Auxiliary Library](learn-cj/FFI/cangjie-arkts/auxiliary_lib.md)
+            - [Cangjie-ArkTS Interoperability Helper Library](learn-cj/FFI/cangjie-arkts/auxiliary_lib.md)
             - [Cangjie-ArkTS Interoperability Development Guidelines](learn-cj/FFI/cangjie-arkts/interop_guidelines.md)
     - Compilation and Build
         - [cjc Usage](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/compile_and_build/cjc_usage.md)

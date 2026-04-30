@@ -1,10 +1,10 @@
 # FFI
 
-- [Cangjie and C Interoperability](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/FFI/cangjie-c.md)
 - Cangjie-ArkTS Interoperability
     - Introduction to Interoperability
         - [Building Your First Cangjie-ArkTS Hybrid Application](cangjie-arkts/cj-quick-start-first-cangjie-hybrid-app.md)
         - [Incremental Cangjie Usage in Existing ArkTS Projects](cangjie-arkts/cj-quick-start-first-cangjie-hybrid-module.md)
+        - [Importing ArkTS Modules in Cangjie Code](cangjie-arkts/cangjie-load-arkts.md)
     - [Overview](cangjie-arkts/cangjie_arkts_overview.md)
     - [Scenarios](cangjie-arkts/interoperability_senario.md)
         - [Using Cangjie in ArkTS Applications](cangjie-arkts/using_cangjie.md)

@@ -1,5 +1,6 @@
 # Development Guide (Beta Feature)
 
+- [Application Development Guide](cj-start-application-development-overview.md)(Beta Feature)
 - [Getting Started](cj-start/README.md)(Beta Feature)
 - Development
     - Application Framework
