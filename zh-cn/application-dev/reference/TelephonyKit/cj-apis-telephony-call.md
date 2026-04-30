@@ -71,10 +71,10 @@ public static func formatPhoneNumber(
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 8300001 | Invalid parameter value. |
-  | 8300002 | Operation failed. Cannot connect to service. |
+  | 8300001 | The input parameter value is out of range. |
+  | 8300002 | Service connection failed. |
   | 8300003 | System internal error. |
-  | 8300999 | Unknown error code. |
+  | 8300999 | Internal error. |
 
 **示例：**
 
@@ -127,10 +127,10 @@ public static func formatPhoneNumberToE164(phoneNumber: String, countryCode: Str
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 8300001 | Invalid parameter value. |
-  | 8300002 | Operation failed. Cannot connect to service. |
+  | 8300001 | The input parameter value is out of range. |
+  | 8300002 | Service connection failed. |
   | 8300003 | System internal error. |
-  | 8300999 | Unknown error code. |
+  | 8300999 | Internal error. |
 
 **示例：**
 
@@ -174,7 +174,7 @@ public static func getCallState(): CallState
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 8300001 | Parameter error. |
+  | 8300001 | The input parameter value is out of range. |
 
 **示例：**
 
@@ -297,10 +297,10 @@ public static func isEmergencyPhoneNumber(phoneNumber: String, options!: Emergen
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 8300001 | Invalid parameter value. |
-  | 8300002 | Operation failed. Cannot connect to service. |
+  | 8300001 | The input parameter value is out of range. |
+  | 8300002 | Service connection failed. |
   | 8300003 | System internal error. |
-  | 8300999 | Unknown error code. |
+  | 8300999 | Internal error. |
 
 **示例：**
 
@@ -348,10 +348,10 @@ public static func makeCall(phoneNumber: String): Unit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 8300001 | Invalid parameter value. |
-  | 8300002 | Operation failed. Cannot connect to service. |
+  | 8300001 | The input parameter value is out of range. |
+  | 8300002 | Service connection failed. |
   | 8300003 | System internal error. |
-  | 8300999 | Unknown error code. |
+  | 8300999 | Internal error. |
 
 **示例：**
 
@@ -396,10 +396,10 @@ public static func makeCall(context: UIAbilityContext, phoneNumber: String): Uni
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 8300001 | Invalid parameter value. |
-  | 8300002 | Operation failed. Cannot connect to service. |
+  | 8300001 | The input parameter value is out of range. |
+  | 8300002 | Service connection failed. |
   | 8300003 | System internal error. |
-  | 8300999 | Unknown error code. |
+  | 8300999 | Internal error. |
 
 **示例：**
 

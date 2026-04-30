@@ -63,7 +63,7 @@ public func createCipher(transformation: String): Cipher
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 801 | this operation is not supported. |
-  | 17620001 | memory operation failed. |
+  | 17620001 | Memory operation failed. |
 
 **示例：**
 
@@ -114,7 +114,7 @@ public func createMac(algName: String): Mac
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 17620001 | memory operation failed. |
+  | 17620001 | Memory operation failed. |
 
 **示例：**
 
@@ -164,7 +164,7 @@ public func createMd(algName: String): Md
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 17620001 | memory operation failed. |
+  | 17620001 | Memory operation failed. |
 
 **示例：**
 
@@ -208,7 +208,7 @@ public func createRandom(): Random
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 17620001 | memory operation failed. |
+  | 17620001 | Memory operation failed. |
 
 **示例：**
 
@@ -359,8 +359,8 @@ func getEncoded(): DataBlob
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 801 | this operation is not supported. |
-  | 17620001 | memory operation failed. |
-  | 17630001 | crypto operation error. |
+  | 17620001 | Memory operation failed. |
+  | 17630001 | Crypto operation error. |
 
 **示例：**
 
@@ -481,9 +481,9 @@ public func initialize(opMode: CryptoMode, key: Key, params: ?ParamsSpec): Unit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 17620001 | memory operation failed. |
-  | 17620002 | failed to convert parameters between cj and c. |
-  | 17630001 | crypto operation error. |
+  | 17620001 | Memory operation failed. |
+  | 17620002 | Failed to convert parameters between cj and c. |
+  | 17630001 | Crypto operation error. |
 
 **示例：**
 
@@ -564,9 +564,9 @@ public func doFinal(data: ?DataBlob): DataBlob
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 17620001 | memory operation failed. |
-  | 17620002 | failed to convert parameters between cj and c. |
-  | 17630001 | crypto operation error. |
+  | 17620001 | Memory operation failed. |
+  | 17620002 | Failed to convert parameters between cj and c. |
+  | 17630001 | Crypto operation error. |
 
 **示例：**
 
@@ -649,9 +649,9 @@ public func update(data: DataBlob): DataBlob
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 17620001 | memory operation failed. |
-  | 17620002 | failed to convert parameters between cj and c. |
-  | 17630001 | crypto operation error. |
+  | 17620001 | Memory operation failed. |
+  | 17620002 | Failed to convert parameters between cj and c. |
+  | 17630001 | Crypto operation error. |
 
 **示例：**
 
@@ -737,8 +737,8 @@ public func initialize(key: SymKey): Unit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 17620001 | memory operation failed. |
-  | 17630001 | crypto operation error. |
+  | 17620001 | Memory operation failed. |
+  | 17630001 | Crypto operation error. |
 
 **示例：**
 
@@ -785,9 +785,9 @@ public func doFinal(): DataBlob
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 17620001 | memory operation failed. |
-  | 17620002 | failed to convert parameters between cj and c. |
-  | 17630001 | crypto operation error. |
+  | 17620001 | Memory operation failed. |
+  | 17620002 | Failed to convert parameters between cj and c. |
+  | 17630001 | Crypto operation error. |
 
 **示例：**
 
@@ -838,7 +838,7 @@ public func getMacLength(): UInt32
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 17630001 | crypto operation error. |
+  | 17630001 | Crypto operation error. |
 
 **示例：**
 
@@ -889,8 +889,8 @@ public func update(input: DataBlob): Unit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 17620001 | memory operation failed. |
-  | 17630001 | crypto operation error. |
+  | 17620001 | Memory operation failed. |
+  | 17630001 | Crypto operation error. |
 
 **示例：**
 
@@ -967,9 +967,9 @@ public func digest(): DataBlob
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 17620001 | memory operation failed. |
-  | 17620002 | failed to convert parameters between cj and c. |
-  | 17630001 | crypto operation error. |
+  | 17620001 | Memory operation failed. |
+  | 17620002 | Failed to convert parameters between cj and c. |
+  | 17630001 | Crypto operation error. |
 
 **示例：**
 
@@ -1016,7 +1016,7 @@ public func getMdLength(): UInt32
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 17630001 | crypto operation error. |
+  | 17630001 | Crypto operation error. |
 
 **示例：**
 
@@ -1061,8 +1061,8 @@ public func update(input: DataBlob): Unit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 17620001 | memory operation failed. |
-  | 17630001 | crypto operation error. |
+  | 17620001 | Memory operation failed. |
+  | 17630001 | Crypto operation error. |
 
 **示例：**
 
@@ -1142,8 +1142,8 @@ public func generateRandom(len: Int32): DataBlob
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 17620001 | memory operation failed. |
-  | 17630001 | crypto operation error. |
+  | 17620001 | Memory operation failed. |
+  | 17630001 | Crypto operation error. |
 
 **示例：**
 
@@ -1188,7 +1188,7 @@ public func setSeed(seed: DataBlob): Unit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 17620001 | memory operation failed. |
+  | 17620001 | Memory operation failed. |
 
 **示例：**
 
@@ -1320,8 +1320,8 @@ public func getEncoded(): DataBlob
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 801 | this operation is not supported. |
-  | 17620001 | memory operation failed. |
-  | 17630001 | crypto operation error. |
+  | 17620001 | Memory operation failed. |
+  | 17630001 | Crypto operation error. |
 
 **示例：**
 
@@ -1410,7 +1410,7 @@ public func convertKey(key: DataBlob): SymKey
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 17620001 | memory operation failed. |
+  | 17620001 | Memory operation failed. |
 
 **示例：**
 
@@ -1467,7 +1467,7 @@ public func generateSymKey(): SymKey
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 17620001 | memory operation failed. |
+  | 17620001 | Memory operation failed. |
 
 **示例：**
 

@@ -88,7 +88,7 @@ The current operation failed because the database is corrupted.
 
 **处理步骤**
 
-如果可以接受数据库数据丢失，则可尝试删除数据库后重新创建。否则，需要备份数据库以便恢复。具体操作可参考[数据库备份与恢复](../../database/data-backup-and-restore.md)。
+如果可以接受数据库数据丢失，则可尝试删除数据库后重新创建。否则，需要备份数据库以便恢复。具体操作可参考[数据库备份与恢复](../../database/cj-data-backup-and-restore.md)。
 
 ## 14800012 结果集为空或指定位置不合法
 
@@ -158,12 +158,11 @@ The database does not respond.
 
 **可能原因**
 
-有读、写、attach、detach等操作正在执行，无法在指定的时间（默认2s）内执行当前操作。
+有读、写等操作正在执行，无法在指定的时间（默认2s）内执行当前操作。
 
 **处理步骤**
 
-1. 重新尝试。
-2. 如果是[attach](../ArkData/cj-apis-relational-store.md#attach12)或[detach](../ArkData/cj-apis-relational-store.md#detach12)接口，增加waitTime值来增加等待时长。
+重新尝试。
 
 ## 14800016 数据库别名已被使用
 
@@ -609,6 +608,24 @@ Failed to obtain the subscription service.
 
 需要在当前平台部署订阅服务。
 
+## 14800051 分布式表类型不匹配
+
+**错误信息**
+
+The type of the distributed table does not match.
+
+**错误描述**
+
+对同一数据库表设置的分布式表类型前后不一致。
+
+**可能原因**
+
+对同一数据库表设置的分布式表类型前后不一致，分布式表类型可见[DistributedType](./cj-apis-relational_store.md#enum-distributedtype)。
+
+**处理步骤**
+
+对同一数据库表设置的分布式表类型保持一致，属于端端同步的分布式表不可再设置为用于端云的同步表。
+
 ## 14801001 上下文环境非Stage模型
 
 **错误信息**
@@ -644,21 +661,3 @@ Invalid data group ID.
 **处理步骤**
 
 从应用市场申请dataGroupId，并正确传入该参数。
-
-## 14800051 分布式表类型不匹配
-
-**错误信息**
-
-The type of the distributed table does not match.
-
-**错误描述**
-
-对同一数据库表设置的分布式表类型前后不一致。
-
-**可能原因**
-
-对同一数据库表设置的分布式表类型前后不一致，分布式表类型可见[DistributedType](../ArkData/cj-apis-relational-store.md#enum-distributedtype)。
-
-**处理步骤**
-
-对同一数据库表设置的分布式表类型保持一致，属于端端同步的分布式表不可再设置为用于端云的同步表。

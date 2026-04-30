@@ -1867,7 +1867,7 @@ public func discardCameraPhoto(): Unit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 14000011 | Internal system error. |
+  | 14000011 | System inner fail. |
   | 14000016 | Operation Not Support. |
 
 **示例：**
@@ -2368,7 +2368,7 @@ public func getBurstAssets(burstKey: String, options: FetchOptions): PhotoAssetR
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 201 | Permission denied. |
-  | 14000011 | Internal system error. |
+  | 14000011 | System inner fail. |
 
 **示例：**
 
@@ -2544,7 +2544,7 @@ public func showAssetsCreationDialog(srcFileUris: Array<String>, photoCreationCo
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 14000011 | Internal system error. |
+  | 14000011 | System inner fail. |
 
 **示例：**
 

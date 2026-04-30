@@ -65,7 +65,7 @@ public static func createSubscriber(subscribeInfo: CommonEventSubscribeInfo): Co
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 1500008 | Common Event Service does not complete initialization. |
+  | 1500008 | Failed to initialize the common event service. |
 
 **示例：**
 

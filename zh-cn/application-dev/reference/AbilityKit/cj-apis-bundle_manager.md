@@ -1576,9 +1576,9 @@ public static func getProfileByAbility(moduleName: String, abilityName: String, 
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 17700002 | The specified moduleName is not existed. |
-  | 17700003 | The specified abilityName is not existed. |
-  | 17700024 | Failed to get the profile because there is no profile in the HAP. |
+  | 17700002 | The specified module name is not found. |
+  | 17700003 | The specified ability name is not found. |
+  | 17700024 | Failed to get the profile because the specified profile is not found in the HAP. |
   | 17700029 | The specified ability is disabled. |
 
 **示例：**
