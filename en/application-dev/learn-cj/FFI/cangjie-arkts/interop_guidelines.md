@@ -132,7 +132,9 @@ import ohos.ark_interop.*
 func callArktsWithExp(context: JSContext, callInfo: JSCallInfo): JSValue {
     // Use try...catch to catch cross-language exceptions when calling cross-language interfaces
     try {
-        callInfo[0].asFunction().call()
+        callInfo[0]
+            .asFunction()
+            .call()
     } catch (err: JSCodeError) {
         // ...
     }
@@ -374,7 +376,7 @@ import ohos.ark_interop.*
 
 class CJData <: SharedObject {
     let name: String
-    var callback: ?()->Unit = None
+    var callback: ?() -> Unit = None
     init(name: String) {
         this.name = name
     }
@@ -384,16 +386,20 @@ func createCJData(context: JSContext, callInfo: JSCallInfo): JSValue {
     let object = context.object()
     let data = CJData(callInfo[0].toString())
     object.attachCJObject(context.external(data))
-    object.defineOwnAccessor("name", getter: { context, callInfo =>
-        context.string(data.name).toJSValue()
+    object.defineOwnAccessor("name", getter: {
+        context, callInfo => context.string(data.name).toJSValue()
     })
-    object.defineOwnAccessor("callback", setter: {context, callInfo =>
-        let callback = callInfo[0].asFunction()
-        data.callback = { =>
-            callback.call()
+    object.defineOwnAccessor(
+        "callback",
+        setter: {
+            context, callInfo =>
+                let callback = callInfo[0].asFunction()
+                data.callback = {
+                    => callback.call()
+                }
+                context.undefined().toJSValue()
         }
-        context.undefined().toJSValue()
-    })
+    )
 
     object.toJSValue()
 }
@@ -464,7 +470,7 @@ import ohos.base.UIThread
 @Interop[ArkTS]
 public func testCJ(): Unit {
     // ...
-    let future = spawn(UIThread) {
+    let future = spawn (UIThread) {
         // ...
     }
     future.get() // Error: `spawn(UIThread)` dispatches a Cangjie task to the main thread, and `future.get()` waits on the main thread, causing a deadlock
@@ -522,6 +528,7 @@ func addNumberAsync(context: JSContext, callInfo: JSCallInfo): JSValue {
         let value = a + b
         // Create result
         let result = context.number(value).toJSValue() // Error: Not running on a system thread bound to the ArkTS runtime
+
         // Call the JS callback
         callback.call(result)
     }
@@ -563,7 +570,7 @@ func addNumberAsync(context: JSContext, callInfo: JSCallInfo): JSValue {
             let result = context.number(value).toJSValue()
             // Call the JS callback
             callback.call(result)
-        } else {                        // Correct: Otherwise, use `postJSTask` to dispatch an asynchronous callback to the ArkTS thread
+        } else { // Correct: Otherwise, use `postJSTask` to dispatch an asynchronous callback to the ArkTS thread
             context.postJSTask {
                 // Create result
                 let result = context.number(value).toJSValue()
@@ -606,7 +613,7 @@ func addNumberAsync(context: JSContext, callInfo: JSCallInfo): JSValue {
     spawn {
         // Actual Cangjie function behavior
         let value = a + b
-        spawn(UIThread) { // Correct: Schedule execution on the ArkTS main thread
+        spawn (UIThread) { // Correct: Schedule execution on the ArkTS main thread
             // Create result
             let result = context.number(value).toJSValue()
             // Call the JS callback

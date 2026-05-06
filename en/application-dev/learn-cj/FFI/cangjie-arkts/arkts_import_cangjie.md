@@ -52,8 +52,7 @@ Below is an example of loading the Cangjie module `ohos_app_cangjie_entry` using
         }
         // The function must be registered in JSModule
         let EXPORT_MODULE = JSModule.registerModule {
-            runtime, exports =>
-                exports["addNumber"] = runtime.function(addNumber).toJSValue()
+            runtime, exports => exports["addNumber"] = runtime.function(addNumber).toJSValue()
         }
         ```
 
@@ -448,7 +447,7 @@ Below is an example of loading the Cangjie third-party library `libapplication.s
         import ohos.ark_interop.JSValue
         // Import subpackage B
         import package_a.package_b.returnB
-        
+
         // Define the returnA interface in third-party library A
         public func returnA(context: JSContext, callInfo: JSCallInfo): JSValue {
             let result = "A " + returnB()
@@ -468,7 +467,7 @@ Below is an example of loading the Cangjie third-party library `libapplication.s
         ```cangjie
         // package_a/package_b/b.cj
         package package_a.package_b
-        
+
         public func returnB(): String {
             return "B"
         }
@@ -578,7 +577,7 @@ Below is an example of loading the Cangjie third-party library `libapplication.s
         import ohos.ark_interop.JSValue
         // Import third-party library B
         import ohos_app_cangjie_package_b.returnB
-        
+
         // Define the returnA interface in third-party library A
         public func returnA(context: JSContext, callInfo: JSCallInfo): JSValue {
             let result = "A " + returnB()
@@ -699,8 +698,7 @@ Below is an example of loading the Cangjie module `ohos_app_cangjie_entry` using
         }
         // The function must be registered in JSModule
         let EXPORT_MODULE = JSModule.registerModule {
-            runtime, exports =>
-                exports["addNumber"] = runtime.function(addNumber).toJSValue()
+            runtime, exports => exports["addNumber"] = runtime.function(addNumber).toJSValue()
         }
         ```
 

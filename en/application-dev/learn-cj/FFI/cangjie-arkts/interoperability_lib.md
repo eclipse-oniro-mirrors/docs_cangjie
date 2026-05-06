@@ -36,8 +36,7 @@ To develop a Cangjie interoperability module:
     }
     // Must register the function to JSModule
     let EXPORT_MODULE = JSModule.registerModule {
-        runtime, exports =>
-            exports["addNumber"] = runtime.function(addNumber).toJSValue()
+        runtime, exports => exports["addNumber"] = runtime.function(addNumber).toJSValue()
     }
     ```
 

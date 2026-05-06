@@ -60,8 +60,7 @@ The following example illustrates its usage:
     // Get UIAbilityContext from global variable
     func getContext(): UIAbilityContext {
         match (globalAbilityContext) {
-            case Some(context) =>
-                context
+            case Some(context) => context
             case _ =>
                 AppLog.error("####getContext err ")
                 throw Exception("get globalAbilityContext failed")

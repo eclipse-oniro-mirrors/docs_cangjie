@@ -20,7 +20,7 @@
 
    <!--code_no_check-->
    ```cangjie
-   package ohos_app_cangjie_entry   // 包名
+   package ohos_app_cangjie_entry // 包名
 
    import ohos.arkui.component.*
    import ohos.arkui.state_macro_manage.*
@@ -36,8 +36,8 @@
        public func build() {
            Column {
                Text(msg)
-               Button("click to change Text").onClick({ _ =>
-                  msg = "world"
+               Button("click to change Text").onClick({
+                   _ => msg = "world"
                })
            }
        }
