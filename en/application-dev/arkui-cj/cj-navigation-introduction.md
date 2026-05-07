@@ -6,7 +6,12 @@
 > Currently in the beta phase.
 <!--DelEnd-->
 
-Component Navigation (Navigation) and page routing (@ohos.router) both support page navigation within an application. However, Component Navigation offers greater flexibility by enabling navigation within components. It provides enhanced "Write Once, Run Anywhere" (WORA) capabilities, more flexible page stack operations, and supports richer animations and lifecycle management. Therefore, it is recommended to use Component Navigation (Navigation) for page navigation and intra-component navigation to achieve a better user experience.  
+A page refers to a visual interaction unit composed of layouts, components, interaction logic, etc., carrying specific functional logic and information display. It is the core interface carrier for user interaction with an application. A complete application often consists of multiple pages. Both Component Navigation ([Navigation](../reference/arkui-cj/cj-navigation-switching-navigation.md)) and page routing ([Router](../reference/arkui-cj/cj-apis-uicontext-router.md)) provide page navigation capabilities within an application.
+
+- In the Component Navigation ([Navigation](../reference/arkui-cj/cj-navigation-switching-navigation.md)) framework, a "page" is carried by the NavDestination component, specifically referring to the content contained within a NavDestination component.
+- In the page routing ([Router](../reference/arkui-cj/cj-apis-uicontext-router.md)) framework, a "page" specifically refers to a custom component decorated with @Entry.
+
+In comparison, Component Navigation ([Navigation](../reference/arkui-cj/cj-navigation-switching-navigation.md)) places pages within the Navigation component for navigation, providing enhanced "Write Once, Run Anywhere" (WORA) capabilities, more flexible page stack operations, and supporting richer animations and lifecycle management. Therefore, it is recommended to use Component Navigation ([Navigation](../reference/arkui-cj/cj-navigation-switching-navigation.md)) for page navigation and intra-component navigation to achieve a better user experience.  
 
 ## Architectural Differences  
 
@@ -18,7 +23,7 @@ From the perspective of the ArkUI component tree hierarchy, pages managed by Rou
 
 2. **Explicit Routing Container Concept**: Developers can determine the placement of routing containers, supporting display in full-modal, half-modal, or pop-up windows.  
 
-3. **Integrated UX Design and Multi-Device Adaptation**: Provides unified title display, page switching, and single/dual-column adaptation by default.  
+3. **Integrated UX Design and WORA Capabilities**: Provides unified title display, page switching, and single/dual-column adaptation by default.  
 
 4. **Flexible Page Configuration**: Based on the universal [UIBuilder](./paradigm/cj-macro-builder.md) capability, developers can define the mapping between page aliases and UI, offering more flexible page configuration.  
 
