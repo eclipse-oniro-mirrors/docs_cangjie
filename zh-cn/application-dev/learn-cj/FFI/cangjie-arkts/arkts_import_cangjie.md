@@ -52,8 +52,7 @@
         }
         // 必须注册该函数到JSModule中
         let EXPORT_MODULE = JSModule.registerModule {
-            runtime, exports =>
-                exports["addNumber"] = runtime.function(addNumber).toJSValue()
+            runtime, exports => exports["addNumber"] = runtime.function(addNumber).toJSValue()
         }
         ```
 
@@ -338,7 +337,7 @@
         import ohos.ark_interop.JSValue
         // 导入三方库 B
         import package_b.returnB
-        
+
         // 定义三方库 A 中的 returnA 接口
         public func returnA(context: JSContext, callInfo: JSCallInfo): JSValue {
             let result = "A " + returnB()
@@ -358,7 +357,7 @@
         ```cangjie
         // package_b/b.cj
         package package_b
-        
+
         public func returnB(): String {
             return "B"
         }
@@ -447,7 +446,7 @@
         import ohos.ark_interop.JSValue
         // 导入子包 B
         import package_a.package_b.returnB
-        
+
         // 定义三方库 A 中的 returnA 接口
         public func returnA(context: JSContext, callInfo: JSCallInfo): JSValue {
             let result = "A " + returnB()
@@ -467,7 +466,7 @@
         ```cangjie
         // package_a/package_b/b.cj
         package package_a.package_b
-        
+
         public func returnB(): String {
             return "B"
         }
@@ -576,7 +575,7 @@
         import ohos.ark_interop.JSValue
         // 导入三方库 B
         import ohos_app_cangjie_package_b.returnB
-        
+
         // 定义三方库 A 中的 returnA 接口
         public func returnA(context: JSContext, callInfo: JSCallInfo): JSValue {
             let result = "A " + returnB()
@@ -698,8 +697,7 @@
         }
         // 必须注册该函数到JSModule中
         let EXPORT_MODULE = JSModule.registerModule {
-            runtime, exports =>
-                exports["addNumber"] = runtime.function(addNumber).toJSValue()
+            runtime, exports => exports["addNumber"] = runtime.function(addNumber).toJSValue()
         }
         ```
 

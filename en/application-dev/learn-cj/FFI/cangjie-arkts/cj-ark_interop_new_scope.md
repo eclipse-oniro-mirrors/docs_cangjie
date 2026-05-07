@@ -36,9 +36,10 @@ Use JSContext.newScope to create a context and pass a custom callback that runs 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     context.postJSTask {
         context.newScope {
-            let callback = context.function { c, _ =>
-                Hilog.info(0, "test", "newScope called")
-                c.undefined().toJSValue()
+            let callback = context.function {
+                c, _ =>
+                    Hilog.info(0, "test", "newScope called")
+                    c.undefined().toJSValue()
             }
             callback.call()
         }

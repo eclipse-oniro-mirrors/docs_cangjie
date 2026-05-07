@@ -132,7 +132,9 @@ import ohos.ark_interop.*
 func callArktsWithExp(context: JSContext, callInfo: JSCallInfo): JSValue {
     // 在调用跨语言接口时，使用 try...catch 来捕获跨语言异常
     try {
-        callInfo[0].asFunction().call()
+        callInfo[0]
+            .asFunction()
+            .call()
     } catch (err: JSCodeError) {
         // ...
     }
@@ -374,7 +376,7 @@ import ohos.ark_interop.*
 
 class CJData <: SharedObject {
     let name: String
-    var callback: ?()->Unit = None
+    var callback: ?() -> Unit = None
     init(name: String) {
         this.name = name
     }
@@ -384,16 +386,20 @@ func createCJData(context: JSContext, callInfo: JSCallInfo): JSValue {
     let object = context.object()
     let data = CJData(callInfo[0].toString())
     object.attachCJObject(context.external(data))
-    object.defineOwnAccessor("name", getter: { context, callInfo =>
-        context.string(data.name).toJSValue()
+    object.defineOwnAccessor("name", getter: {
+        context, callInfo => context.string(data.name).toJSValue()
     })
-    object.defineOwnAccessor("callback", setter: {context, callInfo =>
-        let callback = callInfo[0].asFunction()
-        data.callback = { =>
-            callback.call()
+    object.defineOwnAccessor(
+        "callback",
+        setter: {
+            context, callInfo =>
+                let callback = callInfo[0].asFunction()
+                data.callback = {
+                    => callback.call()
+                }
+                context.undefined().toJSValue()
         }
-        context.undefined().toJSValue()
-    })
+    )
 
     object.toJSValue()
 }
@@ -464,7 +470,7 @@ import ohos.base.UIThread
 @Interop[ArkTS]
 public func testCJ(): Unit {
     // ...
-    let future = spawn(UIThread) {
+    let future = spawn (UIThread) {
         // ...
     }
     future.get() // 错误：spawn(UIThread) 是创建一个仓颉任务到主线程，future.get() 又在主线程等待，会造成死锁
@@ -522,6 +528,7 @@ func addNumberAsync(context: JSContext, callInfo: JSCallInfo): JSValue {
         let value = a + b
         // 创建result
         let result = context.number(value).toJSValue() // 错误：没有运行在ArkTS运行时绑定的系统线程上
+
         // 调用js回调
         callback.call(result)
     }
@@ -563,7 +570,7 @@ func addNumberAsync(context: JSContext, callInfo: JSCallInfo): JSValue {
             let result = context.number(value).toJSValue()
             // 调用js回调
             callback.call(result)
-        } else {                        // 正确：否则使用 postJSTask 发起异步回调至 ArkTS 线程上执行
+        } else { // 正确：否则使用 postJSTask 发起异步回调至 ArkTS 线程上执行
             context.postJSTask {
                 // 创建result
                 let result = context.number(value).toJSValue()
@@ -606,7 +613,7 @@ func addNumberAsync(context: JSContext, callInfo: JSCallInfo): JSValue {
     spawn {
         // 实际仓颉函数行为
         let value = a + b
-        spawn(UIThread) { // 正确：调度到 ArkTS 主线程上执行
+        spawn (UIThread) { // 正确：调度到 ArkTS 主线程上执行
             // 创建result
             let result = context.number(value).toJSValue()
             // 调用js回调

@@ -20,7 +20,7 @@ The steps to add a Cangjie page in DevEco Studio are as follows:
 
    <!--code_no_check-->
    ```cangjie
-   package ohos_app_cangjie_entry   // Package name
+   package ohos_app_cangjie_entry // Package name
 
    import ohos.arkui.component.*
    import ohos.arkui.state_macro_manage.*
@@ -36,8 +36,8 @@ The steps to add a Cangjie page in DevEco Studio are as follows:
        public func build() {
            Column {
                Text(msg)
-               Button("click to change Text").onClick({ _ =>
-                  msg = "world"
+               Button("click to change Text").onClick({
+                   _ => msg = "world"
                })
            }
        }
