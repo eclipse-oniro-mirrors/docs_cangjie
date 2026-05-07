@@ -24,8 +24,8 @@ func width(value: Option<Length>): T
 
 > **Note:**
 >
-> - In the TextInput component, setting width to LengthMetric.AUTO means auto-adapting to the text width.
-> - In the AlphabetIndexer component, setting width to LengthMetric.AUTO means auto-adapting to the width of the largest index item.
+> - In the [TextInput](./cj-text-input-textinput.md) component, setting width to [LengthMetrics.AUTO](./cj-common-types.md#staticletAUTO) means auto-adapting to the text width.
+> - In the [AlphabetIndexer](./cj-information-display-alphabetindexer.md) component, setting width to [LengthMetrics.AUTO](./cj-common-types.md#staticletAUTO) means auto-adapting to the width of the largest index item.
 
 **System Capability:** SystemCapability.ArkUI.ArkUI.Full
 
@@ -50,6 +50,10 @@ func height(value: Option<Length>): T
 ```
 
 **Function:** Sets the height of a component.
+
+> **Note:**
+>
+> In the [Row](./cj-row-column-stack-row.md), [Column](./cj-row-column-stack-column.md), [RelativeContainer](./cj-row-column-stack-relativecontainer.md) components, setting width and height to [LengthMetrics.AUTO](./cj-common-types.md#staticletAUTO) means auto-adapting to child components.
 
 **System Capability:** SystemCapability.ArkUI.ArkUI.Full
 

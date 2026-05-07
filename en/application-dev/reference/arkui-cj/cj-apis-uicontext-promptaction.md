@@ -150,7 +150,7 @@ public func showToast(option: ShowToastOptions): Unit
 ### func openCustomDialog(CustomDialogConfig, (Int32) -> Unit)
 
 ```cangjie
-public func openCustomDialog(options: CustomDialogConfig, callBack: (Int32) -> Unit): Unit
+public func openCustomDialog(options: CustomDialogConfig, callback: (Int32) -> Unit): Unit
 ```
 
 **Function:** Opens a custom dialog.
@@ -164,7 +164,7 @@ public func openCustomDialog(options: CustomDialogConfig, callBack: (Int32) -> U
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
 | options | [CustomDialogConfig](#class-customdialogconfig) | Yes | - | Custom dialog configuration options. |
-| callBack | (Int32) -> Unit | Yes | - | Callback function. |
+| callback | (Int32) -> Unit | Yes | - | Callback function. |
 
 ### func showActionMenu(ActionMenuConfig, ShowActionMenuCallBack)
 
@@ -2131,7 +2131,7 @@ public init(
 | onWillAppear | ?() -> Unit | No | Option.None | **Named parameter.** Callback before the dialog display animation starts.**Note:**<br>1. Normal sequence: onWillAppear>>onDidAppear>>(onDateAccept/onCancel/onDateChange)>>onWillDisappear>>onDidDisappear.<br>2. Setting callback events to change dialog display effects inside onDidAppear takes effect on the second appearance.<br>3. When quickly clicking to show and dismiss the dialog, onWillDisappear may take effect before onDidAppear.<br>4. When the dialog is closed before the entry animation completes, this callback will not be triggered.|
 | onWillDisappear | ?() -> Unit | No | Option.None | **Named parameter.** Callback before the dialog exit animation starts.**Note:**<br>1. Normal sequence: onWillAppear>>onDidAppear>>(onDateAccept/onCancel/onDateChange)>>onWillDisappear>>onDidDisappear.<br>2. Setting callback events to change dialog display effects inside onDidAppear takes effect on the second appearance.<br>3. When quickly clicking to show and dismiss the dialog, onWillDisappear may take effect before onDidAppear.<br>4. When the dialog is closed before the entry animation completes, this callback will not be triggered.|
 | keyboardAvoidMode | ?[KeyboardAvoidMode](#enum-keyboardavoidmode) | No | Option.None | **Named parameter.** Sets whether the dialog automatically avoids the soft keyboard when it appears. Default: KeyboardAvoidMode.Default|
-| enableHoverMode | ?Bool | No | false | **Named parameter.** Whether to respond to hover state. When set to true, it responds to hover state.<br>Default: false, no response by default.|
+| enableHoverMode | ?Bool | No | Option.None | **Named parameter.** Whether to respond to hover state. When set to true, it responds to hover state.<br>Default: false, no response by default.|
 | hoverModeArea | ?[HoverModeAreaType](#enum-hovermodeareatype) | No | Option.None | **Named parameter.** Default display area of the dialog in hover mode. Default: HoverModeAreaType.BottomScreen|
 | levelMode | ?[LevelMode](#enum-levelmode) | No | Option.None | **Named parameter.** Sets the display level of the dialog.<br>**Note:**<br>Default: LevelMode.Overlay<br>Only takes effect when showInSubWindow property is set to false.|
 
@@ -2407,7 +2407,7 @@ public init(
 | onWillAppear | ?() -> Unit | No | Option.None | **Named parameter.** Callback before the dialog display animation starts.**Note:**<br>1. Normal sequence: onWillAppear>>onDidAppear>>(onDateAccept/onCancel/onDateChange)>>onWillDisappear>>onDidDisappear.<br>2. Setting callback events to change dialog display effects inside onDidAppear takes effect on the second appearance.<br>3. When quickly clicking to show and dismiss the dialog, onWillDisappear may take effect before onDidAppear.<br>4. When the dialog is closed before the entry animation completes, this callback will not be triggered.|
 | onWillDisappear | ?() -> Unit | No | Option.None | **Named parameter.** Callback before the dialog exit animation starts.**Note:**<br>1. Normal sequence: onWillAppear>>onDidAppear>>(onDateAccept/onCancel/onDateChange)>>onWillDisappear>>onDidDisappear.<br>2. Setting callback events to change dialog display effects inside onDidAppear takes effect on the second appearance.<br>3. When quickly clicking to show and dismiss the dialog, onWillDisappear may take effect before onDidAppear.<br>4. When the dialog is closed before the entry animation completes, this callback will not be triggered.|
 | keyboardAvoidMode | ?[KeyboardAvoidMode](#enum-keyboardavoidmode) | No | Option.None | **Named parameter.** Sets whether the dialog automatically avoids the soft keyboard when it appears. Default: KeyboardAvoidMode.Default|
-| enableHoverMode | Bool | No | false | **Named parameter.** Whether to respond to hover state. When set to true, it responds to hover state.<br>Default: false, no response by default.|
+| enableHoverMode | Bool | No | Option.None | **Named parameter.** Whether to respond to hover state. When set to true, it responds to hover state.<br>Default: false, no response by default.|
 | hoverModeArea | ?[HoverModeAreaType](#enum-hovermodeareatype) | No | Option.None | **Named parameter.** Default display area of the dialog in hover mode. Default: HoverModeAreaType.BottomScreen|
 | backgroundColor | ?[ResourceColor](./cj-common-types.md#interface-resourcecolor) | No | Option.None | **Named parameter.** Sets the background color of the dialog. Default: Color.Transparent<br>**Note:**<br>When backgroundColor is set to a non-transparent color, backgroundBlurStyle needs to be set to BlurStyle.NONE, otherwise the color display will not meet expected effects.|
 | cornerRadius | ?[BorderRadiuses](./cj-common-types.md#class-borderradiuses) | No | Option.None | **Named parameter.** Sets the corner radius of the background. Can set the radius of 4 corners separately.<br>Default: BorderRadiuses(topLeft: 32.vp, topRight: 32.vp, bottomLeft: 32.vp, bottomRight: 32.vp)<br>Corner radius size is limited by component size, maximum value is half of the component width or height, if the value is negative, it is processed according to the default value.<br>Percentage parameter mode: Sets the corner radius of the dialog using percentages of the parent element dialog width and height.|
@@ -2718,19 +2718,19 @@ public init(
 
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
-| title | ?[ResourceStr](./cj-common-types.md#interface-resourcestr) | No | '' | **Named parameter.** Title text. Default: "", when set to "" the title is not displayed by default.|
-| message | ?[ResourceStr](./cj-common-types.md#interface-resourcestr) | No | '' | **Named parameter.** Content text. Default: "", when set to "" the content is not displayed by default.|
-| buttons | ?Array\<[ButtonInfo](#class-buttoninfo)> | No | [] | **Named parameter.** Array of buttons in the dialog, supports more than 1 button.|
-| alignment | ?[DialogAlignment](./cj-common-types.md#enum-dialogalignment) | No | DialogAlignment.Default | **Named parameter.** Vertical alignment of the dialog. Default: DialogAlignment.Default<br>**Note:**<br>If showInSubWindow is set to true in UIExtension, the dialog will align based on the UIExtension host window.|
-| offset | ?[Offset](./cj-common-types.md#class-offset) | No | Offset(0.vp, 0.vp) | **Named parameter.** Offset of the dialog relative to the alignment position.<br>Default: Offset(dx: 0.vp, dy: 0.vp).|
-| maskRect | ?[Rectangle](./cj-common-types.md#class-rectangle) | No | Rectangle(x: 0.vp, y: 0.vp, width: 100.percent, height: 100.percent) | **Named parameter.** Dialog mask area, events within the mask area are not passed through, events outside the mask area are passed through.<br>Default: Rectangle(x: 0.vp, y: 0.vp, width: 100.percent, height: 100.percent)<br>**Note:** maskRect does not take effect when showInSubWindow is true.<br>If some properties of Rectangle are set and others are not, the default value for the unset properties is 0.|
-| showInSubWindow | ?Bool | No | false | **Named parameter.** When a dialog needs to be displayed outside the main window, whether to display this dialog in a sub-window. When set to true, the dialog is displayed in a sub-window.<br>Default: false, the dialog is displayed within the application, not in an independent sub-window.<br>**Note:**<br>A dialog with showInSubWindow set to true cannot trigger the display of another dialog with showInSubWindow set to true.|
-| isModal | ?Bool | No | true | **Named parameter.** Whether the dialog is a modal window. When set to true, it is a modal window with a mask layer and cannot interact with other controls around the dialog, meaning events in the mask layer area cannot be passed through. When set to false, it is a non-modal window without a mask layer and can interact with other controls around the dialog. Default: true.|
-| backgroundColor | ?[Color](./cj-common-types.md#class-color) | No | Color.Transparent | **Named parameter.** Dialog background color. Default: Color.Transparent.|
-| backgroundBlurStyle | ?[BlurStyle](./cj-common-types.md#enum-blurstyle) | No | BlurStyle.ComponentUltraThick | **Named parameter.** Dialog background blur style. Default: BlurStyle.ComponentUltraThick.|
-| shadow | ?[ShadowOptions](./cj-common-types.md#class-shadowoptions) | No | None | **Named parameter.** Sets the shadow of the dialog background.|
-| enableHoverMode | ?Bool | No | false | **Named parameter.** Whether to respond to hover state. When set to true, it responds to hover state. Default: false, no response by default.|
-| hoverModeArea | ?[HoverModeAreaType](#enum-hovermodeareatype) | No | HoverModeAreaType.BottomScreen | **Named parameter.** Sets the default display area of the dialog in hover mode. Default: HoverModeAreaType.BottomScreen.|
+| title | ?[ResourceStr](./cj-common-types.md#interface-resourcestr) | No | Option.None | **Named parameter.** Title text. Default: "", when set to "" the title is not displayed by default.|
+| message | ?[ResourceStr](./cj-common-types.md#interface-resourcestr) | No | Option.None | **Named parameter.** Content text. Default: "", when set to "" the content is not displayed by default.|
+| buttons | ?Array\<[ButtonInfo](#class-buttoninfo)> | No | Option.None | **Named parameter.** Array of buttons in the dialog, supports more than 1 button.|
+| alignment | ?[DialogAlignment](./cj-common-types.md#enum-dialogalignment) | No | Option.None | **Named parameter.** Vertical alignment of the dialog. Default: DialogAlignment.Default<br>**Note:**<br>If showInSubWindow is set to true in UIExtension, the dialog will align based on the UIExtension host window.|
+| offset | ?[Offset](./cj-common-types.md#class-offset) | No | Option.None | **Named parameter.** Offset of the dialog relative to the alignment position.<br>Default: Offset(dx: 0.vp, dy: 0.vp).|
+| maskRect | ?[Rectangle](./cj-common-types.md#class-rectangle) | No | Option.None | **Named parameter.** Dialog mask area, events within the mask area are not passed through, events outside the mask area are passed through.<br>Default: Rectangle(x: 0.vp, y: 0.vp, width: 100.percent, height: 100.percent)<br>**Note:** maskRect does not take effect when showInSubWindow is true.<br>If some properties of Rectangle are set and others are not, the default value for the unset properties is 0.|
+| showInSubWindow | ?Bool | No | Option.None | **Named parameter.** When a dialog needs to be displayed outside the main window, whether to display this dialog in a sub-window. When set to true, the dialog is displayed in a sub-window.<br>Default: false, the dialog is displayed within the application, not in an independent sub-window.<br>**Note:**<br>A dialog with showInSubWindow set to true cannot trigger the display of another dialog with showInSubWindow set to true.|
+| isModal | ?Bool | No | Option.None | **Named parameter.** Whether the dialog is a modal window. When set to true, it is a modal window with a mask layer and cannot interact with other controls around the dialog, meaning events in the mask layer area cannot be passed through. When set to false, it is a non-modal window without a mask layer and can interact with other controls around the dialog. Default: true.|
+| backgroundColor | ?[Color](./cj-common-types.md#class-color) | No | Option.None | **Named parameter.** Dialog background color. Default: Color.Transparent.|
+| backgroundBlurStyle | ?[BlurStyle](./cj-common-types.md#enum-blurstyle) | No | Option.None | **Named parameter.** Dialog background blur style. Default: BlurStyle.ComponentUltraThick.|
+| shadow | ?[ShadowOptions](./cj-common-types.md#class-shadowoptions) | No | Option.None | **Named parameter.** Sets the shadow of the dialog background.|
+| enableHoverMode | ?Bool | No | Option.None | **Named parameter.** Whether to respond to hover state. When set to true, it responds to hover state. Default: false, no response by default.|
+| hoverModeArea | ?[HoverModeAreaType](#enum-hovermodeareatype) | No | Option.None | **Named parameter.** Sets the default display area of the dialog in hover mode. Default: HoverModeAreaType.BottomScreen.|
 | levelMode | ?[LevelMode](#enum-levelmode) | No | Option.None | **Named parameter.** Sets the display level of the dialog.<br>**Note:**<br>Default: LevelMode.Overlay<br>Only takes effect when showInSubWindow property is set to false.|
 
 ## class ActionMenuConfig
@@ -2860,10 +2860,10 @@ public init(
 
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
-| title | ?[ResourceStr](./cj-common-types.md#interface-resourcestr) | No | '' | **Named parameter.** Text title to display.|
-| buttons | ?Array\<[ButtonInfo](#class-buttoninfo)> | Yes | - | **Named parameter.** Button array.|
-| showInSubWindow | ?Bool | No | false | **Named parameter.** When an action menu needs to be displayed outside the main window, whether to display this menu in a sub-window. When set to true, the menu is displayed in a sub-window.<br>Default: false, the menu is not displayed in a sub-window.<br>**Note:** A menu with showInSubWindow set to true cannot trigger the display of another menu with showInSubWindow set to true.<br>If showInSubWindow is set to true in UIExtension, the menu will align based on the UIExtension host window.|
-| isModal | ?Bool | No | true | **Named parameter.** Whether the menu is a modal window. When set to true, it is a modal window with a mask layer and cannot interact with other controls around the menu, meaning events in the mask layer area cannot be passed through. When set to false, it is a non-modal window without a mask layer and can interact with other controls around the menu. Default: true.|
+| title | ?[ResourceStr](./cj-common-types.md#interface-resourcestr) | No | Option.None | **Named parameter.** Text title to display.|
+| buttons | ?Array\<[ButtonInfo](#class-buttoninfo)> | No | Option.None | **Named parameter.** Button array.|
+| showInSubWindow | ?Bool | No | Option.None | **Named parameter.** When an action menu needs to be displayed outside the main window, whether to display this menu in a sub-window. When set to true, the menu is displayed in a sub-window.<br>Default: false, the menu is not displayed in a sub-window.<br>**Note:** A menu with showInSubWindow set to true cannot trigger the display of another menu with showInSubWindow set to true.<br>If showInSubWindow is set to true in UIExtension, the menu will align based on the UIExtension host window.|
+| isModal | ?Bool | No | Option.None | **Named parameter.** Whether the menu is a modal window. When set to true, it is a modal window with a mask layer and cannot interact with other controls around the menu, meaning events in the mask layer area cannot be passed through. When set to false, it is a non-modal window without a mask layer and can interact with other controls around the menu. Default: true.|
 | levelMode | ?[LevelMode](#enum-levelmode) | No | Option.None | **Named parameter.** Sets the display level of the popup.<br>**Note:**<br>Default: LevelMode.Overlay<br>Only takes effect when showInSubWindow property is set to false.|
 
 ## enum KeyboardAvoidMode

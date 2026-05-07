@@ -49,7 +49,7 @@ public init(placeholder!: ?ResourceStr = None, text!: ?ResourceStr = None,
 
 > **说明：**
 >
-> 单行输入框可设置.width(LengthMetrics.AUTO)使组件宽度自适应文本宽度，自适应时组件宽度受constraintSize属性以及父容器传递的最大最小宽度限制。
+> 单行输入框可设置.[width](./cj-universal-attribute-size.md#func-widthoptionlength)([LengthMetrics.AUTO](./cj-common-types.md#static-let-auto))使组件宽度自适应文本宽度，自适应时组件宽度受[constraintSize](./cj-universal-attribute-layoutconstraints.md#func-constraintsizelength-length-length-length)属性以及父容器传递的最大最小宽度限制。
 
 ## 组件属性
 

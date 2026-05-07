@@ -24,8 +24,8 @@ func width(value: Option<Length>): T
 
 > **说明：**
 >
-> - 在TextInput组件中，width设置LengthMetric.AUTO表示自适应文本宽度。
-> - 在AlphabetIndexer组件中，width设置LengthMetric.AUTO表示自适应宽度最大索引项的宽度。
+> - 在[TextInput](./cj-text-input-textinput.md)组件中，width设置[LengthMetrics.AUTO](./cj-common-types.md#staticletAUTO)表示自适应文本宽度。
+> - 在[AlphabetIndexer](./cj-information-display-alphabetindexer.md)组件中，width设置[LengthMetrics.AUTO](./cj-common-types.md#staticletAUTO)表示自适应宽度最大索引项的宽度。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -50,6 +50,10 @@ func height(value: Option<Length>): T
 ```
 
 **功能：** 设置组件的高度。
+
+> **说明：**
+>
+> 在[Row](./cj-row-column-stack-row.md)、[Column](./cj-row-column-stack-column.md)、[RelativeContainer](./cj-row-column-stack-relativecontainer.md)组件中，width、height设置[LengthMetrics.AUTO](./cj-common-types.md#staticletAUTO)表示自适应子组件。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 

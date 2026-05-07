@@ -21,7 +21,7 @@ import kit.ArkUI.*
 > **说明：**
 >
 > - Tabs子组件的visibility属性设置为None，或者visibility属性设置为Hidden时，对应子组件不显示，但依然会在视窗内占位。
-> - Tabs设置height为LengthMetrics.AUTO时，可根据子组件高度自适应高度大小。设置width为LengthMetrics.AUTO时，可根据子组件宽度自适应宽度大小。
+> - Tabs设置[height](./cj-universal-attribute-size.md#func-heightoptionlength)为[LengthMetrics.AUTO](./cj-common-types.md#static-let-auto)时，可根据子组件高度自适应高度大小。设置[width](./cj-universal-attribute-size.md#func-widthoptionlength)为[LengthMetrics.AUTO](./cj-common-types.md#static-let-auto)时，可根据子组件宽度自适应宽度大小。
 
 ## 创建组件
 

@@ -14,7 +14,7 @@ For detailed guidelines, refer to [Flexible Layout](../../arkui-cj/cj-layout-dev
 >
 > - The Flex component undergoes a secondary layout process during rendering. Therefore, it is recommended to use [Column](cj-row-column-stack-column.md) or [Row](cj-row-column-stack-row.md) in performance-critical scenarios.
 > - When the main axis of the Flex component is not explicitly set, it expands to fill the parent container. In contrast, the [Column](cj-row-column-stack-column.md) and [Row](cj-row-column-stack-row.md) components default to matching the size of their child nodes when the main axis is not set.
-> - The main axis length can be set to LengthMetrics.AUTO to enable Flex to adapt to child component layouts. In adaptive mode, the Flex length is constrained by the `constraintSize` property and the parent container's maximum/minimum length, with the `constraintSize` property taking higher priority.
+> - The main axis length can be set to [LengthMetrics.AUTO](./cj-common-types.md#static-let-auto) to enable Flex to adapt to child component layouts. In adaptive mode, the Flex length is constrained by the [constraintSize](./cj-universal-attribute-layoutconstraints.md#func-constraintsizelength-length-length-length) property and the parent container's maximum/minimum length, with the constraintSize property taking higher priority.
 
 ## Import Module
 

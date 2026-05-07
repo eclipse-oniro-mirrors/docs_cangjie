@@ -45,7 +45,7 @@ public init(arrayValue!: Array<String>, selected!: ?UInt32)
 
 > **说明：**
 >
-> - [width](./cj-universal-attribute-size.md#func-widthoptionlength)属性设置"auto"时表示自适应宽度，宽度会随索引项最大宽度变化。
+> - [width](./cj-universal-attribute-size.md#func-widthoptionlength)属性设置[LengthMetrics.AUTO](./cj-common-types.md#static-let-auto)时表示自适应宽度，宽度会随索引项最大宽度变化。
 > - [padding](./cj-universal-attribute-size.md#func-paddinglength)属性默认为4.vp。
 
 通用事件：全部支持。
