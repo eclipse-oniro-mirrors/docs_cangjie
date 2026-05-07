@@ -45,7 +45,7 @@ Universal attributes: All supported.
 
 > **Note:**
 >
-> - When the [width](cj-text-input-imagespan.md#var-width) attribute is set to "auto", it indicates adaptive width, which changes with the maximum width of index items.
+> - When the [width](./cj-universal-attribute-size.md#func-widthoptionlength) attribute is set to [LengthMetrics.AUTO](./cj-common-types.md#static-let-auto), it indicates adaptive width, which changes with the maximum width of index items.
 > - The [padding](./cj-universal-attribute-size.md#func-paddinglength) attribute defaults to 4.vp.
 
 Universal events: All supported.

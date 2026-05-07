@@ -51,7 +51,7 @@ Common Events: All supported.
 
 > **Note:**
 >
-> When the single-line input box sets .width(LengthMetrics.AUTO), the component width can adapt to the text width. During auto-adaptation, the component width is constrained by the constraintSize property and the min/max width passed from the parent container.
+> When the single-line input box sets .[width](./cj-universal-attribute-size.md#func-widthoptionlength)([LengthMetrics.AUTO](./cj-common-types.md#static-let-auto)), the component width can adapt to the text width. During auto-adaptation, the component width is constrained by the [constraintSize](./cj-universal-attribute-layoutconstraints.md#func-constraintsizelength-length-length-length) property and the min/max width passed from the parent container.
 
 ### func caretColor(?ResourceColor)
 

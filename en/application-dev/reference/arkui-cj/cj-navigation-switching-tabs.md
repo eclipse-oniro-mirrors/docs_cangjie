@@ -21,7 +21,7 @@ Custom components are not supported as child components. Only [TabContent](./cj-
 > **Note:**
 >
 > - When the visibility property of a Tabs child component is set to None or Hidden, the corresponding child component will not be displayed but will still occupy space within the viewport.
-> - When the Tabs height is set to LengthMetrics.AUTO, it can adapt its height based on the child component's height. When the width is set to LengthMetrics.AUTO, it can adapt its width based on the child component's width
+> - When the Tabs [height](./cj-universal-attribute-size.md#func-heightoptionlength) is set to [LengthMetrics.AUTO](./cj-common-types.md#static-let-auto), it can adapt its height based on the child component's height. When the [width](./cj-universal-attribute-size.md#func-widthoptionlength) is set to [LengthMetrics.AUTO](./cj-common-types.md#static-let-auto), it can adapt its width based on the child component's width
 
 ## Creating the Component
 

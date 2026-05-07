@@ -14,7 +14,7 @@ Flex是以弹性方式布局子组件的容器组件，提供更加有效的方�
 >
 > - Flex组件在渲染时存在二次布局过程，因此在对性能有严格要求的场景下建议使用[Column](cj-row-column-stack-column.md)、[Row](cj-row-column-stack-row.md)代替。
 > - Flex组件主轴默认不设置时撑满父容器，[Column](cj-row-column-stack-column.md)、[Row](cj-row-column-stack-row.md)组件主轴不设置时默认是跟随子节点大小。
-> - 主轴长度可设置为LengthMetrics.AUTO使Flex自适应子组件布局，自适应时，Flex长度受constraintSize属性以及父容器传递的最大最小长度限制且constraintSize属性优先级更高。
+> - 主轴长度可设置为[LengthMetrics.AUTO](./cj-common-types.md#static-let-auto)使Flex自适应子组件布局，自适应时，Flex长度受[constraintSize](./cj-universal-attribute-layoutconstraints.md#func-constraintsizelength-length-length-length)属性以及父容器传递的最大最小长度限制且constraintSize属性优先级更高。
 
 ## 导入模块
 
