@@ -1391,7 +1391,7 @@ public var title: ResourceStr
 
 **Since:** 22
 
-### init(ResourceStr, ResourceStr, Array\<ButtonInfo\>, DialogAlignment, Offset, Rectangle, Bool, Bool, Color, BlurStyle, ?ShadowOptions, Bool, HoverModeAreaType)
+### init(ResourceStr, ResourceStr, Array\<ButtonInfo>, DialogAlignment, Offset, Rectangle, Bool, Bool, Color, BlurStyle, ?ShadowOptions, Bool, HoverModeAreaType)
 
 ```cangjie
 public init(
@@ -2350,7 +2350,7 @@ public var backgroundBlurStyle: ?BlurStyle
 
 **Since:** 26.0.0
 
-### init(() -> Unit, ?Rectangle, ?DialogAlignment, ?Offset, ?Bool, ?Bool, ?Bool, ?ResourceColor, ?TransitionEffect, ?() -> Unit, ?() -> Unit, ?() -> Unit, ?() -> Unit, ?KeyboardAvoidMode, ?Bool, ?HoverModeAreaType, ?ResourceColor, ?BorderRadiuses, ?EdgeWidths, ?EdgeColors, ?EdgeStyles, ?Length, ?Length, ?ShadowOptions, ?BlurStyle, ?LevelMode)
+### init(() -> Unit, ?Rectangle, ?DialogAlignment, ?Offset, ?Bool, ?Bool, ?Bool, ?ResourceColor, ?TransitionEffect, ?() -> Unit, ?() -> Unit, ?() -> Unit, ?() -> Unit, ?KeyboardAvoidMode, ?Bool, ?HoverModeAreaType, ?LevelMode, ?ResourceColor, ?BorderRadiuses, ?EdgeWidths, ?EdgeColors, ?EdgeStyles, ?Length, ?Length, ?ShadowOptions, ?BlurStyle)
 
 ```cangjie
 public init(
@@ -2370,6 +2370,7 @@ public init(
     keyboardAvoidMode!: ?KeyboardAvoidMode = Option.None,
     enableHoverMode!: ?Bool = Option.None,
     hoverModeArea!: ?HoverModeAreaType = Option.None,
+    levelMode!: ?LevelMode = Option.None,
     backgroundColor!: ?ResourceColor = Option.None,
     cornerRadius!: ?BorderRadiuses = Option.None,
     borderWidth!: ?EdgeWidths = Option.None,
@@ -2378,8 +2379,7 @@ public init(
     width!: ?Length = Option.None,
     height!: ?Length = Option.None,
     shadow!: ?ShadowOptions = Option.None,
-    backgroundBlurStyle!: ?BlurStyle = Option.None,
-    levelMode!: ?LevelMode = Option.None
+    backgroundBlurStyle!: ?BlurStyle = Option.None
 )
 ```
 
@@ -2409,6 +2409,7 @@ public init(
 | keyboardAvoidMode | ?[KeyboardAvoidMode](#enum-keyboardavoidmode) | No | Option.None | **Named parameter.** Sets whether the dialog automatically avoids the soft keyboard when it appears. Default: KeyboardAvoidMode.Default|
 | enableHoverMode | Bool | No | Option.None | **Named parameter.** Whether to respond to hover state. When set to true, it responds to hover state.<br>Default: false, no response by default.|
 | hoverModeArea | ?[HoverModeAreaType](#enum-hovermodeareatype) | No | Option.None | **Named parameter.** Default display area of the dialog in hover mode. Default: HoverModeAreaType.BottomScreen|
+| levelMode | ?[LevelMode](#enum-levelmode) | No | Option.None | **Named parameter.** Sets the display level of the dialog.<br>**Note:**<br>Default: LevelMode.Overlay<br>Only takes effect when showInSubWindow property is set to false.|
 | backgroundColor | ?[ResourceColor](./cj-common-types.md#interface-resourcecolor) | No | Option.None | **Named parameter.** Sets the background color of the dialog. Default: Color.Transparent<br>**Note:**<br>When backgroundColor is set to a non-transparent color, backgroundBlurStyle needs to be set to BlurStyle.NONE, otherwise the color display will not meet expected effects.|
 | cornerRadius | ?[BorderRadiuses](./cj-common-types.md#class-borderradiuses) | No | Option.None | **Named parameter.** Sets the corner radius of the background. Can set the radius of 4 corners separately.<br>Default: BorderRadiuses(topLeft: 32.vp, topRight: 32.vp, bottomLeft: 32.vp, bottomRight: 32.vp)<br>Corner radius size is limited by component size, maximum value is half of the component width or height, if the value is negative, it is processed according to the default value.<br>Percentage parameter mode: Sets the corner radius of the dialog using percentages of the parent element dialog width and height.|
 | borderWidth | ?[EdgeWidths](./cj-common-types.md#class-edgewidths) | No | Option.None | **Named parameter.** Sets the border width of the dialog background.<br>Can set the width of 4 borders separately. Default: EdgeWidths(top: 0.vp, right: 0.vp, bottom: 0.vp, left: 0.vp)<br>Percentage parameter mode: Sets the border width of the dialog using percentages of the parent element dialog width.<br>When the left and right borders are larger than the dialog width, and the top and bottom borders are larger than the dialog height, the display may not meet expectations.|
@@ -2418,7 +2419,6 @@ public init(
 | height | ?[Length](./cj-common-types.md#interface-length) | No | Option.None | **Named parameter.** Sets the height of the dialog background.<br>**Note:**<br>Default maximum dialog height: 0.9 * (window height - safe area).<br>Percentage parameter mode: Dialog reference height is (window height - safe area), adjusted up or down based on this.|
 | shadow | ?[ShadowOptions](./cj-common-types.md#class-shadowoptions) | No | Option.None | **Named parameter.** Sets the shadow of the dialog background.|
 | backgroundBlurStyle | ?[BlurStyle](./cj-common-types.md#enum-blurstyle) | No | Option.None | **Named parameter.** Background blur style of the dialog. Default: BlurStyle.ComponentUltraThick|
-| levelMode | ?[LevelMode](#enum-levelmode) | No | Option.None | **Named parameter.** Sets the display level of the dialog.<br>**Note:**<br>Default: LevelMode.Overlay<br>Only takes effect when showInSubWindow property is set to false.|
 
 ## class ShowDialogConfig
 
@@ -2687,7 +2687,7 @@ public var levelMode: ?LevelMode
 
 **Since:** 26.0.0
 
-### init(?ResourceStr, ?ResourceStr, ?Array\<ButtonInfo\>, ?DialogAlignment, ?Offset, ?Rectangle, ?Bool, ?Bool, ?Color, ?BlurStyle, ?ShadowOptions, ?Bool, ?HoverModeAreaType, ?LevelMode)
+### init(?ResourceStr, ?ResourceStr, ?Array\<ButtonInfo>, ?DialogAlignment, ?Offset, ?Rectangle, ?Bool, ?Bool, ?ResourceColor, ?BlurStyle, ?ShadowOptions, ?Bool, ?HoverModeAreaType, ?LevelMode)
 
 ```cangjie
 public init(
@@ -2726,7 +2726,7 @@ public init(
 | maskRect | ?[Rectangle](./cj-common-types.md#class-rectangle) | No | Option.None | **Named parameter.** Dialog mask area, events within the mask area are not passed through, events outside the mask area are passed through.<br>Default: Rectangle(x: 0.vp, y: 0.vp, width: 100.percent, height: 100.percent)<br>**Note:** maskRect does not take effect when showInSubWindow is true.<br>If some properties of Rectangle are set and others are not, the default value for the unset properties is 0.|
 | showInSubWindow | ?Bool | No | Option.None | **Named parameter.** When a dialog needs to be displayed outside the main window, whether to display this dialog in a sub-window. When set to true, the dialog is displayed in a sub-window.<br>Default: false, the dialog is displayed within the application, not in an independent sub-window.<br>**Note:**<br>A dialog with showInSubWindow set to true cannot trigger the display of another dialog with showInSubWindow set to true.|
 | isModal | ?Bool | No | Option.None | **Named parameter.** Whether the dialog is a modal window. When set to true, it is a modal window with a mask layer and cannot interact with other controls around the dialog, meaning events in the mask layer area cannot be passed through. When set to false, it is a non-modal window without a mask layer and can interact with other controls around the dialog. Default: true.|
-| backgroundColor | ?[Color](./cj-common-types.md#class-color) | No | Option.None | **Named parameter.** Dialog background color. Default: Color.Transparent.|
+| backgroundColor | ?[ResourceColor](./cj-common-types.md#interface-resourcecolor) | No | Option.None | **Named parameter.** Dialog background color. Default: Color.Transparent.|
 | backgroundBlurStyle | ?[BlurStyle](./cj-common-types.md#enum-blurstyle) | No | Option.None | **Named parameter.** Dialog background blur style. Default: BlurStyle.ComponentUltraThick.|
 | shadow | ?[ShadowOptions](./cj-common-types.md#class-shadowoptions) | No | Option.None | **Named parameter.** Sets the shadow of the dialog background.|
 | enableHoverMode | ?Bool | No | Option.None | **Named parameter.** Whether to respond to hover state. When set to true, it responds to hover state. Default: false, no response by default.|

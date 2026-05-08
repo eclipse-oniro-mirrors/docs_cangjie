@@ -1381,7 +1381,7 @@ public var title: ResourceStr
 
 **起始版本：** 22
 
-### init(ResourceStr, ResourceStr, Array\<ButtonInfo\>, DialogAlignment, Offset, Rectangle, Bool, Bool, Color, BlurStyle, ?ShadowOptions, Bool, HoverModeAreaType)
+### init(ResourceStr, ResourceStr, Array\<ButtonInfo>, DialogAlignment, Offset, Rectangle, Bool, Bool, Color, BlurStyle, ?ShadowOptions, Bool, HoverModeAreaType)
 
 ```cangjie
 public init(
@@ -2311,7 +2311,7 @@ public var backgroundBlurStyle: ?BlurStyle
 
 **起始版本：** 26.0.0
 
-### init(() -> Unit, ?Rectangle, ?DialogAlignment, ?Offset, ?Bool, ?Bool, ?Bool, ?ResourceColor, ?TransitionEffect, ?() -> Unit, ?() -> Unit, ?() -> Unit, ?() -> Unit, ?KeyboardAvoidMode, ?Bool, ?HoverModeAreaType, ?ResourceColor, ?BorderRadiuses, ?EdgeWidths, ?EdgeColors, ?EdgeStyles, ?Length, ?Length, ?ShadowOptions, ?BlurStyle, ?LevelMode)
+### init(() -> Unit, ?Rectangle, ?DialogAlignment, ?Offset, ?Bool, ?Bool, ?Bool, ?ResourceColor, ?TransitionEffect, ?() -> Unit, ?() -> Unit, ?() -> Unit, ?() -> Unit, ?KeyboardAvoidMode, ?Bool, ?HoverModeAreaType, ?LevelMode, ?ResourceColor, ?BorderRadiuses, ?EdgeWidths, ?EdgeColors, ?EdgeStyles, ?Length, ?Length, ?ShadowOptions, ?BlurStyle)
 
 ```cangjie
 public init(
@@ -2331,6 +2331,7 @@ public init(
     keyboardAvoidMode!: ?KeyboardAvoidMode = Option.None,
     enableHoverMode!: ?Bool = Option.None,
     hoverModeArea!: ?HoverModeAreaType = Option.None,
+    levelMode!: ?LevelMode = Option.None,
     backgroundColor!: ?ResourceColor = Option.None,
     cornerRadius!: ?BorderRadiuses = Option.None,
     borderWidth!: ?EdgeWidths = Option.None,
@@ -2339,8 +2340,7 @@ public init(
     width!: ?Length = Option.None,
     height!: ?Length = Option.None,
     shadow!: ?ShadowOptions = Option.None,
-    backgroundBlurStyle!: ?BlurStyle = Option.None,
-    levelMode!: ?LevelMode = Option.None
+    backgroundBlurStyle!: ?BlurStyle = Option.None
 )
 ```
 
@@ -2354,6 +2354,7 @@ public init(
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
+|builder|() -> Unit|是|-| **命名参数。** 自定义对话框内容。<br>**说明：** 仅支持接收@Builder修饰的自定义构建函数。|
 |maskRect|?[Rectangle](./cj-common-types.md#class-rectangle)|否|Option.None| **命名参数。** 弹窗遮蔽层区域。<br>初始值：Rectangle(x: 0.vp, y: 0.vp, width: 100.percent, height: 100.percent)<br> **说明：** showInSubWindow为true时，maskRect不生效。<br>maskRect在设置Rectangle中的部分属性后，若未设置其余的属性，则其余属性的默认值为0。|
 |alignment|?[DialogAlignment](./cj-common-types.md#enum-dialogalignment)|否|Option.None| **命名参数。** 弹窗在竖直方向上的对齐方式。初始值：DialogAlignment.Default|
 |offset|?[Offset](./cj-common-types.md#class-offset)|否|Option.None| **命名参数。** 弹窗相对alignment所在位置的偏移量。初始值：Offset(dx: 0.vp, dy: 0.vp)|
@@ -2369,6 +2370,7 @@ public init(
 |keyboardAvoidMode|?[KeyboardAvoidMode](#enum-keyboardavoidmode)|否|Option.None| **命名参数。** 用于设置弹窗是否在拉起软键盘时进行自动避让。KeyboardAvoidMode.Default|
 |enableHoverMode|Bool|否|Option.None| **命名参数。** 是否响应悬停态，值为true时，响应悬停态。<br> 初始值：false，默认不响应。|
 |hoverModeArea|?[HoverModeAreaType](#enum-hovermodeareatype)|否|Option.None| **命名参数。** 悬停态下弹窗默认展示区域。初始值：HoverModeAreaType.BottomScreen|
+|levelMode|?[LevelMode](#enum-levelmode)|否|Option.None| **命名参数。** 设置弹窗显示层级。<br> **说明：** <br> 初始值：LevelMode.Overlay <br> 当且仅当showInSubWindow属性设置为false时生效。|
 |backgroundColor|?[ResourceColor](./cj-common-types.md#interface-resourcecolor)|否|Option.None| **命名参数。** 设置弹窗背板颜色。初始值：Color.Transparent <br> **说明：** <br> 当设置了backgroundColor为非透明色时，backgroundBlurStyle需要设置为BlurStyle.NONE，否则颜色显示将不符合预期效果。|
 |cornerRadius|?[BorderRadiuses](./cj-common-types.md#class-borderradiuses)|否|Option.None| **命名参数。** 设置背板的圆角半径。可分别设置4个圆角的半径。<br> 初始值：BorderRadiuses(topLeft: 32.vp, topRight: 32.vp, bottomLeft: 32.vp, bottomRight: 32.vp)<br>圆角大小受组件尺寸限制，最大值为组件宽或高的一半，若值为负，则按照默认值处理。<br>百分比参数方式：以父元素弹窗宽和高的百分比来设置弹窗的圆角。|
 |borderWidth|?[EdgeWidths](./cj-common-types.md#class-edgewidths)|否|Option.None| **命名参数。** 设置弹窗背板的边框宽度。<br>可分别设置4个边框宽度。初始值：EdgeWidths(top: 0.vp, right: 0.vp, bottom: 0.vp, left: 0.vp)<br>百分比参数方式：以父元素弹窗宽的百分比来设置弹窗的边框宽度。<br>当弹窗左边框和右边框大于弹窗宽度，弹窗上边框和下边框大于弹窗高度，显示可能不符合预期。|
@@ -2378,7 +2380,6 @@ public init(
 |height|?[Length](./cj-common-types.md#interface-length)|否|Option.None| **命名参数。** 设置弹窗背板的高度。<br> **说明：** <br> 弹窗高度默认最大值：0.9 *（窗口高度 - 安全区域）。<br> 百分比参数方式：弹窗参考高度为（窗口高度 - 安全区域），在此基础上调小或调大。|
 |shadow|?[ShadowOptions](./cj-common-types.md#class-shadowoptions)|否|Option.None| **命名参数。** 设置弹窗背板的阴影。|
 |backgroundBlurStyle|?[BlurStyle](./cj-common-types.md#enum-blurstyle)|否|Option.None| **命名参数。** 弹窗背板模糊材质。初始值：BlurStyle.ComponentUltraThick|
-|levelMode|?[LevelMode](#enum-levelmode)|否|Option.None| **命名参数。** 设置弹窗显示层级。<br> **说明：** <br> 初始值：LevelMode.Overlay <br> 当且仅当showInSubWindow属性设置为false时生效。|
 
 ## class ShowDialogConfig
 
@@ -2669,7 +2670,7 @@ public var levelMode: ?LevelMode
 
 **起始版本：** 26.0.0
 
-### init(?ResourceStr, ?ResourceStr, ?Array\<ButtonInfo\>, ?DialogAlignment, ?Offset, ?Rectangle, ?Bool, ?Bool, ?Color, ?BlurStyle, ?ShadowOptions, ?Bool, ?HoverModeAreaType, ?LevelMode)
+### init(?ResourceStr, ?ResourceStr, ?Array\<ButtonInfo>, ?DialogAlignment, ?Offset, ?Rectangle, ?Bool, ?Bool, ?ResourceColor, ?BlurStyle, ?ShadowOptions, ?Bool, ?HoverModeAreaType, ?LevelMode)
 
 ```cangjie
 public init(
@@ -2708,7 +2709,7 @@ public init(
 |maskRect|?[Rectangle](./cj-common-types.md#class-rectangle)|否|Option.None| **命名参数。** 对话框遮蔽层区域，在遮蔽层区域内的事件不透传，在遮蔽层区域外的事件透传。<br> 初始值：Rectangle(x: 0.vp, y: 0.vp, width: 100.percent, height: 100.percent) <br> **说明：** showInSubWindow为true时，maskRect不生效。<br> maskRect在设置Rectangle中的部分属性后，若未设置其余的属性，则其余属性的默认值为0。|
 |showInSubWindow|?Bool|否|Option.None| **命名参数。** 某对话框需要显示在主窗口之外时，是否在子窗口显示此对话框。值为true表示在子窗口显示对话框。<br>初始值：false，对话框显示在应用内，而非独立子窗口。<br>**说明：**<br>showInSubWindow为true的对话框无法触发显示另一个showInSubWindow为true的对话框。|
 |isModal|?Bool|否|Option.None| **命名参数。** 对话框是否为模态窗口。值为true表示为模态窗口且有蒙层，不可与对话框周围其他控件进行交互，即蒙层区域无法事件透传。值为false表示为非模态窗口且无蒙层，可以与对话框周围其他控件进行交互。初始值：true。|
-|backgroundColor|?[Color](./cj-common-types.md#class-color)|否|Option.None| **命名参数。** 对话框背板颜色。初始值：Color.Transparent。|
+|backgroundColor|?[ResourceColor](./cj-common-types.md#interface-resourcecolor)|否|Option.None| **命名参数。** 对话框背板颜色。初始值：Color.Transparent。|
 |backgroundBlurStyle|?[BlurStyle](./cj-common-types.md#enum-blurstyle)|否|Option.None| **命名参数。** 对话框背板模糊材质。初始值：BlurStyle.ComponentUltraThick。|
 |shadow|?[ShadowOptions](./cj-common-types.md#class-shadowoptions)|否|Option.None| **命名参数。** 设置对话框背板的阴影。|
 |enableHoverMode|?Bool|否|Option.None| **命名参数。** 是否响应悬停态，值为true时，响应悬停态。初始值：false，默认不响应。|
