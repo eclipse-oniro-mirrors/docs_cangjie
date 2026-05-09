@@ -2406,6 +2406,7 @@ public type OnDidChangeCallback = (rangeBefore: TextRange, rangeAfter: TextRange
 
 ```cangjie
 package ohos_app_cangjie_entry
+
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
 import ohos.i18n.*
@@ -2418,10 +2419,11 @@ import ohos.resource.*
 class EntryView {
     let controller = RichEditorController()
 
-    @State var position: Int32 = 0
+    @State
+    var position: Int32 = 0
 
     @Builder
-    func builder(){
+    func builder() {
         Column {
             ForEach(["1", "2", "3", "4", "5", "6", "7", "8", "9", "*", "0", "#"], itemGeneratorFunc: {item: String, idx: Int64 =>
                 Button(item)

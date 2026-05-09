@@ -207,19 +207,22 @@ public class Message {
 @Entry
 @Component
 public class EntryView {
-    @State var switch: Bool = true
+    @State
+    var switch: Bool = true
     public func build() {
         Column() {
             Button("Hello")
-            .fontSize(30)
-            .fontWeight(FontWeight.Bold)
-            .onClick({evt =>
-                switch = !switch
-            })
+                .fontSize(30)
+                .fontWeight(FontWeight.Bold)
+                .onClick({
+                    evt => switch = !switch
+                })
             if (switch) {
                 Child(message: Message("Child"))
             }
-        }.height(100.percent).width(100.percent)
+        }
+            .height(100.percent)
+            .width(100.percent)
     }
 }
 
@@ -236,8 +239,12 @@ class Child {
     }
     func build() {
         Column() {
-            Text(this.message.value)
-        }.borderWidth(1).height(100)
+            Text(this
+                .message
+                .value)
+        }
+            .borderWidth(1)
+            .height(100)
     }
 }
 ```
@@ -379,13 +386,13 @@ public class FriendMoment {
         this.title = title
         this.image = image
     }
-
 }
 
 @Reusable
 @Component
 public class OneMoment {
-    @State var moment: FriendMoment = FriendMoment("", "", @r(app.media.startIcon))
+    @State
+    var moment: FriendMoment = FriendMoment("", "", @r(app.media.startIcon))
     protected override func aboutToReuse(params: ReuseParams) {
         if (let Some(value) <- params.get<FriendMoment>("moment")) {
             let pVal = value
@@ -396,12 +403,22 @@ public class OneMoment {
     public func build() {
         Column() {
             Text(moment.text)
-            if (moment.image.isSome()) {
+            if (moment
+                .image
+                .isSome()) {
                 Flex(wrap: FlexWrap.Wrap) {
-                    Image((moment.image) ?? @r(app.media.background)).height(50).width(50)
-                    Image((moment.image) ?? @r(app.media.background)).height(50).width(50)
-                    Image((moment.image) ?? @r(app.media.background)).height(50).width(50)
-                    Image((moment.image) ?? @r(app.media.background)).height(50).width(50)
+                    Image((moment.image) ?? @r(app.media.background))
+                        .height(50)
+                        .width(50)
+                    Image((moment.image) ?? @r(app.media.background))
+                        .height(50)
+                        .width(50)
+                    Image((moment.image) ?? @r(app.media.background))
+                        .height(50)
+                        .width(50)
+                    Image((moment.image) ?? @r(app.media.background))
+                        .height(50)
+                        .width(50)
                 }
             }
         }
@@ -414,11 +431,11 @@ public class EntryView {
     let data: MyDataSource = MyDataSource(ArrayList<FriendMoment>([]))
     protected override func aboutToAppear() {
         for (i in 0..20) {
-            let title = "${i+1}test+if"
+            let title = "${i + 1}test+if"
             data.pushData(FriendMoment("${i}", title, @r(app.media.startIcon)))
         }
         for (i in 0..50) {
-            let title = "${i+1}test+if"
+            let title = "${i + 1}test+if"
             data.pushData(FriendMoment("${i}", title, Option<AppResource>.None))
         }
     }

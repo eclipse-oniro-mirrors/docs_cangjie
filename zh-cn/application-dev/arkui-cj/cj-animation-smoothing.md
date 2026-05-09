@@ -22,13 +22,14 @@ import ohos.arkui.state_macro_manage.*
 
 @Observed
 class SetSlt {
-    @Publish var isAnimation: Bool = true
+    @Publish
+    var isAnimation: Bool = true
     public func set() {
         this.isAnimation = !this.isAnimation
     }
 
     public func getScale(): Float32 {
-        if (this.isAnimation){
+        if (this.isAnimation) {
             return 2.0
         }
         return 1.0
@@ -38,7 +39,8 @@ class SetSlt {
 @Entry
 @Component
 class EntryView {
-    @State var SetAnimation: SetSlt = SetSlt()
+    @State
+    var SetAnimation: SetSlt = SetSlt()
 
     func build() {
         Column() {
@@ -59,9 +61,9 @@ class EntryView {
                     this.SetAnimation.set()
                 })
         }
-        .width(100.percent)
-        .height(100.percent)
-        .justifyContent(FlexAlign.Center)
+            .width(100.percent)
+            .height(100.percent)
+            .justifyContent(FlexAlign.Center)
     }
 }
 ```
@@ -89,8 +91,10 @@ import ohos.arkui.state_macro_manage.*
 @Entry
 @Component
 class EntryView {
-    @State var positionX: Float64 = 100.0
-    @State var positionY: Float64 = 100.0
+    @State
+    var positionX: Float64 = 100.0
+    @State
+    var positionY: Float64 = 100.0
     var diameter: Float64 = 50.0
 
     func build() {
@@ -110,24 +114,23 @@ class EntryView {
                     }
                 })
             }
-            .width(100.percent)
-            .height(80.percent)
-            .clip(true) // 如果球超出父组件范围，使球不可见
-            .backgroundColor(0xFEA400)
+                .width(100.percent)
+                .height(80.percent)
+                .clip(true) // 如果球超出父组件范围，使球不可见
+                .backgroundColor(0xFEA400)
 
-            Flex(direction: FlexDirection.Row,justifyContent: FlexAlign.Center, alignItems: ItemAlign.Start) {
+            Flex(direction: FlexDirection.Row, justifyContent: FlexAlign.Center, alignItems: ItemAlign.Start) {
                 Text("拖动小球").fontSize(16)
-            }
-            .width(100.percent)
+            }.width(100.percent)
 
             Row() {
                 Text('点击位置: [x: ${Int64(this.positionX)} y: ${Int64(this.positionY)}]').fontSize(16)
             }
-            .padding(10)
-            .width(100.percent)
+                .padding(10)
+                .width(100.percent)
         }
-        .width(100.percent)
-        .height(100.percent)
+            .width(100.percent)
+            .height(100.percent)
     }
 }
 ```

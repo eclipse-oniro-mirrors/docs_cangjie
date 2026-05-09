@@ -3419,14 +3419,16 @@ import ohos.arkui.state_macro_manage.*
 
 @Entry
 @Component
-class newPage{
-    func build(){
-        Flex(justifyContent: FlexAlign.Center ,alignItems: ItemAlign.Center) {
-            Column{
+class newPage {
+    func build() {
+        Flex(justifyContent: FlexAlign.Center, alignItems: ItemAlign.Center) {
+            Column {
                 Text("New Page")
-                Button("Untouchable").onClick({ evt
-                    => AlertDialogParamWithConfirm(message:"Unreachable")
-                }).margin(10.vp)
+                Button("Untouchable")
+                    .onClick({
+                        evt => AlertDialogParamWithConfirm(message: "Unreachable")
+                    })
+                    .margin(10.vp)
             }.margin(10.vp)
         }
     }
@@ -3448,7 +3450,6 @@ import ohos.app.ability.ui_ability.*
 import kit.ArkUI.*
 
 class MainAbility <: UIAbility {
-
     public init() {
         super()
         registerSelf()
@@ -3457,7 +3458,7 @@ class MainAbility <: UIAbility {
     public override func onWindowStageCreate(windowStage: WindowStage): Unit {
         windowStage.loadContent("newPage")
         // 将该Ability的窗口管理器传入AppStorage中
-        AppStorage.setOrCreate("windowStage",windowStage)
+        AppStorage.setOrCreate("windowStage", windowStage)
     }
 }
 ```
@@ -3477,37 +3478,37 @@ import ohos.business_exception.BusinessException
 
 @Entry
 @Component
-class newPage{
-
-    public override func onPageShow(){
-        let windowStage: WindowStage = AppStorage.get<WindowStage>("windowStage").getOrThrow()
+class newPage {
+    public override func onPageShow() {
+        let windowStage: WindowStage = AppStorage
+            .get<WindowStage>("windowStage")
+            .getOrThrow()
         let mainWindow: Window = windowStage.getMainWindow()
 
         // 开启监听
-        var tmp: Unit = mainWindow.on(WindowCallbackType.KeyboardHeightChange,TestCallback(0))
+        var tmp: Unit = mainWindow.on(WindowCallbackType.KeyboardHeightChange, TestCallback(0))
     }
 
-    func build(){
-        Flex(justifyContent: FlexAlign.Center ,alignItems: ItemAlign.Center) {
-            Column{
+    func build() {
+        Flex(justifyContent: FlexAlign.Center, alignItems: ItemAlign.Center) {
+            Column {
                 TextInput(placeholder: 'input some words here... ').margin(10.vp)
             }.margin(10.vp)
         }
     }
 }
 
-public class TestCallback <: Callback1Argument<UInt32>{
-
+public class TestCallback <: Callback1Argument<UInt32> {
     var count: Int64
 
-    public init(count: Int64){
+    public init(count: Int64) {
         this.count = count
     }
 
     public func invoke(err: ?BusinessException, value: UInt32): Unit {
         count++
         // 拉起或隐藏键盘时，会触发日志打印总计的键盘高度变化计数
-        Hilog.info(0,"","KeyboardHeightChangeCount: ${this.count}")
+        Hilog.info(0, "", "KeyboardHeightChangeCount: ${this.count}")
     }
 }
 ```

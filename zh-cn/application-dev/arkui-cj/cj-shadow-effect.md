@@ -25,30 +25,29 @@ class EntryView {
                 Column() {
                     Text('shadowOption').fontSize(12)
                 }
-                .width(100)
-                .aspectRatio(1.0)
-                .margin(10)
-                .justifyContent(FlexAlign.Center)
-                .backgroundColor(Color.White)
-                .borderRadius(20)
-                .shadow(radius: 10.0, color: Color.Gray)
+                    .width(100)
+                    .aspectRatio(1.0)
+                    .margin(10)
+                    .justifyContent(FlexAlign.Center)
+                    .backgroundColor(Color.White)
+                    .borderRadius(20)
+                    .shadow(radius: 10.0, color: Color.Gray)
 
                 Column() {
                     Text('shadowOption').fontSize(12)
                 }
-                .width(100)
-                .aspectRatio(1.0)
-                .margin(10)
-                .justifyContent(FlexAlign.Center)
-                .backgroundColor(0xF48899)
-                .borderRadius(20)
-                .shadow(radius: 10.0, color: Color.Gray, offsetX: 20.0, offsetY: 20.0)
+                    .width(100)
+                    .aspectRatio(1.0)
+                    .margin(10)
+                    .justifyContent(FlexAlign.Center)
+                    .backgroundColor(0xF48899)
+                    .borderRadius(20)
+                    .shadow(radius: 10.0, color: Color.Gray, offsetX: 20.0, offsetY: 20.0)
             }
-            .width(100.percent)
-            .height(100.percent)
-            .justifyContent(FlexAlign.Center)
-        }
-        .height(100.percent)
+                .width(100.percent)
+                .height(100.percent)
+                .justifyContent(FlexAlign.Center)
+        }.height(100.percent)
     }
 }
 ```

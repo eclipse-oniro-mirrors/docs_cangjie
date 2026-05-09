@@ -21,8 +21,7 @@ import kit.ArkUI.*
 ## class AnimatorResult
 
 ```cangjie
-public class AnimatorResult {
-}
+public class AnimatorResult {}
 ```
 
 **功能：** 定义Animator结果类型。

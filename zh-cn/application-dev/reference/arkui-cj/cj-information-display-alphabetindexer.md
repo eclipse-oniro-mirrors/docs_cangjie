@@ -407,6 +407,7 @@ public type OnAlphabetIndexerPopupSelectCallback = (Int64) -> Unit
 
 ```cangjie
 package ohos_app_cangjie_entry
+
 import kit.ArkUI.*
 import ohos.hilog.*
 import ohos.arkui.state_macro_manage.*
@@ -419,8 +420,10 @@ class EntryView {
     var arrayC: Array<String> = ["曹", "成", "陈", "催"]
     var arrayJ: Array<String> = ["嘉", "贾"]
     var arrayNull: Array<String> = []
-    let value: Array<String> = ["#", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q","R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
-    @State var indexerHeight: Length = 75.percent;
+    let value: Array<String> = ["#", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q",
+        "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+    @State
+    var indexerHeight: Length = 75.percent;
     func build() {
         Stack(alignContent: Alignment.Start) {
             Row() {

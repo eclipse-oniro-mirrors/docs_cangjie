@@ -21,7 +21,7 @@ import kit.ArkUI.*
 ## class CommonTransition
 
 ```cangjie
-abstract sealed class CommonTransition {}
+sealed abstract class CommonTransition {}
 ```
 
 **功能：** 页面转场通用动效。
@@ -497,6 +497,7 @@ public type PageTransitionCallback = (RouteType, Float64) -> Unit
 ```cangjie
 //index.cj
 package ohos_app_cangjie_entry
+
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
 import ohos.resource.*
@@ -504,8 +505,10 @@ import ohos.resource.*
 @Entry
 @Component
 class EntryView {
-    @State var scale2: Float32 = 1.0
-    @State var opacity2: Float64 = 1.0
+    @State
+    var scale2: Float32 = 1.0
+    @State
+    var opacity2: Float64 = 1.0
 
     func build() {
         Column() {
@@ -546,6 +549,7 @@ class EntryView {
 ```cangjie
 //page1.cj
 package ohos_app_cangjie_entry
+
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
 import ohos.resource.*
@@ -553,8 +557,10 @@ import ohos.resource.*
 @Entry
 @Component
 class Page1 {
-    @State var scale1: Float32 = 1.0
-    @State var opacity1: Float64 = 1.0
+    @State
+    var scale1: Float32 = 1.0
+    @State
+    var opacity1: Float64 = 1.0
 
     func build() {
         Column() {
@@ -601,14 +607,17 @@ class Page1 {
 ```cangjie
 //index.cj
 package ohos_app_cangjie_entry
+
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
 
 @Entry
 @Component
 class EntryView {
-    @State var scale2: Float32 = 1.0
-    @State var opacity2: Float64 = 1.0
+    @State
+    var scale2: Float32 = 1.0
+    @State
+    var opacity2: Float64 = 1.0
 
     func build() {
         Column() {
@@ -622,11 +631,11 @@ class EntryView {
                 .fontSize(36)
                 .textAlign(TextAlign.Center)
         }
-        .width(100.percent)
-        .height(100.percent)
-        .scale(x: scale2, y: 1.0)
-        .opacity(this.opacity2)
-        .justifyContent(FlexAlign.Center)
+            .width(100.percent)
+            .height(100.percent)
+            .scale(x: scale2, y: 1.0)
+            .opacity(this.opacity2)
+            .justifyContent(FlexAlign.Center)
     }
 
     protected func pageTransition(): Unit {
@@ -642,14 +651,17 @@ class EntryView {
 
 //page1.cj
 package ohos_app_cangjie_entry
+
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
 
 @Entry
 @Component
 class Page1 {
-    @State var scale1: Float32 = 1.0
-    @State var opacity1: Float64 = 1.0
+    @State
+    var scale1: Float32 = 1.0
+    @State
+    var opacity1: Float64 = 1.0
 
     func build() {
         Column() {
@@ -663,11 +675,11 @@ class Page1 {
                 .fontSize(36)
                 .textAlign(TextAlign.Center)
         }
-        .width(100.percent)
-        .height(100.percent)
-        .scale(x: scale1, y: 1.0)
-        .opacity(this.opacity1)
-        .justifyContent(FlexAlign.Center)
+            .width(100.percent)
+            .height(100.percent)
+            .scale(x: scale1, y: 1.0)
+            .opacity(this.opacity1)
+            .justifyContent(FlexAlign.Center)
     }
 
     protected func pageTransition(): Unit {

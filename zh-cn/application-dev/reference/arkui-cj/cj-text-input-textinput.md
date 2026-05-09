@@ -572,6 +572,7 @@ public func stopEditing(): Unit
 
 ```cangjie
 package ohos_app_cangjie_entry
+
 import kit.ArkUI.*
 import ohos.hilog.*
 import ohos.arkui.state_macro_manage.*
@@ -579,43 +580,47 @@ import ohos.arkui.state_macro_manage.*
 @Entry
 @Component
 class EntryView {
-    @State var text: String = ''
-    @State var passwordState: Bool = false
+    @State
+    var text: String = ''
+    @State
+    var passwordState: Bool = false
     var controller: TextInputController = TextInputController()
 
     func build() {
-    Column() {
-        TextInput(text: this.text, placeholder: 'input your word...', controller: this.controller)
-            .placeholderColor(Color.Gray)
-            .placeholderFont(size: 14, weight: FontWeight.W100)
-            .caretColor(Color.Blue)
-            .width(95.percent)
-            .height(40)
-            .margin(20)
-            .fontSize(14)
-            .fontColor(Color.Black)
-            .inputFilter('[a-z]', error: { info: String =>
-              Hilog.error(0, "AppLogCj", "inputFilter error")
-            })
-            .onChange({ value: String =>
-              this.text = value
-            })
-        Text(this.text)
-        Button('Set caretPosition 1')
-            .margin(15)
-            .onClick({ evt => 
-                // 将光标移动至第一个字符后
-                this.controller.caretPosition(1)
-            })
-        // 内联风格输入框
-        TextInput( text: 'inline style' )
-            .width(95.percent)
-            .height(50)
-            .margin(20)
-            .borderRadius(0)
-            .style(TextInputStyle.Inline)
-        }.
-        width(100.percent)
+        Column() {
+            TextInput(text: this.text, placeholder: 'input your word...', controller: this.controller)
+                .placeholderColor(Color.Gray)
+                .placeholderFont(size: 14, weight: FontWeight.W100)
+                .caretColor(Color.Blue)
+                .width(95.percent)
+                .height(40)
+                .margin(20)
+                .fontSize(14)
+                .fontColor(Color.Black)
+                .inputFilter('[a-z]', error: {
+                    info: String => Hilog.error(0, "AppLogCj", "inputFilter error")
+                })
+                .onChange({
+                    value: String => this.text = value
+                })
+            Text(this.text)
+            Button('Set caretPosition 1')
+                .margin(15)
+                .onClick({
+                    evt =>
+                    // 将光标移动至第一个字符后
+                    this
+                        .controller
+                        .caretPosition(1)
+                })
+            // 内联风格输入框
+            TextInput(text: 'inline style')
+                .width(95.percent)
+                .height(50)
+                .margin(20)
+                .borderRadius(0)
+                .style(TextInputStyle.Inline)
+        }.width(100.percent)
     }
 }
 ```
