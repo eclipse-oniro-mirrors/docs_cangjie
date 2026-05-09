@@ -69,7 +69,8 @@ class Tmp {
 @Entry
 @Component
 class EntryView {
-    @State var select: Bool = true
+    @State
+    var select: Bool = true
     private var iconStr: AppResource = @r(app.media.startIcon)
     private var iconStr2: AppResource = @r(app.media.startIcon)
 
@@ -98,23 +99,23 @@ class EntryView {
             )
             MenuItemGroup(header: "小标题", footer: "") {
                 =>
-                MenuItem(startIcon: "", content: "菜单选项", endIcon: "", labelInfo: "")
-                    .selectIcon(true)
-                    .selected(this.select)
-                    .onChange(
-                        {
-                            selected =>
-                            let Str: Tmp = Tmp()
-                            Str.set(@r(app.media.startIcon))
-                        }
+                    MenuItem(startIcon: "", content: "菜单选项", endIcon: "", labelInfo: "")
+                        .selectIcon(true)
+                        .selected(this.select)
+                        .onChange(
+                            {
+                                selected =>
+                                    let Str: Tmp = Tmp()
+                                    Str.set(@r(app.media.startIcon))
+                            }
+                        )
+                    MenuItem(
+                        startIcon: @r(app.media.startIcon),
+                        content: @r(app.string.module_desc),
+                        endIcon: @r(app.media.startIcon),
+                        labelInfo: @r(app.string.module_desc),
+                        builder: this.SubMenu
                     )
-                MenuItem(
-                    startIcon: @r(app.media.startIcon),
-                    content: @r(app.string.module_desc),
-                    endIcon: @r(app.media.startIcon),
-                    labelInfo: @r(app.string.module_desc),
-                    builder: this.SubMenu
-                )
             }
 
             MenuItem(

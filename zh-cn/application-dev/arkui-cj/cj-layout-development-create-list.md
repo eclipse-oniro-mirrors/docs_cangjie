@@ -161,8 +161,8 @@ public class EntryView {
                 Text('上海').fontSize(24)
             }
         }
-        .backgroundColor(0xfff1f3f5)
-        .alignListItem(ListItemAlign.Center)
+            .backgroundColor(0xfff1f3f5)
+            .alignListItem(ListItemAlign.Center)
     }
 }
 ```
@@ -228,11 +228,14 @@ public class Contact {
 @Entry
 @Component
 public class EntryView {
-    private var contacts: Array<Contact> = [Contact('小明', @r(app.media.startIcon)), Contact('小红', @r(app.media.startIcon))]
+    private var contacts: Array<Contact> = [Contact('小明', @r(app.media.startIcon)),
+        Contact('小红', @r(app.media.startIcon))]
     func build() {
         List() {
-            ForEach(this.contacts, itemGeneratorFunc: { item: Contact, _: Int64 =>
-                    ListItem() {
+            ForEach(
+                this.contacts,
+                itemGeneratorFunc: {
+                    item: Contact, _: Int64 => ListItem() {
                         Row() {
                             Image(item.icon)
                                 .width(40)
@@ -347,17 +350,15 @@ public class EntryView {
 
     func build() {
         List() {
-            ListItemGroup(
-                header: this.itemHead("a")){
-                    =>
-                    // 循环渲染分组A的ListItem
-                }
+            ListItemGroup(header: this.itemHead("a")) {
+                =>
+                // 循环渲染分组A的ListItem
+            }
 
-            ListItemGroup(
-                header: this.itemHead("b")) {
-                    =>
-                    // 循环渲染分组A的ListItem
-                }
+            ListItemGroup(header: this.itemHead("b")) {
+                =>
+                // 循环渲染分组A的ListItem
+            }
         }
     }
 }
@@ -412,27 +413,34 @@ public class ContactGroup {
 @Component
 public class EntryView {
     // 定义分组联系人数据集合contactsGroups数组
-    private var contactsGroups : Array<ContactGroup> = [
-            ContactGroup('A', [Contact('艾佳', @r(app.media.startIcon)),Contact('安安', @r(app.media.startIcon)),Contact('Angela', @r(app.media.startIcon))]),
-            ContactGroup('B', [Contact('白叶', @r(app.media.startIcon)),Contact('伯明', @r(app.media.startIcon))])
-        ]
+    private var contactsGroups: Array<ContactGroup> = [
+        ContactGroup('A',
+            [Contact('艾佳', @r(app.media.startIcon)), Contact('安安', @r(app.media.startIcon)),
+                Contact('Angela', @r(app.media.startIcon))]),
+        ContactGroup('B', [Contact('白叶', @r(app.media.startIcon)), Contact('伯明', @r(app.media.startIcon))])
+    ]
 
     @Builder
     func itemHead(text: String) {
         // 列表分组的头部组件，对应联系人分组A、B等位置的组件
         Text(text)
-          .fontSize(20)
-          .backgroundColor(0xfff1f3f5)
-          .width(100.percent)
-          .padding(5)
+            .fontSize(20)
+            .backgroundColor(0xfff1f3f5)
+            .width(100.percent)
+            .padding(5)
     }
 
     @Builder
     func footertest(itemGroup: ContactGroup) {
-        ForEach(itemGroup.contacts, itemGeneratorFunc: { item: Contact, _:Int64 =>
-                ListItem() {
+        ForEach(
+            itemGroup.contacts,
+            itemGeneratorFunc: {
+                item: Contact, _: Int64 => ListItem() {
                     Row() {
-                        Image(item.icon).width(36).height(36).margin(8)
+                        Image(item.icon)
+                            .width(36)
+                            .height(36)
+                            .margin(8)
                         itemHead(item.name)
                     }
                 }.backgroundColor(Color(0XFFFFFFFF))
@@ -443,18 +451,20 @@ public class EntryView {
     func build() {
         List() {
             // 循环渲染ListItemGroup，contactsGroups为多个分组联系人contacts和标题title的数据集合
-            ForEach(this.contactsGroups, itemGeneratorFunc: { itemGroup: ContactGroup, _: Int64 =>
-                    ListItemGroup(header: this.itemHead(itemGroup.title)) {
+            ForEach(
+                this.contactsGroups,
+                itemGeneratorFunc: {
+                    itemGroup: ContactGroup, _: Int64 => ListItemGroup(header: this.itemHead(itemGroup.title)) {
                         this.footertest(itemGroup)
-                    }
-                    .divider(ListDividerOptions(strokeWidth: 1, color: Color(0X08000000), startMargin: 48, endMargin: 48))
+                    }.divider(ListDividerOptions(strokeWidth: 1, color: Color(0X08000000), startMargin: 48,
+                        endMargin: 48))
                 },
                 keyGeneratorFunc: {item: ContactGroup, idx: Int64 => idx.toString()}
             )
         }
-        .backgroundColor(Color(0X08000000))
-        .divider(ListDividerOptions(strokeWidth: 1, color: Color(0X08000000), startMargin: 48, endMargin: 48))
-        .sticky(StickyStyle.Header) // 设置吸顶，实现粘性标题效果
+            .backgroundColor(Color(0X08000000))
+            .divider(ListDividerOptions(strokeWidth: 1, color: Color(0X08000000), startMargin: 48, endMargin: 48))
+            .sticky(StickyStyle.Header) // 设置吸顶，实现粘性标题效果
     }
 }
 ```
@@ -518,20 +528,21 @@ import ohos.resource.*
 @Entry
 @Component
 public class EntryView {
-    let alphabets = ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K','L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
-    @State var selectedIndex: Int32 = 0;
-    private var listScroller:Scroller = Scroller()
+    let alphabets = ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S',
+        'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+    @State
+    var selectedIndex: Int32 = 0;
+    private var listScroller: Scroller = Scroller()
 
     func build() {
         Stack(alignContent: Alignment.End) {
-            List(scroller: this.listScroller) {}
-                .onScrollIndex({ firstIndex, scrollState, _ =>
-                    // 根据列表滚动到的索引值，重新计算对应联系人索引栏的位置this.selectedIndex
-                })
+            List(scroller: this.listScroller) {}.onScrollIndex({
+                firstIndex, scrollState, _ =>
+            // 根据列表滚动到的索引值，重新计算对应联系人索引栏的位置this.selectedIndex
+            })
 
             // 字母表索引组件
-            AlphabetIndexer(arrayValue: this.alphabets, selected: 0)
-                .selected(this.selectedIndex)
+            AlphabetIndexer(arrayValue: this.alphabets, selected: 0).selected(this.selectedIndex)
         }
     }
 }
@@ -703,7 +714,8 @@ List() {
     <!-- code_check_manual -->
 
     ```cangjie
-    @State var routes: Array<ItemGroupInfo> = [
+    @State
+    var routes: Array<ItemGroupInfo> = [
         ItemGroupInfo(
             0,
             'basicInfo',
@@ -722,7 +734,9 @@ List() {
         ItemGroupInfo(4, 'tradeInfo', '交易与资产信息', []),
         ItemGroupInfo(5, 'otherInfo', '其他资料', [])
     ]
-    @State var expandedItems: ObservedArrayList<Float32> = ObservedArrayList<Float32>([0.0, 0.0, 0.0, 0.0, 0.0, 0.0])
+
+    @State
+    var expandedItems: ObservedArrayList<Float32> = ObservedArrayList<Float32>([0.0, 0.0, 0.0, 0.0, 0.0, 0.0])
 
     func build() {
         Column() {
@@ -730,40 +744,39 @@ List() {
             List(space: 10) {
                 ForEach(
                     this.routes,
-                    itemGeneratorFunc: { itemGroup: ItemGroupInfo, _: Int64 =>
-                        ListItemGroup(header: this.ListItemGroupHeader(itemGroup),
+                    itemGeneratorFunc: {
+                        itemGroup: ItemGroupInfo, _: Int64 => ListItemGroup(header: this.ListItemGroupHeader(itemGroup),
                             footer: {=>}, space: 0, style: ListItemGroupStyle.Card) {
-                                if (this.expandedItems[itemGroup.index] == 180.0) {
-                                    ForEach(itemGroup.children, itemGeneratorFunc: { item: ItemInfo, _: Int64 =>
-                                        ListItem() {
-                                                Row() {
-                                                    Text(item.name)
-                                                    Blank()
-                                                    if (item.`type` == 'Image') {
-                                                        Image(item.label)
-                                                            .height(20)
-                                                            .width(20)
-                                                    } else {
-                                                        Text(item.label)
-                                                    }
-                                                    Image(@r(sys.media.ohos_ic_public_arrow_right))
-                                                        .fillColor(@r(sys.color.ohos_id_color_fourth))
-                                                        .height(30)
-                                                        .width(30)
-                                                }
-                                                .width(100.percent)
+                            if (this.expandedItems[itemGroup.index] == 180.0) {
+                                ForEach(itemGroup.children, itemGeneratorFunc: {
+                                    item: ItemInfo, _: Int64 => ListItem() {
+                                        Row() {
+                                            Text(item.name)
+                                            Blank()
+                                            if (item.`type` == 'Image') {
+                                                Image(item.label)
+                                                    .height(20)
+                                                    .width(20)
+                                            } else {
+                                                Text(item.label)
+                                            }
+                                            Image(@r(sys.media.ohos_ic_public_arrow_right))
+                                                .fillColor(@r(sys.color.ohos_id_color_fourth))
+                                                .height(30)
+                                                .width(30)
                                         }.width(100.percent)
-                                    })
-                                }
+                                    }.width(100.percent)
+                                })
                             }
+                        }
                     }
                 )
             }.width(100.percent)
         }
-        .width(100.percent)
-        .height(100.percent)
-        .justifyContent(FlexAlign.Start)
-        .backgroundColor(@r(sys.color.ohos_id_color_sub_background))
+            .width(100.percent)
+            .height(100.percent)
+            .justifyContent(FlexAlign.Start)
+            .backgroundColor(@r(sys.color.ohos_id_color_sub_background))
     }
     ```
 
@@ -784,10 +797,10 @@ List() {
                 .rotate(x: this.expandedItems[itemGroup.index])
                 .animation(AnimateParam(curve: Curve.EaseInOut, duration: 500))
         }
-        .width(100.percent)
-        .padding(10)
-        .onClick({
-            event => this.expandedItems[itemGroup.index] = 180.0 - this.expandedItems[itemGroup.index]
-        })
+            .width(100.percent)
+            .padding(10)
+            .onClick({
+                event => this.expandedItems[itemGroup.index] = 180.0 - this.expandedItems[itemGroup.index]
+            })
     }
     ```

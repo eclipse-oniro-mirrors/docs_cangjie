@@ -101,13 +101,16 @@
     ```cangjie
     @Observed
     class Person {
-        @Publish var value: String
+        @Publish
+        var value: String
     }
 
     @Observed
     class Model {
-        @Publish var value: String = ""
-        @Publish var name: Person = Person(value: " ")
+        @Publish
+        var value: String = ""
+        @Publish
+        var name: Person = Person(value: " ")
     }
     ```
 
@@ -158,7 +161,8 @@
     ```cangjie
     @Observed
     class Model {
-        @Publish public var value: Int
+        @Publish
+        public var value: Int
     }
     ```
 
@@ -261,12 +265,14 @@ EntryView的状态变量countDownStartValue的变化将重置CountDownComponent�
 
 ```cangjie
 package ohos_app_cangjie_entry
+
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
 
 @Component
 class CountDownComponent {
-    @Prop var count: Int64
+    @Prop
+    var count: Int64
     var costOfOneAttempt: Int64 = 1
     func build() {
         Column() {
@@ -288,7 +294,8 @@ class CountDownComponent {
 @Entry
 @Component
 class EntryView {
-    @State var countDownStartValue: Int64 = 10
+    @State
+    var countDownStartValue: Int64 = 10
     func build() {
         Column {
             Text("Grant ${this.countDownStartValue} nuggets to play.")
@@ -332,12 +339,14 @@ class EntryView {
 
 ```cangjie
 package ohos_app_cangjie_entry
+
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
 
 @Component
 class Child {
-    @Prop var value: Int64
+    @Prop
+    var value: Int64
     func build() {
         Text("${this.value}")
             .fontSize(50.vp)
@@ -350,7 +359,8 @@ class Child {
 @Entry
 @Component
 class EntryView {
-    @State var arr: Array<Int64> = [1, 2, 3]
+    @State
+    var arr: Array<Int64> = [1, 2, 3]
     func build() {
         Row {
             Column {
@@ -424,19 +434,22 @@ class EntryView {
 
 ```cangjie
 package ohos_app_cangjie_entry
+
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
 
 @Observed
 class Book {
-     public var title: String
-     public var pages: Int64
-     @Publish public var readIt: Bool = false
+    public var title: String
+    public var pages: Int64
+    @Publish
+    public var readIt: Bool = false
 }
 
 @Component
 class ReaderComp {
-    @Prop var book: Book
+    @Prop
+    var book: Book
     func build() {
         Row() {
             Text(this.book.title)
@@ -454,7 +467,8 @@ class ReaderComp {
 @Entry
 @Component
 class EntryView {
-    @State var book: Book = Book(title:'100 secrets of C++',pages: 765)
+    @State
+    var book: Book = Book(title: '100 secrets of C++', pages: 765)
     func build() {
         Column {
             ReaderComp(book: this.book)
@@ -483,12 +497,14 @@ import ohos.arkui.state_macro_manage.*
 class Book {
     public var title: String
     public var pages: Int64
-    @Publish public var readIt: Bool = false
+    @Publish
+    public var readIt: Bool = false
 }
 
 @Component
 class ReaderComp {
-    @Prop var book: Book
+    @Prop
+    var book: Book
     func build() {
         Row() {
             Text(this.book.title)
@@ -497,19 +513,20 @@ class ReaderComp {
                 evt => this.book.readIt = true
             })
         }
-        .backgroundColor(0x00ff00)
-        .width(312)
-        .height(40)
-        .padding(left: 20, top: 10)
-        .borderRadius(20)
-        .margin(10)
+            .backgroundColor(0x00ff00)
+            .width(312)
+            .height(40)
+            .padding(left: 20, top: 10)
+            .borderRadius(20)
+            .margin(10)
     }
 }
 
 @Entry
 @Component
 class EntryView {
-    @State var allBooks: ObservedArrayList<Book> = ObservedArrayList<Book>(
+    @State
+    var allBooks: ObservedArrayList<Book> = ObservedArrayList<Book>(
         [Book(title: "JS", pages: 765), Book(title: "Cangjie", pages: 652), Book(title: "ArkUI", pages: 765)])
 
     func build() {
@@ -574,30 +591,33 @@ class EntryView {
 
 ```cangjie
 package ohos_app_cangjie_entry
+
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
 
 // 以下是嵌套类对象的数据结构。
 @Observed
 class Son {
-    @Publish var title: String
+    @Publish
+    var title: String
 }
 
 @Observed
 class Father {
-    @Publish var name: String
-    @Publish var son: Son
+    @Publish
+    var name: String
+    @Publish
+    var son: Son
 }
 // 以下组件层次结构呈现的是@Prop嵌套场景的数据结构。
 @Entry
 @Component
 class EntryView {
-    @State var person: Father = Father(name: 'Hello', son: Son(title: 'world'));
+    @State
+    var person: Father = Father(name: 'Hello', son: Son(title: 'world'));
     func build() {
         Column {
-            Flex(
-                direction: FlexDirection.Column, alignItems: ItemAlign.Center,
-                    justifyContent: FlexAlign.SpaceBetween) {
+            Flex(direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.SpaceBetween) {
                 Button('change Father name')
                     .width(312)
                     .height(40)
@@ -640,7 +660,8 @@ class EntryView {
 
 @Component
 class Child {
-    @Prop var child: Son
+    @Prop
+    var child: Son
     func build() {
         Column() {
             Text(this.child.title)

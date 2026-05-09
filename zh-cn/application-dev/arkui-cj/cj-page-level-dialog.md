@@ -56,21 +56,32 @@ import ohos.arkui.state_macro_manage.*
 @Entry
 @Component
 class EntryView {
-    @State var message: String = 'Hello World'
-    @State var customDialogId: Int32 = 0
-    
+    @State
+    var message: String = 'Hello World'
+    @State
+    var customDialogId: Int32 = 0
+
     @Builder
     func customDialogBuilder() {
         Column() {
-            Text('Custom dialog Message').fontSize(20).height(100)
+            Text('Custom dialog Message')
+                .fontSize(20)
+                .height(100)
             Row() {
-                Button('Next').onClick({ evt => 
+                Button('Next').onClick({
+                    evt =>
                     // 在弹窗内部进行路由跳转。
-                    this.getUIContext().getRouter().pushUrl(url: 'Next')
+                    this
+                        .getUIContext()
+                        .getRouter()
+                        .pushUrl(url: 'Next')
                 })
                 Blank().width(50)
-                Button('Close').onClick({ evt =>
-                    this.getUIContext().getPromptAction().closeCustomDialog(customDialogId)
+                Button('Close').onClick({
+                    evt => this
+                        .getUIContext()
+                        .getPromptAction()
+                        .closeCustomDialog(customDialogId)
                 })
             }
         }.padding(20)
@@ -80,24 +91,26 @@ class EntryView {
         NavDestination() {
             Row() {
                 Column() {
-                    Text(this.message).id('test_text')
-                    .fontSize(50)
-                    .fontWeight(FontWeight.Bold)
-                    .onClick({ evt =>
-                        this.getUIContext().getPromptAction().openCustomDialog(
-                            CustomDialogConfig(
-                                builder: bind(this.customDialogBuilder, this),
-                                levelMode: LevelMode.Embedded, // 启用页面级弹出框
-                            ),
-                            { id =>
-                                customDialogId = id
-                            }
-                        )    
-                    })
-                }
-                .width(100.percent)
-            }
-            .height(100.percent)
+                    Text(this.message)
+                        .id('test_text')
+                        .fontSize(50)
+                        .fontWeight(FontWeight.Bold)
+                        .onClick({
+                            evt => this
+                                .getUIContext()
+                                .getPromptAction()
+                                .openCustomDialog(
+                                    CustomDialogConfig(
+                                        builder: bind(this.customDialogBuilder, this),
+                                        levelMode: LevelMode.Embedded, // 启用页面级弹出框
+                                    ),
+                                    {
+                                        id => customDialogId = id
+                                    }
+                                )
+                        })
+                }.width(100.percent)
+            }.height(100.percent)
         }
     }
 }
@@ -114,21 +127,23 @@ import ohos.arkui.state_macro_manage.*
 @Entry
 @Component
 class Next {
-    @State var message: String = 'Back'
+    @State
+    var message: String = 'Back'
 
     func build() {
         Row() {
             Column() {
                 Button(this.message)
-                .fontSize(20)
-                .fontWeight(FontWeight.Bold)
-                .onClick({ evt =>
-                    this.getUIContext().getRouter().back()
-                })
-            }
-            .width(100.percent)
-        }
-        .height(100.percent)
+                    .fontSize(20)
+                    .fontWeight(FontWeight.Bold)
+                    .onClick({
+                        evt => this
+                            .getUIContext()
+                            .getRouter()
+                            .back()
+                    })
+            }.width(100.percent)
+        }.height(100.percent)
     }
 }
 ```

@@ -101,6 +101,7 @@ TextArea( text: '这是一段文本，用来展示选中菜单')
 
 ```cangjie
 package ohos_app_cangjie_entry
+
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
 
@@ -111,14 +112,16 @@ class EntryView {
     func build() {
         Scroll() {
             Column {
-                ForEach(this.placeHolderArr, itemGeneratorFunc: {placeholder: String, _: Int64 =>
-                TextInput( placeholder: 'TextInput ' + placeholder )
-                .margin(30)}
+                ForEach(
+                    this.placeHolderArr,
+                    itemGeneratorFunc: {
+                        placeholder: String, _: Int64 => TextInput(placeholder: 'TextInput ' + placeholder).margin(30)
+                    }
                 )
             }
         }
-        .height(100.percent)
-        .width(100.percent)
+            .height(100.percent)
+            .width(100.percent)
     }
 }
 ```

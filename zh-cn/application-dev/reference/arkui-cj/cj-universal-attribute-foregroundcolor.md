@@ -72,6 +72,7 @@ func foregroundColor(value: ?ResourceColor): T
 
 ```cangjie
 package ohos_app_cangjie_entry
+
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
 
@@ -93,9 +94,8 @@ class EntryView {
                 .fontSize(20)
                 .foregroundColor(0x64BB5C)
                 .backgroundColor(0xD1D1D6)
-            }
-            .width(100.percent)
-        }
+        }.width(100.percent)
+    }
 }
 ```
 
@@ -109,6 +109,7 @@ class EntryView {
 
 ```cangjie
 package ohos_app_cangjie_entry
+
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
 
@@ -126,9 +127,8 @@ class EntryView {
                 .height(80)
                 .backgroundColor(Color.Black)
                 .foregroundColor(ColoringStrategy.Invert)
-            }
-            .width(100.percent)
-        }
+        }.width(100.percent)
+    }
 }
 ```
 
@@ -142,6 +142,7 @@ class EntryView {
 
 ```cangjie
 package ohos_app_cangjie_entry
+
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
 
@@ -159,11 +160,11 @@ class EntryView {
 
             Button("未设置前景色继承自父组件")
                 .width(100.percent)
-                .height(80).fontSize(20)
+                .height(80)
+                .fontSize(20)
                 .backgroundColor(Color.Gray)
-            }
-            .width(100.percent)
-        }
+        }.width(100.percent)
+    }
 }
 ```
 

@@ -81,6 +81,7 @@ RowSplit的基本用法。设置可拖动的、横向布局的子组件。
 
 ```cangjie
 package ohos_app_cangjie_entry
+
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
 
@@ -120,11 +121,12 @@ class EntryView {
                     .backgroundColor(0xF5DEB3)
                     .textAlign(TextAlign.Center)
             }
-            .resizeable(true) // 可拖动
-            .width(90.percent).height(100)
+                .resizeable(true) // 可拖动
+                .width(90.percent)
+                .height(100)
         }
-        .width(100.percent)
-        .padding(top: 5)
+            .width(100.percent)
+            .padding(top: 5)
     }
 }
 ```

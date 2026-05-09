@@ -52,6 +52,7 @@ func sharedTransition(id: String, options!: ?SharedTransitionOptions): T
 ```cangjie
 // index.cj
 package ohos_app_cangjie_entry
+
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
 import ohos.resource.__GenerateResource__
@@ -59,7 +60,8 @@ import ohos.resource.__GenerateResource__
 @Entry
 @Component
 class EntryView {
-    @State var active: Bool = false
+    @State
+    var active: Bool = false
     func build() {
         Column() {
             Image(@r(app.media.startIcon))
@@ -80,6 +82,7 @@ class EntryView {
 ```cangjie
 // Page1.cj
 package ohos_app_cangjie_entry
+
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
 import ohos.resource.__GenerateResource__
@@ -97,8 +100,8 @@ class Page1 {
                     options: SharedTransitionOptions(duration: 800, curve: Curve.Linear, delay: 100)
                 )
         }
-        .width(100.percent)
-        .height(100.percent)
+            .width(100.percent)
+            .height(100.percent)
     }
 }
 ```

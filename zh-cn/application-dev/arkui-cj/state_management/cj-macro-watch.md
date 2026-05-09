@@ -40,11 +40,19 @@
 - @Watch参数为必选，且参数必须是声明的方法名，否则编译期会报错。
 
   ```cangjie
-  @State @Watch[] var count : Int64 = 10
-  @State @Watch["onChanged"] var count : Int64 = 10
+  @State
+  @Watch[]
+  var count: Int64 = 10
+
+  @State
+  @Watch["onChanged"]
+  var count: Int64 = 10
   // 正确写法
-  @State @Watch[onChanged] var count: Int64 = 0
-  func onChanged(){
+  @State
+  @Watch[onChanged]
+  var count: Int64 = 0
+
+  func onChanged() {
       Hilog.info(0, "xxx", "xxx")
   }
   ```
@@ -53,14 +61,20 @@
 
   ```cangjie
   // 错误写法，没有对应名称的函数，编译报错
-  @State @Watch[change] var count: Int64 = 0
-  func onChanged(){
+  @State
+  @Watch[change]
+  var count: Int64 = 0
+
+  func onChanged() {
       Hilog.info(0, "xxx", "xxx")
   }
 
   // 正确写法
-  @State @Watch[change] var count: Int64 = 0
-  func change(){
+  @State
+  @Watch[change]
+  var count: Int64 = 0
+
+  func change() {
       Hilog.info(0, "xxx", "xxx")
   }
   ```
@@ -69,14 +83,19 @@
 
   ```cangjie
   // 错误写法
-  @Watch[change] var count: Int64 = 0
-  func change(){
+  @Watch[change]
+  var count: Int64 = 0
+
+  func change() {
       Hilog.info(0, "xxx", "xxx")
   }
 
   // 正确写法
-  @State @Watch[change] var count: Int64 = 0
-  func change(){
+  @State
+  @Watch[change]
+  var count: Int64 = 0
+
+  func change() {
       Hilog.info(0, "xxx", "xxx")
   }
   ```
@@ -91,35 +110,39 @@
 
 ```cangjie
 package ohos_app_cangjie_entry
+
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
 
 @Component
 class TotalView {
-  @Link @Watch[onCountUpdated] var count: Int64
-  @State var total: Int64 = 0
-  // @Watch 回调
-  func onCountUpdated(): Unit {
-    this.total += this.count
-  }
-  func build() {
-    Text("Total: ${this.total}")
-  }
+    @Link
+    @Watch[onCountUpdated]
+    var count: Int64
+    @State
+    var total: Int64 = 0
+    // @Watch 回调
+    func onCountUpdated(): Unit {
+        this.total += this.count
+    }
+    func build() {
+        Text("Total: ${this.total}")
+    }
 }
 
 @Entry
 @Component
 class EntryView {
-  @State var count: Int64 = 0
-  func build() {
-    Column() {
-      Button("add to basket")
-        .onClick({ e =>
-          this.count++
-        })
-      TotalView(count: this.count)
+    @State
+    var count: Int64 = 0
+    func build() {
+        Column() {
+            Button("add to basket").onClick({
+                e => this.count++
+            })
+            TotalView(count: this.count)
+        }
     }
-  }
 }
 ```
 
@@ -137,18 +160,22 @@ class EntryView {
 
 ```cangjie
 package ohos_app_cangjie_entry
+
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
 import std.collection.ArrayList
 import std.random.*
 
 @Component
-class BasketViewer{
-    @Link @Watch[onBasketUpdated] var shopBasket : ArrayList<Float64>
-    @State var totalPurchase: Float64 = 0.0
+class BasketViewer {
+    @Link
+    @Watch[onBasketUpdated]
+    var shopBasket: ArrayList<Float64>
+    @State
+    var totalPurchase: Float64 = 0.0
     func updateTotal(): Float64 {
-        var total : Float64 = 0.0
-        for(i in shopBasket){
+        var total: Float64 = 0.0
+        for (i in shopBasket) {
             total += i
         }
         if (total >= 100.0) {
@@ -157,17 +184,19 @@ class BasketViewer{
         return total
     }
     // @Watch 回调
-    func onBasketUpdated(){
+    func onBasketUpdated() {
         this.totalPurchase = this.updateTotal()
     }
     func build() {
-        Column(){
-            ForEach(this.shopBasket,itemGeneratorFunc:
-                { item: Float64, index : Int64 =>
-                    Text("${index}")
-                    Text("Price：${item} €")
-                    }
-                )
+        Column() {
+            ForEach(
+                this.shopBasket,
+                itemGeneratorFunc: {
+                    item: Float64, index: Int64 =>
+                        Text("${index}")
+                        Text("Price：${item} €")
+                }
+            )
             Text("Total: ${this.totalPurchase} €")
         }
     }
@@ -176,8 +205,9 @@ class BasketViewer{
 @Entry
 @Component
 class EntryView {
-    @State var shopBasket : ArrayList<Float64> =  ArrayList<Float64>([0.0])
-    let m : Random = Random()
+    @State
+    var shopBasket: ArrayList<Float64> = ArrayList<Float64>([0.0])
+    let m: Random = Random()
     func build() {
         Column(){
             Button("Add to basket")
@@ -207,40 +237,47 @@ class EntryView {
 
 ```cangjie
 package ohos_app_cangjie_entry
+
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
 
 @Entry
 @Component
-class EntryView{
-    @State @Watch[countUpdated] var apple: Int64 = 0
-    @State @Watch[countUpdated] var cabbage: Int64 = 0
-    @State var propName :String = "test"
-    @State var fruit : Int64 = 0
-    func countUpdated(){
-        if (this.propName=="apple") {
+class EntryView {
+    @State
+    @Watch[countUpdated]
+    var apple: Int64 = 0
+    @State
+    @Watch[countUpdated]
+    var cabbage: Int64 = 0
+    @State
+    var propName: String = "test"
+    @State
+    var fruit: Int64 = 0
+    func countUpdated() {
+        if (this.propName == "apple") {
             this.fruit = this.apple
         }
     }
-    func build(){
-        Column(){
-            Text("Number of apples: ${this.apple.toString()}")
-                .fontSize(30)
-            Text("Number of cabbages: ${this.cabbage.toString()}")
-                .fontSize(30)
-            Text("Total number of fruits: ${this.fruit.toString()}")
-                .fontSize(30)
-            Button("Add apples")
-                .onClick({etv=>
-                    this.propName = "apple"
-                    this.apple++
-                })
-            Button("Add cabbages")
-                .onClick({etv=>
-                    this.propName = "cabbages"
-                    this.cabbage++
-                })
-
+    func build() {
+        Column() {
+            Text("Number of apples: ${this.apple.toString()}").fontSize(30)
+            Text("Number of cabbages: ${this.cabbage.toString()}").fontSize(30)
+            Text("Total number of fruits: ${this.fruit.toString()}").fontSize(30)
+            Button("Add apples").onClick(
+                {
+                    etv =>
+                        this.propName = "apple"
+                        this.apple++
+                }
+            )
+            Button("Add cabbages").onClick(
+                {
+                    etv =>
+                        this.propName = "cabbages"
+                        this.cabbage++
+                }
+            )
         }
     }
 }

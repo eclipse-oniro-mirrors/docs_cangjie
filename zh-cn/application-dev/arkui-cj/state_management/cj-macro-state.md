@@ -74,7 +74,8 @@
 
     ```cangjie
     // struct类型
-    @State var person: Person = Person(1, "Kim")
+    @State
+    var person: Person = Person(1, "Kim")
     ```
 
     对\@State装饰变量的整体赋值可行。
@@ -98,20 +99,24 @@
     ```cangjie
     @Observed
     class Person {
-        @Publish var value: String
+        @Publish
+        var value: String
     }
 
     @Observed
     class Model {
-        @Publish var value: String = ""
-        @Publish var name: Person = Person(value: " ")
+        @Publish
+        var value: String = ""
+        @Publish
+        var name: Person = Person(value: " ")
     }
     ```
 
     \@State装饰的类型是Model。
 
     ```cangjie
-    @State var title: Model = Model(value: 'Hello', name: Person(value: "World"))
+    @State
+    var title: Model = Model(value: 'Hello', name: Person(value: "World"))
     ```
 
     对\@State装饰变量的赋值。
@@ -135,7 +140,8 @@
     \@State装饰的对象为ArrayList类型数组时。
 
     ```cangjie
-    @State var arrlist: ArrayList<Int16> = ArrayList<Int16>([1, 2, 3])
+    @State
+    var arrlist: ArrayList<Int16> = ArrayList<Int16>([1, 2, 3])
     ```
 
     数组整体的变化可以感知。
@@ -155,7 +161,8 @@
     ```cangjie
     @Observed
     class Model {
-        @Publish public var value: Int
+        @Publish
+        public var value: Int
     }
     ```
 
@@ -163,7 +170,8 @@
 
     ```cangjie
     // ObservedArray数组类型
-    @State var title: ObservedArrayList<Model> = ObservedArrayList<Model>(ArrayList<Model>([Model(value: 11), Model(value: 1)]))
+    @State
+    var title: ObservedArrayList<Model> = ObservedArrayList<Model>(ArrayList<Model>([Model(value: 11), Model(value: 1)]))
     ```
 
     数组自身的赋值可以感知。
@@ -209,7 +217,8 @@
 
     ```cangjie
     //@State装饰的对象为HashSet时
-    @State var message: HashSet<Int64> = HashSet<Int64>()
+    @State
+    var message: HashSet<Int64> = HashSet<Int64>()
     ```
 
     HashSet整体的变化可以感知。
@@ -260,12 +269,15 @@
 
 ```cangjie
 package ohos_app_cangjie_entry
+
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
+
 @Entry
 @Component
 class EntryView {
-    @State var count: Int = 0
+    @State
+    var count: Int = 0
     func build() {
         Button("click times: ${count}").onClick({evt => this.count += 1})
     }
@@ -284,12 +296,14 @@ class EntryView {
 
 ```cangjie
 package ohos_app_cangjie_entry
+
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
 
 @Observed
 class Model {
-    @Publish public var value: String
+    @Publish
+    public var value: String
 }
 
 @Entry
@@ -306,8 +320,10 @@ class EntryView {
 
 @Component
 class MyComponent {
-    @State var title: Model = Model(value: 'Hello World')
-    @State var count: Int64 = 0
+    @State
+    var title: Model = Model(value: 'Hello World')
+    @State
+    var count: Int64 = 0
     private var increaseBy: Int64 = 1
     func build() {
         Column {
@@ -362,19 +378,22 @@ class MyComponent {
 
 ```cangjie
 package ohos_app_cangjie_entry
+
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
 
 @Observed
 class PlayDetailViewModel {
-    @Publish var coverUrl: UInt32
+    @Publish
+    var coverUrl: UInt32
     var changeCoverUrl: (PlayDetailViewModel) -> Unit
 }
 
 @Entry
 @Component
 class EntryView {
-    @State var vm: PlayDetailViewModel = PlayDetailViewModel(coverUrl: 0x00ff00,
+    @State
+    var vm: PlayDetailViewModel = PlayDetailViewModel(coverUrl: 0x00ff00,
         changeCoverUrl: {model: PlayDetailViewModel => model.coverUrl = 0x00F5FF})
     func build() {
         Column() {
@@ -404,19 +423,23 @@ class EntryView {
 
 ```cangjie
 package ohos_app_cangjie_entry
+
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
 
 @Observed
 class Info {
-    @Publish var address: String = '杭州'
+    @Publish
+    var address: String = '杭州'
 }
 
 @Entry
 @Component
 class EntryView {
-    @State var message: String = '上海'
-    @State var info: Info = Info()
+    @State
+    var message: String = '上海'
+    @State
+    var info: Info = Info()
     public func aboutToAppear() {
         this.info.address = this.message
     }
@@ -442,24 +465,29 @@ class EntryView {
 
 ```cangjie
 package ohos_app_cangjie_entry
+
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
 
 @Observed
 class Info {
-    @Publish var address: String = '杭州'
+    @Publish
+    var address: String = '杭州'
 }
 
 @Observed
 class User {
-    @Publish var infomation: Info
+    @Publish
+    var infomation: Info
 }
 
 @Entry
 @Component
 class EntryView {
-    @State var info: Info = Info(address: '上海')
-    @State var user: User = User(infomation: Info(address: '天津'))
+    @State
+    var info: Info = Info(address: '上海')
+    @State
+    var user: User = User(infomation: Info(address: '天津'))
     public func aboutToAppear() {
         this.user.infomation = this.info
     }
@@ -507,7 +535,8 @@ class EntryView {
 @Entry
 @Component
 class EntryView {
-    @State var count :Int64 = 1
+    @State
+    var count: Int64 = 1
     func build() {
         Column() {
             // 应避免直接在Text组件内改变count的值
@@ -529,14 +558,15 @@ class EntryView {
 @Entry
 @Component
 class EntryView {
-    @State var message: Int = 20;
+    @State
+    var message: Int = 20;
     func build() {
         Column() {
             Text("${this.message++}")
             Text("${this.message++}")
         }
-        .width(50)
-        .height(100)
+            .width(50)
+            .height(100)
     }
 }
 ```
@@ -563,12 +593,14 @@ class EntryView {
 
 ```cangjie
 package ohos_app_cangjie_entry
+
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
 
 @Observed
 class Model {
-    @Publish var callback: () -> Unit
+    @Publish
+    var callback: () -> Unit
     func add(callback: () -> Unit) {
         this.callback = callback
     }
@@ -587,7 +619,8 @@ let model = Model(callback: {=>})
 @Entry
 @Component
 class EntryView {
-    @State var count: Int64 = 10
+    @State
+    var count: Int64 = 10
 
     public override func onPageShow() {
         model.add({=> this.count++})
@@ -600,7 +633,7 @@ class EntryView {
             })
         }
     }
-    public func aboutToDisappear(){
+    public func aboutToDisappear() {
         model.delete()
     }
 }
