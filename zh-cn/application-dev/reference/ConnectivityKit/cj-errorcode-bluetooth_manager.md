@@ -188,7 +188,7 @@ The operation is busy. The last operation is not complete.
 
 上一个执行的操作还未完成即执行本次操作，例如[readCharacteristicValue](./cj-apis-bluetooth-ble.md#func-readcharacteristicvalueblecharacteristic-asynccallbackblecharacteristic)未结束即进行下一次操作。
 
-其他涉及的接口有[writeCharacteristicValue](./cj-apis-bluetooth-ble.md#func-writecharacteristicvalueblecharacteristic-gattwritetype-asynccallbackunit)、[readDescriptorValue](./cj-apis-bluetooth-ble.md#func-readdescriptorvaluebledescriptor-asynccallbackbledescriptor)、[writeDescriptorValue](./cj-apis-bluetooth-ble.md#func-writedescriptorvaluebledescriptor-gattwritetype-asynccallbackunit)、[getRssiValue](./cj-apis-bluetooth-ble.md#func-getrssivalueasynccallbackint64)、[setCharacteristicChangeNotification](./cj-apis-bluetooth-ble.md#func-setcharacteristicchangenotificationbool-asynccallbackunit)、[setCharacteristicChangeIndication](./cj-apis-bluetooth-ble.md#func-setcharacteristicchangeindicationbool-asynccallbackunit)，如调用未完成均可能阻塞下一次操作。
+其他涉及的接口有[writeCharacteristicValue](./cj-apis-bluetooth-ble.md#func-writecharacteristicvalueblecharacteristic-gattwritetype-asynccallbackunit)、[readDescriptorValue](./cj-apis-bluetooth-ble.md#func-readdescriptorvaluebledescriptor-asynccallbackbledescriptor)、[writeDescriptorValue](./cj-apis-bluetooth-ble.md#func-writedescriptorvaluebledescriptor-asynccallbackunit)、[getRssiValue](./cj-apis-bluetooth-ble.md#func-getrssivalueasynccallbackint32)、[setCharacteristicChangeNotification](./cj-apis-bluetooth-ble.md#func-setcharacteristicchangenotificationblecharacteristic-bool-asynccallbackunit)、[setCharacteristicChangeIndication](./cj-apis-bluetooth-ble.md#func-setcharacteristicchangeindicationblecharacteristic-bool-asynccallbackunit)，如调用未完成均可能阻塞下一次操作。
 
 **处理步骤**
 

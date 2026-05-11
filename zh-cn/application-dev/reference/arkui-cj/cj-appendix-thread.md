@@ -29,7 +29,7 @@ public let UIThread: MainThreadContext = MainThreadContext.instance_
 
 **功能：** UI线程上下文实例。
 
-**类型：** MainThreadContext
+**类型：** [MainThreadContext](#class-mainthreadcontext)
 
 **读写能力：** 只读
 
@@ -69,4 +69,4 @@ public class MainThreadContext <: ThreadContext {}
 
 **父类型：**
 
-- ThreadContext
+- [ThreadContext](#class-mainthreadcontext)

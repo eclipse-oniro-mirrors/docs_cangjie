@@ -297,7 +297,7 @@ public var position: ?GuideLinePosition
 
 **功能：** 指定guideline的位置。当未声明或声明异常值（如undefined）时，guideline的位置默认为start: 0。start和 end两种声明方式选择一种即可。若同时声明，仅start生效。若容器在某个方向的size被声明为"auto"，则该方向上guideline的位置只能使用start方式声明（不允许使用百分比）。
 
-**类型：** ?[GuideLinePosition](./cj-row-column-stack-relativecontainer.md#class-guidelineposition)
+**类型：** ?[GuideLinePosition](#class-guidelineposition)
 
 **读写能力：** 可读写
 

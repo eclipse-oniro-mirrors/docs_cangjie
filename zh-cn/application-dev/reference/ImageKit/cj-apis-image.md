@@ -98,7 +98,7 @@ public func createImageReceiver(size: Size, format: ImageFormat, capacity: Int32
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -154,7 +154,7 @@ public func createImageSource(uri: String): ImageSource
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -210,7 +210,7 @@ public func createImageSource(uri: String, options: SourceOptions): ImageSource
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -265,7 +265,7 @@ public func createImageSource(fd: Int32): ImageSource
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -320,7 +320,7 @@ public func createImageSource(fd: Int32, options: SourceOptions): ImageSource
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -375,7 +375,7 @@ public func createImageSource(buf: Array<UInt8>): ImageSource
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -431,7 +431,7 @@ public func createImageSource(buf: Array<UInt8>, options: SourceOptions): ImageS
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -488,7 +488,7 @@ public func createImageSource(rawfile: RawFileDescriptor, options!: SourceOption
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -546,7 +546,7 @@ public func createPixelMap(colors: Array<UInt8>, options: InitializationOptions)
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -939,7 +939,7 @@ public prop clipRect: Region
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -963,7 +963,7 @@ public prop format: Int32
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -987,7 +987,7 @@ public prop size: Size
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -1019,7 +1019,7 @@ public func getComponent(componentType: ComponentType): Component
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -1261,7 +1261,7 @@ public prop supportedFormats: Array<String>
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -1295,7 +1295,7 @@ public func packToData(source: ImageSource, options: PackingOption): Array<UInt8
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -1364,7 +1364,7 @@ public func packToData(source: PixelMap, options: PackingOption): Array<UInt8>
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -1425,7 +1425,7 @@ public func packToFile(source: ImageSource, fd: Int32, options: PackingOption): 
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -1489,7 +1489,7 @@ public func packToFile(source: PixelMap, fd: Int32, options: PackingOption): Uni
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -1674,7 +1674,7 @@ public prop capacity: Int32
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -1698,7 +1698,7 @@ public prop format: ImageFormat
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -1722,7 +1722,7 @@ public prop size: Size
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -1748,7 +1748,7 @@ public func getReceivingSurfaceId(): String
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -1834,7 +1834,7 @@ public func readLatestImage(): Image
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -1884,7 +1884,7 @@ public func readNextImage(): Image
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -2042,7 +2042,7 @@ public prop supportedFormats: Array<String>
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -2079,7 +2079,7 @@ public func createPixelMap(options!: DecodingOptions = DecodingOptions()): Pixel
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -2152,7 +2152,7 @@ public func createPixelMapList(options!: DecodingOptions = DecodingOptions()): A
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -2223,7 +2223,7 @@ public func getDelayTimeList(): Array<Int32>
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -2279,7 +2279,7 @@ public func getFrameCount(): UInt32
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -2341,7 +2341,7 @@ public func getImageInfo(index!: UInt32 = 0): ImageInfo
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -2397,7 +2397,7 @@ public func getImageProperty(key: PropertyKey, options!: ImagePropertyOptions = 
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -2464,7 +2464,7 @@ public func modifyImageProperty(key: PropertyKey, value: String): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -2515,7 +2515,7 @@ public func release(): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -2565,7 +2565,7 @@ public func updateData(buf: Array<UInt8>, isFinished: Bool, offset: UInt32, leng
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -2913,7 +2913,7 @@ public prop isEditable: Bool
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -2937,7 +2937,7 @@ public prop isStrideAlignment: Bool
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -2963,7 +2963,7 @@ public func applyColorSpace(targetColorSpace: ColorSpaceManager): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -3015,7 +3015,7 @@ public func createAlphaPixelMap(): PixelMap
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -3063,7 +3063,7 @@ public func crop(region: Region): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -3113,7 +3113,7 @@ public func flip(horizontal: Bool, vertical: Bool): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -3163,7 +3163,7 @@ public func getBytesNumberPerRow(): UInt32
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -3211,7 +3211,7 @@ public func getColorSpace(): ColorSpaceManager
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -3263,7 +3263,7 @@ public func getDensity(): Int32
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -3311,7 +3311,7 @@ public func getImageInfo(): ImageInfo
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -3359,7 +3359,7 @@ public func getPixelBytesNumber(): UInt32
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -3407,7 +3407,7 @@ public func opacity(rate: Float32): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -3456,7 +3456,7 @@ public func readPixels(area: PositionArea): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -3510,7 +3510,7 @@ public func readPixelsToBuffer(dst: Array<UInt8>): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -3561,7 +3561,7 @@ public func release(): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -3614,7 +3614,7 @@ public func rotate(angle: Float32): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -3669,7 +3669,7 @@ public func scale(x: Float32, y: Float32): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -3717,7 +3717,7 @@ public func setColorSpace(colorSpace: ColorSpaceManager): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -3772,7 +3772,7 @@ translate后的图片尺寸改变为：width+X ，height+Y，建议translate后�
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -3822,7 +3822,7 @@ public func writeBufferToPixels(src: Array<UInt8>): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -3877,7 +3877,7 @@ RGBA的区域计算公式：读取区域（region.size{width * height}）* 4 （
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Image错误码](./cj-errorcode-image.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -4275,7 +4275,7 @@ public enum AlphaType <: Equatable<AlphaType> & ToString {
 
 **父类型：**
 
-- Equatable\<AlphaType>
+- Equatable\<[AlphaType](#enum-alphatype)>
 - ToString
 
 ### Opaque
@@ -4412,7 +4412,7 @@ public enum ComponentType <: Equatable<ComponentType> & ToString {
 
 **父类型：**
 
-- Equatable\<ComponentType>
+- Equatable\<[ComponentType](#enum-componenttype)>
 - ToString
 
 ### Jpeg
@@ -4548,7 +4548,7 @@ public enum DecodingDynamicRange <: Equatable<DecodingDynamicRange> & ToString {
 
 **父类型：**
 
-- Equatable\<DecodingDynamicRange>
+- Equatable\<[DecodingDynamicRange](#enum-decodingdynamicrange)>
 - ToString
 
 ### Auto
@@ -4671,7 +4671,7 @@ public enum ImageFormat <: Equatable<ImageFormat> & ToString {
 
 **父类型：**
 
-- Equatable\<ImageFormat>
+- Equatable\<[ImageFormat](#enum-imageformat)>
 - ToString
 
 ### Jpeg
@@ -4782,7 +4782,7 @@ public enum PackingDynamicRange <: Equatable<PackingDynamicRange> & ToString {
 
 **父类型：**
 
-- Equatable\<PackingDynamicRange>
+- Equatable\<[PackingDynamicRange](#enum-packingdynamicrange)>
 - ToString
 
 ### Auto
@@ -4903,7 +4903,7 @@ public enum PixelMapFormat <: Equatable<PixelMapFormat> & ToString {
 
 **父类型：**
 
-- Equatable\<PixelMapFormat>
+- Equatable\<[PixelMapFormat](#enum-pixelmapformat)>
 - ToString
 
 ### Alpha8
@@ -6148,7 +6148,7 @@ public enum ScaleMode <: Equatable<ScaleMode> & ToString {
 
 **父类型：**
 
-- Equatable\<ScaleMode>
+- Equatable\<[ScaleMode](#enum-scalemode)>
 - ToString
 
 ### CenterCrop

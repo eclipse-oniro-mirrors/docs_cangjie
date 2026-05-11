@@ -769,7 +769,7 @@ public func createPattern(image: ?ImageBitmap, repetition: Option<Repetition>): 
 
 |类型|说明|
 |:---|:---|
-|Option\<[CanvasPattern](#canvaspattern)>|通过指定图像和重复方式创建图片填充的模板对象。|
+|Option\<[CanvasPattern](cj-canvas-drawing-canvaspattern.md#class-canvaspattern)>|通过指定图像和重复方式创建图片填充的模板对象。|
 
 ### func bezierCurveTo(Float64, Float64, Float64, Float64, Float64, Float64)
 
@@ -1483,7 +1483,7 @@ public func getTransform(): Matrix2D
 
 |类型|说明|
 |:---|:---|
-|Matrix2D|矩阵对象。|
+|[Matrix2D](cj-canvas-drawing-matrix2d.md#class-matrix2d)|矩阵对象。|
 
 ### func transferFromImageBitmap(?ImageBitmap)
 
@@ -1587,7 +1587,7 @@ public func createImageData(sw: ?Float64, sh: ?Float64): ImageData
 
 |类型|说明|
 |:---|:---|
-|ImageData|ImageData对象。|
+|[ImageData](cj-canvas-drawing-imagedata.md#class-imagedata)|ImageData对象。|
 
 ### func createImageData(?ImageData)
 
@@ -1605,13 +1605,13 @@ public func createImageData(imageData: ?ImageData): ImageData
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|imageData|?ImageData|是|-|现有的ImageData对象。|
+|imageData|?[ImageData](./cj-canvas-drawing-imagedata.md#class-imagedata)|是|-|现有的ImageData对象。?ImageData|是|-|现有的ImageData对象。|
 
 **返回值：**
 
 |类型|说明|
 |:---|:---|
-|ImageData|新的ImageData对象。|
+|[ImageData](cj-canvas-drawing-imagedata.md#class-imagedata)|新的ImageData对象。|
 
 ### func getImageData(?Float64, ?Float64, ?Float64, ?Float64)
 
@@ -1637,7 +1637,7 @@ public func getImageData(sx: ?Float64, sy: ?Float64, sw: ?Float64, sh: ?Float64)
 
 |类型|说明|
 |:---|:---|
-|ImageData|新的ImageData对象。|
+|[ImageData](cj-canvas-drawing-imagedata.md#class-imagedata)|新的ImageData对象。|
 
 ### func putImageData(ImageData, Length, Length)
 

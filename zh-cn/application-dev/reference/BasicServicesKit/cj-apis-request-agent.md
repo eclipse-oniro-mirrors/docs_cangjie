@@ -56,7 +56,7 @@ public func create(context: UIAbilityContext, config: Config): Task
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[上传下载错误码](./cj-errorcode-request.md)与[通用错误码说明文档](../cj-errorcode-universal.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[上传下载错误码](./cj-errorcode-request.md)与[通用错误码说明文档](../cj-errorcode-universal.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -119,7 +119,7 @@ public func getTask(context: UIAbilityContext, id: String, token!: ?String = Non
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[上传下载错误码](./cj-errorcode-request.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[上传下载错误码](./cj-errorcode-request.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -168,7 +168,7 @@ public func remove(id: String): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[上传下载错误码](./cj-errorcode-request.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[上传下载错误码](./cj-errorcode-request.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -221,7 +221,7 @@ public func search(filter!: Filter = Filter()): Array<String>
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[上传下载错误码](./cj-errorcode-request.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[上传下载错误码](./cj-errorcode-request.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -276,7 +276,7 @@ public func show(id: String): TaskInfo
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[上传下载错误码](./cj-errorcode-request.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[上传下载错误码](./cj-errorcode-request.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -330,7 +330,7 @@ public func touch(id: String, token: String): TaskInfo
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[上传下载错误码](./cj-errorcode-request.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[上传下载错误码](./cj-errorcode-request.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -1067,61 +1067,6 @@ try {
 }
 ```
 
-## enum Network
-
-```cangjie
-public enum Network <: Equatable<Network> & ToString {
-    | AnyType
-    | Wifi
-    | Cellular
-    | ...
-}
-```
-
-**功能：** 定义网络选项。
-
-网络不满足设置条件时，未执行的任务会等待执行，执行中的任务将失败或暂停。
-
-**系统能力：** SystemCapability.Request.FileTransferAgent
-
-**起始版本：** 22
-
-### AnyType
-
-```cangjie
-AnyType
-```
-
-**功能：** 表示不限网络类型。
-
-**系统能力：** SystemCapability.Request.FileTransferAgent
-
-**起始版本：** 22
-
-### Wifi
-
-```cangjie
-Wifi 
-```
-
-**功能：** 表示无线网络。
-
-**系统能力：** SystemCapability.Request.FileTransferAgent
-
-**起始版本：** 22
-
-### Cellular
-
-```cangjie
-Cellular 
-```
-
-**功能：** 表示蜂窝数据网络。
-
-**系统能力：** SystemCapability.Request.FileTransferAgent
-
-**起始版本：** 22
-
 ## class Filter
 
 ```cangjie
@@ -1813,7 +1758,7 @@ public func pause(): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[上传下载错误码](./cj-errorcode-request.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[上传下载错误码](./cj-errorcode-request.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -1859,7 +1804,7 @@ public func resume(): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[上传下载错误码](./cj-errorcode-request.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[上传下载错误码](./cj-errorcode-request.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -1911,7 +1856,7 @@ public func start(): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[上传下载错误码](./cj-errorcode-request.md)与[通用错误码说明文档](../cj-errorcode-universal.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[上传下载错误码](./cj-errorcode-request.md)与[通用错误码说明文档](../cj-errorcode-universal.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -1959,7 +1904,7 @@ public func stop(): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[上传下载错误码](./cj-errorcode-request.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[上传下载错误码](./cj-errorcode-request.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -2371,7 +2316,7 @@ public enum Action <: Equatable<Action> & ToString {
 
 **父类型：**
 
-- Equatable\<Action>
+- Equatable\<[Action](#enum-action)>
 - ToString
 
 ### Download
@@ -2578,7 +2523,7 @@ public enum EventCallbackType <: Equatable<EventCallbackType> & Hashable & ToStr
 
 **父类型：**
 
-- Equatable\<EventCallbackType>
+- Equatable\<[EventCallbackType](#enum-eventcallbacktype)>
 - Hashable
 - ToString
 
@@ -2924,7 +2869,7 @@ public enum Mode <: Equatable<Mode> & ToString {
 
 **父类型：**
 
-- Equatable\<Mode>
+- Equatable\<[Mode](#enum-mode)>
 - ToString
 
 ### Background
@@ -3038,7 +2983,7 @@ public enum Network <: Equatable<Network> & ToString {
 
 **父类型：**
 
-- Equatable\<Network>
+- Equatable\<[Network](#enum-network)>
 - ToString
 
 ### AnyType

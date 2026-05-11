@@ -383,7 +383,7 @@ public init(watcherName: String)
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[应用事件打点错误码](./cj-errorcode-hiappevent.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[应用事件打点错误码](./cj-errorcode-hiappevent.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -409,7 +409,7 @@ public func setSize(size: Int32): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[应用事件打点错误码](./cj-errorcode-hiappevent.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[应用事件打点错误码](./cj-errorcode-hiappevent.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -851,7 +851,7 @@ public static func addWatcher(watcher: Watcher): Option<AppEventPackageHolder>
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[应用事件打点错误码](./cj-errorcode-hiappevent.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[应用事件打点错误码](./cj-errorcode-hiappevent.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -1007,7 +1007,7 @@ public static func configure(config: ConfigOption): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[应用事件打点错误码](./cj-errorcode-hiappevent.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[应用事件打点错误码](./cj-errorcode-hiappevent.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -1176,7 +1176,7 @@ public static func removeWatcher(watcher: Watcher): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[应用事件打点错误码](./cj-errorcode-hiappevent.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[应用事件打点错误码](./cj-errorcode-hiappevent.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -1296,7 +1296,7 @@ public static func write(info: AppEventInfo): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[应用事件打点错误码](./cj-errorcode-hiappevent.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[应用事件打点错误码](./cj-errorcode-hiappevent.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -2086,7 +2086,7 @@ public func toString(): String
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[应用事件打点错误码](./cj-errorcode-hiappevent.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[应用事件打点错误码](./cj-errorcode-hiappevent.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |

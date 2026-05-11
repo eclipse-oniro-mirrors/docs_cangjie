@@ -416,7 +416,7 @@ public static func configCookie(url: String, value: String, incognito!: Bool = f
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[Webview错误码](./cj-errorcode-webview.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Webview错误码](./cj-errorcode-webview.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -522,7 +522,7 @@ public static func fetchCookie(url: String, incognito!: Bool = false): String
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[Webview错误码](./cj-errorcode-webview.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Webview错误码](./cj-errorcode-webview.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -879,7 +879,7 @@ public func canGoBack(): Bool
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[Webview错误码](./cj-errorcode-webview.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Webview错误码](./cj-errorcode-webview.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -957,7 +957,7 @@ public func accessStep(step: Int32): Bool
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[Webview错误码](./cj-errorcode-webview.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Webview错误码](./cj-errorcode-webview.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -1035,7 +1035,7 @@ public func goBackOrForward(step: Int32): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[Webview错误码](./cj-errorcode-webview.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Webview错误码](./cj-errorcode-webview.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -1100,7 +1100,7 @@ public func goBack(): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[Webview错误码](./cj-errorcode-webview.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Webview错误码](./cj-errorcode-webview.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -1165,7 +1165,7 @@ public func clearHistory(): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[Webview错误码](./cj-errorcode-webview.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Webview错误码](./cj-errorcode-webview.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -1237,7 +1237,7 @@ public func enableSafeBrowsing(enable: Bool): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[Webview错误码](./cj-errorcode-webview.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Webview错误码](./cj-errorcode-webview.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -1302,7 +1302,7 @@ public func goForward(): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[Webview错误码](./cj-errorcode-webview.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Webview错误码](./cj-errorcode-webview.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -1373,7 +1373,7 @@ public func getBackForwardEntries(): BackForwardList
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[Webview错误码](./cj-errorcode-webview.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Webview错误码](./cj-errorcode-webview.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -1446,7 +1446,7 @@ public func getCustomUserAgent(): String
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[Webview错误码](./cj-errorcode-webview.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Webview错误码](./cj-errorcode-webview.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -1519,7 +1519,7 @@ public func getOriginalUrl(): String
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[Webview错误码](./cj-errorcode-webview.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Webview错误码](./cj-errorcode-webview.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -1591,7 +1591,7 @@ public func getPageHeight(): Int32
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[Webview错误码](./cj-errorcode-webview.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Webview错误码](./cj-errorcode-webview.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -1656,7 +1656,7 @@ public func getSecurityLevel(): SecurityLevel
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[Webview错误码](./cj-errorcode-webview.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Webview错误码](./cj-errorcode-webview.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -1736,7 +1736,7 @@ public func getTitle(): String
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[Webview错误码](./cj-errorcode-webview.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Webview错误码](./cj-errorcode-webview.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -1808,7 +1808,7 @@ public func getUrl(): String
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[Webview错误码](./cj-errorcode-webview.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Webview错误码](./cj-errorcode-webview.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -1879,7 +1879,7 @@ public func getUserAgent(): String
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[Webview错误码](./cj-errorcode-webview.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Webview错误码](./cj-errorcode-webview.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -1951,7 +1951,7 @@ public func isIncognitoMode(): Bool
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[Webview错误码](./cj-errorcode-webview.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Webview错误码](./cj-errorcode-webview.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -2023,7 +2023,7 @@ public func isSafeBrowsingEnabled(): Bool
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[Webview错误码](./cj-errorcode-webview.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Webview错误码](./cj-errorcode-webview.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -2094,7 +2094,7 @@ public func pageDown(bottom: Bool): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[Webview错误码](./cj-errorcode-webview.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Webview错误码](./cj-errorcode-webview.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -2165,7 +2165,7 @@ public func pageUp(top: Bool): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[Webview错误码](./cj-errorcode-webview.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Webview错误码](./cj-errorcode-webview.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -2230,7 +2230,7 @@ public func reload(): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[Webview错误码](./cj-errorcode-webview.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Webview错误码](./cj-errorcode-webview.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -2304,7 +2304,7 @@ public func registerJavaScriptProxy(funcs: Array<(String) -> String>, name: Stri
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[Webview错误码](./cj-errorcode-webview.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Webview错误码](./cj-errorcode-webview.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -2473,7 +2473,7 @@ public func loadUrl<T>(url: T, headers!: Array<WebHeader> = Array<WebHeader>()):
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[Webview错误码](./cj-errorcode-webview.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Webview错误码](./cj-errorcode-webview.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -2556,7 +2556,7 @@ public func setCustomUserAgent(userAgent: String): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[Webview错误码](./cj-errorcode-webview.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Webview错误码](./cj-errorcode-webview.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -2622,7 +2622,7 @@ public func stop(): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[Webview错误码](./cj-errorcode-webview.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Webview错误码](./cj-errorcode-webview.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -2695,7 +2695,7 @@ public func storeWebArchive(baseName: String, autoName: Bool, callback: AsyncCal
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[Webview错误码](./cj-errorcode-webview.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Webview错误码](./cj-errorcode-webview.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -2778,7 +2778,7 @@ public func zoom(factor: Float32): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[Webview错误码](./cj-errorcode-webview.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Webview错误码](./cj-errorcode-webview.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -2844,7 +2844,7 @@ public func zoomIn(): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[Webview错误码](./cj-errorcode-webview.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Webview错误码](./cj-errorcode-webview.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -2910,7 +2910,7 @@ public func zoomOut(): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[Webview错误码](./cj-errorcode-webview.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Webview错误码](./cj-errorcode-webview.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -2990,7 +2990,7 @@ public func runJavaScript(script: String, callback: AsyncCallback<String>): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[Webview错误码](./cj-errorcode-webview.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Webview错误码](./cj-errorcode-webview.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -3095,7 +3095,7 @@ public func scrollBy(deltaX: Float32, deltaY: Float32, duration!: ?Int32 = None)
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[Webview错误码](./cj-errorcode-webview.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Webview错误码](./cj-errorcode-webview.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -3192,7 +3192,7 @@ public func scrollTo(x: Float32, y: Float32, duration!: ?Int32 = None): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[Webview错误码](./cj-errorcode-webview.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Webview错误码](./cj-errorcode-webview.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -3291,7 +3291,7 @@ public func removeCache(clearRom: Bool): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[Webview错误码](./cj-errorcode-webview.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Webview错误码](./cj-errorcode-webview.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -3362,7 +3362,7 @@ public enum SecurityLevel <: Equatable<SecurityLevel> & ToString {
 
 **父类型：**
 
-- Equatable\<SecurityLevel>
+- Equatable\<[SecurityLevel](#enum-securitylevel)>
 - ToString
 
 ### NoneLevel
@@ -3498,7 +3498,7 @@ public enum WebHitTestType <: Equatable<WebHitTestType> & ToString {
 
 **父类型：**
 
-- Equatable\<WebHitTestType>
+- Equatable\<[WebHitTestType](#enum-webhittesttype)>
 - ToString
 
 ### EditText
