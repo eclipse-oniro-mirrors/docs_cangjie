@@ -64,7 +64,7 @@ public func create(context: UIAbilityContext, config: Config): Task
   | 13400001 | Invalid file or file system error. |
   | 13400003 | Task service ability error. |
   | 13499999 | Other error. |
-  | 21900004 | the application task queue is full. |
+  | 21900004 | The application task queue is full. |
   | 21900005 | Operation with wrong task mode. |
 
 **示例：**

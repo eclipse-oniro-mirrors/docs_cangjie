@@ -55,7 +55,7 @@ public func getSensorList(): Array<Sensor>
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 14500101 | Service exception. Possible causes: 1. Sensor hdf service exception; 2. Sensor service ipc exception; 3. Sensor data channel exception. |
+  | 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3. Sensor data channel exception. |
 
 **示例：**
 
@@ -108,7 +108,7 @@ public func getSingleSensor(sensorType: SensorId): Sensor
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 14500101 | Service exception. Possible causes: 1. Sensor hdf service exception; 2. Sensor service ipc exception; 3. Sensor data channel exception. |
+  | 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3. Sensor data channel exception. |
   | 14500102 | The sensor is not supported by the device. |
 
 **示例：**
@@ -217,7 +217,7 @@ public func on<T>(sensorType: SensorId, callback: Callback1Argument<T>, option!:
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 201 | Permission verification failed. The application does not have permission to call the API. |
-  | 14500101 | Service exception. Possible causes: 1. Sensor hdf service exception; 2. Sensor service ipc exception;3. Sensor data channel exception. |
+  | 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3. Sensor data channel exception. |
 
 **示例：**
 
@@ -273,7 +273,7 @@ public func once<T>(sensorType: SensorId, callback: Callback1Argument<T>): Unit 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 201 | Permission verification failed. The application does not have permission to call the API. |
-  | 14500101 | Service exception. |
+  | 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3. Sensor data channel exception. |
 
 **示例：**
 

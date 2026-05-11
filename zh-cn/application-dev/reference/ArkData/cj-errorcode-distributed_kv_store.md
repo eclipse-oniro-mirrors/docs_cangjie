@@ -32,7 +32,7 @@ Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 
 
 **错误信息**
 
-Over max  limits.
+Over max limits.
 
 **错误描述**
 

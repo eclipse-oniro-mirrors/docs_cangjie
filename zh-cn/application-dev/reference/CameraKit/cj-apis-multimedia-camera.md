@@ -503,7 +503,7 @@ func isExposureModeSupported(aeMode: ExposureMode): Bool
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 7400103 | Session not config, only throw in session usage. |
+  | 7400103 | Session not config. |
 
 **示例：**
 
@@ -711,7 +711,7 @@ func setColorSpace(colorSpace: ColorSpace): Unit
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 7400101 | Parameter missing or parameter type incorrect. |
-  | 7400102 | The colorSpace does not match the format. |
+  | 7400102 | Operation not allowed. |
   | 7400103 | Session not config. |
   | 7400201 | Camera service fatal error. |
 
@@ -780,7 +780,7 @@ func getSupportedColorSpaces(): Array<ColorSpace>
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 7400103 | Session not config, only throw in session usage. |
+  | 7400103 | Session not config. |
 
 **示例：**
 
@@ -2101,7 +2101,7 @@ func isVideoStabilizationModeSupported(vsMode: VideoStabilizationMode): Bool
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 7400103 | Session not config, only throw in session usage. |
+  | 7400103 | Session not config. |
 
 **示例：**
 
@@ -2371,7 +2371,7 @@ func getZoomRatioRange(): Array<Float64>
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 7400103 | Session not config, only throw in session usage. |
+  | 7400103 | Session not config. |
 
 **示例：**
 

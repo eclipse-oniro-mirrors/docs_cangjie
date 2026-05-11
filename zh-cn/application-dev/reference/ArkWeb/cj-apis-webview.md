@@ -422,7 +422,7 @@ public static func configCookie(url: String, value: String, incognito!: Bool = f
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 17100002 | URL error. No valid cookie found for the specified URL. |
-  | 17100005 | The provided cookie value is invalid. It must follow the format specified. |
+  | 17100005 | The provided cookie value is invalid. It must follow the format specified in RFC 6265. |
 
 **示例：**
 
@@ -2489,7 +2489,7 @@ public func loadUrl<T>(url: T, headers!: Array<WebHeader> = Array<WebHeader>()):
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 17100001 | Init error. The WebviewController must be associated with a Web component. |
-  | 17100002 | URL error. The webpage corresponding to the URL is invalid, or the URL length exceeds 2048. |
+  | 17100002 | URL error. The webpage corresponding to the URL is invalid. |
   | 17100003 | Invalid resource path or file type. |
 
 **示例：**
@@ -2799,7 +2799,7 @@ public func zoom(factor: Float32): Unit
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 17100001 | Init error. The WebviewController must be associated with a Web component. |
-  | 17100004 | Function not enable. |
+  | 17100004 | Function not enabled. |
 
 **示例：**
 
@@ -2866,7 +2866,7 @@ public func zoomIn(): Unit
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 17100001 | Init error. The WebviewController must be associated with a Web component. |
-  | 17100004 | Function not enable. |
+  | 17100004 | Function not enabled. |
 
 **示例：**
 
@@ -2933,7 +2933,7 @@ public func zoomOut(): Unit
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 17100001 | Init error. The WebviewController must be associated with a Web component. |
-  | 17100004 | Function not enable. |
+  | 17100004 | Function not enabled. |
 
 **示例：**
 

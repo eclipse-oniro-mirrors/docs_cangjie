@@ -387,7 +387,7 @@ public init(watcherName: String)
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 11105001 | Parameter error. |
+  | 11105001 | Invalid parameter value. Possible causes: 1. Incorrect parameter length; 2. Incorrect parameter format. |
 
 ### func setSize(Int32)
 
@@ -413,7 +413,7 @@ public func setSize(size: Int32): Unit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 11104001 | Invalid size value. |
+  | 11104001 | Invalid size value. Possible caused by the size value is less than or equal to zero. |
 
 **示例：**
 
@@ -1311,13 +1311,13 @@ public static func write(info: AppEventInfo): Unit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 11100001 | Function is disabled. Possible caused by the param disable in ConfigOption is true. |
-  | 11101001 | Invalid event domain.Possible causes: 1. Contain invalid characters; 2. Length is invalid. |
+  | 11100001 | Function disabled. Possible caused by the param disable in ConfigOption is true. |
+  | 11101001 | Invalid event domain. Possible causes: 1. Contain invalid characters; 2. Length is invalid. |
   | 11101002 | Invalid event name. Possible causes: 1. Contain invalid characters; 2. Length is invalid. |
   | 11101003 | Invalid number of event parameters. Possible caused by the number of parameters is over 32. |
   | 11101004 | Invalid string length of the event parameter. |
   | 11101005 | Invalid event parameter name. Possible causes: 1. Contain invalid characters; 2. Length is invalid. |
-  | 11101006 | Invalid array length of a event parameter. |
+  | 11101006 | Invalid array length of the event parameter. |
 
 **示例：**
 
@@ -2101,4 +2101,4 @@ public func toString(): String
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 11105001 | Parameter error. |
+  | 11105001 | Invalid parameter value. Possible causes: 1. Incorrect parameter length; 2. Incorrect parameter format. |

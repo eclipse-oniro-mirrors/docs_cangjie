@@ -165,7 +165,7 @@ public func requestPermissionsFromUser(context: UIAbilityContext, permissionList
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 12100001 | Invalid parameter. The context is invalid when it does not belong to the application itself. |
+  | 12100009 | Common inner error. An error occurs when creating the pop-up window or obtaining user operation results. |
 
 **示例：**
 

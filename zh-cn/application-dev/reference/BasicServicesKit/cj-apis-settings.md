@@ -57,7 +57,7 @@ public func getValue<T>(context: UIAbilityContext, name: T, defValue: String): S
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 14800000 | Parameter error. |
+  | 14800000 | Parameter error. Possible causes: 1. Parameter verification failed. |
 
 **示例：**
 
@@ -112,7 +112,7 @@ public func getValue<T, P>(context: UIAbilityContext, name: T, defValue: String,
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 14800000 | Parameter error. |
+  | 14800000 | Parameter error. Possible causes: 1. Parameter verification failed. |
 
 **示例：**
 

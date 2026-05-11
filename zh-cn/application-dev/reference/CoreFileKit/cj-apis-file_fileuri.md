@@ -156,7 +156,7 @@ public init(uriOrPath: String)
   | 13900011 | Out of memory. |
   | 13900020 | Invalid argument. |
   | 13900042 | Unknown error. |
-  | 14300002 | Invalid uri. |
+  | 14300002 | Invalid URI. |
 
 ### func toString()
 

@@ -187,7 +187,7 @@ getRdbStore目前不支持多线程并发操作。
   | :---- | :--- |
   | 14800000 | Inner error. |
   | 14800010 | Failed to open or delete the database by an invalid database path. |
-  | 14800011 | Failed to open the database because it is corrupted. |
+  | 14800011 | The current operation failed because the database is corrupted. |
   | 14801001 | The operation is supported in the stage model only. |
   | 14801002 | Invalid data group ID. |
   | 14800017 | StoreConfig is changed. |
@@ -1837,8 +1837,8 @@ public func backup(destName: String): Unit
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 14800000 | Inner error. |
-  | 14800011 | Failed to open the database because it is corrupted. |
-  | 14800014 | The RdbStore or ResultSet is already closed. |
+  | 14800011 | The current operation failed because the database is corrupted. |
+  | 14800014 | The target instance is already closed. |
   | 14800015 | The database does not respond. |
   | 14800021 | SQLite: Generic error. Possible causes: Insert failed or the updated data does not exist. |
   | 14800022 | SQLite: Callback routine requested an abort. |
@@ -1908,8 +1908,8 @@ public func batchInsert(table: String, values: Array<ValuesBucket>): Int64
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 14800000 | Inner error. |
-  | 14800011 | Failed to open the database because it is corrupted. |
-  | 14800014 | The RdbStore or ResultSet is already closed. |
+  | 14800011 | The current operation failed because the database is corrupted. |
+  | 14800014 | The target instance is already closed. |
   | 14800015 | The database does not respond. |
   | 14800021 | SQLite: Generic error. Possible causes: Insert failed or the updated data does not exist. |
   | 14800022 | SQLite: Callback routine requested an abort. |
@@ -1983,8 +1983,8 @@ public func beginTransaction(): Unit
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 14800000 | Inner error. |
-  | 14800011 | Failed to open the database because it is corrupted. |
-  | 14800014 | The RdbStore or ResultSet is already closed. |
+  | 14800011 | The current operation failed because the database is corrupted. |
+  | 14800014 | The target instance is already closed. |
   | 14800015 | The database does not respond. |
   | 14800021 | SQLite: Generic error. Possible causes: Insert failed or the updated data does not exist. |
   | 14800022 | SQLite: Callback routine requested an abort. |
@@ -2047,8 +2047,8 @@ public func commit(): Unit
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 14800000 | Inner error. |
-  | 14800011 | Failed to open the database because it is corrupted. |
-  | 14800014 | The RdbStore or ResultSet is already closed. |
+  | 14800011 | The current operation failed because the database is corrupted. |
+  | 14800014 | The target instance is already closed. |
   | 14800015 | The database does not respond. |
   | 14800021 | SQLite: Generic error. Possible causes: Insert failed or the updated data does not exist. |
   | 14800022 | SQLite: Callback routine requested an abort. |
@@ -2122,8 +2122,8 @@ public func delete(predicates: RdbPredicates): Int64
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 14800000 | Inner error. |
-  | 14800011 | Failed to open the database because it is corrupted. |
-  | 14800014 | The RdbStore or ResultSet is already closed. |
+  | 14800011 | The current operation failed because the database is corrupted. |
+  | 14800014 | The target instance is already closed. |
   | 14800015 | The database does not respond. |
   | 14800021 | SQLite: Generic error. Possible causes: Insert failed or the updated data does not exist. |
   | 14800022 | SQLite: Callback routine requested an abort. |
@@ -2189,7 +2189,7 @@ public func emit(event: String): Unit
   | :---- | :--- |
   | 801 | Capability not supported. |
   | 14800000 | Inner error. |
-  | 14800014 | The RdbStore or ResultSet is already closed. |
+  | 14800014 | The target instance is already closed. |
   | 14800050 | Failed to obtain the subscription service. |
 
 **示例：**
@@ -2254,8 +2254,8 @@ public func executeSql(sql: String, bindArgs!: Array<RelationalStoreValueType> =
   | :---- | :--- |
   | 801 | Capability not supported the sql(attach,begin,commit,rollback etc.). |
   | 14800000 | Inner error. |
-  | 14800011 | Failed to open the database because it is corrupted. |
-  | 14800014 | The RdbStore or ResultSet is already closed. |
+  | 14800011 | The current operation failed because the database is corrupted. |
+  | 14800014 | The target instance is already closed. |
   | 14800015 | The database does not respond. |
   | 14800021 | SQLite: Generic error. Possible causes: Insert failed or the updated data does not exist. |
   | 14800022 | SQLite: Callback routine requested an abort. |
@@ -2326,8 +2326,8 @@ public func insert(table: String, values: ValuesBucket,
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 14800000 | Inner error. |
-  | 14800011 | Failed to open the database because it is corrupted. |
-  | 14800014 | The RdbStore or ResultSet is already closed. |
+  | 14800011 | The current operation failed because the database is corrupted. |
+  | 14800014 | The target instance is already closed. |
   | 14800015 | The database does not respond. |
   | 14800021 | SQLite: Generic error. Possible causes: Insert failed or the updated data does not exist. |
   | 14800022 | SQLite: Callback routine requested an abort. |
@@ -2403,7 +2403,7 @@ public func off(event: String, interProcess: Bool, observer!: ?Callback0Argument
   | :---- | :--- |
   | 801 | Capability not supported. |
   | 14800000 | Inner error. |
-  | 14800014 | The RdbStore or ResultSet is already closed. |
+  | 14800014 | The target instance is already closed. |
   | 14800050 | Failed to obtain the subscription service. |
 
 **示例：**
@@ -2465,7 +2465,7 @@ public func on(event: String, interProcess: Bool, observer: Callback0Argument): 
   | :---- | :--- |
   | 801 | Capability not supported. |
   | 14800000 | Inner error. |
-  | 14800014 | The RdbStore or ResultSet is already closed. |
+  | 14800014 | The target instance is already closed. |
   | 14800050 | Failed to obtain the subscription service. |
 
 **示例：**
@@ -2531,7 +2531,7 @@ public func query(predicates: RdbPredicates, columns!: Array<String> = []): Resu
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 14800000 | Inner error. |
-  | 14800014 | The RdbStore or ResultSet is already closed. |
+  | 14800014 | The target instance is already closed. |
   | 14800015 | The database does not respond. |
 
 **示例：**
@@ -2596,7 +2596,7 @@ public func querySql(sql: String, bindArgs!: Array<RelationalStoreValueType> = [
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 14800000 | Inner error. |
-  | 14800014 | The RdbStore or ResultSet is already closed. |
+  | 14800014 | The target instance is already closed. |
   | 14800015 | The database does not respond. |
 
 **示例：**
@@ -2649,8 +2649,8 @@ public func restore(srcName: String): Unit
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 14800000 | Inner error. |
-  | 14800011 | Failed to open the database because it is corrupted. |
-  | 14800014 | The RdbStore or ResultSet is already closed. |
+  | 14800011 | The current operation failed because the database is corrupted. |
+  | 14800014 | The target instance is already closed. |
   | 14800015 | The database does not respond. |
   | 14800021 | SQLite: Generic error. Possible causes: Insert failed or the updated data does not exist. |
   | 14800022 | SQLite: Callback routine requested an abort. |
@@ -2707,8 +2707,8 @@ public func rollBack(): Unit
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 14800000 | Inner error. |
-  | 14800011 | Failed to open the database because it is corrupted. |
-  | 14800014 | The RdbStore or ResultSet is already closed. |
+  | 14800011 | The current operation failed because the database is corrupted. |
+  | 14800014 | The target instance is already closed. |
   | 14800015 | The database does not respond. |
   | 14800021 | SQLite: Generic error. Possible causes: Insert failed or the updated data does not exist. |
   | 14800022 | SQLite: Callback routine requested an abort. |
@@ -2793,8 +2793,8 @@ public func update(values: ValuesBucket, predicates: RdbPredicates,
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 14800000 | Inner error. |
-  | 14800011 | Failed to open the database because it is corrupted. |
-  | 14800014 | The RdbStore or ResultSet is already closed. |
+  | 14800011 | The current operation failed because the database is corrupted. |
+  | 14800014 | The target instance is already closed. |
   | 14800015 | The database does not respond. |
   | 14800021 | SQLite: Generic error. Possible causes: Insert failed or the updated data does not exist. |
   | 14800022 | SQLite: Callback routine requested an abort. |
@@ -3072,10 +3072,10 @@ public func getAsset(columnIndex: Int32): Asset
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 14800000 | Inner error. |
-  | 14800011 | Failed to open the database because it is corrupted. |
+  | 14800011 | The current operation failed because the database is corrupted. |
   | 14800012 | ResultSet is empty or pointer index is out of bounds. |
-  | 14800013 | Resultset is empty or column index is out of bounds. |
-  | 14800014 | The RdbStore or ResultSet is already closed. |
+  | 14800013 | Column index is out of bounds. |
+  | 14800014 | The target instance is already closed. |
   | 14800021 | SQLite: Generic error. Possible causes: Insert failed or the updated data does not exist. |
   | 14800022 | SQLite: Callback routine requested an abort. |
   | 14800023 | SQLite: Access permission denied. |
@@ -3143,10 +3143,10 @@ public func getAssets(columnIndex: Int32): Assets
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 14800000 | Inner error. |
-  | 14800011 | Failed to open the database because it is corrupted. |
+  | 14800011 | The current operation failed because the database is corrupted. |
   | 14800012 | ResultSet is empty or pointer index is out of bounds. |
-  | 14800013 | Resultset is empty or column index is out of bounds. |
-  | 14800014 | The RdbStore or ResultSet is already closed. |
+  | 14800013 | Column index is out of bounds. |
+  | 14800014 | The target instance is already closed. |
   | 14800021 | SQLite: Generic error. Possible causes: Insert failed or the updated data does not exist. |
   | 14800022 | SQLite: Callback routine requested an abort. |
   | 14800023 | SQLite: Access permission denied. |
@@ -3214,10 +3214,10 @@ public func getBlob(columnIndex: Int32): Array<UInt8>
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 14800000 | Inner error. |
-  | 14800011 | Failed to open the database because it is corrupted. |
+  | 14800011 | The current operation failed because the database is corrupted. |
   | 14800012 | ResultSet is empty or pointer index is out of bounds. |
-  | 14800013 | Resultset is empty or column index is out of bounds. |
-  | 14800014 | The RdbStore or ResultSet is already closed. |
+  | 14800013 | Column index is out of bounds. |
+  | 14800014 | The target instance is already closed. |
   | 14800021 | SQLite: Generic error. Possible causes: Insert failed or the updated data does not exist. |
   | 14800022 | SQLite: Callback routine requested an abort. |
   | 14800023 | SQLite: Access permission denied. |
@@ -3285,9 +3285,9 @@ public func getColumnIndex(columnName: String): Int32
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 14800000 | Inner error. |
-  | 14800011 | Failed to open the database because it is corrupted. |
-  | 14800013 | Resultset is empty or column index is out of bounds. |
-  | 14800014 | The RdbStore or ResultSet is already closed. |
+  | 14800011 | The current operation failed because the database is corrupted. |
+  | 14800013 | Column index is out of bounds. |
+  | 14800014 | The target instance is already closed. |
   | 14800019 | The SQL must be a query statement. |
   | 14800021 | SQLite: Generic error. Possible causes: Insert failed or the updated data does not exist. |
   | 14800022 | SQLite: Callback routine requested an abort. |
@@ -3359,9 +3359,9 @@ public func getColumnName(columnIndex: Int32): String
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 14800000 | Inner error. |
-  | 14800011 | Failed to open the database because it is corrupted. |
-  | 14800013 | Resultset is empty or column index is out of bounds. |
-  | 14800014 | The RdbStore or ResultSet is already closed. |
+  | 14800011 | The current operation failed because the database is corrupted. |
+  | 14800013 | Column index is out of bounds. |
+  | 14800014 | The target instance is already closed. |
   | 14800019 | The SQL must be a query statement. |
   | 14800021 | SQLite: Generic error. Possible causes: Insert failed or the updated data does not exist. |
   | 14800022 | SQLite: Callback routine requested an abort. |
@@ -3432,10 +3432,10 @@ public func getDouble(columnIndex: Int32): Float64
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 14800000 | Inner error. |
-  | 14800011 | Failed to open the database because it is corrupted. |
+  | 14800011 | The current operation failed because the database is corrupted. |
   | 14800012 | ResultSet is empty or pointer index is out of bounds. |
-  | 14800013 | Resultset is empty or column index is out of bounds. |
-  | 14800014 | The RdbStore or ResultSet is already closed. |
+  | 14800013 | Column index is out of bounds. |
+  | 14800014 | The target instance is already closed. |
   | 14800021 | SQLite: Generic error. Possible causes: Insert failed or the updated data does not exist. |
   | 14800022 | SQLite: Callback routine requested an abort. |
   | 14800023 | SQLite: Access permission denied. |
@@ -3503,10 +3503,10 @@ public func getLong(columnIndex: Int32): Int64
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 14800000 | Inner error. |
-  | 14800011 | Failed to open the database because it is corrupted. |
+  | 14800011 | The current operation failed because the database is corrupted. |
   | 14800012 | ResultSet is empty or pointer index is out of bounds. |
-  | 14800013 | Resultset is empty or column index is out of bounds. |
-  | 14800014 | The RdbStore or ResultSet is already closed. |
+  | 14800013 | Column index is out of bounds. |
+  | 14800014 | The target instance is already closed. |
   | 14800021 | SQLite: Generic error. Possible causes: Insert failed or the updated data does not exist. |
   | 14800022 | SQLite: Callback routine requested an abort. |
   | 14800023 | SQLite: Access permission denied. |
@@ -3568,10 +3568,10 @@ public func getRow(): ValuesBucket
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 14800000 | Inner error. |
-  | 14800011 | Failed to open the database because it is corrupted. |
+  | 14800011 | The current operation failed because the database is corrupted. |
   | 14800012 | ResultSet is empty or pointer index is out of bounds. |
-  | 14800013 | Resultset is empty or column index is out of bounds. |
-  | 14800014 | The RdbStore or ResultSet is already closed. |
+  | 14800013 | Column index is out of bounds. |
+  | 14800014 | The target instance is already closed. |
   | 14800021 | SQLite: Generic error. Possible causes: Insert failed or the updated data does not exist. |
   | 14800022 | SQLite: Callback routine requested an abort. |
   | 14800023 | SQLite: Access permission denied. |
@@ -3639,10 +3639,10 @@ public func getString(columnIndex: Int32): String
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 14800000 | Inner error. |
-  | 14800011 | Failed to open the database because it is corrupted. |
+  | 14800011 | The current operation failed because the database is corrupted. |
   | 14800012 | ResultSet is empty or pointer index is out of bounds. |
-  | 14800013 | Resultset is empty or column index is out of bounds. |
-  | 14800014 | The RdbStore or ResultSet is already closed. |
+  | 14800013 | Column index is out of bounds. |
+  | 14800014 | The target instance is already closed. |
   | 14800021 | SQLite: Generic error. Possible causes: Insert failed or the updated data does not exist. |
   | 14800022 | SQLite: Callback routine requested an abort. |
   | 14800023 | SQLite: Access permission denied. |
@@ -3714,9 +3714,9 @@ public func goTo(offset: Int32): Bool
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 14800000 | Inner error. |
-  | 14800011 | Failed to open the database because it is corrupted. |
+  | 14800011 | The current operation failed because the database is corrupted. |
   | 14800012 | ResultSet is empty or pointer index is out of bounds. |
-  | 14800014 | The RdbStore or ResultSet is already closed. |
+  | 14800014 | The target instance is already closed. |
   | 14800019 | The SQL must be a query statement. |
   | 14800021 | SQLite: Generic error. Possible causes: Insert failed or the updated data does not exist. |
   | 14800022 | SQLite: Callback routine requested an abort. |
@@ -3783,9 +3783,9 @@ public func goToFirstRow(): Bool
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 14800000 | Inner error. |
-  | 14800011 | Failed to open the database because it is corrupted. |
+  | 14800011 | The current operation failed because the database is corrupted. |
   | 14800012 | ResultSet is empty or pointer index is out of bounds. |
-  | 14800014 | The RdbStore or ResultSet is already closed. |
+  | 14800014 | The target instance is already closed. |
   | 14800019 | The SQL must be a query statement. |
   | 14800021 | SQLite: Generic error. Possible causes: Insert failed or the updated data does not exist. |
   | 14800022 | SQLite: Callback routine requested an abort. |
@@ -3852,9 +3852,9 @@ public func goToLastRow(): Bool
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 14800000 | Inner error. |
-  | 14800011 | Failed to open the database because it is corrupted. |
+  | 14800011 | The current operation failed because the database is corrupted. |
   | 14800012 | ResultSet is empty or pointer index is out of bounds. |
-  | 14800014 | The RdbStore or ResultSet is already closed. |
+  | 14800014 | The target instance is already closed. |
   | 14800019 | The SQL must be a query statement. |
   | 14800021 | SQLite: Generic error. Possible causes: Insert failed or the updated data does not exist. |
   | 14800022 | SQLite: Callback routine requested an abort. |
@@ -3921,9 +3921,9 @@ public func goToNextRow(): Bool
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 14800000 | Inner error. |
-  | 14800011 | Failed to open the database because it is corrupted. |
+  | 14800011 | The current operation failed because the database is corrupted. |
   | 14800012 | ResultSet is empty or pointer index is out of bounds. |
-  | 14800014 | The RdbStore or ResultSet is already closed. |
+  | 14800014 | The target instance is already closed. |
   | 14800019 | The SQL must be a query statement. |
   | 14800021 | SQLite: Generic error. Possible causes: Insert failed or the updated data does not exist. |
   | 14800022 | SQLite: Callback routine requested an abort. |
@@ -3990,9 +3990,9 @@ public func goToPreviousRow(): Bool
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 14800000 | Inner error. |
-  | 14800011 | Failed to open the database because it is corrupted. |
+  | 14800011 | The current operation failed because the database is corrupted. |
   | 14800012 | ResultSet is empty or pointer index is out of bounds. |
-  | 14800014 | The RdbStore or ResultSet is already closed. |
+  | 14800014 | The target instance is already closed. |
   | 14800019 | The SQL must be a query statement. |
   | 14800021 | SQLite: Generic error. Possible causes: Insert failed or the updated data does not exist. |
   | 14800022 | SQLite: Callback routine requested an abort. |
@@ -4065,9 +4065,9 @@ public func goToRow(position: Int32): Bool
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 14800000 | Inner error. |
-  | 14800011 | Failed to open the database because it is corrupted. |
+  | 14800011 | The current operation failed because the database is corrupted. |
   | 14800012 | ResultSet is empty or pointer index is out of bounds. |
-  | 14800014 | The RdbStore or ResultSet is already closed. |
+  | 14800014 | The target instance is already closed. |
   | 14800019 | The SQL must be a query statement. |
   | 14800021 | SQLite: Generic error. Possible causes: Insert failed or the updated data does not exist. |
   | 14800022 | SQLite: Callback routine requested an abort. |
@@ -4136,10 +4136,10 @@ public func isColumnNull(columnIndex: Int32): Bool
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 14800000 | Inner error. |
-  | 14800011 | Failed to open the database because it is corrupted. |
+  | 14800011 | The current operation failed because the database is corrupted. |
   | 14800012 | ResultSet is empty or pointer index is out of bounds. |
-  | 14800013 | Resultset is empty or column index is out of bounds. |
-  | 14800014 | The RdbStore or ResultSet is already closed. |
+  | 14800013 | Column index is out of bounds. |
+  | 14800014 | The target instance is already closed. |
   | 14800021 | SQLite: Generic error. Possible causes: Insert failed or the updated data does not exist. |
   | 14800022 | SQLite: Callback routine requested an abort. |
   | 14800023 | SQLite: Access permission denied. |

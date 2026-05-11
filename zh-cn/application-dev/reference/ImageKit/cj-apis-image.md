@@ -102,8 +102,8 @@ public func createImageReceiver(size: Size, format: ImageFormat, capacity: Int32
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 62980104 | Failed to initialize the internal object. |
-  | 62980115 | Parameter error.Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
+  | 62980104 | Image initialization abnormal. This status code is thrown when an error occurs during the process of creating empty pixelmap. |
+  | 62980115 | Invalid image parameter. |
 
 **示例：**
 
@@ -158,7 +158,7 @@ public func createImageSource(uri: String): ImageSource
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 62980104 | Failed to initialize the internal object. |
+  | 62980104 | Image initialization abnormal. This status code is thrown when an error occurs during the process of creating empty pixelmap. |
 
 **示例：**
 
@@ -214,7 +214,7 @@ public func createImageSource(uri: String, options: SourceOptions): ImageSource
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 62980104 | Failed to initialize the internal object. |
+  | 62980104 | Image initialization abnormal. This status code is thrown when an error occurs during the process of creating empty pixelmap. |
 
 **示例：**
 
@@ -269,7 +269,7 @@ public func createImageSource(fd: Int32): ImageSource
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 62980104 | Failed to initialize the internal object. |
+  | 62980104 | Image initialization abnormal. This status code is thrown when an error occurs during the process of creating empty pixelmap. |
 
 **示例：**
 
@@ -324,7 +324,7 @@ public func createImageSource(fd: Int32, options: SourceOptions): ImageSource
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 62980104 | Failed to initialize the internal object. |
+  | 62980104 | Image initialization abnormal. This status code is thrown when an error occurs during the process of creating empty pixelmap. |
 
 **示例：**
 
@@ -379,7 +379,7 @@ public func createImageSource(buf: Array<UInt8>): ImageSource
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 62980104 | Failed to initialize the internal object. |
+  | 62980104 | Image initialization abnormal. This status code is thrown when an error occurs during the process of creating empty pixelmap. |
 
 **示例：**
 
@@ -435,7 +435,7 @@ public func createImageSource(buf: Array<UInt8>, options: SourceOptions): ImageS
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 62980104 | Failed to initialize the internal object. |
+  | 62980104 | Image initialization abnormal. This status code is thrown when an error occurs during the process of creating empty pixelmap. |
 
 **示例：**
 
@@ -492,7 +492,7 @@ public func createImageSource(rawfile: RawFileDescriptor, options!: SourceOption
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 62980104 | Failed to initialize the internal object. |
+  | 62980104 | Image initialization abnormal. This status code is thrown when an error occurs during the process of creating empty pixelmap. |
 
 **示例：**
 
@@ -550,8 +550,8 @@ public func createPixelMap(colors: Array<UInt8>, options: InitializationOptions)
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 62980104 | Failed to initialize the internal object. |
-  | 62980115 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed. |
+  | 62980104 | Image initialization abnormal. This status code is thrown when an error occurs during the process of creating empty pixelmap. |
+  | 62980115 | Invalid image parameter. |
 
 **示例：**
 
@@ -944,7 +944,7 @@ public prop clipRect: Region
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 62980104 | Failed to initialize the internal object. |
+  | 62980104 | Image initialization abnormal. This status code is thrown when an error occurs during the process of creating empty pixelmap. |
 
 ### prop format
 
@@ -968,7 +968,7 @@ public prop format: Int32
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 62980104 | Failed to initialize the internal object. |
+  | 62980104 | Image initialization abnormal. This status code is thrown when an error occurs during the process of creating empty pixelmap. |
 
 ### prop size
 
@@ -992,7 +992,7 @@ public prop size: Size
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 62980104 | Failed to initialize the internal object. |
+  | 62980104 | Image initialization abnormal. This status code is thrown when an error occurs during the process of creating empty pixelmap. |
 
 ### func getComponent(ComponentType)
 
@@ -1024,7 +1024,7 @@ public func getComponent(componentType: ComponentType): Component
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 62980104 | Failed to initialize the internal object. |
+  | 62980104 | Image initialization abnormal. This status code is thrown when an error occurs during the process of creating empty pixelmap. |
 
 **示例：**
 
@@ -1266,8 +1266,8 @@ public prop supportedFormats: Array<String>
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 62980098 | Failed to malloc memory. |
-  | 62980104 | Failed to initialize the internal object. |
+  | 62980098 | Shared memory does not exist. |
+  | 62980104 | Image initialization abnormal. This status code is thrown when an error occurs during the process of creating empty pixelmap. |
 
 ### func packToData(ImageSource, PackingOption)
 
@@ -1302,10 +1302,10 @@ public func packToData(source: ImageSource, options: PackingOption): Array<UInt8
   | :---- | :--- |
   | 62980096 | The operation failed. Possible cause: 1.Image upload exception. 2. Decoding process exception. 3. Insufficient memory. |
   | 62980101 | The image data is abnormal. |
-  | 62980104 | Failed to initialize the internal object. |
+  | 62980104 | Image initialization abnormal. This status code is thrown when an error occurs during the process of creating empty pixelmap. |
   | 62980106 | The image data is too large. This status code is thrown when an error occurs during the process of checking size. |
-  | 62980113 | Unknown image format. The image data provided is not in a recognized or supported format, or it may be occorrupted. |
-  | 62980115 | If the parameter is invalid. |
+  | 62980113 | Unknown image format.The image data provided is not in a recognized or supported format, or it may be corrupted. |
+  | 62980115 | Invalid image parameter. |
   | 62980119 | Failed to encode the image. |
   | 62980120 | Add pixelmap out of range. |
   | 62980172 | Failed to encode icc. |
@@ -1369,12 +1369,12 @@ public func packToData(source: PixelMap, options: PackingOption): Array<UInt8>
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 62980096 | The operation failed. Possible cause: 1.Image upload exception.2. Decoding process exception. 3. Insufficient memory. |
+  | 62980096 | The operation failed. Possible cause: 1.Image upload exception. 2. Decoding process exception. 3. Insufficient memory. |
   | 62980101 | The image data is abnormal. |
-  | 62980104 | Failed to initialize the internal object. |
+  | 62980104 | Image initialization abnormal. This status code is thrown when an error occurs during the process of creating empty pixelmap. |
   | 62980106 | The image data is too large. This status code is thrown when an error occurs during the process of checking size. |
-  | 62980113 | Unknown image format.The image data provided is not in a recognized or supported format, or it may be occorrupted. |
-  | 62980115 | If the parameter is invalid. |
+  | 62980113 | Unknown image format.The image data provided is not in a recognized or supported format, or it may be corrupted. |
+  | 62980115 | Invalid image parameter. |
   | 62980119 | Failed to encode the image. |
   | 62980120 | Add pixelmap out of range. |
   | 62980172 | Failed to encode icc. |
@@ -1432,10 +1432,10 @@ public func packToFile(source: ImageSource, fd: Int32, options: PackingOption): 
   | :---- | :--- |
   | 62980096 | The operation failed. Possible cause: 1.Image upload exception. 2. Decoding process exception. 3. Insufficient memory. |
   | 62980101 | The image data is abnormal. |
-  | 62980104 | Failed to initialize the internal object. |
+  | 62980104 | Image initialization abnormal. This status code is thrown when an error occurs during the process of creating empty pixelmap. |
   | 62980106 | The image data is too large. This status code is thrown when an error occurs during the process of checking size. |
-  | 62980113 | Unknown image format. The image data provided is not in a recognized or supported format, or it may be occorrupted. |
-  | 62980115 | Invalid input parameter. |
+  | 62980113 | Unknown image format.The image data provided is not in a recognized or supported format, or it may be corrupted. |
+  | 62980115 | Invalid image parameter. |
   | 62980119 | Failed to encode the image. |
   | 62980120 | Add pixelmap out of range. |
   | 62980172 | Failed to encode icc. |
@@ -1494,12 +1494,12 @@ public func packToFile(source: PixelMap, fd: Int32, options: PackingOption): Uni
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 62980096 | The operation failed. Possible cause: 1.Image upload exception.2. Decoding process exception. 3. Insufficient memory. |
+  | 62980096 | The operation failed. Possible cause: 1.Image upload exception. 2. Decoding process exception. 3. Insufficient memory. |
   | 62980101 | The image data is abnormal. |
-  | 62980104 | Failed to initialize the internal object. |
+  | 62980104 | Image initialization abnormal. This status code is thrown when an error occurs during the process of creating empty pixelmap. |
   | 62980106 | The image data is too large. This status code is thrown when an error occurs during the process of checking size. |
-  | 62980113 | Unknown image format.The image data provided is not in a recognized or supported format, or it may be occorrupted. |
-  | 62980115 | Invalid input parameter. |
+  | 62980113 | Unknown image format.The image data provided is not in a recognized or supported format, or it may be corrupted. |
+  | 62980115 | Invalid image parameter. |
   | 62980119 | Failed to encode the image. |
   | 62980120 | Add pixelmap out of range. |
   | 62980172 | Failed to encode icc. |
@@ -1679,7 +1679,7 @@ public prop capacity: Int32
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 62980104 | Failed to initialize the internal object. |
+  | 62980104 | Image initialization abnormal. This status code is thrown when an error occurs during the process of creating empty pixelmap. |
 
 ### prop format
 
@@ -1703,7 +1703,7 @@ public prop format: ImageFormat
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 62980104 | Failed to initialize the internal object. |
+  | 62980104 | Image initialization abnormal. This status code is thrown when an error occurs during the process of creating empty pixelmap. |
 
 ### prop size
 
@@ -1727,7 +1727,7 @@ public prop size: Size
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 62980104 | Failed to initialize the internal object. |
+  | 62980104 | Image initialization abnormal. This status code is thrown when an error occurs during the process of creating empty pixelmap. |
 
 ### func getReceivingSurfaceId()
 
@@ -1753,7 +1753,7 @@ public func getReceivingSurfaceId(): String
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 62980104 | Failed to initialize the internal object. |
+  | 62980104 | Image initialization abnormal. This status code is thrown when an error occurs during the process of creating empty pixelmap. |
 
 **示例：**
 
@@ -1839,7 +1839,7 @@ public func readLatestImage(): Image
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 62980104 | Failed to initialize the internal object. |
+  | 62980104 | Image initialization abnormal. This status code is thrown when an error occurs during the process of creating empty pixelmap. |
 
 **示例：**
 
@@ -1889,7 +1889,7 @@ public func readNextImage(): Image
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 62980104 | Failed to initialize the internal object. |
+  | 62980104 | Image initialization abnormal. This status code is thrown when an error occurs during the process of creating empty pixelmap. |
 
 **示例：**
 
@@ -2047,8 +2047,8 @@ public prop supportedFormats: Array<String>
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 62980102 | Failed to malloc memory. |
-  | 62980104 | Failed to initialize the internal object. |
+  | 62980102 | Image malloc abnormal. This status code is thrown when an error occurs during the process of copying data. |
+  | 62980104 | Image initialization abnormal. This status code is thrown when an error occurs during the process of creating empty pixelmap. |
 
 ### func createPixelMap(DecodingOptions)
 
@@ -2084,7 +2084,7 @@ public func createPixelMap(options!: DecodingOptions = DecodingOptions()): Pixel
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 62980104 | Failed to initialize the internal object. |
+  | 62980104 | Image initialization abnormal. This status code is thrown when an error occurs during the process of creating empty pixelmap. |
 
 **示例：**
 
@@ -2160,9 +2160,9 @@ public func createPixelMapList(options!: DecodingOptions = DecodingOptions()): A
   | 62980096 | The operation failed. Possible cause: 1.Image upload exception. 2. Decoding process exception. 3. Insufficient memory. |
   | 62980099 | The shared memory data is abnormal. |
   | 62980101 | The image data is abnormal. |
-  | 62980102 | Failed to malloc memory. |
+  | 62980102 | Image malloc abnormal. This status code is thrown when an error occurs during the process of copying data. |
   | 62980103 | The image data is not supported. |
-  | 62980104 | Failed to initialize the internal object. |
+  | 62980104 | Image initialization abnormal. This status code is thrown when an error occurs during the process of creating empty pixelmap. |
   | 62980106 | The image data is too large. This status code is thrown when an error occurs during the process of checking size. |
   | 62980109 | Failed to crop the image. |
   | 62980111 | The image source data is incomplete. |
@@ -2229,8 +2229,8 @@ public func getDelayTimeList(): Array<Int32>
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 62980096 | The operation failed. Possible cause: 1.Image upload exception. 2. Decoding process exception. 3. Insufficient memory. |
-  | 62980102 | Failed to malloc memory. |
-  | 62980104 | Failed to initialize the internal object. |
+  | 62980102 | Image malloc abnormal. This status code is thrown when an error occurs during the process of copying data. |
+  | 62980104 | Image initialization abnormal. This status code is thrown when an error occurs during the process of creating empty pixelmap. |
   | 62980110 | The image source data is incorrect. |
   | 62980111 | The image source data is incomplete. |
   | 62980115 | Invalid image parameter. |
@@ -2285,10 +2285,10 @@ public func getFrameCount(): UInt32
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 62980096 | The operation failed. Possible cause: 1.Image upload exception. 2. Decoding process exception. 3. Insufficient memory. |
-  | 62980104 | Failed to initialize the internal object. |
+  | 62980104 | Image initialization abnormal. This status code is thrown when an error occurs during the process of creating empty pixelmap. |
   | 62980111 | The image source data is incomplete. |
   | 62980112 | The image format does not match. |
-  | 62980113 | Unknown image format. The image data provided is not in a recognized or supported format, or it may be occorrupted. |
+  | 62980113 | Unknown image format.The image data provided is not in a recognized or supported format, or it may be corrupted. |
   | 62980115 | Invalid image parameter. |
   | 62980116 | Failed to decode the image. |
   | 62980118 | Failed to create the image plugin. |
@@ -2346,7 +2346,7 @@ public func getImageInfo(index!: UInt32 = 0): ImageInfo
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 62980104 | Failed to initialize the internal object. |
+  | 62980104 | Image initialization abnormal. This status code is thrown when an error occurs during the process of creating empty pixelmap. |
 
 **示例：**
 
@@ -2404,11 +2404,11 @@ public func getImageProperty(key: PropertyKey, options!: ImagePropertyOptions = 
   | :---- | :--- |
   | 62980096 | The operation failed. Possible cause: 1.Image upload exception. 2. Decoding process exception. 3. Insufficient memory. |
   | 62980103 | The image data is not supported. |
-  | 62980104 | Failed to initialize the internal object. |
+  | 62980104 | Image initialization abnormal. This status code is thrown when an error occurs during the process of creating empty pixelmap. |
   | 62980110 | The image source data is incorrect. |
   | 62980111 | The image source data is incomplete. |
   | 62980112 | The image format does not match. |
-  | 62980113 | Unknown image format. The image data provided is not in a recognized or supported format, or it may be occorrupted. |
+  | 62980113 | Unknown image format.The image data provided is not in a recognized or supported format, or it may be corrupted. |
   | 62980115 | Invalid image parameter. |
   | 62980118 | Failed to create the image plugin. |
   | 62980122 | Failed to decode the image header. |
@@ -2467,9 +2467,9 @@ public func modifyImageProperty(key: PropertyKey, value: String): Unit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 62980104 | Failed to initialize the internal object. |
+  | 62980104 | Image initialization abnormal. This status code is thrown when an error occurs during the process of creating empty pixelmap. |
   | 62980110 | The image source data is incorrect. |
-  | 62980115 | Parameter error.Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
+  | 62980115 | Invalid image parameter. |
   | 62980123 | The image does not support EXIF decoding. |
   | 62980133 | The EXIF data is out of range. |
   | 62980135 | The EXIF value is invalid. |
@@ -2518,7 +2518,7 @@ public func release(): Unit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 62980104 | Failed to initialize the internal object. |
+  | 62980104 | Image initialization abnormal. This status code is thrown when an error occurs during the process of creating empty pixelmap. |
 
 **示例：**
 
@@ -2568,7 +2568,7 @@ public func updateData(buf: Array<UInt8>, isFinished: Bool, offset: UInt32, leng
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 62980104 | Failed to initialize the internal object. |
+  | 62980104 | Image initialization abnormal. This status code is thrown when an error occurs during the process of creating empty pixelmap. |
 
 **示例：**
 
@@ -2916,7 +2916,7 @@ public prop isEditable: Bool
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 62980104 | Failed to initialize the internal object. |
+  | 62980104 | Image initialization abnormal. This status code is thrown when an error occurs during the process of creating empty pixelmap. |
 
 ### prop isStrideAlignment
 
@@ -2940,7 +2940,7 @@ public prop isStrideAlignment: Bool
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 62980104 | Failed to initialize the internal object. |
+  | 62980104 | Image initialization abnormal. This status code is thrown when an error occurs during the process of creating empty pixelmap. |
 
 ### func applyColorSpace(ColorSpaceManager)
 
@@ -2966,7 +2966,7 @@ public func applyColorSpace(targetColorSpace: ColorSpaceManager): Unit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 62980104 | Failed to initialize the internal object. |
+  | 62980104 | Image initialization abnormal. This status code is thrown when an error occurs during the process of creating empty pixelmap. |
   | 62980108 | Failed to convert the color space. |
   | 62980115 | Invalid image parameter. |
 
@@ -3018,7 +3018,7 @@ public func createAlphaPixelMap(): PixelMap
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 62980104 | Failed to initialize the internal object. |
+  | 62980104 | Image initialization abnormal. This status code is thrown when an error occurs during the process of creating empty pixelmap. |
 
 **示例：**
 
@@ -3066,7 +3066,7 @@ public func crop(region: Region): Unit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 62980104 | Failed to initialize the internal object. |
+  | 62980104 | Image initialization abnormal. This status code is thrown when an error occurs during the process of creating empty pixelmap. |
 
 **示例：**
 
@@ -3116,7 +3116,7 @@ public func flip(horizontal: Bool, vertical: Bool): Unit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 62980104 | Failed to initialize the internal object. |
+  | 62980104 | Image initialization abnormal. This status code is thrown when an error occurs during the process of creating empty pixelmap. |
 
 **示例：**
 
@@ -3166,7 +3166,7 @@ public func getBytesNumberPerRow(): UInt32
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 62980104 | Failed to initialize the internal object. |
+  | 62980104 | Image initialization abnormal. This status code is thrown when an error occurs during the process of creating empty pixelmap. |
 
 **示例：**
 
@@ -3214,10 +3214,10 @@ public func getColorSpace(): ColorSpaceManager
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 62980101 | If the image data abnormal. |
-  | 62980103 | If the image data unsupport. |
-  | 62980104 | Failed to initialize the internal object. |
-  | 62980115 | If the image parameter invalid. |
+  | 62980101 | The image data is abnormal. |
+  | 62980103 | The image data is not supported. |
+  | 62980104 | Image initialization abnormal. This status code is thrown when an error occurs during the process of creating empty pixelmap. |
+  | 62980115 | Invalid image parameter. |
 
 **示例：**
 
@@ -3266,7 +3266,7 @@ public func getDensity(): Int32
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 62980104 | Failed to initialize the internal object. |
+  | 62980104 | Image initialization abnormal. This status code is thrown when an error occurs during the process of creating empty pixelmap. |
 
 **示例：**
 
@@ -3314,7 +3314,7 @@ public func getImageInfo(): ImageInfo
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 62980104 | Failed to initialize the internal object. |
+  | 62980104 | Image initialization abnormal. This status code is thrown when an error occurs during the process of creating empty pixelmap. |
 
 **示例：**
 
@@ -3362,7 +3362,7 @@ public func getPixelBytesNumber(): UInt32
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 62980104 | Failed to initialize the internal object. |
+  | 62980104 | Image initialization abnormal. This status code is thrown when an error occurs during the process of creating empty pixelmap. |
 
 **示例：**
 
@@ -3410,7 +3410,7 @@ public func opacity(rate: Float32): Unit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 62980104 | Failed to initialize the internal object. |
+  | 62980104 | Image initialization abnormal. This status code is thrown when an error occurs during the process of creating empty pixelmap. |
 
 **示例：**
 
@@ -3459,7 +3459,7 @@ public func readPixels(area: PositionArea): Unit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 62980104 | Failed to initialize the internal object. |
+  | 62980104 | Image initialization abnormal. This status code is thrown when an error occurs during the process of creating empty pixelmap. |
 
 **示例：**
 
@@ -3513,7 +3513,7 @@ public func readPixelsToBuffer(dst: Array<UInt8>): Unit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 62980104 | Failed to initialize the internal object. |
+  | 62980104 | Image initialization abnormal. This status code is thrown when an error occurs during the process of creating empty pixelmap. |
 
 **示例：**
 
@@ -3564,7 +3564,7 @@ public func release(): Unit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 62980104 | Failed to initialize the internal object. |
+  | 62980104 | Image initialization abnormal. This status code is thrown when an error occurs during the process of creating empty pixelmap. |
 
 **示例：**
 
@@ -3617,7 +3617,7 @@ public func rotate(angle: Float32): Unit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 62980104 | Failed to initialize the internal object. |
+  | 62980104 | Image initialization abnormal. This status code is thrown when an error occurs during the process of creating empty pixelmap. |
 
 **示例：**
 
@@ -3672,7 +3672,7 @@ public func scale(x: Float32, y: Float32): Unit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 62980104 | Failed to initialize the internal object. |
+  | 62980104 | Image initialization abnormal. This status code is thrown when an error occurs during the process of creating empty pixelmap. |
 
 **示例：**
 
@@ -3720,9 +3720,9 @@ public func setColorSpace(colorSpace: ColorSpaceManager): Unit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 62980104 | Failed to initialize the internal object. |
+  | 62980104 | Image initialization abnormal. This status code is thrown when an error occurs during the process of creating empty pixelmap. |
   | 62980111 | The image source data is incomplete. |
-  | 62980115 | If the image parameter invalid. |
+  | 62980115 | Invalid image parameter. |
 
 **示例：**
 
@@ -3775,7 +3775,7 @@ translate后的图片尺寸改变为：width+X ，height+Y，建议translate后�
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 62980104 | Failed to initialize the internal object. |
+  | 62980104 | Image initialization abnormal. This status code is thrown when an error occurs during the process of creating empty pixelmap. |
 
 **示例：**
 
@@ -3825,7 +3825,7 @@ public func writeBufferToPixels(src: Array<UInt8>): Unit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 62980104 | Failed to initialize the internal object. |
+  | 62980104 | Image initialization abnormal. This status code is thrown when an error occurs during the process of creating empty pixelmap. |
 
 **示例：**
 
@@ -3880,7 +3880,7 @@ RGBA的区域计算公式：读取区域（region.size{width * height}）* 4 （
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 62980104 | Failed to initialize the internal object. |
+  | 62980104 | Image initialization abnormal. This status code is thrown when an error occurs during the process of creating empty pixelmap. |
 
 **示例：**
 
