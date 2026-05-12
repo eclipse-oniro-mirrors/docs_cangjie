@@ -886,9 +886,7 @@ func f1() {
                         Hilog.info(0, "AppLogCj", "HiAppEvent packageId=${eventPkg.packageId}", "")
                         Hilog.info(0, "AppLogCj", "HiAppEvent row=${eventPkg.row}", "")
                         Hilog.info(0, "AppLogCj", "HiAppEvent size=${eventPkg.size}", "")
-                        for (i in 0..eventPkg
-                                .data
-                                .size) {
+                        for (i in 0..eventPkg.data.size) {
                             Hilog.info(0, "AppLogCj", "HiAppEvent info=${eventPkg.data[i]}", "")
                         }
                     }
@@ -908,9 +906,7 @@ func f2() {
             Hilog.info(0, "test_hiAppEvent_addWatcher", "HiAppEvent packageId=${eventPkg.packageId}", "")
             Hilog.info(0, "test_hiAppEvent_addWatcher", "HiAppEvent row=${eventPkg.row}", "")
             Hilog.info(0, "test_hiAppEvent_addWatcher", "HiAppEvent size=${eventPkg.size}", "")
-            for (i in 0..eventPkg
-                    .data
-                    .size) {
+            for (i in 0..eventPkg.data.size) {
                 Hilog.info(0, "test_hiAppEvent_addWatcher", "HiAppEvent info=${eventPkg.data[i]}", "")
             }
         }
@@ -932,19 +928,12 @@ func f3() {
                 let groupSize = AppEventGroups.size
                 for (i in 0..groupSize) {
                     Hilog.info(0, "AppLogCj", "name =${AppEventGroups[i].name}", "")
-                    let appInfosize = AppEventGroups[i]
-                        .appEventInfos
-                        .size
+                    let appInfosize = AppEventGroups[i].appEventInfos.size
                     for (j in 0..appInfosize) {
                         Hilog.info(0, "AppLogCj", "appEventInfo name=${AppEventGroups[i].appEventInfos[j].name}", "")
                         Hilog.info(0, "AppLogCj", "appEventInfo domain=${AppEventGroups[i].appEventInfos[j].domain}", "")
-                        let paSize = AppEventGroups[i]
-                            .appEventInfos[j]
-                            .params
-                            .size
-                        for ((k, v) in AppEventGroups[i]
-                                .appEventInfos[j]
-                                .params) {
+                        let paSize = AppEventGroups[i].appEventInfos[j].params.size
+                        for ((k, v) in AppEventGroups[i].appEventInfos[j].params) {
                             Hilog.info(0x0000, "HiAppEnvent", "key=${k}", "")
                             Hilog.info(0x0000, "HiAppEnvent", "value=${v.toString()}", "")
                         }
