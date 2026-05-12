@@ -164,19 +164,19 @@ func demo() {
         // ["SystemCapability.B", "SystemCapability.D"] 不告警；
         // ["SystemCapability.A", "SystemCapability.C"] 告警；
         // 非 ["SystemCapability.A", "SystemCapability.B", "SystemCapability.C", "SystemCapability.D"] 报错
-        f1()  // warning
-        f2()  // ok
-        f3()  // warning
-        f4()  // ok
+        f1() // warning
+        f2() // ok
+        f3() // warning
+        f4() // ok
     }, { =>
         // 此作用域最高允许使用 ["A", "B", "C"]，其中：
         // ["B"] 不告警；
         // ["A", "C"] 告警；
         // 非 ["A", "B", "C"] 报错
-        f1()  // warning
-        f2()  // ok
-        f3()  // warning
-        f4()  // error
+        f1() // warning
+        f2() // ok
+        f3() // warning
+        f4() // error
     })
 }
 ```

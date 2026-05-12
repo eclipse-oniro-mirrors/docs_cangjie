@@ -591,7 +591,6 @@ func getPixelMap(): PixelMap {
 @Entry
 @Component
 class EntryView {
-
     func build() {
         Row {
             Column {
