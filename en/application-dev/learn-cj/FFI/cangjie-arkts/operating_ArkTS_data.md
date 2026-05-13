@@ -71,8 +71,7 @@ An example from an interoperability function implementation:
 
     // Must register this function in JSModule
     let EXPORT_MODULE = JSModule.registerModule {
-        runtime, exports =>
-            exports["addByObject"] = runtime.function(addByObject).toJSValue()
+        runtime, exports => exports["addByObject"] = runtime.function(addByObject).toJSValue()
     }
     ```
 
@@ -178,8 +177,7 @@ func readNumber(context: JSContext, callInfo: JSCallInfo): JSValue {
 
 // Must register this function in JSModule
 let EXPORT_MODULE = JSModule.registerModule {
-    runtime, exports =>
-        exports["readNumber"] = runtime.function(readNumber).toJSValue()
+    runtime, exports => exports["readNumber"] = runtime.function(readNumber).toJSValue()
 }
 ```
 
@@ -238,9 +236,11 @@ func testAsync(context: JSContext, callInfo: JSCallInfo): JSValue {
 
 func readName(context: JSContext, callInfo: JSCallInfo): JSValue {
     let some = callInfo[0].asObject()
-    some["lock"].asObject().callMethod("lockAsync", context.function { context, callInfo =>
-        return some["name"]
-    }.toJSValue())
+    some["lock"]
+        .asObject()
+        .callMethod("lockAsync", context.function {
+            context, callInfo => return some["name"]
+        }.toJSValue())
 }
 
 let EXPORT_MODULE = JSModule.registerModule {
@@ -428,8 +428,7 @@ This example first calls a Cangjie function from ArkTS, then calls back an ArkTS
     }
 
     let EXPORT_MODULE = JSModule.registerModule {
-        runtime, exports =>
-            exports["addByCallback"] = runtime.function(addByCallback).toJSValue()
+        runtime, exports => exports["addByCallback"] = runtime.function(addByCallback).toJSValue()
     }
     ```
 

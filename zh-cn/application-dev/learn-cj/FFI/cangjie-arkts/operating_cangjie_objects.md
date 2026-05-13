@@ -241,14 +241,15 @@ console.log("id is " + id);
 
         static init() {
             // 注册导出到ark的类
-            JSModule.registerClass("Data") { context =>
-                // 创建JSClass
-                let clazz = context.clazz(jsConstructor)
-                // 增加方法
-                clazz.addMethod(context.string("setId"), context.function(setDataId))
-                clazz.addMethod(context.string("getId"), context.function(getDataId))
+            JSModule.registerClass("Data") {
+                context =>
+                    // 创建JSClass
+                    let clazz = context.clazz(jsConstructor)
+                    // 增加方法
+                    clazz.addMethod(context.string("setId"), context.function(setDataId))
+                    clazz.addMethod(context.string("getId"), context.function(getDataId))
 
-                return clazz
+                    return clazz
             }
         }
 

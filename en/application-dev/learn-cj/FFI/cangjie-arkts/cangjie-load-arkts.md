@@ -39,11 +39,14 @@ func loadModule(context: JSContext): Unit {
     // 2. Convert the imported module to JSObject
     let hilog = module.asObject()
     // 3. Call the info method of the object
-    hilog.callMethod("info", [
-        context.number(0).toJSValue(),
-        context.string("test").toJSValue(),
-        context.string("load hilog success").toJSValue()
-    ])
+    hilog.callMethod(
+        "info",
+        [
+            context.number(0).toJSValue(),
+            context.string("test").toJSValue(),
+            context.string("load hilog success").toJSValue()
+        ]
+    )
 }
 ```
 
@@ -135,9 +138,10 @@ export let value = 123
     ```cangjie
     func loadModule(context: JSContext): Unit {
         // 1. Import the module using requireArkModule
-        let module = context.requireArkModule("localhar/src/main/ets/Test")     // Import files in the local HAR
-        let module = context.requireArkModule("remotehar/src/main/ets/Test")    // Import files in the remote HAR
-        let module = context.requireArkModule("@ohos/lottie/src/main/js/main")  // Import files in the OHPM HAR
+        let module = context.requireArkModule("localhar/src/main/ets/Test") // Import files in the local HAR
+        let module = context.requireArkModule("remotehar/src/main/ets/Test") // Import files in the remote HAR
+        let module = context.requireArkModule("@ohos/lottie/src/main/js/main") // Import files in the OHPM HAR
+
         // 2. Convert the imported content to JSObject
         let test = module.asObject()
         // 3. Read the exported value variable
@@ -163,7 +167,8 @@ No configuration is required in `build-profile.json5`. The import and invocation
 ```cangjie
 func loadModule(context: JSContext): Unit {
     // 1. Import the module using requireArkModule
-    let module = context.requireArkModule("localhsp/src/main/ets/Test")     // Import files in the local HSP
+    let module = context.requireArkModule("localhsp/src/main/ets/Test") // Import files in the local HSP
+
     // 2. Convert the imported content to JSObject
     let test = module.asObject()
     // 3. Read the exported value variable
@@ -183,7 +188,8 @@ Native (napi | Cangjie) modules defined in HAP, HAR, and local HSP can all be lo
 ```cangjie
 func loadModule(context: JSContext): Unit {
     // 1. Import the module using requireArkModule
-    let module = context.requireArkModule("libentry.so")     // Import the native module
+    let module = context.requireArkModule("libentry.so") // Import the native module
+
     // 2. Convert the imported content to JSObject
     let test = module.asObject()
     // 3. Read the exported value variable

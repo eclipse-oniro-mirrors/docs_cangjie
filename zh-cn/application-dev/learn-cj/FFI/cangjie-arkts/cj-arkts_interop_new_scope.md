@@ -39,9 +39,10 @@ JSHeapObject是一个互操作类型，用于管理ArkTS对象的生命周期。
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     context.postJSTask {
         context.newScope {
-            let callback = context.function { c, _ =>
-                Hilog.info(0, "test", "newScope called")
-                c.undefined().toJSValue()
+            let callback = context.function {
+                c, _ =>
+                    Hilog.info(0, "test", "newScope called")
+                    c.undefined().toJSValue()
             }
             callback.call()
         }

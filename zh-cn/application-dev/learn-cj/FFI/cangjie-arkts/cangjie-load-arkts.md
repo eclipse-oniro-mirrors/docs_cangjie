@@ -40,11 +40,14 @@ func loadModule(context: JSContext): Unit {
     // 2. 把导入的模块转换为JSObject
     let hilog = module.asObject()
     // 3. 调用对象的info方法
-    hilog.callMethod("info", [
-        context.number(0).toJSValue(),
-        context.string("test").toJSValue(),
-        context.string("load hilog success").toJSValue()
-    ])
+    hilog.callMethod(
+        "info",
+        [
+            context.number(0).toJSValue(),
+            context.string("test").toJSValue(),
+            context.string("load hilog success").toJSValue()
+        ]
+    )
 }
 ```
 
@@ -136,9 +139,10 @@ export let value = 123
     ```cangjie
     func loadModule(context: JSContext): Unit {
         // 1. 使用requireArkModule导入模块
-        let module = context.requireArkModule("localhar/src/main/ets/Test")     // 导入本地har里的文件
-        let module = context.requireArkModule("remotehar/src/main/ets/Test")    // 导入远程har里的文件
-        let module = context.requireArkModule("@ohos/lottie/src/main/js/main")  // 导入ohpm har里的文件
+        let module = context.requireArkModule("localhar/src/main/ets/Test") // 导入本地har里的文件
+        let module = context.requireArkModule("remotehar/src/main/ets/Test") // 导入远程har里的文件
+        let module = context.requireArkModule("@ohos/lottie/src/main/js/main") // 导入ohpm har里的文件
+
         // 2. 把导入内容转换为JSObject
         let test = module.asObject()
         // 3. 读取导出的value变量
@@ -166,7 +170,8 @@ build-profile.json5无需配置，导入和调用方式如下：
 ```cangjie
 func loadModule(context: JSContext): Unit {
     // 1. 使用requireArkModule导入模块
-    let module = context.requireArkModule("localhsp/src/main/ets/Test")     // 导入本地hsp里的文件
+    let module = context.requireArkModule("localhsp/src/main/ets/Test") // 导入本地hsp里的文件
+
     // 2. 把导入内容转换为JSObject
     let test = module.asObject()
     // 3. 读取导出的value变量
@@ -187,7 +192,8 @@ func loadModule(context: JSContext): Unit {
 ```cangjie
 func loadModule(context: JSContext): Unit {
     // 1. 使用requireArkModule导入模块
-    let module = context.requireArkModule("libentry.so")     // 导入native模块
+    let module = context.requireArkModule("libentry.so") // 导入native模块
+
     // 2. 把导入内容转换为JSObject
     let test = module.asObject()
     // 3. 读取导出的value变量

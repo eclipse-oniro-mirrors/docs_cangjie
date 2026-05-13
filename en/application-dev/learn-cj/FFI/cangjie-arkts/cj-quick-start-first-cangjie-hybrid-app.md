@@ -224,7 +224,8 @@ Key files include:
      @HybridComponentEntry
      @Component
      class Second {
-         @State var msg: String = "Hello Cangjie"
+         @State
+         var msg: String = "Hello Cangjie"
 
          public func build() {
              Row() {
@@ -238,15 +239,13 @@ Key files include:
                              .fontSize(30)
                              .fontWeight(FontWeight.Bold)
                      }
-                     .shape(ButtonType.Capsule)
-                     .margin(top: 20)
-                     .backgroundColor(Color(0x0D9FFB))
-                     .width(40.percent)
-                     .height(5.percent)
-                 }
-                 .width(100.percent)
-             }
-             .height(100.percent)
+                         .shape(ButtonType.Capsule)
+                         .margin(top: 20)
+                         .backgroundColor(Color(0x0D9FFB))
+                         .width(40.percent)
+                         .height(5.percent)
+                 }.width(100.percent)
+             }.height(100.percent)
          }
      }
      ```
@@ -361,10 +360,10 @@ Page navigation uses the router module to find target pages via URLs.
      import std.collection.*
      import ohos.hilog.Hilog
 
-     public let globalJSFunction = HashMap<String, ()->Unit>()
+     public let globalJSFunction = HashMap<String, () -> Unit>()
 
      @Interop[ArkTS]
-     public func registerJSFunc(name: String, fn: ()->Unit): Unit {
+     public func registerJSFunc(name: String, fn: () -> Unit): Unit {
          if (globalJSFunction.contains(name)) {
              Hilog.error(1, "info", "registerJSFunc failed(err: func ${name} already exists)")
              return
@@ -437,7 +436,8 @@ Page navigation uses the router module to find target pages via URLs.
      @HybridComponentEntry
      @Component
      class Second {
-         @State var msg: String = "Hello Cangjie"
+         @State
+         var msg: String = "Hello Cangjie"
 
          public func build() {
              Row() {
@@ -451,24 +451,25 @@ Page navigation uses the router module to find target pages via URLs.
                              .fontSize(30)
                              .fontWeight(FontWeight.Bold)
                      }
-                     .shape(ButtonType.Capsule)
-                     .margin(top: 20)
-                     .backgroundColor(Color(0x0D9FFB))
-                     .width(40.percent)
-                     .height(5.percent)
-                     .onClick ({ _ =>
-                         Hilog.info(1, "info", "Succeeded in clicking the 'Back' button.")
-                         let optFn = globalJSFunction.get("SecondPageRouterBack")
-                         if (let Some(fn) <- optFn) {
-                             fn()
-                         } else {
-                             Hilog.error(1, "info", "Failed to return to the first page. callback not exists")
-                         }
-                     })
-                 }
-                 .width(100.percent)
-             }
-             .height(100.percent)
+                         .shape(ButtonType.Capsule)
+                         .margin(top: 20)
+                         .backgroundColor(Color(0x0D9FFB))
+                         .width(40.percent)
+                         .height(5.percent)
+                         .onClick(
+                             {
+                                 _ =>
+                                     Hilog.info(1, "info", "Succeeded in clicking the 'Back' button.")
+                                     let optFn = globalJSFunction.get("SecondPageRouterBack")
+                                     if (let Some(fn) <- optFn) {
+                                         fn()
+                                     } else {
+                                         Hilog.error(1, "info", "Failed to return to the first page. callback not exists")
+                                     }
+                             }
+                         )
+                 }.width(100.percent)
+             }.height(100.percent)
          }
      }
      ```## Running the Application on a Real Device or Emulator

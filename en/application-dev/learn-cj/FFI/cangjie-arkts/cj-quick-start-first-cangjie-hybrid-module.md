@@ -466,12 +466,12 @@ Here, **my_module** becomes a Cangjie-ArkTS hybrid module.
                    .width(80.percent)
                    .height(40)
                    .margin(20)
-                   .onClick ({ _ =>
-                        msg = "Okay, Cangjie clicked"
-                    })
+                   .onClick({
+                       _ => msg = "Okay, Cangjie clicked"
+                   })
            }
-           .width(100.percent)
-           .height(100.percent)
+               .width(100.percent)
+               .height(100.percent)
        }
    }
    ```
