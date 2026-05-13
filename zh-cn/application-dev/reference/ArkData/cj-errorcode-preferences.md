@@ -46,6 +46,7 @@ Failed to delete the user preferences persistence file.
 **可能原因**
 
 系统错误导致文件删除失败，可能原因如下：
+
 1. 文件名称不正确。
 2. 文件路径不正确。
 

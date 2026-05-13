@@ -5604,7 +5604,8 @@ public func toString(): String
 ## enum BluetoothBleGattClientDeviceCallbackType
 
 ```cangjie
-public enum BluetoothBleGattClientDeviceCallbackType <: Equatable<BluetoothBleGattClientDeviceCallbackType> & Hashable & ToString {
+public enum BluetoothBleGattClientDeviceCallbackType <: Equatable<BluetoothBleGattClientDeviceCallbackType> & Hashable &
+    ToString {
     | BleCharacteristicChange
     | BleConnectionStateChange
     | ClientBleMtuChange

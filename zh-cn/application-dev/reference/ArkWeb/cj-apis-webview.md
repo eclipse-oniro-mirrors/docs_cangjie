@@ -132,25 +132,24 @@ class webview_0 {
     let webController = WebviewController()
     func build() {
         Column(space: 10) {
-            Button("getItemAtIndex")
-            .onClick ({
-                evt =>
-                Hilog.info(0, "cangjieTest", "getItemAtIndex")
-                let backForwardList = webController.getBackForwardEntries()
-                let historyItem = backForwardList.getItemAtIndex(backForwardList.currentIndex)
-                Hilog.info(0, "cangjieTest", "Current historyUrl is ${historyItem.historyUrl}.")
-                Hilog.info(0, "cangjieTest", "Current historyRawUrl is ${historyItem.historyRawUrl}.")
-                Hilog.info(0, "cangjieTest", "Current title is ${historyItem.title}.")
-                let pixelMap = historyItem.icon
-                let byteInfo = pixelMap?.getPixelBytesNumber() ?? 0
-                Hilog.info(0, "cangjieTest", "icon byteInfo is ${byteInfo}")
-            }).width(400.px).height(150.px)
-            Web(src: "www.example.com", controller: webController)
-            .onPageBegin({evt =>
-                Hilog.info(0, "cangjieTest", "page begin url: ${evt.url}")
-            })
-            .onPageEnd({evt =>
-                Hilog.info(0, "cangjieTest", "page end url: ${evt.url}")
+            Button("getItemAtIndex").onClick(
+                {
+                    evt =>
+                        Hilog.info(0, "cangjieTest", "getItemAtIndex")
+                        let backForwardList = webController.getBackForwardEntries()
+                        let historyItem = backForwardList.getItemAtIndex(backForwardList.currentIndex)
+                        Hilog.info(0, "cangjieTest", "Current historyUrl is ${historyItem.historyUrl}.")
+                        Hilog.info(0, "cangjieTest", "Current historyRawUrl is ${historyItem.historyRawUrl}.")
+                        Hilog.info(0, "cangjieTest", "Current title is ${historyItem.title}.")
+                        let pixelMap = historyItem.icon
+                        let byteInfo = pixelMap?.getPixelBytesNumber() ?? 0
+                        Hilog.info(0, "cangjieTest", "icon byteInfo is ${byteInfo}")
+                }
+            ).width(400.px).height(150.px)
+            Web(src: "www.example.com", controller: webController).onPageBegin({
+                evt => Hilog.info(0, "cangjieTest", "page begin url: ${evt.url}")
+            }).onPageEnd({
+                evt => Hilog.info(0, "cangjieTest", "page end url: ${evt.url}")
             })
         }
     }
@@ -834,19 +833,18 @@ class webview_1 {
     let headers = [WebHeader("headerKey", "headerValue")]
     func build() {
         Column(space: 10) {
-            Button("setWebDebuggingAccess")
-            .onClick ({
-                evt =>
-                Hilog.info(0, "AppLogCj", "setWebDebuggingAccess")
-                WebviewController.setWebDebuggingAccess(true)
-            }).width(400.px).height(150.px)
+            Button("setWebDebuggingAccess").onClick(
+                {
+                    evt =>
+                        Hilog.info(0, "AppLogCj", "setWebDebuggingAccess")
+                        WebviewController.setWebDebuggingAccess(true)
+                }
+            ).width(400.px).height(150.px)
 
-            Web(src: "www.example.com", controller: webController)
-            .onPageBegin({evt =>
-                Hilog.info(0, "AppLogCj", "page begin url: ${evt.url}")
-            })
-            .onPageEnd({evt =>
-                Hilog.info(0, "AppLogCj", "page end url: ${evt.url}")
+            Web(src: "www.example.com", controller: webController).onPageBegin({
+                evt => Hilog.info(0, "AppLogCj", "page begin url: ${evt.url}")
+            }).onPageEnd({
+                evt => Hilog.info(0, "AppLogCj", "page end url: ${evt.url}")
             })
         }
     }
@@ -913,21 +911,20 @@ import kit.PerformanceAnalysisKit.Hilog
 class webview_2 {
     let webController = WebviewController()
     func build() {
-        Column(space:10) {
-            Button("canGoBack")
-            .onClick ({
-                evt =>
-                Hilog.info(0, "cangjieTest", "canGoBack")
-                let bool = webController.canGoBack()
-                Hilog.info(0, "cangjieTest", "canGoBack returns ${bool}")
-            }).width(400.px).height(150.px)
+        Column(space: 10) {
+            Button("canGoBack").onClick(
+                {
+                    evt =>
+                        Hilog.info(0, "cangjieTest", "canGoBack")
+                        let bool = webController.canGoBack()
+                        Hilog.info(0, "cangjieTest", "canGoBack returns ${bool}")
+                }
+            ).width(400.px).height(150.px)
 
-            Web(src: "www.example.com", controller: webController)
-            .onPageBegin({evt =>
-                Hilog.info(0, "cangjieTest", "page begin url: ${evt.url}")
-            })
-            .onPageEnd({evt =>
-                Hilog.info(0, "cangjieTest", "page end url: ${evt.url}")
+            Web(src: "www.example.com", controller: webController).onPageBegin({
+                evt => Hilog.info(0, "cangjieTest", "page begin url: ${evt.url}")
+            }).onPageEnd({
+                evt => Hilog.info(0, "cangjieTest", "page end url: ${evt.url}")
             })
         }
     }
@@ -997,19 +994,19 @@ class webview_3 {
     func build() {
         Column(space: 10) {
             Button("accessStep")
-             Text(this.message).onClick ({
-                evt =>
-                Hilog.info(0, "cangjieTest", "accessStep")
-                let access = webController.accessStep(2)
-                Hilog.info(0, "cangjieTest", "accessStep returns: ${access}")
-            }).width(400.px).height(150.px)
+            Text(this.message).onClick(
+                {
+                    evt =>
+                        Hilog.info(0, "cangjieTest", "accessStep")
+                        let access = webController.accessStep(2)
+                        Hilog.info(0, "cangjieTest", "accessStep returns: ${access}")
+                }
+            ).width(400.px).height(150.px)
 
-            Web(src: "www.example.com", controller: webController)
-            .onPageBegin({evt =>
-                Hilog.info(0, "cangjieTest", "page begin url: ${evt.url}")
-            })
-            .onPageEnd({evt =>
-                Hilog.info(0, "cangjieTest", "page end url: ${evt.url}")
+            Web(src: "www.example.com", controller: webController).onPageBegin({
+                evt => Hilog.info(0, "cangjieTest", "page begin url: ${evt.url}")
+            }).onPageEnd({
+                evt => Hilog.info(0, "cangjieTest", "page end url: ${evt.url}")
             })
         }
     }
@@ -1071,19 +1068,18 @@ class webview_4 {
     let webController = WebviewController()
     func build() {
         Column(space: 10) {
-            Button("goBackOrForward")
-            .onClick ({
-                evt =>
-                Hilog.info(0, "cangjieTest", "goBackOrForward")
-                webController.goBackOrForward(-2)
-            }).width(400.px).height(150.px)
+            Button("goBackOrForward").onClick(
+                {
+                    evt =>
+                        Hilog.info(0, "cangjieTest", "goBackOrForward")
+                        webController.goBackOrForward(-2)
+                }
+            ).width(400.px).height(150.px)
 
-            Web(src: "www.example.com", controller: webController)
-            .onPageBegin({evt =>
-                Hilog.info(0, "cangjieTest", "page begin url: ${evt.url}")
-            })
-            .onPageEnd({evt =>
-                Hilog.info(0, "cangjieTest", "page end url: ${evt.url}")
+            Web(src: "www.example.com", controller: webController).onPageBegin({
+                evt => Hilog.info(0, "cangjieTest", "page begin url: ${evt.url}")
+            }).onPageEnd({
+                evt => Hilog.info(0, "cangjieTest", "page end url: ${evt.url}")
             })
         }
     }
@@ -1137,19 +1133,18 @@ class webview_5 {
     let webController = WebviewController()
     func build() {
         Column(space: 10) {
-            Button("goBack")
-            .onClick ({
-                evt =>
-                Hilog.info(0, "cangjieTest", "goBack")
-                webController.goBack()
-            }).width(400.px).height(150.px)
+            Button("goBack").onClick(
+                {
+                    evt =>
+                        Hilog.info(0, "cangjieTest", "goBack")
+                        webController.goBack()
+                }
+            ).width(400.px).height(150.px)
 
-            Web(src: "www.example.com", controller: webController)
-            .onPageBegin({evt =>
-                Hilog.info(0, "cangjieTest", "page begin url: ${evt.url}")
-            })
-            .onPageEnd({evt =>
-                Hilog.info(0, "cangjieTest", "page end url: ${evt.url}")
+            Web(src: "www.example.com", controller: webController).onPageBegin({
+                evt => Hilog.info(0, "cangjieTest", "page begin url: ${evt.url}")
+            }).onPageEnd({
+                evt => Hilog.info(0, "cangjieTest", "page end url: ${evt.url}")
             })
         }
     }
@@ -1203,19 +1198,18 @@ class webview_6 {
     let webController = WebviewController()
     func build() {
         Column(space: 10) {
-            Button("clearHistory")
-            .onClick ({
-                evt =>
-                Hilog.info(0, "cangjieTest", "clearHistory")
-                webController.clearHistory()
-            }).width(400.px).height(150.px)
+            Button("clearHistory").onClick(
+                {
+                    evt =>
+                        Hilog.info(0, "cangjieTest", "clearHistory")
+                        webController.clearHistory()
+                }
+            ).width(400.px).height(150.px)
 
-            Web(src: "www.example.com", controller: webController)
-            .onPageBegin({evt =>
-                Hilog.info(0, "cangjieTest", "page begin url: ${evt.url}")
-            })
-            .onPageEnd({evt =>
-                Hilog.info(0, "cangjieTest", "page end url: ${evt.url}")
+            Web(src: "www.example.com", controller: webController).onPageBegin({
+                evt => Hilog.info(0, "cangjieTest", "page begin url: ${evt.url}")
+            }).onPageEnd({
+                evt => Hilog.info(0, "cangjieTest", "page end url: ${evt.url}")
             })
         }
     }
@@ -1276,19 +1270,18 @@ class webview_7 {
     let webController = WebviewController()
     func build() {
         Column(space: 10) {
-            Button("enableSafeBrowsing")
-            .onClick ({
-                evt =>
-                Hilog.info(0, "cangjieTest", "enableSafeBrowsing")
-                webController.enableSafeBrowsing(true)
-            }).width(400.px).height(150.px)
+            Button("enableSafeBrowsing").onClick(
+                {
+                    evt =>
+                        Hilog.info(0, "cangjieTest", "enableSafeBrowsing")
+                        webController.enableSafeBrowsing(true)
+                }
+            ).width(400.px).height(150.px)
 
-            Web(src: "www.example.com", controller: webController)
-            .onPageBegin({evt =>
-                Hilog.info(0, "cangjieTest", "page begin url: ${evt.url}")
-            })
-            .onPageEnd({evt =>
-                Hilog.info(0, "cangjieTest", "page end url: ${evt.url}")
+            Web(src: "www.example.com", controller: webController).onPageBegin({
+                evt => Hilog.info(0, "cangjieTest", "page begin url: ${evt.url}")
+            }).onPageEnd({
+                evt => Hilog.info(0, "cangjieTest", "page end url: ${evt.url}")
             })
         }
     }
@@ -1342,19 +1335,18 @@ class webview_8 {
     let webController = WebviewController()
     func build() {
         Column(space: 10) {
-            Button("goForward")
-            .onClick ({
-                evt =>
-                Hilog.info(0, "cangjieTest", "goForward")
-                webController.goForward()
-            }).width(400.px).height(150.px)
+            Button("goForward").onClick(
+                {
+                    evt =>
+                        Hilog.info(0, "cangjieTest", "goForward")
+                        webController.goForward()
+                }
+            ).width(400.px).height(150.px)
 
-            Web(src: "www.example.com", controller: webController)
-            .onPageBegin({evt =>
-                Hilog.info(0, "cangjieTest", "page begin url: ${evt.url}")
-            })
-            .onPageEnd({evt =>
-                Hilog.info(0, "cangjieTest", "page end url: ${evt.url}")
+            Web(src: "www.example.com", controller: webController).onPageBegin({
+                evt => Hilog.info(0, "cangjieTest", "page begin url: ${evt.url}")
+            }).onPageEnd({
+                evt => Hilog.info(0, "cangjieTest", "page end url: ${evt.url}")
             })
         }
     }
@@ -1414,21 +1406,20 @@ class webview_9 {
     let webController = WebviewController()
     func build() {
         Column(space: 10) {
-            Button("getBackForwardEntries")
-            .onClick ({
-                evt =>
-                Hilog.info(0, "cangjieTest", "getBackForwardEntries")
-                let backForwardList = webController.getBackForwardEntries()
-                Hilog.info(0, "cangjieTest", "backForwardList currentIndex is ${backForwardList.currentIndex}")
-                Hilog.info(0, "cangjieTest", "backForwardList size is ${backForwardList.size}")
-            }).width(400.px).height(150.px)
+            Button("getBackForwardEntries").onClick(
+                {
+                    evt =>
+                        Hilog.info(0, "cangjieTest", "getBackForwardEntries")
+                        let backForwardList = webController.getBackForwardEntries()
+                        Hilog.info(0, "cangjieTest", "backForwardList currentIndex is ${backForwardList.currentIndex}")
+                        Hilog.info(0, "cangjieTest", "backForwardList size is ${backForwardList.size}")
+                }
+            ).width(400.px).height(150.px)
 
-            Web(src: "www.example.com", controller: webController)
-            .onPageBegin({evt =>
-                Hilog.info(0, "cangjieTest", "page begin url: ${evt.url}")
-            })
-            .onPageEnd({evt =>
-                Hilog.info(0, "cangjieTest", "page end url: ${evt.url}")
+            Web(src: "www.example.com", controller: webController).onPageBegin({
+                evt => Hilog.info(0, "cangjieTest", "page begin url: ${evt.url}")
+            }).onPageEnd({
+                evt => Hilog.info(0, "cangjieTest", "page end url: ${evt.url}")
             })
         }
     }
@@ -1489,20 +1480,19 @@ class webview_10 {
     let headers = [WebHeader("headerKey", "headerValue")]
     func build() {
         Column(space: 10) {
-            Button("getCustomUserAgent")
-            .onClick ({
-                evt =>
-                Hilog.info(0, "cangjieTest", "getCustomUserAgent")
-                let agent = webController.getCustomUserAgent()
-                Hilog.info(0, "cangjieTest", "getCustomUserAgent returns ${agent}")
-            }).width(400.px).height(150.px)
+            Button("getCustomUserAgent").onClick(
+                {
+                    evt =>
+                        Hilog.info(0, "cangjieTest", "getCustomUserAgent")
+                        let agent = webController.getCustomUserAgent()
+                        Hilog.info(0, "cangjieTest", "getCustomUserAgent returns ${agent}")
+                }
+            ).width(400.px).height(150.px)
 
-            Web(src: "www.example.com", controller: webController)
-            .onPageBegin({evt =>
-                Hilog.info(0, "cangjieTest", "page begin url: ${evt.url}")
-            })
-            .onPageEnd({evt =>
-                Hilog.info(0, "cangjieTest", "page end url: ${evt.url}")
+            Web(src: "www.example.com", controller: webController).onPageBegin({
+                evt => Hilog.info(0, "cangjieTest", "page begin url: ${evt.url}")
+            }).onPageEnd({
+                evt => Hilog.info(0, "cangjieTest", "page end url: ${evt.url}")
             })
         }
     }
@@ -1562,20 +1552,19 @@ class webview_13 {
     let webController = WebviewController()
     func build() {
         Column(space: 10) {
-            Button("getOriginalUrl")
-            .onClick ({
-                evt =>
-                Hilog.info(0, "cangjieTest", "getOriginalUrl")
-                let url = webController.getOriginalUrl()
-                Hilog.info(0, "cangjieTest", "getOriginalUrl is ${url}")
-            }).width(400.px).height(150.px)
+            Button("getOriginalUrl").onClick(
+                {
+                    evt =>
+                        Hilog.info(0, "cangjieTest", "getOriginalUrl")
+                        let url = webController.getOriginalUrl()
+                        Hilog.info(0, "cangjieTest", "getOriginalUrl is ${url}")
+                }
+            ).width(400.px).height(150.px)
 
-            Web(src: "www.example.com", controller: webController)
-            .onPageBegin({evt =>
-                Hilog.info(0, "cangjieTest", "page begin url: ${evt.url}")
-            })
-            .onPageEnd({evt =>
-                Hilog.info(0, "cangjieTest", "page end url: ${evt.url}")
+            Web(src: "www.example.com", controller: webController).onPageBegin({
+                evt => Hilog.info(0, "cangjieTest", "page begin url: ${evt.url}")
+            }).onPageEnd({
+                evt => Hilog.info(0, "cangjieTest", "page end url: ${evt.url}")
             })
         }
     }
@@ -1635,12 +1624,13 @@ class webview_14 {
     let webController = WebviewController()
     func build() {
         Column(space: 10) {
-            Button("getOriginalUrl")
-            .onClick ({
-                evt =>
-                Hilog.info(0, "cangjieTest", "getOriginalUrl")
-                let height = webController.getPageHeight()
-            }).width(400.px).height(150.px)
+            Button("getOriginalUrl").onClick(
+                {
+                    evt =>
+                        Hilog.info(0, "cangjieTest", "getOriginalUrl")
+                        let height = webController.getPageHeight()
+                }
+            ).width(400.px).height(150.px)
         }
     }
 }
@@ -1699,25 +1689,27 @@ class webview_15 {
     let webController = WebviewController()
     func build() {
         Column(space: 10) {
-            Button("getSecurityLevel")
-            .onClick ({
-                evt =>
-                Hilog.info(0, "cangjieTest", "getSecurityLevel")
-                let securityLevel = webController.getSecurityLevel()
-                match(securityLevel) {
-                    case SecurityLevel.NoneLevel => Hilog.info(0, "cangjieTest", "getSecurityLevel returns NoneLevel")
-                    case SecurityLevel.Secure => Hilog.info(0, "cangjieTest", "getSecurityLevel returns Secure")
-                    case SecurityLevel.Warning => Hilog.info(0, "cangjieTest", "getSecurityLevel returns Warning ")
-                    case SecurityLevel.Dangerous => Hilog.info(0, "cangjieTest", "getSecurityLevel returns Dangerous")
-                    case _ => throw IllegalArgumentException("The type is not supported.")
-                 }
-            }).width(400.px).height(150.px)
-            Web(src: "www.example.com", controller: webController)
-            .onPageBegin({evt =>
-                Hilog.info(0, "cangjieTest", "page begin url: ${evt.url}")
-            })
-            .onPageEnd({evt =>
-                Hilog.info(0, "cangjieTest", "page end url: ${evt.url}")
+            Button("getSecurityLevel").onClick(
+                {
+                    evt =>
+                        Hilog.info(0, "cangjieTest", "getSecurityLevel")
+                        let securityLevel = webController.getSecurityLevel()
+                        match (securityLevel) {
+                            case SecurityLevel.NoneLevel => Hilog.info(0, "cangjieTest",
+                                "getSecurityLevel returns NoneLevel")
+                            case SecurityLevel.Secure => Hilog.info(0, "cangjieTest", "getSecurityLevel returns Secure")
+                            case SecurityLevel.Warning => Hilog.info(0, "cangjieTest",
+                                "getSecurityLevel returns Warning ")
+                            case SecurityLevel.Dangerous => Hilog.info(0, "cangjieTest",
+                                "getSecurityLevel returns Dangerous")
+                            case _ => throw IllegalArgumentException("The type is not supported.")
+                        }
+                }
+            ).width(400.px).height(150.px)
+            Web(src: "www.example.com", controller: webController).onPageBegin({
+                evt => Hilog.info(0, "cangjieTest", "page begin url: ${evt.url}")
+            }).onPageEnd({
+                evt => Hilog.info(0, "cangjieTest", "page end url: ${evt.url}")
             })
         }
     }
@@ -1777,20 +1769,19 @@ class webview_16 {
     let webController = WebviewController()
     func build() {
         Column(space: 10) {
-            Button("getTitle")
-            .onClick ({
-                evt =>
-                Hilog.info(0, "cangjieTest", "getTitle")
-                let title = webController.getTitle()
-                Hilog.info(0, "cangjieTest", "getTitle returns ${title}")
-            }).width(400.px).height(150.px)
+            Button("getTitle").onClick(
+                {
+                    evt =>
+                        Hilog.info(0, "cangjieTest", "getTitle")
+                        let title = webController.getTitle()
+                        Hilog.info(0, "cangjieTest", "getTitle returns ${title}")
+                }
+            ).width(400.px).height(150.px)
 
-            Web(src: "www.example.com", controller: webController)
-            .onPageBegin({evt =>
-                Hilog.info(0, "cangjieTest", "page begin url: ${evt.url}")
-            })
-            .onPageEnd({evt =>
-                Hilog.info(0, "cangjieTest", "page end url: ${evt.url}")
+            Web(src: "www.example.com", controller: webController).onPageBegin({
+                evt => Hilog.info(0, "cangjieTest", "page begin url: ${evt.url}")
+            }).onPageEnd({
+                evt => Hilog.info(0, "cangjieTest", "page end url: ${evt.url}")
             })
         }
     }
@@ -1850,19 +1841,18 @@ class webview_17 {
     let webController = WebviewController()
     func build() {
         Column(space: 10) {
-            Button("getUrl")
-            .onClick ({
-                evt =>
-                Hilog.info(0, "cangjieTest", "getUrl")
-                let url = webController.getUrl()
-                Hilog.info(0, "cangjieTest", "getUrl is ${url}")
-            }).width(400.px).height(150.px)
-            Web(src: "www.example.com", controller: webController)
-            .onPageBegin({evt =>
-                Hilog.info(0, "cangjieTest", "page begin url: ${evt.url}")
-            })
-            .onPageEnd({evt =>
-                Hilog.info(0, "cangjieTest", "page end url: ${evt.url}")
+            Button("getUrl").onClick(
+                {
+                    evt =>
+                        Hilog.info(0, "cangjieTest", "getUrl")
+                        let url = webController.getUrl()
+                        Hilog.info(0, "cangjieTest", "getUrl is ${url}")
+                }
+            ).width(400.px).height(150.px)
+            Web(src: "www.example.com", controller: webController).onPageBegin({
+                evt => Hilog.info(0, "cangjieTest", "page begin url: ${evt.url}")
+            }).onPageEnd({
+                evt => Hilog.info(0, "cangjieTest", "page end url: ${evt.url}")
             })
         }
     }
@@ -1923,19 +1913,18 @@ class webview_18 {
     let headers = [WebHeader("headerKey", "headerValue")]
     func build() {
         Column(space: 10) {
-            Button("getUserAgent")
-            .onClick ({
-                evt =>
-                Hilog.info(0, "cangjieTest", "getUserAgent")
-                webController.getUserAgent()
-            }).width(400.px).height(150.px)
+            Button("getUserAgent").onClick(
+                {
+                    evt =>
+                        Hilog.info(0, "cangjieTest", "getUserAgent")
+                        webController.getUserAgent()
+                }
+            ).width(400.px).height(150.px)
 
-            Web(src: "www.example.com", controller: webController)
-            .onPageBegin({evt =>
-                Hilog.info(0, "cangjieTest", "page begin url: ${evt.url}")
-            })
-            .onPageEnd({evt =>
-                Hilog.info(0, "cangjieTest", "page end url: ${evt.url}")
+            Web(src: "www.example.com", controller: webController).onPageBegin({
+                evt => Hilog.info(0, "cangjieTest", "page begin url: ${evt.url}")
+            }).onPageEnd({
+                evt => Hilog.info(0, "cangjieTest", "page end url: ${evt.url}")
             })
         }
     }
@@ -1995,25 +1984,23 @@ class webview_19 {
     let webController = WebviewController()
     func build() {
         Column(space: 10) {
-            Button("isIncognitoMode")
-            .onClick ({
-                evt =>
-                Hilog.info(0, "cangjieTest", "isIncognitoMode")
-                let bool = webController.isIncognitoMode()
-                Hilog.info(0, "cangjieTest", "isIncognitoMode returns ${bool}")
-            }).width(400.px).height(150.px)
+            Button("isIncognitoMode").onClick(
+                {
+                    evt =>
+                        Hilog.info(0, "cangjieTest", "isIncognitoMode")
+                        let bool = webController.isIncognitoMode()
+                        Hilog.info(0, "cangjieTest", "isIncognitoMode returns ${bool}")
+                }
+            ).width(400.px).height(150.px)
 
-            Web(src: "www.example.com", controller: webController)
-            .onPageBegin({evt =>
-                Hilog.info(0, "cangjieTest", "page begin url: ${evt.url}")
-            })
-            .onPageEnd({evt =>
-                Hilog.info(0, "cangjieTest", "page end url: ${evt.url}")
+            Web(src: "www.example.com", controller: webController).onPageBegin({
+                evt => Hilog.info(0, "cangjieTest", "page begin url: ${evt.url}")
+            }).onPageEnd({
+                evt => Hilog.info(0, "cangjieTest", "page end url: ${evt.url}")
             })
         }
     }
 }
-
 ```
 
 ### func isSafeBrowsingEnabled()
@@ -2069,19 +2056,18 @@ class webview_20 {
     let webController = WebviewController()
     func build() {
         Column(space: 10) {
-            Button("isSafeBrowsingEnabled")
-            .onClick ({
-                evt =>
-                Hilog.info(0, "cangjieTest", "isSafeBrowsingEnabled")
-                let bool = webController.isSafeBrowsingEnabled()
-                Hilog.info(0, "cangjieTest", "isSafeBrowsingEnabled returns ${bool}")
-            }).width(400.px).height(150.px)
-            Web(src: "www.example.com", controller: webController)
-            .onPageBegin({evt =>
-                Hilog.info(0, "cangjieTest", "page begin url: ${evt.url}")
-            })
-            .onPageEnd({evt =>
-                Hilog.info(0, "cangjieTest", "page end url: ${evt.url}")
+            Button("isSafeBrowsingEnabled").onClick(
+                {
+                    evt =>
+                        Hilog.info(0, "cangjieTest", "isSafeBrowsingEnabled")
+                        let bool = webController.isSafeBrowsingEnabled()
+                        Hilog.info(0, "cangjieTest", "isSafeBrowsingEnabled returns ${bool}")
+                }
+            ).width(400.px).height(150.px)
+            Web(src: "www.example.com", controller: webController).onPageBegin({
+                evt => Hilog.info(0, "cangjieTest", "page begin url: ${evt.url}")
+            }).onPageEnd({
+                evt => Hilog.info(0, "cangjieTest", "page end url: ${evt.url}")
             })
         }
     }
@@ -2141,19 +2127,18 @@ class webview_21 {
     let webController = WebviewController()
     func build() {
         Column(space: 10) {
-            Button("pageDown")
-            .onClick ({
-                evt =>
-                Hilog.info(0, "cangjieTest", "pageDown")
-                webController.pageDown(true)
-            }).width(400.px).height(150.px)
+            Button("pageDown").onClick(
+                {
+                    evt =>
+                        Hilog.info(0, "cangjieTest", "pageDown")
+                        webController.pageDown(true)
+                }
+            ).width(400.px).height(150.px)
 
-            Web(src: "www.example.com", controller: webController)
-            .onPageBegin({evt =>
-                Hilog.info(0, "cangjieTest", "page begin url: ${evt.url}")
-            })
-            .onPageEnd({evt =>
-                Hilog.info(0, "cangjieTest", "page end url: ${evt.url}")
+            Web(src: "www.example.com", controller: webController).onPageBegin({
+                evt => Hilog.info(0, "cangjieTest", "page begin url: ${evt.url}")
+            }).onPageEnd({
+                evt => Hilog.info(0, "cangjieTest", "page end url: ${evt.url}")
             })
         }
     }
@@ -2213,19 +2198,18 @@ class webview_22 {
     let webController = WebviewController()
     func build() {
         Column(space: 10) {
-            Button("pageUp")
-            .onClick ({
-                evt =>
-                Hilog.info(0, "cangjieTest", "pageUp")
-                webController.pageUp(true)
-            }).width(400.px).height(150.px)
+            Button("pageUp").onClick(
+                {
+                    evt =>
+                        Hilog.info(0, "cangjieTest", "pageUp")
+                        webController.pageUp(true)
+                }
+            ).width(400.px).height(150.px)
 
-            Web(src: "www.example.com", controller: webController)
-            .onPageBegin({evt =>
-                Hilog.info(0, "cangjieTest", "page begin url: ${evt.url}")
-            })
-            .onPageEnd({evt =>
-                Hilog.info(0, "cangjieTest", "page end url: ${evt.url}")
+            Web(src: "www.example.com", controller: webController).onPageBegin({
+                evt => Hilog.info(0, "cangjieTest", "page begin url: ${evt.url}")
+            }).onPageEnd({
+                evt => Hilog.info(0, "cangjieTest", "page end url: ${evt.url}")
             })
         }
     }
@@ -2280,19 +2264,18 @@ class webview_23 {
     let headers = [WebHeader("headerKey", "headerValue")]
     func build() {
         Column(space: 10) {
-            Button("reload")
-            .onClick ({
-                evt =>
-                Hilog.info(0, "cangjieTest", "reload")
-                webController.reload()
-            }).width(400.px).height(150.px)
+            Button("reload").onClick(
+                {
+                    evt =>
+                        Hilog.info(0, "cangjieTest", "reload")
+                        webController.reload()
+                }
+            ).width(400.px).height(150.px)
 
-            Web(src: "www.example.com", controller: webController)
-            .onPageBegin({evt =>
-                Hilog.info(0, "cangjieTest", "page begin url: ${evt.url}")
-            })
-            .onPageEnd({evt =>
-                Hilog.info(0, "cangjieTest", "page end url: ${evt.url}")
+            Web(src: "www.example.com", controller: webController).onPageBegin({
+                evt => Hilog.info(0, "cangjieTest", "page begin url: ${evt.url}")
+            }).onPageEnd({
+                evt => Hilog.info(0, "cangjieTest", "page end url: ${evt.url}")
             })
         }
     }
@@ -2363,70 +2346,76 @@ let callback: AsyncCallback<String> = {
         }
     }
 }
+
 @Entry
 @Component
 class webview_24 {
     func build() {
         Row {
             Column {
-                Button("reload").onClick ({
-                    evt =>
-                    Hilog.info(0, "test", "reload")
-                    webController.reload()
-                }).width(400.px).height(150.px)
-                Button("proxy").onClick ({
-                    evt =>
-                    Hilog.info(0, "test", "registerJavaScriptProxy")
-                    let funcA1 = {
-                        a: String =>
-                        Hilog.info(0, "test", "funcA1 ${a}")
-                        return "funcA1 " + a
-                    }
-                    let funcA2 = {
-                        a: String =>
-                        Hilog.info(0, "test", "funcA2 ${a}")
-                        return "funcA2 " + a
-                    }
-                    let funcA3 = {
-                        a: String =>
-                        Hilog.info(0, "test", "funcA3 ${a}")
-                        return "funcA3 " + a
-                    }
-                    let funcB1 = {
-                        a: String =>
-                        Hilog.info(0, "test", "funcB1 ${a}")
-                        return "funcB1 " + a
-                    }
-                    let funcB2 = {
-                        a: String =>
-                        Hilog.info(0, "test", "funcB2 ${a}")
-                        return "funcB2 " + a
-                    }
-                    let funcB3 = {
-                        a: String =>
-                        Hilog.info(0, "test", "funcB3 ${a}")
-                        return "funcB3 " + a
-                    }
-                    let funcsA = [funcA1, funcA2, funcA3]
-                    let funcsB = [funcB1, funcB2, funcB3]
-                    let methodListA = ["testFunA1", "testFunA2", "testFunA3"]
-                    let methodListB = ["testFunB1", "testFunB2", "testFunB3"]
-                    try {
-                        webController.registerJavaScriptProxy(funcsA, "testObjA", methodListA)
-                        webController.registerJavaScriptProxy(funcsB, "testObjB", methodListB)
-                    } catch (e: Exception) {
-                        Hilog.info(0, "test", e.message)
-                    }
-                }).width(400.px).height(150.px)
-                Button("runProxy").onClick ({
-                    evt =>
-                    Hilog.info(0, "test", "runProxy")
-                    webController.runJavaScript("testObjA.testFunA2('someData')", callback)
-                    webController.runJavaScript("testObjB.testFunB2('someData')", callback)
-                }).width(400.px).height(150.px)
-
-                Web(src: "www.example.com", controller: webController).onPageBegin(
+                Button("reload").onClick(
                     {
+                        evt =>
+                            Hilog.info(0, "test", "reload")
+                            webController.reload()
+                    }
+                ).width(400.px).height(150.px)
+                Button("proxy").onClick(
+                    {
+                        evt =>
+                            Hilog.info(0, "test", "registerJavaScriptProxy")
+                            let funcA1 = {
+                                a: String =>
+                                    Hilog.info(0, "test", "funcA1 ${a}")
+                                    return "funcA1 " + a
+                            }
+                            let funcA2 = {
+                                a: String =>
+                                    Hilog.info(0, "test", "funcA2 ${a}")
+                                    return "funcA2 " + a
+                            }
+                            let funcA3 = {
+                                a: String =>
+                                    Hilog.info(0, "test", "funcA3 ${a}")
+                                    return "funcA3 " + a
+                            }
+                            let funcB1 = {
+                                a: String =>
+                                    Hilog.info(0, "test", "funcB1 ${a}")
+                                    return "funcB1 " + a
+                            }
+                            let funcB2 = {
+                                a: String =>
+                                    Hilog.info(0, "test", "funcB2 ${a}")
+                                    return "funcB2 " + a
+                            }
+                            let funcB3 = {
+                                a: String =>
+                                    Hilog.info(0, "test", "funcB3 ${a}")
+                                    return "funcB3 " + a
+                            }
+                            let funcsA = [funcA1, funcA2, funcA3]
+                            let funcsB = [funcB1, funcB2, funcB3]
+                            let methodListA = ["testFunA1", "testFunA2", "testFunA3"]
+                            let methodListB = ["testFunB1", "testFunB2", "testFunB3"]
+                            try {
+                                webController.registerJavaScriptProxy(funcsA, "testObjA", methodListA)
+                                webController.registerJavaScriptProxy(funcsB, "testObjB", methodListB)
+                            } catch (e: Exception) {
+                                Hilog.info(0, "test", e.message)
+                            }
+                    }
+                ).width(400.px).height(150.px)
+                Button("runProxy").onClick(
+                    {
+                        evt =>
+                            Hilog.info(0, "test", "runProxy")
+                            webController.runJavaScript("testObjA.testFunA2('someData')", callback)
+                            webController.runJavaScript("testObjB.testFunB2('someData')", callback)
+                    }
+                ).width(400.px).height(150.px)
+
+                Web(src: "www.example.com", controller: webController).onPageBegin({
                     evt => Hilog.info(0, "test", "page begin url: ${evt.url}")
                 }).onPageEnd({
                     evt => Hilog.info(0, "test", "page end url: ${evt.url}")
@@ -2521,19 +2510,18 @@ class webview_25 {
     let headers = [WebHeader("headerKey", "headerValue")]
     func build() {
         Column(space: 10) {
-            Button("loadUrl")
-            .onClick ({
-                evt =>
-                Hilog.info(0, "test", "loadUrl")
-                webController.loadUrl(@rawfile("index.html"), headers: headers)
-            }).width(400.px).height(150.px)
+            Button("loadUrl").onClick(
+                {
+                    evt =>
+                        Hilog.info(0, "test", "loadUrl")
+                        webController.loadUrl(@rawfile("index.html"), headers: headers)
+                }
+            ).width(400.px).height(150.px)
 
-            Web(src: "www.example.com", controller: webController)
-            .onPageBegin({evt =>
-                Hilog.info(0, "test", "page begin url: ${evt.url}")
-            })
-            .onPageEnd({evt =>
-                Hilog.info(0, "test", "page end url: ${evt.url}")
+            Web(src: "www.example.com", controller: webController).onPageBegin({
+                evt => Hilog.info(0, "test", "page begin url: ${evt.url}")
+            }).onPageEnd({
+                evt => Hilog.info(0, "test", "page end url: ${evt.url}")
             })
         }
     }
@@ -2602,19 +2590,18 @@ class webview_26 {
     let headers = [WebHeader("headerKey", "headerValue")]
     func build() {
         Column(space: 10) {
-            Button("setCustomUserAgent")
-            .onClick ({
-                evt =>
-                Hilog.info(0, "test", "setCustomUserAgent")
-                webController.setCustomUserAgent("ua")
-            }).width(400.px).height(150.px)
+            Button("setCustomUserAgent").onClick(
+                {
+                    evt =>
+                        Hilog.info(0, "test", "setCustomUserAgent")
+                        webController.setCustomUserAgent("ua")
+                }
+            ).width(400.px).height(150.px)
 
-            Web(src: "www.example.com", controller: webController)
-            .onPageBegin({evt =>
-                Hilog.info(0, "test", "page begin url: ${evt.url}")
-            })
-            .onPageEnd({evt =>
-                Hilog.info(0, "test", "page end url: ${evt.url}")
+            Web(src: "www.example.com", controller: webController).onPageBegin({
+                evt => Hilog.info(0, "test", "page begin url: ${evt.url}")
+            }).onPageEnd({
+                evt => Hilog.info(0, "test", "page end url: ${evt.url}")
             })
         }
     }
@@ -2668,19 +2655,18 @@ class webview_27 {
     let webController = WebviewController()
     func build() {
         Column(space: 10) {
-            Button("stop")
-            .onClick ({
-                evt =>
-                Hilog.info(0, "test", "stop")
-                webController.stop()
-            }).width(400.px).height(150.px)
+            Button("stop").onClick(
+                {
+                    evt =>
+                        Hilog.info(0, "test", "stop")
+                        webController.stop()
+                }
+            ).width(400.px).height(150.px)
 
-            Web(src: "www.example.com", controller: webController)
-            .onPageBegin({evt =>
-                Hilog.info(0, "test", "page begin url: ${evt.url}")
-            })
-            .onPageEnd({evt =>
-                Hilog.info(0, "test", "page end url: ${evt.url}")
+            Web(src: "www.example.com", controller: webController).onPageBegin({
+                evt => Hilog.info(0, "test", "page begin url: ${evt.url}")
+            }).onPageEnd({
+                evt => Hilog.info(0, "test", "page end url: ${evt.url}")
             })
         }
     }
@@ -2741,33 +2727,31 @@ import ohos.business_exception.*
 let callback1: AsyncCallback<String> = {
     errorCode: Option<BusinessException>, data: Option<String> => match (errorCode) {
         case Some(e) => Hilog.error(0, "test", "callback error: errcode is ${e.code}")
-        case _ =>
-            match (data) {
-                case Some(value) =>
-                    Hilog.info(0, "test", "callback: get data successfully and data is ${value}")
-                case _ => Hilog.error(0, "test", "callback: data is null")
-            }
+        case _ => match (data) {
+            case Some(value) => Hilog.info(0, "test", "callback: get data successfully and data is ${value}")
+            case _ => Hilog.error(0, "test", "callback: data is null")
+        }
     }
 }
+
 @Entry
 @Component
 class webview_28 {
     let webController = WebviewController()
     func build() {
         Column(space: 10) {
-            Button("storeWebArchive")
-            .onClick ({
-                evt =>
-                Hilog.info(0, "test", "storeWebArchive")
-                webController.storeWebArchive("/data/storage/el2/base/", true, callback1)
-            }).width(400.px).height(150.px)
+            Button("storeWebArchive").onClick(
+                {
+                    evt =>
+                        Hilog.info(0, "test", "storeWebArchive")
+                        webController.storeWebArchive("/data/storage/el2/base/", true, callback1)
+                }
+            ).width(400.px).height(150.px)
 
-            Web(src: "www.example.com", controller: webController)
-            .onPageBegin({evt =>
-                Hilog.info(0, "test", "page begin url: ${evt.url}")
-            })
-            .onPageEnd({evt =>
-                Hilog.info(0, "test", "page end url: ${evt.url}")
+            Web(src: "www.example.com", controller: webController).onPageBegin({
+                evt => Hilog.info(0, "test", "page begin url: ${evt.url}")
+            }).onPageEnd({
+                evt => Hilog.info(0, "test", "page end url: ${evt.url}")
             })
         }
     }
@@ -2828,19 +2812,18 @@ class webview_29 {
     let webController = WebviewController()
     func build() {
         Column(space: 10) {
-            Button("zoom")
-            .onClick ({
-                evt =>
-                Hilog.info(0, "test", "zoom")
-                webController.zoom(2.5)
-            }).width(400.px).height(150.px)
+            Button("zoom").onClick(
+                {
+                    evt =>
+                        Hilog.info(0, "test", "zoom")
+                        webController.zoom(2.5)
+                }
+            ).width(400.px).height(150.px)
 
-            Web(src: "www.example.com", controller: webController)
-            .onPageBegin({evt =>
-                Hilog.info(0, "test", "page begin url: ${evt.url}")
-            })
-            .onPageEnd({evt =>
-                Hilog.info(0, "test", "page end url: ${evt.url}")
+            Web(src: "www.example.com", controller: webController).onPageBegin({
+                evt => Hilog.info(0, "test", "page begin url: ${evt.url}")
+            }).onPageEnd({
+                evt => Hilog.info(0, "test", "page end url: ${evt.url}")
             })
         }
     }
@@ -2895,19 +2878,18 @@ class webview_30 {
     let webController = WebviewController()
     func build() {
         Column(space: 10) {
-            Button("zoomIn")
-            .onClick ({
-                evt =>
-                Hilog.info(0, "test", "zoomIn")
-                webController.zoomIn()
-            }).width(400.px).height(150.px)
+            Button("zoomIn").onClick(
+                {
+                    evt =>
+                        Hilog.info(0, "test", "zoomIn")
+                        webController.zoomIn()
+                }
+            ).width(400.px).height(150.px)
 
-            Web(src: "www.example.com", controller: webController)
-            .onPageBegin({evt =>
-                Hilog.info(0, "test", "page begin url: ${evt.url}")
-            })
-            .onPageEnd({evt =>
-                Hilog.info(0, "test", "page end url: ${evt.url}")
+            Web(src: "www.example.com", controller: webController).onPageBegin({
+                evt => Hilog.info(0, "test", "page begin url: ${evt.url}")
+            }).onPageEnd({
+                evt => Hilog.info(0, "test", "page end url: ${evt.url}")
             })
         }
     }
@@ -2962,19 +2944,18 @@ class webview_31 {
     let webController = WebviewController()
     func build() {
         Column(space: 10) {
-            Button("zoomOut")
-            .onClick ({
-                evt =>
-                Hilog.info(0, "test", "zoomOut")
-                webController.zoomOut()
-            }).width(400.px).height(150.px)
+            Button("zoomOut").onClick(
+                {
+                    evt =>
+                        Hilog.info(0, "test", "zoomOut")
+                        webController.zoomOut()
+                }
+            ).width(400.px).height(150.px)
 
-            Web(src: "www.example.com", controller: webController)
-            .onPageBegin({evt =>
-                Hilog.info(0, "test", "page begin url: ${evt.url}")
-            })
-            .onPageEnd({evt =>
-                Hilog.info(0, "test", "page end url: ${evt.url}")
+            Web(src: "www.example.com", controller: webController).onPageBegin({
+                evt => Hilog.info(0, "test", "page begin url: ${evt.url}")
+            }).onPageEnd({
+                evt => Hilog.info(0, "test", "page end url: ${evt.url}")
             })
         }
     }
@@ -3042,33 +3023,31 @@ import ohos.resource.__GenerateResource__
 let callback2: AsyncCallback<String> = {
     errorCode: Option<BusinessException>, data: Option<String> => match (errorCode) {
         case Some(e) => Hilog.error(0, "test", "callback error: errcode is ${e.code}")
-        case _ =>
-            match (data) {
-                case Some(value) =>
-                    Hilog.info(0, "test", "callback: get data successfully and data is ${value}")
-                case _ => Hilog.error(0, "test", "callback: data is null")
-            }
+        case _ => match (data) {
+            case Some(value) => Hilog.info(0, "test", "callback: get data successfully and data is ${value}")
+            case _ => Hilog.error(0, "test", "callback: data is null")
+        }
     }
 }
+
 @Entry
 @Component
 class webview_32 {
     let webController = WebviewController()
     func build() {
         Column(space: 10) {
-            Button("runJavaScript")
-            .onClick ({
-                evt =>
-                Hilog.info(0, "test", "runJavaScript")
-                webController.runJavaScript("test()", callback2)
-            }).width(400.px).height(150.px)
+            Button("runJavaScript").onClick(
+                {
+                    evt =>
+                        Hilog.info(0, "test", "runJavaScript")
+                        webController.runJavaScript("test()", callback2)
+                }
+            ).width(400.px).height(150.px)
 
-            Web(src: @rawfile("index.html"), controller: webController)
-            .onPageBegin({evt =>
-                Hilog.info(0, "test", "page begin url: ${evt.url}")
-            })
-            .onPageEnd({evt =>
-                Hilog.info(0, "test", "page end url: ${evt.url}")
+            Web(src: @rawfile("index.html"), controller: webController).onPageBegin({
+                evt => Hilog.info(0, "test", "page begin url: ${evt.url}")
+            }).onPageEnd({
+                evt => Hilog.info(0, "test", "page end url: ${evt.url}")
             })
         }
     }
@@ -3149,19 +3128,18 @@ class webview_33 {
     let webController = WebviewController()
     func build() {
         Column(space: 10) {
-            Button("scrollBy")
-            .onClick ({
-                evt =>
-                Hilog.info(0, "test", "scrollBy")
-                webController.scrollBy(50.0, 50.0)
-            }).width(400.px).height(150.px)
+            Button("scrollBy").onClick(
+                {
+                    evt =>
+                        Hilog.info(0, "test", "scrollBy")
+                        webController.scrollBy(50.0, 50.0)
+                }
+            ).width(400.px).height(150.px)
 
-            Web(src: ("index.html"), controller: webController)
-            .onPageBegin({evt =>
-                Hilog.info(0, "test", "page begin url: ${evt.url}")
-            })
-            .onPageEnd({evt =>
-                Hilog.info(0, "test", "page end url: ${evt.url}")
+            Web(src: ("index.html"), controller: webController).onPageBegin({
+                evt => Hilog.info(0, "test", "page begin url: ${evt.url}")
+            }).onPageEnd({
+                evt => Hilog.info(0, "test", "page end url: ${evt.url}")
             })
         }
     }
@@ -3247,19 +3225,18 @@ class webview_34 {
     let webController = WebviewController()
     func build() {
         Column(space: 10) {
-            Button("scrollTo")
-            .onClick ({
-                evt =>
-                Hilog.info(0, "test", "scrollTo")
-                webController.scrollTo(50.0, 50.0)
-            }).width(400.px).height(150.px)
+            Button("scrollTo").onClick(
+                {
+                    evt =>
+                        Hilog.info(0, "test", "scrollTo")
+                        webController.scrollTo(50.0, 50.0)
+                }
+            ).width(400.px).height(150.px)
 
-            Web(src: ("index.html"), controller: webController)
-            .onPageBegin({evt =>
-                Hilog.info(0, "test", "page begin url: ${evt.url}")
-            })
-            .onPageEnd({evt =>
-                Hilog.info(0, "test", "page end url: ${evt.url}")
+            Web(src: ("index.html"), controller: webController).onPageBegin({
+                evt => Hilog.info(0, "test", "page begin url: ${evt.url}")
+            }).onPageEnd({
+                evt => Hilog.info(0, "test", "page end url: ${evt.url}")
             })
         }
     }
@@ -3347,19 +3324,18 @@ class webview_35 {
     let webController = WebviewController()
     func build() {
         Column(space: 10) {
-            Button("removeCache")
-            .onClick ({
-                evt =>
-                Hilog.info(0, "test", "removeCache")
-                webController.removeCache(true)
-            }).width(400.px).height(150.px)
+            Button("removeCache").onClick(
+                {
+                    evt =>
+                        Hilog.info(0, "test", "removeCache")
+                        webController.removeCache(true)
+                }
+            ).width(400.px).height(150.px)
 
-            Web(src: "www.example.com", controller: webController)
-            .onPageBegin({evt =>
-                Hilog.info(0, "test", "page begin url: ${evt.url}")
-            })
-            .onPageEnd({evt =>
-                Hilog.info(0, "test", "page end url: ${evt.url}")
+            Web(src: "www.example.com", controller: webController).onPageBegin({
+                evt => Hilog.info(0, "test", "page begin url: ${evt.url}")
+            }).onPageEnd({
+                evt => Hilog.info(0, "test", "page end url: ${evt.url}")
             })
         }
     }

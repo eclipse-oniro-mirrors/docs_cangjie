@@ -1212,7 +1212,7 @@ try {
 ## class SymKey
 
 ```cangjie
-public class SymKey <:  Key {}
+public class SymKey <: Key {}
 ```
 
 **功能：** 对称密钥，是[Key](#interface-key)的子类，在对称加解密时需要将其对象传入[Cipher](#class-cipher)实例的[initialize()](#func-initializecryptomode-key-paramsspec)方法使用。

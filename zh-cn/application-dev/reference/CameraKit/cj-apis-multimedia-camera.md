@@ -7342,7 +7342,7 @@ public let torchLevel: Float64
 ## class VideoOutput
 
 ```cangjie
-public class VideoOutput  <:  CameraOutput {}
+public class VideoOutput <: CameraOutput {}
 ```
 
 **功能：** 录像会话中使用的输出信息。

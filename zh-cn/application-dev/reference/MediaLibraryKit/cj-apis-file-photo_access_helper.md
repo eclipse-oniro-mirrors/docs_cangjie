@@ -420,10 +420,10 @@ import kit.PerformanceAnalysisKit.Hilog
 
 @Component
 class ChildItem {
-    @Prop var item: String
+    @Prop
+    var item: String
     func build() {
-        Text(this.item)
-        .fontSize(50)
+        Text(this.item).fontSize(50)
     }
 }
 
@@ -435,8 +435,7 @@ func getAlbumList(): Array<Album> {
         let predicates = DataSharePredicates()
         predicates.equalTo('album_name', StringValue('test1'))
         let fetchOptions: FetchOptions = FetchOptions([], predicates)
-        let fetchResult = phAccessHelper.getAlbums(AlbumType.User,
-            AlbumSubtype.UserGeneric, options: fetchOptions)
+        let fetchResult = phAccessHelper.getAlbums(AlbumType.User, AlbumSubtype.UserGeneric, options: fetchOptions)
         // 获取文件检索结果中的所有相册资产，后续可以遍历相册数组获取每一个相册的信息
         let albums = fetchResult.getAllObjects()
         return albums
@@ -455,8 +454,9 @@ class EntryView {
     func build() {
         Row {
             Column {
-                ForEach(this.albumList, itemGeneratorFunc: {item: Album,idx:Int64 =>
-            ChildItem(item: item.albumUri)}, keyGeneratorFunc: {item: Album, idx: Int64 => return item.albumUri})
+                ForEach(this.albumList, itemGeneratorFunc: {
+                    item: Album, idx: Int64 => ChildItem(item: item.albumUri)
+                }, keyGeneratorFunc: {item: Album, idx: Int64 => return item.albumUri})
             }.width(100.percent)
         }.height(100.percent)
     }
@@ -1217,10 +1217,10 @@ import kit.PerformanceAnalysisKit.Hilog
 
 @Component
 class ChildItem {
-    @Prop var item: String
+    @Prop
+    var item: String
     func build() {
-        Text(this.item)
-        .fontSize(50)
+        Text(this.item).fontSize(50)
     }
 }
 
@@ -1231,8 +1231,7 @@ func getPhotoAssetList(): Array<PhotoAsset> {
         let phAccessHelper = getPhotoAccessHelper(ctx)
         let predicates = DataSharePredicates()
         let fetchOptions: FetchOptions = FetchOptions([], predicates)
-        let albumList = phAccessHelper.getAlbums(AlbumType.User, AlbumSubtype.UserGeneric,
-            options: fetchOptions)
+        let albumList = phAccessHelper.getAlbums(AlbumType.User, AlbumSubtype.UserGeneric, options: fetchOptions)
         let album = albumList.getFirstObject()
         let albumChangeRequest = MediaAlbumChangeRequest(album)
         // 获取当前相册变更请求中的相册，后续可以调用接口获取相册相关信息
@@ -1254,8 +1253,9 @@ class EntryView {
     func build() {
         Row {
             Column {
-                ForEach(this.albumList, itemGeneratorFunc: {item: PhotoAsset,idx:Int64 =>
-            ChildItem(item: item.displayName)}, keyGeneratorFunc: {item: PhotoAsset, idx: Int64 => return item.displayName})
+                ForEach(this.albumList, itemGeneratorFunc: {
+                    item: PhotoAsset, idx: Int64 => ChildItem(item: item.displayName)
+                }, keyGeneratorFunc: {item: PhotoAsset, idx: Int64 => return item.displayName})
             }.width(100.percent)
         }.height(100.percent)
     }
@@ -2003,8 +2003,7 @@ func getPixelMap(): PixelMap {
         // Global 的实现请参见本文"使用说明"小节
         let ctx = Global.abilityContext
         let phAccessHelper = getPhotoAccessHelper(ctx)
-        let assetChangeRequest = MediaAssetChangeRequest.createAssetRequest(ctx,
-            PhotoType.Image, "jpg")
+        let assetChangeRequest = MediaAssetChangeRequest.createAssetRequest(ctx, PhotoType.Image, "jpg")
         // 获取临时文件写句柄，后续可以通过该句柄写入数据
         let fd = assetChangeRequest.getWriteCacheHandler()
         // write data into fd..
@@ -2023,7 +2022,6 @@ func getPixelMap(): PixelMap {
 @Entry
 @Component
 class EntryView {
-
     func build() {
         Row {
             Column {
