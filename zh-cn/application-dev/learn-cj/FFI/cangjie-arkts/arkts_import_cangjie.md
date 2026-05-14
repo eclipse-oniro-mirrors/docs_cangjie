@@ -11,7 +11,7 @@
 
 > **说明：**
 >
-> 使用 import 语法加载仓颉模块的方式和使用 import 语法加载 native 模块方式一致，详细介绍请参见：[静态方式加载 native 模块](https://docs.openharmony.cn/pages/v6.0/zh-cn/application-dev/arkts-utils/arkts-import-native-module.md)。
+> 使用 import 语法加载仓颉模块的方式和使用 import 语法加载 native 模块方式一致，详细介绍请参见：<!--RP1-->[静态方式加载 native 模块](https://gitcode.com/openharmony/docs/blob/master/zh-cn/application-dev/arkts-utils/arkts-import-native-module.md)<!--RP1End-->。
 
 下面为使用 import 语法加载仓颉 ohos_app_cangjie_entry 模块并调用 addNumber 接口的示例：
 
@@ -656,7 +656,7 @@
 
 > **说明：**
 >
-> loadNativeModule 接口详细介绍请参考：[同步方式动态加载 native 模块](https://docs.openharmony.cn/pages/v6.0/zh-cn/application-dev/arkts-utils/js-apis-load-native-module.md)
+> loadNativeModule 接口详细介绍请参考：<!--RP2-->[同步方式动态加载 native 模块](https://gitcode.com/openharmony/docs/blob/master/zh-cn/application-dev/arkts-utils/js-apis-load-native-module.md)<!--RP2End-->
 
 下面为使用 loadNativeModule 接口加载仓颉 ohos_app_cangjie_entry 模块并调用 addNumber 函数的示例：
 
