@@ -2368,7 +2368,7 @@ public init(
 |onWillAppear|?() -> Unit|否|Option.None| **命名参数。** 弹窗显示动效前的事件回调。**说明：** <br> 1.正常时序依次为：onWillAppear>>onDidAppear>>(onDateAccept/onCancel/onDateChange)>>onWillDisappear>>onDidDisappear。 <br> 2.在onDidAppear内设置改变弹窗显示效果的回调事件，二次弹出生效。<br> 3.快速点击弹出，消失弹窗时，存在onWillDisappear在onDidAppear前生效。<br> 4. 当弹窗入场动效未完成时关闭弹窗，该回调不会触发。|
 |onWillDisappear|?() -> Unit|否|Option.None| **命名参数。** 弹窗退出动效前的事件回调。**说明：** <br> 1.正常时序依次为：onWillAppear>>onDidAppear>>(onDateAccept/onCancel/onDateChange)>>onWillDisappear>>onDidDisappear。 <br> 2.在onDidAppear内设置改变弹窗显示效果的回调事件，二次弹出生效。<br> 3.快速点击弹出，消失弹窗时，存在onWillDisappear在onDidAppear前生效。<br> 4. 当弹窗入场动效未完成时关闭弹窗，该回调不会触发。|
 |keyboardAvoidMode|?[KeyboardAvoidMode](#enum-keyboardavoidmode)|否|Option.None| **命名参数。** 用于设置弹窗是否在拉起软键盘时进行自动避让。KeyboardAvoidMode.Default|
-|enableHoverMode|Bool|否|Option.None| **命名参数。** 是否响应悬停态，值为true时，响应悬停态。<br> 初始值：false，默认不响应。|
+|enableHoverMode|?Bool|否|Option.None| **命名参数。** 是否响应悬停态，值为true时，响应悬停态。<br> 初始值：false，默认不响应。|
 |hoverModeArea|?[HoverModeAreaType](#enum-hovermodeareatype)|否|Option.None| **命名参数。** 悬停态下弹窗默认展示区域。初始值：HoverModeAreaType.BottomScreen|
 |levelMode|?[LevelMode](#enum-levelmode)|否|Option.None| **命名参数。** 设置弹窗显示层级。<br> **说明：** <br> 初始值：LevelMode.Overlay <br> 当且仅当showInSubWindow属性设置为false时生效。|
 |backgroundColor|?[ResourceColor](./cj-common-types.md#interface-resourcecolor)|否|Option.None| **命名参数。** 设置弹窗背板颜色。初始值：Color.Transparent <br> **说明：** <br> 当设置了backgroundColor为非透明色时，backgroundBlurStyle需要设置为BlurStyle.NONE，否则颜色显示将不符合预期效果。|

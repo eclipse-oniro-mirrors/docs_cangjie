@@ -80,9 +80,11 @@ public func getInspectorByKey(id: String): String
 
 > **说明：**
 >
-> 该接口必须在主线程（UI线程）中调用，以确保获取完整的属性信息。由于接口返回的是JSON格式的字符串，需要通过JSON解析才能获取对应的属性值，而在子线程中调用时，部分组件的属性在JSON中缺失，会导致无法获取对应的属性。
+> 该接口必须在主线程（UI线程）中调用，以确保获取完整正确的属性信息。由于接口返回的是JSON格式的字符串，需要通过JSON解析才能获取对应的属性值，而在子线程中调用时，部分组件的属性在JSON中缺失或者错误，会导致无法获取正确的属性。
 >
-> 受影响的组件及属性：Select组件的space、arrowPosition、value、fontColor、font、controlSize、maxLines属性。
+> 受影响的组件及属性：
+> - Select组件的space、arrowPosition、value、fontColor、font属性。
+> - Tabs组件的barHeight属性。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
