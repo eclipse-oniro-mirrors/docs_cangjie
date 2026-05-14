@@ -6856,6 +6856,38 @@ class Main {
 }
 ```
 
+### static func registerModule(String, ModuleRegister)
+
+```cangjie
+public static func registerModule(name: String, register: ModuleRegister): Unit
+```
+
+**Function:** Registers Cangjie module exports to an ArkTS module with the specified name.
+
+**Initial Version:** 26.0.0
+
+**Parameters:**
+
+| Parameter Name | Type | Required | Default Value | Description |
+|:---|:---|:---|:---|:---|
+| name | String | Yes | - | The interface name to be exported, or the concatenation of the module name and the interface name (separated by @) . |
+| register | [ModuleRegister](#type-moduleregister) | Yes | - | A function that can return an ArkTS class (constructor). |
+
+**Example:**
+
+<!--compile-->
+```cangjie
+class Main {
+    static init() {
+        JSModule.registerModule("cangjiemodule@doSth") { context, exports =>
+            exports["doSth"] = context.function { context, callInfo =>
+                context.undefined().toJSValue()
+            }.toJSValue()
+        }
+    }
+}
+```
+
 ## class JSNull
 
 ```cangjie
