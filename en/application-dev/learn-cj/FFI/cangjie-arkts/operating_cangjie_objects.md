@@ -241,14 +241,15 @@ Attaching all object operation methods directly to objects consumes more memory 
 
         static init() {
             // Register class to be exported to Ark
-            JSModule.registerClass("Data") { context =>
-                // Create JSClass
-                let clazz = context.clazz(jsConstructor)
-                // Add methods
-                clazz.addMethod(context.string("setId"), context.function(setDataId))
-                clazz.addMethod(context.string("getId"), context.function(getDataId))
+            JSModule.registerClass("Data") {
+                context =>
+                    // Create JSClass
+                    let clazz = context.clazz(jsConstructor)
+                    // Add methods
+                    clazz.addMethod(context.string("setId"), context.function(setDataId))
+                    clazz.addMethod(context.string("getId"), context.function(getDataId))
 
-                return clazz
+                    return clazz
             }
         }
 

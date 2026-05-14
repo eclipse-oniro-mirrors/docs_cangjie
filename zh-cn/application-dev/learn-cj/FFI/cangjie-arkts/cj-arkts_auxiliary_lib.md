@@ -60,8 +60,7 @@ public func getJSContext(runtime: JSRuntime, abilityContext: UIAbilityContext): 
     // 从全局变量中获取 UIAbilityContext
     func getContext(): UIAbilityContext {
         match (globalAbilityContext) {
-            case Some(context) =>
-                context
+            case Some(context) => context
             case _ =>
                 AppLog.error("####getContext err ")
                 throw Exception("get globalAbilityContext failed")

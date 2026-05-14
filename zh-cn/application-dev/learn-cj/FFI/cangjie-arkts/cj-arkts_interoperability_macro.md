@@ -220,7 +220,7 @@ public interface InterfaceDemo {
 }
 
 @Interop[ArkTS]
-public func doInterface(a: InterfaceDemo): Float64  {
+public func doInterface(a: InterfaceDemo): Float64 {
     return a.foo(a: a.id)
 }
 ```
