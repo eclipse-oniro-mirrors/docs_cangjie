@@ -80,9 +80,11 @@ public func getInspectorByKey(id: String): String
 
 > **Note:**
 >
-> This interface must be called on the main thread (UI thread) to ensure complete attribute information is retrieved. Since the interface returns a JSON-formatted string, you need to parse the JSON to obtain the corresponding attribute values. When called from a worker thread, some component attributes may be missing from the JSON, which will result in the inability to retrieve the corresponding attributes.
+> This interface must be called on the main thread (UI thread) to ensure complete attribute information is retrieved. Since the interface returns a JSON-formatted string, you need to parse the JSON to obtain the corresponding attribute values. When called from a worker thread, some component attributes may be missing or incorrect in the JSON, which will result in the inability to retrieve the corresponding attributes.
 >
-> Affected components and attributes: Select component: Attributes such as space, arrowPosition, value, fontColor, font, controlSize, maxLines.
+> Affected components and attributes: 
+> - Select component: Attributes such as space, arrowPosition, value, fontColor, font.
+> - Tabs component: Attributes such as barHeight.
 
 **System Capability:** SystemCapability.ArkUI.ArkUI.Full
 
