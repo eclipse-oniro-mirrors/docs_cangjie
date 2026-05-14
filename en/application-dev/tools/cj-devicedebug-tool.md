@@ -10,7 +10,7 @@ The devicedebug tool provides developers with the capability to send signals to 
 
 > **Note:**
 >
-> Before using this tool, developers need to first obtain the <!--Del-->[<!--DelEnd-->hdc tool<!--Del-->](https://docs.openharmony.cn/pages/v5.1/en/device-dev/subsystems/subsys-toolchain-hdc-guide.md)<!--DelEnd--> and execute `hdc shell`.
+> Before using this tool, developers need to first obtain the <!--Del-->[<!--DelEnd-->hdc tool<!--Del-->](https://gitcode.com/openharmony/docs/blob/master/en/application-dev/dfx/hdc.md)<!--DelEnd--> and execute `hdc shell`.
 
 **Table 1** devicedebug Tool Command List
 

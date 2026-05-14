@@ -713,7 +713,7 @@ During debugging or running the application/service, an error occurred while ins
 
 1. Adjust the bundleName in the app.json5 configuration file and the name field in the module.json5 file according to naming rules. <!--Del-->
 
-2. If the type field in extensionAbilities is configured as service or dataShare, the application needs to configure the [allowAppUsePrivilegeExtension privilege](https://docs.openharmony.cn/pages/v5.1/en/device-dev/subsystems/subsys-app-privilege-config-guide.md). The configuration steps are as follows:
+2. If the type field in extensionAbilities is configured as service or dataShare, the application needs to configure the [allowAppUsePrivilegeExtension privilege](https://gitcode.com/openharmony/docs/blob/master/en/device-dev/subsystems/subsys-app-privilege-config-guide.md). The configuration steps are as follows:
 
     1. Obtain a new signature fingerprint.
 
@@ -1169,7 +1169,7 @@ When launching debugging or running an application/service, an error occurs duri
 **Resolution Steps:**
 
 1. Uninstall the installed application or uncheck "Keep Application Data" before reinstalling.
-2. For HSPs provided by different teams with inconsistent signatures, use [integrated HSPs](https://docs.openharmony.cn/pages/v5.1/en/application-dev/quick-start/integrated-hsp.md) to unify HSP provisioning. For multi-HAP packages, ensure all HAPs have consistent signatures.
+2. For HSPs provided by different teams with inconsistent signatures, use [integrated HSPs](https://gitcode.com/openharmony/docs/blob/master/en/application-dev/quick-start/integrated-hsp.md) to unify HSP provisioning. For multi-HAP packages, ensure all HAPs have consistent signatures.
 3. If an application was uninstalled but its data was retained, installing another application with the same bundle name but different signature will fail. In this case, reinstall the previously uninstalled application, then uninstall it without retaining data to allow installation of the new application.
 
 ### 9568329 Signature Verification Failed
@@ -1186,7 +1186,7 @@ The bundle name in the signature does not match the application's bundle name.
 
 **Possible Causes:**
 
-- Scenario 1: A third-party HSP module was imported, which is neither an [integrated HSP](https://docs.openharmony.cn/pages/v5.1/en/application-dev/quick-start/integrated-hsp.md) nor an HSP with the same bundle name, causing a bundle name mismatch.
+- Scenario 1: A third-party HSP module was imported, which is neither an [integrated HSP](https://gitcode.com/openharmony/docs/blob/master/en/application-dev/quick-start/integrated-hsp.md) nor an HSP with the same bundle name, causing a bundle name mismatch.
 - Scenario 2: An incorrect signature file (with a .p7b extension) was used for signing, causing a bundle name mismatch.
 
 **Resolution Steps:**
@@ -1479,7 +1479,7 @@ The required privilege for installing an inter-application HSP is missing.
 
 **Resolution Steps:**
 
-Verify that the application has the `AllowAppShareLibrary` privilege in the device's `install_list_capability.json`. Refer to the [Application Privilege Configuration Guide](https://docs.openharmony.cn/pages/v5.1/en/device-dev/subsystems/subsys-app-privilege-config-guide.md).
+Verify that the application has the `AllowAppShareLibrary` privilege in the device's `install_list_capability.json`. Refer to the [Application Privilege Configuration Guide](https://gitcode.com/openharmony/docs/blob/master/en/device-dev/subsystems/subsys-app-privilege-config-guide.md).
 
 ---
 

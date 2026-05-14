@@ -10,7 +10,7 @@ devicedebug工具向开发者提供对调试应用发送信号的能力，目前
 
 > **说明：**
 >
-> 在使用本工具前，开发者需要先获取<!--Del-->[<!--DelEnd-->hdc工具<!--Del-->](https://docs.openharmony.cn/pages/v5.1/zh-cn/device-dev/subsystems/subsys-toolchain-hdc-guide.md)<!--DelEnd-->，执行hdc shell。
+> 在使用本工具前，开发者需要先获取<!--Del-->[<!--DelEnd-->hdc工具<!--Del-->](https://gitcode.com/openharmony/docs/blob/master/zh-cn/application-dev/dfx/hdc.md)<!--DelEnd-->，执行hdc shell。
 
 **表1** devicedebug工具命令列表
 

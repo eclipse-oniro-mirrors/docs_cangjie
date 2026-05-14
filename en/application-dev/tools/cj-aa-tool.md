@@ -10,7 +10,7 @@ Ability Assistant (abbreviated as aa) is a tool for launching applications and t
 
 ## Environment Requirements
 
-Before using this tool, developers need to first obtain the <!--Del-->[<!--DelEnd-->hdc tool<!--Del-->](https://docs.openharmony.cn/pages/v5.1/en/device-dev/subsystems/subsys-toolchain-hdc-guide.md)<!--DelEnd--> and execute `hdc shell`.
+Before using this tool, developers need to first obtain the <!--Del-->[<!--DelEnd-->hdc tool<!--Del-->](https://gitcode.com/openharmony/docs/blob/master/en/application-dev/dfx/hdc.md)<!--DelEnd--> and execute `hdc shell`.
 
 All command descriptions in this document are based on an interactive command environment. If directly executing `hdc shell [aa command]`, the aa command must be wrapped in "" to ensure parameters are correctly recognized. Examples:
 
