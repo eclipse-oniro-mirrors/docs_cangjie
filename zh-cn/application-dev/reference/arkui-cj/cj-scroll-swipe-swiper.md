@@ -676,8 +676,7 @@ public func selectedItemWidth(value: ?Length): This
 ### class Indicator
 
 ```cangjie
-public open class Indicator {
-}
+public open class Indicator {}
 ```
 
 **功能：** 设置导航点距离Swiper组件距离。由于导航点有默认交互区域，交互区域高度为32.vp，所以无法让显示部分完全贴底。

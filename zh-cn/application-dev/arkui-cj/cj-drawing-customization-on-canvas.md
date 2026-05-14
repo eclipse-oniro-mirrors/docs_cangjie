@@ -42,7 +42,9 @@ Canvas提供画布组件，用于自定义绘制图形，开发者使用CanvasRe
                           this.context.strokeRect(50.0, 50.0, 200.0, 150.0);
                       }
                   )
-          }.width(100.percent).height(100.percent)
+          }
+              .width(100.percent)
+              .height(100.percent)
       }
   }
   ```
@@ -268,7 +270,7 @@ OffscreenCanvasRenderingContext2D对象和CanvasRenderingContext2D对象提供�
 
   import kit.ArkUI.*
   import ohos.arkui.state_macro_manage.*
-  
+
   @Entry
   @Component
   class EntryView {

@@ -781,6 +781,7 @@ Navigation组件是路由导航的根视图容器。
 
 ```cangjie
 package ohos_app_cangjie_entry
+
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
 
@@ -809,11 +810,11 @@ class EntryView {
                     this.stack.pushPath(NavPathInfo(name: "pageOne", param: "pageOne test"))
                 })
             }
-            .width(100.percent)
-            .height(50.percent)
+                .width(100.percent)
+                .height(50.percent)
         }
-        .title("PageHome")
-        .navDestination(bind(pageMap, this))
+            .title("PageHome")
+            .navDestination(bind(pageMap, this))
     }
 }
 
@@ -832,10 +833,9 @@ class PageOne {
                     this.stack.pushPathByName("pageTwo", "pageOne test")
                 })
             }
-            .width(100.percent)
-            .height(50.percent)
-        }
-        .title("PageOne")
+                .width(100.percent)
+                .height(50.percent)
+        }.title("PageOne")
     }
 }
 
@@ -853,8 +853,8 @@ class PageTwo {
                     this.pathStack.pop()
                 })
             }
-            .width(100.percent)
-            .height(50.percent)
+                .width(100.percent)
+                .height(50.percent)
         }
         .title("PageTwo")
         .onReady({ context =>

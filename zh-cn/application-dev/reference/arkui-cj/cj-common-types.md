@@ -1328,7 +1328,7 @@ public init(touchType: TouchType, id: Int32, screenX: Float64, screenY: Float64,
 ## class BaseEvent
 
 ```cangjie
-abstract sealed class BaseEvent {
+sealed abstract class BaseEvent {
     public var target: ?EventTarget
     public var timestamp: Int64
     public var source: ?SourceType

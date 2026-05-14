@@ -100,13 +100,12 @@ import std.time.*
 // 父组件
 @Entry
 @Component
-class EntryView{
-
+class EntryView {
     @Provide
-    var selectedDate: DateTime = DateTime.of(year:2021,month:8,dayOfMonth:8)
+    var selectedDate: DateTime = DateTime.of(year: 2021, month: 8, dayOfMonth: 8)
 
-    public func build(){
-        Column(){
+    public func build() {
+        Column() {
             Button("parent increase the day by 1")
                 .margin(10)
                 .onClick({ event
@@ -114,24 +113,23 @@ class EntryView{
                 })
             Button("parent update the new date")
                 .margin(10)
-                .onClick({ event
-                    => this.selectedDate = DateTime.of(year:2023,month:7,dayOfMonth:7)
+                .onClick({
+                    event => this.selectedDate = DateTime.of(year: 2023, month: 7, dayOfMonth: 7)
                 })
             DatePicker(
-                start: DateTime.of(year:1970,month:1,dayOfMonth:1),
-                end: DateTime.of(year:2100,month:1,dayOfMonth:1),
+                start: DateTime.of(year: 1970, month: 1, dayOfMonth: 1),
+                end: DateTime.of(year: 2100, month: 1, dayOfMonth: 1),
                 selected: this.selectedDate
             )
-           Child()
+            Child()
         }
     }
 }
 
 @Component
-class Child{
-
+class Child {
     @Consume
-    var selectedDate: DateTime;
+    var selectedDate: DateTime
 
     public func build(){
         Column(){
@@ -141,12 +139,12 @@ class Child{
                 })
             Button("child update the new date")
                 .margin(10)
-                .onClick({ event
-                    => this.selectedDate = DateTime.of(year:2023,month:9,dayOfMonth:9)
+                .onClick({
+                    event => this.selectedDate = DateTime.of(year: 2023, month: 9, dayOfMonth: 9)
                 })
             DatePicker(
-                start: DateTime.of(year:1970,month:1,dayOfMonth:1),
-                end: DateTime.of(year:2100,month:1,dayOfMonth:1),
+                start: DateTime.of(year: 1970, month: 1, dayOfMonth: 1),
+                end: DateTime.of(year: 2100, month: 1, dayOfMonth: 1),
                 selected: this.selectedDate
             )
         }
@@ -170,44 +168,46 @@ package ohos_app_cangjie_entry
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
 
-public func returnAdd(a: Int64, b:Int64): Int64{
-    return a+b
+public func returnAdd(a: Int64, b: Int64): Int64 {
+    return a + b
 }
 
-public func returnMinus(a: Int64, b:Int64): Int64{
-    return a-b
+public func returnMinus(a: Int64, b: Int64): Int64 {
+    return a - b
 }
 
 @Entry
 @Component
-class EntryView{
-
+class EntryView {
     @Provide["calc"]
     var Func1: (Int64, Int64) -> Int64 = returnAdd
 
     @Provide
-    var isAdd : Bool = true
+    var isAdd: Bool = true
 
-    func build(){
-        Column{
+    func build() {
+        Column {
             Text("Parent")
-            Text(
-                if(isAdd == true){
-                    "1+1 = ${Func1(1,1)}"
-                }else{
-                    "1-1 = ${Func1(1,1)}"}
-            )
-            Button(
-                if(isAdd == true){
-                    "Switch to minus"
-                }else{
-                    "Switch to add"
-                }
-            ).onClick({ evt =>
-                if(isAdd == true){ Func1 = returnMinus }
-                else{ Func1 = returnAdd }
-                isAdd = !isAdd
+            Text(if (isAdd == true) {
+                "1+1 = ${Func1(1, 1)}"
+            } else {
+                "1-1 = ${Func1(1, 1)}"
             })
+            Button(if (isAdd == true) {
+                "Switch to minus"
+            } else {
+                "Switch to add"
+            }).onClick(
+                {
+                    evt =>
+                        if (isAdd == true) {
+                            Func1 = returnMinus
+                        } else {
+                            Func1 = returnAdd
+                        }
+                        isAdd = !isAdd
+                }
+            )
             Divider()
             Child()
         }
@@ -215,33 +215,36 @@ class EntryView{
 }
 
 @Component
-class Child{
+class Child {
     @Consume["calc"]
     var Func2: (Int64, Int64) -> Int64
 
     @Consume
     var isAdd: Bool
 
-    func build(){
-        Column{
+    func build() {
+        Column {
             Text("Child")
-            Text(
-                if(isAdd == true){
-                    "1+1 = ${Func2(1,1)}"
-                }else{
-                    "1-1 = ${Func2(1,1)}"}
-            )
-            Button(
-                if(isAdd == true){
-                    "Switch to minus"
-                }else{
-                    "Switch to add"
-                }
-            ).onClick({ evt =>
-                if(isAdd == true){ Func2 = returnMinus }
-                else{ Func2 = returnAdd }
-                isAdd = !isAdd
+            Text(if (isAdd == true) {
+                "1+1 = ${Func2(1, 1)}"
+            } else {
+                "1-1 = ${Func2(1, 1)}"
             })
+            Button(if (isAdd == true) {
+                "Switch to minus"
+            } else {
+                "Switch to add"
+            }).onClick(
+                {
+                    evt =>
+                        if (isAdd == true) {
+                            Func2 = returnMinus
+                        } else {
+                            Func2 = returnAdd
+                        }
+                        isAdd = !isAdd
+                }
+            )
         }
     }
 }
@@ -270,21 +273,20 @@ class Child{
     【反例】
 
     ```cangjie
-
     let change: Int64 = 10;
+
     @Provide[change]
     var message: String = "Hello"
 
     let change: String = "10"
+
     @Provide[change]
     var message: String = "Hello"
-
     ```
 
     【正例】
 
     ```cangjie
-
     @Provide["10"]
     var message: String = "Hello"
     ```
@@ -313,7 +315,7 @@ class Child{
     @Component
     class Child {
 
-    //  错误写法，不能本地初始化
+        //  错误写法，不能本地初始化
         @Consume
         var msg: String = "Hello";
 
@@ -330,9 +332,8 @@ class Child{
     ```cangjie
     @Component
     class Child {
-
         @Consume
-        var num: Int64;
+        var num: Int64
 
         func build() {
             Column() {
@@ -345,7 +346,6 @@ class Child{
     @Entry
     @Component
     class EntryView {
-
         @Provide
         var num: Int64 = 10;
 
@@ -365,6 +365,7 @@ class Child{
     // 需类型一致，若类型不一致，框架会弹出运行时错误。
     @Provide
     var count: Int32 = 10
+
     @Provide
     var count: Int64 = 10
 
@@ -372,6 +373,7 @@ class Child{
     // 同上，需类型一致。
     @Provide["a"]
     var count: Int32 = 10
+
     @Provide["a"]
     var num: Int64 = 10
     ```
@@ -384,12 +386,12 @@ class Child{
 
     ```cangjie
     @Component
-    class Child{
+    class Child {
         @Consume
         var num: Int64
 
-        func build(){
-            Column(){
+        func build() {
+            Column() {
                 Text("num的值：${this.num}")
             }
         }
@@ -398,12 +400,12 @@ class Child{
     // 父组件
     @Entry
     @Component
-    class EntryView{
+    class EntryView {
         // 错误写法，缺少@Provide
         var num: Int64 = 10;
 
-        func build(){
-            Column(){
+        func build() {
+            Column() {
                 Text("num的值：${this.num}")
                 Child()
             }
@@ -417,12 +419,12 @@ class Child{
 
     ```cangjie
     @Component
-    class Child{
+    class Child {
         @Consume
         var num: Int64
 
-        func build(){
-            Column(){
+        func build() {
+            Column() {
                 Text("num的值：${this.num}")
             }
         }
@@ -431,13 +433,13 @@ class Child{
     // 父组件
     @Entry
     @Component
-    class EntryView{
+    class EntryView {
         // 正确写法
         @Provide
         var num: Int64 = 10;
 
-        func build(){
-            Column(){
+        func build() {
+            Column() {
                 Text("num的值：${this.num}")
                 Child()
             }
@@ -462,23 +464,22 @@ class ToDoItem {
 
     // @Consume装饰的变量通过相同的属性名绑定其祖先组件EntryView内的@Provide装饰的变量
     @Consume
-    var count: Int64;
+    var count: Int64
 
-    func build(){
-        Column{
+    func build() {
+        Column {
             Text("count(${this.count})")
-            Button("count(${this.count}), count + 1")
-                .onClick({
-                   evt => this.count += 1
+            Button("count(${this.count}), count + 1").onClick({
+                evt => this.count += 1
             })
         }.width(100.percent)
     }
 }
 
 @Component
-class ToDoList{
-    func build(){
-        Row(space: 5){
+class ToDoList {
+    func build() {
+        Row(space: 5) {
             ToDoItem()
             ToDoItem()
         }
@@ -486,9 +487,9 @@ class ToDoList{
 }
 
 @Component
-class ToDoDemo{
-    func build(){
-        Column{
+class ToDoDemo {
+    func build() {
+        Column {
             ToDoList()
         }
     }
@@ -496,17 +497,16 @@ class ToDoDemo{
 
 @Entry
 @Component
-class EntryView{
+class EntryView {
     // @Provide装饰的变量index由入口组件EntryView提供其后代组件
     @Provide
     var count: Int64 = 0;
 
-    func build(){
-        Column{
-            Button("count(${this.count}), count + 1")
-                .onClick({
-                   evt => this.count += 1
-                })
+    func build() {
+        Column {
+            Button("count(${this.count}), count + 1").onClick({
+                evt => this.count += 1
+            })
             ToDoDemo()
         }
     }
@@ -536,12 +536,14 @@ class Child {
     @Consume
     var arr: Array<(Int64, String)>
 
-    func build(){
-        Column(){
-            ForEach(arr,
-                itemGeneratorFunc: { item: (Int64, String), idx: Int64 =>
-                    Text("key: ${item[0]} value: ${item[1]}").fontSize(30)
-                    Divider()
+    func build() {
+        Column() {
+            ForEach(
+                arr,
+                itemGeneratorFunc: {
+                    item: (Int64, String), idx: Int64 =>
+                        Text("key: ${item[0]} value: ${item[1]}").fontSize(30)
+                        Divider()
                 },
                 keyGeneratorFunc: {item: (Int64, String), idx: Int64
                     => "${idx}_${item[0]}" + item[1]
@@ -579,23 +581,25 @@ class Child {
 @Component
 class EntryView {
     @Provide
-    var message: HashMap<Int64, String> = HashMap<Int64, String>([(0,"a"),(1,"b"),(3,"c")])
+    var message: HashMap<Int64, String> = HashMap<Int64, String>([(0, "a"), (1, "b"), (3, "c")])
 
     @Provide
     var arr: Array<(Int64, String)> = []
 
-    public override func onPageShow(){
+    public override func onPageShow() {
         arr = message.toArray()
     }
 
-    func build(){
-        Row(){
-            Column(){
-                Button("Provide init map").onClick({
-                    evt =>
-                        this.message = HashMap<Int64,String>([(0,"a"),(1,"b"),(3,"c"),(4,"d")])
-                        arr = message.toArray()
-                })
+    func build() {
+        Row() {
+            Column() {
+                Button("Provide init map").onClick(
+                    {
+                        evt =>
+                            this.message = HashMap<Int64, String>([(0, "a"), (1, "b"), (3, "c"), (4, "d")])
+                            arr = message.toArray()
+                    }
+                )
                 Child()
             }.width(100.percent)
         }.height(100.percent)
@@ -619,7 +623,7 @@ import ohos.arkui.state_macro_manage.*
 import std.collection.*
 
 @Component
-class Child{
+class Child {
     @Consume
     var message: HashSet<Int64>
 
@@ -658,13 +662,13 @@ class Child{
 
 @Entry
 @Component
-class EntryView{
-    public override func onPageShow(){
+class EntryView {
+    public override func onPageShow() {
         arr = message.toArray()
     }
 
     @Provide
-    var message: HashSet<Int64> = HashSet([0,1,2,3,4])
+    var message: HashSet<Int64> = HashSet([0, 1, 2, 3, 4])
 
     @Provide
     var arr: Array<Int64> = []
