@@ -238,4 +238,3 @@ public type Callback<T> = (arg: T) -> Unit
 ```
 
 **功能：** 回调函数类型。
-

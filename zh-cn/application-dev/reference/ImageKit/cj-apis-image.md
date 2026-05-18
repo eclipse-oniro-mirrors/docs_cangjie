@@ -1819,8 +1819,8 @@ public func readLatestImage(): Image
 
 **功能：** 从ImageReceiver读取最新的图片。
 
-> **注意：** 
-> 
+> **注意：**
+>
 > - 此接口需要在[on](#func-onreceivetype-callback0argument)回调触发后调用，才能正常的接收到数据。且此接口返回的[Image](#class-image)对象使用完毕后需要调用[release](#func-release-1)方法释放，释放后才可以继续接收新的数据。
 
 **系统能力：** SystemCapability.Multimedia.Image.ImageReceiver
@@ -1869,8 +1869,8 @@ public func readNextImage(): Image
 
 **功能：** 从ImageReceiver读取下一张图片。
 
-> **注意：** 
-> 
+> **注意：**
+>
 > - 此接口需要在[on](#func-onreceivetype-callback0argument)回调触发后调用，才能正常的接收到数据。且此接口返回的[Image](#class-image)对象使用完毕后需要调用[release](#func-release-1)方法释放，释放后才可以继续接收新的数据。
 
 **系统能力：** SystemCapability.Multimedia.Image.ImageReceiver

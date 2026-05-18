@@ -7,7 +7,7 @@ ArkTS互操作库里的JSContext.requireArkModule接口可以加载ArkTS模块�
 ## 函数说明
 
 ```cangjie
-public func requireArkModule(src: String): JSValue
+public func requireArkModule(path: String): JSValue
 ```
 
 ## 使用限制
@@ -22,10 +22,10 @@ public func requireArkModule(src: String): JSValue
 
 ## 支持场景
 
-| 场景        | src 格式                                              | 说明                                         |
+| 场景        | path 格式                                              | 说明                                         |
 |:----------|:----------------------------------------------------|:-------------------------------------------|
 | 系统模块      | @ohos.\*，@system.\*，@hms.\*和@kit.\*，如："@ohos.hilog" | /                                          |
-| hap模块里的文件 | 模块名/模块下路径，如："entry/src/main/ets/Index"              | 支持.ets、.ts和.js格式的文件。src不带后缀（适用于所有场景）       |
+| hap模块里的文件 | 模块名/模块下路径，如："entry/src/main/ets/Index"              | 支持.ets、.ts和.js格式的文件。path不带后缀（适用于所有场景）       |
 | har模块里的文件 | 模块名/模块下路径，如："myhar/src/main/ets/Index"              | 支持（本地 \| 远程 \| ohpm）（源码 \| 二进制）har（需要额外配置） |
 | hsp模块里的文件 | 模块名/模块下路径，如："@ohos/lottie/src/main/js/main"         | 支持（远程 \| ohpm）hsp                          |
 | native模块  | lib模块名.so，如："libentry.so"                           | 支持（har\|本地hsp\|hap）里带的（napi\|仓颉）模块         |
@@ -205,4 +205,3 @@ func loadModule(context: JSContext): Unit {
     test.callMethod("test")
 }
 ```
-

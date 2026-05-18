@@ -8,9 +8,9 @@
 
 <!--RP2-->
 > **说明：**
-> 
+>
 > - DevEco Studio默认创建的工程为HarmonyOS工程，不再支持直接创建OpenHarmony工程。需要基于创建完成的HarmonyOS工程进行一些字段修改，才能得到OpenHarmony工程。
-> 
+>
 > - 为确保运行效果，本文以使用**最新DevEco Studio版本**为例，点击[此处](https://developer.huawei.com/consumer/cn/download/)获取下载链接。
 <!--RP2End-->
 
@@ -29,7 +29,7 @@
 4. 单击 **Finish**，完成工程创建，工具会自动生成基础示例代码和相关资源。<!--Del-->
 
 5. 在完成创建HarmonyOS工程后，根据如下操作修改工程级build-profile.json5文件（即与entry同级）中相关字段：
-   
+
    1. 在工程级build-profile.json5文件添加compileSdkVersion字段。
 
    2. 将compatibleSdkVersion和compileSdkVersion字段赋值为整数类型，如22，23。

@@ -128,7 +128,6 @@ public func bind<T1, T2, T3>(builder: (CustomView, ObservedProperty<T1>, Observe
 >
 > bind推荐在使用属性[title](./cj-navigation-switching-navdestination.md#func-titlecustombuilder-navigationtitleoptions)、[tabBar](./cj-navigation-switching-tabcontent.md#func-tabbarcustombuilder)以及构造[MenuItemGroup对象](./cj-menu-menuitemgroup.md#initcustombuilder-custombuilder----unit)时使用。
 
-
 ## class RemoteView
 
 ```cangjie

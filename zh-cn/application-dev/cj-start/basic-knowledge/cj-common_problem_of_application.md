@@ -110,7 +110,6 @@ appId是应用的唯一标识，由包名、下划线和证书公钥的Base64编
     }
     ```
 
-
 - 通过[bm工具](../../tools/cj-bm-tool.md)获取。
 
     ```shell
@@ -118,4 +117,5 @@ appId是应用的唯一标识，由包名、下划线和证书公钥的Base64编
     # 需将com.example.myapplication替换为实际应用的包名
     bm dump -n com.example.myapplication |grep '"appId":'
     ```
+
     ![alt text](figures/get_appId.png)
