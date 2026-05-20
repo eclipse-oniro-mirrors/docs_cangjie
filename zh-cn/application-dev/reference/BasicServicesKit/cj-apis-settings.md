@@ -484,7 +484,6 @@ AutoScreenBrightnessMode
 
 **起始版本：** 22
 
-
 ### ManualScreenBrightnessMode
 
 ```cangjie
@@ -496,7 +495,6 @@ ManualScreenBrightnessMode
 **系统能力：** SystemCapability.Applications.Settings.Core
 
 **起始版本：** 22
-
 
 ### func toString()
 

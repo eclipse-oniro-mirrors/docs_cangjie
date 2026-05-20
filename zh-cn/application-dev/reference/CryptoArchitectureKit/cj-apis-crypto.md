@@ -1678,7 +1678,7 @@ public class GcmParamsSpec <: ParamsSpec {
 - [ParamsSpec](#class-paramsspec)
 
 > **说明：**
-> 
+>
 > 1. 传入[initialize()](#func-initializecryptomode-key-paramsspec)方法前需要指定其algName属性（来源于父类[ParamsSpec](#class-paramsspec)）。
 > 2. 对于1~16字节长度的iv，加解密算法库无额外限制，但结果取决于底层openssl的支持情况。
 > 3. 当aad参数不需要使用或aad长度为0时，可以将aad的data属性设置为一个空的Array\<UInt8>，来构造GcmParamsSpec，写法为aad: { data: Array\<UInt8>() }。
@@ -1786,7 +1786,7 @@ public class IvParamsSpec <: ParamsSpec {
 适用于CBC、CTR、OFB、CFB、Poly1305这些需要iv作为参数的加解密模式。
 
 > **说明：**
-> 
+>
 > 传入[initialize()](#func-initializecryptomode-key-paramsspec)方法前需要指定其algName属性（来源于父类[ParamsSpec](#class-paramsspec)）。
 
 **系统能力：** SystemCapability.Security.CryptoFramework.Cipher

@@ -3687,8 +3687,8 @@ public func goTo(offset: Int32): Bool
 
 **功能：** 指定相对当前结果集指针位置的偏移量，以移动结果集的指针位置。
 
-> **注意：** 
-> 
+> **注意：**
+>
 > 此接口在失败时不会返回`false`，而是抛出异常。请确保调用时针对错误码提示进行适当的处理。
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
@@ -3762,8 +3762,8 @@ public func goToFirstRow(): Bool
 
 **功能：** 转到结果集的第一行。
 
-> **注意：** 
-> 
+> **注意：**
+>
 > 此接口在失败时不会返回`false`，而是抛出异常。请确保调用时针对错误码提示进行适当的处理。
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
@@ -3831,8 +3831,8 @@ public func goToLastRow(): Bool
 
 **功能：** 转到结果集的最后一行。
 
-> **注意：** 
-> 
+> **注意：**
+>
 > 此接口在失败时不会返回`false`，而是抛出异常。请确保调用时针对错误码提示进行适当的处理。
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
@@ -3900,8 +3900,8 @@ public func goToNextRow(): Bool
 
 **功能：** 转到结果集的下一行。
 
-> **注意：** 
-> 
+> **注意：**
+>
 > 此接口在失败时不会返回`false`，而是抛出异常。请确保调用时针对错误码提示进行适当的处理。
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
@@ -3969,8 +3969,8 @@ public func goToPreviousRow(): Bool
 
 **功能：** 转到结果集的上一行。
 
-> **注意：** 
-> 
+> **注意：**
+>
 > 此接口在失败时不会返回`false`，而是抛出异常。请确保调用时针对错误码提示进行适当的处理。
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
@@ -4038,8 +4038,8 @@ public func goToRow(position: Int32): Bool
 
 **功能：** 转到结果集的指定行。
 
-> **注意：** 
-> 
+> **注意：**
+>
 > 此接口在失败时不会返回`false`，而是抛出异常。请确保调用时针对错误码提示进行适当的处理。
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core

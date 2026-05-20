@@ -769,7 +769,7 @@ public func createPattern(image: ?ImageBitmap, repetition: Option<Repetition>): 
 
 |类型|说明|
 |:---|:---|
-|Option\<[CanvasPattern](#canvaspattern)>|通过指定图像和重复方式创建图片填充的模板对象。|
+|Option\<[CanvasPattern](./cj-canvas-drawing-canvaspattern.md#class-canvaspattern)>|通过指定图像和重复方式创建图片填充的模板对象。|
 
 ### func bezierCurveTo(Float64, Float64, Float64, Float64, Float64, Float64)
 

@@ -686,7 +686,6 @@ public open class Indicator {
 
 **起始版本：** 22
 
-
 #### static func digit()
 
 ```cangjie

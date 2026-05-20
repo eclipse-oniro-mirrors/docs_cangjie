@@ -494,7 +494,6 @@ public class TransitionEffect {
 >
 > - 当通过删除整棵子树的方式触发消失转场，如需看到完整的消失转场过程，需要保证被删除子树的根组件的有充足的消失转场时间，见示例3。
 
-
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **起始版本：** 22

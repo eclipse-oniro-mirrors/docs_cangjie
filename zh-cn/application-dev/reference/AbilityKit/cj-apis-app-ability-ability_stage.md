@@ -71,6 +71,7 @@ class MyAbilityStage1 <: AbilityStage {
     }
 }
 ```
+
 ### func onCreate()
 
 ```cangjie

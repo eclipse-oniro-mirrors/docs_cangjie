@@ -41,11 +41,10 @@ public init(child!: () -> Unit = {=>})
 ### init(?ResourceStr, ?ResourceStr, ?ResourceStr, ?ResourceStr, Option\<() -> Unit>)
 
 ```cangjie
-public init(startIcon!: ?ResourceStr, content!: ?ResourceStr, endIcon!: ?ResourceStr, labelInfo!: ?ResourceStr,
-    builder!: Option<() -> Unit> = None)
+public init(startIcon!: ?ResourceStr, content!: ?ResourceStr, endIcon!: ?ResourceStr, labelInfo!: ?ResourceStr, builder!: Option<() -> Unit> = None)
 ```
 
-**功能：**构造一个有二级菜单的 item 菜单项。
+**功能：** 构造一个有二级菜单的 item 菜单项。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 

@@ -443,4 +443,3 @@ Invalid advertising id.
 **处理步骤**
 
 检查传入的广播标识符是否为[startAdvertising](./cj-apis-bluetooth-ble.md#func-startadvertisingadvertisingparams)接口返回的有效标识符。
-
