@@ -4174,6 +4174,54 @@ func accessGlobalObject(context: JSContext): JSValue {
 }
 ```
 
+### func newScope\<T>(()->T)
+
+```cangjie
+public func newScope<T>(callback: ()->T): T
+```
+
+**Description:** Create an ArkTS handle scope。
+
+**Since:** 24
+
+**Parameters:**
+
+| Parameter | Type | Required | Default | Description    |
+|:---------|:---|:---------|:---|:---------------|
+| callback | ()->T | Yes      |-| User callback。 |
+
+**Return Value:**
+
+| Type | Description                  |
+|:---|:-----------------------------|
+| T  | The result of user callback。 |
+
+**Exceptions:**
+
+- BusinessException: Corresponding error codes are shown in the table below.
+
+| Error Code ID | Error Message                           |
+|:------|:-------------------------------------|
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
+
+**Example:**
+
+<!--compile-->
+```cangjie
+func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
+    spawn (UIThread) {
+        context.newScope {
+            let callback = context.function { c, _ =>
+                Hilog.info(0, "test", "newScope called")
+            }
+            callback.call()
+        }
+    }
+    return context.undefined().toJSValue()
+}
+```
+
 ### func array(Array\<JSValue>)
 
 ```cangjie
