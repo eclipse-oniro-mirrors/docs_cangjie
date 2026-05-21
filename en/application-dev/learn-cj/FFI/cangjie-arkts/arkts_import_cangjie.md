@@ -11,7 +11,7 @@ This chapter introduces two methods for using interoperability code in ArkTS:
 
 > **Note:**
 >
-> The method for loading Cangjie modules using the `import` syntax is consistent with loading native modules via `import`. For detailed information, refer to: [Statically Loading Native Modules](https://docs.openharmony.cn/pages/v6.0/en/application-dev/arkts-utils/arkts-import-native-module.md).
+> The method for loading Cangjie modules using the `import` syntax is consistent with loading native modules via `import`. For detailed information, refer to: [Statically Loading Native Modules](https://gitcode.com/openharmony/docs/blob/master/en/application-dev/arkts-utils/arkts-import-native-module.md).
 
 Below is an example of loading the Cangjie module `ohos_app_cangjie_entry` using the `import` syntax and calling the `addNumber` interface:
 
@@ -657,7 +657,7 @@ Below is an example of loading the Cangjie third-party library `libapplication.s
 
 > **Note:**
 >
-> For detailed information about the `loadNativeModule` interface, refer to: [Dynamically Loading Native Modules in Synchronous Mode](https://docs.openharmony.cn/pages/v6.0/en/application-dev/arkts-utils/js-apis-load-native-module.md)
+> For detailed information about the `loadNativeModule` interface, refer to: [Dynamically Loading Native Modules in Synchronous Mode](https://gitcode.com/openharmony/docs/blob/master/en/application-dev/arkts-utils/js-apis-load-native-module.md)
 
 Below is an example of loading the Cangjie module `ohos_app_cangjie_entry` using the `loadNativeModule` interface and calling the `addNumber` function:
 
