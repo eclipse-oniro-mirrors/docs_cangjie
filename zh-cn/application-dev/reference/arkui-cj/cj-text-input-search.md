@@ -101,7 +101,7 @@ public func placeholderFont(
 ): This
 ```
 
-**功能：** 设置placeHolder的样式，包括字体大小，字体粗细，字体族，字体风格。
+**功能：** 设置placeholder的样式，包括字体大小，字体粗细，字体族，字体风格。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -335,7 +335,7 @@ class EntryView {
             .height(35)
             //设置搜索组件背景色
             .backgroundColor(0xDDDDDD)
-            //设置palaceholder文本颜色
+            //设置placeholder文本颜色
             .placeholderColor(0x000000)
             //设置placeholder文本样式
             .placeholderFont(size: 26.px, weight: FontWeight.W100, family: "serif", style: FontStyle.Normal)
