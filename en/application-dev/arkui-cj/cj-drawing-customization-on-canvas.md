@@ -6,7 +6,7 @@
 > Currently in the beta phase.
 <!--DelEnd-->
 
-Canvas provides a canvas component for custom graphics rendering. Developers can use the `CanvasRenderingContext2D` and `OffscreenCanvasRenderingContext2D` objects to draw on the Canvas component, supporting basic shapes, text, images, and more.
+Canvas provides a canvas component for custom graphics rendering. Developers can use the `CanvasRenderingContext2D` objects to draw on the Canvas component, supporting basic shapes, text, images, and more.
 
 ## Drawing Custom Graphics with Canvas Component
 
@@ -51,7 +51,7 @@ Canvas provides a canvas component for custom graphics rendering. Developers can
 
 ## Initializing the Canvas Component
 
-`onReady(() -> Unit)` is the event callback triggered when the Canvas component initializes or resizes. After this event, the Canvas component's definitive width and height can be obtained, enabling further use of `CanvasRenderingContext2D` and `OffscreenCanvasRenderingContext2D` objects to call relevant APIs for graphics rendering.
+`onReady(() -> Unit)` is the event callback triggered when the Canvas component initializes or resizes. After this event, the Canvas component's definitive width and height can be obtained, enabling further use of `CanvasRenderingContext2D` objects to call relevant APIs for graphics rendering.
 
  <!-- run -->
 
@@ -88,7 +88,7 @@ class EntryView {
 
 After invoking the Canvas component's lifecycle interface `onReady()`, developers can directly use the Canvas component for drawing. Alternatively, they can define a `Path2D` object separately to construct an ideal path and then use the Canvas component for rendering after `onReady()` is called.
 
-- Directly call relevant APIs via `CanvasRenderingContext2D` and `OffscreenCanvasRenderingContext2D` objects for drawing.
+- Directly call relevant APIs via `CanvasRenderingContext2D` objects for drawing.
 
      <!-- run -->
 
@@ -126,7 +126,7 @@ After invoking the Canvas component's lifecycle interface `onReady()`, developer
 
   ![Canvas2](figures/Canvas2.jpg)
 
-- First, define a `Path2D` object separately to construct the desired path, then use the `stroke` or `fill` methods of `CanvasRenderingContext2D` and `OffscreenCanvasRenderingContext2D` for drawing. For details, refer to [`Path2D`](../reference/arkui-cj/cj-canvas-drawing-path2d.md#class-path2d).
+- First, define a `Path2D` object separately to construct the desired path, then use the `stroke` or `fill` methods of `CanvasRenderingContext2D` for drawing. For details, refer to [`Path2D`](../reference/arkui-cj/cj-canvas-drawing-path2d.md#class-path2d).
 
      <!-- run -->
 
@@ -165,7 +165,7 @@ After invoking the Canvas component's lifecycle interface `onReady()`, developer
 
 ## Common Methods of Canvas Component
 
-The `OffscreenCanvasRenderingContext2D` and `CanvasRenderingContext2D` objects provide numerous properties and methods for drawing text, graphics, and pixel manipulation, serving as the core of the Canvas component. Common interfaces include [`fill`](../reference/arkui-cj/cj-canvas-drawing-canvasrenderingcontext2d.md#func-fillcanvasfillrule) (fills closed paths), [`clip`](../reference/arkui-cj/cj-canvas-drawing-canvasrenderingcontext2d.md#func-clipcanvasfillrule) (sets the current path as a clipping path), [`stroke`](../reference/arkui-cj/cj-canvas-drawing-canvasrenderingcontext2d.md#func-stroke) (performs stroke operations), etc. Additionally, properties like [`fillStyle`](../reference/arkui-cj/cj-canvas-drawing-canvasrenderingcontext2d.md#prop-fillstyle) (specifies fill color), [`globalAlpha`](../reference/arkui-cj/cj-canvas-drawing-canvasrenderingcontext2d.md#prop-globalalpha) (sets transparency), and [`strokeStyle`](../reference/arkui-cj/cj-canvas-drawing-canvasrenderingcontext2d.md#prop-strokestyle) (sets stroke color) modify rendering styles. Below are some common use cases:
+The `CanvasRenderingContext2D` objects provide numerous properties and methods for drawing text, graphics, and pixel manipulation, serving as the core of the Canvas component. Common interfaces include [`fill`](../reference/arkui-cj/cj-canvas-drawing-canvasrenderingcontext2d.md#func-fillcanvasfillrule) (fills closed paths), [`clip`](../reference/arkui-cj/cj-canvas-drawing-canvasrenderingcontext2d.md#func-clipcanvasfillrule) (sets the current path as a clipping path), [`stroke`](../reference/arkui-cj/cj-canvas-drawing-canvasrenderingcontext2d.md#func-stroke) (performs stroke operations), etc. Additionally, properties like [`fillStyle`](../reference/arkui-cj/cj-canvas-drawing-canvasrenderingcontext2d.md#prop-fillstyle) (specifies fill color), [`globalAlpha`](../reference/arkui-cj/cj-canvas-drawing-canvasrenderingcontext2d.md#prop-globalalpha) (sets transparency), and [`strokeStyle`](../reference/arkui-cj/cj-canvas-drawing-canvasrenderingcontext2d.md#prop-strokestyle) (sets stroke color) modify rendering styles. Below are some common use cases:
 
 - Basic Shape Drawing.
 
