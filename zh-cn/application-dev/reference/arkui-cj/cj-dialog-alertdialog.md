@@ -1337,7 +1337,6 @@ public operator func ==(other: DialogButtonDirection): Bool
 <!-- run -->
 
 ```cangjie
-
 package ohos_app_cangjie_entry
 
 import kit.ArkUI.*
@@ -1349,7 +1348,7 @@ import ohos.arkui.component.common.Offset as CommonOffset
 @Component
 class EntryView {
     func build() {
-        Column(space:5.vp) {
+        Column(space: 5.vp) {
             Button("one button dialog")
                 .onClick({ evt =>
                     getUIContext().showAlertDialog(
@@ -1368,17 +1367,19 @@ class EntryView {
                                     case _ => ()
                                 }
                             },
-                            confirm: AlertDialogButtonOptions(value: "button",
+                            confirm: AlertDialogButtonOptions(
+                                value: "button",
                                 action: {=> Hilog.info(0, "AppLogCj", "Button-clicking callback")}
                             )
                         )
                     )
                 })
-            .backgroundColor(0x317aff)
+                .backgroundColor(0x317aff)
             Button("two button dialog")
-                .onClick({ evt =>
-                    getUIContext().showAlertDialog(
-                        AlertDialogParamWithButtons(message: "text",
+                .onClick({
+                    evt => getUIContext().showAlertDialog(
+                        AlertDialogParamWithButtons(
+                            message: "text",
                             title: "title",
                             subtitle: "subtitle",
                             autoCancel: true,
@@ -1396,17 +1397,20 @@ class EntryView {
                             },
                             primaryButton: AlertDialogButtonOptions(value: "Cancel",
                                 action: {=> Hilog.info(0, "AppLogCj", "Callback when second button is clicked")}),
-                            secondaryButton: AlertDialogButtonOptions(enabled: true, defaultFocus: true,
-                                style: DialogButtonStyle.Highlight, value: "OK",
+                            secondaryButton: AlertDialogButtonOptions(
+                                enabled: true,
+                                defaultFocus: true,
+                                style: DialogButtonStyle.Highlight,
+                                value: "OK",
                                 action: {=> Hilog.info(0, "AppLogCj", "Callback when second button is clicked")}
                             )
                         )
                     )
                 })
-            .backgroundColor(0x317aff)
+                .backgroundColor(0x317aff)
             Button("three button dialog")
-                .onClick({ evt =>
-                    getUIContext().showAlertDialog(
+                .onClick({
+                    evt => getUIContext().showAlertDialog(
                         AlertDialogParamWithOptions(
                             message: "text",
                             title: "title",
@@ -1448,7 +1452,6 @@ class EntryView {
 <!-- run -->
 
 ```cangjie
-
 package ohos_app_cangjie_entry
 
 import kit.ArkUI.*
@@ -1462,40 +1465,39 @@ class EntryView {
     func build() {
         Column(space: 5.vp) {
             Button("button dialog")
-                .onClick({ evt =>
-                        AlertDialogParamWithOptions(
-                            message: "text",
-                            title: "title",
-                            subtitle: "subtitle",
-                            autoCancel: true,
-                            cancel: {=> Hilog.info(0, "AppLogCj", "Closed callbacks")},
-                            alignment: DialogAlignment.Center,
-                            offset: CommonOffset(0, -20),
-                            showInSubWindow: true,
-                            buttonDirection: DialogButtonDirection.Horizontal,
-                            gridCount: 4,
-                            onWillDismiss: {
-                                dismissDialogAction: DismissDialogAction => match (dismissDialogAction.reason) {
-                                    case PRESS_BACK => dismissDialogAction.dismiss()
-                                    case TOUCH_OUTSIDE => dismissDialogAction.dismiss()
-                                    case _ => ()
-                                }
-                            },
-                            buttons: [
-                                AlertDialogButtonOptions(value: "按钮",
-                                    action: {=> Hilog.info(0, "AppLogCj", "Callback when button1 is clicked")}),
-                                AlertDialogButtonOptions(value: "按钮",
-                                    action: {=> Hilog.info(0, "AppLogCj", "Callback when button1 is clicked")}),
-                                AlertDialogButtonOptions(value: "按钮",
-                                    action: {=> Hilog.info(0, "AppLogCj", "Callback when button1 is clicked")})
-                            ]
-                        )
+                .onClick({
+                    evt => AlertDialogParamWithOptions(
+                        message: "text",
+                        title: "title",
+                        subtitle: "subtitle",
+                        autoCancel: true,
+                        cancel: {=> Hilog.info(0, "AppLogCj", "Closed callbacks")},
+                        alignment: DialogAlignment.Center,
+                        offset: CommonOffset(0, -20),
+                        showInSubWindow: true,
+                        buttonDirection: DialogButtonDirection.Horizontal,
+                        gridCount: 4,
+                        onWillDismiss: {
+                            dismissDialogAction: DismissDialogAction => match (dismissDialogAction.reason) {
+                                case PRESS_BACK => dismissDialogAction.dismiss()
+                                case TOUCH_OUTSIDE => dismissDialogAction.dismiss()
+                                case _ => ()
+                            }
+                        },
+                        buttons: [
+                            AlertDialogButtonOptions(value: "按钮",
+                                action: {=> Hilog.info(0, "AppLogCj", "Callback when button1 is clicked")}),
+                            AlertDialogButtonOptions(value: "按钮",
+                                action: {=> Hilog.info(0, "AppLogCj", "Callback when button1 is clicked")}),
+                            AlertDialogButtonOptions(value: "按钮",
+                                action: {=> Hilog.info(0, "AppLogCj", "Callback when button1 is clicked")})
+                        ]
+                    )
                 })
                 .backgroundColor(0x317aff)
         }
     }
 }
-
 ```
 
 ![alertdialog2](./figures/alertdialog2.png)

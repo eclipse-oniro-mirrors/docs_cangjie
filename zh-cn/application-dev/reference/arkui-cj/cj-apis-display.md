@@ -544,8 +544,7 @@ public init(
 ## class Display
 
 ```cangjie
-public class Display {
-}
+public class Display {}
 ```
 
 **功能：** 定义显示屏的属性。它们不会自动更新。

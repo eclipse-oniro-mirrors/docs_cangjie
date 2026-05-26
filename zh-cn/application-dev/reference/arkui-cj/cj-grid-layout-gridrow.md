@@ -835,13 +835,15 @@ public operator func ==(other: GridRowDirection): Bool
 
 ```cangjie
 package ohos_app_cangjie_entry
+
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
 
 @Entry
 @Component
 class EntryView {
-    var bgColors: Array<Color> = [Color.Red, Color.Green, Color.Blue, Color.Gray, Color.Red, Color.Green, Color.Blue, Color.Gray]
+    var bgColors: Array<Color> = [Color.Red, Color.Green, Color.Blue, Color.Gray, Color.Red, Color.Green, Color.Blue,
+        Color.Gray]
     var currentBp: String = ""
     func build() {
         Column {
@@ -870,9 +872,9 @@ class EntryView {
                                 .width(100.percent)
                                 .height(20.vp)
                         }
-                        .borderWidth(2.vp)
-                        .borderColor(color)
-                        .span(1)
+                            .borderWidth(2.vp)
+                            .borderColor(color)
+                            .span(1)
                     }
                 )
             }
@@ -902,19 +904,19 @@ class EntryView {
                                 .width(100.percent)
                                 .height(20.vp)
                         }
-                        .borderWidth(2.vp)
-                        .borderColor(color)
-                        .span(GridColOptions(xs: 2, sm: 3, md: 4, lg: 5, xl: 6, xxl: 7))
+                            .borderWidth(2.vp)
+                            .borderColor(color)
+                            .span(GridColOptions(xs: 2, sm: 3, md: 4, lg: 5, xl: 6, xxl: 7))
                     }
                 )
             }
-            .width(100.percent)
-            .height(100.percent)
-            .onBreakpointChange({bp => currentBp = bp})
-            .alignItems(ItemAlign.Center)
+                .width(100.percent)
+                .height(100.percent)
+                .onBreakpointChange({bp => currentBp = bp})
+                .alignItems(ItemAlign.Center)
         }
-        .margin(left: 10, right: 10, top: 5, bottom: 5)
-        .height(400)
+            .margin(left: 10, right: 10, top: 5, bottom: 5)
+            .height(400)
     }
 }
 ```

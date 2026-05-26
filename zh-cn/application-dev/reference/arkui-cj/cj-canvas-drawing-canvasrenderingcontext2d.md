@@ -1696,8 +1696,8 @@ public func putImageData(
 <!-- run -->
 
 ```cangjie
-
 package ohos_app_cangjie_entry
+
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
 
@@ -1706,7 +1706,8 @@ import ohos.arkui.state_macro_manage.*
 class EntryView {
     private let settings: RenderingContextSettings = RenderingContextSettings(antialias: true)
     private let context: CanvasRenderingContext2D = CanvasRenderingContext2D(this.settings)
-    @State var message: String = ""
+    @State
+    var message: String = ""
     func build() {
             Flex(direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center)  {
                 Canvas(this.context)
@@ -1721,7 +1722,6 @@ class EntryView {
             }.width(100.percent).height(100.percent)
     }
 }
-
 ```
 
 ![canvasRenderingContext2D](./figures/canvasRenderingContext2D.PNG)

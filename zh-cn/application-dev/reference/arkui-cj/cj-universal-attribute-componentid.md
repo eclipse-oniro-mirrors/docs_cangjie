@@ -224,6 +224,7 @@ public func sendMouseEvent(event: MouseEvent): Bool
 
 ```cangjie
 package ohos_app_cangjie_entry
+
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
 import ohos.hilog.*
@@ -231,8 +232,10 @@ import ohos.hilog.*
 @Entry
 @Component
 class EntryView {
-    @State var selectedIndex: Int32 = 0
-    @State var selectOptions: Array<SelectOption> = [
+    @State
+    var selectedIndex: Int32 = 0
+    @State
+    var selectOptions: Array<SelectOption> = [
         SelectOption(value: "选项1"),
         SelectOption(value: "选项2"),
         SelectOption(value: "选项3")
@@ -246,32 +249,34 @@ class EntryView {
                 .value("请选择")
                 .fontColor(0xFF000000)
                 .space(8.vp)
-                .onSelect({ index: Int32, value: String =>
-                    this.selectedIndex = index
+                .onSelect({
+                    index: Int32, value: String => this.selectedIndex = index
                 })
 
-            Button("在主线程中获取组件属性")
-                .onClick({ evt =>
-                    // 在主线程中调用getInspectorByKey，可以获取完整的属性信息
-                    let inspectorInfo = getInspectorByKey("mySelect")
-                    Hilog.info(0x0000, "Inspector", "Select组件属性: ${inspectorInfo}")
-                })
+            Button("在主线程中获取组件属性").onClick(
+                {
+                    evt =>
+                        // 在主线程中调用getInspectorByKey，可以获取完整的属性信息
+                        let inspectorInfo = getInspectorByKey("mySelect")
+                        Hilog.info(0x0000, "Inspector", "Select组件属性: ${inspectorInfo}")
+                }
+            )
 
-            Button("在子线程中获取组件属性")
-                .onClick({ evt =>
-                    // 在子线程中执行
-                    spawn {
-                        // 使用launch将getInspectorByKey调用转发到主线程
-                        launch {
-                            // 在主线程中调用，可以获取完整的属性信息
-                            let inspectorInfo = getInspectorByKey("mySelect")
-                            Hilog.info(0x0000, "Inspector", "Select组件属性: ${inspectorInfo}")
-                        }
+            Button("在子线程中获取组件属性").onClick({
+                evt =>
+                // 在子线程中执行
+                spawn {
+                    // 使用launch将getInspectorByKey调用转发到主线程
+                    launch {
+                        // 在主线程中调用，可以获取完整的属性信息
+                        let inspectorInfo = getInspectorByKey("mySelect")
+                        Hilog.info(0x0000, "Inspector", "Select组件属性: ${inspectorInfo}")
                     }
-                })
+                }
+            })
         }
-        .width(100.percent)
-        .padding(20)
+            .width(100.percent)
+            .padding(20)
     }
 }
 ```

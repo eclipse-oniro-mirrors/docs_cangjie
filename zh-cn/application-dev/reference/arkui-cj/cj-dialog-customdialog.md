@@ -563,7 +563,6 @@ public init(
 <!-- run -->
 
 ```cangjie
-
 package ohos_app_cangjie_entry
 
 import kit.ArkUI.*
@@ -574,12 +573,12 @@ class MyDialog {
     var controller: Option<CustomDialogController> = Option.None
     func build() {
         Row(space: 60) {
-            Button("cancel").onClick({ evt =>
-                controller?.releaseSelf()
+            Button("cancel").onClick({
+                evt => controller?.releaseSelf()
             })
 
-            Button("confirm").onClick({ evt =>
-                controller?.releaseSelf()
+            Button("confirm").onClick({
+                evt => controller?.releaseSelf()
             })
         }.height(500.px)
     }
@@ -588,17 +587,19 @@ class MyDialog {
 @Entry
 @Component
 class EntryView {
-    var dialogController: CustomDialogController = CustomDialogController(CustomDialogControllerOptions(builder: MyDialog()))
+    var dialogController: CustomDialogController = CustomDialogController(
+        CustomDialogControllerOptions(builder: MyDialog()))
     func build() {
         Column {
-            Button("open dialog").onClick({evt =>
-                dialogController.openDialog()
-            }).margin(top: 40.percent, left: 35.percent)
-              .width(30.percent)
+            Button("open dialog")
+                .onClick({
+                    evt => dialogController.openDialog()
+                })
+                .margin(top: 40.percent, left: 35.percent)
+                .width(30.percent)
         }
     }
 }
-
 ```
 
 ![custom_dialog](./figures/custom_dialog.gif)

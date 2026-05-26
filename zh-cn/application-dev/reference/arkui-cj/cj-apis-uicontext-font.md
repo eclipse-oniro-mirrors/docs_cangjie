@@ -301,10 +301,12 @@ import ohos.resource_manager.*
 @Component
 class EntryView {
     protected func onAppear() {
-        getUIContext().getFont().registerFont(
-            familyName: "Deyihei",
-            familySrc: "/resources/rawfile/SmileySans-Oblique.ttf"
-        )
+        getUIContext()
+            .getFont()
+            .registerFont(
+                familyName: "Deyihei",
+                familySrc: "/resources/rawfile/SmileySans-Oblique.ttf"
+            )
     }
 
     func build() {
@@ -337,11 +339,15 @@ class EntryView {
     func build() {
         Row {
             Column {
-                Button("HelloWorld")
-                .onClick({evt =>
-                    let list = getUIContext().getFont().getSystemFontList()
-                    Hilog.info(0, "AppLogCj", "${list.size}")
-                })
+                Button("HelloWorld").onClick(
+                    {
+                        evt =>
+                            let list = getUIContext()
+                                .getFont()
+                                .getSystemFontList()
+                            Hilog.info(0, "AppLogCj", "${list.size}")
+                    }
+                )
             }.width(100.percent)
         }.height(100.percent)
     }
@@ -367,24 +373,28 @@ class EntryView {
     func build() {
         Row {
             Column {
-                Button("HelloWorld")
-                .onClick({evt =>
-                    let info = getUIContext().getFont().getFontByName("HarmonyOS Sans Italic")
-                    match (info) {
-                        case Some(v) =>
-                            Hilog.info(0, "AppLogCj", "${v.path}")
-                            Hilog.info(0, "AppLogCj", "${v.postScriptName}")
-                            Hilog.info(0, "AppLogCj", "${v.fullName}")
-                            Hilog.info(0, "AppLogCj", "${v.family}")
-                            Hilog.info(0, "AppLogCj", "${v.subfamily}")
-                            Hilog.info(0, "AppLogCj", "${v.weight}")
-                            Hilog.info(0, "AppLogCj", "${v.width}")
-                            Hilog.info(0, "AppLogCj", "${v.italic}")
-                            Hilog.info(0, "AppLogCj", "${v.monoSpace}")
-                            Hilog.info(0, "AppLogCj", "${v.symbolic}")
-                        case None => Hilog.error(0, "AppLogCj", "None")
+                Button("HelloWorld").onClick(
+                    {
+                        evt =>
+                            let info = getUIContext()
+                                .getFont()
+                                .getFontByName("HarmonyOS Sans Italic")
+                            match (info) {
+                                case Some(v) =>
+                                    Hilog.info(0, "AppLogCj", "${v.path}")
+                                    Hilog.info(0, "AppLogCj", "${v.postScriptName}")
+                                    Hilog.info(0, "AppLogCj", "${v.fullName}")
+                                    Hilog.info(0, "AppLogCj", "${v.family}")
+                                    Hilog.info(0, "AppLogCj", "${v.subfamily}")
+                                    Hilog.info(0, "AppLogCj", "${v.weight}")
+                                    Hilog.info(0, "AppLogCj", "${v.width}")
+                                    Hilog.info(0, "AppLogCj", "${v.italic}")
+                                    Hilog.info(0, "AppLogCj", "${v.monoSpace}")
+                                    Hilog.info(0, "AppLogCj", "${v.symbolic}")
+                                case None => Hilog.error(0, "AppLogCj", "None")
+                            }
                     }
-                })
+                )
             }.width(100.percent)
         }.height(100.percent)
     }

@@ -95,7 +95,8 @@
     @Component
     class Child {
         // 错误写法，@Link与@State数据源类型不一致
-        @Link var test: Cousin
+        @Link
+        var test: Cousin
         func build() {
             Column() {
                 Text(this.test.name)
@@ -106,7 +107,8 @@
     @Entry
     @Component
     class EntryView {
-        @State var info: Info = Info()
+        @State
+        var info: Info = Info()
         func build() {
             Column {
                 // 错误写法，@Link与@State数据源类型不一致
@@ -128,7 +130,8 @@
     @Component
     class Child {
         // 正确写法
-        @Link var test: Info
+        @Link
+        var test: Info
         func build() {
             Column() {
                 Text(this.test.info)
@@ -163,8 +166,10 @@
 
     @Component
     class Child {
-        @Link var mes: String
-        @Link var info: String
+        @Link
+        var mes: String
+        @Link
+        var info: String
         func build() {
             Column() {
                 Text(this.mes + this.info)
@@ -175,8 +180,10 @@
     @Entry
     @Component
     class EntryView {
-        @State var mes: String = "Hello"
-        @State var info: Info = Info()
+        @State
+        var mes: String = "Hello"
+        @State
+        var info: Info = Info()
         func build() {
             Column {
                 // 错误写法，常规变量不能初始化@Link
@@ -197,8 +204,10 @@
 
     @Component
     class Child {
-        @Link var mes: String
-        @Link var info: Info
+        @Link
+        var mes: String
+        @Link
+        var info: Info
         func build() {
             Column() {
                 Text(this.mes + this.info.info)
@@ -209,8 +218,10 @@
     @Entry
     @Component
     class EntryView {
-        @State var message: String = "Hello"
-        @State var info: Info = Info()
+        @State
+        var message: String = "Hello"
+        @State
+        var info: Info = Info()
         func build() {
             Column {
                 // 正确写法
@@ -236,17 +247,20 @@
 
 ```cangjie
 package ohos_app_cangjie_entry
+
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
 
 @Observed
 class GreenButtonState {
-    @Publish var width: Int64 = 0
+    @Publish
+    var width: Int64 = 0
 }
 
 @Component
 class GreenButton {
-    @Link var greenButtonState: GreenButtonState
+    @Link
+    var greenButtonState: GreenButtonState
 
     func build() {
         Button("Green Button")
@@ -268,7 +282,8 @@ class GreenButton {
 
 @Component
 class YellowButton {
-    @Link var yellowButtonState: Int64
+    @Link
+    var yellowButtonState: Int64
 
     func build() {
         Button("Yellow Button")
@@ -288,8 +303,10 @@ class YellowButton {
 @Entry
 @Component
 class EntryView {
-    @State var greenButtonState: GreenButtonState = GreenButtonState(width: 180)
-    @State var yellowButtonProp: Int64 = 180
+    @State
+    var greenButtonState: GreenButtonState = GreenButtonState(width: 180)
+    @State
+    var yellowButtonProp: Int64 = 180
     func build() {
         Column() {
             Flex(direction: FlexDirection.Column, alignItems: ItemAlign.Center) {
@@ -337,15 +354,17 @@ class EntryView {
 
 ```cangjie
 package ohos_app_cangjie_entry
+
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
 
 @Component
-class Child{
-    @Link var items: ObservedArrayList<Int>
+class Child {
+    @Link
+    var items: ObservedArrayList<Int>
 
-    func build(){
-        Column(){
+    func build() {
+        Column() {
             Button("Button 1: push")
                 .margin(12)
                 .size(width: 312, height: 40)
@@ -355,9 +374,9 @@ class Child{
 
             Button("Button 2: replace whole item")
                 .margin(12)
-                .size(width: 312, height:40)
+                .size(width: 312, height: 40)
                 .onClick({
-                    ect => this.items = ObservedArrayList<Int>([100,200,300])
+                    ect => this.items = ObservedArrayList<Int>([100, 200, 300])
                 })
         }
     }
@@ -365,19 +384,19 @@ class Child{
 
 @Entry
 @Component
-class EntryView{
-    @State var arr: ObservedArrayList<Int> = ObservedArrayList<Int>([1,2,3])
-    func build(){
-        Column(){
+class EntryView {
+    @State
+    var arr: ObservedArrayList<Int> = ObservedArrayList<Int>([1, 2, 3])
+    func build() {
+        Column() {
             Child(items: arr)
-            ForEach(this.arr, itemGeneratorFunc: {item: Int,index: Int
-                    =>
-                    Button("${item}")
-                        .margin(12)
-                        .size(width: 312,height: 40)
-                        .backgroundColor(Color.White)
-                        .fontColor(Color.Black)
-                    })
+            ForEach(this.arr, itemGeneratorFunc: {
+                item: Int, index: Int => Button("${item}")
+                    .margin(12)
+                    .size(width: 312, height: 40)
+                    .backgroundColor(Color.White)
+                    .fontColor(Color.Black)
+            })
         }
     }
 }
@@ -395,13 +414,17 @@ class EntryView{
 
 ```cangjie
 package ohos_app_cangjie_entry
+
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
 
 @Component
 class Child {
-    @State var memberMessage: String = 'Hello World'
-    @Link @Watch[onSourceChange] var sourceNumber: Int64
+    @State
+    var memberMessage: String = 'Hello World'
+    @Link
+    @Watch[onSourceChange]
+    var sourceNumber: Int64
     func onSourceChange() {
         this.memberMessage = this.sourceNumber.toString()
     }
@@ -413,21 +436,20 @@ class Child {
             .onClick({
                   evt => this.memberMessage = "Hello memberMessage"
             })
-        }
-        .margin(10)
+        }.margin(10)
     }
 }
 
 @Entry
 @Component
 class EntryView {
-    @State var sourceNumber: Int64 = 0;
+    @State
+    var sourceNumber: Int64 = 0;
     func build() {
         Column() {
             Text("父组件的sourceNumber：" + this.sourceNumber.toString())
             Child(sourceNumber: this.sourceNumber)
-            Button("父组件更改sourceNumber")
-            .onClick({
+            Button("父组件更改sourceNumber").onClick({
                 evt => this.sourceNumber++
             })
         }
@@ -449,17 +471,20 @@ class EntryView {
 
 ```cangjie
 package ohos_app_cangjie_entry
+
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
 
 @Observed
 class Info {
-    @Publish var age: Int64
+    @Publish
+    var age: Int64
 }
 
 @Component
 class LinkChild {
-    @Link var testNum: Int64
+    @Link
+    var testNum: Int64
     func build() {
         Column() {
             Text("LinkChild testNum ${this.testNum}")
@@ -470,7 +495,8 @@ class LinkChild {
 @Entry
 @Component
 class EntryView {
-    @State var info: Info = Info(age: 1)
+    @State
+    var info: Info = Info(age: 1)
     func build() {
         Column {
             Text("Parent testNum ${this.info.age}").onClick({
@@ -493,17 +519,20 @@ class EntryView {
 
 ```cangjie
 package ohos_app_cangjie_entry
+
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
 
 @Observed
 class Info {
-    @Publish var age: Int64
+    @Publish
+    var age: Int64
 }
 
 @Component
 class LinkChild {
-    @Link var testNum: Info
+    @Link
+    var testNum: Info
     func build() {
         Column() {
             Text("LinkChild testNum ${this.testNum.age}")
@@ -517,7 +546,8 @@ class LinkChild {
 @Entry
 @Component
 class EntryView {
-    @State var info: Info = Info(age: 1)
+    @State
+    var info: Info = Info(age: 1)
     func build() {
         Column {
             Text("Parent testNum ${this.info.age}").onClick({

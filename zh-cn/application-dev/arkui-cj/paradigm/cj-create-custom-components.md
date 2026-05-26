@@ -25,13 +25,14 @@
 ```cangjie
 @Component
 class HelloComponent {
-    @State var message : String = "Hello, World!"
+    @State
+    var message: String = "Hello, World!"
     func build() {
         // HelloComponent自定义组件组合系统组件Row和Text
-        Row(){
+        Row() {
             Text(this.message)
                 // 状态变量message的改变驱动UI刷新，UI从"Hello, World!"刷新为"Hello, Cangjie!"
-                .onClick({etv=>this.message="Hello, Cangjie!"})
+                .onClick({etv => this.message = "Hello, Cangjie!"})
         }
     }
 }
@@ -46,7 +47,7 @@ HelloComponent可以在其他自定义组件中的build()函数中多次创建�
 @Component
 class EntryView {
     func build() {
-        Column(){
+        Column() {
             Text("ArkUI message")
             HelloComponent(message: "Hello, World!")
             Divider()
@@ -84,8 +85,7 @@ class EntryView {
 
 ```cangjie
 @Component
-class MyComponent {
-}
+class MyComponent {}
 ```
 
 使用限制：
@@ -111,8 +111,7 @@ class MyComponent {
 ```cangjie
 @Entry
 @Component
-class MyComponent {
-}
+class MyComponent {}
 ```
 
 #### EntryOptions
@@ -128,8 +127,7 @@ class MyComponent {
 ```cangjie
 @Reusable
 @Component
-class MyComponent {
-}
+class MyComponent {}
 ```
 
 ## 成员函数/变量
@@ -152,6 +150,7 @@ class MyComponent {
 
 ```cangjie
 package ohos_app_cangjie_entry
+
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
 
@@ -168,9 +167,9 @@ class MyComponent {
 class EntryView {
     private var someColor: Color = Color.Red
     func build() {
-        Column(){
+        Column() {
             // 创建MyComponent实例，并将创建MyComponent成员变量countDownFrom初始化为10，将成员变量color初始化为this.someColor
-            MyComponent(countDownFrom: 10 , color: this.someColor)
+            MyComponent(countDownFrom: 10, color: this.someColor)
         }
     }
 }
@@ -182,19 +181,21 @@ class EntryView {
 
 ```cangjie
 package ohos_app_cangjie_entry
+
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
 
 @Entry
 @Component
 class EntryView {
-    @State var cnt : Int64 = 0
-    func submit():UInt{
+    @State
+    var cnt: Int64 = 0
+    func submit(): UInt {
         this.cnt++
         return 0
     }
     func build() {
-        Column(){
+        Column() {
             Text("${this.cnt}")
             Child(Childsubmit: this.submit)
         }
@@ -203,12 +204,12 @@ class EntryView {
 
 @Component
 class Child {
-    let Childsubmit : () -> UInt
+    let Childsubmit: () -> UInt
     func build() {
-        Row(){
+        Row() {
             Button("add")
                 .width(80)
-                .onClick({etv=> this.Childsubmit()})
+                .onClick({etv => this.Childsubmit()})
         }
     }
 }
@@ -225,6 +226,7 @@ class Child {
 
   ```cangjie
   package ohos_app_cangjie_entry
+
   import kit.ArkUI.*
   import ohos.arkui.state_macro_manage.*
   import kit.LocalizationKit.*
@@ -232,10 +234,10 @@ class Child {
 
   @Entry
   @Component
-  class EntryView{
+  class EntryView {
       func build() {
           // 根节点唯一且必要，必须为容器组件
-          Row(){
+          Row() {
               ChildComponent()
           }
       }
@@ -254,7 +256,7 @@ class Child {
 
   ```cangjie
   func build() {
-      let num :Int64 = 0
+      let num: Int64 = 0
   }
   ```
 
@@ -263,7 +265,7 @@ class Child {
   ```cangjie
   func build() {
       //反例：不允许Hilog.info
-      Hilog.info(0, "HilogCj","print debug log" )
+      Hilog.info(0, "HilogCj", "print debug log")
   }
   ```
 
@@ -286,12 +288,12 @@ class Child {
   @Component
   class EntryView {
       func doSomeCalculations() {
-
       }
-      func calcTextValue():String {
+      func calcTextValue(): String {
           return "Hello World"
       }
-      @Builder func doSomeRender() {
+      @Builder
+      func doSomeRender() {
           Text("Hello World")
       }
       func build() {
@@ -313,15 +315,15 @@ class Child {
   func build() {
       Column() {
           // 反例：不允许使用match语法
-          match(expression ) {
+          match (expression) {
               case 0 => Text("...")
               case 1 => Text("...")
               case _ => Text("...")
           }
           // 正例：使用if
-          if(expression == 1) {
+          if (expression == 1) {
               Text("...")
-          } else if(expression == 2) {
+          } else if (expression == 2) {
               Button("...")
           } else {
               Text("...")
@@ -337,9 +339,12 @@ class Child {
   ```cangjie
   @Component
   class EntryView {
-      @State var textColor : Color = Color(0xFFFF00)
-      @State var columnColor : Color  = Color.Green
-      @State var count : Int64 = 1
+      @State
+      var textColor: Color = Color(0xFFFF00)
+      @State
+      var columnColor: Color = Color.Green
+      @State
+      var count: Int64 = 1
       func build() {
           Column() {
               // 不允许直接在Text组件内改变count的值
@@ -347,11 +352,9 @@ class Child {
                   .width(50)
                   .height(50)
                   .fontColor(this.textColor)
-                  .onClick({etv=> this.columnColor = Color.Red})
-              Button("change textColor")
-                  .onClick({etv=> this.textColor = Color.Blue})
-          }
-          .backgroundColor(this.columnColor)
+                  .onClick({etv => this.columnColor = Color.Red})
+              Button("change textColor").onClick({etv => this.textColor = Color.Blue})
+          }.backgroundColor(this.columnColor)
       }
   }
   ```
@@ -374,11 +377,11 @@ class ChildComponent {
 @Component
 class MyComponent {
     func build() {
-        Row(){
+        Row() {
             ChildComponent()
-            .width(200)
-            .height(300)
-            .backgroundColor(Color.Red)
+                .width(200)
+                .height(300)
+                .backgroundColor(Color.Red)
         }
     }
 }

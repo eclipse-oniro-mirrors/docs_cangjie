@@ -161,8 +161,8 @@ public class EntryView {
                 Text('上海').fontSize(24)
             }
         }
-        .backgroundColor(0xfff1f3f5)
-        .alignListItem(ListItemAlign.Center)
+            .backgroundColor(0xfff1f3f5)
+            .alignListItem(ListItemAlign.Center)
     }
 }
 ```
@@ -228,11 +228,14 @@ public class Contact {
 @Entry
 @Component
 public class EntryView {
-    private var contacts: Array<Contact> = [Contact('小明', @r(app.media.startIcon)), Contact('小红', @r(app.media.startIcon))]
+    private var contacts: Array<Contact> = [Contact('小明', @r(app.media.startIcon)),
+        Contact('小红', @r(app.media.startIcon))]
     func build() {
         List() {
-            ForEach(this.contacts, itemGeneratorFunc: { item: Contact, _: Int64 =>
-                    ListItem() {
+            ForEach(
+                this.contacts,
+                itemGeneratorFunc: {
+                    item: Contact, _: Int64 => ListItem() {
                         Row() {
                             Image(item.icon)
                                 .width(40)
@@ -518,20 +521,21 @@ import ohos.resource.*
 @Entry
 @Component
 public class EntryView {
-    let alphabets = ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K','L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
-    @State var selectedIndex: Int32 = 0;
-    private var listScroller:Scroller = Scroller()
+    let alphabets = ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S',
+        'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+    @State
+    var selectedIndex: Int32 = 0;
+    private var listScroller: Scroller = Scroller()
 
     func build() {
         Stack(alignContent: Alignment.End) {
-            List(scroller: this.listScroller) {}
-                .onScrollIndex({ firstIndex, scrollState, _ =>
-                    // 根据列表滚动到的索引值，重新计算对应联系人索引栏的位置this.selectedIndex
-                })
+            List(scroller: this.listScroller) {}.onScrollIndex({
+                firstIndex, scrollState, _ =>
+            // 根据列表滚动到的索引值，重新计算对应联系人索引栏的位置this.selectedIndex
+            })
 
             // 字母表索引组件
-            AlphabetIndexer(arrayValue: this.alphabets, selected: 0)
-                .selected(this.selectedIndex)
+            AlphabetIndexer(arrayValue: this.alphabets, selected: 0).selected(this.selectedIndex)
         }
     }
 }
@@ -784,10 +788,10 @@ List() {
                 .rotate(x: this.expandedItems[itemGroup.index])
                 .animation(AnimateParam(curve: Curve.EaseInOut, duration: 500))
         }
-        .width(100.percent)
-        .padding(10)
-        .onClick({
-            event => this.expandedItems[itemGroup.index] = 180.0 - this.expandedItems[itemGroup.index]
-        })
+            .width(100.percent)
+            .padding(10)
+            .onClick({
+                event => this.expandedItems[itemGroup.index] = 180.0 - this.expandedItems[itemGroup.index]
+            })
     }
     ```
