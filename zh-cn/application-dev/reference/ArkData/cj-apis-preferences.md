@@ -779,7 +779,7 @@ try {
     if (hasKey) {
         Hilog.info(0, "AppLogCj", "The key 'startup' is contained.")
     } else {
-        Hilog.info(0, "AppLogCj", "The key 'startup' dose not contain.")
+        Hilog.info(0, "AppLogCj", "The key 'startup' does not contain.")
     }
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
@@ -1123,7 +1123,7 @@ DoubleArray(Array<Float64>)
 Integer(Int64)
 ```
 
-**功能：** 表示值类型为64位有符号整型类型。
+**功能：** 表示值类型为64位有符号整数类型。
 
 **系统能力：** SystemCapability.DistributedDataManager.Preferences.Core
 
