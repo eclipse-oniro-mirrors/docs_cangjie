@@ -982,6 +982,7 @@
         - [cjc Usage](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/compile_and_build/cjc_usage.md)
         - [cjpm Introduction](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/compile_and_build/cjpm_usage.md)
         - [Conditional Compilation](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/compile_and_build/conditional_compilation.md)
+        - [Cross-Compilation](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/compile_and_build/cross_compilation.md)
     - Appendix
         - [cjc Compilation Options](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/Appendix/compile_options.md)
         - [Keywords](https://gitcode.com/Cangjie/cangjie_docs/blob/main/docs/dev-guide/source_en/Appendix/keyword.md)
