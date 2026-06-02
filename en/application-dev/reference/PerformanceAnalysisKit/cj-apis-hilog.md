@@ -56,9 +56,9 @@ DEBUG-level logs are not printed by default in official release versions. They a
 | domain | UInt32 | Yes | - | The domain identifier for the log, ranging from 0x0 to 0xFFFF.<br/>Developers are advised to customize the division as needed within the application. |
 | tag | String | Yes | - | The log tag, which can be any string. It is recommended to identify the calling class or business behavior. |
 | format | String | Yes | - | The format string for log output. |
-| args | Array\<String> | Yes | - | Arguments for the format string. |
+| args | Array\<String> | No | - | Arguments for the format string. |
 
-**Example:**
+**Example 1:**
 
 <!-- compile -->
 
@@ -76,7 +76,25 @@ try {
 }
 ```
 
-### static func error(UInt32, String, String, Array\<String>)
+**Example 2:**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import ohos.base.*
+import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
+
+try {
+    Hilog.debug(0, "testTag", "Debug: Hello %{public}! %{private}", "world", "123")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
+### static func error(UInt32, String, String, Array<String>)
 
 ```cangjie
 public static func error(domain: UInt32, tag: String, format: String, args: Array<String>): Unit
@@ -95,9 +113,9 @@ public static func error(domain: UInt32, tag: String, format: String, args: Arra
 | domain | UInt32 | Yes | - | The domain identifier for the log, ranging from 0x0 to 0xFFFF.<br/>Developers are advised to customize the division as needed within the application. |
 | tag | String | Yes | - | The log tag, which can be any string. It is recommended to identify the calling class or business behavior. |
 | format | String | Yes | - | The format string for log output. |
-| args | Array\<String> | Yes | - | Arguments for the format string. |
+| args | Array\<String> | No | - | Arguments for the format string. |
 
-**Example:**
+**Example 1:**
 
 <!-- compile -->
 
@@ -115,7 +133,25 @@ try {
 }
 ```
 
-### static func fatal(UInt32, String, String, Array\<String>)
+**Example 2:**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import ohos.base.*
+import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
+
+try {
+    Hilog.error(0, "testTag", "Error: Hello %{public}! %{private}", "world", "123")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
+### static func fatal(UInt32, String, String, Array<String>)
 
 ```cangjie
 public static func fatal(domain: UInt32, tag: String, format: String, args: Array<String>): Unit
@@ -134,9 +170,9 @@ public static func fatal(domain: UInt32, tag: String, format: String, args: Arra
 | domain | UInt32 | Yes | - | The domain identifier for the log, ranging from 0x0 to 0xFFFF.<br/>Developers are advised to customize the division as needed within the application. |
 | tag | String | Yes | - | The log tag, which can be any string. It is recommended to identify the calling class or business behavior. |
 | format | String | Yes | - | The format string for log output. |
-| args | Array\<String> | Yes | - | Arguments for the format string. |
+| args | Array\<String> | No | - | Arguments for the format string. |
 
-**Example:**
+**Example 1:**
 
 <!-- compile -->
 
@@ -154,7 +190,25 @@ try {
 }
 ```
 
-### static func info(UInt32, String, String, Array\<String>)
+**Example 2:**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import ohos.base.*
+import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
+
+try {
+    Hilog.fatal(0, "testTag", "Fatal: Hello %{public}! %{private}", "world", "123")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
+### static func info(UInt32, String, String, Array<String>)
 
 ```cangjie
 public static func info(domain: UInt32, tag: String, format: String, args: Array<String>): Unit
@@ -173,9 +227,9 @@ public static func info(domain: UInt32, tag: String, format: String, args: Array
 | domain | UInt32 | Yes | - | The domain identifier for the log, ranging from 0x0 to 0xFFFF.<br/>Developers are advised to customize the division as needed within the application. |
 | tag | String | Yes | - | The log tag, which can be any string. It is recommended to identify the calling class or business behavior. |
 | format | String | Yes | - | The format string for log output. |
-| args | Array\<String> | Yes | - | Arguments for the format string. |
+| args | Array\<String> | No | - | Arguments for the format string. |
 
-**Example:**
+**Example 1:**
 
 <!-- compile -->
 
@@ -188,6 +242,24 @@ import ohos.business_exception.BusinessException
 
 try {
     Hilog.info(0, "testTag", "Info: Hello world!")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
+**Example 2:**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import ohos.base.*
+import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
+
+try {
+    Hilog.info(0, "testTag", "Info: Hello %{public}! %{private}", "world", "123")
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -256,9 +328,9 @@ public static func warn(domain: UInt32, tag: String, format: String, args: Array
 | domain | UInt32 | Yes | - | The domain identifier for the log, ranging from 0x0 to 0xFFFF.<br/>Developers are advised to customize the division as needed within the application. |
 | tag | String | Yes | - | The log tag, which can be any string. It is recommended to identify the calling class or business behavior. |
 | format | String | Yes | - | The format string for log output. |
-| args | Array\<String> | Yes | - | Arguments for the format string. |
+| args | Array\<String> | No | - | Arguments for the format string. |
 
-**Example:**
+**Example 1:**
 
 <!-- compile -->
 
@@ -271,6 +343,24 @@ import ohos.business_exception.BusinessException
 
 try {
     Hilog.warn(0, "testTag", "Warn: Hello world!")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
+**Example 2:**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import ohos.base.*
+import kit.PerformanceAnalysisKit.*
+import ohos.business_exception.BusinessException
+
+try {
+    Hilog.warn(0, "testTag", "Warn: Hello %{public}! %{private}", "world", "123")
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
