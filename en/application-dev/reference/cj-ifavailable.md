@@ -8,7 +8,7 @@
 
 ## Overview
 
-Typically, developers need to label certain APIs to restrict their usage in different locations within the source code. Global labels are obtained from the Cangjie project created by Deveco Studio. For example, if the created project is version 5.1.0, its global API level will be 18. Labeled APIs must comply with the global label configuration to be legally used.
+Typically, developers need to label certain APIs to restrict their usage in different locations within the source code. Global labels are obtained from the Cangjie project created by Deveco Studio. For example, if the created project is version 6.0.2, its global API level will be 22. Labeled APIs must comply with the global label configuration to be legally used.
 
 To achieve API labeling control, the Cangjie language introduces the `@IfAvailable` macro expression. Based on global label settings, it provides finer-grained control over the usage of labeled APIs. `@IfAvailable` must be used in conjunction with the custom annotation `APILevel`. This chapter will introduce the functionality and usage of `@IfAvailable`.
 
@@ -31,7 +31,7 @@ Where:
 
 If the condition of `@IfAvailable` is satisfied at runtime, the function body of `<lambda1>` will be executed; otherwise, the function body of `<lambda2>` will be executed. All symbols called in `<lambda1>` will be marked as weak symbols, meaning they are not required to be found during compilation and linking.
 
-In a Cangjie project, using the `@IfAvailable` expression implicitly imports the dependency packages `ohos.device_info` and `ohos.base` by default, without requiring manual import.
+In a Cangjie project, the dependency packages required by `@IfAvailable` must be imported manually depending on the check type: `level` checks depend on `ohos.device_info`, and `syscap` checks depend on `ohos.base`.
 
 ### `level` Check
 
@@ -67,46 +67,74 @@ Prerequisite: Provide APIs with different labels:
 ```cangjie
 package ohos.sample
 
-@!APILevel[17]
-public func f17() {
-    println("level-17")
+import kit.PerformanceAnalysisKit.Hilog
+import ohos.labels.APILevel
+
+@!APILevel[since: "23"]
+public func f23() {
+    Hilog.info(0, "", "level-23")
 }
 
-@!APILevel[18]
-public func f18() {
-    println("level-18")
+@!APILevel[since: "24"]
+public func f24() {
+    Hilog.info(0, "", "level-24")
 }
 
-@!APILevel[19]
-public func f19() {
-    println("level-19")
+@!APILevel[since: "26.0.0"]
+public func f26() {
+    Hilog.info(0, "", "level-26")
 }
 ```
 
-Assuming `ohos.sample` is a package provided by the SDK, users can select the desired level when using the Cangjie project in Deveco Studio:
+Assuming `ohos.sample` is a package provided by the SDK, users can select the desired APILevel when using the Cangjie project in Deveco Studio, taking a project with compatibleSDKVersion 23 as an example:
 
 ![image-Create-Project-With-Level](./figures/image-Create-Project-With-Level.png)
 
-When using `@IfAvailable`, `<label>: <value>` is `level: xx`, where `xx` is a numeric literal.
+When using `@IfAvailable`, `<label>: <value>` is `level: xx`, where `xx` can be an integer literal (e.g., `24`) or a three-segment string literal (e.g., `"26.0.0"`).
 
 <!-- compile -pkg0 -->
 
 ```cangjie
 import ohos.sample.*
+import ohos.device_info.*
 
 func demo() {
-    @IfAvaliable(level: 19, { =>
-        // Compile-time: This scope allows calling APIs with level 19 or lower. That is, this branch can use f17, f18, f19, but calling higher-level interfaces will result in a compilation error.
-        // Runtime: If the execution device supports level 19, this branch will be executed.
-        f17();
-        f18();
-        f19();
+    @IfAvailable(level: 24, { =>
+        // Compile-time: This scope allows calling APIs with level 24 or lower. That is, this branch can use f23 and f24, but calling higher-level interfaces (e.g., f26) will result in a compilation error.
+        // Runtime: If the execution device supports level 24, this branch will be executed.
+        f23()
+        f24()
+        f26() // compile error
     }, { =>
-        // Compile-time: This scope uses the capabilities provided by the project, allowing calls to APIs with level 18 or lower. That is, this branch can use f17, f18, but calling higher-level interfaces will result in a compilation error (e.g., f19).
-        // Runtime: If the execution device supports level 18, this branch will be executed.
-        f17();
-        f18();
-        f19(); // compile error
+        // Compile-time: This scope uses the capabilities provided by the project, allowing calls to APIs with level 23 or lower. That is, this branch can use f23, but calling higher-level interfaces will result in a compilation error.
+        // Runtime: If the execution device supports level 23, this branch will be executed.
+        f23()
+        f24() // compile error
+        f26() // compile error
+    })
+}
+```
+
+A three-segment string form can also be used to specify the version:
+
+<!-- compile -pkg0 -->
+
+```cangjie
+import ohos.sample.*
+import ohos.device_info.*
+
+func demo() {
+    @IfAvailable(level: "26.0.0", { =>
+        // Compile-time: This scope allows calling APIs with since "26.0.0" or lower.
+        // Runtime: If the execution device supports version "26.0.0", this branch will be executed.
+        f23()
+        f24()
+        f26()
+    }, { =>
+        // Compile-time: This scope uses the capabilities provided by the project, allowing calls to APIs with level 23 or lower.
+        f23()
+        f24() // compile error
+        f26() // compile error
     })
 }
 ```
@@ -120,24 +148,27 @@ Prerequisite: Provide APIs with different `syscap` labels:
 ```cangjie
 package ohos.sample
 
-@!APILevel[18, syscap: "SystemCapability.A"]
+import kit.PerformanceAnalysisKit.Hilog
+import ohos.labels.APILevel
+
+@!APILevel[since: "22", syscap: "SystemCapability.A"]
 public func f1() {
-    println("SystemCapability.A")
+    Hilog.info(0, "", "SystemCapability.A")
 }
 
-@!APILevel[18, syscap: "SystemCapability.B"]
+@!APILevel[since: "22", syscap: "SystemCapability.B"]
 public func f2() {
-    println("SystemCapability.B")
+    Hilog.info(0, "", "SystemCapability.B")
 }
 
-@!APILevel[18, syscap: "SystemCapability.C"]
+@!APILevel[since: "22", syscap: "SystemCapability.C"]
 public func f3() {
-    println("SystemCapability.C")
+    Hilog.info(0, "", "SystemCapability.C")
 }
 
-@!APILevel[18, syscap: "SystemCapability.D"]
+@!APILevel[since: "22", syscap: "SystemCapability.D"]
 public func f4() {
-    println("SystemCapability.D")
+    Hilog.info(0, "", "SystemCapability.D")
 }
 ```
 
@@ -151,26 +182,27 @@ When using `@IfAvailable`, `<label>: <value>` is `syscap: "SystemCapability.xx"`
 
 ```cangjie
 import ohos.sample.*
+import ohos.base.*
 
 func demo() {
-    @IfAvaliable(syscap: "SystemCapability.D", { =>
+    @IfAvailable(syscap: "SystemCapability.D", { =>
         // This scope allows the highest usage of ["SystemCapability.A", "SystemCapability.B", "SystemCapability.C", "SystemCapability.D"], where:
         // ["SystemCapability.B", "SystemCapability.D"] will not trigger warnings;
         // ["SystemCapability.A", "SystemCapability.C"] will trigger warnings;
         // Anything outside ["SystemCapability.A", "SystemCapability.B", "SystemCapability.C", "SystemCapability.D"] will result in an error.
-        f1();  // warning
-        f2();  // ok
-        f3();  // warning
-        f4();  // ok
+        f1() // warning
+        f2() // ok
+        f3() // warning
+        f4() // ok
     }, { =>
         // This scope allows the highest usage of ["A", "B", "C"], where:
         // ["B"] will not trigger warnings;
         // ["A", "C"] will trigger warnings;
         // Anything outside ["A", "B", "C"] will result in an error.
-        f1();  // warning
-        f2();  // ok
-        f3();  // warning
-        f4();  // error
+        f1() // warning
+        f2() // ok
+        f3() // warning
+        f4() // error
     })
 }
 ```
