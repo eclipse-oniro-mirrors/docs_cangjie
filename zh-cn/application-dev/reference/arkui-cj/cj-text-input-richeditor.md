@@ -1270,7 +1270,7 @@ public init(
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|decorationType|[TextDecorationType](./cj-common-types.md#enum-textdecorationstyle)|是|-|装饰类型。|
+|decorationType|[TextDecorationType](./cj-common-types.md#enum-textdecorationtype)|是|-|装饰类型。|
 |color|[ResourceColor](./cj-common-types.md#interface-resourcecolor)|是|-|颜色。|
 
 ### class SelectionMenuOptions
@@ -1983,7 +1983,7 @@ public init(decorationType!: ?TextDecorationType, color!: ?ResourceColor = None)
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|decorationType|?[TextDecorationType](./cj-common-types.md#enum-textdecorationstyle)|是|-|**命名参数。** 装饰类型。初始值：TextDecorationType.None。|
+|decorationType|?[TextDecorationType](./cj-common-types.md#enum-textdecorationtype)|是|-|**命名参数。** 装饰类型。初始值：TextDecorationType.None。|
 |color|?[ResourceColor](./cj-common-types.md#interface-resourcecolor)|否|None|**命名参数。** 颜色。初始值：Color.Black。|
 
 ### class LeadingMarginPlaceholder

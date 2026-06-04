@@ -93,7 +93,7 @@ public func registerFont(familyName!: ResourceStr, familySrc!: ResourceStr): Uni
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
 
   |错误码|说明|
   |:----|:----|

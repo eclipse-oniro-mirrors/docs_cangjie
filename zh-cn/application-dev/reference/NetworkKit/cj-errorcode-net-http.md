@@ -392,7 +392,7 @@ Invalid SSL peer certificate or SSH remote key.
 
 **处理步骤**
 
-建议参考[tls客户端证书验证流程](./cj-apis-net-http.md#tls客户端证书验证流程)自排查问题原因。
+建议参考tls客户端证书验证流程自排查问题原因。
 
 ## 2300061 无法识别或错误的HTTP编码格式
 

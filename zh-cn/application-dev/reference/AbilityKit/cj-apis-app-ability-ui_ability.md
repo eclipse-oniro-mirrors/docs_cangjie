@@ -27,7 +27,7 @@ ohos.permission.PRIVACY_WINDOW
 API示例代码使用说明：
 
 - 若示例代码首行有“// index.cj”注释，表示该示例可在仓颉模板工程的“index.cj”文件中编译运行。
-- 若示例需获取[Context](./cj-apis-app-ability-ui_ability.md#class-context)应用上下文，需在仓颉模板工程中的“main_ability.cj”文件中进行配置。
+- 若示例需获取[Context](#class-context)应用上下文，需在仓颉模板工程中的“main_ability.cj”文件中进行配置。
 
 上述示例工程及配置模板详见[仓颉示例代码说明](../cj-development-intro.md#仓颉示例代码说明)。
 
@@ -120,7 +120,7 @@ class MyAbilityStage2 <: AbilityStage {
 public func createContextFromJSValue(context: JSContext, input: JSValue): Context
 ```
 
-**功能：** 从[JSValue](../arkinterop/cj-apis-ark_interop.md#class-jsvalue)转换为[Context](./cj-apis-app-ability-ui_ability.md#class-context)类型。该转换仅可在函数传递中使用。
+**功能：** 从[JSValue](../arkinterop/cj-apis-ark_interop.md#class-jsvalue)转换为[Context](#class-context)类型。该转换仅可在函数传递中使用。
 
 **系统能力：** SystemCapability.Ability.AbilityRuntime.Core
 
@@ -137,7 +137,7 @@ public func createContextFromJSValue(context: JSContext, input: JSValue): Contex
 
 |类型|说明|
 |:----|:----|
-|[Context](./cj-apis-app-ability-ui_ability.md#class-context)|返回Context类型实例。|
+|[Context](#class-context)|返回Context类型实例。|
 
 **示例：**
 
@@ -280,7 +280,7 @@ AbilityStageContext提供允许访问特定于abilityStage的资源的能力，�
 
 **父类型：**
 
-- [Context](./cj-apis-app-ability-ui_ability.md#class-context)
+- [Context](#class-context)
 
 ### var currentHapModuleInfo
 
@@ -325,7 +325,7 @@ public class ApplicationContext <: Context {}
 
 **父类型：**
 
-- [Context](./cj-apis-app-ability-ui_ability.md#class-context)
+- [Context](#class-context)
 
 ## class Context
 
@@ -737,7 +737,7 @@ class MyUIAbility14 <: UIAbility {
 public open func onWindowStageCreate(windowStage: WindowStage): Unit
 ```
 
-**功能：** 当[WindowStage](../arkui-cj/cj-apis-window.md)实例创建完成后，系统会触发该回调。开发者可以在该回调中通过WindowStage加载页面。
+**功能：** 当[WindowStage](../arkui-cj/cj-apis-window.md#class-windowstage)实例创建完成后，系统会触发该回调。开发者可以在该回调中通过WindowStage加载页面。
 
 **系统能力：** SystemCapability.Ability.AbilityRuntime.AbilityCore
 
@@ -747,7 +747,7 @@ public open func onWindowStageCreate(windowStage: WindowStage): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|windowStage|WindowStage|是|-|WindowStage实例对象。|
+|windowStage|[WindowStage](../arkui-cj/cj-apis-window.md#class-windowstage)|是|-|WindowStage实例对象。WindowStage|是|-|WindowStage实例对象。|
 
 **示例：**
 
@@ -800,7 +800,7 @@ public open class UIAbilityContext <: Context {}
 
 **父类型：**
 
-- [Context](./cj-apis-app-ability-ui_ability.md#class-context)
+- [Context](#class-context)
 
 ### func isTerminating()
 
@@ -822,7 +822,7 @@ public func isTerminating(): Bool
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[元能力子系统错误码](./cj-errorcode-ability.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[元能力子系统错误码](./cj-errorcode-ability.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -863,7 +863,7 @@ public func requestDialogService(want: Want, result: AsyncCallback<RequestResult
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码说明文档](../cj-errorcode-universal.md)和[元能力子系统错误码](./cj-errorcode-ability.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[通用错误码说明文档](../cj-errorcode-universal.md)和[元能力子系统错误码](./cj-errorcode-ability.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -920,7 +920,7 @@ public func startAbility(want: Want, options!: ?StartOptions = None): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码说明文档](../cj-errorcode-universal.md)和[元能力子系统错误码](./cj-errorcode-ability.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[通用错误码说明文档](../cj-errorcode-universal.md)和[元能力子系统错误码](./cj-errorcode-ability.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -996,7 +996,7 @@ UIAbility被启动后，有如下情况：
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码说明文档](../cj-errorcode-universal.md)和[元能力子系统错误码](./cj-errorcode-ability.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[通用错误码说明文档](../cj-errorcode-universal.md)和[元能力子系统错误码](./cj-errorcode-ability.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -1068,12 +1068,12 @@ UIAbility被启动后，有如下情况：
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |want|[Want](./cj-apis-app-ability-want.md#class-want)|是|-|启动Ability的必要信息。|
-|options|StartOptions|是|-|启动Ability所携带的参数。|
+|options|[StartOptions](cj-apis-app-ability-start_options.md#class-startoptions)|是|-|启动Ability所携带的参数。StartOptions|是|-|启动Ability所携带的参数。|
 |callback|[AsyncCallback](../arkinterop/cj-api-business_exception.md#type-asynccallbackt)\<AbilityResult>|是|-|执行结果回调函数。|
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码说明文档](../cj-errorcode-universal.md)和[元能力子系统错误码](./cj-errorcode-ability.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[通用错误码说明文档](../cj-errorcode-universal.md)和[元能力子系统错误码](./cj-errorcode-ability.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -1138,7 +1138,7 @@ public func terminateSelf(): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[元能力子系统错误码](./cj-errorcode-ability.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[元能力子系统错误码](./cj-errorcode-ability.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -1186,7 +1186,7 @@ public func terminateSelfWithResult(parameter: AbilityResult): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[元能力子系统错误码](./cj-errorcode-ability.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[元能力子系统错误码](./cj-errorcode-ability.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |

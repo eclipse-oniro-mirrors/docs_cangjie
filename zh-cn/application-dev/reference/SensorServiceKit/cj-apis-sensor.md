@@ -51,7 +51,7 @@ public func getSensorList(): Array<Sensor>
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[传感器错误码](./cj-errorcode-sensor.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[传感器错误码](./cj-errorcode-sensor.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -104,7 +104,7 @@ public func getSingleSensor(sensorType: SensorId): Sensor
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[传感器错误码](./cj-errorcode-sensor.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[传感器错误码](./cj-errorcode-sensor.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -151,7 +151,7 @@ public func off(sensorType: SensorId, callback!: ?CallbackObject = None): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[传感器错误码](./cj-errorcode-sensor.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[传感器错误码](./cj-errorcode-sensor.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -212,7 +212,7 @@ public func on<T>(sensorType: SensorId, callback: Callback1Argument<T>, option!:
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[传感器错误码](./cj-errorcode-sensor.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[传感器错误码](./cj-errorcode-sensor.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -268,7 +268,7 @@ public func once<T>(sensorType: SensorId, callback: Callback1Argument<T>): Unit 
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[传感器错误码](./cj-errorcode-sensor.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[传感器错误码](./cj-errorcode-sensor.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |

@@ -186,7 +186,7 @@ public func get(key: String): KVValueType
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[分布式键值数据库错误码](./cj-errorcode-distributed_kv_store.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[分布式键值数据库错误码](./cj-errorcode-distributed_kv_store.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -241,7 +241,7 @@ public func getEntries(keyPrefix: String): Array<Entry>
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[分布式键值数据库错误码](./cj-errorcode-distributed_kv_store.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[分布式键值数据库错误码](./cj-errorcode-distributed_kv_store.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -295,7 +295,7 @@ public func getEntries(query: Query): Array<Entry>
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[分布式键值数据库错误码](./cj-errorcode-distributed_kv_store.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[分布式键值数据库错误码](./cj-errorcode-distributed_kv_store.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -349,7 +349,7 @@ public func getResultSet(keyPrefix: String): KVStoreResultSet
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[分布式键值数据库错误码](./cj-errorcode-distributed_kv_store.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[分布式键值数据库错误码](./cj-errorcode-distributed_kv_store.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -404,7 +404,7 @@ public func getResultSet(query: Query): KVStoreResultSet
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[分布式键值数据库错误码](./cj-errorcode-distributed_kv_store.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[分布式键值数据库错误码](./cj-errorcode-distributed_kv_store.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -459,7 +459,7 @@ public func getResultSize(query: Query): Int32
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[分布式键值数据库错误码](./cj-errorcode-distributed_kv_store.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[分布式键值数据库错误码](./cj-errorcode-distributed_kv_store.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -771,7 +771,7 @@ public func deleteKVStore(appId: String, storeId: String): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[分布式键值数据库错误码](./cj-errorcode-distributed_kv_store.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[分布式键值数据库错误码](./cj-errorcode-distributed_kv_store.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -870,7 +870,7 @@ public func getKVStore<T>(storeId: String, options: KVOptions): T where T <: Sin
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[分布式键值数据库错误码](./cj-errorcode-distributed_kv_store.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[分布式键值数据库错误码](./cj-errorcode-distributed_kv_store.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -1341,7 +1341,7 @@ public open func backup(file: String): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[分布式键值数据库错误码](./cj-errorcode-distributed_kv_store.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[分布式键值数据库错误码](./cj-errorcode-distributed_kv_store.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -1388,7 +1388,7 @@ public open func commit(): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[分布式键值数据库错误码](./cj-errorcode-distributed_kv_store.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[分布式键值数据库错误码](./cj-errorcode-distributed_kv_store.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -1441,14 +1441,14 @@ public open func delete(key: String): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[分布式键值数据库错误码](./cj-errorcode-distributed_kv_store.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[分布式键值数据库错误码](./cj-errorcode-distributed_kv_store.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 15100003 | Database corrupted.|
   | 15100005 | Database or result set already closed.|
 
-- BusinessException：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -1501,14 +1501,14 @@ public open func deleteBatch(keys: Array<String>): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[分布式键值数据库错误码](./cj-errorcode-distributed_kv_store.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[分布式键值数据库错误码](./cj-errorcode-distributed_kv_store.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 15100003 | Database corrupted.|
   | 15100005 | Database or result set already closed.|
 
-- BusinessException：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -1613,7 +1613,7 @@ public open func get(key: String): KVValueType
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[分布式键值数据库错误码](./cj-errorcode-distributed_kv_store.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[分布式键值数据库错误码](./cj-errorcode-distributed_kv_store.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -1668,14 +1668,14 @@ public open func put(key: String, value: KVValueType): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[分布式键值数据库错误码](./cj-errorcode-distributed_kv_store.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[分布式键值数据库错误码](./cj-errorcode-distributed_kv_store.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 15100003 | Database corrupted.|
   | 15100005 | Database or result set already closed.|
 
-- BusinessException：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -1722,14 +1722,14 @@ public open func putBatch(entries: Array<Entry>): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[分布式键值数据库错误码](./cj-errorcode-distributed_kv_store.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[分布式键值数据库错误码](./cj-errorcode-distributed_kv_store.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 15100003 | Database corrupted.|
   | 15100005 | Database or result set already closed.|
 
-- BusinessException：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -1789,7 +1789,7 @@ public open func restore(file: String): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[分布式键值数据库错误码](./cj-errorcode-distributed_kv_store.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[分布式键值数据库错误码](./cj-errorcode-distributed_kv_store.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -1837,7 +1837,7 @@ public open func rollback(): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[分布式键值数据库错误码](./cj-errorcode-distributed_kv_store.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[分布式键值数据库错误码](./cj-errorcode-distributed_kv_store.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -1931,13 +1931,13 @@ public open func startTransaction(): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[分布式键值数据库错误码](./cj-errorcode-distributed_kv_store.md)和[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[分布式键值数据库错误码](./cj-errorcode-distributed_kv_store.md)和[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 15100005 | Database or result set already closed.|
 
-- BusinessException：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |

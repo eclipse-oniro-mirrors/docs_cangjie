@@ -72,7 +72,7 @@ The specified ability name is not found.
 
 1. 输入的abilityName有误。
 2. 系统中对应的应用不存在该abilityName对应的ability。
-3. 调用[bundleManager.getProfileByAbility](../AbilityKit/cj-apis-bundle_manager.md#static-func-getprofilebyabilitystring-string-string)等通过abilityName、moduleName组合查询的接口时，对应的应用没有安装moduleName对应的模块，对应模块下的ability也不存在。
+3. 调用[bundleManager.getProfileByAbility](./cj-apis-bundle_manager.md#static-func-getprofilebyabilitystring-string-string)等通过abilityName、moduleName组合查询的接口时，对应的应用没有安装moduleName对应的模块，对应模块下的ability也不存在。
 
 **处理步骤**
 
@@ -104,27 +104,6 @@ The specified user ID is not found.
 1. 检查用户名拼写是否正确。
 2. 确认系统中存在该用户。
 
-## 17700021 指定的uid无效
-
-**错误信息**
-
-The specified uid is invalid.
-
-**错误描述**
-
-调用bundleManager模块中的[getBundleNameByUid接口](../apis-ability-kit/js-apis-bundleManager.md#bundlemanagergetbundlenamebyuid14)时，指定的uid无效。
-
-**可能原因**
-
-传入的uid对应的应用不存在。
-
-**处理步骤**
-
-检查系统中是否存在对应的应用uid值。可以使用[查询应用信息命令（dump）](../../tools/cj-bm-tool.md#查询应用信息命令dump)查看已安装应用的uid。执行命令行后会输出对应已安装应用的uid，如果输出多个uid，选择大于0的。如果该命令无打印值输出，表示应用未安装。
-```shell
-# 需要将com.xxx.demo替换为实际查询的bundleName
-hdc shell "bm dump -n com.xxx.demo |grep uid"
-```
 
 ## 17700024 没有相应的配置文件
 
@@ -264,7 +243,7 @@ The specified link is invalid.
 
 **错误描述**
 
-调用bundleManager模块中的[canOpenLink](../AbilityKit/cj-apis-bundle_manager.md#static-func-canopenlinkstring)接口时，指定的link无效。
+调用bundleManager模块中的[canOpenLink](./cj-apis-bundle_manager.md#static-func-canopenlinkstring)接口时，指定的link无效。
 
 **可能原因**
 
@@ -282,7 +261,7 @@ The scheme of the specified link is not in the querySchemes.
 
 **错误描述**
 
-调用bundleManager模块中的[canOpenLink](../AbilityKit/cj-apis-bundle_manager.md#static-func-canopenlinkstring)接口时，指定link的scheme未在querySchemes字段下配置。
+调用bundleManager模块中的[canOpenLink](./cj-apis-bundle_manager.md#static-func-canopenlinkstring)接口时，指定link的scheme未在querySchemes字段下配置。
 
 **可能原因**
 

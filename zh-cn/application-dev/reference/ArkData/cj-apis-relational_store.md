@@ -60,7 +60,7 @@ public func deleteRdbStore(context: UIAbilityContext, name: String): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)和[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)和[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -114,7 +114,7 @@ public func deleteRdbStore(context: UIAbilityContext, config: StoreConfig): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)和[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)和[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -181,7 +181,7 @@ getRdbStore目前不支持多线程并发操作。
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -1832,7 +1832,7 @@ public func backup(destName: String): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -1903,7 +1903,7 @@ public func batchInsert(table: String, values: Array<ValuesBucket>): Int64
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -1978,7 +1978,7 @@ public func beginTransaction(): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -2042,7 +2042,7 @@ public func commit(): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -2117,7 +2117,7 @@ public func delete(predicates: RdbPredicates): Int64
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -2183,7 +2183,7 @@ public func emit(event: String): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -2248,7 +2248,7 @@ public func executeSql(sql: String, bindArgs!: Array<RelationalStoreValueType> =
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -2321,7 +2321,7 @@ public func insert(table: String, values: ValuesBucket,
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -2397,7 +2397,7 @@ public func off(event: String, interProcess: Bool, observer!: ?Callback0Argument
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -2459,7 +2459,7 @@ public func on(event: String, interProcess: Bool, observer: Callback0Argument): 
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -2526,7 +2526,7 @@ public func query(predicates: RdbPredicates, columns!: Array<String> = []): Resu
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -2591,7 +2591,7 @@ public func querySql(sql: String, bindArgs!: Array<RelationalStoreValueType> = [
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -2644,7 +2644,7 @@ public func restore(srcName: String): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -2702,7 +2702,7 @@ public func rollBack(): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -2788,7 +2788,7 @@ public func update(values: ValuesBucket, predicates: RdbPredicates,
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -3013,7 +3013,7 @@ public func close(): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -3067,7 +3067,7 @@ public func getAsset(columnIndex: Int32): Asset
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -3134,11 +3134,11 @@ public func getAssets(columnIndex: Int32): Assets
 
 |类型|说明|
 |:----|:----|
-|Assets|以Array\<[Asset](#class-asset)>形式返回指定列的值。|
+|[Assets](#type-assets)|以Array\<[Asset](#class-asset)>形式返回指定列的值。|
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -3209,7 +3209,7 @@ public func getBlob(columnIndex: Int32): Array<UInt8>
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -3280,7 +3280,7 @@ public func getColumnIndex(columnName: String): Int32
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -3354,7 +3354,7 @@ public func getColumnName(columnIndex: Int32): String
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -3427,7 +3427,7 @@ public func getDouble(columnIndex: Int32): Float64
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -3498,7 +3498,7 @@ public func getLong(columnIndex: Int32): Int64
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -3563,7 +3563,7 @@ public func getRow(): ValuesBucket
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -3634,7 +3634,7 @@ public func getString(columnIndex: Int32): String
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -3709,7 +3709,7 @@ public func goTo(offset: Int32): Bool
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -3778,7 +3778,7 @@ public func goToFirstRow(): Bool
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -3847,7 +3847,7 @@ public func goToLastRow(): Bool
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -3916,7 +3916,7 @@ public func goToNextRow(): Bool
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -3985,7 +3985,7 @@ public func goToPreviousRow(): Bool
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -4060,7 +4060,7 @@ public func goToRow(position: Int32): Bool
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -4131,7 +4131,7 @@ public func isColumnNull(columnIndex: Int32): Bool
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -5517,7 +5517,7 @@ Uint8Array(Array<UInt8>)
 public type Assets = Array<Asset>
 ```
 
-**功能：** [Assets](#type-assets)是[Array\<Asset>](#class-asset)类型的别名。
+**功能：** [Assets](#type-assets)是Array\<[Asset](#class-asset)类型的别名。
 
 ## type ValuesBucket
 

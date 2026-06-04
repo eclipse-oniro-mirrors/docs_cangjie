@@ -46,7 +46,7 @@ public func abortSession(handle: HuksHandleId, options: HuksOptions): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[HUKS错误码](./cj-errorcode-huks.md)和[通用错误码](../cj-errorcode-universal.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[HUKS错误码](./cj-errorcode-huks.md)和[通用错误码](../cj-errorcode-universal.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -121,7 +121,7 @@ public func anonAttestKeyItem(keyAlias: String, options: HuksOptions): Array<Str
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[HUKS错误码](./cj-errorcode-huks.md)和[通用错误码](../cj-errorcode-universal.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[HUKS错误码](./cj-errorcode-huks.md)和[通用错误码](../cj-errorcode-universal.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -199,7 +199,7 @@ public func deleteKeyItem(keyAlias: String, options: HuksOptions): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[HUKS错误码](./cj-errorcode-huks.md)和[通用错误码](../cj-errorcode-universal.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[HUKS错误码](./cj-errorcode-huks.md)和[通用错误码](../cj-errorcode-universal.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -273,11 +273,11 @@ public func exportKeyItem(keyAlias: String, _: HuksOptions): Bytes
 
 |类型|说明|
 |:----|:----|
-|Bytes|<返回从密钥中导出的公钥。|
+|[Bytes](#type-bytes)|<返回从密钥中导出的公钥。|
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[HUKS错误码](./cj-errorcode-huks.md)和[通用错误码](../cj-errorcode-universal.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[HUKS错误码](./cj-errorcode-huks.md)和[通用错误码](../cj-errorcode-universal.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -343,7 +343,7 @@ public func finishSession(handle: HuksHandleId, options: HuksOptions, token!: By
 |:---|:---|:---|:---|:---|
 |handle|[HuksHandleId](#class-hukshandleid)|是|-|finishSession操作的handle。|
 |options|[HuksOptions](#class-huksoptions)|是|-|finishSession操作的参数集合。|
-|token|Bytes|否|Bytes()|**命名参数。** 密钥二次认证密钥访问控制的用户鉴权证明(AuthToken)，不填表示不进行二次认证密钥访问控制。|
+|token|[Bytes](#type-bytes)|否|Bytes()|**命名参数。** 密钥二次认证密钥访问控制的用户鉴权证明(AuthToken)，不填表示不进行二次认证密钥访问控制。Bytes|否|Bytes()|**命名参数。** 密钥二次认证密钥访问控制的用户鉴权证明(AuthToken)，不填表示不进行二次认证密钥访问控制。|
 
 **返回值：**
 
@@ -353,7 +353,7 @@ public func finishSession(handle: HuksHandleId, options: HuksOptions, token!: By
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[HUKS错误码](./cj-errorcode-huks.md)和[通用错误码](../cj-errorcode-universal.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[HUKS错误码](./cj-errorcode-huks.md)和[通用错误码](../cj-errorcode-universal.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -426,7 +426,7 @@ public func generateKeyItem(keyAlias: String, options: HuksOptions): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[HUKS错误码](./cj-errorcode-huks.md)和[通用错误码](../cj-errorcode-universal.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[HUKS错误码](./cj-errorcode-huks.md)和[通用错误码](../cj-errorcode-universal.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -499,7 +499,7 @@ public func getKeyItemProperties(keyAlias: String, _: HuksOptions): Array<HuksPa
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[HUKS错误码](./cj-errorcode-huks.md)和[通用错误码](../cj-errorcode-universal.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[HUKS错误码](./cj-errorcode-huks.md)和[通用错误码](../cj-errorcode-universal.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -552,7 +552,7 @@ public func importKeyItem(keyAlias: String, options: HuksOptions): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[HUKS错误码](./cj-errorcode-huks.md)和[通用错误码](../cj-errorcode-universal.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[HUKS错误码](./cj-errorcode-huks.md)和[通用错误码](../cj-errorcode-universal.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -624,7 +624,7 @@ public func importWrappedKeyItem(keyAlias: String, wrappingKeyAlias: String, opt
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[HUKS错误码](./cj-errorcode-huks.md)和[通用错误码](../cj-errorcode-universal.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[HUKS错误码](./cj-errorcode-huks.md)和[通用错误码](../cj-errorcode-universal.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -704,7 +704,7 @@ public func initSession(keyAlias: String, options: HuksOptions): HuksSessionHand
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[HUKS错误码](./cj-errorcode-huks.md)和[通用错误码](../cj-errorcode-universal.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[HUKS错误码](./cj-errorcode-huks.md)和[通用错误码](../cj-errorcode-universal.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -781,7 +781,7 @@ public func hasKeyItem(keyAlias: String, options: HuksOptions): Bool
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[HUKS错误码](./cj-errorcode-huks.md)和[通用错误码](../cj-errorcode-universal.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[HUKS错误码](./cj-errorcode-huks.md)和[通用错误码](../cj-errorcode-universal.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -846,7 +846,7 @@ public func updateSession(handle: HuksHandleId, options: HuksOptions, token!: By
 |:---|:---|:---|:---|:---|
 |handle|[HuksHandleId](#class-hukshandleid)|是|-|updateSession操作的handle。|
 |options|[HuksOptions](#class-huksoptions)|是|-|updateSession操作的参数集合。|
-|token|Bytes|否|Bytes()|**命名参数。** 密钥二次认证密钥访问控制的用户鉴权证明(AuthToken)，不填表示不进行二次认证密钥访问控制。|
+|token|[Bytes](#type-bytes)|否|Bytes()|**命名参数。** 密钥二次认证密钥访问控制的用户鉴权证明(AuthToken)，不填表示不进行二次认证密钥访问控制。Bytes|否|Bytes()|**命名参数。** 密钥二次认证密钥访问控制的用户鉴权证明(AuthToken)，不填表示不进行二次认证密钥访问控制。|
 
 **返回值：**
 
@@ -856,7 +856,7 @@ public func updateSession(handle: HuksHandleId, options: HuksOptions, token!: By
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[HUKS错误码](./cj-errorcode-huks.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[HUKS错误码](./cj-errorcode-huks.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -2433,7 +2433,7 @@ public var inData: Bytes
 
 **功能：** 输入数据。
 
-**类型：** Bytes
+**类型：** [Bytes](#type-bytes)
 
 **读写能力：** 可读写
 
@@ -2474,7 +2474,7 @@ public init(properties!: Array<HuksParam> = Array<HuksParam>(), inData!: Bytes =
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |properties|Array\<[HuksParam](#class-huksparam)>|否|Array\<HuksParam>()|**命名参数。** 属性，用于存HuksParam的数组。默认为空。|
-|inData|Bytes|否|Bytes()|**命名参数。** 输入数据。默认为空。|
+|inData|[Bytes](#type-bytes)|否|Bytes()|**命名参数。** 输入数据。默认为空。Bytes|否|Bytes()|**命名参数。** 输入数据。默认为空。|
 
 ## class HuksParam
 
@@ -2642,7 +2642,7 @@ public var challenge: Bytes
 
 **功能：** 表示[initSession](#func-initsessionstring-huksoptions)操作之后获取到的challenge信息。
 
-**类型：** Bytes
+**类型：** [Bytes](#type-bytes)
 
 **读写能力：** 可读写
 

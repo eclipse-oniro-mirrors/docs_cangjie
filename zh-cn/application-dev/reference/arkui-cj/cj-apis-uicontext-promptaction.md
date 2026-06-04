@@ -88,7 +88,7 @@ public func showActionMenu(option: ActionMenuOptions, callback!: ShowActionMenuC
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
 
   |错误码|说明|
   |:----|:----|
@@ -115,7 +115,7 @@ public func showDialog(option: ShowDialogOptions, callback!: ShowDialogCallBack 
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
 
   |错误码|说明|
   |:----|:----|
@@ -141,7 +141,7 @@ public func showToast(option: ShowToastOptions): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
 
   |错误码|说明|
   |:----|:----|
@@ -1742,7 +1742,7 @@ public mut prop maskRect: ?Rectangle
 > - showInSubWindow为true时，maskRect不生效。
 > - maskRect在设置Rectangle中的部分属性后，若未设置其余的属性，则其余属性的默认值为0。
 
-**类型：** ?[Rectangle](./cj-common-types.md#class-rectangle)
+**类型：** ?[Rectangle](cj-common-types.md#class-rectangle)
 
 **读写能力：** 可读写
 
@@ -1758,7 +1758,7 @@ public mut prop alignment: ?DialogAlignment
 
 **功能：** 弹窗在竖直方向上的对齐方式。初始值：DialogAlignment.Default。
 
-**类型：** ?[DialogAlignment](./cj-common-types.md#enum-dialogalignment)
+**类型：** ?[DialogAlignment](cj-common-types.md#enum-dialogalignment)
 
 **读写能力：** 可读写
 
@@ -2177,7 +2177,7 @@ public var cornerRadius: ?BorderRadiuses
 
 **功能：** 设置背板的圆角半径。可分别设置4个圆角的半径。<br> 初始值：BorderRadiuses(topLeft: 32.vp, topRight: 32.vp, bottomLeft: 32.vp, bottomRight: 32.vp)<br>圆角大小受组件尺寸限制，最大值为组件宽或高的一半，若值为负，则按照默认值处理。<br>百分比参数方式：以父元素弹窗宽和高的百分比来设置弹窗的圆角。
 
-**类型：** ?[BorderRadiuses](./cj-common-types.md#class-borderradiuses)
+**类型：** ?[BorderRadiuses](cj-common-types.md#class-borderradiuses)
 
 **读写能力：** 可读写
 

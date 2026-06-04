@@ -19,7 +19,7 @@ import kit.AbilityKit.*
 API示例代码使用说明：
 
 - 若示例代码首行有“// index.cj”注释，表示该示例可在仓颉模板工程的“index.cj”文件中编译运行。
-- 若示例需获取[Context](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-context)应用上下文，需在仓颉模板工程中的“main_ability.cj”文件中进行配置。
+- 若示例需获取[Context](./cj-apis-app-ability-ui_ability.md#class-context)应用上下文，需在仓颉模板工程中的“main_ability.cj”文件中进行配置。
 
 上述示例工程及配置模板详见[仓颉示例代码说明](../cj-development-intro.md#仓颉示例代码说明)。
 
@@ -291,7 +291,7 @@ public let metadata: Array<Metadata>
 
 **功能：** Ability的元信息。可以配置成系统定义的参数，使用系统提供的能力，例如快捷方式、窗口元数据配置等。也可以自定义配置参数，通过调用[getBundleInfoForSelf](#static-func-getbundleinfoforselfint32)接口，bundleFlags参数传入GET_BUNDLE_INFO_WITH_HAP_MODULE、GET_BUNDLE_INFO_WITH_ABILITY和GET_BUNDLE_INFO_WITH_METADATA获取。
 
-**类型：** Array\<[Metadata](./cj-apis-metadata.md#class-metadata)>
+**类型：** Array\<[Metadata](cj-apis-metadata.md#class-metadata)>
 
 **读写能力：** 只读
 
@@ -1473,7 +1473,7 @@ public static func canOpenLink(link: String): Bool
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[包管理子系统通用错误码](./cj-errorcode-bundle.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[包管理子系统通用错误码](./cj-errorcode-bundle.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -1572,7 +1572,7 @@ public static func getProfileByAbility(moduleName: String, abilityName: String, 
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[包管理子系统通用错误码](./cj-errorcode-bundle.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[包管理子系统通用错误码](./cj-errorcode-bundle.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -1676,7 +1676,7 @@ public static func isDefaultApplication(appType: ApplicationType): Bool
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|appType|ApplicationType|是|-|要查询的应用类型，取[ApplicationType](#enum-applicationtype)类型中的值。|
+|appType|[ApplicationType](#enum-applicationtype)|是|-|要查询的应用类型，取[ApplicationType](#enum-applicationtype)类型中的值。ApplicationType|是|-|要查询的应用类型，取[ApplicationType](#enum-applicationtype)类型中的值。|
 
 **返回值：**
 
@@ -1686,7 +1686,7 @@ public static func isDefaultApplication(appType: ApplicationType): Bool
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |

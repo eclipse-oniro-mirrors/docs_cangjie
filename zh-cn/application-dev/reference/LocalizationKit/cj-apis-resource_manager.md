@@ -236,7 +236,7 @@ public func addResource(path: String): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[资源管理错误码](./cj-errorcode-resource-manager.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[资源管理错误码](./cj-errorcode-resource-manager.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -282,7 +282,7 @@ public func closeRawFd(path: String): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[资源管理错误码](./cj-errorcode-resource-manager.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[资源管理错误码](./cj-errorcode-resource-manager.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -333,7 +333,7 @@ public func getBoolean(resId: UInt32): Bool
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[资源管理错误码](./cj-errorcode-resource-manager.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[资源管理错误码](./cj-errorcode-resource-manager.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -388,7 +388,7 @@ public func getBooleanByName(resName: String): Bool
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[资源管理错误码](./cj-errorcode-resource-manager.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[资源管理错误码](./cj-errorcode-resource-manager.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -441,7 +441,7 @@ public func getColor(resId: UInt32): UInt32
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[资源管理错误码](./cj-errorcode-resource-manager.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[资源管理错误码](./cj-errorcode-resource-manager.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -496,7 +496,7 @@ public func getColorByName(resName: String): UInt32
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[资源管理错误码](./cj-errorcode-resource-manager.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[资源管理错误码](./cj-errorcode-resource-manager.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -670,7 +670,7 @@ public func getMediaBase64ByName(resName: String, density!: ?ScreenDensity = Non
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[资源管理错误码](./cj-errorcode-resource-manager.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[资源管理错误码](./cj-errorcode-resource-manager.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -723,7 +723,7 @@ public func getMediaByName(resName: String, density!: ?ScreenDensity = None): Ar
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[资源管理错误码](./cj-errorcode-resource-manager.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[资源管理错误码](./cj-errorcode-resource-manager.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -776,7 +776,7 @@ public func getMediaContent(resId: UInt32, density!: ?ScreenDensity = None): Arr
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[资源管理错误码](./cj-errorcode-resource-manager.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[资源管理错误码](./cj-errorcode-resource-manager.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -831,7 +831,7 @@ public func getMediaContentBase64(resId: UInt32, density!: ?ScreenDensity = None
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[资源管理错误码](./cj-errorcode-resource-manager.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[资源管理错误码](./cj-errorcode-resource-manager.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -885,7 +885,7 @@ public func getNumber(resId: UInt32): NumberValueType
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[资源管理错误码](./cj-errorcode-resource-manager.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[资源管理错误码](./cj-errorcode-resource-manager.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -946,7 +946,7 @@ public func getNumberByName(resName: String): NumberValueType
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[资源管理错误码](./cj-errorcode-resource-manager.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[资源管理错误码](./cj-errorcode-resource-manager.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -1011,7 +1011,7 @@ public func getPluralStringByName(resName: String, num: Int64): String
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[资源管理错误码](./cj-errorcode-resource-manager.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[资源管理错误码](./cj-errorcode-resource-manager.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -1069,7 +1069,7 @@ public func getPluralStringValue(resId: UInt32, num: Int64): String
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[资源管理错误码](./cj-errorcode-resource-manager.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[资源管理错误码](./cj-errorcode-resource-manager.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -1128,7 +1128,7 @@ public func getRawFd(path: String): RawFileDescriptor
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[资源管理错误码](./cj-errorcode-resource-manager.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[资源管理错误码](./cj-errorcode-resource-manager.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -1181,7 +1181,7 @@ public func getRawFileContent(path: String): Array<UInt8>
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[资源管理错误码](./cj-errorcode-resource-manager.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[资源管理错误码](./cj-errorcode-resource-manager.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -1236,7 +1236,7 @@ public func getRawFileList(path: String): Array<String>
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[资源管理错误码](./cj-errorcode-resource-manager.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[资源管理错误码](./cj-errorcode-resource-manager.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -1288,7 +1288,7 @@ public func getString(resId: UInt32, args: Array<ArgsValueType>): String
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[资源管理错误码](./cj-errorcode-resource-manager.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[资源管理错误码](./cj-errorcode-resource-manager.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -1344,7 +1344,7 @@ public func getStringArrayByName(resName: String): Array<String>
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[资源管理错误码](./cj-errorcode-resource-manager.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[资源管理错误码](./cj-errorcode-resource-manager.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -1397,7 +1397,7 @@ public func getStringArrayValue(resId: UInt32): Array<String>
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[资源管理错误码](./cj-errorcode-resource-manager.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[资源管理错误码](./cj-errorcode-resource-manager.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -1453,7 +1453,7 @@ public func getStringByName(resName: String, args: Array<ArgsValueType>): String
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[资源管理错误码](./cj-errorcode-resource-manager.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[资源管理错误码](./cj-errorcode-resource-manager.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -1505,7 +1505,7 @@ public func removeResource(path: String): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[资源管理错误码](./cj-errorcode-resource-manager.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[资源管理错误码](./cj-errorcode-resource-manager.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |

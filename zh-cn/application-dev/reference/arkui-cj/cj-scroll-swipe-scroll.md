@@ -72,7 +72,7 @@ public init(scroller: ?Scroller, child: () -> Unit)
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|scroller|?[Scroller](./cj-scroll-swipe-scroll.md#class-scroller)|是|-|滚动条控制器。初始值：Scroller()。|
+|scroller|?[Scroller](#class-scroller)|是|-|滚动条控制器。初始值：Scroller()。|
 |child|() -> Unit|是|-|声明容器内的子组件。|
 
 ## 通用属性/通用事件
@@ -850,7 +850,7 @@ public func scrollTo(xOffset!: Length, yOffset!: Length, animation!: ?ScrollAnim
 |:---|:---|:---|:---|:---|
 |xOffset|[Length](./cj-common-types.md#interface-length)|是|-|**命名参数。** 水平滚动偏移。|
 |yOffset|[Length](./cj-common-types.md#interface-length)|是|-|**命名参数。** 垂直滚动偏移。|
-|animation|?ScrollAnimationOptions|是|-|**命名参数。** 滚动动画选项。初始值：ScrollAnimationOptions()。|
+|animation|?[ScrollAnimationOptions](#class-scrollanimationoptions)|是|-|**命名参数。** 滚动动画选项。初始值：ScrollAnimationOptions()。?ScrollAnimationOptions|是|-|**命名参数。** 滚动动画选项。初始值：ScrollAnimationOptions()。|
 
 #### func scrollTo(Length, Length, ?Bool)
 

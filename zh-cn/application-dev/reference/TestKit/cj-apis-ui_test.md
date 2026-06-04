@@ -73,7 +73,7 @@ public func clearText(): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -114,7 +114,7 @@ public func click(): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -155,7 +155,7 @@ public func doubleClick(): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -202,7 +202,7 @@ public func dragTo(target: Component): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -251,7 +251,7 @@ public func getBounds(): Rect
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -298,7 +298,7 @@ public func getBoundsCenter(): Point
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -345,7 +345,7 @@ public func getDescription(): String
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -392,7 +392,7 @@ public func getId(): String
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -439,7 +439,7 @@ public func getText(): String
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -486,7 +486,7 @@ public func getType(): String
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -533,7 +533,7 @@ public func inputText(text: String): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -580,7 +580,7 @@ public func isCheckable(): Bool
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -627,7 +627,7 @@ public func isChecked(): Bool
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -674,7 +674,7 @@ public func isClickable(): Bool
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -721,7 +721,7 @@ public func isEnabled(): Bool
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -768,7 +768,7 @@ public func isFocused(): Bool
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -815,7 +815,7 @@ public func isLongClickable(): Bool
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -862,7 +862,7 @@ public func isScrollable(): Bool
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -909,7 +909,7 @@ public func isSelected(): Bool
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -950,7 +950,7 @@ public func longClick(): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -997,7 +997,7 @@ public func pinchIn(scale: Float32): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -1044,7 +1044,7 @@ public func pinchOut(scale: Float32): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -1097,7 +1097,7 @@ public func scrollSearch(on: On): ?Component
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -1144,7 +1144,7 @@ public func scrollToBottom(speed!: Int64 = 600): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -1191,7 +1191,7 @@ public func scrollToTop(speed!: Int64 = 600): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -1250,7 +1250,7 @@ public static func create(): Driver
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -1294,7 +1294,7 @@ public func assertComponentExist(on: On): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -3884,7 +3884,7 @@ public func close(): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -3926,7 +3926,7 @@ public func focus(): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -3972,7 +3972,7 @@ public func getBounds(): Rect
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -4018,7 +4018,7 @@ public func getBundleName(): String
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -4064,7 +4064,7 @@ public func getTitle(): String
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -4110,7 +4110,7 @@ public func getWindowMode(): WindowMode
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -4156,7 +4156,7 @@ public func isActive(): Bool
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -4202,7 +4202,7 @@ public func isFocused(): Bool
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -4244,7 +4244,7 @@ public func maximize(): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -4288,7 +4288,7 @@ public func minimize(): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -4339,7 +4339,7 @@ public func moveTo(x: Int32, y: Int32): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -4390,7 +4390,7 @@ public func resize(wide: Int32, height: Int32, direction: ResizeDirection): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -4434,7 +4434,7 @@ public func resume(): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -4478,7 +4478,7 @@ public func split(): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -4830,7 +4830,7 @@ public enum OnceType <: Equatable<OnceType> & ToString {
 
 **父类型：**
 
-- Equatable\<OnceType>
+- Equatable\<[OnceType](#enum-oncetype)>
 - ToString
 
 ### DialogShow

@@ -58,7 +58,7 @@ public func createCipher(transformation: String): Cipher
 
 **异常：**
 
-- BusinessException：对应错误码如下表，请参见[通用错误码](../cj-errorcode-universal.md)和[crypto framework错误码](./cj-errorcode-crypto.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，请参见[通用错误码](../cj-errorcode-universal.md)和[crypto framework错误码](./cj-errorcode-crypto.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -110,7 +110,7 @@ public func createMac(algName: String): Mac
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[crypto framework错误码](./cj-errorcode-crypto.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[crypto framework错误码](./cj-errorcode-crypto.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -160,7 +160,7 @@ public func createMd(algName: String): Md
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[crypto framework错误码](./cj-errorcode-crypto.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[crypto framework错误码](./cj-errorcode-crypto.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -204,7 +204,7 @@ public func createRandom(): Random
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[crypto framework错误码](./cj-errorcode-crypto.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[crypto framework错误码](./cj-errorcode-crypto.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -256,7 +256,7 @@ public func createSymKeyGenerator(algName: String): SymKeyGenerator
 
 **异常：**
 
-- BusinessException：对应错误码如下表，请参见[通用错误码](../cj-errorcode-universal.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，请参见[通用错误码](../cj-errorcode-universal.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -354,7 +354,7 @@ func getEncoded(): DataBlob
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[crypto framework错误码](./cj-errorcode-crypto.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[crypto framework错误码](./cj-errorcode-crypto.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -477,7 +477,7 @@ public func initialize(opMode: CryptoMode, key: Key, params: ?ParamsSpec): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[crypto framework错误码](./cj-errorcode-crypto.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[crypto framework错误码](./cj-errorcode-crypto.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -560,7 +560,7 @@ public func doFinal(data: ?DataBlob): DataBlob
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[crypto framework错误码](./cj-errorcode-crypto.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[crypto framework错误码](./cj-errorcode-crypto.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -645,7 +645,7 @@ public func update(data: DataBlob): DataBlob
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[crypto framework错误码](./cj-errorcode-crypto.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[crypto framework错误码](./cj-errorcode-crypto.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -733,7 +733,7 @@ public func initialize(key: SymKey): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[crypto framework错误码](./cj-errorcode-crypto.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[crypto framework错误码](./cj-errorcode-crypto.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -781,7 +781,7 @@ public func doFinal(): DataBlob
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[crypto framework错误码](./cj-errorcode-crypto.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[crypto framework错误码](./cj-errorcode-crypto.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -834,7 +834,7 @@ public func getMacLength(): UInt32
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[crypto framework错误码](./cj-errorcode-crypto.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[crypto framework错误码](./cj-errorcode-crypto.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -885,7 +885,7 @@ public func update(input: DataBlob): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[crypto framework错误码](./cj-errorcode-crypto.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[crypto framework错误码](./cj-errorcode-crypto.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -963,7 +963,7 @@ public func digest(): DataBlob
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[crypto framework错误码](./cj-errorcode-crypto.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[crypto framework错误码](./cj-errorcode-crypto.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -1012,7 +1012,7 @@ public func getMdLength(): UInt32
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[crypto framework错误码](./cj-errorcode-crypto.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[crypto framework错误码](./cj-errorcode-crypto.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -1057,7 +1057,7 @@ public func update(input: DataBlob): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[crypto framework错误码](./cj-errorcode-crypto.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[crypto framework错误码](./cj-errorcode-crypto.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -1138,7 +1138,7 @@ public func generateRandom(len: Int32): DataBlob
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[crypto framework错误码](./cj-errorcode-crypto.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[crypto framework错误码](./cj-errorcode-crypto.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -1184,7 +1184,7 @@ public func setSeed(seed: DataBlob): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[crypto framework错误码](./cj-errorcode-crypto.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[crypto framework错误码](./cj-errorcode-crypto.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -1315,7 +1315,7 @@ public func getEncoded(): DataBlob
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[crypto framework错误码](./cj-errorcode-crypto.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[crypto framework错误码](./cj-errorcode-crypto.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -1406,7 +1406,7 @@ public func convertKey(key: DataBlob): SymKey
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[crypto framework错误码](./cj-errorcode-crypto.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[crypto framework错误码](./cj-errorcode-crypto.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -1463,7 +1463,7 @@ public func generateSymKey(): SymKey
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[crypto framework错误码](./cj-errorcode-crypto.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[crypto framework错误码](./cj-errorcode-crypto.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -1874,7 +1874,7 @@ public enum CryptoMode <: Equatable<CryptoMode> & ToString {
 
 **父类型：**
 
-- Equatable\<CryptoMode>
+- Equatable\<[CryptoMode](#enum-cryptomode)>
 - ToString
 
 ### DecryptMode
@@ -1989,7 +1989,7 @@ public enum CipherSpecItem <: Equatable<CipherSpecItem> & ToString {
 
 **父类型：**
 
-- Equatable\<CipherSpecItem>
+- Equatable\<[CipherSpecItem](#enum-cipherspecitem)>
 - ToString
 
 ### OaepMdNameStr

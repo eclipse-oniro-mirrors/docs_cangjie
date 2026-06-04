@@ -143,7 +143,7 @@ sealed interface JSKeyable <: ToString & ToJSValue {
 **父类型：**
 
 - ToString
-- ToJSValue
+- [ToJSValue](#interface-tojsvalue)
 
 **示例：**
 
@@ -247,7 +247,7 @@ public static func fromJSValue(_: JSContext, input: JSValue): Int8
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息 |
 |:------| :--- |
@@ -296,7 +296,7 @@ public func toJSValue(context: JSContext): JSValue
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息 |
 |:------| :--- |
@@ -348,7 +348,7 @@ public static func fromJSValue(_: JSContext, input: JSValue): Int16
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -397,7 +397,7 @@ public func toJSValue(context: JSContext): JSValue
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息 |
 |:------| :--- |
@@ -449,7 +449,7 @@ public static func fromJSValue(_: JSContext, input: JSValue): Int32
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -498,7 +498,7 @@ public func toJSValue(context: JSContext): JSValue
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息 |
 |:------| :--- |
@@ -550,7 +550,7 @@ public static func fromJSValue(_: JSContext, input: JSValue): Int64
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -599,7 +599,7 @@ public func toJSValue(context: JSContext): JSValue
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -652,7 +652,7 @@ public static func fromJSValue(_: JSContext, input: JSValue): UInt8
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -744,7 +744,7 @@ public static func fromJSValue(_: JSContext, input: JSValue): UInt16
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -793,7 +793,7 @@ public func toJSValue(context: JSContext): JSValue
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息 |
 |:------| :--- |
@@ -845,7 +845,7 @@ public static func fromJSValue(_: JSContext, input: JSValue): UInt32
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -894,7 +894,7 @@ public func toJSValue(context: JSContext): JSValue
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息 |
 |:------| :--- |
@@ -946,7 +946,7 @@ public static func fromJSValue(_: JSContext, input: JSValue): UInt64
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -995,7 +995,7 @@ public func toJSValue(context: JSContext): JSValue
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -1048,7 +1048,7 @@ public static func fromJSValue(_: JSContext, input: JSValue): Float16
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -1097,7 +1097,7 @@ public func toJSValue(context: JSContext): JSValue
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息 |
 |:------| :--- |
@@ -1149,7 +1149,7 @@ public static func fromJSValue(_: JSContext, input: JSValue): Float32
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -1198,7 +1198,7 @@ public func toJSValue(context: JSContext): JSValue
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息 |
 |:------| :--- |
@@ -1250,7 +1250,7 @@ public static func fromJSValue(_: JSContext, input: JSValue): Float64
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息 |
 |:------| :--- |
@@ -1298,7 +1298,7 @@ public func toJSValue(context: JSContext): JSValue
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息 |
 |:------| :--- |
@@ -1366,7 +1366,7 @@ public static func toArktsType(): String
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息 |
 |:------| :--- |
@@ -1398,7 +1398,7 @@ public func toJSValue(context: JSContext): JSValue
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息 |
 |:------| :--- |
@@ -1450,7 +1450,7 @@ public static func fromJSValue(_: JSContext, input: JSValue): String
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息 |
 |:------| :--- |
@@ -1518,7 +1518,7 @@ public func toJSValue(context: JSContext): JSValue
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -1600,7 +1600,7 @@ public func toJSValue(context: JSContext): JSValue
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息 |
 |:------| :--- |
@@ -1654,7 +1654,7 @@ public static func fromJSValue(context: JSContext, input: JSValue): Option<T>
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息 |
 |:------| :--- |
@@ -1701,7 +1701,7 @@ public func toJSValue(context: JSContext): JSValue
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息 |
 |:------| :--- |
@@ -1753,7 +1753,7 @@ public static func fromJSValue(_: JSContext, input: JSValue): Array<T>
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息 |
 |:------| :--- |
@@ -1801,7 +1801,7 @@ public func toJSValue(context: JSContext): JSValue
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息 |
 |:------| :--- |
@@ -1838,7 +1838,7 @@ public prop size: Int64
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息 |
 |:------| :--- |
@@ -1869,7 +1869,7 @@ public operator func [](index: Int64): JSValue
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                  |
 |:------|:--------------------------------------|
@@ -1907,7 +1907,7 @@ public operator func [](index: Int64, value!: JSValue): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                  |
 |:------|:--------------------------------------|
@@ -1946,7 +1946,7 @@ public operator func [](index: Int64, value!: JSHeapObject): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                  |
 |:------|:--------------------------------------|
@@ -1996,7 +1996,7 @@ public prop byteLength: Int32
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                  |
 |:------|:--------------------------------------|
@@ -2035,7 +2035,7 @@ public func readBytes(): Array<Byte>
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                  |
 |:------|:--------------------------------------|
@@ -2074,7 +2074,7 @@ public func toArrayBufferJSValue(): JSValue
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息 |
 |:------| :--- |
@@ -2112,7 +2112,7 @@ public func toFloat32Array(): Array<Float32>
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -2152,7 +2152,7 @@ public func toFloat32ArrayJSValue(): JSValue
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -2192,7 +2192,7 @@ public func toFloat64Array(): Array<Float64>
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息 |
 |:------| :--- |
@@ -2232,7 +2232,7 @@ public func toFloat64ArrayJSValue(): JSValue
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息 |
 |:------| :--- |
@@ -2269,7 +2269,7 @@ public func toInt16Array(): Array<Int16>
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                     |
 |:------|:-----------------------------------------|
@@ -2309,7 +2309,7 @@ public func toInt16ArrayJSValue(): JSValue
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息 |
 |:------| :--- |
@@ -2346,7 +2346,7 @@ public func toInt32Array(): Array<Int32>
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                     |
 |:------|:-----------------------------------------|
@@ -2386,7 +2386,7 @@ public func toInt32ArrayJSValue(): JSValue
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息 |
 |:------| :--- |
@@ -2423,7 +2423,7 @@ public func toInt64Array(): Array<Int64>
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                     |
 |:------|:-----------------------------------------|
@@ -2463,7 +2463,7 @@ public func toInt64ArrayJSValue(): JSValue
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息 |
 |:------| :--- |
@@ -2500,7 +2500,7 @@ public func toInt8Array(): Array<Int8>
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                     |
 |:------|:-----------------------------------------|
@@ -2539,7 +2539,7 @@ public func toInt8ArrayJSValue(): JSValue
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息 |
 |:------| :--- |
@@ -2576,7 +2576,7 @@ public func toUInt16Array(): Array<UInt16>
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -2616,7 +2616,7 @@ public func toUInt16ArrayJSValue(): JSValue
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息 |
 |:------| :--- |
@@ -2653,7 +2653,7 @@ public func toUInt32Array(): Array<UInt32>
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                     |
 |:------|:-----------------------------------------|
@@ -2693,7 +2693,7 @@ public func toUInt32ArrayJSValue(): JSValue
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息 |
 |:------| :--- |
@@ -2730,7 +2730,7 @@ public func toUInt64Array(): Array<UInt64>
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                     |
 |:------|:-----------------------------------------|
@@ -2770,7 +2770,7 @@ public func toUInt64ArrayJSValue(): JSValue
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息 |
 |:------| :--- |
@@ -2807,7 +2807,7 @@ public func toUInt8Array(): Array<UInt8>
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                     |
 |:------|:-----------------------------------------|
@@ -2846,7 +2846,7 @@ public func toUInt8ArrayJSValue(): JSValue
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息 |
 |:------| :--- |
@@ -2883,7 +2883,7 @@ public func toUInt8ClampedArrayJSValue(): JSValue
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息 |
 |:------| :--- |
@@ -2916,7 +2916,7 @@ public class JSArrayEx<T> <: JSInteropType<JSArrayEx<T>> where T <: JSInteropTyp
 
 **父类型：**
 
-- [JSInteropType\<JSArrayEx\<T>>](#interface-jsinteroptypet)
+- [JSInteropType](#interface-jsinteroptypet)\<[JSArrayEx](#class-jsarrayext-where-t--jsinteroptypet)\<T>>
 
 ### prop size
 
@@ -2934,7 +2934,7 @@ public prop size: Int64
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息 |
 |:------| :--- |
@@ -2982,7 +2982,7 @@ public static func fromJSValue(context: JSContext, input: JSValue): JSArrayEx<T>
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                     |
 |:------|:-----------------------------------------|
@@ -3024,7 +3024,7 @@ public func clone(): JSArrayEx<T>
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                     |
 |:------|:-----------------------------------------|
@@ -3073,7 +3073,7 @@ public func concat(other: JSArrayEx<T>): JSArrayEx<T>
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                     |
 |:------|:-----------------------------------------|
@@ -3124,7 +3124,7 @@ public func get(index: Int64): Option<T>
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                     |
 |:------|:-----------------------------------------|
@@ -3168,7 +3168,7 @@ public func isEmpty(): Bool
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                     |
 |:------|:-----------------------------------------|
@@ -3214,7 +3214,7 @@ public func set(index: Int64, element: T): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                     |
 |:------|:-----------------------------------------|
@@ -3258,7 +3258,7 @@ public func toArray(): Array<T>
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                     |
 |:------|:-----------------------------------------|
@@ -3306,7 +3306,7 @@ public func toJSValue(context: JSContext): JSValue
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -3338,7 +3338,7 @@ public operator func [](index: Int64): T
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                  |
 |:------|:--------------------------------------|
@@ -3382,7 +3382,7 @@ public operator func [](index: Int64, value!: T): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                  |
 |:------|:--------------------------------------|
@@ -3440,7 +3440,7 @@ public func toBigInt(): BigInt
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                  |
 |:------|:--------------------------------------|
@@ -3491,7 +3491,7 @@ public func toBool(): Bool
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -3530,7 +3530,7 @@ public func toJSValue(): JSValue
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -3567,7 +3567,7 @@ public prop count: Int64
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -3590,7 +3590,7 @@ public prop thisArg: JSValue
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -3621,7 +3621,7 @@ public operator func [](index: Int64): JSValue
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                  |
 |:------|:--------------------------------------|
@@ -3672,7 +3672,7 @@ public prop prototype: JSObject
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                           |
 |:------|:-------------------------------|
@@ -3717,7 +3717,7 @@ public func addAccessor(key: JSKeyable, getter!: ?JSFunction = None, setter!: ?J
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -3767,7 +3767,7 @@ public func addAccessor(key: JSKeyable, getter!: ?JSLambda = None, setter!: ?JSL
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -3816,7 +3816,7 @@ public func addMethod(key: JSKeyable, method: JSFunction): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -3865,7 +3865,7 @@ public func addMethod(key: JSKeyable, method: JSLambda): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -3914,7 +3914,7 @@ public func addProperty(key: JSKeyable, value: JSValue): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -3959,7 +3959,7 @@ public func new(): JSValue
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -4005,7 +4005,7 @@ public func new(arg: JSValue): JSValue
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -4055,7 +4055,7 @@ public func new(args: Array<JSValue>): JSValue
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -4114,7 +4114,7 @@ public prop env: JSEnv
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -4151,7 +4151,7 @@ public prop global: JSObject
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -4198,7 +4198,7 @@ public func newScope<T>(callback: ()->T): T
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -4246,7 +4246,7 @@ public func array(arr: Array<JSValue>): JSArray
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -4288,7 +4288,7 @@ public func arrayBuffer(length: Int32): JSArrayBuffer
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -4331,7 +4331,7 @@ public func arrayBuffer(data: Array<Byte>): JSArrayBuffer
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -4374,7 +4374,7 @@ public func arrayBuffer(data: Array<Int8>): JSArrayBuffer
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -4422,7 +4422,7 @@ public func arrayBuffer(data: Array<Int16>): JSArrayBuffer
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -4470,7 +4470,7 @@ public func arrayBuffer(data: Array<UInt16>): JSArrayBuffer
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -4518,7 +4518,7 @@ public func arrayBuffer(data: Array<UInt32>): JSArrayBuffer
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -4566,7 +4566,7 @@ public func arrayBuffer(data: Array<Int32>): JSArrayBuffer
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -4614,7 +4614,7 @@ public func arrayBuffer(data: Array<Float32>): JSArrayBuffer
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -4662,7 +4662,7 @@ public func arrayBuffer(data: Array<Int64>): JSArrayBuffer
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -4710,7 +4710,7 @@ public func arrayBuffer(data: Array<UInt64>): JSArrayBuffer
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -4758,7 +4758,7 @@ public func arrayBuffer(data: Array<Float64>): JSArrayBuffer
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -4808,7 +4808,7 @@ public unsafe func arrayBuffer(rawData: CPointer<Byte>, length: Int32, finalizer
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -4855,7 +4855,7 @@ public func bigint(value: Int64): JSBigInt
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -4897,7 +4897,7 @@ public func bigint(value: BigInt): JSBigInt
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -4941,7 +4941,7 @@ public func boolean(value: Bool): JSBoolean
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -4983,7 +4983,7 @@ public func clazz(ctor: JSLambda, superClass!: ?JSClass = None): JSClass
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -5029,7 +5029,7 @@ public func external(data: SharedObject): JSExternal
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -5074,7 +5074,7 @@ public func function(lambda: JSLambda): JSFunction
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -5114,7 +5114,7 @@ public func getNapiEnv(): napi_env
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -5181,7 +5181,7 @@ public func null(): JSNull
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -5222,7 +5222,7 @@ public func number(value: Float64): JSNumber
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -5263,7 +5263,7 @@ public func number(value: Int32): JSNumber
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -5298,7 +5298,7 @@ public func object(): JSObject
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -5365,7 +5365,7 @@ public func promiseCapability(): JSPromiseCapability
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -5407,7 +5407,7 @@ public func requireArkModule(path: String): JSValue
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                                          |
 | :------- | :---------------------------------------------------------------- |
@@ -5464,7 +5464,7 @@ public func requireSystemNativeModule(moduleName: String, prefix!: ?String = Non
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -5506,7 +5506,7 @@ public func string(value: String): JSString
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -5548,7 +5548,7 @@ public func string(value: Utf16String): JSString
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -5591,7 +5591,7 @@ public func symbol(description!: String = ""): JSSymbol
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -5628,7 +5628,7 @@ public func undefined(): JSUndefined
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -5679,7 +5679,7 @@ public func cast<T>(): Option<T> where T <: SharedObject
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -5724,7 +5724,7 @@ public func getData(): SharedObject
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -5790,7 +5790,7 @@ public func call(thisArg!: JSValue = context.undefined().toJSValue()): JSValue
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -5833,7 +5833,7 @@ public func call(arg: JSValue, thisArg!: JSValue = context.undefined().toJSValue
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -5877,7 +5877,7 @@ public func call(args: Array<JSValue>, thisArg!: JSValue = context.undefined().t
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -5912,7 +5912,7 @@ public class JSHashMapEx<K, V> <: JSInteropType<JSHashMapEx<K, V>> where K <: JS
 
 **父类型：**
 
-- [JSInteropType\<JSHashMapEx\<K,V>>](#interface-jsinteroptypet)
+- [JSInteropType](#interface-jsinteroptypet)\<[JSHashMapEx](#class-jshashmapexk-v-where-k--jskeyable--hashable--equatablek--jsinteroptypek-v--jsinteroptypev)\<K,V>>
 
 ### prop size
 
@@ -5930,7 +5930,7 @@ public prop size: Int64
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -6021,7 +6021,7 @@ public static func fromJSValue(context: JSContext, input: JSValue): JSHashMapEx<
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -6087,7 +6087,7 @@ public func clear(): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -6112,7 +6112,7 @@ public func clone(): JSHashMapEx<K, V>
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -6143,7 +6143,7 @@ public func containsAll(keys: Collection<K>): Bool
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -6174,7 +6174,7 @@ public func delete(key: K): Bool
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -6199,7 +6199,7 @@ public func deleteAll(keys: Collection<K>): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -6227,7 +6227,7 @@ public func deleteIf(predicate: (K, V) -> Bool): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -6259,7 +6259,7 @@ public func get(key: K): Option<V>
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -6290,7 +6290,7 @@ public func has(key: K) : Bool
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -6315,7 +6315,7 @@ public func isEmpty(): Bool
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -6358,7 +6358,7 @@ public func keys(): EquatableCollection<K>
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -6403,7 +6403,7 @@ public func set(key: K, value: V): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                  |
 |:------|:--------------------------------------|
@@ -6444,7 +6444,7 @@ public func setAll(elements: Collection<(K, V)>): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                  |
 |:------|:--------------------------------------|
@@ -6493,7 +6493,7 @@ public func setIfAbsent(key: K, value: V): Bool
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                  |
 |:------|:--------------------------------------|
@@ -6518,7 +6518,7 @@ public func toHashMap(): HashMap<K, V>
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                  |
 |:------|:--------------------------------------|
@@ -6549,7 +6549,7 @@ public func toJSValue(c: JSContext): JSValue
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                  |
 |:------|:--------------------------------------|
@@ -6574,7 +6574,7 @@ public func values(): Collection<V>
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                  |
 |:------|:--------------------------------------|
@@ -6605,7 +6605,7 @@ public operator func [](key: K): V
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -6649,7 +6649,7 @@ public operator func [](key: K, value!: V): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -6702,7 +6702,7 @@ public func toJSValue(): JSValue
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -6916,7 +6916,7 @@ public func toJSValue(): JSValue
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                  |
 |:------|:--------------------------------------|
@@ -6951,7 +6951,7 @@ public func toFloat64(): Float64
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                  |
 |:------|:--------------------------------------|
@@ -6990,7 +6990,7 @@ public func toJSValue(): JSValue
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                  |
 |:------|:--------------------------------------|
@@ -7107,7 +7107,7 @@ public func callMethod(key: JSKeyable, args: Array<JSValue>): JSValue
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -7156,7 +7156,7 @@ public func defineOwnAccessor(key: JSKeyable, getter!:? JSFunction = None, sette
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -7209,7 +7209,7 @@ public func defineOwnAccessor(key: JSKeyable, getter!:? JSLambda = None, setter!
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -7263,7 +7263,7 @@ public func defineOwnProperty(key: JSKeyable, setValue: JSValue,
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -7300,7 +7300,7 @@ public func getAttachInfo(): ?JSExternal
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -7348,7 +7348,7 @@ public func getProperty(key: JSKeyable): JSValue
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -7391,7 +7391,7 @@ public func hasProperty(key: JSKeyable): Bool
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -7436,7 +7436,7 @@ public func instanceOf(clazz: JSClass): Bool
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -7479,7 +7479,7 @@ public func keys(): Array<String>
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -7518,7 +7518,7 @@ public func setProperty(key: JSKeyable, setValue: JSValue): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -7561,7 +7561,7 @@ public operator func [](key: JSKeyable): JSValue
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -7599,7 +7599,7 @@ public operator func [](key: JSKeyable, value!: JSValue): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -7654,7 +7654,7 @@ public func catchError(callback: JSFunction): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -7694,7 +7694,7 @@ public func then(onFulfilled: JSFunction, onRejected!: ?JSFunction = None): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -7746,7 +7746,7 @@ public func reject(value: JSValue): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -7784,7 +7784,7 @@ public func resolve(value: JSValue): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -7824,7 +7824,7 @@ public func toJSValue(): JSValue
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -7915,7 +7915,7 @@ public init()
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -7977,7 +7977,7 @@ public func toJSValue(_: JSContext): JSValue
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -8002,7 +8002,7 @@ public func toString(): String
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -8041,7 +8041,7 @@ public func toUtf16String(): Utf16String
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -8056,7 +8056,7 @@ public func toUtf16String(): Utf16String
 
 **父类型：**
 
-- [JSInteropType\<JSString>](#interface-jsinteroptypet)
+- [JSInteropType](#interface-jsinteroptypet)\<[JSString](#class-jsstring)>
 
 #### static func fromJSValue(JSContext, JSValue)
 
@@ -8083,7 +8083,7 @@ public static func fromJSValue(_: JSContext, input: JSValue): JSString
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                             |
 | :------- | :----------------------------------- |
@@ -8122,8 +8122,8 @@ public class JSStringEx <: JSInteropType<JSStringEx> & Equatable<JSStringEx> & T
 
 **父类型：**
 
-- [JSInteropType\<JSStringEx>](#interface-jsinteroptypet)
-- Equatable\<JSStringEx>
+- [JSInteropType](#interface-jsinteroptypet)\<[JSStringEx](#class-jsstringex)>
+- Equatable\<[JSStringEx](#class-jsstringex)>
 - ToString
 
 **示例：**
@@ -8184,7 +8184,7 @@ public static func fromJSValue(context: JSContext, input: JSValue): JSStringEx
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -8232,7 +8232,7 @@ public func toJSValue(context: JSContext): JSValue
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -8257,7 +8257,7 @@ public func toString(): String
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -8288,7 +8288,7 @@ public operator func !=(str: JSStringEx): Bool
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -8319,7 +8319,7 @@ public operator func ==(str: JSStringEx): Bool
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -8376,7 +8376,7 @@ public prop description: String
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -8407,7 +8407,7 @@ public func toJSValue(_: JSContext): JSValue
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -8432,7 +8432,7 @@ public func toString(): String
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -8467,7 +8467,7 @@ public func toJSValue(): JSValue
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                  |
 |:------|:--------------------------------------|
@@ -8517,7 +8517,7 @@ public func asArray(): JSArray
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -8543,7 +8543,7 @@ public func asArrayBuffer(): JSArrayBuffer
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -8569,7 +8569,7 @@ public func asBigInt(): JSBigInt
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -8595,7 +8595,7 @@ public func asBoolean(): JSBoolean
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -8621,7 +8621,7 @@ public func asClass(): JSClass
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -8647,7 +8647,7 @@ public func asExternal(): JSExternal
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -8673,7 +8673,7 @@ public func asFunction(): JSFunction
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -8699,7 +8699,7 @@ public func asNull(): JSNull
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -8725,7 +8725,7 @@ public func asNumber(): JSNumber
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -8751,7 +8751,7 @@ public func asObject(): JSObject
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -8777,7 +8777,7 @@ public func asPromise(): JSPromise
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -8803,7 +8803,7 @@ public func asString(): JSString
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -8829,7 +8829,7 @@ public func asSymbol(): JSSymbol
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -8855,7 +8855,7 @@ public func asUndefined(): JSUndefined
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -8881,7 +8881,7 @@ public func bindObject(external: JSValue): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -8925,7 +8925,7 @@ public func bindObject(data: SharedObject): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -8968,7 +8968,7 @@ public func getBindingObject(): ?SharedObject
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -9020,7 +9020,7 @@ public func getElement(index: Int64): JSValue
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -9064,7 +9064,7 @@ public func getProperty(key: JSKeyable): JSValue
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -9105,7 +9105,7 @@ public func isArray(): Bool
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -9144,7 +9144,7 @@ public func isArrayBuffer(): Bool
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -9183,7 +9183,7 @@ public func isBigInt(): Bool
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -9222,7 +9222,7 @@ public func isBoolean(): Bool
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -9261,7 +9261,7 @@ public func isClass(): Bool
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -9300,7 +9300,7 @@ public func isExternal(): Bool
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -9339,7 +9339,7 @@ public func isFunction(): Bool
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -9378,7 +9378,7 @@ public func isNull(): Bool
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -9417,7 +9417,7 @@ public func isNumber(): Bool
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -9456,7 +9456,7 @@ public func isObject(): Bool
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -9495,7 +9495,7 @@ public func isPromise(): Bool
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -9534,7 +9534,7 @@ public func isString(): Bool
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -9573,7 +9573,7 @@ public func isSymbol(): Bool
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -9612,7 +9612,7 @@ public func isUndefined(): Bool
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -9652,7 +9652,7 @@ public func setElement(index: Int64, value: JSValue): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -9693,7 +9693,7 @@ public func setProperty(key: JSKeyable, setValue: JSValue): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -9738,7 +9738,7 @@ public func strictEqual(target: JSValue): Bool
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -9778,7 +9778,7 @@ public func toBigInt(): BigInt
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -9817,7 +9817,7 @@ public func toBoolean(): Bool
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -9856,7 +9856,7 @@ public func toNumber(): Float64
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -9895,7 +9895,7 @@ public func toString(): String
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -9942,7 +9942,7 @@ public func toUtf16String(): Utf16String
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -9968,7 +9968,7 @@ public func typeof(): JSType
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -10076,10 +10076,10 @@ public class Utf16String <: ToString & Equatable<Utf16String> & Hashable & JSKey
 **父类型：**
 
 - ToString
-- Equatable\<Utf16String>
+- Equatable\<[Utf16String](#class-utf16string)>
 - Hashable
 - [JSKeyable](#interface-jskeyable)
-- [JSInteropType\<Utf16String>](#interface-jsinteroptypet)
+- [JSInteropType](#interface-jsinteroptypet)\<[Utf16String](#class-utf16string)>
 
 ### prop accessible
 
@@ -10133,7 +10133,7 @@ public prop size: Int64
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -10171,7 +10171,7 @@ public prop totalChars: Int64
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -10203,7 +10203,7 @@ public static let EMPTY: Utf16String
 
 **起始版本：** 22
 
-**类型：** Utf16String
+**类型：** [Utf16String](#class-utf16string)
 
 **读写能力：** 只读
 
@@ -10225,7 +10225,7 @@ public init(src: String)
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -10276,7 +10276,7 @@ public static func fromJSValue(_: JSContext, value: JSValue): Utf16String
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -10343,7 +10343,7 @@ public func compare(target: Utf16String): Ordering
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -10373,7 +10373,7 @@ public func contains(target: Utf16String): Bool
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -10403,7 +10403,7 @@ public func count(src: Utf16String): Int64
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -10484,7 +10484,7 @@ public func endsWith(target: Utf16String): Bool
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -10526,7 +10526,7 @@ public func hashCode(): Int64
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -10572,7 +10572,7 @@ public func indexOf(target: Utf16String): ?Int64
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -10625,7 +10625,7 @@ public func indexOf(target: Utf16String, fromIndex: Int64): ?Int64
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -10649,7 +10649,7 @@ public func isEmpty(): Bool
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -10693,7 +10693,7 @@ public func isCompressed(): Bool
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -10740,7 +10740,7 @@ public func lastIndexOf(target: Utf16String): ?Int64
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -10793,7 +10793,7 @@ public func lastIndexOf(target: Utf16String, fromIndex: Int64): ?Int64
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -10847,7 +10847,7 @@ public func lazySplit(separator: Utf16String, removeEmpty!: Bool = false): Itera
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -10902,7 +10902,7 @@ public func lazySplit(separator: Utf16String, maxSplit: Int64, removeEmpty!: Boo
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -10926,7 +10926,7 @@ public func lines(): Iterator<Utf16String>
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -10980,7 +10980,7 @@ public func replace(old: Utf16String, new: Utf16String, count!: Int64 = Int64.Ma
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -11025,7 +11025,7 @@ public func runes(): Iterator<Rune>
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -11056,7 +11056,7 @@ public func split(separator: Utf16String, removeEmpty!: Bool = false): Array<Utf
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -11111,7 +11111,7 @@ public func split(separator: Utf16String, maxSplit: Int64, removeEmpty!: Bool = 
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID    | 错误信息                                 |
 |:---------|:-------------------------------------|
@@ -11142,7 +11142,7 @@ public func startsWith(target: Utf16String): Bool
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -11190,7 +11190,7 @@ public func toJSValue(context: JSContext): JSValue
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -11233,7 +11233,7 @@ public func toString(): String
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -11279,7 +11279,7 @@ public operator func !=(target: Utf16String): Bool
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -11309,7 +11309,7 @@ public operator func +(right: Utf16String): Utf16String
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -11339,7 +11339,7 @@ public operator func <(target: Utf16String): Bool
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -11369,7 +11369,7 @@ public operator func <=(target: Utf16String): Bool
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -11399,7 +11399,7 @@ public operator func ==(target: Utf16String): Bool
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -11429,7 +11429,7 @@ public operator func >(target: Utf16String): Bool
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -11459,7 +11459,7 @@ public operator func >=(target: Utf16String): Bool
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
@@ -11489,7 +11489,7 @@ public operator func [](index: Int64): UInt16
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID      | 错误信息                                 |
 |:-----------|:-------------------------------------|
@@ -11520,7 +11520,7 @@ public operator func [](range: Range<Int64>): Utf16String
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
 
 | 错误码ID      | 错误信息                                 |
 |:-----------|:-------------------------------------|

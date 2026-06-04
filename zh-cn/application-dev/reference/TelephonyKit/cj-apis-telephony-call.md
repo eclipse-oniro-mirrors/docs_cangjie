@@ -67,7 +67,7 @@ public static func formatPhoneNumber(
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[电话子系统错误码](./cj-errorcode-telephony.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[电话子系统错误码](./cj-errorcode-telephony.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -123,7 +123,7 @@ public static func formatPhoneNumberToE164(phoneNumber: String, countryCode: Str
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[电话子系统错误码](./cj-errorcode-telephony.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[电话子系统错误码](./cj-errorcode-telephony.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -170,7 +170,7 @@ public static func getCallState(): CallState
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[电话子系统错误码](./cj-errorcode-telephony.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[电话子系统错误码](./cj-errorcode-telephony.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -293,7 +293,7 @@ public static func isEmergencyPhoneNumber(phoneNumber: String, options!: Emergen
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[电话子系统错误码](./cj-errorcode-telephony.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[电话子系统错误码](./cj-errorcode-telephony.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -344,7 +344,7 @@ public static func makeCall(phoneNumber: String): Unit
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[电话子系统错误码](./cj-errorcode-telephony.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[电话子系统错误码](./cj-errorcode-telephony.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -392,7 +392,7 @@ public static func makeCall(context: UIAbilityContext, phoneNumber: String): Uni
 
 **异常：**
 
-- BusinessException：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[通用错误码](../cj-errorcode-universal.md)。
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
@@ -561,7 +561,7 @@ public enum CallState <: Equatable<CallState> & ToString {
 
 **父类型：**
 
-- Equatable\<CallState>
+- Equatable\<[CallState](#enum-callstate)>
 - ToString
 
 ### CallStateAnswered
