@@ -425,7 +425,7 @@ public init(name!: ?String, param!: ?String, onPop!: ?Callback<PopInfo, Unit> = 
 |:---|:---|:---|:---|:---|
 |name|?String|是|-|**命名参数。** NavDestination的名称。初始值：""。|
 |param|?String|是|-|**命名参数。** NavDestination的详细参数。初始值：""。|
-|onPop|?[Callback](./cj-common-types.md#type-callbackt-v)\<[PopInfo](#class-popinfo), Unit>|否|None|**命名参数。**  NavDestination页面触发pop时的回调函数。|
+|onPop|?[Callback](./cj-common-types.md#type-callbackt-v)\<[PopInfo](#class-popinfo), Unit>|否|None|**命名参数。** Callback回调，用于页面出栈时触发该回调处理返回结果。仅[pop](#func-popbool)中设置result参数后触发。由于[pop](#func-popbool)函数暂不支持result参数，因此该回调暂无法生效。|
 
 ### class NavPathStack
 
