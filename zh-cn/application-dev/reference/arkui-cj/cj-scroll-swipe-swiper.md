@@ -437,7 +437,7 @@ public func digitFont(value: ?Font): This
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|value|?[Font](./cj-common-types.md#class-font)|是|-|置Swiper组件数字导航点的字体样式。|
+|value|?[Font](./cj-common-types.md#class-font)|是|-|设置Swiper组件数字导航点的字体样式。|
 
 #### func fontColor(?ResourceColor)
 

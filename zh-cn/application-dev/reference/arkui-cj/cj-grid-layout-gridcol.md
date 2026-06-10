@@ -461,7 +461,7 @@ class EntryView {
 
 ![grid_col](./figures/grid_col.png)
 
-### 与Gridrow组合使用示例
+### 与GridRow组合使用示例
 
 请参考栅格容器示例代码（[GridRow](./cj-grid-layout-gridrow.md#示例代码)）
 
