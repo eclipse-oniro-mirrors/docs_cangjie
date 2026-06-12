@@ -517,6 +517,38 @@ public static prop sdkApiVersion: Int32
 
 **Since Version:** 22
 
+### static prop sdkMinorApiVersion
+
+```cangjie
+public static prop sdkMinorApiVersion: Int32
+```
+
+**Function:** SDK Minor API version number.
+
+**Type:** Int32
+
+**Read/Write Capability:** Read-only
+
+**System Capability:** SystemCapability.Startup.SystemInfo
+
+**Since Version:** 26.0.0
+
+### static prop sdkPatchApiVersion
+
+```cangjie
+public static prop sdkPatchApiVersion: Int32
+```
+
+**Function:** SDK Patch API version number.
+
+**Type:** Int32
+
+**Read/Write Capability:** Read-only
+
+**System Capability:** SystemCapability.Startup.SystemInfo
+
+**Since Version:** 26.0.0
+
 ### static prop securityPatchTag
 
 ```cangjie
@@ -693,7 +725,87 @@ try {
     Hilog.info(0, "deviceinfo", "the value of the distributionOSApiVersion is : :${distributionOSApiVersion}")
     let distributionOSReleaseType = DeviceInfo.distributionOSReleaseType
     Hilog.info(0, "deviceinfo", "the value of the distributionOSReleaseType is : :${distributionOSReleaseType}")
+let sdkMinorApiVersion = DeviceInfo.sdkMinorApiVersion
+    Hilog.info(0, "deviceinfo", "the value of the sdkMinorApiVersion is: :${sdkMinorApiVersion}")
+    let sdkPatchApiVersion = DeviceInfo.sdkPatchApiVersion
+    Hilog.info(0, "deviceinfo", "the value of the sdkPatchApiVersion is: :${sdkPatchApiVersion}")
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
+```
+
+## func apiAvailable(Int32)
+
+```cangjie
+public func apiAvailable(version: Int32): Bool
+```
+
+**Function:** Checks whether the specified API version is available on the current device. This function provides compatibility checking across different OpenHarmony/Distribution OS versions. It automatically selects the appropriate version checking method based on the input format and API version range.
+
+**System Capability:** SystemCapability.Startup.SystemInfo
+
+**Since Version:** 26.0.0
+
+**Parameters:**
+
+|Name|Type|Required|Default|Description|
+|:---|:---|:---|:---|:---|
+|version|Int32|Yes|-|The API version to check. Accepts number format (e.g., 13), representing the OpenHarmony SDK API version (API 26- only).|
+
+**Return Value:**
+
+|Type|Description|
+|:----|:----|
+|Bool|Returns `true` if the specified API version is available on the current device, `false` otherwise.|
+
+**Example:**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.BasicServicesKit.*
+import kit.PerformanceAnalysisKit.Hilog
+
+let result1 = apiAvailable(13)
+Hilog.info(0, "deviceinfo", "apiAvailable(13) result: ${result1}")
+```
+
+## func apiAvailable(String)
+
+```cangjie
+public func apiAvailable(version: String): Bool
+```
+
+**Function:** Checks whether the specified API version is available on the current device. This function provides compatibility checking across different OpenHarmony/Distribution OS versions. It automatically selects the appropriate version checking method based on the input format and API version range.
+
+**System Capability:** SystemCapability.Startup.SystemInfo
+
+**Since Version:** 26.0.0
+
+**Parameters:**
+
+|Name|Type|Required|Default|Description|
+|:---|:---|:---|:---|:---|
+|version|String|Yes|-|The API version to check. Accepts string format with dots (e.g., "26.0.0", "5.0.1"): For API 26+ (version >= 26.0.0), represents both OpenHarmony and Distribution OS API versions; For API 26- (version < 26.0.0), represents Distribution OS API version.|
+
+**Return Value:**
+
+|Type|Description|
+|:----|:----|
+|Bool|Returns `true` if the specified API version is available on the current device, `false` otherwise.|
+
+**Example:**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.BasicServicesKit.*
+import kit.PerformanceAnalysisKit.Hilog
+
+let result2 = apiAvailable("26.0.0")
+Hilog.info(0, "deviceinfo", "apiAvailable(\"26.0.0\") result: ${result2}")
 ```
