@@ -81,7 +81,7 @@ public class FileUri {
 }
 ```
 
-**功能：** 提供通过PATH获取文件统一资源标志符（Uniform Resource Identifier，URI）的能力，后续可通过使用[ohos.file.fs](./cj-apis-file_fs.md)进行相关操作，如open、read、write等，以实现文件分享。
+**功能：** 提供通过PATH获取文件统一资源标识符（Uniform Resource Identifier，URI）的能力，后续可通过使用[ohos.file.fs](./cj-apis-file_fs.md)进行相关操作，如open、read、write等，以实现文件分享。
 
 **系统能力：** SystemCapability.FileManagement.AppFileService
 

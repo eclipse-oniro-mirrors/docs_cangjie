@@ -800,7 +800,7 @@ public enum CodecSampleRate <: Equatable<CodecSampleRate> & ToString {
 CodecSampleRate176400
 ```
 
-**功能：** 176.4k位采样率
+**功能：** 176.4k采样率
 
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
@@ -812,7 +812,7 @@ CodecSampleRate176400
 CodecSampleRate192000
 ```
 
-**功能：** 192k位采样率。
+**功能：** 192k采样率。
 
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 
@@ -860,7 +860,7 @@ CodecSampleRate88200
 CodecSampleRate96000
 ```
 
-**功能：** 96k位采样率。
+**功能：** 96k采样率。
 
 **系统能力：** SystemCapability.Communication.Bluetooth.Core
 

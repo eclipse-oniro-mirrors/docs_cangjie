@@ -69,4 +69,4 @@ public class MainThreadContext <: ThreadContext {}
 
 **父类型：**
 
-- [ThreadContext](#class-mainthreadcontext)
+- ThreadContext

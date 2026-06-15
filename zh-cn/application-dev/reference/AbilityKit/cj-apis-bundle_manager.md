@@ -337,7 +337,7 @@ public let name: String
 public let orientation: DisplayOrientation
 ```
 
-**功能：** Ability的显示模式。来源于module.json5中abilies标签下配置的orientation字段，如果module.json5配置文件中orientation配置枚举，orientation属性有值且非0，取值详情参考[显示模式枚举](#enum-displayorientation)；如果配置文件中配置的是资源索引，orientation属性值为0。
+**功能：** Ability的显示模式。来源于module.json5中abilities标签下配置的orientation字段，如果module.json5配置文件中orientation配置枚举，orientation属性有值且非0，取值详情参考[显示模式枚举](#enum-displayorientation)；如果配置文件中配置的是资源索引，orientation属性值为0。
 
 **类型：** [DisplayOrientation](#enum-displayorientation)
 

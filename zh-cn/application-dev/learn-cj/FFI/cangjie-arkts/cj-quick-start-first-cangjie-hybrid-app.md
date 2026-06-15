@@ -303,9 +303,9 @@ Project_name
 
 页面间的导航可以通过页面路由router来实现。页面路由router根据页面url找到目标页面，从而实现跳转。使用页面路由请导入router模块。
 
-1. 第一个Arkts页面跳转到第二个ArkTS与仓颉混合页面。
+1. 第一个ArkTS页面跳转到第二个ArkTS与仓颉混合页面。
 
-   在第一个Arkts页面中，跳转按钮绑定onClick事件，单击按钮时跳转到第二页。**Index.ets**文件的示例如下：
+   在第一个ArkTS页面中，跳转按钮绑定onClick事件，单击按钮时跳转到第二页。**Index.ets**文件的示例如下：
 
    ```typescript
    // Index.ets

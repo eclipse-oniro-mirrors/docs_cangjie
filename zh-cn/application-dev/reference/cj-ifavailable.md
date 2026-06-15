@@ -8,7 +8,7 @@
 
 ## 概述
 
-通常，开发者需要对一些 API 进行标签化，使得这些 API 能够根据标签被限定在源码的不同位置使用。全局标签会从 Deveco Studio 创建的仓颉工程中获取，例如：创建的工程为 6.0.2，那么它的全局 API level 为 22。 标签化的 API 需要满足全局的标签配置才能够被合法使用。
+通常，开发者需要对一些 API 进行标签化，使得这些 API 能够根据标签被限定在源码的不同位置使用。全局标签会从 DevEco Studio 创建的仓颉工程中获取，例如：创建的工程为 6.0.2，那么它的全局 API level 为 22。 标签化的 API 需要满足全局的标签配置才能够被合法使用。
 
 为了做到 API 标签化管控，仓颉语言引入了 `@IfAvailable` 宏表达式。它可以基于全局的标签设置，提供更精细的标签化 API 的使用管控。`@IfAvailable` 需要与自定义注解 `APILevel` 配合使用，本章将介绍 `@IfAvailable` 的功能及使用方法。
 
@@ -86,7 +86,7 @@ public func f26() {
 }
 ```
 
-假设 `ohos.sample` 为 sdk 提供的包，用户使用 Deveco Studio 仓颉项目工程时可以选择所需的 APILevel 等级，以 compatibleSDKVersion 为 23 的工程为例：
+假设 `ohos.sample` 为 sdk 提供的包，用户使用 DevEco Studio 仓颉项目工程时可以选择所需的 APILevel 等级，以 compatibleSDKVersion 为 23 的工程为例：
 
 ![image-Create-Project-With-Level](./figures/image-Create-Project-With-Level.png)
 
@@ -172,7 +172,7 @@ public func f4() {
 }
 ```
 
-Deveco Studio 默认读取所有设备支持的 SystemCapability，用于检查作用域中是否允许使用带有标签的 API。
+DevEco Studio 默认读取所有设备支持的 SystemCapability，用于检查作用域中是否允许使用带有标签的 API。
 
 假设 `ohos.sample` 为 sdk，此时设备1的 syscap 为 `["SystemCapability.A", "SystemCapability.B"]`，设备2的 syscap 为 `["SystemCapability.B", "SystemCapability.C"]`
 
