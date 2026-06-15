@@ -6,7 +6,7 @@
 
 多引擎实例场景下，每个 JS 对象（如 JSValue 及其子类的实例）都绑定于创建它的引擎实例（JSContext）。不同引擎实例之间相互独立，不能共享 JS 对象。如果在非所属引擎中访问 JS 对象，可能会导致程序崩溃。
 
-在仓颉- ArkTS 互操作库中，早期的访问 JS 对象的相关接口需要开发者手动传入 JSContext，调用时需要确保传入正确实例。这类接口已标记为“废弃（deprecated）”，建议统一使用不含 JSContext 参数的新接口，由接口实现本身来自动选择正确的引擎实例。
+在仓颉-ArkTS 互操作库中，早期的访问 JS 对象的相关接口需要开发者手动传入 JSContext，调用时需要确保传入正确实例。这类接口已标记为“废弃（deprecated）”，建议统一使用不含 JSContext 参数的新接口，由接口实现本身来自动选择正确的引擎实例。
 
 **错误示例：**
 
@@ -500,8 +500,8 @@ struct Index {
 
 - 使用 JSContext.isInBindThread() 判断当前线程是否可以执行互操作接口；
 - 如需切换线程执行，可使用：
-    - JSContext.postJSTask { ... } 创建在 ArkTS 线程执行的任务；
-    - 如果 ArkTS 被部署在主线程上，开发者可以使用 spawn(UIThread) 语法使互操作逻辑所在线程被调度到主线程执行、
+    - JSContext.postJSTask { ... } 创建在 ArkTS 线程执行的任务。
+    - 如果 ArkTS 被部署在主线程上，开发者可以使用 spawn(UIThread) 语法使互操作逻辑所在线程被调度到主线程执行。
 
 **错误示例：**
 
@@ -542,7 +542,7 @@ let EXPORT_MODULE = JSModule.registerModule {
 }
 ```
 
-**正确示例（isInBindThread & postJSTask 使用示例）：**
+**正确示例（isInBindThread&postJSTask使用示例）：**
 
 仓颉代码：
 

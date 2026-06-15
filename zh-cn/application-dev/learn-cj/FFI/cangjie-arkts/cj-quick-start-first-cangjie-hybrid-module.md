@@ -263,7 +263,7 @@ Project_name
     └── oh-package-lock.json5
 ```
 
-可以看出，**my_module** 变成了一个仓颉-ArkTS混合模块。
+可以看出，**my_module**变成了一个仓颉-ArkTS混合模块。
 
 ### 在同一个工程内，纯ArkTS工程跨模块调用仓颉函数
 
