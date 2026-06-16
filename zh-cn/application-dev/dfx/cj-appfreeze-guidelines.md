@@ -341,7 +341,7 @@ MSG = App main thread is not response!EventHandler dump begin curTime:2017-08-08
   Total size of Idle events 0
   Total event size 3
 
-Timestamp:2017-08-0817:0k:27,4142447784
+Timestamp:2017-08-0817:06:24.4142447784
 Pid:1561
 Uid:20010039
 Process name:com.example.myapplication
