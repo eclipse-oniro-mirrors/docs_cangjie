@@ -421,7 +421,9 @@ public init(name!: ?String, param!: ?String, onPop!: ?Callback<PopInfo, Unit> = 
 |:---|:---|:---|:---|:---|
 | name | ?String | Yes | - | **Named parameter.** Name of the NavDestination. Initial value: "". |
 | param | ?String | Yes | - | **Named parameter.** Detailed parameters of the NavDestination. Initial value: "". |
-| onPop | ?[Callback](./cj-common-types.md#type-callbackt-v)\<[PopInfo](#class-popinfo), Unit> | No | None | **Named parameter.** Callback function triggered when the NavDestination page pops. |### class NavPathStack
+| onPop | ?[Callback](./cj-common-types.md#type-callbackt-v)\<[PopInfo](#class-popinfo), Unit> | No | None | **Named parameter.** This callback is triggered when a page is popped from the stack to handle the return result. It is only triggered when the result parameter is set in the [pop](#func-popbool) function. Due to the current [pop](#func-popbool) function not supporting the result parameter, this callback is temporarily unavailable. |
+
+### class NavPathStack
 
 ```cangjie
 public class NavPathStack {
