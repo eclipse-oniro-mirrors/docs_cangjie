@@ -2907,7 +2907,7 @@ StringItem(String)
 ## enum Mode
 
 ```cangjie
-public enum Mode <: Equatable<Mode> & ToString{
+public enum Mode <: Equatable<Mode> & ToString {
     | Background
     | Foreground
     | ...

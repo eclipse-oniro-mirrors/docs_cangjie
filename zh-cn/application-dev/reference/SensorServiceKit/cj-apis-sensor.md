@@ -919,8 +919,8 @@ public var humidity: Float32
 ```cangjie
 public class LightResponse <: Response {
     public var intensity: Float32
-    public var colorTemperature:?Float32
-    public var infraredLuminance:?Float32
+    public var colorTemperature: ?Float32
+    public var infraredLuminance: ?Float32
 }
 ```
 
@@ -2064,7 +2064,7 @@ public func toString(): String
 ## enum SensorAccuracy
 
 ```cangjie
-public enum SensorAccuracy  <: Equatable<SensorAccuracy> & ToString {
+public enum SensorAccuracy <: Equatable<SensorAccuracy> & ToString {
     | AccuracyUnreliable
     | AccuracyLow
     | AccuracyMedium

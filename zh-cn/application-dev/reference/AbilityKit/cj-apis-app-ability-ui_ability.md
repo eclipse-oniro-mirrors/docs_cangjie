@@ -894,7 +894,7 @@ import ohos.business_exception.BusinessException
 
 class MyUIAbility18 <: UIAbility {
     public override func onWindowStageCreate(windowStage: WindowStage): Unit {
-        this.context.requestDialogService(Want(), {err: ?BusinessException, data: ?RequestResult => })
+        this.context.requestDialogService(Want(), {err: ?BusinessException, data: ?RequestResult =>})
     }
 }
 ```
@@ -964,7 +964,7 @@ import kit.ArkUI.WindowStage
 
 class MyUIAbility19 <: UIAbility {
     public override func onWindowStageCreate(windowStage: WindowStage): Unit {
-            this.context.startAbility(Want(bundleName: "com.example.cangjieinsight", abilityName: "testAbility"))
+        this.context.startAbility(Want(bundleName: "com.example.cangjieinsight", abilityName: "testAbility"))
     }
 }
 ```
@@ -1037,9 +1037,10 @@ import ohos.business_exception.BusinessException
 
 class MyUIAbility20 <: UIAbility {
     public override func onWindowStageCreate(windowStage: WindowStage): Unit {
-            this.context.startAbilityForResult(
-                Want(bundleName: "com.example.cangjieinsight", abilityName: "testAbility"),
-                {err: ?BusinessException, data: ?AbilityResult => })
+        this
+            .context
+            .startAbilityForResult(Want(bundleName: "com.example.cangjieinsight", abilityName: "testAbility"),
+                {err: ?BusinessException, data: ?AbilityResult =>})
     }
 }
 ```
@@ -1111,9 +1112,10 @@ import ohos.business_exception.BusinessException
 
 class MyUIAbility21 <: UIAbility {
     public override func onWindowStageCreate(windowStage: WindowStage): Unit {
-            this.context.startAbilityForResult(
-                Want(bundleName: "com.example.cangjieinsight", abilityName: "testAbility"), StartOptions(),
-                {err: ?BusinessException, data: ?AbilityResult => })
+        this
+            .context
+            .startAbilityForResult(Want(bundleName: "com.example.cangjieinsight", abilityName: "testAbility"),
+                StartOptions(), {err: ?BusinessException, data: ?AbilityResult =>})
     }
 }
 ```
@@ -1153,7 +1155,7 @@ import kit.ArkUI.WindowStage
 
 class MyUIAbility22 <: UIAbility {
     public override func onWindowStageCreate(windowStage: WindowStage): Unit {
-            this.context.terminateSelf()
+        this.context.terminateSelf()
     }
 }
 ```
@@ -1201,7 +1203,7 @@ import kit.ArkUI.WindowStage
 
 class MyUIAbility23 <: UIAbility {
     public override func onWindowStageCreate(windowStage: WindowStage): Unit {
-            this.context.terminateSelfWithResult(AbilityResult(0))
+        this.context.terminateSelfWithResult(AbilityResult(0))
     }
 }
 ```
