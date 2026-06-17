@@ -15,7 +15,7 @@
 
    > **注意：**
    >
-   > 若开发者需要进行纯仓颉工程开发，请选择 **[Cangjie] Empty Ability**模块。
+   > 若开发者需要进行纯仓颉工程开发，请选择 **[Cangjie] Empty Ability**模板。
 
    ![buildChooseCangjieHybridTemplate](../../figures/buildChooseCangjieHybridTemplate.png)
 

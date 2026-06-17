@@ -6,7 +6,7 @@
 >
 > 在仓颉与 ArkTS 混合开发场景中，仓颉页面不是一个真正意义上具有完整生命周期的页面，只能以组件的形式嵌入到 ArkTS 页面中，因此需要在 ArkTS 侧提供一个 @Entry 的页面作为容器，用于加载仓颉页面，以下将这种仓颉页面命名为仓颉页面组件。
 
-在 DevEco Studio 中增加仓颉页面步骤如下：
+在 DevEco Studio 中创建仓颉页面步骤如下：
 
 1. 在 **Project** 窗口，打开 **entry > src > main**，右键单击 **cangjie** 文件夹，选择 **New > Cangjie HybridComponent File**，命名为 **Second**，如下图所示：
 
