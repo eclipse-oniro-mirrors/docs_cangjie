@@ -891,7 +891,7 @@ public init(sampleSize!: UInt32 = 1, rotate!: UInt32 = 0, editable!: Bool = fals
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |sampleSize|UInt32|否|1|**命名参数。** 缩略图采样大小，默认值为1。当前只能取1。|
-|rotate|UInt32|否|0|**命名参数。** 旋转角度。默认值为0。|
+|rotate|UInt32|否|0|**命名参数。** 旋转角度。默认值为0。若设置浮点型旋转角度，推荐使用PixelMap类的[rotate](#func-rotatefloat32)接口。|
 |editable|Bool|否|false|**命名参数。** true表示可编辑，false表示不可编辑。默认值为false。当取值为false时，图片不可二次编辑，如writePixels操作将失败。|
 |desiredSize|[Size](#class-size)|否|Size(0, 0)|**命名参数。** 期望输出大小，必须为正整数，若与原尺寸比例不一致，则会进行拉伸/缩放到指定尺寸，默认为原始尺寸。|
 |desiredRegion|[Region](#class-region)|否|Region(Size(0, 0), 0, 0)|**命名参数。** 解码图像中由Region指定的矩形区域，当原始图像很大而只需要解码图像的一部分时，可以设置该参数，有助于提升性能，默认为原始大小。|

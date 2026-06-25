@@ -762,7 +762,7 @@ public init(sampleSize!: UInt32 = 1, rotate!: UInt32 = 0, editable!: Bool = fals
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
 | sampleSize | UInt32 | No | 1 | **Named parameter.** Thumbnail sampling size, currently only supports 1. |
-| rotate | UInt32 | No | 0 | **Named parameter.** Rotation angle. |
+| rotate | UInt32 | No | 0 | **Named parameter.** Rotation angle. The default value is 0. If setting a floating-point rotation angle, it is recommended to use the [rotate](#func-rotatefloat32) interface of the PixelMap class. |
 | editable | Bool | No | false | **Named parameter.** Editability. When set to false, the image cannot be further edited (e.g., crop operations will fail). |
 | desiredSize | [Size](#class-size) | No | Size(0, 0) | **Named parameter.** Desired output size. |
 | desiredRegion | [Region](#class-region) | No | Region(Size(0, 0), 0, 0) | **Named parameter.** Decoding region. |
