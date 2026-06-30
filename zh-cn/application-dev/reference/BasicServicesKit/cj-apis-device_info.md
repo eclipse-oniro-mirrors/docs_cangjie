@@ -791,8 +791,8 @@ public func apiAvailable(version: Int32): Bool
 import kit.BasicServicesKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
-let result1 = apiAvailable(13)
-Hilog.info(0, "deviceinfo", "apiAvailable(13) result: ${result1}")
+let result = apiAvailable(13)
+Hilog.info(0, "deviceinfo", "apiAvailable(13) result: ${result}")
 ```
 
 ## func apiAvailable(String)
@@ -829,6 +829,6 @@ public func apiAvailable(version: String): Bool
 import kit.BasicServicesKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
-let result2 = apiAvailable("26.0.0")
-Hilog.info(0, "deviceinfo", "apiAvailable(\"26.0.0\") result: ${result2}")
+let result = apiAvailable("26.0.0")
+Hilog.info(0, "deviceinfo", "apiAvailable(\"26.0.0\") result: ${result}")
 ```

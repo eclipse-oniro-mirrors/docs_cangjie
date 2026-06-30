@@ -411,7 +411,24 @@ public func getAllObjects(): Array<Album>
 ```cangjie
 // index.cj
 
-import kit.ArkUI.*
+import kit.ArkUI.LengthProp
+import kit.ArkUI.Column
+import kit.ArkUI.Row
+import kit.ArkUI.Text
+import kit.ArkUI.CustomView
+import kit.ArkUI.CJEntry
+import kit.ArkUI.loadNativeView
+import kit.ArkUI.FontWeight
+import kit.ArkUI.SubscriberManager
+import kit.ArkUI.ObservedProperty
+import kit.ArkUI.LocalStorage
+import kit.ArkUI.ForEach
+import kit.ArkUI.ReuseParams
+import kit.ArkUI.ViewBuilder
+import kit.ArkUI.ViewStackProcessor
+import kit.ArkUI.__Recycle__
+import kit.ArkUI.LegalCallCheck
+import kit.ArkUI.EmptyComponent
 import ohos.arkui.state_macro_manage.*
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
@@ -1208,7 +1225,24 @@ public func getAlbum(): Album
 ```cangjie
 // index.cj
 
-import kit.ArkUI.*
+import kit.ArkUI.LengthProp
+import kit.ArkUI.Column
+import kit.ArkUI.Row
+import kit.ArkUI.Text
+import kit.ArkUI.CustomView
+import kit.ArkUI.CJEntry
+import kit.ArkUI.loadNativeView
+import kit.ArkUI.FontWeight
+import kit.ArkUI.SubscriberManager
+import kit.ArkUI.ObservedProperty
+import kit.ArkUI.LocalStorage
+import kit.ArkUI.ForEach
+import kit.ArkUI.ReuseParams
+import kit.ArkUI.ViewBuilder
+import kit.ArkUI.ViewStackProcessor
+import kit.ArkUI.__Recycle__
+import kit.ArkUI.LegalCallCheck
+import kit.ArkUI.EmptyComponent
 import ohos.arkui.state_macro_manage.*
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
@@ -1990,7 +2024,25 @@ public func getWriteCacheHandler(): Int32
 ```cangjie
 // index.cj
 
-import kit.ArkUI.*
+import kit.ArkUI.LengthProp
+import kit.ArkUI.Column
+import kit.ArkUI.Row
+import kit.ArkUI.Text
+import kit.ArkUI.CustomView
+import kit.ArkUI.CJEntry
+import kit.ArkUI.loadNativeView
+import kit.ArkUI.FontWeight
+import kit.ArkUI.SubscriberManager
+import kit.ArkUI.ObservedProperty
+import kit.ArkUI.LocalStorage
+import kit.ArkUI.ForEach
+import kit.ArkUI.ReuseParams
+import kit.ArkUI.ViewBuilder
+import kit.ArkUI.ViewStackProcessor
+import kit.ArkUI.__Recycle__
+import kit.ArkUI.LegalCallCheck
+import kit.ArkUI.EmptyComponent
+import kit.ArkUI.Image
 import ohos.arkui.state_macro_manage.*
 import kit.MediaLibraryKit.*
 import kit.CoreFileKit.*
@@ -2448,7 +2500,7 @@ class MyCallback<T> <: Callback1Argument<T> {
 try {
     let ctx = Global.abilityContext // 此处需手动配置模板，获取Context上下文。上下文获取方式请参见使用说明。
     let phAccessHelper = getPhotoAccessHelper(ctx)
-    let callback1 = MyCallback<ChangeData>(
+    let callback = MyCallback<ChangeData>(
         {
             arg: ChangeData => Hilog.info(0, "AppLogCj",
                 "onCallback1. ChangeData: type = ${arg.notifyType.toString()}, uris.size: ${arg.uris.size}, extraUris.size = ${arg.extraUris.size}"
@@ -2458,7 +2510,7 @@ try {
     let fetchOptions: FetchOptions = FetchOptions(['title'], predicates)
     let fetchResult: PhotoAssetResult = phAccessHelper.getAssets(fetchOptions)
     let firstPhotoAsset = fetchResult.getFirstObject()
-    phAccessHelper.registerChange(firstPhotoAsset.uri, false, callback1)
+    phAccessHelper.registerChange(firstPhotoAsset.uri, false, callback)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -2558,7 +2610,7 @@ import ohos.callback_invoke.*
 import kit.PerformanceAnalysisKit.Hilog
 
 // 此处代码可添加在依赖项定义中
-class MyCallback1<T> <: Callback1Argument<T> {
+class MyCallback<T> <: Callback1Argument<T> {
     public let callabck_: (T) -> Unit
     public init(callabck: (T) -> Unit) {
         callabck_ = callabck
@@ -2571,7 +2623,7 @@ class MyCallback1<T> <: Callback1Argument<T> {
 try {
     let ctx = Global.abilityContext // 此处需手动配置模板，获取Context上下文。上下文获取方式请参见使用说明。
     let phAccessHelper = getPhotoAccessHelper(ctx)
-    let callback = MyCallback1<Array<String>>(
+    let callback = MyCallback<Array<String>>(
         {
             arg: Array<String> =>
             Hilog.info(0, "AppLogCj", "oncallback: Array.size: ${arg.size}")
@@ -2639,7 +2691,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 // 此处代码可添加在依赖项定义中
-class MyCallback2<T> <: Callback1Argument<T> {
+class MyCallback<T> <: Callback1Argument<T> {
     public let callabck_: (T) -> Unit
     public init(callabck: (T) -> Unit) {
         callabck_ = callabck
@@ -2652,7 +2704,7 @@ class MyCallback2<T> <: Callback1Argument<T> {
 try {
     let ctx = Global.abilityContext // 此处需手动配置模板，获取Context上下文。上下文获取方式请参见使用说明。
     let phAccessHelper = getPhotoAccessHelper(ctx)
-    let callback = MyCallback2<ChangeData>(
+    let callback = MyCallback<ChangeData>(
         {
             arg: ChangeData => Hilog.info(0, "AppLogCj",
                 "onCallback. ChangeData: type = ${arg.notifyType.toString()}, uris.size: ${arg.uris.size}, extraUris.size = ${arg.extraUris.size}"

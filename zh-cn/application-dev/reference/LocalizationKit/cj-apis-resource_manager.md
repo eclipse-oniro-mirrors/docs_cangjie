@@ -13,7 +13,7 @@ Configuration配置包括语言、区域、横竖屏、Mcc（移动国家码）�
 ## 导入模块
 
 ```cangjie
-import kit.LocalizationKit.*
+import kit.LocalizationKit.AppResource
 ```
 
 ## 使用说明
@@ -249,7 +249,7 @@ public func addResource(path: String): Unit
 ```cangjie
 // index.cj
 
-import kit.LocalizationKit.*
+import kit.LocalizationKit.AppResource
 import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -295,7 +295,7 @@ public func closeRawFd(path: String): Unit
 ```cangjie
 // index.cj
 
-import kit.LocalizationKit.*
+import kit.LocalizationKit.AppResource
 import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -348,7 +348,7 @@ public func getBoolean(resId: UInt32): Bool
 ```cangjie
 // index.cj
 
-import kit.LocalizationKit.*
+import kit.LocalizationKit.{AppResource,__GenerateResource__}
 import ohos.arkui.state_macro_manage.*
 import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
@@ -403,7 +403,7 @@ public func getBooleanByName(resName: String): Bool
 ```cangjie
 // index.cj
 
-import kit.LocalizationKit.*
+import kit.LocalizationKit.AppResource
 import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -456,7 +456,7 @@ public func getColor(resId: UInt32): UInt32
 ```cangjie
 // index.cj
 
-import kit.LocalizationKit.*
+import kit.LocalizationKit.{AppResource,__GenerateResource__}
 import ohos.arkui.state_macro_manage.*
 import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
@@ -511,7 +511,7 @@ public func getColorByName(resName: String): UInt32
 ```cangjie
 // index.cj
 
-import kit.LocalizationKit.*
+import kit.LocalizationKit.AppResource
 import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -548,7 +548,7 @@ public func getConfiguration(): Configuration
 ```cangjie
 // index.cj
 
-import kit.LocalizationKit.*
+import kit.LocalizationKit.AppResource
 import kit.PerformanceAnalysisKit.*
 import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
@@ -587,7 +587,7 @@ public func getDeviceCapability(): DeviceCapability
 ```cangjie
 // index.cj
 
-import kit.LocalizationKit.*
+import kit.LocalizationKit.AppResource
 import kit.PerformanceAnalysisKit.*
 import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
@@ -631,7 +631,7 @@ public func getLocales(includeSystem!: Bool = false): Array<String>
 ```cangjie
 // index.cj
 
-import kit.LocalizationKit.*
+import kit.LocalizationKit.AppResource
 import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -684,7 +684,7 @@ public func getMediaBase64ByName(resName: String, density!: ?ScreenDensity = Non
 ```cangjie
 // index.cj
 
-import kit.LocalizationKit.*
+import kit.LocalizationKit.AppResource
 import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -737,7 +737,7 @@ public func getMediaByName(resName: String, density!: ?ScreenDensity = None): Ar
 ```cangjie
 // index.cj
 
-import kit.LocalizationKit.*
+import kit.LocalizationKit.{AppResource,ScreenDensity}
 import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -790,7 +790,7 @@ public func getMediaContent(resId: UInt32, density!: ?ScreenDensity = None): Arr
 ```cangjie
 // index.cj
 
-import kit.LocalizationKit.*
+import kit.LocalizationKit.{AppResource,ScreenDensity,__GenerateResource__}
 import ohos.arkui.state_macro_manage.*
 import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
@@ -845,7 +845,7 @@ public func getMediaContentBase64(resId: UInt32, density!: ?ScreenDensity = None
 ```cangjie
 // index.cj
 
-import kit.LocalizationKit.*
+import kit.LocalizationKit.{AppResource,__GenerateResource__}
 import ohos.arkui.state_macro_manage.*
 import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
@@ -900,7 +900,7 @@ public func getNumber(resId: UInt32): NumberValueType
 ```cangjie
 // index.cj
 
-import kit.LocalizationKit.*
+import kit.LocalizationKit.{AppResource,__GenerateResource__}
 import kit.PerformanceAnalysisKit.*
 import ohos.arkui.state_macro_manage.*
 import ohos.business_exception.BusinessException
@@ -961,7 +961,7 @@ public func getNumberByName(resName: String): NumberValueType
 ```cangjie
 // index.cj
 
-import kit.LocalizationKit.*
+import kit.LocalizationKit.AppResource
 import kit.PerformanceAnalysisKit.*
 import ohos.arkui.state_macro_manage.*
 import ohos.business_exception.BusinessException
@@ -1026,7 +1026,7 @@ public func getPluralStringByName(resName: String, num: Int64): String
 ```cangjie
 // index.cj
 
-import kit.LocalizationKit.*
+import kit.LocalizationKit.AppResource
 import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -1084,7 +1084,7 @@ public func getPluralStringValue(resId: UInt32, num: Int64): String
 ```cangjie
 // index.cj
 
-import kit.LocalizationKit.*
+import kit.LocalizationKit.{AppResource,__GenerateResource__}
 import ohos.arkui.state_macro_manage.*
 import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
@@ -1141,7 +1141,7 @@ public func getRawFd(path: String): RawFileDescriptor
 ```cangjie
 // index.cj
 
-import kit.LocalizationKit.*
+import kit.LocalizationKit.AppResource
 import kit.PerformanceAnalysisKit.*
 import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
@@ -1194,7 +1194,7 @@ public func getRawFileContent(path: String): Array<UInt8>
 ```cangjie
 // index.cj
 
-import kit.LocalizationKit.*
+import kit.LocalizationKit.AppResource
 import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -1249,7 +1249,7 @@ public func getRawFileList(path: String): Array<String>
 ```cangjie
 // index.cj
 
-import kit.LocalizationKit.*
+import kit.LocalizationKit.AppResource
 import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -1304,7 +1304,7 @@ public func getString(resId: UInt32, args: Array<ArgsValueType>): String
 ```cangjie
 // index.cj
 
-import kit.LocalizationKit.*
+import kit.LocalizationKit.{AppResource,__GenerateResource__}
 import ohos.arkui.state_macro_manage.*
 import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
@@ -1359,7 +1359,7 @@ public func getStringArrayByName(resName: String): Array<String>
 ```cangjie
 // index.cj
 
-import kit.LocalizationKit.*
+import kit.LocalizationKit.AppResource
 import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -1412,7 +1412,7 @@ public func getStringArrayValue(resId: UInt32): Array<String>
 ```cangjie
 // index.cj
 
-import kit.LocalizationKit.*
+import kit.LocalizationKit.{AppResource,__GenerateResource__}
 import ohos.arkui.state_macro_manage.*
 import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
@@ -1469,7 +1469,7 @@ public func getStringByName(resName: String, args: Array<ArgsValueType>): String
 ```cangjie
 // index.cj
 
-import kit.LocalizationKit.*
+import kit.LocalizationKit.{AppResource,__GenerateResource__,ArgsValueType}
 import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -1518,7 +1518,7 @@ public func removeResource(path: String): Unit
 ```cangjie
 // index.cj
 
-import kit.LocalizationKit.*
+import kit.LocalizationKit.AppResource
 import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 

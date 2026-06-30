@@ -56,6 +56,9 @@ public interface JSInteropType<T> {
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+import ohos.ark_interop_macro.*
+
 @Interop[ArkTS]
 public class MyCustomClass {
     public let name: String   // String实现了JSInteropType<String>，所以可以在这里使用。
@@ -149,7 +152,8 @@ sealed interface JSKeyable <: ToString & ToJSValue {
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func keyableUsage(context: JSContext): Unit {
     // 创建可作为 JSObject 键的数组
@@ -212,7 +216,8 @@ func toJSValue(context: JSContext): JSValue
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func int8Translate(context: JSContext): Unit {
     let source: Int8 = 123
@@ -313,7 +318,8 @@ public func toJSValue(context: JSContext): JSValue
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func int16Translate(context: JSContext): Unit {
     let source: Int16 = 123
@@ -414,7 +420,8 @@ public func toJSValue(context: JSContext): JSValue
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func int32Translate(context: JSContext): Unit {
     let source: Int32 = 123
@@ -515,7 +522,8 @@ public func toJSValue(context: JSContext): JSValue
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func int64Translate(context: JSContext): Unit {
     let source: Int64 = 123
@@ -617,7 +625,8 @@ public func toJSValue(context: JSContext): JSValue
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func uint8Translate(context: JSContext): Unit {
     let source: UInt8 = 123
@@ -709,7 +718,8 @@ public func toJSValue(context: JSContext): JSValue
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func uint16Translate(context: JSContext): Unit {
     let source: UInt16 = 123
@@ -810,7 +820,8 @@ public func toJSValue(context: JSContext): JSValue
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func uint32Translate(context: JSContext): Unit {
     let source: UInt32 = 123
@@ -911,7 +922,8 @@ public func toJSValue(context: JSContext): JSValue
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func uint64Translate(context: JSContext): Unit {
     let source: UInt64 = 123
@@ -1013,7 +1025,8 @@ public func toJSValue(context: JSContext): JSValue
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func float16Translate(context: JSContext): Unit {
     let source: Float16 = 123.0
@@ -1114,7 +1127,8 @@ public func toJSValue(context: JSContext): JSValue
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func float32Translate(context: JSContext): Unit {
     let source: Float32 = 123.0
@@ -1215,7 +1229,8 @@ public func toJSValue(context: JSContext): JSValue
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func float64Translate(context: JSContext): Unit {
     let source: Float64 = 123.0
@@ -1315,7 +1330,8 @@ public func toJSValue(context: JSContext): JSValue
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func boolTranslate(context: JSContext): Unit {
     let source: Bool = true
@@ -1415,7 +1431,8 @@ public func toJSValue(context: JSContext): JSValue
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func stringTranslate(context: JSContext): Unit {
     let source: String = "123.0"
@@ -1484,7 +1501,8 @@ public static func toArktsType(): String
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func stringTranslate(context: JSContext): Unit {
     let source: String = "123.0"
@@ -1536,6 +1554,8 @@ public func toJSValue(context: JSContext): JSValue
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+
 func unitTranslate(context: JSContext): Unit {
     let source: Unit = ()
     let value = source.toJSValue(context)
@@ -1617,7 +1637,8 @@ public func toJSValue(context: JSContext): JSValue
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func optionTranslate(context: JSContext): Unit {
     let sources: Array<?String> = ["abc", None, "123"]
@@ -1718,7 +1739,8 @@ public func toJSValue(context: JSContext): JSValue
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func arrayTranslate(context: JSContext): Unit {
     let sources: Array<Byte> = [1, 4, 5]
@@ -1881,6 +1903,8 @@ public operator func [](index: Int64): JSValue
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let jsArr = callInfo[0].asArray()
     let firstElement = jsArr[0]
@@ -1919,6 +1943,8 @@ public operator func [](index: Int64, value!: JSValue): Unit
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let jsArr = callInfo[0].asArray()
     let setValue = context.number(1.0).toJSValue()
@@ -1958,6 +1984,8 @@ public operator func [](index: Int64, value!: JSHeapObject): Unit
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let jsArr = callInfo[0].asArray()
     let setValue = context.string("abc")
@@ -2007,7 +2035,8 @@ public prop byteLength: Int32
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func getBufferLength(context: JSContext, callInfo: JSCallInfo): JSValue {
     let arrayBuffer = callInfo[0].asArrayBuffer()
@@ -2046,7 +2075,8 @@ public func readBytes(): Array<Byte>
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func readBufferBytes(context: JSContext, callInfo: JSCallInfo): JSValue {
     let arrayBuffer = callInfo[0].asArrayBuffer()
@@ -2086,6 +2116,8 @@ public func toArrayBufferJSValue(): JSValue
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+
 func getArrayBufferJSValue(context: JSContext): JSValue {
     let data: Array<Byte> = [1, 2, 3, 4]
     let arrayBuffer = context.arrayBuffer(data)
@@ -2124,7 +2156,8 @@ public func toFloat32Array(): Array<Float32>
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func createFloat32Array(context: JSContext): Unit {
     let data: Array<Float32> = [1.0, 2.0, 3.0, 4.0]
@@ -2164,7 +2197,8 @@ public func toFloat32ArrayJSValue(): JSValue
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func convertToFloat32Array(context: JSContext, callInfo: JSCallInfo): JSValue {
     let arrayBuffer = callInfo[0].asArrayBuffer()
@@ -2204,7 +2238,8 @@ public func toFloat64Array(): Array<Float64>
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func convertToFloat64Array(context: JSContext, callInfo: JSCallInfo): JSValue {
     let arrayBuffer = callInfo[0].asArrayBuffer()
@@ -2244,6 +2279,8 @@ public func toFloat64ArrayJSValue(): JSValue
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+
 func getFloat64ArrayJSValue(context: JSContext, callInfo: JSCallInfo): JSValue {
     let arrayBuffer = callInfo[0].asArrayBuffer()
     let float64ArrayJSValue = arrayBuffer.toFloat64ArrayJSValue()
@@ -2281,7 +2318,8 @@ public func toInt16Array(): Array<Int16>
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func convertToInt16Array(context: JSContext, callInfo: JSCallInfo): JSValue {
     let arrayBuffer = callInfo[0].asArrayBuffer()
@@ -2321,6 +2359,8 @@ public func toInt16ArrayJSValue(): JSValue
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+
 func getInt16ArrayJSValue(context: JSContext, callInfo: JSCallInfo): JSValue {
     let arrayBuffer = callInfo[0].asArrayBuffer()
     let int16ArrayJSValue = arrayBuffer.toInt16ArrayJSValue()
@@ -2358,7 +2398,8 @@ public func toInt32Array(): Array<Int32>
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func convertToInt32Array(context: JSContext, callInfo: JSCallInfo): JSValue {
     let arrayBuffer = callInfo[0].asArrayBuffer()
@@ -2398,6 +2439,8 @@ public func toInt32ArrayJSValue(): JSValue
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+
 func getInt32ArrayJSValue(context: JSContext, callInfo: JSCallInfo): JSValue {
     let arrayBuffer = callInfo[0].asArrayBuffer()
     let int32ArrayJSValue = arrayBuffer.toInt32ArrayJSValue()
@@ -2435,7 +2478,8 @@ public func toInt64Array(): Array<Int64>
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func convertToInt64Array(context: JSContext, callInfo: JSCallInfo): JSValue {
     let arrayBuffer = callInfo[0].asArrayBuffer()
@@ -2475,6 +2519,8 @@ public func toInt64ArrayJSValue(): JSValue
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+
 func getInt64ArrayJSValue(context: JSContext, callInfo: JSCallInfo): JSValue {
     let arrayBuffer = callInfo[0].asArrayBuffer()
     let int64ArrayJSValue = arrayBuffer.toInt64ArrayJSValue()
@@ -2511,7 +2557,8 @@ public func toInt8Array(): Array<Int8>
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func convertToInt8Array(context: JSContext, callInfo: JSCallInfo): JSValue {
     let arrayBuffer = callInfo[0].asArrayBuffer()
@@ -2551,6 +2598,8 @@ public func toInt8ArrayJSValue(): JSValue
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+
 func getInt8ArrayJSValue(context: JSContext, callInfo: JSCallInfo): JSValue {
     let arrayBuffer = callInfo[0].asArrayBuffer()
     let int8ArrayJSValue = arrayBuffer.toInt8ArrayJSValue()
@@ -2588,7 +2637,8 @@ public func toUInt16Array(): Array<UInt16>
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func convertToUInt16Array(context: JSContext, callInfo: JSCallInfo): JSValue {
     let arrayBuffer = callInfo[0].asArrayBuffer()
@@ -2628,6 +2678,8 @@ public func toUInt16ArrayJSValue(): JSValue
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+
 func getUInt16ArrayJSValue(context: JSContext, callInfo: JSCallInfo): JSValue {
     let arrayBuffer = callInfo[0].asArrayBuffer()
     let uint16ArrayJSValue = arrayBuffer.toUInt16ArrayJSValue()
@@ -2665,7 +2717,8 @@ public func toUInt32Array(): Array<UInt32>
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func convertToUInt32Array(context: JSContext, callInfo: JSCallInfo): JSValue {
     let arrayBuffer = callInfo[0].asArrayBuffer()
@@ -2705,6 +2758,8 @@ public func toUInt32ArrayJSValue(): JSValue
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+
 func getUInt32ArrayJSValue(context: JSContext, callInfo: JSCallInfo): JSValue {
     let arrayBuffer = callInfo[0].asArrayBuffer()
     let uint32ArrayJSValue = arrayBuffer.toUInt32ArrayJSValue()
@@ -2742,7 +2797,8 @@ public func toUInt64Array(): Array<UInt64>
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func convertToUInt64Array(context: JSContext, callInfo: JSCallInfo): JSValue {
     let arrayBuffer = callInfo[0].asArrayBuffer()
@@ -2782,6 +2838,8 @@ public func toUInt64ArrayJSValue(): JSValue
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+
 func getUInt64ArrayJSValue(context: JSContext, callInfo: JSCallInfo): JSValue {
     let arrayBuffer = callInfo[0].asArrayBuffer()
     let uint64ArrayJSValue = arrayBuffer.toUInt64ArrayJSValue()
@@ -2818,7 +2876,8 @@ public func toUInt8Array(): Array<UInt8>
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func convertToUInt8Array(context: JSContext, callInfo: JSCallInfo): JSValue {
     let arrayBuffer = callInfo[0].asArrayBuffer()
@@ -2858,6 +2917,8 @@ public func toUInt8ArrayJSValue(): JSValue
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+
 func getUInt8ArrayJSValue(context: JSContext, callInfo: JSCallInfo): JSValue {
     let arrayBuffer = callInfo[0].asArrayBuffer()
     let uint8ArrayJSValue = arrayBuffer.toUInt8ArrayJSValue()
@@ -2895,6 +2956,8 @@ public func toUInt8ClampedArrayJSValue(): JSValue
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+
 func getUInt8ClampedArrayJSValue(context: JSContext, callInfo: JSCallInfo): JSValue {
     let arrayBuffer = callInfo[0].asArrayBuffer()
     let uint8ClampedArrayJSValue = arrayBuffer.toUInt8ClampedArrayJSValue()
@@ -3035,7 +3098,8 @@ public func clone(): JSArrayEx<T>
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func cloneArrayEx(context: JSContext): JSValue {
     let originalArray: Array<Int64> = [1, 2, 3, 4, 5]
@@ -3084,7 +3148,8 @@ public func concat(other: JSArrayEx<T>): JSArrayEx<T>
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func concatArrayEx(context: JSContext): JSValue {
     let array1: Array<Int64> = [1, 2, 3]
@@ -3135,14 +3200,15 @@ public func get(index: Int64): Option<T>
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func getElementFromArrayEx(context: JSContext, callInfo: JSCallInfo): JSValue {
     let array: Array<String> = ["apple", "banana", "cherry"]
     let jsArrayEx = JSArrayEx<String>(array)
 
     let element = jsArrayEx.get(1)  // 获取索引为1的元素
-    if (element != None) {
+    if (!element.isNone()) {
         Hilog.info(0, "test", "Element at index 1: ${element}")
     }
 
@@ -3179,7 +3245,8 @@ public func isEmpty(): Bool
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func checkArrayExEmpty(context: JSContext): JSValue {
     let emptyArray: Array<Int64> = []
@@ -3226,7 +3293,8 @@ public func set(index: Int64, element: T): Unit
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func setElementInArrayEx(context: JSContext): JSValue {
     let array: Array<Int64> = [1, 2, 3, 4, 5]
@@ -3269,7 +3337,8 @@ public func toArray(): Array<T>
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func convertArrayExToArray(context: JSContext): JSValue {
     let array: Array<String> = ["hello", "world", "cangjie"]
@@ -3350,7 +3419,8 @@ public operator func [](index: Int64): T
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func getIndexOperator(context: JSContext): JSValue {
     let array: Array<Int64> = [10, 20, 30, 40]
@@ -3394,7 +3464,8 @@ public operator func [](index: Int64, value!: T): Unit
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func setIndexOperator(context: JSContext): JSValue {
     let array: Array<Int64> = [1, 2, 3, 4]
@@ -3451,7 +3522,8 @@ public func toBigInt(): BigInt
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func convertToBigInt(context: JSContext, callInfo: JSCallInfo): JSValue {
     let jsBigInt = callInfo[0].asBigInt()
@@ -3502,7 +3574,8 @@ public func toBool(): Bool
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let jsBool = context.boolean(true)
@@ -3633,6 +3706,8 @@ public operator func [](index: Int64): JSValue
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     if (callInfo.count > 0) {
         let firstArg = callInfo[0]
@@ -3682,7 +3757,8 @@ public prop prototype: JSObject
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func accessClassPrototype(context: JSContext): JSValue {
     let ctor: JSLambda = { _, callInfo =>
@@ -3729,7 +3805,8 @@ public func addAccessor(key: JSKeyable, getter!: ?JSFunction = None, setter!: ?J
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let ctor: JSLambda = { _, callInfo =>
@@ -3779,7 +3856,8 @@ public func addAccessor(key: JSKeyable, getter!: ?JSLambda = None, setter!: ?JSL
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let ctor: JSLambda = { _, callInfo =>
@@ -3828,7 +3906,8 @@ public func addMethod(key: JSKeyable, method: JSFunction): Unit
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let ctor: JSLambda = { _, callInfo =>
@@ -3877,7 +3956,8 @@ public func addMethod(key: JSKeyable, method: JSLambda): Unit
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let ctor: JSLambda = { _, callInfo =>
@@ -3926,7 +4006,8 @@ public func addProperty(key: JSKeyable, value: JSValue): Unit
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let ctor: JSLambda = { _, callInfo =>
@@ -3971,6 +4052,8 @@ public func new(): JSValue
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let ctor: JSLambda = { _, callInfo =>
         return callInfo.thisArg
@@ -4017,6 +4100,8 @@ public func new(arg: JSValue): JSValue
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let ctor: JSLambda = { context, callInfo =>
         let firstArg = callInfo[0]
@@ -4067,6 +4152,8 @@ public func new(args: Array<JSValue>): JSValue
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let ctor: JSLambda = { context, callInfo =>
         let id = callInfo[0]
@@ -4125,7 +4212,8 @@ public prop env: JSEnv
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func accessContextEnv(context: JSContext): JSValue {
     let env = context.env
@@ -4162,7 +4250,8 @@ public prop global: JSObject
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func accessGlobalObject(context: JSContext): JSValue {
     let globalObj = context.global
@@ -4209,11 +4298,15 @@ public func newScope<T>(callback: ()->T): T
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
+
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
-    spawn (UIThread) {
+    spawn {
         context.newScope {
             let callback = context.function { c, _ =>
                 Hilog.info(0, "test", "newScope called")
+                return context.undefined().toJSValue()
             }
             callback.call()
         }
@@ -4258,6 +4351,8 @@ public func array(arr: Array<JSValue>): JSArray
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let result = context.array([])
     return result.toJSValue()
@@ -4301,6 +4396,8 @@ public func arrayBuffer(length: Int32): JSArrayBuffer
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let result = context.arrayBuffer(Int32(10))
     return result.toJSValue()
@@ -4343,6 +4440,8 @@ public func arrayBuffer(data: Array<Byte>): JSArrayBuffer
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let array : Array<Byte> = [1, 2, 3, 4, 5]
     let result = context.arrayBuffer(array)
@@ -4386,7 +4485,8 @@ public func arrayBuffer(data: Array<Int8>): JSArrayBuffer
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func createArrayBufferFromInt8(context: JSContext): JSValue {
     let int8Array: Array<Int8> = [1, 2, 3]
@@ -4434,7 +4534,8 @@ public func arrayBuffer(data: Array<Int16>): JSArrayBuffer
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func createArrayBufferFromInt16(context: JSContext): JSValue {
     let int16Array: Array<Int16> = [1, 2, 3]
@@ -4482,7 +4583,8 @@ public func arrayBuffer(data: Array<UInt16>): JSArrayBuffer
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func createArrayBufferFromUInt16(context: JSContext): JSValue {
     let uint16Array: Array<UInt16> = [1, 2, 3]
@@ -4530,7 +4632,8 @@ public func arrayBuffer(data: Array<UInt32>): JSArrayBuffer
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func createArrayBufferFromUInt32(context: JSContext): JSValue {
     let uint32Array: Array<UInt32> = [1, 2, 3]
@@ -4578,7 +4681,8 @@ public func arrayBuffer(data: Array<Int32>): JSArrayBuffer
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func createArrayBufferFromInt32(context: JSContext): JSValue {
     let int32Array: Array<Int32> = [1, 2, 3]
@@ -4626,7 +4730,8 @@ public func arrayBuffer(data: Array<Float32>): JSArrayBuffer
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func createArrayBufferFromFloat32(context: JSContext): JSValue {
     let float32Array: Array<Float32> = [1.0, 2.0, 3.0]
@@ -4674,7 +4779,8 @@ public func arrayBuffer(data: Array<Int64>): JSArrayBuffer
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func createArrayBufferFromInt64(context: JSContext): JSValue {
     let int64Array: Array<Int64> = [1, 2, 3]
@@ -4722,7 +4828,8 @@ public func arrayBuffer(data: Array<UInt64>): JSArrayBuffer
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func createArrayBufferFromUInt64(context: JSContext): JSValue {
     let uint64Array: Array<UInt64> = [1u64, 2u64, 3u64]
@@ -4770,7 +4877,8 @@ public func arrayBuffer(data: Array<Float64>): JSArrayBuffer
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func createArrayBufferFromFloat64(context: JSContext): JSValue {
     let float64Array: Array<Float64> = [1.0, 2.0, 3.0]
@@ -4820,6 +4928,8 @@ public unsafe func arrayBuffer(rawData: CPointer<Byte>, length: Int32, finalizer
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let rawPtr = unsafe {
         LibC.malloc<Byte>(count: 10)
@@ -4867,6 +4977,8 @@ public func bigint(value: Int64): JSBigInt
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let result = context.bigint(100)
     return result.toJSValue()
@@ -4909,6 +5021,7 @@ public func bigint(value: BigInt): JSBigInt
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
 import std.math.numeric.BigInt
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
@@ -4952,6 +5065,8 @@ public func boolean(value: Bool): JSBoolean
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let result = context.boolean(true)
     return result.toJSValue()
@@ -4995,6 +5110,8 @@ public func clazz(ctor: JSLambda, superClass!: ?JSClass = None): JSClass
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+
 func clsCtor(context: JSContext, callInfo: JSCallInfo): JSValue {
     callInfo.thisArg
 }
@@ -5041,6 +5158,8 @@ public func external(data: SharedObject): JSExternal
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+
 class Data <: SharedObject {}
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
@@ -5086,6 +5205,8 @@ public func function(lambda: JSLambda): JSFunction
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+
 func jsCallback(context: JSContext, callInfo: JSCallInfo): JSValue {
     return context.undefined().toJSValue()
 }
@@ -5125,7 +5246,8 @@ public func getNapiEnv(): napi_env
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func getNapiEnvironment(context: JSContext): JSValue {
     let napiEnv = context.getNapiEnv()
@@ -5155,6 +5277,8 @@ public func isInBindThread(): Bool
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+
 func createObject(context: JSContext): JSObject {
     if (!context.isInBindThread()) {
         throw Exception("not able to call arkts on current thread")
@@ -5192,6 +5316,8 @@ public func null(): JSNull
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let result = context.null()
     return result.toJSValue()
@@ -5233,6 +5359,8 @@ public func number(value: Float64): JSNumber
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let result = context.number(1.0)
     return result.toJSValue()
@@ -5274,6 +5402,8 @@ public func number(value: Int32): JSNumber
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let result = context.number(Int32(10))
     return result.toJSValue()
@@ -5310,6 +5440,8 @@ public func object(): JSObject
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let result = context.object()
     return result.toJSValue()
@@ -5336,6 +5468,8 @@ public func postJSTask(callback: ()->Unit): Unit
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+
 func createObject(context: JSContext, callback: (JSObject)->Unit): Unit {
     if (context.isInBindThread()) {
         callback(context.object())
@@ -5377,6 +5511,8 @@ public func promiseCapability(): JSPromiseCapability
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let result = context.promiseCapability()
     return result.toJSValue()
@@ -5421,7 +5557,8 @@ public func requireArkModule(path: String): JSValue
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 import ohos.business_exception.BusinessException
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
@@ -5476,6 +5613,8 @@ public func requireSystemNativeModule(moduleName: String, prefix!: ?String = Non
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+
 func doSth(context: JSContext): Unit {
     let hilog = context.requireSystemNativeModule("hilog")
     let pushService = context.requireSystemNativeModule("core.push.pushService", prefix: "hms")
@@ -5518,6 +5657,8 @@ public func string(value: String): JSString
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let result = context.string("abc")
     return result.toJSValue()
@@ -5560,6 +5701,8 @@ public func string(value: Utf16String): JSString
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let utf16string = Utf16String("abc")
     let result = context.string(utf16string)
@@ -5603,6 +5746,8 @@ public func symbol(description!: String = ""): JSSymbol
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let result = context.symbol()
     let symbol1 = context.symbol(description: "Symbol1")
@@ -5639,6 +5784,8 @@ public func undefined(): JSUndefined
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let result = context.undefined()
     return result.toJSValue()
@@ -5691,6 +5838,8 @@ public func cast<T>(): Option<T> where T <: SharedObject
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+
 class Data <: SharedObject {
     func doSth() {}
 }
@@ -5736,6 +5885,8 @@ public func getData(): SharedObject
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+
 class Data <: SharedObject {
     func doSth() {}
 }
@@ -5802,6 +5953,8 @@ public func call(thisArg!: JSValue = context.undefined().toJSValue()): JSValue
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let callback = callInfo[0].asFunction()
     return callback.call()
@@ -5845,6 +5998,8 @@ public func call(arg: JSValue, thisArg!: JSValue = context.undefined().toJSValue
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let callback = callInfo[0].asFunction()
     let arg0 = context.number(1.0).toJSValue()
@@ -5889,6 +6044,8 @@ public func call(args: Array<JSValue>, thisArg!: JSValue = context.undefined().t
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let callback = callInfo[0].asFunction()
     let arg0 = context.number(1.0).toJSValue()
@@ -5957,7 +6114,8 @@ public init(map: HashMap<K, V>)
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 import std.collection.HashMap
 
 func createHashMapExFromHashMap(context: JSContext): JSValue {
@@ -5986,7 +6144,8 @@ public init()
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func createEmptyHashMapEx(context: JSContext): JSValue {
     let jsHashMapEx = JSHashMapEx<String, Int64>()
@@ -6033,7 +6192,8 @@ public static func fromJSValue(context: JSContext, input: JSValue): JSHashMapEx<
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func convertJSValueToStringHashMapEx(context: JSContext, callInfo: JSCallInfo): JSValue {
     // 创建一个 JSHashMapEx<String, String>
@@ -6326,7 +6486,8 @@ public func isEmpty(): Bool
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func checkHashMapExEmpty(context: JSContext): JSValue {
     let emptyMap = JSHashMapEx<String, Int64>()
@@ -6369,7 +6530,8 @@ public func keys(): EquatableCollection<K>
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func getHashMapExKeys(context: JSContext): JSValue {
     let jsHashMapEx = JSHashMapEx<String, Int64>()
@@ -6414,7 +6576,8 @@ public func set(key: K, value: V): Unit
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func setHashMapExValue(context: JSContext): JSValue {
     let jsHashMapEx = JSHashMapEx<String, Int64>()
@@ -6455,7 +6618,8 @@ public func setAll(elements: Collection<(K, V)>): Unit
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func setAllHashMapExValues(context: JSContext): JSValue {
     let jsHashMapEx = JSHashMapEx<String, Int64>()
@@ -6617,7 +6781,8 @@ public operator func [](key: K): V
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func getIndexOperatorHashMapEx(context: JSContext): JSValue {
     let jsHashMapEx = JSHashMapEx<String, Int64>()
@@ -6660,7 +6825,8 @@ public operator func [](key: K, value!: V): Unit
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func setIndexOperatorHashMapEx(context: JSContext): JSValue {
     let jsHashMapEx = JSHashMapEx<String, Int64>()
@@ -6713,6 +6879,8 @@ public func toJSValue(): JSValue
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let number = context.number(123)
     let jsValue = number.toJSValue()
@@ -6753,6 +6921,8 @@ public static func registerClass(name: String, register: ClassRegister): Unit
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+
 class Main {
     static init() {
         JSModule.registerClass("libcangjieclass.so@SomeClass") { context =>
@@ -6786,6 +6956,8 @@ public static func registerFunc(name: String, register: FuncRegister): Unit
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+
 class Main {
     static init() {
         JSModule.registerFunc("libcangjieclass.so@doSth") { context, callInfo =>
@@ -6816,6 +6988,8 @@ public static func registerFunc(name: String, lambda: JSLambda): Unit
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+
 class Main {
     static init() {
         JSModule.registerFunc("libcangjieclass.so@doSth") { context, callInfo =>
@@ -6845,6 +7019,8 @@ public static func registerModule(register: ModuleRegister): Unit
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+
 class Main {
     static init() {
         JSModule.registerModule { context, exports =>
@@ -6877,6 +7053,8 @@ public static func registerModule(name: String, register: ModuleRegister): Unit
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+
 class Main {
     static init() {
         JSModule.registerModule("cangjiemodule@doSth") { context, exports =>
@@ -6962,7 +7140,8 @@ public func toFloat64(): Float64
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let jsNum = context.number(1.0)
@@ -7015,7 +7194,8 @@ public class JSObject <: JSObjectBase {}
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func setObjectProperties(context: JSContext): JSValue {
     let jsObject = context.object()
@@ -7071,6 +7251,8 @@ public func attachCJObject(target: JSExternal): Unit
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+
 class Data <: SharedObject {}
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
@@ -7119,6 +7301,8 @@ public func callMethod(key: JSKeyable, args: Array<JSValue>): JSValue
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let json = context.global["JSON"].asObject()
     json.callMethod("parse", [context.string("{a: 1, b: 2}").toJSValue()])
@@ -7168,6 +7352,8 @@ public func defineOwnAccessor(key: JSKeyable, getter!:? JSFunction = None, sette
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let obj = context.object()
     let getter = context.function { context, callInfo =>
@@ -7221,6 +7407,8 @@ public func defineOwnAccessor(key: JSKeyable, getter!:? JSLambda = None, setter!
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let obj = context.object()
     let getter: JSLambda = { context, callInfo =>
@@ -7275,6 +7463,8 @@ public func defineOwnProperty(key: JSKeyable, setValue: JSValue,
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let obj = context.object()
     obj.defineOwnProperty("a", context.number(1.0).toJSValue(), isWritable: true, isConfigurable: false)
@@ -7311,6 +7501,8 @@ public func getAttachInfo(): ?JSExternal
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+
 class Data <: SharedObject {
     func doSth() {}
 }
@@ -7360,6 +7552,8 @@ public func getProperty(key: JSKeyable): JSValue
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let obj = callInfo[0].asObject()
     let result = obj.getProperty("a")
@@ -7402,7 +7596,8 @@ public func hasProperty(key: JSKeyable): Bool
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let obj = callInfo[0].asObject()
@@ -7447,7 +7642,8 @@ public func instanceOf(clazz: JSClass): Bool
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let ctor: JSLambda = { context, callInfo =>
@@ -7490,7 +7686,8 @@ public func keys(): Array<String>
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let keys = context.global.keys()
@@ -7530,6 +7727,8 @@ public func setProperty(key: JSKeyable, setValue: JSValue): Unit
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let obj = context.object()
     obj.setProperty("a", context.number(1.0).toJSValue())
@@ -7573,6 +7772,8 @@ public operator func [](key: JSKeyable): JSValue
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let obj = callInfo[0].asObject()
     let result = obj["a"]
@@ -7611,6 +7812,8 @@ public operator func [](key: JSKeyable, value!: JSValue): Unit
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let obj = context.object()
     obj["a"] = context.number(1.0).toJSValue()
@@ -7665,6 +7868,8 @@ public func catchError(callback: JSFunction): Unit
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let promise = callInfo[0].asPromise()
     let onError: JSLambda = {context, callInfo =>
@@ -7705,6 +7910,8 @@ public func then(onFulfilled: JSFunction, onRejected!: ?JSFunction = None): Unit
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let promise = callInfo[0].asPromise()
     let onFulfilled: JSLambda = {context, callInfo =>
@@ -7757,6 +7964,8 @@ public func reject(value: JSValue): Unit
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let promise = context.promiseCapability()
     // toJSValue 需要在 reject 前，在 reject 之后该对象将不可访问
@@ -7795,6 +8004,8 @@ public func resolve(value: JSValue): Unit
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+
 func addNumberAsync(context: JSContext, callInfo: JSCallInfo): JSValue {
     let a = callInfo[0].toNumber()
     let b = callInfo[1].toNumber()
@@ -7835,6 +8046,8 @@ public func toJSValue(): JSValue
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+
 func addNumberAsync(context: JSContext, callInfo: JSCallInfo): JSValue {
     // 把 ArkTS 入参转换为仓颉类型
     let a = callInfo[0].toNumber()
@@ -7875,7 +8088,8 @@ public class JSRuntime {
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func getJSRuntimeInstance(): Unit {
     // 创建 JSRuntime 实例
@@ -8013,7 +8227,8 @@ public func toString(): String
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let jsStr = context.string("abc")
@@ -8130,7 +8345,8 @@ public class JSStringEx <: JSInteropType<JSStringEx> & Equatable<JSStringEx> & T
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func createJSStringEx(context: JSContext): JSValue {
     // 创建一个 JSStringEx 对象
@@ -8345,6 +8561,8 @@ public class JSSymbol <: JSHeapObject & JSKeyable {}
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+
 func createSymbol(context: JSContext): JSValue {
     // 创建一个 JSSymbol 对象
     let symbol = context.symbol(description: "mySymbol")
@@ -8478,6 +8696,8 @@ public func toJSValue(): JSValue
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let undefined = context.undefined()
     let jsValue = undefined.toJSValue()
@@ -8893,6 +9113,8 @@ public func bindObject(external: JSValue): Unit
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+
 class Data <: SharedObject {
 }
 
@@ -8937,6 +9159,8 @@ public func bindObject(data: SharedObject): Unit
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+
 class Data <: SharedObject {
 }
 
@@ -8981,6 +9205,8 @@ public func getBindingObject(): ?SharedObject
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+
 class Data <: SharedObject {
     func doSth() {}
 }
@@ -9033,6 +9259,8 @@ public func getElement(index: Int64): JSValue
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let jsArr = callInfo[0]
     let element = jsArr.getElement(0)
@@ -9076,6 +9304,8 @@ public func getProperty(key: JSKeyable): JSValue
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let jsObJ = callInfo[0]
     let element = jsObJ.getProperty("a")
@@ -9116,6 +9346,8 @@ public func isArray(): Bool
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     // 获取入参
     let arg0 = callInfo[0]
@@ -9155,6 +9387,8 @@ public func isArrayBuffer(): Bool
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     // 获取入参
     let arg0 = callInfo[0]
@@ -9194,6 +9428,8 @@ public func isBigInt(): Bool
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     // 获取入参
     let arg0 = callInfo[0]
@@ -9233,6 +9469,8 @@ public func isBoolean(): Bool
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     // 获取入参
     let arg0 = callInfo[0]
@@ -9272,6 +9510,8 @@ public func isClass(): Bool
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     // 获取入参
     let arg0 = callInfo[0]
@@ -9311,6 +9551,8 @@ public func isExternal(): Bool
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     // 获取入参
     let arg0 = callInfo[0]
@@ -9350,6 +9592,8 @@ public func isFunction(): Bool
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     // 获取入参
     let arg0 = callInfo[0]
@@ -9389,6 +9633,8 @@ public func isNull(): Bool
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     // 获取入参
     let arg0 = callInfo[0]
@@ -9428,6 +9674,8 @@ public func isNumber(): Bool
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     // 获取入参
     let arg0 = callInfo[0]
@@ -9467,6 +9715,8 @@ public func isObject(): Bool
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     // 获取入参
     let arg0 = callInfo[0]
@@ -9506,6 +9756,8 @@ public func isPromise(): Bool
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     // 获取入参
     let arg0 = callInfo[0]
@@ -9545,6 +9797,8 @@ public func isString(): Bool
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     // 获取入参
     let arg0 = callInfo[0]
@@ -9584,6 +9838,8 @@ public func isSymbol(): Bool
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     // 获取入参
     let arg0 = callInfo[0]
@@ -9623,6 +9879,8 @@ public func isUndefined(): Bool
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     // 获取入参
     let arg0 = callInfo[0]
@@ -9665,6 +9923,8 @@ public func setElement(index: Int64, value: JSValue): Unit
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let jsArr = callInfo[0]
     let setValue = context.number(1.0)
@@ -9706,6 +9966,8 @@ public func setProperty(key: JSKeyable, setValue: JSValue): Unit
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let jsObJ = context.object()
     let setValue = context.number(1.0)
@@ -9749,6 +10011,8 @@ public func strictEqual(target: JSValue): Bool
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     // 获取两个入参
     let arg0 = callInfo[0]
@@ -9790,7 +10054,8 @@ public func toBigInt(): BigInt
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let value = callInfo[0].toBigInt()
@@ -9829,7 +10094,8 @@ public func toBoolean(): Bool
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let value = callInfo[0].toBoolean()
@@ -9868,7 +10134,8 @@ public func toNumber(): Float64
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let value = callInfo[0].toNumber()
@@ -9908,6 +10175,8 @@ public func toString(): String
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+
 // 判断首个参数是否是数字，如果是返回true，如果否返回数据类型的字符串
 func checkIsNumber(context: JSContext, callInfo: JSCallInfo): JSValue {
     // 获取参数
@@ -9979,7 +10248,8 @@ public func typeof(): JSType
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     // 获取首个参数
@@ -10008,6 +10278,8 @@ public open class SharedObject {
 
 <!--compile-->
 ```cangjie
+import ohos.ark_interop.*
+
 // 创建一个类继承 SharedObject
 class MyObject <: SharedObject {
     let name: String = "MyObject"
@@ -10099,7 +10371,8 @@ public prop accessible: Bool
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func checkStringAccessibility(context: JSContext): JSValue {
     let utf16Str = Utf16String("Test String")
@@ -10143,7 +10416,8 @@ public prop size: Int64
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func getStringSize(context: JSContext): JSValue {
     let utf16Str = Utf16String("Hello 世界")  // 包含中英文混合字符串
@@ -10181,7 +10455,8 @@ public prop totalChars: Int64
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func getStringTotalChars(context: JSContext): JSValue {
     let utf16Str = Utf16String("Hello 世界")  // 包含中英文混合字符串
@@ -10235,7 +10510,8 @@ public init(src: String)
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func createUtf16String(context: JSContext): JSValue {
     // 从字符串创建 Utf16String
@@ -10288,7 +10564,8 @@ public static func fromJSValue(_: JSContext, value: JSValue): Utf16String
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func createFromJSValue(context: JSContext): JSValue {
     let jsString = context.string("Hello from JS")
@@ -10413,7 +10690,8 @@ public func count(src: Utf16String): Int64
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func countSubstring(context: JSContext): JSValue {
     let utf16Str = Utf16String("Hello World Hello Hello")
@@ -10441,7 +10719,8 @@ public func dispose(): Unit
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func disposeString(context: JSContext): JSValue {
     let utf16Str = Utf16String("Test String")
@@ -10494,7 +10773,8 @@ public func endsWith(target: Utf16String): Bool
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func checkEndsWith(context: JSContext): JSValue {
     let utf16Str = Utf16String("Hello World")
@@ -10536,7 +10816,8 @@ public func hashCode(): Int64
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func getStringHashCode(context: JSContext): JSValue {
     let utf16Str = Utf16String("Hello World")
@@ -10582,7 +10863,8 @@ public func indexOf(target: Utf16String): ?Int64
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func findSubstring(context: JSContext): JSValue {
     let utf16Str = Utf16String("Hello World Hello")
@@ -10590,7 +10872,7 @@ func findSubstring(context: JSContext): JSValue {
 
     let index = utf16Str.indexOf(target)
 
-    if (index != None) {
+    if (!index.isNone()) {
         Hilog.info(0, "test", "Found 'World' at index: ${index}")
     } else {
         Hilog.info(0, "test", "Substring not found")
@@ -10659,7 +10941,8 @@ public func isEmpty(): Bool
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func checkIsEmpty(context: JSContext): JSValue {
     let emptyStr = Utf16String("")
@@ -10703,7 +10986,8 @@ public func isCompressed(): Bool
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func checkIsCompressed(context: JSContext): JSValue {
     let utf16Str = Utf16String("Hello World")
@@ -10750,7 +11034,8 @@ public func lastIndexOf(target: Utf16String): ?Int64
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func findLastSubstring(context: JSContext): JSValue {
     let utf16Str = Utf16String("Hello World Hello")
@@ -10758,7 +11043,7 @@ func findLastSubstring(context: JSContext): JSValue {
 
     let index = utf16Str.lastIndexOf(target)
 
-    if (index != None) {
+    if (!index.isNone()) {
         Hilog.info(0, "test", "Last 'Hello' found at index: ${index}")
     } else {
         Hilog.info(0, "test", "Substring not found")
@@ -10803,7 +11088,8 @@ public func lastIndexOf(target: Utf16String, fromIndex: Int64): ?Int64
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func findLastSubstringFromIndex(context: JSContext): JSValue {
     let utf16Str = Utf16String("Hello World Hello")
@@ -10812,7 +11098,7 @@ func findLastSubstringFromIndex(context: JSContext): JSValue {
     // 从索引10开始向前查找
     let index = utf16Str.lastIndexOf(target, 10)
 
-    if (index != None) {
+    if (!index.isNone()) {
         Hilog.info(0, "test", "Last 'Hello' found at index: ${index}")
     } else {
         Hilog.info(0, "test", "Substring not found")
@@ -10857,7 +11143,8 @@ public func lazySplit(separator: Utf16String, removeEmpty!: Bool = false): Itera
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func lazySplitString(context: JSContext): JSValue {
     let utf16Str = Utf16String("Hello,World,Test,Example")
@@ -10936,7 +11223,8 @@ public func lines(): Iterator<Utf16String>
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func getLines(context: JSContext): JSValue {
     let utf16Str = Utf16String("Line 1\nLine 2\nLine 3")
@@ -10990,7 +11278,8 @@ public func replace(old: Utf16String, new: Utf16String, count!: Int64 = Int64.Ma
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func replaceString(context: JSContext): JSValue {
     let utf16Str = Utf16String("Hello World Hello")
@@ -11066,7 +11355,8 @@ public func split(separator: Utf16String, removeEmpty!: Bool = false): Array<Utf
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func splitString(context: JSContext): JSValue {
     let utf16Str = Utf16String("Hello,World,Test")
@@ -11152,7 +11442,8 @@ public func startsWith(target: Utf16String): Bool
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func checkStartsWith(context: JSContext): JSValue {
     let utf16Str = Utf16String("Hello World")
@@ -11201,7 +11492,8 @@ public func toJSValue(context: JSContext): JSValue
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func convertToJSValue(context: JSContext): JSValue {
     let utf16Str = Utf16String("Hello from Utf16String")
@@ -11243,7 +11535,8 @@ public func toString(): String
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func convertToString(context: JSContext): JSValue {
     let utf16Str = Utf16String("Hello Utf16String")
@@ -11554,7 +11847,8 @@ public struct JSType {
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import ohos.ark_interop.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     // 获取首个参数

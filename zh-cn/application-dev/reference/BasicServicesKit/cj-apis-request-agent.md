@@ -1670,8 +1670,8 @@ import kit.PerformanceAnalysisKit.Hilog
 import ohos.callback_invoke.*
 import ohos.business_exception.BusinessException
 
-public class ProgressCallback1 <: Callback1Argument<HttpResponse> {
-    public ProgressCallback1(let f: (HttpResponse) -> Unit) {}
+public class ProgressCallback <: Callback1Argument<HttpResponse> {
+    public ProgressCallback(let f: (HttpResponse) -> Unit) {}
 
     public func invoke(err: ?BusinessException, arg: HttpResponse): Unit {
         f(arg)
@@ -1684,7 +1684,7 @@ try {
         "zipURL"
     )
     let task = create(Global.abilityContext, config)
-    let callback = ProgressCallback1({response => Hilog.info(0, "test", "invoke success")})
+    let callback = ProgressCallback({response => Hilog.info(0, "test", "invoke success")})
     task.on(EventCallbackType.Response, callback)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.toString()}")
@@ -1722,8 +1722,8 @@ import kit.PerformanceAnalysisKit.Hilog
 import ohos.business_exception.BusinessException
 import ohos.callback_invoke.*
 
-public class ProgressCallback2 <: Callback1Argument<Progress> {
-    public ProgressCallback2(let f: (Progress) -> Unit) {}
+public class ProgressCallback <: Callback1Argument<Progress> {
+    public ProgressCallback(let f: (Progress) -> Unit) {}
 
     public func invoke(err: ?BusinessException, arg: Progress): Unit {
         f(arg)
@@ -1736,7 +1736,7 @@ try {
         "zipURL"
     )
     let task = create(Global.abilityContext, config)
-    let callback = ProgressCallback2({progress => Hilog.info(0, "test", "invoke success")})
+    let callback = ProgressCallback({progress => Hilog.info(0, "test", "invoke success")})
     task.on(EventCallbackType.Pause, callback)
     task.off(EventCallbackType.Pause, callback: callback)
 } catch (e: BusinessException) {

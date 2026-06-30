@@ -282,7 +282,7 @@ import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 // 此处代码可添加在依赖项定义中
-class BLEDeviceFindCallback1 <: Callback1Argument<Array<ScanResult>> {
+class BLEDeviceFindCallback <: Callback1Argument<Array<ScanResult>> {
     public func invoke(err: ?BusinessException, devices: Array<ScanResult>): Unit {
         for (device in devices) {
             Hilog.info(0, "Bluetooth", "device has find, deviceID is ${device.deviceId}, name is ${device.deviceName}")
@@ -290,7 +290,7 @@ class BLEDeviceFindCallback1 <: Callback1Argument<Array<ScanResult>> {
     }
 }
 
-let bleDeviceFindCallback = BLEDeviceFindCallback1()
+let bleDeviceFindCallback = BLEDeviceFindCallback()
 try {
     on(BluetoothBleCallbackType.BleDeviceFind, bleDeviceFindCallback)
 } catch (e: BusinessException) {
@@ -517,7 +517,7 @@ import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 // 此处代码可添加在依赖项定义中
-class BLEDeviceFindCallback2 <: Callback1Argument<Array<ScanResult>> {
+class BLEDeviceFindCallback <: Callback1Argument<Array<ScanResult>> {
     public func invoke(err: ?BusinessException, devices: Array<ScanResult>): Unit {
         for (device in devices) {
             Hilog.info(0, "Bluetooth", "device has find, deviceID is ${device.deviceId}, name is ${device.deviceName}")
@@ -525,7 +525,7 @@ class BLEDeviceFindCallback2 <: Callback1Argument<Array<ScanResult>> {
     }
 }
 
-let bleDeviceFindCallback = BLEDeviceFindCallback2()
+let bleDeviceFindCallback = BLEDeviceFindCallback()
 try {
     on(BluetoothBleCallbackType.BleDeviceFind, bleDeviceFindCallback)
     var scanFilter = ScanFilter()
@@ -2430,7 +2430,7 @@ import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 // 此处代码可添加在依赖项定义中
-class BLEConnectionStateChangeCallback1 <: Callback1Argument<BleConnectionChangeState> {
+class BLEConnectionStateChangeCallback <: Callback1Argument<BleConnectionChangeState> {
     public func invoke(err: ?BusinessException, stateInfo: BleConnectionChangeState): Unit {
         Hilog.info(0, "Bluetooth", "onGattServerStateChange: device=" + stateInfo.deviceId + ", state=" + stateInfo.state.toString())
     }
@@ -2438,7 +2438,7 @@ class BLEConnectionStateChangeCallback1 <: Callback1Argument<BleConnectionChange
 
 try {
     let gattClient = createGattClientDevice("XX:XX:XX:XX:XX:XX")  // 请替换为您的设备地址
-    let bleConnectionStateChangeCallback = BLEConnectionStateChangeCallback1()
+    let bleConnectionStateChangeCallback = BLEConnectionStateChangeCallback()
     gattClient.on(BluetoothBleGattClientDeviceCallbackType.BleConnectionStateChange, bleConnectionStateChangeCallback)
 } catch (e: BusinessException) {
     Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}", "")
@@ -4160,7 +4160,7 @@ import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 // 此处代码可添加在依赖项定义中
-class StateChangeCallback1 <: Callback1Argument<BleConnectionChangeState> {
+class StateChangeCallback <: Callback1Argument<BleConnectionChangeState> {
     public func invoke(err: ?BusinessException, state: BleConnectionChangeState): Unit {
         Hilog.info(0, "Bluetooth", "onGattServerStateChange: device=" + state.deviceId + ", state=" + state.state.toString())
     }
@@ -4168,7 +4168,7 @@ class StateChangeCallback1 <: Callback1Argument<BleConnectionChangeState> {
 
 try {
     let gattServer = createGattServer()
-    let stateChangeCallback = StateChangeCallback1()
+    let stateChangeCallback = StateChangeCallback()
     gattServer.on(BluetoothBleGattServerCallbackType.ConnectionStateChange, stateChangeCallback)
 } catch (e: BusinessException) {
     Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}", "")
@@ -4218,7 +4218,7 @@ import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 // 此处代码可添加在依赖项定义中
-class BLEMtuChangeCallback1 <: Callback1Argument<Int32> {
+class BLEMtuChangeCallback <: Callback1Argument<Int32> {
     public func invoke(err: ?BusinessException, mtu: Int32): Unit {
         Hilog.info(0, "Bluetooth", "mtu change to ${mtu}")
     }
@@ -4226,7 +4226,7 @@ class BLEMtuChangeCallback1 <: Callback1Argument<Int32> {
 
 try {
     let gattServer = createGattServer()
-    let bleMtuChangeCallback = BLEMtuChangeCallback1()
+    let bleMtuChangeCallback = BLEMtuChangeCallback()
     gattServer.on(BluetoothBleGattServerCallbackType.ServerBleMtuChange, bleMtuChangeCallback)
 } catch (e: BusinessException) {
     Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}", "")

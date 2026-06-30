@@ -256,7 +256,7 @@ public func fetchFrameByTime(timeUs: Int64, options: AVImageQueryOptions, param:
 // index.cj
 
 import kit.MediaKit.*
-import kit.LocalizationKit.*
+import kit.LocalizationKit.AppResource
 import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -303,7 +303,7 @@ public func release(): Unit
 // index.cj
 
 import kit.MediaKit.*
-import kit.LocalizationKit.*
+import kit.LocalizationKit.AppResource
 import kit.PerformanceAnalysisKit.*
 import ohos.business_exception.BusinessException
 

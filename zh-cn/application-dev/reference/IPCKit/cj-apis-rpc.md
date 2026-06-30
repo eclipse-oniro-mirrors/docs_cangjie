@@ -137,7 +137,7 @@ func unmarshalling(dataIn: MessageSequence): Bool
 import kit.IPCKit.*
 
 // 此处代码可添加在依赖项定义中
-class MyParcelable1 <: Parcelable {
+class MyParcelable <: Parcelable {
     var num: Int32 = 0
     var str: String = ''
 
@@ -159,12 +159,12 @@ class MyParcelable1 <: Parcelable {
     }
 }
 
-let parcelable = MyParcelable1(1, "aaa")
-let parcelable2 = MyParcelable1(2, "bbb")
-let parcelable3 = MyParcelable1(3, "ccc")
+let parcelable = MyParcelable(1, "aaa")
+let parcelable2 = MyParcelable(2, "bbb")
+let parcelable3 = MyParcelable(3, "ccc")
 let data = MessageSequence.create()
 data.writeParcelableArray(parcelable,parcelable2,parcelable3)
-let ret: Array<Parcelable> = [MyParcelable1(0, ""), MyParcelable1(0, ""), MyParcelable1(0, "")]
+let ret: Array<Parcelable> = [MyParcelable(0, ""), MyParcelable(0, ""), MyParcelable(0, "")]
 data.readParcelableArray(ret)
 ```
 
@@ -1985,7 +1985,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 // 此处代码可添加在依赖项定义中
-class MyParcelable2 <: Parcelable {
+class MyParcelable <: Parcelable {
     var num: Int32 = 0
     var str: String = ''
 
@@ -2008,10 +2008,10 @@ class MyParcelable2 <: Parcelable {
 }
 
 try {
-    let parcelable = MyParcelable2(1, "aaa")
+    let parcelable = MyParcelable(1, "aaa")
     let data = MessageSequence.create()
     data.writeParcelable(parcelable)
-    let ret = MyParcelable2()
+    let ret = MyParcelable()
     data.readParcelable(ret)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
@@ -2057,7 +2057,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 // 此处代码可添加在依赖项定义中
-class MyParcelable3 <: Parcelable {
+class MyParcelable <: Parcelable {
     var num: Int32 = 0
     var str: String = ''
 
@@ -2080,12 +2080,12 @@ class MyParcelable3 <: Parcelable {
 }
 
 try {
-    let parcelable = MyParcelable3(1, "aaa")
-    let parcelable2 = MyParcelable3(2, "bbb")
-    let parcelable3 = MyParcelable3(3, "ccc")
+    let parcelable = MyParcelable(1, "aaa")
+    let parcelable2 = MyParcelable(2, "bbb")
+    let parcelable3 = MyParcelable(3, "ccc")
     let data = MessageSequence.create()
     data.writeParcelableArray(parcelable,parcelable2,parcelable3)
-    let ret: Array<Parcelable> = [MyParcelable3(0, ""), MyParcelable3(0, ""), MyParcelable3(0, "")]
+    let ret: Array<Parcelable> = [MyParcelable(0, ""), MyParcelable(0, ""), MyParcelable(0, "")]
     data.readParcelableArray(ret)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
@@ -3561,7 +3561,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 // 此处代码可添加在依赖项定义中
-class MyParcelable4 <: Parcelable {
+class MyParcelable <: Parcelable {
     var num: Int32 = 0
     var str: String = ''
 
@@ -3584,10 +3584,10 @@ class MyParcelable4 <: Parcelable {
 }
 
 try {
-    let parcelable = MyParcelable4(1, "aaa")
+    let parcelable = MyParcelable(1, "aaa")
     let data = MessageSequence.create()
     data.writeParcelable(parcelable)
-    let ret = MyParcelable4()
+    let ret = MyParcelable()
     data.readParcelable(ret)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
@@ -3632,7 +3632,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 // 此处代码可添加在依赖项定义中
-class MyParcelable5 <: Parcelable {
+class MyParcelable <: Parcelable {
     var num: Int32 = 0
     var str: String = ''
 
@@ -3655,12 +3655,12 @@ class MyParcelable5 <: Parcelable {
 }
 
 try {
-    let parcelable = MyParcelable5(1, "aaa")
-    let parcelable2 = MyParcelable5(2, "bbb")
-    let parcelable3 = MyParcelable5(3, "ccc")
+    let parcelable = MyParcelable(1, "aaa")
+    let parcelable2 = MyParcelable(2, "bbb")
+    let parcelable3 = MyParcelable(3, "ccc")
     let data = MessageSequence.create()
     data.writeParcelableArray(parcelable,parcelable2,parcelable3)
-    let ret: Array<Parcelable> = [MyParcelable5(0, ""), MyParcelable5(0, ""), MyParcelable5(0, "")]
+    let ret: Array<Parcelable> = [MyParcelable(0, ""), MyParcelable(0, ""), MyParcelable(0, "")]
     data.readParcelableArray(ret)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")

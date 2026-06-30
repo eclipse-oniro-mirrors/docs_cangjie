@@ -1987,7 +1987,7 @@ import kit.PerformanceAnalysisKit.*
 import ohos.business_exception.BusinessException
 import ohos.callback_invoke.*
 
-class Callback1 <: Callback0Argument {
+class Callback <: Callback0Argument {
     public func invoke(res: ?BusinessException): Unit {
         Hilog.info(0, "test", "invoke success")
     }
@@ -1996,7 +1996,7 @@ class Callback1 <: Callback0Argument {
 try {
     let size = Size(8, 8192)
     let receiver = createImageReceiver(size, ImageFormat.Jpeg, 8)
-    let callback = Callback1()
+    let callback = Callback()
     receiver.on(ImageArrival, callback)
     receiver.off(ImageArrival)
 } catch (e: BusinessException) {

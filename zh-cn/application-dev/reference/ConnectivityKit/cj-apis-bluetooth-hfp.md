@@ -291,14 +291,14 @@ import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 // 此处定义所需要的依赖项等
-class StateChangeCallback1 <: Callback1Argument<StateChangeParam> {
+class StateChangeCallback <: Callback1Argument<StateChangeParam> {
     public func invoke(err: ?BusinessException, arg: StateChangeParam): Unit {
         let connectionState = arg.state.toString()
         Hilog.info(0, "Bluetooth", "profile connection state has change to ${connectionState}")
     }
 }
 
-let changeCallBack = StateChangeCallback1()
+let changeCallBack = StateChangeCallback()
 let hdfProfile = createHfpAgProfile()
 try {
     hdfProfile.on(ProfileCallbackType.ConnectionStateChange, changeCallBack)
@@ -351,14 +351,14 @@ import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 // 此处定义所需要的依赖项等
-class StateChangeCallback2 <: Callback1Argument<StateChangeParam> {
+class StateChangeCallback <: Callback1Argument<StateChangeParam> {
     public func invoke(err: ?BusinessException, arg: StateChangeParam): Unit {
         let connectionState = arg.state.toString()
         Hilog.info(0, "Bluetooth", "profile connection state has change to ${connectionState}")
     }
 }
 
-let changeCallBack = StateChangeCallback2()
+let changeCallBack = StateChangeCallback()
 let hdfProfile = createHfpAgProfile()
 try {
     hdfProfile.on(ProfileCallbackType.ConnectionStateChange, changeCallBack)
