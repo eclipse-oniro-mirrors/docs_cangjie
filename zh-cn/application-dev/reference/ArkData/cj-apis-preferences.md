@@ -889,7 +889,7 @@ import kit.PerformanceAnalysisKit.Hilog
 import ohos.business_exception.BusinessException
 
 // 回调函数
-class Callback1 <: Callback1Argument<String> {
+class Callback <: Callback1Argument<String> {
     public func invoke(err: ?BusinessException, arg: String): Unit {
         Hilog.info(0, "AppLogCj", "=========callback========= ${arg.toString()}======================")
     }
@@ -898,7 +898,7 @@ class Callback1 <: Callback1Argument<String> {
 try {
     var str = "container"
     var a = Preferences.getPreferences(Global.abilityContext, str) // 此处需手动配置模板，获取Context上下文。上下文获取方式请参见使用说明。
-    var c = Callback1()
+    var c = Callback()
     a.on(PreferencesEvent.PreferencesChange, c)
     a.put("kkk1", PreferencesValueType.StringData("vvv1"))
     a.flush()

@@ -2420,7 +2420,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 // 此处代码可添加在依赖项定义中
-class TestCallback1 <: Callback0Argument {
+class TestCallback <: Callback0Argument {
     public init() {}
     public func invoke(err: ?BusinessException): Unit {
         Hilog.info(0, "test", "Call invoke.", "")
@@ -2429,7 +2429,7 @@ class TestCallback1 <: Callback0Argument {
 
 try {
     var rdbStore: RdbStore = getRdbStore(Global.abilityContext, StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db")) // 此处需手动配置模板，获取Context上下文。上下文获取方式请参见使用说明。
-    let testCallback = TestCallback1()
+    let testCallback = TestCallback()
     rdbStore.on("PRINT", false, testCallback)
     rdbStore.off("PRINT", false, observer: testCallback)
 } catch (e: BusinessException) {
@@ -2482,7 +2482,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 // 此处代码可添加在依赖项定义中
-class TestCallback2 <: Callback0Argument {
+class TestCallback <: Callback0Argument {
     public init() {}
     public func invoke(err: ?BusinessException): Unit {
         Hilog.info(0, "test", "Call invoke.", "")
@@ -2492,7 +2492,7 @@ class TestCallback2 <: Callback0Argument {
 try {
     var rdbStore: RdbStore = getRdbStore(Global.abilityContext,
         StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db")) // 此处需手动配置模板，获取Context上下文。上下文获取方式请参见使用说明。
-    let testCallback = TestCallback2()
+    let testCallback = TestCallback()
     rdbStore.on("PRINT", false, testCallback)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")

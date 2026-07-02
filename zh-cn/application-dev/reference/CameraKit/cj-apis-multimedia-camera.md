@@ -3232,7 +3232,6 @@ public func createVideoOutput(profile: VideoProfile, surfaceId: String): VideoOu
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -3246,7 +3245,7 @@ try {
     // 假设从AVRecorder获取surfaceId
     let surfaceId: String = "surfaceId_from_avrecorder"
     let videoOutput = cameraManager.createVideoOutput(profile, surfaceId)
-} catch (e: BusinessException) {
+} catch (e: Exception) {
     Hilog.info(0, "test", "${e.message}")
 }
 ```
@@ -3893,7 +3892,7 @@ import ohos.callback_invoke.Callback1Argument
 import kit.PerformanceAnalysisKit.Hilog
 
 // 此处代码可添加在依赖项定义中
-class TestCallbackTorchStatusChange1 <: Callback1Argument<TorchStatusInfo> {
+class TestCallbackTorchStatusChange <: Callback1Argument<TorchStatusInfo> {
     public init() {}
     public func invoke(err: ?BusinessException, res: TorchStatusInfo): Unit {
         Hilog.info(0, "Camera", "Call invoke TorchStatusChange. isTorchAvailable: ${res.isTorchAvailable}, isTorchActive: ${res.isTorchActive}, torchLevel:${res.torchLevel}")
@@ -3903,7 +3902,7 @@ class TestCallbackTorchStatusChange1 <: Callback1Argument<TorchStatusInfo> {
 try {
     let ctx = Global.abilityContext // 此处需手动配置模板，获取Context上下文。上下文获取方式请参见使用说明。
     let cameraManager = getCameraManager(ctx)
-    let testCallbackTorchStatusChange = TestCallbackTorchStatusChange1()
+    let testCallbackTorchStatusChange = TestCallbackTorchStatusChange()
     cameraManager.on(CameraEvents.TorchStatusChange, testCallbackTorchStatusChange)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
@@ -3954,7 +3953,7 @@ import ohos.callback_invoke.Callback1Argument
 import kit.PerformanceAnalysisKit.Hilog
 
 // 此处代码可添加在依赖项定义中
-class TestCallbackTorchStatusChange2 <: Callback1Argument<TorchStatusInfo> {
+class TestCallbackTorchStatusChange <: Callback1Argument<TorchStatusInfo> {
     public init() {}
     public func invoke(err: ?BusinessException, res: TorchStatusInfo): Unit {
         Hilog.info(0, "Camera", "Call invoke TorchStatusChange. isTorchAvailable: ${res.isTorchAvailable}, isTorchActive: ${res.isTorchActive}, torchLevel:${res.torchLevel}")
@@ -3964,7 +3963,7 @@ class TestCallbackTorchStatusChange2 <: Callback1Argument<TorchStatusInfo> {
 try {
     let ctx = Global.abilityContext // 此处需手动配置模板，获取Context上下文。上下文获取方式请参见使用说明。
     let cameraManager = getCameraManager(ctx)
-    let testCallbackTorchStatusChange = TestCallbackTorchStatusChange2()
+    let testCallbackTorchStatusChange = TestCallbackTorchStatusChange()
     cameraManager.on(CameraEvents.TorchStatusChange, testCallbackTorchStatusChange)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
@@ -5488,7 +5487,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 // 此处代码可添加在依赖项定义中
-class TestCallbackError3 <: Callback0Argument {
+class TestCallbackError <: Callback0Argument {
     public init() {}
     public func invoke(res: ?BusinessException): Unit {
         Hilog.info(0, "Camera", "Call invoke error. code: ${res?.code}, msg: ${res?.message}")
@@ -5502,7 +5501,7 @@ try {
     let mode = cameraManager.getSupportedSceneModes(device)[0]
     let ability = cameraManager.getSupportedOutputCapability(device, mode)
     let output = cameraManager.createPhotoOutput(profile:ability.photoProfiles[0])
-    let testCallbackError = TestCallbackError3()
+    let testCallbackError = TestCallbackError()
     output.on(CameraEvents.CameraError, testCallbackError)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
@@ -5549,7 +5548,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 // 此处代码可添加在依赖项定义中
-class TestCallbackError4 <: Callback0Argument {
+class TestCallbackError <: Callback0Argument {
     public init() {}
     public func invoke(res: ?BusinessException): Unit {
         Hilog.info(0, "Camera", "Call invoke error. code: ${res?.code}, msg: ${res?.message}")
@@ -5563,7 +5562,7 @@ try {
     let mode = cameraManager.getSupportedSceneModes(device)[0]
     let ability = cameraManager.getSupportedOutputCapability(device, mode)
     let output = cameraManager.createPhotoOutput(profile:ability.photoProfiles[0])
-    let testCallbackError = TestCallbackError4()
+    let testCallbackError = TestCallbackError()
     output.on(CameraEvents.CameraError, testCallbackError)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
@@ -5614,7 +5613,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 // 此处代码可添加在依赖项定义中
-class TestCallbackError5 <: Callback0Argument {
+class TestCallbackError <: Callback0Argument {
     public init() {}
     public func invoke(res: ?BusinessException): Unit {
         Hilog.info(0, "Camera", "Call invoke error. code: ${res?.code}, msg: ${res?.message}")
@@ -5628,7 +5627,7 @@ try {
     let mode = cameraManager.getSupportedSceneModes(device)[0]
     let ability = cameraManager.getSupportedOutputCapability(device, mode)
     let output = cameraManager.createPhotoOutput(profile:ability.photoProfiles[0])
-    let testCallbackError = TestCallbackError5()
+    let testCallbackError = TestCallbackError()
     output.on(CameraEvents.CameraError, testCallbackError)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
@@ -5679,7 +5678,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 // 此处代码可添加在依赖项定义中
-class TestCallbackError6 <: Callback0Argument {
+class TestCallbackError <: Callback0Argument {
     public init() {}
     public func invoke(res: ?BusinessException): Unit {
         Hilog.info(0, "Camera", "Call invoke error. code: ${res?.code}, msg: ${res?.message}")
@@ -5693,7 +5692,7 @@ try {
     let mode = cameraManager.getSupportedSceneModes(device)[0]
     let ability = cameraManager.getSupportedOutputCapability(device, mode)
     let output = cameraManager.createPhotoOutput(profile:ability.photoProfiles[0])
-    let testCallbackError = TestCallbackError6()
+    let testCallbackError = TestCallbackError()
     output.on(CameraEvents.CameraError, testCallbackError)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
@@ -5744,7 +5743,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 // 此处代码可添加在依赖项定义中
-class TestCallbackError7 <: Callback0Argument {
+class TestCallbackError <: Callback0Argument {
     public init() {}
     public func invoke(res: ?BusinessException): Unit {
         Hilog.info(0, "Camera", "Call invoke error. code: ${res?.code}, msg: ${res?.message}")
@@ -5758,7 +5757,7 @@ try {
     let mode = cameraManager.getSupportedSceneModes(device)[0]
     let ability = cameraManager.getSupportedOutputCapability(device, mode)
     let output = cameraManager.createPhotoOutput(profile:ability.photoProfiles[0])
-    let testCallbackError = TestCallbackError7()
+    let testCallbackError = TestCallbackError()
     output.on(CameraEvents.CameraError, testCallbackError)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
@@ -5809,7 +5808,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 // 此处代码可添加在依赖项定义中
-class TestCallbackError8 <: Callback0Argument {
+class TestCallbackError <: Callback0Argument {
     public init() {}
     public func invoke(res: ?BusinessException): Unit {
         Hilog.info(0, "Camera", "Call invoke error. code: ${res?.code}, msg: ${res?.message}")
@@ -5823,7 +5822,7 @@ try {
     let mode = cameraManager.getSupportedSceneModes(device)[0]
     let ability = cameraManager.getSupportedOutputCapability(device, mode)
     let output = cameraManager.createPhotoOutput(profile:ability.photoProfiles[0])
-    let testCallbackError = TestCallbackError8()
+    let testCallbackError = TestCallbackError()
     output.on(CameraEvents.CameraError, testCallbackError)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
@@ -6206,7 +6205,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 // 此处代码可添加在依赖项定义中
-class SmoothZoomInfoAvailableCallback4 <: Callback1Argument<SmoothZoomInfo> {
+class SmoothZoomInfoAvailableCallback <: Callback1Argument<SmoothZoomInfo> {
     public static var invoked = false
 
     public func invoke(err: ?BusinessException, info: SmoothZoomInfo) {
@@ -6220,7 +6219,7 @@ try {
     let cameraManager = getCameraManager(ctx)
     let photoSession = cameraManager.createSession(SceneMode.NormalPhoto) as PhotoSession
     let session = photoSession.getOrThrow()
-    let callback = SmoothZoomInfoAvailableCallback4()
+    let callback = SmoothZoomInfoAvailableCallback()
     session.on(CameraEvents.SmoothZoomInfoAvailable, callback)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
@@ -6320,7 +6319,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 // 此处代码可添加在依赖项定义中
-class SmoothZoomInfoAvailableCallback2 <: Callback1Argument<SmoothZoomInfo> {
+class SmoothZoomInfoAvailableCallback <: Callback1Argument<SmoothZoomInfo> {
     public static var invoked = false
 
     public func invoke(err: ?BusinessException, info: SmoothZoomInfo) {
@@ -6334,7 +6333,7 @@ try {
     let cameraManager = getCameraManager(ctx)
     let photoSession = cameraManager.createSession(SceneMode.NormalPhoto) as PhotoSession
     let session = photoSession.getOrThrow()
-    let callback = SmoothZoomInfoAvailableCallback2()
+    let callback = SmoothZoomInfoAvailableCallback()
     session.on(CameraEvents.SmoothZoomInfoAvailable, callback)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
@@ -6873,7 +6872,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 // 此处代码可添加在依赖项定义中
-class TestCallbackError1 <: Callback0Argument {
+class TestCallbackError <: Callback0Argument {
     public init() {}
     public func invoke(res: ?BusinessException): Unit {
         Hilog.info(0, "Camera", "Call invoke error. code: ${res?.code}, msg: ${res?.message}")
@@ -6890,7 +6889,7 @@ try {
     let receiver = createImageReceiver(size, ImageFormat.Jpeg, 8)
     let surfaceId: String = receiver.getReceivingSurfaceId()
     let output = cameraManager.createPreviewOutput(ability.previewProfiles[0], surfaceId)
-    let testCallbackError = TestCallbackError1()
+    let testCallbackError = TestCallbackError()
     output.on(CameraEvents.CameraError, testCallbackError)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
@@ -7752,7 +7751,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 // 此处代码可添加在依赖项定义中
-class TestCallbackError2 <: Callback0Argument {
+class TestCallbackError <: Callback0Argument {
     public init() {}
     public func invoke(res: ?BusinessException): Unit {
         Hilog.info(0, "Camera", "Call invoke error. code: ${res?.code}, msg: ${res?.message}")
@@ -7769,7 +7768,7 @@ try {
     let receiver = createImageReceiver(size, ImageFormat.Jpeg, 8)
     let surfaceId: String = receiver.getReceivingSurfaceId()
     let output = cameraManager.createVideoOutput(ability.videoProfiles[0], surfaceId)
-    let testCallbackError = TestCallbackError2()
+    let testCallbackError = TestCallbackError()
     output.on(CameraEvents.CameraError, testCallbackError)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
@@ -8347,7 +8346,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 // 此处代码可添加在依赖项定义中
-class SmoothZoomInfoAvailableCallback3 <: Callback1Argument<SmoothZoomInfo> {
+class SmoothZoomInfoAvailableCallback <: Callback1Argument<SmoothZoomInfo> {
     public static var invoked = false
 
     public func invoke(err: ?BusinessException, info: SmoothZoomInfo) {
@@ -8361,7 +8360,7 @@ try {
     let cameraManager = getCameraManager(ctx)
     let videoSession = cameraManager.createSession(SceneMode.NormalVideo) as VideoSession
     let session = videoSession.getOrThrow()
-    let callback = SmoothZoomInfoAvailableCallback3()
+    let callback = SmoothZoomInfoAvailableCallback()
     session.on(CameraEvents.SmoothZoomInfoAvailable, callback)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
@@ -8412,7 +8411,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 // 此处代码可添加在依赖项定义中
-class FocusStateChangeCallback1 <: Callback1Argument<FocusState> {
+class FocusStateChangeCallback <: Callback1Argument<FocusState> {
     public static var invoked = false
 
     public func invoke(err: ?BusinessException, state: FocusState) {
@@ -8426,7 +8425,7 @@ try {
     let cameraManager = getCameraManager(ctx)
     let videoSession = cameraManager.createSession(SceneMode.NormalVideo) as VideoSession
     let session = videoSession.getOrThrow()
-    let callback = FocusStateChangeCallback1()
+    let callback = FocusStateChangeCallback()
     session.on(CameraEvents.FocusStateChange, callback)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
@@ -8477,7 +8476,7 @@ import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 // 此处代码可添加在依赖项定义中
-class SmoothZoomInfoAvailableCallback6 <: Callback1Argument<SmoothZoomInfo> {
+class SmoothZoomInfoAvailableCallback <: Callback1Argument<SmoothZoomInfo> {
     public static var invoked = false
 
     public func invoke(err: ?BusinessException, info: SmoothZoomInfo) {
@@ -8492,7 +8491,7 @@ try {
     let cameraManager = getCameraManager(ctx)
     let videoSession = cameraManager.createSession(SceneMode.NormalVideo) as VideoSession
     let session = videoSession.getOrThrow()
-    let callback = SmoothZoomInfoAvailableCallback6()
+    let callback = SmoothZoomInfoAvailableCallback()
     session.on(CameraEvents.SmoothZoomInfoAvailable, callback)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")

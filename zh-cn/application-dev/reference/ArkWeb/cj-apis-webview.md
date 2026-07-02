@@ -128,7 +128,7 @@ import kit.PerformanceAnalysisKit.Hilog
 
 @Entry
 @Component
-class webview_0 {
+class WebView {
     let webController = WebviewController()
     func build() {
         Column(space: 10) {
@@ -828,7 +828,7 @@ import kit.PerformanceAnalysisKit.Hilog
 
 @Entry
 @Component
-class webview_1 {
+class WebView {
     let webController = WebviewController()
     let headers = [WebHeader("headerKey", "headerValue")]
     func build() {
@@ -908,7 +908,7 @@ import kit.PerformanceAnalysisKit.Hilog
 
 @Entry
 @Component
-class webview_2 {
+class WebView {
     let webController = WebviewController()
     func build() {
         Column(space: 10) {
@@ -988,7 +988,7 @@ import kit.PerformanceAnalysisKit.Hilog
 
 @Entry
 @Component
-class webview_3 {
+class WebView {
     var message: String = "Hello World"
     let webController = WebviewController()
     func build() {
@@ -1064,7 +1064,7 @@ import kit.PerformanceAnalysisKit.Hilog
 
 @Entry
 @Component
-class webview_4 {
+class WebView {
     let webController = WebviewController()
     func build() {
         Column(space: 10) {
@@ -1129,7 +1129,7 @@ import kit.PerformanceAnalysisKit.Hilog
 
 @Entry
 @Component
-class webview_5 {
+class WebView {
     let webController = WebviewController()
     func build() {
         Column(space: 10) {
@@ -1194,7 +1194,7 @@ import kit.PerformanceAnalysisKit.Hilog
 
 @Entry
 @Component
-class webview_6 {
+class WebView {
     let webController = WebviewController()
     func build() {
         Column(space: 10) {
@@ -1266,7 +1266,7 @@ import kit.PerformanceAnalysisKit.Hilog
 
 @Entry
 @Component
-class webview_7 {
+class WebView {
     let webController = WebviewController()
     func build() {
         Column(space: 10) {
@@ -1331,7 +1331,7 @@ import kit.PerformanceAnalysisKit.Hilog
 
 @Entry
 @Component
-class webview_8 {
+class WebView {
     let webController = WebviewController()
     func build() {
         Column(space: 10) {
@@ -1402,7 +1402,7 @@ import kit.PerformanceAnalysisKit.Hilog
 
 @Entry
 @Component
-class webview_9 {
+class WebView {
     let webController = WebviewController()
     func build() {
         Column(space: 10) {
@@ -1475,7 +1475,7 @@ import kit.PerformanceAnalysisKit.Hilog
 
 @Entry
 @Component
-class webview_10 {
+class WebView {
     let webController = WebviewController()
     let headers = [WebHeader("headerKey", "headerValue")]
     func build() {
@@ -1548,7 +1548,7 @@ import kit.PerformanceAnalysisKit.Hilog
 
 @Entry
 @Component
-class webview_13 {
+class WebView {
     let webController = WebviewController()
     func build() {
         Column(space: 10) {
@@ -1620,7 +1620,7 @@ import kit.PerformanceAnalysisKit.Hilog
 
 @Entry
 @Component
-class webview_14 {
+class WebView {
     let webController = WebviewController()
     func build() {
         Column(space: 10) {
@@ -1685,7 +1685,7 @@ import kit.PerformanceAnalysisKit.Hilog
 
 @Entry
 @Component
-class webview_15 {
+class WebView {
     let webController = WebviewController()
     func build() {
         Column(space: 10) {
@@ -1765,7 +1765,7 @@ import kit.PerformanceAnalysisKit.Hilog
 
 @Entry
 @Component
-class webview_16 {
+class WebView {
     let webController = WebviewController()
     func build() {
         Column(space: 10) {
@@ -1837,7 +1837,7 @@ import kit.PerformanceAnalysisKit.Hilog
 
 @Entry
 @Component
-class webview_17 {
+class WebView {
     let webController = WebviewController()
     func build() {
         Column(space: 10) {
@@ -1908,7 +1908,7 @@ import kit.PerformanceAnalysisKit.Hilog
 
 @Entry
 @Component
-class webview_18 {
+class WebView {
     let webController = WebviewController()
     let headers = [WebHeader("headerKey", "headerValue")]
     func build() {
@@ -1980,7 +1980,7 @@ import kit.PerformanceAnalysisKit.Hilog
 
 @Entry
 @Component
-class webview_19 {
+class WebView {
     let webController = WebviewController()
     func build() {
         Column(space: 10) {
@@ -2052,7 +2052,7 @@ import kit.PerformanceAnalysisKit.Hilog
 
 @Entry
 @Component
-class webview_20 {
+class WebView {
     let webController = WebviewController()
     func build() {
         Column(space: 10) {
@@ -2123,7 +2123,7 @@ import kit.PerformanceAnalysisKit.Hilog
 
 @Entry
 @Component
-class webview_21 {
+class WebView {
     let webController = WebviewController()
     func build() {
         Column(space: 10) {
@@ -2194,7 +2194,7 @@ import kit.PerformanceAnalysisKit.Hilog
 
 @Entry
 @Component
-class webview_22 {
+class WebView {
     let webController = WebviewController()
     func build() {
         Column(space: 10) {
@@ -2259,7 +2259,7 @@ import kit.PerformanceAnalysisKit.Hilog
 
 @Entry
 @Component
-class webview_23 {
+class WebView {
     let webController = WebviewController()
     let headers = [WebHeader("headerKey", "headerValue")]
     func build() {
@@ -2349,7 +2349,7 @@ let callback: AsyncCallback<String> = {
 
 @Entry
 @Component
-class webview_24 {
+class WebView {
     func build() {
         Row {
             Column {
@@ -2501,11 +2501,12 @@ import ohos.arkui.state_macro_manage.Component
 import kit.ArkWeb.*
 import kit.ArkUI.Web
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.arkui.state_macro_manage.rawfile
+import ohos.arkui.state_macro_manage.*
+import kit.LocalizationKit.{AppResource,__GenerateResource__}
 
 @Entry
 @Component
-class webview_25 {
+class WebView {
     let webController = WebviewController()
     let headers = [WebHeader("headerKey", "headerValue")]
     func build() {
@@ -2585,7 +2586,7 @@ import kit.PerformanceAnalysisKit.Hilog
 
 @Entry
 @Component
-class webview_26 {
+class WebView {
     let webController = WebviewController()
     let headers = [WebHeader("headerKey", "headerValue")]
     func build() {
@@ -2651,7 +2652,7 @@ import kit.PerformanceAnalysisKit.Hilog
 
 @Entry
 @Component
-class webview_27 {
+class WebView {
     let webController = WebviewController()
     func build() {
         Column(space: 10) {
@@ -2736,7 +2737,7 @@ let callback1: AsyncCallback<String> = {
 
 @Entry
 @Component
-class webview_28 {
+class WebView {
     let webController = WebviewController()
     func build() {
         Column(space: 10) {
@@ -2808,7 +2809,7 @@ import kit.PerformanceAnalysisKit.Hilog
 
 @Entry
 @Component
-class webview_29 {
+class WebView {
     let webController = WebviewController()
     func build() {
         Column(space: 10) {
@@ -2874,7 +2875,7 @@ import kit.PerformanceAnalysisKit.Hilog
 
 @Entry
 @Component
-class webview_30 {
+class WebView {
     let webController = WebviewController()
     func build() {
         Column(space: 10) {
@@ -2940,7 +2941,7 @@ import kit.PerformanceAnalysisKit.Hilog
 
 @Entry
 @Component
-class webview_31 {
+class WebView {
     let webController = WebviewController()
     func build() {
         Column(space: 10) {
@@ -3017,8 +3018,8 @@ import kit.ArkWeb.*
 import kit.ArkUI.Web
 import kit.PerformanceAnalysisKit.Hilog
 import ohos.business_exception.*
-import ohos.arkui.state_macro_manage.rawfile
-import ohos.resource.__GenerateResource__
+import ohos.arkui.state_macro_manage.*
+import kit.LocalizationKit.{AppResource,__GenerateResource__}
 
 let callback2: AsyncCallback<String> = {
     errorCode: Option<BusinessException>, data: Option<String> => match (errorCode) {
@@ -3032,7 +3033,7 @@ let callback2: AsyncCallback<String> = {
 
 @Entry
 @Component
-class webview_32 {
+class WebView {
     let webController = WebviewController()
     func build() {
         Column(space: 10) {
@@ -3124,7 +3125,7 @@ import kit.PerformanceAnalysisKit.Hilog
 
 @Entry
 @Component
-class webview_33 {
+class WebView {
     let webController = WebviewController()
     func build() {
         Column(space: 10) {
@@ -3221,7 +3222,7 @@ import kit.PerformanceAnalysisKit.Hilog
 
 @Entry
 @Component
-class webview_34 {
+class WebView {
     let webController = WebviewController()
     func build() {
         Column(space: 10) {
@@ -3320,7 +3321,7 @@ import kit.PerformanceAnalysisKit.Hilog
 
 @Entry
 @Component
-class webview_35 {
+class WebView {
     let webController = WebviewController()
     func build() {
         Column(space: 10) {
