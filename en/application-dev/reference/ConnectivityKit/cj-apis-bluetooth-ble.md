@@ -2630,7 +2630,7 @@ public func setBLEMtuSize(mtu: Int32): Unit
 
 | Parameter Name | Type | Required | Default Value | Description |
 |:---|:---|:---|:---|:---|
-| mtu | Int32 | Yes | - | Range: 22~512 bytes. |
+| mtu | Int32 | Yes | - | Range: 23~517 bytes. |
 
 **Exceptions:**
 
