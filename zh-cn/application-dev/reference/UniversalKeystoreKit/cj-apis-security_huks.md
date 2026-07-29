@@ -127,7 +127,7 @@ public func anonAttestKeyItem(keyAlias: String, options: HuksOptions): Array<Str
   | :---- | :--- |
   | 201 | check permission failed. |
   | 801 | api is not supported. |
-  | 12000001 | algorithm mode is not supported. |
+  | 12000001 | The feature or capability is not supported. |
   | 12000004 | operating file failed. |
   | 12000005 | IPC communication failed. |
   | 12000006 | error occurred in crypto engine. |
@@ -282,7 +282,7 @@ public func exportKeyItem(keyAlias: String, _: HuksOptions): Bytes
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 801 | api is not supported. |
-  | 12000001 | algorithm mode is not supported. |
+  | 12000001 | The feature or capability is not supported. |
   | 12000004 | operating file failed. |
   | 12000005 | IPC communication failed. |
   | 12000006 | error occurred in crypto engine. |
@@ -358,7 +358,7 @@ public func finishSession(handle: HuksHandleId, options: HuksOptions, token!: By
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 801 | api is not supported. |
-  | 12000001 | algorithm mode is not supported. |
+  | 12000001 | The feature or capability is not supported. |
   | 12000002 | algorithm param is missing. |
   | 12000003 | algorithm param is invalid. |
   | 12000004 | operating file failed. |
@@ -431,7 +431,7 @@ public func generateKeyItem(keyAlias: String, options: HuksOptions): Unit
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 801 | api is not supported. |
-  | 12000001 | algorithm mode is not supported. |
+  | 12000001 | The feature or capability is not supported. |
   | 12000002 | algorithm param is missing. |
   | 12000003 | algorithm param is invalid. |
   | 12000004 | operating file failed. |
@@ -504,7 +504,7 @@ public func getKeyItemProperties(keyAlias: String, _: HuksOptions): Array<HuksPa
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 801 | api is not supported. |
-  | 12000001 | algorithm mode is not supported. |
+  | 12000001 | The feature or capability is not supported. |
   | 12000004 | operating file failed. |
   | 12000005 | IPC communication failed. |
   | 12000006 | error occurred in crypto engine. |
@@ -557,7 +557,7 @@ public func importKeyItem(keyAlias: String, options: HuksOptions): Unit
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 801 | api is not supported. |
-  | 12000001 | algorithm mode is not supported. |
+  | 12000001 | The feature or capability is not supported. |
   | 12000002 | algorithm param is missing. |
   | 12000003 | algorithm param is invalid. |
   | 12000004 | operating file failed. |
@@ -630,7 +630,7 @@ public func importWrappedKeyItem(keyAlias: String, wrappingKeyAlias: String, opt
   | :---- | :--- |
   | 201 | check permission failed. |
   | 801 | api is not supported. |
-  | 12000001 | algorithm mode is not supported. |
+  | 12000001 | The feature or capability is not supported. |
   | 12000002 | algorithm param is missing. |
   | 12000003 | algorithm param is invalid. |
   | 12000004 | operating file failed. |
@@ -709,7 +709,7 @@ public func initSession(keyAlias: String, options: HuksOptions): HuksSessionHand
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 801 | api is not supported. |
-  | 12000001 | algorithm mode is not supported. |
+  | 12000001 | The feature or capability is not supported. |
   | 12000002 | algorithm param is missing. |
   | 12000003 | algorithm param is invalid. |
   | 12000004 | operating file failed. |
@@ -861,7 +861,7 @@ public func updateSession(handle: HuksHandleId, options: HuksOptions, token!: By
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 801 | api is not supported. |
-  | 12000001 | algorithm mode is not supported. |
+  | 12000001 | The feature or capability is not supported. |
   | 12000002 | algorithm param is missing. |
   | 12000003 | algorithm param is invalid. |
   | 12000004 | operating file failed. |
