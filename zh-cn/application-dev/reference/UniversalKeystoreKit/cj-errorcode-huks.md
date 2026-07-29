@@ -14,19 +14,21 @@
 
 **错误信息**
 
-The ``${messageInfo}`` is not supported.
+The feature or capability is not supported.
 
 **错误描述**
 
-不支持``${messageInfo}``中给出的特性（功能）。
+当前调用的特性（功能）不支持使用，具体特性（功能）可通过打印的errorMessage获取。
 
 **可能原因**
 
-支持API，但是不支持API内部某些子特性（功能），如算法参数。
+1. 不支持使用的子特性。
+2. 不支持使用的算法参数。
 
 **处理步骤**
 
-调整API参数，使用支持的可替代参数。
+1. 查看errorMessage确认不支持的子特性，请避免在当前设备环境中调用该特性；如确属业务必要，请前往官方开发者社区提交反馈。
+2. 参考[HUKS开发指南](../../security/UniversalKeystoreKit/cj-huks-overview.md)中各能力介绍及算法规格的具体章节，确认调用接口规格，调整API参数，使用支持的算法参数。
 
 ## 12000002 缺少密钥算法参数
 
