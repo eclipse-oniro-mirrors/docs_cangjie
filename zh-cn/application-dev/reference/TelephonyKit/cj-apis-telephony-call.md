@@ -352,7 +352,7 @@ public static func makeCall(phoneNumber: String): Unit
   | 8300002 | Service connection failed. |
   | 8300003 | System internal error. |
   | 8300999 | Internal error. |
-  |2097177|Permission invalid. |
+  | 2097177 |Permission invalid. |
 
 **示例：**
 
