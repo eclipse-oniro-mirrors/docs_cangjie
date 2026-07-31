@@ -344,6 +344,7 @@ public static func makeCall(phoneNumber: String): Unit
   | 8300002 | Operation failed. Cannot connect to service. |
   | 8300003 | System internal error. |
   | 8300999 | Unknown error code. |
+  | 2097177 |Permission invalid. |
 
 **Example:**
 
