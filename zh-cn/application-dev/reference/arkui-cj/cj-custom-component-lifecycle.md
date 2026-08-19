@@ -138,6 +138,8 @@ protected open func aboutToReuse(_: ReuseParams): Unit
 |:---|:---|:---|:---|:---|
 |_|[ReuseParams](./cj-common-types.md#class-reuseparams)|是|-|自定义组件的构造参数。|
 
+**示例：**
+
 ```cangjie
 package ohos_app_cangjie_entry
 
@@ -196,6 +198,8 @@ protected open func aboutToRecycle(): Unit
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **起始版本：** 22
+
+**示例：**
 
 ```cangjie
 package ohos_app_cangjie_entry
