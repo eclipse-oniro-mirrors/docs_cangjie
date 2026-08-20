@@ -4312,7 +4312,7 @@ client请求是指通过下述接口订阅回调收到的请求消息：
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|serverResponse|[ServerResponse](#class-serverresponse)|是|-|server端回复client的响应数据。ServerResponse|是|-|server端回复client的响应数据。|
+|serverResponse|[ServerResponse](#class-serverresponse)|是|-|server端回复client的响应数据。|
 
 **异常：**
 
