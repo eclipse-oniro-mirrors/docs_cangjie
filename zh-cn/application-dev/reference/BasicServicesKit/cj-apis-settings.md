@@ -484,6 +484,29 @@ AutoScreenBrightnessMode
 
 **起始版本：** 22
 
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// main_ability.cj
+
+import kit.BasicServicesKit.*
+import kit.PerformanceAnalysisKit.Hilog
+import ohos.business_exception.BusinessException
+
+try {
+    let context = Global.abilityContext
+    let autoBrightness = getValue(context, Display.AutoScreenBrightness, Display.ManualScreenBrightnessMode.toString())
+    if (autoBrightness == Display.AutoScreenBrightnessMode.toString()) {
+        Hilog.info(0, "cangjie_ohos_test", "当前为自动亮度模式")
+    } else {
+        Hilog.info(0, "cangjie_ohos_test", "当前为手动亮度模式")
+    }
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
 
 ### ManualScreenBrightnessMode
 
@@ -497,6 +520,29 @@ ManualScreenBrightnessMode
 
 **起始版本：** 22
 
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// main_ability.cj
+
+import kit.BasicServicesKit.*
+import kit.PerformanceAnalysisKit.Hilog
+import ohos.business_exception.BusinessException
+
+try {
+    let context = Global.abilityContext
+    let autoBrightness = getValue(context, Display.AutoScreenBrightness, Display.AutoScreenBrightnessMode.toString())
+    if (autoBrightness == Display.ManualScreenBrightnessMode.toString()) {
+        Hilog.info(0, "cangjie_ohos_test", "当前为手动亮度模式")
+    } else {
+        Hilog.info(0, "cangjie_ohos_test", "当前为自动亮度模式")
+    }
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
 
 ### func toString()
 

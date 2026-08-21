@@ -307,11 +307,8 @@ public enum Display <: ToString {
     | ScreenBrightnessStatus
     | AutoScreenBrightness
     | ScreenOffTimeout
-    | DefaultScreenRotation
-    | AnimatorDurationScale
-    | TransitionAnimationScale
-    | WindowAnimationScale
-    | DisplayInversionStatus
+    | AutoScreenBrightnessMode
+    | ManualScreenBrightnessMode
     | ...
 }
 ```
@@ -325,38 +322,6 @@ public enum Display <: ToString {
 **Parent Type:**
 
 - ToString
-
-### AnimatorDurationScale
-
-```cangjie
-AnimatorDurationScale
-```
-
-**Function:** The scaling factor for animation duration. This affects the start delay and duration of all such animations. A value of 0 means animations will end immediately; the default value is 1.
-
-**System Capability:** SystemCapability.Applications.Settings.Core
-
-**Since:** 22
-
-**Example:**
-
-<!-- compile -->
-
-```cangjie
-// main_ability.cj
-
-import kit.BasicServicesKit.*
-import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.BusinessException
-
-try {
-    let context = Global.getAbilityContext()
-    let durationScale = getValue(context, Display.AnimatorDurationScale, "1.0")
-    Hilog.info(0, "cangjie_ohos_test", "Animator duration scale: ${durationScale}")
-} catch (e: BusinessException) {
-    Hilog.info(0, "test", "${e.message}")
-}
-```
 
 ### AutoScreenBrightness
 
@@ -385,70 +350,6 @@ try {
     let context = Global.getAbilityContext()
     let autoBrightness = getValue(context, Display.AutoScreenBrightness, "0")
     Hilog.info(0, "cangjie_ohos_test", "Auto screen brightness setting: ${autoBrightness}")
-} catch (e: BusinessException) {
-    Hilog.info(0, "test", "${e.message}")
-}
-```
-
-### DefaultScreenRotation
-
-```cangjie
-DefaultScreenRotation
-```
-
-**Function:** When auto-rotation is enabled, this property is invalid; when auto-rotation is disabled, the following values are available: 0 means screen rotation of 0 degrees; 1 means 90 degrees; 2 means 180 degrees; 3 means 270 degrees.
-
-**System Capability:** SystemCapability.Applications.Settings.Core
-
-**Since:** 22
-
-**Example:**
-
-<!-- compile -->
-
-```cangjie
-// main_ability.cj
-
-import kit.BasicServicesKit.*
-import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.BusinessException
-
-try {
-    let context = Global.getAbilityContext()
-    let rotation = getValue(context, Display.DefaultScreenRotation, "0")
-    Hilog.info(0, "cangjie_ohos_test", "Default screen rotation setting: ${rotation}")
-} catch (e: BusinessException) {
-    Hilog.info(0, "test", "${e.message}")
-}
-```
-
-### DisplayInversionStatus
-
-```cangjie
-DisplayInversionStatus
-```
-
-**Function:** Whether to enable display color inversion. A value of 1 means enabled; 0 means disabled.
-
-**System Capability:** SystemCapability.Applications.Settings.Core
-
-**Since:** 22
-
-**Example:**
-
-<!-- compile -->
-
-```cangjie
-// main_ability.cj
-
-import kit.BasicServicesKit.*
-import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.BusinessException
-
-try {
-    let context = Global.getAbilityContext()
-    let inversion = getValue(context, Display.DisplayInversionStatus, "0")
-    Hilog.info(0, "cangjie_ohos_test", "Display inversion status: ${inversion}")
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -550,13 +451,13 @@ try {
 }
 ```
 
-### TransitionAnimationScale
+### AutoScreenBrightnessMode
 
 ```cangjie
-TransitionAnimationScale
+AutoScreenBrightnessMode
 ```
 
-**Function:** The scaling factor for transition animations. A value of 0 disables transition animations.
+**Function:** The value of AutoScreenBrightness when automatic screen brightness adjustment is used.
 
 **System Capability:** SystemCapability.Applications.Settings.Core
 
@@ -575,20 +476,24 @@ import ohos.business_exception.BusinessException
 
 try {
     let context = Global.getAbilityContext()
-    let transitionScale = getValue(context, Display.TransitionAnimationScale, "1.0")
-    Hilog.info(0, "cangjie_ohos_test", "Transition animation scale: ${transitionScale}")
+    let autoBrightness = getValue(context, Display.AutoScreenBrightness, Display.ManualScreenBrightnessMode.toString())
+    if (autoBrightness == Display.AutoScreenBrightnessMode.toString()) {
+        Hilog.info(0, "cangjie_ohos_test", "Current mode is auto screen brightness")
+    } else {
+        Hilog.info(0, "cangjie_ohos_test", "Current mode is manual screen brightness")
+    }
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
 ```
 
-### WindowAnimationScale
+### ManualScreenBrightnessMode
 
 ```cangjie
-WindowAnimationScale
+ManualScreenBrightnessMode
 ```
 
-**Function:** The scaling factor for window animations. A value of 0 disables window animations.
+**Function:** The value of AutoScreenBrightness when manual screen brightness adjustment is used.
 
 **System Capability:** SystemCapability.Applications.Settings.Core
 
@@ -607,8 +512,12 @@ import ohos.business_exception.BusinessException
 
 try {
     let context = Global.getAbilityContext()
-    let windowScale = getValue(context, Display.WindowAnimationScale, "1.0")
-    Hilog.info(0, "cangjie_ohos_test", "Window animation scale: ${windowScale}")
+    let autoBrightness = getValue(context, Display.AutoScreenBrightness, Display.AutoScreenBrightnessMode.toString())
+    if (autoBrightness == Display.ManualScreenBrightnessMode.toString()) {
+        Hilog.info(0, "cangjie_ohos_test", "Current mode is manual screen brightness")
+    } else {
+        Hilog.info(0, "cangjie_ohos_test", "Current mode is auto screen brightness")
+    }
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
