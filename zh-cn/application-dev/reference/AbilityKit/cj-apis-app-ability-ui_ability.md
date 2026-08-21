@@ -752,7 +752,7 @@ public open func onWindowStageCreate(windowStage: WindowStage): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|windowStage|[WindowStage](../arkui-cj/cj-apis-window.md#class-windowstage)|是|-|WindowStage实例对象。WindowStage|是|-|WindowStage实例对象。|
+|windowStage|[WindowStage](../arkui-cj/cj-apis-window.md#class-windowstage)|是|-|WindowStage实例对象。|
 
 **示例：**
 
@@ -1073,7 +1073,7 @@ UIAbility被启动后，有如下情况：
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |want|[Want](./cj-apis-app-ability-want.md#class-want)|是|-|启动Ability的必要信息。|
-|options|[StartOptions](cj-apis-app-ability-start_options.md#class-startoptions)|是|-|启动Ability所携带的参数。StartOptions|是|-|启动Ability所携带的参数。|
+|options|[StartOptions](cj-apis-app-ability-start_options.md#class-startoptions)|是|-|启动Ability所携带的参数。|
 |callback|[AsyncCallback](../arkinterop/cj-api-business_exception.md#type-asynccallbackt)\<AbilityResult>|是|-|执行结果回调函数。|
 
 **异常：**

@@ -1676,7 +1676,7 @@ public static func isDefaultApplication(appType: ApplicationType): Bool
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|appType|[ApplicationType](#enum-applicationtype)|是|-|要查询的应用类型，取[ApplicationType](#enum-applicationtype)类型中的值。ApplicationType|是|-|要查询的应用类型，取[ApplicationType](#enum-applicationtype)类型中的值。|
+|appType|[ApplicationType](#enum-applicationtype)|是|-|要查询的应用类型，取[ApplicationType](#enum-applicationtype)类型中的值。|
 
 **返回值：**
 
