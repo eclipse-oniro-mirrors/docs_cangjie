@@ -850,7 +850,7 @@ public func scrollTo(xOffset!: Length, yOffset!: Length, animation!: ?ScrollAnim
 |:---|:---|:---|:---|:---|
 |xOffset|[Length](./cj-common-types.md#interface-length)|是|-|**命名参数。** 水平滚动偏移。|
 |yOffset|[Length](./cj-common-types.md#interface-length)|是|-|**命名参数。** 垂直滚动偏移。|
-|animation|?[ScrollAnimationOptions](#class-scrollanimationoptions)|是|-|**命名参数。** 滚动动画选项。初始值：ScrollAnimationOptions()。?ScrollAnimationOptions|是|-|**命名参数。** 滚动动画选项。初始值：ScrollAnimationOptions()。|
+|animation|?[ScrollAnimationOptions](#class-scrollanimationoptions)|是|-|**命名参数。** 滚动动画选项。初始值：ScrollAnimationOptions()。|
 
 #### func scrollTo(Length, Length, ?Bool)
 
