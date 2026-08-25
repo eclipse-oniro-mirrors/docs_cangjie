@@ -1605,7 +1605,7 @@ public func createImageData(imageData: ?ImageData): ImageData
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|imageData|?[ImageData](./cj-canvas-drawing-imagedata.md#class-imagedata)|是|-|现有的ImageData对象。?ImageData|是|-|现有的ImageData对象。|
+|imageData|?[ImageData](./cj-canvas-drawing-imagedata.md#class-imagedata)|是|-|现有的ImageData对象。|
 
 **返回值：**
 
