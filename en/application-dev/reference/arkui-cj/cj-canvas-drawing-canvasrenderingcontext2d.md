@@ -1616,8 +1616,8 @@ public func createImageData(sw: ?Float64, sh: ?Float64): ImageData
 
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
-| sw | ?Float64 | No | - | The width of the ImageData.<br>Default unit: vp. |
-| sh | ?Float64 | No | - | The height of the ImageData.<br>Default unit: vp. |
+| sw | ?Float64 | Yes | - | The width of the ImageData.<br>Default unit: vp. |
+| sh | ?Float64 | Yes | - | The height of the ImageData.<br>Default unit: vp. |
 
 **Return Value:**
 
@@ -1641,7 +1641,7 @@ public func createImageData(imageData: ?ImageData): ImageData
 
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
-| imageData | ?ImageData | No | - | The existing ImageData object. |
+| imageData | ?ImageData | Yes | - | The existing ImageData object. |
 
 **Return Value:**
 
@@ -1666,7 +1666,69 @@ public func getImageData(sx: ?Float64, sy: ?Float64, sw: ?Float64, sh: ?Float64)
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
 | sx | ?Float64 | Yes | - | The x-coordinate of the top-left corner of the area to output.<br>Default unit: vp. |
-| sy | ?Float64 | Yes | - | The y-coordinate## Sample Code
+| sy | ?Float64 | Yes | - | The y-coordinate of the top-left corner of the area to output.<br>Default unit: vp. |
+| sw | ?Float64 | Yes | - | The width of the area to output.<br>Default unit: vp. |
+| sh | ?Float64 | Yes | - | The height of the area to output.<br>Default unit: vp. |
+
+**Return Value:**
+
+| Type | Description |
+|:---|:---|
+| [ImageData](./cj-canvas-drawing-imagedata.md#class-imagedata) | The new ImageData object. |
+
+### func putImageData(ImageData, Length, Length)
+
+```cangjie
+public func putImageData(imageData: ImageData, dx: Length, dy: Length): Unit
+```
+
+**Function:** Fills a new rectangular area with [ImageData](./cj-canvas-drawing-imagedata.md#class-imagedata) data.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 22
+
+**Parameters:**
+
+| Parameter | Type | Required | Default | Description |
+|:---|:---|:---|:---|:---|
+| imageData | [ImageData](./cj-canvas-drawing-imagedata.md#class-imagedata) | Yes | - | The ImageData object containing pixel values. |
+| dx | [Length](./cj-common-types.md#interface-length) | Yes | - | The offset of the fill area along the x-axis.<br>Default unit: vp. |
+| dy | [Length](./cj-common-types.md#interface-length) | Yes | - | The offset of the fill area along the y-axis.<br>Default unit: vp. |
+
+### func putImageData(ImageData, ?Length, ?Length, ?Length, ?Length, ?Length, ?Length)
+
+```cangjie
+public func putImageData(
+    imageData: ImageData,
+    dx: ?Length,
+    dy: ?Length,
+    dirtyX: ?Length,
+    dirtyY: ?Length,
+    dirtyWidth: ?Length,
+    dirtyHeight: ?Length
+): Unit
+```
+
+**Function:** Fills a new rectangular area with [ImageData](./cj-canvas-drawing-imagedata.md#class-imagedata) data.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 22
+
+**Parameters:**
+
+| Parameter | Type | Required | Default | Description |
+|:---|:---|:---|:---|:---|
+| imageData | [ImageData](./cj-canvas-drawing-imagedata.md#class-imagedata) | Yes | - | The ImageData object containing pixel values. |
+| dx | ?[Length](./cj-common-types.md#interface-length) | Yes | - | The offset of the fill area along the x-axis.<br>Default unit: vp. |
+| dy | ?[Length](./cj-common-types.md#interface-length) | Yes | - | The offset of the fill area along the y-axis.<br>Default unit: vp. |
+| dirtyX | ?[Length](./cj-common-types.md#interface-length) | Yes | - | The x-axis offset of the top-left corner of the rectangular cropping area of the source image data relative to the top-left corner of the source image.<br>Default unit: vp. |
+| dirtyY | ?[Length](./cj-common-types.md#interface-length) | Yes | - | The y-axis offset of the top-left corner of the rectangular cropping area of the source image data relative to the top-left corner of the source image.<br>Default unit: vp. |
+| dirtyWidth | ?[Length](./cj-common-types.md#interface-length) | Yes | - | The width of the rectangular cropping area of the source image data.<br>Default unit: vp. |
+| dirtyHeight | ?[Length](./cj-common-types.md#interface-length) | Yes | - | The height of the rectangular cropping area of the source image data.<br>Default unit: vp. |
+
+## Sample Code
 
 <!-- run -->
 

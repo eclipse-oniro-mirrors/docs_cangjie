@@ -534,7 +534,7 @@ public init(
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|builder|[CustomView](cj-ui-framework.md#class-customview)|是|-| **命名参数。** 自定义弹窗内容构造器。CustomView|是|-| **命名参数。** 自定义弹窗内容构造器。|
+|builder|[CustomView](cj-ui-framework.md#class-customview)|是|-| **命名参数。** 自定义弹窗内容构造器。|
 |cancel|?[VoidCallback](./cj-common-types.md#type-voidcallback)|否|None| **命名参数。** 返回、ESC键和点击遮障层弹窗退出时的回调。初始值: { => }|
 |autoCancel|?Bool|否|None| **命名参数。** 是否允许点击遮障层退出，true表示关闭弹窗。false表示不关闭弹窗。初始值: true|
 |alignment|?[DialogAlignment](./cj-common-types.md#enum-dialogalignment)|否|None| **命名参数。** 弹窗在竖直方向上的对齐方式。初始值: DialogAlignment.Default|
