@@ -197,10 +197,10 @@ public init(
 
 | Parameter    | Type            | Required | Default Value | Description               |
 |:------------ |:--------------- |:-------- |:------------- |:------------------------ |
-| strokeWidth  | ?[Length](./cj-common-types.md#interface-length)       | Yes      | -             | The line width of the divider.          |
-| color        | ?[ResourceColor](./cj-common-types.md#interface-resourcecolor) | No       | None          | The color of the divider.          |
-| startMargin  | ?[Length](./cj-common-types.md#interface-length)       | No       | None          | The distance from the divider to the start edge of the list side. |
-| endMargin    | ?[Length](./cj-common-types.md#interface-length)       | No       | None          | The distance from the divider to the end edge of the list side. |
+| strokeWidth  | ?[Length](./cj-common-types.md#interface-length)       | Yes      | -             | **Named parameter.** The line width of the divider.          |
+| color        | ?[ResourceColor](./cj-common-types.md#interface-resourcecolor) | No       | None          | **Named parameter.** The color of the divider.          |
+| startMargin  | ?[Length](./cj-common-types.md#interface-length)       | No       | None          | **Named parameter.** The distance from the divider to the start edge of the list side. |
+| endMargin    | ?[Length](./cj-common-types.md#interface-length)       | No       | None          | **Named parameter.** The distance from the divider to the end edge of the list side. |
 
 ### enum ListItemGroupStyle
 

@@ -197,10 +197,10 @@ public init(
 
 | 参数名         | 类型            | 必填  | 默认值 | 说明               |
 |:----------- |:------------- |:--- |:--- |:---------------- |
-| strokeWidth | ?[Length](./cj-common-types.md#interface-length)       | 是   | -   | 分割线的线宽。          |
-| color       | ?[ResourceColor](./cj-common-types.md#interface-resourcecolor) | 否   | None | 分割线的颜色。          |
-| startMargin | ?[Length](./cj-common-types.md#interface-length)       | 否   | None | 分割线距离列表侧边起始端的距离。 |
-| endMargin   | ?[Length](./cj-common-types.md#interface-length)       | 否   | None | 分割线距离列表侧边结束端的距离。 |
+| strokeWidth | ?[Length](./cj-common-types.md#interface-length)       | 是   | -   | **命名参数。** 分割线的线宽。          |
+| color       | ?[ResourceColor](./cj-common-types.md#interface-resourcecolor) | 否   | None | **命名参数。** 分割线的颜色。          |
+| startMargin | ?[Length](./cj-common-types.md#interface-length)       | 否   | None | **命名参数。** 分割线距离列表侧边起始端的距离。 |
+| endMargin   | ?[Length](./cj-common-types.md#interface-length)       | 否   | None | **命名参数。** 分割线距离列表侧边结束端的距离。 |
 
 ### enum ListItemGroupStyle
 
