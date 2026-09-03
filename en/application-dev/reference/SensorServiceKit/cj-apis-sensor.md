@@ -22,6 +22,8 @@ ohos.permission.GYROSCOPE
 
 ohos.permission.READ_HEALTH_DATA
 
+ohos.permission.ACTIVITY_MOTION
+
 ## Usage Instructions
 
 API sample code usage instructions:
