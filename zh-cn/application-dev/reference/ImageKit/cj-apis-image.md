@@ -672,7 +672,7 @@ public let pixelStride: Int32
 public let rowStride: Int32
 ```
 
-**功能：** 行距。读取相机预览流数据时，需要按stride进行读取，使用详情请参考[相机预览花屏解决方案](https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-deal-stride-solution)。
+**功能：** 行距。读取相机预览流数据时，需要按stride进行读取，使用详情请参考[相机预览花屏解决方案](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-preview-glitch-solution)。
 
 **类型：** Int32
 
