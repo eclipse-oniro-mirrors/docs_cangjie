@@ -61,7 +61,7 @@ public init()
 public func inValues(field: String, value: Array<VBValueType>): DataSharePredicates
 ```
 
-**功能：** 该接口用于配置谓词以匹配值在指定范围内的字段。目前仅关系型数据库及键值型数据库支持该谓词。
+**功能：** 该接口用于配置谓词以匹配值在指定范围内的字段。
 
 **系统能力：** SystemCapability.DistributedDataManager.DataShare.Core
 
@@ -113,7 +113,7 @@ try {
 public func and(): DataSharePredicates
 ```
 
-**功能：** 该接口用于将和条件添加到谓词中。目前仅关系型数据库及键值型数据库支持该谓词。
+**功能：** 该接口用于将和条件添加到谓词中。
 
 **系统能力：** SystemCapability.DistributedDataManager.DataShare.Core
 
@@ -160,7 +160,7 @@ try {
 public func equalTo(field: String, value: VBValueType): DataSharePredicates
 ```
 
-**功能：** 该接口用于配置谓词以匹配值等于指定值的字段。目前仅关系型数据库及键值型数据库支持该谓词。
+**功能：** 该接口用于配置谓词以匹配值等于指定值的字段。
 
 **系统能力：** SystemCapability.DistributedDataManager.DataShare.Core
 
@@ -212,7 +212,7 @@ try {
 public func limit(total: Int32, offset: Int32): DataSharePredicates
 ```
 
-**功能：** 该接口用于配置谓词以指定结果数和起始位置。目前仅关系型数据库及键值型数据库支持该谓词。
+**功能：** 该接口用于配置谓词以指定结果数和起始位置。
 
 **系统能力：** SystemCapability.DistributedDataManager.DataShare.Core
 
@@ -264,7 +264,7 @@ try {
 public func orderByAsc(field: String): DataSharePredicates
 ```
 
-**功能：** 该接口用于配置谓词以匹配其值按升序排序的列。目前仅关系型数据库及键值型数据库支持该谓词。
+**功能：** 该接口用于配置谓词以匹配其值按升序排序的列。
 
 **系统能力：** SystemCapability.DistributedDataManager.DataShare.Core
 
@@ -315,7 +315,7 @@ try {
 public func orderByDesc(field: String): DataSharePredicates
 ```
 
-**功能：** 该接口用于配置谓词以匹配其值按降序排序的列。目前仅关系型数据库及键值型数据库支持该谓词。
+**功能：** 该接口用于配置谓词以匹配其值按降序排序的列。
 
 **系统能力：** SystemCapability.DistributedDataManager.DataShare.Core
 

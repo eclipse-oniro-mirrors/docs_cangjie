@@ -61,7 +61,7 @@ public init()
 public func inValues(field: String, value: Array<VBValueType>): DataSharePredicates
 ```
 
-**Function:** Configures the predicate to match fields with values within a specified range. Currently, only RDB and KVDB (schema) support this predicate.
+**Function:** Configures the predicate to match fields with values within a specified range.
 
 **System Capability:** SystemCapability.DistributedDataManager.DataShare.Core
 
@@ -113,7 +113,7 @@ try {
 public func and(): DataSharePredicates
 ```
 
-**Function:** Adds an AND condition to the predicate. Currently, only RDB and KVDB (schema) support this predicate.
+**Function:** Adds an AND condition to the predicate.
 
 **System Capability:** SystemCapability.DistributedDataManager.DataShare.Core
 
@@ -160,7 +160,7 @@ try {
 public func equalTo(field: String, value: VBValueType): DataSharePredicates
 ```
 
-**Function:** Configures the predicate to match fields with values equal to the specified value. Currently, only RDB and KVDB (schema) support this predicate.
+**Function:** Configures the predicate to match fields with values equal to the specified value.
 
 **System Capability:** SystemCapability.DistributedDataManager.DataShare.Core
 
@@ -212,7 +212,7 @@ try {
 public func limit(total: Int32, offset: Int32): DataSharePredicates
 ```
 
-**Function:** Configures the predicate to specify the number of results and starting position. Currently, only RDB and KVDB (schema) support this predicate.
+**Function:** Configures the predicate to specify the number of results and starting position.
 
 **System Capability:** SystemCapability.DistributedDataManager.DataShare.Core
 
@@ -264,7 +264,7 @@ try {
 public func orderByAsc(field: String): DataSharePredicates
 ```
 
-**Function:** Configures the predicate to match columns sorted in ascending order by their values. Currently, only RDB and KVDB (schema) support this predicate.
+**Function:** Configures the predicate to match columns sorted in ascending order by their values.
 
 **System Capability:** SystemCapability.DistributedDataManager.DataShare.Core
 
@@ -315,7 +315,7 @@ try {
 public func orderByDesc(field: String): DataSharePredicates
 ```
 
-**Function:** Configures the predicate to match columns sorted in descending order by their values. Currently, only RDB and KVDB (schema) support this predicate.
+**Function:** Configures the predicate to match columns sorted in descending order by their values.
 
 **System Capability:** SystemCapability.DistributedDataManager.DataShare.Core
 
