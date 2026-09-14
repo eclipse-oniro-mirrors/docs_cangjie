@@ -3397,9 +3397,10 @@ public var radius: ?Length
 
 **Function:** Shadow blur radius.
 Unit: vp.
-<p>**NOTE:**
-<br>Values less than or equal to 0 will be treated as default values.
-</p>
+
+> **NOTE:**
+>
+> Values less than or equal to 0 will be treated as default values.
 
 **Type:** ?[Length](./cj-common-types.md#interface-length)
 
