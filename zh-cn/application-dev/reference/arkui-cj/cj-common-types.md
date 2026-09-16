@@ -3505,9 +3505,10 @@ public var radius: ?Length
 
 **功能：** 阴影模糊半径。
 单位：vp。
-<p>**NOTE**:
-<br>小于或等于0的值将作为默认值处理。
-</p>
+
+> **注意**:
+>
+> 小于或等于0的值将作为默认值处理。
 
 **类型：** ?[Length](#interface-length)
 
