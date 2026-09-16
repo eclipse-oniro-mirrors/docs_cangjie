@@ -164,7 +164,7 @@ public func openCustomDialog(options: CustomDialogConfig, callback: (Int32) -> U
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |options|[CustomDialogConfig](#class-customdialogconfig)|是|-|自定义弹窗的内容。<br>**说明：** 如果BaseDialogOptions中的isModal与showInSubWindow同时设置为true，则只生效showInSubWindow = true，此时为非模态弹出框且不会显示蒙层，并在子窗口中显示。|
-|callback|(Int32) -> Unit|是|-| **命名参数。** 回调函数，返回对话框id，可供closeCustomDialog使用。|
+|callback|(Int32) -> Unit|是|-| 回调函数，返回对话框id，可供closeCustomDialog使用。|
 
 ### func showActionMenu(ActionMenuConfig, ShowActionMenuCallBack)
 
@@ -2591,7 +2591,7 @@ public var backgroundBlurStyle: ?BlurStyle
 **功能：** 对话框背板模糊材质。初始值：BlurStyle.ComponentUltraThick
 
 > **说明：**
-> 
+>
 > 设置为BlurStyle.NONE即可关闭背景虚化。当设置了backgroundBlurStyle为非None值时，则不要设置backgroundColor，否则颜色显示将不符合预期效果。
 
 **类型：** ?[BlurStyle](./cj-common-types.md#enum-blurstyle)
@@ -2819,7 +2819,7 @@ public var levelMode: ?LevelMode
 **功能：** 设置菜单显示层级。
 
 > **说明：**
-> 
+>
 > - 初始值：LevelMode.Overlay。
 > - 当且仅当showInSubWindow属性设置为false时生效。
 
