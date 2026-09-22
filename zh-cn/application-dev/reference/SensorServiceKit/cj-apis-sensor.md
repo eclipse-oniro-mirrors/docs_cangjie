@@ -266,7 +266,7 @@ public func once<T>(sensorType: SensorId, callback: Callback1Argument<T>): Unit 
 | 参数名 | 类型 | 必填 | 默认值 | 说明 |
 | :--- | :--- | :--- | :--- | :--- |
 | sensorType | [SensorId](#enum-sensorid) | 是 | - | 传感器类型。 |
-| callback   | [Callback1Argument](../arkinterop/cj-api-callback_invoke.md#class-callback1argumenta)\<T> | 是   | -   | **命名参数。** 回调函数，异步上报的传感器数据，每种传感器类型对应的数据类型不同。 |
+| callback   | [Callback1Argument](../arkinterop/cj-api-callback_invoke.md#class-callback1argumenta)\<T> | 是   | -   | 回调函数，异步上报的传感器数据，每种传感器类型对应的数据类型不同。 |
 
 **异常：**
 

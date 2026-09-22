@@ -852,8 +852,8 @@ public init(action: Action, url: String, title!: ?String = None, description!: S
 
 | 参数名      | 类型 | 必填 | 默认值                     | 说明 |
 | :---------- | :--------- | :--- | :------- | :-------- |
-| action      | [Action](#enum-action) | 是   | - | **命名参数。** 任务操作选项。|
-| url         | String | 是   | - | **命名参数。** 资源地址。最大长度为8192个字符。支持HTTP拦截功能。|
+| action      | [Action](#enum-action) | 是   | - | 任务操作选项。|
+| url         | String | 是   | - | 资源地址。最大长度为8192个字符。支持HTTP拦截功能。|
 | title       | ?String | 否   | None | **命名参数。** 任务标题，其最大长度为256个字符，默认值为小写的 upload 或 download，与上面的 action 保持一致。|
 | description | String | 否   | "" | **命名参数。** 任务的详细信息，其最大长度为1024个字符，默认值为空字符串。|
 | mode        | [Mode](#enum-mode) | 否   | Mode.Background | **命名参数。** 任务模式，默认为后台任务。下载到用户文件场景必须为request.agent.Mode.FOREGROUND。|
@@ -1039,7 +1039,7 @@ public init(
 
 | 参数名   | 类型 | 必填 | 默认值 | 说明 |
 | :------- | :----- | :--- | :----- | :---------- |
-| path     | String | 是   | - | **命名参数。** 文件路径。|
+| path     | String | 是   | - | 文件路径。|
 | mimeType | ?String | 否   | None | **命名参数。** 文件的mimeType，通过文件名获取，默认值为文件名后缀。|
 | filename | ?String | 否   | None | **命名参数。** 文件名，默认值通过路径获取。|
 | extras   | HashMap\<String,String> | 否   | HashMap<String,String>() | **命名参数。** 文件信息的附加内容，该参数不会体现在HTTP请求中。|
@@ -1289,8 +1289,8 @@ public init(name: String, value: FormItemValue)
 
 | 参数名 | 类型 | 必填 | 默认值 | 说明 |
 | :----- | :--------- | :--- | :----- | :---------- |
-| name   | String | 是   | -      | **命名参数。** 表单参数名。 |
-| value  | [FormItemValue](#enum-formitemvalue) | 是   | -      | **命名参数。** 表单参数值。 |
+| name   | String | 是   | -      | 表单参数名。 |
+| value  | [FormItemValue](#enum-formitemvalue) | 是   | -      | 表单参数值。 |
 
 **示例：**
 

@@ -2968,7 +2968,7 @@ public func createPhotoOutput(profile!: ?Profile = None): PhotoOutput
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|profile|?[Profile](#class-profile)|否|None|支持的拍照配置信息，通过[getSupportedOutputCapability](#func-getsupportedoutputcapabilitycameradevice-scenemode)接口获取。如果使用[preconfig](#func-preconfigpreconfigtype-preconfigratio)进行预配置，传入profile参数会覆盖preconfig的预配置参数。|
+|profile|?[Profile](#class-profile)|否|None|**命名参数。** 支持的拍照配置信息，通过[getSupportedOutputCapability](#func-getsupportedoutputcapabilitycameradevice-scenemode)接口获取。如果使用[preconfig](#func-preconfigpreconfigtype-preconfigratio)进行预配置，传入profile参数会覆盖preconfig的预配置参数。|
 
 **返回值：**
 
