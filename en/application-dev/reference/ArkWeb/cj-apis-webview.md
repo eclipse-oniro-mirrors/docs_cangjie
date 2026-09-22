@@ -2584,7 +2584,7 @@ public func zoom(factor: Float32): Unit
 
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
-| factor | Float32 | Yes | - | The relative zoom factor based on the current webpage. The input must be greater than 0. A value of 1 represents the default zoom level. Values less than 1 zoom out, and values greater than 1 zoom in. |
+| factor | Float32 | Yes | - | Zoom factor. It is multiplied by the current webpage zoom ratio to obtain the new zoom ratio. When the input value is 1, the zoom ratio remains unchanged; a value less than 1 zooms out, and a value greater than 1 zooms in.<br>Value range: (0, 100]. |
 
 **Exceptions:**
 
