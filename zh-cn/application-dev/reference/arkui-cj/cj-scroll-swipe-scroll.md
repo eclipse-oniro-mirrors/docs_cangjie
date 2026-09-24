@@ -298,7 +298,7 @@ public init(offsetRemain!: Float64)
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|offsetRemain|Float64|是|-|滚动偏移量剩余值。|
+|offsetRemain|Float64|是|-| **命名参数。** 滚动偏移量剩余值。|
 
 ### class OffsetResult
 

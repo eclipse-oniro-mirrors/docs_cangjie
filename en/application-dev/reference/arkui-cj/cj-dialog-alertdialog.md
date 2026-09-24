@@ -734,7 +734,7 @@ public init(
 |:---|:---|:---|:---|:---|
 | title | ?[ResourceStr](./cj-common-types.md#interface-resourcestr) | No | None | **Named parameter.** The title of the popup. Initial value: "" |
 | subtitle | ?[ResourceStr](./cj-common-types.md#interface-resourcestr) | No | None | **Named parameter.** The subtitle of the popup. Initial value: "" |
-| message | ?[ResourceStr](./cj-common-types.md#interface-resourcestr) | Yes | - | The content of the popup. |
+| message | ?[ResourceStr](./cj-common-types.md#interface-resourcestr) | Yes | - | **Named parameter.** The content of the popup. |
 | autoCancel | ?Bool | No | None | **Named parameter.** Whether to close the popup when clicking the mask layer. true means closing the popup, false means not closing the popup. Initial value: true |
 | cancel | ?[VoidCallback](./cj-common-types.md#type-voidcallback) | No | None | **Named parameter.** Callback when the dialog is closed by clicking the mask layer. Initial value: {=>} |
 | alignment | ?[DialogAlignment](./cj-common-types.md#enum-dialogalignment) | No | None | **Named parameter.** The vertical alignment of the popup. Initial value: DialogAlignment.Default |
@@ -878,7 +878,7 @@ public init(
 |:---|:---|:---|:---|:---|
 | title | ?[ResourceStr](./cj-common-types.md#interface-resourcestr) | No | None | **Named parameter.** Dialog title. Initial value: "" |
 | subtitle | ?[ResourceStr](./cj-common-types.md#interface-resourcestr) | No | None | **Named parameter.** Dialog subtitle. Initial value: "" |
-| message | ?[ResourceStr](./cj-common-types.md#interface-resourcestr) | Yes | - | Dialog content. |
+| message | ?[ResourceStr](./cj-common-types.md#interface-resourcestr) | Yes | - | **Named parameter.** Dialog content. |
 | autoCancel | ?Bool | No | None | **Named parameter.** Whether to close the dialog when clicking the mask layer. true: close the dialog; false: do not close the dialog. Initial value: true |
 | cancel | ?[VoidCallback](./cj-common-types.md#type-voidcallback) | No | None | **Named parameter.** Callback when closing the dialog by clicking the mask layer. Initial value: {=>} |
 | alignment | ?[DialogAlignment](./cj-common-types.md#enum-dialogalignment) | No | None | **Named parameter.** Vertical alignment of the dialog. Initial value: DialogAlignment.Default |
@@ -1005,7 +1005,7 @@ public init(
 |:---|:---|:---|:---|:---|
 | title | ?[ResourceStr](./cj-common-types.md#interface-resourcestr) | No | None | **Named parameter.** Dialog title. Initial value: "" |
 | subtitle | ?[ResourceStr](./cj-common-types.md#interface-resourcestr) | No | None | **Named parameter.** Dialog subtitle. Initial value: "" |
-| message | ?[ResourceStr](./cj-common-types.md#interface-resourcestr) | Yes | - | Dialog content. |
+| message | ?[ResourceStr](./cj-common-types.md#interface-resourcestr) | Yes | - | **Named parameter.** Dialog content. |
 | autoCancel | ?Bool | No | None | **Named parameter.** Whether to close the dialog when clicking the mask layer. true: close the dialog; false: do not close the dialog. Initial value: true |
 | cancel | ?[VoidCallback](./cj-common-types.md#type-voidcallback) | No | None | **Named parameter.** Callback when closing the dialog by clicking the mask layer. Initial value: {=>} |
 | alignment | ?[DialogAlignment](./cj-common-types.md#enum-dialogalignment) | No | None | **Named parameter.** Vertical alignment of the dialog. Initial value: DialogAlignment.Default |
@@ -1150,7 +1150,7 @@ public init(
 |:---|:---|:---|:---|:---|
 | title | ?[ResourceStr](./cj-common-types.md#interface-resourcestr) | No | None | **Named parameter.** Dialog title. Initial value: "" |
 | subtitle | ?[ResourceStr](./cj-common-types.md#interface-resourcestr) | No | None | **Named parameter.** Dialog subtitle. Initial value: "" |
-| message | ?[ResourceStr](./cj-common-types.md#interface-resourcestr) | Yes | - | Dialog content. |
+| message | ?[ResourceStr](./cj-common-types.md#interface-resourcestr) | Yes | - | **Named parameter.** Dialog content. |
 | autoCancel | ?Bool | No | None | **Named parameter.** Whether to close the dialog when clicking the mask layer. true: close the dialog; false: do not close the dialog. Initial value: true |
 | cancel | ?[VoidCallback](./cj-common-types.md#type-voidcallback) | No | None | **Named parameter.** Callback when closing the dialog by clicking the mask layer. Initial value: {=>} |
 | alignment | ?[DialogAlignment](./cj-common-types.md#enum-dialogalignment) | No | None | **Named parameter.** Vertical alignment of the dialog. Initial value: DialogAlignment.Default |

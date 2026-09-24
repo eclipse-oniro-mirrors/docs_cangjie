@@ -298,7 +298,7 @@ public init(offsetRemain!: Float64)
 
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
-| offsetRemain | Float64 | Yes | - | The remaining scroll offset value. |
+| offsetRemain | Float64 | Yes | - | **Named parameter.** The remaining scroll offset value. |
 
 ### class OffsetResult
 
