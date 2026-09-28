@@ -166,7 +166,7 @@ public static func getCurrentLocation(): Location
 
 **功能：** 获取当前位置。
 
-**需要权限：** ohos.APPROXIMATELY_LOCATION
+**需要权限：** ohos.permission.APPROXIMATELY_LOCATION
 
 **系统能力：** SystemCapability.Location.Location.Core
 
@@ -216,7 +216,7 @@ public static func getCurrentLocation(request: CurrentLocationRequest): Location
 
 **功能：** 获取当前位置。
 
-**需要权限：** ohos.APPROXIMATELY_LOCATION
+**需要权限：** ohos.permission.APPROXIMATELY_LOCATION
 
 **系统能力：** SystemCapability.Location.Location.Core
 
@@ -272,7 +272,7 @@ public static func getCurrentLocation(request: SingleLocationRequest): Location
 
 **功能：** 获取当前位置。
 
-**需要权限：** ohos.APPROXIMATELY_LOCATION
+**需要权限：** ohos.permission.APPROXIMATELY_LOCATION
 
 **系统能力：** SystemCapability.Location.Location.Core
 

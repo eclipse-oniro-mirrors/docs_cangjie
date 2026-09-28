@@ -2284,7 +2284,7 @@ public init(size: Size, alphaType!: AlphaType = AlphaType.Premul, editable!: Boo
 
 | Parameter      | Type                          | Required | Default                  | Description |
 | -------------- | ----------------------------- | -------- | ------------------------ | ----------- |
-| size           | [Size](#class-size)           | Yes      | -                        | **Named parameter.** Image creation size. |
+| size           | [Size](#class-size)           | Yes      | -                        | Image creation size. |
 | alphaType      | [AlphaType](#enum-alphatype)  | No       | AlphaType.Premul         | **Named parameter.** Transparency. |
 | editable       | Bool                          | No       | false                    | **Named parameter.** Whether it is editable. |
 | srcPixelFormat | [PixelMapFormat](#enum-pixelmapformat) | No       | PixelMapFormat.Bgra8888  | **Named parameter.** The pixel format of the input buffer data. |

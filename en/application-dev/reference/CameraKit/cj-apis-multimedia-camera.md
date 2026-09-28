@@ -2924,7 +2924,7 @@ try {
 ### func createPhotoOutput(?Profile)
 
 ```cangjie
-public func createPhotoOutput(?Profile = None): PhotoOutput
+public func createPhotoOutput(profile!: ?Profile = None): PhotoOutput
 ```
 
 **Description:** Creates a photo output object.
@@ -2937,7 +2937,7 @@ public func createPhotoOutput(?Profile = None): PhotoOutput
 
 | Name    | Type                    | Mandatory | Default | Description                                                                 |
 | :------ | :---------------------- | :-------- | :------ | :-------------------------------------------------------------------------- |
-| profile | ?[Profile](#class-profile) | No        | None    | Supported photo configuration obtained via the [getSupportedOutputCapability](#func-getsupportedoutputcapabilitycameradevice-scenemode) API. |
+| profile | ?[Profile](#class-profile) | No        | None    | **Named parameter.** Supported photo configuration obtained via the [getSupportedOutputCapability](#func-getsupportedoutputcapabilitycameradevice-scenemode) API. |
 
 **Return Value:**
 
