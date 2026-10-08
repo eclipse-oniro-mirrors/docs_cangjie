@@ -2576,6 +2576,12 @@ public func zoom(factor: Float32): Unit
 
 **Function:** Adjusts the zoom level of the current webpage. `zoomAccess` must be set to `true`.
 
+> **Note:**
+>
+> If the input parameter is out of the value range, this call does not take effect and the webpage zoom ratio remains unchanged.
+>
+> If the webpage zoom ratio has already reached its maximum or minimum, calls to zoom further in the same direction do not take effect either.
+
 **System Capability:** SystemCapability.Web.Webview.Core
 
 **Since:** 22
