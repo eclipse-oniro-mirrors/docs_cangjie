@@ -2767,6 +2767,12 @@ public func zoom(factor: Float32): Unit
 
 **功能：** 调整当前网页的缩放比例，zoomAccess需为true。
 
+> **说明：**
+>
+> 入参超出取值范围时，本次调用不生效，网页缩放比例保持不变。
+>
+> 当网页缩放比例已达到最大值或最小值时，继续同向缩放的调用同样不生效。
+
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **起始版本：** 22
