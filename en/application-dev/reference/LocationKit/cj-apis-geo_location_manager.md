@@ -174,7 +174,7 @@ public static func getCurrentLocation(): Location
 
 **Function:** Obtains the current location.
 
-**Required Permission:** ohos.APPROXIMATELY_LOCATION
+**Required Permission:** ohos.permission.APPROXIMATELY_LOCATION
 
 **System Capability:** SystemCapability.Location.Location.Core
 
@@ -206,7 +206,7 @@ public static func getCurrentLocation(request: CurrentLocationRequest): Location
 
 **Function:** Obtains the current location.
 
-**Required Permission:** ohos.APPROXIMATELY_LOCATION
+**Required Permission:** ohos.permission.APPROXIMATELY_LOCATION
 
 **System Capability:** SystemCapability.Location.Location.Core
 
@@ -244,7 +244,7 @@ public static func getCurrentLocation(request: SingleLocationRequest): Location
 
 **Function:** Obtains the current location.
 
-**Required Permission:** ohos.APPROXIMATELY_LOCATION
+**Required Permission:** ohos.permission.APPROXIMATELY_LOCATION
 
 **System Capability:** SystemCapability.Location.Location.Core
 
