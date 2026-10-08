@@ -11123,7 +11123,7 @@ public func lazySplit(separator: Utf16String, removeEmpty!: Bool = false): Itera
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |separator|[Utf16String](#class-utf16string)|是|-|分隔符。当分隔符为空字符串时，每个字符都是单独的元素。|
-|removeEmpty|Bool|否|false|是否删除空白元素，为true时删除空白元素。|
+|removeEmpty|Bool|否|false|**命名参数。** 是否删除空白元素，为true时删除空白元素。|
 
 **返回值：**
 
@@ -11179,7 +11179,7 @@ public func lazySplit(separator: Utf16String, maxSplit: Int64, removeEmpty!: Boo
 |:---|:---|:---|:---|:----------------------------|
 |separator|[Utf16String](#class-utf16string)|是|-| 分隔符。当分隔符为空字符串时，每个字符都是单独的元素。 |
 |maxSplit|Int64|是|-| 分割最大数量。为0时最大分割数量无限制。        |
-|removeEmpty|Bool|否|false| 是否删除空白元素，为true时删除空白元素。                   |
+|removeEmpty|Bool|否|false| **命名参数。** 是否删除空白元素，为true时删除空白元素。                   |
 
 **返回值：**
 
@@ -11258,7 +11258,7 @@ public func replace(old: Utf16String, new: Utf16String, count!: Int64 = Int64.Ma
 |:---|:---|:---|:---|:---|
 |old|[Utf16String](#class-utf16string)|是|-|替换前的元素|
 |new|[Utf16String](#class-utf16string)|是|-|替换后的元素|
-|count|Int64|否|Int64.Max|替换次数|
+|count|Int64|否|Int64.Max|**命名参数。** 替换次数|
 
 **返回值：**
 
@@ -11335,7 +11335,7 @@ public func split(separator: Utf16String, removeEmpty!: Bool = false): Array<Utf
 |参数名|类型|必填|默认值| 说明                        |
 |:---|:---|:---|:---|:--------------------------|
 |separator|[Utf16String](#class-utf16string)|是|-| 分隔符。当分隔符为空字符串时，每个字符都是单独的元素。|
-|removeEmpty|Bool|否|false| 是否删除空白元素，为true时删除空白元素。    |
+|removeEmpty|Bool|否|false| **命名参数。** 是否删除空白元素，为true时删除空白元素。    |
 
 **返回值：**
 
@@ -11391,7 +11391,7 @@ public func split(separator: Utf16String, maxSplit: Int64, removeEmpty!: Bool = 
 |:---|:---|:---|:---|:----------------------------|
 |separator|[Utf16String](#class-utf16string)|是|-| 分隔符。当分隔符为空字符串时，每个字符都是单独的元素。 |
 |maxSplit|Int64|是|-| 分割最大数量。为0时最大分割数量无限制。            |
-|removeEmpty|Bool|否|false| 是否删除空白元素，为true时删除空白元素。      |
+|removeEmpty|Bool|否|false| **命名参数。** 是否删除空白元素，为true时删除空白元素。      |
 
 **返回值：**
 
