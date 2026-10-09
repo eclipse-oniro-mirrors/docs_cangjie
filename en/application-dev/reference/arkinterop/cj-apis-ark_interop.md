@@ -10845,7 +10845,7 @@ public func lazySplit(separator: Utf16String, removeEmpty!: Bool = false): Itera
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
 | separator | [Utf16String](#class-utf16string) | Yes | - | Separator. When the separator is an empty string, each character is treated as a separate element. |
-| removeEmpty | Bool | No | false | Whether to remove empty elements. |
+| removeEmpty | Bool | No | false | **Named parameter.** Whether to remove empty elements. |
 
 **Return Value:**
 
@@ -10900,7 +10900,7 @@ public func lazySplit(separator: Utf16String, maxSplit: Int64, removeEmpty!: Boo
 |:---|:---|:---|:---|:---------------------------------------------------------------------------------------------------|
 | separator | [Utf16String](#class-utf16string) | Yes | - | Delimiter. When the delimiter is an empty string, each character is treated as a separate element. |
 | maxSplit | Int64 | Yes | - | Maximum number of splits. Treat as 0 when less than 0.                                             |
-| removeEmpty | Bool | No | false | Whether to remove empty elements.                                                                  |
+| removeEmpty | Bool | No | false | **Named parameter.** Whether to remove empty elements.                                                                  |
 
 **Return Value:**
 
@@ -10978,7 +10978,7 @@ public func replace(old: Utf16String, new: Utf16String, count!: Int64 = Int64.Ma
 |:---|:---|:---|:---|:---|
 | old | [Utf16String](#class-utf16string) | Yes | - | Element to be replaced |
 | new | [Utf16String](#class-utf16string) | Yes | - | Replacement element |
-| count | Int64 | No | Int64.Max | Number of replacements |
+| count | Int64 | No | Int64.Max | **Named parameter.** Number of replacements |
 
 **Return Value:**
 
@@ -11054,7 +11054,7 @@ public func split(separator: Utf16String, removeEmpty!: Bool = false): Array<Utf
 | Parameter Name | Type | Required | Default Value | Description |
 |:---|:---|:---|:---|:---|
 | separator | [Utf16String](#class-utf16string) | Yes | - | Delimiter. When the delimiter is an empty string, each character is treated as a separate element. |
-| removeEmpty | Bool | No | false | Whether to remove empty elements. |
+| removeEmpty | Bool | No | false | **Named parameter.** Whether to remove empty elements. |
 
 **Return Value:**
 
@@ -11109,7 +11109,7 @@ public func split(separator: Utf16String, maxSplit: Int64, removeEmpty!: Bool = 
 |:---|:---|:---|:---|:---------------------------------------------------------------------------------------------------|
 | separator | [Utf16String](#class-utf16string) | Yes | - | Delimiter. When the delimiter is an empty string, each character is treated as a separate element. |
 | maxSplit | Int64 | Yes | - | Maximum number of splits. Unlimited when set to 0. Throws exception when less than 0.              |
-| removeEmpty | Bool | No | false | Whether to remove empty elements.                                                                  |
+| removeEmpty | Bool | No | false | **Named parameter.** Whether to remove empty elements.                                                                  |
 
 **Return Value:**
 
