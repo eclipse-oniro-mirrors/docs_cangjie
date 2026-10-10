@@ -736,7 +736,7 @@ public init(
 |:---|:---|:---|:---|:---|
 |title|?[ResourceStr](./cj-common-types.md#interface-resourcestr)|否|None| **命名参数。** 弹窗标题。初始值: "" |
 |subtitle|?[ResourceStr](./cj-common-types.md#interface-resourcestr)|否|None| **命名参数。** 弹窗副标题。初始值: "" |
-|message|?[ResourceStr](./cj-common-types.md#interface-resourcestr)|是|-| 弹窗内容。 |
+|message|?[ResourceStr](./cj-common-types.md#interface-resourcestr)|是|-| **命名参数。** 弹窗内容。 |
 |autoCancel|?Bool|否|None| **命名参数。** 点击遮障层时是否关闭弹窗。true表示关闭弹窗,false表示不关闭弹窗。初始值: true |
 |cancel|?[VoidCallback](./cj-common-types.md#type-voidcallback)|否|None| **命名参数。** 点击遮障层关闭dialog时的回调。初始值: {=>} |
 |alignment|?[DialogAlignment](./cj-common-types.md#enum-dialogalignment)|否|None| **命名参数。** 弹窗在竖直方向上的对齐方式。初始值: DialogAlignment.Default |
@@ -880,7 +880,7 @@ public init(
 |:---|:---|:---|:---|:---|
 |title|?[ResourceStr](./cj-common-types.md#interface-resourcestr)|否|None| **命名参数。** 弹窗标题。初始值: "" |
 |subtitle|?[ResourceStr](./cj-common-types.md#interface-resourcestr)|否|None| **命名参数。** 弹窗副标题。初始值: "" |
-|message|?[ResourceStr](./cj-common-types.md#interface-resourcestr)|是|-| 弹窗内容。 |
+|message|?[ResourceStr](./cj-common-types.md#interface-resourcestr)|是|-| **命名参数。** 弹窗内容。 |
 |autoCancel|?Bool|否|None| **命名参数。** 点击遮障层时是否关闭弹窗。true表示关闭弹窗,false表示不关闭弹窗。初始值: true |
 |cancel|?[VoidCallback](./cj-common-types.md#type-voidcallback)|否|None| **命名参数。** 点击遮障层关闭dialog时的回调。初始值: {=>} |
 |alignment|?[DialogAlignment](./cj-common-types.md#enum-dialogalignment)|否|None| **命名参数。** 弹窗在竖直方向上的对齐方式。初始值: DialogAlignment.Default |
@@ -1007,7 +1007,7 @@ public init(
 |:---|:---|:---|:---|:---|
 |title|?[ResourceStr](./cj-common-types.md#interface-resourcestr)|否|None| **命名参数。** 弹窗标题。初始值: "" |
 |subtitle|?[ResourceStr](./cj-common-types.md#interface-resourcestr)|否|None| **命名参数。** 弹窗副标题。初始值: "" |
-|message|?[ResourceStr](./cj-common-types.md#interface-resourcestr)|是|-| 弹窗内容。 |
+|message|?[ResourceStr](./cj-common-types.md#interface-resourcestr)|是|-| **命名参数。** 弹窗内容。 |
 |autoCancel|?Bool|否|None| **命名参数。** 点击遮障层时是否关闭弹窗。true表示关闭弹窗,false表示不关闭弹窗。初始值: true |
 |cancel|?[VoidCallback](./cj-common-types.md#type-voidcallback)|否|None| **命名参数。** 点击遮障层关闭dialog时的回调。初始值: {=>} |
 |alignment|?[DialogAlignment](./cj-common-types.md#enum-dialogalignment)|否|None| **命名参数。** 弹窗在竖直方向上的对齐方式。初始值: DialogAlignment.Default |
@@ -1152,7 +1152,7 @@ public init(
 |:---|:---|:---|:---|:---|
 |title|?[ResourceStr](./cj-common-types.md#interface-resourcestr)|否|None| **命名参数。** 弹窗标题。初始值: "" |
 |subtitle|?[ResourceStr](./cj-common-types.md#interface-resourcestr)|否|None| **命名参数。** 弹窗副标题。初始值: "" |
-|message|?[ResourceStr](./cj-common-types.md#interface-resourcestr)|是|-| 弹窗内容。 |
+|message|?[ResourceStr](./cj-common-types.md#interface-resourcestr)|是|-| **命名参数。** 弹窗内容。 |
 |autoCancel|?Bool|否|None| **命名参数。** 点击遮障层时是否关闭弹窗。true表示关闭弹窗,false表示不关闭弹窗。初始值: true |
 |cancel|?[VoidCallback](./cj-common-types.md#type-voidcallback)|否|None| **命名参数。** 点击遮障层关闭dialog时的回调。初始值: {=>} |
 |alignment|?[DialogAlignment](./cj-common-types.md#enum-dialogalignment)|否|None| **命名参数。** 弹窗在竖直方向上的对齐方式。初始值: DialogAlignment.Default |

@@ -215,8 +215,8 @@ public init(launchMode!: ?LaunchMode = None, animated!: ?Bool = None)
 
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
-| launchMode | ?[LaunchMode](#enum-launchmode) | No | None | Navigation stack operation mode. Initial value: LaunchMode.Standard. |
-| animated | ?Bool | No | None | Whether transition animations are supported. Initial value: true. |
+| launchMode | ?[LaunchMode](#enum-launchmode) | No | None | **Named parameter.** Navigation stack operation mode. Initial value: LaunchMode.Standard. |
+| animated | ?Bool | No | None | **Named parameter.** Whether transition animations are supported. Initial value: true. |
 
 ### class NavigationTitleOptions
 
@@ -336,11 +336,11 @@ public init(backgroundColor!: ?ResourceColor = None, backgroundBlurStyle!: ?Blur
 
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
-| backgroundColor | ?[ResourceColor](./cj-common-types.md#interface-resourcecolor) | No | None | Background color of the title bar. |
-| backgroundBlurStyle | ?[BlurStyle](./cj-common-types.md#enum-blurstyle) | No | None | Background blur style of the title bar. |
-| barStyle | ?[BarStyle](#enum-barstyle) | No | None | Layout style of the title bar. Initial value: BarStyle.Standard. |
-| paddingStart | ?[Length](./cj-common-types.md#interface-length) | No | None | Start margin of the title bar. |
-| paddingEnd | ?[Length](./cj-common-types.md#interface-length) | No | None | End margin of the title bar. |
+| backgroundColor | ?[ResourceColor](./cj-common-types.md#interface-resourcecolor) | No | None | **Named parameter.** Background color of the title bar. |
+| backgroundBlurStyle | ?[BlurStyle](./cj-common-types.md#enum-blurstyle) | No | None | **Named parameter.** Background blur style of the title bar. |
+| barStyle | ?[BarStyle](#enum-barstyle) | No | None | **Named parameter.** Layout style of the title bar. Initial value: BarStyle.Standard. |
+| paddingStart | ?[Length](./cj-common-types.md#interface-length) | No | None | **Named parameter.** Start margin of the title bar. |
+| paddingEnd | ?[Length](./cj-common-types.md#interface-length) | No | None | **Named parameter.** End margin of the title bar. |
 
 ### class NavPathInfo
 
