@@ -631,7 +631,7 @@ try {
 public class MessageSequence {}
 ```
 
-**Description:** In RPC or IPC processes, the sender can use the write methods provided by MessageSequence to format and write data into this object. The receiver can use the read methods provided by MessageSequence to retrieve formatted data from the object. Supported data formats include: primitive types and arrays, IPC objects, interface descriptors, and custom serialized objects.
+**Description:** Provides APIs for reading and writing data in specific format. During RPC or IPC, the sender can use the **write()** method provided by **MessageSequence** to write data in specific format to a **MessageSequence** object. The receiver can use the **read()** method provided by **MessageSequence** to read data in specific format from a **MessageSequence** object. The data formats include basic data types and arrays, IPC objects, interface tokens, and custom sequenceable objects. The read sequence must be the same as the write sequence. Otherwise, data parsing errors occurs.
 
 **System Capability:** SystemCapability.Communication.IPC.Core
 
