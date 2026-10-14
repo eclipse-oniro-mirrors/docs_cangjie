@@ -108,7 +108,7 @@ Project_name
 
 1. 使用文本组件
 
-   工程同步完成后，在**Project**创建，打开**entry > src > main > ets > pages**，打开**Index.ets**文件，进行页面的编写。
+   工程同步完成后，打开**entry > src > main > ets > pages**，打开**Index.ets**文件，进行页面的编写。
 
    针对本文中使用文本/按钮来实现页面跳转/返回的应用场景，页面均使用Row和Column组件来组建布局。对于更多复杂元素对齐的场景，可选择使用RelativeContainer组件进行布局。
 
@@ -344,7 +344,7 @@ Project_name
              router.pushUrl({ url: 'pages/second' }).then(() => {
                console.info('Succeeded in jumping to the second page.')
              }).catch((err: BusinessError) => {
-               console.error(`Failed to jump to the second page. Code is ${err.code}, message is $   {err.message}`)
+               console.error(`Failed to jump to the second page. Code is ${err.code}, message is ${err.message}`)
              })
            })
          }
@@ -479,7 +479,7 @@ Project_name
          } catch (err) {
            let code = (err as BusinessError).code;
            let message = (err as BusinessError).message;
-           console.error(`Failed to return to the first page. Code is ${code}, message is $   {message}`)
+           console.error(`Failed to return to the first page. Code is ${code}, message is ${message}`)
          }
        })
      }

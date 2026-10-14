@@ -23,7 +23,7 @@ After successfully inserting a Cangjie interop module into an ArkTS project, cus
    import ohos.ark_interop_macro.*
    // Implement the custom function addF64, which takes two numbers as input and returns their sum
    @Interop[ArkTS]
-   public func addF64(a: Float64, b!: Float64): Float64 {
+   public func addF64(a: Float64, b: Float64): Float64 {
        a + b
    }
    ```

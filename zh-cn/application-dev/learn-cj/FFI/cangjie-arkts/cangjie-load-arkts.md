@@ -139,12 +139,12 @@ export let value = 123
     ```cangjie
     func loadModule(context: JSContext): Unit {
         // 1. 使用requireArkModule导入模块
-        let module = context.requireArkModule("localhar/src/main/ets/Test") // 导入本地har里的文件
-        let module = context.requireArkModule("remotehar/src/main/ets/Test") // 导入远程har里的文件
-        let module = context.requireArkModule("@ohos/lottie/src/main/js/main") // 导入ohpm har里的文件
+        let module1 = context.requireArkModule("localhar/src/main/ets/Test") // 导入本地har里的文件
+        let module2 = context.requireArkModule("remotehar/src/main/ets/Test") // 导入远程har里的文件
+        let module3 = context.requireArkModule("@ohos/lottie/src/main/js/main") // 导入ohpm har里的文件
 
         // 2. 把导入内容转换为JSObject
-        let test = module.asObject()
+        let test = module1.asObject()
         // 3. 读取导出的value变量
         let value = test["value"].toNumber()
         Hilog.info("value is ${value}")

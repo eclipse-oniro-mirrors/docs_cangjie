@@ -23,7 +23,7 @@ DevEco Studio 的配置可参考[在 ArkTS 工程中添加仓颉模块](./add_ca
    import ohos.ark_interop_macro.*
    // 实现自定义的函数 addF64，入参接收两个number，返回相加后的结果
    @Interop[ArkTS]
-   public func addF64(a: Float64, b!: Float64): Float64 {
+   public func addF64(a: Float64, b: Float64): Float64 {
        a + b
    }
    ```

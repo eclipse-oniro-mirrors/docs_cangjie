@@ -20,7 +20,7 @@ This chapter details how to use ArkTS data through the JSValue type.
 
 3. Constructing ArkTS Data from Cangjie Types
 
-   Constructing ArkTS data from Cangjie types is done using methods from JSContext. For example, creating a `number` is done via `var a : Float64 = JSContext.number(Float64)`.
+   Constructing ArkTS data from Cangjie types is done using methods from JSContext. For example, creating an ArkTS `number` requires passing a concrete value to the `JSContext.number` interface, for example, `var a = JSContext.number(1.0)`.
 
    The mapping of major ArkTS data types to Cangjie types is as follows:
 
