@@ -25,7 +25,7 @@ API接口的具体使用说明（参数使用限制、具体取值范围等）�
 
 以实现对用户点击按钮触发崩溃场景生成的崩溃事件订阅为例，说明开发步骤。
 
-1. 新建仓颉应用工程，编辑“entry > src > main > cangjie > main_bility.cj”文件，导入依赖模块：
+1. 新建仓颉应用工程，编辑“entry > src > main > cangjie > main_ability.cj”文件，导入依赖模块：
 
    <!-- compile -->
 
@@ -33,7 +33,7 @@ API接口的具体使用说明（参数使用限制、具体取值范围等）�
    import kit.PerformanceAnalysisKit.*
    ```
 
-2. 在“entry > src > main > cangjie > main_bility.cj”文件的onCreate函数中添加系统事件订阅，示例：
+2. 在“entry > src > main > cangjie > main_ability.cj”文件的onCreate函数中添加系统事件订阅，示例：
 
    <!-- compile -->
 

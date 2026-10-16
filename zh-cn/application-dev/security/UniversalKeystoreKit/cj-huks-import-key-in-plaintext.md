@@ -29,7 +29,6 @@
 
 ```cangjie
 /* 以下以导入AES256密钥的Callback操作使用为例 */
-/* 以下以生成DH密钥为例 */
 import kit.PerformanceAnalysisKit.Hilog
 import kit.UniversalKeystoreKit.*
 
@@ -80,7 +79,7 @@ func importKeyFunc(): Unit {
 <!-- compile -->
 
 ```cangjie
-/* 以下以生成DH密钥为例 */
+/* 以下以导入X25519密钥的Callback操作使用为例 */
 import kit.PerformanceAnalysisKit.Hilog
 import kit.UniversalKeystoreKit.*
 

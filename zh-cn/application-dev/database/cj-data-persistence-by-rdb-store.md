@@ -244,7 +244,7 @@
 
     ```cangjie
     try {
-        deleteRdbStore(this.context, StoreConfig(RelationalStoreSecurityLevel.S3, name: "RdbTest.db", ))
+        deleteRdbStore(this.context, "RdbTest.db")
         Hilog.info(0, "cangjie", "Succeeded in delete RdbStore.")
     } catch (e: BusinessException) {
         Hilog.error(0, "ErrorCode: ${e.code}", e.message)

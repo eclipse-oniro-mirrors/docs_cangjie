@@ -687,71 +687,71 @@ import kit.PerformanceAnalysisKit.Hilog
 
 try {
     let osFullName = DeviceInfo.osFullName
-    Hilog.info(0, "deviceinfo", "the value of the osFullName is: :${osFullName}")
+    Hilog.info(0, "deviceinfo", "the value of the osFullName is: ${osFullName}")
     let productModel = DeviceInfo.productModel
-    Hilog.info(0, "deviceinfo", "the value of the productModelis : :${productModel}")
+    Hilog.info(0, "deviceinfo", "the value of the productModel is: ${productModel}")
     let brand = DeviceInfo.brand
-    Hilog.info(0, "deviceinfo", "the value of the brand is : :${brand}")
+    Hilog.info(0, "deviceinfo", "the value of the brand is: ${brand}")
     let deviceType = DeviceInfo.deviceType
-    Hilog.info(0, "deviceinfo", "the value of the deviceType is: :${deviceType}")
+    Hilog.info(0, "deviceinfo", "the value of the deviceType is: ${deviceType}")
     let udid = DeviceInfo.udid
-    Hilog.info(0, "deviceinfo", "the value of the udid is : :${udid}")
+    Hilog.info(0, "deviceinfo", "the value of the udid is: ${udid}")
     let buildRootHash = DeviceInfo.buildRootHash
-    Hilog.info(0, "deviceinfo", "the value of the buildRootHashis : :${buildRootHash}")
+    Hilog.info(0, "deviceinfo", "the value of the buildRootHash is: ${buildRootHash}")
     let buildTime = DeviceInfo.buildTime
-    Hilog.info(0, "deviceinfo", "the value of the buildTime is: :${buildTime}")
+    Hilog.info(0, "deviceinfo", "the value of the buildTime is: ${buildTime}")
     let buildHost = DeviceInfo.buildHost
-    Hilog.info(0, "deviceinfo", "the value of the buildHost is: :${buildHost}")
+    Hilog.info(0, "deviceinfo", "the value of the buildHost is: ${buildHost}")
     let buildUser = DeviceInfo.buildUser
-    Hilog.info(0, "deviceinfo", "the value of the buildUser is: :${buildUser}")
+    Hilog.info(0, "deviceinfo", "the value of the buildUser is: ${buildUser}")
     let buildType = DeviceInfo.buildType
-    Hilog.info(0, "deviceinfo", "the value of the buildType is: :${buildType}")
+    Hilog.info(0, "deviceinfo", "the value of the buildType is: ${buildType}")
     let versionId = DeviceInfo.versionId
-    Hilog.info(0, "deviceinfo", "the value of the versionId is: :${versionId}")
+    Hilog.info(0, "deviceinfo", "the value of the versionId is: ${versionId}")
     let firstApiVersion = DeviceInfo.firstApiVersion
-    Hilog.info(0, "deviceinfo", "the value of thefirstApiVersion is : :${firstApiVersion}")
+    Hilog.info(0, "deviceinfo", "the value of the firstApiVersion is: ${firstApiVersion}")
     let sdkApiVersion = DeviceInfo.sdkApiVersion
-    Hilog.info(0, "deviceinfo", "the value of the sdkApiVersionis : :${sdkApiVersion}")
+    Hilog.info(0, "deviceinfo", "the value of the sdkApiVersion is: ${sdkApiVersion}")
     let buildVersion = DeviceInfo.buildVersion
-    Hilog.info(0, "deviceinfo", "the value of the buildVersionis : :${buildVersion}")
+    Hilog.info(0, "deviceinfo", "the value of the buildVersion is: ${buildVersion}")
     let majorVersion = DeviceInfo.majorVersion
-    Hilog.info(0, "deviceinfo", "the value of the majorVersionis : :${majorVersion}")
+    Hilog.info(0, "deviceinfo", "the value of the majorVersion is: ${majorVersion}")
     let displayVersion = DeviceInfo.displayVersion
-    Hilog.info(0, "deviceinfo", "the value of thedisplayVersion is : :${displayVersion}")
+    Hilog.info(0, "deviceinfo", "the value of the displayVersion is: ${displayVersion}")
     let serial = DeviceInfo.serial
-    Hilog.info(0, "deviceinfo", "the value of the serial is : :${serial}")
+    Hilog.info(0, "deviceinfo", "the value of the serial is: ${serial}")
     let osReleaseType = DeviceInfo.osReleaseType
-    Hilog.info(0, "deviceinfo", "the value of the osReleaseTypeis : :${osReleaseType}")
+    Hilog.info(0, "deviceinfo", "the value of the osReleaseType is: ${osReleaseType}")
     let incrementalVersion = DeviceInfo.incrementalVersion
-    Hilog.info(0, "deviceinfo", "the value of theincrementalVersion is : :${incrementalVersion}")
+    Hilog.info(0, "deviceinfo", "the value of the incrementalVersion is: ${incrementalVersion}")
     let securityPatchTag = DeviceInfo.securityPatchTag
-    Hilog.info(0, "deviceinfo", "the value of thesecurityPatchTag is : :${securityPatchTag}")
+    Hilog.info(0, "deviceinfo", "the value of the securityPatchTag is: ${securityPatchTag}")
     let abiList = DeviceInfo.abiList
-    Hilog.info(0, "deviceinfo", "the value of the abiList is ::${abiList}")
+    Hilog.info(0, "deviceinfo", "the value of the abiList is: ${abiList}")
     let bootloaderVersion = DeviceInfo.bootloaderVersion
-    Hilog.info(0, "deviceinfo", "the value of thebootloaderVersion is : :${bootloaderVersion}")
+    Hilog.info(0, "deviceinfo", "the value of the bootloaderVersion is: ${bootloaderVersion}")
     let hardwareModel = DeviceInfo.hardwareModel
-    Hilog.info(0, "deviceinfo", "the value of the hardwareModelis : :${hardwareModel}")
+    Hilog.info(0, "deviceinfo", "the value of the hardwareModel is: ${hardwareModel}")
     let softwareModel = DeviceInfo.softwareModel
-    Hilog.info(0, "deviceinfo", "the value of the softwareModelis : :${softwareModel}")
+    Hilog.info(0, "deviceinfo", "the value of the softwareModel is: ${softwareModel}")
     let productSeries = DeviceInfo.productSeries
-    Hilog.info(0, "deviceinfo", "the value of the productSeriesis : :${productSeries}")
+    Hilog.info(0, "deviceinfo", "the value of the productSeries is: ${productSeries}")
     let marketName = DeviceInfo.marketName
-    Hilog.info(0, "deviceinfo", "the value of the marketName is: :${marketName}")
+    Hilog.info(0, "deviceinfo", "the value of the marketName is: ${marketName}")
     let manufacture = DeviceInfo.manufacture
-    Hilog.info(0, "deviceinfo", "the value of the manufactureis : :${manufacture}")
+    Hilog.info(0, "deviceinfo", "the value of the manufacture is: ${manufacture}")
     let distributionOSName = DeviceInfo.distributionOSName
-    Hilog.info(0, "deviceinfo", "the value of thedistributionOSName is : :${distributionOSName}")
+    Hilog.info(0, "deviceinfo", "the value of the distributionOSName is: ${distributionOSName}")
     let distributionOSVersion = DeviceInfo.distributionOSVersion
-    Hilog.info(0, "deviceinfo", "the value of the distributionOSVersion is : :${distributionOSVersion}")
+    Hilog.info(0, "deviceinfo", "the value of the distributionOSVersion is: ${distributionOSVersion}")
     let distributionOSApiVersion = DeviceInfo.distributionOSApiVersion
-    Hilog.info(0, "deviceinfo", "the value of the distributionOSApiVersion is : :${distributionOSApiVersion}")
+    Hilog.info(0, "deviceinfo", "the value of the distributionOSApiVersion is: ${distributionOSApiVersion}")
     let distributionOSReleaseType = DeviceInfo.distributionOSReleaseType
-    Hilog.info(0, "deviceinfo", "the value of the distributionOSReleaseType is : :${distributionOSReleaseType}")
+    Hilog.info(0, "deviceinfo", "the value of the distributionOSReleaseType is: ${distributionOSReleaseType}")
 let sdkMinorApiVersion = DeviceInfo.sdkMinorApiVersion
-    Hilog.info(0, "deviceinfo", "the value of the sdkMinorApiVersion is: :${sdkMinorApiVersion}")
+    Hilog.info(0, "deviceinfo", "the value of the sdkMinorApiVersion is: ${sdkMinorApiVersion}")
     let sdkPatchApiVersion = DeviceInfo.sdkPatchApiVersion
-    Hilog.info(0, "deviceinfo", "the value of the sdkPatchApiVersion is: :${sdkPatchApiVersion}")
+    Hilog.info(0, "deviceinfo", "the value of the sdkPatchApiVersion is: ${sdkPatchApiVersion}")
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
