@@ -34,4 +34,8 @@
     - [Half-modal Transition](cj-universal-attribute-sheettransition.md)
 - [Safe Area](cj-universal-attribute-expandsafearea.md)
 - [Component Content Filling Mode](cj-universal-attribute-renderfit.md)
+- Touch Interactions
+    - [Touch hot zone settings](cj-universal-attribute-touchtarget.md)
+    - [Touch test control](cj-universal-attribute-hittestbehavior.md)
+- [Hover effect](cj-universal-attribute-hovereffect.md)
 <!--DelEnd-->
