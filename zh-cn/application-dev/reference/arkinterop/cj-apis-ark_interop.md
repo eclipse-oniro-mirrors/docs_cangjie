@@ -4387,7 +4387,7 @@ public func arrayBuffer(length: Int32): JSArrayBuffer
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
-| 1     | The arrayBuffer length is invalid.          |
+| 34300001     | The arrayBuffer length is invalid.          |
 | 34300002   | Outside error occurred.                |
 | 34300003   | Accessing reference is beyond reach. |
 | 34300004   | Thread mismatch.                     |

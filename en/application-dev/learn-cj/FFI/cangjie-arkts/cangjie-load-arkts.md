@@ -138,12 +138,12 @@ export let value = 123
     ```cangjie
     func loadModule(context: JSContext): Unit {
         // 1. Import the module using requireArkModule
-        let module = context.requireArkModule("localhar/src/main/ets/Test") // Import files in the local HAR
-        let module = context.requireArkModule("remotehar/src/main/ets/Test") // Import files in the remote HAR
-        let module = context.requireArkModule("@ohos/lottie/src/main/js/main") // Import files in the OHPM HAR
+        let module1 = context.requireArkModule("localhar/src/main/ets/Test") // Import files in the local HAR
+        let module2 = context.requireArkModule("remotehar/src/main/ets/Test") // Import files in the remote HAR
+        let module3 = context.requireArkModule("@ohos/lottie/src/main/js/main") // Import files in the OHPM HAR
 
         // 2. Convert the imported content to JSObject
-        let test = module.asObject()
+        let test = module1.asObject()
         // 3. Read the exported value variable
         let value = test["value"].toNumber()
         Hilog.info("value is ${value}")

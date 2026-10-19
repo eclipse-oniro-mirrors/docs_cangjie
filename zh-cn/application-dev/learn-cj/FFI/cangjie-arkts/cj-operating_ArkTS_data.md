@@ -20,7 +20,7 @@
 
 3. 构造仓颉类型的 ArkTS 数据
 
-   通过仓颉类型来构造 ArkTS 数据，是通过 JSContext 的方法类来构造的。以 `number` 为例，创建一个 `number` 的方式是 `var a : Float64 = JSContext.number(Float64)`。
+   通过仓颉类型来构造 ArkTS 数据，是通过 JSContext 的方法类来构造的。以 `number` 为例，创建一个 ArkTS `number` 需向 `JSContext.number` 接口传入具体数值，例如 `var a = JSContext.number(1.0)`。
 
    ArkTS 主要数据类型对应到仓颉类型的映射如下：
 

@@ -333,7 +333,7 @@ Page navigation uses the router module to find target pages via URLs.
              router.pushUrl({ url: 'pages/second' }).then(() => {
                console.info('Succeeded in jumping to the second page.')
              }).catch((err: BusinessError) => {
-               console.error(`Failed to jump to the second page. Code is ${err.code}, message is $   {err.message}`)
+               console.error(`Failed to jump to the second page. Code is ${err.code}, message is ${err.message}`)
              })
            })
          }
@@ -399,7 +399,7 @@ Page navigation uses the router module to find target pages via URLs.
            } catch (err) {
              let code = (err as BusinessError).code;
              let message = (err as BusinessError).message;
-             console.error(`Failed to return to the first page. Code is ${code}, message is $   {message}`)
+             console.error(`Failed to return to the first page. Code is ${code}, message is ${message}`)
            }
          })
        }

@@ -300,7 +300,7 @@ Here, **my_module** becomes a Cangjie-ArkTS hybrid module.
 
 2. Automatically generate Cangjie-ArkTS interop interface declarations.
 
-   Open **index.cj**, right-click in the editor, and select **Generate... > Cangjie-ArkTS Interop API**. This generates .d.ts interface declarations in **entry > src > main > cangjie > types > libohos_app_cangjie_my_module > Index.d.ts**, exposing Cangjie interfaces to ArkTS. The directory structure is as follows:
+   Open **index.cj**, right-click in the editor, and select **Generate... > Cangjie-ArkTS Interop API**. This generates .d.ts interface declarations in **my_module > src > main > cangjie > types > libohos_app_cangjie_my_module > Index.d.ts**, exposing Cangjie interfaces to ArkTS. The directory structure is as follows:
 
    ```text
    my_module

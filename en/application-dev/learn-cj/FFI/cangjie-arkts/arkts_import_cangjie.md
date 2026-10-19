@@ -241,7 +241,7 @@ Below is an example of loading the Cangjie third-party library `libapplication.s
         "dependencies": {
             // ...
             "cangjielib": "../cangjielib",
-            "libohos_app_cangjie_cangjielib.so": "file:../cangjielib/src/main/cangjie/types/ohos_app_cangjie_cangjielib"
+            "libohos_app_cangjie_cangjielib.so": "file:../cangjielib/src/main/cangjie/types/libohos_app_cangjie_cangjielib"
             // ...
         }
     }
@@ -297,7 +297,7 @@ Below is an example of loading the Cangjie third-party library `libapplication.s
         "dependencies": {
             // ...
             "cangjielib": "file:libs/cangjielib.har",
-            "libohos_app_cangjie_cangjielib.so": "file:src/main/cangjie/types/ohos_app_cangjie_cangjielib"
+            "libohos_app_cangjie_cangjielib.so": "file:src/main/cangjie/types/libohos_app_cangjie_cangjielib"
             // ...
         }
     }
@@ -426,7 +426,7 @@ Below is an example of loading the Cangjie third-party library `libapplication.s
 
     // Call Cangjie interface
     let result = returnA();
-    console.log(${result});
+    console.log(`${result}`);
     ```
 
 #### Option 2: Third-party library B as a subpackage of third-party library A
@@ -526,7 +526,7 @@ Below is an example of loading the Cangjie third-party library `libapplication.s
 
     // Call Cangjie interface
     let result = returnA();
-    console.log(${result});
+    console.log(`${result}`);
     ```
 
 #### Option 3: Compile third-party library B into a har package as a module
@@ -596,7 +596,7 @@ Below is an example of loading the Cangjie third-party library `libapplication.s
         # entry/src/main/cangjie/package_a/cjpm.toml
         [dependencies]
           [dependencies.ohos_app_cangjie_package_b]
-            path = ${package_b}
+            path = "../package_b"
         ```
 
 5. Create Cangjie third-party library A interface declarations on the ArkTS side.
@@ -650,7 +650,7 @@ Below is an example of loading the Cangjie third-party library `libapplication.s
 
     // Call Cangjie interface
     let result = returnA();
-    console.log(${result});
+    console.log(`${result}`);
     ```
 
 ## Method 2: Loading Cangjie Modules Using the `loadNativeModule` Interface

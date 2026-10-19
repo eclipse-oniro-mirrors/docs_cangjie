@@ -33,12 +33,12 @@ class MyCurve {
 }
 
 let myCurves: Array<MyCurve> = [
-    MyCurve(' FastOutSlowIn', Curve.FastOutSlowIn, 0xD94838),
-    MyCurve(' Ease', Curve.Ease, 0xD94838),
-    MyCurve(' EaseIn', Curve.EaseIn, 0xDB6B42),
-    MyCurve(' Linear', Curve.Linear, 0x317AF7),
-    MyCurve(' EaseOut', Curve.EaseOut, 0x5BA854),
-    MyCurve(' EaseInOut', Curve.EaseInOut, 0x317AF7)
+    MyCurve('FastOutSlowIn', Curve.FastOutSlowIn, 0xD94838),
+    MyCurve('Ease', Curve.Ease, 0xD94838),
+    MyCurve('EaseIn', Curve.EaseIn, 0xDB6B42),
+    MyCurve('Linear', Curve.Linear, 0x317AF7),
+    MyCurve('EaseOut', Curve.EaseOut, 0x5BA854),
+    MyCurve('EaseInOut', Curve.EaseInOut, 0x317AF7)
 ]
 
 @Entry

@@ -240,7 +240,7 @@
         "dependencies": {
             // ...
             "cangjielib": "../cangjielib",
-            "libohos_app_cangjie_cangjielib.so": "file:../cangjielib/src/main/cangjie/types/ohos_app_cangjie_cangjielib"
+            "libohos_app_cangjie_cangjielib.so": "file:../cangjielib/src/main/cangjie/types/libohos_app_cangjie_cangjielib"
             // ...
         }
     }
@@ -296,7 +296,7 @@
         "dependencies": {
             // ...
             "cangjielib": "file:libs/cangjielib.har",
-            "libohos_app_cangjie_cangjielib.so": "file:src/main/cangjie/types/ohos_app_cangjie_cangjielib"
+            "libohos_app_cangjie_cangjielib.so": "file:src/main/cangjie/types/libohos_app_cangjie_cangjielib"
             // ...
         }
     }
@@ -425,7 +425,7 @@
 
     // 调用仓颉接口
     let result = returnA();
-    console.log(${result});
+    console.log(`${result}`);
     ```
 
 #### 方案二：三方库 B 作为三方库 A 的子包
@@ -525,7 +525,7 @@
 
     // 调用仓颉接口
     let result = returnA();
-    console.log(${result});
+    console.log(`${result}`);
     ```
 
 #### 方案三：三方库 B 作为一个模块，编译成 har 包
@@ -594,7 +594,7 @@
         # entry/src/main/cangjie/package_a/cjpm.toml
         [dependencies]
           [dependencies.ohos_app_cangjie_package_b]
-            path = ${package_b}
+            path = "../package_b"
         ```
 
 5. 在 ArkTS 侧创建仓颉三方库 A 接口声明。
@@ -649,7 +649,7 @@
 
     // 调用仓颉接口
     let result = returnA();
-    console.log(${result});
+    console.log(`${result}`);
     ```
 
 ## 方式二：使用 loadNativeModule 接口加载仓颉模块
