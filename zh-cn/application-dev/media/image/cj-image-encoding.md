@@ -103,13 +103,14 @@ let resourceManager = abilityContext.resourceManager
         
 let img = resourceManager.getMediaContent(@r(app.media.layered_image).id)
 let imageSource = createImageSource(img)
+let pixelMap = imageSource.createPixelMap()
 let cacheDir = "/data/storage/el2/base/haps/entry/cache"
 let filePath = cacheDir + '/test.jpg'
 
 let file = FileIo.open(filePath, mode: OpenMode.CREATE | OpenMode.READ_WRITE)
 // 直接打包进文件。
 let imagePacker = createImagePacker()
-imagePacker.packToFile(imageSource, Int32(file.fd), PackingOption("image/jpeg", 100))
+imagePacker.packToFile(pixelMap, Int32(file.fd), PackingOption("image/jpeg", 100))
 FileIo.close(file.fd)
 ```
 

@@ -644,7 +644,7 @@ App clone is not supported.
 
 **处理步骤**
 
-在app.json5配置文件中配置multiAppMode标签，开启应用分身功能后，再调用getCurrentAppCloneIndex口。
+在app.json5配置文件中配置multiAppMode标签，开启应用分身功能后，再调用getCurrentAppCloneIndex接口。
 
 ## 16000072 不支持应用多开
 

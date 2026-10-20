@@ -118,7 +118,7 @@ Failed to get the profile because the specified profile is not found in the HAP.
 **可能原因**
 
 1. 输入的metadata name在配置文件中不存在。
-2. 配置文件的内容不是json格式。<
+2. 配置文件的内容不是json格式。
 
 **处理步骤**
 

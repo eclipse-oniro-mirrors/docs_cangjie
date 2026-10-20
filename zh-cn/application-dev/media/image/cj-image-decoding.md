@@ -30,7 +30,17 @@ API示例代码使用说明：
     ```
 
 2. 获取图片。
-    - 方法一：通过沙箱路径获取图片的文件描述符。具体请参考[file.fs API参考文档](../../reference/CoreFileKit/cj-apis-file_fs.md)。
+    - 方法一：通过沙箱路径直接获取。该方法仅适用于应用沙箱中的图片。
+
+        <!-- compile -->
+
+        ```cangjie
+        // 获取沙箱中的图片路径
+        let cacheDir = "/data/storage/el2/base/haps/entry/cache"
+        let filePath = cacheDir + '/test.jpg'
+        ```
+
+    - 方法二：通过沙箱路径获取图片的文件描述符。具体请参考[file.fs API参考文档](../../reference/CoreFileKit/cj-apis-file_fs.md)。
       该方法需要先导入kit.CoreFileKit模块和kit.AbilityKit模块。
 
         <!-- compile -->
@@ -51,7 +61,7 @@ API示例代码使用说明：
         let fd = file.fd 
         ```
 
-    - 方法二：通过资源管理器获取资源文件的Array\<UInt8>。具体请参考[ResourceManager API参考文档](../../reference/LocalizationKit/cj-apis-resource_manager.md#func-getrawfilecontentstring)。
+    - 方法三：通过资源管理器获取资源文件的Array\<UInt8>。具体请参考[ResourceManager API参考文档](../../reference/LocalizationKit/cj-apis-resource_manager.md#func-getrawfilecontentstring)。
 
         <!-- compile -->
 
@@ -101,7 +111,7 @@ API示例代码使用说明：
         try {
           let rawFileDescriptor = resourceManager.getRawFd("test.jpg")
         } catch (e: BusinessException) {
-          Hilog.error(0, "Failed to get RawFileContent", e.message)
+          Hilog.error(0, "Failed to get RawFileDescriptor", e.message)
         }
         ```
 

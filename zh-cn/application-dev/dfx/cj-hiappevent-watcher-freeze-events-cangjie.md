@@ -21,7 +21,7 @@
 
 以实现对用户点击按钮触发应用无响应场景生成的应用冻屏事件订阅为例，说明开发步骤。
 
-1. 新建一个仓颉应用工程，编辑工程中的“entry > src > main > cangjie > main_bility.cj”文件，导入依赖模块：
+1. 新建一个仓颉应用工程，编辑工程中的“entry > src > main > cangjie > main_ability.cj”文件，导入依赖模块：
 
    <!-- compile -->
 
@@ -29,7 +29,7 @@
    import kit.PerformanceAnalysisKit.*
    ```
 
-2. 编辑工程中的“entry > src > main > cangjie > main_bility.cj”文件，在onCreate函数中添加系统事件的订阅，示例代码如下：
+2. 编辑工程中的“entry > src > main > cangjie > main_ability.cj”文件，在onCreate函数中添加系统事件的订阅，示例代码如下：
 
    <!-- compile -->
 
