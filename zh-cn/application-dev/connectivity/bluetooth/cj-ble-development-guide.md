@@ -55,8 +55,7 @@
 
     ```cangjie
     import kit.ConnectivityKit.*
-    import ohos.callback_invoke.*
-    import ohos.business_exception.*
+    import kit.CangjieKit.*
     import kit.PerformanceAnalysisKit.Hilog
 
     let TAG: String = 'BleAdvertisingManager'
@@ -140,8 +139,7 @@
 
     ```cangjie
     import kit.ConnectivityKit.*
-    import ohos.callback_invoke.*
-    import ohos.business_exception.*
+    import kit.CangjieKit.*
     import std.collection.{HashMap, ArrayList}
     import std.math.numeric.BigInt
     import kit.PerformanceAnalysisKit.Hilog

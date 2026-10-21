@@ -70,7 +70,7 @@ public func createGattClientDevice(deviceId: String): GattClientDevice
 ```cangjie
 // index.cj
 
-import ohos.business_exception.*
+import kit.CangjieKit.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -110,7 +110,7 @@ public func createGattServer(): GattServer
 
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 try {
     let gattServer: GattServer = createGattServer()
@@ -157,8 +157,7 @@ public func off(eventType: BluetoothBleCallbackType, callback!: ?CallbackObject 
 ```cangjie
 // index.cj
 
-import ohos.callback_invoke.*
-import ohos.business_exception.*
+import kit.CangjieKit.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -218,8 +217,7 @@ public func on(eventType: BluetoothBleCallbackType, callback: Callback1Argument<
 ```cangjie
 // index.cj
 
-import ohos.callback_invoke.*
-import ohos.business_exception.*
+import kit.CangjieKit.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -276,8 +274,7 @@ public func on(eventType: BluetoothBleCallbackType, callback: Callback1Argument<
 ```cangjie
 // index.cj
 
-import ohos.callback_invoke.*
-import ohos.business_exception.*
+import kit.CangjieKit.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -345,7 +342,7 @@ public func startAdvertising(setting: AdvertiseSetting, advData: AdvertiseData, 
 
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 let advertisingSettings = AdvertiseSetting()
 let manufactureDataUnit = ManufactureData(
@@ -431,7 +428,7 @@ public func startAdvertising(advertisingParams: AdvertisingParams): UInt32
 
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 let advertisingSettings = AdvertiseSetting()
 let manufactureDataUnit = ManufactureData(
@@ -511,8 +508,7 @@ public func startBleScanning(filters: Array<ScanFilter>, options!: ?ScanOptions 
 ```cangjie
 // index.cj
 
-import ohos.callback_invoke.*
-import ohos.business_exception.*
+import kit.CangjieKit.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -577,7 +573,7 @@ public func stopAdvertising(): Unit
 
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 try {
     stopAdvertising()
@@ -633,7 +629,7 @@ public func stopAdvertising(advertisingId: UInt32): Unit
 
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 let advertisingSettings = AdvertiseSetting()
 let manufactureDataUnit = ManufactureData(
@@ -709,7 +705,7 @@ public func stopBleScanning(): Unit
 ```cangjie
 // index.cj
 
-import ohos.business_exception.*
+import kit.CangjieKit.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -1984,7 +1980,7 @@ public func close(): Unit
 ```cangjie
 // index.cj
 
-import ohos.business_exception.*
+import kit.CangjieKit.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -2033,7 +2029,7 @@ public func connect(): Unit
 ```cangjie
 // index.cj
 
-import ohos.business_exception.*
+import kit.CangjieKit.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -2081,7 +2077,7 @@ public func disconnect(): Unit
 ```cangjie
 // index.cj
 
-import ohos.business_exception.*
+import kit.CangjieKit.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -2132,7 +2128,7 @@ public func getDeviceName(): String
 ```cangjie
 // index.cj
 
-import ohos.business_exception.*
+import kit.CangjieKit.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -2187,7 +2183,7 @@ public func getRssiValue(callback: AsyncCallback<Int32>): Unit
 ```cangjie
 // index.cj
 
-import ohos.business_exception.*
+import kit.CangjieKit.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -2244,7 +2240,7 @@ public func getServices(callback: AsyncCallback<Array<GattService>>): Unit
 ```cangjie
 // index.cj
 
-import ohos.business_exception.*
+import kit.CangjieKit.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -2300,8 +2296,7 @@ public func off(eventType: BluetoothBleGattClientDeviceCallbackType, callback!: 
 ```cangjie
 // index.cj
 
-import ohos.callback_invoke.*
-import ohos.business_exception.*
+import kit.CangjieKit.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -2362,8 +2357,7 @@ public func on(eventType: BluetoothBleGattClientDeviceCallbackType, callback: Ca
 ```cangjie
 // index.cj
 
-import ohos.callback_invoke.*
-import ohos.business_exception.*
+import kit.CangjieKit.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -2424,8 +2418,7 @@ public func on(
 ```cangjie
 // index.cj
 
-import ohos.callback_invoke.*
-import ohos.business_exception.*
+import kit.CangjieKit.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -2483,8 +2476,7 @@ public func on(eventType: BluetoothBleGattClientDeviceCallbackType, callback: Ca
 ```cangjie
 // index.cj
 
-import ohos.callback_invoke.*
-import ohos.business_exception.*
+import kit.CangjieKit.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -2560,7 +2552,7 @@ public func readCharacteristicValue(
 ```cangjie
 // index.cj
 
-import ohos.business_exception.*
+import kit.CangjieKit.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -2659,7 +2651,7 @@ public func readDescriptorValue(descriptor: BleDescriptor, callback: AsyncCallba
 ```cangjie
 // index.cj
 
-import ohos.business_exception.*
+import kit.CangjieKit.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -2737,7 +2729,7 @@ public func setBleMtuSize(mtu: Int32): Unit
 ```cangjie
 // index.cj
 
-import ohos.business_exception.*
+import kit.CangjieKit.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -2806,7 +2798,7 @@ public func setCharacteristicChangeIndication(characteristic: BleCharacteristic,
 ```cangjie
 // index.cj
 
-import ohos.business_exception.*
+import kit.CangjieKit.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -2900,7 +2892,7 @@ public func setCharacteristicChangeNotification(characteristic: BleCharacteristi
 ```cangjie
 // index.cj
 
-import ohos.business_exception.*
+import kit.CangjieKit.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 // 创建descriptors
@@ -2991,7 +2983,7 @@ public func writeCharacteristicValue(characteristic: BleCharacteristic, writeTyp
 ```cangjie
 // index.cj
 
-import ohos.business_exception.*
+import kit.CangjieKit.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -3084,7 +3076,7 @@ public func writeDescriptorValue(descriptor: BleDescriptor, callback: AsyncCallb
 ```cangjie
 // index.cj
 
-import ohos.business_exception.*
+import kit.CangjieKit.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -3575,7 +3567,7 @@ public func addService(service: GattService): Unit
 ```cangjie
 // index.cj
 
-import ohos.business_exception.*
+import kit.CangjieKit.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -3657,7 +3649,7 @@ public func close(): Unit
 ```cangjie
 // index.cj
 
-import ohos.business_exception.*
+import kit.CangjieKit.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -3716,7 +3708,7 @@ public func notifyCharacteristicChanged(deviceId: String, notifyCharacteristic: 
 ```cangjie
 // index.cj
 
-import ohos.business_exception.*
+import kit.CangjieKit.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -3772,8 +3764,7 @@ public func off(eventType: BluetoothBleGattServerCallbackType, callback!: ?Callb
 ```cangjie
 // index.cj
 
-import ohos.callback_invoke.*
-import ohos.business_exception.*
+import kit.CangjieKit.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -3831,8 +3822,7 @@ public func on(eventType: BluetoothBleGattServerCallbackType, callback: Callback
 ```cangjie
 // index.cj
 
-import ohos.callback_invoke.*
-import ohos.business_exception.*
+import kit.CangjieKit.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -3909,8 +3899,7 @@ public func on(eventType: BluetoothBleGattServerCallbackType, callback: Callback
 ```cangjie
 // index.cj
 
-import ohos.callback_invoke.*
-import ohos.business_exception.*
+import kit.CangjieKit.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -3994,8 +3983,7 @@ public func on(eventType: BluetoothBleGattServerCallbackType, callback: Callback
 ```cangjie
 // index.cj
 
-import ohos.callback_invoke.*
-import ohos.business_exception.*
+import kit.CangjieKit.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -4072,8 +4060,7 @@ public func on(eventType: BluetoothBleGattServerCallbackType, callback: Callback
 ```cangjie
 // index.cj
 
-import ohos.callback_invoke.*
-import ohos.business_exception.*
+import kit.CangjieKit.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -4154,8 +4141,7 @@ public func on(eventType: BluetoothBleGattServerCallbackType, callback: Callback
 ```cangjie
 // index.cj
 
-import ohos.callback_invoke.*
-import ohos.business_exception.*
+import kit.CangjieKit.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -4212,8 +4198,7 @@ public func on(eventType: BluetoothBleGattServerCallbackType, callback: Callback
 ```cangjie
 // index.cj
 
-import ohos.callback_invoke.*
-import ohos.business_exception.*
+import kit.CangjieKit.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -4275,7 +4260,7 @@ public func removeService(serviceUUID: String): Unit
 ```cangjie
 // index.cj
 
-import ohos.business_exception.*
+import kit.CangjieKit.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -4333,7 +4318,7 @@ client请求是指通过下述接口订阅回调收到的请求消息：
 ```cangjie
 // index.cj
 
-import ohos.business_exception.*
+import kit.CangjieKit.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
