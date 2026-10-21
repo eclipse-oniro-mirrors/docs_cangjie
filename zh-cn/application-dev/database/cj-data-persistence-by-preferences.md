@@ -55,11 +55,11 @@
     ```cangjie
     // xxx.cj
     import kit.ArkData.*
-    import ohos.callback_invoke.Callback1Argument
+    import kit.CangjieKit.Callback1Argument
     import kit.PerformanceAnalysisKit.Hilog
     import kit.AbilityKit.{UIAbility, Want, LaunchParam, LaunchReason, UIAbilityContext}
     import kit.ArkUI.WindowStage
-    import ohos.business_exception.BusinessException
+    import kit.CangjieKit.BusinessException
     ```
 
 2. 获取Preferences实例。
