@@ -20,9 +20,9 @@
 
     ```cangjie
     import kit.CameraKit.*
-    import ohos.business_exception.BusinessException
+    import kit.CangjieKit.BusinessException
     import kit.PerformanceAnalysisKit.Hilog
-    import ohos.callback_invoke.Callback0Argument
+    import kit.CangjieKit.Callback0Argument
     ```
 
     > **说明：**
@@ -85,7 +85,7 @@
         // 以NormalPhoto模式为例，需要添加预览流、拍照流。
         // previewProfiles属性为获取当前设备支持的预览输出流。
         let previewProfilesArray: Array<Profile> = cameraOutputCapability.previewProfiles
-        if (!previewProfilesArray.size == 0) {
+        if (previewProfilesArray.isEmpty()) {
             Hilog.error(0,"","createOutput previewProfilesArray is empty")
         }
         //photoProfiles属性为获取当前设备支持的拍照输出流。
