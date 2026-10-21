@@ -62,7 +62,7 @@
      ```cangjie
      // 向下偏移100。
      // 向右偏移100。
-     pixelMap.translate(100.0, 100.0);
+     pixelMap.translate(100.0, 100.0)
      ```
 
      ![offsets](./figures/offsets.jpeg)
@@ -73,7 +73,7 @@
 
      ```cangjie
      // 顺时针旋转90°。
-     pixelMap.rotate(90.0);
+     pixelMap.rotate(90.0)
      ```
 
      ![rotate](./figures/rotate.jpeg)
@@ -84,7 +84,7 @@
 
      ```cangjie
      // 垂直翻转。
-     pixelMap.flip(false, true);
+     pixelMap.flip(false, true)
      ```
 
      ![Vertical Flip](./figures/vertical-flip.jpeg)
@@ -104,7 +104,7 @@
 
      ```cangjie
      // 透明度0.5。
-     pixelMap.opacity(0.5);
+     pixelMap.opacity(0.5)
      ```
 
      ![Transparency](./figures/transparency.png)

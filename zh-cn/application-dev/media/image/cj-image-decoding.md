@@ -69,7 +69,7 @@ API示例代码使用说明：
         // 导入resourceManager资源管理器。
         import kit.LocalizationKit.*
         import kit.PerformanceAnalysisKit.Hilog
-        import ohos.business_exception.BusinessException
+        import kit.CangjieKit.BusinessException
 
         var abilityContext = Global.abilityContext
         // 获取resourceManager资源管理器。
@@ -96,7 +96,7 @@ API示例代码使用说明：
         // 导入resourceManager资源管理器。
         import kit.LocalizationKit.*
         import kit.PerformanceAnalysisKit.Hilog
-        import ohos.business_exception.BusinessException
+        import kit.CangjieKit.BusinessException
 
         var abilityContext = Global.abilityContext
         // 获取resourceManager资源管理器。
