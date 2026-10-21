@@ -48,7 +48,7 @@
 ```cangjie
 import kit.CryptoArchitectureKit.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 // 加密消息。
 func encryptMessage(symKey: SymKey, plainText: DataBlob) {
