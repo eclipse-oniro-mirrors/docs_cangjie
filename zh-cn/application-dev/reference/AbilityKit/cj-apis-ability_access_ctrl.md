@@ -61,7 +61,7 @@ public static func createAtManager(): AtManager
 // index.cj
 
 import kit.AbilityKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -124,7 +124,7 @@ public func checkAccessToken(tokenID: UInt32, permissionName: Permissions): Gran
 // index.cj
 
 import kit.AbilityKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -176,8 +176,7 @@ public func requestPermissionsFromUser(context: UIAbilityContext, permissionList
 
 import kit.AbilityKit.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.*
 
 try {
     // 此处代码可添加在依赖项定义中
