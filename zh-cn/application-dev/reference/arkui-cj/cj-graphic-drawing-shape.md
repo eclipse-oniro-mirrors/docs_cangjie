@@ -121,10 +121,9 @@ public func mesh(value: ?Array<Float64>, column: ?UInt32, row: ?UInt32): This
 ```cangjie
 package ohos_app_cangjie_entry
 
-import ohos.base.*
-import ohos.arkui.component.*
-import ohos.arkui.state_management.*
+import kit.ArkUI.{LengthProp, CustomView, LocalStorage, SubscriberManager, Column, loadNativeView, CJEntry, Text, Shape, Ellipse, Path, Color, LineCapStyle, LineJoinStyle}
 import ohos.arkui.state_macro_manage.*
+import ohos.arkui.component.rect.Rect
 
 @Entry
 @Component

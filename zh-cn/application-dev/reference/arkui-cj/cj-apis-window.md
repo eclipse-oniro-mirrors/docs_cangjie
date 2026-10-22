@@ -1169,6 +1169,7 @@ public func off(callbackType: WindowCallbackType): Unit
 
   |错误码|说明|
   |:----|:----|
+  |1300002|This window state is abnormal. Possible cause: The window is not created.|
   |1300016|Parameter error. Possible cause: 1. Mandatory parameters are left unspecified;<br>2. Incorrect parameter types;<br>3. Parameter verification failed.|
 
 ### func off(WindowCallbackType, Callback1Argument\<UInt32>)
@@ -1196,6 +1197,7 @@ public func off(callbackType: WindowCallbackType, callback: Callback1Argument<UI
 
   |错误码|说明|
   |:----|:----|
+  |1300002|This window state is abnormal. Possible cause: The window is not created.|
   |1300016|Parameter error. Possible cause: 1. Mandatory parameters are left unspecified;<br>2. Incorrect parameter types;<br>3. Parameter verification failed.|
 
 ### func on(WindowCallbackType, Callback1Argument\<UInt32>)
@@ -1652,7 +1654,7 @@ public func snapshot(): PixelMap
 
 |类型|说明|
 |:----|:----|
-|[PixelMap](../ImageKit/cj-apis-image.md#class-pixelmap)|返回不带值的Promise。|
+|[PixelMap](../ImageKit/cj-apis-image.md#class-pixelmap)|返回窗口快照的 PixelMap 对象。|
 
 **异常：**
 
@@ -3386,7 +3388,7 @@ public operator func ==(other: WindowType): Bool
 package ohos_app_cangjie_entry
 
 import kit.ArkUI.*
-import ohos.app.ability.ui_ability.*
+import kit.AbilityKit.*
 
 class MainAbility <: UIAbility {
     public init() {
@@ -3446,7 +3448,7 @@ class newPage {
 
 package ohos_app_cangjie_entry
 
-import ohos.app.ability.ui_ability.*
+import kit.AbilityKit.*
 import kit.ArkUI.*
 
 class MainAbility <: UIAbility {
@@ -3471,10 +3473,9 @@ class MainAbility <: UIAbility {
 package ohos_app_cangjie_entry
 
 import kit.ArkUI.*
-import ohos.hilog.*
+import kit.PerformanceAnalysisKit.*
 import ohos.arkui.state_macro_manage.*
-import ohos.callback_invoke.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.*
 
 @Entry
 @Component

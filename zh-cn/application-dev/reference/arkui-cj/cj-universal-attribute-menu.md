@@ -109,7 +109,7 @@ package ohos_app_cangjie_entry
 
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
-import ohos.hilog.*
+import kit.PerformanceAnalysisKit.*
 
 @Entry
 @Component
@@ -164,7 +164,7 @@ package ohos_app_cangjie_entry
 
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
-import ohos.hilog.*
+import kit.PerformanceAnalysisKit.*
 
 @Entry
 @Component
@@ -228,9 +228,8 @@ package ohos_app_cangjie_entry
 
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
-import ohos.resource_manager.*
-import ohos.hilog.*
-import ohos.resource.__GenerateResource__
+import kit.LocalizationKit.*
+import kit.PerformanceAnalysisKit.*
 
 @Entry
 @Component

@@ -226,7 +226,6 @@ class Child {
   import kit.ArkUI.*
   import ohos.arkui.state_macro_manage.*
   import kit.LocalizationKit.*
-  import ohos.resource.__GenerateResource__
 
   @Entry
   @Component

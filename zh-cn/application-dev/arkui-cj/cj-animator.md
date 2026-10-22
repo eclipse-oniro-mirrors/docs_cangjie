@@ -37,21 +37,22 @@
 
     ```cangjie
     // 创建动画的初始参数
-    this.backAnimator = getUIContext.createAnimator(AnimatorOptions(
-      duration: 1500,
-      easing: "friction",
-      delay: 0,
-      fill: AnimatorFill.Forwards,
-      direction: AnimatorDirection.Normal,
-      iterations: 2,
-      // 动画onFrame 插值首帧值
-      begin: 200.0,
-      // 动画onFrame 插值尾帧值
-      end: 400.0
-    ))
+    let options = AnimatorOptions(
+        duration: 1500,
+        easing: "friction",
+        delay: 0,
+        fill: AnimatorFill.Forwards,
+        direction: AnimatorDirection.Normal,
+        iterations: 2,
+        // 动画onFrame 插值首帧值
+        begin: 200.0,
+        // 动画onFrame 插值尾帧值
+        end: 400.0
+    )
+    var result: ?AnimatorResult = this.getUIContext().createAnimator(options)
     // 设置接收到帧时回调，动画播放过程中每帧会调用onFrame回调
-    this.backAnimator?.onFrame =  {  progress: Float64 =>
-      Hilog.info(0,"",current value is :" + progress.toString())
+    result?.onFrame = { progress: Float64 =>
+        Hilog.info(0, "", "current value is: " + progress.toString())
     }
     ```
 
@@ -59,14 +60,14 @@
 
     ```cangjie
     // 播放动画
-    this.backAnimator?.play()
+    result?.play()
     ```
 
 4. 动画执行完成后手动释放AnimatorResult对象。
 
     ```cangjie
     // 释放动画对象
-    this.backAnimator = None
+    result = None
     ```
 
 ## 使用帧动画实现小球抛物运动

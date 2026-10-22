@@ -209,7 +209,7 @@ package ohos_app_cangjie_entry
 
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
-import ohos.resource.*
+import kit.LocalizationKit.*
 
 public class Contact {
     var name: String
@@ -326,7 +326,7 @@ package ohos_app_cangjie_entry
 
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
-import ohos.resource.*
+import kit.LocalizationKit.*
 
 @Entry
 @Component
@@ -381,7 +381,7 @@ Setting the sticky property of the List component to StickyStyle.Header achieves
 package ohos_app_cangjie_entry
 
 import ohos.arkui.state_macro_manage.*
-import ohos.resource.*
+import kit.LocalizationKit.*
 import kit.ArkUI.*
 
 public class Contact {
@@ -508,7 +508,7 @@ package ohos_app_cangjie_entry
 
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
-import ohos.resource.*
+import kit.LocalizationKit.*
 
 @Entry
 @Component

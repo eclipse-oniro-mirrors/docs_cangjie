@@ -47,7 +47,7 @@ package ohos_app_cangjie_entry
 
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 @Entry
 @Component
@@ -98,7 +98,7 @@ This example demonstrates component property animation using the animation metho
 package ohos_app_cangjie_entry
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
-import ohos.hilog.*
+import kit.PerformanceAnalysisKit.*
 
 let animateOpt1 = AnimateParam(
     duration: 1200,

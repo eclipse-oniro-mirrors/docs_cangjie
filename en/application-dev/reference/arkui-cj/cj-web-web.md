@@ -725,8 +725,8 @@ public init(request: PermissionRequest)
 package ohos_app_cangjie_entry
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
-import ohos.web.webview.*
-import ohos.hilog.Hilog
+import kit.ArkWeb.*
+import kit.PerformanceAnalysisKit.Hilog
 
 @Entry
 @Component

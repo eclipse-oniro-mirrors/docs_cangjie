@@ -32,7 +32,6 @@ When developing complex UIs, rendering efficiency is a key consideration. For ex
 ```cangjie
 package ohos_app_cangjie_entry
 import kit.ArkUI.*
-import ohos.arkui.state_management.*
 import ohos.arkui.state_macro_manage.*
 
 // @Builder cannot be used with @Reusable

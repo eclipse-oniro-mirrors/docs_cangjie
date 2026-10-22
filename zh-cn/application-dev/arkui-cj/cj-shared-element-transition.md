@@ -42,8 +42,7 @@ package ohos_app_cangjie_entry
 import kit.ArkUI.*
 import ohos.arkui.ui_context.*
 import ohos.arkui.state_macro_manage.*
-import ohos.resource_manager.*
-import ohos.resource.__GenerateResource__
+import kit.LocalizationKit.*
 
 let storage: LocalStorage = LocalStorage()
 
@@ -285,8 +284,8 @@ package ohos_app_cangjie_entry
 import kit.ArkUI.*
 import ohos.arkui.ui_context.*
 import ohos.arkui.state_macro_manage.*
-import ohos.resource_manager.AppResource
-import ohos.resource.__GenerateResource__
+import kit.LocalizationKit.AppResource
+import kit.LocalizationKit.__GenerateResource__
 import kit.PerformanceAnalysisKit.Hilog
 
 let storage: LocalStorage = LocalStorage()

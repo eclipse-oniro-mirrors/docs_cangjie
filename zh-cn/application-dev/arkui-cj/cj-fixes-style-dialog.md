@@ -25,13 +25,11 @@
 ```cangjie
 package ohos_app_cangjie_entry
 
-import ohos.base.*
-import ohos.arkui.component.*
-import ohos.arkui.state_management.*
+import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
 import std.collection.*
 import ohos.arkui.ui_context.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.*
 
 @Entry
@@ -79,13 +77,11 @@ class EntryView {
 ```cangjie
 package ohos_app_cangjie_entry
 
-import ohos.base.*
-import ohos.arkui.component.*
-import ohos.arkui.state_management.*
+import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
 import std.collection.*
 import ohos.arkui.ui_context.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.*
 
 @Entry
@@ -140,10 +136,8 @@ class EntryView {
 ```cangjie
 package ohos_app_cangjie_entry
 
-import ohos.base.*
-import ohos.arkui.component.*
+import kit.ArkUI.*
 import ohos.arkui.ui_context.*
-import ohos.arkui.state_management.*
 import ohos.arkui.state_macro_manage.*
 import kit.PerformanceAnalysisKit.*
 
@@ -221,12 +215,11 @@ class EntryView {
 ```cangjie
 package ohos_app_cangjie_entry
 
-import ohos.base.*
-import ohos.arkui.component.*
+import kit.ArkUI.{LengthProp, CustomView, LocalStorage, SubscriberManager, Column, loadNativeView, CJEntry, Button, AlertDialogButtonOptions, AlertDialogParamWithButtons, DialogButtonStyle, DialogAlignment, TransitionEffect, AnimateParam, Curve, ScaleOptions}
 import ohos.arkui.ui_context.*
-import ohos.arkui.state_management.*
 import ohos.arkui.state_macro_manage.*
 import kit.PerformanceAnalysisKit.*
+import ohos.arkui.component.common.Offset
 
 @Entry
 @Component

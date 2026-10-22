@@ -173,7 +173,7 @@ public func arc(
 |radius|Float64|是|-|弧线的圆半径。<br>默认单位：vp。|
 |startAngle|Float64|是|-|弧线的起始弧度。<br>单位：弧度。|
 |endAngle|Float64|是|-|弧线的终止弧度。<br>单位：弧度。|
-|counterclockwise|?Bool|否|None| **命名参数。** 是否逆时针绘制圆弧。<br>true:逆时针方向绘制椭圆。<br>false:顺时针方向绘制椭圆。|
+|counterclockwise|?Bool|否|None| **命名参数。** 是否逆时针绘制圆弧。<br>true:逆时针方向绘制圆弧。<br>false:顺时针方向绘制圆弧。|
 
 ### func arcTo(Float64, Float64, Float64, Float64, Float64)
 

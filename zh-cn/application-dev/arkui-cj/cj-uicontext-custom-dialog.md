@@ -58,10 +58,8 @@
     ```cangjie
     package ohos_app_cangjie_entry
 
-    import ohos.base.*
-    import ohos.arkui.component.*
+    import kit.ArkUI.*
     import ohos.arkui.ui_context.*
-    import ohos.arkui.state_management.*
     import ohos.arkui.state_macro_manage.*
 
     var customdialogId: Int32 = 0
@@ -103,10 +101,8 @@
     ```cangjie
     package ohos_app_cangjie_entry
 
-    import ohos.base.*
-    import ohos.arkui.component.*
+    import kit.ArkUI.*
     import ohos.arkui.ui_context.*
-    import ohos.arkui.state_management.*
     import ohos.arkui.state_macro_manage.*
 
     var customdialogId: Int32 = 0
@@ -148,10 +144,8 @@
 ```cangjie
 package ohos_app_cangjie_entry
 
-import ohos.base.*
-import ohos.arkui.component.*
+import kit.ArkUI.*
 import ohos.arkui.ui_context.*
-import ohos.arkui.state_management.*
 import ohos.arkui.state_macro_manage.*
 
 var customdialogId: Int32 = 0

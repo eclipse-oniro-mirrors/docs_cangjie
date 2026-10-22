@@ -364,7 +364,7 @@ class EntryView {
 package ohos_app_cangjie_entry
 
 import kit.ArkUI.*
-import ohos.hilog.*
+import kit.PerformanceAnalysisKit.*
 import std.collection.*
 import ohos.arkui.state_macro_manage.*
 

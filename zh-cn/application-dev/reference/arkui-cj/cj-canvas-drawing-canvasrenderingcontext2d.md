@@ -843,7 +843,7 @@ public func arc(
 |radius|Float64|是|-|弧线的圆半径。<br>默认单位：vp。|
 |startAngle|Float64|是|-|弧线的起始弧度。<br>单位：弧度。|
 |endAngle|Float64|是|-|弧线的终止弧度。<br>单位：弧度。|
-|counterclockwise|?Bool|否|None|**命名参数。** 是否逆时针绘制圆弧。<br>true：逆时针方向绘制椭圆。<br>false：顺时针方向绘制椭圆。|
+|counterclockwise|?Bool|否|None|**命名参数。** 是否逆时针绘制圆弧。<br>true：逆时针方向绘制圆弧。<br>false：顺时针方向绘制圆弧。|
 
 ### func arcTo(Float64, Float64, Float64, Float64, Float64)
 
@@ -938,7 +938,7 @@ public func fill(fillRule!: ?CanvasFillRule = None): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|fillRule|?[CanvasFillRule](cj-common-types.md#enum-canvasfillrule)|否|None|**命名参数。** 指定要剪切对象的规则。|
+|fillRule|?[CanvasFillRule](cj-common-types.md#enum-canvasfillrule)|否|None|**命名参数。** 指定填充规则。|
 
 ### func fill(?Path2D, ?CanvasFillRule)
 
@@ -956,8 +956,8 @@ public func fill(path: ?Path2D, fillRule!: ?CanvasFillRule = None): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|path|?[Path2D](cj-canvas-drawing-path2d.md)|是|-|Path2D剪切路径。|
-|fillRule|?[CanvasFillRule](cj-common-types.md#enum-canvasfillrule)|否|None|**命名参数。** 指定要剪切对象的规则。|
+|path|?[Path2D](cj-canvas-drawing-path2d.md)|是|-|Path2D 路径对象。|
+|fillRule|?[CanvasFillRule](cj-common-types.md#enum-canvasfillrule)|否|None|**命名参数。** 指定填充规则。|
 
 ### func clip(?CanvasFillRule)
 

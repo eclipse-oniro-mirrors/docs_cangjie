@@ -92,8 +92,6 @@ package ohos_app_cangjie_entry
 
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
-internal import ohos.base.*
-internal import ohos.arkui.component.*
 
 @Component
 public class CounterView {
@@ -150,8 +148,6 @@ package ohos_app_cangjie_entry
 
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
-internal import ohos.base.*
-internal import ohos.arkui.component.*
 
 @Component
 class CounterView {
@@ -209,8 +205,6 @@ package ohos_app_cangjie_entry
 
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
-internal import ohos.base.*
-internal import ohos.arkui.component.*
 
 @Entry
 @Component

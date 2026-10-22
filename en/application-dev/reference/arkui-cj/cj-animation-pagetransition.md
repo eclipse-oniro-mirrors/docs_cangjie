@@ -499,7 +499,7 @@ Configure different exit and enter animations through different transition types
 package ohos_app_cangjie_entry
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
-import ohos.resource.*
+import kit.LocalizationKit.*
 
 @Entry
 @Component
@@ -523,14 +523,14 @@ class EntryView {
     }
 
     protected func pageTransition(): Unit {
-        PageTransitionEnter(duration: 1200, curve: Curve.Linear,).onEnter({
+        PageTransitionEnter(duration: 1200, curve: Curve.Linear).onEnter({
             ty: RouteType, progress: Float64 => 
                 if (ty == RouteType.Push || ty ==  RouteType.Pop) {
                     scale2 = Float32(progress)
                     opacity2 = progress
                 }
         })
-        PageTransitionExit(duration: 1200, curve: Curve.Ease, ).onExit({
+        PageTransitionExit(duration: 1200, curve: Curve.Ease).onExit({
             ty: RouteType, progress: Float64 =>
                 if (ty == RouteType.Push) {
                     this.scale2 = Float32(1.0 - progress)
@@ -548,7 +548,7 @@ class EntryView {
 package ohos_app_cangjie_entry
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
-import ohos.resource.*
+import kit.LocalizationKit.*
 
 @Entry
 @Component

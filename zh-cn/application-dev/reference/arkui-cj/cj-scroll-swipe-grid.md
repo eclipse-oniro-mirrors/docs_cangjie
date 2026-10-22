@@ -246,9 +246,7 @@ import ohos.arkui.state_macro_manage.Entry
 import ohos.arkui.state_macro_manage.Component
 import ohos.arkui.state_macro_manage.State
 import ohos.arkui.state_macro_manage.r
-import ohos.base.*
-import ohos.arkui.component.*
-import ohos.arkui.state_management.*
+import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
 import std.collection.{ArrayList, HashMap}
 

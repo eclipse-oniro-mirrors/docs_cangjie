@@ -258,7 +258,6 @@ import ohos.arkui.state_macro_manage.*
 import std.collection.ArrayList
 import kit.LocalizationKit.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.resource.__GenerateResource__
 
 class Article {
     var id: String

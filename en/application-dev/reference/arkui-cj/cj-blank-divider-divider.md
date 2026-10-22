@@ -92,7 +92,7 @@ public func strokeWidth(value: ?Length): This
 
 | Name | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
-| value | ?[Length](./cj-common-types.md#interface-length)| Yes | - | The width of the divider line. If no pixel unit is specified, the default unit is vp. Percentage settings are not supported. The width of the divider line does not support percentage settings. Priority is lower than the universal attribute [height](./cj-universal-attribute-size.md#func-heightlength). When the size exceeds the universal attribute setting, it will be clipped according to the universal attribute. On some devices, there may be issues where the divider line does not display after rounding to 1 pixel; it is recommended to use 2 pixels. Initial value: 1.0.px |
+| value | ?[Length](./cj-common-types.md#interface-length)| Yes | - | The width of the divider line. If no pixel unit is specified, the default unit is vp. Percentage settings are not supported. Priority is lower than the universal attribute [height](./cj-universal-attribute-size.md#func-heightlength). When the size exceeds the universal attribute setting, it will be clipped according to the universal attribute. On some devices, there may be issues where the divider line does not display after rounding to 1 pixel; it is recommended to use 2 pixels. Initial value: 1.0.px |
 
 ### func vertical(?Bool)
 

@@ -404,12 +404,11 @@ public func closeSelectionMenu(): Unit
 ```cangjie
 package ohos_app_cangjie_entry
 import kit.ArkUI.*
-import ohos.i18n.*
+import kit.LocalizationKit.*
 ``````markdown
-import ohos.resource.*
 import ohos.arkui.state_macro_manage.*
-import ohos.hilog.*
-import ohos.arkui.component.CopyOptions as MyCopyOptions
+import kit.PerformanceAnalysisKit.*
+import kit.ArkUI.CopyOptions as MyCopyOptions
 import std.collection.ArrayList
 import std.ast.Block
 

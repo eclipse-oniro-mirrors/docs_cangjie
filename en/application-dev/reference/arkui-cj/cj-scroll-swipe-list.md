@@ -351,9 +351,7 @@ This example demonstrates setting up a vertical list and logging indices when th
 package ohos_app_cangjie_entry
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
-import ohos.hi_trace_meter.*
-import ohos.hiviewdfx.hi_app_event.*
-import ohos.hilog.*
+import kit.PerformanceAnalysisKit.*
 
 func loggerInfo(str: String) {
     Hilog.info(0, "CangjieTest", str)

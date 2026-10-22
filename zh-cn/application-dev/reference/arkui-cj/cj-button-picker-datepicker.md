@@ -249,7 +249,7 @@ public init(
 package ohos_app_cangjie_entry
 
 import kit.ArkUI.*
-import ohos.hilog.*
+import kit.PerformanceAnalysisKit.*
 import ohos.arkui.state_macro_manage.*
 import std.time.DateTime
 import std.time.Month

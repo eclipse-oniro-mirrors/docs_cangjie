@@ -73,8 +73,7 @@ class EntryView {
             height:2000px;
             padding-right:170px;
             padding-left:170px;
-            border:25px solid blueviolet
-            back
+            border: 25px solid blueviolet;
         }
         .scroll-text {
         font-size: 75px;

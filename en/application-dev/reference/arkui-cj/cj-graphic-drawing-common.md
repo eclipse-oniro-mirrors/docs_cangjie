@@ -256,10 +256,9 @@ public func antiAlias(value: ?Bool): T
 
 ```cangjie
 package ohos_app_cangjie_entry
-import ohos.base.*
-import ohos.arkui.component.*
-import ohos.arkui.state_management.*
+import kit.ArkUI.{LengthProp, CustomView, LocalStorage, SubscriberManager, Column, loadNativeView, CJEntry, Text, Shape, Ellipse, Path, Color, LineCapStyle, LineJoinStyle}
 import ohos.arkui.state_macro_manage.*
+import ohos.arkui.component.rect.Rect
 
 @Entry
 @Component

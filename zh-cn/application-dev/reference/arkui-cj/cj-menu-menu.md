@@ -15,7 +15,7 @@
 ## 导入模块
 
 ```cangjie
-import ohos.arkui.component.menu
+import kit.ArkUI.menu
 ```
 
 ## 子组件
@@ -149,9 +149,7 @@ package ohos_app_cangjie_entry
 
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
-import ohos.i18n.*
-import ohos.resource_manager.*
-import ohos.resource.*
+import kit.LocalizationKit.*
 
 @Entry
 @Component

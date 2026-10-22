@@ -292,7 +292,7 @@ Users can start, pause, and reset the timer by clicking the "start", "pause", an
 ```cangjie
 package ohos_app_cangjie_entry
 import kit.ArkUI.*
-import ohos.hilog.*
+import kit.PerformanceAnalysisKit.*
 import ohos.arkui.state_macro_manage.*
 
 @Entry
@@ -394,7 +394,7 @@ This example demonstrates how the TextTimer starts timing immediately after crea
 package ohos_app_cangjie_entry
 
 import kit.ArkUI.*
-import ohos.hilog.*
+import kit.PerformanceAnalysisKit.*
 import ohos.arkui.state_macro_manage.*
 
 @Entry

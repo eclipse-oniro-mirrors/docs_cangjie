@@ -201,7 +201,7 @@ This example demonstrates how to control the select-all or deselect-all state of
 
 package ohos_app_cangjie_entry
 import kit.ArkUI.*
-import ohos.hilog.*
+import kit.PerformanceAnalysisKit.*
 import ohos.arkui.state_macro_manage.*
 import std.collection.ArrayList
 
@@ -263,7 +263,7 @@ This example demonstrates how to customize the checkmark style of a checkbox gro
 
 package ohos_app_cangjie_entry
 import kit.ArkUI.*
-import ohos.hilog.*
+import kit.PerformanceAnalysisKit.*
 import ohos.arkui.state_macro_manage.*
 import std.collection.ArrayList
 

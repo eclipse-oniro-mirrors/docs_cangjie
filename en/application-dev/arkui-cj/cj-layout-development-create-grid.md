@@ -106,7 +106,7 @@ For structurally similar items, prefer ForEach with nested GridItem:
 package ohos_app_cangjie_entry
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
-import ohos.resource_manager.*
+import kit.LocalizationKit.*
 
 @Entry
 @Component
@@ -163,7 +163,7 @@ Implementation for Figure 7's horizontal scrolling:
 package ohos_app_cangjie_entry
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
-import ohos.resource_manager.*
+import kit.LocalizationKit.*
 
 @Entry
 @Component
@@ -207,7 +207,7 @@ Calendar implementation for next/previous page navigation:
 package ohos_app_cangjie_entry
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
-import ohos.resource_manager.*
+import kit.LocalizationKit.*
 
 @Entry
 @Component

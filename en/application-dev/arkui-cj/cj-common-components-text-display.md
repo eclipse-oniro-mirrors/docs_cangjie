@@ -60,7 +60,7 @@ Text can be created in the following two ways:
   package ohos_app_cangjie_entry
   import kit.ArkUI.*
   import ohos.arkui.state_macro_manage.*
-  import ohos.resource_manager.*
+  import kit.LocalizationKit.*
 
   @Entry
   @Component
@@ -158,8 +158,8 @@ Text can be created in the following two ways:
   package ohos_app_cangjie_entry
   import kit.ArkUI.*
   import ohos.arkui.state_macro_manage.*
-  import ohos.resource_manager.*
-  import ohos.hilog.*
+  import kit.LocalizationKit.*
+  import kit.PerformanceAnalysisKit.*
 
   @Entry
   @Component
@@ -490,7 +490,7 @@ The Text component can handle common events. You can bind events like [onClick](
 package ohos_app_cangjie_entry
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
-import ohos.hilog.*
+import kit.PerformanceAnalysisKit.*
 
 @Entry
 @Component

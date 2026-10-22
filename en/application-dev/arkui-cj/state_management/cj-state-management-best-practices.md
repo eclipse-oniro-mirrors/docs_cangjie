@@ -217,7 +217,7 @@ package ohos_app_cangjie_entry
 
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
-import ohos.hi_trace_meter.HiTraceMeter
+import kit.PerformanceAnalysisKit.HiTraceMeter
 
 @Entry
 @Component
@@ -262,7 +262,7 @@ package ohos_app_cangjie_entry
 
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
-import ohos.hi_trace_meter.HiTraceMeter
+import kit.PerformanceAnalysisKit.HiTraceMeter
 
 @Entry
 @Component

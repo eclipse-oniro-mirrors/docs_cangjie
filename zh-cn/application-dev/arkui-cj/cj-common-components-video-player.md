@@ -156,7 +156,7 @@ Video控制器主要用于控制视频的状态，包括播放、暂停、停止
 
   import kit.ArkUI.*
   import ohos.arkui.state_macro_manage.*
-  import ohos.resource.*
+  import kit.LocalizationKit.*
 
   @Entry
   @Component
@@ -189,7 +189,7 @@ Video控制器主要用于控制视频的状态，包括播放、暂停、停止
 
   import kit.ArkUI.*
   import ohos.arkui.state_macro_manage.*
-  import ohos.resource.*
+  import kit.LocalizationKit.*
 
   @Entry
   @Component

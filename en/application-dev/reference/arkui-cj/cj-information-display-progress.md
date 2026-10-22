@@ -489,11 +489,9 @@ This example implements the toggle functionality for circular progress bar anima
 ```cangjie
 package ohos_app_cangjie_entry
 
-import ohos.arkui.state_management.*
+import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
-import ohos.arkui.component.*
-import ohos.base.*
-import ohos.resource_manager.*
+import kit.LocalizationKit.*
 
 @Entry
 @Component

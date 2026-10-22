@@ -515,11 +515,8 @@ public init(
 ```cangjie
 package ohos_app_cangjie_entry
 import kit.ArkUI.*
-import ohos.arkui.state_management.*
 import ohos.arkui.state_macro_manage.*
-import ohos.i18n.*
-import ohos.resource_manager.*
-import ohos.resource.__GenerateResource__
+import kit.LocalizationKit.*
 
 @Entry
 @Component
@@ -561,7 +558,6 @@ class EntryView {
         }
             .id("SideBarDefault")
             .showSideBar(true)
-            .showControlButton(true)
             .showControlButton(true)
             .autoHide(false)
             .sideBarWidth(150.vp)

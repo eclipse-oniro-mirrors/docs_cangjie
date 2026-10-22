@@ -511,10 +511,8 @@ This example implements a dropdown menu by configuring SelectOption.
 package ohos_app_cangjie_entry
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
-import ohos.i18n.*
-import ohos.resource_manager.*
-import ohos.hilog.*
-import ohos.resource.__GenerateResource__
+import kit.LocalizationKit.*
+import kit.PerformanceAnalysisKit.*
 
 @Entry
 @Component
