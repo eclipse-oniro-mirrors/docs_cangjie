@@ -894,7 +894,7 @@ This example demonstrates how to use the same TransitionEffect to achieve both t
 package ohos_app_cangjie_entry
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
-import ohos.hilog.*
+import kit.PerformanceAnalysisKit.*
 
 @Entry
 @Component
@@ -944,7 +944,7 @@ This example demonstrates how to use different TransitionEffects to achieve the 
 package ohos_app_cangjie_entry
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
-import ohos.hilog.*
+import kit.PerformanceAnalysisKit.*
 
 @Entry
 @Component
@@ -1008,8 +1008,8 @@ This example demonstrates how to achieve image appearance and disappearance by c
 package ohos_app_cangjie_entry
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
-import ohos.hilog.*
-import ohos.resource.*
+import kit.PerformanceAnalysisKit.*
+import kit.LocalizationKit.*
 
 @Entry
 @Component

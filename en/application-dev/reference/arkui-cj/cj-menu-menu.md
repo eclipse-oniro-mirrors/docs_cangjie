@@ -15,7 +15,7 @@ A menu displayed in a vertical list format.
 ## Import Module
 
 ```cangjie
-import ohos.arkui.component.menu
+import kit.ArkUI.menu
 ```
 
 ## Child Components
@@ -148,9 +148,7 @@ This example demonstrates a multi-level menu by configuring the `builder` parame
 package ohos_app_cangjie_entry
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
-import ohos.i18n.*
-import ohos.resource_manager.*
-import ohos.resource.*
+import kit.LocalizationKit.*
 
 @Entry
 @Component

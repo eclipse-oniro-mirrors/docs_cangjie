@@ -296,6 +296,26 @@ Repeat operation of pip.
 
 不要重复启动/停止画中画。
 
+## 1300016 参数错误
+
+**错误信息**
+
+Parameter error. Possible cause: 1. Mandatory parameters are left unspecified;<br>2. Incorrect parameter types;<br>3. Parameter verification failed.
+
+**错误描述**
+
+传入的参数不合法时，系统会报此错误码。
+
+**可能原因**
+
+1. 必填参数未指定。
+2. 参数类型不正确。
+3. 参数校验失败。
+
+**处理步骤**
+
+检查接口入参，确保必填参数已指定、参数类型符合签名要求，并满足接口的参数校验规则。
+
 ## 1001 窗口空指针异常<sup>(deprecated)</sup>
 
 **错误信息**

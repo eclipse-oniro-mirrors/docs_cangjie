@@ -38,8 +38,8 @@ A Display object, or screen instance, provides interfaces for screen-related pro
 Here, we use getDefaultDisplaySync() to obtain the current default Display object as an example:
 
 ```cangjie
-import ohos.display.*
-import ohos.hilog.Hilog
+import kit.ArkUI.*
+import kit.PerformanceAnalysisKit.Hilog
 
 func getDefaultDisplaySyncExample() {
     try {
@@ -57,8 +57,8 @@ func getDefaultDisplaySyncExample() {
 1. After ensuring the Display object is obtained (see [Obtaining Display Objects](#obtaining-display-objects)), you can query basic screen information through related properties.
 
     ```cangjie
-    import ohos.display.*
-    import ohos.hilog.Hilog
+    import kit.ArkUI.*
+    import kit.PerformanceAnalysisKit.Hilog
 
     func getDefaultDisplaySyncExample() {
         try {
@@ -81,8 +81,8 @@ func getDefaultDisplaySyncExample() {
 2. You can also use getCutoutInfo() to obtain information about unusable screen areas such as punch-hole screens, notched screens, and waterfall screens, to better avoid these areas during UI layout.
 
     ```cangjie
-    import ohos.display.*
-    import ohos.hilog.Hilog
+    import kit.ArkUI.*
+    import kit.PerformanceAnalysisKit.Hilog
 
     func getCutoutInfoExample() {
         try {
@@ -100,8 +100,8 @@ func getDefaultDisplaySyncExample() {
 1. You can use the display.isFoldable() interface to query whether the current device is foldable.
 
     ```cangjie
-    import ohos.display.*
-    import ohos.hilog.Hilog
+    import kit.ArkUI.*
+    import kit.PerformanceAnalysisKit.Hilog
 
     func isFoldableExample() {
         try {
@@ -126,8 +126,8 @@ func getDefaultDisplaySyncExample() {
 2. If the current device is foldable, you can use display.on('foldStatusChange') to enable monitoring of fold state changes. You can use display.off('foldStatusChange') to disable the corresponding monitoring.
 
     ```cangjie
-    import ohos.display.*
-    import ohos.hilog.Hilog
+    import kit.ArkUI.*
+    import kit.PerformanceAnalysisKit.Hilog
 
     class TestCallback <: Callback1Argument<FoldStatus> {
         public init() {}

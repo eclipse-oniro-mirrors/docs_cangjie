@@ -229,7 +229,7 @@ Button('Ok', ButtonOptions(shape: ButtonType.Normal, stateEffect: true))
   import kit.ArkUI.*
   import ohos.arkui.state_macro_manage.*
   import kit.LocalizationKit.AppResource
-  import ohos.resource.__GenerateResource__
+  import kit.LocalizationKit.__GenerateResource__
 
   @Entry
   @Component

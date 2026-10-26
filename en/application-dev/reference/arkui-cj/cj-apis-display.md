@@ -533,7 +533,7 @@ public prop alive: Bool
 public prop densityDpi: Float64
 ```
 
-**Function:** Display density in pixels, representing the scaling factor between physical and logical pixels. The value is 1.0 for low-resolution displays.
+**Function:** Display density, measured in pixels per inch (DPI).
 
 **Type:** Float64
 
@@ -549,7 +549,7 @@ public prop densityDpi: Float64
 public prop densityPixels: Float64
 ```
 
-**Function:** Display resolution, measured in pixels per inch (PPI).
+**Function:** Display resolution in pixels, representing the scaling factor between physical and logical pixels. The value is 1.0 for low-resolution displays.
 
 **Type:** Float64
 
@@ -812,12 +812,6 @@ public let displayId: UInt32
 **Type:** UInt32
 
 **Accessibility:** Read-only
-
-**System Capability:** SystemCapability.Window.SessionManager
-
-**Since:** 22
-
-**Function:** Fold crease region.
 
 **System Capability:** SystemCapability.Window.SessionManager
 

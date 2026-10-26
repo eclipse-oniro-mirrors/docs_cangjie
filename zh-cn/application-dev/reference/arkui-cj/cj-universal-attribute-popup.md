@@ -76,9 +76,7 @@ func bindPopup(show: ?Bool, popup: ?CustomPopupOptions): T
 package ohos_app_cangjie_entry
 
 import kit.ArkUI.*
-import ohos.arkui.state_management.*
 import ohos.arkui.state_macro_manage.*
-import ohos.base.*
 import ohos.arkui.component.common.Font as CommonFont
 
 @Builder

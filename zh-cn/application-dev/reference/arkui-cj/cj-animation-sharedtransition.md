@@ -35,7 +35,7 @@ func sharedTransition(id: String, options!: ?SharedTransitionOptions): T
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |id|String|是|-|两个页面中id值相同且不为空字符串的组件即为共享元素，在页面转场时可显示共享元素转场动效。|
-|options|?[SharedTransitionOptions](./cj-common-types.md#class-sharedtransitionoptions)|是|-|**命名参数。** 共享元素转场动画参数。<br>初始值：SharedTransitionOptions()。|
+|options|?[SharedTransitionOptions](./cj-common-types.md#class-sharedtransitionoptions)|否|-|**命名参数。** 共享元素转场动画参数。<br>初始值：SharedTransitionOptions()。|
 
 **返回值：**
 
@@ -55,7 +55,7 @@ package ohos_app_cangjie_entry
 
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
-import ohos.resource.__GenerateResource__
+import kit.LocalizationKit.__GenerateResource__
 
 @Entry
 @Component
@@ -85,7 +85,7 @@ package ohos_app_cangjie_entry
 
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
-import ohos.resource.__GenerateResource__
+import kit.LocalizationKit.__GenerateResource__
 
 @Entry
 @Component

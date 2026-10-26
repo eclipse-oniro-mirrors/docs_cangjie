@@ -513,11 +513,9 @@ package ohos_app_cangjie_entry
 
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
-import ohos.i18n.*
-import ohos.resource_manager.*
-import ohos.hilog.*
+import kit.LocalizationKit.*
+import kit.PerformanceAnalysisKit.*
 import ohos.arkui.component.common.Offset as CommonOffset
-import ohos.resource.__GenerateResource__
 
 @Entry
 @Component

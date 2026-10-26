@@ -213,7 +213,7 @@ package ohos_app_cangjie_entry
 
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
-import ohos.resource.*
+import kit.LocalizationKit.*
 
 public class Contact {
     var name: String
@@ -333,7 +333,7 @@ package ohos_app_cangjie_entry
 
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
-import ohos.resource.*
+import kit.LocalizationKit.*
 
 @Entry
 @Component
@@ -386,7 +386,7 @@ List组件的sticky属性配合ListItemGroup组件使用，用于设置ListItemG
 package ohos_app_cangjie_entry
 
 import ohos.arkui.state_macro_manage.*
-import ohos.resource.*
+import kit.LocalizationKit.*
 import kit.ArkUI.*
 
 public class Contact {
@@ -523,7 +523,7 @@ package ohos_app_cangjie_entry
 
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
-import ohos.resource.*
+import kit.LocalizationKit.*
 
 @Entry
 @Component

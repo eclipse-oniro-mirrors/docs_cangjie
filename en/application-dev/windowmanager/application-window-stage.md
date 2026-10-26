@@ -154,7 +154,6 @@ package ohos_app_cangjie_entry
 
 internal import kit.ArkUI.*
 internal import kit.AbilityKit.*
-internal import ohos.arkui.state_management.AppStorage
 
 class MainAbility <: UIAbility {
     public init() {
@@ -175,7 +174,6 @@ package ohos_app_cangjie_entry
 
 import kit.ArkUI.*
 import kit.UIKit.*
-import ohos.arkui.state_management.AppStorage
 import ohos.arkui.state_macro_manage.*
 
 var windowStage: ?WindowStage = None

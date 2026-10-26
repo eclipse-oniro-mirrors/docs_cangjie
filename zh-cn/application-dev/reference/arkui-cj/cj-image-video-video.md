@@ -529,8 +529,7 @@ public func stop(): Unit
 package ohos_app_cangjie_entry
 
 import kit.ArkUI.*
-import ohos.i18n.*
-import ohos.resource.*
+import kit.LocalizationKit.*
 import ohos.arkui.state_macro_manage.*
 
 @Entry
@@ -576,7 +575,7 @@ class EntryView {
                     .id("pause")
                 Button("stop")
                     .onClick({ evt
-                        => this.controller.stop() // 暂停播放
+                        => this.controller.stop() // 停止播放
                            this.controller.exitFullscreen()
                         }
                     )

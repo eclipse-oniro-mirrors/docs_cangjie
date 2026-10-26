@@ -2302,9 +2302,8 @@ public func getSpans(start!: ?Int32 = None, end!: ?Int32 = None): ArrayList<Rich
 package ohos_app_cangjie_entry
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
-import ohos.i18n.*
-import ohos.resource.*
-import ohos.hilog.*
+import kit.LocalizationKit.*
+import kit.PerformanceAnalysisKit.*
 
 @Entry
 @Component

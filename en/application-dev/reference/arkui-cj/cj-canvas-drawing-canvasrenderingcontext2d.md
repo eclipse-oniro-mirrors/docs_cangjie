@@ -974,7 +974,7 @@ public func fill(fillRule!: ?CanvasFillRule = None): Unit
 
 | Parameter | Type           | Mandatory | Default | Description |
 |:----------|:---------------|:----------|:--------|:------------|
-| fillRule  | ?CanvasFillRule | No        | None    | **Named parameter.** Specifies the rule for clipping objects. |
+| fillRule  | ?CanvasFillRule | No        | None    | **Named parameter.** Specifies the fill rule. |
 
 ### func fill(?Path2D, ?CanvasFillRule)
 
@@ -992,8 +992,8 @@ public func fill(path: ?Path2D, fillRule!: ?CanvasFillRule = None): Unit
 
 | Parameter | Type           | Mandatory | Default | Description |
 |:----------|:---------------|:----------|:--------|:------------|
-| path      | ?Path2D        | No        | -       | The Path2D clipping path. |
-| fillRule  | ?CanvasFillRule | No        | None    | **Named parameter.** Specifies the rule for clipping objects. |
+| path      | ?Path2D        | No        | -       | The Path2D path object. |
+| fillRule  | ?CanvasFillRule | No        | None    | **Named parameter.** Specifies the fill rule. |
 
 ### func clip(?CanvasFillRule)
 

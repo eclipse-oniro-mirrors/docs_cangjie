@@ -228,7 +228,7 @@ This example demonstrates how to correctly call the getInspectorByKey interface 
 package ohos_app_cangjie_entry
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
-import ohos.hilog.*
+import kit.PerformanceAnalysisKit.*
 
 @Entry
 @Component

@@ -578,7 +578,7 @@ public func stopEditing(): Unit
 package ohos_app_cangjie_entry
 
 import kit.ArkUI.*
-import ohos.hilog.*
+import kit.PerformanceAnalysisKit.*
 import ohos.arkui.state_macro_manage.*
 
 @Entry

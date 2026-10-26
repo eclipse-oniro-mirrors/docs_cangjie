@@ -58,10 +58,8 @@ The dialog provides lifecycle functions to notify users of its lifecycle. The li
     ```cangjie
     package ohos_app_cangjie_entry
 
-    import ohos.base.*
-    import ohos.arkui.component.*
+    import kit.ArkUI.*
     import ohos.arkui.ui_context.*
-    import ohos.arkui.state_management.*
     import ohos.arkui.state_macro_manage.*
 
     var customdialogId: Int32 = 0
@@ -104,10 +102,8 @@ The dialog provides lifecycle functions to notify users of its lifecycle. The li
     ```cangjie
     package ohos_app_cangjie_entry
 
-    import ohos.base.*
-    import ohos.arkui.component.*
+    import kit.ArkUI.*
     import ohos.arkui.ui_context.*
-    import ohos.arkui.state_management.*
     import ohos.arkui.state_macro_manage.*
 
     var customdialogId: Int32 = 0
@@ -149,10 +145,8 @@ The dialog provides lifecycle functions to notify users of its lifecycle. The li
 ```cangjie
 package ohos_app_cangjie_entry
 
-import ohos.base.*
-import ohos.arkui.component.*
+import kit.ArkUI.*
 import ohos.arkui.ui_context.*
-import ohos.arkui.state_management.*
 import ohos.arkui.state_macro_manage.*
 
 var customdialogId: Int32 = 0

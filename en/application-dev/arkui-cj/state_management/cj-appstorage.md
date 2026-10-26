@@ -246,10 +246,10 @@ To use this mechanism for event notification, ensure that AppStorage variables a
 package ohos_app_cangjie_entry
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
-import ohos.resource_manager.AppResource
+import kit.LocalizationKit.AppResource
 import kit.BasicServicesKit.agent.State
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.resource.__GenerateResource__
+import kit.LocalizationKit.__GenerateResource__
 
 class ViewData {
     var title: String

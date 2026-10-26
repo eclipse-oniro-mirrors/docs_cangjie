@@ -1668,7 +1668,7 @@ public func snapshot(): PixelMap
 
 | Type | Description |
 |:----|:------------|
-| [PixelMap](../ImageKit/cj-apis-image.md#class-pixelmap) | Returns a Promise without a value. |
+| [PixelMap](../ImageKit/cj-apis-image.md#class-pixelmap) | Returns the PixelMap object of the window snapshot. |
 
 **Exceptions:**
 
@@ -3375,7 +3375,7 @@ After setting the main window property as untouchable, clicking buttons on the p
 package ohos_app_cangjie_entry
 
 import kit.ArkUI.*
-import ohos.app.ability.ui_ability.*
+import kit.AbilityKit.*
 
 class MainAbility <: UIAbility {
     public init() {
@@ -3433,7 +3433,7 @@ class newPage{
 
 package ohos_app_cangjie_entry
 
-import ohos.app.ability.ui_ability.*
+import kit.AbilityKit.*
 import kit.ArkUI.*
 
 class MainAbility <: UIAbility {
@@ -3459,10 +3459,10 @@ class MainAbility <: UIAbility {
 package ohos_app_cangjie_entry
 
 import kit.ArkUI.*
-import ohos.hilog.*
+import kit.PerformanceAnalysisKit.*
 import ohos.arkui.state_macro_manage.*
-import ohos.callback_invoke.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.*
+import kit.CangjieKit.BusinessException
 
 @Entry
 @Component

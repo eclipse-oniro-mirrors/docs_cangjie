@@ -61,9 +61,8 @@ package ohos_app_cangjie_entry
 import kit.ArkUI.*
 import kit.LocalizationKit.*
 import ohos.arkui.state_macro_manage.*
-import ohos.hilog.*
-import ohos.arkui.component.CopyOptions as MyCopyOptions
-import ohos.resource.*
+import kit.PerformanceAnalysisKit.*
+import kit.ArkUI.CopyOptions as MyCopyOptions
 import std.collection.ArrayList
 
 @Entry
@@ -438,7 +437,6 @@ package ohos_app_cangjie_entry
 import kit.ArkUI.*
 import kit.LocalizationKit.*
 import ohos.arkui.state_macro_manage.*
-import ohos.resource.*
 
 @Entry
 @Component

@@ -25,13 +25,11 @@ After creating and displaying an action menu, the menu's response result asynchr
 ```cangjie
 package ohos_app_cangjie_entry
 
-import ohos.base.*
-import ohos.arkui.component.*
-import ohos.arkui.state_management.*
+import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
 import std.collection.*
 import ohos.arkui.ui_context.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.*
 
 @Entry
@@ -73,13 +71,11 @@ The dialog box obtains a `PromptAction` object through the [getPromptAction](../
 ```cangjie
 package ohos_app_cangjie_entry
 
-import ohos.base.*
-import ohos.arkui.component.*
-import ohos.arkui.state_management.*
+import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
 import std.collection.*
 import ohos.arkui.ui_context.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.*
 
 @Entry
@@ -133,12 +129,11 @@ This example defines the popup's style and animation effects by configuring inte
 ```cangjie
 package ohos_app_cangjie_entry
 
-import ohos.base.*
-import ohos.arkui.component.*
+import kit.ArkUI.{LengthProp, CustomView, LocalStorage, SubscriberManager, Column, loadNativeView, CJEntry, Button, AlertDialogButtonOptions, AlertDialogParamWithButtons, DialogButtonStyle, DialogAlignment, TransitionEffect, AnimateParam, Curve, ScaleOptions}
 import ohos.arkui.ui_context.*
-import ohos.arkui.state_management.*
 import ohos.arkui.state_macro_manage.*
 import kit.PerformanceAnalysisKit.*
+import ohos.arkui.component.common.Offset
 
 @Entry
 @Component
@@ -208,10 +203,8 @@ This example defines the style and animation effects of a multi-button dialog by
 ```cangjie
 package ohos_app_cangjie_entry
 
-import ohos.base.*
-import ohos.arkui.component.*
+import kit.ArkUI.*
 import ohos.arkui.ui_context.*
-import ohos.arkui.state_management.*
 import ohos.arkui.state_macro_manage.*
 import kit.PerformanceAnalysisKit.*
 

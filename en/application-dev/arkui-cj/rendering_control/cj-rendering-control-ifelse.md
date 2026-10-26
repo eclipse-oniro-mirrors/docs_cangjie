@@ -92,8 +92,6 @@ The following example demonstrates an `if ... else ...` statement with child com
 package ohos_app_cangjie_entry
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
-internal import ohos.base.*
-internal import ohos.arkui.component.*
 
 @Component
 public class CounterView {
@@ -149,8 +147,6 @@ The following example demonstrates modifications needed to preserve the `counter
 package ohos_app_cangjie_entry
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
-internal import ohos.base.*
-internal import ohos.arkui.component.*
 
 @Component
 class CounterView {
@@ -207,8 +203,6 @@ Nested conditional statements do not affect the parent component's relevant rule
 package ohos_app_cangjie_entry
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
-internal import ohos.base.*
-internal import ohos.arkui.component.*
 @Entry
 @Component
 public class EntryView {

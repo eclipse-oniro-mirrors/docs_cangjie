@@ -182,7 +182,7 @@ public func rotate(degree: ?Float64, rx!: ?Float64 = None, ry!: ?Float64 = None)
 
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
-| degree | ?Float64 | No | - | Rotation angle in degrees. Positive values indicate clockwise rotation. Convert degrees to radians using degree * Math.PI / 180. Default unit: radians. |
+| degree | ?Float64 | No | - | Rotation angle in degrees. Positive values indicate clockwise rotation. Convert degrees to radians using degree * Float64.PI / 180. Default unit: radians. |
 | rx | ?Float64 | No | None | **Named parameter.** X-coordinate of the rotation point. Default unit: vp. |
 | ry | ?Float64 | No | None | **Named parameter.** Y-coordinate of the rotation point. Default unit: vp. |
 

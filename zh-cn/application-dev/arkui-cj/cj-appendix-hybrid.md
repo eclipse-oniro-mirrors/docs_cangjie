@@ -32,7 +32,7 @@
 
 ## 混合页面工程
 
-混合页面工程，依赖仓颉与 ArkTS 互操作能力，首先需要参考 "在 ArkTS （+ C++）的HAP或HAR中创建仓颉模块"<!--add link--> 章节，创建一个 ArkTS 仓颉混合工程，然后参考 "添加供ArkTS调用的页面组件"<!--add link--> 章节，添加一个混合页面，按照以上步骤可以完成混合UI工程的配置。
+混合页面工程，依赖仓颉与 ArkTS 互操作能力，首先需要参考 [在 ArkTS （+ C++）的HAP或HAR中创建仓颉模块](../learn-cj/FFI/cangjie-arkts/add_cangjie_module.md) 章节，创建一个 ArkTS 仓颉混合工程，然后参考 [添加供ArkTS调用的页面组件](../learn-cj/FFI/cangjie-arkts/add_cangjie_page.md) 章节，添加一个混合页面，按照以上步骤可以完成混合UI工程的配置。
 
 ## 示例代码
 

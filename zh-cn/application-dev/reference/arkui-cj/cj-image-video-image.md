@@ -691,8 +691,7 @@ package ohos_app_cangjie_entry
 
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
-import ohos.i18n.*
-import ohos.resource.*
+import kit.LocalizationKit.*
 
 @Entry
 @Component
@@ -748,8 +747,7 @@ package ohos_app_cangjie_entry
 
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
-import ohos.i18n.*
-import ohos.resource.*
+import kit.LocalizationKit.*
 
 @Entry
 @Component
@@ -797,8 +795,7 @@ package ohos_app_cangjie_entry
 
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
-import ohos.i18n.*
-import ohos.resource.*
+import kit.LocalizationKit.*
 
 @Entry
 @Component
@@ -880,8 +877,7 @@ package ohos_app_cangjie_entry
 
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
-import ohos.i18n.*
-import ohos.resource.*
+import kit.LocalizationKit.*
 
 @Entry
 @Component
@@ -923,9 +919,7 @@ package ohos_app_cangjie_entry
 
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
-import ohos.i18n.*
-import ohos.resource.*
-import ohos.arkui.component.ImageFit
+import kit.LocalizationKit.*
 
 @Entry
 @Component
@@ -955,7 +949,7 @@ class EntryView {
 
 ### 示例6（通过renderMode设置图片的渲染模式）
 
-该示例通过通过[renderMode](#func-rendermodeimagerendermode)接口设置图片渲染模式为黑白模式。
+该示例通过[renderMode](#func-rendermodeimagerendermode)接口设置图片渲染模式为黑白模式。
 
 <!-- run -->
 
@@ -964,9 +958,7 @@ package ohos_app_cangjie_entry
 
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
-import ohos.i18n.*
-import ohos.resource.*
-import ohos.arkui.component.ImageFit
+import kit.LocalizationKit.*
 
 @Entry
 @Component
@@ -991,7 +983,7 @@ class EntryView {
 
 ### 示例7（通过objectRepeat设置图片的重复样式）
 
-该示例通过通过[objectRepeat](#func-objectrepeatimagerepeat)接口在竖直轴上重复绘制图片。
+该示例通过[objectRepeat](#func-objectrepeatimagerepeat)接口在竖直轴上重复绘制图片。
 
 <!-- run -->
 
@@ -1000,9 +992,7 @@ package ohos_app_cangjie_entry
 
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
-import ohos.i18n.*
-import ohos.resource.*
-import ohos.arkui.component.ImageFit
+import kit.LocalizationKit.*
 
 @Entry
 @Component
@@ -1028,7 +1018,7 @@ class EntryView {
 
 ### 示例8（设置SVG图片的填充颜色）
 
-该示例通过通过[fillColor](#func-fillcolorresourcecolor)接口在竖直轴上重复绘制图片。
+该示例通过[fillColor](#func-fillcolorresourcecolor)接口在竖直轴上重复绘制图片。
 
 <!-- run -->
 
@@ -1037,8 +1027,7 @@ package ohos_app_cangjie_entry
 
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
-import ohos.i18n.*
-import ohos.resource.*
+import kit.LocalizationKit.*
 
 @Entry
 @Component

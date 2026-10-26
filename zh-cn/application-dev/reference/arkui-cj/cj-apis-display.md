@@ -257,8 +257,8 @@ public func off(listenerType: ListenerType, callback: Callback1Argument<FoldDisp
 ```cangjie
 import kit.ArkUI.{FoldDisplayMode,off,ListenerType}
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.callback_invoke.Callback1Argument
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.Callback1Argument
+import kit.CangjieKit.BusinessException
 
 class TestCallback <: Callback1Argument<FoldDisplayMode> {
     public init() {}
@@ -319,8 +319,8 @@ public func off(listenerType: ListenerType, callback: Callback1Argument<FoldStat
 ```cangjie
 import kit.ArkUI.{FoldStatus,off,ListenerType}
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.callback_invoke.Callback1Argument
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.Callback1Argument
+import kit.CangjieKit.BusinessException
 
 class TestCallback <: Callback1Argument<FoldStatus> {
     public init() {}
@@ -380,8 +380,8 @@ public func on(listenerType: ListenerType, callback: Callback1Argument<FoldDispl
 ```cangjie
 import kit.ArkUI.{FoldDisplayMode,on,ListenerType}
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.callback_invoke.Callback1Argument
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.Callback1Argument
+import kit.CangjieKit.BusinessException
 
 class TestCallback <: Callback1Argument<FoldDisplayMode> {
     public init() {}
@@ -442,8 +442,8 @@ public func on(listenerType: ListenerType, callback: Callback1Argument<FoldStatu
 ```cangjie
 import kit.ArkUI.{FoldStatus,on,ListenerType}
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.callback_invoke.Callback1Argument
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.Callback1Argument
+import kit.CangjieKit.BusinessException
 
 class TestCallback <: Callback1Argument<FoldStatus> {
     public init() {}
@@ -575,7 +575,7 @@ public prop alive: Bool
 public prop densityDpi: Float64
 ```
 
-**功能：** 显示屏密度，以像素为单位，是物理像素和逻辑像素之间的缩放系数。低分辨率显示屏的值为1.0。
+**功能：** 显示屏密度，即每英寸的像素数（DPI）。
 
 **类型：** Float64
 
@@ -591,7 +591,7 @@ public prop densityDpi: Float64
 public prop densityPixels: Float64
 ```
 
-**功能：** 显示分辨率，即每英寸的像素数。
+**功能：** 显示分辨率，以像素为单位，是物理像素和逻辑像素之间的缩放系数。低分辨率显示屏的值为1.0。
 
 **类型：** Float64
 
@@ -862,12 +862,6 @@ public let displayId: UInt32
 
 **起始版本：** 22
 
-**功能：** 折叠 crease 区域。
-
-**系统能力：** SystemCapability.Window.SessionManager
-
-**起始版本：** 22
-
 ### let creaseRects
 
 ```cangjie
@@ -951,7 +945,7 @@ public var height: UInt32
 public var left: Int32
 ```
 
-**功能：** 矩形左上顶点的Y轴坐标，以像素为单位。
+**功能：** 矩形左上顶点的X轴坐标，以像素为单位。
 
 **类型：** Int32
 

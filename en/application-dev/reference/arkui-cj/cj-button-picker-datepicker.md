@@ -251,7 +251,7 @@ This example implements a date picker component where clicking a button toggles 
 
 package ohos_app_cangjie_entry
 import kit.ArkUI.*
-import ohos.hilog.*
+import kit.PerformanceAnalysisKit.*
 import ohos.arkui.state_macro_manage.*
 import std.time.DateTime
 import std.time.Month

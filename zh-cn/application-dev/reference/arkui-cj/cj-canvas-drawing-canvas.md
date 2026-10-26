@@ -62,7 +62,7 @@ public func onReady(callback: ?() -> Unit): This
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|callback|?() -> Unit|是|-|事件回调。<br>初始值：{ => }。|
+|callback|?() -> Unit|否|{ => }|事件回调。|
 
 ## 基础类型定义
 

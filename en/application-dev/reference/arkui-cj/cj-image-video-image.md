@@ -564,8 +564,7 @@ Loading basic image types such as png, gif, svg, and jpg.
 package ohos_app_cangjie_entry
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
-import ohos.i18n.*
-import ohos.resource.*
+import kit.LocalizationKit.*
 
 @Entry
 @Component
@@ -618,8 +617,7 @@ Adding onClick and onFinish events to images.
 package ohos_app_cangjie_entry
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
-import ohos.i18n.*
-import ohos.resource.*
+import kit.LocalizationKit.*
 
 @Entry
 @Component
@@ -666,8 +664,7 @@ This example sets fill effects for images through objectFit.
 package ohos_app_cangjie_entry
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
-import ohos.i18n.*
-import ohos.resource.*
+import kit.LocalizationKit.*
 
 @Entry
 @Component
@@ -748,8 +745,7 @@ This example demonstrates the display effects of png and svg types as data sourc
 package ohos_app_cangjie_entry
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
-import ohos.i18n.*
-import ohos.resource.*
+import kit.LocalizationKit.*
 
 @Entry
 @Component
@@ -789,9 +785,8 @@ This example customizes image decoding size through the [sourceSize](#func-sourc
 package ohos_app_cangjie_entry
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
-import ohos.i18n.*
-import ohos.resource.*
-import ohos.arkui.component.ImageFit
+import kit.LocalizationKit.*
+import kit.ArkUI.ImageFit
 
 @Entry
 @Component
@@ -828,9 +823,8 @@ This example sets image rendering mode to grayscale through the [renderMode](#fu
 package ohos_app_cangjie_entry
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
-import ohos.i18n.*
-import ohos.resource.*
-import ohos.arkui.component.ImageFit
+import kit.LocalizationKit.*
+import kit.ArkUI.ImageFit
 
 @Entry
 @Component
@@ -862,9 +856,8 @@ This example repeats image drawing on the vertical axis through the [objectRepea
 package ohos_app_cangjie_entry
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
-import ohos.i18n.*
-import ohos.resource.*
-import ohos.arkui.component.ImageFit
+import kit.LocalizationKit.*
+import kit.ArkUI.ImageFit
 
 @Entry
 @Component
@@ -897,8 +890,7 @@ This example sets fill color for SVG images through the [fillColor](#func-fillco
 package ohos_app_cangjie_entry
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
-import ohos.i18n.*
-import ohos.resource.*
+import kit.LocalizationKit.*
 
 @Entry
 @Component

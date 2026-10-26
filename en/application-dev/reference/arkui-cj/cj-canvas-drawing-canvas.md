@@ -62,7 +62,7 @@ public func onReady(callback: ?() -> Unit): This
 
 | Parameter | Type | Required | Default Value | Description |
 |:---|:---|:---|:---|:---|
-| callback | ?() -> Unit | Yes | - | Event callback.<br>Initial value: { => }. |
+| callback | ?() -> Unit | No | { => } | Event callback. |
 
 **Return Value:**
 

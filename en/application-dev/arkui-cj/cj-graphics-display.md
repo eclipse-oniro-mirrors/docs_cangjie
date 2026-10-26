@@ -108,7 +108,7 @@ Use the `objectFit` property to scale the image within a frame of fixed height a
 package ohos_app_cangjie_entry
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
-import ohos.resource.*
+import kit.LocalizationKit.*
 
 @Entry
 @Component
@@ -190,7 +190,7 @@ package ohos_app_cangjie_entry
 
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
-import ohos.resource.*
+import kit.LocalizationKit.*
 
 @Entry
 @Component
@@ -252,7 +252,7 @@ package ohos_app_cangjie_entry
 
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
-import ohos.resource.*
+import kit.LocalizationKit.*
 
 @Entry
 @Component
@@ -306,7 +306,7 @@ package ohos_app_cangjie_entry
 
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
-import ohos.resource.*
+import kit.LocalizationKit.*
 
 @Entry
 @Component
@@ -353,7 +353,7 @@ package ohos_app_cangjie_entry
 
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
-import ohos.resource.*
+import kit.LocalizationKit.*
 
 @Entry
 @Component
@@ -404,7 +404,7 @@ package ohos_app_cangjie_entry
 
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
-import ohos.resource.*
+import kit.LocalizationKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 @Entry

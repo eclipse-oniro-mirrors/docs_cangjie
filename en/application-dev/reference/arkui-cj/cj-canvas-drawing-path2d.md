@@ -173,7 +173,7 @@ public func arc(
 | radius | Float64 | Yes | - | Radius of the arc.<br>Default unit: vp. |
 | startAngle | Float64 | Yes | - | Starting radian of the arc.<br>Unit: radians. |
 | endAngle | Float64 | Yes | - | Ending radian of the arc.<br>Unit: radians. |
-| counterclockwise | Bool | No | false | **Named parameter.** Whether to draw the arc counterclockwise.<br>true: Draws the ellipse counterclockwise.<br>false: Draws the ellipse clockwise. |
+| counterclockwise | Bool | No | false | **Named parameter.** Whether to draw the arc counterclockwise.<br>true: Draws the arc counterclockwise.<br>false: Draws the arc clockwise. |
 
 ### func arcTo(Float64, Float64, Float64, Float64, Float64)
 

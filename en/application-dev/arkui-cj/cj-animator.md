@@ -35,21 +35,22 @@ Follow these steps to create a simple animator and print the current interpolati
 
     ```cangjie
     // Create initial parameters for the animation
-    this.backAnimator = getUIContext.createAnimator(AnimatorOptions(
-      duration: 1500,
-      easing: "friction",
-      delay: 0,
-      fill: AnimatorFill.Forwards,
-      direction: AnimatorDirection.Normal,
-      iterations: 2,
-      // Initial value for onFrame interpolation in the first frame
-      begin: 200.0,
-      // Final value for onFrame interpolation in the last frame
-      end: 400.0
-    ))
+    let options = AnimatorOptions(
+        duration: 1500,
+        easing: "friction",
+        delay: 0,
+        fill: AnimatorFill.Forwards,
+        direction: AnimatorDirection.Normal,
+        iterations: 2,
+        // 动画onFrame 插值首帧值
+        begin: 200.0,
+        // 动画onFrame 插值尾帧值
+        end: 400.0
+    )
+    var result: ?AnimatorResult = this.getUIContext().createAnimator(options)
     // Set the callback for frame reception. The onFrame callback is invoked for each frame during animation playback.
-    this.backAnimator?.onFrame =  {  progress: Float64 =>
-      Hilog.info(0,"",current value is :" + progress.toString())
+    result?.onFrame = { progress: Float64 =>
+        Hilog.info(0, "", "current value is: " + progress.toString())
     }
     ```
 
@@ -57,14 +58,14 @@ Follow these steps to create a simple animator and print the current interpolati
 
     ```cangjie
     // Play the animation
-    this.backAnimator?.play()
+    result?.play()
     ```
 
 4. Manually release the AnimatorResult object after the animation completes.
 
     ```cangjie
     // Release the animation object
-    this.backAnimator = None
+    result = None
     ```
 
 ## Implementing Parabolic Motion of a Ball Using Frame Animation

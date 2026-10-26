@@ -32,7 +32,6 @@
 ```cangjie
 package ohos_app_cangjie_entry
 import kit.ArkUI.*
-import ohos.arkui.state_management.*
 import ohos.arkui.state_macro_manage.*
 
 // @Builder不能与@Reuable搭配使用

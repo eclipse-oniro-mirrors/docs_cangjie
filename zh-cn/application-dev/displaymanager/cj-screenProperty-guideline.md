@@ -61,8 +61,8 @@ func getDefaultDisplaySyncExample() {
     <!-- compile -->
 
     ```cangjie
-    import ohos.display.*
-    import ohos.hilog.Hilog
+    import kit.ArkUI.*
+    import kit.PerformanceAnalysisKit.Hilog
 
     func getDefaultDisplaySyncExample() {
         try {
@@ -108,8 +108,8 @@ func getDefaultDisplaySyncExample() {
     <!-- compile -->
 
     ```cangjie
-    import ohos.display.*
-    import ohos.hilog.Hilog
+    import kit.ArkUI.*
+    import kit.PerformanceAnalysisKit.Hilog
 
     func isFoldableExample() {
         try {
@@ -136,8 +136,8 @@ func getDefaultDisplaySyncExample() {
     <!-- compile -->
 
     ```cangjie
-    import ohos.display.*
-    import ohos.hilog.Hilog
+    import kit.ArkUI.*
+    import kit.PerformanceAnalysisKit.Hilog
 
     class TestCallback <: Callback1Argument<FoldStatus> {
         public init() {}

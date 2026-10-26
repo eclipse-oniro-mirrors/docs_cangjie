@@ -136,7 +136,7 @@ This example sets the checkbox style, state button style, and switch style of th
 package ohos_app_cangjie_entry
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
-import ohos.hilog.*
+import kit.PerformanceAnalysisKit.*
 
 func loggerInfo(str: String) {
     Hilog.info(0, "CangjieTest", str)

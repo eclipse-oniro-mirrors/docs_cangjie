@@ -52,9 +52,7 @@ func onVisibleAreaChange(ratios: ?Array<Float64>, event: ?(Bool, Float64) -> Uni
 ```cangjie
 package ohos_app_cangjie_entry
 import kit.ArkUI.*
-import ohos.hi_trace_meter.*
-import ohos.hiviewdfx.hi_app_event.*
-import ohos.hilog.*
+import kit.PerformanceAnalysisKit.*
 import ohos.arkui.state_macro_manage.*
 import std.collection.ArrayList
 

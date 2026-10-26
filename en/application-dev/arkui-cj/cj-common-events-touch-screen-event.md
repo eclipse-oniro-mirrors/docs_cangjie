@@ -30,8 +30,7 @@ For example, using a button's click event to control the display and hiding of a
 package ohos_app_cangjie_entry
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
-import ohos.resource_manager.*
-import ohos.resource.__GenerateResource__
+import kit.LocalizationKit.*
 
 @Entry
 @Component

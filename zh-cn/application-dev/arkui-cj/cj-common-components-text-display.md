@@ -65,7 +65,7 @@ Text可通过以下两种方式来创建：
 
   import kit.ArkUI.*
   import ohos.arkui.state_macro_manage.*
-  import ohos.resource_manager.*
+  import kit.LocalizationKit.*
 
   @Entry
   @Component
@@ -173,8 +173,8 @@ Text可通过以下两种方式来创建：
 
   import kit.ArkUI.*
   import ohos.arkui.state_macro_manage.*
-  import ohos.resource_manager.*
-  import ohos.hilog.*
+  import kit.LocalizationKit.*
+  import kit.PerformanceAnalysisKit.*
 
   @Entry
   @Component
@@ -532,7 +532,7 @@ package ohos_app_cangjie_entry
 
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
-import ohos.hilog.*
+import kit.PerformanceAnalysisKit.*
 
 @Entry
 @Component

@@ -147,7 +147,7 @@ This example demonstrates how to use the step navigator component.
 package ohos_app_cangjie_entry
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
-import ohos.hilog.*
+import kit.PerformanceAnalysisKit.*
 
 extend ItemState {
     func toString(): String {

@@ -27,7 +27,6 @@ package ohos_app_cangjie_entry
 
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
-import ohos.arkui.state_management.*
 
 @Builder
 func pageMap(name: String, param: Any) {

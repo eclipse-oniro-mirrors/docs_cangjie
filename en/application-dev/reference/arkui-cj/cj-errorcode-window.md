@@ -288,6 +288,26 @@ Repeatedly starting/stopping PiP.
 
 Do not repeatedly start/stop PiP.
 
+## 1300016 Parameter Error
+
+**Error Message**
+
+Parameter error. Possible cause: 1. Mandatory parameters are left unspecified;<br>2. Incorrect parameter types;<br>3. Parameter verification failed.
+
+**Error Description**
+
+This error code is reported when the input parameter is invalid.
+
+**Possible Causes**
+
+1. Mandatory parameters are left unspecified.
+2. Incorrect parameter types.
+3. Parameter verification failed.
+
+**Solution**
+
+Check the input parameters to ensure that mandatory parameters are specified, parameter types match the signature, and the parameter verification rules of the API are met.
+
 ## 1001 Window Null Pointer Exception<sup>(deprecated)</sup>
 
 **Error Message**
