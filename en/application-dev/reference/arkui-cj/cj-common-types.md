@@ -774,6 +774,9 @@ public class Color <: ResourceColor {
     public static let Red: Color = Color(0xffff0000)
     public static let White: Color = Color(0xffffffff)
     public static let Transparent: Color = Color(0, 0, 0, alpha: 0.0)
+    public static let Grey: Color = Color(0xff808080)
+    public static let Orange: Color = Color(0xffffa500)
+    public static let Yellow: Color = Color(0xffffff00)
     public init(red: UInt8, green: UInt8, blue: UInt8, alpha!: ?Float32 = None)
     public init(value: UInt32)
 }
@@ -900,6 +903,54 @@ public static let Transparent: Color = Color(0, 0, 0, alpha: 0.0)
 **System Capability:** SystemCapability.ArkUI.ArkUI.Full
 
 **Since:** 22
+
+### static let Grey
+
+```cangjie
+public static let Grey: Color = Color(0xff808080)
+```
+
+**Description:** Grey color, equivalent to Gray.
+
+**Type:** [Color](#class-color)
+
+**Read/Write Permission:** Read-only
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### static let Orange
+
+```cangjie
+public static let Orange: Color = Color(0xffffa500)
+```
+
+**Description:** Orange color.
+
+**Type:** [Color](#class-color)
+
+**Read/Write Permission:** Read-only
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### static let Yellow
+
+```cangjie
+public static let Yellow: Color = Color(0xffffff00)
+```
+
+**Description:** Yellow color.
+
+**Type:** [Color](#class-color)
+
+**Read/Write Permission:** Read-only
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
 
 ### init(UInt8, UInt8, UInt8, ?Float32)
 
@@ -5060,6 +5111,158 @@ public func springBack(): Unit
 **System Capability:** SystemCapability.ArkUI.ArkUI.Full
 
 **Since:** 22
+
+## class EdgeWidths
+
+```cangjie
+public class EdgeWidths {
+    public var top: ?Length
+    public var right: ?Length
+    public var bottom: ?Length
+    public var left: ?Length
+    public init(top!: ?Length = None, right!: ?Length = None, bottom!: ?Length = None, left!: ?Length = None)
+}
+```
+
+**Function:** Sets the border width of the dialog background. At least one parameter must be passed in when this object is introduced.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 22
+
+### var top
+
+```cangjie
+public var top: ?Length
+```
+
+**Function:** Width of the top border.
+
+**Type:** ?[Length](#interface-length)
+
+**Read/Write:** Readable and Writable
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 22
+
+### var right
+
+```cangjie
+public var right: ?Length
+```
+
+**Function:** Width of the right border.
+
+**Type:** ?[Length](#interface-length)
+
+**Read/Write:** Readable and Writable
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 22
+
+### var bottom
+
+```cangjie
+public var bottom: ?Length
+```
+
+**Function:** Width of the bottom border.
+
+**Type:** ?[Length](#interface-length)
+
+**Read/Write:** Readable and Writable
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 22
+
+### var left
+
+```cangjie
+public var left: ?Length
+```
+
+**Function:** Width of the left border.
+
+**Type:** ?[Length](#interface-length)
+
+**Read/Write:** Readable and Writable
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 22
+
+### init(?Length, ?Length, ?Length, ?Length)
+
+```cangjie
+public init(top!: ?Length = None, right!: ?Length = None, bottom!: ?Length = None, left!: ?Length = None)
+```
+
+**Function:** Constructs an EdgeWidths object.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 22
+
+**Parameters:**
+
+|Parameter|Type|Required|Default Value|Description|
+|:---|:---|:---|:---|:---|
+|top|?[Length](#interface-length)|No|None|**Named parameter.** Width of the top border. The initial value is 0.vp.|
+|right|?[Length](#interface-length)|No|None|**Named parameter.** Width of the right border. The initial value is 0.vp.|
+|bottom|?[Length](#interface-length)|No|None|**Named parameter.** Width of the bottom border. The initial value is 0.vp.|
+|left|?[Length](#interface-length)|No|None|**Named parameter.** Width of the left border. The initial value is 0.vp.|
+
+## class ResizableOptions
+
+```cangjie
+public class ResizableOptions {
+    public var slice: ?EdgeWidths
+    public init(slice!: ?EdgeWidths)
+}
+```
+
+**Function:** Resizable image options for image stretching, used to define the stretchable area and fixed area of the image.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### var slice
+
+```cangjie
+public var slice: ?EdgeWidths
+```
+
+**Function:** Edge widths type, used to describe the widths of a component border in different directions.<br>**Note:**<br>This attribute takes effect only when both bottom and right are greater than 0.<br>When top is set, the top part of the image is stretched while the pixel values of the image remain unchanged.<br>When right is set, the right part of the image is stretched while the pixel values of the image remain unchanged.<br>When bottom is set, the bottom part of the image is stretched while the pixel values of the image remain unchanged.<br>When left is set, the left part of the image is stretched while the pixel values of the image remain unchanged.<br>The default width of each direction is 0. The default unit is vp when a number is passed in.
+
+**Type:** ?[EdgeWidths](#class-edgewidths)
+
+**Read/Write:** Readable and Writable
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### init(?EdgeWidths)
+
+```cangjie
+public init(slice!: ?EdgeWidths)
+```
+
+**Function:** Constructs a ResizableOptions object.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+|Parameter|Type|Required|Default Value|Description|
+|:---|:---|:---|:---|:---|
+|slice|?[EdgeWidths](#class-edgewidths)|Yes|-|**Named parameter.** Edge widths type, used to describe the widths of a component border in different directions.|
 
 ## class Rectangle
 
@@ -9878,7 +10081,9 @@ public operator func !=(other: BarState): Bool
 
 | Type | Description |
 |:----|:----|
-| Bool | Returns true if the two enums are not equal, otherwise returns false. |## enum Visibility
+| Bool | Returns true if the two enums are not equal, otherwise returns false. |
+
+## enum Visibility
 
 ```cangjie
 public enum Visibility <: Equatable<Visibility> {
@@ -9972,6 +10177,268 @@ public operator func !=(other: Visibility): Bool
 |Parameter|Type|Required|Default Value|Description|
 |:---|:---|:---|:---|:---|
 |other|[Visibility](#enum-visibility)|Yes|-|The other Visibility enum to compare.|
+
+**Return Value:**
+
+|Type|Description|
+|:----|:----|
+|Bool|Returns true if the two enums are not equal, otherwise returns false.|
+
+## enum HitTestMode
+
+```cangjie
+public enum HitTestMode <: Equatable<HitTestMode> {
+    | Default
+    | Block
+    | Transparent
+    | None
+    | BlockHierarchy
+    | BlockDescendants
+    | ...
+}
+```
+
+**Function:** Sets the touch hit test mode of a component to control the hit and blocking policy of touch events.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+**Parent Type:**
+
+- Equatable\<[HitTestMode](#enum-hittestmode)>
+
+### Default
+
+```cangjie
+Default
+```
+
+**Function:** Default touch test mode. The node itself and its child nodes respond to the touch test, blocking the touch test of sibling nodes. It does not affect the touch test of ancestor nodes.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### Block
+
+```cangjie
+Block
+```
+
+**Function:** The node itself responds to the touch test and blocks the touch test of child nodes, sibling nodes, and ancestor nodes.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### Transparent
+
+```cangjie
+Transparent
+```
+
+**Function:** Both the node itself and its child nodes respond to the touch test and do not block the touch test of sibling nodes and ancestor nodes.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### None
+
+```cangjie
+None
+```
+
+**Function:** The node itself does not respond to the touch test and does not block the touch test of child nodes, sibling nodes, and ancestor nodes.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### BlockHierarchy
+
+```cangjie
+BlockHierarchy
+```
+
+**Function:** The node itself and its child nodes respond to the touch test, preventing all sibling nodes and parent nodes with lower priority from participating in the touch test.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### BlockDescendants
+
+```cangjie
+BlockDescendants
+```
+
+**Function:** The node itself does not respond to the touch test, and all its descendants (children, grandchildren, and more) also do not respond to the touch test. It does not affect the touch test of ancestor nodes.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### operator func ==(HitTestMode)
+
+```cangjie
+public operator func ==(other: HitTestMode): Bool
+```
+
+**Function:** Determines whether two HitTestMode enums are equal.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+|Parameter|Type|Required|Default Value|Description|
+|:---|:---|:---|:---|:---|
+|other|[HitTestMode](#enum-hittestmode)|Yes|-|The other HitTestMode enum to compare.|
+
+**Return Value:**
+
+|Type|Description|
+|:----|:----|
+|Bool|Returns true if the two enums are equal, otherwise returns false.|
+
+### operator func !=(HitTestMode)
+
+```cangjie
+public operator func !=(other: HitTestMode): Bool
+```
+
+**Function:** Determines whether two HitTestMode enums are not equal.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+|Parameter|Type|Required|Default Value|Description|
+|:---|:---|:---|:---|:---|
+|other|[HitTestMode](#enum-hittestmode)|Yes|-|The other HitTestMode enum to compare.|
+
+**Return Value:**
+
+|Type|Description|
+|:----|:----|
+|Bool|Returns true if the two enums are not equal, otherwise returns false.|
+
+## enum HoverEffect
+
+```cangjie
+public enum HoverEffect <: Equatable<HoverEffect> {
+    | Auto
+    | Scale
+    | Highlight
+    | None
+    | ...
+}
+```
+
+**Function:** Sets the hover effect of a component.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+**Parent Type:**
+
+- Equatable\<[HoverEffect](#enum-hovereffect)>
+
+### Auto
+
+```cangjie
+Auto
+```
+
+**Function:** Uses the system default hover effect of the component.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### Scale
+
+```cangjie
+Scale
+```
+
+**Function:** Zoom-in and zoom-out effect.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### Highlight
+
+```cangjie
+Highlight
+```
+
+**Function:** Background fade-in and fade-out emphasis effect.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### None
+
+```cangjie
+None
+```
+
+**Function:** No effect.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### operator func ==(HoverEffect)
+
+```cangjie
+public operator func ==(other: HoverEffect): Bool
+```
+
+**Function:** Determines whether two HoverEffect enums are equal.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+|Parameter|Type|Required|Default Value|Description|
+|:---|:---|:---|:---|:---|
+|other|[HoverEffect](#enum-hovereffect)|Yes|-|The other HoverEffect enum to compare.|
+
+**Return Value:**
+
+|Type|Description|
+|:----|:----|
+|Bool|Returns true if the two enums are equal, otherwise returns false.|
+
+### operator func !=(HoverEffect)
+
+```cangjie
+public operator func !=(other: HoverEffect): Bool
+```
+
+**Function:** Determines whether two HoverEffect enums are not equal.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+|Parameter|Type|Required|Default Value|Description|
+|:---|:---|:---|:---|:---|
+|other|[HoverEffect](#enum-hovereffect)|Yes|-|The other HoverEffect enum to compare.|
 
 **Return Value:**
 

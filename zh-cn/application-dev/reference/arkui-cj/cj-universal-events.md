@@ -17,4 +17,5 @@
 - [组件区域变化事件](cj-universal-event-areachange.md)
 - [组件可见区域变化事件](cj-universal-event-visibleareachange.md)
 - [组件快捷键事件](cj-universal-event-keyboardshortcut.md)
+- [自定义事件分发](cj-universal-attribute-onchildtouchtest.md)
 <!--DelEnd-->

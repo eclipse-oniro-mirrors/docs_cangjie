@@ -46,7 +46,7 @@
 
 ### 触摸测试控制
 
-开发者可以通过配置触摸测试控制，来实现阻塞组件自身或其他组件的触摸测试。
+通过[hitTestBehavior](../reference/arkui-cj/cj-universal-attribute-hittestbehavior.md#func-hittestbehaviorhittestmode)属性可以设置组件的触摸测试模式，取值参考[HitTestMode](../reference/arkui-cj/cj-common-types.md#enum-hittestmode)。
 
 - HitTestMode.Default：默认不配hitTestBehavior属性的效果，自身如果命中会阻塞兄弟组件，但是不阻塞子组件。
 
@@ -63,6 +63,10 @@
 - HitTestMode.Transparent：自身进行触摸测试，同时不阻塞兄弟组件及父组件。
 
 ![events_distribute](./figures/events_distribute4.png)
+
+- HitTestMode.BlockHierarchy：自身及子组件响应触摸测试，会阻止所有优先级较低的兄弟组件和父组件参与触摸测试。
+
+- HitTestMode.BlockDescendants：自身不响应触摸测试，所有后代（孩子、孙子等）也不响应触摸测试，不影响祖先组件的触摸测试。
 
 ### 禁用控制
 

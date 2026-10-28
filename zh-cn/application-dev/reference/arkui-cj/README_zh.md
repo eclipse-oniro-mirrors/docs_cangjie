@@ -29,6 +29,7 @@
         - [组件区域变化事件](cj-universal-event-areachange.md)（Beta特性）
         - [组件可见区域变化事件](cj-universal-event-visibleareachange.md)（Beta特性）
         - [组件快捷键事件](cj-universal-event-keyboardshortcut.md)（Beta特性）
+        - [自定义事件分发](cj-universal-attribute-onchildtouchtest.md)（Beta特性）
     - [通用属性](cj-universal-attributes.md)（Beta特性）
         - [尺寸设置](cj-universal-attribute-size.md)（Beta特性）
         - [位置设置](cj-universal-attribute-location.md)（Beta特性）
@@ -57,7 +58,10 @@
             - [半模态转场](cj-universal-attribute-sheettransition.md)（Beta特性）
         - [安全区域](cj-universal-attribute-expandsafearea.md)（Beta特性）
         - [组件内容填充方式](cj-universal-attribute-renderfit.md)（Beta特性）
-        - [触摸热区设置](cj-universal-attribute-touchtarget.md)（Beta特性）
+        - 触摸交互控制
+            - [触摸热区设置](cj-universal-attribute-touchtarget.md)（Beta特性）
+            - [触摸测试控制](cj-universal-attribute-hittestbehavior.md)（Beta特性）
+        - [悬浮态效果](cj-universal-attribute-hovereffect.md)（Beta特性）
     - 行列与堆叠
         - [Flex](cj-row-column-stack-flex.md)（Beta特性）
         - [Column](cj-row-column-stack-column.md)（Beta特性）

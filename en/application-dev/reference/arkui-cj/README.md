@@ -29,6 +29,7 @@
         - [Component Area Change Event](cj-universal-event-areachange.md)(Beta Feature)
         - [Component Visible Area Change Event](cj-universal-event-visibleareachange.md)(Beta Feature)
         - [Component Shortcut Key Event](cj-universal-event-keyboardshortcut.md)(Beta Feature)
+        - [Custom Event Dispatch](cj-universal-attribute-onchildtouchtest.md)(Beta Feature)
     - [Universal Attributes](cj-universal-attributes.md)(Beta Feature)
         - [Size Setting](cj-universal-attribute-size.md)(Beta Feature)
         - [Position Setting](cj-universal-attribute-location.md)(Beta Feature)
@@ -57,7 +58,10 @@
             - [Half-Modal Transition](cj-universal-attribute-sheettransition.md)(Beta Feature)
         - [Safe Area](cj-universal-attribute-expandsafearea.md)(Beta Feature)
         - [Component Content Filling Methods](cj-universal-attribute-renderfit.md)(Beta Feature)
-        - [Touch hot zone settings](cj-universal-attribute-touchtarget.md)(Beta Feature)
+        - Touch Interactions
+            - [Touch hot zone settings](cj-universal-attribute-touchtarget.md)(Beta Feature)
+            - [Touch test control](cj-universal-attribute-hittestbehavior.md)(Beta Feature)
+        - [Hover effect](cj-universal-attribute-hovereffect.md)(Beta Feature)
     - Rows, Columns & Stacks
         - [Flex](cj-row-column-stack-flex.md)(Beta Feature)
         - [Column](cj-row-column-stack-column.md)(Beta Feature)

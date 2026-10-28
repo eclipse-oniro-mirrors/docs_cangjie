@@ -775,6 +775,9 @@ public class Color <: ResourceColor {
     public static let Red: Color = Color(0xffff0000)
     public static let White: Color = Color(0xffffffff)
     public static let Transparent: Color = Color(0, 0, 0, alpha: 0.0)
+    public static let Grey: Color = Color(0xff808080)
+    public static let Orange: Color = Color(0xffffa500)
+    public static let Yellow: Color = Color(0xffffff00)
     public init(red: UInt8, green: UInt8, blue: UInt8, alpha!: ?Float32 = None)
     public init(value: UInt32)
 }
@@ -901,6 +904,54 @@ public static let Transparent: Color = Color(0, 0, 0, alpha: 0.0)
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **起始版本：** 22
+
+### static let Grey
+
+```cangjie
+public static let Grey: Color = Color(0xff808080)
+```
+
+**功能：** 灰色，与Gray等价。
+
+**类型：** [Color](#class-color)
+
+**读写能力：** 只读
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+### static let Orange
+
+```cangjie
+public static let Orange: Color = Color(0xffffa500)
+```
+
+**功能：** 橙色。
+
+**类型：** [Color](#class-color)
+
+**读写能力：** 只读
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+### static let Yellow
+
+```cangjie
+public static let Yellow: Color = Color(0xffffff00)
+```
+
+**功能：** 黄色。
+
+**类型：** [Color](#class-color)
+
+**读写能力：** 只读
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
 
 ### init(UInt8, UInt8, UInt8, ?Float32)
 
@@ -5339,6 +5390,55 @@ public init(top!: ?Length = None, right!: ?Length = None, bottom!: ?Length = Non
 |right|?[Length](#interface-length)|否|None|**命名参数。** 右侧边框宽度。初始值为0.vp。|
 |bottom|?[Length](#interface-length)|否|None|**命名参数。** 下侧边框宽度。初始值为0.vp。|
 |left|?[Length](#interface-length)|否|None|**命名参数。** 左侧边框宽度。初始值为0.vp。|
+
+## class ResizableOptions
+
+```cangjie
+public class ResizableOptions {
+    public var slice: ?EdgeWidths
+    public init(slice!: ?EdgeWidths)
+}
+```
+
+**功能：** 图像拉伸时可调整大小的图像选项，用于定义图片中可拉伸区域与固定不变的区域。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+### var slice
+
+```cangjie
+public var slice: ?EdgeWidths
+```
+
+**功能：** 边框宽度类型，用于描述组件边框不同方向的宽度。<br>**说明：**<br>只有当bottom和right同时大于0时，该属性生效。<br>当设置了top时，图片顶部拉伸，图片的像素值保持不变。<br>当设置了right时，图片右部拉伸，图片的像素值保持不变。<br>当设置了bottom时，图片底部拉伸，图片的像素值保持不变。<br>当设置了left时，图片左部拉伸，图片的像素值保持不变。<br>每个方向的宽度默认值为0，传入数字时默认单位为vp。
+
+**类型：** ?[EdgeWidths](#class-edgewidths)
+
+**读写能力：** 可读写
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+### init(?EdgeWidths)
+
+```cangjie
+public init(slice!: ?EdgeWidths)
+```
+
+**功能：** 构造ResizableOptions对象。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|slice|?[EdgeWidths](#class-edgewidths)|是|-|**命名参数。** 边框宽度类型，用于描述组件边框不同方向的宽度。|
 
 ## class BindOptions
 
@@ -10586,6 +10686,268 @@ public operator func !=(other: Visibility): Bool
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |other|[Visibility](#enum-visibility)|是|-|要比较的另一个Visibility枚举。|
+
+**返回值：**
+
+|类型|说明|
+|:----|:----|
+|Bool|如果两个枚举不相等则返回true，否则返回false。|
+
+## enum HitTestMode
+
+```cangjie
+public enum HitTestMode <: Equatable<HitTestMode> {
+    | Default
+    | Block
+    | Transparent
+    | None
+    | BlockHierarchy
+    | BlockDescendants
+    | ...
+}
+```
+
+**功能：** 设置组件的触摸命中测试模式，控制触摸事件的命中与阻断策略。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+**父类型：**
+
+- Equatable\<[HitTestMode](#enum-hittestmode)>
+
+### Default
+
+```cangjie
+Default
+```
+
+**功能：** 默认触摸测试模式。自身及子节点响应触摸测试，会阻断兄弟节点的触摸测试，不影响祖先节点的触摸测试。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+### Block
+
+```cangjie
+Block
+```
+
+**功能：** 自身响应触摸测试，并阻断子节点、兄弟节点及祖先节点的触摸测试。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+### Transparent
+
+```cangjie
+Transparent
+```
+
+**功能：** 自身及子节点响应触摸测试，同时不阻断兄弟节点及祖先节点的触摸测试。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+### None
+
+```cangjie
+None
+```
+
+**功能：** 自身不响应触摸测试，同时不阻断子节点、兄弟节点及祖先节点的触摸测试。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+### BlockHierarchy
+
+```cangjie
+BlockHierarchy
+```
+
+**功能：** 自身及子节点响应触摸测试，阻断所有优先级较低的兄弟节点和父节点的触摸测试。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+### BlockDescendants
+
+```cangjie
+BlockDescendants
+```
+
+**功能：** 自身不响应触摸测试，所有后代（孩子、孙子等）也不响应触摸测试，不影响祖先节点的触摸测试。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+### operator func ==(HitTestMode)
+
+```cangjie
+public operator func ==(other: HitTestMode): Bool
+```
+
+**功能：** 判断两个HitTestMode枚举是否相等。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|other|[HitTestMode](#enum-hittestmode)|是|-|要比较的另一个HitTestMode枚举。|
+
+**返回值：**
+
+|类型|说明|
+|:----|:----|
+|Bool|如果两个枚举相等则返回true，否则返回false。|
+
+### operator func !=(HitTestMode)
+
+```cangjie
+public operator func !=(other: HitTestMode): Bool
+```
+
+**功能：** 判断两个HitTestMode枚举是否不相等。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|other|[HitTestMode](#enum-hittestmode)|是|-|要比较的另一个HitTestMode枚举。|
+
+**返回值：**
+
+|类型|说明|
+|:----|:----|
+|Bool|如果两个枚举不相等则返回true，否则返回false。|
+
+## enum HoverEffect
+
+```cangjie
+public enum HoverEffect <: Equatable<HoverEffect> {
+    | Auto
+    | Scale
+    | Highlight
+    | None
+    | ...
+}
+```
+
+**功能：** 设置组件的鼠标悬浮态显示效果。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+**父类型：**
+
+- Equatable\<[HoverEffect](#enum-hovereffect)>
+
+### Auto
+
+```cangjie
+Auto
+```
+
+**功能：** 使用组件的系统默认悬浮效果。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+### Scale
+
+```cangjie
+Scale
+```
+
+**功能：** 放大缩小效果。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+### Highlight
+
+```cangjie
+Highlight
+```
+
+**功能：** 背景淡入淡出的强调效果。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+### None
+
+```cangjie
+None
+```
+
+**功能：** 不设置效果。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+### operator func ==(HoverEffect)
+
+```cangjie
+public operator func ==(other: HoverEffect): Bool
+```
+
+**功能：** 判断两个HoverEffect枚举是否相等。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|other|[HoverEffect](#enum-hovereffect)|是|-|要比较的另一个HoverEffect枚举。|
+
+**返回值：**
+
+|类型|说明|
+|:----|:----|
+|Bool|如果两个枚举相等则返回true，否则返回false。|
+
+### operator func !=(HoverEffect)
+
+```cangjie
+public operator func !=(other: HoverEffect): Bool
+```
+
+**功能：** 判断两个HoverEffect枚举是否不相等。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|other|[HoverEffect](#enum-hovereffect)|是|-|要比较的另一个HoverEffect枚举。|
 
 **返回值：**
 

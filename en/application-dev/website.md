@@ -547,6 +547,7 @@
                     - [Component Area Change Event](reference/arkui-cj/cj-universal-event-areachange.md)
                     - [Component Visible Area Change Event](reference/arkui-cj/cj-universal-event-visibleareachange.md)
                     - [Component Shortcut Event](reference/arkui-cj/cj-universal-event-keyboardshortcut.md)
+                    - [Custom Event Dispatch](reference/arkui-cj/cj-universal-attribute-onchildtouchtest.md)
                 - [Universal Attributes](reference/arkui-cj/cj-universal-attributes.md)
                     - [Size Setting](reference/arkui-cj/cj-universal-attribute-size.md)
                     - [Position Setting](reference/arkui-cj/cj-universal-attribute-location.md)
@@ -575,7 +576,10 @@
                         - [Half-Modal Transition](reference/arkui-cj/cj-universal-attribute-sheettransition.md)
                     - [Safe Area](reference/arkui-cj/cj-universal-attribute-expandsafearea.md)
                     - [Component Content Filling Method](reference/arkui-cj/cj-universal-attribute-renderfit.md)
-                    - [Touch hot zone settings](reference/arkui-cj/cj-universal-attribute-touchtarget.md)
+                    - Touch Interactions
+                        - [Touch hot zone settings](reference/arkui-cj/cj-universal-attribute-touchtarget.md)
+                        - [Touch test control](reference/arkui-cj/cj-universal-attribute-hittestbehavior.md)
+                    - [Hover effect](reference/arkui-cj/cj-universal-attribute-hovereffect.md)
                 - Rows, Columns & Stacks
                     - [Flex](reference/arkui-cj/cj-row-column-stack-flex.md)
                     - [Column](reference/arkui-cj/cj-row-column-stack-column.md)

@@ -710,6 +710,7 @@
                     - [组件区域变化事件](reference/arkui-cj/cj-universal-event-areachange.md)
                     - [组件可见区域变化事件](reference/arkui-cj/cj-universal-event-visibleareachange.md)
                     - [组件快捷键事件](reference/arkui-cj/cj-universal-event-keyboardshortcut.md)
+                    - [自定义事件分发](reference/arkui-cj/cj-universal-attribute-onchildtouchtest.md)
                 - [通用属性](reference/arkui-cj/cj-universal-attributes.md)
                     - [尺寸设置](reference/arkui-cj/cj-universal-attribute-size.md)
                     - [位置设置](reference/arkui-cj/cj-universal-attribute-location.md)
@@ -738,7 +739,10 @@
                         - [半模态转场](reference/arkui-cj/cj-universal-attribute-sheettransition.md)
                     - [安全区域](reference/arkui-cj/cj-universal-attribute-expandsafearea.md)
                     - [组件内容填充方式](reference/arkui-cj/cj-universal-attribute-renderfit.md)
-                    - [触摸热区设置](reference/arkui-cj/cj-universal-attribute-touchtarget.md)
+                    - 触摸交互控制
+                        - [触摸热区设置](reference/arkui-cj/cj-universal-attribute-touchtarget.md)
+                        - [触摸测试控制](reference/arkui-cj/cj-universal-attribute-hittestbehavior.md)
+                    - [悬浮态效果](reference/arkui-cj/cj-universal-attribute-hovereffect.md)
                 - 行列与堆叠
                     - [Flex](reference/arkui-cj/cj-row-column-stack-flex.md)
                     - [Column](reference/arkui-cj/cj-row-column-stack-column.md)
