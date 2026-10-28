@@ -1883,7 +1883,9 @@ public var isDefaultRoute: Bool
 public enum NetBearType {
     | BearerCellular
     | BearerWifi
+    | BearerBluetooth
     | BearerEthernet
+    | BearerVpn
     | ...
 }
 ```
@@ -1893,6 +1895,18 @@ public enum NetBearType {
 **System Capability:** SystemCapability.Communication.NetManager.Core
 
 **Since:** 22
+
+### BearerBluetooth
+
+```cangjie
+BearerBluetooth
+```
+
+**Description:** Bluetooth network.
+
+**System Capability:** SystemCapability.Communication.NetManager.Core
+
+**Since:** 26.1.0
 
 ### BearerCellular
 
@@ -1917,6 +1931,18 @@ BearerEthernet
 **System Capability:** SystemCapability.Communication.NetManager.Core
 
 **Since:** 22
+
+### BearerVpn
+
+```cangjie
+BearerVpn
+```
+
+**Description:** VPN network.
+
+**System Capability:** SystemCapability.Communication.NetManager.Core
+
+**Since:** 26.1.0
 
 ### BearerWifi
 

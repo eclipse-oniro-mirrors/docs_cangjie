@@ -50,6 +50,7 @@
 | update(values: ValuesBucket, predicates: RdbPredicates, conflict!: ConflictResolution = ConflictResolution.OnConflictNone): Int64 | 根据predicates的指定实例对象更新数据库中的数据。 |
 | delete(predicates: RdbPredicates): Int64 | 根据predicates的指定实例对象从数据库中删除数据。 |
 | query(predicates: RdbPredicates, columns!: Array\<String> = []): ResultSet| 根据指定条件查询数据库中的数据。 |
+| version: Int32 | 设置和获取数据库版本，值为正整数，对应SQLite的`PRAGMA user_version`。 |
 | deleteRdbStore(context: UIAbilityContext, name: String): Unit | 删除数据库。 |
 
 ## 开发步骤
@@ -103,10 +104,26 @@
         public override func onWindowStageCreate(windowStage: WindowStage): Unit {
             Hilog.info(0, "cangjie", "MainAbility onWindowStageCreate.")
             windowStage.loadContent("EntryView")
-            let store = getRdbStore(this.context, storeConfig)
-            store.executeSql(SQL_CREATE_TABLE) // 创建数据表
-            store.executeSql('ALTER TABLE EMPLOYEE ADD COLUMN AGE INTEGER')
-            store.executeSql('ALTER TABLE EMPLOYEE DROP COLUMN ADDRESS TEXT')
+            var store = getRdbStore(this.context, storeConfig)
+            // 读取数据库版本。数据库首次创建时版本默认为0
+            var storeVersion = store.version
+            if (storeVersion == 0) {
+                // 新库：创建数据表，并直接设置为当前版本
+                store.executeSql(SQL_CREATE_TABLE)
+                storeVersion = 3
+            }
+            if (storeVersion == 1) {
+                // 旧库升级：version 1 -> 2，增加 AGE 列
+                store.executeSql('ALTER TABLE EMPLOYEE ADD COLUMN AGE INTEGER')
+                storeVersion = 2
+            }
+            if (storeVersion == 2) {
+                // 旧库升级：version 2 -> 3，删除 ADDRESS 列
+                store.executeSql('ALTER TABLE EMPLOYEE DROP COLUMN ADDRESS')
+                storeVersion = 3
+            }
+            // 数据库结构变更完成后，统一更新版本号
+            store.version = storeVersion
             rdbStore = store
             // 进行数据库的增、删、改、查等操作
             // ...
@@ -119,6 +136,8 @@
     >
     > - 应用创建的数据库与其上下文（Context）有关，即使使用同样的数据库名称，但不同的应用上下文，会产生多个数据库，例如每个Ability都有各自的上下文。
     > - 当应用首次获取数据库（调用getRdbStore）后，在应用沙箱内会产生对应的数据库文件。使用数据库的过程中，在与数据库文件相同的目录下可能会产生以-wal和-shm结尾的临时文件。此时若开发者希望移动数据库文件到其它地方使用查看，则需要同时移动这些临时文件，当应用被卸载完成后，其在设备上产生的数据库文件及临时文件也会被移除。
+    > - 读取和设置`RdbStore`的`version`属性会占用数据库连接，请避免对该属性进行频繁操作。建议使用临时变量保存读取到的版本号，在数据库结构变更完成后统一赋值。
+    > - 以只读方式（`StoreConfig`的`isReadOnly`为true）打开数据库时，不允许进行写操作，设置`version`会返回错误码801。
     > - 错误码的详细介绍请参见[通用错误码](../reference/cj-errorcode-universal.md)和[关系型数据库错误码](../reference/ArkData/cj-errorcode-data-rdb.md)。
 
 2. 获取到RdbStore后，调用insert()接口插入数据。示例代码如下所示：

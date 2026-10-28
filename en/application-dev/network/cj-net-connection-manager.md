@@ -8,7 +8,7 @@
 
 ## Introduction
 
-Network Connection Management provides fundamental capabilities for managing networks, including priority management for multiple network connections (WiFi, cellular, Ethernet, etc.), network quality assessment, subscription to default or specified network connection status changes, querying network connection information, DNS resolution, and other functionalities.
+Network Connection Management provides fundamental capabilities for managing networks, including priority management for multiple network connections (Wi-Fi, cellular, Bluetooth, Ethernet, VPN, etc.), network quality assessment, subscription to default or specified network connection status changes, querying network connection information, DNS resolution, and other functionalities.
 
 ## Basic Concepts
 
@@ -16,6 +16,7 @@ Network Connection Management provides fundamental capabilities for managing net
 - **Network Consumer**: The user of data networks, such as applications or system services.
 - **Network Probing**: Detects network validity to avoid switching from an available network to an unavailable one. Includes bound network probing, DNS probing, HTTP probing, and HTTPS probing.
 - **Network Optimization**: Selects the optimal network when multiple networks coexist. Triggered when network status, network information, or scoring changes.
+- **Network Type**: Describes the bearer mode of a network. It is obtained through the `bearerTypes` field of [NetCapabilities](../reference/NetworkKit/cj-apis-net-connection.md#class-netcapabilities), and its value is [NetBearType](../reference/NetworkKit/cj-apis-net-connection.md#enum-netbeartype), including cellular network (BearerCellular), Wi-Fi network (BearerWifi), Bluetooth network (BearerBluetooth), Ethernet network (BearerEthernet), and VPN network (BearerVpn). The Bluetooth and VPN network types are supported since version 26.1.0.
 
 ## Constraints
 
@@ -28,6 +29,7 @@ Typical scenarios for Network Connection Management include:
 - Receiving notifications for specified network status changes.
 - Retrieving all registered networks.
 - Querying network connection information based on data networks.
+- Differentiating cellular, Wi-Fi, Bluetooth, Ethernet, and VPN networks by network type.
 - Resolving domain names using the corresponding network to obtain all IP addresses.
 
 Specific development methods are described below.
@@ -66,7 +68,7 @@ For the complete Cangjie API documentation and example code, refer to [Network C
 
 2. Import `connection` from `@kit.NetworkKit`.
 
-3. Call [`createNetConnection`](../reference/NetworkKit/cj-apis-net-connection.md#func-createnetconnectionnetspecifier-uint32) to specify network capabilities, type, and timeout (optional; if not provided, the default network is used). This creates a `NetConnection` object.
+3. Call [`createNetConnection`](../reference/NetworkKit/cj-apis-net-connection.md#func-createnetconnectionnetspecifier-uint32) to specify network capabilities, type, and timeout (optional; if not provided, the default network is used). This creates a `NetConnection` object. The network type can be BearerCellular, BearerWifi, BearerBluetooth, BearerEthernet, or BearerVpn. BearerBluetooth and BearerVpn are supported since version 26.1.0.
 
 4. Call the [`register()`](../reference/NetworkKit/cj-apis-net-connection.md#func-register) method to subscribe to notifications for the specified network status changes.
 
@@ -213,7 +215,7 @@ let nets = getAllNets()
 
 3. Call [`getDefaultNet`](../reference/NetworkKit/cj-apis-net-connection.md#func-getdefaultnet) to retrieve the default data network (`NetHandle`), or call [`getAllNets`](../reference/NetworkKit/cj-apis-net-connection.md#func-getallnets) to retrieve a list of all connected networks (`Array<NetHandle>`).
 
-4. Call [`getNetCapabilities`](../reference/NetworkKit/cj-apis-net-connection.md#func-getnetcapabilitiesnethandle) to obtain the capability information of the network corresponding to `NetHandle`. This includes network type (cellular, WiFi, Ethernet, etc.) and specific capabilities.
+4. Call [`getNetCapabilities`](../reference/NetworkKit/cj-apis-net-connection.md#func-getnetcapabilitiesnethandle) to obtain the capability information of the network corresponding to `NetHandle`. This includes network type (cellular, Wi-Fi, Bluetooth, Ethernet, VPN, etc.) and specific capabilities.
 
 5. Call [`getConnectionProperties`](../reference/NetworkKit/cj-apis-net-connection.md#func-getconnectionpropertiesnethandle) to obtain the connection information of the network corresponding to `NetHandle`.
 
@@ -254,6 +256,8 @@ extend NetBearType {
             case (BearerCellular, BearerCellular) => true
             case (BearerWifi, BearerWifi) => true
             case (BearerEthernet, BearerEthernet) => true
+            case (BearerBluetooth, BearerBluetooth) => true
+            case (BearerVpn, BearerVpn) => true
             case _ => false
         }
     }
@@ -279,6 +283,12 @@ func test() {
         } else if (item == BearerEthernet) {
             // Ethernet network.
             loggerInfo("BearerEthernet")
+        } else if (item == BearerBluetooth) {
+            // Bluetooth network.
+            loggerInfo("BearerBluetooth")
+        } else if (item == BearerVpn) {
+            // VPN network.
+            loggerInfo("BearerVpn")
         }
     }
 

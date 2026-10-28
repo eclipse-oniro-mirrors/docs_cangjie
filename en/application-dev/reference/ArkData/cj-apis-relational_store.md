@@ -2164,14 +2164,23 @@ import ohos.callback_invoke.*
 import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
-try {
-    // The following code can be added to dependency definitions
-    class TestCallback <: Callback0Argument {
-        public init() {}
-        public open func invoke(err: ?BusinessException): Unit {
-            Hilog.info(0, "test", "Call invoke.", "")
-        }
+// The following code can be added to dependency definitions
+class TestCallback <: Callback0Argument {
+    public init() {}
+    public open func invoke(err: ?BusinessException): Unit {
+        Hilog.info(0, "test", "Call invoke.", "")
     }
+}
+
+try {
+    var rdbStore: RdbStore = getRdbStore(Global.getStageContext(), StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db")) // Application Context needs to be obtained. For details, see the usage instructions in this document.
+    let testCallback = TestCallback()
+    rdbStore.on("PRINT", false, testCallback)
+    rdbStore.emit("PRINT")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
 
 ### func executeSql(String, Array\<RelationalStoreValueType>)
 
@@ -2779,6 +2788,63 @@ try {
     rdbStore.update(values, predicates, conflict: OnConflictReplace)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
+}
+```
+
+### prop version
+
+```cangjie
+public mut prop version: Int32
+```
+
+**Function:** Sets and obtains the RDB store version. The value is a positive integer and corresponds to `PRAGMA user_version` of SQLite. Reading and setting this property will occupy the database connection. Do not frequently perform operations on this property. It is recommended that you use a temporary variable to store the version value read, and assign the value to the **version** property of the **RdbStore** instance after the database change is complete.
+
+**Type:** Int32
+
+**Access:** Read-Write
+
+**System Capability:** SystemCapability.DistributedDataManager.RelationalStore.Core
+
+**Since:** 26.1.0
+
+**Exceptions:**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception): Corresponding error codes are listed in the table below. For details, refer to [Relational Database Error Codes](./cj-errorcode-data-rdb.md).
+
+  | Error Code ID| Error Message|
+  | :---- | :--- |
+  | 801 | Capability not supported. |
+  | 14800000 | Inner error. |
+  | 14800014 | The target instance is already closed. |
+  | 14800015 | The database does not respond. |
+  | 14800021 | SQLite: Generic error. |
+  | 14800023 | SQLite: Access permission denied. |
+  | 14800024 | SQLite: The database file is locked. |
+  | 14800025 | SQLite: A table in the database is locked. |
+  | 14800026 | SQLite: The database is out of memory. |
+  | 14800027 | SQLite: Attempt to write a readonly database. |
+  | 14800028 | SQLite: Some kind of disk I/O error occurred. |
+  | 14800029 | SQLite: The database is full. |
+  | 14800030 | SQLite: Unable to open the database file. |
+
+**Example:**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.ArkData.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
+
+try {
+    var rdbStore: RdbStore = getRdbStore(Global.getStageContext(),
+        StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db")) // Application Context needs to be obtained. For details, see the usage instructions in this document.
+    rdbStore.version = 3
+    Hilog.info(0, "test", "version=${rdbStore.version}")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.code} ${e.message}")
 }
 ```
 

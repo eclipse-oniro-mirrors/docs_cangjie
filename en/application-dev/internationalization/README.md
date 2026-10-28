@@ -3,9 +3,12 @@
 - [Localization Kit Introduction](cj-i18n-l10n.md)(Beta Feature)
 - Application Internationalization
   - [International UI Design](cj-i18n-ui-design.md)(Beta Feature)
+  - Language and User Preferences
+    - [System Language and Region](cj-i18n-system-language-region.md)(Beta Feature)
   - [Setting Calendar and Almanac](cj-i18n-calendar.md)(Beta Feature)
   - Timezone and Daylight Saving Time Internationalization
     - [Daylight Saving Time Transition](cj-i18n-dst-transition.md)(Beta Feature)
+  - [Character Processing](cj-i18n-character-processing.md)(Beta Feature)
   - Localized Names
     - [Localized Timezone Names](cj-i18n-time-zone-display.md)(Beta Feature)
 - Application Localization
