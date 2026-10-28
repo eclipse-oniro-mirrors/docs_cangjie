@@ -6,6 +6,7 @@
     - [ohos.bluetooth.base_profile（蓝牙baseProfile模块）](cj-apis-bluetooth-base_profile.md)（Beta特性）
     - [ohos.bluetooth.constant（蓝牙constant模块）](cj-apis-bluetooth-constant.md)（Beta特性）
     - [ohos.bluetooth.hfp（蓝牙hfp模块）](cj-apis-bluetooth-hfp.md)（Beta特性）
+    - [ohos.bluetooth.socket（蓝牙socket模块）](cj-apis-bluetooth-socket.md)（Beta特性）
     - [ohos.wifi_manager（WLAN）](cj-apis-wifi_manager.md)（Beta特性）
 - 错误码
     - [蓝牙服务子系统错误码](cj-errorcode-bluetooth_manager.md)（Beta特性）
