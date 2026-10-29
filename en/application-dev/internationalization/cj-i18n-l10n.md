@@ -6,6 +6,8 @@
 > Currently in the beta phase.
 <!--DelEnd-->
 
+## Function Introduction
+
 Users from different regions have diverse languages and cultural backgrounds, with some speaking multiple languages. Therefore, when releasing application versions for various regions, it is essential to fully recognize differences in language, region, and culture. Through the processes of internationalization and localization, an application's interface can be displayed in a way that aligns with local user habits, thereby expanding its potential market.
 
 **Internationalization (I18n)** is a set of system capabilities that support the configuration of regional characteristics, time zones, daylight saving time, and more, meeting the design requirements for multilingual and multicultural applications. Regional characteristics include settings for date and time formats, numbers and units of measurement, phone numbers, calendars, languages, etc. Time zone and daylight saving time capabilities involve obtaining time zones and handling daylight saving time transitions. Internationalization is typically implemented during the application design and development phases, where the user's language is not predetermined, and universal design principles are adopted.

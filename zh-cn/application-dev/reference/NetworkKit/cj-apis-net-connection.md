@@ -2065,7 +2065,9 @@ public var isDefaultRoute: Bool
 public enum NetBearType {
     | BearerCellular
     | BearerWifi
+    | BearerBluetooth
     | BearerEthernet
+    | BearerVpn
     | ...
 }
 ```
@@ -2075,6 +2077,18 @@ public enum NetBearType {
 **系统能力：** SystemCapability.Communication.NetManager.Core
 
 **起始版本：** 22
+
+### BearerBluetooth
+
+```cangjie
+BearerBluetooth
+```
+
+**功能：** 蓝牙网络。
+
+**系统能力：** SystemCapability.Communication.NetManager.Core
+
+**起始版本：** 26.1.0
 
 ### BearerCellular
 
@@ -2099,6 +2113,18 @@ BearerEthernet
 **系统能力：** SystemCapability.Communication.NetManager.Core
 
 **起始版本：** 22
+
+### BearerVpn
+
+```cangjie
+BearerVpn
+```
+
+**功能：** VPN网络。
+
+**系统能力：** SystemCapability.Communication.NetManager.Core
+
+**起始版本：** 26.1.0
 
 ### BearerWifi
 

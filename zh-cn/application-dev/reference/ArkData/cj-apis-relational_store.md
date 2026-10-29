@@ -2839,6 +2839,63 @@ try {
 }
 ```
 
+### prop version
+
+```cangjie
+public mut prop version: Int32
+```
+
+**功能：** 设置和获取数据库版本，值为正整数，对应SQLite的`PRAGMA user_version`。读取和设置version属性会占用数据库连接，避免对该属性进行频繁操作。建议使用临时变量保存读取到的version值，在数据库变更完成后将其赋值给RdbStore实例的version属性。
+
+**类型：** Int32
+
+**读写能力：** 可读写
+
+**系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
+
+**起始版本：** 26.1.0
+
+**异常：**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 801 | Capability not supported. |
+  | 14800000 | Inner error. |
+  | 14800014 | The target instance is already closed. |
+  | 14800015 | The database does not respond. |
+  | 14800021 | SQLite: Generic error. |
+  | 14800023 | SQLite: Access permission denied. |
+  | 14800024 | SQLite: The database file is locked. |
+  | 14800025 | SQLite: A table in the database is locked. |
+  | 14800026 | SQLite: The database is out of memory. |
+  | 14800027 | SQLite: Attempt to write a readonly database. |
+  | 14800028 | SQLite: Some kind of disk I/O error occurred. |
+  | 14800029 | SQLite: The database is full. |
+  | 14800030 | SQLite: Unable to open the database file. |
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.ArkData.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
+
+try {
+    var rdbStore: RdbStore = getRdbStore(Global.abilityContext,
+        StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db")) // 此处需手动配置模板，获取Context上下文。上下文获取方式请参见使用说明。
+    rdbStore.version = 3
+    Hilog.info(0, "test", "version=${rdbStore.version}")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.code} ${e.message}")
+}
+```
+
 ## class ResultSet
 
 ```cangjie

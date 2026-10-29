@@ -50,6 +50,7 @@ The following are key APIs for relational database persistence. For more APIs an
 | update(values: Map\<String, RelationalStoreValueType>, predicates: RdbPredicates): Int64 | Updates database data based on specified predicate conditions. |
 | delete(predicates: RdbPredicates): Int64 | Deletes data from the database based on specified predicate conditions. |
 | query(predicates: RdbPredicates, columns: Array\<String>): ResultSet| Queries database data based on specified conditions. |
+| version: Int32 | Sets and obtains the RDB store version. The value is a positive integer and corresponds to `PRAGMA user_version` of SQLite. |
 | deleteRdbStore(context: StageContext, name: String): Unit | Deletes a database. |
 
 ## Development Procedure
@@ -100,10 +101,26 @@ During relational database operations or storage, unexpected exceptions (error c
         public override func onWindowStageCreate(windowStage: WindowStage): Unit {
             Hilog.info(0, "cangjie", "MainAbility onWindowStageCreate.")
             windowStage.loadContent("EntryView")
-            let store = getRdbStore(this.context, storeConfig)
-            store.executeSql(SQL_CREATE_TABLE) // Create table
-            store.executeSql('ALTER TABLE EMPLOYEE ADD COLUMN AGE INTEGER')
-            store.executeSql('ALTER TABLE EMPLOYEE DROP COLUMN ADDRESS TEXT')
+            var store = getRdbStore(this.context, storeConfig)
+            // Read the RDB store version. The default version is 0 when the database is created for the first time.
+            var storeVersion = store.version
+            if (storeVersion == 0) {
+                // New database: create the data table and directly set the version to the current version.
+                store.executeSql(SQL_CREATE_TABLE)
+                storeVersion = 3
+            }
+            if (storeVersion == 1) {
+                // Upgrade an old database: version 1 -> 2. Add the AGE column.
+                store.executeSql('ALTER TABLE EMPLOYEE ADD COLUMN AGE INTEGER')
+                storeVersion = 2
+            }
+            if (storeVersion == 2) {
+                // Upgrade an old database: version 2 -> 3. Delete the ADDRESS column.
+                store.executeSql('ALTER TABLE EMPLOYEE DROP COLUMN ADDRESS')
+                storeVersion = 3
+            }
+            // After the database structure change is complete, update the version number.
+            store.version = storeVersion
             rdbStore = store
             // Perform database operations: insert, delete, update, query, etc.
             // ...
@@ -116,6 +133,8 @@ During relational database operations or storage, unexpected exceptions (error c
     >
     > - Databases created by applications are tied to their Context. Even with identical names, different application contexts will create separate databases (e.g., each Ability has its own context).
     > - When an application first accesses a database (via getRdbStore), corresponding database files are created in the application sandbox. Temporary files with -wal and -shm extensions may appear in the same directory during use. To move database files elsewhere, these temporary files must also be moved. Uninstalling the application removes all associated database and temporary files from the device.
+    > - Reading and setting the **version** property of **RdbStore** occupies the database connection. Avoid performing operations on this property frequently. It is recommended that you use a temporary variable to save the version number read, and assign a value to it in a unified manner after the database structure change is complete.
+    > - When a database is opened in read-only mode (**isReadOnly** of **StoreConfig** is **true**), write operations are not allowed, and setting **version** returns error code 801.
     > - For detailed error codes, refer to [Universal Error Codes](../reference/cj-errorcode-universal.md) and [Relational Database Error Codes](../reference/ArkData/cj-errorcode-data-rdb.md).
 
 2. After obtaining RdbStore, call insert() to add data. Example:

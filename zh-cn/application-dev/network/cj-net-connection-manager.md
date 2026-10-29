@@ -8,7 +8,7 @@
 
 ## 简介
 
-网络连接管理提供管理网络一些基础能力，包括 WiFi、蜂窝、以太网等多网络连接优先级管理、网络质量评估、订阅默认或指定网络连接状态变化、查询网络连接信息、DNS解析等功能。
+网络连接管理提供管理网络一些基础能力，包括 Wi-Fi、蜂窝、蓝牙、以太网、VPN等多网络连接优先级管理、网络质量评估、订阅默认或指定网络连接状态变化、查询网络连接信息、DNS解析等功能。
 
 ## 基本概念
 
@@ -16,6 +16,7 @@
 - 网络消费者：数据网络的使用方。比如应用或系统服务。
 - 网络探测：检测网络有效性，避免将网络从可用网络切换到不可用网络。内容包括绑定网络探测、DNS探测、HTTP探测及HTTPS探测。
 - 网络优选：处理多网络共存时选择最优网络。在网络状态、网络信息及评分发生变化时被触发。
+- 网络类型：描述网络的承载方式，通过[NetCapabilities](../reference/NetworkKit/cj-apis-net-connection.md#class-netcapabilities)的`bearerTypes`字段获取，取值为[NetBearType](../reference/NetworkKit/cj-apis-net-connection.md#enum-netbeartype)，包括蜂窝网络（BearerCellular）、Wi-Fi网络（BearerWifi）、蓝牙网络（BearerBluetooth）、以太网网络（BearerEthernet）和VPN网络（BearerVpn）。从26.1.0版本开始支持蓝牙网络和VPN网络类型。
 
 ## 约束
 
@@ -28,6 +29,7 @@
 - 接收指定网络的状态变化通知。
 - 获取所有注册的网络。
 - 根据数据网络查询网络的连接信息。
+- 根据网络类型区分蜂窝、Wi-Fi、蓝牙、以太网和VPN网络。
 - 使用对应网络解析域名，获取所有IP。
 
 具体开发方式介绍如下。
@@ -66,7 +68,7 @@
 
 2. 从@kit.NetworkKit中导入connection。
 
-3. 调用[createNetConnection](../reference/NetworkKit/cj-apis-net-connection.md#func-createnetconnectionnetspecifier-uint32)方法，指定网络能力、网络类型和超时时间（可选，如不传入代表默认网络；创建不同于默认网络时可通过指定这些参数完成），创建一个NetConnection对象。
+3. 调用[createNetConnection](../reference/NetworkKit/cj-apis-net-connection.md#func-createnetconnectionnetspecifier-uint32)方法，指定网络能力、网络类型和超时时间（可选，如不传入代表默认网络；创建不同于默认网络时可通过指定这些参数完成），创建一个NetConnection对象。其中网络类型支持BearerCellular、BearerWifi、BearerBluetooth、BearerEthernet和BearerVpn，BearerBluetooth和BearerVpn从26.1.0版本开始支持。
 
 4. 调用该对象的[register()](../reference/NetworkKit/cj-apis-net-connection.md#func-register)方法，订阅指定网络状态变化的通知。
 
@@ -204,7 +206,7 @@ let nets = getAllNets()
 
 3. 通过调用[getDefaultNet](../reference/NetworkKit/cj-apis-net-connection.md#func-getdefaultnet)方法，获取默认的数据网络(NetHandle)；或者通过调用[getAllNets](../reference/NetworkKit/cj-apis-net-connection.md#func-getallnets)方法，获取所有处于连接状态的网络列表(Array\<NetHandle>)。
 
-4. 调用[getNetCapabilities](../reference/NetworkKit/cj-apis-net-connection.md#func-getnetcapabilitiesnethandle)方法，获取NetHandle对应网络的能力信息。能力信息包含了网络类型(蜂窝网络、Wi-Fi网络、以太网网络等)、网络具体能力等网络信息。
+4. 调用[getNetCapabilities](../reference/NetworkKit/cj-apis-net-connection.md#func-getnetcapabilitiesnethandle)方法，获取NetHandle对应网络的能力信息。能力信息包含了网络类型(蜂窝网络、Wi-Fi网络、蓝牙网络、以太网网络、VPN网络等)、网络具体能力等网络信息。
 
 5. 调用[getConnectionProperties](../reference/NetworkKit/cj-apis-net-connection.md#func-getconnectionpropertiesnethandle)方法，获取NetHandle对应网络的连接信息。
 
@@ -241,6 +243,8 @@ extend NetBearType {
             case (BearerCellular, BearerCellular) => true
             case (BearerWifi, BearerWifi) => true
             case (BearerEthernet, BearerEthernet) => true
+            case (BearerBluetooth, BearerBluetooth) => true
+            case (BearerVpn, BearerVpn) => true
             case _ => false
         }
     }
@@ -266,6 +270,12 @@ func test() {
         } else if (item == BearerEthernet) {
             // 以太网网络。
             loggerInfo("BearerEthernet")
+        } else if (item == BearerBluetooth) {
+            // 蓝牙网络。
+            loggerInfo("BearerBluetooth")
+        } else if (item == BearerVpn) {
+            // VPN网络。
+            loggerInfo("BearerVpn")
         }
     }
 

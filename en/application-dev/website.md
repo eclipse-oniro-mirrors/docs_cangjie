@@ -223,9 +223,12 @@
             - [Introduction to Localization Kit](internationalization/cj-i18n-l10n.md)
             - Application Internationalization
                 - [International UI Design](internationalization/cj-i18n-ui-design.md)
+                - Language and User Preferences
+                    - [System Language and Region](internationalization/cj-i18n-system-language-region.md)
                 - [Setting Calendar and Almanac](internationalization/cj-i18n-calendar.md)
                 - Timezone and Daylight Saving Time Internationalization
                     - [Daylight Saving Time Transition](internationalization/cj-i18n-dst-transition.md)
+                - [Character Processing](internationalization/cj-i18n-character-processing.md)
                 - Localized Names
                     - [Localized Timezone Names](internationalization/cj-i18n-time-zone-display.md)
             - Application Localization

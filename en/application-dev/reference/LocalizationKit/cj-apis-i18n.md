@@ -551,7 +551,9 @@ try {
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
-```## class System
+```
+
+## class System
 
 ```cangjie
 public class System {}
@@ -598,6 +600,207 @@ try {
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
+```
+
+### static func getSystemLanguage()
+
+```cangjie
+public static func getSystemLanguage(): String
+```
+
+**Function:** Obtains the current system language. To listen for system language changes, listen for the common event `Support.COMMON_EVENT_LOCALE_CHANGED`. For details, see [System Language and Region](../../internationalization/cj-i18n-system-language-region.md#how-to-develop).
+
+**System Capability:** SystemCapability.Global.I18n
+
+**Since:** 26.1.0
+
+**Return Value:**
+
+| Type | Description |
+|:----|:----|
+| String | String representing the language ID. |
+
+**Example:**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import ohos.i18n.*
+import kit.PerformanceAnalysisKit.Hilog
+
+let systemLanguage = System.getSystemLanguage() // If the system language is simplified Chinese, systemLanguage = 'zh-Hans'
+Hilog.info(0, "test", "systemLanguage=${systemLanguage}")
+```
+
+### static func getSystemRegion()
+
+```cangjie
+public static func getSystemRegion(): String
+```
+
+**Function:** Obtains the current system country/region. To listen for system region changes, listen for the common event `Support.COMMON_EVENT_LOCALE_CHANGED`. For details, see [System Language and Region](../../internationalization/cj-i18n-system-language-region.md#how-to-develop).
+
+**System Capability:** SystemCapability.Global.I18n
+
+**Since:** 26.1.0
+
+**Return Value:**
+
+| Type | Description |
+|:----|:----|
+| String | String representing the country/region ID. |
+
+**Example:**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import ohos.i18n.*
+import kit.PerformanceAnalysisKit.Hilog
+
+let systemRegion = System.getSystemRegion() // If the system region is China, systemRegion = 'CN'
+Hilog.info(0, "test", "systemRegion=${systemRegion}")
+```
+
+## func isRTL(String)
+
+```cangjie
+public func isRTL(locale: String): Bool
+```
+
+**Function:** Checks whether a language is an RTL language. For an RTL language, the UI needs to be displayed in [mirrored mode](../../internationalization/cj-i18n-ui-design.md#interface-mirroring).
+
+**System Capability:** SystemCapability.Global.I18n
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+| Parameter Name | Type | Required | Default Value | Description |
+|:---|:---|:---|:---|:---|
+| locale | String | Yes | - | String representing the locale ID, which consists of the language, script, and country/region, for example, ar-EG. |
+
+**Return Value:**
+
+| Type | Description |
+|:----|:----|
+| Bool | **true** indicates that the language is an RTL language, and **false** indicates the opposite. |
+
+**Example:**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import ohos.i18n.*
+import kit.PerformanceAnalysisKit.Hilog
+
+let isZhRTL = isRTL("zh-CN") // Chinese is not an RTL language, false is returned
+let isArRTL = isRTL("ar-EG") // Arabic is an RTL language, true is returned
+Hilog.info(0, "test", "isZhRTL=${isZhRTL}, isArRTL=${isArRTL}")
+```
+
+## class Transliterator
+
+```cangjie
+public class Transliterator {}
+```
+
+**Function:** Provides text transliteration capabilities, including creating transliterator objects and transliterating text.
+
+**System Capability:** SystemCapability.Global.I18n
+
+**Since:** 26.1.0
+
+### static func getInstance(String)
+
+```cangjie
+public static func getInstance(id: String): Transliterator
+```
+
+**Function:** Creates a transliterator object with the specified conversion ID.
+
+**System Capability:** SystemCapability.Global.I18n
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+| Parameter Name | Type | Required | Default Value | Description |
+|:---|:---|:---|:---|:---|
+| id | String | Yes | - | Conversion ID supported by transliteration, for example, Any-Latn. |
+
+**Return Value:**
+
+| Type | Description |
+|:----|:----|
+| [Transliterator](#class-transliterator) | Transliterator object. |
+
+**Example:**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import ohos.i18n.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
+
+try {
+    let transliterator = Transliterator.getInstance("Any-Latn")
+    Hilog.info(0, "test", "getInstance success")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
+### func transform(String)
+
+```cangjie
+public func transform(text: String): String
+```
+
+**Function:** Converts the input text from the source format to the target format.
+
+**System Capability:** SystemCapability.Global.I18n
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+| Parameter Name | Type | Required | Default Value | Description |
+|:---|:---|:---|:---|:---|
+| text | String | Yes | - | Input text. |
+
+**Return Value:**
+
+| Type | Description |
+|:----|:----|
+| String | Text after conversion. |
+
+**Example:**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import ohos.i18n.*
+import kit.PerformanceAnalysisKit.Hilog
+
+let transliterator = Transliterator.getInstance("Any-Latn")
+let transliterateLatn = transliterator.transform("中国") // transliterateLatn = 'zhōng guó'
+Hilog.info(0, "test", "transliterateLatn=${transliterateLatn}")
+
+let asciiTransliterator = Transliterator.getInstance("Any-Latn;Latin-Ascii")
+let transliterateAscii = asciiTransliterator.transform("中国") // transliterateAscii = 'zhong guo'
+Hilog.info(0, "test", "transliterateAscii=${transliterateAscii}")
 ```
 
 ## enum CalendarType

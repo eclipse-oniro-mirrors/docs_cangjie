@@ -3,9 +3,12 @@
 - [国际化和本地化概述](cj-i18n-l10n.md)（Beta特性）
 - 应用国际化
     - [国际化界面设计](cj-i18n-ui-design.md)（Beta特性）
+    - 语言与用户偏好
+        - [系统语言与区域](cj-i18n-system-language-region.md)（Beta特性）
     - [设置日历和历法](cj-i18n-calendar.md)（Beta特性）
     - 时区与夏令时国际化
         - [夏令时跳变](cj-i18n-dst-transition.md)（Beta特性）
+    - [字符处理](cj-i18n-character-processing.md)（Beta特性）
     - 本地化名称
         - [本地化时区名称](cj-i18n-time-zone-display.md)（Beta特性）
 - 应用本地化
