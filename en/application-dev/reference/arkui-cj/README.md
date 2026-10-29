@@ -62,6 +62,11 @@
             - [Touch hot zone settings](cj-universal-attribute-touchtarget.md)(Beta Feature)
             - [Touch test control](cj-universal-attribute-hittestbehavior.md)(Beta Feature)
         - [Hover effect](cj-universal-attribute-hovereffect.md)(Beta Feature)
+    - Gesture Handling
+        - Gesture Binding
+            - [Binding Gesture Events](cj-universal-attribute-gesture.md)(Beta Feature)
+        - Basic Gestures
+            - [PanGesture](cj-basic-gestures-pangesture.md)(Beta Feature)
     - Rows, Columns & Stacks
         - [Flex](cj-row-column-stack-flex.md)(Beta Feature)
         - [Column](cj-row-column-stack-column.md)(Beta Feature)

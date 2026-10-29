@@ -283,6 +283,9 @@
                         - [触屏事件](arkui-cj/cj-common-events-touch-screen-event.md)
                         - [键鼠事件](arkui-cj/cj-common-events-device-input-event.md)
                         - [焦点事件](arkui-cj/cj-common-events-focus-event.md)
+                    - 使用手势
+                        - [绑定手势方法](arkui-cj/cj-gesture-events-binding.md)
+                        - [单一手势](arkui-cj/cj-gesture-events-single-gesture.md)
                 - 使用动画
                     - [动画概述](arkui-cj/cj-animation.md)
                     - 属性动画
@@ -743,6 +746,11 @@
                         - [触摸热区设置](reference/arkui-cj/cj-universal-attribute-touchtarget.md)
                         - [触摸测试控制](reference/arkui-cj/cj-universal-attribute-hittestbehavior.md)
                     - [悬浮态效果](reference/arkui-cj/cj-universal-attribute-hovereffect.md)
+                - 手势处理
+                    - 绑定手势
+                        - [绑定手势事件](reference/arkui-cj/cj-universal-attribute-gesture.md)
+                    - 基础手势
+                        - [PanGesture](reference/arkui-cj/cj-basic-gestures-pangesture.md)
                 - 行列与堆叠
                     - [Flex](reference/arkui-cj/cj-row-column-stack-flex.md)
                     - [Column](reference/arkui-cj/cj-row-column-stack-column.md)

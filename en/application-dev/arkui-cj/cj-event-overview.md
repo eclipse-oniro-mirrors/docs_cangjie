@@ -20,4 +20,4 @@ General events are categorized by their trigger types, including touch events, k
 
 - [Event Distribution](./cj-common-events-distribute.md): Describes the hit collection process of the response chain for touch-based events (excluding keys and focus).
 
-Gesture events consist of bound gesture methods and the gestures themselves. Bound gestures can be divided into two types based on complexity: single gestures and composite gestures.
+Gesture events consist of [gesture binding methods](./cj-gesture-events-binding.md) and the gestures themselves. Bound gestures can be divided into two types based on complexity: single gestures and composite gestures. The only single gesture supported in the current version is the pan gesture (PanGesture). For details, see [Single Gestures](./cj-gesture-events-single-gesture.md).

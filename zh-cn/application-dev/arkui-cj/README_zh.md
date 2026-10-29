@@ -97,6 +97,9 @@
             - [触屏事件](cj-common-events-touch-screen-event.md)（Beta特性）
             - [键鼠事件](cj-common-events-device-input-event.md)（Beta特性）
             - [焦点事件](cj-common-events-focus-event.md)（Beta特性）
+        - 使用手势
+            - [绑定手势方法](cj-gesture-events-binding.md)（Beta特性）
+            - [单一手势](cj-gesture-events-single-gesture.md)（Beta特性）
     - 使用动画
         - [动画概述](cj-animation.md)（Beta特性）
         - 属性动画

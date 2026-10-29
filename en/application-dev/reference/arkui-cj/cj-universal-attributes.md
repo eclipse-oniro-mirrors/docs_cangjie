@@ -37,5 +37,6 @@
 - Touch Interactions
     - [Touch hot zone settings](cj-universal-attribute-touchtarget.md)
     - [Touch test control](cj-universal-attribute-hittestbehavior.md)
+- [Gesture Binding](cj-universal-attribute-gesture.md)
 - [Hover effect](cj-universal-attribute-hovereffect.md)
 <!--DelEnd-->
