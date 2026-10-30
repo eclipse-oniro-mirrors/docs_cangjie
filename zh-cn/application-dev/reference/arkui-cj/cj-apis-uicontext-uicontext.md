@@ -45,6 +45,24 @@ public func animateTo(value: AnimateParam, event: VoidCallback): Unit
 |value|[AnimateParam](./cj-common-types.md#class-animateparam)|是|-|动画参数。|
 |event|[VoidCallback](./cj-common-types.md#type-voidcallback)|是|-|动画执行的回调函数。|
 
+### func getComponentSnapshot()
+
+```cangjie
+public func getComponentSnapshot(): ComponentSnapshot
+```
+
+**功能：** 获取ComponentSnapshot实例，用于获取组件截图。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+**返回值：**
+
+|类型|说明|
+|:----|:----|
+|[ComponentSnapshot](./cj-apis-uicontext-componentsnapshot.md#class-componentsnapshot)|返回ComponentSnapshot实例。|
+
 ### func createAnimator(AnimatorOptions)
 
 ```cangjie

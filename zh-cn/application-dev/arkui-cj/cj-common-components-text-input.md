@@ -93,6 +93,179 @@ TextArea( text: '这是一段文本，用来展示选中菜单')
 
 ![Text13](figures/Text13.png)
 
+### 隐藏选中菜单
+
+如需隐藏系统选中菜单，可使用[selectionMenuHidden](../reference/arkui-cj/cj-text-input-textinput.md#func-selectionmenuhiddenbool)接口。
+
+```cangjie
+TextInput(text: '隐藏选中菜单').selectionMenuHidden(true)
+```
+
+### 自定义键盘
+
+通过[customKeyboard](../reference/arkui-cj/cj-text-input-textinput.md#func-customkeyboardcustombuilder-supportavoidancebool)接口可以自定义输入框的键盘。该接口接受一个[CustomBuilder](../reference/arkui-cj/cj-common-types.md#custombuilder)，用于构建自定义键盘内容。
+
+> **说明：**
+>
+> 设置自定义键盘后，系统软键盘不再弹出。需开发者自行处理输入逻辑。
+
+```cangjie
+package ohos_app_cangjie_entry
+
+import kit.ArkUI.*
+import ohos.arkui.state_macro_manage.*
+
+@Entry
+@Component
+class CustomKeyboardExample {
+    @State
+    var text: String = ""
+
+    func build() {
+        Column() {
+            TextInput(text: this.text, placeholder: '请输入内容')
+                .customKeyboard(this.customKey)
+        }
+        .width(100.percent)
+        .height(100.percent)
+        .alignItems(HorizontalAlign.Center)
+    }
+
+    @Builder
+    func customKey(): Component {
+        Column() {
+            Row() {
+                Button('1').onClick({evt => this.text += "1"}).width(60)
+                Button('2').onClick({evt => this.text += "2"}).width(60)
+                Button('3').onClick({evt => this.text += "3"}).width(60)
+            }
+            Row() {
+                Button('4').onClick({evt => this.text += "4"}).width(60)
+                Button('5').onClick({evt => this.text += "5"}).width(60)
+                Button('6').onClick({evt => this.text += "6"}).width(60)
+            }
+        }
+        .width(100.percent)
+        .backgroundColor(Color.Gray)
+    }
+}
+```
+
+## 文本省略模式
+
+当输入框内容超出显示范围时，可使用[textOverflow](../reference/arkui-cj/cj-text-input-textinput.md#func-textoverflowtextoverflow)、[ellipsisMode](../reference/arkui-cj/cj-text-input-textinput.md#func-ellipsismodeellipsismode)和[style](../reference/arkui-cj/cj-text-input-textinput.md#func-styletextinputstyle)接口配合实现省略号在不同位置显示的效果。
+
+- **textOverflow**：设置文本超长时的显示方式，支持[TextOverflow.Ellipsis](../reference/arkui-cj/cj-common-types.md#enum-textoverflow)（省略号截断）和[TextOverflow.Clip](../reference/arkui-cj/cj-common-types.md#enum-textoverflow)（直接截断）。
+- **ellipsisMode**：设置省略号的位置，支持以下模式：
+  - [EllipsisMode.End](../reference/arkui-cj/cj-common-types.md#enum-ellipsismode)：省略号在末尾（默认值）。
+  - [EllipsisMode.Start](../reference/arkui-cj/cj-common-types.md#enum-ellipsismode)：省略号在开头。
+  - [EllipsisMode.Center](../reference/arkui-cj/cj-common-types.md#enum-ellipsismode)：省略号在中间。
+  - [EllipsisMode.MultilineStart](../reference/arkui-cj/cj-common-types.md#enum-ellipsismode)：多行省略时在首行行首。
+  - [EllipsisMode.MultilineCenter](../reference/arkui-cj/cj-common-types.md#enum-ellipsismode)：多行省略时在中间行。
+- **style**：设置输入框风格，Inline风格支持多行文本省略，Default风格仅支持单行文本省略。
+
+```cangjie
+package ohos_app_cangjie_entry
+
+import kit.ArkUI.*
+import ohos.arkui.state_macro_manage.*
+
+@Entry
+@Component
+class EllipsisModeExample {
+    @State
+    var text: String = "As the sun begins to set, casting a warm golden hue across the sky, " +
+        "the world seems to slow down and breathe a sigh of relief. The sky is painted with hues of orange, " +
+        "pink, and lavender, creating a breath taking tapestry that stretches as far as the eye can see."
+
+    func build() {
+        Column() {
+            // 单行省略在末尾（默认）
+            TextInput(text: this.text)
+                .textOverflow(TextOverflow.Ellipsis)
+                .ellipsisMode(EllipsisMode.End)
+                .style(TextInputStyle.Default)
+                .fontSize(30)
+                .margin(10)
+
+            // 单行省略在开头
+            TextInput(text: this.text)
+                .textOverflow(TextOverflow.Ellipsis)
+                .ellipsisMode(EllipsisMode.Start)
+                .style(TextInputStyle.Default)
+                .fontSize(30)
+                .margin(10)
+
+            // 多行省略在中间行
+            TextInput(text: this.text)
+                .textOverflow(TextOverflow.Ellipsis)
+                .ellipsisMode(EllipsisMode.MultilineCenter)
+                .style(TextInputStyle.Inline)
+                .fontSize(30)
+                .margin(10)
+        }
+        .width(100.percent)
+    }
+}
+```
+
+## 绑定事件
+
+TextInput提供以下事件回调：
+
+- [onChange](../reference/arkui-cj/cj-text-input-textinput.md#func-onchangecallbackstring-unit)：输入内容变化时触发。
+- [onSubmit](../reference/arkui-cj/cj-text-input-textinput.md#func-onsubmitcallbackenterkeytype-unit)：按下输入法回车键时触发。
+- [onEditChange](../reference/arkui-cj/cj-text-input-textinput.md#func-oneditchangecallbackbool-unit)：输入框编辑状态变化时触发。
+- [onCopy](../reference/arkui-cj/cj-text-input-textinput.md#func-oncopycallbackstring-unit)：复制时触发。
+- [onCut](../reference/arkui-cj/cj-text-input-textinput.md#func-oncutcallbackstring-unit)：剪切时触发。
+- [onPaste](../reference/arkui-cj/cj-text-input-textinput.md#func-onpastecallbackstring-unit)：粘贴时触发。
+
+```cangjie
+package ohos_app_cangjie_entry
+
+import kit.ArkUI.*
+import ohos.arkui.state_macro_manage.*
+
+@Entry
+@Component
+class EventExample {
+    @State
+    var text: String = ""
+
+    func build() {
+        Column() {
+            TextInput(text: this.text, placeholder: '请输入内容')
+                .onChange({
+                    value: String =>
+                        this.text = value
+                })
+                .onSubmit({
+                    enterKeyType: EnterKeyType =>
+                        println("onSubmit: ${enterKeyType}")
+                })
+                .onEditChange({
+                    isEditing: Bool =>
+                        println("onEditChange: ${isEditing}")
+                })
+                .onCopy({
+                    value: String =>
+                        println("onCopy: ${value}")
+                })
+                .onCut({
+                    value: String =>
+                        println("onCut: ${value}")
+                })
+                .onPaste({
+                    value: String =>
+                        println("onPaste: ${value}")
+                })
+        }
+        .width(100.percent)
+    }
+}
+```
+
+
 ## 键盘避让
 
 键盘抬起后，具有滚动能力的容器组件在横竖屏切换时，才会生效键盘避让，若希望无滚动能力的容器组件也生效键盘避让，建议在组件外嵌套一层具有滚动能力的容器组件，比如[Scroll](../reference/arkui-cj/cj-scroll-swipe-scroll.md)、[List](../reference/arkui-cj/cj-scroll-swipe-list.md)、[Grid](../reference/arkui-cj/cj-scroll-swipe-grid.md)。

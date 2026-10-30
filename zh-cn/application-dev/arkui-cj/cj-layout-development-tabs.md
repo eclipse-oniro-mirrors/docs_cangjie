@@ -315,3 +315,173 @@ public class EntryView {
 **图12** 切换指定页签
 
 ![tab-12](figures/tab-12.gif)
+
+## 监听页签切换动画与手势滑动
+
+当开发者需要在页签切换过程中实现自定义动画效果时，可使用以下事件接口：
+
+- [onChange](../reference/arkui-cj/cj-navigation-switching-tabs.md#func-onchangecallbackint32-unit)：监听页签切换完成事件，返回当前选中页签的索引。
+- [onAnimationStart](../reference/arkui-cj/cj-navigation-switching-tabs.md#func-onanimationstartint32-int32-tabsanimationevent---unit)：监听页签切换动画开始事件，返回起始索引、目标索引及动画信息。建议在此回调中提前更新自定义页签的状态，确保切换动画及时触发。
+- [onGestureSwipe](../reference/arkui-cj/cj-navigation-switching-tabs.md#func-ongestureswipeint32-tabsanimationevent---unit)：监听用户手势滑动过程中目标页签的内容区域偏移事件，可用于实现自定义页签跟随手势滑动的动效。
+- [onTabBarClick](../reference/arkui-cj/cj-navigation-switching-tabs.md#func-ontabbarclickint32)：监听点击页签事件，返回被点击页签的索引。
+
+下面通过自定义TabBar切换动画（下划线跟随页面滑动）的示例，展示[onAnimationStart](../reference/arkui-cj/cj-navigation-switching-tabs.md#func-onanimationstartint32-int32-tabsanimationevent---unit)、[onGestureSwipe](../reference/arkui-cj/cj-navigation-switching-tabs.md#func-ongestureswipeint32-tabsanimationevent---unit)、[onChange](../reference/arkui-cj/cj-navigation-switching-tabs.md#func-onchangecallbackint32-unit)的配合使用。
+
+**图13** 自定义TabBar切换动画
+
+![tabsAnimation](figures/tabsAnimation.gif)
+
+<!--run-->
+
+```cangjie
+package ohos_app_cangjie_entry
+
+import kit.ArkUI.*
+import ohos.arkui.state_macro_manage.*
+
+@Entry
+@Component
+class CustomizeTabs {
+    @State
+    var currentIndex: Int32 = 0
+    @State
+    var selectedIndex: Int32 = 0
+    @State
+    var startX: Float64 = 0.0
+    @State
+    var endX: Float64 = 0.0
+    @State
+    var gestureStartX: Float64 = 0.0
+    @State
+    var gestureEndX: Float64 = 0.0
+    @State
+    var animationDuration: Int32 = 300
+
+    func build() {
+        Stack(align: Alignment.TopStart) {
+            Tabs() {
+                ForEach(Array<String>(3, item: {i =>
+                    if (i == 0) { "green" } else if (i == 1) { "blue" } else { "yellow" }
+                }), itemFunc: {item: String, index: Int32 =>
+                    TabContent() {
+                        Text(item).width(100.percent).height(100.percent).textAlign(TextAlign.Center).fontSize(50)
+                    }
+                    .tabBar(this.tabBuilder(index))
+                })
+
+            }
+            .barPosition(BarPosition.Start)
+            .onChange({
+                index: Int32 =>
+                    this.currentIndex = index
+                    this.selectedIndex = index
+            })
+            .onAnimationStart({
+                index: Int32, targetIndex: Int32, event: TabsAnimationEvent =>
+                    if (index == targetIndex) {
+                        return
+                    }
+                    this.selectedIndex = targetIndex
+                    this.startX = Float64(index) * 100.0 / 3.0
+                    this.endX = Float64(targetIndex) * 100.0 / 3.0
+                    this.animationDuration = event.duration
+            })
+            .onGestureSwipe({
+                index: Int32, event: TabsAnimationEvent =>
+                    this.gestureStartX = Float64(index) * 100.0 / 3.0
+                    this.gestureEndX = event.start * 100.0
+            })
+
+            // 自定义TabBar下划线
+            Column() {
+                Row() {
+                    Text("green").fontSize(20).fontColor(this.selectedIndex == 0 ? Color.Red : Color.Black)
+                    Text("blue").fontSize(20).fontColor(this.selectedIndex == 1 ? Color.Red : Color.Black)
+                    Text("yellow").fontSize(20).fontColor(this.selectedIndex == 2 ? Color.Red : Color.Black)
+                }
+                .width(100.percent)
+                .height(40)
+                .justifyContent(FlexAlign.SpaceAround)
+
+                // 下划线
+                Text("")
+                    .width(100.0 / 3.0)
+                    .height(3)
+                    .backgroundColor(Color.Red)
+                    .position(x: Float64(this.selectedIndex) * 100.0 / 3.0)
+            }
+            .width(100.percent)
+            .height(40)
+        }
+        .width(100.percent)
+        .height(100.percent)
+    }
+
+    @Builder
+    func tabBuilder(index: Int32): Component {
+        Text("")
+    }
+}
+```
+
+## 页面切换拦截
+
+当开发者需要在页签切换前进行业务判断（例如表单未保存时阻止切换）时，可使用[onContentWillChange](../reference/arkui-cj/cj-navigation-switching-tabs.md#func-oncontentwillchangeint32-int32---bool)事件接口。该接口在页签切换前触发，返回当前索引和目标索引，开发者可基于业务需求返回true允许切换或返回false阻止切换。
+
+下面通过示例展示：当目标页签索引为2时阻止切换。
+
+**图14** 页面切换拦截
+
+![tabsIntercept](figures/tabsIntercept.gif)
+
+<!--run-->
+
+```cangjie
+package ohos_app_cangjie_entry
+
+import kit.ArkUI.*
+import ohos.arkui.state_macro_manage.*
+
+@Entry
+@Component
+class InterceptTabs {
+    @State
+    var currentIndex: Int32 = 0
+
+    func build() {
+        Column() {
+            Tabs() {
+                ForEach(Array<String>(3, item: {i =>
+                    if (i == 0) { "green" } else if (i == 1) { "blue" } else { "yellow" }
+                }), itemFunc: {item: String, index: Int32 =>
+                    TabContent() {
+                        Text(item).width(100.percent).height(100.percent).textAlign(TextAlign.Center).fontSize(50)
+                    }
+                    .tabBar(this.tabBuilder(index))
+                })
+            }
+            .barPosition(BarPosition.Start)
+            .onChange({
+                index: Int32 =>
+                    this.currentIndex = index
+            })
+            // 当目标页签为第3个时（索引为2），阻止切换
+            .onContentWillChange({
+                currentIndex: Int32, comingIndex: Int32 =>
+                    if (comingIndex == 2) {
+                        return false
+                    }
+                    return true
+            })
+        }
+        .width(100.percent)
+        .height(100.percent)
+    }
+
+    @Builder
+    func tabBuilder(index: Int32): Component {
+        Text("Tab ${index}").fontSize(20)
+    }
+}
+```
+

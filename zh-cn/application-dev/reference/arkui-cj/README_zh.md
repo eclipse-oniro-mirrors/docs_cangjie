@@ -171,7 +171,8 @@
     - [框架接口](cj-ui-framework.md)（Beta特性）
 - 错误码
     - UI界面
-        - [动画错误码](cj-errorcode-animator.md)（Beta特性）
+        - [接口调用异常错误码](cj-errorcode-internal.md)（Beta特性）
+        - [截图错误码](cj-errorcode-snapshot.md)（Beta特性）
     - 图形图像
         - [屏幕错误码](cj-errorcode-display.md)（Beta特性）
         - [窗口错误码](cj-errorcode-window.md)（Beta特性）

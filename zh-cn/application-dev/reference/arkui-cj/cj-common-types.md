@@ -20786,6 +20786,242 @@ public operator func !=(other: TextAreaType): Bool
 |:----|:----|
 |Bool|如果两个枚举不相等则返回true，否则返回false。|
 
+## enum EllipsisMode
+
+```cangjie
+public enum EllipsisMode <: Equatable<EllipsisMode> {
+    | Start
+    | Center
+    | End
+    | MultilineStart
+    | MultilineCenter
+    | ...
+}
+```
+
+**功能：** 省略的位置。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+**父类型：**
+
+- Equatable\<[EllipsisMode](#enum-ellipsismode)>
+
+### Start
+
+```cangjie
+Start
+```
+
+**功能：** 省略行首内容。适用单行文本场景。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+### Center
+
+```cangjie
+Center
+```
+
+**功能：** 省略行中内容。适用单行文本场景。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+### End
+
+```cangjie
+End
+```
+
+**功能：** 省略行末内容。适用单行文本和多行文本场景。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+### MultilineStart
+
+```cangjie
+MultilineStart
+```
+
+**功能：** 省略行首内容。适用单行文本和多行文本场景。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+### MultilineCenter
+
+```cangjie
+MultilineCenter
+```
+
+**功能：** 省略行中内容。适用单行文本和多行文本场景。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+### operator func ==(EllipsisMode)
+
+```cangjie
+public operator func ==(other: EllipsisMode): Bool
+```
+
+**功能：** 比较两个 EllipsisMode 是否相等。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| :--- | :--- | :--- | :--- |
+| other | [EllipsisMode](#enum-ellipsismode) | 是 | 用于比较的 EllipsisMode。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| :--- | :--- |
+| Bool | 两个 EllipsisMode 相等返回 true，否则返回 false。 |
+
+### operator func !=(EllipsisMode)
+
+```cangjie
+public operator func !=(other: EllipsisMode): Bool
+```
+
+**功能：** 比较两个 EllipsisMode 是否不相等。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| :--- | :--- | :--- | :--- |
+| other | [EllipsisMode](#enum-ellipsismode) | 是 | 用于比较的 EllipsisMode。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| :--- | :--- |
+| Bool | 两个 EllipsisMode 不相等返回 true，否则返回 false。 |
+
+## enum DynamicRangeMode
+
+```cangjie
+public enum DynamicRangeMode <: Equatable<DynamicRangeMode> {
+    | High
+    | Constraint
+    | Standard
+    | ...
+}
+```
+
+**功能：** 描述期望展示的图像动态范围。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+**父类型：**
+
+- Equatable\<[DynamicRangeMode](#enum-dynamicrangemode)>
+
+### High
+
+```cangjie
+High
+```
+
+**功能：** 不受限动态范围，最大限度进行图片提亮。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+### Constraint
+
+```cangjie
+Constraint
+```
+
+**功能：** 受限动态范围，受限进行图片提亮。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+### Standard
+
+```cangjie
+Standard
+```
+
+**功能：** 标准动态范围，不进行图片提亮。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+### operator func ==(DynamicRangeMode)
+
+```cangjie
+public operator func ==(other: DynamicRangeMode): Bool
+```
+
+**功能：** 比较两个 DynamicRangeMode 是否相等。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| :--- | :--- | :--- | :--- |
+| other | [DynamicRangeMode](#enum-dynamicrangemode) | 是 | 用于比较的 DynamicRangeMode。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| :--- | :--- |
+| Bool | 两个 DynamicRangeMode 相等返回 true，否则返回 false。 |
+
+### operator func !=(DynamicRangeMode)
+
+```cangjie
+public operator func !=(other: DynamicRangeMode): Bool
+```
+
+**功能：** 比较两个 DynamicRangeMode 是否不相等。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| :--- | :--- | :--- | :--- |
+| other | [DynamicRangeMode](#enum-dynamicrangemode) | 是 | 用于比较的 DynamicRangeMode。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| :--- | :--- |
+| Bool | 两个 DynamicRangeMode 不相等返回 true，否则返回 false。 |
+
 ## type VoidCallback
 
 ```cangjie

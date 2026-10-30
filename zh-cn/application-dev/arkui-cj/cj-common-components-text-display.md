@@ -521,6 +521,35 @@ Text可通过以下两种方式来创建：
 
   ![Textdisply12](figures/Textdisply12.png)
 
+- 通过[font](../reference/arkui-cj/cj-text-input-text.md#func-fontlength-fontweight-resourcestr-fontstyle)属性统一设置文本的字号、字重、字体族、字体样式。
+
+     <!-- run -->
+
+  ```cangjie
+  package ohos_app_cangjie_entry
+
+  import kit.ArkUI.*
+  import ohos.arkui.state_macro_manage.*
+
+  @Entry
+  @Component
+  class EntryView {
+      func build() {
+          Scroll {
+              Column {
+                  Text('font统一字体设置')
+                      .font(size: 16, weight: FontWeight.Bold, family: "HarmonyOS Sans", style: FontStyle.Italic)
+                      .border(width: 1)
+                      .padding(10)
+                      .margin(5)
+              }
+                  .height(100.percent)
+                  .width(100.percent)
+          }
+      }
+  }
+  ```
+
 ## 添加事件
 
 Text组件可以添加通用事件，可以绑定[onClick](../reference/arkui-cj/cj-universal-event-click.md#func-onclickclickevent---unit)、[onTouch](../reference/arkui-cj/cj-universal-event-touch.md#func-ontouchtouchevent---unit)等事件来响应操作。

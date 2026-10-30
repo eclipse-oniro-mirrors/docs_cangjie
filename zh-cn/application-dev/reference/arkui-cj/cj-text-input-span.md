@@ -195,6 +195,24 @@ public func textCase(value: ?TextCase): This
 |:---|:---|:---|:---|:---|
 |value|?[TextCase](./cj-common-types.md#enum-textcase)|是|-|文本大小写。<br>初始值：TextCase.Normal。|
 
+### func lineHeight(?Length)
+
+```cangjie
+public func lineHeight(value: ?Length): This
+```
+
+**功能：** 设置文本行高。未通过该接口设置时，默认由系统根据字体大小自动计算行高。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|value|?[Length](./cj-common-types.md#interface-length)|是|-|文本行高。<br>Int64、Float64类型时单位为fp。不支持设置百分比字符串。|
+
 ## 组件事件
 
 ### func onClick(?(ClickEvent) -> Unit)
@@ -231,9 +249,9 @@ public abstract class BaseSpan {}
 
 ## 示例代码
 
-### 示例1
+### 示例1（设置文本样式）
 
-decoration、textCase、letterSpacing属性接口使用示例。
+该示例展示了设置不同样式的文本效果以及Span配置点击事件。
 
 <!--run-->
 
@@ -248,77 +266,132 @@ import std.collection.*
 @Component
 class EntryView {
     func build() {
-        Flex(direction: FlexDirection.Column, alignItems: ItemAlign.Start, justifyContent: FlexAlign.SpaceBetween) {
-            Text("Basic Usage")
-                .fontSize(9)
-                .fontColor(0xCCCCCC)
+        Flex(direction: FlexDirection.Column, alignItems: ItemAlign.Start) {
+            Text("Basic Usage").fontSize(9).fontColor(0xCCCCCC)
+            Text() {
+                Span("In Line")
+                Span(" Component")
+                Span(" !")
+            }
+
             Text() {
                 Span("This is the Span component")
                     .fontSize(12)
-                    //设置文本大小写为保持文本原有大小写
                     .textCase(TextCase.Normal)
-                    //行内文字无修饰
                     .decoration(decorationType: TextDecorationType.None, color: Color.Red)
-            }
-            //文本划线添加
-            Text("Text Decoration")
-                .fontSize(9)
-                .fontColor(0xCCCCCC)
+                    .fontFamily("HarmonyOS Sans")
+            }.margin(top: 12)
+
+            // 文本装饰线设置
+            Text("Text Decoration").fontSize(9).fontColor(0xCCCCCC).margin(top: 12)
             Text() {
                 Span("I am Underline-span")
-                    //行内文字由红色下划线修饰
                     .decoration(decorationType: TextDecorationType.Underline, color: Color.Red)
                     .fontSize(12)
             }
+
             Text() {
                 Span("I am LineThrough-span")
-                    //行内文字由中间红色划线修饰
                     .decoration(decorationType: TextDecorationType.LineThrough, color: Color.Red)
                     .fontSize(12)
             }
+
             Text() {
                 Span("I am Overline-span")
-                    //行内文字由红色上划线修饰
                     .decoration(decorationType: TextDecorationType.Overline, color: Color.Red)
                     .fontSize(12)
             }
-            //文本大小写展示
-            Text("Text Case")
-                .fontSize(9)
-                .fontColor(0xCCCCCC)
+
+            // 文本字符间距
+            Text("LetterSpacing").fontSize(9).fontColor(0xCCCCCC).margin(top: 12)
+            Text() {
+                Span("span letter spacing")
+                    .letterSpacing(0)
+                    .fontSize(12)
+            }
+
+            Text() {
+                Span("span letter spacing")
+                    .letterSpacing(-2)
+                    .fontSize(12)
+            }
+
+            Text() {
+                Span("span letter spacing")
+                    .letterSpacing(3)
+                    .fontSize(12)
+            }
+
+            // 文本大小写展示设置
+            Text("Text Case").fontSize(9).fontColor(0xCCCCCC).margin(top: 12)
             Text() {
                 Span("I am Lower-span")
-                    //设置文本大小写为全小写
-                    .textCase(TextCase.LowerCase)
                     .fontSize(12)
-                    .decoration(decorationType: TextDecorationType.None, color: Color.Red)
+                    .textCase(TextCase.LowerCase)
+                    .decoration(decorationType: TextDecorationType.None)
             }
+
             Text() {
                 Span("I am Upper-span")
-                    //设置文本大小写为全大写
-                    .textCase(TextCase.UpperCase)
                     .fontSize(12)
-                    .decoration(decorationType: TextDecorationType.None, color: Color.Red)
+                    .textCase(TextCase.UpperCase)
+                    .decoration(decorationType: TextDecorationType.None)
             }
-            //文本字符间距展示
+
+            // 文本字体样式设置
+            Text("FontStyle").fontSize(9).fontColor(0xCCCCCC).margin(top: 12)
             Text() {
-                Span("I am LetterSpacing")
-                    .fontSize(20)
-                    .decoration(decorationType: TextDecorationType.None, color: Color.Red)
-                    //设置文本字符间距为10.fp
-                    .letterSpacing(10)
+                Span("I am FontStyle-Normal")
+                    .fontSize(12)
+                    .fontStyle(FontStyle.Normal)
             }
+
             Text() {
-                Span("I am Span1")
-                    .fontSize(30)
-                    .decoration(decorationType: TextDecorationType.None, color: Color.Red)
-                Span("I am Span2")
-                    .fontSize(30)
-                    .decoration(decorationType: TextDecorationType.None, color: Color.Red)
+                Span("I am FontStyle-Italic")
+                    .fontSize(12)
+                    .fontStyle(FontStyle.Italic)
+            }
+
+            // 文本字体粗细设置
+            Text("FontWeight").fontSize(9).fontColor(0xCCCCCC).margin(top: 12)
+            Text() {
+                Span("I am FontWeight-Lighter")
+                    .fontSize(12)
+                    .fontWeight(FontWeight.Lighter)
+            }
+
+            Text() {
+                Span("I am FontWeight-Bold")
+                    .fontSize(12)
+                    .fontWeight(FontWeight.Bold)
+            }
+
+            // 文本行高设置
+            Text("LineHeight").fontSize(9).fontColor(0xCCCCCC).margin(top: 12)
+            Text() {
+                Span("I am lineHeight default\n")
+                    .fontSize(12)
+                    .fontWeight(FontWeight.Lighter)
+                Span("I am lineHeight 30")
+                    .fontSize(12)
+                    .lineHeight(30)
+            }
+                .backgroundColor(Color.Gray)
+
+            // span点击事件设置
+            Text("span click event").fontSize(9).fontColor(0xCCCCCC).margin(top: 12)
+            Text() {
+                Span("Span default ").fontSize(12)
+                Span("Span click")
+                    .onClick(
+                        {
+                            event =>
+                                println("span onClick")
+                        }
+                    )
             }
         }
             .width(100.percent)
-            .height(250)
             .padding(left: 35, right: 35, top: 35)
     }
 }
