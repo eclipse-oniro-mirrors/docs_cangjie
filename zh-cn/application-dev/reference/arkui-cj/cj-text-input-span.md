@@ -260,7 +260,7 @@ package ohos_app_cangjie_entry
 
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
-import std.collection.*
+import kit.PerformanceAnalysisKit.Hilog
 
 @Entry
 @Component
@@ -386,7 +386,7 @@ class EntryView {
                     .onClick(
                         {
                             event =>
-                                println("span onClick")
+                                Hilog.info(1, "Cangjie", "span onClick.")
                         }
                     )
             }

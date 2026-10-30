@@ -18,7 +18,7 @@
 
 作为[PromptAction](./cj-apis-uicontext-promptaction.md)的错误码时，错误信息为："Internal error."。
 
-作为[ComponentSnapshot](./cj-apis-uicontext-componentsnapshot.md)的错误码时，错误信息为："The builder is not a valid build function."。
+作为[ComponentSnapshot](./cj-apis-uicontext-componentsnapshot.md)的错误码时，错误信息为："Invalid ID."。
 
 **错误描述**
 

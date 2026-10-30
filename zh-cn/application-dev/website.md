@@ -689,6 +689,7 @@
                     - [ohos.curves（插值计算）](reference/arkui-cj/cj-apis-curves.md)
                     - ohos.arkui.ui_context（UIContext）
                         - [AnimatorResult](reference/arkui-cj/cj-apis-uicontext-animator.md)
+                        - [ComponentSnapshot](reference/arkui-cj/cj-apis-uicontext-componentsnapshot.md)
                         - [ContextMenuController](reference/arkui-cj/cj-apis-uicontext-contextmenucontroller.md)
                         - [Font](reference/arkui-cj/cj-apis-uicontext-font.md)
                         - [MeasureUtils](reference/arkui-cj/cj-apis-uicontext-measureutils.md)

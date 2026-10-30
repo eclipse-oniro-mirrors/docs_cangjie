@@ -7,6 +7,7 @@
         - [ohos.curves（插值计算）](cj-apis-curves.md)（Beta特性）
         - ohos.arkui.ui_context（UIContext）
             - [AnimatorResult](cj-apis-uicontext-animator.md)（Beta特性）
+            - [ComponentSnapshot](cj-apis-uicontext-componentsnapshot.md)（Beta特性）
             - [ContextMenuController](cj-apis-uicontext-contextmenucontroller.md)（Beta特性）
             - [Font](cj-apis-uicontext-font.md)（Beta特性）
             - [MeasureUtils](cj-apis-uicontext-measureutils.md)（Beta特性）

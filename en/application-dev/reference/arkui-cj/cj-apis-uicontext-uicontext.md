@@ -45,6 +45,24 @@ public func animateTo(value: AnimateParam, event: VoidCallback): Unit
 | value | [AnimateParam](./cj-common-types.md#class-animateparam) | Yes | - | Animation parameters. |
 | event | [VoidCallback](./cj-common-types.md#type-VoidCallback) | Yes | - | Callback function for animation execution. |
 
+### func getComponentSnapshot()
+
+```cangjie
+public func getComponentSnapshot(): ComponentSnapshot
+```
+
+**Description:** Obtains a ComponentSnapshot instance, which is used to obtain component snapshots.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+**Return Value:**
+
+| Type | Description |
+|:----|:----|
+| [ComponentSnapshot](./cj-apis-uicontext-componentsnapshot.md#class-componentsnapshot) | Returns the ComponentSnapshot instance. |
+
 ### func createAnimator(AnimatorOptions)
 
 ```cangjie

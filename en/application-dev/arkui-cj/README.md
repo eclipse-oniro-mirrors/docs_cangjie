@@ -117,6 +117,7 @@
             - [Keyboard/Mouse Events](cj-common-events-device-input-event.md)(Beta Feature)
             - [Focus Events](cj-common-events-focus-event.md)(Beta Feature)
 - [Using Mirroring Capability](cj-mirroring-display.md)(Beta Feature)
+- [Using Component Snapshot](cj-uicontext-component-snapshot.md)(Beta Feature)
 <!--RP1--><!--RP1End-->
 - Theme Settings
     - [Dark/Light Mode Adaptation](cj-ui-dark-light-color-adaptation.md)(Beta Feature)

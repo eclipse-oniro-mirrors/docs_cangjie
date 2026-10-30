@@ -719,77 +719,35 @@ class EntryView {
 package ohos_app_cangjie_entry
 
 import kit.ArkUI.*
-import std.collection.*
 import ohos.arkui.state_macro_manage.*
 
 @Entry
 @Component
-class EllipsisModeExample {
+class EntryView {
     @State
     var text: String = "As the sun begins to set, casting a warm golden hue across the sky," +
         "the world seems to slow down and breathe a sigh of relief. The sky is painted with hues of orange, " +
-        " pink, and lavender, creating a breath taking tapestry that stretches as far as the eye can see." +
+        " pink, and lavender, creating a breathtaking tapestry that stretches as far as the eye can see." +
         "The air is filled with the sweet scent of blooming flowers, mingling with the earthy aroma of freshly turned soil."
     @State
-    var ellipsisModeIndex: Int32 = 0
-    var ellipsisMode: Array<EllipsisMode> = Array<EllipsisMode>(5, item: {i =>
-        if (i == 0) {
-            EllipsisMode.End
-        } else if (i == 1) {
-            EllipsisMode.Start
-        } else if (i == 2) {
-            EllipsisMode.Center
-        } else if (i == 3) {
-            EllipsisMode.MultilineStart
-        } else {
-            EllipsisMode.MultilineCenter
-        }
-    })
-    var ellipsisModeStr: Array<String> = Array<String>(5, item: {i =>
-        if (i == 0) {
-            "END"
-        } else if (i == 1) {
-            "START"
-        } else if (i == 2) {
-            "CENTER"
-        } else if (i == 3) {
-            "MULTILINE_START"
-        } else {
-            "MULTILINE_CENTER"
-        }
-    })
+    var ellipsisModeIndex: Int64 = 0
     @State
-    var textOverflowIndex: Int32 = 0
-    var textOverflow: Array<TextOverflow> = Array<TextOverflow>(2, item: {i =>
-        if (i == 0) {
-            TextOverflow.Ellipsis
-        } else {
-            TextOverflow.Clip
-        }
-    })
-    var textOverflowStr: Array<String> = Array<String>(2, item: {i =>
-        if (i == 0) {
-            "Ellipsis"
-        } else {
-            "Clip"
-        }
-    })
+    var ellipsisMode: Array<EllipsisMode> = [EllipsisMode.End, EllipsisMode.Start, EllipsisMode.Center,
+        EllipsisMode.MultilineStart, EllipsisMode.MultilineCenter]
     @State
-    var styleInputIndex: Int32 = 0
-    var styleInput: Array<TextInputStyle> = Array<TextInputStyle>(2, item: {i =>
-        if (i == 0) {
-            TextInputStyle.Inline
-        } else {
-            TextInputStyle.Default
-        }
-    })
-    var styleInputStr: Array<String> = Array<String>(2, item: {i =>
-        if (i == 0) {
-            "Inline"
-        } else {
-            "Default"
-        }
-    })
+    var ellipsisModeStr: Array<String> = ["End", "Start", "Center", "MultilineStart", "MultilineCenter"]
+    @State
+    var textOverflowIndex: Int64 = 0
+    @State
+    var textOverflow: Array<TextOverflow> = [TextOverflow.Ellipsis, TextOverflow.Clip]
+    @State
+    var textOverflowStr: Array<String> = ["Ellipsis", "Clip"]
+    @State
+    var styleInputIndex: Int64 = 0
+    @State
+    var styleInput: Array<TextInputStyle> = [TextInputStyle.Inline, TextInputStyle.Default]
+    @State
+    var styleInputStr: Array<String> = ["Inline", "Default"]
 
     func build() {
         Row() {
@@ -804,35 +762,35 @@ class EllipsisModeExample {
                     .onClick(
                         {
                             event =>
-                                this.ellipsisModeIndex += 1
-                                if (this.ellipsisModeIndex > Int32(this.ellipsisModeStr.size) - 1) {
+                                this.ellipsisModeIndex++
+                                if (this.ellipsisModeIndex > this.ellipsisModeStr.size - 1) {
                                     this.ellipsisModeIndex = 0
                                 }
                         }
                     )
-                    .fontSize(20)
+                    .fontSize(18)
                 Button("更改textOverflow模式：" + this.textOverflowStr[this.textOverflowIndex])
                     .onClick(
                         {
                             event =>
-                                this.textOverflowIndex += 1
-                                if (this.textOverflowIndex > Int32(this.textOverflowStr.size) - 1) {
+                                this.textOverflowIndex++
+                                if (this.textOverflowIndex > this.textOverflowStr.size - 1) {
                                     this.textOverflowIndex = 0
                                 }
                         }
                     )
-                    .fontSize(20)
+                    .fontSize(18)
                 Button("更改Style大小：" + this.styleInputStr[this.styleInputIndex])
                     .onClick(
                         {
                             event =>
-                                this.styleInputIndex += 1
-                                if (this.styleInputIndex > Int32(this.styleInputStr.size) - 1) {
+                                this.styleInputIndex++
+                                if (this.styleInputIndex > this.styleInputStr.size - 1) {
                                     this.styleInputIndex = 0
                                 }
                         }
                     )
-                    .fontSize(20)
+                    .fontSize(18)
             }
         }
     }

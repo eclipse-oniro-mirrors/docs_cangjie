@@ -183,10 +183,10 @@ public func divider(strokeWidth!: ?Length, color!: ?ResourceColor = None, startM
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|strokeWidth|?[Length](./cj-common-types.md#interface-length)|是|-|**命名参数。** 分割线宽度。<br>不能设置百分比，初始值：0.0vp，取值范围：[0, +∞)。|
+|strokeWidth|?[Length](./cj-common-types.md#interface-length)|是|-|**命名参数。** 分割线宽度。<br>不能设置百分比，初始值：0.0vp，取值范围：[0, +∞)，设置为小于0的值时按初始值显示。|
 |color|?[ResourceColor](./cj-common-types.md#interface-resourcecolor)|否|None|**命名参数。** 分割线颜色。|
-|startMargin|?[Length](./cj-common-types.md#interface-length)|否|None|**命名参数。** 分割线与页签栏上边缘的距离。<br>不能设置百分比，初始值：0.0vp，取值范围：[0, +∞)。|
-|endMargin|?[Length](./cj-common-types.md#interface-length)|否|None|**命名参数。** 分割线与页签栏下边缘的距离。<br>不能设置百分比，初始值：0.0vp，取值范围：[0, +∞)。|
+|startMargin|?[Length](./cj-common-types.md#interface-length)|否|None|**命名参数。** 分割线与侧边栏顶端的距离。<br>不能设置百分比，初始值：0.0vp，取值范围：[0, +∞)，设置为小于0的值时按初始值显示。|
+|endMargin|?[Length](./cj-common-types.md#interface-length)|否|None|**命名参数。** 分割线与侧边栏底端的距离。<br>不能设置百分比，初始值：0.0vp，取值范围：[0, +∞)，设置为小于0的值时按初始值显示。|
 
 ### func edgeEffect(?EdgeEffect)
 
@@ -255,9 +255,13 @@ public func onContentWillChange(handler: ?(Int32, Int32) -> Bool): This
 满足以下任一条件，即可触发该事件：
 
 1. 滑动TabContent切换新页面时触发。
+
 2. 通过[TabsController.changeIndex](#func-changeindexint32)接口切换新页面时触发。
+
 3. 通过动态修改index属性值切换新页面时触发。
+
 4. 通过点击TabBar页签切换新页面时触发。
+
 5. TabBar页签获焦后，通过键盘左右方向键等切换新页面时触发。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
@@ -277,9 +281,6 @@ public func onGestureSwipe(handler: ?(Int32, TabsAnimationEvent) -> Unit): This
 ```
 
 **功能：** 在页面跟手滑动过程中，逐帧触发，用于监听当前显示页面的实时滑动状态。
-
-> **说明：**
-> 当使用customContentTransition自定义切换动画时，此事件不触发。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -371,7 +372,7 @@ public class TabsAnimationEvent {
 
 **起始版本：** 26.1.0
 
-#### currentOffset
+#### var currentOffset
 
 ```cangjie
 public var currentOffset: Float32
@@ -383,7 +384,7 @@ public var currentOffset: Float32
 
 **起始版本：** 26.1.0
 
-#### targetOffset
+#### var targetOffset
 
 ```cangjie
 public var targetOffset: Float32
@@ -395,7 +396,7 @@ public var targetOffset: Float32
 
 **起始版本：** 26.1.0
 
-#### velocity
+#### var velocity
 
 ```cangjie
 public var velocity: Float32
@@ -513,7 +514,6 @@ class EntryView {
                         index: Int32 =>
                             // currentIndex控制TabContent显示页签
                             this.currentIndex = index
-                            // selectedIndex控制自定义TabBar内Image和Text颜色切换
                             this.selectedIndex = index
                     }
                 )
@@ -743,13 +743,13 @@ class EntryView {
 package ohos_app_cangjie_entry
 
 import kit.ArkUI.*
-import std.collection.*
 import ohos.arkui.state_macro_manage.*
+import kit.PerformanceAnalysisKit.Hilog
 
 @Entry
 @Component
-class TabsDivider1 {
-    var controller1: TabsController = TabsController()
+class EntryView {
+    var controller: TabsController = TabsController()
     @State
     var dividerColor: ResourceColor = Color.Red
     @State
@@ -763,40 +763,40 @@ class TabsDivider1 {
 
     func build() {
         Column() {
-            Tabs(controller: this.controller1) {
+            Tabs(controller: this.controller) {
                 TabContent() {
                     Column()
                         .width(100.percent)
                         .height(100.percent)
-                        .backgroundColor(Color.Pink)
+                        .backgroundColor(0xFFFFC0CB)
                 }.tabBar("pink")
 
                 TabContent() {
                     Column()
                         .width(100.percent)
                         .height(100.percent)
-                        .backgroundColor(Color.Yellow)
+                        .backgroundColor(0xFFFFFF00)
                 }.tabBar("yellow")
 
                 TabContent() {
                     Column()
                         .width(100.percent)
                         .height(100.percent)
-                        .backgroundColor(Color.Blue)
+                        .backgroundColor(0xFF0000FF)
                 }.tabBar("blue")
 
                 TabContent() {
                     Column()
                         .width(100.percent)
                         .height(100.percent)
-                        .backgroundColor(Color.Green)
+                        .backgroundColor(0xFF008000)
                 }.tabBar("green")
 
                 TabContent() {
                     Column()
                         .width(100.percent)
                         .height(100.percent)
-                        .backgroundColor(Color.Red)
+                        .backgroundColor(0xFFFF0000)
                 }.tabBar("red")
             }
                 .vertical(true)
@@ -808,38 +808,34 @@ class TabsDivider1 {
                 .onChange(
                     {
                         index: Int32 =>
-                            println(index.toString())
+                            Hilog.info(1, "Cangjie", "${index}.")
                     }
                 )
-                .height(200)
-                .margin(bottom: 12)
-                .divider(if (this.nullFlag) {
-                    None
-                } else {
-                    Some<TabDividerOptions>(TabDividerOptions(
-                        strokeWidth: this.strokeWidth,
-                        color: this.dividerColor,
-                        startMargin: this.startMargin,
-                        endMargin: this.endMargin
-                    ))
-                }) // 设置分割线样式
+                .height(200.vp)
+                .margin(bottom: 12.vp)
+                .divider(
+                    strokeWidth: if(this.nullFlag) { Option.None } else { this.strokeWidth },
+                    color: if(this.nullFlag) { Option.None } else { this.dividerColor },
+                    startMargin: if(this.nullFlag) { Option.None } else { this.startMargin },
+                    endMargin: if(this.nullFlag) { Option.None } else { this.endMargin }
+                )
 
             Button("常规Divider")
                 .width(100.percent)
-                .margin(bottom: 12)
+                .margin(bottom: 12.vp)
                 .onClick(
                     {
                         event =>
                             this.nullFlag = false
                             this.strokeWidth = 2.0
-                            this.dividerColor = Color.Red
+                            this.dividerColor = 0xFFFF0000
                             this.startMargin = 0.0
                             this.endMargin = 0.0
                     }
                 )
             Button("空Divider")
                 .width(100.percent)
-                .margin(bottom: 12)
+                .margin(bottom: 12.vp)
                 .onClick(
                     {
                         event =>
@@ -848,16 +844,16 @@ class TabsDivider1 {
                 )
             Button("颜色变为蓝色")
                 .width(100.percent)
-                .margin(bottom: 12)
+                .margin(bottom: 12.vp)
                 .onClick(
                     {
                         event =>
-                            this.dividerColor = Color.Blue
+                            this.dividerColor = 0xFF0000FF
                     }
                 )
             Button("宽度增加")
                 .width(100.percent)
-                .margin(bottom: 12)
+                .margin(bottom: 12.vp)
                 .onClick(
                     {
                         event =>
@@ -866,7 +862,7 @@ class TabsDivider1 {
                 )
             Button("宽度减小")
                 .width(100.percent)
-                .margin(bottom: 12)
+                .margin(bottom: 12.vp)
                 .onClick(
                     {
                         event =>
@@ -877,7 +873,7 @@ class TabsDivider1 {
                 )
             Button("上边距增加")
                 .width(100.percent)
-                .margin(bottom: 12)
+                .margin(bottom: 12.vp)
                 .onClick(
                     {
                         event =>
@@ -886,7 +882,7 @@ class TabsDivider1 {
                 )
             Button("上边距减少")
                 .width(100.percent)
-                .margin(bottom: 12)
+                .margin(bottom: 12.vp)
                 .onClick(
                     {
                         event =>
@@ -897,7 +893,7 @@ class TabsDivider1 {
                 )
             Button("下边距增加")
                 .width(100.percent)
-                .margin(bottom: 12)
+                .margin(bottom: 12.vp)
                 .onClick(
                     {
                         event =>
@@ -906,7 +902,7 @@ class TabsDivider1 {
                 )
             Button("下边距减少")
                 .width(100.percent)
-                .margin(bottom: 12)
+                .margin(bottom: 12.vp)
                 .onClick(
                     {
                         event =>
@@ -916,10 +912,12 @@ class TabsDivider1 {
                     }
                 )
         }
-            .padding(top: 24, left: 24, right: 24)
+            .padding(top: 24.vp, left: 24.vp, right: 24.vp)
     }
 }
 ```
+
+![tabs_divider](figures/tabs_divider.gif)
 
 # 示例5（设置边缘滑动效果）
 
@@ -931,7 +929,6 @@ class TabsDivider1 {
 package ohos_app_cangjie_entry
 
 import kit.ArkUI.*
-import std.collection.*
 import ohos.arkui.state_macro_manage.*
 
 @Entry
@@ -983,7 +980,7 @@ class EntryView {
                 .onClick(
                     {
                         event =>
-                            this.edgeEffect = EdgeEffect.Spring // 设置为弹簧回弹效果
+                            this.edgeEffect = EdgeEffect.Spring
                     }
                 )
 
@@ -993,7 +990,7 @@ class EntryView {
                 .onClick(
                     {
                         event =>
-                            this.edgeEffect = EdgeEffect.Fade // 设置为渐隐效果
+                            this.edgeEffect = EdgeEffect.Fade
                     }
                 )
 
@@ -1003,7 +1000,7 @@ class EntryView {
                 .onClick(
                     {
                         event =>
-                            this.edgeEffect = EdgeEffect.None // 设置为无边缘效果
+                            this.edgeEffect = EdgeEffect.None
                     }
                 )
         }
@@ -1012,9 +1009,11 @@ class EntryView {
 }
 ```
 
+![tabs_edgeeffect](figures/tabs_edgeeffect.gif)
+
 # 示例6（自定义TabBar切换动画）
 
-本示例通过[onChange](#func-onchangecallbackint32-unit)、[onAnimationStart](#func-onanimationstartint32-int32-tabsanimationevent--unit)、[onGestureSwipe](#func-ongestureswipeint32-tabsanimationevent--unit)等接口实现了自定义TabBar的切换动画。
+本示例通过[onChange](#func-onchangecallbackint32-unit)、[onAnimationStart](#func-onanimationstartint32-int32-tabsanimationevent---unit)、[onGestureSwipe](#func-ongestureswipeint32-tabsanimationevent---unit)等接口实现了自定义TabBar的切换动画。
 
 <!-- run -->
 
@@ -1022,34 +1021,26 @@ class EntryView {
 package ohos_app_cangjie_entry
 
 import kit.ArkUI.*
-import std.collection.*
 import ohos.arkui.state_macro_manage.*
+import kit.PerformanceAnalysisKit.Hilog
+import std.collection.HashMap
+import std.math.abs
 
 @Entry
 @Component
 class EntryView {
     @State
-    var colorArray: Array<(String, String)> = Array<(String, String)>(4, item: {i =>
-        if (i == 0) {
-            ("green", "#00CB87")
-        } else if (i == 1) {
-            ("blue", "#007DFF")
-        } else if (i == 2) {
-            ("yellow", "#FFBF00")
-        } else {
-            ("pink", "#E67C92")
-        }
-    })
+    var colorArray: Array<(String, UInt32)> = [("green", 0x00CB87), ("blue", 0x007DFF), ("yellow", 0xFFBF00), ("pink", 0xE67C92)]
     @State
     var currentIndex: Int32 = 0
     @State
-    var animationDuration: Int64 = 300
+    var animationDuration: Float32 = 300.0
     @State
     var indicatorLeftMargin: Float64 = 0.0
     @State
     var indicatorWidth: Float64 = 0.0
     var tabsWidth: Float64 = 0.0
-    var textInfos: Array<(Float64, Float64)> = Array<(Float64, Float64)>(4, item: {_ => (0.0, 0.0)})
+    var textInfos: Array<(Float64, Float64)> = Array<(Float64, Float64)>(4, repeat: (0.0, 0.0))
     var isStartAnimateTo: Bool = false
 
     @Builder
@@ -1063,12 +1054,9 @@ class EntryView {
                 .onAreaChange(
                     {
                         oldValue: Area, newValue: Area =>
-                            this.textInfos[index] = (
-                                Float64(newValue.globalPosition.x as Int64),
-                                Float64(newValue.width as Int64)
-                            )
+                            this.textInfos[Int64(index)] = (newValue.globalPosition.x.getOrThrow().value,newValue.width.value)
                             if (!this.isStartAnimateTo && this.currentIndex == index && this.tabsWidth > 0.0) {
-                                this.setIndicatorAttr(this.textInfos[this.currentIndex][0], this.textInfos[this.currentIndex][1])
+                                this.setIndicatorAttr(this.textInfos[Int64(this.currentIndex)][0], this.textInfos[Int64(this.currentIndex)][1])
                             }
                     }
                 )
@@ -1076,10 +1064,10 @@ class EntryView {
     }
 
     func build() {
-        Stack(alignment: Alignment.TopStart) {
+        Stack(alignContent: Alignment.TopStart) {
             Tabs(barPosition: BarPosition.Start) {
                 ForEach(this.colorArray, itemGeneratorFunc: {
-                    item: (String, String), index: Int64 =>
+                    item: (String, UInt32), index: Int64 =>
                     TabContent() {
                         Column()
                             .width(100.percent)
@@ -1091,9 +1079,9 @@ class EntryView {
                 .onAreaChange(
                     {
                         oldValue: Area, newValue: Area =>
-                            this.tabsWidth = Float64(newValue.width as Int64)
+                            this.tabsWidth = newValue.width.value
                             if (!this.isStartAnimateTo) {
-                                this.setIndicatorAttr(this.textInfos[this.currentIndex][0], this.textInfos[this.currentIndex][1])
+                                this.setIndicatorAttr(this.textInfos[Int64(this.currentIndex)][0], this.textInfos[Int64(this.currentIndex)][1])
                             }
                     }
                 )
@@ -1106,16 +1094,16 @@ class EntryView {
                 .onChange(
                     {
                         index: Int32 =>
-                            // currentIndex控制TabContent显示页签内容
+                            // 监听索引index的变化，实现页签内容的切换。
                             this.currentIndex = index
                     }
                 )
                 .onAnimationStart(
                     {
                         index: Int32, targetIndex: Int32, event: TabsAnimationEvent =>
-                            // 切换动画开始时触发：更新currentIndex为目标索引，启动下划线动画跟随页面滑动
+                            // 切换动画开始时触发该回调。下划线跟着页面一起滑动，同时宽度渐变。
                             this.currentIndex = targetIndex
-                            this.startAnimateTo(this.animationDuration, this.textInfos[targetIndex][0], this.textInfos[targetIndex][1])
+                            this.startAnimateTo(Int32(this.animationDuration), this.textInfos[Int64(targetIndex)][0], this.textInfos[Int64(targetIndex)][1])
                     }
                 )
                 .onGestureSwipe(
@@ -1123,7 +1111,7 @@ class EntryView {
                         index: Int32, event: TabsAnimationEvent =>
                             // 在页面跟手滑动过程中，逐帧触发该回调。
                             let currentIndicatorInfo = this.getCurrentIndicatorInfo(index, event)
-                            this.currentIndex = currentIndicatorInfo["index"]
+                            this.currentIndex = Int32(currentIndicatorInfo["index"])
                             this.setIndicatorAttr(currentIndicatorInfo["left"], currentIndicatorInfo["width"])
                     }
                 )
@@ -1131,21 +1119,21 @@ class EntryView {
             Column()
                 .height(2)
                 .width(this.indicatorWidth)
-                .margin(start: this.indicatorLeftMargin, top: 48)
+                .margin(left: this.indicatorLeftMargin.vp, top: 48.vp)
                 .backgroundColor(0x007DFF)
         }.width(100.percent)
     }
 
     func getCurrentIndicatorInfo(index: Int32, event: TabsAnimationEvent): HashMap<String, Float64> {
         var nextIndex = index
-        if (index > 0 && event.currentOffset > 0) {
-            nextIndex = index - 1
-        } else if (index < Int32(this.textInfos.size) - 1 && event.currentOffset < 0) {
-            nextIndex = index + 1
+        if (index > 0 && event.currentOffset > 0.0) {
+            nextIndex--
+        } else if (index < Int32(this.textInfos.size) - 1 && event.currentOffset < 0.0) {
+            nextIndex++
         }
-        let indexInfo = this.textInfos[index]
-        let nextIndexInfo = this.textInfos[nextIndex]
-        let swipeRatio = abs(event.currentOffset / this.tabsWidth)
+        let indexInfo = this.textInfos[Int64(index)]
+        let nextIndexInfo = this.textInfos[Int64(nextIndex)]
+        let swipeRatio = abs(Float64(event.currentOffset) / this.tabsWidth)
         let currentIndex = if (swipeRatio > 0.5) { nextIndex } else { index } // 页面滑动超过一半，tabBar切换到下一页。
         let currentLeft = indexInfo[0] + (nextIndexInfo[0] - indexInfo[0]) * swipeRatio
         let currentWidth = indexInfo[1] + (nextIndexInfo[1] - indexInfo[1]) * swipeRatio
@@ -1156,9 +1144,9 @@ class EntryView {
         return result
     }
 
-    func startAnimateTo(duration: Int64, leftMargin: Float64, width: Float64) {
+    func startAnimateTo(duration: Int32, leftMargin: Float64, width: Float64) {
         this.isStartAnimateTo = true
-        this.getUIContext()?.animateTo(
+        this.getUIContext().animateTo(
             AnimateParam(
                 duration: duration, // 动画时长
                 curve: Curve.Linear, // 动画曲线
@@ -1167,7 +1155,7 @@ class EntryView {
                 onFinish: {
                     =>
                         this.isStartAnimateTo = false
-                        println("play end")
+                        Hilog.info(1, "Cangjie", "play end.")
                 }
             ),
             {
@@ -1184,9 +1172,11 @@ class EntryView {
 }
 ```
 
+![tabs_tabbaranimation](figures/tabs_tabbaranimation.gif)
+
 # 示例7（页面切换拦截）
 
-本示例通过[onContentWillChange](#func-oncontentwillchangeint32-int32--bool)实现了自定义页面手势滑动切换拦截。
+本示例通过[onContentWillChange](#func-oncontentwillchangeint32-int32---bool)实现了自定义页面手势滑动切换拦截。
 
 <!-- run -->
 
@@ -1194,8 +1184,8 @@ class EntryView {
 package ohos_app_cangjie_entry
 
 import kit.ArkUI.*
-import std.collection.*
 import ohos.arkui.state_macro_manage.*
+import kit.LocalizationKit.__GenerateResource__
 
 @Entry
 @Component
@@ -1209,9 +1199,9 @@ class EntryView {
     @Builder
     func tabBuilder(title: String, targetIndex: Int32) {
         Column() {
-            // $r('app.media.star_fill')需要替换为开发者所需的图像资源文件
-            // $r('app.media.star')需要替换为开发者所需的图像资源文件
-            Image(if (this.selectedIndex == targetIndex) { $r("app.media.star_fill") } else { $r("app.media.star") })
+            // @r(app.media.star_fill)需要替换为开发者所需的图像资源文件
+            // @r(app.media.star)需要替换为开发者所需的图像资源文件
+            Image(if (this.selectedIndex == targetIndex) { @r(app.media.star_fill) } else { @r(app.media.star) })
                 .width(24)
                 .height(24)
                 .margin(bottom: 4)
@@ -1281,7 +1271,6 @@ class EntryView {
                 .onContentWillChange(
                     {
                         currentIndex: Int32, comingIndex: Int32 =>
-                            // 拦截页面切换：当目标页面索引为2时返回false阻止切换，否则返回true允许切换
                             if (comingIndex == 2) {
                                 return false
                             }
@@ -1313,3 +1302,5 @@ class EntryView {
     }
 }
 ```
+
+![tabs_contentwillchange](figures/tabs_contentwillchange.gif)

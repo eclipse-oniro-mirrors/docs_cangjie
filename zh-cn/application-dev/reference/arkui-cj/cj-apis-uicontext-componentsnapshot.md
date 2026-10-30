@@ -30,7 +30,7 @@ public class ComponentSnapshot {}
 
 **起始版本：** 26.1.0
 
-### func get(String, AsyncCallback<PixelMap>, ?SnapshotOptions)
+### func get(String, AsyncCallback\<PixelMap>, ?SnapshotOptions)
 
 ```cangjie
 public func get(id: String, callback: AsyncCallback<PixelMap>, options!: ?SnapshotOptions = Option.None): Unit
@@ -60,7 +60,7 @@ public func get(id: String, callback: AsyncCallback<PixelMap>, options!: ?Snapsh
 
   |错误码|说明|
   |:----|:----|
-  |401|Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2.Incorrect parameters types. 3. Parameter verification failed.|
+  |401|Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed.|
   |100001|Invalid ID.|
   |160003|Unsupported color space or dynamic range mode in snapshot options.|
 
@@ -71,28 +71,31 @@ public func get(id: String, callback: AsyncCallback<PixelMap>, options!: ?Snapsh
 package ohos_app_cangjie_entry
 
 import kit.ArkUI.*
-import kit.ImageKit.*
 import ohos.arkui.state_macro_manage.*
+import kit.ImageKit.PixelMap
+import kit.CangjieKit.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
+import kit.LocalizationKit.__GenerateResource__
 
 @Entry
 @Component
-class SnapshotExample {
+class EntryView {
     @State
-    var pixmap: ?PixelMap = None
+    var pixmap: ?PixelMap = Option<PixelMap>.None
 
     func build() {
         Column() {
             Row() {
-                Image(this.pixmap)
-                    .width(200)
-                    .height(200)
-                    .border(color: Color.Black, width: 2)
-                    .margin(5)
+               Image(this.pixmap)
+               .width(150)
+               .height(150)
+               .border(color: Color.Black, width: 2)
+               .margin(5)
                 // $r('app.media.img')需要替换为开发者所需的图像资源文件
-                Image($r("app.media.img"))
+                Image(@r(app.media.img))
                     .autoResize(true)
-                    .width(200)
-                    .height(200)
+                    .width(150)
+                    .height(150)
                     .margin(5)
                     .id("root")
             }
@@ -100,11 +103,10 @@ class SnapshotExample {
             Button("click to generate UI snapshot")
                 .onClick({
                     evt =>
-                        // 建议使用this.getUIContext().getComponentSnapshot().get()
                         this.getUIContext().getComponentSnapshot().get("root", {
                             err: ?BusinessException, data: ?PixelMap =>
-                                if (let Some(_) <- err) {
-                                    println("error: ${err}")
+                                if (let Some(e) <- err) {
+                                    Hilog.info(1, "Cangjie", "Failed to get component snapshot: ${e.code}")
                                     return
                                 }
                                 this.pixmap = data
@@ -118,6 +120,8 @@ class SnapshotExample {
     }
 }
 ```
+
+![getscreen](figures/getscreen.gif)
 
 ## class SnapshotOptions
 
@@ -445,14 +449,16 @@ extend LocalizedSnapshotRegion <: SnapshotRegionType {}
 package ohos_app_cangjie_entry
 
 import kit.ArkUI.*
-import kit.ImageKit.*
 import ohos.arkui.state_macro_manage.*
+import kit.ImageKit.PixelMap
+import kit.CangjieKit.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
 @Entry
 @Component
-class SnapshotExample {
+class EntryView {
     @State
-    var pixmap: ?PixelMap = None
+    var pixmap: ?PixelMap = Option<PixelMap>.None
 
     func build() {
         Column() {
@@ -460,7 +466,7 @@ class SnapshotExample {
                 Column() {
                     TextClock()
                     Button("Button ABCDE")
-                        .type(ButtonType.Normal)
+                        .shape(ButtonType.Normal)
                     Row() {
                         Checkbox()
                         Text("√")
@@ -474,8 +480,8 @@ class SnapshotExample {
                 }
                 .align(Alignment.Start)
                 .id("component1")
-                .width(600)
-                .height(600)
+                .width(600.px)
+                .height(600.px)
                 .borderRadius(6)
                 .borderWidth(2)
                 .borderColor(Color.Green)
@@ -486,28 +492,30 @@ class SnapshotExample {
                     evt =>
                         this.getUIContext().getComponentSnapshot().get("component1", {
                             err: ?BusinessException, data: ?PixelMap =>
-                                if (let Some(_) <- err) {
-                                    println("get error message: ${err}")
+                                if (let Some(e) <- err) {
+                                    Hilog.info(1, "Cangjie", "get error:${e.code}")
                                     return
                                 }
                                 this.pixmap = data
                         }, options: SnapshotOptions(
                             scale: 2.0,
                             waitUntilRenderFinished: true,
-                            region: LocalizedSnapshotRegion(start: 20, top: 20, end: 200, bottom: 240)
+                            region: LocalizedSnapshotRegion(start: 20.0, top: 20.0, end: 200.0, bottom: 240.0)
                         )
                         )
                 })
                 .margin(10)
             Image(this.pixmap)
                 .border(color: Color.Black, width: 2)
-                .width(600)
+                .width(600.px)
         }
         .width(100.percent)
         .align(Alignment.Center)
     }
 }
 ```
+
+![localized_snapshot](figures/localized_snapshot.gif)
 
 ## class ColorModeOptions
 
@@ -572,7 +580,7 @@ public init(
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |colorSpace|?[ColorSpace](../ArkGraphics2D/cj-apis-color_manager.md#enum-colorspace)|否|None| **命名参数。** 指定截图使用的色彩空间。<br>取值范围：[colorSpaceManager.ColorSpace](../ArkGraphics2D/cj-apis-color_manager.md#enum-colorspace)中DisplayP3、Srgb。<br>初始值：Srgb <br>如果值为Option.None或未设置，则使用初始值截图；其他异常值会导致截图失败，返回错误码160003。|
-|isAuto|?Bool|否|None| **命名参数。** 是否由系统自动决定所使用的色彩空间。<br>true表示系统自动决定所使用的色彩空间；false表示使用通过`colorSpace`字段设置的色彩空间类型进行截图。取非法值时，按初始值false处理。<br>初始值：false<br>离屏截图仅支持设置为false，否则会返回错误码160004。<br>当`isAuto`设置为true时，建议将[SnapshotOptions](#class-snapshotoptions)中的`waitUntilRenderFinished`字段也设置为true，以便确保系统可以正常检测到所用的模式。<br>在不确定组件使用的色彩空间时，建议将`isAuto`设置为true，让系统根据实际情况自动决定使用的色彩空间。<br>当`isAuto`为true时，`colorSpace`字段设置的值会被忽略。此时，如果被截图组件同时包含不同色彩空间的子组件时，截图的色彩空间为优先级最高的色彩空间类型，优先级排序为DisplayP3 > Srgb。|
+|isAuto|?Bool|否|None| **命名参数。** 是否由系统自动决定所使用的色彩空间。<br>true表示系统自动决定所使用的色彩空间；false表示使用通过`colorSpace`字段设置的色彩空间类型进行截图。取非法值时，按初始值false处理。<br>初始值：false。<br>当`isAuto`设置为true时，建议将[SnapshotOptions](#class-snapshotoptions)中的`waitUntilRenderFinished`字段也设置为true，以便确保系统可以正常检测到所用的模式。<br>在不确定组件使用的色彩空间时，建议将`isAuto`设置为true，让系统根据实际情况自动决定使用的色彩空间。<br>当`isAuto`为true时，`colorSpace`字段设置的值会被忽略。此时，如果被截图组件同时包含不同色彩空间的子组件时，截图的色彩空间为优先级最高的色彩空间类型，优先级排序为DisplayP3 > Srgb。|
 
 **示例：**
 
@@ -581,29 +589,32 @@ public init(
 package ohos_app_cangjie_entry
 
 import kit.ArkUI.*
-import kit.ArkGraphics2D.*
-import kit.ImageKit.*
 import ohos.arkui.state_macro_manage.*
+import kit.ImageKit.PixelMap
+import kit.CangjieKit.BusinessException
+import kit.LocalizationKit.__GenerateResource__
+import kit.PerformanceAnalysisKit.Hilog
+import kit.ArkGraphics2D.{ColorSpace as ArkGraphics2DColorSpace}
 
 @Entry
 @Component
-class SnapshotColorModeExample {
+class EntryView {
     @State
-    var pixmap: ?PixelMap = None
+    var pixmap: ?PixelMap = Option<PixelMap>.None
 
     func build() {
         Column() {
             Row() {
                 Image(this.pixmap)
-                    .width(200)
-                    .height(200)
+                    .width(150)
+                    .height(150)
                     .border(color: Color.Black, width: 2)
                     .margin(5)
-                // $r('app.media.img')需要替换为开发者所需的图像资源文件
-                Image($r("app.media.img"))
+                // @r('app.media.img')需要替换为开发者所需的图像资源文件
+                Image(@r(app.media.img))
                     .autoResize(true)
-                    .width(200)
-                    .height(200)
+                    .width(150)
+                    .height(150)
                     .margin(5)
                     .id("root")
             }
@@ -613,8 +624,8 @@ class SnapshotColorModeExample {
                     evt =>
                         this.getUIContext().getComponentSnapshot().get("root", {
                             err: ?BusinessException, data: ?PixelMap =>
-                                if (let Some(_) <- err) {
-                                    println("error: ${err}")
+                                if (let Some(e) <- err) {
+                                    Hilog.info(1, "Cangjie", "error:${e.code}.")
                                     return
                                 }
                                 this.pixmap = data
@@ -622,7 +633,7 @@ class SnapshotColorModeExample {
                             scale: 2.0,
                             waitUntilRenderFinished: true,
                             // 设置色彩空间为：DisplayP3
-                            colorMode: ColorModeOptions(colorSpace: ColorSpace.DisplayP3, isAuto: false)
+                            colorMode: ColorModeOptions(colorSpace: ArkGraphics2DColorSpace.DisplayP3, isAuto: false)
                         )
                         )
                 })
@@ -634,6 +645,8 @@ class SnapshotColorModeExample {
     }
 }
 ```
+
+![componentget](figures/componentget.gif)
 
 ## class DynamicRangeModeOptions
 
@@ -685,8 +698,6 @@ public var isAuto: ?Bool
 
 **功能：** 是否由系统自动确定使用的动态范围模式。true表示由系统自动确定，false表示通过dynamicRangeMode手动设置。取非法值时，按初始值false处理。
 
-离屏截图仅支持设置为false，否则会返回错误码160004。
-
 当isAuto设置为true时，建议将SnapshotOptions中的waitUntilRenderFinished字段也设置为true，以便确保系统可以正常检测到所用的模式。
 
 在不确定组件使用的动态范围模式时，建议将isAuto设置为true，让系统根据实际情况自动决定使用的动态范围模式。
@@ -726,28 +737,31 @@ public init(
 package ohos_app_cangjie_entry
 
 import kit.ArkUI.*
-import kit.ImageKit.*
 import ohos.arkui.state_macro_manage.*
+import kit.ImageKit.PixelMap
+import kit.LocalizationKit.__GenerateResource__
+import kit.CangjieKit.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
 @Entry
 @Component
-class SnapshotDynamicRangeExample {
+class EntryView {
     @State
-    var pixmap: ?PixelMap = None
+    var pixmap: ?PixelMap = Option<PixelMap>.None
 
     func build() {
         Column() {
             Row() {
                 Image(this.pixmap)
-                    .width(200)
-                    .height(200)
+                    .width(150)
+                    .height(150)
                     .border(color: Color.Black, width: 2)
                     .margin(5)
-                // $r('app.media.img')需要替换为开发者所需的图像资源文件
-                Image($r("app.media.img"))
+                // @r('app.media.img')需要替换为开发者所需的图像资源文件
+                Image(@r(app.media.img))
                     .autoResize(true)
-                    .width(200)
-                    .height(200)
+                    .width(150)
+                    .height(150)
                     .margin(5)
                     .id("root")
             }
@@ -757,8 +771,8 @@ class SnapshotDynamicRangeExample {
                     evt =>
                         this.getUIContext().getComponentSnapshot().get("root", {
                             err: ?BusinessException, data: ?PixelMap =>
-                                if (let Some(_) <- err) {
-                                    println("error: ${err}")
+                                if (let Some(e) <- err) {
+                                    Hilog.info(1, "Cangjie", "error:${e.code}.")
                                     return
                                 }
                                 this.pixmap = data
@@ -778,3 +792,5 @@ class SnapshotDynamicRangeExample {
     }
 }
 ```
+
+![dynamicrangemode](figures/dynamicrangemode.gif)

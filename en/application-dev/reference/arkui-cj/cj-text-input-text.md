@@ -124,6 +124,32 @@ public func decoration(decorationType!: ?TextDecorationType, color!: ?ResourceCo
 | color | ?[ResourceColor](./cj-common-types.md#interface-resourcecolor) | Yes | - | **Named parameter.** The color of the decoration line.<br>Initial value: Color.Black. |
 | decorationStyle | ?[TextDecorationStyle](./cj-common-types.md#enum-textdecorationstyle) | No | None | **Named parameter.** The style of the decoration line.<br>Initial value: TextDecorationStyle.Solid. |
 
+### func font(?Length, ?FontWeight, ?ResourceStr, ?FontStyle)
+
+```cangjie
+public func font(size!: ?Length = None, weight!: ?FontWeight = None, family!: ?ResourceStr = None,
+    style!: ?FontStyle = None): This
+```
+
+**Function:** Sets the text style. If this API is not called, the system default font style configuration is used.
+
+Including the font size, font weight, font family, and font style.
+
+This takes effect only on the Text component, and not on its child components.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Initial Version:** 26.1.0
+
+**Parameters:**
+
+| Parameter Name | Type | Required | Default Value | Description |
+|:---|:---|:---|:---|:---|
+| size | ?[Length](./cj-common-types.md#interface-length) | No | None | **Named parameter.** Sets the text size. When Length is Int64 or Float64, the unit is fp. Percentage strings are not supported.<br>Initial value: 16.0 |
+| weight | ?[FontWeight](./cj-common-types.md#enum-fontweight) | No | None | **Named parameter.** Sets the font weight of the text.<br>Initial value: FontWeight.Normal |
+| family | ?[ResourceStr](./cj-common-types.md#interface-resourcestr) | No | None | **Named parameter.** Font list. Initial font: 'HarmonyOS Sans'.<br>When using multiple fonts, separate them with commas ','. The priority of fonts takes effect in order. For example: 'Arial,HarmonyOS Sans'. |
+| style | ?[FontStyle](./cj-common-types.md#enum-fontstyle) | No | None | **Named parameter.** Sets the font style of the text.<br>Initial value: FontStyle.Normal |
+
 ### func fontColor(?ResourceColor)
 
 ```cangjie
