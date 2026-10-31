@@ -782,6 +782,7 @@
                     - [GridRow](reference/arkui-cj/cj-grid-layout-gridrow.md)
                     - [GridCol](reference/arkui-cj/cj-grid-layout-gridcol.md)
                     - [RowSplit](reference/arkui-cj/cj-grid-layout-rowsplit.md)
+                    - [ColumnSplit](reference/arkui-cj/cj-grid-layout-columnsplit.md)
                     - [SideBarContainer](reference/arkui-cj/cj-grid-layout-sidebar.md)
                 - 滚动与滑动
                     - [List](reference/arkui-cj/cj-scroll-swipe-list.md)

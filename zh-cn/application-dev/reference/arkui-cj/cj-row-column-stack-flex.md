@@ -53,11 +53,111 @@ public init(direction!: ?FlexDirection = None, wrap!: ?FlexWrap = None,
 |alignContent|?[FlexAlign](./cj-common-types.md#enum-flexalign)|否|None| **命名参数。** 初始值: FlexAlign.Start 交叉轴中有额外的空间时，多行内容的对齐方式。仅在wrap为Wrap或WrapReverse下生效。|
 |child|()->Unit|否|{=>}| **命名参数。** 声明容器内的子组件。|
 
+### init(?FlexDirection, ?FlexWrap, ?FlexAlign, ?ItemAlign, ?FlexAlign, ?FlexSpaceOptions, () -> Unit)
+
+```cangjie
+public init(direction!: ?FlexDirection = None, wrap!: ?FlexWrap = None,
+    justifyContent!: ?FlexAlign = None, alignItems!: ?ItemAlign = None,
+    alignContent!: ?FlexAlign = None, space!: ?FlexSpaceOptions,
+    child!: () -> Unit = {=>})
+```
+
+**功能：** 创建一个Flex容器，并配置主轴与交叉轴方向子组件间距。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|direction|?[FlexDirection](./cj-common-types.md#enum-flexdirection)|否|None|子组件在Flex容器上的排列方向，即主轴方向。|
+|wrap|?[FlexWrap](./cj-common-types.md#enum-flexwrap)|否|None|Flex容器内子组件是单行/列还是多行/列分布。|
+|justifyContent|?[FlexAlign](./cj-common-types.md#enum-flexalign)|否|None|子组件在Flex容器主轴方向的对齐格式。|
+|alignItems|?[ItemAlign](./cj-common-types.md#enum-itemalign)|否|None|子组件在Flex容器交叉轴方向的对齐格式。|
+|alignContent|?[FlexAlign](./cj-common-types.md#enum-flexalign)|否|None|多行/列子组件在交叉轴的整体对齐格式。|
+|space|?[FlexSpaceOptions](#class-flexspaceoptions)|是|-| **命名参数。** 主轴与交叉轴方向的子组件间距配置。|
+|child|() -> Unit|否|{=>}| **命名参数。** 声明Flex容器的子组件。|
+
+> **说明：**
+>
+> 当justifyContent设置为SpaceBetween、SpaceAround或SpaceEvenly时，space配置的间距不生效，间距按对齐规则分布。
+
 ## 通用属性/通用事件
 
 通用属性：全部支持。
 
 通用事件：全部支持。
+
+## 基础类型定义
+
+### class FlexSpaceOptions
+
+```cangjie
+public class FlexSpaceOptions {
+    public var mainSpacing: ?LengthMetrics
+    public var crossSpacing: ?LengthMetrics
+    public init(mainSpacing!: ?LengthMetrics = None, crossSpacing!: ?LengthMetrics = None)
+}
+```
+
+**功能：** 设置Flex容器的子组件在主轴或交叉轴的间距。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+#### var mainSpacing
+
+```cangjie
+public var mainSpacing: ?LengthMetrics
+```
+
+**功能：** Flex容器主轴上相邻子组件之间的间距。设置后，主轴方向相邻子组件之间将按指定间距进行分隔，在单行或多行布局时均生效。当mainSpacing为负数或设置百分比，或者justifyContent设置为FlexAlign.SpaceBetween、FlexAlign.SpaceAround、FlexAlign.SpaceEvenly时，该参数不生效。初始值：LengthMetrics(0.0, unit: LengthUnit.Px)。
+
+**类型：** ?[LengthMetrics](./cj-common-types.md#class-lengthmetrics)
+
+**读写能力：** 可读写
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+#### var crossSpacing
+
+```cangjie
+public var crossSpacing: ?LengthMetrics
+```
+
+**功能：** Flex容器交叉轴上相邻行之间的间距。设置后，交叉轴方向相邻行之间将按指定间距进行分隔，仅在多行布局（wrap为Wrap或WrapReverse）时生效。当crossSpacing为负数或设置百分比时，该参数不生效。初始值：LengthMetrics(0.0, unit: LengthUnit.Px)。
+
+**类型：** ?[LengthMetrics](./cj-common-types.md#class-lengthmetrics)
+
+**读写能力：** 可读写
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+#### init(?LengthMetrics, ?LengthMetrics)
+
+```cangjie
+public init(mainSpacing!: ?LengthMetrics = None, crossSpacing!: ?LengthMetrics = None)
+```
+
+**功能：** 构造函数，用于创建一个FlexSpaceOptions对象。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|mainSpacing|?[LengthMetrics](./cj-common-types.md#class-lengthmetrics)|否|None|主轴方向的子组件间距。|
+|crossSpacing|?[LengthMetrics](./cj-common-types.md#class-lengthmetrics)|否|None|交叉轴方向的行间距。|
 
 ## 示例代码
 
@@ -651,3 +751,67 @@ class EntryView {
 ```
 
 ![flex-auto](figures/flex-auto.png)
+
+### 示例7（子组件单/多行排列时的主/交叉轴间距）
+
+该示例通过[FlexSpaceOptions](#class-flexspaceoptions)设置Flex容器的子组件在主轴和交叉轴上的间距。
+
+<!-- run -->
+
+```cangjie
+package ohos_app_cangjie_entry
+
+import kit.ArkUI.*
+import ohos.arkui.state_macro_manage.*
+import ohos.base.*
+
+@Entry
+@Component
+class EntryView {
+    func build() {
+        Column(space: 5) {
+            Text("Wrap").fontSize(9).fontColor(0xCCCCCC).width(90.percent)
+            Flex(wrap: FlexWrap.Wrap, space: FlexSpaceOptions(
+                mainSpacing: LengthMetrics(50.0, unit: LengthUnit.Px),
+                crossSpacing: LengthMetrics(50.0, unit: LengthUnit.Px))) {
+                Text("1").width(40.percent).height(50).backgroundColor(0xF5DEB3)
+                Text("2").width(40.percent).height(50).backgroundColor(0xD2B48C)
+                Text("3").width(40.percent).height(50).backgroundColor(0xD2B48C)
+            }
+            .width(90.percent)
+            .padding(10)
+            .backgroundColor(0xAFEEEE)
+            .margin(top: 5)
+
+            Text("NoWrap").fontSize(9).fontColor(0xCCCCCC).width(90.percent)
+            Flex(wrap: FlexWrap.NoWrap, space: FlexSpaceOptions(
+                mainSpacing: LengthMetrics(50.0, unit: LengthUnit.Px),
+                crossSpacing: LengthMetrics(50.0, unit: LengthUnit.Px))) {
+                Text("1").width(50.percent).height(50).backgroundColor(0xF5DEB3)
+                Text("2").width(50.percent).height(50).backgroundColor(0xD2B48C)
+                Text("3").width(50.percent).height(50).backgroundColor(0xF5DEB3)
+            }
+            .width(90.percent)
+            .padding(10)
+            .backgroundColor(0xAFEEEE)
+            .margin(top: 5)
+
+            Text("WrapReverse").fontSize(9).fontColor(0xCCCCCC).width(90.percent)
+            Flex(direction: FlexDirection.Row, wrap: FlexWrap.WrapReverse, space: FlexSpaceOptions(
+                mainSpacing: LengthMetrics(50.0, unit: LengthUnit.Px),
+                crossSpacing: LengthMetrics(50.0, unit: LengthUnit.Px))) {
+                Text("1").width(40.percent).height(50).backgroundColor(0xF5DEB3)
+                Text("2").width(40.percent).height(50).backgroundColor(0xD2B48C)
+                Text("3").width(40.percent).height(50).backgroundColor(0xD2B48C)
+            }
+            .width(90.percent)
+            .padding(10)
+            .backgroundColor(0xAFEEEE)
+            .margin(top: 5)
+        }
+        .width(100.percent)
+    }
+}
+```
+
+![flex7](figures/flex7.png)

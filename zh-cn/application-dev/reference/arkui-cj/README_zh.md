@@ -78,6 +78,7 @@
         - [GridRow](cj-grid-layout-gridrow.md)（Beta特性）
         - [GridCol](cj-grid-layout-gridcol.md)（Beta特性）
         - [RowSplit](cj-grid-layout-rowsplit.md)（Beta特性）
+        - [ColumnSplit](cj-grid-layout-columnsplit.md)（Beta特性）
         - [SideBarContainer](cj-grid-layout-sidebar.md)（Beta特性）
     - 滚动与滑动
         - [List](cj-scroll-swipe-list.md)（Beta特性）

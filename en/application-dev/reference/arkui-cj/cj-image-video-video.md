@@ -282,6 +282,24 @@ public func onStart(event: ?VoidCallback): This
 |:---|:---|:---|:---|:---|
 | event | ?[VoidCallback](./cj-common-types.md#type-voidcallback) | Yes | - | Callback function triggered when playback starts.<br>Initial value: { => } |
 
+### func onStop(?() -> Unit)
+
+```cangjie
+public func onStop(event: ?() -> Unit): This
+```
+
+**Function:** Triggered when the video playback is stopped (after **stop()** is called).
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Initial Version:** 26.1.0
+
+**Parameters:**
+
+| Parameter Name | Type | Required | Default Value | Description |
+|:---|:---|:---|:---|:---|
+| event | ?() -> Unit | Yes | - | Callback function triggered when playback stops.<br>Initial value: { => } |
+
 ### func onUpdate(?Callback\<PlaybackInfo, Unit>)
 
 ```cangjie

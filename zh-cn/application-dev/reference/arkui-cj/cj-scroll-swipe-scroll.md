@@ -87,6 +87,25 @@ public init(scroller: ?Scroller, child: () -> Unit)
 
 ## 组件属性
 
+### func edgeEffect(?EdgeEffect, ?EdgeEffectOptions)
+
+```cangjie
+public func edgeEffect(edgeEffect: ?EdgeEffect, options!: ?EdgeEffectOptions = None): This
+```
+
+**功能：** 设置滚动到边界时使用的边缘效果，并配置边缘效果的生效范围与内容不足时的行为。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|edgeEffect|?[EdgeEffect](./cj-common-types.md#enum-edgeeffect)|是|-|边缘效果类型。初始值：EdgeEffect.None。|
+|options|?[EdgeEffectOptions](./cj-common-types.md#class-edgeeffectoptions)|否|None|边缘效果配置。初始值：EdgeEffectOptions(true)，即组件内容小于组件自身尺寸时仍启用边缘效果。|
+
 ### func scrollable(?ScrollDirection)
 
 ```cangjie
@@ -790,12 +809,16 @@ public init(extraOffset!: ?Length = None)
 ### class Scroller
 
 ```cangjie
-public class Scroller {
+public open class Scroller {
     public init()
 }
 ```
 
 **功能：** 定义可滚动容器组件的控制器。
+
+> **说明：**
+>
+> Scroller从API 26.1.0版本开始声明为open class，支持通过继承进行扩展，如[ListScroller](./cj-scroll-swipe-list.md#class-listscroller)。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1883,3 +1906,49 @@ class EntryView {
 ```
 
 ![scroll7](./figures/scroll7.gif)
+
+### 示例代码7（单边边缘效果）
+
+该示例通过[edgeEffect](#func-edgeeffectedgeeffect-edgeeffectoptions)接口，实现了Scroll组件设置单边边缘效果。
+
+<!-- run -->
+
+```cangjie
+package ohos_app_cangjie_entry
+
+import kit.ArkUI.*
+import ohos.arkui.state_macro_manage.*
+
+@Entry
+@Component
+class EntryView {
+    let scroller = Scroller()
+
+    func build() {
+        Stack(alignContent: Alignment.TopStart) {
+            Scroll(this.scroller) {
+                Column() {
+                    ForEach([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+                        itemGeneratorFunc: {
+                            item: Int64, _: Int64 => Text("${item}")
+                                .width(90.percent)
+                                .height(150)
+                                .backgroundColor(0xFFFFFF)
+                                .borderRadius(15)
+                                .fontSize(16)
+                                .textAlign(TextAlign.Center)
+                                .margin(top: 10)
+                        })
+                }
+                .width(100.percent)
+            }
+            .edgeEffect(EdgeEffect.Spring, options: EdgeEffectOptions(true, effectEdge: 1))
+        }
+        .width(100.percent)
+        .height(100.percent)
+        .backgroundColor(0xDCDCDC)
+    }
+}
+```
+
+![edgeEffect_scroll](figures/edgeEffect_scroll.png)

@@ -3937,7 +3937,82 @@ public init(left!: ?HorizontalAlignParam = None, right!: ?HorizontalAlignParam =
 | top | ?[VerticalAlignParam](#class-verticalalignparam) | No | None | **Named parameter.** Sets the top alignment of the component. |
 | bottom | ?[VerticalAlignParam](#class-verticalalignparam) | No | None | **Named parameter.** Sets the bottom alignment of the component. |
 | center | ?[VerticalAlignParam](#class-verticalalignparam) | No | None | **Named parameter.** Sets the vertical center alignment of the component. |
-| bias | ?[Bias](#class-bias) | No | None | **Named parameter.** Sets the alignment offset of the component. Initial value is Bias(). |## class EdgeStyles
+| bias | ?[Bias](#class-bias) | No | None | **Named parameter.** Sets the alignment offset of the component. Initial value is Bias(). |
+
+## class EdgeEffectOptions
+
+```cangjie
+public class EdgeEffectOptions {
+    public var alwaysEnabled: Bool
+    public var effectEdge: ?Int32
+    public init(
+        alwaysEnabled: Bool,
+        effectEdge!: ?Int32 = None
+    )
+}
+```
+
+**Function:** Implements an object used to configure the [edgeEffect](./cj-scroll-swipe-list.md#func-edgeeffectedgeeffect-edgeeffectoptions) attribute.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### var alwaysEnabled
+
+```cangjie
+public var alwaysEnabled: Bool
+```
+
+**Function:** Whether to enable the sliding effect when the component content is smaller than the component itself. true: enable; false: disable.
+
+**Type:** Bool
+
+**Access:** Read-write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### var effectEdge
+
+```cangjie
+public var effectEdge: ?Int32
+```
+
+**Function:** Sets the edges where the edge effect takes effect. A value of **1** means the effect takes effect only on the start edge, and a value of **2** means the effect takes effect only on the end edge. Default value: **None**, which means the effect takes effect on both the start and end edges. If an invalid value is set, the effect takes effect on both edges by default. If you want the effect to take effect on neither edge, set **edgeEffect** to **EdgeEffect.None**.
+
+**Type:** ?Int32
+
+**Access:** Read-write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### init(Bool, ?Int32)
+
+```cangjie
+public init(
+    alwaysEnabled: Bool,
+    effectEdge!: ?Int32 = None
+)
+```
+
+**Function:** Constructor used to create an EdgeEffectOptions object.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+| Parameter | Type | Required | Default | Description |
+|:---|:---|:---|:---|:---|
+| alwaysEnabled | Bool | Yes | - | Whether to enable the sliding effect when the component content is smaller than the component itself. |
+| effectEdge | ?Int32 | No | None | Sets the edges where the edge effect takes effect. A value of **1** means the effect takes effect only on the start edge, and a value of **2** means the effect takes effect only on the end edge. Default value: **None**, which means the effect takes effect on both the start and end edges. If an invalid value is set, the effect takes effect on both edges by default. If you want the effect to take effect on neither edge, set **edgeEffect** to **EdgeEffect.None**. |
+
+## class EdgeStyles
 
 ```cangjie
 public class EdgeStyles {
@@ -13906,6 +13981,7 @@ public operator func !=(other: Direction): Bool
 public enum ScrollDirection <: Equatable<ScrollDirection> {
     | Vertical
     | Horizontal
+    | None
     | ...
 }
 ```
@@ -13943,6 +14019,18 @@ Horizontal
 **System Capability:** SystemCapability.ArkUI.ArkUI.Full
 
 **Since:** 22
+
+### None
+
+```cangjie
+None
+```
+
+**Function:** Scrolling is not supported.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
 
 ### operator func ==(ScrollDirection)
 

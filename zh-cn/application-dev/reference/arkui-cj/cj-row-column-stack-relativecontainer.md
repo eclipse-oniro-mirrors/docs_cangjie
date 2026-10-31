@@ -68,6 +68,24 @@ public func barrier(value: ?Array<BarrierStyle>): This
 |:---|:---|:---|:---|:---|
 |value|?Array\<[BarrierStyle](#class-barrierstyle)>|是|-|RelativeContainer容器内的屏障。初始值：[]。|
 
+### func barrier(Array\<LocalizedBarrierStyle>)
+
+```cangjie
+public func barrier(value: Array<LocalizedBarrierStyle>): This
+```
+
+**功能：** 设置RelativeContainer容器内支持镜像模式的屏障，Array中每个项目即为一条barrier。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|value|Array\<[LocalizedBarrierStyle](#class-localizedbarrierstyle)>|是|-|RelativeContainer容器内的屏障，支持定义镜像模式的屏障线。|
+
 ### func guideLine(?Array\<GuideLineStyle>)
 
 ```cangjie
@@ -324,6 +342,212 @@ public init(id: ?String, direction: ?Axis, position: ?GuideLinePosition)
 |id|?String|是|-|guideline的id，必须是唯一的并且不可与容器内组件重名。初始值：""。|
 |direction|?[Axis](cj-common-types.md#enum-axis)|是|-|指定guideline的方向。垂直方向的guideline仅能作为组件水平方向的锚点，作为垂直方向的锚点时值为0；水平方向的guideline仅能作为组件垂直方向的锚点，作为水平方向的锚点时值为0。初始值：Axis.Vertical。|
 |position|?[GuideLinePosition](#class-guidelineposition)|是|-|指定guideline的位置。当未声明或声明异常值时，guideline的位置初始值为start: 0。start和end两种声明方式选择一种即可。若同时声明，仅start生效。初始值：{start: 0}。|
+
+### class LocalizedBarrierStyle
+
+```cangjie
+public class LocalizedBarrierStyle {
+    public var id: String
+    public var localizedDirection: LocalizedBarrierDirection
+    public var referencedId: Array<String>
+    public init(id: String, localizedDirection: LocalizedBarrierDirection,
+        referencedId: Array<String>)
+}
+```
+
+**功能：** barrier参数，用于定义一条支持镜像模式的barrier的id、方向和生成时所依赖的组件，子组件可通过barrier的id引用屏障作为锚点进行对齐定位。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+#### var id
+
+```cangjie
+public var id: String
+```
+
+**功能：** barrier的id，用于标识屏障，子组件可通过此id引用该屏障作为锚点。必须是唯一的并且不可与容器内组件重名。
+
+**类型：** String
+
+**读写能力：** 可读写
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+#### var localizedDirection
+
+```cangjie
+public var localizedDirection: LocalizedBarrierDirection
+```
+
+**功能：** 指定barrier的方向。水平屏障线（Top、Bottom）仅能作为组件垂直方向锚点（top或bottom），用于水平方向锚点时位置视为0。垂直屏障线（Start、End，支持LTR/RTL镜像）仅能作为组件水平方向锚点（start或end），用于垂直方向锚点时位置视为0。
+
+**类型：** [LocalizedBarrierDirection](#enum-localizedbarrierdirection)
+
+**读写能力：** 可读写
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+#### var referencedId
+
+```cangjie
+public var referencedId: Array<String>
+```
+
+**功能：** 指定生成barrier所依赖的组件。将需要作为屏障基准的组件id放入数组，至少包含一个有效组件ID，不存在的ID会被忽略。支持镜像模式的屏障根据LTR/RTL模式下的实际位置计算屏障位置。
+
+**类型：** Array\<String>
+
+**读写能力：** 可读写
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+#### init(String, LocalizedBarrierDirection, Array\<String>)
+
+```cangjie
+public init(id: String, localizedDirection: LocalizedBarrierDirection,
+    referencedId: Array<String>)
+```
+
+**功能：** 构造函数，用于创建一个LocalizedBarrierStyle对象。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|id|String|是|-|barrier的id，用于标识屏障，子组件可通过此id引用该屏障作为锚点。必须是唯一的并且不可与容器内组件重名。|
+|localizedDirection|[LocalizedBarrierDirection](#enum-localizedbarrierdirection)|是|-|指定barrier的方向。水平屏障线（Top、Bottom）仅能作为组件垂直方向锚点（top或bottom），用于水平方向锚点时位置视为0。垂直屏障线（Start、End，支持LTR/RTL镜像）仅能作为组件水平方向锚点（start或end），用于垂直方向锚点时位置视为0。|
+|referencedId|Array\<String>|是|-|指定生成barrier所依赖的组件。将需要作为屏障基准的组件id放入数组，至少包含一个有效组件ID，不存在的ID会被忽略。支持镜像模式的屏障根据LTR/RTL模式下的实际位置计算屏障位置。|
+
+### enum LocalizedBarrierDirection
+
+```cangjie
+public enum LocalizedBarrierDirection <: Equatable<LocalizedBarrierDirection> {
+    | Start
+    | End
+    | Top
+    | Bottom
+    | ...
+}
+```
+
+定义支持镜像模式的屏障线的方向。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+**父类型：**
+
+- Equatable\<[LocalizedBarrierDirection](#enum-localizedbarrierdirection)>
+
+
+#### Start
+
+```cangjie
+Start
+```
+
+**功能：** 屏障在其所有referencedId的起始侧，LTR模式时为最左侧，RTL模式时为最右侧。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+#### End
+
+```cangjie
+End
+```
+
+**功能：** 屏障在其所有referencedId的结束侧，LTR模式时为最右侧，RTL模式时为最左侧。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+#### Top
+
+```cangjie
+Top
+```
+
+**功能：** 屏障在其所有referencedId的最上方。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+#### Bottom
+
+```cangjie
+Bottom
+```
+
+**功能：** 屏障在其所有referencedId的最下方。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+#### operator func ==(LocalizedBarrierDirection)
+
+```cangjie
+public operator func ==(other: LocalizedBarrierDirection): Bool
+```
+
+**功能：** 判断两个LocalizedBarrierDirection枚举是否相等。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|other|[LocalizedBarrierDirection](#enum-localizedbarrierdirection)|是|-|要比较的另一个LocalizedBarrierDirection枚举。|
+
+**返回值：**
+
+|类型|说明|
+|:----|:----|
+|Bool|如果两个枚举相等则返回true，否则返回false。|
+
+#### operator func !=(LocalizedBarrierDirection)
+
+```cangjie
+public operator func !=(other: LocalizedBarrierDirection): Bool
+```
+
+**功能：** 判断两个LocalizedBarrierDirection枚举是否不相等。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|other|[LocalizedBarrierDirection](#enum-localizedbarrierdirection)|是|-|要比较的另一个LocalizedBarrierDirection枚举。|
+
+**返回值：**
+
+|类型|说明|
+|:----|:----|
+|Bool|如果两个枚举不相等则返回true，否则返回false。|
 
 ## 示例代码
 
@@ -654,3 +878,92 @@ class EntryView {
 ```
 
 ![relativecontainer6](./figures/relativecontainer5.PNG)
+
+### 示例6（设置镜像模式屏障）
+
+该示例展示了在镜像模式（direction声明Direction.Rtl）下通过[barrier](#func-barrierarraylocalizedbarrierstyle)接口使用LocalizedBarrierStyle和LocalizedBarrierDirection设置屏障的用法。
+
+<!-- run -->
+
+```cangjie
+package ohos_app_cangjie_entry
+
+import kit.ArkUI.*
+import ohos.arkui.state_macro_manage.*
+
+@Entry
+@Component
+class EntryView {
+    func build() {
+        Row() {
+            RelativeContainer() {
+                Row() {
+                    Text("row1")
+                }
+                .justifyContent(FlexAlign.Center)
+                .width(100)
+                .height(100)
+                .backgroundColor(0xA3CF62)
+                .id("row1")
+
+                Row() {
+                    Text("row2")
+                }
+                .justifyContent(FlexAlign.Center)
+                .width(100)
+                .height(100)
+                .backgroundColor(0x00AE9D)
+                .alignRules(
+                    AlignRuleOption(
+                        middle: HorizontalAlignParam("row1", HorizontalAlign.End),
+                        top: VerticalAlignParam("row1", VerticalAlign.Bottom)
+                    )
+                )
+                .id("row2")
+
+                Row() {
+                    Text("row3")
+                }
+                .justifyContent(FlexAlign.Center)
+                .width(100)
+                .height(100)
+                .backgroundColor(0x0A59F7)
+                .alignRules(
+                    AlignRuleOption(
+                        left: HorizontalAlignParam("barrier1", HorizontalAlign.End),
+                        top: VerticalAlignParam("row1", VerticalAlign.Top)
+                    )
+                )
+                .id("row3")
+
+                Row() {
+                    Text("row4")
+                }
+                .justifyContent(FlexAlign.Center)
+                .width(50)
+                .height(50)
+                .backgroundColor(0x2CA9E0)
+                .alignRules(
+                    AlignRuleOption(
+                        left: HorizontalAlignParam("row1", HorizontalAlign.Start),
+                        top: VerticalAlignParam("barrier2", VerticalAlign.Bottom)
+                    )
+                )
+                .id("row4")
+            }
+            .direction(Direction.Rtl)
+            .width(300)
+            .height(300)
+            .margin(left: 50)
+            .border(width: 2, color: 0x6699FF)
+            .barrier([
+                LocalizedBarrierStyle("barrier1", LocalizedBarrierDirection.End, ["row1", "row2"]),
+                LocalizedBarrierStyle("barrier2", LocalizedBarrierDirection.Bottom, ["row1", "row2"])
+            ])
+        }
+        .height(100.percent)
+    }
+}
+```
+
+![relativecontainer6](figures/relativecontainer6.png)

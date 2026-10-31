@@ -159,6 +159,25 @@ public func edgeEffect(value: ?EdgeEffect): This
 |:---|:---|:---|:---|:---|
 | value | ?[EdgeEffect](./cj-common-types.md#enum-edgeeffect) | Yes | - | Edge effect type. Initial value: EdgeEffect.Spring. |
 
+### func edgeEffect(?EdgeEffect, ?EdgeEffectOptions)
+
+```cangjie
+public func edgeEffect(edgeEffect: ?EdgeEffect, options!: ?EdgeEffectOptions): This
+```
+
+**Function:** Sets the effect used when the scroll boundary is reached.
+
+**System capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+|Name|Type|Mandatory|Default Value|Description|
+|:---|:---|:---|:---|:---|
+|edgeEffect|?[EdgeEffect](./cj-common-types.md#enum-edgeeffect)|Yes|-|Effect used when the scroll boundary is reached. The spring and shadow effects are supported. Initial value: EdgeEffect.Spring.|
+|options|?[EdgeEffectOptions](./cj-common-types.md#class-edgeeffectoptions)|Yes|-|Whether to enable the scroll effect when the component content is smaller than the component itself. The value EdgeEffectOptions(true) means to enable the scroll effect, and EdgeEffectOptions(false) means the opposite. Initial value: EdgeEffectOptions(false).|
+
 ### func lanes(?Int32)
 
 ```cangjie
@@ -232,6 +251,28 @@ public func multiSelectable(value: ?Bool): This
 |:---|:---|:---|:---|:---|
 | value | ?Bool | Yes | - | Whether to enable multi-selection. Initial value: false. |
 
+### func scrollSnapAlign(?ScrollSnapAlign)
+
+```cangjie
+public func scrollSnapAlign(value: ?ScrollSnapAlign): This
+```
+
+**Function:** Sets the scroll snap alignment effect for list items when scrolling ends.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since Version:** 26.1.0
+
+**Parameters:**
+
+| Parameter Name | Type | Required | Default Value | Description |
+|:---|:---|:---|:---|:---|
+| value | ?[ScrollSnapAlign](#enum-scrollsnapalign) | Yes | - | Alignment mode of the scroll snap position. Initial value: ScrollSnapAlign.None. |
+
+> **NOTE**
+>
+> Scroll snap alignment is supported only for lists with uniform item heights; otherwise, the result may be inaccurate. During the alignment animation, the scroll operation source type reported by the [onWillScroll](./cj-scroll-swipe-common.md#func-onwillscrolloptionfloat64scrollstatescrollsource---scrollresult) event is ScrollSource.Fling.
+
 ### func sticky(?StickyStyle)
 
 ```cangjie
@@ -290,6 +331,176 @@ public func onScrollIndex(event: ?(Int32, Int32, Int32) -> Unit): This
 
 ## Basic Type Definitions
 
+
+### class ListScroller
+
+Scroll controller of the **List** component, used to control the scrolling of the **List** component. Only one-to-one binding to a **List** component is supported.
+
+```cangjie
+public class ListScroller <: Scroller {
+    public init()
+}
+```
+
+**Function:** Controller of the List component. It inherits from [Scroller](cj-scroll-swipe-scroll.md#class-scroller) and, based on Scroller capabilities, provides scrolling and layout information query for list items in groups.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since Version:** 26.1.0
+
+#### init()
+
+```cangjie
+public init()
+```
+
+**Function:** Constructor used to create a ListScroller object.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since Version:** 26.1.0
+
+#### func getItemRectInGroup(Int32, Int32)
+
+```cangjie
+public func getItemRectInGroup(index: Int32, indexInGroup: Int32): RectResult
+```
+
+**Function:** Obtains the size of a list item in a list item group and its position relative to the List.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since Version:** 26.1.0
+
+**Parameters:**
+
+| Parameter Name | Type | Required | Default Value | Description |
+|:---|:---|:---|:---|:---|
+| index | Int32 | Yes | - | Index of the list item group in the List. Only list item groups visible in the display area are supported. |
+| indexInGroup | Int32 | Yes | - | Index of the list item in the list item group. Only list items visible in the display area are supported. |
+
+**Return Value:**
+
+| Type | Description |
+|:----|:----|
+| [RectResult](cj-scroll-swipe-scroll.md#class-rectresult) | Size of the list item in the list item group and its position relative to the List, in vp. If index or indexInGroup is set to an invalid value (negative value, out-of-range index, or the target item is not in the display area), the returned size and position are both 0. |
+
+**Exceptions:**
+
+- BusinessException: Corresponding error codes are shown in the table below. For details, see [Universal Error Codes](../cj-errorcode-universal.md).
+
+  |Error Code|Description|
+  |:----|:----|
+  |100004|Controller not bound to a component.|
+
+#### func scrollToItemInGroup(Int32, Int32, ?Bool, ?ScrollAlign)
+
+```cangjie
+public func scrollToItemInGroup(
+    index: Int32,
+    indexInGroup: Int32,
+    smooth!: ?Bool = None,
+    align!: ?ScrollAlign = None
+): Unit
+```
+
+**Function:** Scrolls to the specified list item in the specified list item group.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since Version:** 26.1.0
+
+**Parameters:**
+
+| Parameter Name | Type | Required | Default Value | Description |
+|:---|:---|:---|:---|:---|
+| index | Int32 | Yes | - | Index of the target list item group in the current container. |
+| indexInGroup | Int32 | Yes | - | Index of the target list item in the list item group specified by index. |
+| smooth | ?Bool | No | None | Whether the scroll animation is enabled. Initial value: false. When smooth is set to true, all passed items are loaded and counted in layout calculation. This may result in performance issues if a large number of items are involved. |
+| align | ?[ScrollAlign](cj-scroll-swipe-scroll.md#enum-scrollalign) | No | None | How the list item to scroll to is aligned with the container. Initial value: ScrollAlign.Start. |
+
+> **NOTE**
+>
+> If index or indexInGroup is set to a negative value or greater than the maximum index, the value is deemed invalid, and no scrolling is performed. When the alignment target exceeds the maximum scroll range, the list scrolls to the maximum scroll position.
+
+**Exceptions:**
+
+- BusinessException: Corresponding error codes are shown in the table below. For details, see [Universal Error Codes](../cj-errorcode-universal.md).
+
+  |Error Code|Description|
+  |:----|:----|
+  |100004|Controller not bound to a component.|
+
+#### func closeAllSwipeActions(?() -> Unit)
+
+```cangjie
+public func closeAllSwipeActions(onFinish!: ?() -> Unit = None): Unit
+```
+
+**Function:** Collapses all list items in the Expanded state and sets a callback.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since Version:** 26.1.0
+
+**Parameters:**
+
+| Parameter Name | Type | Required | Default Value | Description |
+|:---|:---|:---|:---|:---|
+| onFinish | ?() -> Unit | No | None | Callback invoked when all list items in the Expanded state are collapsed. The callback is not triggered if no list item is in the Expanded state. |
+
+**Exceptions:**
+
+- BusinessException: Corresponding error codes are shown in the table below. For details, see [Universal Error Codes](../cj-errorcode-universal.md).
+
+  |Error Code|Description|
+  |:----|:----|
+  |100004|Controller not bound to a component.|
+
+#### func getVisibleListContentInfo(Float64, Float64)
+
+```cangjie
+public func getVisibleListContentInfo(x: Float64, y: Float64): VisibleListContentInfo
+```
+
+**Function:** Obtains the index information of the child component at the specified coordinates.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since Version:** 26.1.0
+
+**Parameters:**
+
+| Parameter Name | Type | Required | Default Value | Description |
+|:---|:---|:---|:---|:---|
+| x | Float64 | Yes | - | X-coordinate, in vp. |
+| y | Float64 | Yes | - | Y-coordinate, in vp. |
+
+**Return Value:**
+
+| Type | Description |
+|:----|:----|
+| [VisibleListContentInfo](#class-visiblelistcontentinfo) | Index information of the child component at the specified coordinates. |
+
+> **NOTE**
+>
+> **NOTE**
+>
+> - The reference point of the input coordinates (x, y) is the position of the **List** component.
+> - If the coordinate position is within a **ListItem** and the parent component of the **ListItem** is a **List**, the index member of the returned object is the index of the **ListItem** in the **List**, **itemGroupArea** returns **None**, and **itemIndexInGroup** returns **None**.
+> - If the coordinate position is within a **ListItem** and the parent component of the **ListItem** is a **ListItemGroup**, the index member of the returned object is the index of the **ListItemGroup** in the **List**, **itemGroupArea** returns **ListItemGroupArea.InListItemArea**, and **itemIndexInGroup** returns the index of the **ListItem** in the **ListItemGroup**.
+> - If the coordinate position is not within a **ListItem** but is within the header or footer of a **ListItemGroup**, the index member of the returned object is the index of the **ListItemGroup** in the **List**, and **itemIndexInGroup** returns **None**. If the coordinate position is within the header, **itemGroupArea** returns **ListItemGroupArea.InHeaderArea**. If the coordinate position is within the footer, **itemGroupArea** returns **ListItemGroupArea.InFooterArea**.
+> - If the coordinate position is neither within a **ListItem** nor within the header or footer of a **ListItemGroup**, but is within a **ListItemGroup**, the index member of the returned object is the index of the **ListItemGroup** in the **List**, **itemIndexInGroup** returns **None**, and **itemGroupArea** returns **ListItemGroupArea.None**.
+> - If the coordinate position is neither within a **ListItem** nor within a **ListItemGroup**, the index member of the returned object is **-1**, **itemIndexInGroup** returns **None**, and **itemGroupArea** returns **None**.
+
+**Exceptions:**
+
+- BusinessException: Corresponding error codes are shown in the table below. For details, see [Universal Error Codes](../cj-errorcode-universal.md).
+
+  |Error Code|Description|
+  |:----|:----|
+  |100004|Controller not bound to a component.|
+
 ### class OnScrollFrameBeginHandlerResult
 
 ```cangjie
@@ -338,6 +549,329 @@ public init(offsetRemain!: ?Float64)
 | Parameter Name | Type | Required | Default Value | Description |
 |:---|:---|:---|:---|:---|
 | offsetRemain | ?Float64 | Yes | - | **Named parameter.** Remaining offset. Initial value: 0.0. |
+
+### class VisibleListContentInfo
+
+```cangjie
+public class VisibleListContentInfo {
+    public var index: Int32
+    public var itemGroupArea: ?ListItemGroupArea
+    public var itemIndexInGroup: ?Int32
+    public init(index: Int32, itemGroupArea!: ?ListItemGroupArea = Option<ListItemGroupArea>.None,
+        itemIndexInGroup!: ?Int32 = None)
+}
+```
+
+**Function:** Describes the details of the child components in the visible area of a list.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since Version:** 26.1.0
+
+#### var index
+
+```cangjie
+public var index: Int32
+```
+
+**Function:** Index of the **ListItem** or **ListItemGroup** in the **List** component.
+
+**Type:** Int32
+
+**Access:** Read-write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since Version:** 26.1.0
+
+#### var itemGroupArea
+
+```cangjie
+public var itemGroupArea: ?ListItemGroupArea
+```
+
+**Function:** Area where the **ListItemGroup** is located.
+
+**Type:** ?[ListItemGroupArea](#enum-listitemgrouparea)
+
+**Access:** Read-write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since Version:** 26.1.0
+
+#### var itemIndexInGroup
+
+```cangjie
+public var itemIndexInGroup: ?Int32
+```
+
+**Function:** Index of the **ListItem** in the **ListItemGroup**.
+
+**Type:** ?Int32
+
+**Access:** Read-write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since Version:** 26.1.0
+
+#### init(Int32, ?ListItemGroupArea, ?Int32)
+
+```cangjie
+public init(index: Int32, itemGroupArea!: ?ListItemGroupArea = Option<ListItemGroupArea>.None,
+    itemIndexInGroup!: ?Int32 = None)
+```
+
+**Function:** Constructor used to create a VisibleListContentInfo object.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since Version:** 26.1.0
+
+**Parameters:**
+
+| Parameter Name | Type | Required | Default Value | Description |
+|:---|:---|:---|:---|:---|
+| index | Int32 | Yes | - | Index of the list item or list item group. |
+| itemGroupArea | ?[ListItemGroupArea](#enum-listitemgrouparea) | No | Option\<ListItemGroupArea>.None | Position in the list item group. |
+| itemIndexInGroup | ?Int32 | No | None | Index of the list item in the list item group. |
+
+### enum ListItemGroupArea
+
+```cangjie
+public enum ListItemGroupArea <: Equatable<ListItemGroupArea> {
+    | None
+    | InListItemArea
+    | InHeaderArea
+    | InFooterArea
+    | ...
+}
+```
+
+Enumerates the areas of **ListItemGroup**.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since Version:** 26.1.0
+
+**Parent Type:**
+
+- Equatable\<[ListItemGroupArea](#enum-listitemgrouparea)>
+
+#### None
+
+```cangjie
+None
+```
+
+**Function:** Area other than the ListItem, header, and footer areas in the ListItemGroup. Used for an empty list item group (with no ListItem, header, or footer). Initial value.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+#### InListItemArea
+
+```cangjie
+InListItemArea
+```
+
+**Function:** ListItem area.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+#### InHeaderArea
+
+```cangjie
+InHeaderArea
+```
+
+**Function:** Header area.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+#### InFooterArea
+
+```cangjie
+InFooterArea
+```
+
+**Function:** Footer area.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+#### operator func ==(ListItemGroupArea)
+
+```cangjie
+public operator func ==(other: ListItemGroupArea): Bool
+```
+
+**Function:** Checks whether two **ListItemGroupArea** enums are equal.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since Version:** 26.1.0
+
+**Parameters:**
+
+| Parameter | Type | Required | Default | Description |
+|:----|:----|:----|:----|:----|
+| other | [ListItemGroupArea](#enum-listitemgrouparea) | Yes | - | The other **ListItemGroupArea** enum to compare. |
+
+**Return Value:**
+
+| Type | Description |
+|:----|:----|
+| Bool | Returns true if the two enums are equal; otherwise, returns false. |
+
+#### operator func !=(ListItemGroupArea)
+
+```cangjie
+public operator func !=(other: ListItemGroupArea): Bool
+```
+
+**Function:** Checks whether two **ListItemGroupArea** enums are not equal.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since Version:** 26.1.0
+
+**Parameters:**
+
+| Parameter | Type | Required | Default | Description |
+|:----|:----|:----|:----|:----|
+| other | [ListItemGroupArea](#enum-listitemgrouparea) | Yes | - | The other **ListItemGroupArea** enum to compare. |
+
+**Return Value:**
+
+| Type | Description |
+|:----|:----|
+| Bool | Returns true if the two enums are not equal; otherwise, returns false. |
+
+### enum ScrollSnapAlign
+
+```cangjie
+public enum ScrollSnapAlign <: Equatable<ScrollSnapAlign> {
+    | None
+    | Start
+    | Center
+    | End
+    | ...
+}
+```
+
+Sets the scroll snap alignment effect for list items when scrolling ends.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since Version:** 26.1.0
+
+**Parent Type:**
+
+- Equatable\<[ScrollSnapAlign](#enum-scrollsnapalign)>
+
+#### None
+
+```cangjie
+None
+```
+
+**Function:** No snap alignment; list items stay where scrolling stops. Initial value.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+#### Start
+
+```cangjie
+Start
+```
+
+**Function:** List items are aligned with the start edge of the List after scrolling stops.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+#### Center
+
+```cangjie
+Center
+```
+
+**Function:** List items are aligned with the center of the List after scrolling stops.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+#### End
+
+```cangjie
+End
+```
+
+**Function:** List items are aligned with the end edge of the List after scrolling stops.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+#### operator func ==(ScrollSnapAlign)
+
+```cangjie
+public operator func ==(other: ScrollSnapAlign): Bool
+```
+
+**Function:** Checks whether two **ScrollSnapAlign** enums are equal.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since Version:** 26.1.0
+
+**Parameters:**
+
+| Parameter | Type | Required | Default | Description |
+|:----|:----|:----|:----|:----|
+| other | [ScrollSnapAlign](#enum-scrollsnapalign) | Yes | - | The other **ScrollSnapAlign** enum to compare. |
+
+**Return Value:**
+
+| Type | Description |
+|:----|:----|
+| Bool | Returns true if the two enums are equal; otherwise, returns false. |
+
+#### operator func !=(ScrollSnapAlign)
+
+```cangjie
+public operator func !=(other: ScrollSnapAlign): Bool
+```
+
+**Function:** Checks whether two **ScrollSnapAlign** enums are not equal.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since Version:** 26.1.0
+
+**Parameters:**
+
+| Parameter | Type | Required | Default | Description |
+|:----|:----|:----|:----|:----|
+| other | [ScrollSnapAlign](#enum-scrollsnapalign) | Yes | - | The other **ScrollSnapAlign** enum to compare. |
+
+**Return Value:**
+
+| Type | Description |
+|:----|:----|
+| Bool | Returns true if the two enums are not equal; otherwise, returns false. |
 
 ## Example Code
 
@@ -455,7 +989,9 @@ class EntryView {
 }
 ```
 
-![list2](figures/list2.gif)### Example 3 (Setting Edit Mode)
+![list2](figures/list2.gif)
+
+### Example 3 (Setting Edit Mode)
 
 This example demonstrates how to set whether the current List component is in editable mode.
 
@@ -556,6 +1092,7 @@ class EntryView {
         .listDirection(Axis.Horizontal)
         .height(100.percent)
         .width(100.percent)
+        .scrollSnapAlign(ScrollSnapAlign.Center)
         .borderRadius(10.px)
         .backgroundColor(0xDCDCDC)
       }
@@ -569,3 +1106,305 @@ class EntryView {
 ```
 
 ![list4](figures/list4.gif)
+
+
+### Example 5 (Accurate Jump)
+
+This example shows that the **List** component jumps to a specified position when the scrollTo API is called.
+
+<!-- run -->
+
+```cangjie
+package ohos_app_cangjie_entry
+
+import kit.ArkUI.*
+import ohos.arkui.state_macro_manage.*
+
+@Entry
+@Component
+class EntryView {
+    let listScroller: ListScroller = ListScroller()
+
+    func build() {
+        Column() {
+            List(space: 10, initialIndex: 4, scroller: this.scroller) {
+                ForEach([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], itemGeneratorFunc: {
+                    item: Int64, _: Int64 => ListItem() {
+                        Text("item-${item}")
+                            .height(100).width(90.percent)
+                            .fontSize(16).textAlign(TextAlign.Center)
+                            .borderRadius(10).backgroundColor(0xFFFFFF)
+                    }
+                })
+            }
+            .backgroundColor(Color.Gray)
+            .layoutWeight(1)
+            .scrollBar(BarState.On)
+            .alignListItem(ListItemAlign.Center)
+
+            Button("scrollTo (0, 310)")
+                .onClick({ evt =>
+                    this.listScroller.scrollTo(xOffset: 0.0, yOffset: 310.0)
+                })
+        }
+    }
+}
+```
+
+![list5](figures/list5.png)
+
+### Example 6 (Obtaining the Index Information of Child Components)
+
+This example shows how to obtain the index information of list items while dragging in a grouped **List** component, with the list item at the current position highlighted.
+
+<!-- run -->
+
+```cangjie
+package ohos_app_cangjie_entry
+
+import kit.ArkUI.*
+import ohos.arkui.state_macro_manage.*
+
+class TimeTable {
+    var title: String
+    var projects: Array<String>
+
+    init(title: String, projects: Array<String>) {
+        this.title = title
+        this.projects = projects
+    }
+}
+
+@Entry
+@Component
+class EntryView {
+    private var timeTable: Array<TimeTable> = [
+        TimeTable("Monday", ["Chinese", "Math", "English"]),
+        TimeTable("Tuesday", ["Physics", "Chemistry", "Biology"]),
+        TimeTable("Wednesday", ["History", "Geography", "Politics"]),
+        TimeTable("Thursday", ["artCourse", "Music", "PE"])
+    ]
+    private var scroller: ListScroller = ListScroller()
+    @State
+    var listIndexInfo: Int32 = -1
+    @State
+    var mess: String = "null"
+    @State
+    var itemBackgroundColorArr: Array<Bool> = Array<Bool>(12, repeat: false)
+
+    @Builder
+    func ItemHead(text: String) {
+        Text(text).fontSize(20).backgroundColor(0xAABBCC).width(100.percent).padding(10)
+    }
+
+    @Builder
+    func ItemFoot(num: Int64) {
+        Text("${num} classes").fontSize(16).backgroundColor(0xAABBCC).padding(5)
+    }
+
+    func updateIndexInfo(localX: Float64, localY: Float64) {
+        try {
+            let info = this.scroller.getVisibleListContentInfo(localX, localY)
+            this.listIndexInfo = info.index
+            var itemIndex = "undefined"
+            if (info.itemIndexInGroup.isSome()) {
+                itemIndex = "${info.itemIndexInGroup.getOrThrow()}"
+                if (info.index >= 0 && info.itemIndexInGroup.getOrThrow() >= 0) {
+                    this.itemBackgroundColorArr[Int64(info.index) * 3 + Int64(info.itemIndexInGroup.getOrThrow())] = true
+                }
+            }
+            this.mess = "index:${info.index} itemIndex:${itemIndex}"
+        } catch (e: Exception) {
+            Hilog.error(0, "CangjieTest", "Failed to get visible list content info. Code: ${e.message}")
+        }
+    }
+
+    func build() {
+        Column() {
+            List(space: 20, scroller: this.scroller) {
+                ForEach(this.timeTable, itemGeneratorFunc: {
+                    item: TimeTable, index: Int64 =>
+                        ListItemGroup(header: this.ItemHead(item.title), footer: this.ItemFoot(item.projects.size)) {
+                            ForEach(item.projects, itemGeneratorFunc: {
+                                project: String, subIndex: Int64 => ListItem() {
+                                    Text(project)
+                                        .width(100.percent)
+                                        .height(100)
+                                        .fontSize(20)
+                                        .textAlign(TextAlign.Center)
+                                        .backgroundColor(
+                                            if (this.itemBackgroundColorArr[index * 3 + subIndex]) {
+                                                0x68B4FF
+                                            } else {
+                                                0xFFFFFF
+                                            })
+                                }
+                            }, keyGeneratorFunc: { project: String, _: Int64 => project })
+                        }
+                        .divider(ListDividerOptions(strokeWidth: 1, color: Color.Blue))
+                }, keyGeneratorFunc: { item: TimeTable, _: Int64 => item.title })
+            }
+            .width(90.percent)
+            .sticky(StickyStyle.Header)
+            .scrollBar(BarState.Off)
+            .gesture(
+                PanGesture()
+                    .onActionUpdate({ event: GestureEvent =>
+                        if (event.fingerList.size > 0) {
+                            this.updateIndexInfo(event.fingerList[0].localX, event.fingerList[0].localY)
+                        }
+                    })
+            )
+            .onClick({ evt =>
+                this.itemBackgroundColorArr = Array<Bool>(12, repeat: false)
+                this.mess = "null"
+            })
+            Text("The index of the item at the current position is ${this.mess}")
+                .fontColor(Color.Red)
+                .height(50)
+        }
+        .width(100.percent)
+        .height(90.percent)
+        .backgroundColor(0xDCDCDC)
+        .padding(top: 5)
+    }
+}
+```
+
+![getItemIndex_listGroup](figures/getItemIndex_listGroup.png)
+
+### Example 7 (Single-Side Edge Effect)
+
+This example uses the [edgeEffect](#func-edgeeffectedgeeffect-edgeeffectoptions) API to set a single-side edge effect for the **List** component.
+
+<!-- run -->
+
+```cangjie
+package ohos_app_cangjie_entry
+
+import kit.ArkUI.*
+import ohos.arkui.state_macro_manage.*
+
+@Entry
+@Component
+class EntryView {
+    let listScroller: ListScroller = ListScroller()
+
+    func build() {
+        Column() {
+            List(space: 20, initialIndex: 0, scroller: this.listScroller) {
+                ForEach([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+                    itemGeneratorFunc: {
+                        item: Int64, _: Int64 => ListItem() {
+                            Text("${item}")
+                                .width(100.percent).height(100).fontSize(16)
+                                .textAlign(TextAlign.Center).borderRadius(10).backgroundColor(0xFFFFFF)
+                        }
+                    })
+            }
+            .edgeEffect(EdgeEffect.Spring, options: EdgeEffectOptions(true, effectEdge: 1))
+            .width(90.percent)
+            .height(90.percent)
+        }
+        .width(100.percent)
+        .height(100.percent)
+        .backgroundColor(0xDCDCDC)
+        .padding(top: 5)
+    }
+}
+```
+
+
+![edgeEffect_list](figures/edgeEffect_list.png)
+
+### Example 8: Centering a List Item in a ListItemGroup on Click
+
+This example uses the [scrollToItemInGroup](#func-scrolltoitemingroupint32-int32-bool-scrollalign) API to center a [ListItem](./cj-scroll-swipe-listitem.md) in a [ListItemGroup](./cj-scroll-swipe-listgroup.md) when it is clicked.
+
+<!-- run -->
+
+```cangjie
+package ohos_app_cangjie_entry
+
+import kit.ArkUI.*
+import ohos.arkui.state_macro_manage.*
+
+class Contact {
+    var name: String
+
+    init(name: String) {
+        this.name = name
+    }
+}
+
+class ContactsGroup {
+    var title: String
+    var contacts: Array<Contact>
+
+    init(title: String, contacts: Array<Contact>) {
+        this.title = title
+        this.contacts = contacts
+    }
+}
+
+@Entry
+@Component
+class EntryView {
+    private var listScroller: ListScroller = ListScroller()
+    private var contactsGroups: Array<ContactsGroup> = [
+        ContactsGroup("A", [
+            Contact("Aijia"), Contact("Anan"), Contact("Angela"),
+            Contact("Abao"), Contact("Anqi"), Contact("Aiwen")
+        ]),
+        ContactsGroup("B", [
+            Contact("Baiye"), Contact("Boming"), Contact("Baiyun"),
+            Contact("Baili"), Contact("Binbin"), Contact("Beibei")
+        ])
+    ]
+
+    @Builder
+    func ItemHead(text: String) {
+        Text(text).fontSize(20).backgroundColor(0xFFF1F3F5).width(100.percent).padding(5)
+    }
+
+    func build() {
+        List(scroller: this.listScroller) {
+            ForEach(this.contactsGroups, itemGeneratorFunc: {
+                item: ContactsGroup, index: Int64 =>
+                    ListItemGroup(header: this.ItemHead(item.title)) {
+                        ForEach(item.contacts, itemGeneratorFunc: {
+                            contact: Contact, subIndex: Int64 => ListItem() {
+                                Row() {
+                                    Image(@r(app.media.icon))
+                                        .width(40)
+                                        .height(40)
+                                        .margin(10)
+                                    Text(contact.name).fontSize(20)
+                                }
+                                .width(100.percent)
+                                .justifyContent(FlexAlign.Start)
+                                .margin(10)
+                            }
+                            .onClick({ evt =>
+                                try {
+                                    let itemRect = this.listScroller.getItemRectInGroup(Int32(index), Int32(subIndex))
+                                    Hilog.info(0, "CangjieTest", "x: ${itemRect.x}, y: ${itemRect.y}, width: ${itemRect.width}, height: ${itemRect.height}")
+                                    this.listScroller.scrollToItemInGroup(Int32(index), Int32(subIndex), smooth: true, align: ScrollAlign.Center)
+                                } catch (e: Exception) {
+                                    Hilog.error(0, "CangjieTest", "getItemRectInGroup or scrollToItemInGroup failed, error: ${e.message}")
+                                }
+                            })
+                        })
+                    }
+                    .divider(ListDividerOptions(strokeWidth: 4.vp))
+                    .width(100.percent)
+            }, keyGeneratorFunc: { item: ContactsGroup, _: Int64 => item.title })
+        }
+        .onScrollFrameBegin({ offset: Float64, state: ScrollState =>
+            OnScrollFrameBeginHandlerResult(offsetRemain: offset)
+        })
+    }
+}
+```
+
+![scrollToItemInGroup](figures/scrollToItemInGroup.png)

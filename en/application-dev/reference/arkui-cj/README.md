@@ -78,6 +78,7 @@
         - [GridRow](cj-grid-layout-gridrow.md)(Beta Feature)
         - [GridCol](cj-grid-layout-gridcol.md)(Beta Feature)
         - [RowSplit](cj-grid-layout-rowsplit.md)(Beta Feature)
+        - [ColumnSplit](cj-grid-layout-columnsplit.md)(Beta Feature)
         - [SideBarContainer](cj-grid-layout-sidebar.md)(Beta Feature)
     - Scrolling & Swiping
         - [List](cj-scroll-swipe-list.md)(Beta Feature)
