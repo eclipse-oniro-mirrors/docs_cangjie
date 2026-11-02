@@ -24,6 +24,7 @@
             - [Telephony Kit (Cellular Communication Service)](telephony/README.md)(Beta Feature)
         - Basic Features
             - [Basic Services Kit (Basic Services)](basic-services/README.md)(Beta Feature)
+            - [Notification Kit (User Notification Service)](notification/README.md)(Beta Feature)
         - Hardware
             - [Sensor Service Kit (Sensor Service)](device/sensor/README.md)(Beta Feature)
         - Debugging and Optimization

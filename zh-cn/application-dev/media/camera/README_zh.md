@@ -8,3 +8,5 @@
     - [会话管理](cj-camera-session-management.md)（Beta特性）
 - 开发相机应用基础能力
     - [手电筒使用](cj-camera-torch-use.md)（Beta特性）
+    - [元数据](cj-camera-metadata.md)（Beta特性）
+    - [通过系统相机拍照和录像](cj-camera-picker.md)（Beta特性）

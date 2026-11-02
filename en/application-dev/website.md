@@ -376,6 +376,12 @@
                         - [Publishing Common Events](basic-services/common-event/cj-common-event-publish.md)
                 - Upload/Download
                     - [Application File Upload/Download](basic-services/request/cj-app-file-upload-download.md)
+            - Notification Kit (User Notification Service)
+                - [Introduction to Notification Kit](notification/cj-notification-overview.md)
+                - [Publishing a Text Notification](notification/cj-text-notification.md)
+                - [Requesting Notification Authorization](notification/cj-notification-enable.md)
+                - [Managing the Notification Badge](notification/cj-notification-badge.md)
+                - [Canceling a Notification](notification/cj-notification-cancel.md)
         - Hardware
             - Sensor Service Kit (Sensor Service)
                 - [Introduction to Sensor Service Kit Development](device/sensor/cj-sensorservice-kit-intro.md)
@@ -447,6 +453,8 @@
                 - [Device Input](media/camera/cj-camera-device-input.md)
                 - [Session Management](media/camera/cj-camera-session-management.md)
                 - [Flashlight Usage](media/camera/cj-camera-torch-use.md)
+                - [Camera Metadata](media/camera/cj-camera-metadata.md)
+                - [Using the System Camera to Take Photos and Record Videos](media/camera/cj-camera-picker.md)
         - Image Kit (Image Processing Service)
             - [Image Kit Overview](media/image/cj-image-overview.md)
             - Image Development Guide
@@ -790,6 +798,11 @@
                     - [Event Error Codes](reference/BasicServicesKit/cj-errorcode-common_event_service.md)
                     - [System Power Management Error Codes](reference/BasicServicesKit/cj-errorcode-power.md)
                     - [Account Management Error Codes](reference/BasicServicesKit/cj-errorcode-basic-account.md)
+            - Notification Kit (User Notification Service)
+                - Cangjie API
+                    - [ohos.notification_manager (Notification Management)](reference/NotificationKit/cj-apis-notification-manager.md)
+                - Error Codes
+                    - [Notification Error Codes](reference/NotificationKit/cj-errorcode-notification.md)
         - Hardware
             - Sensor Service Kit (Sensor Service)
                 - Cangjie API
@@ -818,6 +831,7 @@
         - Camera Kit (Camera Service)
             - Cangjie APIs
                 - [ohos.multimedia.camera (Camera Management)](reference/CameraKit/cj-apis-multimedia-camera.md)
+                - [ohos.multimedia.camera_picker (Camera Picker)](reference/CameraKit/cj-apis-multimedia-camera-picker.md)
             - Error Codes
                 - [Camera Error Codes](reference/CameraKit/cj-errorcode-multimedia-camera.md)
         - Image Kit (Image Processing Service)

@@ -518,7 +518,9 @@ try {
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
-```## interface CameraOutput
+```
+
+## interface CameraOutput
 
 ```cangjie
 public interface CameraOutput {
@@ -1028,7 +1030,9 @@ try {
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
-```## interface Focus
+```
+
+## interface Focus
 
 ```cangjie
 public interface Focus <: FocusQuery {
@@ -1443,7 +1447,9 @@ try {
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
-```### func addOutput(CameraOutput)
+```
+
+### func addOutput(CameraOutput)
 
 ```cangjie
 func addOutput(cameraOutput: CameraOutput): Unit
@@ -1915,7 +1921,9 @@ try {
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
-```## interface Stabilization
+```
+
+## interface Stabilization
 
 ```cangjie
 public interface Stabilization <: StabilizationQuery {
@@ -2371,7 +2379,9 @@ try {
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
-```## class CameraDevice
+```
+
+## class CameraDevice
 
 ```cangjie
 public class CameraDevice {
@@ -2786,7 +2796,9 @@ try {
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
-```## class CameraManager
+```
+
+## class CameraManager
 
 ```cangjie
 public class CameraManager {}
@@ -2914,6 +2926,62 @@ try {
     let position = cameraDevice0.cameraPosition
     let cameraType = cameraDevice0.cameraType
     let cameraInput = cameraManager.createCameraInput(position , cameraType)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
+### func createMetadataOutput(Array\<MetadataObjectType>)
+
+```cangjie
+public func createMetadataOutput(metadataObjectTypes: Array<MetadataObjectType>): MetadataOutput
+```
+
+**Description:** Creates a metadata output object. This API returns the result synchronously.
+
+**System Capability:** SystemCapability.Multimedia.Camera.Core
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+|Name|Type|Mandatory|Default Value|Description|
+|:---|:---|:---|:---|:---|
+|metadataObjectTypes|Array\<[MetadataObjectType](#enum-metadataobjecttype)>|Yes|-|Type of the metadata object, obtained via [getSupportedOutputCapability](#func-getsupportedoutputcapabilitycameradevice-scenemode).|
+
+**Return Value:**
+
+|Type|Description|
+|:----|:----|
+|[MetadataOutput](#class-metadataoutput)|Metadata output object created.|
+
+**Exceptions:**
+
+- BusinessException: For details about the error codes, see [Camera Error Codes](./cj-errorcode-multimedia-camera.md).
+
+  | Error Code ID | Error Message |
+  | :---- | :--- |
+  | 7400101 | Parameter missing or parameter type incorrect. |
+  | 7400201 | Camera service fatal error. |
+
+**Example:**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.CameraKit.*
+import kit.CangjieKit.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
+
+try {
+    let ctx = Global.abilityContext // The template must be configured manually to obtain the Context. For details about how to obtain the context, see the usage instructions.
+    let cameraManager = getCameraManager(ctx)
+    let cameraDevice = cameraManager.getSupportedCameras()[0]
+    let mode = cameraManager.getSupportedSceneModes(cameraDevice)[0]
+    let ability = cameraManager.getSupportedOutputCapability(cameraDevice, mode)
+    let metadataOutput = cameraManager.createMetadataOutput(ability.supportedMetadataObjectTypes)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -3194,23 +3262,25 @@ public func createVideoOutput(profile: VideoProfile, surfaceId: String): VideoOu
 // index.cj
 
 import kit.CameraKit.*
-import kit.ImageKit.createImageReceiver
-import kit.ImageKit.Size as ImageSize
-import kit.ImageKit.ImageFormat
-import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
     let ctx = Global.getAbilityContext() // Obtain the Context application context. For details, see the usage instructions in this document.
     let cameraManager = getCameraManager(ctx)
-    let size = ImageSize(8, 8192)
-    let receiver = createImageReceiver(size, ImageFormat.Jpeg, 8)
-    let surfaceId: String = receiver.getReceivingSurfaceId()
-    let videoOutput = cameraManager.createVideoOutput(surfaceId)
-} catch (e: BusinessException) {
+    let cameraDevices = cameraManager.getSupportedCameras()
+    let camera = cameraDevices[0]
+    let mode = cameraManager.getSupportedSceneModes(camera)[0]
+    let cameraOutputCapability = cameraManager.getSupportedOutputCapability(camera, mode)
+    let profile = cameraOutputCapability.videoProfiles[0]
+    // Assume the surfaceId is obtained from the AVRecorder.
+    let surfaceId: String = "surfaceId_from_avrecorder"
+    let videoOutput = cameraManager.createVideoOutput(profile, surfaceId)
+} catch (e: Exception) {
     Hilog.info(0, "test", "${e.message}")
 }
-```### func createVideoOutput(String)
+```
+
+### func createVideoOutput(String)
 
 ```cangjie
 public func createVideoOutput(surfaceId: String): VideoOutput
@@ -3652,7 +3722,9 @@ try {
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
-```### func off(CameraEvents, Callback1Argument\<TorchStatusInfo>)
+```
+
+### func off(CameraEvents, Callback1Argument\<TorchStatusInfo>)
 
 ```cangjie
 public func off(eventType: CameraEvents, callback: Callback1Argument<TorchStatusInfo>): Unit
@@ -4055,7 +4127,9 @@ public let videoProfiles: Array<VideoProfile>
 
 **System Capability:** SystemCapability.Multimedia.Camera.Core
 
-**Since:** 22## class CameraStatusInfo
+**Since:** 22
+
+## class CameraStatusInfo
 
 ```cangjie
 public class CameraStatusInfo {
@@ -4452,6 +4526,459 @@ public init(latitude: Float64, longitude: Float64, altitude: Float64)
 | longitude | Float64 | Yes      | -       | Longitude (degrees).   |
 | altitude  | Float64 | Yes      | -       | Altitude (meters).     |
 
+## class MetadataObject
+
+```cangjie
+public open class MetadataObject {}
+```
+
+**Description:** Camera metadata object, which serves as the data source of the camera input. The metadata object is obtained through [MetadataOutput.onMetadataObjectsAvailable](#class-metadataoutput).
+
+**System Capability:** SystemCapability.Multimedia.Camera.Core
+
+**Since:** 26.1.0
+
+### prop boundingBox
+
+```cangjie
+public prop boundingBox: Rect
+```
+
+**Description:** Rectangle area of the metadata.
+
+**Type:** [Rect](#class-rect)
+
+**Accessibility:** Read-only
+
+**System Capability:** SystemCapability.Multimedia.Camera.Core
+
+**Since:** 26.1.0
+
+### prop metadataObjectType
+
+```cangjie
+public prop metadataObjectType: MetadataObjectType
+```
+
+**Description:** Type of the metadata object.
+
+**Type:** [MetadataObjectType](#enum-metadataobjecttype)
+
+**Accessibility:** Read-only
+
+**System Capability:** SystemCapability.Multimedia.Camera.Core
+
+**Since:** 26.1.0
+
+### prop timestamp
+
+```cangjie
+public prop timestamp: Int32
+```
+
+**Description:** Timestamp, in nanoseconds.
+
+**Type:** Int32
+
+**Accessibility:** Read-only
+
+**System Capability:** SystemCapability.Multimedia.Camera.Core
+
+**Since:** 26.1.0
+
+## class MetadataOutput
+
+```cangjie
+public class MetadataOutput <: CameraOutput {}
+```
+
+**Description:** Metadata output object, inherited from [CameraOutput](#interface-cameraoutput). It provides metadata stream control and callback subscription capabilities.
+
+**System Capability:** SystemCapability.Multimedia.Camera.Core
+
+**Since:** 26.1.0
+
+### func offError(?Callback0Argument)
+
+```cangjie
+public func offError(callback!: ?Callback0Argument = None): Unit
+```
+
+**Description:** Unsubscribes from the metadata output error event callback. If no callback is specified, all callbacks are unsubscribed from.
+
+**System Capability:** SystemCapability.Multimedia.Camera.Core
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+|Name|Type|Mandatory|Default Value|Description|
+|:---|:---|:---|:---|:---|
+|callback|?[Callback0Argument](../arkinterop/cj-api-callback_invoke.md#class-callback0argument)|No|None|**Named parameter.** Callback to unsubscribe from. If this parameter is not specified, all callbacks are unsubscribed from.|
+
+**Example:**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.CameraKit.*
+import kit.CangjieKit.{BusinessException, Callback0Argument}
+import kit.PerformanceAnalysisKit.Hilog
+
+class MetadataErrorCallback <: Callback0Argument {
+    public open func invoke(err: ?BusinessException): Unit {
+        match (err) {
+            case Some(e) => Hilog.error(0, "test", "metadataOutput error: ${e.message}")
+            case None => ()
+        }
+    }
+}
+
+try {
+    let ctx = Global.abilityContext // The template must be configured manually to obtain the Context. For details about how to obtain the context, see the usage instructions.
+    let cameraManager = getCameraManager(ctx)
+    let cameraDevice = cameraManager.getSupportedCameras()[0]
+    let mode = cameraManager.getSupportedSceneModes(cameraDevice)[0]
+    let ability = cameraManager.getSupportedOutputCapability(cameraDevice, mode)
+    let metadataOutput = cameraManager.createMetadataOutput(ability.supportedMetadataObjectTypes)
+    metadataOutput.onError(MetadataErrorCallback())
+    // Unsubscribe from the metadata output error event callback.
+    metadataOutput.offError()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
+### func offMetadataObjectsAvailable(?Callback1Argument\<Array\<MetadataObject>>)
+
+```cangjie
+public func offMetadataObjectsAvailable(callback!: ?Callback1Argument<Array<MetadataObject>> = None): Unit
+```
+
+**Description:** Unsubscribes from the metadata object available event callback. If no callback is specified, all callbacks are unsubscribed from.
+
+**System Capability:** SystemCapability.Multimedia.Camera.Core
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+|Name|Type|Mandatory|Default Value|Description|
+|:---|:---|:---|:---|:---|
+|callback|?Callback1Argument\<Array\<[MetadataObject](#class-metadataobject)>>|No|None|**Named parameter.** Callback to unsubscribe from. If this parameter is not specified, all callbacks are unsubscribed from.|
+
+**Example:**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.CameraKit.*
+import kit.CangjieKit.{BusinessException, Callback1Argument}
+import kit.PerformanceAnalysisKit.Hilog
+
+class MetadataCallback <: Callback1Argument<Array<MetadataObject>> {
+    public open func invoke(err: ?BusinessException, objects: Array<MetadataObject>): Unit {
+        for (obj in objects) {
+            Hilog.info(0, "test", "metadataObjectType=${obj.metadataObjectType}")
+        }
+    }
+}
+
+try {
+    let ctx = Global.getAbilityContext // The template must be configured manually to obtain the Context. For details about how to obtain the context, see the usage instructions.
+    let cameraManager = getCameraManager(ctx)
+    let cameraDevice = cameraManager.getSupportedCameras()[0]
+    let mode = cameraManager.getSupportedSceneModes(cameraDevice)[0]
+    let ability = cameraManager.getSupportedOutputCapability(cameraDevice, mode)
+    let metadataOutput = cameraManager.createMetadataOutput(ability.supportedMetadataObjectTypes)
+    metadataOutput.onMetadataObjectsAvailable(MetadataCallback())
+    // Unsubscribe from the metadata object available event callback.
+    metadataOutput.offMetadataObjectsAvailable()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
+### func onError(Callback0Argument)
+
+```cangjie
+public func onError(callback: Callback0Argument): Unit
+```
+
+**Description:** Subscribes to the metadata output error event callback.
+
+**System Capability:** SystemCapability.Multimedia.Camera.Core
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+|Name|Type|Mandatory|Default Value|Description|
+|:---|:---|:---|:---|:---|
+|callback|[Callback0Argument](../arkinterop/cj-api-callback_invoke.md#class-callback0argument)|Yes|-|Callback used to obtain metadata output errors.|
+
+**Example:**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.CameraKit.*
+import kit.CangjieKit.{BusinessException, Callback0Argument}
+import kit.PerformanceAnalysisKit.Hilog
+
+class MetadataErrorCallback <: Callback0Argument {
+    public open func invoke(err: ?BusinessException): Unit {
+        match (err) {
+            case Some(e) => Hilog.error(0, "test", "metadataOutput error: ${e.message}")
+            case None => ()
+        }
+    }
+}
+
+try {
+    let ctx = Global.abilityContext // The template must be configured manually to obtain the Context. For details about how to obtain the context, see the usage instructions.
+    let cameraManager = getCameraManager(ctx)
+    let cameraDevice = cameraManager.getSupportedCameras()[0]
+    let mode = cameraManager.getSupportedSceneModes(cameraDevice)[0]
+    let ability = cameraManager.getSupportedOutputCapability(cameraDevice, mode)
+    let metadataOutput = cameraManager.createMetadataOutput(ability.supportedMetadataObjectTypes)
+    metadataOutput.onError(MetadataErrorCallback())
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
+### func onMetadataObjectsAvailable(Callback1Argument\<Array\<MetadataObject>>)
+
+```cangjie
+public func onMetadataObjectsAvailable(callback: Callback1Argument<Array<MetadataObject>>): Unit
+```
+
+**Description:** Subscribes to the metadata object available event callback.
+
+**System Capability:** SystemCapability.Multimedia.Camera.Core
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+|Name|Type|Mandatory|Default Value|Description|
+|:---|:---|:---|:---|:---|
+|callback|Callback1Argument\<Array\<[MetadataObject](#class-metadataobject)>>|Yes|-|Callback used to obtain available metadata objects.|
+
+**Example:**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.CameraKit.*
+import kit.CangjieKit.Callback1Argument
+import kit.CangjieKit.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
+
+class MetadataCallback <: Callback1Argument<Array<MetadataObject>> {
+    public open func invoke(err: ?BusinessException, objects: Array<MetadataObject>): Unit {
+        for (obj in objects) {
+            Hilog.info(0, "test", "metadataObjectType=${obj.metadataObjectType}")
+        }
+    }
+}
+
+try {
+    let ctx = Global.abilityContext // The template must be configured manually to obtain the Context. For details about how to obtain the context, see the usage instructions.
+    let cameraManager = getCameraManager(ctx)
+    let cameraDevice = cameraManager.getSupportedCameras()[0]
+    let mode = cameraManager.getSupportedSceneModes(cameraDevice)[0]
+    let ability = cameraManager.getSupportedOutputCapability(cameraDevice, mode)
+    let metadataOutput = cameraManager.createMetadataOutput(ability.supportedMetadataObjectTypes)
+    metadataOutput.onMetadataObjectsAvailable(MetadataCallback())
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
+### func release()
+
+```cangjie
+public func release(): Unit
+```
+
+**Description:** Releases metadata output resources.
+
+**System Capability:** SystemCapability.Multimedia.Camera.Core
+
+**Since:** 26.1.0
+
+**Example:**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.CameraKit.*
+import kit.CangjieKit.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
+
+try {
+    let ctx = Global.abilityContext // The template must be configured manually to obtain the Context. For details about how to obtain the context, see the usage instructions.
+    let cameraManager = getCameraManager(ctx)
+    let cameraDevice = cameraManager.getSupportedCameras()[0]
+    let mode = cameraManager.getSupportedSceneModes(cameraDevice)[0]
+    let ability = cameraManager.getSupportedOutputCapability(cameraDevice, mode)
+    let metadataOutput = cameraManager.createMetadataOutput(ability.supportedMetadataObjectTypes)
+    metadataOutput.release()
+    Hilog.info(0, "test", "metadataOutput released")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
+### func start(AsyncCallback\<Unit>)
+
+```cangjie
+public func start(callback: AsyncCallback<Unit>): Unit
+```
+
+**Description:** Starts outputting metadata. This API uses an asynchronous callback to return the result.
+
+**System Capability:** SystemCapability.Multimedia.Camera.Core
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+|Name|Type|Mandatory|Default Value|Description|
+|:---|:---|:---|:---|:---|
+|callback|AsyncCallback\<Unit>|Yes|-|Callback used to return the result. If the operation is successful, `err` is `None`; otherwise, `err` contains the error code.|
+
+**Exceptions:**
+
+- BusinessException: For details about the error codes, see [Camera Error Codes](./cj-errorcode-multimedia-camera.md).
+
+  | Error Code ID | Error Message |
+  | :---- | :--- |
+  | 7400103 | Session not config. |
+  | 7400201 | Camera service fatal error. |
+
+**Example:**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.CameraKit.*
+import kit.CangjieKit.{AsyncCallback, BusinessException}
+import kit.PerformanceAnalysisKit.Hilog
+
+try {
+    let ctx = Global.abilityContext // The template must be configured manually to obtain the Context. For details about how to obtain the context, see the usage instructions.
+    let cameraManager = getCameraManager(ctx)
+    let cameraDevice = cameraManager.getSupportedCameras()[0]
+    let mode = cameraManager.getSupportedSceneModes(cameraDevice)[0]
+    let ability = cameraManager.getSupportedOutputCapability(cameraDevice, mode)
+    let metadataOutput = cameraManager.createMetadataOutput(ability.supportedMetadataObjectTypes)
+    let callback: AsyncCallback<Unit> = {
+        err: Option<BusinessException>, data: Option<Unit> =>
+        if (let Some(e) <- err) {
+            Hilog.error(0, "test", "start error: code=${e.code}, message=${e.message}")
+        } else {
+            Hilog.info(0, "test", "metadataOutput started")
+        }
+    }
+    metadataOutput.start(callback)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
+### func stop(AsyncCallback\<Unit>)
+
+```cangjie
+public func stop(callback: AsyncCallback<Unit>): Unit
+```
+
+**Description:** Stops outputting metadata. This API uses an asynchronous callback to return the result.
+
+**System Capability:** SystemCapability.Multimedia.Camera.Core
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+|Name|Type|Mandatory|Default Value|Description|
+|:---|:---|:---|:---|:---|
+|callback|AsyncCallback\<Unit>|Yes|-|Callback used to return the result. If the operation is successful, `err` is `None`; otherwise, `err` contains error information.|
+
+**Example:**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.CameraKit.*
+import kit.CangjieKit.{AsyncCallback, BusinessException}
+import kit.PerformanceAnalysisKit.Hilog
+
+try {
+    let ctx = Global.abilityContext // The template must be configured manually to obtain the Context. For details about how to obtain the context, see the usage instructions.
+    let cameraManager = getCameraManager(ctx)
+    let cameraDevice = cameraManager.getSupportedCameras()[0]
+    let mode = cameraManager.getSupportedSceneModes(cameraDevice)[0]
+    let ability = cameraManager.getSupportedOutputCapability(cameraDevice, mode)
+    let metadataOutput = cameraManager.createMetadataOutput(ability.supportedMetadataObjectTypes)
+    let callback: AsyncCallback<Unit> = {
+        err: Option<BusinessException>, data: Option<Unit> =>
+        if (let Some(e) <- err) {
+            Hilog.error(0, "test", "stop error: code=${e.code}, message=${e.message}")
+        } else {
+            Hilog.info(0, "test", "metadataOutput stopped")
+        }
+    }
+    metadataOutput.stop(callback)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
+## class Photo
+
+```cangjie
+public class Photo {}
+```
+
+**Description:** Full-quality image object.
+
+**System Capability:** SystemCapability.Multimedia.Camera.Core
+
+**Since:** 26.1.0
+
+### prop mainImage
+
+```cangjie
+public mut prop mainImage: ImageType
+```
+
+**Description:** Full-quality image.
+
+**Type:** [ImageType](#enum-imagetype)
+
+**Accessibility:** Read-write
+
+**System Capability:** SystemCapability.Multimedia.Camera.Core
+
+**Since:** 26.1.0
+
 ## class PhotoCaptureSetting
 
 ```cangjie
@@ -4563,7 +5090,9 @@ public init(
 | quality   | [QualityLevel](#enum-qualitylevel) | No       | QualityLevel.QualityLevelLow | **Named parameter.** Image quality (default low).                          |
 | rotation  | [ImageRotation](#enum-imagerotation) | No       | ImageRotation.Rotation0     | **Named parameter.** Image rotation angle (default 0 degrees).             |
 | location  | ?[Location](#class-location)         | No       | None                       | **Named parameter.** Image geographical location information (defaults to device hardware information). |
-| mirror    | Bool                     | No       | false                      | **Named parameter.** Mirror enable switch (default off). Use [isMirrorSupported](#func-ismirrorsupported) to check support before using. |## class PhotoOutput
+| mirror    | Bool                     | No       | false                      | **Named parameter.** Mirror enable switch (default off). Use [isMirrorSupported](#func-ismirrorsupported) to check support before using. |
+
+## class PhotoOutput
 
 ```cangjie
 public class PhotoOutput CameraOutput {}
@@ -4986,7 +5515,9 @@ try {
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
-```### func isMovingPhotoSupported()
+```
+
+### func isMovingPhotoSupported()
 
 ```cangjie
 public func isMovingPhotoSupported(): Bool
@@ -5390,7 +5921,59 @@ try {
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
-```### func on(CameraEvents, Callback1Argument\<CaptureStartInfo>)
+```
+
+### func offPhotoAvailable(?Callback1Argument\<Photo>)
+
+```cangjie
+public func offPhotoAvailable(callback!: ?Callback1Argument<Photo> = None): Unit
+```
+
+**Description:** Unsubscribes from the full-quality photo available event callback. If no callback is specified, all callbacks are unsubscribed from.
+
+**System Capability:** SystemCapability.Multimedia.Camera.Core
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+|Name|Type|Mandatory|Default Value|Description|
+|:---|:---|:---|:---|:---|
+|callback|?Callback1Argument\<[Photo](#class-photo)>|No|None|**Named parameter.** Callback to unsubscribe from. If this parameter is not specified, all callbacks are unsubscribed from.|
+
+**Example:**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.CameraKit.*
+import kit.CangjieKit.Callback1Argument
+import kit.CangjieKit.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
+
+class PhotoCallback <: Callback1Argument<Photo> {
+    public open func invoke(err: ?BusinessException, photo: Photo): Unit {
+        Hilog.info(0, "test", "onPhotoAvailable: photo received")
+    }
+}
+
+try {
+    let ctx = Global.abilityContext // The template must be configured manually to obtain the Context. For details about how to obtain the context, see the usage instructions.
+    let cameraManager = getCameraManager(ctx)
+    let cameraDevice = cameraManager.getSupportedCameras()[0]
+    let mode = cameraManager.getSupportedSceneModes(cameraDevice)[0]
+    let ability = cameraManager.getSupportedOutputCapability(cameraDevice, mode)
+    let photoOutput = cameraManager.createPhotoOutput(profile: ability.photoProfiles[0])
+    let callback = PhotoCallback()
+    photoOutput.offPhotoAvailable(callback: callback)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
+### func on(CameraEvents, Callback1Argument\<CaptureStartInfo>)
 
 ```cangjie
 public func on(eventType: CameraEvents, callback: Callback1Argument<CaptureStartInfo>): Unit
@@ -5780,6 +6363,55 @@ try {
 }
 ```
 
+### func onPhotoAvailable(Callback1Argument\<Photo>)
+
+```cangjie
+public func onPhotoAvailable(callback: Callback1Argument<Photo>): Unit
+```
+
+**Description:** Subscribes to the full-quality photo available event callback.
+
+**System Capability:** SystemCapability.Multimedia.Camera.Core
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+|Name|Type|Mandatory|Default Value|Description|
+|:---|:---|:---|:---|:---|
+|callback|Callback1Argument\<[Photo](#class-photo)>|Yes|-|Callback used to obtain the full-quality photo.|
+
+**Example:**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.CameraKit.*
+import kit.CangjieKit.Callback1Argument
+import kit.CangjieKit.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
+
+class PhotoCallback <: Callback1Argument<Photo> {
+    public open func invoke(err: ?BusinessException, photo: Photo): Unit {
+        Hilog.info(0, "test", "onPhotoAvailable: photo received")
+    }
+}
+
+try {
+    let ctx = Global.abilityContext // The template must be configured manually to obtain the Context. For details about how to obtain the context, see the usage instructions.
+    let cameraManager = getCameraManager(ctx)
+    let cameraDevice = cameraManager.getSupportedCameras()[0]
+    let mode = cameraManager.getSupportedSceneModes(cameraDevice)[0]
+    let ability = cameraManager.getSupportedOutputCapability(cameraDevice, mode)
+    let photoOutput = cameraManager.createPhotoOutput(profile: ability.photoProfiles[0])
+    photoOutput.onPhotoAvailable(PhotoCallback())
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
 ### func release()
 
 ```cangjie
@@ -5867,7 +6499,14 @@ try {
     let device = cameraManager.getSupportedCameras()[0]
     let mode = cameraManager.getSupportedSceneModes(device)[0]
     let ability = cameraManager.getSupportedOutputCapability(device, mode)
-    let output = cameraManager.createPhotoOutput(profile:ability.photoProf## class PhotoSession
+    let output = cameraManager.createPhotoOutput(profile:ability.photoProfiles[0])
+    output.setMovingPhotoVideoCodecType(VideoCodecType.Avc)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
+## class PhotoSession
 
 ```cangjie
 public class PhotoSession  Session & Flash & AutoExposure & Focus & Zoom & ColorManagement {}
@@ -6334,7 +6973,9 @@ try {
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
-```## class Point
+```
+
+## class Point
 
 ```cangjie
 public class Point {
@@ -6879,7 +7520,134 @@ try {
     let size = ImageSize(8, 8192)
     let receiver = createImageReceiver(size, ImageFormat.Jpeg, 8)
     let surfaceId: String = receiver.getReceivingSurfaceId()
-    let output =## class Profile
+    let output = cameraManager.createPreviewOutput(ability.previewProfiles[0], surfaceId)
+    output.release()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
+### func setFrameRate(Int32, Int32)
+
+```cangjie
+public func setFrameRate(minFps: Int32, maxFps: Int32): Unit
+```
+
+**Function:** Sets the frame rate range for the preview stream. The specified range must be within the supported frame rate range. Before setting, query supported ranges via [getSupportedFrameRates](#func-getsupportedframerates).
+
+> **Note:**
+>
+> Only supported in [PhotoSession](#class-photosession) or [VideoSession](#class-videosession) modes.
+
+**System Capability:** SystemCapability.Multimedia.Camera.Core
+
+**Since:** 22
+
+**Parameters:**
+
+| Parameter Name | Type | Required | Default Value | Description |
+|:---|:---|:---|:---|:---|
+| minFps | Int32 | Yes | - | Minimum frame rate (in fps). If the maximum value passed in is less than the minimum value, the parameters are invalid, and the interface does not take effect. |
+| maxFps | Int32 | Yes | - | Maximum frame rate (in fps). If the minimum value passed in is greater than the maximum value, the parameters are invalid, and the interface does not take effect. |
+
+**Exceptions:**
+
+- BusinessException: Corresponding error codes are listed below. For details, see [Camera Error Codes](./cj-errorcode-multimedia-camera.md).
+
+  | Error Code ID | Error Message |
+  | :---- | :--- |
+  | 7400101 | Parameter missing or parameter type incorrect. |
+  | 7400110 | Unresolved conflicts with current configurations. |
+
+**Example:**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.CameraKit.*
+import kit.ImageKit.createImageReceiver
+import kit.ImageKit.Size as ImageSize
+import kit.ImageKit.ImageFormat
+import kit.CangjieKit.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
+
+try {
+    let ctx = Global.getAbilityContext() // Context application context required. See usage instructions for details.
+    let cameraManager = getCameraManager(ctx)
+    let device = cameraManager.getSupportedCameras()[0]
+    let mode = cameraManager.getSupportedSceneModes(device)[0]
+    let ability = cameraManager.getSupportedOutputCapability(device, mode)
+    let size = ImageSize(8, 8192)
+    let receiver = createImageReceiver(size, ImageFormat.Jpeg, 8)
+    let surfaceId: String = receiver.getReceivingSurfaceId()
+    let output = cameraManager.createPreviewOutput(ability.previewProfiles[0], surfaceId)
+    output.setFrameRate(30, 60)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
+### func setPreviewRotation(ImageRotation, Bool)
+
+```cangjie
+public func setPreviewRotation(previewRotation: ImageRotation, isDisplayLocked!: Bool = false): Unit
+```
+
+**Function:** Sets the preview rotation angle.
+
+**System Capability:** SystemCapability.Multimedia.Camera.Core
+
+**Since:** 22
+
+**Parameters:**
+
+| Parameter Name | Type | Required | Default Value | Description |
+|:---|:---|:---|:---|:---|
+| previewRotation | [ImageRotation](#enum-imagerotation) | Yes | - | Preview rotation angle. |
+| isDisplayLocked | Bool | No | false | **Named parameter.** Whether the surface is locked in orientation when the screen rotates. The default value is **false**, indicating that the orientation is not locked. **true** indicates that the orientation is locked, and **false** indicates that the orientation is not locked. |
+
+**Exceptions:**
+
+- BusinessException: Corresponding error codes are listed below. For details, see [Camera Error Codes](./cj-errorcode-multimedia-camera.md).
+
+  | Error Code ID | Error Message |
+  | :---- | :--- |
+  | 7400101 | Parameter missing or parameter type incorrect. |
+  | 7400201 | Camera service fatal error. |
+
+**Example:**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.CameraKit.*
+import kit.ImageKit.createImageReceiver
+import kit.ImageKit.Size as ImageSize
+import kit.ImageKit.ImageFormat
+import kit.CangjieKit.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
+
+try {
+    let ctx = Global.getAbilityContext() // Context application context required. See usage instructions for details.
+    let cameraManager = getCameraManager(ctx)
+    let device = cameraManager.getSupportedCameras()[0]
+    let mode = cameraManager.getSupportedSceneModes(device)[0]
+    let ability = cameraManager.getSupportedOutputCapability(device, mode)
+    let size = ImageSize(8, 8192)
+    let receiver = createImageReceiver(size, ImageFormat.Jpeg, 8)
+    let surfaceId: String = receiver.getReceivingSurfaceId()
+    let output = cameraManager.createPreviewOutput(ability.previewProfiles[0], surfaceId)
+    output.setPreviewRotation(ImageRotation.Rotation90)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
+## class Profile
 
 ```cangjie
 public open class Profile {
@@ -7006,6 +7774,41 @@ public var width: Float64
 **System Capability:** SystemCapability.Multimedia.Camera.Core
 
 **Since:** 22
+
+### init(Float64, Float64, Float64, Float64)
+
+```cangjie
+public init(topLeftX: Float64, topLeftY: Float64, width: Float64, height: Float64)
+```
+
+**Description:** Creates a Rect object.
+
+**System Capability:** SystemCapability.Multimedia.Camera.Core
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+|Name|Type|Mandatory|Default Value|Description|
+|:---|:---|:---|:---|:---|
+|topLeftX|Float64|Yes|-|X-coordinate of the top-left corner of the rectangle area.|
+|topLeftY|Float64|Yes|-|Y-coordinate of the top-left corner of the rectangle area.|
+|width|Float64|Yes|-|Rectangle width, relative value, range [0.0, 1.0].|
+|height|Float64|Yes|-|Rectangle height, relative value, range [0.0, 1.0].|
+
+**Example:**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.CameraKit.*
+import kit.PerformanceAnalysisKit.Hilog
+
+let rect = Rect(0.0, 0.0, 100.0, 100.0)
+Hilog.info(0, "test", "width=${rect.width}, height=${rect.height}")
+```
 
 ## class Size
 
@@ -7330,7 +8133,9 @@ try {
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
-```### func getVideoRotation(Int32)
+```
+
+### func getVideoRotation(Int32)
 
 ```cangjie
 public func getVideoRotation(deviceDegree: Int32): ImageRotation
@@ -7796,7 +8601,9 @@ try {
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
-```## class VideoProfile
+```
+
+## class VideoProfile
 
 ```cangjie
 public class VideoProfile <: Profile {
@@ -8304,7 +9111,56 @@ try {
 ### func preconfig(PreconfigType, PreconfigRatio)
 
 ```cangjie
-public func## enum CameraEvents
+public func preconfig(
+    preconfigType: PreconfigType,
+    preconfigRatio!: PreconfigRatio = PreconfigRatio.PreconfigRatio_16_9
+): Unit
+```
+
+**Description:** Preconfigures the current session.
+
+**System Capability:** SystemCapability.Multimedia.Camera.Core
+
+**Since:** 22
+
+**Parameters:**
+
+| Parameter Name | Type | Required | Default Value | Description |
+|:---|:---|:---|:---|:---|
+| preconfigType | [PreconfigType](#enum-preconfigtype) | Yes | - | Specifies the expected resolution configuration. |
+| preconfigRatio | [PreconfigRatio](#enum-preconfigratio) | No | PreconfigRatio.PreconfigRatio_16_9 | **Named parameter.** Optional aspect ratio. The default is 16:9. |
+
+**Exceptions:**
+
+- BusinessException: Corresponding error codes are listed below. For details, see [Camera Error Codes](./cj-errorcode-multimedia-camera.md).
+
+  | Error Code ID | Error Message |
+  | :---- | :--- |
+  | 7400201 | Camera service fatal error. |
+
+**Example:**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.CameraKit.*
+import kit.CangjieKit.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
+
+try {
+    let ctx = Global.getAbilityContext() // Context application context required. See usage instructions for details.
+    let cameraManager = getCameraManager(ctx)
+    let videoSession = cameraManager.createSession(SceneMode.NormalVideo) as VideoSession
+    let session = videoSession.getOrThrow()
+    session.preconfig(Preconfig1080p, preconfigRatio: PreconfigRatio_16_9)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
+## enum CameraEvents
 
 ```cangjie
 public enum CameraEvents {
@@ -8710,7 +9566,9 @@ public func toString(): String
 
 |Type|Description|
 |:----|:----|
-|String|String value of the enum.|## enum CameraPosition
+|String|String value of the enum.|
+
+## enum CameraPosition
 
 ```cangjie
 public enum CameraPosition {
@@ -9685,7 +10543,8 @@ public func toString(): String
 | Type | Description |
 |:----|:----|
 | String | The string value of the enum. |
-```## enum FoldStatus
+
+## enum FoldStatus
 
 ```cangjie
 public enum FoldStatus {
@@ -9930,6 +10789,170 @@ public func toString(): String
 |:----|:----|
 |String|String representation of the enum value.|
 
+## enum ImageType
+
+```cangjie
+public enum ImageType {
+    ImageValue(Image)
+    | ...
+}
+```
+
+**Description:** Defines the image container type, used to obtain the full-quality image or the uncompressed image (YUV).
+
+**System Capability:** SystemCapability.Multimedia.Camera.Core
+
+**Since:** 26.1.0
+
+**Parent Types:**
+
+- Equatable\<[ImageType](#enum-imagetype)>
+- ToString
+
+### ImageValue(Image)
+
+```cangjie
+ImageValue(Image)
+```
+
+**Description:** Image container type for obtaining the full-quality image. `Image` is the image class of the image processing module. For details, see [Image](../ImageKit/cj-apis-image.md#class-image).
+
+**System Capability:** SystemCapability.Multimedia.Camera.Core
+
+**Since:** 26.1.0
+
+### func toString()
+
+```cangjie
+public func toString(): String
+```
+
+**Description:** Converts the image container type to its string representation.
+
+**System Capability:** SystemCapability.Multimedia.Camera.Core
+
+**Since:** 26.1.0
+
+**Return Value:**
+
+|Type|Description|
+|:----|:----|
+|String|String representation of the image container type.|
+
+**Example:**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.CameraKit.*
+import kit.CangjieKit.{BusinessException, Callback1Argument}
+import kit.PerformanceAnalysisKit.Hilog
+
+class PhotoCallback <: Callback1Argument<Photo> {
+    public open func invoke(err: ?BusinessException, photo: Photo): Unit {
+        // Obtain the string representation of the image container type.
+        let imageType = photo.mainImage
+        Hilog.info(0, "test", "imageType=${imageType.toString()}")
+    }
+}
+```
+
+### func ==(ImageType)
+
+```cangjie
+public operator func ==(other: ImageType): Bool
+```
+
+**Description:** Checks whether two image container types are equal.
+
+**System Capability:** SystemCapability.Multimedia.Camera.Core
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+|Name|Type|Mandatory|Default Value|Description|
+|:---|:---|:---|:---|:---|
+|other|[ImageType](#enum-imagetype)|Yes|-|Image container type to compare.|
+
+**Return Value:**
+
+|Type|Description|
+|:----|:----|
+|Bool|Returns **true** if the two enum values are equal; returns **false** otherwise.|
+
+**Example:**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.CameraKit.*
+import kit.CangjieKit.{BusinessException, Callback1Argument}
+import kit.PerformanceAnalysisKit.Hilog
+
+class PhotoCallback <: Callback1Argument<Photo> {
+    public open func invoke(err: ?BusinessException, photo: Photo): Unit {
+        let imageType = photo.mainImage
+        // Check whether two image container types are equal.
+        if (let ImageType.ImageValue(image) <- imageType) {
+            let isEqual = imageType == ImageType.ImageValue(image)
+            Hilog.info(0, "test", "isEqual=${isEqual}")
+        }
+    }
+}
+```
+
+### func !=(ImageType)
+
+```cangjie
+public operator func !=(other: ImageType): Bool
+```
+
+**Description:** Checks whether two image container types are unequal.
+
+**System Capability:** SystemCapability.Multimedia.Camera.Core
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+|Name|Type|Mandatory|Default Value|Description|
+|:---|:---|:---|:---|:---|
+|other|[ImageType](#enum-imagetype)|Yes|-|Image container type to compare.|
+
+**Return Value:**
+
+|Type|Description|
+|:----|:----|
+|Bool|Returns **true** if the two enum values are unequal; returns **false** otherwise.|
+
+**Example:**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.CameraKit.*
+import kit.CangjieKit.{BusinessException, Callback1Argument}
+import kit.PerformanceAnalysisKit.Hilog
+
+class PhotoCallback <: Callback1Argument<Photo> {
+    public open func invoke(err: ?BusinessException, photo: Photo): Unit {
+        let imageType = photo.mainImage
+        // Check whether two image container types are unequal.
+        if (let ImageType.ImageValue(image) <- imageType) {
+            let isNotEqual = imageType != ImageType.ImageValue(image)
+            Hilog.info(0, "test", "isNotEqual=${isNotEqual}")
+        }
+    }
+}
+```
+
 ## enum MetadataObjectType
 
 ```cangjie
@@ -10134,7 +11157,9 @@ public func toString(): String
 
 |Type|Description|
 |:----|:----|
-|String|String representation of the enum value.|## enum PreconfigType
+|String|String representation of the enum value.|
+
+## enum PreconfigType
 
 ```cangjie
 public enum PreconfigType {
@@ -10579,7 +11604,9 @@ public func toString(): String
 
 |Type|Description|
 |:----|:----|
-|String|The string value of the enum.|## enum TorchMode
+|String|The string value of the enum.|
+
+## enum TorchMode
 
 ```cangjie
 public enum TorchMode {

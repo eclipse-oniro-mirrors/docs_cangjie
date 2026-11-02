@@ -537,6 +537,12 @@
                         - [发布公共事件](basic-services/common-event/cj-common-event-publish.md)
                 - 上传下载
                     - [应用文件上传下载](basic-services/request/cj-app-file-upload-download.md)
+            - Notification Kit（用户通知服务）
+                - [Notification Kit简介](notification/cj-notification-overview.md)
+                - [发布文本类型通知](notification/cj-text-notification.md)
+                - [请求通知授权](notification/cj-notification-enable.md)
+                - [管理通知角标](notification/cj-notification-badge.md)
+                - [取消通知](notification/cj-notification-cancel.md)
         - 硬件
             - Sensor Service Kit（传感器服务）
                 - [Sensor Service Kit开发简介](device/sensor/cj-sensorservice-kit-intro.md)
@@ -607,6 +613,8 @@
                 - [会话管理](media/camera/cj-camera-session-management.md)
             - 开发相机应用基础能力
                 - [手电筒使用](media/camera/cj-camera-torch-use.md)
+                - [元数据](media/camera/cj-camera-metadata.md)
+                - [通过系统相机拍照和录像](media/camera/cj-camera-picker.md)
         - Image Kit（图片处理服务）
             - [Image Kit简介](media/image/cj-image-overview.md)
             - 图片开发指导
@@ -965,6 +973,11 @@
                     - [系统电源管理错误码](reference/BasicServicesKit/cj-errorcode-power.md)
                     - [账号管理错误码](reference/BasicServicesKit/cj-errorcode-basic-account.md)
                     - [设置数据项错误码](reference/BasicServicesKit/cj-errorcode-settings.md)
+            - Notification Kit（用户通知服务）
+                - 仓颉API
+                    - [ohos.notification_manager（通知管理）](reference/NotificationKit/cj-apis-notification-manager.md)
+                - 错误码
+                    - [通知错误码](reference/NotificationKit/cj-errorcode-notification.md)
         - 硬件
             - Sensor Service Kit（传感器服务）
                 - 仓颉API
@@ -995,6 +1008,7 @@
         - Camera Kit（相机服务）
             - 仓颉API
                 - [ohos.multimedia.camera（相机管理）](reference/CameraKit/cj-apis-multimedia-camera.md)
+                - [ohos.multimedia.camera_picker（相机选择器）](reference/CameraKit/cj-apis-multimedia-camera-picker.md)
             - 错误码
                 - [Camera错误码](reference/CameraKit/cj-errorcode-multimedia-camera.md)
         - Image Kit（图片处理服务）
