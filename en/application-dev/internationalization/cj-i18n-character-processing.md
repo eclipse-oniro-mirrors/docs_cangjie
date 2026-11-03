@@ -31,7 +31,7 @@ For details about how to use the APIs, see the API document of [Transliterator](
   >
   > This module supports converting Chinese characters into pinyin. However, when the Chinese text contains polyphonic characters, some of these characters may fail to be converted into pinyin with the accurate pronunciation.
   >
-  > If the conversion ID passed to `getInstance` is not supported, an exception with error code 8900001 is thrown.
+  > If the conversion ID passed to `getInstance` is not supported, an exception with error code 401 is thrown.
 
   <!-- compile -->
 

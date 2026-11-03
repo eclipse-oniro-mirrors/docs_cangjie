@@ -54,8 +54,8 @@ public func getCalendar(locale: String, calendarType!: ?CalendarType = None): Ca
 ```cangjie
 // index.cj
 
-import ohos.i18n.*
-import ohos.business_exception.BusinessException
+import kit.LocalizationKit.*
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -104,7 +104,7 @@ public func add(field: String, amount: Int32): Unit
 // index.cj
 
 import kit.LocalizationKit.getCalendar
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -149,7 +149,7 @@ public func get(field: String): Int32
 // index.cj
 
 import kit.LocalizationKit.getCalendar
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -197,9 +197,8 @@ public func getDisplayName(locale: String): String
 ```cangjie
 // index.cj
 
-import kit.LocalizationKit.getCalendar
-import ohos.i18n.CalendarType
-import ohos.business_exception.BusinessException
+import kit.LocalizationKit.*
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -236,7 +235,7 @@ public func getFirstDayOfWeek(): Int32
 // index.cj
 
 import kit.LocalizationKit.getCalendar
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -273,7 +272,7 @@ public func getMinimalDaysInFirstWeek(): Int32
 // index.cj
 
 import kit.LocalizationKit.getCalendar
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -310,7 +309,7 @@ public func getTimeInMillis(): Float64
 // index.cj
 
 import kit.LocalizationKit.getCalendar
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -347,9 +346,8 @@ public func getTimeZone(): String
 ```cangjie
 // index.cj
 
-import kit.LocalizationKit.getCalendar
-import ohos.i18n.CalendarType
-import ohos.business_exception.BusinessException
+import kit.LocalizationKit.*
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -392,7 +390,7 @@ public func set(year: Int32, month: Int32, date: Int32, hour!: ?Int32 = None, mi
 // index.cj
 
 import kit.LocalizationKit.getCalendar
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -429,7 +427,7 @@ public func setFirstDayOfWeek(value: Int32): Unit
 // index.cj
 
 import kit.LocalizationKit.getCalendar
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -467,7 +465,7 @@ public func setMinimalDaysInFirstWeek(value: Int32): Unit
 // index.cj
 
 import kit.LocalizationKit.getCalendar
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -505,7 +503,7 @@ public func setTime(time: Float64): Unit
 // index.cj
 
 import kit.LocalizationKit.getCalendar
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -542,7 +540,7 @@ public func setTimeZone(timeZone: String): Unit
 // index.cj
 
 import kit.LocalizationKit.getCalendar
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -590,9 +588,8 @@ public static func getAppPreferredLanguage(): String
 ```cangjie
 // index.cj
 
-import ohos.i18n.*
-import kit.LocalizationKit.getCalendar
-import ohos.business_exception.BusinessException
+import kit.LocalizationKit.*
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -627,7 +624,7 @@ public static func getSystemLanguage(): String
 ```cangjie
 // index.cj
 
-import ohos.i18n.*
+import kit.LocalizationKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 let systemLanguage = System.getSystemLanguage() // If the system language is simplified Chinese, systemLanguage = 'zh-Hans'
@@ -659,7 +656,7 @@ public static func getSystemRegion(): String
 ```cangjie
 // index.cj
 
-import ohos.i18n.*
+import kit.LocalizationKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 let systemRegion = System.getSystemRegion() // If the system region is China, systemRegion = 'CN'
@@ -697,7 +694,7 @@ public func isRTL(locale: String): Bool
 ```cangjie
 // index.cj
 
-import ohos.i18n.*
+import kit.LocalizationKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 let isZhRTL = isRTL("zh-CN") // Chinese is not an RTL language, false is returned
@@ -748,8 +745,8 @@ public static func getInstance(id: String): Transliterator
 ```cangjie
 // index.cj
 
-import ohos.i18n.*
-import ohos.business_exception.BusinessException
+import kit.LocalizationKit.*
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -791,7 +788,7 @@ public func transform(text: String): String
 ```cangjie
 // index.cj
 
-import ohos.i18n.*
+import kit.LocalizationKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 let transliterator = Transliterator.getInstance("Any-Latn")
