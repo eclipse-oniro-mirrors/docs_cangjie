@@ -37,5 +37,6 @@
 - 触摸交互控制
     - [触摸热区设置](cj-universal-attribute-touchtarget.md)
     - [触摸测试控制](cj-universal-attribute-hittestbehavior.md)
+- [手势绑定](cj-universal-attribute-gesture.md)
 - [悬浮态效果](cj-universal-attribute-hovereffect.md)
 <!--DelEnd-->

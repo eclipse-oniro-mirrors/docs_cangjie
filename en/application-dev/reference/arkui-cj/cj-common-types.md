@@ -1781,6 +1781,622 @@ public func stopPropagation(): Unit
 
 **Since:** 22
 
+## class GestureType
+
+```cangjie
+sealed abstract class GestureType {}
+```
+
+**Description:** Defines the gesture type. It is the base class of all gesture types, and all concrete gestures inherit from this class. It can be bound to components through [gesture](./cj-universal-attribute-gesture.md) or [parallelGesture](./cj-universal-attribute-gesture.md#func-parallelgesturegesturetype).
+
+> **Note:**
+>
+> The only concrete gesture type in the current version is [PanGesture](./cj-basic-gestures-pangesture.md).
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+## class GestureEvent
+
+```cangjie
+public class GestureEvent <: BaseEvent {
+    public var offsetX: Float64
+    public var offsetY: Float64
+    public var repeat: Bool
+    public var fingerList: Array<FingerInfo>
+    public var fingerInfos: ?Array<FingerInfo>
+    public var angle: Float64
+    public var speed: Float64
+    public var scale: Float64
+    public var pinchCenterX: Float64
+    public var pinchCenterY: Float64
+    public var velocityX: Float64
+    public var velocityY: Float64
+    public var velocity: Float64
+    public var tapLocation: ?EventLocationInfo
+}
+```
+
+**Description:** Defines the gesture event information. Inherits from [BaseEvent](#class-baseevent).
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+**Parent Type:**
+
+- [BaseEvent](#class-baseevent)
+
+### var offsetX
+
+```cangjie
+public var offsetX: Float64
+```
+
+**Description:** X-axis offset of the gesture event relative to the finger press position, in vp. Used in PanGesture scenarios. A positive value means to pan from left to right, and a negative value means the opposite. Value range: (-∞, +∞).
+
+**Type:** Float64
+
+**Access:** Read-write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### var offsetY
+
+```cangjie
+public var offsetY: Float64
+```
+
+**Description:** Y-axis offset of the gesture event relative to the finger press position, in vp. Used in PanGesture scenarios. A positive value means to pan from top to bottom, and a negative value means the opposite. Value range: (-∞, +∞).
+
+**Type:** Float64
+
+**Access:** Read-write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### var repeat
+
+```cangjie
+public var repeat: Bool
+```
+
+**Description:** Whether the event is a repeated trigger event, used in LongPressGesture scenarios. The value true means that the event is a repeated trigger event, and false means the opposite.
+
+**Type:** Bool
+
+**Access:** Read-write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### var fingerList
+
+```cangjie
+public var fingerList: Array<FingerInfo>
+```
+
+**Description:** List of touch points of the gesture event. If the event input device is a touchscreen, the list includes all touch points. If the event input device is a mouse or touchpad, the list contains only one touch point.
+
+> **Note:**
+> 1. The index of a finger corresponds to its position, that is, the ID of the finger in fingerList[index] is index. If a finger is pressed first and does not participate in triggering the current gesture, its position in fingerList is left empty.
+> 2. fingerList is empty when gestures are triggered using a keyboard or game controller and no finger information exists.
+
+**Type:** Array\<[FingerInfo](#class-fingerinfo)>
+
+**Access:** Read-write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### var fingerInfos
+
+```cangjie
+public var fingerInfos: ?Array<FingerInfo>
+```
+
+**Description:** Information about touch points of the gesture event. For gesture events initiated by a touchscreen, fingerInfos includes information about all touch points. For gesture events initiated by a mouse or touchpad, fingerInfos contains only one touch point.
+
+> **Note:**
+> fingerInfos only records information about effective fingers that participate in the touch. Fingers that are pressed first but do not participate in triggering the current gesture will not be shown in fingerInfos. The default value is an empty array [], and an empty array indicates no effective touch point information.
+
+**Type:** ?Array\<[FingerInfo](#class-fingerinfo)>
+
+**Access:** Read-write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### var angle
+
+```cangjie
+public var angle: Float64
+```
+
+**Description:** Rotation angle for the RotationGesture event, in deg. Angle of the swipe gesture for the SwipeGesture event, that is, the angle between the instantaneous direction of finger sliding and the positive horizontal direction, in deg.
+
+> **Note:**
+> Rotation gesture angle calculation: When a rotation gesture is detected, the line connecting the two fingers is identified as the starting line. As the fingers slide, the line between them rotates. Based on the coordinates of the end points of the starting line and the current line, the arctangent function is used to calculate the included angles relative to the horizontal direction. The rotation angle is calculated as arctan2(cy2-cy1, cx2-cx1) - arctan2(y2-y1, x2-x1). With the starting line as the reference axis, clockwise rotation ranges from 0 to 180 degrees, and counterclockwise rotation ranges from 0 to –180 degrees. Value range: [-180, 180].
+
+**Type:** Float64
+
+**Access:** Read-write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### var speed
+
+```cangjie
+public var speed: Float64
+```
+
+**Description:** Swipe gesture speed, that is, the average swipe speed of all fingers relative to the original area of the current component, in vp/s. Used for the SwipeGesture event. Value range: [0, +∞).
+
+**Type:** Float64
+
+**Access:** Read-write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### var scale
+
+```cangjie
+public var scale: Float64
+```
+
+**Description:** Scale ratio. This attribute is used for the pinch gesture. Value range: [0, +∞).
+
+**Type:** Float64
+
+**Access:** Read-write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### var pinchCenterX
+
+```cangjie
+public var pinchCenterX: Float64
+```
+
+**Description:** X-coordinate of the center of the pinch gesture, in vp, relative to the original area of the current component. This attribute is used for the PinchGesture event. Value range: [0, +∞).
+
+**Type:** Float64
+
+**Access:** Read-write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### var pinchCenterY
+
+```cangjie
+public var pinchCenterY: Float64
+```
+
+**Description:** Y-coordinate of the center of the pinch gesture, in vp, relative to the original area of the current component. This attribute is used for the PinchGesture event. Value range: [0, +∞).
+
+**Type:** Float64
+
+**Access:** Read-write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### var velocityX
+
+```cangjie
+public var velocityX: Float64
+```
+
+**Description:** Velocity along the x-axis. This parameter is used in PanGesture. The origin of the coordinate axis is the upper left corner of the screen. The velocity is positive if the movement is from left to right, and it is negative if the movement is from right to left. The unit is vp/s. Value range: (-∞, +∞).
+
+**Type:** Float64
+
+**Access:** Read-write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### var velocityY
+
+```cangjie
+public var velocityY: Float64
+```
+
+**Description:** Velocity along the y-axis. This parameter is used in PanGesture. The origin of the coordinate axis is the upper left corner of the screen. The velocity is positive if the movement is from top to bottom, and it is negative if the movement is from bottom to top. The unit is vp/s. Value range: (-∞, +∞).
+
+**Type:** Float64
+
+**Access:** Read-write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### var velocity
+
+```cangjie
+public var velocity: Float64
+```
+
+**Description:** Velocity along the main axis. This parameter is used in PanGesture. The value is the arithmetic square root of the sum of squares of the velocity along the x- and y-axes. The unit is vp/s. Value range: [0, +∞).
+
+**Type:** Float64
+
+**Access:** Read-write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### var tapLocation
+
+```cangjie
+public var tapLocation: ?EventLocationInfo
+```
+
+**Description:** Coordinate information of the current tap gesture. For non-tap gestures, the return value of tapLocation is None.
+
+**Type:** ?[EventLocationInfo](#class-eventlocationinfo)
+
+**Access:** Read-write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+## class FingerInfo
+
+```cangjie
+public class FingerInfo {
+    public var id: Int32
+    public var globalDisplayX: ?Float64
+    public var globalDisplayY: ?Float64
+    public var globalX: Float64
+    public var globalY: Float64
+    public var localX: Float64
+    public var localY: Float64
+    public var displayX: Float64
+    public var displayY: Float64
+    public var hand: ?InteractionHand
+}
+```
+
+**Description:** Defines the finger information type.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### var id
+
+```cangjie
+public var id: Int32
+```
+
+**Description:** Index of the finger, determined by the number of fingers pressed. The first pressed finger is assigned 0, with the index incrementing by one for each subsequent finger.
+
+> **Note:**
+> Indexes for other input sources (mouse: 1001, mouse wheel: 0, two-finger trackpad slide: 0) are also converted to finger indexes. Value range: [0, 9).
+
+**Type:** Int32
+
+**Access:** Read-write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### var globalDisplayX
+
+```cangjie
+public var globalDisplayX: ?Float64
+```
+
+**Description:** X-coordinate relative to the upper left corner of the global display, in vp. If not returned (the value is None), no global display X-coordinate information is available. Value range: [0, +∞).
+
+**Type:** ?Float64
+
+**Access:** Read-write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### var globalDisplayY
+
+```cangjie
+public var globalDisplayY: ?Float64
+```
+
+**Description:** Y-coordinate relative to the upper left corner of the global display, in vp. If not returned (the value is None), no global display Y-coordinate information is available. Value range: [0, +∞).
+
+**Type:** ?Float64
+
+**Access:** Read-write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### var globalX
+
+```cangjie
+public var globalX: Float64
+```
+
+**Description:** X-coordinate relative to the upper left corner of the application window, in vp. Value range: [0, +∞).
+
+**Type:** Float64
+
+**Access:** Read-write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### var globalY
+
+```cangjie
+public var globalY: Float64
+```
+
+**Description:** Y-coordinate relative to the upper left corner of the application window, in vp. Value range: [0, +∞).
+
+**Type:** Float64
+
+**Access:** Read-write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### var localX
+
+```cangjie
+public var localX: Float64
+```
+
+**Description:** X-coordinate relative to the upper left corner of the current component's original area, in vp. Value range: [0, +∞).
+
+**Type:** Float64
+
+**Access:** Read-write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### var localY
+
+```cangjie
+public var localY: Float64
+```
+
+**Description:** Y-coordinate relative to the upper left corner of the current component's original area, in vp. Value range: [0, +∞).
+
+**Type:** Float64
+
+**Access:** Read-write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### var displayX
+
+```cangjie
+public var displayX: Float64
+```
+
+**Description:** X-coordinate relative to the upper left corner of the screen, in vp. Value range: [0, +∞).
+
+**Type:** Float64
+
+**Access:** Read-write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### var displayY
+
+```cangjie
+public var displayY: Float64
+```
+
+**Description:** Y-coordinate relative to the upper left corner of the screen, in vp. Value range: [0, +∞).
+
+**Type:** Float64
+
+**Access:** Read-write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### var hand
+
+```cangjie
+public var hand: ?InteractionHand
+```
+
+**Description:** Whether the event is triggered by a left-hand or right-hand tap. If not returned (the value is None), no left-hand or right-hand tap information is available for the current event.
+
+**Type:** ?[InteractionHand](#enum-interactionhand)
+
+**Access:** Read-write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+## class EventLocationInfo
+
+```cangjie
+public class EventLocationInfo {
+    public var x: Float64
+    public var y: Float64
+    public var windowX: Float64
+    public var windowY: Float64
+    public var displayX: Float64
+    public var displayY: Float64
+    public var globalDisplayX: ?Float64
+    public var globalDisplayY: ?Float64
+}
+```
+
+**Description:** Provides coordinate information for tap gestures.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### var x
+
+```cangjie
+public var x: Float64
+```
+
+**Description:** X coordinate relative to the upper left corner of the component, in vp. Value range: [0, +∞).
+
+**Type:** Float64
+
+**Access:** Read-write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### var y
+
+```cangjie
+public var y: Float64
+```
+
+**Description:** Y coordinate relative to the upper left corner of the component, in vp. Value range: [0, +∞).
+
+**Type:** Float64
+
+**Access:** Read-write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### var windowX
+
+```cangjie
+public var windowX: Float64
+```
+
+**Description:** X coordinate relative to the upper left corner of the window, in vp. Value range: [0, +∞).
+
+**Type:** Float64
+
+**Access:** Read-write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### var windowY
+
+```cangjie
+public var windowY: Float64
+```
+
+**Description:** Y coordinate relative to the upper left corner of the window, in vp. Value range: [0, +∞).
+
+**Type:** Float64
+
+**Access:** Read-write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### var displayX
+
+```cangjie
+public var displayX: Float64
+```
+
+**Description:** X coordinate relative to the upper left corner of the screen, in vp. Value range: [0, +∞).
+
+**Type:** Float64
+
+**Access:** Read-write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### var displayY
+
+```cangjie
+public var displayY: Float64
+```
+
+**Description:** Y coordinate relative to the upper left corner of the screen, in vp. Value range: [0, +∞).
+
+**Type:** Float64
+
+**Access:** Read-write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### var globalDisplayX
+
+```cangjie
+public var globalDisplayX: ?Float64
+```
+
+**Description:** X-coordinate in the coordinate system with the upper left corner of the main screen as the origin, in vp. If not returned (the value is None), no global screen X-coordinate information is available. Value range: [0, +∞).
+
+**Type:** ?Float64
+
+**Access:** Read-write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### var globalDisplayY
+
+```cangjie
+public var globalDisplayY: ?Float64
+```
+
+**Description:** Y-coordinate in the coordinate system with the upper left corner of the main screen as the origin, in vp. If not returned (the value is None), no global screen Y-coordinate information is available. Value range: [0, +∞).
+
+**Type:** ?Float64
+
+**Access:** Read-write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
 ## class EventTarget
 
 ```cangjie
@@ -8904,6 +9520,111 @@ public operator func !=(other: Axis): Bool
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
 | other | [Axis](#enum-axis) | Yes | - | Another Axis enum to compare. |
+
+**Return Value:**
+
+| Type | Description |
+|:----|:----|
+| Bool | Returns true if the two enums are not equal, otherwise returns false. |
+
+## enum InteractionHand
+
+```cangjie
+public enum InteractionHand <: Equatable<InteractionHand> {
+    | None
+    | Left
+    | Right
+    | ...
+}
+```
+
+**Function:** Enumerates how an input event is triggered.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+**Parent Type:**
+
+- Equatable\<[InteractionHand](#enum-interactionhand)>
+
+### None
+
+```cangjie
+None
+```
+
+**Function:** Unspecified.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### Left
+
+```cangjie
+Left
+```
+
+**Function:** Left-hand interaction.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### Right
+
+```cangjie
+Right
+```
+
+**Function:** Right-hand interaction.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### operator func ==(InteractionHand)
+
+```cangjie
+public operator func ==(other: InteractionHand): Bool
+```
+
+**Function:** Determines whether two InteractionHand enums are equal.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+| Parameter | Type | Required | Default | Description |
+|:---|:---|:---|:---|:---|
+| other | [InteractionHand](#enum-interactionhand) | Yes | - | Another InteractionHand enum to compare. |
+
+**Return Value:**
+
+| Type | Description |
+|:----|:----|
+| Bool | Returns true if the two enums are equal, otherwise returns false. |
+
+### operator func !=(InteractionHand)
+
+```cangjie
+public operator func !=(other: InteractionHand): Bool
+```
+
+**Function:** Determines whether two InteractionHand enums are not equal.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+| Parameter | Type | Required | Default | Description |
+|:---|:---|:---|:---|:---|
+| other | [InteractionHand](#enum-interactionhand) | Yes | - | Another InteractionHand enum to compare. |
 
 **Return Value:**
 

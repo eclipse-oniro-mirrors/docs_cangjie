@@ -116,6 +116,9 @@
             - [Touch Screen Events](cj-common-events-touch-screen-event.md)(Beta Feature)
             - [Keyboard/Mouse Events](cj-common-events-device-input-event.md)(Beta Feature)
             - [Focus Events](cj-common-events-focus-event.md)(Beta Feature)
+        - Using Gestures
+            - [Gesture Binding Methods](cj-gesture-events-binding.md)(Beta Feature)
+            - [Single Gestures](cj-gesture-events-single-gesture.md)(Beta Feature)
 - [Using Mirroring Capability](cj-mirroring-display.md)(Beta Feature)
 <!--RP1--><!--RP1End-->
 - Theme Settings

@@ -62,6 +62,11 @@
             - [触摸热区设置](cj-universal-attribute-touchtarget.md)（Beta特性）
             - [触摸测试控制](cj-universal-attribute-hittestbehavior.md)（Beta特性）
         - [悬浮态效果](cj-universal-attribute-hovereffect.md)（Beta特性）
+    - 手势处理
+        - 绑定手势
+            - [绑定手势事件](cj-universal-attribute-gesture.md)（Beta特性）
+        - 基础手势
+            - [PanGesture](cj-basic-gestures-pangesture.md)（Beta特性）
     - 行列与堆叠
         - [Flex](cj-row-column-stack-flex.md)（Beta特性）
         - [Column](cj-row-column-stack-column.md)（Beta特性）

@@ -180,6 +180,9 @@
                         - [Touch Screen Events](arkui-cj/cj-common-events-touch-screen-event.md)
                         - [Keyboard/Mouse Events](arkui-cj/cj-common-events-device-input-event.md)
                         - [Focus Events](arkui-cj/cj-common-events-focus-event.md)
+                    - Using Gestures
+                        - [Gesture Binding Methods](arkui-cj/cj-gesture-events-binding.md)
+                        - [Single Gestures](arkui-cj/cj-gesture-events-single-gesture.md)
                 - [Using Mirroring Capabilities](arkui-cj/cj-mirroring-display.md)
                 <!--RP1--><!--RP1End-->
                 - Theme Settings
@@ -583,6 +586,11 @@
                         - [Touch hot zone settings](reference/arkui-cj/cj-universal-attribute-touchtarget.md)
                         - [Touch test control](reference/arkui-cj/cj-universal-attribute-hittestbehavior.md)
                     - [Hover effect](reference/arkui-cj/cj-universal-attribute-hovereffect.md)
+                - Gesture Handling
+                    - Gesture Binding
+                        - [Binding Gesture Events](reference/arkui-cj/cj-universal-attribute-gesture.md)
+                    - Basic Gestures
+                        - [PanGesture](reference/arkui-cj/cj-basic-gestures-pangesture.md)
                 - Rows, Columns & Stacks
                     - [Flex](reference/arkui-cj/cj-row-column-stack-flex.md)
                     - [Column](reference/arkui-cj/cj-row-column-stack-column.md)
