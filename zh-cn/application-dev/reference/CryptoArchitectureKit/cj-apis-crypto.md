@@ -73,7 +73,7 @@ public func createCipher(transformation: String): Cipher
 // index.cj
 
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -124,7 +124,7 @@ public func createMac(algName: String): Mac
 // index.cj
 
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -174,7 +174,7 @@ public func createMd(algName: String): Md
 // index.cj
 
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -218,7 +218,7 @@ public func createRandom(): Random
 // index.cj
 
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -270,7 +270,7 @@ public func createSymKeyGenerator(algName: String): SymKeyGenerator
 // index.cj
 
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -370,7 +370,7 @@ func getEncoded(): DataBlob
 // index.cj
 
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -493,7 +493,7 @@ public func initialize(opMode: CryptoMode, key: Key, params: ?ParamsSpec): Unit
 // index.cj
 
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -576,7 +576,7 @@ public func doFinal(data: ?DataBlob): DataBlob
 // index.cj
 
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -661,7 +661,7 @@ public func update(data: DataBlob): DataBlob
 // index.cj
 
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -748,7 +748,7 @@ public func initialize(key: SymKey): Unit
 // index.cj
 
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -797,7 +797,7 @@ public func doFinal(): DataBlob
 // index.cj
 
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -848,7 +848,7 @@ public func getMacLength(): UInt32
 // index.cj
 
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -900,7 +900,7 @@ public func update(input: DataBlob): Unit
 // index.cj
 
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -979,7 +979,7 @@ public func digest(): DataBlob
 // index.cj
 
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1026,7 +1026,7 @@ public func getMdLength(): UInt32
 // index.cj
 
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1072,7 +1072,7 @@ public func update(input: DataBlob): Unit
 // index.cj
 
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1153,7 +1153,7 @@ public func generateRandom(len: Int32): DataBlob
 // index.cj
 
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1198,7 +1198,7 @@ public func setSeed(seed: DataBlob): Unit
 // index.cj
 
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1279,7 +1279,7 @@ public func clearMem(): Unit
 // index.cj
 
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1331,7 +1331,7 @@ public func getEncoded(): DataBlob
 // index.cj
 
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1420,7 +1420,7 @@ public func convertKey(key: DataBlob): SymKey
 // index.cj
 
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1477,7 +1477,7 @@ public func generateSymKey(): SymKey
 // index.cj
 
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1595,7 +1595,7 @@ public init(algName: String, iv: DataBlob, aad: DataBlob, authTag: DataBlob)
 // index.cj
 
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1762,7 +1762,7 @@ public init(algName: String, iv: DataBlob, aad: DataBlob, authTag: DataBlob)
 // index.cj
 
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1846,7 +1846,7 @@ public init(algName: String, iv: DataBlob)
 // index.cj
 
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {

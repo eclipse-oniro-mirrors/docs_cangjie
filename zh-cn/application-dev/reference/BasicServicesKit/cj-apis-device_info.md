@@ -682,7 +682,7 @@ public static prop versionId: String
 // index.cj
 
 import kit.BasicServicesKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {

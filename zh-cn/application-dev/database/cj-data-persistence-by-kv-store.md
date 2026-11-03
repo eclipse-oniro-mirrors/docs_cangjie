@@ -42,7 +42,7 @@
     import kit.ArkData.{ DistributedKVStore, KVManagerConfig, KVManager }
     import kit.PerformanceAnalysisKit.Hilog
     import kit.AbilityKit.{UIAbility, Want, LaunchParam, LaunchReason, UIAbilityContext}
-    import ohos.business_exception.BusinessException
+    import kit.CangjieKit.BusinessException
 
     var kvManager: Option<KVManager> = Option<KVManager>.None
     var globalAbilityContext: Option<UIAbilityContext> = Option<UIAbilityContext>.None
@@ -84,7 +84,7 @@
     ```cangjie
     // xxx.cj
     import kit.ArkData.*
-    import ohos.business_exception.BusinessException
+    import kit.CangjieKit.BusinessException
     import kit.PerformanceAnalysisKit.Hilog
     ```
 

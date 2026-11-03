@@ -202,7 +202,7 @@ public func get(key: String): KVValueType
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -256,7 +256,7 @@ public func getEntries(keyPrefix: String): Array<Entry>
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -310,7 +310,7 @@ public func getEntries(query: Query): Array<Entry>
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -365,7 +365,7 @@ public func getResultSet(keyPrefix: String): KVStoreResultSet
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -420,7 +420,7 @@ public func getResultSet(query: Query): KVStoreResultSet
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -474,7 +474,7 @@ public func getResultSize(query: Query): Int32
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -531,7 +531,7 @@ public static func createKVManager(config: KVManagerConfig): KVManager
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -739,7 +739,7 @@ public func closeKVStore(appId: String, storeId: String): Unit
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -785,7 +785,7 @@ public func deleteKVStore(appId: String, storeId: String): Unit
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -828,7 +828,7 @@ public func getAllKVStoreId(appId: String): Array<String>
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -885,7 +885,7 @@ public func getKVStore<T>(storeId: String, options: KVOptions): T where T <: Sin
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1017,7 +1017,7 @@ public func getCount(): Int32
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1355,7 +1355,7 @@ public open func backup(file: String): Unit
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1402,7 +1402,7 @@ public open func commit(): Unit
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1462,7 +1462,7 @@ public open func delete(key: String): Unit
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1522,7 +1522,7 @@ public open func deleteBatch(keys: Array<String>): Unit
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1568,7 +1568,7 @@ public open func enableSync(enabled: Bool): Unit
 
 import kit.ArkData.*
 import std.collection.ArrayList
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1630,7 +1630,7 @@ public open func get(key: String): KVValueType
 
 import kit.ArkData.*
 import kit.PerformanceAnalysisKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 let kvManager = DistributedKVStore.createKVManager(KVManagerConfig(Global.abilityContext, "test_kvstore")) // 此处需手动配置模板，获取Context上下文。上下文获取方式请参见使用说明。
 let kvStore = (kvManager.getKVStore<DeviceKVStore>("test", KVOptions(KVSecurityLevel.S1)) as DeviceKVStore).getOrThrow()
@@ -1690,7 +1690,7 @@ public open func put(key: String, value: KVValueType): Unit
 
 import kit.ArkData.*
 import kit.PerformanceAnalysisKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 let kvManager = DistributedKVStore.createKVManager(
     KVManagerConfig(Global.abilityContext, "test_kvstore")) // 此处需手动配置模板，获取Context上下文。上下文获取方式请参见使用说明。
@@ -1744,7 +1744,7 @@ public open func putBatch(entries: Array<Entry>): Unit
 
 import kit.ArkData.*
 import std.collection.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1803,7 +1803,7 @@ public open func restore(file: String): Unit
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1851,7 +1851,7 @@ public open func rollback(): Unit
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1897,7 +1897,7 @@ public open func setSyncParam(defaultAllowedDelayMs: UInt32): Unit
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1951,7 +1951,7 @@ public open func startTransaction(): Unit
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {

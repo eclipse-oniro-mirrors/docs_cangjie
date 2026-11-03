@@ -54,7 +54,7 @@ public func createA2dpSrcProfile(): A2dpSourceProfile
 
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.*
+import kit.CangjieKit.*
 
 try {
     let a2dpProfile = createA2dpSrcProfile()
@@ -121,7 +121,7 @@ public func getConnectedDevices(): Array<String>
 
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.*
+import kit.CangjieKit.*
 
 try {
     let a2dpSrc = createA2dpSrcProfile()
@@ -179,7 +179,7 @@ public func getConnectionState(deviceId: String): ProfileConnectionState
 
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.*
+import kit.CangjieKit.*
 
 try {
     let a2dpSrc = createA2dpSrcProfile()
@@ -237,7 +237,7 @@ public func getPlayingState(deviceId: String): PlayingState
 
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.*
+import kit.CangjieKit.*
 
 try {
     let a2dpSrc = createA2dpSrcProfile()
@@ -286,8 +286,7 @@ public func off(eventType: ProfileCallbackType, callback: CallbackObject): Unit
 
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.callback_invoke.*
-import ohos.business_exception.*
+import kit.CangjieKit.*
 
 // 此处定义所需要的依赖项等
 class StateChangeCallback <: Callback1Argument<StateChangeParam> {
@@ -345,8 +344,7 @@ public func off(eventType: ProfileCallbackType): Unit
 
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.callback_invoke.*
-import ohos.business_exception.*
+import kit.CangjieKit.*
 
 // 此处定义所需要的依赖项等
 class StateChangeCallback <: Callback1Argument<StateChangeParam> {
@@ -405,8 +403,7 @@ public func on(eventType: ProfileCallbackType, callback: Callback1Argument<State
 
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.callback_invoke.*
-import ohos.business_exception.*
+import kit.CangjieKit.*
 
 // 此处定义所需要的依赖项等
 class StateChangeCallback <: Callback1Argument<StateChangeParam> {

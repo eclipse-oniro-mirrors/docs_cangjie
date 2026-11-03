@@ -59,7 +59,7 @@
     ```cangjie
     // xxx.cj
     import kit.ArkData.*
-    import ohos.business_exception.BusinessException
+    import kit.CangjieKit.BusinessException
     import kit.PerformanceAnalysisKit.Hilog
     ```
 
@@ -136,7 +136,7 @@
     ```cangjie
     import kit.ArkData.*
     import kit.PerformanceAnalysisKit.Hilog
-    import ohos.business_exception.BusinessException
+    import kit.CangjieKit.BusinessException
     ```
 
     实现加密功能的核心代码是：

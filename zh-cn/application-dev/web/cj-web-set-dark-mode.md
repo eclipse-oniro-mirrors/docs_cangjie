@@ -16,7 +16,7 @@ Web组件支持对前端页面进行深色模式配置。
 
     ```cangjie
     // index.cj
-    import ohos.web.webview.WebviewController
+    import kit.ArkWeb.WebviewController
     import kit.ArkUI.{Web, WebDarkMode}
     import ohos.arkui.state_macro_manage.rawfile
 
@@ -42,7 +42,7 @@ Web组件支持对前端页面进行深色模式配置。
 
     ```cangjie
     // index.cj
-    import ohos.web.webview.WebviewController
+    import kit.ArkWeb.WebviewController
     import kit.ArkUI.{Web, WebDarkMode}
     import ohos.arkui.state_macro_manage.rawfile
 

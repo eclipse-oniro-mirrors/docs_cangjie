@@ -62,7 +62,7 @@
     // xxx.cj
     import kit.ArkData.*
     import kit.PerformanceAnalysisKit.Hilog
-    import ohos.business_exception.BusinessException
+    import kit.CangjieKit.BusinessException
     ```
 
     实现创建kvStore功能的核心代码是：
@@ -162,7 +162,7 @@
 ```cangjie
 import kit.ArkData.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 ```
 
 实现手动备份功能的核心代码是：

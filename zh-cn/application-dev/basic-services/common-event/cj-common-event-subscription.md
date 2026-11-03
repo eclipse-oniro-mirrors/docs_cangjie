@@ -36,7 +36,7 @@
    ```cangjie
    import kit.BasicServicesKit.*
    import kit.PerformanceAnalysisKit.Hilog
-   import ohos.business_exception.*
+   import kit.CangjieKit.*
    ```
 
 2. 创建订阅者信息，详细的订阅者信息数据类型及包含的参数请见[CommonEventSubscribeInfo](../../reference/BasicServicesKit/cj-apis-common_event_subscribe_info.md#class-commoneventsubscribeinfo)文档介绍。

@@ -60,7 +60,7 @@ public func createAbilityStageContextFromJSValue(context: JSContext, input: JSVa
 
 <!-- compile -->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.AbilityKit.*
 
 class MyAbilityStage <: AbilityStage {
@@ -102,7 +102,7 @@ public func createApplicationContextFromJSValue(context: JSContext, input: JSVal
 
 <!-- compile -->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.AbilityKit.*
 import kit.TestKit.*
 
@@ -145,7 +145,7 @@ public func createContextFromJSValue(context: JSContext, input: JSValue): Contex
 
 <!-- compile -->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.AbilityKit.*
 
 class MyAbilityStage <: AbilityStage {
@@ -187,7 +187,7 @@ public func createUIAbilityContextFromJSValue(context: JSContext, input: JSValue
 
 <!-- compile -->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.AbilityKit.*
 
 class MyUIAbility <: UIAbility {
@@ -242,7 +242,7 @@ func toJSValue(context: JSContext): JSValue
 
 <!-- compile -->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.AbilityKit.*
 
 class MyAbilityStage <: AbilityStage {
@@ -895,7 +895,7 @@ public func requestDialogService(want: Want, result: AsyncCallback<RequestResult
 ```cangjie
 import kit.AbilityKit.*
 import kit.ArkUI.WindowStage
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 class MyUIAbility <: UIAbility {
     public override func onWindowStageCreate(windowStage: WindowStage): Unit {
@@ -1038,7 +1038,7 @@ UIAbility被启动后，有如下情况：
 ```cangjie
 import kit.AbilityKit.*
 import kit.ArkUI.WindowStage
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 class MyUIAbility <: UIAbility {
     public override func onWindowStageCreate(windowStage: WindowStage): Unit {
@@ -1113,7 +1113,7 @@ UIAbility被启动后，有如下情况：
 ```cangjie
 import kit.AbilityKit.*
 import kit.ArkUI.WindowStage
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 class MyUIAbility <: UIAbility {
     public override func onWindowStageCreate(windowStage: WindowStage): Unit {

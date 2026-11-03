@@ -37,7 +37,7 @@ GATT是低功耗蓝牙（BLE）的核心协议，定义了基于服务（Service
 <!-- compile -->
 
 ```cangjie
-import ohos.business_exception.*
+import kit.CangjieKit.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 ```
@@ -64,8 +64,7 @@ try {
 <!-- compile -->
 
 ```cangjie
-import ohos.callback_invoke.*
-import ohos.business_exception.*
+import kit.CangjieKit.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 ```
@@ -100,7 +99,7 @@ try {
 <!-- compile -->
 
 ```cangjie
-import ohos.business_exception.*
+import kit.CangjieKit.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 ```
@@ -131,7 +130,7 @@ try {
 <!-- compile -->
 
 ```cangjie
-import ohos.business_exception.*
+import kit.CangjieKit.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 ```
@@ -172,7 +171,7 @@ try {
 ```cangjie
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.*
+import kit.CangjieKit.*
 ```
 
 - 读取或写入特征值。
@@ -240,7 +239,7 @@ try {
 ```cangjie
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.*
+import kit.CangjieKit.*
 ```
 
 - 读取或写入描述符。
@@ -298,8 +297,7 @@ try {
 <!-- compile -->
 
 ```cangjie
-import ohos.callback_invoke.*
-import ohos.business_exception.*
+import kit.CangjieKit.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 ```
@@ -391,7 +389,7 @@ try {
 ```cangjie
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 ```
 
 - 创建服务端实例。
@@ -415,7 +413,7 @@ try {
 ```cangjie
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 ```
 
 - 添加服务。
@@ -466,8 +464,7 @@ try {
 <!-- compile -->
 
 ```cangjie
-import ohos.callback_invoke.*
-import ohos.business_exception.*
+import kit.CangjieKit.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 ```
@@ -506,8 +503,7 @@ try {
 <!-- compile -->
 
 ```cangjie
-import ohos.callback_invoke.*
-import ohos.business_exception.*
+import kit.CangjieKit.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 ```
@@ -596,8 +592,7 @@ try {
 <!-- compile -->
 
 ```cangjie
-import ohos.callback_invoke.*
-import ohos.business_exception.*
+import kit.CangjieKit.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 ```
@@ -686,7 +681,7 @@ try {
 <!-- compile -->
 
 ```cangjie
-import ohos.business_exception.*
+import kit.CangjieKit.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 ```
@@ -720,7 +715,7 @@ try {
 <!-- compile -->
 
 ```cangjie
-import ohos.business_exception.*
+import kit.CangjieKit.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 ```
@@ -743,8 +738,8 @@ try {
 
 ```cangjie
 import kit.ConnectivityKit.*
-import ohos.business_exception.BusinessException
-import ohos.callback_invoke.Callback1Argument
+import kit.CangjieKit.BusinessException
+import kit.CangjieKit.Callback1Argument
 import kit.PerformanceAnalysisKit.Hilog
 
 const TAG: String = 'GattClientManager'
@@ -1130,8 +1125,8 @@ let gattClientManager = GattClientManager()
 
 ```cangjie
 import kit.ConnectivityKit.*
-import ohos.business_exception.BusinessException
-import ohos.callback_invoke.Callback1Argument
+import kit.CangjieKit.BusinessException
+import kit.CangjieKit.Callback1Argument
 import kit.PerformanceAnalysisKit.Hilog
 import std.collection.ArrayList
 

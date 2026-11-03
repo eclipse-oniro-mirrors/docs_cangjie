@@ -68,7 +68,7 @@ public func getValue<T>(context: UIAbilityContext, name: T, defValue: String): S
 
 import kit.BasicServicesKit.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 try {
     let context = Global.abilityContext
@@ -123,7 +123,7 @@ public func getValue<T, P>(context: UIAbilityContext, name: T, defValue: String,
 
 import kit.BasicServicesKit.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 try {
     let context = Global.abilityContext
@@ -142,7 +142,6 @@ public enum Date <: ToString {
     | TimeFormat
     | AutoGainTime
     | AutoGainTimeZone
-    | ...
 }
 ```
 
@@ -181,7 +180,7 @@ AutoGainTime
 
 import kit.BasicServicesKit.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 try {
     let context = Global.abilityContext
@@ -217,7 +216,7 @@ AutoGainTimeZone
 
 import kit.BasicServicesKit.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 try {
     let context = Global.abilityContext
@@ -251,7 +250,7 @@ DateFormat
 
 import kit.BasicServicesKit.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 try {
     let context = Global.abilityContext
@@ -287,7 +286,7 @@ TimeFormat
 
 import kit.BasicServicesKit.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 try {
     let context = Global.abilityContext
@@ -326,7 +325,6 @@ public enum Display <: ToString {
     | ScreenOffTimeout
     | AutoScreenBrightnessMode
     | ManualScreenBrightnessMode
-    | ...
 }
 ```
 
@@ -365,7 +363,7 @@ AutoScreenBrightness
 
 import kit.BasicServicesKit.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 try {
     let context = Global.abilityContext
@@ -397,7 +395,7 @@ FontScale
 
 import kit.BasicServicesKit.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 try {
     let context = Global.abilityContext
@@ -429,7 +427,7 @@ ScreenBrightnessStatus
 
 import kit.BasicServicesKit.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 try {
     let context = Global.abilityContext
@@ -461,7 +459,7 @@ ScreenOffTimeout
 
 import kit.BasicServicesKit.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 try {
     let context = Global.abilityContext
@@ -493,7 +491,7 @@ AutoScreenBrightnessMode
 
 import kit.BasicServicesKit.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 try {
     let context = Global.abilityContext
@@ -529,7 +527,7 @@ ManualScreenBrightnessMode
 
 import kit.BasicServicesKit.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 try {
     let context = Global.abilityContext
@@ -568,7 +566,6 @@ public override func toString(): String
 public enum DomainName <: ToString {
     | DeviceShared
     | UserProperty
-    | ...
 }
 ```
 
@@ -603,7 +600,7 @@ DeviceShared
 
 import kit.BasicServicesKit.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 try {
     let context = Global.abilityContext
@@ -635,7 +632,7 @@ UserProperty
 
 import kit.BasicServicesKit.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 try {
     let context = Global.abilityContext

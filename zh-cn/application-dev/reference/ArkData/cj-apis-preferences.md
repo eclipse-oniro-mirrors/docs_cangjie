@@ -195,7 +195,7 @@ public static func deletePreferences(context: UIAbilityContext, name: String): U
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -251,7 +251,7 @@ public static func deletePreferences(context: UIAbilityContext, options: Prefere
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -306,7 +306,7 @@ public static func getPreferences(context: UIAbilityContext, name: String): Pref
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -363,7 +363,7 @@ public static func getPreferences(context: UIAbilityContext, options: Preference
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -417,7 +417,7 @@ public static func removePreferencesFromCache(context: UIAbilityContext, name: S
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -472,7 +472,7 @@ public static func removePreferencesFromCache(context: UIAbilityContext, options
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -513,7 +513,7 @@ public func clear(): Unit
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -559,7 +559,7 @@ public func delete(key: String): Unit
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -606,7 +606,7 @@ public func flush(): Unit
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -661,7 +661,7 @@ public func get(key: String, defValue: PreferencesValueType): PreferencesValueTy
 
 import kit.ArkData.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 try {
     let preferences = Preferences.getPreferences(Global.abilityContext, PreferencesOptions("mystore", dataGroupId:"myGroupID")) // 此处需手动配置模板，获取Context上下文。上下文获取方式请参见使用说明。
@@ -711,16 +711,16 @@ public func getAll(): HashMap<String, PreferencesValueType>
 
 import kit.ArkData.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 try {
     let preferences = Preferences.getPreferences(Global.abilityContext, PreferencesOptions("mystore", dataGroupId:"myGroupID")) // 此处需手动配置模板，获取Context上下文。上下文获取方式请参见使用说明。
     var values = preferences.getAll()
     for ((k, v) in values) {
         match (v) {
-            case Integer(n) => Hilog.info(0, "AppLogCj", "获得到的键值对key: ${k} value: ${n}")
-            case Double(n) => Hilog.info(0, "AppLogCj", "获得到的键值对key: ${k} value: ${n}")
-            case StringData(n) => Hilog.info(0, "AppLogCj", "获得到的键值对key: ${k} value: ${n}")
+            case PreferencesValueType.Integer(n) => Hilog.info(0, "AppLogCj", "获得到的键值对key: ${k} value: ${n}")
+            case PreferencesValueType.Double(n) => Hilog.info(0, "AppLogCj", "获得到的键值对key: ${k} value: ${n}")
+            case PreferencesValueType.StringData(n) => Hilog.info(0, "AppLogCj", "获得到的键值对key: ${k} value: ${n}")
             case _ => Hilog.info(0, "AppLogCj", "其他值")
         }
     }
@@ -770,7 +770,7 @@ public func has(key: String): Bool
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -821,10 +821,8 @@ public func off(event: PreferencesEvent, callback!: ?Callback1Argument<String> =
 // index.cj
 
 import kit.ArkData.*
-import ohos.callback_invoke.*
-import ohos.business_exception.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.BusinessException
 
 // 此处代码可添加在依赖项定义中
 // 回调函数
@@ -883,10 +881,8 @@ public func on(event: PreferencesEvent, callback: Callback1Argument<String>): Un
 // index.cj
 
 import kit.ArkData.*
-import ohos.callback_invoke.*
-import ohos.business_exception.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.BusinessException
 
 // 回调函数
 class Callback <: Callback1Argument<String> {
@@ -943,7 +939,7 @@ public func put(key: String, value: PreferencesValueType): Unit
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
