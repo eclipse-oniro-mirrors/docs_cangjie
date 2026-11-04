@@ -319,7 +319,7 @@ public func createAsyKeyGenerator(algName: String): AsyKeyGenerator
 
 ```cangjie
 <!-- compile -->
-import crypto_framework.crypto_framework
+import kit.CryptoArchitectureKit.*
 
 let asyKeyGenerator = createAsyKeyGenerator("RSA2048")
 ```
