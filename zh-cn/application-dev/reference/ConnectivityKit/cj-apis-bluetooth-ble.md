@@ -2564,11 +2564,12 @@ let descriptor = BleDescriptor(
     "00002902-0000-1000-8000-00805F9B34FB",
     Array<Byte>(2, repeat: 0)
 )
-// 创建characteristics
+
 let descriptors: Array<BleDescriptor> = [descriptor]
 let charBuffer: Array<Byte> = [21, 22]
 let properties = GattProperties()
 
+// 创建characteristics
 let characteristic: BleCharacteristic = BleCharacteristic(
     "00001810-0000-1000-8000-00805F9B34FB",
     "00001820-0000-1000-8000-00805F9B34FB",
@@ -2810,11 +2811,12 @@ let descriptor = BleDescriptor(
     "00002902-0000-1000-8000-00805F9B34FB",
     Array<Byte>(2, repeat: 0)
 )
-// 创建characteristics
+
 let descriptors: Array<BleDescriptor> = [descriptor]
 let charBuffer: Array<Byte> = [21, 22]
 let properties = GattProperties()
 
+// 创建characteristics
 let characteristic: BleCharacteristic = BleCharacteristic(
     "00001810-0000-1000-8000-00805F9B34FB",
     "00001820-0000-1000-8000-00805F9B34FB",
@@ -2903,11 +2905,12 @@ let descriptor = BleDescriptor(
     "00002902-0000-1000-8000-00805F9B34FB",
     Array<Byte>(2, repeat: 0)
 )
-// 创建characteristics
+
 let descriptors: Array<BleDescriptor> = [descriptor]
 let charBuffer: Array<Byte> = [21, 22]
 let properties = GattProperties()
 
+// 创建characteristics
 let characteristic: BleCharacteristic = BleCharacteristic(
     "00001810-0000-1000-8000-00805F9B34FB",
     "00001820-0000-1000-8000-00805F9B34FB",
@@ -2996,11 +2999,11 @@ let descriptor = BleDescriptor(
     Array<Byte>(2, repeat: 0)
 )
 
-// 创建characteristics
 let descriptors: Array<BleDescriptor> = [descriptor]
 let charBuffer: Array<Byte> = [21, 22]
 let properties = GattProperties()
 
+// 创建characteristics
 let characteristic: BleCharacteristic = BleCharacteristic(
     "00001810-0000-1000-8000-00805F9B34FB",
     "00001820-0000-1000-8000-00805F9B34FB",
@@ -3586,11 +3589,11 @@ let descriptors1 = BleDescriptor(
     descBuffer
 )
 
-// 创建characteristics
 let descriptors: Array<BleDescriptor> = [descriptors0, descriptors1]
 let charBuffer: Array<Byte> = [21, 22]
 let properties = GattProperties()
 
+// 创建characteristics
 let characteristic: BleCharacteristic = BleCharacteristic(
     "00001810-0000-1000-8000-00805F9B34FB",
     "00001820-0000-1000-8000-00805F9B34FB",

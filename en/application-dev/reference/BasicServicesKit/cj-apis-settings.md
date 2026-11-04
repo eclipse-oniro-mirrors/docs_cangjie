@@ -64,7 +64,7 @@ public func getValue<T>(context: UIAbilityContext, name: T, defValue: String): S
 
 import kit.BasicServicesKit.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 try {
     let context = Global.getAbilityContext()
@@ -120,7 +120,7 @@ public func getValue<T, P>(context: UIAbilityContext, name: T, defValue: String,
 
 import kit.BasicServicesKit.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 try {
     let context = Global.getAbilityContext()
@@ -139,7 +139,6 @@ public enum Date <: ToString {
     | TimeFormat
     | AutoGainTime
     | AutoGainTimeZone
-    | ...
 }
 ```
 
@@ -174,7 +173,7 @@ AutoGainTime
 
 import kit.BasicServicesKit.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 try {
     let context = Global.getAbilityContext()
@@ -206,7 +205,7 @@ AutoGainTimeZone
 
 import kit.BasicServicesKit.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 try {
     let context = Global.getAbilityContext()
@@ -238,7 +237,7 @@ DateFormat
 
 import kit.BasicServicesKit.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 try {
     let context = Global.getAbilityContext()
@@ -270,7 +269,7 @@ TimeFormat
 
 import kit.BasicServicesKit.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 try {
     let context = Global.getAbilityContext()
@@ -309,7 +308,6 @@ public enum Display <: ToString {
     | ScreenOffTimeout
     | AutoScreenBrightnessMode
     | ManualScreenBrightnessMode
-    | ...
 }
 ```
 
@@ -344,7 +342,7 @@ AutoScreenBrightness
 
 import kit.BasicServicesKit.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 try {
     let context = Global.getAbilityContext()
@@ -376,7 +374,7 @@ FontScale
 
 import kit.BasicServicesKit.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 try {
     let context = Global.getAbilityContext()
@@ -408,7 +406,7 @@ ScreenBrightnessStatus
 
 import kit.BasicServicesKit.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 try {
     let context = Global.getAbilityContext()
@@ -440,7 +438,7 @@ ScreenOffTimeout
 
 import kit.BasicServicesKit.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 try {
     let context = Global.getAbilityContext()
@@ -472,7 +470,7 @@ AutoScreenBrightnessMode
 
 import kit.BasicServicesKit.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 try {
     let context = Global.getAbilityContext()
@@ -508,7 +506,7 @@ ManualScreenBrightnessMode
 
 import kit.BasicServicesKit.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 try {
     let context = Global.getAbilityContext()
@@ -545,7 +543,6 @@ public override func toString(): String
 public enum DomainName <: ToString {
     | DeviceShared
     | UserProperty
-    | ...
 }
 ```
 
@@ -580,7 +577,7 @@ DeviceShared
 
 import kit.BasicServicesKit.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 try {
     let context = Global.getAbilityContext()
@@ -612,7 +609,7 @@ UserProperty
 
 import kit.BasicServicesKit.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 try {
     let context = Global.getAbilityContext()

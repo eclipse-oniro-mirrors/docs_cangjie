@@ -87,7 +87,7 @@ public func clearText(): Unit
 // index.cj
 
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -128,7 +128,7 @@ public func click(): Unit
 // index.cj
 
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -169,7 +169,7 @@ public func doubleClick(): Unit
 // index.cj
 
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -216,7 +216,7 @@ public func dragTo(target: Component): Unit
 // index.cj
 
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -265,7 +265,7 @@ public func getBounds(): Rect
 // index.cj
 
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -312,7 +312,7 @@ public func getBoundsCenter(): Point
 // index.cj
 
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -359,7 +359,7 @@ public func getDescription(): String
 // index.cj
 
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -406,7 +406,7 @@ public func getId(): String
 // index.cj
 
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -453,7 +453,7 @@ public func getText(): String
 // index.cj
 
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -500,7 +500,7 @@ public func getType(): String
 // index.cj
 
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -547,7 +547,7 @@ public func inputText(text: String): Unit
 // index.cj
 
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -594,7 +594,7 @@ public func isCheckable(): Bool
 // index.cj
 
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -641,7 +641,7 @@ public func isChecked(): Bool
 // index.cj
 
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -688,7 +688,7 @@ public func isClickable(): Bool
 // index.cj
 
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -735,7 +735,7 @@ public func isEnabled(): Bool
 // index.cj
 
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -782,7 +782,7 @@ public func isFocused(): Bool
 // index.cj
 
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -829,7 +829,7 @@ public func isLongClickable(): Bool
 // index.cj
 
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -876,7 +876,7 @@ public func isScrollable(): Bool
 // index.cj
 
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -923,7 +923,7 @@ public func isSelected(): Bool
 // index.cj
 
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -964,7 +964,7 @@ public func longClick(): Unit
 // index.cj
 
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1011,7 +1011,7 @@ public func pinchIn(scale: Float32): Unit
 // index.cj
 
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1058,7 +1058,7 @@ public func pinchOut(scale: Float32): Unit
 // index.cj
 
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1111,7 +1111,7 @@ public func scrollSearch(on: On): ?Component
 // index.cj
 
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1158,7 +1158,7 @@ public func scrollToBottom(speed!: Int64 = 600): Unit
 // index.cj
 
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1205,7 +1205,7 @@ public func scrollToTop(speed!: Int64 = 600): Unit
 // index.cj
 
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1264,7 +1264,7 @@ public static func create(): Driver
 // index.cj
 
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1309,7 +1309,7 @@ public func assertComponentExist(on: On): Unit
 
 import kit.PerformanceAnalysisKit.*
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 let driver: Driver = Driver.create()
 try {
@@ -1346,7 +1346,7 @@ public func click(x: Int32, y: Int32): Unit
 // index.cj
 
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1383,7 +1383,7 @@ public func createUiEventObserver(): UiEventObserver
 // index.cj
 
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1420,7 +1420,7 @@ public func delayMs(duration: Int32): Unit
 // index.cj
 
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1458,7 +1458,7 @@ public func doubleClick(x: Int32, y: Int32): Unit
 // index.cj
 
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1505,7 +1505,7 @@ public func drag(
 // index.cj
 
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1548,7 +1548,7 @@ public func findComponent(on: On): ?Component
 // index.cj
 
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1591,7 +1591,7 @@ public func findComponents(on: On): ?Array<Component>
 // index.cj
 
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1634,7 +1634,7 @@ public func findWindow(filter: WindowFilter): ?UiWindow
 // index.cj
 
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1674,7 +1674,7 @@ public func fling(from: Point, to: Point, stepLen: Int32, speed: Int32): Unit
 // index.cj
 
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1712,7 +1712,7 @@ public func fling(direction: UiDirection, speed: Int32): Unit
 // index.cj
 
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1749,7 +1749,7 @@ public func getDisplayDensity(): Point
 // index.cj
 
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1786,7 +1786,7 @@ public func getDisplayRotation(): DisplayRotation
 // index.cj
 
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1823,7 +1823,7 @@ public func getDisplaySize(): Point
 // index.cj
 
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1866,10 +1866,10 @@ public func injectMultiPointerAction(pointers: PointerMatrix, speed!: Int32 = 60
 ```cangjie
 // index.cj
 
-import ohos.ui_test.Point as PT
-import ohos.ui_test.Driver
-import ohos.ui_test.PointerMatrix
-import ohos.business_exception.BusinessException
+import kit.TestKit.Point as PT
+import kit.TestKit.Driver
+import kit.TestKit.PointerMatrix
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1915,7 +1915,7 @@ public func inputText(p: Point, text: String): Unit
 
 import kit.TestKit.*
 import kit.PerformanceAnalysisKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 try {
     let driver: Driver = Driver.create()
@@ -1955,7 +1955,7 @@ public func longClick(x: Int32, y: Int32): Unit
 // index.cj
 
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1995,8 +1995,8 @@ public func mouseClick(p: Point, btnId: MouseButton, key1!: Int32 = 0, key2!: In
 // index.cj
 
 import kit.TestKit.*
-import ohos.ui_test.Point as PT
-import ohos.business_exception.BusinessException
+import kit.TestKit.Point as PT
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2036,8 +2036,8 @@ public func mouseDoubleClick(p: Point, btnId: MouseButton, key1!: Int32 = 0, key
 // index.cj
 
 import kit.TestKit.*
-import ohos.ui_test.Point as PT
-import ohos.business_exception.BusinessException
+import kit.TestKit.Point as PT
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2076,8 +2076,8 @@ public func mouseDrag(from: Point, to: Point, speed!: Int32 = 600): Unit
 // index.cj
 
 import kit.TestKit.*
-import ohos.ui_test.Point as PT
-import ohos.business_exception.BusinessException
+import kit.TestKit.Point as PT
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2117,8 +2117,8 @@ public func mouseLongClick(p: Point, btnId: MouseButton, key1!: Int32 = 0, key2!
 // index.cj
 
 import kit.TestKit.*
-import ohos.ui_test.Point as PT
-import ohos.business_exception.BusinessException
+import kit.TestKit.Point as PT
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2155,8 +2155,8 @@ public func mouseMoveTo(p: Point): Unit
 // index.cj
 
 import kit.TestKit.*
-import ohos.ui_test.Point as PT
-import ohos.business_exception.BusinessException
+import kit.TestKit.Point as PT
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2195,8 +2195,8 @@ public func mouseMoveWithTrack(from: Point, to: Point, speed!: Int32 = 600): Uni
 // index.cj
 
 import kit.TestKit.*
-import ohos.ui_test.Point as PT
-import ohos.business_exception.BusinessException
+import kit.TestKit.Point as PT
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2238,8 +2238,8 @@ public func mouseScroll(p: Point, down: Bool, d: Int32, key1!: Int32 = 0, key2!:
 // index.cj
 
 import kit.TestKit.*
-import ohos.ui_test.Point as PT
-import ohos.business_exception.BusinessException
+import kit.TestKit.Point as PT
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2270,7 +2270,7 @@ public func pressBack(): Unit
 // index.cj
 
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2301,7 +2301,7 @@ public func pressHome(): Unit
 // index.cj
 
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2344,7 +2344,7 @@ public func screenCap(savePath: String): Bool
 // index.cj
 
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2388,7 +2388,7 @@ public func screenCapture(savePath: String, rect!: Rect = Rect(0,0,0,0)): Bool
 // index.cj
 
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2425,7 +2425,7 @@ public func setDisplayRotation(rotation: DisplayRotation): Unit
 // index.cj
 
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2462,7 +2462,7 @@ public func setDisplayRotationEnabled(enabled: Bool): Unit
 // index.cj
 
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2509,7 +2509,7 @@ public func swipe(
 // index.cj
 
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2548,7 +2548,7 @@ public func triggerCombineKeys(key0: Int32, key1: Int32, key2!: Int32 = 0): Unit
 // index.cj
 
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2585,7 +2585,7 @@ public func triggerKey(keyCode: Int32): Unit
 // index.cj
 
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2629,7 +2629,7 @@ public func waitForComponent(on: On, time: Int32): ?Component
 // index.cj
 
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2673,7 +2673,7 @@ public func waitForIdle(idleTime: Int32, timeout: Int32): Bool
 // index.cj
 
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2704,7 +2704,7 @@ public func wakeUpDisplay(): Unit
 // index.cj
 
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2781,7 +2781,7 @@ public func checkable(b!: Bool = true): On
 //example_test.cj
 
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2823,7 +2823,7 @@ public func checked(b!: Bool = true): On
 //example_test.cj
 
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2865,7 +2865,7 @@ public func clickable(b!: Bool = true): On
 //example_test.cj
 
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2908,7 +2908,7 @@ public func description(val: String, pattern!: MatchPattern = MatchPattern.Equal
 //example_test.cj
 
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2950,7 +2950,7 @@ public func enabled(b!: Bool = true): On
 //example_test.cj
 
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2992,7 +2992,7 @@ public func focused(b!: Bool = true): On
 //example_test.cj
 
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -3034,7 +3034,7 @@ public func id(id: String): On
 //example_test.cj
 
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -3076,7 +3076,7 @@ public func inWindow(bundleName: String): On
 //example_test.cj
 
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -3118,7 +3118,7 @@ public func isAfter(on: On): On
 //example_test.cj
 
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -3161,7 +3161,7 @@ public func isBefore(on: On): On
 //example_test.cj
 
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -3204,7 +3204,7 @@ public func longClickable(b!: Bool = true): On
 //example_test.cj
 
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -3246,7 +3246,7 @@ public func onType(tp: String): On
 //example_test.cj
 
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -3288,7 +3288,7 @@ public func scrollable(b!: Bool = true): On
 //example_test.cj
 
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -3330,7 +3330,7 @@ public func selected(b!: Bool = true): On
 //example_test.cj
 
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -3373,7 +3373,7 @@ public func text(txt: String, pattern!: MatchPattern = MatchPattern.Equals): On
 //example_test.cj
 
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -3415,7 +3415,7 @@ public func within(on: On): On
 //example_test.cj
 
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -3556,7 +3556,7 @@ public static func create(fingers: Int32, steps: Int32): PointerMatrix
 // index.cj
 
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -3594,8 +3594,8 @@ public func setPoint(finger: Int32, step: Int32, point: Point): Unit
 // index.cj
 
 import kit.TestKit.*
-import ohos.ui_test.Point as PT
-import ohos.business_exception.BusinessException
+import kit.TestKit.Point as PT
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -3836,7 +3836,7 @@ public func once(onceType: OnceType, callback: Callback<UiElementInfo>): Unit
 
 import kit.TestKit.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 try {
     let driver: Driver = Driver.create()
@@ -3900,7 +3900,7 @@ public func close(): Unit
 // index.cj
 
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -3940,7 +3940,7 @@ public func focus(): Unit
 // index.cj
 
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -3986,7 +3986,7 @@ public func getBounds(): Rect
 // index.cj
 
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -4032,7 +4032,7 @@ public func getBundleName(): String
 // index.cj
 
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -4078,7 +4078,7 @@ public func getTitle(): String
 // index.cj
 
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -4124,7 +4124,7 @@ public func getWindowMode(): WindowMode
 // index.cj
 
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -4170,7 +4170,7 @@ public func isActive(): Bool
 // index.cj
 
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -4216,7 +4216,7 @@ public func isFocused(): Bool
 // index.cj
 
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -4260,7 +4260,7 @@ public func maximize(): Unit
 // index.cj
 
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -4304,7 +4304,7 @@ public func minimize(): Unit
 // index.cj
 
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -4354,7 +4354,7 @@ public func moveTo(x: Int32, y: Int32): Unit
 // index.cj
 
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -4406,7 +4406,7 @@ public func resize(wide: Int32, height: Int32, direction: ResizeDirection): Unit
 // index.cj
 
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -4450,7 +4450,7 @@ public func resume(): Unit
 // index.cj
 
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -4494,7 +4494,7 @@ public func split(): Unit
 // index.cj
 
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {

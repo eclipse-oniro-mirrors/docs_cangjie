@@ -54,8 +54,7 @@ import kit.CoreFileKit.*
 import kit.AbilityKit.*
 import kit.NetworkKit.*
 import std.collection.*
-import ohos.base.*
-import ohos.net.http.*
+import kit.ArkUI.*
 
 func loggerInfo(str: String) {
     Hilog.info(0, "CangjieTest", str)
@@ -146,10 +145,8 @@ import kit.CoreFileKit.*
 import kit.AbilityKit.*
 import kit.NetworkKit.*
 import std.collection.*
-import ohos.base.*
-import ohos.net.http.*
-import ohos.callback_invoke.*
-import ohos.business_exception.*
+import kit.ArkUI.*
+import kit.CangjieKit.*
 
 func loggerInfo(str: String) {
     Hilog.info(0, "CangjieTest", str)

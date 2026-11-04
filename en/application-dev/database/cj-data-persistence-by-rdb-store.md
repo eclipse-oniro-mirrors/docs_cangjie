@@ -62,14 +62,14 @@ During relational database operations or storage, unexpected exceptions (error c
     <!-- compile -->
 
     ```cangjie
-    import ohos.business_exception.BusinessException
+    import kit.CangjieKit.BusinessException
     import kit.ArkData.*
     import kit.AbilityKit.getStageContext
     import std.collection.HashMap
     import kit.AbilityKit.{UIAbility, AbilityStage, Want, LaunchParam, LaunchReason, UIAbilityContext}
-    import ohos.data.relational_store.RdbStore
+    import kit.ArkData.RdbStore
     import kit.ArkData.{StoreConfig, getRdbStore, RdbPredicates, deleteRdbStore}
-    import ohos.data.relational_store.RelationalStoreSecurityLevel
+    import kit.ArkData.RelationalStoreSecurityLevel
     import kit.ArkUI.{WindowStage}
 
     let storeConfig = StoreConfig(
@@ -144,7 +144,7 @@ During relational database operations or storage, unexpected exceptions (error c
     <!-- compile -->
 
     ```cangjie
-    import ohos.data.relational_store.RelationalStoreValueType 
+    import kit.ArkData.RelationalStoreValueType
     ```
 
     The core code for add data is:

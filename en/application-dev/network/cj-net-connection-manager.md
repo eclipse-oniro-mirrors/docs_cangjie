@@ -85,9 +85,8 @@ import kit.BasicServicesKit.*
 import kit.CoreFileKit.*
 import kit.AbilityKit.*
 import kit.NetworkKit.*
-import ohos.base.*
-import ohos.callback_invoke.*
-import ohos.business_exception.*
+import kit.ArkUI.*
+import kit.CangjieKit.*
 
 func loggerInfo(str: String) {
     Hilog.info(0, "CangjieTest", str)
@@ -163,9 +162,8 @@ import kit.BasicServicesKit.*
 import kit.CoreFileKit.*
 import kit.AbilityKit.*
 import kit.NetworkKit.*
-import ohos.base.*
-import ohos.callback_invoke.*
-import ohos.business_exception.*
+import kit.ArkUI.*
+import kit.CangjieKit.*
 
 func loggerInfo(str: String) {
     Hilog.info(0, "CangjieTest", str)
@@ -201,7 +199,7 @@ func test() {
 ```cangjie
 // Import packages.
 import kit.NetworkKit.*
-import ohos.base.*
+import kit.ArkUI.*
 
 // Retrieve a list of all connected networks.
 let nets = getAllNets()
@@ -227,7 +225,7 @@ import kit.BasicServicesKit.*
 import kit.CoreFileKit.*
 import kit.AbilityKit.*
 import kit.NetworkKit.*
-import ohos.base.*
+import kit.ArkUI.*
 
 func loggerInfo(str: String) {
     Hilog.info(0, "CangjieTest", str)
@@ -342,7 +340,7 @@ import kit.BasicServicesKit.*
 import kit.CoreFileKit.*
 import kit.AbilityKit.*
 import kit.NetworkKit.*
-import ohos.base.*
+import kit.ArkUI.*
 
 func loggerInfo(str: String) {
     Hilog.info(0, "CangjieTest", str)

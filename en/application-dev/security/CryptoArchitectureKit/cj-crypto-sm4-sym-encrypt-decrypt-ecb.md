@@ -48,7 +48,7 @@ The synchronous method example is as follows:
 ```cangjie
 import kit.CryptoArchitectureKit.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 // Encrypt message.
 func encryptMessage(symKey: SymKey, plainText: DataBlob) {

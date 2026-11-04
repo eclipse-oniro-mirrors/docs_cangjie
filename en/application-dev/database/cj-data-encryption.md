@@ -59,10 +59,10 @@ For specific interfaces and functionalities, refer to [Distributed Key-Value Dat
     ```cangjie  
     // xxx.cj  
     import kit.ArkData.{DistributedKVStore, KVManagerConfig}  
-    import ohos.business_exception.BusinessException  
+    import kit.CangjieKit.BusinessException
     import kit.AbilityKit.*  
-    import ohos.data.distributed_kv_store.KVOptions  
-    import ohos.data.distributed_kv_store.KVSecurityLevel  
+    import kit.ArkData.KVOptions
+    import kit.ArkData.KVSecurityLevel
     ```
 
     The core code for configure key-value database encryption is:
@@ -137,7 +137,7 @@ For specific interfaces and functionalities, refer to [Relational Database](../r
 
     ```cangjie  
     import kit.ArkData.{ getRdbStore, StoreConfig, RelationalStoreSecurityLevel }  
-    import ohos.business_exception.BusinessException  
+    import kit.CangjieKit.BusinessException
     ```
 
     The core code for configure relational database encryption is:

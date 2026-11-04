@@ -82,8 +82,7 @@
 // 引入包名。
 import kit.PerformanceAnalysisKit.Hilog
 import kit.NetworkKit.*
-import ohos.callback_invoke.*
-import ohos.business_exception.*
+import kit.CangjieKit.*
 
 func loggerInfo(str: String) {
     Hilog.info(0, "CangjieTest", str)
@@ -156,8 +155,7 @@ func test() {
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 import kit.NetworkKit.*
-import ohos.callback_invoke.*
-import ohos.business_exception.*
+import kit.CangjieKit.*
 
 func loggerInfo(str: String) {
     Hilog.info(0, "CangjieTest", str)

@@ -191,7 +191,7 @@ After calling this interface, it is not recommended to continue using the old Pr
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -251,7 +251,7 @@ After calling this interface, it is not recommended to continue using the old Pr
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -316,7 +316,7 @@ After calling this interface, it is not recommended to continue using the old Pr
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -383,7 +383,7 @@ After calling this interface, it is not recommended to continue using the old Pr
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -435,7 +435,7 @@ After calling this interface, it is not recommended to continue using the old Pr
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -494,7 +494,7 @@ After calling this interface, it is not recommended to continue using the old Pr
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -535,7 +535,7 @@ public func clear(): Unit
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -581,7 +581,7 @@ public func delete(key: String): Unit
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -622,7 +622,7 @@ public func flush(): Unit
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -677,7 +677,7 @@ public func get(key: String, defValue: PreferencesValueType): PreferencesValueTy
 
 import kit.ArkData.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 try {
     let preferences = Preferences.getPreferences(Global.getAbilityContext(), PreferencesOptions("mystore", dataGroupId:"myGroupID")) // Context application context needs to be obtained. For details, see the usage instructions in this document.
@@ -727,16 +727,16 @@ public func getAll(): HashMap<String, PreferencesValueType>
 
 import kit.ArkData.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 try {
     let preferences = Preferences.getPreferences(Global.getAbilityContext(), PreferencesOptions("mystore", dataGroupId:"myGroupID")) // Context application context needs to be obtained. For details, see the usage instructions in this document.
     var values = preferences.getAll()
     for ((k, v) in values) {
         match (v) {
-            case Integer(n) => Hilog.info(0, "AppLogCj", "Retrieved key-value pair: key: ${k} value: ${n}")
-            case Double(n) => Hilog.info(0, "AppLogCj", "Retrieved key-value pair: key: ${k} value: ${n}")
-            case StringData(n) => Hilog.info(0, "AppLogCj", "Retrieved key-value pair: key: ${k} value: ${n}")
+            case PreferencesValueType.Integer(n) => Hilog.info(0, "AppLogCj", "Retrieved key-value pair: key: ${k} value: ${n}")
+            case PreferencesValueType.Double(n) => Hilog.info(0, "AppLogCj", "Retrieved key-value pair: key: ${k} value: ${n}")
+            case PreferencesValueType.StringData(n) => Hilog.info(0, "AppLogCj", "Retrieved key-value pair: key: ${k} value: ${n}")
             case _ => Hilog.info(0, "AppLogCj", "Other value")
         }
     }
@@ -786,7 +786,7 @@ public func has(key: String): Bool
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -837,10 +837,8 @@ public func off(event :PreferencesEvent, callback!: ?Callback1Argument<String> =
 // index.cj
 
 import kit.ArkData.*
-import ohos.callback_invoke.*
-import ohos.business_exception.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.BusinessException
 
 try {
     // This code can be added to the dependency definition
@@ -899,10 +897,8 @@ public func on(event :PreferencesEvent, callback: Callback1Argument<String>): Un
 // index.cj
 
 import kit.ArkData.*
-import ohos.callback_invoke.*
-import ohos.business_exception.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.BusinessException
 
 try {
     // Callback function

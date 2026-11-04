@@ -43,7 +43,7 @@
 
     ```cangjie
     import kit.LocationKit.*
-    import ohos.business_exception.BusinessException
+    import kit.CangjieKit.BusinessException
     import kit.PerformanceAnalysisKit.Hilog
 
     try {
@@ -71,7 +71,7 @@
 
         ```cangjie
         import kit.LocationKit.*
-        import ohos.business_exception.BusinessException
+        import kit.CangjieKit.BusinessException
         import kit.PerformanceAnalysisKit.Hilog
 
         let request: SingleLocationRequest = SingleLocationRequest(LocatingPriority.PriorityLocatingSpeed, 10000)

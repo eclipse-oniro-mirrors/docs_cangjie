@@ -16,7 +16,7 @@ The Web component supports dark mode configuration for frontend pages.
 
     ```cangjie
     // index.cj
-    import ohos.web.webview.WebviewController
+    import kit.ArkWeb.WebviewController
     import kit.ArkUI.{Web, WebDarkMode}
     import ohos.arkui.state_macro_manage.rawfile
 
@@ -42,7 +42,7 @@ The Web component supports dark mode configuration for frontend pages.
 
     ```cangjie
     // index.cj
-    import ohos.web.webview.WebviewController
+    import kit.ArkWeb.WebviewController
     import kit.ArkUI.{Web, WebDarkMode}
     import ohos.arkui.state_macro_manage.rawfile
 

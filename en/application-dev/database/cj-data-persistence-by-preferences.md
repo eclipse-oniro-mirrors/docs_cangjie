@@ -67,7 +67,7 @@ Below are key interfaces for User Preferences persistence. For more details, ref
     import kit.PerformanceAnalysisKit.Hilog
     import kit.AbilityKit.{UIAbility, AbilityStage, Want, LaunchParam, LaunchReason, UIAbilityContext}
     import kit.ArkData.{ Preferences}
-    import ohos.data.preferences.PreferencesOptions
+    import kit.ArkData.PreferencesOptions
 
     var globalAbilityContext: Option<UIAbilityContext> = Option<UIAbilityContext>.None
     var dataPreferences: Option<Preferences> = Option<Preferences>.None
@@ -116,7 +116,7 @@ Below are key interfaces for User Preferences persistence. For more details, ref
 
     ```cangjie
     // xxx.cj
-    import ohos.data.preferences.PreferencesValueType
+    import kit.ArkData.PreferencesValueType
     ```
 
     The core code for write data is:

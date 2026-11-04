@@ -24,7 +24,7 @@ For details about how to use the APIs, see the API document of [System](../refer
    import kit.LocalizationKit.*
    import kit.BasicServicesKit.*
    import kit.PerformanceAnalysisKit.Hilog
-   import ohos.business_exception.*
+   import kit.CangjieKit.*
    ```
 
 2. Obtain the system language and system region.

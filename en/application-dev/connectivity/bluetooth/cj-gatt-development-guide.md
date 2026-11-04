@@ -78,8 +78,8 @@ Detailed interface descriptions are shown in the following table.
 
     ```cangjie
     import kit.ConnectivityKit.*
-    import ohos.business_exception.BusinessException
-    import ohos.callback_invoke.Callback1Argument
+    import kit.CangjieKit.BusinessException
+    import kit.CangjieKit.Callback1Argument
 
     const TAG: String = 'GattClientManager'
 
@@ -360,8 +360,8 @@ Detailed interface descriptions are shown in the following table.
 
     ```cangjie
     import kit.ConnectivityKit.*
-    import ohos.business_exception.BusinessException
-    import ohos.callback_invoke.Callback1Argument
+    import kit.CangjieKit.BusinessException
+    import kit.CangjieKit.Callback1Argument
     import std.collection.ArrayList
 
     const TAG: String = 'GattServerManager'

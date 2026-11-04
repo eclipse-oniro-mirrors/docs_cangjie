@@ -55,7 +55,7 @@ Developers can achieve opening files by installed vertical domain applications b
     import kit.AbilityKit.{UIAbility, Want, LaunchParam, Flags, WantValueType}
     import kit.ArkUI.WindowStage
     import kit.CoreFileKit.FileUri
-    import ohos.business_exception.BusinessException
+    import kit.CangjieKit.BusinessException
     import std.collection.HashMap
     ```
 

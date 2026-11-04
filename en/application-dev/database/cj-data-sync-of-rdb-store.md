@@ -63,8 +63,8 @@ The following APIs are related to cross-device data synchronization for relation
     <!-- compile -->
 
     ```cangjie
-    import ohos.data.relational_store.RelationalStoreSecurityLevel
-    import ohos.business_exception.BusinessException
+    import kit.ArkData.RelationalStoreSecurityLevel
+    import kit.CangjieKit.BusinessException
     ```
 
 2. Request permissions.
@@ -80,7 +80,7 @@ The following APIs are related to cross-device data synchronization for relation
     ```cangjie
     // main_ability.cj
     import kit.AbilityKit.{UIAbility, AbilityStage, Want, LaunchParam, LaunchReason, UIAbilityContext}
-    import ohos.data.relational_store.RdbStore
+    import kit.ArkData.RdbStore
     import kit.ArkData.{StoreConfig, getRdbStore, RdbPredicates}
     import kit.ArkUI.WindowStage
 

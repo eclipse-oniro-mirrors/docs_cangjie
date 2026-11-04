@@ -109,7 +109,7 @@ public init(
 <!-- compile -->
 ```cangjie
 import kit.AbilityKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {

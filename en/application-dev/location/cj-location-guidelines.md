@@ -46,7 +46,7 @@ This module's capabilities only support the WGS-84 coordinate system.
 
     ```cangjie
     import kit.LocationKit.*
-    import ohos.base.*
+    import kit.ArkUI.*
 
     try {
         let locationEnabled = GeoLocationManager.isLocationEnabled()
@@ -75,7 +75,7 @@ This module's capabilities only support the WGS-84 coordinate system.
 
         ```cangjie
         import kit.LocationKit.*
-        import ohos.base.*
+        import kit.ArkUI.*
 
         let request: SingleLocationRequest = SingleLocationRequest(LocatingPriority.PRIORITY_LOCATING_SPEED, 10000)
         try {

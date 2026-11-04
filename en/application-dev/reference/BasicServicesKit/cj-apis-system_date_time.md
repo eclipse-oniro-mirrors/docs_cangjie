@@ -67,7 +67,7 @@ public static func getTime(isNanoseconds!: Bool = false): Int64
 // index.cj
 
 import kit.BasicServicesKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -104,7 +104,7 @@ public static func getTimezone(): String
 // index.cj
 
 import kit.BasicServicesKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -148,7 +148,7 @@ public static func getUptime(timeType: TimeType, isNanoseconds!: Bool = false): 
 // index.cj
 
 import kit.BasicServicesKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {

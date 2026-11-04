@@ -164,8 +164,7 @@ Implicit Ability launch example.
 
         ```cangjie
         import kit.AbilityKit.*
-        import ohos.base.*
-        import ohos.ability.*
+        import kit.ArkUI.*
 
         class TargetAbility <: UIAbility {
           public override func onCreate(want:Want, launchParam: LaunchParam): Unit {

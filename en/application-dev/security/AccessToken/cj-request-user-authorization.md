@@ -50,8 +50,8 @@ Example: Requesting location permissions.
 
    ```cangjie
    import kit.AbilityKit.{Permissions, AbilityAccessCtrl, GrantStatus, BundleManager, BundleFlag}
-   import ohos.hilog.Hilog
-   import ohos.bundle.bundle_manager.BundleInfo
+   import kit.PerformanceAnalysisKit.Hilog
+   import kit.AbilityKit.BundleInfo
 
    func checkPermissionGrant(permission: Permissions): GrantStatus {
        try {
@@ -87,9 +87,9 @@ Example: Requesting location permissions.
      ```cangjie
      // main_ability.cj
      import kit.AbilityKit.*
-     import ohos.hilog.Hilog
-     import ohos.business_exception.*
-     import ohos.window.WindowStage
+     import kit.PerformanceAnalysisKit.Hilog
+     import kit.CangjieKit.*
+     import kit.ArkUI.WindowStage
 
      class MainAbility <: UIAbility {
          public override func onWindowStageCreate(windowStage: WindowStage): Unit {
@@ -123,8 +123,8 @@ Example: Requesting location permissions.
      ```cangjie
      // index.cj
      import kit.AbilityKit.*
-     import ohos.business_exception.*
-     import ohos.hilog.Hilog
+     import kit.CangjieKit.*
+     import kit.PerformanceAnalysisKit.Hilog
      import ohos.arkui.component.button.Button
      import ohos.arkui.state_macro_manage.Entry
      import ohos.arkui.state_macro_manage.Component

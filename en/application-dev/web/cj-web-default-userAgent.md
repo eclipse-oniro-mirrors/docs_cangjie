@@ -53,7 +53,7 @@ In the following example, the default User-Agent information provided by the int
 import kit.PerformanceAnalysisKit.Hilog
 import kit.ArkWeb.WebviewController
 import kit.ArkUI.Web
-import ohos.business_exception.*
+import kit.CangjieKit.*
 
 func loggerInfo(str: String) {
     Hilog.info(0, "CangjieTest", str)

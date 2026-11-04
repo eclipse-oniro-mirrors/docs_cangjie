@@ -68,7 +68,7 @@ public func getSensorList(): Array<Sensor>
 
 import kit.SensorServiceKit.*
 import kit.PerformanceAnalysisKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 try {
     let sensors = getSensorList()
@@ -122,7 +122,7 @@ public func getSingleSensor(sensorType: SensorId): Sensor
 
 import kit.SensorServiceKit.*
 import kit.PerformanceAnalysisKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 try {
     let sensors = getSingleSensor(SensorId.Accelerometer)
@@ -160,8 +160,8 @@ public func off(sensorType: SensorId, callback!: ?CallbackObject = None): Unit
 
 import kit.SensorServiceKit.*
 import kit.PerformanceAnalysisKit.*
-import ohos.business_exception.BusinessException
-import ohos.callback_invoke.*
+import kit.CangjieKit.BusinessException
+import kit.CangjieKit.*
 
 class SensorCallback <: Callback1Argument<OrientationResponse> {
     init() {}
@@ -213,8 +213,8 @@ public func on<T>(sensorType: SensorId, callback: Callback1Argument<T>, option!:
 
 import kit.SensorServiceKit.*
 import kit.PerformanceAnalysisKit.*
-import ohos.business_exception.BusinessException
-import ohos.callback_invoke.*
+import kit.CangjieKit.BusinessException
+import kit.CangjieKit.*
 
 class AccelerometerCallback <: Callback1Argument<AccelerometerResponse> {
     init() {}
@@ -260,8 +260,8 @@ public func once<T>(sensorType: SensorId, callback: Callback1Argument<T>): Unit 
 
 import kit.SensorServiceKit.*
 import kit.PerformanceAnalysisKit.*
-import ohos.business_exception.BusinessException
-import ohos.callback_invoke.*
+import kit.CangjieKit.BusinessException
+import kit.CangjieKit.*
 
 class GyroscopeCallback <: Callback1Argument<GyroscopeResponse> {
     init() {}
@@ -2201,8 +2201,8 @@ Accelerometer
 
 import kit.SensorServiceKit.*
 import kit.PerformanceAnalysisKit.*
-import ohos.business_exception.BusinessException
-import ohos.callback_invoke.*
+import kit.CangjieKit.BusinessException
+import kit.CangjieKit.*
 
 class AccelerometerCallback <: Callback1Argument<AccelerometerResponse> {
     init() {}
@@ -2248,8 +2248,8 @@ AccelerometerUncalibrated
 
 import kit.SensorServiceKit.*
 import kit.PerformanceAnalysisKit.*
-import ohos.business_exception.BusinessException
-import ohos.callback_invoke.*
+import kit.CangjieKit.BusinessException
+import kit.CangjieKit.*
 
 class AccelerometerUncalibratedCallback <: Callback1Argument<AccelerometerUncalibratedResponse> {
     init() {}
@@ -2295,8 +2295,8 @@ AmbientLight
 
 import kit.SensorServiceKit.*
 import kit.PerformanceAnalysisKit.*
-import ohos.business_exception.BusinessException
-import ohos.callback_invoke.*
+import kit.CangjieKit.BusinessException
+import kit.CangjieKit.*
 
 class LightCallback <: Callback1Argument<LightResponse> {
     init() {}
@@ -2342,8 +2342,8 @@ AmbientTemperature
 
 import kit.SensorServiceKit.*
 import kit.PerformanceAnalysisKit.*
-import ohos.business_exception.BusinessException
-import ohos.callback_invoke.*
+import kit.CangjieKit.BusinessException
+import kit.CangjieKit.*
 
 class AmbientTemperatureCallback <: Callback1Argument<AmbientTemperatureResponse> {
     init() {}
@@ -2389,8 +2389,8 @@ Barometer
 
 import kit.SensorServiceKit.*
 import kit.PerformanceAnalysisKit.*
-import ohos.business_exception.BusinessException
-import ohos.callback_invoke.*
+import kit.CangjieKit.BusinessException
+import kit.CangjieKit.*
 
 class BarometerCallback <: Callback1Argument<BarometerResponse> {
     init() {}
@@ -2436,8 +2436,8 @@ Gravity
 
 import kit.SensorServiceKit.*
 import kit.PerformanceAnalysisKit.*
-import ohos.business_exception.BusinessException
-import ohos.callback_invoke.*
+import kit.CangjieKit.BusinessException
+import kit.CangjieKit.*
 
 class GravityCallback <: Callback1Argument<GravityResponse> {
     init() {}
@@ -2483,8 +2483,8 @@ Gyroscope
 
 import kit.SensorServiceKit.*
 import kit.PerformanceAnalysisKit.*
-import ohos.business_exception.BusinessException
-import ohos.callback_invoke.*
+import kit.CangjieKit.BusinessException
+import kit.CangjieKit.*
 
 class GyroscopeCallback <: Callback1Argument<GyroscopeResponse> {
     init() {}
@@ -2530,8 +2530,8 @@ GyroscopeUncalibrated
 
 import kit.SensorServiceKit.*
 import kit.PerformanceAnalysisKit.*
-import ohos.business_exception.BusinessException
-import ohos.callback_invoke.*
+import kit.CangjieKit.BusinessException
+import kit.CangjieKit.*
 
 class GyroscopeUncalibratedCallback <: Callback1Argument<GyroscopeUncalibratedResponse> {
     init() {}
@@ -2577,8 +2577,8 @@ Hall
 
 import kit.SensorServiceKit.*
 import kit.PerformanceAnalysisKit.*
-import ohos.business_exception.BusinessException
-import ohos.callback_invoke.*
+import kit.CangjieKit.BusinessException
+import kit.CangjieKit.*
 
 class HallCallback <: Callback1Argument<HallResponse> {
     init() {}
@@ -2622,8 +2622,8 @@ HeartRate
 
 import kit.SensorServiceKit.*
 import kit.PerformanceAnalysisKit.*
-import ohos.business_exception.BusinessException
-import ohos.callback_invoke.*
+import kit.CangjieKit.BusinessException
+import kit.CangjieKit.*
 
 class HeartRateCallback <: Callback1Argument<HeartRateResponse> {
     init() {}
@@ -2669,8 +2669,8 @@ Humidity
 
 import kit.SensorServiceKit.*
 import kit.PerformanceAnalysisKit.*
-import ohos.business_exception.BusinessException
-import ohos.callback_invoke.*
+import kit.CangjieKit.BusinessException
+import kit.CangjieKit.*
 
 class HumidityCallback <: Callback1Argument<HumidityResponse> {
     init() {}
@@ -2716,8 +2716,8 @@ LinearAccelerometer
 
 import kit.SensorServiceKit.*
 import kit.PerformanceAnalysisKit.*
-import ohos.business_exception.BusinessException
-import ohos.callback_invoke.*
+import kit.CangjieKit.BusinessException
+import kit.CangjieKit.*
 
 class LinearAccelerometerCallback <: Callback1Argument<LinearAccelerometerResponse> {
     init() {}
@@ -2763,8 +2763,8 @@ MagneticField
 
 import kit.SensorServiceKit.*
 import kit.PerformanceAnalysisKit.*
-import ohos.business_exception.BusinessException
-import ohos.callback_invoke.*
+import kit.CangjieKit.BusinessException
+import kit.CangjieKit.*
 
 class MagneticFieldCallback <: Callback1Argument<MagneticFieldResponse> {
     init() {}
@@ -2810,8 +2810,8 @@ MagneticFieldUncalibrated
 
 import kit.SensorServiceKit.*
 import kit.PerformanceAnalysisKit.*
-import ohos.business_exception.BusinessException
-import ohos.callback_invoke.*
+import kit.CangjieKit.BusinessException
+import kit.CangjieKit.*
 
 class MagneticFieldUncalibratedCallback <: Callback1Argument<MagneticFieldUncalibratedResponse> {
     init() {}
@@ -2857,8 +2857,8 @@ Orientation
 
 import kit.SensorServiceKit.*
 import kit.PerformanceAnalysisKit.*
-import ohos.business_exception.BusinessException
-import ohos.callback_invoke.*
+import kit.CangjieKit.BusinessException
+import kit.CangjieKit.*
 
 class OrientationCallback <: Callback1Argument<OrientationResponse> {
     init() {}
@@ -2904,8 +2904,8 @@ Pedometer
 
 import kit.SensorServiceKit.*
 import kit.PerformanceAnalysisKit.*
-import ohos.business_exception.BusinessException
-import ohos.callback_invoke.*
+import kit.CangjieKit.BusinessException
+import kit.CangjieKit.*
 
 class PedometerCallback <: Callback1Argument<PedometerResponse> {
     init() {}
@@ -2951,8 +2951,8 @@ PedometerDetection
 
 import kit.SensorServiceKit.*
 import kit.PerformanceAnalysisKit.*
-import ohos.business_exception.BusinessException
-import ohos.callback_invoke.*
+import kit.CangjieKit.BusinessException
+import kit.CangjieKit.*
 
 class PedometerDetectionCallback <: Callback1Argument<PedometerDetectionResponse> {
     init() {}
@@ -2998,8 +2998,8 @@ Proximity
 
 import kit.SensorServiceKit.*
 import kit.PerformanceAnalysisKit.*
-import ohos.business_exception.BusinessException
-import ohos.callback_invoke.*
+import kit.CangjieKit.BusinessException
+import kit.CangjieKit.*
 
 class ProximityCallback <: Callback1Argument<ProximityResponse> {
     init() {}
@@ -3045,8 +3045,8 @@ RotationVector
 
 import kit.SensorServiceKit.*
 import kit.PerformanceAnalysisKit.*
-import ohos.business_exception.BusinessException
-import ohos.callback_invoke.*
+import kit.CangjieKit.BusinessException
+import kit.CangjieKit.*
 
 class RotationVectorCallback <: Callback1Argument<RotationVectorResponse> {
     init() {}
@@ -3092,8 +3092,8 @@ SignificantMotion
 
 import kit.SensorServiceKit.*
 import kit.PerformanceAnalysisKit.*
-import ohos.business_exception.BusinessException
-import ohos.callback_invoke.*
+import kit.CangjieKit.BusinessException
+import kit.CangjieKit.*
 
 class SignificantMotionCallback <: Callback1Argument<SignificantMotionResponse> {
     init() {}
@@ -3139,8 +3139,8 @@ WearDetection
 
 import kit.SensorServiceKit.*
 import kit.PerformanceAnalysisKit.*
-import ohos.business_exception.BusinessException
-import ohos.callback_invoke.*
+import kit.CangjieKit.BusinessException
+import kit.CangjieKit.*
 
 class WearDetectionCallback <: Callback1Argument<WearDetectionResponse> {
     init() {}

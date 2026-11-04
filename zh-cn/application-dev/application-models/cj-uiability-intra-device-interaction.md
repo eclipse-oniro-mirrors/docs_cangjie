@@ -22,7 +22,7 @@
 
     ```cangjie
     import kit.ArkUI.Button
-    import ohos.business_exception.*
+    import kit.CangjieKit.*
     import kit.AbilityKit.{Want, UIAbilityContext, WantValueType}
     import std.collection.HashMap
     import kit.PerformanceAnalysisKit.Hilog
@@ -92,7 +92,7 @@
     <!-- compile -->
 
     ```cangjie
-    import ohos.business_exception.*
+    import kit.CangjieKit.*
     import kit.AbilityKit.UIAbilityContext
     import kit.PerformanceAnalysisKit.Hilog
 
@@ -149,7 +149,7 @@ UIAbility的启动分为两种情况：UIAbility冷启动和UIAbility热启动�
 
 ```cangjie
 import kit.ArkUI.Button
-import ohos.business_exception.*
+import kit.CangjieKit.*
 import kit.AbilityKit.{Want, UIAbilityContext, AbilityResult, WantValueType}
 import std.collection.HashMap
 import kit.PerformanceAnalysisKit.Hilog

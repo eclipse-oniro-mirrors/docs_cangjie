@@ -71,9 +71,9 @@ finishTrace的name和taskId必须与流程开始的[startTrace()](#static-func-s
 ```cangjie
 // index.cj
 
-import ohos.base.*
+import kit.ArkUI.*
 import kit.PerformanceAnalysisKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 func func1(){
     HiTraceMeter.finishTrace("myTestFunc", 1)
@@ -140,9 +140,9 @@ public static func startTrace(name: String, taskId: Int32): Unit
 ```cangjie
 // index.cj
 
-import ohos.base.*
+import kit.ArkUI.*
 import kit.PerformanceAnalysisKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 try {
     HiTraceMeter.startTrace("myTestFunc", 1)

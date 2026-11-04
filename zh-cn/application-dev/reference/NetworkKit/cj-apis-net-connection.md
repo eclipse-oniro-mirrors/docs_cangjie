@@ -65,9 +65,9 @@ public func createNetConnection(netSpecifier!: ?NetSpecifier = None, timeout!: U
 ```cangjie
 // index.cj
 
-import ohos.base.*
+import kit.ArkUI.*
 import kit.NetworkKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -126,9 +126,9 @@ public func getAddressesByName(host: String): Array<NetAddress>
 ```cangjie
 // index.cj
 
-import ohos.base.*
+import kit.ArkUI.*
 import kit.NetworkKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -175,9 +175,9 @@ public func getAllNets(): Array<NetHandle>
 ```cangjie
 // index.cj
 
-import ohos.base.*
+import kit.ArkUI.*
 import kit.NetworkKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -221,9 +221,9 @@ public func getAppNet(): NetHandle
 ```cangjie
 // index.cj
 
-import ohos.base.*
+import kit.ArkUI.*
 import kit.NetworkKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -277,10 +277,10 @@ public func getConnectionProperties(netHandle: NetHandle): ConnectionProperties
 ```cangjie
 // index.cj
 
-import ohos.base.*
+import kit.ArkUI.*
 import kit.NetworkKit.*
 import kit.PerformanceAnalysisKit.*
-import ohos.business_exception.*
+import kit.CangjieKit.*
 
 try {
     let netHandle = getDefaultNet()
@@ -324,10 +324,10 @@ public func getDefaultHttpProxy(): HttpProxy
 ```cangjie
 // index.cj
 
-import ohos.base.*
+import kit.ArkUI.*
 import kit.NetworkKit.*
 import kit.PerformanceAnalysisKit.*
-import ohos.business_exception.*
+import kit.CangjieKit.*
 
 try {
     let proxy = getDefaultHttpProxy()
@@ -374,9 +374,9 @@ public func getDefaultNet(): NetHandle
 ```cangjie
 // index.cj
 
-import ohos.base.*
+import kit.ArkUI.*
 import kit.NetworkKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -430,10 +430,10 @@ public func getNetCapabilities(netHandle: NetHandle): NetCapabilities
 ```cangjie
 // index.cj
 
-import ohos.base.*
+import kit.ArkUI.*
 import kit.NetworkKit.*
 import kit.PerformanceAnalysisKit.*
-import ohos.business_exception.*
+import kit.CangjieKit.*
 
 try {
     let netHandle = getDefaultNet()
@@ -480,9 +480,9 @@ public func hasDefaultNet(): Bool
 ```cangjie
 // index.cj
 
-import ohos.base.*
+import kit.ArkUI.*
 import kit.NetworkKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -529,9 +529,9 @@ public func isDefaultNetMetered(): Bool
 ```cangjie
 // index.cj
 
-import ohos.base.*
+import kit.ArkUI.*
 import kit.NetworkKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -579,9 +579,9 @@ public func reportNetConnected(netHandle: NetHandle): Unit
 ```cangjie
 // index.cj
 
-import ohos.base.*
+import kit.ArkUI.*
 import kit.NetworkKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -630,9 +630,9 @@ public func reportNetDisconnected(netHandle: NetHandle): Unit
 ```cangjie
 // index.cj
 
-import ohos.base.*
+import kit.ArkUI.*
 import kit.NetworkKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -681,10 +681,10 @@ public func setAppNet(netHandle: NetHandle): Unit
 ```cangjie
 // index.cj
 
-import ohos.base.*
+import kit.ArkUI.*
 import kit.NetworkKit.*
 import kit.PerformanceAnalysisKit.*
-import ohos.business_exception.*
+import kit.CangjieKit.*
 
 try {
     let netHandle = getDefaultNet()
@@ -1339,8 +1339,7 @@ public func on(event: NetConnectionEvent, callback: Callback1Argument<NetHandle>
 
 import kit.NetworkKit.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.BusinessException
-import ohos.callback_invoke.*
+import kit.CangjieKit.*
 
 // 定义NetAvailableCb类
 class NetAvailableCb <: Callback1Argument<NetHandle> {
@@ -1398,8 +1397,7 @@ public func on(event: NetConnectionEvent, callback: Callback1Argument<NetBlockSt
 
 import kit.NetworkKit.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.BusinessException
-import ohos.callback_invoke.*
+import kit.CangjieKit.*
 
 // 定义NetBlockStatusChangeCb类
 class NetBlockStatusChangeCb <: Callback1Argument<NetBlockStatusInfo> {
@@ -1461,8 +1459,7 @@ public func on(event: NetConnectionEvent, callback: Callback1Argument<NetCapabil
 
 import kit.NetworkKit.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.BusinessException
-import ohos.callback_invoke.*
+import kit.CangjieKit.*
 
 // 定义NetCapabilitiesChangeCb类
 class NetCapabilitiesChangeCb <: Callback1Argument<NetCapabilityInfo> {
@@ -1524,8 +1521,7 @@ public func on(event: NetConnectionEvent, callback: Callback1Argument<NetConnect
 
 import kit.NetworkKit.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.BusinessException
-import ohos.callback_invoke.*
+import kit.CangjieKit.*
 
 // 定义NetConnectionPropertiesChangeCb类
 class NetConnectionPropertiesChangeCb <: Callback1Argument<NetConnectionPropertyInfo> {
@@ -1587,8 +1583,7 @@ public func on(event: NetConnectionEvent, callback: Callback0Argument): Unit
 
 import kit.NetworkKit.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.BusinessException
-import ohos.callback_invoke.*
+import kit.CangjieKit.*
 
 // 定义NetUnavailableCb类
 class NetUnavailableCb <: Callback0Argument {
@@ -1643,9 +1638,9 @@ public func register(): Unit
 ```cangjie
 // index.cj
 
-import ohos.base.*
+import kit.ArkUI.*
 import kit.NetworkKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1685,9 +1680,9 @@ public func unregister(): Unit
 ```cangjie
 // index.cj
 
-import ohos.base.*
+import kit.ArkUI.*
 import kit.NetworkKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1822,9 +1817,9 @@ public func getAddressByName(host: String): NetAddress
 ```cangjie
 // index.cj
 
-import ohos.base.*
+import kit.ArkUI.*
 import kit.NetworkKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1880,9 +1875,9 @@ public func getAddressesByName(host: String): Array<NetAddress>
 ```cangjie
 // index.cj
 
-import ohos.base.*
+import kit.ArkUI.*
 import kit.NetworkKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {

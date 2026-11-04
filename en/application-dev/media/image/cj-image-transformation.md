@@ -62,7 +62,7 @@ For detailed information about image transformation APIs, refer to the [API Refe
      ```cangjie  
      // Translate downward by 100.  
      // Translate rightward by 100.  
-     pixelMap.translate(100.0, 100.0);  
+     pixelMap.translate(100.0, 100.0)  
      ```  
 
      ![offsets](./figures/offsets.jpeg)  
@@ -73,7 +73,7 @@ For detailed information about image transformation APIs, refer to the [API Refe
 
      ```cangjie  
      // Rotate 90° clockwise.  
-     pixelMap.rotate(90.0);  
+     pixelMap.rotate(90.0)  
      ```  
 
      ![rotate](./figures/rotate.jpeg)  
@@ -84,7 +84,7 @@ For detailed information about image transformation APIs, refer to the [API Refe
 
      ```cangjie  
      // Flip vertically.  
-     pixelMap.flip(false, true);  
+     pixelMap.flip(false, true)  
      ```  
 
      ![Vertical Flip](./figures/vertical-flip.jpeg)  
@@ -104,7 +104,7 @@ For detailed information about image transformation APIs, refer to the [API Refe
 
      ```cangjie  
      // Opacity set to 0.5.  
-     pixelMap.opacity(0.5);  
+     pixelMap.opacity(0.5)  
      ```  
 
      ![Transparency](./figures/transparency.png)

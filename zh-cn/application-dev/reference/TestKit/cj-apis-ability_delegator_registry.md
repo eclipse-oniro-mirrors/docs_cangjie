@@ -70,7 +70,7 @@ public func addAbilityMonitor(monitor: AbilityMonitor): Unit
 
 import kit.AbilityKit.*
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -120,7 +120,7 @@ public func addAbilityStageMonitor(monitor: AbilityStageMonitor): Unit
 
 import kit.AbilityKit.*
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -167,7 +167,7 @@ public func doAbilityBackground(ability: UIAbility): Unit
 
 import kit.AbilityKit.*
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -214,7 +214,7 @@ public func doAbilityForeground(ability: UIAbility): Unit
 
 import kit.AbilityKit.*
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -260,7 +260,7 @@ public func executeShellCommand(cmd: String, timeoutSecs!: Int64 = 0): ShellCmdR
 
 import kit.AbilityKit.*
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -300,7 +300,7 @@ public func finishTest(msg: String, code: Int64): Unit
 
 import kit.AbilityKit.*
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -345,7 +345,7 @@ public func getAbilityState(ability: UIAbility): AbilityLifecycleState
 
 import kit.AbilityKit.*
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -384,7 +384,7 @@ public func getAppContext(): Context
 
 import kit.AbilityKit.*
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -431,7 +431,7 @@ public func getCurrentTopAbility(): UIAbility
 
 import kit.AbilityKit.*
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -470,7 +470,7 @@ public func print(msg: String): Unit
 
 import kit.AbilityKit.*
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -517,7 +517,7 @@ public func removeAbilityMonitor(monitor: AbilityMonitor): Unit
 
 import kit.AbilityKit.*
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -567,7 +567,7 @@ public func removeAbilityStageMonitor(monitor: AbilityStageMonitor): Unit
 
 import kit.AbilityKit.*
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -628,7 +628,7 @@ public func startAbility(want: Want): Unit
 
 import kit.AbilityKit.*
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -683,7 +683,7 @@ public func waitAbilityMonitor(monitor: AbilityMonitor, timeout!: Int64 = 5000):
 
 import kit.AbilityKit.*
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -742,7 +742,7 @@ public func waitAbilityStageMonitor(monitor: AbilityStageMonitor, timeout!: Int6
 
 import kit.AbilityKit.*
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -870,7 +870,7 @@ public static func getAbilityDelegator(): AbilityDelegator
 // index.cj
 
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -907,7 +907,7 @@ public static func getArguments(): AbilityDelegatorArgs
 
 import kit.TestKit.*
 import kit.PerformanceAnalysisKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1142,7 +1142,7 @@ public init(
 // index.cj
 
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1238,7 +1238,7 @@ public init(
 
 import kit.AbilityKit.*
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {

@@ -68,10 +68,10 @@ public static func createSubscriber(subscribeInfo: CommonEventSubscribeInfo): Co
 
 import kit.BasicServicesKit.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.base.*
-import ohos.business_exception.*
+import kit.ArkUI.*
+import kit.CangjieKit.*
 
-let subscriber: CommonEventSubscriber // Used to save the successfully created subscriber object for subsequent subscription and unsubscription actions.
+var subscriber: CommonEventSubscriber // Used to save the successfully created subscriber object for subsequent subscription and unsubscription actions.
 let support = Support.COMMON_EVENT_ABILITY_ADDED
 // Subscriber information
 let subscribeInfo: CommonEventSubscribeInfo = CommonEventSubscribeInfo([support])
@@ -122,8 +122,8 @@ public static func publish(event: String, options!: CommonEventPublishData =  Co
 
 import kit.BasicServicesKit.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.base.*
-import ohos.business_exception.*
+import kit.ArkUI.*
+import kit.CangjieKit.*
 
 try {
     // Common event properties
@@ -176,8 +176,8 @@ public static func subscribe(subscriber: CommonEventSubscriber, callback: AsyncC
 // index.cj
 
 import kit.BasicServicesKit.*
-import ohos.base.*
-import ohos.business_exception.*
+import kit.ArkUI.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 // Subscribe to event: screen on
@@ -231,8 +231,8 @@ public static func unsubscribe(subscriber: CommonEventSubscriber): Unit
 // index.cj
 
 import kit.BasicServicesKit.*
-import ohos.base.*
-import ohos.business_exception.*
+import kit.ArkUI.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 // Subscribe to event: screen on
