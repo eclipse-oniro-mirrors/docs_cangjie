@@ -14,4 +14,4 @@
 
 3. 获取密钥的二进制数据，用于存储或传输。
 
-其中，密钥Key包括对称密钥SymKey和非对称密钥（公钥PubKey和私钥PriKey），其中公钥和私钥组成密钥对KeyPair，当前仅支持对称密钥SymKey。
+其中，密钥Key包括对称密钥SymKey和非对称密钥（公钥PubKey和私钥PriKey），其中公钥和私钥组成密钥对KeyPair。
