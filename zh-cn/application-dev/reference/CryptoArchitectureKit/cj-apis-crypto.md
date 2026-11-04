@@ -363,9 +363,15 @@ public func createVerify(algName: String): Verify
 
 ```cangjie
 <!-- compile -->
-import crypto_framework.crypto_framework
+import kit.CryptoArchitectureKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let verify = createVerify("RSA2048|PKCS1|SHA256")
+try {
+    let verify = createVerify("RSA2048|PKCS1|SHA256")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## interface Key
@@ -1642,8 +1648,7 @@ public func generateKeyPair(callback: AsyncCallback<KeyPair>): Unit
 
 ```cangjie
 <!-- compile -->
-import crypto_framework.crypto_framework
-import ohos.async_callback.AsyncCallback
+import kit.CryptoArchitectureKit.*
 import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -1699,8 +1704,7 @@ public func convertKey(callback: AsyncCallback<KeyPair>, pubKey!: Option<DataBlo
 
 ```cangjie
 <!-- compile -->
-import crypto_framework.crypto_framework
-import ohos.async_callback.AsyncCallback
+import kit.CryptoArchitectureKit.*
 import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -1761,7 +1765,7 @@ public func convertPemKey(callback: AsyncCallback<KeyPair>, pubKey!: Option<Stri
 
 ```cangjie
 <!-- compile -->
-import crypto_framework.crypto_framework
+import kit.CryptoArchitectureKit.*
 import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -1872,7 +1876,7 @@ public func getAsyKeySpec(itemType: AsyKeySpecItem): ResultSpec
 
 ```cangjie
 <!-- compile -->
-import crypto_framework.crypto_framework
+import kit.CryptoArchitectureKit.*
 import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -1928,6 +1932,31 @@ public func getEncodedDer(format: String): DataBlob
   | 17630001 | Crypto operation error. |
   | 17620003 | Parameter check failed. |
 
+**示例：**
+
+```cangjie
+<!-- compile -->
+import kit.CryptoArchitectureKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
+
+let asyKeyGenerator = createAsyKeyGenerator("RSA2048")
+try {
+    asyKeyGenerator.generateKeyPair({ err, keyPair =>
+        if (let Some(e) <- err) {
+            throw e
+        }
+        if (let Some(kp) <- keyPair) {
+            let priKey = kp.priKey
+            let priDer = priKey.getEncodedDer("PKCS8")
+            Hilog.info(0, "", "priKey DER data size: ${priDer.data.size}")
+        }
+    })
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
 ### func getEncodedPem(String)
 
 ```cangjie
@@ -1964,6 +1993,31 @@ public func getEncodedPem(format: String): String
   | 17630001 | Crypto operation error. |
   | 17620003 | Parameter check failed. |
 
+**示例：**
+
+```cangjie
+<!-- compile -->
+import kit.CryptoArchitectureKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
+
+let asyKeyGenerator = createAsyKeyGenerator("RSA2048")
+try {
+    asyKeyGenerator.generateKeyPair({ err, keyPair =>
+        if (let Some(e) <- err) {
+            throw e
+        }
+        if (let Some(kp) <- keyPair) {
+            let priKey = kp.priKey
+            let priPem = priKey.getEncodedPem("PKCS8")
+            Hilog.info(0, "", "priKey PEM: ${priPem}")
+        }
+    })
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
 ### func getEncoded()
 
 ```cangjie
@@ -1994,6 +2048,31 @@ public func getEncoded(): DataBlob
   | 17620001 | Memory operation failed. |
   | 17630001 | Crypto operation error. |
 
+**示例：**
+
+```cangjie
+<!-- compile -->
+import kit.CryptoArchitectureKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
+
+let asyKeyGenerator = createAsyKeyGenerator("RSA2048")
+try {
+    asyKeyGenerator.generateKeyPair({ err, keyPair =>
+        if (let Some(e) <- err) {
+            throw e
+        }
+        if (let Some(kp) <- keyPair) {
+            let priKey = kp.priKey
+            let priEncoded = priKey.getEncoded()
+            Hilog.info(0, "", "priKey encoded data size: ${priEncoded.data.size}")
+        }
+    })
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
 ### func clearMem()
 
 ```cangjie
@@ -2012,7 +2091,7 @@ public func clearMem(): Unit
 
 ```cangjie
 <!-- compile -->
-import crypto_framework.crypto_framework
+import kit.CryptoArchitectureKit.*
 import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -2123,7 +2202,7 @@ public func getAsyKeySpec(itemType: AsyKeySpecItem): ResultSpec
 
 ```cangjie
 <!-- compile -->
-import crypto_framework.crypto_framework
+import kit.CryptoArchitectureKit.*
 import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -2179,6 +2258,31 @@ public func getEncodedDer(format: String): DataBlob
   | 17630001 | Crypto operation error. |
   | 17620003 | Parameter check failed. |
 
+**示例：**
+
+```cangjie
+<!-- compile -->
+import kit.CryptoArchitectureKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
+
+let asyKeyGenerator = createAsyKeyGenerator("RSA2048")
+try {
+    asyKeyGenerator.generateKeyPair({ err, keyPair =>
+        if (let Some(e) <- err) {
+            throw e
+        }
+        if (let Some(kp) <- keyPair) {
+            let pubKey = kp.pubKey
+            let pubDer = pubKey.getEncodedDer("X.509")
+            Hilog.info(0, "", "pubKey DER data size: ${pubDer.data.size}")
+        }
+    })
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
 ### func getEncodedPem(String)
 
 ```cangjie
@@ -2215,6 +2319,31 @@ public func getEncodedPem(format: String): String
   | 17630001 | Crypto operation error. |
   | 17620003 | Parameter check failed. |
 
+**示例：**
+
+```cangjie
+<!-- compile -->
+import kit.CryptoArchitectureKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
+
+let asyKeyGenerator = createAsyKeyGenerator("RSA2048")
+try {
+    asyKeyGenerator.generateKeyPair({ err, keyPair =>
+        if (let Some(e) <- err) {
+            throw e
+        }
+        if (let Some(kp) <- keyPair) {
+            let pubKey = kp.pubKey
+            let pubPem = pubKey.getEncodedPem("X.509")
+            Hilog.info(0, "", "pubKey PEM: ${pubPem}")
+        }
+    })
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
 ### func getEncoded()
 
 ```cangjie
@@ -2244,6 +2373,31 @@ public func getEncoded(): DataBlob
   | 801 | this operation is not supported. |
   | 17620001 | Memory operation failed. |
   | 17630001 | Crypto operation error. |
+
+**示例：**
+
+```cangjie
+<!-- compile -->
+import kit.CryptoArchitectureKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
+
+let asyKeyGenerator = createAsyKeyGenerator("RSA2048")
+try {
+    asyKeyGenerator.generateKeyPair({ err, keyPair =>
+        if (let Some(e) <- err) {
+            throw e
+        }
+        if (let Some(kp) <- keyPair) {
+            let pubKey = kp.pubKey
+            let pubEncoded = pubKey.getEncoded()
+            Hilog.info(0, "", "pubKey encoded data size: ${pubEncoded.data.size}")
+        }
+    })
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
 
 ## class KeyPair
 
@@ -2347,7 +2501,7 @@ public func initialize(pubKey: PubKey, callback: AsyncCallback<Unit>): Unit
 
 ```cangjie
 <!-- compile -->
-import crypto_framework.crypto_framework
+import kit.CryptoArchitectureKit.*
 import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -2404,6 +2558,40 @@ public func update(data: DataBlob, callback: AsyncCallback<Unit>): Unit
   | 17630001 | Crypto operation error. |
   | 17620004 | Invalid function call. |
 
+**示例：**
+
+```cangjie
+<!-- compile -->
+import kit.CryptoArchitectureKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
+
+let verify = createVerify("RSA2048|PKCS1|SHA256")
+let asyKeyGenerator = createAsyKeyGenerator("RSA2048")
+let input: Array<UInt8> = "This is test data".toUtf8Array()
+try {
+    asyKeyGenerator.generateKeyPair({ err, keyPair =>
+        if (let Some(e) <- err) {
+            throw e
+        }
+        if (let Some(kp) <- keyPair) {
+            verify.initialize(kp.pubKey, { err1 =>
+                if (let Some(e1) <- err1) {
+                    throw e1
+                }
+                verify.update(DataBlob(input), { err2 =>
+                    if (let Some(e2) <- err2) {
+                        throw e2
+                    }
+                })
+            })
+        }
+    })
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
 ### func verify(DataBlob, DataBlob, AsyncCallback<Bool>)
 
 ```cangjie
@@ -2436,6 +2624,44 @@ public func verify(data: DataBlob, signatureData: DataBlob, callback: AsyncCallb
   | 17620002 | Failed to obtain the native object or convert parameters. |
   | 17630001 | Crypto operation error. |
   | 17620003 | Parameter check failed. |
+
+**示例：**
+
+```cangjie
+<!-- compile -->
+import kit.CryptoArchitectureKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
+
+let verify = createVerify("RSA2048|PKCS1|SHA256")
+let asyKeyGenerator = createAsyKeyGenerator("RSA2048")
+let input: Array<UInt8> = "This is test data".toUtf8Array()
+let signDataArr: Array<UInt8> = Array<UInt8>(256, item: 0)
+try {
+    asyKeyGenerator.generateKeyPair({ err, keyPair =>
+        if (let Some(e) <- err) {
+            throw e
+        }
+        if (let Some(kp) <- keyPair) {
+            verify.initialize(kp.pubKey, { err1 =>
+                if (let Some(e1) <- err1) {
+                    throw e1
+                }
+                verify.verify(DataBlob(input), DataBlob(signDataArr), { err2, res =>
+                    if (let Some(e2) <- err2) {
+                        throw e2
+                    }
+                    if (let Some(r) <- res) {
+                        Hilog.info(0, "", "verify result: ${r}")
+                    }
+                })
+            })
+        }
+    })
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
 
 ### func verify(DataBlob, AsyncCallback<Bool>, Option<DataBlob>)
 
@@ -2470,6 +2696,50 @@ public func verify(signatureData: DataBlob, callback: AsyncCallback<Bool>, data!
   | 17630001 | Crypto operation error. |
   | 17620003 | Parameter check failed. |
 
+**示例：**
+
+```cangjie
+<!-- compile -->
+import kit.CryptoArchitectureKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
+
+let verify = createVerify("RSA2048|PKCS1|SHA256")
+let asyKeyGenerator = createAsyKeyGenerator("RSA2048")
+let input: Array<UInt8> = "This is test data".toUtf8Array()
+let signDataArr: Array<UInt8> = Array<UInt8>(256, item: 0)
+try {
+    asyKeyGenerator.generateKeyPair({ err, keyPair =>
+        if (let Some(e) <- err) {
+            throw e
+        }
+        if (let Some(kp) <- keyPair) {
+            verify.initialize(kp.pubKey, { err1 =>
+                if (let Some(e1) <- err1) {
+                    throw e1
+                }
+                verify.update(DataBlob(input), { err2 =>
+                    if (let Some(e2) <- err2) {
+                        throw e2
+                    }
+                    // 已通过update追加数据，data参数传None
+                    verify.verify(DataBlob(signDataArr), { err3, res =>
+                        if (let Some(e3) <- err3) {
+                            throw e3
+                        }
+                        if (let Some(r) <- res) {
+                            Hilog.info(0, "", "verify result: ${r}")
+                        }
+                    }, None)
+                })
+            })
+        }
+    })
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
 ### func recover(DataBlob, AsyncCallback<?DataBlob>)
 
 ```cangjie
@@ -2502,6 +2772,43 @@ public func recover(signatureData: DataBlob, callback: AsyncCallback<?DataBlob>)
   | 17630001 | Crypto operation error. |
   | 17620004 | Invalid function call. |
 
+**示例：**
+
+```cangjie
+<!-- compile -->
+import kit.CryptoArchitectureKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
+
+let verify = createVerify("RSA2048|PKCS1|NoHash|Recover")
+let asyKeyGenerator = createAsyKeyGenerator("RSA2048")
+let signDataArr: Array<UInt8> = Array<UInt8>(256, item: 0)
+try {
+    asyKeyGenerator.generateKeyPair({ err, keyPair =>
+        if (let Some(e) <- err) {
+            throw e
+        }
+        if (let Some(kp) <- keyPair) {
+            verify.initialize(kp.pubKey, { err1 =>
+                if (let Some(e1) <- err1) {
+                    throw e1
+                }
+                verify.recover(DataBlob(signDataArr), { err2, rawData =>
+                    if (let Some(e2) <- err2) {
+                        throw e2
+                    }
+                    if (let Some(data) <- rawData) {
+                        Hilog.info(0, "", "recover data size: ${data.data.size}")
+                    }
+                })
+            })
+        }
+    })
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
 ### func setVerifySpec(SignSpecItem, Int32)
 
 ```cangjie
@@ -2533,6 +2840,23 @@ public func setVerifySpec(itemType: SignSpecItem, itemValue: Int32): Unit
   | 17620001 | Memory operation failed. |
   | 17630001 | Crypto operation error. |
   | 17620003 | Parameter check failed. |
+
+**示例：**
+
+```cangjie
+<!-- compile -->
+import kit.CryptoArchitectureKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
+
+let verify = createVerify("RSA2048|PSS|SHA256|MGF1_SHA256")
+try {
+    verify.setVerifySpec(SignSpecItem.PssSaltLenNum, 32)
+    Hilog.info(0, "", "setVerifySpec PssSaltLenNum success.")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
 
 ### func setVerifySpec(SignSpecItem, Array<UInt8>)
 
@@ -2567,6 +2891,24 @@ public func setVerifySpec(itemType: SignSpecItem, itemValue: Array<UInt8>): Unit
   | 17620003 | Parameter check failed. |
   | 17620004 | Invalid function call. |
   | 17630001 | Crypto operation error. |
+
+**示例：**
+
+```cangjie
+<!-- compile -->
+import kit.CryptoArchitectureKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
+
+let verify = createVerify("SM2_256|SM3")
+let userId: Array<UInt8> = "testUserId".toUtf8Array()
+try {
+    verify.setVerifySpec(SignSpecItem.Sm2UserIdUint8arr, userId)
+    Hilog.info(0, "", "setVerifySpec Sm2UserId success.")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
 
 ### func getVerifySpec(SignSpecItem)
 
@@ -2604,6 +2946,27 @@ public func getVerifySpec(itemType: SignSpecItem): ResultSpec
   | 17620001 | Memory operation failed. |
   | 17630001 | Crypto operation error. |
   | 17620003 | Parameter check failed. |
+
+**示例：**
+
+```cangjie
+<!-- compile -->
+import kit.CryptoArchitectureKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
+
+let verify = createVerify("RSA2048|PSS|SHA256|MGF1_SHA256")
+try {
+    verify.setVerifySpec(SignSpecItem.PssSaltLenNum, 32)
+    let saltLenSpec = verify.getVerifySpec(SignSpecItem.PssSaltLenNum)
+    match (saltLenSpec) {
+        case ResultSpec.Int32Value(v) => Hilog.info(0, "", "saltLen: ${v}")
+        case _ => ()
+    }
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
 
 ## class CcmParamsSpec
 
