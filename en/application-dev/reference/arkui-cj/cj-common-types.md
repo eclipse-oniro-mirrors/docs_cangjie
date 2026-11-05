@@ -20990,6 +20990,242 @@ public operator func !=(other: TextAreaType): Bool
 |:----|:----|
 |Bool|Returns true if the enums are not equal, otherwise false.|
 
+## enum EllipsisMode
+
+```cangjie
+public enum EllipsisMode <: Equatable<EllipsisMode> {
+    | Start
+    | Center
+    | End
+    | MultilineStart
+    | MultilineCenter
+    | ...
+}
+```
+
+**Function:** The position of the ellipsis.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+**Parent Type:**
+
+- Equatable\<[EllipsisMode](#enum-ellipsismode)>
+
+### Start
+
+```cangjie
+Start
+```
+
+**Function:** Ellipsizes the content at the beginning of the line. Applicable to single-line text scenarios.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### Center
+
+```cangjie
+Center
+```
+
+**Function:** Ellipsizes the content in the middle of the line. Applicable to single-line text scenarios.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### End
+
+```cangjie
+End
+```
+
+**Function:** Ellipsizes the content at the end of the line. Applicable to both single-line and multi-line text scenarios.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### MultilineStart
+
+```cangjie
+MultilineStart
+```
+
+**Function:** Ellipsizes the content at the beginning of the line. Applicable to both single-line and multi-line text scenarios.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### MultilineCenter
+
+```cangjie
+MultilineCenter
+```
+
+**Function:** Ellipsizes the content in the middle of the line. Applicable to both single-line and multi-line text scenarios.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### operator func ==(EllipsisMode)
+
+```cangjie
+public operator func ==(other: EllipsisMode): Bool
+```
+
+**Function:** Compares two EllipsisMode enums for equality.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+|Parameter|Type|Required|Default|Description|
+|:---|:---|:---|:---|:---|
+|other|[EllipsisMode](#enum-ellipsismode)|Yes|-|Another EllipsisMode enum to compare.|
+
+**Return Value:**
+
+|Type|Description|
+|:----|:----|
+|Bool|Returns true if the enums are equal, otherwise false.|
+
+### operator func !=(EllipsisMode)
+
+```cangjie
+public operator func !=(other: EllipsisMode): Bool
+```
+
+**Function:** Compares two EllipsisMode enums for inequality.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+|Parameter|Type|Required|Default|Description|
+|:---|:---|:---|:---|:---|
+|other|[EllipsisMode](#enum-ellipsismode)|Yes|-|Another EllipsisMode enum to compare.|
+
+**Return Value:**
+
+|Type|Description|
+|:----|:----|
+|Bool|Returns true if the enums are not equal, otherwise false.|
+
+## enum DynamicRangeMode
+
+```cangjie
+public enum DynamicRangeMode <: Equatable<DynamicRangeMode> {
+    | High
+    | Constraint
+    | Standard
+    | ...
+}
+```
+
+**Function:** Describes the dynamic range of the image that is expected to be displayed.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+**Parent Type:**
+
+- Equatable\<[DynamicRangeMode](#enum-dynamicrangemode)>
+
+### High
+
+```cangjie
+High
+```
+
+**Function:** Unrestricted dynamic range, which brightens the image to the maximum extent.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### Constraint
+
+```cangjie
+Constraint
+```
+
+**Function:** Constrained dynamic range, which brightens the image in a constrained manner.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### Standard
+
+```cangjie
+Standard
+```
+
+**Function:** Standard dynamic range, which does not brighten the image.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### operator func ==(DynamicRangeMode)
+
+```cangjie
+public operator func ==(other: DynamicRangeMode): Bool
+```
+
+**Function:** Compares two DynamicRangeMode enums for equality.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+|Parameter|Type|Required|Default|Description|
+|:---|:---|:---|:---|:---|
+|other|[DynamicRangeMode](#enum-dynamicrangemode)|Yes|-|Another DynamicRangeMode enum to compare.|
+
+**Return Value:**
+
+|Type|Description|
+|:----|:----|
+|Bool|Returns true if the enums are equal, otherwise false.|
+
+### operator func !=(DynamicRangeMode)
+
+```cangjie
+public operator func !=(other: DynamicRangeMode): Bool
+```
+
+**Function:** Compares two DynamicRangeMode enums for inequality.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+|Parameter|Type|Required|Default|Description|
+|:---|:---|:---|:---|:---|
+|other|[DynamicRangeMode](#enum-dynamicrangemode)|Yes|-|Another DynamicRangeMode enum to compare.|
+
+**Return Value:**
+
+|Type|Description|
+|:----|:----|
+|Bool|Returns true if the enums are not equal, otherwise false.|
+
 ## type VoidCallback
 
 ```cangjie

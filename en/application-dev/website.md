@@ -184,6 +184,7 @@
                         - [Gesture Binding Methods](arkui-cj/cj-gesture-events-binding.md)
                         - [Single Gestures](arkui-cj/cj-gesture-events-single-gesture.md)
                 - [Using Mirroring Capabilities](arkui-cj/cj-mirroring-display.md)
+                - [Using Component Snapshot](arkui-cj/cj-uicontext-component-snapshot.md)
                 <!--RP1--><!--RP1End-->
                 - Theme Settings
                     - [Application Dark/Light Mode Adaptation](arkui-cj/cj-ui-dark-light-color-adaptation.md)
@@ -531,6 +532,7 @@
                     - [ohos.curves (Interpolation Calculation)](reference/arkui-cj/cj-apis-curves.md)
                     - ohos.arkui.ui_context (UIContext)
                         - [AnimatorResult](reference/arkui-cj/cj-apis-uicontext-animator.md)
+                        - [ComponentSnapshot](reference/arkui-cj/cj-apis-uicontext-componentsnapshot.md)
                         - [ContextMenuController](reference/arkui-cj/cj-apis-uicontext-contextmenucontroller.md)
                         - [Font](reference/arkui-cj/cj-apis-uicontext-font.md)
                         - [MeasureUtils](reference/arkui-cj/cj-apis-uicontext-measureutils.md)
@@ -704,7 +706,8 @@
                 - [Framework Interfaces](reference/arkui-cj/cj-ui-framework.md)
             - Error Codes
                 - UI Interface
-                    - [Animation Error Codes](reference/arkui-cj/cj-errorcode-animator.md)
+                    - [Interface Call Exception Error Codes](reference/arkui-cj/cj-errorcode-internal.md)
+                    - [Snapshot Error Codes](reference/arkui-cj/cj-errorcode-snapshot.md)
                 - Graphics
                     - [Display Error Codes](reference/arkui-cj/cj-errorcode-display.md)
                     - [Window Error Codes](reference/arkui-cj/cj-errorcode-window.md)

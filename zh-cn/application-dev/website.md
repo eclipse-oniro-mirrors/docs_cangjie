@@ -314,6 +314,7 @@
                         - [使用画布绘制自定义图形（Canvas）](arkui-cj/cj-drawing-customization-on-canvas.md)
                 - [混合开发](arkui-cj/cj-appendix-hybrid.md)
                 - [使用镜像能力](arkui-cj/cj-mirroring-display.md)
+                - [使用组件截图](arkui-cj/cj-uicontext-component-snapshot.md)
                 <!--RP1--><!--RP1End-->
                 - 主题设置
                     - [应用深浅色适配](arkui-cj/cj-ui-dark-light-color-adaptation.md)
@@ -694,6 +695,7 @@
                     - [ohos.curves（插值计算）](reference/arkui-cj/cj-apis-curves.md)
                     - ohos.arkui.ui_context（UIContext）
                         - [AnimatorResult](reference/arkui-cj/cj-apis-uicontext-animator.md)
+                        - [ComponentSnapshot](reference/arkui-cj/cj-apis-uicontext-componentsnapshot.md)
                         - [ContextMenuController](reference/arkui-cj/cj-apis-uicontext-contextmenucontroller.md)
                         - [Font](reference/arkui-cj/cj-apis-uicontext-font.md)
                         - [MeasureUtils](reference/arkui-cj/cj-apis-uicontext-measureutils.md)
@@ -867,7 +869,8 @@
                 - [框架接口](reference/arkui-cj/cj-ui-framework.md)
             - 错误码
                 - UI界面
-                    - [动画错误码](reference/arkui-cj/cj-errorcode-animator.md)
+                    - [接口调用异常错误码](reference/arkui-cj/cj-errorcode-internal.md)
+                    - [截图错误码](reference/arkui-cj/cj-errorcode-snapshot.md)
                 - 图形图像
                     - [屏幕错误码](reference/arkui-cj/cj-errorcode-display.md)
                     - [窗口错误码](reference/arkui-cj/cj-errorcode-window.md)

@@ -7,6 +7,7 @@
         - [ohos.curves (Interpolation Calculation)](cj-apis-curves.md)(Beta Feature)
         - ohos.arkui.ui_context（UIContext）
             - [AnimatorResult](cj-apis-uicontext-animator.md)(Beta Feature)
+            - [ComponentSnapshot](cj-apis-uicontext-componentsnapshot.md)(Beta Feature)
             - [ContextMenuController](cj-apis-uicontext-contextmenucontroller.md)(Beta Feature)
             - [Font](cj-apis-uicontext-font.md)(Beta Feature)
             - [MeasureUtils](cj-apis-uicontext-measureutils.md)(Beta Feature)
@@ -180,7 +181,8 @@
     - [Framework Interfaces](cj-ui-framework.md)(Beta Feature)
 - Error Codes
     - UI Interface
-        - [Animation Error Codes](cj-errorcode-animator.md)(Beta Feature)
+        - [Interface Call Exception Error Codes](cj-errorcode-internal.md)(Beta Feature)
+        - [Snapshot Error Codes](cj-errorcode-snapshot.md)(Beta Feature)
     - Graphics
         - [Screen Error Codes](cj-errorcode-display.md)(Beta Feature)
         - [Window Error Codes](cj-errorcode-window.md)(Beta Feature)

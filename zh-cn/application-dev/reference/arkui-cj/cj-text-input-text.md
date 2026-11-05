@@ -126,6 +126,32 @@ public func decoration(decorationType!: ?TextDecorationType, color!: ?ResourceCo
 |color|?[ResourceColor](./cj-common-types.md#interface-resourcecolor)|是|-| **命名参数。** 装饰线颜色。<br>初始值：Color.Black。|
 |decorationStyle|?[TextDecorationStyle](./cj-common-types.md#enum-textdecorationstyle)|否|None| **命名参数。** 装饰线样式。<br>初始值：TextDecorationStyle.Solid。|
 
+### func font(?Length, ?FontWeight, ?ResourceStr, ?FontStyle)
+
+```cangjie
+public func font(size!: ?Length = None, weight!: ?FontWeight = None, family!: ?ResourceStr = None,
+    style!: ?FontStyle = None): This
+```
+
+**功能：** 设置文本样式。未通过该接口设置时，使用系统默认字体样式配置。
+
+包括字体大小、字体粗细、字体族和字体风格。
+
+仅Text组件生效，其子组件不生效。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|size|?[Length](./cj-common-types.md#interface-length)|否|None|**命名参数。** 设置文本尺寸，Length为Int64、Float64类型时，使用fp单位。不支持设置百分比字符串。<br>初始值：16.0|
+|weight|?[FontWeight](./cj-common-types.md#enum-fontweight)|否|None|**命名参数。** 设置文本的字体粗细。<br>初始值：FontWeight.Normal|
+|family|?[ResourceStr](./cj-common-types.md#interface-resourcestr)|否|None|**命名参数。** 字体列表。初始字体'HarmonyOS Sans'。<br>使用多个字体时，请用逗号','分隔，字体的优先级按顺序生效。例如：'Arial,HarmonyOS Sans'。|
+|style|?[FontStyle](./cj-common-types.md#enum-fontstyle)|否|None|**命名参数。** 设置文本字体样式。<br>初始值：FontStyle.Normal|
+
 ### func fontColor(?ResourceColor)
 
 ```cangjie

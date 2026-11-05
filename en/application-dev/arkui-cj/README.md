@@ -120,6 +120,7 @@
             - [Gesture Binding Methods](cj-gesture-events-binding.md)(Beta Feature)
             - [Single Gestures](cj-gesture-events-single-gesture.md)(Beta Feature)
 - [Using Mirroring Capability](cj-mirroring-display.md)(Beta Feature)
+- [Using Component Snapshot](cj-uicontext-component-snapshot.md)(Beta Feature)
 <!--RP1--><!--RP1End-->
 - Theme Settings
     - [Dark/Light Mode Adaptation](cj-ui-dark-light-color-adaptation.md)(Beta Feature)

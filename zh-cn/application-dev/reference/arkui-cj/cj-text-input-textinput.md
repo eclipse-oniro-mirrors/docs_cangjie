@@ -89,6 +89,26 @@ public func customKeyboard(value: ?CustomBuilder, supportAvoidance!: ?Bool = Non
 |value|?[CustomBuilder](./cj-common-types.md#type-custombuilder)|是|-|设置TextInput的自定义键盘。<br>初始值：{ => }。|
 |supportAvoidance|?Bool|否|None| **命名参数。** TextInput的自定义键盘选项。<br>初始值：false。|
 
+### func ellipsisMode(?EllipsisMode)
+
+```cangjie
+public func ellipsisMode(mode: ?EllipsisMode): This
+```
+
+**功能：** 设置省略位置。ellipsisMode属性仅在[TextInputStyle](#func-styletextinputstyle)的内联模式下生效，需要配合[textOverflow](#func-textoverflowtextoverflow)设置为TextOverflow.Ellipsis使用，单独设置ellipsisMode属性不生效。未通过该接口设置时，初始值为EllipsisMode.End。
+
+非编辑态时正常生效，编辑态时EllipsisMode.Start和EllipsisMode.Center仅在[maxLines](#func-maxlinesint32)设置为1时生效，EllipsisMode.End正常生效。EllipsisMode.MultilineStart和EllipsisMode.MultilineCenter正常生效。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|mode|?[EllipsisMode](./cj-common-types.md#enum-ellipsismode)|是|-|省略位置。|
+
 ### func enableKeyboardOnFocus(?Bool)
 
 ```cangjie
@@ -214,6 +234,24 @@ public func fontWeight(value: ?FontWeight): This
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |value|?[FontWeight](./cj-common-types.md#enum-fontweight)|是|-|文本的字体粗细。<br>初始值：FontWeight.Normal。|
+
+### func halfLeading(?Bool)
+
+```cangjie
+public func halfLeading(halfLeading: ?Bool): This
+```
+
+**功能：** 设置文本在行内垂直居中，将行间距平分至行的顶部与底部。未通过该接口设置时，初始值为false。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|halfLeading|?Bool|是|-|设置文本是否垂直居中。<br>true表示将行间距平分至行的顶部与底部，false则不平分。|
 
 ### func inputFilter(?ResourceStr, ?(String) -> Unit)
 
@@ -381,6 +419,44 @@ public func textAlign(value: ?TextAlign): This
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |value|?[TextAlign](./cj-common-types.md#enum-textalign)|是|-|文本的水平对齐方式。<br>初始值：TextAlign.Start。|
+
+### func textIndent(?Length)
+
+```cangjie
+public func textIndent(value: ?Length): This
+```
+
+**功能：** 设置首行文本缩进。未通过该接口设置时，初始值为0。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|value|?[Length](./cj-common-types.md#interface-length)|是|-|首行文本缩进。<br>单位：vp<br>取值范围：大于等于0。设置负数时，按初始值处理。|
+
+### func textOverflow(?TextOverflow)
+
+```cangjie
+public func textOverflow(value: ?TextOverflow): This
+```
+
+**功能：** 设置文本超长时的显示方式。仅在[TextInputStyle](#func-styletextinputstyle)值为内联模式的编辑态、非编辑态下支持。未通过该接口设置时，内联模式非编辑态下默认为TextOverflow.Ellipsis，内联模式编辑态下默认为TextOverflow.Clip。
+
+当textOverflow设置为TextOverflow.None时，效果与TextOverflow.Clip相同。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|value|?[TextOverflow](./cj-common-types.md#enum-textoverflow)|是|-|文本超长时的显示方式。|
 
 ## 组件事件
 
@@ -572,6 +648,8 @@ public func stopEditing(): Unit
 
 ## 示例代码
 
+### 示例1（设置光标位置）
+
 <!--run-->
 
 ```cangjie
@@ -630,3 +708,93 @@ class EntryView {
 ```
 
 ![textinput](figures/textinput.png)
+
+### 示例2（文本设置省略模式）
+
+该示例通过[textOverflow](#func-textoverflowtextoverflow)、[ellipsisMode](#func-ellipsismodeellipsismode)、[style](#func-styletextinputstyle)属性展示了文本超长省略以及调整省略位置的效果，通过MultilineStart和MultilineCenter两种类型实现了单行文本和多行文本场景下的省略号在行首和行中的效果。
+
+<!--run-->
+
+```cangjie
+package ohos_app_cangjie_entry
+
+import kit.ArkUI.*
+import ohos.arkui.state_macro_manage.*
+
+@Entry
+@Component
+class EntryView {
+    @State
+    var text: String = "As the sun begins to set, casting a warm golden hue across the sky," +
+        "the world seems to slow down and breathe a sigh of relief. The sky is painted with hues of orange, " +
+        " pink, and lavender, creating a breathtaking tapestry that stretches as far as the eye can see." +
+        "The air is filled with the sweet scent of blooming flowers, mingling with the earthy aroma of freshly turned soil."
+    @State
+    var ellipsisModeIndex: Int64 = 0
+    @State
+    var ellipsisMode: Array<EllipsisMode> = [EllipsisMode.End, EllipsisMode.Start, EllipsisMode.Center,
+        EllipsisMode.MultilineStart, EllipsisMode.MultilineCenter]
+    @State
+    var ellipsisModeStr: Array<String> = ["End", "Start", "Center", "MultilineStart", "MultilineCenter"]
+    @State
+    var textOverflowIndex: Int64 = 0
+    @State
+    var textOverflow: Array<TextOverflow> = [TextOverflow.Ellipsis, TextOverflow.Clip]
+    @State
+    var textOverflowStr: Array<String> = ["Ellipsis", "Clip"]
+    @State
+    var styleInputIndex: Int64 = 0
+    @State
+    var styleInput: Array<TextInputStyle> = [TextInputStyle.Inline, TextInputStyle.Default]
+    @State
+    var styleInputStr: Array<String> = ["Inline", "Default"]
+
+    func build() {
+        Row() {
+            Column(space: 20) {
+                TextInput(text: this.text)
+                    .textOverflow(this.textOverflow[this.textOverflowIndex])
+                    .ellipsisMode(this.ellipsisMode[this.ellipsisModeIndex])
+                    .style(this.styleInput[this.styleInputIndex])
+                    .fontSize(30)
+                    .margin(30)
+                Button("更改ellipsisMode模式：" + this.ellipsisModeStr[this.ellipsisModeIndex])
+                    .onClick(
+                        {
+                            event =>
+                                this.ellipsisModeIndex++
+                                if (this.ellipsisModeIndex > this.ellipsisModeStr.size - 1) {
+                                    this.ellipsisModeIndex = 0
+                                }
+                        }
+                    )
+                    .fontSize(18)
+                Button("更改textOverflow模式：" + this.textOverflowStr[this.textOverflowIndex])
+                    .onClick(
+                        {
+                            event =>
+                                this.textOverflowIndex++
+                                if (this.textOverflowIndex > this.textOverflowStr.size - 1) {
+                                    this.textOverflowIndex = 0
+                                }
+                        }
+                    )
+                    .fontSize(18)
+                Button("更改Style大小：" + this.styleInputStr[this.styleInputIndex])
+                    .onClick(
+                        {
+                            event =>
+                                this.styleInputIndex++
+                                if (this.styleInputIndex > this.styleInputStr.size - 1) {
+                                    this.styleInputIndex = 0
+                                }
+                        }
+                    )
+                    .fontSize(18)
+            }
+        }
+    }
+}
+```
+
+![textInputEllipsisMode](figures/textInputEllipsisMode.gif)
