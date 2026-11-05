@@ -14,6 +14,4 @@ Key generation operations are commonly required in the following scenarios:
 
 3. Extracting binary data from keys for storage or transmission purposes.
 
-The key types include:
-- Symmetric keys (SymKey)
-- Asymmetric keys (public keys PubKey and private keys PriKey), where a public key and private key form a key pair (KeyPair). Currently, only symmetric keys (SymKey) are supported.
+The key types include symmetric keys (SymKey) and asymmetric keys (public keys PubKey and private keys PriKey), where a public key and private key form a key pair (KeyPair).
