@@ -320,8 +320,15 @@ public func createAsyKeyGenerator(algName: String): AsyKeyGenerator
 ```cangjie
 <!-- compile -->
 import kit.CryptoArchitectureKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
 
-let asyKeyGenerator = createAsyKeyGenerator("RSA2048")
+try {
+    let asyKeyGenerator = createAsyKeyGenerator("RSA2048")
+    Hilog.info(0, "", "createAsyKeyGenerator success.")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
 ```
 
 ## func createVerify(String)
@@ -369,6 +376,7 @@ import kit.PerformanceAnalysisKit.Hilog
 
 try {
     let verify = createVerify("RSA2048|PKCS1|SHA256")
+    Hilog.info(0, "", "verify algName: ${verify.algName}")
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -1661,6 +1669,7 @@ try {
         if (let Some(kp) <- keyPair) {
             let pubKey = kp.pubKey
             let priKey = kp.priKey
+            Hilog.info(0, "", "generateKeyPair success, pubKey algName: ${pubKey.algName}")
         }
     })
 } catch (e: BusinessException) {
@@ -1721,6 +1730,9 @@ try {
                 if (let Some(e1) <- err1) {
                     throw e1
                 }
+                if (let Some(kp1) <- keyPair1) {
+                    Hilog.info(0, "", "convertKey success, pubKey format: ${kp1.pubKey.format}")
+                }
             }, pubKey!: Some(pubEncoded), priKey!: Some(priEncoded))
         }
     })
@@ -1776,6 +1788,9 @@ try {
     asyKeyGenerator.convertPemKey({ err, keyPair =>
         if (let Some(e) <- err) {
             throw e
+        }
+        if (let Some(kp) <- keyPair) {
+            Hilog.info(0, "", "convertPemKey success, priKey algName: ${kp.priKey.algName}")
         }
     }, pubKey!: Some(pubKeyPem), priKey!: Some(priKeyPem))
 } catch (e: BusinessException) {
@@ -1889,6 +1904,10 @@ try {
         if (let Some(kp) <- keyPair) {
             let priKey = kp.priKey
             let resultSpec = priKey.getAsyKeySpec(AsyKeySpecItem.RsaNBn)
+            match (resultSpec) {
+                case ResultSpec.BigintValue(v) => Hilog.info(0, "", "RsaNBn: ${v.toString()}")
+                case _ => ()
+            }
         }
     })
 } catch (e: BusinessException) {
@@ -2103,6 +2122,7 @@ try {
         }
         if (let Some(kp) <- keyPair) {
             kp.priKey.clearMem()
+            Hilog.info(0, "", "priKey clearMem success.")
         }
     })
 } catch (e: BusinessException) {
@@ -2215,6 +2235,10 @@ try {
         if (let Some(kp) <- keyPair) {
             let pubKey = kp.pubKey
             let resultSpec = pubKey.getAsyKeySpec(AsyKeySpecItem.RsaNBn)
+            match (resultSpec) {
+                case ResultSpec.BigintValue(v) => Hilog.info(0, "", "pubKey RsaNBn: ${v.toString()}")
+                case _ => ()
+            }
         }
     })
 } catch (e: BusinessException) {
@@ -2518,6 +2542,7 @@ try {
                 if (let Some(e1) <- err1) {
                     throw e1
                 }
+                Hilog.info(0, "", "verify initialize success, algName: ${verify.algName}")
             })
         }
     })
@@ -2583,6 +2608,7 @@ try {
                     if (let Some(e2) <- err2) {
                         throw e2
                     }
+                    Hilog.info(0, "", "verify update success, data size: ${input.size}")
                 })
             })
         }
