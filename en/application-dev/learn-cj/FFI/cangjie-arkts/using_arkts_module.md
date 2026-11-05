@@ -4,7 +4,7 @@ Taking the example of calling the ArkTS-side module "@ohos.file.photoAccessHelpe
 
 ```cangjie
 // Import interoperation library
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func tryLoadArkTSSo() {
     // Create new ArkTS runtime

@@ -11,12 +11,10 @@ Provides declarative interoperability macros between Cangjie and ArkTS, used to 
 ## Import Module
 
 ```cangjie
-import ohos.ark_interop_macro.*
+import kit.CangjieKit.*
 ```
 
-> **Note:**
->
-> Kit import methods are not supported and are expected to be supported in the next version.
+The interface capabilities of this module (ohos.ark_interop_macro) are encapsulated in CangjieKit and can be used after being imported through `import kit.CangjieKit.*`. For more details about importing Kits, see [Interface Usage Notes](../cj-development-intro.md#interface-usage-notes).
 
 ## @Interop macro
 

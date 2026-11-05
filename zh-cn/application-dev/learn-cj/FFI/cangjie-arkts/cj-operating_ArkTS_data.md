@@ -51,7 +51,7 @@
     package ohos_app_cangjie_entry
 
     // 导入互操作库ark_interop和互操作宏
-    import ohos.ark_interop.*
+    import kit.CangjieKit.*
 
     // 互操作函数定义，该函数参数类型必须为(JSContext，JSCallInfo),返回值类型必须为JSValue
     func addByObject(context: JSContext, callInfo: JSCallInfo): JSValue {
@@ -119,7 +119,7 @@
    func handleUnknownObject(context: JSContext, target: JSObject): Unit {
        // keys接口枚举对象的可枚举属性
        let keys = target.keys()
-       Hilog.info(0, "", "target keys: ${keys}")
+       Hilog.info(0, "test", "target keys: ${keys}")
    }
    ```
 
@@ -159,7 +159,7 @@ class SendableTestClass {
 package ohos_app_cangjie_entry
 
 // 导入互操作库ark_interop和互操作宏
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 // 互操作函数定义，该函数参数类型必须为(JSContext，JSCallInfo),返回值类型必须为JSValue
 func readNumber(context: JSContext, callInfo: JSCallInfo): JSValue {
@@ -214,10 +214,10 @@ console.log("result = " + result);
 // 定义包名，该包名需要和 cjpm.toml 的 package name 保持一致
 package ohos_app_cangjie_entry
 
-internal import ohos.ark_interop.JSModule
-internal import ohos.ark_interop.JSContext
-internal import ohos.ark_interop.JSCallInfo
-internal import ohos.ark_interop.JSValue
+internal import kit.CangjieKit.JSModule
+internal import kit.CangjieKit.JSContext
+internal import kit.CangjieKit.JSCallInfo
+internal import kit.CangjieKit.JSValue
 
 func testAsync(context: JSContext, callInfo: JSCallInfo): JSValue {
     // 创建 PromiseCapability
@@ -407,10 +407,10 @@ startTestWorker();
     ```cangjie
     package ohos_app_cangjie_entry
 
-    internal import ohos.ark_interop.JSModule
-    internal import ohos.ark_interop.JSContext
-    internal import ohos.ark_interop.JSCallInfo
-    internal import ohos.ark_interop.JSValue
+    internal import kit.CangjieKit.JSModule
+    internal import kit.CangjieKit.JSContext
+    internal import kit.CangjieKit.JSCallInfo
+    internal import kit.CangjieKit.JSValue
 
     func addByCallback(context: JSContext, callInfo: JSCallInfo): JSValue {
         // 获取第1、2个参数，并转换为Float64

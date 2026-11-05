@@ -216,10 +216,8 @@ Key files include:
      // second.cj
      package ohos_app_cangjie_entry
 
-     import ohos.base.*
-     import ohos.arkui.component.*
+     import kit.ArkUI.*
      import ohos.arkui.state_macro_manage.*
-     import ohos.arkui.state_management.*
 
      @HybridComponentEntry
      @Component
@@ -354,11 +352,10 @@ Page navigation uses the router module to find target pages via URLs.
      // index.cj
      package ohos_app_cangjie_entry
 
-     import ohos.base.*
-     import ohos.ark_interop.*
-     import ohos.ark_interop_macro.*
+     import kit.ArkUI.*
+     import kit.CangjieKit.*
      import std.collection.*
-     import ohos.hilog.Hilog
+     import kit.PerformanceAnalysisKit.Hilog
 
      public let globalJSFunction = HashMap<String, () -> Unit>()
 
@@ -427,11 +424,9 @@ Page navigation uses the router module to find target pages via URLs.
      // second.cj
      package ohos_app_cangjie_entry
 
-     import ohos.base.*
-     import ohos.arkui.component.*
+     import kit.ArkUI.*
      import ohos.arkui.state_macro_manage.*
-     import ohos.arkui.state_management.*
-     import ohos.hilog.Hilog
+     import kit.PerformanceAnalysisKit.Hilog
 
      @HybridComponentEntry
      @Component

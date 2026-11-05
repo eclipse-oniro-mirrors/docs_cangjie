@@ -11,12 +11,10 @@ ArkTS 应用的开发语言包括 ArkTS、typescript、javascript，ArkTS 互操
 ## 导入模块
 
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 ```
 
-> **说明：**
->
-> 当前暂不支持Kit化的导入方式，预计在下个版本支持。
+本模块（ohos.ark_interop）的接口能力由 CangjieKit 封装提供，通过 `import kit.CangjieKit.*` 导入后使用。关于 Kit 导入的更多说明，请参考[接口使用说明](../cj-development-intro.md#接口使用说明)。
 
 ## interface JSInteropByte
 
@@ -56,8 +54,7 @@ public interface JSInteropType<T> {
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
-import ohos.ark_interop_macro.*
+import kit.CangjieKit.*
 
 @Interop[ArkTS]
 public class MyCustomClass {
@@ -152,7 +149,7 @@ sealed interface JSKeyable <: ToString & ToJSValue {
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func keyableUsage(context: JSContext): Unit {
@@ -216,7 +213,7 @@ func toJSValue(context: JSContext): JSValue
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func int8Translate(context: JSContext): Unit {
@@ -318,7 +315,7 @@ public func toJSValue(context: JSContext): JSValue
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func int16Translate(context: JSContext): Unit {
@@ -420,7 +417,7 @@ public func toJSValue(context: JSContext): JSValue
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func int32Translate(context: JSContext): Unit {
@@ -522,7 +519,7 @@ public func toJSValue(context: JSContext): JSValue
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func int64Translate(context: JSContext): Unit {
@@ -625,7 +622,7 @@ public func toJSValue(context: JSContext): JSValue
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func uint8Translate(context: JSContext): Unit {
@@ -718,7 +715,7 @@ public func toJSValue(context: JSContext): JSValue
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func uint16Translate(context: JSContext): Unit {
@@ -820,7 +817,7 @@ public func toJSValue(context: JSContext): JSValue
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func uint32Translate(context: JSContext): Unit {
@@ -922,7 +919,7 @@ public func toJSValue(context: JSContext): JSValue
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func uint64Translate(context: JSContext): Unit {
@@ -1025,7 +1022,7 @@ public func toJSValue(context: JSContext): JSValue
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func float16Translate(context: JSContext): Unit {
@@ -1127,7 +1124,7 @@ public func toJSValue(context: JSContext): JSValue
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func float32Translate(context: JSContext): Unit {
@@ -1229,7 +1226,7 @@ public func toJSValue(context: JSContext): JSValue
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func float64Translate(context: JSContext): Unit {
@@ -1330,7 +1327,7 @@ public func toJSValue(context: JSContext): JSValue
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func boolTranslate(context: JSContext): Unit {
@@ -1431,7 +1428,7 @@ public func toJSValue(context: JSContext): JSValue
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func stringTranslate(context: JSContext): Unit {
@@ -1501,7 +1498,7 @@ public static func toArktsType(): String
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func stringTranslate(context: JSContext): Unit {
@@ -1554,7 +1551,7 @@ public func toJSValue(context: JSContext): JSValue
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func unitTranslate(context: JSContext): Unit {
     let source: Unit = ()
@@ -1637,7 +1634,7 @@ public func toJSValue(context: JSContext): JSValue
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func optionTranslate(context: JSContext): Unit {
@@ -1739,7 +1736,7 @@ public func toJSValue(context: JSContext): JSValue
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func arrayTranslate(context: JSContext): Unit {
@@ -1903,7 +1900,7 @@ public operator func [](index: Int64): JSValue
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let jsArr = callInfo[0].asArray()
@@ -1943,7 +1940,7 @@ public operator func [](index: Int64, value!: JSValue): Unit
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let jsArr = callInfo[0].asArray()
@@ -1984,7 +1981,7 @@ public operator func [](index: Int64, value!: JSHeapObject): Unit
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let jsArr = callInfo[0].asArray()
@@ -2035,7 +2032,7 @@ public prop byteLength: Int32
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func getBufferLength(context: JSContext, callInfo: JSCallInfo): JSValue {
@@ -2075,7 +2072,7 @@ public func readBytes(): Array<Byte>
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func readBufferBytes(context: JSContext, callInfo: JSCallInfo): JSValue {
@@ -2116,7 +2113,7 @@ public func toArrayBufferJSValue(): JSValue
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func getArrayBufferJSValue(context: JSContext): JSValue {
     let data: Array<Byte> = [1, 2, 3, 4]
@@ -2156,7 +2153,7 @@ public func toFloat32Array(): Array<Float32>
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func createFloat32Array(context: JSContext): Unit {
@@ -2197,7 +2194,7 @@ public func toFloat32ArrayJSValue(): JSValue
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func convertToFloat32Array(context: JSContext, callInfo: JSCallInfo): JSValue {
@@ -2238,7 +2235,7 @@ public func toFloat64Array(): Array<Float64>
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func convertToFloat64Array(context: JSContext, callInfo: JSCallInfo): JSValue {
@@ -2279,7 +2276,7 @@ public func toFloat64ArrayJSValue(): JSValue
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func getFloat64ArrayJSValue(context: JSContext, callInfo: JSCallInfo): JSValue {
     let arrayBuffer = callInfo[0].asArrayBuffer()
@@ -2318,7 +2315,7 @@ public func toInt16Array(): Array<Int16>
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func convertToInt16Array(context: JSContext, callInfo: JSCallInfo): JSValue {
@@ -2359,7 +2356,7 @@ public func toInt16ArrayJSValue(): JSValue
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func getInt16ArrayJSValue(context: JSContext, callInfo: JSCallInfo): JSValue {
     let arrayBuffer = callInfo[0].asArrayBuffer()
@@ -2398,7 +2395,7 @@ public func toInt32Array(): Array<Int32>
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func convertToInt32Array(context: JSContext, callInfo: JSCallInfo): JSValue {
@@ -2439,7 +2436,7 @@ public func toInt32ArrayJSValue(): JSValue
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func getInt32ArrayJSValue(context: JSContext, callInfo: JSCallInfo): JSValue {
     let arrayBuffer = callInfo[0].asArrayBuffer()
@@ -2478,7 +2475,7 @@ public func toInt64Array(): Array<Int64>
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func convertToInt64Array(context: JSContext, callInfo: JSCallInfo): JSValue {
@@ -2519,7 +2516,7 @@ public func toInt64ArrayJSValue(): JSValue
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func getInt64ArrayJSValue(context: JSContext, callInfo: JSCallInfo): JSValue {
     let arrayBuffer = callInfo[0].asArrayBuffer()
@@ -2557,7 +2554,7 @@ public func toInt8Array(): Array<Int8>
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func convertToInt8Array(context: JSContext, callInfo: JSCallInfo): JSValue {
@@ -2598,7 +2595,7 @@ public func toInt8ArrayJSValue(): JSValue
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func getInt8ArrayJSValue(context: JSContext, callInfo: JSCallInfo): JSValue {
     let arrayBuffer = callInfo[0].asArrayBuffer()
@@ -2637,7 +2634,7 @@ public func toUInt16Array(): Array<UInt16>
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func convertToUInt16Array(context: JSContext, callInfo: JSCallInfo): JSValue {
@@ -2678,7 +2675,7 @@ public func toUInt16ArrayJSValue(): JSValue
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func getUInt16ArrayJSValue(context: JSContext, callInfo: JSCallInfo): JSValue {
     let arrayBuffer = callInfo[0].asArrayBuffer()
@@ -2717,7 +2714,7 @@ public func toUInt32Array(): Array<UInt32>
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func convertToUInt32Array(context: JSContext, callInfo: JSCallInfo): JSValue {
@@ -2758,7 +2755,7 @@ public func toUInt32ArrayJSValue(): JSValue
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func getUInt32ArrayJSValue(context: JSContext, callInfo: JSCallInfo): JSValue {
     let arrayBuffer = callInfo[0].asArrayBuffer()
@@ -2797,7 +2794,7 @@ public func toUInt64Array(): Array<UInt64>
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func convertToUInt64Array(context: JSContext, callInfo: JSCallInfo): JSValue {
@@ -2838,7 +2835,7 @@ public func toUInt64ArrayJSValue(): JSValue
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func getUInt64ArrayJSValue(context: JSContext, callInfo: JSCallInfo): JSValue {
     let arrayBuffer = callInfo[0].asArrayBuffer()
@@ -2876,7 +2873,7 @@ public func toUInt8Array(): Array<UInt8>
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func convertToUInt8Array(context: JSContext, callInfo: JSCallInfo): JSValue {
@@ -2917,7 +2914,7 @@ public func toUInt8ArrayJSValue(): JSValue
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func getUInt8ArrayJSValue(context: JSContext, callInfo: JSCallInfo): JSValue {
     let arrayBuffer = callInfo[0].asArrayBuffer()
@@ -2956,7 +2953,7 @@ public func toUInt8ClampedArrayJSValue(): JSValue
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func getUInt8ClampedArrayJSValue(context: JSContext, callInfo: JSCallInfo): JSValue {
     let arrayBuffer = callInfo[0].asArrayBuffer()
@@ -3098,7 +3095,7 @@ public func clone(): JSArrayEx<T>
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func cloneArrayEx(context: JSContext): JSValue {
@@ -3148,7 +3145,7 @@ public func concat(other: JSArrayEx<T>): JSArrayEx<T>
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func concatArrayEx(context: JSContext): JSValue {
@@ -3200,7 +3197,7 @@ public func get(index: Int64): Option<T>
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func getElementFromArrayEx(context: JSContext, callInfo: JSCallInfo): JSValue {
@@ -3245,7 +3242,7 @@ public func isEmpty(): Bool
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func checkArrayExEmpty(context: JSContext): JSValue {
@@ -3293,7 +3290,7 @@ public func set(index: Int64, element: T): Unit
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func setElementInArrayEx(context: JSContext): JSValue {
@@ -3337,7 +3334,7 @@ public func toArray(): Array<T>
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func convertArrayExToArray(context: JSContext): JSValue {
@@ -3419,7 +3416,7 @@ public operator func [](index: Int64): T
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func getIndexOperator(context: JSContext): JSValue {
@@ -3464,7 +3461,7 @@ public operator func [](index: Int64, value!: T): Unit
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func setIndexOperator(context: JSContext): JSValue {
@@ -3522,7 +3519,7 @@ public func toBigInt(): BigInt
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func convertToBigInt(context: JSContext, callInfo: JSCallInfo): JSValue {
@@ -3574,7 +3571,7 @@ public func toBool(): Bool
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
@@ -3706,7 +3703,7 @@ public operator func [](index: Int64): JSValue
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     if (callInfo.count > 0) {
@@ -3757,7 +3754,7 @@ public prop prototype: JSObject
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func accessClassPrototype(context: JSContext): JSValue {
@@ -3805,7 +3802,7 @@ public func addAccessor(key: JSKeyable, getter!: ?JSFunction = None, setter!: ?J
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
@@ -3856,7 +3853,7 @@ public func addAccessor(key: JSKeyable, getter!: ?JSLambda = None, setter!: ?JSL
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
@@ -3906,7 +3903,7 @@ public func addMethod(key: JSKeyable, method: JSFunction): Unit
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
@@ -3956,7 +3953,7 @@ public func addMethod(key: JSKeyable, method: JSLambda): Unit
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
@@ -4006,7 +4003,7 @@ public func addProperty(key: JSKeyable, value: JSValue): Unit
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
@@ -4052,7 +4049,7 @@ public func new(): JSValue
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let ctor: JSLambda = { _, callInfo =>
@@ -4100,7 +4097,7 @@ public func new(arg: JSValue): JSValue
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let ctor: JSLambda = { context, callInfo =>
@@ -4152,7 +4149,7 @@ public func new(args: Array<JSValue>): JSValue
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let ctor: JSLambda = { context, callInfo =>
@@ -4212,7 +4209,7 @@ public prop env: JSEnv
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func accessContextEnv(context: JSContext): JSValue {
@@ -4250,7 +4247,7 @@ public prop global: JSObject
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func accessGlobalObject(context: JSContext): JSValue {
@@ -4263,10 +4260,10 @@ func accessGlobalObject(context: JSContext): JSValue {
 }
 ```
 
-### func newScope\<T>(()->T)
+### func newScope\<T>(() -> T)
 
 ```cangjie
-public func newScope<T>(callback: ()->T): T
+public func newScope<T>(callback: () -> T): T
 ```
 
 **功能：** 创建一个 ArkTS handle scope。
@@ -4277,7 +4274,7 @@ public func newScope<T>(callback: ()->T): T
 
 | 参数名      | 类型 |必填|默认值| 说明      |
 |:---------|:---|:---|:---|:--------|
-| callback | ()->T |是|-| 用户回调函数。 |
+| callback | () -> T |是|-| 用户回调函数。 |
 
 **返回值：**
 
@@ -4298,7 +4295,7 @@ public func newScope<T>(callback: ()->T): T
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
@@ -4351,7 +4348,7 @@ public func array(arr: Array<JSValue>): JSArray
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let result = context.array([])
@@ -4396,7 +4393,7 @@ public func arrayBuffer(length: Int32): JSArrayBuffer
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let result = context.arrayBuffer(Int32(10))
@@ -4440,7 +4437,7 @@ public func arrayBuffer(data: Array<Byte>): JSArrayBuffer
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let array : Array<Byte> = [1, 2, 3, 4, 5]
@@ -4485,7 +4482,7 @@ public func arrayBuffer(data: Array<Int8>): JSArrayBuffer
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func createArrayBufferFromInt8(context: JSContext): JSValue {
@@ -4534,7 +4531,7 @@ public func arrayBuffer(data: Array<Int16>): JSArrayBuffer
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func createArrayBufferFromInt16(context: JSContext): JSValue {
@@ -4583,7 +4580,7 @@ public func arrayBuffer(data: Array<UInt16>): JSArrayBuffer
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func createArrayBufferFromUInt16(context: JSContext): JSValue {
@@ -4632,7 +4629,7 @@ public func arrayBuffer(data: Array<UInt32>): JSArrayBuffer
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func createArrayBufferFromUInt32(context: JSContext): JSValue {
@@ -4681,7 +4678,7 @@ public func arrayBuffer(data: Array<Int32>): JSArrayBuffer
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func createArrayBufferFromInt32(context: JSContext): JSValue {
@@ -4730,7 +4727,7 @@ public func arrayBuffer(data: Array<Float32>): JSArrayBuffer
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func createArrayBufferFromFloat32(context: JSContext): JSValue {
@@ -4779,7 +4776,7 @@ public func arrayBuffer(data: Array<Int64>): JSArrayBuffer
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func createArrayBufferFromInt64(context: JSContext): JSValue {
@@ -4828,7 +4825,7 @@ public func arrayBuffer(data: Array<UInt64>): JSArrayBuffer
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func createArrayBufferFromUInt64(context: JSContext): JSValue {
@@ -4877,7 +4874,7 @@ public func arrayBuffer(data: Array<Float64>): JSArrayBuffer
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func createArrayBufferFromFloat64(context: JSContext): JSValue {
@@ -4928,7 +4925,7 @@ public unsafe func arrayBuffer(rawData: CPointer<Byte>, length: Int32, finalizer
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let rawPtr = unsafe {
@@ -4977,7 +4974,7 @@ public func bigint(value: Int64): JSBigInt
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let result = context.bigint(100)
@@ -5021,7 +5018,7 @@ public func bigint(value: BigInt): JSBigInt
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import std.math.numeric.BigInt
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
@@ -5065,7 +5062,7 @@ public func boolean(value: Bool): JSBoolean
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let result = context.boolean(true)
@@ -5110,7 +5107,7 @@ public func clazz(ctor: JSLambda, superClass!: ?JSClass = None): JSClass
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func clsCtor(context: JSContext, callInfo: JSCallInfo): JSValue {
     callInfo.thisArg
@@ -5158,7 +5155,7 @@ public func external(data: SharedObject): JSExternal
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 class Data <: SharedObject {}
 
@@ -5205,7 +5202,7 @@ public func function(lambda: JSLambda): JSFunction
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func jsCallback(context: JSContext, callInfo: JSCallInfo): JSValue {
     return context.undefined().toJSValue()
@@ -5246,7 +5243,7 @@ public func getNapiEnv(): napi_env
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func getNapiEnvironment(context: JSContext): JSValue {
@@ -5277,7 +5274,7 @@ public func isInBindThread(): Bool
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func createObject(context: JSContext): JSObject {
     if (!context.isInBindThread()) {
@@ -5316,7 +5313,7 @@ public func null(): JSNull
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let result = context.null()
@@ -5359,7 +5356,7 @@ public func number(value: Float64): JSNumber
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let result = context.number(1.0)
@@ -5402,7 +5399,7 @@ public func number(value: Int32): JSNumber
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let result = context.number(Int32(10))
@@ -5440,7 +5437,7 @@ public func object(): JSObject
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let result = context.object()
@@ -5451,7 +5448,7 @@ func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
 ### func postJSTask(() -> Unit)
 
 ```cangjie
-public func postJSTask(callback: ()->Unit): Unit
+public func postJSTask(callback: () -> Unit): Unit
 ```
 
 **功能：** 多线程工具：创建在 ArkTS 线程执行的任务。
@@ -5462,13 +5459,13 @@ public func postJSTask(callback: ()->Unit): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|callback|()->Unit|是|-|在 ArkTS 执行的任务|
+|callback|() -> Unit|是|-|在 ArkTS 执行的任务|
 
 **示例：**
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func createObject(context: JSContext, callback: (JSObject)->Unit): Unit {
     if (context.isInBindThread()) {
@@ -5511,7 +5508,7 @@ public func promiseCapability(): JSPromiseCapability
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let result = context.promiseCapability()
@@ -5557,9 +5554,8 @@ public func requireArkModule(path: String): JSValue
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.BusinessException
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     try {
@@ -5613,7 +5609,7 @@ public func requireSystemNativeModule(moduleName: String, prefix!: ?String = Non
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func doSth(context: JSContext): Unit {
     let hilog = context.requireSystemNativeModule("hilog")
@@ -5657,7 +5653,7 @@ public func string(value: String): JSString
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let result = context.string("abc")
@@ -5701,7 +5697,7 @@ public func string(value: Utf16String): JSString
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let utf16string = Utf16String("abc")
@@ -5746,7 +5742,7 @@ public func symbol(description!: String = ""): JSSymbol
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let result = context.symbol()
@@ -5784,7 +5780,7 @@ public func undefined(): JSUndefined
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let result = context.undefined()
@@ -5838,7 +5834,7 @@ public func cast<T>(): Option<T> where T <: SharedObject
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 class Data <: SharedObject {
     func doSth() {}
@@ -5885,7 +5881,7 @@ public func getData(): SharedObject
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 class Data <: SharedObject {
     func doSth() {}
@@ -5953,7 +5949,7 @@ public func call(thisArg!: JSValue = context.undefined().toJSValue()): JSValue
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let callback = callInfo[0].asFunction()
@@ -5998,7 +5994,7 @@ public func call(arg: JSValue, thisArg!: JSValue = context.undefined().toJSValue
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let callback = callInfo[0].asFunction()
@@ -6044,7 +6040,7 @@ public func call(args: Array<JSValue>, thisArg!: JSValue = context.undefined().t
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let callback = callInfo[0].asFunction()
@@ -6114,7 +6110,7 @@ public init(map: HashMap<K, V>)
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 import std.collection.HashMap
 
@@ -6144,7 +6140,7 @@ public init()
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func createEmptyHashMapEx(context: JSContext): JSValue {
@@ -6192,7 +6188,7 @@ public static func fromJSValue(context: JSContext, input: JSValue): JSHashMapEx<
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func convertJSValueToStringHashMapEx(context: JSContext, callInfo: JSCallInfo): JSValue {
@@ -6486,7 +6482,7 @@ public func isEmpty(): Bool
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func checkHashMapExEmpty(context: JSContext): JSValue {
@@ -6530,7 +6526,7 @@ public func keys(): EquatableCollection<K>
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func getHashMapExKeys(context: JSContext): JSValue {
@@ -6576,7 +6572,7 @@ public func set(key: K, value: V): Unit
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func setHashMapExValue(context: JSContext): JSValue {
@@ -6618,7 +6614,7 @@ public func setAll(elements: Collection<(K, V)>): Unit
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func setAllHashMapExValues(context: JSContext): JSValue {
@@ -6781,7 +6777,7 @@ public operator func [](key: K): V
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func getIndexOperatorHashMapEx(context: JSContext): JSValue {
@@ -6825,7 +6821,7 @@ public operator func [](key: K, value!: V): Unit
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func setIndexOperatorHashMapEx(context: JSContext): JSValue {
@@ -6879,7 +6875,7 @@ public func toJSValue(): JSValue
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let number = context.number(123)
@@ -6921,7 +6917,7 @@ public static func registerClass(name: String, register: ClassRegister): Unit
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 class Main {
     static init() {
@@ -6956,7 +6952,7 @@ public static func registerFunc(name: String, register: FuncRegister): Unit
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 class Main {
     static init() {
@@ -6988,7 +6984,7 @@ public static func registerFunc(name: String, lambda: JSLambda): Unit
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 class Main {
     static init() {
@@ -7019,7 +7015,7 @@ public static func registerModule(register: ModuleRegister): Unit
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 class Main {
     static init() {
@@ -7053,7 +7049,7 @@ public static func registerModule(name: String, register: ModuleRegister): Unit
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 class Main {
     static init() {
@@ -7140,7 +7136,7 @@ public func toFloat64(): Float64
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
@@ -7194,7 +7190,7 @@ public class JSObject <: JSObjectBase {}
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func setObjectProperties(context: JSContext): JSValue {
@@ -7251,7 +7247,7 @@ public func attachCJObject(target: JSExternal): Unit
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 class Data <: SharedObject {}
 
@@ -7301,7 +7297,7 @@ public func callMethod(key: JSKeyable, args: Array<JSValue>): JSValue
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let json = context.global["JSON"].asObject()
@@ -7312,10 +7308,8 @@ func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
 ### func defineOwnAccessor(JSKeyable, ?JSFunction, ?JSFunction, Bool, Bool)
 
 ```cangjie
-public func defineOwnAccessor(key: JSKeyable, getter!:? JSFunction = None, setter!: ?JSFunction = None,
-    isEnumerable!: Bool = false,
-    isConfigurable!: Bool = false
-): Bool
+public func defineOwnAccessor(key: JSKeyable, getter!: ?JSFunction = None, setter!: ?JSFunction = None,
+    isEnumerable!: Bool = false, isConfigurable!: Bool = false): Bool
 ```
 
 **功能：** 为当前对象定义 accessors。
@@ -7352,7 +7346,7 @@ public func defineOwnAccessor(key: JSKeyable, getter!:? JSFunction = None, sette
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let obj = context.object()
@@ -7367,10 +7361,8 @@ func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
 ### func defineOwnAccessor(JSKeyable, ?JSLambda, ?JSLambda, Bool, Bool)
 
 ```cangjie
-public func defineOwnAccessor(key: JSKeyable, getter!:? JSLambda = None, setter!: ?JSLambda = None,
-    isEnumerable!: Bool = false,
-    isConfigurable!: Bool = false
-): Bool
+public func defineOwnAccessor(key: JSKeyable, getter!: ?JSLambda = None, setter!: ?JSLambda = None,
+    isEnumerable!: Bool = false, isConfigurable!: Bool = false): Bool
 ```
 
 **功能：** 为当前对象定义 accessors。
@@ -7407,7 +7399,7 @@ public func defineOwnAccessor(key: JSKeyable, getter!:? JSLambda = None, setter!
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let obj = context.object()
@@ -7463,7 +7455,7 @@ public func defineOwnProperty(key: JSKeyable, setValue: JSValue,
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let obj = context.object()
@@ -7501,7 +7493,7 @@ public func getAttachInfo(): ?JSExternal
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 class Data <: SharedObject {
     func doSth() {}
@@ -7552,7 +7544,7 @@ public func getProperty(key: JSKeyable): JSValue
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let obj = callInfo[0].asObject()
@@ -7596,7 +7588,7 @@ public func hasProperty(key: JSKeyable): Bool
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
@@ -7642,7 +7634,7 @@ public func instanceOf(clazz: JSClass): Bool
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
@@ -7686,7 +7678,7 @@ public func keys(): Array<String>
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
@@ -7727,7 +7719,7 @@ public func setProperty(key: JSKeyable, setValue: JSValue): Unit
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let obj = context.object()
@@ -7772,7 +7764,7 @@ public operator func [](key: JSKeyable): JSValue
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let obj = callInfo[0].asObject()
@@ -7812,7 +7804,7 @@ public operator func [](key: JSKeyable, value!: JSValue): Unit
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let obj = context.object()
@@ -7868,7 +7860,7 @@ public func catchError(callback: JSFunction): Unit
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let promise = callInfo[0].asPromise()
@@ -7910,7 +7902,7 @@ public func then(onFulfilled: JSFunction, onRejected!: ?JSFunction = None): Unit
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let promise = callInfo[0].asPromise()
@@ -7964,7 +7956,7 @@ public func reject(value: JSValue): Unit
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let promise = context.promiseCapability()
@@ -8004,7 +7996,7 @@ public func resolve(value: JSValue): Unit
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func addNumberAsync(context: JSContext, callInfo: JSCallInfo): JSValue {
     let a = callInfo[0].toNumber()
@@ -8046,7 +8038,7 @@ public func toJSValue(): JSValue
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func addNumberAsync(context: JSContext, callInfo: JSCallInfo): JSValue {
     // 把 ArkTS 入参转换为仓颉类型
@@ -8088,7 +8080,7 @@ public class JSRuntime {
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func getJSRuntimeInstance(): Unit {
@@ -8227,7 +8219,7 @@ public func toString(): String
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
@@ -8345,7 +8337,7 @@ public class JSStringEx <: JSInteropType<JSStringEx> & Equatable<JSStringEx> & T
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func createJSStringEx(context: JSContext): JSValue {
@@ -8561,7 +8553,7 @@ public class JSSymbol <: JSHeapObject & JSKeyable {}
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func createSymbol(context: JSContext): JSValue {
     // 创建一个 JSSymbol 对象
@@ -8696,7 +8688,7 @@ public func toJSValue(): JSValue
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let undefined = context.undefined()
@@ -9113,7 +9105,7 @@ public func bindObject(external: JSValue): Unit
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 class Data <: SharedObject {
 }
@@ -9159,7 +9151,7 @@ public func bindObject(data: SharedObject): Unit
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 class Data <: SharedObject {
 }
@@ -9205,7 +9197,7 @@ public func getBindingObject(): ?SharedObject
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 class Data <: SharedObject {
     func doSth() {}
@@ -9259,7 +9251,7 @@ public func getElement(index: Int64): JSValue
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let jsArr = callInfo[0]
@@ -9304,7 +9296,7 @@ public func getProperty(key: JSKeyable): JSValue
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let jsObJ = callInfo[0]
@@ -9346,7 +9338,7 @@ public func isArray(): Bool
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     // 获取入参
@@ -9387,7 +9379,7 @@ public func isArrayBuffer(): Bool
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     // 获取入参
@@ -9428,7 +9420,7 @@ public func isBigInt(): Bool
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     // 获取入参
@@ -9469,7 +9461,7 @@ public func isBoolean(): Bool
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     // 获取入参
@@ -9510,7 +9502,7 @@ public func isClass(): Bool
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     // 获取入参
@@ -9551,7 +9543,7 @@ public func isExternal(): Bool
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     // 获取入参
@@ -9592,7 +9584,7 @@ public func isFunction(): Bool
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     // 获取入参
@@ -9633,7 +9625,7 @@ public func isNull(): Bool
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     // 获取入参
@@ -9674,7 +9666,7 @@ public func isNumber(): Bool
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     // 获取入参
@@ -9715,7 +9707,7 @@ public func isObject(): Bool
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     // 获取入参
@@ -9756,7 +9748,7 @@ public func isPromise(): Bool
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     // 获取入参
@@ -9797,7 +9789,7 @@ public func isString(): Bool
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     // 获取入参
@@ -9838,7 +9830,7 @@ public func isSymbol(): Bool
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     // 获取入参
@@ -9879,7 +9871,7 @@ public func isUndefined(): Bool
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     // 获取入参
@@ -9923,7 +9915,7 @@ public func setElement(index: Int64, value: JSValue): Unit
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let jsArr = callInfo[0]
@@ -9966,7 +9958,7 @@ public func setProperty(key: JSKeyable, setValue: JSValue): Unit
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let jsObJ = context.object()
@@ -10011,7 +10003,7 @@ public func strictEqual(target: JSValue): Bool
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     // 获取两个入参
@@ -10054,7 +10046,7 @@ public func toBigInt(): BigInt
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
@@ -10094,7 +10086,7 @@ public func toBoolean(): Bool
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
@@ -10134,7 +10126,7 @@ public func toNumber(): Float64
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
@@ -10175,7 +10167,7 @@ public func toString(): String
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 // 判断首个参数是否是数字，如果是返回true，如果否返回数据类型的字符串
 func checkIsNumber(context: JSContext, callInfo: JSCallInfo): JSValue {
@@ -10248,7 +10240,7 @@ public func typeof(): JSType
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
@@ -10278,7 +10270,7 @@ public open class SharedObject {
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 // 创建一个类继承 SharedObject
 class MyObject <: SharedObject {
@@ -10371,7 +10363,7 @@ public prop accessible: Bool
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func checkStringAccessibility(context: JSContext): JSValue {
@@ -10416,7 +10408,7 @@ public prop size: Int64
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func getStringSize(context: JSContext): JSValue {
@@ -10455,7 +10447,7 @@ public prop totalChars: Int64
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func getStringTotalChars(context: JSContext): JSValue {
@@ -10510,7 +10502,7 @@ public init(src: String)
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func createUtf16String(context: JSContext): JSValue {
@@ -10564,7 +10556,7 @@ public static func fromJSValue(_: JSContext, value: JSValue): Utf16String
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func createFromJSValue(context: JSContext): JSValue {
@@ -10690,7 +10682,7 @@ public func count(src: Utf16String): Int64
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func countSubstring(context: JSContext): JSValue {
@@ -10719,7 +10711,7 @@ public func dispose(): Unit
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func disposeString(context: JSContext): JSValue {
@@ -10773,7 +10765,7 @@ public func endsWith(target: Utf16String): Bool
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func checkEndsWith(context: JSContext): JSValue {
@@ -10816,7 +10808,7 @@ public func hashCode(): Int64
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func getStringHashCode(context: JSContext): JSValue {
@@ -10863,7 +10855,7 @@ public func indexOf(target: Utf16String): ?Int64
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func findSubstring(context: JSContext): JSValue {
@@ -10941,7 +10933,7 @@ public func isEmpty(): Bool
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func checkIsEmpty(context: JSContext): JSValue {
@@ -10986,7 +10978,7 @@ public func isCompressed(): Bool
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func checkIsCompressed(context: JSContext): JSValue {
@@ -11034,7 +11026,7 @@ public func lastIndexOf(target: Utf16String): ?Int64
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func findLastSubstring(context: JSContext): JSValue {
@@ -11088,7 +11080,7 @@ public func lastIndexOf(target: Utf16String, fromIndex: Int64): ?Int64
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func findLastSubstringFromIndex(context: JSContext): JSValue {
@@ -11143,7 +11135,7 @@ public func lazySplit(separator: Utf16String, removeEmpty!: Bool = false): Itera
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func lazySplitString(context: JSContext): JSValue {
@@ -11223,7 +11215,7 @@ public func lines(): Iterator<Utf16String>
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func getLines(context: JSContext): JSValue {
@@ -11278,7 +11270,7 @@ public func replace(old: Utf16String, new: Utf16String, count!: Int64 = Int64.Ma
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func replaceString(context: JSContext): JSValue {
@@ -11355,7 +11347,7 @@ public func split(separator: Utf16String, removeEmpty!: Bool = false): Array<Utf
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func splitString(context: JSContext): JSValue {
@@ -11442,7 +11434,7 @@ public func startsWith(target: Utf16String): Bool
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func checkStartsWith(context: JSContext): JSValue {
@@ -11492,7 +11484,7 @@ public func toJSValue(context: JSContext): JSValue
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func convertToJSValue(context: JSContext): JSValue {
@@ -11535,7 +11527,7 @@ public func toString(): String
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func convertToString(context: JSContext): JSValue {
@@ -11847,7 +11839,7 @@ public struct JSType {
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {

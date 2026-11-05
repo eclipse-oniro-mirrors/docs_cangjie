@@ -54,10 +54,10 @@ console.log(testCJ("Cangjie"))
    package ohos_app_cangjie_cangjielib
 
    // 导入文件
-   internal import ohos.ark_interop.JSModule
-   internal import ohos.ark_interop.JSContext
-   internal import ohos.ark_interop.JSCallInfo
-   internal import ohos.ark_interop.JSValue
+   internal import kit.CangjieKit.JSModule
+   internal import kit.CangjieKit.JSContext
+   internal import kit.CangjieKit.JSCallInfo
+   internal import kit.CangjieKit.JSValue
 
    // 互操作函数
    func sayHelloCJ(runtime: JSContext, callInfo: JSCallInfo): JSValue {

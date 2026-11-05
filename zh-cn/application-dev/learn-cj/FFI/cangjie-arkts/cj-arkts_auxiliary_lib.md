@@ -22,7 +22,7 @@ public func getJSContext(runtime: JSRuntime, abilityContext: UIAbilityContext): 
 1. 在创建 [Cangjie] Empty Ability 工程后，在 entry->src->main->cangjie->main_ability.cj 文件中添加 UIAbilityContext 的全局实例并在 onCreate 函数内赋值：
 
     ```cangjie
-    import ohos.ability.UIAbilityContext
+    import kit.AbilityKit.UIAbilityContext
 
     // UIAbilityContext 的全局实例
     var globalAbilityContext: ?UIAbilityContext = None
@@ -40,9 +40,8 @@ public func getJSContext(runtime: JSRuntime, abilityContext: UIAbilityContext): 
 2. 在仓颉代码中使用辅助库接口：
 
     ```cangjie
-    import ohos.ark_interop.*
-    import ohos.ark_interop_helper.*
-    import ohos.ability.UIAbilityContext
+    import kit.CangjieKit.*
+    import kit.AbilityKit.UIAbilityContext
 
     var runtime = Option<JSRuntime>.None
 

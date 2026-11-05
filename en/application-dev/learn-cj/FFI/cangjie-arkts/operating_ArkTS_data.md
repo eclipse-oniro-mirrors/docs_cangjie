@@ -51,7 +51,7 @@ An example from an interoperability function implementation:
     package ohos_app_cangjie_entry
 
     // Import the interoperability library ark_interop and macros
-    import ohos.ark_interop.*
+    import kit.CangjieKit.*
 
     // Define the interoperability function. The parameter types must be (JSContext, JSCallInfo), and the return type must be JSValue.
     func addByObject(context: JSContext, callInfo: JSCallInfo): JSValue {
@@ -159,7 +159,7 @@ Manipulate the sendable object in Cangjie:
 package ohos_app_cangjie_entry
 
 // Import the interoperability library ark_interop and macros
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 // Define the interoperability function. The parameter types must be (JSContext, JSCallInfo), and the return type must be JSValue.
 func readNumber(context: JSContext, callInfo: JSCallInfo): JSValue {
@@ -214,10 +214,10 @@ Cangjie implementation:
 // Define the package name, which must match the package name in cjpm.toml
 package ohos_app_cangjie_entry
 
-internal import ohos.ark_interop.JSModule
-internal import ohos.ark_interop.JSContext
-internal import ohos.ark_interop.JSCallInfo
-internal import ohos.ark_interop.JSValue
+internal import kit.CangjieKit.JSModule
+internal import kit.CangjieKit.JSContext
+internal import kit.CangjieKit.JSCallInfo
+internal import kit.CangjieKit.JSValue
 
 func testAsync(context: JSContext, callInfo: JSCallInfo): JSValue {
     // Create PromiseCapability
@@ -408,10 +408,10 @@ This example first calls a Cangjie function from ArkTS, then calls back an ArkTS
     ```cangjie
     package ohos_app_cangjie_entry
 
-    internal import ohos.ark_interop.JSModule
-    internal import ohos.ark_interop.JSContext
-    internal import ohos.ark_interop.JSCallInfo
-    internal import ohos.ark_interop.JSValue
+    internal import kit.CangjieKit.JSModule
+    internal import kit.CangjieKit.JSContext
+    internal import kit.CangjieKit.JSCallInfo
+    internal import kit.CangjieKit.JSValue
 
     func addByCallback(context: JSContext, callInfo: JSCallInfo): JSValue {
         // Get the 1st and 2nd parameters and convert them to Float64

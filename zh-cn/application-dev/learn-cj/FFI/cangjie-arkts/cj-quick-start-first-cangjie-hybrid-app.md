@@ -222,10 +222,8 @@ Project_name
        // second.cj
        package ohos_app_cangjie_entry
 
-       import ohos.base.*
-       import ohos.arkui.component.*
+       import kit.ArkUI.*
        import ohos.arkui.state_macro_manage.*
-       import ohos.arkui.state_management.*
 
        @HybridComponentEntry
        @Component
@@ -375,10 +373,9 @@ Project_name
    // index.cj
    package ohos_app_cangjie_entry
 
-   import ohos.base.*
-   import ohos.ark_interop.*
-   import ohos.ark_interop_macro.*
-   import ohos.hilog.Hilog
+   import kit.ArkUI.*
+   import kit.CangjieKit.*
+   import kit.PerformanceAnalysisKit.Hilog
    import std.collection.*
 
    // 定义一个全局 HashMap，用于保存ArkTS注册的函数
@@ -511,11 +508,9 @@ Project_name
    // second.cj
    package ohos_app_cangjie_entry
 
-   import ohos.base.*
-   import ohos.arkui.component.*
+   import kit.ArkUI.*
    import ohos.arkui.state_macro_manage.*
-   import ohos.arkui.state_management.*
-   import ohos.hilog.Hilog
+   import kit.PerformanceAnalysisKit.Hilog
 
    @HybridComponentEntry
    @Component

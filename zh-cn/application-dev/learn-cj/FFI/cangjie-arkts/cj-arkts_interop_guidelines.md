@@ -15,7 +15,7 @@
 <!--compile.error-->
 ```cangjie
 // 导入互操作库
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     // 创建新的运行时实例
@@ -49,7 +49,7 @@ let EXPORT_MODULE = JSModule.registerModule {
 <!--compile-->
 ```cangjie
 // 导入互操作库
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     // 创建新的运行时实例
@@ -89,7 +89,7 @@ let EXPORT_MODULE = JSModule.registerModule {
 <!--compile-->
 ```cangjie
 // 导入互操作库
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func doSthWithException(context: JSContext, callInfo: JSCallInfo): JSValue {
     if (callInfo.count > 0) {
@@ -127,7 +127,7 @@ function doSth(lib: CJLib): void {
 <!--compile-->
 ```cangjie
 // 导入互操作库
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func callArktsWithExp(context: JSContext, callInfo: JSCallInfo): JSValue {
     // 在调用跨语言接口时，使用 try...catch 来捕获跨语言异常
@@ -173,7 +173,7 @@ function doSth(lib: CJLib): void {
 <!--compile.error-->
 ```cangjie
 // 导入互操作库
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 // 定义共享类，SharedObject为互操作库的类
 class Data <: SharedObject {
@@ -246,7 +246,7 @@ export declare function getDataId(data: undefined): number;
 ArkTS 侧代码：
 
 ```javascript
-import { createData, setDatId, getDataId } from "libohos_app_cangjie_entry.so";
+import { createData, setDataId, getDataId } from "libohos_app_cangjie_entry.so";
 
 // 创建共享对象
 let data = createData();
@@ -264,7 +264,7 @@ console.log("id is " + id);
 <!--compile-->
 ```cangjie
 // 导入互操作库
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 // 定义共享类
 class Data <: SharedObject {
@@ -372,7 +372,7 @@ console.log("id is " + id);
 
 <!--compile.error-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 class CJData <: SharedObject {
     let name: String
@@ -463,9 +463,8 @@ ArkTS 主线程中调用的仓颉接口时，仓颉代码中可能会通过 spaw
 
 <!--compile.error-->
 ```cangjie
-import ohos.ark_interop.*
-import ohos.ark_interop_macro.*
-import ohos.base.UIThread
+import kit.CangjieKit.*
+import kit.ArkUI.UIThread
 
 @Interop[ArkTS]
 public func testCJ(): Unit {
@@ -509,7 +508,7 @@ struct Index {
 
 <!--compile.error-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func addNumberAsync(context: JSContext, callInfo: JSCallInfo): JSValue {
     // 从JSCallInfo获取参数列表
@@ -548,7 +547,7 @@ let EXPORT_MODULE = JSModule.registerModule {
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func addNumberAsync(context: JSContext, callInfo: JSCallInfo): JSValue {
     // 从JSCallInfo获取参数列表
@@ -595,8 +594,8 @@ let EXPORT_MODULE = JSModule.registerModule {
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
-import ohos.base.UIThread
+import kit.CangjieKit.*
+import kit.ArkUI.UIThread
 
 func addNumberAsync(context: JSContext, callInfo: JSCallInfo): JSValue {
     // 从JSCallInfo获取参数列表
@@ -642,7 +641,7 @@ let EXPORT_MODULE = JSModule.registerModule {
 
 <!--compile.error-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func addNumberAsync(context: JSContext, callInfo: JSCallInfo): JSValue {
     // 从JSCallInfo获取参数列表
