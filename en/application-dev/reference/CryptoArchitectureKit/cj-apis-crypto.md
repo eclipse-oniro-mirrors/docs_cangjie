@@ -2112,3 +2112,2334 @@ public func toString(): String
 | Type | Description |
 |:----|:----|
 | String | The description of the enumeration. |
+
+## func createAsyKeyGenerator(String)
+
+```cangjie
+public func createAsyKeyGenerator(algName: String): AsyKeyGenerator
+```
+
+**Description:**
+
+Generates an asymmetric key generator instance.
+
+**System Capability:** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+| Parameter Name | Type | Mandatory | Default Value | Description |
+|:---|:---|:---|:---|:---|
+| algName | String | Yes | - | Specifies the asymmetric key algorithm. Format: `Algorithm name + \| + Key generation specification`, for example "RSA2048", "EC224", "X25519". |
+
+**Return Value:**
+
+| Type | Description |
+| -------- | -------- |
+| AsyKeyGenerator | Returns the asymmetric key generator instance. |
+
+**Exceptions:**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception): For corresponding error codes, see [Universal Error Codes](../cj-errorcode-universal.md) and [Crypto Framework Error Codes](./cj-errorcode-crypto.md).
+
+  | Error Code ID | Error Message |
+  | :---- | :--- |
+  | 801 | this operation is not supported. |
+  | 17620001 | Memory operation failed. |
+
+**Example:**
+
+```cangjie
+<!-- compile -->
+import kit.CryptoArchitectureKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
+
+try {
+    let asyKeyGenerator = createAsyKeyGenerator("RSA2048")
+    Hilog.info(0, "", "createAsyKeyGenerator success.")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
+## func createVerify(String)
+
+```cangjie
+public func createVerify(algName: String): Verify
+```
+
+**Description:**
+
+Generates a signature verification instance.
+
+**System Capability:** SystemCapability.Security.CryptoFramework.Signature
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+| Parameter Name | Type | Mandatory | Default Value | Description |
+|:---|:---|:---|:---|:---|
+| algName | String | Yes | - | Specifies the signature verification algorithm. Format: `Algorithm name + \| + Signature verification specification`, for example "RSA2048\|PKCS1\|SHA256", "ECC224\|SHA256". |
+
+**Return Value:**
+
+| Type | Description |
+| -------- | -------- |
+| Verify | Returns the signature verification instance. |
+
+**Exceptions:**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception): For corresponding error codes, see [Universal Error Codes](../cj-errorcode-universal.md) and [Crypto Framework Error Codes](./cj-errorcode-crypto.md).
+
+  | Error Code ID | Error Message |
+  | :---- | :--- |
+  | 801 | this operation is not supported. |
+  | 17620001 | Memory operation failed. |
+
+**Example:**
+
+```cangjie
+<!-- compile -->
+import kit.CryptoArchitectureKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
+
+try {
+    let verify = createVerify("RSA2048|PKCS1|SHA256")
+    Hilog.info(0, "", "verify algName: ${verify.algName}")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
+## class AsyKeyGenerator
+
+```cangjie
+public class AsyKeyGenerator {}
+```
+
+Asymmetric key generator, provides the ability to generate asymmetric key pairs and convert asymmetric keys.
+
+**System Capability:** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**Since:** 26.1.0
+
+### prop algName
+
+```cangjie
+public prop algName: String
+```
+
+**Description:**
+
+Gets the algorithm name of the asymmetric key generator.
+
+**System Capability:** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**Since:** 26.1.0
+
+### func generateKeyPair(AsyncCallback<KeyPair>)
+
+```cangjie
+public func generateKeyPair(callback: AsyncCallback<KeyPair>): Unit
+```
+
+**Description:**
+
+Asynchronously generates an asymmetric key pair, with the result returned via a callback.
+
+**System Capability:** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+| Parameter Name | Type | Mandatory | Default Value | Description |
+|:---|:---|:---|:---|:---|
+| callback | AsyncCallback&lt;KeyPair&gt; | Yes | - | Callback function that receives the generation result or error. |
+
+**Exceptions:**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception): For corresponding error codes, see [Universal Error Codes](../cj-errorcode-universal.md) and [Crypto Framework Error Codes](./cj-errorcode-crypto.md).
+
+  | Error Code ID | Error Message |
+  | :---- | :--- |
+  | 17620001 | Memory operation failed. |
+  | 17630001 | Crypto operation error. |
+
+**Example:**
+
+```cangjie
+<!-- compile -->
+import kit.CryptoArchitectureKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
+
+let asyKeyGenerator = createAsyKeyGenerator("RSA2048")
+try {
+    asyKeyGenerator.generateKeyPair({ err, keyPair =>
+        if (let Some(e) <- err) {
+            throw e
+        }
+        if (let Some(kp) <- keyPair) {
+            let pubKey = kp.pubKey
+            let priKey = kp.priKey
+            Hilog.info(0, "", "generateKeyPair success, pubKey algName: ${pubKey.algName}")
+        }
+    })
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
+### func convertKey(AsyncCallback<KeyPair>, Option<DataBlob>, Option<DataBlob>)
+
+```cangjie
+public func convertKey(callback: AsyncCallback<KeyPair>, pubKey!: Option<DataBlob> = None, priKey!: Option<DataBlob> = None): Unit
+```
+
+**Description:**
+
+Asynchronously converts the input public key and private key into an asymmetric key pair, with the result returned via a callback.
+
+**System Capability:** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+| Parameter Name | Type | Mandatory | Default Value | Description |
+|:---|:---|:---|:---|:---|
+| callback | AsyncCallback&lt;KeyPair&gt; | Yes | - | Callback function that receives the conversion result or error. |
+| pubKey! | Option&lt;DataBlob&gt; | No | None | Public key data, can be null. |
+| priKey! | Option&lt;DataBlob&gt; | No | None | Private key data, can be null. |
+
+**Exceptions:**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception): For corresponding error codes, see [Universal Error Codes](../cj-errorcode-universal.md) and [Crypto Framework Error Codes](./cj-errorcode-crypto.md).
+
+  | Error Code ID | Error Message |
+  | :---- | :--- |
+  | 17620001 | Memory operation failed. |
+  | 17630001 | Crypto operation error. |
+  | 17620003 | Parameter check failed. |
+
+**Example:**
+
+```cangjie
+<!-- compile -->
+import kit.CryptoArchitectureKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
+
+let asyKeyGenerator = createAsyKeyGenerator("RSA2048")
+try {
+    asyKeyGenerator.generateKeyPair({ err, keyPair =>
+        if (let Some(e) <- err) {
+            throw e
+        }
+        if (let Some(kp) <- keyPair) {
+            let pubEncoded = kp.pubKey.getEncoded()
+            let priEncoded = kp.priKey.getEncoded()
+            asyKeyGenerator.convertKey({ err1, keyPair1 =>
+                if (let Some(e1) <- err1) {
+                    throw e1
+                }
+                if (let Some(kp1) <- keyPair1) {
+                    Hilog.info(0, "", "convertKey success, pubKey format: ${kp1.pubKey.format}")
+                }
+            }, pubKey!: Some(pubEncoded), priKey!: Some(priEncoded))
+        }
+    })
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
+### func convertPemKey(AsyncCallback<KeyPair>, Option<String>, Option<String>)
+
+```cangjie
+public func convertPemKey(callback: AsyncCallback<KeyPair>, pubKey!: Option<String> = None, priKey!: Option<String> = None): Unit
+```
+
+**Description:**
+
+Asynchronously converts PEM-formatted public key and private key strings into an asymmetric key pair, with the result returned via a callback.
+
+**System Capability:** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+| Parameter Name | Type | Mandatory | Default Value | Description |
+|:---|:---|:---|:---|:---|
+| callback | AsyncCallback&lt;KeyPair&gt; | Yes | - | Callback function that receives the conversion result or error. |
+| pubKey! | Option&lt;String&gt; | No | None | PEM-formatted public key string, can be null. |
+| priKey! | Option&lt;String&gt; | No | None | PEM-formatted private key string, can be null. |
+
+**Exceptions:**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception): For corresponding error codes, see [Universal Error Codes](../cj-errorcode-universal.md) and [Crypto Framework Error Codes](./cj-errorcode-crypto.md).
+
+  | Error Code ID | Error Message |
+  | :---- | :--- |
+  | 17620001 | Memory operation failed. |
+  | 17630001 | Crypto operation error. |
+  | 17620003 | Parameter check failed. |
+
+**Example:**
+
+```cangjie
+<!-- compile -->
+import kit.CryptoArchitectureKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
+
+let asyKeyGenerator = createAsyKeyGenerator("RSA2048")
+let pubKeyPem = "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEXN...\n-----END PUBLIC KEY-----"
+let priKeyPem = "-----BEGIN PRIVATE KEY-----\nMIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0w...\n-----END PRIVATE KEY-----"
+try {
+    asyKeyGenerator.convertPemKey({ err, keyPair =>
+        if (let Some(e) <- err) {
+            throw e
+        }
+        if (let Some(kp) <- keyPair) {
+            Hilog.info(0, "", "convertPemKey success, priKey algName: ${kp.priKey.algName}")
+        }
+    }, pubKey!: Some(pubKeyPem), priKey!: Some(priKeyPem))
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
+## class PriKey
+
+```cangjie
+public class PriKey <: Key {
+    public prop format: String
+    public prop algName: String
+    public func getAsyKeySpec(itemType: AsyKeySpecItem): ResultSpec
+    public func getEncodedDer(format: String): DataBlob
+    public func getEncodedPem(format: String): String
+    public func getEncoded(): DataBlob
+    public func clearMem(): Unit
+}
+```
+
+Asymmetric private key, provides the ability to obtain private key parameters, encoding, and clear memory.
+
+**Parent Type:**
+
+- [Key](#interface-key)
+
+**System Capability:** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**Since:** 26.1.0
+
+### prop format
+
+```cangjie
+public prop format: String
+```
+
+**Description:**
+
+Gets the format of the private key.
+
+**System Capability:** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**Since:** 26.1.0
+
+### prop algName
+
+```cangjie
+public prop algName: String
+```
+
+**Description:**
+
+Gets the algorithm name of the private key.
+
+**System Capability:** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**Since:** 26.1.0
+
+### func getAsyKeySpec(AsyKeySpecItem)
+
+```cangjie
+public func getAsyKeySpec(itemType: AsyKeySpecItem): ResultSpec
+```
+
+**Description:**
+
+Gets the specified parameter of the asymmetric private key.
+
+**System Capability:** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+| Parameter Name | Type | Mandatory | Default Value | Description |
+|:---|:---|:---|:---|:---|
+| itemType | AsyKeySpecItem | Yes | - | Specifies the key parameter item to obtain. |
+
+**Return Value:**
+
+| Type | Description |
+| -------- | -------- |
+| ResultSpec | Returns the key parameter value wrapper type. |
+
+**Exceptions:**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception): For corresponding error codes, see [Universal Error Codes](../cj-errorcode-universal.md) and [Crypto Framework Error Codes](./cj-errorcode-crypto.md).
+
+  | Error Code ID | Error Message |
+  | :---- | :--- |
+  | 801 | this operation is not supported. |
+  | 17620001 | Memory operation failed. |
+  | 17630001 | Crypto operation error. |
+  | 17620003 | Parameter check failed. |
+
+**Example:**
+
+```cangjie
+<!-- compile -->
+import kit.CryptoArchitectureKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
+
+let asyKeyGenerator = createAsyKeyGenerator("RSA2048")
+try {
+    asyKeyGenerator.generateKeyPair({ err, keyPair =>
+        if (let Some(e) <- err) {
+            throw e
+        }
+        if (let Some(kp) <- keyPair) {
+            let priKey = kp.priKey
+            let resultSpec = priKey.getAsyKeySpec(AsyKeySpecItem.RsaNBn)
+            match (resultSpec) {
+                case ResultSpec.BigintValue(v) => Hilog.info(0, "", "RsaNBn: ${v.toString()}")
+                case _ => ()
+            }
+        }
+    })
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
+### func getEncodedDer(String)
+
+```cangjie
+public func getEncodedDer(format: String): DataBlob
+```
+
+**Description:**
+
+Gets the DER-encoded data of the private key.
+
+**System Capability:** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+| Parameter Name | Type | Mandatory | Default Value | Description |
+|:---|:---|:---|:---|:---|
+| format | String | Yes | - | Specifies the key encoding format, for example "PKCS8", "X.509". |
+
+**Return Value:**
+
+| Type | Description |
+|:---|:---|:---|
+| DataBlob | Returns the DER-encoded key data. |
+
+**Exceptions:**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception): For corresponding error codes, see [Universal Error Codes](../cj-errorcode-universal.md) and [Crypto Framework Error Codes](./cj-errorcode-crypto.md).
+
+  | Error Code ID | Error Message |
+  | :---- | :--- |
+  | 17620001 | Memory operation failed. |
+  | 17630001 | Crypto operation error. |
+  | 17620003 | Parameter check failed. |
+
+**Example:**
+
+```cangjie
+<!-- compile -->
+import kit.CryptoArchitectureKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
+
+let asyKeyGenerator = createAsyKeyGenerator("RSA2048")
+try {
+    asyKeyGenerator.generateKeyPair({ err, keyPair =>
+        if (let Some(e) <- err) {
+            throw e
+        }
+        if (let Some(kp) <- keyPair) {
+            let priKey = kp.priKey
+            let priDer = priKey.getEncodedDer("PKCS8")
+            Hilog.info(0, "", "priKey DER data size: ${priDer.data.size}")
+        }
+    })
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
+### func getEncodedPem(String)
+
+```cangjie
+public func getEncodedPem(format: String): String
+```
+
+**Description:**
+
+Gets the PEM-encoded data of the private key.
+
+**System Capability:** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+| Parameter Name | Type | Mandatory | Default Value | Description |
+|:---|:---|:---|:---|:---|
+| format | String | Yes | - | Specifies the key encoding format, for example "PKCS8", "X.509". |
+
+**Return Value:**
+
+| Type | Description |
+|:---|:---|:---|
+| String | Returns the PEM-encoded key string. |
+
+**Exceptions:**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception): For corresponding error codes, see [Universal Error Codes](../cj-errorcode-universal.md) and [Crypto Framework Error Codes](./cj-errorcode-crypto.md).
+
+  | Error Code ID | Error Message |
+  | :---- | :--- |
+  | 17620001 | Memory operation failed. |
+  | 17630001 | Crypto operation error. |
+  | 17620003 | Parameter check failed. |
+
+**Example:**
+
+```cangjie
+<!-- compile -->
+import kit.CryptoArchitectureKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
+
+let asyKeyGenerator = createAsyKeyGenerator("RSA2048")
+try {
+    asyKeyGenerator.generateKeyPair({ err, keyPair =>
+        if (let Some(e) <- err) {
+            throw e
+        }
+        if (let Some(kp) <- keyPair) {
+            let priKey = kp.priKey
+            let priPem = priKey.getEncodedPem("PKCS8")
+            Hilog.info(0, "", "priKey PEM: ${priPem}")
+        }
+    })
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
+### func getEncoded()
+
+```cangjie
+public func getEncoded(): DataBlob
+```
+
+**Description:**
+
+Gets the encoded data of the private key.
+
+**System Capability:** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**Since:** 26.1.0
+
+**Return Value:**
+
+| Type | Description |
+| -------- | -------- |
+| DataBlob | Returns the encoded key data. |
+
+**Exceptions:**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception): For corresponding error codes, see [Universal Error Codes](../cj-errorcode-universal.md) and [Crypto Framework Error Codes](./cj-errorcode-crypto.md).
+
+  | Error Code ID | Error Message |
+  | :---- | :--- |
+  | 801 | this operation is not supported. |
+  | 17620001 | Memory operation failed. |
+  | 17630001 | Crypto operation error. |
+
+**Example:**
+
+```cangjie
+<!-- compile -->
+import kit.CryptoArchitectureKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
+
+let asyKeyGenerator = createAsyKeyGenerator("RSA2048")
+try {
+    asyKeyGenerator.generateKeyPair({ err, keyPair =>
+        if (let Some(e) <- err) {
+            throw e
+        }
+        if (let Some(kp) <- keyPair) {
+            let priKey = kp.priKey
+            let priEncoded = priKey.getEncoded()
+            Hilog.info(0, "", "priKey encoded data size: ${priEncoded.data.size}")
+        }
+    })
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
+### func clearMem()
+
+```cangjie
+public func clearMem(): Unit
+```
+
+**Description:**
+
+Clears the memory data of the private key to achieve secure destruction.
+
+**System Capability:** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**Since:** 26.1.0
+
+**Example:**
+
+```cangjie
+<!-- compile -->
+import kit.CryptoArchitectureKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
+
+let asyKeyGenerator = createAsyKeyGenerator("RSA2048")
+try {
+    asyKeyGenerator.generateKeyPair({ err, keyPair =>
+        if (let Some(e) <- err) {
+            throw e
+        }
+        if (let Some(kp) <- keyPair) {
+            kp.priKey.clearMem()
+            Hilog.info(0, "", "priKey clearMem success.")
+        }
+    })
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
+## class PubKey
+
+```cangjie
+public class PubKey <: Key {
+    public prop format: String
+    public prop algName: String
+    public func getAsyKeySpec(itemType: AsyKeySpecItem): ResultSpec
+    public func getEncodedDer(format: String): DataBlob
+    public func getEncodedPem(format: String): String
+    public func getEncoded(): DataBlob
+}
+```
+
+Asymmetric public key, provides the ability to obtain public key parameters and encoding.
+
+**Parent Type:**
+
+- [Key](#interface-key)
+
+**System Capability:** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**Since:** 26.1.0
+
+### prop format
+
+```cangjie
+public prop format: String
+```
+
+**Description:**
+
+Gets the format of the public key.
+
+**System Capability:** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**Since:** 26.1.0
+
+### prop algName
+
+```cangjie
+public prop algName: String
+```
+
+**Description:**
+
+Gets the algorithm name of the public key.
+
+**System Capability:** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**Since:** 26.1.0
+
+### func getAsyKeySpec(AsyKeySpecItem)
+
+```cangjie
+public func getAsyKeySpec(itemType: AsyKeySpecItem): ResultSpec
+```
+
+**Description:**
+
+Gets the specified parameter of the asymmetric public key.
+
+**System Capability:** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+| Parameter Name | Type | Mandatory | Default Value | Description |
+|:---|:---|:---|:---|:---|
+| itemType | AsyKeySpecItem | Yes | - | Specifies the key parameter item to obtain. |
+
+**Return Value:**
+
+| Type | Description |
+| -------- | -------- |
+| ResultSpec | Returns the key parameter value wrapper type. |
+
+**Exceptions:**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception): For corresponding error codes, see [Universal Error Codes](../cj-errorcode-universal.md) and [Crypto Framework Error Codes](./cj-errorcode-crypto.md).
+
+  | Error Code ID | Error Message |
+  | :---- | :--- |
+  | 17620001 | Memory operation failed. |
+  | 17630001 | Crypto operation error. |
+  | 801 | this operation is not supported. |
+  | 17620003 | Parameter check failed. |
+
+**Example:**
+
+```cangjie
+<!-- compile -->
+import kit.CryptoArchitectureKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
+
+let asyKeyGenerator = createAsyKeyGenerator("RSA2048")
+try {
+    asyKeyGenerator.generateKeyPair({ err, keyPair =>
+        if (let Some(e) <- err) {
+            throw e
+        }
+        if (let Some(kp) <- keyPair) {
+            let pubKey = kp.pubKey
+            let resultSpec = pubKey.getAsyKeySpec(AsyKeySpecItem.RsaNBn)
+            match (resultSpec) {
+                case ResultSpec.BigintValue(v) => Hilog.info(0, "", "pubKey RsaNBn: ${v.toString()}")
+                case _ => ()
+            }
+        }
+    })
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
+### func getEncodedDer(String)
+
+```cangjie
+public func getEncodedDer(format: String): DataBlob
+```
+
+**Description:**
+
+Gets the DER-encoded data of the public key.
+
+**System Capability:** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+| Parameter Name | Type | Mandatory | Default Value | Description |
+|:---|:---|:---|:---|:---|
+| format | String | Yes | - | Specifies the key encoding format, for example "X.509", "PKCS8". |
+
+**Return Value:**
+
+| Type | Description |
+|:---|:---|:---|
+| DataBlob | Returns the DER-encoded key data. |
+
+**Exceptions:**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception): For corresponding error codes, see [Universal Error Codes](../cj-errorcode-universal.md) and [Crypto Framework Error Codes](./cj-errorcode-crypto.md).
+
+  | Error Code ID | Error Message |
+  | :---- | :--- |
+  | 17620001 | Memory operation failed. |
+  | 17630001 | Crypto operation error. |
+  | 17620003 | Parameter check failed. |
+
+**Example:**
+
+```cangjie
+<!-- compile -->
+import kit.CryptoArchitectureKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
+
+let asyKeyGenerator = createAsyKeyGenerator("RSA2048")
+try {
+    asyKeyGenerator.generateKeyPair({ err, keyPair =>
+        if (let Some(e) <- err) {
+            throw e
+        }
+        if (let Some(kp) <- keyPair) {
+            let pubKey = kp.pubKey
+            let pubDer = pubKey.getEncodedDer("X.509")
+            Hilog.info(0, "", "pubKey DER data size: ${pubDer.data.size}")
+        }
+    })
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
+### func getEncodedPem(String)
+
+```cangjie
+public func getEncodedPem(format: String): String
+```
+
+**Description:**
+
+Gets the PEM-encoded data of the public key.
+
+**System Capability:** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+| Parameter Name | Type | Mandatory | Default Value | Description |
+|:---|:---|:---|:---|:---|
+| format | String | Yes | - | Specifies the key encoding format, for example "X.509", "PKCS8". |
+
+**Return Value:**
+
+| Type | Description |
+|:---|:---|:---|
+| String | Returns the PEM-encoded key string. |
+
+**Exceptions:**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception): For corresponding error codes, see [Universal Error Codes](../cj-errorcode-universal.md) and [Crypto Framework Error Codes](./cj-errorcode-crypto.md).
+
+  | Error Code ID | Error Message |
+  | :---- | :--- |
+  | 17620001 | Memory operation failed. |
+  | 17630001 | Crypto operation error. |
+  | 17620003 | Parameter check failed. |
+
+**Example:**
+
+```cangjie
+<!-- compile -->
+import kit.CryptoArchitectureKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
+
+let asyKeyGenerator = createAsyKeyGenerator("RSA2048")
+try {
+    asyKeyGenerator.generateKeyPair({ err, keyPair =>
+        if (let Some(e) <- err) {
+            throw e
+        }
+        if (let Some(kp) <- keyPair) {
+            let pubKey = kp.pubKey
+            let pubPem = pubKey.getEncodedPem("X.509")
+            Hilog.info(0, "", "pubKey PEM: ${pubPem}")
+        }
+    })
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
+### func getEncoded()
+
+```cangjie
+public func getEncoded(): DataBlob
+```
+
+**Description:**
+
+Gets the encoded data of the public key.
+
+**System Capability:** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**Since:** 26.1.0
+
+**Return Value:**
+
+| Type | Description |
+| -------- | -------- |
+| DataBlob | Returns the encoded key data. |
+
+**Exceptions:**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception): For corresponding error codes, see [Universal Error Codes](../cj-errorcode-universal.md) and [Crypto Framework Error Codes](./cj-errorcode-crypto.md).
+
+  | Error Code ID | Error Message |
+  | :---- | :--- |
+  | 801 | this operation is not supported. |
+  | 17620001 | Memory operation failed. |
+  | 17630001 | Crypto operation error. |
+
+**Example:**
+
+```cangjie
+<!-- compile -->
+import kit.CryptoArchitectureKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
+
+let asyKeyGenerator = createAsyKeyGenerator("RSA2048")
+try {
+    asyKeyGenerator.generateKeyPair({ err, keyPair =>
+        if (let Some(e) <- err) {
+            throw e
+        }
+        if (let Some(kp) <- keyPair) {
+            let pubKey = kp.pubKey
+            let pubEncoded = pubKey.getEncoded()
+            Hilog.info(0, "", "pubKey encoded data size: ${pubEncoded.data.size}")
+        }
+    })
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
+## class KeyPair
+
+```cangjie
+public class KeyPair {}
+```
+
+Asymmetric key pair, containing a public key and a private key.
+
+**System Capability:** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**Since:** 26.1.0
+
+### prop pubKey
+
+```cangjie
+public prop pubKey: PubKey
+```
+
+**Description:**
+
+Gets the public key in the key pair.
+
+**System Capability:** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**Since:** 26.1.0
+
+### prop priKey
+
+```cangjie
+public prop priKey: PriKey
+```
+
+**Description:**
+
+Gets the private key in the key pair.
+
+**System Capability:** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**Since:** 26.1.0
+
+## class Verify
+
+```cangjie
+public class Verify {}
+```
+
+Signature verifier, provides the ability to initialize verification, update data, verify signatures, recover data, and set/get verification parameters.
+
+**System Capability:** SystemCapability.Security.CryptoFramework.Signature
+
+**Since:** 26.1.0
+
+### prop algName
+
+```cangjie
+public prop algName: String
+```
+
+**Description:**
+
+Gets the algorithm name of the verifier.
+
+**System Capability:** SystemCapability.Security.CryptoFramework.Signature
+
+**Since:** 26.1.0
+
+### func initialize(PubKey, AsyncCallback<Unit>)
+
+```cangjie
+public func initialize(pubKey: PubKey, callback: AsyncCallback<Unit>): Unit
+```
+
+**Description:**
+
+Asynchronously initializes the verifier with the specified public key, with the result returned via a callback.
+
+**System Capability:** SystemCapability.Security.CryptoFramework.Signature
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+| Parameter Name | Type | Mandatory | Default Value | Description |
+|:---|:---|:---|:---|:---|
+| pubKey | PubKey | Yes | - | Public key used for verification. |
+| callback | AsyncCallback&lt;Unit&gt; | Yes | - | Callback function that receives the initialization result or error. |
+
+**Exceptions:**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception): For corresponding error codes, see [Universal Error Codes](../cj-errorcode-universal.md) and [Crypto Framework Error Codes](./cj-errorcode-crypto.md).
+
+  | Error Code ID | Error Message |
+  | :---- | :--- |
+  | 17620001 | Memory operation failed. |
+  | 17620002 | Failed to obtain the native object or convert parameters. |
+  | 17630001 | Crypto operation error. |
+  | 17620003 | Parameter check failed. |
+
+**Example:**
+
+```cangjie
+<!-- compile -->
+import kit.CryptoArchitectureKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
+
+let verify = createVerify("RSA2048|PKCS1|SHA256")
+let asyKeyGenerator = createAsyKeyGenerator("RSA2048")
+try {
+    asyKeyGenerator.generateKeyPair({ err, keyPair =>
+        if (let Some(e) <- err) {
+            throw e
+        }
+        if (let Some(kp) <- keyPair) {
+            let pubKey = kp.pubKey
+            verify.initialize(pubKey, { err1 =>
+                if (let Some(e1) <- err1) {
+                    throw e1
+                }
+                Hilog.info(0, "", "verify initialize success, algName: ${verify.algName}")
+            })
+        }
+    })
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
+### func update(DataBlob, AsyncCallback<Unit>)
+
+```cangjie
+public func update(data: DataBlob, callback: AsyncCallback<Unit>): Unit
+```
+
+**Description:**
+
+Asynchronously appends data to be verified, with the result returned via a callback. Called after initialize and before verify.
+
+**System Capability:** SystemCapability.Security.CryptoFramework.Signature
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+| Parameter Name | Type | Mandatory | Default Value | Description |
+|:---|:---|:---|:---|:---|
+| data | DataBlob | Yes | - | Data to be verified. |
+| callback | AsyncCallback&lt;Unit&gt; | Yes | - | Callback function that receives the update result or error. |
+
+**Exceptions:**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception): For corresponding error codes, see [Universal Error Codes](../cj-errorcode-universal.md) and [Crypto Framework Error Codes](./cj-errorcode-crypto.md).
+
+  | Error Code ID | Error Message |
+  | :---- | :--- |
+  | 17620001 | Memory operation failed. |
+  | 17620002 | Failed to obtain the native object or convert parameters. |
+  | 17630001 | Crypto operation error. |
+  | 17620004 | Invalid function call. |
+
+**Example:**
+
+```cangjie
+<!-- compile -->
+import kit.CryptoArchitectureKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
+
+let verify = createVerify("RSA2048|PKCS1|SHA256")
+let asyKeyGenerator = createAsyKeyGenerator("RSA2048")
+let input: Array<UInt8> = "This is test data".toUtf8Array()
+try {
+    asyKeyGenerator.generateKeyPair({ err, keyPair =>
+        if (let Some(e) <- err) {
+            throw e
+        }
+        if (let Some(kp) <- keyPair) {
+            verify.initialize(kp.pubKey, { err1 =>
+                if (let Some(e1) <- err1) {
+                    throw e1
+                }
+                verify.update(DataBlob(input), { err2 =>
+                    if (let Some(e2) <- err2) {
+                        throw e2
+                    }
+                    Hilog.info(0, "", "verify update success, data size: ${input.size}")
+                })
+            })
+        }
+    })
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
+### func verify(DataBlob, DataBlob, AsyncCallback<Bool>)
+
+```cangjie
+public func verify(data: DataBlob, signatureData: DataBlob, callback: AsyncCallback<Bool>): Unit
+```
+
+**Description:**
+
+Asynchronously verifies whether the data matches the signature, with the verification result returned via a callback.
+
+**System Capability:** SystemCapability.Security.CryptoFramework.Signature
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+| Parameter Name | Type | Mandatory | Default Value | Description |
+|:---|:---|:---|:---|:---|
+| data | DataBlob | Yes | - | Data to be verified. |
+| signatureData | DataBlob | Yes | - | Signature data to be verified. |
+| callback | AsyncCallback&lt;Bool&gt; | Yes | - | Callback function that receives the verification result or error. |
+
+**Exceptions:**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception): For corresponding error codes, see [Universal Error Codes](../cj-errorcode-universal.md) and [Crypto Framework Error Codes](./cj-errorcode-crypto.md).
+
+  | Error Code ID | Error Message |
+  | :---- | :--- |
+  | 17620001 | Memory operation failed. |
+  | 17620002 | Failed to obtain the native object or convert parameters. |
+  | 17630001 | Crypto operation error. |
+  | 17620003 | Parameter check failed. |
+
+**Example:**
+
+```cangjie
+<!-- compile -->
+import kit.CryptoArchitectureKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
+
+let verify = createVerify("RSA2048|PKCS1|SHA256")
+let asyKeyGenerator = createAsyKeyGenerator("RSA2048")
+let input: Array<UInt8> = "This is test data".toUtf8Array()
+let signDataArr: Array<UInt8> = Array<UInt8>(256, item: 0)
+try {
+    asyKeyGenerator.generateKeyPair({ err, keyPair =>
+        if (let Some(e) <- err) {
+            throw e
+        }
+        if (let Some(kp) <- keyPair) {
+            verify.initialize(kp.pubKey, { err1 =>
+                if (let Some(e1) <- err1) {
+                    throw e1
+                }
+                verify.verify(DataBlob(input), DataBlob(signDataArr), { err2, res =>
+                    if (let Some(e2) <- err2) {
+                        throw e2
+                    }
+                    if (let Some(r) <- res) {
+                        Hilog.info(0, "", "verify result: ${r}")
+                    }
+                })
+            })
+        }
+    })
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
+### func verify(DataBlob, AsyncCallback<Bool>, Option<DataBlob>)
+
+```cangjie
+public func verify(signatureData: DataBlob, callback: AsyncCallback<Bool>, data!: Option<DataBlob> = None): Unit
+```
+
+**Description:**
+
+Asynchronously verifies whether the signature matches, with the verification result returned via a callback. This overload is applicable when data has already been appended via update, and the data parameter can be null.
+
+**System Capability:** SystemCapability.Security.CryptoFramework.Signature
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+| Parameter Name | Type | Mandatory | Default Value | Description |
+|:---|:---|:---|:---|:---|
+| signatureData | DataBlob | Yes | - | Signature data to be verified. |
+| callback | AsyncCallback&lt;Bool&gt; | Yes | - | Callback function that receives the verification result or error. |
+| data! | Option&lt;DataBlob&gt; | No | None | Data to be verified, can be null (applicable when update has already been called). |
+
+**Exceptions:**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception): For corresponding error codes, see [Universal Error Codes](../cj-errorcode-universal.md) and [Crypto Framework Error Codes](./cj-errorcode-crypto.md).
+
+  | Error Code ID | Error Message |
+  | :---- | :--- |
+  | 17620001 | Memory operation failed. |
+  | 17620002 | Failed to obtain the native object or convert parameters. |
+  | 17630001 | Crypto operation error. |
+  | 17620003 | Parameter check failed. |
+
+**Example:**
+
+```cangjie
+<!-- compile -->
+import kit.CryptoArchitectureKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
+
+let verify = createVerify("RSA2048|PKCS1|SHA256")
+let asyKeyGenerator = createAsyKeyGenerator("RSA2048")
+let input: Array<UInt8> = "This is test data".toUtf8Array()
+let signDataArr: Array<UInt8> = Array<UInt8>(256, item: 0)
+try {
+    asyKeyGenerator.generateKeyPair({ err, keyPair =>
+        if (let Some(e) <- err) {
+            throw e
+        }
+        if (let Some(kp) <- keyPair) {
+            verify.initialize(kp.pubKey, { err1 =>
+                if (let Some(e1) <- err1) {
+                    throw e1
+                }
+                verify.update(DataBlob(input), { err2 =>
+                    if (let Some(e2) <- err2) {
+                        throw e2
+                    }
+                    // Data has already been appended via update, data parameter is None
+                    verify.verify(DataBlob(signDataArr), { err3, res =>
+                        if (let Some(e3) <- err3) {
+                            throw e3
+                        }
+                        if (let Some(r) <- res) {
+                            Hilog.info(0, "", "verify result: ${r}")
+                        }
+                    }, None)
+                })
+            })
+        }
+    })
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
+### func recover(DataBlob, AsyncCallback<?DataBlob>)
+
+```cangjie
+public func recover(signatureData: DataBlob, callback: AsyncCallback<?DataBlob>): Unit
+```
+
+**Description:**
+
+Asynchronously recovers the original data from the signature data, with the result returned via a callback. Only applicable to algorithms that support signature recovery, such as RSA. When the recovery result is empty, the callback returns None.
+
+**System Capability:** SystemCapability.Security.CryptoFramework.Signature
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+| Parameter Name | Type | Mandatory | Default Value | Description |
+|:---|:---|:---|:---|:---|
+| signatureData | DataBlob | Yes | - | Signature data to be recovered. |
+| callback | AsyncCallback&lt;?DataBlob&gt; | Yes | - | Callback function that receives the recovered original data or error, returns None when data is empty. |
+
+**Exceptions:**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception): For corresponding error codes, see [Universal Error Codes](../cj-errorcode-universal.md) and [Crypto Framework Error Codes](./cj-errorcode-crypto.md).
+
+  | Error Code ID | Error Message |
+  | :---- | :--- |
+  | 17620001 | Memory operation failed. |
+  | 17620002 | Failed to obtain the native object or convert parameters. |
+  | 17630001 | Crypto operation error. |
+  | 17620004 | Invalid function call. |
+
+**Example:**
+
+```cangjie
+<!-- compile -->
+import kit.CryptoArchitectureKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
+
+let verify = createVerify("RSA2048|PKCS1|NoHash|Recover")
+let asyKeyGenerator = createAsyKeyGenerator("RSA2048")
+let signDataArr: Array<UInt8> = Array<UInt8>(256, item: 0)
+try {
+    asyKeyGenerator.generateKeyPair({ err, keyPair =>
+        if (let Some(e) <- err) {
+            throw e
+        }
+        if (let Some(kp) <- keyPair) {
+            verify.initialize(kp.pubKey, { err1 =>
+                if (let Some(e1) <- err1) {
+                    throw e1
+                }
+                verify.recover(DataBlob(signDataArr), { err2, rawData =>
+                    if (let Some(e2) <- err2) {
+                        throw e2
+                    }
+                    if (let Some(data) <- rawData) {
+                        Hilog.info(0, "", "recover data size: ${data.data.size}")
+                    }
+                })
+            })
+        }
+    })
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
+### func setVerifySpec(SignSpecItem, Int32)
+
+```cangjie
+public func setVerifySpec(itemType: SignSpecItem, itemValue: Int32): Unit
+```
+
+**Description:**
+
+Sets the verification parameter, where the parameter value is of Int32 type.
+
+**System Capability:** SystemCapability.Security.CryptoFramework.Signature
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+| Parameter Name | Type | Mandatory | Default Value | Description |
+|:---|:---|:---|:---|:---|
+| itemType | SignSpecItem | Yes | - | Specifies the parameter item to set. |
+| itemValue | Int32 | Yes | - | Parameter value. |
+
+**Exceptions:**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception): For corresponding error codes, see [Universal Error Codes](../cj-errorcode-universal.md) and [Crypto Framework Error Codes](./cj-errorcode-crypto.md).
+
+  | Error Code ID | Error Message |
+  | :---- | :--- |
+  | 801 | this operation is not supported. |
+  | 17620001 | Memory operation failed. |
+  | 17630001 | Crypto operation error. |
+  | 17620003 | Parameter check failed. |
+
+**Example:**
+
+```cangjie
+<!-- compile -->
+import kit.CryptoArchitectureKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
+
+let verify = createVerify("RSA2048|PSS|SHA256|MGF1_SHA256")
+try {
+    verify.setVerifySpec(SignSpecItem.PssSaltLenNum, 32)
+    Hilog.info(0, "", "setVerifySpec PssSaltLenNum success.")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
+### func setVerifySpec(SignSpecItem, Array<UInt8>)
+
+```cangjie
+public func setVerifySpec(itemType: SignSpecItem, itemValue: Array<UInt8>): Unit
+```
+
+**Description:**
+
+Sets the verification parameter, where the parameter value is of byte array type.
+
+**System Capability:** SystemCapability.Security.CryptoFramework.Signature
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+| Parameter Name | Type | Mandatory | Default Value | Description |
+|:---|:---|:---|:---|:---|
+| itemType | SignSpecItem | Yes | - | Specifies the parameter item to set. |
+| itemValue | Array&lt;UInt8&gt; | Yes | - | Parameter value. |
+
+**Exceptions:**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception): For corresponding error codes, see [Universal Error Codes](../cj-errorcode-universal.md) and [Crypto Framework Error Codes](./cj-errorcode-crypto.md).
+
+  | Error Code ID | Error Message |
+  | :---- | :--- |
+  | 801 | this operation is not supported. |
+  | 17620001 | Memory operation failed. |
+  | 17620002 | Failed to obtain the native object or convert parameters. |
+  | 17620003 | Parameter check failed. |
+  | 17620004 | Invalid function call. |
+  | 17630001 | Crypto operation error. |
+
+**Example:**
+
+```cangjie
+<!-- compile -->
+import kit.CryptoArchitectureKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
+
+let verify = createVerify("SM2_256|SM3")
+let userId: Array<UInt8> = "testUserId".toUtf8Array()
+try {
+    verify.setVerifySpec(SignSpecItem.Sm2UserIdUint8arr, userId)
+    Hilog.info(0, "", "setVerifySpec Sm2UserId success.")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
+### func getVerifySpec(SignSpecItem)
+
+```cangjie
+public func getVerifySpec(itemType: SignSpecItem): ResultSpec
+```
+
+**Description:**
+
+Gets the verification parameter.
+
+**System Capability:** SystemCapability.Security.CryptoFramework.Signature
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+| Parameter Name | Type | Mandatory | Default Value | Description |
+|:---|:---|:---|:---|:---|
+| itemType | SignSpecItem | Yes | - | Specifies the parameter item to obtain. |
+
+**Return Value:**
+
+| Type | Description |
+| -------- | -------- |
+| ResultSpec | Returns the parameter value wrapper type. |
+
+**Exceptions:**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception): For corresponding error codes, see [Universal Error Codes](../cj-errorcode-universal.md) and [Crypto Framework Error Codes](./cj-errorcode-crypto.md).
+
+  | Error Code ID | Error Message |
+  | :---- | :--- |
+  | 801 | this operation is not supported. |
+  | 17620001 | Memory operation failed. |
+  | 17630001 | Crypto operation error. |
+  | 17620003 | Parameter check failed. |
+
+**Example:**
+
+```cangjie
+<!-- compile -->
+import kit.CryptoArchitectureKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
+
+let verify = createVerify("RSA2048|PSS|SHA256|MGF1_SHA256")
+try {
+    verify.setVerifySpec(SignSpecItem.PssSaltLenNum, 32)
+    let saltLenSpec = verify.getVerifySpec(SignSpecItem.PssSaltLenNum)
+    match (saltLenSpec) {
+        case ResultSpec.Int32Value(v) => Hilog.info(0, "", "saltLen: ${v}")
+        case _ => ()
+    }
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
+## enum AsyKeySpecItem
+
+```cangjie
+public enum AsyKeySpecItem {
+    DsaPBn
+    DsaQBn
+    DsaGBn
+    DsaSkBn
+    DsaPkBn
+    EccFpPBn
+    EccABn
+    EccBBn
+    EccGXBn
+    EccGYBn
+    EccNBn
+    EccHNum
+    EccSkBn
+    EccPkXBn
+    EccPkYBn
+    EccFieldTypeStr
+    EccFieldSizeNum
+    EccCurveNameStr
+    RsaNBn
+    RsaSkBn
+    RsaPkBn
+    DhPBn
+    DhGBn
+    DhLNum
+    DhSkBn
+    DhPkBn
+    Ed25519SkBn
+    Ed25519PkBn
+    X25519SkBn
+    X25519PkBn
+}
+```
+
+Enumeration of asymmetric key parameters, used to specify a particular parameter of an asymmetric key to obtain.
+
+**System Capability:** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**Since:** 26.1.0
+
+### DsaPBn
+
+```cangjie
+DsaPBn
+```
+
+**Description:** Prime p in the DSA algorithm. p is a public parameter that specifies the bit length.
+
+**System Capability:** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**Since:** 26.1.0
+
+### DsaQBn
+
+```cangjie
+DsaQBn
+```
+
+**Description:** 160-bit prime q in the DSA algorithm, where q is a factor of p-1.
+
+**System Capability:** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**Since:** 26.1.0
+
+### DsaGBn
+
+```cangjie
+DsaGBn
+```
+
+**Description:** Parameter g in the DSA algorithm. g is a public parameter and the generator of a subgroup modulo p.
+
+**System Capability:** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**Since:** 26.1.0
+
+### DsaSkBn
+
+```cangjie
+DsaSkBn
+```
+
+**Description:** Private key sk in the DSA algorithm.
+
+**System Capability:** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**Since:** 26.1.0
+
+### DsaPkBn
+
+```cangjie
+DsaPkBn
+```
+
+**Description:** Public key pk in the DSA algorithm.
+
+**System Capability:** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**Since:** 26.1.0
+
+### EccFpPBn
+
+```cangjie
+EccFpPBn
+```
+
+**Description:** Prime p of the prime field in the ECC algorithm.
+
+**System Capability:** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**Since:** 26.1.0
+
+### EccABn
+
+```cangjie
+EccABn
+```
+
+**Description:** Elliptic curve parameter a in the ECC algorithm.
+
+**System Capability:** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**Since:** 26.1.0
+
+### EccBBn
+
+```cangjie
+EccBBn
+```
+
+**Description:** Elliptic curve parameter b in the ECC algorithm.
+
+**System Capability:** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**Since:** 26.1.0
+
+### EccGXBn
+
+```cangjie
+EccGXBn
+```
+
+**Description:** x-coordinate of the base point G in the ECC algorithm.
+
+**System Capability:** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**Since:** 26.1.0
+
+### EccGYBn
+
+```cangjie
+EccGYBn
+```
+
+**Description:** y-coordinate of the base point G in the ECC algorithm.
+
+**System Capability:** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**Since:** 26.1.0
+
+### EccNBn
+
+```cangjie
+EccNBn
+```
+
+**Description:** Order n of the base point G in the ECC algorithm.
+
+**System Capability:** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**Since:** 26.1.0
+
+### EccHNum
+
+```cangjie
+EccHNum
+```
+
+**Description:** Cofactor h in the ECC algorithm.
+
+**System Capability:** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**Since:** 26.1.0
+
+### EccSkBn
+
+```cangjie
+EccSkBn
+```
+
+**Description:** Private key sk in the ECC algorithm.
+
+**System Capability:** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**Since:** 26.1.0
+
+### EccPkXBn
+
+```cangjie
+EccPkXBn
+```
+
+**Description:** x-coordinate of the public key Pk in the ECC algorithm.
+
+**System Capability:** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**Since:** 26.1.0
+
+### EccPkYBn
+
+```cangjie
+EccPkYBn
+```
+
+**Description:** y-coordinate of the public key Pk in the ECC algorithm.
+
+**System Capability:** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**Since:** 26.1.0
+
+### EccFieldTypeStr
+
+```cangjie
+EccFieldTypeStr
+```
+
+**Description:** Field type in the ECC algorithm. Currently only the Fp field is supported.
+
+**System Capability:** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**Since:** 26.1.0
+
+### EccFieldSizeNum
+
+```cangjie
+EccFieldSizeNum
+```
+
+**Description:** Field size in the ECC algorithm.
+
+**System Capability:** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**Since:** 26.1.0
+
+### EccCurveNameStr
+
+```cangjie
+EccCurveNameStr
+```
+
+**Description:** Curve name in the ECC algorithm.
+
+**System Capability:** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**Since:** 26.1.0
+
+### RsaNBn
+
+```cangjie
+RsaNBn
+```
+
+**Description:** Modulus n in the RSA algorithm.
+
+**System Capability:** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**Since:** 26.1.0
+
+### RsaSkBn
+
+```cangjie
+RsaSkBn
+```
+
+**Description:** Private key exponent sk in the RSA algorithm.
+
+**System Capability:** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**Since:** 26.1.0
+
+### RsaPkBn
+
+```cangjie
+RsaPkBn
+```
+
+**Description:** Public key exponent pk in the RSA algorithm.
+
+**System Capability:** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**Since:** 26.1.0
+
+### DhPBn
+
+```cangjie
+DhPBn
+```
+
+**Description:** Prime p in the DH algorithm.
+
+**System Capability:** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**Since:** 26.1.0
+
+### DhGBn
+
+```cangjie
+DhGBn
+```
+
+**Description:** Parameter g in the DH algorithm.
+
+**System Capability:** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**Since:** 26.1.0
+
+### DhLNum
+
+```cangjie
+DhLNum
+```
+
+**Description:** Bit length l of the prime p in the DH algorithm.
+
+**System Capability:** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**Since:** 26.1.0
+
+### DhSkBn
+
+```cangjie
+DhSkBn
+```
+
+**Description:** Private key sk in the DH algorithm.
+
+**System Capability:** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**Since:** 26.1.0
+
+### DhPkBn
+
+```cangjie
+DhPkBn
+```
+
+**Description:** Public key pk in the DH algorithm.
+
+**System Capability:** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**Since:** 26.1.0
+
+### Ed25519SkBn
+
+```cangjie
+Ed25519SkBn
+```
+
+**Description:** Private key sk in the Ed25519 algorithm.
+
+**System Capability:** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**Since:** 26.1.0
+
+### Ed25519PkBn
+
+```cangjie
+Ed25519PkBn
+```
+
+**Description:** Public key pk in the Ed25519 algorithm.
+
+**System Capability:** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**Since:** 26.1.0
+
+### X25519SkBn
+
+```cangjie
+X25519SkBn
+```
+
+**Description:** Private key sk in the X25519 algorithm.
+
+**System Capability:** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**Since:** 26.1.0
+
+### X25519PkBn
+
+```cangjie
+X25519PkBn
+```
+
+**Description:** Public key pk in the X25519 algorithm.
+
+**System Capability:** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**Since:** 26.1.0
+
+### prop value
+
+```cangjie
+public prop value: Int32
+```
+
+**Description:** Gets the Int32 value of the enumeration.
+
+**System Capability:** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**Since:** 26.1.0
+
+**Return Value:**
+
+| Type | Description |
+|:---|:---|
+| Int32 | The Int32 value of the enumeration. |
+
+### func !=(AsyKeySpecItem)
+
+```cangjie
+public operator func !=(other: AsyKeySpecItem): Bool
+```
+
+**Description:** Determines whether two enum values are not equal.
+
+**System Capability:** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+| Parameter Name | Type | Mandatory | Default Value | Description |
+|:---|:---|:---|:---|:---|
+| other | [AsyKeySpecItem](#enum-asykeyspecitem) | Yes | - | Another enum value. |
+
+**Return Value:**
+
+| Type | Description |
+|:---|:---|
+| Bool | Returns true if the two enum values are not equal, otherwise false. |
+
+### func ==(AsyKeySpecItem)
+
+```cangjie
+public operator func ==(other: AsyKeySpecItem): Bool
+```
+
+**Description:** Determines whether two enum values are equal.
+
+**System Capability:** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+| Parameter Name | Type | Mandatory | Default Value | Description |
+|:---|:---|:---|:---|:---|
+| other | [AsyKeySpecItem](#enum-asykeyspecitem) | Yes | - | Another enum value. |
+
+**Return Value:**
+
+| Type | Description |
+|:---|:---|
+| Bool | Returns true if the two enum values are equal, otherwise false. |
+
+### func toString()
+
+```cangjie
+public func toString(): String
+```
+
+**Description:** Gets the description of the enumeration.
+
+**System Capability:** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**Since:** 26.1.0
+
+**Return Value:**
+
+| Type | Description |
+|:---|:---|
+| String | The description of the enumeration. |
+
+## enum ResultSpec
+
+```cangjie
+public enum ResultSpec {
+    BigintValue(BigInt)
+    Int32Value(Int32)
+    StringValue(String)
+    Uint8ArrayValue(Array<UInt8>)
+}
+```
+
+Enumeration of asymmetric key parameter return values, used to wrap different types of key parameter return values.
+
+**System Capability:** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**Since:** 26.1.0
+
+### BigintValue(BigInt)
+
+```cangjie
+BigintValue(BigInt)
+```
+
+**Description:** Indicates that the return value is a key parameter of BigInt type.
+
+**System Capability:** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**Since:** 26.1.0
+
+### Int32Value(Int32)
+
+```cangjie
+Int32Value(Int32)
+```
+
+**Description:** Indicates that the return value is a key parameter of Int32 type.
+
+**System Capability:** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**Since:** 26.1.0
+
+### StringValue(String)
+
+```cangjie
+StringValue(String)
+```
+
+**Description:** Indicates that the return value is a key parameter of String type.
+
+**System Capability:** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**Since:** 26.1.0
+
+### Uint8ArrayValue(Array<UInt8>)
+
+```cangjie
+Uint8ArrayValue(Array<UInt8>)
+```
+
+**Description:** Indicates that the return value is a key parameter of Array<UInt8> type.
+
+**System Capability:** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**Since:** 26.1.0
+
+### func !=(ResultSpec)
+
+```cangjie
+public operator func !=(other: ResultSpec): Bool
+```
+
+**Description:** Determines whether two enum values are not equal.
+
+**System Capability:** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+| Parameter Name | Type | Mandatory | Default Value | Description |
+|:---|:---|:---|:---|:---|
+| other | [ResultSpec](#enum-resultspec) | Yes | - | Another enum value. |
+
+**Return Value:**
+
+| Type | Description |
+|:---|:---|
+| Bool | Returns true if the two enum values are not equal, otherwise false. |
+
+### func ==(ResultSpec)
+
+```cangjie
+public operator func ==(other: ResultSpec): Bool
+```
+
+**Description:** Determines whether two enum values are equal.
+
+**System Capability:** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+| Parameter Name | Type | Mandatory | Default Value | Description |
+|:---|:---|:---|:---|:---|
+| other | [ResultSpec](#enum-resultspec) | Yes | - | Another enum value. |
+
+**Return Value:**
+
+| Type | Description |
+|:---|:---|
+| Bool | Returns true if the two enum values are equal, otherwise false. |
+
+### func toString()
+
+```cangjie
+public func toString(): String
+```
+
+**Description:** Gets the description of the enumeration.
+
+**System Capability:** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**Since:** 26.1.0
+
+**Return Value:**
+
+| Type | Description |
+|:---|:---|
+| String | The description of the enumeration. |
+
+## enum SignSpecItem
+
+```cangjie
+public enum SignSpecItem {
+    PssMdNameStr
+    PssMgfNameStr
+    PssMgf1MdStr
+    PssSaltLenNum
+    PssTrailerFieldNum
+    Sm2UserIdUint8arr
+    MlDsaDeterministicBool
+    MlDsaMuBool
+    MlDsaContextUint8arr
+}
+```
+
+Enumeration of signature verification parameters, used to specify particular parameter items during the signature verification process.
+
+**System Capability:** SystemCapability.Security.CryptoFramework.Signature
+
+**Since:** 26.1.0
+
+### PssMdNameStr
+
+```cangjie
+PssMdNameStr
+```
+
+**Description:** In RSA-PSS signature verification, specifies the message digest algorithm.
+
+**System Capability:** SystemCapability.Security.CryptoFramework.Signature
+
+**Since:** 26.1.0
+
+### PssMgfNameStr
+
+```cangjie
+PssMgfNameStr
+```
+
+**Description:** In RSA-PSS signature verification, specifies the mask generation function (MGF).
+
+**System Capability:** SystemCapability.Security.CryptoFramework.Signature
+
+**Since:** 26.1.0
+
+### PssMgf1MdStr
+
+```cangjie
+PssMgf1MdStr
+```
+
+**Description:** In RSA-PSS signature verification, specifies the message digest algorithm for MGF1.
+
+**System Capability:** SystemCapability.Security.CryptoFramework.Signature
+
+**Since:** 26.1.0
+
+### PssSaltLenNum
+
+```cangjie
+PssSaltLenNum
+```
+
+**Description:** In RSA-PSS signature verification, specifies the salt length.
+
+**System Capability:** SystemCapability.Security.CryptoFramework.Signature
+
+**Since:** 26.1.0
+
+### PssTrailerFieldNum
+
+```cangjie
+PssTrailerFieldNum
+```
+
+**Description:** In RSA-PSS signature verification, specifies the trailer field.
+
+**System Capability:** SystemCapability.Security.CryptoFramework.Signature
+
+**Since:** 26.1.0
+
+### Sm2UserIdUint8arr
+
+```cangjie
+Sm2UserIdUint8arr
+```
+
+**Description:** In SM2 signature verification, specifies the user ID.
+
+**System Capability:** SystemCapability.Security.CryptoFramework.Signature
+
+**Since:** 26.1.0
+
+### MlDsaDeterministicBool
+
+```cangjie
+MlDsaDeterministicBool
+```
+
+**Description:** Whether to use deterministic signing in the ML-DSA signature verification process.
+
+**System Capability:** SystemCapability.Security.CryptoFramework.Signature
+
+**Since:** 26.1.0
+
+### MlDsaMuBool
+
+```cangjie
+MlDsaMuBool
+```
+
+**Description:** The mu parameter value in the ML-DSA signature verification process.
+
+**System Capability:** SystemCapability.Security.CryptoFramework.Signature
+
+**Since:** 26.1.0
+
+### MlDsaContextUint8arr
+
+```cangjie
+MlDsaContextUint8arr
+```
+
+**Description:** The context data in the ML-DSA signature verification process.
+
+**System Capability:** SystemCapability.Security.CryptoFramework.Signature
+
+**Since:** 26.1.0
+
+### prop value
+
+```cangjie
+public prop value: Int32
+```
+
+**Description:** Gets the Int32 value of the enumeration.
+
+**System Capability:** SystemCapability.Security.CryptoFramework.Signature
+
+**Since:** 26.1.0
+
+**Return Value:**
+
+| Type | Description |
+|:---|:---|
+| Int32 | The Int32 value of the enumeration. |
+
+### func !=(SignSpecItem)
+
+```cangjie
+public operator func !=(other: SignSpecItem): Bool
+```
+
+**Description:** Determines whether two enum values are not equal.
+
+**System Capability:** SystemCapability.Security.CryptoFramework.Signature
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+| Parameter Name | Type | Mandatory | Default Value | Description |
+|:---|:---|:---|:---|:---|
+| other | [SignSpecItem](#enum-signspecitem) | Yes | - | Another enum value. |
+
+**Return Value:**
+
+| Type | Description |
+|:---|:---|
+| Bool | Returns true if the two enum values are not equal, otherwise false. |
+
+### func ==(SignSpecItem)
+
+```cangjie
+public operator func ==(other: SignSpecItem): Bool
+```
+
+**Description:** Determines whether two enum values are equal.
+
+**System Capability:** SystemCapability.Security.CryptoFramework.Signature
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+| Parameter Name | Type | Mandatory | Default Value | Description |
+|:---|:---|:---|:---|:---|
+| other | [SignSpecItem](#enum-signspecitem) | Yes | - | Another enum value. |
+
+**Return Value:**
+
+| Type | Description |
+|:---|:---|
+| Bool | Returns true if the two enum values are equal, otherwise false. |
+
+### func toString()
+
+```cangjie
+public func toString(): String
+```
+
+**Description:** Gets the description of the enumeration.
+
+**System Capability:** SystemCapability.Security.CryptoFramework.Signature
+
+**Since:** 26.1.0
+
+**Return Value:**
+
+| Type | Description |
+|:---|:---|
+| String | The description of the enumeration. |

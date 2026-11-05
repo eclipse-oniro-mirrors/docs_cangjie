@@ -152,4 +152,38 @@ Currently, SM2 encryption/decryption can be performed using string parameters. T
 
 As shown in the table, only one item can be selected from each range (i.e., content within []) to form the string parameter. The SM2 algorithm and key length are concatenated with the "_" symbol.
 
-For example, when an SM2
+For example, when an SM2 key with key length 256 bits and digest algorithm MD5 is required, the string parameter is "SM2_256|MD5".
+
+| Asymmetric Key Type | Digest Algorithm | API Version |
+| -------- | -------- | -------- |
+| SM2_256 | [MD5\|SHA1\|SHA224\|SHA256\|SHA384\|SHA512\|SM3] | 12+ |
+| SM2 | [MD5\|SHA1\|SHA224\|SHA256\|SHA384\|SHA512\|SM3] | 12+ |
+
+As shown in the last row of the table, to maintain compatibility with keys generated from key parameters, the SM2 encryption/decryption parameter supports omitting the key length. The actual encryption/decryption operation depends on the actual input key length.
+
+### Retrieving SM2 Digest Algorithm Parameters
+
+Starting from API version 12, SM2 supports retrieving digest algorithm parameters. "√" indicates support for retrieving or setting the parameter.
+
+| SM2 Encryption/Decryption Parameter | Enum Value | Retrieve | Set |
+| --------  | -------- | -------- | -------- |
+| md | SM2_MD_NAME_STR | √ | - |
+
+### Converting SM2 Ciphertext Format
+
+Starting from API version 12, SM2 format conversion is supported. The currently supported SM2 ciphertext format is the ASN.1 format of the national cryptographic standard, where the parameter combination order is C1C3C2.
+
+Developers can specify SM2 ciphertext parameters and convert them into ASN.1 format ciphertext that complies with the national cryptographic standard. Conversely, specific SM2 ciphertext parameters can also be extracted from the ASN.1 format ciphertext of the national cryptographic standard, allowing developers to assemble them into other SM2 ciphertext formats.
+
+SM2 ciphertext parameters include:
+
+- xCoordinate: x component, i.e., C1_X.
+- yCoordinate: y component, i.e., C1_Y. xCoordinate and yCoordinate can be converted into C1.
+- cipherTextData: Ciphertext, i.e., C2.
+- hashData: Hash value, i.e., C3.
+
+Currently, SM2 ciphertext format conversion mode can be specified using string parameters, as shown in the table below. "√" indicates support for generating or retrieving parameters.
+
+| SM2 Ciphertext Format Conversion Mode | Generate SM2 Ciphertext from Parameters | Retrieve Parameters from SM2 Ciphertext |
+| --------  | -------- | -------- |
+| C1C3C2 | √ | √ |
