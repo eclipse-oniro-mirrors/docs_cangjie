@@ -15,7 +15,7 @@ Cangjie code:
 <!--compile.error-->
 ```cangjie
 // Import interoperability library
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     // Create a new runtime instance
@@ -49,7 +49,7 @@ Cangjie code:
 <!--compile-->
 ```cangjie
 // Import interoperability library
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     // Create a new runtime instance
@@ -89,7 +89,7 @@ Cangjie-side code:
 <!--compile-->
 ```cangjie
 // Import interoperability library
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func doSthWithException(context: JSContext, callInfo: JSCallInfo): JSValue {
     if (callInfo.count > 0) {
@@ -127,7 +127,7 @@ Cangjie-side code:
 <!--compile-->
 ```cangjie
 // Import interoperability library
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func callArktsWithExp(context: JSContext, callInfo: JSCallInfo): JSValue {
     // Use try...catch to catch cross-language exceptions when calling cross-language interfaces
@@ -173,7 +173,7 @@ Cangjie-side code:
 <!--compile.error-->
 ```cangjie
 // Import interoperability library
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 // Define shared class (SharedObject is a class from the interoperability library)
 class Data <: SharedObject {
@@ -246,7 +246,7 @@ export declare function getDataId(data: undefined): number;
 ArkTS-side code:
 
 ```javascript
-import { createData, setDatId, getDataId } from "libohos_app_cangjie_entry.so";
+import { createData, setDataId, getDataId } from "libohos_app_cangjie_entry.so";
 
 // Create shared object
 let data = createData();
@@ -264,7 +264,7 @@ Cangjie-side code:
 <!--compile-->
 ```cangjie
 // Import interoperability library
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 // Define shared class
 class Data <: SharedObject {
@@ -372,7 +372,7 @@ Cangjie-side code:
 
 <!--compile.error-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 class CJData <: SharedObject {
     let name: String
@@ -463,9 +463,8 @@ Cangjie-side code:
 
 <!--compile.error-->
 ```cangjie
-import ohos.ark_interop.*
-import ohos.ark_interop_macro.*
-import ohos.base.UIThread
+import kit.CangjieKit.*
+import kit.ArkUI.UIThread
 
 @Interop[ArkTS]
 public func testCJ(): Unit {
@@ -509,7 +508,7 @@ Cangjie threads are user-mode threads, and the runtime schedules Cangjie threads
 Cangjie code:
 
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func addNumberAsync(context: JSContext, callInfo: JSCallInfo): JSValue {
     // Get the argument list from JSCallInfo
@@ -548,7 +547,7 @@ Cangjie code:
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func addNumberAsync(context: JSContext, callInfo: JSCallInfo): JSValue {
     // Get the argument list from JSCallInfo
@@ -595,8 +594,8 @@ Cangjie code:
 
 <!--compile-->
 ```cangjie
-import ohos.ark_interop.*
-import ohos.base.UIThread
+import kit.CangjieKit.*
+import kit.ArkUI.UIThread
 
 func addNumberAsync(context: JSContext, callInfo: JSCallInfo): JSValue {
     // Get the argument list from JSCallInfo
@@ -642,7 +641,7 @@ Cangjie code:
 
 <!--compile.error-->
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func addNumberAsync(context: JSContext, callInfo: JSCallInfo): JSValue {
     // Get the argument list from JSCallInfo

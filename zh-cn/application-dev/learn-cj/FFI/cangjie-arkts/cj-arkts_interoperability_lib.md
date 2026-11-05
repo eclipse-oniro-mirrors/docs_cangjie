@@ -14,7 +14,7 @@
     // 定义包名，该包名需要和 cjpm.toml 的 package name 保持一致
     package ohos_app_cangjie_entry
     // 导入互操作库
-    import ohos.ark_interop.*
+    import kit.CangjieKit.*
     // 定义互操作函数，该函数参数类型必须为(JSContext,JSCallInfo)，返回值类型必须为JSValue
     func addNumber(context: JSContext, callInfo: JSCallInfo): JSValue {
         // 从JSCallInfo获取参数列表

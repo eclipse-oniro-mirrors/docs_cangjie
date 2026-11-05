@@ -15,8 +15,7 @@
     <!--compile-->
     ```cangjie
     // 导入互操作库
-    import ohos.ark_interop.*
-    import ohos.ark_interop_macro.*
+    import kit.CangjieKit.*
     // 定义共享类，SharedObject为互操作库的类
     class Data <: SharedObject {
         Data(
@@ -124,8 +123,7 @@ let id = cjLib.getDataId(data);
 <!--compile-->
 ```cangjie
 // 导入互操作库
-import ohos.ark_interop.*
-import ohos.ark_interop_macro.*
+import kit.CangjieKit.*
 // 定义共享类
 class Data <: SharedObject {
     Data(
@@ -229,8 +227,7 @@ console.log("id is " + id);
     <!--compile-->
     ```cangjie
     // 导入互操作库
-    import ohos.ark_interop.*
-    import ohos.ark_interop_macro.*
+    import kit.CangjieKit.*
     // 定义共享类
     class Data <: SharedObject {
         Data(

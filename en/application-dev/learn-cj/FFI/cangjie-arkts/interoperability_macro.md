@@ -19,8 +19,7 @@ After successfully inserting a Cangjie interop module into an ArkTS project, cus
    // Define the package name, which must match the package name in cjpm.toml
    package ohos_app_cangjie_entry
    // Import the interop library ark_interop and interop macros
-   import ohos.ark_interop.*
-   import ohos.ark_interop_macro.*
+   import kit.CangjieKit.*
    // Implement the custom function addF64, which takes two numbers as input and returns their sum
    @Interop[ArkTS]
    public func addF64(a: Float64, b: Float64): Float64 {
@@ -166,8 +165,7 @@ Example of asynchronous function interop:
 // Create an interop function on the Cangjie side
 package ohos_app_cangjie_entry
 
-import ohos.ark_interop.*
-import ohos.ark_interop_macro.*
+import kit.CangjieKit.*
 
 @Interop[ArkTS, Async]
 public func doAsync(a: Float64, b: Float64): Float64 {
@@ -211,8 +209,7 @@ Example of interface interop:
 // Create an interop function on the Cangjie side
 package ohos_app_cangjie_entry
 
-import ohos.ark_interop.*
-import ohos.ark_interop_macro.*
+import kit.CangjieKit.*
 
 @Interop[ArkTS]
 public interface InterfaceDemo {
@@ -277,8 +274,7 @@ Example of class interop:
 // Create an interop function on the Cangjie side
 package ohos_app_cangjie_entry
 
-import ohos.ark_interop.*
-import ohos.ark_interop_macro.*
+import kit.CangjieKit.*
 
 @Interop[ArkTS]
 public class ClassDemo {
@@ -377,8 +373,7 @@ Example of enum interop:
 // Create an interop function on the Cangjie side
 package ohos_app_cangjie_entry
 
-import ohos.ark_interop.*
-import ohos.ark_interop_macro.*
+import kit.CangjieKit.*
 
 @Interop[ArkTS]
 public enum EnumDemo {
@@ -429,8 +424,7 @@ Example of global variable interop:
 // Create interop global variables on the Cangjie side
 package ohos_app_cangjie_entry
 
-import ohos.ark_interop.*
-import ohos.ark_interop_macro.*
+import kit.CangjieKit.*
 
 @Interop[ArkTS]
 public const MAX_COUNT: Int64 = 100

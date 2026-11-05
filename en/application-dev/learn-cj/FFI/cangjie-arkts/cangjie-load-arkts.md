@@ -82,6 +82,8 @@ export let value = 123
 
     <!-- compile -->
     ```cangjie
+    import kit.PerformanceAnalysisKit.Hilog
+
     func loadModule(context: JSContext): Unit {
         // 1. Import the module using requireArkModule
         let module = context.requireArkModule("entry/src/main/ets/Test")
@@ -89,7 +91,7 @@ export let value = 123
         let test = module.asObject()
         // 3. Read the exported value variable
         let value = test["value"].toNumber()
-        Hilog.info("value is ${value}")
+        Hilog.info(0, "test", "value is ${value}")
         // 4. Write to the value variable
         test["value"] = context.number(2).toJSValue()
         // 5. Call the exported test method
@@ -136,6 +138,8 @@ export let value = 123
 
     <!-- compile -->
     ```cangjie
+    import kit.PerformanceAnalysisKit.Hilog
+
     func loadModule(context: JSContext): Unit {
         // 1. Import the module using requireArkModule
         let module1 = context.requireArkModule("localhar/src/main/ets/Test") // Import files in the local HAR
@@ -146,7 +150,7 @@ export let value = 123
         let test = module1.asObject()
         // 3. Read the exported value variable
         let value = test["value"].toNumber()
-        Hilog.info("value is ${value}")
+        Hilog.info(0, "test", "value is ${value}")
         // 4. Write to the value variable
         test["value"] = context.number(2).toJSValue()
         // 5. Call the exported test method
@@ -165,6 +169,8 @@ No configuration is required in `build-profile.json5`. The import and invocation
 
 <!-- compile -->
 ```cangjie
+import kit.PerformanceAnalysisKit.Hilog
+
 func loadModule(context: JSContext): Unit {
     // 1. Import the module using requireArkModule
     let module = context.requireArkModule("localhsp/src/main/ets/Test") // Import files in the local HSP
@@ -173,7 +179,7 @@ func loadModule(context: JSContext): Unit {
     let test = module.asObject()
     // 3. Read the exported value variable
     let value = test["value"].toNumber()
-    Hilog.info("value is ${value}")
+    Hilog.info(0, "test", "value is ${value}")
     // 4. Write to the value variable
     test["value"] = context.number(2).toJSValue()
     // 5. Call the exported test method
@@ -186,6 +192,8 @@ Native (napi | Cangjie) modules defined in HAP, HAR, and local HSP can all be lo
 
 <!-- compile -->
 ```cangjie
+import kit.PerformanceAnalysisKit.Hilog
+
 func loadModule(context: JSContext): Unit {
     // 1. Import the module using requireArkModule
     let module = context.requireArkModule("libentry.so") // Import the native module
@@ -194,7 +202,7 @@ func loadModule(context: JSContext): Unit {
     let test = module.asObject()
     // 3. Read the exported value variable
     let value = test["value"].toNumber()
-    Hilog.info("value is ${value}")
+    Hilog.info(0, "test", "value is ${value}")
     // 4. Write to the value variable
     test["value"] = context.number(2).toJSValue()
     // 5. Call the exported test method

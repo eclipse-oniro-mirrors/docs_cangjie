@@ -29,7 +29,7 @@
         package ohos_app_cangjie_entry
 
         // 导入互操作库
-        import ohos.ark_interop.*
+        import kit.CangjieKit.*
 
         // 定义互操作函数，该函数参数类型必须为(JSContext,JSCallInfo)，返回值类型必须为JSValue
         func addNumber(context: JSContext, callInfo: JSCallInfo): JSValue {
@@ -179,10 +179,10 @@
         package ohos_app_cangjie_cangjielib
 
         // 导入文件
-        internal import ohos.ark_interop.JSModule
-        internal import ohos.ark_interop.JSContext
-        internal import ohos.ark_interop.JSCallInfo
-        internal import ohos.ark_interop.JSValue
+        internal import kit.CangjieKit.JSModule
+        internal import kit.CangjieKit.JSContext
+        internal import kit.CangjieKit.JSCallInfo
+        internal import kit.CangjieKit.JSValue
 
         // 互操作函数
         func addNumber(context: JSContext, callInfo: JSCallInfo): JSValue {
@@ -331,10 +331,10 @@
         // package_a/a.cj
         package package_a
         // 导入互操作库
-        import ohos.ark_interop.JSModule
-        import ohos.ark_interop.JSContext
-        import ohos.ark_interop.JSCallInfo
-        import ohos.ark_interop.JSValue
+        import kit.CangjieKit.JSModule
+        import kit.CangjieKit.JSContext
+        import kit.CangjieKit.JSCallInfo
+        import kit.CangjieKit.JSValue
         // 导入三方库 B
         import package_b.returnB
 
@@ -440,10 +440,10 @@
         // package_a/a.cj
         package package_a
         // 导入互操作库
-        import ohos.ark_interop.JSModule
-        import ohos.ark_interop.JSContext
-        import ohos.ark_interop.JSCallInfo
-        import ohos.ark_interop.JSValue
+        import kit.CangjieKit.JSModule
+        import kit.CangjieKit.JSContext
+        import kit.CangjieKit.JSCallInfo
+        import kit.CangjieKit.JSValue
         // 导入子包 B
         import package_a.package_b.returnB
 
@@ -569,10 +569,10 @@
 
         package package_a
         // 导入互操作库
-        import ohos.ark_interop.JSModule
-        import ohos.ark_interop.JSContext
-        import ohos.ark_interop.JSCallInfo
-        import ohos.ark_interop.JSValue
+        import kit.CangjieKit.JSModule
+        import kit.CangjieKit.JSContext
+        import kit.CangjieKit.JSCallInfo
+        import kit.CangjieKit.JSValue
         // 导入三方库 B
         import ohos_app_cangjie_package_b.returnB
 
@@ -674,7 +674,7 @@
         package ohos_app_cangjie_entry
 
         // 导入互操作库
-        import ohos.ark_interop.*
+        import kit.CangjieKit.*
 
         // 定义互操作函数，该函数参数类型必须为(JSContext,JSCallInfo)，返回值类型必须为JSValue
         func addNumber(context: JSContext, callInfo: JSCallInfo): JSValue {

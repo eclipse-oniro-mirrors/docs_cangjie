@@ -19,8 +19,7 @@ DevEco Studio 的配置可参考[在 ArkTS 工程中添加仓颉模块](./add_ca
    // 定义包名，该包名需要和 cjpm.toml 的 package name 保持一致
    package ohos_app_cangjie_entry
    // 导入互操作库 ark_interop 和互操作宏
-   import ohos.ark_interop.*
-   import ohos.ark_interop_macro.*
+   import kit.CangjieKit.*
    // 实现自定义的函数 addF64，入参接收两个number，返回相加后的结果
    @Interop[ArkTS]
    public func addF64(a: Float64, b: Float64): Float64 {
@@ -166,8 +165,7 @@ console.log("result " + addF64(1, 2))
 // 仓颉侧创建互操作函数
 package ohos_app_cangjie_entry
 
-import ohos.ark_interop.*
-import ohos.ark_interop_macro.*
+import kit.CangjieKit.*
 
 @Interop[ArkTS, Async]
 public func doAsync(a: Float64, b: Float64): Float64 {
@@ -211,8 +209,7 @@ doAsync(1, 2).then(result => {
 // 仓颉侧创建互操作函数
 package ohos_app_cangjie_entry
 
-import ohos.ark_interop.*
-import ohos.ark_interop_macro.*
+import kit.CangjieKit.*
 
 @Interop[ArkTS]
 public interface InterfaceDemo {
@@ -277,8 +274,7 @@ console.log("result " + doInterface(inter));
 // 仓颉侧创建互操作函数
 package ohos_app_cangjie_entry
 
-import ohos.ark_interop.*
-import ohos.ark_interop_macro.*
+import kit.CangjieKit.*
 
 @Interop[ArkTS]
 public class ClassDemo {
@@ -377,8 +373,7 @@ console.log("result " + ClassDemo.staticMethod());
 // 仓颉侧创建互操作函数
 package ohos_app_cangjie_entry
 
-import ohos.ark_interop.*
-import ohos.ark_interop_macro.*
+import kit.CangjieKit.*
 
 @Interop[ArkTS]
 public enum EnumDemo {
@@ -429,8 +424,7 @@ console.log("result " + getEnum(e));
 // 仓颉侧创建互操作全局变量
 package ohos_app_cangjie_entry
 
-import ohos.ark_interop.*
-import ohos.ark_interop_macro.*
+import kit.CangjieKit.*
 
 @Interop[ArkTS]
 public const MAX_COUNT: Int64 = 100

@@ -15,7 +15,7 @@ ArkTS 是单线程执行的虚拟机，在运行时上没有对并发做任何�
     ```cangjie
     package ohos_app_cangjie_entry
 
-    import ohos.ark_interop.*
+    import kit.CangjieKit.*
 
     // 类名没有影响
     class Main {
@@ -79,7 +79,7 @@ ArkTS 是单线程执行的虚拟机，在运行时上没有对并发做任何�
     ```cangjie
     package ohos_app_cangjie_entry
 
-    import ohos.ark_interop.*
+    import kit.CangjieKit.*
 
     // 类名没有影响
     class Main {

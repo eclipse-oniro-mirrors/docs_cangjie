@@ -22,9 +22,8 @@ The steps to add a Cangjie page in DevEco Studio are as follows:
    ```cangjie
    package ohos_app_cangjie_entry // Package name
 
-   import ohos.arkui.component.*
+   import kit.ArkUI.*
    import ohos.arkui.state_macro_manage.*
-   import ohos.arkui.state_management.*
 
    // This page component must be decorated with HybridComponentEntry
    @HybridComponentEntry

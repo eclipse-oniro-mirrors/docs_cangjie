@@ -11,12 +11,10 @@ This module defines common exception information that occurs during interface ca
 ## Import Module
 
 ```cangjie
-import ohos.business_exception.*
+import kit.CangjieKit.*
 ```
 
-> **Note:**
->
-> Kit import methods are not supported and are expected to be supported in the next version.
+The interface capabilities of this module (ohos.business_exception) are encapsulated in CangjieKit and can be used after being imported through `import kit.CangjieKit.*`. For more details about importing Kits, see [Interface Usage Notes](../cj-development-intro.md#interface-usage-notes).
 
 ## class BusinessException
 

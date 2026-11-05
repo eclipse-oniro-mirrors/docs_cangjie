@@ -277,9 +277,8 @@ Project_name
    // index.cj
    package ohos_app_cangjie_my_module // 注意包名需要跟cjpm.toml里的[package] name字段保持相同
 
-   import ohos.base.*
-   import ohos.ark_interop.*
-   import ohos.ark_interop_macro.*
+   import kit.ArkUI.*
+   import kit.CangjieKit.*
    import std.core.sleep
    import std.core.Duration
 
@@ -448,10 +447,8 @@ Project_name
    // cangjie_page.cj
    package ohos_app_cangjie_my_module
 
-   import ohos.base.*
-   import ohos.arkui.component.*
+   import kit.ArkUI.*
    import ohos.arkui.state_macro_manage.*
-   import ohos.arkui.state_management.*
 
    @HybridComponentEntry
    @Component

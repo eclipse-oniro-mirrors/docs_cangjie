@@ -14,7 +14,7 @@ To develop a Cangjie interoperability module:
     // Define the package name, which must match the package name in cjpm.toml
     package ohos_app_cangjie_entry
     // Import the interoperability library
-    import ohos.ark_interop.*
+    import kit.CangjieKit.*
     // Define the interoperability function. The parameter type must be (JSContext,JSCallInfo), and the return type must be JSValue
     func addNumber(context: JSContext, callInfo: JSCallInfo): JSValue {
         // Get arguments from JSCallInfo

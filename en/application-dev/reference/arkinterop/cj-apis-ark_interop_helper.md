@@ -11,12 +11,10 @@ Provides common utility functions for data type conversion and interoperability,
 ## Import Module
 
 ```cangjie
-import ohos.ark_interop_helper.*
+import kit.CangjieKit.*
 ```
 
-> **Note:**
->
-> Kit import methods are not supported and are expected to be supported in the next version.
+The interface capabilities of this module (ohos.ark_interop_helper) are encapsulated in CangjieKit and can be used after being imported through `import kit.CangjieKit.*`. For more details about importing Kits, see [Interface Usage Notes](../cj-development-intro.md#interface-usage-notes).
 
 ## func arktsValuetoNapiValue(napi_env, JSValue)
 

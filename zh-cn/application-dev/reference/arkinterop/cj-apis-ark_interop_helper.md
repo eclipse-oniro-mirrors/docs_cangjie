@@ -11,12 +11,10 @@
 ## 导入模块
 
 ```cangjie
-import ohos.ark_interop_helper.*
+import kit.CangjieKit.*
 ```
 
-> **说明：**
->
-> 当前暂不支持Kit化的导入方式，预计在下个版本支持。
+本模块（ohos.ark_interop_helper）的接口能力由 CangjieKit 封装提供，通过 `import kit.CangjieKit.*` 导入后使用。关于 Kit 导入的更多说明，请参考[接口使用说明](../cj-development-intro.md#接口使用说明)。
 
 ## func arktsValuetoNapiValue(napi_env, JSValue)
 
