@@ -43,8 +43,8 @@ The following are the key interfaces for key-value database persistence function
     import kit.ArkData.{ DistributedKVStore, KVManagerConfig }
     import kit.PerformanceAnalysisKit.Hilog
     import kit.AbilityKit.{UIAbility, AbilityStage, Want, LaunchParam, LaunchReason, UIAbilityContext}
-    import ohos.business_exception.BusinessException
-    import ohos.data.distributed_kv_store.KVManager
+    import kit.CangjieKit.BusinessException
+    import kit.ArkData.KVManager
 
     var kvManager: Option<KVManager> = Option<KVManager>.None
     var globalAbilityContext: Option<UIAbilityContext> = Option<UIAbilityContext>.None
@@ -86,8 +86,8 @@ The following are the key interfaces for key-value database persistence function
     ```cangjie
     // xxx.cj
     import kit.ArkData.*
-    import ohos.business_exception.BusinessException
-    import ohos.data.distributed_kv_store.SingleKVStore
+    import kit.CangjieKit.BusinessException
+    import kit.ArkData.SingleKVStore
     ```
 
     The core code for create and retrieve the key-value database is:
@@ -119,7 +119,7 @@ The following are the key interfaces for key-value database persistence function
 
     ```cangjie
     // xxx.cj
-    import ohos.data.distributed_kv_store.KVValueType
+    import kit.ArkData.KVValueType
     ```
 
     The core code for insert data is:

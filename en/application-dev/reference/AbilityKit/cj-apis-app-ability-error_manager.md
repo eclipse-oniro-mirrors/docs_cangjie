@@ -78,7 +78,7 @@ public static func off(eventType: ErrorManagerEvent, observerId: Int32): Unit
 // index.cj
 import kit.AbilityKit.*
 import kit.PerformanceAnalysisKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 try {
     let observerId: Int32 = 1
@@ -129,7 +129,7 @@ public static func on(eventType: ErrorManagerEvent, observer: ErrorObserver): In
 // index.cj
 
 import kit.AbilityKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {

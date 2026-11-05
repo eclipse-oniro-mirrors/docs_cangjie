@@ -117,7 +117,7 @@
         import kit.AbilityKit.*
         import kit.PerformanceAnalysisKit.Hilog
         import kit.CangjieKit.*
-        import ohos.window.WindowStage
+        import kit.ArkUI.WindowStage
 
         class MainAbility <: UIAbility {
             // ...
@@ -161,7 +161,7 @@
             ```cangjie
             // main_ability.cj
             import kit.AbilityKit.*
-            import ohos.window.WindowStage
+            import kit.ArkUI.WindowStage
             import kit.PerformanceAnalysisKit.Hilog
 
             var globalAbilityContext: Option<UIAbilityContext> = Option<UIAbilityContext>.None

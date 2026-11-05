@@ -401,7 +401,7 @@ try {
     let session = cameraManager.createSession(SceneMode.NormalPhoto)
     var photoSessionOption = session as PhotoSession
     let photoSession = photoSessionOption.getOrThrow()
-    let point = ImagePoint(1.0, 1.0)
+    let point = Point(1.0, 1.0)
     photoSession.setMeteringPoint(point)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
@@ -1312,7 +1312,7 @@ try {
     let session = cameraManager.createSession(SceneMode.NormalPhoto)
     var photoSessionOption = session as PhotoSession
     let photoSession = photoSessionOption.getOrThrow()
-    photoSession.setFocusPoint(ImagePoint(0.5, 0.5))
+    photoSession.setFocusPoint(Point(0.5, 0.5))
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }

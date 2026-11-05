@@ -29,9 +29,9 @@ In the following example, after the Web component loads the "www.example.com" pa
 ```cangjie
 // index.cj
 import ohos.arkui.state_macro_manage.*
-import ohos.web.webview.WebviewController
+import kit.ArkWeb.WebviewController
 import kit.ArkUI.{Web, Button}
-import ohos.business_exception.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func loggerError(str: String) {
@@ -87,10 +87,10 @@ When loading local HTML files, referencing local CSS style files can be achieved
     // index.cj
     import ohos.arkui.state_macro_manage.*
     import kit.LocalizationKit.*
-    import ohos.web.webview.WebviewController
-    import ohos.business_exception.*
+    import kit.ArkWeb.WebviewController
+    import kit.CangjieKit.*
     import kit.ArkUI.{Web, Button}
-    import ohos.resource.__GenerateResource__
+    import kit.LocalizationKit.__GenerateResource__
     import kit.PerformanceAnalysisKit.Hilog
 
     func loggerError(str: String) {
@@ -180,7 +180,7 @@ Example of loading local page files under the sandbox path:
     ```cangjie
     // index.cj
     import ohos.arkui.state_macro_manage.*
-    import ohos.web.webview.WebviewController
+    import kit.ArkWeb.WebviewController
     import kit.ArkUI.Web
 
     @Entry
@@ -257,7 +257,7 @@ Web components can directly load HTML strings via the `data url` method.
 ```cangjie
 // index.cj
 import ohos.arkui.state_macro_manage.*
-import ohos.web.webview.WebviewController
+import kit.ArkWeb.WebviewController
 import kit.ArkUI.Web
 
 @Entry

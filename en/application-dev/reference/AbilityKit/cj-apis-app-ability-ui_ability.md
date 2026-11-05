@@ -60,10 +60,8 @@ public func createAbilityStageContextFromJSValue(context: JSContext, input: JSVa
 
 <!-- compile -->
 ```cangjie
-import ohos.ark_interop.*
-import ohos.ark_interop_helper.*
+import kit.CangjieKit.*
 import kit.AbilityKit.*
-import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -108,11 +106,9 @@ public func createApplicationContextFromJSValue(context: JSContext, input: JSVal
 
 <!-- compile -->
 ```cangjie
-import ohos.ark_interop.*
-import ohos.ark_interop_helper.*
+import kit.CangjieKit.*
 import kit.AbilityKit.*
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -157,11 +153,9 @@ public func createContextFromJSValue(context: JSContext, input: JSValue): Contex
 
 <!-- compile -->
 ```cangjie
-import ohos.ark_interop.*
-import ohos.ark_interop_helper.*
+import kit.CangjieKit.*
 import kit.AbilityKit.*
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -206,11 +200,9 @@ public func createUIAbilityContextFromJSValue(context: JSContext, input: JSValue
 
 <!-- compile -->
 ```cangjie
-import ohos.ark_interop.*
-import ohos.ark_interop_helper.*
+import kit.CangjieKit.*
 import kit.AbilityKit.*
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -300,7 +292,7 @@ public static func registerCreator(name: String, creator: () -> Ability): Unit
 <!-- compile -->
 ```cangjie
 import kit.AbilityKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -354,7 +346,7 @@ public var currentHapModuleInfo: HapModuleInfo
 <!-- compile -->
 ```cangjie
 import kit.AbilityKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -421,7 +413,7 @@ public prop applicationInfo: ApplicationInfo
 <!-- compile -->
 ```cangjie
 import kit.AbilityKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -456,7 +448,7 @@ public mut prop area: AreaMode
 <!-- compile -->
 ```cangjie
 import kit.AbilityKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -491,7 +483,7 @@ public prop filesDir: String
 <!-- compile -->
 ```cangjie
 import kit.AbilityKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -526,7 +518,7 @@ public prop resourceManager: ResourceManager
 <!-- compile -->
 ```cangjie
 import kit.AbilityKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -581,7 +573,7 @@ public mut prop context: UIAbilityContext
 <!-- compile -->
 ```cangjie
 import kit.AbilityKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -616,7 +608,7 @@ public mut prop lastRequestWant: Want
 <!-- compile -->
 ```cangjie
 import kit.AbilityKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -651,7 +643,7 @@ public mut prop launchWant: Want
 <!-- compile -->
 ```cangjie
 import kit.AbilityKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -682,7 +674,7 @@ public open func onBackground(): Unit
 <!-- compile -->
 ```cangjie
 import kit.AbilityKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -720,7 +712,7 @@ public open func onCreate(want: Want, launchParam: LaunchParam): Unit
 <!-- compile -->
 ```cangjie
 import kit.AbilityKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -751,7 +743,7 @@ public open func onDestroy(): Unit
 <!-- compile -->
 ```cangjie
 import kit.AbilityKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -781,7 +773,7 @@ public open func onForeground(): Unit
 <!-- compile -->
 ```cangjie
 import kit.AbilityKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -818,7 +810,7 @@ public open func onNewWant(want: Want, launchParam: LaunchParam): Unit
 <!-- compile -->
 ```cangjie
 import kit.AbilityKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -854,7 +846,7 @@ public open func onWindowStageCreate(windowStage: WindowStage): Unit
 <!-- compile -->
 ```cangjie
 import kit.AbilityKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -884,7 +876,7 @@ public open func onWindowStageDestroy(): Unit
 <!-- compile -->
 ```cangjie
 import kit.AbilityKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -944,7 +936,7 @@ public func isTerminating(): Bool
 <!-- compile -->
 ```cangjie
 import kit.AbilityKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1003,7 +995,7 @@ public func requestDialogService(want: Want, result: AsyncCallback<RequestResult
 <!-- compile -->
 ```cangjie
 import kit.AbilityKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1078,7 +1070,7 @@ public func startAbility(want: Want, options!: ?StartOptions = None): Unit
 <!-- compile -->
 ```cangjie
 import kit.AbilityKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1149,7 +1141,7 @@ public func startAbilityForResult(want: Want, callback: AsyncCallback<AbilityRes
 <!-- compile -->
 ```cangjie
 import kit.AbilityKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1221,7 +1213,7 @@ public func startAbilityForResult(want: Want, options: StartOptions, callback: A
 <!-- compile -->
 ```cangjie
 import kit.AbilityKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1264,7 +1256,7 @@ public func terminateSelf(): Unit
 <!-- compile -->
 ```cangjie
 import kit.AbilityKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1311,7 +1303,7 @@ public func terminateSelfWithResult(parameter: AbilityResult): Unit
 <!-- compile -->
 ```cangjie
 import kit.AbilityKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {

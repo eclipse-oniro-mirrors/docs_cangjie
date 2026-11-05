@@ -198,7 +198,7 @@ public static func getCurrentLocation(): Location
 // index.cj
 
 import kit.LocationKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -254,7 +254,7 @@ public static func getCurrentLocation(request: CurrentLocationRequest): Location
 // index.cj
 
 import kit.LocationKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -310,7 +310,7 @@ public static func getCurrentLocation(request: SingleLocationRequest): Location
 // index.cj
 
 import kit.LocationKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -355,7 +355,7 @@ public static func isLocationEnabled(): Bool
 // index.cj
 
 import kit.LocationKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {

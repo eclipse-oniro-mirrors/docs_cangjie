@@ -35,7 +35,7 @@ photoAccessHelper仅提供开发者对收藏夹、视频相册、截屏和录屏
 
 ```cangjie
 import kit.MediaLibraryKit.*
-import ohos.business_exception.*
+import kit.CangjieKit.*
 import kit.AbilityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -108,7 +108,7 @@ class MainAbility <: UIAbility {
 ```cangjie
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
-import ohos.business_exception.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 import kit.AbilityKit.*
 
@@ -189,7 +189,7 @@ class MainAbility <: UIAbility {
 
 ```cangjie
 import kit.MediaLibraryKit.*
-import ohos.business_exception.*
+import kit.CangjieKit.*
 import kit.AbilityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -262,7 +262,7 @@ class MainAbility <: UIAbility {
 ```cangjie
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
-import ohos.business_exception.*
+import kit.CangjieKit.*
 import kit.AbilityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 

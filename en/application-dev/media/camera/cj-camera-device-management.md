@@ -19,9 +19,9 @@ For detailed API specifications, refer to [Camera API Reference](../../reference
     ```cangjie
     import kit.CameraKit.*
     import kit.AbilityKit.*
-    import ohos.hilog.Hilog
-    import ohos.callback_invoke.Callback1Argument
-    import ohos.business_exception.BusinessException
+    import kit.PerformanceAnalysisKit.Hilog
+    import kit.CangjieKit.Callback1Argument
+    import kit.CangjieKit.BusinessException
     ```
 
 2. Obtain the cameraManager object through the [getCameraManager](../../reference/CameraKit/cj-apis-multimedia-camera.md#func-getcameramanagerabilitycontext) method.

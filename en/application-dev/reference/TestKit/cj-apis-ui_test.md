@@ -685,7 +685,7 @@ public func assertComponentExist(on: On): Unit
 
 import kit.PerformanceAnalysisKit.*
 import kit.TestKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 let driver: Driver = Driver.create()
 try {
@@ -1234,9 +1234,9 @@ public func injectMultiPointerAction(pointers: PointerMatrix, speed!: Int32 = 60
 ```cangjie
 // index.cj
 
-import ohos.ui_test.Point as PT
-import ohos.ui_test.Driver
-import ohos.ui_test.PointerMatrix
+import kit.TestKit.Point as PT
+import kit.TestKit.Driver
+import kit.TestKit.PointerMatrix
 
 let driver: Driver = Driver.create()
 let pointers: PointerMatrix = PointerMatrix.create(2, 3)
@@ -1285,7 +1285,7 @@ public func inputText(p: Point, text: String): Unit
 
 import kit.TestKit.*
 import kit.PerformanceAnalysisKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 let driver: Driver = Driver.create()
 try {
@@ -1374,7 +1374,6 @@ public func mouseClick(p: Point, btnId: MouseButton, key1!: Int32 = 0, key2!: In
 // index.cj
 
 import kit.TestKit.*
-import ohos.ui_test.Point as PT
 
 let driver: Driver = Driver.create()
 driver.mouseClick(PT(248, 194), MouseButton.MouseButtonLeft, key1: 2072)
@@ -1417,7 +1416,6 @@ public func mouseDoubleClick(p: Point, btnId: MouseButton, key1!: Int32 = 0, key
 // index.cj
 
 import kit.TestKit.*
-import ohos.ui_test.Point as PT
 
 let driver: Driver = Driver.create()
 driver.mouseDoubleClick(PT(248, 194), MouseButton.MouseButtonLeft, key1: 2072)
@@ -1459,7 +1457,6 @@ public func mouseDrag(from: Point, to: Point, speed!: Int32 = 600): Unit
 // index.cj
 
 import kit.TestKit.*
-import ohos.ui_test.Point as PT
 
 let driver: Driver = Driver.create()
 driver.mouseDrag(PT(100, 100), PT(200, 200))
@@ -1502,7 +1499,6 @@ public func mouseLongClick(p: Point, btnId: MouseButton, key1!: Int32 = 0, key2!
 // index.cj
 
 import kit.TestKit.*
-import ohos.ui_test.Point as PT
 
 let driver: Driver = Driver.create()
 driver.mouseLongClick(PT(248, 194), MouseButton.MouseButtonLeft, key1: 2072)
@@ -1542,7 +1538,6 @@ public func mouseMoveTo(p: Point): Unit
 // index.cj
 
 import kit.TestKit.*
-import ohos.ui_test.Point as PT
 
 let driver: Driver = Driver.create()
 driver.mouseMoveTo(PT(248, 194))
@@ -1584,7 +1579,6 @@ public func mouseMoveWithTrack(from: Point, to: Point, speed!: Int32 = 600): Uni
 // index.cj
 
 import kit.TestKit.*
-import ohos.ui_test.Point as PT
 
 let driver: Driver = Driver.create()
 driver.mouseMoveWithTrack(PT(100, 100), PT(200, 200))
@@ -1629,7 +1623,6 @@ public func mouseScroll(p: Point, down: Bool, d: Int32, key1!: Int32 = 0, key2!:
 // index.cj
 
 import kit.TestKit.*
-import ohos.ui_test.Point as PT
 
 let driver: Driver = Driver.create()
 driver.mouseScroll(PT(360, 640), true, 30, key1: 2072)
@@ -3028,7 +3021,6 @@ public func setPoint(finger: Int32, step: Int32, point: Point): Unit
 // index.cj
 
 import kit.TestKit.*
-import ohos.ui_test.Point as PT
 
 let pointerMatrix: PointerMatrix = PointerMatrix.create(2, 3)
 pointerMatrix.setPoint(0, 0, PT(230, 480))

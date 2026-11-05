@@ -24,9 +24,9 @@ For detailed API descriptions, refer to the [Camera API Reference](../../referen
 
     ```cangjie
     import kit.CameraKit.*
-    import ohos.hilog.Hilog
-    import ohos.callback_invoke.Callback1Argument
-    import ohos.business_exception.BusinessException
+    import kit.PerformanceAnalysisKit.Hilog
+    import kit.CangjieKit.Callback1Argument
+    import kit.CangjieKit.BusinessException
     ```
 
 2. Use the [isTorchSupported](../../reference/CameraKit/cj-apis-multimedia-camera.md#func-istorchsupported) method in the [CameraManager](../../reference/CameraKit/cj-apis-multimedia-camera.md#class-cameramanager) class to check whether the current device supports the flashlight function.

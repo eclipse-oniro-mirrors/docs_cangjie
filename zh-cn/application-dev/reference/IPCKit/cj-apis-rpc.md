@@ -276,7 +276,7 @@ public static func create(name: String, size: Int32): Ashmem
 // index.cj
 
 import kit.IPCKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -318,7 +318,7 @@ public static func create(ashmem: Ashmem): Ashmem
 // index.cj
 
 import kit.IPCKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -353,7 +353,7 @@ public func closeAshmem(): Unit
 // index.cj
 
 import kit.IPCKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -390,7 +390,7 @@ public func getAshmemSize(): Int32
 // index.cj
 
 import kit.IPCKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -429,7 +429,7 @@ public func mapReadWriteAshmem(): Unit
 // index.cj
 
 import kit.IPCKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -468,7 +468,7 @@ public func mapReadonlyAshmem(): Unit
 // index.cj
 
 import kit.IPCKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -513,7 +513,7 @@ public func mapTypedAshmem(mapType: UInt32): Unit
 // index.cj
 
 import kit.IPCKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -565,7 +565,7 @@ public func readDataFromAshmem(size: Int64, offset: Int64): Array<Byte>
 // index.cj
 
 import kit.IPCKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -610,7 +610,7 @@ public func setProtectionType(protectionType: UInt32): Unit
 // index.cj
 
 import kit.IPCKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -641,7 +641,7 @@ public func unmapAshmem(): Unit
 // index.cj
 
 import kit.IPCKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -692,7 +692,7 @@ public func writeDataToAshmem(buf: Array<Byte>, size: Int64, offset: Int64): Uni
 // index.cj
 
 import kit.IPCKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -744,7 +744,7 @@ public static func closeFileDescriptor(fd: Int32): Unit
 
 import kit.IPCKit.*
 import kit.CoreFileKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -782,7 +782,7 @@ public static func create(): MessageSequence
 // index.cj
 
 import kit.IPCKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -833,7 +833,7 @@ public static func dupFileDescriptor(fd: Int32): Int32
 
 import kit.IPCKit.*
 import kit.CoreFileKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -871,7 +871,7 @@ public func containFileDescriptors(): Bool
 // index.cj
 
 import kit.IPCKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -908,7 +908,7 @@ public func getCapacity(): UInt32
 // index.cj
 
 import kit.IPCKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -945,7 +945,7 @@ public func getRawDataCapacity(): UInt32
 // index.cj
 
 import kit.IPCKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -982,7 +982,7 @@ public func getReadPosition(): UInt32
 // index.cj
 
 import kit.IPCKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1019,7 +1019,7 @@ public func getReadableBytes(): UInt32
 // index.cj
 
 import kit.IPCKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1056,7 +1056,7 @@ public func getSize(): UInt32
 // index.cj
 
 import kit.IPCKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1093,7 +1093,7 @@ public func getWritableBytes(): UInt32
 // index.cj
 
 import kit.IPCKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1130,7 +1130,7 @@ public func getWritePosition(): UInt32
 // index.cj
 
 import kit.IPCKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1175,7 +1175,7 @@ public func readAshmem(): Ashmem
 // index.cj
 
 import kit.IPCKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1220,7 +1220,7 @@ public func readBoolean(): Bool
 // index.cj
 
 import kit.IPCKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1265,7 +1265,7 @@ public func readBooleanArray(): Array<Bool>
 // index.cj
 
 import kit.IPCKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1310,7 +1310,7 @@ public func readByte(): Int8
 // index.cj
 
 import kit.IPCKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1355,7 +1355,7 @@ public func readByteArray(): Array<Int8>
 // index.cj
 
 import kit.IPCKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1400,7 +1400,7 @@ public func readChar(): UInt8
 // index.cj
 
 import kit.IPCKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1445,7 +1445,7 @@ public func readCharArray(): Array<UInt8>
 // index.cj
 
 import kit.IPCKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1490,7 +1490,7 @@ public func readDouble(): Float64
 // index.cj
 
 import kit.IPCKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1536,7 +1536,7 @@ public func readDoubleArray(): Array<Float64>
 
 import kit.IPCKit.*
 import std.collection.ArrayList
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1575,7 +1575,7 @@ public func readException(): Unit
 // index.cj
 
 import kit.IPCKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1620,7 +1620,7 @@ public func readFileDescriptor(): Int32
 // index.cj
 
 import kit.IPCKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1665,7 +1665,7 @@ public func readFloat(): Float32
 // index.cj
 
 import kit.IPCKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1710,7 +1710,7 @@ public func readFloatArray(): Array<Float32>
 // index.cj
 
 import kit.IPCKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1755,7 +1755,7 @@ public func readInt(): Int32
 // index.cj
 
 import kit.IPCKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1800,7 +1800,7 @@ public func readIntArray(): Array<Int32>
 // index.cj
 
 import kit.IPCKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1845,7 +1845,7 @@ public func readInterfaceToken(): String
 // index.cj
 
 import kit.IPCKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1890,7 +1890,7 @@ public func readLong(): Int64
 // index.cj
 
 import kit.IPCKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1935,7 +1935,7 @@ public func readLongArray(): Array<Int64>
 // index.cj
 
 import kit.IPCKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1981,7 +1981,7 @@ public func readParcelable<T>(dataIn: T): Unit where T <: Parcelable
 // index.cj
 
 import kit.IPCKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 // 此处代码可添加在依赖项定义中
@@ -2053,7 +2053,7 @@ public func readParcelableArray<T>(parcelableArray: Array<T>): Unit where T <: P
 // index.cj
 
 import kit.IPCKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 // 此处代码可添加在依赖项定义中
@@ -2132,7 +2132,7 @@ public func readRawDataBuffer(size: Int64): Array<Byte>
 // index.cj
 
 import kit.IPCKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2177,7 +2177,7 @@ public func readShort(): Int16
 // index.cj
 
 import kit.IPCKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2222,7 +2222,7 @@ public func readShortArray(): Array<Int16>
 // index.cj
 
 import kit.IPCKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2267,7 +2267,7 @@ public func readString(): String
 // index.cj
 
 import kit.IPCKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2312,7 +2312,7 @@ public func readStringArray(): Array<String>
 // index.cj
 
 import kit.IPCKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2357,7 +2357,7 @@ public func readUInt16Array(): Array<UInt16>
 // index.cj
 
 import kit.IPCKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2402,7 +2402,7 @@ public func readUInt32Array(): Array<UInt32>
 // index.cj
 
 import kit.IPCKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2447,7 +2447,7 @@ public func readUInt64Array(): Array<UInt64>
 // index.cj
 
 import kit.IPCKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2492,7 +2492,7 @@ public func readUInt8Array(): Array<UInt8>
 // index.cj
 
 import kit.IPCKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2523,7 +2523,7 @@ public func reclaim(): Unit
 // index.cj
 
 import kit.IPCKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2568,7 +2568,7 @@ public func rewindRead(pos: UInt32): Unit
 // index.cj
 
 import kit.IPCKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2613,7 +2613,7 @@ public func rewindWrite(pos: UInt32): Unit
 // index.cj
 
 import kit.IPCKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2659,7 +2659,7 @@ public func setCapacity(size: UInt32): Unit
 // index.cj
 
 import kit.IPCKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2704,7 +2704,7 @@ public func setSize(size: UInt32): Unit
 // index.cj
 
 import kit.IPCKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2749,7 +2749,7 @@ public func writeAshmem(ashmem: Ashmem): Unit
 // index.cj
 
 import kit.IPCKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2795,7 +2795,7 @@ public func writeBoolean(val: Bool): Unit
 // index.cj
 
 import kit.IPCKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2840,7 +2840,7 @@ public func writeBooleanArray(booleanArray: Array<Bool>): Unit
 // index.cj
 
 import kit.IPCKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2885,7 +2885,7 @@ public func writeByte(val: Int8): Unit
 // index.cj
 
 import kit.IPCKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2930,7 +2930,7 @@ public func writeByteArray(byteArray: Array<Int8>): Unit
 // index.cj
 
 import kit.IPCKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2975,7 +2975,7 @@ public func writeChar(val: UInt8): Unit
 // index.cj
 
 import kit.IPCKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -3020,7 +3020,7 @@ public func writeCharArray(charArray: Array<UInt8>): Unit
 // index.cj
 
 import kit.IPCKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -3065,7 +3065,7 @@ public func writeDouble(val: Float64): Unit
 // index.cj
 
 import kit.IPCKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -3110,7 +3110,7 @@ public func writeDoubleArray(doubleArray: Array<Float64>): Unit
 // index.cj
 
 import kit.IPCKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -3156,7 +3156,7 @@ public func writeFileDescriptor(fd: Int32): Unit
 
 import kit.IPCKit.*
 import kit.CoreFileKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -3203,7 +3203,7 @@ public func writeFloat(val: Float32): Unit
 // index.cj
 
 import kit.IPCKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -3248,7 +3248,7 @@ public func writeFloatArray(floatArray: Array<Float32>): Unit
 // index.cj
 
 import kit.IPCKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -3293,7 +3293,7 @@ public func writeInt(val: Int32): Unit
 // index.cj
 
 import kit.IPCKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -3338,7 +3338,7 @@ public func writeIntArray(intArray: Array<Int32>): Unit
 // index.cj
 
 import kit.IPCKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -3383,7 +3383,7 @@ public func writeInterfaceToken(token: String): Unit
 // index.cj
 
 import kit.IPCKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -3428,7 +3428,7 @@ public func writeLong(val: Int64): Unit
 // index.cj
 
 import kit.IPCKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -3473,7 +3473,7 @@ public func writeLongArray(longArray: Array<Int64>): Unit
 // index.cj
 
 import kit.IPCKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -3512,7 +3512,7 @@ public func writeNoException(): Unit
 // index.cj
 
 import kit.IPCKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -3557,7 +3557,7 @@ public func writeParcelable<T>(val: T): Unit where T <: Parcelable
 // index.cj
 
 import kit.IPCKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 // 此处代码可添加在依赖项定义中
@@ -3628,7 +3628,7 @@ public func writeParcelableArray<T>(parcelableArray: Array<T>): Unit where T <: 
 // index.cj
 
 import kit.IPCKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 // 此处代码可添加在依赖项定义中
@@ -3707,7 +3707,7 @@ public func writeRawDataBuffer(rawData: Array<Byte>, size: Int64): Unit
 // index.cj
 
 import kit.IPCKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -3752,7 +3752,7 @@ public func writeShort(val: Int16): Unit
 // index.cj
 
 import kit.IPCKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -3797,7 +3797,7 @@ public func writeShortArray(shortArray: Array<Int16>): Unit
 // index.cj
 
 import kit.IPCKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -3842,7 +3842,7 @@ public func writeString(val: String): Unit
 // index.cj
 
 import kit.IPCKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -3887,7 +3887,7 @@ public func writeStringArray(stringArray: Array<String>): Unit
 // index.cj
 
 import kit.IPCKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -3932,7 +3932,7 @@ public func writeUInt16Array(buf: Array<UInt16>): Unit
 // index.cj
 
 import kit.IPCKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -3977,7 +3977,7 @@ public func writeUInt32Array(buf: Array<UInt32>): Unit
 // index.cj
 
 import kit.IPCKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -4022,7 +4022,7 @@ public func writeUInt64Array(buf: Array<UInt64>): Unit
 // index.cj
 
 import kit.IPCKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -4067,7 +4067,7 @@ public func writeUInt8Array(buf: Array<UInt8>): Unit
 // index.cj
 
 import kit.IPCKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {

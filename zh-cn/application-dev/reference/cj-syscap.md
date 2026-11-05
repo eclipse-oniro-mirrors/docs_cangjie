@@ -102,7 +102,8 @@ DevEco Studio会根据创建的工程所支持的设备自动配置联想能力�
 <!-- compile -->
 
 ```cangjie
-import ohos.base.canIUse
+import kit.ArkUI.canIUse
+import kit.PerformanceAnalysisKit.Hilog
 
 if(canIUse("SystemCapability.ArkUI.ArkUI.Full")){
     Hilog.info(0, "SysCap", "支持系统能力SystemCapability.ArkUI.ArkUI.Full")
@@ -122,7 +123,7 @@ if(canIUse("SystemCapability.ArkUI.ArkUI.Full")){
 ```cangjie
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 // 在使用接口时可通过try..catch捕获异常。如果接口的SysCap不支持当前设备，将返回801错误码。
 try {

@@ -138,8 +138,7 @@ httpRequest.request(
 import kit.PerformanceAnalysisKit.Hilog
 import kit.NetworkKit.*
 import std.collection.*
-import ohos.callback_invoke.*
-import ohos.business_exception.*
+import kit.CangjieKit.*
 
 func loggerInfo(str: String) {
     Hilog.info(0, "CangjieTest", str)

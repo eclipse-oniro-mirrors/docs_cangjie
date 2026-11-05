@@ -31,7 +31,7 @@ Where:
 
 If the condition of `@IfAvailable` is satisfied at runtime, the function body of `<lambda1>` will be executed; otherwise, the function body of `<lambda2>` will be executed. All symbols called in `<lambda1>` will be marked as weak symbols, meaning they are not required to be found during compilation and linking.
 
-In a Cangjie project, the dependency packages required by `@IfAvailable` must be imported manually depending on the check type: `level` checks depend on `ohos.device_info`, and `syscap` checks depend on `ohos.base`.
+In a Cangjie project, the dependency packages required by `@IfAvailable` must be imported manually depending on the check type: `level` checks depend on `kit.BasicServicesKit`, and `syscap` checks depend on `kit.ArkUI`.
 
 ### `level` Check
 
@@ -96,7 +96,7 @@ When using `@IfAvailable`, `<label>: <value>` is `level: xx`, where `xx` can be 
 
 ```cangjie
 import ohos.sample.*
-import ohos.device_info.*
+import kit.BasicServicesKit.*
 
 func demo() {
     @IfAvailable(level: 24, { =>
@@ -121,7 +121,7 @@ A three-segment string form can also be used to specify the version:
 
 ```cangjie
 import ohos.sample.*
-import ohos.device_info.*
+import kit.BasicServicesKit.*
 
 func demo() {
     @IfAvailable(level: "26.0.0", { =>
@@ -182,7 +182,7 @@ When using `@IfAvailable`, `<label>: <value>` is `syscap: "SystemCapability.xx"`
 
 ```cangjie
 import ohos.sample.*
-import ohos.base.*
+import kit.ArkUI.*
 
 func demo() {
     @IfAvailable(syscap: "SystemCapability.D", { =>

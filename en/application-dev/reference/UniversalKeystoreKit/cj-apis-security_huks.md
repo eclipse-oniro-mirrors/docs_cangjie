@@ -66,7 +66,7 @@ public func abortSession(handle: HuksHandleId, options: HuksOptions): Unit
 // index.cj
 
 import kit.UniversalKeystoreKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -145,7 +145,7 @@ public func anonAttestKeyItem(keyAlias: String, options: HuksOptions): Array<Str
 // index.cj
 
 import kit.UniversalKeystoreKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -221,7 +221,7 @@ public func deleteKeyItem(keyAlias: String, options: HuksOptions): Unit
 // index.cj
 
 import kit.UniversalKeystoreKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -304,7 +304,7 @@ public func exportKeyItem(keyAlias: String, _: HuksOptions): Bytes
 // index.cj
 
 import kit.UniversalKeystoreKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -386,7 +386,7 @@ public func finishSession(handle: HuksHandleId, options: HuksOptions, token!: By
 // index.cj
 
 import kit.UniversalKeystoreKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -458,7 +458,7 @@ public func generateKeyItem(keyAlias: String, options: HuksOptions): Unit
 // index.cj
 
 import kit.UniversalKeystoreKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -530,7 +530,7 @@ public func getKeyItemProperties(keyAlias: String, _: HuksOptions): Array<HuksPa
 // index.cj
 
 import kit.UniversalKeystoreKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -598,7 +598,7 @@ public func importKeyItem(keyAlias: String, options: HuksOptions): Unit
 // index.cj
 
 import kit.UniversalKeystoreKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -719,7 +719,7 @@ public func initSession(keyAlias: String, options: HuksOptions): HuksSessionHand
 // index.cj
 
 import kit.UniversalKeystoreKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -791,7 +791,7 @@ public func hasKeyItemExist(keyAlias: String, options: HuksOptions): Bool
 // index.cj
 
 import kit.UniversalKeystoreKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {

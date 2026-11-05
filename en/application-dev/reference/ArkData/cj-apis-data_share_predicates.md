@@ -96,7 +96,7 @@ public func inValues(field: String, value: Array<VBValueType>): DataSharePredica
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -141,7 +141,7 @@ public func and(): DataSharePredicates
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -195,7 +195,7 @@ public func equalTo(field: String, value: VBValueType): DataSharePredicates
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -247,7 +247,7 @@ public func limit(total: Int32, offset: Int32): DataSharePredicates
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -298,7 +298,7 @@ public func orderByAsc(field: String): DataSharePredicates
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -349,7 +349,7 @@ public func orderByDesc(field: String): DataSharePredicates
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {

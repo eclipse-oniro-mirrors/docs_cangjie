@@ -56,9 +56,9 @@ public func createHttp(): HttpRequest
 ```cangjie
 // index.cj
 
-import ohos.base.*
+import kit.ArkUI.*
 import kit.NetworkKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -99,9 +99,9 @@ public func createHttpResponseCache(cacheSize!: UInt32 = MAX_CACHE_SIZE): HttpRe
 ```cangjie
 // index.cj
 
-import ohos.base.*
+import kit.ArkUI.*
 import kit.NetworkKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -339,9 +339,9 @@ public func destroy(): Unit
 ```cangjie
 // index.cj
 
-import ohos.base.*
+import kit.ArkUI.*
 import kit.NetworkKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -388,8 +388,7 @@ public func off(event: HttpRequestEvent, callback!: ?CallbackObject = None): Uni
 
 import kit.NetworkKit.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.BusinessException
-import ohos.callback_invoke.*
+import kit.CangjieKit.*
 import std.collection.HashMap
 
 // 定义HeadersReceiveCb类
@@ -449,8 +448,7 @@ public func on(event: HttpRequestEvent, callback: Callback1Argument<HashMap<Stri
 
 import kit.NetworkKit.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.BusinessException
-import ohos.callback_invoke.*
+import kit.CangjieKit.*
 import std.collection.HashMap
 
 // 定义HeadersReceiveCb类
@@ -508,8 +506,7 @@ public func on(event: HttpRequestEvent, callback: Callback1Argument<Array<Byte>>
 
 import kit.NetworkKit.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.BusinessException
-import ohos.callback_invoke.*
+import kit.CangjieKit.*
 
 // 定义DataReceiveCb类
 class DataReceiveCb <: Callback1Argument<Array<Byte>> {
@@ -566,8 +563,7 @@ public func on(event: HttpRequestEvent, callback: Callback0Argument): Unit
 
 import kit.NetworkKit.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.BusinessException
-import ohos.callback_invoke.*
+import kit.CangjieKit.*
 
 // 定义DataEndCb类
 class DataEndCb <: Callback0Argument {
@@ -624,8 +620,7 @@ public func on(event: HttpRequestEvent, callback: Callback1Argument<DataReceiveP
 
 import kit.NetworkKit.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.BusinessException
-import ohos.callback_invoke.*
+import kit.CangjieKit.*
 
 // 定义DataReceiveProgressCb类
 class DataReceiveProgressCb <: Callback1Argument<DataReceiveProgressInfo> {
@@ -682,9 +677,8 @@ public func on(event: HttpRequestEvent, callback: Callback1Argument<DataSendProg
 
 import kit.NetworkKit.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.BusinessException
 import std.collection.HashMap
-import ohos.callback_invoke.*
+import kit.CangjieKit.*
 
 // 定义HeadersReceiveCb类
 class HeadersReceiveCb <: Callback1Argument<HashMap<String, String>> {
@@ -808,10 +802,10 @@ public func request(url: String, options: HttpRequestOptions, callback: AsyncCal
 ```cangjie
 // index.cj
 
-import ohos.base.*
+import kit.ArkUI.*
 import kit.NetworkKit.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 try {
     let httpRequest = createHttp()
@@ -906,10 +900,10 @@ public func request(url: String, callback: AsyncCallback<HttpResponse>): Unit
 ```cangjie
 // index.cj
 
-import ohos.base.*
+import kit.ArkUI.*
 import kit.NetworkKit.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 try {
     let httpRequest = createHttp()
@@ -996,10 +990,10 @@ public func requestInStream(url: String, options: HttpRequestOptions, callback: 
 ```cangjie
 // index.cj
 
-import ohos.base.*
+import kit.ArkUI.*
 import kit.NetworkKit.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 try {
     let httpRequest = createHttp()
@@ -1086,10 +1080,10 @@ public func requestInStream(url: String, callback: AsyncCallback<UInt32>): Unit
 ```cangjie
 // index.cj
 
-import ohos.base.*
+import kit.ArkUI.*
 import kit.NetworkKit.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 try {
     let httpRequest = createHttp()
@@ -1689,8 +1683,8 @@ public func delete(): Unit
 ```cangjie
 // index.cj
 
-import ohos.base.*
-import ohos.business_exception.*
+import kit.ArkUI.*
+import kit.CangjieKit.*
 import kit.NetworkKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -1721,8 +1715,8 @@ public func flush(): Unit
 ```cangjie
 // index.cj
 
-import ohos.base.*
-import ohos.business_exception.*
+import kit.ArkUI.*
+import kit.CangjieKit.*
 import kit.NetworkKit.*
 import kit.PerformanceAnalysisKit.Hilog
 

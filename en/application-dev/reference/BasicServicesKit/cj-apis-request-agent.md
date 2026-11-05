@@ -81,7 +81,7 @@ public func create(context: UIAbilityContext, config: Config): Task
 import kit.BasicServicesKit.*
 import kit.AbilityKit.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 try {
     let context = Global.abilityContext
@@ -142,7 +142,7 @@ public func getTask(context: UIAbilityContext, id: String, token!: ?String = Non
 import kit.BasicServicesKit.*
 import kit.AbilityKit.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 try {
     let context = Global.abilityContext
@@ -197,7 +197,7 @@ public func remove(id: String): Unit
 import kit.BasicServicesKit.*
 import kit.AbilityKit.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 try {
     let taskId = "example_task_id"
@@ -250,7 +250,7 @@ public func search(filter!: Filter = Filter()): Array<String>
 import kit.BasicServicesKit.*
 import kit.AbilityKit.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 try {
     let filter = Filter()
@@ -307,7 +307,7 @@ public func show(id: String): TaskInfo
 import kit.BasicServicesKit.*
 import kit.AbilityKit.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 try {
     let taskId = "example_task_id"
@@ -362,7 +362,7 @@ public func touch(id: String, token: String): TaskInfo
 import kit.BasicServicesKit.*
 import kit.AbilityKit.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 try {
     try {
@@ -865,7 +865,7 @@ public init(action: Action, url: String, title!: ?String = None, description!: S
 import kit.BasicServicesKit.*
 import kit.AbilityKit.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 try {
     let config = Config(
@@ -1012,7 +1012,7 @@ public init(
 import kit.BasicServicesKit.*
 import kit.AbilityKit.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 try {
     let fileSpec = FileSpec(
@@ -1215,7 +1215,7 @@ public init(before!: ?Int64 = None, after!: ?Int64 = None, state!: ?State = None
 import kit.BasicServicesKit.*
 import kit.AbilityKit.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 try {
     let filter = Filter(
@@ -1309,7 +1309,7 @@ public init(name: String, value: FormItemValue)
 import kit.BasicServicesKit.*
 import kit.AbilityKit.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 try {
     let formItem = FormItem(
@@ -1577,7 +1577,7 @@ public init(tid: String, config: Config)
 import kit.BasicServicesKit.*
 import kit.AbilityKit.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 try {
     let context = Global.abilityContext
@@ -1622,7 +1622,7 @@ public func off(event: EventCallbackType, callback!: ?CallbackObject = None): Un
 import kit.BasicServicesKit.*
 import kit.AbilityKit.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 try {
     let context = Global.abilityContext
@@ -1781,7 +1781,7 @@ public func start(): Unit
 import kit.BasicServicesKit.*
 import kit.AbilityKit.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 try {
     let context = Global.abilityContext
@@ -1829,7 +1829,7 @@ public func stop(): Unit
 import kit.BasicServicesKit.*
 import kit.AbilityKit.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 try {
     let context = Global.abilityContext

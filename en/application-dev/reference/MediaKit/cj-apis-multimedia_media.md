@@ -67,7 +67,7 @@ public func createAVImageGenerator(): AVImageGenerator
 
 import kit.MediaKit.*
 import kit.PerformanceAnalysisKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 try {
     let generator = createAVImageGenerator()
@@ -245,7 +245,7 @@ public func fetchFrameByTime(timeUs: Int64, options: AVImageQueryOptions, param:
 
 import kit.MediaKit.*
 import kit.LocalizationKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -293,7 +293,7 @@ public func release(): Unit
 import kit.MediaKit.*
 import kit.LocalizationKit.*
 import kit.PerformanceAnalysisKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 try {
     let timeUs = 0

@@ -24,8 +24,7 @@
 
 ```cangjie
 // pages/xxx.cj
-import ohos.callback_invoke.*
-import ohos.business_exception.*
+import kit.CangjieKit.*
 import kit.BasicServicesKit.*
 import kit.CoreFileKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -108,8 +107,7 @@ public class ProgressCallback <: Callback1Argument<Progress> {
 ```cangjie
 // pages/xxx.cj
 // 将网络资源文件下载到应用文件目录
-import ohos.callback_invoke.*
-import ohos.business_exception.*
+import kit.CangjieKit.*
 import kit.BasicServicesKit.*
 import kit.CoreFileKit.*
 import std.collection.*

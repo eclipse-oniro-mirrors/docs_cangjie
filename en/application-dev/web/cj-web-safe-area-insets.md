@@ -27,7 +27,7 @@ Developers can enable immersive effects via [expandSafeArea](../reference/arkui-
 ```cangjie
 // index.cj
 import ohos.arkui.state_macro_manage.*
-import ohos.web.webview.WebviewController
+import kit.ArkWeb.WebviewController
 import kit.ArkUI.{ Web, SafeAreaType, SafeAreaEdge }
 
 @Entry

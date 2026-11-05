@@ -423,7 +423,7 @@ public func setSize(size: Int32): Unit
 // index.cj
 
 import kit.PerformanceAnalysisKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 try {
     // 添加数据观察者“Watcher1”，订阅监听系统事件
@@ -469,7 +469,7 @@ public func takeNext(): Option<AppEventPackage>
 // index.cj
 
 import kit.PerformanceAnalysisKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 try {
     let holder = AppEventPackageHolder("watcher3")
@@ -814,7 +814,7 @@ public static func addProcessor(processor: Processor): Int64
 // index.cj
 
 import kit.PerformanceAnalysisKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 try {
     var processor : Processor = Processor("test_processor")
@@ -973,7 +973,7 @@ public static func clearData(): Unit
 import kit.PerformanceAnalysisKit.*
 import std.collection.ArrayList
 import std.collection.HashMap
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 try {
     let params = HashMap<String, EventValueType>()
@@ -1021,7 +1021,7 @@ public static func configure(config: ConfigOption): Unit
 // index.cj
 
 import kit.PerformanceAnalysisKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 try {
     var config : ConfigOption = ConfigOption(maxStorage: "100M", disable: true)
@@ -1064,7 +1064,7 @@ public static func getUserId(name: String): String
 // index.cj
 
 import kit.PerformanceAnalysisKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 try {
     HiAppEvent.setUserId("test_getUserId_name", "test_getUserId_value")
@@ -1107,7 +1107,7 @@ public static func getUserProperty(name: String): String
 // index.cj
 
 import kit.PerformanceAnalysisKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 try {
     HiAppEvent.setUserProperty("test_setUserProperty_name", "test_setUserProperty_value")
@@ -1144,7 +1144,7 @@ public static func removeProcessor(id: Int64): Unit
 // index.cj
 
 import kit.PerformanceAnalysisKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 try {
     var processor : Processor = Processor("test_processor")
@@ -1190,7 +1190,7 @@ public static func removeWatcher(watcher: Watcher): Unit
 // index.cj
 
 import kit.PerformanceAnalysisKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 try {
     // 定义一个应用事件观察者
@@ -1231,7 +1231,7 @@ public static func setUserId(name: String, value: String): Unit
 // index.cj
 
 import kit.PerformanceAnalysisKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 try {
     HiAppEvent.setUserId("test_getUserId_name", "test_getUserId_value")
@@ -1267,7 +1267,7 @@ public static func setUserProperty(name: String, value: String): Unit
 // index.cj
 
 import kit.PerformanceAnalysisKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 try {
     HiAppEvent.setUserProperty("test_setUserProperty_name", "test_setUserProperty_value")
@@ -1316,7 +1316,7 @@ public static func write(info: AppEventInfo): Unit
 // index.cj
 
 import kit.PerformanceAnalysisKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import std.collection.HashMap
 
 try {

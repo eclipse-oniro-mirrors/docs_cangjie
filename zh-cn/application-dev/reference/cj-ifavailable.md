@@ -31,7 +31,7 @@
 
 若 `@IfAvailable` 的条件在运行态是成立的，则 `<lambda1>` 的函数体会被执行，否则 `<lambda2>` 的函数体会被执行。`<lambda1>` 中所有调用的符号将被标记为弱符号，不要求编译链接时一定能够找到。
 
-在一个仓颉工程中，使用 `@IfAvailable` 表达式时需要根据检查类型手动导入依赖包：`level` 检查依赖 `ohos.device_info`，`syscap` 检查依赖 `ohos.base`。
+在一个仓颉工程中，使用 `@IfAvailable` 表达式时需要根据检查类型手动导入依赖包：`level` 检查依赖 `kit.BasicServicesKit`，`syscap` 检查依赖 `kit.ArkUI`。
 
 ### `level` 检查
 
@@ -96,7 +96,7 @@ public func f26() {
 
 ```cangjie
 import ohos.sample.*
-import ohos.device_info.*
+import kit.BasicServicesKit.*
 
 func demo() {
     @IfAvailable(level: 24, { =>
@@ -121,7 +121,7 @@ func demo() {
 
 ```cangjie
 import ohos.sample.*
-import ohos.device_info.*
+import kit.BasicServicesKit.*
 
 func demo() {
     @IfAvailable(level: "26.0.0", { =>
@@ -182,7 +182,7 @@ DevEco Studio 默认读取所有设备支持的 SystemCapability，用于检查�
 
 ```cangjie
 import ohos.sample.*
-import ohos.base.*
+import kit.ArkUI.*
 
 func demo() {
     @IfAvailable(syscap: "SystemCapability.D", { =>

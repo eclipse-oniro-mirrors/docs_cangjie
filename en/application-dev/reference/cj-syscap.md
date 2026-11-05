@@ -103,7 +103,8 @@ By default, the Suggested Capability Set of an application is the union of the S
 The Cangjie API is provided to help determine whether a specific API is available.
 
 ```cangjie
-import ohos.base.canIUse
+import kit.ArkUI.canIUse
+import kit.PerformanceAnalysisKit.Hilog
 
 if(canIUse("SystemCapability.ArkUI.ArkUI.Full")){
     Hilog.info(0, "SysCap", "Supports SystemCapability.ArkUI.ArkUI.Full")
@@ -117,7 +118,7 @@ if(canIUse("SystemCapability.ArkUI.ArkUI.Full")){
 Even for the same system capability, there may be differences across devices. For example, the camera capability on a tablet is superior to that on a smart wearable device.
 
 ```cangjie
-import ohos.base.*
+import kit.ArkUI.*
 import kit.UserAuthenticationKit.*
 import kit.PerformanceAnalysisKit.Hilog
 

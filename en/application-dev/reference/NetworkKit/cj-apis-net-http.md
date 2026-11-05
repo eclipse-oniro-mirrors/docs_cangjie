@@ -56,9 +56,9 @@ public func createHttp(): HttpRequest
 ```cangjie
 // index.cj
 
-import ohos.base.*
+import kit.ArkUI.*
 import kit.NetworkKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -99,9 +99,9 @@ public func createHttpResponseCache(cacheSize!: UInt32 = MAX_CACHE_SIZE): HttpRe
 ```cangjie
 // index.cj
 
-import ohos.base.*
+import kit.ArkUI.*
 import kit.NetworkKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -339,9 +339,9 @@ public func destroy(): Unit
 ```cangjie
 // index.cj
 
-import ohos.base.*
+import kit.ArkUI.*
 import kit.NetworkKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -613,10 +613,10 @@ public func request(url: String, options: HttpRequestOptions, callback: AsyncCal
 ```cangjie
 // index.cj
 
-import ohos.base.*
+import kit.ArkUI.*
 import kit.NetworkKit.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 try {
     let httpRequest = createHttp()
@@ -707,10 +707,10 @@ public func request(url: String, callback: AsyncCallback<HttpResponse>): Unit
 ```cangjie
 // index.cj
 
-import ohos.base.*
+import kit.ArkUI.*
 import kit.NetworkKit.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 try {
     let httpRequest = createHttp()
@@ -1310,8 +1310,8 @@ public func delete(): Unit
 ```cangjie
 // index.cj
 
-import ohos.base.*
-import ohos.business_exception.*
+import kit.ArkUI.*
+import kit.CangjieKit.*
 import kit.NetworkKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -1342,8 +1342,8 @@ public func flush(): Unit
 ```cangjie
 // index.cj
 
-import ohos.base.*
-import ohos.business_exception.*
+import kit.ArkUI.*
+import kit.CangjieKit.*
 import kit.NetworkKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -2161,7 +2161,7 @@ UseSpecified(HttpProxy)
 
 ```cangjie
 import kit.NetworkKit.*
-import ohos.base.*
+import kit.ArkUI.*
 import std.collection.*
 
 // Each httpRequest corresponds to an HTTP request task and cannot be reused

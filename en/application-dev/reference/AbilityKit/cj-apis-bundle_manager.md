@@ -1458,7 +1458,7 @@ public static func canOpenLink(link: String): Bool
 // index.cj
 
 import kit.AbilityKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1501,7 +1501,7 @@ public static func getBundleInfoForSelf(bundleFlags: Int32): BundleInfo
 // index.cj
 
 import kit.AbilityKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1568,7 +1568,7 @@ If the configuration file information uses the resource reference format, the re
 // index.cj
 
 import kit.AbilityKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1636,7 +1636,7 @@ If the configuration file information uses the resource reference format, the re
 // index.cj
 
 import kit.AbilityKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1748,7 +1748,7 @@ public static func isDefaultApplication(appType: String): Bool
 // index.cj
 
 import kit.AbilityKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {

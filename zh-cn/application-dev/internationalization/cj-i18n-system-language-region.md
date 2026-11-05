@@ -24,7 +24,7 @@
    import kit.LocalizationKit.*
    import kit.BasicServicesKit.*
    import kit.PerformanceAnalysisKit.Hilog
-   import ohos.business_exception.*
+   import kit.CangjieKit.*
    ```
 
 2. 获取系统语言和系统地区。

@@ -2877,7 +2877,7 @@ public mut prop version: Int32
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {

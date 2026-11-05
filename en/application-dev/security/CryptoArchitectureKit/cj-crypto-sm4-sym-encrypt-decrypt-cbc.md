@@ -45,8 +45,8 @@ The synchronous method example is as follows:
 
 ```cangjie
 import kit.CryptoArchitectureKit.*
-import ohos.hilog.Hilog
-import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
+import kit.CangjieKit.BusinessException
 
 func generateRandom(len: Int32) {
     let rand = createRandom()

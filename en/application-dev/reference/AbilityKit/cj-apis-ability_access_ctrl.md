@@ -61,7 +61,7 @@ public static func createAtManager(): AtManager
 // index.cj
 
 import kit.AbilityKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -124,7 +124,7 @@ public func checkAccessToken(tokenID: UInt32, permissionName: Permissions): Gran
 // index.cj
 
 import kit.AbilityKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -182,8 +182,7 @@ If the user denies authorization, the dialog cannot be displayed again. The user
 
 import kit.AbilityKit.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.*
 
 try {
     // The following code can be added to the dependency definitions

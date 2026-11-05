@@ -65,9 +65,9 @@ DEBUG-level logs are not printed by default in official release versions. They a
 ```cangjie
 // index.cj
 
-import ohos.base.*
+import kit.ArkUI.*
 import kit.PerformanceAnalysisKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 try {
     Hilog.debug(0, "testTag", "Debug: Hello world!")
@@ -83,9 +83,9 @@ try {
 ```cangjie
 // index.cj
 
-import ohos.base.*
+import kit.ArkUI.*
 import kit.PerformanceAnalysisKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 try {
     Hilog.debug(0, "testTag", "Debug: Hello %{public}! %{private}", "world", "123")
@@ -122,9 +122,9 @@ public static func error(domain: UInt32, tag: String, format: String, args: Arra
 ```cangjie
 // index.cj
 
-import ohos.base.*
+import kit.ArkUI.*
 import kit.PerformanceAnalysisKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 try {
     Hilog.error(0, "testTag", "Error: Hello world!")
@@ -140,9 +140,9 @@ try {
 ```cangjie
 // index.cj
 
-import ohos.base.*
+import kit.ArkUI.*
 import kit.PerformanceAnalysisKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 try {
     Hilog.error(0, "testTag", "Error: Hello %{public}! %{private}", "world", "123")
@@ -179,9 +179,9 @@ public static func fatal(domain: UInt32, tag: String, format: String, args: Arra
 ```cangjie
 // index.cj
 
-import ohos.base.*
+import kit.ArkUI.*
 import kit.PerformanceAnalysisKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 try {
     Hilog.fatal(0, "testTag", "Fatal: Hello world!")
@@ -197,9 +197,9 @@ try {
 ```cangjie
 // index.cj
 
-import ohos.base.*
+import kit.ArkUI.*
 import kit.PerformanceAnalysisKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 try {
     Hilog.fatal(0, "testTag", "Fatal: Hello %{public}! %{private}", "world", "123")
@@ -236,9 +236,9 @@ public static func info(domain: UInt32, tag: String, format: String, args: Array
 ```cangjie
 // index.cj
 
-import ohos.base.*
+import kit.ArkUI.*
 import kit.PerformanceAnalysisKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 try {
     Hilog.info(0, "testTag", "Info: Hello world!")
@@ -254,9 +254,9 @@ try {
 ```cangjie
 // index.cj
 
-import ohos.base.*
+import kit.ArkUI.*
 import kit.PerformanceAnalysisKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 try {
     Hilog.info(0, "testTag", "Info: Hello %{public}! %{private}", "world", "123")
@@ -298,9 +298,9 @@ public static func isLoggable(domain: UInt32, tag: String, level: LogLevel): Boo
 ```cangjie
 // index.cj
 
-import ohos.base.*
+import kit.ArkUI.*
 import kit.PerformanceAnalysisKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 try {
     Hilog.isLoggable(0, "testTag", LogLevel.Debug)
@@ -337,9 +337,9 @@ public static func warn(domain: UInt32, tag: String, format: String, args: Array
 ```cangjie
 // index.cj
 
-import ohos.base.*
+import kit.ArkUI.*
 import kit.PerformanceAnalysisKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 try {
     Hilog.warn(0, "testTag", "Warn: Hello world!")
@@ -355,9 +355,9 @@ try {
 ```cangjie
 // index.cj
 
-import ohos.base.*
+import kit.ArkUI.*
 import kit.PerformanceAnalysisKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 try {
     Hilog.warn(0, "testTag", "Warn: Hello %{public}! %{private}", "world", "123")

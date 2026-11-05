@@ -50,8 +50,7 @@ Specific API descriptions are shown in the following table.
 
     ```cangjie
     import kit.ConnectivityKit.*
-    import ohos.callback_invoke.*
-    import ohos.business_exception.*
+    import kit.CangjieKit.*
 
     let TAG: String = 'BleAdvertisingManager'
 
@@ -134,8 +133,7 @@ Specific API descriptions are shown in the following table.
 
     ```cangjie
     import kit.ConnectivityKit.*
-    import ohos.callback_invoke.*
-    import ohos.business_exception.*
+    import kit.CangjieKit.*
     import std.collection.{HashMap, ArrayList}
     import std.math.numeric.BigInt
 
