@@ -36,7 +36,8 @@ The following example uses converting an RSA public key:
 
 ```cangjie
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
+import kit.CangjieKit.AsyncCallback
 import kit.PerformanceAnalysisKit.Hilog
 
 func testConvertRSAKey() {
@@ -80,7 +81,8 @@ The following example uses converting an ECC key pair:
 
 ```cangjie
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.AsyncCallback
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 func testConvertECCKey() {
@@ -123,8 +125,9 @@ The following example uses converting an SM2 key pair:
 <!-- compile -->
 
 ```cangjie
+import kit.CangjieKit.AsyncCallback
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 func testConvertSM2Key() {

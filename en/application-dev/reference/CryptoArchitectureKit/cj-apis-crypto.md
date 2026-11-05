@@ -2153,7 +2153,7 @@ Generates an asymmetric key generator instance.
 ```cangjie
 <!-- compile -->
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2204,7 +2204,7 @@ Generates a signature verification instance.
 ```cangjie
 <!-- compile -->
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2275,7 +2275,8 @@ Asynchronously generates an asymmetric key pair, with the result returned via a 
 ```cangjie
 <!-- compile -->
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
+import kit.CangjieKit.AsyncCallback
 import kit.PerformanceAnalysisKit.Hilog
 
 let asyKeyGenerator = createAsyKeyGenerator("RSA2048")
@@ -2332,7 +2333,8 @@ Asynchronously converts the input public key and private key into an asymmetric 
 ```cangjie
 <!-- compile -->
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.AsyncCallback
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 let asyKeyGenerator = createAsyKeyGenerator("RSA2048")
@@ -2395,8 +2397,9 @@ Asynchronously converts PEM-formatted public key and private key strings into an
 
 ```cangjie
 <!-- compile -->
+import kit.CangjieKit.AsyncCallback
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 let asyKeyGenerator = createAsyKeyGenerator("RSA2048")
@@ -2508,9 +2511,10 @@ Gets the specified parameter of the asymmetric private key.
 **Example:**
 
 ```cangjie
+import kit.CangjieKit.AsyncCallback
 <!-- compile -->
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 let asyKeyGenerator = createAsyKeyGenerator("RSA2048")
@@ -2571,10 +2575,11 @@ Gets the DER-encoded data of the private key.
 
 **Example:**
 
+import kit.CangjieKit.AsyncCallback
 ```cangjie
 <!-- compile -->
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 let asyKeyGenerator = createAsyKeyGenerator("RSA2048")
@@ -2631,11 +2636,12 @@ Gets the PEM-encoded data of the private key.
   | 17620003 | Parameter check failed. |
 
 **Example:**
+import kit.CangjieKit.AsyncCallback
 
 ```cangjie
 <!-- compile -->
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 let asyKeyGenerator = createAsyKeyGenerator("RSA2048")
@@ -2685,12 +2691,13 @@ Gets the encoded data of the private key.
   | 17620001 | Memory operation failed. |
   | 17630001 | Crypto operation error. |
 
+import kit.CangjieKit.AsyncCallback
 **Example:**
 
 ```cangjie
 <!-- compile -->
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 let asyKeyGenerator = createAsyKeyGenerator("RSA2048")
@@ -2723,13 +2730,14 @@ Clears the memory data of the private key to achieve secure destruction.
 **System Capability:** SystemCapability.Security.CryptoFramework.Key.AsymKey
 
 **Since:** 26.1.0
+import kit.CangjieKit.AsyncCallback
 
 **Example:**
 
 ```cangjie
 <!-- compile -->
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 let asyKeyGenerator = createAsyKeyGenerator("RSA2048")
@@ -2834,6 +2842,7 @@ Gets the specified parameter of the asymmetric public key.
   | 17620001 | Memory operation failed. |
   | 17630001 | Crypto operation error. |
   | 801 | this operation is not supported. |
+import kit.CangjieKit.AsyncCallback
   | 17620003 | Parameter check failed. |
 
 **Example:**
@@ -2841,7 +2850,7 @@ Gets the specified parameter of the asymmetric public key.
 ```cangjie
 <!-- compile -->
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 let asyKeyGenerator = createAsyKeyGenerator("RSA2048")
@@ -2897,6 +2906,7 @@ Gets the DER-encoded data of the public key.
   | Error Code ID | Error Message |
   | :---- | :--- |
   | 17620001 | Memory operation failed. |
+import kit.CangjieKit.AsyncCallback
   | 17630001 | Crypto operation error. |
   | 17620003 | Parameter check failed. |
 
@@ -2905,7 +2915,7 @@ Gets the DER-encoded data of the public key.
 ```cangjie
 <!-- compile -->
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 let asyKeyGenerator = createAsyKeyGenerator("RSA2048")
@@ -2957,6 +2967,7 @@ Gets the PEM-encoded data of the public key.
 
   | Error Code ID | Error Message |
   | :---- | :--- |
+import kit.CangjieKit.AsyncCallback
   | 17620001 | Memory operation failed. |
   | 17630001 | Crypto operation error. |
   | 17620003 | Parameter check failed. |
@@ -2966,7 +2977,7 @@ Gets the PEM-encoded data of the public key.
 ```cangjie
 <!-- compile -->
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 let asyKeyGenerator = createAsyKeyGenerator("RSA2048")
@@ -3011,6 +3022,7 @@ Gets the encoded data of the public key.
 - [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception): For corresponding error codes, see [Universal Error Codes](../cj-errorcode-universal.md) and [Crypto Framework Error Codes](./cj-errorcode-crypto.md).
 
   | Error Code ID | Error Message |
+import kit.CangjieKit.AsyncCallback
   | :---- | :--- |
   | 801 | this operation is not supported. |
   | 17620001 | Memory operation failed. |
@@ -3021,7 +3033,7 @@ Gets the encoded data of the public key.
 ```cangjie
 <!-- compile -->
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 let asyKeyGenerator = createAsyKeyGenerator("RSA2048")
@@ -3133,6 +3145,7 @@ Asynchronously initializes the verifier with the specified public key, with the 
 - [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception): For corresponding error codes, see [Universal Error Codes](../cj-errorcode-universal.md) and [Crypto Framework Error Codes](./cj-errorcode-crypto.md).
 
   | Error Code ID | Error Message |
+import kit.CangjieKit.AsyncCallback
   | :---- | :--- |
   | 17620001 | Memory operation failed. |
   | 17620002 | Failed to obtain the native object or convert parameters. |
@@ -3144,7 +3157,7 @@ Asynchronously initializes the verifier with the specified public key, with the 
 ```cangjie
 <!-- compile -->
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 let verify = createVerify("RSA2048|PKCS1|SHA256")
@@ -3194,6 +3207,7 @@ Asynchronously appends data to be verified, with the result returned via a callb
 
 - [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception): For corresponding error codes, see [Universal Error Codes](../cj-errorcode-universal.md) and [Crypto Framework Error Codes](./cj-errorcode-crypto.md).
 
+import kit.CangjieKit.AsyncCallback
   | Error Code ID | Error Message |
   | :---- | :--- |
   | 17620001 | Memory operation failed. |
@@ -3206,7 +3220,7 @@ Asynchronously appends data to be verified, with the result returned via a callb
 ```cangjie
 <!-- compile -->
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 let verify = createVerify("RSA2048|PKCS1|SHA256")
@@ -3261,6 +3275,7 @@ Asynchronously verifies whether the data matches the signature, with the verific
 **Exceptions:**
 
 - [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception): For corresponding error codes, see [Universal Error Codes](../cj-errorcode-universal.md) and [Crypto Framework Error Codes](./cj-errorcode-crypto.md).
+import kit.CangjieKit.AsyncCallback
 
   | Error Code ID | Error Message |
   | :---- | :--- |
@@ -3274,7 +3289,7 @@ Asynchronously verifies whether the data matches the signature, with the verific
 ```cangjie
 <!-- compile -->
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 let verify = createVerify("RSA2048|PKCS1|SHA256")
@@ -3331,6 +3346,7 @@ Asynchronously verifies whether the signature matches, with the verification res
 
 **Exceptions:**
 
+import kit.CangjieKit.AsyncCallback
 - [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception): For corresponding error codes, see [Universal Error Codes](../cj-errorcode-universal.md) and [Crypto Framework Error Codes](./cj-errorcode-crypto.md).
 
   | Error Code ID | Error Message |
@@ -3345,7 +3361,7 @@ Asynchronously verifies whether the signature matches, with the verification res
 ```cangjie
 <!-- compile -->
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 let verify = createVerify("RSA2048|PKCS1|SHA256")
@@ -3406,6 +3422,7 @@ Asynchronously recovers the original data from the signature data, with the resu
 | callback | AsyncCallback&lt;?DataBlob&gt; | Yes | - | Callback function that receives the recovered original data or error, returns None when data is empty. |
 
 **Exceptions:**
+import kit.CangjieKit.AsyncCallback
 
 - [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception): For corresponding error codes, see [Universal Error Codes](../cj-errorcode-universal.md) and [Crypto Framework Error Codes](./cj-errorcode-crypto.md).
 
@@ -3421,7 +3438,7 @@ Asynchronously recovers the original data from the signature data, with the resu
 ```cangjie
 <!-- compile -->
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 let verify = createVerify("RSA2048|PKCS1|NoHash|Recover")
@@ -3490,7 +3507,7 @@ Sets the verification parameter, where the parameter value is of Int32 type.
 ```cangjie
 <!-- compile -->
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 let verify = createVerify("RSA2048|PSS|SHA256|MGF1_SHA256")
@@ -3541,7 +3558,7 @@ Sets the verification parameter, where the parameter value is of byte array type
 ```cangjie
 <!-- compile -->
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 let verify = createVerify("SM2_256|SM3")
@@ -3596,7 +3613,7 @@ Gets the verification parameter.
 ```cangjie
 <!-- compile -->
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 let verify = createVerify("RSA2048|PSS|SHA256|MGF1_SHA256")

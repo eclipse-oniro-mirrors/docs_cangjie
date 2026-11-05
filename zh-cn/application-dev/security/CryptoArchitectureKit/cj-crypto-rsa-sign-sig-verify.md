@@ -37,7 +37,8 @@
 
 ```cangjie
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
+import kit.CangjieKit.AsyncCallback
 import kit.PerformanceAnalysisKit.Hilog
 
 // 完整的明文被拆分为input1和input2
@@ -105,7 +106,8 @@ OnlyVerify模式适用于已预先计算摘要的场景，验签时直接传入�
 
 ```cangjie
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.AsyncCallback
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 func testRsaOnlyVerify() {
@@ -165,8 +167,9 @@ func testRsaOnlyVerify() {
 <!-- compile -->
 
 ```cangjie
+import kit.CangjieKit.AsyncCallback
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 func testRsaRecover() {
@@ -220,9 +223,10 @@ func testRsaRecover() {
 
 <!-- compile -->
 
+import kit.CangjieKit.AsyncCallback
 ```cangjie
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 func testRsaVerifyBySegment() {
@@ -303,10 +307,11 @@ func testRsaVerifyBySegment() {
 以PSS模式验签为例：
 
 <!-- compile -->
+import kit.CangjieKit.AsyncCallback
 
 ```cangjie
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 func testRsaPssVerify() {

@@ -320,7 +320,7 @@ public func createAsyKeyGenerator(algName: String): AsyKeyGenerator
 ```cangjie
 <!-- compile -->
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -371,7 +371,7 @@ public func createVerify(algName: String): Verify
 ```cangjie
 <!-- compile -->
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1657,7 +1657,8 @@ public func generateKeyPair(callback: AsyncCallback<KeyPair>): Unit
 ```cangjie
 <!-- compile -->
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
+import kit.CangjieKit.AsyncCallback
 import kit.PerformanceAnalysisKit.Hilog
 
 let asyKeyGenerator = createAsyKeyGenerator("RSA2048")
@@ -1714,7 +1715,8 @@ public func convertKey(callback: AsyncCallback<KeyPair>, pubKey!: Option<DataBlo
 ```cangjie
 <!-- compile -->
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
+import kit.CangjieKit.AsyncCallback
 import kit.PerformanceAnalysisKit.Hilog
 
 let asyKeyGenerator = createAsyKeyGenerator("RSA2048")
@@ -1778,7 +1780,8 @@ public func convertPemKey(callback: AsyncCallback<KeyPair>, pubKey!: Option<Stri
 ```cangjie
 <!-- compile -->
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
+import kit.CangjieKit.AsyncCallback
 import kit.PerformanceAnalysisKit.Hilog
 
 let asyKeyGenerator = createAsyKeyGenerator("RSA2048")
@@ -1892,7 +1895,8 @@ public func getAsyKeySpec(itemType: AsyKeySpecItem): ResultSpec
 ```cangjie
 <!-- compile -->
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
+import kit.CangjieKit.AsyncCallback
 import kit.PerformanceAnalysisKit.Hilog
 
 let asyKeyGenerator = createAsyKeyGenerator("RSA2048")
@@ -1956,7 +1960,8 @@ public func getEncodedDer(format: String): DataBlob
 ```cangjie
 <!-- compile -->
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
+import kit.CangjieKit.AsyncCallback
 import kit.PerformanceAnalysisKit.Hilog
 
 let asyKeyGenerator = createAsyKeyGenerator("RSA2048")
@@ -2017,7 +2022,8 @@ public func getEncodedPem(format: String): String
 ```cangjie
 <!-- compile -->
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
+import kit.CangjieKit.AsyncCallback
 import kit.PerformanceAnalysisKit.Hilog
 
 let asyKeyGenerator = createAsyKeyGenerator("RSA2048")
@@ -2072,7 +2078,8 @@ public func getEncoded(): DataBlob
 ```cangjie
 <!-- compile -->
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
+import kit.CangjieKit.AsyncCallback
 import kit.PerformanceAnalysisKit.Hilog
 
 let asyKeyGenerator = createAsyKeyGenerator("RSA2048")
@@ -2111,7 +2118,8 @@ public func clearMem(): Unit
 ```cangjie
 <!-- compile -->
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
+import kit.CangjieKit.AsyncCallback
 import kit.PerformanceAnalysisKit.Hilog
 
 let asyKeyGenerator = createAsyKeyGenerator("RSA2048")
@@ -2223,7 +2231,8 @@ public func getAsyKeySpec(itemType: AsyKeySpecItem): ResultSpec
 ```cangjie
 <!-- compile -->
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
+import kit.CangjieKit.AsyncCallback
 import kit.PerformanceAnalysisKit.Hilog
 
 let asyKeyGenerator = createAsyKeyGenerator("RSA2048")
@@ -2287,7 +2296,8 @@ public func getEncodedDer(format: String): DataBlob
 ```cangjie
 <!-- compile -->
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
+import kit.CangjieKit.AsyncCallback
 import kit.PerformanceAnalysisKit.Hilog
 
 let asyKeyGenerator = createAsyKeyGenerator("RSA2048")
@@ -2348,7 +2358,8 @@ public func getEncodedPem(format: String): String
 ```cangjie
 <!-- compile -->
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
+import kit.CangjieKit.AsyncCallback
 import kit.PerformanceAnalysisKit.Hilog
 
 let asyKeyGenerator = createAsyKeyGenerator("RSA2048")
@@ -2403,7 +2414,8 @@ public func getEncoded(): DataBlob
 ```cangjie
 <!-- compile -->
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
+import kit.CangjieKit.AsyncCallback
 import kit.PerformanceAnalysisKit.Hilog
 
 let asyKeyGenerator = createAsyKeyGenerator("RSA2048")
@@ -2526,7 +2538,8 @@ public func initialize(pubKey: PubKey, callback: AsyncCallback<Unit>): Unit
 ```cangjie
 <!-- compile -->
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
+import kit.CangjieKit.AsyncCallback
 import kit.PerformanceAnalysisKit.Hilog
 
 let verify = createVerify("RSA2048|PKCS1|SHA256")
@@ -2588,7 +2601,8 @@ public func update(data: DataBlob, callback: AsyncCallback<Unit>): Unit
 ```cangjie
 <!-- compile -->
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
+import kit.CangjieKit.AsyncCallback
 import kit.PerformanceAnalysisKit.Hilog
 
 let verify = createVerify("RSA2048|PKCS1|SHA256")
@@ -2656,7 +2670,8 @@ public func verify(data: DataBlob, signatureData: DataBlob, callback: AsyncCallb
 ```cangjie
 <!-- compile -->
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
+import kit.CangjieKit.AsyncCallback
 import kit.PerformanceAnalysisKit.Hilog
 
 let verify = createVerify("RSA2048|PKCS1|SHA256")
@@ -2727,7 +2742,8 @@ public func verify(signatureData: DataBlob, callback: AsyncCallback<Bool>, data!
 ```cangjie
 <!-- compile -->
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
+import kit.CangjieKit.AsyncCallback
 import kit.PerformanceAnalysisKit.Hilog
 
 let verify = createVerify("RSA2048|PKCS1|SHA256")
@@ -2803,7 +2819,8 @@ public func recover(signatureData: DataBlob, callback: AsyncCallback<?DataBlob>)
 ```cangjie
 <!-- compile -->
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
+import kit.CangjieKit.AsyncCallback
 import kit.PerformanceAnalysisKit.Hilog
 
 let verify = createVerify("RSA2048|PKCS1|NoHash|Recover")
@@ -2872,7 +2889,7 @@ public func setVerifySpec(itemType: SignSpecItem, itemValue: Int32): Unit
 ```cangjie
 <!-- compile -->
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 let verify = createVerify("RSA2048|PSS|SHA256|MGF1_SHA256")
@@ -2923,7 +2940,7 @@ public func setVerifySpec(itemType: SignSpecItem, itemValue: Array<UInt8>): Unit
 ```cangjie
 <!-- compile -->
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 let verify = createVerify("SM2_256|SM3")
@@ -2978,7 +2995,7 @@ public func getVerifySpec(itemType: SignSpecItem): ResultSpec
 ```cangjie
 <!-- compile -->
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 let verify = createVerify("RSA2048|PSS|SHA256|MGF1_SHA256")

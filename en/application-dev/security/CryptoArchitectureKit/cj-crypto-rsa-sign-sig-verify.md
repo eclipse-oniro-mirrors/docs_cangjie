@@ -37,7 +37,8 @@ The following example uses PKCS1 mode verification, where the signature data is 
 
 ```cangjie
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
+import kit.CangjieKit.AsyncCallback
 import kit.PerformanceAnalysisKit.Hilog
 
 // The complete plaintext is split into input1 and input2
@@ -105,7 +106,8 @@ The following example uses OnlyVerify mode verification:
 
 ```cangjie
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.AsyncCallback
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 func testRsaOnlyVerify() {
@@ -165,8 +167,9 @@ The following example uses PKCS1 mode signature recovery:
 <!-- compile -->
 
 ```cangjie
+import kit.CangjieKit.AsyncCallback
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 func testRsaRecover() {
@@ -220,9 +223,10 @@ The following example uses PKCS1 mode segmented verification:
 
 <!-- compile -->
 
+import kit.CangjieKit.AsyncCallback
 ```cangjie
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 func testRsaVerifyBySegment() {
@@ -303,10 +307,11 @@ func testRsaVerifyBySegment() {
 The following example uses PSS mode verification:
 
 <!-- compile -->
+import kit.CangjieKit.AsyncCallback
 
 ```cangjie
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 func testRsaPssVerify() {

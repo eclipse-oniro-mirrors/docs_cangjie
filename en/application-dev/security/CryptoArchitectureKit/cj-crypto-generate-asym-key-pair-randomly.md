@@ -28,7 +28,8 @@ The following example uses randomly generating an RSA key pair:
 
 ```cangjie
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
+import kit.CangjieKit.AsyncCallback
 import kit.PerformanceAnalysisKit.Hilog
 
 func testGenerateRSAKeyPair() {
@@ -72,7 +73,8 @@ The following example uses randomly generating an SM2 key pair:
 
 ```cangjie
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.AsyncCallback
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 func testGenerateSM2KeyPair() {

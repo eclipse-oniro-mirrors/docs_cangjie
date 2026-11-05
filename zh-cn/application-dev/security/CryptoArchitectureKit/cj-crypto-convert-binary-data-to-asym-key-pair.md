@@ -36,7 +36,8 @@
 
 ```cangjie
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
+import kit.CangjieKit.AsyncCallback
 import kit.PerformanceAnalysisKit.Hilog
 
 func testConvertRSAKey() {
@@ -80,7 +81,8 @@ func testConvertRSAKey() {
 
 ```cangjie
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.AsyncCallback
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 func testConvertECCKey() {
@@ -123,8 +125,9 @@ func testConvertECCKey() {
 <!-- compile -->
 
 ```cangjie
+import kit.CangjieKit.AsyncCallback
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 func testConvertSM2Key() {
