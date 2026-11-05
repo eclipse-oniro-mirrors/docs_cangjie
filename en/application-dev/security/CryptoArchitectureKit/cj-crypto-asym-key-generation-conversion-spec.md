@@ -30,21 +30,21 @@ To generate RSA keys using string parameters, the specific "string parameter" is
 
 | RSA Key Type | Number of Primes | String Parameter | API Version |
 | :-------- | :-------- | :-------- | :-------- |
-| RSA512 | 2 | RSA512\|PRIMES_2 | 12+ |
-| RSA768 | 2 | RSA768\|PRIMES_2 | 12+ |
-| RSA1024 | 2 | RSA1024\|PRIMES_2 | 12+ |
-| RSA1024 | 3 | RSA1024\|PRIMES_3 | 12+ |
-| RSA2048 | 2 | RSA2048\|PRIMES_2 | 12+ |
-| RSA2048 | 3 | RSA2048\|PRIMES_3 | 12+ |
-| RSA3072 | 2 | RSA3072\|PRIMES_2 | 12+ |
-| RSA3072 | 3 | RSA3072\|PRIMES_3 | 12+ |
-| RSA4096 | 2 | RSA4096\|PRIMES_2 | 12+ |
-| RSA4096 | 3 | RSA4096\|PRIMES_3 | 12+ |
-| RSA4096 | 4 | RSA4096\|PRIMES_4 | 12+ |
-| RSA8192 | 2 | RSA8192\|PRIMES_2 | 12+ |
-| RSA8192 | 3 | RSA8192\|PRIMES_3 | 12+ |
-| RSA8192 | 4 | RSA8192\|PRIMES_4 | 12+ |
-| RSA8192 | 5 | RSA8192\|PRIMES_5 | 12+ |
+| RSA512 | 2 | RSA512\|PRIMES_2 | 26.1.0+ |
+| RSA768 | 2 | RSA768\|PRIMES_2 | 26.1.0+ |
+| RSA1024 | 2 | RSA1024\|PRIMES_2 | 26.1.0+ |
+| RSA1024 | 3 | RSA1024\|PRIMES_3 | 26.1.0+ |
+| RSA2048 | 2 | RSA2048\|PRIMES_2 | 26.1.0+ |
+| RSA2048 | 3 | RSA2048\|PRIMES_3 | 26.1.0+ |
+| RSA3072 | 2 | RSA3072\|PRIMES_2 | 26.1.0+ |
+| RSA3072 | 3 | RSA3072\|PRIMES_3 | 26.1.0+ |
+| RSA4096 | 2 | RSA4096\|PRIMES_2 | 26.1.0+ |
+| RSA4096 | 3 | RSA4096\|PRIMES_3 | 26.1.0+ |
+| RSA4096 | 4 | RSA4096\|PRIMES_4 | 26.1.0+ |
+| RSA8192 | 2 | RSA8192\|PRIMES_2 | 26.1.0+ |
+| RSA8192 | 3 | RSA8192\|PRIMES_3 | 26.1.0+ |
+| RSA8192 | 4 | RSA8192\|PRIMES_4 | 26.1.0+ |
+| RSA8192 | 5 | RSA8192\|PRIMES_5 | 26.1.0+ |
 
 > **Note:**
 >
@@ -92,12 +92,12 @@ To generate ECC keys using string parameters, the specific "string parameter" is
 
 | Asymmetric Key Algorithm | Key Length (bit) | Curve Name | String Parameter | API Version |
 | :-------- | :-------- | :-------- | :-------- | :-------- |
-| ECC | 192 | NID_X9_62_prime192v1 | ECC192 | 12+ |
-| ECC | 224 | NID_secp224r1 | ECC224 | 12+ |
-| ECC | 256 | NID_X9_62_prime256v1 | ECC256 | 12+ |
-| ECC | 384 | NID_secp384r1 | ECC384 | 12+ |
-| ECC | 521 | NID_secp521r1 | ECC521 | 12+ |
-| ECC | 256 | NID_secp256k1 | ECC_Secp256k1 | 12+ |
+| ECC | 192 | NID_X9_62_prime192v1 | ECC192 | 26.1.0+ |
+| ECC | 224 | NID_secp224r1 | ECC224 | 26.1.0+ |
+| ECC | 256 | NID_X9_62_prime256v1 | ECC256 | 26.1.0+ |
+| ECC | 384 | NID_secp384r1 | ECC384 | 26.1.0+ |
+| ECC | 521 | NID_secp521r1 | ECC521 | 26.1.0+ |
+| ECC | 256 | NID_secp256k1 | ECC_Secp256k1 | 26.1.0+ |
 
 > **Note:**
 >
@@ -165,9 +165,9 @@ To generate DSA keys using string parameters, the specific "string parameter" is
 
 | Asymmetric Key Algorithm | Key Length (bit) | String Parameter | API Version |
 | :-------- | :-------- | :-------- | :-------- |
-| DSA | 1024 | DSA1024 | 12+ |
-| DSA | 2048 | DSA2048 | 12+ |
-| DSA | 3072 | DSA3072 | 12+ |
+| DSA | 1024 | DSA1024 | 26.1.0+ |
+| DSA | 2048 | DSA2048 | 26.1.0+ |
+| DSA | 3072 | DSA3072 | 26.1.0+ |
 
 > **Note:**
 >
@@ -219,7 +219,7 @@ Currently, SM2 keys can be generated using string parameters. The specific "stri
 
 | Asymmetric Key Algorithm | Key Length (bit) | Curve Name | String Parameter | API Version |
 | :-------- | :-------- | :-------- | :-------- | :-------- |
-| SM2 | 256 | NID_sm2 | SM2_256 | 12+ |
+| SM2 | 256 | NID_sm2 | SM2_256 | 26.1.0+ |
 
 **Generating with Key Parameters**
 
@@ -283,7 +283,7 @@ Generate Ed25519 keys using string parameters to specify the key specification w
 
 | Asymmetric Key Algorithm | String Parameter | API Version |
 | :-------- | :-------- | :-------- |
-| Ed25519 | Ed25519 | 12+ |
+| Ed25519 | Ed25519 | 26.1.0+ |
 
 **Generating with Key Parameters**
 
@@ -318,7 +318,7 @@ Generate X25519 keys using string parameters to specify the key specification.
 
 | Asymmetric Key Algorithm | String Parameter | API Version |
 | :-------- | :-------- | :-------- |
-| X25519 | X25519 | 12+ |
+| X25519 | X25519 | 26.1.0+ |
 
 **Generating with Key Parameters**
 
@@ -353,18 +353,18 @@ To generate DH keys using string parameters, the specific "string parameter" is 
 
 | Asymmetric Key Algorithm | Well-Known Safe Prime Group Parameter | Key Length (bit) | String Parameter | API Version |
 | :-------- | :-------- | :-------- | :-------- | :-------- |
-| DH | MODP_1536 | 1536 | DH_modp1536 | 12+ |
-| DH | MODP_2048 | 2048 | DH_modp2048 | 12+ |
-| DH | MODP_3072 | 3072 | DH_modp3072 | 12+ |
-| DH | MODP_3526 | 3526 | DH_modp3526 | 12+ |
-| DH | MODP_4096 | 4096 | DH_modp4096 | 12+ |
-| DH | MODP_6144 | 6144 | DH_modp6144 | 12+ |
-| DH | MODP_8192 | 8192 | DH_modp8192 | 12+ |
-| DH | FFDHE_2048 | 2048 | DH_ffdhe2048 | 12+ |
-| DH | FFDHE_3072 | 3072 | DH_ffdhe3072 | 12+ |
-| DH | FFDHE_4096 | 4096 | DH_ffdhe4096 | 12+ |
-| DH | FFDHE_6144 | 6144 | DH_ffdhe6144 | 12+ |
-| DH | FFDHE_8192 | 8192 | DH_ffdhe8192 | 12+ |
+| DH | MODP_1536 | 1536 | DH_modp1536 | 26.1.0+ |
+| DH | MODP_2048 | 2048 | DH_modp2048 | 26.1.0+ |
+| DH | MODP_3072 | 3072 | DH_modp3072 | 26.1.0+ |
+| DH | MODP_3526 | 3526 | DH_modp3526 | 26.1.0+ |
+| DH | MODP_4096 | 4096 | DH_modp4096 | 26.1.0+ |
+| DH | MODP_6144 | 6144 | DH_modp6144 | 26.1.0+ |
+| DH | MODP_8192 | 8192 | DH_modp8192 | 26.1.0+ |
+| DH | FFDHE_2048 | 2048 | DH_ffdhe2048 | 26.1.0+ |
+| DH | FFDHE_3072 | 3072 | DH_ffdhe3072 | 26.1.0+ |
+| DH | FFDHE_4096 | 4096 | DH_ffdhe4096 | 26.1.0+ |
+| DH | FFDHE_6144 | 6144 | DH_ffdhe6144 | 26.1.0+ |
+| DH | FFDHE_8192 | 8192 | DH_ffdhe8192 | 26.1.0+ |
 
 **Generating with Key Parameters**
 
@@ -400,9 +400,9 @@ Generate ML-KEM keys using string parameters to specify the key specification wh
 
 | Asymmetric Key Algorithm | String Parameter | API Version |
 | :-------- | :-------- | :-------- |
-| ML-KEM-512 | ML-KEM-512 | 12+ |
-| ML-KEM-768 | ML-KEM-768 | 12+ |
-| ML-KEM-1024 | ML-KEM-1024 | 12+ |
+| ML-KEM-512 | ML-KEM-512 | 26.1.0+ |
+| ML-KEM-768 | ML-KEM-768 | 26.1.0+ |
+| ML-KEM-1024 | ML-KEM-1024 | 26.1.0+ |
 
 ## ML-DSA
 
@@ -414,6 +414,6 @@ Generate ML-DSA keys using string parameters to specify the key specification wh
 
 | Asymmetric Key Algorithm | String Parameter | API Version |
 | :-------- | :-------- | :-------- |
-| ML-DSA-44 | ML-DSA-44 | 12+ |
-| ML-DSA-65 | ML-DSA-65 | 12+ |
-| ML-DSA-87 | ML-DSA-87 | 12+ |
+| ML-DSA-44 | ML-DSA-44 | 26.1.0+ |
+| ML-DSA-65 | ML-DSA-65 | 26.1.0+ |
+| ML-DSA-87 | ML-DSA-87 | 26.1.0+ |

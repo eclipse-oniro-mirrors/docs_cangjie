@@ -44,14 +44,14 @@ As shown in the table, only one item can be selected from each range (i.e., cont
 
 | Asymmetric Key Type | Padding Mode | Digest Algorithm | API Version |
 | :-------- | :-------- | :-------- | :-------- |
-| RSA512 | PKCS1 | [MD5\|SHA1\|SHA224\|SHA256\|SHA384] | 12+ |
-| RSA768 | PKCS1 | [MD5\|SHA1\|SHA224\|SHA256\|SHA384\|SHA512] | 12+ |
-| RSA1024 | PKCS1 | [MD5\|SHA1\|SHA224\|SHA256\|SHA384\|SHA512] | 12+ |
-| RSA2048 | PKCS1 | [MD5\|SHA1\|SHA224\|SHA256\|SHA384\|SHA512] | 12+ |
-| RSA3072 | PKCS1 | [MD5\|SHA1\|SHA224\|SHA256\|SHA384\|SHA512] | 12+ |
-| RSA4096 | PKCS1 | [MD5\|SHA1\|SHA224\|SHA256\|SHA384\|SHA512] | 12+ |
-| RSA8192 | PKCS1 | [MD5\|SHA1\|SHA224\|SHA256\|SHA384\|SHA512] | 12+ |
-| RSA | PKCS1 | Digest algorithm meeting length requirements | 12+ |
+| RSA512 | PKCS1 | [MD5\|SHA1\|SHA224\|SHA256\|SHA384] | 26.1.0+ |
+| RSA768 | PKCS1 | [MD5\|SHA1\|SHA224\|SHA256\|SHA384\|SHA512] | 26.1.0+ |
+| RSA1024 | PKCS1 | [MD5\|SHA1\|SHA224\|SHA256\|SHA384\|SHA512] | 26.1.0+ |
+| RSA2048 | PKCS1 | [MD5\|SHA1\|SHA224\|SHA256\|SHA384\|SHA512] | 26.1.0+ |
+| RSA3072 | PKCS1 | [MD5\|SHA1\|SHA224\|SHA256\|SHA384\|SHA512] | 26.1.0+ |
+| RSA4096 | PKCS1 | [MD5\|SHA1\|SHA224\|SHA256\|SHA384\|SHA512] | 26.1.0+ |
+| RSA8192 | PKCS1 | [MD5\|SHA1\|SHA224\|SHA256\|SHA384\|SHA512] | 26.1.0+ |
+| RSA | PKCS1 | Digest algorithm meeting length requirements | 26.1.0+ |
 
 As shown in the last row of the table, to maintain compatibility with keys generated from key parameters, the RSA signature/verification parameter supports omitting the key length. The actual signature/verification operation depends on the actual input key length.
 
@@ -63,47 +63,47 @@ As shown in the table, only one item can be selected from each range (i.e., cont
 
 | Asymmetric Key Type | Padding Mode | Digest | Mask Digest | API Version |
 | :-------- | :-------- | :-------- | :-------- | :-------- |
-| RSA512 | PSS | MD5 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256] | 12+ |
-| RSA512 | PSS | SHA1 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256] | 12+ |
-| RSA512 | PSS | SHA224 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256] | 12+ |
-| RSA512 | PSS | SHA256 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224] | 12+ |
-| RSA768 | PSS | MD5 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 12+ |
-| RSA768 | PSS | SHA1 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 12+ |
-| RSA768 | PSS | SHA224 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 12+ |
-| RSA768 | PSS | SHA256 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384] | 12+ |
-| RSA768 | PSS | SHA384 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256] | 12+ |
-| RSA768 | PSS | SHA512 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224] | 12+ |
-| RSA1024 | PSS | MD5 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 12+ |
-| RSA1024 | PSS | SHA1 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 12+ |
-| RSA1024 | PSS | SHA224 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 12+ |
-| RSA1024 | PSS | SHA256 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 12+ |
-| RSA1024 | PSS | SHA384 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 12+ |
-| RSA1024 | PSS | SHA512 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384] | 12+ |
-| RSA2048 | PSS | MD5 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 12+ |
-| RSA2048 | PSS | SHA1 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 12+ |
-| RSA2048 | PSS | SHA224 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 12+ |
-| RSA2048 | PSS | SHA256 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 12+ |
-| RSA2048 | PSS | SHA384 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 12+ |
-| RSA2048 | PSS | SHA512 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 12+ |
-| RSA3072 | PSS | MD5 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 12+ |
-| RSA3072 | PSS | SHA1 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 12+ |
-| RSA3072 | PSS | SHA224 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 12+ |
-| RSA3072 | PSS | SHA256 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 12+ |
-| RSA3072 | PSS | SHA384 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 12+ |
-| RSA3072 | PSS | SHA512 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 12+ |
-| RSA4096 | PSS | MD5 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 12+ |
-| RSA4096 | PSS | SHA1 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 12+ |
-| RSA4096 | PSS | SHA224 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 12+ |
-| RSA4096 | PSS | SHA256 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 12+ |
-| RSA4096 | PSS | SHA384 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 12+ |
-| RSA4096 | PSS | SHA512 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 12+ |
-| RSA8192 | PSS | MD5 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 12+ |
-| RSA8192 | PSS | SHA1 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 12+ |
-| RSA8192 | PSS | SHA224 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 12+ |
-| RSA8192 | PSS | SHA256 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 12+ |
-| RSA8192 | PSS | SHA384 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 12+ |
-| RSA8192 | PSS | SHA512 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 12+ |
-| RSA | PSS | Digest algorithm meeting length requirements | MGF1_Digest algorithm meeting length requirements | 12+ |
+| RSA512 | PSS | MD5 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256] | 26.1.0+ |
+| RSA512 | PSS | SHA1 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256] | 26.1.0+ |
+| RSA512 | PSS | SHA224 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256] | 26.1.0+ |
+| RSA512 | PSS | SHA256 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224] | 26.1.0+ |
+| RSA768 | PSS | MD5 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 26.1.0+ |
+| RSA768 | PSS | SHA1 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 26.1.0+ |
+| RSA768 | PSS | SHA224 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 26.1.0+ |
+| RSA768 | PSS | SHA256 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384] | 26.1.0+ |
+| RSA768 | PSS | SHA384 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256] | 26.1.0+ |
+| RSA768 | PSS | SHA512 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224] | 26.1.0+ |
+| RSA1024 | PSS | MD5 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 26.1.0+ |
+| RSA1024 | PSS | SHA1 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 26.1.0+ |
+| RSA1024 | PSS | SHA224 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 26.1.0+ |
+| RSA1024 | PSS | SHA256 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 26.1.0+ |
+| RSA1024 | PSS | SHA384 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 26.1.0+ |
+| RSA1024 | PSS | SHA512 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384] | 26.1.0+ |
+| RSA2048 | PSS | MD5 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 26.1.0+ |
+| RSA2048 | PSS | SHA1 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 26.1.0+ |
+| RSA2048 | PSS | SHA224 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 26.1.0+ |
+| RSA2048 | PSS | SHA256 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 26.1.0+ |
+| RSA2048 | PSS | SHA384 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 26.1.0+ |
+| RSA2048 | PSS | SHA512 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 26.1.0+ |
+| RSA3072 | PSS | MD5 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 26.1.0+ |
+| RSA3072 | PSS | SHA1 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 26.1.0+ |
+| RSA3072 | PSS | SHA224 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 26.1.0+ |
+| RSA3072 | PSS | SHA256 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 26.1.0+ |
+| RSA3072 | PSS | SHA384 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 26.1.0+ |
+| RSA3072 | PSS | SHA512 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 26.1.0+ |
+| RSA4096 | PSS | MD5 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 26.1.0+ |
+| RSA4096 | PSS | SHA1 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 26.1.0+ |
+| RSA4096 | PSS | SHA224 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 26.1.0+ |
+| RSA4096 | PSS | SHA256 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 26.1.0+ |
+| RSA4096 | PSS | SHA384 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 26.1.0+ |
+| RSA4096 | PSS | SHA512 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 26.1.0+ |
+| RSA8192 | PSS | MD5 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 26.1.0+ |
+| RSA8192 | PSS | SHA1 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 26.1.0+ |
+| RSA8192 | PSS | SHA224 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 26.1.0+ |
+| RSA8192 | PSS | SHA256 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 26.1.0+ |
+| RSA8192 | PSS | SHA384 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 26.1.0+ |
+| RSA8192 | PSS | SHA512 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 26.1.0+ |
+| RSA | PSS | Digest algorithm meeting length requirements | MGF1_Digest algorithm meeting length requirements | 26.1.0+ |
 
 As shown in the last row of the table, to maintain compatibility with keys generated from key parameters, the RSA signature/verification parameter supports omitting the key length. The actual signature/verification operation depends on the actual input key length.
 
@@ -137,15 +137,15 @@ As shown in the table, only one item can be selected from each range (i.e., cont
 
 | Asymmetric Key Type | Padding Mode | Digest Algorithm | Sign/Verify Mode | API Version |
 | :-------- | :-------- | :-------- | :-------- | :-------- |
-| RSA512 | PKCS1 | [NoHash\|MD5\|SHA1\|SHA224\|SHA256] | OnlySign/OnlyVerify | 12+ |
-| RSA768 | PKCS1 | [NoHash\|MD5\|SHA1\|SHA224\|SHA256\|SHA384\|SHA512] | OnlySign/OnlyVerify | 12+ |
-| RSA1024 | PKCS1 | [NoHash\|MD5\|SHA1\|SHA224\|SHA256\|SHA384\|SHA512] | OnlySign/OnlyVerify | 12+ |
-| RSA2048 | PKCS1 | [NoHash\|MD5\|SHA1\|SHA224\|SHA256\|SHA384\|SHA512] | OnlySign/OnlyVerify | 12+ |
-| RSA3072 | PKCS1 | [NoHash\|MD5\|SHA1\|SHA224\|SHA256\|SHA384\|SHA512] | OnlySign/OnlyVerify | 12+ |
-| RSA4096 | PKCS1 | [NoHash\|MD5\|SHA1\|SHA224\|SHA256\|SHA384\|SHA512] | OnlySign/OnlyVerify | 12+ |
-| RSA8192 | PKCS1 | [NoHash\|MD5\|SHA1\|SHA224\|SHA256\|SHA384\|SHA512] | OnlySign/OnlyVerify | 12+ |
-| [RSA512\|RSA768\|RSA1024\|RSA2048\|RSA3072\|RSA4096\|RSA8192\|RSA] | NoPadding | NoHash | OnlySign/OnlyVerify | 12+ |
-| RSA | PKCS1 | Digest algorithm meeting length requirements | OnlySign/OnlyVerify | 12+ |
+| RSA512 | PKCS1 | [NoHash\|MD5\|SHA1\|SHA224\|SHA256] | OnlySign/OnlyVerify | 26.1.0+ |
+| RSA768 | PKCS1 | [NoHash\|MD5\|SHA1\|SHA224\|SHA256\|SHA384\|SHA512] | OnlySign/OnlyVerify | 26.1.0+ |
+| RSA1024 | PKCS1 | [NoHash\|MD5\|SHA1\|SHA224\|SHA256\|SHA384\|SHA512] | OnlySign/OnlyVerify | 26.1.0+ |
+| RSA2048 | PKCS1 | [NoHash\|MD5\|SHA1\|SHA224\|SHA256\|SHA384\|SHA512] | OnlySign/OnlyVerify | 26.1.0+ |
+| RSA3072 | PKCS1 | [NoHash\|MD5\|SHA1\|SHA224\|SHA256\|SHA384\|SHA512] | OnlySign/OnlyVerify | 26.1.0+ |
+| RSA4096 | PKCS1 | [NoHash\|MD5\|SHA1\|SHA224\|SHA256\|SHA384\|SHA512] | OnlySign/OnlyVerify | 26.1.0+ |
+| RSA8192 | PKCS1 | [NoHash\|MD5\|SHA1\|SHA224\|SHA256\|SHA384\|SHA512] | OnlySign/OnlyVerify | 26.1.0+ |
+| [RSA512\|RSA768\|RSA1024\|RSA2048\|RSA3072\|RSA4096\|RSA8192\|RSA] | NoPadding | NoHash | OnlySign/OnlyVerify | 26.1.0+ |
+| RSA | PKCS1 | Digest algorithm meeting length requirements | OnlySign/OnlyVerify | 26.1.0+ |
 
 As shown in the last row of the table, to maintain compatibility with keys generated from key parameters, RSA sign/verify supports omitting the key length when inputting the key type (i.e., using RSA). In this case, whether the algorithm specification is supported depends on the actual key length passed during sign/verify initialization. For example, when using RSA|PKCS1|SHA384, if the key passed during initialization is RSA512, the specification is not supported because it does not meet the length constraint.
 
@@ -171,15 +171,15 @@ As shown in the table, only one item can be selected from each range (i.e., cont
 
 | Asymmetric Key Type | Padding Mode | Digest Algorithm | Verify Mode | API Version |
 | :-------- | :-------- | :-------- | :-------- | :-------- |
-| RSA512 | PKCS1 | [NoHash\|MD5\|SHA1\|SHA224\|SHA256] | Recover | 12+ |
-| RSA768 | PKCS1 | [NoHash\|MD5\|SHA1\|SHA224\|SHA256\|SHA384\|SHA512] | Recover | 12+ |
-| RSA1024 | PKCS1 | [NoHash\|MD5\|SHA1\|SHA224\|SHA256\|SHA384\|SHA512] | Recover | 12+ |
-| RSA2048 | PKCS1 | [NoHash\|MD5\|SHA1\|SHA224\|SHA256\|SHA384\|SHA512] | Recover | 12+ |
-| RSA3072 | PKCS1 | [NoHash\|MD5\|SHA1\|SHA224\|SHA256\|SHA384\|SHA512] | Recover | 12+ |
-| RSA4096 | PKCS1 | [NoHash\|MD5\|SHA1\|SHA224\|SHA256\|SHA384\|SHA512] | Recover | 12+ |
-| RSA8192 | PKCS1 | [NoHash\|MD5\|SHA1\|SHA224\|SHA256\|SHA384\|SHA512] | Recover | 12+ |
-| [RSA512\|RSA768\|RSA1024\|RSA2048\|RSA3072\|RSA4096\|RSA8192\|RSA] | NoPadding | NoHash | Recover | 12+ |
-| RSA | PKCS1 | Digest algorithm meeting length requirements | Recover | 12+ |
+| RSA512 | PKCS1 | [NoHash\|MD5\|SHA1\|SHA224\|SHA256] | Recover | 26.1.0+ |
+| RSA768 | PKCS1 | [NoHash\|MD5\|SHA1\|SHA224\|SHA256\|SHA384\|SHA512] | Recover | 26.1.0+ |
+| RSA1024 | PKCS1 | [NoHash\|MD5\|SHA1\|SHA224\|SHA256\|SHA384\|SHA512] | Recover | 26.1.0+ |
+| RSA2048 | PKCS1 | [NoHash\|MD5\|SHA1\|SHA224\|SHA256\|SHA384\|SHA512] | Recover | 26.1.0+ |
+| RSA3072 | PKCS1 | [NoHash\|MD5\|SHA1\|SHA224\|SHA256\|SHA384\|SHA512] | Recover | 26.1.0+ |
+| RSA4096 | PKCS1 | [NoHash\|MD5\|SHA1\|SHA224\|SHA256\|SHA384\|SHA512] | Recover | 26.1.0+ |
+| RSA8192 | PKCS1 | [NoHash\|MD5\|SHA1\|SHA224\|SHA256\|SHA384\|SHA512] | Recover | 26.1.0+ |
+| [RSA512\|RSA768\|RSA1024\|RSA2048\|RSA3072\|RSA4096\|RSA8192\|RSA] | NoPadding | NoHash | Recover | 26.1.0+ |
+| RSA | PKCS1 | Digest algorithm meeting length requirements | Recover | 26.1.0+ |
 
 As shown in the last row of the table, to maintain compatibility with keys generated from key parameters, the RSA signature recovery parameter supports omitting the key length. The actual signature recovery operation depends on the actual input key length.
 
@@ -195,13 +195,13 @@ As shown in the table, only one item can be selected from each range (i.e., cont
 
 | Asymmetric Key Type | Digest | Sign/Verify Mode | API Version |
 | :-------- | :-------- | :-------- | :-------- |
-| ECC192 | [SHA1\|SHA224\|SHA256\|SHA384\|SHA512] | OnlySign/OnlyVerify | 12+ |
-| ECC224 | [SHA1\|SHA224\|SHA256\|SHA384\|SHA512] | OnlySign/OnlyVerify | 12+ |
-| ECC256 | [SHA1\|SHA224\|SHA256\|SHA384\|SHA512] | OnlySign/OnlyVerify | 12+ |
-| ECC384 | [SHA1\|SHA224\|SHA256\|SHA384\|SHA512] | OnlySign/OnlyVerify | 12+ |
-| ECC521 | [SHA1\|SHA224\|SHA256\|SHA384\|SHA512] | OnlySign/OnlyVerify | 12+ |
-| ECC_Secp256k1 | [SHA1\|SHA224\|SHA256\|SHA384\|SHA512] | OnlySign/OnlyVerify | 12+ |
-| ECC | [SHA1\|SHA224\|SHA256\|SHA384\|SHA512] | OnlySign/OnlyVerify | 12+ |
+| ECC192 | [SHA1\|SHA224\|SHA256\|SHA384\|SHA512] | OnlySign/OnlyVerify | 26.1.0+ |
+| ECC224 | [SHA1\|SHA224\|SHA256\|SHA384\|SHA512] | OnlySign/OnlyVerify | 26.1.0+ |
+| ECC256 | [SHA1\|SHA224\|SHA256\|SHA384\|SHA512] | OnlySign/OnlyVerify | 26.1.0+ |
+| ECC384 | [SHA1\|SHA224\|SHA256\|SHA384\|SHA512] | OnlySign/OnlyVerify | 26.1.0+ |
+| ECC521 | [SHA1\|SHA224\|SHA256\|SHA384\|SHA512] | OnlySign/OnlyVerify | 26.1.0+ |
+| ECC_Secp256k1 | [SHA1\|SHA224\|SHA256\|SHA384\|SHA512] | OnlySign/OnlyVerify | 26.1.0+ |
+| ECC | [SHA1\|SHA224\|SHA256\|SHA384\|SHA512] | OnlySign/OnlyVerify | 26.1.0+ |
 
 As shown in the last row of the table, to maintain compatibility with keys generated from key parameters, the ECDSA signature/verification parameter supports omitting the key length and curve. The actual signature/verification operation depends on the actual input key.
 
@@ -213,10 +213,10 @@ DSA signature/verification is performed using string parameters. The specific "s
 
 | Asymmetric Key Type | Digest | API Version |
 | :-------- | :-------- | :-------- |
-| DSA1024 | [NoHash\|SHA1\|SHA224\|SHA256\|SHA384\|SHA512] | 12+ |
-| DSA2048 | [NoHash\|SHA1\|SHA224\|SHA256\|SHA384\|SHA512] | 12+ |
-| DSA3072 | [NoHash\|SHA1\|SHA224\|SHA256\|SHA384\|SHA512] | 12+ |
-| DSA | [NoHash\|SHA1\|SHA224\|SHA256\|SHA384\|SHA512] | 12+ |
+| DSA1024 | [NoHash\|SHA1\|SHA224\|SHA256\|SHA384\|SHA512] | 26.1.0+ |
+| DSA2048 | [NoHash\|SHA1\|SHA224\|SHA256\|SHA384\|SHA512] | 26.1.0+ |
+| DSA3072 | [NoHash\|SHA1\|SHA224\|SHA256\|SHA384\|SHA512] | 26.1.0+ |
+| DSA | [NoHash\|SHA1\|SHA224\|SHA256\|SHA384\|SHA512] | 26.1.0+ |
 
 As shown in the last row of the table, to maintain compatibility with keys generated from key parameters, the DSA signature/verification parameter supports omitting the key length. The actual signature/verification operation depends on the actual input key length.
 
@@ -234,8 +234,8 @@ Currently, SM2 signing only supports the SM3 digest.
 
 | Asymmetric Key Type | Digest | String Parameter | API Version |
 | :-------- | :-------- | :-------- | :-------- |
-| SM2_256 | SM3 | SM2_256\|SM3 | 12+ |
-| SM2 | SM3 | SM2\|SM3 | 12+ |
+| SM2_256 | SM3 | SM2_256\|SM3 | 26.1.0+ |
+| SM2 | SM3 | SM2\|SM3 | 26.1.0+ |
 
 As shown in the last row of the table, to maintain compatibility with keys generated from key parameters, the SM2 signature/verification parameter supports omitting the key length. The actual signature/verification operation depends on the actual input key length.
 
@@ -247,7 +247,7 @@ Ed25519 signature/verification is performed using string parameters, used to spe
 
 | Asymmetric Key Type | String Parameter | API Version |
 | :-------- | :-------- | :-------- |
-| Ed25519 | Ed25519 | 12+ |
+| Ed25519 | Ed25519 | 26.1.0+ |
 
 ## ML-DSA
 
@@ -257,6 +257,6 @@ Create an ML-DSA signature/verification instance using string parameters.
 
 | Asymmetric Key Type | String Parameter | API Version |
 | :-------- | :-------- | :-------- |
-| ML-DSA-44 | ML-DSA-44 | 12+ |
-| ML-DSA-65 | ML-DSA-65 | 12+ |
-| ML-DSA-87 | ML-DSA-87 | 12+ |
+| ML-DSA-44 | ML-DSA-44 | 26.1.0+ |
+| ML-DSA-65 | ML-DSA-65 | 26.1.0+ |
+| ML-DSA-87 | ML-DSA-87 | 26.1.0+ |
