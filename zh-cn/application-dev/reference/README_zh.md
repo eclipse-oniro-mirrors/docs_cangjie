@@ -26,6 +26,7 @@
         - [Network Kit（网络服务）](NetworkKit/README_zh.md)（Beta特性）
     - 基础功能
         - [Basic Services Kit（基础服务）](BasicServicesKit/README_zh.md)（Beta特性）
+        - [Notification Kit（用户通知服务）](NotificationKit/README_zh.md)（Beta特性）
     - 硬件
         - [Sensor Service Kit（传感器服务）](SensorServiceKit/README_zh.md)（Beta特性）
         - [Telephony Kit](TelephonyKit/README_zh.md)（Beta特性）

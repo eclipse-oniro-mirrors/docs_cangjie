@@ -25,6 +25,7 @@
 - [Media Kit API Reference](MediaKit/README.md)(Beta Feature)
 - [Media Library Kit API Reference](MediaLibraryKit/README.md)(Beta Feature)
 - [Network Kit API Reference](NetworkKit/README.md)(Beta Feature)
+- [Notification Kit API Reference](NotificationKit/README.md)(Beta Feature)
 - [Performance Analysis Kit API Reference](PerformanceAnalysisKit/README.md)(Beta Feature)
 - [Sensor Service Kit API Reference](SensorServiceKit/README.md)(Beta Feature)
 - [Telephony Kit API Reference](TelephonyKit/README.md)(Beta Feature)
