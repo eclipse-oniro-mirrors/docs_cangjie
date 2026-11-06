@@ -306,8 +306,9 @@ func testRsaVerifyBySegment() {
 
 The following example uses PSS mode verification:
 
-```cangjie
 <!-- compile -->
+
+```cangjie
 import kit.CryptoArchitectureKit.*
 import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog

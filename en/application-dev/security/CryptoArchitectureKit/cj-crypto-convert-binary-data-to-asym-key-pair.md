@@ -122,8 +122,9 @@ For the corresponding algorithm specifications, see [Asymmetric Key Generation a
 
 The following example uses converting an SM2 key pair:
 
-```cangjie
 <!-- compile -->
+
+```cangjie
 import kit.CryptoArchitectureKit.*
 import kit.CangjieKit.BusinessException
 import kit.CangjieKit.AsyncCallback
