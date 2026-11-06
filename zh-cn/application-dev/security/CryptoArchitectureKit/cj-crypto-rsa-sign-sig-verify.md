@@ -106,8 +106,8 @@ OnlyVerify模式适用于已预先计算摘要的场景，验签时直接传入�
 
 ```cangjie
 import kit.CryptoArchitectureKit.*
-import kit.CangjieKit.AsyncCallback
 import kit.CangjieKit.BusinessException
+import kit.CangjieKit.AsyncCallback
 import kit.PerformanceAnalysisKit.Hilog
 
 func testRsaOnlyVerify() {
@@ -164,12 +164,11 @@ func testRsaOnlyVerify() {
 
 以PKCS1模式签名恢复为例：
 
-<!-- compile -->
-
 ```cangjie
-import kit.CangjieKit.AsyncCallback
+<!-- compile -->
 import kit.CryptoArchitectureKit.*
 import kit.CangjieKit.BusinessException
+import kit.CangjieKit.AsyncCallback
 import kit.PerformanceAnalysisKit.Hilog
 
 func testRsaRecover() {

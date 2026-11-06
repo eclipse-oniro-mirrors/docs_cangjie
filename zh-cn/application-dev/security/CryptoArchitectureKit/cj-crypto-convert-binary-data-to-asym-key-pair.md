@@ -81,8 +81,8 @@ func testConvertRSAKey() {
 
 ```cangjie
 import kit.CryptoArchitectureKit.*
-import kit.CangjieKit.AsyncCallback
 import kit.CangjieKit.BusinessException
+import kit.CangjieKit.AsyncCallback
 import kit.PerformanceAnalysisKit.Hilog
 
 func testConvertECCKey() {
@@ -122,12 +122,11 @@ func testConvertECCKey() {
 
 以转换SM2密钥对为例：
 
-<!-- compile -->
-
 ```cangjie
-import kit.CangjieKit.AsyncCallback
+<!-- compile -->
 import kit.CryptoArchitectureKit.*
 import kit.CangjieKit.BusinessException
+import kit.CangjieKit.AsyncCallback
 import kit.PerformanceAnalysisKit.Hilog
 
 func testConvertSM2Key() {

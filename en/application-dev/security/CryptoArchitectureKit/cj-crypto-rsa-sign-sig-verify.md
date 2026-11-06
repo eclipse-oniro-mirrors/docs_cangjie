@@ -106,8 +106,8 @@ The following example uses OnlyVerify mode verification:
 
 ```cangjie
 import kit.CryptoArchitectureKit.*
-import kit.CangjieKit.AsyncCallback
 import kit.CangjieKit.BusinessException
+import kit.CangjieKit.AsyncCallback
 import kit.PerformanceAnalysisKit.Hilog
 
 func testRsaOnlyVerify() {
@@ -164,12 +164,11 @@ Signature recovery (Recover mode) can recover the original data from the signatu
 
 The following example uses PKCS1 mode signature recovery:
 
-<!-- compile -->
-
 ```cangjie
-import kit.CangjieKit.AsyncCallback
+<!-- compile -->
 import kit.CryptoArchitectureKit.*
 import kit.CangjieKit.BusinessException
+import kit.CangjieKit.AsyncCallback
 import kit.PerformanceAnalysisKit.Hilog
 
 func testRsaRecover() {

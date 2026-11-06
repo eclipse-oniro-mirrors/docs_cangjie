@@ -49,14 +49,14 @@ RSA encryption/decryption is performed using string parameters. The specific "st
 
 | Asymmetric Key Type | String Parameter | API Version |
 | -------- | -------- | -------- |
-| RSA512 | RSA512\|NoPadding | 26.1.0+ |
-| RSA768 | RSA768\|NoPadding | 26.1.0+ |
-| RSA1024 | RSA1024\|NoPadding | 26.1.0+ |
-| RSA2048 | RSA2048\|NoPadding | 26.1.0+ |
-| RSA3072 | RSA3072\|NoPadding | 26.1.0+ |
-| RSA4096 | RSA4096\|NoPadding | 26.1.0+ |
-| RSA8192 | RSA8192\|NoPadding | 26.1.0+ |
-| RSA | RSA\|NoPadding | 26.1.0+ |
+| RSA512 | RSA512\|NoPadding | 12+ |
+| RSA768 | RSA768\|NoPadding | 12+ |
+| RSA1024 | RSA1024\|NoPadding | 12+ |
+| RSA2048 | RSA2048\|NoPadding | 12+ |
+| RSA3072 | RSA3072\|NoPadding | 12+ |
+| RSA4096 | RSA4096\|NoPadding | 12+ |
+| RSA8192 | RSA8192\|NoPadding | 12+ |
+| RSA | RSA\|NoPadding | 12+ |
 
 As shown in the last row of the table, to maintain compatibility with keys generated from key parameters, the RSA encryption/decryption parameter supports omitting the key length. The actual encryption/decryption operation depends on the input key length.
 
@@ -66,14 +66,14 @@ RSA encryption/decryption is performed using string parameters. The specific "st
 
 | Asymmetric Key Type | String Parameter | API Version |
 | -------- | -------- | -------- |
-| RSA512 | RSA512\|PKCS1 | 26.1.0+ |
-| RSA768 | RSA768\|PKCS1 | 26.1.0+ |
-| RSA1024 | RSA1024\|PKCS1 | 26.1.0+ |
-| RSA2048 | RSA2048\|PKCS1 | 26.1.0+ |
-| RSA3072 | RSA3072\|PKCS1 | 26.1.0+ |
-| RSA4096 | RSA4096\|PKCS1 | 26.1.0+ |
-| RSA8192 | RSA8192\|PKCS1 | 26.1.0+ |
-| RSA | RSA\|PKCS1 | 26.1.0+ |
+| RSA512 | RSA512\|PKCS1 | 12+ |
+| RSA768 | RSA768\|PKCS1 | 12+ |
+| RSA1024 | RSA1024\|PKCS1 | 12+ |
+| RSA2048 | RSA2048\|PKCS1 | 12+ |
+| RSA3072 | RSA3072\|PKCS1 | 12+ |
+| RSA4096 | RSA4096\|PKCS1 | 12+ |
+| RSA8192 | RSA8192\|PKCS1 | 12+ |
+| RSA | RSA\|PKCS1 | 12+ |
 
 As shown in the last row of the table, to maintain compatibility with keys generated from key parameters, the RSA encryption/decryption parameter supports omitting the key length. The actual encryption/decryption operation depends on the input key length.
 
@@ -91,49 +91,49 @@ For example, when an RSA key with asymmetric key type RSA2048, padding mode PKCS
 
 | Asymmetric Key Type | Padding Mode | Digest | Mask Digest | API Version |
 | -------- | -------- | -------- | -------- | -------- |
-| RSA512 | PKCS1_OAEP | MD5 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256] | 26.1.0+ |
-| RSA512 | PKCS1_OAEP | SHA1 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256] | 26.1.0+ |
-| RSA512 | PKCS1_OAEP | SHA224 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256] | 26.1.0+ |
-| RSA768 | PKCS1_OAEP | MD5 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 26.1.0+ |
-| RSA768 | PKCS1_OAEP | SHA1 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 26.1.0+ |
-| RSA768 | PKCS1_OAEP | SHA224 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 26.1.0+ |
-| RSA768 | PKCS1_OAEP | SHA256 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384] | 26.1.0+ |
-| RSA1024 | PKCS1_OAEP | MD5 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 26.1.0+ |
-| RSA1024 | PKCS1_OAEP | SHA1 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 26.1.0+ |
-| RSA1024 | PKCS1_OAEP | SHA224 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 26.1.0+ |
-| RSA1024 | PKCS1_OAEP | SHA256 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 26.1.0+ |
-| RSA1024 | PKCS1_OAEP | SHA384 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 26.1.0+ |
-| RSA2048 | PKCS1_OAEP | MD5 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 26.1.0+ |
-| RSA2048 | PKCS1_OAEP | SHA1 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 26.1.0+ |
-| RSA2048 | PKCS1_OAEP | SHA224 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 26.1.0+ |
-| RSA2048 | PKCS1_OAEP | SHA256 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 26.1.0+ |
-| RSA2048 | PKCS1_OAEP | SHA384 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 26.1.0+ |
-| RSA2048 | PKCS1_OAEP | SHA512 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 26.1.0+ |
-| RSA3072 | PKCS1_OAEP | MD5 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 26.1.0+ |
-| RSA3072 | PKCS1_OAEP | SHA1 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 26.1.0+ |
-| RSA3072 | PKCS1_OAEP | SHA224 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 26.1.0+ |
-| RSA3072 | PKCS1_OAEP | SHA256 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 26.1.0+ |
-| RSA3072 | PKCS1_OAEP | SHA384 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 26.1.0+ |
-| RSA3072 | PKCS1_OAEP | SHA512 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 26.1.0+ |
-| RSA4096 | PKCS1_OAEP | MD5 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 26.1.0+ |
-| RSA4096 | PKCS1_OAEP | SHA1 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 26.1.0+ |
-| RSA4096 | PKCS1_OAEP | SHA224 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 26.1.0+ |
-| RSA4096 | PKCS1_OAEP | SHA256 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 26.1.0+ |
-| RSA4096 | PKCS1_OAEP | SHA384 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 26.1.0+ |
-| RSA4096 | PKCS1_OAEP | SHA512 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 26.1.0+ |
-| RSA8192 | PKCS1_OAEP | MD5 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 26.1.0+ |
-| RSA8192 | PKCS1_OAEP | SHA1 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 26.1.0+ |
-| RSA8192 | PKCS1_OAEP | SHA224 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 26.1.0+ |
-| RSA8192 | PKCS1_OAEP | SHA256 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 26.1.0+ |
-| RSA8192 | PKCS1_OAEP | SHA384 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 26.1.0+ |
-| RSA8192 | PKCS1_OAEP | SHA512 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 26.1.0+ |
-| RSA | PKCS1_OAEP | Digest algorithm meeting length requirements | MGF1_Digest algorithm meeting length requirements | 26.1.0+ |
+| RSA512 | PKCS1_OAEP | MD5 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256] | 12+ |
+| RSA512 | PKCS1_OAEP | SHA1 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256] | 12+ |
+| RSA512 | PKCS1_OAEP | SHA224 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256] | 12+ |
+| RSA768 | PKCS1_OAEP | MD5 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 12+ |
+| RSA768 | PKCS1_OAEP | SHA1 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 12+ |
+| RSA768 | PKCS1_OAEP | SHA224 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 12+ |
+| RSA768 | PKCS1_OAEP | SHA256 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384] | 12+ |
+| RSA1024 | PKCS1_OAEP | MD5 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 12+ |
+| RSA1024 | PKCS1_OAEP | SHA1 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 12+ |
+| RSA1024 | PKCS1_OAEP | SHA224 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 12+ |
+| RSA1024 | PKCS1_OAEP | SHA256 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 12+ |
+| RSA1024 | PKCS1_OAEP | SHA384 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 12+ |
+| RSA2048 | PKCS1_OAEP | MD5 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 12+ |
+| RSA2048 | PKCS1_OAEP | SHA1 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 12+ |
+| RSA2048 | PKCS1_OAEP | SHA224 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 12+ |
+| RSA2048 | PKCS1_OAEP | SHA256 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 12+ |
+| RSA2048 | PKCS1_OAEP | SHA384 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 12+ |
+| RSA2048 | PKCS1_OAEP | SHA512 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 12+ |
+| RSA3072 | PKCS1_OAEP | MD5 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 12+ |
+| RSA3072 | PKCS1_OAEP | SHA1 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 12+ |
+| RSA3072 | PKCS1_OAEP | SHA224 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 12+ |
+| RSA3072 | PKCS1_OAEP | SHA256 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 12+ |
+| RSA3072 | PKCS1_OAEP | SHA384 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 12+ |
+| RSA3072 | PKCS1_OAEP | SHA512 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 12+ |
+| RSA4096 | PKCS1_OAEP | MD5 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 12+ |
+| RSA4096 | PKCS1_OAEP | SHA1 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 12+ |
+| RSA4096 | PKCS1_OAEP | SHA224 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 12+ |
+| RSA4096 | PKCS1_OAEP | SHA256 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 12+ |
+| RSA4096 | PKCS1_OAEP | SHA384 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 12+ |
+| RSA4096 | PKCS1_OAEP | SHA512 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 12+ |
+| RSA8192 | PKCS1_OAEP | MD5 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 12+ |
+| RSA8192 | PKCS1_OAEP | SHA1 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 12+ |
+| RSA8192 | PKCS1_OAEP | SHA224 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 12+ |
+| RSA8192 | PKCS1_OAEP | SHA256 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 12+ |
+| RSA8192 | PKCS1_OAEP | SHA384 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 12+ |
+| RSA8192 | PKCS1_OAEP | SHA512 | [MGF1_MD5\|MGF1_SHA1\|MGF1_SHA224\|MGF1_SHA256\|MGF1_SHA384\|MGF1_SHA512] | 12+ |
+| RSA | PKCS1_OAEP | Digest algorithm meeting length requirements | MGF1_Digest algorithm meeting length requirements | 12+ |
 
 As shown in the last row of the table, to maintain compatibility with keys generated from key parameters, the RSA encryption/decryption parameter supports omitting the key length. The actual encryption/decryption operation depends on the input key length.
 
 ### Retrieving/Setting OAEP Padding Mode Parameters
 
-Starting from API version 26.1.0, RSA supports retrieving and setting related parameters when using PKCS1_OAEP padding mode. "√" indicates support for retrieving or setting the parameter.
+Starting from API version 12, RSA supports retrieving and setting related parameters when using PKCS1_OAEP padding mode. "√" indicates support for retrieving or setting the parameter.
 
 | OAEP Parameter | Enum Value | Retrieve | Set |
 | -------- | -------- | -------- | -------- |
@@ -156,14 +156,14 @@ For example, when an SM2 key with key length 256 bits and digest algorithm MD5 i
 
 | Asymmetric Key Type | Digest Algorithm | API Version |
 | -------- | -------- | -------- |
-| SM2_256 | [MD5\|SHA1\|SHA224\|SHA256\|SHA384\|SHA512\|SM3] | 26.1.0+ |
-| SM2 | [MD5\|SHA1\|SHA224\|SHA256\|SHA384\|SHA512\|SM3] | 26.1.0+ |
+| SM2_256 | [MD5\|SHA1\|SHA224\|SHA256\|SHA384\|SHA512\|SM3] | 12+ |
+| SM2 | [MD5\|SHA1\|SHA224\|SHA256\|SHA384\|SHA512\|SM3] | 12+ |
 
 As shown in the last row of the table, to maintain compatibility with keys generated from key parameters, the SM2 encryption/decryption parameter supports omitting the key length. The actual encryption/decryption operation depends on the actual input key length.
 
 ### Retrieving SM2 Digest Algorithm Parameters
 
-Starting from API version 26.1.0, SM2 supports retrieving digest algorithm parameters. "√" indicates support for retrieving or setting the parameter.
+Starting from API version 12, SM2 supports retrieving digest algorithm parameters. "√" indicates support for retrieving or setting the parameter.
 
 | SM2 Encryption/Decryption Parameter | Enum Value | Retrieve | Set |
 | --------  | -------- | -------- | -------- |
@@ -171,7 +171,7 @@ Starting from API version 26.1.0, SM2 supports retrieving digest algorithm param
 
 ### Converting SM2 Ciphertext Format
 
-Starting from API version 26.1.0, SM2 format conversion is supported. The currently supported SM2 ciphertext format is the ASN.1 format of the national cryptographic standard, where the parameter combination order is C1C3C2.
+Starting from API version 12, SM2 format conversion is supported. The currently supported SM2 ciphertext format is the ASN.1 format of the national cryptographic standard, where the parameter combination order is C1C3C2.
 
 Developers can specify SM2 ciphertext parameters and convert them into ASN.1 format ciphertext that complies with the national cryptographic standard. Conversely, specific SM2 ciphertext parameters can also be extracted from the ASN.1 format ciphertext of the national cryptographic standard, allowing developers to assemble them into other SM2 ciphertext formats.
 

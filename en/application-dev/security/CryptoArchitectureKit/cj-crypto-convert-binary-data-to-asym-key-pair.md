@@ -81,8 +81,8 @@ The following example uses converting an ECC key pair:
 
 ```cangjie
 import kit.CryptoArchitectureKit.*
-import kit.CangjieKit.AsyncCallback
 import kit.CangjieKit.BusinessException
+import kit.CangjieKit.AsyncCallback
 import kit.PerformanceAnalysisKit.Hilog
 
 func testConvertECCKey() {
@@ -122,12 +122,11 @@ For the corresponding algorithm specifications, see [Asymmetric Key Generation a
 
 The following example uses converting an SM2 key pair:
 
-<!-- compile -->
-
 ```cangjie
-import kit.CangjieKit.AsyncCallback
+<!-- compile -->
 import kit.CryptoArchitectureKit.*
 import kit.CangjieKit.BusinessException
+import kit.CangjieKit.AsyncCallback
 import kit.PerformanceAnalysisKit.Hilog
 
 func testConvertSM2Key() {
