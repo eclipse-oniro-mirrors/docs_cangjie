@@ -998,6 +998,84 @@ try {
 }
 ```
 
+### static func createWatcher(String, UInt32, WatchEventListener)
+
+```cangjie
+public static func createWatcher(path: String, events: UInt32, listener: WatchEventListener): Watcher
+```
+
+**Function:** Creates a **Watcher** object to listen for file or directory changes such as creating, deleting, and modifying.
+
+**System Capability:** SystemCapability.FileManagement.File.FileIO
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+| Parameter | Type | Required | Default Value | Description |
+|:---|:---|:---|:---|:---|
+| path | String | Yes | - | Application sandbox path of the file or directory to observe. |
+| events | UInt32 | Yes | - | Events to observe. Multiple events can be separated by vertical bars (\|).<br/>-&nbsp;**0x1: IN_ACCESS**: A file is accessed.<br/>-&nbsp;**0x2: IN_MODIFY**: The file content is modified.<br/>-&nbsp;**0x4: IN_ATTRIB**: The file metadata is modified.<br/>-&nbsp;**0x8: IN_CLOSE_WRITE**: A file is opened, written with data, and then closed.<br/>-&nbsp;**0x10: IN_CLOSE_NOWRITE**: A file or directory is opened and then closed without data written.<br/>-&nbsp;**0x20: IN_OPEN**: A file or directory is opened.<br/>-&nbsp;**0x40: IN_MOVED_FROM**: A file in the observed directory is moved.<br/>-&nbsp;**0x80: IN_MOVED_TO**: A file is moved to the observed directory.<br/>-&nbsp;**0x100: IN_CREATE**: A file or directory is created in the observed directory.<br/>-&nbsp;**0x200: IN_DELETE**: A file or directory is deleted from the observed directory.<br/>-&nbsp;**0x400: IN_DELETE_SELF**: The observed directory is deleted. After the directory is deleted, the listening stops.<br/>-&nbsp;**0x800: IN_MOVE_SELF**: The observed file or directory is moved. After the file or directory is moved, the listening continues.<br/>-&nbsp;**0xfff: IN_ALL_EVENTS**: All events. |
+| listener | [WatchEventListener](#class-watcheventlistener) | Yes | - | Callback invoked when an observed event occurs. The callback will be invoked each time an observed event occurs. |
+
+**Return Value:**
+
+| Type | Description |
+|:----|:----|
+| [Watcher](#class-watcher) | Returns a **Watcher** object. |
+
+**Exceptions:**
+
+- BusinessException: Corresponding error codes are listed below. For details, see [File Management Error Codes](./cj-errorcode-filemanagement.md).
+
+  | Error Code ID | Error Message |
+  | :---- | :--- |
+  | 13900002 | No such file or directory |
+  | 13900008 | Bad file descriptor |
+  | 13900011 | Out of memory |
+  | 13900012 | Permission denied |
+  | 13900013 | Bad address |
+  | 13900015 | File exists |
+  | 13900018 | Not a directory |
+  | 13900020 | Invalid argument |
+  | 13900021 | File table overflow |
+  | 13900022 | Too many open files |
+  | 13900025 | No space left on device |
+  | 13900030 | File name too long |
+  | 13900042 | Unknown error |
+
+**Example:**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.CoreFileKit.*
+import kit.CangjieKit.*
+import kit.PerformanceAnalysisKit.Hilog
+
+try {
+    let pathDir = "path/to/file"  // Replace with correct file path. Refer to usage instructions for obtaining file path
+    let filePath = pathDir + "/test.txt"
+    let file = FileIo.open(filePath, mode: (OpenMode.READ_WRITE | OpenMode.CREATE))
+    let listener = WatchEventListener({ watchEvent: WatchEvent =>
+        if (watchEvent.event == 0x2) {
+            Hilog.info(0, "test", "${watchEvent.fileName} was modified", "")
+        } else if (watchEvent.event == 0x10) {
+            Hilog.info(0, "test", "${watchEvent.fileName} was closed", "")
+        }
+    })
+    let watcher = FileIo.createWatcher(filePath, 0x2 | 0x10, listener)
+    watcher.start()
+    FileIo.write(file.fd, "test")
+    FileIo.close(file)
+    watcher.stop()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
 ### static func dup(Int32)
 
 ```cangjie
@@ -4450,6 +4528,244 @@ try {
     Hilog.info(0, "test", "${e.message}")
 }
 ```
+
+## class Watcher
+
+```cangjie
+public class Watcher {}
+```
+
+**Function:** Object for listening for file or directory changes. It is obtained through the [createWatcher](#static-func-createwatcherstring-uint32-watcheventlistener) interface.
+
+**System Capability:** SystemCapability.FileManagement.File.FileIO
+
+**Since:** 26.1.0
+
+### func start()
+
+```cangjie
+public func start(): Unit
+```
+
+**Function:** Starts listening for file or directory change events.
+
+**System Capability:** SystemCapability.FileManagement.File.FileIO
+
+**Since:** 26.1.0
+
+**Exceptions:**
+
+- BusinessException: Corresponding error codes are listed below. For details, see [File Management Error Codes](./cj-errorcode-filemanagement.md).
+
+  | Error Code ID | Error Message |
+  | :---- | :--- |
+  | 13900002 | No such file or directory |
+  | 13900005 | I/O error |
+  | 13900008 | Bad file descriptor |
+  | 13900011 | Out of memory |
+  | 13900012 | Permission denied |
+  | 13900013 | Bad address |
+  | 13900015 | File exists |
+  | 13900018 | Not a directory |
+  | 13900020 | Invalid argument |
+  | 13900021 | File table overflow |
+  | 13900022 | Too many open files |
+  | 13900025 | No space left on device |
+  | 13900030 | File name too long |
+  | 13900042 | Unknown error |
+
+**Example:**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.CoreFileKit.*
+import kit.CangjieKit.*
+import kit.PerformanceAnalysisKit.Hilog
+
+try {
+    let pathDir = "path/to/file"  // Replace with correct file path. Refer to usage instructions for obtaining file path
+    let filePath = pathDir + "/test.txt"
+    let listener = WatchEventListener({ watchEvent: WatchEvent =>
+        Hilog.info(0, "test", "${watchEvent.fileName} changed", "")
+    })
+    let watcher = FileIo.createWatcher(filePath, 0xfff, listener)
+    watcher.start()
+    watcher.stop()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
+### func stop()
+
+```cangjie
+public func stop(): Unit
+```
+
+**Function:** Stops listening for file or directory change events and removes the **Watcher** object.
+
+**System Capability:** SystemCapability.FileManagement.File.FileIO
+
+**Since:** 26.1.0
+
+**Exceptions:**
+
+- BusinessException: Corresponding error codes are listed below. For details, see [File Management Error Codes](./cj-errorcode-filemanagement.md).
+
+  | Error Code ID | Error Message |
+  | :---- | :--- |
+  | 13900002 | No such file or directory |
+  | 13900005 | I/O error |
+  | 13900008 | Bad file descriptor |
+  | 13900011 | Out of memory |
+  | 13900012 | Permission denied |
+  | 13900013 | Bad address |
+  | 13900015 | File exists |
+  | 13900018 | Not a directory |
+  | 13900020 | Invalid argument |
+  | 13900021 | File table overflow |
+  | 13900022 | Too many open files |
+  | 13900025 | No space left on device |
+  | 13900030 | File name too long |
+  | 13900042 | Unknown error |
+
+**Example:**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.CoreFileKit.*
+import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
+
+try {
+    let pathDir = "path/to/file"  // Replace with correct file path. Refer to usage instructions for obtaining file path
+    let filePath = pathDir + "/test.txt"
+    let listener = WatchEventListener({ watchEvent: WatchEvent =>
+        Hilog.info(0, "test", "${watchEvent.fileName} changed", "")
+    })
+    let watcher = FileIo.createWatcher(filePath, 0xfff, listener)
+    watcher.start()
+    watcher.stop()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
+## class WatchEvent
+
+```cangjie
+public class WatchEvent {}
+```
+
+**Function:** Event interface.
+
+**System Capability:** SystemCapability.FileManagement.File.FileIO
+
+**Since:** 26.1.0
+
+### prop cookie
+
+```cangjie
+public prop cookie: UInt32
+```
+
+**Description:** Cookie bound with the event. Currently, only the **IN_MOVED_FROM** and **IN_MOVED_TO** events are supported. The **IN_MOVED_FROM** and **IN_MOVED_TO** events of the same file have the same **cookie** value.
+
+**Type:** UInt32
+
+**Read/Write Attribute:** Read-only
+
+**System Capability:** SystemCapability.FileManagement.File.FileIO
+
+**Since:** 26.1.0
+
+### prop event
+
+```cangjie
+public prop event: UInt32
+```
+
+**Description:** Events to observe. Multiple events can be separated by vertical bars (|).<br/>-&nbsp;**0x1: IN_ACCESS**: A file is accessed.<br/>-&nbsp;**0x2: IN_MODIFY**: The file content is modified.<br/>-&nbsp;**0x4: IN_ATTRIB**: The file metadata is modified.<br/>-&nbsp;**0x8: IN_CLOSE_WRITE**: A file is opened, written with data, and then closed.<br/>-&nbsp;**0x10: IN_CLOSE_NOWRITE**: A file or directory is opened and then closed without data written.<br/>-&nbsp;**0x20: IN_OPEN**: A file or directory is opened.<br/>-&nbsp;**0x40: IN_MOVED_FROM**: A file in the observed directory is moved.<br/>-&nbsp;**0x80: IN_MOVED_TO**: A file is moved to the observed directory.<br/>-&nbsp;**0x100: IN_CREATE**: A file or directory is created in the observed directory.<br/>-&nbsp;**0x200: IN_DELETE**: A file or directory is deleted from the observed directory.<br/>-&nbsp;**0x400: IN_DELETE_SELF**: The observed directory is deleted. After the directory is deleted, the listening stops.<br/>-&nbsp;**0x800: IN_MOVE_SELF**: The observed file or directory is moved. After the file or directory is moved, the listening continues.<br/>-&nbsp;**0xfff: IN_ALL_EVENTS**: All events.
+
+**Type:** UInt32
+
+**Read/Write Attribute:** Read-only
+
+**System Capability:** SystemCapability.FileManagement.File.FileIO
+
+**Since:** 26.1.0
+
+### prop fileName
+
+```cangjie
+public prop fileName: String
+```
+
+**Description:** Sandbox path of the file to observe. The sandbox path contains the file name.
+
+**Type:** String
+
+**Read/Write Attribute:** Read-only
+
+**System Capability:** SystemCapability.FileManagement.File.FileIO
+
+**Since:** 26.1.0
+
+### init(String, UInt32, UInt32)
+
+```cangjie
+public init(fileName: String, event: UInt32, cookie: UInt32)
+```
+
+**Function:** Constructs a WatchEvent object.
+
+**System Capability:** SystemCapability.FileManagement.File.FileIO
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+| Parameter | Type | Required | Default Value | Description |
+|:---|:---|:---|:---|:---|
+| fileName | String | Yes | - | Sandbox path of the file to observe. The sandbox path contains the file name. |
+| event | UInt32 | Yes | - | Events to observe. Multiple events can be separated by vertical bars (\|).<br/>-&nbsp;**0x1: IN_ACCESS**: A file is accessed.<br/>-&nbsp;**0x2: IN_MODIFY**: The file content is modified.<br/>-&nbsp;**0x4: IN_ATTRIB**: The file metadata is modified.<br/>-&nbsp;**0x8: IN_CLOSE_WRITE**: A file is opened, written with data, and then closed.<br/>-&nbsp;**0x10: IN_CLOSE_NOWRITE**: A file or directory is opened and then closed without data written.<br/>-&nbsp;**0x20: IN_OPEN**: A file or directory is opened.<br/>-&nbsp;**0x40: IN_MOVED_FROM**: A file in the observed directory is moved.<br/>-&nbsp;**0x80: IN_MOVED_TO**: A file is moved to the observed directory.<br/>-&nbsp;**0x100: IN_CREATE**: A file or directory is created in the observed directory.<br/>-&nbsp;**0x200: IN_DELETE**: A file or directory is deleted from the observed directory.<br/>-&nbsp;**0x400: IN_DELETE_SELF**: The observed directory is deleted. After the directory is deleted, the listening stops.<br/>-&nbsp;**0x800: IN_MOVE_SELF**: The observed file or directory is moved. After the file or directory is moved, the listening continues.<br/>-&nbsp;**0xfff: IN_ALL_EVENTS**: All events. |
+| cookie | UInt32 | Yes | - | Cookie bound with the event. Currently, only the **IN_MOVED_FROM** and **IN_MOVED_TO** events are supported. The **IN_MOVED_FROM** and **IN_MOVED_TO** events of the same file have the same **cookie** value. |
+
+## class WatchEventListener
+
+```cangjie
+public class WatchEventListener {}
+```
+
+**Function:** Defines a watch event listener API. When the monitored file or directory changes, a callback is triggered.
+
+**System Capability:** SystemCapability.FileManagement.File.FileIO
+
+**Since:** 26.1.0
+
+### init((WatchEvent) -> Unit)
+
+```cangjie
+public init(callback: (WatchEvent) -> Unit)
+```
+
+**Function:** Constructs a WatchEventListener object. The callback is invoked each time an observed event occurs.
+
+**System Capability:** SystemCapability.FileManagement.File.FileIO
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+| Parameter | Type | Required | Default Value | Description |
+|:---|:---|:---|:---|:---|
+| callback | (WatchEvent) -> Unit | Yes | - | Callback invoked when an observed event occurs. The callback will be invoked each time an observed event occurs. |
 
 ## class WriteOptions
 

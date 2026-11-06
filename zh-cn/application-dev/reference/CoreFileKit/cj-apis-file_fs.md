@@ -1059,6 +1059,84 @@ try {
 }
 ```
 
+### static func createWatcher(String, UInt32, WatchEventListener)
+
+```cangjie
+public static func createWatcher(path: String, events: UInt32, listener: WatchEventListener): Watcher
+```
+
+**功能：** 创建Watcher对象，用于监听文件或目录的创建、删除、修改等变动事件。
+
+**系统能力：** SystemCapability.FileManagement.File.FileIO
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|path|String|是|-|监听文件或目录的应用沙箱路径。|
+|events|UInt32|是|-|监听变动的事件集，多个事件通过或(\|)的方式进行集合。<br/>-&nbsp;0x1: IN_ACCESS， 文件被访问。<br/>-&nbsp;0x2: IN_MODIFY，文件内容被修改。<br/>-&nbsp;0x4: IN_ATTRIB，文件元数据被修改。<br/>-&nbsp;0x8: IN_CLOSE_WRITE，文件在打开时进行了写操作，然后被关闭。<br/>-&nbsp;0x10: IN_CLOSE_NOWRITE，文件或目录在打开时未进行写操作，然后被关闭。<br/>-&nbsp;0x20: IN_OPEN，文件或目录被打开。 <br/>-&nbsp;0x40: IN_MOVED_FROM，监听目录中文件被移动走。<br/>-&nbsp;0x80: IN_MOVED_TO，监听目录中文件被移动过来。<br/>-&nbsp;0x100: IN_CREATE，监听目录中文件或子目录被创建。<br/>-&nbsp;0x200: IN_DELETE，监听目录中文件或子目录被删除。<br/>-&nbsp;0x400: IN_DELETE_SELF，监听的目录被删除，删除后监听停止。<br/>-&nbsp;0x800: IN_MOVE_SELF，监听的文件或目录被移动，移动后监听继续。<br/>-&nbsp;0xfff: IN_ALL_EVENTS，监听以上所有事件。|
+|listener|[WatchEventListener](#class-watcheventlistener)|是|-|监听事件发生后的回调。监听事件每发生一次，回调一次。|
+
+**返回值：**
+
+|类型|说明|
+|:----|:----|
+|[Watcher](#class-watcher)|返回Watcher对象。|
+
+**异常：**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[文件管理错误码](./cj-errorcode-filemanagement.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :---- |
+  | 13900002 | No such file or directory. |
+  | 13900008 | Bad file descriptor. |
+  | 13900011 | Out of memory. |
+  | 13900012 | Permission denied. |
+  | 13900013 | Bad address. |
+  | 13900015 | File exists. |
+  | 13900018 | Not a directory. |
+  | 13900020 | Invalid argument. |
+  | 13900021 | File table overflow. |
+  | 13900022 | Too many open files. |
+  | 13900025 | No space left on device. |
+  | 13900030 | File name too long. |
+  | 13900042 | Unknown error. |
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.CoreFileKit.*
+import kit.CangjieKit.*
+import kit.PerformanceAnalysisKit.Hilog
+
+try {
+    let pathDir = "path/to/file"  // 请替换正确的文件路径，获取文件路径参考本文使用说明
+    let filePath = pathDir + "/test.txt"
+    let file = FileIo.open(filePath, mode: (OpenMode.READ_WRITE | OpenMode.CREATE))
+    let listener = WatchEventListener({ watchEvent: WatchEvent =>
+        if (watchEvent.event == 0x2) {
+            Hilog.info(0, "test", "${watchEvent.fileName} was modified", "")
+        } else if (watchEvent.event == 0x10) {
+            Hilog.info(0, "test", "${watchEvent.fileName} was closed", "")
+        }
+    })
+    let watcher = FileIo.createWatcher(filePath, 0x2 | 0x10, listener)
+    watcher.start()
+    FileIo.write(file.fd, "test")
+    FileIo.close(file)
+    watcher.stop()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
 ### static func dup(Int32)
 
 ```cangjie
@@ -4614,6 +4692,244 @@ try {
     Hilog.info(0, "test", "${e.message}")
 }
 ```
+
+## class Watcher
+
+```cangjie
+public class Watcher {}
+```
+
+**功能：** 文件目录变化监听对象。由[createWatcher](#static-func-createwatcherstring-uint32-watcheventlistener)接口获得。
+
+**系统能力：** SystemCapability.FileManagement.File.FileIO
+
+**起始版本：** 26.1.0
+
+### func start()
+
+```cangjie
+public func start(): Unit
+```
+
+**功能：** 开启监听文件或目录变动事件。
+
+**系统能力：** SystemCapability.FileManagement.File.FileIO
+
+**起始版本：** 26.1.0
+
+**异常：**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[文件管理错误码](./cj-errorcode-filemanagement.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :---- |
+  | 13900002 | No such file or directory. |
+  | 13900005 | I/O error. |
+  | 13900008 | Bad file descriptor. |
+  | 13900011 | Out of memory. |
+  | 13900012 | Permission denied. |
+  | 13900013 | Bad address. |
+  | 13900015 | File exists. |
+  | 13900018 | Not a directory. |
+  | 13900020 | Invalid argument. |
+  | 13900021 | File table overflow. |
+  | 13900022 | Too many open files. |
+  | 13900025 | No space left on device. |
+  | 13900030 | File name too long. |
+  | 13900042 | Unknown error. |
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.CoreFileKit.*
+import kit.CangjieKit.*
+import kit.PerformanceAnalysisKit.Hilog
+
+try {
+    let pathDir = "path/to/file"  // 请替换正确的文件路径，获取文件路径参考本文使用说明
+    let filePath = pathDir + "/test.txt"
+    let listener = WatchEventListener({ watchEvent: WatchEvent =>
+        Hilog.info(0, "test", "${watchEvent.fileName} changed", "")
+    })
+    let watcher = FileIo.createWatcher(filePath, 0xfff, listener)
+    watcher.start()
+    watcher.stop()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
+### func stop()
+
+```cangjie
+public func stop(): Unit
+```
+
+**功能：** 停止监听文件或目录变动事件并移除Watcher对象。
+
+**系统能力：** SystemCapability.FileManagement.File.FileIO
+
+**起始版本：** 26.1.0
+
+**异常：**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[文件管理错误码](./cj-errorcode-filemanagement.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :---- |
+  | 13900002 | No such file or directory. |
+  | 13900005 | I/O error. |
+  | 13900008 | Bad file descriptor. |
+  | 13900011 | Out of memory. |
+  | 13900012 | Permission denied. |
+  | 13900013 | Bad address. |
+  | 13900015 | File exists. |
+  | 13900018 | Not a directory. |
+  | 13900020 | Invalid argument. |
+  | 13900021 | File table overflow. |
+  | 13900022 | Too many open files. |
+  | 13900025 | No space left on device. |
+  | 13900030 | File name too long. |
+  | 13900042 | Unknown error. |
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.CoreFileKit.*
+import kit.CangjieKit.*
+import kit.PerformanceAnalysisKit.Hilog
+
+try {
+    let pathDir = "path/to/file"  // 请替换正确的文件路径，获取文件路径参考本文使用说明
+    let filePath = pathDir + "/test.txt"
+    let listener = WatchEventListener({ watchEvent: WatchEvent =>
+        Hilog.info(0, "test", "${watchEvent.fileName} changed", "")
+    })
+    let watcher = FileIo.createWatcher(filePath, 0xfff, listener)
+    watcher.start()
+    watcher.stop()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
+## class WatchEvent
+
+```cangjie
+public class WatchEvent {}
+```
+
+**功能：** 事件接口。
+
+**系统能力：** SystemCapability.FileManagement.File.FileIO
+
+**起始版本：** 26.1.0
+
+### prop cookie
+
+```cangjie
+public prop cookie: UInt32
+```
+
+**功能：** 绑定相关事件的cookie。当前仅支持事件IN_MOVED_FROM与IN_MOVED_TO，同一个文件的移动事件IN_MOVED_FROM和IN_MOVED_TO具有相同的cookie值。
+
+**类型：** UInt32
+
+**读写能力：** 只读
+
+**系统能力：** SystemCapability.FileManagement.File.FileIO
+
+**起始版本：** 26.1.0
+
+### prop event
+
+```cangjie
+public prop event: UInt32
+```
+
+**功能：** 监听变动的事件集，多个事件通过或(|)的方式进行集合。<br/>-&nbsp;0x1: IN_ACCESS， 文件被访问。<br/>-&nbsp;0x2: IN_MODIFY，文件内容被修改。<br/>-&nbsp;0x4: IN_ATTRIB，文件元数据被修改。<br/>-&nbsp;0x8: IN_CLOSE_WRITE，文件在打开时进行了写操作，然后被关闭。<br/>-&nbsp;0x10: IN_CLOSE_NOWRITE，文件或目录在打开时未进行写操作，然后被关闭。<br/>-&nbsp;0x20: IN_OPEN，文件或目录被打开。 <br/>-&nbsp;0x40: IN_MOVED_FROM，监听目录中文件被移动走。<br/>-&nbsp;0x80: IN_MOVED_TO，监听目录中文件被移动过来。<br/>-&nbsp;0x100: IN_CREATE，监听目录中文件或子目录被创建。<br/>-&nbsp;0x200: IN_DELETE，监听目录中文件或子目录被删除。<br/>-&nbsp;0x400: IN_DELETE_SELF，监听的目录被删除，删除后监听停止。<br/>-&nbsp;0x800: IN_MOVE_SELF，监听的文件或目录被移动，移动后监听继续。<br/>-&nbsp;0xfff: IN_ALL_EVENTS，监听以上所有事件。
+
+**类型：** UInt32
+
+**读写能力：** 只读
+
+**系统能力：** SystemCapability.FileManagement.File.FileIO
+
+**起始版本：** 26.1.0
+
+### prop fileName
+
+```cangjie
+public prop fileName: String
+```
+
+**功能：** 发生监听事件对应文件的沙箱路径，该沙箱路径包含文件名称。
+
+**类型：** String
+
+**读写能力：** 只读
+
+**系统能力：** SystemCapability.FileManagement.File.FileIO
+
+**起始版本：** 26.1.0
+
+### init(String, UInt32, UInt32)
+
+```cangjie
+public init(fileName: String, event: UInt32, cookie: UInt32)
+```
+
+**功能：** 构造WatchEvent对象。
+
+**系统能力：** SystemCapability.FileManagement.File.FileIO
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|fileName|String|是|-|发生监听事件对应文件的沙箱路径，该沙箱路径包含文件名称。|
+|event|UInt32|是|-|监听变动的事件集，多个事件通过或(\|)的方式进行集合。<br/>-&nbsp;0x1: IN_ACCESS， 文件被访问。<br/>-&nbsp;0x2: IN_MODIFY，文件内容被修改。<br/>-&nbsp;0x4: IN_ATTRIB，文件元数据被修改。<br/>-&nbsp;0x8: IN_CLOSE_WRITE，文件在打开时进行了写操作，然后被关闭。<br/>-&nbsp;0x10: IN_CLOSE_NOWRITE，文件或目录在打开时未进行写操作，然后被关闭。<br/>-&nbsp;0x20: IN_OPEN，文件或目录被打开。 <br/>-&nbsp;0x40: IN_MOVED_FROM，监听目录中文件被移动走。<br/>-&nbsp;0x80: IN_MOVED_TO，监听目录中文件被移动过来。<br/>-&nbsp;0x100: IN_CREATE，监听目录中文件或子目录被创建。<br/>-&nbsp;0x200: IN_DELETE，监听目录中文件或子目录被删除。<br/>-&nbsp;0x400: IN_DELETE_SELF，监听的目录被删除，删除后监听停止。<br/>-&nbsp;0x800: IN_MOVE_SELF，监听的文件或目录被移动，移动后监听继续。<br/>-&nbsp;0xfff: IN_ALL_EVENTS，监听以上所有事件。|
+|cookie|UInt32|是|-|绑定相关事件的cookie。当前仅支持事件IN_MOVED_FROM与IN_MOVED_TO，同一个文件的移动事件IN_MOVED_FROM和IN_MOVED_TO具有相同的cookie值。|
+
+## class WatchEventListener
+
+```cangjie
+public class WatchEventListener {}
+```
+
+**功能：** 事件监听接口，当监听的文件或目录发生变动事件时触发回调。
+
+**系统能力：** SystemCapability.FileManagement.File.FileIO
+
+**起始版本：** 26.1.0
+
+### init((WatchEvent) -> Unit)
+
+```cangjie
+public init(callback: (WatchEvent) -> Unit)
+```
+
+**功能：** 构造WatchEventListener对象。监听事件每发生一次，回调一次。
+
+**系统能力：** SystemCapability.FileManagement.File.FileIO
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|callback|(WatchEvent) -> Unit|是|-|监听事件发生后的回调。监听事件每发生一次，回调一次。|
 
 ## class WriteOptions
 
