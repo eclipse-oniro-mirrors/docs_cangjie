@@ -72,7 +72,7 @@ Using the example of converting Gregorian dates to Lunar calendar dates, this se
     import std.time.DateTime as d
 
     let calendar: Calendar = getCalendar('zh-Hans', calendarType: CalendarType.Chinese)
-    // Set Gregorian date information to the calendar object (2023.07.25 08:00:00)
+    // Set Gregorian date information to the calendar object (2023.08.25 08:00:00)
     calendar.set(2023, 7,  25, hour:8, minute:0)
     // Get Lunar calendar year, month, and day
     let year: Int32 = calendar.get('year') // year = 40, representing the 40th year in the sexagenary cycle (range: 1-60)

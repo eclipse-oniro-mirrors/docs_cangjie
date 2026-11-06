@@ -898,18 +898,17 @@ try {
         let watcher= Watcher("watcher", triggerCondition: condition,
                  onTrigger: {row, size, holder =>
                     Hilog.info(0, "AppLogCj", "HiAppEvent onTrigger: curRow=${row}, curSize=${size}", "")},
-                 onReceive: {domain, AppEventGroups =>
+                 onReceive: {domain, appEventGroups =>
                     Hilog.info(0, "AppLogCj", "domain =${domain}")
-                    let groupSize = AppEventGroups.size
+                    let groupSize = appEventGroups.size
                     for (i in 0..groupSize) {
-                        Hilog.info(0, "AppLogCj", "name =${AppEventGroups[i].name}", "")
-                        let appInfosize = AppEventGroups[i].appEventInfos.size
+                        Hilog.info(0, "AppLogCj", "name =${appEventGroups[i].name}", "")
+                        let appInfosize = appEventGroups[i].appEventInfos.size
                         for (j in 0..appInfosize) {
-                            Hilog.info(0, "AppLogCj", "appEventInfo name=${AppEventGroups[i].appEventInfos[j].name}", "")
-                            Hilog.info(0, "AppLogCj", "appEventInfo domain=${AppEventGroups[i].appEventInfos[j].domain}", "")
-                            Hilog.info(0, "AppLogCj", "appEventInfo event=${AppEventGroups[i].appEventInfos[j].eventType.getValue()}", "")
-                            let paSize = AppEventGroups[i].appEventInfos[j].params.size
-                            for ((k, v) in AppEventGroups[i].appEventInfos[j].params) {
+                            Hilog.info(0, "AppLogCj", "appEventInfo name=${appEventGroups[i].appEventInfos[j].name}", "")
+                            Hilog.info(0, "AppLogCj", "appEventInfo domain=${appEventGroups[i].appEventInfos[j].domain}", "")
+                            let paSize = appEventGroups[i].appEventInfos[j].params.size
+                            for ((k, v) in appEventGroups[i].appEventInfos[j].params) {
                                 Hilog.info(0x0000, "HiAppEnvent", "key=${k}", "")
                                 Hilog.info(0x0000, "HiAppEnvent", "value=${v.toString()}", "")
                             }

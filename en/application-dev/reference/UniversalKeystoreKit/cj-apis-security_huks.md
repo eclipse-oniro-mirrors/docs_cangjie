@@ -224,29 +224,28 @@ import kit.UniversalKeystoreKit.*
 import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
+func generateSimpleKey(keyAlias: String) {
+    let options = HuksOptions(properties:
+        [
+            HuksParam(HuksTag.HUKS_TAG_ALGORITHM, Uint32Value(HuksKeyAlg.HUKS_ALG_AES)),
+            HuksParam(HuksTag.HUKS_TAG_KEY_SIZE, Uint32Value(HuksKeySize.HUKS_AES_KEY_SIZE_128)),
+            HuksParam(
+                HuksTag.HUKS_TAG_PURPOSE,
+                Uint32Value(HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT | HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT)
+            )
+        ]
+    )
+    generateKeyItem(keyAlias, options)
+}
+
+func test_delete_key() {
+    let keyAlias = "KEY_ALIAS" // Key alias, specified during key generation and used for encryption, decryption, and key deletion
+    generateSimpleKey(keyAlias)
+    // delete
+    deleteKeyItem(keyAlias, HuksOptions())
+}
+
 try {
-    // This code can be added to dependency definitions
-    func generateSimpleKey(keyAlias: String) {
-        let options = HuksOptions(properties:
-            [
-                HuksParam(HuksTag.HUKS_TAG_ALGORITHM, Uint32Value(HuksKeyAlg.HUKS_ALG_AES)),
-                HuksParam(HuksTag.HUKS_TAG_KEY_SIZE, Uint32Value(HuksKeySize.HUKS_AES_KEY_SIZE_128)),
-                HuksParam(
-                    HuksTag.HUKS_TAG_PURPOSE,
-                    Uint32Value(HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT | HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT)
-                )
-            ]
-        )
-        generateKeyItem(keyAlias, options)
-    }
-
-    func test_delete_key() {
-        let keyAlias = "KEY_ALIAS" // Key alias, specified during key generation and used for encryption, decryption, and key deletion
-        generateSimpleKey(keyAlias)
-        // delete
-        deleteKeyItem(keyAlias, HuksOptions())
-    }
-
     test_delete_key()
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
@@ -400,7 +399,7 @@ try {
                 Uint32Value(HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT | HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT)
             ),
             HuksParam(HuksTag.HUKS_TAG_PADDING, Uint32Value(HuksKeyPadding.HUKS_PADDING_PKCS7)),
-            HuksParam(HuksTag.HUKS_TAG_BOCK_MODE, Uint32Value(HuksCipherMode.HUKS_MODE_CBC))
+            HuksParam(HuksTag.HUKS_TAG_BLOCK_MODE, Uint32Value(HuksCipherMode.HUKS_MODE_CBC))
         ]
     )
     generateKeyItem(keyAlias, options)
@@ -742,10 +741,10 @@ try {
 }
 ```
 
-## func hasKeyItemExist(String, HuksOptions)
+## func hasKeyItem(String, HuksOptions)
 
 ```cangjie
-public func hasKeyItemExist(keyAlias: String, options: HuksOptions): Bool
+public func hasKeyItem(keyAlias: String, options: HuksOptions): Bool
 ```
 
 **Function:** Check if a key exists.
@@ -794,26 +793,25 @@ import kit.UniversalKeystoreKit.*
 import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
-try {
-    // This code can be added to dependency definitions
-    func generateSimpleKey(keyAlias: String) {
-        let options = HuksOptions(properties:
-            [
-                HuksParam(HuksTag.HUKS_TAG_ALGORITHM, Uint32Value(HuksKeyAlg.HUKS_ALG_AES)),
-                HuksParam(HuksTag.HUKS_TAG_KEY_SIZE, Uint32Value(HuksKeySize.HUKS_AES_KEY_SIZE_128)),
-                HuksParam(
-                    HuksTag.HUKS_TAG_PURPOSE,
-                    Uint32Value(HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT | HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT)
-                )
-            ]
-        )
-        generateKeyItem(keyAlias, options)
-    }
+func generateSimpleKey(keyAlias: String) {
+    let options = HuksOptions(properties:
+        [
+            HuksParam(HuksTag.HUKS_TAG_ALGORITHM, Uint32Value(HuksKeyAlg.HUKS_ALG_AES)),
+            HuksParam(HuksTag.HUKS_TAG_KEY_SIZE, Uint32Value(HuksKeySize.HUKS_AES_KEY_SIZE_128)),
+            HuksParam(
+                HuksTag.HUKS_TAG_PURPOSE,
+                Uint32Value(HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT | HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT)
+            )
+        ]
+    )
+    generateKeyItem(keyAlias, options)
+}
 
+try {
     let keyAlias = "KEY_ALIAS" // Key alias specified during key generation, used for encryption, decryption, and key deletion
-    hasKeyItemExist(keyAlias, HuksOptions()) // false
+    hasKeyItem(keyAlias, HuksOptions()) // false
     generateSimpleKey(keyAlias)
-    hasKeyItemExist(keyAlias, HuksOptions()) // true
+    hasKeyItem(keyAlias, HuksOptions()) // true
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }

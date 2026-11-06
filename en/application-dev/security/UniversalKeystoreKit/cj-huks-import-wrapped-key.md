@@ -261,7 +261,7 @@ var importWrappedAes192Params: HuksOptions = HuksOptions(
         ),
         HuksParam(
             HuksTag.HUKS_TAG_PURPOSE,
-            HuksParamValue.Uint32Value(1 | 2)
+            HuksParamValue.Uint32Value(HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT | HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT)
         ),
         HuksParam(
             HuksTag.HUKS_TAG_KEY_SIZE,
@@ -272,7 +272,7 @@ var importWrappedAes192Params: HuksOptions = HuksOptions(
             HuksParamValue.Uint32Value(HuksKeyPadding.HUKS_PADDING_NONE)
         ),
         HuksParam(
-            HuksTag.HUKS_TAG_BOCK_MODE,
+            HuksTag.HUKS_TAG_BLOCK_MODE,
             HuksParamValue.Uint32Value(HuksCipherMode.HUKS_MODE_CBC)
         ),
         HuksParam(
@@ -281,7 +281,7 @@ var importWrappedAes192Params: HuksOptions = HuksOptions(
         ),
         HuksParam(
             HuksTag.HUKS_TAG_UNWRAP_ALGORITHM_SUITE,
-            HuksParamValue.Uint32Value(HuksUnwrapSuite.HUKS_UNWRAP_SUITE_ECDH_AES_256_GCM_NOPADDING)
+            HuksParamValue.Uint32Value(HuksUnwrapSuite.HUKS_UNWRAP_SUITE_ECDH_AES_256_GCM_NO_PADDING)
         ),
         HuksParam(
             HuksTag.HUKS_TAG_IV,
@@ -403,7 +403,9 @@ func publicFinishSession(handle: HuksHandleId, huksOptions: HuksOptions, inData:
     } catch (e: Exception) {
         loggerInfo("doFinish input arg invalid, ${e}")
     }
-    return outData.getOr```markdown
+    return outData.getOrThrow()
+}
+
 func cipherfunc(keyAlias: String, huksOptions: HuksOptions) {
     let handle = publicInitFunc(keyAlias, huksOptions)
     let tmpData = publicUpdateSessionfunc(handle, huksOptions)
@@ -431,7 +433,7 @@ func agreefunc(keyAlias: String, huksOptions: HuksOptions, huksPublicKey: Array<
     return outSharedKey
 }
 
-func ImportKekAndAgreeSharedSecret(callerKekAlias: String, importKekParams: HuksOptions, callerKeyAlias: String,
+func importKekAndAgreeSharedSecret(callerKekAlias: String, importKekParams: HuksOptions, callerKeyAlias: String,
     huksPublicKey: Array<UInt8>, agreeParams: HuksOptions) {
     publicImportKeyItemFunc(callerKekAlias, importKekParams)
     outSharedKey = agreefunc(callerKeyAlias, agreeParams, huksPublicKey)
@@ -448,7 +450,7 @@ func generateAndExportPublicKey(keyAlias: String, HuksOptions: HuksOptions, call
     }
 }
 
-func EncryptImportedPlainKeyAndKek(keyAlias: String) {
+func encryptImportedPlainKeyAndKek(keyAlias: String) {
     encryptKeyCommonParams.inData = stringToUint8Array(keyAlias)
     let plainKeyEncData = cipherfunc(callerKekAliasAes256, encryptKeyCommonParams)
     outKekEncTag = subUint8ArrayOf(plainKeyEncData, plainKeyEncData.size - TAG_SIZE, plainKeyEncData.size)
@@ -459,7 +461,7 @@ func EncryptImportedPlainKeyAndKek(keyAlias: String) {
     outKekEncData = subUint8ArrayOf(kekEncData, 0, kekEncData.size - TAG_SIZE)
 }
 
-func BuildWrappedDataAndImportWrappedKey(plainKey: String) {
+func buildWrappedDataAndImportWrappedKey(plainKey: String) {
     let plainKeySizeBuff = Array<UInt8>(4, repeat: 0)
     assignLength(plainKey.size, plainKeySizeBuff, 0)
     let wrappedData = Array<UInt8>(
@@ -508,7 +510,7 @@ func BuildWrappedDataAndImportWrappedKey(plainKey: String) {
 }
 
 /* Simulating encrypted key import scenario: Device A as remote device (importing device), Device B as local device (imported device) */
-func ImportWrappedKey() {
+func importWrappedKey() {
     /**
      * 1. Device A converts the key to be imported into HUKS key material format To_Import_Key 
      *    (only for asymmetric keys; symmetric keys can skip this step).
@@ -528,18 +530,18 @@ func ImportWrappedKey() {
      * 4. Device A generates a symmetric key Caller_Kek for encrypting To_Import_Key
      * 5. Device A derives Shared_Key by negotiating between Caller_Sk and Wrapping_Pk
      */
-    ImportKekAndAgreeSharedSecret(callerKekAliasAes256, importParamsCallerKek, callerKeyAlias, huksPubKey.getOrThrow(),
+    importKekAndAgreeSharedSecret(callerKekAliasAes256, importParamsCallerKek, callerKeyAlias, huksPubKey.getOrThrow(),
         callerAgreeParams)
 
     /**
      * 6. Device A encrypts To_Import_Key using Caller_Kek to produce To_Import_Key_Enc
      * 7. Device A encrypts Caller_Kek using Shared_Key to produce Caller_Kek_Enc
      */
-    EncryptImportedPlainKeyAndKek(importedAes192PlainKey)
+    encryptImportedPlainKeyAndKek(importedAes192PlainKey)
 
     /* 8. Device A packages encrypted import materials (Caller_Pk, To_Import_Key_Enc, Caller_Kek_Enc) 
           and sends to Device B. Stored in variables callerSelfPublicKey, outPlainKeyEncData, outKekEncData */
-    let wrappedData = BuildWrappedDataAndImportWrappedKey(importedAes192PlainKey)
+    let wrappedData = buildWrappedDataAndImportWrappedKey(importedAes192PlainKey)
     importWrappedAes192Params.inData = wrappedData
 
     /* 9. Device B imports the wrapped encrypted key material */

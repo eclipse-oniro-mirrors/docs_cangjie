@@ -59,7 +59,7 @@ let properties: Array<HuksParam> = [
     ),
     HuksParam(
         HuksTag.HUKS_TAG_PURPOSE,
-        HuksParamValue.Uint32Value(1 | 2)
+        HuksParamValue.Uint32Value(HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT | HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT)
     )
 ]
 let options: HuksOptions = HuksOptions(
@@ -131,7 +131,7 @@ func importKeyFunc(): Unit {
 
 ## Debugging and Verification
 
-Call [isKeyItemExist](../../reference/UniversalKeystoreKit/cj-apis-security_huks.md#func-iskeyitemexiststring-huksoptions) to verify whether the key exists. If the key exists, it indicates a successful import.
+Call [hasKeyItem](../../reference/UniversalKeystoreKit/cj-apis-security_huks.md#func-haskeyitemstring-huksoptions) to verify whether the key exists. If the key exists, it indicates a successful import.
 
 <!-- compile -->
 
@@ -148,7 +148,7 @@ let keyProperties: Array<HuksParam> = [
 ]
 let huksOptions: HuksOptions = HuksOptions(
     properties: keyProperties, // Non-empty fill.
-    inData: None // Non-empty fill.
+    inData: Bytes() // Non-empty fill.
 )
 
 @Entry
@@ -165,7 +165,7 @@ class EntryView {
                     .fontWeight(FontWeight.Bold)
                     .onClick ({
                         evt => try {
-                            isKeyItemExist(keyAlias, huksOptions)
+                            hasKeyItem(keyAlias, huksOptions)
                         } catch (e: Exception) {
                             throw e
                         }

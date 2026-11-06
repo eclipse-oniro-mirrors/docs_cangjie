@@ -57,7 +57,6 @@ Taking the example of subscribing to crash events triggered by user button click
                     // Developers can process the event data in the event collection; here, the event data is logged
                     Hilog.info(0x0000, 'testTag', "HiAppEvent eventInfo.domain=${eventInfo.domain}")
                     Hilog.info(0x0000, 'testTag', "HiAppEvent eventInfo.name=${eventInfo.name}")
-                    Hilog.info(0x0000, 'testTag', "HiAppEvent eventInfo.eventType.value=${eventInfo.eventType.getValue()}")
                     for ((k, v) in eventInfo.params) {
                         // Developers can access crash-related information
                         if (k == "hilog") {

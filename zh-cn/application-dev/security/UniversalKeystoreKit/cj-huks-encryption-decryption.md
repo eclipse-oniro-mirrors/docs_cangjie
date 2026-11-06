@@ -83,7 +83,7 @@ import kit.UniversalKeystoreKit.*
 let aesKeyAlias = 'test_aesKeyAlias'  // 密钥别名，在生成密钥时指定，在加密、解密和删除密钥时使用
 var handle: ?HuksHandleId = None
 let plainText = 'PLAIN_TEXT'  // 待加密的明文
-let IV = 'TEST_IV' // 此处为样例代码，实际使用需采用随机值
+let iv = 'TEST_IV' // 此处为样例代码，实际使用需采用随机值
 var cipherData: ?Array<UInt8> = [] // 加密后的密文数据
 
 func StringToUint8Array(str: String) {
@@ -106,8 +106,7 @@ func GetAesGenerateProperties() {
         ),
         HuksParam(
             HuksTag.HUKS_TAG_PURPOSE,
-            HuksParamValue.Uint32Value(1 | 2)
-//            HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT | HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT
+            HuksParamValue.Uint32Value(HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT | HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT)
         )
     ]
     return properties
@@ -137,7 +136,7 @@ func GetAesEncryptProperties() {
         ),
         HuksParam(
             HuksTag.HUKS_TAG_IV,
-            HuksParamValue.BytesValue(IV.toArray())
+            HuksParamValue.BytesValue(iv.toArray())
         )
     ]
     return properties
@@ -167,7 +166,7 @@ func GetAesDecryptProperties() {
         ),
         HuksParam(
             HuksTag.HUKS_TAG_IV,
-            HuksParamValue.BytesValue(IV.toArray())
+            HuksParamValue.BytesValue(iv.toArray())
         )
     ]
     return properties
@@ -245,8 +244,8 @@ let aesKeyAlias = 'test_aesKeyAlias' // 密钥别名，在生成密钥时指定�
 var handle: ?HuksHandleId = None
 let plainText = 'PLAIN_TEXT' // 待加密的明文数据
 var cipherData: ?Array<UInt8> = [] // 加密后的密文数据
-let AAD = 'TEST_AAD' // 此处为样例代码，实际使用需采用随机值
-let NONCE = 'TEST_NONCE' // 此处为样例代码，实际使用需采用随机值
+let aad = 'TEST_AAD' // 此处为样例代码，实际使用需采用随机值
+let nonce = 'TEST_NONCE' // 此处为样例代码，实际使用需采用随机值
 
 func StringToUint8Array(str: String) {
     return str.toArray()
@@ -268,7 +267,7 @@ func GetAesGenerateProperties() {
         ),
         HuksParam(
             HuksTag.HUKS_TAG_PURPOSE,
-            HuksParamValue.Uint32Value(1 | 2)
+            HuksParamValue.Uint32Value(HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT | HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT)
         )
     ]
     return properties
@@ -298,11 +297,11 @@ func GetAesGcmEncryptProperties() {
         ),
         HuksParam(
             HuksTag.HUKS_TAG_NONCE,
-            HuksParamValue.BytesValue(NONCE.toArray())
+            HuksParamValue.BytesValue(nonce.toArray())
         ),
         HuksParam(
             HuksTag.HUKS_TAG_ASSOCIATED_DATA,
-            HuksParamValue.BytesValue(AAD.toArray())
+            HuksParamValue.BytesValue(aad.toArray())
         )
     ]
     return properties
@@ -332,11 +331,11 @@ func GetAesGcmDecryptProperties(cipherData: Array<UInt8>) {
         ),
         HuksParam(
             HuksTag.HUKS_TAG_NONCE,
-            HuksParamValue.BytesValue(NONCE.toArray())
+            HuksParamValue.BytesValue(nonce.toArray())
         ),
         HuksParam(
             HuksTag.HUKS_TAG_ASSOCIATED_DATA,
-            HuksParamValue.BytesValue(AAD.toArray())
+            HuksParamValue.BytesValue(aad.toArray())
         ),
         HuksParam(
             HuksTag.HUKS_TAG_AE_TAG,
@@ -442,7 +441,7 @@ func GetRsaGenerateProperties() {
         ),
         HuksParam(
             HuksTag.HUKS_TAG_PURPOSE,
-            HuksParamValue.Uint32Value(1 | 2)
+            HuksParamValue.Uint32Value(HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT | HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT)
         )
     ]
     return properties
@@ -600,7 +599,7 @@ func GetRsaGenerateProperties() {
         ),
         HuksParam(
             HuksTag.HUKS_TAG_PURPOSE,
-            HuksParamValue.Uint32Value(1 | 2)
+            HuksParamValue.Uint32Value(HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT | HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT)
         )
     ]
     return properties
@@ -758,7 +757,7 @@ func GetSm2GenerateProperties() {
         ),
         HuksParam(
             HuksTag.HUKS_TAG_PURPOSE,
-            HuksParamValue.Uint32Value(1 | 2)
+            HuksParamValue.Uint32Value(HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT | HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT)
         )
     ]
     return properties

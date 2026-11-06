@@ -127,7 +127,7 @@ The development procedure is demonstrated using the accelerometer sensor (`ACCEL
     ```cangjie
     func offExample() {
         try {
-            // Unregister all callbacks for SensorId.ORIENTATION
+            // Unregister all callbacks for SensorId.Accelerometer
             off(SensorId.Accelerometer)
         } catch (e: BusinessException) {
             Hilog.error(1, "info", "Sensor off error code: ${e.code}, message: ${e.message}")

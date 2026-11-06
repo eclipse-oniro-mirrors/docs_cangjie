@@ -53,7 +53,6 @@ This section illustrates the development steps by implementing subscription to a
                     // Developers can process the event data in the event collection; here, the event data is logged
                     Hilog.info(0x0000, 'testTag', "HiAppEvent eventInfo.domain=${eventInfo.domain}")
                     Hilog.info(0x0000, 'testTag', "HiAppEvent eventInfo.name=${eventInfo.name}")
-                    Hilog.info(0x0000, 'testTag', "HiAppEvent eventInfo.eventType.value=${eventInfo.eventType.getValue()}")
                     for ((k, v) in eventInfo.params) {
                         // Developers can obtain information related to the appfreeze event
                         if (k == "hilog") {

@@ -40,20 +40,20 @@ HMAC是密钥相关的哈希运算消息认证码（Hash-based Message Authentic
  */
 import kit.UniversalKeystoreKit.*
 
-let HmacKeyAlias = 'test_HMAC' // 密钥别名，用户自行指定，用于生成密钥
+let hmacKeyAlias = 'test_HMAC' // 密钥别名，用户自行指定，用于生成密钥
 var handle: ?HuksHandleId = None
 let plainText = '123456' // 待运算的数据
 var hashData: ?Array<UInt8> = None // HMAC运算后的数据
 
-func StringToUint8Array(str: String) {
+func stringToUint8Array(str: String) {
     return str.toArray()
 }
 
-func Uint8ArrayToString(fileData: Array<UInt8>) {
+func uint8ArrayToString(fileData: Array<UInt8>) {
     return String.fromUtf8(fileData)
 }
 
-func GetHMACProperties() {
+func getHmacProperties() {
     let properties: Array<HuksParam> = [
         HuksParam(
             HuksTag.HUKS_TAG_ALGORITHM,
@@ -78,26 +78,26 @@ func GetHMACProperties() {
 /*
  * 模拟密钥生成场景
  */
-func GenerateHMACKey() {
+func generateHmacKey() {
     // 获取生成密钥算法参数配置
-    let genProperties = GetHMACProperties()
+    let genProperties = getHmacProperties()
     let options: HuksOptions = HuksOptions(properties: genProperties, inData: Bytes())
-    // 调用generateKeyItem生成密钥，HmacKeyAlias是密钥别名，在生成密钥时进行指定的
-    generateKeyItem(HmacKeyAlias, options)
+    // 调用generateKeyItem生成密钥，hmacKeyAlias是密钥别名，在生成密钥时进行指定的
+    generateKeyItem(hmacKeyAlias, options)
 }
 
 /*
  * 模拟HMAC计算场景
  */
-func HMACData() {
+func hmacData() {
     // 获取HMAC算法参数配置
-    let hmacProperties = GetHMACProperties()
+    let hmacProperties = getHmacProperties()
     let options: HuksOptions = HuksOptions(
         properties: hmacProperties,
-        inData: StringToUint8Array(plainText)
+        inData: stringToUint8Array(plainText)
     )
-    // 调用initSession获取handle，HmacKeyAlias是密钥别名，在生成密钥时进行指定的
-    handle = initSession(HmacKeyAlias, options).handle
+    // 调用initSession获取handle，hmacKeyAlias是密钥别名，在生成密钥时进行指定的
+    handle = initSession(hmacKeyAlias, options).handle
     // 调用finishSession获取HMAC的结果
     hashData = finishSession(handle.getOrThrow(), options)
 }

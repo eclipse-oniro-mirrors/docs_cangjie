@@ -44,20 +44,20 @@ import kit.CoreFileKit.*
 import kit.AbilityKit.*
 import kit.UniversalKeystoreKit.*
 
-let HmacKeyAlias = 'test_HMAC' // Key alias, user-defined for key generation
+let hmacKeyAlias = 'test_HMAC' // Key alias, user-defined for key generation
 var handle: ?HuksHandleId = None
 let plainText = '123456' // Data to be processed
 var hashData: ?Array<UInt8> = None // HMAC-processed data
 
-func StringToUint8Array(str: String) {
+func stringToUint8Array(str: String) {
     return str.toArray()
 }
 
-func Uint8ArrayToString(fileData: Array<UInt8>) {
+func uint8ArrayToString(fileData: Array<UInt8>) {
     return String.fromUtf8(fileData)
 }
 
-func GetHMACProperties() {
+func getHmacProperties() {
     let properties: Array<HuksParam> = [
         HuksParam(
             HuksTag.HUKS_TAG_ALGORITHM,
@@ -82,26 +82,26 @@ func GetHMACProperties() {
 /*
  * Simulate key generation scenario
  */
-func GenerateHMACKey() {
+func generateHmacKey() {
     // Obtain key generation algorithm parameter configuration
-    let genProperties = GetHMACProperties()
+    let genProperties = getHmacProperties()
     let options: HuksOptions = HuksOptions(properties: genProperties, inData: Bytes())
-    // Call generateKeyItem to generate the key. HmacKeyAlias is the key alias specified during key generation
-    generateKeyItem(HmacKeyAlias, options)
+    // Call generateKeyItem to generate the key. hmacKeyAlias is the key alias specified during key generation
+    generateKeyItem(hmacKeyAlias, options)
 }
 
 /*
  * Simulate HMAC computation scenario
  */
-func HMACData() {
+func hmacData() {
     // Obtain HMAC algorithm parameter configuration
-    let hmacProperties = GetHMACProperties()
+    let hmacProperties = getHmacProperties()
     let options: HuksOptions = HuksOptions(
         properties: hmacProperties,
-        inData: StringToUint8Array(plainText)
+        inData: stringToUint8Array(plainText)
     )
-    // Call initSession to obtain the handle. HmacKeyAlias is the key alias specified during key generation
-    handle = initSession(HmacKeyAlias, options)
+    // Call initSession to obtain the handle. hmacKeyAlias is the key alias specified during key generation
+    handle = initSession(hmacKeyAlias, options).handle
     // Call finishSession to obtain the HMAC result
     hashData = finishSession(handle.getOrThrow(), options)
 }

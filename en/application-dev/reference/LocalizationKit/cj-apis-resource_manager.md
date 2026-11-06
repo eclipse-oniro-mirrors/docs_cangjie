@@ -1835,7 +1835,7 @@ import kit.PerformanceAnalysisKit.Hilog
 try {
     let resourceManager = Global.getResourceManager()
     let resource = @r(app.string.test)
-    resourceManager.getString(resource.id)
+    resourceManager.getString(resource.id, [])
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -2141,7 +2141,7 @@ import kit.PerformanceAnalysisKit.Hilog
 
 try {
     let resourceManager = Global.getResourceManager()
-    resourceManager.getStringByName("test", ArgsValueType.StringValue("format string"), ArgsValueType.Int32Value(10), ArgsValueType.Float32Value(98.78))
+    resourceManager.getStringByName("test", [ArgsValueType.StringValue("format string"), ArgsValueType.Int32Value(10), ArgsValueType.Float32Value(98.78)])
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }

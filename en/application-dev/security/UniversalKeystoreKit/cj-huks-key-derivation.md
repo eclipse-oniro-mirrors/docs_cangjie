@@ -150,7 +150,7 @@ let finishProperties: Array<HuksParam> = [
     ),
     HuksParam(
         HuksTag.HUKS_TAG_PURPOSE,
-        HuksParamValue.Uint32Value(1 | 2),
+        HuksParamValue.Uint32Value(HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT | HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT),
     ),
     HuksParam(
         HuksTag.HUKS_TAG_DIGEST,
@@ -178,7 +178,7 @@ func StringToUint8Array(str: String) {
     return str.toArray()
 }
 
-class throwObject {
+class ThrowObject {
     var isThrow: Bool = false
 
     init(isThrow: Bool) {
@@ -186,7 +186,7 @@ class throwObject {
     }
 }
 
-func generateKeyItem(keyAlias: String, huksOptions: HuksOptions, throwObject: throwObject) {
+func generateKeyItem(keyAlias: String, huksOptions: HuksOptions, throwObject: ThrowObject) {
     try {
         generateKeyItem(keyAlias, huksOptions)
     } catch (e: Exception) {
@@ -197,7 +197,7 @@ func generateKeyItem(keyAlias: String, huksOptions: HuksOptions, throwObject: th
 
 func publicGenKeyFunc(keyAlias: String, huksOptions: HuksOptions) {
     loggerInfo("enter generateKeyItem")
-    let throwObject: throwObject = throwObject(false)
+    let throwObject: ThrowObject = ThrowObject(false)
     try {
         generateKeyItem(keyAlias, huksOptions, throwObject)
     } catch (e: Exception) {
@@ -205,7 +205,7 @@ func publicGenKeyFunc(keyAlias: String, huksOptions: HuksOptions) {
     }
 }
 
-func initSession(keyAlias: String, huksOptions: HuksOptions, throwObject: throwObject) {
+func initSession(keyAlias: String, huksOptions: HuksOptions, throwObject: ThrowObject) {
     return try {
         initSession(keyAlias, huksOptions)
     } catch (e: Exception) {
@@ -216,7 +216,7 @@ func initSession(keyAlias: String, huksOptions: HuksOptions, throwObject: throwO
 
 func publicInitFunc(keyAlias: String, huksOptions: HuksOptions) {
     loggerInfo("enter doInit")
-    let throwObject: throwObject = throwObject(false)
+    let throwObject: ThrowObject = ThrowObject(false)
     try {
         handle = initSession(keyAlias, huksOptions, throwObject).handle
     } catch (e: Exception) {
@@ -224,7 +224,7 @@ func publicInitFunc(keyAlias: String, huksOptions: HuksOptions) {
     }
 }
 
-func updateSession(handle: HuksHandleId, huksOptions: HuksOptions, throwObject: throwObject) {
+func updateSession(handle: HuksHandleId, huksOptions: HuksOptions, throwObject: ThrowObject) {
     return try {
         updateSession(handle, huksOptions)
     } catch (e: Exception) {
@@ -235,7 +235,7 @@ func updateSession(handle: HuksHandleId, huksOptions: HuksOptions, throwObject: 
 
 func publicUpdateFunc(handle: HuksHandleId, huksOptions: HuksOptions) {
     loggerInfo("enter doUpdate")
-    let throwObject: throwObject = throwObject(false)
+    let throwObject: ThrowObject = ThrowObject(false)
     try {
         updateSession(handle, huksOptions, throwObject)
     } catch (e: Exception) {
@@ -243,7 +243,7 @@ func publicUpdateFunc(handle: HuksHandleId, huksOptions: HuksOptions) {
     }
 }
 
-func finishSession(handle: HuksHandleId, huksOptions: HuksOptions, throwObject: throwObject) {
+func finishSession(handle: HuksHandleId, huksOptions: HuksOptions, throwObject: ThrowObject) {
     return try {
         finishSession(handle, huksOptions)
     } catch (e: Exception) {
@@ -254,7 +254,7 @@ func finishSession(handle: HuksHandleId, huksOptions: HuksOptions, throwObject: 
 
 func publicFinishFunc(handle: HuksHandleId, huksOptions: HuksOptions) {
     loggerInfo("enter doFinish")
-    let throwObject: throwObject = throwObject(false)
+    let throwObject: ThrowObject = ThrowObject(false)
     try {
         finishSession(handle, huksOptions, throwObject)
     } catch (e: Exception) {
@@ -262,7 +262,7 @@ func publicFinishFunc(handle: HuksHandleId, huksOptions: HuksOptions) {
     }
 }
 
-func deleteKeyItem(keyAlias: String, huksOptions: HuksOptions, throwObject: throwObject) {
+func deleteKeyItem(keyAlias: String, huksOptions: HuksOptions, throwObject: ThrowObject) {
     try {
         deleteKeyItem(keyAlias, huksOptions)
     } catch (e: Exception) {
@@ -273,7 +273,7 @@ func deleteKeyItem(keyAlias: String, huksOptions: HuksOptions, throwObject: thro
 
 func publicDeleteKeyFunc(keyAlias: String, huksOptions: HuksOptions) {
     loggerInfo("enter deleteKeyItem")
-    let throwObject: throwObject = throwObject(false)
+    let throwObject: ThrowObject = ThrowObject(false)
     try {
         deleteKeyItem(keyAlias, huksOptions, throwObject)
     } catch (e: Exception) {
@@ -401,10 +401,10 @@ let finishProperties: Array<HuksParam> = [
     ),
     HuksParam(
         HuksTag.HUKS_TAG_PURPOSE,
-        HuksParamValue.Uint32Value(1 | 2),
+        HuksParamValue.Uint32Value(HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT | HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT),
     ),
     HuksParam(
-        HuksTag.HUKS_TAG_DIGEST,```markdown
+        HuksTag.HUKS_TAG_DIGEST,
         HuksParamValue.Uint32Value(HuksKeyDigest.HUKS_DIGEST_NONE),
     ),
     HuksParam(
@@ -429,7 +429,7 @@ func StringToUint8Array(str: String) {
     return str.toArray()
 }
 
-class throwObject {
+class ThrowObject {
     var isThrow: Bool = false
 
     init(isThrow: Bool) {
@@ -437,7 +437,7 @@ class throwObject {
     }
 }
 
-func generateKeyItem(keyAlias: String, huksOptions: HuksOptions, throwObject: throwObject) {
+func generateKeyItem(keyAlias: String, huksOptions: HuksOptions, throwObject: ThrowObject) {
     try {
         generateKeyItem(keyAlias, huksOptions)
     } catch (e: Exception) {
@@ -448,7 +448,7 @@ func generateKeyItem(keyAlias: String, huksOptions: HuksOptions, throwObject: th
 
 func publicGenKeyFunc(keyAlias: String, huksOptions: HuksOptions) {
     loggerInfo("enter generateKeyItem")
-    let throwObject: throwObject = throwObject(false)
+    let throwObject: ThrowObject = ThrowObject(false)
     try {
         generateKeyItem(keyAlias, huksOptions, throwObject)
     } catch (e: Exception) {
@@ -456,7 +456,7 @@ func publicGenKeyFunc(keyAlias: String, huksOptions: HuksOptions) {
     }
 }
 
-func initSession(keyAlias: String, huksOptions: HuksOptions, throwObject: throwObject) {
+func initSession(keyAlias: String, huksOptions: HuksOptions, throwObject: ThrowObject) {
     return try {
         initSession(keyAlias, huksOptions).handle
     } catch (e: Exception) {
@@ -468,7 +468,7 @@ func initSession(keyAlias: String, huksOptions: HuksOptions, throwObject: throwO
 
 func publicInitFunc(keyAlias: String, huksOptions: HuksOptions) {
     loggerInfo("enter doInit")
-    let throwObject: throwObject = throwObject(false)
+    let throwObject: ThrowObject = ThrowObject(false)
     try {
         handle = initSession(keyAlias, huksOptions, throwObject)
     } catch (e: Exception) {
@@ -476,7 +476,7 @@ func publicInitFunc(keyAlias: String, huksOptions: HuksOptions) {
     }
 }
 
-func updateSession(handle: HuksHandleId, huksOptions: HuksOptions, throwObject: throwObject) {
+func updateSession(handle: HuksHandleId, huksOptions: HuksOptions, throwObject: ThrowObject) {
     return try {
         updateSession(handle, huksOptions)
     } catch (e: Exception) {
@@ -487,7 +487,7 @@ func updateSession(handle: HuksHandleId, huksOptions: HuksOptions, throwObject: 
 
 func publicUpdateFunc(handle: HuksHandleId, huksOptions: HuksOptions) {
     loggerInfo("enter doUpdate")
-    let throwObject: throwObject = throwObject(false)
+    let throwObject: ThrowObject = ThrowObject(false)
     try {
         updateSession(handle, huksOptions, throwObject)
     } catch (e: Exception) {
@@ -495,7 +495,7 @@ func publicUpdateFunc(handle: HuksHandleId, huksOptions: HuksOptions) {
     }
 }
 
-func finishSession(handle: HuksHandleId, huksOptions: HuksOptions, throwObject: throwObject) {
+func finishSession(handle: HuksHandleId, huksOptions: HuksOptions, throwObject: ThrowObject) {
     return try {
         finishSession(handle, huksOptions)
     } catch (e: Exception) {
@@ -506,7 +506,7 @@ func finishSession(handle: HuksHandleId, huksOptions: HuksOptions, throwObject: 
 
 func publicFinishFunc(handle: HuksHandleId, huksOptions: HuksOptions) {
     loggerInfo("enter doFinish")
-    let throwObject: throwObject = throwObject(false)
+    let throwObject: ThrowObject = ThrowObject(false)
     try {
         finishOutData = finishSession(handle, huksOptions, throwObject)
     } catch (e: Exception) {
@@ -514,7 +514,7 @@ func publicFinishFunc(handle: HuksHandleId, huksOptions: HuksOptions) {
     }
 }
 
-func deleteKeyItem(keyAlias: String, huksOptions: HuksOptions, throwObject: throwObject) {
+func deleteKeyItem(keyAlias: String, huksOptions: HuksOptions, throwObject: ThrowObject) {
     try {
         deleteKeyItem(keyAlias, huksOptions)
     } catch (e: Exception) {
@@ -525,7 +525,7 @@ func deleteKeyItem(keyAlias: String, huksOptions: HuksOptions, throwObject: thro
 
 func publicDeleteKeyFunc(keyAlias: String, huksOptions: HuksOptions) {
     loggerInfo("enter deleteKeyItem")
-    let throwObject: throwObject = throwObject(false)
+    let throwObject: ThrowObject = ThrowObject(false)
     try {
         deleteKeyItem(keyAlias, huksOptions, throwObject)
     } catch (e: Exception) {
