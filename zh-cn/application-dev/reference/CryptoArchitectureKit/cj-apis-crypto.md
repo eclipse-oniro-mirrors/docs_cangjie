@@ -317,8 +317,9 @@ public func createAsyKeyGenerator(algName: String): AsyKeyGenerator
 
 **示例：**
 
-```cangjie
 <!-- compile -->
+
+```cangjie
 import kit.CryptoArchitectureKit.*
 import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
@@ -368,8 +369,9 @@ public func createVerify(algName: String): Verify
 
 **示例：**
 
-```cangjie
 <!-- compile -->
+
+```cangjie
 import kit.CryptoArchitectureKit.*
 import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
@@ -1654,8 +1656,9 @@ public func generateKeyPair(callback: AsyncCallback<KeyPair>): Unit
 
 **示例：**
 
-```cangjie
 <!-- compile -->
+
+```cangjie
 import kit.CryptoArchitectureKit.*
 import kit.CangjieKit.BusinessException
 import kit.CangjieKit.AsyncCallback
@@ -1712,8 +1715,9 @@ public func convertKey(callback: AsyncCallback<KeyPair>, pubKey!: Option<DataBlo
 
 **示例：**
 
-```cangjie
 <!-- compile -->
+
+```cangjie
 import kit.CryptoArchitectureKit.*
 import kit.CangjieKit.BusinessException
 import kit.CangjieKit.AsyncCallback
@@ -1777,8 +1781,9 @@ public func convertPemKey(callback: AsyncCallback<KeyPair>, pubKey!: Option<Stri
 
 **示例：**
 
-```cangjie
 <!-- compile -->
+
+```cangjie
 import kit.CryptoArchitectureKit.*
 import kit.CangjieKit.BusinessException
 import kit.CangjieKit.AsyncCallback
@@ -1892,8 +1897,9 @@ public func getAsyKeySpec(itemType: AsyKeySpecItem): ResultSpec
 
 **示例：**
 
-```cangjie
 <!-- compile -->
+
+```cangjie
 import kit.CryptoArchitectureKit.*
 import kit.CangjieKit.BusinessException
 import kit.CangjieKit.AsyncCallback
@@ -1957,8 +1963,9 @@ public func getEncodedDer(format: String): DataBlob
 
 **示例：**
 
-```cangjie
 <!-- compile -->
+
+```cangjie
 import kit.CryptoArchitectureKit.*
 import kit.CangjieKit.BusinessException
 import kit.CangjieKit.AsyncCallback
@@ -2019,8 +2026,9 @@ public func getEncodedPem(format: String): String
 
 **示例：**
 
-```cangjie
 <!-- compile -->
+
+```cangjie
 import kit.CryptoArchitectureKit.*
 import kit.CangjieKit.BusinessException
 import kit.CangjieKit.AsyncCallback
@@ -2075,8 +2083,9 @@ public func getEncoded(): DataBlob
 
 **示例：**
 
-```cangjie
 <!-- compile -->
+
+```cangjie
 import kit.CryptoArchitectureKit.*
 import kit.CangjieKit.BusinessException
 import kit.CangjieKit.AsyncCallback
@@ -2115,8 +2124,9 @@ public func clearMem(): Unit
 
 **示例：**
 
-```cangjie
 <!-- compile -->
+
+```cangjie
 import kit.CryptoArchitectureKit.*
 import kit.CangjieKit.BusinessException
 import kit.CangjieKit.AsyncCallback
@@ -2228,8 +2238,9 @@ public func getAsyKeySpec(itemType: AsyKeySpecItem): ResultSpec
 
 **示例：**
 
-```cangjie
 <!-- compile -->
+
+```cangjie
 import kit.CryptoArchitectureKit.*
 import kit.CangjieKit.BusinessException
 import kit.CangjieKit.AsyncCallback
@@ -2293,8 +2304,9 @@ public func getEncodedDer(format: String): DataBlob
 
 **示例：**
 
-```cangjie
 <!-- compile -->
+
+```cangjie
 import kit.CryptoArchitectureKit.*
 import kit.CangjieKit.BusinessException
 import kit.CangjieKit.AsyncCallback
@@ -2355,8 +2367,9 @@ public func getEncodedPem(format: String): String
 
 **示例：**
 
-```cangjie
 <!-- compile -->
+
+```cangjie
 import kit.CryptoArchitectureKit.*
 import kit.CangjieKit.BusinessException
 import kit.CangjieKit.AsyncCallback
@@ -2411,8 +2424,9 @@ public func getEncoded(): DataBlob
 
 **示例：**
 
-```cangjie
 <!-- compile -->
+
+```cangjie
 import kit.CryptoArchitectureKit.*
 import kit.CangjieKit.BusinessException
 import kit.CangjieKit.AsyncCallback
@@ -2535,8 +2549,9 @@ public func initialize(pubKey: PubKey, callback: AsyncCallback<Unit>): Unit
 
 **示例：**
 
-```cangjie
 <!-- compile -->
+
+```cangjie
 import kit.CryptoArchitectureKit.*
 import kit.CangjieKit.BusinessException
 import kit.CangjieKit.AsyncCallback
@@ -2598,8 +2613,9 @@ public func update(data: DataBlob, callback: AsyncCallback<Unit>): Unit
 
 **示例：**
 
-```cangjie
 <!-- compile -->
+
+```cangjie
 import kit.CryptoArchitectureKit.*
 import kit.CangjieKit.BusinessException
 import kit.CangjieKit.AsyncCallback
@@ -2667,8 +2683,9 @@ public func verify(data: DataBlob, signatureData: DataBlob, callback: AsyncCallb
 
 **示例：**
 
-```cangjie
 <!-- compile -->
+
+```cangjie
 import kit.CryptoArchitectureKit.*
 import kit.CangjieKit.BusinessException
 import kit.CangjieKit.AsyncCallback
@@ -2739,8 +2756,9 @@ public func verify(signatureData: DataBlob, callback: AsyncCallback<Bool>, data!
 
 **示例：**
 
-```cangjie
 <!-- compile -->
+
+```cangjie
 import kit.CryptoArchitectureKit.*
 import kit.CangjieKit.BusinessException
 import kit.CangjieKit.AsyncCallback
@@ -2816,8 +2834,9 @@ public func recover(signatureData: DataBlob, callback: AsyncCallback<?DataBlob>)
 
 **示例：**
 
-```cangjie
 <!-- compile -->
+
+```cangjie
 import kit.CryptoArchitectureKit.*
 import kit.CangjieKit.BusinessException
 import kit.CangjieKit.AsyncCallback
@@ -2886,8 +2905,9 @@ public func setVerifySpec(itemType: SignSpecItem, itemValue: Int32): Unit
 
 **示例：**
 
-```cangjie
 <!-- compile -->
+
+```cangjie
 import kit.CryptoArchitectureKit.*
 import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
@@ -2937,8 +2957,9 @@ public func setVerifySpec(itemType: SignSpecItem, itemValue: Array<UInt8>): Unit
 
 **示例：**
 
-```cangjie
 <!-- compile -->
+
+```cangjie
 import kit.CryptoArchitectureKit.*
 import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
@@ -2992,8 +3013,9 @@ public func getVerifySpec(itemType: SignSpecItem): ResultSpec
 
 **示例：**
 
-```cangjie
 <!-- compile -->
+
+```cangjie
 import kit.CryptoArchitectureKit.*
 import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog

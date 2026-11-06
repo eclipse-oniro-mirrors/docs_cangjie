@@ -2150,8 +2150,9 @@ Generates an asymmetric key generator instance.
 
 **Example:**
 
-```cangjie
 <!-- compile -->
+
+```cangjie
 import kit.CryptoArchitectureKit.*
 import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
@@ -2201,8 +2202,9 @@ Generates a signature verification instance.
 
 **Example:**
 
-```cangjie
 <!-- compile -->
+
+```cangjie
 import kit.CryptoArchitectureKit.*
 import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
@@ -2272,8 +2274,9 @@ Asynchronously generates an asymmetric key pair, with the result returned via a 
 
 **Example:**
 
-```cangjie
 <!-- compile -->
+
+```cangjie
 import kit.CryptoArchitectureKit.*
 import kit.CangjieKit.BusinessException
 import kit.CangjieKit.AsyncCallback
@@ -2330,8 +2333,9 @@ Asynchronously converts the input public key and private key into an asymmetric 
 
 **Example:**
 
-```cangjie
 <!-- compile -->
+
+```cangjie
 import kit.CryptoArchitectureKit.*
 import kit.CangjieKit.BusinessException
 import kit.CangjieKit.AsyncCallback
@@ -2395,8 +2399,9 @@ Asynchronously converts PEM-formatted public key and private key strings into an
 
 **Example:**
 
-```cangjie
 <!-- compile -->
+
+```cangjie
 import kit.CryptoArchitectureKit.*
 import kit.CangjieKit.BusinessException
 import kit.CangjieKit.AsyncCallback
@@ -2510,8 +2515,9 @@ Gets the specified parameter of the asymmetric private key.
 
 **Example:**
 
-```cangjie
 <!-- compile -->
+
+```cangjie
 import kit.CryptoArchitectureKit.*
 import kit.CangjieKit.BusinessException
 import kit.CangjieKit.AsyncCallback
@@ -2575,8 +2581,9 @@ Gets the DER-encoded data of the private key.
 
 **Example:**
 
-```cangjie
 <!-- compile -->
+
+```cangjie
 import kit.CryptoArchitectureKit.*
 import kit.CangjieKit.BusinessException
 import kit.CangjieKit.AsyncCallback
@@ -2637,8 +2644,9 @@ Gets the PEM-encoded data of the private key.
 
 **Example:**
 
-```cangjie
 <!-- compile -->
+
+```cangjie
 import kit.CryptoArchitectureKit.*
 import kit.CangjieKit.BusinessException
 import kit.CangjieKit.AsyncCallback
@@ -2693,8 +2701,9 @@ Gets the encoded data of the private key.
 
 **Example:**
 
-```cangjie
 <!-- compile -->
+
+```cangjie
 import kit.CryptoArchitectureKit.*
 import kit.CangjieKit.BusinessException
 import kit.CangjieKit.AsyncCallback
@@ -2733,8 +2742,9 @@ Clears the memory data of the private key to achieve secure destruction.
 
 **Example:**
 
-```cangjie
 <!-- compile -->
+
+```cangjie
 import kit.CryptoArchitectureKit.*
 import kit.CangjieKit.BusinessException
 import kit.CangjieKit.AsyncCallback
@@ -2846,8 +2856,9 @@ Gets the specified parameter of the asymmetric public key.
 
 **Example:**
 
-```cangjie
 <!-- compile -->
+
+```cangjie
 import kit.CryptoArchitectureKit.*
 import kit.CangjieKit.BusinessException
 import kit.CangjieKit.AsyncCallback
@@ -2911,8 +2922,9 @@ Gets the DER-encoded data of the public key.
 
 **Example:**
 
-```cangjie
 <!-- compile -->
+
+```cangjie
 import kit.CryptoArchitectureKit.*
 import kit.CangjieKit.BusinessException
 import kit.CangjieKit.AsyncCallback
@@ -2973,8 +2985,9 @@ Gets the PEM-encoded data of the public key.
 
 **Example:**
 
-```cangjie
 <!-- compile -->
+
+```cangjie
 import kit.CryptoArchitectureKit.*
 import kit.CangjieKit.BusinessException
 import kit.CangjieKit.AsyncCallback
@@ -3029,8 +3042,9 @@ Gets the encoded data of the public key.
 
 **Example:**
 
-```cangjie
 <!-- compile -->
+
+```cangjie
 import kit.CryptoArchitectureKit.*
 import kit.CangjieKit.BusinessException
 import kit.CangjieKit.AsyncCallback
@@ -3153,8 +3167,9 @@ Asynchronously initializes the verifier with the specified public key, with the 
 
 **Example:**
 
-```cangjie
 <!-- compile -->
+
+```cangjie
 import kit.CryptoArchitectureKit.*
 import kit.CangjieKit.BusinessException
 import kit.CangjieKit.AsyncCallback
@@ -3216,8 +3231,9 @@ Asynchronously appends data to be verified, with the result returned via a callb
 
 **Example:**
 
-```cangjie
 <!-- compile -->
+
+```cangjie
 import kit.CryptoArchitectureKit.*
 import kit.CangjieKit.BusinessException
 import kit.CangjieKit.AsyncCallback
@@ -3285,8 +3301,9 @@ Asynchronously verifies whether the data matches the signature, with the verific
 
 **Example:**
 
-```cangjie
 <!-- compile -->
+
+```cangjie
 import kit.CryptoArchitectureKit.*
 import kit.CangjieKit.BusinessException
 import kit.CangjieKit.AsyncCallback
@@ -3357,8 +3374,9 @@ Asynchronously verifies whether the signature matches, with the verification res
 
 **Example:**
 
-```cangjie
 <!-- compile -->
+
+```cangjie
 import kit.CryptoArchitectureKit.*
 import kit.CangjieKit.BusinessException
 import kit.CangjieKit.AsyncCallback
@@ -3434,8 +3452,9 @@ Asynchronously recovers the original data from the signature data, with the resu
 
 **Example:**
 
-```cangjie
 <!-- compile -->
+
+```cangjie
 import kit.CryptoArchitectureKit.*
 import kit.CangjieKit.BusinessException
 import kit.CangjieKit.AsyncCallback
@@ -3504,8 +3523,9 @@ Sets the verification parameter, where the parameter value is of Int32 type.
 
 **Example:**
 
-```cangjie
 <!-- compile -->
+
+```cangjie
 import kit.CryptoArchitectureKit.*
 import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
@@ -3555,8 +3575,9 @@ Sets the verification parameter, where the parameter value is of byte array type
 
 **Example:**
 
-```cangjie
 <!-- compile -->
+
+```cangjie
 import kit.CryptoArchitectureKit.*
 import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
@@ -3610,8 +3631,9 @@ Gets the verification parameter.
 
 **Example:**
 
-```cangjie
 <!-- compile -->
+
+```cangjie
 import kit.CryptoArchitectureKit.*
 import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
