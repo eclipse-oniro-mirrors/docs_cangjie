@@ -70,7 +70,7 @@ public func getCameraManager(context: UIAbilityContext): CameraManager
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -142,7 +142,7 @@ func getExposureMode(): ExposureMode
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -190,7 +190,7 @@ func getExposureValue(): Float64
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -238,7 +238,7 @@ func getMeteringPoint(): Point
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -289,7 +289,7 @@ func setExposureBias(exposureBias: Float64): Unit
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -340,7 +340,7 @@ func setExposureMode(aeMode: ExposureMode): Unit
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -392,8 +392,7 @@ func setMeteringPoint(point: Point): Unit
 // index.cj
 
 import kit.CameraKit.*
-import kit.CameraKit.Point as ImagePoint
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -402,7 +401,7 @@ try {
     let session = cameraManager.createSession(SceneMode.NormalPhoto)
     var photoSessionOption = session as PhotoSession
     let photoSession = photoSessionOption.getOrThrow()
-    let point = ImagePoint(1.0, 1.0)
+    let point = Point(1.0, 1.0)
     photoSession.setMeteringPoint(point)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
@@ -458,7 +457,7 @@ func getExposureBiasRange(): Array<Float64>
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -513,7 +512,7 @@ func isExposureModeSupported(aeMode: ExposureMode): Bool
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -574,7 +573,7 @@ import kit.CameraKit.*
 import kit.ImageKit.createImageReceiver
 import kit.ImageKit.Size as ImageSize
 import kit.ImageKit.ImageFormat
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -646,7 +645,7 @@ func getActiveColorSpace(): ColorSpace
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -723,7 +722,7 @@ func setColorSpace(colorSpace: ColorSpace): Unit
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -790,7 +789,7 @@ func getSupportedColorSpaces(): Array<ColorSpace>
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -858,7 +857,7 @@ func getFlashMode(): FlashMode
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -912,7 +911,7 @@ func setFlashMode(flashMode: FlashMode): Unit
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -977,7 +976,7 @@ func hasFlash(): Bool
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1032,7 +1031,7 @@ func isFlashModeSupported(flashMode: FlashMode): Bool
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1103,7 +1102,7 @@ func getFocalLength(): Float64
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1152,7 +1151,7 @@ func getFocusMode(): FocusMode
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1201,7 +1200,7 @@ func getFocusPoint(): Point
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1252,7 +1251,7 @@ func setFocusMode(afMode: FocusMode): Unit
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1304,8 +1303,7 @@ func setFocusPoint(point: Point): Unit
 // index.cj
 
 import kit.CameraKit.*
-import kit.CameraKit.Point as ImagePoint
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1314,7 +1312,7 @@ try {
     let session = cameraManager.createSession(SceneMode.NormalPhoto)
     var photoSessionOption = session as PhotoSession
     let photoSession = photoSessionOption.getOrThrow()
-    photoSession.setFocusPoint(ImagePoint(0.5, 0.5))
+    photoSession.setFocusPoint(Point(0.5, 0.5))
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -1374,7 +1372,7 @@ func isFocusModeSupported(afMode: FocusMode): Bool
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1450,7 +1448,7 @@ func addInput(cameraInput: CameraInput): Unit
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1501,7 +1499,7 @@ func addOutput(cameraOutput: CameraOutput): Unit
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1547,7 +1545,7 @@ func beginConfig(): Unit
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1592,7 +1590,7 @@ func canAddInput(cameraInput: CameraInput): Bool
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1639,7 +1637,7 @@ func canAddOutput(cameraOutput: CameraOutput): Bool
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1685,7 +1683,7 @@ func commitConfig(): Unit
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1726,7 +1724,7 @@ func release(): Unit
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1775,7 +1773,7 @@ func removeInput(cameraInput: CameraInput): Unit
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1829,7 +1827,7 @@ import kit.CameraKit.*
 import kit.ImageKit.createImageReceiver
 import kit.ImageKit.Size as ImageSize
 import kit.ImageKit.ImageFormat
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1879,7 +1877,7 @@ func start(): Unit
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1920,7 +1918,7 @@ func stop(): Unit
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1992,7 +1990,7 @@ func getActiveVideoStabilizationMode(): VideoStabilizationMode
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2041,7 +2039,7 @@ func setVideoStabilizationMode(mode: VideoStabilizationMode): Unit
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2111,7 +2109,7 @@ func isVideoStabilizationModeSupported(vsMode: VideoStabilizationMode): Bool
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2183,7 +2181,7 @@ func getZoomRatio(): Float64
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2225,7 +2223,7 @@ func setSmoothZoom(targetRatio: Float64, mode: SmoothZoomMode): Unit
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2267,7 +2265,7 @@ func setSmoothZoom(targetRatio: Float64): Unit
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2317,7 +2315,7 @@ func setZoomRatio(zoomRatio: Float64): Unit
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2381,7 +2379,7 @@ func getZoomRatioRange(): Array<Float64>
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2537,7 +2535,7 @@ public func close(): Unit
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2587,7 +2585,7 @@ public func off(eventType: CameraEvents, camera: CameraDevice, callback: Callbac
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2636,7 +2634,7 @@ public func off(eventType: CameraEvents, camera: CameraDevice): Unit
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2690,8 +2688,8 @@ public func on(eventType: CameraEvents, camera: CameraDevice, callback: Callback
 // index.cj
 
 import kit.CameraKit.*
-import ohos.callback_invoke.Callback0Argument
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.Callback0Argument
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 // 此处代码可添加在依赖项定义中
@@ -2744,7 +2742,7 @@ public func open(): Unit
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2800,7 +2798,7 @@ public func open(isSecureEnabled: Bool): UInt64
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2873,7 +2871,7 @@ public func createCameraInput(camera: CameraDevice): CameraInput
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2936,7 +2934,7 @@ public func createCameraInput(position: CameraPosition, cameraType: CameraType):
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2947,6 +2945,62 @@ try {
     let position = cameraDevice0.cameraPosition
     let cameraType = cameraDevice0.cameraType
     let cameraInput = cameraManager.createCameraInput(position , cameraType)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
+### func createMetadataOutput(Array\<MetadataObjectType>)
+
+```cangjie
+public func createMetadataOutput(metadataObjectTypes: Array<MetadataObjectType>): MetadataOutput
+```
+
+**功能：** 创建元数据输出对象。该接口同步返回结果。
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|metadataObjectTypes|Array\<[MetadataObjectType](#enum-metadataobjecttype)>|是|-|元数据对象类型，可通过[getSupportedOutputCapability](#func-getsupportedoutputcapabilitycameradevice-scenemode)获取。|
+
+**返回值：**
+
+|类型|说明|
+|:----|:----|
+|[MetadataOutput](#class-metadataoutput)|创建的元数据输出对象。|
+
+**异常：**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Camera错误码](./cj-errorcode-multimedia-camera.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 7400101 | Parameter missing or parameter type incorrect. |
+  | 7400201 | Camera service fatal error. |
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.CameraKit.*
+import kit.CangjieKit.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
+
+try {
+    let ctx = Global.abilityContext // 此处需手动配置模板，获取Context上下文。上下文获取方式请参见使用说明。
+    let cameraManager = getCameraManager(ctx)
+    let cameraDevice = cameraManager.getSupportedCameras()[0]
+    let mode = cameraManager.getSupportedSceneModes(cameraDevice)[0]
+    let ability = cameraManager.getSupportedOutputCapability(cameraDevice, mode)
+    let metadataOutput = cameraManager.createMetadataOutput(ability.supportedMetadataObjectTypes)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -2993,7 +3047,7 @@ public func createPhotoOutput(profile!: ?Profile = None): PhotoOutput
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -3055,7 +3109,7 @@ import kit.CameraKit.*
 import kit.ImageKit.createImageReceiver
 import kit.ImageKit.Size as ImageSize
 import kit.ImageKit.ImageFormat
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -3119,7 +3173,7 @@ import kit.CameraKit.*
 import kit.ImageKit.createImageReceiver
 import kit.ImageKit.Size as ImageSize
 import kit.ImageKit.ImageFormat
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -3175,7 +3229,7 @@ public func createSession(mode: SceneMode): Session
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -3294,7 +3348,7 @@ import kit.CameraKit.*
 import kit.ImageKit.createImageReceiver
 import kit.ImageKit.Size as ImageSize
 import kit.ImageKit.ImageFormat
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -3335,7 +3389,7 @@ public func getSupportedCameras(): Array<CameraDevice>
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -3380,7 +3434,7 @@ public func getSupportedOutputCapability(camera: CameraDevice, mode: SceneMode):
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -3427,7 +3481,7 @@ public func getSupportedSceneModes(camera: CameraDevice): Array<SceneMode>
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -3467,7 +3521,7 @@ public func getTorchMode(): TorchMode
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -3505,7 +3559,7 @@ public func isCameraMuted(): Bool
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -3549,7 +3603,7 @@ public func isTorchModeSupported(mode: TorchMode): Bool
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -3588,7 +3642,7 @@ public func isTorchSupported(): Bool
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -3635,7 +3689,7 @@ public func off(eventType: CameraEvents, callback: Callback1Argument<CameraStatu
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -3682,7 +3736,7 @@ public func off(eventType: CameraEvents, callback: Callback1Argument<FoldStatusI
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -3729,7 +3783,7 @@ public func off(eventType: CameraEvents, callback: Callback1Argument<TorchStatus
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -3775,7 +3829,7 @@ public func off(eventType: CameraEvents): Unit
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -3826,8 +3880,8 @@ public func on(eventType: CameraEvents, callback: Callback1Argument<CameraStatus
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
-import ohos.callback_invoke.Callback1Argument
+import kit.CangjieKit.BusinessException
+import kit.CangjieKit.Callback1Argument
 import kit.PerformanceAnalysisKit.Hilog
 
 // 此处代码可添加在依赖项定义中
@@ -3887,8 +3941,8 @@ public func on(eventType: CameraEvents, callback: Callback1Argument<FoldStatusIn
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
-import ohos.callback_invoke.Callback1Argument
+import kit.CangjieKit.BusinessException
+import kit.CangjieKit.Callback1Argument
 import kit.PerformanceAnalysisKit.Hilog
 
 // 此处代码可添加在依赖项定义中
@@ -3948,8 +4002,8 @@ public func on(eventType: CameraEvents, callback: Callback1Argument<TorchStatusI
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
-import ohos.callback_invoke.Callback1Argument
+import kit.CangjieKit.BusinessException
+import kit.CangjieKit.Callback1Argument
 import kit.PerformanceAnalysisKit.Hilog
 
 // 此处代码可添加在依赖项定义中
@@ -4005,7 +4059,7 @@ public func setTorchMode(mode: TorchMode): Unit
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -4434,7 +4488,7 @@ public class Location {
 public var altitude: Float64
 ```
 
-**功能：** 海拔(米)。
+**功能：** 海拔（米）。
 
 **类型：** Float64
 
@@ -4494,7 +4548,460 @@ public init(latitude: Float64, longitude: Float64, altitude: Float64)
 |:---|:---|:---|:---|:---|
 |latitude|Float64|是|-|纬度（度）。取值范围：[-90, 90]。|
 |longitude|Float64|是|-|经度（度）。取值范围：[-180, 180]。|
-|altitude|Float64|是|-|海拔(米)。|
+|altitude|Float64|是|-|海拔（米）。|
+
+## class MetadataObject
+
+```cangjie
+public open class MetadataObject {}
+```
+
+**功能：** 相机元数据对象，是相机输入的数据源。元数据对象通过[MetadataOutput.onMetadataObjectsAvailable](#class-metadataoutput)获取。
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**起始版本：** 26.1.0
+
+### prop boundingBox
+
+```cangjie
+public prop boundingBox: Rect
+```
+
+**功能：** 元数据矩形区域。
+
+**类型：** [Rect](#class-rect)
+
+**读写能力：** 只读
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**起始版本：** 26.1.0
+
+### prop metadataObjectType
+
+```cangjie
+public prop metadataObjectType: MetadataObjectType
+```
+
+**功能：** 元数据对象类型。
+
+**类型：** [MetadataObjectType](#enum-metadataobjecttype)
+
+**读写能力：** 只读
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**起始版本：** 26.1.0
+
+### prop timestamp
+
+```cangjie
+public prop timestamp: Int32
+```
+
+**功能：** 时间戳，单位为纳秒。
+
+**类型：** Int32
+
+**读写能力：** 只读
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**起始版本：** 26.1.0
+
+## class MetadataOutput
+
+```cangjie
+public class MetadataOutput <: CameraOutput {}
+```
+
+**功能：** 元数据输出对象，继承自[CameraOutput](#interface-cameraoutput)，提供元数据流控制和回调订阅能力。
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**起始版本：** 26.1.0
+
+### func offError(?Callback0Argument)
+
+```cangjie
+public func offError(callback!: ?Callback0Argument = None): Unit
+```
+
+**功能：** 取消订阅元数据输出错误事件回调。未指定回调时，取消订阅全部回调。
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|callback|?[Callback0Argument](../arkinterop/cj-api-callback_invoke.md#class-callback0argument)|否|None|**命名参数。** 要取消订阅的回调。未指定时取消订阅全部回调。|
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.CameraKit.*
+import kit.CangjieKit.{BusinessException, Callback0Argument}
+import kit.PerformanceAnalysisKit.Hilog
+
+class MetadataErrorCallback <: Callback0Argument {
+    public open func invoke(err: ?BusinessException): Unit {
+        match (err) {
+            case Some(e) => Hilog.error(0, "test", "metadataOutput error: ${e.message}")
+            case None => ()
+        }
+    }
+}
+
+try {
+    let ctx = Global.abilityContext // 此处需手动配置模板，获取Context上下文。上下文获取方式请参见使用说明。
+    let cameraManager = getCameraManager(ctx)
+    let cameraDevice = cameraManager.getSupportedCameras()[0]
+    let mode = cameraManager.getSupportedSceneModes(cameraDevice)[0]
+    let ability = cameraManager.getSupportedOutputCapability(cameraDevice, mode)
+    let metadataOutput = cameraManager.createMetadataOutput(ability.supportedMetadataObjectTypes)
+    metadataOutput.onError(MetadataErrorCallback())
+    // 取消订阅元数据输出错误事件回调
+    metadataOutput.offError()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
+### func offMetadataObjectsAvailable(?Callback1Argument\<Array\<MetadataObject>>)
+
+```cangjie
+public func offMetadataObjectsAvailable(callback!: ?Callback1Argument<Array<MetadataObject>> = None): Unit
+```
+
+**功能：** 取消订阅元数据对象可用事件回调。未指定回调时，取消订阅全部回调。
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|callback|?Callback1Argument\<Array\<[MetadataObject](#class-metadataobject)>>|否|None|**命名参数。** 要取消订阅的回调。未指定时取消订阅全部回调。|
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.CameraKit.*
+import kit.CangjieKit.{BusinessException, Callback1Argument}
+import kit.PerformanceAnalysisKit.Hilog
+
+class MetadataCallback <: Callback1Argument<Array<MetadataObject>> {
+    public open func invoke(err: ?BusinessException, objects: Array<MetadataObject>): Unit {
+        for (obj in objects) {
+            Hilog.info(0, "test", "metadataObjectType=${obj.metadataObjectType}")
+        }
+    }
+}
+
+try {
+    let ctx = Global.abilityContext // 此处需手动配置模板，获取Context上下文。上下文获取方式请参见使用说明。
+    let cameraManager = getCameraManager(ctx)
+    let cameraDevice = cameraManager.getSupportedCameras()[0]
+    let mode = cameraManager.getSupportedSceneModes(cameraDevice)[0]
+    let ability = cameraManager.getSupportedOutputCapability(cameraDevice, mode)
+    let metadataOutput = cameraManager.createMetadataOutput(ability.supportedMetadataObjectTypes)
+    metadataOutput.onMetadataObjectsAvailable(MetadataCallback())
+    // 取消订阅元数据对象可用事件回调
+    metadataOutput.offMetadataObjectsAvailable()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
+### func onError(Callback0Argument)
+
+```cangjie
+public func onError(callback: Callback0Argument): Unit
+```
+
+**功能：** 订阅元数据输出错误事件回调。
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|callback|[Callback0Argument](../arkinterop/cj-api-callback_invoke.md#class-callback0argument)|是|-|用于获取元数据输出错误的回调。|
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.CameraKit.*
+import kit.CangjieKit.{BusinessException, Callback0Argument}
+import kit.PerformanceAnalysisKit.Hilog
+
+class MetadataErrorCallback <: Callback0Argument {
+    public open func invoke(err: ?BusinessException): Unit {
+        match (err) {
+            case Some(e) => Hilog.error(0, "test", "metadataOutput error: ${e.message}")
+            case None => ()
+        }
+    }
+}
+
+try {
+    let ctx = Global.abilityContext // 此处需手动配置模板，获取Context上下文。上下文获取方式请参见使用说明。
+    let cameraManager = getCameraManager(ctx)
+    let cameraDevice = cameraManager.getSupportedCameras()[0]
+    let mode = cameraManager.getSupportedSceneModes(cameraDevice)[0]
+    let ability = cameraManager.getSupportedOutputCapability(cameraDevice, mode)
+    let metadataOutput = cameraManager.createMetadataOutput(ability.supportedMetadataObjectTypes)
+    metadataOutput.onError(MetadataErrorCallback())
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
+### func onMetadataObjectsAvailable(Callback1Argument\<Array\<MetadataObject>>)
+
+```cangjie
+public func onMetadataObjectsAvailable(callback: Callback1Argument<Array<MetadataObject>>): Unit
+```
+
+**功能：** 订阅元数据对象可用事件回调。
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|callback|Callback1Argument\<Array\<[MetadataObject](#class-metadataobject)>>|是|-|用于获取可用元数据对象的回调。|
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.CameraKit.*
+import kit.CangjieKit.Callback1Argument
+import kit.CangjieKit.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
+
+class MetadataCallback <: Callback1Argument<Array<MetadataObject>> {
+    public open func invoke(err: ?BusinessException, objects: Array<MetadataObject>): Unit {
+        for (obj in objects) {
+            Hilog.info(0, "test", "metadataObjectType=${obj.metadataObjectType}")
+        }
+    }
+}
+
+try {
+    let ctx = Global.abilityContext // 此处需手动配置模板，获取Context上下文。上下文获取方式请参见使用说明。
+    let cameraManager = getCameraManager(ctx)
+    let cameraDevice = cameraManager.getSupportedCameras()[0]
+    let mode = cameraManager.getSupportedSceneModes(cameraDevice)[0]
+    let ability = cameraManager.getSupportedOutputCapability(cameraDevice, mode)
+    let metadataOutput = cameraManager.createMetadataOutput(ability.supportedMetadataObjectTypes)
+    metadataOutput.onMetadataObjectsAvailable(MetadataCallback())
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
+### func release()
+
+```cangjie
+public func release(): Unit
+```
+
+**功能：** 释放元数据输出资源。
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**起始版本：** 26.1.0
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.CameraKit.*
+import kit.CangjieKit.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
+
+try {
+    let ctx = Global.abilityContext // 此处需手动配置模板，获取Context上下文。上下文获取方式请参见使用说明。
+    let cameraManager = getCameraManager(ctx)
+    let cameraDevice = cameraManager.getSupportedCameras()[0]
+    let mode = cameraManager.getSupportedSceneModes(cameraDevice)[0]
+    let ability = cameraManager.getSupportedOutputCapability(cameraDevice, mode)
+    let metadataOutput = cameraManager.createMetadataOutput(ability.supportedMetadataObjectTypes)
+    metadataOutput.release()
+    Hilog.info(0, "test", "metadataOutput released")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
+### func start(AsyncCallback\<Unit>)
+
+```cangjie
+public func start(callback: AsyncCallback<Unit>): Unit
+```
+
+**功能：** 开始输出元数据。该接口使用异步回调返回结果。
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|callback|AsyncCallback\<Unit>|是|-|用于返回结果的回调。成功时`err`为`None`；失败时`err`包含错误码。|
+
+**异常：**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Camera错误码](./cj-errorcode-multimedia-camera.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 7400103 | Session not config. |
+  | 7400201 | Camera service fatal error. |
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.CameraKit.*
+import kit.CangjieKit.{AsyncCallback, BusinessException}
+import kit.PerformanceAnalysisKit.Hilog
+
+try {
+    let ctx = Global.abilityContext // 此处需手动配置模板，获取Context上下文。上下文获取方式请参见使用说明。
+    let cameraManager = getCameraManager(ctx)
+    let cameraDevice = cameraManager.getSupportedCameras()[0]
+    let mode = cameraManager.getSupportedSceneModes(cameraDevice)[0]
+    let ability = cameraManager.getSupportedOutputCapability(cameraDevice, mode)
+    let metadataOutput = cameraManager.createMetadataOutput(ability.supportedMetadataObjectTypes)
+    let callback: AsyncCallback<Unit> = {
+        err: Option<BusinessException>, data: Option<Unit> =>
+        if (let Some(e) <- err) {
+            Hilog.error(0, "test", "start error: code=${e.code}, message=${e.message}")
+        } else {
+            Hilog.info(0, "test", "metadataOutput started")
+        }
+    }
+    metadataOutput.start(callback)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
+### func stop(AsyncCallback\<Unit>)
+
+```cangjie
+public func stop(callback: AsyncCallback<Unit>): Unit
+```
+
+**功能：** 停止输出元数据。该接口使用异步回调返回结果。
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|callback|AsyncCallback\<Unit>|是|-|用于返回结果的回调。成功时`err`为`None`；失败时`err`包含错误信息。|
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.CameraKit.*
+import kit.CangjieKit.{AsyncCallback, BusinessException}
+import kit.PerformanceAnalysisKit.Hilog
+
+try {
+    let ctx = Global.abilityContext // 此处需手动配置模板，获取Context上下文。上下文获取方式请参见使用说明。
+    let cameraManager = getCameraManager(ctx)
+    let cameraDevice = cameraManager.getSupportedCameras()[0]
+    let mode = cameraManager.getSupportedSceneModes(cameraDevice)[0]
+    let ability = cameraManager.getSupportedOutputCapability(cameraDevice, mode)
+    let metadataOutput = cameraManager.createMetadataOutput(ability.supportedMetadataObjectTypes)
+    let callback: AsyncCallback<Unit> = {
+        err: Option<BusinessException>, data: Option<Unit> =>
+        if (let Some(e) <- err) {
+            Hilog.error(0, "test", "stop error: code=${e.code}, message=${e.message}")
+        } else {
+            Hilog.info(0, "test", "metadataOutput stopped")
+        }
+    }
+    metadataOutput.stop(callback)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
+## class Photo
+
+```cangjie
+public class Photo {}
+```
+
+**功能：** 全质量图像对象。
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**起始版本：** 26.1.0
+
+### prop mainImage
+
+```cangjie
+public mut prop mainImage: ImageType
+```
+
+**功能：** 全质量图像。
+
+**类型：** [ImageType](#enum-imagetype)
+
+**读写能力：** 可读写
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**起始版本：** 26.1.0
 
 ## class PhotoCaptureSetting
 
@@ -4655,7 +5162,7 @@ public func capture(): Unit
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -4707,7 +5214,7 @@ public func capture(setting: PhotoCaptureSetting): Unit
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -4761,7 +5268,7 @@ public func enableMirror(enabled: Bool): Unit
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -4816,7 +5323,7 @@ public func enableMovingPhoto(enabled: Bool): Unit
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -4867,7 +5374,7 @@ public func getActiveProfile(): Profile
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -4928,7 +5435,7 @@ public func getPhotoRotation(deviceDegree: Int32): ImageRotation
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -4971,7 +5478,7 @@ public func getSupportedMovingPhotoVideoCodecTypes(): Array<VideoCodecType>
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -5021,7 +5528,7 @@ public func isMirrorSupported(): Bool
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -5071,7 +5578,7 @@ public func isMovingPhotoSupported(): Bool
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -5122,7 +5629,7 @@ public func off(eventType: CameraEvents, callback: Callback1Argument<CaptureStar
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -5173,7 +5680,7 @@ public func off(eventType: CameraEvents, callback: Callback1Argument<FrameShutte
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -5224,7 +5731,7 @@ public func off(eventType: CameraEvents, callback: Callback1Argument<CaptureEndI
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -5275,7 +5782,7 @@ public func off(eventType: CameraEvents, callback: Callback1Argument<FrameShutte
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -5326,7 +5833,7 @@ public func off(eventType: CameraEvents, callback: Callback0Argument): Unit
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -5377,7 +5884,7 @@ public func off(eventType: CameraEvents, callback: Callback1Argument<Float64>): 
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -5427,7 +5934,7 @@ public func off(eventType: CameraEvents): Unit
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -5438,6 +5945,56 @@ try {
     let ability = cameraManager.getSupportedOutputCapability(device, mode)
     let output = cameraManager.createPhotoOutput(profile:ability.photoProfiles[0])
     output.off(CameraEvents.CaptureStartWithInfo)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
+### func offPhotoAvailable(?Callback1Argument\<Photo>)
+
+```cangjie
+public func offPhotoAvailable(callback!: ?Callback1Argument<Photo> = None): Unit
+```
+
+**功能：** 取消订阅全质量照片可用事件回调。未指定回调时，取消订阅全部回调。
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|callback|?Callback1Argument\<[Photo](#class-photo)>|否|None|**命名参数。** 要取消订阅的回调。未指定时取消订阅全部回调。|
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.CameraKit.*
+import kit.CangjieKit.Callback1Argument
+import kit.CangjieKit.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
+
+class PhotoCallback <: Callback1Argument<Photo> {
+    public open func invoke(err: ?BusinessException, photo: Photo): Unit {
+        Hilog.info(0, "test", "onPhotoAvailable: photo received")
+    }
+}
+
+try {
+    let ctx = Global.abilityContext // 此处需手动配置模板，获取Context上下文。上下文获取方式请参见使用说明。
+    let cameraManager = getCameraManager(ctx)
+    let cameraDevice = cameraManager.getSupportedCameras()[0]
+    let mode = cameraManager.getSupportedSceneModes(cameraDevice)[0]
+    let ability = cameraManager.getSupportedOutputCapability(cameraDevice, mode)
+    let photoOutput = cameraManager.createPhotoOutput(profile: ability.photoProfiles[0])
+    let callback = PhotoCallback()
+    photoOutput.offPhotoAvailable(callback: callback)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -5482,8 +6039,8 @@ public func on(eventType: CameraEvents, callback: Callback1Argument<CaptureStart
 // index.cj
 
 import kit.CameraKit.*
-import ohos.callback_invoke.Callback0Argument
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.Callback0Argument
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 // 此处代码可添加在依赖项定义中
@@ -5543,8 +6100,8 @@ public func on(eventType: CameraEvents, callback: Callback1Argument<FrameShutter
 // index.cj
 
 import kit.CameraKit.*
-import ohos.callback_invoke.Callback0Argument
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.Callback0Argument
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 // 此处代码可添加在依赖项定义中
@@ -5608,8 +6165,8 @@ public func on(eventType: CameraEvents, callback: Callback1Argument<CaptureEndIn
 // index.cj
 
 import kit.CameraKit.*
-import ohos.callback_invoke.Callback0Argument
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.Callback0Argument
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 // 此处代码可添加在依赖项定义中
@@ -5673,8 +6230,8 @@ public func on(eventType: CameraEvents, callback: Callback1Argument<FrameShutter
 // index.cj
 
 import kit.CameraKit.*
-import ohos.callback_invoke.Callback0Argument
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.Callback0Argument
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 // 此处代码可添加在依赖项定义中
@@ -5738,8 +6295,8 @@ public func on(eventType: CameraEvents, callback: Callback0Argument): Unit
 // index.cj
 
 import kit.CameraKit.*
-import ohos.callback_invoke.Callback0Argument
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.Callback0Argument
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 // 此处代码可添加在依赖项定义中
@@ -5803,8 +6360,8 @@ public func on(eventType: CameraEvents, callback: Callback1Argument<Float64>): U
 // index.cj
 
 import kit.CameraKit.*
-import ohos.callback_invoke.Callback0Argument
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.Callback0Argument
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 // 此处代码可添加在依赖项定义中
@@ -5824,6 +6381,55 @@ try {
     let output = cameraManager.createPhotoOutput(profile:ability.photoProfiles[0])
     let testCallbackError = TestCallbackError()
     output.on(CameraEvents.CameraError, testCallbackError)
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
+### func onPhotoAvailable(Callback1Argument\<Photo>)
+
+```cangjie
+public func onPhotoAvailable(callback: Callback1Argument<Photo>): Unit
+```
+
+**功能：** 订阅全质量照片可用事件回调。
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|callback|Callback1Argument\<[Photo](#class-photo)>|是|-|用于获取全质量照片的回调。|
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.CameraKit.*
+import kit.CangjieKit.Callback1Argument
+import kit.CangjieKit.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
+
+class PhotoCallback <: Callback1Argument<Photo> {
+    public open func invoke(err: ?BusinessException, photo: Photo): Unit {
+        Hilog.info(0, "test", "onPhotoAvailable: photo received")
+    }
+}
+
+try {
+    let ctx = Global.abilityContext // 此处需手动配置模板，获取Context上下文。上下文获取方式请参见使用说明。
+    let cameraManager = getCameraManager(ctx)
+    let cameraDevice = cameraManager.getSupportedCameras()[0]
+    let mode = cameraManager.getSupportedSceneModes(cameraDevice)[0]
+    let ability = cameraManager.getSupportedOutputCapability(cameraDevice, mode)
+    let photoOutput = cameraManager.createPhotoOutput(profile: ability.photoProfiles[0])
+    photoOutput.onPhotoAvailable(PhotoCallback())
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -5857,7 +6463,7 @@ public func release(): Unit
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -5907,7 +6513,7 @@ public func setMovingPhotoVideoCodecType(codecType: VideoCodecType): Unit
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -5985,7 +6591,7 @@ public func canPreconfig(preconfigType: PreconfigType, preconfigRatio!: Preconfi
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -6026,7 +6632,7 @@ public func off(eventType: CameraEvents, callback: Callback0Argument): Unit
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -6067,7 +6673,7 @@ public func off(eventType: CameraEvents, callback: Callback1Argument<FocusState>
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -6108,7 +6714,7 @@ public func off(eventType: CameraEvents, callback: Callback1Argument<SmoothZoomI
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -6155,7 +6761,7 @@ public func off(eventType: CameraEvents): Unit
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -6200,8 +6806,7 @@ public func on(eventType: CameraEvents, callback: Callback0Argument): Unit
 // index.cj
 
 import kit.CameraKit.*
-import ohos.callback_invoke.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 // 此处代码可添加在依赖项定义中
@@ -6257,8 +6862,7 @@ public func on(eventType: CameraEvents, callback: Callback1Argument<FocusState>)
 // index.cj
 
 import kit.CameraKit.*
-import ohos.callback_invoke.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 // 此处代码可添加在依赖项定义中
@@ -6314,8 +6918,7 @@ public func on(eventType: CameraEvents, callback: Callback1Argument<SmoothZoomIn
 // index.cj
 
 import kit.CameraKit.*
-import ohos.callback_invoke.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 // 此处代码可添加在依赖项定义中
@@ -6378,7 +6981,7 @@ public func preconfig(
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -6514,7 +7117,7 @@ import kit.CameraKit.*
 import kit.ImageKit.createImageReceiver
 import kit.ImageKit.Size as ImageSize
 import kit.ImageKit.ImageFormat
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -6570,7 +7173,7 @@ import kit.CameraKit.*
 import kit.ImageKit.createImageReceiver
 import kit.ImageKit.Size as ImageSize
 import kit.ImageKit.ImageFormat
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -6637,7 +7240,7 @@ import kit.CameraKit.*
 import kit.ImageKit.createImageReceiver
 import kit.ImageKit.Size as ImageSize
 import kit.ImageKit.ImageFormat
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -6693,7 +7296,7 @@ import kit.CameraKit.*
 import kit.ImageKit.createImageReceiver
 import kit.ImageKit.Size as ImageSize
 import kit.ImageKit.ImageFormat
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -6750,7 +7353,7 @@ import kit.CameraKit.*
 import kit.ImageKit.createImageReceiver
 import kit.ImageKit.Size as ImageSize
 import kit.ImageKit.ImageFormat
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -6806,7 +7409,7 @@ import kit.CameraKit.*
 import kit.ImageKit.createImageReceiver
 import kit.ImageKit.Size as ImageSize
 import kit.ImageKit.ImageFormat
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -6867,8 +7470,8 @@ import kit.CameraKit.*
 import kit.ImageKit.createImageReceiver
 import kit.ImageKit.Size as ImageSize
 import kit.ImageKit.ImageFormat
-import ohos.callback_invoke.Callback0Argument
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.Callback0Argument
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 // 此处代码可添加在依赖项定义中
@@ -6927,7 +7530,7 @@ import kit.CameraKit.*
 import kit.ImageKit.createImageReceiver
 import kit.ImageKit.Size as ImageSize
 import kit.ImageKit.ImageFormat
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -6990,7 +7593,7 @@ import kit.CameraKit.*
 import kit.ImageKit.createImageReceiver
 import kit.ImageKit.Size as ImageSize
 import kit.ImageKit.ImageFormat
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -7048,7 +7651,7 @@ import kit.CameraKit.*
 import kit.ImageKit.createImageReceiver
 import kit.ImageKit.Size as ImageSize
 import kit.ImageKit.ImageFormat
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -7196,6 +7799,41 @@ public var width: Float64
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **起始版本：** 22
+
+### init(Float64, Float64, Float64, Float64)
+
+```cangjie
+public init(topLeftX: Float64, topLeftY: Float64, width: Float64, height: Float64)
+```
+
+**功能：** 创建矩形对象。
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|topLeftX|Float64|是|-|矩形区域左上角x坐标。|
+|topLeftY|Float64|是|-|矩形区域左上角y坐标。|
+|width|Float64|是|-|矩形宽，相对值，范围[0.0, 1.0]。|
+|height|Float64|是|-|矩形高，相对值，范围[0.0, 1.0]。|
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.CameraKit.*
+import kit.PerformanceAnalysisKit.Hilog
+
+let rect = Rect(0.0, 0.0, 100.0, 100.0)
+Hilog.info(0, "test", "width=${rect.width}, height=${rect.height}")
+```
 
 ## class Size
 
@@ -7393,7 +8031,7 @@ import kit.CameraKit.*
 import kit.ImageKit.createImageReceiver
 import kit.ImageKit.Size as ImageSize
 import kit.ImageKit.ImageFormat
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -7449,7 +8087,7 @@ import kit.CameraKit.*
 import kit.ImageKit.createImageReceiver
 import kit.ImageKit.Size as ImageSize
 import kit.ImageKit.ImageFormat
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -7505,7 +8143,7 @@ import kit.CameraKit.*
 import kit.ImageKit.createImageReceiver
 import kit.ImageKit.Size as ImageSize
 import kit.ImageKit.ImageFormat
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -7572,7 +8210,7 @@ import kit.CameraKit.*
 import kit.ImageKit.createImageReceiver
 import kit.ImageKit.Size as ImageSize
 import kit.ImageKit.ImageFormat
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -7629,7 +8267,7 @@ import kit.CameraKit.*
 import kit.ImageKit.createImageReceiver
 import kit.ImageKit.Size as ImageSize
 import kit.ImageKit.ImageFormat
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -7685,7 +8323,7 @@ import kit.CameraKit.*
 import kit.ImageKit.createImageReceiver
 import kit.ImageKit.Size as ImageSize
 import kit.ImageKit.ImageFormat
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -7746,8 +8384,8 @@ import kit.CameraKit.*
 import kit.ImageKit.createImageReceiver
 import kit.ImageKit.Size as ImageSize
 import kit.ImageKit.ImageFormat
-import ohos.callback_invoke.Callback0Argument
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.Callback0Argument
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 // 此处代码可添加在依赖项定义中
@@ -7806,7 +8444,7 @@ import kit.CameraKit.*
 import kit.ImageKit.createImageReceiver
 import kit.ImageKit.Size as ImageSize
 import kit.ImageKit.ImageFormat
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -7872,7 +8510,7 @@ import kit.CameraKit.*
 import kit.ImageKit.createImageReceiver
 import kit.ImageKit.Size as ImageSize
 import kit.ImageKit.ImageFormat
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -7923,7 +8561,7 @@ import kit.CameraKit.*
 import kit.ImageKit.createImageReceiver
 import kit.ImageKit.Size as ImageSize
 import kit.ImageKit.ImageFormat
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -7973,7 +8611,7 @@ import kit.CameraKit.*
 import kit.ImageKit.createImageReceiver
 import kit.ImageKit.Size as ImageSize
 import kit.ImageKit.ImageFormat
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -8093,7 +8731,7 @@ public func canPreconfig(preconfigType: PreconfigType, preconfigRatio!: Preconfi
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -8142,7 +8780,7 @@ public func off(eventType: CameraEvents, callback: Callback0Argument): Unit
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -8191,7 +8829,7 @@ public func off(eventType: CameraEvents, callback: Callback1Argument<FocusState>
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -8240,7 +8878,7 @@ public func off(eventType: CameraEvents, callback: Callback1Argument<SmoothZoomI
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -8288,7 +8926,7 @@ public func off(eventType: CameraEvents): Unit
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -8341,8 +8979,7 @@ public func on(eventType: CameraEvents, callback: Callback0Argument): Unit
 // index.cj
 
 import kit.CameraKit.*
-import ohos.callback_invoke.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 // 此处代码可添加在依赖项定义中
@@ -8406,8 +9043,7 @@ public func on(eventType: CameraEvents, callback: Callback1Argument<FocusState>)
 // index.cj
 
 import kit.CameraKit.*
-import ohos.callback_invoke.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 // 此处代码可添加在依赖项定义中
@@ -8471,8 +9107,7 @@ public func on(eventType: CameraEvents, callback: Callback1Argument<SmoothZoomIn
 // index.cj
 
 import kit.CameraKit.*
-import ohos.callback_invoke.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 // 此处代码可添加在依赖项定义中
@@ -8536,7 +9171,7 @@ public func preconfig(
 // index.cj
 
 import kit.CameraKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -10286,6 +10921,170 @@ public func toString(): String
 |类型|说明|
 |:----|:----|
 |String|枚举的字符串值。|
+
+## enum ImageType
+
+```cangjie
+public enum ImageType {
+    ImageValue(Image)
+    | ...
+}
+```
+
+**功能：** 定义图片容器类型，用于获取全质量图像或未压缩图像（YUV）。
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**起始版本：** 26.1.0
+
+**父类型：**
+
+- Equatable\<[ImageType](#enum-imagetype)>
+- ToString
+
+### ImageValue(Image)
+
+```cangjie
+ImageValue(Image)
+```
+
+**功能：** 获取全质量图像的图片容器类型。其中`Image`为图片处理模块的图片类，详见[Image](../ImageKit/cj-apis-image.md#class-image)。
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**起始版本：** 26.1.0
+
+### func toString()
+
+```cangjie
+public func toString(): String
+```
+
+**功能：** 将图片容器类型转换为字符串表示。
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**起始版本：** 26.1.0
+
+**返回值：**
+
+|类型|说明|
+|:----|:----|
+|String|图片容器类型的字符串表示。|
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.CameraKit.*
+import kit.CangjieKit.{BusinessException, Callback1Argument}
+import kit.PerformanceAnalysisKit.Hilog
+
+class PhotoCallback <: Callback1Argument<Photo> {
+    public open func invoke(err: ?BusinessException, photo: Photo): Unit {
+        // 获取图片容器类型的字符串表示
+        let imageType = photo.mainImage
+        Hilog.info(0, "test", "imageType=${imageType.toString()}")
+    }
+}
+```
+
+### func ==(ImageType)
+
+```cangjie
+public operator func ==(other: ImageType): Bool
+```
+
+**功能：** 判断两个图片容器类型是否相等。
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|other|[ImageType](#enum-imagetype)|是|-|待比较的图片容器类型。|
+
+**返回值：**
+
+|类型|说明|
+|:----|:----|
+|Bool|两个枚举值相等返回true，否则返回false。|
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.CameraKit.*
+import kit.CangjieKit.{BusinessException, Callback1Argument}
+import kit.PerformanceAnalysisKit.Hilog
+
+class PhotoCallback <: Callback1Argument<Photo> {
+    public open func invoke(err: ?BusinessException, photo: Photo): Unit {
+        let imageType = photo.mainImage
+        // 判断两个图片容器类型是否相等
+        if (let ImageType.ImageValue(image) <- imageType) {
+            let isEqual = imageType == ImageType.ImageValue(image)
+            Hilog.info(0, "test", "isEqual=${isEqual}")
+        }
+    }
+}
+```
+
+### func !=(ImageType)
+
+```cangjie
+public operator func !=(other: ImageType): Bool
+```
+
+**功能：** 判断两个图片容器类型是否不相等。
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|other|[ImageType](#enum-imagetype)|是|-|待比较的图片容器类型。|
+
+**返回值：**
+
+|类型|说明|
+|:----|:----|
+|Bool|两个枚举值不相等返回true，否则返回false。|
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.CameraKit.*
+import kit.CangjieKit.{BusinessException, Callback1Argument}
+import kit.PerformanceAnalysisKit.Hilog
+
+class PhotoCallback <: Callback1Argument<Photo> {
+    public open func invoke(err: ?BusinessException, photo: Photo): Unit {
+        let imageType = photo.mainImage
+        // 判断两个图片容器类型是否不相等
+        if (let ImageType.ImageValue(image) <- imageType) {
+            let isNotEqual = imageType != ImageType.ImageValue(image)
+            Hilog.info(0, "test", "isNotEqual=${isNotEqual}")
+        }
+    }
+}
+```
 
 ## enum MetadataObjectType
 

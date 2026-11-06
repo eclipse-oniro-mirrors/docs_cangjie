@@ -97,6 +97,9 @@
             - [触屏事件](cj-common-events-touch-screen-event.md)（Beta特性）
             - [键鼠事件](cj-common-events-device-input-event.md)（Beta特性）
             - [焦点事件](cj-common-events-focus-event.md)（Beta特性）
+        - 使用手势
+            - [绑定手势方法](cj-gesture-events-binding.md)（Beta特性）
+            - [单一手势](cj-gesture-events-single-gesture.md)（Beta特性）
     - 使用动画
         - [动画概述](cj-animation.md)（Beta特性）
         - 属性动画
@@ -125,6 +128,7 @@
             - [使用画布绘制自定义图形（Canvas）](cj-drawing-customization-on-canvas.md)（Beta特性）
     - [混合开发](cj-appendix-hybrid.md)（Beta特性）
     - [使用镜像能力](cj-mirroring-display.md)（Beta特性）
+    - [使用组件截图](cj-uicontext-component-snapshot.md)（Beta特性）
     - 主题设置
         - [应用深浅色适配](cj-ui-dark-light-color-adaptation.md)（Beta特性）
 - [窗口管理](../windowmanager/README_zh.md)（Beta特性）

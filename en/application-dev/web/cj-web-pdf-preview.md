@@ -25,7 +25,7 @@ In the following example, the web component specifies the default loading of a n
 ```cangjie
 // index.cj
 import ohos.arkui.state_macro_manage.*
-import ohos.web.webview.WebviewController
+import kit.ArkWeb.WebviewController
 import kit.ArkUI.Web
 
 @Entry

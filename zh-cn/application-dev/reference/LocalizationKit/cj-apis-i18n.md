@@ -55,8 +55,8 @@ public func getCalendar(locale: String, calendarType!: ?CalendarType = None): Ca
 ```cangjie
 // index.cj
 
-import ohos.i18n.*
-import ohos.business_exception.BusinessException
+import kit.LocalizationKit.*
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -113,7 +113,7 @@ public func add(field: String, amount: Int32): Unit
 // index.cj
 
 import kit.LocalizationKit.getCalendar
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -183,7 +183,7 @@ public func get(field: String): Int32
 // index.cj
 
 import kit.LocalizationKit.getCalendar
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -231,9 +231,8 @@ public func getDisplayName(locale: String): String
 ```cangjie
 // index.cj
 
-import kit.LocalizationKit.getCalendar
-import ohos.i18n.CalendarType
-import ohos.business_exception.BusinessException
+import kit.LocalizationKit.*
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -270,7 +269,7 @@ public func getFirstDayOfWeek(): Int32
 // index.cj
 
 import kit.LocalizationKit.getCalendar
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -307,7 +306,7 @@ public func getMinimalDaysInFirstWeek(): Int32
 // index.cj
 
 import kit.LocalizationKit.getCalendar
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -344,7 +343,7 @@ public func getTimeInMillis(): Float64
 // index.cj
 
 import kit.LocalizationKit.getCalendar
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -381,9 +380,8 @@ public func getTimeZone(): String
 ```cangjie
 // index.cj
 
-import kit.LocalizationKit.getCalendar
-import ohos.i18n.CalendarType
-import ohos.business_exception.BusinessException
+import kit.LocalizationKit.*
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -426,7 +424,7 @@ public func set(year: Int32, month: Int32, date: Int32, hour!: ?Int32 = None, mi
 // index.cj
 
 import kit.LocalizationKit.getCalendar
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -463,7 +461,7 @@ public func setFirstDayOfWeek(value: Int32): Unit
 // index.cj
 
 import kit.LocalizationKit.getCalendar
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -501,7 +499,7 @@ public func setMinimalDaysInFirstWeek(value: Int32): Unit
 // index.cj
 
 import kit.LocalizationKit.getCalendar
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -539,7 +537,7 @@ public func setTime(time: Float64): Unit
 // index.cj
 
 import kit.LocalizationKit.getCalendar
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -576,7 +574,7 @@ public func setTimeZone(timeZone: String): Unit
 // index.cj
 
 import kit.LocalizationKit.getCalendar
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -624,9 +622,8 @@ public static func getAppPreferredLanguage(): String
 ```cangjie
 // index.cj
 
-import ohos.i18n.*
-import kit.LocalizationKit.getCalendar
-import ohos.business_exception.BusinessException
+import kit.LocalizationKit.*
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -634,6 +631,207 @@ try {
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
+```
+
+### static func getSystemLanguage()
+
+```cangjie
+public static func getSystemLanguage(): String
+```
+
+**功能：** 获取系统当前设置的语言。若要监听系统语言变化，可以监听公共事件`Support.COMMON_EVENT_LOCALE_CHANGED`，具体可参考[系统语言与区域](../../internationalization/cj-i18n-system-language-region.md#开发步骤)。
+
+**系统能力：** SystemCapability.Global.I18n
+
+**起始版本：** 26.1.0
+
+**返回值：**
+
+|类型|说明|
+|:----|:----|
+|String|表示语言ID的字符串。|
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.LocalizationKit.*
+import kit.PerformanceAnalysisKit.Hilog
+
+let systemLanguage = System.getSystemLanguage() // 如果系统语言为简体中文，systemLanguage = 'zh-Hans'
+Hilog.info(0, "test", "systemLanguage=${systemLanguage}")
+```
+
+### static func getSystemRegion()
+
+```cangjie
+public static func getSystemRegion(): String
+```
+
+**功能：** 获取系统当前设置的国家地区。若要监听系统地区变化，可以监听公共事件`Support.COMMON_EVENT_LOCALE_CHANGED`，具体可参考[系统语言与区域](../../internationalization/cj-i18n-system-language-region.md#开发步骤)。
+
+**系统能力：** SystemCapability.Global.I18n
+
+**起始版本：** 26.1.0
+
+**返回值：**
+
+|类型|说明|
+|:----|:----|
+|String|表示国家地区ID的字符串。|
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.LocalizationKit.*
+import kit.PerformanceAnalysisKit.Hilog
+
+let systemRegion = System.getSystemRegion() // 如果系统地区为中国，systemRegion = 'CN'
+Hilog.info(0, "test", "systemRegion=${systemRegion}")
+```
+
+## func isRTL(String)
+
+```cangjie
+public func isRTL(locale: String): Bool
+```
+
+**功能：** 判断语言是否为镜像语言。在镜像语言下，UI界面需要[镜像显示](../../internationalization/cj-i18n-ui-design.md#界面镜像)。
+
+**系统能力：** SystemCapability.Global.I18n
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|locale|String|是|-|表示区域ID的字符串，由语言、脚本、国家地区组成，例如ar-EG。|
+
+**返回值：**
+
+|类型|说明|
+|:----|:----|
+|Bool|true表示该语言是镜像语言，false表示该语言不是镜像语言。|
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.LocalizationKit.*
+import kit.PerformanceAnalysisKit.Hilog
+
+let isZhRTL = isRTL("zh-CN") // 中文不是镜像语言，返回false
+let isArRTL = isRTL("ar-EG") // 阿语是镜像语言，返回true
+Hilog.info(0, "test", "isZhRTL=${isZhRTL}, isArRTL=${isArRTL}")
+```
+
+## class Transliterator
+
+```cangjie
+public class Transliterator {}
+```
+
+**功能：** 提供文本音译相关的能力，包括创建音译对象和文本音译等。
+
+**系统能力：** SystemCapability.Global.I18n
+
+**起始版本：** 26.1.0
+
+### static func getInstance(String)
+
+```cangjie
+public static func getInstance(id: String): Transliterator
+```
+
+**功能：** 创建指定转换ID的音译对象。
+
+**系统能力：** SystemCapability.Global.I18n
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|id|String|是|-|音译支持的转换ID，例如Any-Latn。|
+
+**返回值：**
+
+|类型|说明|
+|:----|:----|
+|[Transliterator](#class-transliterator)|音译对象。|
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.LocalizationKit.*
+import kit.CangjieKit.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
+
+try {
+    let transliterator = Transliterator.getInstance("Any-Latn")
+    Hilog.info(0, "test", "getInstance success")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
+### func transform(String)
+
+```cangjie
+public func transform(text: String): String
+```
+
+**功能：** 将输入文本从源格式转换为目标格式。
+
+**系统能力：** SystemCapability.Global.I18n
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|text|String|是|-|输入文本。|
+
+**返回值：**
+
+|类型|说明|
+|:----|:----|
+|String|转换后的文本。|
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.LocalizationKit.*
+import kit.PerformanceAnalysisKit.Hilog
+
+let transliterator = Transliterator.getInstance("Any-Latn")
+let transliterateLatn = transliterator.transform("中国") // transliterateLatn = 'zhōng guó'
+Hilog.info(0, "test", "transliterateLatn=${transliterateLatn}")
+
+let asciiTransliterator = Transliterator.getInstance("Any-Latn;Latin-Ascii")
+let transliterateAscii = asciiTransliterator.transform("中国") // transliterateAscii = 'zhong guo'
+Hilog.info(0, "test", "transliterateAscii=${transliterateAscii}")
 ```
 
 ## enum CalendarType

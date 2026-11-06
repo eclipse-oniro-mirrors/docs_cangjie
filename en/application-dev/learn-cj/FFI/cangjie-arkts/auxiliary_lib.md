@@ -22,7 +22,7 @@ The following example illustrates its usage:
 1. After creating a [Cangjie] Empty Ability project, add a global instance of `UIAbilityContext` in the `entry->src->main->cangjie->main_ability.cj` file and assign it in the `onCreate` function:
 
     ```cangjie
-    import ohos.ability.UIAbilityContext
+    import kit.AbilityKit.UIAbilityContext
 
     // Global instance of UIAbilityContext
     var globalAbilityContext: ?UIAbilityContext = None
@@ -40,9 +40,8 @@ The following example illustrates its usage:
 2. Use the helper library interface in Cangjie code:
 
     ```cangjie
-    import ohos.ark_interop.*
-    import ohos.ark_interop_helper.*
-    import ohos.ability.UIAbilityContext
+    import kit.CangjieKit.*
+    import kit.AbilityKit.UIAbilityContext
 
     var runtime = Option<JSRuntime>.None
 

@@ -67,7 +67,7 @@ For supported specifications, see [Symmetric Key Encryption/Decryption Algorithm
 // index.cj
 
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -119,7 +119,7 @@ public func createMac(algName: String): Mac
 // index.cj
 
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -169,7 +169,7 @@ public func createMd(algName: String): Md
 // index.cj
 
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -213,7 +213,7 @@ public func createRandom(): Random
 // index.cj
 
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -265,7 +265,7 @@ For supported specifications, see [Symmetric Key Generation and Conversion Speci
 // index.cj
 
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -355,7 +355,7 @@ func getEncoded(): DataBlob
 // index.cj
 
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -475,7 +475,7 @@ This function can only be used after creating a [Cipher](#class-cipher) instance
 // index.cj
 
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -551,7 +551,7 @@ The output of `doFinal` varies by symmetric encryption/decryption mode:
 // index.cj  
 
 import kit.CryptoArchitectureKit.*  
-import ohos.business_exception.BusinessException  
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog  
 
 try {  
@@ -622,7 +622,7 @@ This function can only be used after initializing a [Cipher](#class-cipher) inst
 // index.cj  
 
 import kit.CryptoArchitectureKit.*  
-import ohos.business_exception.BusinessException  
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog  
 
 try {  
@@ -695,7 +695,7 @@ public func initialize(key: SymKey): Unit
 // index.cj  
 
 import kit.CryptoArchitectureKit.*  
-import ohos.business_exception.BusinessException  
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog  
 
 try {  
@@ -734,7 +734,7 @@ public func doFinal(): DataBlob
 // index.cj  
 
 import kit.CryptoArchitectureKit.*  
-import ohos.business_exception.BusinessException  
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog  
 
 try {  
@@ -776,7 +776,7 @@ public func getMacLength(): UInt32
 // index.cj  
 
 import kit.CryptoArchitectureKit.*  
-import ohos.business_exception.BusinessException  
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog  
 
 try {  
@@ -819,7 +819,7 @@ public func update(input: DataBlob): Unit
 // index.cj  
 
 import kit.CryptoArchitectureKit.*  
-import ohos.business_exception.BusinessException  
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog  
 
 try {  
@@ -895,7 +895,7 @@ public func digest(): DataBlob
 // index.cj
 
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -942,7 +942,7 @@ public func getMdLength(): UInt32
 // index.cj
 
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -988,7 +988,7 @@ public func update(input: DataBlob): Unit
 // index.cj
 
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1069,7 +1069,7 @@ public func generateRandom(len: Int32): DataBlob
 // index.cj
 
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1114,7 +1114,7 @@ public func setSeed(seed: DataBlob): Unit
 // index.cj
 
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1196,7 +1196,7 @@ public func clearMem(): Unit
 
 import kit.CryptoArchitectureKit.*
 import kit.PerformanceAnalysisKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1249,7 +1249,7 @@ public func getEncoded(): DataBlob
 
 import kit.CryptoArchitectureKit.*
 import kit.PerformanceAnalysisKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1337,7 +1337,7 @@ This function can only be used after creating a symmetric key generator with [cr
 // index.cj
 
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1389,7 +1389,7 @@ Currently, OpenSSL's RAND_priv_bytes() is supported as the underlying capability
 // index.cj
 
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1502,7 +1502,7 @@ public init(algName: String, iv: DataBlob, aad: DataBlob, authTag: DataBlob)
 // index.cj
 
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1663,7 +1663,7 @@ public init(algName: String, iv: DataBlob, aad: DataBlob, authTag: DataBlob)
 // index.cj
 
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1738,7 +1738,7 @@ public init(algName: String, iv: DataBlob)
 // index.cj
 
 import kit.CryptoArchitectureKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {

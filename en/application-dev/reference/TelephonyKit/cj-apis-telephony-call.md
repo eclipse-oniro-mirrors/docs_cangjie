@@ -85,7 +85,7 @@ The formatted phone number will be a standard numeric string, e.g., "138 xxxx xx
 // index.cj
 
 import kit.TelephonyKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -142,7 +142,7 @@ The phone number to be formatted must match the provided country code. For examp
 // index.cj
 
 import kit.TelephonyKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -178,7 +178,7 @@ public static func getCallState(): CallState
 // index.cj
 
 import kit.TelephonyKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -214,7 +214,7 @@ public static func hasCall(): Bool
 // index.cj
 
 import kit.TelephonyKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -250,7 +250,7 @@ public static func hasVoiceCapability(): Bool
 // index.cj
 
 import kit.TelephonyKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -305,7 +305,7 @@ public static func isEmergencyPhoneNumber(phoneNumber: String, options!: Emergen
 // index.cj
 
 import kit.TelephonyKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -353,7 +353,7 @@ public static func makeCall(phoneNumber: String): Unit
 // index.cj
 
 import kit.TelephonyKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -402,8 +402,8 @@ public static func makeCall(context: UIAbilityContext, phoneNumber: String): Uni
 // index.cj
 
 import kit.TelephonyKit.*
-import ohos.app.ability.ui_ability.UIAbilityContext
-import ohos.business_exception.BusinessException
+import kit.AbilityKit.UIAbilityContext
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -519,7 +519,7 @@ public init(countryCode!: String = "CN")
 // index.cj
 
 import kit.TelephonyKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {

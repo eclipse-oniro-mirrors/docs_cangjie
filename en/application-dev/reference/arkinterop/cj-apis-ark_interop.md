@@ -11,12 +11,10 @@ The development languages for ArkTS applications include ArkTS, TypeScript, and 
 ## Import Module
 
 ```cangjie
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 ```
 
-> **Note:**
->
-> Kit import methods are not supported and are expected to be supported in the next version.
+The interface capabilities of this module (ohos.ark_interop) are encapsulated in CangjieKit and can be used after being imported through `import kit.CangjieKit.*`. For more details about importing Kits, see [Interface Usage Notes](../cj-development-intro.md#interface-usage-notes).
 
 ## interface JSInteropByte
 
@@ -149,7 +147,7 @@ sealed interface JSKeyable <: ToString & ToJSValue {
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func keyableUsage(context: JSContext): Unit {
     // Create an array that can be used as JSObject keys
@@ -212,7 +210,7 @@ func toJSValue(context: JSContext): JSValue
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func int8Translate(context: JSContext): Unit {
     let source: Int8 = 123
@@ -247,7 +245,7 @@ public static func fromJSValue(_: JSContext, input: JSValue): Int8
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------| :--- |
@@ -296,7 +294,7 @@ public func toJSValue(context: JSContext): JSValue
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------| :--- |
@@ -313,7 +311,7 @@ public func toJSValue(context: JSContext): JSValue
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func int16Translate(context: JSContext): Unit {
     let source: Int16 = 123
@@ -348,7 +346,7 @@ public static func fromJSValue(_: JSContext, input: JSValue): Int16
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -397,7 +395,7 @@ public func toJSValue(context: JSContext): JSValue
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------| :--- |
@@ -414,7 +412,7 @@ public func toJSValue(context: JSContext): JSValue
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func int32Translate(context: JSContext): Unit {
     let source: Int32 = 123
@@ -449,7 +447,7 @@ public static func fromJSValue(_: JSContext, input: JSValue): Int32
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -498,7 +496,7 @@ public func toJSValue(context: JSContext): JSValue
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------| :--- |
@@ -515,7 +513,7 @@ public func toJSValue(context: JSContext): JSValue
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func int64Translate(context: JSContext): Unit {
     let source: Int64 = 123
@@ -550,7 +548,7 @@ public static func fromJSValue(_: JSContext, input: JSValue): Int64
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -599,7 +597,7 @@ public func toJSValue(context: JSContext): JSValue
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -617,7 +615,7 @@ public func toJSValue(context: JSContext): JSValue
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func uint8Translate(context: JSContext): Unit {
     let source: UInt8 = 123
@@ -652,7 +650,7 @@ public static func fromJSValue(_: JSContext, input: JSValue): UInt8
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -709,7 +707,7 @@ public func toJSValue(context: JSContext): JSValue
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func uint16Translate(context: JSContext): Unit {
     let source: UInt16 = 123
@@ -744,7 +742,7 @@ public static func fromJSValue(_: JSContext, input: JSValue): UInt16
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -793,7 +791,7 @@ public func toJSValue(context: JSContext): JSValue
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:---|
@@ -810,7 +808,7 @@ public func toJSValue(context: JSContext): JSValue
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func uint32Translate(context: JSContext): Unit {
     let source: UInt32 = 123
@@ -845,7 +843,7 @@ public static func fromJSValue(_: JSContext, input: JSValue): UInt32
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -894,7 +892,7 @@ public func toJSValue(context: JSContext): JSValue
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:---|
@@ -911,7 +909,7 @@ public func toJSValue(context: JSContext): JSValue
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func uint64Translate(context: JSContext): Unit {
     let source: UInt64 = 123
@@ -946,7 +944,7 @@ public static func fromJSValue(_: JSContext, input: JSValue): UInt64
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -995,7 +993,7 @@ public func toJSValue(context: JSContext): JSValue
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -1013,7 +1011,7 @@ public func toJSValue(context: JSContext): JSValue
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func float16Translate(context: JSContext): Unit {
     let source: Float16 = 123.0
@@ -1048,7 +1046,7 @@ public static func fromJSValue(_: JSContext, input: JSValue): Float16
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -1097,7 +1095,7 @@ public func toJSValue(context: JSContext): JSValue
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------| :--- |
@@ -1114,7 +1112,7 @@ public func toJSValue(context: JSContext): JSValue
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func float32Translate(context: JSContext): Unit {
     let source: Float32 = 123.0
@@ -1149,7 +1147,7 @@ public static func fromJSValue(_: JSContext, input: JSValue): Float32
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -1198,7 +1196,7 @@ public func toJSValue(context: JSContext): JSValue
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------| :--- |
@@ -1215,7 +1213,7 @@ public func toJSValue(context: JSContext): JSValue
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func float64Translate(context: JSContext): Unit {
     let source: Float64 = 123.0
@@ -1250,7 +1248,7 @@ public static func fromJSValue(_: JSContext, input: JSValue): Float64
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------| :--- |
@@ -1298,7 +1296,7 @@ public func toJSValue(context: JSContext): JSValue
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------| :--- |
@@ -1315,7 +1313,7 @@ public func toJSValue(context: JSContext): JSValue
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func boolTranslate(context: JSContext): Unit {
     let source: Bool = true
@@ -1366,7 +1364,7 @@ public static func toArktsType(): String
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------| :--- |
@@ -1398,7 +1396,7 @@ public func toJSValue(context: JSContext): JSValue
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------| :--- |
@@ -1415,7 +1413,7 @@ public func toJSValue(context: JSContext): JSValue
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func stringTranslate(context: JSContext): Unit {
     let source: String = "123.0"
@@ -1450,7 +1448,7 @@ public static func fromJSValue(_: JSContext, input: JSValue): String
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------| :--- |
@@ -1484,7 +1482,7 @@ public static func toArktsType(): String
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func stringTranslate(context: JSContext): Unit {
     let source: String = "123.0"
@@ -1518,7 +1516,7 @@ public func toJSValue(context: JSContext): JSValue
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                                |
 |:------|:-------------------------------------|
@@ -1600,7 +1598,7 @@ public func toJSValue(context: JSContext): JSValue
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------| :--- |
@@ -1617,7 +1615,7 @@ public func toJSValue(context: JSContext): JSValue
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func optionTranslate(context: JSContext): Unit {
     let sources: Array<?String> = ["abc", None, "123"]
@@ -1654,7 +1652,7 @@ public static func fromJSValue(context: JSContext, input: JSValue): Option<T>
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------| :--- |
@@ -1701,7 +1699,7 @@ public func toJSValue(context: JSContext): JSValue
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------| :--- |
@@ -1718,7 +1716,7 @@ public func toJSValue(context: JSContext): JSValue
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func arrayTranslate(context: JSContext): Unit {
     let sources: Array<Byte> = [1, 4, 5]
@@ -1753,7 +1751,7 @@ public static func fromJSValue(_: JSContext, input: JSValue): Array<T>
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------| :--- |
@@ -1801,7 +1799,7 @@ public func toJSValue(context: JSContext): JSValue
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------| :--- |
@@ -1838,7 +1836,7 @@ public prop size: Int64
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------| :--- |
@@ -1869,7 +1867,7 @@ public operator func [](index: Int64): JSValue
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                                  |
 |:------|:--------------------------------------|
@@ -1907,7 +1905,7 @@ public operator func [](index: Int64, value!: JSValue): Unit
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                                  |
 |:------|:--------------------------------------|
@@ -1946,7 +1944,7 @@ public operator func [](index: Int64, value!: JSHeapObject): Unit
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                                  |
 |:------|:--------------------------------------|
@@ -2007,7 +2005,7 @@ public prop byteLength: Int32
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func getBufferLength(context: JSContext, callInfo: JSCallInfo): JSValue {
     let arrayBuffer = callInfo[0].asArrayBuffer()
@@ -2046,7 +2044,7 @@ public func readBytes(): Array<Byte>
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func readBufferBytes(context: JSContext, callInfo: JSCallInfo): JSValue {
     let arrayBuffer = callInfo[0].asArrayBuffer()
@@ -2124,7 +2122,7 @@ public func toFloat32Array(): Array<Float32>
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func createFloat32Array(context: JSContext): Unit {
     let data: Array<Float32> = [1.0, 2.0, 3.0, 4.0]
@@ -2164,7 +2162,7 @@ public func toFloat32ArrayJSValue(): JSValue
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func convertToFloat32Array(context: JSContext, callInfo: JSCallInfo): JSValue {
     let arrayBuffer = callInfo[0].asArrayBuffer()
@@ -2204,7 +2202,7 @@ public func toFloat64Array(): Array<Float64>
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func convertToFloat64Array(context: JSContext, callInfo: JSCallInfo): JSValue {
     let arrayBuffer = callInfo[0].asArrayBuffer()
@@ -2281,7 +2279,7 @@ public func toInt16Array(): Array<Int16>
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func convertToInt16Array(context: JSContext, callInfo: JSCallInfo): JSValue {
     let arrayBuffer = callInfo[0].asArrayBuffer()
@@ -2358,7 +2356,7 @@ public func toInt32Array(): Array<Int32>
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func convertToInt32Array(context: JSContext, callInfo: JSCallInfo): JSValue {
     let arrayBuffer = callInfo[0].asArrayBuffer()
@@ -2427,7 +2425,7 @@ public func toInt64Array(): Array<Int64>
 
 | Error Code ID | Error Message                                  |
 |:------|:-----------------------------------------|
-| 34300002   | Outside error occurred.　             |
+| 34300002   | Outside error occurred.              |
 | 34300003   | Accessing reference is beyond reach.     |
 | 34300004   | Thread mismatch.                         |
 
@@ -2435,7 +2433,7 @@ public func toInt64Array(): Array<Int64>
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func convertToInt64Array(context: JSContext, callInfo: JSCallInfo): JSValue {
     let arrayBuffer = callInfo[0].asArrayBuffer()
@@ -2511,7 +2509,7 @@ public func toInt8Array(): Array<Int8>
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func convertToInt8Array(context: JSContext, callInfo: JSCallInfo): JSValue {
     let arrayBuffer = callInfo[0].asArrayBuffer()
@@ -2580,7 +2578,7 @@ public func toUInt16Array(): Array<UInt16>
 
 | Error Code ID | Error Message                              |
 |:------|:-------------------------------------|
-| 34300002   | Outside error occurred.　             |
+| 34300002   | Outside error occurred.              |
 | 34300003   | Accessing reference is beyond reach. |
 | 34300004   | Thread mismatch.                     |
 
@@ -2588,7 +2586,7 @@ public func toUInt16Array(): Array<UInt16>
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func convertToUInt16Array(context: JSContext, callInfo: JSCallInfo): JSValue {
     let arrayBuffer = callInfo[0].asArrayBuffer()
@@ -2657,7 +2655,7 @@ public func toUInt32Array(): Array<UInt32>
 
 | Error Code ID | Error Message                                  |
 |:------|:-----------------------------------------|
-| 34300002   | Outside error occurred.　             |
+| 34300002   | Outside error occurred.              |
 | 34300003   | Accessing reference is beyond reach.     |
 | 34300004   | Thread mismatch.                         |
 
@@ -2665,7 +2663,7 @@ public func toUInt32Array(): Array<UInt32>
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func convertToUInt32Array(context: JSContext, callInfo: JSCallInfo): JSValue {
     let arrayBuffer = callInfo[0].asArrayBuffer()
@@ -2734,7 +2732,7 @@ public func toUInt64Array(): Array<UInt64>
 
 | Error Code ID | Error Message                                  |
 |:------|:-----------------------------------------|
-| 34300002   | Outside error occurred.　             |
+| 34300002   | Outside error occurred.              |
 | 34300003   | Accessing reference is beyond reach.     |
 | 34300004   | Thread mismatch.                         |
 
@@ -2742,7 +2740,7 @@ public func toUInt64Array(): Array<UInt64>
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func convertToUInt64Array(context: JSContext, callInfo: JSCallInfo): JSValue {
     let arrayBuffer = callInfo[0].asArrayBuffer()
@@ -2818,7 +2816,7 @@ public func toUInt8Array(): Array<UInt8>
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func convertToUInt8Array(context: JSContext, callInfo: JSCallInfo): JSValue {
     let arrayBuffer = callInfo[0].asArrayBuffer()
@@ -3035,7 +3033,7 @@ public func clone(): JSArrayEx<T>
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func cloneArrayEx(context: JSContext): JSValue {
     let originalArray: Array<Int64> = [1, 2, 3, 4, 5]
@@ -3084,7 +3082,7 @@ public func concat(other: JSArrayEx<T>): JSArrayEx<T>
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func concatArrayEx(context: JSContext): JSValue {
     let array1: Array<Int64> = [1, 2, 3]
@@ -3135,7 +3133,7 @@ public func get(index: Int64): Option<T>
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func getElementFromArrayEx(context: JSContext, callInfo: JSCallInfo): JSValue {
     let array: Array<String> = ["apple", "banana", "cherry"]
@@ -3179,7 +3177,7 @@ public func isEmpty(): Bool
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func checkArrayExEmpty(context: JSContext): JSValue {
     let emptyArray: Array<Int64> = []
@@ -3226,7 +3224,7 @@ public func set(index: Int64, element: T): Unit
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func setElementInArrayEx(context: JSContext): JSValue {
     let array: Array<Int64> = [1, 2, 3, 4, 5]
@@ -3269,7 +3267,7 @@ public func toArray(): Array<T>
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func convertArrayExToArray(context: JSContext): JSValue {
     let array: Array<String> = ["hello", "world", "cangjie"]
@@ -3350,7 +3348,7 @@ public operator func [](index: Int64): T
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func getIndexOperator(context: JSContext): JSValue {
     let array: Array<Int64> = [10, 20, 30, 40]
@@ -3394,7 +3392,7 @@ public operator func [](index: Int64, value!: T): Unit
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func setIndexOperator(context: JSContext): JSValue {
     let array: Array<Int64> = [1, 2, 3, 4]
@@ -3451,7 +3449,7 @@ public func toBigInt(): BigInt
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func convertToBigInt(context: JSContext, callInfo: JSCallInfo): JSValue {
     let jsBigInt = callInfo[0].asBigInt()
@@ -3491,7 +3489,7 @@ public func toBool(): Bool
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                           |
 |:-------------|:---------------------------------------|
@@ -3502,7 +3500,7 @@ public func toBool(): Bool
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let jsBool = context.boolean(true)
@@ -3530,7 +3528,7 @@ public func toJSValue(): JSValue
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                           |
 |:-------------|:---------------------------------------|
@@ -3567,7 +3565,7 @@ public prop count: Int64
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                           |
 |:-------------|:---------------------------------------|
@@ -3590,7 +3588,7 @@ public prop thisArg: JSValue
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                           |
 |:-------------|:---------------------------------------|
@@ -3621,7 +3619,7 @@ public operator func [](index: Int64): JSValue
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                          |
 |:-------------|:--------------------------------------|
@@ -3676,13 +3674,13 @@ public prop prototype: JSObject
 
 | Error Code ID | Error Message                           |
 |:------|:-------------------------------|
-| 34300002   | Outside error occurred.　             |
+| 34300002   | Outside error occurred.              |
 
 **Example:**
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func accessClassPrototype(context: JSContext): JSValue {
     let ctor: JSLambda = { _, callInfo =>
@@ -3729,7 +3727,7 @@ public func addAccessor(key: JSKeyable, getter!: ?JSFunction = None, setter!: ?J
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let ctor: JSLambda = { _, callInfo =>
@@ -3779,7 +3777,7 @@ public func addAccessor(key: JSKeyable, getter!: ?JSLambda = None, setter!: ?JSL
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let ctor: JSLambda = { _, callInfo =>
@@ -3828,7 +3826,7 @@ public func addMethod(key: JSKeyable, method: JSFunction): Unit
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let ctor: JSLambda = { _, callInfo =>
@@ -3877,7 +3875,7 @@ public func addMethod(key: JSKeyable, method: JSLambda): Unit
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let ctor: JSLambda = { _, callInfo =>
@@ -3926,7 +3924,7 @@ public func addProperty(key: JSKeyable, value: JSValue): Unit
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let ctor: JSLambda = { _, callInfo =>
@@ -4125,7 +4123,7 @@ public prop env: JSEnv
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func accessContextEnv(context: JSContext): JSValue {
     let env = context.env
@@ -4162,7 +4160,7 @@ public prop global: JSObject
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func accessGlobalObject(context: JSContext): JSValue {
     let globalObj = context.global
@@ -4174,13 +4172,13 @@ func accessGlobalObject(context: JSContext): JSValue {
 }
 ```
 
-### func newScope\<T>(()->T)
+### func newScope\<T>(() -> T)
 
 ```cangjie
-public func newScope<T>(callback: ()->T): T
+public func newScope<T>(callback: () -> T): T
 ```
 
-**Description:** Create an ArkTS handle scope。
+**Description:** Create an ArkTS handle scope.
 
 **Since:** 24
 
@@ -4188,13 +4186,13 @@ public func newScope<T>(callback: ()->T): T
 
 | Parameter | Type | Required | Default | Description    |
 |:---------|:---|:---------|:---|:---------------|
-| callback | ()->T | Yes      |-| User callback。 |
+| callback | () -> T | Yes      |-| User callback. |
 
 **Return Value:**
 
 | Type | Description                  |
 |:---|:-----------------------------|
-| T  | The result of user callback。 |
+| T  | The result of user callback. |
 
 **Exceptions:**
 
@@ -4386,7 +4384,7 @@ public func arrayBuffer(data: Array<Int8>): JSArrayBuffer
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func createArrayBufferFromInt8(context: JSContext): JSValue {
     let int8Array: Array<Int8> = [1, 2, 3]
@@ -4434,7 +4432,7 @@ public func arrayBuffer(data: Array<Int16>): JSArrayBuffer
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func createArrayBufferFromInt16(context: JSContext): JSValue {
     let int16Array: Array<Int16> = [1, 2, 3]
@@ -4482,7 +4480,7 @@ public func arrayBuffer(data: Array<UInt16>): JSArrayBuffer
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func createArrayBufferFromUInt16(context: JSContext): JSValue {
     let uint16Array: Array<UInt16> = [1, 2, 3]
@@ -4530,7 +4528,7 @@ public func arrayBuffer(data: Array<UInt32>): JSArrayBuffer
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func createArrayBufferFromUInt32(context: JSContext): JSValue {
     let uint32Array: Array<UInt32> = [1, 2, 3]
@@ -4578,7 +4576,7 @@ public func arrayBuffer(data: Array<Int32>): JSArrayBuffer
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func createArrayBufferFromInt32(context: JSContext): JSValue {
     let int32Array: Array<Int32> = [1, 2, 3]
@@ -4626,7 +4624,7 @@ public func arrayBuffer(data: Array<Float32>): JSArrayBuffer
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func createArrayBufferFromFloat32(context: JSContext): JSValue {
     let float32Array: Array<Float32> = [1.0, 2.0, 3.0]
@@ -4674,7 +4672,7 @@ public func arrayBuffer(data: Array<Int64>): JSArrayBuffer
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func createArrayBufferFromInt64(context: JSContext): JSValue {
     let int64Array: Array<Int64> = [1, 2, 3]
@@ -4722,7 +4720,7 @@ public func arrayBuffer(data: Array<UInt64>): JSArrayBuffer
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func createArrayBufferFromUInt64(context: JSContext): JSValue {
     let uint64Array: Array<UInt64> = [1u64, 2u64, 3u64]
@@ -4770,7 +4768,7 @@ public func arrayBuffer(data: Array<Float64>): JSArrayBuffer
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func createArrayBufferFromFloat64(context: JSContext): JSValue {
     let float64Array: Array<Float64> = [1.0, 2.0, 3.0]
@@ -5029,7 +5027,7 @@ public func external(data: SharedObject): JSExternal
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -5074,7 +5072,7 @@ public func function(lambda: JSLambda): JSFunction
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -5114,7 +5112,7 @@ public func getNapiEnv(): napi_env
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -5125,7 +5123,7 @@ public func getNapiEnv(): napi_env
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func getNapiEnvironment(context: JSContext): JSValue {
     let napiEnv = context.getNapiEnv()
@@ -5181,7 +5179,7 @@ public func null(): JSNull
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -5222,7 +5220,7 @@ public func number(value: Float64): JSNumber
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -5263,7 +5261,7 @@ public func number(value: Int32): JSNumber
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -5298,7 +5296,7 @@ public func object(): JSObject
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -5319,7 +5317,7 @@ func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
 ### func postJSTask(() -> Unit)
 
 ```cangjie
-public func postJSTask(callback: ()->Unit): Unit
+public func postJSTask(callback: () -> Unit): Unit
 ```
 
 **Function:** Multithreading utility: Creates a task to be executed on the ArkTS thread.
@@ -5330,7 +5328,7 @@ public func postJSTask(callback: ()->Unit): Unit
 
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
-| callback | ()->Unit | Yes | - | Task to be executed on the ArkTS thread. |
+| callback | () -> Unit | Yes | - | Task to be executed on the ArkTS thread. |
 
 **Example:**
 
@@ -5365,7 +5363,7 @@ public func promiseCapability(): JSPromiseCapability
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -5407,7 +5405,7 @@ public func requireArkModule(path: String): JSValue
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                                                     |
 | :------------ | :---------------------------------------------------------------- |
@@ -5421,8 +5419,8 @@ public func requireArkModule(path: String): JSValue
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
-import ohos.business_exception.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
+import kit.CangjieKit.BusinessException
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     try {
@@ -5464,7 +5462,7 @@ public func requireSystemNativeModule(moduleName: String, prefix!: ?String = Non
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -5506,7 +5504,7 @@ public func string(value: String): JSString
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -5548,7 +5546,7 @@ public func string(value: Utf16String): JSString
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -5591,7 +5589,7 @@ public func symbol(description!: String = ""): JSSymbol
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -5628,7 +5626,7 @@ public func undefined(): JSUndefined
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -5679,7 +5677,7 @@ public func cast<T>(): Option<T> where T <: SharedObject
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                          |
 |:------|:-------------------------------------|
@@ -5724,7 +5722,7 @@ public func getData(): SharedObject
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                          |
 |:------|:-------------------------------------|
@@ -5790,7 +5788,7 @@ public func call(thisArg!: JSValue = context.undefined().toJSValue()): JSValue
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                          |
 |:------|:-------------------------------------|
@@ -5833,7 +5831,7 @@ public func call(arg: JSValue, thisArg!: JSValue = context.undefined().toJSValue
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                          |
 |:------|:-------------------------------------|
@@ -5877,7 +5875,7 @@ public func call(args: Array<JSValue>, thisArg!: JSValue = context.undefined().t
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                          |
 |:------|:-------------------------------------|
@@ -5930,7 +5928,7 @@ public prop size: Int64
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                          |
 |:------|:-------------------------------------|
@@ -5957,7 +5955,7 @@ public init(map: HashMap<K, V>)
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 import std.collection.HashMap
 
 func createHashMapExFromHashMap(context: JSContext): JSValue {
@@ -5986,7 +5984,7 @@ public init()
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func createEmptyHashMapEx(context: JSContext): JSValue {
     let jsHashMapEx = JSHashMapEx<String, Int64>()
@@ -6021,7 +6019,7 @@ public static func fromJSValue(context: JSContext, input: JSValue): JSHashMapEx<
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                          |
 |:------|:-------------------------------------|
@@ -6033,7 +6031,7 @@ public static func fromJSValue(context: JSContext, input: JSValue): JSHashMapEx<
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func convertJSValueToStringHashMapEx(context: JSContext, callInfo: JSCallInfo): JSValue {
     // Create a JSHashMapEx<String, String>
@@ -6087,7 +6085,7 @@ public func clear(): Unit
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                               |
 |:------|:-------------------------------------|
@@ -6112,7 +6110,7 @@ public func clone(): JSHashMapEx<K, V>
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                               |
 |:------|:-------------------------------------|
@@ -6143,7 +6141,7 @@ public func containsAll(keys: Collection<K>): Bool
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                               |
 |:------|:-------------------------------------|
@@ -6174,7 +6172,7 @@ public func delete(key: K): Bool
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                               |
 |:------|:-------------------------------------|
@@ -6199,7 +6197,7 @@ public func deleteAll(keys: Collection<K>): Unit
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                               |
 |:------|:-------------------------------------|
@@ -6227,7 +6225,7 @@ This function traverses the entire JSHashMapEx, deleting all key-value pairs whe
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                               |
 |:------|:-------------------------------------|
@@ -6259,7 +6257,7 @@ public func get(key: K): Option<V>
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                               |
 |:------|:-------------------------------------|
@@ -6290,7 +6288,7 @@ public func has(key: K): Bool
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                               |
 |:------|:-------------------------------------|
@@ -6315,7 +6313,7 @@ public func isEmpty(): Bool
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                               |
 |:------|:-------------------------------------|
@@ -6326,7 +6324,7 @@ public func isEmpty(): Bool
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func checkHashMapExEmpty(context: JSContext): JSValue {
     let emptyMap = JSHashMapEx<String, Int64>()
@@ -6358,7 +6356,7 @@ public func keys(): EquatableCollection<K>
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                               |
 |:------|:-------------------------------------|
@@ -6369,7 +6367,7 @@ public func keys(): EquatableCollection<K>
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func getHashMapExKeys(context: JSContext): JSValue {
     let jsHashMapEx = JSHashMapEx<String, Int64>()
@@ -6403,7 +6401,7 @@ public func set(key: K, value: V): Unit
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                               |
 |:------|:-------------------------------------|
@@ -6414,7 +6412,7 @@ public func set(key: K, value: V): Unit
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func setHashMapExValue(context: JSContext): JSValue {
     let jsHashMapEx = JSHashMapEx<String, Int64>()
@@ -6444,7 +6442,7 @@ public func setAll(elements: Collection<(K, V)>): Unit
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                               |
 |:------|:-------------------------------------|
@@ -6455,7 +6453,7 @@ public func setAll(elements: Collection<(K, V)>): Unit
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func setAllHashMapExValues(context: JSContext): JSValue {
     let jsHashMapEx = JSHashMapEx<String, Int64>()
@@ -6493,7 +6491,7 @@ public func setIfAbsent(key: K, value: V): Bool
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                               |
 |:------|:-------------------------------------|
@@ -6518,7 +6516,7 @@ public func toHashMap(): HashMap<K, V>
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                               |
 |:------|:-------------------------------------|
@@ -6549,7 +6547,7 @@ public func toJSValue(c: JSContext): JSValue
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                               |
 |:------|:-------------------------------------|
@@ -6574,7 +6572,7 @@ public func values(): Collection<V>
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                               |
 |:------|:-------------------------------------|
@@ -6605,7 +6603,7 @@ public operator func [](key: K): V
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                               |
 |:------|:-------------------------------------|
@@ -6617,7 +6615,7 @@ public operator func [](key: K): V
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func getIndexOperatorHashMapEx(context: JSContext): JSValue {
     let jsHashMapEx = JSHashMapEx<String, Int64>()
@@ -6649,7 +6647,7 @@ public operator func [](key: K, value!: V): Unit
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                               |
 |:------|:-------------------------------------|
@@ -6660,7 +6658,7 @@ public operator func [](key: K, value!: V): Unit
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func setIndexOperatorHashMapEx(context: JSContext): JSValue {
     let jsHashMapEx = JSHashMapEx<String, Int64>()
@@ -6702,7 +6700,7 @@ public func toJSValue(): JSValue
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -6916,7 +6914,7 @@ public func toJSValue(): JSValue
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                          |
 |:-------------|:--------------------------------------|
@@ -6951,7 +6949,7 @@ public func toFloat64(): Float64
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                          |
 |:-------------|:--------------------------------------|
@@ -6962,7 +6960,7 @@ public func toFloat64(): Float64
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let jsNum = context.number(1.0)
@@ -6990,7 +6988,7 @@ public func toJSValue(): JSValue
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                          |
 |:-------------|:--------------------------------------|
@@ -7015,7 +7013,7 @@ public class JSObject <: JSObjectBase {}
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func setObjectProperties(context: JSContext): JSValue {
     let jsObject = context.object()
@@ -7107,7 +7105,7 @@ public func callMethod(key: JSKeyable, args: Array<JSValue>): JSValue
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -7128,10 +7126,8 @@ func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
 ### func defineOwnAccessor(JSKeyable, ?JSFunction, ?JSFunction, Bool, Bool)
 
 ```cangjie
-public func defineOwnAccessor(key: JSKeyable, getter!:? JSFunction = None, setter!: ?JSFunction = None,
-    isEnumerable!: Bool = false,
-    isConfigurable!: Bool = false
-): Bool
+public func defineOwnAccessor(key: JSKeyable, getter!: ?JSFunction = None, setter!: ?JSFunction = None,
+    isEnumerable!: Bool = false, isConfigurable!: Bool = false): Bool
 ```
 
 **Function:** Defines accessors for the current object.
@@ -7156,7 +7152,7 @@ public func defineOwnAccessor(key: JSKeyable, getter!:? JSFunction = None, sette
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -7181,10 +7177,8 @@ func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
 ### func defineOwnAccessor(JSKeyable, ?JSLambda, ?JSLambda, Bool, Bool)
 
 ```cangjie
-public func defineOwnAccessor(key: JSKeyable, getter!:? JSLambda = None, setter!: ?JSLambda = None,
-    isEnumerable!: Bool = false,
-    isConfigurable!: Bool = false
-): Bool
+public func defineOwnAccessor(key: JSKeyable, getter!: ?JSLambda = None, setter!: ?JSLambda = None,
+    isEnumerable!: Bool = false, isConfigurable!: Bool = false): Bool
 ```
 
 **Function:** Defines accessors for the current object.
@@ -7209,7 +7203,7 @@ public func defineOwnAccessor(key: JSKeyable, getter!:? JSLambda = None, setter!
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -7263,7 +7257,7 @@ public func defineOwnProperty(key: JSKeyable, setValue: JSValue,
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -7300,7 +7294,7 @@ public func getAttachInfo(): ?JSExternal
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -7348,7 +7342,7 @@ public func getProperty(key: JSKeyable): JSValue
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -7391,7 +7385,7 @@ public func hasProperty(key: JSKeyable): Bool
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -7402,7 +7396,7 @@ public func hasProperty(key: JSKeyable): Bool
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let obj = callInfo[0].asObject()
@@ -7436,7 +7430,7 @@ public func instanceOf(clazz: JSClass): Bool
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -7447,7 +7441,7 @@ public func instanceOf(clazz: JSClass): Bool
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let ctor: JSLambda = { context, callInfo =>
@@ -7479,7 +7473,7 @@ public func keys(): Array<String>
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -7490,7 +7484,7 @@ public func keys(): Array<String>
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let keys = context.global.keys()
@@ -7518,7 +7512,7 @@ public func setProperty(key: JSKeyable, setValue: JSValue): Unit
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -7561,7 +7555,7 @@ public operator func [](key: JSKeyable): JSValue
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -7599,7 +7593,7 @@ public operator func [](key: JSKeyable, value!: JSValue): Unit
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -7654,7 +7648,7 @@ public func catchError(callback: JSFunction): Unit
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -7694,7 +7688,7 @@ public func then(onFulfilled: JSFunction, onRejected!: ?JSFunction = None): Unit
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -7746,7 +7740,7 @@ public func reject(value: JSValue): Unit
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -7784,7 +7778,7 @@ public func resolve(value: JSValue): Unit
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -7824,7 +7818,7 @@ public func toJSValue(): JSValue
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -7875,7 +7869,7 @@ public class JSRuntime {
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func getJSRuntimeInstance(): Unit {
     // Create JSRuntime instance
@@ -7915,11 +7909,11 @@ public init()
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 34300002   | Outside error occurred.　             |
+| 34300002   | Outside error occurred.              |
 
 ### func getNapiEnv()
 
@@ -7977,7 +7971,7 @@ public func toJSValue(_: JSContext): JSValue
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -8002,7 +7996,7 @@ public func toString(): String
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -8013,7 +8007,7 @@ public func toString(): String
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let jsStr = context.string("abc")
@@ -8041,7 +8035,7 @@ public func toUtf16String(): Utf16String
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -8083,7 +8077,7 @@ public static func fromJSValue(_: JSContext, input: JSValue): JSString
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                        |
 | :------------ | :----------------------------------- |
@@ -8130,7 +8124,7 @@ public class JSStringEx <: JSInteropType<JSStringEx> & Equatable<JSStringEx> & T
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func createJSStringEx(context: JSContext): JSValue {
     // Create a JSStringEx object
@@ -8184,7 +8178,7 @@ public static func fromJSValue(context: JSContext, input: JSValue): JSStringEx
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -8232,7 +8226,7 @@ public func toJSValue(context: JSContext): JSValue
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -8257,7 +8251,7 @@ public func toString(): String
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -8288,7 +8282,7 @@ public operator func !=(str: JSStringEx): Bool
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -8319,7 +8313,7 @@ public operator func ==(str: JSStringEx): Bool
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -8376,7 +8370,7 @@ public prop description: String
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                           |
 |:-------------|:---------------------------------------|
@@ -8407,7 +8401,7 @@ public func toJSValue(_: JSContext): JSValue
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                           |
 |:-------------|:---------------------------------------|
@@ -8432,7 +8426,7 @@ public func toString(): String
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                           |
 |:-------------|:---------------------------------------|
@@ -8647,7 +8641,7 @@ public func asExternal(): JSExternal
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                              |
 |:------|:-------------------------------------|
@@ -8673,7 +8667,7 @@ public func asFunction(): JSFunction
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                              |
 |:------|:-------------------------------------|
@@ -8699,7 +8693,7 @@ public func asNull(): JSNull
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                              |
 |:------|:-------------------------------------|
@@ -8725,7 +8719,7 @@ public func asNumber(): JSNumber
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                              |
 |:------|:-------------------------------------|
@@ -8751,7 +8745,7 @@ public func asObject(): JSObject
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                              |
 |:------|:-------------------------------------|
@@ -8777,7 +8771,7 @@ public func asPromise(): JSPromise
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                              |
 |:------|:-------------------------------------|
@@ -8803,7 +8797,7 @@ public func asString(): JSString
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                              |
 |:------|:-------------------------------------|
@@ -8829,7 +8823,7 @@ public func asSymbol(): JSSymbol
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                              |
 |:------|:-------------------------------------|
@@ -8855,7 +8849,7 @@ public func asUndefined(): JSUndefined
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                              |
 |:------|:-------------------------------------|
@@ -8881,7 +8875,7 @@ public func bindObject(external: JSValue): Unit
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                              |
 |:------|:-------------------------------------|
@@ -8925,7 +8919,7 @@ public func bindObject(data: SharedObject): Unit
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                              |
 |:------|:-------------------------------------|
@@ -8968,11 +8962,11 @@ public func getBindingObject(): ?SharedObject
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                              |
 |:------|:-------------------------------------|
-| 34300002   | Outside error occurred.　             |
+| 34300002   | Outside error occurred.              |
 | 34300003   | Accessing reference is beyond reach. |
 | 34300004   | Thread mismatch.                     |
 | 34300005   | The ArkTS data types do not match.   |
@@ -9020,7 +9014,7 @@ public func getElement(index: Int64): JSValue
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                              |
 |:------|:-------------------------------------|
@@ -9495,7 +9489,7 @@ public func isPromise(): Bool
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                                |
 |:------|:-------------------------------------|
@@ -9534,7 +9528,7 @@ public func isString(): Bool
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                                |
 |:------|:-------------------------------------|
@@ -9573,7 +9567,7 @@ public func isSymbol(): Bool
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                                |
 |:------|:-------------------------------------|
@@ -9612,7 +9606,7 @@ public func isUndefined(): Bool
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                                |
 |:------|:-------------------------------------|
@@ -9652,7 +9646,7 @@ public func setElement(index: Int64, value: JSValue): Unit
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                                |
 |:------|:-------------------------------------|
@@ -9693,7 +9687,7 @@ public func setProperty(key: JSKeyable, setValue: JSValue): Unit
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                                |
 |:------|:-------------------------------------|
@@ -9738,7 +9732,7 @@ public func strictEqual(target: JSValue): Bool
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                                |
 |:------|:-------------------------------------|
@@ -9778,7 +9772,7 @@ public func toBigInt(): BigInt
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                                |
 |:------|:-------------------------------------|
@@ -9790,7 +9784,7 @@ public func toBigInt(): BigInt
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let value = callInfo[0].toBigInt()
@@ -9817,7 +9811,7 @@ public func toBoolean(): Bool
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                                |
 |:------|:-------------------------------------|
@@ -9829,7 +9823,7 @@ public func toBoolean(): Bool
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let value = callInfo[0].toBoolean()
@@ -9856,7 +9850,7 @@ public func toNumber(): Float64
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                                |
 |:------|:-------------------------------------|
@@ -9868,7 +9862,7 @@ public func toNumber(): Float64
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let value = callInfo[0].toNumber()
@@ -9895,11 +9889,11 @@ public func toString(): String
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                                |
 |:------|:-------------------------------------|
-| 34300002   | Outside error occurred.　             |
+| 34300002   | Outside error occurred.              |
 | 34300003   | Accessing reference is beyond reach. |
 | 34300004   | Thread mismatch.                     |
 | 34300005   | The ArkTS data types do not match.   |
@@ -9941,7 +9935,7 @@ public func toUtf16String(): Utf16String
 |[Utf16String](#class-utf16string)|Converted Utf16String object.|
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                                |
 |:------|:-------------------------------------|
@@ -9967,7 +9961,7 @@ public func typeof(): JSType
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                                |
 |:------|:-------------------------------------|
@@ -9978,7 +9972,7 @@ public func typeof(): JSType
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     // Get first parameter
@@ -10107,7 +10101,7 @@ public prop accessible: Bool
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func checkStringAccessibility(context: JSContext): JSValue {
     let utf16Str = Utf16String("Test String")
@@ -10141,7 +10135,7 @@ public prop size: Int64
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                          |
 |:-------------|:---------------------------------------|
@@ -10151,7 +10145,7 @@ public prop size: Int64
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func getStringSize(context: JSContext): JSValue {
     let utf16Str = Utf16String("Hello 世界")  // Contains mixed Chinese and English characters
@@ -10179,7 +10173,7 @@ public prop totalChars: Int64
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                          |
 |:-------------|:---------------------------------------|
@@ -10189,7 +10183,7 @@ public prop totalChars: Int64
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func getStringTotalChars(context: JSContext): JSValue {
     let utf16Str = Utf16String("Hello 世界")  // Contains mixed Chinese and English characters
@@ -10233,7 +10227,7 @@ public init(src: String)
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                          |
 |:-------------|:---------------------------------------|
@@ -10243,7 +10237,7 @@ public init(src: String)
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func createUtf16String(context: JSContext): JSValue {
     // Create Utf16String from a string
@@ -10284,7 +10278,7 @@ public static func fromJSValue(_: JSContext, value: JSValue): Utf16String
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                          |
 |:-------------|:---------------------------------------|
@@ -10296,7 +10290,7 @@ public static func fromJSValue(_: JSContext, value: JSValue): Utf16String
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func createFromJSValue(context: JSContext): JSValue {
     let jsString = context.string("Hello from JS")
@@ -10351,7 +10345,7 @@ public func compare(target: Utf16String): Ordering
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                          |
 |:-------------|:---------------------------------------|
@@ -10381,7 +10375,7 @@ public func contains(target: Utf16String): Bool
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                          |
 |:-------------|:---------------------------------------|
@@ -10411,7 +10405,7 @@ public func count(src: Utf16String): Int64
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message                          |
 |:-------------|:---------------------------------------|
@@ -10421,7 +10415,7 @@ public func count(src: Utf16String): Int64
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func countSubstring(context: JSContext): JSValue {
     let utf16Str = Utf16String("Hello World Hello Hello")
@@ -10449,7 +10443,7 @@ public func dispose(): Unit
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func disposeString(context: JSContext): JSValue {
     let utf16Str = Utf16String("Test String")
@@ -10492,7 +10486,7 @@ public func endsWith(target: Utf16String): Bool
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -10502,7 +10496,7 @@ public func endsWith(target: Utf16String): Bool
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func checkEndsWith(context: JSContext): JSValue {
     let utf16Str = Utf16String("Hello World")
@@ -10534,7 +10528,7 @@ public func hashCode(): Int64
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -10544,7 +10538,7 @@ public func hashCode(): Int64
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func getStringHashCode(context: JSContext): JSValue {
     let utf16Str = Utf16String("Hello World")
@@ -10580,7 +10574,7 @@ public func indexOf(target: Utf16String): ?Int64
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -10590,7 +10584,7 @@ public func indexOf(target: Utf16String): ?Int64
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func findSubstring(context: JSContext): JSValue {
     let utf16Str = Utf16String("Hello World Hello")
@@ -10633,7 +10627,7 @@ public func indexOf(target: Utf16String, fromIndex: Int64): ?Int64
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -10657,7 +10651,7 @@ public func isEmpty(): Bool
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -10667,7 +10661,7 @@ public func isEmpty(): Bool
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func checkIsEmpty(context: JSContext): JSValue {
     let emptyStr = Utf16String("")
@@ -10701,7 +10695,7 @@ public func isCompressed(): Bool
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -10711,7 +10705,7 @@ public func isCompressed(): Bool
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func checkIsCompressed(context: JSContext): JSValue {
     let utf16Str = Utf16String("Hello World")
@@ -10748,7 +10742,7 @@ public func lastIndexOf(target: Utf16String): ?Int64
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -10758,7 +10752,7 @@ public func lastIndexOf(target: Utf16String): ?Int64
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func findLastSubstring(context: JSContext): JSValue {
     let utf16Str = Utf16String("Hello World Hello")
@@ -10801,7 +10795,7 @@ public func lastIndexOf(target: Utf16String, fromIndex: Int64): ?Int64
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -10811,7 +10805,7 @@ public func lastIndexOf(target: Utf16String, fromIndex: Int64): ?Int64
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func findLastSubstringFromIndex(context: JSContext): JSValue {
     let utf16Str = Utf16String("Hello World Hello")
@@ -10855,7 +10849,7 @@ public func lazySplit(separator: Utf16String, removeEmpty!: Bool = false): Itera
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -10865,7 +10859,7 @@ public func lazySplit(separator: Utf16String, removeEmpty!: Bool = false): Itera
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func lazySplitString(context: JSContext): JSValue {
     let utf16Str = Utf16String("Hello,World,Test,Example")
@@ -10910,7 +10904,7 @@ public func lazySplit(separator: Utf16String, maxSplit: Int64, removeEmpty!: Boo
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -10934,7 +10928,7 @@ public func lines(): Iterator<Utf16String>
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -10944,7 +10938,7 @@ public func lines(): Iterator<Utf16String>
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func getLines(context: JSContext): JSValue {
     let utf16Str = Utf16String("Line 1\nLine 2\nLine 3")
@@ -10988,7 +10982,7 @@ public func replace(old: Utf16String, new: Utf16String, count!: Int64 = Int64.Ma
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -10998,7 +10992,7 @@ public func replace(old: Utf16String, new: Utf16String, count!: Int64 = Int64.Ma
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func replaceString(context: JSContext): JSValue {
     let utf16Str = Utf16String("Hello World Hello")
@@ -11033,7 +11027,7 @@ public func runes(): Iterator<Rune>
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -11064,7 +11058,7 @@ public func split(separator: Utf16String, removeEmpty!: Bool = false): Array<Utf
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -11074,7 +11068,7 @@ public func split(separator: Utf16String, removeEmpty!: Bool = false): Array<Utf
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func splitString(context: JSContext): JSValue {
     let utf16Str = Utf16String("Hello,World,Test")
@@ -11119,7 +11113,7 @@ public func split(separator: Utf16String, maxSplit: Int64, removeEmpty!: Bool = 
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -11150,7 +11144,7 @@ public func startsWith(target: Utf16String): Bool
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -11160,7 +11154,7 @@ public func startsWith(target: Utf16String): Bool
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func checkStartsWith(context: JSContext): JSValue {
     let utf16Str = Utf16String("Hello World")
@@ -11198,7 +11192,7 @@ public func toJSValue(context: JSContext): JSValue
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -11209,7 +11203,7 @@ public func toJSValue(context: JSContext): JSValue
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func convertToJSValue(context: JSContext): JSValue {
     let utf16Str = Utf16String("Hello from Utf16String")
@@ -11241,7 +11235,7 @@ public func toString(): String
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -11251,7 +11245,7 @@ public func toString(): String
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func convertToString(context: JSContext): JSValue {
     let utf16Str = Utf16String("Hello Utf16String")
@@ -11287,7 +11281,7 @@ public operator func !=(target: Utf16String): Bool
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -11317,7 +11311,7 @@ public operator func +(right: Utf16String): Utf16String
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -11347,7 +11341,7 @@ public operator func <(target: Utf16String): Bool
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -11377,7 +11371,7 @@ public operator func <(target: Utf16String): Bool
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -11407,7 +11401,7 @@ public operator func ==(target: Utf16String): Bool
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -11437,7 +11431,7 @@ public operator func >(target: Utf16String): Bool
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -11467,7 +11461,7 @@ public operator func >=(target: Utf16String): Bool
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -11497,7 +11491,7 @@ public operator func [](index: Int64): UInt16
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -11528,7 +11522,7 @@ public operator func [](range: Range<Int64>): Utf16String
 
 **Exceptions:**
 
-- BusinessException: Error codes as follows，see[Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
@@ -11562,7 +11556,7 @@ In ArkTS, the `typeof` operator can enumerate the general type of data. JSType l
 
 <!--compile-->
 ```cangjie
-import ohos.hilog.Hilog
+import kit.PerformanceAnalysisKit.Hilog
 
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     // Get the first argument

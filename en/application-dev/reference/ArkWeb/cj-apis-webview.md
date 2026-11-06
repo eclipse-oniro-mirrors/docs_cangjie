@@ -316,7 +316,7 @@ public static func clearAllCookies(incognito!: Bool = false): Unit
 // index.cj
 
 import kit.ArkWeb.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -354,7 +354,7 @@ public static func clearSessionCookie(): Unit
 // index.cj
 
 import kit.ArkWeb.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -409,7 +409,7 @@ public static func configCookie(url: String, value: String, incognito!: Bool = f
 // index.cj
 
 import kit.ArkWeb.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -507,7 +507,7 @@ public static func fetchCookie(url: String, incognito!: Bool = false): String
 
 import kit.ArkWeb.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 try {
     // The cookie to be set, where the format is name=value. In this example, the name is ZFY and the value is 4Mvfh8V4iYFnDc8CGowMa3KE4m0dV

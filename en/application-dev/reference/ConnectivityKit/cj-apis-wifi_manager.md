@@ -67,7 +67,7 @@ public func getScanInfoList(): Array<WifiScanInfo>
 // index.cj
 
 import kit.ConnectivityKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -112,7 +112,7 @@ public func isWifiActive(): Bool
 // index.cj
 
 import kit.ConnectivityKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -162,8 +162,8 @@ public func off(eventType: WifiCallbackType, callback!: ?CallbackObject = None):
 
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.*
-import ohos.business_exception.BusinessException
-import ohos.callback_invoke.*
+import kit.CangjieKit.BusinessException
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -223,8 +223,8 @@ public func on(eventType: WifiCallbackType, callback: Callback1Argument<Int32>):
 
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.*
-import ohos.business_exception.BusinessException
-import ohos.callback_invoke.*
+import kit.CangjieKit.BusinessException
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -277,7 +277,7 @@ public func p2pCancelConnect(): Unit
 // index.cj
 
 import kit.ConnectivityKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -326,7 +326,7 @@ public func p2pConnect(config: WifiP2PConfig): Unit
 // index.cj
 
 import kit.ConnectivityKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -370,7 +370,7 @@ public func startDiscoverDevices(): Unit
 // index.cj
 
 import kit.ConnectivityKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -413,7 +413,7 @@ public func stopDiscoverDevices(): Unit
 // index.cj
 
 import kit.ConnectivityKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {

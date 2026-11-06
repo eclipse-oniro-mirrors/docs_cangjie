@@ -15,8 +15,7 @@ This example demonstrates sharing Cangjie objects to the ArkTS runtime, using Ar
     <!--compile-->
     ```cangjie
     // Import interoperability libraries
-    import ohos.ark_interop.*
-    import ohos.ark_interop_macro.*
+    import kit.CangjieKit.*
     // Define shared class (SharedObject is a class from the interoperability library)
     class Data <: SharedObject {
         Data(
@@ -124,8 +123,7 @@ Example implementation:
 <!--compile-->
 ```cangjie
 // Import interoperability libraries
-import ohos.ark_interop.*
-import ohos.ark_interop_macro.*
+import kit.CangjieKit.*
 // Define shared class
 class Data <: SharedObject {
     Data(
@@ -229,8 +227,7 @@ Attaching all object operation methods directly to objects consumes more memory 
     <!--compile-->
     ```cangjie
     // Import interoperability libraries
-    import ohos.ark_interop.*
-    import ohos.ark_interop_macro.*
+    import kit.CangjieKit.*
     // Define shared class
     class Data <: SharedObject {
         Data(

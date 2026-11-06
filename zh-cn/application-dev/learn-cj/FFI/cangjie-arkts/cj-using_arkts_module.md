@@ -4,7 +4,7 @@
 
 ```cangjie
 // 导入互操作库
-import ohos.ark_interop.*
+import kit.CangjieKit.*
 
 func tryLoadArkTSSo() {
     // 创建新的 ArkTS 运行时

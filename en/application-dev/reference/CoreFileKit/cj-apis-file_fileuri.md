@@ -63,7 +63,7 @@ public static func getUriFromPath(path: String): String
 // index.cj
 
 import kit.CoreFileKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {

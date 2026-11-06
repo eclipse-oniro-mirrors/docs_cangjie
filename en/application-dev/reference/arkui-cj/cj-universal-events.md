@@ -17,4 +17,5 @@
 - [Component Area Change Event](cj-universal-event-areachange.md)
 - [Component Visible Area Change Event](cj-universal-event-visibleareachange.md)
 - [Component Keyboard Shortcut Event](cj-universal-event-keyboardshortcut.md)
+- [Custom Event Dispatch](cj-universal-attribute-onchildtouchtest.md)
 <!--DelEnd-->

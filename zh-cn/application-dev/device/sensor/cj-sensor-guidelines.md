@@ -31,8 +31,8 @@
 
     ```cangjie
     import kit.SensorServiceKit.*
-    import ohos.business_exception.BusinessException
-    import ohos.callback_invoke.Callback1Argument
+    import kit.CangjieKit.BusinessException
+    import kit.CangjieKit.Callback1Argument
     import kit.PerformanceAnalysisKit.Hilog
     ```
 

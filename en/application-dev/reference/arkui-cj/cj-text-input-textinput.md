@@ -89,6 +89,26 @@ public func customKeyboard(value: ?CustomBuilder, supportAvoidance!: ?Bool = Non
 | value | ?[CustomBuilder](./cj-common-types.md#type-custombuilder) | Yes | - | Sets the custom keyboard for TextInput.<br>Default: { => }. |
 | supportAvoidance | ?Bool | No | None | **Named parameter.** Custom keyboard option for TextInput.<br>Default: false. |
 
+### func ellipsisMode(?EllipsisMode)
+
+```cangjie
+public func ellipsisMode(mode: ?EllipsisMode): This
+```
+
+**Function:** Sets the ellipsis position. The ellipsisMode attribute takes effect only in the inline mode of [TextInputStyle](#func-styletextinputstyle), and needs to be used together with [textOverflow](#func-textoverflowtextoverflow) set to TextOverflow.Ellipsis. Setting the ellipsisMode attribute alone does not take effect. If this API is not called, the initial value is EllipsisMode.End.
+
+In the non-editing state, the attribute takes effect normally. In the editing state, EllipsisMode.Start and EllipsisMode.Center take effect only when [maxLines](#func-maxlinesint32) is set to 1, and EllipsisMode.End takes effect normally. EllipsisMode.MultilineStart and EllipsisMode.MultilineCenter take effect normally.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+| Parameter Name | Type | Required | Default Value | Description |
+|:---|:---|:---|:---|:---|
+| mode | ?[EllipsisMode](./cj-common-types.md#enum-ellipsismode) | Yes | - | Ellipsis position. |
+
 ### func enableKeyboardOnFocus(?Bool)
 
 ```cangjie
@@ -214,6 +234,24 @@ public func fontWeight(value: ?FontWeight): This
 | Parameter Name | Type | Required | Default Value | Description |
 |:---|:---|:---|:---|:---|
 | value | ?[FontWeight](./cj-common-types.md#enum-fontweight) | Yes | - | Font weight of the text.<br>Default: FontWeight.Normal. |
+
+### func halfLeading(?Bool)
+
+```cangjie
+public func halfLeading(halfLeading: ?Bool): This
+```
+
+**Function:** Sets the text to be vertically centered within the line, evenly distributing the line spacing to the top and bottom of the line. If this API is not called, the initial value is false.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+| Parameter Name | Type | Required | Default Value | Description |
+|:---|:---|:---|:---|:---|
+| halfLeading | ?Bool | Yes | - | Sets whether the text is vertically centered.<br>true means that the line spacing is evenly distributed to the top and bottom of the line, and false means that it is not. |
 
 ### func inputFilter(?ResourceStr, ?(String) -> Unit)
 
@@ -381,6 +419,44 @@ public func textAlign(value: ?TextAlign): This
 | Parameter Name | Type | Required | Default Value | Description |
 |:---|:---|:---|:---|:---|
 | value | ?[TextAlign](./cj-common-types.md#enum-textalign) | Yes | - | Horizontal alignment of the text.<br>Default: TextAlign.Start. |
+
+### func textIndent(?Length)
+
+```cangjie
+public func textIndent(value: ?Length): This
+```
+
+**Function:** Sets the indentation of the first line of text. If this API is not called, the initial value is 0.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+| Parameter Name | Type | Required | Default Value | Description |
+|:---|:---|:---|:---|:---|
+| value | ?[Length](./cj-common-types.md#interface-length) | Yes | - | Indentation of the first line of text.<br>Unit: vp<br>Value range: greater than or equal to 0. When set to a negative number, the initial value is used. |
+
+### func textOverflow(?TextOverflow)
+
+```cangjie
+public func textOverflow(value: ?TextOverflow): This
+```
+
+**Function:** Sets how the text is displayed when it is too long. This API is supported only in the editing and non-editing states when the value of [TextInputStyle](#func-styletextinputstyle) is the inline mode. If this API is not called, the default value is TextOverflow.Ellipsis in the inline mode and non-editing state, and TextOverflow.Clip in the inline mode and editing state.
+
+When textOverflow is set to TextOverflow.None, the effect is the same as that of TextOverflow.Clip.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+| Parameter Name | Type | Required | Default Value | Description |
+|:---|:---|:---|:---|:---|
+| value | ?[TextOverflow](./cj-common-types.md#enum-textoverflow) | Yes | - | How the text is displayed when it is too long. |
 
 ## Component Events
 
@@ -570,6 +646,8 @@ public func stopEditing(): Unit
 
 ## Example Code
 
+### Example 1 (Setting Cursor Position)
+
 <!--run-->
 
 ```cangjie
@@ -606,10 +684,10 @@ class EntryView {
         Button('Set caretPosition 1')
             .margin(15)
             .onClick({ evt => 
-                // Move the caret to after first entered character.
+                // Move the caret to after the first entered character.
                 this.controller.caretPosition(1)
             })
-        // Inline style input field
+        // Inline-style text box.
         TextInput( text: 'inline style' )
             .width(95.percent)
             .height(50)
@@ -623,3 +701,93 @@ class EntryView {
 ```
 
 ![textinput](figures/textinput.png)
+
+### Example 2 (Text Ellipsis Mode)
+
+This example demonstrates the text truncation and ellipsis position adjustment effects through the [textOverflow](#func-textoverflowtextoverflow), [ellipsisMode](#func-ellipsismodeellipsismode), and [style](#func-styletextinputstyle) attributes, and implements the ellipsis at the beginning and middle of the line in single-line and multi-line text scenarios through the MultilineStart and MultilineCenter types.
+
+<!--run-->
+
+```cangjie
+package ohos_app_cangjie_entry
+
+import kit.ArkUI.*
+import ohos.arkui.state_macro_manage.*
+
+@Entry
+@Component
+class EntryView {
+    @State
+    var text: String = "As the sun begins to set, casting a warm golden hue across the sky," +
+        "the world seems to slow down and breathe a sigh of relief. The sky is painted with hues of orange, " +
+        " pink, and lavender, creating a breathtaking tapestry that stretches as far as the eye can see." +
+        "The air is filled with the sweet scent of blooming flowers, mingling with the earthy aroma of freshly turned soil."
+    @State
+    var ellipsisModeIndex: Int64 = 0
+    @State
+    var ellipsisMode: Array<EllipsisMode> = [EllipsisMode.End, EllipsisMode.Start, EllipsisMode.Center,
+        EllipsisMode.MultilineStart, EllipsisMode.MultilineCenter]
+    @State
+    var ellipsisModeStr: Array<String> = ["End", "Start", "Center", "MultilineStart", "MultilineCenter"]
+    @State
+    var textOverflowIndex: Int64 = 0
+    @State
+    var textOverflow: Array<TextOverflow> = [TextOverflow.Ellipsis, TextOverflow.Clip]
+    @State
+    var textOverflowStr: Array<String> = ["Ellipsis", "Clip"]
+    @State
+    var styleInputIndex: Int64 = 0
+    @State
+    var styleInput: Array<TextInputStyle> = [TextInputStyle.Inline, TextInputStyle.Default]
+    @State
+    var styleInputStr: Array<String> = ["Inline", "Default"]
+
+    func build() {
+        Row() {
+            Column(space: 20) {
+                TextInput(text: this.text)
+                    .textOverflow(this.textOverflow[this.textOverflowIndex])
+                    .ellipsisMode(this.ellipsisMode[this.ellipsisModeIndex])
+                    .style(this.styleInput[this.styleInputIndex])
+                    .fontSize(30)
+                    .margin(30)
+                Button("ellipsisMode Value: " + this.ellipsisModeStr[this.ellipsisModeIndex])
+                    .onClick(
+                        {
+                            event =>
+                                this.ellipsisModeIndex++
+                                if (this.ellipsisModeIndex > this.ellipsisModeStr.size - 1) {
+                                    this.ellipsisModeIndex = 0
+                                }
+                        }
+                    )
+                    .fontSize(18)
+                Button("textOverflow Value: " + this.textOverflowStr[this.textOverflowIndex])
+                    .onClick(
+                        {
+                            event =>
+                                this.textOverflowIndex++
+                                if (this.textOverflowIndex > this.textOverflowStr.size - 1) {
+                                    this.textOverflowIndex = 0
+                                }
+                        }
+                    )
+                    .fontSize(18)
+                Button("Style Value: " + this.styleInputStr[this.styleInputIndex])
+                    .onClick(
+                        {
+                            event =>
+                                this.styleInputIndex++
+                                if (this.styleInputIndex > this.styleInputStr.size - 1) {
+                                    this.styleInputIndex = 0
+                                }
+                        }
+                    )
+                    .fontSize(18)
+            }
+        }
+    }
+}
+```
+
+![textInputEllipsisMode](figures/textInputEllipsisMode.gif)

@@ -22,6 +22,7 @@
             - [Telephony Kit（蜂窝通信服务）](telephony/README_zh.md)（Beta特性）
         - 基础功能
             - [Basic Services Kit（基础服务）](basic-services/README_zh.md)（Beta特性）
+            - [Notification Kit（用户通知服务）](notification/README_zh.md)（Beta特性）
         - 硬件
             - [Sensor Service Kit（传感器服务）](device/sensor/README_zh.md)（Beta特性）
         - 调测调优

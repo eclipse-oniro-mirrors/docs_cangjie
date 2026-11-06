@@ -24,7 +24,7 @@ nestedScroll有两个入参，分别为scrollForward和scrollBackward，均为[N
 ```cangjie
 // index.cj
 import ohos.arkui.state_macro_manage.*
-import ohos.web.webview.WebviewController
+import kit.ArkWeb.WebviewController
 import kit.ArkUI.*
 
 @Entry

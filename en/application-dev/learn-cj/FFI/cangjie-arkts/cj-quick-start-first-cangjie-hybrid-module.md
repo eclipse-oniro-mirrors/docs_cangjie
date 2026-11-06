@@ -276,9 +276,8 @@ Here, **my_module** becomes a Cangjie-ArkTS hybrid module.
    // index.cj
    package ohos_app_cangjie_my_module // Note: The package name must match the [package] name field in cjpm.toml.
 
-   import ohos.base.*
-   import ohos.ark_interop.*
-   import ohos.ark_interop_macro.*
+   import kit.ArkUI.*
+   import kit.CangjieKit.*
    import std.core.sleep
    import std.core.Duration
 
@@ -445,10 +444,8 @@ Here, **my_module** becomes a Cangjie-ArkTS hybrid module.
    // cangjie_page.cj
    package ohos_app_cangjie_my_module
 
-   import ohos.base.*
-   import ohos.arkui.component.*
+   import kit.ArkUI.*
    import ohos.arkui.state_macro_manage.*
-   import ohos.arkui.state_management.*
 
    @HybridComponentEntry
    @Component

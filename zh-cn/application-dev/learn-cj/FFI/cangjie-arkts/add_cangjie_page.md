@@ -22,9 +22,8 @@
    ```cangjie
    package ohos_app_cangjie_entry // 包名
 
-   import ohos.arkui.component.*
+   import kit.ArkUI.*
    import ohos.arkui.state_macro_manage.*
-   import ohos.arkui.state_management.*
 
    // 该页面组件必须由HybridComponentEntry修饰
    @HybridComponentEntry

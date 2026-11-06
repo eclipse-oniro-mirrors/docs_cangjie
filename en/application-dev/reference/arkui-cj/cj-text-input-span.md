@@ -195,6 +195,24 @@ public func textCase(value: ?TextCase): This
 |:---|:---|:---|:---|:---|
 | value | ?[TextCase](./cj-common-types.md#enum-textcase) | Yes | - | Text case.<br>Initial value: TextCase.Normal. |
 
+### func lineHeight(?Length)
+
+```cangjie
+public func lineHeight(value: ?Length): This
+```
+
+**Function:** Sets the text line height. If this API is not called, the system automatically calculates the line height based on the font size by default.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+| Parameter | Type | Required | Default Value | Description |
+|:---|:---|:---|:---|:---|
+| value | ?[Length](./cj-common-types.md#interface-length) | Yes | - | Text line height.<br>For Int64 and Float64 types, the unit is fp. Percentage strings are not supported. |
+
 ## Component Events
 
 ### func onClick(?(ClickEvent) -> Unit)
@@ -231,9 +249,9 @@ public abstract class BaseSpan {}
 
 ## Example Code
 
-### Example 1
+### Example 1 (Setting Text Styles)
 
-Example usage of decoration, textCase, and letterSpacing attribute interfaces.
+This example shows different text styles and Span click event configuration.
 
 <!--run-->
 
@@ -242,81 +260,139 @@ package ohos_app_cangjie_entry
 
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.*
-import std.collection.*
+import kit.PerformanceAnalysisKit.Hilog
 
 @Entry
 @Component
 class EntryView {
     func build() {
-        Flex(direction: FlexDirection.Column, alignItems: ItemAlign.Start,
-                        justifyContent: FlexAlign.SpaceBetween) {
-            Text("Basic Usage")
-            .fontSize(9)
-            .fontColor(0xCCCCCC)
+        Flex(direction: FlexDirection.Column, alignItems: ItemAlign.Start) {
+            Text("Basic Usage").fontSize(9).fontColor(0xCCCCCC)
+            Text() {
+                Span("In Line")
+                Span(" Component")
+                Span(" !")
+            }
+
             Text() {
                 Span("This is the Span component")
-                .fontSize(12)
-                //Set text case to preserve original case
-                .textCase(TextCase.Normal)
-                //Inline text has no decoration
-                .decoration(decorationType: TextDecorationType.None, color: Color.Red)
-            }
-            //Add text underline
-            Text("Text Decoration")
-            .fontSize(9)
-            .fontColor(0xCCCCCC)
+                    .fontSize(12)
+                    .textCase(TextCase.Normal)
+                    .decoration(decorationType: TextDecorationType.None, color: Color.Red)
+                    .fontFamily("HarmonyOS Sans")
+            }.margin(top: 12)
+
+            // Add a line under the text.
+            Text("Text Decoration").fontSize(9).fontColor(0xCCCCCC).margin(top: 12)
             Text() {
                 Span("I am Underline-span")
-                //Inline text decorated with red underline
-                .decoration(decorationType: TextDecorationType.Underline, color: Color.Red)
-                .fontSize(12)
+                    .decoration(decorationType: TextDecorationType.Underline, color: Color.Red)
+                    .fontSize(12)
             }
+
             Text() {
                 Span("I am LineThrough-span")
-                //Inline text decorated with red strikethrough
-                .decoration(decorationType: TextDecorationType.LineThrough, color: Color.Red)
-                .fontSize(12)
+                    .decoration(decorationType: TextDecorationType.LineThrough, color: Color.Red)
+                    .fontSize(12)
             }
+
             Text() {
                 Span("I am Overline-span")
-                //Inline text decorated with red overline
-                .decoration(decorationType: TextDecorationType.Overline, color: Color.Red)
-                .fontSize(12)
+                    .decoration(decorationType: TextDecorationType.Overline, color: Color.Red)
+                    .fontSize(12)
             }
-            //Text case display
-            Text("Text Case").fontSize(9).fontColor(0xCCCCCC)
+
+            // Set the letter spacing.
+            Text("LetterSpacing").fontSize(9).fontColor(0xCCCCCC).margin(top: 12)
+            Text() {
+                Span("span letter spacing")
+                    .letterSpacing(0)
+                    .fontSize(12)
+            }
+
+            Text() {
+                Span("span letter spacing")
+                    .letterSpacing(-2)
+                    .fontSize(12)
+            }
+
+            Text() {
+                Span("span letter spacing")
+                    .letterSpacing(3)
+                    .fontSize(12)
+            }
+
+            // Set the text case.
+            Text("Text Case").fontSize(9).fontColor(0xCCCCCC).margin(top: 12)
             Text() {
                 Span("I am Lower-span")
-                //Set text case to lowercase
-                .textCase(TextCase.LowerCase)
-                .fontSize(12)
-                .decoration(decorationType: TextDecorationType.None, color: Color.Red)
+                    .fontSize(12)
+                    .textCase(TextCase.LowerCase)
+                    .decoration(decorationType: TextDecorationType.None)
             }
+
             Text() {
                 Span("I am Upper-span")
-                //Set text case to uppercase
-                .textCase(TextCase.UpperCase)
-                .fontSize(12)
-                .decoration(decorationType: TextDecorationType.None, color: Color.Red)
+                    .fontSize(12)
+                    .textCase(TextCase.UpperCase)
+                    .decoration(decorationType: TextDecorationType.None)
             }
-            //Text character spacing display
+
+            // Set the text font style.
+            Text("FontStyle").fontSize(9).fontColor(0xCCCCCC).margin(top: 12)
             Text() {
-                Span("I am LetterSpacing")
-                .fontSize(20)
-                .decoration(decorationType: TextDecorationType.None, color: Color.Red)
-                //Set text character spacing to 10.fp
-                .letterSpacing(10)
+                Span("I am FontStyle-Normal")
+                    .fontSize(12)
+                    .fontStyle(FontStyle.Normal)
             }
+
             Text() {
-                Span("I am Span1").fontSize(30)
-                .decoration(decorationType: TextDecorationType.None, color: Color.Red)
-                Span("I am Span2").fontSize(30)
-                .decoration(decorationType: TextDecorationType.None, color: Color.Red)
+                Span("I am FontStyle-Italic")
+                    .fontSize(12)
+                    .fontStyle(FontStyle.Italic)
+            }
+
+            // Set the text font weight.
+            Text("FontWeight").fontSize(9).fontColor(0xCCCCCC).margin(top: 12)
+            Text() {
+                Span("I am FontWeight-Lighter")
+                    .fontSize(12)
+                    .fontWeight(FontWeight.Lighter)
+            }
+
+            Text() {
+                Span("I am FontWeight-Bold")
+                    .fontSize(12)
+                    .fontWeight(FontWeight.Bold)
+            }
+
+            // Set the text line height.
+            Text("LineHeight").fontSize(9).fontColor(0xCCCCCC).margin(top: 12)
+            Text() {
+                Span("I am lineHeight default\n")
+                    .fontSize(12)
+                    .fontWeight(FontWeight.Lighter)
+                Span("I am lineHeight 30")
+                    .fontSize(12)
+                    .lineHeight(30)
+            }
+                .backgroundColor(Color.Gray)
+
+            // Set the click event.
+            Text("span click event").fontSize(9).fontColor(0xCCCCCC).margin(top: 12)
+            Text() {
+                Span("Span default ").fontSize(12)
+                Span("Span click")
+                    .onClick(
+                        {
+                            event =>
+                                Hilog.info(1, "Cangjie", "span onClick.")
+                        }
+                    )
             }
         }
-        .width(100.percent)
-        .height(250)
-        .padding(left: 35, right: 35, top: 35)
+            .width(100.percent)
+            .padding(left: 35, right: 35, top: 35)
     }
 }
 ```

@@ -20,8 +20,8 @@
     import kit.CameraKit.*
     import kit.AbilityKit.*
     import kit.PerformanceAnalysisKit.Hilog
-    import ohos.callback_invoke.Callback1Argument
-    import ohos.business_exception.BusinessException
+    import kit.CangjieKit.Callback1Argument
+    import kit.CangjieKit.BusinessException
     ```
 
 2. 通过[getCameraManager](../../reference/CameraKit/cj-apis-multimedia-camera.md#func-getcameramanageruiabilitycontext)方法，获取cameraManager对象。

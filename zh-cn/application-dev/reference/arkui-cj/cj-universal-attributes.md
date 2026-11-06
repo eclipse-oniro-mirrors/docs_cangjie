@@ -34,4 +34,9 @@
     - [半模态转场](cj-universal-attribute-sheettransition.md)
 - [安全区域](cj-universal-attribute-expandsafearea.md)
 - [组件内容填充方式](cj-universal-attribute-renderfit.md)
+- 触摸交互控制
+    - [触摸热区设置](cj-universal-attribute-touchtarget.md)
+    - [触摸测试控制](cj-universal-attribute-hittestbehavior.md)
+- [手势绑定](cj-universal-attribute-gesture.md)
+- [悬浮态效果](cj-universal-attribute-hovereffect.md)
 <!--DelEnd-->

@@ -108,7 +108,7 @@
     // xxx.cj
     import kit.ArkData.*
     import kit.PerformanceAnalysisKit.Hilog
-    import ohos.business_exception.BusinessException
+    import kit.CangjieKit.BusinessException
     ```
 
     实现创建数据库功能的核心代码是：
@@ -185,7 +185,7 @@
     // xxx.cj
     import kit.ArkData.*
     import kit.PerformanceAnalysisKit.Hilog
-    import ohos.business_exception.BusinessException
+    import kit.CangjieKit.BusinessException
     ```
 
     实现创建数据库功能的核心代码是：

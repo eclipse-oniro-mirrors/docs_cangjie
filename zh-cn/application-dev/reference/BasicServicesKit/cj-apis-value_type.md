@@ -38,7 +38,6 @@ public enum CommonEventValueType {
     | ArrayBool(Array<Bool>)
     | ArrayFloat64(Array<Float64>)
     | ArrayFD(Array<Int32>)
-    | ...
 }
 ```
 

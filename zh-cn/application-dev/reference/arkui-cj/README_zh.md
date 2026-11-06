@@ -7,6 +7,7 @@
         - [ohos.curves（插值计算）](cj-apis-curves.md)（Beta特性）
         - ohos.arkui.ui_context（UIContext）
             - [AnimatorResult](cj-apis-uicontext-animator.md)（Beta特性）
+            - [ComponentSnapshot](cj-apis-uicontext-componentsnapshot.md)（Beta特性）
             - [ContextMenuController](cj-apis-uicontext-contextmenucontroller.md)（Beta特性）
             - [Font](cj-apis-uicontext-font.md)（Beta特性）
             - [MeasureUtils](cj-apis-uicontext-measureutils.md)（Beta特性）
@@ -29,6 +30,7 @@
         - [组件区域变化事件](cj-universal-event-areachange.md)（Beta特性）
         - [组件可见区域变化事件](cj-universal-event-visibleareachange.md)（Beta特性）
         - [组件快捷键事件](cj-universal-event-keyboardshortcut.md)（Beta特性）
+        - [自定义事件分发](cj-universal-attribute-onchildtouchtest.md)（Beta特性）
     - [通用属性](cj-universal-attributes.md)（Beta特性）
         - [尺寸设置](cj-universal-attribute-size.md)（Beta特性）
         - [位置设置](cj-universal-attribute-location.md)（Beta特性）
@@ -57,7 +59,15 @@
             - [半模态转场](cj-universal-attribute-sheettransition.md)（Beta特性）
         - [安全区域](cj-universal-attribute-expandsafearea.md)（Beta特性）
         - [组件内容填充方式](cj-universal-attribute-renderfit.md)（Beta特性）
-        - [触摸热区设置](cj-universal-attribute-touchtarget.md)（Beta特性）
+        - 触摸交互控制
+            - [触摸热区设置](cj-universal-attribute-touchtarget.md)（Beta特性）
+            - [触摸测试控制](cj-universal-attribute-hittestbehavior.md)（Beta特性）
+        - [悬浮态效果](cj-universal-attribute-hovereffect.md)（Beta特性）
+    - 手势处理
+        - 绑定手势
+            - [绑定手势事件](cj-universal-attribute-gesture.md)（Beta特性）
+        - 基础手势
+            - [PanGesture](cj-basic-gestures-pangesture.md)（Beta特性）
     - 行列与堆叠
         - [Flex](cj-row-column-stack-flex.md)（Beta特性）
         - [Column](cj-row-column-stack-column.md)（Beta特性）
@@ -171,7 +181,8 @@
     - [框架接口](cj-ui-framework.md)（Beta特性）
 - 错误码
     - UI界面
-        - [动画错误码](cj-errorcode-animator.md)（Beta特性）
+        - [接口调用异常错误码](cj-errorcode-internal.md)（Beta特性）
+        - [截图错误码](cj-errorcode-snapshot.md)（Beta特性）
     - 图形图像
         - [屏幕错误码](cj-errorcode-display.md)（Beta特性）
         - [窗口错误码](cj-errorcode-window.md)（Beta特性）

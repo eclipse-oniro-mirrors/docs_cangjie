@@ -83,6 +83,8 @@ export let value = 123
 
     <!-- compile -->
     ```cangjie
+    import kit.PerformanceAnalysisKit.Hilog
+
     func loadModule(context: JSContext): Unit {
         // 1. 使用requireArkModule导入模块
         let module = context.requireArkModule("entry/src/main/ets/Test")
@@ -90,7 +92,7 @@ export let value = 123
         let test = module.asObject()
         // 3. 读取导出的value变量
         let value = test["value"].toNumber()
-        Hilog.info("value is ${value}")
+        Hilog.info(0, "test", "value is ${value}")
         // 4. 写value变量
         test["value"] = context.number(2).toJSValue()
         // 5. 调用导出的test方法
@@ -137,6 +139,8 @@ export let value = 123
 
     <!-- compile -->
     ```cangjie
+    import kit.PerformanceAnalysisKit.Hilog
+
     func loadModule(context: JSContext): Unit {
         // 1. 使用requireArkModule导入模块
         let module1 = context.requireArkModule("localhar/src/main/ets/Test") // 导入本地har里的文件
@@ -147,7 +151,7 @@ export let value = 123
         let test = module1.asObject()
         // 3. 读取导出的value变量
         let value = test["value"].toNumber()
-        Hilog.info("value is ${value}")
+        Hilog.info(0, "test", "value is ${value}")
         // 4. 写value变量
         test["value"] = context.number(2).toJSValue()
         // 5. 调用导出的test方法
@@ -168,6 +172,8 @@ build-profile.json5无需配置，导入和调用方式如下：
 
 <!-- compile -->
 ```cangjie
+import kit.PerformanceAnalysisKit.Hilog
+
 func loadModule(context: JSContext): Unit {
     // 1. 使用requireArkModule导入模块
     let module = context.requireArkModule("localhsp/src/main/ets/Test") // 导入本地hsp里的文件
@@ -176,7 +182,7 @@ func loadModule(context: JSContext): Unit {
     let test = module.asObject()
     // 3. 读取导出的value变量
     let value = test["value"].toNumber()
-    Hilog.info("value is ${value}")
+    Hilog.info(0, "test", "value is ${value}")
     // 4. 写value变量
     test["value"] = context.number(2).toJSValue()
     // 5. 调用导出的test方法
@@ -190,6 +196,8 @@ func loadModule(context: JSContext): Unit {
 
 <!-- compile -->
 ```cangjie
+import kit.PerformanceAnalysisKit.Hilog
+
 func loadModule(context: JSContext): Unit {
     // 1. 使用requireArkModule导入模块
     let module = context.requireArkModule("libentry.so") // 导入native模块
@@ -198,7 +206,7 @@ func loadModule(context: JSContext): Unit {
     let test = module.asObject()
     // 3. 读取导出的value变量
     let value = test["value"].toNumber()
-    Hilog.info("value is ${value}")
+    Hilog.info(0, "test", "value is ${value}")
     // 4. 写value变量
     test["value"] = context.number(2).toJSValue()
     // 5. 调用导出的test方法

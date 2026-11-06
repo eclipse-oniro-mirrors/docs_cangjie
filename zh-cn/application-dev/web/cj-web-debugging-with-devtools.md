@@ -22,9 +22,9 @@ Web组件支持使用DevTools工具调试前端页面。DevTools是一个Web前�
     // xxx.cj
     import ohos.arkui.state_macro_manage.*
     import kit.PerformanceAnalysisKit.Hilog
-    import ohos.web.webview.WebviewController
+    import kit.ArkWeb.WebviewController
     import kit.ArkUI.Web
-    import ohos.business_exception.*
+    import kit.CangjieKit.*
 
     func loggerError(str: String) {
         Hilog.error(0, "CangjieTest", str)

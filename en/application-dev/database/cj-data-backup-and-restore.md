@@ -61,10 +61,9 @@ For key-value databases, backups are implemented via the `backup` interface, rec
     ```cangjie
     // xxx.cj
     import kit.ArkData.*
-    import ohos.business_exception.BusinessException
-    import ohos.data.distributed_kv_store.KVManager
-    import ohos.data.distributed_kv_store.SingleKVStore
-    import ohos.data.relational_store.*
+    import kit.CangjieKit.BusinessException
+    import kit.ArkData.KVManager
+    import kit.ArkData.SingleKVStore
     ```
 
     The core code for create a kvStore is:
@@ -101,7 +100,7 @@ For key-value databases, backups are implemented via the `backup` interface, rec
     <!-- compile -->
 
     ```cangjie
-    import ohos.data.distributed_kv_store.*
+    import kit.ArkData.*
     ```
 
     The core code for insert data is:
@@ -171,8 +170,7 @@ To manual backup, the following packages need to be imported:
 
 ```cangjie
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
-import ohos.data.relational_store.*
+import kit.CangjieKit.BusinessException
 ```
 
 The core code for manual backup is:
@@ -218,8 +216,8 @@ The recovery process and key code snippets are as follows. For complete example 
     <!-- compile -->
 
     ```cangjie
-    import ohos.data.relational_store.RdbPredicates
-    import ohos.data.relational_store.RdbStore
+    import kit.ArkData.RdbPredicates
+    import kit.ArkData.RdbStore
     ```
 
     The core code for throw database exception error codes is:
@@ -259,7 +257,7 @@ The recovery process and key code snippets are as follows. For complete example 
     <!-- compile -->
 
     ```cangjie
-    import ohos.data.relational_store.ResultSet
+    import kit.ArkData.ResultSet
     ```
 
     The core code for close all open result sets is:

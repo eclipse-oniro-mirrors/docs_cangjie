@@ -283,6 +283,9 @@
                         - [触屏事件](arkui-cj/cj-common-events-touch-screen-event.md)
                         - [键鼠事件](arkui-cj/cj-common-events-device-input-event.md)
                         - [焦点事件](arkui-cj/cj-common-events-focus-event.md)
+                    - 使用手势
+                        - [绑定手势方法](arkui-cj/cj-gesture-events-binding.md)
+                        - [单一手势](arkui-cj/cj-gesture-events-single-gesture.md)
                 - 使用动画
                     - [动画概述](arkui-cj/cj-animation.md)
                     - 属性动画
@@ -311,6 +314,7 @@
                         - [使用画布绘制自定义图形（Canvas）](arkui-cj/cj-drawing-customization-on-canvas.md)
                 - [混合开发](arkui-cj/cj-appendix-hybrid.md)
                 - [使用镜像能力](arkui-cj/cj-mirroring-display.md)
+                - [使用组件截图](arkui-cj/cj-uicontext-component-snapshot.md)
                 <!--RP1--><!--RP1End-->
                 - 主题设置
                     - [应用深浅色适配](arkui-cj/cj-ui-dark-light-color-adaptation.md)
@@ -383,9 +387,12 @@
             - [国际化和本地化概述](internationalization/cj-i18n-l10n.md)
             - 应用国际化
                 - [国际化界面设计](internationalization/cj-i18n-ui-design.md)
+                - 语言与用户偏好
+                    - [系统语言与区域](internationalization/cj-i18n-system-language-region.md)
                 - [设置日历和历法](internationalization/cj-i18n-calendar.md)
                 - 时区与夏令时国际化
                     - [夏令时跳变](internationalization/cj-i18n-dst-transition.md)
+                - [字符处理](internationalization/cj-i18n-character-processing.md)
                 - 本地化名称
                     - [本地化时区名称](internationalization/cj-i18n-time-zone-display.md)
             - 应用本地化
@@ -539,6 +546,12 @@
                         - [发布公共事件](basic-services/common-event/cj-common-event-publish.md)
                 - 上传下载
                     - [应用文件上传下载](basic-services/request/cj-app-file-upload-download.md)
+            - Notification Kit（用户通知服务）
+                - [Notification Kit简介](notification/cj-notification-overview.md)
+                - [发布文本类型通知](notification/cj-text-notification.md)
+                - [请求通知授权](notification/cj-notification-enable.md)
+                - [管理通知角标](notification/cj-notification-badge.md)
+                - [取消通知](notification/cj-notification-cancel.md)
         - 硬件
             - Sensor Service Kit（传感器服务）
                 - [Sensor Service Kit开发简介](device/sensor/cj-sensorservice-kit-intro.md)
@@ -609,6 +622,8 @@
                 - [会话管理](media/camera/cj-camera-session-management.md)
             - 开发相机应用基础能力
                 - [手电筒使用](media/camera/cj-camera-torch-use.md)
+                - [元数据](media/camera/cj-camera-metadata.md)
+                - [通过系统相机拍照和录像](media/camera/cj-camera-picker.md)
         - Image Kit（图片处理服务）
             - [Image Kit简介](media/image/cj-image-overview.md)
             - 图片开发指导
@@ -696,6 +711,7 @@
                     - [ohos.curves（插值计算）](reference/arkui-cj/cj-apis-curves.md)
                     - ohos.arkui.ui_context（UIContext）
                         - [AnimatorResult](reference/arkui-cj/cj-apis-uicontext-animator.md)
+                        - [ComponentSnapshot](reference/arkui-cj/cj-apis-uicontext-componentsnapshot.md)
                         - [ContextMenuController](reference/arkui-cj/cj-apis-uicontext-contextmenucontroller.md)
                         - [Font](reference/arkui-cj/cj-apis-uicontext-font.md)
                         - [MeasureUtils](reference/arkui-cj/cj-apis-uicontext-measureutils.md)
@@ -718,6 +734,7 @@
                     - [组件区域变化事件](reference/arkui-cj/cj-universal-event-areachange.md)
                     - [组件可见区域变化事件](reference/arkui-cj/cj-universal-event-visibleareachange.md)
                     - [组件快捷键事件](reference/arkui-cj/cj-universal-event-keyboardshortcut.md)
+                    - [自定义事件分发](reference/arkui-cj/cj-universal-attribute-onchildtouchtest.md)
                 - [通用属性](reference/arkui-cj/cj-universal-attributes.md)
                     - [尺寸设置](reference/arkui-cj/cj-universal-attribute-size.md)
                     - [位置设置](reference/arkui-cj/cj-universal-attribute-location.md)
@@ -746,7 +763,15 @@
                         - [半模态转场](reference/arkui-cj/cj-universal-attribute-sheettransition.md)
                     - [安全区域](reference/arkui-cj/cj-universal-attribute-expandsafearea.md)
                     - [组件内容填充方式](reference/arkui-cj/cj-universal-attribute-renderfit.md)
-                    - [触摸热区设置](reference/arkui-cj/cj-universal-attribute-touchtarget.md)
+                    - 触摸交互控制
+                        - [触摸热区设置](reference/arkui-cj/cj-universal-attribute-touchtarget.md)
+                        - [触摸测试控制](reference/arkui-cj/cj-universal-attribute-hittestbehavior.md)
+                    - [悬浮态效果](reference/arkui-cj/cj-universal-attribute-hovereffect.md)
+                - 手势处理
+                    - 绑定手势
+                        - [绑定手势事件](reference/arkui-cj/cj-universal-attribute-gesture.md)
+                    - 基础手势
+                        - [PanGesture](reference/arkui-cj/cj-basic-gestures-pangesture.md)
                 - 行列与堆叠
                     - [Flex](reference/arkui-cj/cj-row-column-stack-flex.md)
                     - [Column](reference/arkui-cj/cj-row-column-stack-column.md)
@@ -860,7 +885,8 @@
                 - [框架接口](reference/arkui-cj/cj-ui-framework.md)
             - 错误码
                 - UI界面
-                    - [动画错误码](reference/arkui-cj/cj-errorcode-animator.md)
+                    - [接口调用异常错误码](reference/arkui-cj/cj-errorcode-internal.md)
+                    - [截图错误码](reference/arkui-cj/cj-errorcode-snapshot.md)
                 - 图形图像
                     - [屏幕错误码](reference/arkui-cj/cj-errorcode-display.md)
                     - [窗口错误码](reference/arkui-cj/cj-errorcode-window.md)
@@ -958,6 +984,11 @@
                     - [系统电源管理错误码](reference/BasicServicesKit/cj-errorcode-power.md)
                     - [账号管理错误码](reference/BasicServicesKit/cj-errorcode-basic-account.md)
                     - [设置数据项错误码](reference/BasicServicesKit/cj-errorcode-settings.md)
+            - Notification Kit（用户通知服务）
+                - 仓颉API
+                    - [ohos.notification_manager（通知管理）](reference/NotificationKit/cj-apis-notification-manager.md)
+                - 错误码
+                    - [通知错误码](reference/NotificationKit/cj-errorcode-notification.md)
         - 硬件
             - Sensor Service Kit（传感器服务）
                 - 仓颉API
@@ -988,6 +1019,7 @@
         - Camera Kit（相机服务）
             - 仓颉API
                 - [ohos.multimedia.camera（相机管理）](reference/CameraKit/cj-apis-multimedia-camera.md)
+                - [ohos.multimedia.camera_picker（相机选择器）](reference/CameraKit/cj-apis-multimedia-camera-picker.md)
             - 错误码
                 - [Camera错误码](reference/CameraKit/cj-errorcode-multimedia-camera.md)
         - Image Kit（图片处理服务）

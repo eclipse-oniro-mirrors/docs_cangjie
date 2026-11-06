@@ -79,7 +79,7 @@ func backgroundImage(src: ?ResourceStr, repeat: ?ImageRepeat): T
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |src|?[ResourceStr](./cj-common-types.md#interface-resourcestr)|是|-|图片资源路径。|
-|repeat|?[ImageRepeat](./cj-common-types.md#enum-imagerepeat)|是|-|图片重复方式。初始值：ImageRepeat.NoRepeat|
+|repeat|?[ImageRepeat](./cj-common-types.md#enum-imagerepeat)|是|-|图片重复方式。初始值：ImageRepeat.NoRepeat<br>**说明：** 设置合法的[backgroundImageResizable](#func-backgroundimageresizableresizableoptions)时，该参数设置不生效。|
 
 **返回值：**
 
@@ -129,6 +129,35 @@ func backgroundImagePosition(x!: ?Length, y!: ?Length): T
 |:---|:---|:---|:---|:---|
 |x|?[Length](./cj-common-types.md#interface-length)|是|-|**命名参数。** X轴位置。初始值：0.vp|
 |y|?[Length](./cj-common-types.md#interface-length)|是|-|**命名参数。** Y轴位置。初始值：0.vp|
+
+**返回值：**
+
+|类型|说明|
+|:---|:---|
+|T|返回调用此接口的组件实例本身。|
+
+## func backgroundImageResizable(?ResizableOptions)
+
+```cangjie
+func backgroundImageResizable(value: ?ResizableOptions): T
+```
+
+**功能：** 设置背景图片在拉伸时的可分区拉伸图像选项，即定义图片中可拉伸区域与固定不变的区域，实现类似9-patch的切片拉伸效果。设置合法的[ResizableOptions](./cj-common-types.md#class-resizableoptions)时，[backgroundImage](#func-backgroundimageresourcestr)属性中的repeat参数设置不生效。
+
+> **说明：**
+>
+> - 仅ResizableOptions中的slice字段生效。slice字段的bottom和right同时大于0时，该属性生效；当设置top+bottom大于原图的高或者left+right大于原图的宽时，该属性设置不生效。
+> - value为None时，背景图按原图拉伸。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|value|?[ResizableOptions](./cj-common-types.md#class-resizableoptions)|是|-|图像拉伸时可调整大小的图像选项。|
 
 **返回值：**
 

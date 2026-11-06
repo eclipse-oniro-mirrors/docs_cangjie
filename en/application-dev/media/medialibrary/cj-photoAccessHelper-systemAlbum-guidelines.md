@@ -36,7 +36,7 @@ Use the [getAlbums](../../reference/MediaLibraryKit/cj-apis-file-photo_access_he
 ```cangjie
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
-import ohos.business_exception.*
+import kit.CangjieKit.*
 
 func example() {
   try {
@@ -56,9 +56,9 @@ func example() {
 
 ```cangjie
 // main_ability.cj
-import ohos.hilog.*
-import ohos.ability.AbilityStage
-import ohos.ability.LaunchReason
+import kit.PerformanceAnalysisKit.*
+import kit.AbilityKit.AbilityStage
+import kit.AbilityKit.LaunchReason
 
 class MainAbility <: UIAbility {
     public init() {
@@ -105,7 +105,7 @@ The following example demonstrates obtaining an image from the favorites album.
 ```cangjie
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
-import ohos.business_exception.*
+import kit.CangjieKit.*
 
 func example() {
     let context = ctx.getOrThrow()
@@ -134,9 +134,9 @@ func example() {
 
 ```cangjie
 // main_ability.cj
-import ohos.hilog.*
-import ohos.ability.AbilityStage
-import ohos.ability.LaunchReason
+import kit.PerformanceAnalysisKit.*
+import kit.AbilityKit.AbilityStage
+import kit.AbilityKit.LaunchReason
 
 class MainAbility <: UIAbility {
     public init() {
@@ -183,7 +183,7 @@ Use the [getAlbums](../../reference/MediaLibraryKit/cj-apis-file-photo_access_he
 ```cangjie
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
-import ohos.business_exception.*
+import kit.CangjieKit.*
 
 func example() {
   try {
@@ -203,9 +203,9 @@ func example() {
 
 ```cangjie
 // main_ability.cj
-import ohos.hilog.*
-import ohos.ability.AbilityStage
-import ohos.ability.LaunchReason
+import kit.PerformanceAnalysisKit.*
+import kit.AbilityKit.AbilityStage
+import kit.AbilityKit.LaunchReason
 
 class MainAbility <: UIAbility {
     public init() {
@@ -252,7 +252,7 @@ The following example demonstrates obtaining a video from the video album.
 ```cangjie
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
-import ohos.business_exception.*
+import kit.CangjieKit.*
 
 func example() {
     let context = ctx.getOrThrow()
@@ -281,9 +281,9 @@ func example() {
 
 ```cangjie
 // main_ability.cj
-import ohos.hilog.*
-import ohos.ability.AbilityStage
-import ohos.ability.LaunchReason
+import kit.PerformanceAnalysisKit.*
+import kit.AbilityKit.AbilityStage
+import kit.AbilityKit.LaunchReason
 
 class MainAbility <: UIAbility {
     public init() {

@@ -54,7 +54,7 @@ public func createHfpAgProfile(): HandsFreeAudioGatewayProfile
 
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 try {
     let hdfProfile = createHfpAgProfile()
@@ -125,7 +125,7 @@ public func getConnectedDevices(): Array<String>
 
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 try {
     let hdfProfile = createHfpAgProfile()
@@ -190,7 +190,7 @@ public func getConnectionState(deviceId: String): ProfileConnectionState
 
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 try {
     let hdfProfile = createHfpAgProfile()
@@ -243,8 +243,7 @@ public func off(eventType: ProfileCallbackType, callback: CallbackObject): Unit
 ```cangjie
 // index.cj
 
-import ohos.callback_invoke.*
-import ohos.business_exception.*
+import kit.CangjieKit.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -308,8 +307,7 @@ public func off(eventType: ProfileCallbackType): Unit
 ```cangjie
 // index.cj
 
-import ohos.callback_invoke.*
-import ohos.business_exception.*
+import kit.CangjieKit.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -374,8 +372,7 @@ public func on(eventType: ProfileCallbackType, callback: Callback1Argument<State
 ```cangjie
 // index.cj
 
-import ohos.callback_invoke.*
-import ohos.business_exception.*
+import kit.CangjieKit.*
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 

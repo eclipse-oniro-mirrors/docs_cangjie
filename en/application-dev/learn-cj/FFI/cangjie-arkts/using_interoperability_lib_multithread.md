@@ -15,7 +15,7 @@ The following example demonstrates specific practices. This use case involves an
     ```cangjie
     package ohos_app_cangjie_entry
 
-    import ohos.ark_interop.*
+    import kit.CangjieKit.*
 
     // Class name has no impact
     class Main {
@@ -79,7 +79,7 @@ ArkTS includes Promise, which encapsulates callback mechanisms and, combined wit
     ```cangjie
     package ohos_app_cangjie_entry
 
-    import ohos.ark_interop.*
+    import kit.CangjieKit.*
 
     // Class name has no impact
     class Main {

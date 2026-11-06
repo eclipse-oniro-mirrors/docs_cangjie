@@ -54,7 +54,7 @@
     import kit.AbilityKit.{UIAbility, Want, LaunchParam, Flags, WantValueType}
     import kit.ArkUI.WindowStage
     import kit.CoreFileKit.FileUri
-    import ohos.business_exception.BusinessException
+    import kit.CangjieKit.BusinessException
     import std.collection.HashMap
     import kit.PerformanceAnalysisKit.Hilog
     ```
@@ -199,7 +199,7 @@
     import kit.AbilityKit.{UIAbility, Want, LaunchParam}
     import kit.ArkUI.{WindowStage}
     import kit.CoreFileKit.{FileIo, OpenMode}
-    import ohos.business_exception.BusinessException
+    import kit.CangjieKit.BusinessException
     import kit.PerformanceAnalysisKit.Hilog
 
     class MainAbility <: UIAbility {

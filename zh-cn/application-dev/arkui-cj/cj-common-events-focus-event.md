@@ -150,43 +150,43 @@ class EntryView {
         Column(space: 20) {
             // 通过外接键盘的上下键可以让焦点在三个按钮间移动，按钮获焦时颜色变化，失焦时变回原背景色
             Button("First Button")
-                .backgroundColor(oneButtonColor)
+                .backgroundColor(this.oneButtonColor)
                 .width(260)
                 .height(70)
                 .fontColor(Color.Black)
                 // 监听第一个组件的获焦事件，获焦后改变颜色
                 .onFocus({
-                    => oneButtonColor = Color(0x64BB5C)
+                    => this.oneButtonColor = Color(0x64BB5C)
                 })
                 // 监听第一个组件的失焦事件，失焦后改变颜色
                 .onBlur({
-                    => oneButtonColor = Color.Gray
+                    => this.oneButtonColor = Color.Gray
                 })
             Button("Second Button")
-                .backgroundColor(twoButtonColor)
+                .backgroundColor(this.twoButtonColor)
                 .width(260)
                 .height(70)
                 .fontColor(Color.Black)
                 // 监听第二个组件的获焦事件，获焦后改变颜色
                 .onFocus({
-                    => twoButtonColor = Color(0x64BB5C)
+                    => this.twoButtonColor = Color(0x64BB5C)
                 })
                 // 监听第二个组件的失焦事件，失焦后改变颜色
                 .onBlur({
-                    => twoButtonColor = Color.Gray
+                    => this.twoButtonColor = Color.Gray
                 })
             Button("Third Button")
-                .backgroundColor(threeButtonColor)
+                .backgroundColor(this.threeButtonColor)
                 .width(260)
                 .height(70)
                 .fontColor(Color.Black)
                 // 监听第三个组件的获焦事件，获焦后改变颜色
                 .onFocus({
-                    => threeButtonColor = Color(0x64BB5C)
+                    => this.threeButtonColor = Color(0x64BB5C)
                 })
                 // 监听第三个组件的失焦事件，失焦后改变颜色
                 .onBlur({
-                    => threeButtonColor = Color.Gray
+                    => this.threeButtonColor = Color.Gray
                 })
         }
             .width(100.percent)
@@ -226,7 +226,7 @@ public func enabled(value: ?Bool): T
 设置组件可交互性属性[enabled](../reference/arkui-cj/cj-universal-attribute-enable.md#func-enabledbool)为`false`，则组件不可交互，无法获焦。
 
 ```cangjie
-public func visibility(value: ?Bool): T
+public func visibility(value: Visibility): T
 ```
 
 设置组件可见性属性[visibility](../reference/arkui-cj/cj-universal-attribute-visibility.md#func-visibilityvisibility)为`Visibility.None`或`Visibility.Hidden`，则组件不可见，无法获焦。
@@ -267,48 +267,48 @@ class EntryView {
         Column(space: 5) {
             // 第一个Text组件未设置focusable属性，默认不可获焦
             Text("Default Text")
-                .borderColor(color1)
+                .borderColor(this.color1)
                 .borderWidth(2)
                 .width(300)
                 .height(70)
                 .onFocus({
-                    => color1 = Color.Blue
+                    => this.color1 = Color.Blue
                 })
                 .onBlur({
-                    => color1 = Color(0xFFFF00)
+                    => this.color1 = Color(0xFFFF00)
                 })
 
             Divider()
 
             // 第二个Text设置了focusable初始为true，focusableOnTouch为true
-            Text("focusable: " + textFocusable.toString())
-                .borderColor(color2)
+            Text("focusable: " + this.textFocusable.toString())
+                .borderColor(this.color2)
                 .borderWidth(2)
                 .width(300)
                 .height(70)
-                .focusable(textFocusable)
+                .focusable(this.textFocusable)
                 .focusOnTouch(true)
                 .onFocus({
-                    => color2 = Color.Blue
+                    => this.color2 = Color.Blue
                 })
                 .onBlur({
-                    => color2 = Color(0xFFFF00)
+                    => this.color2 = Color(0xFFFF00)
                 })
 
             // 第三个Text设置了focusable为true，enabled初始为true
-            Text("enabled: " + textEnabled.toString())
-                .borderColor(color3)
+            Text("enabled: " + this.textEnabled.toString())
+                .borderColor(this.color3)
                 .borderWidth(2)
                 .width(300)
                 .height(70)
                 .focusable(true)
-                .enabled(textEnabled)
+                .enabled(this.textEnabled)
                 .focusOnTouch(true)
                 .onFocus({
-                    => color3 = Color.Blue
+                    => this.color3 = Color.Blue
                 })
                 .onBlur({
-                    => color3 = Color(0xFFFF00)
+                    => this.color3 = Color(0xFFFF00)
                 })
 
             Divider()
@@ -337,11 +337,11 @@ class EntryView {
                     e =>
                         // 绑定onKeyEvent，在该Column组件获焦时，按下'F'键，可将第二个Text的focusable置反
                         if (e.keyCode == 2022 && e.keyType == KeyType.Down) {
-                            textFocusable = !textFocusable
+                            this.textFocusable = !this.textFocusable
                         }
                         // 绑定onKeyEvent，在该Column组件获焦时，按下'G'键，可将第三个Text的enabled置反
                         if (e.keyCode == 2023 && e.keyType == KeyType.Down) {
-                            textEnabled = !textEnabled
+                            this.textEnabled = !this.textEnabled
                         }
                 }
             )
@@ -393,45 +393,45 @@ class EntryView {
             Button("First Button")
                 .width(260)
                 .height(70)
-                .backgroundColor(oneButtonColor)
+                .backgroundColor(this.oneButtonColor)
                 .fontColor(Color.Black)
                 // 监听第一个组件的获焦事件，获焦后改变颜色
                 .onFocus({
-                    => oneButtonColor = Color(0x64BB5C)
+                    => this.oneButtonColor = Color(0x64BB5C)
                 })
                 // 监听第一个组件的失焦事件，失焦后改变颜色
                 .onBlur({
-                    => oneButtonColor = Color.Gray
+                    => this.oneButtonColor = Color.Gray
                 })
 
             Button("Second Button")
                 .width(260)
                 .height(70)
-                .backgroundColor(twoButtonColor)
+                .backgroundColor(this.twoButtonColor)
                 .fontColor(Color.Black)
                 // 监听第二个组件的获焦事件，获焦后改变颜色
                 .onFocus({
-                    => twoButtonColor = Color(0x64BB5C)
+                    => this.twoButtonColor = Color(0x64BB5C)
                 })
                 // 监听第二个组件的失焦事件，失焦后改变颜色
                 .onBlur({
-                    => twoButtonColor = Color.Gray
+                    => this.twoButtonColor = Color.Gray
                 })
 
             Button("Third Button")
                 .width(260)
                 .height(70)
-                .backgroundColor(threeButtonColor)
+                .backgroundColor(this.threeButtonColor)
                 .fontColor(Color.Black)
                 // 设置默认焦点
                 .defaultFocus(true)
                 // 监听第三个组件的获焦事件，获焦后改变颜色
                 .onFocus({
-                    => threeButtonColor = Color(0x64BB5C)
+                    => this.threeButtonColor = Color(0x64BB5C)
                 })
                 // 监听第三个组件的失焦事件，失焦后改变颜色
                 .onBlur({
-                    => threeButtonColor = Color.Gray
+                    => this.threeButtonColor = Color.Gray
                 })
         }
             .width(100.percent)
@@ -505,10 +505,10 @@ class EntryView {
                     .focusOnTouch(true)
                     .backgroundColor(0x2787d9)
                     .onFocus({
-                        => btColor = 0xd5d5d5
+                        => this.btColor = 0xd5d5d5
                     })
                     .onBlur({
-                        => btColor = 0x2787d9
+                        => this.btColor = 0x2787d9
                     })
                     .id("testButton")
 
@@ -517,12 +517,12 @@ class EntryView {
                     .height(70)
                     .fontColor(Color.White)
                     .focusOnTouch(true)
-                    .backgroundColor(btColor2)
+                    .backgroundColor(this.btColor2)
                     .onFocus({
-                        => btColor2 = 0xd5d5d5
+                        => this.btColor2 = 0xd5d5d5
                     })
                     .onBlur({
-                        => btColor2 = 0x2787d9
+                        => this.btColor2 = 0x2787d9
                     })
                     .id("testButton2")
 
@@ -579,18 +579,18 @@ class EntryView {
 
     func build() {
         Column {
-            Button(name)
+            Button(this.name)
                 .fontSize(30)
                 .onClick(
                     {
                         evt =>
-                            count++
-                            if (count <= 0) {
-                                name = "count is negative number"
-                            } else if (count % 2 == 0) {
-                                name = "count is even number"
+                            this.count++
+                            if (this.count <= 0) {
+                                this.name = "count is negative number"
+                            } else if (this.count % 2 == 0) {
+                                this.name = "count is even number"
                             } else {
-                                name = "count is odd number"
+                                this.name = "count is odd number"
                             }
                     }
                 )

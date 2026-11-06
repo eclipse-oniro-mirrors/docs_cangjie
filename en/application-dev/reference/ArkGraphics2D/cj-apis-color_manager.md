@@ -63,7 +63,7 @@ public func create(colorSpaceName: ColorSpace): ColorSpaceManager
 // index.cj
 
 import kit.ArkGraphics2D.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -114,7 +114,7 @@ public func create(primaries: ColorSpacePrimaries, gamma: Float32): ColorSpaceMa
 // index.cj
 
 import kit.ArkGraphics2D.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -185,7 +185,7 @@ public func getColorSpaceName(): ColorSpace
 // index.cj
 
 import kit.ArkGraphics2D.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -230,7 +230,7 @@ public func getGamma(): Float32
 // index.cj
 
 import kit.ArkGraphics2D.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -275,7 +275,7 @@ public func getWhitePoint(): Array<Float32>
 // index.cj
 
 import kit.ArkGraphics2D.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {

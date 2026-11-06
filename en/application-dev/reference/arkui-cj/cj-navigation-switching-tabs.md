@@ -167,6 +167,45 @@ public func vertical(value: ?Bool): This
 |:---|:---|:---|:---|:---|
 | value | ?Bool | Yes | - | Whether the Tabs bar is vertically oriented. Initial value: false. <br> When horizontal Tabs has height set to LengthMetrics.AUTO, the Tabs component height adapts to the child component height, which equals tabBar height + divider line width + TabContent height + top and bottom padding values + top and bottom border width. <br> When vertical Tabs has width set to LengthMetrics.AUTO, the Tabs component width adapts to the child component width, which equals tabBar width + divider line width + TabContent width + left and right padding values + left and right border width. |
 
+### func divider(?Length, ?ResourceColor, ?Length, ?Length)
+
+```cangjie
+public func divider(strokeWidth!: ?Length, color!: ?ResourceColor = None, startMargin!: ?Length = None, endMargin!: ?Length = None): This
+```
+
+**Function:** Sets the style of the divider between the TabBar and TabContent. If visual separation is required between the TabBar and TabContent, you can add a divider through this API.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+| Parameter | Type | Required | Default | Description |
+|:---|:---|:---|:---|:---|
+| strokeWidth | ?[Length](./cj-common-types.md#interface-length) | Yes | - | **Named parameter.** Width of the divider.<br>Percentage values are not supported. Initial value: 0.0vp. Value range: [0, +∞). When the value is less than 0, the initial value is used. |
+| color | ?[ResourceColor](./cj-common-types.md#interface-resourcecolor) | No | None | **Named parameter.** Color of the divider.<br>Initial value: #33182431. |
+| startMargin | ?[Length](./cj-common-types.md#interface-length) | No | None | **Named parameter.** Distance between the divider and the top edge of the sidebar.<br>Percentage values are not supported. Initial value: 0.0vp. Value range: [0, +∞). When the value is less than 0, the initial value is used. |
+| endMargin | ?[Length](./cj-common-types.md#interface-length) | No | None | **Named parameter.** Distance between the divider and the bottom edge of the sidebar.<br>Percentage values are not supported. Initial value: 0.0vp. Value range: [0, +∞). When the value is less than 0, the initial value is used. |
+
+### func edgeEffect(?EdgeEffect)
+
+```cangjie
+public func edgeEffect(edgeEffect: ?EdgeEffect): This
+```
+
+**Function:** Sets the edge sliding effect. When sliding to the edge, the corresponding rebound action is executed based on the set edge effect type: the Spring mode uses a spring curve to implement the elastic rebound effect, the Fade mode uses gradient transparency to implement visual feedback, and the None mode does not execute any edge effect. The edge effect is triggered when the sliding content exceeds the container boundary.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+| Parameter | Type | Required | Default | Description |
+|:---|:---|:---|:---|:---|
+| edgeEffect | ?[EdgeEffect](./cj-common-types.md#enum-edgeeffect) | Yes | - | Edge sliding effect.<br>Initial value: EdgeEffect.Spring. |
+
 ## Component Events
 
 ### func onChange(?Callback\<Int32, Unit>)
@@ -186,6 +225,90 @@ public func onChange(event: ?Callback<Int32, Unit>): This
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
 | event | ?[Callback](./cj-common-types.md#type-callbackt-v)\<Int32, Unit> | Yes | - | Callback function triggered when the tab index changes. Initial value: { _ => }. |
+
+### func onAnimationStart(?(Int32, Int32, TabsAnimationEvent) -> Unit)
+
+```cangjie
+public func onAnimationStart(handler: ?(Int32, Int32, TabsAnimationEvent) -> Unit): This
+```
+
+**Function:** Triggered when the switching animation starts. When [animationDuration](#func-animationdurationfloat32) is 0 (animation disabled) and [scrollable](#func-scrollablebool) is false, this callback is not triggered.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+| Parameter | Type | Required | Default | Description |
+|:---|:---|:---|:---|:---|
+| handler | ?(Int32, Int32, [TabsAnimationEvent](#class-tabsanimationevent)) -> Unit | Yes | - | Callback triggered when the switching animation starts.<br>Parameter 1: index of the currently displayed element, starting from 0.<br>Parameter 2: index of the target element of the switching animation, starting from 0.<br>Parameter 3: animation-related information, including the offset of the currently displayed element and the target element relative to the start position of Tabs along the main axis, and the release velocity. |
+
+### func onContentWillChange(?(Int32, Int32) -> Bool)
+
+```cangjie
+public func onContentWillChange(handler: ?(Int32, Int32) -> Bool): This
+```
+
+**Function:** Custom Tabs page switching interception capability. This callback is triggered when a new page is about to be displayed.
+
+This event is triggered when any of the following conditions is met:
+
+1. Swiping TabContent to switch to a new page.
+
+2. Switching to a new page through the [TabsController.changeIndex](#func-changeindexint32) API.
+
+3. Switching to a new page by dynamically modifying the index attribute value.
+
+4. Switching to a new page by clicking a TabBar tab.
+
+5. After a TabBar tab gains focus, switching to a new page through keyboard left/right arrow keys.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+| Parameter | Type | Required | Default | Description |
+|:---|:---|:---|:---|:---|
+| handler | ?(Int32, Int32) -> Bool | Yes | - | Custom Tabs page switching interception capability. Callback triggered when a new page is about to be displayed.<br>Parameter 1: index of the currently displayed page, starting from 0.<br>Parameter 2: index of the new page to be displayed, starting from 0.<br>Return value: when the return value of the callback function handler is true, Tabs can switch to the new page; when the return value is false, Tabs cannot switch to the new page and still displays the original page content. |
+
+### func onGestureSwipe(?(Int32, TabsAnimationEvent) -> Unit)
+
+```cangjie
+public func onGestureSwipe(handler: ?(Int32, TabsAnimationEvent) -> Unit): This
+```
+
+**Function:** Triggered frame by frame during page swipe-following, used to listen to the real-time sliding state of the currently displayed page.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+| Parameter | Type | Required | Default | Description |
+|:---|:---|:---|:---|:---|
+| handler | ?(Int32, [TabsAnimationEvent](#class-tabsanimationevent)) -> Unit | Yes | - | Callback triggered frame by frame during page swipe-following.<br>Parameter 1: index of the currently displayed element, starting from 0. Value range: [0, total number of tabs - 1].<br>Parameter 2: animation-related information, only returns the offset of the currently displayed element relative to the start position of Tabs along the main axis. |
+
+### func onTabBarClick(?(Int32) -> Unit)
+
+```cangjie
+public func onTabBarClick(event: ?(Int32) -> Unit): This
+```
+
+**Function:** Event triggered after a Tab tab is clicked.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+| Parameter | Type | Required | Default | Description |
+|:---|:---|:---|:---|:---|
+| event | ?(Int32) -> Unit | Yes | - | Index value of the clicked tab, starting from 0. |
 
 ## Basic Type Definitions
 
@@ -232,6 +355,58 @@ public func changeIndex(value: ?Int32): Unit
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
 | value | ?Int32 | Yes | - | Index of the tab to switch to. Initial value: 0. |
+
+### class TabsAnimationEvent
+
+```cangjie
+public class TabsAnimationEvent {
+    public var currentOffset: Float32
+    public var targetOffset: Float32
+    public var velocity: Float32
+}
+```
+
+**Function:** Collection of animation-related information for the Tabs component.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+#### var currentOffset
+
+```cangjie
+public var currentOffset: Float32
+```
+
+**Function:** Offset of the currently displayed element of Tabs relative to the start position of Tabs along the main axis. Unit: vp, initial value: 0. A positive value indicates offset to the right (horizontal) or downward (vertical), and a negative value indicates offset to the left (horizontal) or upward (vertical).
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+#### var targetOffset
+
+```cangjie
+public var targetOffset: Float32
+```
+
+**Function:** Offset of the animation target element of Tabs relative to the start position of Tabs along the main axis. Unit: vp, initial value: 0. A positive value indicates offset to the right (horizontal) or downward (vertical), and a negative value indicates offset to the left (horizontal) or upward (vertical).
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+#### var velocity
+
+```cangjie
+public var velocity: Float32
+```
+
+**Function:** Release velocity of Tabs when the release animation starts. Unit: vp/s, initial value: 0. A positive value indicates sliding to the right (horizontal) or downward (vertical), and a negative value indicates sliding to the left (horizontal) or upward (vertical). A larger velocity value indicates faster sliding. This parameter can be used to implement inertial scrolling effects.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
 
 ## Example Code
 
@@ -441,7 +616,9 @@ class EntryView {
 }
 ```
 
-![tab](figures/tabsExample12.gif)### Example 3 (Setting TabBar Layout Mode)
+![tab](figures/tabsExample12.gif)
+
+### Example 3 (Setting TabBar Layout Mode)
 
 This example demonstrates two layout modes for tabs using `barMode`: evenly distributed layout and actual length layout. It also shows the scrollable effect when the total length of tab layouts exceeds the TabBar's total length.
 
@@ -514,3 +691,575 @@ class EntryView{
 ```
 
 ![tab](figures/tabsExample13.gif)
+
+### Example 4 (Basic Divider Attributes)
+
+This example demonstrates the display of various divider attributes through [divider](#func-dividerlength-resourcecolor-length-length).
+
+<!-- run -->
+
+```cangjie
+package ohos_app_cangjie_entry
+
+import kit.ArkUI.*
+import ohos.arkui.state_macro_manage.*
+import kit.PerformanceAnalysisKit.Hilog
+
+@Entry
+@Component
+class EntryView {
+    var controller: TabsController = TabsController()
+    @State
+    var dividerColor: ResourceColor = Color.Red
+    @State
+    var strokeWidth: Float64 = 2.0
+    @State
+    var startMargin: Float64 = 0.0
+    @State
+    var endMargin: Float64 = 0.0
+    @State
+    var nullFlag: Bool = false
+
+    func build() {
+        Column() {
+            Tabs(controller: this.controller) {
+                TabContent() {
+                    Column()
+                        .width(100.percent)
+                        .height(100.percent)
+                        .backgroundColor(0xFFFFC0CB)
+                }.tabBar("pink")
+
+                TabContent() {
+                    Column()
+                        .width(100.percent)
+                        .height(100.percent)
+                        .backgroundColor(0xFFFFFF00)
+                }.tabBar("yellow")
+
+                TabContent() {
+                    Column()
+                        .width(100.percent)
+                        .height(100.percent)
+                        .backgroundColor(0xFF0000FF)
+                }.tabBar("blue")
+
+                TabContent() {
+                    Column()
+                        .width(100.percent)
+                        .height(100.percent)
+                        .backgroundColor(0xFF008000)
+                }.tabBar("green")
+
+                TabContent() {
+                    Column()
+                        .width(100.percent)
+                        .height(100.percent)
+                        .backgroundColor(0xFFFF0000)
+                }.tabBar("red")
+            }
+                .vertical(true)
+                .scrollable(true)
+                .barMode(BarMode.Fixed)
+                .barWidth(70)
+                .barHeight(200)
+                .animationDuration(400.0)
+                .onChange(
+                    {
+                        index: Int32 =>
+                            Hilog.info(1, "Cangjie", "${index}.")
+                    }
+                )
+                .height(200.vp)
+                .margin(bottom: 12.vp)
+                .divider(
+                    strokeWidth: if(this.nullFlag) { Option.None } else { this.strokeWidth },
+                    color: if(this.nullFlag) { Option.None } else { this.dividerColor },
+                    startMargin: if(this.nullFlag) { Option.None } else { this.startMargin },
+                    endMargin: if(this.nullFlag) { Option.None } else { this.endMargin }
+                )
+
+            Button("Regular Divider")
+                .width(100.percent)
+                .margin(bottom: 12.vp)
+                .onClick(
+                    {
+                        event =>
+                            this.nullFlag = false
+                            this.strokeWidth = 2.0
+                            this.dividerColor = 0xFFFF0000
+                            this.startMargin = 0.0
+                            this.endMargin = 0.0
+                    }
+                )
+            Button("Empty Divider")
+                .width(100.percent)
+                .margin(bottom: 12.vp)
+                .onClick(
+                    {
+                        event =>
+                            this.nullFlag = true
+                    }
+                )
+            Button("Change to Blue")
+                .width(100.percent)
+                .margin(bottom: 12.vp)
+                .onClick(
+                    {
+                        event =>
+                            this.dividerColor = 0xFF0000FF
+                    }
+                )
+            Button("Increase Width")
+                .width(100.percent)
+                .margin(bottom: 12.vp)
+                .onClick(
+                    {
+                        event =>
+                            this.strokeWidth += 2.0
+                    }
+                )
+            Button("Decrease Width")
+                .width(100.percent)
+                .margin(bottom: 12.vp)
+                .onClick(
+                    {
+                        event =>
+                            if (this.strokeWidth > 2.0) {
+                                this.strokeWidth -= 2.0
+                            }
+                    }
+                )
+            Button("Increase Top Margin")
+                .width(100.percent)
+                .margin(bottom: 12.vp)
+                .onClick(
+                    {
+                        event =>
+                            this.startMargin += 2.0
+                    }
+                )
+            Button("Decrease Top Margin")
+                .width(100.percent)
+                .margin(bottom: 12.vp)
+                .onClick(
+                    {
+                        event =>
+                            if (this.startMargin > 2.0) {
+                                this.startMargin -= 2.0
+                            }
+                    }
+                )
+            Button("Increase Bottom Margin")
+                .width(100.percent)
+                .margin(bottom: 12.vp)
+                .onClick(
+                    {
+                        event =>
+                            this.endMargin += 2.0
+                    }
+                )
+            Button("Decrease Bottom Margin")
+                .width(100.percent)
+                .margin(bottom: 12.vp)
+                .onClick(
+                    {
+                        event =>
+                            if (this.endMargin > 2.0) {
+                                this.endMargin -= 2.0
+                            }
+                    }
+                )
+        }
+            .padding(top: 24.vp, left: 24.vp, right: 24.vp)
+    }
+}
+```
+
+![tabs_divider](figures/tabs_divider.gif)
+
+### Example 5 (Setting Edge Sliding Effect)
+
+This example implements different edge rebound effects through [edgeEffect](#func-edgeeffectedgeeffect).
+
+<!-- run -->
+
+```cangjie
+package ohos_app_cangjie_entry
+
+import kit.ArkUI.*
+import ohos.arkui.state_macro_manage.*
+
+@Entry
+@Component
+class EntryView {
+    @State
+    var edgeEffect: EdgeEffect = EdgeEffect.Spring
+
+    func build() {
+        Column() {
+            Tabs() {
+                TabContent() {
+                    Column()
+                        .width(100.percent)
+                        .height(100.percent)
+                        .backgroundColor(0x00CB87)
+                }.tabBar("green")
+
+                TabContent() {
+                    Column()
+                        .width(100.percent)
+                        .height(100.percent)
+                        .backgroundColor(0x007DFF)
+                }.tabBar("blue")
+
+                TabContent() {
+                    Column()
+                        .width(100.percent)
+                        .height(100.percent)
+                        .backgroundColor(0xFFBF00)
+                }.tabBar("yellow")
+
+                TabContent() {
+                    Column()
+                        .width(100.percent)
+                        .height(100.percent)
+                        .backgroundColor(0xE67C92)
+                }.tabBar("pink")
+            }
+                .width(360)
+                .height(296)
+                .margin(top: 52)
+                .backgroundColor(0xF1F3F5)
+                .edgeEffect(this.edgeEffect) // Set the edge sliding effect.
+
+            Button("EdgeEffect.Spring")
+                .width(50.percent)
+                .margin(top: 20)
+                .onClick(
+                    {
+                        event =>
+                            this.edgeEffect = EdgeEffect.Spring
+                    }
+                )
+
+            Button("EdgeEffect.Fade")
+                .width(50.percent)
+                .margin(top: 20)
+                .onClick(
+                    {
+                        event =>
+                            this.edgeEffect = EdgeEffect.Fade
+                    }
+                )
+
+            Button("EdgeEffect.None")
+                .width(50.percent)
+                .margin(top: 20)
+                .onClick(
+                    {
+                        event =>
+                            this.edgeEffect = EdgeEffect.None
+                    }
+                )
+        }
+            .width(100.percent)
+    }
+}
+```
+
+![tabs_edgeeffect](figures/tabs_edgeeffect.gif)
+
+### Example 6 (Custom TabBar Switching Animation)
+
+This example implements a custom TabBar switching animation through interfaces such as [onChange](#func-onchangecallbackint32-unit), [onAnimationStart](#func-onanimationstartint32-int32-tabsanimationevent---unit), and [onGestureSwipe](#func-ongestureswipeint32-tabsanimationevent---unit).
+
+<!-- run -->
+
+```cangjie
+package ohos_app_cangjie_entry
+
+import kit.ArkUI.*
+import ohos.arkui.state_macro_manage.*
+import kit.PerformanceAnalysisKit.Hilog
+import std.collection.HashMap
+import std.math.abs
+
+@Entry
+@Component
+class EntryView {
+    @State
+    var colorArray: Array<(String, UInt32)> = [("green", 0x00CB87), ("blue", 0x007DFF), ("yellow", 0xFFBF00), ("pink", 0xE67C92)]
+    @State
+    var currentIndex: Int32 = 0
+    @State
+    var animationDuration: Float32 = 300.0
+    @State
+    var indicatorLeftMargin: Float64 = 0.0
+    @State
+    var indicatorWidth: Float64 = 0.0
+    var tabsWidth: Float64 = 0.0
+    var textInfos: Array<(Float64, Float64)> = Array<(Float64, Float64)>(4, repeat: (0.0, 0.0))
+    var isStartAnimateTo: Bool = false
+
+    @Builder
+    func tabBuilder(index: Int32, name: String) {
+        Column() {
+            Text(name)
+                .fontSize(16)
+                .fontColor(if (this.currentIndex == index) { Color(0x007DFF) } else { Color(0x182431) })
+                .fontWeight(if (this.currentIndex == index) { FontWeight.W500 } else { FontWeight.W400 })
+                .id(index.toString())
+                .onAreaChange(
+                    {
+                        oldValue: Area, newValue: Area =>
+                            this.textInfos[Int64(index)] = (newValue.globalPosition.x.getOrThrow().value,newValue.width.value)
+                            if (!this.isStartAnimateTo && this.currentIndex == index && this.tabsWidth > 0.0) {
+                                this.setIndicatorAttr(this.textInfos[Int64(this.currentIndex)][0], this.textInfos[Int64(this.currentIndex)][1])
+                            }
+                    }
+                )
+        }.width(100.percent)
+    }
+
+    func build() {
+        Stack(alignContent: Alignment.TopStart) {
+            Tabs(barPosition: BarPosition.Start) {
+                ForEach(this.colorArray, itemGeneratorFunc: {
+                    item: (String, UInt32), index: Int64 =>
+                    TabContent() {
+                        Column()
+                            .width(100.percent)
+                            .height(100.percent)
+                            .backgroundColor(item[1])
+                    }.tabBar({=> bind(this.tabBuilder, this)(Int32(index), item[0])})
+                })
+            }
+                .onAreaChange(
+                    {
+                        oldValue: Area, newValue: Area =>
+                            this.tabsWidth = newValue.width.value
+                            if (!this.isStartAnimateTo) {
+                                this.setIndicatorAttr(this.textInfos[Int64(this.currentIndex)][0], this.textInfos[Int64(this.currentIndex)][1])
+                            }
+                    }
+                )
+                .barWidth(100.percent)
+                .barHeight(56)
+                .width(100.percent)
+                .height(296)
+                .backgroundColor(0xF1F3F5)
+                .animationDuration(this.animationDuration)
+                .onChange(
+                    {
+                        index: Int32 =>
+                            // Listen for changes in the index to implement tab content switching.
+                            this.currentIndex = index
+                    }
+                )
+                .onAnimationStart(
+                    {
+                        index: Int32, targetIndex: Int32, event: TabsAnimationEvent =>
+                            // This callback is triggered when the switching animation starts. The underline slides with the page while its width gradually changes.
+                            this.currentIndex = targetIndex
+                            this.startAnimateTo(Int32(this.animationDuration), this.textInfos[Int64(targetIndex)][0], this.textInfos[Int64(targetIndex)][1])
+                    }
+                )
+                .onGestureSwipe(
+                    {
+                        index: Int32, event: TabsAnimationEvent =>
+                            // This callback is triggered frame by frame while the page follows the swipe gesture.
+                            let currentIndicatorInfo = this.getCurrentIndicatorInfo(index, event)
+                            this.currentIndex = Int32(currentIndicatorInfo["index"])
+                            this.setIndicatorAttr(currentIndicatorInfo["left"], currentIndicatorInfo["width"])
+                    }
+                )
+
+            Column()
+                .height(2)
+                .width(this.indicatorWidth)
+                .margin(left: this.indicatorLeftMargin.vp, top: 48.vp)
+                .backgroundColor(0x007DFF)
+        }.width(100.percent)
+    }
+
+    func getCurrentIndicatorInfo(index: Int32, event: TabsAnimationEvent): HashMap<String, Float64> {
+        var nextIndex = index
+        if (index > 0 && event.currentOffset > 0.0) {
+            nextIndex--
+        } else if (index < Int32(this.textInfos.size) - 1 && event.currentOffset < 0.0) {
+            nextIndex++
+        }
+        let indexInfo = this.textInfos[Int64(index)]
+        let nextIndexInfo = this.textInfos[Int64(nextIndex)]
+        let swipeRatio = abs(Float64(event.currentOffset) / this.tabsWidth)
+        let currentIndex = if (swipeRatio > 0.5) { nextIndex } else { index } // When the page is swiped more than halfway, the tabBar switches to the next page.
+        let currentLeft = indexInfo[0] + (nextIndexInfo[0] - indexInfo[0]) * swipeRatio
+        let currentWidth = indexInfo[1] + (nextIndexInfo[1] - indexInfo[1]) * swipeRatio
+        var result = HashMap<String, Float64>()
+        result["index"] = Float64(currentIndex)
+        result["left"] = currentLeft
+        result["width"] = currentWidth
+        return result
+    }
+
+    func startAnimateTo(duration: Int32, leftMargin: Float64, width: Float64) {
+        this.isStartAnimateTo = true
+        this.getUIContext().animateTo(
+            AnimateParam(
+                duration: duration, // Animation duration
+                curve: Curve.Linear, // Animation curve
+                iterations: 1, // Number of playbacks.
+                playMode: PlayMode.Normal, // Animation mode.
+                onFinish: {
+                    =>
+                        this.isStartAnimateTo = false
+                        Hilog.info(1, "Cangjie", "play end.")
+                }
+            ),
+            {
+                =>
+                    this.setIndicatorAttr(leftMargin, width)
+            }
+        )
+    }
+
+    func setIndicatorAttr(leftMargin: Float64, width: Float64) {
+        this.indicatorWidth = width
+        this.indicatorLeftMargin = leftMargin
+    }
+}
+```
+
+![tabs_tabbaranimation](figures/tabs_tabbaranimation.gif)
+
+### Example 7 (Page Switching Interception)
+
+This example implements custom page gesture swipe switching interception through [onContentWillChange](#func-oncontentwillchangeint32-int32---bool).
+
+<!-- run -->
+
+```cangjie
+package ohos_app_cangjie_entry
+
+import kit.ArkUI.*
+import ohos.arkui.state_macro_manage.*
+import kit.LocalizationKit.__GenerateResource__
+
+@Entry
+@Component
+class EntryView {
+    @State
+    var selectedIndex: Int32 = 2
+    @State
+    var currentIndex: Int32 = 2
+    var controller: TabsController = TabsController()
+
+    @Builder
+    func tabBuilder(title: String, targetIndex: Int32) {
+        Column() {
+            // Replace @r(app.media.star_fill) with the image resource file required.
+            // Replace @r(app.media.star) with the image resource file required.
+            Image(if (this.selectedIndex == targetIndex) { @r(app.media.star_fill) } else { @r(app.media.star) })
+                .width(24)
+                .height(24)
+                .margin(bottom: 4)
+                .objectFit(ImageFit.Contain)
+            Text(title)
+                .fontColor(if (this.selectedIndex == targetIndex) { Color(0x1698CE) } else { Color(0x6B6B6B) })
+        }.width(100.percent)
+            .height(50)
+            .justifyContent(FlexAlign.Center)
+    }
+
+    func build() {
+        Column() {
+            Tabs(barPosition: BarPosition.End, index: this.currentIndex, controller: this.controller) {
+                TabContent() {
+                    Column() {
+                        Text("Content of the Home tab")
+                    }.width(100.percent)
+                        .height(100.percent)
+                        .backgroundColor(0x00CB87)
+                        .justifyContent(FlexAlign.Center)
+                }.tabBar({=> bind(this.tabBuilder, this)("Home", 0)})
+
+                TabContent() {
+                    Column() {
+                        Text("Discovered content")
+                    }.width(100.percent)
+                        .height(100.percent)
+                        .backgroundColor(0x007DFF)
+                        .justifyContent(FlexAlign.Center)
+                }.tabBar({=> bind(this.tabBuilder, this)("Discover", 1)})
+
+                TabContent() {
+                    Column() {
+                        Text("Content of the Recommended tab")
+                    }.width(100.percent)
+                        .height(100.percent)
+                        .backgroundColor(0xFFBF00)
+                        .justifyContent(FlexAlign.Center)
+                }.tabBar({=> bind(this.tabBuilder, this)("For You", 2)})
+
+                TabContent() {
+                    Column() {
+                        Text("Content of the Me tab")
+                    }.width(100.percent)
+                        .height(100.percent)
+                        .backgroundColor(0xE67C92)
+                        .justifyContent(FlexAlign.Center)
+                }.tabBar({=> bind(this.tabBuilder, this)("Me", 3)})
+            }
+                .vertical(false)
+                .barMode(BarMode.Fixed)
+                .barWidth(360)
+                .barHeight(60)
+                .animationDuration(0.0)
+                .onChange(
+                    {
+                        index: Int32 =>
+                            this.currentIndex = index
+                            this.selectedIndex = index
+                    }
+                )
+                .width(360)
+                .height(600)
+                .backgroundColor(0xF1F3F5)
+                .scrollable(true)
+                .onContentWillChange(
+                    {
+                        currentIndex: Int32, comingIndex: Int32 =>
+                            if (comingIndex == 2) {
+                                return false
+                            }
+                            return true
+                    }
+                )
+
+            Button("Change Index")
+                .width(50.percent)
+                .margin(top: 20)
+                .onClick(
+                    {
+                        event =>
+                            this.currentIndex = (this.currentIndex + 1) % 4
+                    }
+                )
+
+            Button("changeIndex")
+                .width(50.percent)
+                .margin(top: 20)
+                .onClick(
+                    {
+                        event =>
+                            this.currentIndex = (this.currentIndex + 1) % 4
+                            this.controller.changeIndex(this.currentIndex)
+                    }
+                )
+        }.width(100.percent)
+    }
+}
+```
+
+![tabs_contentwillchange](figures/tabs_contentwillchange.gif)

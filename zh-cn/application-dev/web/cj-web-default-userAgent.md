@@ -53,7 +53,7 @@ User-Agent（简称UA）是一个特殊的字符串，包含设备类型、操�
 import kit.PerformanceAnalysisKit.Hilog
 import kit.ArkWeb.WebviewController
 import kit.ArkUI.Web
-import ohos.business_exception.*
+import kit.CangjieKit.*
 
 func loggerInfo(str: String) {
     Hilog.info(0, "CangjieTest", str)

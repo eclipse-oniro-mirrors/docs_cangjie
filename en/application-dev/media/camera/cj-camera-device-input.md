@@ -20,9 +20,9 @@ For detailed API descriptions, please refer to the [Camera API Reference](../../
 
     ```cangjie
     import kit.CameraKit.*
-    import ohos.business_exception.BusinessException
-    import ohos.hilog.Hilog
-    import ohos.callback_invoke.Callback0Argument
+    import kit.CangjieKit.BusinessException
+    import kit.PerformanceAnalysisKit.Hilog
+    import kit.CangjieKit.Callback0Argument
     ```
 
     > **Note:**
@@ -85,7 +85,7 @@ For detailed API descriptions, please refer to the [Camera API Reference](../../
         // Taking NormalPhoto mode as an example, preview stream and photo capture stream need to be added.
         // The previewProfiles property retrieves the supported preview output streams for the current device.
         let previewProfilesArray: Array<Profile> = cameraOutputCapability.previewProfiles
-        if (!previewProfilesArray.size == 0) {
+        if (previewProfilesArray.isEmpty()) {
             Hilog.error(0,"","createOutput previewProfilesArray is empty")
         }
         // The photoProfiles property retrieves the supported photo capture output streams for the current device.

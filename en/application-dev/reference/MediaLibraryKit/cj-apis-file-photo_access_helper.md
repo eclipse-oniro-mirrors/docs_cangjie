@@ -69,7 +69,7 @@ public func getPhotoAccessHelper(context: UIAbilityContext): PhotoAccessHelper
 // index.cj
 
 import kit.MediaLibraryKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -317,7 +317,7 @@ public func commitModify(): Unit
 
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -388,7 +388,7 @@ public func getAllObjects(): Array<Album>
 
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -441,7 +441,7 @@ public func getFirstObject(): Album
 
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -494,7 +494,7 @@ public func getLastObject(): Album
 
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -547,7 +547,7 @@ public func getNextObject(): Album
 
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -606,7 +606,7 @@ public func getObjectByPosition(index: Int32): Album
 
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -867,7 +867,7 @@ public func close(): Unit
 
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -918,7 +918,7 @@ public func getCount(): Int32
 
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -969,7 +969,7 @@ public func isAfterLast(): Bool
 
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1029,7 +1029,7 @@ public init(album: Album)
 
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1082,7 +1082,7 @@ public func addAssets(assets: Array<PhotoAsset>): Unit
 
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1136,7 +1136,7 @@ public func getAlbum(): Album
 
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1190,7 +1190,7 @@ public func removeAssets(assets: Array<PhotoAsset>): Unit
 
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1252,7 +1252,7 @@ Specifications for the album name parameter:
 
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try## class MediaAssetChangeRequest
@@ -1308,7 +1308,7 @@ public init(asset: PhotoAsset)
 
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1368,7 +1368,7 @@ public static func createAssetRequest(context: UIAbilityContext, photoType: Phot
 // index.cj
 
 import kit.MediaLibraryKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1427,7 +1427,7 @@ Specifies the data source of the asset to be created via fileUri. Refer to [File
 // index.cj
 
 import kit.MediaLibraryKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1486,7 +1486,7 @@ Specifies the data source of the asset to be created via fileUri. Refer to [File
 // index.cj
 
 import kit.MediaLibraryKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1540,7 +1540,7 @@ public static func deleteAssets(context: UIAbilityContext, assets: Array<PhotoAs
 
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1596,7 +1596,7 @@ public static func deleteAssets(context: UIAbilityContext, assets: Array<String>
 
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1649,7 +1649,7 @@ public func addResource(resourceType: ResourceType, fileUri: String): Unit
 // index.cj
 
 import kit.MediaLibraryKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1701,7 +1701,7 @@ public func addResource(resourceType: ResourceType, data: Array<Byte>): Unit
 // index.cj
 
 import kit.MediaLibraryKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1749,7 +1749,7 @@ public func discardCameraPhoto(): Unit
 
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1802,7 +1802,7 @@ public func getAsset(): PhotoAsset
 
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1858,7 +1858,7 @@ public func getWriteCacheHandler(): Int32
 
 import kit.MediaLibraryKit.*
 import kit.CoreFileKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1904,7 +1904,7 @@ public func saveCameraPhoto(): Unit
 
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1957,7 +1957,7 @@ public func setTitle(title: String): Unit
 
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2065,7 +2065,7 @@ public func getAlbums(albumType: AlbumType, subtype: AlbumSubtype,
 
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2123,7 +2123,7 @@ public func getAssets(options: FetchOptions): PhotoAssetResult
 
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2182,7 +2182,7 @@ public func getBurstAssets(burstKey: String, options: FetchOptions): PhotoAssetR
 
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2235,8 +2235,8 @@ public func registerChange(uri: String, forChildUris: Bool, callback: Callback1A
 
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
-import ohos.callback_invoke.*
+import kit.CangjieKit.BusinessException
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2299,7 +2299,7 @@ public func release(): Unit
 
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2353,8 +2353,8 @@ public func showAssetsCreationDialog(srcFileUris: Array<String>, photoCreationCo
 
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
-import ohos.callback_invoke.*
+import kit.CangjieKit.BusinessException
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2434,8 +2434,7 @@ public func unRegisterChange(uri: String, callback!: ?Callback1Argument<ChangeDa
 
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
-import ohos.callback_invoke.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2566,7 +2565,7 @@ public func commitModify(): Unit
 
 import kit.MediaLibraryKit.*
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {

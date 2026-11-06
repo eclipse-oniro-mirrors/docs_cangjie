@@ -168,7 +168,7 @@ public func getParent(): String
 // index.cj
 
 import kit.CoreFileKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -222,7 +222,7 @@ public func tryLock(exclusive!: Bool = false): Unit
 // index.cj
 
 import kit.CoreFileKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -269,7 +269,7 @@ public func unlock(): Unit
 // index.cj
 
 import kit.CoreFileKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -352,7 +352,7 @@ public static func access(path: String, mode!: AccessModeType = AccessModeType.E
 // index.cj
 
 import kit.CoreFileKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 let pathDir = "path/to/file"
@@ -408,7 +408,7 @@ public static func close(file: Int32): Unit
 // index.cj
 
 import kit.CoreFileKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -460,7 +460,7 @@ public static func close(file: File): Unit
 // index.cj
 
 import kit.CoreFileKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -527,7 +527,7 @@ public static func copyDir(src: String, dest: String, mode!: Int32 = 0): Unit
 // index.cj
 
 import kit.CoreFileKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -593,7 +593,7 @@ public static func copyFile(src: String, dest: String, mode!: Int32 = 0): Unit
 // index.cj
 
 import kit.CoreFileKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -659,7 +659,7 @@ public static func copyFile(src: String, dest: Int32, mode!: Int32 = 0): Unit
 // index.cj
 
 import kit.CoreFileKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -726,7 +726,7 @@ public static func copyFile(src: Int32, dest: String, mode!: Int32 = 0): Unit
 // index.cj
 
 import kit.CoreFileKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -793,7 +793,7 @@ public static func copyFile(src: Int32, dest: Int32, mode!: Int32 = 0): Unit
 // index.cj
 
 import kit.CoreFileKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -877,7 +877,7 @@ public static func createRandomAccessFile(file: String, mode!: Int64 = OpenMode.
 // index.cj
 
 import kit.CoreFileKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -962,7 +962,7 @@ public static func createRandomAccessFile(file: File, mode!: Int64 = OpenMode.RE
 // index.cj
 
 import kit.CoreFileKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1045,7 +1045,7 @@ public static func createStream(path: String, mode: String): Stream
 // index.cj
 
 import kit.CoreFileKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1105,7 +1105,7 @@ public static func dup(fd: Int32): File
 // index.cj
 
 import kit.CoreFileKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1162,7 +1162,7 @@ public static func fdatasync(fd: Int32): Unit
 // index.cj
 
 import kit.CoreFileKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1243,7 +1243,7 @@ public static func fdopenStream(fd: Int32, mode: String): Stream
 // index.cj
 
 import kit.CoreFileKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1298,7 +1298,7 @@ public static func fsync(fd: Int32): Unit
 // index.cj
 
 import kit.CoreFileKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1359,7 +1359,7 @@ public static func listFile(path: String, options!: ListFileOptions = ListFileOp
 // index.cj
 
 import kit.CoreFileKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1421,7 +1421,7 @@ public static func lseek(fd: Int32, offset: Int64, whence!: WhenceType = SeekSet
 // index.cj
 
 import kit.CoreFileKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1485,7 +1485,7 @@ public static func lstat(path: String): Stat
 // index.cj
 
 import kit.CoreFileKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1545,7 +1545,7 @@ public static func mkdir(path: String): Unit
 // index.cj
 
 import kit.CoreFileKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1606,7 +1606,7 @@ public static func mkdir(path: String, recursion: Bool): Unit
 // index.cj
 
 import kit.CoreFileKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1672,7 +1672,7 @@ public static func mkdtemp(prefix: String): String
 // index.cj
 
 import kit.CoreFileKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1741,7 +1741,7 @@ public static func moveDir(src: String, dest: String, mode!: Int32 = 0): Unit
 // index.cj
 
 import kit.CoreFileKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1813,7 +1813,7 @@ public static func moveFile(src: String, dest: String, mode!: Int32 = 0): Unit
 // index.cj
 
 import kit.CoreFileKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1894,7 +1894,7 @@ public static func open(path: String, mode!: Int64 = OpenMode.READ_ONLY): File
 // index.cj
 
 import kit.CoreFileKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1959,7 +1959,7 @@ public static func read(fd: Int32, buffer: Array<Byte>, options!: ReadOptions = 
 // index.cj
 
 import kit.CoreFileKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2027,7 +2027,7 @@ public static func readLines(filePath: String, options!: Options = Options()): R
 // index.cj
 
 import kit.CoreFileKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2099,7 +2099,7 @@ public static func readText(filePath: String, options!: ReadTextOptions = ReadTe
 // index.cj
 
 import kit.CoreFileKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2168,7 +2168,7 @@ public static func rename(oldPath: String, newPath: String): Unit
 // index.cj
 
 import kit.CoreFileKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2226,7 +2226,7 @@ public static func rmdir(path: String): Unit
 // index.cj
 
 import kit.CoreFileKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2290,7 +2290,7 @@ public static func stat(file: Int32): Stat
 // index.cj
 
 import kit.CoreFileKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2355,7 +2355,7 @@ public static func stat(file: String): Stat
 // index.cj
 
 import kit.CoreFileKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2417,7 +2417,7 @@ public static func truncate(file: String, len!: Int64 = 0): Unit
 // index.cj
 
 import kit.CoreFileKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2480,7 +2480,7 @@ public static func truncate(file: Int32, len!: Int64 = 0): Unit
 // index.cj
 
 import kit.CoreFileKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2542,7 +2542,7 @@ public static func unlink(path: String): Unit
 // index.cj
 
 import kit.CoreFileKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2595,7 +2595,7 @@ public static func utimes(path: String, mtime: Float64): Unit
 
 import kit.CoreFileKit.*
 import std.time.DateTime
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2663,7 +2663,7 @@ public static func write(fd: Int32, buffer: Array<Byte>, options!: WriteOptions 
 // index.cj
 
 import kit.CoreFileKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2731,7 +2731,7 @@ public static func write(fd: Int32, buffer: String, options!: WriteOptions = Wri
 // index.cj
 
 import kit.CoreFileKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -3281,7 +3281,7 @@ public func close(): Unit
 // index.cj
 
 import kit.CoreFileKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -3345,7 +3345,7 @@ public func read(buffer: Array<Byte>, options!: ReadOptions = ReadOptions()): In
 // index.cj
 
 import kit.CoreFileKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -3390,7 +3390,7 @@ public func setFilePointer(filePointer: Int64): Unit
 // index.cj
 
 import kit.CoreFileKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -3457,7 +3457,7 @@ public func write(buffer: String, options!: WriteOptions = WriteOptions()): Int6
 // index.cj
 
 import kit.CoreFileKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -3525,7 +3525,7 @@ public func write(buffer: Array<Byte>, options!: WriteOptions = WriteOptions()):
 // index.cj
 
 import kit.CoreFileKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -3662,7 +3662,7 @@ public func next(): ReaderIteratorResult
 // index.cj
 
 import kit.CoreFileKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -4054,7 +4054,7 @@ public func isBlockDevice(): Bool
 // index.cj
 
 import kit.CoreFileKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -4093,7 +4093,7 @@ public func isCharacterDevice(): Bool
 // index.cj
 
 import kit.CoreFileKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -4132,7 +4132,7 @@ public func isDirectory(): Bool
 // index.cj
 
 import kit.CoreFileKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -4171,7 +4171,7 @@ public func isFifo(): Bool
 // index.cj
 
 import kit.CoreFileKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -4210,7 +4210,7 @@ public func isFile(): Bool
 // index.cj
 
 import kit.CoreFileKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -4249,7 +4249,7 @@ public func isSocket(): Bool
 // index.cj
 
 import kit.CoreFileKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -4288,7 +4288,7 @@ public func isSymbolicLink(): Bool
 // index.cj
 
 import kit.CoreFileKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -4346,7 +4346,7 @@ public func close(): Unit
 // index.cj
 
 import kit.CoreFileKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -4399,7 +4399,7 @@ public func flush(): Unit
 // index.cj
 
 import kit.CoreFileKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -4464,7 +4464,7 @@ public func read(buffer: Array<Byte>, options!: ReadOptions = ReadOptions()): In
 // index.cj
 
 import kit.CoreFileKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -4532,7 +4532,7 @@ public func write(buffer: String, options!: WriteOptions = WriteOptions()): Int6
 // index.cj
 
 import kit.CoreFileKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -4600,7 +4600,7 @@ public func write(buffer: Array<Byte>, options!: WriteOptions = WriteOptions()):
 // index.cj
 
 import kit.CoreFileKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {

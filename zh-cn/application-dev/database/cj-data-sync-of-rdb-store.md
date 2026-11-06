@@ -66,7 +66,7 @@
     import kit.AbilityKit.{UIAbility, Want, LaunchParam, LaunchReason}
     import kit.ArkUI.WindowStage
     import kit.PerformanceAnalysisKit.Hilog
-    import ohos.business_exception.BusinessException
+    import kit.CangjieKit.BusinessException
     ```
 
 2. 请求权限。

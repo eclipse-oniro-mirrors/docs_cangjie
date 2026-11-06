@@ -24,8 +24,7 @@ The following example demonstrates how to upload files from the application cach
 
 ```cangjie
 // pages/xxx.cj
-import ohos.callback_invoke.*
-import ohos.business_exception.*
+import kit.CangjieKit.*
 import kit.BasicServicesKit.*
 import kit.CoreFileKit.*
 import kit.AbilityKit.*
@@ -109,8 +108,7 @@ The following example demonstrates how to download network resource files to the
 ```cangjie
 // pages/xxx.cj
 // Download network resource files to application directory
-import ohos.callback_invoke.*
-import ohos.business_exception.*
+import kit.CangjieKit.*
 import kit.BasicServicesKit.*
 import kit.CoreFileKit.*
 import kit.AbilityKit.*

@@ -78,7 +78,7 @@ public func deleteRdbStore(context: UIAbilityContext, name: String): Unit
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -132,7 +132,7 @@ public func deleteRdbStore(context: UIAbilityContext, config: StoreConfig): Unit
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -208,7 +208,7 @@ getRdbStore目前不支持多线程并发操作。
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -601,7 +601,7 @@ public func inValues(field: String, value: Array<RelationalStoreValueType>): Rdb
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -639,7 +639,7 @@ public func and(): RdbPredicates
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -680,7 +680,7 @@ public func beginWrap(): RdbPredicates
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -730,7 +730,7 @@ public func beginsWith(field: String, value: String): RdbPredicates
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -776,7 +776,7 @@ public func between(field: String, low: RelationalStoreValueType, high: Relation
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -821,7 +821,7 @@ public func contains(field: String, value: String): RdbPredicates
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -859,7 +859,7 @@ public func distinct(): RdbPredicates
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -898,7 +898,7 @@ public func endWrap(): RdbPredicates
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -948,7 +948,7 @@ public func endsWith(field: String, value: String): RdbPredicates
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -993,7 +993,7 @@ public func equalTo(field: String, value: RelationalStoreValueType): RdbPredicat
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1038,7 +1038,7 @@ public func glob(field: String, value: String): RdbPredicates
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1083,7 +1083,7 @@ public func greaterThan(field: String, value: RelationalStoreValueType): RdbPred
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1128,7 +1128,7 @@ public func greaterThanOrEqualTo(field: String, value: RelationalStoreValueType)
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1172,7 +1172,7 @@ public func groupBy(fields: Array<String>): RdbPredicates
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1209,7 +1209,7 @@ public func inAllDevices(): RdbPredicates
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1252,7 +1252,7 @@ public func isNotNull(field: String): RdbPredicates
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1295,7 +1295,7 @@ public func isNull(field: String): RdbPredicates
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1339,7 +1339,7 @@ public func lessThan(field: String, value: RelationalStoreValueType): RdbPredica
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1384,7 +1384,7 @@ public func lessThanOrEqualTo(field: String, value: RelationalStoreValueType): R
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1429,7 +1429,7 @@ public func like(field: String, value: String): RdbPredicates
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1473,7 +1473,7 @@ public func limitAs(value: Int32): RdbPredicates
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1520,7 +1520,7 @@ public func notBetween(field: String, low: RelationalStoreValueType, high: Relat
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1565,7 +1565,7 @@ public func notEqualTo(field: String, value: RelationalStoreValueType): RdbPredi
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1610,7 +1610,7 @@ public func notInValues(field: String, value: Array<RelationalStoreValueType>): 
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1654,7 +1654,7 @@ public func offsetAs(rowOffset: Int32): RdbPredicates
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1693,7 +1693,7 @@ public func or(): RdbPredicates
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1740,7 +1740,7 @@ public func orderByAsc(field: String): RdbPredicates
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1783,7 +1783,7 @@ public func orderByDesc(field: String): RdbPredicates
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1863,7 +1863,7 @@ public func backup(destName: String): Unit
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1936,7 +1936,7 @@ public func batchInsert(table: String, values: Array<ValuesBucket>): Int64
 
 import kit.ArkData.*
 import std.collection.{HashMap, Map}
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2011,7 +2011,7 @@ public func beginTransaction(): Unit
 
 import kit.ArkData.*
 import std.collection.HashMap
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2074,7 +2074,7 @@ public func commit(): Unit
 
 import kit.ArkData.*
 import std.collection.HashMap
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2150,7 +2150,7 @@ public func delete(predicates: RdbPredicates): Int64
 
 import kit.ArkData.*
 import std.collection.HashMap
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2201,14 +2201,12 @@ public func emit(event: String): Unit
 
 import kit.ArkData.*
 import kit.PerformanceAnalysisKit.*
-import ohos.callback_invoke.*
-import ohos.business_exception.BusinessException
-import kit.PerformanceAnalysisKit.Hilog
+import kit.CangjieKit.*
 
 // 此处代码可添加在依赖项定义中
 class TestCallback <: Callback0Argument {
     public init() {}
-    public open func invoke(err: ?BusinessException): Unit {
+    public func invoke(err: ?BusinessException): Unit {
         Hilog.info(0, "test", "Call invoke.", "")
     }
 }
@@ -2281,7 +2279,7 @@ public func executeSql(sql: String, bindArgs!: Array<RelationalStoreValueType> =
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2354,7 +2352,7 @@ public func insert(table: String, values: ValuesBucket,
 
 import kit.ArkData.*
 import std.collection.HashMap
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2369,7 +2367,7 @@ try {
     values.add("AGE", RelationalStoreValueType.Integer(18))
     values.add("SALARY", RelationalStoreValueType.Double(100.5))
     values.add("CODES", RelationalStoreValueType.Boolean(true))
-    let id = rdbStore.insert("EMPLOYEE", values, conflict: OnConflictReplace)
+    let id = rdbStore.insert("EMPLOYEE", values, conflict: ConflictResolution.OnConflictReplace)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -2415,9 +2413,7 @@ public func off(event: String, interProcess: Bool, observer!: ?Callback0Argument
 
 import kit.ArkData.*
 import kit.PerformanceAnalysisKit.*
-import ohos.callback_invoke.*
-import ohos.business_exception.BusinessException
-import kit.PerformanceAnalysisKit.Hilog
+import kit.CangjieKit.*
 
 // 此处代码可添加在依赖项定义中
 class TestCallback <: Callback0Argument {
@@ -2477,9 +2473,7 @@ public func on(event: String, interProcess: Bool, observer: Callback0Argument): 
 
 import kit.ArkData.*
 import kit.PerformanceAnalysisKit.*
-import ohos.callback_invoke.*
-import ohos.business_exception.BusinessException
-import kit.PerformanceAnalysisKit.Hilog
+import kit.CangjieKit.*
 
 // 此处代码可添加在依赖项定义中
 class TestCallback <: Callback0Argument {
@@ -2542,7 +2536,7 @@ public func query(predicates: RdbPredicates, columns!: Array<String> = []): Resu
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2607,7 +2601,7 @@ public func querySql(sql: String, bindArgs!: Array<RelationalStoreValueType> = [
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2675,7 +2669,7 @@ public func restore(srcName: String): Unit
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2734,7 +2728,7 @@ public func rollBack(): Unit
 
 import kit.ArkData.*
 import std.collection.HashMap
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2821,7 +2815,7 @@ public func update(values: ValuesBucket, predicates: RdbPredicates,
 
 import kit.ArkData.*
 import std.collection.HashMap
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2833,9 +2827,66 @@ try {
     values.add("NAME", RelationalStoreValueType.StringValue("TOM"))
     values.add("AGE", RelationalStoreValueType.Integer(88))
     values.add("SALARY", RelationalStoreValueType.Double(9999.513))
-    let count = rdbStore.update(values, predicates, conflict: OnConflictReplace)
+    let count = rdbStore.update(values, predicates, conflict: ConflictResolution.OnConflictReplace)
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
+}
+```
+
+### prop version
+
+```cangjie
+public mut prop version: Int32
+```
+
+**功能：** 设置和获取数据库版本，值为正整数，对应SQLite的`PRAGMA user_version`。读取和设置version属性会占用数据库连接，避免对该属性进行频繁操作。建议使用临时变量保存读取到的version值，在数据库变更完成后将其赋值给RdbStore实例的version属性。
+
+**类型：** Int32
+
+**读写能力：** 可读写
+
+**系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
+
+**起始版本：** 26.1.0
+
+**异常：**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[关系型数据库错误码](./cj-errorcode-data-rdb.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 801 | Capability not supported. |
+  | 14800000 | Inner error. |
+  | 14800014 | The target instance is already closed. |
+  | 14800015 | The database does not respond. |
+  | 14800021 | SQLite: Generic error. |
+  | 14800023 | SQLite: Access permission denied. |
+  | 14800024 | SQLite: The database file is locked. |
+  | 14800025 | SQLite: A table in the database is locked. |
+  | 14800026 | SQLite: The database is out of memory. |
+  | 14800027 | SQLite: Attempt to write a readonly database. |
+  | 14800028 | SQLite: Some kind of disk I/O error occurred. |
+  | 14800029 | SQLite: The database is full. |
+  | 14800030 | SQLite: Unable to open the database file. |
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.ArkData.*
+import kit.CangjieKit.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
+
+try {
+    var rdbStore: RdbStore = getRdbStore(Global.abilityContext,
+        StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db")) // 此处需手动配置模板，获取Context上下文。上下文获取方式请参见使用说明。
+    rdbStore.version = 3
+    Hilog.info(0, "test", "version=${rdbStore.version}")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.code} ${e.message}")
 }
 ```
 
@@ -3028,7 +3079,7 @@ public func close(): Unit
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -3099,7 +3150,7 @@ public func getAsset(columnIndex: Int32): Asset
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -3170,7 +3221,7 @@ public func getAssets(columnIndex: Int32): Assets
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -3241,7 +3292,7 @@ public func getBlob(columnIndex: Int32): Array<UInt8>
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -3312,7 +3363,7 @@ public func getColumnIndex(columnName: String): Int32
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -3386,7 +3437,7 @@ public func getColumnName(columnIndex: Int32): String
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -3459,7 +3510,7 @@ public func getDouble(columnIndex: Int32): Float64
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -3530,7 +3581,7 @@ public func getLong(columnIndex: Int32): Int64
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -3595,7 +3646,7 @@ public func getRow(): ValuesBucket
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -3666,7 +3717,7 @@ public func getString(columnIndex: Int32): String
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -3741,7 +3792,7 @@ public func goTo(offset: Int32): Bool
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -3810,7 +3861,7 @@ public func goToFirstRow(): Bool
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -3879,7 +3930,7 @@ public func goToLastRow(): Bool
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -3948,7 +3999,7 @@ public func goToNextRow(): Bool
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -4017,7 +4068,7 @@ public func goToPreviousRow(): Bool
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -4092,7 +4143,7 @@ public func goToRow(position: Int32): Bool
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -4163,7 +4214,7 @@ public func isColumnNull(columnIndex: Int32): Bool
 // index.cj
 
 import kit.ArkData.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {

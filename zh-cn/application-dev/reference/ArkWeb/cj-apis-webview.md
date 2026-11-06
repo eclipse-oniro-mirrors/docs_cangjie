@@ -322,7 +322,7 @@ public static func clearAllCookies(incognito!: Bool = false): Unit
 // index.cj
 
 import kit.ArkWeb.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -360,7 +360,7 @@ public static func clearSessionCookie(): Unit
 // index.cj
 
 import kit.ArkWeb.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -431,7 +431,7 @@ public static func configCookie(url: String, value: String, incognito!: Bool = f
 // index.cj
 
 import kit.ArkWeb.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -537,7 +537,7 @@ public static func fetchCookie(url: String, incognito!: Bool = false): String
 
 import kit.ArkWeb.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 try {
     // 需要设置的cookie，其中cookie的格式为name=value，本例中name为ZFY，value为4Mvfh8V4iYFnDc8CGowMa3KE4m0dV
@@ -2332,7 +2332,7 @@ import kit.ArkUI.Row
 import kit.ArkWeb.*
 import kit.ArkUI.Web
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.*
+import kit.CangjieKit.*
 
 let webController = WebviewController()
 let callback: AsyncCallback<String> = {
@@ -2496,8 +2496,6 @@ import kit.ArkUI.CJEntry
 import kit.ArkUI.loadNativeView
 import kit.ArkUI.SubscriberManager
 import kit.ArkUI.LocalStorage
-import ohos.arkui.state_macro_manage.Entry
-import ohos.arkui.state_macro_manage.Component
 import kit.ArkWeb.*
 import kit.ArkUI.Web
 import kit.PerformanceAnalysisKit.Hilog
@@ -2723,7 +2721,7 @@ import ohos.arkui.state_macro_manage.Component
 import kit.ArkWeb.*
 import kit.ArkUI.Web
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.*
+import kit.CangjieKit.*
 
 let callback1: AsyncCallback<String> = {
     errorCode: Option<BusinessException>, data: Option<String> => match (errorCode) {
@@ -3018,12 +3016,10 @@ import kit.ArkUI.CJEntry
 import kit.ArkUI.loadNativeView
 import kit.ArkUI.SubscriberManager
 import kit.ArkUI.LocalStorage
-import ohos.arkui.state_macro_manage.Entry
-import ohos.arkui.state_macro_manage.Component
 import kit.ArkWeb.*
 import kit.ArkUI.Web
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.*
+import kit.CangjieKit.*
 import ohos.arkui.state_macro_manage.*
 import kit.LocalizationKit.{AppResource,__GenerateResource__}
 

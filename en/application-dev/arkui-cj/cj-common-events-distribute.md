@@ -41,7 +41,7 @@ As shown in the diagram, when the initial event is distributed to a component, t
 
 ### Touch Testing Control
 
-Developers can configure touch testing control to block touch testing for the component itself or other components.
+You can set the touch test mode of a component through the [hitTestBehavior](../reference/arkui-cj/cj-universal-attribute-hittestbehavior.md#func-hittestbehaviorhittestmode) attribute, and the values are described in [HitTestMode](../reference/arkui-cj/cj-common-types.md#enum-hittestmode).
 
 - **HitTestMode.Default**: The default effect when the hitTestBehavior property is not configured. If the component itself is hit, it blocks sibling components but does not block child components.
 
@@ -58,6 +58,10 @@ Developers can configure touch testing control to block touch testing for the co
 - **HitTestMode.Transparent**: The component itself performs touch testing while not blocking sibling or parent components.
 
 ![events_distribute](./figures/events_distribute4.png)
+
+- **HitTestMode.BlockHierarchy**: The component itself and its child components respond to touch testing, preventing all sibling and parent components with lower priority from participating in touch testing.
+
+- **HitTestMode.BlockDescendants**: The component itself does not respond to touch testing, and all its descendants (children, grandchildren, and more) also do not respond to touch testing. It does not affect the touch testing of ancestor components.
 
 ### Disable Control
 

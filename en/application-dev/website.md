@@ -180,7 +180,11 @@
                         - [Touch Screen Events](arkui-cj/cj-common-events-touch-screen-event.md)
                         - [Keyboard/Mouse Events](arkui-cj/cj-common-events-device-input-event.md)
                         - [Focus Events](arkui-cj/cj-common-events-focus-event.md)
+                    - Using Gestures
+                        - [Gesture Binding Methods](arkui-cj/cj-gesture-events-binding.md)
+                        - [Single Gestures](arkui-cj/cj-gesture-events-single-gesture.md)
                 - [Using Mirroring Capabilities](arkui-cj/cj-mirroring-display.md)
+                - [Using Component Snapshot](arkui-cj/cj-uicontext-component-snapshot.md)
                 <!--RP1--><!--RP1End-->
                 - Theme Settings
                     - [Application Dark/Light Mode Adaptation](arkui-cj/cj-ui-dark-light-color-adaptation.md)
@@ -223,9 +227,12 @@
             - [Introduction to Localization Kit](internationalization/cj-i18n-l10n.md)
             - Application Internationalization
                 - [International UI Design](internationalization/cj-i18n-ui-design.md)
+                - Language and User Preferences
+                    - [System Language and Region](internationalization/cj-i18n-system-language-region.md)
                 - [Setting Calendar and Almanac](internationalization/cj-i18n-calendar.md)
                 - Timezone and Daylight Saving Time Internationalization
                     - [Daylight Saving Time Transition](internationalization/cj-i18n-dst-transition.md)
+                - [Character Processing](internationalization/cj-i18n-character-processing.md)
                 - Localized Names
                     - [Localized Timezone Names](internationalization/cj-i18n-time-zone-display.md)
             - Application Localization
@@ -378,6 +385,12 @@
                         - [Publishing Common Events](basic-services/common-event/cj-common-event-publish.md)
                 - Upload/Download
                     - [Application File Upload/Download](basic-services/request/cj-app-file-upload-download.md)
+            - Notification Kit (User Notification Service)
+                - [Introduction to Notification Kit](notification/cj-notification-overview.md)
+                - [Publishing a Text Notification](notification/cj-text-notification.md)
+                - [Requesting Notification Authorization](notification/cj-notification-enable.md)
+                - [Managing the Notification Badge](notification/cj-notification-badge.md)
+                - [Canceling a Notification](notification/cj-notification-cancel.md)
         - Hardware
             - Sensor Service Kit (Sensor Service)
                 - [Introduction to Sensor Service Kit Development](device/sensor/cj-sensorservice-kit-intro.md)
@@ -449,6 +462,8 @@
                 - [Device Input](media/camera/cj-camera-device-input.md)
                 - [Session Management](media/camera/cj-camera-session-management.md)
                 - [Flashlight Usage](media/camera/cj-camera-torch-use.md)
+                - [Camera Metadata](media/camera/cj-camera-metadata.md)
+                - [Using the System Camera to Take Photos and Record Videos](media/camera/cj-camera-picker.md)
         - Image Kit (Image Processing Service)
             - [Image Kit Overview](media/image/cj-image-overview.md)
             - Image Development Guide
@@ -533,6 +548,7 @@
                     - [ohos.curves (Interpolation Calculation)](reference/arkui-cj/cj-apis-curves.md)
                     - ohos.arkui.ui_context (UIContext)
                         - [AnimatorResult](reference/arkui-cj/cj-apis-uicontext-animator.md)
+                        - [ComponentSnapshot](reference/arkui-cj/cj-apis-uicontext-componentsnapshot.md)
                         - [ContextMenuController](reference/arkui-cj/cj-apis-uicontext-contextmenucontroller.md)
                         - [Font](reference/arkui-cj/cj-apis-uicontext-font.md)
                         - [MeasureUtils](reference/arkui-cj/cj-apis-uicontext-measureutils.md)
@@ -555,6 +571,7 @@
                     - [Component Area Change Event](reference/arkui-cj/cj-universal-event-areachange.md)
                     - [Component Visible Area Change Event](reference/arkui-cj/cj-universal-event-visibleareachange.md)
                     - [Component Shortcut Event](reference/arkui-cj/cj-universal-event-keyboardshortcut.md)
+                    - [Custom Event Dispatch](reference/arkui-cj/cj-universal-attribute-onchildtouchtest.md)
                 - [Universal Attributes](reference/arkui-cj/cj-universal-attributes.md)
                     - [Size Setting](reference/arkui-cj/cj-universal-attribute-size.md)
                     - [Position Setting](reference/arkui-cj/cj-universal-attribute-location.md)
@@ -583,7 +600,15 @@
                         - [Half-Modal Transition](reference/arkui-cj/cj-universal-attribute-sheettransition.md)
                     - [Safe Area](reference/arkui-cj/cj-universal-attribute-expandsafearea.md)
                     - [Component Content Filling Method](reference/arkui-cj/cj-universal-attribute-renderfit.md)
-                    - [Touch hot zone settings](reference/arkui-cj/cj-universal-attribute-touchtarget.md)
+                    - Touch Interactions
+                        - [Touch hot zone settings](reference/arkui-cj/cj-universal-attribute-touchtarget.md)
+                        - [Touch test control](reference/arkui-cj/cj-universal-attribute-hittestbehavior.md)
+                    - [Hover effect](reference/arkui-cj/cj-universal-attribute-hovereffect.md)
+                - Gesture Handling
+                    - Gesture Binding
+                        - [Binding Gesture Events](reference/arkui-cj/cj-universal-attribute-gesture.md)
+                    - Basic Gestures
+                        - [PanGesture](reference/arkui-cj/cj-basic-gestures-pangesture.md)
                 - Rows, Columns & Stacks
                     - [Flex](reference/arkui-cj/cj-row-column-stack-flex.md)
                     - [Column](reference/arkui-cj/cj-row-column-stack-column.md)
@@ -697,7 +722,8 @@
                 - [Framework Interfaces](reference/arkui-cj/cj-ui-framework.md)
             - Error Codes
                 - UI Interface
-                    - [Animation Error Codes](reference/arkui-cj/cj-errorcode-animator.md)
+                    - [Interface Call Exception Error Codes](reference/arkui-cj/cj-errorcode-internal.md)
+                    - [Snapshot Error Codes](reference/arkui-cj/cj-errorcode-snapshot.md)
                 - Graphics
                     - [Display Error Codes](reference/arkui-cj/cj-errorcode-display.md)
                     - [Window Error Codes](reference/arkui-cj/cj-errorcode-window.md)
@@ -783,6 +809,11 @@
                     - [Event Error Codes](reference/BasicServicesKit/cj-errorcode-common_event_service.md)
                     - [System Power Management Error Codes](reference/BasicServicesKit/cj-errorcode-power.md)
                     - [Account Management Error Codes](reference/BasicServicesKit/cj-errorcode-basic-account.md)
+            - Notification Kit (User Notification Service)
+                - Cangjie API
+                    - [ohos.notification_manager (Notification Management)](reference/NotificationKit/cj-apis-notification-manager.md)
+                - Error Codes
+                    - [Notification Error Codes](reference/NotificationKit/cj-errorcode-notification.md)
         - Hardware
             - Sensor Service Kit (Sensor Service)
                 - Cangjie API
@@ -811,6 +842,7 @@
         - Camera Kit (Camera Service)
             - Cangjie APIs
                 - [ohos.multimedia.camera (Camera Management)](reference/CameraKit/cj-apis-multimedia-camera.md)
+                - [ohos.multimedia.camera_picker (Camera Picker)](reference/CameraKit/cj-apis-multimedia-camera-picker.md)
             - Error Codes
                 - [Camera Error Codes](reference/CameraKit/cj-errorcode-multimedia-camera.md)
         - Image Kit (Image Processing Service)

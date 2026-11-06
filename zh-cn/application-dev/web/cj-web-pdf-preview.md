@@ -25,7 +25,7 @@ PDF文档预览加载过程中，若涉及网络文档获取，请在module.json
 ```cangjie
 // index.cj
 import ohos.arkui.state_macro_manage.*
-import ohos.web.webview.WebviewController
+import kit.ArkWeb.WebviewController
 import kit.ArkUI.Web
 
 @Entry

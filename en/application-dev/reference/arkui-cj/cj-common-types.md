@@ -774,6 +774,9 @@ public class Color <: ResourceColor {
     public static let Red: Color = Color(0xffff0000)
     public static let White: Color = Color(0xffffffff)
     public static let Transparent: Color = Color(0, 0, 0, alpha: 0.0)
+    public static let Grey: Color = Color(0xff808080)
+    public static let Orange: Color = Color(0xffffa500)
+    public static let Yellow: Color = Color(0xffffff00)
     public init(red: UInt8, green: UInt8, blue: UInt8, alpha!: ?Float32 = None)
     public init(value: UInt32)
 }
@@ -900,6 +903,54 @@ public static let Transparent: Color = Color(0, 0, 0, alpha: 0.0)
 **System Capability:** SystemCapability.ArkUI.ArkUI.Full
 
 **Since:** 22
+
+### static let Grey
+
+```cangjie
+public static let Grey: Color = Color(0xff808080)
+```
+
+**Description:** Grey color, equivalent to Gray.
+
+**Type:** [Color](#class-color)
+
+**Read/Write Permission:** Read-only
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### static let Orange
+
+```cangjie
+public static let Orange: Color = Color(0xffffa500)
+```
+
+**Description:** Orange color.
+
+**Type:** [Color](#class-color)
+
+**Read/Write Permission:** Read-only
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### static let Yellow
+
+```cangjie
+public static let Yellow: Color = Color(0xffffff00)
+```
+
+**Description:** Yellow color.
+
+**Type:** [Color](#class-color)
+
+**Read/Write Permission:** Read-only
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
 
 ### init(UInt8, UInt8, UInt8, ?Float32)
 
@@ -1729,6 +1780,622 @@ public func stopPropagation(): Unit
 **System Capability:** SystemCapability.ArkUI.ArkUI.Full
 
 **Since:** 22
+
+## class GestureType
+
+```cangjie
+sealed abstract class GestureType {}
+```
+
+**Description:** Defines the gesture type. It is the base class of all gesture types, and all concrete gestures inherit from this class. It can be bound to components through [gesture](./cj-universal-attribute-gesture.md) or [parallelGesture](./cj-universal-attribute-gesture.md#func-parallelgesturegesturetype).
+
+> **Note:**
+>
+> The only concrete gesture type in the current version is [PanGesture](./cj-basic-gestures-pangesture.md).
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+## class GestureEvent
+
+```cangjie
+public class GestureEvent <: BaseEvent {
+    public var offsetX: Float64
+    public var offsetY: Float64
+    public var repeat: Bool
+    public var fingerList: Array<FingerInfo>
+    public var fingerInfos: ?Array<FingerInfo>
+    public var angle: Float64
+    public var speed: Float64
+    public var scale: Float64
+    public var pinchCenterX: Float64
+    public var pinchCenterY: Float64
+    public var velocityX: Float64
+    public var velocityY: Float64
+    public var velocity: Float64
+    public var tapLocation: ?EventLocationInfo
+}
+```
+
+**Description:** Defines the gesture event information. Inherits from [BaseEvent](#class-baseevent).
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+**Parent Type:**
+
+- [BaseEvent](#class-baseevent)
+
+### var offsetX
+
+```cangjie
+public var offsetX: Float64
+```
+
+**Description:** X-axis offset of the gesture event relative to the finger press position, in vp. Used in PanGesture scenarios. A positive value means to pan from left to right, and a negative value means the opposite. Value range: (-∞, +∞).
+
+**Type:** Float64
+
+**Access:** Read-write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### var offsetY
+
+```cangjie
+public var offsetY: Float64
+```
+
+**Description:** Y-axis offset of the gesture event relative to the finger press position, in vp. Used in PanGesture scenarios. A positive value means to pan from top to bottom, and a negative value means the opposite. Value range: (-∞, +∞).
+
+**Type:** Float64
+
+**Access:** Read-write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### var repeat
+
+```cangjie
+public var repeat: Bool
+```
+
+**Description:** Whether the event is a repeated trigger event, used in LongPressGesture scenarios. The value true means that the event is a repeated trigger event, and false means the opposite.
+
+**Type:** Bool
+
+**Access:** Read-write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### var fingerList
+
+```cangjie
+public var fingerList: Array<FingerInfo>
+```
+
+**Description:** List of touch points of the gesture event. If the event input device is a touchscreen, the list includes all touch points. If the event input device is a mouse or touchpad, the list contains only one touch point.
+
+> **Note:**
+> 1. The index of a finger corresponds to its position, that is, the ID of the finger in fingerList[index] is index. If a finger is pressed first and does not participate in triggering the current gesture, its position in fingerList is left empty.
+> 2. fingerList is empty when gestures are triggered using a keyboard or game controller and no finger information exists.
+
+**Type:** Array\<[FingerInfo](#class-fingerinfo)>
+
+**Access:** Read-write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### var fingerInfos
+
+```cangjie
+public var fingerInfos: ?Array<FingerInfo>
+```
+
+**Description:** Information about touch points of the gesture event. For gesture events initiated by a touchscreen, fingerInfos includes information about all touch points. For gesture events initiated by a mouse or touchpad, fingerInfos contains only one touch point.
+
+> **Note:**
+> fingerInfos only records information about effective fingers that participate in the touch. Fingers that are pressed first but do not participate in triggering the current gesture will not be shown in fingerInfos. The default value is an empty array [], and an empty array indicates no effective touch point information.
+
+**Type:** ?Array\<[FingerInfo](#class-fingerinfo)>
+
+**Access:** Read-write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### var angle
+
+```cangjie
+public var angle: Float64
+```
+
+**Description:** Rotation angle for the RotationGesture event, in deg. Angle of the swipe gesture for the SwipeGesture event, that is, the angle between the instantaneous direction of finger sliding and the positive horizontal direction, in deg.
+
+> **Note:**
+> Rotation gesture angle calculation: When a rotation gesture is detected, the line connecting the two fingers is identified as the starting line. As the fingers slide, the line between them rotates. Based on the coordinates of the end points of the starting line and the current line, the arctangent function is used to calculate the included angles relative to the horizontal direction. The rotation angle is calculated as arctan2(cy2-cy1, cx2-cx1) - arctan2(y2-y1, x2-x1). With the starting line as the reference axis, clockwise rotation ranges from 0 to 180 degrees, and counterclockwise rotation ranges from 0 to –180 degrees. Value range: [-180, 180].
+
+**Type:** Float64
+
+**Access:** Read-write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### var speed
+
+```cangjie
+public var speed: Float64
+```
+
+**Description:** Swipe gesture speed, that is, the average swipe speed of all fingers relative to the original area of the current component, in vp/s. Used for the SwipeGesture event. Value range: [0, +∞).
+
+**Type:** Float64
+
+**Access:** Read-write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### var scale
+
+```cangjie
+public var scale: Float64
+```
+
+**Description:** Scale ratio. This attribute is used for the pinch gesture. Value range: [0, +∞).
+
+**Type:** Float64
+
+**Access:** Read-write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### var pinchCenterX
+
+```cangjie
+public var pinchCenterX: Float64
+```
+
+**Description:** X-coordinate of the center of the pinch gesture, in vp, relative to the original area of the current component. This attribute is used for the PinchGesture event. Value range: [0, +∞).
+
+**Type:** Float64
+
+**Access:** Read-write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### var pinchCenterY
+
+```cangjie
+public var pinchCenterY: Float64
+```
+
+**Description:** Y-coordinate of the center of the pinch gesture, in vp, relative to the original area of the current component. This attribute is used for the PinchGesture event. Value range: [0, +∞).
+
+**Type:** Float64
+
+**Access:** Read-write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### var velocityX
+
+```cangjie
+public var velocityX: Float64
+```
+
+**Description:** Velocity along the x-axis. This parameter is used in PanGesture. The origin of the coordinate axis is the upper left corner of the screen. The velocity is positive if the movement is from left to right, and it is negative if the movement is from right to left. The unit is vp/s. Value range: (-∞, +∞).
+
+**Type:** Float64
+
+**Access:** Read-write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### var velocityY
+
+```cangjie
+public var velocityY: Float64
+```
+
+**Description:** Velocity along the y-axis. This parameter is used in PanGesture. The origin of the coordinate axis is the upper left corner of the screen. The velocity is positive if the movement is from top to bottom, and it is negative if the movement is from bottom to top. The unit is vp/s. Value range: (-∞, +∞).
+
+**Type:** Float64
+
+**Access:** Read-write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### var velocity
+
+```cangjie
+public var velocity: Float64
+```
+
+**Description:** Velocity along the main axis. This parameter is used in PanGesture. The value is the arithmetic square root of the sum of squares of the velocity along the x- and y-axes. The unit is vp/s. Value range: [0, +∞).
+
+**Type:** Float64
+
+**Access:** Read-write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### var tapLocation
+
+```cangjie
+public var tapLocation: ?EventLocationInfo
+```
+
+**Description:** Coordinate information of the current tap gesture. For non-tap gestures, the return value of tapLocation is None.
+
+**Type:** ?[EventLocationInfo](#class-eventlocationinfo)
+
+**Access:** Read-write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+## class FingerInfo
+
+```cangjie
+public class FingerInfo {
+    public var id: Int32
+    public var globalDisplayX: ?Float64
+    public var globalDisplayY: ?Float64
+    public var globalX: Float64
+    public var globalY: Float64
+    public var localX: Float64
+    public var localY: Float64
+    public var displayX: Float64
+    public var displayY: Float64
+    public var hand: ?InteractionHand
+}
+```
+
+**Description:** Defines the finger information type.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### var id
+
+```cangjie
+public var id: Int32
+```
+
+**Description:** Index of the finger, determined by the number of fingers pressed. The first pressed finger is assigned 0, with the index incrementing by one for each subsequent finger.
+
+> **Note:**
+> Indexes for other input sources (mouse: 1001, mouse wheel: 0, two-finger trackpad slide: 0) are also converted to finger indexes. Value range: [0, 9).
+
+**Type:** Int32
+
+**Access:** Read-write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### var globalDisplayX
+
+```cangjie
+public var globalDisplayX: ?Float64
+```
+
+**Description:** X-coordinate relative to the upper left corner of the global display, in vp. If not returned (the value is None), no global display X-coordinate information is available. Value range: [0, +∞).
+
+**Type:** ?Float64
+
+**Access:** Read-write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### var globalDisplayY
+
+```cangjie
+public var globalDisplayY: ?Float64
+```
+
+**Description:** Y-coordinate relative to the upper left corner of the global display, in vp. If not returned (the value is None), no global display Y-coordinate information is available. Value range: [0, +∞).
+
+**Type:** ?Float64
+
+**Access:** Read-write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### var globalX
+
+```cangjie
+public var globalX: Float64
+```
+
+**Description:** X-coordinate relative to the upper left corner of the application window, in vp. Value range: [0, +∞).
+
+**Type:** Float64
+
+**Access:** Read-write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### var globalY
+
+```cangjie
+public var globalY: Float64
+```
+
+**Description:** Y-coordinate relative to the upper left corner of the application window, in vp. Value range: [0, +∞).
+
+**Type:** Float64
+
+**Access:** Read-write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### var localX
+
+```cangjie
+public var localX: Float64
+```
+
+**Description:** X-coordinate relative to the upper left corner of the current component's original area, in vp. Value range: [0, +∞).
+
+**Type:** Float64
+
+**Access:** Read-write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### var localY
+
+```cangjie
+public var localY: Float64
+```
+
+**Description:** Y-coordinate relative to the upper left corner of the current component's original area, in vp. Value range: [0, +∞).
+
+**Type:** Float64
+
+**Access:** Read-write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### var displayX
+
+```cangjie
+public var displayX: Float64
+```
+
+**Description:** X-coordinate relative to the upper left corner of the screen, in vp. Value range: [0, +∞).
+
+**Type:** Float64
+
+**Access:** Read-write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### var displayY
+
+```cangjie
+public var displayY: Float64
+```
+
+**Description:** Y-coordinate relative to the upper left corner of the screen, in vp. Value range: [0, +∞).
+
+**Type:** Float64
+
+**Access:** Read-write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### var hand
+
+```cangjie
+public var hand: ?InteractionHand
+```
+
+**Description:** Whether the event is triggered by a left-hand or right-hand tap. If not returned (the value is None), no left-hand or right-hand tap information is available for the current event.
+
+**Type:** ?[InteractionHand](#enum-interactionhand)
+
+**Access:** Read-write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+## class EventLocationInfo
+
+```cangjie
+public class EventLocationInfo {
+    public var x: Float64
+    public var y: Float64
+    public var windowX: Float64
+    public var windowY: Float64
+    public var displayX: Float64
+    public var displayY: Float64
+    public var globalDisplayX: ?Float64
+    public var globalDisplayY: ?Float64
+}
+```
+
+**Description:** Provides coordinate information for tap gestures.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### var x
+
+```cangjie
+public var x: Float64
+```
+
+**Description:** X coordinate relative to the upper left corner of the component, in vp. Value range: [0, +∞).
+
+**Type:** Float64
+
+**Access:** Read-write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### var y
+
+```cangjie
+public var y: Float64
+```
+
+**Description:** Y coordinate relative to the upper left corner of the component, in vp. Value range: [0, +∞).
+
+**Type:** Float64
+
+**Access:** Read-write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### var windowX
+
+```cangjie
+public var windowX: Float64
+```
+
+**Description:** X coordinate relative to the upper left corner of the window, in vp. Value range: [0, +∞).
+
+**Type:** Float64
+
+**Access:** Read-write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### var windowY
+
+```cangjie
+public var windowY: Float64
+```
+
+**Description:** Y coordinate relative to the upper left corner of the window, in vp. Value range: [0, +∞).
+
+**Type:** Float64
+
+**Access:** Read-write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### var displayX
+
+```cangjie
+public var displayX: Float64
+```
+
+**Description:** X coordinate relative to the upper left corner of the screen, in vp. Value range: [0, +∞).
+
+**Type:** Float64
+
+**Access:** Read-write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### var displayY
+
+```cangjie
+public var displayY: Float64
+```
+
+**Description:** Y coordinate relative to the upper left corner of the screen, in vp. Value range: [0, +∞).
+
+**Type:** Float64
+
+**Access:** Read-write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### var globalDisplayX
+
+```cangjie
+public var globalDisplayX: ?Float64
+```
+
+**Description:** X-coordinate in the coordinate system with the upper left corner of the main screen as the origin, in vp. If not returned (the value is None), no global screen X-coordinate information is available. Value range: [0, +∞).
+
+**Type:** ?Float64
+
+**Access:** Read-write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### var globalDisplayY
+
+```cangjie
+public var globalDisplayY: ?Float64
+```
+
+**Description:** Y-coordinate in the coordinate system with the upper left corner of the main screen as the origin, in vp. If not returned (the value is None), no global screen Y-coordinate information is available. Value range: [0, +∞).
+
+**Type:** ?Float64
+
+**Access:** Read-write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
 
 ## class EventTarget
 
@@ -5060,6 +5727,158 @@ public func springBack(): Unit
 **System Capability:** SystemCapability.ArkUI.ArkUI.Full
 
 **Since:** 22
+
+## class EdgeWidths
+
+```cangjie
+public class EdgeWidths {
+    public var top: ?Length
+    public var right: ?Length
+    public var bottom: ?Length
+    public var left: ?Length
+    public init(top!: ?Length = None, right!: ?Length = None, bottom!: ?Length = None, left!: ?Length = None)
+}
+```
+
+**Function:** Sets the border width of the dialog background. At least one parameter must be passed in when this object is introduced.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 22
+
+### var top
+
+```cangjie
+public var top: ?Length
+```
+
+**Function:** Width of the top border.
+
+**Type:** ?[Length](#interface-length)
+
+**Read/Write:** Readable and Writable
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 22
+
+### var right
+
+```cangjie
+public var right: ?Length
+```
+
+**Function:** Width of the right border.
+
+**Type:** ?[Length](#interface-length)
+
+**Read/Write:** Readable and Writable
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 22
+
+### var bottom
+
+```cangjie
+public var bottom: ?Length
+```
+
+**Function:** Width of the bottom border.
+
+**Type:** ?[Length](#interface-length)
+
+**Read/Write:** Readable and Writable
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 22
+
+### var left
+
+```cangjie
+public var left: ?Length
+```
+
+**Function:** Width of the left border.
+
+**Type:** ?[Length](#interface-length)
+
+**Read/Write:** Readable and Writable
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 22
+
+### init(?Length, ?Length, ?Length, ?Length)
+
+```cangjie
+public init(top!: ?Length = None, right!: ?Length = None, bottom!: ?Length = None, left!: ?Length = None)
+```
+
+**Function:** Constructs an EdgeWidths object.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 22
+
+**Parameters:**
+
+|Parameter|Type|Required|Default Value|Description|
+|:---|:---|:---|:---|:---|
+|top|?[Length](#interface-length)|No|None|**Named parameter.** Width of the top border. The initial value is 0.vp.|
+|right|?[Length](#interface-length)|No|None|**Named parameter.** Width of the right border. The initial value is 0.vp.|
+|bottom|?[Length](#interface-length)|No|None|**Named parameter.** Width of the bottom border. The initial value is 0.vp.|
+|left|?[Length](#interface-length)|No|None|**Named parameter.** Width of the left border. The initial value is 0.vp.|
+
+## class ResizableOptions
+
+```cangjie
+public class ResizableOptions {
+    public var slice: ?EdgeWidths
+    public init(slice!: ?EdgeWidths)
+}
+```
+
+**Function:** Resizable image options for image stretching, used to define the stretchable area and fixed area of the image.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### var slice
+
+```cangjie
+public var slice: ?EdgeWidths
+```
+
+**Function:** Edge widths type, used to describe the widths of a component border in different directions.<br>**Note:**<br>This attribute takes effect only when both bottom and right are greater than 0.<br>When top is set, the top part of the image is stretched while the pixel values of the image remain unchanged.<br>When right is set, the right part of the image is stretched while the pixel values of the image remain unchanged.<br>When bottom is set, the bottom part of the image is stretched while the pixel values of the image remain unchanged.<br>When left is set, the left part of the image is stretched while the pixel values of the image remain unchanged.<br>The default width of each direction is 0. The default unit is vp when a number is passed in.
+
+**Type:** ?[EdgeWidths](#class-edgewidths)
+
+**Read/Write:** Readable and Writable
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### init(?EdgeWidths)
+
+```cangjie
+public init(slice!: ?EdgeWidths)
+```
+
+**Function:** Constructs a ResizableOptions object.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+|Parameter|Type|Required|Default Value|Description|
+|:---|:---|:---|:---|:---|
+|slice|?[EdgeWidths](#class-edgewidths)|Yes|-|**Named parameter.** Edge widths type, used to describe the widths of a component border in different directions.|
 
 ## class Rectangle
 
@@ -8708,6 +9527,111 @@ public operator func !=(other: Axis): Bool
 |:----|:----|
 | Bool | Returns true if the two enums are not equal, otherwise returns false. |
 
+## enum InteractionHand
+
+```cangjie
+public enum InteractionHand <: Equatable<InteractionHand> {
+    | None
+    | Left
+    | Right
+    | ...
+}
+```
+
+**Function:** Enumerates how an input event is triggered.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+**Parent Type:**
+
+- Equatable\<[InteractionHand](#enum-interactionhand)>
+
+### None
+
+```cangjie
+None
+```
+
+**Function:** Unspecified.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### Left
+
+```cangjie
+Left
+```
+
+**Function:** Left-hand interaction.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### Right
+
+```cangjie
+Right
+```
+
+**Function:** Right-hand interaction.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### operator func ==(InteractionHand)
+
+```cangjie
+public operator func ==(other: InteractionHand): Bool
+```
+
+**Function:** Determines whether two InteractionHand enums are equal.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+| Parameter | Type | Required | Default | Description |
+|:---|:---|:---|:---|:---|
+| other | [InteractionHand](#enum-interactionhand) | Yes | - | Another InteractionHand enum to compare. |
+
+**Return Value:**
+
+| Type | Description |
+|:----|:----|
+| Bool | Returns true if the two enums are equal, otherwise returns false. |
+
+### operator func !=(InteractionHand)
+
+```cangjie
+public operator func !=(other: InteractionHand): Bool
+```
+
+**Function:** Determines whether two InteractionHand enums are not equal.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+| Parameter | Type | Required | Default | Description |
+|:---|:---|:---|:---|:---|
+| other | [InteractionHand](#enum-interactionhand) | Yes | - | Another InteractionHand enum to compare. |
+
+**Return Value:**
+
+| Type | Description |
+|:----|:----|
+| Bool | Returns true if the two enums are not equal, otherwise returns false. |
+
 ## enum ResponseType
 
 ```cangjie
@@ -9878,7 +10802,9 @@ public operator func !=(other: BarState): Bool
 
 | Type | Description |
 |:----|:----|
-| Bool | Returns true if the two enums are not equal, otherwise returns false. |## enum Visibility
+| Bool | Returns true if the two enums are not equal, otherwise returns false. |
+
+## enum Visibility
 
 ```cangjie
 public enum Visibility <: Equatable<Visibility> {
@@ -9972,6 +10898,268 @@ public operator func !=(other: Visibility): Bool
 |Parameter|Type|Required|Default Value|Description|
 |:---|:---|:---|:---|:---|
 |other|[Visibility](#enum-visibility)|Yes|-|The other Visibility enum to compare.|
+
+**Return Value:**
+
+|Type|Description|
+|:----|:----|
+|Bool|Returns true if the two enums are not equal, otherwise returns false.|
+
+## enum HitTestMode
+
+```cangjie
+public enum HitTestMode <: Equatable<HitTestMode> {
+    | Default
+    | Block
+    | Transparent
+    | None
+    | BlockHierarchy
+    | BlockDescendants
+    | ...
+}
+```
+
+**Function:** Sets the touch hit test mode of a component to control the hit and blocking policy of touch events.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+**Parent Type:**
+
+- Equatable\<[HitTestMode](#enum-hittestmode)>
+
+### Default
+
+```cangjie
+Default
+```
+
+**Function:** Default touch test mode. The node itself and its child nodes respond to the touch test, blocking the touch test of sibling nodes. It does not affect the touch test of ancestor nodes.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### Block
+
+```cangjie
+Block
+```
+
+**Function:** The node itself responds to the touch test and blocks the touch test of child nodes, sibling nodes, and ancestor nodes.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### Transparent
+
+```cangjie
+Transparent
+```
+
+**Function:** Both the node itself and its child nodes respond to the touch test and do not block the touch test of sibling nodes and ancestor nodes.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### None
+
+```cangjie
+None
+```
+
+**Function:** The node itself does not respond to the touch test and does not block the touch test of child nodes, sibling nodes, and ancestor nodes.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### BlockHierarchy
+
+```cangjie
+BlockHierarchy
+```
+
+**Function:** The node itself and its child nodes respond to the touch test, preventing all sibling nodes and parent nodes with lower priority from participating in the touch test.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### BlockDescendants
+
+```cangjie
+BlockDescendants
+```
+
+**Function:** The node itself does not respond to the touch test, and all its descendants (children, grandchildren, and more) also do not respond to the touch test. It does not affect the touch test of ancestor nodes.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### operator func ==(HitTestMode)
+
+```cangjie
+public operator func ==(other: HitTestMode): Bool
+```
+
+**Function:** Determines whether two HitTestMode enums are equal.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+|Parameter|Type|Required|Default Value|Description|
+|:---|:---|:---|:---|:---|
+|other|[HitTestMode](#enum-hittestmode)|Yes|-|The other HitTestMode enum to compare.|
+
+**Return Value:**
+
+|Type|Description|
+|:----|:----|
+|Bool|Returns true if the two enums are equal, otherwise returns false.|
+
+### operator func !=(HitTestMode)
+
+```cangjie
+public operator func !=(other: HitTestMode): Bool
+```
+
+**Function:** Determines whether two HitTestMode enums are not equal.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+|Parameter|Type|Required|Default Value|Description|
+|:---|:---|:---|:---|:---|
+|other|[HitTestMode](#enum-hittestmode)|Yes|-|The other HitTestMode enum to compare.|
+
+**Return Value:**
+
+|Type|Description|
+|:----|:----|
+|Bool|Returns true if the two enums are not equal, otherwise returns false.|
+
+## enum HoverEffect
+
+```cangjie
+public enum HoverEffect <: Equatable<HoverEffect> {
+    | Auto
+    | Scale
+    | Highlight
+    | None
+    | ...
+}
+```
+
+**Function:** Sets the hover effect of a component.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+**Parent Type:**
+
+- Equatable\<[HoverEffect](#enum-hovereffect)>
+
+### Auto
+
+```cangjie
+Auto
+```
+
+**Function:** Uses the system default hover effect of the component.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### Scale
+
+```cangjie
+Scale
+```
+
+**Function:** Zoom-in and zoom-out effect.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### Highlight
+
+```cangjie
+Highlight
+```
+
+**Function:** Background fade-in and fade-out emphasis effect.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### None
+
+```cangjie
+None
+```
+
+**Function:** No effect.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### operator func ==(HoverEffect)
+
+```cangjie
+public operator func ==(other: HoverEffect): Bool
+```
+
+**Function:** Determines whether two HoverEffect enums are equal.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+|Parameter|Type|Required|Default Value|Description|
+|:---|:---|:---|:---|:---|
+|other|[HoverEffect](#enum-hovereffect)|Yes|-|The other HoverEffect enum to compare.|
+
+**Return Value:**
+
+|Type|Description|
+|:----|:----|
+|Bool|Returns true if the two enums are equal, otherwise returns false.|
+
+### operator func !=(HoverEffect)
+
+```cangjie
+public operator func !=(other: HoverEffect): Bool
+```
+
+**Function:** Determines whether two HoverEffect enums are not equal.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+|Parameter|Type|Required|Default Value|Description|
+|:---|:---|:---|:---|:---|
+|other|[HoverEffect](#enum-hovereffect)|Yes|-|The other HoverEffect enum to compare.|
 
 **Return Value:**
 
@@ -19795,6 +20983,242 @@ public operator func !=(other: TextAreaType): Bool
 |Parameter|Type|Required|Default|Description|
 |:---|:---|:---|:---|:---|
 |other|[TextAreaType](#enum-textareatype)|Yes|-|Another TextAreaType enum to compare.|
+
+**Return Value:**
+
+|Type|Description|
+|:----|:----|
+|Bool|Returns true if the enums are not equal, otherwise false.|
+
+## enum EllipsisMode
+
+```cangjie
+public enum EllipsisMode <: Equatable<EllipsisMode> {
+    | Start
+    | Center
+    | End
+    | MultilineStart
+    | MultilineCenter
+    | ...
+}
+```
+
+**Function:** The position of the ellipsis.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+**Parent Type:**
+
+- Equatable\<[EllipsisMode](#enum-ellipsismode)>
+
+### Start
+
+```cangjie
+Start
+```
+
+**Function:** Ellipsizes the content at the beginning of the line. Applicable to single-line text scenarios.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### Center
+
+```cangjie
+Center
+```
+
+**Function:** Ellipsizes the content in the middle of the line. Applicable to single-line text scenarios.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### End
+
+```cangjie
+End
+```
+
+**Function:** Ellipsizes the content at the end of the line. Applicable to both single-line and multi-line text scenarios.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### MultilineStart
+
+```cangjie
+MultilineStart
+```
+
+**Function:** Ellipsizes the content at the beginning of the line. Applicable to both single-line and multi-line text scenarios.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### MultilineCenter
+
+```cangjie
+MultilineCenter
+```
+
+**Function:** Ellipsizes the content in the middle of the line. Applicable to both single-line and multi-line text scenarios.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### operator func ==(EllipsisMode)
+
+```cangjie
+public operator func ==(other: EllipsisMode): Bool
+```
+
+**Function:** Compares two EllipsisMode enums for equality.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+|Parameter|Type|Required|Default|Description|
+|:---|:---|:---|:---|:---|
+|other|[EllipsisMode](#enum-ellipsismode)|Yes|-|Another EllipsisMode enum to compare.|
+
+**Return Value:**
+
+|Type|Description|
+|:----|:----|
+|Bool|Returns true if the enums are equal, otherwise false.|
+
+### operator func !=(EllipsisMode)
+
+```cangjie
+public operator func !=(other: EllipsisMode): Bool
+```
+
+**Function:** Compares two EllipsisMode enums for inequality.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+|Parameter|Type|Required|Default|Description|
+|:---|:---|:---|:---|:---|
+|other|[EllipsisMode](#enum-ellipsismode)|Yes|-|Another EllipsisMode enum to compare.|
+
+**Return Value:**
+
+|Type|Description|
+|:----|:----|
+|Bool|Returns true if the enums are not equal, otherwise false.|
+
+## enum DynamicRangeMode
+
+```cangjie
+public enum DynamicRangeMode <: Equatable<DynamicRangeMode> {
+    | High
+    | Constraint
+    | Standard
+    | ...
+}
+```
+
+**Function:** Describes the dynamic range of the image that is expected to be displayed.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+**Parent Type:**
+
+- Equatable\<[DynamicRangeMode](#enum-dynamicrangemode)>
+
+### High
+
+```cangjie
+High
+```
+
+**Function:** Unrestricted dynamic range, which brightens the image to the maximum extent.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### Constraint
+
+```cangjie
+Constraint
+```
+
+**Function:** Constrained dynamic range, which brightens the image in a constrained manner.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### Standard
+
+```cangjie
+Standard
+```
+
+**Function:** Standard dynamic range, which does not brighten the image.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+### operator func ==(DynamicRangeMode)
+
+```cangjie
+public operator func ==(other: DynamicRangeMode): Bool
+```
+
+**Function:** Compares two DynamicRangeMode enums for equality.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+|Parameter|Type|Required|Default|Description|
+|:---|:---|:---|:---|:---|
+|other|[DynamicRangeMode](#enum-dynamicrangemode)|Yes|-|Another DynamicRangeMode enum to compare.|
+
+**Return Value:**
+
+|Type|Description|
+|:----|:----|
+|Bool|Returns true if the enums are equal, otherwise false.|
+
+### operator func !=(DynamicRangeMode)
+
+```cangjie
+public operator func !=(other: DynamicRangeMode): Bool
+```
+
+**Function:** Compares two DynamicRangeMode enums for inequality.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+|Parameter|Type|Required|Default|Description|
+|:---|:---|:---|:---|:---|
+|other|[DynamicRangeMode](#enum-dynamicrangemode)|Yes|-|Another DynamicRangeMode enum to compare.|
 
 **Return Value:**
 

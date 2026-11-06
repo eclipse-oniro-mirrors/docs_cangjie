@@ -25,8 +25,8 @@
     ```cangjie
     import kit.CameraKit.*
     import kit.PerformanceAnalysisKit.Hilog
-    import ohos.callback_invoke.Callback1Argument
-    import ohos.business_exception.BusinessException
+    import kit.CangjieKit.Callback1Argument
+    import kit.CangjieKit.BusinessException
     ```
 
 2. 通过[CameraManager](../../reference/CameraKit/cj-apis-multimedia-camera.md#class-cameramanager)类中的[isTorchSupported](../../reference/CameraKit/cj-apis-multimedia-camera.md#func-istorchsupported)方法，检测当前设备是否支持手电筒功能。

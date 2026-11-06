@@ -29,9 +29,9 @@
 ```cangjie
 // index.cj
 import ohos.arkui.state_macro_manage.*
-import ohos.web.webview.WebviewController
+import kit.ArkWeb.WebviewController
 import kit.ArkUI.{Web, Button}
-import ohos.business_exception.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 func loggerError(str: String) {
@@ -87,10 +87,9 @@ class EntryView {
     // index.cj
     import ohos.arkui.state_macro_manage.*
     import kit.LocalizationKit.*
-    import ohos.web.webview.WebviewController
-    import ohos.business_exception.*
+    import kit.ArkWeb.WebviewController
+    import kit.CangjieKit.*
     import kit.ArkUI.{Web, Button}
-    import ohos.resource.__GenerateResource__
     import kit.PerformanceAnalysisKit.Hilog
 
     func loggerError(str: String) {
@@ -180,7 +179,7 @@ class EntryView {
     ```cangjie
     // index.cj
     import ohos.arkui.state_macro_manage.*
-    import ohos.web.webview.WebviewController
+    import kit.ArkWeb.WebviewController
     import kit.ArkUI.Web
 
     @Entry
@@ -257,7 +256,7 @@ Web组件可以通过data url方式直接加载HTML字符串。
 ```cangjie
 // index.cj
 import ohos.arkui.state_macro_manage.*
-import ohos.web.webview.WebviewController
+import kit.ArkWeb.WebviewController
 import kit.ArkUI.Web
 
 @Entry

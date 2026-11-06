@@ -119,7 +119,7 @@ class EntryView {
                         case TouchType.Down => 'Down'
                         case TouchType.Up => 'Up'
                         case TouchType.Move => 'Move'
-                        case TouchType.Cancel => 'Move'
+                        case TouchType.Cancel => "Cancel"
                         case TouchType.Unknown => "Unknown"
                         case _ => ""
                     }
@@ -138,7 +138,7 @@ class EntryView {
                         case TouchType.Down => 'Down'
                         case TouchType.Up => 'Up'
                         case TouchType.Move => 'Move'
-                        case TouchType.Cancel => 'Move'
+                        case TouchType.Cancel => "Cancel"
                         case TouchType.Unknown => "Unknown"
                         case _ => ""
                     }

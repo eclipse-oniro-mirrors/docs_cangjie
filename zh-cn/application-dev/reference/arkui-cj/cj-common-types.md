@@ -775,6 +775,9 @@ public class Color <: ResourceColor {
     public static let Red: Color = Color(0xffff0000)
     public static let White: Color = Color(0xffffffff)
     public static let Transparent: Color = Color(0, 0, 0, alpha: 0.0)
+    public static let Grey: Color = Color(0xff808080)
+    public static let Orange: Color = Color(0xffffa500)
+    public static let Yellow: Color = Color(0xffffff00)
     public init(red: UInt8, green: UInt8, blue: UInt8, alpha!: ?Float32 = None)
     public init(value: UInt32)
 }
@@ -901,6 +904,54 @@ public static let Transparent: Color = Color(0, 0, 0, alpha: 0.0)
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **起始版本：** 22
+
+### static let Grey
+
+```cangjie
+public static let Grey: Color = Color(0xff808080)
+```
+
+**功能：** 灰色，与Gray等价。
+
+**类型：** [Color](#class-color)
+
+**读写能力：** 只读
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+### static let Orange
+
+```cangjie
+public static let Orange: Color = Color(0xffffa500)
+```
+
+**功能：** 橙色。
+
+**类型：** [Color](#class-color)
+
+**读写能力：** 只读
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+### static let Yellow
+
+```cangjie
+public static let Yellow: Color = Color(0xffffff00)
+```
+
+**功能：** 黄色。
+
+**类型：** [Color](#class-color)
+
+**读写能力：** 只读
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
 
 ### init(UInt8, UInt8, UInt8, ?Float32)
 
@@ -1833,6 +1884,622 @@ public func stopPropagation(): Unit
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **起始版本：** 22
+
+## class GestureType
+
+```cangjie
+sealed abstract class GestureType {}
+```
+
+**功能：** 定义手势类型。该类是所有手势类型的基类，具体的手势类型均继承自该类，可通过[gesture](./cj-universal-attribute-gesture.md)或[parallelGesture](./cj-universal-attribute-gesture.md#func-parallelgesturegesturetype)绑定到组件上。
+
+> **说明：**
+>
+> 当前版本的具体手势类型仅有[PanGesture](./cj-basic-gestures-pangesture.md)。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+## class GestureEvent
+
+```cangjie
+public class GestureEvent <: BaseEvent {
+    public var offsetX: Float64
+    public var offsetY: Float64
+    public var repeat: Bool
+    public var fingerList: Array<FingerInfo>
+    public var fingerInfos: ?Array<FingerInfo>
+    public var angle: Float64
+    public var speed: Float64
+    public var scale: Float64
+    public var pinchCenterX: Float64
+    public var pinchCenterY: Float64
+    public var velocityX: Float64
+    public var velocityY: Float64
+    public var velocity: Float64
+    public var tapLocation: ?EventLocationInfo
+}
+```
+
+**功能：** 定义手势事件信息。继承自[BaseEvent](#class-baseevent)。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+**父类型：**
+
+- [BaseEvent](#class-baseevent)
+
+### var offsetX
+
+```cangjie
+public var offsetX: Float64
+```
+
+**功能：** 手势事件相对于手指按下位置的x轴偏移量，单位为vp，用于PanGesture手势触发场景，从左向右滑动offsetX为正，反之为负。取值范围：(-∞, +∞)。
+
+**类型：** Float64
+
+**读写能力：** 可读写
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+### var offsetY
+
+```cangjie
+public var offsetY: Float64
+```
+
+**功能：** 手势事件相对于手指按下位置的y轴偏移量，单位为vp，用于PanGesture手势触发场景，从上向下滑动offsetY为正，反之为负。取值范围：(-∞, +∞)。
+
+**类型：** Float64
+
+**读写能力：** 可读写
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+### var repeat
+
+```cangjie
+public var repeat: Bool
+```
+
+**功能：** 是否为重复触发事件，用于LongPressGesture手势触发场景。true表示重复触发事件，false表示非重复触发事件。
+
+**类型：** Bool
+
+**读写能力：** 可读写
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+### var fingerList
+
+```cangjie
+public var fingerList: Array<FingerInfo>
+```
+
+**功能：** 手势事件的触点信息列表。输入源为触屏产生的手势，fingerList中会包含触发事件的所有触点信息；由鼠标发起的手势，fingerList中只会有一条记录；触摸板的事件大类与鼠标一致，所以由触摸板发起的手势，fingerList只会携带一条记录。
+
+> **说明：**
+> 1. 对于触屏产生的手势，手指索引编号与位置对应，即fingerList[index]的id为index。先按下且未参与当前手势触发的手指，在fingerList中对应位置为空。
+> 2. 当使用键盘或手柄触发手势时，不存在手指信息，fingerList为空。
+
+**类型：** Array\<[FingerInfo](#class-fingerinfo)>
+
+**读写能力：** 可读写
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+### var fingerInfos
+
+```cangjie
+public var fingerInfos: ?Array<FingerInfo>
+```
+
+**功能：** 手势事件的有效触点信息。输入源为触屏产生的手势，fingerInfos中会包含触发事件的所有触点信息；由鼠标发起的手势，fingerInfos中只会有一条记录；触摸板的事件大类与鼠标一致，所以由触摸板发起的手势，fingerInfos只会携带一条记录。
+
+> **说明：**
+> fingerInfos只会记录参与触摸的有效手指信息，先按下但未参与当前手势触发的手指在fingerInfos中不会显示。默认值为空数组[]，返回空数组时，表示当前无有效触点信息。
+
+**类型：** ?Array\<[FingerInfo](#class-fingerinfo)>
+
+**读写能力：** 可读写
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+### var angle
+
+```cangjie
+public var angle: Float64
+```
+
+**功能：** 用于RotationGesture手势触发场景时，表示旋转角度，单位为deg；用于SwipeGesture手势触发场景时，表示快滑手势的角度，即手指滑动的瞬时方向与水平正方向的夹角，单位为deg。
+
+> **说明：**
+> 旋转角度计算方式：RotationGesture手势被识别到后，连接两根手指之间的线被识别为起始线条，随着手指的滑动，手指之间的线条会发生旋转，根据起始线条两端点和当前线条两端点的坐标，使用反正切函数分别计算其相对于水平方向的夹角，最后arctan2(cy2-cy1,cx2-cx1)-arctan2(y2-y1,x2-x1)为旋转的角度。以起始线条为坐标系，顺时针旋转为0到180度，逆时针旋转为0到-180度。取值范围：[-180, 180]。
+
+**类型：** Float64
+
+**读写能力：** 可读写
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+### var speed
+
+```cangjie
+public var speed: Float64
+```
+
+**功能：** 快滑手势速度，即所有手指相对当前组件元素原始区域滑动的平均速度，单位为vp/s，用于SwipeGesture手势触发场景。取值范围：[0, +∞)。
+
+**类型：** Float64
+
+**读写能力：** 可读写
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+### var scale
+
+```cangjie
+public var scale: Float64
+```
+
+**功能：** 缩放比例，用于PinchGesture手势触发场景。取值范围：[0, +∞)。
+
+**类型：** Float64
+
+**读写能力：** 可读写
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+### var pinchCenterX
+
+```cangjie
+public var pinchCenterX: Float64
+```
+
+**功能：** 捏合手势中心点相对于当前组件元素原始区域左上角的x轴坐标，单位为vp，用于PinchGesture手势触发场景。取值范围：[0, +∞)。
+
+**类型：** Float64
+
+**读写能力：** 可读写
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+### var pinchCenterY
+
+```cangjie
+public var pinchCenterY: Float64
+```
+
+**功能：** 捏合手势中心点相对于当前组件元素原始区域左上角的y轴坐标，单位为vp，用于PinchGesture手势触发场景。取值范围：[0, +∞)。
+
+**类型：** Float64
+
+**读写能力：** 可读写
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+### var velocityX
+
+```cangjie
+public var velocityX: Float64
+```
+
+**功能：** 用于PanGesture手势中，获取当前手势的x轴方向速度。坐标轴原点为屏幕左上角，分正负方向速度，从左往右为正，反之为负。单位为vp/s。取值范围：(-∞, +∞)。
+
+**类型：** Float64
+
+**读写能力：** 可读写
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+### var velocityY
+
+```cangjie
+public var velocityY: Float64
+```
+
+**功能：** 用于PanGesture手势中，获取当前手势的y轴方向速度。坐标轴原点为屏幕左上角，分正负方向速度，从上往下为正，反之为负。单位为vp/s。取值范围：(-∞, +∞)。
+
+**类型：** Float64
+
+**读写能力：** 可读写
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+### var velocity
+
+```cangjie
+public var velocity: Float64
+```
+
+**功能：** 用于PanGesture手势中，获取当前手势的主方向速度。为xy轴方向速度的平方和的算术平方根。单位为vp/s。取值范围：[0, +∞)。
+
+**类型：** Float64
+
+**读写能力：** 可读写
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+### var tapLocation
+
+```cangjie
+public var tapLocation: ?EventLocationInfo
+```
+
+**功能：** 用于点击手势中，获取当前手势的坐标信息。在非点击手势中，tapLocation返回值为None。
+
+**类型：** ?[EventLocationInfo](#class-eventlocationinfo)
+
+**读写能力：** 可读写
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+## class FingerInfo
+
+```cangjie
+public class FingerInfo {
+    public var id: Int32
+    public var globalDisplayX: ?Float64
+    public var globalDisplayY: ?Float64
+    public var globalX: Float64
+    public var globalY: Float64
+    public var localX: Float64
+    public var localY: Float64
+    public var displayX: Float64
+    public var displayY: Float64
+    public var hand: ?InteractionHand
+}
+```
+
+**功能：** 定义手指信息类型。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+### var id
+
+```cangjie
+public var id: Int32
+```
+
+**功能：** 手指的索引编号，由按下手指的数量决定，按下一根手指为0，之后每按下1根手指索引编号加一。
+
+> **说明：**
+> 鼠标（索引编号为1001）、鼠标滚轮（索引编号为0）、触摸板双指滑动（索引编号为0）的索引编号也会被转化为手指的索引编号。取值范围：[0, 9)。
+
+**类型：** Int32
+
+**读写能力：** 可读写
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+### var globalDisplayX
+
+```cangjie
+public var globalDisplayX: ?Float64
+```
+
+**功能：** 相对于全局屏幕左上角的x轴坐标，单位为vp。未返回时（值为None），表示当前无全局屏幕x轴坐标信息。取值范围：[0, +∞)。
+
+**类型：** ?Float64
+
+**读写能力：** 可读写
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+### var globalDisplayY
+
+```cangjie
+public var globalDisplayY: ?Float64
+```
+
+**功能：** 相对于全局屏幕左上角的y轴坐标，单位为vp。未返回时（值为None），表示当前无全局屏幕y轴坐标信息。取值范围：[0, +∞)。
+
+**类型：** ?Float64
+
+**读写能力：** 可读写
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+### var globalX
+
+```cangjie
+public var globalX: Float64
+```
+
+**功能：** 相对于应用窗口左上角的x轴坐标，单位为vp。取值范围：[0, +∞)。
+
+**类型：** Float64
+
+**读写能力：** 可读写
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+### var globalY
+
+```cangjie
+public var globalY: Float64
+```
+
+**功能：** 相对于应用窗口左上角的y轴坐标，单位为vp。取值范围：[0, +∞)。
+
+**类型：** Float64
+
+**读写能力：** 可读写
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+### var localX
+
+```cangjie
+public var localX: Float64
+```
+
+**功能：** 相对于当前组件元素原始区域左上角的x轴坐标，单位为vp。取值范围：[0, +∞)。
+
+**类型：** Float64
+
+**读写能力：** 可读写
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+### var localY
+
+```cangjie
+public var localY: Float64
+```
+
+**功能：** 相对于当前组件元素原始区域左上角的y轴坐标，单位为vp。取值范围：[0, +∞)。
+
+**类型：** Float64
+
+**读写能力：** 可读写
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+### var displayX
+
+```cangjie
+public var displayX: Float64
+```
+
+**功能：** 相对于屏幕左上角的x轴坐标，单位为vp。取值范围：[0, +∞)。
+
+**类型：** Float64
+
+**读写能力：** 可读写
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+### var displayY
+
+```cangjie
+public var displayY: Float64
+```
+
+**功能：** 相对于屏幕左上角的y轴坐标，单位为vp。取值范围：[0, +∞)。
+
+**类型：** Float64
+
+**读写能力：** 可读写
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+### var hand
+
+```cangjie
+public var hand: ?InteractionHand
+```
+
+**功能：** 表示事件是由左手点击还是右手点击触发。未返回时（值为None），表示当前事件无左手或右手点击信息。
+
+**类型：** ?[InteractionHand](#enum-interactionhand)
+
+**读写能力：** 可读写
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+## class EventLocationInfo
+
+```cangjie
+public class EventLocationInfo {
+    public var x: Float64
+    public var y: Float64
+    public var windowX: Float64
+    public var windowY: Float64
+    public var displayX: Float64
+    public var displayY: Float64
+    public var globalDisplayX: ?Float64
+    public var globalDisplayY: ?Float64
+}
+```
+
+**功能：** 定义点击手势的坐标信息。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+### var x
+
+```cangjie
+public var x: Float64
+```
+
+**功能：** 相对于组件左上角的x轴坐标，单位为vp。取值范围：[0, +∞)。
+
+**类型：** Float64
+
+**读写能力：** 可读写
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+### var y
+
+```cangjie
+public var y: Float64
+```
+
+**功能：** 相对于组件左上角的y轴坐标，单位为vp。取值范围：[0, +∞)。
+
+**类型：** Float64
+
+**读写能力：** 可读写
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+### var windowX
+
+```cangjie
+public var windowX: Float64
+```
+
+**功能：** 相对于窗口左上角的x轴坐标，单位为vp。取值范围：[0, +∞)。
+
+**类型：** Float64
+
+**读写能力：** 可读写
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+### var windowY
+
+```cangjie
+public var windowY: Float64
+```
+
+**功能：** 相对于窗口左上角的y轴坐标，单位为vp。取值范围：[0, +∞)。
+
+**类型：** Float64
+
+**读写能力：** 可读写
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+### var displayX
+
+```cangjie
+public var displayX: Float64
+```
+
+**功能：** 相对于屏幕左上角的x轴坐标，单位为vp。取值范围：[0, +∞)。
+
+**类型：** Float64
+
+**读写能力：** 可读写
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+### var displayY
+
+```cangjie
+public var displayY: Float64
+```
+
+**功能：** 相对于屏幕左上角的y轴坐标，单位为vp。取值范围：[0, +∞)。
+
+**类型：** Float64
+
+**读写能力：** 可读写
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+### var globalDisplayX
+
+```cangjie
+public var globalDisplayX: ?Float64
+```
+
+**功能：** 以主屏幕左上角为坐标原点的x轴坐标，单位为vp。未返回时（值为None），表示当前无全局屏幕x轴坐标信息。取值范围：[0, +∞)。
+
+**类型：** ?Float64
+
+**读写能力：** 可读写
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+### var globalDisplayY
+
+```cangjie
+public var globalDisplayY: ?Float64
+```
+
+**功能：** 以主屏幕左上角为坐标原点的y轴坐标，单位为vp。未返回时（值为None），表示当前无全局屏幕y轴坐标信息。取值范围：[0, +∞)。
+
+**类型：** ?Float64
+
+**读写能力：** 可读写
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
 
 ## class EventTarget
 
@@ -5339,6 +6006,55 @@ public init(top!: ?Length = None, right!: ?Length = None, bottom!: ?Length = Non
 |right|?[Length](#interface-length)|否|None|**命名参数。** 右侧边框宽度。初始值为0.vp。|
 |bottom|?[Length](#interface-length)|否|None|**命名参数。** 下侧边框宽度。初始值为0.vp。|
 |left|?[Length](#interface-length)|否|None|**命名参数。** 左侧边框宽度。初始值为0.vp。|
+
+## class ResizableOptions
+
+```cangjie
+public class ResizableOptions {
+    public var slice: ?EdgeWidths
+    public init(slice!: ?EdgeWidths)
+}
+```
+
+**功能：** 图像拉伸时可调整大小的图像选项，用于定义图片中可拉伸区域与固定不变的区域。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+### var slice
+
+```cangjie
+public var slice: ?EdgeWidths
+```
+
+**功能：** 边框宽度类型，用于描述组件边框不同方向的宽度。<br>**说明：**<br>只有当bottom和right同时大于0时，该属性生效。<br>当设置了top时，图片顶部拉伸，图片的像素值保持不变。<br>当设置了right时，图片右部拉伸，图片的像素值保持不变。<br>当设置了bottom时，图片底部拉伸，图片的像素值保持不变。<br>当设置了left时，图片左部拉伸，图片的像素值保持不变。<br>每个方向的宽度默认值为0，传入数字时默认单位为vp。
+
+**类型：** ?[EdgeWidths](#class-edgewidths)
+
+**读写能力：** 可读写
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+### init(?EdgeWidths)
+
+```cangjie
+public init(slice!: ?EdgeWidths)
+```
+
+**功能：** 构造ResizableOptions对象。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|slice|?[EdgeWidths](#class-edgewidths)|是|-|**命名参数。** 边框宽度类型，用于描述组件边框不同方向的宽度。|
 
 ## class BindOptions
 
@@ -9176,6 +9892,111 @@ public operator func !=(other: GestureMode): Bool
 |:----|:----|
 |Bool|如果两个枚举不相等则返回true，否则返回false。|
 
+## enum InteractionHand
+
+```cangjie
+public enum InteractionHand <: Equatable<InteractionHand> {
+    | None
+    | Left
+    | Right
+    | ...
+}
+```
+
+**功能：** 输入事件的触发手别。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+**父类型：**
+
+- Equatable\<[InteractionHand](#enum-interactionhand)>
+
+### None
+
+```cangjie
+None
+```
+
+**功能：** 未指定。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+### Left
+
+```cangjie
+Left
+```
+
+**功能：** 左手交互。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+### Right
+
+```cangjie
+Right
+```
+
+**功能：** 右手交互。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+### operator func ==(InteractionHand)
+
+```cangjie
+public operator func ==(other: InteractionHand): Bool
+```
+
+**功能：** 判断两个InteractionHand枚举是否相等。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|other|[InteractionHand](#enum-interactionhand)|是|-|要比较的另一个InteractionHand枚举。|
+
+**返回值：**
+
+|类型|说明|
+|:----|:----|
+|Bool|如果两个枚举相等则返回true，否则返回false。|
+
+### operator func !=(InteractionHand)
+
+```cangjie
+public operator func !=(other: InteractionHand): Bool
+```
+
+**功能：** 判断两个InteractionHand枚举是否不相等。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|other|[InteractionHand](#enum-interactionhand)|是|-|要比较的另一个InteractionHand枚举。|
+
+**返回值：**
+
+|类型|说明|
+|:----|:----|
+|Bool|如果两个枚举不相等则返回true，否则返回false。|
+
 ## enum Axis
 
 ```cangjie
@@ -10586,6 +11407,268 @@ public operator func !=(other: Visibility): Bool
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |other|[Visibility](#enum-visibility)|是|-|要比较的另一个Visibility枚举。|
+
+**返回值：**
+
+|类型|说明|
+|:----|:----|
+|Bool|如果两个枚举不相等则返回true，否则返回false。|
+
+## enum HitTestMode
+
+```cangjie
+public enum HitTestMode <: Equatable<HitTestMode> {
+    | Default
+    | Block
+    | Transparent
+    | None
+    | BlockHierarchy
+    | BlockDescendants
+    | ...
+}
+```
+
+**功能：** 设置组件的触摸命中测试模式，控制触摸事件的命中与阻断策略。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+**父类型：**
+
+- Equatable\<[HitTestMode](#enum-hittestmode)>
+
+### Default
+
+```cangjie
+Default
+```
+
+**功能：** 默认触摸测试模式。自身及子节点响应触摸测试，会阻断兄弟节点的触摸测试，不影响祖先节点的触摸测试。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+### Block
+
+```cangjie
+Block
+```
+
+**功能：** 自身响应触摸测试，并阻断子节点、兄弟节点及祖先节点的触摸测试。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+### Transparent
+
+```cangjie
+Transparent
+```
+
+**功能：** 自身及子节点响应触摸测试，同时不阻断兄弟节点及祖先节点的触摸测试。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+### None
+
+```cangjie
+None
+```
+
+**功能：** 自身不响应触摸测试，同时不阻断子节点、兄弟节点及祖先节点的触摸测试。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+### BlockHierarchy
+
+```cangjie
+BlockHierarchy
+```
+
+**功能：** 自身及子节点响应触摸测试，阻断所有优先级较低的兄弟节点和父节点的触摸测试。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+### BlockDescendants
+
+```cangjie
+BlockDescendants
+```
+
+**功能：** 自身不响应触摸测试，所有后代（孩子、孙子等）也不响应触摸测试，不影响祖先节点的触摸测试。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+### operator func ==(HitTestMode)
+
+```cangjie
+public operator func ==(other: HitTestMode): Bool
+```
+
+**功能：** 判断两个HitTestMode枚举是否相等。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|other|[HitTestMode](#enum-hittestmode)|是|-|要比较的另一个HitTestMode枚举。|
+
+**返回值：**
+
+|类型|说明|
+|:----|:----|
+|Bool|如果两个枚举相等则返回true，否则返回false。|
+
+### operator func !=(HitTestMode)
+
+```cangjie
+public operator func !=(other: HitTestMode): Bool
+```
+
+**功能：** 判断两个HitTestMode枚举是否不相等。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|other|[HitTestMode](#enum-hittestmode)|是|-|要比较的另一个HitTestMode枚举。|
+
+**返回值：**
+
+|类型|说明|
+|:----|:----|
+|Bool|如果两个枚举不相等则返回true，否则返回false。|
+
+## enum HoverEffect
+
+```cangjie
+public enum HoverEffect <: Equatable<HoverEffect> {
+    | Auto
+    | Scale
+    | Highlight
+    | None
+    | ...
+}
+```
+
+**功能：** 设置组件的鼠标悬浮态显示效果。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+**父类型：**
+
+- Equatable\<[HoverEffect](#enum-hovereffect)>
+
+### Auto
+
+```cangjie
+Auto
+```
+
+**功能：** 使用组件的系统默认悬浮效果。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+### Scale
+
+```cangjie
+Scale
+```
+
+**功能：** 放大缩小效果。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+### Highlight
+
+```cangjie
+Highlight
+```
+
+**功能：** 背景淡入淡出的强调效果。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+### None
+
+```cangjie
+None
+```
+
+**功能：** 不设置效果。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+### operator func ==(HoverEffect)
+
+```cangjie
+public operator func ==(other: HoverEffect): Bool
+```
+
+**功能：** 判断两个HoverEffect枚举是否相等。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|other|[HoverEffect](#enum-hovereffect)|是|-|要比较的另一个HoverEffect枚举。|
+
+**返回值：**
+
+|类型|说明|
+|:----|:----|
+|Bool|如果两个枚举相等则返回true，否则返回false。|
+
+### operator func !=(HoverEffect)
+
+```cangjie
+public operator func !=(other: HoverEffect): Bool
+```
+
+**功能：** 判断两个HoverEffect枚举是否不相等。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|other|[HoverEffect](#enum-hovereffect)|是|-|要比较的另一个HoverEffect枚举。|
 
 **返回值：**
 
@@ -20785,6 +21868,242 @@ public operator func !=(other: TextAreaType): Bool
 |类型|说明|
 |:----|:----|
 |Bool|如果两个枚举不相等则返回true，否则返回false。|
+
+## enum EllipsisMode
+
+```cangjie
+public enum EllipsisMode <: Equatable<EllipsisMode> {
+    | Start
+    | Center
+    | End
+    | MultilineStart
+    | MultilineCenter
+    | ...
+}
+```
+
+**功能：** 省略的位置。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+**父类型：**
+
+- Equatable\<[EllipsisMode](#enum-ellipsismode)>
+
+### Start
+
+```cangjie
+Start
+```
+
+**功能：** 省略行首内容。适用单行文本场景。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+### Center
+
+```cangjie
+Center
+```
+
+**功能：** 省略行中内容。适用单行文本场景。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+### End
+
+```cangjie
+End
+```
+
+**功能：** 省略行末内容。适用单行文本和多行文本场景。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+### MultilineStart
+
+```cangjie
+MultilineStart
+```
+
+**功能：** 省略行首内容。适用单行文本和多行文本场景。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+### MultilineCenter
+
+```cangjie
+MultilineCenter
+```
+
+**功能：** 省略行中内容。适用单行文本和多行文本场景。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+### operator func ==(EllipsisMode)
+
+```cangjie
+public operator func ==(other: EllipsisMode): Bool
+```
+
+**功能：** 比较两个 EllipsisMode 是否相等。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| :--- | :--- | :--- | :--- |
+| other | [EllipsisMode](#enum-ellipsismode) | 是 | 用于比较的 EllipsisMode。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| :--- | :--- |
+| Bool | 两个 EllipsisMode 相等返回 true，否则返回 false。 |
+
+### operator func !=(EllipsisMode)
+
+```cangjie
+public operator func !=(other: EllipsisMode): Bool
+```
+
+**功能：** 比较两个 EllipsisMode 是否不相等。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| :--- | :--- | :--- | :--- |
+| other | [EllipsisMode](#enum-ellipsismode) | 是 | 用于比较的 EllipsisMode。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| :--- | :--- |
+| Bool | 两个 EllipsisMode 不相等返回 true，否则返回 false。 |
+
+## enum DynamicRangeMode
+
+```cangjie
+public enum DynamicRangeMode <: Equatable<DynamicRangeMode> {
+    | High
+    | Constraint
+    | Standard
+    | ...
+}
+```
+
+**功能：** 描述期望展示的图像动态范围。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+**父类型：**
+
+- Equatable\<[DynamicRangeMode](#enum-dynamicrangemode)>
+
+### High
+
+```cangjie
+High
+```
+
+**功能：** 不受限动态范围，最大限度进行图片提亮。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+### Constraint
+
+```cangjie
+Constraint
+```
+
+**功能：** 受限动态范围，受限进行图片提亮。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+### Standard
+
+```cangjie
+Standard
+```
+
+**功能：** 标准动态范围，不进行图片提亮。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+### operator func ==(DynamicRangeMode)
+
+```cangjie
+public operator func ==(other: DynamicRangeMode): Bool
+```
+
+**功能：** 比较两个 DynamicRangeMode 是否相等。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| :--- | :--- | :--- | :--- |
+| other | [DynamicRangeMode](#enum-dynamicrangemode) | 是 | 用于比较的 DynamicRangeMode。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| :--- | :--- |
+| Bool | 两个 DynamicRangeMode 相等返回 true，否则返回 false。 |
+
+### operator func !=(DynamicRangeMode)
+
+```cangjie
+public operator func !=(other: DynamicRangeMode): Bool
+```
+
+**功能：** 比较两个 DynamicRangeMode 是否不相等。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| :--- | :--- | :--- | :--- |
+| other | [DynamicRangeMode](#enum-dynamicrangemode) | 是 | 用于比较的 DynamicRangeMode。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| :--- | :--- |
+| Bool | 两个 DynamicRangeMode 不相等返回 true，否则返回 false。 |
 
 ## type VoidCallback
 

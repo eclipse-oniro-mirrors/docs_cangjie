@@ -38,7 +38,6 @@ public enum ValueType {
     | ArrayBool(Array<Bool>)
     | ArrayFloat64(Array<Float64>)
     | ArrayFd(Array<Int32>)
-    | ...
 }
 ```
 

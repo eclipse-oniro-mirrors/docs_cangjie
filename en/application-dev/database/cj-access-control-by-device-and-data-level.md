@@ -107,8 +107,8 @@ For specific interfaces and functions, refer to [Distributed Key-Value Database]
     ```cangjie
     // xxx.cj
     import kit.ArkData.{DistributedKVStore, KVManagerConfig}
-    import ohos.business_exception.BusinessException
-    import ohos.data.distributed_kv_store.*
+    import kit.CangjieKit.BusinessException
+    import kit.ArkData.*
     ```
 
     The core code for create a key-value database is:
@@ -184,8 +184,8 @@ For specific interfaces and functions, refer to [Relational Database](../referen
     ```cangjie
     // xxx.cj
     import kit.ArkData.{StoreConfig, getRdbStore}
-    import ohos.business_exception.BusinessException
-    import ohos.data.relational_store.*
+    import kit.CangjieKit.BusinessException
+    import kit.ArkData.*
     ```
 
     The core code for create a relational database is:

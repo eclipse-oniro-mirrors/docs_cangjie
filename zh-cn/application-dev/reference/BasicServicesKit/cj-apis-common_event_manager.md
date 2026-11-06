@@ -76,9 +76,9 @@ public static func createSubscriber(subscribeInfo: CommonEventSubscribeInfo): Co
 
 import kit.BasicServicesKit.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.*
+import kit.CangjieKit.*
 
-let subscriber: CommonEventSubscriber //用于保存创建成功的订阅者对象，后续使用其完成订阅及退订的动作
+var subscriber: CommonEventSubscriber //用于保存创建成功的订阅者对象，后续使用其完成订阅及退订的动作
 let support = Support.COMMON_EVENT_ABILITY_ADDED
 //订阅者信息
 let subscribeInfo: CommonEventSubscribeInfo = CommonEventSubscribeInfo([support])
@@ -129,8 +129,8 @@ public static func publish(event: String, options!: CommonEventPublishData =  Co
 
 import kit.BasicServicesKit.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.base.*
-import ohos.business_exception.*
+import kit.ArkUI.*
+import kit.CangjieKit.*
 
 try {
     // 公共事件属性
@@ -183,8 +183,8 @@ public static func subscribe(subscriber: CommonEventSubscriber, callback: AsyncC
 // index.cj
 
 import kit.BasicServicesKit.*
-import ohos.base.*
-import ohos.business_exception.*
+import kit.ArkUI.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 // 订阅事件：亮屏
@@ -238,8 +238,8 @@ public static func unsubscribe(subscriber: CommonEventSubscriber): Unit
 // index.cj
 
 import kit.BasicServicesKit.*
-import ohos.base.*
-import ohos.business_exception.*
+import kit.ArkUI.*
+import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 // 订阅事件：亮屏

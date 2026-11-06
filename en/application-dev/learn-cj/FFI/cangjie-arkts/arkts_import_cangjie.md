@@ -29,7 +29,7 @@ Below is an example of loading the Cangjie module `ohos_app_cangjie_entry` using
         package ohos_app_cangjie_entry
 
         // Import the interoperability library
-        import ohos.ark_interop.*
+        import kit.CangjieKit.*
 
         // Define the interoperability function. The parameter type must be (JSContext, JSCallInfo), and the return type must be JSValue
         func addNumber(context: JSContext, callInfo: JSCallInfo): JSValue {
@@ -111,7 +111,7 @@ Below is an example of loading the Cangjie module `ohos_app_cangjie_entry` using
 
 Below is an example of loading the Cangjie third-party library `libapplication.so` by using `import` syntax and calling the `addNumber` interface:
 
-> **Note：**
+> **Note:**
 >
 > Assuming that the Cangjie third-party library `libapplication.so` has already implemented the `addNumber` interface for ArkTS to call.
 
@@ -170,7 +170,7 @@ Below is an example of loading the Cangjie third-party library `libapplication.s
 
 2. Implementation of the interoperability interface on the Cangjie side:
 
-    - Implement the interoperability interface `addNumber`：
+    - Implement the interoperability interface `addNumber`:
 
         <!--compile-->
         ```cangjie
@@ -180,10 +180,10 @@ Below is an example of loading the Cangjie third-party library `libapplication.s
         package ohos_app_cangjie_cangjielib
 
         // Import the interoperability library
-        internal import ohos.ark_interop.JSModule
-        internal import ohos.ark_interop.JSContext
-        internal import ohos.ark_interop.JSCallInfo
-        internal import ohos.ark_interop.JSValue
+        internal import kit.CangjieKit.JSModule
+        internal import kit.CangjieKit.JSContext
+        internal import kit.CangjieKit.JSCallInfo
+        internal import kit.CangjieKit.JSValue
 
         // Define the interoperability function. The parameter type must be (JSContext, JSCallInfo), and the return type must be JSValue
         func addNumber(context: JSContext, callInfo: JSCallInfo): JSValue {
@@ -219,7 +219,7 @@ Below is an example of loading the Cangjie third-party library `libapplication.s
 
     - Associate `Index.d.ts` with the corresponding `.so` library of the Cangjie module in the `oh-package.json5` file under the `cangjielib->src->main->cangjie->types->libohos_app_cangjie_cangjielib` folder:
 
-        > **Note：**
+        > **Note:**
         >
         > The following code does not need to be copied; it is already configured in the project after creating the Cangjie module.
 
@@ -260,7 +260,7 @@ Below is an example of loading the Cangjie third-party library `libapplication.s
 
 ### Loading the local HAR package by using `import` syntax and calling its interface
 
-> **Note：**
+> **Note:**
 >
 > Assuming that there is a local HAR package `cangjielib.har` that contains `libohos_app_cangjie_cangjielib.so`, in which the `addNumber` interface has already been implemented and is available for ArkTS to call.
 
@@ -316,7 +316,7 @@ Below is an example of loading the Cangjie third-party library `libapplication.s
 
 ### Use `import` syntax to load third-party library A, and third-party library A depends on third-party library B.
 
-> **Note：**
+> **Note:**
 >
 > Assuming that ArkTS needs to load the `returnA` interface from third-party library A, and the `returnA` interface in third-party library A depends on the `returnB` interface from third-party library B.
 
@@ -332,10 +332,10 @@ Below is an example of loading the Cangjie third-party library `libapplication.s
         // package_a/a.cj
         package package_a
         // Import interoperability library
-        import ohos.ark_interop.JSModule
-        import ohos.ark_interop.JSContext
-        import ohos.ark_interop.JSCallInfo
-        import ohos.ark_interop.JSValue
+        import kit.CangjieKit.JSModule
+        import kit.CangjieKit.JSContext
+        import kit.CangjieKit.JSCallInfo
+        import kit.CangjieKit.JSValue
         // Import third-party library B
         import package_b.returnB
 
@@ -441,10 +441,10 @@ Below is an example of loading the Cangjie third-party library `libapplication.s
         // package_a/a.cj
         package package_a
         // Import interoperability library
-        import ohos.ark_interop.JSModule
-        import ohos.ark_interop.JSContext
-        import ohos.ark_interop.JSCallInfo
-        import ohos.ark_interop.JSValue
+        import kit.CangjieKit.JSModule
+        import kit.CangjieKit.JSContext
+        import kit.CangjieKit.JSCallInfo
+        import kit.CangjieKit.JSValue
         // Import subpackage B
         import package_a.package_b.returnB
 
@@ -571,10 +571,10 @@ Below is an example of loading the Cangjie third-party library `libapplication.s
 
         package package_a
         // Import interoperability library
-        import ohos.ark_interop.JSModule
-        import ohos.ark_interop.JSContext
-        import ohos.ark_interop.JSCallInfo
-        import ohos.ark_interop.JSValue
+        import kit.CangjieKit.JSModule
+        import kit.CangjieKit.JSContext
+        import kit.CangjieKit.JSCallInfo
+        import kit.CangjieKit.JSValue
         // Import third-party library B
         import ohos_app_cangjie_package_b.returnB
 
@@ -675,7 +675,7 @@ Below is an example of loading the Cangjie module `ohos_app_cangjie_entry` using
         package ohos_app_cangjie_entry
 
         // Import the interoperability library
-        import ohos.ark_interop.*
+        import kit.CangjieKit.*
 
         // Define the interoperability function. The parameter type must be (JSContext, JSCallInfo), and the return type must be JSValue
         func addNumber(context: JSContext, callInfo: JSCallInfo): JSValue {

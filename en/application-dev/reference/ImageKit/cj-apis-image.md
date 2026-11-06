@@ -50,7 +50,7 @@ public func createImagePacker(): ImagePacker
 // index.cj
 
 import kit.ImageKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -103,7 +103,7 @@ public func createImageReceiver(size: Size, format: ImageFormat, capacity: Int32
 // index.cj
 
 import kit.ImageKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -146,7 +146,7 @@ public func createImageSource(uri: String): ImageSource
 // index.cj
 
 import kit.ImageKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -190,7 +190,7 @@ public func createImageSource(uri: String, options: SourceOptions): ImageSource
 // index.cj
 
 import kit.ImageKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -233,7 +233,7 @@ public func createImageSource(fd: Int32): ImageSource
 // index.cj
 
 import kit.ImageKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -276,7 +276,7 @@ public func createImageSource(fd: Int32, options: SourceOptions): ImageSource
 // index.cj
 
 import kit.ImageKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -319,7 +319,7 @@ public func createImageSource(buf: Array<UInt8>): ImageSource
 // index.cj
 
 import kit.ImageKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -363,7 +363,7 @@ public func createImageSource(buf: Array<UInt8>, options: SourceOptions): ImageS
 // index.cj
 
 import kit.ImageKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -409,8 +409,8 @@ public func createImageSource(rawfile: RawFileDescriptor, options!: SourceOption
 
 import kit.ImageKit.*
 import kit.PerformanceAnalysisKit.*
-import ohos.business_exception.BusinessException
-import ohos.resource_manager.ResourceManager
+import kit.CangjieKit.BusinessException
+import kit.LocalizationKit.ResourceManager
 
 let resourceManager = Global.getResourceManager() // Requires obtaining the Context application context. See Usage Instructions above.
 try {
@@ -460,7 +460,7 @@ public func createPixelMap(colors: Array<UInt8>, options: InitializationOptions)
 // index.cj
 
 import kit.ImageKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -569,8 +569,8 @@ public class DecodingOptions {
     public var desiredDynamicRange: DecodingDynamicRange
     public init(sampleSize!: UInt32 = 1, rotate!: UInt32 = 0, editable!: Bool = false,
         desiredSize!: Size = Size(0, 0), desiredRegion!: Region = Region(Size(0, 0), 0, 0),
-        desiredPixelFormat!: PixelMapFormat = Unknown, index!: UInt32 = 0, fitDensity!: Int32 = 0,
-        desiredColorSpace!: ?ColorSpaceManager = None, desiredDynamicRange!: DecodingDynamicRange = Sdr)
+        desiredPixelFormat!: PixelMapFormat = PixelMapFormat.Unknown, index!: UInt32 = 0, fitDensity!: Int32 = 0,
+        desiredColorSpace!: ?ColorSpaceManager = None, desiredDynamicRange!: DecodingDynamicRange = DecodingDynamicRange.Sdr)
 }
 ```
 
@@ -747,8 +747,8 @@ public var sampleSize: UInt32
 ```cangjie
 public init(sampleSize!: UInt32 = 1, rotate!: UInt32 = 0, editable!: Bool = false,
     desiredSize!: Size = Size(0, 0), desiredRegion!: Region = Region(Size(0, 0), 0, 0),
-    desiredPixelFormat!: PixelMapFormat = Unknown, index!: UInt32 = 0, fitDensity!: Int32 = 0,
-    desiredColorSpace!: ?ColorSpaceManager = None, desiredDynamicRange!: DecodingDynamicRange = Sdr)
+    desiredPixelFormat!: PixelMapFormat = PixelMapFormat.Unknown, index!: UInt32 = 0, fitDensity!: Int32 = 0,
+    desiredColorSpace!: ?ColorSpaceManager = None, desiredDynamicRange!: DecodingDynamicRange = DecodingDynamicRange.Sdr)
 ```
 
 **Function:** Creates a DecodingOptions object.
@@ -864,7 +864,7 @@ public func getComponent(componentType: ComponentType): Component
 // index.cj
 
 import kit.ImageKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -897,7 +897,7 @@ public func release(): Unit
 // index.cj
 
 import kit.ImageKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1117,7 +1117,7 @@ public func packToData(source: ImageSource, options: PackingOption): Array<UInt8
 // index.cj
 
 import kit.ImageKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1181,7 +1181,7 @@ public func packToData(source: PixelMap, options: PackingOption): Array<UInt8>
 // index.cj
 
 import kit.ImageKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1243,7 +1243,7 @@ public func packToFile(source: ImageSource, fd: Int32, options: PackingOption): 
 
 import kit.ImageKit.*
 import kit.CoreFileKit.{FileIo, OpenMode}
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1306,7 +1306,7 @@ public func packToFile(source: PixelMap, fd: Int32, options: PackingOption): Uni
 
 import kit.ImageKit.*
 import kit.CoreFileKit.{FileIo, OpenMode}
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1347,7 +1347,7 @@ public func release(): Unit
 // index.cj
 
 import kit.ImageKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1511,7 +1511,7 @@ public func getReceivingSurfaceId(): String
 // index.cj
 
 import kit.ImageKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1543,7 +1543,7 @@ public func release(): Unit
 // index.cj
 
 import kit.ImageKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1689,7 +1689,7 @@ public func createPixelMap(options!: DecodingOptions = DecodingOptions()): Pixel
 // index.cj
 
 import kit.ImageKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1765,7 +1765,7 @@ public func createPixelMapList(options!: DecodingOptions = DecodingOptions()): A
 // index.cj
 
 import kit.ImageKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1828,7 +1828,7 @@ public func getDelayTimeList(): Array<Int32>
 // index.cj
 
 import kit.ImageKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1884,7 +1884,7 @@ public func getFrameCount(): UInt32
 // index.cj
 
 import kit.ImageKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1930,7 +1930,7 @@ public func getImageInfo(index!: UInt32 = 0): ImageInfo
 // index.cj
 
 import kit.ImageKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -1995,7 +1995,7 @@ public func getImageProperty(key: PropertyKey, options!: ImagePropertyOptions = 
 // index.cj
 
 import kit.ImageKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2050,7 +2050,7 @@ public func modifyImageProperty(key: PropertyKey, value: String): Unit
 // index.cj
 
 import kit.ImageKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2083,7 +2083,7 @@ public func release(): Unit
 // index.cj
 
 import kit.ImageKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2126,7 +2126,7 @@ public func updateData(buf: Array<UInt8>, isFinished: Bool, offset: UInt32, leng
 // index.cj
 
 import kit.ImageKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2299,7 +2299,7 @@ public class PackingOption {
     public var desiredDynamicRange: PackingDynamicRange
     public var needsPackProperties: Bool
     public init(format: String, quality: UInt8, bufferSize!: UInt64 = 25  * 1024  * 1024,
-        desiredDynamicRange!: PackingDynamicRange = Sdr, needsPackProperties!: Bool = false)
+        desiredDynamicRange!: PackingDynamicRange = PackingDynamicRange.Sdr, needsPackProperties!: Bool = false)
 }
 ```
 
@@ -2393,7 +2393,7 @@ public var quality: UInt8
 
 ```cangjie
 public init(format: String, quality: UInt8, bufferSize!: UInt64 = 0,
-    desiredDynamicRange!: PackingDynamicRange = Sdr, needsPackProperties!: Bool = false)
+    desiredDynamicRange!: PackingDynamicRange = PackingDynamicRange.Sdr, needsPackProperties!: Bool = false)
 ```
 
 **Function:** Creates a PackingOption object.
@@ -2498,7 +2498,7 @@ public func applyColorSpace(targetColorSpace: ColorSpaceManager): Unit
 
 import kit.ImageKit.*
 import kit.ArkGraphics2D.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2540,7 +2540,7 @@ public func createAlphaPixelmap(): PixelMap
 // index.cj
 
 import kit.ImageKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2581,7 +2581,7 @@ public func crop(region: Region): Unit
 // index.cj
 
 import kit.ImageKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2624,7 +2624,7 @@ public func flip(horizontal: Bool, vertical: Bool): Unit
 // index.cj
 
 import kit.ImageKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2667,7 +2667,7 @@ public func getBytesNumberPerRow(): UInt32
 // index.cj
 
 import kit.ImageKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2719,7 +2719,7 @@ public func getColorSpace(): ColorSpaceManager
 
 import kit.ImageKit.*
 import kit.ArkGraphics2D.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2758,7 +2758,7 @@ public func getDensity(): Int32
 // index.cj
 
 import kit.ImageKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2799,7 +2799,7 @@ public func getImageInfo(): ImageInfo
 // index.cj
 
 import kit.ImageKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2840,7 +2840,7 @@ public func getPixelBytesNumber(): UInt32
 // index.cj
 
 import kit.ImageKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2881,7 +2881,7 @@ public func opacity(rate: Float32): Unit
 // index.cj
 
 import kit.ImageKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2923,7 +2923,7 @@ public func readPixels(area: PositionArea): Unit
 // index.cj
 
 import kit.ImageKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -2970,7 +2970,7 @@ public func readPixelsToBuffer(dst: Array<UInt8>): Unit
 // index.cj
 
 import kit.ImageKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -3006,7 +3006,7 @@ public func release(): Unit
 // index.cj
 
 import kit.ImageKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -3047,7 +3047,7 @@ public func rotate(angle: Float32): Unit
 // index.cj
 
 import kit.ImageKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -3090,7 +3090,7 @@ public func scale(x: Float32, y: Float32): Unit
 // index.cj
 
 import kit.ImageKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -3141,7 +3141,7 @@ public func setColorSpace(colorSpace: ColorSpaceManager): Unit
 
 import kit.ImageKit.*
 import kit.ArkGraphics2D.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -3184,7 +3184,7 @@ public func translate(x: Float32, y: Float32): Unit
 // index.cj
 
 import kit.ImageKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -3227,7 +3227,7 @@ public func writeBufferToPixels(src: Array<UInt8>): Unit
 // index.cj
 
 import kit.ImageKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {
@@ -3269,7 +3269,7 @@ public func writePixels(area: PositionArea): Unit
 // index.cj
 
 import kit.ImageKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {

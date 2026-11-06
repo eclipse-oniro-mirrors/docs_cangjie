@@ -61,7 +61,7 @@ Can be used in conjunction with [ErrorManager](./cj-apis-app-ability-error_manag
 // index.cj
 
 import kit.AbilityKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
 try {

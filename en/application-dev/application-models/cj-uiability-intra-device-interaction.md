@@ -30,7 +30,7 @@ Assume the application has two Abilities: EntryAbility and FuncAbility (which ca
 
     ```cangjie
     import kit.ArkUI.Button
-    import ohos.business_exception.*
+    import kit.CangjieKit.*
     import kit.AbilityKit.{Want, UIAbilityContext, WantValueType}
     import std.collection.HashMap
 
@@ -101,7 +101,7 @@ Assume the application has two Abilities: EntryAbility and FuncAbility (which ca
     <!-- compile -->
 
     ```cangjie
-    import ohos.business_exception.*
+    import kit.CangjieKit.*
     import kit.AbilityKit.UIAbilityContext
 
     var globalFuncAbilityAContext: ?UIAbilityContext = None
@@ -157,7 +157,7 @@ When a caller [UIAbility](../reference/AbilityKit/cj-apis-app-ability-ui_ability
 
 ```cangjie
 import kit.ArkUI.Button
-import ohos.business_exception.*
+import kit.CangjieKit.*
 import kit.AbilityKit.{Want, UIAbilityContext, AbilityResult, WantValueType}
 import std.collection.HashMap
 

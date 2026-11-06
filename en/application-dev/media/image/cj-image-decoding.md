@@ -49,7 +49,7 @@ For detailed API documentation on image decoding, refer to: [Image Decoding API 
         ```cangjie
         // Import the resourceManager.
         import kit.LocalizationKit.*
-        import ohos.hilog.Hilog
+        import kit.PerformanceAnalysisKit.Hilog
 
         var abilityContext = Global.abilityContext
         // Get the resourceManager.
@@ -137,7 +137,7 @@ For detailed API documentation on image decoding, refer to: [Image Decoding API 
         ```cangjie
         import kit.ImageKit.*
         import kit.AbilityKit.*
-        import ohos.resource_manager.AppResource
+        import kit.LocalizationKit.AppResource
 
         var abilityContext = Global.abilityContext
         // Get the resourceManager.
@@ -158,7 +158,7 @@ For detailed API documentation on image decoding, refer to: [Image Decoding API 
         ```cangjie
         import kit.ImageKit.*
         import kit.AbilityKit.*
-        import ohos.resource_manager.AppResource
+        import kit.LocalizationKit.AppResource
 
         var abilityContext = Global.abilityContext
         // Get the resourceManager.

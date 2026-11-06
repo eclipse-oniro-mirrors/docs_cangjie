@@ -71,9 +71,9 @@ The `name` and `taskId` parameters in [finishTrace](#static-func-finishtracestri
 ```cangjie
 // index.cj
 
-import ohos.base.*
+import kit.ArkUI.*
 import kit.PerformanceAnalysisKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 try {
     func f1(){
@@ -140,9 +140,9 @@ If tasks with the same `name` are executed serially, the `taskId` can be the sam
 ```cangjie
 // index.cj
 
-import ohos.base.*
+import kit.ArkUI.*
 import kit.PerformanceAnalysisKit.*
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 try {
     HiTraceMeter.startTrace("myTestFunc", 1)

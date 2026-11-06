@@ -46,7 +46,7 @@
 ```cangjie
 import kit.CryptoArchitectureKit.*
 import kit.PerformanceAnalysisKit.Hilog
-import ohos.business_exception.BusinessException
+import kit.CangjieKit.BusinessException
 
 func generateRandom(len: Int32) {
     let rand = createRandom()

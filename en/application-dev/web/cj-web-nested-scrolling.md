@@ -24,7 +24,7 @@ When a web component is nested within multiple scrollable container components, 
 ```cangjie
 // index.cj
 import ohos.arkui.state_macro_manage.*
-import ohos.web.webview.WebviewController
+import kit.ArkWeb.WebviewController
 import kit.ArkUI.*
 
 @Entry

@@ -27,8 +27,8 @@ After completing session configuration, the application can submit and start the
 
     ```cangjie
     import kit.CameraKit.*
-    import ohos.business_exception.BusinessException
-    import ohos.hilog.Hilog
+    import kit.CangjieKit.BusinessException
+    import kit.PerformanceAnalysisKit.Hilog
 
     ```
 
