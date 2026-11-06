@@ -280,6 +280,106 @@ try {
 }
 ```
 
+## func createAsyKeyGenerator(String)
+
+```cangjie
+public func createAsyKeyGenerator(algName: String): AsyKeyGenerator
+```
+
+**功能：** 用于生成非对称密钥生成器实例。
+
+**系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|algName|String|是|-|指定非对称密钥算法。格式：`算法名+\|+密钥生成规格`，例如 "RSA2048"、"EC224"、"X25519"。|
+
+**返回值：**
+
+| 类型 | 说明 |
+| -------- | -------- |
+| [AsyKeyGenerator](#class-asykeygenerator) | 返回非对称密钥生成器实例。 |
+
+**异常：**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，请参见[通用错误码](../cj-errorcode-universal.md)和[crypto framework错误码](./cj-errorcode-crypto.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 801 | this operation is not supported. |
+  | 17620001 | Memory operation failed. |
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+import kit.CryptoArchitectureKit.*
+import kit.CangjieKit.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
+
+try {
+    let asyKeyGenerator = createAsyKeyGenerator("RSA2048")
+    Hilog.info(0, "", "createAsyKeyGenerator success.")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
+## func createVerify(String)
+
+```cangjie
+public func createVerify(algName: String): Verify
+```
+
+**功能：** 用于生成签名验签实例。
+
+**系统能力：** SystemCapability.Security.CryptoFramework.Signature
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|algName|String|是|-|指定签名验签算法。格式：`算法名+\|+签名验签规格`，例如 "RSA2048\|PKCS1\|SHA256"、"ECC224\|SHA256"。|
+
+**返回值：**
+
+| 类型 | 说明 |
+| -------- | -------- |
+| [Verify](#class-verify) | 返回签名验签实例。 |
+
+**异常：**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，请参见[通用错误码](../cj-errorcode-universal.md)和[crypto framework错误码](./cj-errorcode-crypto.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 801 | this operation is not supported. |
+  | 17620001 | Memory operation failed. |
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+import kit.CryptoArchitectureKit.*
+import kit.CangjieKit.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
+
+try {
+    let verify = createVerify("RSA2048|PKCS1|SHA256")
+    Hilog.info(0, "", "verify algName: ${verify.algName}")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
 ## interface Key
 
 ```cangjie
@@ -519,7 +619,9 @@ try {
 public func doFinal(data: ?DataBlob): DataBlob
 ```
 
-**功能：** （1）在对称加解密中，doFinal加/解密（分组模式产生的）剩余数据和本次传入的数据，最后结束加密或者解密数据操作，获取加密或者解密数据。
+**功能：** 用于结束加解密操作，返回加密或解密的数据。
+
+（1）在对称加解密中，doFinal加/解密（分组模式产生的）剩余数据和本次传入的数据，最后结束加密或者解密数据操作，获取加密或者解密数据。
 
 如果数据量较小，可以在doFinal中一次性传入数据，而不使用update；如果在本次加解密流程中，已经使用update传入过数据，可以在doFinal的data参数处传入None。
 
@@ -838,6 +940,9 @@ public func getMacLength(): UInt32
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
+  | 801 | this operation is not supported. |
+  | 17620001 | Memory operation failed. |
+  | 17620002 | failed to convert parameters between cj and c. |
   | 17630001 | Crypto operation error. |
 
 **示例：**
@@ -1016,6 +1121,9 @@ public func getMdLength(): UInt32
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
+  | 801 | this operation is not supported. |
+  | 17620001 | Memory operation failed. |
+  | 17620002 | failed to convert parameters between cj and c. |
   | 17630001 | Crypto operation error. |
 
 **示例：**
@@ -1484,6 +1592,1369 @@ try {
     let symAlgName = "AES128"
     let symKeyGenerator = createSymKeyGenerator(symAlgName)
     let symKey = symKeyGenerator.generateSymKey()
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
+## class AsyKeyGenerator
+
+```cangjie
+public class AsyKeyGenerator {}
+```
+
+**功能：** 非对称密钥生成器，提供生成非对称密钥对、转换非对称密钥的能力。
+
+**系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**起始版本：** 26.1.0
+
+### prop algName
+
+```cangjie
+public prop algName: String
+```
+
+**功能：** 获取非对称密钥生成器的算法名。
+
+**系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**起始版本：** 26.1.0
+
+### func generateKeyPair(AsyncCallback<KeyPair>)
+
+```cangjie
+public func generateKeyPair(callback: AsyncCallback<KeyPair>): Unit
+```
+
+**功能：** 异步生成非对称密钥对，通过回调返回结果。
+
+**系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|callback|AsyncCallback&lt;[KeyPair](#class-keypair)&gt;|是|-|回调函数，接收生成结果或错误。|
+
+**异常：**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，请参见[通用错误码](../cj-errorcode-universal.md)和[crypto framework错误码](./cj-errorcode-crypto.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 17620001 | Memory operation failed. |
+  | 17630001 | Crypto operation error. |
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+import kit.CryptoArchitectureKit.*
+import kit.CangjieKit.BusinessException
+import kit.CangjieKit.AsyncCallback
+import kit.PerformanceAnalysisKit.Hilog
+
+let asyKeyGenerator = createAsyKeyGenerator("RSA2048")
+try {
+    asyKeyGenerator.generateKeyPair({ err, keyPair =>
+        if (let Some(e) <- err) {
+            throw e
+        }
+        if (let Some(kp) <- keyPair) {
+            let pubKey = kp.pubKey
+            let priKey = kp.priKey
+            Hilog.info(0, "", "generateKeyPair success, pubKey algName: ${pubKey.algName}")
+        }
+    })
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
+### func convertKey(AsyncCallback<KeyPair>, Option<DataBlob>, Option<DataBlob>)
+
+```cangjie
+public func convertKey(callback: AsyncCallback<KeyPair>, pubKey!: Option<DataBlob> = None, priKey!: Option<DataBlob> = None): Unit
+```
+
+**功能：** 异步将传入的公钥和私钥转换为非对称密钥对，通过回调返回结果。
+
+**系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|callback|AsyncCallback&lt;[KeyPair](#class-keypair)&gt;|是|-|回调函数，接收转换结果或错误。|
+|pubKey!|Option&lt;[DataBlob](#class-datablob)&gt;|否|None|公钥数据，可为空。|
+|priKey!|Option&lt;[DataBlob](#class-datablob)&gt;|否|None|私钥数据，可为空。|
+
+**异常：**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，请参见[通用错误码](../cj-errorcode-universal.md)和[crypto framework错误码](./cj-errorcode-crypto.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 17620001 | Memory operation failed. |
+  | 17630001 | Crypto operation error. |
+  | 17620003 | Parameter check failed. |
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+import kit.CryptoArchitectureKit.*
+import kit.CangjieKit.BusinessException
+import kit.CangjieKit.AsyncCallback
+import kit.PerformanceAnalysisKit.Hilog
+
+let asyKeyGenerator = createAsyKeyGenerator("RSA2048")
+try {
+    asyKeyGenerator.generateKeyPair({ err, keyPair =>
+        if (let Some(e) <- err) {
+            throw e
+        }
+        if (let Some(kp) <- keyPair) {
+            let pubEncoded = kp.pubKey.getEncoded()
+            let priEncoded = kp.priKey.getEncoded()
+            asyKeyGenerator.convertKey({ err1, keyPair1 =>
+                if (let Some(e1) <- err1) {
+                    throw e1
+                }
+                if (let Some(kp1) <- keyPair1) {
+                    Hilog.info(0, "", "convertKey success, pubKey format: ${kp1.pubKey.format}")
+                }
+            }, pubKey!: Some(pubEncoded), priKey!: Some(priEncoded))
+        }
+    })
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
+### func convertPemKey(AsyncCallback<KeyPair>, Option<String>, Option<String>)
+
+```cangjie
+public func convertPemKey(callback: AsyncCallback<KeyPair>, pubKey!: Option<String> = None, priKey!: Option<String> = None): Unit
+```
+
+**功能：** 异步将 PEM 格式的公钥和私钥字符串转换为非对称密钥对，通过回调返回结果。
+
+**系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|callback|AsyncCallback&lt;[KeyPair](#class-keypair)&gt;|是|-|回调函数，接收转换结果或错误。|
+|pubKey!|Option&lt;String&gt;|否|None|PEM 格式公钥字符串，可为空。|
+|priKey!|Option&lt;String&gt;|否|None|PEM 格式私钥字符串，可为空。|
+
+**异常：**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，请参见[通用错误码](../cj-errorcode-universal.md)和[crypto framework错误码](./cj-errorcode-crypto.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 17620001 | Memory operation failed. |
+  | 17630001 | Crypto operation error. |
+  | 17620003 | Parameter check failed. |
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+import kit.CryptoArchitectureKit.*
+import kit.CangjieKit.BusinessException
+import kit.CangjieKit.AsyncCallback
+import kit.PerformanceAnalysisKit.Hilog
+
+let asyKeyGenerator = createAsyKeyGenerator("RSA2048")
+let pubKeyPem = "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEXN...\n-----END PUBLIC KEY-----"
+let priKeyPem = "-----BEGIN PRIVATE KEY-----\nMIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0w...\n-----END PRIVATE KEY-----"
+try {
+    asyKeyGenerator.convertPemKey({ err, keyPair =>
+        if (let Some(e) <- err) {
+            throw e
+        }
+        if (let Some(kp) <- keyPair) {
+            Hilog.info(0, "", "convertPemKey success, priKey algName: ${kp.priKey.algName}")
+        }
+    }, pubKey!: Some(pubKeyPem), priKey!: Some(priKeyPem))
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
+## class PriKey
+
+```cangjie
+public class PriKey <: Key {}
+```
+
+**功能：** 非对称私钥，提供获取私钥参数、编码、清除内存等能力。
+
+**父类型：**
+
+- [Key](#interface-key)
+
+**系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**起始版本：** 26.1.0
+
+### prop format
+
+```cangjie
+public prop format: String
+```
+
+**功能：** 获取私钥的格式。
+
+**系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**起始版本：** 26.1.0
+
+### prop algName
+
+```cangjie
+public prop algName: String
+```
+
+**功能：** 获取私钥的算法名。
+
+**系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**起始版本：** 26.1.0
+
+### func getAsyKeySpec(AsyKeySpecItem)
+
+```cangjie
+public func getAsyKeySpec(itemType: AsyKeySpecItem): ResultSpec
+```
+
+**功能：** 获取非对称私钥的指定参数。
+
+**系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|itemType|[AsyKeySpecItem](#enum-asykeyspecitem)|是|-|指定要获取的密钥参数项。|
+
+**返回值：**
+
+| 类型 | 说明 |
+| -------- | -------- |
+| [ResultSpec](#enum-resultspec) | 返回密钥参数值包装类型。 |
+
+**异常：**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，请参见[通用错误码](../cj-errorcode-universal.md)和[crypto framework错误码](./cj-errorcode-crypto.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 801 | this operation is not supported. |
+  | 17620001 | Memory operation failed. |
+  | 17630001 | Crypto operation error. |
+  | 17620003 | Parameter check failed. |
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+import kit.CryptoArchitectureKit.*
+import kit.CangjieKit.BusinessException
+import kit.CangjieKit.AsyncCallback
+import kit.PerformanceAnalysisKit.Hilog
+
+let asyKeyGenerator = createAsyKeyGenerator("RSA2048")
+try {
+    asyKeyGenerator.generateKeyPair({ err, keyPair =>
+        if (let Some(e) <- err) {
+            throw e
+        }
+        if (let Some(kp) <- keyPair) {
+            let priKey = kp.priKey
+            let resultSpec = priKey.getAsyKeySpec(AsyKeySpecItem.RsaNBn)
+            match (resultSpec) {
+                case ResultSpec.BigintValue(v) => Hilog.info(0, "", "RsaNBn: ${v.toString()}")
+                case _ => ()
+            }
+        }
+    })
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
+### func getEncodedDer(String)
+
+```cangjie
+public func getEncodedDer(format: String): DataBlob
+```
+
+**功能：** 获取私钥的 DER 格式编码。
+
+**系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|format|String|是|-|指定密钥编码的格式，例如 "PKCS8"、"X.509"。|
+
+**返回值：**
+
+|类型|说明|
+|:----|:----|
+|[DataBlob](#class-datablob)|返回 DER 格式编码的密钥数据。|
+
+**异常：**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，请参见[通用错误码](../cj-errorcode-universal.md)和[crypto framework错误码](./cj-errorcode-crypto.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 17620001 | Memory operation failed. |
+  | 17630001 | Crypto operation error. |
+  | 17620003 | Parameter check failed. |
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+import kit.CryptoArchitectureKit.*
+import kit.CangjieKit.BusinessException
+import kit.CangjieKit.AsyncCallback
+import kit.PerformanceAnalysisKit.Hilog
+
+let asyKeyGenerator = createAsyKeyGenerator("RSA2048")
+try {
+    asyKeyGenerator.generateKeyPair({ err, keyPair =>
+        if (let Some(e) <- err) {
+            throw e
+        }
+        if (let Some(kp) <- keyPair) {
+            let priKey = kp.priKey
+            let priDer = priKey.getEncodedDer("PKCS8")
+            Hilog.info(0, "", "priKey DER data size: ${priDer.data.size}")
+        }
+    })
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
+### func getEncodedPem(String)
+
+```cangjie
+public func getEncodedPem(format: String): String
+```
+
+**功能：** 获取私钥的 PEM 格式编码。
+
+**系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|format|String|是|-|指定密钥编码的格式，例如 "PKCS8"、"X.509"。|
+
+**返回值：**
+
+|类型|说明|
+|:----|:----|
+|String|返回 PEM 格式编码的密钥字符串。|
+
+**异常：**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，请参见[通用错误码](../cj-errorcode-universal.md)和[crypto framework错误码](./cj-errorcode-crypto.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 17620001 | Memory operation failed. |
+  | 17630001 | Crypto operation error. |
+  | 17620003 | Parameter check failed. |
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+import kit.CryptoArchitectureKit.*
+import kit.CangjieKit.BusinessException
+import kit.CangjieKit.AsyncCallback
+import kit.PerformanceAnalysisKit.Hilog
+
+let asyKeyGenerator = createAsyKeyGenerator("RSA2048")
+try {
+    asyKeyGenerator.generateKeyPair({ err, keyPair =>
+        if (let Some(e) <- err) {
+            throw e
+        }
+        if (let Some(kp) <- keyPair) {
+            let priKey = kp.priKey
+            let priPem = priKey.getEncodedPem("PKCS8")
+            Hilog.info(0, "", "priKey PEM: ${priPem}")
+        }
+    })
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
+### func getEncoded()
+
+```cangjie
+public func getEncoded(): DataBlob
+```
+
+**功能：** 获取私钥的编码数据。
+
+**系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**起始版本：** 26.1.0
+
+**返回值：**
+
+| 类型 | 说明 |
+| -------- | -------- |
+| [DataBlob](#class-datablob) | 返回编码后的密钥数据。 |
+
+**异常：**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，请参见[通用错误码](../cj-errorcode-universal.md)和[crypto framework错误码](./cj-errorcode-crypto.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 801 | this operation is not supported. |
+  | 17620001 | Memory operation failed. |
+  | 17630001 | Crypto operation error. |
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+import kit.CryptoArchitectureKit.*
+import kit.CangjieKit.BusinessException
+import kit.CangjieKit.AsyncCallback
+import kit.PerformanceAnalysisKit.Hilog
+
+let asyKeyGenerator = createAsyKeyGenerator("RSA2048")
+try {
+    asyKeyGenerator.generateKeyPair({ err, keyPair =>
+        if (let Some(e) <- err) {
+            throw e
+        }
+        if (let Some(kp) <- keyPair) {
+            let priKey = kp.priKey
+            let priEncoded = priKey.getEncoded()
+            Hilog.info(0, "", "priKey encoded data size: ${priEncoded.data.size}")
+        }
+    })
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
+### func clearMem()
+
+```cangjie
+public func clearMem(): Unit
+```
+
+**功能：** 清除私钥的内存数据，达到安全销毁的目的。
+
+**系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**起始版本：** 26.1.0
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+import kit.CryptoArchitectureKit.*
+import kit.CangjieKit.BusinessException
+import kit.CangjieKit.AsyncCallback
+import kit.PerformanceAnalysisKit.Hilog
+
+let asyKeyGenerator = createAsyKeyGenerator("RSA2048")
+try {
+    asyKeyGenerator.generateKeyPair({ err, keyPair =>
+        if (let Some(e) <- err) {
+            throw e
+        }
+        if (let Some(kp) <- keyPair) {
+            kp.priKey.clearMem()
+            Hilog.info(0, "", "priKey clearMem success.")
+        }
+    })
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
+## class PubKey
+
+```cangjie
+public class PubKey <: Key {}
+```
+
+**功能：** 非对称公钥，提供获取公钥参数、编码等能力。
+
+**父类型：**
+
+- [Key](#interface-key)
+
+**系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**起始版本：** 26.1.0
+
+### prop format
+
+```cangjie
+public prop format: String
+```
+
+**功能：** 获取公钥的格式。
+
+**系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**起始版本：** 26.1.0
+
+### prop algName
+
+```cangjie
+public prop algName: String
+```
+
+**功能：** 获取公钥的算法名。
+
+**系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**起始版本：** 26.1.0
+
+### func getAsyKeySpec(AsyKeySpecItem)
+
+```cangjie
+public func getAsyKeySpec(itemType: AsyKeySpecItem): ResultSpec
+```
+
+**功能：** 获取非对称公钥的指定参数。
+
+**系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|itemType|[AsyKeySpecItem](#enum-asykeyspecitem)|是|-|指定要获取的密钥参数项。|
+
+**返回值：**
+
+| 类型 | 说明 |
+| -------- | -------- |
+| [ResultSpec](#enum-resultspec) | 返回密钥参数值包装类型。 |
+
+**异常：**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，请参见[通用错误码](../cj-errorcode-universal.md)和[crypto framework错误码](./cj-errorcode-crypto.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 17620001 | Memory operation failed. |
+  | 17630001 | Crypto operation error. |
+  | 801 | this operation is not supported. |
+  | 17620003 | Parameter check failed. |
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+import kit.CryptoArchitectureKit.*
+import kit.CangjieKit.BusinessException
+import kit.CangjieKit.AsyncCallback
+import kit.PerformanceAnalysisKit.Hilog
+
+let asyKeyGenerator = createAsyKeyGenerator("RSA2048")
+try {
+    asyKeyGenerator.generateKeyPair({ err, keyPair =>
+        if (let Some(e) <- err) {
+            throw e
+        }
+        if (let Some(kp) <- keyPair) {
+            let pubKey = kp.pubKey
+            let resultSpec = pubKey.getAsyKeySpec(AsyKeySpecItem.RsaNBn)
+            match (resultSpec) {
+                case ResultSpec.BigintValue(v) => Hilog.info(0, "", "pubKey RsaNBn: ${v.toString()}")
+                case _ => ()
+            }
+        }
+    })
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
+### func getEncodedDer(String)
+
+```cangjie
+public func getEncodedDer(format: String): DataBlob
+```
+
+**功能：** 获取公钥的 DER 格式编码。
+
+**系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|format|String|是|-|指定密钥编码的格式，例如 "X.509"、"PKCS8"。|
+
+**返回值：**
+
+|类型|说明|
+|:----|:----|
+|[DataBlob](#class-datablob)|返回 DER 格式编码的密钥数据。|
+
+**异常：**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，请参见[通用错误码](../cj-errorcode-universal.md)和[crypto framework错误码](./cj-errorcode-crypto.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 17620001 | Memory operation failed. |
+  | 17630001 | Crypto operation error. |
+  | 17620003 | Parameter check failed. |
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+import kit.CryptoArchitectureKit.*
+import kit.CangjieKit.BusinessException
+import kit.CangjieKit.AsyncCallback
+import kit.PerformanceAnalysisKit.Hilog
+
+let asyKeyGenerator = createAsyKeyGenerator("RSA2048")
+try {
+    asyKeyGenerator.generateKeyPair({ err, keyPair =>
+        if (let Some(e) <- err) {
+            throw e
+        }
+        if (let Some(kp) <- keyPair) {
+            let pubKey = kp.pubKey
+            let pubDer = pubKey.getEncodedDer("X.509")
+            Hilog.info(0, "", "pubKey DER data size: ${pubDer.data.size}")
+        }
+    })
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
+### func getEncodedPem(String)
+
+```cangjie
+public func getEncodedPem(format: String): String
+```
+
+**功能：** 获取公钥的 PEM 格式编码。
+
+**系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|format|String|是|-|指定密钥编码的格式，例如 "X.509"、"PKCS8"。|
+
+**返回值：**
+
+|类型|说明|
+|:----|:----|
+|String|返回 PEM 格式编码的密钥字符串。|
+
+**异常：**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，请参见[通用错误码](../cj-errorcode-universal.md)和[crypto framework错误码](./cj-errorcode-crypto.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 17620001 | Memory operation failed. |
+  | 17630001 | Crypto operation error. |
+  | 17620003 | Parameter check failed. |
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+import kit.CryptoArchitectureKit.*
+import kit.CangjieKit.BusinessException
+import kit.CangjieKit.AsyncCallback
+import kit.PerformanceAnalysisKit.Hilog
+
+let asyKeyGenerator = createAsyKeyGenerator("RSA2048")
+try {
+    asyKeyGenerator.generateKeyPair({ err, keyPair =>
+        if (let Some(e) <- err) {
+            throw e
+        }
+        if (let Some(kp) <- keyPair) {
+            let pubKey = kp.pubKey
+            let pubPem = pubKey.getEncodedPem("X.509")
+            Hilog.info(0, "", "pubKey PEM: ${pubPem}")
+        }
+    })
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
+### func getEncoded()
+
+```cangjie
+public func getEncoded(): DataBlob
+```
+
+**功能：** 获取公钥的编码数据。
+
+**系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**起始版本：** 26.1.0
+
+**返回值：**
+
+| 类型 | 说明 |
+| -------- | -------- |
+| [DataBlob](#class-datablob) | 返回编码后的密钥数据。 |
+
+**异常：**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，请参见[通用错误码](../cj-errorcode-universal.md)和[crypto framework错误码](./cj-errorcode-crypto.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 801 | this operation is not supported. |
+  | 17620001 | Memory operation failed. |
+  | 17630001 | Crypto operation error. |
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+import kit.CryptoArchitectureKit.*
+import kit.CangjieKit.BusinessException
+import kit.CangjieKit.AsyncCallback
+import kit.PerformanceAnalysisKit.Hilog
+
+let asyKeyGenerator = createAsyKeyGenerator("RSA2048")
+try {
+    asyKeyGenerator.generateKeyPair({ err, keyPair =>
+        if (let Some(e) <- err) {
+            throw e
+        }
+        if (let Some(kp) <- keyPair) {
+            let pubKey = kp.pubKey
+            let pubEncoded = pubKey.getEncoded()
+            Hilog.info(0, "", "pubKey encoded data size: ${pubEncoded.data.size}")
+        }
+    })
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
+## class KeyPair
+
+```cangjie
+public class KeyPair {}
+```
+
+**功能：** 非对称密钥对，包含公钥和私钥。
+
+**系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**起始版本：** 26.1.0
+
+### prop pubKey
+
+```cangjie
+public prop pubKey: PubKey
+```
+
+**功能：** 获取密钥对中的公钥。
+
+**系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**起始版本：** 26.1.0
+
+### prop priKey
+
+```cangjie
+public prop priKey: PriKey
+```
+
+**功能：** 获取密钥对中的私钥。
+
+**系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**起始版本：** 26.1.0
+
+## class Verify
+
+```cangjie
+public class Verify {}
+```
+
+**功能：** 签名验签器，提供验签初始化、更新数据、验签、恢复数据、设置/获取验签参数的能力。
+
+**系统能力：** SystemCapability.Security.CryptoFramework.Signature
+
+**起始版本：** 26.1.0
+
+### prop algName
+
+```cangjie
+public prop algName: String
+```
+
+**功能：** 获取验签器的算法名。
+
+**系统能力：** SystemCapability.Security.CryptoFramework.Signature
+
+**起始版本：** 26.1.0
+
+### func initialize(PubKey, AsyncCallback<Unit>)
+
+```cangjie
+public func initialize(pubKey: PubKey, callback: AsyncCallback<Unit>): Unit
+```
+
+**功能：** 使用指定公钥异步初始化验签器，通过回调返回结果。
+
+**系统能力：** SystemCapability.Security.CryptoFramework.Signature
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|pubKey|[PubKey](#class-pubkey)|是|-|用于验签的公钥。|
+|callback|AsyncCallback&lt;Unit&gt;|是|-|回调函数，接收初始化结果或错误。|
+
+**异常：**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，请参见[通用错误码](../cj-errorcode-universal.md)和[crypto framework错误码](./cj-errorcode-crypto.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 17620001 | Memory operation failed. |
+  | 17620002 | Failed to obtain the native object or convert parameters. |
+  | 17630001 | Crypto operation error. |
+  | 17620003 | Parameter check failed. |
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+import kit.CryptoArchitectureKit.*
+import kit.CangjieKit.BusinessException
+import kit.CangjieKit.AsyncCallback
+import kit.PerformanceAnalysisKit.Hilog
+
+let verify = createVerify("RSA2048|PKCS1|SHA256")
+let asyKeyGenerator = createAsyKeyGenerator("RSA2048")
+try {
+    asyKeyGenerator.generateKeyPair({ err, keyPair =>
+        if (let Some(e) <- err) {
+            throw e
+        }
+        if (let Some(kp) <- keyPair) {
+            let pubKey = kp.pubKey
+            verify.initialize(pubKey, { err1 =>
+                if (let Some(e1) <- err1) {
+                    throw e1
+                }
+                Hilog.info(0, "", "verify initialize success, algName: ${verify.algName}")
+            })
+        }
+    })
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
+### func update(DataBlob, AsyncCallback<Unit>)
+
+```cangjie
+public func update(data: DataBlob, callback: AsyncCallback<Unit>): Unit
+```
+
+**功能：** 异步追加待验签数据，通过回调返回结果。在 initialize 之后、verify 之前调用。
+
+**系统能力：** SystemCapability.Security.CryptoFramework.Signature
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|data|[DataBlob](#class-datablob)|是|-|待验签的数据。|
+|callback|AsyncCallback&lt;Unit&gt;|是|-|回调函数，接收更新结果或错误。|
+
+**异常：**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，请参见[通用错误码](../cj-errorcode-universal.md)和[crypto framework错误码](./cj-errorcode-crypto.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 17620001 | Memory operation failed. |
+  | 17620002 | Failed to obtain the native object or convert parameters. |
+  | 17630001 | Crypto operation error. |
+  | 17620004 | Invalid function call. |
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+import kit.CryptoArchitectureKit.*
+import kit.CangjieKit.BusinessException
+import kit.CangjieKit.AsyncCallback
+import kit.PerformanceAnalysisKit.Hilog
+
+let verify = createVerify("RSA2048|PKCS1|SHA256")
+let asyKeyGenerator = createAsyKeyGenerator("RSA2048")
+let input: Array<UInt8> = "This is test data".toUtf8Array()
+try {
+    asyKeyGenerator.generateKeyPair({ err, keyPair =>
+        if (let Some(e) <- err) {
+            throw e
+        }
+        if (let Some(kp) <- keyPair) {
+            verify.initialize(kp.pubKey, { err1 =>
+                if (let Some(e1) <- err1) {
+                    throw e1
+                }
+                verify.update(DataBlob(input), { err2 =>
+                    if (let Some(e2) <- err2) {
+                        throw e2
+                    }
+                    Hilog.info(0, "", "verify update success, data size: ${input.size}")
+                })
+            })
+        }
+    })
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
+### func verify(DataBlob, DataBlob, AsyncCallback<Bool>)
+
+```cangjie
+public func verify(data: DataBlob, signatureData: DataBlob, callback: AsyncCallback<Bool>): Unit
+```
+
+**功能：** 异步验证数据与签名是否匹配，通过回调返回验签结果。
+
+**系统能力：** SystemCapability.Security.CryptoFramework.Signature
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|data|[DataBlob](#class-datablob)|是|-|待验签的数据。|
+|signatureData|[DataBlob](#class-datablob)|是|-|待验证的签名数据。|
+|callback|AsyncCallback&lt;Bool&gt;|是|-|回调函数，接收验签结果或错误。|
+
+**异常：**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，请参见[通用错误码](../cj-errorcode-universal.md)和[crypto framework错误码](./cj-errorcode-crypto.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 17620001 | Memory operation failed. |
+  | 17620002 | Failed to obtain the native object or convert parameters. |
+  | 17630001 | Crypto operation error. |
+  | 17620003 | Parameter check failed. |
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+import kit.CryptoArchitectureKit.*
+import kit.CangjieKit.BusinessException
+import kit.CangjieKit.AsyncCallback
+import kit.PerformanceAnalysisKit.Hilog
+
+let verify = createVerify("RSA2048|PKCS1|SHA256")
+let asyKeyGenerator = createAsyKeyGenerator("RSA2048")
+let input: Array<UInt8> = "This is test data".toUtf8Array()
+let signDataArr: Array<UInt8> = Array<UInt8>(256, item: 0)
+try {
+    asyKeyGenerator.generateKeyPair({ err, keyPair =>
+        if (let Some(e) <- err) {
+            throw e
+        }
+        if (let Some(kp) <- keyPair) {
+            verify.initialize(kp.pubKey, { err1 =>
+                if (let Some(e1) <- err1) {
+                    throw e1
+                }
+                verify.verify(DataBlob(input), DataBlob(signDataArr), { err2, res =>
+                    if (let Some(e2) <- err2) {
+                        throw e2
+                    }
+                    if (let Some(r) <- res) {
+                        Hilog.info(0, "", "verify result: ${r}")
+                    }
+                })
+            })
+        }
+    })
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
+### func verify(DataBlob, AsyncCallback<Bool>, Option<DataBlob>)
+
+```cangjie
+public func verify(signatureData: DataBlob, callback: AsyncCallback<Bool>, data!: Option<DataBlob> = None): Unit
+```
+
+**功能：** 异步验证签名是否匹配，通过回调返回验签结果。此重载适用于已通过 update 追加数据后调用，data 参数可为空。
+
+**系统能力：** SystemCapability.Security.CryptoFramework.Signature
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|signatureData|[DataBlob](#class-datablob)|是|-|待验证的签名数据。|
+|callback|AsyncCallback&lt;Bool&gt;|是|-|回调函数，接收验签结果或错误。|
+|data!|Option&lt;[DataBlob](#class-datablob)&gt;|否|None|待验签的数据，可为空（适用于已 update 场景）。|
+
+**异常：**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，请参见[通用错误码](../cj-errorcode-universal.md)和[crypto framework错误码](./cj-errorcode-crypto.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 17620001 | Memory operation failed. |
+  | 17620002 | Failed to obtain the native object or convert parameters. |
+  | 17630001 | Crypto operation error. |
+  | 17620003 | Parameter check failed. |
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+import kit.CryptoArchitectureKit.*
+import kit.CangjieKit.BusinessException
+import kit.CangjieKit.AsyncCallback
+import kit.PerformanceAnalysisKit.Hilog
+
+let verify = createVerify("RSA2048|PKCS1|SHA256")
+let asyKeyGenerator = createAsyKeyGenerator("RSA2048")
+let input: Array<UInt8> = "This is test data".toUtf8Array()
+let signDataArr: Array<UInt8> = Array<UInt8>(256, item: 0)
+try {
+    asyKeyGenerator.generateKeyPair({ err, keyPair =>
+        if (let Some(e) <- err) {
+            throw e
+        }
+        if (let Some(kp) <- keyPair) {
+            verify.initialize(kp.pubKey, { err1 =>
+                if (let Some(e1) <- err1) {
+                    throw e1
+                }
+                verify.update(DataBlob(input), { err2 =>
+                    if (let Some(e2) <- err2) {
+                        throw e2
+                    }
+                    // 已通过update追加数据，data参数传None
+                    verify.verify(DataBlob(signDataArr), { err3, res =>
+                        if (let Some(e3) <- err3) {
+                            throw e3
+                        }
+                        if (let Some(r) <- res) {
+                            Hilog.info(0, "", "verify result: ${r}")
+                        }
+                    }, None)
+                })
+            })
+        }
+    })
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
+### func recover(DataBlob, AsyncCallback<?DataBlob>)
+
+```cangjie
+public func recover(signatureData: DataBlob, callback: AsyncCallback<?DataBlob>): Unit
+```
+
+**功能：** 异步从签名数据中恢复原始数据，通过回调返回结果。仅适用于 RSA 等支持签名恢复的算法。当恢复结果为空时，回调返回 None。
+
+**系统能力：** SystemCapability.Security.CryptoFramework.Signature
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|signatureData|[DataBlob](#class-datablob)|是|-|待恢复的签名数据。|
+|callback|AsyncCallback&lt;?[DataBlob](#class-datablob)&gt;|是|-|回调函数，接收恢复的原始数据或错误，数据为空时返回 None。|
+
+**异常：**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，请参见[通用错误码](../cj-errorcode-universal.md)和[crypto framework错误码](./cj-errorcode-crypto.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 17620001 | Memory operation failed. |
+  | 17620002 | Failed to obtain the native object or convert parameters. |
+  | 17630001 | Crypto operation error. |
+  | 17620004 | Invalid function call. |
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+import kit.CryptoArchitectureKit.*
+import kit.CangjieKit.BusinessException
+import kit.CangjieKit.AsyncCallback
+import kit.PerformanceAnalysisKit.Hilog
+
+let verify = createVerify("RSA2048|PKCS1|NoHash|Recover")
+let asyKeyGenerator = createAsyKeyGenerator("RSA2048")
+let signDataArr: Array<UInt8> = Array<UInt8>(256, item: 0)
+try {
+    asyKeyGenerator.generateKeyPair({ err, keyPair =>
+        if (let Some(e) <- err) {
+            throw e
+        }
+        if (let Some(kp) <- keyPair) {
+            verify.initialize(kp.pubKey, { err1 =>
+                if (let Some(e1) <- err1) {
+                    throw e1
+                }
+                verify.recover(DataBlob(signDataArr), { err2, rawData =>
+                    if (let Some(e2) <- err2) {
+                        throw e2
+                    }
+                    if (let Some(data) <- rawData) {
+                        Hilog.info(0, "", "recover data size: ${data.data.size}")
+                    }
+                })
+            })
+        }
+    })
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
+### func setVerifySpec(SignSpecItem, Int32)
+
+```cangjie
+public func setVerifySpec(itemType: SignSpecItem, itemValue: Int32): Unit
+```
+
+**功能：** 设置验签参数，参数值为 Int32 类型。
+
+**系统能力：** SystemCapability.Security.CryptoFramework.Signature
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|itemType|[SignSpecItem](#enum-signspecitem)|是|-|指定要设置的参数项。|
+|itemValue|Int32|是|-|参数值。|
+
+**异常：**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，请参见[通用错误码](../cj-errorcode-universal.md)和[crypto framework错误码](./cj-errorcode-crypto.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 801 | this operation is not supported. |
+  | 17620001 | Memory operation failed. |
+  | 17630001 | Crypto operation error. |
+  | 17620003 | Parameter check failed. |
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+import kit.CryptoArchitectureKit.*
+import kit.CangjieKit.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
+
+let verify = createVerify("RSA2048|PSS|SHA256|MGF1_SHA256")
+try {
+    verify.setVerifySpec(SignSpecItem.PssSaltLenNum, 32)
+    Hilog.info(0, "", "setVerifySpec PssSaltLenNum success.")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
+### func setVerifySpec(SignSpecItem, Array<UInt8>)
+
+```cangjie
+public func setVerifySpec(itemType: SignSpecItem, itemValue: Array<UInt8>): Unit
+```
+
+**功能：** 设置验签参数，参数值为字节数组类型。
+
+**系统能力：** SystemCapability.Security.CryptoFramework.Signature
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|itemType|[SignSpecItem](#enum-signspecitem)|是|-|指定要设置的参数项。|
+|itemValue|Array&lt;UInt8&gt;|是|-|参数值。|
+
+**异常：**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，请参见[通用错误码](../cj-errorcode-universal.md)和[crypto framework错误码](./cj-errorcode-crypto.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 801 | this operation is not supported. |
+  | 17620001 | Memory operation failed. |
+  | 17620002 | Failed to obtain the native object or convert parameters. |
+  | 17620003 | Parameter check failed. |
+  | 17620004 | Invalid function call. |
+  | 17630001 | Crypto operation error. |
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+import kit.CryptoArchitectureKit.*
+import kit.CangjieKit.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
+
+let verify = createVerify("SM2_256|SM3")
+let userId: Array<UInt8> = "testUserId".toUtf8Array()
+try {
+    verify.setVerifySpec(SignSpecItem.Sm2UserIdUint8arr, userId)
+    Hilog.info(0, "", "setVerifySpec Sm2UserId success.")
+} catch (e: BusinessException) {
+    Hilog.info(0, "test", "${e.message}")
+}
+```
+
+### func getVerifySpec(SignSpecItem)
+
+```cangjie
+public func getVerifySpec(itemType: SignSpecItem): ResultSpec
+```
+
+**功能：** 获取验签参数。
+
+**系统能力：** SystemCapability.Security.CryptoFramework.Signature
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|itemType|[SignSpecItem](#enum-signspecitem)|是|-|指定要获取的参数项。|
+
+**返回值：**
+
+| 类型 | 说明 |
+| -------- | -------- |
+| [ResultSpec](#enum-resultspec) | 返回参数值包装类型。 |
+
+**异常：**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，请参见[通用错误码](../cj-errorcode-universal.md)和[crypto framework错误码](./cj-errorcode-crypto.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 801 | this operation is not supported. |
+  | 17620001 | Memory operation failed. |
+  | 17630001 | Crypto operation error. |
+  | 17620003 | Parameter check failed. |
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+import kit.CryptoArchitectureKit.*
+import kit.CangjieKit.BusinessException
+import kit.PerformanceAnalysisKit.Hilog
+
+let verify = createVerify("RSA2048|PSS|SHA256|MGF1_SHA256")
+try {
+    verify.setVerifySpec(SignSpecItem.PssSaltLenNum, 32)
+    let saltLenSpec = verify.getVerifySpec(SignSpecItem.PssSaltLenNum)
+    match (saltLenSpec) {
+        case ResultSpec.Int32Value(v) => Hilog.info(0, "", "saltLen: ${v}")
+        case _ => ()
+    }
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
 }
@@ -2099,6 +3570,841 @@ public func toString(): String
 **系统能力：** SystemCapability.Security.CryptoFramework.Cipher
 
 **起始版本：** 22
+
+**返回值：**
+
+|类型|说明|
+|:----|:----|
+|String|枚举的说明。|
+
+## enum AsyKeySpecItem
+
+```cangjie
+public enum AsyKeySpecItem {
+    | DsaPBn
+    | DsaQBn
+    | DsaGBn
+    | DsaSkBn
+    | DsaPkBn
+    | EccFpPBn
+    | EccABn
+    | EccBBn
+    | EccGXBn
+    | EccGYBn
+    | EccNBn
+    | EccHNum
+    | EccSkBn
+    | EccPkXBn
+    | EccPkYBn
+    | EccFieldTypeStr
+    | EccFieldSizeNum
+    | EccCurveNameStr
+    | RsaNBn
+    | RsaSkBn
+    | RsaPkBn
+    | DhPBn
+    | DhGBn
+    | DhLNum
+    | DhSkBn
+    | DhPkBn
+    | Ed25519SkBn
+    | Ed25519PkBn
+    | X25519SkBn
+    | X25519PkBn
+    | ...
+}
+```
+
+**功能：** 非对称密钥参数的枚举，用于指定获取非对称密钥的某个参数。
+
+**系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**起始版本：** 26.1.0
+
+### DsaPBn
+
+```cangjie
+DsaPBn
+```
+
+**功能：** DSA算法中素数p。p是公开参数，指定位长度。
+
+**系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**起始版本：** 26.1.0
+
+### DsaQBn
+
+```cangjie
+DsaQBn
+```
+
+**功能：** DSA算法中160位素数q，q是p-1的因子。
+
+**系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**起始版本：** 26.1.0
+
+### DsaGBn
+
+```cangjie
+DsaGBn
+```
+
+**功能：** DSA算法中参数g，g是公开参数，是模p的子群的生成元。
+
+**系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**起始版本：** 26.1.0
+
+### DsaSkBn
+
+```cangjie
+DsaSkBn
+```
+
+**功能：** DSA算法中私钥sk。
+
+**系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**起始版本：** 26.1.0
+
+### DsaPkBn
+
+```cangjie
+DsaPkBn
+```
+
+**功能：** DSA算法中公钥pk。
+
+**系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**起始版本：** 26.1.0
+
+### EccFpPBn
+
+```cangjie
+EccFpPBn
+```
+
+**功能：** ECC算法中素数域的素数p。
+
+**系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**起始版本：** 26.1.0
+
+### EccABn
+
+```cangjie
+EccABn
+```
+
+**功能：** ECC算法中椭圆曲线参数a。
+
+**系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**起始版本：** 26.1.0
+
+### EccBBn
+
+```cangjie
+EccBBn
+```
+
+**功能：** ECC算法中椭圆曲线参数b。
+
+**系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**起始版本：** 26.1.0
+
+### EccGXBn
+
+```cangjie
+EccGXBn
+```
+
+**功能：** ECC算法中基点G的x坐标。
+
+**系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**起始版本：** 26.1.0
+
+### EccGYBn
+
+```cangjie
+EccGYBn
+```
+
+**功能：** ECC算法中基点G的y坐标。
+
+**系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**起始版本：** 26.1.0
+
+### EccNBn
+
+```cangjie
+EccNBn
+```
+
+**功能：** ECC算法中基点G的阶n。
+
+**系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**起始版本：** 26.1.0
+
+### EccHNum
+
+```cangjie
+EccHNum
+```
+
+**功能：** ECC算法中余因子h。
+
+**系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**起始版本：** 26.1.0
+
+### EccSkBn
+
+```cangjie
+EccSkBn
+```
+
+**功能：** ECC算法中私钥sk。
+
+**系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**起始版本：** 26.1.0
+
+### EccPkXBn
+
+```cangjie
+EccPkXBn
+```
+
+**功能：** ECC算法中公钥Pk的x坐标。
+
+**系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**起始版本：** 26.1.0
+
+### EccPkYBn
+
+```cangjie
+EccPkYBn
+```
+
+**功能：** ECC算法中公钥Pk的y坐标。
+
+**系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**起始版本：** 26.1.0
+
+### EccFieldTypeStr
+
+```cangjie
+EccFieldTypeStr
+```
+
+**功能：** ECC算法中域类型。当前只支持Fp域。
+
+**系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**起始版本：** 26.1.0
+
+### EccFieldSizeNum
+
+```cangjie
+EccFieldSizeNum
+```
+
+**功能：** ECC算法中域大小。
+
+**系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**起始版本：** 26.1.0
+
+### EccCurveNameStr
+
+```cangjie
+EccCurveNameStr
+```
+
+**功能：** ECC算法中曲线名称。
+
+**系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**起始版本：** 26.1.0
+
+### RsaNBn
+
+```cangjie
+RsaNBn
+```
+
+**功能：** RSA算法中模数n。
+
+**系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**起始版本：** 26.1.0
+
+### RsaSkBn
+
+```cangjie
+RsaSkBn
+```
+
+**功能：** RSA算法中私钥指数sk。
+
+**系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**起始版本：** 26.1.0
+
+### RsaPkBn
+
+```cangjie
+RsaPkBn
+```
+
+**功能：** RSA算法中公钥指数pk。
+
+**系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**起始版本：** 26.1.0
+
+### DhPBn
+
+```cangjie
+DhPBn
+```
+
+**功能：** DH算法中素数p。
+
+**系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**起始版本：** 26.1.0
+
+### DhGBn
+
+```cangjie
+DhGBn
+```
+
+**功能：** DH算法中参数g。
+
+**系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**起始版本：** 26.1.0
+
+### DhLNum
+
+```cangjie
+DhLNum
+```
+
+**功能：** DH算法中素数p的位长度l。
+
+**系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**起始版本：** 26.1.0
+
+### DhSkBn
+
+```cangjie
+DhSkBn
+```
+
+**功能：** DH算法中私钥sk。
+
+**系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**起始版本：** 26.1.0
+
+### DhPkBn
+
+```cangjie
+DhPkBn
+```
+
+**功能：** DH算法中公钥pk。
+
+**系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**起始版本：** 26.1.0
+
+### Ed25519SkBn
+
+```cangjie
+Ed25519SkBn
+```
+
+**功能：** Ed25519算法中私钥sk。
+
+**系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**起始版本：** 26.1.0
+
+### Ed25519PkBn
+
+```cangjie
+Ed25519PkBn
+```
+
+**功能：** Ed25519算法中公钥pk。
+
+**系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**起始版本：** 26.1.0
+
+### X25519SkBn
+
+```cangjie
+X25519SkBn
+```
+
+**功能：** X25519算法中私钥sk。
+
+**系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**起始版本：** 26.1.0
+
+### X25519PkBn
+
+```cangjie
+X25519PkBn
+```
+
+**功能：** X25519算法中公钥pk。
+
+**系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**起始版本：** 26.1.0
+
+### prop value
+
+```cangjie
+public prop value: Int32
+```
+
+**功能：** 获取枚举的Int32类型值。
+
+**系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**起始版本：** 26.1.0
+
+**返回值：**
+
+|类型|说明|
+|:----|:----|
+|Int32|枚举的Int32类型值。|
+
+### func !=(AsyKeySpecItem)
+
+```cangjie
+public operator func !=(other: AsyKeySpecItem): Bool
+```
+
+**功能：** 判断两个枚举值是否不相等。
+
+**系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|other|[AsyKeySpecItem](#enum-asykeyspecitem)|是|-|另一个枚举值。|
+
+**返回值：**
+
+|类型|说明|
+|:----|:----|
+|Bool|两个枚举值不相等返回true，否则返回false。|
+
+### func ==(AsyKeySpecItem)
+
+```cangjie
+public operator func ==(other: AsyKeySpecItem): Bool
+```
+
+**功能：** 判断两个枚举值是否相等。
+
+**系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|other|[AsyKeySpecItem](#enum-asykeyspecitem)|是|-|另一个枚举值。|
+
+**返回值：**
+
+|类型|说明|
+|:----|:----|
+|Bool|两个枚举值相等返回true，否则返回false。|
+
+### func toString()
+
+```cangjie
+public func toString(): String
+```
+
+**功能：** 获取枚举的说明。
+
+**系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**起始版本：** 26.1.0
+
+**返回值：**
+
+|类型|说明|
+|:----|:----|
+|String|枚举的说明。|
+
+## enum ResultSpec
+
+```cangjie
+public enum ResultSpec {
+    | BigintValue(BigInt)
+    | Int32Value(Int32)
+    | StringValue(String)
+    | Uint8ArrayValue(Array<UInt8>)
+    | ...
+}
+```
+
+**功能：** 非对称密钥参数返回值的枚举，用于包装不同类型的密钥参数返回值。
+
+**系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**起始版本：** 26.1.0
+
+### BigintValue(BigInt)
+
+```cangjie
+BigintValue(BigInt)
+```
+
+**功能：** 表示返回值为BigInt类型的密钥参数。
+
+**系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**起始版本：** 26.1.0
+
+### Int32Value(Int32)
+
+```cangjie
+Int32Value(Int32)
+```
+
+**功能：** 表示返回值为Int32类型的密钥参数。
+
+**系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**起始版本：** 26.1.0
+
+### StringValue(String)
+
+```cangjie
+StringValue(String)
+```
+
+**功能：** 表示返回值为String类型的密钥参数。
+
+**系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**起始版本：** 26.1.0
+
+### Uint8ArrayValue(Array<UInt8>)
+
+```cangjie
+Uint8ArrayValue(Array<UInt8>)
+```
+
+**功能：** 表示返回值为Array<UInt8>类型的密钥参数。
+
+**系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**起始版本：** 26.1.0
+
+### func !=(ResultSpec)
+
+```cangjie
+public operator func !=(other: ResultSpec): Bool
+```
+
+**功能：** 判断两个枚举值是否不相等。
+
+**系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|other|[ResultSpec](#enum-resultspec)|是|-|另一个枚举值。|
+
+**返回值：**
+
+|类型|说明|
+|:----|:----|
+|Bool|两个枚举值不相等返回true，否则返回false。|
+
+### func ==(ResultSpec)
+
+```cangjie
+public operator func ==(other: ResultSpec): Bool
+```
+
+**功能：** 判断两个枚举值是否相等。
+
+**系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|other|[ResultSpec](#enum-resultspec)|是|-|另一个枚举值。|
+
+**返回值：**
+
+|类型|说明|
+|:----|:----|
+|Bool|两个枚举值相等返回true，否则返回false。|
+
+### func toString()
+
+```cangjie
+public func toString(): String
+```
+
+**功能：** 获取枚举的说明。
+
+**系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
+
+**起始版本：** 26.1.0
+
+**返回值：**
+
+|类型|说明|
+|:----|:----|
+|String|枚举的说明。|
+
+## enum SignSpecItem
+
+```cangjie
+public enum SignSpecItem {
+    | PssMdNameStr
+    | PssMgfNameStr
+    | PssMgf1MdStr
+    | PssSaltLenNum
+    | PssTrailerFieldNum
+    | Sm2UserIdUint8arr
+    | MlDsaDeterministicBool
+    | MlDsaMuBool
+    | MlDsaContextUint8arr
+    | ...
+}
+```
+
+**功能：** 签名验签参数的枚举，用于指定签名验签过程中的特定参数项。
+
+**系统能力：** SystemCapability.Security.CryptoFramework.Signature
+
+**起始版本：** 26.1.0
+
+### PssMdNameStr
+
+```cangjie
+PssMdNameStr
+```
+
+**功能：** RSA-PSS签名验签中，用于指定消息摘要算法。
+
+**系统能力：** SystemCapability.Security.CryptoFramework.Signature
+
+**起始版本：** 26.1.0
+
+### PssMgfNameStr
+
+```cangjie
+PssMgfNameStr
+```
+
+**功能：** RSA-PSS签名验签中，用于指定掩码生成函数（MGF）。
+
+**系统能力：** SystemCapability.Security.CryptoFramework.Signature
+
+**起始版本：** 26.1.0
+
+### PssMgf1MdStr
+
+```cangjie
+PssMgf1MdStr
+```
+
+**功能：** RSA-PSS签名验签中，用于指定MGF1的消息摘要算法。
+
+**系统能力：** SystemCapability.Security.CryptoFramework.Signature
+
+**起始版本：** 26.1.0
+
+### PssSaltLenNum
+
+```cangjie
+PssSaltLenNum
+```
+
+**功能：** RSA-PSS签名验签中，用于指定盐长度。
+
+**系统能力：** SystemCapability.Security.CryptoFramework.Signature
+
+**起始版本：** 26.1.0
+
+### PssTrailerFieldNum
+
+```cangjie
+PssTrailerFieldNum
+```
+
+**功能：** RSA-PSS签名验签中，用于指定尾部字段。
+
+**系统能力：** SystemCapability.Security.CryptoFramework.Signature
+
+**起始版本：** 26.1.0
+
+### Sm2UserIdUint8arr
+
+```cangjie
+Sm2UserIdUint8arr
+```
+
+**功能：** SM2签名验签中，用于指定用户ID。
+
+**系统能力：** SystemCapability.Security.CryptoFramework.Signature
+
+**起始版本：** 26.1.0
+
+### MlDsaDeterministicBool
+
+```cangjie
+MlDsaDeterministicBool
+```
+
+**功能：** ML-DSA签名验签过程中是否使用确定性签名。
+
+**系统能力：** SystemCapability.Security.CryptoFramework.Signature
+
+**起始版本：** 26.1.0
+
+### MlDsaMuBool
+
+```cangjie
+MlDsaMuBool
+```
+
+**功能：** ML-DSA签名验签过程中的mu参数值。
+
+**系统能力：** SystemCapability.Security.CryptoFramework.Signature
+
+**起始版本：** 26.1.0
+
+### MlDsaContextUint8arr
+
+```cangjie
+MlDsaContextUint8arr
+```
+
+**功能：** ML-DSA签名验签过程中的上下文数据。
+
+**系统能力：** SystemCapability.Security.CryptoFramework.Signature
+
+**起始版本：** 26.1.0
+
+### prop value
+
+```cangjie
+public prop value: Int32
+```
+
+**功能：** 获取枚举的Int32类型值。
+
+**系统能力：** SystemCapability.Security.CryptoFramework.Signature
+
+**起始版本：** 26.1.0
+
+**返回值：**
+
+|类型|说明|
+|:----|:----|
+|Int32|枚举的Int32类型值。|
+
+### func !=(SignSpecItem)
+
+```cangjie
+public operator func !=(other: SignSpecItem): Bool
+```
+
+**功能：** 判断两个枚举值是否不相等。
+
+**系统能力：** SystemCapability.Security.CryptoFramework.Signature
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|other|[SignSpecItem](#enum-signspecitem)|是|-|另一个枚举值。|
+
+**返回值：**
+
+|类型|说明|
+|:----|:----|
+|Bool|两个枚举值不相等返回true，否则返回false。|
+
+### func ==(SignSpecItem)
+
+```cangjie
+public operator func ==(other: SignSpecItem): Bool
+```
+
+**功能：** 判断两个枚举值是否相等。
+
+**系统能力：** SystemCapability.Security.CryptoFramework.Signature
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|other|[SignSpecItem](#enum-signspecitem)|是|-|另一个枚举值。|
+
+**返回值：**
+
+|类型|说明|
+|:----|:----|
+|Bool|两个枚举值相等返回true，否则返回false。|
+
+### func toString()
+
+```cangjie
+public func toString(): String
+```
+
+**功能：** 获取枚举的说明。
+
+**系统能力：** SystemCapability.Security.CryptoFramework.Signature
+
+**起始版本：** 26.1.0
 
 **返回值：**
 
