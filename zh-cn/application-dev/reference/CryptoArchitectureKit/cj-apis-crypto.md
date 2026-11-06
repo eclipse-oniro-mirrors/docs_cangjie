@@ -286,9 +286,7 @@ try {
 public func createAsyKeyGenerator(algName: String): AsyKeyGenerator
 ```
 
-**功能：**
-
-用于生成非对称密钥生成器实例。
+**功能：** 用于生成非对称密钥生成器实例。
 
 **系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
 
@@ -304,7 +302,7 @@ public func createAsyKeyGenerator(algName: String): AsyKeyGenerator
 
 | 类型 | 说明 |
 | -------- | -------- |
-| AsyKeyGenerator | 返回非对称密钥生成器实例。 |
+| [AsyKeyGenerator](#class-asykeygenerator) | 返回非对称密钥生成器实例。 |
 
 **异常：**
 
@@ -338,9 +336,7 @@ try {
 public func createVerify(algName: String): Verify
 ```
 
-**功能：**
-
-用于生成签名验签实例。
+**功能：** 用于生成签名验签实例。
 
 **系统能力：** SystemCapability.Security.CryptoFramework.Signature
 
@@ -356,7 +352,7 @@ public func createVerify(algName: String): Verify
 
 | 类型 | 说明 |
 | -------- | -------- |
-| Verify | 返回签名验签实例。 |
+| [Verify](#class-verify) | 返回签名验签实例。 |
 
 **异常：**
 
@@ -623,7 +619,9 @@ try {
 public func doFinal(data: ?DataBlob): DataBlob
 ```
 
-**功能：** （1）在对称加解密中，doFinal加/解密（分组模式产生的）剩余数据和本次传入的数据，最后结束加密或者解密数据操作，获取加密或者解密数据。
+**功能：** 用于结束加解密操作，返回加密或解密的数据。
+
+（1）在对称加解密中，doFinal加/解密（分组模式产生的）剩余数据和本次传入的数据，最后结束加密或者解密数据操作，获取加密或者解密数据。
 
 如果数据量较小，可以在doFinal中一次性传入数据，而不使用update；如果在本次加解密流程中，已经使用update传入过数据，可以在doFinal的data参数处传入None。
 
@@ -1605,7 +1603,7 @@ try {
 public class AsyKeyGenerator {}
 ```
 
-非对称密钥生成器，提供生成非对称密钥对、转换非对称密钥的能力。
+**功能：** 非对称密钥生成器，提供生成非对称密钥对、转换非对称密钥的能力。
 
 **系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
 
@@ -1617,23 +1615,19 @@ public class AsyKeyGenerator {}
 public prop algName: String
 ```
 
-**功能：**
-
-获取非对称密钥生成器的算法名。
+**功能：** 获取非对称密钥生成器的算法名。
 
 **系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
 
 **起始版本：** 26.1.0
 
-### func generateKeyPair(AsyncCallback<KeyPair>)
+### func generateKeyPair(AsyncCallback<[KeyPair](#class-keypair)>)
 
 ```cangjie
-public func generateKeyPair(callback: AsyncCallback<KeyPair>): Unit
+public func generateKeyPair(callback: AsyncCallback<[KeyPair](#class-keypair)>): Unit
 ```
 
-**功能：**
-
-异步生成非对称密钥对，通过回调返回结果。
+**功能：** 异步生成非对称密钥对，通过回调返回结果。
 
 **系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
 
@@ -1643,7 +1637,7 @@ public func generateKeyPair(callback: AsyncCallback<KeyPair>): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|callback|AsyncCallback&lt;KeyPair&gt;|是|-|回调函数，接收生成结果或错误。|
+|callback|AsyncCallback&lt;[KeyPair](#class-keypair)&gt;|是|-|回调函数，接收生成结果或错误。|
 
 **异常：**
 
@@ -1681,15 +1675,13 @@ try {
 }
 ```
 
-### func convertKey(AsyncCallback<KeyPair>, Option<DataBlob>, Option<DataBlob>)
+### func convertKey(AsyncCallback<[KeyPair](#class-keypair)>, Option<[DataBlob](#class-datablob)>, Option<[DataBlob](#class-datablob)>)
 
 ```cangjie
-public func convertKey(callback: AsyncCallback<KeyPair>, pubKey!: Option<DataBlob> = None, priKey!: Option<DataBlob> = None): Unit
+public func convertKey(callback: AsyncCallback<[KeyPair](#class-keypair)>, pubKey!: Option<[DataBlob](#class-datablob)> = None, priKey!: Option<[DataBlob](#class-datablob)> = None): Unit
 ```
 
-**功能：**
-
-异步将传入的公钥和私钥转换为非对称密钥对，通过回调返回结果。
+**功能：** 异步将传入的公钥和私钥转换为非对称密钥对，通过回调返回结果。
 
 **系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
 
@@ -1699,9 +1691,9 @@ public func convertKey(callback: AsyncCallback<KeyPair>, pubKey!: Option<DataBlo
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|callback|AsyncCallback&lt;KeyPair&gt;|是|-|回调函数，接收转换结果或错误。|
-|pubKey!|Option&lt;DataBlob&gt;|否|None|公钥数据，可为空。|
-|priKey!|Option&lt;DataBlob&gt;|否|None|私钥数据，可为空。|
+|callback|AsyncCallback&lt;[KeyPair](#class-keypair)&gt;|是|-|回调函数，接收转换结果或错误。|
+|pubKey!|Option&lt;[DataBlob](#class-datablob)&gt;|否|None|公钥数据，可为空。|
+|priKey!|Option&lt;[DataBlob](#class-datablob)&gt;|否|None|私钥数据，可为空。|
 
 **异常：**
 
@@ -1747,15 +1739,13 @@ try {
 }
 ```
 
-### func convertPemKey(AsyncCallback<KeyPair>, Option<String>, Option<String>)
+### func convertPemKey(AsyncCallback<[KeyPair](#class-keypair)>, Option<String>, Option<String>)
 
 ```cangjie
-public func convertPemKey(callback: AsyncCallback<KeyPair>, pubKey!: Option<String> = None, priKey!: Option<String> = None): Unit
+public func convertPemKey(callback: AsyncCallback<[KeyPair](#class-keypair)>, pubKey!: Option<String> = None, priKey!: Option<String> = None): Unit
 ```
 
-**功能：**
-
-异步将 PEM 格式的公钥和私钥字符串转换为非对称密钥对，通过回调返回结果。
+**功能：** 异步将 PEM 格式的公钥和私钥字符串转换为非对称密钥对，通过回调返回结果。
 
 **系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
 
@@ -1765,7 +1755,7 @@ public func convertPemKey(callback: AsyncCallback<KeyPair>, pubKey!: Option<Stri
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|callback|AsyncCallback&lt;KeyPair&gt;|是|-|回调函数，接收转换结果或错误。|
+|callback|AsyncCallback&lt;[KeyPair](#class-keypair)&gt;|是|-|回调函数，接收转换结果或错误。|
 |pubKey!|Option&lt;String&gt;|否|None|PEM 格式公钥字符串，可为空。|
 |priKey!|Option&lt;String&gt;|否|None|PEM 格式私钥字符串，可为空。|
 
@@ -1809,18 +1799,10 @@ try {
 ## class PriKey
 
 ```cangjie
-public class PriKey <: Key {
-    public prop format: String
-    public prop algName: String
-    public func getAsyKeySpec(itemType: AsyKeySpecItem): ResultSpec
-    public func getEncodedDer(format: String): DataBlob
-    public func getEncodedPem(format: String): String
-    public func getEncoded(): DataBlob
-    public func clearMem(): Unit
-}
+public class PriKey <: Key {}
 ```
 
-非对称私钥，提供获取私钥参数、编码、清除内存等能力。
+**功能：** 非对称私钥，提供获取私钥参数、编码、清除内存等能力。
 
 **父类型：**
 
@@ -1836,9 +1818,7 @@ public class PriKey <: Key {
 public prop format: String
 ```
 
-**功能：**
-
-获取私钥的格式。
+**功能：** 获取私钥的格式。
 
 **系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
 
@@ -1850,9 +1830,7 @@ public prop format: String
 public prop algName: String
 ```
 
-**功能：**
-
-获取私钥的算法名。
+**功能：** 获取私钥的算法名。
 
 **系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
 
@@ -1864,9 +1842,7 @@ public prop algName: String
 public func getAsyKeySpec(itemType: AsyKeySpecItem): ResultSpec
 ```
 
-**功能：**
-
-获取非对称私钥的指定参数。
+**功能：** 获取非对称私钥的指定参数。
 
 **系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
 
@@ -1876,13 +1852,13 @@ public func getAsyKeySpec(itemType: AsyKeySpecItem): ResultSpec
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|itemType|AsyKeySpecItem|是|-|指定要获取的密钥参数项。|
+|itemType|[AsyKeySpecItem](#enum-asykeyspecitem)|是|-|指定要获取的密钥参数项。|
 
 **返回值：**
 
 | 类型 | 说明 |
 | -------- | -------- |
-| ResultSpec | 返回密钥参数值包装类型。 |
+| [ResultSpec](#enum-resultspec) | 返回密钥参数值包装类型。 |
 
 **异常：**
 
@@ -1931,9 +1907,7 @@ try {
 public func getEncodedDer(format: String): DataBlob
 ```
 
-**功能：**
-
-获取私钥的 DER 格式编码。
+**功能：** 获取私钥的 DER 格式编码。
 
 **系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
 
@@ -1949,7 +1923,7 @@ public func getEncodedDer(format: String): DataBlob
 
 |类型|说明|
 |:----|:----|
-|DataBlob|返回 DER 格式编码的密钥数据。|
+|[DataBlob](#class-datablob)|返回 DER 格式编码的密钥数据。|
 
 **异常：**
 
@@ -1994,9 +1968,7 @@ try {
 public func getEncodedPem(format: String): String
 ```
 
-**功能：**
-
-获取私钥的 PEM 格式编码。
+**功能：** 获取私钥的 PEM 格式编码。
 
 **系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
 
@@ -2057,9 +2029,7 @@ try {
 public func getEncoded(): DataBlob
 ```
 
-**功能：**
-
-获取私钥的编码数据。
+**功能：** 获取私钥的编码数据。
 
 **系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
 
@@ -2069,7 +2039,7 @@ public func getEncoded(): DataBlob
 
 | 类型 | 说明 |
 | -------- | -------- |
-| DataBlob | 返回编码后的密钥数据。 |
+| [DataBlob](#class-datablob) | 返回编码后的密钥数据。 |
 
 **异常：**
 
@@ -2114,9 +2084,7 @@ try {
 public func clearMem(): Unit
 ```
 
-**功能：**
-
-清除私钥的内存数据，达到安全销毁的目的。
+**功能：** 清除私钥的内存数据，达到安全销毁的目的。
 
 **系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
 
@@ -2151,17 +2119,10 @@ try {
 ## class PubKey
 
 ```cangjie
-public class PubKey <: Key {
-    public prop format: String
-    public prop algName: String
-    public func getAsyKeySpec(itemType: AsyKeySpecItem): ResultSpec
-    public func getEncodedDer(format: String): DataBlob
-    public func getEncodedPem(format: String): String
-    public func getEncoded(): DataBlob
-}
+public class PubKey <: Key {}
 ```
 
-非对称公钥，提供获取公钥参数、编码等能力。
+**功能：** 非对称公钥，提供获取公钥参数、编码等能力。
 
 **父类型：**
 
@@ -2177,9 +2138,7 @@ public class PubKey <: Key {
 public prop format: String
 ```
 
-**功能：**
-
-获取公钥的格式。
+**功能：** 获取公钥的格式。
 
 **系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
 
@@ -2191,9 +2150,7 @@ public prop format: String
 public prop algName: String
 ```
 
-**功能：**
-
-获取公钥的算法名。
+**功能：** 获取公钥的算法名。
 
 **系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
 
@@ -2205,9 +2162,7 @@ public prop algName: String
 public func getAsyKeySpec(itemType: AsyKeySpecItem): ResultSpec
 ```
 
-**功能：**
-
-获取非对称公钥的指定参数。
+**功能：** 获取非对称公钥的指定参数。
 
 **系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
 
@@ -2217,13 +2172,13 @@ public func getAsyKeySpec(itemType: AsyKeySpecItem): ResultSpec
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|itemType|AsyKeySpecItem|是|-|指定要获取的密钥参数项。|
+|itemType|[AsyKeySpecItem](#enum-asykeyspecitem)|是|-|指定要获取的密钥参数项。|
 
 **返回值：**
 
 | 类型 | 说明 |
 | -------- | -------- |
-| ResultSpec | 返回密钥参数值包装类型。 |
+| [ResultSpec](#enum-resultspec) | 返回密钥参数值包装类型。 |
 
 **异常：**
 
@@ -2272,9 +2227,7 @@ try {
 public func getEncodedDer(format: String): DataBlob
 ```
 
-**功能：**
-
-获取公钥的 DER 格式编码。
+**功能：** 获取公钥的 DER 格式编码。
 
 **系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
 
@@ -2290,7 +2243,7 @@ public func getEncodedDer(format: String): DataBlob
 
 |类型|说明|
 |:----|:----|
-|DataBlob|返回 DER 格式编码的密钥数据。|
+|[DataBlob](#class-datablob)|返回 DER 格式编码的密钥数据。|
 
 **异常：**
 
@@ -2335,9 +2288,7 @@ try {
 public func getEncodedPem(format: String): String
 ```
 
-**功能：**
-
-获取公钥的 PEM 格式编码。
+**功能：** 获取公钥的 PEM 格式编码。
 
 **系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
 
@@ -2398,9 +2349,7 @@ try {
 public func getEncoded(): DataBlob
 ```
 
-**功能：**
-
-获取公钥的编码数据。
+**功能：** 获取公钥的编码数据。
 
 **系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
 
@@ -2410,7 +2359,7 @@ public func getEncoded(): DataBlob
 
 | 类型 | 说明 |
 | -------- | -------- |
-| DataBlob | 返回编码后的密钥数据。 |
+| [DataBlob](#class-datablob) | 返回编码后的密钥数据。 |
 
 **异常：**
 
@@ -2455,7 +2404,7 @@ try {
 public class KeyPair {}
 ```
 
-非对称密钥对，包含公钥和私钥。
+**功能：** 非对称密钥对，包含公钥和私钥。
 
 **系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
 
@@ -2467,9 +2416,7 @@ public class KeyPair {}
 public prop pubKey: PubKey
 ```
 
-**功能：**
-
-获取密钥对中的公钥。
+**功能：** 获取密钥对中的公钥。
 
 **系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
 
@@ -2481,9 +2428,7 @@ public prop pubKey: PubKey
 public prop priKey: PriKey
 ```
 
-**功能：**
-
-获取密钥对中的私钥。
+**功能：** 获取密钥对中的私钥。
 
 **系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
 
@@ -2495,7 +2440,7 @@ public prop priKey: PriKey
 public class Verify {}
 ```
 
-签名验签器，提供验签初始化、更新数据、验签、恢复数据、设置/获取验签参数的能力。
+**功能：** 签名验签器，提供验签初始化、更新数据、验签、恢复数据、设置/获取验签参数的能力。
 
 **系统能力：** SystemCapability.Security.CryptoFramework.Signature
 
@@ -2507,9 +2452,7 @@ public class Verify {}
 public prop algName: String
 ```
 
-**功能：**
-
-获取验签器的算法名。
+**功能：** 获取验签器的算法名。
 
 **系统能力：** SystemCapability.Security.CryptoFramework.Signature
 
@@ -2521,9 +2464,7 @@ public prop algName: String
 public func initialize(pubKey: PubKey, callback: AsyncCallback<Unit>): Unit
 ```
 
-**功能：**
-
-使用指定公钥异步初始化验签器，通过回调返回结果。
+**功能：** 使用指定公钥异步初始化验签器，通过回调返回结果。
 
 **系统能力：** SystemCapability.Security.CryptoFramework.Signature
 
@@ -2533,7 +2474,7 @@ public func initialize(pubKey: PubKey, callback: AsyncCallback<Unit>): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|pubKey|PubKey|是|-|用于验签的公钥。|
+|pubKey|[PubKey](#class-pubkey)|是|-|用于验签的公钥。|
 |callback|AsyncCallback&lt;Unit&gt;|是|-|回调函数，接收初始化结果或错误。|
 
 **异常：**
@@ -2585,9 +2526,7 @@ try {
 public func update(data: DataBlob, callback: AsyncCallback<Unit>): Unit
 ```
 
-**功能：**
-
-异步追加待验签数据，通过回调返回结果。在 initialize 之后、verify 之前调用。
+**功能：** 异步追加待验签数据，通过回调返回结果。在 initialize 之后、verify 之前调用。
 
 **系统能力：** SystemCapability.Security.CryptoFramework.Signature
 
@@ -2597,7 +2536,7 @@ public func update(data: DataBlob, callback: AsyncCallback<Unit>): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|data|DataBlob|是|-|待验签的数据。|
+|data|[DataBlob](#class-datablob)|是|-|待验签的数据。|
 |callback|AsyncCallback&lt;Unit&gt;|是|-|回调函数，接收更新结果或错误。|
 
 **异常：**
@@ -2654,9 +2593,7 @@ try {
 public func verify(data: DataBlob, signatureData: DataBlob, callback: AsyncCallback<Bool>): Unit
 ```
 
-**功能：**
-
-异步验证数据与签名是否匹配，通过回调返回验签结果。
+**功能：** 异步验证数据与签名是否匹配，通过回调返回验签结果。
 
 **系统能力：** SystemCapability.Security.CryptoFramework.Signature
 
@@ -2666,8 +2603,8 @@ public func verify(data: DataBlob, signatureData: DataBlob, callback: AsyncCallb
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|data|DataBlob|是|-|待验签的数据。|
-|signatureData|DataBlob|是|-|待验证的签名数据。|
+|data|[DataBlob](#class-datablob)|是|-|待验签的数据。|
+|signatureData|[DataBlob](#class-datablob)|是|-|待验证的签名数据。|
 |callback|AsyncCallback&lt;Bool&gt;|是|-|回调函数，接收验签结果或错误。|
 
 **异常：**
@@ -2721,15 +2658,13 @@ try {
 }
 ```
 
-### func verify(DataBlob, AsyncCallback<Bool>, Option<DataBlob>)
+### func verify(DataBlob, AsyncCallback<Bool>, Option<[DataBlob](#class-datablob)>)
 
 ```cangjie
-public func verify(signatureData: DataBlob, callback: AsyncCallback<Bool>, data!: Option<DataBlob> = None): Unit
+public func verify(signatureData: DataBlob, callback: AsyncCallback<Bool>, data!: Option<[DataBlob](#class-datablob)> = None): Unit
 ```
 
-**功能：**
-
-异步验证签名是否匹配，通过回调返回验签结果。此重载适用于已通过 update 追加数据后调用，data 参数可为空。
+**功能：** 异步验证签名是否匹配，通过回调返回验签结果。此重载适用于已通过 update 追加数据后调用，data 参数可为空。
 
 **系统能力：** SystemCapability.Security.CryptoFramework.Signature
 
@@ -2739,9 +2674,9 @@ public func verify(signatureData: DataBlob, callback: AsyncCallback<Bool>, data!
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|signatureData|DataBlob|是|-|待验证的签名数据。|
+|signatureData|[DataBlob](#class-datablob)|是|-|待验证的签名数据。|
 |callback|AsyncCallback&lt;Bool&gt;|是|-|回调函数，接收验签结果或错误。|
-|data!|Option&lt;DataBlob&gt;|否|None|待验签的数据，可为空（适用于已 update 场景）。|
+|data!|Option&lt;[DataBlob](#class-datablob)&gt;|否|None|待验签的数据，可为空（适用于已 update 场景）。|
 
 **异常：**
 
@@ -2806,9 +2741,7 @@ try {
 public func recover(signatureData: DataBlob, callback: AsyncCallback<?DataBlob>): Unit
 ```
 
-**功能：**
-
-异步从签名数据中恢复原始数据，通过回调返回结果。仅适用于 RSA 等支持签名恢复的算法。当恢复结果为空时，回调返回 None。
+**功能：** 异步从签名数据中恢复原始数据，通过回调返回结果。仅适用于 RSA 等支持签名恢复的算法。当恢复结果为空时，回调返回 None。
 
 **系统能力：** SystemCapability.Security.CryptoFramework.Signature
 
@@ -2818,8 +2751,8 @@ public func recover(signatureData: DataBlob, callback: AsyncCallback<?DataBlob>)
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|signatureData|DataBlob|是|-|待恢复的签名数据。|
-|callback|AsyncCallback&lt;?DataBlob&gt;|是|-|回调函数，接收恢复的原始数据或错误，数据为空时返回 None。|
+|signatureData|[DataBlob](#class-datablob)|是|-|待恢复的签名数据。|
+|callback|AsyncCallback&lt;?[DataBlob](#class-datablob)&gt;|是|-|回调函数，接收恢复的原始数据或错误，数据为空时返回 None。|
 
 **异常：**
 
@@ -2877,9 +2810,7 @@ try {
 public func setVerifySpec(itemType: SignSpecItem, itemValue: Int32): Unit
 ```
 
-**功能：**
-
-设置验签参数，参数值为 Int32 类型。
+**功能：** 设置验签参数，参数值为 Int32 类型。
 
 **系统能力：** SystemCapability.Security.CryptoFramework.Signature
 
@@ -2889,7 +2820,7 @@ public func setVerifySpec(itemType: SignSpecItem, itemValue: Int32): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|itemType|SignSpecItem|是|-|指定要设置的参数项。|
+|itemType|[SignSpecItem](#enum-signspecitem)|是|-|指定要设置的参数项。|
 |itemValue|Int32|是|-|参数值。|
 
 **异常：**
@@ -2927,9 +2858,7 @@ try {
 public func setVerifySpec(itemType: SignSpecItem, itemValue: Array<UInt8>): Unit
 ```
 
-**功能：**
-
-设置验签参数，参数值为字节数组类型。
+**功能：** 设置验签参数，参数值为字节数组类型。
 
 **系统能力：** SystemCapability.Security.CryptoFramework.Signature
 
@@ -2939,7 +2868,7 @@ public func setVerifySpec(itemType: SignSpecItem, itemValue: Array<UInt8>): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|itemType|SignSpecItem|是|-|指定要设置的参数项。|
+|itemType|[SignSpecItem](#enum-signspecitem)|是|-|指定要设置的参数项。|
 |itemValue|Array&lt;UInt8&gt;|是|-|参数值。|
 
 **异常：**
@@ -2980,9 +2909,7 @@ try {
 public func getVerifySpec(itemType: SignSpecItem): ResultSpec
 ```
 
-**功能：**
-
-获取验签参数。
+**功能：** 获取验签参数。
 
 **系统能力：** SystemCapability.Security.CryptoFramework.Signature
 
@@ -2992,13 +2919,13 @@ public func getVerifySpec(itemType: SignSpecItem): ResultSpec
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|itemType|SignSpecItem|是|-|指定要获取的参数项。|
+|itemType|[SignSpecItem](#enum-signspecitem)|是|-|指定要获取的参数项。|
 
 **返回值：**
 
 | 类型 | 说明 |
 | -------- | -------- |
-| ResultSpec | 返回参数值包装类型。 |
+| [ResultSpec](#enum-resultspec) | 返回参数值包装类型。 |
 
 **异常：**
 
@@ -3688,7 +3615,7 @@ public enum AsyKeySpecItem {
 }
 ```
 
-非对称密钥参数的枚举，用于指定获取非对称密钥的某个参数。
+**功能：** 非对称密钥参数的枚举，用于指定获取非对称密钥的某个参数。
 
 **系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
 
@@ -4150,7 +4077,7 @@ public enum ResultSpec {
 }
 ```
 
-非对称密钥参数返回值的枚举，用于包装不同类型的密钥参数返回值。
+**功能：** 非对称密钥参数返回值的枚举，用于包装不同类型的密钥参数返回值。
 
 **系统能力：** SystemCapability.Security.CryptoFramework.Key.AsymKey
 
@@ -4287,7 +4214,7 @@ public enum SignSpecItem {
 }
 ```
 
-签名验签参数的枚举，用于指定签名验签过程中的特定参数项。
+**功能：** 签名验签参数的枚举，用于指定签名验签过程中的特定参数项。
 
 **系统能力：** SystemCapability.Security.CryptoFramework.Signature
 
