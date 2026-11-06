@@ -33,6 +33,44 @@ API示例代码使用说明：
 
 上述示例工程及配置模板详见[接口使用说明](../cj-development-intro.md#接口使用说明)。
 
+## func once(String, Callback\<Unit>)
+
+```cangjie
+public func once(eventType: String, callback: Callback<Unit>): Unit
+```
+
+**功能：** 注册指定类型网页事件的一次性回调。当前仅支持 webInited 类型，即 Web 引擎初始化完成事件。
+
+应用首次加载 Web 组件时，Web 引擎会进行初始化，同一应用中后续加载其他 Web 组件时不会再次触发 once() 回调。应用销毁最后一个 Web 组件后，再次首次加载 Web 组件时，应用会重新进入 Web 引擎初始化流程。
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|eventType|String|是|-|网页事件类型。当前仅支持 webInited（Web 引擎初始化完成）。|
+|callback|[Callback\<Unit>](../arkinterop/cj-api-callback_invoke.md#type-callbackt)|是|-|Web 引擎初始化完成时触发的回调函数。|
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.ArkWeb.*
+import kit.CangjieKit.*
+import kit.PerformanceAnalysisKit.Hilog
+
+once("webInited") {
+    _ =>
+        Hilog.info(0, "test", "webInited")
+}
+```
+
 ## class BackForwardList
 
 ```cangjie
@@ -283,6 +321,100 @@ public var hitTestType: WebHitTestType
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **起始版本：** 22
+
+## class JsMessageExt
+
+```cangjie
+public class JsMessageExt {}
+```
+
+**功能：** runJavaScriptExt 接口执行结果的数据封装类。与仅支持字符串结果的常规脚本执行接口不同，runJavaScriptExt 支持更丰富的返回值类型，JsMessageExt 提供了类型安全地获取这些返回结果的途径。
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**起始版本：** 26.1.0
+
+### func getString()
+
+```cangjie
+public func getString(): String
+```
+
+**功能：** 获取数据对象的字符串类型数据。
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**起始版本：** 26.1.0
+
+**返回值：**
+
+|类型|说明|
+|:----|:----|
+|String|runJavaScriptExt 接口执行脚本后获取的字符串类型数据。|
+
+**异常：**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Webview错误码](./cj-errorcode-webview.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :---- |
+  | 17100014 | The type and value of the message do not match. |
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.ArkUI.LengthProp
+import kit.ArkUI.Button
+import kit.ArkUI.Column
+import kit.ArkUI.CustomView
+import kit.ArkUI.CJEntry
+import kit.ArkUI.loadNativeView
+import kit.ArkUI.SubscriberManager
+import kit.ArkUI.LocalStorage
+import ohos.arkui.state_macro_manage.Entry
+import ohos.arkui.state_macro_manage.Component
+import kit.ArkWeb.*
+import kit.ArkUI.Web
+import kit.PerformanceAnalysisKit.Hilog
+import kit.CangjieKit.BusinessException
+
+@Entry
+@Component
+class WebView {
+    let webController = WebviewController()
+    func build() {
+        Column(space: 10) {
+            Button("getString").onClick(
+                {
+                    evt =>
+                        try {
+                            webController.runJavaScriptExt(ScriptValueType.StringValue("test()"), { err, result =>
+                                if (let Some(e) <- err) {
+                                    Hilog.info(0, "test", "runJavaScriptExt failed: ${e.message}")
+                                } else {
+                                    let str = result?.getString() ?? ""
+                                    Hilog.info(0, "test", "getString result: ${str}")
+                                }
+                            })
+                        } catch (e: BusinessException) {
+                            Hilog.info(0, "test", "runJavaScriptExt failed: ${e.message}")
+                        }
+                }
+            ).width(400.px).height(150.px)
+
+            Web(src: "www.example.com", controller: webController).onPageBegin({
+                evt => Hilog.info(0, "cangjieTest", "page begin url: ${evt.url}")
+            }).onPageEnd({
+                evt => Hilog.info(0, "cangjieTest", "page end url: ${evt.url}")
+            })
+        }
+    }
+}
+```
 
 ## class WebCookieManager
 
@@ -616,6 +748,48 @@ let result = WebCookieManager.isThirdPartyCookieAllowed()
 Hilog.info(0, "AppLogCj",  "WebCookieManager, result: ${result}")
 ```
 
+### static func saveCookieAsync(AsyncCallback\<Unit>)
+
+```cangjie
+public static func saveCookieAsync(callback: AsyncCallback<Unit>): Unit
+```
+
+**功能：** 异步保存所有可通过 fetchCookie 获取且需要持久化的 Cookie 到磁盘。
+
+> **说明：**
+>
+> saveCookieAsync 用于强制将需要持久化的 Cookie 写入磁盘。PC/2-in-1 和平板设备上会话 Cookie 不会被持久化，即使调用 saveCookieAsync，会话 Cookie 也不会写入磁盘。
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|callback|[AsyncCallback](../arkinterop/cj-api-business_exception.md#type-asynccallbackt)\<Unit>|是|-|回调函数，用于指示 Cookie 是否保存成功。|
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.ArkWeb.*
+import kit.CangjieKit.*
+import kit.PerformanceAnalysisKit.Hilog
+
+WebCookieManager.saveCookieAsync({ err, _ =>
+    if (let Some(e) <- err) {
+        Hilog.info(0, "test", "saveCookieAsync failed: ${e.message}")
+    } else {
+        Hilog.info(0, "test", "saveCookieAsync success")
+    }
+})
+```
+
 ### static func setAcceptCookiesEnabled(Bool)
 
 ```cangjie
@@ -676,6 +850,123 @@ import kit.ArkWeb.*
 import kit.PerformanceAnalysisKit.Hilog
 
 WebCookieManager.setAcceptThirdPartyCookieEnabled(true)
+```
+
+## class WebCustomScheme
+
+```cangjie
+public class WebCustomScheme {}
+```
+
+**功能：** 自定义协议的配置选项，用于 customizeSchemes 接口。
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**起始版本：** 26.1.0
+
+### prop isCodeCacheSupported
+
+```cangjie
+public mut prop isCodeCacheSupported: ?Bool
+```
+
+**功能：** 设置该选项的自定义协议下的 JavaScript 资源是否支持生成代码缓存。true 表示支持生成代码缓存，false 表示不支持。
+
+默认值：false。
+
+**类型：** ?Bool
+
+**读写能力：** 可读写
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**起始版本：** 26.1.0
+
+### prop isSupportCORS
+
+```cangjie
+public mut prop isSupportCORS: Bool
+```
+
+**功能：** 是否支持跨域资源访问（CORS）。true 表示支持，false 表示不支持。
+
+默认值：true。
+
+**类型：** Bool
+
+**读写能力：** 可读写
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**起始版本：** 26.1.0
+
+### prop isSupportFetch
+
+```cangjie
+public mut prop isSupportFetch: Bool
+```
+
+**功能：** 是否支持抓取请求。true 表示支持，false 表示不支持。
+
+默认值：true。
+
+**类型：** Bool
+
+**读写能力：** 可读写
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**起始版本：** 26.1.0
+
+### prop schemeName
+
+```cangjie
+public mut prop schemeName: String
+```
+
+**功能：** 自定义协议名。最大长度为 32，仅支持小写字母、数字、'.'、'+' 和 '-'，且必须以字母开头。不满足上述限制时，自定义协议配置不生效。
+
+**类型：** String
+
+**读写能力：** 可读写
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**起始版本：** 26.1.0
+
+### init(String, Bool, Bool)
+
+```cangjie
+public init(schemeName: String, isSupportCORS: Bool, isSupportFetch: Bool)
+```
+
+**功能：** 创建一个 WebCustomScheme 对象，并使用指定的协议名初始化。
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|schemeName|String|是|-|自定义协议名。|
+|isSupportCORS|Bool|是|-|是否支持跨域资源访问（CORS）。true 表示支持，false 表示不支持。|
+|isSupportFetch|Bool|是|-|是否支持抓取请求。true 表示支持，false 表示不支持。|
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.ArkWeb.*
+import kit.PerformanceAnalysisKit.Hilog
+
+let scheme = WebCustomScheme("myScheme", true, false)
+scheme.isCodeCacheSupported = true
+Hilog.info(0, "test", "schemeName: ${scheme.schemeName}")
 ```
 
 ## class WebHeader
@@ -744,6 +1035,85 @@ public init(headerKey: String, headerValue: String)
 |:---|:---|:---|:---|:---|
 |headerKey|String|是|-|请求/响应头的key。|
 |headerValue|String|是|-|请求/响应头的value。|
+
+## class WebStorage
+
+```cangjie
+public class WebStorage {}
+```
+
+**功能：** 提供 Web SQL 数据库和 HTML5 Web Storage API 的管理能力。一个应用中的所有 Web 组件共享一个 WebStorage 对象。
+
+> **说明：**
+>
+> 调用 WebStorage 中的接口前，需要先加载 Web 组件。
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**起始版本：** 26.1.0
+
+### static func deleteAllData(?Bool)
+
+```cangjie
+public static func deleteAllData(incognito!: ?Bool = false): Unit
+```
+
+**功能：** 删除 JavaScript 存储 API 使用的所有存储数据，包括 Web SQL 数据库和 HTML5 支持的 Web 存储 API。
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|incognito|?Bool|否|false|**命名参数。** 是否删除无痕模式下的 Web SQL 数据库中的所有数据。true 表示删除，false 表示不删除。|
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.ArkUI.LengthProp
+import kit.ArkUI.Button
+import kit.ArkUI.Column
+import kit.ArkUI.CustomView
+import kit.ArkUI.CJEntry
+import kit.ArkUI.loadNativeView
+import kit.ArkUI.SubscriberManager
+import kit.ArkUI.LocalStorage
+import ohos.arkui.state_macro_manage.Entry
+import ohos.arkui.state_macro_manage.Component
+import kit.ArkWeb.*
+import kit.ArkUI.Web
+import kit.PerformanceAnalysisKit.Hilog
+
+@Entry
+@Component
+class WebView {
+    let webController = WebviewController()
+    func build() {
+        Column(space: 10) {
+            Button("deleteAllData").onClick(
+                {
+                    evt =>
+                        WebStorage.deleteAllData()
+                        Hilog.info(0, "test", "deleteAllData done")
+                }
+            ).width(400.px).height(150.px)
+
+            Web(src: "www.example.com", controller: webController).onPageBegin({
+                evt => Hilog.info(0, "cangjieTest", "page begin url: ${evt.url}")
+            }).onPageEnd({
+                evt => Hilog.info(0, "cangjieTest", "page end url: ${evt.url}")
+            })
+        }
+    }
+}
+```
 
 ## class WebviewController
 
@@ -918,6 +1288,168 @@ class WebView {
                         Hilog.info(0, "cangjieTest", "canGoBack")
                         let bool = webController.canGoBack()
                         Hilog.info(0, "cangjieTest", "canGoBack returns ${bool}")
+                }
+            ).width(400.px).height(150.px)
+
+            Web(src: "www.example.com", controller: webController).onPageBegin({
+                evt => Hilog.info(0, "cangjieTest", "page begin url: ${evt.url}")
+            }).onPageEnd({
+                evt => Hilog.info(0, "cangjieTest", "page end url: ${evt.url}")
+            })
+        }
+    }
+}
+```
+
+### func accessBackward()
+
+```cangjie
+public func accessBackward(): Bool
+```
+
+**功能：** 判断当前页面是否可后退，即当前页面是否具有后退历史记录。
+
+可以结合使用[getBackForwardEntries](#func-getbackforwardentries)来获取当前WebView的历史信息列表，以及使用[accessStep](#func-accessstepint32)来判断是否可以按照给定的步数前进或后退。
+
+> **说明：**
+>
+> - 在 Web 组件首次加载过程中调用[setCustomUserAgent](#func-setcustomuseragentstring)，可能会导致在当前存在多个历史节点的情况下，获取的 accessBackward 实际为 false，即没有后退节点。建议先调用 setCustomUserAgent 方法设置 UserAgent，再通过 loadUrl 加载具体页面。
+>
+> - 该现象是由于在 Web 组件首次加载时，调用 setCustomUserAgent 会导致组件重新加载并保持初始历史节点的状态。随后新增的节点将替换初始历史节点，不会生成新的历史节点，导致 accessBackward 为 false。
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**起始版本：** 26.1.0
+
+**返回值：**
+
+|类型|说明|
+|:----|:----|
+|Bool|当前页面可以后退返回 true，否则返回 false。|
+
+**异常：**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Webview错误码](./cj-errorcode-webview.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :---- |
+  | 17100001 | Init error. The WebviewController must be associated with a Web component. |
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.ArkUI.LengthProp
+import kit.ArkUI.Button
+import kit.ArkUI.Column
+import kit.ArkUI.CustomView
+import kit.ArkUI.CJEntry
+import kit.ArkUI.loadNativeView
+import kit.ArkUI.SubscriberManager
+import kit.ArkUI.LocalStorage
+import ohos.arkui.state_macro_manage.Entry
+import ohos.arkui.state_macro_manage.Component
+import kit.ArkWeb.*
+import kit.ArkUI.Web
+import kit.PerformanceAnalysisKit.Hilog
+import kit.CangjieKit.BusinessException
+
+@Entry
+@Component
+class WebView {
+    let webController = WebviewController()
+    func build() {
+        Column(space: 10) {
+            Button("accessBackward").onClick(
+                {
+                    evt =>
+                        try {
+                            let canBackward = webController.accessBackward()
+                            Hilog.info(0, "test", "accessBackward: ${canBackward}")
+                        } catch (e: BusinessException) {
+                            Hilog.info(0, "test", "accessBackward failed: ${e.message}")
+                        }
+                }
+            ).width(400.px).height(150.px)
+
+            Web(src: "www.example.com", controller: webController).onPageBegin({
+                evt => Hilog.info(0, "cangjieTest", "page begin url: ${evt.url}")
+            }).onPageEnd({
+                evt => Hilog.info(0, "cangjieTest", "page end url: ${evt.url}")
+            })
+        }
+    }
+}
+```
+
+### func accessForward()
+
+```cangjie
+public func accessForward(): Bool
+```
+
+**功能：** 判断当前页面是否可前进，即当前页面是否具有前进历史记录。
+
+可以结合使用[getBackForwardEntries](#func-getbackforwardentries)来获取当前WebView的历史信息列表，以及使用[accessStep](#func-accessstepint32)来判断是否可以按照给定的步数前进或后退。
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**起始版本：** 26.1.0
+
+**返回值：**
+
+|类型|说明|
+|:----|:----|
+|Bool|当前页面可以前进返回 true，否则返回 false。|
+
+**异常：**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Webview错误码](./cj-errorcode-webview.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :---- |
+  | 17100001 | Init error. The WebviewController must be associated with a Web component. |
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.ArkUI.LengthProp
+import kit.ArkUI.Button
+import kit.ArkUI.Column
+import kit.ArkUI.CustomView
+import kit.ArkUI.CJEntry
+import kit.ArkUI.loadNativeView
+import kit.ArkUI.SubscriberManager
+import kit.ArkUI.LocalStorage
+import ohos.arkui.state_macro_manage.Entry
+import ohos.arkui.state_macro_manage.Component
+import kit.ArkWeb.*
+import kit.ArkUI.Web
+import kit.PerformanceAnalysisKit.Hilog
+import kit.CangjieKit.BusinessException
+
+@Entry
+@Component
+class WebView {
+    let webController = WebviewController()
+    func build() {
+        Column(space: 10) {
+            Button("accessBackward").onClick(
+                {
+                    evt =>
+                        try {
+                            let canForward = webController.accessForward()
+                            Hilog.info(0, "test", "accessForward: ${canForward}")
+                        } catch (e: BusinessException) {
+                            Hilog.info(0, "test", "accessForward failed: ${e.message}")
+                        }
                 }
             ).width(400.px).height(150.px)
 
@@ -1203,6 +1735,159 @@ class WebView {
                     evt =>
                         Hilog.info(0, "cangjieTest", "clearHistory")
                         webController.clearHistory()
+                }
+            ).width(400.px).height(150.px)
+
+            Web(src: "www.example.com", controller: webController).onPageBegin({
+                evt => Hilog.info(0, "cangjieTest", "page begin url: ${evt.url}")
+            }).onPageEnd({
+                evt => Hilog.info(0, "cangjieTest", "page end url: ${evt.url}")
+            })
+        }
+    }
+}
+```
+
+### static func customizeSchemes(Array\<WebCustomScheme>)
+
+```cangjie
+public static func customizeSchemes(schemes: Array<WebCustomScheme>): Unit
+```
+
+**功能：** 向 Web 内核注册自定义协议的跨域请求和抓取请求权限。当 Web 发起自定义协议的跨域抓取时，抓取请求可被 onInterceptRequest 事件拦截，开发者可进一步处理该请求。建议在任何 Web 组件初始化之前调用该接口。
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|schemes|Array\<[WebCustomScheme](#class-webcustomscheme)>|是|-|自定义协议数组，最多允许 10 个。|
+
+**异常：**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Webview错误码](./cj-errorcode-webview.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :---- |
+  | 17100020 | Failed to register custom schemes. |
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.ArkUI.LengthProp
+import kit.ArkUI.Button
+import kit.ArkUI.Column
+import kit.ArkUI.CustomView
+import kit.ArkUI.CJEntry
+import kit.ArkUI.loadNativeView
+import kit.ArkUI.SubscriberManager
+import kit.ArkUI.LocalStorage
+import ohos.arkui.state_macro_manage.Entry
+import ohos.arkui.state_macro_manage.Component
+import kit.ArkWeb.*
+import kit.ArkUI.Web
+import kit.PerformanceAnalysisKit.Hilog
+import kit.CangjieKit.BusinessException
+
+@Entry
+@Component
+class WebView {
+    let webController = WebviewController()
+    
+    protected override func aboutToAppear() {
+        try {
+            let scheme = WebCustomScheme("schemeName", true, true)
+            scheme.isCodeCacheSupported = true
+            WebviewController.customizeSchemes([scheme])
+            Hilog.info(0, "test", "customizeSchemes done")
+        } catch (e: BusinessException) {
+            Hilog.info(0, "test", "customizeSchemes failed: ${e.message}")
+        }
+    }
+    
+    func build() {
+        Column(space: 10) {
+            Web(src: "www.example.com", controller: webController).onPageBegin({
+                evt => Hilog.info(0, "cangjieTest", "page begin url: ${evt.url}")
+            }).onPageEnd({
+                evt => Hilog.info(0, "cangjieTest", "page end url: ${evt.url}")
+            })
+        }
+    }
+}
+```
+
+### func deleteJavaScriptRegister(String)
+
+```cangjie
+public func deleteJavaScriptRegister(name: String): Unit
+```
+
+**功能：** 删除通过 registerJavaScriptProxy 或 javaScriptProxy 注册的指定 JavaScript 对象。删除后，需重新加载页面才能生效。
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|name|String|是|-|注册对象的名称，与 window 中调用的对象名一致。|
+
+**异常：**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Webview错误码](./cj-errorcode-webview.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :---- |
+  | 17100001 | Init error. The WebviewController must be associated with a Web component. |
+  | 17100008 | Failed to delete JavaScriptProxy because it does not exist. |
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.ArkUI.LengthProp
+import kit.ArkUI.Button
+import kit.ArkUI.Column
+import kit.ArkUI.CustomView
+import kit.ArkUI.CJEntry
+import kit.ArkUI.loadNativeView
+import kit.ArkUI.SubscriberManager
+import kit.ArkUI.LocalStorage
+import ohos.arkui.state_macro_manage.Entry
+import ohos.arkui.state_macro_manage.Component
+import kit.ArkWeb.*
+import kit.ArkUI.Web
+import kit.PerformanceAnalysisKit.Hilog
+import kit.CangjieKit.BusinessException
+
+@Entry
+@Component
+class WebView {
+    let webController = WebviewController()
+    func build() {
+        Column(space: 10) {
+            Button("deleteJavaScriptRegister").onClick(
+                {
+                    evt =>
+                        try {
+                            webController.deleteJavaScriptRegister("objName")
+                            Hilog.info(0, "test", "deleteJavaScriptRegister done")
+                        } catch (e: BusinessException) {
+                            Hilog.info(0, "test", "deleteJavaScriptRegister failed: ${e.message}")
+                        }
                 }
             ).width(400.px).height(150.px)
 
@@ -1931,6 +2616,116 @@ class WebView {
 }
 ```
 
+### func getWebId()
+
+```cangjie
+public func getWebId(): Int32
+```
+
+**功能：** 获取 Web 组件的索引值，用于管理多个 Web 组件。
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**起始版本：** 26.1.0
+
+**返回值：**
+
+|类型|说明|
+|:----|:----|
+|Int32|Web 组件的索引值。|
+
+**异常：**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Webview错误码](./cj-errorcode-webview.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :---- |
+  | 17100001 | Init error. The WebviewController must be associated with a Web component. |
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.ArkUI.LengthProp
+import kit.ArkUI.Button
+import kit.ArkUI.Column
+import kit.ArkUI.CustomView
+import kit.ArkUI.CJEntry
+import kit.ArkUI.loadNativeView
+import kit.ArkUI.SubscriberManager
+import kit.ArkUI.LocalStorage
+import ohos.arkui.state_macro_manage.Entry
+import ohos.arkui.state_macro_manage.Component
+import kit.ArkWeb.*
+import kit.ArkUI.Web
+import kit.PerformanceAnalysisKit.Hilog
+import kit.CangjieKit.BusinessException
+
+@Entry
+@Component
+class WebView {
+    let webController = WebviewController()
+    let headers = [WebHeader("headerKey", "headerValue")]
+    func build() {
+        Column(space: 10) {
+            Button("getWebId").onClick(
+                {
+                    evt =>
+                        try {
+                            let webId = webController.getWebId()
+                            Hilog.info(0, "test", "getWebId: ${webId}")
+                        } catch (e: BusinessException) {
+                            Hilog.info(0, "test", "getWebId failed: ${e.message}")
+                        }
+                }
+            ).width(400.px).height(150.px)
+
+            Web(src: "www.example.com", controller: webController).onPageBegin({
+                evt => Hilog.info(0, "cangjieTest", "page begin url: ${evt.url}")
+            }).onPageEnd({
+                evt => Hilog.info(0, "cangjieTest", "page end url: ${evt.url}")
+            })
+        }
+    }
+}
+```
+
+### static func initializeWebEngine()
+
+```cangjie
+public static func initializeWebEngine(): Unit
+```
+
+**功能：** 提前初始化 Web 引擎，加载 Web 引擎动态库并自动预连接历史记录中高频访问的网站，用于提升启动性能。
+
+> **说明：**
+>
+> initializeWebEngine 不能在异步线程调用，否则会导致系统崩溃。
+>
+> initializeWebEngine 全局生效，在一个应用生命周期内只需调用一次。
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**起始版本：** 26.1.0
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.ArkWeb.*
+import kit.PerformanceAnalysisKit.Hilog
+
+// 建议在应用启动阶段调用，且在创建任何 Web 组件之前。
+WebviewController.initializeWebEngine()
+Hilog.info(0, "test", "initializeWebEngine done")
+```
+
 ### func isIncognitoMode()
 
 ```cangjie
@@ -2064,6 +2859,149 @@ class WebView {
                         Hilog.info(0, "cangjieTest", "isSafeBrowsingEnabled returns ${bool}")
                 }
             ).width(400.px).height(150.px)
+            Web(src: "www.example.com", controller: webController).onPageBegin({
+                evt => Hilog.info(0, "cangjieTest", "page begin url: ${evt.url}")
+            }).onPageEnd({
+                evt => Hilog.info(0, "cangjieTest", "page end url: ${evt.url}")
+            })
+        }
+    }
+}
+```
+
+### func onActive()
+
+```cangjie
+public func onActive(): Unit
+```
+
+**功能：** 通知 Web 组件进入激活状态。应用处于激活前台状态时可与用户交互，并持续保持该状态直到因某些事件（例如来电或屏幕熄灭）导致焦点离开。
+
+如果页面之前处于未激活状态，H5 页面中通过 document.addEventListener ('visibilitychange',...) 注册的事件监听器将被触发，document.visibilityState 由 "hidden" 变为 "visible"。
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**起始版本：** 26.1.0
+
+**异常：**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Webview错误码](./cj-errorcode-webview.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :---- |
+  | 17100001 | Init error. The WebviewController must be associated with a Web component. |
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.ArkUI.LengthProp
+import kit.ArkUI.Button
+import kit.ArkUI.Column
+import kit.ArkUI.CustomView
+import kit.ArkUI.CJEntry
+import kit.ArkUI.loadNativeView
+import kit.ArkUI.SubscriberManager
+import kit.ArkUI.LocalStorage
+import ohos.arkui.state_macro_manage.Entry
+import ohos.arkui.state_macro_manage.Component
+import kit.ArkWeb.*
+import kit.ArkUI.Web
+import kit.PerformanceAnalysisKit.Hilog
+import kit.CangjieKit.BusinessException
+
+@Entry
+@Component
+class WebView {
+    let webController = WebviewController()
+    func build() {
+        Column(space: 10) {
+            Button("onActive").onClick(
+                {
+                    evt =>
+                        try {
+                            webController.onActive()
+                            Hilog.info(0, "test", "onActive done")
+                        } catch (e: BusinessException) {
+                            Hilog.info(0, "test", "onActive failed: ${e.message}")
+                        }
+                }
+            ).width(400.px).height(150.px)
+            Web(src: "www.example.com", controller: webController).onPageBegin({
+                evt => Hilog.info(0, "cangjieTest", "page begin url: ${evt.url}")
+            }).onPageEnd({
+                evt => Hilog.info(0, "cangjieTest", "page end url: ${evt.url}")
+            })
+        }
+    }
+}
+```
+
+### func onInactive()
+
+```cangjie
+public func onInactive(): Unit
+```
+
+**功能：** 通知 Web 组件进入未激活状态。开发者可实现应用失去焦点后需要执行的行为。
+
+调用该接口时，动画、地理位置等可安全暂停的内容会尽可能暂停，但 JavaScript 不会暂停。如需全局暂停 JavaScript，使用 pauseAllTimers；如需重新激活 Web 组件，使用 onActive。
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**起始版本：** 26.1.0
+
+**异常：**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Webview错误码](./cj-errorcode-webview.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :---- |
+  | 17100001 | Init error. The WebviewController must be associated with a Web component. |
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.ArkUI.LengthProp
+import kit.ArkUI.Button
+import kit.ArkUI.Column
+import kit.ArkUI.CustomView
+import kit.ArkUI.CJEntry
+import kit.ArkUI.loadNativeView
+import kit.ArkUI.SubscriberManager
+import kit.ArkUI.LocalStorage
+import ohos.arkui.state_macro_manage.Entry
+import ohos.arkui.state_macro_manage.Component
+import kit.ArkWeb.*
+import kit.ArkUI.Web
+import kit.PerformanceAnalysisKit.Hilog
+import kit.CangjieKit.BusinessException
+
+@Entry
+@Component
+class WebView {
+    let webController = WebviewController()
+    func build() {
+        Column(space: 10) {
+            Button("onInactive").onClick(
+                {
+                    evt =>
+                        try {
+                            webController.onInactive()
+                            Hilog.info(0, "test", "onInactive done")
+                        } catch (e: BusinessException) {
+                            Hilog.info(0, "test", "onInactive failed: ${e.message}")
+                        }
+                }
+            ).width(400.px).height(150.px)
+
             Web(src: "www.example.com", controller: webController).onPageBegin({
                 evt => Hilog.info(0, "cangjieTest", "page begin url: ${evt.url}")
             }).onPageEnd({
@@ -2452,7 +3390,107 @@ class WebView {
 </html>
 ```
 
-### func loadUrl\<T>(T, Array\<WebHeader>) where T \<: ResourceStr
+### func loadData(String, String, String, ?String, ?String)
+
+```cangjie
+public func loadData(data: String, mimeType: String, encoding: String, baseUrl!: ?String = None,
+    historyUrl!: ?String = None): Unit
+```
+
+**功能：** 加载指定数据。
+
+当 baseUrl 和 historyUrl 均为空时：
+
+如果 encoding 不为 base64（包括空值），安全 URL 字符范围内的八位字节使用 ASCII 编码，安全 URL 字符范围外的八位字节使用 URL 的标准 %xx 十六进制编码。
+
+data 必须使用 base64 或 URL 编码，否则内容中的哈希符（#）必须编码为 %23。否则，哈希符（#）会被视为内容结束符，其余文本会被用作文档片段标识符。
+
+> **说明：**
+>
+> - 加载本地图片时，可以为 baseUrl 或 historyUrl 赋空格。
+>
+> - 加载本地图片场景下，baseUrl 和 historyUrl 不能同时为空，否则图片无法加载。
+>
+> - 如果 HTML 富文本中包含哈希符（#）等特殊字符，建议将 baseUrl 和 historyUrl 赋值为空格。
+>
+> - 加载文本时，需要设置 `<meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8">` 以避免字体大小不一致。
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|data|String|是|-|经过 base64 或 URL 编码后的字符串。|
+|mimeType|String|是|-|媒体类型（MIME）。|
+|encoding|String|是|-|编码类型，可选值为 base64 或 URL。|
+|baseUrl|?String|否|None|**命名参数。** URL（HTTP/HTTPS/data 合规），由 Web 组件赋值给 window.origin。如需加载大量 HTML 文件，该参数赋值为 data。|
+|historyUrl|?String|否|None|**命名参数。** 历史记录 URL。非空时，历史记录基于该 URL 管理。baseUrl 为空时该参数无效。|
+
+**异常：**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Webview错误码](./cj-errorcode-webview.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :---- |
+  | 17100001 | Init error. The WebviewController must be associated with a Web component. |
+  | 17100002 | URL error. Possible causes: 1. No valid cookie found for the specified URL. 2. The webpage corresponding to the URL is invalid, or the URL length exceeds 2\*1024\*1024. |
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.ArkUI.LengthProp
+import kit.ArkUI.Button
+import kit.ArkUI.Column
+import kit.ArkUI.CustomView
+import kit.ArkUI.CJEntry
+import kit.ArkUI.loadNativeView
+import kit.ArkUI.SubscriberManager
+import kit.ArkUI.LocalStorage
+import ohos.arkui.state_macro_manage.Entry
+import ohos.arkui.state_macro_manage.Component
+import kit.ArkWeb.*
+import kit.ArkUI.Web
+import kit.PerformanceAnalysisKit.Hilog
+import kit.CangjieKit.BusinessException
+
+@Entry
+@Component
+class WebView {
+    let webController = WebviewController()
+    func build() {
+        Column(space: 10) {
+            Button("loadData").onClick(
+                {
+                    evt =>
+                        try {
+                            let data = "<html><body>Hello, Cangjie!</body></html>"
+                            webController.loadData(data, "text/html", "utf-8",
+                                baseUrl: "data:text/html;charset=utf-8,")
+                            Hilog.info(0, "test", "loadData done")
+                        } catch (e: BusinessException) {
+                            Hilog.info(0, "test", "loadData failed: ${e.message}")
+                        }
+                }
+            ).width(400.px).height(150.px)
+
+            Web(src: "www.example.com", controller: webController).onPageBegin({
+                evt => Hilog.info(0, "test", "page begin url: ${evt.url}")
+            }).onPageEnd({
+                evt => Hilog.info(0, "test", "page end url: ${evt.url}")
+            })
+        }
+    }
+}
+```
+
+### func loadUrl\<T>(T, Array\<WebHeader>) where T <: ResourceStr
 
 ```cangjie
 public func loadUrl<T>(url: T, headers!: Array<WebHeader> = Array<WebHeader>()): Unit where T <: ResourceStr
@@ -2514,6 +3552,152 @@ class WebView {
                     evt =>
                         Hilog.info(0, "test", "loadUrl")
                         webController.loadUrl(@rawfile("index.html"), headers: headers)
+                }
+            ).width(400.px).height(150.px)
+
+            Web(src: "www.example.com", controller: webController).onPageBegin({
+                evt => Hilog.info(0, "test", "page begin url: ${evt.url}")
+            }).onPageEnd({
+                evt => Hilog.info(0, "test", "page end url: ${evt.url}")
+            })
+        }
+    }
+}
+```
+
+### func requestFocus()
+
+```cangjie
+public func requestFocus(): Unit
+```
+
+**功能：** 请求当前网页获取焦点。
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**起始版本：** 26.1.0
+
+**异常：**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Webview错误码](./cj-errorcode-webview.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :---- |
+  | 17100001 | Init error. The WebviewController must be associated with a Web component. |
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.ArkUI.LengthProp
+import kit.ArkUI.Button
+import kit.ArkUI.Column
+import kit.ArkUI.CustomView
+import kit.ArkUI.CJEntry
+import kit.ArkUI.loadNativeView
+import kit.ArkUI.SubscriberManager
+import kit.ArkUI.LocalStorage
+import ohos.arkui.state_macro_manage.Entry
+import ohos.arkui.state_macro_manage.Component
+import kit.ArkWeb.*
+import kit.ArkUI.Web
+import kit.PerformanceAnalysisKit.Hilog
+import kit.CangjieKit.BusinessException
+
+@Entry
+@Component
+class WebView {
+    let webController = WebviewController()
+    func build() {
+        Column(space: 10) {
+            Button("zoomOut").onClick(
+                {
+                    evt =>
+                        try {
+                            webController.requestFocus()
+                            Hilog.info(0, "test", "requestFocus done")
+                        } catch (e: BusinessException) {
+                            Hilog.info(0, "test", "requestFocus failed: ${e.message}")
+                        }
+                }
+            ).width(400.px).height(150.px)
+
+            Web(src: "www.example.com", controller: webController).onPageBegin({
+                evt => Hilog.info(0, "test", "page begin url: ${evt.url}")
+            }).onPageEnd({
+                evt => Hilog.info(0, "test", "page end url: ${evt.url}")
+            })
+        }
+    }
+}
+```
+
+### func setAudioMuted(Bool)
+
+```cangjie
+public func setAudioMuted(mute: Bool): Unit
+```
+
+**功能：** 设置网页静音。典型使用场景包括：应用需要控制网页音量（例如提供静音开关）、后台播放时需要静音。
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|mute|Bool|是|-|是否将网页设置为静音。true 表示静音，false 表示取消静音。|
+
+**异常：**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Webview错误码](./cj-errorcode-webview.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :---- |
+  | 17100001 | Init error. The WebviewController must be associated with a Web component. |
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.ArkUI.LengthProp
+import kit.ArkUI.Button
+import kit.ArkUI.Column
+import kit.ArkUI.CustomView
+import kit.ArkUI.CJEntry
+import kit.ArkUI.loadNativeView
+import kit.ArkUI.SubscriberManager
+import kit.ArkUI.LocalStorage
+import ohos.arkui.state_macro_manage.Entry
+import ohos.arkui.state_macro_manage.Component
+import kit.ArkWeb.*
+import kit.ArkUI.Web
+import kit.PerformanceAnalysisKit.Hilog
+import kit.CangjieKit.BusinessException
+
+@Entry
+@Component
+class WebView {
+    let webController = WebviewController()
+    func build() {
+        Column(space: 10) {
+            Button("setAudioMuted").onClick(
+                {
+                    evt =>
+                        try {
+                            webController.setAudioMuted(true)
+                            Hilog.info(0, "test", "setAudioMuted done")
+                        } catch (e: BusinessException) {
+                            Hilog.info(0, "test", "setAudioMuted failed: ${e.message}")
+                        }
                 }
             ).width(400.px).height(150.px)
 
@@ -2605,6 +3789,120 @@ class WebView {
         }
     }
 }
+```
+
+### static func setRenderProcessMode(RenderProcessMode)
+
+```cangjie
+public static func setRenderProcessMode(mode: RenderProcessMode): Unit
+```
+
+**功能：** 设置 ArkWeb 渲染子进程模式。开发者可根据应用对内存占用和渲染进程隔离的要求选择合适的模式。
+
+可调用 getRenderProcessMode() 查看当前设备的 ArkWeb 渲染子进程模式。枚举值 0 表示单渲染子进程模式，1 表示多渲染子进程模式。默认情况下，手机使用单渲染子进程模式，平板和 PC/2-in-1 设备使用多渲染子进程模式。如果传入 RenderProcessMode 枚举值之外的无效值，默认使用多渲染子进程模式。
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|mode|[RenderProcessMode](#enum-renderprocessmode)|是|-|渲染子进程模式。|
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.ArkWeb.*
+import kit.PerformanceAnalysisKit.Hilog
+
+// 建议在应用启动阶段调用，且在创建任何 Web 组件之前。
+WebviewController.setRenderProcessMode(RenderProcessMode.Single)
+Hilog.info(0, "test", "setRenderProcessMode done")
+```
+
+### func setScrollable(Bool, ?ScrollType)
+
+```cangjie
+public func setScrollable(enable: Bool, scrollType!: ?ScrollType = None): Unit
+```
+
+**功能：** 设置网页是否可滚动，并支持指定滚动类型。
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|enable|Bool|是|-|网页是否可滚动。true 表示可滚动，false 表示不可滚动。默认值：true。|
+|scrollType|?[ScrollType](#enum-scrolltype)|否|None|**命名参数。** 网页支持的滚动类型，不指定时表示全部滚动类型。enable 为 false 时，仅禁用指定的滚动类型；不指定滚动类型时，禁用全部滚动类型。enable 为 true 时，无论 scrollType 取何值，全部滚动类型均启用。|
+
+**异常：**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Webview错误码](./cj-errorcode-webview.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :---- |
+  | 17100001 | Init error. The WebviewController must be associated with a Web component. |
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.ArkUI.LengthProp
+import kit.ArkUI.Button
+import kit.ArkUI.Column
+import kit.ArkUI.CustomView
+import kit.ArkUI.CJEntry
+import kit.ArkUI.loadNativeView
+import kit.ArkUI.SubscriberManager
+import kit.ArkUI.LocalStorage
+import ohos.arkui.state_macro_manage.Entry
+import ohos.arkui.state_macro_manage.Component
+import kit.ArkWeb.*
+import kit.ArkUI.Web
+import kit.PerformanceAnalysisKit.Hilog
+import kit.CangjieKit.BusinessException
+
+@Entry
+@Component
+class WebView {
+    let webController = WebviewController()
+    func build() {
+        Column(space: 10) {
+            Button("setScrollable").onClick(
+                {
+                    evt =>
+                        try {
+                            // 禁用触摸屏、触控板和鼠标滚轮触发的网页滚动。
+                            webController.setScrollable(false, scrollType: ScrollType.Event)
+                            Hilog.info(0, "test", "setScrollable done")
+                        } catch (e: BusinessException) {
+                            Hilog.info(0, "test", "setScrollable failed: ${e.message}")
+                        }
+                }
+            ).width(400.px).height(150.px)
+
+            Web(src: "www.example.com", controller: webController).onPageBegin({
+                evt => Hilog.info(0, "test", "page begin url: ${evt.url}")
+            }).onPageEnd({
+                evt => Hilog.info(0, "test", "page end url: ${evt.url}")
+            })
+        }
+    }
+}
+
 ```
 
 ### func stop()
@@ -3076,6 +4374,96 @@ class WebView {
 </html>
 ```
 
+### func runJavaScriptExt(ScriptValueType, AsyncCallback\<JsMessageExt>)
+
+```cangjie
+public func runJavaScriptExt(script: ScriptValueType, callback: AsyncCallback<JsMessageExt>): Unit
+```
+
+**功能：** 执行 JavaScript 脚本，并通过异步回调返回执行结果。runJavaScriptExt 需在 loadUrl 执行完成后调用，例如在 onPageEnd 中调用。
+
+与 runJavaScript 不同，runJavaScriptExt 支持更丰富的返回值类型，开发者可通过返回的 JsMessageExt 对象按类型获取结果。
+
+> **说明：**
+>
+> 前端页面传递给应用侧的字符串类型数据会被视为 JSON 格式的数据，需要使用 JSON.parse 反序列化。
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|script|[ScriptValueType](#enum-scriptvaluetype)|是|-|JavaScript 脚本，支持以字符串或字节数组传入。|
+|callback|[AsyncCallback](../arkinterop/cj-api-business_exception.md#type-asynccallbackt)\<[JsMessageExt](#class-jsmessageext)>|是|-|回调函数，用于返回执行结果。|
+
+**异常：**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Webview错误码](./cj-errorcode-webview.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :---- |
+  | 17100001 | Init error. The WebviewController must be associated with a Web component. |
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.ArkUI.LengthProp
+import kit.ArkUI.Button
+import kit.ArkUI.Column
+import kit.ArkUI.CustomView
+import kit.ArkUI.CJEntry
+import kit.ArkUI.loadNativeView
+import kit.ArkUI.SubscriberManager
+import kit.ArkUI.LocalStorage
+import ohos.arkui.state_macro_manage.Entry
+import ohos.arkui.state_macro_manage.Component
+import kit.ArkWeb.*
+import kit.ArkUI.Web
+import kit.PerformanceAnalysisKit.Hilog
+import kit.CangjieKit.BusinessException
+
+@Entry
+@Component
+class WebView {
+    let webController = WebviewController()
+    func build() {
+        Column(space: 10) {
+            Button("runJavaScriptExt").onClick(
+                {
+                    evt =>
+                        try {
+                            webController.runJavaScriptExt(ScriptValueType.StringValue("test()"), { err, result =>
+                                if (let Some(e) <- err) {
+                                    Hilog.info(0, "test", "runJavaScriptExt failed: ${e.message}")
+                                } else {
+                                    let str = result?.getString() ?? ""
+                                    Hilog.info(0, "test", "runJavaScriptExt result: ${str}")
+                                }
+                            })
+                        } catch (e: BusinessException) {
+                            Hilog.info(0, "test", "runJavaScriptExt failed: ${e.message}")
+                        }
+                }
+            ).width(400.px).height(150.px)
+
+            Web(src: "www.example.com", controller: webController).onPageBegin({
+                evt => Hilog.info(0, "test", "page begin url: ${evt.url}")
+            }).onPageEnd({
+                evt => Hilog.info(0, "test", "page end url: ${evt.url}")
+            })
+        }
+    }
+}
+
+```
+
 ### func scrollBy(Float32, Float32, ?Int32)
 
 ```cangjie
@@ -3171,6 +4559,90 @@ class WebView {
 Scroll Test
 </body>
 </html>
+```
+
+### func scrollByWithResult(Float32, Float32)
+
+```cangjie
+public func scrollByWithResult(deltaX: Float32, deltaY: Float32): Bool
+```
+
+**功能：** 将网页滚动指定偏移量，并返回滚动是否成功。
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|deltaX|Float32|是|-|水平方向滚动偏移量，向右为正方向。单位：vp。|
+|deltaY|Float32|是|-|垂直方向滚动偏移量，向下为正方向。单位：vp。|
+
+**返回值：**
+
+|类型|说明|
+|:----|:----|
+|Bool|当前网页可以滚动返回 true，不可以滚动返回 false。|
+
+**异常：**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Webview错误码](./cj-errorcode-webview.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :---- |
+  | 17100001 | Init error. The WebviewController must be associated with a Web component. |
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.ArkUI.LengthProp
+import kit.ArkUI.Button
+import kit.ArkUI.Column
+import kit.ArkUI.CustomView
+import kit.ArkUI.CJEntry
+import kit.ArkUI.loadNativeView
+import kit.ArkUI.SubscriberManager
+import kit.ArkUI.LocalStorage
+import ohos.arkui.state_macro_manage.Entry
+import ohos.arkui.state_macro_manage.Component
+import kit.ArkWeb.*
+import kit.ArkUI.Web
+import kit.PerformanceAnalysisKit.Hilog
+import kit.CangjieKit.BusinessException
+
+@Entry
+@Component
+class WebView {
+    let webController = WebviewController()
+    func build() {
+        Column(space: 10) {
+            Button("scrollByWithResult").onClick(
+                {
+                    evt =>
+                        try {
+                            let result = webController.scrollByWithResult(0.0, 100.0)
+                            Hilog.info(0, "test", "scrollByWithResult: ${result}")
+                        } catch (e: BusinessException) {
+                            Hilog.info(0, "test", "scrollByWithResult failed: ${e.message}")
+                        }
+                }
+            ).width(400.px).height(150.px)
+
+            Web(src: "www.example.com", controller: webController).onPageBegin({
+                evt => Hilog.info(0, "test", "page begin url: ${evt.url}")
+            }).onPageEnd({
+                evt => Hilog.info(0, "test", "page end url: ${evt.url}")
+            })
+        }
+    }
+}
+
 ```
 
 ### func scrollTo(Float32, Float32, ?Int32)
@@ -3344,6 +4816,326 @@ class WebView {
     }
 }
 ```
+
+## enum RenderProcessMode
+
+```cangjie
+public enum RenderProcessMode <: Equatable<RenderProcessMode> & ToString {
+    | Single
+    | Multiple
+    | ...
+}
+```
+
+**功能：** ArkWeb 渲染子进程模式的类型。开发者可根据应用对内存占用和渲染进程隔离的要求选择合适的模式。
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**起始版本：** 26.1.0
+
+**父类型：**
+
+- Equatable\<[RenderProcessMode](#enum-renderprocessmode)>
+- ToString
+
+### Single
+
+```cangjie
+Single
+```
+
+**功能：** ArkWeb 单渲染子进程模式。该模式下，多个 Web 组件共享一个渲染子进程。
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**起始版本：** 26.1.0
+
+### Multiple
+
+```cangjie
+Multiple
+```
+
+**功能：** ArkWeb 多渲染子进程模式。该模式下，每个 Web 组件拥有独立的渲染子进程。
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**起始版本：** 26.1.0
+
+### func !=(RenderProcessMode)
+
+```cangjie
+public operator func !=(other: RenderProcessMode): Bool
+```
+
+**功能：** 判断两个枚举值是否不等。
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|other|[RenderProcessMode](#enum-renderprocessmode)|是|-|待比较的另一个枚举值。|
+
+**返回值：**
+
+|类型|说明|
+|:----|:----|
+|Bool|如果两个枚举值不等，返回true，否则返回false。|
+
+### func ==(RenderProcessMode)
+
+```cangjie
+public operator func ==(other: RenderProcessMode): Bool
+```
+
+**功能：** 判断两个枚举值是否相等。
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|other|[RenderProcessMode](#enum-renderprocessmode)|是|-|待比较的另一个枚举值。|
+
+**返回值：**
+
+|类型|说明|
+|:----|:----|
+|Bool|如果两个枚举值相等，返回true，否则返回false。|
+
+### func toString()
+
+```cangjie
+public func toString(): String
+```
+
+**功能：** 获取枚举的字符串表示。
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**起始版本：** 26.1.0
+
+**返回值：**
+
+|类型|说明|
+|:----|:----|
+|String|枚举的字符串表示。|
+
+## enum ScriptValueType
+
+```cangjie
+public enum ScriptValueType <: Equatable<ScriptValueType> & ToString {
+    | StringValue(String)
+    | ArrayBufferValue(ArrayBuffer)
+    | ...
+}
+```
+
+**功能：** runJavaScriptExt 接口的脚本类型，待执行的 JavaScript 脚本支持以字符串或字节数组传入。
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**起始版本：** 26.1.0
+
+**父类型：**
+
+- Equatable\<[ScriptValueType](#enum-scriptvaluetype)>
+- ToString
+
+### StringValue
+
+```cangjie
+StringValue(String)
+```
+
+**功能：** 以字符串形式传入 JavaScript 脚本。
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**起始版本：** 26.1.0
+
+### ArrayBufferValue
+
+```cangjie
+ArrayBufferValue(ArrayBuffer)
+```
+
+**功能：** 以字节数组形式传入 JavaScript 脚本。
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**起始版本：** 26.1.0
+
+### func !=(ScriptValueType)
+
+```cangjie
+public operator func !=(other: ScriptValueType): Bool
+```
+
+**功能：** 判断两个枚举值是否不等。
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|other|[ScriptValueType](#enum-scriptvaluetype)|是|-|待比较的另一个枚举值。|
+
+**返回值：**
+
+|类型|说明|
+|:----|:----|
+|Bool|如果两个枚举值不等，返回true，否则返回false。|
+
+### func ==(ScriptValueType)
+
+```cangjie
+public operator func ==(other: ScriptValueType): Bool
+```
+
+**功能：** 判断两个枚举值是否相等。
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|other|[ScriptValueType](#enum-scriptvaluetype)|是|-|待比较的另一个枚举值。|
+
+**返回值：**
+
+|类型|说明|
+|:----|:----|
+|Bool|如果两个枚举值相等，返回true，否则返回false。|
+
+### func toString()
+
+```cangjie
+public func toString(): String
+```
+
+**功能：** 获取枚举的字符串表示。
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**起始版本：** 26.1.0
+
+**返回值：**
+
+|类型|说明|
+|:----|:----|
+|String|枚举的字符串表示。|
+
+## enum ScrollType
+
+```cangjie
+public enum ScrollType <: Equatable<ScrollType> & ToString {
+    | Event
+    | ...
+}
+```
+
+**功能：** setScrollable 接口的滚动类型。
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**起始版本：** 26.1.0
+
+**父类型：**
+
+- Equatable\<[ScrollType](#enum-scrolltype)>
+- ToString
+
+### Event
+
+```cangjie
+Event
+```
+
+**功能：** 滚动事件，表示由触摸屏、触控板或鼠标滚轮触发的网页滚动。
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**起始版本：** 26.1.0
+
+### func !=(ScrollType)
+
+```cangjie
+public operator func !=(other: ScrollType): Bool
+```
+
+**功能：** 判断两个枚举值是否不等。
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|other|[ScrollType](#enum-scrolltype)|是|-|待比较的另一个枚举值。|
+
+**返回值：**
+
+|类型|说明|
+|:----|:----|
+|Bool|如果两个枚举值不等，返回true，否则返回false。|
+
+### func ==(ScrollType)
+
+```cangjie
+public operator func ==(other: ScrollType): Bool
+```
+
+**功能：** 判断两个枚举值是否相等。
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|other|[ScrollType](#enum-scrolltype)|是|-|待比较的另一个枚举值。|
+
+**返回值：**
+
+|类型|说明|
+|:----|:----|
+|Bool|如果两个枚举值相等，返回true，否则返回false。|
+
+### func toString()
+
+```cangjie
+public func toString(): String
+```
+
+**功能：** 获取枚举的字符串表示。
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**起始版本：** 26.1.0
+
+**返回值：**
+
+|类型|说明|
+|:----|:----|
+|String|枚举的字符串表示。|
 
 ## enum SecurityLevel
 
