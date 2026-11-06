@@ -15,7 +15,7 @@ For details about the error codes of this module and the common camera error cod
 ## Importing the Module
 
 ```cangjie
-import ohos.multimedia.camera_picker.*
+import kit.CameraKit.*
 ```
 
 ## Usage Instructions
@@ -60,7 +60,6 @@ public func pick(context: UIAbilityContext, mediaTypes: Array<PickerMediaType>, 
 ```cangjie
 // index.cj
 
-import ohos.multimedia.camera_picker.*
 import kit.CameraKit.*
 import kit.CangjieKit.{AsyncCallback, BusinessException}
 import kit.PerformanceAnalysisKit.Hilog
@@ -170,7 +169,6 @@ public init(cameraPosition: camera.CameraPosition, saveUri!: ?String = None, vid
 ```cangjie
 // index.cj
 
-import ohos.multimedia.camera_picker.*
 import kit.CameraKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
