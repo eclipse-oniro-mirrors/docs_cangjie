@@ -1621,7 +1621,7 @@ public prop algName: String
 
 **起始版本：** 26.1.0
 
-### func generateKeyPair(AsyncCallback<[KeyPair](#class-keypair)>)
+### func generateKeyPair(AsyncCallback<KeyPair>)
 
 ```cangjie
 public func generateKeyPair(callback: AsyncCallback<[KeyPair](#class-keypair)>): Unit
@@ -1675,7 +1675,7 @@ try {
 }
 ```
 
-### func convertKey(AsyncCallback<[KeyPair](#class-keypair)>, Option<[DataBlob](#class-datablob)>, Option<[DataBlob](#class-datablob)>)
+### func convertKey(AsyncCallback<KeyPair>, Option<DataBlob>, Option<DataBlob>)
 
 ```cangjie
 public func convertKey(callback: AsyncCallback<[KeyPair](#class-keypair)>, pubKey!: Option<[DataBlob](#class-datablob)> = None, priKey!: Option<[DataBlob](#class-datablob)> = None): Unit
@@ -1739,7 +1739,7 @@ try {
 }
 ```
 
-### func convertPemKey(AsyncCallback<[KeyPair](#class-keypair)>, Option<String>, Option<String>)
+### func convertPemKey(AsyncCallback<KeyPair>, Option<String>, Option<String>)
 
 ```cangjie
 public func convertPemKey(callback: AsyncCallback<[KeyPair](#class-keypair)>, pubKey!: Option<String> = None, priKey!: Option<String> = None): Unit
@@ -2658,7 +2658,7 @@ try {
 }
 ```
 
-### func verify(DataBlob, AsyncCallback<Bool>, Option<[DataBlob](#class-datablob)>)
+### func verify(DataBlob, AsyncCallback<Bool>, Option<DataBlob>)
 
 ```cangjie
 public func verify(signatureData: DataBlob, callback: AsyncCallback<Bool>, data!: Option<[DataBlob](#class-datablob)> = None): Unit
