@@ -23,7 +23,6 @@ For details about the APIs, see [ohos.multimedia.camera_picker (Camera Picker)](
     <!-- compile -->
 
     ```cangjie
-    import ohos.multimedia.camera_picker.*
     import kit.CameraKit.*
     import kit.CoreFileKit.*
     import kit.CangjieKit.{AsyncCallback, BusinessException}
@@ -81,7 +80,6 @@ For details about the APIs, see [ohos.multimedia.camera_picker (Camera Picker)](
 ```cangjie
 // index.cj
 
-import ohos.multimedia.camera_picker.*
 import kit.CameraKit.*
 import kit.CoreFileKit.*
 import kit.CangjieKit.{AsyncCallback, BusinessException}

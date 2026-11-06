@@ -23,7 +23,6 @@ CameraPicker的相机交互界面由系统提供，在用户点击拍摄和确�
     <!-- compile -->
 
     ```cangjie
-    import ohos.multimedia.camera_picker.*
     import kit.CameraKit.*
     import kit.CoreFileKit.*
     import kit.CangjieKit.{AsyncCallback, BusinessException}
@@ -81,7 +80,6 @@ CameraPicker的相机交互界面由系统提供，在用户点击拍摄和确�
 ```cangjie
 // index.cj
 
-import ohos.multimedia.camera_picker.*
 import kit.CameraKit.*
 import kit.CoreFileKit.*
 import kit.CangjieKit.{AsyncCallback, BusinessException}

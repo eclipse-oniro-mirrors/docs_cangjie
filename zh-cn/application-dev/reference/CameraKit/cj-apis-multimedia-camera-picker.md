@@ -15,7 +15,7 @@ camera_picker模块提供拉起系统相机选择照片或视频的能力，应�
 ## 导入模块
 
 ```cangjie
-import ohos.multimedia.camera_picker.*
+import kit.CameraKit.*
 ```
 
 ## 使用说明
@@ -60,7 +60,6 @@ public func pick(context: UIAbilityContext, mediaTypes: Array<PickerMediaType>, 
 ```cangjie
 // index.cj
 
-import ohos.multimedia.camera_picker.*
 import kit.CameraKit.*
 import kit.CangjieKit.{AsyncCallback, BusinessException}
 import kit.PerformanceAnalysisKit.Hilog
@@ -170,7 +169,6 @@ public init(cameraPosition: camera.CameraPosition, saveUri!: ?String = None, vid
 ```cangjie
 // index.cj
 
-import ohos.multimedia.camera_picker.*
 import kit.CameraKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
