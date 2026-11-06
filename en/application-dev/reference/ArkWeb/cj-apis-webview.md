@@ -33,6 +33,44 @@ API sample code usage instructions:
 
 For the above sample project and configuration template, refer to [Interface Usage Instructions](../cj-development-intro.md#接口使用说明).
 
+## func once(String, Callback\<Unit>)
+
+```cangjie
+public func once(eventType: String, callback: Callback<Unit>): Unit
+```
+
+**Function:** Registers a one-time callback for web events of the specified type. Currently, only **webInited** is supported. This callback is triggered when the Web engine initialization is complete.
+
+When the first **Web** component is loaded in an app, the Web engine is initialized, and the once() callback is not triggered when other **Web** components are subsequently loaded in the same app. When the app destroys the last **Web** component, if the first **Web** component is loaded again, the app re-enters the Web engine initialization process.
+
+**System Capability:** SystemCapability.Web.Webview.Core
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+| Parameter | Type | Required | Default | Description |
+|:---|:---|:---|:---|:---|
+| eventType | String | Yes | - | Type of the Web event. Currently, only **webInited** (Web engine initialization complete) is supported. |
+| callback | [Callback\<Unit>](../arkinterop/cj-api-callback_invoke.md#type-callbackt) | Yes | - | Callback invoked when the Web engine initialization is complete. |
+
+**Example:**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.ArkWeb.*
+import kit.CangjieKit.*
+import kit.PerformanceAnalysisKit.Hilog
+
+once("webInited") {
+    _ =>
+        Hilog.info(0, "test", "webInited")
+}
+```
+
 ## class BackForwardList
 
 ```cangjie
@@ -277,6 +315,100 @@ public var hitTestType: WebHitTestType
 **System Capability:** SystemCapability.Web.Webview.Core
 
 **Since:** 22
+
+## class JsMessageExt
+
+```cangjie
+public class JsMessageExt {}
+```
+
+**Description:** Data encapsulation class of the execution result of the runJavaScriptExt API. Unlike conventional script execution APIs that only support string results, runJavaScriptExt supports richer return value types, and JsMessageExt provides a type-safe way to obtain these results.
+
+**System Capability:** SystemCapability.Web.Webview.Core
+
+**Since:** 26.1.0
+
+### func getString()
+
+```cangjie
+public func getString(): String
+```
+
+**Function:** Obtains string-type data of the data object.
+
+**System Capability:** SystemCapability.Web.Webview.Core
+
+**Since:** 26.1.0
+
+**Return Value:**
+
+| Type | Description |
+|:----|:----|
+| String | String-type data obtained after the runJavaScriptExt API executes the script. |
+
+**Exceptions:**
+
+- BusinessException: The error codes are as follows. For details, refer to [Webview Error Codes](./cj-errorcode-webview.md).
+
+  | Error Code ID | Error Message |
+  | :---- | :--- |
+  | 17100014 | The type and value of the message do not match. |
+
+**Example:**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.ArkUI.LengthProp
+import kit.ArkUI.Button
+import kit.ArkUI.Column
+import kit.ArkUI.CustomView
+import kit.ArkUI.CJEntry
+import kit.ArkUI.loadNativeView
+import kit.ArkUI.SubscriberManager
+import kit.ArkUI.LocalStorage
+import ohos.arkui.state_macro_manage.Entry
+import ohos.arkui.state_macro_manage.Component
+import kit.ArkWeb.*
+import kit.ArkUI.Web
+import kit.PerformanceAnalysisKit.Hilog
+import kit.CangjieKit.BusinessException
+
+@Entry
+@Component
+class WebView {
+    let webController = WebviewController()
+    func build() {
+        Column(space: 10) {
+            Button("getString").onClick(
+                {
+                    evt =>
+                        try {
+                            webController.runJavaScriptExt(ScriptValueType.StringValue("test()"), { err, result =>
+                                if (let Some(e) <- err) {
+                                    Hilog.info(0, "test", "runJavaScriptExt failed: ${e.message}")
+                                } else {
+                                    let str = result?.getString() ?? ""
+                                    Hilog.info(0, "test", "getString result: ${str}")
+                                }
+                            })
+                        } catch (e: BusinessException) {
+                            Hilog.info(0, "test", "runJavaScriptExt failed: ${e.message}")
+                        }
+                }
+            ).width(400.px).height(150.px)
+
+            Web(src: "www.example.com", controller: webController).onPageBegin({
+                evt => Hilog.info(0, "cangjieTest", "page begin url: ${evt.url}")
+            }).onPageEnd({
+                evt => Hilog.info(0, "cangjieTest", "page end url: ${evt.url}")
+            })
+        }
+    }
+}
+```
 
 ## class WebCookieManager
 
@@ -586,6 +718,48 @@ let result = WebCookieManager.isThirdPartyCookieAllowed()
 Hilog.info(0, "AppLogCj",  "WebCookieManager, result: ${result}")
 ```
 
+### static func saveCookieAsync(AsyncCallback\<Unit>)
+
+```cangjie
+public static func saveCookieAsync(callback: AsyncCallback<Unit>): Unit
+```
+
+**Function:** Asynchronously saves all cookies (that can be obtained through fetchCookie and need to be persisted) to the disk.
+
+> **Note:**
+>
+> saveCookieAsync is used to forcibly write cookies that need to be persisted to the disk. Session cookies are not persisted on PC/2-in-1 and tablet devices. Even if saveCookieAsync is called, session cookies are not written to the disk.
+
+**System Capability:** SystemCapability.Web.Webview.Core
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+| Parameter | Type | Required | Default | Description |
+|:---|:---|:---|:---|:---|
+| callback | [AsyncCallback](../arkinterop/cj-api-business_exception.md#type-asynccallbackt)\<Unit> | Yes | - | Callback used to indicate whether the cookies are saved. |
+
+**Example:**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.ArkWeb.*
+import kit.CangjieKit.*
+import kit.PerformanceAnalysisKit.Hilog
+
+WebCookieManager.saveCookieAsync({ err, _ =>
+    if (let Some(e) <- err) {
+        Hilog.info(0, "test", "saveCookieAsync failed: ${e.message}")
+    } else {
+        Hilog.info(0, "test", "saveCookieAsync success")
+    }
+})
+```
+
 ### static func putAcceptCookieEnabled(Bool)
 
 ```cangjie
@@ -617,7 +791,126 @@ import kit.PerformanceAnalysisKit.Hilog
 WebCookieManager.putAcceptCookieEnabled(false)
 ```
 
-### static func putAcceptThirdPartyCookieEnabled(B## class WebHeader
+### static func putAcceptThirdPartyCookieEnabled(Bool)
+
+## class WebCustomScheme
+
+```cangjie
+public class WebCustomScheme {}
+```
+
+**Description:** Configuration options of a custom protocol, used by customizeSchemes.
+
+**System Capability:** SystemCapability.Web.Webview.Core
+
+**Since:** 26.1.0
+
+### prop isCodeCacheSupported
+
+```cangjie
+public mut prop isCodeCacheSupported: ?Bool
+```
+
+**Description:** Whether JavaScript resources of the custom protocol with this option set support code cache generation. The value **true** means that code cache generation is supported, and **false** means the opposite.
+
+Default value: **false**.
+
+**Type:** ?Bool
+
+**Access:** Read-write
+
+**System Capability:** SystemCapability.Web.Webview.Core
+
+**Since:** 26.1.0
+
+### prop isSupportCORS
+
+```cangjie
+public mut prop isSupportCORS: Bool
+```
+
+**Description:** Whether to support cross-origin resource sharing (CORS). The value **true** means to support cross-origin resource sharing (CORS), and **false** means the opposite.
+
+Default value: **true**.
+
+**Type:** Bool
+
+**Access:** Read-write
+
+**System Capability:** SystemCapability.Web.Webview.Core
+
+**Since:** 26.1.0
+
+### prop isSupportFetch
+
+```cangjie
+public mut prop isSupportFetch: Bool
+```
+
+**Description:** Whether to support fetch requests. The value **true** means to support fetch requests, and **false** means the opposite.
+
+Default value: **true**.
+
+**Type:** Bool
+
+**Access:** Read-write
+
+**System Capability:** SystemCapability.Web.Webview.Core
+
+**Since:** 26.1.0
+
+### prop schemeName
+
+```cangjie
+public mut prop schemeName: String
+```
+
+**Description:** Custom protocol name. The maximum length is 32, and only lowercase letters, digits, '.', '+', and '-' are supported. It must start with a letter. If the preceding restrictions are not met, the custom protocol configuration does not take effect.
+
+**Type:** String
+
+**Access:** Read-write
+
+**System Capability:** SystemCapability.Web.Webview.Core
+
+**Since:** 26.1.0
+
+### init(String, Bool, Bool)
+
+```cangjie
+public init(schemeName: String, isSupportCORS: Bool, isSupportFetch: Bool)
+```
+
+**Description:** Creates a WebCustomScheme object and initializes it with the specified protocol name.
+
+**System Capability:** SystemCapability.Web.Webview.Core
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+| Parameter | Type | Required | Default | Description |
+|:---|:---|:---|:---|:---|
+| schemeName | String | Yes | - | Custom protocol name. |
+| isSupportCORS | Bool | Yes | - | Whether to support cross-origin resource sharing (CORS). The value **true** means to support cross-origin resource sharing (CORS), and **false** means the opposite. |
+| isSupportFetch | Bool | Yes | - | Whether to support fetch requests. The value **true** means to support fetch requests, and **false** means the opposite. |
+
+**Example:**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.ArkWeb.*
+import kit.PerformanceAnalysisKit.Hilog
+
+let scheme = WebCustomScheme("myScheme", true, false)
+scheme.isCodeCacheSupported = true
+Hilog.info(0, "test", "schemeName: ${scheme.schemeName}")
+```
+
+## class WebHeader
 
 ```cangjie
 public class WebHeader {
@@ -683,6 +976,85 @@ public init(headerKey: String, headerValue: String)
 |:---|:---|:---|:---|:---|
 | headerKey | String | Yes | - | The key of request/response header. |
 | headerValue | String | Yes | - | The value of request/response header. |
+
+## class WebStorage
+
+```cangjie
+public class WebStorage {}
+```
+
+**Description:** Provides the capability of managing the Web SQL database and HTML5 Web Storage APIs. All **Web** components in an app share one WebStorage object.
+
+> **Note:**
+>
+> You must load the **Web** component before calling the APIs in **WebStorage**.
+
+**System Capability:** SystemCapability.Web.Webview.Core
+
+**Since:** 26.1.0
+
+### static func deleteAllData(?Bool)
+
+```cangjie
+public static func deleteAllData(incognito!: ?Bool = false): Unit
+```
+
+**Function:** Deletes all storage data used by JavaScript storage APIs, including the Web SQL Database and HTML5-supported Web storage APIs.
+
+**System Capability:** SystemCapability.Web.Webview.Core
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+| Parameter | Type | Required | Default | Description |
+|:---|:---|:---|:---|:---|
+| incognito | ?Bool | No | false | **Named parameter.** Whether to delete all data in the Web SQL Database in incognito mode. The value **true** means to delete all data in the Web SQL Database in incognito mode, and **false** means the opposite. |
+
+**Example:**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.ArkUI.LengthProp
+import kit.ArkUI.Button
+import kit.ArkUI.Column
+import kit.ArkUI.CustomView
+import kit.ArkUI.CJEntry
+import kit.ArkUI.loadNativeView
+import kit.ArkUI.SubscriberManager
+import kit.ArkUI.LocalStorage
+import ohos.arkui.state_macro_manage.Entry
+import ohos.arkui.state_macro_manage.Component
+import kit.ArkWeb.*
+import kit.ArkUI.Web
+import kit.PerformanceAnalysisKit.Hilog
+
+@Entry
+@Component
+class WebView {
+    let webController = WebviewController()
+    func build() {
+        Column(space: 10) {
+            Button("deleteAllData").onClick(
+                {
+                    evt =>
+                        WebStorage.deleteAllData()
+                        Hilog.info(0, "test", "deleteAllData done")
+                }
+            ).width(400.px).height(150.px)
+
+            Web(src: "www.example.com", controller: webController).onPageBegin({
+                evt => Hilog.info(0, "cangjieTest", "page begin url: ${evt.url}")
+            }).onPageEnd({
+                evt => Hilog.info(0, "cangjieTest", "page end url: ${evt.url}")
+            })
+        }
+    }
+}
+```
 
 ## class WebviewController
 
@@ -786,25 +1158,33 @@ class EntryView {
 public func accessBackward(): Bool
 ```
 
-**Description:** Checks whether the current page can go back, i.e., whether there is a back history for the current page.
+**Function:** Checks whether the current page can go back, i.e., whether there is a back history for the current page.
+
+You can use [getBackForwardEntries](#func-getbackforwardentries) to obtain the historical information list of the current WebView and use [accessStep](#func-accessstepint32) to determine whether to move forward or backward based on the specified number of steps.
+
+> **Note:**
+>
+> If setCustomUserAgent is called when the **Web** component is loaded for the first time, the value of **accessBackward** may be **false** when there are multiple historical entries. That is, there is no backward entry. You are advised to call the **setCustomUserAgent** method to set a user agent before using **loadUrl** to load a specific page.
+>
+> Causes: When the **Web** component is loaded for the first time, calling setCustomUserAgent causes the component to reload and retain the initial history entry. Then the new entry replaces the initial history entry and no new history entry is generated. As a result, the value of **accessBackward** is false.
 
 **System Capability:** SystemCapability.Web.Webview.Core
 
-**Since:** 22
+**Since:** 26.1.0
 
 **Return Value:**
 
 | Type | Description |
 |:----|:----|
-| Bool | Returns true if it can go back, otherwise returns false. |
+| Bool | Returns **true** if the current page can go back, and **false** otherwise. |
 
 **Exceptions:**
 
-- BusinessException: Error codes are listed below. For details, see [Webview Error Codes](./cj-errorcode-webview.md).
+- BusinessException: The error codes are as follows. For details, refer to [Webview Error Codes](./cj-errorcode-webview.md).
 
   | Error Code ID | Error Message |
   | :---- | :--- |
-  | 17100001 | Init error. |
+  | 17100001 | Init error. The WebviewController must be associated with a Web component. |
 
 **Example:**
 
@@ -813,31 +1193,121 @@ public func accessBackward(): Bool
 ```cangjie
 // index.cj
 
+import kit.ArkUI.LengthProp
+import kit.ArkUI.Button
+import kit.ArkUI.Column
+import kit.ArkUI.CustomView
+import kit.ArkUI.CJEntry
+import kit.ArkUI.loadNativeView
+import kit.ArkUI.SubscriberManager
+import kit.ArkUI.LocalStorage
+import ohos.arkui.state_macro_manage.Entry
+import ohos.arkui.state_macro_manage.Component
 import kit.ArkWeb.*
 import kit.ArkUI.Web
-import kit.PerformanceAnalysisKit.*
-import ohos.arkui.component.button.Button
+import kit.PerformanceAnalysisKit.Hilog
+import kit.CangjieKit.BusinessException
 
 @Entry
 @Component
-class EntryView {
+class WebView {
     let webController = WebviewController()
     func build() {
-        Column(space:10) {
-            Button("accessBackward")
-            .onClick {
-                evt =>
-                Hilog.info(0, "cangjieTest", "accessBackward")
-                let bool = webController.accessBackward()
-                Hilog.info(0, "cangjieTest", "accessBackward returns ${bool}")
-            }.width(400.px).height(150.px)
+        Column(space: 10) {
+            Button("accessBackward").onClick(
+                {
+                    evt =>
+                        try {
+                            let canBackward = webController.accessBackward()
+                            Hilog.info(0, "test", "accessBackward: ${canBackward}")
+                        } catch (e: BusinessException) {
+                            Hilog.info(0, "test", "accessBackward failed: ${e.message}")
+                        }
+                }
+            ).width(400.px).height(150.px)
 
-            Web(src: "www.example.com", controller: webController)
-            .onPageBegin({evt =>
-                Hilog.info(0, "cangjieTest", "page begin url: ${evt.url}")
+            Web(src: "www.example.com", controller: webController).onPageBegin({
+                evt => Hilog.info(0, "cangjieTest", "page begin url: ${evt.url}")
+            }).onPageEnd({
+                evt => Hilog.info(0, "cangjieTest", "page end url: ${evt.url}")
             })
-            .onPageEnd({evt =>
-                Hilog.info(0, "cangjieTest", "page end url: ${evt.url}")
+        }
+    }
+}
+```
+
+### func accessForward()
+
+```cangjie
+public func accessForward(): Bool
+```
+
+**Function:** Checks whether the current page can go forward, i.e., whether there is a forward history for the current page.
+
+You can use [getBackForwardEntries](#func-getbackforwardentries) to obtain the historical information list of the current WebView and use [accessStep](#func-accessstepint32) to determine whether to move forward or backward based on the specified number of steps.
+
+**System Capability:** SystemCapability.Web.Webview.Core
+
+**Since:** 26.1.0
+
+**Return Value:**
+
+| Type | Description |
+|:----|:----|
+| Bool | Returns **true** if the current page can go forward, and **false** otherwise. |
+
+**Exceptions:**
+
+- BusinessException: The error codes are as follows. For details, refer to [Webview Error Codes](./cj-errorcode-webview.md).
+
+  | Error Code ID | Error Message |
+  | :---- | :--- |
+  | 17100001 | Init error. The WebviewController must be associated with a Web component. |
+
+**Example:**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.ArkUI.LengthProp
+import kit.ArkUI.Button
+import kit.ArkUI.Column
+import kit.ArkUI.CustomView
+import kit.ArkUI.CJEntry
+import kit.ArkUI.loadNativeView
+import kit.ArkUI.SubscriberManager
+import kit.ArkUI.LocalStorage
+import ohos.arkui.state_macro_manage.Entry
+import ohos.arkui.state_macro_manage.Component
+import kit.ArkWeb.*
+import kit.ArkUI.Web
+import kit.PerformanceAnalysisKit.Hilog
+import kit.CangjieKit.BusinessException
+
+@Entry
+@Component
+class WebView {
+    let webController = WebviewController()
+    func build() {
+        Column(space: 10) {
+            Button("accessBackward").onClick(
+                {
+                    evt =>
+                        try {
+                            let canForward = webController.accessForward()
+                            Hilog.info(0, "test", "accessForward: ${canForward}")
+                        } catch (e: BusinessException) {
+                            Hilog.info(0, "test", "accessForward failed: ${e.message}")
+                        }
+                }
+            ).width(400.px).height(150.px)
+
+            Web(src: "www.example.com", controller: webController).onPageBegin({
+                evt => Hilog.info(0, "cangjieTest", "page begin url: ${evt.url}")
+            }).onPageEnd({
+                evt => Hilog.info(0, "cangjieTest", "page end url: ${evt.url}")
             })
         }
     }
@@ -1086,6 +1556,159 @@ class EntryView {
             })
             .onPageEnd({evt =>
                 Hilog.info(0, "cangjieTest", "page end url: ${evt.url}")
+            })
+        }
+    }
+}
+```
+
+### static func customizeSchemes(Array\<WebCustomScheme>)
+
+```cangjie
+public static func customizeSchemes(schemes: Array<WebCustomScheme>): Unit
+```
+
+**Function:** Grants the cross-origin request and fetch request permissions for custom protocols to the web kernel. When the Web performs a cross-origin fetch of a custom protocol, the fetch request can be intercepted by the onInterceptRequest event, so that developers can further process the request. It is recommended to call this API before any **Web** component is initialized.
+
+**System Capability:** SystemCapability.Web.Webview.Core
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+| Parameter | Type | Required | Default | Description |
+|:---|:---|:---|:---|:---|
+| schemes | Array\<[WebCustomScheme](#class-webcustomscheme)> | Yes | - | Array of up to 10 custom schemes. |
+
+**Exceptions:**
+
+- BusinessException: The error codes are as follows. For details, refer to [Webview Error Codes](./cj-errorcode-webview.md).
+
+  | Error Code ID | Error Message |
+  | :---- | :--- |
+  | 17100020 | Failed to register custom schemes. |
+
+**Example:**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.ArkUI.LengthProp
+import kit.ArkUI.Button
+import kit.ArkUI.Column
+import kit.ArkUI.CustomView
+import kit.ArkUI.CJEntry
+import kit.ArkUI.loadNativeView
+import kit.ArkUI.SubscriberManager
+import kit.ArkUI.LocalStorage
+import ohos.arkui.state_macro_manage.Entry
+import ohos.arkui.state_macro_manage.Component
+import kit.ArkWeb.*
+import kit.ArkUI.Web
+import kit.PerformanceAnalysisKit.Hilog
+import kit.CangjieKit.BusinessException
+
+@Entry
+@Component
+class WebView {
+    let webController = WebviewController()
+    
+    protected override func aboutToAppear() {
+        try {
+            let scheme = WebCustomScheme("schemeName", true, true)
+            scheme.isCodeCacheSupported = true
+            WebviewController.customizeSchemes([scheme])
+            Hilog.info(0, "test", "customizeSchemes done")
+        } catch (e: BusinessException) {
+            Hilog.info(0, "test", "customizeSchemes failed: ${e.message}")
+        }
+    }
+    
+    func build() {
+        Column(space: 10) {
+            Web(src: "www.example.com", controller: webController).onPageBegin({
+                evt => Hilog.info(0, "cangjieTest", "page begin url: ${evt.url}")
+            }).onPageEnd({
+                evt => Hilog.info(0, "cangjieTest", "page end url: ${evt.url}")
+            })
+        }
+    }
+}
+```
+
+### func deleteJavaScriptRegister(String)
+
+```cangjie
+public func deleteJavaScriptRegister(name: String): Unit
+```
+
+**Function:** Deletes the specified JavaScript object registered through registerJavaScriptProxy or javaScriptProxy. The deletion takes effect after the page is reloaded.
+
+**System Capability:** SystemCapability.Web.Webview.Core
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+| Parameter | Type | Required | Default | Description |
+|:---|:---|:---|:---|:---|
+| name | String | Yes | - | Name of the registered JavaScript object, which is the same as the object name invoked in the window. |
+
+**Exceptions:**
+
+- BusinessException: The error codes are as follows. For details, refer to [Webview Error Codes](./cj-errorcode-webview.md).
+
+  | Error Code ID | Error Message |
+  | :---- | :--- |
+  | 17100001 | Init error. The WebviewController must be associated with a Web component. |
+  | 17100008 | Failed to delete JavaScriptProxy because it does not exist. |
+
+**Example:**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.ArkUI.LengthProp
+import kit.ArkUI.Button
+import kit.ArkUI.Column
+import kit.ArkUI.CustomView
+import kit.ArkUI.CJEntry
+import kit.ArkUI.loadNativeView
+import kit.ArkUI.SubscriberManager
+import kit.ArkUI.LocalStorage
+import ohos.arkui.state_macro_manage.Entry
+import ohos.arkui.state_macro_manage.Component
+import kit.ArkWeb.*
+import kit.ArkUI.Web
+import kit.PerformanceAnalysisKit.Hilog
+import kit.CangjieKit.BusinessException
+
+@Entry
+@Component
+class WebView {
+    let webController = WebviewController()
+    func build() {
+        Column(space: 10) {
+            Button("deleteJavaScriptRegister").onClick(
+                {
+                    evt =>
+                        try {
+                            webController.deleteJavaScriptRegister("objName")
+                            Hilog.info(0, "test", "deleteJavaScriptRegister done")
+                        } catch (e: BusinessException) {
+                            Hilog.info(0, "test", "deleteJavaScriptRegister failed: ${e.message}")
+                        }
+                }
+            ).width(400.px).height(150.px)
+
+            Web(src: "www.example.com", controller: webController).onPageBegin({
+                evt => Hilog.info(0, "cangjieTest", "page begin url: ${evt.url}")
+            }).onPageEnd({
+                evt => Hilog.info(0, "cangjieTest", "page end url: ${evt.url}")
             })
         }
     }
@@ -1856,6 +2479,116 @@ class EntryView {
 }
 ```
 
+### func getWebId()
+
+```cangjie
+public func getWebId(): Int32
+```
+
+**Function:** Obtains the index value of the **Web** component, which can be used for managing multiple **Web** components.
+
+**System Capability:** SystemCapability.Web.Webview.Core
+
+**Since:** 26.1.0
+
+**Return Value:**
+
+| Type | Description |
+|:----|:----|
+| Int32 | Index value of the **Web** component. |
+
+**Exceptions:**
+
+- BusinessException: The error codes are as follows. For details, refer to [Webview Error Codes](./cj-errorcode-webview.md).
+
+  | Error Code ID | Error Message |
+  | :---- | :--- |
+  | 17100001 | Init error. The WebviewController must be associated with a Web component. |
+
+**Example:**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.ArkUI.LengthProp
+import kit.ArkUI.Button
+import kit.ArkUI.Column
+import kit.ArkUI.CustomView
+import kit.ArkUI.CJEntry
+import kit.ArkUI.loadNativeView
+import kit.ArkUI.SubscriberManager
+import kit.ArkUI.LocalStorage
+import ohos.arkui.state_macro_manage.Entry
+import ohos.arkui.state_macro_manage.Component
+import kit.ArkWeb.*
+import kit.ArkUI.Web
+import kit.PerformanceAnalysisKit.Hilog
+import kit.CangjieKit.BusinessException
+
+@Entry
+@Component
+class WebView {
+    let webController = WebviewController()
+    let headers = [WebHeader("headerKey", "headerValue")]
+    func build() {
+        Column(space: 10) {
+            Button("getWebId").onClick(
+                {
+                    evt =>
+                        try {
+                            let webId = webController.getWebId()
+                            Hilog.info(0, "test", "getWebId: ${webId}")
+                        } catch (e: BusinessException) {
+                            Hilog.info(0, "test", "getWebId failed: ${e.message}")
+                        }
+                }
+            ).width(400.px).height(150.px)
+
+            Web(src: "www.example.com", controller: webController).onPageBegin({
+                evt => Hilog.info(0, "cangjieTest", "page begin url: ${evt.url}")
+            }).onPageEnd({
+                evt => Hilog.info(0, "cangjieTest", "page end url: ${evt.url}")
+            })
+        }
+    }
+}
+```
+
+### static func initializeWebEngine()
+
+```cangjie
+public static func initializeWebEngine(): Unit
+```
+
+**Function:** Initializes the Web engine in advance, loading the dynamic library of the Web engine and automatically preconnecting to frequently visited websites in history to improve startup performance.
+
+> **Note:**
+>
+> initializeWebEngine cannot be called in an asynchronous thread. Otherwise, the system breaks down.
+>
+> initializeWebEngine takes effect globally and needs to be called only once in an application lifecycle.
+
+**System Capability:** SystemCapability.Web.Webview.Core
+
+**Since:** 26.1.0
+
+**Example:**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.ArkWeb.*
+import kit.PerformanceAnalysisKit.Hilog
+
+// It is recommended that this API be called during app startup and before any Web component is created.
+WebviewController.initializeWebEngine()
+Hilog.info(0, "test", "initializeWebEngine done")
+```
+
 ### func isIncognitoMode()
 
 ```cangjie
@@ -1975,6 +2708,149 @@ class EntryView {
             })
             .onPageEnd({evt =>
                 Hilog.info(0, "cangjieTest", "page end url: ${evt.url}")
+            })
+        }
+    }
+}
+```
+
+### func onActive()
+
+```cangjie
+public func onActive(): Unit
+```
+
+**Function:** Notifies the **Web** component that it enters the active state. The application can interact with the user while in the active foreground state, and it remains in this state until the focus is moved away from it due to some event (for example, an incoming call is received or the device screen is turned off).
+
+If the page was previously in the inactive state, the event listener registered through document.addEventListener('visibilitychange',...) in the H5 page will be triggered, and document.visibilityState changes from "hidden" to "visible".
+
+**System Capability:** SystemCapability.Web.Webview.Core
+
+**Since:** 26.1.0
+
+**Exceptions:**
+
+- BusinessException: The error codes are as follows. For details, refer to [Webview Error Codes](./cj-errorcode-webview.md).
+
+  | Error Code ID | Error Message |
+  | :---- | :--- |
+  | 17100001 | Init error. The WebviewController must be associated with a Web component. |
+
+**Example:**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.ArkUI.LengthProp
+import kit.ArkUI.Button
+import kit.ArkUI.Column
+import kit.ArkUI.CustomView
+import kit.ArkUI.CJEntry
+import kit.ArkUI.loadNativeView
+import kit.ArkUI.SubscriberManager
+import kit.ArkUI.LocalStorage
+import ohos.arkui.state_macro_manage.Entry
+import ohos.arkui.state_macro_manage.Component
+import kit.ArkWeb.*
+import kit.ArkUI.Web
+import kit.PerformanceAnalysisKit.Hilog
+import kit.CangjieKit.BusinessException
+
+@Entry
+@Component
+class WebView {
+    let webController = WebviewController()
+    func build() {
+        Column(space: 10) {
+            Button("onActive").onClick(
+                {
+                    evt =>
+                        try {
+                            webController.onActive()
+                            Hilog.info(0, "test", "onActive done")
+                        } catch (e: BusinessException) {
+                            Hilog.info(0, "test", "onActive failed: ${e.message}")
+                        }
+                }
+            ).width(400.px).height(150.px)
+            Web(src: "www.example.com", controller: webController).onPageBegin({
+                evt => Hilog.info(0, "cangjieTest", "page begin url: ${evt.url}")
+            }).onPageEnd({
+                evt => Hilog.info(0, "cangjieTest", "page end url: ${evt.url}")
+            })
+        }
+    }
+}
+```
+
+### func onInactive()
+
+```cangjie
+public func onInactive(): Unit
+```
+
+**Function:** Notifies the **Web** component that it enters the inactive state. You can implement the behavior to perform after the application loses focus.
+
+When this API is called, any content that can be safely paused, such as animations and geographical locations, is paused as much as possible. However, the JavaScript is not paused. To pause the JavaScript globally, use pauseAllTimers. To reactivate the **Web** component, use onActive.
+
+**System Capability:** SystemCapability.Web.Webview.Core
+
+**Since:** 26.1.0
+
+**Exceptions:**
+
+- BusinessException: The error codes are as follows. For details, refer to [Webview Error Codes](./cj-errorcode-webview.md).
+
+  | Error Code ID | Error Message |
+  | :---- | :--- |
+  | 17100001 | Init error. The WebviewController must be associated with a Web component. |
+
+**Example:**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.ArkUI.LengthProp
+import kit.ArkUI.Button
+import kit.ArkUI.Column
+import kit.ArkUI.CustomView
+import kit.ArkUI.CJEntry
+import kit.ArkUI.loadNativeView
+import kit.ArkUI.SubscriberManager
+import kit.ArkUI.LocalStorage
+import ohos.arkui.state_macro_manage.Entry
+import ohos.arkui.state_macro_manage.Component
+import kit.ArkWeb.*
+import kit.ArkUI.Web
+import kit.PerformanceAnalysisKit.Hilog
+import kit.CangjieKit.BusinessException
+
+@Entry
+@Component
+class WebView {
+    let webController = WebviewController()
+    func build() {
+        Column(space: 10) {
+            Button("onInactive").onClick(
+                {
+                    evt =>
+                        try {
+                            webController.onInactive()
+                            Hilog.info(0, "test", "onInactive done")
+                        } catch (e: BusinessException) {
+                            Hilog.info(0, "test", "onInactive failed: ${e.message}")
+                        }
+                }
+            ).width(400.px).height(150.px)
+
+            Web(src: "www.example.com", controller: webController).onPageBegin({
+                evt => Hilog.info(0, "cangjieTest", "page begin url: ${evt.url}")
+            }).onPageEnd({
+                evt => Hilog.info(0, "cangjieTest", "page end url: ${evt.url}")
             })
         }
     }
@@ -2312,6 +3188,106 @@ Loaded HTML file. Place the `index.html` file under `entry\src\main\resources\ra
 </html>
 ```
 
+### func loadData(String, String, String, ?String, ?String)
+
+```cangjie
+public func loadData(data: String, mimeType: String, encoding: String, baseUrl!: ?String = None,
+    historyUrl!: ?String = None): Unit
+```
+
+**Function:** Loads specified data.
+
+When both baseUrl and historyUrl are empty:
+
+If encoding is not base64 (including null values), ASCII encoding is used for octets within the secure URL character range, and the standard %xx hexadecimal encoding of the URL is used for octets outside the secure URL character range.
+
+data must be encoded using Base64 or URL encoding. Otherwise, any hash (#) in the content must be encoded as %23. If it is not, the hash (#) is considered as the end of the content, and the remaining text is used as the document fragment identifier.
+
+> **Note:**
+>
+> - To load a local image, you can assign a space to either baseUrl or historyUrl.
+>
+> - In the scenario of loading a local image, baseUrl and historyUrl cannot be both empty. Otherwise, the image cannot be loaded.
+>
+> - If the rich text in HTML contains special characters such as hash (#), you are advised to set the values of **baseUrl** and **historyUrl** to spaces.
+>
+> - To load texts, you need to set `<meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8">` to avoid inconsistent font sizes.
+
+**System Capability:** SystemCapability.Web.Webview.Core
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+| Parameter | Type | Required | Default | Description |
+|:---|:---|:---|:---|:---|
+| data | String | Yes | - | String obtained after being base64 or URL encoded. |
+| mimeType | String | Yes | - | Media type (MIME). |
+| encoding | String | Yes | - | Encoding type, which can be base64 or URL. |
+| baseUrl | ?String | No | None | **Named parameter.** URL (compliant with HTTP/HTTPS/data), assigned by the **Web** component to window.origin. To load a large number of HTML files, set this parameter to data. |
+| historyUrl | ?String | No | None | **Named parameter.** URL used in the history. When it is not empty, the history is managed based on this URL. This parameter is invalid when baseUrl is empty. |
+
+**Exceptions:**
+
+- BusinessException: The error codes are as follows. For details, refer to [Webview Error Codes](./cj-errorcode-webview.md).
+
+  | Error Code ID | Error Message |
+  | :---- | :--- |
+  | 17100001 | Init error. The WebviewController must be associated with a Web component. |
+  | 17100002 | URL error. Possible causes: 1. No valid cookie found for the specified URL. 2. The webpage corresponding to the URL is invalid, or the URL length exceeds 2\*1024\*1024. |
+
+**Example:**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.ArkUI.LengthProp
+import kit.ArkUI.Button
+import kit.ArkUI.Column
+import kit.ArkUI.CustomView
+import kit.ArkUI.CJEntry
+import kit.ArkUI.loadNativeView
+import kit.ArkUI.SubscriberManager
+import kit.ArkUI.LocalStorage
+import ohos.arkui.state_macro_manage.Entry
+import ohos.arkui.state_macro_manage.Component
+import kit.ArkWeb.*
+import kit.ArkUI.Web
+import kit.PerformanceAnalysisKit.Hilog
+import kit.CangjieKit.BusinessException
+
+@Entry
+@Component
+class WebView {
+    let webController = WebviewController()
+    func build() {
+        Column(space: 10) {
+            Button("loadData").onClick(
+                {
+                    evt =>
+                        try {
+                            let data = "<html><body>Hello, Cangjie!</body></html>"
+                            webController.loadData(data, "text/html", "utf-8",
+                                baseUrl: "data:text/html;charset=utf-8,")
+                            Hilog.info(0, "test", "loadData done")
+                        } catch (e: BusinessException) {
+                            Hilog.info(0, "test", "loadData failed: ${e.message}")
+                        }
+                }
+            ).width(400.px).height(150.px)
+
+            Web(src: "www.example.com", controller: webController).onPageBegin({
+                evt => Hilog.info(0, "test", "page begin url: ${evt.url}")
+            }).onPageEnd({
+                evt => Hilog.info(0, "test", "page end url: ${evt.url}")
+            })
+        }
+    }
+}
+```
+
 ### func loadUrl\<T>(T, Array\<WebHeader>) where T \<: ResourceStr
 
 ```cangjie
@@ -2409,33 +3385,303 @@ public func setCustomUserAgent(userAgent: String): Unit
 ```cangjie
 // index.cj
 
+import kit.ArkUI.LengthProp
+import kit.ArkUI.Button
+import kit.ArkUI.Column
+import kit.ArkUI.CustomView
+import kit.ArkUI.CJEntry
+import kit.ArkUI.loadNativeView
+import kit.ArkUI.SubscriberManager
+import kit.ArkUI.LocalStorage
 import kit.ArkWeb.*
-import kit.UIKit.Web
+import kit.ArkUI.Web
+import kit.PerformanceAnalysisKit.Hilog
+import ohos.arkui.state_macro_manage.*
+import kit.LocalizationKit.{AppResource,__GenerateResource__}
 
 @Entry
 @Component
-class EntryView {
+class WebView {
     let webController = WebviewController()
     let headers = [WebHeader("headerKey", "headerValue")]
     func build() {
-        Column(10) {
-            Button("setCustomUserAgent")
-            .onClick {
-                evt =>
-                AppLog.info("setCustomUserAgent")
-                webController.setCustomUserAgent("ua")
-            }.width(400.px).height(150.px)
+        Column(space: 10) {
+            Button("loadUrl").onClick(
+                {
+                    evt =>
+                        Hilog.info(0, "test", "loadUrl")
+                        webController.loadUrl(@rawfile("index.html"), headers: headers)
+                }
+            ).width(400.px).height(150.px)
 
-            Web(src: "www.example.com", controller: webController)
-            .onPageBegin({evt =>
-                AppLog.info("page begin url: ${evt.url}")
-            })
-            .onPageEnd({evt =>
-                AppLog.info("page end url: ${evt.url}")
+            Web(src: "www.example.com", controller: webController).onPageBegin({
+                evt => Hilog.info(0, "test", "page begin url: ${evt.url}")
+            }).onPageEnd({
+                evt => Hilog.info(0, "test", "page end url: ${evt.url}")
             })
         }
     }
 }
+```
+
+### func requestFocus()
+
+```cangjie
+public func requestFocus(): Unit
+```
+
+**Function:** Requests focus for the current web page.
+
+**System Capability:** SystemCapability.Web.Webview.Core
+
+**Since:** 26.1.0
+
+**Exceptions:**
+
+- BusinessException: The error codes are as follows. For details, refer to [Webview Error Codes](./cj-errorcode-webview.md).
+
+  | Error Code ID | Error Message |
+  | :---- | :--- |
+  | 17100001 | Init error. The WebviewController must be associated with a Web component. |
+
+**Example:**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.ArkUI.LengthProp
+import kit.ArkUI.Button
+import kit.ArkUI.Column
+import kit.ArkUI.CustomView
+import kit.ArkUI.CJEntry
+import kit.ArkUI.loadNativeView
+import kit.ArkUI.SubscriberManager
+import kit.ArkUI.LocalStorage
+import ohos.arkui.state_macro_manage.Entry
+import ohos.arkui.state_macro_manage.Component
+import kit.ArkWeb.*
+import kit.ArkUI.Web
+import kit.PerformanceAnalysisKit.Hilog
+import kit.CangjieKit.BusinessException
+
+@Entry
+@Component
+class WebView {
+    let webController = WebviewController()
+    func build() {
+        Column(space: 10) {
+            Button("zoomOut").onClick(
+                {
+                    evt =>
+                        try {
+                            webController.requestFocus()
+                            Hilog.info(0, "test", "requestFocus done")
+                        } catch (e: BusinessException) {
+                            Hilog.info(0, "test", "requestFocus failed: ${e.message}")
+                        }
+                }
+            ).width(400.px).height(150.px)
+
+            Web(src: "www.example.com", controller: webController).onPageBegin({
+                evt => Hilog.info(0, "test", "page begin url: ${evt.url}")
+            }).onPageEnd({
+                evt => Hilog.info(0, "test", "page end url: ${evt.url}")
+            })
+        }
+    }
+}
+```
+
+### func setAudioMuted(Bool)
+
+```cangjie
+public func setAudioMuted(mute: Bool): Unit
+```
+
+**Function:** Mutes the web page. Typical use cases include: the app needs to control the web page volume (such as providing a mute switch), or needs to mute during background playback.
+
+**System Capability:** SystemCapability.Web.Webview.Core
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+| Parameter | Type | Required | Default | Description |
+|:---|:---|:---|:---|:---|
+| mute | Bool | Yes | - | Whether to mute the web page. The value **true** means to mute the web page, and **false** means to unmute it. |
+
+**Exceptions:**
+
+- BusinessException: The error codes are as follows. For details, refer to [Webview Error Codes](./cj-errorcode-webview.md).
+
+  | Error Code ID | Error Message |
+  | :---- | :--- |
+  | 17100001 | Init error. The WebviewController must be associated with a Web component. |
+
+**Example:**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.ArkUI.LengthProp
+import kit.ArkUI.Button
+import kit.ArkUI.Column
+import kit.ArkUI.CustomView
+import kit.ArkUI.CJEntry
+import kit.ArkUI.loadNativeView
+import kit.ArkUI.SubscriberManager
+import kit.ArkUI.LocalStorage
+import ohos.arkui.state_macro_manage.Entry
+import ohos.arkui.state_macro_manage.Component
+import kit.ArkWeb.*
+import kit.ArkUI.Web
+import kit.PerformanceAnalysisKit.Hilog
+import kit.CangjieKit.BusinessException
+
+@Entry
+@Component
+class WebView {
+    let webController = WebviewController()
+    func build() {
+        Column(space: 10) {
+            Button("setAudioMuted").onClick(
+                {
+                    evt =>
+                        try {
+                            webController.setAudioMuted(true)
+                            Hilog.info(0, "test", "setAudioMuted done")
+                        } catch (e: BusinessException) {
+                            Hilog.info(0, "test", "setAudioMuted failed: ${e.message}")
+                        }
+                }
+            ).width(400.px).height(150.px)
+
+            Web(src: "www.example.com", controller: webController).onPageBegin({
+                evt => Hilog.info(0, "test", "page begin url: ${evt.url}")
+            }).onPageEnd({
+                evt => Hilog.info(0, "test", "page end url: ${evt.url}")
+            })
+        }
+    }
+}
+```
+
+### static func setRenderProcessMode(RenderProcessMode)
+
+```cangjie
+public static func setRenderProcessMode(mode: RenderProcessMode): Unit
+```
+
+**Function:** Sets the ArkWeb rendering subprocess mode. You can select the appropriate mode based on the app's requirements for memory usage and rendering process isolation.
+
+You can call getRenderProcessMode() to view the ArkWeb rendering subprocess mode of the current device. The enumerated value **0** indicates the single render subprocess mode, and **1** indicates the multi-render subprocess mode. By default, mobile phones use the single render subprocess mode, and tablets and PC/2-in-1 devices use the multi-render subprocess mode. If an invalid number other than the enumerated value of **RenderProcessMode** is passed, the multi-render subprocess mode is used by default.
+
+**System Capability:** SystemCapability.Web.Webview.Core
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+| Parameter | Type | Required | Default | Description |
+|:---|:---|:---|:---|:---|
+| mode | [RenderProcessMode](#enum-renderprocessmode) | Yes | - | Render subprocess mode. |
+
+**Example:**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.ArkWeb.*
+import kit.PerformanceAnalysisKit.Hilog
+
+// It is recommended that this API be called during app startup and before any Web component is created.
+WebviewController.setRenderProcessMode(RenderProcessMode.Single)
+Hilog.info(0, "test", "setRenderProcessMode done")
+```
+
+### func setScrollable(Bool, ?ScrollType)
+
+```cangjie
+public func setScrollable(enable: Bool, scrollType!: ?ScrollType = None): Unit
+```
+
+**Function:** Sets whether the web page is scrollable, and supports specifying the scroll type.
+
+**System Capability:** SystemCapability.Web.Webview.Core
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+| Parameter | Type | Required | Default | Description |
+|:---|:---|:---|:---|:---|
+| enable | Bool | Yes | - | Whether the web page is scrollable. The value **true** indicates that the web page is scrollable, and **false** indicates the opposite. Default value: **true**. |
+| scrollType | ?[ScrollType](#enum-scrolltype) | No | None | **Named parameter.** Scroll type supported by the web page. If this parameter is not specified, all scroll types are supported. If **enable** is set to **false**, only the specified scroll type is disabled; if no scroll type is specified, all scroll types are disabled. If **enable** is set to **true**, all scroll types are enabled regardless of the value of **scrollType**. |
+
+**Exceptions:**
+
+- BusinessException: The error codes are as follows. For details, refer to [Webview Error Codes](./cj-errorcode-webview.md).
+
+  | Error Code ID | Error Message |
+  | :---- | :--- |
+  | 17100001 | Init error. The WebviewController must be associated with a Web component. |
+
+**Example:**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.ArkUI.LengthProp
+import kit.ArkUI.Button
+import kit.ArkUI.Column
+import kit.ArkUI.CustomView
+import kit.ArkUI.CJEntry
+import kit.ArkUI.loadNativeView
+import kit.ArkUI.SubscriberManager
+import kit.ArkUI.LocalStorage
+import ohos.arkui.state_macro_manage.Entry
+import ohos.arkui.state_macro_manage.Component
+import kit.ArkWeb.*
+import kit.ArkUI.Web
+import kit.PerformanceAnalysisKit.Hilog
+import kit.CangjieKit.BusinessException
+
+@Entry
+@Component
+class WebView {
+    let webController = WebviewController()
+    func build() {
+        Column(space: 10) {
+            Button("setScrollable").onClick(
+                {
+                    evt =>
+                        try {
+                            // Disable web page scrolling triggered by the touchscreen, touchpad, or mouse wheel.
+                            webController.setScrollable(false, scrollType: ScrollType.Event)
+                            Hilog.info(0, "test", "setScrollable done")
+                        } catch (e: BusinessException) {
+                            Hilog.info(0, "test", "setScrollable failed: ${e.message}")
+                        }
+                }
+            ).width(400.px).height(150.px)
+
+            Web(src: "www.example.com", controller: webController).onPageBegin({
+                evt => Hilog.info(0, "test", "page begin url: ${evt.url}")
+            }).onPageEnd({
+                evt => Hilog.info(0, "test", "page end url: ${evt.url}")
+            })
+        }
+    }
+}
+
 ```
 
 ### func stop()
@@ -2840,6 +4086,96 @@ Loaded HTML file. Place `index.html` in the `entry\src\main\resources\rawfile` d
 </html>
 ```
 
+### func runJavaScriptExt(ScriptValueType, AsyncCallback\<JsMessageExt>)
+
+```cangjie
+public func runJavaScriptExt(script: ScriptValueType, callback: AsyncCallback<JsMessageExt>): Unit
+```
+
+**Function:** Executes a JavaScript script and returns the execution result through an asynchronous callback. **runJavaScriptExt** can be invoked only after **loadUrl** is executed. For example, it can be invoked in **onPageEnd**.
+
+Unlike runJavaScript, runJavaScriptExt supports richer return value types. You can obtain the result by type through the returned JsMessageExt object.
+
+> **Note:**
+>
+> The string data passed from the frontend page to the app side is treated as JSON-formatted data and needs to be deserialized with JSON.parse.
+
+**System Capability:** SystemCapability.Web.Webview.Core
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+| Parameter | Type | Required | Default | Description |
+|:---|:---|:---|:---|:---|
+| script | [ScriptValueType](#enum-scriptvaluetype) | Yes | - | JavaScript script, which can be passed as a string or a byte array. |
+| callback | [AsyncCallback](../arkinterop/cj-api-business_exception.md#type-asynccallbackt)\<[JsMessageExt](#class-jsmessageext)> | Yes | - | Callback used to return the execution result. |
+
+**Exceptions:**
+
+- BusinessException: The error codes are as follows. For details, refer to [Webview Error Codes](./cj-errorcode-webview.md).
+
+  | Error Code ID | Error Message |
+  | :---- | :--- |
+  | 17100001 | Init error. The WebviewController must be associated with a Web component. |
+
+**Example:**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.ArkUI.LengthProp
+import kit.ArkUI.Button
+import kit.ArkUI.Column
+import kit.ArkUI.CustomView
+import kit.ArkUI.CJEntry
+import kit.ArkUI.loadNativeView
+import kit.ArkUI.SubscriberManager
+import kit.ArkUI.LocalStorage
+import ohos.arkui.state_macro_manage.Entry
+import ohos.arkui.state_macro_manage.Component
+import kit.ArkWeb.*
+import kit.ArkUI.Web
+import kit.PerformanceAnalysisKit.Hilog
+import kit.CangjieKit.BusinessException
+
+@Entry
+@Component
+class WebView {
+    let webController = WebviewController()
+    func build() {
+        Column(space: 10) {
+            Button("runJavaScriptExt").onClick(
+                {
+                    evt =>
+                        try {
+                            webController.runJavaScriptExt(ScriptValueType.StringValue("test()"), { err, result =>
+                                if (let Some(e) <- err) {
+                                    Hilog.info(0, "test", "runJavaScriptExt failed: ${e.message}")
+                                } else {
+                                    let str = result?.getString() ?? ""
+                                    Hilog.info(0, "test", "runJavaScriptExt result: ${str}")
+                                }
+                            })
+                        } catch (e: BusinessException) {
+                            Hilog.info(0, "test", "runJavaScriptExt failed: ${e.message}")
+                        }
+                }
+            ).width(400.px).height(150.px)
+
+            Web(src: "www.example.com", controller: webController).onPageBegin({
+                evt => Hilog.info(0, "test", "page begin url: ${evt.url}")
+            }).onPageEnd({
+                evt => Hilog.info(0, "test", "page end url: ${evt.url}")
+            })
+        }
+    }
+}
+
+```
+
 ### func scrollBy(Float32, Float32, ?Int32)
 
 ```cangjie
@@ -2927,6 +4263,90 @@ Scroll Test
 </html>
 ```
 
+### func scrollByWithResult(Float32, Float32)
+
+```cangjie
+public func scrollByWithResult(deltaX: Float32, deltaY: Float32): Bool
+```
+
+**Function:** Scrolls the web page by the specified amount and returns whether the scrolling is successful.
+
+**System Capability:** SystemCapability.Web.Webview.Core
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+| Parameter | Type | Required | Default | Description |
+|:---|:---|:---|:---|:---|
+| deltaX | Float32 | Yes | - | Amount to scroll by along the x-axis. The positive direction is rightward. Unit: vp |
+| deltaY | Float32 | Yes | - | Amount to scroll by along the y-axis. The positive direction is downward. Unit: vp |
+
+**Return Value:**
+
+| Type | Description |
+|:----|:----|
+| Bool | Returns **true** if the current web page can scroll, and **false** otherwise. |
+
+**Exceptions:**
+
+- BusinessException: The error codes are as follows. For details, refer to [Webview Error Codes](./cj-errorcode-webview.md).
+
+  | Error Code ID | Error Message |
+  | :---- | :--- |
+  | 17100001 | Init error. The WebviewController must be associated with a Web component. |
+
+**Example:**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.ArkUI.LengthProp
+import kit.ArkUI.Button
+import kit.ArkUI.Column
+import kit.ArkUI.CustomView
+import kit.ArkUI.CJEntry
+import kit.ArkUI.loadNativeView
+import kit.ArkUI.SubscriberManager
+import kit.ArkUI.LocalStorage
+import ohos.arkui.state_macro_manage.Entry
+import ohos.arkui.state_macro_manage.Component
+import kit.ArkWeb.*
+import kit.ArkUI.Web
+import kit.PerformanceAnalysisKit.Hilog
+import kit.CangjieKit.BusinessException
+
+@Entry
+@Component
+class WebView {
+    let webController = WebviewController()
+    func build() {
+        Column(space: 10) {
+            Button("scrollByWithResult").onClick(
+                {
+                    evt =>
+                        try {
+                            let result = webController.scrollByWithResult(0.0, 100.0)
+                            Hilog.info(0, "test", "scrollByWithResult: ${result}")
+                        } catch (e: BusinessException) {
+                            Hilog.info(0, "test", "scrollByWithResult failed: ${e.message}")
+                        }
+                }
+            ).width(400.px).height(150.px)
+
+            Web(src: "www.example.com", controller: webController).onPageBegin({
+                evt => Hilog.info(0, "test", "page begin url: ${evt.url}")
+            }).onPageEnd({
+                evt => Hilog.info(0, "test", "page end url: ${evt.url}")
+            })
+        }
+    }
+}
+
+```
+
 ### func scrollTo(Float32, Float32, ?Int32)
 
 ```cangjie
@@ -3007,6 +4427,326 @@ Loaded HTML file. Place `index.html` in the `entry\src\main\resources\rawfile` d
             border:5px solid blueviolet
         }
     </style>
+## enum RenderProcessMode
+
+```cangjie
+public enum RenderProcessMode <: Equatable<RenderProcessMode> & ToString {
+    | Single
+    | Multiple
+    | ...
+}
+```
+
+**Function:** Enumerates the ArkWeb rendering subprocess mode types. You can select the appropriate mode based on the app's requirements for memory usage and rendering process isolation.
+
+**System Capability:** SystemCapability.Web.Webview.Core
+
+**Since:** 26.1.0
+
+**Parent Types:**
+
+- Equatable\<RenderProcessMode>
+- ToString
+
+### Single
+
+```cangjie
+Single
+```
+
+**Function:** ArkWeb single render subprocess mode. In this mode, multiple **Web** components share one render subprocess.
+
+**System Capability:** SystemCapability.Web.Webview.Core
+
+**Since:** 26.1.0
+
+### Multiple
+
+```cangjie
+Multiple
+```
+
+**Function:** ArkWeb multi-render subprocess mode. In this mode, each **Web** component has an independent render subprocess.
+
+**System Capability:** SystemCapability.Web.Webview.Core
+
+**Since:** 26.1.0
+
+### func !=(RenderProcessMode)
+
+```cangjie
+public operator func !=(other: RenderProcessMode): Bool
+```
+
+**Function:** Determines whether two enum values are unequal.
+
+**System Capability:** SystemCapability.Web.Webview.Core
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+| Parameter | Type | Required | Default | Description |
+|:---|:---|:---|:---|:---|
+| other | [RenderProcessMode](#enum-renderprocessmode) | Yes | - | The other enum value to compare. |
+
+**Return Value:**
+
+| Type | Description |
+|:----|:----|
+| Bool | Returns **true** if the enum values are unequal, and **false** otherwise. |
+
+### func ==(RenderProcessMode)
+
+```cangjie
+public operator func ==(other: RenderProcessMode): Bool
+```
+
+**Function:** Determines whether two enum values are equal.
+
+**System Capability:** SystemCapability.Web.Webview.Core
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+| Parameter | Type | Required | Default | Description |
+|:---|:---|:---|:---|:---|
+| other | [RenderProcessMode](#enum-renderprocessmode) | Yes | - | The other enum value to compare. |
+
+**Return Value:**
+
+| Type | Description |
+|:----|:----|
+| Bool | Returns **true** if the enum values are equal, and **false** otherwise. |
+
+### func toString()
+
+```cangjie
+public func toString(): String
+```
+
+**Function:** Obtains the string representation of the enum.
+
+**System Capability:** SystemCapability.Web.Webview.Core
+
+**Since:** 26.1.0
+
+**Return Value:**
+
+| Type | Description |
+|:----|:----|
+| String | String representation of the enum. |
+
+## enum ScriptValueType
+
+```cangjie
+public enum ScriptValueType <: Equatable<ScriptValueType> & ToString {
+    | StringValue(String)
+    | ArrayBufferValue(ArrayBuffer)
+    | ...
+}
+```
+
+**Function:** Defines the script type of the runJavaScriptExt API. The JavaScript script to execute can be passed as a string or a byte array.
+
+**System Capability:** SystemCapability.Web.Webview.Core
+
+**Since:** 26.1.0
+
+**Parent Types:**
+
+- Equatable\<ScriptValueType>
+- ToString
+
+### StringValue
+
+```cangjie
+StringValue(String)
+```
+
+**Function:** The JavaScript script is passed as a string.
+
+**System Capability:** SystemCapability.Web.Webview.Core
+
+**Since:** 26.1.0
+
+### ArrayBufferValue
+
+```cangjie
+ArrayBufferValue(ArrayBuffer)
+```
+
+**Function:** The JavaScript script is passed as a byte array.
+
+**System Capability:** SystemCapability.Web.Webview.Core
+
+**Since:** 26.1.0
+
+### func !=(ScriptValueType)
+
+```cangjie
+public operator func !=(other: ScriptValueType): Bool
+```
+
+**Function:** Determines whether two enum values are unequal.
+
+**System Capability:** SystemCapability.Web.Webview.Core
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+| Parameter | Type | Required | Default | Description |
+|:---|:---|:---|:---|:---|
+| other | [ScriptValueType](#enum-scriptvaluetype) | Yes | - | The other enum value to compare. |
+
+**Return Value:**
+
+| Type | Description |
+|:----|:----|
+| Bool | Returns **true** if the enum values are unequal, and **false** otherwise. |
+
+### func ==(ScriptValueType)
+
+```cangjie
+public operator func ==(other: ScriptValueType): Bool
+```
+
+**Function:** Determines whether two enum values are equal.
+
+**System Capability:** SystemCapability.Web.Webview.Core
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+| Parameter | Type | Required | Default | Description |
+|:---|:---|:---|:---|:---|
+| other | [ScriptValueType](#enum-scriptvaluetype) | Yes | - | The other enum value to compare. |
+
+**Return Value:**
+
+| Type | Description |
+|:----|:----|
+| Bool | Returns **true** if the enum values are equal, and **false** otherwise. |
+
+### func toString()
+
+```cangjie
+public func toString(): String
+```
+
+**Function:** Obtains the string representation of the enum.
+
+**System Capability:** SystemCapability.Web.Webview.Core
+
+**Since:** 26.1.0
+
+**Return Value:**
+
+| Type | Description |
+|:----|:----|
+| String | String representation of the enum. |
+
+## enum ScrollType
+
+```cangjie
+public enum ScrollType <: Equatable<ScrollType> & ToString {
+    | Event
+    | ...
+}
+```
+
+**Function:** Enumerates the scroll types of the setScrollable API.
+
+**System Capability:** SystemCapability.Web.Webview.Core
+
+**Since:** 26.1.0
+
+**Parent Types:**
+
+- Equatable\<ScrollType>
+- ToString
+
+### Event
+
+```cangjie
+Event
+```
+
+**Function:** Scroll event, which represents web page scrolling triggered through the touchscreen, touchpad, or mouse wheel.
+
+**System Capability:** SystemCapability.Web.Webview.Core
+
+**Since:** 26.1.0
+
+### func !=(ScrollType)
+
+```cangjie
+public operator func !=(other: ScrollType): Bool
+```
+
+**Function:** Determines whether two enum values are unequal.
+
+**System Capability:** SystemCapability.Web.Webview.Core
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+| Parameter | Type | Required | Default | Description |
+|:---|:---|:---|:---|:---|
+| other | [ScrollType](#enum-scrolltype) | Yes | - | The other enum value to compare. |
+
+**Return Value:**
+
+| Type | Description |
+|:----|:----|
+| Bool | Returns **true** if the enum values are unequal, and **false** otherwise. |
+
+### func ==(ScrollType)
+
+```cangjie
+public operator func ==(other: ScrollType): Bool
+```
+
+**Function:** Determines whether two enum values are equal.
+
+**System Capability:** SystemCapability.Web.Webview.Core
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+| Parameter | Type | Required | Default | Description |
+|:---|:---|:---|:---|:---|
+| other | [ScrollType](#enum-scrolltype) | Yes | - | The other enum value to compare. |
+
+**Return Value:**
+
+| Type | Description |
+|:----|:----|
+| Bool | Returns **true** if the enum values are equal, and **false** otherwise. |
+
+### func toString()
+
+```cangjie
+public func toString(): String
+```
+
+**Function:** Obtains the string representation of the enum.
+
+**System Capability:** SystemCapability.Web.Webview.Core
+
+**Since:** 26.1.0
+
+**Return Value:**
+
+| Type | Description |
+|:----|:----|
+| String | String representation of the enum. |
+
 ## enum SecurityLevel
 
 ```cangjie
