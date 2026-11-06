@@ -26,6 +26,7 @@ Taking the deletion of an HKDF256 key as an example:
 /*
  * The following demonstrates operations using an HKDF256 key as an example
  */
+import kit.PerformanceAnalysisKit.Hilog
 import kit.UniversalKeystoreKit.*
 
 /* 1. Determine key alias */
@@ -34,7 +35,7 @@ let keyAlias = "test_Key"
 /* 2. Construct empty object */
 let huksOptions: HuksOptions = HuksOptions()
 
-class throwObject {
+class ThrowObject {
     var isThrow: Bool = false
 
     init(isThrow: Bool) {
@@ -42,7 +43,7 @@ class throwObject {
     }
 }
 
-func deleteKeyItem(keyAlias: String, huksOptions: HuksOptions, throwObject: throwObject) {
+func deleteKeyItem(keyAlias: String, huksOptions: HuksOptions, throwObject: ThrowObject) {
     try {
         deleteKeyItem(keyAlias, huksOptions)
     } catch (e: Exception) {
@@ -54,7 +55,7 @@ func deleteKeyItem(keyAlias: String, huksOptions: HuksOptions, throwObject: thro
 /* 3. Delete key */
 func publicDeleteKeyFunc(keyAlias: String, huksOptions: HuksOptions) {
     Hilog.info(1, "info", "enter deleteKeyItem")
-    let throwObject: throwObject = throwObject(false)
+    let throwObject: ThrowObject = ThrowObject(false)
     try {
         deleteKeyItem(keyAlias, huksOptions, throwObject)
     } catch (e: Exception) {

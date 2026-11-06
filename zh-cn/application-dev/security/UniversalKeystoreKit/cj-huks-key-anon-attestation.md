@@ -37,13 +37,13 @@ func loggerInfo(str: String) {
 /* 1.确定密钥别名 */
 let keyAliasString = "key anon attest"
 let aliasString = keyAliasString
-let aliasUint8 = StringToUint8Array(keyAliasString)
-let securityLevel = StringToUint8Array('sec_level')
-let challenge = StringToUint8Array('challenge_data')
-let versionInfo = StringToUint8Array('version_info')
+let aliasUint8 = stringToUint8Array(keyAliasString)
+let securityLevel = stringToUint8Array('sec_level')
+let challenge = stringToUint8Array('challenge_data')
+let versionInfo = stringToUint8Array('version_info')
 var anonAttestCertChain: ?Array<String> = None
 
-class throwObject {
+class ThrowObject {
     var isThrow: Bool = false
 
     init(isThrow: Bool) {
@@ -93,11 +93,11 @@ let anonAttestKeyProperties: Array<HuksParam> = [
 ]
 let huksOptions: HuksOptions = HuksOptions(properties: anonAttestKeyProperties, inData: Array<UInt8>())
 
-func StringToUint8Array(str: String) {
+func stringToUint8Array(str: String) {
     return str.toArray()
 }
 
-func generateKeyItem(keyAlias: String, huksOptions: HuksOptions, throwObject: throwObject) {
+func generateKeyItem(keyAlias: String, huksOptions: HuksOptions, throwObject: ThrowObject) {
     try {
         generateKeyItem(keyAlias, huksOptions)
     } catch (e: Exception) {
@@ -109,7 +109,7 @@ func generateKeyItem(keyAlias: String, huksOptions: HuksOptions, throwObject: th
 /* 3.生成密钥 */
 func publicGenKeyFunc(keyAlias: String, huksOptions: HuksOptions) {
     loggerInfo("enter generateKeyItem")
-    let throwObject: throwObject = throwObject(false)
+    let throwObject: ThrowObject = ThrowObject(false)
     try {
         generateKeyItem(keyAlias, huksOptions, throwObject)
     } catch (e: Exception) {
@@ -118,7 +118,7 @@ func publicGenKeyFunc(keyAlias: String, huksOptions: HuksOptions) {
 }
 
 /* 4.证明密钥 */
-func anonAttestKeyItem(keyAlias: String, huksOptions: HuksOptions, throwObject: throwObject) {
+func anonAttestKeyItem(keyAlias: String, huksOptions: HuksOptions, throwObject: ThrowObject) {
     return try {
         anonAttestKeyItem(keyAlias, huksOptions)
     } catch (e: Exception) {
@@ -129,7 +129,7 @@ func anonAttestKeyItem(keyAlias: String, huksOptions: HuksOptions, throwObject: 
 
 func publicAnonAttestKey(keyAlias: String, huksOptions: HuksOptions) {
     loggerInfo("enter anonAttestKeyItem")
-    let throwObject: throwObject = throwObject(false)
+    let throwObject: ThrowObject = ThrowObject(false)
     try {
         anonAttestCertChain = anonAttestKeyItem(keyAlias, huksOptions, throwObject)
     } catch (e: Exception) {

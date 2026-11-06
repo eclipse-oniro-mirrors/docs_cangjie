@@ -134,7 +134,7 @@ Below are examples of agreement using X25519 and DH keys respectively.
         ),
         HuksParam(
             HuksTag.HUKS_TAG_PURPOSE,
-            HuksParamValue.Uint32Value(1 | 2),
+            HuksParamValue.Uint32Value(HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT | HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT),
         ),
         HuksParam(
             HuksTag.HUKS_TAG_DIGEST,
@@ -145,7 +145,7 @@ Below are examples of agreement using X25519 and DH keys respectively.
             HuksParamValue.Uint32Value(HuksKeyPadding.HUKS_PADDING_NONE),
         ),
         HuksParam(
-            HuksTag.HUKS_TAG_BOCK_MODE,
+            HuksTag.HUKS_TAG_BLOCK_MODE,
             HuksParamValue.Uint32Value(HuksCipherMode.HUKS_MODE_ECB),
         ),
         HuksParam(
@@ -177,7 +177,7 @@ Below are examples of agreement using X25519 and DH keys respectively.
         ),
         HuksParam(
             HuksTag.HUKS_TAG_PURPOSE,
-            HuksParamValue.Uint32Value(1 | 2),
+            HuksParamValue.Uint32Value(HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT | HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT),
         ),
         HuksParam(
             HuksTag.HUKS_TAG_DIGEST,
@@ -205,7 +205,7 @@ Below are examples of agreement using X25519 and DH keys respectively.
         return str.toArray()
     }
 
-    class throwObject {
+    class ThrowObject {
         var isThrow: Bool = false
 
         init(isThrow: Bool) {
@@ -214,7 +214,7 @@ Below are examples of agreement using X25519 and DH keys respectively.
     }
 
     /* Generate key */
-    func generateKeyItem(keyAlias: String, huksOptions: HuksOptions, throwObject: throwObject) {
+    func generateKeyItem(keyAlias: String, huksOptions: HuksOptions, throwObject: ThrowObject) {
         try {
             generateKeyItem(keyAlias, huksOptions)
         } catch (e: Exception) {
@@ -226,7 +226,7 @@ Below are examples of agreement using X25519 and DH keys respectively.
     /* Call generateKeyItem to generate key */
     func publicGenKeyFunc(keyAlias: String, huksOptions: HuksOptions) {
         loggerInfo("enter generateKeyItem")
-        let throwObject: throwObject = throwObject(false)
+        let throwObject: ThrowObject = ThrowObject(false)
         try {
             generateKeyItem(keyAlias, huksOptions, throwObject)
         } catch (e: Exception) {
@@ -235,7 +235,7 @@ Below are examples of agreement using X25519 and DH keys respectively.
     }
 
     /* Initialize key session interface and obtain a handle (required) and challenge value (optional) */
-    func initSession(keyAlias: String, huksOptions: HuksOptions, throwObject: throwObject) {
+    func initSession(keyAlias: String, huksOptions: HuksOptions, throwObject: ThrowObject) {
         return try {
             initSession(keyAlias, huksOptions).handle
         } catch (e: Exception) {
@@ -247,7 +247,7 @@ Below are examples of agreement using X25519 and DH keys respectively.
     /* Call initSession to obtain handle */
     func publicInitFunc(keyAlias: String, huksOptions: HuksOptions) {
         loggerInfo("enter doInit")
-        let throwObject: throwObject = throwObject(false)
+        let throwObject: ThrowObject = ThrowObject(false)
         try {
             handle = initSession(keyAlias, huksOptions, throwObject)
         } catch (e: Exception) {
@@ -256,7 +256,7 @@ Below are examples of agreement using X25519 and DH keys respectively.
     }
 
     /* Incrementally add key operation data and perform corresponding key operations, outputting processed data */
-    func updateSession(handle: HuksHandleId, huksOptions: HuksOptions, throwObject: throwObject) {
+    func updateSession(handle: HuksHandleId, huksOptions: HuksOptions, throwObject: ThrowObject) {
         return try {
             updateSession(handle, huksOptions)
         } catch (e: Exception) {
@@ -268,7 +268,7 @@ Below are examples of agreement using X25519 and DH keys respectively.
     /* Call updateSession for agreement operation */
     func publicUpdateFunc(handle: HuksHandleId, huksOptions: HuksOptions) {
         loggerInfo("enter doUpdate")
-        let throwObject: throwObject = throwObject(false)
+        let throwObject: ThrowObject = ThrowObject(false)
         try {
             updateSession(handle, huksOptions, throwObject)
         } catch (e: Exception) {
@@ -277,7 +277,7 @@ Below are examples of agreement using X25519 and DH keys respectively.
     }
 
     /* Terminate key session and perform corresponding key operations, outputting processed data */
-    func finishSession(handle: HuksHandleId, huksOptions: HuksOptions, throwObject: throwObject) {
+    func finishSession(handle: HuksHandleId, huksOptions: HuksOptions, throwObject: ThrowObject) {
         return try {
             finishSession(handle, huksOptions)
         } catch (e: Exception) {
@@ -289,7 +289,7 @@ Below are examples of agreement using X25519 and DH keys respectively.
     /* Call finishSession to terminate operation */
     func publicFinishFunc(handle: HuksHandleId, huksOptions: HuksOptions) {
         loggerInfo("enter doFinish")
-        let throwObject: throwObject = throwObject(false)
+        let throwObject: ThrowObject = ThrowObject(false)
         try {
             finishOutData = finishSession(handle, huksOptions, throwObject)
         } catch (e: Exception) {
@@ -298,7 +298,7 @@ Below are examples of agreement using X25519 and DH keys respectively.
     }
 
     /* Export key */
-    func exportKeyItem(keyAlias: String, huksOptions: HuksOptions, throwObject: throwObject) {
+    func exportKeyItem(keyAlias: String, huksOptions: HuksOptions, throwObject: ThrowObject) {
         return try {
             exportKeyItem(keyAlias, huksOptions)
         } catch (e: Exception) {
@@ -310,7 +310,7 @@ Below are examples of agreement using X25519 and DH keys respectively.
     /* Call exportKeyItem for public key export operation */
     func publicExportKeyFunc(keyAlias: String, huksOptions: HuksOptions) {
         loggerInfo("enter export")
-        let throwObject: throwObject = throwObject(false)
+        let throwObject: ThrowObject = ThrowObject(false)
         try {
             exportKey = exportKeyItem(keyAlias, huksOptions, throwObject)
         } catch (e: Exception) {
@@ -404,7 +404,7 @@ Below are examples of agreement using X25519 and DH keys respectively.
                     HuksTag.HUKS_TAG_DERIVED_AGREED_KEY_STORAGE_FLAG,
                     HuksParamValue.Uint32Value(HuksKeyStorageType.HUKS_STORAGE_KEY_EXPORT_ALLOWED),
                 )
-            ],```swift
+            ],
             inData: peerPubKey.getOrThrow()
         )
         updateSession(initHandle.handle, dhAgreeUpdateBobPubKey)
@@ -472,7 +472,7 @@ Below are examples of agreement using X25519 and DH keys respectively.
             ),
             HuksParam(
                 HuksTag.HUKS_TAG_PURPOSE,
-                HuksParamValue.Uint32Value(1 | 2)
+                HuksParamValue.Uint32Value(HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT | HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT)
             )
         ]
 
@@ -520,7 +520,7 @@ Below are examples of agreement using X25519 and DH keys respectively.
                 ),
                 HuksParam(
                     HuksTag.HUKS_TAG_PURPOSE,
-                    HuksParamValue.Uint32Value(1 | 2)
+                    HuksParamValue.Uint32Value(HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT | HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT)
                 ),
                 HuksParam(HuksTag.HUKS_TAG_KEY_ALIAS, HuksParamValue.BytesValue(aliasAgreedKey.toArray()))
             ],
@@ -533,12 +533,12 @@ Below are examples of agreement using X25519 and DH keys respectively.
         aliasAgreedKeyFromA: String, aliasAgreedKeyFromB: String) {
         let finishAliceResult = HuksDhAgreeInHuks(aliasA, pubKeyB, aliasAgreedKeyFromA).getOrThrow()
         loggerInfo("ok! finishAliceResult in huks is 0x${Uint8ArrayToBigInt(finishAliceResult).toString(radix: 16)}")
-        let aliceAgreedExist = isKeyItemExist(aliasAgreedKeyFromA, emptyOptions)
+        let aliceAgreedExist = hasKeyItem(aliasAgreedKeyFromA, emptyOptions)
         loggerInfo("ok! aliceAgreedExist in huks is ${aliceAgreedExist}")
 
         let finishBobResult = HuksDhAgreeInHuks(aliasB, pubKeyA, aliasAgreedKeyFromB).getOrThrow()
         loggerInfo("ok! finishBobResult in huks is 0x${Uint8ArrayToBigInt(finishBobResult).toString(radix: 16)}")
-        let bobAgreedExist = isKeyItemExist(aliasAgreedKeyFromB, emptyOptions)
+        let bobAgreedExist = hasKeyItem(aliasAgreedKeyFromB, emptyOptions)
         loggerInfo("ok! bobAgreedExist in huks is ${bobAgreedExist}")
 
         deleteKeyItem(aliasAgreedKeyFromA, emptyOptions)
@@ -567,4 +567,3 @@ Below are examples of agreement using X25519 and DH keys respectively.
         deleteKeyItem(aliasBob, emptyOptions)
     }
     ```
-```

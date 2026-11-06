@@ -55,7 +55,7 @@ let properties: Array<HuksParam> = [
     ),
     HuksParam(
         HuksTag.HUKS_TAG_PURPOSE,
-        HuksParamValue.Uint32Value(1 | 2)
+        HuksParamValue.Uint32Value(HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT | HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT)
     )
 ]
 let options: HuksOptions = HuksOptions(

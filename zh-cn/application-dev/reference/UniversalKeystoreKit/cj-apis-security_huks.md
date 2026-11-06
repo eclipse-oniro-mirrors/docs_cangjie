@@ -221,29 +221,28 @@ import kit.UniversalKeystoreKit.*
 import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
+func generateSimpleKey(keyAlias: String) {
+    let options = HuksOptions(properties:
+        [
+            HuksParam(HuksTag.HUKS_TAG_ALGORITHM, Uint32Value(HuksKeyAlg.HUKS_ALG_AES)),
+            HuksParam(HuksTag.HUKS_TAG_KEY_SIZE, Uint32Value(HuksKeySize.HUKS_AES_KEY_SIZE_128)),
+            HuksParam(
+                HuksTag.HUKS_TAG_PURPOSE,
+                Uint32Value(HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT | HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT)
+            )
+        ]
+    )
+    generateKeyItem(keyAlias, options)
+}
+
+func test_delete_key() {
+    let keyAlias = "KEY_ALIAS" // 密钥别名，在生成密钥时指定，在加密、解密和删除密钥时使用
+    generateSimpleKey(keyAlias)
+    // delete
+    deleteKeyItem(keyAlias, HuksOptions())
+}
+
 try {
-    // 此处代码可添加在依赖项定义中
-    func generateSimpleKey(keyAlias: String) {
-        let options = HuksOptions(properties:
-            [
-                HuksParam(HuksTag.HUKS_TAG_ALGORITHM, Uint32Value(HuksKeyAlg.HUKS_ALG_AES)),
-                HuksParam(HuksTag.HUKS_TAG_KEY_SIZE, Uint32Value(HuksKeySize.HUKS_AES_KEY_SIZE_128)),
-                HuksParam(
-                    HuksTag.HUKS_TAG_PURPOSE,
-                    Uint32Value(HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT | HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT)
-                )
-            ]
-        )
-        generateKeyItem(keyAlias, options)
-    }
-
-    func test_delete_key() {
-        let keyAlias = "KEY_ALIAS" // 密钥别名，在生成密钥时指定，在加密、解密和删除密钥时使用
-        generateSimpleKey(keyAlias)
-        // delete
-        deleteKeyItem(keyAlias, HuksOptions())
-    }
-
     test_delete_key()
 } catch (e: BusinessException) {
     Hilog.info(0, "test", "${e.message}")
@@ -801,22 +800,21 @@ import kit.UniversalKeystoreKit.*
 import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
 
-try {
-    // 此处代码可添加在依赖项定义中
-    func generateSimpleKey(keyAlias: String) {
-        let options = HuksOptions(properties:
-            [
-                HuksParam(HuksTag.HUKS_TAG_ALGORITHM, Uint32Value(HuksKeyAlg.HUKS_ALG_AES)),
-                HuksParam(HuksTag.HUKS_TAG_KEY_SIZE, Uint32Value(HuksKeySize.HUKS_AES_KEY_SIZE_128)),
-                HuksParam(
-                    HuksTag.HUKS_TAG_PURPOSE,
-                    Uint32Value(HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT | HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT)
-                )
-            ]
-        )
-        generateKeyItem(keyAlias, options)
-    }
+func generateSimpleKey(keyAlias: String) {
+    let options = HuksOptions(properties:
+        [
+            HuksParam(HuksTag.HUKS_TAG_ALGORITHM, Uint32Value(HuksKeyAlg.HUKS_ALG_AES)),
+            HuksParam(HuksTag.HUKS_TAG_KEY_SIZE, Uint32Value(HuksKeySize.HUKS_AES_KEY_SIZE_128)),
+            HuksParam(
+                HuksTag.HUKS_TAG_PURPOSE,
+                Uint32Value(HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT | HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT)
+            )
+        ]
+    )
+    generateKeyItem(keyAlias, options)
+}
 
+try {
     let keyAlias = "KEY_ALIAS" // 密钥别名，在生成密钥时指定，在加密、解密和删除密钥时使用
     var result = hasKeyItem(keyAlias, HuksOptions()) // false
     generateSimpleKey(keyAlias)

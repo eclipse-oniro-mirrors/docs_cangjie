@@ -121,7 +121,7 @@
     ```cangjie
     func offExample() {
         try {
-            // 取消注册SensorId.ORIENTATION的所有回调
+            // 取消注册SensorId.Accelerometer的所有回调
             off(SensorId.Accelerometer)
         } catch (e: BusinessException) {
             Hilog.error(1, "info", "Sensor off error code: ${e.code}, message: ${e.message}")

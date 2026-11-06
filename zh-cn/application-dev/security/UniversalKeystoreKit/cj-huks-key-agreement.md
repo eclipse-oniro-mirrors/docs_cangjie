@@ -131,7 +131,7 @@
         ),
         HuksParam(
             HuksTag.HUKS_TAG_PURPOSE,
-            HuksParamValue.Uint32Value(1 | 2),
+            HuksParamValue.Uint32Value(HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT | HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT),
         ),
         HuksParam(
             HuksTag.HUKS_TAG_DIGEST,
@@ -174,7 +174,7 @@
         ),
         HuksParam(
             HuksTag.HUKS_TAG_PURPOSE,
-            HuksParamValue.Uint32Value(1 | 2),
+            HuksParamValue.Uint32Value(HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT | HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT),
         ),
         HuksParam(
             HuksTag.HUKS_TAG_DIGEST,
@@ -202,7 +202,7 @@
         return str.toArray()
     }
 
-    class throwObject {
+    class ThrowObject {
         var isThrow: Bool = false
 
         init(isThrow: Bool) {
@@ -211,7 +211,7 @@
     }
 
     /* 生成密钥 */
-    func generateKeyItem(keyAlias: String, huksOptions: HuksOptions, throwObject: throwObject) {
+    func generateKeyItem(keyAlias: String, huksOptions: HuksOptions, throwObject: ThrowObject) {
         try {
             generateKeyItem(keyAlias, huksOptions)
         } catch (e: Exception) {
@@ -223,7 +223,7 @@
     /* 调用generateKeyItem生成密钥 */
     func publicGenKeyFunc(keyAlias: String, huksOptions: HuksOptions) {
         loggerInfo("enter generateKeyItem")
-        let throwObject: throwObject = throwObject(false)
+        let throwObject: ThrowObject = ThrowObject(false)
         try {
             generateKeyItem(keyAlias, huksOptions, throwObject)
         } catch (e: Exception) {
@@ -232,7 +232,7 @@
     }
 
     /*初始化密钥会话接口，并获取一个句柄（必选）和挑战值（可选）*/
-    func initSession(keyAlias: String, huksOptions: HuksOptions, throwObject: throwObject) {
+    func initSession(keyAlias: String, huksOptions: HuksOptions, throwObject: ThrowObject) {
         return try {
             initSession(keyAlias, huksOptions).handle
         } catch (e: Exception) {
@@ -244,7 +244,7 @@
     /*调用initSession获取handle*/
     func publicInitFunc(keyAlias: String, huksOptions: HuksOptions) {
         loggerInfo("enter doInit")
-        let throwObject: throwObject = throwObject(false)
+        let throwObject: ThrowObject = ThrowObject(false)
         try {
             handle = initSession(keyAlias, huksOptions, throwObject)
         } catch (e: Exception) {
@@ -253,7 +253,7 @@
     }
 
     /* 分段添加密钥操作的数据并进行相应的密钥操作，输出处理数据 */
-    func updateSession(handle: HuksHandleId, huksOptions: HuksOptions, throwObject: throwObject) {
+    func updateSession(handle: HuksHandleId, huksOptions: HuksOptions, throwObject: ThrowObject) {
         return try {
             updateSession(handle, huksOptions)
         } catch (e: Exception) {
@@ -265,7 +265,7 @@
     /* 调用updateSession进行协商操作 */
     func publicUpdateFunc(handle: HuksHandleId, huksOptions: HuksOptions) {
         loggerInfo("enter doUpdate")
-        let throwObject: throwObject = throwObject(false)
+        let throwObject: ThrowObject = ThrowObject(false)
         try {
             updateSession(handle, huksOptions, throwObject)
         } catch (e: Exception) {
@@ -274,7 +274,7 @@
     }
 
     /* 结束密钥会话并进行相应的密钥操作，输出处理数据 */
-    func finishSession(handle: HuksHandleId, huksOptions: HuksOptions, throwObject: throwObject) {
+    func finishSession(handle: HuksHandleId, huksOptions: HuksOptions, throwObject: ThrowObject) {
         return try {
             finishSession(handle, huksOptions)
         } catch (e: Exception) {
@@ -286,7 +286,7 @@
     /* 调用finishSession结束操作 */
     func publicFinishFunc(handle: HuksHandleId, huksOptions: HuksOptions) {
         loggerInfo("enter doFinish")
-        let throwObject: throwObject = throwObject(false)
+        let throwObject: ThrowObject = ThrowObject(false)
         try {
             finishOutData = finishSession(handle, huksOptions, throwObject)
         } catch (e: Exception) {
@@ -295,7 +295,7 @@
     }
 
     /* 导出密钥 */
-    func exportKeyItem(keyAlias: String, huksOptions: HuksOptions, throwObject: throwObject) {
+    func exportKeyItem(keyAlias: String, huksOptions: HuksOptions, throwObject: ThrowObject) {
         return try {
             exportKeyItem(keyAlias, huksOptions)
         } catch (e: Exception) {
@@ -307,7 +307,7 @@
     /* 调用exportKeyItem导出公钥操作 */
     func publicExportKeyFunc(keyAlias: String, huksOptions: HuksOptions) {
         loggerInfo("enter export")
-        let throwObject: throwObject = throwObject(false)
+        let throwObject: ThrowObject = ThrowObject(false)
         try {
             exportKey = exportKeyItem(keyAlias, huksOptions, throwObject)
         } catch (e: Exception) {
@@ -466,7 +466,7 @@
             ),
             HuksParam(
                 HuksTag.HUKS_TAG_PURPOSE,
-                HuksParamValue.Uint32Value(1 | 2)
+                HuksParamValue.Uint32Value(HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT | HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT)
             )
         ]
 
@@ -514,7 +514,7 @@
                 ),
                 HuksParam(
                     HuksTag.HUKS_TAG_PURPOSE,
-                    HuksParamValue.Uint32Value(1 | 2)
+                    HuksParamValue.Uint32Value(HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT | HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT)
                 ),
                 HuksParam(HuksTag.HUKS_TAG_KEY_ALIAS, HuksParamValue.BytesValue(aliasAgreedKey.toArray()))
             ],

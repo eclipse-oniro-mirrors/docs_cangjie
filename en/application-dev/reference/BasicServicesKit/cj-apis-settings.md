@@ -139,6 +139,7 @@ public enum Date <: ToString {
     | TimeFormat
     | AutoGainTime
     | AutoGainTimeZone
+    | ...
 }
 ```
 
@@ -308,6 +309,7 @@ public enum Display <: ToString {
     | ScreenOffTimeout
     | AutoScreenBrightnessMode
     | ManualScreenBrightnessMode
+    | ...
 }
 ```
 
@@ -543,6 +545,7 @@ public override func toString(): String
 public enum DomainName <: ToString {
     | DeviceShared
     | UserProperty
+    | ...
 }
 ```
 

@@ -83,7 +83,7 @@ import kit.UniversalKeystoreKit.*
 let aesKeyAlias = 'test_aesKeyAlias'  // Key alias, specified during key generation and used for encryption, decryption, and deletion
 var handle: ?HuksHandleId = None
 let plainText = 'PLAIN_TEXT'  // Plaintext to be encrypted
-let IV = 'TEST_IV' // Sample code; use random values in actual scenarios
+let iv = 'TEST_IV' // Sample code; use random values in actual scenarios
 var cipherData: ?Array<UInt8> = [] // Encrypted ciphertext data
 
 func StringToUint8Array(str: String) {
@@ -106,8 +106,7 @@ func GetAesGenerateProperties() {
         ),
         HuksParam(
             HuksTag.HUKS_TAG_PURPOSE,
-            HuksParamValue.Uint32Value(1 | 2)
-//            HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT | HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT
+            HuksParamValue.Uint32Value(HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT | HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT)
         )
     ]
     return properties
@@ -137,7 +136,7 @@ func GetAesEncryptProperties() {
         ),
         HuksParam(
             HuksTag.HUKS_TAG_IV,
-            HuksParamValue.BytesValue(IV.toArray())
+            HuksParamValue.BytesValue(iv.toArray())
         )
     ]
     return properties
@@ -167,7 +166,7 @@ func GetAesDecryptProperties() {
         ),
         HuksParam(
             HuksTag.HUKS_TAG_IV,
-            HuksParamValue.BytesValue(IV.toArray())
+            HuksParamValue.BytesValue(iv.toArray())
         )
     ]
     return properties
@@ -245,8 +244,8 @@ let aesKeyAlias = 'test_aesKeyAlias' // Key alias, specified during key generati
 var handle: ?HuksHandleId = None
 let plainText = 'PLAIN_TEXT' // Plaintext to be encrypted
 var cipherData: ?Array<UInt8> = [] // Encrypted ciphertext data
-let AAD = 'TEST_AAD' // Sample code; use random values in actual scenarios
-let NONCE = 'TEST_NONCE' // Sample code; use random values in actual scenarios
+let aad = 'TEST_AAD' // Sample code; use random values in actual scenarios
+let nonce = 'TEST_NONCE' // Sample code; use random values in actual scenarios
 
 func StringToUint8Array(str: String) {
     return str.toArray()
@@ -268,7 +267,7 @@ func GetAesGenerateProperties() {
         ),
         HuksParam(
             HuksTag.HUKS_TAG_PURPOSE,
-            HuksParamValue.Uint32Value(1 | 2)
+            HuksParamValue.Uint32Value(HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT | HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT)
         )
     ]
     return properties
@@ -298,11 +297,11 @@ func GetAesGcmEncryptProperties() {
         ),
         HuksParam(
             HuksTag.HUKS_TAG_NONCE,
-            HuksParamValue.BytesValue(NONCE.toArray())
+            HuksParamValue.BytesValue(nonce.toArray())
         ),
         HuksParam(
             HuksTag.HUKS_TAG_ASSOCIATED_DATA,
-            HuksParamValue.BytesValue(AAD.toArray())
+            HuksParamValue.BytesValue(aad.toArray())
         )
     ]
     return properties
@@ -332,11 +331,11 @@ func GetAesGcmDecryptProperties(cipherData: Array<UInt8>) {
         ),
         HuksParam(
             HuksTag.HUKS_TAG_NONCE,
-            HuksParamValue.BytesValue(NONCE.toArray())
+            HuksParamValue.BytesValue(nonce.toArray())
         ),
         HuksParam(
             HuksTag.HUKS_TAG_ASSOCIATED_DATA,
-            HuksParamValue.BytesValue(AAD.toArray())
+            HuksParamValue.BytesValue(aad.toArray())
         ),
         HuksParam(
             HuksTag.HUKS_TAG_AE_TAG,
@@ -442,7 +441,7 @@ func GetRsaGenerateProperties() {
         ),
         HuksParam(
             HuksTag.HUKS_TAG_PURPOSE,
-            HuksParamValue.Uint32Value(1 | 2)
+            HuksParamValue.Uint32Value(HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT | HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT)
         )
     ]
     return properties
@@ -600,7 +599,7 @@ func GetRsaGenerateProperties() {
         ),
         HuksParam(
             HuksTag.HUKS_TAG_PURPOSE,
-            HuksParamValue.Uint32Value(1 | 2)
+            HuksParamValue.Uint32Value(HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT | HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT)
         )
     ]
     return properties
@@ -655,7 +654,7 @@ func GetRsaDecryptProperties() {
             HuksParamValue.Uint32Value(HuksKeyPadding.HUKS_PADDING_OAEP)
         ),
         HuksParam(
-            HuksTag.HUKS_TAG_BOCK_MODE,
+            HuksTag.HUKS_TAG_BLOCK_MODE,
             HuksParamValue.Uint32Value(HuksCipherMode.HUKS_MODE_ECB)
         ),
         HuksParam(
@@ -758,7 +757,7 @@ func GetSm2GenerateProperties() {
         ),
         HuksParam(
             HuksTag.HUKS_TAG_PURPOSE,
-            HuksParamValue.Uint32Value(1 | 2)
+            HuksParamValue.Uint32Value(HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT | HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT)
         )
     ]
     return properties

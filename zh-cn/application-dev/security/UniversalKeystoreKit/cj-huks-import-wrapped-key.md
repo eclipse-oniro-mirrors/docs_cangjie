@@ -258,7 +258,7 @@ var importWrappedAes192Params: HuksOptions = HuksOptions(
         ),
         HuksParam(
             HuksTag.HUKS_TAG_PURPOSE,
-            HuksParamValue.Uint32Value(1 | 2)
+            HuksParamValue.Uint32Value(HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT | HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT)
         ),
         HuksParam(
             HuksTag.HUKS_TAG_KEY_SIZE,
@@ -430,7 +430,7 @@ func agreefunc(keyAlias: String, huksOptions: HuksOptions, huksPublicKey: Array<
     return outSharedKey
 }
 
-func ImportKekAndAgreeSharedSecret(callerKekAlias: String, importKekParams: HuksOptions, callerKeyAlias: String,
+func importKekAndAgreeSharedSecret(callerKekAlias: String, importKekParams: HuksOptions, callerKeyAlias: String,
     huksPublicKey: Array<UInt8>, agreeParams: HuksOptions) {
     publicImportKeyItemFunc(callerKekAlias, importKekParams)
     outSharedKey = agreefunc(callerKeyAlias, agreeParams, huksPublicKey)
@@ -447,7 +447,7 @@ func generateAndExportPublicKey(keyAlias: String, HuksOptions: HuksOptions, call
     }
 }
 
-func EncryptImportedPlainKeyAndKek(keyAlias: String) {
+func encryptImportedPlainKeyAndKek(keyAlias: String) {
     encryptKeyCommonParams.inData = stringToUint8Array(keyAlias)
     let plainKeyEncData = cipherfunc(callerKekAliasAes256, encryptKeyCommonParams)
     outKekEncTag = subUint8ArrayOf(plainKeyEncData, plainKeyEncData.size - TAG_SIZE, plainKeyEncData.size)
@@ -458,7 +458,7 @@ func EncryptImportedPlainKeyAndKek(keyAlias: String) {
     outKekEncData = subUint8ArrayOf(kekEncData, 0, kekEncData.size - TAG_SIZE)
 }
 
-func BuildWrappedDataAndImportWrappedKey(plainKey: String) {
+func buildWrappedDataAndImportWrappedKey(plainKey: String) {
     let plainKeySizeBuff = Array<UInt8>(4, repeat: 0)
     assignLength(plainKey.size, plainKeySizeBuff, 0)
     let wrappedData = Array<UInt8>(
@@ -507,7 +507,7 @@ func BuildWrappedDataAndImportWrappedKey(plainKey: String) {
 }
 
 /* 模拟加密导入密钥场景，设备A为远端设备（导入设备），设备B为本端设备（被导入设备） */
-func ImportWrappedKey() {
+func importWrappedKey() {
     /**
      * 1.设备A将待导入密钥转换成HUKS密钥材料格式To_Import_Key（仅针对非对称密钥，若待导入密钥是对称密钥则可省略此步骤），
      *   本示例使用importedAes192PlainKey（对称密钥）作为模拟
@@ -524,17 +524,17 @@ func ImportWrappedKey() {
      * 4.设备A生成一个对称密钥Caller_Kek，该密钥后续将用于加密To_Import_Key
      * 5.设备A基于Caller_Key的私钥Caller_Sk和Wrapping_Key的公钥Wrapping_Pk，协商出Shared_Key
      */
-    ImportKekAndAgreeSharedSecret(callerKekAliasAes256, importParamsCallerKek, callerKeyAlias, huksPubKey.getOrThrow(),
+    importKekAndAgreeSharedSecret(callerKekAliasAes256, importParamsCallerKek, callerKeyAlias, huksPubKey.getOrThrow(),
         callerAgreeParams)
 
     /**
      * 6.设备A使用Caller_Kek加密To_Import_Key，生成To_Import_Key_Enc
      * 7.设备A使用Shared_Key加密Caller_Kek，生成Caller_Kek_Enc
      */
-    EncryptImportedPlainKeyAndKek(importedAes192PlainKey)
+    encryptImportedPlainKeyAndKek(importedAes192PlainKey)
 
     /* 8.设备A封装Caller_Pk、To_Import_Key_Enc、Caller_Kek_Enc等加密导入的材料并发送给设备B。本示例作为变量存放在callerSelfPublicKey，outPlainKeyEncData，outKekEncData */
-    let wrappedData = BuildWrappedDataAndImportWrappedKey(importedAes192PlainKey)
+    let wrappedData = buildWrappedDataAndImportWrappedKey(importedAes192PlainKey)
     importWrappedAes192Params.inData = wrappedData
 
     /* 9.设备B导入封装的加密密钥材料 */
