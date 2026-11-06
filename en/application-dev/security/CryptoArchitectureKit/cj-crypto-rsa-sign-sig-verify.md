@@ -164,8 +164,9 @@ Signature recovery (Recover mode) can recover the original data from the signatu
 
 The following example uses PKCS1 mode signature recovery:
 
-```cangjie
 <!-- compile -->
+
+```cangjie
 import kit.CryptoArchitectureKit.*
 import kit.CangjieKit.BusinessException
 import kit.CangjieKit.AsyncCallback
@@ -222,11 +223,11 @@ The following example uses PKCS1 mode segmented verification:
 
 <!-- compile -->
 
-import kit.CangjieKit.AsyncCallback
 ```cangjie
 import kit.CryptoArchitectureKit.*
 import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
+import kit.CangjieKit.AsyncCallback
 
 func testRsaVerifyBySegment() {
     let message = "This is a long plainText! This is a long plainText! This is a long plainText!" +
@@ -305,13 +306,12 @@ func testRsaVerifyBySegment() {
 
 The following example uses PSS mode verification:
 
-<!-- compile -->
-import kit.CangjieKit.AsyncCallback
-
 ```cangjie
+<!-- compile -->
 import kit.CryptoArchitectureKit.*
 import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
+import kit.CangjieKit.AsyncCallback
 
 func testRsaPssVerify() {
     let input1: Array<UInt8> = "This is Sign test plan1".toUtf8Array()

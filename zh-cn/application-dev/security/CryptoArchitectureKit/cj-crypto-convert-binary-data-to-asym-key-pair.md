@@ -122,8 +122,9 @@ func testConvertECCKey() {
 
 以转换SM2密钥对为例：
 
-```cangjie
 <!-- compile -->
+
+```cangjie
 import kit.CryptoArchitectureKit.*
 import kit.CangjieKit.BusinessException
 import kit.CangjieKit.AsyncCallback

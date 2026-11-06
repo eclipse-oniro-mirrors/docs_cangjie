@@ -164,8 +164,9 @@ func testRsaOnlyVerify() {
 
 以PKCS1模式签名恢复为例：
 
-```cangjie
 <!-- compile -->
+
+```cangjie
 import kit.CryptoArchitectureKit.*
 import kit.CangjieKit.BusinessException
 import kit.CangjieKit.AsyncCallback
@@ -222,11 +223,11 @@ func testRsaRecover() {
 
 <!-- compile -->
 
-import kit.CangjieKit.AsyncCallback
 ```cangjie
 import kit.CryptoArchitectureKit.*
 import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
+import kit.CangjieKit.AsyncCallback
 
 func testRsaVerifyBySegment() {
     let message = "This is a long plainText! This is a long plainText! This is a long plainText!" +
@@ -306,12 +307,13 @@ func testRsaVerifyBySegment() {
 以PSS模式验签为例：
 
 <!-- compile -->
-import kit.CangjieKit.AsyncCallback
 
 ```cangjie
 import kit.CryptoArchitectureKit.*
 import kit.CangjieKit.BusinessException
 import kit.PerformanceAnalysisKit.Hilog
+import kit.CangjieKit.AsyncCallback
+
 
 func testRsaPssVerify() {
     let input1: Array<UInt8> = "This is Sign test plan1".toUtf8Array()
