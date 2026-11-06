@@ -3654,36 +3654,37 @@ public func toString(): String
 
 ```cangjie
 public enum AsyKeySpecItem {
-    DsaPBn
-    DsaQBn
-    DsaGBn
-    DsaSkBn
-    DsaPkBn
-    EccFpPBn
-    EccABn
-    EccBBn
-    EccGXBn
-    EccGYBn
-    EccNBn
-    EccHNum
-    EccSkBn
-    EccPkXBn
-    EccPkYBn
-    EccFieldTypeStr
-    EccFieldSizeNum
-    EccCurveNameStr
-    RsaNBn
-    RsaSkBn
-    RsaPkBn
-    DhPBn
-    DhGBn
-    DhLNum
-    DhSkBn
-    DhPkBn
-    Ed25519SkBn
-    Ed25519PkBn
-    X25519SkBn
-    X25519PkBn
+    | DsaPBn
+    | DsaQBn
+    | DsaGBn
+    | DsaSkBn
+    | DsaPkBn
+    | EccFpPBn
+    | EccABn
+    | EccBBn
+    | EccGXBn
+    | EccGYBn
+    | EccNBn
+    | EccHNum
+    | EccSkBn
+    | EccPkXBn
+    | EccPkYBn
+    | EccFieldTypeStr
+    | EccFieldSizeNum
+    | EccCurveNameStr
+    | RsaNBn
+    | RsaSkBn
+    | RsaPkBn
+    | DhPBn
+    | DhGBn
+    | DhLNum
+    | DhSkBn
+    | DhPkBn
+    | Ed25519SkBn
+    | Ed25519PkBn
+    | X25519SkBn
+    | X25519PkBn
+    | ...
 }
 ```
 
@@ -4141,10 +4142,11 @@ public func toString(): String
 
 ```cangjie
 public enum ResultSpec {
-    BigintValue(BigInt)
-    Int32Value(Int32)
-    StringValue(String)
-    Uint8ArrayValue(Array<UInt8>)
+    | BigintValue(BigInt)
+    | Int32Value(Int32)
+    | StringValue(String)
+    | Uint8ArrayValue(Array<UInt8>)
+    | ...
 }
 ```
 
@@ -4272,15 +4274,16 @@ public func toString(): String
 
 ```cangjie
 public enum SignSpecItem {
-    PssMdNameStr
-    PssMgfNameStr
-    PssMgf1MdStr
-    PssSaltLenNum
-    PssTrailerFieldNum
-    Sm2UserIdUint8arr
-    MlDsaDeterministicBool
-    MlDsaMuBool
-    MlDsaContextUint8arr
+    | PssMdNameStr
+    | PssMgfNameStr
+    | PssMgf1MdStr
+    | PssSaltLenNum
+    | PssTrailerFieldNum
+    | Sm2UserIdUint8arr
+    | MlDsaDeterministicBool
+    | MlDsaMuBool
+    | MlDsaContextUint8arr
+    | ...
 }
 ```
 

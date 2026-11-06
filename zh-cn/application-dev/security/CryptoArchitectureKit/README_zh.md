@@ -33,12 +33,10 @@
     - [签名验签算法规格](cj-crypto-sign-sig-verify-overview.md)（Beta特性）
     - 签名验签开发指导
         - [使用RSA密钥对验签](cj-crypto-rsa-sign-sig-verify.md)（Beta特性）
-    - 消息摘要计算
-        - [消息摘要计算介绍及算法规格](cj-crypto-generate-message-digest-overview.md)（Beta特性）
-        - 消息摘要计算开发指导
-            - [消息摘要计算SHA256](cj-crypto-generate-message-digest.md)（Beta特性）
-            - [消息摘要计算MD5](cj-crypto-generate-message-digest-md5.md)（Beta特性）
-    - 消息认证码
-        - [消息认证码计算](cj-crypto-compute-mac.md)（Beta特性）
-    - 随机数
-        - [安全随机数生成](cj-crypto-generate-random-number.md)（Beta特性）
+- 消息摘要计算
+    - [消息摘要计算介绍及算法规格](cj-crypto-generate-message-digest-overview.md)（Beta特性）
+    - 消息摘要计算开发指导
+        - [消息摘要计算SHA256](cj-crypto-generate-message-digest.md)（Beta特性）
+        - [消息摘要计算MD5](cj-crypto-generate-message-digest-md5.md)（Beta特性）
+- [消息认证码计算](cj-crypto-compute-mac.md)（Beta特性）
+- [安全随机数生成](cj-crypto-generate-random-number.md)（Beta特性）
