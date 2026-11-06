@@ -1624,7 +1624,7 @@ public prop algName: String
 ### func generateKeyPair(AsyncCallback<KeyPair>)
 
 ```cangjie
-public func generateKeyPair(callback: AsyncCallback<[KeyPair](#class-keypair)>): Unit
+public func generateKeyPair(callback: AsyncCallback<KeyPair>): Unit
 ```
 
 **功能：** 异步生成非对称密钥对，通过回调返回结果。
@@ -1678,7 +1678,7 @@ try {
 ### func convertKey(AsyncCallback<KeyPair>, Option<DataBlob>, Option<DataBlob>)
 
 ```cangjie
-public func convertKey(callback: AsyncCallback<[KeyPair](#class-keypair)>, pubKey!: Option<[DataBlob](#class-datablob)> = None, priKey!: Option<[DataBlob](#class-datablob)> = None): Unit
+public func convertKey(callback: AsyncCallback<KeyPair>, pubKey!: Option<DataBlob> = None, priKey!: Option<DataBlob> = None): Unit
 ```
 
 **功能：** 异步将传入的公钥和私钥转换为非对称密钥对，通过回调返回结果。
@@ -1742,7 +1742,7 @@ try {
 ### func convertPemKey(AsyncCallback<KeyPair>, Option<String>, Option<String>)
 
 ```cangjie
-public func convertPemKey(callback: AsyncCallback<[KeyPair](#class-keypair)>, pubKey!: Option<String> = None, priKey!: Option<String> = None): Unit
+public func convertPemKey(callback: AsyncCallback<KeyPair>, pubKey!: Option<String> = None, priKey!: Option<String> = None): Unit
 ```
 
 **功能：** 异步将 PEM 格式的公钥和私钥字符串转换为非对称密钥对，通过回调返回结果。
@@ -2661,7 +2661,7 @@ try {
 ### func verify(DataBlob, AsyncCallback<Bool>, Option<DataBlob>)
 
 ```cangjie
-public func verify(signatureData: DataBlob, callback: AsyncCallback<Bool>, data!: Option<[DataBlob](#class-datablob)> = None): Unit
+public func verify(signatureData: DataBlob, callback: AsyncCallback<Bool>, data!: Option<DataBlob> = None): Unit
 ```
 
 **功能：** 异步验证签名是否匹配，通过回调返回验签结果。此重载适用于已通过 update 追加数据后调用，data 参数可为空。

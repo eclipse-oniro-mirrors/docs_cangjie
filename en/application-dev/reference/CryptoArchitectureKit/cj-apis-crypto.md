@@ -2241,7 +2241,7 @@ public prop algName: String
 ### func generateKeyPair(AsyncCallback<KeyPair>)
 
 ```cangjie
-public func generateKeyPair(callback: AsyncCallback<[KeyPair](#class-keypair)>): Unit
+public func generateKeyPair(callback: AsyncCallback<KeyPair>): Unit
 ```
 
 **Function:** Asynchronously generates an asymmetric key pair, with the result returned via a callback.
@@ -2295,7 +2295,7 @@ try {
 ### func convertKey(AsyncCallback<KeyPair>, Option<DataBlob>, Option<DataBlob>)
 
 ```cangjie
-public func convertKey(callback: AsyncCallback<[KeyPair](#class-keypair)>, pubKey!: Option<[DataBlob](#class-datablob)> = None, priKey!: Option<[DataBlob](#class-datablob)> = None): Unit
+public func convertKey(callback: AsyncCallback<KeyPair>, pubKey!: Option<DataBlob> = None, priKey!: Option<DataBlob> = None): Unit
 ```
 
 **Function:** Asynchronously converts the input public key and private key into an asymmetric key pair, with the result returned via a callback.
@@ -2359,7 +2359,7 @@ try {
 ### func convertPemKey(AsyncCallback<KeyPair>, Option<String>, Option<String>)
 
 ```cangjie
-public func convertPemKey(callback: AsyncCallback<[KeyPair](#class-keypair)>, pubKey!: Option<String> = None, priKey!: Option<String> = None): Unit
+public func convertPemKey(callback: AsyncCallback<KeyPair>, pubKey!: Option<String> = None, priKey!: Option<String> = None): Unit
 ```
 
 **Function:** Asynchronously converts PEM-formatted public key and private key strings into an asymmetric key pair, with the result returned via a callback.
@@ -3278,7 +3278,7 @@ try {
 ### func verify(DataBlob, AsyncCallback<Bool>, Option<DataBlob>)
 
 ```cangjie
-public func verify(signatureData: DataBlob, callback: AsyncCallback<Bool>, data!: Option<[DataBlob](#class-datablob)> = None): Unit
+public func verify(signatureData: DataBlob, callback: AsyncCallback<Bool>, data!: Option<DataBlob> = None): Unit
 ```
 
 **Function:** Asynchronously verifies whether the signature matches, with the verification result returned via a callback. This overload is applicable when data has already been appended via update, and the data parameter can be null.
