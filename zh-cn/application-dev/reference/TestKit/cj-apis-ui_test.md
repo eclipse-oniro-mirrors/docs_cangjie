@@ -77,6 +77,7 @@ public func clearText(): Unit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
+  | 17000002 | The API does not support concurrent calls. |
   | 17000004 | The window or component is invisible or destroyed. |
 
 **示例：**
@@ -118,6 +119,7 @@ public func click(): Unit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
+  | 17000002 | The API does not support concurrent calls. |
   | 17000004 | The window or component is invisible or destroyed. |
 
 **示例：**
@@ -159,6 +161,7 @@ public func doubleClick(): Unit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
+  | 17000002 | The API does not support concurrent calls. |
   | 17000004 | The window or component is invisible or destroyed. |
 
 **示例：**
@@ -206,6 +209,7 @@ public func dragTo(target: Component): Unit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
+  | 17000002 | The API does not support concurrent calls. |
   | 17000004 | The window or component is invisible or destroyed. |
 
 **示例：**
@@ -255,6 +259,7 @@ public func getBounds(): Rect
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
+  | 17000002 | The API does not support concurrent calls. |
   | 17000004 | The window or component is invisible or destroyed. |
 
 **示例：**
@@ -302,6 +307,7 @@ public func getBoundsCenter(): Point
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
+  | 17000002 | The API does not support concurrent calls. |
   | 17000004 | The window or component is invisible or destroyed. |
 
 **示例：**
@@ -349,6 +355,7 @@ public func getDescription(): String
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
+  | 17000002 | The API does not support concurrent calls. |
   | 17000004 | The window or component is invisible or destroyed. |
 
 **示例：**
@@ -396,6 +403,7 @@ public func getId(): String
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
+  | 17000002 | The API does not support concurrent calls. |
   | 17000004 | The window or component is invisible or destroyed. |
 
 **示例：**
@@ -443,6 +451,7 @@ public func getText(): String
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
+  | 17000002 | The API does not support concurrent calls. |
   | 17000004 | The window or component is invisible or destroyed. |
 
 **示例：**
@@ -490,6 +499,7 @@ public func getType(): String
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
+  | 17000002 | The API does not support concurrent calls. |
   | 17000004 | The window or component is invisible or destroyed. |
 
 **示例：**
@@ -537,6 +547,7 @@ public func inputText(text: String): Unit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
+  | 17000002 | The API does not support concurrent calls. |
   | 17000004 | The window or component is invisible or destroyed. |
 
 **示例：**
@@ -584,6 +595,7 @@ public func isCheckable(): Bool
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
+  | 17000002 | The API does not support concurrent calls. |
   | 17000004 | The window or component is invisible or destroyed. |
 
 **示例：**
@@ -631,6 +643,7 @@ public func isChecked(): Bool
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
+  | 17000002 | The API does not support concurrent calls. |
   | 17000004 | The window or component is invisible or destroyed. |
 
 **示例：**
@@ -678,6 +691,7 @@ public func isClickable(): Bool
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
+  | 17000002 | The API does not support concurrent calls. |
   | 17000004 | The window or component is invisible or destroyed. |
 
 **示例：**
@@ -725,6 +739,7 @@ public func isEnabled(): Bool
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
+  | 17000002 | The API does not support concurrent calls. |
   | 17000004 | The window or component is invisible or destroyed. |
 
 **示例：**
@@ -772,6 +787,7 @@ public func isFocused(): Bool
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
+  | 17000002 | The API does not support concurrent calls. |
   | 17000004 | The window or component is invisible or destroyed. |
 
 **示例：**
@@ -819,6 +835,7 @@ public func isLongClickable(): Bool
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
+  | 17000002 | The API does not support concurrent calls. |
   | 17000004 | The window or component is invisible or destroyed. |
 
 **示例：**
@@ -866,6 +883,7 @@ public func isScrollable(): Bool
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
+  | 17000002 | The API does not support concurrent calls. |
   | 17000004 | The window or component is invisible or destroyed. |
 
 **示例：**
@@ -913,6 +931,7 @@ public func isSelected(): Bool
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
+  | 17000002 | The API does not support concurrent calls. |
   | 17000004 | The window or component is invisible or destroyed. |
 
 **示例：**
@@ -954,6 +973,7 @@ public func longClick(): Unit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
+  | 17000002 | The API does not support concurrent calls. |
   | 17000004 | The window or component is invisible or destroyed. |
 
 **示例：**
@@ -993,7 +1013,7 @@ public func pinchIn(scale: Float32): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|scale|Float32|是|-|指定缩小的比例。取值范围为0~1。|
+|scale|Float32|是|-|指定缩小的比例。取值范围为0~1。传入负数时抛出401错误码。|
 
 **异常：**
 
@@ -1001,6 +1021,7 @@ public func pinchIn(scale: Float32): Unit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
+  | 17000002 | The API does not support concurrent calls. |
   | 17000004 | The window or component is invisible or destroyed. |
 
 **示例：**
@@ -1040,7 +1061,7 @@ public func pinchOut(scale: Float32): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|scale|Float32|是|-|指定放大的比例。取值范围大于1。|
+|scale|Float32|是|-|指定放大的比例。取值范围大于1。传入负数时抛出401错误码。|
 
 **异常：**
 
@@ -1048,6 +1069,7 @@ public func pinchOut(scale: Float32): Unit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
+  | 17000002 | The API does not support concurrent calls. |
   | 17000004 | The window or component is invisible or destroyed. |
 
 **示例：**
@@ -1101,6 +1123,7 @@ public func scrollSearch(on: On): ?Component
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
+  | 17000002 | The API does not support concurrent calls. |
   | 17000004 | The window or component is invisible or destroyed. |
 
 **示例：**
@@ -1140,7 +1163,7 @@ public func scrollToBottom(speed!: Int64 = 600): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|speed|Int64|否|600| **命名参数。** 滑动速率，取值范围为200-40000的整数，默认值为600，不在范围内设为默认值为600，单位：px/s。|
+|speed|Int64|否|600| **命名参数。** 滑动速率，取值范围为200-40000的整数，默认值为600，不在范围内设为默认值600，单位：px/s。传入负数时抛出401错误码。|
 
 **异常：**
 
@@ -1148,6 +1171,7 @@ public func scrollToBottom(speed!: Int64 = 600): Unit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
+  | 17000002 | The API does not support concurrent calls. |
   | 17000004 | The window or component is invisible or destroyed. |
 
 **示例：**
@@ -1187,7 +1211,7 @@ public func scrollToTop(speed!: Int64 = 600): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|speed|Int64|否|600| **命名参数。** 滑动速率，取值范围为200-40000的整数，默认值为600，不在范围内设为默认值为600，单位：px/s。|
+|speed|Int64|否|600| **命名参数。** 滑动速率，取值范围为200-40000的整数，默认值为600，不在范围内设为默认值600，单位：px/s。传入负数时抛出401错误码。|
 
 **异常：**
 
@@ -1195,6 +1219,7 @@ public func scrollToTop(speed!: Int64 = 600): Unit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
+  | 17000002 | The API does not support concurrent calls. |
   | 17000004 | The window or component is invisible or destroyed. |
 
 **示例：**
@@ -1298,6 +1323,7 @@ public func assertComponentExist(on: On): Unit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
+  | 17000002 | The API does not support concurrent calls. |
   | 17000003 | Assertion failed. |
 
 **示例：**
@@ -1335,8 +1361,16 @@ public func click(x: Int32, y: Int32): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|x|Int32|是|-|以Int32的形式传入目标点的横坐标信息，取值范围：大于等于0的整数。|
-|y|Int32|是|-|以Int32的形式传入目标点的纵坐标信息，取值范围：大于等于0的整数。|
+|x|Int32|是|-|以Int32的形式传入目标点的横坐标信息，取值范围：大于等于0的整数，单位：px。传入不在范围内的值抛出401错误码。|
+|y|Int32|是|-|以Int32的形式传入目标点的纵坐标信息，取值范围：大于等于0的整数，单位：px。传入不在范围内的值抛出401错误码。|
+
+**异常：**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 17000002 | The API does not support concurrent calls. |
 
 **示例：**
 
@@ -1410,7 +1444,15 @@ public func delayMs(duration: Int32): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|duration|Int32|是|-|给定的时间，单位：ms，取值范围：大于等于0的整数。|
+|duration|Int32|是|-|给定的时间，单位：ms，取值范围：大于等于0的整数。传入负数时抛出401错误码。|
+
+**异常：**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 17000002 | The API does not support concurrent calls. |
 
 **示例：**
 
@@ -1447,8 +1489,16 @@ public func doubleClick(x: Int32, y: Int32): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|x|Int32|是|-|以Int32的形式传入目标点的横坐标信息，取值范围：大于等于0的整数。|
-|y|Int32|是|-|以Int32的形式传入目标点的纵坐标信息，取值范围：大于等于0的整数。|
+|x|Int32|是|-|以Int32的形式传入目标点的横坐标信息，取值范围：大于等于0的整数，单位：px。传入不在范围内的值抛出401错误码。|
+|y|Int32|是|-|以Int32的形式传入目标点的纵坐标信息，取值范围：大于等于0的整数，单位：px。传入不在范围内的值抛出401错误码。|
+
+**异常：**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 17000002 | The API does not support concurrent calls. |
 
 **示例：**
 
@@ -1491,11 +1541,19 @@ public func drag(
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|startx|Int32|是|-|以Int32的形式传入起始点的横坐标信息，取值范围：大于等于0的整数。|
-|starty|Int32|是|-|以Int32的形式传入起始点的纵坐标信息，取值范围：大于等于0的整数。|
-|endx|Int32|是|-|以Int32的形式传入目的点的横坐标信息，取值范围：大于等于0的整数。|
-|endy|Int32|是|-|以Int32的形式传入目的点的纵坐标信息，取值范围：大于等于0的整数。|
-|speed|Int32|否|600|**命名参数。** 滑动速率，取值范围为200-40000的整数，默认值为600，不在范围内设为默认值为600，单位：px/s。|
+|startx|Int32|是|-|以Int32的形式传入起始点的横坐标信息，取值范围：大于等于0的整数，单位：px。|
+|starty|Int32|是|-|以Int32的形式传入起始点的纵坐标信息，取值范围：大于等于0的整数，单位：px。|
+|endx|Int32|是|-|以Int32的形式传入目的点的横坐标信息，取值范围：大于等于0的整数，单位：px。|
+|endy|Int32|是|-|以Int32的形式传入目的点的纵坐标信息，取值范围：大于等于0的整数，单位：px。|
+|speed|Int32|否|600|**命名参数。** 滑动速率，取值范围为200-40000的整数，默认值为600，不在范围内设为默认值600，单位：px/s。|
+
+**异常：**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 17000002 | The API does not support concurrent calls. |
 
 **示例：**
 
@@ -1540,6 +1598,14 @@ public func findComponent(on: On): ?Component
 |:----|:----|
 |?[Component](#class-component)|返回控件对象。|
 
+**异常：**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 17000002 | The API does not support concurrent calls. |
+
 **示例：**
 
 <!-- compile -->
@@ -1582,6 +1648,14 @@ public func findComponents(on: On): ?Array<Component>
 |类型|说明|
 |:----|:----|
 |?Array\<[Component](#class-component)>|返回控件对象的列表。|
+
+**异常：**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 17000002 | The API does not support concurrent calls. |
 
 **示例：**
 
@@ -1626,6 +1700,14 @@ public func findWindow(filter: WindowFilter): ?UiWindow
 |:----|:----|
 |?[UiWindow](#class-uiwindow)|返回目标窗口对象。|
 
+**异常：**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 17000002 | The API does not support concurrent calls. |
+
 **示例：**
 
 <!-- compile -->
@@ -1663,8 +1745,16 @@ public func fling(from: Point, to: Point, stepLen: Int32, speed: Int32): Unit
 |:---|:---|:---|:---|:---|
 |from|[Point](#class-point)|是|-|手指接触屏幕的起始点坐标。|
 |to|[Point](#class-point)|是|-|手指离开屏幕时的坐标点。|
-|stepLen|Int32|是|-|间隔距离，取值大于等于0的整数，单位：px。|
-|speed|Int32|是|-|滑动速率，取值范围为200-40000的整数，不在范围内设为600，单位：px/s。|
+|stepLen|Int32|是|-|间隔距离，取值大于等于0的整数，单位：px。传入负数时抛出401错误码。|
+|speed|Int32|是|-|滑动速率，取值范围为200-40000的整数，默认值为600，不在范围内设为600，单位：px/s。传入负数时抛出401错误码。|
+
+**异常：**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 17000002 | The API does not support concurrent calls. |
 
 **示例：**
 
@@ -1702,7 +1792,15 @@ public func fling(direction: UiDirection, speed: Int32): Unit
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |direction|[UiDirection](#enum-uidirection)|是|-|进行抛滑的方向。|
-|speed|Int32|是|-|滑动速率，取值范围为200-40000的整数，不在范围内设为600，单位：px/s。|
+|speed|Int32|是|-|滑动速率，取值范围为200-40000的整数，默认值为600，不在范围内设为600，单位：px/s。传入负数时抛出401错误码。|
+
+**异常：**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 17000002 | The API does not support concurrent calls. |
 
 **示例：**
 
@@ -1851,13 +1949,21 @@ public func injectMultiPointerAction(pointers: PointerMatrix, speed!: Int32 = 60
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |pointers|[PointerMatrix](#class-pointermatrix)|是|-|滑动轨迹，包括操作手指个数和滑动坐标序列。|
-|speed|Int32|否|600|**命名参数。** 滑动速率，取值范围为200-40000的整数，默认值为600，不在范围内设为默认值为600，单位：px/s。|
+|speed|Int32|否|600|**命名参数。** 滑动速率，取值范围为200-40000的整数，默认值为600，不在范围内设为默认值600，单位：px/s。传入负数时抛出401错误码。|
 
 **返回值：**
 
 |类型|说明|
 |:----|:----|
 |Bool|返回操作是否成功完成。true：完成，false：未完成。|
+
+**异常：**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 17000002 | The API does not support concurrent calls. |
 
 **示例：**
 
@@ -1906,6 +2012,14 @@ public func inputText(p: Point, text: String): Unit
 |p|[Point](#class-point)|是|-|输入文本的坐标点。|
 |text|String|是|-|输入的文本信息，当前支持英文、中文和特殊字符。|
 
+**异常：**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 17000002 | The API does not support concurrent calls. |
+
 **示例：**
 
 <!-- compile -->
@@ -1944,8 +2058,16 @@ public func longClick(x: Int32, y: Int32): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|x|Int32|是|-|以Int32的形式传入目标点的横坐标信息，取值范围：大于等于0的整数。|
-|y|Int32|是|-|以Int32的形式传入目标点的纵坐标信息，取值范围：大于等于0的整数。|
+|x|Int32|是|-|以Int32的形式传入目标点的横坐标信息，取值范围：大于等于0的整数，单位：px。传入不在范围内的值抛出401错误码。|
+|y|Int32|是|-|以Int32的形式传入目标点的纵坐标信息，取值范围：大于等于0的整数，单位：px。传入不在范围内的值抛出401错误码。|
+
+**异常：**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 17000002 | The API does not support concurrent calls. |
 
 **示例：**
 
@@ -1986,6 +2108,14 @@ public func mouseClick(p: Point, btnId: MouseButton, key1!: Int32 = 0, key2!: In
 |btnId|[MouseButton](#enum-mousebutton)|是|-|按下的鼠标按键。|
 |key1|Int32|否|0|**命名参数。** 指定的第一个key值，取值大于等于0的整数，默认值为0。|
 |key2|Int32|否|0|**命名参数。** 指定的第二个key值，取值大于等于0的整数，默认值为0。|
+
+**异常：**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 17000002 | The API does not support concurrent calls. |
 
 **示例：**
 
@@ -2028,6 +2158,14 @@ public func mouseDoubleClick(p: Point, btnId: MouseButton, key1!: Int32 = 0, key
 |key1|Int32|否|0|**命名参数。** 指定的第一个key值，取值大于等于0的整数，默认值0。|
 |key2|Int32|否|0|**命名参数。** 指定的第二个key值，取值大于等于0的整数，默认值0。|
 
+**异常：**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 17000002 | The API does not support concurrent calls. |
+
 **示例：**
 
 <!-- compile -->
@@ -2066,7 +2204,15 @@ public func mouseDrag(from: Point, to: Point, speed!: Int32 = 600): Unit
 |:---|:---|:---|:---|:---|
 |from|[Point](#class-point)|是|-|起始点坐标。|
 |to|[Point](#class-point)|是|-|终点坐标。|
-|speed|Int32|否|600|**命名参数。** 滑动速率，取值范围为200-40000的整数，默认值为600，不在范围内设为默认值，单位：px/s。|
+|speed|Int32|否|600|**命名参数。** 滑动速率，取值范围为200-40000的整数，默认值为600，不在范围内设为默认值，单位：px/s。传入负数时抛出401错误码。|
+
+**异常：**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 17000002 | The API does not support concurrent calls. |
 
 **示例：**
 
@@ -2109,6 +2255,14 @@ public func mouseLongClick(p: Point, btnId: MouseButton, key1!: Int32 = 0, key2!
 |key1|Int32|否|0|**命名参数。** 指定的第一个key值，取值大于等于0的整数，默认值为0。|
 |key2|Int32|否|0|**命名参数。** 指定的第二个key值，取值大于等于0的整数，默认值为0。|
 
+**异常：**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 17000002 | The API does not support concurrent calls. |
+
 **示例：**
 
 <!-- compile -->
@@ -2146,6 +2300,14 @@ public func mouseMoveTo(p: Point): Unit
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |p|[Point](#class-point)|是|-|目标点的坐标。|
+
+**异常：**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 17000002 | The API does not support concurrent calls. |
 
 **示例：**
 
@@ -2185,7 +2347,15 @@ public func mouseMoveWithTrack(from: Point, to: Point, speed!: Int32 = 600): Uni
 |:---|:---|:---|:---|:---|
 |from|[Point](#class-point)|是|-|起始点坐标。|
 |to|[Point](#class-point)|是|-|终点坐标。|
-|speed|Int32|否|600|**命名参数。** 滑动速率，取值范围为200-40000的整数，默认值为600，不在范围内设为默认值，单位：px/s。|
+|speed|Int32|否|600|**命名参数。** 滑动速率，取值范围为200-40000的整数，默认值为600，不在范围内设为默认值，单位：px/s。传入负数时抛出401错误码。|
+
+**异常：**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 17000002 | The API does not support concurrent calls. |
 
 **示例：**
 
@@ -2225,10 +2395,18 @@ public func mouseScroll(p: Point, down: Bool, d: Int32, key1!: Int32 = 0, key2!:
 |:---|:---|:---|:---|:---|
 |p|[Point](#class-point)|是|-|鼠标点击的坐标。|
 |down|Bool|是|-|滚轮滑动方向是否向下。true表示向下滑动。false表示向上滚动。|
-|d|Int32|是|-|鼠标滚轮滚动的格数，取值大于等于0的整数，每格对应目标点位移120px。|
+|d|Int32|是|-|鼠标滚轮滚动的格数，取值大于等于0的整数，每格对应目标点位移120px。传入负数时抛出401错误码。|
 |key1|Int32|否|0|**命名参数。** 指定的第一个key值，取值大于等于0的整数，默认值为0。|
 |key2|Int32|否|0|**命名参数。** 指定的第二个key值，取值大于等于0的整数，默认值为0。|
-|speed|Int32|否|20|**命名参数。** 鼠标滚轮滚动的速度，范围：1-500的整数，不在范围内设为默认值为20，单位：格/秒。|
+|speed|Int32|否|20|**命名参数。** 鼠标滚轮滚动的速度，范围：1-500的整数，不在范围内设为默认值20，单位：格/秒。传入负数时抛出401错误码。|
+
+**异常：**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 17000002 | The API does not support concurrent calls. |
 
 **示例：**
 
@@ -2336,6 +2514,14 @@ public func screenCap(savePath: String): Bool
 |:----|:----|
 |Bool|返回截图操作是否成功完成。true：完成，false：未完成。|
 
+**异常：**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 17000002 | The API does not support concurrent calls. |
+
 **示例：**
 
 <!-- compile -->
@@ -2380,6 +2566,14 @@ public func screenCapture(savePath: String, rect!: Rect = Rect(0,0,0,0)): Bool
 |:----|:----|
 |Bool|返回截图操作是否成功完成。true：成功完成，false：未成功完成。|
 
+**异常：**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 17000002 | The API does not support concurrent calls. |
+
 **示例：**
 
 <!-- compile -->
@@ -2417,6 +2611,14 @@ public func setDisplayRotation(rotation: DisplayRotation): Unit
 |:---|:---|:---|:---|:---|
 |rotation|[DisplayRotation](#enum-displayrotation)|是|-|设备的显示方向。|
 
+**异常：**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 17000002 | The API does not support concurrent calls. |
+
 **示例：**
 
 <!-- compile -->
@@ -2453,6 +2655,14 @@ public func setDisplayRotationEnabled(enabled: Bool): Unit
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |enabled|Bool|是|-|能否旋转屏幕的标识，true：可以旋转，false：不可以旋转。|
+
+**异常：**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 17000002 | The API does not support concurrent calls. |
 
 **示例：**
 
@@ -2495,11 +2705,19 @@ public func swipe(
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|startx|Int32|是|-|以Int32的形式传入起始点的横坐标信息，取值范围：大于等于0的整数。|
-|starty|Int32|是|-|以Int32的形式传入起始点的纵坐标信息，取值范围：大于等于0的整数。|
-|endx|Int32|是|-|以Int32的形式传入目的点的横坐标信息，取值范围：大于等于0的整数。|
-|endy|Int32|是|-|以Int32的形式传入目的点的纵坐标信息，取值范围：大于等于0的整数。|
-|speed|Int32|否|600|**命名参数。** 滑动速率，取值范围为200-40000的整数，默认值为600，不在范围内设为默认值为600，单位：px/s。|
+|startx|Int32|是|-|以Int32的形式传入起始点的横坐标信息，取值范围：大于等于0的整数，单位：px。传入不在范围内的值抛出401错误码。|
+|starty|Int32|是|-|以Int32的形式传入起始点的纵坐标信息，取值范围：大于等于0的整数，单位：px。传入不在范围内的值抛出401错误码。|
+|endx|Int32|是|-|以Int32的形式传入目的点的横坐标信息，取值范围：大于等于0的整数，单位：px。传入不在范围内的值抛出401错误码。|
+|endy|Int32|是|-|以Int32的形式传入目的点的纵坐标信息，取值范围：大于等于0的整数，单位：px。传入不在范围内的值抛出401错误码。|
+|speed|Int32|否|600|**命名参数。** 滑动速率，取值范围为200-40000的整数，默认值为600，不在范围内设为默认值600，单位：px/s。传入负数时抛出401错误码。|
+
+**异常：**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 17000002 | The API does not support concurrent calls. |
 
 **示例：**
 
@@ -2540,6 +2758,14 @@ public func triggerCombineKeys(key0: Int32, key1: Int32, key2!: Int32 = 0): Unit
 |key1|Int32|是|-|指定的第二个key值，取值大于等于0的整数。|
 |key2|Int32|否|0|**命名参数。** 指定的第三个key值，取值范围：大于等于0的整数。默认值为0。|
 
+**异常：**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 17000002 | The API does not support concurrent calls. |
+
 **示例：**
 
 <!-- compile -->
@@ -2577,6 +2803,14 @@ public func triggerKey(keyCode: Int32): Unit
 |:---|:---|:---|:---|:---|
 |keyCode|Int32|是|-|指定的key值，取值范围：大于等于0的整数。|
 
+**异常：**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 17000002 | The API does not support concurrent calls. |
+
 **示例：**
 
 <!-- compile -->
@@ -2613,13 +2847,21 @@ public func waitForComponent(on: On, time: Int32): ?Component
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |on|[On](#class-on)|是|-|目标控件的属性要求。|
-|time|Int32|是|-|查找目标控件的持续时间。单位ms，取值范围：大于等于0的整数。|
+|time|Int32|是|-|查找目标控件的持续时间。单位ms，取值范围：大于等于0的整数。传入负数时抛出401错误码。|
 
 **返回值：**
 
 |类型|说明|
 |:----|:----|
 |?[Component](#class-component)|返回控件对象。|
+
+**异常：**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 17000002 | The API does not support concurrent calls. |
 
 **示例：**
 
@@ -2656,14 +2898,22 @@ public func waitForIdle(idleTime: Int32, timeout: Int32): Bool
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|idleTime|Int32|是|-|空闲时间的阈值。在这个时间段控件不发生变化，视为该控件空闲，单位：毫秒，取值范围：大于等于0的整数。|
-|timeout|Int32|是|-|等待空闲的最大时间，单位：毫秒，取值范围：大于等于0的整数。|
+|idleTime|Int32|是|-|空闲时间的阈值。在这个时间段控件不发生变化，视为该控件空闲，单位：毫秒，取值范围：大于等于0的整数。传入负数时抛出401错误码。|
+|timeout|Int32|是|-|等待空闲的最大时间，单位：毫秒，取值范围：大于等于0的整数。传入负数时抛出401错误码。|
 
 **返回值：**
 
 |类型|说明|
 |:----|:----|
 |Bool|返回当前界面的所有控件是否已经空闲。true：已经空闲，false：不空闲。|
+
+**异常：**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[uitest错误码](./cj-errorcode-uitest.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 17000002 | The API does not support concurrent calls. |
 
 **示例：**
 
@@ -3539,8 +3789,8 @@ public static func create(fingers: Int32, steps: Int32): PointerMatrix
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|fingers|Int32|是|-|多指操作中注入的手指数，取值范围：[1,10]的整数。|
-|steps|Int32|是|-|每根手指操作的步骤数，取值范围：[1,1000]的整数。|
+|fingers|Int32|是|-|多指操作中注入的手指数，取值范围：[1,10]的整数。传入不在取值范围内的值时抛出401错误码。|
+|steps|Int32|是|-|每根手指操作的步骤数，取值范围：[1,1000]的整数。传入不在取值范围内的值时抛出401错误码。|
 
 **返回值：**
 
@@ -3824,7 +4074,7 @@ public func once(onceType: OnceType, callback: Callback<UiElementInfo>): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|onceType|[OnceType](#enum-oncetype)|是|-|订阅的事件类型。|
+|onceType|[OnceType](#enum-oncetype)|是|-|订阅的事件类型，取值为 ToastShow 或 DialogShow。|
 |callback|[Callback](../../reference/arkui-cj/cj-common-types.md#type-callbackt-v)\<[UiElementInfo](#class-uielementinfo)>|是|-|事件发生时执行的回调函数。|
 
 **示例：**
@@ -3888,6 +4138,7 @@ public func close(): Unit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
+  | 17000002 | The API does not support concurrent calls. |
   | 17000004 | The window or component is invisible or destroyed. |
   | 17000005 | This operation is not supported. |
 
@@ -3930,6 +4181,7 @@ public func focus(): Unit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
+  | 17000002 | The API does not support concurrent calls. |
   | 17000004 | The window or component is invisible or destroyed. |
 
 **示例：**
@@ -3976,6 +4228,7 @@ public func getBounds(): Rect
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
+  | 17000002 | The API does not support concurrent calls. |
   | 17000004 | The window or component is invisible or destroyed. |
 
 **示例：**
@@ -4022,6 +4275,7 @@ public func getBundleName(): String
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
+  | 17000002 | The API does not support concurrent calls. |
   | 17000004 | The window or component is invisible or destroyed. |
 
 **示例：**
@@ -4068,6 +4322,7 @@ public func getTitle(): String
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
+  | 17000002 | The API does not support concurrent calls. |
   | 17000004 | The window or component is invisible or destroyed. |
 
 **示例：**
@@ -4114,6 +4369,7 @@ public func getWindowMode(): WindowMode
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
+  | 17000002 | The API does not support concurrent calls. |
   | 17000004 | The window or component is invisible or destroyed. |
 
 **示例：**
@@ -4160,6 +4416,7 @@ public func isActive(): Bool
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
+  | 17000002 | The API does not support concurrent calls. |
   | 17000004 | The window or component is invisible or destroyed. |
 
 **示例：**
@@ -4206,6 +4463,7 @@ public func isFocused(): Bool
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
+  | 17000002 | The API does not support concurrent calls. |
   | 17000004 | The window or component is invisible or destroyed. |
 
 **示例：**
@@ -4248,6 +4506,7 @@ public func maximize(): Unit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
+  | 17000002 | The API does not support concurrent calls. |
   | 17000004 | The window or component is invisible or destroyed. |
   | 17000005 | This operation is not supported. |
 
@@ -4292,6 +4551,7 @@ public func minimize(): Unit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
+  | 17000002 | The API does not support concurrent calls. |
   | 17000004 | The window or component is invisible or destroyed. |
   | 17000005 | This operation is not supported. |
 
@@ -4334,8 +4594,8 @@ public func moveTo(x: Int32, y: Int32): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|x|Int32|是|-|以Int32的形式传入目标点的横坐标信息，取值范围：大于等于0的整数。|
-|y|Int32|是|-|以Int32的形式传入目标点的纵坐标信息，取值范围：大于等于0的整数。|
+|x|Int32|是|-|以Int32的形式传入目标点的横坐标信息，取值范围：大于等于0的整数，单位：px。传入不在范围内的值抛出401错误码。|
+|y|Int32|是|-|以Int32的形式传入目标点的纵坐标信息，取值范围：大于等于0的整数，单位：px。传入不在范围内的值抛出401错误码。|
 
 **异常：**
 
@@ -4343,6 +4603,7 @@ public func moveTo(x: Int32, y: Int32): Unit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
+  | 17000002 | The API does not support concurrent calls. |
   | 17000004 | The window or component is invisible or destroyed. |
   | 17000005 | This operation is not supported. |
 
@@ -4384,8 +4645,8 @@ public func resize(wide: Int32, height: Int32, direction: ResizeDirection): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|wide|Int32|是|-|以Int32的形式传入调整后窗口的宽度，取值范围：大于等于0的整数。|
-|height|Int32|是|-|以Int32的形式传入调整后窗口的高度，取值范围：大于等于0的整数。|
+|wide|Int32|是|-|以Int32的形式传入调整后窗口的宽度，取值范围：大于等于0的整数，单位：px。传入不在范围内的值抛出401错误码。|
+|height|Int32|是|-|以Int32的形式传入调整后窗口的高度，取值范围：大于等于0的整数，单位：px。传入不在范围内的值抛出401错误码。|
 |direction|[ResizeDirection](#enum-resizedirection)|是|-|以ResizeDirection的形式传入窗口调整的方向。|
 
 **异常：**
@@ -4394,6 +4655,7 @@ public func resize(wide: Int32, height: Int32, direction: ResizeDirection): Unit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
+  | 17000002 | The API does not support concurrent calls. |
   | 17000004 | The window or component is invisible or destroyed. |
   | 17000005 | This operation is not supported. |
 
@@ -4438,6 +4700,7 @@ public func resume(): Unit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
+  | 17000002 | The API does not support concurrent calls. |
   | 17000004 | The window or component is invisible or destroyed. |
   | 17000005 | This operation is not supported. |
 
@@ -4482,6 +4745,7 @@ public func split(): Unit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
+  | 17000002 | The API does not support concurrent calls. |
   | 17000004 | The window or component is invisible or destroyed. |
   | 17000005 | This operation is not supported. |
 

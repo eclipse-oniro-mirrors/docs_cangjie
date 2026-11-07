@@ -39,7 +39,7 @@ public static func getUriFromPath(path: String): String
 
 | Parameter | Type | Required | Default Value | Description |
 |:---|:---|:---|:---|:---|
-| path | String | Yes | - | The sandbox path of the file. |
+| path | String | Yes | - | The sandbox path of the file. The Chinese characters and non-alphanumeric special characters in the path are percent-encoded. When the parameter is invalid (for example, an empty string is passed in), error code 13900020 is thrown. |
 
 **Return Value:**
 
@@ -140,7 +140,7 @@ public init(uriOrPath: String)
 
 | Parameter | Type | Required | Default Value | Description |
 |:---|:---|:---|:---|:---|
-| uriOrPath | String | Yes | - | URI or path. URI types: <br/>- Application sandbox URI: file://\<bundleName>/\<sandboxPath> <br/>- Public directory file URI: file://docs/storage/Users/currentUser/\<publicPath> <br/>- Public directory media URI: file://media/\<mediaType>/IMG_DATATIME_ID/\<displayName> |
+| uriOrPath | String | Yes | - | URI or path. URI types: <br/>- Application sandbox URI: file://\<bundleName>/\<sandboxPath> <br/>- Public directory file URI: file://docs/storage/Users/currentUser/\<publicPath> <br/>- Public directory media URI: file://media/\<mediaType>/IMG_DATETIME_ID/\<displayName>. If the format is invalid, error code 14300002 is thrown. |
 
 **Exceptions:**
 

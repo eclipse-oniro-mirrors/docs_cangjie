@@ -472,7 +472,7 @@ public func readDataFromAshmem(size: Int64, offset: Int64): Array<Byte>
 
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
-| size | Int64 | Yes | - | Size of the data to read. |
+| size | Int64 | Yes | - | Size of the data to read, in bytes. |
 | offset | Int64 | Yes | - | Starting position of the data to read in the memory region associated with this Ashmem object. |
 
 **Return Value:**
@@ -601,7 +601,7 @@ public func writeDataToAshmem(buf: Array<Byte>, size: Int64, offset: Int64): Uni
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
 | buf | Array\<Byte> | Yes | - | Data to write to the Ashmem object. |
-| size | Int64 | Yes | - | Size of the data to write. |
+| size | Int64 | Yes | - | Size of the data to write, in bytes. |
 | offset | Int64 | Yes | - | Starting position of the data to write in the memory region associated with this Ashmem object. |
 
 **Exceptions:**
@@ -1099,7 +1099,7 @@ public func readAshmem(): Ashmem
 
   | Error Code ID | Error Message |
   | :---- | :--- |
-  | 1900004 | Failed to read data from the shared memory. |
+  | 1900010 | Failed to read data from the message sequence. |
 
 **Example:**
 
@@ -2038,7 +2038,7 @@ public func readRawDataBuffer(size: Int64): Array<Byte>
 
 | Parameter Name | Type | Required | Default Value | Description |
 |:---|:---|:---|:---|:---|
-| size | Int64 | Yes | - | The size of the raw data to be read. |
+| size | Int64 | Yes | - | The size of the raw data to be read, in bytes. |
 
 **Return Value:**
 
@@ -2478,7 +2478,7 @@ public func rewindRead(pos: UInt32): Unit
 
 | Parameter | Type  | Required | Default | Description                     |
 | :-------- | :---- | :------- | :------ | :------------------------------ |
-| pos       | UInt32 | Yes      | -       | The target position to start reading data. |
+| pos       | UInt32 | Yes      | -       | The target position to start reading data, in bytes, value range [0, getSize()]. |
 
 **Exceptions:**
 
@@ -2523,7 +2523,7 @@ public func rewindWrite(pos: UInt32): Unit
 
 | Parameter | Type  | Required | Default | Description                     |
 | :-------- | :---- | :------- | :------ | :------------------------------ |
-| pos       | UInt32 | Yes      | -       | The target position to start writing data. |
+| pos       | UInt32 | Yes      | -       | The target position to start writing data, in bytes, value range [0, getSize()]. |
 
 **Exceptions:**
 
@@ -2667,7 +2667,7 @@ public func writeAshmem(ashmem: Ashmem): Unit
 
   | Error Code ID | Error Message                          |
   | :----------- | :------------------------------------- |
-  | 1900003      | Failed to write data to the shared memory. |
+  | 1900009      | Failed to write data to the message sequence. |
 
 **Example:**
 

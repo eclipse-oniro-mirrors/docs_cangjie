@@ -1866,7 +1866,13 @@ public open func setSyncParam(defaultAllowedDelayMs: UInt32): Unit
 
 **Initial Version:** 22
 
-**## enum KVSecurityLevel
+**Parameters:**
+
+| Parameter | Type | Required | Default Value | Description |
+|:---|:---|:---|:---|:---|
+| defaultAllowedDelayMs | UInt32 | Yes | - | Indicates the default delay allowed for database synchronization, in milliseconds. The value range is 0 or [100, 86400000]. |
+
+## enum KVSecurityLevel
 
 ```cangjie
 public enum KVSecurityLevel {

@@ -110,6 +110,7 @@ public func createMac(algName: String): Mac
   | :--- | :--- |
   | 401 | Invalid parameters. |
   | 17620001 | Memory error. |
+  | 17630001 | Crypto operation error. |
 
 **Example:**
 
@@ -542,6 +543,7 @@ The output of `doFinal` varies by symmetric encryption/decryption mode:
   | :---- | :--- |  
   | 17620001 | Memory error. |  
   | 17620002 | Runtime error. |  
+  | 17620003 | Parameter check failed. |  
   | 17630001 | Cryptographic operation error. |  
 
 **Example:**  
@@ -613,6 +615,7 @@ This function can only be used after initializing a [Cipher](#class-cipher) inst
   | :---- | :--- |  
   | 17620001 | Memory error. |  
   | 17620002 | Runtime error. |  
+  | 17620003 | Parameter check failed. |  
   | 17630001 | Cryptographic operation error. |  
 
 **Example:**  

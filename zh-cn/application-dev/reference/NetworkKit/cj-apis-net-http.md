@@ -84,7 +84,7 @@ public func createHttpResponseCache(cacheSize!: UInt32 = MAX_CACHE_SIZE): HttpRe
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|cacheSize|UInt32|否|MAX_CACHE_SIZE|**命名参数。** 缓存大小。最大为10\*1024\*1024（10MB），默认最大。|
+|cacheSize|UInt32|否|MAX_CACHE_SIZE|**命名参数。** 缓存大小，单位为Byte。取值范围为1\*1024\*1024到10\*1024\*1024，即1MB到10MB。默认最大。|
 
 **返回值：**
 
@@ -754,7 +754,7 @@ public func request(url: String, options: HttpRequestOptions, callback: AsyncCal
 |:---|:---|:---|:---|:---|
 |url|String|是|-|发起网络请求的URL地址。|
 |options|[HttpRequestOptions](#class-httprequestoptions)|是|-|参考[HttpRequestOptions](#class-httprequestoptions)。|
-|callback|[AsyncCallback](../arkinterop/cj-api-business_exception.md#type-asynccallbackt)\<[HttpResponse](#class-httpresponse)>|是|-|回调函数。|
+|callback|[AsyncCallback](../arkinterop/cj-api-business_exception.md#type-asynccallbackt)\<[HttpResponse](#class-httpresponse)>|是|-|回调函数。当请求成功时，回调内容是[HttpResponse](#class-httpresponse)，请求失败时通过err返回错误信息。|
 
 **异常：**
 
@@ -851,7 +851,7 @@ public func request(url: String, callback: AsyncCallback<HttpResponse>): Unit
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |url|String|是|-|发起网络请求的URL地址。|
-|callback|[AsyncCallback](../arkinterop/cj-api-business_exception.md#type-asynccallbackt)\<[HttpResponse](#class-httpresponse)>|是|-|回调函数。|
+|callback|[AsyncCallback](../arkinterop/cj-api-business_exception.md#type-asynccallbackt)\<[HttpResponse](#class-httpresponse)>|是|-|回调函数。当请求成功时，回调内容是[HttpResponse](#class-httpresponse)，请求失败时通过err返回错误信息。|
 
 **异常：**
 
@@ -942,7 +942,7 @@ public func requestInStream(url: String, options: HttpRequestOptions, callback: 
 |:---|:---|:---|:---|:---|
 |url|String|是|-|发起网络请求的URL地址。|
 |options|[HttpRequestOptions](#class-httprequestoptions)|是|-|参考[HttpRequestOptions](#class-httprequestoptions)。|
-|callback|[AsyncCallback](../arkinterop/cj-api-business_exception.md#type-asynccallbackt)\<UInt32>|是|-|回调函数。|
+|callback|[AsyncCallback](../arkinterop/cj-api-business_exception.md#type-asynccallbackt)\<UInt32>|是|-|回调函数。当请求成功时，err为undefined，返回HTTP请求响应错误码，具体含义见[responseCode](#var-responsecode)；请求失败时通过err返回错误信息。|
 
 **异常：**
 
@@ -1031,7 +1031,7 @@ public func requestInStream(url: String, callback: AsyncCallback<UInt32>): Unit
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |url|String|是|-|发起网络请求的URL地址。|
-|callback|[AsyncCallback](../arkinterop/cj-api-business_exception.md#type-asynccallbackt)\<UInt32>|是|-|回调函数。|
+|callback|[AsyncCallback](../arkinterop/cj-api-business_exception.md#type-asynccallbackt)\<UInt32>|是|-|回调函数。当请求成功时，err为undefined，返回HTTP请求响应错误码，具体含义见[responseCode](#var-responsecode)；请求失败时通过err返回错误信息。|
 
 **异常：**
 

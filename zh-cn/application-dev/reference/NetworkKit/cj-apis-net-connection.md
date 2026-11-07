@@ -50,7 +50,7 @@ public func createNetConnection(netSpecifier!: ?NetSpecifier = None, timeout!: U
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |netSpecifier|?[NetSpecifier](#class-netspecifier)|否|None|**命名参数。** 指定待关注网络的特征，缺省表示关注默认网络。|
-|timeout|UInt32|否|0|**命名参数。** 获取netSpecifier指定网络时的超时时间，传入值需为UInt32范围内的整数，仅netSpecifier存在时生效，默认值为0。|
+|timeout|UInt32|否|0|**命名参数。** 获取netSpecifier指定网络时的超时时间，单位为毫秒(ms)，传入值需为UInt32范围内的整数，仅netSpecifier存在时生效，默认值为0。|
 
 **返回值：**
 

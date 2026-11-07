@@ -48,7 +48,7 @@ public func createNetConnection(netSpecifier!: ?NetSpecifier = None, timeout!: U
 | Parameter Name | Type | Required | Default Value | Description |
 |:---|:---|:---|:---|:---|
 | netSpecifier | ?[NetSpecifier](#class-netspecifier) | No | None | **Named parameter.** Specifies the characteristics of the network. If None, monitors the default network. |
-| timeout | UInt32 | No | 0 | **Named parameter.** Timeout duration for obtaining the network specified by netSpecifier. Only takes effect if netSpecifier is present. Default value is 0. |
+| timeout | UInt32 | No | 0 | **Named parameter.** Timeout duration, in milliseconds (ms), for obtaining the network specified by netSpecifier. Only takes effect if netSpecifier is present. Default value is 0. |
 
 **Return Value:**
 

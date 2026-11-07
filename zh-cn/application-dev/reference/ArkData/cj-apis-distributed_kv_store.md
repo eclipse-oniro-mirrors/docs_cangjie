@@ -1887,7 +1887,7 @@ public open func setSyncParam(defaultAllowedDelayMs: UInt32): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|defaultAllowedDelayMs|UInt32|是|-|表示数据库同步允许的默认延迟，以毫秒为单位。|
+|defaultAllowedDelayMs|UInt32|是|-|表示数据库同步允许的默认延迟，以毫秒为单位。取值范围为0或[100, 86400000]。|
 
 **示例：**
 

@@ -197,7 +197,7 @@ public func deleteKeyItem(keyAlias: String, options: HuksOptions): Unit
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
 | keyAlias | String | Yes | - | Key alias, which should be the same as the alias used during key generation. |
-| options | [HuksOptions](#class-huksoptions) | Yes | - | Specifies the attribute Tag for the key to be deleted, such as the deletion scope (full/single). When deleting a single key, the Tag field can be left empty. |
+| options | [HuksOptions](#class-huksoptions) | Yes | - | Specifies the attribute Tag for the key to be deleted, such as the deletion scope (full/single). When deleting a single key, the Tag field can be left empty. If [HuksAuthStorageLevel](#class-huksauthstoragelevel) is used to specify the security level of the key to be deleted, HuksAuthStorageLevel can be left empty, which means the default value HUKS_AUTH_STORAGE_LEVEL_DE is used. |
 
 **Exceptions:**
 
@@ -758,7 +758,7 @@ public func hasKeyItem(keyAlias: String, options: HuksOptions): Bool
 | Parameter | Type | Mandatory | Default Value | Description |
 |:---|:---|:---|:---|:---|
 | keyAlias | String | Yes | - | Key alias to be checked. |
-| options | [HuksOptions](#class-huksoptions) | Yes | - | Specifies the attribute tags for querying the key, such as query scope (all/single). For single queries, the tag field can be empty. |
+| options | [HuksOptions](#class-huksoptions) | Yes | - | Specifies the attribute tags for querying the key, such as query scope (all/single). For single queries, the tag field can be empty. If [HuksAuthStorageLevel](#class-huksauthstoragelevel) is used to specify the security level of the key to be queried, HuksAuthStorageLevel can be left empty, which means the default value HUKS_AUTH_STORAGE_LEVEL_DE is used. |
 
 **Return Value:**
 

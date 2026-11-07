@@ -168,3 +168,23 @@ The service function is being enabled.
 **Resolution Steps**
 
 Retry disabling the service.
+
+## 2801001 P2P Function Not Enabled
+
+**Error Message**
+
+Wi-Fi P2P disabled.
+
+**Error Description**
+
+An error occurred while the WIFI service was performing P2P-related operations internally.
+
+**Possible Causes**
+
+1. Communication exception with the WIFI service.
+2. Failed to enable the P2P service.
+
+**Resolution Steps**
+
+1. Retry turning the WIFI switch off and on.
+2. If step 1 doesn't work, try restarting the device.

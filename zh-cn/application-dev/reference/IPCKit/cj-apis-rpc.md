@@ -540,7 +540,7 @@ public func readDataFromAshmem(size: Int64, offset: Int64): Array<Byte>
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|size|Int64|是|-|要读取的数据的大小。|
+|size|Int64|是|-|要读取的数据的大小，以字节为单位。|
 |offset|Int64|是|-|要读取的数据在此Ashmem对象关联的内存区间的起始位置。|
 
 **返回值：**
@@ -673,7 +673,7 @@ public func writeDataToAshmem(buf: Array<Byte>, size: Int64, offset: Int64): Uni
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |buf|Array\<Byte>|是|-|写入Ashmem对象的数据。|
-|size|Int64|是|-|要写入的数据大小。|
+|size|Int64|是|-|要写入的数据大小，以字节为单位。|
 |offset|Int64|是|-|要写入的数据在此Ashmem对象关联的内存区间的起始位置。|
 
 **异常：**
@@ -1165,7 +1165,7 @@ public func readAshmem(): Ashmem
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 1900004 | Failed to read data from the shared memory. |
+  | 1900010 | Failed to read data from the message sequence. |
 
 **示例：**
 
@@ -2108,7 +2108,7 @@ public func readRawDataBuffer(size: Int64): Array<Byte>
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|size|Int64|是|-|要读取的原始数据的大小。|
+|size|Int64|是|-|要读取的原始数据的大小，以字节为单位。|
 
 **返回值：**
 
@@ -2550,7 +2550,7 @@ public func rewindRead(pos: UInt32): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|pos|UInt32|是|-|开始读取数据的目标位置。|
+|pos|UInt32|是|-|开始读取数据的目标位置，以字节为单位，取值范围为[0, getSize()]。|
 
 **异常：**
 
@@ -2595,7 +2595,7 @@ public func rewindWrite(pos: UInt32): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|pos|UInt32|是|-|开始写入数据的目标位置。|
+|pos|UInt32|是|-|开始写入数据的目标位置，以字节为单位，取值范围为[0, getSize()]。|
 
 **异常：**
 
@@ -2739,7 +2739,7 @@ public func writeAshmem(ashmem: Ashmem): Unit
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
-  | 1900003 | Failed to write data to the shared memory. |
+  | 1900009 | Failed to write data to the message sequence. |
 
 **示例：**
 

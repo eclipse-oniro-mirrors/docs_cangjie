@@ -39,7 +39,7 @@ public func getUriFromPath(path: String): String
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|path|String|是|-|文件的沙箱路径。|
+|path|String|是|-|文件的沙箱路径。路径中的中文及非数字字母的特殊字符会被百分号编码，参数无效（如传入空字符串）时抛出错误码13900020。|
 
 **返回值：**
 
@@ -144,7 +144,7 @@ public init(uriOrPath: String)
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|uriOrPath|String|是|-|URI或路径。URI类型：<br/>-&nbsp; 应用沙箱URI：file://\<bundleName>/\<sandboxPath> <br/>-&nbsp; 公共目录文件类URI：file://docs/storage/Users/currentUser/\<publicPath> <br/>-&nbsp; 公共目录媒体类URI：file://media/\<mediaType>/IMG_DATATIME_ID/\<displayName>|
+|uriOrPath|String|是|-|URI或路径。URI类型：<br/>-&nbsp; 应用沙箱URI：file://\<bundleName>/\<sandboxPath> <br/>-&nbsp; 公共目录文件类URI：file://docs/storage/Users/currentUser/\<publicPath> <br/>-&nbsp; 公共目录媒体类URI：file://media/\<mediaType>/IMG_DATETIME_ID/\<displayName>。格式无效时抛出错误码14300002。|
 
 **异常：**
 
