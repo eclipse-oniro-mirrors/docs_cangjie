@@ -926,7 +926,7 @@ public func getSignalLevel(rssi: Int32, band: Int32): UInt32
 
 |类型|说明|
 |:----|:----|
-|UInt32|信号强度，取值范围为[0, 4]。|
+|UInt32|信号强度，取值范围为0~4。|
 
 **异常：**
 
@@ -3186,7 +3186,7 @@ public init(
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |wapiPskType|[WapiPskType](#enum-wapipsktype)|是|-|加密类型。|
-|wapiAsCert|String|是|-|AS证书(Authentication Server Certificate，身份验证服务器证书)。|
+|wapiAsCert|String|是|-|AS证书（Authentication Server Certificate，身份验证服务器证书）。|
 |wapiUserCert|String|是|-|用户证书。|
 
 ### prop wapiPskType
@@ -3209,7 +3209,7 @@ public mut prop wapiPskType: WapiPskType
 public mut prop wapiAsCert: String
 ```
 
-**功能：** AS证书(Authentication Server Certificate，身份验证服务器证书)。
+**功能：** AS证书（Authentication Server Certificate，身份验证服务器证书）。
 
 **类型：** String
 
