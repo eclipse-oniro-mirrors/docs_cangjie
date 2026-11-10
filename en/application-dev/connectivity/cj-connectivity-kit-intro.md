@@ -32,6 +32,12 @@ Below are introductions to several common Bluetooth-related modules:
 
   For details, see [ohos.bluetooth.a2dp API Reference](../reference/ConnectivityKit/cj-apis-bluetooth-a2dp.md).
 
+- **socket Module (Bluetooth Socket)**
+
+  The socket module provides Bluetooth socket capabilities and supports RFCOMM (corresponding to the Serial Port Profile, SPP) and L2CAP link types. It is used to establish point-to-point connections and transmit data between two Bluetooth devices. The communicating parties are classified by role into a server and a client.
+
+  For details, see [ohos.bluetooth.socket API Reference](../reference/ConnectivityKit/cj-apis-bluetooth-socket.md).
+
 Related development guide: [Bluetooth Development Guide](./bluetooth/cj-bluetooth-overview.md).
 
 ### Introduction to WLAN

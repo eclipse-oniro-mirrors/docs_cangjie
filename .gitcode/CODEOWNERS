@@ -248,6 +248,7 @@
 /zh-cn/application-dev/connectivity/bluetooth/cj-bluetooth-overview.md @luoming25 @abc_qgy @gxmm @guoyuqing
 /zh-cn/application-dev/connectivity/bluetooth/cj-ble-development-guide.md @luoming25 @abc_qgy @gxmm @guoyuqing
 /zh-cn/application-dev/connectivity/bluetooth/cj-gatt-development-guide.md @luoming25 @abc_qgy @gxmm @guoyuqing
+/zh-cn/application-dev/connectivity/bluetooth/cj-spp-development-guide.md @luoming25 @abc_qgy @gxmm @guoyuqing
 # Network Kit（网络服务）
 /zh-cn/application-dev/network/ @luoming25 @abc_qgy @gxmm @guoyuqing
 /zh-cn/application-dev/network/cj-net-mgmt-overview.md @luoming25 @abc_qgy @gxmm @guoyuqing
@@ -569,6 +570,7 @@
 /zh-cn/application-dev/reference/ConnectivityKit/cj-apis-bluetooth-base_profile.md @luoming25 @abc_qgy @pupuHan @luojianing
 /zh-cn/application-dev/reference/ConnectivityKit/cj-apis-bluetooth-constant.md @luoming25 @abc_qgy @pupuHan @luojianing
 /zh-cn/application-dev/reference/ConnectivityKit/cj-apis-bluetooth-hfp.md @luoming25 @abc_qgy @pupuHan @luojianing
+/zh-cn/application-dev/reference/ConnectivityKit/cj-apis-bluetooth-socket.md @luoming25 @abc_qgy @pupuHan @luojianing
 /zh-cn/application-dev/reference/ConnectivityKit/cj-apis-wifi_manager.md @luoming25 @abc_qgy @pupuHan @luojianing
 /zh-cn/application-dev/reference/ConnectivityKit/cj-errorcode-bluetooth_manager.md @luoming25 @abc_qgy @pupuHan @luojianing
 /zh-cn/application-dev/reference/ConnectivityKit/cj-errorcode-wifi-manager.md @luoming25 @abc_qgy @pupuHan @luojianing

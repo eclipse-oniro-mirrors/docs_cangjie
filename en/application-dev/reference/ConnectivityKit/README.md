@@ -6,6 +6,7 @@
     - [ohos.bluetooth.baseProfile (Bluetooth Base Profile Module)](cj-apis-bluetooth-base_profile.md)(Beta Feature)
     - [ohos.bluetooth.constant (Bluetooth Constant Module)](cj-apis-bluetooth-constant.md)(Beta Feature)
     - [ohos.bluetooth.hfp (Bluetooth HFP Module)](cj-apis-bluetooth-hfp.md)(Beta Feature)
+    - [ohos.bluetooth.socket (Bluetooth Socket Module)](cj-apis-bluetooth-socket.md)(Beta Feature)
     - [ohos.wifi_manager (WLAN)](cj-apis-wifi_manager.md)(Beta Feature)
 - Error Codes
     - [Bluetooth Service Subsystem Error Codes](cj-errorcode-bluetooth_manager.md)(Beta Feature)

@@ -47,7 +47,7 @@ public func sppListen(name: String, options: SppOptions, callback: AsyncCallback
 |:---|:---|:---|:---|:---|
 |name|String|是|-|服务名称。|
 |options|[SppOptions](#class-sppoptions)|是|-|监听参数。|
-|callback|AsyncCallback\<Int32>|是|-|回调函数。创建成功时返回服务端套接字 ID，有效值为非负整数。|
+|callback|[AsyncCallback](../arkinterop/cj-api-business_exception.md#type-asynccallbackt)\<Int32>|是|-|回调函数。创建成功时返回服务端套接字 ID，有效值为非负整数。|
 
 **异常：**
 
@@ -69,7 +69,7 @@ public func sppListen(name: String, options: SppOptions, callback: AsyncCallback
 ```cangjie
 // index.cj
 
-import ohos.business_exception.*
+import kit.CangjieKit.BusinessException
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -104,7 +104,7 @@ public func sppAccept(serverSocket: Int32, callback: AsyncCallback<Int32>): Unit
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |serverSocket|Int32|是|-|服务端套接字 ID，由 `sppListen` 返回。|
-|callback|AsyncCallback\<Int32>|是|-|回调函数。连接建立时返回客户端套接字 ID。|
+|callback|[AsyncCallback](../arkinterop/cj-api-business_exception.md#type-asynccallbackt)\<Int32>|是|-|回调函数。连接建立时返回客户端套接字 ID。|
 
 **异常：**
 
@@ -125,7 +125,7 @@ public func sppAccept(serverSocket: Int32, callback: AsyncCallback<Int32>): Unit
 ```cangjie
 // index.cj
 
-import ohos.business_exception.*
+import kit.CangjieKit.BusinessException
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -163,7 +163,7 @@ public func sppConnect(deviceId: String, options: SppOptions, callback: AsyncCal
 |:---|:---|:---|:---|:---|
 |deviceId|String|是|-|设备地址，例如 `11:22:33:AA:BB:FF`。|
 |options|[SppOptions](#class-sppoptions)|是|-|连接参数。|
-|callback|AsyncCallback\<Int32>|是|-|回调函数。连接成功时返回客户端套接字 ID。|
+|callback|[AsyncCallback](../arkinterop/cj-api-business_exception.md#type-asynccallbackt)\<Int32>|是|-|回调函数。连接成功时返回客户端套接字 ID。|
 
 **异常：**
 
@@ -185,7 +185,7 @@ public func sppConnect(deviceId: String, options: SppOptions, callback: AsyncCal
 ```cangjie
 // index.cj
 
-import ohos.business_exception.*
+import kit.CangjieKit.BusinessException
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -277,7 +277,7 @@ public func sppCloseServerSocket(socket: Int32): Unit
 ```cangjie
 // index.cj
 
-import ohos.business_exception.*
+import kit.CangjieKit.BusinessException
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -324,7 +324,7 @@ public func sppCloseClientSocket(socket: Int32): Unit
 ```cangjie
 // index.cj
 
-import ohos.business_exception.*
+import kit.CangjieKit.BusinessException
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -372,7 +372,7 @@ public func sppWrite(clientSocket: Int32, data: ArrayBuffer): Unit
 ```cangjie
 // index.cj
 
-import ohos.business_exception.*
+import kit.CangjieKit.BusinessException
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -402,7 +402,7 @@ public func sppReadAsync(clientSocket: Int32, callback: AsyncCallback<ArrayBuffe
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |clientSocket|Int32|是|-|客户端套接字 ID，由 `sppAccept` 或 `sppConnect` 返回。|
-| callback|AsyncCallback\<ArrayBuffer>|是|-|回调函数。读取成功时返回本次读取到的数据。|
+| callback|[AsyncCallback](../arkinterop/cj-api-business_exception.md#type-asynccallbackt)\<ArrayBuffer>|是|-|回调函数。读取成功时返回本次读取到的数据。|
 
 **异常：**
 
@@ -421,7 +421,7 @@ public func sppReadAsync(clientSocket: Int32, callback: AsyncCallback<ArrayBuffe
 ```cangjie
 // index.cj
 
-import ohos.business_exception.*
+import kit.CangjieKit.BusinessException
 import kit.ConnectivityKit.*
 import kit.PerformanceAnalysisKit.Hilog
 

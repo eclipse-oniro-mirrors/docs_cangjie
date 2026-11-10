@@ -366,6 +366,7 @@
                     - [Bluetooth Service Development Overview](connectivity/bluetooth/cj-bluetooth-overview.md)
                     - [Advertising and Scanning](connectivity/bluetooth/cj-ble-development-guide.md)
                     - [Generic Attribute Profile](connectivity/bluetooth/cj-gatt-development-guide.md)
+                    - [SPP Connection and Data Transmission](connectivity/bluetooth/cj-spp-development-guide.md)
             - Network Kit (Network Service)
                 - [Introduction to Network Kit](network/cj-net-mgmt-overview.md)
                 - Network Kit Data Transmission Capabilities
@@ -772,6 +773,7 @@
                     - [ohos.bluetooth.baseProfile (Bluetooth BaseProfile Module)](reference/ConnectivityKit/cj-apis-bluetooth-base_profile.md)
                     - [ohos.bluetooth.constant (Bluetooth Constant Module)](reference/ConnectivityKit/cj-apis-bluetooth-constant.md)
                     - [ohos.bluetooth.hfp (Bluetooth HFP Module)](reference/ConnectivityKit/cj-apis-bluetooth-hfp.md)
+                    - [ohos.bluetooth.socket (Bluetooth Socket Module)](reference/ConnectivityKit/cj-apis-bluetooth-socket.md)
                     - [ohos.wifi_manager (WLAN)](reference/ConnectivityKit/cj-apis-wifi_manager.md)
                 - Error Codes
                     - [Bluetooth Service Subsystem Error Codes](reference/ConnectivityKit/cj-errorcode-bluetooth_manager.md)
