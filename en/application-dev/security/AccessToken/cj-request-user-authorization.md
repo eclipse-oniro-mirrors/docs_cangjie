@@ -125,7 +125,7 @@ Example: Requesting location permissions.
      import kit.AbilityKit.*
      import kit.CangjieKit.*
      import kit.PerformanceAnalysisKit.Hilog
-     import ohos.arkui.component.button.Button
+     import kit.ArkUI.Button
      import ohos.arkui.state_macro_manage.Entry
      import ohos.arkui.state_macro_manage.Component
 

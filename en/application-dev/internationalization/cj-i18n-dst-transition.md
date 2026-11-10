@@ -28,9 +28,9 @@ The system is configured with DST transition rules. When local time reaches the 
 
    let calendar: Calendar = getCalendar('zh-Hans')  
     calendar.setTimeZone('Europe/London')  
-    calendar.set(2021, 2, 27, hour: 16, minute: 0, second: 0) // Time before DST starts  
+    calendar.set(2021, 3, 27, hour: 16, minute: 0, second: 0) // Time before DST starts  
     let startTime: Float64 = calendar.getTimeInMillis()  
-    calendar.set(2021, 2, 28, hour: 16, minute: 0, second: 0) // Time during DST period  
+    calendar.set(2021, 3, 28, hour: 16, minute: 0, second: 0) // Time during DST period  
     let finishTime: Float64 = calendar.getTimeInMillis()  
     let hours: Float64 = (finishTime - startTime) / 3600000.0 // hours = 23.0  
    ```  
