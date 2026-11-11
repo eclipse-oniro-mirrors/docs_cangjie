@@ -2238,7 +2238,7 @@ public prop algName: String
 
 **Since:** 26.1.0
 
-### func generateKeyPair(AsyncCallback<KeyPair>)
+### func generateKeyPair(AsyncCallback\<KeyPair>)
 
 ```cangjie
 public func generateKeyPair(callback: AsyncCallback<KeyPair>): Unit
@@ -2292,7 +2292,7 @@ try {
 }
 ```
 
-### func convertKey(AsyncCallback<KeyPair>, Option<DataBlob>, Option<DataBlob>)
+### func convertKey(AsyncCallback\<KeyPair>, Option\<DataBlob>, Option\<DataBlob>)
 
 ```cangjie
 public func convertKey(callback: AsyncCallback<KeyPair>, pubKey!: Option<DataBlob> = None, priKey!: Option<DataBlob> = None): Unit
@@ -2356,7 +2356,7 @@ try {
 }
 ```
 
-### func convertPemKey(AsyncCallback<KeyPair>, Option<String>, Option<String>)
+### func convertPemKey(AsyncCallback\<KeyPair>, Option\<String>, Option\<String>)
 
 ```cangjie
 public func convertPemKey(callback: AsyncCallback<KeyPair>, pubKey!: Option<String> = None, priKey!: Option<String> = None): Unit
@@ -3075,7 +3075,7 @@ public prop algName: String
 
 **Since:** 26.1.0
 
-### func initialize(PubKey, AsyncCallback<Unit>)
+### func initialize(PubKey, AsyncCallback\<Unit>)
 
 ```cangjie
 public func initialize(pubKey: PubKey, callback: AsyncCallback<Unit>): Unit
@@ -3137,7 +3137,7 @@ try {
 }
 ```
 
-### func update(DataBlob, AsyncCallback<Unit>)
+### func update(DataBlob, AsyncCallback\<Unit>)
 
 ```cangjie
 public func update(data: DataBlob, callback: AsyncCallback<Unit>): Unit
@@ -3204,7 +3204,7 @@ try {
 }
 ```
 
-### func verify(DataBlob, DataBlob, AsyncCallback<Bool>)
+### func verify(DataBlob, DataBlob, AsyncCallback\<Bool>)
 
 ```cangjie
 public func verify(data: DataBlob, signatureData: DataBlob, callback: AsyncCallback<Bool>): Unit
@@ -3275,7 +3275,7 @@ try {
 }
 ```
 
-### func verify(DataBlob, AsyncCallback<Bool>, Option<DataBlob>)
+### func verify(DataBlob, AsyncCallback\<Bool>, Option\<DataBlob>)
 
 ```cangjie
 public func verify(signatureData: DataBlob, callback: AsyncCallback<Bool>, data!: Option<DataBlob> = None): Unit
@@ -3352,7 +3352,7 @@ try {
 }
 ```
 
-### func recover(DataBlob, AsyncCallback<?DataBlob>)
+### func recover(DataBlob, AsyncCallback\<?DataBlob>)
 
 ```cangjie
 public func recover(signatureData: DataBlob, callback: AsyncCallback<?DataBlob>): Unit
@@ -3469,7 +3469,7 @@ try {
 }
 ```
 
-### func setVerifySpec(SignSpecItem, Array<UInt8>)
+### func setVerifySpec(SignSpecItem, Array\<UInt8>)
 
 ```cangjie
 public func setVerifySpec(itemType: SignSpecItem, itemValue: Array<UInt8>): Unit
@@ -3981,24 +3981,6 @@ X25519PkBn
 
 **Since:** 26.1.0
 
-### prop value
-
-```cangjie
-public prop value: Int32
-```
-
-**Function:** Gets the Int32 value of the enumeration.
-
-**System Capability:** SystemCapability.Security.CryptoFramework.Key.AsymKey
-
-**Since:** 26.1.0
-
-**Return Value:**
-
-| Type | Description |
-|:---|:---|
-| Int32 | The Int32 value of the enumeration. |
-
 ### func !=(AsyKeySpecItem)
 
 ```cangjie
@@ -4119,7 +4101,7 @@ StringValue(String)
 
 **Since:** 26.1.0
 
-### Uint8ArrayValue(Array<UInt8>)
+### Uint8ArrayValue(Array\<UInt8>)
 
 ```cangjie
 Uint8ArrayValue(Array<UInt8>)
@@ -4327,24 +4309,6 @@ MlDsaContextUint8arr
 **System Capability:** SystemCapability.Security.CryptoFramework.Signature
 
 **Since:** 26.1.0
-
-### prop value
-
-```cangjie
-public prop value: Int32
-```
-
-**Function:** Gets the Int32 value of the enumeration.
-
-**System Capability:** SystemCapability.Security.CryptoFramework.Signature
-
-**Since:** 26.1.0
-
-**Return Value:**
-
-| Type | Description |
-|:---|:---|
-| Int32 | The Int32 value of the enumeration. |
 
 ### func !=(SignSpecItem)
 

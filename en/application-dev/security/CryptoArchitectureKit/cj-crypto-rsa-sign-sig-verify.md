@@ -8,10 +8,6 @@
 
 For the corresponding algorithm specifications, see [Signature/Verification Algorithm Specifications: RSA](./cj-crypto-sign-sig-verify-overview.md#rsa).
 
-> **Note:**
->
-> Currently, the Cangjie side only provides verification (Verify) capability. For signing operations, use [cryptoFramework.createSign](../../reference/apis-crypto-architecture-kit/js-apis-cryptoFramework.md#cryptoframeworkcreatesign) on the ArkTS side, and pass the signature data to the Cangjie side for verification.
-
 ## RSA Key Pair (PKCS1 Mode) Signature Verification
 
 1. Call [createAsyKeyGenerator](../../reference/CryptoArchitectureKit/cj-apis-crypto.md#func-createasykeygeneratorstring) and [generateKeyPair](../../reference/CryptoArchitectureKit/cj-apis-crypto.md#func-generatekeypairasynccallbackkeypair) to generate an asymmetric key object (KeyPair) with key algorithm RSA, key length 1024 bits, and 2 primes, including the public key (PubKey) and private key (PriKey).

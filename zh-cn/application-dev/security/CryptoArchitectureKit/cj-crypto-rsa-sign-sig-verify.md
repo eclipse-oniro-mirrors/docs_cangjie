@@ -8,10 +8,6 @@
 
 对应的算法规格请参见[签名验签算法规格：RSA](./cj-crypto-sign-sig-verify-overview.md#rsa)。
 
-> **说明：**
->
-> 当前仓颉侧仅提供验签能力（Verify），签名操作请通过ArkTS侧的[cryptoFramework.createSign](../../reference/apis-crypto-architecture-kit/js-apis-cryptoFramework.md#cryptoframeworkcreatesign)完成，签名数据传入仓颉侧进行验签。
-
 ## 使用RSA密钥对（PKCS1模式）验签
 
 1. 调用[createAsyKeyGenerator](../../reference/CryptoArchitectureKit/cj-apis-crypto.md#func-createasykeygeneratorstring)、[generateKeyPair](../../reference/CryptoArchitectureKit/cj-apis-crypto.md#func-generatekeypairasynccallbackkeypair)，生成密钥算法为RSA、密钥长度为1024位、素数个数为2的非对称密钥对象（KeyPair），包括公钥（PubKey）和私钥（PriKey）。
