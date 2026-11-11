@@ -183,10 +183,10 @@ public func divider(strokeWidth!: ?Length, color!: ?ResourceColor = None, startM
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|strokeWidth|?[Length](./cj-common-types.md#interface-length)|是|-|**命名参数。** 分割线宽度。<br>不能设置百分比，初始值：0.0vp，取值范围：[0, +∞)，设置为小于0的值时按初始值显示。|
+|strokeWidth|?[Length](./cj-common-types.md#interface-length)|是|-|**命名参数。** 分割线宽度。<br>不支持百分比设置，初始值：0.0vp，取值范围：[0, +∞)，设置为小于0的值时按初始值显示。|
 |color|?[ResourceColor](./cj-common-types.md#interface-resourcecolor)|否|None|**命名参数。** 分割线颜色。|
-|startMargin|?[Length](./cj-common-types.md#interface-length)|否|None|**命名参数。** 分割线与侧边栏顶端的距离。<br>不能设置百分比，初始值：0.0vp，取值范围：[0, +∞)，设置为小于0的值时按初始值显示。|
-|endMargin|?[Length](./cj-common-types.md#interface-length)|否|None|**命名参数。** 分割线与侧边栏底端的距离。<br>不能设置百分比，初始值：0.0vp，取值范围：[0, +∞)，设置为小于0的值时按初始值显示。|
+|startMargin|?[Length](./cj-common-types.md#interface-length)|否|None|**命名参数。** 分割线与侧边栏顶端的距离。<br>不支持百分比设置，初始值：0.0vp，取值范围：[0, +∞)，设置为小于0的值时按初始值显示。|
+|endMargin|?[Length](./cj-common-types.md#interface-length)|否|None|**命名参数。** 分割线与侧边栏底端的距离。<br>不支持百分比设置，初始值：0.0vp，取值范围：[0, +∞)，设置为小于0的值时按初始值显示。|
 
 ### func edgeEffect(?EdgeEffect)
 
