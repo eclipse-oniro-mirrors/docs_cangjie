@@ -52,9 +52,10 @@ public interface JSInteropType<T> {
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
+import ohos.ark_interop_macro.*
 
 @Interop[ArkTS]
 public class MyCustomClass {
@@ -147,7 +148,7 @@ sealed interface JSKeyable <: ToString & ToJSValue {
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -211,7 +212,7 @@ func toJSValue(context: JSContext): JSValue
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -313,7 +314,7 @@ public func toJSValue(context: JSContext): JSValue
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -415,7 +416,7 @@ public func toJSValue(context: JSContext): JSValue
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -517,7 +518,7 @@ public func toJSValue(context: JSContext): JSValue
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -620,7 +621,7 @@ public func toJSValue(context: JSContext): JSValue
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -713,7 +714,7 @@ public func toJSValue(context: JSContext): JSValue
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -815,7 +816,7 @@ public func toJSValue(context: JSContext): JSValue
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -917,7 +918,7 @@ public func toJSValue(context: JSContext): JSValue
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -1020,7 +1021,7 @@ public func toJSValue(context: JSContext): JSValue
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -1122,7 +1123,7 @@ public func toJSValue(context: JSContext): JSValue
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -1224,7 +1225,7 @@ public func toJSValue(context: JSContext): JSValue
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -1325,7 +1326,7 @@ public func toJSValue(context: JSContext): JSValue
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -1426,7 +1427,7 @@ public func toJSValue(context: JSContext): JSValue
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -1496,7 +1497,7 @@ public static func toArktsType(): String
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -1549,7 +1550,7 @@ public func toJSValue(context: JSContext): JSValue
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -1632,7 +1633,7 @@ public func toJSValue(context: JSContext): JSValue
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -1734,7 +1735,7 @@ public func toJSValue(context: JSContext): JSValue
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -1898,7 +1899,7 @@ public operator func [](index: Int64): JSValue
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -1938,7 +1939,7 @@ public operator func [](index: Int64, value!: JSValue): Unit
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -1979,7 +1980,7 @@ public operator func [](index: Int64, value!: JSHeapObject): Unit
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -2030,7 +2031,7 @@ public prop byteLength: Int32
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -2070,7 +2071,7 @@ public func readBytes(): Array<Byte>
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -2111,7 +2112,7 @@ public func toArrayBufferJSValue(): JSValue
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -2151,7 +2152,7 @@ public func toFloat32Array(): Array<Float32>
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -2192,7 +2193,7 @@ public func toFloat32ArrayJSValue(): JSValue
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -2233,7 +2234,7 @@ public func toFloat64Array(): Array<Float64>
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -2274,7 +2275,7 @@ public func toFloat64ArrayJSValue(): JSValue
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -2313,7 +2314,7 @@ public func toInt16Array(): Array<Int16>
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -2354,7 +2355,7 @@ public func toInt16ArrayJSValue(): JSValue
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -2393,7 +2394,7 @@ public func toInt32Array(): Array<Int32>
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -2434,7 +2435,7 @@ public func toInt32ArrayJSValue(): JSValue
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -2473,7 +2474,7 @@ public func toInt64Array(): Array<Int64>
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -2514,7 +2515,7 @@ public func toInt64ArrayJSValue(): JSValue
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -2552,7 +2553,7 @@ public func toInt8Array(): Array<Int8>
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -2593,7 +2594,7 @@ public func toInt8ArrayJSValue(): JSValue
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -2632,7 +2633,7 @@ public func toUInt16Array(): Array<UInt16>
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -2673,7 +2674,7 @@ public func toUInt16ArrayJSValue(): JSValue
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -2712,7 +2713,7 @@ public func toUInt32Array(): Array<UInt32>
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -2753,7 +2754,7 @@ public func toUInt32ArrayJSValue(): JSValue
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -2792,7 +2793,7 @@ public func toUInt64Array(): Array<UInt64>
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -2833,7 +2834,7 @@ public func toUInt64ArrayJSValue(): JSValue
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -2871,7 +2872,7 @@ public func toUInt8Array(): Array<UInt8>
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -2912,7 +2913,7 @@ public func toUInt8ArrayJSValue(): JSValue
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -2951,7 +2952,7 @@ public func toUInt8ClampedArrayJSValue(): JSValue
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -3093,7 +3094,7 @@ public func clone(): JSArrayEx<T>
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -3143,7 +3144,7 @@ public func concat(other: JSArrayEx<T>): JSArrayEx<T>
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -3195,7 +3196,7 @@ public func get(index: Int64): Option<T>
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -3240,7 +3241,7 @@ public func isEmpty(): Bool
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -3288,7 +3289,7 @@ public func set(index: Int64, element: T): Unit
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -3332,7 +3333,7 @@ public func toArray(): Array<T>
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -3414,7 +3415,7 @@ public operator func [](index: Int64): T
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -3459,7 +3460,7 @@ public operator func [](index: Int64, value!: T): Unit
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -3517,7 +3518,7 @@ public func toBigInt(): BigInt
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -3569,7 +3570,7 @@ public func toBool(): Bool
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -3701,7 +3702,7 @@ public operator func [](index: Int64): JSValue
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -3752,7 +3753,7 @@ public prop prototype: JSObject
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -3800,7 +3801,7 @@ public func addAccessor(key: JSKeyable, getter!: ?JSFunction = None, setter!: ?J
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -3851,7 +3852,7 @@ public func addAccessor(key: JSKeyable, getter!: ?JSLambda = None, setter!: ?JSL
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -3901,7 +3902,7 @@ public func addMethod(key: JSKeyable, method: JSFunction): Unit
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -3951,7 +3952,7 @@ public func addMethod(key: JSKeyable, method: JSLambda): Unit
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -4001,7 +4002,7 @@ public func addProperty(key: JSKeyable, value: JSValue): Unit
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -4047,7 +4048,7 @@ public func new(): JSValue
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -4095,7 +4096,7 @@ public func new(arg: JSValue): JSValue
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -4147,7 +4148,7 @@ public func new(args: Array<JSValue>): JSValue
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -4207,7 +4208,7 @@ public prop env: JSEnv
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -4245,7 +4246,7 @@ public prop global: JSObject
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -4293,7 +4294,7 @@ public func newScope<T>(callback: () -> T): T
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -4346,7 +4347,7 @@ public func array(arr: Array<JSValue>): JSArray
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -4391,7 +4392,7 @@ public func arrayBuffer(length: Int32): JSArrayBuffer
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -4435,7 +4436,7 @@ public func arrayBuffer(data: Array<Byte>): JSArrayBuffer
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -4480,7 +4481,7 @@ public func arrayBuffer(data: Array<Int8>): JSArrayBuffer
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -4529,7 +4530,7 @@ public func arrayBuffer(data: Array<Int16>): JSArrayBuffer
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -4578,7 +4579,7 @@ public func arrayBuffer(data: Array<UInt16>): JSArrayBuffer
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -4627,7 +4628,7 @@ public func arrayBuffer(data: Array<UInt32>): JSArrayBuffer
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -4676,7 +4677,7 @@ public func arrayBuffer(data: Array<Int32>): JSArrayBuffer
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -4725,7 +4726,7 @@ public func arrayBuffer(data: Array<Float32>): JSArrayBuffer
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -4774,7 +4775,7 @@ public func arrayBuffer(data: Array<Int64>): JSArrayBuffer
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -4823,7 +4824,7 @@ public func arrayBuffer(data: Array<UInt64>): JSArrayBuffer
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -4872,7 +4873,7 @@ public func arrayBuffer(data: Array<Float64>): JSArrayBuffer
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -4923,7 +4924,7 @@ public unsafe func arrayBuffer(rawData: CPointer<Byte>, length: Int32, finalizer
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -4972,7 +4973,7 @@ public func bigint(value: Int64): JSBigInt
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -5016,7 +5017,7 @@ public func bigint(value: BigInt): JSBigInt
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import std.math.numeric.BigInt
@@ -5060,7 +5061,7 @@ public func boolean(value: Bool): JSBoolean
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -5105,7 +5106,7 @@ public func clazz(ctor: JSLambda, superClass!: ?JSClass = None): JSClass
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -5153,7 +5154,7 @@ public func external(data: SharedObject): JSExternal
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -5200,7 +5201,7 @@ public func function(lambda: JSLambda): JSFunction
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -5241,7 +5242,7 @@ public func getNapiEnv(): napi_env
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -5272,7 +5273,7 @@ public func isInBindThread(): Bool
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -5311,7 +5312,7 @@ public func null(): JSNull
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -5354,7 +5355,7 @@ public func number(value: Float64): JSNumber
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -5397,7 +5398,7 @@ public func number(value: Int32): JSNumber
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -5435,7 +5436,7 @@ public func object(): JSObject
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -5463,7 +5464,7 @@ public func postJSTask(callback: () -> Unit): Unit
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -5506,7 +5507,7 @@ public func promiseCapability(): JSPromiseCapability
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -5552,7 +5553,7 @@ public func requireArkModule(path: String): JSValue
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -5607,7 +5608,7 @@ public func requireSystemNativeModule(moduleName: String, prefix!: ?String = Non
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -5651,7 +5652,7 @@ public func string(value: String): JSString
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -5695,7 +5696,7 @@ public func string(value: Utf16String): JSString
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -5740,7 +5741,7 @@ public func symbol(description!: String = ""): JSSymbol
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -5778,7 +5779,7 @@ public func undefined(): JSUndefined
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -5832,7 +5833,7 @@ public func cast<T>(): Option<T> where T <: SharedObject
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -5879,7 +5880,7 @@ public func getData(): SharedObject
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -5947,7 +5948,7 @@ public func call(thisArg!: JSValue = context.undefined().toJSValue()): JSValue
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -5992,7 +5993,7 @@ public func call(arg: JSValue, thisArg!: JSValue = context.undefined().toJSValue
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -6038,7 +6039,7 @@ public func call(args: Array<JSValue>, thisArg!: JSValue = context.undefined().t
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -6108,7 +6109,7 @@ public init(map: HashMap<K, V>)
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -6138,7 +6139,7 @@ public init()
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -6186,7 +6187,7 @@ public static func fromJSValue(context: JSContext, input: JSValue): JSHashMapEx<
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -6480,7 +6481,7 @@ public func isEmpty(): Bool
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -6524,7 +6525,7 @@ public func keys(): EquatableCollection<K>
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -6570,7 +6571,7 @@ public func set(key: K, value: V): Unit
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -6612,7 +6613,7 @@ public func setAll(elements: Collection<(K, V)>): Unit
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -6775,7 +6776,7 @@ public operator func [](key: K): V
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -6819,7 +6820,7 @@ public operator func [](key: K, value!: V): Unit
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -6873,7 +6874,7 @@ public func toJSValue(): JSValue
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -6915,7 +6916,7 @@ public static func registerClass(name: String, register: ClassRegister): Unit
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -6950,7 +6951,7 @@ public static func registerFunc(name: String, register: FuncRegister): Unit
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -6982,7 +6983,7 @@ public static func registerFunc(name: String, lambda: JSLambda): Unit
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -7013,7 +7014,7 @@ public static func registerModule(register: ModuleRegister): Unit
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -7047,7 +7048,7 @@ public static func registerModule(name: String, register: ModuleRegister): Unit
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -7134,7 +7135,7 @@ public func toFloat64(): Float64
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -7188,7 +7189,7 @@ public class JSObject <: JSObjectBase {}
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -7245,7 +7246,7 @@ public func attachCJObject(target: JSExternal): Unit
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -7295,7 +7296,7 @@ public func callMethod(key: JSKeyable, args: Array<JSValue>): JSValue
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -7344,7 +7345,7 @@ public func defineOwnAccessor(key: JSKeyable, getter!: ?JSFunction = None, sette
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -7397,7 +7398,7 @@ public func defineOwnAccessor(key: JSKeyable, getter!: ?JSLambda = None, setter!
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -7453,7 +7454,7 @@ public func defineOwnProperty(key: JSKeyable, setValue: JSValue,
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -7491,7 +7492,7 @@ public func getAttachInfo(): ?JSExternal
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -7542,7 +7543,7 @@ public func getProperty(key: JSKeyable): JSValue
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -7586,7 +7587,7 @@ public func hasProperty(key: JSKeyable): Bool
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -7632,7 +7633,7 @@ public func instanceOf(clazz: JSClass): Bool
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -7676,7 +7677,7 @@ public func keys(): Array<String>
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -7717,7 +7718,7 @@ public func setProperty(key: JSKeyable, setValue: JSValue): Unit
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -7762,7 +7763,7 @@ public operator func [](key: JSKeyable): JSValue
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -7802,7 +7803,7 @@ public operator func [](key: JSKeyable, value!: JSValue): Unit
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -7858,7 +7859,7 @@ public func catchError(callback: JSFunction): Unit
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -7900,7 +7901,7 @@ public func then(onFulfilled: JSFunction, onRejected!: ?JSFunction = None): Unit
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -7954,7 +7955,7 @@ public func reject(value: JSValue): Unit
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -7994,7 +7995,7 @@ public func resolve(value: JSValue): Unit
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -8036,7 +8037,7 @@ public func toJSValue(): JSValue
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -8078,7 +8079,7 @@ public class JSRuntime {
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -8217,7 +8218,7 @@ public func toString(): String
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -8335,7 +8336,7 @@ public class JSStringEx <: JSInteropType<JSStringEx> & Equatable<JSStringEx> & T
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -8551,7 +8552,7 @@ public class JSSymbol <: JSHeapObject & JSKeyable {}
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -8686,7 +8687,7 @@ public func toJSValue(): JSValue
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -9103,7 +9104,7 @@ public func bindObject(external: JSValue): Unit
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -9149,7 +9150,7 @@ public func bindObject(data: SharedObject): Unit
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -9195,7 +9196,7 @@ public func getBindingObject(): ?SharedObject
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -9249,7 +9250,7 @@ public func getElement(index: Int64): JSValue
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -9294,7 +9295,7 @@ public func getProperty(key: JSKeyable): JSValue
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -9336,7 +9337,7 @@ public func isArray(): Bool
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -9377,7 +9378,7 @@ public func isArrayBuffer(): Bool
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -9418,7 +9419,7 @@ public func isBigInt(): Bool
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -9459,7 +9460,7 @@ public func isBoolean(): Bool
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -9500,7 +9501,7 @@ public func isClass(): Bool
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -9541,7 +9542,7 @@ public func isExternal(): Bool
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -9582,7 +9583,7 @@ public func isFunction(): Bool
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -9623,7 +9624,7 @@ public func isNull(): Bool
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -9664,7 +9665,7 @@ public func isNumber(): Bool
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -9705,7 +9706,7 @@ public func isObject(): Bool
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -9746,7 +9747,7 @@ public func isPromise(): Bool
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -9787,7 +9788,7 @@ public func isString(): Bool
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -9828,7 +9829,7 @@ public func isSymbol(): Bool
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -9869,7 +9870,7 @@ public func isUndefined(): Bool
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -9913,7 +9914,7 @@ public func setElement(index: Int64, value: JSValue): Unit
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -9956,7 +9957,7 @@ public func setProperty(key: JSKeyable, setValue: JSValue): Unit
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -10001,7 +10002,7 @@ public func strictEqual(target: JSValue): Bool
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -10044,7 +10045,7 @@ public func toBigInt(): BigInt
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -10084,7 +10085,7 @@ public func toBoolean(): Bool
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -10124,7 +10125,7 @@ public func toNumber(): Float64
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -10165,7 +10166,7 @@ public func toString(): String
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -10238,7 +10239,7 @@ public func typeof(): JSType
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -10268,7 +10269,7 @@ public open class SharedObject {
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -10361,7 +10362,7 @@ public prop accessible: Bool
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -10406,7 +10407,7 @@ public prop size: Int64
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -10445,7 +10446,7 @@ public prop totalChars: Int64
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -10500,7 +10501,7 @@ public init(src: String)
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -10554,7 +10555,7 @@ public static func fromJSValue(_: JSContext, value: JSValue): Utf16String
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -10680,7 +10681,7 @@ public func count(src: Utf16String): Int64
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -10709,7 +10710,7 @@ public func dispose(): Unit
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -10763,7 +10764,7 @@ public func endsWith(target: Utf16String): Bool
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -10806,7 +10807,7 @@ public func hashCode(): Int64
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -10853,7 +10854,7 @@ public func indexOf(target: Utf16String): ?Int64
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -10931,7 +10932,7 @@ public func isEmpty(): Bool
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -10976,7 +10977,7 @@ public func isCompressed(): Bool
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -11024,7 +11025,7 @@ public func lastIndexOf(target: Utf16String): ?Int64
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -11078,7 +11079,7 @@ public func lastIndexOf(target: Utf16String, fromIndex: Int64): ?Int64
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -11133,7 +11134,7 @@ public func lazySplit(separator: Utf16String, removeEmpty!: Bool = false): Itera
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -11213,7 +11214,7 @@ public func lines(): Iterator<Utf16String>
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -11268,7 +11269,7 @@ public func replace(old: Utf16String, new: Utf16String, count!: Int64 = Int64.Ma
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -11345,7 +11346,7 @@ public func split(separator: Utf16String, removeEmpty!: Bool = false): Array<Utf
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -11432,7 +11433,7 @@ public func startsWith(target: Utf16String): Bool
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -11482,7 +11483,7 @@ public func toJSValue(context: JSContext): JSValue
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -11525,7 +11526,7 @@ public func toString(): String
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog
@@ -11837,7 +11838,7 @@ public struct JSType {
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.PerformanceAnalysisKit.Hilog

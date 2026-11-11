@@ -48,9 +48,8 @@ console.log(console.log(testCJ("Cangjie")))
 
 4. In the **cangjielib->src->main->cangjie->index.cj** file, add interoperability code. The following is an example:
 
-   <!--compile-->
+   <!-- compile -->
    ```cangjie
-   // Package name
    package ohos_app_cangjie_cangjielib
 
    // Import files

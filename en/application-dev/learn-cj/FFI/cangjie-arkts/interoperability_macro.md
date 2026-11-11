@@ -14,12 +14,13 @@ After successfully inserting a Cangjie interop module into an ArkTS project, cus
 
 1. Implement a Cangjie function named `addF64` and annotate it with `@Interop[ArkTS]` to mark it as an interop function. Assume the file is named demo.cj, with the following content:
 
-   <!--compile-->
+   <!-- compile -->
    ```cangjie
    // Define the package name, which must match the package name in cjpm.toml
    package ohos_app_cangjie_entry
    // Import the interop library ark_interop and interop macros
    import kit.CangjieKit.*
+   import ohos.ark_interop_macro.*
    // Implement the custom function addF64, which takes two numbers as input and returns their sum
    @Interop[ArkTS]
    public func addF64(a: Float64, b: Float64): Float64 {
@@ -80,35 +81,35 @@ After successfully inserting a Cangjie interop module into an ArkTS project, cus
    }
    ```
 
-> **Warning:**
->
-> In the same Cangjie module (the same package and its sub-packages), the following rules must be followed to avoid compilation errors or symbol conflicts:
->
-> - Functions, interfaces, and classes annotated with `@Interop` must not have the same name.
->
->   Incorrect example:
->
->   ```cangjie
->   @Interop[ArkTS]
->   public func addNumber() : Unit {}
->
->   @Interop[ArkTS]
->   public func addNumber(a: Float64) : Unit {} // Compilation error in the same package; symbol conflicts may occur in parent-child packages
->   ```
->
-> - Functions, interfaces, and classes annotated with `@Interop` must not have the same name as those registered with JSModule.registerModule, JSModule.registerClass, or JSModule.registerFunc.
->
->   Incorrect example:
->
->   ```cangjie
->   @Interop[ArkTS]
->   public func addNumber() : Unit {}
->
->   func addFloat() {}
->   let EXPORT_MODULE = JSModule.registerModule {
->       runtime, exports => exports["addNumber"] = runtime.function(addFloat).toJSValue() // Will override the addNumber function annotated with @Interop
->   }
->   ```
+   In the same Cangjie module (the same package and its sub-packages), the following rules must be followed to avoid compilation errors or symbol conflicts:
+
+   - Functions, interfaces, and classes annotated with `@Interop` must not have the same name.
+
+     Incorrect example:
+
+     <!-- compile.error -->
+     ```cangjie
+     @Interop[ArkTS]
+     public func addNumber() : Unit {}
+
+     @Interop[ArkTS]
+     public func addNumber(a: Float64) : Unit {} // Compilation error in the same package; symbol conflicts may occur in parent-child packages
+     ```
+
+   - Functions, interfaces, and classes annotated with `@Interop` must not have the same name as those registered with JSModule.registerModule, JSModule.registerClass, or JSModule.registerFunc.
+
+     Incorrect example:
+
+     <!-- run.error -->
+     ```cangjie
+     @Interop[ArkTS]
+     public func addNumber() : Unit {}
+
+     func addFloat() {}
+     let EXPORT_MODULE = JSModule.registerModule {
+         runtime, exports => exports["addNumber"] = runtime.function(addFloat).toJSValue() // Will override the addNumber function annotated with @Interop
+     }
+     ```
 
 ### Using Cangjie Modules in ArkTS Code
 
@@ -160,12 +161,13 @@ Asynchronous functions annotated with declarative interop macros must meet the f
 
 Example of asynchronous function interop:
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 // Create an interop function on the Cangjie side
 package ohos_app_cangjie_entry
 
 import kit.CangjieKit.*
+import ohos.ark_interop_macro.*
 
 @Interop[ArkTS, Async]
 public func doAsync(a: Float64, b: Float64): Float64 {
@@ -204,12 +206,13 @@ Interfaces annotated with declarative interop macros must meet the following con
 
 Example of interface interop:
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 // Create an interop function on the Cangjie side
 package ohos_app_cangjie_entry
 
 import kit.CangjieKit.*
+import ohos.ark_interop_macro.*
 
 @Interop[ArkTS]
 public interface InterfaceDemo {
@@ -269,12 +272,13 @@ Classes annotated with declarative interop macros must meet the following condit
 
 Example of class interop:
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 // Create an interop function on the Cangjie side
 package ohos_app_cangjie_entry
 
 import kit.CangjieKit.*
+import ohos.ark_interop_macro.*
 
 @Interop[ArkTS]
 public class ClassDemo {
@@ -368,12 +372,13 @@ Enums annotated with declarative interop macros must meet the following conditio
 
 Example of enum interop:
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 // Create an interop function on the Cangjie side
 package ohos_app_cangjie_entry
 
 import kit.CangjieKit.*
+import ohos.ark_interop_macro.*
 
 @Interop[ArkTS]
 public enum EnumDemo {
@@ -419,12 +424,13 @@ Global variables annotated with declarative interop macros must meet the followi
 
 Example of global variable interop:
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 // Create interop global variables on the Cangjie side
 package ohos_app_cangjie_entry
 
 import kit.CangjieKit.*
+import ohos.ark_interop_macro.*
 
 @Interop[ArkTS]
 public const MAX_COUNT: Int64 = 100

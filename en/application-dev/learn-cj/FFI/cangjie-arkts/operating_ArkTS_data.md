@@ -20,7 +20,7 @@ This chapter details how to use ArkTS data through the JSValue type.
 
 3. Constructing ArkTS Data from Cangjie Types
 
-   Constructing ArkTS data from Cangjie types is done using methods from JSContext. For example, creating an ArkTS `number` requires passing a concrete value to the `JSContext.number` interface, for example, `var a = JSContext.number(1.0)`.
+   Constructing ArkTS data from Cangjie types is done using methods from JSContext. For example, creating an ArkTS `number` requires passing a concrete value to the `context.number` interface, for example, `var a = context.number(1.0)`.
 
    The mapping of major ArkTS data types to Cangjie types is as follows:
 
@@ -45,7 +45,7 @@ An example from an interoperability function implementation:
 
 1. Cangjie function implementation:
 
-    <!--compile-->
+    <!-- compile -->
     ```cangjie
     // Define the package name, which must match the package name in cjpm.toml
     package ohos_app_cangjie_entry
@@ -114,7 +114,7 @@ In addition to reading properties from objects, you can also assign values to pr
 
 2. For an unknown object, you can enumerate its enumerable properties:
 
-   <!--compile-->
+   <!-- compile -->
    ```cangjie
    func handleUnknownObject(context: JSContext, target: JSObject): Unit {
        // Enumerate the object's enumerable properties using the keys interface
@@ -153,7 +153,7 @@ class SendableTestClass {
 
 Manipulate the sendable object in Cangjie:
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 // Define the package name, which must match the package name in cjpm.toml
 package ohos_app_cangjie_entry
@@ -209,7 +209,7 @@ To address data race issues between concurrent instances, ArkTS introduces async
 
 Cangjie implementation:
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 // Define the package name, which must match the package name in cjpm.toml
 package ohos_app_cangjie_entry
@@ -254,7 +254,7 @@ Declare the interoperability interface in Index.d.ts:
 
 ```typescript
 // Index.d.ts corresponding to libohos_app_cangjie_entry.so
-export declare function testAsync(): Promise<boolean>;
+export declare function testAsync(): Promise<string>;
 export declare function readName(data: Some): Promise<string>;
 
 interface Some {}
@@ -404,7 +404,7 @@ This example first calls a Cangjie function from ArkTS, then calls back an ArkTS
 
 2. Calling Back ArkTS Functions in Cangjie Code:
 
-    <!--compile-->
+    <!-- compile -->
     ```cangjie
     package ohos_app_cangjie_entry
 
@@ -436,7 +436,7 @@ This example first calls a Cangjie function from ArkTS, then calls back an ArkTS
 
 The function in this example doesn't have a `this` pointer. For method calls requiring a `this` pointer, you can specify it using the named parameter `thisArg`.
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let callback = callInfo[0].asFunction()
@@ -468,7 +468,7 @@ doSth.call();
 
 The corresponding implementation in Cangjie is as follows:
 
-<!--compile.error-->
+<!-- run.error -->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let object = callInfo[0].asObject()

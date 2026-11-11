@@ -271,13 +271,13 @@ Here, **my_module** becomes a Cangjie-ArkTS hybrid module.
    In the **Project** window, navigate to **my_module > src > main > cangjie**, open **index.cj**, and write the following code:
 
    <!-- compile -->
-
    ```cangjie
    // index.cj
    package ohos_app_cangjie_my_module // Note: The package name must match the [package] name field in cjpm.toml.
 
    import kit.ArkUI.*
    import kit.CangjieKit.*
+   import ohos.ark_interop_macro.*
    import std.core.sleep
    import std.core.Duration
 
@@ -439,7 +439,6 @@ Here, **my_module** becomes a Cangjie-ArkTS hybrid module.
    - Add Text components, Button components, etc., to the Cangjie page and set their styles. Below is an example of the **cangjie_page.cj** file:
 
    <!-- compile -->
-
    ```cangjie
    // cangjie_page.cj
    package ohos_app_cangjie_my_module

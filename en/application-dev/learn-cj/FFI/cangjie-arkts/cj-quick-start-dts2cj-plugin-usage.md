@@ -63,8 +63,6 @@ The following demonstrates detailed steps for invoking the [lz4js](https://ohpm.
 
     b. Invoke the corresponding interfaces of the Cangjie wrapper library lz4cj in Cangjie code. Taking the compress interface in lz4js as an example, modify the **entry > src > main > cangjie > index.cj** file as follows:
 
-     <!-- compile -->
-
      ```cangjie
      //index.cj
      import lz4cj.compress // Import the compress interface from the lz4cj library

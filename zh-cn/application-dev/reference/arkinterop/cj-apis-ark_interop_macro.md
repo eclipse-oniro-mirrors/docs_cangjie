@@ -11,10 +11,10 @@
 ## 导入模块
 
 ```cangjie
-import kit.CangjieKit.*
+import ohos.ark_interop_macro.*
 ```
 
-本模块（ohos.ark_interop_macro）的接口能力由 CangjieKit 封装提供，通过 `import kit.CangjieKit.*` 导入后使用。关于 Kit 导入的更多说明，请参考[接口使用说明](../cj-development-intro.md#接口使用说明)。
+使用本模块的 `@Interop` 宏时，必须直接导入宏包 `ohos.ark_interop_macro`。宏在编译期展开，编译器仅识别直接导入的宏包，不支持通过 Kit 包重新导出后使用。
 
 ## @Interop 宏
 
@@ -26,9 +26,10 @@ public macro Interop(attrTokens: Tokens, input: Tokens): Tokens
 
 **示例：**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
+import ohos.ark_interop_macro.*
 
 @Interop[ArkTS]
 public class MyCustomClass {

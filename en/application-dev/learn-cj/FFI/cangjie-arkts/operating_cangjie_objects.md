@@ -12,7 +12,7 @@ This example demonstrates sharing Cangjie objects to the ArkTS runtime, using Ar
 
 1. Define Cangjie functions:
 
-    <!--compile-->
+    <!-- compile -->
     ```cangjie
     // Import interoperability libraries
     import kit.CangjieKit.*
@@ -120,7 +120,7 @@ Example implementation:
 
 ### Define Cangjie functions
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 // Import interoperability libraries
 import kit.CangjieKit.*
@@ -224,7 +224,7 @@ Attaching all object operation methods directly to objects consumes more memory 
 
 1. Define Cangjie functions:
 
-    <!--compile-->
+    <!-- compile -->
     ```cangjie
     // Import interoperability libraries
     import kit.CangjieKit.*

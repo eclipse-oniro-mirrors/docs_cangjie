@@ -60,35 +60,35 @@ To develop a Cangjie interoperability module:
 
 In the above process, the exported function defined on the Cangjie side uses the most basic Cangjie types through the interoperability library. For other types, refer to the chapters [Using ArkTS Data in Cangjie](./operating_ArkTS_data.md) and [Operating Cangjie Objects in ArkTS](./operating_cangjie_objects.md).
 
-> **Warning:**
->
-> Within the same Cangjie module (the same package and its sub-packages), the following rules must be followed to avoid symbol conflicts:
->
-> - Functions, interfaces, and classes registered to JSModule using JSModule.registerModule, JSModule.registerClass, or JSModule.registerFunc must not have duplicate names.
->
->   Incorrect example:
->
->   ```cangjie
->   func addFloat() {}
->   func addInt() {}
->   let EXPORT_MODULE = JSModule.registerModule {
->      runtime, exports =>
->         exports["addNumber"] = runtime.function(addFloat).toJSValue()
->         exports["addNumber"] = runtime.function(addInt).toJSValue() // Will overwrite the first registered function addNumber
->   }
->   ```
->
-> - Functions, interfaces, and classes registered to JSModule using JSModule.registerModule, JSModule.registerClass, or JSModule.registerFunc must not have the same names as those decorated with `@Interop`.
->
->   Incorrect example:
->
->   ```cangjie
->   @Interop[ArkTS]
->   public func addNumber() : Unit {}
->
->   func addFloat() {}
->   let EXPORT_MODULE = JSModule.registerModule {
->       runtime, exports =>
->       exports["addNumber"] = runtime.function(addFloat).toJSValue() // Will overwrite the @Interop-decorated function addNumber
->   }
->   ```
+Within the same Cangjie module (the same package and its sub-packages), the following rules must be followed to avoid symbol conflicts:
+
+- Functions, interfaces, and classes registered to JSModule using JSModule.registerModule, JSModule.registerClass, or JSModule.registerFunc must not have duplicate names.
+
+  Incorrect example:
+
+  <!-- run.error -->
+  ```cangjie
+  func addFloat() {}
+  func addInt() {}
+  let EXPORT_MODULE = JSModule.registerModule {
+     runtime, exports =>
+        exports["addNumber"] = runtime.function(addFloat).toJSValue()
+        exports["addNumber"] = runtime.function(addInt).toJSValue() // Will overwrite the first registered function addNumber
+  }
+  ```
+
+- Functions, interfaces, and classes registered to JSModule using JSModule.registerModule, JSModule.registerClass, or JSModule.registerFunc must not have the same names as those decorated with `@Interop`.
+
+  Incorrect example:
+
+  <!-- run.error -->
+  ```cangjie
+  @Interop[ArkTS]
+  public func addNumber() : Unit {}
+
+  func addFloat() {}
+  let EXPORT_MODULE = JSModule.registerModule {
+      runtime, exports =>
+      exports["addNumber"] = runtime.function(addFloat).toJSValue() // Will overwrite the @Interop-decorated function addNumber
+  }
+  ```

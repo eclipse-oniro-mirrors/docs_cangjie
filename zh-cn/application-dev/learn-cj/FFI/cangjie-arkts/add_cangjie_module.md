@@ -8,7 +8,7 @@
 
    ![interop-create-new-project](../../figures/interop-create-new-project.png)
 
-2. 点击 **Cangjie(Interop)** 按钮后，在选中的 ArkTS 模块下，自动创建 cjpm 的配置文件 cjpm.toml 和名为 `cangjie` 的文件夹。文件夹内包含模板代码文件 index.cj、用于存放仓颉的互操作接口声明文件 `types` 文件夹。如下图所示：
+2. 点击 **Cangjie(Interop)** 按钮后，在选中的 ArkTS 模块下，自动创建 cjpm 的配置文件 `cjpm.toml` 和名为 `cangjie` 的文件夹。文件夹内包含模板代码文件 `index.cj`、用于存放仓颉的互操作接口声明文件 `types` 文件夹。如下图所示：
 
       ![image-20250222174232257](../../figures/generate-interop-file.png)
 
@@ -16,7 +16,7 @@
 
       ![image-20250222181831627](../../figures/generate-dependency.png)
 
-3. 仓颉互操作模块实现后，在 ArkTS 代码中导入仓颉 ohos_app_cangjie_entry 模块，即可加载自定义的仓颉互操作模块，并调用相关的接口。
+3. 仓颉互操作模块实现后，在 ArkTS 代码中导入仓颉 `ohos_app_cangjie_entry` 模块，即可加载自定义的仓颉互操作模块，并调用相关的接口。
 
    ```typescript
    // 加载自定义的仓颉互操作模块
@@ -25,7 +25,7 @@
 
 4. 自定义的仓颉互操作模块加载成功后，即可在 ArkTS 工程中调用仓颉互操作模块提供的接口。
 
-在 ArkTS 应用中调用仓颉互操作模块提供的 testCJ 函数示例如下：
+在 ArkTS 应用中调用仓颉互操作模块提供的 `testCJ` 函数示例如下：
 
 ```typescript
 // 调用仓颉接口
@@ -48,9 +48,8 @@ console.log(testCJ("Cangjie"))
 
 4. 在 **cangjielib->src->main->cangjie->index.cj** 文件中，添加互操作代码，以如下代码为例：
 
-   <!--compile-->
+   <!-- compile -->
    ```cangjie
-   // 包名
    package ohos_app_cangjie_cangjielib
 
    // 导入文件
@@ -134,3 +133,45 @@ console.log(testCJ("Cangjie"))
 > **说明：**
 >
 > 禁止仓颉互操作模块被其他模块导入，否则在ArkTS导入互操作模块时，导入的内容可能缺失。
+
+## 在仓颉模块中调用 ArkTS 模块
+
+若仓颉互操作模块中需要反向调用 ArkTS 模块（系统模块、工程内模块等），可在互操作函数内使用 `requireArkModule` 动态导入并调用。以调用系统模块 `@ohos.hilog` 为例，最小示例如下：
+
+<!-- compile -->
+```cangjie
+package ohos_app_cangjie_entry
+
+// 导入互操作库
+import kit.CangjieKit.*
+
+// 互操作函数：在函数内动态导入 ArkTS 系统模块并调用
+func loadHilog(context: JSContext, callInfo: JSCallInfo): JSValue {
+    // 1. 动态导入系统模块 "@ohos.hilog"
+    let module = context.requireArkModule("@ohos.hilog")
+    // 2. 把导入的模块转换为 JSObject
+    let hilog = module.asObject()
+    // 3. 调用模块的 info 方法，打印一条日志
+    hilog.callMethod(
+        "info",
+        [
+            context.number(0).toJSValue(),
+            context.string("test").toJSValue(),
+            context.string("load hilog success").toJSValue()
+        ]
+    )
+    // 4. 返回执行结果
+    return context.boolean(true).toJSValue()
+}
+
+// 在模块导出时，将 loadHilog 注册为可被 ArkTS 调用的函数
+let EXPORT_MODULE = JSModule.registerModule {
+    runtime, exports => exports["loadHilog"] = runtime.function(loadHilog).toJSValue()
+}
+```
+
+> **注意：**
+>
+> - `requireArkModule` 只能在 ArkTS 绑定线程使用，禁止在全局变量初始化和模块导出流程中调用，否则会触发错误码 34300007（Can not requireArkModule during initializing cangjie module）。完整限制请参见[在仓颉代码里导入ArkTS模块](./cangjie-load-arkts.md#使用限制)。
+
+更多调用方式（模块方法列表的查询、通用调用流程、异步方法调用等），请参见[在仓颉代码里导入ArkTS模块](./cangjie-load-arkts.md)和[仓颉侧调用 ArkTS 模块](./cj-using_arkts_module.md)。

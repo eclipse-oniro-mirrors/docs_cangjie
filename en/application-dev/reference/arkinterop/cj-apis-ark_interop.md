@@ -52,8 +52,10 @@ The following types extend this interface:
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
+import ohos.ark_interop_macro.*
+
 @Interop[ArkTS]
 public class MyCustomClass {
     public let name: String   // String implements JSInteropType<String>, so it can be used here.
@@ -145,7 +147,7 @@ sealed interface JSKeyable <: ToString & ToJSValue {
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -208,7 +210,7 @@ func toJSValue(context: JSContext): JSValue
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -309,7 +311,7 @@ public func toJSValue(context: JSContext): JSValue
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -410,7 +412,7 @@ public func toJSValue(context: JSContext): JSValue
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -511,7 +513,7 @@ public func toJSValue(context: JSContext): JSValue
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -613,7 +615,7 @@ public func toJSValue(context: JSContext): JSValue
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -705,7 +707,7 @@ public func toJSValue(context: JSContext): JSValue
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -806,7 +808,7 @@ public func toJSValue(context: JSContext): JSValue
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -907,7 +909,7 @@ public func toJSValue(context: JSContext): JSValue
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -1009,7 +1011,7 @@ public func toJSValue(context: JSContext): JSValue
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -1110,7 +1112,7 @@ public func toJSValue(context: JSContext): JSValue
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -1211,7 +1213,7 @@ public func toJSValue(context: JSContext): JSValue
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -1311,7 +1313,7 @@ public func toJSValue(context: JSContext): JSValue
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -1411,7 +1413,7 @@ public func toJSValue(context: JSContext): JSValue
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -1480,7 +1482,7 @@ public static func toArktsType(): String
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -1532,7 +1534,7 @@ public func toJSValue(context: JSContext): JSValue
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 func unitTranslate(context: JSContext): Unit {
     let source: Unit = ()
@@ -1613,7 +1615,7 @@ public func toJSValue(context: JSContext): JSValue
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -1714,7 +1716,7 @@ public func toJSValue(context: JSContext): JSValue
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -1877,7 +1879,7 @@ public operator func [](index: Int64): JSValue
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let jsArr = callInfo[0].asArray()
@@ -1915,7 +1917,7 @@ public operator func [](index: Int64, value!: JSValue): Unit
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let jsArr = callInfo[0].asArray()
@@ -1954,7 +1956,7 @@ public operator func [](index: Int64, value!: JSHeapObject): Unit
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let jsArr = callInfo[0].asArray()
@@ -2003,7 +2005,7 @@ public prop byteLength: Int32
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -2042,7 +2044,7 @@ public func readBytes(): Array<Byte>
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -2082,7 +2084,7 @@ public func toArrayBufferJSValue(): JSValue
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 func getArrayBufferJSValue(context: JSContext): JSValue {
     let data: Array<Byte> = [1, 2, 3, 4]
@@ -2120,7 +2122,7 @@ public func toFloat32Array(): Array<Float32>
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -2160,7 +2162,7 @@ public func toFloat32ArrayJSValue(): JSValue
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -2200,7 +2202,7 @@ public func toFloat64Array(): Array<Float64>
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -2240,7 +2242,7 @@ public func toFloat64ArrayJSValue(): JSValue
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 func getFloat64ArrayJSValue(context: JSContext, callInfo: JSCallInfo): JSValue {
     let arrayBuffer = callInfo[0].asArrayBuffer()
@@ -2277,7 +2279,7 @@ public func toInt16Array(): Array<Int16>
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -2317,7 +2319,7 @@ public func toInt16ArrayJSValue(): JSValue
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 func getInt16ArrayJSValue(context: JSContext, callInfo: JSCallInfo): JSValue {
     let arrayBuffer = callInfo[0].asArrayBuffer()
@@ -2354,7 +2356,7 @@ public func toInt32Array(): Array<Int32>
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -2394,7 +2396,7 @@ public func toInt32ArrayJSValue(): JSValue
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 func getInt32ArrayJSValue(context: JSContext, callInfo: JSCallInfo): JSValue {
     let arrayBuffer = callInfo[0].asArrayBuffer()
@@ -2431,7 +2433,7 @@ public func toInt64Array(): Array<Int64>
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -2471,7 +2473,7 @@ public func toInt64ArrayJSValue(): JSValue
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 func getInt64ArrayJSValue(context: JSContext, callInfo: JSCallInfo): JSValue {
     let arrayBuffer = callInfo[0].asArrayBuffer()
@@ -2507,7 +2509,7 @@ public func toInt8Array(): Array<Int8>
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -2547,7 +2549,7 @@ public func toInt8ArrayJSValue(): JSValue
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 func getInt8ArrayJSValue(context: JSContext, callInfo: JSCallInfo): JSValue {
     let arrayBuffer = callInfo[0].asArrayBuffer()
@@ -2584,7 +2586,7 @@ public func toUInt16Array(): Array<UInt16>
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -2624,7 +2626,7 @@ public func toUInt16ArrayJSValue(): JSValue
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 func getUInt16ArrayJSValue(context: JSContext, callInfo: JSCallInfo): JSValue {
     let arrayBuffer = callInfo[0].asArrayBuffer()
@@ -2661,7 +2663,7 @@ public func toUInt32Array(): Array<UInt32>
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -2701,7 +2703,7 @@ public func toUInt32ArrayJSValue(): JSValue
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 func getUInt32ArrayJSValue(context: JSContext, callInfo: JSCallInfo): JSValue {
     let arrayBuffer = callInfo[0].asArrayBuffer()
@@ -2738,7 +2740,7 @@ public func toUInt64Array(): Array<UInt64>
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -2778,7 +2780,7 @@ public func toUInt64ArrayJSValue(): JSValue
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 func getUInt64ArrayJSValue(context: JSContext, callInfo: JSCallInfo): JSValue {
     let arrayBuffer = callInfo[0].asArrayBuffer()
@@ -2814,7 +2816,7 @@ public func toUInt8Array(): Array<UInt8>
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -2854,7 +2856,7 @@ public func toUInt8ArrayJSValue(): JSValue
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 func getUInt8ArrayJSValue(context: JSContext, callInfo: JSCallInfo): JSValue {
     let arrayBuffer = callInfo[0].asArrayBuffer()
@@ -2891,7 +2893,7 @@ public func toUInt8ClampedArrayJSValue(): JSValue
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 func getUInt8ClampedArrayJSValue(context: JSContext, callInfo: JSCallInfo): JSValue {
     let arrayBuffer = callInfo[0].asArrayBuffer()
@@ -3031,7 +3033,7 @@ public func clone(): JSArrayEx<T>
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -3080,7 +3082,7 @@ public func concat(other: JSArrayEx<T>): JSArrayEx<T>
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -3131,7 +3133,7 @@ public func get(index: Int64): Option<T>
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -3175,7 +3177,7 @@ public func isEmpty(): Bool
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -3222,7 +3224,7 @@ public func set(index: Int64, element: T): Unit
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -3265,7 +3267,7 @@ public func toArray(): Array<T>
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -3346,7 +3348,7 @@ public operator func [](index: Int64): T
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -3390,7 +3392,7 @@ public operator func [](index: Int64, value!: T): Unit
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -3447,7 +3449,7 @@ public func toBigInt(): BigInt
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -3498,7 +3500,7 @@ public func toBool(): Bool
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -3629,7 +3631,7 @@ public operator func [](index: Int64): JSValue
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     if (callInfo.count > 0) {
@@ -3678,7 +3680,7 @@ public prop prototype: JSObject
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -3725,7 +3727,7 @@ public func addAccessor(key: JSKeyable, getter!: ?JSFunction = None, setter!: ?J
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -3775,7 +3777,7 @@ public func addAccessor(key: JSKeyable, getter!: ?JSLambda = None, setter!: ?JSL
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -3824,7 +3826,7 @@ public func addMethod(key: JSKeyable, method: JSFunction): Unit
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -3873,7 +3875,7 @@ public func addMethod(key: JSKeyable, method: JSLambda): Unit
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -3922,7 +3924,7 @@ public func addProperty(key: JSKeyable, value: JSValue): Unit
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -3967,7 +3969,7 @@ public func new(): JSValue
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let ctor: JSLambda = { _, callInfo =>
@@ -4013,7 +4015,7 @@ public func new(arg: JSValue): JSValue
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let ctor: JSLambda = { context, callInfo =>
@@ -4063,7 +4065,7 @@ public func new(args: Array<JSValue>): JSValue
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let ctor: JSLambda = { context, callInfo =>
@@ -4121,7 +4123,7 @@ public prop env: JSEnv
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -4158,7 +4160,7 @@ public prop global: JSObject
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -4205,7 +4207,7 @@ public func newScope<T>(callback: () -> T): T
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     spawn (UIThread) {
@@ -4254,7 +4256,7 @@ public func array(arr: Array<JSValue>): JSArray
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let result = context.array([])
@@ -4297,7 +4299,7 @@ public func arrayBuffer(length: Int32): JSArrayBuffer
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let result = context.arrayBuffer(Int32(10))
@@ -4339,7 +4341,7 @@ public func arrayBuffer(data: Array<Byte>): JSArrayBuffer
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let array : Array<Byte> = [1, 2, 3, 4, 5]
@@ -4382,7 +4384,7 @@ public func arrayBuffer(data: Array<Int8>): JSArrayBuffer
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -4430,7 +4432,7 @@ public func arrayBuffer(data: Array<Int16>): JSArrayBuffer
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -4478,7 +4480,7 @@ public func arrayBuffer(data: Array<UInt16>): JSArrayBuffer
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -4526,7 +4528,7 @@ public func arrayBuffer(data: Array<UInt32>): JSArrayBuffer
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -4574,7 +4576,7 @@ public func arrayBuffer(data: Array<Int32>): JSArrayBuffer
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -4622,7 +4624,7 @@ public func arrayBuffer(data: Array<Float32>): JSArrayBuffer
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -4670,7 +4672,7 @@ public func arrayBuffer(data: Array<Int64>): JSArrayBuffer
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -4718,7 +4720,7 @@ public func arrayBuffer(data: Array<UInt64>): JSArrayBuffer
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -4766,7 +4768,7 @@ public func arrayBuffer(data: Array<Float64>): JSArrayBuffer
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -4816,7 +4818,7 @@ public unsafe func arrayBuffer(rawData: CPointer<Byte>, length: Int32, finalizer
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let rawPtr = unsafe {
@@ -4863,7 +4865,7 @@ public func bigint(value: Int64): JSBigInt
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let result = context.bigint(100)
@@ -4905,7 +4907,7 @@ public func bigint(value: BigInt): JSBigInt
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import std.math.numeric.BigInt
 
@@ -4948,7 +4950,7 @@ public func boolean(value: Bool): JSBoolean
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let result = context.boolean(true)
@@ -4991,7 +4993,7 @@ public func clazz(ctor: JSLambda, superClass!: ?JSClass = None): JSClass
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 func clsCtor(context: JSContext, callInfo: JSCallInfo): JSValue {
     callInfo.thisArg
@@ -5037,7 +5039,7 @@ public func external(data: SharedObject): JSExternal
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 class Data <: SharedObject {}
 
@@ -5082,7 +5084,7 @@ public func function(lambda: JSLambda): JSFunction
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 func jsCallback(context: JSContext, callInfo: JSCallInfo): JSValue {
     return context.undefined().toJSValue()
@@ -5121,7 +5123,7 @@ public func getNapiEnv(): napi_env
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -5151,7 +5153,7 @@ public func isInBindThread(): Bool
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 func createObject(context: JSContext): JSObject {
     if (!context.isInBindThread()) {
@@ -5188,7 +5190,7 @@ public func null(): JSNull
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let result = context.null()
@@ -5229,7 +5231,7 @@ public func number(value: Float64): JSNumber
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let result = context.number(1.0)
@@ -5270,7 +5272,7 @@ public func number(value: Int32): JSNumber
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let result = context.number(Int32(10))
@@ -5306,7 +5308,7 @@ public func object(): JSObject
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let result = context.object()
@@ -5332,7 +5334,7 @@ public func postJSTask(callback: () -> Unit): Unit
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 func createObject(context: JSContext, callback: (JSObject)->Unit): Unit {
     if (context.isInBindThread()) {
@@ -5373,7 +5375,7 @@ public func promiseCapability(): JSPromiseCapability
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let result = context.promiseCapability()
@@ -5417,7 +5419,7 @@ public func requireArkModule(path: String): JSValue
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 import kit.CangjieKit.BusinessException
@@ -5472,7 +5474,7 @@ public func requireSystemNativeModule(moduleName: String, prefix!: ?String = Non
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 func doSth(context: JSContext): Unit {
     let hilog = context.requireSystemNativeModule("hilog")
@@ -5514,7 +5516,7 @@ public func string(value: String): JSString
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let result = context.string("abc")
@@ -5556,7 +5558,7 @@ public func string(value: Utf16String): JSString
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let utf16string = Utf16String("abc")
@@ -5599,7 +5601,7 @@ public func symbol(description!: String = ""): JSSymbol
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let result = context.symbol()
@@ -5635,7 +5637,7 @@ public func undefined(): JSUndefined
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let result = context.undefined()
@@ -5687,7 +5689,7 @@ public func cast<T>(): Option<T> where T <: SharedObject
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 class Data <: SharedObject {
     func doSth() {}
@@ -5732,7 +5734,7 @@ public func getData(): SharedObject
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 class Data <: SharedObject {
     func doSth() {}
@@ -5798,7 +5800,7 @@ public func call(thisArg!: JSValue = context.undefined().toJSValue()): JSValue
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let callback = callInfo[0].asFunction()
@@ -5841,7 +5843,7 @@ public func call(arg: JSValue, thisArg!: JSValue = context.undefined().toJSValue
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let callback = callInfo[0].asFunction()
@@ -5885,7 +5887,7 @@ public func call(args: Array<JSValue>, thisArg!: JSValue = context.undefined().t
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let callback = callInfo[0].asFunction()
@@ -5953,7 +5955,7 @@ public init(map: HashMap<K, V>)
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 import std.collection.HashMap
@@ -5982,7 +5984,7 @@ public init()
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -6029,7 +6031,7 @@ public static func fromJSValue(context: JSContext, input: JSValue): JSHashMapEx<
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -6322,7 +6324,7 @@ public func isEmpty(): Bool
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -6365,7 +6367,7 @@ public func keys(): EquatableCollection<K>
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -6410,7 +6412,7 @@ public func set(key: K, value: V): Unit
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -6451,7 +6453,7 @@ public func setAll(elements: Collection<(K, V)>): Unit
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -6613,7 +6615,7 @@ public operator func [](key: K): V
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -6656,7 +6658,7 @@ public operator func [](key: K, value!: V): Unit
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -6709,7 +6711,7 @@ public func toJSValue(): JSValue
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let external = context.number(123)
@@ -6749,7 +6751,7 @@ public static func registerClass(name: String, register: ClassRegister): Unit
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 class Main {
     static init() {
@@ -6782,7 +6784,7 @@ public static func registerFunc(name: String, register: FuncRegister): Unit
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 class Main {
     static init() {
@@ -6812,7 +6814,7 @@ public static func registerFunc(name: String, lambda: JSLambda): Unit
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 class Main {
     static init() {
@@ -6841,7 +6843,7 @@ public static func registerModule(register: ModuleRegister): Unit
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 class Main {
     static init() {
@@ -6873,7 +6875,7 @@ public static func registerModule(name: String, register: ModuleRegister): Unit
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 class Main {
     static init() {
@@ -6958,7 +6960,7 @@ public func toFloat64(): Float64
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -7011,7 +7013,7 @@ public class JSObject <: JSObjectBase {}
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -7067,7 +7069,7 @@ public func attachCJObject(target: JSExternal): Unit
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 class Data <: SharedObject {}
 
@@ -7115,7 +7117,7 @@ public func callMethod(key: JSKeyable, args: Array<JSValue>): JSValue
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let json = context.global["JSON"].asObject()
@@ -7162,7 +7164,7 @@ public func defineOwnAccessor(key: JSKeyable, getter!: ?JSFunction = None, sette
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let obj = context.object()
@@ -7213,7 +7215,7 @@ public func defineOwnAccessor(key: JSKeyable, getter!: ?JSLambda = None, setter!
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let obj = context.object()
@@ -7267,7 +7269,7 @@ public func defineOwnProperty(key: JSKeyable, setValue: JSValue,
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let obj = context.object()
@@ -7303,7 +7305,7 @@ public func getAttachInfo(): ?JSExternal
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 class Data <: SharedObject {
     func doSth() {}
@@ -7352,7 +7354,7 @@ public func getProperty(key: JSKeyable): JSValue
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let obj = callInfo[0].asObject()
@@ -7394,7 +7396,7 @@ public func hasProperty(key: JSKeyable): Bool
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -7439,7 +7441,7 @@ public func instanceOf(clazz: JSClass): Bool
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -7482,7 +7484,7 @@ public func keys(): Array<String>
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -7522,7 +7524,7 @@ public func setProperty(key: JSKeyable, setValue: JSValue): Unit
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let obj = context.object()
@@ -7565,7 +7567,7 @@ public operator func [](key: JSKeyable): JSValue
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let obj = callInfo[0].asObject()
@@ -7603,7 +7605,7 @@ public operator func [](key: JSKeyable, value!: JSValue): Unit
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let obj = context.object()
@@ -7657,7 +7659,7 @@ public func catchError(callback: JSFunction): Unit
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let promise = callInfo[0].asPromise()
@@ -7697,7 +7699,7 @@ public func then(onFulfilled: JSFunction, onRejected!: ?JSFunction = None): Unit
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let promise = callInfo[0].asPromise()
@@ -7749,7 +7751,7 @@ public func reject(value: JSValue): Unit
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let promise = context.promiseCapability()
@@ -7787,7 +7789,7 @@ public func resolve(value: JSValue): Unit
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 func addNumberAsync(context: JSContext, callInfo: JSCallInfo): JSValue {
     let a = callInfo[0].toNumber()
@@ -7827,7 +7829,7 @@ public func toJSValue(): JSValue
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 func addNumberAsync(context: JSContext, callInfo: JSCallInfo): JSValue {
     // Convert ArkTS input parameters to Cangjie types
@@ -7867,7 +7869,7 @@ public class JSRuntime {
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -8005,7 +8007,7 @@ public func toString(): String
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -8122,7 +8124,7 @@ public class JSStringEx <: JSInteropType<JSStringEx> & Equatable<JSStringEx> & T
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -8337,7 +8339,7 @@ public class JSSymbol <: JSHeapObject & JSKeyable {}
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 func createSymbol(context: JSContext): JSValue {
     // Create a JSSymbol object
@@ -8470,7 +8472,7 @@ public func toJSValue(): JSValue
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let undefined = context.undefined()
@@ -8885,7 +8887,7 @@ public func bindObject(external: JSValue): Unit
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 class Data <: SharedObject {
 }
@@ -8929,7 +8931,7 @@ public func bindObject(data: SharedObject): Unit
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 class Data <: SharedObject {
 }
@@ -8973,7 +8975,7 @@ public func getBindingObject(): ?SharedObject
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 class Data <: SharedObject {
     func doSth() {}
@@ -9025,7 +9027,7 @@ public func getElement(index: Int64): JSValue
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let jsArr = callInfo[0]
@@ -9068,7 +9070,7 @@ public func getProperty(key: JSKeyable): JSValue
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let jsObJ = callInfo[0]
@@ -9108,7 +9110,7 @@ public func isArray(): Bool
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     // Get input parameter
@@ -9147,7 +9149,7 @@ public func isArrayBuffer(): Bool
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     // Get input parameter
@@ -9186,7 +9188,7 @@ public func isBigInt(): Bool
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     // Get input parameter
@@ -9225,7 +9227,7 @@ public func isBoolean(): Bool
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     // Get input parameter
@@ -9264,7 +9266,7 @@ public func isClass(): Bool
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     // Get input parameter
@@ -9303,7 +9305,7 @@ public func isExternal(): Bool
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     // Get input parameter
@@ -9342,7 +9344,7 @@ public func isFunction(): Bool
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     // Get input parameter
@@ -9381,7 +9383,7 @@ public func isNull(): Bool
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     // Get input parameter
@@ -9420,7 +9422,7 @@ public func isNumber(): Bool
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     // Get input parameter
@@ -9459,7 +9461,7 @@ public func isObject(): Bool
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     // Get input parameter
@@ -9498,7 +9500,7 @@ public func isPromise(): Bool
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     // Get input parameter
@@ -9537,7 +9539,7 @@ public func isString(): Bool
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     // Get input parameter
@@ -9576,7 +9578,7 @@ public func isSymbol(): Bool
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     // Get input parameter
@@ -9615,7 +9617,7 @@ public func isUndefined(): Bool
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     // Get input parameter
@@ -9657,7 +9659,7 @@ public func setElement(index: Int64, value: JSValue): Unit
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let jsArr = callInfo[0]
@@ -9698,7 +9700,7 @@ public func setProperty(key: JSKeyable, setValue: JSValue): Unit
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let jsObJ = context.object()
@@ -9741,7 +9743,7 @@ public func strictEqual(target: JSValue): Bool
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     // Get two input parameters
@@ -9782,7 +9784,7 @@ public func toBigInt(): BigInt
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -9821,7 +9823,7 @@ public func toBoolean(): Bool
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -9860,7 +9862,7 @@ public func toNumber(): Float64
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -9900,7 +9902,7 @@ public func toString(): String
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 // Checks if the first parameter is a number; if yes, returns true; otherwise returns the data type as a string
 func checkIsNumber(context: JSContext, callInfo: JSCallInfo): JSValue {
@@ -9970,7 +9972,7 @@ public func typeof(): JSType
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -9983,7 +9985,8 @@ func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     Hilog.info(0, "test", "arg type is ${valueType.toString()}")
     arg0
 }
-``````markdown
+```
+
 ## type ClassRegister
 
 ```cangjie
@@ -10008,7 +10011,7 @@ public open class SharedObject {
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 // Create a class inheriting from SharedObject
 class MyObject <: SharedObject {
@@ -10099,7 +10102,7 @@ public prop accessible: Bool
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -10143,7 +10146,7 @@ public prop size: Int64
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -10181,7 +10184,7 @@ public prop totalChars: Int64
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -10235,7 +10238,7 @@ public init(src: String)
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -10288,7 +10291,7 @@ public static func fromJSValue(_: JSContext, value: JSValue): Utf16String
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -10413,7 +10416,7 @@ public func count(src: Utf16String): Int64
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -10441,7 +10444,7 @@ public func dispose(): Unit
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -10494,7 +10497,7 @@ public func endsWith(target: Utf16String): Bool
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -10536,7 +10539,7 @@ public func hashCode(): Int64
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -10582,7 +10585,7 @@ public func indexOf(target: Utf16String): ?Int64
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -10659,7 +10662,7 @@ public func isEmpty(): Bool
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -10703,7 +10706,7 @@ public func isCompressed(): Bool
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -10750,7 +10753,7 @@ public func lastIndexOf(target: Utf16String): ?Int64
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -10803,7 +10806,7 @@ public func lastIndexOf(target: Utf16String, fromIndex: Int64): ?Int64
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -10857,7 +10860,7 @@ public func lazySplit(separator: Utf16String, removeEmpty!: Bool = false): Itera
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -10936,7 +10939,7 @@ public func lines(): Iterator<Utf16String>
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -10990,7 +10993,7 @@ public func replace(old: Utf16String, new: Utf16String, count!: Int64 = Int64.Ma
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -11066,7 +11069,7 @@ public func split(separator: Utf16String, removeEmpty!: Bool = false): Array<Utf
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -11152,7 +11155,7 @@ public func startsWith(target: Utf16String): Bool
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -11201,7 +11204,7 @@ public func toJSValue(context: JSContext): JSValue
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -11243,7 +11246,7 @@ public func toString(): String
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 
@@ -11554,7 +11557,7 @@ In ArkTS, the `typeof` operator can enumerate the general type of data. JSType l
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.PerformanceAnalysisKit.Hilog
 

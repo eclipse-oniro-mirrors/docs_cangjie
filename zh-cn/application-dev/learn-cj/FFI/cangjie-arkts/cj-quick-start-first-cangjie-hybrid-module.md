@@ -22,7 +22,39 @@
 
 ## 原ArkTS工程初始状态
 
-开发者可参照示例创建原始ArkTS工程，作为示例的原ArkTS应用工程目录结构如下所示：
+开发者可参照示例，按以下步骤创建原始ArkTS工程：
+
+1. 在菜单栏选择**File > New > Create Project**创建工程：选择**Application**应用开发下的**Empty Ability**模板，参数保持默认设置，完成工程创建。该步骤创建的**entry**模块会被编译为HAP包。
+
+2. 在菜单栏选择**File > New > Module**创建模块：选择**Library**下的**Shared Library**模板，**Module name**命名为**my_module**，完成模块创建。该步骤创建的**my_module**模块会被编译为HAR包，被**entry**模块依赖。
+
+   > **说明：**
+   >
+   > **my_module** 模块也可以通过 **Static Library** 工程模板创建，下面示例代码通过 **Shared Library** 工程模板创建ArkTS共享库模块。
+
+   > **注意：**
+   >
+   > 按**Shared Library**模板创建后，**my_module**模块自动生成的页面文件为`src > main > ets > pages`下的`Index.ets`、路由配置文件为`resources > base > profile`下的`main_pages.json`，与下文示例使用的`MyModulePage.ets`、`router_map.json`文件名不一致。请按以下顺序完成重命名与创建，不重命名或顺序不当会导致编译、运行报错：
+   >
+   > 1. 将`my_module > src > main > ets > pages > Index.ets`重命名为`MyModulePage.ets`。
+   > 2. 在`my_module > src > main > resources > base > profile`目录下新建`router_map.json`文件，并按后文示例配置子页路由信息。
+   > 3. 将**my_module**根目录下的模块入口文件`Index.ets`的内容修改为导出 `MyModulePageBuilder`，示例如下：
+   >
+   >    ```typescript
+   >    export { MyModulePageBuilder } from './src/main/ets/pages/MyModulePage'
+   >    ```
+   >
+   > 4. 将`my_module > src > main > resources > base > profile > main_pages.json`中"src"字段的值同步修改为`pages/MyModulePage`，与重命名后的页面文件保持一致，示例如下：
+   >
+   >    ```json
+   >    {
+   >      "src": [
+   >        "pages/MyModulePage"
+   >      ]
+   >    }
+   >    ```
+
+完成上述创建与重命名后，作为示例的原ArkTS应用工程目录结构如下所示：
 
 ```text
 Project_name
@@ -42,10 +74,14 @@ Project_name
 └── oh-package-lock.json5
 ```
 
+> **说明：**
+>
+> 上图展示的是工程完成一次同步、编译构建后的目录结构。其中，`.hvigor`、`oh_modules` 以及各模块下的 `build` 等目录为工程同步或编译构建后自动生成，新建工程的初始目录中不包含这些内容。
+
 其中：
 
 - **entry** 是通过 **Empty Ability** 工程模板创建的ArkTS模块，该模块会被编译为HAP包。
-- **my_module** 是通过工程模板创建的ArkTS模块，该模块会被编译为HAR包，被**entry**模块依赖。**my_module** 模块可以通过 **Shared Library** 工程模板创建，也可以通过 **Static Library** 工程模板创建，下面示例代码通过 **Shared Library** 工程模板创建ArkTS共享库模块。
+- **my_module** 是通过 **Shared Library** 工程模板创建的ArkTS模块，该模块会被编译为HAR包，被**entry**模块依赖。
 
 **entry**和**my_module**模块内各有一个页面，通过Navigation进行页面路由。
 
@@ -121,16 +157,15 @@ Project_name
    │    ├── main
    │    │    ├── ets
    │    │    │    ├── pages
-   |    │    │    │    ├── Index.ets
    │    │    │    │    └── MyModulePage.ets
-   |    │    │    └── utils
+   │    │    │    └── utils
    │    │    ├── resources
    │    │    │    ├── base
    │    │    │    │    ├── element
-   |    │    │    │    ├── media
+   │    │    │    │    ├── media
    │    │    │    │    └── profile
-   │    │    │    │         ├──main_pages.json
-   │    │    │    │         └──router_map.json
+   │    │    │    │    │         ├── main_pages.json
+   │    │    │    │    │         └── router_map.json
    │    │    │    └── rawfile
    │    │    └── module.json5
    │    ├── ohosTest
@@ -143,6 +178,10 @@ Project_name
    ├── obfuscation-rules.txt
    └── oh-package.json5
    ```
+
+   > **说明：**
+   >
+   > 目录中的 `build` 为编译构建后自动生成的目录；`MyModulePage.ets`由模板生成的`Index.ets`重命名而来；`router_map.json`为手动新建的文件。
 
     - **my_module > src > main > ets > pages > MyModulePage.ets**文件的示例如下：
 
@@ -181,7 +220,7 @@ Project_name
    }
    ```
 
-    - **my_module > src > main > resources > base > profile > router_map.json**需要配置子页的路由信息，示例如下：
+    - 在`my_module > src > main > resources > base > profile`目录下新建`router_map.json`文件（若尚不存在），用于配置子页的路由信息，示例如下：
 
    ```json
    {
@@ -238,17 +277,17 @@ Project_name
     │    │    │    └── index.cj
     │    │    ├── ets
     │    │    │    ├── pages
-    |    │    │    |    ├── Index.ets
-    │    │    │    |    └── MyModulePage.ets
-    |    │    │    └── utils
+    │    │    │    │    ├── Index.ets
+    │    │    │    │    └── MyModulePage.ets
+    │    │    │    └── utils
     │    │    ├── resources
     │    │    │    └── base
-    │    │    │    |    ├── element
-    |    │    │    |    ├── media
-    │    │    │    |    └── profile
-    |    │    │    |         ├──main_pages.json
-    │    │    │    |         └── router_map.json
-    |    │    │    └── rawfile
+    │    │    │    │    ├── element
+    │    │    │    │    │    ├── media
+    │    │    │    │    │    └── profile
+    │    │    │    │    │    │         ├── main_pages.json
+    │    │    │    │    │    │         └── router_map.json
+    │    │    │    │    └── rawfile
     │    │    └── module.json5
     │    ├── ohosTest
     │    └── test
@@ -265,6 +304,10 @@ Project_name
 
 可以看出，**my_module**变成了一个仓颉-ArkTS混合模块。
 
+> **说明：**
+>
+> 使能仓颉后，`my_module > oh-package.json5`文件的 `dependencies` 字段中会自动添加仓颉相关依赖。若自动生成的依赖名与后文示例不一致（例如生成了`@cangjie/cjhybridview`），需要手动将其修改为`@cangjie/cjhybridcomponent`（版本号以实际为准），否则后续在ArkTS页面中导入 `CJHybridComponent` 组件时会报错。
+
 ### 在同一个工程内，纯ArkTS工程跨模块调用仓颉函数
 
 1. 在仓颉侧开发业务代码，并暴露接口给ArkTS。
@@ -272,13 +315,13 @@ Project_name
    在**Project**窗口，单击**my_module > src > main > cangjie**，打开**index.cj**文件，编写代码，示例如下：
 
    <!-- compile -->
-
    ```cangjie
    // index.cj
    package ohos_app_cangjie_my_module // 注意包名需要跟cjpm.toml里的[package] name字段保持相同
 
    import kit.ArkUI.*
    import kit.CangjieKit.*
+   import ohos.ark_interop_macro.*
    import std.core.sleep
    import std.core.Duration
 
@@ -331,13 +374,13 @@ Project_name
    >
    > 创建Cangjie Hybrid Ability混合工程之后，在模块下**my_module > oh-package.json5**文件中会自动将**libohos_app_cangjie_my_module**库添加到**dependencies**字段中作为依赖。
 
-3. 完成纯Arkts模块的**hvigorfile.ts**文件修改后，可以直接在ArkTS文件中引入.d.ts文件中接口的依赖。
+3. 使能仓颉时，`my_module > hvigorfile.ts`等构建配置已自动完成修改，无需手动调整。此时可以直接在ArkTS文件中引入.d.ts文件中接口的依赖。
 
    修改 **my_module > src > main > ets > pages > MyModulePage.ets**文件，示例代码如下：
 
    ```typescript
    // MyModulePage.ets
-   // 导入 libohos_app_cangjie_entry.so 中的 callSync 和 callAsync 接口
+   // 导入 libohos_app_cangjie_my_module.so 中的 callSync 和 callAsync 接口
    import cjlib from 'libohos_app_cangjie_my_module.so'
 
    @Builder
@@ -401,13 +444,15 @@ Project_name
 
 4. 使用真机或模拟器运行应用。
 
+   > **说明：**
+   >
+   > - 运行时启动的是**entry**模块：请在菜单栏选择**Run > Edit Configurations...**（运行 > 编译配置），在工程对应的运行配置中确认已勾选**entry**模块；若**application**下还包含**my_module**，请删除。否则应用虽可编译安装，但运行时会报**no ability has been launched**错误。
+   > - 使用真机或模拟器运行应用的具体步骤请参见[构建第一个仓颉与ArkTS混合应用](./cj-quick-start-first-cangjie-hybrid-app.md#使用真机或模拟器运行应用)。
+   > - 若在改造过程中（文件未全部修改完成时）执行过编译，建议完成本章节全部文件修改后，先在菜单栏选择**Build > Clean Project**清理项目，再重新构建运行，避免残留的构建缓存导致编译失败。
+
    应用编译安装成功后，先跳转到**MyModulePage**页面，再单击按钮触发函数调用，其效果如下：
 
    ![HybridExample2_ArkTSCallCangjieFunctionDemo](../../figures/HybridExample2_ArkTSCallCangjieFunctionDemo.gif)
-
-   > **说明：**
-   >
-   > 使用真机或模拟器运行应用的具体步骤请参见[构建第一个仓颉应用](./cj-quick-start-first-cangjie-hybrid-app.md#使用真机或模拟器运行应用)。
 
 ### 在同模块内，ArkTS页面嵌入仓颉组件
 
@@ -429,10 +474,10 @@ Project_name
         │    │    └── index.cj
         │    ├── ets
         │    │    ├── pages
-        │    │    |    ├── cangjie_page.ets
-        |    │    |    ├── Index.ets
-        │    │    |    └── MyModulePage.ets
-        |    |    └── utils
+        │    │    │    ├── cangjie_page.ets
+        │    │    │    ├── Index.ets
+        │    │    │    └── MyModulePage.ets
+        │    │    └── utils
         │    ├── resources
         │    └── module.json5
         ├── ohosTest
@@ -442,7 +487,6 @@ Project_name
     - 在仓颉页面中添加Text组件、Button组件等，并设置其样式。**cangjie_page.cj**文件的示例如下：
 
    <!-- compile -->
-
    ```cangjie
    // cangjie_page.cj
    package ohos_app_cangjie_my_module
@@ -478,13 +522,13 @@ Project_name
 
 2. 在ArkTS侧嵌入该仓颉页面。
 
-   在**Project**窗口，打开**my_module > src > main > pages**，修改**MyModulePage.ets**文件，示例如下：
+   在**Project**窗口，打开`my_module > src > main > ets > pages`，修改`MyModulePage.ets`文件，示例如下：
 
    ```typescript
    // MyModulePage.ets
    // 在 ArkTS 页面中嵌入仓颉页面
    import { CJHybridComponent } from '@cangjie/cjhybridcomponent'
-   // 导入 libohos_app_cangjie_entry.so 中的 callSync 和 callAsync 接口
+   // 导入 libohos_app_cangjie_my_module.so 中的 callSync 和 callAsync 接口
    import cjlib from 'libohos_app_cangjie_my_module.so'
 
    @Builder

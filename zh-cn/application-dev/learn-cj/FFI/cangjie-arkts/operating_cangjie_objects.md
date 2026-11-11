@@ -12,7 +12,7 @@
 
 1. 定义仓颉函数：
 
-    <!--compile-->
+    <!-- compile -->
     ```cangjie
     // 导入互操作库
     import kit.CangjieKit.*
@@ -85,17 +85,23 @@
     export declare function getDataId(data: undefined): number;
     ```
 
+    > **说明：**
+    >
+    > 通过 `JSModule.registerFunc`、`JSModule.registerClass` 注册的接口，**不会**自动生成 Index.d.ts 声明，需要参照上例手动编写声明文件。
+    >
+    > ArkTS 侧导入时，必须使用与声明一致的**具名导入**方式逐项导入接口（如下例所示）。不支持 `import cjLib from "libohos_app_cangjie_entry.so"` 形式的整体（默认）导入，该写法会报 `Module '"libohos_app_cangjie_entry.so"' has no exported member 'cjLib'` 错误。
+
 3. ArkTS 调用仓颉函数：
 
     ```typescript
     // 导入仓颉动态库，该动态库名称需与仓颉包名保持一致，且需和互操作接口所属包名一致
-    import cjLib from "libohos_app_cangjie_entry.so";
+    import { createData, setDataId, getDataId } from "libohos_app_cangjie_entry.so";
 
     // 创建共享对象
-    let data = cjLib.createData();
+    let data = createData();
     // 操作对象属性
-    cjLib.setDataId(data, 3);
-    let id = cjLib.getDataId(data);
+    setDataId(data, 3);
+    let id = getDataId(data);
 
     console.log("id is " + id);
     ```
@@ -105,11 +111,48 @@ JSExternal对象在ArkTS里的类型会被识别为undefined。若直接将undef
 ```typescript
 // ...
 // 创建共享对象
-let data = cjLib.createData();
+let data = createData();
 // 操作对象属性
-cjLib.setDataId(undefined, 3); // 错误的参数，应该传递的是仓颉引用，但是编译器能通过编译
-let id = cjLib.getDataId(data);
+setDataId(undefined, 3); // 错误的参数，应该传递的是仓颉引用，但是编译器能通过编译
+let id = getDataId(data);
 // ...
+```
+
+上文示例中的 `JSModule.registerFunc` 是在 class 的 `static init()` 中调用的。对于**不依赖任何类、直接定义在 class 外部的普通函数**，同样可以通过 `JSModule.registerFunc` 注册导出，直接在模块顶层调用即可，无需包装进 class，示例如下：
+
+<!-- compile -->
+```cangjie
+// 导入互操作库
+import kit.CangjieKit.*
+
+// 定义在 class 外部的普通函数，函数签名与互操作函数要求一致
+func add(context: JSContext, callInfo: JSCallInfo): JSValue {
+    // 读取参数并转换为Float64
+    let a = callInfo[0].toNumber()
+    let b = callInfo[1].toNumber()
+    // 返回计算结果
+    return context.number(a + b).toJSValue()
+}
+
+// 在模块顶层直接注册，仓颉模块加载时即可完成导出
+let _ = JSModule.registerFunc("add", add)
+```
+
+在 Index.d.ts 文件中，提供互操作的接口声明：
+
+```typescript
+// libohos_app_cangjie_entry.so 对应的 Index.d.ts
+export declare function add(a: number, b: number): number;
+```
+
+ArkTS 侧调用：
+
+```typescript
+// 导入仓颉动态库，该动态库名称需与仓颉包名保持一致，且需和互操作接口所属包名一致
+import { add } from "libohos_app_cangjie_entry.so";
+
+let result = add(1, 2);
+console.log("result is " + result);
 ```
 
 ## JSExternal
@@ -120,7 +163,7 @@ let id = cjLib.getDataId(data);
 
 ### 定义仓颉函数
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 // 导入互操作库
 import kit.CangjieKit.*
@@ -207,10 +250,10 @@ export declare function createData(): Data;
 
 ```typescript
 // 导入仓颉动态库，该动态库名称为仓颉包名的名称，该名称需要和互操作接口所在的包名一致
-import cjLib from "libohos_app_cangjie_entry.so";
+import { createData } from "libohos_app_cangjie_entry.so";
 
 // 创建共享对象
-let data = cjLib.createData();
+let data = createData();
 // 操作对象属性
 data.setId(3);
 let id = data.getId();
@@ -224,7 +267,7 @@ console.log("id is " + id);
 
 1. 定义仓颉函数：
 
-    <!--compile-->
+    <!-- compile -->
     ```cangjie
     // 导入互操作库
     import kit.CangjieKit.*
@@ -314,14 +357,14 @@ console.log("id is " + id);
 3. ArkTS 调用仓颉函数：
 
     ```typescript
-    // 导入仓颉动态库，该动态库名称为仓颉包名的名称，该名称需要和互操作接口所在的包名一致
-    import cjLib from "libohos_app_cangjie_entry.so";
+// 导入仓颉动态库，该动态库名称为仓颉包名的名称，该名称需要和互操作接口所在的包名一致
+import { Data } from "libohos_app_cangjie_entry.so";
 
-    // 创建共享对象
-    let data = new cjLib.Data();
-    // 操作对象属性
-    data.setId(3);
-    let id = data.getId();
+// 创建共享对象
+let data = new Data();
+// 操作对象属性
+data.setId(3);
+let id = data.getId();
 
-    console.log("id is " + id);
-    ```
+console.log("id is " + id);
+```

@@ -110,6 +110,7 @@ To reduce the complexity of interoperability development, Cangjie provides the d
 
 For Scenario 1, use the interoperability library to implement interfaces in Cangjie that can be called from ArkTS. Example:
 
+<!-- compile -->
 ```cangjie
 // Import the interoperability library
 import ohos.ark_interop.*
@@ -148,7 +149,10 @@ let result = addNumber(1, 2);
 
 This scenario can be simplified using the interoperability macro. For example, the Cangjie code above can be reduced to:
 
+<!-- compile -->
 ```cangjie
+import ohos.ark_interop_macro.*
+
 @Interop[ArkTS]
 public func addNumber(a: Float64, b: Float64): Float64 {
     a + b
@@ -159,7 +163,10 @@ public func addNumber(a: Float64, b: Float64): Float64 {
 
 For Scenario 2, use the interoperability library to load ArkTS modules and call interfaces. Example:
 
+<!-- compile -->
 ```cangjie
+import kit.CangjieKit.*
+
 func callInterop(x: Float64, y: Float64): Float64 {
     // Get the interoperability context
     let context: JSContext = JSRuntime().mainContext

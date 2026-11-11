@@ -31,7 +31,7 @@
 
 3. 调用代码生成工具生成仓颉封装层
 
-   a. 在oh_modules文件夹下面找到对应的lz4js三方库目录，打开目录下的.d.ts或.d.ets文件，在文件编辑界面中右键选择**Generate... > Cangjie Bindings**，生成仓颉封装层代码。
+   a. lz4js 的类型声明文件位于工程的 `oh_modules/@types/lz4js/` 目录下（注意：不是 `oh_modules/lz4js` 目录，后者存放的是三方库的实现代码），打开该目录下的 .d.ts 文件，在文件编辑界面中右键选择**Generate... > Cangjie Bindings**，生成仓颉封装层代码。
 
    ![hleMenu](../../figures/hleMenu.png)
 
@@ -63,11 +63,10 @@
 
     b. 在仓颉代码中调用仓颉封装库lz4cj的相应接口，以调用lz4js中的compress接口为例，修改**entry > src > main > cangjie > index.cj**文件为：
 
-     <!-- compile -->
-
      ```cangjie
      //index.cj
      import lz4cj.compress // 导入lz4cj库中的compress接口
+     import lz4cj.decompress // 导入lz4cj库中的decompress接口
 
      func testCJ() {
          ...
@@ -79,10 +78,18 @@
          0x64, 0x69, 0x6e, 0x67, 0x2e, 0x0a, 0x00, 0x00,
          0x00, 0x00, 0xbc, 0xa8, 0x6b, 0xc5
          ]
-         let result = compress(arr)
+         // 调用lz4js的compress接口压缩数据
+         let compressed = compress(arr)
+         // 调用lz4js的decompress接口解压数据
+         let decompressed = decompress(compressed)
          ...
      }
      ```
+
+    > **说明：**
+    >
+    > - 上例中，lz4js 类型声明里类型为 `Uint8Array`/`number[]` 的参数和返回值（如 compress/decompress 的入参出参），在生成的仓颉封装层中对应仓颉的 `Array<Byte>`；其余 ArkTS 类型与仓颉类型的转换关系，请参见[仓颉访问 ArkTS 数据](./cj-operating_ArkTS_data.md#使用方法)。
+    > - 生成的仓颉封装层内部基于仓颉-ArkTS 互操作机制实现。若需了解或手动编写互操作模块的注册规则（如 JSModule.registerModule / registerFunc），请参见[ArkTS 访问仓颉数据](./operating_cangjie_objects.md)和[仓颉-ArkTS 互操作库](./cj-arkts_interoperability_lib.md)。
 
     c. 由于互操作实现的一些限制原因，还需要开发者在ArkTS代码入口（如 Index.ets文件) 中手动传入ArkTS模块对象。
 
@@ -104,3 +111,20 @@
     globalThis.lz4cj_util = lz4js_util
     globalThis.lz4cj_xxh32 = lz4js_xxh32
     ```
+
+5. 仓颉侧与 ArkTS 侧调用 lz4js 的方式对比：
+
+   - 仓颉侧：通过生成的仓颉封装层 lz4cj 调用（见上文步骤 4），入参出参使用仓颉类型（如 `Array<Byte>`）。
+   - ArkTS 侧：可不经过仓颉封装层，直接 import 三方库调用，示例如下：
+
+   ```typescript
+   // Index.ets
+   // 直接导入 lz4js 三方库
+   import { compress, decompress } from "lz4js"
+
+   let arr: Uint8Array = new Uint8Array([0x04, 0x22, 0x4d])
+   // 压缩
+   let compressed = compress(arr)
+   // 解压
+   let decompressed = decompress(compressed)
+   ```

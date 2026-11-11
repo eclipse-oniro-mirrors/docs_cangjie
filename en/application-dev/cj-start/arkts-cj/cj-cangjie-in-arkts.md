@@ -51,6 +51,7 @@ After successfully inserting the Cangjie interoperation module into the ArkTS pr
    internal import ohos.ark_interop.JSContext
    internal import ohos.ark_interop.JSCallInfo
    internal import ohos.ark_interop.JSValue
+   internal import ohos.ark_interop_macro.*
    internal import cj_res_entry.app
 
    // User-defined function addF64, which takes two numbers as input and returns their sum

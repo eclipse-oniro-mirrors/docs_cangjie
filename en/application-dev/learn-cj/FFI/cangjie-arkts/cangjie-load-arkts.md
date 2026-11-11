@@ -27,7 +27,7 @@ public func requireArkModule(path: String): JSValue
 | Files in HAP Modules    | Module name/path under the module, e.g.: "entry/src/main/ets/Index" | Supports files in .ets, .ts and .js formats. The path does not include a suffix (applicable to all scenarios). |
 | Files in HAR Modules    | Module name/path under the module, e.g.: "myhar/src/main/ets/Index" | Supports (local \| remote \| ohpm) (source code \| binary) HAR (additional configuration required).           |
 | Files in HSP Modules    | Module name/path under the module, e.g.: "@ohos/lottie/src/main/js/main" | Supports (remote \| ohpm) HSP.                                                                                |
-| Native Modules          | lib\<module name>.so, e.g.: "libentry.so"                        | Supports (napi \| Cangjie) modules included in (HAR \| local HSP \| HAP).                                     |
+| Native Modules          | lib\<module name>.so, e.g.: "libentry.so"                        | Supports (NAPI \| Cangjie) modules included in (HAR \| local HSP \| HAP).                                     |
 
 ### Loading System Modules
 
@@ -188,7 +188,7 @@ func loadModule(context: JSContext): Unit {
 ```
 
 ### Loading Native Modules
-Native (napi | Cangjie) modules defined in HAP, HAR, and local HSP can all be loaded by their generated binary names.
+Native (NAPI | Cangjie) modules defined in HAP, HAR, and local HSP can all be loaded by their generated binary names.
 
 <!-- compile -->
 ```cangjie

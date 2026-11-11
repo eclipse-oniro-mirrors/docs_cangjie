@@ -11,10 +11,10 @@ Provides declarative interoperability macros between Cangjie and ArkTS, used to 
 ## Import Module
 
 ```cangjie
-import kit.CangjieKit.*
+import ohos.ark_interop_macro.*
 ```
 
-The interface capabilities of this module (ohos.ark_interop_macro) are encapsulated in CangjieKit and can be used after being imported through `import kit.CangjieKit.*`. For more details about importing Kits, see [Interface Usage Notes](../cj-development-intro.md#interface-usage-notes).
+To use the `@Interop` macro of this module, the macro package `ohos.ark_interop_macro` must be imported directly. Macros are expanded at compile time, and the compiler only recognizes directly imported macro packages; importing through a Kit package (re-export) is not supported.
 
 ## @Interop macro
 
@@ -26,8 +26,10 @@ public macro Interop(attrTokens: Tokens, input: Tokens): Tokens
 
 **Example:**
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
+import ohos.ark_interop_macro.*
+
 @Interop[ArkTS]
 public class MyCustomClass {
     public let name: String   // String implements JSInteropType<String>, so it can be used here.

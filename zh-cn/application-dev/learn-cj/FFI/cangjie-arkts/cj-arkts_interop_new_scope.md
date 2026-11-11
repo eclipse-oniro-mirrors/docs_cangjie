@@ -34,7 +34,7 @@ JSHeapObject是一个互操作类型，用于管理ArkTS对象的生命周期。
 
 通过接口JSContext.newScope创建一个上下文环境，并传入一个自定义的回调函数，该回调函数会在这个scope里执行。这组接口用于管理ArkTS对象的生命周期，确保在互操作模块代码处理ArkTS对象时能够正确地管理其句柄，以避免出现对象错误回收的问题。
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     context.postJSTask {

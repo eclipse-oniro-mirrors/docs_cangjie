@@ -21,7 +21,7 @@
 
     - 实现互操作接口 addNumber：
 
-        <!--compile-->
+        <!-- compile -->
         ```cangjie
         // entry/src/main/cangjie/index.cj
 
@@ -172,10 +172,9 @@
 
     - 实现互操作接口 addNumber：
 
-        <!--compile-->
+        <!-- compile -->
         ```cangjie
         // cangjielib/src/main/cangjie/index.cj
-        // 包名
         package ohos_app_cangjie_cangjielib
 
         // 导入文件
@@ -666,7 +665,7 @@
 
     - 实现互操作接口 addNumber：
 
-        <!--compile-->
+        <!-- compile -->
         ```cangjie
         // entry/src/main/cangjie/index.cj
 

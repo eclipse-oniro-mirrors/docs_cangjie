@@ -12,7 +12,7 @@
 
 仓颉代码：
 
-<!--compile.error-->
+<!-- run.error -->
 ```cangjie
 // 导入互操作库
 import kit.CangjieKit.*
@@ -46,7 +46,7 @@ let EXPORT_MODULE = JSModule.registerModule {
 
 仓颉代码：
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 // 导入互操作库
 import kit.CangjieKit.*
@@ -86,7 +86,7 @@ let EXPORT_MODULE = JSModule.registerModule {
 
 仓颉侧代码：
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 // 导入互操作库
 import kit.CangjieKit.*
@@ -124,7 +124,7 @@ function doSth(lib: CJLib): void {
 
 仓颉侧代码：
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 // 导入互操作库
 import kit.CangjieKit.*
@@ -170,7 +170,7 @@ function doSth(lib: CJLib): void {
 
 仓颉侧代码：
 
-<!--compile.error-->
+<!-- run.error -->
 ```cangjie
 // 导入互操作库
 import kit.CangjieKit.*
@@ -261,7 +261,7 @@ console.log("id is " + id);
 
 仓颉侧代码：
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 // 导入互操作库
 import kit.CangjieKit.*
@@ -370,7 +370,7 @@ console.log("id is " + id);
 
 仓颉侧代码：
 
-<!--compile.error-->
+<!-- run.error -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -440,7 +440,7 @@ data.callback = () => {
 
 假设上述场景为业务场景需要，那么开发者需要在 data.callback 执行完成之后及时将 data.callback 置空，即可解除环形引用。示例如下：
 
-<!--code_no_check-->
+<!-- compile -->
 ```cangjie
 // ...
 data.callback()
@@ -461,9 +461,10 @@ ArkTS 主线程中调用的仓颉接口时，仓颉代码中可能会通过 spaw
 
 仓颉侧代码：
 
-<!--compile.error-->
+<!-- run.error -->
 ```cangjie
 import kit.CangjieKit.*
+import ohos.ark_interop_macro.*
 import kit.ArkUI.UIThread
 
 @Interop[ArkTS]
@@ -506,7 +507,7 @@ struct Index {
 
 仓颉代码：
 
-<!--compile.error-->
+<!-- run.error -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -545,7 +546,7 @@ let EXPORT_MODULE = JSModule.registerModule {
 
 仓颉代码：
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -592,7 +593,7 @@ let EXPORT_MODULE = JSModule.registerModule {
 
 仓颉代码：
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.ArkUI.UIThread
@@ -639,7 +640,7 @@ let EXPORT_MODULE = JSModule.registerModule {
 
 仓颉代码：
 
-<!--compile.error-->
+<!-- run.error -->
 ```cangjie
 import kit.CangjieKit.*
 
