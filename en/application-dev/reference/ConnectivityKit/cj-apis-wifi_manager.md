@@ -1497,6 +1497,7 @@ public var eid: UInt32
 public class WifiDeviceConfig {
     public mut prop ssid: String
     public mut prop bssid: ?String
+    public mut prop bssidType: ?DeviceAddressType
     public mut prop preSharedKey: String
     public mut prop isHiddenSsid: ?Bool
     public mut prop securityType: WifiSecurityType
@@ -1578,6 +1579,20 @@ public mut prop bssid: ?String
 **Functionality:** BSSID of the hotspot, for example, 00:11:22:33:44:55.
 
 **Type:** ?String
+
+**System Capability:** SystemCapability.Communication.WiFi.STA
+
+**Initial Version:** 26.1.0
+
+### prop bssidType
+
+```cangjie
+public mut prop bssidType: ?DeviceAddressType
+```
+
+**Functionality:** BSSID type of the hotspot.
+
+**Type:** ?[DeviceAddressType](#enum-deviceaddresstype)
 
 **System Capability:** SystemCapability.Communication.WiFi.STA
 

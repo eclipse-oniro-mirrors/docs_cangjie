@@ -1452,6 +1452,7 @@ try {
 public class WifiDeviceConfig {
     public mut prop ssid: String
     public mut prop bssid: ?String
+    public mut prop bssidType: ?DeviceAddressType
     public mut prop preSharedKey: String
     public mut prop isHiddenSsid: ?Bool
     public mut prop securityType: WifiSecurityType
@@ -1533,6 +1534,20 @@ public mut prop bssid: ?String
 **功能：** 热点的BSSID，例如：00:11:22:33:44:55。
 
 **类型：** ?String
+
+**系统能力：** SystemCapability.Communication.WiFi.STA
+
+**起始版本：** 26.1.0
+
+### prop bssidType
+
+```cangjie
+public mut prop bssidType: ?DeviceAddressType
+```
+
+**功能：** 热点的BSSID类型。
+
+**类型：** ?[DeviceAddressType](#enum-deviceaddresstype)
 
 **系统能力：** SystemCapability.Communication.WiFi.STA
 
