@@ -147,7 +147,6 @@ func backgroundImageResizable(value: ?ResizableOptions): T
 > **说明：**
 >
 > - 仅ResizableOptions中的slice字段生效。slice字段的bottom和right同时大于0时，该属性生效；当设置top+bottom大于原图的高或者left+right大于原图的宽时，该属性设置不生效。
-> - value为None时，背景图按原图拉伸。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 

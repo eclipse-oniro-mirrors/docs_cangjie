@@ -147,7 +147,6 @@ func backgroundImageResizable(value: ?ResizableOptions): T
 > **Note:**
 >
 > - Only the slice field in ResizableOptions takes effect. The attribute takes effect only when both bottom and right of the slice field are greater than 0; when top + bottom is greater than the height of the original image or left + right is greater than the width of the original image, the attribute setting does not take effect.
-> - When value is None, the background image is stretched as the original image.
 
 **System Capability:** SystemCapability.ArkUI.ArkUI.Full
 

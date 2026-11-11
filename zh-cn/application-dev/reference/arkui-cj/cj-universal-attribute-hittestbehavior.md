@@ -6,7 +6,7 @@
 > 当前为Beta阶段。
 <!--DelEnd-->
 
-设置组件的[触摸测试](../../arkui-cj/cj-common-events-distribute.md#触摸测试)模式。在ArkUI开发框架中，处理触屏事件和鼠标事件时，会在事件触发前进行按压点与组件响应热区的触摸测试，以收集需响应事件的组件。基于测试结果，框架会向通过触摸测试的组件分发事件。当组件存在重叠、穿透等触摸响应冲突时，可通过hitTestBehavior属性设置不同的触摸测试响应模式，影响触摸测试收集结果及后续事件分发，避免不必要的触摸响应。具体影响参考[HitTestMode](./cj-common-types.md#enum-hittestmode)枚举说明。
+设置组件的[触摸测试](../../arkui-cj/cj-common-events-distribute.md#触摸测试)模式。在ArkUI开发框架中，处理触屏事件和鼠标事件时，会在事件触发前进行按压点与组件响应热区的触摸测试，以收集需响应事件的组件。基于测试结果，框架会向通过触摸测试的组件分发事件。当组件存在重叠、穿透等触摸响应冲突时，可通过hitTestBehavior属性设置不同的触摸测试响应模式，影响触摸测试收集结果及后续事件分发，避免不必要的触摸响应。具体影响参考[HitTestMode](./cj-common-types.md#enum-hittestmode)枚举说明。影响[点击事件](./cj-universal-event-click.md)、[触摸事件](./cj-universal-event-touch.md)、[鼠标事件](./cj-universal-event-mouse.md)、[悬浮事件](./cj-universal-event-hover.md)和[手势事件](./cj-universal-attribute-gesture.md)的分发。
 
 > **说明：**
 >

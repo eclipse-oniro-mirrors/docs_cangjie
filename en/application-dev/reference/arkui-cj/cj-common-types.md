@@ -5852,7 +5852,16 @@ public class ResizableOptions {
 public var slice: ?EdgeWidths
 ```
 
-**Function:** Edge widths type, used to describe the widths of a component border in different directions.<br>**Note:**<br>This attribute takes effect only when both bottom and right are greater than 0.<br>When top is set, the top part of the image is stretched while the pixel values of the image remain unchanged.<br>When right is set, the right part of the image is stretched while the pixel values of the image remain unchanged.<br>When bottom is set, the bottom part of the image is stretched while the pixel values of the image remain unchanged.<br>When left is set, the left part of the image is stretched while the pixel values of the image remain unchanged.<br>The default width of each direction is 0. The default unit is vp when a number is passed in.
+**Function:** Edge widths type, used to describe the widths of a component border in different directions.
+
+> **Note:**
+>
+> - This attribute takes effect only when both bottom and right are greater than 0.
+> - When top is set, the top part of the image is stretched while the pixel values of the image remain unchanged.
+> - When right is set, the right part of the image is stretched while the pixel values of the image remain unchanged.
+> - When bottom is set, the bottom part of the image is stretched while the pixel values of the image remain unchanged.
+> - When left is set, the left part of the image is stretched while the pixel values of the image remain unchanged.
+> - The default width of each direction is 0. The default unit is vp when a number is passed in.
 
 **Type:** ?[EdgeWidths](#class-edgewidths)
 
