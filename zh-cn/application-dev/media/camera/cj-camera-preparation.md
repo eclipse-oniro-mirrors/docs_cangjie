@@ -20,7 +20,7 @@
 
 > **说明：**
 >
-> 仅应用需要克隆、备份或同步用户公共目录的图片、视频类文件时，可申请ohos.permission.READ_IMAGEVIDEO、ohos.permission.WRITE_IMAGEVIDEO权限来读写音频文件，申请方式请参见<!--RP1-->[申请受控权限](../../security/AccessToken/cj-declare-permissions-in-acl.md)。<!--RP1End-->
+> 仅应用需要克隆、备份或同步用户公共目录的图片、视频类文件时，可申请ohos.permission.READ_IMAGEVIDEO、ohos.permission.WRITE_IMAGEVIDEO权限来读写图片视频文件，申请方式请参见<!--RP1-->[申请受控权限](../../security/AccessToken/cj-declare-permissions-in-acl.md)<!--RP1End-->。
 
 ## 开发指导
 
@@ -28,4 +28,4 @@
 | ------- | ------------- |
 | 设备输入 | [设备输入](./cj-camera-device-input.md) |
 | 会话管理 | [会话管理](./cj-camera-session-management.md) |
-| 元数据 | 元数据 |
+| 元数据 | [元数据](./cj-camera-metadata.md) |
