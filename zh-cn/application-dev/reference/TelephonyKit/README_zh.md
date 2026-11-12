@@ -2,5 +2,7 @@
 
 - 仓颉API
     - [ohos.telephony.call（拨打电话）](cj-apis-telephony-call.md)（Beta特性）
+    - [ohos.telephony.radio（网络搜索）](cj-apis-telephony-radio.md)（Beta特性）
+    - [ohos.telephony.sim（SIM卡管理）](cj-apis-telephony-sim.md)（Beta特性）
 - 错误码
     - [电话子系统错误码](cj-errorcode-telephony.md)（Beta特性）
