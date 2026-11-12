@@ -66,9 +66,9 @@ public init(fingers!: ?Int32 = Option<Int32>.None, direction!: ?PanDirection = O
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|fingers|?Int32|是|-| **命名参数。** 触发滑动的最少手指数。<br>取值范围：[1, 10]<br>默认值：1<br>**说明：**<br>当设置的值小于1、大于10或不设置时，使用默认值。|
-|direction|?[PanDirection](./cj-common-types.md#enum-pandirection)|是|-| **命名参数。** 触发滑动的手势方向，该枚举值支持逻辑与（&amp;）和逻辑或（\|）运算。<br>默认值：PanDirection.All|
-|distance|?Float64|是|-| **命名参数。** 触发滑动手势事件的最小滑动距离，单位为vp。<br>取值范围：[0, +∞)<br>默认值：5.0<br>**说明：**<br>[Tabs](./cj-navigation-switching-tabs.md)组件滑动与该滑动手势事件同时存在时，可将distance值设为1，使滑动更灵敏，避免滑动手势与Tabs组件滑动事件的响应结果不符合预期。<br>当设定的值小于0时，按默认值处理。<br>当组件应用了[scale](./cj-universal-attribute-transform.md#func-scalefloat32-float32-float32-length-length)缩放变换时，distance的实际识别距离会按照scale比例进行缩放。|
+|fingers|?Int32|否|Option\<Int32>.None| **命名参数。** 触发滑动的最少手指数。<br>取值范围：[1, 10]<br>初始值：1<br>**说明：**<br>当设置的值小于1、大于10或不设置时，使用默认值。|
+|direction|?[PanDirection](./cj-common-types.md#enum-pandirection)|否|Option\<PanDirection>.None| **命名参数。** 触发滑动的手势方向，该枚举值支持逻辑与（&amp;）和逻辑或（\|）运算。<br>初始值：PanDirection.All|
+|distance|?Float64|否|Option\<Float64>.None| **命名参数。** 触发滑动手势事件的最小滑动距离，单位为vp。<br>取值范围：[0, +∞)<br>初始值：5.0<br>**说明：**<br>[Tabs](./cj-navigation-switching-tabs.md)组件滑动与该滑动手势事件同时存在时，可将distance值设为1，使滑动更灵敏，避免滑动手势与Tabs组件滑动事件的响应结果不符合预期。<br>当设定的值小于0时，按默认值处理。<br>当组件应用了[scale](./cj-universal-attribute-transform.md#func-scalefloat32-float32-float32-length-length)缩放变换时，distance的实际识别距离会按照scale比例进行缩放。|
 
 ### func onActionStart((GestureEvent) -> Unit)
 
