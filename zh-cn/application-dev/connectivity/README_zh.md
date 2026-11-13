@@ -6,3 +6,4 @@
     - [蓝牙服务开发概述](bluetooth/cj-bluetooth-overview.md)（Beta特性）
     - [查找设备](bluetooth/cj-ble-development-guide.md)（Beta特性）
     - [连接和传输数据](bluetooth/cj-gatt-development-guide.md)（Beta特性）
+    - [通过SPP连接和传输数据](bluetooth/cj-spp-development-guide.md)（Beta特性）

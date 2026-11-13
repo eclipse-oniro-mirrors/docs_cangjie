@@ -31,6 +31,12 @@
 
   详情请参见[ohos.bluetooth.a2dp API参考](../reference/ConnectivityKit/cj-apis-bluetooth-a2dp.md)。
 
+- **socket模块（蓝牙socket）**
+
+  socket模块提供蓝牙套接字（socket）能力，支持RFCOMM（对应串口通信协议SPP）与L2CAP链路类型，用于在两个蓝牙设备之间建立点对点连接并传输数据，通信双方按角色分为服务端与客户端。
+
+  详情请参见[ohos.bluetooth.socket API参考](../reference/ConnectivityKit/cj-apis-bluetooth-socket.md)。
+
 相关开发指南请参见：[蓝牙开发指南](./bluetooth/cj-bluetooth-overview.md)。
 
 ### WLAN简介
