@@ -70,7 +70,7 @@ Cangjie APIs were first released with OpenHarmony 6.x and will continue to expan
   * Sensor Service Kit (sensor services): Provides high-performance sensor data processing.
   * Basic Services Kit (basic services): Includes power management, event notifications, startup recovery, upload/download, and settings for application runtime.
   * Performance Analysis Kit (performance analysis services): Offers application tracing and event subscription for runtime.
-  * Telephony Kit (cellular communication services): Provides basic call management for application runtime.
+  * Telephony Kit (cellular communication services): Provides call management, cellular network information queries, and SIM card type and state enums.
   * Test Kit (application testing services): Offers testing and debugging frameworks for application runtime.
 * **Media**
   
