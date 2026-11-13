@@ -85,7 +85,7 @@ Before reading this document, it is recommended that developers have a basic und
 
 ### @Watch and Custom Component Updates
 
-The following example demonstrates the steps for component updates and @Watch handling. `count` is decorated with @State in `CountModifier` and with @Link in `TotalView`.
+The following example demonstrates the steps for component updates and @Watch handling. `count` is decorated with @State in `EntryView` and with @Link in `TotalView`.
 
  <!-- run -->
 
