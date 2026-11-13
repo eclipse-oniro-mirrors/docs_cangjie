@@ -48,6 +48,30 @@ Common Events: All supported.
 
 ## Component Attributes
 
+### func mark(?ResourceColor, ?Length, ?Length)
+
+```cangjie
+public func mark(
+    strokeColor!: ?ResourceColor = None,
+    size!: ?Length = None,
+    strokeWidth!: ?Length = None
+): This
+```
+
+**Function:** Sets the style of the check mark inside the checkbox.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since Version:** 26.1.0
+
+**Parameters:**
+
+| Parameter | Type | Required | Default | Description |
+|:---|:---|:---|:---|:---|
+| strokeColor | ?[ResourceColor](cj-common-types.md) | No | None | Color of the internal icon. |
+| size | ?Length | No | None | Size of the internal icon, in vp. The default size is the same as the width of the checkbox component. Percentage values are not supported. If an invalid value is set, the default value is used. |
+| strokeWidth | ?Length | No | None | Thickness of the internal icon, in vp. Percentage values are not supported. If an invalid value is set, the default value is used. Default value: 2.vp. |
+
 ### func selectAll(?Bool)
 
 ```cangjie
@@ -321,3 +345,67 @@ class EntryView {
 ```
 
 ![checkbox_group2](figures/checkbox_group2.gif)
+
+### Example 3 (Customizing the Check Mark Style)
+
+This example uses the [mark](#func-markresourcecolor-length-length) API to set the internal icon style of the **CheckboxGroup** and **Checkbox** components.
+
+<!-- run -->
+
+```cangjie
+package ohos_app_cangjie_entry
+
+import kit.ArkUI.*
+import ohos.arkui.state_macro_manage.*
+
+@Entry
+@Component
+class EntryView {
+    func build() {
+        Row() {
+            Column() {
+                Flex(justifyContent: FlexAlign.Center, alignItems: ItemAlign.Center) {
+                    CheckboxGroup(group: "checkboxGroup")
+                        .selectedColor(Color.Orange)
+                        .mark(strokeColor: Color.Black, size: 40, strokeWidth: 5)
+                        .onChange({ val =>
+                            Hilog.info(0, "CangjieTest", "checkbox group content changed")
+                        })
+                        .width(30)
+                        .height(30)
+                    Text("Select All").fontSize(20)
+                }.margin(right: 15)
+                Flex(justifyContent: FlexAlign.Center, alignItems: ItemAlign.Center) {
+                    Checkbox(name: "checkbox1", group: "checkboxGroup")
+                        .selectedColor(0x39A2DB)
+                        .mark(strokeColor: Color.Black, size: 50, strokeWidth: 5)
+                        .onChange({ value: Bool =>
+                            Hilog.info(0, "CangjieTest", "checkbox1 change is ${value}")
+                        })
+                    Text("checkbox1").fontSize(20)
+                }
+                Flex(justifyContent: FlexAlign.Center, alignItems: ItemAlign.Center) {
+                    Checkbox(name: "checkbox2", group: "checkboxGroup")
+                        .selectedColor(0x39A2DB)
+                        .shape(CheckBoxShape.RoundedSquare)
+                        .onChange({ value: Bool =>
+                            Hilog.info(0, "CangjieTest", "checkbox2 change is ${value}")
+                        })
+                    Text("checkbox2").fontSize(20)
+                }
+                Flex(justifyContent: FlexAlign.Center, alignItems: ItemAlign.Center) {
+                    Checkbox(name: "checkbox3", group: "checkboxGroup")
+                        .selectedColor(0x39A2DB)
+                        .shape(CheckBoxShape.RoundedSquare)
+                        .onChange({ value: Bool =>
+                            Hilog.info(0, "CangjieTest", "checkbox3 change is ${value}")
+                        })
+                    Text("checkbox3").fontSize(20)
+                }
+            }
+        }
+    }
+}
+```
+
+![checkboxGroup3](figures/checkboxGroup3.png)

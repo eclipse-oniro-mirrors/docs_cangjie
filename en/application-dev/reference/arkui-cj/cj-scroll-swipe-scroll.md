@@ -87,6 +87,25 @@ Universal Events: In addition to supporting universal events, it also supports [
 
 ## Component Attributes
 
+### func edgeEffect(?EdgeEffect, ?EdgeEffectOptions)
+
+```cangjie
+public func edgeEffect(edgeEffect: ?EdgeEffect, options!: ?EdgeEffectOptions = None): This
+```
+
+**Function:** Sets the effect used when the scroll boundary is reached, and configures the effective edges of the effect and its behavior when the content is smaller than the component.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+| Parameter | Type | Required | Default | Description |
+|:---|:---|:---|:---|:---|
+| edgeEffect | ?[EdgeEffect](cj-common-types.md#enum-edgeeffect) | Yes | - | Effect used when the scroll boundary is reached. Initial value: EdgeEffect.None. |
+| options | ?[EdgeEffectOptions](cj-common-types.md#class-edgeeffectoptions) | No | None | Configuration of the edge effect. Initial value: EdgeEffectOptions(true), which means the scroll effect is enabled when the component content is smaller than the component itself. |
+
 ### func scrollable(?ScrollDirection)
 
 ```cangjie
@@ -788,12 +807,16 @@ public init(extraOffset!: ?Length = None)
 ### class Scroller
 
 ```cangjie
-public class Scroller {
+public open class Scroller {
     public init()
 }
 ```
 
 **Function:** Defines a controller for scrollable container components.
+
+> **NOTE**
+>
+> Scroller is declared as an open class from API version 26.1.0, allowing it to be extended through inheritance — for example, [ListScroller](./cj-scroll-swipe-list.md#class-listscroller).
 
 **System Capability:** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1090,7 +1113,9 @@ public func getItemIndex(x: Float64, y: Float64): Int32
 
 | Type | Description |
 |:---|:---|
-| Int32 | Index of the child component. |### enum ScrollAlign
+| Int32 | Index of the child component. |
+
+### enum ScrollAlign
 
 ```cangjie
 public enum ScrollAlign <: Equatable<ScrollAlign> {
@@ -1365,7 +1390,7 @@ public type OnScrollEdgeCallback = (Edge) -> Unit
 
 ## Example Code
 
-### Example Code 1 (Setting the Scroller Controller)
+### Example 1 (Setting the Scroller Controller)
 
 This example demonstrates the use of some properties of the Scroll component and the scroller controller.
 
@@ -1494,7 +1519,9 @@ class EntryView {
 }
 ```
 
-![scroll1](figures/scroll1.gif)### Sample Code 2 (Nested Scrolling Implementation Method 1)
+![scroll1](figures/scroll1.gif)
+
+### Example 2 (Nested Scrolling Implementation Method 1)
 
 This example implements nested scrolling between an inner List component and an outer Scroll component using the `onScrollFrameBegin` event.
 
@@ -1597,7 +1624,7 @@ class EntryView {
 
 ![scroll2](figures/scroll2.gif)
 
-### Sample Code 3 (Nested Scrolling Implementation Method 2)
+### Example 3 (Nested Scrolling Implementation Method 2)
 
 This example implements nested scrolling between an inner List component and an outer Scroll component using the `nestedScroll` attribute.
 
@@ -1673,7 +1700,7 @@ class EntryView {
 
 ![scroll3](figures/scroll3.gif)
 
-### Sample Code 4 (Parent-to-Child Scroll Propagation)
+### Example 4 (Parent-to-Child Scroll Propagation)
 
 This example implements scroll propagation from parent to child components using the `enableScrollInteraction` attribute and `onScrollFrameBegin` event.
 
@@ -1802,7 +1829,7 @@ class EntryView {
 
 ![scroll4](figures/scroll4.gif)
 
-### Sample Code 5 (Setting Scroll Limits)
+### Example 5 (Setting Scroll Limits)
 
 This example implements scroll limiting for the Scroll component.
 
@@ -1843,7 +1870,7 @@ class EntryView {
 
 ![scroll5](figures/scroll5.gif)
 
-## Sample Code 6 (Setting Edge Fading Effect)
+## Example 6 (Setting Edge Fading Effect)
 
 This example implements edge fading effect for the Scroll component and sets the fading edge length.
 
@@ -1890,3 +1917,51 @@ class EntryView {
 ```
 
 ![scroll7](./figures/scroll7.gif)
+
+
+### Example 7 (Single-Side Edge Effect)
+
+This example uses the [edgeEffect](#func-edgeeffectedgeeffect-edgeeffectoptions) API to set a single-side edge effect for the **Scroll** component.
+
+<!-- run -->
+
+```cangjie
+package ohos_app_cangjie_entry
+
+import kit.ArkUI.*
+import ohos.arkui.state_macro_manage.*
+
+@Entry
+@Component
+class EntryView {
+    let scroller = Scroller()
+
+    func build() {
+        Stack(alignContent: Alignment.TopStart) {
+            Scroll(this.scroller) {
+                Column() {
+                    ForEach([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+                        itemGeneratorFunc: {
+                            item: Int64, _: Int64 => Text("${item}")
+                                .width(90.percent)
+                                .height(150)
+                                .backgroundColor(0xFFFFFF)
+                                .borderRadius(15)
+                                .fontSize(16)
+                                .textAlign(TextAlign.Center)
+                                .margin(top: 10)
+                        })
+                }
+                .width(100.percent)
+            }
+            .edgeEffect(EdgeEffect.Spring, options: EdgeEffectOptions(true, effectEdge: 1))
+        }
+        .width(100.percent)
+        .height(100.percent)
+        .backgroundColor(0xDCDCDC)
+    }
+}
+```
+
+
+![edgeEffect_scroll](figures/edgeEffect_scroll.png)

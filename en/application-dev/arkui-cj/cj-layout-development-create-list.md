@@ -769,3 +769,30 @@ Implementation steps:
     }
     ```
 ```
+
+## Setting the Edge Sliding Effect
+
+The edge sliding effect refers to the interaction effect triggered when the user continues to scroll after scrolling the list to its edge. Currently, the List supports setting the edge sliding effect through the [edgeEffect](../reference/arkui-cj/cj-scroll-swipe-list.md) attribute. The value is of the [EdgeEffect](../reference/arkui-cj/cj-common-types.md#enum-edgeeffect) enum: the spring effect (that is, the bounce effect), the shadow effect, and no effect. For details, see the enum description of [EdgeEffect](../reference/arkui-cj/cj-common-types.md#enum-edgeeffect).
+
+When the content area of the List component is larger than or equal to one screen, the default edge sliding effect of the List is the bounce effect, as shown below.
+
+**Figure 18** Spring edge effect
+
+![edge_effect_spring](figures/edge_effect_spring.gif)
+
+
+When .edgeEffect(EdgeEffect.None) is set, the List has no edge sliding effect, as shown below.
+
+**Figure 19** No edge effect
+
+![edge_effect_none](figures/edge_effect_none.gif)
+
+
+The List also supports setting the edge sliding effect for a single edge only. For example, .edgeEffect(EdgeEffect.Spring, options: EdgeEffectOptions(true, effectEdge: 1)) applies the spring edge effect only to the start edge, as shown below.
+
+**Figure 20** Single-side edge effect
+
+![edge_effect_spring_start](figures/edge_effect_spring_start.gif)
+
+
+Note: By default, the List component can produce a bounce effect only when there is more than one screen of content. To produce a bounce effect when there is less than one screen of content, configure .edgeEffect(EdgeEffect.Spring, options: EdgeEffectOptions(true)).

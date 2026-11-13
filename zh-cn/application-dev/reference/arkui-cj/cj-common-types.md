@@ -4045,6 +4045,79 @@ public init(left!: ?HorizontalAlignParam = None, right!: ?HorizontalAlignParam =
 |center|?[VerticalAlignParam](#class-verticalalignparam)|否|None|**命名参数。** 设置组件垂直居中对齐方式。|
 |bias|?[Bias](#class-bias)|否|None|**命名参数。** 设置组件对齐的偏移量。初始值为Bias()。|
 
+## class EdgeEffectOptions
+
+```cangjie
+public class EdgeEffectOptions {
+    public var alwaysEnabled: Bool
+    public var effectEdge: ?Int32
+    public init(
+        alwaysEnabled: Bool,
+        effectEdge!: ?Int32 = None
+    )
+}
+```
+
+**功能：** [edgeEffect](./cj-scroll-swipe-list.md#func-edgeeffectedgeeffect-edgeeffectoptions)属性参数对象。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+### var alwaysEnabled
+
+```cangjie
+public var alwaysEnabled: Bool
+```
+
+**功能：** 组件内容尺寸小于组件自身尺寸时，是否启用边缘滑动效果。true：启用；false：不启用。
+
+**类型：** Bool
+
+**读写能力：** 可读写
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+### var effectEdge
+
+```cangjie
+public var effectEdge: ?Int32
+```
+
+**功能：** 设置边缘效果生效的边缘。取值为1表示只有起始边生效，取值为2表示只有末尾边生效。默认值为None，表示起始边和末尾边同时生效。设置为其它异常值时，默认起始边和末尾边同时生效。如果需要起始边和末尾边都不生效，可将edgeEffect设置为EdgeEffect.None。
+
+**类型：** ?Int32
+
+**读写能力：** 可读写
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+### init(Bool, ?Int32)
+
+```cangjie
+public init(
+    alwaysEnabled: Bool,
+    effectEdge!: ?Int32 = None
+)
+```
+
+**功能：** 构造函数，用于创建一个EdgeEffectOptions对象。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|alwaysEnabled|Bool|是|-|组件内容尺寸小于组件自身尺寸时，是否启用边缘滑动效果。|
+|effectEdge|?Int32|否|None|设置边缘效果生效的边缘。取值为1表示只有起始边生效，取值为2表示只有末尾边生效。默认值为None，表示起始边和末尾边同时生效。设置为其它异常值时，默认起始边和末尾边同时生效。如果需要起始边和末尾边都不生效，可将edgeEffect设置为EdgeEffect.None。|
+
 ## class EdgeStyles
 
 ```cangjie
@@ -14523,6 +14596,7 @@ public operator func !=(other: Direction): Bool
 public enum ScrollDirection <: Equatable<ScrollDirection> {
     | Vertical
     | Horizontal
+    | None
     | ...
 }
 ```
@@ -14560,6 +14634,18 @@ Horizontal
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **起始版本：** 22
+
+### None
+
+```cangjie
+None
+```
+
+**功能：** 不支持滚动。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
 
 ### operator func ==(ScrollDirection)
 

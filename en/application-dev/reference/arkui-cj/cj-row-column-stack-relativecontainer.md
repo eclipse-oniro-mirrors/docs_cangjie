@@ -68,6 +68,24 @@ public func barrier(value: ?Array<BarrierStyle>): This
 |:---|:---|:---|:---|:---|
 | value | ?Array\<[BarrierStyle](#class-barrierstyle)> | Yes | - | Barriers within the RelativeContainer. Initial value: []. |
 
+### func barrier(Array\<LocalizedBarrierStyle>)
+
+```cangjie
+public func barrier(value: Array<LocalizedBarrierStyle>): This
+```
+
+**Function:** Sets barriers with mirror mode support in the RelativeContainer. Each item in the Array is a barrier.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+| Parameter | Type | Required | Default Value | Description |
+|:---|:---|:---|:---|:---|
+| value | Array\<[LocalizedBarrierStyle](#class-localizedbarrierstyle)> | Yes | - | Barriers in the RelativeContainer, with mirror mode support for barrier lines. |
+
 ### func guideLine(?Array\<GuideLineStyle>)
 
 ```cangjie
@@ -324,6 +342,211 @@ public init(id: ?String, direction: ?Axis, position: ?GuideLinePosition)
 | id | ?String | Yes | - | The guideline's ID, which must be unique and cannot duplicate any component names within the container. Initial value: "". |
 | direction | ?[Axis](cj-common-types.md#enum-axis) | Yes | - | Specifies the guideline's direction. Vertical guidelines can only serve as horizontal anchor points (value is 0 when used as vertical anchor points). Horizontal guidelines can only serve as vertical anchor points (value is 0 when used as horizontal anchor points). Initial value: Axis.Vertical. |
 | position | ?[GuideLinePosition](#class-guidelineposition) | Yes | - | Specifies the guideline's position. If undeclared or declared with an invalid value, the initial position is start: 0. Either `start` or `end` declaration can be used. If both are declared, only `start` takes effect. Initial value: {start: 0}. |
+
+### class LocalizedBarrierStyle
+
+```cangjie
+public class LocalizedBarrierStyle {
+    public var id: String
+    public var localizedDirection: LocalizedBarrierDirection
+    public var referencedId: Array<String>
+    public init(id: String, localizedDirection: LocalizedBarrierDirection,
+        referencedId: Array<String>)
+}
+```
+
+**Function:** Barrier parameter, used to define the ID, direction, and referenced components of a barrier with mirror mode support. A child component can reference the barrier by its ID and use the barrier as an anchor for aligned positioning.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+#### var id
+
+```cangjie
+public var id: String
+```
+
+**Function:** ID of the barrier, used to identify the barrier. A child component can reference this ID to use the barrier as an anchor. The ID must be unique and must not duplicate the name of any component in the container.
+
+**Type:** String
+
+**Access:** Read-write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+#### var localizedDirection
+
+```cangjie
+public var localizedDirection: LocalizedBarrierDirection
+```
+
+**Function:** Direction of the barrier. A horizontal barrier line (**Top**/**Bottom**) can be used only as a vertical directional anchor (**top** or **bottom**) of a component. When it is used as a horizontal directional anchor, its position is treated as **0**. A vertical barrier line (**Start**/**End**, supporting LTR/RTL mirroring) can be used only as a horizontal directional anchor (**start** or **end**) of a component. When it is used as a vertical directional anchor, its position is treated as **0**.
+
+**Type:** [LocalizedBarrierDirection](#enum-localizedbarrierdirection)
+
+**Access:** Read-write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+#### var referencedId
+
+```cangjie
+public var referencedId: Array<String>
+```
+
+**Function:** Components on which the barrier is generated. Put the IDs of the components that serve as the barrier reference into the array. The array must contain at least one valid component ID. IDs that do not exist are ignored. For a barrier that supports mirror mode, the barrier position is calculated based on the actual position in LTR/RTL mode.
+
+**Type:** Array\<String>
+
+**Access:** Read-write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+#### init(String, LocalizedBarrierDirection, Array\<String>)
+
+```cangjie
+public init(id: String, localizedDirection: LocalizedBarrierDirection,
+    referencedId: Array<String>)
+```
+
+**Function:** Constructor used to create a LocalizedBarrierStyle object.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+| Parameter | Type | Required | Default Value | Description |
+|:---|:---|:---|:---|:---|
+| id | String | Yes | - | ID of the barrier, used to identify the barrier. A child component can reference this ID to use the barrier as an anchor. The ID must be unique and must not duplicate the name of any component in the container. |
+| localizedDirection | [LocalizedBarrierDirection](#enum-localizedbarrierdirection) | Yes | - | Direction of the barrier. A horizontal barrier line (**Top**/**Bottom**) can be used only as a vertical directional anchor (**top** or **bottom**) of a component. When it is used as a horizontal directional anchor, its position is treated as **0**. A vertical barrier line (**Start**/**End**, supporting LTR/RTL mirroring) can be used only as a horizontal directional anchor (**start** or **end**) of a component. When it is used as a vertical directional anchor, its position is treated as **0**. |
+| referencedId | Array\<String> | Yes | - | Components on which the barrier is generated. Put the IDs of the components that serve as the barrier reference into the array. The array must contain at least one valid component ID. IDs that do not exist are ignored. For a barrier that supports mirror mode, the barrier position is calculated based on the actual position in LTR/RTL mode. |
+
+### enum LocalizedBarrierDirection
+
+```cangjie
+public enum LocalizedBarrierDirection <: Equatable<LocalizedBarrierDirection> {
+    | Start
+    | End
+    | Top
+    | Bottom
+    | ...
+}
+```
+
+Enumerates the directions of barriers with mirror mode support.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+**Parent Type:**
+
+- Equatable\<[LocalizedBarrierDirection](#enum-localizedbarrierdirection)>
+
+#### Start
+
+```cangjie
+Start
+```
+
+**Function:** The barrier is on the start side of all its referenced components, that is, the leftmost side in LTR mode and the rightmost side in RTL mode.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+#### End
+
+```cangjie
+End
+```
+
+**Function:** The barrier is on the end side of all its referenced components, that is, the rightmost side in LTR mode and the leftmost side in RTL mode.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+#### Top
+
+```cangjie
+Top
+```
+
+**Function:** The barrier is at the top of all the referenced components.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+#### Bottom
+
+```cangjie
+Bottom
+```
+
+**Function:** The barrier is at the bottom of all the referenced components.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+#### operator func ==(LocalizedBarrierDirection)
+
+```cangjie
+public operator func ==(other: LocalizedBarrierDirection): Bool
+```
+
+**Function:** Checks whether two LocalizedBarrierDirection enums are equal.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+| Parameter | Type | Required | Default Value | Description |
+|:---|:---|:---|:---|:---|
+| other | [LocalizedBarrierDirection](#enum-localizedbarrierdirection) | Yes | - | The other LocalizedBarrierDirection enum to compare. |
+
+**Return Value:**
+
+| Type | Description |
+|:---|:---|
+| Bool | Returns true if the two enums are equal; returns false otherwise. |
+
+#### operator func !=(LocalizedBarrierDirection)
+
+```cangjie
+public operator func !=(other: LocalizedBarrierDirection): Bool
+```
+
+**Function:** Checks whether two LocalizedBarrierDirection enums are not equal.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+| Parameter | Type | Required | Default Value | Description |
+|:---|:---|:---|:---|:---|
+| other | [LocalizedBarrierDirection](#enum-localizedbarrierdirection) | Yes | - | The other LocalizedBarrierDirection enum to compare. |
+
+**Return Value:**
+
+| Type | Description |
+|:---|:---|
+| Bool | Returns true if the two enums are not equal; returns false otherwise. |
 
 ## Example Code
 
@@ -597,3 +820,92 @@ class EntryView {
 ```
 
 ![relativecontainer6](./figures/relativecontainer5.PNG)
+
+### Example 6 (Setting Barriers in Mirror Mode)
+
+This example shows how to set barriers using **LocalizedBarrierStyle** and **LocalizedBarrierDirection** through the [barrier](#func-barrierarraylocalizedbarrierstyle) API in mirror mode (with **direction** set to **Direction.Rtl**).
+
+<!-- run -->
+
+```cangjie
+package ohos_app_cangjie_entry
+
+import kit.ArkUI.*
+import ohos.arkui.state_macro_manage.*
+
+@Entry
+@Component
+class EntryView {
+    func build() {
+        Row() {
+            RelativeContainer() {
+                Row() {
+                    Text("row1")
+                }
+                .justifyContent(FlexAlign.Center)
+                .width(100)
+                .height(100)
+                .backgroundColor(0xA3CF62)
+                .id("row1")
+
+                Row() {
+                    Text("row2")
+                }
+                .justifyContent(FlexAlign.Center)
+                .width(100)
+                .height(100)
+                .backgroundColor(0x00AE9D)
+                .alignRules(
+                    AlignRuleOption(
+                        middle: HorizontalAlignParam("row1", HorizontalAlign.End),
+                        top: VerticalAlignParam("row1", VerticalAlign.Bottom)
+                    )
+                )
+                .id("row2")
+
+                Row() {
+                    Text("row3")
+                }
+                .justifyContent(FlexAlign.Center)
+                .width(100)
+                .height(100)
+                .backgroundColor(0x0A59F7)
+                .alignRules(
+                    AlignRuleOption(
+                        left: HorizontalAlignParam("barrier1", HorizontalAlign.End),
+                        top: VerticalAlignParam("row1", VerticalAlign.Top)
+                    )
+                )
+                .id("row3")
+
+                Row() {
+                    Text("row4")
+                }
+                .justifyContent(FlexAlign.Center)
+                .width(50)
+                .height(50)
+                .backgroundColor(0x2CA9E0)
+                .alignRules(
+                    AlignRuleOption(
+                        left: HorizontalAlignParam("row1", HorizontalAlign.Start),
+                        top: VerticalAlignParam("barrier2", VerticalAlign.Bottom)
+                    )
+                )
+                .id("row4")
+            }
+            .direction(Direction.Rtl)
+            .width(300)
+            .height(300)
+            .margin(left: 50)
+            .border(width: 2, color: 0x6699FF)
+            .barrier([
+                LocalizedBarrierStyle("barrier1", LocalizedBarrierDirection.End, ["row1", "row2"]),
+                LocalizedBarrierStyle("barrier2", LocalizedBarrierDirection.Bottom, ["row1", "row2"])
+            ])
+        }
+        .height(100.percent)
+    }
+}
+```
+
+![relativecontainer6](figures/relativecontainer6.png)

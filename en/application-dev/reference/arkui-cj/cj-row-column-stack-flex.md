@@ -53,11 +53,111 @@ public init(direction!: ?FlexDirection = None, wrap!: ?FlexWrap = None,
 | alignContent | ?[FlexAlign](./cj-common-types.md#enum-flexalign) | No | None | **Named parameter.** Initial value: FlexAlign.Start. The alignment method for multiple lines of content when there is extra space on the cross axis. Only takes effect when `wrap` is set to Wrap or WrapReverse. |
 | child | () -> Unit | No | {=>} | **Named parameter.** Declares the child components within the container. |
 
+### init(?FlexDirection, ?FlexWrap, ?FlexAlign, ?ItemAlign, ?FlexAlign, ?FlexSpaceOptions, () -> Unit)
+
+```cangjie
+public init(direction!: ?FlexDirection = None, wrap!: ?FlexWrap = None,
+    justifyContent!: ?FlexAlign = None, alignItems!: ?ItemAlign = None,
+    alignContent!: ?FlexAlign = None, space!: ?FlexSpaceOptions,
+    child!: () -> Unit = {=>})
+```
+
+**Function:** Creates a Flex container and configures the spacing along the main and cross axes.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+| Parameter Name | Type | Required | Default Value | Description |
+|:---|:---|:---|:---|:---|
+| direction | ?[FlexDirection](cj-common-types.md#enum-flexdirection) | No | None | Arrangement direction of child components in the Flex container, that is, the main axis direction. |
+| wrap | ?[FlexWrap](cj-common-types.md#enum-flexwrap) | No | None | Whether child components in the Flex container are arranged in a single row/column or in multiple rows/columns. |
+| justifyContent | ?[FlexAlign](cj-common-types.md#enum-flexalign) | No | None | Alignment format of child components along the main axis of the Flex container. |
+| alignItems | ?[ItemAlign](cj-common-types.md#enum-itemalign) | No | None | Alignment format of child components along the cross axis of the Flex container. |
+| alignContent | ?[FlexAlign](cj-common-types.md#enum-flexalign) | No | None | Overall alignment format of multiple rows/columns of child components along the cross axis. |
+| space | ?[FlexSpaceOptions](#class-flexspaceoptions) | Yes | - | **Named parameter.** Spacing configuration of child components along the main and cross axes. |
+| child | () -> Unit | No | {=>} | **Named parameter.** Declares the child components of the Flex container. |
+
+> **NOTE**
+>
+> When justifyContent is set to SpaceBetween, SpaceAround, or SpaceEvenly, the spacing configured by space does not take effect, and the spacing is distributed according to the alignment rules.
+
 ## Common Attributes/Events
 
 Common Attributes: All are supported.
 
 Common Events: All are supported.
+
+## Basic Type Definitions
+
+### class FlexSpaceOptions
+
+```cangjie
+public class FlexSpaceOptions {
+    public var mainSpacing: ?LengthMetrics
+    public var crossSpacing: ?LengthMetrics
+    public init(mainSpacing!: ?LengthMetrics = None, crossSpacing!: ?LengthMetrics = None)
+}
+```
+
+**Function:** Sets the spacing between child components along the main axis or cross axis of the **Flex** component.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+#### var mainSpacing
+
+```cangjie
+public var mainSpacing: ?LengthMetrics
+```
+
+**Function:** Spacing between adjacent child components on the main axis of the **Flex** component. After being set, adjacent child components in the main axis direction are separated by the specified spacing, which takes effect in both single-line and multi-line layouts. This parameter does not take effect when **mainSpacing** is negative or set to a percentage, or when **justifyContent** is set to **FlexAlign.SpaceBetween**, **FlexAlign.SpaceAround**, or **FlexAlign.SpaceEvenly**. Initial value: LengthMetrics(0.0, unit: LengthUnit.Px).
+
+**Type:** ?[LengthMetrics](cj-common-types.md#class-lengthmetrics)
+
+**Access:** Read-write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+#### var crossSpacing
+
+```cangjie
+public var crossSpacing: ?LengthMetrics
+```
+
+**Function:** Spacing between adjacent lines on the cross axis of the **Flex** component. After being set, adjacent lines in the cross axis direction are separated by the specified spacing, which takes effect only in multi-line layout (where **wrap** is set to **Wrap** or **WrapReverse**). This parameter does not take effect when **crossSpacing** is negative or set to a percentage. Initial value: LengthMetrics(0.0, unit: LengthUnit.Px).
+
+**Type:** ?[LengthMetrics](cj-common-types.md#class-lengthmetrics)
+
+**Access:** Read-write
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+#### init(?LengthMetrics, ?LengthMetrics)
+
+```cangjie
+public init(mainSpacing!: ?LengthMetrics = None, crossSpacing!: ?LengthMetrics = None)
+```
+
+**Function:** Constructor used to create a FlexSpaceOptions object.
+
+**System Capability:** SystemCapability.ArkUI.ArkUI.Full
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+| Parameter Name | Type | Required | Default Value | Description |
+|:---|:---|:---|:---|:---|
+| mainSpacing | ?[LengthMetrics](cj-common-types.md#class-lengthmetrics) | No | None | Spacing between child components along the main axis. |
+| crossSpacing | ?[LengthMetrics](cj-common-types.md#class-lengthmetrics) | No | None | Row spacing along the cross axis. |
 
 ## Example Code
 
@@ -419,7 +519,9 @@ class EntryView {
 }
 ```
 
-![flex](figures/flex_4.png)### Example 5 (Alignment Methods for Multi-line Content)
+![flex](figures/flex_4.png)
+
+### Example 5 (Alignment Methods for Multi-line Content)
 
 This example demonstrates different alignment effects for multi-line content by setting `alignContent`.
 
@@ -494,7 +596,7 @@ class EntryView {
 
 ![flex](figures/flex_5.png)
 
-### Example5（Flex Container with Adaptive Width）
+### Example 6 (Flex Container with Adaptive Width)
 
 This example demonstrates the Flex's ability to adapt to child component layout when width is set to LengthMetrics.AUTO.
 
@@ -553,3 +655,67 @@ class EntryView {
 ```
 
 ![flex-auto](figures/flex-auto.png)
+
+### Example 7 (Spacing Along the Main/Cross Axis in Single/Multi-Line Layout)
+
+This example uses [FlexSpaceOptions](#class-flexspaceoptions) to set the spacing between child components along the main and cross axes of the **Flex** container.
+
+<!-- run -->
+
+```cangjie
+package ohos_app_cangjie_entry
+
+import kit.ArkUI.*
+import ohos.arkui.state_macro_manage.*
+import ohos.base.*
+
+@Entry
+@Component
+class EntryView {
+    func build() {
+        Column(space: 5) {
+            Text("Wrap").fontSize(9).fontColor(0xCCCCCC).width(90.percent)
+            Flex(wrap: FlexWrap.Wrap, space: FlexSpaceOptions(
+                mainSpacing: LengthMetrics(50.0, unit: LengthUnit.Px),
+                crossSpacing: LengthMetrics(50.0, unit: LengthUnit.Px))) {
+                Text("1").width(40.percent).height(50).backgroundColor(0xF5DEB3)
+                Text("2").width(40.percent).height(50).backgroundColor(0xD2B48C)
+                Text("3").width(40.percent).height(50).backgroundColor(0xD2B48C)
+            }
+            .width(90.percent)
+            .padding(10)
+            .backgroundColor(0xAFEEEE)
+            .margin(top: 5)
+
+            Text("NoWrap").fontSize(9).fontColor(0xCCCCCC).width(90.percent)
+            Flex(wrap: FlexWrap.NoWrap, space: FlexSpaceOptions(
+                mainSpacing: LengthMetrics(50.0, unit: LengthUnit.Px),
+                crossSpacing: LengthMetrics(50.0, unit: LengthUnit.Px))) {
+                Text("1").width(50.percent).height(50).backgroundColor(0xF5DEB3)
+                Text("2").width(50.percent).height(50).backgroundColor(0xD2B48C)
+                Text("3").width(50.percent).height(50).backgroundColor(0xF5DEB3)
+            }
+            .width(90.percent)
+            .padding(10)
+            .backgroundColor(0xAFEEEE)
+            .margin(top: 5)
+
+            Text("WrapReverse").fontSize(9).fontColor(0xCCCCCC).width(90.percent)
+            Flex(direction: FlexDirection.Row, wrap: FlexWrap.WrapReverse, space: FlexSpaceOptions(
+                mainSpacing: LengthMetrics(50.0, unit: LengthUnit.Px),
+                crossSpacing: LengthMetrics(50.0, unit: LengthUnit.Px))) {
+                Text("1").width(40.percent).height(50).backgroundColor(0xF5DEB3)
+                Text("2").width(40.percent).height(50).backgroundColor(0xD2B48C)
+                Text("3").width(40.percent).height(50).backgroundColor(0xD2B48C)
+            }
+            .width(90.percent)
+            .padding(10)
+            .backgroundColor(0xAFEEEE)
+            .margin(top: 5)
+        }
+        .width(100.percent)
+    }
+}
+```
+
+![flex7](figures/flex7.png)

@@ -48,6 +48,30 @@ public init(group!: ?String = None)
 
 ## 组件属性
 
+### func mark(?ResourceColor, ?Length, ?Length)
+
+```cangjie
+public func mark(
+    strokeColor!: ?ResourceColor = None,
+    size!: ?Length = None,
+    strokeWidth!: ?Length = None
+): This
+```
+
+**功能：** 设置复选框内部勾选图标的样式。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|strokeColor|?[ResourceColor](./cj-common-types.md#interface-resourcecolor)|否|None|内部图标颜色。|
+|size|?Length|否|None|内部图标大小，单位vp。默认大小与多选框组件宽度相同。不支持百分比形式设置。设置为非法值时，按照默认值处理。|
+|strokeWidth|?Length|否|None|内部图标粗细，单位vp。不支持设置百分比。设置为非法值时，按照默认值处理。默认值：2.vp。|
+
 ### func selectAll(?Bool)
 
 ```cangjie
@@ -314,3 +338,67 @@ class EntryView {
 ```
 
 ![checkbox_group2](figures/checkbox_group2.gif)
+
+### 示例3（自定义勾选样式）
+
+该示例通过[mark](#func-markresourcecolor-length-length)接口设置多选框群组和多选框的内部图标样式。
+
+<!-- run -->
+
+```cangjie
+package ohos_app_cangjie_entry
+
+import kit.ArkUI.*
+import ohos.arkui.state_macro_manage.*
+
+@Entry
+@Component
+class EntryView {
+    func build() {
+        Row() {
+            Column() {
+                Flex(justifyContent: FlexAlign.Center, alignItems: ItemAlign.Center) {
+                    CheckboxGroup(group: "checkboxGroup")
+                        .selectedColor(Color.Orange)
+                        .mark(strokeColor: Color.Black, size: 40, strokeWidth: 5)
+                        .onChange({ val =>
+                            Hilog.info(0, "CangjieTest", "checkbox group content changed")
+                        })
+                        .width(30)
+                        .height(30)
+                    Text("Select All").fontSize(20)
+                }.margin(right: 15)
+                Flex(justifyContent: FlexAlign.Center, alignItems: ItemAlign.Center) {
+                    Checkbox(name: "checkbox1", group: "checkboxGroup")
+                        .selectedColor(0x39A2DB)
+                        .mark(strokeColor: Color.Black, size: 50, strokeWidth: 5)
+                        .onChange({ value: Bool =>
+                            Hilog.info(0, "CangjieTest", "checkbox1 change is ${value}")
+                        })
+                    Text("checkbox1").fontSize(20)
+                }
+                Flex(justifyContent: FlexAlign.Center, alignItems: ItemAlign.Center) {
+                    Checkbox(name: "checkbox2", group: "checkboxGroup")
+                        .selectedColor(0x39A2DB)
+                        .shape(CheckBoxShape.RoundedSquare)
+                        .onChange({ value: Bool =>
+                            Hilog.info(0, "CangjieTest", "checkbox2 change is ${value}")
+                        })
+                    Text("checkbox2").fontSize(20)
+                }
+                Flex(justifyContent: FlexAlign.Center, alignItems: ItemAlign.Center) {
+                    Checkbox(name: "checkbox3", group: "checkboxGroup")
+                        .selectedColor(0x39A2DB)
+                        .shape(CheckBoxShape.RoundedSquare)
+                        .onChange({ value: Bool =>
+                            Hilog.info(0, "CangjieTest", "checkbox3 change is ${value}")
+                        })
+                    Text("checkbox3").fontSize(20)
+                }
+            }
+        }
+    }
+}
+```
+
+![checkboxGroup3](figures/checkboxGroup3.png)

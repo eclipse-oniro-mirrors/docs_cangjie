@@ -804,3 +804,28 @@ List() {
             })
     }
     ```
+
+## 设置边缘滑动效果
+
+边缘滑动效果是指当用户滑动列表至边缘后，继续滑动时触发的交互效果。当前List支持通过[edgeEffect](../reference/arkui-cj/cj-scroll-swipe-list.md)属性设置三种边缘滑动效果，分别为弹簧效果（即回弹效果）、阴影效果、无效果。具体效果说明请参见[EdgeEffect](../reference/arkui-cj/cj-common-types.md#enum-edgeeffect)的枚举说明。
+
+当List组件的内容区大于等于一屏时，List的边缘滑动效果默认为回弹效果，如下图所示。
+
+**图18** 边缘回弹效果
+
+![edge_effect_spring](figures/edge_effect_spring.gif)
+
+
+设置.edgeEffect(EdgeEffect.None)时，List无边缘滑动效果，如下图所示。
+
+**图19** 无边缘滑动效果
+
+![edge_effect_none](figures/edge_effect_none.gif)
+
+List还支持只设置单边的边缘滑动效果，如设置.edgeEffect(EdgeEffect.Spring, options: EdgeEffectOptions(true, effectEdge: 1))，实现起始边有边缘回弹效果，末尾边无效果，如下图所示。
+
+**图20** 单边边缘滑动效果
+
+![edge_effect_spring_start](figures/edge_effect_spring_start.gif)
+
+需要注意的是，当List组件的内容区小于一屏时，List默认无边缘滑动效果。若要启用边缘回弹效果，可以通过设置.edgeEffect(EdgeEffect.Spring, options: EdgeEffectOptions(true))来实现。

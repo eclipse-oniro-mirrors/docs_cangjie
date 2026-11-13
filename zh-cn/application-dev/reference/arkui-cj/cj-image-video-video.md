@@ -282,6 +282,24 @@ public func onStart(event: ?VoidCallback): This
 |:---|:---|:---|:---|:---|
 |event|?[VoidCallback](./cj-common-types.md#type-voidcallback)|是|-|回调函数，播放时触发。<br>初始值：{ => }|
 
+### func onStop(?() -> Unit)
+
+```cangjie
+public func onStop(event: ?() -> Unit): This
+```
+
+**功能：** 播放停止时触发该事件（当stop()方法被调用后触发）。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|event|?() -> Unit|是|-|回调函数，停止播放时触发。<br>初始值：{ => }|
+
 ### func onUpdate(?Callback\<PlaybackInfo, Unit>)
 
 ```cangjie
