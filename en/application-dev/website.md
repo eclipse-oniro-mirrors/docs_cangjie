@@ -374,6 +374,8 @@
                     - [Network Connection Management](network/cj-net-connection-manager.md)
             - Telephony Kit (Cellular Communication Service)
                 - [Making Phone Calls](telephony/cj-telephony-call.md)
+                - [Obtaining Cellular Network Information](telephony/cj-telephony-network-guidelines.md)
+                - [Using SIM Card Type and State Enums](telephony/cj-telephony-sim-guidelines.md)
         - Basic Features
             - Basic Services Kit (Basic Services)
                 - [Introduction to Basic Services Kit](basic-services/cj-basic-services-kit-overview.md)
@@ -823,6 +825,10 @@
             - Telephony Kit
                 - Cangjie API
                     - [ohos.telephony.call](reference/TelephonyKit/cj-apis-telephony-call.md)
+                    - [ohos.telephony.radio (Network Search)](reference/TelephonyKit/cj-apis-telephony-radio.md)
+                    - [ohos.telephony.sim (SIM Card Management)](reference/TelephonyKit/cj-apis-telephony-sim.md)
+                - Error Codes
+                    - [Telephony Error Codes](reference/TelephonyKit/cj-errorcode-telephony.md)
         - Debugging & Optimization
             - Performance Analysis Kit (Performance Analysis Service)
                 - Cangjie API
