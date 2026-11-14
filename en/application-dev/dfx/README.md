@@ -4,6 +4,7 @@
 - Fault Analysis
   - [Analyzing Cangjie Crash (Process Crash)](cj-cangjiecrash-guidelines.md)(Beta Feature)
   - [Analyzing AppFreeze (Application Not Responding)](cj-appfreeze-guidelines.md)(Beta Feature)
+  - [Analyzing AppKilled (Application Termination)](cj-appkilled-guidelines.md)(Beta Feature)
 - HiLog Usage Guide
   - [Logging with HiLog (Cangjie)](cj-hilog-guidelines.md)(Beta Feature)
 - HiAppEvent Usage Guide
@@ -18,6 +19,9 @@
       - AppFreeze Events
         - [AppFreeze Events Introduction](cj-hiappevent-watcher-freeze-events.md)(Beta Feature)
         - [Subscribing to AppFreeze Events (Cangjie)](cj-hiappevent-watcher-freeze-events-cangjie.md)(Beta Feature)
+      - AppKilled Events
+        - [AppKilled Events Introduction](cj-hiappevent-watcher-app-killed-events.md)(Beta Feature)
+        - [Subscribing to AppKilled Events (Cangjie)](cj-hiappevent-watcher-app-killed-events-cangjie.md)(Beta Feature)
   - [Event Reporting](cj-hiappevent-event-reporting.md)(Beta Feature)
 - HiTraceMeter Usage Guide
   - [Viewing HiTraceMeter Logs](cj-hitracemeter-view.md)(Beta Feature)

@@ -16,7 +16,7 @@ The detailed description of the `params` attribute in appfreeze event informatio
 
 | Name               | Type          | Description                                                                 |
 | ------------------ | ------------- | --------------------------------------------------------------------------- |
-| time               | Int32         | Event trigger time in milliseconds.                                        |
+| time               | Float64       | Event trigger time in milliseconds.                                        |
 | foreground         | Bool          | Whether the application is in the foreground. `true` indicates foreground; `false` indicates background. |
 | bundle_version     | String        | Application version.                                                       |
 | bundle_name        | String        | Application name.                                                          |

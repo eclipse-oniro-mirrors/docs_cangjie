@@ -4,6 +4,7 @@
 - 故障检测
   - [分析Cangjie Crash（进程崩溃）](cj-cangjiecrash-guidelines.md)（Beta特性）
   - [分析AppFreeze（应用无响应）](cj-appfreeze-guidelines.md)（Beta特性）
+  - [分析AppKilled（应用终止）](cj-appkilled-guidelines.md)（Beta特性）
 - 日志打印
   - [使用HiLog打印日志](cj-hilog-guidelines.md)（Beta特性）
 - 事件订阅
@@ -18,6 +19,9 @@
       - 应用冻屏事件
         - [应用冻屏事件介绍](cj-hiappevent-watcher-freeze-events.md)（Beta特性）
         - [订阅应用冻屏事件](cj-hiappevent-watcher-freeze-events-cangjie.md)（Beta特性）
+      - 应用终止事件
+        - [应用终止事件介绍](cj-hiappevent-watcher-app-killed-events.md)（Beta特性）
+        - [订阅应用终止事件](cj-hiappevent-watcher-app-killed-events-cangjie.md)（Beta特性）
   - [事件上报](cj-hiappevent-event-reporting.md)（Beta特性）
 - 性能跟踪
   - [查看HiTraceMeter日志](cj-hitracemeter-view.md)（Beta特性）

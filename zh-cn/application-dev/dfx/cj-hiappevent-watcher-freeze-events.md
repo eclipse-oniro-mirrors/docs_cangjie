@@ -16,7 +16,7 @@ appfreeze事件信息中params属性的详细描述如下：
 
 | 名称    | 类型   | 说明                       |
 | ------- | ------ | ------------------------- |
-| time     | Int32 | 事件触发时间，单位为毫秒。 |
+| time     | Float64 | 事件触发时间，单位为毫秒。 |
 | foreground | Bool | 应用是否处于前台状态。true表示应用处于前台；false表示应用处于后台。|
 | bundle_version | String | 应用版本。 |
 | bundle_name | String | 应用名称。 |
