@@ -480,7 +480,7 @@ AutoScreenBrightnessMode
 
 **系统能力：** SystemCapability.Applications.Settings.Core
 
-**起始版本：** 22
+**起始版本：** 26.1.0
 
 **示例：**
 
@@ -516,7 +516,7 @@ ManualScreenBrightnessMode
 
 **系统能力：** SystemCapability.Applications.Settings.Core
 
-**起始版本：** 22
+**起始版本：** 26.1.0
 
 **示例：**
 
