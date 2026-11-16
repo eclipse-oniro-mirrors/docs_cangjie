@@ -4817,6 +4817,14 @@ public func release(): Unit
 
 **Since:** 26.1.0
 
+**Exceptions:**
+
+- BusinessException: Corresponding error codes are listed below. For details, see [Camera Error Codes](./cj-errorcode-multimedia-camera.md).
+
+  | Error Code ID | Error Message |
+  | :---- | :--- |
+  | 7400201 | Camera service fatal error. |
+
 **Example:**
 
 <!-- compile -->
