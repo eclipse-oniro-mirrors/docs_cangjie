@@ -926,7 +926,7 @@ public func getSignalLevel(rssi: Int32, band: Int32): UInt32
 
 | Type | Description |
 |:----|:----|
-| UInt32 | Signal strength, in the range of 0 to 4. |
+| UInt32 | Signal strength, in the range [0, 4]. |
 
 **Exceptions:**
 
