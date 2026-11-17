@@ -4841,6 +4841,14 @@ public func release(): Unit
 
 **起始版本：** 26.1.0
 
+**异常：**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[Camera错误码](./cj-errorcode-multimedia-camera.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 7400201 | Camera service fatal error. |
+
 **示例：**
 
 <!-- compile -->
