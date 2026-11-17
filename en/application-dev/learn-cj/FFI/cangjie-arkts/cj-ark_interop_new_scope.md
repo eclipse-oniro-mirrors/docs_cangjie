@@ -31,7 +31,7 @@ The following interop-library APIs are used for ArkTS object reference managemen
 
 Use JSContext.newScope to create a context and pass a custom callback that runs within the scope. This API manages ArkTS object lifecycles and prevents invalid handle releases.
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     context.postJSTask {

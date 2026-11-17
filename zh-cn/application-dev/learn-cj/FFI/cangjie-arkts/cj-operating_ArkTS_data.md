@@ -11,16 +11,97 @@
    - 通过 `JSValue.typeof()` 获取其类型枚举 `JSType`。
    - 通过其他途径（包括但不限于阅读 ArkTS 源码、参考文档等）知晓其类型，然后通过类型校验接口来验证，比如判断是否是 number 类型 `JSValue.isNumber()`。
 
+   `typeof()` 的使用示例如下：
+
+   <!-- compile -->
+   ```cangjie
+   func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
+       // 获取第一个参数
+       let firstArg = callInfo[0]
+       // 获取参数类型
+       let typeInfo = firstArg.typeof()
+       // 判断参数类型
+       if (typeInfo == JSType.STRING) {
+           Hilog.info(0, "test", "input is string: ${firstArg.toString()}")
+       } else {
+           // 获取参数类型名称
+           let typeName = typeInfo.toString()
+           Hilog.info(0, "test", "input is unexpected type: ${typeName}")
+       }
+       return context.undefined().toJSValue()
+   }
+   ```
+
+   `JSType` 可选值包括：`JSType.UNDEFINED`、`JSType.NULL`、`JSType.NUMBER`、`JSType.BOOLEAN`、`JSType.BIGINT`、`JSType.STRING`、`JSType.SYMBOL`、`JSType.OBJECT`、`JSType.FUNCTION`、`JSType.EXTERNAL`。
+
+   `JSValue` 提供的类型校验接口如下表，均返回 `Bool`：
+
+   | 校验接口        | 说明                       | 对应 ArkTS 类型 |
+   | --------------- | -------------------------- | --------------- |
+   | isUndefined()   | 是否为 undefined           | undefined       |
+   | isNull()        | 是否为 null                | null            |
+   | isBoolean()     | 是否为 boolean             | boolean         |
+   | isNumber()      | 是否为 number              | number          |
+   | isString()      | 是否为 string              | string          |
+   | isBigInt()      | 是否为 bigint              | bigint          |
+   | isSymbol()      | 是否为 symbol              | symbol          |
+   | isObject()      | 是否为 object（含 Array）  | object / Array  |
+   | isArray()       | 是否为 Array               | Array           |
+   | isArrayBuffer() | 是否为 ArrayBuffer         | ArrayBuffer     |
+   | isFunction()    | 是否为 function            | function        |
+   | isPromise()     | 是否为 Promise             | Promise         |
+   | isClass()       | 是否为 class（构造函数）   | class           |
+   | isExternal()    | 是否为仓颉对象的外部包装   | -               |
+
 2. 使用 JSValue
 
    获取 JSValue 类型之后，可以将 `JSValue` 转换为对应的仓颉类型或 ArkTS 引用。
 
-   - 转换为仓颉类型。此时仓颉数据为 ArkTS 数据的拷贝，ArkTS 数据可能在仓颉变量生命周期中释放。例如 ArkTS string 转换为仓颉 String，`var a:String = JSValue.toString(JSContext)`。
-   - 转换为 ArkTS 引用。此时仓颉数据为 ArkTS 数据的引用，ArkTS 数据不能在仓颉变量生命周期中释放。比如一个 ArkTS string 转换为 JSString，`var b:JSString = JSValue.asString(JSContext)`。
+   - 转换为仓颉类型。此时仓颉数据为 ArkTS 数据的拷贝，ArkTS 数据可能在仓颉变量生命周期中释放。例如 ArkTS string 转换为仓颉 String，`let a: String = arg0.toString()`。`JSValue` 提供的转换接口如下表：
+
+     | 转换接口         | 仓颉类型 | 说明                                   |
+     | ---------------- | -------- | -------------------------------------- |
+     | toNumber()       | Float64  | 转换 ArkTS number                      |
+     | toBoolean()      | Bool     | 转换 ArkTS boolean                     |
+     | toString()       | String   | 转换 ArkTS string                      |
+     | toBigInt()       | BigInt   | 转换 ArkTS bigint                      |
+     | toUtf16String()  | String   | 以 UTF-16 编码转换 ArkTS string        |
+     | toFloat64()      | Float64  | 转换 ArkTS number（JSNumber 专属接口） |
+
+   - 转换为 ArkTS 引用。此时仓颉数据为 ArkTS 数据的引用，ArkTS 数据不能在仓颉变量生命周期中释放。比如一个 ArkTS string 转换为 JSString，`let b: JSString = arg0.asString()`。`JSValue` 提供的引用转换接口如下表（转换前建议先用对应的 `isXxx()` 校验类型，类型不符会抛出异常）：
+
+     | 转换接口    | 引用类型   | 对应 ArkTS 类型 |
+     | ----------- | ---------- | --------------- |
+     | asUndefined() | JSUndefined | undefined     |
+     | asNull()    | JSNull     | null            |
+     | asBoolean() | JSBoolean  | boolean         |
+     | asNumber()  | JSNumber   | number          |
+     | asString()  | JSString   | string          |
+     | asBigInt()  | JSBigInt   | bigint          |
+     | asSymbol()  | JSSymbol   | symbol          |
+     | asObject()  | JSObject   | object          |
+     | asArray()   | JSArray    | Array           |
+     | asFunction() | JSFunction | function       |
+     | asPromise() | JSPromise  | Promise         |
+
+   - 将 ArkTS 引用转换回 `JSValue`，使用引用类型的 `toJSValue()` 接口，例如 `let c: JSValue = b.toJSValue()`。
 
 3. 构造仓颉类型的 ArkTS 数据
 
-   通过仓颉类型来构造 ArkTS 数据，是通过 JSContext 的方法类来构造的。以 `number` 为例，创建一个 ArkTS `number` 需向 `JSContext.number` 接口传入具体数值，例如 `var a = JSContext.number(1.0)`。
+   通过仓颉类型来构造 ArkTS 数据，是通过 JSContext 的方法类来构造的。以 `number` 为例，创建一个 ArkTS `number` 需向 `context.number` 接口传入具体数值，例如 `let a = context.number(1.0)`。
+
+   常用的构造接口如下表（均通过互操作函数参数中的 `context` 调用，构造结果需再调用 `.toJSValue()` 才能作为 `JSValue` 使用）：
+
+   | 构造接口                   | ArkTS 类型 | 示例                                    |
+   | -------------------------- | ---------- | --------------------------------------- |
+   | context.number(1.0)        | number     | `context.number(1.0).toJSValue()`       |
+   | context.string("hello")    | string     | `context.string("hello").toJSValue()`   |
+   | context.boolean(true)      | boolean    | `context.boolean(true).toJSValue()`     |
+   | context.object()           | object     | `context.object().toJSValue()`          |
+   | context.array(...)         | Array      | `context.array(...).toJSValue()`        |
+   | context.function { ... }   | function   | `context.function { c, i => c.undefined().toJSValue() }.toJSValue()` |
+   | context.undefined()        | undefined  | `context.undefined().toJSValue()`       |
+   | context.null()             | null       | `context.null().toJSValue()`            |
 
    ArkTS 主要数据类型对应到仓颉类型的映射如下：
 
@@ -45,7 +126,7 @@
 
 1. 仓颉函数实现：
 
-    <!--compile-->
+    <!-- compile -->
     ```cangjie
     // 定义包名，该包名需要和 cjpm.toml 的 package name 保持一致
     package ohos_app_cangjie_entry
@@ -98,7 +179,73 @@
     console.log("result = " + result);
     ```
 
-除了可以从对象上读取属性外，还可以对属性赋值或创建新属性，操作方式为 `JSObject[key] = value`，其中 key 可以是仓颉 String 、JSString 或 JSSymbol 类型，value 是 JSValue 类型 。
+除了可以从对象上读取属性外，还可以对属性赋值或创建新属性，操作方式为 `JSObject[key] = value`，其中 key 可以是仓颉 String、JSString 或 JSSymbol 类型，value 是 JSValue 类型。
+
+对于 `Record<string, number>` 这类对象参数与返回值的场景，读写方式与普通对象一致：读取时先通过 `asObject()` 转为 `JSObject`，再用 `obj[key]` 取属性值；返回时通过 `context.object()` 创建对象并逐个设置属性。完整示例如下：
+
+1. 仓颉函数实现（读取 Record 属性）：
+
+    <!-- compile -->
+    ```cangjie
+    package ohos_app_cangjie_entry
+
+    import kit.CangjieKit.*
+
+    // 声明为 nativeGetObjectValue(obj: Record<string, number>, key: string): number
+    func nativeGetObjectValue(context: JSContext, callInfo: JSCallInfo): JSValue {
+        // 参数0为 Record 对象，转换为 JSObject
+        let obj = callInfo[0].asObject()
+        // 参数1为属性名，转换为仓颉 String
+        let key = callInfo[1].toString()
+        // 通过下标读取属性值，得到 JSValue
+        let value = obj[key]
+        // 校验属性值类型后转换为 Float64
+        if (!value.isNumber()) {
+            return context.undefined().toJSValue()
+        }
+        return context.number(value.toNumber()).toJSValue()
+    }
+
+    // 声明为 nativeCreateRecord(): Record<string, number>
+    func nativeCreateRecord(context: JSContext, callInfo: JSCallInfo): JSValue {
+        // 创建一个 ArkTS 对象
+        let obj = context.object()
+        // 通过下标设置属性值
+        obj["a"] = context.number(1).toJSValue()
+        obj["b"] = context.number(2).toJSValue()
+        return obj.toJSValue()
+    }
+
+    let EXPORT_MODULE = JSModule.registerModule {
+        runtime, exports =>
+            exports["nativeGetObjectValue"] = runtime.function(nativeGetObjectValue).toJSValue()
+            exports["nativeCreateRecord"] = runtime.function(nativeCreateRecord).toJSValue()
+    }
+    ```
+
+2. 互操作接口声明：
+
+    ```typescript
+    // libohos_app_cangjie_entry.so 对应的Index.d.ts
+    export declare function nativeGetObjectValue(obj: Record<string, number>, key: string): number;
+    export declare function nativeCreateRecord(): Record<string, number>;
+    ```
+
+3. ArkTS 调用函数：
+
+    ```typescript
+    // 导入仓颉动态库，该动态库名称为仓颉包名的名称，该名称需要和互操作接口所在的包名一致
+    import { nativeGetObjectValue, nativeCreateRecord } from "libohos_app_cangjie_entry.so";
+
+    // 传入 Record 对象和属性名，读取属性值
+    let obj: Record<string, number> = { "a": 1, "b": 2 };
+    let result = nativeGetObjectValue(obj, "b");
+    console.log("result = " + result); // result = 2
+
+    // 获取仓颉侧构造的 Record 对象，并读取属性
+    let record = nativeCreateRecord();
+    console.log("a = " + record["a"]); // a = 1
+    ```
 
 > **说明：**
 >
@@ -114,7 +261,7 @@
 
 2. 对于一个未知对象，可以枚举出该对象的可枚举属性：
 
-   <!--compile-->
+   <!-- compile -->
    ```cangjie
    func handleUnknownObject(context: JSContext, target: JSObject): Unit {
        // keys接口枚举对象的可枚举属性
@@ -153,7 +300,7 @@ class SendableTestClass {
 
 在仓颉侧操作 sendable 对象：
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 // 定义包名，该包名需要和 cjpm.toml 的 package name 保持一致
 package ohos_app_cangjie_entry
@@ -209,7 +356,7 @@ console.log("result = " + result);
 
 仓颉侧实现：
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 // 定义包名，该包名需要和 cjpm.toml 的 package name 保持一致
 package ohos_app_cangjie_entry
@@ -254,7 +401,7 @@ let EXPORT_MODULE = JSModule.registerModule {
 
 ```typescript
 // libohos_app_cangjie_entry.so对应的Index.d.ts
-export declare function testAsync(): Promise<boolean>;
+export declare function testAsync(): Promise<string>;
 export declare function readName(data: Some): Promise<string>;
 
 interface Some {}
@@ -403,7 +550,7 @@ startTestWorker();
 
 2. 仓颉代码中回调 ArkTS 函数：
 
-    <!--compile-->
+    <!-- compile -->
     ```cangjie
     package ohos_app_cangjie_entry
 
@@ -435,7 +582,7 @@ startTestWorker();
 
 这个用例里的函数是不带 this 指针的，针对需要 this 指针的方法调用，可以通过命名参数 `thisArg` 来指定。
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let callback = callInfo[0].asFunction()
@@ -467,7 +614,7 @@ doSth.call();
 
 在仓颉里，对应的写法如下：
 
-<!--compile.error-->
+<!-- run.error -->
 ```cangjie
 func doSth(context: JSContext, callInfo: JSCallInfo): JSValue {
     let object = callInfo[0].asObject()

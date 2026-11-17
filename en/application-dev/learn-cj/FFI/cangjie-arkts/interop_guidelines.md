@@ -12,7 +12,7 @@ In the Cangjie-ArkTS interoperability library, early interfaces for accessing JS
 
 Cangjie code:
 
-<!--compile.error-->
+<!-- run.error -->
 ```cangjie
 // Import interoperability library
 import kit.CangjieKit.*
@@ -46,7 +46,7 @@ let EXPORT_MODULE = JSModule.registerModule {
 
 Cangjie code:
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 // Import interoperability library
 import kit.CangjieKit.*
@@ -86,7 +86,7 @@ In cross-language function calls, exceptions thrown by the callee are automatica
 
 Cangjie-side code:
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 // Import interoperability library
 import kit.CangjieKit.*
@@ -124,7 +124,7 @@ function doSth(lib: CJLib): void {
 
 Cangjie-side code:
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 // Import interoperability library
 import kit.CangjieKit.*
@@ -170,7 +170,7 @@ JS objects created via `JSContext.external` (`JSExternal` objects) are of type `
 
 Cangjie-side code:
 
-<!--compile.error-->
+<!-- run.error -->
 ```cangjie
 // Import interoperability library
 import kit.CangjieKit.*
@@ -261,7 +261,7 @@ console.log("id is " + id);
 
 Cangjie-side code:
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 // Import interoperability library
 import kit.CangjieKit.*
@@ -370,7 +370,7 @@ As shown above, to avoid such issues, it is recommended that developers avoid ha
 
 Cangjie-side code:
 
-<!--compile.error-->
+<!-- run.error -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -440,7 +440,7 @@ The circular reference in the above example occurs as follows:
 
 If this scenario is necessary for the business, developers should nullify `data.callback` after execution to break the circular reference. Example:
 
-<!--code_no_check-->
+<!-- compile -->
 ```cangjie
 // ...
 data.callback()
@@ -461,9 +461,10 @@ When Cangjie interfaces are called from the ArkTS main thread, the Cangjie code 
 
 Cangjie-side code:
 
-<!--compile.error-->
+<!-- run.error -->
 ```cangjie
 import kit.CangjieKit.*
+import ohos.ark_interop_macro.*
 import kit.ArkUI.UIThread
 
 @Interop[ArkTS]
@@ -504,9 +505,9 @@ Cangjie threads are user-mode threads, and the runtime schedules Cangjie threads
 
 **Incorrect Example:**
 
-<!--compile.error-->
 Cangjie code:
 
+<!-- run.error -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -545,7 +546,7 @@ let EXPORT_MODULE = JSModule.registerModule {
 
 Cangjie code:
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 
@@ -592,7 +593,7 @@ let EXPORT_MODULE = JSModule.registerModule {
 
 Cangjie code:
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 import kit.CangjieKit.*
 import kit.ArkUI.UIThread
@@ -639,7 +640,7 @@ Thread environment requirements dictate that `JSRuntime` must be bound to a syst
 
 Cangjie code:
 
-<!--compile.error-->
+<!-- run.error -->
 ```cangjie
 import kit.CangjieKit.*
 

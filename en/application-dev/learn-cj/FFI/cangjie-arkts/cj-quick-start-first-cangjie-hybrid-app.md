@@ -212,6 +212,7 @@ Key files include:
 
    - Add components to **second.cj**:
 
+     <!-- compile -->
      ```cangjie
      // second.cj
      package ohos_app_cangjie_entry
@@ -348,12 +349,14 @@ Page navigation uses the router module to find target pages via URLs.
 
    - Add interoperability code to **index.cj**:
 
+     <!-- compile -quick_start_first_cangjie_hybrid_app-example1 -->
      ```cangjie
      // index.cj
      package ohos_app_cangjie_entry
 
      import kit.ArkUI.*
      import kit.CangjieKit.*
+     import ohos.ark_interop_macro.*
      import std.collection.*
      import kit.PerformanceAnalysisKit.Hilog
 
@@ -420,6 +423,7 @@ Page navigation uses the router module to find target pages via URLs.
 
    - Call the callback in **second.cj**:
 
+     <!-- compile -quick_start_first_cangjie_hybrid_app-example1 -->
      ```cangjie
      // second.cj
      package ohos_app_cangjie_entry
@@ -486,7 +490,7 @@ OpenHarmony applications/services written in the Cangjie language can run on the
 
 1. Create an emulator device of the Phone type and select this device from the device list in the top-right corner of DevEco Studio.
 
-2. The default compilation architecture for Cangjie projects is **arm64-v8a**. Therefore, when using an **x86 emulator** (when the current development environment is **Windows/x86_64** or **MacOS/x86_64**), the Cangjie project and third-party libraries need to compile the x86_64 version of the .so file. In the **build-profile.json5** configuration file of the Cangjie module, add **x86_64** to the value of **cangjieOptions/abiFilters**. The specific compilation configuration is as follows:
+2. The default compilation architecture for Cangjie projects is `arm64-v8a`. Therefore, when using an `x86` emulator (when the current development environment is `Windows/x86_64` or `MacOS/x86_64`), the Cangjie project and third-party libraries need to compile the `x86_64` version of the .so file. In the `entry/build-profile.json5` configuration file of the Cangjie module, add `x86_64` to the value of `cangjieOptions/abiFilters`. The specific compilation configuration is as follows:
 
     ```json
     "buildOption": { // Configuration used during the project build process

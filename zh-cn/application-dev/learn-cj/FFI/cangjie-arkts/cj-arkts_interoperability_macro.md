@@ -4,7 +4,7 @@
 
 ## 使用方法
 
-DevEco Studio 的配置可参考[在 ArkTS 工程中添加仓颉模块](./add_cangjie_module.md)。配置完成后，可实现互操作模块。
+DevEco Studio 的配置可参考[增加仓颉模块](./add_cangjie_module.md)。配置完成后，可实现互操作模块。
 
 目前针对希望被 ArkTS 调用的函数（含异步函数）、接口、类和枚举，可以使用互操作声明宏 `@Interop` 进行修饰。以下以普通函数场景作为演示示例，介绍声明式互操作宏的具体使用方法，异步函数、接口、类、枚举等示例请参考[场景详细说明](#场景详细说明)。
 
@@ -14,12 +14,13 @@ DevEco Studio 的配置可参考[在 ArkTS 工程中添加仓颉模块](./add_ca
 
 1. 用户实现一个名为 addF64 的仓颉函数，并使用 `@Interop[ArkTS]` 修饰，标注该函数为互操作使用的函数。假设下述文件名为 demo.cj，其内容如下所示：
 
-   <!--compile-->
+   <!-- compile -->
    ```cangjie
    // 定义包名，该包名需要和 cjpm.toml 的 package name 保持一致
    package ohos_app_cangjie_entry
    // 导入互操作库 ark_interop 和互操作宏
    import kit.CangjieKit.*
+   import ohos.ark_interop_macro.*
    // 实现自定义的函数 addF64，入参接收两个number，返回相加后的结果
    @Interop[ArkTS]
    public func addF64(a: Float64, b: Float64): Float64 {
@@ -50,7 +51,7 @@ DevEco Studio 的配置可参考[在 ArkTS 工程中添加仓颉模块](./add_ca
    }
    ```
 
-   ark_interop 目录下的 ark_interop_api.d.ts 内容如下所示：
+   ark_interop_api 目录下的 ark_interop_api.d.ts 内容如下所示：
 
    ```typescript
    export declare interface CustomLib {
@@ -58,7 +59,7 @@ DevEco Studio 的配置可参考[在 ArkTS 工程中添加仓颉模块](./add_ca
    }
    ```
 
-   ark_interop 目录下的 oh_package.json5 如下所示：
+   ark_interop_api 目录下的 oh_package.json5 如下所示：
 
    ```json
    {
@@ -80,35 +81,35 @@ DevEco Studio 的配置可参考[在 ArkTS 工程中添加仓颉模块](./add_ca
    }
    ```
 
-> **注意：**
->
-> 在同一个仓颉模块中（同一个包及其子包中）需遵循如下规则，否则可能出现编译报错或符号覆盖：
->
-> - 使用 `@Interop` 修饰的函数、interface、class 不能同名。
->
->   错误示例：
->
->   ```cangjie
->   @Interop[ArkTS]
->   public func addNumber() : Unit {}
->
->   @Interop[ArkTS]
->   public func addNumber(a: Float64) : Unit {} // 同一个包中会出现编译报错；父子包中可能会出现符号覆盖
->   ```
->
-> - 使用 `@Interop` 修饰的函数、interface、class 和使用 JSModule.registerModule、JSModule.registerClass、JSModule.registerFunc 注册到 JSModule 中的函数、interface、class 不能同名。
->
->   错误示例：
->
->   ```cangjie
->   @Interop[ArkTS]
->   public func addNumber() : Unit {}
->
->   func addFloat() {}
->   let EXPORT_MODULE = JSModule.registerModule {
->       runtime, exports => exports["addNumber"] = runtime.function(addFloat).toJSValue() // 会覆盖使用 @Interop 修饰的同名函数 addNumber
->   }
->   ```
+   在同一个仓颉模块中（同一个包及其子包中）需遵循如下规则，否则可能出现编译报错或符号覆盖：
+
+   - 使用 `@Interop` 修饰的函数、interface、class 不能同名。
+
+     错误示例：
+
+     <!-- compile.error -->
+     ```cangjie
+     @Interop[ArkTS]
+     public func addNumber() : Unit {}
+
+     @Interop[ArkTS]
+     public func addNumber(a: Float64) : Unit {} // 同一个包中会出现编译报错；父子包中可能会出现符号覆盖
+     ```
+
+   - 使用 `@Interop` 修饰的函数、interface、class 和使用 JSModule.registerModule、JSModule.registerClass、JSModule.registerFunc 注册到 JSModule 中的函数、interface、class 不能同名。
+
+     错误示例：
+
+     <!-- run.error -->
+     ```cangjie
+     @Interop[ArkTS]
+     public func addNumber() : Unit {}
+
+     func addFloat() {}
+     let EXPORT_MODULE = JSModule.registerModule {
+         runtime, exports => exports["addNumber"] = runtime.function(addFloat).toJSValue() // 会覆盖使用 @Interop 修饰的同名函数 addNumber
+     }
+     ```
 
 ### ArkTS 代码中使用仓颉模块
 
@@ -122,6 +123,39 @@ import { addF64 } from "libohos_app_cangjie_entry.so"
 
 // 调用仓颉接口
 console.log("result " + addF64(1, 2))
+```
+
+若希望在页面中直观查看调用结果，可将以下完整代码直接粘贴到 `entry > src > main > ets > pages > Index.ets` 文件中运行：
+
+```typescript
+// Index.ets
+import { addF64 } from "libohos_app_cangjie_entry.so"
+
+@Entry
+@Component
+struct Index {
+  @State message: string = 'Hello World'
+
+  build() {
+    Row() {
+      Column() {
+        Text(this.message)
+          .fontSize(50)
+          .fontWeight(FontWeight.Bold)
+        Button('调用 addF64')
+          .width('80%')
+          .height(40)
+          .margin(20)
+          .onClick(() => {
+            // 调用仓颉接口，并将结果显示在页面上
+            this.message = "result " + addF64(1, 2)
+          })
+      }
+      .width('100%')
+    }
+    .height('100%')
+  }
+}
 ```
 
 ## 场景详细说明
@@ -160,12 +194,13 @@ console.log("result " + addF64(1, 2))
 
 异步函数互操作使用示例：
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 // 仓颉侧创建互操作函数
 package ohos_app_cangjie_entry
 
 import kit.CangjieKit.*
+import ohos.ark_interop_macro.*
 
 @Interop[ArkTS, Async]
 public func doAsync(a: Float64, b: Float64): Float64 {
@@ -204,12 +239,13 @@ doAsync(1, 2).then(result => {
 
 接口互操作使用示例：
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 // 仓颉侧创建互操作函数
 package ohos_app_cangjie_entry
 
 import kit.CangjieKit.*
+import ohos.ark_interop_macro.*
 
 @Interop[ArkTS]
 public interface InterfaceDemo {
@@ -269,12 +305,13 @@ console.log("result " + doInterface(inter));
 
 类互操作使用示例：
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 // 仓颉侧创建互操作函数
 package ohos_app_cangjie_entry
 
 import kit.CangjieKit.*
+import ohos.ark_interop_macro.*
 
 @Interop[ArkTS]
 public class ClassDemo {
@@ -331,7 +368,7 @@ public class ClassDemo {
 自动生成的 ArkTS 接口：
 
 ```typescript
-// Generate... > Cangjie-ArkTS Interop API 后再自动生成 .d.ts
+// Generate... > Cangjie-ArkTS Interop API 后自动生成 .d.ts
 export declare class ClassDemo {
     value1: number
     value2: number
@@ -343,6 +380,23 @@ export declare class ClassDemo {
     constructor(a: number, b: number)
 }
 ```
+
+当前版本对 class 场景执行 **Generate... > Cangjie-ArkTS Interop API** 后，Index.d.ts 中可能不会自动生成 `export declare class ClassDemo` 声明，ark_interop_api.d.ts 中的 CustomLib 接口也可能出现构造方法缺失或重复声明。若出现上述情况，请手动向 Index.d.ts 中补充 class 声明，可参考以下模板（成员与仓颉侧被 `@Interop[ArkTS]` 修饰且非 `Invisible` 的 public 成员一一对应）：
+
+```typescript
+export declare class ClassDemo {
+    value1: number
+    value2: number
+    static staticMethod(): number
+    foo(a: number): number
+    id1: number
+    id2: number
+    constructor(a: number)
+    constructor(a: number, b: number)
+}
+```
+
+补充完成后即可正常编译运行，不影响互操作功能。
 
 ArkTS 侧对于仓颉模块的调用：
 
@@ -368,12 +422,13 @@ console.log("result " + ClassDemo.staticMethod());
 
 枚举互操作使用示例：
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 // 仓颉侧创建互操作函数
 package ohos_app_cangjie_entry
 
 import kit.CangjieKit.*
+import ohos.ark_interop_macro.*
 
 @Interop[ArkTS]
 public enum EnumDemo {
@@ -399,6 +454,18 @@ export declare const enum EnumDemo {
 export declare function getEnum(e: EnumDemo): EnumDemo
 ```
 
+当前版本对 enum 场景执行 **Generate... > Cangjie-ArkTS Interop API** 后，Index.d.ts 及 ark_interop_api.d.ts 中可能不会自动生成 `export declare const enum EnumDemo` 声明。若出现上述情况，请手动向 Index.d.ts 中补充枚举声明，可参考以下模板（枚举成员值从 0 开始按声明顺序递增）：
+
+```typescript
+export declare const enum EnumDemo {
+    Red = 0,
+    Green = 1,
+    Blue = 2
+}
+```
+
+补充完成后即可正常编译运行，不影响互操作功能。
+
 ArkTS 侧对于仓颉模块的调用：
 
 ```typescript
@@ -419,12 +486,13 @@ console.log("result " + getEnum(e));
 
 全局变量互操作使用示例：
 
-<!--compile-->
+<!-- compile -->
 ```cangjie
 // 仓颉侧创建互操作全局变量
 package ohos_app_cangjie_entry
 
 import kit.CangjieKit.*
+import ohos.ark_interop_macro.*
 
 @Interop[ArkTS]
 public const MAX_COUNT: Int64 = 100

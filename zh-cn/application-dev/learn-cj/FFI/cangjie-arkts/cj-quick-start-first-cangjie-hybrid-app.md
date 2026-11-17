@@ -80,11 +80,15 @@ Project_name
 └── oh-package-lock.json5
 ```
 
+> **说明：**
+>
+> 上图展示的是工程完成一次同步、编译构建后的目录结构。其中，`.hvigor`、`entry > build`、`entry > oh_modules`、`oh_modules` 等目录为工程同步或编译构建后自动生成，新建工程的初始目录中不包含这些内容。
+
 其中关键文件信息如下：
 
 - **AppScope > app.json5**：应用的全局配置信息。
 - **entry**：OpenHarmony工程模块，编译构建生成一个HAP包。
-    - **src > har**：用于存放仓颉与ArkTS互操作依赖的HAR模块。
+    - **entry > har**：用于存放仓颉与ArkTS互操作依赖的HAR模块。
     - **src > main > cangjie**：用于存放仓颉源码。
     - **src > main > cangjie > types**: 仓颉与ArkTS互操作的依赖库。
     - **src > main > ets**：用于存放ArkTS源码。
@@ -180,11 +184,11 @@ Project_name
 >
 > 在仓颉与ArkTS混合开发场景中，仓颉页面不是一个真正意义上具有完整生命周期的页面，只能以组件的形式嵌入到ArkTS页面中，因此需要在ArkTS侧提供一个@Entry的页面作为容器，来加载仓颉页面组件。
 >
-> 仓颉与ArkTS混合UI的详细内容请参见 [混合开发](../../../arkui-cj/cj-appendix-hybrid.md)。
+> 仓颉与ArkTS混合UI的详细内容请参见 [混合开发](../../../arkui-cj/cj-appendix-hybrid.md)。若需在仓颉页面中渲染列表等更复杂的UI（如 List 渲染上千项数据），请参见[增加仓颉页面](./add_cangjie_page.md#在仓颉页面组件中使用-list-渲染列表数据)。
 
 1. 创建仓颉页面。
 
-    - 在**Project**窗口，打开**entry > src > main**，右键单击**cangjie**文件夹，选择**New -> Cangjie HybridComponent File**，**Component name**命名为**Second**，**Language** 中选中**Cangjie**选项，**Type** 中选中**With ArkTS Wrapper**选项,如下图所示：
+    - 在**Project**窗口，打开`entry > src > main`，右键单击**cangjie**文件夹，选择**New -> Cangjie HybridComponent File**，**Component name**命名为**Second**，**Language** 中选中**Cangjie**选项，**Type** 中选中**With ArkTS Wrapper**选项，如下图所示：
 
        ![inputPageName](../../figures/inputPageName.png)
 
@@ -217,7 +221,6 @@ Project_name
     - 参考第一个ArkTS页面的样式，在仓颉页面中添加Text组件、Button组件等，并设置其样式。**second.cj**文件的示例如下：
 
        <!-- compile -->
-
        ```cangjie
        // second.cj
        package ohos_app_cangjie_entry
@@ -244,15 +247,19 @@ Project_name
                                .fontWeight(FontWeight.Bold)
                        }
                            .shape(ButtonType.Capsule)
-                           .margin(top: 20)
-                           .backgroundColor(Color(0x0D9FFB))
-                           .width(40.percent)
-                           .height(5.percent)
+                       .margin(top: 20)
+                       .backgroundColor(Color(0x0D9FFB))
+                       .width(40.percent)
+                       .height(5.percent)
                    }.width(100.percent)
                }.height(100.percent)
            }
        }
        ```
+
+       > **说明：**
+       >
+       > 仓颉侧导入ArkUI相关能力的包名与DevEco Studio-Cangjie Plugin的版本相关。若示例中的 `import ohos.arkui.component.*`、`import ohos.arkui.state_management.*` 等导入语句报错，说明当前环境提供的包名与示例不一致，可尝试改用 `import ohos.component.*`、`import ohos.state_manage.*` 等与当前插件版本匹配的包名。
 
 2. 创建ArkTS侧仓颉页面的容器。
 
@@ -283,6 +290,8 @@ Project_name
     > **说明：**
     >
     > 开发者需要自行开发ArkTS代码作为容器来嵌入仓颉页面。
+    >
+    > CJHybridComponent 并不要求为每个仓颉页面组件单独新建一个跳转页面。除本教程"新建 second.ets 并跳转"的方式外，也可以在**任意已有的 ArkTS 页面**（例如首页 Index.ets）中按需嵌入并调用仓颉页面组件，可将 CJHybridComponent 与其余 ArkTS 组件混合排布在同一个页面的任意位置，实现同一页面内 ArkTS 与仓颉 UI 的混合渲染。
 
 3. 配置第二个页面的路由。
 
@@ -367,14 +376,14 @@ Project_name
 
 - 仓颉提供注册和注销ArkTS函数的相关接口。在**Project**窗口，单击**entry > src > main > cangjie**，打开**index.cj**文件，编写仓颉与ArkTS互操作相关的代码，编写完成后示例如下：
 
-   <!-- compile -->
-
+   <!-- compile -quick_start_first_cangjie_hybrid_app-example1 -->
    ```cangjie
    // index.cj
    package ohos_app_cangjie_entry
 
    import kit.ArkUI.*
    import kit.CangjieKit.*
+   import ohos.ark_interop_macro.*
    import kit.PerformanceAnalysisKit.Hilog
    import std.collection.*
 
@@ -438,19 +447,19 @@ Project_name
 
    > **说明：**
    >
-   > 创建Cangjie Hybrid Ability混合工程之后，在模块下**entry > oh-package.json5**文件中会自动将**libohos_app_cangjie_entry**库添加到**dependencies**字段中作为依赖。
-   >
-   > **entry > oh-package.json5**文件如下所示：
-   >
-   > ```json
-   > "dependencies": {
-   >    "libohos_app_cangjie_entry.so": "file:src/main/cangjie/types/libohos_app_cangjie_entry",
-   >    "@cangjie/cjhybridcomponent": "1.0.0",
-   >    "libark_interop_api.so": "file:src/main/cangjie/ark_interop_api"
-   > }
-   >    ```
+   > 若`Index.d.ts`文件中自动生成了本示例未涉及的接口声明（如 `export declare function testCJ(s: string): string`），且IDE显示报错，属于预期现象，不影响应用的编译与运行，可直接忽略；也可以手动删除该多余的声明。
 
-- 仓颉暴露给ArkTS的.d.ts接口声明生成后，可以直接在ArkTS文件中引入.d.ts文件中接口的依赖。将ArkTS页面路由的函数注册到仓颉侧。**second.ets**文件的示例如下：
+   创建Cangjie Hybrid Ability混合工程之后，在模块下`entry > oh-package.json5`文件中会自动将 `libohos_app_cangjie_entry` 库添加到 `dependencies` 字段中作为依赖。`entry > oh-package.json5`文件如下所示：
+
+   ```json
+   "dependencies": {
+      "libohos_app_cangjie_entry.so": "file:src/main/cangjie/types/libohos_app_cangjie_entry",
+      "@cangjie/cjhybridcomponent": "1.0.0",
+      "libark_interop_api.so": "file:src/main/cangjie/ark_interop_api"
+   }
+   ```
+
+- 仓颉暴露给ArkTS的.d.ts接口声明生成后，可以直接在ArkTS文件中引入.d.ts文件中接口的依赖。将ArkTS页面路由的函数注册到仓颉侧。`entry > src > main > ets > pages > second.ets`文件的示例如下：
 
    ```typescript
    // second.ets
@@ -502,8 +511,7 @@ Project_name
 
 - 在仓颉页面组件中，给仓颉Button按钮绑定onClick事件，单击按钮时，调用ArkTS注册过来的回调函数，返回第一页。**second.cj**文件的示例如下：
 
-   <!-- compile -->
-
+   <!-- compile -quick_start_first_cangjie_hybrid_app-example1 -->
    ```cangjie
    // second.cj
    package ohos_app_cangjie_entry
@@ -561,6 +569,10 @@ Project_name
 1. 将搭载OpenHarmony系统的真机与电脑连接。
 2. 真机连接成功后，单击**File > Project Structure > Project > Signing Configs**界面勾选**Support OpenHarmony**和**Automatically generate signature**，单击界面提示的**Sign In**，使用用户账号登录。等待自动签名完成后，单击**OK**即可。如下图所示：
 
+    > **说明：**
+    >
+    > 不同版本的DevEco Studio该界面选项略有差异。若您的版本中没有**Support OpenHarmony**选项，直接勾选**Automatically generate signature**即可，不影响后续的自动签名与运行。
+
     ![buildSign](../../figures/buildSign.png)
 
 3. 在编辑窗口右上角的工具栏，单击![runButton](../../figures/runButton.png)按钮运行。效果如下图所示：
@@ -571,9 +583,9 @@ Project_name
 
 仓颉语言编写的OpenHarmony应用/服务，支持在DevEco Studio提供的模拟器（Emulator）上运行。
 
-1. 创建一个类型为Phone的模拟器设备，并在DevEco Studio右上角的设备列表中，选中该设备。
+1. 若本地尚未创建模拟器，请先创建一个设备类型为**Phone**的模拟器，创建方法请参见[《创建模拟器》](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-emulator-create)。模拟器创建完成后，在DevEco Studio右上角的设备列表中，选中该设备。
 
-2. 仓颉工程默认编译架构为**arm64-v8a**，因此在使用**x86模拟器**时（当前开发环境为**Windows/x86_64**或**MacOS/x86_64**时），仓颉工程及三方库需要编译出x86_64版本的so，请在仓颉模块的**build-profile.json5**配置文件中，为**cangjieOptions/abiFilters**的值增加**x86_64**，具体编译配置如下：
+2. 仓颉工程默认编译架构为 `arm64-v8a`，因此在使用 `x86` 模拟器时（当前开发环境为 `Windows/x86_64` 或 `MacOS/x86_64` 时），仓颉工程及三方库需要编译出 `x86_64` 版本的so，请在仓颉模块的 `entry/build-profile.json5` 配置文件中，为 `cangjieOptions/abiFilters` 的值增加 `x86_64`，具体编译配置如下：
 
     ```json
     "buildOption": { // 配置项目在构建过程中使用的相关配置

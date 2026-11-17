@@ -111,6 +111,7 @@
 
 针对场景一的诉求，可使用互操作库，在仓颉侧实现可被互操作调用的接口，示例如下：
 
+<!-- compile -->
 ```cangjie
 // 导入互操作库
 import ohos.ark_interop.*
@@ -149,7 +150,10 @@ let result = addNumber(1, 2);
 
 该场景可以借助互操作宏简化开发，比如以上案例中仓颉侧代码可以简化成：
 
+<!-- compile -->
 ```cangjie
+import ohos.ark_interop_macro.*
+
 @Interop[ArkTS]
 public func addNumber(a: Float64, b: Float64): Float64 {
     a + b
@@ -160,7 +164,10 @@ public func addNumber(a: Float64, b: Float64): Float64 {
 
 针对场景二的诉求，可使用互操作库，加载ArkTS模块，并调用接口，示例如下：
 
+<!-- compile -->
 ```cangjie
+import kit.CangjieKit.*
+
 func callInterop(x: Float64, y: Float64): Float64 {
     // 获取互操作上下文
     let context: JSContext = JSRuntime().mainContext

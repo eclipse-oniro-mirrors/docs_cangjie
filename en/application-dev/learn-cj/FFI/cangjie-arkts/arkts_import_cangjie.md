@@ -21,7 +21,7 @@ Below is an example of loading the Cangjie module `ohos_app_cangjie_entry` using
 
     - Implement the interoperability interface `addNumber`:
 
-        <!--compile-->
+        <!-- compile -->
         ```cangjie
         // entry/src/main/cangjie/index.cj
 
@@ -172,11 +172,10 @@ Below is an example of loading the Cangjie third-party library `libapplication.s
 
     - Implement the interoperability interface `addNumber`:
 
-        <!--compile-->
+        <!-- compile -->
         ```cangjie
         // cangjielib/src/main/cangjie/index.cj
 
-        // package name
         package ohos_app_cangjie_cangjielib
 
         // Import the interoperability library
@@ -667,7 +666,7 @@ Below is an example of loading the Cangjie module `ohos_app_cangjie_entry` using
 
     - Implement the interoperability interface `addNumber`:
 
-        <!--compile-->
+        <!-- compile -->
         ```cangjie
         // entry/src/main/cangjie/index.cj
 
