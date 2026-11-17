@@ -461,7 +461,7 @@ AutoScreenBrightnessMode
 
 **System Capability:** SystemCapability.Applications.Settings.Core
 
-**Since:** 22
+**Since:** 26.1.0
 
 **Example:**
 
@@ -497,7 +497,7 @@ ManualScreenBrightnessMode
 
 **System Capability:** SystemCapability.Applications.Settings.Core
 
-**Since:** 22
+**Since:** 26.1.0
 
 **Example:**
 
