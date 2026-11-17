@@ -417,6 +417,9 @@
                             - Appfreeze Events
                                 - [Appfreeze Event Introduction](dfx/cj-hiappevent-watcher-freeze-events.md)
                                 - [Subscribing to Appfreeze Events (Cangjie)](dfx/cj-hiappevent-watcher-freeze-events-cangjie.md)
+                            - AppKilled Events
+                                - [AppKilled Event Introduction](dfx/cj-hiappevent-watcher-app-killed-events.md)
+                                - [Subscribing to AppKilled Events (Cangjie)](dfx/cj-hiappevent-watcher-app-killed-events-cangjie.md)
                     <!--Del-->
                     - [Event Reporting](dfx/cj-hiappevent-event-reporting.md)
                     <!--DelEnd-->
@@ -427,6 +430,7 @@
                 - Fault Analysis
                     - [Analyzing Cangjie Crash (Process Crash)](dfx/cj-cangjiecrash-guidelines.md)
                     - [Analyzing AppFreeze (Application Not Responding)](dfx/cj-appfreeze-guidelines.md)
+                    - [Analyzing AppKilled (Application Termination)](dfx/cj-appkilled-guidelines.md)
                 - Command Line Tools <!--perform-command-line-utilities-->
                     - [hdc](tools/cj-hdc.md)
                     - [hilog](tools/cj-hilog.md)

@@ -567,6 +567,7 @@
                 - 故障检测
                     - [分析Cangjie Crash（进程崩溃）](dfx/cj-cangjiecrash-guidelines.md)
                     - [分析AppFreeze（应用无响应）](dfx/cj-appfreeze-guidelines.md)
+                    - [分析AppKilled（应用终止）](dfx/cj-appkilled-guidelines.md)
                 - 日志打印
                     - [使用HiLog打印日志](dfx/cj-hilog-guidelines.md)
                 - 事件订阅
@@ -581,6 +582,9 @@
                             - 应用冻屏事件
                                 - [应用冻屏事件介绍](dfx/cj-hiappevent-watcher-freeze-events.md)
                                 - [订阅应用冻屏事件](dfx/cj-hiappevent-watcher-freeze-events-cangjie.md)
+                            - 应用终止事件
+                                - [应用终止事件介绍](dfx/cj-hiappevent-watcher-app-killed-events.md)
+                                - [订阅应用终止事件](dfx/cj-hiappevent-watcher-app-killed-events-cangjie.md)
                     - [事件上报](dfx/cj-hiappevent-event-reporting.md)
                 - 性能跟踪
                     - [查看HiTraceMeter日志](dfx/cj-hitracemeter-view.md)

@@ -22,6 +22,8 @@ Currently, appfreeze detection monitors from the following dimensions. Understan
 | APP_INPUT_BLOCK | User input response timeout. |
 | LIFECYCLE_TIMEOUT | Ability lifecycle transition timeout. |
 
+In addition, for the analysis of application termination caused by resource control scenarios (such as LowMemoryKill and RSS memory overlimit), see [Analyzing AppKilled (Application Termination)](./cj-appkilled-guidelines.md).
+
 ### THREAD_BLOCK_6S - Main Thread Execution Timeout
 
 This fault indicates that the application's main thread is either stalled or overloaded with tasks, affecting task execution smoothness and user experience.

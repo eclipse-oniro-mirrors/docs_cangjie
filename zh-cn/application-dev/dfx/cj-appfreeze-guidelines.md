@@ -400,6 +400,8 @@ MSG:ability:EntryAbility background timeout
 | APP_INPUT_BLOCK | 用户输入响应超时。 |
 | LIFECYCLE_TIMEOUT | Ability生命周期切换超时。 |
 
+此外，应用因资源管控等场景被系统终止（如LowMemoryKill、RSS内存超限等）的分析方法，请参见[分析AppKilled（应用终止）](./cj-appkilled-guidelines.md)。
+
 ## 定位步骤与思路
 
 定位应用无响应问题，首先需要开发者获取相关日志，再通过日志记录的问题基本信息，结合hilog日志和trace来定位出无响应问题的发生的具体位置。
