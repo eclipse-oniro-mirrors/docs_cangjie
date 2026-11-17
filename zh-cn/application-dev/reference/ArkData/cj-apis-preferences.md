@@ -683,6 +683,10 @@ public func getAll(): HashMap<String, PreferencesValueType>
 
 **功能：** 获取缓存的Preferences实例中的所有键值数据。
 
+> **说明：**
+>
+> 当某个键值对的值是通过[put](#func-putstring-preferencesvaluetype)写入的空字符串时，该键值对不会包含在getAll返回的HashMap中，通过该键获取到的值为None。请避免将键值对的值设置为空字符串。
+
 **系统能力：** SystemCapability.DistributedDataManager.Preferences.Core
 
 **起始版本：** 22

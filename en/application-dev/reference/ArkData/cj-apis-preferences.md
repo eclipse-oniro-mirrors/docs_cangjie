@@ -699,6 +699,10 @@ public func getAll(): HashMap<String, PreferencesValueType>
 
 **Function:** Retrieves all key-value data from the cached Preferences instance.
 
+> **Note:**
+>
+> When the value of a key-value pair is an empty string written by [put](#func-putstring-preferencesvaluetype), the key-value pair is not included in the HashMap returned by getAll, and the value obtained through that key is None. Avoid setting the value of a key-value pair to an empty string.
+
 **System Capability:** SystemCapability.DistributedDataManager.Preferences.Core
 
 **Since:** 22
