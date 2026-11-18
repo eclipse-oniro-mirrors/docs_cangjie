@@ -95,7 +95,7 @@ The diagram below illustrates this classification. For detailed descriptions of 
 - [@Link](./cj-macro-link.md): Variables decorated with `@Link` can establish bidirectional synchronization with parent components. Changes in child components propagate to the parent's data source, and parent updates propagate to the `@Link`-decorated variable.  
 - [@Provide/@Consume](./cj-macro-provide-and-consume.md): Variables decorated with `@Provide/@Consume` enable state synchronization across component hierarchies (multi-level components) without requiring named parameter passing, using aliases or property name binding.  
 - [@Observed](./cj-macro-observed-and-publish.md): `@Observed` decorates a class. Classes requiring observation in nested scenarios must be decorated with `@Observed`. Alone, `@Observed` has no effect; it must be used with `@Publish`.  
-- [@Publish](./cj-macro-observed-and-publish.md): Variables decorated with `@Publish` receive instances of `@Observed`-decorated classes, enabling observation of nested scenarios and bidirectional synchronization with parent component data sources.  
+- [@Publish](./cj-macro-observed-and-publish.md): `@Publish` decorates member variables of classes decorated with `@Observed`, applicable to multi-level nested scenarios. Assignment changes to decorated member variables can be observed, triggering UI updates.  
 
 > **Note:**  
 >  

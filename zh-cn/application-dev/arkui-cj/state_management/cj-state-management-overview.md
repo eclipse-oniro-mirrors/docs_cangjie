@@ -96,7 +96,7 @@ class Parent {
 - [@Link](./cj-macro-link.md)：@Link装饰的变量可以和父组件建立双向同步关系，子组件中@Link装饰变量的修改会同步给父组件中建立双向数据绑定的数据源，父组件的更新也会同步给@Link装饰的变量。
 - [@Provide/@Consume](./cj-macro-provide-and-consume.md)：@Provide/@Consume装饰的变量用于跨组件层级（多层组件）同步状态变量，可以不需要通过参数命名机制传递，通过alias（别名）或者属性名绑定。
 - [@Observed](./cj-macro-observed-and-publish.md)：@Observed装饰class，需要观察多层嵌套场景的class需要被@Observed装饰。单独使用@Observed没有任何作用，需要和@Publish联用。
-- [@Publish](./cj-macro-observed-and-publish.md)：@Publish装饰的变量接收@Observed装饰的class的实例，应用于观察多层嵌套场景，和父组件的数据源构建双向同步。
+- [@Publish](./cj-macro-observed-and-publish.md)：@Publish装饰被@Observed装饰的class的成员变量，应用于观察多层嵌套场景，被装饰的成员变量的赋值变化可以被观察到，从而触发UI更新。
 
 > **说明：**
 >
