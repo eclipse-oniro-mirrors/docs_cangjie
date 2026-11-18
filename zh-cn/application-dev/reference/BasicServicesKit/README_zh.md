@@ -16,6 +16,7 @@
         - [ohos.common_event_data](cj-apis-common_event_data.md)（Beta特性）
         - [ohos.common_event_publish_data](cj-apis-common_event_publish_data.md)（Beta特性）
         - [ohos.value_type](cj-apis-value_type.md)（Beta特性）
+        - [ohos.pasteboard（剪贴板）](cj-apis-pasteboard.md)（Beta特性）
 - 错误码
     - [上传下载错误码](cj-errorcode-request.md)（Beta特性）
     - [时间时区服务错误码](cj-errorcode-time.md)（Beta特性）
@@ -23,3 +24,4 @@
     - [系统电源管理错误码](cj-errorcode-power.md)（Beta特性）
     - [账号管理错误码](cj-errorcode-basic-account.md)（Beta特性）
     - [设置数据项错误码](cj-errorcode-settings.md)（Beta特性）
+    - [剪贴板错误码](cj-errorcode-pasteboard.md)（Beta特性）

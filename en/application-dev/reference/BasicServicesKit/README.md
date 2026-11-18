@@ -16,9 +16,11 @@
         - [ohos.common_event_data](cj-apis-common_event_data.md)(Beta Feature)
         - [ohos.common_event_publish_data](cj-apis-common_event_publish_data.md)(Beta Feature)
         - [ohos.value_type](cj-apis-value_type.md)(Beta Feature)
+        - [ohos.pasteboard (Pasteboard)](cj-apis-pasteboard.md)(Beta Feature)
 - Error Codes
     - [Upload/Download Error Codes](cj-errorcode-request.md)(Beta Feature)
     - [Time and Time Zone Error Codes](cj-errorcode-time.md)(Beta Feature)
     - [Event Error Codes](cj-errorcode-common_event_service.md)(Beta Feature)
     - [System Power Management Error Codes](cj-errorcode-power.md)(Beta Feature)
     - [Account Management Error Codes](cj-errorcode-basic-account.md)(Beta Feature)
+    - [Pasteboard Error Codes](cj-errorcode-pasteboard.md)(Beta Feature)
