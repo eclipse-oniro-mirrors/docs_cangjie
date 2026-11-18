@@ -10,7 +10,7 @@
 
 ohos.telephony.sim从26.1.0版本开始提供CardType和SimState枚举，用于表示SIM卡类型和状态。两种枚举均支持相等、不等比较和toString字符串转换。
 
-当前模块只有枚举定义，没有读取卡类型、读取卡状态或修改SIM卡状态的接口。创建一个枚举值不会查询设备，也不会改变设备上的SIM卡。
+sim模块只有枚举定义，没有主动读取卡类型、读取卡状态或修改SIM卡状态的接口。创建枚举值不会查询或修改设备；真实状态通知由observer模块提供，见[电话服务状态监听](cj-telephony-observer-guidelines.md)。
 
 ## 基本概念
 

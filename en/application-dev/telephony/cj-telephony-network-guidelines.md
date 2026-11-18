@@ -8,7 +8,7 @@
 
 ## Overview
 
-Applications can query the registered network country code, network registration state, automatic or manual network selection mode, primary slot ID, radio access technology, and device NR support. These are one-time queries; the returned objects do not update automatically when device state changes.
+Applications can query the registered network country code, network registration state, automatic or manual network selection mode, primary slot ID, radio access technology, and device NR support. This guide covers one-time queries; the returned objects do not update automatically when device state changes. To receive subsequent changes, see [Observing Telephony State Changes](cj-telephony-observer-guidelines.md).
 
 ## Basic Concepts
 
@@ -23,7 +23,7 @@ Applications can query the registered network country code, network registration
 
 ## Constraints
 
-- These APIs are available since 26.1.0 and require SystemCapability.Telephony.CoreService.
+- The query APIs in this guide are available since 26.1.0 and require SystemCapability.Telephony.CoreService.
 - getNetworkState and getRadioTechSync require ohos.permission.GET_NETWORK_INFO.
 - The country code can be empty when no network is registered, and is also empty for an invalid slot. getRadioTechSync returns RadioTechnologyUnknown for both domains when the slot is invalid or a query fails. Unknown does not identify a specific error.
 - The current getNetworkState implementation returns NsaStateNotSupport for nsaState and false for isCaActive. These properties cannot be used to determine the actual NSA or carrier aggregation state.
