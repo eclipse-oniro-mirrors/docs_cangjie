@@ -1,4 +1,4 @@
-# Vibrator Development Guide (Cangjie)
+# Vibrator Development Guide
 
 <!--Del-->
 > **Note:**
