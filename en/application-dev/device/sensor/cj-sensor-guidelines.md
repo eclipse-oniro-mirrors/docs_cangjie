@@ -151,7 +151,7 @@ The development procedure is demonstrated using the accelerometer sensor (`ACCEL
    ```cangjie
    // index.cj
    import kit.SensorServiceKit.*
-   import ohos.CangjieKit.AsyncCallback
+   import kit.CangjieKit.AsyncCallback
    import kit.CangjieKit.BusinessException
    import kit.PerformanceAnalysisKit.Hilog
 
@@ -183,7 +183,7 @@ The development procedure is demonstrated using the accelerometer sensor (`ACCEL
    ```cangjie
    // index.cj
    import kit.SensorServiceKit.*
-   import ohos.CangjieKit.AsyncCallback
+   import kit.CangjieKit.AsyncCallback
    import kit.CangjieKit.BusinessException
    import kit.PerformanceAnalysisKit.Hilog
 
@@ -211,7 +211,7 @@ The development procedure is demonstrated using the accelerometer sensor (`ACCEL
    ```cangjie
    // index.cj
    import kit.SensorServiceKit.*
-   import ohos.CangjieKit.AsyncCallback
+   import kit.CangjieKit.AsyncCallback
    import kit.CangjieKit.BusinessException
    import kit.PerformanceAnalysisKit.Hilog
 
@@ -238,7 +238,7 @@ The development procedure is demonstrated using the accelerometer sensor (`ACCEL
    ```cangjie
    // index.cj
    import kit.SensorServiceKit.*
-   import ohos.CangjieKit.AsyncCallback
+   import kit.CangjieKit.AsyncCallback
    import kit.CangjieKit.BusinessException
    import kit.PerformanceAnalysisKit.Hilog
 
@@ -266,7 +266,7 @@ The development procedure is demonstrated using the accelerometer sensor (`ACCEL
     ```cangjie
     // index.cj
     import kit.SensorServiceKit.*
-    import ohos.CangjieKit.AsyncCallback
+    import kit.CangjieKit.AsyncCallback
     import kit.CangjieKit.BusinessException
     import kit.PerformanceAnalysisKit.Hilog
 
@@ -293,7 +293,7 @@ The development procedure is demonstrated using the accelerometer sensor (`ACCEL
     ```cangjie
     // index.cj
     import kit.SensorServiceKit.*
-    import ohos.CangjieKit.AsyncCallback
+    import kit.CangjieKit.AsyncCallback
     import kit.CangjieKit.BusinessException
     import kit.PerformanceAnalysisKit.Hilog
 
@@ -321,7 +321,7 @@ The development procedure is demonstrated using the accelerometer sensor (`ACCEL
     ```cangjie
     // index.cj
     import kit.SensorServiceKit.*
-    import ohos.CangjieKit.AsyncCallback
+    import kit.CangjieKit.AsyncCallback
     import kit.CangjieKit.BusinessException
     import kit.PerformanceAnalysisKit.Hilog
 
@@ -348,7 +348,7 @@ The development procedure is demonstrated using the accelerometer sensor (`ACCEL
     ```cangjie
     // index.cj
     import kit.SensorServiceKit.*
-    import ohos.CangjieKit.AsyncCallback
+    import kit.CangjieKit.AsyncCallback
     import kit.CangjieKit.BusinessException
     import kit.PerformanceAnalysisKit.Hilog
 
@@ -375,7 +375,7 @@ The development procedure is demonstrated using the accelerometer sensor (`ACCEL
     ```cangjie
     // index.cj
     import kit.SensorServiceKit.*
-    import ohos.CangjieKit.AsyncCallback
+    import kit.CangjieKit.AsyncCallback
     import kit.CangjieKit.BusinessException
     import kit.PerformanceAnalysisKit.Hilog
 

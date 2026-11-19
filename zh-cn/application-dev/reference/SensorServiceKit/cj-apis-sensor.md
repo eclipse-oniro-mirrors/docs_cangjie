@@ -3323,7 +3323,7 @@ public func getGeomagneticInfo(locationOptions: LocationOptions, timeMillis: Int
 // index.cj
 
 import kit.SensorServiceKit.*
-import ohos.base.*
+import kit.ArkUI.*
 import kit.PerformanceAnalysisKit.Hilog
 
 let location = LocationOptions(80.0, 0.0, 0.0)
@@ -3378,7 +3378,7 @@ public func getDeviceAltitude(seaPressure: Float32, currentPressure: Float32, ca
 // index.cj
 
 import kit.SensorServiceKit.*
-import ohos.base.*
+import kit.ArkUI.*
 import kit.PerformanceAnalysisKit.Hilog
 
 getDeviceAltitude(1013.25, 1000.0, { err, data =>
@@ -3390,7 +3390,7 @@ getDeviceAltitude(1013.25, 1000.0, { err, data =>
 })
 ```
 
-## func getInclination(Array<Float32>, AsyncCallback<Float32>)
+## func getInclination(Array\<Float32>, AsyncCallback\<Float32>)
 
 ```cangjie
 public func getInclination(inclinationMatrix: Array<Float32>, callback: AsyncCallback<Float32>): Unit
@@ -3406,8 +3406,8 @@ public func getInclination(inclinationMatrix: Array<Float32>, callback: AsyncCal
 
 | 参数名 | 类型 | 必填 | 默认值 | 说明 |
 |:--- |:--- |:--- |:--- |:--- |
-| inclinationMatrix | Array<Float32> | 是 | - | 倾斜矩阵。 |
-| callback | AsyncCallback<Float32> | 是 | - | 回调函数，返回地磁倾角，单位为弧度。 |
+| inclinationMatrix | Array\<Float32> | 是 | - | 倾斜矩阵。 |
+| callback | AsyncCallback\<Float32> | 是 | - | 回调函数，返回地磁倾角，单位为弧度。 |
 
 **异常：**
 
@@ -3425,7 +3425,7 @@ public func getInclination(inclinationMatrix: Array<Float32>, callback: AsyncCal
 // index.cj
 
 import kit.SensorServiceKit.*
-import ohos.base.*
+import kit.ArkUI.*
 import kit.PerformanceAnalysisKit.Hilog
 
 let inclinationMatrix: Array<Float32> = [1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0]
@@ -3438,7 +3438,7 @@ getInclination(inclinationMatrix, { err, data =>
 })
 ```
 
-## func getAngleVariation(Array<Float32>, Array<Float32>, AsyncCallback<Array<Float32>>)
+## func getAngleVariation(Array\<Float32>, Array\<Float32>, AsyncCallback\<Array\<Float32>>)
 
 ```cangjie
 public func getAngleVariation(currentRotationMatrix: Array<Float32>, preRotationMatrix: Array<Float32>, callback: AsyncCallback<Array<Float32>>): Unit
@@ -3454,9 +3454,9 @@ public func getAngleVariation(currentRotationMatrix: Array<Float32>, preRotation
 
 | 参数名 | 类型 | 必填 | 默认值 | 说明 |
 |:--- |:--- |:--- |:--- |:--- |
-| currentRotationMatrix | Array<Float32> | 是 | - | 当前旋转矩阵。 |
-| preRotationMatrix | Array<Float32> | 是 | - | 相对旋转矩阵。 |
-| callback | AsyncCallback<Array<Float32>> | 是 | - | 回调函数，返回绕z、x、y轴方向的旋转角度。 |
+| currentRotationMatrix | Array\<Float32> | 是 | - | 当前旋转矩阵。 |
+| preRotationMatrix | Array\<Float32> | 是 | - | 相对旋转矩阵。 |
+| callback | AsyncCallback\<Array\<Float32>> | 是 | - | 回调函数，返回绕z、x、y轴方向的旋转角度。 |
 
 **异常：**
 
@@ -3474,7 +3474,7 @@ public func getAngleVariation(currentRotationMatrix: Array<Float32>, preRotation
 // index.cj
 
 import kit.SensorServiceKit.*
-import ohos.base.*
+import kit.ArkUI.*
 import kit.PerformanceAnalysisKit.Hilog
 
 let currentRotationMatrix: Array<Float32> = [1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0]
@@ -3488,7 +3488,7 @@ getAngleVariation(currentRotationMatrix, preRotationMatrix, { err, data =>
 })
 ```
 
-## func getRotationMatrix(Array<Float32>, AsyncCallback<Array<Float32>>)
+## func getRotationMatrix(Array\<Float32>, AsyncCallback\<Array\<Float32>>)
 
 ```cangjie
 public func getRotationMatrix(rotationVector: Array<Float32>, callback: AsyncCallback<Array<Float32>>): Unit
@@ -3504,8 +3504,8 @@ public func getRotationMatrix(rotationVector: Array<Float32>, callback: AsyncCal
 
 | 参数名 | 类型 | 必填 | 默认值 | 说明 |
 |:--- |:--- |:--- |:--- |:--- |
-| rotationVector | Array<Float32> | 是 | - | 旋转向量。 |
-| callback | AsyncCallback<Array<Float32>> | 是 | - | 回调函数，返回旋转矩阵。 |
+| rotationVector | Array\<Float32> | 是 | - | 旋转向量。 |
+| callback | AsyncCallback\<Array\<Float32>> | 是 | - | 回调函数，返回旋转矩阵。 |
 
 **异常：**
 
@@ -3523,7 +3523,7 @@ public func getRotationMatrix(rotationVector: Array<Float32>, callback: AsyncCal
 // index.cj
 
 import kit.SensorServiceKit.*
-import ohos.base.*
+import kit.ArkUI.*
 import kit.PerformanceAnalysisKit.Hilog
 
 let rotationVector: Array<Float32> = [0.0, 0.0, 0.0, 1.0]
@@ -3536,7 +3536,7 @@ getRotationMatrix(rotationVector, { err, data =>
 })
 ```
 
-## func transformRotationMatrix(Array<Float32>, CoordinatesOptions, AsyncCallback<Array<Float32>>)
+## func transformRotationMatrix(Array\<Float32>, CoordinatesOptions, AsyncCallback\<Array\<Float32>>)
 
 ```cangjie
 public func transformRotationMatrix(inRotationVector: Array<Float32>, coordinates: CoordinatesOptions, callback: AsyncCallback<Array<Float32>>): Unit
@@ -3552,9 +3552,9 @@ public func transformRotationMatrix(inRotationVector: Array<Float32>, coordinate
 
 | 参数名 | 类型 | 必填 | 默认值 | 说明 |
 |:--- |:--- |:--- |:--- |:--- |
-| inRotationVector | Array<Float32> | 是 | - | 旋转向量。 |
+| inRotationVector | Array\<Float32> | 是 | - | 旋转向量。 |
 | coordinates | [CoordinatesOptions](#class-coordinatesoptions) | 是 | - | 坐标选项。 |
-| callback | AsyncCallback<Array<Float32>> | 是 | - | 回调函数，返回变换后的旋转向量。 |
+| callback | AsyncCallback\<Array\<Float32>> | 是 | - | 回调函数，返回变换后的旋转向量。 |
 
 **异常：**
 
@@ -3572,7 +3572,7 @@ public func transformRotationMatrix(inRotationVector: Array<Float32>, coordinate
 // index.cj
 
 import kit.SensorServiceKit.*
-import ohos.base.*
+import kit.ArkUI.*
 import kit.PerformanceAnalysisKit.Hilog
 
 let rotationVector: Array<Float32> = [1.0, 0.0, 0.0, 0.0]
@@ -3586,7 +3586,7 @@ transformRotationMatrix(rotationVector, coordinates, { err, data =>
 })
 ```
 
-## func getQuaternion(Array<Float32>, AsyncCallback<Array<Float32>>)
+## func getQuaternion(Array\<Float32>, AsyncCallback\<Array\<Float32>>)
 
 ```cangjie
 public func getQuaternion(rotationVector: Array<Float32>, callback: AsyncCallback<Array<Float32>>): Unit
@@ -3602,8 +3602,8 @@ public func getQuaternion(rotationVector: Array<Float32>, callback: AsyncCallbac
 
 | 参数名 | 类型 | 必填 | 默认值 | 说明 |
 |:--- |:--- |:--- |:--- |:--- |
-| rotationVector | Array<Float32> | 是 | - | 旋转向量。 |
-| callback | AsyncCallback<Array<Float32>> | 是 | - | 回调函数，返回四元数。 |
+| rotationVector | Array\<Float32> | 是 | - | 旋转向量。 |
+| callback | AsyncCallback\<Array\<Float32>> | 是 | - | 回调函数，返回四元数。 |
 
 **异常：**
 
@@ -3621,7 +3621,7 @@ public func getQuaternion(rotationVector: Array<Float32>, callback: AsyncCallbac
 // index.cj
 
 import kit.SensorServiceKit.*
-import ohos.base.*
+import kit.ArkUI.*
 import kit.PerformanceAnalysisKit.Hilog
 
 let rotationVector: Array<Float32> = [0.0, 0.0, 0.0, 1.0]
@@ -3634,7 +3634,7 @@ getQuaternion(rotationVector, { err, data =>
 })
 ```
 
-## func getOrientation(Array<Float32>, AsyncCallback<Array<Float32>>)
+## func getOrientation(Array\<Float32>, AsyncCallback\<Array\<Float32>>)
 
 ```cangjie
 public func getOrientation(rotationMatrix: Array<Float32>, callback: AsyncCallback<Array<Float32>>): Unit
@@ -3650,8 +3650,8 @@ public func getOrientation(rotationMatrix: Array<Float32>, callback: AsyncCallba
 
 | 参数名 | 类型 | 必填 | 默认值 | 说明 |
 |:--- |:--- |:--- |:--- |:--- |
-| rotationMatrix | Array<Float32> | 是 | - | 旋转矩阵。 |
-| callback | AsyncCallback<Array<Float32>> | 是 | - | 回调函数，返回绕z、x、y轴方向的旋转角度，单位为度。 |
+| rotationMatrix | Array\<Float32> | 是 | - | 旋转矩阵。 |
+| callback | AsyncCallback\<Array\<Float32>> | 是 | - | 回调函数，返回绕z、x、y轴方向的旋转角度，单位为度。 |
 
 **异常：**
 
@@ -3669,7 +3669,7 @@ public func getOrientation(rotationMatrix: Array<Float32>, callback: AsyncCallba
 // index.cj
 
 import kit.SensorServiceKit.*
-import ohos.base.*
+import kit.ArkUI.*
 import kit.PerformanceAnalysisKit.Hilog
 
 let rotationMatrix: Array<Float32> = [1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0]
@@ -3682,7 +3682,7 @@ getOrientation(rotationMatrix, { err, data =>
 })
 ```
 
-## func getRotationMatrix(Array<Float32>, Array<Float32>, AsyncCallback<RotationMatrixResponse>)
+## func getRotationMatrix(Array\<Float32>, Array\<Float32>, AsyncCallback\<RotationMatrixResponse>)
 
 ```cangjie
 public func getRotationMatrix(gravity: Array<Float32>, geomagnetic: Array<Float32>, callback: AsyncCallback<RotationMatrixResponse>): Unit
@@ -3698,8 +3698,8 @@ public func getRotationMatrix(gravity: Array<Float32>, geomagnetic: Array<Float3
 
 | 参数名 | 类型 | 必填 | 默认值 | 说明 |
 |:--- |:--- |:--- |:--- |:--- |
-| gravity | Array<Float32> | 是 | - | 重力向量。 |
-| geomagnetic | Array<Float32> | 是 | - | 地磁向量。 |
+| gravity | Array\<Float32> | 是 | - | 重力向量。 |
+| geomagnetic | Array\<Float32> | 是 | - | 地磁向量。 |
 | callback | AsyncCallback<[RotationMatrixResponse](#class-rotationmatrixresponse)> | 是 | - | 回调函数，返回旋转矩阵和倾斜矩阵。 |
 
 **异常：**
@@ -3718,7 +3718,7 @@ public func getRotationMatrix(gravity: Array<Float32>, geomagnetic: Array<Float3
 // index.cj
 
 import kit.SensorServiceKit.*
-import ohos.base.*
+import kit.ArkUI.*
 import kit.PerformanceAnalysisKit.Hilog
 
 let gravity: Array<Float32> = [0.0, 0.0, 9.81]
@@ -4042,7 +4042,7 @@ public mut prop rotation: Array<Float32>
 
 **功能：** 旋转矩阵。
 
-**类型：** Array<Float32>
+**类型：** Array\<Float32>
 
 **读写能力：** 可读写
 
@@ -4056,13 +4056,13 @@ public mut prop inclination: Array<Float32>
 
 **功能：** 倾斜矩阵。
 
-**类型：** Array<Float32>
+**类型：** Array\<Float32>
 
 **读写能力：** 可读写
 
 **起始版本：** 26.1.0
 
-### init(Array<Float32>, Array<Float32>)
+### init(Array\<Float32>, Array\<Float32>)
 
 ```cangjie
 public init(rotation: Array<Float32>, inclination: Array<Float32>)
@@ -4078,5 +4078,5 @@ public init(rotation: Array<Float32>, inclination: Array<Float32>)
 
 | 参数名 | 类型 | 必填 | 默认值 | 说明 |
 |:--- |:--- |:--- |:--- |:--- |
-| rotation | Array<Float32> | 是 | - | 旋转矩阵。 |
-| inclination | Array<Float32> | 是 | - | 倾斜矩阵。 |
+| rotation | Array\<Float32> | 是 | - | 旋转矩阵。 |
+| inclination | Array\<Float32> | 是 | - | 倾斜矩阵。 |

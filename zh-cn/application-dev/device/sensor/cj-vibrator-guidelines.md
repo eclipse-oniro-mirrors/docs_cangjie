@@ -59,7 +59,7 @@
 
    ```cangjie
    import kit.SensorServiceKit.*
-   import ohos.CangjieKit.AsyncCallback
+   import kit.CangjieKit.AsyncCallback
    import kit.CangjieKit.BusinessException
    import kit.PerformanceAnalysisKit.Hilog
    ```
@@ -79,7 +79,7 @@
    ```cangjie
    // index.cj
    import kit.SensorServiceKit.*
-   import ohos.CangjieKit.AsyncCallback
+   import kit.CangjieKit.AsyncCallback
    import kit.CangjieKit.BusinessException
    import kit.PerformanceAnalysisKit.Hilog
 
@@ -108,7 +108,7 @@
    ```cangjie
    // index.cj
    import kit.SensorServiceKit.*
-   import ohos.CangjieKit.AsyncCallback
+   import kit.CangjieKit.AsyncCallback
    import kit.CangjieKit.BusinessException
    import kit.PerformanceAnalysisKit.Hilog
 
@@ -152,7 +152,7 @@
    ```cangjie
    // index.cj
    import kit.SensorServiceKit.*
-   import ohos.CangjieKit.AsyncCallback
+   import kit.CangjieKit.AsyncCallback
    import kit.CangjieKit.BusinessException
    import kit.PerformanceAnalysisKit.Hilog
 
@@ -186,7 +186,7 @@
    ```cangjie
    // index.cj
    import kit.SensorServiceKit.*
-   import ohos.CangjieKit.AsyncCallback
+   import kit.CangjieKit.AsyncCallback
    import kit.CangjieKit.BusinessException
    import kit.PerformanceAnalysisKit.Hilog
 
@@ -212,7 +212,7 @@
    ```cangjie
    // index.cj
    import kit.SensorServiceKit.*
-   import ohos.CangjieKit.AsyncCallback
+   import kit.CangjieKit.AsyncCallback
    import kit.CangjieKit.BusinessException
    import kit.PerformanceAnalysisKit.Hilog
 
