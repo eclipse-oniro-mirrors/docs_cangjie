@@ -3273,7 +3273,6 @@ public func getGeomagneticInfo(locationOptions: LocationOptions, timeMillis: Int
 // index.cj
 
 import kit.SensorServiceKit.*
-import kit.ArkUI.*
 import kit.PerformanceAnalysisKit.Hilog
 
 let location = LocationOptions(80.0, 0.0, 0.0)
@@ -3328,7 +3327,6 @@ public func getDeviceAltitude(seaPressure: Float32, currentPressure: Float32, ca
 // index.cj
 
 import kit.SensorServiceKit.*
-import kit.ArkUI.*
 import kit.PerformanceAnalysisKit.Hilog
 
 getDeviceAltitude(1013.25, 1000.0, { err, data =>
@@ -3375,7 +3373,6 @@ public func getInclination(inclinationMatrix: Array<Float32>, callback: AsyncCal
 // index.cj
 
 import kit.SensorServiceKit.*
-import kit.ArkUI.*
 import kit.PerformanceAnalysisKit.Hilog
 
 let inclinationMatrix: Array<Float32> = [1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0]
@@ -3424,7 +3421,6 @@ public func getAngleVariation(currentRotationMatrix: Array<Float32>, preRotation
 // index.cj
 
 import kit.SensorServiceKit.*
-import kit.ArkUI.*
 import kit.PerformanceAnalysisKit.Hilog
 
 let currentRotationMatrix: Array<Float32> = [1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0]
@@ -3473,7 +3469,6 @@ public func getRotationMatrix(rotationVector: Array<Float32>, callback: AsyncCal
 // index.cj
 
 import kit.SensorServiceKit.*
-import kit.ArkUI.*
 import kit.PerformanceAnalysisKit.Hilog
 
 let rotationVector: Array<Float32> = [0.0, 0.0, 0.0, 1.0]
@@ -3522,7 +3517,6 @@ public func transformRotationMatrix(inRotationVector: Array<Float32>, coordinate
 // index.cj
 
 import kit.SensorServiceKit.*
-import kit.ArkUI.*
 import kit.PerformanceAnalysisKit.Hilog
 
 let rotationVector: Array<Float32> = [1.0, 0.0, 0.0, 0.0]
@@ -3571,7 +3565,6 @@ public func getQuaternion(rotationVector: Array<Float32>, callback: AsyncCallbac
 // index.cj
 
 import kit.SensorServiceKit.*
-import kit.ArkUI.*
 import kit.PerformanceAnalysisKit.Hilog
 
 let rotationVector: Array<Float32> = [0.0, 0.0, 0.0, 1.0]
@@ -3619,7 +3612,6 @@ public func getOrientation(rotationMatrix: Array<Float32>, callback: AsyncCallba
 // index.cj
 
 import kit.SensorServiceKit.*
-import kit.ArkUI.*
 import kit.PerformanceAnalysisKit.Hilog
 
 let rotationMatrix: Array<Float32> = [1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0]
@@ -3668,7 +3660,6 @@ public func getRotationMatrix(gravity: Array<Float32>, geomagnetic: Array<Float3
 // index.cj
 
 import kit.SensorServiceKit.*
-import kit.ArkUI.*
 import kit.PerformanceAnalysisKit.Hilog
 
 let gravity: Array<Float32> = [0.0, 0.0, 9.81]

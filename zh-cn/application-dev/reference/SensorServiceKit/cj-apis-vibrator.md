@@ -106,7 +106,6 @@ startVibration(effect, attribute, { err, data =>
 ```cangjie
 // index.cj
 import kit.SensorServiceKit.*
-import kit.CoreFileKit.*
 import kit.PerformanceAnalysisKit.Hilog
 
 let resourceManager = Global.getAbilityContext().resourceManager // 需获取Context应用上下文，详见本文使用说明

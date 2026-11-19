@@ -3287,7 +3287,7 @@ public func toString(): String
 |:------ |:-------- |
 | String | 转换后的字符串。 |
 
-## func getGeomagneticInfo(LocationOptions, Int64, AsyncCallback<GeomagneticResponse>)
+## func getGeomagneticInfo(LocationOptions, Int64, AsyncCallback\<GeomagneticResponse>)
 
 ```cangjie
 public func getGeomagneticInfo(locationOptions: LocationOptions, timeMillis: Int64, callback: AsyncCallback<GeomagneticResponse>): Unit
@@ -3305,7 +3305,7 @@ public func getGeomagneticInfo(locationOptions: LocationOptions, timeMillis: Int
 |:--- |:--- |:--- |:--- |:--- |
 | locationOptions | [LocationOptions](#class-locationoptions) | 是 | - | 地理位置信息，包括经度、纬度和海拔高度。 |
 | timeMillis | Int64 | 是 | - | 获取磁偏角的时间，unix时间戳，单位毫秒。 |
-| callback | AsyncCallback<[GeomagneticResponse](#class-geomagneticresponse)> | 是 | - | 回调函数，返回地磁场信息。 |
+| callback | AsyncCallback\<[GeomagneticResponse](#class-geomagneticresponse)\> | 是 | - | 回调函数，返回地磁场信息。 |
 
 **异常：**
 
@@ -3323,7 +3323,6 @@ public func getGeomagneticInfo(locationOptions: LocationOptions, timeMillis: Int
 // index.cj
 
 import kit.SensorServiceKit.*
-import kit.ArkUI.*
 import kit.PerformanceAnalysisKit.Hilog
 
 let location = LocationOptions(80.0, 0.0, 0.0)
@@ -3342,7 +3341,7 @@ getGeomagneticInfo(location, 1580486400000, { err, data =>
 })
 ```
 
-## func getDeviceAltitude(Float32, Float32, AsyncCallback<Float32>)
+## func getDeviceAltitude(Float32, Float32, AsyncCallback\<Float32>)
 
 ```cangjie
 public func getDeviceAltitude(seaPressure: Float32, currentPressure: Float32, callback: AsyncCallback<Float32>): Unit
@@ -3360,7 +3359,7 @@ public func getDeviceAltitude(seaPressure: Float32, currentPressure: Float32, ca
 |:--- |:--- |:--- |:--- |:--- |
 | seaPressure | Float32 | 是 | - | 海平面气压值，单位为hPa。 |
 | currentPressure | Float32 | 是 | - | 指定的气压值，单位为hPa。 |
-| callback | AsyncCallback<Float32> | 是 | - | 回调函数，返回海拔高度，单位为米。 |
+| callback | AsyncCallback\<Float32> | 是 | - | 回调函数，返回海拔高度，单位为米。 |
 
 **异常：**
 
@@ -3378,7 +3377,6 @@ public func getDeviceAltitude(seaPressure: Float32, currentPressure: Float32, ca
 // index.cj
 
 import kit.SensorServiceKit.*
-import kit.ArkUI.*
 import kit.PerformanceAnalysisKit.Hilog
 
 getDeviceAltitude(1013.25, 1000.0, { err, data =>
@@ -3425,7 +3423,6 @@ public func getInclination(inclinationMatrix: Array<Float32>, callback: AsyncCal
 // index.cj
 
 import kit.SensorServiceKit.*
-import kit.ArkUI.*
 import kit.PerformanceAnalysisKit.Hilog
 
 let inclinationMatrix: Array<Float32> = [1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0]
@@ -3474,7 +3471,6 @@ public func getAngleVariation(currentRotationMatrix: Array<Float32>, preRotation
 // index.cj
 
 import kit.SensorServiceKit.*
-import kit.ArkUI.*
 import kit.PerformanceAnalysisKit.Hilog
 
 let currentRotationMatrix: Array<Float32> = [1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0]
@@ -3523,7 +3519,6 @@ public func getRotationMatrix(rotationVector: Array<Float32>, callback: AsyncCal
 // index.cj
 
 import kit.SensorServiceKit.*
-import kit.ArkUI.*
 import kit.PerformanceAnalysisKit.Hilog
 
 let rotationVector: Array<Float32> = [0.0, 0.0, 0.0, 1.0]
@@ -3572,7 +3567,6 @@ public func transformRotationMatrix(inRotationVector: Array<Float32>, coordinate
 // index.cj
 
 import kit.SensorServiceKit.*
-import kit.ArkUI.*
 import kit.PerformanceAnalysisKit.Hilog
 
 let rotationVector: Array<Float32> = [1.0, 0.0, 0.0, 0.0]
@@ -3621,7 +3615,6 @@ public func getQuaternion(rotationVector: Array<Float32>, callback: AsyncCallbac
 // index.cj
 
 import kit.SensorServiceKit.*
-import kit.ArkUI.*
 import kit.PerformanceAnalysisKit.Hilog
 
 let rotationVector: Array<Float32> = [0.0, 0.0, 0.0, 1.0]
@@ -3669,7 +3662,6 @@ public func getOrientation(rotationMatrix: Array<Float32>, callback: AsyncCallba
 // index.cj
 
 import kit.SensorServiceKit.*
-import kit.ArkUI.*
 import kit.PerformanceAnalysisKit.Hilog
 
 let rotationMatrix: Array<Float32> = [1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0]
@@ -3700,7 +3692,7 @@ public func getRotationMatrix(gravity: Array<Float32>, geomagnetic: Array<Float3
 |:--- |:--- |:--- |:--- |:--- |
 | gravity | Array\<Float32> | 是 | - | 重力向量。 |
 | geomagnetic | Array\<Float32> | 是 | - | 地磁向量。 |
-| callback | AsyncCallback<[RotationMatrixResponse](#class-rotationmatrixresponse)> | 是 | - | 回调函数，返回旋转矩阵和倾斜矩阵。 |
+| callback | AsyncCallback\<[RotationMatrixResponse](#class-rotationmatrixresponse)\> | 是 | - | 回调函数，返回旋转矩阵和倾斜矩阵。 |
 
 **异常：**
 
@@ -3718,7 +3710,6 @@ public func getRotationMatrix(gravity: Array<Float32>, geomagnetic: Array<Float3
 // index.cj
 
 import kit.SensorServiceKit.*
-import kit.ArkUI.*
 import kit.PerformanceAnalysisKit.Hilog
 
 let gravity: Array<Float32> = [0.0, 0.0, 9.81]

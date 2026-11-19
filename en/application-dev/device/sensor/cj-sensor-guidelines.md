@@ -41,7 +41,6 @@ The development procedure is demonstrated using the accelerometer sensor (`ACCEL
     <!-- compile -->
 
     ```cangjie
-    import kit.ArkUI.*
     import kit.SensorServiceKit.*
     import kit.CangjieKit.BusinessException
     import kit.CangjieKit.Callback1Argument
