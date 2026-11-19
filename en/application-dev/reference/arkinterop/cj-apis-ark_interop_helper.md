@@ -90,6 +90,15 @@ public func mapFromJSValue<T>(
 |:----|:----|
 | ?HashMap\<String, T> | The converted HashMap data. |
 
+**Exceptions:**
+
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+
+| Error Code ID | Error Message |
+|:------|:-------------------------------------|
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch. |
+
 ## func mapToJSValue\<T>(JSContext, ?HashMap\<String,T>, (JSContext,T) -> JSValue)
 
 ```cangjie
@@ -117,3 +126,12 @@ public func mapToJSValue<T>(
 | Type | Description |
 |:----|:----|
 | [JSValue](cj-apis-ark_interop.md#struct-jsvalue) | The converted JSValue data. |
+
+**Exceptions:**
+
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+
+| Error Code ID | Error Message |
+|:------|:-------------------------------------|
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch. |
