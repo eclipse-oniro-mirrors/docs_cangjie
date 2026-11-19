@@ -43,8 +43,6 @@ For the above example projects and configuration templates, refer to [Cangjie Ex
 
 ```cangjie
 public class ContinuousLocationRequest {
-    public mut prop interval: Int32
-    public mut prop locationScenario: ScenarioValueType
     public init(interval: Int32, locationScenario: ScenarioValueType)
 }
 ```
@@ -109,10 +107,7 @@ public init(interval: Int32, locationScenario: ScenarioValueType)
 ## class CountryCode
 
 ```cangjie
-public class CountryCode {
-    public mut prop country: String
-    public mut prop countryCodeType: CountryCodeType
-}
+public class CountryCode {}
 ```
 
 **Function:** Country code information, including the country code string and the source of the country code.
@@ -707,8 +702,6 @@ public var uncertaintyOfTimeSinceBoot: ?Int64
 
 ```cangjie
 public class LocationCommand {
-    public mut prop scenario: LocationRequestScenario
-    public mut prop command: String
     public init(scenario: LocationRequestScenario, command: String)
 }
 ```
@@ -774,11 +767,6 @@ public init(scenario: LocationRequestScenario, command: String)
 
 ```cangjie
 public class LocationRequest {
-    public mut prop priority: ?LocationRequestPriority
-    public mut prop scenario: ?LocationRequestScenario
-    public mut prop timeInterval: ?Int32
-    public mut prop distanceInterval: ?Float64
-    public mut prop maxAccuracy: ?Float32
     public init(priority!: ?LocationRequestPriority = None,
         scenario!: ?LocationRequestScenario = None, timeInterval!: ?Int32 = None,
         distanceInterval!: ?Float64 = None, maxAccuracy!: ?Float32 = None)
@@ -902,16 +890,7 @@ public init(priority!: ?LocationRequestPriority = None,
 ## class SatelliteStatusInfo
 
 ```cangjie
-public class SatelliteStatusInfo {
-    public mut prop satellitesNumber: Int32
-    public mut prop satelliteIds: Array<Int32>
-    public mut prop carrierToNoiseDensitys: Array<Float64>
-    public mut prop altitudes: Array<Float64>
-    public mut prop azimuths: Array<Float64>
-    public mut prop carrierFrequencies: Array<Float64>
-    public mut prop satelliteConstellation: ?Array<SatelliteConstellationCategory>
-    public mut prop satelliteAdditionalInfo: ?Array<Int32>
-}
+public class SatelliteStatusInfo {}
 ```
 
 **Function:** Satellite status information, including the number of satellites, satellite IDs, carrier-to-noise densities, altitudes, azimuths, carrier frequencies, constellation types, and additional information.

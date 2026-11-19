@@ -37,8 +37,6 @@ API示例代码使用说明：
 
 ```cangjie
 public class ContinuousLocationRequest {
-    public mut prop interval: Int32
-    public mut prop locationScenario: ScenarioValueType
     public init(interval: Int32, locationScenario: ScenarioValueType)
 }
 ```
@@ -103,10 +101,7 @@ public init(interval: Int32, locationScenario: ScenarioValueType)
 ## class CountryCode
 
 ```cangjie
-public class CountryCode {
-    public mut prop country: String
-    public mut prop countryCodeType: CountryCodeType
-}
+public class CountryCode {}
 ```
 
 **功能：** 国家码信息，包含国家码字符串和国家码的来源信息。
@@ -768,8 +763,6 @@ public var uncertaintyOfTimeSinceBoot: ?Int64
 
 ```cangjie
 public class LocationCommand {
-    public mut prop scenario: LocationRequestScenario
-    public mut prop command: String
     public init(scenario: LocationRequestScenario, command: String)
 }
 ```
@@ -835,11 +828,6 @@ public init(scenario: LocationRequestScenario, command: String)
 
 ```cangjie
 public class LocationRequest {
-    public mut prop priority: ?LocationRequestPriority
-    public mut prop scenario: ?LocationRequestScenario
-    public mut prop timeInterval: ?Int32
-    public mut prop distanceInterval: ?Float64
-    public mut prop maxAccuracy: ?Float32
     public init(priority!: ?LocationRequestPriority = None,
         scenario!: ?LocationRequestScenario = None, timeInterval!: ?Int32 = None,
         distanceInterval!: ?Float64 = None, maxAccuracy!: ?Float32 = None)
@@ -963,16 +951,7 @@ public init(priority!: ?LocationRequestPriority = None,
 ## class SatelliteStatusInfo
 
 ```cangjie
-public class SatelliteStatusInfo {
-    public mut prop satellitesNumber: Int32
-    public mut prop satelliteIds: Array<Int32>
-    public mut prop carrierToNoiseDensitys: Array<Float64>
-    public mut prop altitudes: Array<Float64>
-    public mut prop azimuths: Array<Float64>
-    public mut prop carrierFrequencies: Array<Float64>
-    public mut prop satelliteConstellation: ?Array<SatelliteConstellationCategory>
-    public mut prop satelliteAdditionalInfo: ?Array<Int32>
-}
+public class SatelliteStatusInfo {}
 ```
 
 **功能：** 卫星状态信息，包含卫星数量、卫星ID、载波噪声密度、高度角、方位角、载波频率、星座类型与附加信息。
