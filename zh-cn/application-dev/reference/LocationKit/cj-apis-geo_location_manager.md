@@ -960,6 +960,155 @@ public init(priority!: ?LocationRequestPriority = None,
 |distanceInterval|?Float64|否|None|表示上报位置信息的距离间隔，单位为米，默认值为0.0。|
 |maxAccuracy|?Float32|否|None|表示精度值，单位为米，默认值为0.0。|
 
+## class SatelliteStatusInfo
+
+```cangjie
+public class SatelliteStatusInfo {
+    public mut prop satellitesNumber: Int32
+    public mut prop satelliteIds: Array<Int32>
+    public mut prop carrierToNoiseDensitys: Array<Float64>
+    public mut prop altitudes: Array<Float64>
+    public mut prop azimuths: Array<Float64>
+    public mut prop carrierFrequencies: Array<Float64>
+    public mut prop satelliteConstellation: ?Array<SatelliteConstellationCategory>
+    public mut prop satelliteAdditionalInfo: ?Array<Int32>
+}
+```
+
+**功能：** 卫星状态信息，包含卫星数量、卫星ID、载波噪声密度、高度角、方位角、载波频率、星座类型与附加信息。
+
+**系统能力：** SystemCapability.Location.Location.Gnss
+
+**起始版本：** 26.1.0
+
+### prop satellitesNumber
+
+```cangjie
+public mut prop satellitesNumber: Int32
+```
+
+**功能：** 表示卫星数量。
+
+**类型：** Int32
+
+**读写能力：** 可读写
+
+**系统能力：** SystemCapability.Location.Location.Gnss
+
+**起始版本：** 26.1.0
+
+### prop satelliteIds
+
+```cangjie
+public mut prop satelliteIds: Array<Int32>
+```
+
+**功能：** 表示卫星ID数组。
+
+**类型：** Array\<Int32\>
+
+**读写能力：** 可读写
+
+**系统能力：** SystemCapability.Location.Location.Gnss
+
+**起始版本：** 26.1.0
+
+### prop carrierToNoiseDensitys
+
+```cangjie
+public mut prop carrierToNoiseDensitys: Array<Float64>
+```
+
+**功能：** 表示卫星载波噪声密度数组。
+
+**类型：** Array\<Float64\>
+
+**读写能力：** 可读写
+
+**系统能力：** SystemCapability.Location.Location.Gnss
+
+**起始版本：** 26.1.0
+
+### prop altitudes
+
+```cangjie
+public mut prop altitudes: Array<Float64>
+```
+
+**功能：** 表示卫星高度角数组。
+
+**类型：** Array\<Float64\>
+
+**读写能力：** 可读写
+
+**系统能力：** SystemCapability.Location.Location.Gnss
+
+**起始版本：** 26.1.0
+
+### prop azimuths
+
+```cangjie
+public mut prop azimuths: Array<Float64>
+```
+
+**功能：** 表示卫星方位角数组。
+
+**类型：** Array\<Float64\>
+
+**读写能力：** 可读写
+
+**系统能力：** SystemCapability.Location.Location.Gnss
+
+**起始版本：** 26.1.0
+
+### prop carrierFrequencies
+
+```cangjie
+public mut prop carrierFrequencies: Array<Float64>
+```
+
+**功能：** 表示卫星载波频率数组。
+
+**类型：** Array\<Float64\>
+
+**读写能力：** 可读写
+
+**系统能力：** SystemCapability.Location.Location.Gnss
+
+**起始版本：** 26.1.0
+
+### prop satelliteConstellation
+
+```cangjie
+public mut prop satelliteConstellation: ?Array<SatelliteConstellationCategory>
+```
+
+**功能：** 表示卫星星座类型数组，取值参见[SatelliteConstellationCategory](#enum-satelliteconstellationcategory)。
+
+**类型：** ?Array\<[SatelliteConstellationCategory](#enum-satelliteconstellationcategory)\>
+
+**读写能力：** 可读写
+
+**系统能力：** SystemCapability.Location.Location.Gnss
+
+**起始版本：** 26.1.0
+
+### prop satelliteAdditionalInfo
+
+```cangjie
+public mut prop satelliteAdditionalInfo: ?Array<Int32>
+```
+
+**功能：** 表示卫星附加信息数组。
+
+**类型：** ?Array\<Int32\>
+
+**读写能力：** 可读写
+
+**系统能力：** SystemCapability.Location.Location.Gnss
+
+**起始版本：** 26.1.0
+
 ## class SingleLocationRequest
 
 ```cangjie
@@ -1736,6 +1885,195 @@ public operator func !=(other: PowerConsumptionScenario): Bool
 |:----|:----|
 |Bool|true表示不相等，false表示相等。|
 
+## enum SatelliteConstellationCategory
+
+```cangjie
+public enum SatelliteConstellationCategory {
+    | ConstellationCategoryUnknown
+    | ConstellationCategoryGps
+    | ConstellationCategorySbas
+    | ConstellationCategoryGlonass
+    | ConstellationCategoryQzss
+    | ConstellationCategoryBeidou
+    | ConstellationCategoryGalileo
+    | ConstellationCategoryIrnss
+    | ...
+}
+```
+
+**功能：** 卫星星座类型。
+
+**系统能力：** SystemCapability.Location.Location.Gnss
+
+**起始版本：** 26.1.0
+
+**父类型：**
+
+- Equatable\<SatelliteConstellationCategory\>
+- ToString
+
+### ConstellationCategoryUnknown
+
+```cangjie
+ConstellationCategoryUnknown
+```
+
+**功能：** 未知星座类型。
+
+**系统能力：** SystemCapability.Location.Location.Gnss
+
+**起始版本：** 26.1.0
+
+### ConstellationCategoryGps
+
+```cangjie
+ConstellationCategoryGps
+```
+
+**功能：** GPS星座。
+
+**系统能力：** SystemCapability.Location.Location.Gnss
+
+**起始版本：** 26.1.0
+
+### ConstellationCategorySbas
+
+```cangjie
+ConstellationCategorySbas
+```
+
+**功能：** SBAS（星基增强系统）星座。
+
+**系统能力：** SystemCapability.Location.Location.Gnss
+
+**起始版本：** 26.1.0
+
+### ConstellationCategoryGlonass
+
+```cangjie
+ConstellationCategoryGlonass
+```
+
+**功能：** GLONASS星座。
+
+**系统能力：** SystemCapability.Location.Location.Gnss
+
+**起始版本：** 26.1.0
+
+### ConstellationCategoryQzss
+
+```cangjie
+ConstellationCategoryQzss
+```
+
+**功能：** QZSS（准天顶卫星系统）星座。
+
+**系统能力：** SystemCapability.Location.Location.Gnss
+
+**起始版本：** 26.1.0
+
+### ConstellationCategoryBeidou
+
+```cangjie
+ConstellationCategoryBeidou
+```
+
+**功能：** 北斗星座。
+
+**系统能力：** SystemCapability.Location.Location.Gnss
+
+**起始版本：** 26.1.0
+
+### ConstellationCategoryGalileo
+
+```cangjie
+ConstellationCategoryGalileo
+```
+
+**功能：** Galileo（伽利略）星座。
+
+**系统能力：** SystemCapability.Location.Location.Gnss
+
+**起始版本：** 26.1.0
+
+### ConstellationCategoryIrnss
+
+```cangjie
+ConstellationCategoryIrnss
+```
+
+**功能：** IRNSS（印度区域导航卫星系统）星座。
+
+**系统能力：** SystemCapability.Location.Location.Gnss
+
+**起始版本：** 26.1.0
+
+### func toString()
+
+```cangjie
+public func toString(): String
+```
+
+**功能：** 将卫星星座类型转换为字符串表示。
+
+**系统能力：** SystemCapability.Location.Location.Gnss
+
+**起始版本：** 26.1.0
+
+**返回值：**
+
+|类型|说明|
+|:----|:----|
+|String|卫星星座类型的字符串表示。|
+
+### func ==(SatelliteConstellationCategory)
+
+```cangjie
+public operator func ==(other: SatelliteConstellationCategory): Bool
+```
+
+**功能：** 判断两个卫星星座类型是否相等。
+
+**系统能力：** SystemCapability.Location.Location.Gnss
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|other|[SatelliteConstellationCategory](#enum-satelliteconstellationcategory)|是|-|待比较的卫星星座类型。|
+
+**返回值：**
+
+|类型|说明|
+|:----|:----|
+|Bool|true表示相等，false表示不相等。|
+
+### func !=(SatelliteConstellationCategory)
+
+```cangjie
+public operator func !=(other: SatelliteConstellationCategory): Bool
+```
+
+**功能：** 判断两个卫星星座类型是否不相等。
+
+**系统能力：** SystemCapability.Location.Location.Gnss
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|other|[SatelliteConstellationCategory](#enum-satelliteconstellationcategory)|是|-|待比较的卫星星座类型。|
+
+**返回值：**
+
+|类型|说明|
+|:----|:----|
+|Bool|true表示不相等，false表示相等。|
+
 ## enum ScenarioValueType
 
 ```cangjie
@@ -2332,6 +2670,206 @@ import kit.PerformanceAnalysisKit.Hilog
 
 try {
     offLocationEnabledChange()
+} catch (e: BusinessException) {
+    Hilog.error(0, "test", "errCode: ${e.code}, message: ${e.message}")
+}
+```
+
+## func onSatelliteStatusChange(Callback1Argument\<SatelliteStatusInfo>)
+
+```cangjie
+public func onSatelliteStatusChange(callback: Callback1Argument<SatelliteStatusInfo>): Unit
+```
+
+**功能：** 订阅卫星状态变化事件。使用callback异步回调。
+
+**需要权限：** ohos.permission.APPROXIMATELY_LOCATION
+
+**系统能力：** SystemCapability.Location.Location.Gnss
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|callback|[Callback1Argument](../arkinterop/cj-api-callback_invoke.md#class-callback1argumenta)\<[SatelliteStatusInfo](#class-satellitestatusinfo)\>|是|-|用于接收卫星状态信息的回调函数。|
+
+**异常：**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[位置服务子系统错误码](./cj-errorcode-geo_location_manager.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 201 | Permission verification failed. The application does not have the permission required to call the API. |
+  | 801 | Capability not supported. Failed to call ${geoLocationManager.onSatelliteStatusChange} due to limited device capabilities. |
+  | 3301000 | The location service is unavailable. |
+  | 3301100 | The location switch is off. |
+
+**示例：**
+
+```cangjie
+// index.cj
+
+import kit.LocationKit.*
+import kit.CangjieKit.*
+import kit.PerformanceAnalysisKit.Hilog
+
+class SatelliteCallback <: Callback1Argument<SatelliteStatusInfo> {
+    public func invoke(err: ?BusinessException, arg: SatelliteStatusInfo): Unit {
+        Hilog.info(0, "test", "satellites: ${arg.satellitesNumber}, ids: ${arg.satelliteIds.size}")
+    }
+}
+
+try {
+    onSatelliteStatusChange(SatelliteCallback())
+} catch (e: BusinessException) {
+    Hilog.error(0, "test", "errCode: ${e.code}, message: ${e.message}")
+}
+```
+
+## func offSatelliteStatusChange(?Callback1Argument\<SatelliteStatusInfo>)
+
+```cangjie
+public func offSatelliteStatusChange(callback!: ?Callback1Argument<SatelliteStatusInfo> = None): Unit
+```
+
+**功能：** 取消订阅卫星状态变化事件。传入的callback需要与onSatelliteStatusChange接口传入的callback保持一致；不传入callback时取消当前类型的所有订阅。
+
+**需要权限：** ohos.permission.APPROXIMATELY_LOCATION
+
+**系统能力：** SystemCapability.Location.Location.Gnss
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|callback|?[Callback1Argument](../arkinterop/cj-api-callback_invoke.md#class-callback1argumenta)\<[SatelliteStatusInfo](#class-satellitestatusinfo)\>|否|None|需要取消订阅的回调函数。不填写时取消所有订阅。|
+
+**异常：**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[位置服务子系统错误码](./cj-errorcode-geo_location_manager.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 201 | Permission verification failed. The application does not have the permission required to call the API. |
+  | 801 | Capability not supported. Failed to call ${geoLocationManager.offSatelliteStatusChange} due to limited device capabilities. |
+  | 3301000 | The location service is unavailable. |
+  | 3301100 | The location switch is off. |
+
+**示例：**
+
+```cangjie
+// index.cj
+
+import kit.LocationKit.*
+import kit.CangjieKit.*
+import kit.PerformanceAnalysisKit.Hilog
+
+try {
+    offSatelliteStatusChange()
+} catch (e: BusinessException) {
+    Hilog.error(0, "test", "errCode: ${e.code}, message: ${e.message}")
+}
+```
+
+## func onNmeaMessage(Callback1Argument\<String>)
+
+```cangjie
+public func onNmeaMessage(callback: Callback1Argument<String>): Unit
+```
+
+**功能：** 订阅NMEA消息事件。使用callback异步回调。
+
+**需要权限：** ohos.permission.LOCATION、ohos.permission.APPROXIMATELY_LOCATION
+
+**系统能力：** SystemCapability.Location.Location.Gnss
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|callback|[Callback1Argument](../arkinterop/cj-api-callback_invoke.md#class-callback1argumenta)\<String\>|是|-|用于接收NMEA消息的回调函数。|
+
+**异常：**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[位置服务子系统错误码](./cj-errorcode-geo_location_manager.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 201 | Permission verification failed. The application does not have the permission required to call the API. |
+  | 801 | Capability not supported. Failed to call ${geoLocationManager.onNmeaMessage} due to limited device capabilities. |
+  | 3301000 | The location service is unavailable. |
+  | 3301100 | The location switch is off. |
+
+**示例：**
+
+```cangjie
+// index.cj
+
+import kit.LocationKit.*
+import kit.CangjieKit.*
+import kit.PerformanceAnalysisKit.Hilog
+
+class NmeaCallback <: Callback1Argument<String> {
+    public func invoke(err: ?BusinessException, arg: String): Unit {
+        Hilog.info(0, "test", "nmea: ${arg}")
+    }
+}
+
+try {
+    onNmeaMessage(NmeaCallback())
+} catch (e: BusinessException) {
+    Hilog.error(0, "test", "errCode: ${e.code}, message: ${e.message}")
+}
+```
+
+## func offNmeaMessage(?Callback1Argument\<String>)
+
+```cangjie
+public func offNmeaMessage(callback!: ?Callback1Argument<String> = None): Unit
+```
+
+**功能：** 取消订阅NMEA消息事件。传入的callback需要与onNmeaMessage接口传入的callback保持一致；不传入callback时取消当前类型的所有订阅。
+
+**需要权限：** ohos.permission.LOCATION、ohos.permission.APPROXIMATELY_LOCATION
+
+**系统能力：** SystemCapability.Location.Location.Gnss
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+|参数名|类型|必填|默认值|说明|
+|:---|:---|:---|:---|:---|
+|callback|?[Callback1Argument](../arkinterop/cj-api-callback_invoke.md#class-callback1argumenta)\<String\>|否|None|需要取消订阅的回调函数。不填写时取消所有订阅。|
+
+**异常：**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[位置服务子系统错误码](./cj-errorcode-geo_location_manager.md)。
+
+  | 错误码ID | 错误信息 |
+  | :---- | :--- |
+  | 201 | Permission verification failed. The application does not have the permission required to call the API. |
+  | 801 | Capability not supported. Failed to call ${geoLocationManager.offNmeaMessage} due to limited device capabilities. |
+  | 3301000 | The location service is unavailable. |
+  | 3301100 | The location switch is off. |
+
+**示例：**
+
+```cangjie
+// index.cj
+
+import kit.LocationKit.*
+import kit.CangjieKit.*
+import kit.PerformanceAnalysisKit.Hilog
+
+try {
+    offNmeaMessage()
 } catch (e: BusinessException) {
     Hilog.error(0, "test", "errCode: ${e.code}, message: ${e.message}")
 }

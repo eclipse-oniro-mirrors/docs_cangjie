@@ -34,6 +34,10 @@ This module's capabilities only support the WGS-84 coordinate system.
 | [offLocationError(?Callback1Argument\<LocationError>)](../reference/LocationKit/cj-apis-geo_location_manager.md#func-offlocationerrorcallback1argumentlocationerror) | Unsubscribe from error information during continuous positioning. |
 | [onLocationEnabledChange(Callback1Argument\<Bool>)](../reference/LocationKit/cj-apis-geo_location_manager.md#func-onlocationenabledchangecallback1argumentbool) | Subscribe to location service status changes. |
 | [offLocationEnabledChange(?Callback1Argument\<Bool>)](../reference/LocationKit/cj-apis-geo_location_manager.md#func-offlocationenabledchangecallback1argumentbool) | Unsubscribe from location service status changes. |
+| [onSatelliteStatusChange(Callback1Argument\<SatelliteStatusInfo>)](../reference/LocationKit/cj-apis-geo_location_manager.md#func-onsatellitestatuschangecallback1argumentsatellitestatusinfo) | Subscribe to satellite status changes. |
+| [offSatelliteStatusChange(?Callback1Argument\<SatelliteStatusInfo>)](../reference/LocationKit/cj-apis-geo_location_manager.md#func-offsatellitestatuschangecallback1argumentsatellitestatusinfo) | Unsubscribe from satellite status changes. |
+| [onNmeaMessage(Callback1Argument\<String>)](../reference/LocationKit/cj-apis-geo_location_manager.md#func-onnmeamessagecallback1argumentstring) | Subscribe to NMEA message events. |
+| [offNmeaMessage(?Callback1Argument\<String>)](../reference/LocationKit/cj-apis-geo_location_manager.md#func-offnmeamessagecallback1argumentstring) | Unsubscribe from NMEA message events. |
 | [onCountryCodeChange(Callback1Argument\<CountryCode>)](../reference/LocationKit/cj-apis-geo_location_manager.md#func-oncountrycodechangecallback1argumentcountrycode) | Subscribe to country code change events. |
 | [offCountryCodeChange(?Callback1Argument\<CountryCode>)](../reference/LocationKit/cj-apis-geo_location_manager.md#func-offcountrycodechangecallback1argumentcountrycode) | Unsubscribe from country code change events. |
 | [sendCommand(LocationCommand, AsyncCallback\<Unit>)](../reference/LocationKit/cj-apis-geo_location_manager.md#func-sendcommandlocationcommand-asynccallbackunit) | Send an extended command to the components of the location subsystem. |
@@ -342,4 +346,49 @@ This module's capabilities only support the WGS-84 coordinate system.
         Hilog.error(0, "test", "errCode: ${e.code}, message: ${e.message}")
     }
     ```
+
+9. Subscribe to satellite status and NMEA messages. This is commonly used in scenarios such as checking satellite signal quality and troubleshooting positioning issues.
+    - Call onSatelliteStatusChange to subscribe to satellite status changes. The callback parameter [SatelliteStatusInfo](../reference/LocationKit/cj-apis-geo_location_manager.md#class-satellitestatusinfo) contains the number of satellites, satellite IDs, carrier-to-noise densities, altitudes, azimuths, carrier frequencies, constellation types, and other information. When the subscription is no longer needed, call offSatelliteStatusChange to unsubscribe. The callback passed in must be the same as the callback passed in to onSatelliteStatusChange. If no callback is passed in, all subscriptions of this type are canceled.
+
+        <!-- run -->
+
+        ```cangjie
+        import kit.LocationKit.*
+        import kit.CangjieKit.*
+        import kit.PerformanceAnalysisKit.Hilog
+
+        class SatelliteCallback <: Callback1Argument<SatelliteStatusInfo> {
+            public func invoke(err: ?BusinessException, arg: SatelliteStatusInfo): Unit {
+                Hilog.info(0, "test", "satellites: ${arg.satellitesNumber}, ids: ${arg.satelliteIds.size}")
+            }
+        }
+
+        try {
+            onSatelliteStatusChange(SatelliteCallback())
+        } catch (e: BusinessException) {
+            Hilog.error(0, "test", "errCode: ${e.code}, message: ${e.message}")
+        }
+        ```
+
+    - Call onNmeaMessage to subscribe to NMEA message events. This API is used to obtain raw NMEA sentences output by the GNSS chip. Both the ohos.permission.LOCATION and ohos.permission.APPROXIMATELY_LOCATION permissions are required. When the subscription is no longer needed, call offNmeaMessage to unsubscribe. The callback passed in must be the same as the callback passed in to onNmeaMessage. If no callback is passed in, all subscriptions of this type are canceled.
+
+        <!-- run -->
+
+        ```cangjie
+        import kit.LocationKit.*
+        import kit.CangjieKit.*
+        import kit.PerformanceAnalysisKit.Hilog
+
+        class NmeaCallback <: Callback1Argument<String> {
+            public func invoke(err: ?BusinessException, arg: String): Unit {
+                Hilog.info(0, "test", "nmea: ${arg}")
+            }
+        }
+
+        try {
+            onNmeaMessage(NmeaCallback())
+        } catch (e: BusinessException) {
+            Hilog.error(0, "test", "errCode: ${e.code}, message: ${e.message}")
+        }
+        ```
 

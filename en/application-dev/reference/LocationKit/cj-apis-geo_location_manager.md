@@ -899,6 +899,155 @@ public init(priority!: ?LocationRequestPriority = None,
 | distanceInterval | ?Float64 | No | None | **Named parameter.** Represents the distance interval for reporting location information, in meters. The default value is 0.0. |
 | maxAccuracy | ?Float32 | No | None | **Named parameter.** Represents the accuracy value in meters. The default value is 0.0. |
 
+## class SatelliteStatusInfo
+
+```cangjie
+public class SatelliteStatusInfo {
+    public mut prop satellitesNumber: Int32
+    public mut prop satelliteIds: Array<Int32>
+    public mut prop carrierToNoiseDensitys: Array<Float64>
+    public mut prop altitudes: Array<Float64>
+    public mut prop azimuths: Array<Float64>
+    public mut prop carrierFrequencies: Array<Float64>
+    public mut prop satelliteConstellation: ?Array<SatelliteConstellationCategory>
+    public mut prop satelliteAdditionalInfo: ?Array<Int32>
+}
+```
+
+**Function:** Satellite status information, including the number of satellites, satellite IDs, carrier-to-noise densities, altitudes, azimuths, carrier frequencies, constellation types, and additional information.
+
+**System Capability:** SystemCapability.Location.Location.Gnss
+
+**Since:** 26.1.0
+
+### prop satellitesNumber
+
+```cangjie
+public mut prop satellitesNumber: Int32
+```
+
+**Function:** Number of satellites.
+
+**Type:** Int32
+
+**Read/Write Capability:** Readable and writable
+
+**System Capability:** SystemCapability.Location.Location.Gnss
+
+**Since:** 26.1.0
+
+### prop satelliteIds
+
+```cangjie
+public mut prop satelliteIds: Array<Int32>
+```
+
+**Function:** Satellite ID array.
+
+**Type:** Array\<Int32\>
+
+**Read/Write Capability:** Readable and writable
+
+**System Capability:** SystemCapability.Location.Location.Gnss
+
+**Since:** 26.1.0
+
+### prop carrierToNoiseDensitys
+
+```cangjie
+public mut prop carrierToNoiseDensitys: Array<Float64>
+```
+
+**Function:** Satellite carrier-to-noise density array.
+
+**Type:** Array\<Float64\>
+
+**Read/Write Capability:** Readable and writable
+
+**System Capability:** SystemCapability.Location.Location.Gnss
+
+**Since:** 26.1.0
+
+### prop altitudes
+
+```cangjie
+public mut prop altitudes: Array<Float64>
+```
+
+**Function:** Satellite altitude array.
+
+**Type:** Array\<Float64\>
+
+**Read/Write Capability:** Readable and writable
+
+**System Capability:** SystemCapability.Location.Location.Gnss
+
+**Since:** 26.1.0
+
+### prop azimuths
+
+```cangjie
+public mut prop azimuths: Array<Float64>
+```
+
+**Function:** Satellite azimuth array.
+
+**Type:** Array\<Float64\>
+
+**Read/Write Capability:** Readable and writable
+
+**System Capability:** SystemCapability.Location.Location.Gnss
+
+**Since:** 26.1.0
+
+### prop carrierFrequencies
+
+```cangjie
+public mut prop carrierFrequencies: Array<Float64>
+```
+
+**Function:** Satellite carrier frequency array.
+
+**Type:** Array\<Float64\>
+
+**Read/Write Capability:** Readable and writable
+
+**System Capability:** SystemCapability.Location.Location.Gnss
+
+**Since:** 26.1.0
+
+### prop satelliteConstellation
+
+```cangjie
+public mut prop satelliteConstellation: ?Array<SatelliteConstellationCategory>
+```
+
+**Function:** Satellite constellation type array. For details, see [SatelliteConstellationCategory](#enum-satelliteconstellationcategory).
+
+**Type:** ?Array\<[SatelliteConstellationCategory](#enum-satelliteconstellationcategory)\>
+
+**Read/Write Capability:** Readable and writable
+
+**System Capability:** SystemCapability.Location.Location.Gnss
+
+**Since:** 26.1.0
+
+### prop satelliteAdditionalInfo
+
+```cangjie
+public mut prop satelliteAdditionalInfo: ?Array<Int32>
+```
+
+**Function:** Additional information array of satellites.
+
+**Type:** ?Array\<Int32\>
+
+**Read/Write Capability:** Readable and writable
+
+**System Capability:** SystemCapability.Location.Location.Gnss
+
+**Since:** 26.1.0
+
 ## class SingleLocationRequest
 
 ```cangjie
@@ -1672,6 +1821,195 @@ public operator func !=(other: PowerConsumptionScenario): Bool
 |:----|:----|
 | Bool | true if the two power consumption scenario types are not equal; false otherwise. |
 
+## enum SatelliteConstellationCategory
+
+```cangjie
+public enum SatelliteConstellationCategory {
+    | ConstellationCategoryUnknown
+    | ConstellationCategoryGps
+    | ConstellationCategorySbas
+    | ConstellationCategoryGlonass
+    | ConstellationCategoryQzss
+    | ConstellationCategoryBeidou
+    | ConstellationCategoryGalileo
+    | ConstellationCategoryIrnss
+    | ...
+}
+```
+
+**Function:** Satellite constellation type.
+
+**System Capability:** SystemCapability.Location.Location.Gnss
+
+**Since:** 26.1.0
+
+**Parent Types:**
+
+- Equatable\<SatelliteConstellationCategory\>
+- ToString
+
+### ConstellationCategoryUnknown
+
+```cangjie
+ConstellationCategoryUnknown
+```
+
+**Function:** Unknown constellation type.
+
+**System Capability:** SystemCapability.Location.Location.Gnss
+
+**Since:** 26.1.0
+
+### ConstellationCategoryGps
+
+```cangjie
+ConstellationCategoryGps
+```
+
+**Function:** GPS constellation.
+
+**System Capability:** SystemCapability.Location.Location.Gnss
+
+**Since:** 26.1.0
+
+### ConstellationCategorySbas
+
+```cangjie
+ConstellationCategorySbas
+```
+
+**Function:** SBAS (Satellite-Based Augmentation System) constellation.
+
+**System Capability:** SystemCapability.Location.Location.Gnss
+
+**Since:** 26.1.0
+
+### ConstellationCategoryGlonass
+
+```cangjie
+ConstellationCategoryGlonass
+```
+
+**Function:** GLONASS constellation.
+
+**System Capability:** SystemCapability.Location.Location.Gnss
+
+**Since:** 26.1.0
+
+### ConstellationCategoryQzss
+
+```cangjie
+ConstellationCategoryQzss
+```
+
+**Function:** QZSS (Quasi-Zenith Satellite System) constellation.
+
+**System Capability:** SystemCapability.Location.Location.Gnss
+
+**Since:** 26.1.0
+
+### ConstellationCategoryBeidou
+
+```cangjie
+ConstellationCategoryBeidou
+```
+
+**Function:** BeiDou constellation.
+
+**System Capability:** SystemCapability.Location.Location.Gnss
+
+**Since:** 26.1.0
+
+### ConstellationCategoryGalileo
+
+```cangjie
+ConstellationCategoryGalileo
+```
+
+**Function:** Galileo constellation.
+
+**System Capability:** SystemCapability.Location.Location.Gnss
+
+**Since:** 26.1.0
+
+### ConstellationCategoryIrnss
+
+```cangjie
+ConstellationCategoryIrnss
+```
+
+**Function:** IRNSS (Indian Regional Navigation Satellite System) constellation.
+
+**System Capability:** SystemCapability.Location.Location.Gnss
+
+**Since:** 26.1.0
+
+### func toString()
+
+```cangjie
+public func toString(): String
+```
+
+**Function:** Converts the satellite constellation type to its string representation.
+
+**System Capability:** SystemCapability.Location.Location.Gnss
+
+**Since:** 26.1.0
+
+**Return Value:**
+
+| Type | Description |
+|:----|:----|
+| String | String representation of the satellite constellation type. |
+
+### func ==(SatelliteConstellationCategory)
+
+```cangjie
+public operator func ==(other: SatelliteConstellationCategory): Bool
+```
+
+**Function:** Checks whether two satellite constellation types are equal.
+
+**System Capability:** SystemCapability.Location.Location.Gnss
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+| Parameter Name | Type | Required | Default Value | Description |
+|:---|:---|:---|:---|:---|
+| other | [SatelliteConstellationCategory](#enum-satelliteconstellationcategory) | Yes | - | The satellite constellation type to compare. |
+
+**Return Value:**
+
+| Type | Description |
+|:----|:----|
+| Bool | true if the two satellite constellation types are equal; false otherwise. |
+
+### func !=(SatelliteConstellationCategory)
+
+```cangjie
+public operator func !=(other: SatelliteConstellationCategory): Bool
+```
+
+**Function:** Checks whether two satellite constellation types are not equal.
+
+**System Capability:** SystemCapability.Location.Location.Gnss
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+| Parameter Name | Type | Required | Default Value | Description |
+|:---|:---|:---|:---|:---|
+| other | [SatelliteConstellationCategory](#enum-satelliteconstellationcategory) | Yes | - | The satellite constellation type to compare. |
+
+**Return Value:**
+
+| Type | Description |
+|:----|:----|
+| Bool | true if the two satellite constellation types are not equal; false otherwise. |
+
 ## enum ScenarioValueType
 
 ```cangjie
@@ -2268,6 +2606,206 @@ import kit.PerformanceAnalysisKit.Hilog
 
 try {
     offLocationEnabledChange()
+} catch (e: BusinessException) {
+    Hilog.error(0, "test", "errCode: ${e.code}, message: ${e.message}")
+}
+```
+
+## func onSatelliteStatusChange(Callback1Argument\<SatelliteStatusInfo>)
+
+```cangjie
+public func onSatelliteStatusChange(callback: Callback1Argument<SatelliteStatusInfo>): Unit
+```
+
+**Function:** Subscribes to satellite status changes. This API uses a callback to return the result asynchronously.
+
+**Permission Required:** ohos.permission.APPROXIMATELY_LOCATION
+
+**System Capability:** SystemCapability.Location.Location.Gnss
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+| Parameter Name | Type | Required | Default Value | Description |
+|:---|:---|:---|:---|:---|
+| callback | [Callback1Argument](../arkinterop/cj-api-callback_invoke.md#class-callback1argumenta)\<[SatelliteStatusInfo](#class-satellitestatusinfo)\> | Yes | - | Callback used to receive the satellite status. |
+
+**Exceptions:**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception): The error codes are as follows. For details, see [Location Service Error Codes](./cj-errorcode-geo_location_manager.md).
+
+  | Error Code ID | Error Message |
+  | :---- | :--- |
+  | 201 | Permission verification failed. The application does not have the permission required to call the API. |
+  | 801 | Capability not supported. Failed to call ${geoLocationManager.onSatelliteStatusChange} due to limited device capabilities. |
+  | 3301000 | The location service is unavailable. |
+  | 3301100 | The location switch is off. |
+
+**Example:**
+
+```cangjie
+// index.cj
+
+import kit.LocationKit.*
+import kit.CangjieKit.*
+import kit.PerformanceAnalysisKit.Hilog
+
+class SatelliteCallback <: Callback1Argument<SatelliteStatusInfo> {
+    public func invoke(err: ?BusinessException, arg: SatelliteStatusInfo): Unit {
+        Hilog.info(0, "test", "satellites: ${arg.satellitesNumber}, ids: ${arg.satelliteIds.size}")
+    }
+}
+
+try {
+    onSatelliteStatusChange(SatelliteCallback())
+} catch (e: BusinessException) {
+    Hilog.error(0, "test", "errCode: ${e.code}, message: ${e.message}")
+}
+```
+
+## func offSatelliteStatusChange(?Callback1Argument\<SatelliteStatusInfo>)
+
+```cangjie
+public func offSatelliteStatusChange(callback!: ?Callback1Argument<SatelliteStatusInfo> = None): Unit
+```
+
+**Function:** Unsubscribes from satellite status changes. The callback passed in must be the same as the callback passed in to onSatelliteStatusChange. If no callback is passed in, all subscriptions of this type are canceled.
+
+**Permission Required:** ohos.permission.APPROXIMATELY_LOCATION
+
+**System Capability:** SystemCapability.Location.Location.Gnss
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+| Parameter Name | Type | Required | Default Value | Description |
+|:---|:---|:---|:---|:---|
+| callback | ?[Callback1Argument](../arkinterop/cj-api-callback_invoke.md#class-callback1argumenta)\<[SatelliteStatusInfo](#class-satellitestatusinfo)\> | No | None | Callback to be unsubscribed. If it is not specified, all subscriptions are canceled. |
+
+**Exceptions:**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception): The error codes are as follows. For details, see [Location Service Error Codes](./cj-errorcode-geo_location_manager.md).
+
+  | Error Code ID | Error Message |
+  | :---- | :--- |
+  | 201 | Permission verification failed. The application does not have the permission required to call the API. |
+  | 801 | Capability not supported. Failed to call ${geoLocationManager.offSatelliteStatusChange} due to limited device capabilities. |
+  | 3301000 | The location service is unavailable. |
+  | 3301100 | The location switch is off. |
+
+**Example:**
+
+```cangjie
+// index.cj
+
+import kit.LocationKit.*
+import kit.CangjieKit.*
+import kit.PerformanceAnalysisKit.Hilog
+
+try {
+    offSatelliteStatusChange()
+} catch (e: BusinessException) {
+    Hilog.error(0, "test", "errCode: ${e.code}, message: ${e.message}")
+}
+```
+
+## func onNmeaMessage(Callback1Argument\<String>)
+
+```cangjie
+public func onNmeaMessage(callback: Callback1Argument<String>): Unit
+```
+
+**Function:** Subscribes to NMEA message events. This API uses a callback to return the result asynchronously.
+
+**Permission Required:** ohos.permission.LOCATION and ohos.permission.APPROXIMATELY_LOCATION
+
+**System Capability:** SystemCapability.Location.Location.Gnss
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+| Parameter Name | Type | Required | Default Value | Description |
+|:---|:---|:---|:---|:---|
+| callback | [Callback1Argument](../arkinterop/cj-api-callback_invoke.md#class-callback1argumenta)\<String\> | Yes | - | Callback used to receive the NMEA message. |
+
+**Exceptions:**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception): The error codes are as follows. For details, see [Location Service Error Codes](./cj-errorcode-geo_location_manager.md).
+
+  | Error Code ID | Error Message |
+  | :---- | :--- |
+  | 201 | Permission verification failed. The application does not have the permission required to call the API. |
+  | 801 | Capability not supported. Failed to call ${geoLocationManager.onNmeaMessage} due to limited device capabilities. |
+  | 3301000 | The location service is unavailable. |
+  | 3301100 | The location switch is off. |
+
+**Example:**
+
+```cangjie
+// index.cj
+
+import kit.LocationKit.*
+import kit.CangjieKit.*
+import kit.PerformanceAnalysisKit.Hilog
+
+class NmeaCallback <: Callback1Argument<String> {
+    public func invoke(err: ?BusinessException, arg: String): Unit {
+        Hilog.info(0, "test", "nmea: ${arg}")
+    }
+}
+
+try {
+    onNmeaMessage(NmeaCallback())
+} catch (e: BusinessException) {
+    Hilog.error(0, "test", "errCode: ${e.code}, message: ${e.message}")
+}
+```
+
+## func offNmeaMessage(?Callback1Argument\<String>)
+
+```cangjie
+public func offNmeaMessage(callback!: ?Callback1Argument<String> = None): Unit
+```
+
+**Function:** Unsubscribes from NMEA message events. The callback passed in must be the same as the callback passed in to onNmeaMessage. If no callback is passed in, all subscriptions of this type are canceled.
+
+**Permission Required:** ohos.permission.LOCATION and ohos.permission.APPROXIMATELY_LOCATION
+
+**System Capability:** SystemCapability.Location.Location.Gnss
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+| Parameter Name | Type | Required | Default Value | Description |
+|:---|:---|:---|:---|:---|
+| callback | ?[Callback1Argument](../arkinterop/cj-api-callback_invoke.md#class-callback1argumenta)\<String\> | No | None | Callback to be unsubscribed. If it is not specified, all subscriptions are canceled. |
+
+**Exceptions:**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception): The error codes are as follows. For details, see [Location Service Error Codes](./cj-errorcode-geo_location_manager.md).
+
+  | Error Code ID | Error Message |
+  | :---- | :--- |
+  | 201 | Permission verification failed. The application does not have the permission required to call the API. |
+  | 801 | Capability not supported. Failed to call ${geoLocationManager.offNmeaMessage} due to limited device capabilities. |
+  | 3301000 | The location service is unavailable. |
+  | 3301100 | The location switch is off. |
+
+**Example:**
+
+```cangjie
+// index.cj
+
+import kit.LocationKit.*
+import kit.CangjieKit.*
+import kit.PerformanceAnalysisKit.Hilog
+
+try {
+    offNmeaMessage()
 } catch (e: BusinessException) {
     Hilog.error(0, "test", "errCode: ${e.code}, message: ${e.message}")
 }

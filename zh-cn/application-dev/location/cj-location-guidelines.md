@@ -34,6 +34,10 @@
 | [offLocationError(?Callback1Argument\<LocationError>)](../reference/LocationKit/cj-apis-geo_location_manager.md#func-offlocationerrorcallback1argumentlocationerror) | 取消订阅持续定位过程中的错误信息。 |
 | [onLocationEnabledChange(Callback1Argument\<Bool>)](../reference/LocationKit/cj-apis-geo_location_manager.md#func-onlocationenabledchangecallback1argumentbool) | 订阅位置服务状态变化。 |
 | [offLocationEnabledChange(?Callback1Argument\<Bool>)](../reference/LocationKit/cj-apis-geo_location_manager.md#func-offlocationenabledchangecallback1argumentbool) | 取消订阅位置服务状态变化。 |
+| [onSatelliteStatusChange(Callback1Argument\<SatelliteStatusInfo>)](../reference/LocationKit/cj-apis-geo_location_manager.md#func-onsatellitestatuschangecallback1argumentsatellitestatusinfo) | 订阅卫星状态变化事件。 |
+| [offSatelliteStatusChange(?Callback1Argument\<SatelliteStatusInfo>)](../reference/LocationKit/cj-apis-geo_location_manager.md#func-offsatellitestatuschangecallback1argumentsatellitestatusinfo) | 取消订阅卫星状态变化事件。 |
+| [onNmeaMessage(Callback1Argument\<String>)](../reference/LocationKit/cj-apis-geo_location_manager.md#func-onnmeamessagecallback1argumentstring) | 订阅NMEA消息事件。 |
+| [offNmeaMessage(?Callback1Argument\<String>)](../reference/LocationKit/cj-apis-geo_location_manager.md#func-offnmeamessagecallback1argumentstring) | 取消订阅NMEA消息事件。 |
 | [onCountryCodeChange(Callback1Argument\<CountryCode>)](../reference/LocationKit/cj-apis-geo_location_manager.md#func-oncountrycodechangecallback1argumentcountrycode) | 订阅国家码信息变化事件。 |
 | [offCountryCodeChange(?Callback1Argument\<CountryCode>)](../reference/LocationKit/cj-apis-geo_location_manager.md#func-offcountrycodechangecallback1argumentcountrycode) | 取消订阅国家码信息变化事件。 |
 | [sendCommand(LocationCommand, AsyncCallback\<Unit>)](../reference/LocationKit/cj-apis-geo_location_manager.md#func-sendcommandlocationcommand-asynccallbackunit) | 给位置服务子系统的各个部件发送扩展命令。 |
@@ -339,6 +343,51 @@
         Hilog.error(0, "test", "errCode: ${e.code}, message: ${e.message}")
     }
     ```
+
+9. 订阅卫星状态与NMEA消息。多用于查看卫星信号质量、调试定位问题等场景。
+    - 调用onSatelliteStatusChange接口订阅卫星状态变化事件，回调参数[SatelliteStatusInfo](../reference/LocationKit/cj-apis-geo_location_manager.md#class-satellitestatusinfo)包含卫星数量、卫星ID、载波噪声密度、高度角、方位角、载波频率、星座类型等信息；不再需要时调用offSatelliteStatusChange接口取消订阅，传入的回调实例需要与onSatelliteStatusChange接口传入的回调实例保持一致；不传入callback时取消当前类型的所有订阅。
+
+        <!-- run -->
+
+        ```cangjie
+        import kit.LocationKit.*
+        import kit.CangjieKit.*
+        import kit.PerformanceAnalysisKit.Hilog
+
+        class SatelliteCallback <: Callback1Argument<SatelliteStatusInfo> {
+            public func invoke(err: ?BusinessException, arg: SatelliteStatusInfo): Unit {
+                Hilog.info(0, "test", "satellites: ${arg.satellitesNumber}, ids: ${arg.satelliteIds.size}")
+            }
+        }
+
+        try {
+            onSatelliteStatusChange(SatelliteCallback())
+        } catch (e: BusinessException) {
+            Hilog.error(0, "test", "errCode: ${e.code}, message: ${e.message}")
+        }
+        ```
+
+    - 调用onNmeaMessage接口订阅NMEA消息事件，用于获取GNSS芯片输出的原始NMEA语句，该接口需要同时申请ohos.permission.LOCATION和ohos.permission.APPROXIMATELY_LOCATION权限；不再需要时调用offNmeaMessage接口取消订阅，传入的回调实例需要与onNmeaMessage接口传入的回调实例保持一致；不传入callback时取消当前类型的所有订阅。
+
+        <!-- run -->
+
+        ```cangjie
+        import kit.LocationKit.*
+        import kit.CangjieKit.*
+        import kit.PerformanceAnalysisKit.Hilog
+
+        class NmeaCallback <: Callback1Argument<String> {
+            public func invoke(err: ?BusinessException, arg: String): Unit {
+                Hilog.info(0, "test", "nmea: ${arg}")
+            }
+        }
+
+        try {
+            onNmeaMessage(NmeaCallback())
+        } catch (e: BusinessException) {
+            Hilog.error(0, "test", "errCode: ${e.code}, message: ${e.message}")
+        }
+        ```
 
 <!--Del-->
 ## 示例代码
