@@ -602,7 +602,7 @@ public mut prop effectType: String
 public mut prop duration: Int32
 ```
 
-**Function:** Vibration duration, in ms. The value range is (0,1800000]. The maximum vibration duration varies with devices due to different component protection design specifications of drivers provided by different vendors. It is recommended that a single vibration duration be less than or equal to 10s to maximize user experience.
+**Function:** Vibration duration, in ms. The value range is (0,1800000]. The maximum vibration duration varies with devices due to different component protection design specifications of drivers provided by different vendors. It is recommended that a single vibration duration be less than or equal to 10s for a better user experience.
 
 **Type:** Int32
 

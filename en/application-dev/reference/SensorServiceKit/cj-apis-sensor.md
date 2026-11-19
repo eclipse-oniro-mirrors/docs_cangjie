@@ -3781,7 +3781,7 @@ public mut prop deflectionAngle: Float32
 public mut prop levelIntensity: Float32
 ```
 
-**Function:** Horizontal intensity of the magnetic field vector field, in nT.
+**Function:** Horizontal intensity of the magnetic field vector, in nT.
 
 **Type:** Float32
 
@@ -3828,7 +3828,7 @@ public init(x: Float32, y: Float32, z: Float32, geomagneticDip: Float32, deflect
 | z                | Float32 | Yes      | -       | Vertical component of the geomagnetic field, in nT.                                                                             |
 | geomagneticDip   | Float32 | Yes      | -       | Magnetic dip, also called magnetic inclination, which is the angle measured from the horizontal plane to the magnetic field vector, in degrees. |
 | deflectionAngle  | Float32 | Yes      | -       | Magnetic declination, which is the angle between true north (geographic north) and the magnetic north (the horizontal component of the field), in degrees. |
-| levelIntensity   | Float32 | Yes      | -       | Horizontal intensity of the magnetic field vector field, in nT.                                                                |
+| levelIntensity   | Float32 | Yes      | -       | Horizontal intensity of the magnetic field vector, in nT.                                                                |
 | totalIntensity   | Float32 | Yes      | -       | Total intensity of the magnetic field vector, in nT.                                                                            |
 
 ## class LocationOptions
