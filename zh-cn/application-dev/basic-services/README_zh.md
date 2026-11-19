@@ -3,3 +3,4 @@
 - [Basic Services Kit简介](cj-basic-services-kit-overview.md)（Beta特性）
 - [进程线程通信](common-event/README_zh.md)（Beta特性）
 - [上传下载](request/README_zh.md)（Beta特性）
+- [Zip压缩](zlib/README_zh.md)（Beta特性）

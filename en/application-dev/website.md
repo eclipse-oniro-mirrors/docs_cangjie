@@ -793,6 +793,7 @@
                         - [ohos.device_info (Device Information)](reference/BasicServicesKit/cj-apis-device_info.md)
                     - Data File Processing
                         - [kit.BasicServicesKit.agent (Upload/Download)](reference/BasicServicesKit/cj-apis-request-agent.md)
+                        - [ohos.zlib (Zip)](basic-services/zlib/cj-apis-zlib.md)
                     - Process/Thread Communication
                         - [ohos.common_event_manager (Common Event Module)](reference/BasicServicesKit/cj-apis-common_event_manager.md)
                     - Others
@@ -809,6 +810,7 @@
                     - [Event Error Codes](reference/BasicServicesKit/cj-errorcode-common_event_service.md)
                     - [System Power Management Error Codes](reference/BasicServicesKit/cj-errorcode-power.md)
                     - [Account Management Error Codes](reference/BasicServicesKit/cj-errorcode-basic-account.md)
+                    - [zlib Error Codes](basic-services/zlib/cj-errorcode-zlib.md)
             - Notification Kit (User Notification Service)
                 - Cangjie API
                     - [ohos.notification_manager (Notification Management)](reference/NotificationKit/cj-apis-notification-manager.md)
