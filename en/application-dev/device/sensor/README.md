@@ -4,3 +4,6 @@
 - Sensors
   - [Sensor Development Overview](cj-sensor-overview.md)(Beta Feature)
   - [Sensor Development Guide (Cangjie)](cj-sensor-guidelines.md)(Beta Feature)
+- Vibrator
+  - [Vibrator Development Overview](cj-vibrator-overview.md)(Beta Feature)
+  - [Vibrator Development Guide (Cangjie)](cj-vibrator-guidelines.md)(Beta Feature)

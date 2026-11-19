@@ -550,6 +550,9 @@
                 - 传感器
                     - [传感器开发概述](device/sensor/cj-sensor-overview.md)
                     - [传感器开发指导](device/sensor/cj-sensor-guidelines.md)
+                - 振动
+                    - [振动开发概述](device/sensor/cj-vibrator-overview.md)
+                    - [振动开发指导](device/sensor/cj-vibrator-guidelines.md)
         - 调测调优
             - Performance Analysis Kit（性能分析服务）
                 - [Performance Analysis Kit简介](dfx/cj-performance-analysis-kit-overview.md)
@@ -985,8 +988,10 @@
             - Sensor Service Kit（传感器服务）
                 - 仓颉API
                     - [ohos.sensor（传感器）](reference/SensorServiceKit/cj-apis-sensor.md)
+                    - [ohos.vibrator（振动）](reference/SensorServiceKit/cj-apis-vibrator.md)
                 - 错误码
                     - [传感器错误码](reference/SensorServiceKit/cj-errorcode-sensor.md)
+                    - [振动错误码](reference/SensorServiceKit/cj-errorcode-vibrator.md)
             - Telephony Kit
                 - 仓颉API
                     - [ohos.telephony.call（拨打电话）](reference/TelephonyKit/cj-apis-telephony-call.md)
