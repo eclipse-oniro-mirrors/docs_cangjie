@@ -241,7 +241,7 @@ public enum EffectId {
 
 **Parent Types:**
 
-- [Equatable\<EffectId>](../arkui-cj/cj-common-types.md#class-equatable)
+- [Equatable\<EffectId\>](../arkui-cj/cj-common-types.md#class-equatable)
 - ToString
 
 ### EffectClockTimer
@@ -328,7 +328,7 @@ public enum VibratorStopMode {
 
 **Parent Types:**
 
-- [Equatable\<VibratorStopMode>](../arkui-cj/cj-common-types.md#class-equatable)
+- [Equatable\<VibratorStopMode\>](../arkui-cj/cj-common-types.md#class-equatable)
 - ToString
 
 ### VibratorStopModeTime

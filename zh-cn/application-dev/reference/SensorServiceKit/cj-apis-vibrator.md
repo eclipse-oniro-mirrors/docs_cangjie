@@ -328,7 +328,7 @@ public enum EffectId {
 **父类型：**
 
 - ToString
-- Equatable<[EffectId](#enum-effectid)>
+- Equatable\<[EffectId](#enum-effectid)\>
 
 ### EffectClockTimer
 
@@ -425,7 +425,7 @@ public enum VibratorStopMode {
 **父类型：**
 
 - ToString
-- Equatable<[VibratorStopMode](#enum-vibratorstopmode)>
+- Equatable\<[VibratorStopMode](#enum-vibratorstopmode)\>
 
 ### VibratorStopModeTime
 
