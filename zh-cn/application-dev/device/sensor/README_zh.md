@@ -4,3 +4,6 @@
 - 传感器
   - [传感器开发概述](cj-sensor-overview.md)（Beta特性）
   - [传感器开发指导](cj-sensor-guidelines.md)（Beta特性）
+- 振动
+  - [振动开发概述](cj-vibrator-overview.md)（Beta特性）
+  - [振动开发指导](cj-vibrator-guidelines.md)（Beta特性）

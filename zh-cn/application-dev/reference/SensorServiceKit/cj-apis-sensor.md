@@ -3286,3 +3286,788 @@ public func toString(): String
 | 类型     | 说明       |
 |:------ |:-------- |
 | String | 转换后的字符串。 |
+
+## func getGeomagneticInfo(LocationOptions, Int64, AsyncCallback\<GeomagneticResponse>)
+
+```cangjie
+public func getGeomagneticInfo(locationOptions: LocationOptions, timeMillis: Int64, callback: AsyncCallback<GeomagneticResponse>): Unit
+```
+
+**功能：** 获取某时刻地球上特定位置的地磁场信息。使用异步回调返回结果。
+
+**系统能力：** SystemCapability.Sensors.Sensor
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 默认值 | 说明 |
+|:--- |:--- |:--- |:--- |:--- |
+| locationOptions | [LocationOptions](#class-locationoptions) | 是 | - | 地理位置信息，包括经度、纬度和海拔高度。 |
+| timeMillis | Int64 | 是 | - | 获取磁偏角的时间，unix时间戳，单位毫秒。 |
+| callback | AsyncCallback\<[GeomagneticResponse](#class-geomagneticresponse)\> | 是 | - | 回调函数，返回地磁场信息。 |
+
+**异常：**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[传感器错误码](./cj-errorcode-sensor.md)。
+
+  | 错误码ID | 错误信息 |
+  | :--- | :--- |
+  | 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3. Sensor data channel exception. |
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.SensorServiceKit.*
+import kit.PerformanceAnalysisKit.Hilog
+
+let location = LocationOptions(80.0, 0.0, 0.0)
+getGeomagneticInfo(location, 1580486400000, { err, data =>
+    if (let Some(response) <- data) {
+        Hilog.info(0, "test", "geomagneticInfo x: ${response.x}", "")
+        Hilog.info(0, "test", "geomagneticInfo y: ${response.y}", "")
+        Hilog.info(0, "test", "geomagneticInfo z: ${response.z}", "")
+        Hilog.info(0, "test", "geomagneticInfo geomagneticDip: ${response.geomagneticDip}", "")
+        Hilog.info(0, "test", "geomagneticInfo deflectionAngle: ${response.deflectionAngle}", "")
+        Hilog.info(0, "test", "geomagneticInfo levelIntensity: ${response.levelIntensity}", "")
+        Hilog.info(0, "test", "geomagneticInfo totalIntensity: ${response.totalIntensity}", "")
+    } else {
+        Hilog.error(0, "test", "Failed to get geomagneticInfo: ${err}", "")
+    }
+})
+```
+
+## func getDeviceAltitude(Float32, Float32, AsyncCallback\<Float32>)
+
+```cangjie
+public func getDeviceAltitude(seaPressure: Float32, currentPressure: Float32, callback: AsyncCallback<Float32>): Unit
+```
+
+**功能：** 根据气压值获取海拔高度。使用异步回调返回结果。
+
+**系统能力：** SystemCapability.Sensors.Sensor
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 默认值 | 说明 |
+|:--- |:--- |:--- |:--- |:--- |
+| seaPressure | Float32 | 是 | - | 海平面气压值，单位为hPa。 |
+| currentPressure | Float32 | 是 | - | 指定的气压值，单位为hPa。 |
+| callback | AsyncCallback\<Float32> | 是 | - | 回调函数，返回海拔高度，单位为米。 |
+
+**异常：**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[传感器错误码](./cj-errorcode-sensor.md)。
+
+  | 错误码ID | 错误信息 |
+  | :--- | :--- |
+  | 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3. Sensor data channel exception. |
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.SensorServiceKit.*
+import kit.PerformanceAnalysisKit.Hilog
+
+getDeviceAltitude(1013.25, 1000.0, { err, data =>
+    if (let Some(altitude) <- data) {
+        Hilog.info(0, "test", "Device altitude: ${altitude} meters", "")
+    } else {
+        Hilog.error(0, "test", "Failed to get altitude: ${err}", "")
+    }
+})
+```
+
+## func getInclination(Array\<Float32>, AsyncCallback\<Float32>)
+
+```cangjie
+public func getInclination(inclinationMatrix: Array<Float32>, callback: AsyncCallback<Float32>): Unit
+```
+
+**功能：** 根据倾斜矩阵计算地磁倾角。使用异步回调返回结果。
+
+**系统能力：** SystemCapability.Sensors.Sensor
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 默认值 | 说明 |
+|:--- |:--- |:--- |:--- |:--- |
+| inclinationMatrix | Array\<Float32> | 是 | - | 倾斜矩阵。 |
+| callback | AsyncCallback\<Float32> | 是 | - | 回调函数，返回地磁倾角，单位为弧度。 |
+
+**异常：**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[传感器错误码](./cj-errorcode-sensor.md)。
+
+  | 错误码ID | 错误信息 |
+  | :--- | :--- |
+  | 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3. Sensor data channel exception. |
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.SensorServiceKit.*
+import kit.PerformanceAnalysisKit.Hilog
+
+let inclinationMatrix: Array<Float32> = [1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0]
+getInclination(inclinationMatrix, { err, data =>
+    if (let Some(dip) <- data) {
+        Hilog.info(0, "test", "Magnetic dip: ${dip} radians", "")
+    } else {
+        Hilog.error(0, "test", "Failed to get inclination: ${err}", "")
+    }
+})
+```
+
+## func getAngleVariation(Array\<Float32>, Array\<Float32>, AsyncCallback\<Array\<Float32>>)
+
+```cangjie
+public func getAngleVariation(currentRotationMatrix: Array<Float32>, preRotationMatrix: Array<Float32>, callback: AsyncCallback<Array<Float32>>): Unit
+```
+
+**功能：** 计算两个旋转矩阵之间的角度变化。使用异步回调返回结果。
+
+**系统能力：** SystemCapability.Sensors.Sensor
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 默认值 | 说明 |
+|:--- |:--- |:--- |:--- |:--- |
+| currentRotationMatrix | Array\<Float32> | 是 | - | 当前旋转矩阵。 |
+| preRotationMatrix | Array\<Float32> | 是 | - | 相对旋转矩阵。 |
+| callback | AsyncCallback\<Array\<Float32>> | 是 | - | 回调函数，返回绕z、x、y轴方向的旋转角度。 |
+
+**异常：**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[传感器错误码](./cj-errorcode-sensor.md)。
+
+  | 错误码ID | 错误信息 |
+  | :--- | :--- |
+  | 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3. Sensor data channel exception. |
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.SensorServiceKit.*
+import kit.PerformanceAnalysisKit.Hilog
+
+let currentRotationMatrix: Array<Float32> = [1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0]
+let preRotationMatrix: Array<Float32> = [1.0, 0.0, 0.0, 0.0, 0.87, -0.50, 0.0, 0.50, 0.87]
+getAngleVariation(currentRotationMatrix, preRotationMatrix, { err, data =>
+    if (let Some(angles) <- data) {
+        Hilog.info(0, "test", "Angle variation: ${angles}", "")
+    } else {
+        Hilog.error(0, "test", "Failed to get angle variation: ${err}", "")
+    }
+})
+```
+
+## func getRotationMatrix(Array\<Float32>, AsyncCallback\<Array\<Float32>>)
+
+```cangjie
+public func getRotationMatrix(rotationVector: Array<Float32>, callback: AsyncCallback<Array<Float32>>): Unit
+```
+
+**功能：** 从旋转向量获取旋转矩阵。使用异步回调返回结果。
+
+**系统能力：** SystemCapability.Sensors.Sensor
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 默认值 | 说明 |
+|:--- |:--- |:--- |:--- |:--- |
+| rotationVector | Array\<Float32> | 是 | - | 旋转向量。 |
+| callback | AsyncCallback\<Array\<Float32>> | 是 | - | 回调函数，返回旋转矩阵。 |
+
+**异常：**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[传感器错误码](./cj-errorcode-sensor.md)。
+
+  | 错误码ID | 错误信息 |
+  | :--- | :--- |
+  | 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3. Sensor data channel exception. |
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.SensorServiceKit.*
+import kit.PerformanceAnalysisKit.Hilog
+
+let rotationVector: Array<Float32> = [0.0, 0.0, 0.0, 1.0]
+getRotationMatrix(rotationVector, { err, data =>
+    if (let Some(matrix) <- data) {
+        Hilog.info(0, "test", "Rotation matrix: ${matrix}", "")
+    } else {
+        Hilog.error(0, "test", "Failed to get rotation matrix: ${err}", "")
+    }
+})
+```
+
+## func transformRotationMatrix(Array\<Float32>, CoordinatesOptions, AsyncCallback\<Array\<Float32>>)
+
+```cangjie
+public func transformRotationMatrix(inRotationVector: Array<Float32>, coordinates: CoordinatesOptions, callback: AsyncCallback<Array<Float32>>): Unit
+```
+
+**功能：** 根据坐标系变换旋转向量。使用异步回调返回结果。
+
+**系统能力：** SystemCapability.Sensors.Sensor
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 默认值 | 说明 |
+|:--- |:--- |:--- |:--- |:--- |
+| inRotationVector | Array\<Float32> | 是 | - | 旋转向量。 |
+| coordinates | [CoordinatesOptions](#class-coordinatesoptions) | 是 | - | 坐标选项。 |
+| callback | AsyncCallback\<Array\<Float32>> | 是 | - | 回调函数，返回变换后的旋转向量。 |
+
+**异常：**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[传感器错误码](./cj-errorcode-sensor.md)。
+
+  | 错误码ID | 错误信息 |
+  | :--- | :--- |
+  | 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3. Sensor data channel exception. |
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.SensorServiceKit.*
+import kit.PerformanceAnalysisKit.Hilog
+
+let rotationVector: Array<Float32> = [1.0, 0.0, 0.0, 0.0]
+let coordinates = CoordinatesOptions(1, 1)
+transformRotationMatrix(rotationVector, coordinates, { err, data =>
+    if (let Some(result) <- data) {
+        Hilog.info(0, "test", "Transformed rotation matrix: ${result}", "")
+    } else {
+        Hilog.error(0, "test", "Failed to transform rotation matrix: ${err}", "")
+    }
+})
+```
+
+## func getQuaternion(Array\<Float32>, AsyncCallback\<Array\<Float32>>)
+
+```cangjie
+public func getQuaternion(rotationVector: Array<Float32>, callback: AsyncCallback<Array<Float32>>): Unit
+```
+
+**功能：** 从旋转向量获取四元数。使用异步回调返回结果。
+
+**系统能力：** SystemCapability.Sensors.Sensor
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 默认值 | 说明 |
+|:--- |:--- |:--- |:--- |:--- |
+| rotationVector | Array\<Float32> | 是 | - | 旋转向量。 |
+| callback | AsyncCallback\<Array\<Float32>> | 是 | - | 回调函数，返回四元数。 |
+
+**异常：**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[传感器错误码](./cj-errorcode-sensor.md)。
+
+  | 错误码ID | 错误信息 |
+  | :--- | :--- |
+  | 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3. Sensor data channel exception. |
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.SensorServiceKit.*
+import kit.PerformanceAnalysisKit.Hilog
+
+let rotationVector: Array<Float32> = [0.0, 0.0, 0.0, 1.0]
+getQuaternion(rotationVector, { err, data =>
+    if (let Some(quaternion) <- data) {
+        Hilog.info(0, "test", "Quaternion: ${quaternion}", "")
+    } else {
+        Hilog.error(0, "test", "Failed to get quaternion: ${err}", "")
+    }
+})
+```
+
+## func getOrientation(Array\<Float32>, AsyncCallback\<Array\<Float32>>)
+
+```cangjie
+public func getOrientation(rotationMatrix: Array<Float32>, callback: AsyncCallback<Array<Float32>>): Unit
+```
+
+**功能：** 根据旋转矩阵获取设备方向。使用异步回调返回结果。
+
+**系统能力：** SystemCapability.Sensors.Sensor
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 默认值 | 说明 |
+|:--- |:--- |:--- |:--- |:--- |
+| rotationMatrix | Array\<Float32> | 是 | - | 旋转矩阵。 |
+| callback | AsyncCallback\<Array\<Float32>> | 是 | - | 回调函数，返回绕z、x、y轴方向的旋转角度，单位为度。 |
+
+**异常：**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[传感器错误码](./cj-errorcode-sensor.md)。
+
+  | 错误码ID | 错误信息 |
+  | :--- | :--- |
+  | 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3. Sensor data channel exception. |
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.SensorServiceKit.*
+import kit.PerformanceAnalysisKit.Hilog
+
+let rotationMatrix: Array<Float32> = [1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0]
+getOrientation(rotationMatrix, { err, data =>
+    if (let Some(angles) <- data) {
+        Hilog.info(0, "test", "Orientation angles: ${angles}", "")
+    } else {
+        Hilog.error(0, "test", "Failed to get orientation: ${err}", "")
+    }
+})
+```
+
+## func getRotationMatrix(Array\<Float32>, Array\<Float32>, AsyncCallback\<RotationMatrixResponse>)
+
+```cangjie
+public func getRotationMatrix(gravity: Array<Float32>, geomagnetic: Array<Float32>, callback: AsyncCallback<RotationMatrixResponse>): Unit
+```
+
+**功能：** 根据重力向量和地磁向量获取旋转矩阵。使用异步回调返回结果。
+
+**系统能力：** SystemCapability.Sensors.Sensor
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 默认值 | 说明 |
+|:--- |:--- |:--- |:--- |:--- |
+| gravity | Array\<Float32> | 是 | - | 重力向量。 |
+| geomagnetic | Array\<Float32> | 是 | - | 地磁向量。 |
+| callback | AsyncCallback\<[RotationMatrixResponse](#class-rotationmatrixresponse)\> | 是 | - | 回调函数，返回旋转矩阵和倾斜矩阵。 |
+
+**异常：**
+
+- [BusinessException](../arkinterop/cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[传感器错误码](./cj-errorcode-sensor.md)。
+
+  | 错误码ID | 错误信息 |
+  | :--- | :--- |
+  | 14500101 | Service exception.Possible causes:1. Sensor hdf service exception;2. Sensor service ipc exception;3. Sensor data channel exception. |
+
+**示例：**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.SensorServiceKit.*
+import kit.PerformanceAnalysisKit.Hilog
+
+let gravity: Array<Float32> = [0.0, 0.0, 9.81]
+let geomagnetic: Array<Float32> = [0.0, 25.0, 40.0]
+getRotationMatrix(gravity, geomagnetic, { err, data =>
+    if (let Some(response) <- data) {
+        Hilog.info(0, "test", "Rotation matrix: ${response.rotation}", "")
+        Hilog.info(0, "test", "Inclination matrix: ${response.inclination}", "")
+    } else {
+        Hilog.error(0, "test", "Failed to get rotation matrix: ${err}", "")
+    }
+})
+```
+
+## class GeomagneticResponse
+
+```cangjie
+public class GeomagneticResponse {
+    public mut prop x: Float32
+    public mut prop y: Float32
+    public mut prop z: Float32
+    public mut prop geomagneticDip: Float32
+    public mut prop deflectionAngle: Float32
+    public mut prop levelIntensity: Float32
+    public mut prop totalIntensity: Float32
+    public init(x: Float32, y: Float32, z: Float32, geomagneticDip: Float32, deflectionAngle: Float32, levelIntensity: Float32, totalIntensity: Float32)
+}
+```
+
+**功能：** 描述地磁场响应对象。
+
+**系统能力：** SystemCapability.Sensors.Sensor
+
+**起始版本：** 26.1.0
+
+### prop x
+
+```cangjie
+public mut prop x: Float32
+```
+
+**功能：** 地磁场的北向分量，单位为nT。
+
+**类型：** Float32
+
+**读写能力：** 可读写
+
+**起始版本：** 26.1.0
+
+### prop y
+
+```cangjie
+public mut prop y: Float32
+```
+
+**功能：** 地磁场的东向分量，单位为nT。
+
+**类型：** Float32
+
+**读写能力：** 可读写
+
+**起始版本：** 26.1.0
+
+### prop z
+
+```cangjie
+public mut prop z: Float32
+```
+
+**功能：** 地磁场的垂直分量，单位为nT。
+
+**类型：** Float32
+
+**读写能力：** 可读写
+
+**起始版本：** 26.1.0
+
+### prop geomagneticDip
+
+```cangjie
+public mut prop geomagneticDip: Float32
+```
+
+**功能：** 磁倾角，即从水平面到磁场矢量的夹角，单位为度。
+
+**类型：** Float32
+
+**读写能力：** 可读写
+
+**起始版本：** 26.1.0
+
+### prop deflectionAngle
+
+```cangjie
+public mut prop deflectionAngle: Float32
+```
+
+**功能：** 磁偏角，即真北（地理北）与磁北之间的夹角，单位为度。
+
+**类型：** Float32
+
+**读写能力：** 可读写
+
+**起始版本：** 26.1.0
+
+### prop levelIntensity
+
+```cangjie
+public mut prop levelIntensity: Float32
+```
+
+**功能：** 磁场矢量的水平强度，单位为nT。
+
+**类型：** Float32
+
+**读写能力：** 可读写
+
+**起始版本：** 26.1.0
+
+### prop totalIntensity
+
+```cangjie
+public mut prop totalIntensity: Float32
+```
+
+**功能：** 磁场矢量的总强度，单位为nT。
+
+**类型：** Float32
+
+**读写能力：** 可读写
+
+**起始版本：** 26.1.0
+
+### init(Float32, Float32, Float32, Float32, Float32, Float32, Float32)
+
+```cangjie
+public init(x: Float32, y: Float32, z: Float32, geomagneticDip: Float32, deflectionAngle: Float32, levelIntensity: Float32, totalIntensity: Float32)
+```
+
+**功能：** 构造一个地磁场响应对象。
+
+**系统能力：** SystemCapability.Sensors.Sensor
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 默认值 | 说明 |
+|:--- |:--- |:--- |:--- |:--- |
+| x | Float32 | 是 | - | 地磁场的北向分量，单位为nT。 |
+| y | Float32 | 是 | - | 地磁场的东向分量，单位为nT。 |
+| z | Float32 | 是 | - | 地磁场的垂直分量，单位为nT。 |
+| geomagneticDip | Float32 | 是 | - | 磁倾角，即从水平面到磁场矢量的夹角，单位为度。 |
+| deflectionAngle | Float32 | 是 | - | 磁偏角，即真北（地理北）与磁北之间的夹角，单位为度。 |
+| levelIntensity | Float32 | 是 | - | 磁场矢量的水平强度，单位为nT。 |
+| totalIntensity | Float32 | 是 | - | 磁场矢量的总强度，单位为nT。 |
+
+## class LocationOptions
+
+```cangjie
+public class LocationOptions {
+    public mut prop latitude: Float32
+    public mut prop longitude: Float32
+    public mut prop altitude: Float32
+    public init(latitude: Float32, longitude: Float32, altitude: Float32)
+}
+```
+
+**功能：** 描述地理位置。
+
+**系统能力：** SystemCapability.Sensors.Sensor
+
+**起始版本：** 26.1.0
+
+### prop latitude
+
+```cangjie
+public mut prop latitude: Float32
+```
+
+**功能：** 纬度，单位为度。
+
+**类型：** Float32
+
+**读写能力：** 可读写
+
+**起始版本：** 26.1.0
+
+### prop longitude
+
+```cangjie
+public mut prop longitude: Float32
+```
+
+**功能：** 经度，单位为度。
+
+**类型：** Float32
+
+**读写能力：** 可读写
+
+**起始版本：** 26.1.0
+
+### prop altitude
+
+```cangjie
+public mut prop altitude: Float32
+```
+
+**功能：** 海拔高度，单位为米。
+
+**类型：** Float32
+
+**读写能力：** 可读写
+
+**起始版本：** 26.1.0
+
+### init(Float32, Float32, Float32)
+
+```cangjie
+public init(latitude: Float32, longitude: Float32, altitude: Float32)
+```
+
+**功能：** 构造一个地理位置对象。
+
+**系统能力：** SystemCapability.Sensors.Sensor
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 默认值 | 说明 |
+|:--- |:--- |:--- |:--- |:--- |
+| latitude | Float32 | 是 | - | 纬度，单位为度。 |
+| longitude | Float32 | 是 | - | 经度，单位为度。 |
+| altitude | Float32 | 是 | - | 海拔高度，单位为米。 |
+
+## class CoordinatesOptions
+
+```cangjie
+public class CoordinatesOptions {
+    public mut prop x: Int32
+    public mut prop y: Int32
+    public init(x: Int32, y: Int32)
+}
+```
+
+**功能：** 描述坐标选项。
+
+**系统能力：** SystemCapability.Sensors.Sensor
+
+**起始版本：** 26.1.0
+
+### prop x
+
+```cangjie
+public mut prop x: Int32
+```
+
+**功能：** X坐标方向。
+
+**类型：** Int32
+
+**读写能力：** 可读写
+
+**起始版本：** 26.1.0
+
+### prop y
+
+```cangjie
+public mut prop y: Int32
+```
+
+**功能：** Y坐标方向。
+
+**类型：** Int32
+
+**读写能力：** 可读写
+
+**起始版本：** 26.1.0
+
+### init(Int32, Int32)
+
+```cangjie
+public init(x: Int32, y: Int32)
+```
+
+**功能：** 构造一个坐标选项对象。
+
+**系统能力：** SystemCapability.Sensors.Sensor
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 默认值 | 说明 |
+|:--- |:--- |:--- |:--- |:--- |
+| x | Int32 | 是 | - | X坐标方向。 |
+| y | Int32 | 是 | - | Y坐标方向。 |
+
+## class RotationMatrixResponse
+
+```cangjie
+public class RotationMatrixResponse {
+    public mut prop rotation: Array<Float32>
+    public mut prop inclination: Array<Float32>
+    public init(rotation: Array<Float32>, inclination: Array<Float32>)
+}
+```
+
+**功能：** 描述旋转矩阵的响应。
+
+**系统能力：** SystemCapability.Sensors.Sensor
+
+**起始版本：** 26.1.0
+
+### prop rotation
+
+```cangjie
+public mut prop rotation: Array<Float32>
+```
+
+**功能：** 旋转矩阵。
+
+**类型：** Array\<Float32>
+
+**读写能力：** 可读写
+
+**起始版本：** 26.1.0
+
+### prop inclination
+
+```cangjie
+public mut prop inclination: Array<Float32>
+```
+
+**功能：** 倾斜矩阵。
+
+**类型：** Array\<Float32>
+
+**读写能力：** 可读写
+
+**起始版本：** 26.1.0
+
+### init(Array\<Float32>, Array\<Float32>)
+
+```cangjie
+public init(rotation: Array<Float32>, inclination: Array<Float32>)
+```
+
+**功能：** 构造一个旋转矩阵响应对象。
+
+**系统能力：** SystemCapability.Sensors.Sensor
+
+**起始版本：** 26.1.0
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 默认值 | 说明 |
+|:--- |:--- |:--- |:--- |:--- |
+| rotation | Array\<Float32> | 是 | - | 旋转矩阵。 |
+| inclination | Array\<Float32> | 是 | - | 倾斜矩阵。 |

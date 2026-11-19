@@ -3236,3 +3236,816 @@ public func toString(): String
 | Type     | Description           |
 |:---------|:----------------------|
 | String   | The converted string. |
+
+## func getGeomagneticInfo(LocationOptions, Int64, AsyncCallback\<GeomagneticResponse\>)
+
+```cangjie
+public func getGeomagneticInfo(locationOptions: LocationOptions, timeMillis: Int64, callback: AsyncCallback<GeomagneticResponse>): Unit
+```
+
+**Function:** Obtains the geomagnetic field of a geographic location at a certain time. This API uses an asynchronous callback to return the result.
+
+**System Capability:** SystemCapability.Sensors.Sensor
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+| Parameter Name   | Type                                                                      | Required | Default | Description                                                              |
+|:---------------- |:------------------------------------------------------------------------- |:-------- |:------- |:----------------------------------------------------------------------- |
+| locationOptions  | [LocationOptions](#class-locationoptions)                                 | Yes      | -       | Geographic location, including the longitude, latitude, and altitude.   |
+| timeMillis       | Int64                                                                     | Yes      | -       | Time when the magnetic declination is obtained. The value is a Unix timestamp, in ms. |
+| callback         | AsyncCallback\<[GeomagneticResponse](#class-geomagneticresponse)\>        | Yes      | -       | Callback used to return the geomagnetic field.                           |
+
+**Exceptions:**
+
+- BusinessException: Corresponding error codes are listed below. For details, see [Sensor Error Codes](./cj-errorcode-sensor.md).
+  
+  | Error Code ID | Error Message                                                                                                                                |
+  |:------------ |:------------------------------------------------------------------------------------------------------------------------------------------- |
+  | 14500101     | Service exception. Possible causes: 1. Sensor hdf service exception; 2. Sensor service ipc exception; 3. Sensor data channel exception. |
+
+**Example:**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.SensorServiceKit.*
+import kit.PerformanceAnalysisKit.Hilog
+
+let location = LocationOptions(80.0, 0.0, 0.0)
+getGeomagneticInfo(location, 1580486400000, { err, data =>
+    if (let Some(response) <- data) {
+        Hilog.info(0, "test", "geomagneticInfo x: ${response.x}", "")
+        Hilog.info(0, "test", "geomagneticInfo y: ${response.y}", "")
+        Hilog.info(0, "test", "geomagneticInfo z: ${response.z}", "")
+        Hilog.info(0, "test", "geomagneticInfo geomagneticDip: ${response.geomagneticDip}", "")
+        Hilog.info(0, "test", "geomagneticInfo deflectionAngle: ${response.deflectionAngle}", "")
+        Hilog.info(0, "test", "geomagneticInfo levelIntensity: ${response.levelIntensity}", "")
+        Hilog.info(0, "test", "geomagneticInfo totalIntensity: ${response.totalIntensity}", "")
+    } else {
+        Hilog.error(0, "test", "Failed to get geomagneticInfo: ${err}", "")
+    }
+})
+```
+
+## func getDeviceAltitude(Float32, Float32, AsyncCallback\<Float32\>)
+
+```cangjie
+public func getDeviceAltitude(seaPressure: Float32, currentPressure: Float32, callback: AsyncCallback<Float32>): Unit
+```
+
+**Function:** Obtains the altitude based on the atmospheric pressure. This API uses an asynchronous callback to return the result.
+
+**System Capability:** SystemCapability.Sensors.Sensor
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+| Parameter Name   | Type                      | Required | Default | Description                                      |
+|:---------------- |:------------------------- |:-------- |:------- |:----------------------------------------------- |
+| seaPressure      | Float32                   | Yes      | -       | Sea-level atmospheric pressure, in hPa.          |
+| currentPressure  | Float32                   | Yes      | -       | Specified atmospheric pressure, in hPa.          |
+| callback         | AsyncCallback\<Float32\>  | Yes      | -       | Callback used to return the altitude, in meters. |
+
+**Exceptions:**
+
+- BusinessException: Corresponding error codes are listed below. For details, see [Sensor Error Codes](./cj-errorcode-sensor.md).
+  
+  | Error Code ID | Error Message                                                                                                                                |
+  |:------------ |:------------------------------------------------------------------------------------------------------------------------------------------- |
+  | 14500101     | Service exception. Possible causes: 1. Sensor hdf service exception; 2. Sensor service ipc exception; 3. Sensor data channel exception. |
+
+**Example:**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.SensorServiceKit.*
+import kit.PerformanceAnalysisKit.Hilog
+
+getDeviceAltitude(1013.25, 1000.0, { err, data =>
+    if (let Some(altitude) <- data) {
+        Hilog.info(0, "test", "Device altitude: ${altitude} meters", "")
+    } else {
+        Hilog.error(0, "test", "Failed to get altitude: ${err}", "")
+    }
+})
+```
+
+## func getInclination(Array\<Float32\>, AsyncCallback\<Float32\>)
+
+```cangjie
+public func getInclination(inclinationMatrix: Array<Float32>, callback: AsyncCallback<Float32>): Unit
+```
+
+**Function:** Obtains the magnetic dip based on the inclination matrix. This API uses an asynchronous callback to return the result.
+
+**System Capability:** SystemCapability.Sensors.Sensor
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+| Parameter Name    | Type                      | Required | Default | Description                                       |
+|:----------------- |:------------------------- |:-------- |:------- |:------------------------------------------------ |
+| inclinationMatrix | Array\<Float32\>          | Yes      | -       | Inclination matrix.                               |
+| callback          | AsyncCallback\<Float32\>  | Yes      | -       | Callback used to return the magnetic dip, in radians. |
+
+**Exceptions:**
+
+- BusinessException: Corresponding error codes are listed below. For details, see [Sensor Error Codes](./cj-errorcode-sensor.md).
+  
+  | Error Code ID | Error Message                                                                                                                                |
+  |:------------ |:------------------------------------------------------------------------------------------------------------------------------------------- |
+  | 14500101     | Service exception. Possible causes: 1. Sensor hdf service exception; 2. Sensor service ipc exception; 3. Sensor data channel exception. |
+
+**Example:**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.SensorServiceKit.*
+import kit.PerformanceAnalysisKit.Hilog
+
+let inclinationMatrix: Array<Float32> = [1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0]
+getInclination(inclinationMatrix, { err, data =>
+    if (let Some(dip) <- data) {
+        Hilog.info(0, "test", "Magnetic dip: ${dip} radians", "")
+    } else {
+        Hilog.error(0, "test", "Failed to get inclination: ${err}", "")
+    }
+})
+```
+
+## func getAngleVariation(Array\<Float32\>, Array\<Float32\>, AsyncCallback\<Array\<Float32\>\>)
+
+```cangjie
+public func getAngleVariation(currentRotationMatrix: Array<Float32>, preRotationMatrix: Array<Float32>, callback: AsyncCallback<Array<Float32>>): Unit
+```
+
+**Function:** Obtains the angle change between two rotation matrices. This API uses an asynchronous callback to return the result.
+
+**System Capability:** SystemCapability.Sensors.Sensor
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+| Parameter Name          | Type                              | Required | Default | Description                                                |
+|:----------------------- |:--------------------------------- |:-------- |:------- |:--------------------------------------------------------- |
+| currentRotationMatrix   | Array\<Float32\>                  | Yes      | -       | Current rotation matrix.                                   |
+| preRotationMatrix       | Array\<Float32\>                  | Yes      | -       | The other rotation matrix.                                 |
+| callback                | AsyncCallback\<Array\<Float32\>\> | Yes      | -       | Callback used to return the angle change around the z, x, and y axes, in degrees. |
+
+**Exceptions:**
+
+- BusinessException: Corresponding error codes are listed below. For details, see [Sensor Error Codes](./cj-errorcode-sensor.md).
+  
+  | Error Code ID | Error Message                                                                                                                                |
+  |:------------ |:------------------------------------------------------------------------------------------------------------------------------------------- |
+  | 14500101     | Service exception. Possible causes: 1. Sensor hdf service exception; 2. Sensor service ipc exception; 3. Sensor data channel exception. |
+
+**Example:**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.SensorServiceKit.*
+import kit.PerformanceAnalysisKit.Hilog
+
+let currentRotationMatrix: Array<Float32> = [1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0]
+let preRotationMatrix: Array<Float32> = [1.0, 0.0, 0.0, 0.0, 0.87, -0.50, 0.0, 0.50, 0.87]
+getAngleVariation(currentRotationMatrix, preRotationMatrix, { err, data =>
+    if (let Some(angles) <- data) {
+        Hilog.info(0, "test", "Angle variation: ${angles}", "")
+    } else {
+        Hilog.error(0, "test", "Failed to get angle variation: ${err}", "")
+    }
+})
+```
+
+## func getRotationMatrix(Array\<Float32\>, AsyncCallback\<Array\<Float32\>\>)
+
+```cangjie
+public func getRotationMatrix(rotationVector: Array<Float32>, callback: AsyncCallback<Array<Float32>>): Unit
+```
+
+**Function:** Obtains the rotation matrix from a rotation vector. This API uses an asynchronous callback to return the result.
+
+**System Capability:** SystemCapability.Sensors.Sensor
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+| Parameter Name  | Type                              | Required | Default | Description                                  |
+|:--------------- |:--------------------------------- |:-------- |:------- |:------------------------------------------- |
+| rotationVector  | Array\<Float32\>                  | Yes      | -       | Rotation vector.                             |
+| callback        | AsyncCallback\<Array\<Float32\>\> | Yes      | -       | Callback used to return the rotation matrix. |
+
+**Exceptions:**
+
+- BusinessException: Corresponding error codes are listed below. For details, see [Sensor Error Codes](./cj-errorcode-sensor.md).
+  
+  | Error Code ID | Error Message                                                                                                                                |
+  |:------------ |:------------------------------------------------------------------------------------------------------------------------------------------- |
+  | 14500101     | Service exception. Possible causes: 1. Sensor hdf service exception; 2. Sensor service ipc exception; 3. Sensor data channel exception. |
+
+**Example:**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.SensorServiceKit.*
+import kit.PerformanceAnalysisKit.Hilog
+
+let rotationVector: Array<Float32> = [0.0, 0.0, 0.0, 1.0]
+getRotationMatrix(rotationVector, { err, data =>
+    if (let Some(matrix) <- data) {
+        Hilog.info(0, "test", "Rotation matrix: ${matrix}", "")
+    } else {
+        Hilog.error(0, "test", "Failed to get rotation matrix: ${err}", "")
+    }
+})
+```
+
+## func transformRotationMatrix(Array\<Float32\>, CoordinatesOptions, AsyncCallback\<Array\<Float32\>\>)
+
+```cangjie
+public func transformRotationMatrix(inRotationVector: Array<Float32>, coordinates: CoordinatesOptions, callback: AsyncCallback<Array<Float32>>): Unit
+```
+
+**Function:** Transforms a rotation vector based on the coordinate system. This API uses an asynchronous callback to return the result.
+
+**System Capability:** SystemCapability.Sensors.Sensor
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+| Parameter Name    | Type                                      | Required | Default | Description                                       |
+|:----------------- |:----------------------------------------- |:-------- |:------- |:------------------------------------------------ |
+| inRotationVector  | Array\<Float32\>                          | Yes      | -       | Rotation vector.                                  |
+| coordinates       | [CoordinatesOptions](#class-coordinatesoptions) | Yes      | -       | Coordinate options.                               |
+| callback          | AsyncCallback\<Array\<Float32\>\>         | Yes      | -       | Callback used to return the rotation vector after being transformed. |
+
+**Exceptions:**
+
+- BusinessException: Corresponding error codes are listed below. For details, see [Sensor Error Codes](./cj-errorcode-sensor.md).
+  
+  | Error Code ID | Error Message                                                                                                                                |
+  |:------------ |:------------------------------------------------------------------------------------------------------------------------------------------- |
+  | 14500101     | Service exception. Possible causes: 1. Sensor hdf service exception; 2. Sensor service ipc exception; 3. Sensor data channel exception. |
+
+**Example:**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.SensorServiceKit.*
+import kit.PerformanceAnalysisKit.Hilog
+
+let rotationVector: Array<Float32> = [1.0, 0.0, 0.0, 0.0]
+let coordinates = CoordinatesOptions(1, 1)
+transformRotationMatrix(rotationVector, coordinates, { err, data =>
+    if (let Some(result) <- data) {
+        Hilog.info(0, "test", "Transformed rotation matrix: ${result}", "")
+    } else {
+        Hilog.error(0, "test", "Failed to transform rotation matrix: ${err}", "")
+    }
+})
+```
+
+## func getQuaternion(Array\<Float32\>, AsyncCallback\<Array\<Float32\>\>)
+
+```cangjie
+public func getQuaternion(rotationVector: Array<Float32>, callback: AsyncCallback<Array<Float32>>): Unit
+```
+
+**Function:** Obtains the quaternion from a rotation vector. This API uses an asynchronous callback to return the result.
+
+**System Capability:** SystemCapability.Sensors.Sensor
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+| Parameter Name  | Type                              | Required | Default | Description                               |
+|:--------------- |:--------------------------------- |:-------- |:------- |:---------------------------------------- |
+| rotationVector  | Array\<Float32\>                  | Yes      | -       | Rotation vector.                          |
+| callback        | AsyncCallback\<Array\<Float32\>\> | Yes      | -       | Callback used to return the quaternion.   |
+
+**Exceptions:**
+
+- BusinessException: Corresponding error codes are listed below. For details, see [Sensor Error Codes](./cj-errorcode-sensor.md).
+  
+  | Error Code ID | Error Message                                                                                                                                |
+  |:------------ |:------------------------------------------------------------------------------------------------------------------------------------------- |
+  | 14500101     | Service exception. Possible causes: 1. Sensor hdf service exception; 2. Sensor service ipc exception; 3. Sensor data channel exception. |
+
+**Example:**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.SensorServiceKit.*
+import kit.PerformanceAnalysisKit.Hilog
+
+let rotationVector: Array<Float32> = [0.0, 0.0, 0.0, 1.0]
+getQuaternion(rotationVector, { err, data =>
+    if (let Some(quaternion) <- data) {
+        Hilog.info(0, "test", "Quaternion: ${quaternion}", "")
+    } else {
+        Hilog.error(0, "test", "Failed to get quaternion: ${err}", "")
+    }
+})
+```
+
+## func getOrientation(Array\<Float32\>, AsyncCallback\<Array\<Float32\>\>)
+
+```cangjie
+public func getOrientation(rotationMatrix: Array<Float32>, callback: AsyncCallback<Array<Float32>>): Unit
+```
+
+**Function:** Obtains the device direction based on the rotation matrix. This API uses an asynchronous callback to return the result.
+
+**System Capability:** SystemCapability.Sensors.Sensor
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+| Parameter Name  | Type                              | Required | Default | Description                                                |
+|:--------------- |:--------------------------------- |:-------- |:------- |:--------------------------------------------------------- |
+| rotationMatrix  | Array\<Float32\>                  | Yes      | -       | Rotation matrix.                                           |
+| callback        | AsyncCallback\<Array\<Float32\>\> | Yes      | -       | Callback used to return the rotation angle around the z, x, and y axes, in degrees. |
+
+**Exceptions:**
+
+- BusinessException: Corresponding error codes are listed below. For details, see [Sensor Error Codes](./cj-errorcode-sensor.md).
+  
+  | Error Code ID | Error Message                                                                                                                                |
+  |:------------ |:------------------------------------------------------------------------------------------------------------------------------------------- |
+  | 14500101     | Service exception. Possible causes: 1. Sensor hdf service exception; 2. Sensor service ipc exception; 3. Sensor data channel exception. |
+
+**Example:**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.SensorServiceKit.*
+import kit.PerformanceAnalysisKit.Hilog
+
+let rotationMatrix: Array<Float32> = [1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0]
+getOrientation(rotationMatrix, { err, data =>
+    if (let Some(angles) <- data) {
+        Hilog.info(0, "test", "Orientation angles: ${angles}", "")
+    } else {
+        Hilog.error(0, "test", "Failed to get orientation: ${err}", "")
+    }
+})
+```
+
+## func getRotationMatrix(Array\<Float32\>, Array\<Float32\>, AsyncCallback\<RotationMatrixResponse\>)
+
+```cangjie
+public func getRotationMatrix(gravity: Array<Float32>, geomagnetic: Array<Float32>, callback: AsyncCallback<RotationMatrixResponse>): Unit
+```
+
+**Function:** Obtains the rotation matrix based on a gravity vector and geomagnetic vector. This API uses an asynchronous callback to return the result.
+
+**System Capability:** SystemCapability.Sensors.Sensor
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+| Parameter Name | Type                                            | Required | Default | Description                                       |
+|:-------------- |:----------------------------------------------- |:-------- |:------- |:------------------------------------------------ |
+| gravity        | Array\<Float32\>                                | Yes      | -       | Gravity vector.                                   |
+| geomagnetic    | Array\<Float32\>                                | Yes      | -       | Geomagnetic vector.                               |
+| callback       | AsyncCallback\<[RotationMatrixResponse](#class-rotationmatrixresponse)\> | Yes      | -       | Callback used to return the rotation matrix.      |
+
+**Exceptions:**
+
+- BusinessException: Corresponding error codes are listed below. For details, see [Sensor Error Codes](./cj-errorcode-sensor.md).
+  
+  | Error Code ID | Error Message                                                                                                                                |
+  |:------------ |:------------------------------------------------------------------------------------------------------------------------------------------- |
+  | 14500101     | Service exception. Possible causes: 1. Sensor hdf service exception; 2. Sensor service ipc exception; 3. Sensor data channel exception. |
+
+**Example:**
+
+<!-- compile -->
+
+```cangjie
+// index.cj
+
+import kit.SensorServiceKit.*
+import kit.PerformanceAnalysisKit.Hilog
+
+let gravity: Array<Float32> = [0.0, 0.0, 9.81]
+let geomagnetic: Array<Float32> = [0.0, 25.0, 40.0]
+getRotationMatrix(gravity, geomagnetic, { err, data =>
+    if (let Some(response) <- data) {
+        Hilog.info(0, "test", "Rotation matrix: ${response.rotation}", "")
+        Hilog.info(0, "test", "Inclination matrix: ${response.inclination}", "")
+    } else {
+        Hilog.error(0, "test", "Failed to get rotation matrix: ${err}", "")
+    }
+})
+```
+
+## class GeomagneticResponse
+
+```cangjie
+public class GeomagneticResponse {
+    public mut prop x: Float32
+    public mut prop y: Float32
+    public mut prop z: Float32
+    public mut prop geomagneticDip: Float32
+    public mut prop deflectionAngle: Float32
+    public mut prop levelIntensity: Float32
+    public mut prop totalIntensity: Float32
+    public init(x: Float32, y: Float32, z: Float32, geomagneticDip: Float32, deflectionAngle: Float32, levelIntensity: Float32, totalIntensity: Float32)
+}
+```
+
+**Function:** Describes a geomagnetic response object.
+
+**System Capability:** SystemCapability.Sensors.Sensor
+
+**Since:** 26.1.0
+
+### prop x
+
+```cangjie
+public mut prop x: Float32
+```
+
+**Function:** North component of the geomagnetic field, in nT.
+
+**Type:** Float32
+
+**Access:** Read-Write
+
+**System Capability:** SystemCapability.Sensors.Sensor
+
+**Since:** 26.1.0
+
+### prop y
+
+```cangjie
+public mut prop y: Float32
+```
+
+**Function:** East component of the geomagnetic field, in nT.
+
+**Type:** Float32
+
+**Access:** Read-Write
+
+**System Capability:** SystemCapability.Sensors.Sensor
+
+**Since:** 26.1.0
+
+### prop z
+
+```cangjie
+public mut prop z: Float32
+```
+
+**Function:** Vertical component of the geomagnetic field, in nT.
+
+**Type:** Float32
+
+**Access:** Read-Write
+
+**System Capability:** SystemCapability.Sensors.Sensor
+
+**Since:** 26.1.0
+
+### prop geomagneticDip
+
+```cangjie
+public mut prop geomagneticDip: Float32
+```
+
+**Function:** Magnetic dip, also called magnetic inclination, which is the angle measured from the horizontal plane to the magnetic field vector, in degrees.
+
+**Type:** Float32
+
+**Access:** Read-Write
+
+**System Capability:** SystemCapability.Sensors.Sensor
+
+**Since:** 26.1.0
+
+### prop deflectionAngle
+
+```cangjie
+public mut prop deflectionAngle: Float32
+```
+
+**Function:** Magnetic declination, which is the angle between true north (geographic north) and the magnetic north (the horizontal component of the field), in degrees.
+
+**Type:** Float32
+
+**Access:** Read-Write
+
+**System Capability:** SystemCapability.Sensors.Sensor
+
+**Since:** 26.1.0
+
+### prop levelIntensity
+
+```cangjie
+public mut prop levelIntensity: Float32
+```
+
+**Function:** Horizontal intensity of the magnetic field vector, in nT.
+
+**Type:** Float32
+
+**Access:** Read-Write
+
+**System Capability:** SystemCapability.Sensors.Sensor
+
+**Since:** 26.1.0
+
+### prop totalIntensity
+
+```cangjie
+public mut prop totalIntensity: Float32
+```
+
+**Function:** Total intensity of the magnetic field vector, in nT.
+
+**Type:** Float32
+
+**Access:** Read-Write
+
+**System Capability:** SystemCapability.Sensors.Sensor
+
+**Since:** 26.1.0
+
+### init(Float32, Float32, Float32, Float32, Float32, Float32, Float32)
+
+```cangjie
+public init(x: Float32, y: Float32, z: Float32, geomagneticDip: Float32, deflectionAngle: Float32, levelIntensity: Float32, totalIntensity: Float32)
+```
+
+**Function:** A constructor used to create a GeomagneticResponse.
+
+**System Capability:** SystemCapability.Sensors.Sensor
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+| Parameter Name   | Type   | Required | Default | Description                                                                                                                     |
+|:---------------- |:------ |:-------- |:------- |:------------------------------------------------------------------------------------------------------------------------------ |
+| x                | Float32 | Yes      | -       | North component of the geomagnetic field, in nT.                                                                                |
+| y                | Float32 | Yes      | -       | East component of the geomagnetic field, in nT.                                                                                 |
+| z                | Float32 | Yes      | -       | Vertical component of the geomagnetic field, in nT.                                                                             |
+| geomagneticDip   | Float32 | Yes      | -       | Magnetic dip, also called magnetic inclination, which is the angle measured from the horizontal plane to the magnetic field vector, in degrees. |
+| deflectionAngle  | Float32 | Yes      | -       | Magnetic declination, which is the angle between true north (geographic north) and the magnetic north (the horizontal component of the field), in degrees. |
+| levelIntensity   | Float32 | Yes      | -       | Horizontal intensity of the magnetic field vector, in nT.                                                                |
+| totalIntensity   | Float32 | Yes      | -       | Total intensity of the magnetic field vector, in nT.                                                                            |
+
+## class LocationOptions
+
+```cangjie
+public class LocationOptions {
+    public mut prop latitude: Float32
+    public mut prop longitude: Float32
+    public mut prop altitude: Float32
+    public init(latitude: Float32, longitude: Float32, altitude: Float32)
+}
+```
+
+**Function:** Describes the geographical location.
+
+**System Capability:** SystemCapability.Sensors.Sensor
+
+**Since:** 26.1.0
+
+### prop latitude
+
+```cangjie
+public mut prop latitude: Float32
+```
+
+**Function:** Latitude, in degrees.
+
+**Type:** Float32
+
+**Access:** Read-Write
+
+**System Capability:** SystemCapability.Sensors.Sensor
+
+**Since:** 26.1.0
+
+### prop longitude
+
+```cangjie
+public mut prop longitude: Float32
+```
+
+**Function:** Longitude, in degrees.
+
+**Type:** Float32
+
+**Access:** Read-Write
+
+**System Capability:** SystemCapability.Sensors.Sensor
+
+**Since:** 26.1.0
+
+### prop altitude
+
+```cangjie
+public mut prop altitude: Float32
+```
+
+**Function:** Altitude, in m.
+
+**Type:** Float32
+
+**Access:** Read-Write
+
+**System Capability:** SystemCapability.Sensors.Sensor
+
+**Since:** 26.1.0
+
+### init(Float32, Float32, Float32)
+
+```cangjie
+public init(latitude: Float32, longitude: Float32, altitude: Float32)
+```
+
+**Function:** A constructor used to create a LocationOptions.
+
+**System Capability:** SystemCapability.Sensors.Sensor
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+| Parameter Name | Type    | Required | Default | Description             |
+|:-------------- |:------- |:-------- |:------- |:---------------------- |
+| latitude       | Float32 | Yes      | -       | Latitude, in degrees.   |
+| longitude      | Float32 | Yes      | -       | Longitude, in degrees.  |
+| altitude       | Float32 | Yes      | -       | Altitude, in m.         |
+
+## class CoordinatesOptions
+
+```cangjie
+public class CoordinatesOptions {
+    public mut prop x: Int32
+    public mut prop y: Int32
+    public init(x: Int32, y: Int32)
+}
+```
+
+**Function:** Describes the coordinate options.
+
+**System Capability:** SystemCapability.Sensors.Sensor
+
+**Since:** 26.1.0
+
+### prop x
+
+```cangjie
+public mut prop x: Int32
+```
+
+**Function:** X coordinate direction.
+
+**Type:** Int32
+
+**Access:** Read-Write
+
+**System Capability:** SystemCapability.Sensors.Sensor
+
+**Since:** 26.1.0
+
+### prop y
+
+```cangjie
+public mut prop y: Int32
+```
+
+**Function:** Y coordinate direction.
+
+**Type:** Int32
+
+**Access:** Read-Write
+
+**System Capability:** SystemCapability.Sensors.Sensor
+
+**Since:** 26.1.0
+
+### init(Int32, Int32)
+
+```cangjie
+public init(x: Int32, y: Int32)
+```
+
+**Function:** A constructor used to create a CoordinatesOptions.
+
+**System Capability:** SystemCapability.Sensors.Sensor
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+| Parameter Name | Type  | Required | Default | Description            |
+|:-------------- |:----- |:-------- |:------- |:--------------------- |
+| x              | Int32 | Yes      | -       | X coordinate direction. |
+| y              | Int32 | Yes      | -       | Y coordinate direction. |
+
+## class RotationMatrixResponse
+
+```cangjie
+public class RotationMatrixResponse {
+    public mut prop rotation: Array<Float32>
+    public mut prop inclination: Array<Float32>
+    public init(rotation: Array<Float32>, inclination: Array<Float32>)
+}
+```
+
+**Function:** Describes the response for setting the rotation matrix.
+
+**System Capability:** SystemCapability.Sensors.Sensor
+
+**Since:** 26.1.0
+
+### prop rotation
+
+```cangjie
+public mut prop rotation: Array<Float32>
+```
+
+**Function:** Rotation matrix.
+
+**Type:** Array\<Float32\>
+
+**Access:** Read-Write
+
+**System Capability:** SystemCapability.Sensors.Sensor
+
+**Since:** 26.1.0
+
+### prop inclination
+
+```cangjie
+public mut prop inclination: Array<Float32>
+```
+
+**Function:** Inclination matrix.
+
+**Type:** Array\<Float32\>
+
+**Access:** Read-Write
+
+**System Capability:** SystemCapability.Sensors.Sensor
+
+**Since:** 26.1.0
+
+### init(Array\<Float32\>, Array\<Float32\>)
+
+```cangjie
+public init(rotation: Array<Float32>, inclination: Array<Float32>)
+```
+
+**Function:** A constructor used to create a RotationMatrixResponse.
+
+**System Capability:** SystemCapability.Sensors.Sensor
+
+**Since:** 26.1.0
+
+**Parameters:**
+
+| Parameter Name | Type            | Required | Default | Description        |
+|:-------------- |:--------------- |:-------- |:------- |:----------------- |
+| rotation       | Array\<Float32\> | Yes      | -       | Rotation matrix.   |
+| inclination    | Array\<Float32\> | Yes      | -       | Inclination matrix. |

@@ -22,6 +22,15 @@ For detailed API documentation, refer to [Sensor API](../../reference/SensorServ
 | `once<T>(`type`:SensorId, callback:Callback1Argument<T>):Unit where T <: Response` | Acquires sensor data change once. |
 | `off(`type`: SensorId, callback!: ?CallbackObject = None): Unit` | Unregisters the sensor data listener. |
 | `getSensorList():Array<Sensor>` | Retrieves all sensor information on the device. |
+| getGeomagneticInfo(locationOptions: LocationOptions, timeMillis: Int64, callback: AsyncCallback&lt;GeomagneticResponse&gt;): Unit | Obtains the geomagnetic field of a geographic location at a certain time. |
+| getDeviceAltitude(seaPressure: Float32, currentPressure: Float32, callback: AsyncCallback&lt;Float32&gt;): Unit | Obtains the altitude based on the atmospheric pressure. |
+| getInclination(inclinationMatrix: Array&lt;Float32&gt;, callback: AsyncCallback&lt;Float32&gt;): Unit | Obtains the magnetic dip based on the inclination matrix. |
+| getAngleVariation(currentRotationMatrix: Array&lt;Float32&gt;, preRotationMatrix: Array&lt;Float32&gt;, callback: AsyncCallback&lt;Array&lt;Float32&gt;&gt;): Unit | Obtains the angle change between two rotation matrices. |
+| getRotationMatrix(rotationVector: Array&lt;Float32&gt;, callback: AsyncCallback&lt;Array&lt;Float32&gt;&gt;): Unit | Obtains the rotation matrix from a rotation vector. |
+| transformRotationMatrix(inRotationVector: Array&lt;Float32&gt;, coordinates: CoordinatesOptions, callback: AsyncCallback&lt;Array&lt;Float32&gt;&gt;): Unit | Transforms a rotation vector based on the coordinate system. |
+| getQuaternion(rotationVector: Array&lt;Float32&gt;, callback: AsyncCallback&lt;Array&lt;Float32&gt;&gt;): Unit | Obtains the quaternion from a rotation vector. |
+| getOrientation(rotationMatrix: Array&lt;Float32&gt;, callback: AsyncCallback&lt;Array&lt;Float32&gt;&gt;): Unit | Obtains the device direction based on the rotation matrix. |
+| getRotationMatrix(gravity: Array&lt;Float32&gt;, geomagnetic: Array&lt;Float32&gt;, callback: AsyncCallback&lt;RotationMatrixResponse&gt;): Unit | Obtains the rotation matrix based on a gravity vector and geomagnetic vector. |
 
 ## Development Procedure
 
@@ -32,7 +41,6 @@ The development procedure is demonstrated using the accelerometer sensor (`ACCEL
     <!-- compile -->
 
     ```cangjie
-    import kit.ArkUI.*
     import kit.SensorServiceKit.*
     import kit.CangjieKit.BusinessException
     import kit.CangjieKit.Callback1Argument
@@ -131,6 +139,259 @@ The development procedure is demonstrated using the accelerometer sensor (`ACCEL
             off(SensorId.Accelerometer)
         } catch (e: BusinessException) {
             Hilog.error(1, "info", "Sensor off error code: ${e.code}, message: ${e.message}")
+        }
+    }
+    ```
+
+6. Obtain the geomagnetic field of a geographic location at a certain time.
+
+   <!-- compile -->
+
+   ```cangjie
+   // index.cj
+   import kit.SensorServiceKit.*
+   import kit.CangjieKit.AsyncCallback
+   import kit.CangjieKit.BusinessException
+   import kit.PerformanceAnalysisKit.Hilog
+
+   func getGeomagneticInfoExample() {
+       let locationOptions = LocationOptions(80.0, 0.0, 0.0)
+       let timeMillis: Int64 = 1580486400000
+       try {
+           getGeomagneticInfo(locationOptions, timeMillis) { err, data =>
+               if (err != None) {
+                   Hilog.error(0, "test", "getGeomagneticInfo failed")
+                   return
+               }
+               Hilog.info(0, "test", "x=${data.x}, y=${data.y}, z=${data.z}")
+               Hilog.info(0, "test", "geomagneticDip=${data.geomagneticDip}")
+               Hilog.info(0, "test", "deflectionAngle=${data.deflectionAngle}")
+               Hilog.info(0, "test", "levelIntensity=${data.levelIntensity}")
+               Hilog.info(0, "test", "totalIntensity=${data.totalIntensity}")
+           }
+       } catch (e: BusinessException) {
+           Hilog.error(0, "test", "getGeomagneticInfo exception: ${e.message}")
+       }
+   }
+   ```
+
+7. Obtain the altitude based on the atmospheric pressure.
+
+   <!-- compile -->
+
+   ```cangjie
+   // index.cj
+   import kit.SensorServiceKit.*
+   import kit.CangjieKit.AsyncCallback
+   import kit.CangjieKit.BusinessException
+   import kit.PerformanceAnalysisKit.Hilog
+
+   func getDeviceAltitudeExample() {
+       let seaPressure: Float32 = 1013.25
+       let currentPressure: Float32 = 1000.0
+       try {
+           getDeviceAltitude(seaPressure, currentPressure) { err, altitude =>
+               if (err != None) {
+                   Hilog.error(0, "test", "getDeviceAltitude failed")
+                   return
+               }
+               Hilog.info(0, "test", "altitude=${altitude}")
+           }
+       } catch (e: BusinessException) {
+           Hilog.error(0, "test", "getDeviceAltitude exception: ${e.message}")
+       }
+   }
+   ```
+
+8. Obtain the magnetic dip based on the inclination matrix.
+
+   <!-- compile -->
+
+   ```cangjie
+   // index.cj
+   import kit.SensorServiceKit.*
+   import kit.CangjieKit.AsyncCallback
+   import kit.CangjieKit.BusinessException
+   import kit.PerformanceAnalysisKit.Hilog
+
+   func getInclinationExample() {
+       let inclinationMatrix: Array<Float32> = Array<Float32>([1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0])
+       try {
+           getInclination(inclinationMatrix) { err, inclination =>
+               if (err != None) {
+                   Hilog.error(0, "test", "getInclination failed")
+                   return
+               }
+               Hilog.info(0, "test", "inclination=${inclination}")
+           }
+       } catch (e: BusinessException) {
+           Hilog.error(0, "test", "getInclination exception: ${e.message}")
+       }
+   }
+   ```
+
+9. Obtain the angle change between two rotation matrices.
+
+   <!-- compile -->
+
+   ```cangjie
+   // index.cj
+   import kit.SensorServiceKit.*
+   import kit.CangjieKit.AsyncCallback
+   import kit.CangjieKit.BusinessException
+   import kit.PerformanceAnalysisKit.Hilog
+
+   func getAngleVariationExample() {
+       let currentMatrix: Array<Float32> = Array<Float32>([1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0])
+       let preMatrix: Array<Float32> = Array<Float32>([1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0])
+       try {
+           getAngleVariation(currentMatrix, preMatrix) { err, angleVariation =>
+               if (err != None) {
+                   Hilog.error(0, "test", "getAngleVariation failed")
+                   return
+               }
+               Hilog.info(0, "test", "angleVariation size=${angleVariation.size}")
+           }
+       } catch (e: BusinessException) {
+           Hilog.error(0, "test", "getAngleVariation exception: ${e.message}")
+       }
+   }
+   ```
+
+10. Obtain the rotation matrix from a rotation vector.
+
+    <!-- compile -->
+
+    ```cangjie
+    // index.cj
+    import kit.SensorServiceKit.*
+    import kit.CangjieKit.AsyncCallback
+    import kit.CangjieKit.BusinessException
+    import kit.PerformanceAnalysisKit.Hilog
+
+    func getRotationMatrixExample() {
+        let rotationVector: Array<Float32> = Array<Float32>([0.0, 0.0, 0.0, 1.0])
+        try {
+            getRotationMatrix(rotationVector) { err, rotationMatrix =>
+                if (err != None) {
+                    Hilog.error(0, "test", "getRotationMatrix failed")
+                    return
+                }
+                Hilog.info(0, "test", "rotationMatrix size=${rotationMatrix.size}")
+            }
+        } catch (e: BusinessException) {
+            Hilog.error(0, "test", "getRotationMatrix exception: ${e.message}")
+        }
+    }
+    ```
+
+11. Transform a rotation vector based on the coordinate system.
+
+    <!-- compile -->
+
+    ```cangjie
+    // index.cj
+    import kit.SensorServiceKit.*
+    import kit.CangjieKit.AsyncCallback
+    import kit.CangjieKit.BusinessException
+    import kit.PerformanceAnalysisKit.Hilog
+
+    func transformRotationMatrixExample() {
+        let inRotationVector: Array<Float32> = Array<Float32>([1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0])
+        let coordinates = CoordinatesOptions(1, 3)
+        try {
+            transformRotationMatrix(inRotationVector, coordinates) { err, result =>
+                if (err != None) {
+                    Hilog.error(0, "test", "transformRotationMatrix failed")
+                    return
+                }
+                Hilog.info(0, "test", "result size=${result.size}")
+            }
+        } catch (e: BusinessException) {
+            Hilog.error(0, "test", "transformRotationMatrix exception: ${e.message}")
+        }
+    }
+    ```
+
+12. Obtain the quaternion from a rotation vector.
+
+    <!-- compile -->
+
+    ```cangjie
+    // index.cj
+    import kit.SensorServiceKit.*
+    import kit.CangjieKit.AsyncCallback
+    import kit.CangjieKit.BusinessException
+    import kit.PerformanceAnalysisKit.Hilog
+
+    func getQuaternionExample() {
+        let rotationVector: Array<Float32> = Array<Float32>([0.0, 0.0, 0.0, 1.0])
+        try {
+            getQuaternion(rotationVector) { err, quaternion =>
+                if (err != None) {
+                    Hilog.error(0, "test", "getQuaternion failed")
+                    return
+                }
+                Hilog.info(0, "test", "quaternion size=${quaternion.size}")
+            }
+        } catch (e: BusinessException) {
+            Hilog.error(0, "test", "getQuaternion exception: ${e.message}")
+        }
+    }
+    ```
+
+13. Obtain the device direction based on the rotation matrix.
+
+    <!-- compile -->
+
+    ```cangjie
+    // index.cj
+    import kit.SensorServiceKit.*
+    import kit.CangjieKit.AsyncCallback
+    import kit.CangjieKit.BusinessException
+    import kit.PerformanceAnalysisKit.Hilog
+
+    func getOrientationExample() {
+        let rotationMatrix: Array<Float32> = Array<Float32>([1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0])
+        try {
+            getOrientation(rotationMatrix) { err, orientation =>
+                if (err != None) {
+                    Hilog.error(0, "test", "getOrientation failed")
+                    return
+                }
+                Hilog.info(0, "test", "orientation size=${orientation.size}")
+            }
+        } catch (e: BusinessException) {
+            Hilog.error(0, "test", "getOrientation exception: ${e.message}")
+        }
+    }
+    ```
+
+14. Obtain the rotation matrix based on a gravity vector and geomagnetic vector.
+
+    <!-- compile -->
+
+    ```cangjie
+    // index.cj
+    import kit.SensorServiceKit.*
+    import kit.CangjieKit.AsyncCallback
+    import kit.CangjieKit.BusinessException
+    import kit.PerformanceAnalysisKit.Hilog
+
+    func getRotationMatrixByGravityExample() {
+        let gravity: Array<Float32> = Array<Float32>([0.0, 0.0, 9.8])
+        let geomagnetic: Array<Float32> = Array<Float32>([0.0, 0.0, 50.0])
+        try {
+            getRotationMatrix(gravity, geomagnetic) { err, response =>
+                if (err != None) {
+                    Hilog.error(0, "test", "getRotationMatrix failed")
+                    return
+                }
+                Hilog.info(0, "test", "rotation size=${response.rotation.size}")
+                Hilog.info(0, "test", "inclination size=${response.inclination.size}")
+            }
+        } catch (e: BusinessException) {
+            Hilog.error(0, "test", "getRotationMatrix exception: ${e.message}")
         }
     }
     ```

@@ -400,6 +400,9 @@
                 - Sensors
                     - [Sensor Development Overview](device/sensor/cj-sensor-overview.md)
                     - [Sensor Development Guide (Cangjie)](device/sensor/cj-sensor-guidelines.md)
+                - Vibrator
+                    - [Vibrator Development Overview](device/sensor/cj-vibrator-overview.md)
+                    - [Vibrator Development Guide (Cangjie)](device/sensor/cj-vibrator-guidelines.md)
         - Debugging and Optimization
             - Performance Analysis Kit (Performance Analysis Service)
                 - [Introduction to Performance Analysis Kit](dfx/cj-performance-analysis-kit-overview.md)
@@ -827,8 +830,10 @@
             - Sensor Service Kit (Sensor Service)
                 - Cangjie API
                     - [ohos.sensor (Sensors)](reference/SensorServiceKit/cj-apis-sensor.md)
+                    - [ohos.vibrator (Vibrator)](reference/SensorServiceKit/cj-apis-vibrator.md)
                 - Error Codes
                     - [Sensor Error Codes](reference/SensorServiceKit/cj-errorcode-sensor.md)
+                    - [Vibrator Error Codes](reference/SensorServiceKit/cj-errorcode-vibrator.md)
             - Telephony Kit
                 - Cangjie API
                     - [ohos.telephony.call](reference/TelephonyKit/cj-apis-telephony-call.md)
