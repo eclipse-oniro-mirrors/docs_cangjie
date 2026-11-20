@@ -535,7 +535,7 @@ public init(name: String)
 
 | Parameter | Type   | Mandatory | Default | Description          |
 | :--------| :----- | :-------- | :------ | :------------------- |
-| name     | String | Yes       | -       | Name of the database table. |
+| name     | String | Yes       | -       | Name of the database table. It cannot be an empty string. |
 
 ### func inValues(String, Array\<RelationalStoreValueType>)
 
@@ -682,7 +682,7 @@ public func beginsWith(field: String, value: String): RdbPredicates
 
 | Parameter | Type   | Mandatory | Default | Description                          |
 | :-------- | :----- | :-------- | :------ | :----------------------------------- |
-| field     | String | Yes       | -       | Column name in the database table.   |
+| field     | String | Yes       | -       | Column name in the database table. It cannot be an empty string.   |
 | value     | String | Yes       | -       | Value to match with the predicate.   |
 
 **Return Value:**
@@ -727,7 +727,7 @@ public func between(field: String, low: RelationalStoreValueType, high: Relation
 
 | Parameter | Type                                      | Mandatory | Default | Description                          |
 | :-------- | :---------------------------------------- | :-------- | :------ | :----------------------------------- |
-| field     | String                                    | Yes       | -       | Column name in the database table.   |
+| field     | String                                    | Yes       | -       | Column name in the database table. It cannot be an empty string.   |
 | low       | [RelationalStoreValueType](#enum-relationalstorevaluetype) | Yes       | -       | Minimum value to match with the predicate. |
 | high      | [RelationalStoreValueType](#enum-relationalstorevaluetype) | Yes       | -       | Maximum value to match with the predicate. |
 
@@ -773,7 +773,7 @@ public func contains(field: String, value: String): RdbPredicates
 
 | Parameter | Type   | Mandatory | Default | Description                          |
 | :-------- | :----- | :-------- | :------ | :----------------------------------- |
-| field     | String | Yes       | -       | Column name in the database table.   |
+| field     | String | Yes       | -       | Column name in the database table. It cannot be an empty string.   |
 | value     | String | Yes       | -       | Value to match with the predicate.   |
 
 **Return Value:**
@@ -900,7 +900,7 @@ public func endsWith(field: String, value: String): RdbPredicates
 
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
-| field | String | Yes | - | The column name in the database table. |
+| field | String | Yes | - | The column name in the database table. It cannot be an empty string. |
 | value | String | Yes | - | The value to match against the predicate. |
 
 **Return Value:**
@@ -945,7 +945,7 @@ public func equalTo(field: String, value: RelationalStoreValueType): RdbPredicat
 
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
-| field | String | Yes | - | The column name in the database table. |
+| field | String | Yes | - | The column name in the database table. It cannot be an empty string. |
 | value | [RelationalStoreValueType](#enum-relationalstorevaluetype) | Yes | - | The value to match against the predicate. |
 
 **Return Value:**
@@ -990,7 +990,7 @@ public func glob(field: String, value: String): RdbPredicates
 
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
-| field | String | Yes | - | The column name in the database table. |
+| field | String | Yes | - | The column name in the database table. It cannot be an empty string. |
 | value | String | Yes | - | The value to match against the predicate.<br>Supports wildcards: `*` matches 0, 1, or multiple digits or characters; `?` matches exactly 1 digit or character. |
 
 **Return Value:**
@@ -1035,7 +1035,7 @@ public func greaterThan(field: String, value: RelationalStoreValueType): RdbPred
 
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
-| field | String | Yes | - | The column name in the database table. |
+| field | String | Yes | - | The column name in the database table. It cannot be an empty string. |
 | value | [RelationalStoreValueType](#enum-relationalstorevaluetype) | Yes | - | The value to match against the predicate. |
 
 **Return Value:**
@@ -1080,7 +1080,7 @@ public func greaterThanOrEqualTo(field: String, value: RelationalStoreValueType)
 
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
-| field | String | Yes | - | The column name in the database table. |
+| field | String | Yes | - | The column name in the database table. It cannot be an empty string. |
 | value | [RelationalStoreValueType](#enum-relationalstorevaluetype) | Yes | - | The value to match against the predicate. |
 
 **Return Value:**
@@ -1205,7 +1205,7 @@ public func isNotNull(field: String): RdbPredicates
 
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
-| field | String | Yes | - | The column name in the database table. |
+| field | String | Yes | - | The column name in the database table. It cannot be an empty string. |
 
 **Return Value:**
 
@@ -1248,7 +1248,7 @@ public func isNull(field: String): RdbPredicates
 
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
-| field | String | Yes | - | The column name in the database table. |
+| field | String | Yes | - | The column name in the database table. It cannot be an empty string. |
 
 **Return Value:**
 
@@ -1291,7 +1291,7 @@ public func lessThan(field: String, value: RelationalStoreValueType): RdbPredica
 
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
-| field | String | Yes | - | The column name in the database table. |
+| field | String | Yes | - | The column name in the database table. It cannot be an empty string. |
 | value | [RelationalStoreValueType](#enum-relationalstorevaluetype) | Yes | - | The value to match against the predicate. |
 
 **Return Value:**
@@ -1336,7 +1336,7 @@ public func lessThanOrEqualTo(field: String, value: RelationalStoreValueType): R
 
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
-| field | String | Yes | - | The column name in the database table. |
+| field | String | Yes | - | The column name in the database table. It cannot be an empty string. |
 | value | [RelationalStoreValueType](#enum-relationalstorevaluetype) | Yes | - | The value to match against the predicate. |
 
 **Return Value:**
@@ -1381,7 +1381,7 @@ public func like(field: String, value: String): RdbPredicates
 
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
-| field | String | Yes | - | The column name in the database table. |
+| field | String | Yes | - | The column name in the database table. It cannot be an empty string. |
 | value | String | Yes | - | The value to match against the predicate. |
 
 **Return Value:**
@@ -1471,7 +1471,7 @@ public func notBetween(field: String, low: RelationalStoreValueType, high: Relat
 
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
-| field | String | Yes | - | The column name in the database table. |
+| field | String | Yes | - | The column name in the database table. It cannot be an empty string. |
 | low | [RelationalStoreValueType](#enum-relationalstorevaluetype) | Yes | - | The minimum value to match against the predicate. |
 | high | [RelationalStoreValueType](#enum-relationalstorevaluetype) | Yes | - | The maximum value to match against the predicate. |
 
@@ -1517,7 +1517,7 @@ public func notEqualTo(field: String, value: RelationalStoreValueType): RdbPredi
 
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
-| field | String | Yes | - | The column name in the database table. |
+| field | String | Yes | - | The column name in the database table. It cannot be an empty string. |
 | value | [RelationalStoreValueType](#enum-relationalstorevaluetype) | Yes | - | The value to match against the predicate. |
 
 **Return Value:**
@@ -1693,7 +1693,7 @@ public func orderByAsc(field: String): RdbPredicates
 
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
-| field | String | Yes | - | The column name in the database table. |
+| field | String | Yes | - | The column name in the database table. It cannot be an empty string. |
 
 **Return Value:**
 
@@ -1736,7 +1736,7 @@ public func orderByDesc(field: String): RdbPredicates
 
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
-| field | String | Yes | - | The column name in the database table. |
+| field | String | Yes | - | The column name in the database table. It cannot be an empty string. |
 
 **Return Value:**
 
@@ -1791,7 +1791,7 @@ public func backup(destName: String): Unit
 
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
-| destName | String | Yes | - | Specifies the backup filename for the database. |
+| destName | String | Yes | - | Specifies the backup filename for the database. It cannot be an empty string. |
 
 **Exceptions:**
 
@@ -1800,6 +1800,7 @@ public func backup(destName: String): Unit
   | Error Code ID | Error Message |
   | :---- | :--- |
   | 14800000 | Inner error. |
+  | 14800010 | Failed to open or delete the database by an invalid database path. |
   | 14800011 | Failed to open the database because it is corrupted. |
   | 14800014 | The RdbStore or ResultSet is already closed. |
   | 14800015 | The database does not respond. |
@@ -1853,7 +1854,7 @@ public func batchInsert(table: String, values: Array<ValuesBucket>): Int64
 
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
-| table | String | Yes | - | Specifies the target table name. |
+| table | String | Yes | - | Specifies the target table name. It cannot be an empty string. |
 | values | Array\<[ValuesBucket](#type-valuesbucket)> | Yes | - | Represents the set of data to be inserted into the table. |
 
 **Return Value:**
@@ -2197,7 +2198,7 @@ public func executeSql(sql: String, bindArgs!: Array<RelationalStoreValueType> =
 
 | Parameter Name | Type | Required | Default Value | Description |
 |:---|:---|:---|:---|:---|
-| sql | String | Yes | - | Specifies the SQL statement to execute. |
+| sql | String | Yes | - | Specifies the SQL statement to execute. It cannot be an empty string. |
 | bindArgs | Array\<[RelationalStoreValueType](#enum-relationalstorevaluetype)> | No | [] | Values of parameters in the SQL statement. These values correspond to placeholders in the SQL statement. If the SQL statement is complete, this parameter can be omitted. |
 
 **Exceptions:**
@@ -2263,7 +2264,7 @@ public func insert(table: String, values: ValuesBucket,
 
 | Parameter Name | Type | Required | Default Value | Description |
 |:---|:---|:---|:---|:---|
-| table | String | Yes | - | Name of the target table. |
+| table | String | Yes | - | Name of the target table. It cannot be an empty string. |
 | values | [ValuesBucket](#type-valuesbucket) | Yes | - | Represents the row of data to be inserted into the table. |
 | conflict | [ConflictResolution](#enum-conflictresolution) | No | ConflictResolution.OnConflictNone | Specifies the conflict resolution method. |
 
@@ -2530,7 +2531,7 @@ public func querySql(sql: String, bindArgs!: Array<RelationalStoreValueType> = [
 
 | Parameter Name | Type | Required | Default Value | Description |
 |:---|:---|:---|:---|:---|
-| sql | String | Yes | - | Specifies the SQL statement to execute. |
+| sql | String | Yes | - | Specifies the SQL statement to execute. It cannot be an empty string. |
 | bindArgs | Array\<[RelationalStoreValueType](#enum-relationalstorevaluetype)> | No | [] | **Named parameters.** Values of parameters in the SQL statement. These values correspond to placeholders in the SQL statement. If the SQL statement is complete, this parameter can be omitted. |
 
 **Return Value:**
@@ -2590,7 +2591,7 @@ public func restore(srcName: String): Unit
 
 | Parameter Name | Type | Required | Default Value | Description |
 |:---|:---|:---|:---|:---|
-| srcName | String | Yes | - | Specifies the name of the database backup file. |
+| srcName | String | Yes | - | Specifies the name of the database backup file. It cannot be an empty string. |
 
 **Exceptions:**
 
@@ -2599,6 +2600,7 @@ public func restore(srcName: String): Unit
   | Error Code ID | Error Message |
   | :---- | :--- |
   | 14800000 | Inner error. |
+  | 14800010 | Failed to open or delete the database by an invalid database path. |
   | 14800011 | Failed to open the database because it is corrupted. |
   | 14800014 | The RdbStore or ResultSet is already closed. |
   | 14800015 | The database does not respond. |

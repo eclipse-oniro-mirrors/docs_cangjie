@@ -562,7 +562,7 @@ public init(name: String)
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|name|String|是|-|数据库表名。|
+|name|String|是|-|数据库表名，不能为空字符串。|
 
 ### func inValues(String, Array\<RelationalStoreValueType>)
 
@@ -713,7 +713,7 @@ public func beginsWith(field: String, value: String): RdbPredicates
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|field|String|是|-|数据库表中的列名。|
+|field|String|是|-|数据库表中的列名，不能为空字符串。|
 |value|String|是|-|指示要与谓词匹配的值。|
 
 **返回值：**
@@ -758,7 +758,7 @@ public func between(field: String, low: RelationalStoreValueType, high: Relation
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|field|String|是|-|数据库表中的列名。|
+|field|String|是|-|数据库表中的列名，不能为空字符串。|
 |low|[RelationalStoreValueType](#enum-relationalstorevaluetype)|是|-|指示与谓词匹配的最小值。|
 |high|[RelationalStoreValueType](#enum-relationalstorevaluetype)|是|-|指示与谓词匹配的最大值。|
 
@@ -804,7 +804,7 @@ public func contains(field: String, value: String): RdbPredicates
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|field|String|是|-|数据库表中的列名。|
+|field|String|是|-|数据库表中的列名，不能为空字符串。|
 |value|String|是|-|指示要与谓词匹配的值。|
 
 **返回值：**
@@ -931,7 +931,7 @@ public func endsWith(field: String, value: String): RdbPredicates
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|field|String|是|-|数据库表中的列名。|
+|field|String|是|-|数据库表中的列名，不能为空字符串。|
 |value|String|是|-|指示要与谓词匹配的值。|
 
 **返回值：**
@@ -976,7 +976,7 @@ public func equalTo(field: String, value: RelationalStoreValueType): RdbPredicat
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|field|String|是|-|数据库表中的列名。|
+|field|String|是|-|数据库表中的列名，不能为空字符串。|
 |value|[RelationalStoreValueType](#enum-relationalstorevaluetype)|是|-|指示要与谓词匹配的值。|
 
 **返回值：**
@@ -1021,7 +1021,7 @@ public func glob(field: String, value: String): RdbPredicates
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|field|String|是|-|数据库表中的列名。|
+|field|String|是|-|数据库表中的列名，不能为空字符串。|
 |value|String|是|-|指示要与谓词匹配的值。<br>支持通配符，*表示0个、1个或多个数字或字符，?表示1个数字或字符。|
 
 **返回值：**
@@ -1066,7 +1066,7 @@ public func greaterThan(field: String, value: RelationalStoreValueType): RdbPred
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|field|String|是|-|数据库表中的列名。|
+|field|String|是|-|数据库表中的列名，不能为空字符串。|
 |value|[RelationalStoreValueType](#enum-relationalstorevaluetype)|是|-|指示要与谓词匹配的值。|
 
 **返回值：**
@@ -1111,7 +1111,7 @@ public func greaterThanOrEqualTo(field: String, value: RelationalStoreValueType)
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|field|String|是|-|数据库表中的列名。|
+|field|String|是|-|数据库表中的列名，不能为空字符串。|
 |value|[RelationalStoreValueType](#enum-relationalstorevaluetype)|是|-|指示要与谓词匹配的值。|
 
 **返回值：**
@@ -1236,7 +1236,7 @@ public func isNotNull(field: String): RdbPredicates
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|field|String|是|-|数据库表中的列名。|
+|field|String|是|-|数据库表中的列名，不能为空字符串。|
 
 **返回值：**
 
@@ -1279,7 +1279,7 @@ public func isNull(field: String): RdbPredicates
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|field|String|是|-|数据库表中的列名。|
+|field|String|是|-|数据库表中的列名，不能为空字符串。|
 
 **返回值：**
 
@@ -1322,7 +1322,7 @@ public func lessThan(field: String, value: RelationalStoreValueType): RdbPredica
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|field|String|是|-|数据库表中的列名。|
+|field|String|是|-|数据库表中的列名，不能为空字符串。|
 |value|[RelationalStoreValueType](#enum-relationalstorevaluetype)|是|-|指示要与谓词匹配的值。|
 
 **返回值：**
@@ -1367,7 +1367,7 @@ public func lessThanOrEqualTo(field: String, value: RelationalStoreValueType): R
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|field|String|是|-|数据库表中的列名。|
+|field|String|是|-|数据库表中的列名，不能为空字符串。|
 |value|[RelationalStoreValueType](#enum-relationalstorevaluetype)|是|-|指示要与谓词匹配的值。|
 
 **返回值：**
@@ -1412,7 +1412,7 @@ public func like(field: String, value: String): RdbPredicates
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|field|String|是|-|数据库表中的列名。|
+|field|String|是|-|数据库表中的列名，不能为空字符串。|
 |value|String|是|-|指定模糊匹配条件，通常配合通配符使用，`%`表示任意长度任意字符，`_`表示单个字符。|
 
 **返回值：**
@@ -1502,7 +1502,7 @@ public func notBetween(field: String, low: RelationalStoreValueType, high: Relat
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|field|String|是|-|数据库表中的列名。|
+|field|String|是|-|数据库表中的列名，不能为空字符串。|
 |low|[RelationalStoreValueType](#enum-relationalstorevaluetype)|是|-|指示与谓词匹配的最小值。|
 |high|[RelationalStoreValueType](#enum-relationalstorevaluetype)|是|-|指示要与谓词匹配的最大值。|
 
@@ -1548,7 +1548,7 @@ public func notEqualTo(field: String, value: RelationalStoreValueType): RdbPredi
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|field|String|是|-|数据库表中的列名。|
+|field|String|是|-|数据库表中的列名，不能为空字符串。|
 |value|[RelationalStoreValueType](#enum-relationalstorevaluetype)|是|-|指示要与谓词匹配的值。|
 
 **返回值：**
@@ -1724,7 +1724,7 @@ public func orderByAsc(field: String): RdbPredicates
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|field|String|是|-|数据库表中的列名。|
+|field|String|是|-|数据库表中的列名，不能为空字符串。|
 
 **返回值：**
 
@@ -1767,7 +1767,7 @@ public func orderByDesc(field: String): RdbPredicates
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|field|String|是|-|数据库表中的列名。|
+|field|String|是|-|数据库表中的列名，不能为空字符串。|
 
 **返回值：**
 
@@ -1828,7 +1828,7 @@ public func backup(destName: String): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|destName|String|是|-|指定数据库的备份文件名。|
+|destName|String|是|-|指定数据库的备份文件名，不能为空字符串。|
 
 **异常：**
 
@@ -1837,6 +1837,7 @@ public func backup(destName: String): Unit
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 14800000 | Inner error. |
+  | 14800010 | Failed to open or delete the database by an invalid database path. |
   | 14800011 | The current operation failed because the database is corrupted. |
   | 14800014 | The target instance is already closed. |
   | 14800015 | The database does not respond. |
@@ -1892,7 +1893,7 @@ public func batchInsert(table: String, values: Array<ValuesBucket>): Int64
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|table|String|是|-|指定的目标表名。|
+|table|String|是|-|指定的目标表名，不能为空字符串。|
 |values|Array\<[ValuesBucket](#type-valuesbucket)>|是|-|表示要插入到表中的一组数据。|
 
 **返回值：**
@@ -2241,7 +2242,7 @@ public func executeSql(sql: String, bindArgs!: Array<RelationalStoreValueType> =
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|sql|String|是|-|指定要执行的SQL语句。|
+|sql|String|是|-|指定要执行的SQL语句，不能为空字符串。|
 |bindArgs|Array\<[RelationalStoreValueType](#enum-relationalstorevaluetype)>|否|[]|**命名参数。** SQL语句中参数的值。该值与sql参数语句中的占位符相对应。当sql参数语句完整时，该参数不填。|
 
 **异常：**
@@ -2307,7 +2308,7 @@ public func insert(table: String, values: ValuesBucket,
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|table|String|是|-|指定的目标表名。|
+|table|String|是|-|指定的目标表名，不能为空字符串。|
 |values|[ValuesBucket](#type-valuesbucket)|是|-|表示要插入到表中的数据行。|
 |conflict|[ConflictResolution](#enum-conflictresolution)|否|ConflictResolution.OnConflictNone|**命名参数。** 指定冲突解决方式。|
 
@@ -2574,7 +2575,7 @@ public func querySql(sql: String, bindArgs!: Array<RelationalStoreValueType> = [
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|sql|String|是|-|指定要执行的SQL语句。|
+|sql|String|是|-|指定要执行的SQL语句，不能为空字符串。|
 |bindArgs|Array\<[RelationalStoreValueType](#enum-relationalstorevaluetype)>|否|[]|**命名参数。** SQL语句中参数的值。该值与sql参数语句中的占位符相对应。当sql参数语句完整时，该参数不填。|
 
 **返回值：**
@@ -2634,7 +2635,7 @@ public func restore(srcName: String): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|srcName|String|是|-|指定数据库的备份文件名。|
+|srcName|String|是|-|指定数据库的备份文件名，不能为空字符串。|
 
 **异常：**
 
@@ -2643,6 +2644,7 @@ public func restore(srcName: String): Unit
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 14800000 | Inner error. |
+  | 14800010 | Failed to open or delete the database by an invalid database path. |
   | 14800011 | The current operation failed because the database is corrupted. |
   | 14800014 | The target instance is already closed. |
   | 14800015 | The database does not respond. |
@@ -3545,7 +3547,7 @@ public func getLong(columnIndex: Int32): Int64
 
 |类型|说明|
 |:----|:----|
-|Int64|以Int64形式返回指定列的值。<br>该接口支持的数据范围是：-(2^53 - 1)~2^53 - 1，若超出该范围，，建议对于DOUBLE类型的值使用[getDouble](#func-getdoubleint32)，对于INTEGER类型的值使用[getString](#func-getstringint32)。|
+|Int64|以Int64形式返回指定列的值。<br>该接口支持的数据范围是：-(2^53 - 1)~2^53 - 1，若超出该范围，建议对于DOUBLE类型的值使用[getDouble](#func-getdoubleint32)，对于INTEGER类型的值使用[getString](#func-getstringint32)。|
 
 **异常：**
 

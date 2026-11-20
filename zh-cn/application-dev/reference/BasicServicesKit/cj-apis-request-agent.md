@@ -109,7 +109,7 @@ public func getTask(context: UIAbilityContext, id: String, token!: ?String = Non
 | :------ | :----- | :--- | :----- | :----------------------------- |
 | context | [UIAbilityContext](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiabilitycontext) | 是   | -      | 基于应用程序的上下文。         |
 | id      | String  | 是   | -      | 任务id。                       |
-| token   | ?String  | 否   | None   | **命名参数。** 任务查询token。 |
+| token   | ?String  | 否   | None   | **命名参数。** 任务查询token。默认值为空。 |
 
 **返回值：**
 
@@ -868,7 +868,7 @@ public init(action: Action, url: String, title!: ?String = None, description!: S
 | retry       | Bool | 否   | true | **命名参数。** 是否为后台任务启用自动重试，仅应用于后台任务，默认为true。|
 | redirect    | Bool | 否   | true | **命名参数。** 是否允许重定向，默认为true。|
 | index       | UInt32 | 否   | 0 | **命名参数。** 任务的路径索引，通常情况下用于任务断点续传，默认为0。|
-| begins      | Int64 | 否   | 0 | **命名参数。** 文件起点，通常情况下用于断点续传。默认值为0，取值为闭区间，表示从头开始传输。。|
+| begins      | Int64 | 否   | 0 | **命名参数。** 文件起点，通常情况下用于断点续传。默认值为0，取值为闭区间，表示从头开始传输。|
 | ends        | Int64 | 否   | - 1 | **命名参数。** 文件终点，通常情况下用于断点续传。默认值为-1，取值为闭区间，表示传输到整个文件末尾结束。|
 | gauge       | Bool | 否   | false | **命名参数。** 后台任务的过程进度通知策略，仅应用于后台任务，默认值为false。|
 | precise     | Bool | 否   | false | **命名参数。** - 如果设置为true，在上传/下载无法获取文件大小时任务失败。|
@@ -1558,7 +1558,7 @@ public init(tid: String, config: Config)
 
 | 参数名 | 类型 | 必填 | 默认值 | 说明  |
 | :----- | :----- | :--- | :----- | :------- |
-| tid    | String | 是   | -      | 任务id，由系统自动生成且唯一。。 |
+| tid    | String | 是   | -      | 任务id，由系统自动生成且唯一。 |
 | config | [Config](#class-config) | 是   | -      | 任务的配置信息 |
 
 **示例：**

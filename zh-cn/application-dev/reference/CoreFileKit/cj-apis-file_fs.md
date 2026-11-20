@@ -3389,7 +3389,7 @@ public func read(buffer: Array<Byte>, options!: ReadOptions = ReadOptions()): In
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |buffer|Array\<Byte>|是|-|用于读取文件的缓冲区。|
-|options|[ReadOptions](#class-readoptions)|否|ReadOptions()|**命名参数。** 支持如下选项：<br>- length，?UIntNative类型，表示期望读取数据的长度。可选，默认缓冲区长度。<br>- offset，?Int64类型，表示期望读取文件的位置。可选，默认从当前位置开始读。|
+|options|[ReadOptions](#class-readoptions)|否|ReadOptions()|**命名参数。** 支持如下选项：<br>- length，?UIntNative类型，表示期望读取数据的长度，单位为Byte。可选，默认缓冲区长度。<br>- offset，?Int64类型，表示期望读取文件的位置。可选，默认从当前位置开始读。|
 
 **返回值：**
 
@@ -3457,7 +3457,7 @@ public func setFilePointer(filePointer: Int64): Unit
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|filePointer|Int64|是|-|RandomAccessFile对象的偏移指针。|
+|filePointer|Int64|是|-|RandomAccessFile对象的偏移指针，单位为Byte。|
 
 **示例：**
 
@@ -3499,13 +3499,13 @@ public func write(buffer: String, options!: WriteOptions = WriteOptions()): Int6
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |buffer|String|是|-|待写入文件的数据，可来自字符串。|
-|options|[WriteOptions](#class-writeoptions)|否|WriteOptions()| **命名参数。** 支持如下选项：<br>- length，?UIntNative类型，表示期望写入数据的长度。默认缓冲区长度。<br>- offset，?Int64类型，表示期望写入文件的位置。可选，默认从当前位置开始写。<br>- encoding，String类型，当数据是String类型时有效，表示数据的编码方式，默认"utf-8"。仅支持"utf-8"。|
+|options|[WriteOptions](#class-writeoptions)|否|WriteOptions()| **命名参数。** 支持如下选项：<br>- length，?UIntNative类型，表示期望写入数据的长度，单位为Byte。默认缓冲区长度。<br>- offset，?Int64类型，表示期望写入文件的位置。可选，默认从当前位置开始写。<br>- encoding，String类型，当数据是String类型时有效，表示数据的编码方式，默认"utf-8"。仅支持"utf-8"。|
 
 **返回值：**
 
 |类型|说明|
 |:----|:----|
-|Int64|实际写入的长度。|
+|Int64|实际写入的长度，单位为Byte。|
 
 **异常：**
 
@@ -3567,13 +3567,13 @@ public func write(buffer: Array<Byte>, options!: WriteOptions = WriteOptions()):
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |buffer|Array\<Byte>|是|-|待写入文件的数据，可来自缓冲区。|
-|options|[WriteOptions](#class-writeoptions)|否|WriteOptions()|**命名参数。** 支持如下选项：<br>- length，?UIntNative类型，表示期望写入数据的长度。默认缓冲区长度。<br>- offset，?Int64类型，表示期望写入文件的位置。可选，默认从当前位置开始写。<br>- encoding，String类型，当数据是String类型时有效，表示数据的编码方式，默认"utf-8"。仅支持"utf-8"。|
+|options|[WriteOptions](#class-writeoptions)|否|WriteOptions()|**命名参数。** 支持如下选项：<br>- length，?UIntNative类型，表示期望写入数据的长度，单位为Byte。默认缓冲区长度。<br>- offset，?Int64类型，表示期望写入文件的位置。可选，默认从当前位置开始写。<br>- encoding，String类型，当数据是String类型时有效，表示数据的编码方式，默认"utf-8"。仅支持"utf-8"。|
 
 **返回值：**
 
 |类型|说明|
 |:----|:----|
-|Int64|实际写入的长度。|
+|Int64|实际写入的长度，单位为Byte。|
 
 **异常：**
 
@@ -4508,7 +4508,7 @@ public func read(buffer: Array<Byte>, options!: ReadOptions = ReadOptions()): In
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |buffer|Array\<Byte>|是|-| 用于读取文件的缓冲区。|
-|options|[ReadOptions](#class-readoptions)|否|ReadOptions()|**命名参数。** 支持如下选项：<br/>-&nbsp;length，?UIntNative类型，表示期望读取数据的长度。可选，默认缓冲区长度。<br/>-&nbsp;offset，?Int64类型，表示期望读取文件的位置。可选，默认从当前位置开始读。|
+|options|[ReadOptions](#class-readoptions)|否|ReadOptions()|**命名参数。** 支持如下选项：<br/>-&nbsp;length，?UIntNative类型，表示期望读取数据的长度，单位为Byte。可选，默认缓冲区长度。<br/>-&nbsp;offset，?Int64类型，表示期望读取文件的位置。可选，默认从当前位置开始读。|
 
 **返回值：**
 
@@ -4574,13 +4574,13 @@ public func write(buffer: String, options!: WriteOptions = WriteOptions()): Int6
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |buffer|String|是|-|待写入文件的数据，可来自字符串。|
-|options|[WriteOptions](#class-writeoptions)|否|WriteOptions()|**命名参数。** 支持如下选项：<br/>-&nbsp;length，?UIntNative类型，表示期望写入数据的长度。默认缓冲区长度。<br/>-&nbsp;offset，?Int64类型，表示期望写入文件的位置。可选，默认从当前位置开始写。<br/>-&nbsp;encoding，String类型，当数据是String类型时有效，表示数据的编码方式，默认&nbsp;"utf-8"。仅支持&nbsp;"utf-8"。|
+|options|[WriteOptions](#class-writeoptions)|否|WriteOptions()|**命名参数。** 支持如下选项：<br/>-&nbsp;length，?UIntNative类型，表示期望写入数据的长度，单位为Byte。默认缓冲区长度。<br/>-&nbsp;offset，?Int64类型，表示期望写入文件的位置。可选，默认从当前位置开始写。<br/>-&nbsp;encoding，String类型，当数据是String类型时有效，表示数据的编码方式，默认&nbsp;"utf-8"。仅支持&nbsp;"utf-8"。|
 
 **返回值：**
 
 |类型|说明|
 |:----|:----|
-|Int64|实际写入的长度。|
+|Int64|实际写入的长度，单位为Byte。|
 
 **异常：**
 
@@ -4642,13 +4642,13 @@ public func write(buffer: Array<Byte>, options!: WriteOptions = WriteOptions()):
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |buffer|Array\<Byte>|是|-|待写入文件的数据，可来自缓冲区。|
-|options|[WriteOptions](#class-writeoptions)|否|WriteOptions()|**命名参数。** 支持如下选项：<br/>-&nbsp;length，?UIntNative类型，表示期望写入数据的长度。默认缓冲区长度。<br/>-&nbsp;offset，?Int64类型，表示期望写入文件的位置。可选，默认从当前位置开始写。<br/>-&nbsp;encoding，String类型，当数据是String类型时有效，表示数据的编码方式，默认&nbsp;"utf-8"。仅支持&nbsp;"utf-8"。|
+|options|[WriteOptions](#class-writeoptions)|否|WriteOptions()|**命名参数。** 支持如下选项：<br/>-&nbsp;length，?UIntNative类型，表示期望写入数据的长度，单位为Byte。默认缓冲区长度。<br/>-&nbsp;offset，?Int64类型，表示期望写入文件的位置。可选，默认从当前位置开始写。<br/>-&nbsp;encoding，String类型，当数据是String类型时有效，表示数据的编码方式，默认&nbsp;"utf-8"。仅支持&nbsp;"utf-8"。|
 
 **返回值：**
 
 |类型|说明|
 |:----|:----|
-|Int64|实际写入的长度。|
+|Int64|实际写入的长度，单位为Byte。|
 
 **异常：**
 

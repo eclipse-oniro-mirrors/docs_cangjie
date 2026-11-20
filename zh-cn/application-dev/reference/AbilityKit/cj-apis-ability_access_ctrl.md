@@ -29,7 +29,7 @@ API示例代码使用说明：
 public class AbilityAccessCtrl {}
 ```
 
-**功能：** 此类用于创建[AtManager](#class-atmanager)，AtManager为管理访问控制模块的实例。
+**功能：** 此类用于创建[AtManager](#class-atmanager)，AtManager为程序访问控制管理类的实例。
 
 **系统能力：** SystemCapability.Security.AccessToken
 
@@ -41,7 +41,7 @@ public class AbilityAccessCtrl {}
 public static func createAtManager(): AtManager
 ```
 
-**功能：** 创建程序管理访问控制模块的实例对象。
+**功能：** 创建程序访问控制管理实例，用于权限校验、运行时权限申请等场景。调用成功后返回[AtManager](#class-atmanager)实例，可用于后续的权限管理操作。
 
 **系统能力：** SystemCapability.Security.AccessToken
 
@@ -51,7 +51,7 @@ public static func createAtManager(): AtManager
 
 |类型|说明|
 |:----|:----|
-|[AtManager](#class-atmanager)|管理访问控制模块的实例。|
+|[AtManager](#class-atmanager)|获取程序访问控制模块的实例。|
 
 **示例：**
 
@@ -77,7 +77,7 @@ try {
 public class AtManager {}
 ```
 
-**功能：** 管理访问控制模块的实例。
+**功能：** 程序访问控制管理类，提供权限校验、运行时权限弹窗申请等能力。通过[createAtManager](#static-func-createatmanager)获取实例。
 
 **系统能力：** SystemCapability.Security.AccessToken
 
@@ -89,7 +89,9 @@ public class AtManager {}
 public func checkAccessToken(tokenID: UInt32, permissionName: Permissions): GrantStatus
 ```
 
-**功能：** 校验应用是否授予权限。
+**功能：** 校验应用是否已被授予指定权限。调用成功后，返回当前权限的授权状态，开发者可据此决定直接执行后续业务或继续发起权限申请。
+
+适用于应用访问相机、麦克风、位置等受保护资源前进行前置权限判断的场景。
 
 **系统能力：** SystemCapability.Security.AccessToken
 
@@ -99,8 +101,8 @@ public func checkAccessToken(tokenID: UInt32, permissionName: Permissions): Gran
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|tokenID|UInt32|是|-|要校验的目标应用的身份标识。可通过应用的[ApplicationInfo](cj-apis-bundle_manager.md#class-applicationinfo)的accessTokenId字段获得。|
-|permissionName|[Permissions](#type-permissions)|是|-|需要校验的权限名称，合法的权限名取值可在[应用权限列表](../../security/AccessToken/cj-app-permissions.md)中查询。|
+|tokenID|UInt32|是|-|要校验的目标应用的身份标识。可通过应用的[ApplicationInfo](cj-apis-bundle_manager.md#class-applicationinfo)的accessTokenId字段获得。该参数必须为大于0的整数，传入0时抛出错误码12100001。|
+|permissionName|[Permissions](#type-permissions)|是|-|需要校验的权限名称。权限名长度不能超过256个字符，传入无效值时抛出错误码12100001，合法的权限名取值可在[应用权限列表](../../security/AccessToken/cj-app-permissions.md)中查询。|
 
 **返回值：**
 
@@ -143,9 +145,11 @@ public func requestPermissionsFromUser(context: UIAbilityContext, permissionList
     requestCallback: AsyncCallback<PermissionRequestResult>): Unit
 ```
 
-**功能：** 用于拉起弹框请求用户授权。
+**功能：** 用于UIAbility拉起弹窗请求用户授权，返回本次请求权限的授权结果。使用callback异步回调。
 
-如果用户拒绝授权，将无法再次拉起弹框，需要用户在系统应用“设置”的界面中，手动授予权限。
+适用于应用首次访问受保护资源前主动向用户申请权限的场景。
+
+如果用户拒绝授权，将无法通过此接口再次拉起授权弹窗。开发者可引导用户前往系统设置界面手动授权。
 
 **系统能力：** SystemCapability.Security.AccessToken
 
@@ -155,9 +159,9 @@ public func requestPermissionsFromUser(context: UIAbilityContext, permissionList
 
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
-|context|[UIAbilityContext](cj-apis-app-ability-ui_ability.md#class-uiabilitycontext)|是|-|请求权限的UIAbility的Context。|
-|permissionList|Array\<[Permissions](#type-permissions)>|是|-|权限名列表，合法的权限名取值可在[应用权限列表](../../security/AccessToken/cj-app-permissions.md)中查询。|
-|requestCallback|AsyncCallback\<[PermissionRequestResult](cj-apis-sercurity-permission_request_result.md#class-permissionrequestresult)>|是|-|回调函数，返回接口调用是否成功的结果。|
+|context|[UIAbilityContext](cj-apis-app-ability-ui_ability.md#class-uiabilitycontext)|是|-|请求权限的UIAbility的Context。若传入其他应用或无效页面的Context，接口可能报错或无法拉起弹窗。|
+|permissionList|Array\<[Permissions](#type-permissions)>|是|-|权限名列表。该数组不能为空，建议仅传入当前业务场景必要的敏感权限，避免一次申请过多权限。权限名长度不能超过256个字符，合法的权限名取值可在[应用权限列表](../../security/AccessToken/cj-app-permissions.md)中查询。|
+|requestCallback|AsyncCallback\<[PermissionRequestResult](cj-apis-sercurity-permission_request_result.md#class-permissionrequestresult)>|是|-|回调函数。调用完成后通过err返回错误信息，通过data返回权限请求结果对象。开发者可根据权限请求结果判断用户是否授权。|
 
 **异常：**
 
@@ -165,6 +169,7 @@ public func requestPermissionsFromUser(context: UIAbilityContext, permissionList
 
   | 错误码ID | 错误信息 |
   | :---- | :--- |
+  | 12100001 | Invalid parameter. The context is invalid when it does not belong to the application itself. |
   | 12100009 | Common inner error. An error occurs when creating the pop-up window or obtaining user operation results. |
 
 **示例：**

@@ -3271,7 +3271,7 @@ public func read(buffer: Array<Byte>, options!: ReadOptions = ReadOptions()): In
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
 | buffer | Array\<Byte> | Yes | - | Buffer for reading the file. |
-| options | [ReadOptions](#class-readoptions) | No | ReadOptions() | **Named parameter.** Supports the following options:<br>- length, ?UIntNative type, indicates the expected length of data to read. Optional, defaults to buffer length.<br>- offset, ?Int64 type, indicates the expected position to read from the file. Optional, defaults to current position. |
+| options | [ReadOptions](#class-readoptions) | No | ReadOptions() | **Named parameter.** Supports the following options:<br>- length, ?UIntNative type, indicates the expected length of data to read, in bytes. Optional, defaults to buffer length.<br>- offset, ?Int64 type, indicates the expected position to read from the file. Optional, defaults to current position. |
 
 **Return Value:**
 
@@ -3339,7 +3339,7 @@ public func setFilePointer(filePointer: Int64): Unit
 
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
-| filePointer | Int64 | Yes | - | The offset pointer of the RandomAccessFile object. |
+| filePointer | Int64 | Yes | - | The offset pointer of the RandomAccessFile object, in bytes. |
 
 **Example:**
 
@@ -3381,13 +3381,13 @@ public func write(buffer: String, options!: WriteOptions = WriteOptions()): Int6
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
 | buffer | String | Yes | - | Data to be written to the file. |
-| options | [WriteOptions](#class-writeoptions) | No | WriteOptions() | **Named parameter.** Supports the following options:<br>- length, ?UIntNative type, indicates the expected length of data to write. Defaults to buffer length.<br>- offset, ?Int64 type, indicates the expected position to write to the file. Optional, defaults to current position.<br>- encoding, String type, valid when data is of String type, indicates the encoding method of the data, defaults to "utf-8". Only "utf-8" is supported. |
+| options | [WriteOptions](#class-writeoptions) | No | WriteOptions() | **Named parameter.** Supports the following options:<br>- length, ?UIntNative type, indicates the expected length of data to write, in bytes. Defaults to buffer length.<br>- offset, ?Int64 type, indicates the expected position to write to the file. Optional, defaults to current position.<br>- encoding, String type, valid when data is of String type, indicates the encoding method of the data, defaults to "utf-8". Only "utf-8" is supported. |
 
 **Return Value:**
 
 | Type | Description |
 |:----|:----|
-| Int64 | The actual length written. |
+| Int64 | The actual length written, in bytes. |
 
 **Exceptions:**
 
@@ -3449,13 +3449,13 @@ public func write(buffer: Array<Byte>, options!: WriteOptions = WriteOptions()):
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
 | buffer | Array\<Byte> | Yes | - | Data to be written to the file. |
-| options | [WriteOptions](#class-writeoptions) | No | WriteOptions() | **Named parameter.** Supports the following options:<br>- length, ?UIntNative type, indicates the expected length of data to write. Defaults to buffer length.<br>- offset, ?Int64 type, indicates the expected position to write to the file. Optional, defaults to current position.<br>- encoding, String type, valid when data is of String type, indicates the encoding method of the data, defaults to "utf-8". Only "utf-8" is supported. |
+| options | [WriteOptions](#class-writeoptions) | No | WriteOptions() | **Named parameter.** Supports the following options:<br>- length, ?UIntNative type, indicates the expected length of data to write, in bytes. Defaults to buffer length.<br>- offset, ?Int64 type, indicates the expected position to write to the file. Optional, defaults to current position.<br>- encoding, String type, valid when data is of String type, indicates the encoding method of the data, defaults to "utf-8". Only "utf-8" is supported. |
 
 **Return Value:**
 
 | Type | Description |
 |:----|:----|
-| Int64 | The actual length written. |
+| Int64 | The actual length written, in bytes. |
 
 **Exceptions:**
 
@@ -4344,7 +4344,7 @@ public func read(buffer: Array<Byte>, options!: ReadOptions = ReadOptions()): In
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
 | buffer | Array\<Byte> | Yes | - | Buffer for reading the file. |
-| options | [ReadOptions](#class-readoptions) | No | ReadOptions() | **Named parameter.** Supports the following options:<br/>-&nbsp;length, UIntNative type, indicates the expected length of data to read. Optional, defaults to buffer length.<br/>-&nbsp;offset, Int64 type, indicates the expected position to read from the file. Optional, defaults to current position.<br/>|
+| options | [ReadOptions](#class-readoptions) | No | ReadOptions() | **Named parameter.** Supports the following options:<br/>-&nbsp;length, UIntNative type, indicates the expected length of data to read, in bytes. Optional, defaults to buffer length.<br/>-&nbsp;offset, Int64 type, indicates the expected position to read from the file. Optional, defaults to current position.<br/>|
 
 **Return Value:**
 
@@ -4410,13 +4410,13 @@ public func write(buffer: String, options!: WriteOptions = WriteOptions()): Int6
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
 | buffer | String | Yes | - | Data to be written to the file. |
-| options | [WriteOptions](#class-writeoptions) | No | WriteOptions() | **Named parameter.** Supports the following options:<br/>-&nbsp;length, ?UIntNative type, indicates the expected length of data to write. Defaults to buffer length.<br/>-&nbsp;offset, ?Int64 type, indicates the expected position to write to the file. Optional, defaults to current position.<br/>-&nbsp;encoding, String type, effective when data is of String type, indicates the encoding method of the data. Default is "utf-8". Only "utf-8" is supported.|
+| options | [WriteOptions](#class-writeoptions) | No | WriteOptions() | **Named parameter.** Supports the following options:<br/>-&nbsp;length, ?UIntNative type, indicates the expected length of data to write, in bytes. Defaults to buffer length.<br/>-&nbsp;offset, ?Int64 type, indicates the expected position to write to the file. Optional, defaults to current position.<br/>-&nbsp;encoding, String type, effective when data is of String type, indicates the encoding method of the data. Default is "utf-8". Only "utf-8" is supported.|
 
 **Return Value:**
 
 | Type | Description |
 |:----|:----|
-| Int64 | Actual length of data written. |
+| Int64 | Actual length of data written, in bytes. |
 
 **Exceptions:**
 
@@ -4478,13 +4478,13 @@ public func write(buffer: Array<Byte>, options!: WriteOptions = WriteOptions()):
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
 | buffer | Array\<Byte> | Yes | - | Data to be written to the file. |
-| options | [WriteOptions](#class-writeoptions) | No | WriteOptions() | **Named parameter.** Supports the following options:<br/>-&nbsp;length, ?UIntNative type, indicates the expected length of data to write. Defaults to buffer length.<br/>-&nbsp;offset, ?Int64 type, indicates the expected position to write to the file. Optional, defaults to current position.<br/>-&nbsp;encoding, String type, effective when data is of String type, indicates the encoding method of the data. Default is "utf-8". Only "utf-8" is supported.|
+| options | [WriteOptions](#class-writeoptions) | No | WriteOptions() | **Named parameter.** Supports the following options:<br/>-&nbsp;length, ?UIntNative type, indicates the expected length of data to write, in bytes. Defaults to buffer length.<br/>-&nbsp;offset, ?Int64 type, indicates the expected position to write to the file. Optional, defaults to current position.<br/>-&nbsp;encoding, String type, effective when data is of String type, indicates the encoding method of the data. Default is "utf-8". Only "utf-8" is supported.|
 
 **Return Value:**
 
 | Type | Description |
 |:----|:----|
-| Int64 | Actual length of data written. |
+| Int64 | Actual length of data written, in bytes. |
 
 **Exceptions:**
 

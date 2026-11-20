@@ -115,6 +115,7 @@ public func createMac(algName: String): Mac
   | 错误码ID | 错误信息 |
   | :---- | :--- |
   | 17620001 | Memory operation failed. |
+  | 17630001 | Crypto operation error. |
 
 **示例：**
 
@@ -668,6 +669,7 @@ public func doFinal(data: ?DataBlob): DataBlob
   | :---- | :--- |
   | 17620001 | Memory operation failed. |
   | 17620002 | Failed to convert parameters between cj and c. |
+  | 17620003 | Parameter check failed. |
   | 17630001 | Crypto operation error. |
 
 **示例：**
@@ -753,6 +755,7 @@ public func update(data: DataBlob): DataBlob
   | :---- | :--- |
   | 17620001 | Memory operation failed. |
   | 17620002 | Failed to convert parameters between cj and c. |
+  | 17620003 | Parameter check failed. |
   | 17630001 | Crypto operation error. |
 
 **示例：**

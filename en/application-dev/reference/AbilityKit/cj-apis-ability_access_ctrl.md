@@ -29,7 +29,7 @@ For the above sample project and configuration template, please refer to [Cangji
 public class AbilityAccessCtrl {}
 ```
 
-**Description:** This class is used to create and manage instances of the access control module.
+**Description:** This class is used to create [AtManager](#class-atmanager), which is an instance of the program access control management class.
 
 **System Capability:** SystemCapability.Security.AccessToken
 
@@ -41,7 +41,7 @@ public class AbilityAccessCtrl {}
 public static func createAtManager(): AtManager
 ```
 
-**Description:** Obtains the access control module object.
+**Description:** Creates a program access control management instance for scenarios such as permission verification and runtime permission request. After the call is successful, an [AtManager](#class-atmanager) instance is returned, which can be used for subsequent permission management operations.
 
 **System Capability:** SystemCapability.Security.AccessToken
 
@@ -51,7 +51,7 @@ public static func createAtManager(): AtManager
 
 | Type | Description |
 | :---- | :---- |
-| [AtManager](#class-atmanager) | Instance of the access control module. |
+| [AtManager](#class-atmanager) | **AtManager** instance obtained. |
 
 **Example:**
 
@@ -77,7 +77,7 @@ try {
 public class AtManager {}
 ```
 
-**Description:** Manages instances of the access control module.
+**Description:** Program access control management class, providing capabilities such as permission verification and runtime permission dialog box request. Obtain an instance through [createAtManager](#static-func-createatmanager).
 
 **System Capability:** SystemCapability.Security.AccessToken
 
@@ -89,7 +89,9 @@ public class AtManager {}
 public func checkAccessToken(tokenID: UInt32, permissionName: Permissions): GrantStatus
 ```
 
-**Description:** Verifies whether an application has been granted a permission.
+**Description:** Verifies whether an app has been granted the specified permission. After the call is successful, the authorization status of the current permission is returned. The developer can decide accordingly whether to directly execute subsequent services or continue to initiate a permission request.
+
+Applicable to scenarios where a pre-permission check is performed before an app accesses protected resources such as the camera, microphone, or location.
 
 **System Capability:** SystemCapability.Security.AccessToken
 
@@ -99,8 +101,8 @@ public func checkAccessToken(tokenID: UInt32, permissionName: Permissions): Gran
 
 | Parameter | Type | Required | Default Value | Description |
 | :--- | :--- | :--- | :--- | :--- |
-| tokenID | UInt32 | Yes | - | Identity identifier of the target application to be verified. Can be obtained through the application's [ApplicationInfo](cj-apis-bundle_manager.md#class-applicationinfo). |
-| permissionName | [Permissions](#type-permissions) | Yes | - | Name of the permission to be verified. Valid permission names can be queried in the [Application Permission List](../../security/AccessToken/cj-app-permissions.md). |
+| tokenID | UInt32 | Yes | - | Identity identifier of the target application to be verified. Can be obtained through the accessTokenId field of the application's [ApplicationInfo](cj-apis-bundle_manager.md#class-applicationinfo). This parameter must be an integer greater than 0. Passing in 0 throws error code 12100001. |
+| permissionName | [Permissions](#type-permissions) | Yes | - | Name of the permission to be verified. The permission name cannot exceed 256 characters. Passing in an invalid value throws error code 12100001. Valid permission names can be queried in the [Application Permission List](../../security/AccessToken/cj-app-permissions.md). |
 
 **Return Value:**
 
@@ -114,7 +116,7 @@ public func checkAccessToken(tokenID: UInt32, permissionName: Permissions): Gran
 
   | Error Code ID | Error Message |
   | :---- | :--- |
-  | 12100001 | The parameter is invalid. The tokenID is 0, or the string size of permissionName is larger than 256. |
+  | 12100001 | Invalid parameter. The tokenID is 0, or the permissionName exceeds 256 characters. |
 
 **Example:**
 
@@ -143,9 +145,11 @@ public func requestPermissionsFromUser(context: UIAbilityContext, permissionList
     requestCallback: AsyncCallback<PermissionRequestResult>): Unit
 ```
 
-**Description:** Used to display a dialog requesting user authorization.
+**Description:** Used by UIAbility to bring up a dialog box to request user authorization, and returns the authorization result of the permissions requested this time. This API uses an asynchronous callback to return the result.
 
-If the user denies authorization, the dialog cannot be displayed again. The user must manually grant the permission in the "Settings" interface of the system application.
+Applicable to scenarios where an app proactively applies for permissions from the user before accessing protected resources for the first time.
+
+If the user denies authorization, the authorization dialog box cannot be brought up again through this API. The developer can guide the user to go to the system settings interface for manual authorization.
 
 **System Capability:** SystemCapability.Security.AccessToken
 
@@ -155,9 +159,9 @@ If the user denies authorization, the dialog cannot be displayed again. The user
 
 | Parameter | Type | Required | Default Value | Description |
 | :--- | :--- | :--- | :--- | :--- |
-| context | [UIAbilityContext](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiabilitycontext) | Yes | - | Context of the <!--RP1-->UIAbility<!--RP1End--> requesting the permission. |
-| permissionList | Array\<[Permissions](#type-permissions)> | Yes | - | Names of the permissions to be verified. Valid permission names can be queried in the [Application Permission List](../../security/AccessToken/cj-app-permissions.md). |
-| requestCallback | AsyncCallback\<[PermissionRequestResult](cj-apis-sercurity-permission_request_result.md#class-permissionrequestresultarraystring-arrayint32-arraybool)> | Yes | - | Callback function that returns whether the interface call was successful. |
+| context | [UIAbilityContext](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiabilitycontext) | Yes | - | Context of the <!--RP1-->UIAbility<!--RP1End--> requesting the permission. If the context of another app or an invalid page is passed in, the API may report an error or fail to display the dialog box. |
+| permissionList | Array\<[Permissions](#type-permissions)> | Yes | - | List of permission names. This array cannot be empty. It is recommended to pass in only the sensitive permissions necessary for the current business scenario, avoiding requesting too many permissions at once. The length of a permission name cannot exceed 256 characters. Valid permission names can be queried in the [Application Permission List](../../security/AccessToken/cj-app-permissions.md). |
+| requestCallback | AsyncCallback\<[PermissionRequestResult](cj-apis-sercurity-permission_request_result.md#class-permissionrequestresultarraystring-arrayint32-arraybool)> | Yes | - | Callback function. After the call is complete, error information is returned through **err**, and the permission request result object is returned through **data**. The developer can determine whether the user has authorized based on the permission request result. |
 
 **Exceptions:**
 
@@ -165,7 +169,7 @@ If the user denies authorization, the dialog cannot be displayed again. The user
 
   | Error Code ID | Error Message |
   | :---- | :--- |
-  | 12100001 | The parameter is invalid. The context is invalid when it does not belong to the application itself. |
+  | 12100001 | Invalid parameter. The context is invalid when it does not belong to the application itself. |
 
 - IllegalArgumentException:
 

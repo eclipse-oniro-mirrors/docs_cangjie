@@ -114,7 +114,7 @@ public func getTask(context: UIAbilityContext, id: String, token!: ?String = Non
 | :-------- | :----------------------------------------------------------------------------------------- | :------- | :------ | :----------------------------------- |
 | context   | [UIAbilityContext](../AbilityKit/cj-apis-app-ability-ui_ability.md#class-uiabilitycontext) | Yes      | -       | Application-based context.           |
 | id        | String                                                                                     | Yes      | -       | Task ID.                             |
-| token     | ?String                                                                                    | No       | None    | **Named parameter.** Task query token. |
+| token     | ?String                                                                                    | No       | None    | **Named parameter.** Task query token. Default value is empty. |
 
 **Return Value:**
 

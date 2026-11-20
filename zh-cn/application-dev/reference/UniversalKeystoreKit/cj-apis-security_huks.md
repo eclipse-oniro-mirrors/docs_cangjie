@@ -195,7 +195,7 @@ public func deleteKeyItem(keyAlias: String, options: HuksOptions): Unit
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |keyAlias|String|是|-|密钥别名，应为生成key时传入的别名。|
-|options|[HuksOptions](#class-huksoptions)|是|-|用于删除时指定密钥的属性Tag，比如删除的密钥范围（全量/单个），当删除单个时，Tag字段可传空。|
+|options|[HuksOptions](#class-huksoptions)|是|-|用于删除时指定密钥的属性Tag，比如删除的密钥范围（全量/单个），当删除单个时，Tag字段可传空。如使用[HuksAuthStorageLevel](#class-huksauthstoragelevel)指定待删除密钥的安全级别，HuksAuthStorageLevel可不传，不传时默认值为HUKS_AUTH_STORAGE_LEVEL_DE。|
 
 **异常：**
 
@@ -562,6 +562,7 @@ public func importKeyItem(keyAlias: String, options: HuksOptions): Unit
   | 12000004 | operating file failed. |
   | 12000005 | IPC communication failed. |
   | 12000006 | error occurred in crypto engine. |
+  | 12000011 | queried entity does not exist. |
   | 12000012 | Device environment or input parameter abnormal. |
   | 12000013 | queried credential does not exist. |
   | 12000014 | memory is insufficient. |
@@ -768,7 +769,7 @@ public func hasKeyItem(keyAlias: String, options: HuksOptions): Bool
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |keyAlias|String|是|-|待查找的密钥的别名。|
-|options|[HuksOptions](#class-huksoptions)|是|-|用于查询时指定密钥的属性Tag，比如查询的密钥范围（全量/单个），当查询单个时，Tag字段可传空。|
+|options|[HuksOptions](#class-huksoptions)|是|-|用于查询时指定密钥的属性Tag，比如查询的密钥范围（全量/单个），当查询单个时，Tag字段可传空。如使用[HuksAuthStorageLevel](#class-huksauthstoragelevel)指定待查询密钥的安全级别，HuksAuthStorageLevel可不传，不传时默认值为HUKS_AUTH_STORAGE_LEVEL_DE。|
 
 **返回值：**
 

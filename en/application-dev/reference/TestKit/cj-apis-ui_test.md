@@ -77,6 +77,7 @@ public func clearText(): Unit
 
   | Error Code ID | Error Message |
   | :---- | :--- |
+  | 17000002 | The API does not support concurrent calls. |
   | 17000004 | The window or component is invisible or destroyed. |
 
 ### func click()
@@ -128,6 +129,7 @@ public func dragTo(target: Component): Unit
   | Error Code ID | Error Message |
   | :---- | :--- |
   | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+  | 17000002 | The API does not support concurrent calls. |
   | 17000004 | The window or component is invisible or destroyed. |
 
 ### func getBounds()
@@ -154,6 +156,7 @@ public func getBounds(): Rect
 
   | Error Code ID | Error Message |
   | :---- | :--- |
+  | 17000002 | The API does not support concurrent calls. |
   | 17000004 | The window or component is invisible or destroyed. |
 
 ### func getBoundsCenter()
@@ -180,6 +183,7 @@ public func getBoundsCenter(): Point
 
   | Error Code ID | Error Message |
   | :---- | :--- |
+  | 17000002 | The API does not support concurrent calls. |
   | 17000004 | The window or component is invisible or destroyed. |
 
 ### func getDescription()
@@ -206,6 +210,7 @@ public func getDescription(): String
 
   | Error Code ID | Error Message |
   | :---- | :--- |
+  | 17000002 | The API does not support concurrent calls. |
   | 17000004 | The window or component is invisible or destroyed. |
 
 ### func getId()
@@ -304,6 +309,7 @@ public func isCheckable(): Bool
 
   | Error Code ID | Error Message |
   | :---- | :--- |
+  | 17000002 | The API does not support concurrent calls. |
   | 17000004 | The window or component is invisible or destroyed. |
 
 ### func isChecked()
@@ -330,6 +336,7 @@ public func isChecked(): Bool
 
   | Error Code ID | Error Message |
   | :---- | :--- |
+  | 17000002 | The API does not support concurrent calls. |
   | 17000004 | The window or component is invisible or destroyed. |
 
 ### func isClickable()
@@ -410,6 +417,7 @@ public func isLongClickable(): Bool
 
   | Error Code ID | Error Message |
   | :---- | :--- |
+  | 17000002 | The API does not support concurrent calls. |
   | 17000004 | The window or component is invisible or destroyed. |
 
 ### func isScrollable()
@@ -476,7 +484,7 @@ public func pinchIn(scale: Float32): Unit
 
 | Parameter Name | Type | Required | Default Value | Description |
 | :--- | :--- | :--- | :--- | :--- |
-| scale | Float32 | Yes | - | Specified reduction scale. |
+| scale | Float32 | Yes | - | Specified reduction scale. Passing a negative value throws error code 401. |
 
 **Exceptions:**
 
@@ -485,6 +493,7 @@ public func pinchIn(scale: Float32): Unit
   | Error Code ID | Error Message |
   | :---- | :--- |
   | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+  | 17000002 | The API does not support concurrent calls. |
   | 17000004 | The window or component is invisible or destroyed. |
 
 ### func pinchOut(Float32)
@@ -503,7 +512,7 @@ public func pinchOut(scale: Float32): Unit
 
 | Parameter Name | Type | Required | Default Value | Description |
 | :--- | :--- | :--- | :--- | :--- |
-| scale | Float32 | Yes | - | Specified enlargement scale. |
+| scale | Float32 | Yes | - | Specified enlargement scale. Passing a negative value throws error code 401. |
 
 **Exceptions:**
 
@@ -512,6 +521,7 @@ public func pinchOut(scale: Float32): Unit
   | Error Code ID | Error Message |
   | :---- | :--- |
   | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+  | 17000002 | The API does not support concurrent calls. |
   | 17000004 | The window or component is invisible or destroyed. |
 
 ### func scrollSearch(On)
@@ -545,6 +555,7 @@ public func scrollSearch(on: On): ?Component
   | Error Code ID | Error Message |
   | :---- | :--- |
   | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+  | 17000002 | The API does not support concurrent calls. |
   | 17000004 | The window or component is invisible or destroyed. |
 
 ### func scrollToBottom(Int64)
@@ -563,7 +574,7 @@ public func scrollToBottom(speed!: Int64 = 600): Unit
 
 | Parameter Name | Type | Required | Default Value | Description |
 | :--- | :--- | :--- | :--- | :--- |
-| speed | Int64 | No | 600 | **Named parameter.** Swipe speed, range: 200-15000, default value is 600 if out of range, unit: pixels/second. |
+| speed | Int64 | No | 600 | **Named parameter.** Swipe speed, range: 200-15000, default value is 600 if out of range, unit: pixels/second. Passing a negative value throws error code 401. |
 
 **Exceptions:**
 
@@ -572,6 +583,7 @@ public func scrollToBottom(speed!: Int64 = 600): Unit
   | Error Code ID | Error Message |
   | :---- | :--- |
   | 401 | Parameter error. Possible causes: 1. Incorrect parameter types; 2. Parameter verification failed. |
+  | 17000002 | The API does not support concurrent calls. |
   | 17000004 | The window or component is invisible or destroyed. |
 
 ### func scrollToTop(Int64)
@@ -590,7 +602,7 @@ public func scrollToTop(speed!: Int64 = 600): Unit
 
 | Parameter Name | Type | Required | Default Value | Description |
 | :--- | :--- | :--- | :--- | :--- |
-| speed | Int64 | No | 600 | **Named parameter.** Swipe speed, range: 200-15000, default value is 600 if out of range, unit: pixels/second. |
+| speed | Int64 | No | 600 | **Named parameter.** Swipe speed, range: 200-15000, default value is 600 if out of range, unit: pixels/second. Passing a negative value throws error code 401. |
 
 **Exceptions:**
 
@@ -599,7 +611,9 @@ public func scrollToTop(speed!: Int64 = 600): Unit
   | Error Code ID | Error Message |
   | :---- | :--- |
   | 401 | Parameter error. Possible causes: 1. Incorrect parameter types; 2. Parameter verification failed. |
-  | ## class Driver
+  | 17000002 | The API does not support concurrent calls. |
+
+## class Driver
 
 ```cangjie
 public class Driver {}
@@ -674,6 +688,7 @@ public func assertComponentExist(on: On): Unit
   | Error Code ID | Error Message |
   | :---- | :--- |
   | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+  | 17000002 | The API does not support concurrent calls. |
   | 17000003 | Assertion failed. |
 
 **Example:**
@@ -711,8 +726,8 @@ public func click(x: Int32, y: Int32): Unit
 
 | Parameter | Type | Required | Default Value | Description |
 |:---|:---|:---|:---|:---|
-| x | Int32 | Yes | - | The x-coordinate of the target point, passed as an Int32. |
-| y | Int32 | Yes | - | The y-coordinate of the target point, passed as an Int32. |
+| x | Int32 | Yes | - | The x-coordinate of the target point, passed as an Int32. Unit: pixels. Passing a value outside the valid range throws error code 401. |
+| y | Int32 | Yes | - | The y-coordinate of the target point, passed as an Int32. Unit: pixels. Passing a value outside the valid range throws error code 401. |
 
 **Exceptions:**
 
@@ -721,6 +736,7 @@ public func click(x: Int32, y: Int32): Unit
   | Error Code ID | Error Message |
   | :---- | :--- |
   | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+  | 17000002 | The API does not support concurrent calls. |
 
 **Example:**
 
@@ -782,7 +798,7 @@ public func delayMs(duration: Int32): Unit
 
 | Parameter | Type | Required | Default Value | Description |
 |:---|:---|:---|:---|:---|
-| duration | Int32 | Yes | - | The duration to delay, in milliseconds. |
+| duration | Int32 | Yes | - | The duration to delay, in milliseconds. Passing a negative value throws error code 401. |
 
 **Exceptions:**
 
@@ -791,6 +807,7 @@ public func delayMs(duration: Int32): Unit
   | Error Code ID | Error Message |
   | :---- | :--- |
   | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+  | 17000002 | The API does not support concurrent calls. |
 
 **Example:**
 
@@ -821,8 +838,8 @@ public func doubleClick(x: Int32, y: Int32): Unit
 
 | Parameter | Type | Required | Default Value | Description |
 |:---|:---|:---|:---|:---|
-| x | Int32 | Yes | - | The x-coordinate of the target point, passed as an Int32. |
-| y | Int32 | Yes | - | The y-coordinate of the target point, passed as an Int32. |
+| x | Int32 | Yes | - | The x-coordinate of the target point, passed as an Int32. Unit: pixels. Passing a value outside the valid range throws error code 401. |
+| y | Int32 | Yes | - | The y-coordinate of the target point, passed as an Int32. Unit: pixels. Passing a value outside the valid range throws error code 401. |
 
 **Exceptions:**
 
@@ -831,6 +848,7 @@ public func doubleClick(x: Int32, y: Int32): Unit
   | Error Code ID | Error Message |
   | :---- | :--- |
   | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+  | 17000002 | The API does not support concurrent calls. |
 
 **Example:**
 
@@ -867,11 +885,11 @@ public func drag(
 
 | Parameter | Type | Required | Default Value | Description |
 |:---|:---|:---|:---|:---|
-| startx | Int32 | Yes | - | The x-coordinate of the start point, passed as an Int32. |
-| starty | Int32 | Yes | - | The y-coordinate of the start point, passed as an Int32. |
-| endx | Int32 | Yes | - | The x-coordinate of the end point, passed as an Int32. |
-| endy | Int32 | Yes | - | The y-coordinate of the end point, passed as an Int32. |
-| speed | Int32 | No | 600 | **Named parameter.** The swipe speed, ranging from 200 to 15000. If out of range, the default value of 600 is used. Unit: pixels per second. |
+| startx | Int32 | Yes | - | The x-coordinate of the start point, passed as an Int32. Unit: pixels. |
+| starty | Int32 | Yes | - | The y-coordinate of the start point, passed as an Int32. Unit: pixels. |
+| endx | Int32 | Yes | - | The x-coordinate of the end point, passed as an Int32. Unit: pixels. |
+| endy | Int32 | Yes | - | The y-coordinate of the end point, passed as an Int32. Unit: pixels. |
+| speed | Int32 | No | 600 | **Named parameter.** The swipe speed, ranging from 200 to 15000. If out of range, the default value of 600 is used. Unit: pixels per second. Passing a negative value throws error code 401. |
 
 **Exceptions:**
 
@@ -880,6 +898,7 @@ public func drag(
   | Error Code ID | Error Message |
   | :---- | :--- |
   | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+  | 17000002 | The API does not support concurrent calls. |
 
 **Example:**
 
@@ -917,6 +936,14 @@ public func findComponent(on: On): ?Component
 | Type | Description |
 |:----|:----|
 | ?[Component](#class-component) | The found component object. |
+
+**Exceptions:**
+
+- BusinessException: Corresponding error codes are listed below. For details, refer to [uitest Error Codes](./cj-errorcode-uitest.md).
+
+  | Error Code ID | Error Message |
+  | :---- | :--- |
+  | 17000002 | The API does not support concurrent calls. |
 
 **Example:**
 
@@ -962,6 +989,7 @@ public func findComponents(on: On): ?Array<Component>
   | Error Code ID | Error Message |
   | :---- | :--- |
   | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+  | 17000002 | The API does not support concurrent calls. |
 
 **Example:**
 
@@ -1007,6 +1035,7 @@ public func findWindow(filter: WindowFilter): ?UiWindow
   | Error Code ID | Error Message |
   | :---- | :--- |
   | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+  | 17000002 | The API does not support concurrent calls. |
 
 **Example:**
 
@@ -1037,8 +1066,8 @@ public func fling(from: Point, to: Point, stepLen: Int32, speed: Int32): Unit
 |:---|:---|:---|:---|:---|
 | from | [Point](#class-point) | Yes | - | Starting coordinates where finger touches the screen. |
 | to | [Point](#class-point) | Yes | - | Ending coordinates where finger leaves the screen. |
-| stepLen | Int32 | Yes | - | Step interval distance in pixels. |
-| speed | Int32 | Yes | - | Swipe speed (range: 200-40000). Values outside this range default to 600. Unit: pixels/second. |
+| stepLen | Int32 | Yes | - | Step interval distance in pixels. Passing a negative value throws error code 401. |
+| speed | Int32 | Yes | - | Swipe speed (range: 200-40000). Values outside this range default to 600. Unit: pixels/second. Passing a negative value throws error code 401. |
 
 **Exceptions:**
 
@@ -1047,6 +1076,7 @@ public func fling(from: Point, to: Point, stepLen: Int32, speed: Int32): Unit
   | Error Code ID | Error Message |
   | :---- | :--- |
   | 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+  | 17000002 | The API does not support concurrent calls. |
 
 **Example:**
 
@@ -1078,7 +1108,7 @@ public func fling(direction: UiDirection, speed: Int32): Unit
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
 | direction | [UiDirection](#enum-uidirection) | Yes | - | Direction of the fling gesture. |
-| speed | Int32 | Yes | - | Swipe speed (range: 200-40000). Values outside this range default to 600. Unit: pixels/second. |
+| speed | Int32 | Yes | - | Swipe speed (range: 200-40000). Values outside this range default to 600. Unit: pixels/second. Passing a negative value throws error code 401. |
 
 **Exceptions:**
 
@@ -1087,6 +1117,7 @@ public func fling(direction: UiDirection, speed: Int32): Unit
   | Error Code ID | Error Message |
   | :---- | :--- |
   | 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+  | 17000002 | The API does not support concurrent calls. |
 
 **Example:**
 
@@ -1211,7 +1242,7 @@ public func injectMultiPointerAction(pointers: PointerMatrix, speed!: Int32 = 60
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
 | pointers | [PointerMatrix](#class-pointermatrix) | Yes | - | Gesture trajectory, including the number of fingers and coordinate sequences. |
-| speed | Int32 | No | 600 | **Named parameter.** Swipe speed (range: 200-15000). Values outside this range default to 600. Unit: pixels/second. |
+| speed | Int32 | No | 600 | **Named parameter.** Swipe speed (range: 200-15000). Values outside this range default to 600. Unit: pixels/second. Passing a negative value throws error code 401. |
 
 **Return Value:**
 
@@ -1226,6 +1257,7 @@ public func injectMultiPointerAction(pointers: PointerMatrix, speed!: Int32 = 60
   | Error Code ID | Error Message |
   | :---- | :--- |
   | 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+  | 17000002 | The API does not support concurrent calls. |
 
 **Example:**
 
@@ -1275,6 +1307,7 @@ public func inputText(p: Point, text: String): Unit
   | Error Code ID | Error Message |
   | :---- | :--- |
   | 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+  | 17000002 | The API does not support concurrent calls. |
 
 **Example:**
 
@@ -1313,8 +1346,8 @@ public func longClick(x: Int32, y: Int32): Unit
 
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
-| x | Int32 | Yes | - | X-coordinate of the target point (Int32). |
-| y | Int32 | Yes | - | Y-coordinate of the target point (Int32). |
+| x | Int32 | Yes | - | X-coordinate of the target point (Int32). Unit: pixels. Passing a value outside the valid range throws error code 401. |
+| y | Int32 | Yes | - | Y-coordinate of the target point (Int32). Unit: pixels. Passing a value outside the valid range throws error code 401. |
 
 **Exceptions:**
 
@@ -1323,6 +1356,7 @@ public func longClick(x: Int32, y: Int32): Unit
   | Error Code ID | Error Message |
   | :---- | :--- |
   | 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+  | 17000002 | The API does not support concurrent calls. |
 
 **Example:**
 
@@ -1365,6 +1399,7 @@ public func mouseClick(p: Point, btnId: MouseButton, key1!: Int32 = 0, key2!: In
   | Error Code ID | Error Message |
   | :---- | :--- |
   | 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+  | 17000002 | The API does not support concurrent calls. |
 
 **Example:**
 
@@ -1407,6 +1442,7 @@ public func mouseDoubleClick(p: Point, btnId: MouseButton, key1!: Int32 = 0, key
   | Error Code ID | Error Message |
   | :---- | :--- |
   | 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+  | 17000002 | The API does not support concurrent calls. |
 
 **Example:**
 
@@ -1439,7 +1475,7 @@ public func mouseDrag(from: Point, to: Point, speed!: Int32 = 600): Unit
 |:---|:---|:---|:---|:---|
 | from | [Point](#class-point) | Yes | - | Coordinates of the starting point. |
 | to | [Point](#class-point) | Yes | - | Coordinates of the destination point. |
-| speed | Int32 | No | 600 | **Named parameter.** Drag speed, range: 200-15000. If out of range, the default value 600 is used. Unit: pixels/second. |
+| speed | Int32 | No | 600 | **Named parameter.** Drag speed, range: 200-15000. If out of range, the default value 600 is used. Unit: pixels/second. Passing a negative value throws error code 401. |
 
 **Exceptions:**
 
@@ -1448,6 +1484,7 @@ public func mouseDrag(from: Point, to: Point, speed!: Int32 = 600): Unit
   | Error Code ID | Error Message |
   | :---- | :--- |
   | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+  | 17000002 | The API does not support concurrent calls. |
 
 **Example:**
 
@@ -1490,6 +1527,7 @@ public func mouseLongClick(p: Point, btnId: MouseButton, key1!: Int32 = 0, key2!
   | Error Code ID | Error Message |
   | :---- | :--- |
   | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+  | 17000002 | The API does not support concurrent calls. |
 
 **Example:**
 
@@ -1529,6 +1567,7 @@ public func mouseMoveTo(p: Point): Unit
   | Error Code ID | Error Message |
   | :---- | :--- |
   | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+  | 17000002 | The API does not support concurrent calls. |
 
 **Example:**
 
@@ -1561,7 +1600,7 @@ public func mouseMoveWithTrack(from: Point, to: Point, speed!: Int32 = 600): Uni
 |:---|:---|:---|:---|:---|
 | from | [Point](#class-point) | Yes | - | Coordinates of the starting point. |
 | to | [Point](#class-point) | Yes | - | Coordinates of the destination point. |
-| speed | Int32 | No | 600 | **Named parameter.** Movement speed, range: 200-15000. If out of range, the default value 600 is used. Unit: pixels/second. |
+| speed | Int32 | No | 600 | **Named parameter.** Movement speed, range: 200-15000. If out of range, the default value 600 is used. Unit: pixels/second. Passing a negative value throws error code 401. |
 
 **Exceptions:**
 
@@ -1570,6 +1609,7 @@ public func mouseMoveWithTrack(from: Point, to: Point, speed!: Int32 = 600): Uni
   | Error Code ID | Error Message |
   | :---- | :--- |
   | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+  | 17000002 | The API does not support concurrent calls. |
 
 **Example:**
 
@@ -1602,10 +1642,10 @@ public func mouseScroll(p: Point, down: Bool, d: Int32, key1!: Int32 = 0, key2!:
 |:---|:---|:---|:---|:---|
 | p | [Point](#class-point) | Yes | - | Coordinates for the mouse click. |
 | down | Bool | Yes | - | Whether the wheel scroll direction is downward. true: scroll down; false: scroll up. |
-| d | Int32 | Yes | - | Number of notches the mouse wheel scrolls. Each notch corresponds to a displacement of 120 pixels at the target point. |
+| d | Int32 | Yes | - | Number of notches the mouse wheel scrolls. Each notch corresponds to a displacement of 120 pixels at the target point. Passing a negative value throws error code 401. |
 | key1 | Int32 | No | 0 | **Named parameter.** The first specified key value. |
 | key2 | Int32 | No | 0 | **Named parameter.** The second specified key value. |
-| speed | Int32 | No | 20 | **Named parameter.** Mouse wheel scrolling speed, range: 1-500. If out of range, the default value 20 is used. Unit: notches/second. |
+| speed | Int32 | No | 20 | **Named parameter.** Mouse wheel scrolling speed, range: 1-500. If out of range, the default value 20 is used. Unit: notches/second. Passing a negative value throws error code 401. |
 
 **Exceptions:**
 
@@ -1614,6 +1654,7 @@ public func mouseScroll(p: Point, down: Bool, d: Int32, key1!: Int32 = 0, key2!:
   | Error Code ID | Error Message |
   | :---- | :--- |
   | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+  | 17000002 | The API does not support concurrent calls. |
 
 **Example:**
 
@@ -1709,6 +1750,7 @@ public func screenCap(savePath: String): Bool
   | Error Code ID | Error Message |
   | :---- | :--- |
   | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+  | 17000002 | The API does not support concurrent calls. |
 
 **Example:**
 
@@ -1755,6 +1797,7 @@ public func screenCapture(savePath: String, rect!: Rect = Rect(0,0,0,0)): Bool
   | Error Code ID | Error Message |
   | :---- | :--- |
   | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+  | 17000002 | The API does not support concurrent calls. |
 
 **Example:**
 
@@ -1794,6 +1837,7 @@ public func setDisplayRotation(rotation: DisplayRotation): Unit
   | Error Code ID | Error Message |
   | :---- | :--- |
   | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+  | 17000002 | The API does not support concurrent calls. |
 
 **Example:**
 
@@ -1833,6 +1877,7 @@ public func setDisplayRotationEnabled(enabled: Bool): Unit
   | Error Code ID | Error Message |
   | :---- | :--- |
   | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+  | 17000002 | The API does not support concurrent calls. |
 
 **Example:**
 
@@ -1869,11 +1914,11 @@ public func swipe(
 
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
-| startx | Int32 | Yes | - | The x-coordinate of the starting point, passed as Int32. |
-| starty | Int32 | Yes | - | The y-coordinate of the starting point, passed as Int32. |
-| endx | Int32 | Yes | - | The x-coordinate of the destination point, passed as Int32. |
-| endy | Int32 | Yes | - | The y-coordinate of the destination point, passed as Int32. |
-| speed | Int32 | No | 600 | **Named parameter.** Swipe speed, range: 200-15000. If out of range, the default value 600 is used. Unit: pixels/second. |
+| startx | Int32 | Yes | - | The x-coordinate of the starting point, passed as Int32. Unit: pixels. Passing a value outside the valid range throws error code 401. |
+| starty | Int32 | Yes | - | The y-coordinate of the starting point, passed as Int32. Unit: pixels. Passing a value outside the valid range throws error code 401. |
+| endx | Int32 | Yes | - | The x-coordinate of the destination point, passed as Int32. Unit: pixels. Passing a value outside the valid range throws error code 401. |
+| endy | Int32 | Yes | - | The y-coordinate of the destination point, passed as Int32. Unit: pixels. Passing a value outside the valid range throws error code 401. |
+| speed | Int32 | No | 600 | **Named parameter.** Swipe speed, range: 200-15000. If out of range, the default value 600 is used. Unit: pixels/second. Passing a negative value throws error code 401. |
 
 **Exceptions:**
 
@@ -1882,6 +1927,7 @@ public func swipe(
   | Error Code ID | Error Message |
   | :---- | :--- |
   | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+  | 17000002 | The API does not support concurrent calls. |
 
 **Example:**
 
@@ -1923,6 +1969,7 @@ public func triggerCombineKeys(key0: Int32, key1: Int32, key2!: Int32 = 0): Unit
   | Error Code ID | Error Message |
   | :---- | :--- |
   | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+  | 17000002 | The API does not support concurrent calls. |
 
 **Example:**
 
@@ -1960,7 +2007,10 @@ public func triggerKey(keyCode: Int32): Unit
 - BusinessException: Corresponding error codes are listed below. For details, see [uitest Error Codes](./cj-errorcode-uitest.md) and [Universal Error Codes](../cj-errorcode-universal.md).
 
   | Error Code ID | Error Message |
-  | :## class On
+  | :---- | :--- |
+  | 17000002 | The API does not support concurrent calls. |
+
+## class On
 
 ```cangjie
 public class On {
@@ -2956,8 +3006,8 @@ public static func create(fingers: Int32, steps: Int32): PointerMatrix
 
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
-|fingers|Int32|Yes|-|The number of fingers to inject in the multi-touch operation. Valid range: [1,10].|
-|steps|Int32|Yes|-|The number of steps for each finger operation. Valid range: [1,1000].|
+|fingers|Int32|Yes|-|The number of fingers to inject in the multi-touch operation. Valid range: [1,10]. Passing a value outside the valid range throws error code 401.|
+|steps|Int32|Yes|-|The number of steps for each finger operation. Valid range: [1,1000]. Passing a value outside the valid range throws error code 401.|
 
 **Return Value:**
 
@@ -3244,7 +3294,7 @@ public func once(onceType: OnceType, callback: Callback<UIElementInfo>): Unit
 
 | Parameter | Type | Required | Default | Description |
 |:---|:---|:---|:---|:---|
-|onceType|[OnceType](#enum-oncetype)|Yes|-|The type of the control.|
+|onceType|[OnceType](#enum-oncetype)|Yes|-|The type of the subscribed event, value: ToastShow or DialogShow.|
 |callback|[Callback](./../arkui-cj/cj-common-types.md#type-callback)\<[UIElementInfo](#class-uielementinfo)>|Yes|-|The callback function to be executed when the event occurs.|
 
 **Exceptions:**
@@ -3285,6 +3335,7 @@ public func close(): Unit
 
   | Error Code ID | Error Message |
   | :---- | :--- |
+  | 17000002 | The API does not support concurrent calls. |
   | 17000004 | The window or component is invisible or destroyed. |
   | 17000005 | This operation is not supported. |
 
@@ -3323,6 +3374,7 @@ public func focus(): Unit
 
   | Error Code ID | Error Message |
   | :---- | :--- |
+  | 17000002 | The API does not support concurrent calls. |
   | 17000004 | The window or component is invisible or destroyed. |
 
 **Example:**
@@ -3363,6 +3415,7 @@ public func getBounds(): Rect
 
   | Error Code ID | Error Message |
   | :---- | :--- |
+  | 17000002 | The API does not support concurrent calls. |
   | 17000004 | The window or component is invisible or destroyed. |
 
 **Example:**
@@ -3403,6 +3456,7 @@ public func getBundleName(): String
 
   | Error Code ID | Error Message |
   | :---- | :--- |
+  | 17000002 | The API does not support concurrent calls. |
   | 17000004 | The window or component is invisible or destroyed. |
 
 **Example:**
@@ -3443,6 +3497,7 @@ public func getTitle(): String
 
   | Error Code ID | Error Message |
   | :---- | :--- |
+  | 17000002 | The API does not support concurrent calls. |
   | 17000004 | The window or component is invisible or destroyed. |
 
 **Example:**
@@ -3483,6 +3538,7 @@ public func getWindowMode(): WindowMode
 
   | Error Code ID | Error Message |
   | :---- | :--- |
+  | 17000002 | The API does not support concurrent calls. |
   | 17000004 | The window or component is invisible or destroyed. |
 
 **Example:**
@@ -3523,6 +3579,7 @@ public func isActive(): Bool
 
   | Error Code ID | Error Message |
   | :---- | :--- |
+  | 17000002 | The API does not support concurrent calls. |
   | 17000004 | The window or component is invisible or destroyed. |
 
 **Example:**
@@ -3563,6 +3620,7 @@ public func isFocused(): Bool
 
   | Error Code ID | Error Message |
   | :---- | :--- |
+  | 17000002 | The API does not support concurrent calls. |
   | 17000004 | The window or component is invisible or destroyed. |
 
 **Example:**
@@ -3600,6 +3658,7 @@ public func maximize(): Unit
 
   | Error Code ID | Error Message |
   | :---- | :--- |
+  | 17000002 | The API does not support concurrent calls. |
   | 17000004 | The window or component is invisible or destroyed. |
   | 17000005 | This operation is not supported. |
 
@@ -3639,6 +3698,7 @@ public func minimize(): Unit
 
   | Error Code ID | Error Message |
   | :---- | :--- |
+  | 17000002 | The API does not support concurrent calls. |
   | 17000004 | The window or component is invisible or destroyed. |
   | 17000005 | This operation is not supported. |
 
@@ -3676,8 +3736,8 @@ public func moveTo(x: Int32, y: Int32): Unit
 
 | Parameter | Type | Mandatory | Default Value | Description |
 | :--- | :--- | :--- | :--- | :--- |
-| x | Int32 | Yes | - | The x-coordinate of the target point in IntNative format. |
-| y | Int32 | Yes | - | The y-coordinate of the target point in IntNative format. |
+| x | Int32 | Yes | - | The x-coordinate of the target point in IntNative format. Unit: pixels. Passing a value outside the valid range throws error code 401. |
+| y | Int32 | Yes | - | The y-coordinate of the target point in IntNative format. Unit: pixels. Passing a value outside the valid range throws error code 401. |
 
 **Exceptions:**
 
@@ -3686,6 +3746,7 @@ public func moveTo(x: Int32, y: Int32): Unit
   | Error Code ID | Error Message |
   | :---- | :--- |
   | 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+  | 17000002 | The API does not support concurrent calls. |
   | 17000004 | The window or component is invisible or destroyed. |
   | 17000005 | This operation is not supported. |
 
@@ -3721,8 +3782,8 @@ public func resize(wide: Int32, height: Int32, direction: ResizeDirection): Unit
 
 | Parameter | Type | Mandatory | Default Value | Description |
 | :--- | :--- | :--- | :--- | :--- |
-| wide | Int32 | Yes | - | The width of the resized window in IntNative format. |
-| height | Int32 | Yes | - | The height of the resized window in IntNative format. |
+| wide | Int32 | Yes | - | The width of the resized window in IntNative format. Unit: pixels. Passing a value outside the valid range throws error code 401. |
+| height | Int32 | Yes | - | The height of the resized window in IntNative format. Unit: pixels. Passing a value outside the valid range throws error code 401. |
 | direction | [ResizeDirection](#enum-resizedirection) | Yes | - | The resize direction of the window in ResizeDirection format. |
 
 **Exceptions:**
@@ -3732,6 +3793,7 @@ public func resize(wide: Int32, height: Int32, direction: ResizeDirection): Unit
   | Error Code ID | Error Message |
   | :---- | :--- |
   | 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+  | 17000002 | The API does not support concurrent calls. |
   | 17000004 | The window or component is invisible or destroyed. |
   | 17000005 | This operation is not supported. |
 
@@ -3770,6 +3832,7 @@ public func resume(): Unit
 
   | Error Code ID | Error Message |
   | :---- | :--- |
+  | 17000002 | The API does not support concurrent calls. |
   | 17000004 | The window or component is invisible or destroyed. |
   | 17000005 | This operation is not supported. |
 
@@ -3808,6 +3871,7 @@ public func split(): Unit
 
   | Error Code ID | Error Message |
   | :---- | :--- |
+  | 17000002 | The API does not support concurrent calls. |
   | 17000004 | The window or component is invisible or destroyed. |
   | 17000005 | This operation is not supported. |
 

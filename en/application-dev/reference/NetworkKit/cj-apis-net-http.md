@@ -84,7 +84,7 @@ public func createHttpResponseCache(cacheSize!: UInt32 = MAX_CACHE_SIZE): HttpRe
 
 | Parameter | Type | Required | Default Value | Description |
 |:---|:---|:---|:---|:---|
-| cacheSize | UInt32 | No | MAX_CACHE_SIZE | **Named parameter.** The maximum cache size is 10*1024*1024 (10MB), defaulting to the maximum. |
+| cacheSize | UInt32 | No | MAX_CACHE_SIZE | **Named parameter.** Cache size, in bytes. The value range is 1*1024*1024 to 10*1024*1024, that is, 1 MB to 10 MB. Defaults to the maximum. |
 
 **Return Value:**
 
@@ -564,7 +564,7 @@ public func request(url: String, options: HttpRequestOptions, callback: AsyncCal
 |:---|:---|:---|:---|:---|
 | url | String | Yes | - | URL address for initiating the network request. |
 | options | [HttpRequestOptions](#class-httprequestoptions) | Yes | - | Refer to [HttpRequestOptions](#class-httprequestoptions). |
-| callback | [AsyncCallback](../arkinterop/cj-api-business_exception.md#type-asynccallback)\<[HttpResponse](#class-httpresponse)> | Yes | - | Callback function. |
+| callback | [AsyncCallback](../arkinterop/cj-api-business_exception.md#type-asynccallback)\<[HttpResponse](#class-httpresponse)> | Yes | - | Callback function. When the request is successful, the callback content is [HttpResponse](#class-httpresponse); when the request fails, error information is returned through err. |
 
 **Exceptions:**
 
@@ -658,7 +658,7 @@ public func request(url: String, callback: AsyncCallback<HttpResponse>): Unit
 | Parameter | Type | Required | Default Value | Description |
 |:---|:---|:---|:---|:---|
 | url | String | Yes | - | URL address for initiating the network request. |
-| callback | [AsyncCallback](../arkinterop/cj-api-business_exception.md#type-asynccallback)\<[HttpResponse](#class-httpresponse)> | Yes | - | Callback function. |
+| callback | [AsyncCallback](../arkinterop/cj-api-business_exception.md#type-asynccallback)\<[HttpResponse](#class-httpresponse)> | Yes | - | Callback function. When the request is successful, the callback content is [HttpResponse](#class-httpresponse); when the request fails, error information is returned through err. |
 
 **Exceptions:**
 
@@ -749,7 +749,7 @@ public func requestInStream(url: String, options: HttpRequestOptions, callback: 
 |:---|:---|:---|:---|:---|
 | url | String | Yes | - | URL address for initiating the network request. |
 | options | [HttpRequestOptions](#class-httprequestoptions) | Yes | - | Refer to [HttpRequestOptions](#class-httprequestoptions). |
-| callback | [AsyncCallback](../arkinterop/cj-api-business_exception.md#type-asynccallback)\<UInt32> | Yes | - | Callback function. |
+| callback | [AsyncCallback](../arkinterop/cj-api-business_exception.md#type-asynccallback)\<UInt32> | Yes | - | Callback function. When the request is successful, err is undefined and the HTTP response code is returned. For details, see [responseCode](#var-responsecode); when the request fails, error information is returned through err. |
 
 **Exceptions:**
 
