@@ -10,7 +10,7 @@
 
 Since 26.1.0, ohos.telephony.sim provides CardType and SimState to represent SIM card types and states. Both enums support equality comparison, inequality comparison, and conversion to strings with toString.
 
-The current module only defines enums. It does not provide APIs to read card types, read SIM card states, or change SIM card states. Creating an enum value neither queries the device nor changes its SIM card.
+The sim module only defines enums; it has no APIs to actively read card types or SIM states, or change a SIM state. Creating an enum value does not query or change the device. For real state notifications from the observer module, see [Observing Telephony State Changes](cj-telephony-observer-guidelines.md).
 
 ## Basic Concepts
 

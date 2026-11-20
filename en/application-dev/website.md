@@ -376,6 +376,7 @@
             - Telephony Kit (Cellular Communication Service)
                 - [Making Phone Calls](telephony/cj-telephony-call.md)
                 - [Obtaining Cellular Network Information](telephony/cj-telephony-network-guidelines.md)
+                - [Observing Telephony State Changes](telephony/cj-telephony-observer-guidelines.md)
                 - [Using SIM Card Type and State Enums](telephony/cj-telephony-sim-guidelines.md)
         - Basic Features
             - Basic Services Kit (Basic Services)
@@ -841,6 +842,7 @@
                     - [ohos.telephony.call](reference/TelephonyKit/cj-apis-telephony-call.md)
                     - [ohos.telephony.radio (Network Search)](reference/TelephonyKit/cj-apis-telephony-radio.md)
                     - [ohos.telephony.sim (SIM Card Management)](reference/TelephonyKit/cj-apis-telephony-sim.md)
+                    - [ohos.telephony.observer (Telephony Status Observer)](reference/TelephonyKit/cj-apis-telephony-observer.md)
                 - Error Codes
                     - [Telephony Error Codes](reference/TelephonyKit/cj-errorcode-telephony.md)
         - Debugging & Optimization

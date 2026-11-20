@@ -537,6 +537,7 @@
             - Telephony Kit（蜂窝通信服务）
                 - [拨打电话](telephony/cj-telephony-call.md)
                 - [获取蜂窝网络信息](telephony/cj-telephony-network-guidelines.md)
+                - [电话服务状态监听](telephony/cj-telephony-observer-guidelines.md)
                 - [使用SIM卡类型和状态枚举](telephony/cj-telephony-sim-guidelines.md)
         - 基础功能
             - Basic Services Kit（基础服务）
@@ -1016,6 +1017,7 @@
                     - [ohos.telephony.call（拨打电话）](reference/TelephonyKit/cj-apis-telephony-call.md)
                     - [ohos.telephony.radio（网络搜索）](reference/TelephonyKit/cj-apis-telephony-radio.md)
                     - [ohos.telephony.sim（SIM卡管理）](reference/TelephonyKit/cj-apis-telephony-sim.md)
+                    - [ohos.telephony.observer（电话服务状态监听）](reference/TelephonyKit/cj-apis-telephony-observer.md)
                 - 错误码
                     - [电话子系统错误码](reference/TelephonyKit/cj-errorcode-telephony.md)
         - 调测调优

@@ -8,7 +8,7 @@
 
 ## 场景介绍
 
-应用可以查询注册网络的国家码、网络注册状态、自动或手动选网模式、主卡卡槽、无线接入技术，以及设备是否支持NR。本文介绍一次性查询；查询结果不会在设备状态变化时自动更新。
+应用可以查询注册网络的国家码、网络注册状态、自动或手动选网模式、主卡卡槽、无线接入技术，以及设备是否支持NR。本文介绍一次性查询，查询结果不会在设备状态变化时自动更新。需要持续接收变化通知时，参考[电话服务状态监听](cj-telephony-observer-guidelines.md)。
 
 ## 基本概念
 
@@ -23,7 +23,7 @@
 
 ## 约束与限制
 
-- 本文接口从26.1.0版本开始支持，设备需具备SystemCapability.Telephony.CoreService系统能力。
+- 本文查询接口从26.1.0版本开始支持，设备需具备SystemCapability.Telephony.CoreService系统能力。
 - 调用getNetworkState和getRadioTechSync需要ohos.permission.GET_NETWORK_INFO权限。
 - 未注册网络时，国家码可能为空；卡槽无效时国家码也为空。getRadioTechSync在卡槽无效或查询失败时返回的CS、PS技术均为RadioTechnologyUnknown，不能将Unknown当成某个特定错误。
 - 当前getNetworkState返回的nsaState为NsaStateNotSupport，isCaActive为false，不能依靠这两个属性判断实际的NSA组网或载波聚合状态。
