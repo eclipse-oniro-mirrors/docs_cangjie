@@ -926,7 +926,7 @@ public func getSignalLevel(rssi: Int32, band: Int32): UInt32
 
 |类型|说明|
 |:----|:----|
-|UInt32|信号强度，取值范围为0~4。|
+|UInt32|信号强度，取值范围为[0, 4]。|
 
 **异常：**
 
