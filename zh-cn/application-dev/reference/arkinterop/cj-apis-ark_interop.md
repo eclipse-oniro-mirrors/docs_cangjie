@@ -706,6 +706,15 @@ public func toJSValue(context: JSContext): JSValue
 |:----|:----|
 |[JSValue](#class-jsvalue)|ArkTS 统一类型。|
 
+**异常：**
+
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+
+| 错误码ID | 错误信息 |
+|:------| :--- |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch. |
+
 ## extend UInt16 <: JSInteropType\<UInt16>
 
 **功能：** 该接口可用为内置类型 UInt16 实现扩展方法。
@@ -1063,7 +1072,6 @@ public static func fromJSValue(_: JSContext, input: JSValue): Float16
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
-| 34300002     | Outside error occurred.　             |
 | 34300003     | Accessing reference is beyond reach. |
 | 34300004     | Thread mismatch.                     |
 | 34300005     | The ArkTS data types do not match.   |
@@ -1165,7 +1173,6 @@ public static func fromJSValue(_: JSContext, input: JSValue): Float32
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
-| 34300002   | Outside error occurred.　             |
 | 34300003   | Accessing reference is beyond reach. |
 | 34300004   | Thread mismatch.                     |
 | 34300005   | The ArkTS data types do not match.   |
@@ -1362,6 +1369,16 @@ public static func fromJSValue(_: JSContext, input: JSValue): Bool
 |:----|:----|
 |Bool|仓颉类型。|
 
+**异常：**
+
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+
+| 错误码ID | 错误信息 |
+|:------| :--- |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch. |
+| 34300005   | The ArkTS data types do not match.|
+
 ### static func toArktsType()
 
 ```cangjie
@@ -1377,16 +1394,6 @@ public static func toArktsType(): String
 |类型|说明|
 |:----|:----|
 |String|转换后 ArkTS 类型名。|
-
-**异常：**
-
-- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
-
-| 错误码ID | 错误信息 |
-|:------| :--- |
-| 34300003   | Accessing reference is beyond reach. |
-| 34300004   | Thread mismatch. |
-| 34300005   | The ArkTS data types do not match.|
 
 ### func toJSValue(JSContext)
 
@@ -1777,6 +1784,7 @@ public static func fromJSValue(_: JSContext, input: JSValue): Array<T>
 
 | 错误码ID | 错误信息 |
 |:------| :--- |
+| 34300002   | Outside error occurred. |
 | 34300003   | Accessing reference is beyond reach. |
 | 34300004   | Thread mismatch. |
 | 34300005   | The ArkTS data types do not match.|
@@ -1825,6 +1833,7 @@ public func toJSValue(context: JSContext): JSValue
 
 | 错误码ID | 错误信息 |
 |:------| :--- |
+| 34300002   | Outside error occurred. |
 | 34300003   | Accessing reference is beyond reach. |
 | 34300004   | Thread mismatch. |
 
@@ -4918,6 +4927,7 @@ public unsafe func arrayBuffer(rawData: CPointer<Byte>, length: Int32, finalizer
 
 | 错误码ID | 错误信息                                 |
 |:------|:-------------------------------------|
+| 34300001   | The arrayBuffer length is invalid.      |
 | 34300002   | Outside error occurred.                |
 | 34300003   | Accessing reference is beyond reach. |
 | 34300004   | Thread mismatch.                     |
@@ -5546,6 +5556,7 @@ public func requireArkModule(path: String): JSValue
 | 错误码ID | 错误信息                                                          |
 | :------- | :---------------------------------------------------------------- |
 | 34300002 | Outside error occurred.                                           |
+| 34300003 | Accessing reference is beyond reach.                              |
 | 34300004 | Thread mismatch.                                                  |
 | 34300006 | Target module not exist.                                          |
 | 34300007 | Can not requireArkModule during initializing cangjie module.      |
@@ -6183,7 +6194,6 @@ public static func fromJSValue(context: JSContext, input: JSValue): JSHashMapEx<
 |:------|:-------------------------------------|
 | 34300003   | Accessing reference is beyond reach. |
 | 34300004   | Thread mismatch.                     |
-| 34300005   | The ArkTS data types do not match.   |
 
 **示例：**
 
@@ -6362,7 +6372,6 @@ public func deleteAll(keys: Collection<K>): Unit
 |:------|:-------------------------------------|
 | 34300003   | Accessing reference is beyond reach. |
 | 34300004   | Thread mismatch.                     |
-| 34300005   | The ArkTS data types do not match.   |
 
 ### func deleteIf((K,V) -> Bool)
 
@@ -6390,7 +6399,6 @@ public func deleteIf(predicate: (K, V) -> Bool): Unit
 |:------|:-------------------------------------|
 | 34300003   | Accessing reference is beyond reach. |
 | 34300004   | Thread mismatch.                     |
-| 34300005   | The ArkTS data types do not match.   |
 
 ### func get(K)
 
@@ -7012,6 +7020,15 @@ public static func registerModule(register: ModuleRegister): Unit
 |:---|:---|:---|:---|:---|
 |register|[ModuleRegister](#type-moduleregister)|是|-|一个能够返回 ArkTS 类（构造函数）的函数。|
 
+**异常：**
+
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+
+| 错误码ID | 错误信息                                 |
+|:------|:-------------------------------------|
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
+
 **示例：**
 
 <!-- compile -->
@@ -7045,6 +7062,15 @@ public static func registerModule(name: String, register: ModuleRegister): Unit
 |:---|:---|:---|:---|:---|
 |name|String|是|-|要导出的接口名称，或接口所在模块名与接口名称的拼接（用@分隔）。|
 |register|[ModuleRegister](#type-moduleregister)|是|-|一个能够返回 ArkTS 类（构造函数）的函数。|
+
+**异常：**
+
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+
+| 错误码ID | 错误信息                                 |
+|:------|:-------------------------------------|
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
 
 **示例：**
 
@@ -7243,6 +7269,15 @@ public func attachCJObject(target: JSExternal): Unit
 |参数名|类型|必填|默认值|说明|
 |:---|:---|:---|:---|:---|
 |target|[JSExternal](#class-jsexternal)|是|-|ArkTS 对仓颉对象的引用。|
+
+**异常：**
+
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+
+| 错误码ID | 错误信息                                 |
+|:------|:-------------------------------------|
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
 
 **示例：**
 
@@ -8295,7 +8330,6 @@ public static func fromJSValue(_: JSContext, input: JSValue): JSString
 
 | 错误码ID | 错误信息                             |
 | :------- | :----------------------------------- |
-| 34300002 | Outside error occurred.              |
 | 34300003 | Accessing reference is beyond reach. |
 | 34300004 | Thread mismatch.                     |
 | 34300005 | The ArkTS data types do not match.   |
@@ -10966,14 +11000,6 @@ public func isCompressed(): Bool
 |类型|说明|
 |:----|:----|
 |Bool| 是否被压缩 |
-
-**异常：**
-
-- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
-
-| 错误码ID | 错误信息                                 |
-|:------|:-------------------------------------|
-| 34300003   | Accessing reference is beyond reach. |
 
 **示例：**
 

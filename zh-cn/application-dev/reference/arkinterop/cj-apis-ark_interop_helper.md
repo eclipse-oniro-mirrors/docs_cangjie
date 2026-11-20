@@ -90,6 +90,15 @@ public func mapFromJSValue<T>(
 |:----|:----|
 |?HashMap\<String, T>|转换后的 HashMap 数据。|
 
+**异常：**
+
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+
+| 错误码ID | 错误信息                                 |
+|:------|:-------------------------------------|
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |
+
 ## func mapToJSValue\<T>(JSContext, ?HashMap\<String,T>, (JSContext,T) -> JSValue)
 
 ```cangjie
@@ -117,3 +126,12 @@ public func mapToJSValue<T>(
 |类型|说明|
 |:----|:----|
 |[JSValue](cj-apis-ark_interop.md#class-jsvalue)|转换后的 JSValue 数据。|
+
+**异常：**
+
+- [BusinessException](cj-api-business_exception.md#class-businessexception)：对应错误码如下表，详见[互操作错误码](./cj-errorcode-ark_interop.md)
+
+| 错误码ID | 错误信息                                 |
+|:------|:-------------------------------------|
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch.                     |

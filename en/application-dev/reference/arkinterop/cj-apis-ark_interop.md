@@ -699,6 +699,15 @@ public func toJSValue(context: JSContext): JSValue
 |:----|:----|
 | [JSValue](#class-jsvalue) | ArkTS unified type. |
 
+**Exceptions:**
+
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+
+| Error Code ID | Error Message |
+|:------| :--- |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch. |
+
 ## extend UInt16 <: JSInteropType\<UInt16>
 
 **Functionality:** This interface can be used to implement extension methods for the built-in type UInt16.
@@ -1052,7 +1061,6 @@ public static func fromJSValue(_: JSContext, input: JSValue): Float16
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 34300002 | Outside error occurred. |
 | 34300003 | Accessing reference is beyond reach. |
 | 34300004 | Thread mismatch. |
 | 34300005 | The ArkTS data types do not match. |
@@ -1153,7 +1161,6 @@ public static func fromJSValue(_: JSContext, input: JSValue): Float32
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
-| 34300002 | Outside error occurred. |
 | 34300003 | Accessing reference is beyond reach. |
 | 34300004 | Thread mismatch. |
 | 34300005 | The ArkTS data types do not match. |
@@ -1348,6 +1355,16 @@ public static func fromJSValue(_: JSContext, input: JSValue): Bool
 |:----|:----|
 | Bool | Cangjie type. |
 
+**Exceptions:**
+
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+
+| Error Code ID | Error Message |
+|:------| :--- |
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch. |
+| 34300005   | The ArkTS data types do not match. |
+
 ### static func toArktsType()
 
 ```cangjie
@@ -1363,16 +1380,6 @@ public static func toArktsType(): String
 | Type | Description |
 |:----|:----|
 | String | Converted ArkTS type name. |
-
-**Exceptions:**
-
-- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
-
-| Error Code ID | Error Message |
-|:------| :--- |
-| 34300003 | Accessing reference is beyond reach. |
-| 34300004 | Thread mismatch. |
-| 34300005 | The ArkTS data types do not match. |
 
 ### func toJSValue(JSContext)
 
@@ -1757,6 +1764,7 @@ public static func fromJSValue(_: JSContext, input: JSValue): Array<T>
 
 | Error Code ID | Error Message |
 |:------| :--- |
+| 34300002   | Outside error occurred. |
 | 34300003   | Accessing reference is beyond reach. |
 | 34300004   | Thread mismatch. |
 | 34300005   | The ArkTS data types do not match.|
@@ -1805,6 +1813,7 @@ public func toJSValue(context: JSContext): JSValue
 
 | Error Code ID | Error Message |
 |:------| :--- |
+| 34300002   | Outside error occurred. |
 | 34300003   | Accessing reference is beyond reach. |
 | 34300004   | Thread mismatch. |
 
@@ -4812,6 +4821,7 @@ public unsafe func arrayBuffer(rawData: CPointer<Byte>, length: Int32, finalizer
 
 | Error Code ID | Error Message |
 |:------|:-------------------------------------|
+| 34300001   | The arrayBuffer length is invalid.      |
 | 34300002   | Outside error occurred.                |
 | 34300003   | Accessing reference is beyond reach. |
 | 34300004   | Thread mismatch.                     |
@@ -5412,6 +5422,7 @@ public func requireArkModule(path: String): JSValue
 | Error Code ID | Error Message                                                     |
 | :------------ | :---------------------------------------------------------------- |
 | 34300002      | Outside error occurred.                                           |
+| 34300003      | Accessing reference is beyond reach.                              |
 | 34300004      | Thread mismatch.                                                  |
 | 34300006      | Target module not exist.                                          |
 | 34300007      | Can not requireArkModule during initializing cangjie module.      |
@@ -6027,7 +6038,6 @@ public static func fromJSValue(context: JSContext, input: JSValue): JSHashMapEx<
 |:------|:-------------------------------------|
 | 34300003   | Accessing reference is beyond reach. |
 | 34300004   | Thread mismatch.                     |
-| 34300005   | The ArkTS data types do not match.   |
 
 **Example:**
 
@@ -6205,7 +6215,6 @@ public func deleteAll(keys: Collection<K>): Unit
 |:------|:-------------------------------------|
 | 34300003   | Accessing reference is beyond reach. |
 | 34300004   | Thread mismatch.                     |
-| 34300005   | The ArkTS data types do not match.   |
 
 ### func deleteIf((K,V) -> Bool)
 
@@ -6233,7 +6242,6 @@ This function traverses the entire JSHashMapEx, deleting all key-value pairs whe
 |:------|:-------------------------------------|
 | 34300003   | Accessing reference is beyond reach. |
 | 34300004   | Thread mismatch.                     |
-| 34300005   | The ArkTS data types do not match.   |
 
 ### func get(K)
 
@@ -6841,6 +6849,15 @@ public static func registerModule(register: ModuleRegister): Unit
 |:---|:---|:---|:---|:---|
 | register | [ModuleRegister](#type-moduleregister) | Yes | - | A function that can return an ArkTS class (constructor). |
 
+**Exceptions:**
+
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+
+| Error Code ID | Error Message |
+|:------|:-------------------------------------|
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch. |
+
 **Example:**
 
 <!-- compile -->
@@ -6872,6 +6889,15 @@ public static func registerModule(name: String, register: ModuleRegister): Unit
 |:---|:---|:---|:---|:---|
 | name | String | Yes | - | The interface name to be exported, or the concatenation of the module name and the interface name (separated by @) . |
 | register | [ModuleRegister](#type-moduleregister) | Yes | - | A function that can return an ArkTS class (constructor). |
+
+**Exceptions:**
+
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+
+| Error Code ID | Error Message |
+|:------|:-------------------------------------|
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch. |
 
 **Example:**
 
@@ -7066,6 +7092,15 @@ public func attachCJObject(target: JSExternal): Unit
 | Parameter Name | Type | Required | Default Value | Description |
 |:---|:---|:---|:---|:---|
 | target | [JSExternal](#class-jsexternal) | Yes | - | ArkTS reference to the Cangjie object. |
+
+**Exceptions:**
+
+- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
+
+| Error Code ID | Error Message |
+|:------|:-------------------------------------|
+| 34300003   | Accessing reference is beyond reach. |
+| 34300004   | Thread mismatch. |
 
 **Example:**
 
@@ -8083,7 +8118,6 @@ public static func fromJSValue(_: JSContext, input: JSValue): JSString
 
 | Error Code ID | Error Message                        |
 | :------------ | :----------------------------------- |
-| 34300002      | Outside error occurred.              |
 | 34300003      | Accessing reference is beyond reach. |
 | 34300004      | Thread mismatch.                     |
 | 34300005      | The ArkTS data types do not match.   |
@@ -10695,14 +10729,6 @@ public func isCompressed(): Bool
 | Type | Description |
 |:----|:----|
 | Bool | Whether the content is compressed. |
-
-**Exceptions:**
-
-- BusinessException: Error codes as follows, see [Interoperation Error Codes](./cj-errorcode-ark_interop.md)
-
-| Error Code ID | Error Message |
-|:------|:-------------------------------------|
-| 34300003   | Accessing reference is beyond reach. |
 
 **Example:**
 
