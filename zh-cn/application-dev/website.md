@@ -548,6 +548,8 @@
                         - [动态订阅公共事件](basic-services/common-event/cj-common-event-subscription.md)
                         - [取消动态订阅公共事件](basic-services/common-event/cj-common-event-unsubscription.md)
                         - [发布公共事件](basic-services/common-event/cj-common-event-publish.md)
+                - 剪贴板
+                    - [复制粘贴](basic-services/pasteboard/cj-pasteboard-guidelines.md)
                 - 上传下载
                     - [应用文件上传下载](basic-services/request/cj-app-file-upload-download.md)
             - Notification Kit（用户通知服务）
@@ -991,6 +993,7 @@
                         - [ohos.common_event_data](reference/BasicServicesKit/cj-apis-common_event_data.md)
                         - [ohos.common_event_publish_data](reference/BasicServicesKit/cj-apis-common_event_publish_data.md)
                         - [ohos.value_type](reference/BasicServicesKit/cj-apis-value_type.md)
+                        - [ohos.pasteboard（剪贴板）](reference/BasicServicesKit/cj-apis-pasteboard.md)
                 - 错误码
                     - [上传下载错误码](reference/BasicServicesKit/cj-errorcode-request.md)
                     - [时间时区服务错误码](reference/BasicServicesKit/cj-errorcode-time.md)
@@ -999,6 +1002,7 @@
                     - [账号管理错误码](reference/BasicServicesKit/cj-errorcode-basic-account.md)
                     - [设置数据项错误码](reference/BasicServicesKit/cj-errorcode-settings.md)
                     - [zlib子系统错误码](basic-services/zlib/cj-errorcode-zlib.md)
+                    - [剪贴板错误码](reference/BasicServicesKit/cj-errorcode-pasteboard.md)
             - Notification Kit（用户通知服务）
                 - 仓颉API
                     - [ohos.notification_manager（通知管理）](reference/NotificationKit/cj-apis-notification-manager.md)

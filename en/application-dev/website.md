@@ -387,6 +387,8 @@
                         - [Dynamic Common Event Subscription](basic-services/common-event/cj-common-event-subscription.md)
                         - [Dynamic Common Event Unsubscription](basic-services/common-event/cj-common-event-unsubscription.md)
                         - [Publishing Common Events](basic-services/common-event/cj-common-event-publish.md)
+                - Pasteboard
+                    - [Copy and Paste](basic-services/pasteboard/cj-pasteboard-guidelines.md)
                 - Upload/Download
                     - [Application File Upload/Download](basic-services/request/cj-app-file-upload-download.md)
             - Notification Kit (User Notification Service)
@@ -817,6 +819,7 @@
                         - [ohos.common_event_data](reference/BasicServicesKit/cj-apis-common_event_data.md)
                         - [ohos.common_event_publish_data](reference/BasicServicesKit/cj-apis-common_event_publish_data.md)
                         - [ohos.value_type](reference/BasicServicesKit/cj-apis-value_type.md)
+                        - [ohos.pasteboard (Pasteboard)](reference/BasicServicesKit/cj-apis-pasteboard.md)
                 - Error Codes
                     - [Upload/Download Error Codes](reference/BasicServicesKit/cj-errorcode-request.md)
                     - [Time/Timezone Error Codes](reference/BasicServicesKit/cj-errorcode-time.md)
@@ -824,6 +827,7 @@
                     - [System Power Management Error Codes](reference/BasicServicesKit/cj-errorcode-power.md)
                     - [Account Management Error Codes](reference/BasicServicesKit/cj-errorcode-basic-account.md)
                     - [zlib Error Codes](basic-services/zlib/cj-errorcode-zlib.md)
+                    - [Pasteboard Error Codes](reference/BasicServicesKit/cj-errorcode-pasteboard.md)
             - Notification Kit (User Notification Service)
                 - Cangjie API
                     - [ohos.notification_manager (Notification Management)](reference/NotificationKit/cj-apis-notification-manager.md)
