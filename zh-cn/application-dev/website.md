@@ -979,6 +979,7 @@
                         - [ohos.device_info（设备信息）](reference/BasicServicesKit/cj-apis-device_info.md)
                     - 数据文件处理
                         - [ohos.request（上传下载）](reference/BasicServicesKit/cj-apis-request-agent.md)
+                        - [ohos.zlib（Zip模块）](basic-services/zlib/cj-apis-zlib.md)
                     - 进程线程通信
                         - [ohos.common_event_manager（公共事件模块）](reference/BasicServicesKit/cj-apis-common_event_manager.md)
                     - 其他
@@ -996,6 +997,7 @@
                     - [系统电源管理错误码](reference/BasicServicesKit/cj-errorcode-power.md)
                     - [账号管理错误码](reference/BasicServicesKit/cj-errorcode-basic-account.md)
                     - [设置数据项错误码](reference/BasicServicesKit/cj-errorcode-settings.md)
+                    - [zlib子系统错误码](basic-services/zlib/cj-errorcode-zlib.md)
             - Notification Kit（用户通知服务）
                 - 仓颉API
                     - [ohos.notification_manager（通知管理）](reference/NotificationKit/cj-apis-notification-manager.md)
