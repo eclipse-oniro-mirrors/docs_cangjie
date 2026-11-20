@@ -1995,6 +1995,7 @@ public operator func !=(other: SatelliteConstellationCategory): Bool
 public enum ScenarioValueType {
     | UserActivityScenarioValue(UserActivityScenario)
     | PowerConsumptionScenarioValue(PowerConsumptionScenario)
+    | ...
 }
 ```
 
